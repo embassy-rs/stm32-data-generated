@@ -724,6 +724,125 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "ascr",
+                    description: Some(
+                        "RCC audio synchronization control register",
+                    ),
+                    array: None,
+                    byte_offset: 0x1c0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ascr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "asier",
+                    description: Some(
+                        "RCC audio synchronization interrupt enable register",
+                    ),
+                    array: None,
+                    byte_offset: 0x1c4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Asier",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "assr",
+                    description: Some(
+                        "RCC audio synchronization status register",
+                    ),
+                    array: None,
+                    byte_offset: 0x1c8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Assr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ascntr",
+                    description: Some(
+                        "RCC audio synchronization counter register",
+                    ),
+                    array: None,
+                    byte_offset: 0x1cc,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ascntr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "asarr",
+                    description: Some(
+                        "RCC audio synchronization auto-reload register",
+                    ),
+                    array: None,
+                    byte_offset: 0x1d0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Asarr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ascar",
+                    description: Some(
+                        "RCC audio synchronization capture register",
+                    ),
+                    array: None,
+                    byte_offset: 0x1d4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ascar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "ascor",
+                    description: Some(
+                        "RCC audio synchronization compare register",
+                    ),
+                    array: None,
+                    byte_offset: 0x1d8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ascor",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "cfgr4",
                     description: Some(
                         "RCC clock configuration register 2",
@@ -1111,6 +1230,48 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "gpioden",
+                    description: Some(
+                        "IO port D bus clock enable\r Set and cleared by software.\r Access can be secured by GPIOD SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpioeen",
+                    description: Some(
+                        "IO port E bus clock enable\r Set and cleared by software.\r Access can be secured by GPIOE SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpiogen",
+                    description: Some(
+                        "IO port G bus clock enable\r Set and cleared by software.\r Access can be secured by GPIOG SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "gpiohen",
                     description: Some(
                         "IO port H bus clock enable\r Set and cleared by software.\r Access can be secured by GPIOH SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
@@ -1118,6 +1279,34 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "otgen",
+                    description: Some(
+                        "USB OTG_HS bus and kernel clock enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "otghsphyen",
+                    description: Some(
+                        "USB OTG_HS PHY kernel clock enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
                         },
                     ),
                     bit_size: 1,
@@ -1275,6 +1464,48 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "gpiodrst",
+                    description: Some(
+                        "IO port D reset\r Set and cleared by software.\r Access can be secured by GPIOD SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpioerst",
+                    description: Some(
+                        "IO port E reset\r Set and cleared by software.\r Access can be secured by GPIOE SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpiogrst",
+                    description: Some(
+                        "IO port G reset\r Set and cleared by software.\r Access can be secured by GPIOG SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "gpiohrst",
                     description: Some(
                         "IO port H reset\r Set and cleared by software.\r Access can be secured by GPIOH SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
@@ -1282,6 +1513,20 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "otgrst",
+                    description: Some(
+                        "USB OTG_HS reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
                         },
                     ),
                     bit_size: 1,
@@ -1425,6 +1670,48 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "gpiodsmen",
+                    description: Some(
+                        "IO port D bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GPIOD SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpioesmen",
+                    description: Some(
+                        "IO port E bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GPIOE SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "gpiogsmen",
+                    description: Some(
+                        "IO port G bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GPIOG SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "gpiohsmen",
                     description: Some(
                         "IO port H bus clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GPIOH SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
@@ -1432,6 +1719,34 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "otgsmen",
+                    description: Some(
+                        "USB OTG_HS bus and kernel clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "otghsphysmen",
+                    description: Some(
+                        "USB OTG_HS PHY kernel clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
                         },
                     ),
                     bit_size: 1,
@@ -1733,6 +2048,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "tim4en",
+                    description: Some(
+                        "TIM4 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "wwdgen",
                     description: Some(
                         "WWDG bus clock enable\r Set by software to enable the window watchdog bus clock. Reset by hardware system reset.\r This bit can also be set by hardware if the WWDG_SW option bit is reset.\r Access can be secured by GTZC_TZSC WWDGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
@@ -1740,6 +2069,20 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi2en",
+                    description: Some(
+                        "SPI2 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC SPI2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
                         },
                     ),
                     bit_size: 1,
@@ -1761,6 +2104,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "usart3en",
+                    description: Some(
+                        "USART3 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC USART3SEC When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV..",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "i2c1en",
                     description: Some(
                         "I2C1 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
@@ -1768,6 +2125,20 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 21,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c2en",
+                    description: Some(
+                        "I2C2 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
                         },
                     ),
                     bit_size: 1,
@@ -1784,6 +2155,20 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             bit_size: 32,
             fields: &[
+                Field {
+                    name: "i2c4en",
+                    description: Some(
+                        "I2C4 bus and kernel clocks enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
                 Field {
                     name: "lptim2en",
                     description: Some(
@@ -1837,6 +2222,34 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "tim4rst",
+                    description: Some(
+                        "TIM4 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi2rst",
+                    description: Some(
+                        "SPI2 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC SPI2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "usart2rst",
                     description: Some(
                         "USART2 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC UART2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
@@ -1851,6 +2264,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "usart3rst",
+                    description: Some(
+                        "USART3 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC UART3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "i2c1rst",
                     description: Some(
                         "I2C1 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
@@ -1858,6 +2285,20 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 21,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c2rst",
+                    description: Some(
+                        "I2C2 reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
                         },
                     ),
                     bit_size: 1,
@@ -1927,6 +2368,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "tim4smen",
+                    description: Some(
+                        "TIM4 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC TIM4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "wwdgsmen",
                     description: Some(
                         "Window watchdog bus clock enable during Sleep and Stop modes\r Set and cleared by software. This bit is forced to 1 by hardware when the hardware WWDG option is activated.\r Access can be secured by GTZC_TZSC WWDGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
@@ -1934,6 +2389,20 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "spi2smen",
+                    description: Some(
+                        "SPI2 bus and kernel clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC SPI2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
                         },
                     ),
                     bit_size: 1,
@@ -1955,6 +2424,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "usart3smen",
+                    description: Some(
+                        "USART3 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC USART3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "i2c1smen",
                     description: Some(
                         "I2C1 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
@@ -1962,6 +2445,20 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 21,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "i2c2smen",
+                    description: Some(
+                        "I2C2 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
                         },
                     ),
                     bit_size: 1,
@@ -1978,6 +2475,20 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             bit_size: 32,
             fields: &[
+                Field {
+                    name: "i2c4smen",
+                    description: Some(
+                        "I2C4 bus and kernel clocks enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC I2C4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
                 Field {
                     name: "lptim2smen",
                     description: Some(
@@ -2313,6 +2824,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "vrefen",
+                    description: Some(
+                        "VREFBUF bus clock enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC VREFBUFSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "rtcapben",
                     description: Some(
                         "RTC and TAMP bus clock enable\r Set and cleared by software.\r Can only be accessed secure when one or more features in the RTC or TAMP is/are secure. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
@@ -2406,6 +2931,34 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: None,
                 },
+                Field {
+                    name: "comprst",
+                    description: Some(
+                        "COMP reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC COMPSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "vrefrst",
+                    description: Some(
+                        "VREF reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC VREFSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
             ],
         },
         FieldSet {
@@ -2487,6 +3040,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "vrefsmen",
+                    description: Some(
+                        "VREFBUF clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC VREFBUFSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "rtcapbsmen",
                     description: Some(
                         "RTC and TAMP APB clock enable during Sleep and Stop modes\r Set and cleared by software.\r Can only be accessed secure when one or more features in the RTC or TAMP is/are secure. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: This bit must be set to allow the peripheral to wake up from Stop modes.",
@@ -2494,6 +3061,258 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 21,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Asarr",
+            extends: None,
+            description: Some(
+                "RCC audio synchronization auto-reload register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ar",
+                    description: Some(
+                        "Auto-reload value\r This field is set by software.\r CA[19:0] is the counter auto-reload value at which to restart the audio synchronization counter from value 0. It defines the counter period.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 20,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ascar",
+            extends: None,
+            description: Some(
+                "RCC audio synchronization capture register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ca",
+                    description: Some(
+                        "Capture value\r This field is set by hardware.\r CA[26:20] is the capture period counter value loaded on the trigger event. CA[19:0] is the audio synchronization counter value loaded on the trigger event.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 27,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ascntr",
+            extends: None,
+            description: Some(
+                "RCC audio synchronization counter register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cnt",
+                    description: Some(
+                        "Counter value\r This field is set by hardware.\r CNT[19:0] is the counter value at the time this register is read.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 20,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ascor",
+            extends: None,
+            description: Some(
+                "RCC audio synchronization compare register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "co",
+                    description: Some(
+                        "Compare value\r This field is set by software.\r CO[19:0] is the value to be compared to the audio synchronization counter to generate an compare interrupt event.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 20,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ascr",
+            extends: None,
+            description: Some(
+                "RCC audio synchronization control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cen",
+                    description: Some(
+                        "Counter enable\r This bit is set and cleared by software.\r Clearing this bit will reset the audio synchronization counter and capture prescaler and all associated registers ASCR, ASIER, ASSR, ASCNTR, ASARR, ASCAR, and ASCOR.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "psc",
+                    description: Some(
+                        "Clock prescaler\r This field is set and cleared by software.\r Counter clock frequency = f_audiosync_ker_ck / (PSC + 1)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cps",
+                    description: Some(
+                        "Capture prescaler\r This field is set and cleared by software.\r Capture period in number of counter periods. Capture period = counter period * (TPS + 1)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Asier",
+            extends: None,
+            description: Some(
+                "RCC audio synchronization interrupt enable register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "caie",
+                    description: Some(
+                        "Capture trigger interrupt enable\r This bit is set and cleared by software.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "coie",
+                    description: Some(
+                        "Comparer interrupt enable\r This field is set and cleared by software.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "caeie",
+                    description: Some(
+                        "Capture error interrupt enable\r This field is set and cleared by software.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Assr",
+            extends: None,
+            description: Some(
+                "RCC audio synchronization status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "caf",
+                    description: Some(
+                        "Capture trigger interrupt flag\r This field is set by hardware, only when CAIE is enabled. This bit is cleared by software by writing it to 0 or masked when CAIE is 0.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cof",
+                    description: Some(
+                        "Comparer interrupt flag\r This field is set by hardware, only when COIE is enabled. This bit is cleared by software by writing it to 0 or masked when COIE is 0.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "caef",
+                    description: Some(
+                        "Capture error interrupt flag\r This field is set by hardware, only when CAEIE is enabled. This bit is cleared by software by writing it to 0 or masked when CAEIE is 0.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
                         },
                     ),
                     bit_size: 1,
@@ -2817,6 +3636,22 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
+                    name: "usart3sel",
+                    description: Some(
+                        "USART3 kernel clock source selection\r This bits are used to select the USART3 kernel clock source.\r Access can be secured by GTZC_TZSC USART2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The USART3 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Usartsel",
+                    ),
+                },
+                Field {
                     name: "i2c1sel",
                     description: Some(
                         "I2C1 kernel clock source selection\r These bits are used to select the I2C1 kernel clock source.\r Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI.",
@@ -2830,6 +3665,54 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: Some(
                         "I2c1sel",
+                    ),
+                },
+                Field {
+                    name: "i2c2sel",
+                    description: Some(
+                        "I2C2 kernel clock source selection\r These bits are used to select the I2C2 kernel clock source.\r Access can be secured by GTZC_TZSC I2C2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The I2C2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "I2c1sel",
+                    ),
+                },
+                Field {
+                    name: "i2c4sel",
+                    description: Some(
+                        "I2C4 kernel clock source selection\r These bits are used to select the I2C4 kernel clock source.\r Access can be secured by GTZC_TZSC I2C4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The I2C4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "I2c1sel",
+                    ),
+                },
+                Field {
+                    name: "spi2sel",
+                    description: Some(
+                        "SPI2 kernel clock source selection\r These bits are used to select the SPI2 kernel clock source.\r Access can be secured by GTZC_TZSC SPI2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.\r Note: The SPI2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Spi2sel",
                     ),
                 },
                 Field {
@@ -2907,6 +3790,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
+                    name: "sai1sel",
+                    description: Some(
+                        "SAI1 kernel clock source selection\r These bits allow to select the SAI1 kernel clock source.\r Access can be secured by GTZC_TZSC SAI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some(
+                        "Sai1sel",
+                    ),
+                },
+                Field {
                     name: "rngsel",
                     description: Some(
                         "RNGSEL kernel clock source selection\r These bits allow to select the RNG kernel clock source.\r Access can be secured by GTZC_TZSC RNGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
@@ -2920,6 +3819,38 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: Some(
                         "Rngsel",
+                    ),
+                },
+                Field {
+                    name: "otghssel",
+                    description: Some(
+                        "USB OTG_HS PHY kernel clock source selection.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Otghssel",
+                    ),
+                },
+                Field {
+                    name: "assel",
+                    description: Some(
+                        "RCC audio synchronization kernel clock source selection\r This bit allows to select the audio synchronization kernel clock source.\r Access can be secured by GTZC_TZSC SAI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Assel",
                     ),
                 },
             ],
@@ -4309,6 +5240,27 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Assel",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "PLL1_P",
+                    description: Some(
+                        "pll1pclk selected.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLL1_Q",
+                    description: Some(
+                        "pll1qclk selected.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Hdiv5",
             description: None,
             bit_size: 1,
@@ -4827,6 +5779,41 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Otghssel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "HSE",
+                    description: Some(
+                        "HSE32 selected.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLL1_P",
+                    description: Some(
+                        "pll1pclk selected,.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSE_DIV_2",
+                    description: Some(
+                        "HSE32 divided by 2 selected.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "PLL1_P_DIV_2",
+                    description: Some(
+                        "pll1pclk divided by 2 selected.",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
             name: "Pllrclkpre",
             description: None,
             bit_size: 1,
@@ -5058,6 +6045,48 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Sai1sel",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "PLL1_P",
+                    description: Some(
+                        "pll1pclk selected.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLL1_Q",
+                    description: Some(
+                        "pll1qclk selected.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some(
+                        "SYSCLK selected.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "AUDIOCLK",
+                    description: Some(
+                        "input pin AUDIOCLK selected.",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "HSI16 clock selected.",
+                    ),
+                    value: 4,
+                },
+            ],
+        },
+        Enum {
             name: "Spi1sel",
             description: None,
             bit_size: 2,
@@ -5086,6 +6115,34 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Spi2sel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some(
+                        "pclk1 selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some(
+                        "SYSCLK selected",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "HSI selected",
+                    ),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
             name: "Spi3sel",
             description: None,
             bit_size: 2,
@@ -5093,7 +6150,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "PCLK7",
                     description: Some(
-                        "pclk2 selected",
+                        "pclk7 selected",
                     ),
                     value: 0,
                 },

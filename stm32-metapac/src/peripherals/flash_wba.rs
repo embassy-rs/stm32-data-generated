@@ -39,10 +39,15 @@ impl Flash {
     pub const fn optkeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
-    #[doc = "power-down key register"]
+    #[doc = "Flash Bank 1 power-down key register"]
     #[inline(always)]
-    pub const fn pdkeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
+    pub const fn pdkey1r(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+    }
+    #[doc = "Flash Bank 2 power-down key register"]
+    #[inline(always)]
+    pub const fn pdkey2r(self) -> crate::common::Reg<u32, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
@@ -114,15 +119,35 @@ impl Flash {
     pub const fn secwmr2(self) -> crate::common::Reg<regs::Secwmr2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
-    #[doc = "WRP area A address register"]
+    #[doc = "Flash WRP bank 1 area A address register"]
     #[inline(always)]
-    pub const fn wrpar(self) -> crate::common::Reg<regs::Wrpar, crate::common::RW> {
+    pub const fn wrp1ar(self) -> crate::common::Reg<regs::Wrp1ar, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
     }
-    #[doc = "WRP area B address register"]
+    #[doc = "Flash WRP bank 1 area B address register"]
     #[inline(always)]
-    pub const fn wrpbr(self) -> crate::common::Reg<regs::Wrpbr, crate::common::RW> {
+    pub const fn wrp1br(self) -> crate::common::Reg<regs::Wrp1br, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
+    }
+    #[doc = "Flash bank 2 secure watermark register 1"]
+    #[inline(always)]
+    pub const fn secwm2r1(self) -> crate::common::Reg<regs::Secwm2r1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
+    }
+    #[doc = "Flash bank 2 secure watermark register 2"]
+    #[inline(always)]
+    pub const fn secwm2r2(self) -> crate::common::Reg<regs::Secwm2r2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
+    }
+    #[doc = "Flash WRP bank 2 area A address register"]
+    #[inline(always)]
+    pub const fn wrp2ar(self) -> crate::common::Reg<regs::Wrp2ar, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
+    }
+    #[doc = "Flash WRP bank 2 area B address register"]
+    #[inline(always)]
+    pub const fn wrp2br(self) -> crate::common::Reg<regs::Wrp2br, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x6cusize) as _) }
     }
     #[doc = "OEM1 key register 1"]
     #[inline(always)]
@@ -144,11 +169,17 @@ impl Flash {
     pub const fn oem2keyr2(self) -> crate::common::Reg<u32, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x7cusize) as _) }
     }
-    #[doc = "secure block based register 1"]
+    #[doc = "Flash bank 1 secure block based register 1"]
     #[inline(always)]
-    pub const fn secbbr(self, n: usize) -> crate::common::Reg<regs::Bbr, crate::common::RW> {
+    pub const fn secbb1r(self, n: usize) -> crate::common::Reg<regs::Bbr, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize + n * 4usize) as _) }
+    }
+    #[doc = "Flash bank 2 secure block based register 1"]
+    #[inline(always)]
+    pub const fn secbb2r(self, n: usize) -> crate::common::Reg<regs::Bbr, crate::common::RW> {
+        assert!(n < 4usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize + n * 4usize) as _) }
     }
     #[doc = "secure HDP control register"]
     #[inline(always)]
@@ -157,14 +188,20 @@ impl Flash {
     }
     #[doc = "privilege configuration register"]
     #[inline(always)]
-    pub const fn prifcfgr(self) -> crate::common::Reg<regs::Prifcfgr, crate::common::RW> {
+    pub const fn privcfgr(self) -> crate::common::Reg<regs::Privcfgr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc4usize) as _) }
     }
-    #[doc = "privilege block based register 1"]
+    #[doc = "Flash bank 1 privilege block based register 1"]
     #[inline(always)]
-    pub const fn privbbr(self, n: usize) -> crate::common::Reg<regs::Bbr, crate::common::RW> {
+    pub const fn privbb1r(self, n: usize) -> crate::common::Reg<regs::Bbr, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd0usize + n * 4usize) as _) }
+    }
+    #[doc = "Flash bank 2 privilege block based register 1"]
+    #[inline(always)]
+    pub const fn privbb2r(self, n: usize) -> crate::common::Reg<regs::Bbr, crate::common::RW> {
+        assert!(n < 4usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize + n * 4usize) as _) }
     }
 }
 pub mod regs {
@@ -206,13 +243,13 @@ pub mod regs {
         pub fn set_lpm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
-        #[doc = "power-down mode request This bit requests to enter power-down mode. When enters power-down mode, this bit is cleared by hardware and the PDKEYR is locked. This bit is write-protected with PDKEYR. Access to the bit can be secured by PWR LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[doc = "power-down mode request This bit requests to enter power-down mode. When enters power-down mode, this bit is cleared by hardware and the PDKEY2R is locked. This bit is write-protected with PDKEY2R. Access to the bit can be secured by PWR LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[inline(always)]
         pub const fn pdreq(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
             val != 0
         }
-        #[doc = "power-down mode request This bit requests to enter power-down mode. When enters power-down mode, this bit is cleared by hardware and the PDKEYR is locked. This bit is write-protected with PDKEYR. Access to the bit can be secured by PWR LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[doc = "power-down mode request This bit requests to enter power-down mode. When enters power-down mode, this bit is cleared by hardware and the PDKEY2R is locked. This bit is write-protected with PDKEY2R. Access to the bit can be secured by PWR LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[inline(always)]
         pub fn set_pdreq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
@@ -1154,8 +1191,8 @@ pub mod regs {
     #[doc = "privilege configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Prifcfgr(pub u32);
-    impl Prifcfgr {
+    pub struct Privcfgr(pub u32);
+    impl Privcfgr {
         #[doc = "Privileged protection for secure registers This bit is secure write protected. It can only be written by a secure privileged access when TrustZone is enabled (TZEN�=�1)."]
         #[inline(always)]
         pub const fn spriv(&self) -> bool {
@@ -1179,26 +1216,26 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
-    impl Default for Prifcfgr {
+    impl Default for Privcfgr {
         #[inline(always)]
-        fn default() -> Prifcfgr {
-            Prifcfgr(0)
+        fn default() -> Privcfgr {
+            Privcfgr(0)
         }
     }
-    impl core::fmt::Debug for Prifcfgr {
+    impl core::fmt::Debug for Privcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Prifcfgr")
+            f.debug_struct("Privcfgr")
                 .field("spriv", &self.spriv())
                 .field("nspriv", &self.nspriv())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Prifcfgr {
+    impl defmt::Format for Privcfgr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Prifcfgr {{ spriv: {=bool:?}, nspriv: {=bool:?} }}",
+                "Privcfgr {{ spriv: {=bool:?}, nspriv: {=bool:?} }}",
                 self.spriv(),
                 self.nspriv()
             )
@@ -1627,6 +1664,112 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             defmt :: write ! (f , "Secsr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?} }}" , self . eop () , self . operr () , self . progerr () , self . wrperr () , self . pgaerr () , self . sizerr () , self . pgserr () , self . bsy () , self . wdw ())
         }
     }
+    #[doc = "Flash bank 2 secure watermark register 1"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Secwm2r1(pub u32);
+    impl Secwm2r1 {
+        #[doc = "WRP area B start page This field contains the first page of the secure area in bank 2."]
+        #[inline(always)]
+        pub const fn secwm2_pstrt(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "WRP area B start page This field contains the first page of the secure area in bank 2."]
+        #[inline(always)]
+        pub fn set_secwm2_pstrt(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "End page of secure area This field contains the last page of the secure area in bank 2."]
+        #[inline(always)]
+        pub const fn secwm2_pend(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "End page of secure area This field contains the last page of the secure area in bank 2."]
+        #[inline(always)]
+        pub fn set_secwm2_pend(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
+        }
+    }
+    impl Default for Secwm2r1 {
+        #[inline(always)]
+        fn default() -> Secwm2r1 {
+            Secwm2r1(0)
+        }
+    }
+    impl core::fmt::Debug for Secwm2r1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Secwm2r1")
+                .field("secwm2_pstrt", &self.secwm2_pstrt())
+                .field("secwm2_pend", &self.secwm2_pend())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Secwm2r1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Secwm2r1 {{ secwm2_pstrt: {=u8:?}, secwm2_pend: {=u8:?} }}",
+                self.secwm2_pstrt(),
+                self.secwm2_pend()
+            )
+        }
+    }
+    #[doc = "Flash bank 2 secure watermark register 2"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Secwm2r2(pub u32);
+    impl Secwm2r2 {
+        #[doc = "Bank 2 end page of secure hide protection area This field contains the last page of the secure HDP area in bank 2."]
+        #[inline(always)]
+        pub const fn hdp2_pend(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "Bank 2 end page of secure hide protection area This field contains the last page of the secure HDP area in bank 2."]
+        #[inline(always)]
+        pub fn set_hdp2_pend(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
+        }
+        #[doc = "Bank 2 secure Hide protection area enable"]
+        #[inline(always)]
+        pub const fn hdp2en(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Bank 2 secure Hide protection area enable"]
+        #[inline(always)]
+        pub fn set_hdp2en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Secwm2r2 {
+        #[inline(always)]
+        fn default() -> Secwm2r2 {
+            Secwm2r2(0)
+        }
+    }
+    impl core::fmt::Debug for Secwm2r2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Secwm2r2")
+                .field("hdp2_pend", &self.hdp2_pend())
+                .field("hdp2en", &self.hdp2en())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Secwm2r2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Secwm2r2 {{ hdp2_pend: {=u8:?}, hdp2en: {=bool:?} }}",
+                self.hdp2_pend(),
+                self.hdp2en()
+            )
+        }
+    }
     #[doc = "secure watermark register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1733,31 +1876,31 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             )
         }
     }
-    #[doc = "WRP area A address register"]
+    #[doc = "WRP bank 1 area A address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Wrpar(pub u32);
-    impl Wrpar {
+    pub struct Wrp1ar(pub u32);
+    impl Wrp1ar {
         #[doc = "WPR area A start page This field contains the first page of the WPR area A. Note that bit 6 is reserved on STM32WBAxEx devices."]
         #[inline(always)]
-        pub const fn wrpa_pstrt(&self) -> u8 {
+        pub const fn wrp1a_pstrt(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
             val as u8
         }
         #[doc = "WPR area A start page This field contains the first page of the WPR area A. Note that bit 6 is reserved on STM32WBAxEx devices."]
         #[inline(always)]
-        pub fn set_wrpa_pstrt(&mut self, val: u8) {
+        pub fn set_wrp1a_pstrt(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "WPR area A end page This field contains the last page of the WPR area A. Note that bit 22 is reserved on STM32WBAxEx devices."]
         #[inline(always)]
-        pub const fn wrpa_pend(&self) -> u8 {
+        pub const fn wrp1a_pend(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x7f;
             val as u8
         }
         #[doc = "WPR area A end page This field contains the last page of the WPR area A. Note that bit 22 is reserved on STM32WBAxEx devices."]
         #[inline(always)]
-        pub fn set_wrpa_pend(&mut self, val: u8) {
+        pub fn set_wrp1a_pend(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
         }
         #[doc = "WPR area A unlock"]
@@ -1772,58 +1915,58 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
-    impl Default for Wrpar {
+    impl Default for Wrp1ar {
         #[inline(always)]
-        fn default() -> Wrpar {
-            Wrpar(0)
+        fn default() -> Wrp1ar {
+            Wrp1ar(0)
         }
     }
-    impl core::fmt::Debug for Wrpar {
+    impl core::fmt::Debug for Wrp1ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Wrpar")
-                .field("wrpa_pstrt", &self.wrpa_pstrt())
-                .field("wrpa_pend", &self.wrpa_pend())
+            f.debug_struct("Wrp1ar")
+                .field("wrp1a_pstrt", &self.wrp1a_pstrt())
+                .field("wrp1a_pend", &self.wrp1a_pend())
                 .field("unlock", &self.unlock())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Wrpar {
+    impl defmt::Format for Wrp1ar {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Wrpar {{ wrpa_pstrt: {=u8:?}, wrpa_pend: {=u8:?}, unlock: {=bool:?} }}",
-                self.wrpa_pstrt(),
-                self.wrpa_pend(),
+                "Wrp1ar {{ wrp1a_pstrt: {=u8:?}, wrp1a_pend: {=u8:?}, unlock: {=bool:?} }}",
+                self.wrp1a_pstrt(),
+                self.wrp1a_pend(),
                 self.unlock()
             )
         }
     }
-    #[doc = "WRP area B address register"]
+    #[doc = "WRP bank 1 area B address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Wrpbr(pub u32);
-    impl Wrpbr {
+    pub struct Wrp1br(pub u32);
+    impl Wrp1br {
         #[doc = "WRP area B start page This field contains the first page of the WRP area B. Note that bit 6 is reserved on STM32WBAxEx devices."]
         #[inline(always)]
-        pub const fn wrpb_pstrt(&self) -> u8 {
+        pub const fn wrp1b_pstrt(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
             val as u8
         }
         #[doc = "WRP area B start page This field contains the first page of the WRP area B. Note that bit 6 is reserved on STM32WBAxEx devices."]
         #[inline(always)]
-        pub fn set_wrpb_pstrt(&mut self, val: u8) {
+        pub fn set_wrp1b_pstrt(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "WRP area B end page This field contains the last page of the WRP area B. Note that bit 22 is reserved on STM32WBAxEx devices."]
         #[inline(always)]
-        pub const fn wrpb_pend(&self) -> u8 {
+        pub const fn wrp1b_pend(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x7f;
             val as u8
         }
         #[doc = "WRP area B end page This field contains the last page of the WRP area B. Note that bit 22 is reserved on STM32WBAxEx devices."]
         #[inline(always)]
-        pub fn set_wrpb_pend(&mut self, val: u8) {
+        pub fn set_wrp1b_pend(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
         }
         #[doc = "WPR area B unlock"]
@@ -1838,29 +1981,161 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
-    impl Default for Wrpbr {
+    impl Default for Wrp1br {
         #[inline(always)]
-        fn default() -> Wrpbr {
-            Wrpbr(0)
+        fn default() -> Wrp1br {
+            Wrp1br(0)
         }
     }
-    impl core::fmt::Debug for Wrpbr {
+    impl core::fmt::Debug for Wrp1br {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Wrpbr")
-                .field("wrpb_pstrt", &self.wrpb_pstrt())
-                .field("wrpb_pend", &self.wrpb_pend())
+            f.debug_struct("Wrp1br")
+                .field("wrp1b_pstrt", &self.wrp1b_pstrt())
+                .field("wrp1b_pend", &self.wrp1b_pend())
                 .field("unlock", &self.unlock())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Wrpbr {
+    impl defmt::Format for Wrp1br {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Wrpbr {{ wrpb_pstrt: {=u8:?}, wrpb_pend: {=u8:?}, unlock: {=bool:?} }}",
-                self.wrpb_pstrt(),
-                self.wrpb_pend(),
+                "Wrp1br {{ wrp1b_pstrt: {=u8:?}, wrp1b_pend: {=u8:?}, unlock: {=bool:?} }}",
+                self.wrp1b_pstrt(),
+                self.wrp1b_pend(),
+                self.unlock()
+            )
+        }
+    }
+    #[doc = "WRP bank 2 area A address register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Wrp2ar(pub u32);
+    impl Wrp2ar {
+        #[doc = "WRP bank 2 area A start page This field contains the first page of the WRP bank 2 area A."]
+        #[inline(always)]
+        pub const fn wrp2a_pstrt(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "WRP bank 2 area A start page This field contains the first page of the WRP bank 2 area A."]
+        #[inline(always)]
+        pub fn set_wrp2a_pstrt(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "WRP bank 2 area A end page This field contains the last page of the WRP bank 2 area A."]
+        #[inline(always)]
+        pub const fn wrp2a_pend(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "WRP bank 2 area A end page This field contains the last page of the WRP bank 2 area A."]
+        #[inline(always)]
+        pub fn set_wrp2a_pend(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
+        }
+        #[doc = "WPR bank 2 area A unlock"]
+        #[inline(always)]
+        pub const fn unlock(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "WPR bank 2 area A unlock"]
+        #[inline(always)]
+        pub fn set_unlock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Wrp2ar {
+        #[inline(always)]
+        fn default() -> Wrp2ar {
+            Wrp2ar(0)
+        }
+    }
+    impl core::fmt::Debug for Wrp2ar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wrp2ar")
+                .field("wrp2a_pstrt", &self.wrp2a_pstrt())
+                .field("wrp2a_pend", &self.wrp2a_pend())
+                .field("unlock", &self.unlock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wrp2ar {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Wrp2ar {{ wrp2a_pstrt: {=u8:?}, wrp2a_pend: {=u8:?}, unlock: {=bool:?} }}",
+                self.wrp2a_pstrt(),
+                self.wrp2a_pend(),
+                self.unlock()
+            )
+        }
+    }
+    #[doc = "WRP bank 2 area B address register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Wrp2br(pub u32);
+    impl Wrp2br {
+        #[doc = "WRP bank 2 area B start page This field contains the first page of the WRP bank 2 area B."]
+        #[inline(always)]
+        pub const fn wrp2b_pstrt(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "WRP bank 2 area B start page This field contains the first page of the WRP bank 2 area B."]
+        #[inline(always)]
+        pub fn set_wrp2b_pstrt(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "WRP bank 2 area B end page This field contains the last page of the WRP bank 2 area B."]
+        #[inline(always)]
+        pub const fn wrp2b_pend(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "WRP bank 2 area B end page This field contains the last page of the WRP bank 2 area B."]
+        #[inline(always)]
+        pub fn set_wrp2b_pend(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
+        }
+        #[doc = "WPR bank 2 area B unlock"]
+        #[inline(always)]
+        pub const fn unlock(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "WPR bank 2 area B unlock"]
+        #[inline(always)]
+        pub fn set_unlock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Wrp2br {
+        #[inline(always)]
+        fn default() -> Wrp2br {
+            Wrp2br(0)
+        }
+    }
+    impl core::fmt::Debug for Wrp2br {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Wrp2br")
+                .field("wrp2b_pstrt", &self.wrp2b_pstrt())
+                .field("wrp2b_pend", &self.wrp2b_pend())
+                .field("unlock", &self.unlock())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Wrp2br {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Wrp2br {{ wrp2b_pstrt: {=u8:?}, wrp2b_pend: {=u8:?}, unlock: {=bool:?} }}",
+                self.wrp2b_pstrt(),
+                self.wrp2b_pend(),
                 self.unlock()
             )
         }

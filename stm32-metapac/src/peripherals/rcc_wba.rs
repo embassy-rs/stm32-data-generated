@@ -229,6 +229,41 @@ impl Rcc {
     pub const fn privcfgr(self) -> crate::common::Reg<regs::Privcfgr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0114usize) as _) }
     }
+    #[doc = "RCC audio synchronization control register"]
+    #[inline(always)]
+    pub const fn ascr(self) -> crate::common::Reg<regs::Ascr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c0usize) as _) }
+    }
+    #[doc = "RCC audio synchronization interrupt enable register"]
+    #[inline(always)]
+    pub const fn asier(self) -> crate::common::Reg<regs::Asier, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c4usize) as _) }
+    }
+    #[doc = "RCC audio synchronization status register"]
+    #[inline(always)]
+    pub const fn assr(self) -> crate::common::Reg<regs::Assr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c8usize) as _) }
+    }
+    #[doc = "RCC audio synchronization counter register"]
+    #[inline(always)]
+    pub const fn ascntr(self) -> crate::common::Reg<regs::Ascntr, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01ccusize) as _) }
+    }
+    #[doc = "RCC audio synchronization auto-reload register"]
+    #[inline(always)]
+    pub const fn asarr(self) -> crate::common::Reg<regs::Asarr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d0usize) as _) }
+    }
+    #[doc = "RCC audio synchronization capture register"]
+    #[inline(always)]
+    pub const fn ascar(self) -> crate::common::Reg<regs::Ascar, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d4usize) as _) }
+    }
+    #[doc = "RCC audio synchronization compare register"]
+    #[inline(always)]
+    pub const fn ascor(self) -> crate::common::Reg<regs::Ascor, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01d8usize) as _) }
+    }
     #[doc = "RCC clock configuration register 2"]
     #[inline(always)]
     pub const fn cfgr4(self) -> crate::common::Reg<regs::Cfgr4, crate::common::RW> {
@@ -578,6 +613,39 @@ pub mod regs {
         pub fn set_gpiocen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
+        #[doc = "IO port D bus clock enable Set and cleared by software. Access can be secured by GPIOD SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn gpioden(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "IO port D bus clock enable Set and cleared by software. Access can be secured by GPIOD SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_gpioden(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "IO port E bus clock enable Set and cleared by software. Access can be secured by GPIOE SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn gpioeen(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "IO port E bus clock enable Set and cleared by software. Access can be secured by GPIOE SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_gpioeen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "IO port G bus clock enable Set and cleared by software. Access can be secured by GPIOG SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn gpiogen(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "IO port G bus clock enable Set and cleared by software. Access can be secured by GPIOG SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_gpiogen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
         #[doc = "IO port H bus clock enable Set and cleared by software. Access can be secured by GPIOH SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
         pub const fn gpiohen(&self) -> bool {
@@ -588,6 +656,28 @@ pub mod regs {
         #[inline(always)]
         pub fn set_gpiohen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "USB OTG_HS bus and kernel clock enable Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn otgen(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "USB OTG_HS bus and kernel clock enable Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_otgen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
+        #[doc = "USB OTG_HS PHY kernel clock enable Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn otghsphyen(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "USB OTG_HS PHY kernel clock enable Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_otghsphyen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "AES bus clock enable Set and cleared by software. Access can be secured by GTZC_TZSC AESSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
@@ -679,7 +769,12 @@ pub mod regs {
                 .field("gpioaen", &self.gpioaen())
                 .field("gpioben", &self.gpioben())
                 .field("gpiocen", &self.gpiocen())
+                .field("gpioden", &self.gpioden())
+                .field("gpioeen", &self.gpioeen())
+                .field("gpiogen", &self.gpiogen())
                 .field("gpiohen", &self.gpiohen())
+                .field("otgen", &self.otgen())
+                .field("otghsphyen", &self.otghsphyen())
                 .field("aesen", &self.aesen())
                 .field("hashen", &self.hashen())
                 .field("rngen", &self.rngen())
@@ -693,7 +788,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb2enr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb2enr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpiohen: {=bool:?}, aesen: {=bool:?}, hashen: {=bool:?}, rngen: {=bool:?}, saesen: {=bool:?}, hsemen: {=bool:?}, pkaen: {=bool:?}, sram2en: {=bool:?} }}" , self . gpioaen () , self . gpioben () , self . gpiocen () , self . gpiohen () , self . aesen () , self . hashen () , self . rngen () , self . saesen () , self . hsemen () , self . pkaen () , self . sram2en ())
+            defmt :: write ! (f , "Ahb2enr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, otgen: {=bool:?}, otghsphyen: {=bool:?}, aesen: {=bool:?}, hashen: {=bool:?}, rngen: {=bool:?}, saesen: {=bool:?}, hsemen: {=bool:?}, pkaen: {=bool:?}, sram2en: {=bool:?} }}" , self . gpioaen () , self . gpioben () , self . gpiocen () , self . gpioden () , self . gpioeen () , self . gpiogen () , self . gpiohen () , self . otgen () , self . otghsphyen () , self . aesen () , self . hashen () , self . rngen () , self . saesen () , self . hsemen () , self . pkaen () , self . sram2en ())
         }
     }
     #[doc = "RCC AHB2 peripheral reset register"]
@@ -734,6 +829,39 @@ pub mod regs {
         pub fn set_gpiocrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
+        #[doc = "IO port D reset Set and cleared by software. Access can be secured by GPIOD SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn gpiodrst(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "IO port D reset Set and cleared by software. Access can be secured by GPIOD SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_gpiodrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "IO port E reset Set and cleared by software. Access can be secured by GPIOE SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn gpioerst(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "IO port E reset Set and cleared by software. Access can be secured by GPIOE SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_gpioerst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "IO port G reset Set and cleared by software. Access can be secured by GPIOG SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn gpiogrst(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "IO port G reset Set and cleared by software. Access can be secured by GPIOG SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_gpiogrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
         #[doc = "IO port H reset Set and cleared by software. Access can be secured by GPIOH SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
         pub const fn gpiohrst(&self) -> bool {
@@ -744,6 +872,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_gpiohrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "USB OTG_HS reset Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn otgrst(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "USB OTG_HS reset Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_otgrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "AES hardware accelerator reset Set and cleared by software. Access can be secured by GTZC_TZSC AESSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
@@ -824,7 +963,11 @@ pub mod regs {
                 .field("gpioarst", &self.gpioarst())
                 .field("gpiobrst", &self.gpiobrst())
                 .field("gpiocrst", &self.gpiocrst())
+                .field("gpiodrst", &self.gpiodrst())
+                .field("gpioerst", &self.gpioerst())
+                .field("gpiogrst", &self.gpiogrst())
                 .field("gpiohrst", &self.gpiohrst())
+                .field("otgrst", &self.otgrst())
                 .field("aesrst", &self.aesrst())
                 .field("hashrst", &self.hashrst())
                 .field("rngrst", &self.rngrst())
@@ -837,7 +980,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb2rstr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb2rstr {{ gpioarst: {=bool:?}, gpiobrst: {=bool:?}, gpiocrst: {=bool:?}, gpiohrst: {=bool:?}, aesrst: {=bool:?}, hashrst: {=bool:?}, rngrst: {=bool:?}, saesrst: {=bool:?}, hsemrst: {=bool:?}, pkarst: {=bool:?} }}" , self . gpioarst () , self . gpiobrst () , self . gpiocrst () , self . gpiohrst () , self . aesrst () , self . hashrst () , self . rngrst () , self . saesrst () , self . hsemrst () , self . pkarst ())
+            defmt :: write ! (f , "Ahb2rstr {{ gpioarst: {=bool:?}, gpiobrst: {=bool:?}, gpiocrst: {=bool:?}, gpiodrst: {=bool:?}, gpioerst: {=bool:?}, gpiogrst: {=bool:?}, gpiohrst: {=bool:?}, otgrst: {=bool:?}, aesrst: {=bool:?}, hashrst: {=bool:?}, rngrst: {=bool:?}, saesrst: {=bool:?}, hsemrst: {=bool:?}, pkarst: {=bool:?} }}" , self . gpioarst () , self . gpiobrst () , self . gpiocrst () , self . gpiodrst () , self . gpioerst () , self . gpiogrst () , self . gpiohrst () , self . otgrst () , self . aesrst () , self . hashrst () , self . rngrst () , self . saesrst () , self . hsemrst () , self . pkarst ())
         }
     }
     #[doc = "RCC AHB2 peripheral clocks enable in Sleep and Stop modes register"]
@@ -878,6 +1021,39 @@ pub mod regs {
         pub fn set_gpiocsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
+        #[doc = "IO port D bus clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GPIOD SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn gpiodsmen(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "IO port D bus clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GPIOD SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_gpiodsmen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "IO port E bus clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GPIOE SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn gpioesmen(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "IO port E bus clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GPIOE SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_gpioesmen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "IO port G bus clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GPIOG SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn gpiogsmen(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "IO port G bus clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GPIOG SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_gpiogsmen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
         #[doc = "IO port H bus clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GPIOH SECx. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
         pub const fn gpiohsmen(&self) -> bool {
@@ -888,6 +1064,28 @@ pub mod regs {
         #[inline(always)]
         pub fn set_gpiohsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "USB OTG_HS bus and kernel clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn otgsmen(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "USB OTG_HS bus and kernel clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_otgsmen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
+        #[doc = "USB OTG_HS PHY kernel clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn otghsphysmen(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "USB OTG_HS PHY kernel clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_otghsphysmen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "AES bus clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC AESSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
@@ -968,7 +1166,12 @@ pub mod regs {
                 .field("gpioasmen", &self.gpioasmen())
                 .field("gpiobsmen", &self.gpiobsmen())
                 .field("gpiocsmen", &self.gpiocsmen())
+                .field("gpiodsmen", &self.gpiodsmen())
+                .field("gpioesmen", &self.gpioesmen())
+                .field("gpiogsmen", &self.gpiogsmen())
                 .field("gpiohsmen", &self.gpiohsmen())
+                .field("otgsmen", &self.otgsmen())
+                .field("otghsphysmen", &self.otghsphysmen())
                 .field("aessmen", &self.aessmen())
                 .field("hashsmen", &self.hashsmen())
                 .field("rngsmen", &self.rngsmen())
@@ -981,7 +1184,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb2smenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb2smenr {{ gpioasmen: {=bool:?}, gpiobsmen: {=bool:?}, gpiocsmen: {=bool:?}, gpiohsmen: {=bool:?}, aessmen: {=bool:?}, hashsmen: {=bool:?}, rngsmen: {=bool:?}, saessmen: {=bool:?}, pkasmen: {=bool:?}, sram2smen: {=bool:?} }}" , self . gpioasmen () , self . gpiobsmen () , self . gpiocsmen () , self . gpiohsmen () , self . aessmen () , self . hashsmen () , self . rngsmen () , self . saessmen () , self . pkasmen () , self . sram2smen ())
+            defmt :: write ! (f , "Ahb2smenr {{ gpioasmen: {=bool:?}, gpiobsmen: {=bool:?}, gpiocsmen: {=bool:?}, gpiodsmen: {=bool:?}, gpioesmen: {=bool:?}, gpiogsmen: {=bool:?}, gpiohsmen: {=bool:?}, otgsmen: {=bool:?}, otghsphysmen: {=bool:?}, aessmen: {=bool:?}, hashsmen: {=bool:?}, rngsmen: {=bool:?}, saessmen: {=bool:?}, pkasmen: {=bool:?}, sram2smen: {=bool:?} }}" , self . gpioasmen () , self . gpiobsmen () , self . gpiocsmen () , self . gpiodsmen () , self . gpioesmen () , self . gpiogsmen () , self . gpiohsmen () , self . otgsmen () , self . otghsphysmen () , self . aessmen () , self . hashsmen () , self . rngsmen () , self . saessmen () , self . pkasmen () , self . sram2smen ())
         }
     }
     #[doc = "RCC AHB4 peripheral clock enable register"]
@@ -1255,6 +1458,17 @@ pub mod regs {
         pub fn set_tim3en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[doc = "TIM4 bus and kernel clocks enable Set and cleared by software. Access can be secured by GTZC_TZSC TIM4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn tim4en(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "TIM4 bus and kernel clocks enable Set and cleared by software. Access can be secured by GTZC_TZSC TIM4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_tim4en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
         #[doc = "WWDG bus clock enable Set by software to enable the window watchdog bus clock. Reset by hardware system reset. This bit can also be set by hardware if the WWDG_SW option bit is reset. Access can be secured by GTZC_TZSC WWDGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
         pub const fn wwdgen(&self) -> bool {
@@ -1265,6 +1479,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_wwdgen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "SPI2 bus and kernel clocks enable Set and cleared by software. Access can be secured by GTZC_TZSC SPI2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn spi2en(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SPI2 bus and kernel clocks enable Set and cleared by software. Access can be secured by GTZC_TZSC SPI2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_spi2en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "USART2 bus and kernel clocks enable Set and cleared by software. Access can be secured by GTZC_TZSC USART2SEC When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.."]
         #[inline(always)]
@@ -1277,6 +1502,17 @@ pub mod regs {
         pub fn set_usart2en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
+        #[doc = "USART3 bus and kernel clocks enable Set and cleared by software. Access can be secured by GTZC_TZSC USART3SEC When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.."]
+        #[inline(always)]
+        pub const fn usart3en(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "USART3 bus and kernel clocks enable Set and cleared by software. Access can be secured by GTZC_TZSC USART3SEC When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.."]
+        #[inline(always)]
+        pub fn set_usart3en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
         #[doc = "I2C1 bus and kernel clocks enable Set and cleared by software. Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
         pub const fn i2c1en(&self) -> bool {
@@ -1287,6 +1523,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_i2c1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+        #[doc = "I2C2 bus and kernel clocks enable Set and cleared by software. Access can be secured by GTZC_TZSC I2C2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn i2c2en(&self) -> bool {
+            let val = (self.0 >> 22usize) & 0x01;
+            val != 0
+        }
+        #[doc = "I2C2 bus and kernel clocks enable Set and cleared by software. Access can be secured by GTZC_TZSC I2C2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_i2c2en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
     }
     impl Default for Apb1enr1 {
@@ -1300,16 +1547,20 @@ pub mod regs {
             f.debug_struct("Apb1enr1")
                 .field("tim2en", &self.tim2en())
                 .field("tim3en", &self.tim3en())
+                .field("tim4en", &self.tim4en())
                 .field("wwdgen", &self.wwdgen())
+                .field("spi2en", &self.spi2en())
                 .field("usart2en", &self.usart2en())
+                .field("usart3en", &self.usart3en())
                 .field("i2c1en", &self.i2c1en())
+                .field("i2c2en", &self.i2c2en())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1enr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1enr1 {{ tim2en: {=bool:?}, tim3en: {=bool:?}, wwdgen: {=bool:?}, usart2en: {=bool:?}, i2c1en: {=bool:?} }}" , self . tim2en () , self . tim3en () , self . wwdgen () , self . usart2en () , self . i2c1en ())
+            defmt :: write ! (f , "Apb1enr1 {{ tim2en: {=bool:?}, tim3en: {=bool:?}, tim4en: {=bool:?}, wwdgen: {=bool:?}, spi2en: {=bool:?}, usart2en: {=bool:?}, usart3en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?} }}" , self . tim2en () , self . tim3en () , self . tim4en () , self . wwdgen () , self . spi2en () , self . usart2en () , self . usart3en () , self . i2c1en () , self . i2c2en ())
         }
     }
     #[doc = "RCC APB1 peripheral clock enable register 2"]
@@ -1317,6 +1568,17 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Apb1enr2(pub u32);
     impl Apb1enr2 {
+        #[doc = "I2C4 bus and kernel clocks enable Set and cleared by software. Access can be secured by GTZC_TZSC I2C4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn i2c4en(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "I2C4 bus and kernel clocks enable Set and cleared by software. Access can be secured by GTZC_TZSC I2C4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_i2c4en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
         #[doc = "LPTIM2 bus and kernel clocks enable Set and cleared by software. Access can be secured by GTZC_TZSC LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
         pub const fn lptim2en(&self) -> bool {
@@ -1337,13 +1599,21 @@ pub mod regs {
     }
     impl core::fmt::Debug for Apb1enr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Apb1enr2").field("lptim2en", &self.lptim2en()).finish()
+            f.debug_struct("Apb1enr2")
+                .field("i2c4en", &self.i2c4en())
+                .field("lptim2en", &self.lptim2en())
+                .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1enr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Apb1enr2 {{ lptim2en: {=bool:?} }}", self.lptim2en())
+            defmt::write!(
+                f,
+                "Apb1enr2 {{ i2c4en: {=bool:?}, lptim2en: {=bool:?} }}",
+                self.i2c4en(),
+                self.lptim2en()
+            )
         }
     }
     #[doc = "RCC APB1 peripheral reset register 1"]
@@ -1373,6 +1643,28 @@ pub mod regs {
         pub fn set_tim3rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[doc = "TIM4 reset Set and cleared by software. Access can be secured by GTZC_TZSC TIM4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn tim4rst(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "TIM4 reset Set and cleared by software. Access can be secured by GTZC_TZSC TIM4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_tim4rst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "SPI2 reset Set and cleared by software. Access can be secured by GTZC_TZSC SPI2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn spi2rst(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SPI2 reset Set and cleared by software. Access can be secured by GTZC_TZSC SPI2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_spi2rst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
         #[doc = "USART2 reset Set and cleared by software. Access can be secured by GTZC_TZSC UART2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
         pub const fn usart2rst(&self) -> bool {
@@ -1384,6 +1676,17 @@ pub mod regs {
         pub fn set_usart2rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
+        #[doc = "USART3 reset Set and cleared by software. Access can be secured by GTZC_TZSC UART3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn usart3rst(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "USART3 reset Set and cleared by software. Access can be secured by GTZC_TZSC UART3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_usart3rst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
         #[doc = "I2C1 reset Set and cleared by software. Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
         pub const fn i2c1rst(&self) -> bool {
@@ -1394,6 +1697,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_i2c1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+        #[doc = "I2C2 reset Set and cleared by software. Access can be secured by GTZC_TZSC I2C2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn i2c2rst(&self) -> bool {
+            let val = (self.0 >> 22usize) & 0x01;
+            val != 0
+        }
+        #[doc = "I2C2 reset Set and cleared by software. Access can be secured by GTZC_TZSC I2C2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_i2c2rst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
     }
     impl Default for Apb1rstr1 {
@@ -1407,22 +1721,19 @@ pub mod regs {
             f.debug_struct("Apb1rstr1")
                 .field("tim2rst", &self.tim2rst())
                 .field("tim3rst", &self.tim3rst())
+                .field("tim4rst", &self.tim4rst())
+                .field("spi2rst", &self.spi2rst())
                 .field("usart2rst", &self.usart2rst())
+                .field("usart3rst", &self.usart3rst())
                 .field("i2c1rst", &self.i2c1rst())
+                .field("i2c2rst", &self.i2c2rst())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1rstr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Apb1rstr1 {{ tim2rst: {=bool:?}, tim3rst: {=bool:?}, usart2rst: {=bool:?}, i2c1rst: {=bool:?} }}",
-                self.tim2rst(),
-                self.tim3rst(),
-                self.usart2rst(),
-                self.i2c1rst()
-            )
+            defmt :: write ! (f , "Apb1rstr1 {{ tim2rst: {=bool:?}, tim3rst: {=bool:?}, tim4rst: {=bool:?}, spi2rst: {=bool:?}, usart2rst: {=bool:?}, usart3rst: {=bool:?}, i2c1rst: {=bool:?}, i2c2rst: {=bool:?} }}" , self . tim2rst () , self . tim3rst () , self . tim4rst () , self . spi2rst () , self . usart2rst () , self . usart3rst () , self . i2c1rst () , self . i2c2rst ())
         }
     }
     #[doc = "RCC APB1 peripheral reset register 2"]
@@ -1488,6 +1799,17 @@ pub mod regs {
         pub fn set_tim3smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[doc = "TIM4 bus and kernel clocks enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC TIM4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn tim4smen(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "TIM4 bus and kernel clocks enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC TIM4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_tim4smen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
         #[doc = "Window watchdog bus clock enable during Sleep and Stop modes Set and cleared by software. This bit is forced to 1 by hardware when the hardware WWDG option is activated. Access can be secured by GTZC_TZSC WWDGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
         pub const fn wwdgsmen(&self) -> bool {
@@ -1498,6 +1820,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_wwdgsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "SPI2 bus and kernel clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC SPI2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn spi2smen(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SPI2 bus and kernel clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC SPI2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_spi2smen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "USART2 bus and kernel clocks enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC USART2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: This bit must be set to allow the peripheral to wake up from Stop modes."]
         #[inline(always)]
@@ -1510,6 +1843,17 @@ pub mod regs {
         pub fn set_usart2smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
+        #[doc = "USART3 bus and kernel clocks enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC USART3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: This bit must be set to allow the peripheral to wake up from Stop modes."]
+        #[inline(always)]
+        pub const fn usart3smen(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "USART3 bus and kernel clocks enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC USART3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: This bit must be set to allow the peripheral to wake up from Stop modes."]
+        #[inline(always)]
+        pub fn set_usart3smen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
         #[doc = "I2C1 bus and kernel clocks enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: This bit must be set to allow the peripheral to wake up from Stop modes."]
         #[inline(always)]
         pub const fn i2c1smen(&self) -> bool {
@@ -1520,6 +1864,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_i2c1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+        #[doc = "I2C2 bus and kernel clocks enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC I2C2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: This bit must be set to allow the peripheral to wake up from Stop modes."]
+        #[inline(always)]
+        pub const fn i2c2smen(&self) -> bool {
+            let val = (self.0 >> 22usize) & 0x01;
+            val != 0
+        }
+        #[doc = "I2C2 bus and kernel clocks enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC I2C2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: This bit must be set to allow the peripheral to wake up from Stop modes."]
+        #[inline(always)]
+        pub fn set_i2c2smen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
     }
     impl Default for Apb1smenr1 {
@@ -1533,16 +1888,20 @@ pub mod regs {
             f.debug_struct("Apb1smenr1")
                 .field("tim2smen", &self.tim2smen())
                 .field("tim3smen", &self.tim3smen())
+                .field("tim4smen", &self.tim4smen())
                 .field("wwdgsmen", &self.wwdgsmen())
+                .field("spi2smen", &self.spi2smen())
                 .field("usart2smen", &self.usart2smen())
+                .field("usart3smen", &self.usart3smen())
                 .field("i2c1smen", &self.i2c1smen())
+                .field("i2c2smen", &self.i2c2smen())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1smenr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1smenr1 {{ tim2smen: {=bool:?}, tim3smen: {=bool:?}, wwdgsmen: {=bool:?}, usart2smen: {=bool:?}, i2c1smen: {=bool:?} }}" , self . tim2smen () , self . tim3smen () , self . wwdgsmen () , self . usart2smen () , self . i2c1smen ())
+            defmt :: write ! (f , "Apb1smenr1 {{ tim2smen: {=bool:?}, tim3smen: {=bool:?}, tim4smen: {=bool:?}, wwdgsmen: {=bool:?}, spi2smen: {=bool:?}, usart2smen: {=bool:?}, usart3smen: {=bool:?}, i2c1smen: {=bool:?}, i2c2smen: {=bool:?} }}" , self . tim2smen () , self . tim3smen () , self . tim4smen () , self . wwdgsmen () , self . spi2smen () , self . usart2smen () , self . usart3smen () , self . i2c1smen () , self . i2c2smen ())
         }
     }
     #[doc = "RCC APB1 peripheral clocks enable in Sleep and Stop modes register 2"]
@@ -1550,6 +1909,17 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Apb1smenr2(pub u32);
     impl Apb1smenr2 {
+        #[doc = "I2C4 bus and kernel clocks enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC I2C4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: This bit must be set to allow the peripheral to wake up from Stop modes."]
+        #[inline(always)]
+        pub const fn i2c4smen(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "I2C4 bus and kernel clocks enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC I2C4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: This bit must be set to allow the peripheral to wake up from Stop modes."]
+        #[inline(always)]
+        pub fn set_i2c4smen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
         #[doc = "LPTIM2 bus and kernel clocks enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: This bit must be set to allow the peripheral to wake up from Stop modes."]
         #[inline(always)]
         pub const fn lptim2smen(&self) -> bool {
@@ -1571,6 +1941,7 @@ pub mod regs {
     impl core::fmt::Debug for Apb1smenr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1smenr2")
+                .field("i2c4smen", &self.i2c4smen())
                 .field("lptim2smen", &self.lptim2smen())
                 .finish()
         }
@@ -1578,7 +1949,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1smenr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Apb1smenr2 {{ lptim2smen: {=bool:?} }}", self.lptim2smen())
+            defmt::write!(
+                f,
+                "Apb1smenr2 {{ i2c4smen: {=bool:?}, lptim2smen: {=bool:?} }}",
+                self.i2c4smen(),
+                self.lptim2smen()
+            )
         }
     }
     #[doc = "RCC APB2 peripheral clock enable register"]
@@ -1893,6 +2269,17 @@ pub mod regs {
         pub fn set_lptim1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
+        #[doc = "VREFBUF bus clock enable Set and cleared by software. Access can be secured by GTZC_TZSC VREFBUFSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn vrefen(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "VREFBUF bus clock enable Set and cleared by software. Access can be secured by GTZC_TZSC VREFBUFSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_vrefen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
         #[doc = "RTC and TAMP bus clock enable Set and cleared by software. Can only be accessed secure when one or more features in the RTC or TAMP is/are secure. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
         pub const fn rtcapben(&self) -> bool {
@@ -1919,6 +2306,7 @@ pub mod regs {
                 .field("lpuart1en", &self.lpuart1en())
                 .field("i2c3en", &self.i2c3en())
                 .field("lptim1en", &self.lptim1en())
+                .field("vrefen", &self.vrefen())
                 .field("rtcapben", &self.rtcapben())
                 .finish()
         }
@@ -1926,7 +2314,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb7enr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb7enr {{ syscfgen: {=bool:?}, spi3en: {=bool:?}, lpuart1en: {=bool:?}, i2c3en: {=bool:?}, lptim1en: {=bool:?}, rtcapben: {=bool:?} }}" , self . syscfgen () , self . spi3en () , self . lpuart1en () , self . i2c3en () , self . lptim1en () , self . rtcapben ())
+            defmt :: write ! (f , "Apb7enr {{ syscfgen: {=bool:?}, spi3en: {=bool:?}, lpuart1en: {=bool:?}, i2c3en: {=bool:?}, lptim1en: {=bool:?}, vrefen: {=bool:?}, rtcapben: {=bool:?} }}" , self . syscfgen () , self . spi3en () , self . lpuart1en () , self . i2c3en () , self . lptim1en () , self . vrefen () , self . rtcapben ())
         }
     }
     #[doc = "RCC APB7 peripheral reset register"]
@@ -1989,6 +2377,28 @@ pub mod regs {
         pub fn set_lptim1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
+        #[doc = "COMP reset Set and cleared by software. Access can be secured by GTZC_TZSC COMPSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn comprst(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "COMP reset Set and cleared by software. Access can be secured by GTZC_TZSC COMPSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_comprst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "VREF reset Set and cleared by software. Access can be secured by GTZC_TZSC VREFSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn vrefrst(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "VREF reset Set and cleared by software. Access can be secured by GTZC_TZSC VREFSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_vrefrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
     }
     impl Default for Apb7rstr {
         #[inline(always)]
@@ -2004,13 +2414,15 @@ pub mod regs {
                 .field("lpuart1rst", &self.lpuart1rst())
                 .field("i2c3rst", &self.i2c3rst())
                 .field("lptim1rst", &self.lptim1rst())
+                .field("comprst", &self.comprst())
+                .field("vrefrst", &self.vrefrst())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb7rstr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb7rstr {{ syscfgrst: {=bool:?}, spi3rst: {=bool:?}, lpuart1rst: {=bool:?}, i2c3rst: {=bool:?}, lptim1rst: {=bool:?} }}" , self . syscfgrst () , self . spi3rst () , self . lpuart1rst () , self . i2c3rst () , self . lptim1rst ())
+            defmt :: write ! (f , "Apb7rstr {{ syscfgrst: {=bool:?}, spi3rst: {=bool:?}, lpuart1rst: {=bool:?}, i2c3rst: {=bool:?}, lptim1rst: {=bool:?}, comprst: {=bool:?}, vrefrst: {=bool:?} }}" , self . syscfgrst () , self . spi3rst () , self . lpuart1rst () , self . i2c3rst () , self . lptim1rst () , self . comprst () , self . vrefrst ())
         }
     }
     #[doc = "RCC APB7 peripheral clock enable in Sleep and Stop modes register"]
@@ -2073,6 +2485,17 @@ pub mod regs {
         pub fn set_lptim1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
+        #[doc = "VREFBUF clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC VREFBUFSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: This bit must be set to allow the peripheral to wake up from Stop modes."]
+        #[inline(always)]
+        pub const fn vrefsmen(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "VREFBUF clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC VREFBUFSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: This bit must be set to allow the peripheral to wake up from Stop modes."]
+        #[inline(always)]
+        pub fn set_vrefsmen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
         #[doc = "RTC and TAMP APB clock enable during Sleep and Stop modes Set and cleared by software. Can only be accessed secure when one or more features in the RTC or TAMP is/are secure. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: This bit must be set to allow the peripheral to wake up from Stop modes."]
         #[inline(always)]
         pub const fn rtcapbsmen(&self) -> bool {
@@ -2099,6 +2522,7 @@ pub mod regs {
                 .field("lpuart1smen", &self.lpuart1smen())
                 .field("i2c3smen", &self.i2c3smen())
                 .field("lptim1smen", &self.lptim1smen())
+                .field("vrefsmen", &self.vrefsmen())
                 .field("rtcapbsmen", &self.rtcapbsmen())
                 .finish()
         }
@@ -2106,7 +2530,351 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb7smenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb7smenr {{ syscfgsmen: {=bool:?}, spi3smen: {=bool:?}, lpuart1smen: {=bool:?}, i2c3smen: {=bool:?}, lptim1smen: {=bool:?}, rtcapbsmen: {=bool:?} }}" , self . syscfgsmen () , self . spi3smen () , self . lpuart1smen () , self . i2c3smen () , self . lptim1smen () , self . rtcapbsmen ())
+            defmt :: write ! (f , "Apb7smenr {{ syscfgsmen: {=bool:?}, spi3smen: {=bool:?}, lpuart1smen: {=bool:?}, i2c3smen: {=bool:?}, lptim1smen: {=bool:?}, vrefsmen: {=bool:?}, rtcapbsmen: {=bool:?} }}" , self . syscfgsmen () , self . spi3smen () , self . lpuart1smen () , self . i2c3smen () , self . lptim1smen () , self . vrefsmen () , self . rtcapbsmen ())
+        }
+    }
+    #[doc = "RCC audio synchronization auto-reload register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Asarr(pub u32);
+    impl Asarr {
+        #[doc = "Auto-reload value This field is set by software. CA\\[19:0\\]
+is the counter auto-reload value at which to restart the audio synchronization counter from value 0. It defines the counter period."]
+        #[inline(always)]
+        pub const fn ar(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0x000f_ffff;
+            val as u32
+        }
+        #[doc = "Auto-reload value This field is set by software. CA\\[19:0\\]
+is the counter auto-reload value at which to restart the audio synchronization counter from value 0. It defines the counter period."]
+        #[inline(always)]
+        pub fn set_ar(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x000f_ffff << 0usize)) | (((val as u32) & 0x000f_ffff) << 0usize);
+        }
+    }
+    impl Default for Asarr {
+        #[inline(always)]
+        fn default() -> Asarr {
+            Asarr(0)
+        }
+    }
+    impl core::fmt::Debug for Asarr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Asarr").field("ar", &self.ar()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Asarr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Asarr {{ ar: {=u32:?} }}", self.ar())
+        }
+    }
+    #[doc = "RCC audio synchronization capture register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ascar(pub u32);
+    impl Ascar {
+        #[doc = "Capture value This field is set by hardware. CA\\[26:20\\]
+is the capture period counter value loaded on the trigger event. CA\\[19:0\\]
+is the audio synchronization counter value loaded on the trigger event."]
+        #[inline(always)]
+        pub const fn ca(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0x07ff_ffff;
+            val as u32
+        }
+        #[doc = "Capture value This field is set by hardware. CA\\[26:20\\]
+is the capture period counter value loaded on the trigger event. CA\\[19:0\\]
+is the audio synchronization counter value loaded on the trigger event."]
+        #[inline(always)]
+        pub fn set_ca(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x07ff_ffff << 0usize)) | (((val as u32) & 0x07ff_ffff) << 0usize);
+        }
+    }
+    impl Default for Ascar {
+        #[inline(always)]
+        fn default() -> Ascar {
+            Ascar(0)
+        }
+    }
+    impl core::fmt::Debug for Ascar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ascar").field("ca", &self.ca()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ascar {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Ascar {{ ca: {=u32:?} }}", self.ca())
+        }
+    }
+    #[doc = "RCC audio synchronization counter register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ascntr(pub u32);
+    impl Ascntr {
+        #[doc = "Counter value This field is set by hardware. CNT\\[19:0\\]
+is the counter value at the time this register is read."]
+        #[inline(always)]
+        pub const fn cnt(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0x000f_ffff;
+            val as u32
+        }
+        #[doc = "Counter value This field is set by hardware. CNT\\[19:0\\]
+is the counter value at the time this register is read."]
+        #[inline(always)]
+        pub fn set_cnt(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x000f_ffff << 0usize)) | (((val as u32) & 0x000f_ffff) << 0usize);
+        }
+    }
+    impl Default for Ascntr {
+        #[inline(always)]
+        fn default() -> Ascntr {
+            Ascntr(0)
+        }
+    }
+    impl core::fmt::Debug for Ascntr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ascntr").field("cnt", &self.cnt()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ascntr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Ascntr {{ cnt: {=u32:?} }}", self.cnt())
+        }
+    }
+    #[doc = "RCC audio synchronization compare register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ascor(pub u32);
+    impl Ascor {
+        #[doc = "Compare value This field is set by software. CO\\[19:0\\]
+is the value to be compared to the audio synchronization counter to generate an compare interrupt event."]
+        #[inline(always)]
+        pub const fn co(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0x000f_ffff;
+            val as u32
+        }
+        #[doc = "Compare value This field is set by software. CO\\[19:0\\]
+is the value to be compared to the audio synchronization counter to generate an compare interrupt event."]
+        #[inline(always)]
+        pub fn set_co(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x000f_ffff << 0usize)) | (((val as u32) & 0x000f_ffff) << 0usize);
+        }
+    }
+    impl Default for Ascor {
+        #[inline(always)]
+        fn default() -> Ascor {
+            Ascor(0)
+        }
+    }
+    impl core::fmt::Debug for Ascor {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ascor").field("co", &self.co()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ascor {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Ascor {{ co: {=u32:?} }}", self.co())
+        }
+    }
+    #[doc = "RCC audio synchronization control register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ascr(pub u32);
+    impl Ascr {
+        #[doc = "Counter enable This bit is set and cleared by software. Clearing this bit will reset the audio synchronization counter and capture prescaler and all associated registers ASCR, ASIER, ASSR, ASCNTR, ASARR, ASCAR, and ASCOR."]
+        #[inline(always)]
+        pub const fn cen(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Counter enable This bit is set and cleared by software. Clearing this bit will reset the audio synchronization counter and capture prescaler and all associated registers ASCR, ASIER, ASSR, ASCNTR, ASARR, ASCAR, and ASCOR."]
+        #[inline(always)]
+        pub fn set_cen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Clock prescaler This field is set and cleared by software. Counter clock frequency = f_audiosync_ker_ck / (PSC + 1)"]
+        #[inline(always)]
+        pub const fn psc(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "Clock prescaler This field is set and cleared by software. Counter clock frequency = f_audiosync_ker_ck / (PSC + 1)"]
+        #[inline(always)]
+        pub fn set_psc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 8usize)) | (((val as u32) & 0x7f) << 8usize);
+        }
+        #[doc = "Capture prescaler This field is set and cleared by software. Capture period in number of counter periods. Capture period = counter period * (TPS + 1)"]
+        #[inline(always)]
+        pub const fn cps(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "Capture prescaler This field is set and cleared by software. Capture period in number of counter periods. Capture period = counter period * (TPS + 1)"]
+        #[inline(always)]
+        pub fn set_cps(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
+        }
+    }
+    impl Default for Ascr {
+        #[inline(always)]
+        fn default() -> Ascr {
+            Ascr(0)
+        }
+    }
+    impl core::fmt::Debug for Ascr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ascr")
+                .field("cen", &self.cen())
+                .field("psc", &self.psc())
+                .field("cps", &self.cps())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ascr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ascr {{ cen: {=bool:?}, psc: {=u8:?}, cps: {=u8:?} }}",
+                self.cen(),
+                self.psc(),
+                self.cps()
+            )
+        }
+    }
+    #[doc = "RCC audio synchronization interrupt enable register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Asier(pub u32);
+    impl Asier {
+        #[doc = "Capture trigger interrupt enable This bit is set and cleared by software."]
+        #[inline(always)]
+        pub const fn caie(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Capture trigger interrupt enable This bit is set and cleared by software."]
+        #[inline(always)]
+        pub fn set_caie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Comparer interrupt enable This field is set and cleared by software."]
+        #[inline(always)]
+        pub const fn coie(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Comparer interrupt enable This field is set and cleared by software."]
+        #[inline(always)]
+        pub fn set_coie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Capture error interrupt enable This field is set and cleared by software."]
+        #[inline(always)]
+        pub const fn caeie(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Capture error interrupt enable This field is set and cleared by software."]
+        #[inline(always)]
+        pub fn set_caeie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+    }
+    impl Default for Asier {
+        #[inline(always)]
+        fn default() -> Asier {
+            Asier(0)
+        }
+    }
+    impl core::fmt::Debug for Asier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Asier")
+                .field("caie", &self.caie())
+                .field("coie", &self.coie())
+                .field("caeie", &self.caeie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Asier {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Asier {{ caie: {=bool:?}, coie: {=bool:?}, caeie: {=bool:?} }}",
+                self.caie(),
+                self.coie(),
+                self.caeie()
+            )
+        }
+    }
+    #[doc = "RCC audio synchronization status register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Assr(pub u32);
+    impl Assr {
+        #[doc = "Capture trigger interrupt flag This field is set by hardware, only when CAIE is enabled. This bit is cleared by software by writing it to 0 or masked when CAIE is 0."]
+        #[inline(always)]
+        pub const fn caf(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Capture trigger interrupt flag This field is set by hardware, only when CAIE is enabled. This bit is cleared by software by writing it to 0 or masked when CAIE is 0."]
+        #[inline(always)]
+        pub fn set_caf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Comparer interrupt flag This field is set by hardware, only when COIE is enabled. This bit is cleared by software by writing it to 0 or masked when COIE is 0."]
+        #[inline(always)]
+        pub const fn cof(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Comparer interrupt flag This field is set by hardware, only when COIE is enabled. This bit is cleared by software by writing it to 0 or masked when COIE is 0."]
+        #[inline(always)]
+        pub fn set_cof(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Capture error interrupt flag This field is set by hardware, only when CAEIE is enabled. This bit is cleared by software by writing it to 0 or masked when CAEIE is 0."]
+        #[inline(always)]
+        pub const fn caef(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Capture error interrupt flag This field is set by hardware, only when CAEIE is enabled. This bit is cleared by software by writing it to 0 or masked when CAEIE is 0."]
+        #[inline(always)]
+        pub fn set_caef(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+    }
+    impl Default for Assr {
+        #[inline(always)]
+        fn default() -> Assr {
+            Assr(0)
+        }
+    }
+    impl core::fmt::Debug for Assr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Assr")
+                .field("caf", &self.caf())
+                .field("cof", &self.cof())
+                .field("caef", &self.caef())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Assr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Assr {{ caf: {=bool:?}, cof: {=bool:?}, caef: {=bool:?} }}",
+                self.caf(),
+                self.cof(),
+                self.caef()
+            )
         }
     }
     #[doc = "RCC backup domain control register"]
@@ -2376,6 +3144,17 @@ pub mod regs {
         pub fn set_usart2sel(&mut self, val: super::vals::Usartsel) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
+        #[doc = "USART3 kernel clock source selection This bits are used to select the USART3 kernel clock source. Access can be secured by GTZC_TZSC USART2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The USART3 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE."]
+        #[inline(always)]
+        pub const fn usart3sel(&self) -> super::vals::Usartsel {
+            let val = (self.0 >> 4usize) & 0x03;
+            super::vals::Usartsel::from_bits(val as u8)
+        }
+        #[doc = "USART3 kernel clock source selection This bits are used to select the USART3 kernel clock source. Access can be secured by GTZC_TZSC USART2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The USART3 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI or LSE."]
+        #[inline(always)]
+        pub fn set_usart3sel(&mut self, val: super::vals::Usartsel) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
+        }
         #[doc = "I2C1 kernel clock source selection These bits are used to select the I2C1 kernel clock source. Access can be secured by GTZC_TZSC I2C1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The I2C1 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI."]
         #[inline(always)]
         pub const fn i2c1sel(&self) -> super::vals::I2c1sel {
@@ -2386,6 +3165,39 @@ pub mod regs {
         #[inline(always)]
         pub fn set_i2c1sel(&mut self, val: super::vals::I2c1sel) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
+        }
+        #[doc = "I2C2 kernel clock source selection These bits are used to select the I2C2 kernel clock source. Access can be secured by GTZC_TZSC I2C2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The I2C2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI."]
+        #[inline(always)]
+        pub const fn i2c2sel(&self) -> super::vals::I2c1sel {
+            let val = (self.0 >> 12usize) & 0x03;
+            super::vals::I2c1sel::from_bits(val as u8)
+        }
+        #[doc = "I2C2 kernel clock source selection These bits are used to select the I2C2 kernel clock source. Access can be secured by GTZC_TZSC I2C2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The I2C2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI."]
+        #[inline(always)]
+        pub fn set_i2c2sel(&mut self, val: super::vals::I2c1sel) {
+            self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
+        }
+        #[doc = "I2C4 kernel clock source selection These bits are used to select the I2C4 kernel clock source. Access can be secured by GTZC_TZSC I2C4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The I2C4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI."]
+        #[inline(always)]
+        pub const fn i2c4sel(&self) -> super::vals::I2c1sel {
+            let val = (self.0 >> 14usize) & 0x03;
+            super::vals::I2c1sel::from_bits(val as u8)
+        }
+        #[doc = "I2C4 kernel clock source selection These bits are used to select the I2C4 kernel clock source. Access can be secured by GTZC_TZSC I2C4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The I2C4 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI."]
+        #[inline(always)]
+        pub fn set_i2c4sel(&mut self, val: super::vals::I2c1sel) {
+            self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
+        }
+        #[doc = "SPI2 kernel clock source selection These bits are used to select the SPI2 kernel clock source. Access can be secured by GTZC_TZSC SPI2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The SPI2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI."]
+        #[inline(always)]
+        pub const fn spi2sel(&self) -> super::vals::Spi2sel {
+            let val = (self.0 >> 16usize) & 0x03;
+            super::vals::Spi2sel::from_bits(val as u8)
+        }
+        #[doc = "SPI2 kernel clock source selection These bits are used to select the SPI2 kernel clock source. Access can be secured by GTZC_TZSC SPI2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The SPI2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is HSI."]
+        #[inline(always)]
+        pub fn set_spi2sel(&mut self, val: super::vals::Spi2sel) {
+            self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
         }
         #[doc = "Low-power timer 2 kernel clock source selection These bits are used to select the LPTIM2 kernel clock source. Access can be secured by GTZC_TZSC LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: The LPTIM2 is functional in Stop 0 and Stop 1 mode only when the kernel clock is LSI, LSE or HSI if HSIKERON = 1."]
         #[inline(always)]
@@ -2443,7 +3255,11 @@ pub mod regs {
             f.debug_struct("Ccipr1")
                 .field("usart1sel", &self.usart1sel())
                 .field("usart2sel", &self.usart2sel())
+                .field("usart3sel", &self.usart3sel())
                 .field("i2c1sel", &self.i2c1sel())
+                .field("i2c2sel", &self.i2c2sel())
+                .field("i2c4sel", &self.i2c4sel())
+                .field("spi2sel", &self.spi2sel())
                 .field("lptim2sel", &self.lptim2sel())
                 .field("spi1sel", &self.spi1sel())
                 .field("systicksel", &self.systicksel())
@@ -2454,7 +3270,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccipr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ccipr1 {{ usart1sel: {:?}, usart2sel: {:?}, i2c1sel: {:?}, lptim2sel: {:?}, spi1sel: {:?}, systicksel: {:?}, timicsel: {:?} }}" , self . usart1sel () , self . usart2sel () , self . i2c1sel () , self . lptim2sel () , self . spi1sel () , self . systicksel () , self . timicsel ())
+            defmt :: write ! (f , "Ccipr1 {{ usart1sel: {:?}, usart2sel: {:?}, usart3sel: {:?}, i2c1sel: {:?}, i2c2sel: {:?}, i2c4sel: {:?}, spi2sel: {:?}, lptim2sel: {:?}, spi1sel: {:?}, systicksel: {:?}, timicsel: {:?} }}" , self . usart1sel () , self . usart2sel () , self . usart3sel () , self . i2c1sel () , self . i2c2sel () , self . i2c4sel () , self . spi2sel () , self . lptim2sel () , self . spi1sel () , self . systicksel () , self . timicsel ())
         }
     }
     #[doc = "RCC peripherals independent clock configuration register 2"]
@@ -2462,6 +3278,17 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Ccipr2(pub u32);
     impl Ccipr2 {
+        #[doc = "SAI1 kernel clock source selection These bits allow to select the SAI1 kernel clock source. Access can be secured by GTZC_TZSC SAI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn sai1sel(&self) -> super::vals::Sai1sel {
+            let val = (self.0 >> 5usize) & 0x07;
+            super::vals::Sai1sel::from_bits(val as u8)
+        }
+        #[doc = "SAI1 kernel clock source selection These bits allow to select the SAI1 kernel clock source. Access can be secured by GTZC_TZSC SAI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_sai1sel(&mut self, val: super::vals::Sai1sel) {
+            self.0 = (self.0 & !(0x07 << 5usize)) | (((val.to_bits() as u32) & 0x07) << 5usize);
+        }
         #[doc = "RNGSEL kernel clock source selection These bits allow to select the RNG kernel clock source. Access can be secured by GTZC_TZSC RNGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
         pub const fn rngsel(&self) -> super::vals::Rngsel {
@@ -2473,6 +3300,28 @@ pub mod regs {
         pub fn set_rngsel(&mut self, val: super::vals::Rngsel) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
+        #[doc = "USB OTG_HS PHY kernel clock source selection."]
+        #[inline(always)]
+        pub const fn otghssel(&self) -> super::vals::Otghssel {
+            let val = (self.0 >> 28usize) & 0x03;
+            super::vals::Otghssel::from_bits(val as u8)
+        }
+        #[doc = "USB OTG_HS PHY kernel clock source selection."]
+        #[inline(always)]
+        pub fn set_otghssel(&mut self, val: super::vals::Otghssel) {
+            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
+        }
+        #[doc = "RCC audio synchronization kernel clock source selection This bit allows to select the audio synchronization kernel clock source. Access can be secured by GTZC_TZSC SAI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub const fn assel(&self) -> super::vals::Assel {
+            let val = (self.0 >> 30usize) & 0x01;
+            super::vals::Assel::from_bits(val as u8)
+        }
+        #[doc = "RCC audio synchronization kernel clock source selection This bit allows to select the audio synchronization kernel clock source. Access can be secured by GTZC_TZSC SAI1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
+        #[inline(always)]
+        pub fn set_assel(&mut self, val: super::vals::Assel) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+        }
     }
     impl Default for Ccipr2 {
         #[inline(always)]
@@ -2482,13 +3331,25 @@ pub mod regs {
     }
     impl core::fmt::Debug for Ccipr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ccipr2").field("rngsel", &self.rngsel()).finish()
+            f.debug_struct("Ccipr2")
+                .field("sai1sel", &self.sai1sel())
+                .field("rngsel", &self.rngsel())
+                .field("otghssel", &self.otghssel())
+                .field("assel", &self.assel())
+                .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccipr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Ccipr2 {{ rngsel: {:?} }}", self.rngsel())
+            defmt::write!(
+                f,
+                "Ccipr2 {{ sai1sel: {:?}, rngsel: {:?}, otghssel: {:?}, assel: {:?} }}",
+                self.sai1sel(),
+                self.rngsel(),
+                self.otghssel(),
+                self.assel()
+            )
         }
     }
     #[doc = "RCC peripherals independent clock configuration register 3"]
@@ -3974,6 +4835,37 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Assel {
+        #[doc = "pll1pclk selected."]
+        PLL1_P = 0x0,
+        #[doc = "pll1qclk selected."]
+        PLL1_Q = 0x01,
+    }
+    impl Assel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Assel {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Assel {
+        #[inline(always)]
+        fn from(val: u8) -> Assel {
+            Assel::from_bits(val)
+        }
+    }
+    impl From<Assel> for u8 {
+        #[inline(always)]
+        fn from(val: Assel) -> u8 {
+            Assel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hdiv5 {
         #[doc = "hclk5 = SYSCLK not divided"]
         DIV1 = 0x0,
@@ -4514,6 +5406,41 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Otghssel {
+        #[doc = "HSE32 selected."]
+        HSE = 0x0,
+        #[doc = "pll1pclk selected,."]
+        PLL1_P = 0x01,
+        #[doc = "HSE32 divided by 2 selected."]
+        HSE_DIV_2 = 0x02,
+        #[doc = "pll1pclk divided by 2 selected."]
+        PLL1_P_DIV_2 = 0x03,
+    }
+    impl Otghssel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Otghssel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Otghssel {
+        #[inline(always)]
+        fn from(val: u8) -> Otghssel {
+            Otghssel::from_bits(val)
+        }
+    }
+    impl From<Otghssel> for u8 {
+        #[inline(always)]
+        fn from(val: Otghssel) -> u8 {
+            Otghssel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllrclkpre {
         #[doc = "pll1rclk not divided, sysclkpre = pll1rclk"]
         DIV1 = 0x0,
@@ -4787,6 +5714,46 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Sai1sel {
+        #[doc = "pll1pclk selected."]
+        PLL1_P = 0x0,
+        #[doc = "pll1qclk selected."]
+        PLL1_Q = 0x01,
+        #[doc = "SYSCLK selected."]
+        SYS = 0x02,
+        #[doc = "input pin AUDIOCLK selected."]
+        AUDIOCLK = 0x03,
+        #[doc = "HSI16 clock selected."]
+        HSI = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+    }
+    impl Sai1sel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Sai1sel {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Sai1sel {
+        #[inline(always)]
+        fn from(val: u8) -> Sai1sel {
+            Sai1sel::from_bits(val)
+        }
+    }
+    impl From<Sai1sel> for u8 {
+        #[inline(always)]
+        fn from(val: Sai1sel) -> u8 {
+            Sai1sel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spi1sel {
         #[doc = "pclk2 selected"]
         PCLK2 = 0x0,
@@ -4821,8 +5788,42 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Spi2sel {
+        #[doc = "pclk1 selected"]
+        PCLK1 = 0x0,
+        #[doc = "SYSCLK selected"]
+        SYS = 0x01,
+        #[doc = "HSI selected"]
+        HSI = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Spi2sel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Spi2sel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Spi2sel {
+        #[inline(always)]
+        fn from(val: u8) -> Spi2sel {
+            Spi2sel::from_bits(val)
+        }
+    }
+    impl From<Spi2sel> for u8 {
+        #[inline(always)]
+        fn from(val: Spi2sel) -> u8 {
+            Spi2sel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spi3sel {
-        #[doc = "pclk2 selected"]
+        #[doc = "pclk7 selected"]
         PCLK7 = 0x0,
         #[doc = "SYSCLK selected"]
         SYS = 0x01,

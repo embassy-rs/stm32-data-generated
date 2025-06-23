@@ -59,7 +59,7 @@ impl Pwr {
     pub const fn wucr3(self) -> crate::common::Reg<regs::Wucr3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
     }
-    #[doc = "disable Backup domain register"]
+    #[doc = "disable Backup domain register."]
     #[inline(always)]
     pub const fn dbpcr(self) -> crate::common::Reg<regs::Dbpcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
@@ -102,7 +102,7 @@ impl Pwr {
     }
     #[doc = "port Standby IO retention status register"]
     #[inline(always)]
-    pub const fn ioretra(self, n: usize) -> crate::common::Reg<regs::Ioretr, crate::common::RW> {
+    pub const fn ioretr(self, n: usize) -> crate::common::Reg<regs::Ioretr, crate::common::RW> {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize + n * 8usize) as _) }
     }
@@ -111,9 +111,14 @@ impl Pwr {
     pub const fn radioscr(self) -> crate::common::Reg<regs::Radioscr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
     }
+    #[doc = "Stop 2 peripheral IOs retention register"]
+    #[inline(always)]
+    pub const fn s2retr(self) -> crate::common::Reg<regs::S2retr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
+    }
 }
 pub mod regs {
-    #[doc = "control register 1"]
+    #[doc = "control register 1."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr1(pub u32);
@@ -162,16 +167,31 @@ pub mod regs {
         pub fn set_radiorsb(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
-        #[doc = "SRAM1 retention in Standby mode This bit is used to keep the SRAM1 content in Standby retention mode."]
+        #[doc = "SRAM1 192 KB page 5 to 7 retention in Standby mode Used to keep SRAM1 page 5 to 7 content in Standby retention mode."]
         #[inline(always)]
-        pub const fn r1rsb1(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
+        pub const fn r1rsb567(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
             val != 0
         }
-        #[doc = "SRAM1 retention in Standby mode This bit is used to keep the SRAM1 content in Standby retention mode."]
+        #[doc = "SRAM1 192 KB page 5 to 7 retention in Standby mode Used to keep SRAM1 page 5 to 7 content in Standby retention mode."]
         #[inline(always)]
-        pub fn set_r1rsb1(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        pub fn set_r1rsb567(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "SRAM1 page X retention in Standby mode This bit is used to keep the SRAM1 content in Standby retention mode."]
+        #[inline(always)]
+        pub const fn r1rsb(&self, n: usize) -> bool {
+            assert!(n < 4usize);
+            let offs = 12usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
+            val != 0
+        }
+        #[doc = "SRAM1 page X retention in Standby mode This bit is used to keep the SRAM1 content in Standby retention mode."]
+        #[inline(always)]
+        pub fn set_r1rsb(&mut self, n: usize, val: bool) {
+            assert!(n < 4usize);
+            let offs = 12usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Cr1 {
@@ -187,39 +207,39 @@ pub mod regs {
                 .field("r2rsb1", &self.r2rsb1())
                 .field("ulpmen", &self.ulpmen())
                 .field("radiorsb", &self.radiorsb())
-                .field("r1rsb1", &self.r1rsb1())
+                .field("r1rsb567", &self.r1rsb567())
+                .field("r1rsb[0]", &self.r1rsb(0usize))
+                .field("r1rsb[1]", &self.r1rsb(1usize))
+                .field("r1rsb[2]", &self.r1rsb(2usize))
+                .field("r1rsb[3]", &self.r1rsb(3usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Cr1 {{ lpms: {:?}, r2rsb1: {=bool:?}, ulpmen: {=bool:?}, radiorsb: {=bool:?}, r1rsb1: {=bool:?} }}",
-                self.lpms(),
-                self.r2rsb1(),
-                self.ulpmen(),
-                self.radiorsb(),
-                self.r1rsb1()
-            )
+            defmt :: write ! (f , "Cr1 {{ lpms: {:?}, r2rsb1: {=bool:?}, ulpmen: {=bool:?}, radiorsb: {=bool:?}, r1rsb567: {=bool:?}, r1rsb[0]: {=bool:?}, r1rsb[1]: {=bool:?}, r1rsb[2]: {=bool:?}, r1rsb[3]: {=bool:?} }}" , self . lpms () , self . r2rsb1 () , self . ulpmen () , self . radiorsb () , self . r1rsb567 () , self . r1rsb (0usize) , self . r1rsb (1usize) , self . r1rsb (2usize) , self . r1rsb (3usize))
         }
     }
-    #[doc = "control register 2"]
+    #[doc = "control register 2."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr2(pub u32);
     impl Cr2 {
-        #[doc = "SRAM1 power-down in Stop modes (Stop 0, 1) Note: The SRAM1 retention in Standby mode is controlled by R1RSB1 bit in CR1."]
+        #[doc = "SRAM1 page X power-down in Stop modes (Stop 0, 1) Note: The SRAM1 retention in Standby mode is controlled by R1RSBX bit in CR1."]
         #[inline(always)]
-        pub const fn sram1pds1(&self) -> super::vals::Srampds {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn sram1pds(&self, n: usize) -> super::vals::Srampds {
+            assert!(n < 4usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             super::vals::Srampds::from_bits(val as u8)
         }
-        #[doc = "SRAM1 power-down in Stop modes (Stop 0, 1) Note: The SRAM1 retention in Standby mode is controlled by R1RSB1 bit in CR1."]
+        #[doc = "SRAM1 page X power-down in Stop modes (Stop 0, 1) Note: The SRAM1 retention in Standby mode is controlled by R1RSBX bit in CR1."]
         #[inline(always)]
-        pub fn set_sram1pds1(&mut self, val: super::vals::Srampds) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_sram1pds(&mut self, n: usize, val: super::vals::Srampds) {
+            assert!(n < 4usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
         }
         #[doc = "SRAM2 power-down in Stop modes (Stop 0, 1) Note: The SRAM2 retention in Standby mode is controlled by R2RSB1 bit in CR1."]
         #[inline(always)]
@@ -232,6 +252,17 @@ pub mod regs {
         pub fn set_sram2pds1(&mut self, val: super::vals::Srampds) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
+        #[doc = "SRAM1 192KB, page 5 to 7 power-down in Stop modes"]
+        #[inline(always)]
+        pub const fn sram1pds567(&self) -> super::vals::Sram1pds567 {
+            let val = (self.0 >> 6usize) & 0x01;
+            super::vals::Sram1pds567::from_bits(val as u8)
+        }
+        #[doc = "SRAM1 192KB, page 5 to 7 power-down in Stop modes"]
+        #[inline(always)]
+        pub fn set_sram1pds567(&mut self, val: super::vals::Sram1pds567) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        }
         #[doc = "ICACHE SRAM power-down in Stop modes (Stop 0, 1)"]
         #[inline(always)]
         pub const fn icrampds(&self) -> super::vals::Icrampds {
@@ -242,6 +273,28 @@ pub mod regs {
         #[inline(always)]
         pub fn set_icrampds(&mut self, val: super::vals::Icrampds) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        }
+        #[doc = "OTG SRAM power-down in Stop modes."]
+        #[inline(always)]
+        pub const fn prampds(&self) -> super::vals::Prampds {
+            let val = (self.0 >> 11usize) & 0x01;
+            super::vals::Prampds::from_bits(val as u8)
+        }
+        #[doc = "OTG SRAM power-down in Stop modes."]
+        #[inline(always)]
+        pub fn set_prampds(&mut self, val: super::vals::Prampds) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        }
+        #[doc = "PKA SRAM power-down in Stop modes."]
+        #[inline(always)]
+        pub const fn pkarampds(&self) -> super::vals::Pkarampds {
+            let val = (self.0 >> 12usize) & 0x01;
+            super::vals::Pkarampds::from_bits(val as u8)
+        }
+        #[doc = "PKA SRAM power-down in Stop modes."]
+        #[inline(always)]
+        pub fn set_pkarampds(&mut self, val: super::vals::Pkarampds) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
         }
         #[doc = "Flash memory fast wakeup from Stop modes (Stop 0, 1) This bit is used to obtain the best trade-off between low-power consumption and wakeup time when exiting the Stop 0 or Stop 1 modes. When this bit is set, the Flash memory remains in normal mode in Stop 0 and Stop 1 modes, which offers a faster startup time with higher consumption."]
         #[inline(always)]
@@ -264,9 +317,15 @@ pub mod regs {
     impl core::fmt::Debug for Cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr2")
-                .field("sram1pds1", &self.sram1pds1())
+                .field("sram1pds[0]", &self.sram1pds(0usize))
+                .field("sram1pds[1]", &self.sram1pds(1usize))
+                .field("sram1pds[2]", &self.sram1pds(2usize))
+                .field("sram1pds[3]", &self.sram1pds(3usize))
                 .field("sram2pds1", &self.sram2pds1())
+                .field("sram1pds567", &self.sram1pds567())
                 .field("icrampds", &self.icrampds())
+                .field("prampds", &self.prampds())
+                .field("pkarampds", &self.pkarampds())
                 .field("flashfwu", &self.flashfwu())
                 .finish()
         }
@@ -274,31 +333,68 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Cr2 {{ sram1pds1: {:?}, sram2pds1: {:?}, icrampds: {:?}, flashfwu: {:?} }}",
-                self.sram1pds1(),
-                self.sram2pds1(),
-                self.icrampds(),
-                self.flashfwu()
-            )
+            defmt :: write ! (f , "Cr2 {{ sram1pds[0]: {:?}, sram1pds[1]: {:?}, sram1pds[2]: {:?}, sram1pds[3]: {:?}, sram2pds1: {:?}, sram1pds567: {:?}, icrampds: {:?}, prampds: {:?}, pkarampds: {:?}, flashfwu: {:?} }}" , self . sram1pds (0usize) , self . sram1pds (1usize) , self . sram1pds (2usize) , self . sram1pds (3usize) , self . sram2pds1 () , self . sram1pds567 () , self . icrampds () , self . prampds () , self . pkarampds () , self . flashfwu ())
         }
     }
-    #[doc = "control register 3"]
+    #[doc = "control register 3."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr3(pub u32);
     impl Cr3 {
-        #[doc = "Fast soft start"]
+        #[doc = "Regulator selection."]
         #[inline(always)]
-        pub const fn fsten(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
+        pub const fn regsel(&self) -> super::vals::Regsel {
+            let val = (self.0 >> 1usize) & 0x01;
+            super::vals::Regsel::from_bits(val as u8)
+        }
+        #[doc = "Regulator selection."]
+        #[inline(always)]
+        pub fn set_regsel(&mut self, val: super::vals::Regsel) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "Fast soft start"]
         #[inline(always)]
-        pub fn set_fsten(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        pub const fn fsten(&self) -> super::vals::Fsten {
+            let val = (self.0 >> 2usize) & 0x01;
+            super::vals::Fsten::from_bits(val as u8)
+        }
+        #[doc = "Fast soft start"]
+        #[inline(always)]
+        pub fn set_fsten(&mut self, val: super::vals::Fsten) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Low power mode regulator clock division."]
+        #[inline(always)]
+        pub const fn divclp(&self) -> super::vals::Divclp {
+            let val = (self.0 >> 4usize) & 0x07;
+            super::vals::Divclp::from_bits(val as u8)
+        }
+        #[doc = "Low power mode regulator clock division."]
+        #[inline(always)]
+        pub fn set_divclp(&mut self, val: super::vals::Divclp) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
+        }
+        #[doc = "Low power mode regulator replica selection."]
+        #[inline(always)]
+        pub const fn selrep(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Low power mode regulator replica selection."]
+        #[inline(always)]
+        pub fn set_selrep(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 8usize)) | (((val as u32) & 0x3f) << 8usize);
+        }
+        #[doc = "V11 feedback switch enable (non user bit)."]
+        #[inline(always)]
+        pub const fn v11fbsw(&self) -> super::vals::V11fbsw {
+            let val = (self.0 >> 15usize) & 0x01;
+            super::vals::V11fbsw::from_bits(val as u8)
+        }
+        #[doc = "V11 feedback switch enable (non user bit)."]
+        #[inline(always)]
+        pub fn set_v11fbsw(&mut self, val: super::vals::V11fbsw) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
         }
     }
     impl Default for Cr3 {
@@ -309,16 +405,30 @@ pub mod regs {
     }
     impl core::fmt::Debug for Cr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Cr3").field("fsten", &self.fsten()).finish()
+            f.debug_struct("Cr3")
+                .field("regsel", &self.regsel())
+                .field("fsten", &self.fsten())
+                .field("divclp", &self.divclp())
+                .field("selrep", &self.selrep())
+                .field("v11fbsw", &self.v11fbsw())
+                .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Cr3 {{ fsten: {=bool:?} }}", self.fsten())
+            defmt::write!(
+                f,
+                "Cr3 {{ regsel: {:?}, fsten: {:?}, divclp: {:?}, selrep: {=u8:?}, v11fbsw: {:?} }}",
+                self.regsel(),
+                self.fsten(),
+                self.divclp(),
+                self.selrep(),
+                self.v11fbsw()
+            )
         }
     }
-    #[doc = "disable Backup domain register"]
+    #[doc = "disable Backup domain register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Dbpcr(pub u32);
@@ -462,7 +572,7 @@ pub mod regs {
             defmt :: write ! (f , "Ioretr {{ ret[0]: {=bool:?}, ret[1]: {=bool:?}, ret[2]: {=bool:?}, ret[3]: {=bool:?}, ret[4]: {=bool:?}, ret[5]: {=bool:?}, ret[6]: {=bool:?}, ret[7]: {=bool:?}, ret[8]: {=bool:?}, ret[9]: {=bool:?}, ret[10]: {=bool:?}, ret[11]: {=bool:?}, ret[12]: {=bool:?}, ret[13]: {=bool:?}, ret[14]: {=bool:?}, ret[15]: {=bool:?} }}" , self . ret (0usize) , self . ret (1usize) , self . ret (2usize) , self . ret (3usize) , self . ret (4usize) , self . ret (5usize) , self . ret (6usize) , self . ret (7usize) , self . ret (8usize) , self . ret (9usize) , self . ret (10usize) , self . ret (11usize) , self . ret (12usize) , self . ret (13usize) , self . ret (14usize) , self . ret (15usize))
         }
     }
-    #[doc = "privilege control register"]
+    #[doc = "privilege control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Privcfgr(pub u32);
@@ -515,7 +625,7 @@ pub mod regs {
             )
         }
     }
-    #[doc = "2.4 GHz RADIO status and control register"]
+    #[doc = "2."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Radioscr(pub u32);
@@ -533,25 +643,25 @@ pub mod regs {
         }
         #[doc = "2.4 GHz RADIO PHY operating mode"]
         #[inline(always)]
-        pub const fn phymode(&self) -> bool {
+        pub const fn phymode(&self) -> super::vals::Phymode {
             let val = (self.0 >> 2usize) & 0x01;
-            val != 0
+            super::vals::Phymode::from_bits(val as u8)
         }
         #[doc = "2.4 GHz RADIO PHY operating mode"]
         #[inline(always)]
-        pub fn set_phymode(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        pub fn set_phymode(&mut self, val: super::vals::Phymode) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "2.4 GHz RADIO encryption function operating mode"]
         #[inline(always)]
-        pub const fn encmode(&self) -> bool {
+        pub const fn encmode(&self) -> super::vals::Encmode {
             let val = (self.0 >> 3usize) & 0x01;
-            val != 0
+            super::vals::Encmode::from_bits(val as u8)
         }
         #[doc = "2.4 GHz RADIO encryption function operating mode"]
         #[inline(always)]
-        pub fn set_encmode(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        pub fn set_encmode(&mut self, val: super::vals::Encmode) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
         }
         #[doc = "2.4 GHz RADIO VDDHPA control word. Bits \\[3:0\\]
 see Table 81: PA output power table format for definition. Bit \\[4\\]
@@ -568,6 +678,17 @@ rf_event."]
         pub fn set_rfvddhpa(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
         }
+        #[doc = "Ready bit for Vless thansub DDHPAless than/sub voltage level when selecting VDD11 input."]
+        #[inline(always)]
+        pub const fn regpardyv11(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Ready bit for Vless thansub DDHPAless than/sub voltage level when selecting VDD11 input."]
+        #[inline(always)]
+        pub fn set_regpardyv11(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
         #[doc = "Ready bit for V<sub>DDHPA</sub> voltage level when selecting VDDRFPA input. Note: REGPARDYVDDRFPA does not allow to detect correct V<sub>DDHPA</sub> voltage level when request to lower the level."]
         #[inline(always)]
         pub const fn regpardyvddrfpa(&self) -> bool {
@@ -578,6 +699,28 @@ rf_event."]
         #[inline(always)]
         pub fn set_regpardyvddrfpa(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "regulator REG_VDDHPA input supply selection."]
+        #[inline(always)]
+        pub const fn regpasel(&self) -> super::vals::Regpasel {
+            let val = (self.0 >> 23usize) & 0x01;
+            super::vals::Regpasel::from_bits(val as u8)
+        }
+        #[doc = "regulator REG_VDDHPA input supply selection."]
+        #[inline(always)]
+        pub fn set_regpasel(&mut self, val: super::vals::Regpasel) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+        }
+        #[doc = "regulator REG_VDDHPA bypass enable."]
+        #[inline(always)]
+        pub const fn regpabypen(&self) -> bool {
+            let val = (self.0 >> 24usize) & 0x01;
+            val != 0
+        }
+        #[doc = "regulator REG_VDDHPA bypass enable."]
+        #[inline(always)]
+        pub fn set_regpabypen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
     }
     impl Default for Radioscr {
@@ -593,17 +736,73 @@ rf_event."]
                 .field("phymode", &self.phymode())
                 .field("encmode", &self.encmode())
                 .field("rfvddhpa", &self.rfvddhpa())
+                .field("regpardyv11", &self.regpardyv11())
                 .field("regpardyvddrfpa", &self.regpardyvddrfpa())
+                .field("regpasel", &self.regpasel())
+                .field("regpabypen", &self.regpabypen())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Radioscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Radioscr {{ mode: {:?}, phymode: {=bool:?}, encmode: {=bool:?}, rfvddhpa: {=u8:?}, regpardyvddrfpa: {=bool:?} }}" , self . mode () , self . phymode () , self . encmode () , self . rfvddhpa () , self . regpardyvddrfpa ())
+            defmt :: write ! (f , "Radioscr {{ mode: {:?}, phymode: {:?}, encmode: {:?}, rfvddhpa: {=u8:?}, regpardyv11: {=bool:?}, regpardyvddrfpa: {=bool:?}, regpasel: {:?}, regpabypen: {=bool:?} }}" , self . mode () , self . phymode () , self . encmode () , self . rfvddhpa () , self . regpardyv11 () , self . regpardyvddrfpa () , self . regpasel () , self . regpabypen ())
         }
     }
-    #[doc = "security configuration register"]
+    #[doc = "Stop 2 peripheral IOs retention register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct S2retr(pub u32);
+    impl S2retr {
+        #[doc = "PTA output signals Stop 2 mode retention enable Access can be secured by GTZC_TZSC PTACONVSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[inline(always)]
+        pub const fn ptasren(&self) -> super::vals::Ptasren {
+            let val = (self.0 >> 0usize) & 0x01;
+            super::vals::Ptasren::from_bits(val as u8)
+        }
+        #[doc = "PTA output signals Stop 2 mode retention enable Access can be secured by GTZC_TZSC PTACONVSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[inline(always)]
+        pub fn set_ptasren(&mut self, val: super::vals::Ptasren) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        }
+        #[doc = "PTA interface output signals state retention in Stop 2 mode active Access can be secured by GTZC_TZSC PTACONVSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[inline(always)]
+        pub const fn ptasr(&self) -> super::vals::Ptasr {
+            let val = (self.0 >> 16usize) & 0x01;
+            super::vals::Ptasr::from_bits(val as u8)
+        }
+        #[doc = "PTA interface output signals state retention in Stop 2 mode active Access can be secured by GTZC_TZSC PTACONVSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[inline(always)]
+        pub fn set_ptasr(&mut self, val: super::vals::Ptasr) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+        }
+    }
+    impl Default for S2retr {
+        #[inline(always)]
+        fn default() -> S2retr {
+            S2retr(0)
+        }
+    }
+    impl core::fmt::Debug for S2retr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("S2retr")
+                .field("ptasren", &self.ptasren())
+                .field("ptasr", &self.ptasr())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for S2retr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "S2retr {{ ptasren: {:?}, ptasr: {:?} }}",
+                self.ptasren(),
+                self.ptasr()
+            )
+        }
+    }
+    #[doc = "security configuration register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Seccfgr(pub u32);
@@ -625,36 +824,36 @@ rf_event."]
         }
         #[doc = "Low-power modes secure protection"]
         #[inline(always)]
-        pub const fn lpmsec(&self) -> bool {
+        pub const fn lpmsec(&self) -> super::vals::Lpmsec {
             let val = (self.0 >> 12usize) & 0x01;
-            val != 0
+            super::vals::Lpmsec::from_bits(val as u8)
         }
         #[doc = "Low-power modes secure protection"]
         #[inline(always)]
-        pub fn set_lpmsec(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        pub fn set_lpmsec(&mut self, val: super::vals::Lpmsec) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
         }
         #[doc = "Voltage detection secure protection"]
         #[inline(always)]
-        pub const fn vdmsec(&self) -> bool {
+        pub const fn vdmsec(&self) -> super::vals::Vdmsec {
             let val = (self.0 >> 13usize) & 0x01;
-            val != 0
+            super::vals::Vdmsec::from_bits(val as u8)
         }
         #[doc = "Voltage detection secure protection"]
         #[inline(always)]
-        pub fn set_vdmsec(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        pub fn set_vdmsec(&mut self, val: super::vals::Vdmsec) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
         }
         #[doc = "Backup domain secure protection"]
         #[inline(always)]
-        pub const fn vbsec(&self) -> bool {
+        pub const fn vbsec(&self) -> super::vals::Vbsec {
             let val = (self.0 >> 14usize) & 0x01;
-            val != 0
+            super::vals::Vbsec::from_bits(val as u8)
         }
         #[doc = "Backup domain secure protection"]
         #[inline(always)]
-        pub fn set_vbsec(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        pub fn set_vbsec(&mut self, val: super::vals::Vbsec) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
         }
     }
     impl Default for Seccfgr {
@@ -683,10 +882,10 @@ rf_event."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccfgr {{ wup1sec[0]: {=bool:?}, wup1sec[1]: {=bool:?}, wup1sec[2]: {=bool:?}, wup1sec[3]: {=bool:?}, wup1sec[4]: {=bool:?}, wup1sec[5]: {=bool:?}, wup1sec[6]: {=bool:?}, wup1sec[7]: {=bool:?}, lpmsec: {=bool:?}, vdmsec: {=bool:?}, vbsec: {=bool:?} }}" , self . wup1sec (0usize) , self . wup1sec (1usize) , self . wup1sec (2usize) , self . wup1sec (3usize) , self . wup1sec (4usize) , self . wup1sec (5usize) , self . wup1sec (6usize) , self . wup1sec (7usize) , self . lpmsec () , self . vdmsec () , self . vbsec ())
+            defmt :: write ! (f , "Seccfgr {{ wup1sec[0]: {=bool:?}, wup1sec[1]: {=bool:?}, wup1sec[2]: {=bool:?}, wup1sec[3]: {=bool:?}, wup1sec[4]: {=bool:?}, wup1sec[5]: {=bool:?}, wup1sec[6]: {=bool:?}, wup1sec[7]: {=bool:?}, lpmsec: {:?}, vdmsec: {:?}, vbsec: {:?} }}" , self . wup1sec (0usize) , self . wup1sec (1usize) , self . wup1sec (2usize) , self . wup1sec (3usize) , self . wup1sec (4usize) , self . wup1sec (5usize) , self . wup1sec (6usize) , self . wup1sec (7usize) , self . lpmsec () , self . vdmsec () , self . vbsec ())
         }
     }
-    #[doc = "status register"]
+    #[doc = "status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Sr(pub u32);
@@ -715,14 +914,25 @@ rf_event."]
         }
         #[doc = "Standby flag This bit is set by hardware when the device enters the Standby mode and the CPU restart from its reset vector. It’s cleared by writing 1 to the CSSF bit, or by a power-on reset. It is not cleared by the system reset."]
         #[inline(always)]
-        pub const fn sbf(&self) -> bool {
+        pub const fn sbf(&self) -> super::vals::Sbf {
             let val = (self.0 >> 2usize) & 0x01;
-            val != 0
+            super::vals::Sbf::from_bits(val as u8)
         }
         #[doc = "Standby flag This bit is set by hardware when the device enters the Standby mode and the CPU restart from its reset vector. It’s cleared by writing 1 to the CSSF bit, or by a power-on reset. It is not cleared by the system reset."]
         #[inline(always)]
-        pub fn set_sbf(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        pub fn set_sbf(&mut self, val: super::vals::Sbf) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Stop 2 mode peripherals power down flag."]
+        #[inline(always)]
+        pub const fn stop2f(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Stop 2 mode peripherals power down flag."]
+        #[inline(always)]
+        pub fn set_stop2f(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
     impl Default for Sr {
@@ -737,6 +947,7 @@ rf_event."]
                 .field("cssf", &self.cssf())
                 .field("stopf", &self.stopf())
                 .field("sbf", &self.sbf())
+                .field("stop2f", &self.stop2f())
                 .finish()
         }
     }
@@ -745,14 +956,15 @@ rf_event."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Sr {{ cssf: {=bool:?}, stopf: {=bool:?}, sbf: {=bool:?} }}",
+                "Sr {{ cssf: {=bool:?}, stopf: {=bool:?}, sbf: {:?}, stop2f: {=bool:?} }}",
                 self.cssf(),
                 self.stopf(),
-                self.sbf()
+                self.sbf(),
+                self.stop2f()
             )
         }
     }
-    #[doc = "supply voltage monitoring control register"]
+    #[doc = "supply voltage monitoring control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Svmcr(pub u32);
@@ -779,6 +991,28 @@ rf_event."]
         pub fn set_pvdls(&mut self, val: super::vals::Pvdls) {
             self.0 = (self.0 & !(0x07 << 5usize)) | (((val.to_bits() as u32) & 0x07) << 5usize);
         }
+        #[doc = "VDDUSB supply valid."]
+        #[inline(always)]
+        pub const fn usv(&self) -> super::vals::Usv {
+            let val = (self.0 >> 28usize) & 0x01;
+            super::vals::Usv::from_bits(val as u8)
+        }
+        #[doc = "VDDUSB supply valid."]
+        #[inline(always)]
+        pub fn set_usv(&mut self, val: super::vals::Usv) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+        }
+        #[doc = "VDDIO2 supply valid."]
+        #[inline(always)]
+        pub const fn io2sv(&self) -> super::vals::Io2sv {
+            let val = (self.0 >> 29usize) & 0x01;
+            super::vals::Io2sv::from_bits(val as u8)
+        }
+        #[doc = "VDDIO2 supply valid."]
+        #[inline(always)]
+        pub fn set_io2sv(&mut self, val: super::vals::Io2sv) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+        }
     }
     impl Default for Svmcr {
         #[inline(always)]
@@ -791,20 +1025,40 @@ rf_event."]
             f.debug_struct("Svmcr")
                 .field("pvde", &self.pvde())
                 .field("pvdls", &self.pvdls())
+                .field("usv", &self.usv())
+                .field("io2sv", &self.io2sv())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Svmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Svmcr {{ pvde: {=bool:?}, pvdls: {:?} }}", self.pvde(), self.pvdls())
+            defmt::write!(
+                f,
+                "Svmcr {{ pvde: {=bool:?}, pvdls: {:?}, usv: {:?}, io2sv: {:?} }}",
+                self.pvde(),
+                self.pvdls(),
+                self.usv(),
+                self.io2sv()
+            )
         }
     }
-    #[doc = "supply voltage monitoring status register"]
+    #[doc = "supply voltage monitoring status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Svmsr(pub u32);
     impl Svmsr {
+        #[doc = "Regulator selection."]
+        #[inline(always)]
+        pub const fn regs(&self) -> super::vals::Regs {
+            let val = (self.0 >> 1usize) & 0x01;
+            super::vals::Regs::from_bits(val as u8)
+        }
+        #[doc = "Regulator selection."]
+        #[inline(always)]
+        pub fn set_regs(&mut self, val: super::vals::Regs) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        }
         #[doc = "Programmable voltage detector output"]
         #[inline(always)]
         pub const fn pvdo(&self) -> super::vals::Pvdo {
@@ -818,14 +1072,14 @@ rf_event."]
         }
         #[doc = "Voltage level ready for currently used VOS"]
         #[inline(always)]
-        pub const fn actvosrdy(&self) -> bool {
+        pub const fn actvosrdy(&self) -> super::vals::Actvosrdy {
             let val = (self.0 >> 15usize) & 0x01;
-            val != 0
+            super::vals::Actvosrdy::from_bits(val as u8)
         }
         #[doc = "Voltage level ready for currently used VOS"]
         #[inline(always)]
-        pub fn set_actvosrdy(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        pub fn set_actvosrdy(&mut self, val: super::vals::Actvosrdy) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
         }
         #[doc = "VOS currently applied to V<sub>CORE</sub> This field provides the last VOS value."]
         #[inline(always)]
@@ -848,6 +1102,7 @@ rf_event."]
     impl core::fmt::Debug for Svmsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Svmsr")
+                .field("regs", &self.regs())
                 .field("pvdo", &self.pvdo())
                 .field("actvosrdy", &self.actvosrdy())
                 .field("actvos", &self.actvos())
@@ -859,18 +1114,41 @@ rf_event."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Svmsr {{ pvdo: {:?}, actvosrdy: {=bool:?}, actvos: {:?} }}",
+                "Svmsr {{ regs: {:?}, pvdo: {:?}, actvosrdy: {:?}, actvos: {:?} }}",
+                self.regs(),
                 self.pvdo(),
                 self.actvosrdy(),
                 self.actvos()
             )
         }
     }
-    #[doc = "voltage scaling register"]
+    #[doc = "voltage scaling register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Vosr(pub u32);
     impl Vosr {
+        #[doc = "USB OTG VDD11USB ready."]
+        #[inline(always)]
+        pub const fn vdd11usbrdy(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "USB OTG VDD11USB ready."]
+        #[inline(always)]
+        pub fn set_vdd11usbrdy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "USB OTG booster ready."]
+        #[inline(always)]
+        pub const fn usbboostrdy(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "USB OTG booster ready."]
+        #[inline(always)]
+        pub fn set_usbboostrdy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
         #[doc = "Ready bit for V<sub>CORE</sub> voltage scaling output selection Set and cleared by hardware. When decreasing the voltage scaling range, VOSRDY must be one before increasing the SYSCLK frequency."]
         #[inline(always)]
         pub const fn vosrdy(&self) -> bool {
@@ -893,6 +1171,50 @@ rf_event."]
         pub fn set_vos(&mut self, val: super::vals::Vos) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
+        #[doc = "USB OTG power enable."]
+        #[inline(always)]
+        pub const fn usbpwren(&self) -> bool {
+            let val = (self.0 >> 19usize) & 0x01;
+            val != 0
+        }
+        #[doc = "USB OTG power enable."]
+        #[inline(always)]
+        pub fn set_usbpwren(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
+        }
+        #[doc = "USB OTG booster enable."]
+        #[inline(always)]
+        pub const fn usbboosten(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "USB OTG booster enable."]
+        #[inline(always)]
+        pub fn set_usbboosten(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "USB OTG VDD11USB disable."]
+        #[inline(always)]
+        pub const fn vdd11usbdis(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "USB OTG VDD11USB disable."]
+        #[inline(always)]
+        pub fn set_vdd11usbdis(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+        #[doc = "USB OTG VDD11USB switch delay."]
+        #[inline(always)]
+        pub const fn vdd11usbswdly(&self) -> u16 {
+            let val = (self.0 >> 22usize) & 0x03ff;
+            val as u16
+        }
+        #[doc = "USB OTG VDD11USB switch delay."]
+        #[inline(always)]
+        pub fn set_vdd11usbswdly(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x03ff << 22usize)) | (((val as u32) & 0x03ff) << 22usize);
+        }
     }
     impl Default for Vosr {
         #[inline(always)]
@@ -903,18 +1225,24 @@ rf_event."]
     impl core::fmt::Debug for Vosr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Vosr")
+                .field("vdd11usbrdy", &self.vdd11usbrdy())
+                .field("usbboostrdy", &self.usbboostrdy())
                 .field("vosrdy", &self.vosrdy())
                 .field("vos", &self.vos())
+                .field("usbpwren", &self.usbpwren())
+                .field("usbboosten", &self.usbboosten())
+                .field("vdd11usbdis", &self.vdd11usbdis())
+                .field("vdd11usbswdly", &self.vdd11usbswdly())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vosr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Vosr {{ vosrdy: {=bool:?}, vos: {:?} }}", self.vosrdy(), self.vos())
+            defmt :: write ! (f , "Vosr {{ vdd11usbrdy: {=bool:?}, usbboostrdy: {=bool:?}, vosrdy: {=bool:?}, vos: {:?}, usbpwren: {=bool:?}, usbboosten: {=bool:?}, vdd11usbdis: {=bool:?}, vdd11usbswdly: {=u16:?} }}" , self . vdd11usbrdy () , self . usbboostrdy () , self . vosrdy () , self . vos () , self . usbpwren () , self . usbboosten () , self . vdd11usbdis () , self . vdd11usbswdly ())
         }
     }
-    #[doc = "wakeup control register 1"]
+    #[doc = "wake-up control register 1."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wucr1(pub u32);
@@ -961,7 +1289,7 @@ rf_event."]
             defmt :: write ! (f , "Wucr1 {{ wupen[0]: {=bool:?}, wupen[1]: {=bool:?}, wupen[2]: {=bool:?}, wupen[3]: {=bool:?}, wupen[4]: {=bool:?}, wupen[5]: {=bool:?}, wupen[6]: {=bool:?}, wupen[7]: {=bool:?} }}" , self . wupen (0usize) , self . wupen (1usize) , self . wupen (2usize) , self . wupen (3usize) , self . wupen (4usize) , self . wupen (5usize) , self . wupen (6usize) , self . wupen (7usize))
         }
     }
-    #[doc = "wakeup control register 2"]
+    #[doc = "wake-up control register 2."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wucr2(pub u32);
@@ -1008,98 +1336,25 @@ rf_event."]
             defmt :: write ! (f , "Wucr2 {{ wupp[0]: {:?}, wupp[1]: {:?}, wupp[2]: {:?}, wupp[3]: {:?}, wupp[4]: {:?}, wupp[5]: {:?}, wupp[6]: {:?}, wupp[7]: {:?} }}" , self . wupp (0usize) , self . wupp (1usize) , self . wupp (2usize) , self . wupp (3usize) , self . wupp (4usize) , self . wupp (5usize) , self . wupp (6usize) , self . wupp (7usize))
         }
     }
-    #[doc = "wakeup control register 3"]
+    #[doc = "wake-up control register 3."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wucr3(pub u32);
     impl Wucr3 {
-        #[doc = "Wakeup and interrupt pin WKUP1 selection This field must be configured when WUPEN1 = 0. Access can be secured by WUP1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[doc = "Wakeup and interrupt pin WKUPX selection This field must be configured when WUPENX = 0. Access can be secured by WUPXSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[inline(always)]
-        pub const fn wusel1(&self) -> super::vals::Wusel {
-            let val = (self.0 >> 0usize) & 0x03;
+        pub const fn wusel(&self, n: usize) -> super::vals::Wusel {
+            assert!(n < 8usize);
+            let offs = 0usize + n * 2usize;
+            let val = (self.0 >> offs) & 0x03;
             super::vals::Wusel::from_bits(val as u8)
         }
-        #[doc = "Wakeup and interrupt pin WKUP1 selection This field must be configured when WUPEN1 = 0. Access can be secured by WUP1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[doc = "Wakeup and interrupt pin WKUPX selection This field must be configured when WUPENX = 0. Access can be secured by WUPXSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[inline(always)]
-        pub fn set_wusel1(&mut self, val: super::vals::Wusel) {
-            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
-        }
-        #[doc = "Wakeup and interrupt pin WKUP2 selection This field must be configured when WUPEN2 = 0. Access can be secured by WUP2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
-        #[inline(always)]
-        pub const fn wusel2(&self) -> super::vals::Wusel {
-            let val = (self.0 >> 2usize) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
-        }
-        #[doc = "Wakeup and interrupt pin WKUP2 selection This field must be configured when WUPEN2 = 0. Access can be secured by WUP2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
-        #[inline(always)]
-        pub fn set_wusel2(&mut self, val: super::vals::Wusel) {
-            self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
-        }
-        #[doc = "Wakeup and interrupt pin WKUP3 selection This field must be configured when WUPEN3 = 0. Access can be secured by WUP3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
-        #[inline(always)]
-        pub const fn wusel3(&self) -> super::vals::Wusel {
-            let val = (self.0 >> 4usize) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
-        }
-        #[doc = "Wakeup and interrupt pin WKUP3 selection This field must be configured when WUPEN3 = 0. Access can be secured by WUP3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
-        #[inline(always)]
-        pub fn set_wusel3(&mut self, val: super::vals::Wusel) {
-            self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
-        }
-        #[doc = "Wakeup and interrupt pin WKUP4 selection This field must be configured when WUPEN4 = 0. Access can be secured by WUP4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
-        #[inline(always)]
-        pub const fn wusel4(&self) -> super::vals::Wusel {
-            let val = (self.0 >> 6usize) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
-        }
-        #[doc = "Wakeup and interrupt pin WKUP4 selection This field must be configured when WUPEN4 = 0. Access can be secured by WUP4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
-        #[inline(always)]
-        pub fn set_wusel4(&mut self, val: super::vals::Wusel) {
-            self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
-        }
-        #[doc = "Wakeup and interrupt pin WKUP5 selection This field must be configured when WUPEN5 = 0. Access can be secured by WUP5SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
-        #[inline(always)]
-        pub const fn wusel5(&self) -> super::vals::Wusel {
-            let val = (self.0 >> 8usize) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
-        }
-        #[doc = "Wakeup and interrupt pin WKUP5 selection This field must be configured when WUPEN5 = 0. Access can be secured by WUP5SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
-        #[inline(always)]
-        pub fn set_wusel5(&mut self, val: super::vals::Wusel) {
-            self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
-        }
-        #[doc = "Wakeup and interrupt pin WKUP6 selection This field must be configured when WUPEN6 = 0. Access can be secured by WUP6SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
-        #[inline(always)]
-        pub const fn wusel6(&self) -> super::vals::Wusel {
-            let val = (self.0 >> 10usize) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
-        }
-        #[doc = "Wakeup and interrupt pin WKUP6 selection This field must be configured when WUPEN6 = 0. Access can be secured by WUP6SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
-        #[inline(always)]
-        pub fn set_wusel6(&mut self, val: super::vals::Wusel) {
-            self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
-        }
-        #[doc = "Wakeup and interrupt pin WKUP7 selection This field must be configured when WUPEN7 = 0. Access can be secured by WUP7SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
-        #[inline(always)]
-        pub const fn wusel7(&self) -> super::vals::Wusel {
-            let val = (self.0 >> 12usize) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
-        }
-        #[doc = "Wakeup and interrupt pin WKUP7 selection This field must be configured when WUPEN7 = 0. Access can be secured by WUP7SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
-        #[inline(always)]
-        pub fn set_wusel7(&mut self, val: super::vals::Wusel) {
-            self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
-        }
-        #[doc = "Wakeup and interrupt pin WKUP8 selection This field must be configured when WUPEN8 = 0. Access can be secured by WUP8SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
-        #[inline(always)]
-        pub const fn wusel8(&self) -> super::vals::Wusel {
-            let val = (self.0 >> 14usize) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
-        }
-        #[doc = "Wakeup and interrupt pin WKUP8 selection This field must be configured when WUPEN8 = 0. Access can be secured by WUP8SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
-        #[inline(always)]
-        pub fn set_wusel8(&mut self, val: super::vals::Wusel) {
-            self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
+        pub fn set_wusel(&mut self, n: usize, val: super::vals::Wusel) {
+            assert!(n < 8usize);
+            let offs = 0usize + n * 2usize;
+            self.0 = (self.0 & !(0x03 << offs)) | (((val.to_bits() as u32) & 0x03) << offs);
         }
     }
     impl Default for Wucr3 {
@@ -1111,24 +1366,24 @@ rf_event."]
     impl core::fmt::Debug for Wucr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wucr3")
-                .field("wusel1", &self.wusel1())
-                .field("wusel2", &self.wusel2())
-                .field("wusel3", &self.wusel3())
-                .field("wusel4", &self.wusel4())
-                .field("wusel5", &self.wusel5())
-                .field("wusel6", &self.wusel6())
-                .field("wusel7", &self.wusel7())
-                .field("wusel8", &self.wusel8())
+                .field("wusel[0]", &self.wusel(0usize))
+                .field("wusel[1]", &self.wusel(1usize))
+                .field("wusel[2]", &self.wusel(2usize))
+                .field("wusel[3]", &self.wusel(3usize))
+                .field("wusel[4]", &self.wusel(4usize))
+                .field("wusel[5]", &self.wusel(5usize))
+                .field("wusel[6]", &self.wusel(6usize))
+                .field("wusel[7]", &self.wusel(7usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wucr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wucr3 {{ wusel1: {:?}, wusel2: {:?}, wusel3: {:?}, wusel4: {:?}, wusel5: {:?}, wusel6: {:?}, wusel7: {:?}, wusel8: {:?} }}" , self . wusel1 () , self . wusel2 () , self . wusel3 () , self . wusel4 () , self . wusel5 () , self . wusel6 () , self . wusel7 () , self . wusel8 ())
+            defmt :: write ! (f , "Wucr3 {{ wusel[0]: {:?}, wusel[1]: {:?}, wusel[2]: {:?}, wusel[3]: {:?}, wusel[4]: {:?}, wusel[5]: {:?}, wusel[6]: {:?}, wusel[7]: {:?} }}" , self . wusel (0usize) , self . wusel (1usize) , self . wusel (2usize) , self . wusel (3usize) , self . wusel (4usize) , self . wusel (5usize) , self . wusel (6usize) , self . wusel (7usize))
         }
     }
-    #[doc = "wakeup status clear register"]
+    #[doc = "wake-up status clear register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wuscr(pub u32);
@@ -1175,7 +1430,7 @@ rf_event."]
             defmt :: write ! (f , "Wuscr {{ cwuf[0]: {=bool:?}, cwuf[1]: {=bool:?}, cwuf[2]: {=bool:?}, cwuf[3]: {=bool:?}, cwuf[4]: {=bool:?}, cwuf[5]: {=bool:?}, cwuf[6]: {=bool:?}, cwuf[7]: {=bool:?} }}" , self . cwuf (0usize) , self . cwuf (1usize) , self . cwuf (2usize) , self . cwuf (3usize) , self . cwuf (4usize) , self . cwuf (5usize) , self . cwuf (6usize) , self . cwuf (7usize))
         }
     }
-    #[doc = "wakeup status register"]
+    #[doc = "wake-up status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wusr(pub u32);
@@ -1258,6 +1513,104 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Actvosrdy {
+        #[doc = "VsubCORE/sub is above or below the current voltage scaling provided by ACTVOS."]
+        B_0X0 = 0x0,
+        #[doc = "VsubCORE /subis equal to the current voltage scaling provided by ACTVOS."]
+        B_0X1 = 0x01,
+    }
+    impl Actvosrdy {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Actvosrdy {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Actvosrdy {
+        #[inline(always)]
+        fn from(val: u8) -> Actvosrdy {
+            Actvosrdy::from_bits(val)
+        }
+    }
+    impl From<Actvosrdy> for u8 {
+        #[inline(always)]
+        fn from(val: Actvosrdy) -> u8 {
+            Actvosrdy::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Divclp {
+        #[doc = "Low power regulator clock not divided."]
+        B_0X0 = 0x0,
+        _RESERVED_1 = 0x01,
+        _RESERVED_2 = 0x02,
+        _RESERVED_3 = 0x03,
+        _RESERVED_4 = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+    }
+    impl Divclp {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Divclp {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Divclp {
+        #[inline(always)]
+        fn from(val: u8) -> Divclp {
+            Divclp::from_bits(val)
+        }
+    }
+    impl From<Divclp> for u8 {
+        #[inline(always)]
+        fn from(val: Divclp) -> u8 {
+            Divclp::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Encmode {
+        #[doc = "2.4 GHz RADIO encryption function disabled."]
+        B_0X0 = 0x0,
+        #[doc = "2.4 GHz RADIO encryption function enabled."]
+        B_0X1 = 0x01,
+    }
+    impl Encmode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Encmode {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Encmode {
+        #[inline(always)]
+        fn from(val: u8) -> Encmode {
+            Encmode::from_bits(val)
+        }
+    }
+    impl From<Encmode> for u8 {
+        #[inline(always)]
+        fn from(val: Encmode) -> u8 {
+            Encmode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Flashfwu {
         #[doc = "Flash memory enters low-power mode in Stop 0 and Stop 1 modes (lower-power consumption)."]
         LOW_POWER = 0x0,
@@ -1289,6 +1642,37 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Fsten {
+        #[doc = "LDO fast startup disabled (limited inrush current)."]
+        B_0X0 = 0x0,
+        #[doc = "LDO fast startup enabled."]
+        B_0X1 = 0x01,
+    }
+    impl Fsten {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Fsten {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Fsten {
+        #[inline(always)]
+        fn from(val: u8) -> Fsten {
+            Fsten::from_bits(val)
+        }
+    }
+    impl From<Fsten> for u8 {
+        #[inline(always)]
+        fn from(val: Fsten) -> u8 {
+            Fsten::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Icrampds {
         #[doc = "ICACHE SRAM content retained in Stop modes"]
         RETAINED = 0x0,
@@ -1315,6 +1699,37 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Icrampds) -> u8 {
             Icrampds::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Io2sv {
+        #[doc = "VDDIO2 not supplied, electrical and logical isolation enabled."]
+        B_0X0 = 0x0,
+        #[doc = "VDDIO2 supply present, electrical and logical isolation disabled."]
+        B_0X1 = 0x01,
+    }
+    impl Io2sv {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Io2sv {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Io2sv {
+        #[inline(always)]
+        fn from(val: u8) -> Io2sv {
+            Io2sv::from_bits(val)
+        }
+    }
+    impl From<Io2sv> for u8 {
+        #[inline(always)]
+        fn from(val: Io2sv) -> u8 {
+            Io2sv::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1357,6 +1772,37 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Lpmsec {
+        #[doc = "CR1, CR2 and CSSF in the SR can be read and written with secure or non-secure access."]
+        B_0X0 = 0x0,
+        #[doc = "CR1, CR2, and CSSF in the SR can be read and written only with secure access."]
+        B_0X1 = 0x01,
+    }
+    impl Lpmsec {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Lpmsec {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Lpmsec {
+        #[inline(always)]
+        fn from(val: u8) -> Lpmsec {
+            Lpmsec::from_bits(val)
+        }
+    }
+    impl From<Lpmsec> for u8 {
+        #[inline(always)]
+        fn from(val: Lpmsec) -> u8 {
+            Lpmsec::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "2.4 GHz RADIO deep sleep mode"]
         DEEP_SLEEP = 0x0,
@@ -1385,6 +1831,161 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Mode) -> u8 {
             Mode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Phymode {
+        #[doc = "2.4 GHz RADIO Sleep mode."]
+        B_0X0 = 0x0,
+        #[doc = "2.4 GHz RADIO Standby mode."]
+        B_0X1 = 0x01,
+    }
+    impl Phymode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Phymode {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Phymode {
+        #[inline(always)]
+        fn from(val: u8) -> Phymode {
+            Phymode::from_bits(val)
+        }
+    }
+    impl From<Phymode> for u8 {
+        #[inline(always)]
+        fn from(val: Phymode) -> u8 {
+            Phymode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Pkarampds {
+        #[doc = "PKA SRAM content retained in Stop modes."]
+        B_0X0 = 0x0,
+        #[doc = "PKA SRAM content lost in Stop modes."]
+        B_0X1 = 0x01,
+    }
+    impl Pkarampds {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pkarampds {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pkarampds {
+        #[inline(always)]
+        fn from(val: u8) -> Pkarampds {
+            Pkarampds::from_bits(val)
+        }
+    }
+    impl From<Pkarampds> for u8 {
+        #[inline(always)]
+        fn from(val: Pkarampds) -> u8 {
+            Pkarampds::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Prampds {
+        #[doc = "OTG SRAM content retained in Stop modes."]
+        B_0X0 = 0x0,
+        #[doc = "OTG SRAM content lost in Stop modes."]
+        B_0X1 = 0x01,
+    }
+    impl Prampds {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Prampds {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Prampds {
+        #[inline(always)]
+        fn from(val: u8) -> Prampds {
+            Prampds::from_bits(val)
+        }
+    }
+    impl From<Prampds> for u8 {
+        #[inline(always)]
+        fn from(val: Prampds) -> u8 {
+            Prampds::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Ptasr {
+        #[doc = "Cleared by software, writing 0."]
+        B_0X0 = 0x0,
+        #[doc = "Set by hardware when Stop 2 mode PTA retention is enabled in PTASREN and Stop 2 mode is entered."]
+        B_0X1 = 0x01,
+    }
+    impl Ptasr {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ptasr {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ptasr {
+        #[inline(always)]
+        fn from(val: u8) -> Ptasr {
+            Ptasr::from_bits(val)
+        }
+    }
+    impl From<Ptasr> for u8 {
+        #[inline(always)]
+        fn from(val: Ptasr) -> u8 {
+            Ptasr::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Ptasren {
+        #[doc = "PTA output signals Stop 2 retention feature disabled."]
+        B_0X0 = 0x0,
+        #[doc = "PTA output signals Stop 2 retention feature enabled."]
+        B_0X1 = 0x01,
+    }
+    impl Ptasren {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ptasren {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ptasren {
+        #[inline(always)]
+        fn from(val: u8) -> Ptasren {
+            Ptasren::from_bits(val)
+        }
+    }
+    impl From<Ptasren> for u8 {
+        #[inline(always)]
+        fn from(val: Ptasren) -> u8 {
+            Ptasren::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1464,6 +2065,161 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Regpasel {
+        #[doc = "VDDRFPA pin selected as regulator REG_VDDHPA input supply."]
+        B_0X0 = 0x0,
+        #[doc = "regulator REG_VDDHPA input supply selection between VDDRFPA and VDD11, dependent on requested regulated output voltage."]
+        B_0X1 = 0x01,
+    }
+    impl Regpasel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Regpasel {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Regpasel {
+        #[inline(always)]
+        fn from(val: u8) -> Regpasel {
+            Regpasel::from_bits(val)
+        }
+    }
+    impl From<Regpasel> for u8 {
+        #[inline(always)]
+        fn from(val: Regpasel) -> u8 {
+            Regpasel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Regs {
+        #[doc = "LDO selected."]
+        B_0X0 = 0x0,
+        #[doc = "SMPS selected."]
+        B_0X1 = 0x01,
+    }
+    impl Regs {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Regs {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Regs {
+        #[inline(always)]
+        fn from(val: u8) -> Regs {
+            Regs::from_bits(val)
+        }
+    }
+    impl From<Regs> for u8 {
+        #[inline(always)]
+        fn from(val: Regs) -> u8 {
+            Regs::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Regsel {
+        #[doc = "LDO selected."]
+        B_0X0 = 0x0,
+        #[doc = "SMPS selected."]
+        B_0X1 = 0x01,
+    }
+    impl Regsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Regsel {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Regsel {
+        #[inline(always)]
+        fn from(val: u8) -> Regsel {
+            Regsel::from_bits(val)
+        }
+    }
+    impl From<Regsel> for u8 {
+        #[inline(always)]
+        fn from(val: Regsel) -> u8 {
+            Regsel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Sbf {
+        #[doc = "The device did not enter Standby mode."]
+        B_0X0 = 0x0,
+        #[doc = "The device entered Standby mode."]
+        B_0X1 = 0x01,
+    }
+    impl Sbf {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Sbf {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Sbf {
+        #[inline(always)]
+        fn from(val: u8) -> Sbf {
+            Sbf::from_bits(val)
+        }
+    }
+    impl From<Sbf> for u8 {
+        #[inline(always)]
+        fn from(val: Sbf) -> u8 {
+            Sbf::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Sram1pds567 {
+        #[doc = "SRAM1 192KB, page 5 to 7 content retained in Stop modes"]
+        POWERED_ON = 0x0,
+        #[doc = "SRAM1 192KB, page 5 to 7 content lost in Stop modes"]
+        POWERED_OFF = 0x01,
+    }
+    impl Sram1pds567 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Sram1pds567 {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Sram1pds567 {
+        #[inline(always)]
+        fn from(val: u8) -> Sram1pds567 {
+            Sram1pds567::from_bits(val)
+        }
+    }
+    impl From<Sram1pds567> for u8 {
+        #[inline(always)]
+        fn from(val: Sram1pds567) -> u8 {
+            Sram1pds567::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Srampds {
         #[doc = "SRAM1 content retained in Stop modes"]
         POWERED_ON = 0x0,
@@ -1490,6 +2246,130 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Srampds) -> u8 {
             Srampds::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Usv {
+        #[doc = "VDDUSB not supplied, electrical and logical isolation enabled."]
+        B_0X0 = 0x0,
+        #[doc = "VDDUSB supply present, electrical and logical isolation disabled."]
+        B_0X1 = 0x01,
+    }
+    impl Usv {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Usv {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Usv {
+        #[inline(always)]
+        fn from(val: u8) -> Usv {
+            Usv::from_bits(val)
+        }
+    }
+    impl From<Usv> for u8 {
+        #[inline(always)]
+        fn from(val: Usv) -> u8 {
+            Usv::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum V11fbsw {
+        #[doc = "V11 feedback fixed before Epod."]
+        B_0X0 = 0x0,
+        #[doc = "V11 feedback switch enabled:."]
+        B_0X1 = 0x01,
+    }
+    impl V11fbsw {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> V11fbsw {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for V11fbsw {
+        #[inline(always)]
+        fn from(val: u8) -> V11fbsw {
+            V11fbsw::from_bits(val)
+        }
+    }
+    impl From<V11fbsw> for u8 {
+        #[inline(always)]
+        fn from(val: V11fbsw) -> u8 {
+            V11fbsw::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Vbsec {
+        #[doc = "DBPCR can be read and written with secure or non-secure access."]
+        B_0X0 = 0x0,
+        #[doc = "DBPCR can be read and written only with secure access."]
+        B_0X1 = 0x01,
+    }
+    impl Vbsec {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Vbsec {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Vbsec {
+        #[inline(always)]
+        fn from(val: u8) -> Vbsec {
+            Vbsec::from_bits(val)
+        }
+    }
+    impl From<Vbsec> for u8 {
+        #[inline(always)]
+        fn from(val: Vbsec) -> u8 {
+            Vbsec::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Vdmsec {
+        #[doc = "SVMCR and CR3 can be read and written with secure or non-secure access."]
+        B_0X0 = 0x0,
+        #[doc = "SVMCR and CR3 can be read and written only with secure access."]
+        B_0X1 = 0x01,
+    }
+    impl Vdmsec {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Vdmsec {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Vdmsec {
+        #[inline(always)]
+        fn from(val: u8) -> Vdmsec {
+            Vdmsec::from_bits(val)
+        }
+    }
+    impl From<Vdmsec> for u8 {
+        #[inline(always)]
+        fn from(val: Vdmsec) -> u8 {
+            Vdmsec::to_bits(val)
         }
     }
     #[repr(u8)]

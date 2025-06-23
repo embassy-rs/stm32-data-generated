@@ -72,12 +72,27 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "pdkeyr",
+                    name: "pdkey1r",
                     description: Some(
-                        "power-down key register",
+                        "Flash Bank 1 power-down key register",
                     ),
                     array: None,
                     byte_offset: 0x18,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: None,
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pdkey2r",
+                    description: Some(
+                        "Flash Bank 2 power-down key register",
+                    ),
+                    array: None,
+                    byte_offset: 0x1c,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -325,9 +340,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "wrpar",
+                    name: "wrp1ar",
                     description: Some(
-                        "WRP area A address register",
+                        "Flash WRP bank 1 area A address register",
                     ),
                     array: None,
                     byte_offset: 0x58,
@@ -336,15 +351,15 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Wrpar",
+                                "Wrp1ar",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "wrpbr",
+                    name: "wrp1br",
                     description: Some(
-                        "WRP area B address register",
+                        "Flash WRP bank 1 area B address register",
                     ),
                     array: None,
                     byte_offset: 0x5c,
@@ -353,7 +368,75 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Wrpbr",
+                                "Wrp1br",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "secwm2r1",
+                    description: Some(
+                        "Flash bank 2 secure watermark register 1",
+                    ),
+                    array: None,
+                    byte_offset: 0x60,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Secwm2r1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "secwm2r2",
+                    description: Some(
+                        "Flash bank 2 secure watermark register 2",
+                    ),
+                    array: None,
+                    byte_offset: 0x64,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Secwm2r2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "wrp2ar",
+                    description: Some(
+                        "Flash WRP bank 2 area A address register",
+                    ),
+                    array: None,
+                    byte_offset: 0x68,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Wrp2ar",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "wrp2br",
+                    description: Some(
+                        "Flash WRP bank 2 area B address register",
+                    ),
+                    array: None,
+                    byte_offset: 0x6c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Wrp2br",
                             ),
                         },
                     ),
@@ -419,9 +502,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "secbbr",
+                    name: "secbb1r",
                     description: Some(
-                        "secure block based register 1",
+                        "Flash bank 1 secure block based register 1",
                     ),
                     array: Some(
                         Array::Regular(
@@ -432,6 +515,30 @@ pub(crate) static REGISTERS: IR = IR {
                         ),
                     ),
                     byte_offset: 0x80,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bbr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "secbb2r",
+                    description: Some(
+                        "Flash bank 2 secure block based register 1",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 0xa0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -460,7 +567,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "prifcfgr",
+                    name: "privcfgr",
                     description: Some(
                         "privilege configuration register",
                     ),
@@ -471,15 +578,15 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Prifcfgr",
+                                "Privcfgr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "privbbr",
+                    name: "privbb1r",
                     description: Some(
-                        "privilege block based register 1",
+                        "Flash bank 1 privilege block based register 1",
                     ),
                     array: Some(
                         Array::Regular(
@@ -490,6 +597,30 @@ pub(crate) static REGISTERS: IR = IR {
                         ),
                     ),
                     byte_offset: 0xd0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Bbr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "privbb2r",
+                    description: Some(
+                        "Flash bank 2 privilege block based register 1",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 0xf0,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
@@ -557,7 +688,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pdreq",
                     description: Some(
-                        "power-down mode request\r This bit requests to enter power-down mode. When enters power-down mode, this bit is cleared by hardware and the PDKEYR is locked.\r This bit is write-protected with PDKEYR. \r Access to the bit can be secured by PWR LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
+                        "power-down mode request\r This bit requests to enter power-down mode. When enters power-down mode, this bit is cleared by hardware and the PDKEY2R is locked.\r This bit is write-protected with PDKEY2R. \r Access to the bit can be secured by PWR LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1414,7 +1545,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Prifcfgr",
+            name: "Privcfgr",
             extends: None,
             description: Some(
                 "privilege configuration register",
@@ -1838,6 +1969,82 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Secwm2r1",
+            extends: None,
+            description: Some(
+                "Flash bank 2 secure watermark register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "secwm2_pstrt",
+                    description: Some(
+                        "WRP area B start page\r This field contains the first page of the secure area in bank 2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "secwm2_pend",
+                    description: Some(
+                        "End page of secure area\r This field contains the last page of the secure area in bank 2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Secwm2r2",
+            extends: None,
+            description: Some(
+                "Flash bank 2 secure watermark register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hdp2_pend",
+                    description: Some(
+                        "Bank 2 end page of secure hide protection area\r This field contains the last page of the secure HDP area in bank 2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hdp2en",
+                    description: Some(
+                        "Bank 2 secure Hide protection area enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Secwmr1",
             extends: None,
             description: Some(
@@ -1914,15 +2121,15 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Wrpar",
+            name: "Wrp1ar",
             extends: None,
             description: Some(
-                "WRP area A address register",
+                "WRP bank 1 area A address register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wrpa_pstrt",
+                    name: "wrp1a_pstrt",
                     description: Some(
                         "WPR area A start page\r This field contains the first page of the WPR area A.\r Note that bit 6 is reserved on STM32WBAxEx devices.",
                     ),
@@ -1936,7 +2143,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "wrpa_pend",
+                    name: "wrp1a_pend",
                     description: Some(
                         "WPR area A end page\r This field contains the last page of the WPR area A.\r Note that bit 22 is reserved on STM32WBAxEx devices.",
                     ),
@@ -1966,15 +2173,15 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Wrpbr",
+            name: "Wrp1br",
             extends: None,
             description: Some(
-                "WRP area B address register",
+                "WRP bank 1 area B address register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wrpb_pstrt",
+                    name: "wrp1b_pstrt",
                     description: Some(
                         "WRP area B start page\r This field contains the first page of the WRP area B.\r Note that bit 6 is reserved on STM32WBAxEx devices.",
                     ),
@@ -1988,7 +2195,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "wrpb_pend",
+                    name: "wrp1b_pend",
                     description: Some(
                         "WRP area B end page\r This field contains the last page of the WRP area B.\r Note that bit 22 is reserved on STM32WBAxEx devices.",
                     ),
@@ -2005,6 +2212,110 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "unlock",
                     description: Some(
                         "WPR area B unlock",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wrp2ar",
+            extends: None,
+            description: Some(
+                "WRP bank 2 area A address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wrp2a_pstrt",
+                    description: Some(
+                        "WRP bank 2 area A start page\r This field contains the first page of the WRP bank 2 area A.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wrp2a_pend",
+                    description: Some(
+                        "WRP bank 2 area A end page\r This field contains the last page of the WRP bank 2 area A.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "unlock",
+                    description: Some(
+                        "WPR bank 2 area A unlock",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Wrp2br",
+            extends: None,
+            description: Some(
+                "WRP bank 2 area B address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wrp2b_pstrt",
+                    description: Some(
+                        "WRP bank 2 area B start page\r This field contains the first page of the WRP bank 2 area B.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wrp2b_pend",
+                    description: Some(
+                        "WRP bank 2 area B end page\r This field contains the last page of the WRP bank 2 area B.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "unlock",
+                    description: Some(
+                        "WPR bank 2 area B unlock",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {

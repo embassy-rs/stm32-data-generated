@@ -6302,7 +6302,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK2",
-            "kernel_clock": "PCLK2",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "CLK48SEL"
+            },
             "enable": {
               "register": "APB2ENR",
               "field": "SDMMCEN"

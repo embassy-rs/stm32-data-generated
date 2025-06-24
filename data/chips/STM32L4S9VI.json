@@ -4224,8 +4224,8 @@
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
-              "register": "CCIPR2",
-              "field": "SDMMCSEL"
+              "register": "CCIPR",
+              "field": "CLK48SEL"
             },
             "enable": {
               "register": "AHB2ENR",

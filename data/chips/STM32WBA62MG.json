@@ -546,7 +546,18 @@
         "name": "BANK_1",
         "kind": "flash",
         "address": 134217728,
-        "size": 1048576,
+        "size": 524288,
+        "settings": {
+          "erase_size": 8192,
+          "write_size": 16,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "BANK_2",
+        "kind": "flash",
+        "address": 134742016,
+        "size": 524288,
         "settings": {
           "erase_size": 8192,
           "write_size": 16,
@@ -556,7 +567,7 @@
       {
         "name": "OTP",
         "kind": "flash",
-        "address": 200867840,
+        "address": 200933376,
         "size": 512,
         "settings": {
           "erase_size": 0,
@@ -568,7 +579,13 @@
         "name": "SRAM",
         "kind": "ram",
         "address": 536870912,
-        "size": 131072
+        "size": 196608
+      },
+      {
+        "name": "SRAM2",
+        "kind": "ram",
+        "address": 537329664,
+        "size": 65536
       }
     ]
   ],
@@ -580,6 +597,11 @@
         {
           "name": "ADC4",
           "address": 1174540288,
+          "registers": {
+            "kind": "adc",
+            "version": "wba",
+            "block": "ADC4"
+          },
           "rcc": {
             "bus_clock": "HCLK4",
             "kernel_clock": {

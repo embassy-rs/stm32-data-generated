@@ -3,7 +3,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ADC4",
         address: 0x46021000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adc",
+            version: "wba",
+            block: "ADC4",
+            ir: &adc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK4",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -2972,6 +2977,8 @@ pub(crate) static PINS: &[Pin] = &[
     Pin { name: "PC15" },
     Pin { name: "PH3" },
 ];
+#[path = "../registers/adc_wba.rs"]
+pub mod adc;
 #[path = "../registers/adccommon_v3.rs"]
 pub mod adccommon;
 #[path = "../registers/aes_v3b.rs"]

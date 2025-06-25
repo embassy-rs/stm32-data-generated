@@ -250,6 +250,11 @@
         {
           "name": "ADC4",
           "address": 1174540288,
+          "registers": {
+            "kind": "adc",
+            "version": "wba",
+            "block": "ADC4"
+          },
           "rcc": {
             "bus_clock": "HCLK4",
             "kernel_clock": {

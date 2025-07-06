@@ -168,7 +168,7 @@ pub use Interrupt as interrupt;
 pub mod adc;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
-#[path = "../../peripherals/crc_v2.rs"]
+#[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/dbgmcu_f0.rs"]
 pub mod dbgmcu;

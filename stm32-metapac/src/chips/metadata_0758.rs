@@ -5755,7 +5755,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "USB2_OTG_HS",
         address: 0x48080000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "otg",
+            version: "v1",
+            block: "OTG",
+            ir: &otg::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],

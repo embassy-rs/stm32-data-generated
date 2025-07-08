@@ -3335,7 +3335,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "USB_OTG_HS",
         address: 0x42040000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "otg",
+            version: "v1",
+            block: "OTG",
+            ir: &otg::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -3874,6 +3879,8 @@ pub mod icache;
 pub mod iwdg;
 #[path = "../registers/lptim_v2a.rs"]
 pub mod lptim;
+#[path = "../registers/otg_v1.rs"]
+pub mod otg;
 #[path = "../registers/pka_v1a.rs"]
 pub mod pka;
 #[path = "../registers/pwr_wba.rs"]

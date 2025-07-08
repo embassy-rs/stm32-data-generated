@@ -3554,6 +3554,11 @@
         {
           "name": "USB_OTG_HS",
           "address": 1107558400,
+          "registers": {
+            "kind": "otg",
+            "version": "v1",
+            "block": "OTG"
+          },
           "pins": [
             {
               "pin": "PA14",

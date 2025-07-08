@@ -5539,6 +5539,11 @@
         {
           "name": "USB2_OTG_HS",
           "address": 1208483840,
+          "registers": {
+            "kind": "otg",
+            "version": "v1",
+            "block": "OTG"
+          },
           "interrupts": [
             {
               "signal": "EP1_IN",

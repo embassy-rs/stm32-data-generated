@@ -770,7 +770,7 @@ pub(crate) static REGISTERS: IR = IR {
                             offset: 6,
                         },
                     ),
-                    bit_size: 2,
+                    bit_size: 3,
                     array: None,
                     enumm: None,
                 },

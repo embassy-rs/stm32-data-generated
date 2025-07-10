@@ -401,7 +401,7 @@ pub const GPIOD: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0c00usize as 
 pub const GPIOE: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1000usize as _) };
 pub const GPIOG: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1800usize as _) };
 pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1c00usize as _) };
-pub const USB_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4204_0000usize as _) };
+pub const USB_OTG_HS: *mut () = 0x4204_0000usize as _;
 pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
@@ -458,8 +458,6 @@ pub mod icache;
 pub mod iwdg;
 #[path = "../../peripherals/lptim_v2a.rs"]
 pub mod lptim;
-#[path = "../../peripherals/otg_v1.rs"]
-pub mod otg;
 #[path = "../../peripherals/pka_v1a.rs"]
 pub mod pka;
 #[path = "../../peripherals/pwr_wba.rs"]

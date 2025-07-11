@@ -196,6 +196,40 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
+                BlockItem {
+                    name: "otghsphycr",
+                    description: Some(
+                        "OTG_HS PHY register",
+                    ),
+                    array: None,
+                    byte_offset: 0x74,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Otghsphycr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "otghsphytuner2",
+                    description: Some(
+                        "OTG_HS PHY tune register 2",
+                    ),
+                    array: None,
+                    byte_offset: 0x7c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Otghsphytuner2",
+                            ),
+                        },
+                    ),
+                },
             ],
         },
     ],
@@ -230,6 +264,34 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 4,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ncc2",
+                    description: Some(
+                        "NMOS compensation code of the I/Os supplied by V<sub>DDIO2</sub>\r These bits are written by software to define an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is set.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pcc2",
+                    description: Some(
+                        "PMOS compensation code of the I/Os supplied by V<sub>DDIO2</sub>\r These bits are written by software to define an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is set.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
                         },
                     ),
                     bit_size: 4,
@@ -275,6 +337,34 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "en2",
+                    description: Some(
+                        "VDDIO2 I/Os compensation cell enable\r This bit enables the compensation cell of the I/Os supplied by V<sub>DDIO2</sub>.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cs2",
+                    description: Some(
+                        "VDDIO2 I/Os code selection\r This bit selects the code to be applied for the compensation cell of the I/Os supplied by V<sub>DDIO2</sub>.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "rdy1",
                     description: Some(
                         "VDD I/Os compensation cell ready flag\r This bit provides the compensation cell status of the I/Os supplied by V<sub>DD</sub>.\r Note: The HSI clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY1) is not set if the HSI clock is not enabled (HSION).",
@@ -282,6 +372,20 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 8,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rdy2",
+                    description: Some(
+                        "VDDIO2 I/Os compensation cell ready flag\r This bit provides the compensation cell status of the I/Os supplied by V<sub>DDIO2</sub>.\r Note: The HSI clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY2) is not set if the HSI clock is not enabled (HSION).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
                         },
                     ),
                     bit_size: 1,
@@ -320,6 +424,34 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 4,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ncv2",
+                    description: Some(
+                        "NMOS compensation value of the I/Os supplied by V<sub>DDIO2</sub>\r This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is reset.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pcv2",
+                    description: Some(
+                        "PMOS compensation value of the I/Os supplied by V<sub>DDIO2</sub>\r This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is reset.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
                         },
                     ),
                     bit_size: 4,
@@ -641,6 +773,112 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Otghsphycr",
+            extends: None,
+            description: Some(
+                "OTG_HS PHY register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "en",
+                    description: Some(
+                        "PHY Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pdctrl",
+                    description: Some(
+                        "Common block power-down control",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clksel",
+                    description: Some(
+                        "Reference clock frequency selection",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: Some(
+                        "Usbrefcksel",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Otghsphytuner2",
+            extends: None,
+            description: Some(
+                "OTG_HS tune register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "compdistune",
+                    description: Some(
+                        "Disconnect threshold adjustment",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sqrxtune",
+                    description: Some(
+                        "Squelch threshold adjustment",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txpreempamptune",
+                    description: Some(
+                        "HS transmitter preemphasis current control",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Rsscmdr",
             extends: None,
             description: Some(
@@ -717,5 +955,55 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
     ],
-    enums: &[],
+    enums: &[
+        Enum {
+            name: "Usbrefcksel",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "MHZ16",
+                    description: Some(
+                        "The kernel clock frequency provided to the OTG_HS PHY is 16 MHz.",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "MHZ19_2",
+                    description: Some(
+                        "The kernel clock frequency provided to the OTG_HS PHY is 19.2 MHz.",
+                    ),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "MHZ20",
+                    description: Some(
+                        "The kernel clock frequency provided to the OTG_HS PHY is 20MHz.",
+                    ),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "MHZ24",
+                    description: Some(
+                        "The kernel clock frequency provided to the OTG_HS PHY is 24 MHz (default after reset).",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "MHZ32",
+                    description: Some(
+                        "The kernel clock frequency provided to the OTG_HS PHY is 32 MHz.",
+                    ),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "MHZ26",
+                    description: Some(
+                        "The kernel clock frequency provided to the OTG_HS PHY is 26 MHz.",
+                    ),
+                    value: 14,
+                },
+            ],
+        },
+    ],
 };

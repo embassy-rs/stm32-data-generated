@@ -74,6 +74,16 @@ impl Syscfg {
     pub const fn rsscmdr(self) -> crate::common::Reg<regs::Rsscmdr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
+    #[doc = "OTG_HS PHY register"]
+    #[inline(always)]
+    pub const fn otghsphycr(self) -> crate::common::Reg<regs::Otghsphycr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x74usize) as _) }
+    }
+    #[doc = "OTG_HS PHY tune register 2"]
+    #[inline(always)]
+    pub const fn otghsphytuner2(self) -> crate::common::Reg<regs::Otghsphytuner2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x7cusize) as _) }
+    }
 }
 pub mod regs {
     #[doc = "compensation cell code register"]
@@ -103,6 +113,28 @@ pub mod regs {
         pub fn set_pcc1(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
+        #[doc = "NMOS compensation code of the I/Os supplied by V<sub>DDIO2</sub> These bits are written by software to define an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is set."]
+        #[inline(always)]
+        pub const fn ncc2(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "NMOS compensation code of the I/Os supplied by V<sub>DDIO2</sub> These bits are written by software to define an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is set."]
+        #[inline(always)]
+        pub fn set_ncc2(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
+        }
+        #[doc = "PMOS compensation code of the I/Os supplied by V<sub>DDIO2</sub> These bits are written by software to define an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is set."]
+        #[inline(always)]
+        pub const fn pcc2(&self) -> u8 {
+            let val = (self.0 >> 12usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "PMOS compensation code of the I/Os supplied by V<sub>DDIO2</sub> These bits are written by software to define an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is set."]
+        #[inline(always)]
+        pub fn set_pcc2(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 12usize)) | (((val as u32) & 0x0f) << 12usize);
+        }
     }
     impl Default for Cccr {
         #[inline(always)]
@@ -115,13 +147,22 @@ pub mod regs {
             f.debug_struct("Cccr")
                 .field("ncc1", &self.ncc1())
                 .field("pcc1", &self.pcc1())
+                .field("ncc2", &self.ncc2())
+                .field("pcc2", &self.pcc2())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Cccr {{ ncc1: {=u8:?}, pcc1: {=u8:?} }}", self.ncc1(), self.pcc1())
+            defmt::write!(
+                f,
+                "Cccr {{ ncc1: {=u8:?}, pcc1: {=u8:?}, ncc2: {=u8:?}, pcc2: {=u8:?} }}",
+                self.ncc1(),
+                self.pcc1(),
+                self.ncc2(),
+                self.pcc2()
+            )
         }
     }
     #[doc = "compensation cell control/status register"]
@@ -151,6 +192,28 @@ pub mod regs {
         pub fn set_cs1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[doc = "VDDIO2 I/Os compensation cell enable This bit enables the compensation cell of the I/Os supplied by V<sub>DDIO2</sub>."]
+        #[inline(always)]
+        pub const fn en2(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "VDDIO2 I/Os compensation cell enable This bit enables the compensation cell of the I/Os supplied by V<sub>DDIO2</sub>."]
+        #[inline(always)]
+        pub fn set_en2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "VDDIO2 I/Os code selection This bit selects the code to be applied for the compensation cell of the I/Os supplied by V<sub>DDIO2</sub>."]
+        #[inline(always)]
+        pub const fn cs2(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "VDDIO2 I/Os code selection This bit selects the code to be applied for the compensation cell of the I/Os supplied by V<sub>DDIO2</sub>."]
+        #[inline(always)]
+        pub fn set_cs2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
         #[doc = "VDD I/Os compensation cell ready flag This bit provides the compensation cell status of the I/Os supplied by V<sub>DD</sub>. Note: The HSI clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY1) is not set if the HSI clock is not enabled (HSION)."]
         #[inline(always)]
         pub const fn rdy1(&self) -> bool {
@@ -161,6 +224,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_rdy1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "VDDIO2 I/Os compensation cell ready flag This bit provides the compensation cell status of the I/Os supplied by V<sub>DDIO2</sub>. Note: The HSI clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY2) is not set if the HSI clock is not enabled (HSION)."]
+        #[inline(always)]
+        pub const fn rdy2(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "VDDIO2 I/Os compensation cell ready flag This bit provides the compensation cell status of the I/Os supplied by V<sub>DDIO2</sub>. Note: The HSI clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY2) is not set if the HSI clock is not enabled (HSION)."]
+        #[inline(always)]
+        pub fn set_rdy2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
     impl Default for Cccsr {
@@ -174,20 +248,17 @@ pub mod regs {
             f.debug_struct("Cccsr")
                 .field("en1", &self.en1())
                 .field("cs1", &self.cs1())
+                .field("en2", &self.en2())
+                .field("cs2", &self.cs2())
                 .field("rdy1", &self.rdy1())
+                .field("rdy2", &self.rdy2())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cccsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Cccsr {{ en1: {=bool:?}, cs1: {=bool:?}, rdy1: {=bool:?} }}",
-                self.en1(),
-                self.cs1(),
-                self.rdy1()
-            )
+            defmt :: write ! (f , "Cccsr {{ en1: {=bool:?}, cs1: {=bool:?}, en2: {=bool:?}, cs2: {=bool:?}, rdy1: {=bool:?}, rdy2: {=bool:?} }}" , self . en1 () , self . cs1 () , self . en2 () , self . cs2 () , self . rdy1 () , self . rdy2 ())
         }
     }
     #[doc = "compensation cell value register"]
@@ -217,6 +288,28 @@ pub mod regs {
         pub fn set_pcv1(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
+        #[doc = "NMOS compensation value of the I/Os supplied by V<sub>DDIO2</sub> This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is reset."]
+        #[inline(always)]
+        pub const fn ncv2(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "NMOS compensation value of the I/Os supplied by V<sub>DDIO2</sub> This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is reset."]
+        #[inline(always)]
+        pub fn set_ncv2(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
+        }
+        #[doc = "PMOS compensation value of the I/Os supplied by V<sub>DDIO2</sub> This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is reset."]
+        #[inline(always)]
+        pub const fn pcv2(&self) -> u8 {
+            let val = (self.0 >> 12usize) & 0x0f;
+            val as u8
+        }
+        #[doc = "PMOS compensation value of the I/Os supplied by V<sub>DDIO2</sub> This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is reset."]
+        #[inline(always)]
+        pub fn set_pcv2(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 12usize)) | (((val as u32) & 0x0f) << 12usize);
+        }
     }
     impl Default for Ccvr {
         #[inline(always)]
@@ -229,13 +322,22 @@ pub mod regs {
             f.debug_struct("Ccvr")
                 .field("ncv1", &self.ncv1())
                 .field("pcv1", &self.pcv1())
+                .field("ncv2", &self.ncv2())
+                .field("pcv2", &self.pcv2())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccvr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Ccvr {{ ncv1: {=u8:?}, pcv1: {=u8:?} }}", self.ncv1(), self.pcv1())
+            defmt::write!(
+                f,
+                "Ccvr {{ ncv1: {=u8:?}, pcv1: {=u8:?}, ncv2: {=u8:?}, pcv2: {=u8:?} }}",
+                self.ncv1(),
+                self.pcv1(),
+                self.ncv2(),
+                self.pcv2()
+            )
         }
     }
     #[doc = "configuration register 1"]
@@ -621,6 +723,138 @@ in the PWR register."]
             )
         }
     }
+    #[doc = "OTG_HS PHY register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Otghsphycr(pub u32);
+    impl Otghsphycr {
+        #[doc = "PHY Enable"]
+        #[inline(always)]
+        pub const fn en(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PHY Enable"]
+        #[inline(always)]
+        pub fn set_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Common block power-down control"]
+        #[inline(always)]
+        pub const fn pdctrl(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Common block power-down control"]
+        #[inline(always)]
+        pub fn set_pdctrl(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Reference clock frequency selection"]
+        #[inline(always)]
+        pub const fn clksel(&self) -> super::vals::Usbrefcksel {
+            let val = (self.0 >> 2usize) & 0x0f;
+            super::vals::Usbrefcksel::from_bits(val as u8)
+        }
+        #[doc = "Reference clock frequency selection"]
+        #[inline(always)]
+        pub fn set_clksel(&mut self, val: super::vals::Usbrefcksel) {
+            self.0 = (self.0 & !(0x0f << 2usize)) | (((val.to_bits() as u32) & 0x0f) << 2usize);
+        }
+    }
+    impl Default for Otghsphycr {
+        #[inline(always)]
+        fn default() -> Otghsphycr {
+            Otghsphycr(0)
+        }
+    }
+    impl core::fmt::Debug for Otghsphycr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Otghsphycr")
+                .field("en", &self.en())
+                .field("pdctrl", &self.pdctrl())
+                .field("clksel", &self.clksel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Otghsphycr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Otghsphycr {{ en: {=bool:?}, pdctrl: {=bool:?}, clksel: {:?} }}",
+                self.en(),
+                self.pdctrl(),
+                self.clksel()
+            )
+        }
+    }
+    #[doc = "OTG_HS tune register 2"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Otghsphytuner2(pub u32);
+    impl Otghsphytuner2 {
+        #[doc = "Disconnect threshold adjustment"]
+        #[inline(always)]
+        pub const fn compdistune(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "Disconnect threshold adjustment"]
+        #[inline(always)]
+        pub fn set_compdistune(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+        #[doc = "Squelch threshold adjustment"]
+        #[inline(always)]
+        pub const fn sqrxtune(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x07;
+            val as u8
+        }
+        #[doc = "Squelch threshold adjustment"]
+        #[inline(always)]
+        pub fn set_sqrxtune(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
+        }
+        #[doc = "HS transmitter preemphasis current control"]
+        #[inline(always)]
+        pub const fn txpreempamptune(&self) -> u8 {
+            let val = (self.0 >> 13usize) & 0x03;
+            val as u8
+        }
+        #[doc = "HS transmitter preemphasis current control"]
+        #[inline(always)]
+        pub fn set_txpreempamptune(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 13usize)) | (((val as u32) & 0x03) << 13usize);
+        }
+    }
+    impl Default for Otghsphytuner2 {
+        #[inline(always)]
+        fn default() -> Otghsphytuner2 {
+            Otghsphytuner2(0)
+        }
+    }
+    impl core::fmt::Debug for Otghsphytuner2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Otghsphytuner2")
+                .field("compdistune", &self.compdistune())
+                .field("sqrxtune", &self.sqrxtune())
+                .field("txpreempamptune", &self.txpreempamptune())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Otghsphytuner2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Otghsphytuner2 {{ compdistune: {=u8:?}, sqrxtune: {=u8:?}, txpreempamptune: {=u8:?} }}",
+                self.compdistune(),
+                self.sqrxtune(),
+                self.txpreempamptune()
+            )
+        }
+    }
     #[doc = "RSS command register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -719,6 +953,57 @@ in the PWR register."]
                 self.classbsec(),
                 self.fpusec()
             )
+        }
+    }
+}
+pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Usbrefcksel {
+        _RESERVED_0 = 0x0,
+        _RESERVED_1 = 0x01,
+        _RESERVED_2 = 0x02,
+        #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 16 MHz."]
+        MHZ16 = 0x03,
+        _RESERVED_4 = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+        #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 19.2 MHz."]
+        MHZ19_2 = 0x08,
+        #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 20MHz."]
+        MHZ20 = 0x09,
+        #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 24 MHz (default after reset)."]
+        MHZ24 = 0x0a,
+        #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 32 MHz."]
+        MHZ32 = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 26 MHz."]
+        MHZ26 = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Usbrefcksel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Usbrefcksel {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Usbrefcksel {
+        #[inline(always)]
+        fn from(val: u8) -> Usbrefcksel {
+            Usbrefcksel::from_bits(val)
+        }
+    }
+    impl From<Usbrefcksel> for u8 {
+        #[inline(always)]
+        fn from(val: Usbrefcksel) -> u8 {
+            Usbrefcksel::to_bits(val)
         }
     }
 }

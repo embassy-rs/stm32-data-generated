@@ -187,7 +187,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "mem2mem",
-                    description: Some("Memory to memory mode  enabled"),
+                    description: Some("Memory to memory mode enabled"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,

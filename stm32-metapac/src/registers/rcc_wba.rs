@@ -1286,7 +1286,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "otgen",
+                    name: "usb_otg_hsen",
                     description: Some(
                         "USB OTG_HS bus and kernel clock enable\r Set and cleared by software.\r Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
@@ -1520,7 +1520,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "otgrst",
+                    name: "usb_otg_hsrst",
                     description: Some(
                         "USB OTG_HS reset\r Set and cleared by software.\r Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),
@@ -1726,7 +1726,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "otgsmen",
+                    name: "usb_otg_hssmen",
                     description: Some(
                         "USB OTG_HS bus and kernel clock enable during Sleep and Stop modes\r Set and cleared by software.\r Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV.",
                     ),

@@ -3854,6 +3854,21 @@
             "version": "v1",
             "block": "OTG"
           },
+          "rcc": {
+            "bus_clock": "HCLK2",
+            "kernel_clock": {
+              "register": "CCIPR2",
+              "field": "OTGHSSEL"
+            },
+            "enable": {
+              "register": "AHB2ENR",
+              "field": "USB_OTG_HSEN"
+            },
+            "reset": {
+              "register": "AHB2RSTR",
+              "field": "USB_OTG_HSRST"
+            }
+          },
           "pins": [
             {
               "pin": "PA14",

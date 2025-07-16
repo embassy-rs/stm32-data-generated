@@ -659,13 +659,13 @@ pub mod regs {
         }
         #[doc = "USB OTG_HS bus and kernel clock enable Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
-        pub const fn otgen(&self) -> bool {
+        pub const fn usb_otg_hsen(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
             val != 0
         }
         #[doc = "USB OTG_HS bus and kernel clock enable Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
-        pub fn set_otgen(&mut self, val: bool) {
+        pub fn set_usb_otg_hsen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "USB OTG_HS PHY kernel clock enable Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
@@ -773,7 +773,7 @@ pub mod regs {
                 .field("gpioeen", &self.gpioeen())
                 .field("gpiogen", &self.gpiogen())
                 .field("gpiohen", &self.gpiohen())
-                .field("otgen", &self.otgen())
+                .field("usb_otg_hsen", &self.usb_otg_hsen())
                 .field("otghsphyen", &self.otghsphyen())
                 .field("aesen", &self.aesen())
                 .field("hashen", &self.hashen())
@@ -788,7 +788,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb2enr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb2enr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, otgen: {=bool:?}, otghsphyen: {=bool:?}, aesen: {=bool:?}, hashen: {=bool:?}, rngen: {=bool:?}, saesen: {=bool:?}, hsemen: {=bool:?}, pkaen: {=bool:?}, sram2en: {=bool:?} }}" , self . gpioaen () , self . gpioben () , self . gpiocen () , self . gpioden () , self . gpioeen () , self . gpiogen () , self . gpiohen () , self . otgen () , self . otghsphyen () , self . aesen () , self . hashen () , self . rngen () , self . saesen () , self . hsemen () , self . pkaen () , self . sram2en ())
+            defmt :: write ! (f , "Ahb2enr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, usb_otg_hsen: {=bool:?}, otghsphyen: {=bool:?}, aesen: {=bool:?}, hashen: {=bool:?}, rngen: {=bool:?}, saesen: {=bool:?}, hsemen: {=bool:?}, pkaen: {=bool:?}, sram2en: {=bool:?} }}" , self . gpioaen () , self . gpioben () , self . gpiocen () , self . gpioden () , self . gpioeen () , self . gpiogen () , self . gpiohen () , self . usb_otg_hsen () , self . otghsphyen () , self . aesen () , self . hashen () , self . rngen () , self . saesen () , self . hsemen () , self . pkaen () , self . sram2en ())
         }
     }
     #[doc = "RCC AHB2 peripheral reset register"]
@@ -875,13 +875,13 @@ pub mod regs {
         }
         #[doc = "USB OTG_HS reset Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
-        pub const fn otgrst(&self) -> bool {
+        pub const fn usb_otg_hsrst(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
             val != 0
         }
         #[doc = "USB OTG_HS reset Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
-        pub fn set_otgrst(&mut self, val: bool) {
+        pub fn set_usb_otg_hsrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "AES hardware accelerator reset Set and cleared by software. Access can be secured by GTZC_TZSC AESSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
@@ -967,7 +967,7 @@ pub mod regs {
                 .field("gpioerst", &self.gpioerst())
                 .field("gpiogrst", &self.gpiogrst())
                 .field("gpiohrst", &self.gpiohrst())
-                .field("otgrst", &self.otgrst())
+                .field("usb_otg_hsrst", &self.usb_otg_hsrst())
                 .field("aesrst", &self.aesrst())
                 .field("hashrst", &self.hashrst())
                 .field("rngrst", &self.rngrst())
@@ -980,7 +980,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb2rstr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb2rstr {{ gpioarst: {=bool:?}, gpiobrst: {=bool:?}, gpiocrst: {=bool:?}, gpiodrst: {=bool:?}, gpioerst: {=bool:?}, gpiogrst: {=bool:?}, gpiohrst: {=bool:?}, otgrst: {=bool:?}, aesrst: {=bool:?}, hashrst: {=bool:?}, rngrst: {=bool:?}, saesrst: {=bool:?}, hsemrst: {=bool:?}, pkarst: {=bool:?} }}" , self . gpioarst () , self . gpiobrst () , self . gpiocrst () , self . gpiodrst () , self . gpioerst () , self . gpiogrst () , self . gpiohrst () , self . otgrst () , self . aesrst () , self . hashrst () , self . rngrst () , self . saesrst () , self . hsemrst () , self . pkarst ())
+            defmt :: write ! (f , "Ahb2rstr {{ gpioarst: {=bool:?}, gpiobrst: {=bool:?}, gpiocrst: {=bool:?}, gpiodrst: {=bool:?}, gpioerst: {=bool:?}, gpiogrst: {=bool:?}, gpiohrst: {=bool:?}, usb_otg_hsrst: {=bool:?}, aesrst: {=bool:?}, hashrst: {=bool:?}, rngrst: {=bool:?}, saesrst: {=bool:?}, hsemrst: {=bool:?}, pkarst: {=bool:?} }}" , self . gpioarst () , self . gpiobrst () , self . gpiocrst () , self . gpiodrst () , self . gpioerst () , self . gpiogrst () , self . gpiohrst () , self . usb_otg_hsrst () , self . aesrst () , self . hashrst () , self . rngrst () , self . saesrst () , self . hsemrst () , self . pkarst ())
         }
     }
     #[doc = "RCC AHB2 peripheral clocks enable in Sleep and Stop modes register"]
@@ -1067,13 +1067,13 @@ pub mod regs {
         }
         #[doc = "USB OTG_HS bus and kernel clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
-        pub const fn otgsmen(&self) -> bool {
+        pub const fn usb_otg_hssmen(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
             val != 0
         }
         #[doc = "USB OTG_HS bus and kernel clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
-        pub fn set_otgsmen(&mut self, val: bool) {
+        pub fn set_usb_otg_hssmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "USB OTG_HS PHY kernel clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
@@ -1170,7 +1170,7 @@ pub mod regs {
                 .field("gpioesmen", &self.gpioesmen())
                 .field("gpiogsmen", &self.gpiogsmen())
                 .field("gpiohsmen", &self.gpiohsmen())
-                .field("otgsmen", &self.otgsmen())
+                .field("usb_otg_hssmen", &self.usb_otg_hssmen())
                 .field("otghsphysmen", &self.otghsphysmen())
                 .field("aessmen", &self.aessmen())
                 .field("hashsmen", &self.hashsmen())
@@ -1184,7 +1184,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb2smenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb2smenr {{ gpioasmen: {=bool:?}, gpiobsmen: {=bool:?}, gpiocsmen: {=bool:?}, gpiodsmen: {=bool:?}, gpioesmen: {=bool:?}, gpiogsmen: {=bool:?}, gpiohsmen: {=bool:?}, otgsmen: {=bool:?}, otghsphysmen: {=bool:?}, aessmen: {=bool:?}, hashsmen: {=bool:?}, rngsmen: {=bool:?}, saessmen: {=bool:?}, pkasmen: {=bool:?}, sram2smen: {=bool:?} }}" , self . gpioasmen () , self . gpiobsmen () , self . gpiocsmen () , self . gpiodsmen () , self . gpioesmen () , self . gpiogsmen () , self . gpiohsmen () , self . otgsmen () , self . otghsphysmen () , self . aessmen () , self . hashsmen () , self . rngsmen () , self . saessmen () , self . pkasmen () , self . sram2smen ())
+            defmt :: write ! (f , "Ahb2smenr {{ gpioasmen: {=bool:?}, gpiobsmen: {=bool:?}, gpiocsmen: {=bool:?}, gpiodsmen: {=bool:?}, gpioesmen: {=bool:?}, gpiogsmen: {=bool:?}, gpiohsmen: {=bool:?}, usb_otg_hssmen: {=bool:?}, otghsphysmen: {=bool:?}, aessmen: {=bool:?}, hashsmen: {=bool:?}, rngsmen: {=bool:?}, saessmen: {=bool:?}, pkasmen: {=bool:?}, sram2smen: {=bool:?} }}" , self . gpioasmen () , self . gpiobsmen () , self . gpiocsmen () , self . gpiodsmen () , self . gpioesmen () , self . gpiogsmen () , self . gpiohsmen () , self . usb_otg_hssmen () , self . otghsphysmen () , self . aessmen () , self . hashsmen () , self . rngsmen () , self . saessmen () , self . pkasmen () , self . sram2smen ())
         }
     }
     #[doc = "RCC AHB4 peripheral clock enable register"]

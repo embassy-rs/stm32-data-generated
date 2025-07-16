@@ -3882,6 +3882,24 @@
               "pin": "PD9",
               "signal": "VBUS"
             }
+          ],
+          "interrupts": [
+            {
+              "signal": "EP1_IN",
+              "interrupt": "USB_OTG_HS"
+            },
+            {
+              "signal": "EP1_OUT",
+              "interrupt": "USB_OTG_HS"
+            },
+            {
+              "signal": "GLOBAL",
+              "interrupt": "USB_OTG_HS"
+            },
+            {
+              "signal": "WKUP",
+              "interrupt": "USB_OTG_HS"
+            }
           ]
         },
         {

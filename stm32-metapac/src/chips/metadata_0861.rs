@@ -3560,7 +3560,24 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "EP1_IN",
+                interrupt: "USB_OTG_HS",
+            },
+            PeripheralInterrupt {
+                signal: "EP1_OUT",
+                interrupt: "USB_OTG_HS",
+            },
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "USB_OTG_HS",
+            },
+            PeripheralInterrupt {
+                signal: "WKUP",
+                interrupt: "USB_OTG_HS",
+            },
+        ],
     },
     Peripheral {
         name: "VREFBUF",

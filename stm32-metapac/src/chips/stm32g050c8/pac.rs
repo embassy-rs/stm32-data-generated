@@ -202,7 +202,7 @@ pub mod i2c;
 pub mod iwdg;
 #[path = "../../peripherals/pwr_g0.rs"]
 pub mod pwr;
-#[path = "../../peripherals/rcc_g0.rs"]
+#[path = "../../peripherals/rcc_g0x0.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rtc_v3.rs"]
 pub mod rtc;

@@ -2589,7 +2589,7 @@
           "address": 1073876992,
           "registers": {
             "kind": "rcc",
-            "version": "g0",
+            "version": "g0x1",
             "block": "RCC"
           },
           "pins": [

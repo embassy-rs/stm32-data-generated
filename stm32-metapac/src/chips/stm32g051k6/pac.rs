@@ -228,7 +228,7 @@ pub mod iwdg;
 pub mod lptim;
 #[path = "../../peripherals/pwr_g0.rs"]
 pub mod pwr;
-#[path = "../../peripherals/rcc_g0.rs"]
+#[path = "../../peripherals/rcc_g0x1.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rtc_v3.rs"]
 pub mod rtc;

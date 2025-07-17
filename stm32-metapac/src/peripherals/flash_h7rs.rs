@@ -329,13 +329,13 @@ pub mod regs {
         #[doc = "Sector erase selection number These bits are used to select the target sector for an erase operation (they are unused otherwise). ..."]
         #[inline(always)]
         pub const fn ssn(&self) -> u8 {
-            let val = (self.0 >> 6usize) & 0x03;
+            let val = (self.0 >> 6usize) & 0x07;
             val as u8
         }
         #[doc = "Sector erase selection number These bits are used to select the target sector for an erase operation (they are unused otherwise). ..."]
         #[inline(always)]
         pub fn set_ssn(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
+            self.0 = (self.0 & !(0x07 << 6usize)) | (((val as u32) & 0x07) << 6usize);
         }
         #[doc = "Program Enable for OTP Area Set this bit to enable write operations to OTP area."]
         #[inline(always)]

@@ -1590,11 +1590,25 @@
           "dma_channels": [
             {
               "signal": "ADC",
-              "channel": "DMA1_CH1"
+              "channel": "DMA1_CH1",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "ADC_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "ADC",
-              "channel": "DMA1_CH2"
+              "channel": "DMA1_CH2",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "ADC_DMA_RMP",
+                  "value": 1
+                }
+              ]
             }
           ]
         },
@@ -2175,19 +2189,47 @@
           "dma_channels": [
             {
               "signal": "TX",
-              "channel": "DMA1_CH2"
+              "channel": "DMA1_CH2",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "I2C1_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "RX",
-              "channel": "DMA1_CH3"
+              "channel": "DMA1_CH3",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "I2C1_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "TX",
-              "channel": "DMA1_CH6"
+              "channel": "DMA1_CH6",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "I2C1_DMA_RMP",
+                  "value": 1
+                }
+              ]
             },
             {
               "signal": "RX",
-              "channel": "DMA1_CH7"
+              "channel": "DMA1_CH7",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "I2C1_DMA_RMP",
+                  "value": 1
+                }
+              ]
             }
           ]
         },
@@ -2697,19 +2739,47 @@
           "dma_channels": [
             {
               "signal": "RX",
-              "channel": "DMA1_CH4"
+              "channel": "DMA1_CH4",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "SPI2_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "TX",
-              "channel": "DMA1_CH5"
+              "channel": "DMA1_CH5",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "SPI2_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "RX",
-              "channel": "DMA1_CH6"
+              "channel": "DMA1_CH6",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "SPI2_DMA_RMP",
+                  "value": 1
+                }
+              ]
             },
             {
               "signal": "TX",
-              "channel": "DMA1_CH7"
+              "channel": "DMA1_CH7",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "SPI2_DMA_RMP",
+                  "value": 1
+                }
+              ]
             }
           ]
         },
@@ -2891,11 +2961,25 @@
           "dma_channels": [
             {
               "signal": "CH1",
-              "channel": "DMA1_CH2"
+              "channel": "DMA1_CH2",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM1_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "CH2",
-              "channel": "DMA1_CH3"
+              "channel": "DMA1_CH3",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM1_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "CH4",
@@ -2923,15 +3007,36 @@
             },
             {
               "signal": "CH1",
-              "channel": "DMA1_CH6"
+              "channel": "DMA1_CH6",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM1_DMA_RMP",
+                  "value": 1
+                }
+              ]
             },
             {
               "signal": "CH2",
-              "channel": "DMA1_CH6"
+              "channel": "DMA1_CH6",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM1_DMA_RMP",
+                  "value": 1
+                }
+              ]
             },
             {
               "signal": "CH3",
-              "channel": "DMA1_CH6"
+              "channel": "DMA1_CH6",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM1_DMA_RMP",
+                  "value": 1
+                }
+              ]
             }
           ]
         },
@@ -3180,27 +3285,99 @@
           "dma_channels": [
             {
               "signal": "CH1",
-              "channel": "DMA1_CH3"
+              "channel": "DMA1_CH3",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM16_DMA_RMP",
+                  "value": 0
+                },
+                {
+                  "register": "CFGR1",
+                  "field": "TIM16_DMA_RMP2",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "UP",
-              "channel": "DMA1_CH3"
+              "channel": "DMA1_CH3",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM16_DMA_RMP",
+                  "value": 0
+                },
+                {
+                  "register": "CFGR1",
+                  "field": "TIM16_DMA_RMP2",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "CH1",
-              "channel": "DMA1_CH4"
+              "channel": "DMA1_CH4",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM16_DMA_RMP",
+                  "value": 1
+                },
+                {
+                  "register": "CFGR1",
+                  "field": "TIM16_DMA_RMP2",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "UP",
-              "channel": "DMA1_CH4"
+              "channel": "DMA1_CH4",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM16_DMA_RMP",
+                  "value": 1
+                },
+                {
+                  "register": "CFGR1",
+                  "field": "TIM16_DMA_RMP2",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "CH1",
-              "channel": "DMA1_CH6"
+              "channel": "DMA1_CH6",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM16_DMA_RMP",
+                  "value": 0
+                },
+                {
+                  "register": "CFGR1",
+                  "field": "TIM16_DMA_RMP2",
+                  "value": 1
+                }
+              ]
             },
             {
               "signal": "UP",
-              "channel": "DMA1_CH6"
+              "channel": "DMA1_CH6",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM16_DMA_RMP",
+                  "value": 0
+                },
+                {
+                  "register": "CFGR1",
+                  "field": "TIM16_DMA_RMP2",
+                  "value": 1
+                }
+              ]
             }
           ]
         },
@@ -3281,27 +3458,99 @@
           "dma_channels": [
             {
               "signal": "CH1",
-              "channel": "DMA1_CH1"
+              "channel": "DMA1_CH1",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM17_DMA_RMP",
+                  "value": 0
+                },
+                {
+                  "register": "CFGR1",
+                  "field": "TIM17_DMA_RMP2",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "UP",
-              "channel": "DMA1_CH1"
+              "channel": "DMA1_CH1",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM17_DMA_RMP",
+                  "value": 0
+                },
+                {
+                  "register": "CFGR1",
+                  "field": "TIM17_DMA_RMP2",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "CH1",
-              "channel": "DMA1_CH2"
+              "channel": "DMA1_CH2",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM17_DMA_RMP",
+                  "value": 1
+                },
+                {
+                  "register": "CFGR1",
+                  "field": "TIM17_DMA_RMP2",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "UP",
-              "channel": "DMA1_CH2"
+              "channel": "DMA1_CH2",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM17_DMA_RMP",
+                  "value": 1
+                },
+                {
+                  "register": "CFGR1",
+                  "field": "TIM17_DMA_RMP2",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "CH1",
-              "channel": "DMA1_CH7"
+              "channel": "DMA1_CH7",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM17_DMA_RMP",
+                  "value": 0
+                },
+                {
+                  "register": "CFGR1",
+                  "field": "TIM17_DMA_RMP2",
+                  "value": 1
+                }
+              ]
             },
             {
               "signal": "UP",
-              "channel": "DMA1_CH7"
+              "channel": "DMA1_CH7",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM17_DMA_RMP",
+                  "value": 0
+                },
+                {
+                  "register": "CFGR1",
+                  "field": "TIM17_DMA_RMP2",
+                  "value": 1
+                }
+              ]
             }
           ]
         },
@@ -3420,11 +3669,25 @@
             },
             {
               "signal": "CH2",
-              "channel": "DMA1_CH3"
+              "channel": "DMA1_CH3",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM2_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "CH4",
-              "channel": "DMA1_CH4"
+              "channel": "DMA1_CH4",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM2_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "CH1",
@@ -3432,11 +3695,25 @@
             },
             {
               "signal": "CH2",
-              "channel": "DMA1_CH7"
+              "channel": "DMA1_CH7",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM2_DMA_RMP",
+                  "value": 1
+                }
+              ]
             },
             {
               "signal": "CH4",
-              "channel": "DMA1_CH7"
+              "channel": "DMA1_CH7",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM2_DMA_RMP",
+                  "value": 1
+                }
+              ]
             }
           ]
         },
@@ -3579,19 +3856,47 @@
             },
             {
               "signal": "CH1",
-              "channel": "DMA1_CH4"
+              "channel": "DMA1_CH4",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM3_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "TRIG",
-              "channel": "DMA1_CH4"
+              "channel": "DMA1_CH4",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM3_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "CH1",
-              "channel": "DMA1_CH6"
+              "channel": "DMA1_CH6",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM3_DMA_RMP",
+                  "value": 1
+                }
+              ]
             },
             {
               "signal": "TRIG",
-              "channel": "DMA1_CH6"
+              "channel": "DMA1_CH6",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "TIM3_DMA_RMP",
+                  "value": 1
+                }
+              ]
             }
           ]
         },
@@ -3975,19 +4280,47 @@
           "dma_channels": [
             {
               "signal": "TX",
-              "channel": "DMA1_CH2"
+              "channel": "DMA1_CH2",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "USART1_TX_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "RX",
-              "channel": "DMA1_CH3"
+              "channel": "DMA1_CH3",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "USART1_RX_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "TX",
-              "channel": "DMA1_CH4"
+              "channel": "DMA1_CH4",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "USART1_TX_DMA_RMP",
+                  "value": 1
+                }
+              ]
             },
             {
               "signal": "RX",
-              "channel": "DMA1_CH5"
+              "channel": "DMA1_CH5",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "USART1_RX_DMA_RMP",
+                  "value": 1
+                }
+              ]
             }
           ]
         },
@@ -4095,19 +4428,47 @@
           "dma_channels": [
             {
               "signal": "TX",
-              "channel": "DMA1_CH4"
+              "channel": "DMA1_CH4",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "USART2_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "RX",
-              "channel": "DMA1_CH5"
+              "channel": "DMA1_CH5",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "USART2_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "RX",
-              "channel": "DMA1_CH6"
+              "channel": "DMA1_CH6",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "USART2_DMA_RMP",
+                  "value": 1
+                }
+              ]
             },
             {
               "signal": "TX",
-              "channel": "DMA1_CH7"
+              "channel": "DMA1_CH7",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "USART2_DMA_RMP",
+                  "value": 1
+                }
+              ]
             }
           ]
         },
@@ -4260,19 +4621,47 @@
           "dma_channels": [
             {
               "signal": "TX",
-              "channel": "DMA1_CH2"
+              "channel": "DMA1_CH2",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "USART3_DMA_RMP",
+                  "value": 1
+                }
+              ]
             },
             {
               "signal": "RX",
-              "channel": "DMA1_CH3"
+              "channel": "DMA1_CH3",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "USART3_DMA_RMP",
+                  "value": 1
+                }
+              ]
             },
             {
               "signal": "RX",
-              "channel": "DMA1_CH6"
+              "channel": "DMA1_CH6",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "USART3_DMA_RMP",
+                  "value": 0
+                }
+              ]
             },
             {
               "signal": "TX",
-              "channel": "DMA1_CH7"
+              "channel": "DMA1_CH7",
+              "remap": [
+                {
+                  "register": "CFGR1",
+                  "field": "USART3_DMA_RMP",
+                  "value": 0
+                }
+              ]
             }
           ]
         },

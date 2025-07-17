@@ -1275,6 +1275,18 @@
               "field": "CECRST"
             }
           },
+          "pins": [
+            {
+              "pin": "PA5",
+              "signal": "CEC",
+              "af": 7
+            },
+            {
+              "pin": "PB8",
+              "signal": "CEC",
+              "af": 6
+            }
+          ],
           "interrupts": [
             {
               "signal": "GLOBAL",

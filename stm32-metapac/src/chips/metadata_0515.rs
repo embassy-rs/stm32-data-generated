@@ -259,7 +259,11 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             }),
             stop_mode: StopMode::Stop1,
         }),
-        pins: &[],
+        pins: &[PeripheralPin {
+            pin: "PA15",
+            signal: "CEC",
+            af: Some(4),
+        }],
         dma_channels: &[],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",

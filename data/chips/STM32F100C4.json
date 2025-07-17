@@ -702,6 +702,16 @@
               "field": "CECRST"
             }
           },
+          "pins": [
+            {
+              "pin": "PB10",
+              "signal": "CEC"
+            },
+            {
+              "pin": "PB8",
+              "signal": "CEC"
+            }
+          ],
           "interrupts": [
             {
               "signal": "GLOBAL",

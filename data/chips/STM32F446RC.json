@@ -1147,6 +1147,18 @@
               "field": "CECEN"
             }
           },
+          "pins": [
+            {
+              "pin": "PA15",
+              "signal": "CEC",
+              "af": 4
+            },
+            {
+              "pin": "PB6",
+              "signal": "CEC",
+              "af": 3
+            }
+          ],
           "interrupts": [
             {
               "signal": "GLOBAL",

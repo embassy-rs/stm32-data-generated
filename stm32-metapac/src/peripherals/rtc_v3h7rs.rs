@@ -129,13 +129,17 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Alrbinr(pub u32);
     impl Alrbinr {
-        #[doc = "Synchronous counter alarm value in Binary mode"]
+        #[doc = "Synchronous counter alarm value in Binary mode. This value is compared with the contents of the synchronous counter to determine if Alarm is to be activated. Only bits 0 up MASKSS-1 are compared. SS\\[14:0\\]
+is the mirror of SS\\[14:0\\]
+in the ALRMSSR, and so can also be read or written through ALRMSSR."]
         #[inline(always)]
         pub const fn ss(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
-        #[doc = "Synchronous counter alarm value in Binary mode"]
+        #[doc = "Synchronous counter alarm value in Binary mode. This value is compared with the contents of the synchronous counter to determine if Alarm is to be activated. Only bits 0 up MASKSS-1 are compared. SS\\[14:0\\]
+is the mirror of SS\\[14:0\\]
+in the ALRMSSR, and so can also be read or written through ALRMSSR."]
         #[inline(always)]
         pub fn set_ss(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
@@ -185,13 +189,13 @@ pub mod regs {
         pub fn set_st(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
         }
-        #[doc = "Alarm A seconds mask"]
+        #[doc = "Alarm seconds mask"]
         #[inline(always)]
         pub const fn msk1(&self) -> super::vals::AlrmrMsk {
             let val = (self.0 >> 7usize) & 0x01;
             super::vals::AlrmrMsk::from_bits(val as u8)
         }
-        #[doc = "Alarm A seconds mask"]
+        #[doc = "Alarm seconds mask"]
         #[inline(always)]
         pub fn set_msk1(&mut self, val: super::vals::AlrmrMsk) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
@@ -218,13 +222,13 @@ pub mod regs {
         pub fn set_mnt(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 12usize)) | (((val as u32) & 0x07) << 12usize);
         }
-        #[doc = "Alarm A minutes mask"]
+        #[doc = "Alarm minutes mask"]
         #[inline(always)]
         pub const fn msk2(&self) -> super::vals::AlrmrMsk {
             let val = (self.0 >> 15usize) & 0x01;
             super::vals::AlrmrMsk::from_bits(val as u8)
         }
-        #[doc = "Alarm A minutes mask"]
+        #[doc = "Alarm minutes mask"]
         #[inline(always)]
         pub fn set_msk2(&mut self, val: super::vals::AlrmrMsk) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
@@ -262,13 +266,13 @@ pub mod regs {
         pub fn set_pm(&mut self, val: super::vals::AlrmrPm) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
         }
-        #[doc = "Alarm A hours mask"]
+        #[doc = "Alarm hours mask"]
         #[inline(always)]
         pub const fn msk3(&self) -> super::vals::AlrmrMsk {
             let val = (self.0 >> 23usize) & 0x01;
             super::vals::AlrmrMsk::from_bits(val as u8)
         }
-        #[doc = "Alarm A hours mask"]
+        #[doc = "Alarm hours mask"]
         #[inline(always)]
         pub fn set_msk3(&mut self, val: super::vals::AlrmrMsk) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
@@ -306,13 +310,13 @@ pub mod regs {
         pub fn set_wdsel(&mut self, val: super::vals::AlrmrWdsel) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
         }
-        #[doc = "Alarm A date mask"]
+        #[doc = "Alarm date mask"]
         #[inline(always)]
         pub const fn msk4(&self) -> super::vals::AlrmrMsk {
             let val = (self.0 >> 31usize) & 0x01;
             super::vals::AlrmrMsk::from_bits(val as u8)
         }
-        #[doc = "Alarm A date mask"]
+        #[doc = "Alarm date mask"]
         #[inline(always)]
         pub fn set_msk4(&mut self, val: super::vals::AlrmrMsk) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
@@ -355,24 +359,26 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Alrmssr(pub u32);
     impl Alrmssr {
-        #[doc = "Sub seconds value"]
+        #[doc = "Subseconds value. This value is compared with the contents of the synchronous prescaler counter to determine if alarm is to be activated. Only bits 0 up MASKSS-1 are compared. This field is the mirror of SS\\[14:0\\]
+in the ALRBINR, and so can also be read or written through ALRBINR."]
         #[inline(always)]
         pub const fn ss(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x7fff;
             val as u16
         }
-        #[doc = "Sub seconds value"]
+        #[doc = "Subseconds value. This value is compared with the contents of the synchronous prescaler counter to determine if alarm is to be activated. Only bits 0 up MASKSS-1 are compared. This field is the mirror of SS\\[14:0\\]
+in the ALRBINR, and so can also be read or written through ALRBINR."]
         #[inline(always)]
         pub fn set_ss(&mut self, val: u16) {
             self.0 = (self.0 & !(0x7fff << 0usize)) | (((val as u32) & 0x7fff) << 0usize);
         }
-        #[doc = "Mask the most-significant bits starting at this bit"]
+        #[doc = "Mask the most-significant bits starting at this bit ... From 32 to 63: All 32 SS bits are compared and must match to activate alarm. Note: In BCD mode (BIN=00) the overflow bits of the synchronous counter (bits 31:15) are never compared. These bits can be different from 0 only after a shift operation."]
         #[inline(always)]
         pub const fn maskss(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x3f;
             val as u8
         }
-        #[doc = "Mask the most-significant bits starting at this bit"]
+        #[doc = "Mask the most-significant bits starting at this bit ... From 32 to 63: All 32 SS bits are compared and must match to activate alarm. Note: In BCD mode (BIN=00) the overflow bits of the synchronous counter (bits 31:15) are never compared. These bits can be different from 0 only after a shift operation."]
         #[inline(always)]
         pub fn set_maskss(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 24usize)) | (((val as u32) & 0x3f) << 24usize);
@@ -421,13 +427,13 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Calr(pub u32);
     impl Calr {
-        #[doc = "Calibration minus"]
+        #[doc = "Calibration minus. The frequency of the calendar is reduced by masking CALM out of 2<sup>20</sup> RTCCLK pulses (32 seconds if the input frequency is 32768 Hz). This decreases the frequency of the calendar with a resolution of 0.9537 ppm. To increase the frequency of the calendar, this feature should be used in conjunction with CALP."]
         #[inline(always)]
         pub const fn calm(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x01ff;
             val as u16
         }
-        #[doc = "Calibration minus"]
+        #[doc = "Calibration minus. The frequency of the calendar is reduced by masking CALM out of 2<sup>20</sup> RTCCLK pulses (32 seconds if the input frequency is 32768 Hz). This decreases the frequency of the calendar with a resolution of 0.9537 ppm. To increase the frequency of the calendar, this feature should be used in conjunction with CALP."]
         #[inline(always)]
         pub fn set_calm(&mut self, val: u16) {
             self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
@@ -443,24 +449,28 @@ pub mod regs {
         pub fn set_lpcal(&mut self, val: super::vals::Lpcal) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
         }
-        #[doc = "Use a 16-second calibration cycle period"]
+        #[doc = "Use a 16-second calibration cycle period. When CALW16 is set to 1, the 16-second calibration cycle period is selected. This bit must not be set to 1 if CALW8 = 1. Note: CALM\\[0\\]
+is stuck at 0 when CALW16 = 1."]
         #[inline(always)]
         pub const fn calw16(&self) -> super::vals::Calw16 {
             let val = (self.0 >> 13usize) & 0x01;
             super::vals::Calw16::from_bits(val as u8)
         }
-        #[doc = "Use a 16-second calibration cycle period"]
+        #[doc = "Use a 16-second calibration cycle period. When CALW16 is set to 1, the 16-second calibration cycle period is selected. This bit must not be set to 1 if CALW8 = 1. Note: CALM\\[0\\]
+is stuck at 0 when CALW16 = 1."]
         #[inline(always)]
         pub fn set_calw16(&mut self, val: super::vals::Calw16) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
         }
-        #[doc = "Use an 8-second calibration cycle period"]
+        #[doc = "Use an 8-second calibration cycle period. When CALW8 is set to 1, the 8-second calibration cycle period is selected. Note: CALM\\[1:0\\]
+are stuck at 00 when CALW8 = 1."]
         #[inline(always)]
         pub const fn calw8(&self) -> super::vals::Calw8 {
             let val = (self.0 >> 14usize) & 0x01;
             super::vals::Calw8::from_bits(val as u8)
         }
-        #[doc = "Use an 8-second calibration cycle period"]
+        #[doc = "Use an 8-second calibration cycle period. When CALW8 is set to 1, the 8-second calibration cycle period is selected. Note: CALM\\[1:0\\]
+are stuck at 00 when CALW8 = 1."]
         #[inline(always)]
         pub fn set_calw8(&mut self, val: super::vals::Calw8) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
@@ -513,46 +523,46 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr(pub u32);
     impl Cr {
-        #[doc = "Wakeup clock selection"]
+        #[doc = "Wakeup clock selection. 10x: ck_spre (usually 1 Hz) clock is selected in BCD mode. In binary or mixed mode, this is the clock selected by BCDU. 11x: ck_spre (usually 1 Hz) clock is selected in BCD mode. In binary or mixed mode, this is the clock selected by BCDU. Furthermore, 2<sup>16</sup> is added to the WUT counter value."]
         #[inline(always)]
         pub const fn wucksel(&self) -> super::vals::Wucksel {
             let val = (self.0 >> 0usize) & 0x07;
             super::vals::Wucksel::from_bits(val as u8)
         }
-        #[doc = "Wakeup clock selection"]
+        #[doc = "Wakeup clock selection. 10x: ck_spre (usually 1 Hz) clock is selected in BCD mode. In binary or mixed mode, this is the clock selected by BCDU. 11x: ck_spre (usually 1 Hz) clock is selected in BCD mode. In binary or mixed mode, this is the clock selected by BCDU. Furthermore, 2<sup>16</sup> is added to the WUT counter value."]
         #[inline(always)]
         pub fn set_wucksel(&mut self, val: super::vals::Wucksel) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
-        #[doc = "Timestamp event active edge"]
+        #[doc = "Timestamp event active edge TSE must be reset when TSEDGE is changed to avoid unwanted TSF setting."]
         #[inline(always)]
         pub const fn tsedge(&self) -> super::vals::Tsedge {
             let val = (self.0 >> 3usize) & 0x01;
             super::vals::Tsedge::from_bits(val as u8)
         }
-        #[doc = "Timestamp event active edge"]
+        #[doc = "Timestamp event active edge TSE must be reset when TSEDGE is changed to avoid unwanted TSF setting."]
         #[inline(always)]
         pub fn set_tsedge(&mut self, val: super::vals::Tsedge) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
         }
-        #[doc = "RTC_REFIN reference clock detection enable (50 or 60 Hz)"]
+        #[doc = "REFIN reference clock detection enable (50 or 60 Hz) Note: BIN must be 0x00 and PREDIV_S must be 0x00FF."]
         #[inline(always)]
         pub const fn refckon(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
-        #[doc = "RTC_REFIN reference clock detection enable (50 or 60 Hz)"]
+        #[doc = "REFIN reference clock detection enable (50 or 60 Hz) Note: BIN must be 0x00 and PREDIV_S must be 0x00FF."]
         #[inline(always)]
         pub fn set_refckon(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
-        #[doc = "Bypass the shadow registers"]
+        #[doc = "Bypass the shadow registers. Note: If the frequency of the APB clock is less than seven times the frequency of RTCCLK, BYPSHAD must be set to 1."]
         #[inline(always)]
         pub const fn bypshad(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
             val != 0
         }
-        #[doc = "Bypass the shadow registers"]
+        #[doc = "Bypass the shadow registers. Note: If the frequency of the APB clock is less than seven times the frequency of RTCCLK, BYPSHAD must be set to 1."]
         #[inline(always)]
         pub fn set_bypshad(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
@@ -653,79 +663,79 @@ pub mod regs {
         pub fn set_tsie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
-        #[doc = "Add 1 hour (summer time change)"]
+        #[doc = "Add 1 hour (summer time change). When this bit is set outside initialization mode, 1 hour is added to the calendar time. This bit is always read as 0."]
         #[inline(always)]
         pub const fn add1h(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
-        #[doc = "Add 1 hour (summer time change)"]
+        #[doc = "Add 1 hour (summer time change). When this bit is set outside initialization mode, 1 hour is added to the calendar time. This bit is always read as 0."]
         #[inline(always)]
         pub fn set_add1h(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
-        #[doc = "Subtract 1 hour (winter time change)"]
+        #[doc = "Subtract 1 hour (winter time change). When this bit is set outside initialization mode, 1 hour is subtracted to the calendar time if the current hour is not 0. This bit is always read as 0. Setting this bit has no effect when current hour is 0."]
         #[inline(always)]
         pub const fn sub1h(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
             val != 0
         }
-        #[doc = "Subtract 1 hour (winter time change)"]
+        #[doc = "Subtract 1 hour (winter time change). When this bit is set outside initialization mode, 1 hour is subtracted to the calendar time if the current hour is not 0. This bit is always read as 0. Setting this bit has no effect when current hour is 0."]
         #[inline(always)]
         pub fn set_sub1h(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
-        #[doc = "Backup"]
+        #[doc = "Backup This bit can be written by the user to memorize whether the daylight saving time change has been performed or not."]
         #[inline(always)]
         pub const fn bkp(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
             val != 0
         }
-        #[doc = "Backup"]
+        #[doc = "Backup This bit can be written by the user to memorize whether the daylight saving time change has been performed or not."]
         #[inline(always)]
         pub fn set_bkp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
-        #[doc = "Calibration output selection"]
+        #[doc = "Calibration output selection When COE = 1, this bit selects which signal is output on CALIB. These frequencies are valid for RTCCLK at 32.768 kHz and prescalers at their default values (PREDIV_A = 127 and PREDIV_S = 255). Refer to Section 45.3.17: Calibration clock output."]
         #[inline(always)]
         pub const fn cosel(&self) -> super::vals::Cosel {
             let val = (self.0 >> 19usize) & 0x01;
             super::vals::Cosel::from_bits(val as u8)
         }
-        #[doc = "Calibration output selection"]
+        #[doc = "Calibration output selection When COE = 1, this bit selects which signal is output on CALIB. These frequencies are valid for RTCCLK at 32.768 kHz and prescalers at their default values (PREDIV_A = 127 and PREDIV_S = 255). Refer to Section 45.3.17: Calibration clock output."]
         #[inline(always)]
         pub fn set_cosel(&mut self, val: super::vals::Cosel) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
         }
-        #[doc = "Output polarity"]
+        #[doc = "Output polarity. This bit is used to configure the polarity of TAMPALRM output."]
         #[inline(always)]
         pub const fn pol(&self) -> super::vals::Pol {
             let val = (self.0 >> 20usize) & 0x01;
             super::vals::Pol::from_bits(val as u8)
         }
-        #[doc = "Output polarity"]
+        #[doc = "Output polarity. This bit is used to configure the polarity of TAMPALRM output."]
         #[inline(always)]
         pub fn set_pol(&mut self, val: super::vals::Pol) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
         }
-        #[doc = "Output selection"]
+        #[doc = "Output selection. These bits are used to select the flag to be routed to TAMPALRM output."]
         #[inline(always)]
         pub const fn osel(&self) -> super::vals::Osel {
             let val = (self.0 >> 21usize) & 0x03;
             super::vals::Osel::from_bits(val as u8)
         }
-        #[doc = "Output selection"]
+        #[doc = "Output selection. These bits are used to select the flag to be routed to TAMPALRM output."]
         #[inline(always)]
         pub fn set_osel(&mut self, val: super::vals::Osel) {
             self.0 = (self.0 & !(0x03 << 21usize)) | (((val.to_bits() as u32) & 0x03) << 21usize);
         }
-        #[doc = "Calibration output enable"]
+        #[doc = "Calibration output enable. This bit enables the CALIB output."]
         #[inline(always)]
         pub const fn coe(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
             val != 0
         }
-        #[doc = "Calibration output enable"]
+        #[doc = "Calibration output enable. This bit enables the CALIB output."]
         #[inline(always)]
         pub fn set_coe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
@@ -741,13 +751,13 @@ pub mod regs {
         pub fn set_itse(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
-        #[doc = "Activate timestamp on tamper detection event"]
+        #[doc = "Activate timestamp on tamper detection event. TAMPTS is valid even if TSE = 0 in the CR register. Timestamp flag is set up to 3 ck_apre cycles after the tamper flags."]
         #[inline(always)]
         pub const fn tampts(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
             val != 0
         }
-        #[doc = "Activate timestamp on tamper detection event"]
+        #[doc = "Activate timestamp on tamper detection event. TAMPTS is valid even if TSE = 0 in the CR register. Timestamp flag is set up to 3 ck_apre cycles after the tamper flags."]
         #[inline(always)]
         pub fn set_tampts(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
@@ -800,13 +810,13 @@ pub mod regs {
         pub fn set_tampalrm_type(&mut self, val: super::vals::TampalrmType) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
         }
-        #[doc = "RTC_OUT2 output enable"]
+        #[doc = "OUT2 output enable With this bit set, the RTC outputs can be remapped on OUT2 as follows: OUT2EN = 0: RTC output 2 disable If OSEL different from 00 or TAMPOE = 1: TAMPALRM is output on OUT1 If OSEL = 00 and TAMPOE = 0 and COE = 1: CALIB is output on OUT1 OUT2EN = 1: RTC output 2 enable If (OSEL different from 00 or TAMPOE = 1) and COE = 0: TAMPALRM is output on OUT2 If OSEL = 00 and TAMPOE = 0 and COE = 1: CALIB is output on OUT2 If (OSEL different from 00 or TAMPOE = 1) and COE = 1: CALIB is output on OUT2 and TAMPALRM is output on OUT1."]
         #[inline(always)]
         pub const fn out2en(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
-        #[doc = "RTC_OUT2 output enable"]
+        #[doc = "OUT2 output enable With this bit set, the RTC outputs can be remapped on OUT2 as follows: OUT2EN = 0: RTC output 2 disable If OSEL different from 00 or TAMPOE = 1: TAMPALRM is output on OUT1 If OSEL = 00 and TAMPOE = 0 and COE = 1: CALIB is output on OUT1 OUT2EN = 1: RTC output 2 enable If (OSEL different from 00 or TAMPOE = 1) and COE = 0: TAMPALRM is output on OUT2 If OSEL = 00 and TAMPOE = 0 and COE = 1: CALIB is output on OUT2 If (OSEL different from 00 or TAMPOE = 1) and COE = 1: CALIB is output on OUT2 and TAMPALRM is output on OUT1."]
         #[inline(always)]
         pub fn set_out2en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
@@ -982,68 +992,68 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Icsr(pub u32);
     impl Icsr {
-        #[doc = "Wakeup timer write enabled"]
+        #[doc = "Wakeup timer write flag. This bit is set by hardware when WUT value can be changed, after the WUTE bit has been set to 0 in CR. It is cleared by hardware in initialization mode."]
         #[inline(always)]
         pub const fn wutwf(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "Wakeup timer write enabled"]
+        #[doc = "Wakeup timer write flag. This bit is set by hardware when WUT value can be changed, after the WUTE bit has been set to 0 in CR. It is cleared by hardware in initialization mode."]
         #[inline(always)]
         pub fn set_wutwf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
-        #[doc = "Shift operation pending"]
+        #[doc = "Shift operation pending. This flag is set by hardware as soon as a shift operation is initiated by a write to the SHIFTR register. It is cleared by hardware when the corresponding shift operation has been executed. Writing to the SHPF bit has no effect."]
         #[inline(always)]
         pub const fn shpf(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
-        #[doc = "Shift operation pending"]
+        #[doc = "Shift operation pending. This flag is set by hardware as soon as a shift operation is initiated by a write to the SHIFTR register. It is cleared by hardware when the corresponding shift operation has been executed. Writing to the SHPF bit has no effect."]
         #[inline(always)]
         pub fn set_shpf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
-        #[doc = "Initialization status flag"]
+        #[doc = "Initialization status flag. This bit is set by hardware when the calendar year field is different from 0 (Backup domain reset state)."]
         #[inline(always)]
         pub const fn inits(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
-        #[doc = "Initialization status flag"]
+        #[doc = "Initialization status flag. This bit is set by hardware when the calendar year field is different from 0 (Backup domain reset state)."]
         #[inline(always)]
         pub fn set_inits(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
-        #[doc = "Registers synchronization flag"]
+        #[doc = "Registers synchronization flag. This bit is set by hardware each time the calendar registers are copied into the shadow registers (SSR, TR and DR). This bit is cleared by hardware in initialization mode, while a shift operation is pending (SHPF = 1), or when in bypass shadow register mode (BYPSHAD = 1). This bit can also be cleared by software. It is cleared either by software or by hardware in initialization mode."]
         #[inline(always)]
         pub const fn rsf(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
             val != 0
         }
-        #[doc = "Registers synchronization flag"]
+        #[doc = "Registers synchronization flag. This bit is set by hardware each time the calendar registers are copied into the shadow registers (SSR, TR and DR). This bit is cleared by hardware in initialization mode, while a shift operation is pending (SHPF = 1), or when in bypass shadow register mode (BYPSHAD = 1). This bit can also be cleared by software. It is cleared either by software or by hardware in initialization mode."]
         #[inline(always)]
         pub fn set_rsf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
-        #[doc = "Initialization flag"]
+        #[doc = "Initialization flag. When this bit is set to 1, the RTC is in initialization state, and the time, date and prescaler registers can be updated."]
         #[inline(always)]
         pub const fn initf(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
             val != 0
         }
-        #[doc = "Initialization flag"]
+        #[doc = "Initialization flag. When this bit is set to 1, the RTC is in initialization state, and the time, date and prescaler registers can be updated."]
         #[inline(always)]
         pub fn set_initf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
-        #[doc = "Enter Initialization mode"]
+        #[doc = "Initialization mode"]
         #[inline(always)]
         pub const fn init(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
             val != 0
         }
-        #[doc = "Enter Initialization mode"]
+        #[doc = "Initialization mode"]
         #[inline(always)]
         pub fn set_init(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
@@ -1059,13 +1069,13 @@ pub mod regs {
         pub fn set_bin(&mut self, val: super::vals::Bin) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
-        #[doc = "BCD update"]
+        #[doc = "BCD update (BIN = 10 or 11) In mixed mode when both BCD calendar and binary extended counter are used (BIN = 10 or 11), the calendar second is incremented using the SSR Least Significant Bits."]
         #[inline(always)]
         pub const fn bcdu(&self) -> super::vals::Bcdu {
             let val = (self.0 >> 10usize) & 0x07;
             super::vals::Bcdu::from_bits(val as u8)
         }
-        #[doc = "BCD update"]
+        #[doc = "BCD update (BIN = 10 or 11) In mixed mode when both BCD calendar and binary extended counter are used (BIN = 10 or 11), the calendar second is incremented using the SSR Least Significant Bits."]
         #[inline(always)]
         pub fn set_bcdu(&mut self, val: super::vals::Bcdu) {
             self.0 = (self.0 & !(0x07 << 10usize)) | (((val.to_bits() as u32) & 0x07) << 10usize);
@@ -1215,24 +1225,24 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Prer(pub u32);
     impl Prer {
-        #[doc = "Synchronous prescaler factor"]
+        #[doc = "Synchronous prescaler factor. This is the synchronous division factor: ck_spre frequency = ck_apre frequency/(PREDIV_S+1)."]
         #[inline(always)]
         pub const fn prediv_s(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x7fff;
             val as u16
         }
-        #[doc = "Synchronous prescaler factor"]
+        #[doc = "Synchronous prescaler factor. This is the synchronous division factor: ck_spre frequency = ck_apre frequency/(PREDIV_S+1)."]
         #[inline(always)]
         pub fn set_prediv_s(&mut self, val: u16) {
             self.0 = (self.0 & !(0x7fff << 0usize)) | (((val as u32) & 0x7fff) << 0usize);
         }
-        #[doc = "Asynchronous prescaler factor"]
+        #[doc = "Asynchronous prescaler factor. This is the asynchronous division factor: ck_apre frequency = RTCCLK frequency/(PREDIV_A+1)."]
         #[inline(always)]
         pub const fn prediv_a(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x7f;
             val as u8
         }
-        #[doc = "Asynchronous prescaler factor"]
+        #[doc = "Asynchronous prescaler factor. This is the asynchronous division factor: ck_apre frequency = RTCCLK frequency/(PREDIV_A+1)."]
         #[inline(always)]
         pub fn set_prediv_a(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
@@ -1470,24 +1480,26 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Shiftr(pub u32);
     impl Shiftr {
-        #[doc = "Subtract a fraction of a second"]
+        #[doc = "Subtract a fraction of a second. These bits are write only and is always read as zero. Writing to this bit has no effect when a shift operation is pending (when SHPF = 1, in ICSR). The value which is written to SUBFS is added to the synchronous prescaler counter. Since this counter counts down, this operation effectively subtracts from (delays) the clock by: Delay (seconds) = SUBFS / (PREDIV_S + 1) A fraction of a second can effectively be added to the clock (advancing the clock) when the ADD1S function is used in conjunction with SUBFS, effectively advancing the clock by: Advance (seconds) = (1 - (SUBFS / (PREDIV_S + 1))). In mixed BCD-binary mode (BIN=10 or 11), the SUBFS\\[14:BCDU+8\\]
+must be written with 0. Note: Writing to SUBFS causes RSF to be cleared. Software can then wait until RSF = 1 to be sure that the shadow registers have been updated with the shifted time."]
         #[inline(always)]
         pub const fn subfs(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x7fff;
             val as u16
         }
-        #[doc = "Subtract a fraction of a second"]
+        #[doc = "Subtract a fraction of a second. These bits are write only and is always read as zero. Writing to this bit has no effect when a shift operation is pending (when SHPF = 1, in ICSR). The value which is written to SUBFS is added to the synchronous prescaler counter. Since this counter counts down, this operation effectively subtracts from (delays) the clock by: Delay (seconds) = SUBFS / (PREDIV_S + 1) A fraction of a second can effectively be added to the clock (advancing the clock) when the ADD1S function is used in conjunction with SUBFS, effectively advancing the clock by: Advance (seconds) = (1 - (SUBFS / (PREDIV_S + 1))). In mixed BCD-binary mode (BIN=10 or 11), the SUBFS\\[14:BCDU+8\\]
+must be written with 0. Note: Writing to SUBFS causes RSF to be cleared. Software can then wait until RSF = 1 to be sure that the shadow registers have been updated with the shifted time."]
         #[inline(always)]
         pub fn set_subfs(&mut self, val: u16) {
             self.0 = (self.0 & !(0x7fff << 0usize)) | (((val as u32) & 0x7fff) << 0usize);
         }
-        #[doc = "Add one second"]
+        #[doc = "Add one second. This bit is write only and is always read as zero. Writing to this bit has no effect when a shift operation is pending (when SHPF = 1, in ICSR). This function is intended to be used with SUBFS (see description below) in order to effectively add a fraction of a second to the clock in an atomic operation."]
         #[inline(always)]
         pub const fn add1s(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
-        #[doc = "Add one second"]
+        #[doc = "Add one second. This bit is write only and is always read as zero. Writing to this bit has no effect when a shift operation is pending (when SHPF = 1, in ICSR). This function is intended to be used with SUBFS (see description below) in order to effectively add a fraction of a second to the clock in an atomic operation."]
         #[inline(always)]
         pub fn set_add1s(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
@@ -1634,13 +1646,25 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Ssr(pub u32);
     impl Ssr {
-        #[doc = "Synchronous binary counter"]
+        #[doc = "Synchronous binary counter. SS\\[31:16\\]: Synchronous binary counter MSB values When Binary or Mixed mode is selected (BIN = 01 or 10 or 11): SS\\[31:16\\]
+are the 16 MSB of the SS\\[31:0\\]
+free-running down-counter. When BCD mode is selected (BIN=00): SS\\[31:16\\]
+are forced by hardware to 0x0000. SS\\[15:0\\]: Subsecond value/synchronous binary counter LSB values When Binary mode is selected (BIN = 01 or 10 or 11): SS\\[15:0\\]
+are the 16 LSB of the SS\\[31:0\\]
+free-running down-counter. When BCD mode is selected (BIN=00): SS\\[15:0\\]
+is the value in the synchronous prescaler counter. The fraction of a second is given by the formula below: Second fraction = (PREDIV_S - SS) / (PREDIV_S + 1) SS can be larger than PREDIV_S only after a shift operation. In that case, the correct time/date is one second less than as indicated by TR/DR."]
         #[inline(always)]
         pub const fn ss(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
-        #[doc = "Synchronous binary counter"]
+        #[doc = "Synchronous binary counter. SS\\[31:16\\]: Synchronous binary counter MSB values When Binary or Mixed mode is selected (BIN = 01 or 10 or 11): SS\\[31:16\\]
+are the 16 MSB of the SS\\[31:0\\]
+free-running down-counter. When BCD mode is selected (BIN=00): SS\\[31:16\\]
+are forced by hardware to 0x0000. SS\\[15:0\\]: Subsecond value/synchronous binary counter LSB values When Binary mode is selected (BIN = 01 or 10 or 11): SS\\[15:0\\]
+are the 16 LSB of the SS\\[31:0\\]
+free-running down-counter. When BCD mode is selected (BIN=00): SS\\[15:0\\]
+is the value in the synchronous prescaler counter. The fraction of a second is given by the formula below: Second fraction = (PREDIV_S - SS) / (PREDIV_S + 1) SS can be larger than PREDIV_S only after a shift operation. In that case, the correct time/date is one second less than as indicated by TR/DR."]
         #[inline(always)]
         pub fn set_ss(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
@@ -1878,13 +1902,15 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Tsssr(pub u32);
     impl Tsssr {
-        #[doc = "Sub second value"]
+        #[doc = "Subsecond value. Synchronous binary counter values SS\\[31:0\\]
+is the value of the synchronous prescaler counter when the timestamp event occurred."]
         #[inline(always)]
         pub const fn ss(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
-        #[doc = "Sub second value"]
+        #[doc = "Subsecond value. Synchronous binary counter values SS\\[31:0\\]
+is the value of the synchronous prescaler counter when the timestamp event occurred."]
         #[inline(always)]
         pub fn set_ss(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
@@ -2020,13 +2046,13 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wpr(pub u32);
     impl Wpr {
-        #[doc = "Write protection key"]
+        #[doc = "Write protection key. This byte is written by software. Reading this byte always returns 0x00. Refer to RTC register write protection for a description of how to unlock RTC register write protection."]
         #[inline(always)]
         pub const fn key(&self) -> super::vals::Key {
             let val = (self.0 >> 0usize) & 0xff;
             super::vals::Key::from_bits(val as u8)
         }
-        #[doc = "Write protection key"]
+        #[doc = "Write protection key. This byte is written by software. Reading this byte always returns 0x00. Refer to RTC register write protection for a description of how to unlock RTC register write protection."]
         #[inline(always)]
         pub fn set_key(&mut self, val: super::vals::Key) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val.to_bits() as u32) & 0xff) << 0usize);
@@ -2054,24 +2080,42 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wutr(pub u32);
     impl Wutr {
-        #[doc = "Wakeup auto-reload value bits"]
+        #[doc = "Wakeup auto-reload value bits. When the wakeup timer is enabled (WUTE set to 1), the WUTF flag is set every (WUT\\[15:0\\]
++ 1) ck_wut cycles. The ck_wut period is selected through WUCKSEL\\[2:0\\]
+bits of the CR register. When WUCKSEL\\[2\\]
+= 1, the wakeup timer becomes 17-bits and WUCKSEL\\[1\\]
+effectively becomes WUT\\[16\\]
+the most-significant bit to be reloaded into the timer. The first assertion of WUTF occurs between WUT and (WUT + 2) ck_wut cycles after WUTE is set. Setting WUT\\[15:0\\]
+to 0x0000 with WUCKSEL\\[2:0\\]
+= 011 (RTCCLK/2) is forbidden."]
         #[inline(always)]
         pub const fn wut(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
-        #[doc = "Wakeup auto-reload value bits"]
+        #[doc = "Wakeup auto-reload value bits. When the wakeup timer is enabled (WUTE set to 1), the WUTF flag is set every (WUT\\[15:0\\]
++ 1) ck_wut cycles. The ck_wut period is selected through WUCKSEL\\[2:0\\]
+bits of the CR register. When WUCKSEL\\[2\\]
+= 1, the wakeup timer becomes 17-bits and WUCKSEL\\[1\\]
+effectively becomes WUT\\[16\\]
+the most-significant bit to be reloaded into the timer. The first assertion of WUTF occurs between WUT and (WUT + 2) ck_wut cycles after WUTE is set. Setting WUT\\[15:0\\]
+to 0x0000 with WUCKSEL\\[2:0\\]
+= 011 (RTCCLK/2) is forbidden."]
         #[inline(always)]
         pub fn set_wut(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
-        #[doc = "Wakeup auto-reload output clear value"]
+        #[doc = "Wakeup auto-reload output clear value. When WUTOCLR\\[15:0\\]
+is different from 0x0000, WUTF is set by hardware when the auto-reload down-counter reaches 0 and is cleared by hardware when the auto-reload downcounter reaches WUTOCLR\\[15:0\\]. When WUTOCLR\\[15:0\\]
+= 0x0000, WUTF is set by hardware when the WUT down-counter reaches 0 and is cleared by software."]
         #[inline(always)]
         pub const fn wutoclr(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0xffff;
             val as u16
         }
-        #[doc = "Wakeup auto-reload output clear value"]
+        #[doc = "Wakeup auto-reload output clear value. When WUTOCLR\\[15:0\\]
+is different from 0x0000, WUTF is set by hardware when the auto-reload down-counter reaches 0 and is cleared by hardware when the auto-reload downcounter reaches WUTOCLR\\[15:0\\]. When WUTOCLR\\[15:0\\]
+= 0x0000, WUTF is set by hardware when the WUT down-counter reaches 0 and is cleared by software."]
         #[inline(always)]
         pub fn set_wutoclr(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
@@ -2109,7 +2153,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Alrf {
         _RESERVED_0 = 0x0,
-        #[doc = "This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm A register (RTC_ALRMAR)"]
+        #[doc = "This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm register (RTC_ALRMR)"]
         MATCH = 0x01,
     }
     impl Alrf {
@@ -2170,7 +2214,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Alrmf {
         _RESERVED_0 = 0x0,
-        #[doc = "This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm A register (RTC_ALRMAR)"]
+        #[doc = "This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm register (RTC_ALRMR)"]
         MATCH = 0x01,
     }
     impl Alrmf {
@@ -2201,7 +2245,7 @@ pub mod vals {
     pub enum AlrmrMsk {
         #[doc = "Alarm set if the date/day match"]
         TO_MATCH = 0x0,
-        #[doc = "Date/day don’t care in Alarm comparison"]
+        #[doc = "Date/day dont care in Alarm comparison"]
         NOT_MATCH = 0x01,
     }
     impl AlrmrMsk {
@@ -2266,7 +2310,7 @@ represents the date units"]
         DATE_UNITS = 0x0,
         #[doc = "DU\\[3:0\\]
 represents the week day. DT\\[1:0\\]
-is don’t care."]
+is dont care."]
         WEEK_DAY = 0x01,
     }
     impl AlrmrWdsel {
@@ -2299,8 +2343,8 @@ is don’t care."]
 in RTC_SSR) is free-running"]
         FREE_RUNNING = 0x0,
         #[doc = "The synchronous binary counter (SS\\[31:0\\]
-in RTC_SSR) is running from 0xFFFF FFFF to RTC_ALRMABINR → SS\\[31:0\\]
-value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRMABINR → SS\\[31:0\\]"]
+in RTC_SSR) is running from 0xFFFF FFFF to RTC_ALRBINR → SS\\[31:0\\]
+value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR → SS\\[31:0\\]"]
         ALRMBINR = 0x01,
     }
     impl AlrmssrSsclr {
@@ -2360,21 +2404,29 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRMABINR
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bcdu {
-        #[doc = "1s increment each time SS\\[7:0\\]=0"]
+        #[doc = "1s calendar increment is generated each time SS\\[7:0\\]
+= 0"]
         BIT7 = 0x0,
-        #[doc = "1s increment each time SS\\[8:0\\]=0"]
+        #[doc = "1s calendar increment is generated each time SS\\[8:0\\]
+= 0"]
         BIT8 = 0x01,
-        #[doc = "1s increment each time SS\\[9:0\\]=0"]
+        #[doc = "1s calendar increment is generated each time SS\\[9:0\\]
+= 0"]
         BIT9 = 0x02,
-        #[doc = "1s increment each time SS\\[10:0\\]=0"]
+        #[doc = "1s calendar increment is generated each time SS\\[10:0\\]
+= 0"]
         BIT10 = 0x03,
-        #[doc = "1s increment each time SS\\[11:0\\]=0"]
+        #[doc = "1s calendar increment is generated each time SS\\[11:0\\]
+= 0"]
         BIT11 = 0x04,
-        #[doc = "1s increment each time SS\\[12:0\\]=0"]
+        #[doc = "1s calendar increment is generated each time SS\\[12:0\\]
+= 0"]
         BIT12 = 0x05,
-        #[doc = "1s increment each time SS\\[13:0\\]=0"]
+        #[doc = "1s calendar increment is generated each time SS\\[13:0\\]
+= 0"]
         BIT13 = 0x06,
-        #[doc = "1s increment each time SS\\[14:0\\]=0"]
+        #[doc = "1s calendar increment is generated each time SS\\[14:0\\]
+= 0"]
         BIT14 = 0x07,
     }
     impl Bcdu {

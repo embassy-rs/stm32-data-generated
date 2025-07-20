@@ -1660,6 +1660,11 @@
         {
           "name": "TAMP",
           "address": 1174436864,
+          "registers": {
+            "kind": "tamp",
+            "version": "wba",
+            "block": "TAMP"
+          },
           "pins": [
             {
               "pin": "PA14",

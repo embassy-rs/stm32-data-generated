@@ -6,13 +6,13 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Tamp",
             extends: None,
             description: Some(
-                "Tamper and backup registers",
+                "TAMP register block.",
             ),
             items: &[
                 BlockItem {
                     name: "cr1",
                     description: Some(
-                        "TAMP control register 1",
+                        "TAMP control register 1.",
                     ),
                     array: None,
                     byte_offset: 0x0,
@@ -29,7 +29,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "cr2",
                     description: Some(
-                        "TAMP control register 2",
+                        "TAMP control register 2.",
                     ),
                     array: None,
                     byte_offset: 0x4,
@@ -46,7 +46,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "cr3",
                     description: Some(
-                        "TAMP control register 3",
+                        "TAMP control register 3.",
                     ),
                     array: None,
                     byte_offset: 0x8,
@@ -63,7 +63,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "fltcr",
                     description: Some(
-                        "TAMP filter control register",
+                        "TAMP filter control register.",
                     ),
                     array: None,
                     byte_offset: 0xc,
@@ -80,7 +80,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "atcr1",
                     description: Some(
-                        "TAMP active tamper control register 1",
+                        "TAMP active tamper control register 1.",
                     ),
                     array: None,
                     byte_offset: 0x10,
@@ -97,7 +97,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "atseedr",
                     description: Some(
-                        "TAMP active tamper seed register",
+                        "TAMP active tamper seed register.",
                     ),
                     array: None,
                     byte_offset: 0x14,
@@ -114,7 +114,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "ator",
                     description: Some(
-                        "TAMP active tamper output register",
+                        "TAMP active tamper output register.",
                     ),
                     array: None,
                     byte_offset: 0x18,
@@ -131,7 +131,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "atcr2",
                     description: Some(
-                        "TAMP active tamper control register 2",
+                        "TAMP active tamper control register 2.",
                     ),
                     array: None,
                     byte_offset: 0x1c,
@@ -148,7 +148,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "seccfgr",
                     description: Some(
-                        "TAMP secure mode register",
+                        "TAMP secure configuration register.",
                     ),
                     array: None,
                     byte_offset: 0x20,
@@ -165,7 +165,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "privcfgr",
                     description: Some(
-                        "TAMP privilege mode control register",
+                        "TAMP privilege configuration register.",
                     ),
                     array: None,
                     byte_offset: 0x24,
@@ -182,7 +182,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "ier",
                     description: Some(
-                        "TAMP interrupt enable register",
+                        "TAMP interrupt enable register.",
                     ),
                     array: None,
                     byte_offset: 0x2c,
@@ -199,7 +199,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "sr",
                     description: Some(
-                        "TAMP status register",
+                        "TAMP status register.",
                     ),
                     array: None,
                     byte_offset: 0x30,
@@ -216,7 +216,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "misr",
                     description: Some(
-                        "TAMP non-secure masked interrupt status register",
+                        "TAMP nonsecure masked interrupt status register.",
                     ),
                     array: None,
                     byte_offset: 0x34,
@@ -233,7 +233,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "smisr",
                     description: Some(
-                        "TAMP secure masked interrupt status register",
+                        "TAMP secure masked interrupt status register.",
                     ),
                     array: None,
                     byte_offset: 0x38,
@@ -250,7 +250,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "scr",
                     description: Some(
-                        "TAMP status clear register",
+                        "TAMP status clear register.",
                     ),
                     array: None,
                     byte_offset: 0x3c,
@@ -267,7 +267,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "countr",
                     description: Some(
-                        "TAMP monotonic counter 1 register",
+                        "TAMP monotonic counter 1 register.",
                     ),
                     array: None,
                     byte_offset: 0x40,
@@ -276,15 +276,15 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Countr",
+                                "Count1r",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "ercfgr",
+                    name: "rpcfgr",
                     description: Some(
-                        "TAMP erase configuration register",
+                        "TAMP resources protection configuration register.",
                     ),
                     array: None,
                     byte_offset: 0x54,
@@ -293,7 +293,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ercfgr",
+                                "Rpcfgr",
                             ),
                         },
                     ),
@@ -330,7 +330,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Atcr1",
             extends: None,
             description: Some(
-                "TAMP active tamper control register 1",
+                "TAMP active tamper control register 1.",
             ),
             bit_size: 32,
             fields: &[
@@ -348,7 +348,7 @@ pub(crate) static REGISTERS: IR = IR {
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 8,
+                                len: 6,
                                 stride: 1,
                             },
                         ),
@@ -379,7 +379,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "atcksel",
                     description: Some(
-                        "Active tamper RTC asynchronous prescaler clock selection. These bits selects the RTC asynchronous prescaler stage output.The selected clock is CK_ATPRE.. fCK_ATPRE = fRTCCLK / 2ATCKSEL when (PREDIV_A+1) = 128.. .... These bits can be written only when all active tampers are disabled. The write protection remains for up to 1.5 ck_atpre cycles after all the active tampers are disable.",
+                        "Active tamper RTC asynchronous prescaler clock selection.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -395,7 +395,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "atper",
                     description: Some(
-                        "Active tamper output change period. The tamper output is changed every CK_ATPER = (2ATPER x CK_ATPRE) cycles. Refer to .",
+                        "Active tamper output change period.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -409,7 +409,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "atoshare",
                     description: Some(
-                        "Active tamper output sharing. IN1 is compared with TAMPOUTSEL1. IN2 is compared with TAMPOUTSEL2. IN3 is compared with TAMPOUTSEL3. IN4 is compared with TAMPOUTSEL4. IN5 is compared with TAMPOUTSEL5. IN6 is compared with TAMPOUTSEL6. IN7 is compared with TAMPOUTSEL7. IN8 is compared with TAMPOUTSEL8",
+                        "Active tamper output sharing.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -423,7 +423,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "flten",
                     description: Some(
-                        "Active tamper filter enable",
+                        "Active tamper filter enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -458,7 +458,7 @@ pub(crate) static REGISTERS: IR = IR {
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 8,
+                                len: 6,
                                 stride: 3,
                             },
                         ),
@@ -471,14 +471,14 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Ator",
             extends: None,
             description: Some(
-                "TAMP active tamper output register",
+                "TAMP active tamper output register.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "prng",
                     description: Some(
-                        "Pseudo-random generator value. This field provides the values of the PRNG output. Because of potential inconsistencies due to synchronization delays, PRNG must be read at least twice. The read value is correct if it is equal to previous read value. This field can only be read when the APB is in secure mode.",
+                        "Pseudo-random generator value.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -492,7 +492,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "seedf",
                     description: Some(
-                        "Seed running flag. This flag is set by hardware when a new seed is written in the ATSEEDR. It is cleared by hardware when the PRNG has absorbed this new seed, and by system reset. The TAMP APB cock must not be switched off as long as SEEDF is set.",
+                        "Seed running flag.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -506,7 +506,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "inits",
                     description: Some(
-                        "Active tamper initialization status. This flag is set by hardware when the PRNG has absorbed the first 128-bit seed, meaning that the enabled active tampers are functional. This flag is cleared when the active tampers are disabled.",
+                        "Active tamper initialization status.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -523,14 +523,14 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Atseedr",
             extends: None,
             description: Some(
-                "TAMP active tamper seed register",
+                "TAMP active tamper seed register.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "seed",
                     description: Some(
-                        "Pseudo-random generator seed value. This register must be written four times with 32-bit values to provide the 128-bit seed to the PRNG. Writing to this register automatically sends the seed value to the PRNG.",
+                        "Pseudo-random generator seed value.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -568,17 +568,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Countr",
+            name: "Count1r",
             extends: None,
             description: Some(
-                "TAMP monotonic counter 1 register",
+                "TAMP monotonic counter 1 register.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "count",
                     description: Some(
-                        "This register is read-only only and is incremented by one when a write access is done to this register. This register cannot roll-over and is frozen when reaching the maximum value.",
+                        "This register is read-only only and is incremented by one when a write access is done to this register.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -595,7 +595,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Cr1",
             extends: None,
             description: Some(
-                "TAMP control register 1",
+                "TAMP control register 1.",
             ),
             bit_size: 32,
             fields: &[
@@ -613,7 +613,7 @@ pub(crate) static REGISTERS: IR = IR {
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 8,
+                                len: 6,
                                 stride: 1,
                             },
                         ),
@@ -647,14 +647,14 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Cr2",
             extends: None,
             description: Some(
-                "TAMP control register 2",
+                "TAMP control register 2.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tampnoer",
+                    name: "tamppom",
                     description: Some(
-                        "Tamper X no erase",
+                        "Tamper 1 potential mode.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -665,7 +665,7 @@ pub(crate) static REGISTERS: IR = IR {
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 8,
+                                len: 6,
                                 stride: 1,
                             },
                         ),
@@ -675,7 +675,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampmsk",
                     description: Some(
-                        "Tamper X mask. The tamper 1 interrupt must not be enabled when TAMP1MSK is set.",
+                        "Tamper X mask. The tamper X interrupt must not be enabled when TAMPXMSK is set.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -696,7 +696,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bkblock",
                     description: Some(
-                        "Backup registers and device secrets access blocked",
+                        "Backup registers and device secretsless thansup (1)less than/sup access blocked.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -710,7 +710,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bkerase",
                     description: Some(
-                        "Backup registers and device secrets erase. Writing '1 to this bit reset the backup registers and device secrets(1). Writing 0 has no effect. This bit is always read as 0.",
+                        "Backup registers and device secretsless thansup (1)less than/sup erase.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -724,7 +724,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tamptrg",
                     description: Some(
-                        "Active level for tamper 1 input.",
+                        "Active level for tamper X input.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -735,7 +735,7 @@ pub(crate) static REGISTERS: IR = IR {
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 8,
+                                len: 6,
                                 stride: 1,
                             },
                         ),
@@ -750,14 +750,14 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Cr3",
             extends: None,
             description: Some(
-                "TAMP control register 3",
+                "TAMP control register 3.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "itampnoer",
+                    name: "itamppom",
                     description: Some(
-                        "Internal Tamper X no erase",
+                        "Internal Tamper X potential mode",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -778,41 +778,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ercfgr",
-            extends: None,
-            description: Some(
-                "TAMP erase configuration register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ercfg0",
-                    description: Some(
-                        "Configurable device secrets configuration",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Fltcr",
             extends: None,
             description: Some(
-                "TAMP filter control register",
+                "TAMP filter control register.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "tampfreq",
                     description: Some(
-                        "Tamper sampling frequency. Determines the frequency at which each of the INx inputs are sampled.",
+                        "Tamper sampling frequency.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -828,7 +804,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampflt",
                     description: Some(
-                        "INx filter count. These bits determines the number of consecutive samples at the specified level (TAMP*TRG) needed to activate a tamper event. TAMPFLT is valid for each of the INx inputs.",
+                        "INx filter count.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -844,7 +820,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampprch",
                     description: Some(
-                        "INx precharge duration. These bit determines the duration of time during which the pull-up/is activated before each sample. TAMPPRCH is valid for each of the INx inputs.",
+                        "INx precharge duration.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -860,7 +836,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tamppudis",
                     description: Some(
-                        "INx pull-up disable. This bit determines if each of the TAMPx pins are precharged before each sample.",
+                        "INx pull-up disable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -877,7 +853,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Ier",
             extends: None,
             description: Some(
-                "TAMP interrupt enable register",
+                "TAMP interrupt enable register.",
             ),
             bit_size: 32,
             fields: &[
@@ -895,7 +871,7 @@ pub(crate) static REGISTERS: IR = IR {
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 8,
+                                len: 6,
                                 stride: 1,
                             },
                         ),
@@ -929,7 +905,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Misr",
             extends: None,
             description: Some(
-                "TAMP non-secure masked interrupt status register",
+                "TAMP nonsecure masked interrupt status register.",
             ),
             bit_size: 32,
             fields: &[
@@ -947,7 +923,7 @@ pub(crate) static REGISTERS: IR = IR {
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 8,
+                                len: 6,
                                 stride: 1,
                             },
                         ),
@@ -981,14 +957,14 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Privcfgr",
             extends: None,
             description: Some(
-                "TAMP privilege mode control register",
+                "TAMP privilege configuration register.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "cnt1priv",
                     description: Some(
-                        "Monotonic counter 1 privilege protection",
+                        "Monotonic counter 1 privilege protection.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1002,7 +978,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bkprwpriv",
                     description: Some(
-                        "Backup registers zone 1 privilege protection",
+                        "Backup registers zone 1 privilege protection.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1016,7 +992,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bkpwpriv",
                     description: Some(
-                        "Backup registers zone 2 privilege protection",
+                        "Backup registers zone 2 privilege protection.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1030,7 +1006,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tamppriv",
                     description: Some(
-                        "Tamper privilege protection (excluding backup registers). Note: Refer to for details on the read protection.",
+                        "Tamper privilege protection (excluding backup registers).",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1044,10 +1020,41 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Rpcfgr",
+            extends: None,
+            description: Some(
+                "TAMP resources protection configuration register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rpcfg",
+                    description: Some(
+                        "Configurable resource X protection.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 5,
+                                stride: 1,
+                            },
+                        ),
+                    ),
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Scr",
             extends: None,
             description: Some(
-                "TAMP status clear register",
+                "TAMP status clear register.",
             ),
             bit_size: 32,
             fields: &[
@@ -1065,7 +1072,7 @@ pub(crate) static REGISTERS: IR = IR {
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 8,
+                                len: 6,
                                 stride: 1,
                             },
                         ),
@@ -1099,14 +1106,14 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Seccfgr",
             extends: None,
             description: Some(
-                "TAMP secure mode register",
+                "TAMP secure configuration register.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "bkprwsec",
                     description: Some(
-                        "Backup registers read/write protection offset. Protection zone 1 is defined for backup registers from BKP0R to BKPxR (x = BKPRWSEC-1, from 0 to 128). if TZEN=1, these backup registers can be read and written only with secure access. If TZEN=0:\tthe protection zone 1 can be read and written with non-secure access. If BKPRWSEC = 0: there is no protection zone 1. If BKPRWPRIV is set, BKPRWSEC[7:0] can be written only in privileged mode.",
+                        "Backup registers read/write protection offset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1120,7 +1127,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "cnt1sec",
                     description: Some(
-                        "Monotonic counter 1 secure protection",
+                        "Monotonic counter 1 secure protection.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1134,7 +1141,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bkpwsec",
                     description: Some(
-                        "Backup registers write protection offset. Protection zone 2 is defined for backup registers from BKPyR (y = BKPRWSEC, from 0 to 128) to BKPzR (z = BKPWSEC-1, from 0 to 128, BKPWSECBKPRWSEC): if TZEN=1, these backup registers can be written only with secure access. They can be read with secure or non-secure access. Protection zone 3 defined for backup registers from BKPtR (t = BKPWSEC, from 0 to 127). They can be read or written with secure or non-secure access. If TZEN=0:\tthe protection zone 2 can be read and written with non-secure access. If BKPWSEC = 0 or if BKPWSEC BKPRWSEC: there is no protection zone 2. If BKPWPRIV is set, BKPRWSEC[7:0] can be written only in privileged mode.",
+                        "Backup registers write protection offset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1148,7 +1155,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "bhklock",
                     description: Some(
-                        "Boot hardware key lock. This bit can be read and can only be written to 1 by software. It is cleared by hardware together with the backup registers following a tamper detection event or when the readout protection (RDP) is disabled.",
+                        "Boot hardware key lock.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1162,7 +1169,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "tampsec",
                     description: Some(
-                        "Tamper protection (excluding monotonic counters and backup registers). Note: Refer to for details on the read protection.",
+                        "Tamper protection (excluding monotonic counters and backup registers).",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1179,7 +1186,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Smisr",
             extends: None,
             description: Some(
-                "TAMP secure masked interrupt status register",
+                "TAMP secure masked interrupt status register.",
             ),
             bit_size: 32,
             fields: &[
@@ -1197,7 +1204,7 @@ pub(crate) static REGISTERS: IR = IR {
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 8,
+                                len: 6,
                                 stride: 1,
                             },
                         ),
@@ -1231,7 +1238,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Sr",
             extends: None,
             description: Some(
-                "TAMP status register",
+                "TAMP status register.",
             ),
             bit_size: 32,
             fields: &[
@@ -1249,7 +1256,7 @@ pub(crate) static REGISTERS: IR = IR {
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 8,
+                                len: 6,
                                 stride: 1,
                             },
                         ),

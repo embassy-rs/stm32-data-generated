@@ -498,71 +498,71 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cfgr2(pub u32);
     impl Cfgr2 {
-        #[doc = "DMAEN"]
+        #[doc = "Regular Oversampling Enable"]
         #[inline(always)]
         pub const fn rovse(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
-        #[doc = "DMAEN"]
+        #[doc = "Regular Oversampling Enable"]
         #[inline(always)]
         pub fn set_rovse(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "DMACFG"]
+        #[doc = "Injected Oversampling Enable"]
         #[inline(always)]
         pub const fn jovse(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
-        #[doc = "DMACFG"]
+        #[doc = "Injected Oversampling Enable"]
         #[inline(always)]
         pub fn set_jovse(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "RES"]
+        #[doc = "Oversampling Ratio"]
         #[inline(always)]
-        pub const fn ovsr(&self) -> u8 {
+        pub const fn ovsr(&self) -> super::vals::OversamplingRatio {
             let val = (self.0 >> 2usize) & 0x07;
-            val as u8
+            super::vals::OversamplingRatio::from_bits(val as u8)
         }
-        #[doc = "RES"]
+        #[doc = "Oversampling Ratio"]
         #[inline(always)]
-        pub fn set_ovsr(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 2usize)) | (((val as u32) & 0x07) << 2usize);
+        pub fn set_ovsr(&mut self, val: super::vals::OversamplingRatio) {
+            self.0 = (self.0 & !(0x07 << 2usize)) | (((val.to_bits() as u32) & 0x07) << 2usize);
         }
-        #[doc = "ALIGN"]
+        #[doc = "Oversampling Shift"]
         #[inline(always)]
-        pub const fn ovss(&self) -> u8 {
+        pub const fn ovss(&self) -> super::vals::OversamplingShift {
             let val = (self.0 >> 5usize) & 0x0f;
-            val as u8
+            super::vals::OversamplingShift::from_bits(val as u8)
         }
-        #[doc = "ALIGN"]
+        #[doc = "Oversampling Shift"]
         #[inline(always)]
-        pub fn set_ovss(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 5usize)) | (((val as u32) & 0x0f) << 5usize);
+        pub fn set_ovss(&mut self, val: super::vals::OversamplingShift) {
+            self.0 = (self.0 & !(0x0f << 5usize)) | (((val.to_bits() as u32) & 0x0f) << 5usize);
         }
-        #[doc = "EXTSEL"]
+        #[doc = "Triggered Regular Oversampling"]
         #[inline(always)]
-        pub const fn tovs(&self) -> bool {
+        pub const fn trovs(&self) -> super::vals::Trovs {
             let val = (self.0 >> 9usize) & 0x01;
-            val != 0
+            super::vals::Trovs::from_bits(val as u8)
         }
-        #[doc = "EXTSEL"]
+        #[doc = "Triggered Regular Oversampling"]
         #[inline(always)]
-        pub fn set_tovs(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        pub fn set_trovs(&mut self, val: super::vals::Trovs) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
         }
-        #[doc = "EXTEN"]
+        #[doc = "Regular Oversampling Mode"]
         #[inline(always)]
-        pub const fn rovsm(&self) -> bool {
+        pub const fn rovsm(&self) -> super::vals::Rovsm {
             let val = (self.0 >> 10usize) & 0x01;
-            val != 0
+            super::vals::Rovsm::from_bits(val as u8)
         }
-        #[doc = "EXTEN"]
+        #[doc = "Regular Oversampling Mode"]
         #[inline(always)]
-        pub fn set_rovsm(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        pub fn set_rovsm(&mut self, val: super::vals::Rovsm) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
         }
     }
     impl Default for Cfgr2 {
@@ -578,7 +578,7 @@ pub mod regs {
                 .field("jovse", &self.jovse())
                 .field("ovsr", &self.ovsr())
                 .field("ovss", &self.ovss())
-                .field("tovs", &self.tovs())
+                .field("trovs", &self.trovs())
                 .field("rovsm", &self.rovsm())
                 .finish()
         }
@@ -586,7 +586,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr2 {{ rovse: {=bool:?}, jovse: {=bool:?}, ovsr: {=u8:?}, ovss: {=u8:?}, tovs: {=bool:?}, rovsm: {=bool:?} }}" , self . rovse () , self . jovse () , self . ovsr () , self . ovss () , self . tovs () , self . rovsm ())
+            defmt::write!(
+                f,
+                "Cfgr2 {{ rovse: {=bool:?}, jovse: {=bool:?}, ovsr: {:?}, ovss: {:?}, trovs: {:?}, rovsm: {:?} }}",
+                self.rovse(),
+                self.jovse(),
+                self.ovsr(),
+                self.ovss(),
+                self.trovs(),
+                self.rovsm()
+            )
         }
     }
     #[doc = "control register"]
@@ -1635,6 +1644,101 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum OversamplingRatio {
+        #[doc = "2x Oversampling Ratio"]
+        RATIO2 = 0x0,
+        #[doc = "4x Oversampling Ratio"]
+        RATIO4 = 0x01,
+        #[doc = "8x Oversampling Ratio"]
+        RATIO8 = 0x02,
+        #[doc = "16x Oversampling Ratio"]
+        RATIO16 = 0x03,
+        #[doc = "32x Oversampling Ratio"]
+        RATIO32 = 0x04,
+        #[doc = "64x Oversampling Ratio"]
+        RATIO64 = 0x05,
+        #[doc = "128x Oversampling Ratio"]
+        RATIO128 = 0x06,
+        #[doc = "256x Oversampling Ratio"]
+        RATIO256 = 0x07,
+    }
+    impl OversamplingRatio {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> OversamplingRatio {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for OversamplingRatio {
+        #[inline(always)]
+        fn from(val: u8) -> OversamplingRatio {
+            OversamplingRatio::from_bits(val)
+        }
+    }
+    impl From<OversamplingRatio> for u8 {
+        #[inline(always)]
+        fn from(val: OversamplingRatio) -> u8 {
+            OversamplingRatio::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum OversamplingShift {
+        #[doc = "No shift"]
+        SHIFT0 = 0x0,
+        #[doc = "Shift 1-bit"]
+        SHIFT1 = 0x01,
+        #[doc = "Shift 2-bits"]
+        SHIFT2 = 0x02,
+        #[doc = "Shift 3-bits"]
+        SHIFT3 = 0x03,
+        #[doc = "Shift 4-bits"]
+        SHIFT4 = 0x04,
+        #[doc = "Shift 5-bits"]
+        SHIFT5 = 0x05,
+        #[doc = "Shift 6-bits"]
+        SHIFT6 = 0x06,
+        #[doc = "Shift 7-bits"]
+        SHIFT7 = 0x07,
+        #[doc = "Shift 8-bits"]
+        SHIFT8 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl OversamplingShift {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> OversamplingShift {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for OversamplingShift {
+        #[inline(always)]
+        fn from(val: u8) -> OversamplingShift {
+            OversamplingShift::from_bits(val)
+        }
+    }
+    impl From<OversamplingShift> for u8 {
+        #[inline(always)]
+        fn from(val: OversamplingShift) -> u8 {
+            OversamplingShift::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Res {
         #[doc = "12-bit resolution"]
         BITS12 = 0x0,
@@ -1665,6 +1769,37 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Res) -> u8 {
             Res::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Rovsm {
+        #[doc = "Oversampling is temporarily stopped and continued after injection sequence"]
+        CONTINUED = 0x0,
+        #[doc = "Oversampling is aborted and resumed from start after injection sequence"]
+        RESUMED = 0x01,
+    }
+    impl Rovsm {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Rovsm {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Rovsm {
+        #[inline(always)]
+        fn from(val: u8) -> Rovsm {
+            Rovsm::from_bits(val)
+        }
+    }
+    impl From<Rovsm> for u8 {
+        #[inline(always)]
+        fn from(val: Rovsm) -> u8 {
+            Rovsm::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1708,6 +1843,37 @@ pub mod vals {
         #[inline(always)]
         fn from(val: SampleTime) -> u8 {
             SampleTime::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Trovs {
+        #[doc = "All oversampled conversions for a channel are done consecutively following a trigger"]
+        AUTOMATIC = 0x0,
+        #[doc = "Each oversampled conversion for a channel needs a new trigger"]
+        TRIGGERED = 0x01,
+    }
+    impl Trovs {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Trovs {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Trovs {
+        #[inline(always)]
+        fn from(val: u8) -> Trovs {
+            Trovs::from_bits(val)
+        }
+    }
+    impl From<Trovs> for u8 {
+        #[inline(always)]
+        fn from(val: Trovs) -> u8 {
+            Trovs::to_bits(val)
         }
     }
 }

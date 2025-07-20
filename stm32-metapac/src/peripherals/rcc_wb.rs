@@ -6284,7 +6284,7 @@ pub mod vals {
         LSE = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "HSE/1024 clock selected"]
-        HSEDIV1024 = 0x03,
+        HSE_DIV_1024 = 0x03,
     }
     impl Rfwkpsel {
         #[inline(always)]

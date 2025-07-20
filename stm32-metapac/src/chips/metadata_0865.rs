@@ -1635,7 +1635,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "TAMP",
         address: 0x46007c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "tamp",
+            version: "wba",
+            block: "TAMP",
+            ir: &tamp::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -3340,6 +3345,8 @@ pub mod saes;
 pub mod spi;
 #[path = "../registers/syscfg_wba.rs"]
 pub mod syscfg;
+#[path = "../registers/tamp_wba.rs"]
+pub mod tamp;
 #[path = "../registers/timer_v2.rs"]
 pub mod timer;
 #[path = "../registers/tsc_v1.rs"]

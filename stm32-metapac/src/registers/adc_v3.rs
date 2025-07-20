@@ -438,7 +438,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[
                 Field {
                     name: "rovse",
-                    description: Some("DMAEN"),
+                    description: Some("Regular Oversampling Enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
@@ -446,7 +446,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "jovse",
-                    description: Some("DMACFG"),
+                    description: Some("Injected Oversampling Enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
@@ -454,35 +454,35 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "ovsr",
-                    description: Some("RES"),
+                    description: Some("Oversampling Ratio"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 3,
                     array: None,
-                    enumm: None,
+                    enumm: Some("OversamplingRatio"),
                 },
                 Field {
                     name: "ovss",
-                    description: Some("ALIGN"),
+                    description: Some("Oversampling Shift"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 4,
                     array: None,
-                    enumm: None,
+                    enumm: Some("OversamplingShift"),
                 },
                 Field {
-                    name: "tovs",
-                    description: Some("EXTSEL"),
+                    name: "trovs",
+                    description: Some("Triggered Regular Oversampling"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Trovs"),
                 },
                 Field {
                     name: "rovsm",
-                    description: Some("EXTEN"),
+                    description: Some("Regular Oversampling Mode"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Rovsm"),
                 },
             ],
         },
@@ -998,6 +998,105 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "OversamplingRatio",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "RATIO2",
+                    description: Some("2x Oversampling Ratio"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RATIO4",
+                    description: Some("4x Oversampling Ratio"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "RATIO8",
+                    description: Some("8x Oversampling Ratio"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "RATIO16",
+                    description: Some("16x Oversampling Ratio"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "RATIO32",
+                    description: Some("32x Oversampling Ratio"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "RATIO64",
+                    description: Some("64x Oversampling Ratio"),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "RATIO128",
+                    description: Some("128x Oversampling Ratio"),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "RATIO256",
+                    description: Some("256x Oversampling Ratio"),
+                    value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "OversamplingShift",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "SHIFT0",
+                    description: Some("No shift"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SHIFT1",
+                    description: Some("Shift 1-bit"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "SHIFT2",
+                    description: Some("Shift 2-bits"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "SHIFT3",
+                    description: Some("Shift 3-bits"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "SHIFT4",
+                    description: Some("Shift 4-bits"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "SHIFT5",
+                    description: Some("Shift 5-bits"),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "SHIFT6",
+                    description: Some("Shift 6-bits"),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "SHIFT7",
+                    description: Some("Shift 7-bits"),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "SHIFT8",
+                    description: Some("Shift 8-bits"),
+                    value: 8,
+                },
+            ],
+        },
+        Enum {
             name: "Res",
             description: None,
             bit_size: 2,
@@ -1021,6 +1120,23 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "BITS6",
                     description: Some("6-bit resolution"),
                     value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Rovsm",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "CONTINUED",
+                    description: Some("Oversampling is temporarily stopped and continued after injection sequence"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RESUMED",
+                    description: Some("Oversampling is aborted and resumed from start after injection sequence"),
+                    value: 1,
                 },
             ],
         },
@@ -1068,6 +1184,25 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "CYCLES640_5",
                     description: Some("640.5 ADC cycles"),
                     value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Trovs",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "AUTOMATIC",
+                    description: Some(
+                        "All oversampled conversions for a channel are done consecutively following a trigger",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "TRIGGERED",
+                    description: Some("Each oversampled conversion for a channel needs a new trigger"),
+                    value: 1,
                 },
             ],
         },

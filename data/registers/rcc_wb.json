@@ -3726,7 +3726,7 @@
         "value": 1
       },
       {
-        "name": "HSEDIV1024",
+        "name": "HSE_DIV_1024",
         "description": "HSE/1024 clock selected",
         "value": 3
       }

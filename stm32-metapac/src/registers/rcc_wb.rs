@@ -4946,7 +4946,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSEDIV1024",
+                    name: "HSE_DIV_1024",
                     description: Some("HSE/1024 clock selected"),
                     value: 3,
                 },

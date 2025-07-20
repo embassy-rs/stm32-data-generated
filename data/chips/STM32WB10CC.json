@@ -1400,7 +1400,10 @@
           },
           "rcc": {
             "bus_clock": "HCLK3",
-            "kernel_clock": "HCLK3",
+            "kernel_clock": {
+              "register": "CSR",
+              "field": "RFWKPSEL"
+            },
             "enable": {
               "register": "AHB3ENR",
               "field": "IPCCEN"

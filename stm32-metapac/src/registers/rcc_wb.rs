@@ -3131,7 +3131,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Rfwkpsel"),
                 },
                 Field {
                     name: "rfrsts",
@@ -4927,6 +4927,28 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV16",
                     description: Some("HCLK divided by 16"),
                     value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Rfwkpsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "DISABLE",
+                    description: Some("No clock selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some("LSE clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSEDIV1024",
+                    description: Some("HSE/1024 clock selected"),
+                    value: 3,
                 },
             ],
         },

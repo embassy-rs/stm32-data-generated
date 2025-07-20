@@ -4668,14 +4668,14 @@ pub mod regs {
         }
         #[doc = "RF system wakeup clock source selection"]
         #[inline(always)]
-        pub const fn rfwkpsel(&self) -> u8 {
+        pub const fn rfwkpsel(&self) -> super::vals::Rfwkpsel {
             let val = (self.0 >> 14usize) & 0x03;
-            val as u8
+            super::vals::Rfwkpsel::from_bits(val as u8)
         }
         #[doc = "RF system wakeup clock source selection"]
         #[inline(always)]
-        pub fn set_rfwkpsel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u32) & 0x03) << 14usize);
+        pub fn set_rfwkpsel(&mut self, val: super::vals::Rfwkpsel) {
+            self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
         }
         #[doc = "Radio system BLE and 802.15.4 reset status"]
         #[inline(always)]
@@ -4809,7 +4809,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr {{ lsi1on: {=bool:?}, lsi1rdy: {=bool:?}, lsi2on: {=bool:?}, lsi2rdy: {=bool:?}, lsi2trimen: {=bool:?}, lsi2trimok: {=bool:?}, lsi2bw: {=u8:?}, rfwkpsel: {=u8:?}, rfrsts: {=bool:?}, rmvf: {=bool:?}, oblrstf: {=bool:?}, pinrstf: {=bool:?}, borrstf: {=bool:?}, sftrstf: {=bool:?}, iwdgrstf: {=bool:?}, wwdgrstf: {=bool:?}, lpwrrstf: {=bool:?} }}" , self . lsi1on () , self . lsi1rdy () , self . lsi2on () , self . lsi2rdy () , self . lsi2trimen () , self . lsi2trimok () , self . lsi2bw () , self . rfwkpsel () , self . rfrsts () , self . rmvf () , self . oblrstf () , self . pinrstf () , self . borrstf () , self . sftrstf () , self . iwdgrstf () , self . wwdgrstf () , self . lpwrrstf ())
+            defmt :: write ! (f , "Csr {{ lsi1on: {=bool:?}, lsi1rdy: {=bool:?}, lsi2on: {=bool:?}, lsi2rdy: {=bool:?}, lsi2trimen: {=bool:?}, lsi2trimok: {=bool:?}, lsi2bw: {=u8:?}, rfwkpsel: {:?}, rfrsts: {=bool:?}, rmvf: {=bool:?}, oblrstf: {=bool:?}, pinrstf: {=bool:?}, borrstf: {=bool:?}, sftrstf: {=bool:?}, iwdgrstf: {=bool:?}, wwdgrstf: {=bool:?}, lpwrrstf: {=bool:?} }}" , self . lsi1on () , self . lsi1rdy () , self . lsi2on () , self . lsi2rdy () , self . lsi2trimen () , self . lsi2trimok () , self . lsi2bw () , self . rfwkpsel () , self . rfrsts () , self . rmvf () , self . oblrstf () , self . pinrstf () , self . borrstf () , self . sftrstf () , self . iwdgrstf () , self . wwdgrstf () , self . lpwrrstf ())
         }
     }
     #[doc = "Extended clock recovery register"]
@@ -6272,6 +6272,40 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Ppre) -> u8 {
             Ppre::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Rfwkpsel {
+        #[doc = "No clock selected"]
+        DISABLE = 0x0,
+        #[doc = "LSE clock selected"]
+        LSE = 0x01,
+        _RESERVED_2 = 0x02,
+        #[doc = "HSE/1024 clock selected"]
+        HSEDIV1024 = 0x03,
+    }
+    impl Rfwkpsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Rfwkpsel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Rfwkpsel {
+        #[inline(always)]
+        fn from(val: u8) -> Rfwkpsel {
+            Rfwkpsel::from_bits(val)
+        }
+    }
+    impl From<Rfwkpsel> for u8 {
+        #[inline(always)]
+        fn from(val: Rfwkpsel) -> u8 {
+            Rfwkpsel::to_bits(val)
         }
     }
     #[repr(u8)]

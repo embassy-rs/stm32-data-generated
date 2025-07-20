@@ -280,47 +280,47 @@ pub mod regs {
         }
         #[doc = "Low-power read mode This bit puts the Flash memory in low-power read mode."]
         #[inline(always)]
-        pub const fn lpm(&self) -> super::vals::Lpm {
+        pub const fn lpm(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Lpm::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Low-power read mode This bit puts the Flash memory in low-power read mode."]
         #[inline(always)]
-        pub fn set_lpm(&mut self, val: super::vals::Lpm) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        pub fn set_lpm(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Bank 1 power-down mode request This bit is write-protected with FLASH_PDKEY1R. This bit requests bank 1 to enter power-down mode. When bank 1 enters power-down mode, this bit is cleared by hardware and the PDKEY1R is locked."]
         #[inline(always)]
-        pub const fn pdreq1(&self) -> super::vals::Pdreq {
+        pub const fn pdreq1(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
-            super::vals::Pdreq::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Bank 1 power-down mode request This bit is write-protected with FLASH_PDKEY1R. This bit requests bank 1 to enter power-down mode. When bank 1 enters power-down mode, this bit is cleared by hardware and the PDKEY1R is locked."]
         #[inline(always)]
-        pub fn set_pdreq1(&mut self, val: super::vals::Pdreq) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        pub fn set_pdreq1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Bank 2 power-down mode request This bit is write-protected with FLASH_PDKEY2R. This bit requests bank 2 to enter power-down mode. When bank 2 enters power-down mode, this bit is cleared by hardware and the PDKEY2R is locked."]
         #[inline(always)]
-        pub const fn pdreq2(&self) -> super::vals::Pdreq {
+        pub const fn pdreq2(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Pdreq::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Bank 2 power-down mode request This bit is write-protected with FLASH_PDKEY2R. This bit requests bank 2 to enter power-down mode. When bank 2 enters power-down mode, this bit is cleared by hardware and the PDKEY2R is locked."]
         #[inline(always)]
-        pub fn set_pdreq2(&mut self, val: super::vals::Pdreq) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub fn set_pdreq2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Flash memory power-down mode during Sleep mode This bit determines whether the Flash memory is in power-down mode or Idle mode when the device is in Sleep mode. The Flash must not be put in power-down while a program or an erase operation is on-going."]
         #[inline(always)]
-        pub const fn sleep_pd(&self) -> super::vals::SleepPd {
+        pub const fn sleep_pd(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
-            super::vals::SleepPd::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Flash memory power-down mode during Sleep mode This bit determines whether the Flash memory is in power-down mode or Idle mode when the device is in Sleep mode. The Flash must not be put in power-down while a program or an erase operation is on-going."]
         #[inline(always)]
-        pub fn set_sleep_pd(&mut self, val: super::vals::SleepPd) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        pub fn set_sleep_pd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
     }
     impl Default for Acr {
@@ -344,16 +344,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Acr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Acr {{ latency: {=u8:?}, prften: {=bool:?}, lpm: {:?}, pdreq1: {:?}, pdreq2: {:?}, sleep_pd: {:?} }}",
-                self.latency(),
-                self.prften(),
-                self.lpm(),
-                self.pdreq1(),
-                self.pdreq2(),
-                self.sleep_pd()
-            )
+            defmt :: write ! (f , "Acr {{ latency: {=u8:?}, prften: {=bool:?}, lpm: {=bool:?}, pdreq1: {=bool:?}, pdreq2: {=bool:?}, sleep_pd: {=bool:?} }}" , self . latency () , self . prften () , self . lpm () , self . pdreq1 () , self . pdreq2 () , self . sleep_pd ())
         }
     }
     #[doc = "FLASH ECC register"]
@@ -374,14 +365,14 @@ pub mod regs {
         }
         #[doc = "ECC fail bank"]
         #[inline(always)]
-        pub const fn bk_ecc(&self) -> super::vals::BkEcc {
+        pub const fn bk_ecc(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
-            super::vals::BkEcc::from_bits(val as u8)
+            val != 0
         }
         #[doc = "ECC fail bank"]
         #[inline(always)]
-        pub fn set_bk_ecc(&mut self, val: super::vals::BkEcc) {
-            self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+        pub fn set_bk_ecc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "System Flash memory ECC fail This bit indicates that the ECC error correction or double ECC error detection is located in the system Flash memory."]
         #[inline(always)]
@@ -396,14 +387,14 @@ pub mod regs {
         }
         #[doc = "ECC correction interrupt enable This bit enables the interrupt generation when the ECCC bit in the FLASH_ECCR register is set."]
         #[inline(always)]
-        pub const fn eccie(&self) -> super::vals::Eccie {
+        pub const fn eccie(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
-            super::vals::Eccie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "ECC correction interrupt enable This bit enables the interrupt generation when the ECCC bit in the FLASH_ECCR register is set."]
         #[inline(always)]
-        pub fn set_eccie(&mut self, val: super::vals::Eccie) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+        pub fn set_eccie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "ECC correction This bit is set by hardware when one ECC error has been detected and corrected (only if ECCC and ECCD were previously cleared). An interrupt is generated if ECCIE is set. This bit is cleared by writing 1."]
         #[inline(always)]
@@ -449,7 +440,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Eccr {{ addr_ecc: {=u32:?}, bk_ecc: {:?}, sysf_ecc: {=bool:?}, eccie: {:?}, eccc: {=bool:?}, eccd: {=bool:?} }}" , self . addr_ecc () , self . bk_ecc () , self . sysf_ecc () , self . eccie () , self . eccc () , self . eccd ())
+            defmt :: write ! (f , "Eccr {{ addr_ecc: {=u32:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, eccie: {=bool:?}, eccc: {=bool:?}, eccd: {=bool:?} }}" , self . addr_ecc () , self . bk_ecc () , self . sysf_ecc () , self . eccie () , self . eccc () , self . eccd ())
         }
     }
     #[doc = "FLASH non-secure boot address 0 register"]
@@ -543,25 +534,25 @@ pub mod regs {
     impl Nscr {
         #[doc = "Non-secure programming"]
         #[inline(always)]
-        pub const fn pg(&self) -> super::vals::NscrPg {
+        pub const fn pg(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::NscrPg::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Non-secure programming"]
         #[inline(always)]
-        pub fn set_pg(&mut self, val: super::vals::NscrPg) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_pg(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Non-secure page erase"]
         #[inline(always)]
-        pub const fn per(&self) -> super::vals::NscrPer {
+        pub const fn per(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::NscrPer::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Non-secure page erase"]
         #[inline(always)]
-        pub fn set_per(&mut self, val: super::vals::NscrPer) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_per(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Non-secure bank 1 mass erase This bit triggers the bank 1 non-secure mass erase (all bank 1 user pages) when set."]
         #[inline(always)]
@@ -587,14 +578,14 @@ pub mod regs {
         }
         #[doc = "Non-secure bank selection for page erase"]
         #[inline(always)]
-        pub const fn bker(&self) -> super::vals::NscrBker {
+        pub const fn bker(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::NscrBker::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Non-secure bank selection for page erase"]
         #[inline(always)]
-        pub fn set_bker(&mut self, val: super::vals::NscrBker) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        pub fn set_bker(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Non-secure burst write programming mode When set, this bit selects the burst write programming mode."]
         #[inline(always)]
@@ -642,36 +633,36 @@ pub mod regs {
         }
         #[doc = "Non-secure end of operation interrupt enable This bit enables the interrupt generation when the EOP bit in the FLASH_NSSR is set to 1."]
         #[inline(always)]
-        pub const fn eopie(&self) -> super::vals::NscrEopie {
+        pub const fn eopie(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
-            super::vals::NscrEopie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Non-secure end of operation interrupt enable This bit enables the interrupt generation when the EOP bit in the FLASH_NSSR is set to 1."]
         #[inline(always)]
-        pub fn set_eopie(&mut self, val: super::vals::NscrEopie) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+        pub fn set_eopie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "Non-secure error interrupt enable This bit enables the interrupt generation when the OPERR bit in the FLASH_NSSR is set to 1."]
         #[inline(always)]
-        pub const fn errie(&self) -> super::vals::NscrErrie {
+        pub const fn errie(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
-            super::vals::NscrErrie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Non-secure error interrupt enable This bit enables the interrupt generation when the OPERR bit in the FLASH_NSSR is set to 1."]
         #[inline(always)]
-        pub fn set_errie(&mut self, val: super::vals::NscrErrie) {
-            self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+        pub fn set_errie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "Force the option byte loading When set to 1, this bit forces the option byte reloading. This bit is cleared only when the option byte loading is complete. It cannot be written if OPTLOCK is set."]
         #[inline(always)]
-        pub const fn obl_launch(&self) -> super::vals::OblLaunch {
+        pub const fn obl_launch(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
-            super::vals::OblLaunch::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Force the option byte loading When set to 1, this bit forces the option byte reloading. This bit is cleared only when the option byte loading is complete. It cannot be written if OPTLOCK is set."]
         #[inline(always)]
-        pub fn set_obl_launch(&mut self, val: super::vals::OblLaunch) {
-            self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+        pub fn set_obl_launch(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
         #[doc = "Option lock This bit is set only. When set, all bits concerning user options in FLASH_NSCR register are locked. This bit is cleared by hardware after detecting the unlock sequence. The LOCK bit in the FLASH_NSCR must be cleared before doing the unlock sequence for OPTLOCK bit. In case of an unsuccessful unlock operation, this bit remains set until the next reset."]
         #[inline(always)]
@@ -725,7 +716,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Nscr {{ pg: {:?}, per: {:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, optstrt: {=bool:?}, eopie: {:?}, errie: {:?}, obl_launch: {:?}, optlock: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer1 () , self . pnb () , self . bker () , self . bwr () , self . mer2 () , self . strt () , self . optstrt () , self . eopie () , self . errie () , self . obl_launch () , self . optlock () , self . lock ())
+            defmt :: write ! (f , "Nscr {{ pg: {=bool:?}, per: {=bool:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {=bool:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, optstrt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, obl_launch: {=bool:?}, optlock: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer1 () , self . pnb () , self . bker () , self . bwr () , self . mer2 () , self . strt () , self . optstrt () , self . eopie () , self . errie () , self . obl_launch () , self . optlock () , self . lock ())
         }
     }
     #[doc = "FLASH non-secure status register"]
@@ -1074,14 +1065,14 @@ pub mod regs {
         }
         #[doc = "Interrupted operation bank This bit indicates which Flash memory bank was accessed when reset occurred"]
         #[inline(always)]
-        pub const fn bk_op(&self) -> super::vals::BkOp {
+        pub const fn bk_op(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
-            super::vals::BkOp::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Interrupted operation bank This bit indicates which Flash memory bank was accessed when reset occurred"]
         #[inline(always)]
-        pub fn set_bk_op(&mut self, val: super::vals::BkOp) {
-            self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+        pub fn set_bk_op(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "Operation in system Flash memory interrupted This bit indicates that the reset occurred during an operation in the system Flash memory."]
         #[inline(always)]
@@ -1127,7 +1118,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Opsr {{ addr_op: {=u32:?}, bk_op: {:?}, sysf_op: {=bool:?}, code_op: {:?} }}",
+                "Opsr {{ addr_op: {=u32:?}, bk_op: {=bool:?}, sysf_op: {=bool:?}, code_op: {:?} }}",
                 self.addr_op(),
                 self.bk_op(),
                 self.sysf_op(),
@@ -1164,36 +1155,36 @@ pub mod regs {
         }
         #[doc = "Reset generation in Stop mode"]
         #[inline(always)]
-        pub const fn n_rst_stop(&self) -> super::vals::NRstStop {
+        pub const fn n_rst_stop(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
-            super::vals::NRstStop::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Reset generation in Stop mode"]
         #[inline(always)]
-        pub fn set_n_rst_stop(&mut self, val: super::vals::NRstStop) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        pub fn set_n_rst_stop(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Reset generation in Standby mode"]
         #[inline(always)]
-        pub const fn n_rst_stdby(&self) -> super::vals::NRstStdby {
+        pub const fn n_rst_stdby(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::NRstStdby::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Reset generation in Standby mode"]
         #[inline(always)]
-        pub fn set_n_rst_stdby(&mut self, val: super::vals::NRstStdby) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub fn set_n_rst_stdby(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Reset generation in Shutdown mode"]
         #[inline(always)]
-        pub const fn n_rst_shdw(&self) -> super::vals::NRstShdw {
+        pub const fn n_rst_shdw(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
-            super::vals::NRstShdw::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Reset generation in Shutdown mode"]
         #[inline(always)]
-        pub fn set_n_rst_shdw(&mut self, val: super::vals::NRstShdw) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        pub fn set_n_rst_shdw(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "SRAM1, SRAM3 and SRAM4 erase upon system reset"]
         #[inline(always)]
@@ -1208,102 +1199,102 @@ pub mod regs {
         }
         #[doc = "Independent watchdog selection"]
         #[inline(always)]
-        pub const fn iwdg_sw(&self) -> super::vals::IwdgSw {
+        pub const fn iwdg_sw(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
-            super::vals::IwdgSw::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Independent watchdog selection"]
         #[inline(always)]
-        pub fn set_iwdg_sw(&mut self, val: super::vals::IwdgSw) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+        pub fn set_iwdg_sw(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Independent watchdog counter freeze in Stop mode"]
         #[inline(always)]
-        pub const fn iwdg_stop(&self) -> super::vals::IwdgStop {
+        pub const fn iwdg_stop(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
-            super::vals::IwdgStop::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Independent watchdog counter freeze in Stop mode"]
         #[inline(always)]
-        pub fn set_iwdg_stop(&mut self, val: super::vals::IwdgStop) {
-            self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+        pub fn set_iwdg_stop(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "Independent watchdog counter freeze in Standby mode"]
         #[inline(always)]
-        pub const fn iwdg_stdby(&self) -> super::vals::IwdgStdby {
+        pub const fn iwdg_stdby(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
-            super::vals::IwdgStdby::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Independent watchdog counter freeze in Standby mode"]
         #[inline(always)]
-        pub fn set_iwdg_stdby(&mut self, val: super::vals::IwdgStdby) {
-            self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+        pub fn set_iwdg_stdby(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Window watchdog selection"]
         #[inline(always)]
-        pub const fn wwdg_sw(&self) -> super::vals::WwdgSw {
+        pub const fn wwdg_sw(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
-            super::vals::WwdgSw::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Window watchdog selection"]
         #[inline(always)]
-        pub fn set_wwdg_sw(&mut self, val: super::vals::WwdgSw) {
-            self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+        pub fn set_wwdg_sw(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "Swap banks"]
         #[inline(always)]
-        pub const fn swap_bank(&self) -> super::vals::SwapBank {
+        pub const fn swap_bank(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
-            super::vals::SwapBank::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Swap banks"]
         #[inline(always)]
-        pub fn set_swap_bank(&mut self, val: super::vals::SwapBank) {
-            self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+        pub fn set_swap_bank(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "Dual-bank on 1-Mbyte and 512-Kbyte Flash memory devices"]
         #[inline(always)]
-        pub const fn dualbank(&self) -> super::vals::Dualbank {
+        pub const fn dualbank(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
-            super::vals::Dualbank::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Dual-bank on 1-Mbyte and 512-Kbyte Flash memory devices"]
         #[inline(always)]
-        pub fn set_dualbank(&mut self, val: super::vals::Dualbank) {
-            self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+        pub fn set_dualbank(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "Backup RAM ECC detection and correction enable"]
         #[inline(always)]
-        pub const fn bkpsram_ecc(&self) -> super::vals::BkpsramEcc {
+        pub const fn bkpsram_ecc(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
-            super::vals::BkpsramEcc::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Backup RAM ECC detection and correction enable"]
         #[inline(always)]
-        pub fn set_bkpsram_ecc(&mut self, val: super::vals::BkpsramEcc) {
-            self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+        pub fn set_bkpsram_ecc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "SRAM3 ECC detection and correction enable"]
         #[inline(always)]
-        pub const fn sram3_ecc(&self) -> super::vals::SramEcc {
+        pub const fn sram3_ecc(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
-            super::vals::SramEcc::from_bits(val as u8)
+            val != 0
         }
         #[doc = "SRAM3 ECC detection and correction enable"]
         #[inline(always)]
-        pub fn set_sram3_ecc(&mut self, val: super::vals::SramEcc) {
-            self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+        pub fn set_sram3_ecc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "SRAM2 ECC detection and correction enable"]
         #[inline(always)]
-        pub const fn sram2_ecc(&self) -> super::vals::SramEcc {
+        pub const fn sram2_ecc(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
-            super::vals::SramEcc::from_bits(val as u8)
+            val != 0
         }
         #[doc = "SRAM2 ECC detection and correction enable"]
         #[inline(always)]
-        pub fn set_sram2_ecc(&mut self, val: super::vals::SramEcc) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+        pub fn set_sram2_ecc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "SRAM2 erase when system reset"]
         #[inline(always)]
@@ -1318,25 +1309,25 @@ pub mod regs {
         }
         #[doc = "Software BOOT0"]
         #[inline(always)]
-        pub const fn n_swboot0(&self) -> super::vals::NSwboot {
+        pub const fn n_swboot0(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
-            super::vals::NSwboot::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Software BOOT0"]
         #[inline(always)]
-        pub fn set_n_swboot0(&mut self, val: super::vals::NSwboot) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+        pub fn set_n_swboot0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "nBOOT0 option bit"]
         #[inline(always)]
-        pub const fn n_boot0(&self) -> super::vals::NBoot {
+        pub const fn n_boot0(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
-            super::vals::NBoot::from_bits(val as u8)
+            val != 0
         }
         #[doc = "nBOOT0 option bit"]
         #[inline(always)]
-        pub fn set_n_boot0(&mut self, val: super::vals::NBoot) {
-            self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+        pub fn set_n_boot0(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
         #[doc = "PA15 pull-up enable"]
         #[inline(always)]
@@ -1351,25 +1342,25 @@ pub mod regs {
         }
         #[doc = "High-speed IO at low VDD voltage configuration bit This bit can be set only with VDD below 2.5V"]
         #[inline(always)]
-        pub const fn io_vdd_hslv(&self) -> super::vals::IoVddHslv {
+        pub const fn io_vdd_hslv(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
-            super::vals::IoVddHslv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "High-speed IO at low VDD voltage configuration bit This bit can be set only with VDD below 2.5V"]
         #[inline(always)]
-        pub fn set_io_vdd_hslv(&mut self, val: super::vals::IoVddHslv) {
-            self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+        pub fn set_io_vdd_hslv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "High-speed IO at low VDDIO2 voltage configuration bit This bit can be set only with VDDIO2 below 2.5 V."]
         #[inline(always)]
-        pub const fn io_vddio2_hslv(&self) -> super::vals::IoVddioHslv {
+        pub const fn io_vddio2_hslv(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
-            super::vals::IoVddioHslv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "High-speed IO at low VDDIO2 voltage configuration bit This bit can be set only with VDDIO2 below 2.5 V."]
         #[inline(always)]
-        pub fn set_io_vddio2_hslv(&mut self, val: super::vals::IoVddioHslv) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+        pub fn set_io_vddio2_hslv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "Global TrustZone security enable"]
         #[inline(always)]
@@ -1420,7 +1411,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Optr {{ rdp: {:?}, bor_lev: {:?}, n_rst_stop: {:?}, n_rst_stdby: {:?}, n_rst_shdw: {:?}, sram1345_rst: {=bool:?}, iwdg_sw: {:?}, iwdg_stop: {:?}, iwdg_stdby: {:?}, wwdg_sw: {:?}, swap_bank: {:?}, dualbank: {:?}, bkpsram_ecc: {:?}, sram3_ecc: {:?}, sram2_ecc: {:?}, sram2_rst: {=bool:?}, n_swboot0: {:?}, n_boot0: {:?}, pa15_pupen: {=bool:?}, io_vdd_hslv: {:?}, io_vddio2_hslv: {:?}, tzen: {=bool:?} }}" , self . rdp () , self . bor_lev () , self . n_rst_stop () , self . n_rst_stdby () , self . n_rst_shdw () , self . sram1345_rst () , self . iwdg_sw () , self . iwdg_stop () , self . iwdg_stdby () , self . wwdg_sw () , self . swap_bank () , self . dualbank () , self . bkpsram_ecc () , self . sram3_ecc () , self . sram2_ecc () , self . sram2_rst () , self . n_swboot0 () , self . n_boot0 () , self . pa15_pupen () , self . io_vdd_hslv () , self . io_vddio2_hslv () , self . tzen ())
+            defmt :: write ! (f , "Optr {{ rdp: {:?}, bor_lev: {:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, n_rst_shdw: {=bool:?}, sram1345_rst: {=bool:?}, iwdg_sw: {=bool:?}, iwdg_stop: {=bool:?}, iwdg_stdby: {=bool:?}, wwdg_sw: {=bool:?}, swap_bank: {=bool:?}, dualbank: {=bool:?}, bkpsram_ecc: {=bool:?}, sram3_ecc: {=bool:?}, sram2_ecc: {=bool:?}, sram2_rst: {=bool:?}, n_swboot0: {=bool:?}, n_boot0: {=bool:?}, pa15_pupen: {=bool:?}, io_vdd_hslv: {=bool:?}, io_vddio2_hslv: {=bool:?}, tzen: {=bool:?} }}" , self . rdp () , self . bor_lev () , self . n_rst_stop () , self . n_rst_stdby () , self . n_rst_shdw () , self . sram1345_rst () , self . iwdg_sw () , self . iwdg_stop () , self . iwdg_stdby () , self . wwdg_sw () , self . swap_bank () , self . dualbank () , self . bkpsram_ecc () , self . sram3_ecc () , self . sram2_ecc () , self . sram2_rst () , self . n_swboot0 () , self . n_boot0 () , self . pa15_pupen () , self . io_vdd_hslv () , self . io_vddio2_hslv () , self . tzen ())
         }
     }
     #[doc = "FLASH bank 1 power-down key register"]
@@ -4762,25 +4753,25 @@ pub mod regs {
     impl Privcfgr {
         #[doc = "Privileged protection for secure registers This bit can be accessed only when TrustZone is enabled (TZEN = 1). This bit can be read by both privileged or unprivileged, secure and non-secure access. The SPRIV bit can be written only by a secure privileged access. A non-secure write access on SPRIV bit is ignored. A secure unprivileged write access on SPRIV bit is ignored."]
         #[inline(always)]
-        pub const fn spriv(&self) -> super::vals::Spriv {
+        pub const fn spriv(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Spriv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Privileged protection for secure registers This bit can be accessed only when TrustZone is enabled (TZEN = 1). This bit can be read by both privileged or unprivileged, secure and non-secure access. The SPRIV bit can be written only by a secure privileged access. A non-secure write access on SPRIV bit is ignored. A secure unprivileged write access on SPRIV bit is ignored."]
         #[inline(always)]
-        pub fn set_spriv(&mut self, val: super::vals::Spriv) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_spriv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Privileged protection for non-secure registers This bit can be read by both privileged or unprivileged, secure and non-secure access. The NSPRIV bit can be written by a secure or non-secure privileged access. A secure or non-secure unprivileged write access on NSPRIV bit is ignored."]
         #[inline(always)]
-        pub const fn nspriv(&self) -> super::vals::Nspriv {
+        pub const fn nspriv(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Nspriv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Privileged protection for non-secure registers This bit can be read by both privileged or unprivileged, secure and non-secure access. The NSPRIV bit can be written by a secure or non-secure privileged access. A secure or non-secure unprivileged write access on NSPRIV bit is ignored."]
         #[inline(always)]
-        pub fn set_nspriv(&mut self, val: super::vals::Nspriv) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_nspriv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
     impl Default for Privcfgr {
@@ -4802,7 +4793,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Privcfgr {{ spriv: {:?}, nspriv: {:?} }}",
+                "Privcfgr {{ spriv: {=bool:?}, nspriv: {=bool:?} }}",
                 self.spriv(),
                 self.nspriv()
             )
@@ -8142,25 +8133,25 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     impl Seccr {
         #[doc = "Secure programming"]
         #[inline(always)]
-        pub const fn pg(&self) -> super::vals::SeccrPg {
+        pub const fn pg(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::SeccrPg::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Secure programming"]
         #[inline(always)]
-        pub fn set_pg(&mut self, val: super::vals::SeccrPg) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_pg(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Secure page erase"]
         #[inline(always)]
-        pub const fn per(&self) -> super::vals::SeccrPer {
+        pub const fn per(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::SeccrPer::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Secure page erase"]
         #[inline(always)]
-        pub fn set_per(&mut self, val: super::vals::SeccrPer) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_per(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Secure bank 1 mass erase This bit triggers the bank 1 secure mass erase (all bank 1 user pages) when set."]
         #[inline(always)]
@@ -8186,14 +8177,14 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         }
         #[doc = "Secure bank selection for page erase"]
         #[inline(always)]
-        pub const fn bker(&self) -> super::vals::SeccrBker {
+        pub const fn bker(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::SeccrBker::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Secure bank selection for page erase"]
         #[inline(always)]
-        pub fn set_bker(&mut self, val: super::vals::SeccrBker) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        pub fn set_bker(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Secure burst write programming mode When set, this bit selects the burst write programming mode."]
         #[inline(always)]
@@ -8230,25 +8221,25 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         }
         #[doc = "Secure End of operation interrupt enable This bit enables the interrupt generation when the EOP bit in the FLASH_SECSR is set to 1."]
         #[inline(always)]
-        pub const fn eopie(&self) -> super::vals::SeccrEopie {
+        pub const fn eopie(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
-            super::vals::SeccrEopie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Secure End of operation interrupt enable This bit enables the interrupt generation when the EOP bit in the FLASH_SECSR is set to 1."]
         #[inline(always)]
-        pub fn set_eopie(&mut self, val: super::vals::SeccrEopie) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+        pub fn set_eopie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "Secure error interrupt enable"]
         #[inline(always)]
-        pub const fn errie(&self) -> super::vals::SeccrErrie {
+        pub const fn errie(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
-            super::vals::SeccrErrie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Secure error interrupt enable"]
         #[inline(always)]
-        pub fn set_errie(&mut self, val: super::vals::SeccrErrie) {
-            self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+        pub fn set_errie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "Secure PCROP read error interrupt enable"]
         #[inline(always)]
@@ -8312,7 +8303,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccr {{ pg: {:?}, per: {:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, eopie: {:?}, errie: {:?}, rderrie: {=bool:?}, inv: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer1 () , self . pnb () , self . bker () , self . bwr () , self . mer2 () , self . strt () , self . eopie () , self . errie () , self . rderrie () , self . inv () , self . lock ())
+            defmt :: write ! (f , "Seccr {{ pg: {=bool:?}, per: {=bool:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {=bool:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, rderrie: {=bool:?}, inv: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer1 () , self . pnb () , self . bker () , self . bwr () , self . mer2 () , self . strt () , self . eopie () , self . errie () , self . rderrie () , self . inv () , self . lock ())
         }
     }
     #[doc = "FLASH secure HDP control register"]
@@ -8322,25 +8313,25 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     impl Sechdpcr {
         #[doc = "HDP1 area access disable When set, this bit is only cleared by a system reset."]
         #[inline(always)]
-        pub const fn hdp1_accdis(&self) -> super::vals::HdpAccdis {
+        pub const fn hdp1_accdis(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::HdpAccdis::from_bits(val as u8)
+            val != 0
         }
         #[doc = "HDP1 area access disable When set, this bit is only cleared by a system reset."]
         #[inline(always)]
-        pub fn set_hdp1_accdis(&mut self, val: super::vals::HdpAccdis) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_hdp1_accdis(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "HDP2 area access disable When set, this bit is only cleared by a system reset."]
         #[inline(always)]
-        pub const fn hdp2_accdis(&self) -> super::vals::HdpAccdis {
+        pub const fn hdp2_accdis(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::HdpAccdis::from_bits(val as u8)
+            val != 0
         }
         #[doc = "HDP2 area access disable When set, this bit is only cleared by a system reset."]
         #[inline(always)]
-        pub fn set_hdp2_accdis(&mut self, val: super::vals::HdpAccdis) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_hdp2_accdis(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
     impl Default for Sechdpcr {
@@ -8362,7 +8353,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Sechdpcr {{ hdp1_accdis: {:?}, hdp2_accdis: {:?} }}",
+                "Sechdpcr {{ hdp1_accdis: {=bool:?}, hdp2_accdis: {=bool:?} }}",
                 self.hdp1_accdis(),
                 self.hdp2_accdis()
             )
@@ -8741,14 +8732,14 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         }
         #[doc = "Bank 1 WPR first area A unlock"]
         #[inline(always)]
-        pub const fn unlock(&self) -> super::vals::WrparUnlock {
+        pub const fn unlock(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::WrparUnlock::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Bank 1 WPR first area A unlock"]
         #[inline(always)]
-        pub fn set_unlock(&mut self, val: super::vals::WrparUnlock) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub fn set_unlock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Wrp1ar {
@@ -8771,7 +8762,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Wrp1ar {{ wrp1a_pstrt: {=u8:?}, wrp1a_pend: {=u8:?}, unlock: {:?} }}",
+                "Wrp1ar {{ wrp1a_pstrt: {=u8:?}, wrp1a_pend: {=u8:?}, unlock: {=bool:?} }}",
                 self.wrp1a_pstrt(),
                 self.wrp1a_pend(),
                 self.unlock()
@@ -8807,14 +8798,14 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         }
         #[doc = "Bank 1 WPR second area B unlock"]
         #[inline(always)]
-        pub const fn unlock(&self) -> super::vals::WrpbrUnlock {
+        pub const fn unlock(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::WrpbrUnlock::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Bank 1 WPR second area B unlock"]
         #[inline(always)]
-        pub fn set_unlock(&mut self, val: super::vals::WrpbrUnlock) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub fn set_unlock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Wrp1br {
@@ -8837,7 +8828,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Wrp1br {{ wrp1b_pstrt: {=u8:?}, wrp1b_pend: {=u8:?}, unlock: {:?} }}",
+                "Wrp1br {{ wrp1b_pstrt: {=u8:?}, wrp1b_pend: {=u8:?}, unlock: {=bool:?} }}",
                 self.wrp1b_pstrt(),
                 self.wrp1b_pend(),
                 self.unlock()
@@ -8873,14 +8864,14 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         }
         #[doc = "Bank 2 WPR first area A unlock"]
         #[inline(always)]
-        pub const fn unlock(&self) -> super::vals::WrparUnlock {
+        pub const fn unlock(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::WrparUnlock::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Bank 2 WPR first area A unlock"]
         #[inline(always)]
-        pub fn set_unlock(&mut self, val: super::vals::WrparUnlock) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub fn set_unlock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Wrp2ar {
@@ -8903,7 +8894,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Wrp2ar {{ wrp2a_pstrt: {=u8:?}, wrp2a_pend: {=u8:?}, unlock: {:?} }}",
+                "Wrp2ar {{ wrp2a_pstrt: {=u8:?}, wrp2a_pend: {=u8:?}, unlock: {=bool:?} }}",
                 self.wrp2a_pstrt(),
                 self.wrp2a_pend(),
                 self.unlock()
@@ -8939,14 +8930,14 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         }
         #[doc = "Bank 2 WPR second area B unlock"]
         #[inline(always)]
-        pub const fn unlock(&self) -> super::vals::WrpbrUnlock {
+        pub const fn unlock(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::WrpbrUnlock::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Bank 2 WPR second area B unlock"]
         #[inline(always)]
-        pub fn set_unlock(&mut self, val: super::vals::WrpbrUnlock) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub fn set_unlock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Wrp2br {
@@ -8969,7 +8960,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Wrp2br {{ wrp2b_pstrt: {=u8:?}, wrp2b_pend: {=u8:?}, unlock: {:?} }}",
+                "Wrp2br {{ wrp2b_pstrt: {=u8:?}, wrp2b_pend: {=u8:?}, unlock: {=bool:?} }}",
                 self.wrp2b_pstrt(),
                 self.wrp2b_pend(),
                 self.unlock()
@@ -8981,110 +8972,17 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum BkEcc {
-        #[doc = "Bank 1"]
-        B_0X0 = 0x0,
-        #[doc = "Bank 2"]
-        B_0X1 = 0x01,
-    }
-    impl BkEcc {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> BkEcc {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for BkEcc {
-        #[inline(always)]
-        fn from(val: u8) -> BkEcc {
-            BkEcc::from_bits(val)
-        }
-    }
-    impl From<BkEcc> for u8 {
-        #[inline(always)]
-        fn from(val: BkEcc) -> u8 {
-            BkEcc::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum BkOp {
-        #[doc = "Bank 1"]
-        B_0X0 = 0x0,
-        #[doc = "Bank 2"]
-        B_0X1 = 0x01,
-    }
-    impl BkOp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> BkOp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for BkOp {
-        #[inline(always)]
-        fn from(val: u8) -> BkOp {
-            BkOp::from_bits(val)
-        }
-    }
-    impl From<BkOp> for u8 {
-        #[inline(always)]
-        fn from(val: BkOp) -> u8 {
-            BkOp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum BkpsramEcc {
-        #[doc = "Backup RAM ECC check enabled"]
-        B_0X0 = 0x0,
-        #[doc = "Backup RAM ECC check disabled"]
-        B_0X1 = 0x01,
-    }
-    impl BkpsramEcc {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> BkpsramEcc {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for BkpsramEcc {
-        #[inline(always)]
-        fn from(val: u8) -> BkpsramEcc {
-            BkpsramEcc::from_bits(val)
-        }
-    }
-    impl From<BkpsramEcc> for u8 {
-        #[inline(always)]
-        fn from(val: BkpsramEcc) -> u8 {
-            BkpsramEcc::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BorLev {
-        #[doc = "BOR level 0 (reset level threshold around 1.7 V)"]
-        B_0X0 = 0x0,
-        #[doc = "BOR level 1 (reset level threshold around 2.0 V)"]
-        B_0X1 = 0x01,
-        #[doc = "BOR level 2 (reset level threshold around 2.2 V)"]
-        B_0X2 = 0x02,
-        #[doc = "BOR level 3 (reset level threshold around 2.5 V)"]
-        B_0X3 = 0x03,
-        #[doc = "BOR level 4 (reset level threshold around 2.8 V)"]
-        B_0X4 = 0x04,
+        #[doc = "BOR level 0 (reset level threshold around 1.7V)"]
+        LEVEL0 = 0x0,
+        #[doc = "BOR level 1 (reset level threshold around 2.0V)"]
+        LEVEL1 = 0x01,
+        #[doc = "BOR level 2 (reset level threshold around 2.2V)"]
+        LEVEL2 = 0x02,
+        #[doc = "BOR level 3 (reset level threshold around 2.5V)"]
+        LEVEL3 = 0x03,
+        #[doc = "BOR level 4 (reset level threshold around 2.8V)"]
+        LEVEL4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -9116,19 +9014,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CodeOp {
         #[doc = "No Flash operation interrupted by previous reset"]
-        B_0X0 = 0x0,
+        NO_FLASH_INT = 0x0,
         #[doc = "Single write operation interrupted"]
-        B_0X1 = 0x01,
+        SINGLE_WR_INT = 0x01,
         #[doc = "Burst write operation interrupted"]
-        B_0X2 = 0x02,
+        BURST_WR_INT = 0x02,
         #[doc = "Page erase operation interrupted"]
-        B_0X3 = 0x03,
+        PG_ERASE_INT = 0x03,
         #[doc = "Bank erase operation interrupted"]
-        B_0X4 = 0x04,
+        BANK_ERASE_INT = 0x04,
         #[doc = "Mass erase operation interrupted"]
-        B_0X5 = 0x05,
+        MASS_ERASE_INT = 0x05,
         #[doc = "Option change operation interrupted"]
-        B_0X6 = 0x06,
+        OPT_CHANGE_INT = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl CodeOp {
@@ -9151,688 +9049,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: CodeOp) -> u8 {
             CodeOp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Dualbank {
-        #[doc = "Single bank Flash with contiguous address in bank 1"]
-        B_0X0 = 0x0,
-        #[doc = "Dual-bank Flash with contiguous addresses"]
-        B_0X1 = 0x01,
-    }
-    impl Dualbank {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dualbank {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Dualbank {
-        #[inline(always)]
-        fn from(val: u8) -> Dualbank {
-            Dualbank::from_bits(val)
-        }
-    }
-    impl From<Dualbank> for u8 {
-        #[inline(always)]
-        fn from(val: Dualbank) -> u8 {
-            Dualbank::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Eccie {
-        #[doc = "ECCC interrupt disabled"]
-        B_0X0 = 0x0,
-        #[doc = "ECCC interrupt enabled."]
-        B_0X1 = 0x01,
-    }
-    impl Eccie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Eccie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Eccie {
-        #[inline(always)]
-        fn from(val: u8) -> Eccie {
-            Eccie::from_bits(val)
-        }
-    }
-    impl From<Eccie> for u8 {
-        #[inline(always)]
-        fn from(val: Eccie) -> u8 {
-            Eccie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum HdpAccdis {
-        #[doc = "Access to HDP2 area granted"]
-        B_0X0 = 0x0,
-        #[doc = "Access to HDP2 area denied (SECWM2Ry option bytes modification bocked -refer to )"]
-        B_0X1 = 0x01,
-    }
-    impl HdpAccdis {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> HdpAccdis {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for HdpAccdis {
-        #[inline(always)]
-        fn from(val: u8) -> HdpAccdis {
-            HdpAccdis::from_bits(val)
-        }
-    }
-    impl From<HdpAccdis> for u8 {
-        #[inline(always)]
-        fn from(val: HdpAccdis) -> u8 {
-            HdpAccdis::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum IoVddHslv {
-        #[doc = "High-speed IO at low VDD voltage feature disabled (VDD can exceed 2.5 V)"]
-        B_0X0 = 0x0,
-        #[doc = "High-speed IO at low VDD voltage feature enabled (VDD remains below 2.5 V)"]
-        B_0X1 = 0x01,
-    }
-    impl IoVddHslv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> IoVddHslv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for IoVddHslv {
-        #[inline(always)]
-        fn from(val: u8) -> IoVddHslv {
-            IoVddHslv::from_bits(val)
-        }
-    }
-    impl From<IoVddHslv> for u8 {
-        #[inline(always)]
-        fn from(val: IoVddHslv) -> u8 {
-            IoVddHslv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum IoVddioHslv {
-        #[doc = "High-speed IO at low VDDIO2 voltage feature disabled (VDDIO2 can exceed 2.5 V)"]
-        B_0X0 = 0x0,
-        #[doc = "High-speed IO at low VDDIO2 voltage feature enabled (VDDIO2 remains below 2.5 V)"]
-        B_0X1 = 0x01,
-    }
-    impl IoVddioHslv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> IoVddioHslv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for IoVddioHslv {
-        #[inline(always)]
-        fn from(val: u8) -> IoVddioHslv {
-            IoVddioHslv::from_bits(val)
-        }
-    }
-    impl From<IoVddioHslv> for u8 {
-        #[inline(always)]
-        fn from(val: IoVddioHslv) -> u8 {
-            IoVddioHslv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum IwdgStdby {
-        #[doc = "Independent watchdog counter frozen in Standby mode"]
-        B_0X0 = 0x0,
-        #[doc = "Independent watchdog counter running in Standby mode"]
-        B_0X1 = 0x01,
-    }
-    impl IwdgStdby {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> IwdgStdby {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for IwdgStdby {
-        #[inline(always)]
-        fn from(val: u8) -> IwdgStdby {
-            IwdgStdby::from_bits(val)
-        }
-    }
-    impl From<IwdgStdby> for u8 {
-        #[inline(always)]
-        fn from(val: IwdgStdby) -> u8 {
-            IwdgStdby::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum IwdgStop {
-        #[doc = "Independent watchdog counter frozen in Stop mode"]
-        B_0X0 = 0x0,
-        #[doc = "Independent watchdog counter running in Stop mode"]
-        B_0X1 = 0x01,
-    }
-    impl IwdgStop {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> IwdgStop {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for IwdgStop {
-        #[inline(always)]
-        fn from(val: u8) -> IwdgStop {
-            IwdgStop::from_bits(val)
-        }
-    }
-    impl From<IwdgStop> for u8 {
-        #[inline(always)]
-        fn from(val: IwdgStop) -> u8 {
-            IwdgStop::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum IwdgSw {
-        #[doc = "Hardware independent watchdog selected"]
-        B_0X0 = 0x0,
-        #[doc = "Software independent watchdog selected"]
-        B_0X1 = 0x01,
-    }
-    impl IwdgSw {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> IwdgSw {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for IwdgSw {
-        #[inline(always)]
-        fn from(val: u8) -> IwdgSw {
-            IwdgSw::from_bits(val)
-        }
-    }
-    impl From<IwdgSw> for u8 {
-        #[inline(always)]
-        fn from(val: IwdgSw) -> u8 {
-            IwdgSw::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lpm {
-        #[doc = "Flash not in low-power read mode"]
-        B_0X0 = 0x0,
-        #[doc = "Flash in low-power read mode"]
-        B_0X1 = 0x01,
-    }
-    impl Lpm {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lpm {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lpm {
-        #[inline(always)]
-        fn from(val: u8) -> Lpm {
-            Lpm::from_bits(val)
-        }
-    }
-    impl From<Lpm> for u8 {
-        #[inline(always)]
-        fn from(val: Lpm) -> u8 {
-            Lpm::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum NBoot {
-        #[doc = "nBOOT0 = 0"]
-        B_0X0 = 0x0,
-        #[doc = "nBOOT0 = 1"]
-        B_0X1 = 0x01,
-    }
-    impl NBoot {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> NBoot {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for NBoot {
-        #[inline(always)]
-        fn from(val: u8) -> NBoot {
-            NBoot::from_bits(val)
-        }
-    }
-    impl From<NBoot> for u8 {
-        #[inline(always)]
-        fn from(val: NBoot) -> u8 {
-            NBoot::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum NRstShdw {
-        #[doc = "Reset generated when entering the Shutdown mode"]
-        B_0X0 = 0x0,
-        #[doc = "No reset generated when entering the Shutdown mode"]
-        B_0X1 = 0x01,
-    }
-    impl NRstShdw {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> NRstShdw {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for NRstShdw {
-        #[inline(always)]
-        fn from(val: u8) -> NRstShdw {
-            NRstShdw::from_bits(val)
-        }
-    }
-    impl From<NRstShdw> for u8 {
-        #[inline(always)]
-        fn from(val: NRstShdw) -> u8 {
-            NRstShdw::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum NRstStdby {
-        #[doc = "Reset generated when entering the Standby mode"]
-        B_0X0 = 0x0,
-        #[doc = "No reset generate when entering the Standby mode"]
-        B_0X1 = 0x01,
-    }
-    impl NRstStdby {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> NRstStdby {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for NRstStdby {
-        #[inline(always)]
-        fn from(val: u8) -> NRstStdby {
-            NRstStdby::from_bits(val)
-        }
-    }
-    impl From<NRstStdby> for u8 {
-        #[inline(always)]
-        fn from(val: NRstStdby) -> u8 {
-            NRstStdby::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum NRstStop {
-        #[doc = "Reset generated when entering the Stop mode"]
-        B_0X0 = 0x0,
-        #[doc = "No reset generated when entering the Stop mode"]
-        B_0X1 = 0x01,
-    }
-    impl NRstStop {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> NRstStop {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for NRstStop {
-        #[inline(always)]
-        fn from(val: u8) -> NRstStop {
-            NRstStop::from_bits(val)
-        }
-    }
-    impl From<NRstStop> for u8 {
-        #[inline(always)]
-        fn from(val: NRstStop) -> u8 {
-            NRstStop::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum NSwboot {
-        #[doc = "BOOT0 taken from the option bit nBOOT0"]
-        B_0X0 = 0x0,
-        #[doc = "BOOT0 taken from PH3/BOOT0 pin"]
-        B_0X1 = 0x01,
-    }
-    impl NSwboot {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> NSwboot {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for NSwboot {
-        #[inline(always)]
-        fn from(val: u8) -> NSwboot {
-            NSwboot::from_bits(val)
-        }
-    }
-    impl From<NSwboot> for u8 {
-        #[inline(always)]
-        fn from(val: NSwboot) -> u8 {
-            NSwboot::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum NscrBker {
-        #[doc = "Bank 1 selected for non-secure page erase"]
-        B_0X0 = 0x0,
-        #[doc = "Bank 2 selected for non-secure page erase"]
-        B_0X1 = 0x01,
-    }
-    impl NscrBker {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> NscrBker {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for NscrBker {
-        #[inline(always)]
-        fn from(val: u8) -> NscrBker {
-            NscrBker::from_bits(val)
-        }
-    }
-    impl From<NscrBker> for u8 {
-        #[inline(always)]
-        fn from(val: NscrBker) -> u8 {
-            NscrBker::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum NscrEopie {
-        #[doc = "Non-secure EOP Interrupt disabled"]
-        B_0X0 = 0x0,
-        #[doc = "Non-secure EOP Interrupt enabled"]
-        B_0X1 = 0x01,
-    }
-    impl NscrEopie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> NscrEopie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for NscrEopie {
-        #[inline(always)]
-        fn from(val: u8) -> NscrEopie {
-            NscrEopie::from_bits(val)
-        }
-    }
-    impl From<NscrEopie> for u8 {
-        #[inline(always)]
-        fn from(val: NscrEopie) -> u8 {
-            NscrEopie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum NscrErrie {
-        #[doc = "Non-secure OPERR error interrupt disabled"]
-        B_0X0 = 0x0,
-        #[doc = "Non-secure OPERR error interrupt enabled"]
-        B_0X1 = 0x01,
-    }
-    impl NscrErrie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> NscrErrie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for NscrErrie {
-        #[inline(always)]
-        fn from(val: u8) -> NscrErrie {
-            NscrErrie::from_bits(val)
-        }
-    }
-    impl From<NscrErrie> for u8 {
-        #[inline(always)]
-        fn from(val: NscrErrie) -> u8 {
-            NscrErrie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum NscrPer {
-        #[doc = "Non-secure page erase disabled"]
-        B_0X0 = 0x0,
-        #[doc = "Non-secure page erase enabled"]
-        B_0X1 = 0x01,
-    }
-    impl NscrPer {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> NscrPer {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for NscrPer {
-        #[inline(always)]
-        fn from(val: u8) -> NscrPer {
-            NscrPer::from_bits(val)
-        }
-    }
-    impl From<NscrPer> for u8 {
-        #[inline(always)]
-        fn from(val: NscrPer) -> u8 {
-            NscrPer::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum NscrPg {
-        #[doc = "Non-secure Flash programming disabled"]
-        B_0X0 = 0x0,
-        #[doc = "Non-secure Flash programming enabled"]
-        B_0X1 = 0x01,
-    }
-    impl NscrPg {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> NscrPg {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for NscrPg {
-        #[inline(always)]
-        fn from(val: u8) -> NscrPg {
-            NscrPg::from_bits(val)
-        }
-    }
-    impl From<NscrPg> for u8 {
-        #[inline(always)]
-        fn from(val: NscrPg) -> u8 {
-            NscrPg::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Nspriv {
-        #[doc = "Non-secure Flash registers can be read and written by privileged or unprivileged access."]
-        B_0X0 = 0x0,
-        #[doc = "Non-secure Flash registers can be read and written by privileged access only."]
-        B_0X1 = 0x01,
-    }
-    impl Nspriv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Nspriv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Nspriv {
-        #[inline(always)]
-        fn from(val: u8) -> Nspriv {
-            Nspriv::from_bits(val)
-        }
-    }
-    impl From<Nspriv> for u8 {
-        #[inline(always)]
-        fn from(val: Nspriv) -> u8 {
-            Nspriv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum OblLaunch {
-        #[doc = "Option byte loading complete"]
-        B_0X0 = 0x0,
-        #[doc = "Option byte loading requested"]
-        B_0X1 = 0x01,
-    }
-    impl OblLaunch {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> OblLaunch {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for OblLaunch {
-        #[inline(always)]
-        fn from(val: u8) -> OblLaunch {
-            OblLaunch::from_bits(val)
-        }
-    }
-    impl From<OblLaunch> for u8 {
-        #[inline(always)]
-        fn from(val: OblLaunch) -> u8 {
-            OblLaunch::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Pdreq {
-        #[doc = "No request for bank 2 to enter power-down mode"]
-        B_0X0 = 0x0,
-        #[doc = "Bank 2 requested to enter power-down mode"]
-        B_0X1 = 0x01,
-    }
-    impl Pdreq {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pdreq {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pdreq {
-        #[inline(always)]
-        fn from(val: u8) -> Pdreq {
-            Pdreq::from_bits(val)
-        }
-    }
-    impl From<Pdreq> for u8 {
-        #[inline(always)]
-        fn from(val: Pdreq) -> u8 {
-            Pdreq::to_bits(val)
         }
     }
     #[repr(transparent)]
@@ -9885,378 +9101,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Rdp) -> u8 {
             Rdp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum SeccrBker {
-        #[doc = "Bank 1 selected for secure page erase"]
-        B_0X0 = 0x0,
-        #[doc = "Bank 2 selected for secure page erase"]
-        B_0X1 = 0x01,
-    }
-    impl SeccrBker {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> SeccrBker {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for SeccrBker {
-        #[inline(always)]
-        fn from(val: u8) -> SeccrBker {
-            SeccrBker::from_bits(val)
-        }
-    }
-    impl From<SeccrBker> for u8 {
-        #[inline(always)]
-        fn from(val: SeccrBker) -> u8 {
-            SeccrBker::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum SeccrEopie {
-        #[doc = "Secure EOP Interrupt disabled"]
-        B_0X0 = 0x0,
-        #[doc = "Secure EOP Interrupt enabled"]
-        B_0X1 = 0x01,
-    }
-    impl SeccrEopie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> SeccrEopie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for SeccrEopie {
-        #[inline(always)]
-        fn from(val: u8) -> SeccrEopie {
-            SeccrEopie::from_bits(val)
-        }
-    }
-    impl From<SeccrEopie> for u8 {
-        #[inline(always)]
-        fn from(val: SeccrEopie) -> u8 {
-            SeccrEopie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum SeccrErrie {
-        #[doc = "Secure OPERR error interrupt disabled"]
-        B_0X0 = 0x0,
-        #[doc = "Secure OPERR error interrupt enabled"]
-        B_0X1 = 0x01,
-    }
-    impl SeccrErrie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> SeccrErrie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for SeccrErrie {
-        #[inline(always)]
-        fn from(val: u8) -> SeccrErrie {
-            SeccrErrie::from_bits(val)
-        }
-    }
-    impl From<SeccrErrie> for u8 {
-        #[inline(always)]
-        fn from(val: SeccrErrie) -> u8 {
-            SeccrErrie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum SeccrPer {
-        #[doc = "Secure page erase disabled"]
-        B_0X0 = 0x0,
-        #[doc = "Secure page erase enabled"]
-        B_0X1 = 0x01,
-    }
-    impl SeccrPer {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> SeccrPer {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for SeccrPer {
-        #[inline(always)]
-        fn from(val: u8) -> SeccrPer {
-            SeccrPer::from_bits(val)
-        }
-    }
-    impl From<SeccrPer> for u8 {
-        #[inline(always)]
-        fn from(val: SeccrPer) -> u8 {
-            SeccrPer::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum SeccrPg {
-        #[doc = "Secure Flash programming disabled"]
-        B_0X0 = 0x0,
-        #[doc = "Secure Flash programming enabled"]
-        B_0X1 = 0x01,
-    }
-    impl SeccrPg {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> SeccrPg {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for SeccrPg {
-        #[inline(always)]
-        fn from(val: u8) -> SeccrPg {
-            SeccrPg::from_bits(val)
-        }
-    }
-    impl From<SeccrPg> for u8 {
-        #[inline(always)]
-        fn from(val: SeccrPg) -> u8 {
-            SeccrPg::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum SleepPd {
-        #[doc = "Flash in Idle mode during Sleep mode"]
-        B_0X0 = 0x0,
-        #[doc = "Flash in power-down mode during Sleep mode"]
-        B_0X1 = 0x01,
-    }
-    impl SleepPd {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> SleepPd {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for SleepPd {
-        #[inline(always)]
-        fn from(val: u8) -> SleepPd {
-            SleepPd::from_bits(val)
-        }
-    }
-    impl From<SleepPd> for u8 {
-        #[inline(always)]
-        fn from(val: SleepPd) -> u8 {
-            SleepPd::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Spriv {
-        #[doc = "Secure Flash registers can be read and written by privileged or unprivileged access."]
-        B_0X0 = 0x0,
-        #[doc = "Secure Flash registers can be read and written by privileged access only."]
-        B_0X1 = 0x01,
-    }
-    impl Spriv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Spriv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Spriv {
-        #[inline(always)]
-        fn from(val: u8) -> Spriv {
-            Spriv::from_bits(val)
-        }
-    }
-    impl From<Spriv> for u8 {
-        #[inline(always)]
-        fn from(val: Spriv) -> u8 {
-            Spriv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum SramEcc {
-        #[doc = "SRAM3 ECC check enabled"]
-        B_0X0 = 0x0,
-        #[doc = "SRAM3 ECC check disabled"]
-        B_0X1 = 0x01,
-    }
-    impl SramEcc {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> SramEcc {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for SramEcc {
-        #[inline(always)]
-        fn from(val: u8) -> SramEcc {
-            SramEcc::from_bits(val)
-        }
-    }
-    impl From<SramEcc> for u8 {
-        #[inline(always)]
-        fn from(val: SramEcc) -> u8 {
-            SramEcc::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum SwapBank {
-        #[doc = "Bank 1 and bank 2 addresses not swapped"]
-        B_0X0 = 0x0,
-        #[doc = "Bank 1 and bank 2 addresses swapped"]
-        B_0X1 = 0x01,
-    }
-    impl SwapBank {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> SwapBank {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for SwapBank {
-        #[inline(always)]
-        fn from(val: u8) -> SwapBank {
-            SwapBank::from_bits(val)
-        }
-    }
-    impl From<SwapBank> for u8 {
-        #[inline(always)]
-        fn from(val: SwapBank) -> u8 {
-            SwapBank::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum WrparUnlock {
-        #[doc = "WRP2A start and end pages locked"]
-        B_0X0 = 0x0,
-        #[doc = "WRP2A start and end pages unlocked"]
-        B_0X1 = 0x01,
-    }
-    impl WrparUnlock {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> WrparUnlock {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for WrparUnlock {
-        #[inline(always)]
-        fn from(val: u8) -> WrparUnlock {
-            WrparUnlock::from_bits(val)
-        }
-    }
-    impl From<WrparUnlock> for u8 {
-        #[inline(always)]
-        fn from(val: WrparUnlock) -> u8 {
-            WrparUnlock::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum WrpbrUnlock {
-        #[doc = "WRP2B start and end pages locked"]
-        B_0X0 = 0x0,
-        #[doc = "WRP2B start and end pages unlocked"]
-        B_0X1 = 0x01,
-    }
-    impl WrpbrUnlock {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> WrpbrUnlock {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for WrpbrUnlock {
-        #[inline(always)]
-        fn from(val: u8) -> WrpbrUnlock {
-            WrpbrUnlock::from_bits(val)
-        }
-    }
-    impl From<WrpbrUnlock> for u8 {
-        #[inline(always)]
-        fn from(val: WrpbrUnlock) -> u8 {
-            WrpbrUnlock::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum WwdgSw {
-        #[doc = "Hardware window watchdog selected"]
-        B_0X0 = 0x0,
-        #[doc = "Software window watchdog selected"]
-        B_0X1 = 0x01,
-    }
-    impl WwdgSw {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> WwdgSw {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for WwdgSw {
-        #[inline(always)]
-        fn from(val: u8) -> WwdgSw {
-            WwdgSw::from_bits(val)
-        }
-    }
-    impl From<WwdgSw> for u8 {
-        #[inline(always)]
-        fn from(val: WwdgSw) -> u8 {
-            WwdgSw::to_bits(val)
         }
     }
 }

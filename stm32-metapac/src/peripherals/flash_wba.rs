@@ -3,7 +3,7 @@
 #![allow(clippy::unnecessary_cast)]
 #![allow(clippy::erasing_op)]
 
-#[doc = "Embedded memory"]
+#[doc = "Flash"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct Flash {
     ptr: *mut u8,
@@ -59,14 +59,14 @@ impl Flash {
     pub const fn secsr(self) -> crate::common::Reg<regs::Secsr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
     }
-    #[doc = "control register"]
+    #[doc = "FLASH non-secure control register"]
     #[inline(always)]
-    pub const fn nscr1(self) -> crate::common::Reg<regs::Nscr1, crate::common::RW> {
+    pub const fn nscr(self) -> crate::common::Reg<regs::Nscr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
     }
-    #[doc = "secure control register"]
+    #[doc = "FLASH secure control register"]
     #[inline(always)]
-    pub const fn seccr1(self) -> crate::common::Reg<regs::Seccr1, crate::common::RW> {
+    pub const fn seccr(self) -> crate::common::Reg<regs::Seccr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
     }
     #[doc = "ECC register"]
@@ -109,14 +109,14 @@ impl Flash {
     pub const fn secbootadd0r(self) -> crate::common::Reg<regs::Secbootadd0r, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
-    #[doc = "secure watermark register 1"]
+    #[doc = "FLASH secure watermark1 register 1"]
     #[inline(always)]
-    pub const fn secwmr1(self) -> crate::common::Reg<regs::Secwmr1, crate::common::RW> {
+    pub const fn secwm1r1(self) -> crate::common::Reg<regs::Secwm1r1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
-    #[doc = "secure watermark register 2"]
+    #[doc = "FLASH secure watermark1 register 2"]
     #[inline(always)]
-    pub const fn secwmr2(self) -> crate::common::Reg<regs::Secwmr2, crate::common::RW> {
+    pub const fn secwm1r2(self) -> crate::common::Reg<regs::Secwm1r2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "Flash WRP bank 1 area A address register"]
@@ -205,7 +205,7 @@ impl Flash {
     }
 }
 pub mod regs {
-    #[doc = "access control register"]
+    #[doc = "FLASH access control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Acr(pub u32);
@@ -243,16 +243,27 @@ pub mod regs {
         pub fn set_lpm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
-        #[doc = "power-down mode request This bit requests to enter power-down mode. When enters power-down mode, this bit is cleared by hardware and the PDKEY2R is locked. This bit is write-protected with PDKEY2R. Access to the bit can be secured by PWR LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[doc = "Bank 1 power-down mode request This bit is write-protected with FLASH_PDKEY1R. This bit requests bank 1 to enter power-down mode. When bank 1 enters power-down mode, this bit is cleared by hardware and the PDKEY1R is locked."]
         #[inline(always)]
-        pub const fn pdreq(&self) -> bool {
+        pub const fn pdreq1(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
             val != 0
         }
-        #[doc = "power-down mode request This bit requests to enter power-down mode. When enters power-down mode, this bit is cleared by hardware and the PDKEY2R is locked. This bit is write-protected with PDKEY2R. Access to the bit can be secured by PWR LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[doc = "Bank 1 power-down mode request This bit is write-protected with FLASH_PDKEY1R. This bit requests bank 1 to enter power-down mode. When bank 1 enters power-down mode, this bit is cleared by hardware and the PDKEY1R is locked."]
         #[inline(always)]
-        pub fn set_pdreq(&mut self, val: bool) {
+        pub fn set_pdreq1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "Bank 2 power-down mode request This bit is write-protected with FLASH_PDKEY2R. This bit requests bank 2 to enter power-down mode. When bank 2 enters power-down mode, this bit is cleared by hardware and the PDKEY2R is locked."]
+        #[inline(always)]
+        pub const fn pdreq2(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Bank 2 power-down mode request This bit is write-protected with FLASH_PDKEY2R. This bit requests bank 2 to enter power-down mode. When bank 2 enters power-down mode, this bit is cleared by hardware and the PDKEY2R is locked."]
+        #[inline(always)]
+        pub fn set_pdreq2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "memory power-down mode during Sleep mode This bit determines whether the memory is in power-down mode or Idle mode when the device is in Sleep mode. Access to the bit can be secured by PWR LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV. The must not be put in power-down while a program or an erase operation is ongoing."]
         #[inline(always)]
@@ -278,7 +289,8 @@ pub mod regs {
                 .field("latency", &self.latency())
                 .field("prften", &self.prften())
                 .field("lpm", &self.lpm())
-                .field("pdreq", &self.pdreq())
+                .field("pdreq1", &self.pdreq1())
+                .field("pdreq2", &self.pdreq2())
                 .field("sleep_pd", &self.sleep_pd())
                 .finish()
         }
@@ -286,15 +298,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Acr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Acr {{ latency: {=u8:?}, prften: {=bool:?}, lpm: {=bool:?}, pdreq: {=bool:?}, sleep_pd: {=bool:?} }}",
-                self.latency(),
-                self.prften(),
-                self.lpm(),
-                self.pdreq(),
-                self.sleep_pd()
-            )
+            defmt :: write ! (f , "Acr {{ latency: {=u8:?}, prften: {=bool:?}, lpm: {=bool:?}, pdreq1: {=bool:?}, pdreq2: {=bool:?}, sleep_pd: {=bool:?} }}" , self . latency () , self . prften () , self . lpm () , self . pdreq1 () , self . pdreq2 () , self . sleep_pd ())
         }
     }
     #[doc = "block based register"]
@@ -366,7 +370,7 @@ pub mod regs {
             defmt :: write ! (f , "Bbr {{ block[0]: {=bool:?}, block[1]: {=bool:?}, block[2]: {=bool:?}, block[3]: {=bool:?}, block[4]: {=bool:?}, block[5]: {=bool:?}, block[6]: {=bool:?}, block[7]: {=bool:?}, block[8]: {=bool:?}, block[9]: {=bool:?}, block[10]: {=bool:?}, block[11]: {=bool:?}, block[12]: {=bool:?}, block[13]: {=bool:?}, block[14]: {=bool:?}, block[15]: {=bool:?}, block[16]: {=bool:?}, block[17]: {=bool:?}, block[18]: {=bool:?}, block[19]: {=bool:?}, block[20]: {=bool:?}, block[21]: {=bool:?}, block[22]: {=bool:?}, block[23]: {=bool:?}, block[24]: {=bool:?}, block[25]: {=bool:?}, block[26]: {=bool:?}, block[27]: {=bool:?}, block[28]: {=bool:?}, block[29]: {=bool:?}, block[30]: {=bool:?}, block[31]: {=bool:?} }}" , self . block (0usize) , self . block (1usize) , self . block (2usize) , self . block (3usize) , self . block (4usize) , self . block (5usize) , self . block (6usize) , self . block (7usize) , self . block (8usize) , self . block (9usize) , self . block (10usize) , self . block (11usize) , self . block (12usize) , self . block (13usize) , self . block (14usize) , self . block (15usize) , self . block (16usize) , self . block (17usize) , self . block (18usize) , self . block (19usize) , self . block (20usize) , self . block (21usize) , self . block (22usize) , self . block (23usize) , self . block (24usize) , self . block (25usize) , self . block (26usize) , self . block (27usize) , self . block (28usize) , self . block (29usize) , self . block (30usize) , self . block (31usize))
         }
     }
-    #[doc = "ECC register"]
+    #[doc = "FLASH ECC register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Eccr(pub u32);
@@ -381,6 +385,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_addr_ecc(&mut self, val: u32) {
             self.0 = (self.0 & !(0x000f_ffff << 0usize)) | (((val as u32) & 0x000f_ffff) << 0usize);
+        }
+        #[doc = "ECC fail bank"]
+        #[inline(always)]
+        pub const fn bk_ecc(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "ECC fail bank"]
+        #[inline(always)]
+        pub fn set_bk_ecc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "System memory ECC fail This bit indicates that the ECC error correction or double ECC error detection is located in the system memory."]
         #[inline(always)]
@@ -437,6 +452,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Eccr")
                 .field("addr_ecc", &self.addr_ecc())
+                .field("bk_ecc", &self.bk_ecc())
                 .field("sysf_ecc", &self.sysf_ecc())
                 .field("eccie", &self.eccie())
                 .field("eccc", &self.eccc())
@@ -447,10 +463,10 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Eccr {{ addr_ecc: {=u32:?}, sysf_ecc: {=bool:?}, eccie: {=bool:?}, eccc: {=bool:?}, eccd: {=bool:?} }}" , self . addr_ecc () , self . sysf_ecc () , self . eccie () , self . eccc () , self . eccd ())
+            defmt :: write ! (f , "Eccr {{ addr_ecc: {=u32:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, eccie: {=bool:?}, eccc: {=bool:?}, eccd: {=bool:?} }}" , self . addr_ecc () , self . bk_ecc () , self . sysf_ecc () , self . eccie () , self . eccc () , self . eccd ())
         }
     }
-    #[doc = "boot address 0 register"]
+    #[doc = "FLASH non-secure boot address 0 register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Nsbootadd0r(pub u32);
@@ -492,7 +508,7 @@ pub mod regs {
             defmt::write!(f, "Nsbootadd0r {{ nsbootadd0: {=u32:?} }}", self.nsbootadd0())
         }
     }
-    #[doc = "boot address 1 register"]
+    #[doc = "FLASH non-secure boot address 1 register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Nsbootadd1r(pub u32);
@@ -534,11 +550,11 @@ pub mod regs {
             defmt::write!(f, "Nsbootadd1r {{ nsbootadd1: {=u32:?} }}", self.nsbootadd1())
         }
     }
-    #[doc = "control register"]
+    #[doc = "FLASH non-secure control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Nscr1(pub u32);
-    impl Nscr1 {
+    pub struct Nscr(pub u32);
+    impl Nscr {
         #[doc = "Non-secure programming"]
         #[inline(always)]
         pub const fn pg(&self) -> bool {
@@ -561,27 +577,38 @@ pub mod regs {
         pub fn set_per(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "Non-secure mass erase This bit triggers the non-secure mass erase (all user pages) when set."]
+        #[doc = "Non-secure bank 1 mass erase This bit triggers the bank 1 non-secure mass erase (all bank 1 user pages) when set."]
         #[inline(always)]
-        pub const fn mer(&self) -> bool {
+        pub const fn mer1(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "Non-secure mass erase This bit triggers the non-secure mass erase (all user pages) when set."]
+        #[doc = "Non-secure bank 1 mass erase This bit triggers the bank 1 non-secure mass erase (all bank 1 user pages) when set."]
         #[inline(always)]
-        pub fn set_mer(&mut self, val: bool) {
+        pub fn set_mer1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
-        #[doc = "Non-secure page number selection These bits select the page to erase. ... Note that bit 9 is reserved on STM32WBA5xEx devices."]
+        #[doc = "Non-secure page number selection These bits select the page to erase. ..."]
         #[inline(always)]
         pub const fn pnb(&self) -> u8 {
-            let val = (self.0 >> 3usize) & 0x7f;
+            let val = (self.0 >> 3usize) & 0xff;
             val as u8
         }
-        #[doc = "Non-secure page number selection These bits select the page to erase. ... Note that bit 9 is reserved on STM32WBA5xEx devices."]
+        #[doc = "Non-secure page number selection These bits select the page to erase. ..."]
         #[inline(always)]
         pub fn set_pnb(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 3usize)) | (((val as u32) & 0x7f) << 3usize);
+            self.0 = (self.0 & !(0xff << 3usize)) | (((val as u32) & 0xff) << 3usize);
+        }
+        #[doc = "Non-secure bank selection for page erase"]
+        #[inline(always)]
+        pub const fn bker(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Non-secure bank selection for page erase"]
+        #[inline(always)]
+        pub fn set_bker(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Non-secure burst write programming mode When set, this bit selects the burst write programming mode."]
         #[inline(always)]
@@ -594,98 +621,111 @@ pub mod regs {
         pub fn set_bwr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
-        #[doc = "Non-secure operation start This bit triggers a non-secure erase operation when set. If MER and PER bits are reset and the STRT bit is set, the PGSERR bit in NSSR is set (this condition is forbidden). This bit is set only by software and is cleared when the BSY bit is cleared in NSSR."]
+        #[doc = "Non-secure bank 2 mass erase This bit triggers the bank 2 non-secure mass erase (all bank 2 user pages) when set."]
+        #[inline(always)]
+        pub const fn mer2(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Non-secure bank 2 mass erase This bit triggers the bank 2 non-secure mass erase (all bank 2 user pages) when set."]
+        #[inline(always)]
+        pub fn set_mer2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "Non-secure start This bit triggers a non-secure erase operation when set. If MER1, MER2 and PER bits are reset and the STRT bit is set, the PGSERR bit in FLASH_NSSR is set (this condition is forbidden). This bit is set only by software and is cleared when the BSY bit is cleared in FLASH_NSSR."]
         #[inline(always)]
         pub const fn strt(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
-        #[doc = "Non-secure operation start This bit triggers a non-secure erase operation when set. If MER and PER bits are reset and the STRT bit is set, the PGSERR bit in NSSR is set (this condition is forbidden). This bit is set only by software and is cleared when the BSY bit is cleared in NSSR."]
+        #[doc = "Non-secure start This bit triggers a non-secure erase operation when set. If MER1, MER2 and PER bits are reset and the STRT bit is set, the PGSERR bit in FLASH_NSSR is set (this condition is forbidden). This bit is set only by software and is cleared when the BSY bit is cleared in FLASH_NSSR."]
         #[inline(always)]
         pub fn set_strt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
-        #[doc = "Options modification start This bit triggers an option bytes erase and program operation when set. This bit is write-protected with OPTLOCK.. This bit is set only by software, and is cleared when the BSY bit is cleared in NSSR."]
+        #[doc = "Options modification start This bit triggers an options operation when set. It can not be written if OPTLOCK bit is set. This bit is set only by software, and is cleared when the BSY bit is cleared in FLASH_NSSR."]
         #[inline(always)]
         pub const fn optstrt(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
             val != 0
         }
-        #[doc = "Options modification start This bit triggers an option bytes erase and program operation when set. This bit is write-protected with OPTLOCK.. This bit is set only by software, and is cleared when the BSY bit is cleared in NSSR."]
+        #[doc = "Options modification start This bit triggers an options operation when set. It can not be written if OPTLOCK bit is set. This bit is set only by software, and is cleared when the BSY bit is cleared in FLASH_NSSR."]
         #[inline(always)]
         pub fn set_optstrt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
-        #[doc = "Non-secure end of operation interrupt enable This bit enables the interrupt generation when the EOP bit in the NSSR is set to 1."]
+        #[doc = "Non-secure end of operation interrupt enable This bit enables the interrupt generation when the EOP bit in the FLASH_NSSR is set to 1."]
         #[inline(always)]
         pub const fn eopie(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
         }
-        #[doc = "Non-secure end of operation interrupt enable This bit enables the interrupt generation when the EOP bit in the NSSR is set to 1."]
+        #[doc = "Non-secure end of operation interrupt enable This bit enables the interrupt generation when the EOP bit in the FLASH_NSSR is set to 1."]
         #[inline(always)]
         pub fn set_eopie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
-        #[doc = "Non-secure error interrupt enable This bit enables the interrupt generation when the OPERR bit in the NSSR is set to 1."]
+        #[doc = "Non-secure error interrupt enable This bit enables the interrupt generation when the OPERR bit in the FLASH_NSSR is set to 1."]
         #[inline(always)]
         pub const fn errie(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
             val != 0
         }
-        #[doc = "Non-secure error interrupt enable This bit enables the interrupt generation when the OPERR bit in the NSSR is set to 1."]
+        #[doc = "Non-secure error interrupt enable This bit enables the interrupt generation when the OPERR bit in the FLASH_NSSR is set to 1."]
         #[inline(always)]
         pub fn set_errie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
-        #[doc = "Force the option byte loading When set to 1, this bit forces the option byte reloading. This bit is cleared only when the option byte loading is complete. This bit is write-protected with OPTLOCK. Note: The LSE oscillator must be disabled, LSEON = 0 and LSERDY = 0, before starting OBL_LAUNCH."]
+        #[doc = "Force the option byte loading When set to 1, this bit forces the option byte reloading. This bit is cleared only when the option byte loading is complete. It cannot be written if OPTLOCK is set."]
         #[inline(always)]
         pub const fn obl_launch(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
             val != 0
         }
-        #[doc = "Force the option byte loading When set to 1, this bit forces the option byte reloading. This bit is cleared only when the option byte loading is complete. This bit is write-protected with OPTLOCK. Note: The LSE oscillator must be disabled, LSEON = 0 and LSERDY = 0, before starting OBL_LAUNCH."]
+        #[doc = "Force the option byte loading When set to 1, this bit forces the option byte reloading. This bit is cleared only when the option byte loading is complete. It cannot be written if OPTLOCK is set."]
         #[inline(always)]
         pub fn set_obl_launch(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
-        #[doc = "Option lock This bit is set only. When set, the NSCR1.OPTSRT and OBL_LAUNCH bits concerning user options write access is locked. This bit is cleared by hardware after detecting the unlock sequence in OPTKEYR. The NSCR1.LOCK bit must be cleared before doing the OPTKEYR unlock sequence. In case of an unsuccessful unlock operation, this bit remains set until the next reset."]
+        #[doc = "Option lock This bit is set only. When set, all bits concerning user options in FLASH_NSCR register are locked. This bit is cleared by hardware after detecting the unlock sequence. The LOCK bit in the FLASH_NSCR must be cleared before doing the unlock sequence for OPTLOCK bit. In case of an unsuccessful unlock operation, this bit remains set until the next reset."]
         #[inline(always)]
         pub const fn optlock(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
             val != 0
         }
-        #[doc = "Option lock This bit is set only. When set, the NSCR1.OPTSRT and OBL_LAUNCH bits concerning user options write access is locked. This bit is cleared by hardware after detecting the unlock sequence in OPTKEYR. The NSCR1.LOCK bit must be cleared before doing the OPTKEYR unlock sequence. In case of an unsuccessful unlock operation, this bit remains set until the next reset."]
+        #[doc = "Option lock This bit is set only. When set, all bits concerning user options in FLASH_NSCR register are locked. This bit is cleared by hardware after detecting the unlock sequence. The LOCK bit in the FLASH_NSCR must be cleared before doing the unlock sequence for OPTLOCK bit. In case of an unsuccessful unlock operation, this bit remains set until the next reset."]
         #[inline(always)]
         pub fn set_optlock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
-        #[doc = "Non-secure lock This bit is set only. When set, the NSCR1 register write access is locked. This bit is cleared by hardware after detecting the unlock sequence in NSKEYR. In case of an unsuccessful unlock operation, this bit remains set until the next system reset."]
+        #[doc = "Non-secure lock This bit is set only. When set, the FLASH_NSCR register is locked. It is cleared by hardware after detecting the unlock sequence in FLASH_NSKEYR register. In case of an unsuccessful unlock operation, this bit remains set until the next system reset."]
         #[inline(always)]
         pub const fn lock(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
-        #[doc = "Non-secure lock This bit is set only. When set, the NSCR1 register write access is locked. This bit is cleared by hardware after detecting the unlock sequence in NSKEYR. In case of an unsuccessful unlock operation, this bit remains set until the next system reset."]
+        #[doc = "Non-secure lock This bit is set only. When set, the FLASH_NSCR register is locked. It is cleared by hardware after detecting the unlock sequence in FLASH_NSKEYR register. In case of an unsuccessful unlock operation, this bit remains set until the next system reset."]
         #[inline(always)]
         pub fn set_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
-    impl Default for Nscr1 {
+    impl Default for Nscr {
         #[inline(always)]
-        fn default() -> Nscr1 {
-            Nscr1(0)
+        fn default() -> Nscr {
+            Nscr(0)
         }
     }
-    impl core::fmt::Debug for Nscr1 {
+    impl core::fmt::Debug for Nscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Nscr1")
+            f.debug_struct("Nscr")
                 .field("pg", &self.pg())
                 .field("per", &self.per())
-                .field("mer", &self.mer())
+                .field("mer1", &self.mer1())
                 .field("pnb", &self.pnb())
+                .field("bker", &self.bker())
                 .field("bwr", &self.bwr())
+                .field("mer2", &self.mer2())
                 .field("strt", &self.strt())
                 .field("optstrt", &self.optstrt())
                 .field("eopie", &self.eopie())
@@ -697,9 +737,9 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Nscr1 {
+    impl defmt::Format for Nscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Nscr1 {{ pg: {=bool:?}, per: {=bool:?}, mer: {=bool:?}, pnb: {=u8:?}, bwr: {=bool:?}, strt: {=bool:?}, optstrt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, obl_launch: {=bool:?}, optlock: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer () , self . pnb () , self . bwr () , self . strt () , self . optstrt () , self . eopie () , self . errie () , self . obl_launch () , self . optlock () , self . lock ())
+            defmt :: write ! (f , "Nscr {{ pg: {=bool:?}, per: {=bool:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {=bool:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, optstrt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, obl_launch: {=bool:?}, optlock: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer1 () , self . pnb () , self . bker () , self . bwr () , self . mer2 () , self . strt () , self . optstrt () , self . eopie () , self . errie () , self . obl_launch () , self . optlock () , self . lock ())
         }
     }
     #[doc = "control 2 register"]
@@ -750,7 +790,7 @@ pub mod regs {
             defmt::write!(f, "Nscr2 {{ ps: {=bool:?}, es: {=bool:?} }}", self.ps(), self.es())
         }
     }
-    #[doc = "status register"]
+    #[doc = "FLASH non-secure status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Nssr(pub u32);
@@ -887,16 +927,27 @@ pub mod regs {
         pub fn set_oem2lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
-        #[doc = "in power-down mode This bit indicates that the memory is in power-down state. It is reset when is in normal mode or being awaken."]
+        #[doc = "Bank 1 in power-down mode This bit indicates that the Flash memory bank 1 is in power-down state. It is reset when bank 1 is in normal mode or being awaken."]
         #[inline(always)]
-        pub const fn pd(&self) -> bool {
+        pub const fn pd1(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
-        #[doc = "in power-down mode This bit indicates that the memory is in power-down state. It is reset when is in normal mode or being awaken."]
+        #[doc = "Bank 1 in power-down mode This bit indicates that the Flash memory bank 1 is in power-down state. It is reset when bank 1 is in normal mode or being awaken."]
         #[inline(always)]
-        pub fn set_pd(&mut self, val: bool) {
+        pub fn set_pd1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "Bank 2 in power-down mode This bit indicates that the Flash memory bank 2 is in power-down state. It is reset when bank 2 is in normal mode or being awaken."]
+        #[inline(always)]
+        pub const fn pd2(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Bank 2 in power-down mode This bit indicates that the Flash memory bank 2 is in power-down state. It is reset when bank 2 is in normal mode or being awaken."]
+        #[inline(always)]
+        pub fn set_pd2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
     }
     impl Default for Nssr {
@@ -920,17 +971,18 @@ pub mod regs {
                 .field("wdw", &self.wdw())
                 .field("oem1lock", &self.oem1lock())
                 .field("oem2lock", &self.oem2lock())
-                .field("pd", &self.pd())
+                .field("pd1", &self.pd1())
+                .field("pd2", &self.pd2())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nssr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Nssr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, optwerr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?}, oem1lock: {=bool:?}, oem2lock: {=bool:?}, pd: {=bool:?} }}" , self . eop () , self . operr () , self . progerr () , self . wrperr () , self . pgaerr () , self . sizerr () , self . pgserr () , self . optwerr () , self . bsy () , self . wdw () , self . oem1lock () , self . oem2lock () , self . pd ())
+            defmt :: write ! (f , "Nssr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, optwerr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?}, oem1lock: {=bool:?}, oem2lock: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?} }}" , self . eop () , self . operr () , self . progerr () , self . wrperr () , self . pgaerr () , self . sizerr () , self . pgserr () , self . optwerr () , self . bsy () , self . wdw () , self . oem1lock () , self . oem2lock () , self . pd1 () , self . pd2 ())
         }
     }
-    #[doc = "operation status register"]
+    #[doc = "FLASH operation status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Opsr(pub u32);
@@ -945,6 +997,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_addr_op(&mut self, val: u32) {
             self.0 = (self.0 & !(0x000f_ffff << 0usize)) | (((val as u32) & 0x000f_ffff) << 0usize);
+        }
+        #[doc = "Interrupted operation bank This bit indicates which Flash memory bank was accessed when reset occurred"]
+        #[inline(always)]
+        pub const fn bk_op(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Interrupted operation bank This bit indicates which Flash memory bank was accessed when reset occurred"]
+        #[inline(always)]
+        pub fn set_bk_op(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "Operation in system memory interrupted This bit indicates that the reset occurred during an operation in the system memory."]
         #[inline(always)]
@@ -979,6 +1042,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Opsr")
                 .field("addr_op", &self.addr_op())
+                .field("bk_op", &self.bk_op())
                 .field("sysf_op", &self.sysf_op())
                 .field("code_op", &self.code_op())
                 .finish()
@@ -989,14 +1053,15 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Opsr {{ addr_op: {=u32:?}, sysf_op: {=bool:?}, code_op: {:?} }}",
+                "Opsr {{ addr_op: {=u32:?}, bk_op: {=bool:?}, sysf_op: {=bool:?}, code_op: {:?} }}",
                 self.addr_op(),
+                self.bk_op(),
                 self.sysf_op(),
                 self.code_op()
             )
         }
     }
-    #[doc = "option register"]
+    #[doc = "FLASH option register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Optr(pub u32);
@@ -1025,25 +1090,36 @@ pub mod regs {
         }
         #[doc = "Reset generation in Stop mode"]
         #[inline(always)]
-        pub const fn nrst_stop(&self) -> bool {
+        pub const fn n_rst_stop(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
             val != 0
         }
         #[doc = "Reset generation in Stop mode"]
         #[inline(always)]
-        pub fn set_nrst_stop(&mut self, val: bool) {
+        pub fn set_n_rst_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Reset generation in Standby mode"]
         #[inline(always)]
-        pub const fn nrst_stdby(&self) -> bool {
+        pub const fn n_rst_stdby(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
             val != 0
         }
         #[doc = "Reset generation in Standby mode"]
         #[inline(always)]
-        pub fn set_nrst_stdby(&mut self, val: bool) {
+        pub fn set_n_rst_stdby(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+        #[doc = "Reset generation in Shutdown mode"]
+        #[inline(always)]
+        pub const fn n_rst_shdw(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Reset generation in Shutdown mode"]
+        #[inline(always)]
+        pub fn set_n_rst_shdw(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "SRAM1 erase upon system reset"]
         #[inline(always)]
@@ -1100,6 +1176,28 @@ pub mod regs {
         pub fn set_wwdg_sw(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
+        #[doc = "Swap banks"]
+        #[inline(always)]
+        pub const fn swap_bank(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Swap banks"]
+        #[inline(always)]
+        pub fn set_swap_bank(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "Dual-bank on 1-Mbyte and 512-Kbyte Flash memory devices"]
+        #[inline(always)]
+        pub const fn dualbank(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Dual-bank on 1-Mbyte and 512-Kbyte Flash memory devices"]
+        #[inline(always)]
+        pub fn set_dualbank(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
         #[doc = "SRAM2 parity check enable"]
         #[inline(always)]
         pub const fn sram2_pe(&self) -> bool {
@@ -1124,25 +1222,47 @@ pub mod regs {
         }
         #[doc = "Software BOOT0"]
         #[inline(always)]
-        pub const fn nswboot0(&self) -> bool {
+        pub const fn n_swboot0(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
             val != 0
         }
         #[doc = "Software BOOT0"]
         #[inline(always)]
-        pub fn set_nswboot0(&mut self, val: bool) {
+        pub fn set_n_swboot0(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
-        #[doc = "NBOOT0 option bit"]
+        #[doc = "nBOOT0 option bit"]
         #[inline(always)]
-        pub const fn nboot0(&self) -> bool {
+        pub const fn n_boot0(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
             val != 0
         }
-        #[doc = "NBOOT0 option bit"]
+        #[doc = "nBOOT0 option bit"]
         #[inline(always)]
-        pub fn set_nboot0(&mut self, val: bool) {
+        pub fn set_n_boot0(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
+        }
+        #[doc = "High-speed IO at low VDD voltage configuration bit This bit can be set only with VDD below 2.5V"]
+        #[inline(always)]
+        pub const fn io_vdd_hslv(&self) -> bool {
+            let val = (self.0 >> 29usize) & 0x01;
+            val != 0
+        }
+        #[doc = "High-speed IO at low VDD voltage configuration bit This bit can be set only with VDD below 2.5V"]
+        #[inline(always)]
+        pub fn set_io_vdd_hslv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+        }
+        #[doc = "High-speed IO at low VDDIO2 voltage configuration bit This bit can be set only with VDDIO2 below 2.5 V."]
+        #[inline(always)]
+        pub const fn io_vddio2_hslv(&self) -> bool {
+            let val = (self.0 >> 30usize) & 0x01;
+            val != 0
+        }
+        #[doc = "High-speed IO at low VDDIO2 voltage configuration bit This bit can be set only with VDDIO2 below 2.5 V."]
+        #[inline(always)]
+        pub fn set_io_vddio2_hslv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "Global TrustZone security enable"]
         #[inline(always)]
@@ -1167,17 +1287,22 @@ pub mod regs {
             f.debug_struct("Optr")
                 .field("rdp", &self.rdp())
                 .field("bor_lev", &self.bor_lev())
-                .field("nrst_stop", &self.nrst_stop())
-                .field("nrst_stdby", &self.nrst_stdby())
+                .field("n_rst_stop", &self.n_rst_stop())
+                .field("n_rst_stdby", &self.n_rst_stdby())
+                .field("n_rst_shdw", &self.n_rst_shdw())
                 .field("sram1_rst", &self.sram1_rst())
                 .field("iwdg_sw", &self.iwdg_sw())
                 .field("iwdg_stop", &self.iwdg_stop())
                 .field("iwdg_stdby", &self.iwdg_stdby())
                 .field("wwdg_sw", &self.wwdg_sw())
+                .field("swap_bank", &self.swap_bank())
+                .field("dualbank", &self.dualbank())
                 .field("sram2_pe", &self.sram2_pe())
                 .field("sram2_rst", &self.sram2_rst())
-                .field("nswboot0", &self.nswboot0())
-                .field("nboot0", &self.nboot0())
+                .field("n_swboot0", &self.n_swboot0())
+                .field("n_boot0", &self.n_boot0())
+                .field("io_vdd_hslv", &self.io_vdd_hslv())
+                .field("io_vddio2_hslv", &self.io_vddio2_hslv())
                 .field("tzen", &self.tzen())
                 .finish()
         }
@@ -1185,10 +1310,10 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Optr {{ rdp: {:?}, bor_lev: {:?}, nrst_stop: {=bool:?}, nrst_stdby: {=bool:?}, sram1_rst: {=bool:?}, iwdg_sw: {=bool:?}, iwdg_stop: {=bool:?}, iwdg_stdby: {=bool:?}, wwdg_sw: {=bool:?}, sram2_pe: {=bool:?}, sram2_rst: {=bool:?}, nswboot0: {=bool:?}, nboot0: {=bool:?}, tzen: {=bool:?} }}" , self . rdp () , self . bor_lev () , self . nrst_stop () , self . nrst_stdby () , self . sram1_rst () , self . iwdg_sw () , self . iwdg_stop () , self . iwdg_stdby () , self . wwdg_sw () , self . sram2_pe () , self . sram2_rst () , self . nswboot0 () , self . nboot0 () , self . tzen ())
+            defmt :: write ! (f , "Optr {{ rdp: {:?}, bor_lev: {:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, n_rst_shdw: {=bool:?}, sram1_rst: {=bool:?}, iwdg_sw: {=bool:?}, iwdg_stop: {=bool:?}, iwdg_stdby: {=bool:?}, wwdg_sw: {=bool:?}, swap_bank: {=bool:?}, dualbank: {=bool:?}, sram2_pe: {=bool:?}, sram2_rst: {=bool:?}, n_swboot0: {=bool:?}, n_boot0: {=bool:?}, io_vdd_hslv: {=bool:?}, io_vddio2_hslv: {=bool:?}, tzen: {=bool:?} }}" , self . rdp () , self . bor_lev () , self . n_rst_stop () , self . n_rst_stdby () , self . n_rst_shdw () , self . sram1_rst () , self . iwdg_sw () , self . iwdg_stop () , self . iwdg_stdby () , self . wwdg_sw () , self . swap_bank () , self . dualbank () , self . sram2_pe () , self . sram2_rst () , self . n_swboot0 () , self . n_boot0 () , self . io_vdd_hslv () , self . io_vddio2_hslv () , self . tzen ())
         }
     }
-    #[doc = "privilege configuration register"]
+    #[doc = "FLASH privilege configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Privcfgr(pub u32);
@@ -1241,7 +1366,7 @@ pub mod regs {
             )
         }
     }
-    #[doc = "secure boot address 0 register"]
+    #[doc = "FLASH secure boot address 0 register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Secbootadd0r(pub u32);
@@ -1304,11 +1429,11 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             )
         }
     }
-    #[doc = "secure control register"]
+    #[doc = "FLASH secure control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Seccr1(pub u32);
-    impl Seccr1 {
+    pub struct Seccr(pub u32);
+    impl Seccr {
         #[doc = "Secure programming"]
         #[inline(always)]
         pub const fn pg(&self) -> bool {
@@ -1331,27 +1456,38 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
         pub fn set_per(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "Secure mass erase This bit triggers the secure mass erase (all user pages) when set."]
+        #[doc = "Secure bank 1 mass erase This bit triggers the bank 1 secure mass erase (all bank 1 user pages) when set."]
         #[inline(always)]
-        pub const fn mer(&self) -> bool {
+        pub const fn mer1(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "Secure mass erase This bit triggers the secure mass erase (all user pages) when set."]
+        #[doc = "Secure bank 1 mass erase This bit triggers the bank 1 secure mass erase (all bank 1 user pages) when set."]
         #[inline(always)]
-        pub fn set_mer(&mut self, val: bool) {
+        pub fn set_mer1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
-        #[doc = "Secure page number selection These bits select the page to erase: ... Note that bit 9 is reserved on STM32WBA5xEx devices."]
+        #[doc = "Secure page number selection These bits select the page to erase: ..."]
         #[inline(always)]
         pub const fn pnb(&self) -> u8 {
-            let val = (self.0 >> 3usize) & 0x7f;
+            let val = (self.0 >> 3usize) & 0xff;
             val as u8
         }
-        #[doc = "Secure page number selection These bits select the page to erase: ... Note that bit 9 is reserved on STM32WBA5xEx devices."]
+        #[doc = "Secure page number selection These bits select the page to erase: ..."]
         #[inline(always)]
         pub fn set_pnb(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 3usize)) | (((val as u32) & 0x7f) << 3usize);
+            self.0 = (self.0 & !(0xff << 3usize)) | (((val as u32) & 0xff) << 3usize);
+        }
+        #[doc = "Secure bank selection for page erase"]
+        #[inline(always)]
+        pub const fn bker(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Secure bank selection for page erase"]
+        #[inline(always)]
+        pub fn set_bker(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Secure burst write programming mode When set, this bit selects the burst write programming mode."]
         #[inline(always)]
@@ -1364,88 +1500,113 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
         pub fn set_bwr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
-        #[doc = "Secure start This bit triggers a secure erase operation when set. If MER and PER bits are reset and the STRT bit is set, the PGSERR in the SECSR is set (this condition is forbidden). This bit is set only by software and is cleared when the BSY bit is cleared in SECSR."]
+        #[doc = "Secure bank 2 mass erase This bit triggers the bank 2 secure mass erase (all bank 2 user pages) when set."]
+        #[inline(always)]
+        pub const fn mer2(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Secure bank 2 mass erase This bit triggers the bank 2 secure mass erase (all bank 2 user pages) when set."]
+        #[inline(always)]
+        pub fn set_mer2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "Secure start This bit triggers a secure erase operation when set. If MER1, MER2 and PER bits are reset and the STRT bit is set, the PGSERR in the FLASH_SECSR is set (this condition is forbidden). This bit is set only by software and is cleared when the BSY bit is cleared in FLASH_SECSR."]
         #[inline(always)]
         pub const fn strt(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
-        #[doc = "Secure start This bit triggers a secure erase operation when set. If MER and PER bits are reset and the STRT bit is set, the PGSERR in the SECSR is set (this condition is forbidden). This bit is set only by software and is cleared when the BSY bit is cleared in SECSR."]
+        #[doc = "Secure start This bit triggers a secure erase operation when set. If MER1, MER2 and PER bits are reset and the STRT bit is set, the PGSERR in the FLASH_SECSR is set (this condition is forbidden). This bit is set only by software and is cleared when the BSY bit is cleared in FLASH_SECSR."]
         #[inline(always)]
         pub fn set_strt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
-        #[doc = "Secure End of operation interrupt enable This bit enables the interrupt generation when the EOP bit in SECSR is set to 1."]
+        #[doc = "Secure End of operation interrupt enable This bit enables the interrupt generation when the EOP bit in the FLASH_SECSR is set to 1."]
         #[inline(always)]
         pub const fn eopie(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
             val != 0
         }
-        #[doc = "Secure End of operation interrupt enable This bit enables the interrupt generation when the EOP bit in SECSR is set to 1."]
+        #[doc = "Secure End of operation interrupt enable This bit enables the interrupt generation when the EOP bit in the FLASH_SECSR is set to 1."]
         #[inline(always)]
         pub fn set_eopie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
-        #[doc = "Secure error interrupt enable This bit enables the interrupt generation when the OPERR bit in SECSR is set to 1."]
+        #[doc = "Secure error interrupt enable"]
         #[inline(always)]
         pub const fn errie(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
             val != 0
         }
-        #[doc = "Secure error interrupt enable This bit enables the interrupt generation when the OPERR bit in SECSR is set to 1."]
+        #[doc = "Secure error interrupt enable"]
         #[inline(always)]
         pub fn set_errie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
-        #[doc = "memory security state invert This bit inverts the memory security state."]
+        #[doc = "Secure PCROP read error interrupt enable"]
+        #[inline(always)]
+        pub const fn rderrie(&self) -> bool {
+            let val = (self.0 >> 26usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Secure PCROP read error interrupt enable"]
+        #[inline(always)]
+        pub fn set_rderrie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        }
+        #[doc = "Flash memory security state invert This bit inverts the Flash memory security state."]
         #[inline(always)]
         pub const fn inv(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
             val != 0
         }
-        #[doc = "memory security state invert This bit inverts the memory security state."]
+        #[doc = "Flash memory security state invert This bit inverts the Flash memory security state."]
         #[inline(always)]
         pub fn set_inv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
-        #[doc = "Secure lock This bit is set only. When set, the SECCR1 register is locked. It is cleared by hardware after detecting the unlock sequence in SECKEYR register. In case of an unsuccessful unlock operation, this bit remains set until the next system reset."]
+        #[doc = "Secure lock This bit is set only. When set, the FLASH_SECCR register is locked. It is cleared by hardware after detecting the unlock sequence in FLASH_SECKEYR register. In case of an unsuccessful unlock operation, this bit remains set until the next system reset."]
         #[inline(always)]
         pub const fn lock(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
             val != 0
         }
-        #[doc = "Secure lock This bit is set only. When set, the SECCR1 register is locked. It is cleared by hardware after detecting the unlock sequence in SECKEYR register. In case of an unsuccessful unlock operation, this bit remains set until the next system reset."]
+        #[doc = "Secure lock This bit is set only. When set, the FLASH_SECCR register is locked. It is cleared by hardware after detecting the unlock sequence in FLASH_SECKEYR register. In case of an unsuccessful unlock operation, this bit remains set until the next system reset."]
         #[inline(always)]
         pub fn set_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
-    impl Default for Seccr1 {
+    impl Default for Seccr {
         #[inline(always)]
-        fn default() -> Seccr1 {
-            Seccr1(0)
+        fn default() -> Seccr {
+            Seccr(0)
         }
     }
-    impl core::fmt::Debug for Seccr1 {
+    impl core::fmt::Debug for Seccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Seccr1")
+            f.debug_struct("Seccr")
                 .field("pg", &self.pg())
                 .field("per", &self.per())
-                .field("mer", &self.mer())
+                .field("mer1", &self.mer1())
                 .field("pnb", &self.pnb())
+                .field("bker", &self.bker())
                 .field("bwr", &self.bwr())
+                .field("mer2", &self.mer2())
                 .field("strt", &self.strt())
                 .field("eopie", &self.eopie())
                 .field("errie", &self.errie())
+                .field("rderrie", &self.rderrie())
                 .field("inv", &self.inv())
                 .field("lock", &self.lock())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Seccr1 {
+    impl defmt::Format for Seccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccr1 {{ pg: {=bool:?}, per: {=bool:?}, mer: {=bool:?}, pnb: {=u8:?}, bwr: {=bool:?}, strt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, inv: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer () , self . pnb () , self . bwr () , self . strt () , self . eopie () , self . errie () , self . inv () , self . lock ())
+            defmt :: write ! (f , "Seccr {{ pg: {=bool:?}, per: {=bool:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {=bool:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, rderrie: {=bool:?}, inv: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer1 () , self . pnb () , self . bker () , self . bwr () , self . mer2 () , self . strt () , self . eopie () , self . errie () , self . rderrie () , self . inv () , self . lock ())
         }
     }
     #[doc = "secure control 2 register"]
@@ -1496,21 +1657,32 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             defmt::write!(f, "Seccr2 {{ ps: {=bool:?}, es: {=bool:?} }}", self.ps(), self.es())
         }
     }
-    #[doc = "secure HDP control register"]
+    #[doc = "FLASH secure HDP control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Sechdpcr(pub u32);
     impl Sechdpcr {
-        #[doc = "Secure HDP area access disable When set, this bit is only cleared by a system reset."]
+        #[doc = "HDP1 area access disable When set, this bit is only cleared by a system reset."]
         #[inline(always)]
-        pub const fn hdp_accdis(&self) -> bool {
+        pub const fn hdp1_accdis(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
-        #[doc = "Secure HDP area access disable When set, this bit is only cleared by a system reset."]
+        #[doc = "HDP1 area access disable When set, this bit is only cleared by a system reset."]
         #[inline(always)]
-        pub fn set_hdp_accdis(&mut self, val: bool) {
+        pub fn set_hdp1_accdis(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "HDP2 area access disable When set, this bit is only cleared by a system reset."]
+        #[inline(always)]
+        pub const fn hdp2_accdis(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "HDP2 area access disable When set, this bit is only cleared by a system reset."]
+        #[inline(always)]
+        pub fn set_hdp2_accdis(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
     impl Default for Sechdpcr {
@@ -1522,17 +1694,23 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
     impl core::fmt::Debug for Sechdpcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sechdpcr")
-                .field("hdp_accdis", &self.hdp_accdis())
+                .field("hdp1_accdis", &self.hdp1_accdis())
+                .field("hdp2_accdis", &self.hdp2_accdis())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sechdpcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Sechdpcr {{ hdp_accdis: {=bool:?} }}", self.hdp_accdis())
+            defmt::write!(
+                f,
+                "Sechdpcr {{ hdp1_accdis: {=bool:?}, hdp2_accdis: {=bool:?} }}",
+                self.hdp1_accdis(),
+                self.hdp2_accdis()
+            )
         }
     }
-    #[doc = "secure status register"]
+    #[doc = "FLASH secure status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Secsr(pub u32);
@@ -1664,7 +1842,113 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             defmt :: write ! (f , "Secsr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?} }}" , self . eop () , self . operr () , self . progerr () , self . wrperr () , self . pgaerr () , self . sizerr () , self . pgserr () , self . bsy () , self . wdw ())
         }
     }
-    #[doc = "Flash bank 2 secure watermark register 1"]
+    #[doc = "FLASH secure watermark1 register 1"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Secwm1r1(pub u32);
+    impl Secwm1r1 {
+        #[doc = "Start page of first secure area This field contains the first page of the secure area in bank 1."]
+        #[inline(always)]
+        pub const fn secwm1_pstrt(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "Start page of first secure area This field contains the first page of the secure area in bank 1."]
+        #[inline(always)]
+        pub fn set_secwm1_pstrt(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
+        }
+        #[doc = "End page of first secure area This field contains the last page of the secure area in bank 1."]
+        #[inline(always)]
+        pub const fn secwm1_pend(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "End page of first secure area This field contains the last page of the secure area in bank 1."]
+        #[inline(always)]
+        pub fn set_secwm1_pend(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
+        }
+    }
+    impl Default for Secwm1r1 {
+        #[inline(always)]
+        fn default() -> Secwm1r1 {
+            Secwm1r1(0)
+        }
+    }
+    impl core::fmt::Debug for Secwm1r1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Secwm1r1")
+                .field("secwm1_pstrt", &self.secwm1_pstrt())
+                .field("secwm1_pend", &self.secwm1_pend())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Secwm1r1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Secwm1r1 {{ secwm1_pstrt: {=u8:?}, secwm1_pend: {=u8:?} }}",
+                self.secwm1_pstrt(),
+                self.secwm1_pend()
+            )
+        }
+    }
+    #[doc = "FLASH secure watermark1 register 2"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Secwm1r2(pub u32);
+    impl Secwm1r2 {
+        #[doc = "End page of first hide protection area This field contains the last page of the HDP area in bank 1."]
+        #[inline(always)]
+        pub const fn hdp1_pend(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x7f;
+            val as u8
+        }
+        #[doc = "End page of first hide protection area This field contains the last page of the HDP area in bank 1."]
+        #[inline(always)]
+        pub fn set_hdp1_pend(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
+        }
+        #[doc = "Hide protection first area enable"]
+        #[inline(always)]
+        pub const fn hdp1en(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Hide protection first area enable"]
+        #[inline(always)]
+        pub fn set_hdp1en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for Secwm1r2 {
+        #[inline(always)]
+        fn default() -> Secwm1r2 {
+            Secwm1r2(0)
+        }
+    }
+    impl core::fmt::Debug for Secwm1r2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Secwm1r2")
+                .field("hdp1_pend", &self.hdp1_pend())
+                .field("hdp1en", &self.hdp1en())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Secwm1r2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Secwm1r2 {{ hdp1_pend: {=u8:?}, hdp1en: {=bool:?} }}",
+                self.hdp1_pend(),
+                self.hdp1en()
+            )
+        }
+    }
+    #[doc = "FLASH secure watermark2 register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Secwm2r1(pub u32);
@@ -1717,7 +2001,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             )
         }
     }
-    #[doc = "Flash bank 2 secure watermark register 2"]
+    #[doc = "FLASH secure watermark2 register 2"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Secwm2r2(pub u32);
@@ -1770,113 +2054,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             )
         }
     }
-    #[doc = "secure watermark register 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Secwmr1(pub u32);
-    impl Secwmr1 {
-        #[doc = "Start page of secure area This field contains the first page of the secure area."]
-        #[inline(always)]
-        pub const fn secwm_pstrt(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "Start page of secure area This field contains the first page of the secure area."]
-        #[inline(always)]
-        pub fn set_secwm_pstrt(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
-        }
-        #[doc = "End page of secure area This field contains the last page of the secure area."]
-        #[inline(always)]
-        pub const fn secwm_pend(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "End page of secure area This field contains the last page of the secure area."]
-        #[inline(always)]
-        pub fn set_secwm_pend(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
-        }
-    }
-    impl Default for Secwmr1 {
-        #[inline(always)]
-        fn default() -> Secwmr1 {
-            Secwmr1(0)
-        }
-    }
-    impl core::fmt::Debug for Secwmr1 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Secwmr1")
-                .field("secwm_pstrt", &self.secwm_pstrt())
-                .field("secwm_pend", &self.secwm_pend())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Secwmr1 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Secwmr1 {{ secwm_pstrt: {=u8:?}, secwm_pend: {=u8:?} }}",
-                self.secwm_pstrt(),
-                self.secwm_pend()
-            )
-        }
-    }
-    #[doc = "secure watermark register 2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Secwmr2(pub u32);
-    impl Secwmr2 {
-        #[doc = "End page of secure hide protection area This field contains the last page of the secure HDP area."]
-        #[inline(always)]
-        pub const fn hdp_pend(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x7f;
-            val as u8
-        }
-        #[doc = "End page of secure hide protection area This field contains the last page of the secure HDP area."]
-        #[inline(always)]
-        pub fn set_hdp_pend(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
-        }
-        #[doc = "Secure Hide protection area enable"]
-        #[inline(always)]
-        pub const fn hdpen(&self) -> bool {
-            let val = (self.0 >> 31usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Secure Hide protection area enable"]
-        #[inline(always)]
-        pub fn set_hdpen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
-        }
-    }
-    impl Default for Secwmr2 {
-        #[inline(always)]
-        fn default() -> Secwmr2 {
-            Secwmr2(0)
-        }
-    }
-    impl core::fmt::Debug for Secwmr2 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Secwmr2")
-                .field("hdp_pend", &self.hdp_pend())
-                .field("hdpen", &self.hdpen())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Secwmr2 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Secwmr2 {{ hdp_pend: {=u8:?}, hdpen: {=bool:?} }}",
-                self.hdp_pend(),
-                self.hdpen()
-            )
-        }
-    }
-    #[doc = "WRP bank 1 area A address register"]
+    #[doc = "FLASH WRP1 area A address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wrp1ar(pub u32);
@@ -1942,7 +2120,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             )
         }
     }
-    #[doc = "WRP bank 1 area B address register"]
+    #[doc = "FLASH WRP1 area B address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wrp1br(pub u32);
@@ -2008,7 +2186,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             )
         }
     }
-    #[doc = "WRP bank 2 area A address register"]
+    #[doc = "FLASH WPR2 area A address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wrp2ar(pub u32);
@@ -2074,7 +2252,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             )
         }
     }
-    #[doc = "WRP bank 2 area B address register"]
+    #[doc = "FLASH WPR2 area B address register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wrp2br(pub u32);
@@ -2146,15 +2324,15 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BorLev {
-        #[doc = "BOR level 0 (reset level threshold around 1.7�V)"]
+        #[doc = "BOR level 0 (reset level threshold around 1.7V)"]
         LEVEL0 = 0x0,
-        #[doc = "BOR level 1 (reset level threshold around 2.0�V)"]
+        #[doc = "BOR level 1 (reset level threshold around 2.0V)"]
         LEVEL1 = 0x01,
-        #[doc = "BOR level 2 (reset level threshold around 2.2�V)"]
+        #[doc = "BOR level 2 (reset level threshold around 2.2V)"]
         LEVEL2 = 0x02,
-        #[doc = "BOR level 3 (reset level threshold around 2.5�V)"]
+        #[doc = "BOR level 3 (reset level threshold around 2.5V)"]
         LEVEL3 = 0x03,
-        #[doc = "BOR level 4 (reset level threshold around 2.8�V)"]
+        #[doc = "BOR level 4 (reset level threshold around 2.8V)"]
         LEVEL4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
@@ -2186,22 +2364,21 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CodeOp {
-        #[doc = "No operation interrupted by previous reset"]
-        B_0X0 = 0x0,
+        #[doc = "No Flash operation interrupted by previous reset"]
+        NO_FLASH_INT = 0x0,
         #[doc = "Single write operation interrupted"]
-        B_0X1 = 0x01,
+        SINGLE_WR_INT = 0x01,
         #[doc = "Burst write operation interrupted"]
-        B_0X2 = 0x02,
+        BURST_WR_INT = 0x02,
         #[doc = "Page erase operation interrupted"]
-        B_0X3 = 0x03,
-        #[doc = "Reserved"]
-        B_0X4 = 0x04,
+        PG_ERASE_INT = 0x03,
+        #[doc = "Bank erase operation interrupted"]
+        BANK_ERASE_INT = 0x04,
         #[doc = "Mass erase operation interrupted"]
-        B_0X5 = 0x05,
+        MASS_ERASE_INT = 0x05,
         #[doc = "Option change operation interrupted"]
-        B_0X6 = 0x06,
-        #[doc = "Reserved"]
-        B_0X7 = 0x07,
+        OPT_CHANGE_INT = 0x06,
+        _RESERVED_7 = 0x07,
     }
     impl CodeOp {
         #[inline(always)]

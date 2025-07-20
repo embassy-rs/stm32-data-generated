@@ -6,7 +6,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Flash",
             extends: None,
             description: Some(
-                "Embedded memory",
+                "Flash",
             ),
             items: &[
                 BlockItem {
@@ -136,9 +136,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "nscr1",
+                    name: "nscr",
                     description: Some(
-                        "control register",
+                        "FLASH non-secure control register",
                     ),
                     array: None,
                     byte_offset: 0x28,
@@ -147,15 +147,15 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Nscr1",
+                                "Nscr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "seccr1",
+                    name: "seccr",
                     description: Some(
-                        "secure control register",
+                        "FLASH secure control register",
                     ),
                     array: None,
                     byte_offset: 0x2c,
@@ -164,7 +164,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Seccr1",
+                                "Seccr",
                             ),
                         },
                     ),
@@ -306,9 +306,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "secwmr1",
+                    name: "secwm1r1",
                     description: Some(
-                        "secure watermark register 1",
+                        "FLASH secure watermark1 register 1",
                     ),
                     array: None,
                     byte_offset: 0x50,
@@ -317,15 +317,15 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Secwmr1",
+                                "Secwm1r1",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "secwmr2",
+                    name: "secwm1r2",
                     description: Some(
-                        "secure watermark register 2",
+                        "FLASH secure watermark1 register 2",
                     ),
                     array: None,
                     byte_offset: 0x54,
@@ -334,7 +334,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Secwmr2",
+                                "Secwm1r2",
                             ),
                         },
                     ),
@@ -639,7 +639,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Acr",
             extends: None,
             description: Some(
-                "access control register",
+                "FLASH access control register",
             ),
             bit_size: 32,
             fields: &[
@@ -686,13 +686,27 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "pdreq",
+                    name: "pdreq1",
                     description: Some(
-                        "power-down mode request\r This bit requests to enter power-down mode. When enters power-down mode, this bit is cleared by hardware and the PDKEY2R is locked.\r This bit is write-protected with PDKEY2R. \r Access to the bit can be secured by PWR LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
+                        "Bank 1 power-down mode request\r This bit is write-protected with FLASH_PDKEY1R. This bit requests bank 1 to enter power-down mode. When bank 1 enters power-down mode, this bit is cleared by hardware and the PDKEY1R is locked.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pdreq2",
+                    description: Some(
+                        "Bank 2 power-down mode request\r This bit is write-protected with FLASH_PDKEY2R. This bit requests bank 2 to enter power-down mode. When bank 2 enters power-down mode, this bit is cleared by hardware and the PDKEY2R is locked.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
                         },
                     ),
                     bit_size: 1,
@@ -748,7 +762,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Eccr",
             extends: None,
             description: Some(
-                "ECC register",
+                "FLASH ECC register",
             ),
             bit_size: 32,
             fields: &[
@@ -763,6 +777,20 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 20,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bk_ecc",
+                    description: Some(
+                        "ECC fail bank",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -828,7 +856,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Nsbootadd0r",
             extends: None,
             description: Some(
-                "boot address 0 register",
+                "FLASH non-secure boot address 0 register",
             ),
             bit_size: 32,
             fields: &[
@@ -852,7 +880,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Nsbootadd1r",
             extends: None,
             description: Some(
-                "boot address 1 register",
+                "FLASH non-secure boot address 1 register",
             ),
             bit_size: 32,
             fields: &[
@@ -873,10 +901,10 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Nscr1",
+            name: "Nscr",
             extends: None,
             description: Some(
-                "control register",
+                "FLASH non-secure control register",
             ),
             bit_size: 32,
             fields: &[
@@ -909,9 +937,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "mer",
+                    name: "mer1",
                     description: Some(
-                        "Non-secure mass erase\r This bit triggers the non-secure mass erase (all user pages) when set.",
+                        "Non-secure bank 1 mass erase\r This bit triggers the bank 1 non-secure mass erase (all bank 1 user pages) when set.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -925,14 +953,28 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pnb",
                     description: Some(
-                        "Non-secure page number selection\r These bits select the page to erase.\r ...\r Note that bit 9 is reserved on STM32WBA5xEx devices.",
+                        "Non-secure page number selection\r These bits select the page to erase.\r ...",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 3,
                         },
                     ),
-                    bit_size: 7,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bker",
+                    description: Some(
+                        "Non-secure bank selection for page erase",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -951,9 +993,23 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "mer2",
+                    description: Some(
+                        "Non-secure bank 2 mass erase\r This bit triggers the bank 2 non-secure mass erase (all bank 2 user pages) when set.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "strt",
                     description: Some(
-                        "Non-secure operation start \r This bit triggers a non-secure erase operation when set. If MER and PER bits are reset and the STRT bit is set, the PGSERR bit in NSSR is set (this condition is forbidden).\r This bit is set only by software and is cleared when the BSY bit is cleared in NSSR.",
+                        "Non-secure start\r This bit triggers a non-secure erase operation when set. If MER1, MER2 and PER bits are reset and the STRT bit is set, the PGSERR bit in FLASH_NSSR is set (this condition is forbidden).\r This bit is set only by software and is cleared when the BSY bit is cleared in FLASH_NSSR.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -967,7 +1023,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "optstrt",
                     description: Some(
-                        "Options modification start\r This bit triggers an option bytes erase and program operation when set. This bit is write-protected with OPTLOCK.. This bit is set only by software, and is cleared when the BSY bit is cleared in NSSR.",
+                        "Options modification start\r This bit triggers an options operation when set. It can not be written if OPTLOCK bit is set. This bit is set only by software, and is cleared when the BSY bit is cleared in FLASH_NSSR.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -981,7 +1037,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eopie",
                     description: Some(
-                        "Non-secure end of operation interrupt enable\r This bit enables the interrupt generation when the EOP bit in the NSSR is set to 1.",
+                        "Non-secure end of operation interrupt enable\r This bit enables the interrupt generation when the EOP bit in the FLASH_NSSR is set to 1.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -995,7 +1051,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "errie",
                     description: Some(
-                        "Non-secure error interrupt enable\r This bit enables the interrupt generation when the OPERR bit in the NSSR is set to 1.",
+                        "Non-secure error interrupt enable\r This bit enables the interrupt generation when the OPERR bit in the FLASH_NSSR is set to 1.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1009,7 +1065,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "obl_launch",
                     description: Some(
-                        "Force the option byte loading\r When set to 1, this bit forces the option byte reloading. This bit is cleared only when the option byte loading is complete. This bit is write-protected with OPTLOCK.\r Note: The LSE oscillator must be disabled, LSEON = 0 and LSERDY = 0, before starting OBL_LAUNCH.",
+                        "Force the option byte loading\r When set to 1, this bit forces the option byte reloading. This bit is cleared only when the option byte loading is complete. It cannot be written if OPTLOCK is set.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1023,7 +1079,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "optlock",
                     description: Some(
-                        "Option lock\r This bit is set only. When set, the NSCR1.OPTSRT and OBL_LAUNCH bits concerning user options write access is locked. This bit is cleared by hardware after detecting the unlock sequence in OPTKEYR. The NSCR1.LOCK bit must be cleared before doing the OPTKEYR unlock sequence.\r In case of an unsuccessful unlock operation, this bit remains set until the next reset.",
+                        "Option lock\r This bit is set only. When set, all bits concerning user options in FLASH_NSCR register are locked. This bit is cleared by hardware after detecting the unlock sequence. The LOCK bit in the FLASH_NSCR must be cleared before doing the unlock sequence for OPTLOCK bit.\r In case of an unsuccessful unlock operation, this bit remains set until the next reset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1037,7 +1093,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lock",
                     description: Some(
-                        "Non-secure lock\r This bit is set only.\r When set, the NSCR1 register write access is locked. This bit is cleared by hardware after detecting the unlock sequence in NSKEYR.\r In case of an unsuccessful unlock operation, this bit remains set until the next system reset.",
+                        "Non-secure lock\r This bit is set only. When set, the FLASH_NSCR register is locked. It is cleared by hardware after detecting the unlock sequence in FLASH_NSKEYR register.\r In case of an unsuccessful unlock operation, this bit remains set until the next system reset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1092,7 +1148,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Nssr",
             extends: None,
             description: Some(
-                "status register",
+                "FLASH non-secure status register",
             ),
             bit_size: 32,
             fields: &[
@@ -1265,13 +1321,27 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "pd",
+                    name: "pd1",
                     description: Some(
-                        "in power-down mode\r This bit indicates that the memory is in power-down state. It is reset when is in normal mode or being awaken.",
+                        "Bank 1 in power-down mode\r This bit indicates that the Flash memory bank 1 is in power-down state. It is reset when bank\u{a0}1 is in normal mode or being awaken.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 20,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "pd2",
+                    description: Some(
+                        "Bank 2 in power-down mode\r This bit indicates that the Flash memory bank 2 is in power-down state. It is reset when bank\u{a0}2 is in normal mode or being awaken.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
                         },
                     ),
                     bit_size: 1,
@@ -1284,7 +1354,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Opsr",
             extends: None,
             description: Some(
-                "operation status register",
+                "FLASH operation status register",
             ),
             bit_size: 32,
             fields: &[
@@ -1299,6 +1369,20 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 20,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bk_op",
+                    description: Some(
+                        "Interrupted operation bank\r This bit indicates which Flash memory bank was accessed when reset occurred",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -1338,7 +1422,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Optr",
             extends: None,
             description: Some(
-                "option register",
+                "FLASH option register",
             ),
             bit_size: 32,
             fields: &[
@@ -1375,7 +1459,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "nrst_stop",
+                    name: "n_rst_stop",
                     description: Some(
                         "Reset generation in Stop mode",
                     ),
@@ -1389,13 +1473,27 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "nrst_stdby",
+                    name: "n_rst_stdby",
                     description: Some(
                         "Reset generation in Standby mode",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "n_rst_shdw",
+                    description: Some(
+                        "Reset generation in Shutdown mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
                         },
                     ),
                     bit_size: 1,
@@ -1473,6 +1571,34 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "swap_bank",
+                    description: Some(
+                        "Swap banks",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dualbank",
+                    description: Some(
+                        "Dual-bank on 1-Mbyte and 512-Kbyte Flash memory devices",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "sram2_pe",
                     description: Some(
                         "SRAM2 parity check enable",
@@ -1501,7 +1627,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "nswboot0",
+                    name: "n_swboot0",
                     description: Some(
                         "Software BOOT0",
                     ),
@@ -1515,13 +1641,41 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "nboot0",
+                    name: "n_boot0",
                     description: Some(
-                        "NBOOT0 option bit",
+                        "nBOOT0 option bit",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 27,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "io_vdd_hslv",
+                    description: Some(
+                        "High-speed IO at low VDD voltage configuration bit\r This bit can be set only with VDD below 2.5V",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 29,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "io_vddio2_hslv",
+                    description: Some(
+                        "High-speed IO at low VDDIO2 voltage configuration bit\r This bit can be set only with VDDIO2 below 2.5\u{a0}V.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
                         },
                     ),
                     bit_size: 1,
@@ -1548,7 +1702,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Privcfgr",
             extends: None,
             description: Some(
-                "privilege configuration register",
+                "FLASH privilege configuration register",
             ),
             bit_size: 32,
             fields: &[
@@ -1586,7 +1740,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Secbootadd0r",
             extends: None,
             description: Some(
-                "secure boot address 0 register",
+                "FLASH secure boot address 0 register",
             ),
             bit_size: 32,
             fields: &[
@@ -1621,10 +1775,10 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Seccr1",
+            name: "Seccr",
             extends: None,
             description: Some(
-                "secure control register",
+                "FLASH secure control register",
             ),
             bit_size: 32,
             fields: &[
@@ -1657,9 +1811,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "mer",
+                    name: "mer1",
                     description: Some(
-                        "Secure mass erase\r This bit triggers the secure mass erase (all user pages) when set.",
+                        "Secure bank 1 mass erase\r This bit triggers the bank 1 secure mass erase (all bank 1 user pages) when set.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1673,14 +1827,28 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pnb",
                     description: Some(
-                        "Secure page number selection\r These bits select the page to erase:\r ...\r Note that bit 9 is reserved on STM32WBA5xEx devices.",
+                        "Secure page number selection\r These bits select the page to erase:\r ...",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 3,
                         },
                     ),
-                    bit_size: 7,
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "bker",
+                    description: Some(
+                        "Secure bank selection for page erase",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -1699,9 +1867,23 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "mer2",
+                    description: Some(
+                        "Secure bank 2 mass erase\r This bit triggers the bank 2 secure mass erase (all bank 2 user pages) when set.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "strt",
                     description: Some(
-                        "Secure start \r This bit triggers a secure erase operation when set. If MER and PER bits are reset and the STRT bit is set, the PGSERR in the SECSR is set (this condition is forbidden).\r This bit is set only by software and is cleared when the BSY bit is cleared in SECSR.",
+                        "Secure start\r This bit triggers a secure erase operation when set. If MER1, MER2 and PER bits are reset and the STRT bit is set, the PGSERR in the FLASH_SECSR is set (this condition is forbidden).\r This bit is set only by software and is cleared when the BSY bit is cleared in FLASH_SECSR.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1715,7 +1897,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "eopie",
                     description: Some(
-                        "Secure End of operation interrupt enable\r This bit enables the interrupt generation when the EOP bit in SECSR is set to 1.",
+                        "Secure End of operation interrupt enable\r This bit enables the interrupt generation when the EOP bit in the FLASH_SECSR is set to 1.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1729,7 +1911,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "errie",
                     description: Some(
-                        "Secure error interrupt enable\r This bit enables the interrupt generation when the OPERR bit in SECSR is set to 1.",
+                        "Secure error interrupt enable",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1741,9 +1923,23 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "rderrie",
+                    description: Some(
+                        "Secure PCROP read error interrupt enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "inv",
                     description: Some(
-                        "memory security state invert\r This bit inverts the memory security state.",
+                        "Flash memory security state invert\r This bit inverts the Flash memory security state.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1757,7 +1953,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "lock",
                     description: Some(
-                        "Secure lock\r This bit is set only. When set, the SECCR1 register is locked. It is cleared by hardware after detecting the unlock sequence in SECKEYR register.\r In case of an unsuccessful unlock operation, this bit remains set until the next system reset.",
+                        "Secure lock\r This bit is set only. When set, the FLASH_SECCR register is locked. It is cleared by hardware after detecting the unlock sequence in FLASH_SECKEYR register.\r In case of an unsuccessful unlock operation, this bit remains set until the next system reset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1812,18 +2008,32 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Sechdpcr",
             extends: None,
             description: Some(
-                "secure HDP control register",
+                "FLASH secure HDP control register",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "hdp_accdis",
+                    name: "hdp1_accdis",
                     description: Some(
-                        "Secure HDP area access disable \r When set, this bit is only cleared by a system reset.",
+                        "HDP1 area access disable\r When set, this bit is only cleared by a system reset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hdp2_accdis",
+                    description: Some(
+                        "HDP2 area access disable\r When set, this bit is only cleared by a system reset.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
                         },
                     ),
                     bit_size: 1,
@@ -1836,7 +2046,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Secsr",
             extends: None,
             description: Some(
-                "secure status register",
+                "FLASH secure status register",
             ),
             bit_size: 32,
             fields: &[
@@ -1969,10 +2179,86 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Secwm1r1",
+            extends: None,
+            description: Some(
+                "FLASH secure watermark1 register 1",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "secwm1_pstrt",
+                    description: Some(
+                        "Start page of first secure area\r This field contains the first page of the secure area in bank 1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "secwm1_pend",
+                    description: Some(
+                        "End page of first secure area\r This field contains the last page of the secure area in bank 1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Secwm1r2",
+            extends: None,
+            description: Some(
+                "FLASH secure watermark1 register 2",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "hdp1_pend",
+                    description: Some(
+                        "End page of first hide protection area\r This field contains the last page of the HDP area in bank 1.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 7,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "hdp1en",
+                    description: Some(
+                        "Hide protection first area enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Secwm2r1",
             extends: None,
             description: Some(
-                "Flash bank 2 secure watermark register 1",
+                "FLASH secure watermark2 register 1",
             ),
             bit_size: 32,
             fields: &[
@@ -2010,7 +2296,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Secwm2r2",
             extends: None,
             description: Some(
-                "Flash bank 2 secure watermark register 2",
+                "FLASH secure watermark2 register 2",
             ),
             bit_size: 32,
             fields: &[
@@ -2045,86 +2331,10 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Secwmr1",
-            extends: None,
-            description: Some(
-                "secure watermark register 1",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "secwm_pstrt",
-                    description: Some(
-                        "Start page of secure area\r This field contains the first page of the secure area.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "secwm_pend",
-                    description: Some(
-                        "End page of secure area\r This field contains the last page of the secure area.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Secwmr2",
-            extends: None,
-            description: Some(
-                "secure watermark register 2",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hdp_pend",
-                    description: Some(
-                        "End page of secure hide protection area\r This field contains the last page of the secure HDP area.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 7,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hdpen",
-                    description: Some(
-                        "Secure Hide protection area enable",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 31,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Wrp1ar",
             extends: None,
             description: Some(
-                "WRP bank 1 area A address register",
+                "FLASH WRP1 area A address register",
             ),
             bit_size: 32,
             fields: &[
@@ -2176,7 +2386,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Wrp1br",
             extends: None,
             description: Some(
-                "WRP bank 1 area B address register",
+                "FLASH WRP1 area B address register",
             ),
             bit_size: 32,
             fields: &[
@@ -2228,7 +2438,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Wrp2ar",
             extends: None,
             description: Some(
-                "WRP bank 2 area A address register",
+                "FLASH WPR2 area A address register",
             ),
             bit_size: 32,
             fields: &[
@@ -2280,7 +2490,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Wrp2br",
             extends: None,
             description: Some(
-                "WRP bank 2 area B address register",
+                "FLASH WPR2 area B address register",
             ),
             bit_size: 32,
             fields: &[
@@ -2338,35 +2548,35 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "LEVEL0",
                     description: Some(
-                        "BOR level 0 (reset level threshold around 1.7�V)",
+                        "BOR level 0 (reset level threshold around 1.7V)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "LEVEL1",
                     description: Some(
-                        "BOR level 1 (reset level threshold around 2.0�V)",
+                        "BOR level 1 (reset level threshold around 2.0V)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "LEVEL2",
                     description: Some(
-                        "BOR level 2 (reset level threshold around 2.2�V)",
+                        "BOR level 2 (reset level threshold around 2.2V)",
                     ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "LEVEL3",
                     description: Some(
-                        "BOR level 3 (reset level threshold around 2.5�V)",
+                        "BOR level 3 (reset level threshold around 2.5V)",
                     ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "LEVEL4",
                     description: Some(
-                        "BOR level 4 (reset level threshold around 2.8�V)",
+                        "BOR level 4 (reset level threshold around 2.8V)",
                     ),
                     value: 4,
                 },
@@ -2378,60 +2588,53 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "NO_FLASH_INT",
                     description: Some(
-                        "No operation interrupted by previous reset",
+                        "No Flash operation interrupted by previous reset",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "SINGLE_WR_INT",
                     description: Some(
                         "Single write operation interrupted",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "BURST_WR_INT",
                     description: Some(
                         "Burst write operation interrupted",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "PG_ERASE_INT",
                     description: Some(
                         "Page erase operation interrupted",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "BANK_ERASE_INT",
                     description: Some(
-                        "Reserved",
+                        "Bank erase operation interrupted",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B_0X5",
+                    name: "MASS_ERASE_INT",
                     description: Some(
                         "Mass erase operation interrupted",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "B_0X6",
+                    name: "OPT_CHANGE_INT",
                     description: Some(
                         "Option change operation interrupted",
                     ),
                     value: 6,
-                },
-                EnumVariant {
-                    name: "B_0X7",
-                    description: Some(
-                        "Reserved",
-                    ),
-                    value: 7,
                 },
             ],
         },

@@ -199,7 +199,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "CCIPR1",
+              "register": "CCIPR",
               "field": "ADC1SEL"
             },
             "enable": {
@@ -600,7 +600,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "CCIPR1",
+              "register": "CCIPR",
               "field": "I2C1SEL"
             },
             "enable": {
@@ -2132,7 +2132,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "CCIPR1",
+              "register": "CCIPR",
               "field": "USART1SEL"
             },
             "enable": {

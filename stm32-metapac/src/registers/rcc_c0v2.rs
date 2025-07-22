@@ -333,7 +333,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "ccipr1",
+                    name: "ccipr",
                     description: Some(
                         "RCC peripherals independent clock configuration register 1",
                     ),
@@ -344,7 +344,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ccipr1",
+                                "Ccipr",
                             ),
                         },
                     ),
@@ -1447,7 +1447,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ccipr1",
+            name: "Ccipr",
             extends: None,
             description: Some(
                 "RCC peripherals independent clock configuration register",

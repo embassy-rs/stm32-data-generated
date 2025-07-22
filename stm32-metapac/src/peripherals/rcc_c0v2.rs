@@ -116,7 +116,7 @@ impl Rcc {
     }
     #[doc = "RCC peripherals independent clock configuration register 1"]
     #[inline(always)]
-    pub const fn ccipr1(self) -> crate::common::Reg<regs::Ccipr1, crate::common::RW> {
+    pub const fn ccipr(self) -> crate::common::Reg<regs::Ccipr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
     }
     #[doc = "RCC peripherals independent clock configuration register 2."]
@@ -1190,8 +1190,8 @@ pub mod regs {
     #[doc = "RCC peripherals independent clock configuration register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ccipr1(pub u32);
-    impl Ccipr1 {
+    pub struct Ccipr(pub u32);
+    impl Ccipr {
         #[doc = "USART1 clock source selection This bitfield is controlled by software to select USART1 clock source as follows:"]
         #[inline(always)]
         pub const fn usart1sel(&self) -> super::vals::Usart1sel {
@@ -1237,15 +1237,15 @@ pub mod regs {
             self.0 = (self.0 & !(0x03 << 30usize)) | (((val.to_bits() as u32) & 0x03) << 30usize);
         }
     }
-    impl Default for Ccipr1 {
+    impl Default for Ccipr {
         #[inline(always)]
-        fn default() -> Ccipr1 {
-            Ccipr1(0)
+        fn default() -> Ccipr {
+            Ccipr(0)
         }
     }
-    impl core::fmt::Debug for Ccipr1 {
+    impl core::fmt::Debug for Ccipr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ccipr1")
+            f.debug_struct("Ccipr")
                 .field("usart1sel", &self.usart1sel())
                 .field("i2c1sel", &self.i2c1sel())
                 .field("i2s1sel", &self.i2s1sel())
@@ -1254,11 +1254,11 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Ccipr1 {
+    impl defmt::Format for Ccipr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ccipr1 {{ usart1sel: {:?}, i2c1sel: {:?}, i2s1sel: {:?}, adc1sel: {:?} }}",
+                "Ccipr {{ usart1sel: {:?}, i2c1sel: {:?}, i2s1sel: {:?}, adc1sel: {:?} }}",
                 self.usart1sel(),
                 self.i2c1sel(),
                 self.i2s1sel(),

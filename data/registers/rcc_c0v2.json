@@ -120,10 +120,10 @@
         "fieldset": "APBSMENR2"
       },
       {
-        "name": "CCIPR1",
+        "name": "CCIPR",
         "description": "RCC peripherals independent clock configuration register 1",
         "byte_offset": 84,
-        "fieldset": "CCIPR1"
+        "fieldset": "CCIPR"
       },
       {
         "name": "CCIPR2",
@@ -598,7 +598,7 @@
       }
     ]
   },
-  "fieldset/CCIPR1": {
+  "fieldset/CCIPR": {
     "description": "RCC peripherals independent clock configuration register",
     "fields": [
       {

@@ -219,6 +219,11 @@ impl Rcc {
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf4usize) as _) }
     }
+    #[doc = "RCC Backup domain control register"]
+    #[inline(always)]
+    pub const fn bdcr2(self) -> crate::common::Reg<regs::Bdcr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf8usize) as _) }
+    }
     #[doc = "RCC secure configuration register"]
     #[inline(always)]
     pub const fn seccfgr(self) -> crate::common::Reg<regs::Seccfgr, crate::common::RW> {
@@ -670,13 +675,13 @@ pub mod regs {
         }
         #[doc = "USB OTG_HS PHY kernel clock enable Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
-        pub const fn otghsphyen(&self) -> bool {
+        pub const fn usb_otg_hs_phyen(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
             val != 0
         }
         #[doc = "USB OTG_HS PHY kernel clock enable Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
-        pub fn set_otghsphyen(&mut self, val: bool) {
+        pub fn set_usb_otg_hs_phyen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "AES bus clock enable Set and cleared by software. Access can be secured by GTZC_TZSC AESSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
@@ -774,7 +779,7 @@ pub mod regs {
                 .field("gpiogen", &self.gpiogen())
                 .field("gpiohen", &self.gpiohen())
                 .field("usb_otg_hsen", &self.usb_otg_hsen())
-                .field("otghsphyen", &self.otghsphyen())
+                .field("usb_otg_hs_phyen", &self.usb_otg_hs_phyen())
                 .field("aesen", &self.aesen())
                 .field("hashen", &self.hashen())
                 .field("rngen", &self.rngen())
@@ -788,7 +793,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb2enr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb2enr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, usb_otg_hsen: {=bool:?}, otghsphyen: {=bool:?}, aesen: {=bool:?}, hashen: {=bool:?}, rngen: {=bool:?}, saesen: {=bool:?}, hsemen: {=bool:?}, pkaen: {=bool:?}, sram2en: {=bool:?} }}" , self . gpioaen () , self . gpioben () , self . gpiocen () , self . gpioden () , self . gpioeen () , self . gpiogen () , self . gpiohen () , self . usb_otg_hsen () , self . otghsphyen () , self . aesen () , self . hashen () , self . rngen () , self . saesen () , self . hsemen () , self . pkaen () , self . sram2en ())
+            defmt :: write ! (f , "Ahb2enr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, usb_otg_hsen: {=bool:?}, usb_otg_hs_phyen: {=bool:?}, aesen: {=bool:?}, hashen: {=bool:?}, rngen: {=bool:?}, saesen: {=bool:?}, hsemen: {=bool:?}, pkaen: {=bool:?}, sram2en: {=bool:?} }}" , self . gpioaen () , self . gpioben () , self . gpiocen () , self . gpioden () , self . gpioeen () , self . gpiogen () , self . gpiohen () , self . usb_otg_hsen () , self . usb_otg_hs_phyen () , self . aesen () , self . hashen () , self . rngen () , self . saesen () , self . hsemen () , self . pkaen () , self . sram2en ())
         }
     }
     #[doc = "RCC AHB2 peripheral reset register"]
@@ -1078,13 +1083,13 @@ pub mod regs {
         }
         #[doc = "USB OTG_HS PHY kernel clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
-        pub const fn otghsphysmen(&self) -> bool {
+        pub const fn usb_otg_hs_physmen(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
             val != 0
         }
         #[doc = "USB OTG_HS PHY kernel clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC OTGSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
-        pub fn set_otghsphysmen(&mut self, val: bool) {
+        pub fn set_usb_otg_hs_physmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "AES bus clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC AESSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
@@ -1171,7 +1176,7 @@ pub mod regs {
                 .field("gpiogsmen", &self.gpiogsmen())
                 .field("gpiohsmen", &self.gpiohsmen())
                 .field("usb_otg_hssmen", &self.usb_otg_hssmen())
-                .field("otghsphysmen", &self.otghsphysmen())
+                .field("usb_otg_hs_physmen", &self.usb_otg_hs_physmen())
                 .field("aessmen", &self.aessmen())
                 .field("hashsmen", &self.hashsmen())
                 .field("rngsmen", &self.rngsmen())
@@ -1184,7 +1189,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb2smenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb2smenr {{ gpioasmen: {=bool:?}, gpiobsmen: {=bool:?}, gpiocsmen: {=bool:?}, gpiodsmen: {=bool:?}, gpioesmen: {=bool:?}, gpiogsmen: {=bool:?}, gpiohsmen: {=bool:?}, usb_otg_hssmen: {=bool:?}, otghsphysmen: {=bool:?}, aessmen: {=bool:?}, hashsmen: {=bool:?}, rngsmen: {=bool:?}, saessmen: {=bool:?}, pkasmen: {=bool:?}, sram2smen: {=bool:?} }}" , self . gpioasmen () , self . gpiobsmen () , self . gpiocsmen () , self . gpiodsmen () , self . gpioesmen () , self . gpiogsmen () , self . gpiohsmen () , self . usb_otg_hssmen () , self . otghsphysmen () , self . aessmen () , self . hashsmen () , self . rngsmen () , self . saessmen () , self . pkasmen () , self . sram2smen ())
+            defmt :: write ! (f , "Ahb2smenr {{ gpioasmen: {=bool:?}, gpiobsmen: {=bool:?}, gpiocsmen: {=bool:?}, gpiodsmen: {=bool:?}, gpioesmen: {=bool:?}, gpiogsmen: {=bool:?}, gpiohsmen: {=bool:?}, usb_otg_hssmen: {=bool:?}, usb_otg_hs_physmen: {=bool:?}, aessmen: {=bool:?}, hashsmen: {=bool:?}, rngsmen: {=bool:?}, saessmen: {=bool:?}, pkasmen: {=bool:?}, sram2smen: {=bool:?} }}" , self . gpioasmen () , self . gpiobsmen () , self . gpiocsmen () , self . gpiodsmen () , self . gpioesmen () , self . gpiogsmen () , self . gpiohsmen () , self . usb_otg_hssmen () , self . usb_otg_hs_physmen () , self . aessmen () , self . hashsmen () , self . rngsmen () , self . saessmen () , self . pkasmen () , self . sram2smen ())
         }
     }
     #[doc = "RCC AHB4 peripheral clock enable register"]
@@ -1343,6 +1348,17 @@ pub mod regs {
         pub fn set_radioen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[doc = "PTACONV bus clock enable"]
+        #[inline(always)]
+        pub const fn ptaconven(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PTACONV bus clock enable"]
+        #[inline(always)]
+        pub fn set_ptaconven(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
     }
     impl Default for Ahb5enr {
         #[inline(always)]
@@ -1352,13 +1368,21 @@ pub mod regs {
     }
     impl core::fmt::Debug for Ahb5enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ahb5enr").field("radioen", &self.radioen()).finish()
+            f.debug_struct("Ahb5enr")
+                .field("radioen", &self.radioen())
+                .field("ptaconven", &self.ptaconven())
+                .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb5enr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Ahb5enr {{ radioen: {=bool:?} }}", self.radioen())
+            defmt::write!(
+                f,
+                "Ahb5enr {{ radioen: {=bool:?}, ptaconven: {=bool:?} }}",
+                self.radioen(),
+                self.ptaconven()
+            )
         }
     }
     #[doc = "RCC AHB5 peripheral reset register"]
@@ -1377,6 +1401,17 @@ pub mod regs {
         pub fn set_radiorst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[doc = "PTACONV reset."]
+        #[inline(always)]
+        pub const fn ptaconvrst(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PTACONV reset."]
+        #[inline(always)]
+        pub fn set_ptaconvrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
     }
     impl Default for Ahb5rstr {
         #[inline(always)]
@@ -1386,13 +1421,21 @@ pub mod regs {
     }
     impl core::fmt::Debug for Ahb5rstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ahb5rstr").field("radiorst", &self.radiorst()).finish()
+            f.debug_struct("Ahb5rstr")
+                .field("radiorst", &self.radiorst())
+                .field("ptaconvrst", &self.ptaconvrst())
+                .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb5rstr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Ahb5rstr {{ radiorst: {=bool:?} }}", self.radiorst())
+            defmt::write!(
+                f,
+                "Ahb5rstr {{ radiorst: {=bool:?}, ptaconvrst: {=bool:?} }}",
+                self.radiorst(),
+                self.ptaconvrst()
+            )
         }
     }
     #[doc = "RCC AHB5 peripheral clocks enable in Sleep and Stop modes register"]
@@ -1411,6 +1454,17 @@ pub mod regs {
         pub fn set_radiosmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[doc = "PTACONV bus clock enable during Sleep and Stop modes."]
+        #[inline(always)]
+        pub const fn ptaconvsmen(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PTACONV bus clock enable during Sleep and Stop modes."]
+        #[inline(always)]
+        pub fn set_ptaconvsmen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
     }
     impl Default for Ahb5smenr {
         #[inline(always)]
@@ -1422,13 +1476,19 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb5smenr")
                 .field("radiosmen", &self.radiosmen())
+                .field("ptaconvsmen", &self.ptaconvsmen())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb5smenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Ahb5smenr {{ radiosmen: {=bool:?} }}", self.radiosmen())
+            defmt::write!(
+                f,
+                "Ahb5smenr {{ radiosmen: {=bool:?}, ptaconvsmen: {=bool:?} }}",
+                self.radiosmen(),
+                self.ptaconvsmen()
+            )
         }
     }
     #[doc = "RCC APB1 peripheral clock enable register 1"]
@@ -1741,6 +1801,17 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Apb1rstr2(pub u32);
     impl Apb1rstr2 {
+        #[doc = "I2C4 reset."]
+        #[inline(always)]
+        pub const fn i2c4rst(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "I2C4 reset."]
+        #[inline(always)]
+        pub fn set_i2c4rst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
         #[doc = "LPTIM2 reset Set and cleared by software. Access can be secured by GTZC_TZSC LPTIM2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
         pub const fn lptim2rst(&self) -> bool {
@@ -1762,6 +1833,7 @@ pub mod regs {
     impl core::fmt::Debug for Apb1rstr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1rstr2")
+                .field("i2c4rst", &self.i2c4rst())
                 .field("lptim2rst", &self.lptim2rst())
                 .finish()
         }
@@ -1769,7 +1841,12 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1rstr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Apb1rstr2 {{ lptim2rst: {=bool:?} }}", self.lptim2rst())
+            defmt::write!(
+                f,
+                "Apb1rstr2 {{ i2c4rst: {=bool:?}, lptim2rst: {=bool:?} }}",
+                self.i2c4rst(),
+                self.lptim2rst()
+            )
         }
     }
     #[doc = "RCC APB1 peripheral clocks enable in Sleep and Stop modes register 1"]
@@ -2017,6 +2094,17 @@ pub mod regs {
         pub fn set_tim17en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
+        #[doc = "SAI1 bus and kernel clocks enable"]
+        #[inline(always)]
+        pub const fn sai1en(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SAI1 bus and kernel clocks enable"]
+        #[inline(always)]
+        pub fn set_sai1en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
     }
     impl Default for Apb2enr {
         #[inline(always)]
@@ -2032,13 +2120,14 @@ pub mod regs {
                 .field("usart1en", &self.usart1en())
                 .field("tim16en", &self.tim16en())
                 .field("tim17en", &self.tim17en())
+                .field("sai1en", &self.sai1en())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2enr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb2enr {{ tim1en: {=bool:?}, spi1en: {=bool:?}, usart1en: {=bool:?}, tim16en: {=bool:?}, tim17en: {=bool:?} }}" , self . tim1en () , self . spi1en () , self . usart1en () , self . tim16en () , self . tim17en ())
+            defmt :: write ! (f , "Apb2enr {{ tim1en: {=bool:?}, spi1en: {=bool:?}, usart1en: {=bool:?}, tim16en: {=bool:?}, tim17en: {=bool:?}, sai1en: {=bool:?} }}" , self . tim1en () , self . spi1en () , self . usart1en () , self . tim16en () , self . tim17en () , self . sai1en ())
         }
     }
     #[doc = "RCC APB2 peripheral reset register"]
@@ -2101,6 +2190,17 @@ pub mod regs {
         pub fn set_tim17rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
+        #[doc = "SAI1 reset."]
+        #[inline(always)]
+        pub const fn sai1rst(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SAI1 reset."]
+        #[inline(always)]
+        pub fn set_sai1rst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
     }
     impl Default for Apb2rstr {
         #[inline(always)]
@@ -2116,13 +2216,14 @@ pub mod regs {
                 .field("usart1rst", &self.usart1rst())
                 .field("tim16rst", &self.tim16rst())
                 .field("tim17rst", &self.tim17rst())
+                .field("sai1rst", &self.sai1rst())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2rstr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb2rstr {{ tim1rst: {=bool:?}, spi1rst: {=bool:?}, usart1rst: {=bool:?}, tim16rst: {=bool:?}, tim17rst: {=bool:?} }}" , self . tim1rst () , self . spi1rst () , self . usart1rst () , self . tim16rst () , self . tim17rst ())
+            defmt :: write ! (f , "Apb2rstr {{ tim1rst: {=bool:?}, spi1rst: {=bool:?}, usart1rst: {=bool:?}, tim16rst: {=bool:?}, tim17rst: {=bool:?}, sai1rst: {=bool:?} }}" , self . tim1rst () , self . spi1rst () , self . usart1rst () , self . tim16rst () , self . tim17rst () , self . sai1rst ())
         }
     }
     #[doc = "RCC APB2 peripheral clocks enable in Sleep and Stop modes register"]
@@ -2185,6 +2286,17 @@ pub mod regs {
         pub fn set_tim17smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
+        #[doc = "SAI1 bus and kernel clocks enable during Sleep and Stop modes."]
+        #[inline(always)]
+        pub const fn sai1smen(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SAI1 bus and kernel clocks enable during Sleep and Stop modes."]
+        #[inline(always)]
+        pub fn set_sai1smen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
     }
     impl Default for Apb2smenr {
         #[inline(always)]
@@ -2200,13 +2312,14 @@ pub mod regs {
                 .field("usart1smen", &self.usart1smen())
                 .field("tim16smen", &self.tim16smen())
                 .field("tim17smen", &self.tim17smen())
+                .field("sai1smen", &self.sai1smen())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2smenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb2smenr {{ tim1smen: {=bool:?}, spi1smen: {=bool:?}, usart1smen: {=bool:?}, tim16smen: {=bool:?}, tim17smen: {=bool:?} }}" , self . tim1smen () , self . spi1smen () , self . usart1smen () , self . tim16smen () , self . tim17smen ())
+            defmt :: write ! (f , "Apb2smenr {{ tim1smen: {=bool:?}, spi1smen: {=bool:?}, usart1smen: {=bool:?}, tim16smen: {=bool:?}, tim17smen: {=bool:?}, sai1smen: {=bool:?} }}" , self . tim1smen () , self . spi1smen () , self . usart1smen () , self . tim16smen () , self . tim17smen () , self . sai1smen ())
         }
     }
     #[doc = "RCC APB7 peripheral clock enable register"]
@@ -2269,6 +2382,17 @@ pub mod regs {
         pub fn set_lptim1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
+        #[doc = "COMP bus clock enable"]
+        #[inline(always)]
+        pub const fn compen(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "COMP bus clock enable"]
+        #[inline(always)]
+        pub fn set_compen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
         #[doc = "VREFBUF bus clock enable Set and cleared by software. Access can be secured by GTZC_TZSC VREFBUFSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV."]
         #[inline(always)]
         pub const fn vrefen(&self) -> bool {
@@ -2306,6 +2430,7 @@ pub mod regs {
                 .field("lpuart1en", &self.lpuart1en())
                 .field("i2c3en", &self.i2c3en())
                 .field("lptim1en", &self.lptim1en())
+                .field("compen", &self.compen())
                 .field("vrefen", &self.vrefen())
                 .field("rtcapben", &self.rtcapben())
                 .finish()
@@ -2314,7 +2439,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb7enr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb7enr {{ syscfgen: {=bool:?}, spi3en: {=bool:?}, lpuart1en: {=bool:?}, i2c3en: {=bool:?}, lptim1en: {=bool:?}, vrefen: {=bool:?}, rtcapben: {=bool:?} }}" , self . syscfgen () , self . spi3en () , self . lpuart1en () , self . i2c3en () , self . lptim1en () , self . vrefen () , self . rtcapben ())
+            defmt :: write ! (f , "Apb7enr {{ syscfgen: {=bool:?}, spi3en: {=bool:?}, lpuart1en: {=bool:?}, i2c3en: {=bool:?}, lptim1en: {=bool:?}, compen: {=bool:?}, vrefen: {=bool:?}, rtcapben: {=bool:?} }}" , self . syscfgen () , self . spi3en () , self . lpuart1en () , self . i2c3en () , self . lptim1en () , self . compen () , self . vrefen () , self . rtcapben ())
         }
     }
     #[doc = "RCC APB7 peripheral reset register"]
@@ -2485,6 +2610,17 @@ pub mod regs {
         pub fn set_lptim1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
+        #[doc = "COMP bus clock enable during Sleep and Stop modes."]
+        #[inline(always)]
+        pub const fn compsmen(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "COMP bus clock enable during Sleep and Stop modes."]
+        #[inline(always)]
+        pub fn set_compsmen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
         #[doc = "VREFBUF clock enable during Sleep and Stop modes Set and cleared by software. Access can be secured by GTZC_TZSC VREFBUFSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with RCC SPRIV or when non-secure with RCC NSPRIV. Note: This bit must be set to allow the peripheral to wake up from Stop modes."]
         #[inline(always)]
         pub const fn vrefsmen(&self) -> bool {
@@ -2522,6 +2658,7 @@ pub mod regs {
                 .field("lpuart1smen", &self.lpuart1smen())
                 .field("i2c3smen", &self.i2c3smen())
                 .field("lptim1smen", &self.lptim1smen())
+                .field("compsmen", &self.compsmen())
                 .field("vrefsmen", &self.vrefsmen())
                 .field("rtcapbsmen", &self.rtcapbsmen())
                 .finish()
@@ -2530,7 +2667,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb7smenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb7smenr {{ syscfgsmen: {=bool:?}, spi3smen: {=bool:?}, lpuart1smen: {=bool:?}, i2c3smen: {=bool:?}, lptim1smen: {=bool:?}, vrefsmen: {=bool:?}, rtcapbsmen: {=bool:?} }}" , self . syscfgsmen () , self . spi3smen () , self . lpuart1smen () , self . i2c3smen () , self . lptim1smen () , self . vrefsmen () , self . rtcapbsmen ())
+            defmt :: write ! (f , "Apb7smenr {{ syscfgsmen: {=bool:?}, spi3smen: {=bool:?}, lpuart1smen: {=bool:?}, i2c3smen: {=bool:?}, lptim1smen: {=bool:?}, compsmen: {=bool:?}, vrefsmen: {=bool:?}, rtcapbsmen: {=bool:?} }}" , self . syscfgsmen () , self . spi3smen () , self . lpuart1smen () , self . i2c3smen () , self . lptim1smen () , self . compsmen () , self . vrefsmen () , self . rtcapbsmen ())
         }
     }
     #[doc = "RCC audio synchronization auto-reload register"]
@@ -3080,6 +3217,28 @@ is the value to be compared to the audio synchronization counter to generate an 
         pub fn set_lsi1prediv(&mut self, val: super::vals::Lsiprediv) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
         }
+        #[doc = "LSI2 oscillator enable"]
+        #[inline(always)]
+        pub const fn lsi2on(&self) -> bool {
+            let val = (self.0 >> 29usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LSI2 oscillator enable"]
+        #[inline(always)]
+        pub fn set_lsi2on(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+        }
+        #[doc = "LSI2 oscillator ready."]
+        #[inline(always)]
+        pub const fn lsi2rdy(&self) -> bool {
+            let val = (self.0 >> 30usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LSI2 oscillator ready."]
+        #[inline(always)]
+        pub fn set_lsi2rdy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+        }
     }
     impl Default for Bdcr {
         #[inline(always)]
@@ -3108,13 +3267,68 @@ is the value to be compared to the audio synchronization counter to generate an 
                 .field("lsi1on", &self.lsi1on())
                 .field("lsi1rdy", &self.lsi1rdy())
                 .field("lsi1prediv", &self.lsi1prediv())
+                .field("lsi2on", &self.lsi2on())
+                .field("lsi2rdy", &self.lsi2rdy())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bdcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Bdcr {{ lseon: {=bool:?}, lserdy: {=bool:?}, lsebyp: {=bool:?}, lsedrv: {:?}, lsecsson: {=bool:?}, lsecssd: {=bool:?}, lsesysen: {=bool:?}, rtcsel: {:?}, lsesysrdy: {=bool:?}, lsegfon: {=bool:?}, lsetrim: {:?}, bdrst: {=bool:?}, radiostsel: {:?}, lscoen: {=bool:?}, lscosel: {:?}, lsi1on: {=bool:?}, lsi1rdy: {=bool:?}, lsi1prediv: {:?} }}" , self . lseon () , self . lserdy () , self . lsebyp () , self . lsedrv () , self . lsecsson () , self . lsecssd () , self . lsesysen () , self . rtcsel () , self . lsesysrdy () , self . lsegfon () , self . lsetrim () , self . bdrst () , self . radiostsel () , self . lscoen () , self . lscosel () , self . lsi1on () , self . lsi1rdy () , self . lsi1prediv ())
+            defmt :: write ! (f , "Bdcr {{ lseon: {=bool:?}, lserdy: {=bool:?}, lsebyp: {=bool:?}, lsedrv: {:?}, lsecsson: {=bool:?}, lsecssd: {=bool:?}, lsesysen: {=bool:?}, rtcsel: {:?}, lsesysrdy: {=bool:?}, lsegfon: {=bool:?}, lsetrim: {:?}, bdrst: {=bool:?}, radiostsel: {:?}, lscoen: {=bool:?}, lscosel: {:?}, lsi1on: {=bool:?}, lsi1rdy: {=bool:?}, lsi1prediv: {:?}, lsi2on: {=bool:?}, lsi2rdy: {=bool:?} }}" , self . lseon () , self . lserdy () , self . lsebyp () , self . lsedrv () , self . lsecsson () , self . lsecssd () , self . lsesysen () , self . rtcsel () , self . lsesysrdy () , self . lsegfon () , self . lsetrim () , self . bdrst () , self . radiostsel () , self . lscoen () , self . lscosel () , self . lsi1on () , self . lsi1rdy () , self . lsi1prediv () , self . lsi2on () , self . lsi2rdy ())
+        }
+    }
+    #[doc = "RCC Backup domain control register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Bdcr2(pub u32);
+    impl Bdcr2 {
+        #[doc = "LSI2 oscillator operating mode configuration."]
+        #[inline(always)]
+        pub const fn lsi2mode(&self) -> super::vals::Lsi2mode {
+            let val = (self.0 >> 0usize) & 0x07;
+            super::vals::Lsi2mode::from_bits(val as u8)
+        }
+        #[doc = "LSI2 oscillator operating mode configuration."]
+        #[inline(always)]
+        pub fn set_lsi2mode(&mut self, val: super::vals::Lsi2mode) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
+        }
+        #[doc = "LSI2 oscillator configuration."]
+        #[inline(always)]
+        pub const fn lsi2cfg(&self) -> super::vals::Lsi2cfg {
+            let val = (self.0 >> 4usize) & 0x0f;
+            super::vals::Lsi2cfg::from_bits(val as u8)
+        }
+        #[doc = "LSI2 oscillator configuration."]
+        #[inline(always)]
+        pub fn set_lsi2cfg(&mut self, val: super::vals::Lsi2cfg) {
+            self.0 = (self.0 & !(0x0f << 4usize)) | (((val.to_bits() as u32) & 0x0f) << 4usize);
+        }
+    }
+    impl Default for Bdcr2 {
+        #[inline(always)]
+        fn default() -> Bdcr2 {
+            Bdcr2(0)
+        }
+    }
+    impl core::fmt::Debug for Bdcr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Bdcr2")
+                .field("lsi2mode", &self.lsi2mode())
+                .field("lsi2cfg", &self.lsi2cfg())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Bdcr2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Bdcr2 {{ lsi2mode: {:?}, lsi2cfg: {:?} }}",
+                self.lsi2mode(),
+                self.lsi2cfg()
+            )
         }
     }
     #[doc = "RCC peripherals independent clock configuration register 1"]
@@ -3742,6 +3956,17 @@ is the value to be compared to the audio synchronization counter to generate an 
         pub fn set_hsecssc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
+        #[doc = "LSI2 ready interrupt clear."]
+        #[inline(always)]
+        pub const fn lsi2rdyc(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LSI2 ready interrupt clear."]
+        #[inline(always)]
+        pub fn set_lsi2rdyc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
     }
     impl Default for Cicr {
         #[inline(always)]
@@ -3758,13 +3983,14 @@ is the value to be compared to the audio synchronization counter to generate an 
                 .field("hserdyc", &self.hserdyc())
                 .field("pllrdyc", &self.pllrdyc())
                 .field("hsecssc", &self.hsecssc())
+                .field("lsi2rdyc", &self.lsi2rdyc())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cicr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cicr {{ lsi1rdyc: {=bool:?}, lserdyc: {=bool:?}, hsirdyc: {=bool:?}, hserdyc: {=bool:?}, pllrdyc: {=bool:?}, hsecssc: {=bool:?} }}" , self . lsi1rdyc () , self . lserdyc () , self . hsirdyc () , self . hserdyc () , self . pllrdyc () , self . hsecssc ())
+            defmt :: write ! (f , "Cicr {{ lsi1rdyc: {=bool:?}, lserdyc: {=bool:?}, hsirdyc: {=bool:?}, hserdyc: {=bool:?}, pllrdyc: {=bool:?}, hsecssc: {=bool:?}, lsi2rdyc: {=bool:?} }}" , self . lsi1rdyc () , self . lserdyc () , self . hsirdyc () , self . hserdyc () , self . pllrdyc () , self . hsecssc () , self . lsi2rdyc ())
         }
     }
     #[doc = "RCC clock interrupt enable register"]
@@ -3827,6 +4053,17 @@ is the value to be compared to the audio synchronization counter to generate an 
         pub fn set_pllrdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
+        #[doc = "LSI2 ready interrupt enable"]
+        #[inline(always)]
+        pub const fn lsi2rdyie(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LSI2 ready interrupt enable"]
+        #[inline(always)]
+        pub fn set_lsi2rdyie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
     }
     impl Default for Cier {
         #[inline(always)]
@@ -3842,13 +4079,14 @@ is the value to be compared to the audio synchronization counter to generate an 
                 .field("hsirdyie", &self.hsirdyie())
                 .field("hserdyie", &self.hserdyie())
                 .field("pllrdyie", &self.pllrdyie())
+                .field("lsi2rdyie", &self.lsi2rdyie())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cier {{ lsi1rdyie: {=bool:?}, lserdyie: {=bool:?}, hsirdyie: {=bool:?}, hserdyie: {=bool:?}, pllrdyie: {=bool:?} }}" , self . lsi1rdyie () , self . lserdyie () , self . hsirdyie () , self . hserdyie () , self . pllrdyie ())
+            defmt :: write ! (f , "Cier {{ lsi1rdyie: {=bool:?}, lserdyie: {=bool:?}, hsirdyie: {=bool:?}, hserdyie: {=bool:?}, pllrdyie: {=bool:?}, lsi2rdyie: {=bool:?} }}" , self . lsi1rdyie () , self . lserdyie () , self . hsirdyie () , self . hserdyie () , self . pllrdyie () , self . lsi2rdyie ())
         }
     }
     #[doc = "RCC clock interrupt flag register"]
@@ -3922,6 +4160,17 @@ is the value to be compared to the audio synchronization counter to generate an 
         pub fn set_hsecssf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
+        #[doc = "LSI2 ready interrupt flag."]
+        #[inline(always)]
+        pub const fn lsi2rdyf(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LSI2 ready interrupt flag."]
+        #[inline(always)]
+        pub fn set_lsi2rdyf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
     }
     impl Default for Cifr {
         #[inline(always)]
@@ -3938,13 +4187,14 @@ is the value to be compared to the audio synchronization counter to generate an 
                 .field("hserdyf", &self.hserdyf())
                 .field("pllrdyf", &self.pllrdyf())
                 .field("hsecssf", &self.hsecssf())
+                .field("lsi2rdyf", &self.lsi2rdyf())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cifr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cifr {{ lsi1rdyf: {=bool:?}, lserdyf: {=bool:?}, hsirdyf: {=bool:?}, hserdyf: {=bool:?}, pllrdyf: {=bool:?}, hsecssf: {=bool:?} }}" , self . lsi1rdyf () , self . lserdyf () , self . hsirdyf () , self . hserdyf () , self . pllrdyf () , self . hsecssf ())
+            defmt :: write ! (f , "Cifr {{ lsi1rdyf: {=bool:?}, lserdyf: {=bool:?}, hsirdyf: {=bool:?}, hserdyf: {=bool:?}, pllrdyf: {=bool:?}, hsecssf: {=bool:?}, lsi2rdyf: {=bool:?} }}" , self . lsi1rdyf () , self . lserdyf () , self . hsirdyf () , self . hserdyf () , self . pllrdyf () , self . hsecssf () , self . lsi2rdyf ())
         }
     }
     #[doc = "RCC clock control register"]
@@ -4334,14 +4584,14 @@ bits. It can be programmed to adjust to voltage and temperature variations that 
         }
         #[doc = "Prescaler for PLL1 Set and cleared by software to configure the prescaler of the PLL1. The VCO1 input frequency is PLL1 input clock frequency/PLL1M. This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). ..."]
         #[inline(always)]
-        pub const fn pllm(&self) -> u8 {
+        pub const fn pllm(&self) -> super::vals::Pllm {
             let val = (self.0 >> 8usize) & 0x07;
-            val as u8
+            super::vals::Pllm::from_bits(val as u8)
         }
         #[doc = "Prescaler for PLL1 Set and cleared by software to configure the prescaler of the PLL1. The VCO1 input frequency is PLL1 input clock frequency/PLL1M. This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). ..."]
         #[inline(always)]
-        pub fn set_pllm(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
+        pub fn set_pllm(&mut self, val: super::vals::Pllm) {
+            self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "PLL1 DIVP divider output enable Set and reset by software to enable the pll1pclk output of the PLL1. To save power, PLL1PEN and PLL1P bits must be set to 0 when the pll1pclk is not used. This bit can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0)."]
         #[inline(always)]
@@ -4435,7 +4685,7 @@ bits. It can be programmed to adjust to voltage and temperature variations that 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pll1cfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pll1cfgr {{ pllsrc: {:?}, pllrge: {:?}, pllfracen: {=bool:?}, pllm: {=u8:?}, pllpen: {=bool:?}, pllqen: {=bool:?}, pllren: {=bool:?}, pllrclkpre: {:?}, pllrclkprestep: {:?}, pllrclkprerdy: {=bool:?} }}" , self . pllsrc () , self . pllrge () , self . pllfracen () , self . pllm () , self . pllpen () , self . pllqen () , self . pllren () , self . pllrclkpre () , self . pllrclkprestep () , self . pllrclkprerdy ())
+            defmt :: write ! (f , "Pll1cfgr {{ pllsrc: {:?}, pllrge: {:?}, pllfracen: {=bool:?}, pllm: {:?}, pllpen: {=bool:?}, pllqen: {=bool:?}, pllren: {=bool:?}, pllrclkpre: {:?}, pllrclkprestep: {:?}, pllrclkprerdy: {=bool:?} }}" , self . pllsrc () , self . pllrge () , self . pllfracen () , self . pllm () , self . pllpen () , self . pllqen () , self . pllren () , self . pllrclkpre () , self . pllrclkprestep () , self . pllrclkprerdy ())
         }
     }
     #[doc = "RCC PLL1 dividers register"]
@@ -4445,47 +4695,47 @@ bits. It can be programmed to adjust to voltage and temperature variations that 
     impl Pll1divr {
         #[doc = "Multiplication factor for PLL1 VCO Set and reset by software to control the multiplication factor of the VCO. These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). ... ... others: reserved VCO output frequency = F<sub>ref1_ck</sub> x multiplication factor for PLL1 VCO, when fractional value 0 has been loaded into PLL1FRACN, with: Multiplication factor for PLL1 VCO between 4 and 512 input frequency F<sub>ref1_ck</sub> between 4 and 16�MHz"]
         #[inline(always)]
-        pub const fn plln(&self) -> u16 {
+        pub const fn plln(&self) -> super::vals::Plln {
             let val = (self.0 >> 0usize) & 0x01ff;
-            val as u16
+            super::vals::Plln::from_bits(val as u16)
         }
         #[doc = "Multiplication factor for PLL1 VCO Set and reset by software to control the multiplication factor of the VCO. These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). ... ... others: reserved VCO output frequency = F<sub>ref1_ck</sub> x multiplication factor for PLL1 VCO, when fractional value 0 has been loaded into PLL1FRACN, with: Multiplication factor for PLL1 VCO between 4 and 512 input frequency F<sub>ref1_ck</sub> between 4 and 16�MHz"]
         #[inline(always)]
-        pub fn set_plln(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
+        pub fn set_plln(&mut self, val: super::vals::Plln) {
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val.to_bits() as u32) & 0x01ff) << 0usize);
         }
         #[doc = "PLL1 DIVP division factor Set and reset by software to control the frequency of the pll1pclk clock. These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). Note that odd division factors are not allowed. ..."]
         #[inline(always)]
-        pub const fn pllp(&self) -> u8 {
+        pub const fn pllp(&self) -> super::vals::Plldiv {
             let val = (self.0 >> 9usize) & 0x7f;
-            val as u8
+            super::vals::Plldiv::from_bits(val as u8)
         }
         #[doc = "PLL1 DIVP division factor Set and reset by software to control the frequency of the pll1pclk clock. These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). Note that odd division factors are not allowed. ..."]
         #[inline(always)]
-        pub fn set_pllp(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 9usize)) | (((val as u32) & 0x7f) << 9usize);
+        pub fn set_pllp(&mut self, val: super::vals::Plldiv) {
+            self.0 = (self.0 & !(0x7f << 9usize)) | (((val.to_bits() as u32) & 0x7f) << 9usize);
         }
         #[doc = "PLL1 DIVQ division factor Set and reset by software to control the frequency of the PLl1QCLK clock. These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). ..."]
         #[inline(always)]
-        pub const fn pllq(&self) -> u8 {
+        pub const fn pllq(&self) -> super::vals::Plldiv {
             let val = (self.0 >> 16usize) & 0x7f;
-            val as u8
+            super::vals::Plldiv::from_bits(val as u8)
         }
         #[doc = "PLL1 DIVQ division factor Set and reset by software to control the frequency of the PLl1QCLK clock. These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). ..."]
         #[inline(always)]
-        pub fn set_pllq(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
+        pub fn set_pllq(&mut self, val: super::vals::Plldiv) {
+            self.0 = (self.0 & !(0x7f << 16usize)) | (((val.to_bits() as u32) & 0x7f) << 16usize);
         }
         #[doc = "PLL1 DIVR division factor Set and reset by software to control the frequency of the pll1rclk clock. These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). ..."]
         #[inline(always)]
-        pub const fn pllr(&self) -> u8 {
+        pub const fn pllr(&self) -> super::vals::Plldiv {
             let val = (self.0 >> 24usize) & 0x7f;
-            val as u8
+            super::vals::Plldiv::from_bits(val as u8)
         }
         #[doc = "PLL1 DIVR division factor Set and reset by software to control the frequency of the pll1rclk clock. These bits can be written only when the PLL1 is disabled (PLL1ON = 0 and PLL1RDY = 0). ..."]
         #[inline(always)]
-        pub fn set_pllr(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x7f << 24usize)) | (((val as u32) & 0x7f) << 24usize);
+        pub fn set_pllr(&mut self, val: super::vals::Plldiv) {
+            self.0 = (self.0 & !(0x7f << 24usize)) | (((val.to_bits() as u32) & 0x7f) << 24usize);
         }
     }
     impl Default for Pll1divr {
@@ -4509,7 +4759,7 @@ bits. It can be programmed to adjust to voltage and temperature variations that 
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Pll1divr {{ plln: {=u16:?}, pllp: {=u8:?}, pllq: {=u8:?}, pllr: {=u8:?} }}",
+                "Pll1divr {{ plln: {:?}, pllp: {:?}, pllq: {:?}, pllr: {:?} }}",
                 self.plln(),
                 self.pllp(),
                 self.pllq(),
@@ -5282,6 +5532,90 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Lsi2cfg {
+        #[doc = "LSI2 frequency temperature sensitivity is close to 0 at +80 less thansup oless than/sup C."]
+        SENSITIVITY0AT80C = 0x0,
+        #[doc = "LSI2 frequency temperature sensitivity is close to 0 at +50 less thansup oless than/sup C."]
+        SENSITIVITY0AT50C = 0x01,
+        #[doc = "LSI2 frequency temperature sensitivity is close to 0 at +20 less thansup oless than/sup C."]
+        SENSITIVITY0AT20C = 0x02,
+        _RESERVED_3 = 0x03,
+        _RESERVED_4 = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+        _RESERVED_8 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Lsi2cfg {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Lsi2cfg {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Lsi2cfg {
+        #[inline(always)]
+        fn from(val: u8) -> Lsi2cfg {
+            Lsi2cfg::from_bits(val)
+        }
+    }
+    impl From<Lsi2cfg> for u8 {
+        #[inline(always)]
+        fn from(val: Lsi2cfg) -> u8 {
+            Lsi2cfg::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Lsi2mode {
+        #[doc = "nominal-power, high accuracy."]
+        NOMINAL_POWER = 0x0,
+        #[doc = "low-power, medium accuracy."]
+        LOW_POWER = 0x01,
+        #[doc = "ultra-low-power, low accuracy."]
+        ULTRA_LOW_POWER = 0x02,
+        _RESERVED_3 = 0x03,
+        _RESERVED_4 = 0x04,
+        _RESERVED_5 = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+    }
+    impl Lsi2mode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Lsi2mode {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Lsi2mode {
+        #[inline(always)]
+        fn from(val: u8) -> Lsi2mode {
+            Lsi2mode::from_bits(val)
+        }
+    }
+    impl From<Lsi2mode> for u8 {
+        #[inline(always)]
+        fn from(val: Lsi2mode) -> u8 {
+            Lsi2mode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsiprediv {
         #[doc = "LSI not divided"]
         DIV1 = 0x0,
@@ -5436,6 +5770,735 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Otghssel) -> u8 {
             Otghssel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Plldiv {
+        DIV1 = 0x0,
+        DIV2 = 0x01,
+        DIV3 = 0x02,
+        DIV4 = 0x03,
+        DIV5 = 0x04,
+        DIV6 = 0x05,
+        DIV7 = 0x06,
+        DIV8 = 0x07,
+        DIV9 = 0x08,
+        DIV10 = 0x09,
+        DIV11 = 0x0a,
+        DIV12 = 0x0b,
+        DIV13 = 0x0c,
+        DIV14 = 0x0d,
+        DIV15 = 0x0e,
+        DIV16 = 0x0f,
+        DIV17 = 0x10,
+        DIV18 = 0x11,
+        DIV19 = 0x12,
+        DIV20 = 0x13,
+        DIV21 = 0x14,
+        DIV22 = 0x15,
+        DIV23 = 0x16,
+        DIV24 = 0x17,
+        DIV25 = 0x18,
+        DIV26 = 0x19,
+        DIV27 = 0x1a,
+        DIV28 = 0x1b,
+        DIV29 = 0x1c,
+        DIV30 = 0x1d,
+        DIV31 = 0x1e,
+        DIV32 = 0x1f,
+        DIV33 = 0x20,
+        DIV34 = 0x21,
+        DIV35 = 0x22,
+        DIV36 = 0x23,
+        DIV37 = 0x24,
+        DIV38 = 0x25,
+        DIV39 = 0x26,
+        DIV40 = 0x27,
+        DIV41 = 0x28,
+        DIV42 = 0x29,
+        DIV43 = 0x2a,
+        DIV44 = 0x2b,
+        DIV45 = 0x2c,
+        DIV46 = 0x2d,
+        DIV47 = 0x2e,
+        DIV48 = 0x2f,
+        DIV49 = 0x30,
+        DIV50 = 0x31,
+        DIV51 = 0x32,
+        DIV52 = 0x33,
+        DIV53 = 0x34,
+        DIV54 = 0x35,
+        DIV55 = 0x36,
+        DIV56 = 0x37,
+        DIV57 = 0x38,
+        DIV58 = 0x39,
+        DIV59 = 0x3a,
+        DIV60 = 0x3b,
+        DIV61 = 0x3c,
+        DIV62 = 0x3d,
+        DIV63 = 0x3e,
+        DIV64 = 0x3f,
+        DIV65 = 0x40,
+        DIV66 = 0x41,
+        DIV67 = 0x42,
+        DIV68 = 0x43,
+        DIV69 = 0x44,
+        DIV70 = 0x45,
+        DIV71 = 0x46,
+        DIV72 = 0x47,
+        DIV73 = 0x48,
+        DIV74 = 0x49,
+        DIV75 = 0x4a,
+        DIV76 = 0x4b,
+        DIV77 = 0x4c,
+        DIV78 = 0x4d,
+        DIV79 = 0x4e,
+        DIV80 = 0x4f,
+        DIV81 = 0x50,
+        DIV82 = 0x51,
+        DIV83 = 0x52,
+        DIV84 = 0x53,
+        DIV85 = 0x54,
+        DIV86 = 0x55,
+        DIV87 = 0x56,
+        DIV88 = 0x57,
+        DIV89 = 0x58,
+        DIV90 = 0x59,
+        DIV91 = 0x5a,
+        DIV92 = 0x5b,
+        DIV93 = 0x5c,
+        DIV94 = 0x5d,
+        DIV95 = 0x5e,
+        DIV96 = 0x5f,
+        DIV97 = 0x60,
+        DIV98 = 0x61,
+        DIV99 = 0x62,
+        DIV100 = 0x63,
+        DIV101 = 0x64,
+        DIV102 = 0x65,
+        DIV103 = 0x66,
+        DIV104 = 0x67,
+        DIV105 = 0x68,
+        DIV106 = 0x69,
+        DIV107 = 0x6a,
+        DIV108 = 0x6b,
+        DIV109 = 0x6c,
+        DIV110 = 0x6d,
+        DIV111 = 0x6e,
+        DIV112 = 0x6f,
+        DIV113 = 0x70,
+        DIV114 = 0x71,
+        DIV115 = 0x72,
+        DIV116 = 0x73,
+        DIV117 = 0x74,
+        DIV118 = 0x75,
+        DIV119 = 0x76,
+        DIV120 = 0x77,
+        DIV121 = 0x78,
+        DIV122 = 0x79,
+        DIV123 = 0x7a,
+        DIV124 = 0x7b,
+        DIV125 = 0x7c,
+        DIV126 = 0x7d,
+        DIV127 = 0x7e,
+        DIV128 = 0x7f,
+    }
+    impl Plldiv {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Plldiv {
+            unsafe { core::mem::transmute(val & 0x7f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Plldiv {
+        #[inline(always)]
+        fn from(val: u8) -> Plldiv {
+            Plldiv::from_bits(val)
+        }
+    }
+    impl From<Plldiv> for u8 {
+        #[inline(always)]
+        fn from(val: Plldiv) -> u8 {
+            Plldiv::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Pllm {
+        DIV1 = 0x0,
+        DIV2 = 0x01,
+        DIV3 = 0x02,
+        DIV4 = 0x03,
+        DIV5 = 0x04,
+        DIV6 = 0x05,
+        DIV7 = 0x06,
+        DIV8 = 0x07,
+    }
+    impl Pllm {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllm {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pllm {
+        #[inline(always)]
+        fn from(val: u8) -> Pllm {
+            Pllm::from_bits(val)
+        }
+    }
+    impl From<Pllm> for u8 {
+        #[inline(always)]
+        fn from(val: Pllm) -> u8 {
+            Pllm::to_bits(val)
+        }
+    }
+    #[repr(u16)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Plln {
+        _RESERVED_0 = 0x0,
+        _RESERVED_1 = 0x01,
+        _RESERVED_2 = 0x02,
+        MUL4 = 0x03,
+        MUL5 = 0x04,
+        MUL6 = 0x05,
+        MUL7 = 0x06,
+        MUL8 = 0x07,
+        MUL9 = 0x08,
+        MUL10 = 0x09,
+        MUL11 = 0x0a,
+        MUL12 = 0x0b,
+        MUL13 = 0x0c,
+        MUL14 = 0x0d,
+        MUL15 = 0x0e,
+        MUL16 = 0x0f,
+        MUL17 = 0x10,
+        MUL18 = 0x11,
+        MUL19 = 0x12,
+        MUL20 = 0x13,
+        MUL21 = 0x14,
+        MUL22 = 0x15,
+        MUL23 = 0x16,
+        MUL24 = 0x17,
+        MUL25 = 0x18,
+        MUL26 = 0x19,
+        MUL27 = 0x1a,
+        MUL28 = 0x1b,
+        MUL29 = 0x1c,
+        MUL30 = 0x1d,
+        MUL31 = 0x1e,
+        MUL32 = 0x1f,
+        MUL33 = 0x20,
+        MUL34 = 0x21,
+        MUL35 = 0x22,
+        MUL36 = 0x23,
+        MUL37 = 0x24,
+        MUL38 = 0x25,
+        MUL39 = 0x26,
+        MUL40 = 0x27,
+        MUL41 = 0x28,
+        MUL42 = 0x29,
+        MUL43 = 0x2a,
+        MUL44 = 0x2b,
+        MUL45 = 0x2c,
+        MUL46 = 0x2d,
+        MUL47 = 0x2e,
+        MUL48 = 0x2f,
+        MUL49 = 0x30,
+        MUL50 = 0x31,
+        MUL51 = 0x32,
+        MUL52 = 0x33,
+        MUL53 = 0x34,
+        MUL54 = 0x35,
+        MUL55 = 0x36,
+        MUL56 = 0x37,
+        MUL57 = 0x38,
+        MUL58 = 0x39,
+        MUL59 = 0x3a,
+        MUL60 = 0x3b,
+        MUL61 = 0x3c,
+        MUL62 = 0x3d,
+        MUL63 = 0x3e,
+        MUL64 = 0x3f,
+        MUL65 = 0x40,
+        MUL66 = 0x41,
+        MUL67 = 0x42,
+        MUL68 = 0x43,
+        MUL69 = 0x44,
+        MUL70 = 0x45,
+        MUL71 = 0x46,
+        MUL72 = 0x47,
+        MUL73 = 0x48,
+        MUL74 = 0x49,
+        MUL75 = 0x4a,
+        MUL76 = 0x4b,
+        MUL77 = 0x4c,
+        MUL78 = 0x4d,
+        MUL79 = 0x4e,
+        MUL80 = 0x4f,
+        MUL81 = 0x50,
+        MUL82 = 0x51,
+        MUL83 = 0x52,
+        MUL84 = 0x53,
+        MUL85 = 0x54,
+        MUL86 = 0x55,
+        MUL87 = 0x56,
+        MUL88 = 0x57,
+        MUL89 = 0x58,
+        MUL90 = 0x59,
+        MUL91 = 0x5a,
+        MUL92 = 0x5b,
+        MUL93 = 0x5c,
+        MUL94 = 0x5d,
+        MUL95 = 0x5e,
+        MUL96 = 0x5f,
+        MUL97 = 0x60,
+        MUL98 = 0x61,
+        MUL99 = 0x62,
+        MUL100 = 0x63,
+        MUL101 = 0x64,
+        MUL102 = 0x65,
+        MUL103 = 0x66,
+        MUL104 = 0x67,
+        MUL105 = 0x68,
+        MUL106 = 0x69,
+        MUL107 = 0x6a,
+        MUL108 = 0x6b,
+        MUL109 = 0x6c,
+        MUL110 = 0x6d,
+        MUL111 = 0x6e,
+        MUL112 = 0x6f,
+        MUL113 = 0x70,
+        MUL114 = 0x71,
+        MUL115 = 0x72,
+        MUL116 = 0x73,
+        MUL117 = 0x74,
+        MUL118 = 0x75,
+        MUL119 = 0x76,
+        MUL120 = 0x77,
+        MUL121 = 0x78,
+        MUL122 = 0x79,
+        MUL123 = 0x7a,
+        MUL124 = 0x7b,
+        MUL125 = 0x7c,
+        MUL126 = 0x7d,
+        MUL127 = 0x7e,
+        MUL128 = 0x7f,
+        MUL129 = 0x80,
+        MUL130 = 0x81,
+        MUL131 = 0x82,
+        MUL132 = 0x83,
+        MUL133 = 0x84,
+        MUL134 = 0x85,
+        MUL135 = 0x86,
+        MUL136 = 0x87,
+        MUL137 = 0x88,
+        MUL138 = 0x89,
+        MUL139 = 0x8a,
+        MUL140 = 0x8b,
+        MUL141 = 0x8c,
+        MUL142 = 0x8d,
+        MUL143 = 0x8e,
+        MUL144 = 0x8f,
+        MUL145 = 0x90,
+        MUL146 = 0x91,
+        MUL147 = 0x92,
+        MUL148 = 0x93,
+        MUL149 = 0x94,
+        MUL150 = 0x95,
+        MUL151 = 0x96,
+        MUL152 = 0x97,
+        MUL153 = 0x98,
+        MUL154 = 0x99,
+        MUL155 = 0x9a,
+        MUL156 = 0x9b,
+        MUL157 = 0x9c,
+        MUL158 = 0x9d,
+        MUL159 = 0x9e,
+        MUL160 = 0x9f,
+        MUL161 = 0xa0,
+        MUL162 = 0xa1,
+        MUL163 = 0xa2,
+        MUL164 = 0xa3,
+        MUL165 = 0xa4,
+        MUL166 = 0xa5,
+        MUL167 = 0xa6,
+        MUL168 = 0xa7,
+        MUL169 = 0xa8,
+        MUL170 = 0xa9,
+        MUL171 = 0xaa,
+        MUL172 = 0xab,
+        MUL173 = 0xac,
+        MUL174 = 0xad,
+        MUL175 = 0xae,
+        MUL176 = 0xaf,
+        MUL177 = 0xb0,
+        MUL178 = 0xb1,
+        MUL179 = 0xb2,
+        MUL180 = 0xb3,
+        MUL181 = 0xb4,
+        MUL182 = 0xb5,
+        MUL183 = 0xb6,
+        MUL184 = 0xb7,
+        MUL185 = 0xb8,
+        MUL186 = 0xb9,
+        MUL187 = 0xba,
+        MUL188 = 0xbb,
+        MUL189 = 0xbc,
+        MUL190 = 0xbd,
+        MUL191 = 0xbe,
+        MUL192 = 0xbf,
+        MUL193 = 0xc0,
+        MUL194 = 0xc1,
+        MUL195 = 0xc2,
+        MUL196 = 0xc3,
+        MUL197 = 0xc4,
+        MUL198 = 0xc5,
+        MUL199 = 0xc6,
+        MUL200 = 0xc7,
+        MUL201 = 0xc8,
+        MUL202 = 0xc9,
+        MUL203 = 0xca,
+        MUL204 = 0xcb,
+        MUL205 = 0xcc,
+        MUL206 = 0xcd,
+        MUL207 = 0xce,
+        MUL208 = 0xcf,
+        MUL209 = 0xd0,
+        MUL210 = 0xd1,
+        MUL211 = 0xd2,
+        MUL212 = 0xd3,
+        MUL213 = 0xd4,
+        MUL214 = 0xd5,
+        MUL215 = 0xd6,
+        MUL216 = 0xd7,
+        MUL217 = 0xd8,
+        MUL218 = 0xd9,
+        MUL219 = 0xda,
+        MUL220 = 0xdb,
+        MUL221 = 0xdc,
+        MUL222 = 0xdd,
+        MUL223 = 0xde,
+        MUL224 = 0xdf,
+        MUL225 = 0xe0,
+        MUL226 = 0xe1,
+        MUL227 = 0xe2,
+        MUL228 = 0xe3,
+        MUL229 = 0xe4,
+        MUL230 = 0xe5,
+        MUL231 = 0xe6,
+        MUL232 = 0xe7,
+        MUL233 = 0xe8,
+        MUL234 = 0xe9,
+        MUL235 = 0xea,
+        MUL236 = 0xeb,
+        MUL237 = 0xec,
+        MUL238 = 0xed,
+        MUL239 = 0xee,
+        MUL240 = 0xef,
+        MUL241 = 0xf0,
+        MUL242 = 0xf1,
+        MUL243 = 0xf2,
+        MUL244 = 0xf3,
+        MUL245 = 0xf4,
+        MUL246 = 0xf5,
+        MUL247 = 0xf6,
+        MUL248 = 0xf7,
+        MUL249 = 0xf8,
+        MUL250 = 0xf9,
+        MUL251 = 0xfa,
+        MUL252 = 0xfb,
+        MUL253 = 0xfc,
+        MUL254 = 0xfd,
+        MUL255 = 0xfe,
+        MUL256 = 0xff,
+        MUL257 = 0x0100,
+        MUL258 = 0x0101,
+        MUL259 = 0x0102,
+        MUL260 = 0x0103,
+        MUL261 = 0x0104,
+        MUL262 = 0x0105,
+        MUL263 = 0x0106,
+        MUL264 = 0x0107,
+        MUL265 = 0x0108,
+        MUL266 = 0x0109,
+        MUL267 = 0x010a,
+        MUL268 = 0x010b,
+        MUL269 = 0x010c,
+        MUL270 = 0x010d,
+        MUL271 = 0x010e,
+        MUL272 = 0x010f,
+        MUL273 = 0x0110,
+        MUL274 = 0x0111,
+        MUL275 = 0x0112,
+        MUL276 = 0x0113,
+        MUL277 = 0x0114,
+        MUL278 = 0x0115,
+        MUL279 = 0x0116,
+        MUL280 = 0x0117,
+        MUL281 = 0x0118,
+        MUL282 = 0x0119,
+        MUL283 = 0x011a,
+        MUL284 = 0x011b,
+        MUL285 = 0x011c,
+        MUL286 = 0x011d,
+        MUL287 = 0x011e,
+        MUL288 = 0x011f,
+        MUL289 = 0x0120,
+        MUL290 = 0x0121,
+        MUL291 = 0x0122,
+        MUL292 = 0x0123,
+        MUL293 = 0x0124,
+        MUL294 = 0x0125,
+        MUL295 = 0x0126,
+        MUL296 = 0x0127,
+        MUL297 = 0x0128,
+        MUL298 = 0x0129,
+        MUL299 = 0x012a,
+        MUL300 = 0x012b,
+        MUL301 = 0x012c,
+        MUL302 = 0x012d,
+        MUL303 = 0x012e,
+        MUL304 = 0x012f,
+        MUL305 = 0x0130,
+        MUL306 = 0x0131,
+        MUL307 = 0x0132,
+        MUL308 = 0x0133,
+        MUL309 = 0x0134,
+        MUL310 = 0x0135,
+        MUL311 = 0x0136,
+        MUL312 = 0x0137,
+        MUL313 = 0x0138,
+        MUL314 = 0x0139,
+        MUL315 = 0x013a,
+        MUL316 = 0x013b,
+        MUL317 = 0x013c,
+        MUL318 = 0x013d,
+        MUL319 = 0x013e,
+        MUL320 = 0x013f,
+        MUL321 = 0x0140,
+        MUL322 = 0x0141,
+        MUL323 = 0x0142,
+        MUL324 = 0x0143,
+        MUL325 = 0x0144,
+        MUL326 = 0x0145,
+        MUL327 = 0x0146,
+        MUL328 = 0x0147,
+        MUL329 = 0x0148,
+        MUL330 = 0x0149,
+        MUL331 = 0x014a,
+        MUL332 = 0x014b,
+        MUL333 = 0x014c,
+        MUL334 = 0x014d,
+        MUL335 = 0x014e,
+        MUL336 = 0x014f,
+        MUL337 = 0x0150,
+        MUL338 = 0x0151,
+        MUL339 = 0x0152,
+        MUL340 = 0x0153,
+        MUL341 = 0x0154,
+        MUL342 = 0x0155,
+        MUL343 = 0x0156,
+        MUL344 = 0x0157,
+        MUL345 = 0x0158,
+        MUL346 = 0x0159,
+        MUL347 = 0x015a,
+        MUL348 = 0x015b,
+        MUL349 = 0x015c,
+        MUL350 = 0x015d,
+        MUL351 = 0x015e,
+        MUL352 = 0x015f,
+        MUL353 = 0x0160,
+        MUL354 = 0x0161,
+        MUL355 = 0x0162,
+        MUL356 = 0x0163,
+        MUL357 = 0x0164,
+        MUL358 = 0x0165,
+        MUL359 = 0x0166,
+        MUL360 = 0x0167,
+        MUL361 = 0x0168,
+        MUL362 = 0x0169,
+        MUL363 = 0x016a,
+        MUL364 = 0x016b,
+        MUL365 = 0x016c,
+        MUL366 = 0x016d,
+        MUL367 = 0x016e,
+        MUL368 = 0x016f,
+        MUL369 = 0x0170,
+        MUL370 = 0x0171,
+        MUL371 = 0x0172,
+        MUL372 = 0x0173,
+        MUL373 = 0x0174,
+        MUL374 = 0x0175,
+        MUL375 = 0x0176,
+        MUL376 = 0x0177,
+        MUL377 = 0x0178,
+        MUL378 = 0x0179,
+        MUL379 = 0x017a,
+        MUL380 = 0x017b,
+        MUL381 = 0x017c,
+        MUL382 = 0x017d,
+        MUL383 = 0x017e,
+        MUL384 = 0x017f,
+        MUL385 = 0x0180,
+        MUL386 = 0x0181,
+        MUL387 = 0x0182,
+        MUL388 = 0x0183,
+        MUL389 = 0x0184,
+        MUL390 = 0x0185,
+        MUL391 = 0x0186,
+        MUL392 = 0x0187,
+        MUL393 = 0x0188,
+        MUL394 = 0x0189,
+        MUL395 = 0x018a,
+        MUL396 = 0x018b,
+        MUL397 = 0x018c,
+        MUL398 = 0x018d,
+        MUL399 = 0x018e,
+        MUL400 = 0x018f,
+        MUL401 = 0x0190,
+        MUL402 = 0x0191,
+        MUL403 = 0x0192,
+        MUL404 = 0x0193,
+        MUL405 = 0x0194,
+        MUL406 = 0x0195,
+        MUL407 = 0x0196,
+        MUL408 = 0x0197,
+        MUL409 = 0x0198,
+        MUL410 = 0x0199,
+        MUL411 = 0x019a,
+        MUL412 = 0x019b,
+        MUL413 = 0x019c,
+        MUL414 = 0x019d,
+        MUL415 = 0x019e,
+        MUL416 = 0x019f,
+        MUL417 = 0x01a0,
+        MUL418 = 0x01a1,
+        MUL419 = 0x01a2,
+        MUL420 = 0x01a3,
+        MUL421 = 0x01a4,
+        MUL422 = 0x01a5,
+        MUL423 = 0x01a6,
+        MUL424 = 0x01a7,
+        MUL425 = 0x01a8,
+        MUL426 = 0x01a9,
+        MUL427 = 0x01aa,
+        MUL428 = 0x01ab,
+        MUL429 = 0x01ac,
+        MUL430 = 0x01ad,
+        MUL431 = 0x01ae,
+        MUL432 = 0x01af,
+        MUL433 = 0x01b0,
+        MUL434 = 0x01b1,
+        MUL435 = 0x01b2,
+        MUL436 = 0x01b3,
+        MUL437 = 0x01b4,
+        MUL438 = 0x01b5,
+        MUL439 = 0x01b6,
+        MUL440 = 0x01b7,
+        MUL441 = 0x01b8,
+        MUL442 = 0x01b9,
+        MUL443 = 0x01ba,
+        MUL444 = 0x01bb,
+        MUL445 = 0x01bc,
+        MUL446 = 0x01bd,
+        MUL447 = 0x01be,
+        MUL448 = 0x01bf,
+        MUL449 = 0x01c0,
+        MUL450 = 0x01c1,
+        MUL451 = 0x01c2,
+        MUL452 = 0x01c3,
+        MUL453 = 0x01c4,
+        MUL454 = 0x01c5,
+        MUL455 = 0x01c6,
+        MUL456 = 0x01c7,
+        MUL457 = 0x01c8,
+        MUL458 = 0x01c9,
+        MUL459 = 0x01ca,
+        MUL460 = 0x01cb,
+        MUL461 = 0x01cc,
+        MUL462 = 0x01cd,
+        MUL463 = 0x01ce,
+        MUL464 = 0x01cf,
+        MUL465 = 0x01d0,
+        MUL466 = 0x01d1,
+        MUL467 = 0x01d2,
+        MUL468 = 0x01d3,
+        MUL469 = 0x01d4,
+        MUL470 = 0x01d5,
+        MUL471 = 0x01d6,
+        MUL472 = 0x01d7,
+        MUL473 = 0x01d8,
+        MUL474 = 0x01d9,
+        MUL475 = 0x01da,
+        MUL476 = 0x01db,
+        MUL477 = 0x01dc,
+        MUL478 = 0x01dd,
+        MUL479 = 0x01de,
+        MUL480 = 0x01df,
+        MUL481 = 0x01e0,
+        MUL482 = 0x01e1,
+        MUL483 = 0x01e2,
+        MUL484 = 0x01e3,
+        MUL485 = 0x01e4,
+        MUL486 = 0x01e5,
+        MUL487 = 0x01e6,
+        MUL488 = 0x01e7,
+        MUL489 = 0x01e8,
+        MUL490 = 0x01e9,
+        MUL491 = 0x01ea,
+        MUL492 = 0x01eb,
+        MUL493 = 0x01ec,
+        MUL494 = 0x01ed,
+        MUL495 = 0x01ee,
+        MUL496 = 0x01ef,
+        MUL497 = 0x01f0,
+        MUL498 = 0x01f1,
+        MUL499 = 0x01f2,
+        MUL500 = 0x01f3,
+        MUL501 = 0x01f4,
+        MUL502 = 0x01f5,
+        MUL503 = 0x01f6,
+        MUL504 = 0x01f7,
+        MUL505 = 0x01f8,
+        MUL506 = 0x01f9,
+        MUL507 = 0x01fa,
+        MUL508 = 0x01fb,
+        MUL509 = 0x01fc,
+        MUL510 = 0x01fd,
+        MUL511 = 0x01fe,
+        MUL512 = 0x01ff,
+    }
+    impl Plln {
+        #[inline(always)]
+        pub const fn from_bits(val: u16) -> Plln {
+            unsafe { core::mem::transmute(val & 0x01ff) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u16 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u16> for Plln {
+        #[inline(always)]
+        fn from(val: u16) -> Plln {
+            Plln::from_bits(val)
+        }
+    }
+    impl From<Plln> for u16 {
+        #[inline(always)]
+        fn from(val: Plln) -> u16 {
+            Plln::to_bits(val)
         }
     }
     #[repr(u8)]

@@ -134,7 +134,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         name: "COMP1",
         address: 0x46005400,
         registers: None,
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            bus_clock: "PCLK7",
+            kernel_clock: Clock("PCLK7"),
+            enable: Some(PeripheralRccRegister {
+                register: "APB7ENR",
+                field: "COMPEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "APB7RSTR",
+                field: "COMPRST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PA1",
@@ -1371,7 +1383,22 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         name: "SAI1",
         address: 0x40015400,
         registers: None,
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            bus_clock: "PCLK2",
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR2",
+                field: "SAI1SEL",
+            }),
+            enable: Some(PeripheralRccRegister {
+                register: "APB2ENR",
+                field: "SAI1EN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "APB2RSTR",
+                field: "SAI1RST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PA1",

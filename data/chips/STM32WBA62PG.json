@@ -922,6 +922,18 @@
         {
           "name": "COMP1",
           "address": 1174426624,
+          "rcc": {
+            "bus_clock": "PCLK7",
+            "kernel_clock": "PCLK7",
+            "enable": {
+              "register": "APB7ENR",
+              "field": "COMPEN"
+            },
+            "reset": {
+              "register": "APB7RSTR",
+              "field": "COMPRST"
+            }
+          },
           "pins": [
             {
               "pin": "PA1",
@@ -952,6 +964,18 @@
         {
           "name": "COMP2",
           "address": 1174426628,
+          "rcc": {
+            "bus_clock": "PCLK7",
+            "kernel_clock": "PCLK7",
+            "enable": {
+              "register": "APB7ENR",
+              "field": "COMPEN"
+            },
+            "reset": {
+              "register": "APB7RSTR",
+              "field": "COMPRST"
+            }
+          },
           "pins": [
             {
               "pin": "PA0",
@@ -1639,6 +1663,10 @@
             "enable": {
               "register": "APB1ENR2",
               "field": "I2C4EN"
+            },
+            "reset": {
+              "register": "APB1RSTR2",
+              "field": "I2C4RST"
             }
           },
           "pins": [
@@ -2412,6 +2440,21 @@
         {
           "name": "SAI1",
           "address": 1073828864,
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": {
+              "register": "CCIPR2",
+              "field": "SAI1SEL"
+            },
+            "enable": {
+              "register": "APB2ENR",
+              "field": "SAI1EN"
+            },
+            "reset": {
+              "register": "APB2RSTR",
+              "field": "SAI1RST"
+            }
+          },
           "pins": [
             {
               "pin": "PA1",

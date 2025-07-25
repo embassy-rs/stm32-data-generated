@@ -8567,7 +8567,10 @@
           },
           "rcc": {
             "bus_clock": "HCLK5",
-            "kernel_clock": "HCLK5",
+            "kernel_clock": {
+              "register": "AHBPERCKSELR",
+              "field": "XSPI1SEL"
+            },
             "enable": {
               "register": "AHB5ENR",
               "field": "XSPI1EN"
@@ -8601,7 +8604,10 @@
           },
           "rcc": {
             "bus_clock": "HCLK5",
-            "kernel_clock": "HCLK5",
+            "kernel_clock": {
+              "register": "AHBPERCKSELR",
+              "field": "XSPI2SEL"
+            },
             "enable": {
               "register": "AHB5ENR",
               "field": "XSPI2EN"

@@ -1230,18 +1230,18 @@
         "enum": "SDMMCSEL"
       },
       {
-        "name": "OCTOSPI1SEL",
+        "name": "XSPI1SEL",
         "description": "XSPI1 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock.",
         "bit_offset": 4,
         "bit_size": 2,
-        "enum": "OCTOSPISEL"
+        "enum": "XSPISEL"
       },
       {
-        "name": "OCTOSPI2SEL",
+        "name": "XSPI2SEL",
         "description": "XSPI2 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock.",
         "bit_offset": 6,
         "bit_size": 2,
-        "enum": "OCTOSPISEL"
+        "enum": "XSPISEL"
       },
       {
         "name": "USBREFCKSEL",
@@ -2982,7 +2982,7 @@
     "fields": [
       {
         "name": "XSPICKP",
-        "description": "XSPI clock protection Set and cleared by software. When set to 1, this bit prevents disabling accidentally the XSPIs. The following fields cannot be modified when this bit is set to 1: PLL2ON, PLL2DIVSEN, PLL2DIVTEN, HSEON, HSION, CSION, XSPIxEN, OCTOSPIxLPEN, OCTOSPIxRST.",
+        "description": "XSPI clock protection Set and cleared by software. When set to 1, this bit prevents disabling accidentally the XSPIs. The following fields cannot be modified when this bit is set to 1: PLL2ON, PLL2DIVSEN, PLL2DIVTEN, HSEON, HSION, CSION, XSPIxEN, XSPIxLPEN, XSPIxRST.",
         "bit_offset": 0,
         "bit_size": 1
       },
@@ -4060,21 +4060,6 @@
         "name": "Div15",
         "description": "Divide by 15",
         "value": 15
-      }
-    ]
-  },
-  "enum/OCTOSPISEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "HCLK5",
-        "description": "hclk5 selected as kernel peripheral clock (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "PLL2_S",
-        "description": "pll2_s_ck selected as kernel peripheral clock.",
-        "value": 1
       }
     ]
   },
@@ -7138,6 +7123,21 @@
         "name": "CLK48MOHCI",
         "description": "clk48mohci.",
         "value": 3
+      }
+    ]
+  },
+  "enum/XSPISEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "HCLK5",
+        "description": "hclk5 selected as kernel peripheral clock (default after reset).",
+        "value": 0
+      },
+      {
+        "name": "PLL2_S",
+        "description": "pll2_s_ck selected as kernel peripheral clock.",
+        "value": 1
       }
     ]
   },

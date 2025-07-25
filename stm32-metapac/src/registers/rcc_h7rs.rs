@@ -3006,7 +3006,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "octospi1sel",
+                    name: "xspi1sel",
                     description: Some(
                         "XSPI1 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock.",
                     ),
@@ -3018,11 +3018,11 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Octospisel",
+                        "Xspisel",
                     ),
                 },
                 Field {
-                    name: "octospi2sel",
+                    name: "xspi2sel",
                     description: Some(
                         "XSPI2 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock.",
                     ),
@@ -3034,7 +3034,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Octospisel",
+                        "Xspisel",
                     ),
                 },
                 Field {
@@ -7025,7 +7025,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "xspickp",
                     description: Some(
-                        "XSPI clock protection Set and cleared by software. When set to 1, this bit prevents disabling accidentally the XSPIs. The following fields cannot be modified when this bit is set to 1: PLL2ON, PLL2DIVSEN, PLL2DIVTEN, HSEON, HSION, CSION, XSPIxEN, OCTOSPIxLPEN, OCTOSPIxRST.",
+                        "XSPI clock protection Set and cleared by software. When set to 1, this bit prevents disabling accidentally the XSPIs. The following fields cannot be modified when this bit is set to 1: PLL2ON, PLL2DIVSEN, PLL2DIVTEN, HSEON, HSION, CSION, XSPIxEN, XSPIxLPEN, XSPIxRST.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -8935,27 +8935,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Divide by 15",
                     ),
                     value: 15,
-                },
-            ],
-        },
-        Enum {
-            name: "Octospisel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "HCLK5",
-                    description: Some(
-                        "hclk5 selected as kernel peripheral clock (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2_S",
-                    description: Some(
-                        "pll2_s_ck selected as kernel peripheral clock.",
-                    ),
-                    value: 1,
                 },
             ],
         },
@@ -12877,6 +12856,27 @@ pub(crate) static REGISTERS: IR = IR {
                         "The kernel clock frequency provided to the USBPHYC is 26 MHz.",
                     ),
                     value: 14,
+                },
+            ],
+        },
+        Enum {
+            name: "Xspisel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "HCLK5",
+                    description: Some(
+                        "hclk5 selected as kernel peripheral clock (default after reset).",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PLL2_S",
+                    description: Some(
+                        "pll2_s_ck selected as kernel peripheral clock.",
+                    ),
+                    value: 1,
                 },
             ],
         },

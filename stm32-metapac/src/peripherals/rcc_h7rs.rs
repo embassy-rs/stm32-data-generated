@@ -2262,24 +2262,24 @@ low-power peripheral clock enable Set and reset by software."]
         }
         #[doc = "XSPI1 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock."]
         #[inline(always)]
-        pub const fn octospi1sel(&self) -> super::vals::Octospisel {
+        pub const fn xspi1sel(&self) -> super::vals::Xspisel {
             let val = (self.0 >> 4usize) & 0x03;
-            super::vals::Octospisel::from_bits(val as u8)
+            super::vals::Xspisel::from_bits(val as u8)
         }
         #[doc = "XSPI1 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock."]
         #[inline(always)]
-        pub fn set_octospi1sel(&mut self, val: super::vals::Octospisel) {
+        pub fn set_xspi1sel(&mut self, val: super::vals::Xspisel) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "XSPI2 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock."]
         #[inline(always)]
-        pub const fn octospi2sel(&self) -> super::vals::Octospisel {
+        pub const fn xspi2sel(&self) -> super::vals::Xspisel {
             let val = (self.0 >> 6usize) & 0x03;
-            super::vals::Octospisel::from_bits(val as u8)
+            super::vals::Xspisel::from_bits(val as u8)
         }
         #[doc = "XSPI2 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock."]
         #[inline(always)]
-        pub fn set_octospi2sel(&mut self, val: super::vals::Octospisel) {
+        pub fn set_xspi2sel(&mut self, val: super::vals::Xspisel) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
         }
         #[doc = "USBPHYC kernel clock frequency selection Set and reset by software. This field is used to indicate to the USBPHYC, the frequency of the reference kernel clock provided to the USBPHYC. others: reserved."]
@@ -2393,8 +2393,8 @@ low-power peripheral clock enable Set and reset by software."]
             f.debug_struct("Ahbperckselr")
                 .field("fmcsel", &self.fmcsel())
                 .field("sdmmcsel", &self.sdmmcsel())
-                .field("octospi1sel", &self.octospi1sel())
-                .field("octospi2sel", &self.octospi2sel())
+                .field("xspi1sel", &self.xspi1sel())
+                .field("xspi2sel", &self.xspi2sel())
                 .field("usbrefcksel", &self.usbrefcksel())
                 .field("usbphycsel", &self.usbphycsel())
                 .field("usb_otg_fssel", &self.usb_otg_fssel())
@@ -2410,7 +2410,7 @@ low-power peripheral clock enable Set and reset by software."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahbperckselr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahbperckselr {{ fmcsel: {:?}, sdmmcsel: {:?}, octospi1sel: {:?}, octospi2sel: {:?}, usbrefcksel: {:?}, usbphycsel: {:?}, usb_otg_fssel: {:?}, eth_ref_clk_sel: {:?}, ethphy_clk_sel: {:?}, adfsel: {:?}, adcsel: {:?}, pssisel: {:?}, persel: {:?} }}" , self . fmcsel () , self . sdmmcsel () , self . octospi1sel () , self . octospi2sel () , self . usbrefcksel () , self . usbphycsel () , self . usb_otg_fssel () , self . eth_ref_clk_sel () , self . ethphy_clk_sel () , self . adfsel () , self . adcsel () , self . pssisel () , self . persel ())
+            defmt :: write ! (f , "Ahbperckselr {{ fmcsel: {:?}, sdmmcsel: {:?}, xspi1sel: {:?}, xspi2sel: {:?}, usbrefcksel: {:?}, usbphycsel: {:?}, usb_otg_fssel: {:?}, eth_ref_clk_sel: {:?}, ethphy_clk_sel: {:?}, adfsel: {:?}, adcsel: {:?}, pssisel: {:?}, persel: {:?} }}" , self . fmcsel () , self . sdmmcsel () , self . xspi1sel () , self . xspi2sel () , self . usbrefcksel () , self . usbphycsel () , self . usb_otg_fssel () , self . eth_ref_clk_sel () , self . ethphy_clk_sel () , self . adfsel () , self . adcsel () , self . pssisel () , self . persel ())
         }
     }
     #[doc = "RCC APB1 clock enable register 1."]
@@ -6121,13 +6121,13 @@ and rcc_aclk. This group of clocks is also named sys_bus_ck. Changing this divis
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Ckprotr(pub u32);
     impl Ckprotr {
-        #[doc = "XSPI clock protection Set and cleared by software. When set to 1, this bit prevents disabling accidentally the XSPIs. The following fields cannot be modified when this bit is set to 1: PLL2ON, PLL2DIVSEN, PLL2DIVTEN, HSEON, HSION, CSION, XSPIxEN, OCTOSPIxLPEN, OCTOSPIxRST."]
+        #[doc = "XSPI clock protection Set and cleared by software. When set to 1, this bit prevents disabling accidentally the XSPIs. The following fields cannot be modified when this bit is set to 1: PLL2ON, PLL2DIVSEN, PLL2DIVTEN, HSEON, HSION, CSION, XSPIxEN, XSPIxLPEN, XSPIxRST."]
         #[inline(always)]
         pub const fn xspickp(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
-        #[doc = "XSPI clock protection Set and cleared by software. When set to 1, this bit prevents disabling accidentally the XSPIs. The following fields cannot be modified when this bit is set to 1: PLL2ON, PLL2DIVSEN, PLL2DIVTEN, HSEON, HSION, CSION, XSPIxEN, OCTOSPIxLPEN, OCTOSPIxRST."]
+        #[doc = "XSPI clock protection Set and cleared by software. When set to 1, this bit prevents disabling accidentally the XSPIs. The following fields cannot be modified when this bit is set to 1: PLL2ON, PLL2DIVSEN, PLL2DIVTEN, HSEON, HSION, CSION, XSPIxEN, XSPIxLPEN, XSPIxRST."]
         #[inline(always)]
         pub fn set_xspickp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
@@ -8057,39 +8057,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Octospisel {
-        #[doc = "hclk5 selected as kernel peripheral clock (default after reset)."]
-        HCLK5 = 0x0,
-        #[doc = "pll2_s_ck selected as kernel peripheral clock."]
-        PLL2_S = 0x01,
-        _RESERVED_2 = 0x02,
-        _RESERVED_3 = 0x03,
-    }
-    impl Octospisel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Octospisel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Octospisel {
-        #[inline(always)]
-        fn from(val: u8) -> Octospisel {
-            Octospisel::from_bits(val)
-        }
-    }
-    impl From<Octospisel> for u8 {
-        #[inline(always)]
-        fn from(val: Octospisel) -> u8 {
-            Octospisel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Persel {
         #[doc = "HSI selected as peripheral clock"]
         HSI = 0x0,
@@ -9778,6 +9745,39 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Usbrefcksel) -> u8 {
             Usbrefcksel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Xspisel {
+        #[doc = "hclk5 selected as kernel peripheral clock (default after reset)."]
+        HCLK5 = 0x0,
+        #[doc = "pll2_s_ck selected as kernel peripheral clock."]
+        PLL2_S = 0x01,
+        _RESERVED_2 = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Xspisel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Xspisel {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Xspisel {
+        #[inline(always)]
+        fn from(val: u8) -> Xspisel {
+            Xspisel::from_bits(val)
+        }
+    }
+    impl From<Xspisel> for u8 {
+        #[inline(always)]
+        fn from(val: Xspisel) -> u8 {
+            Xspisel::to_bits(val)
         }
     }
     #[repr(u8)]

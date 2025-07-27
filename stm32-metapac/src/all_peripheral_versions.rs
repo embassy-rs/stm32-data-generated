@@ -92,7 +92,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
             "l1", "l4", "l4plus", "l5", "n6", "u0", "u5", "wb", "wba", "wl5", "wle",
         ],
     ),
-    ("rng", &["v1", "v2", "v3"]),
+    ("rng", &["v1", "v2", "v3", "wba6"]),
     (
         "rtc",
         &[

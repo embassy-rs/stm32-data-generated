@@ -412,7 +412,7 @@ pub mod pka;
 pub mod pwr;
 #[path = "../../peripherals/rcc_wba.rs"]
 pub mod rcc;
-#[path = "../../peripherals/rng_v1.rs"]
+#[path = "../../peripherals/rng_v3.rs"]
 pub mod rng;
 #[path = "../../peripherals/rtc_v3u5.rs"]
 pub mod rtc;

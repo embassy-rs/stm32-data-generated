@@ -1811,7 +1811,7 @@
           "address": 1108084736,
           "registers": {
             "kind": "rng",
-            "version": "v1",
+            "version": "wba6",
             "block": "RNG"
           },
           "rcc": {

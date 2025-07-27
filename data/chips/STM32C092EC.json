@@ -1651,6 +1651,18 @@
             "version": "v1",
             "block": "TIM_2CH_CMP"
           },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": "PCLK1_TIM",
+            "enable": {
+              "register": "APBENR2",
+              "field": "TIM15EN"
+            },
+            "reset": {
+              "register": "APBRSTR2",
+              "field": "TIM15RST"
+            }
+          },
           "pins": [
             {
               "pin": "PA1",
@@ -2524,6 +2536,18 @@
             "version": "v4",
             "block": "USART"
           },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": "PCLK1",
+            "enable": {
+              "register": "APBENR1",
+              "field": "USART3EN"
+            },
+            "reset": {
+              "register": "APBRSTR1",
+              "field": "USART3RST"
+            }
+          },
           "pins": [
             {
               "pin": "PA15",
@@ -2605,6 +2629,18 @@
             "kind": "usart",
             "version": "v4",
             "block": "USART"
+          },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": "PCLK1",
+            "enable": {
+              "register": "APBENR1",
+              "field": "USART4EN"
+            },
+            "reset": {
+              "register": "APBRSTR1",
+              "field": "USART4RST"
+            }
           },
           "pins": [
             {

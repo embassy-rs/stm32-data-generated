@@ -272,6 +272,18 @@
         "bit_size": 1
       },
       {
+        "name": "USART3EN",
+        "description": "USART3 clock enable\r Set and cleared by software.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "USART4EN",
+        "description": "USART4 clock enable\r Set and cleared by software.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
         "name": "I2C1EN",
         "description": "I2C1 clock enable\r Set and cleared by software.",
         "bit_offset": 21,
@@ -328,6 +340,12 @@
         "name": "TIM14EN",
         "description": "TIM14 timer clock enable\r Set and cleared by software.",
         "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM15EN",
+        "description": "TIM15 timer clock enable\r Set and cleared by software.",
+        "bit_offset": 16,
         "bit_size": 1
       },
       {
@@ -390,6 +408,18 @@
         "bit_size": 1
       },
       {
+        "name": "USART3RST",
+        "description": "USART3 reset\r Set and cleared by software.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "USART4RST",
+        "description": "USART4 reset\r Set and cleared by software.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
         "name": "I2C1RST",
         "description": "I2C1 reset\r Set and cleared by software.",
         "bit_offset": 21,
@@ -446,6 +476,12 @@
         "name": "TIM14RST",
         "description": "TIM14 timer reset\r Set and cleared by software.",
         "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM15RST",
+        "description": "TIM15 timer reset\r Set and cleared by software.",
+        "bit_offset": 16,
         "bit_size": 1
       },
       {
@@ -520,6 +556,18 @@
         "bit_size": 1
       },
       {
+        "name": "USART3SMEN",
+        "description": "USART3 clock enable during Sleep and Stop modes\r Set and cleared by software.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "USART4SMEN",
+        "description": "USART4 clock enable during Sleep and Stop modes\r Set and cleared by software.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
         "name": "I2C1SMEN",
         "description": "I2C1 clock enable during Sleep and Stop modes\r Set and cleared by software.",
         "bit_offset": 21,
@@ -576,6 +624,12 @@
         "name": "TIM14SMEN",
         "description": "TIM14 timer clock enable during Sleep mode\r Set and cleared by software.",
         "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM15SMEN",
+        "description": "TIM15 timer clock enable during Sleep mode\r Set and cleared by software.",
+        "bit_offset": 16,
         "bit_size": 1
       },
       {

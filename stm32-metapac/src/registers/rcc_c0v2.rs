@@ -695,6 +695,34 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "usart3en",
+                    description: Some(
+                        "USART3 clock enable\r Set and cleared by software.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart4en",
+                    description: Some(
+                        "USART4 clock enable\r Set and cleared by software.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "i2c1en",
                     description: Some(
                         "I2C1 clock enable\r Set and cleared by software.",
@@ -824,6 +852,20 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 15,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim15en",
+                    description: Some(
+                        "TIM15 timer clock enable\r Set and cleared by software.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
                         },
                     ),
                     bit_size: 1,
@@ -967,6 +1009,34 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "usart3rst",
+                    description: Some(
+                        "USART3 reset\r Set and cleared by software.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart4rst",
+                    description: Some(
+                        "USART4 reset\r Set and cleared by software.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "i2c1rst",
                     description: Some(
                         "I2C1 reset\r Set and cleared by software.",
@@ -1096,6 +1166,20 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 15,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim15rst",
+                    description: Some(
+                        "TIM15 timer reset\r Set and cleared by software.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
                         },
                     ),
                     bit_size: 1,
@@ -1267,6 +1351,34 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "usart3smen",
+                    description: Some(
+                        "USART3 clock enable during Sleep and Stop modes\r Set and cleared by software.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "usart4smen",
+                    description: Some(
+                        "USART4 clock enable during Sleep and Stop modes\r Set and cleared by software.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "i2c1smen",
                     description: Some(
                         "I2C1 clock enable during Sleep and Stop modes\r Set and cleared by software.",
@@ -1396,6 +1508,20 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 15,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tim15smen",
+                    description: Some(
+                        "TIM15 timer clock enable during Sleep mode\r Set and cleared by software.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
                         },
                     ),
                     bit_size: 1,

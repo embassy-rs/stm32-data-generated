@@ -445,6 +445,18 @@
             "version": "fdcan_v1",
             "block": "FDCAN"
           },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": "PCLK1",
+            "enable": {
+              "register": "APBENR1",
+              "field": "FDCAN1EN"
+            },
+            "reset": {
+              "register": "APBRSTR1",
+              "field": "FDCAN1RST"
+            }
+          },
           "pins": [
             {
               "pin": "PA11",

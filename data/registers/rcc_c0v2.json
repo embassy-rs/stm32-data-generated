@@ -248,6 +248,12 @@
         "bit_size": 1
       },
       {
+        "name": "FDCAN1EN",
+        "description": "FDCAN1 clock enable\r Set and cleared by software.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
         "name": "USBEN",
         "description": "USB clock enable Set and cleared by software.",
         "bit_offset": 13,
@@ -381,6 +387,12 @@
         "name": "TIM3RST",
         "description": "TIM3 timer reset\r Set and cleared by software.",
         "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "FDCAN1RST",
+        "description": "FDCAN1 reset Set and cleared by software.",
+        "bit_offset": 12,
         "bit_size": 1
       },
       {
@@ -529,6 +541,12 @@
         "name": "WWDGSMEN",
         "description": "WWDG clock enable during Sleep and Stop modes\r Set and cleared by software.",
         "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "FDCAN1EN",
+        "description": "FDCAN1 clock enable during Sleep and Stop modes\r Set and cleared by software.",
+        "bit_offset": 12,
         "bit_size": 1
       },
       {

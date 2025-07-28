@@ -639,6 +639,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "fdcan1en",
+                    description: Some(
+                        "FDCAN1 clock enable\r Set and cleared by software.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "usben",
                     description: Some(
                         "USB clock enable Set and cleared by software.",
@@ -946,6 +960,20 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fdcan1rst",
+                    description: Some(
+                        "FDCAN1 reset Set and cleared by software.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
                         },
                     ),
                     bit_size: 1,
@@ -1288,6 +1316,20 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "fdcan1en",
+                    description: Some(
+                        "FDCAN1 clock enable during Sleep and Stop modes\r Set and cleared by software.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
                         },
                     ),
                     bit_size: 1,

@@ -396,6 +396,17 @@ pub mod regs {
         pub fn set_wwdgen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
+        #[doc = "FDCAN1 clock enable Set and cleared by software."]
+        #[inline(always)]
+        pub const fn fdcan1en(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FDCAN1 clock enable Set and cleared by software."]
+        #[inline(always)]
+        pub fn set_fdcan1en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
         #[doc = "USB clock enable Set and cleared by software."]
         #[inline(always)]
         pub const fn usben(&self) -> bool {
@@ -520,6 +531,7 @@ pub mod regs {
                 .field("tim3en", &self.tim3en())
                 .field("rtcapben", &self.rtcapben())
                 .field("wwdgen", &self.wwdgen())
+                .field("fdcan1en", &self.fdcan1en())
                 .field("usben", &self.usben())
                 .field("spi2en", &self.spi2en())
                 .field("crsen", &self.crsen())
@@ -536,7 +548,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apbenr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apbenr1 {{ tim2en: {=bool:?}, tim3en: {=bool:?}, rtcapben: {=bool:?}, wwdgen: {=bool:?}, usben: {=bool:?}, spi2en: {=bool:?}, crsen: {=bool:?}, usart2en: {=bool:?}, usart3en: {=bool:?}, usart4en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, dbgen: {=bool:?}, pwren: {=bool:?} }}" , self . tim2en () , self . tim3en () , self . rtcapben () , self . wwdgen () , self . usben () , self . spi2en () , self . crsen () , self . usart2en () , self . usart3en () , self . usart4en () , self . i2c1en () , self . i2c2en () , self . dbgen () , self . pwren ())
+            defmt :: write ! (f , "Apbenr1 {{ tim2en: {=bool:?}, tim3en: {=bool:?}, rtcapben: {=bool:?}, wwdgen: {=bool:?}, fdcan1en: {=bool:?}, usben: {=bool:?}, spi2en: {=bool:?}, crsen: {=bool:?}, usart2en: {=bool:?}, usart3en: {=bool:?}, usart4en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, dbgen: {=bool:?}, pwren: {=bool:?} }}" , self . tim2en () , self . tim3en () , self . rtcapben () , self . wwdgen () , self . fdcan1en () , self . usben () , self . spi2en () , self . crsen () , self . usart2en () , self . usart3en () , self . usart4en () , self . i2c1en () , self . i2c2en () , self . dbgen () , self . pwren ())
         }
     }
     #[doc = "RCC APB peripheral clock enable register 2"]
@@ -698,6 +710,17 @@ pub mod regs {
         pub fn set_tim3rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
+        #[doc = "FDCAN1 reset Set and cleared by software."]
+        #[inline(always)]
+        pub const fn fdcan1rst(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FDCAN1 reset Set and cleared by software."]
+        #[inline(always)]
+        pub fn set_fdcan1rst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
         #[doc = "USB reset Set and cleared by software. Note: Only applicable on STM32C071xx, reserved on other devices."]
         #[inline(always)]
         pub const fn usbrst(&self) -> bool {
@@ -820,6 +843,7 @@ pub mod regs {
             f.debug_struct("Apbrstr1")
                 .field("tim2rst", &self.tim2rst())
                 .field("tim3rst", &self.tim3rst())
+                .field("fdcan1rst", &self.fdcan1rst())
                 .field("usbrst", &self.usbrst())
                 .field("spi2rst", &self.spi2rst())
                 .field("crsrst", &self.crsrst())
@@ -836,7 +860,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apbrstr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apbrstr1 {{ tim2rst: {=bool:?}, tim3rst: {=bool:?}, usbrst: {=bool:?}, spi2rst: {=bool:?}, crsrst: {=bool:?}, usart2rst: {=bool:?}, usart3rst: {=bool:?}, usart4rst: {=bool:?}, i2c1rst: {=bool:?}, i2c2rst: {=bool:?}, dbgrst: {=bool:?}, pwrrst: {=bool:?} }}" , self . tim2rst () , self . tim3rst () , self . usbrst () , self . spi2rst () , self . crsrst () , self . usart2rst () , self . usart3rst () , self . usart4rst () , self . i2c1rst () , self . i2c2rst () , self . dbgrst () , self . pwrrst ())
+            defmt :: write ! (f , "Apbrstr1 {{ tim2rst: {=bool:?}, tim3rst: {=bool:?}, fdcan1rst: {=bool:?}, usbrst: {=bool:?}, spi2rst: {=bool:?}, crsrst: {=bool:?}, usart2rst: {=bool:?}, usart3rst: {=bool:?}, usart4rst: {=bool:?}, i2c1rst: {=bool:?}, i2c2rst: {=bool:?}, dbgrst: {=bool:?}, pwrrst: {=bool:?} }}" , self . tim2rst () , self . tim3rst () , self . fdcan1rst () , self . usbrst () , self . spi2rst () , self . crsrst () , self . usart2rst () , self . usart3rst () , self . usart4rst () , self . i2c1rst () , self . i2c2rst () , self . dbgrst () , self . pwrrst ())
         }
     }
     #[doc = "RCC APB peripheral reset register 2"]
@@ -1020,6 +1044,17 @@ pub mod regs {
         pub fn set_wwdgsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
+        #[doc = "FDCAN1 clock enable during Sleep and Stop modes Set and cleared by software."]
+        #[inline(always)]
+        pub const fn fdcan1en(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FDCAN1 clock enable during Sleep and Stop modes Set and cleared by software."]
+        #[inline(always)]
+        pub fn set_fdcan1en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
         #[doc = "USB clock enable during Sleep and Stop modes Set and cleared by software. Note: Only applicable on STM32C071xx, reserved on other devices."]
         #[inline(always)]
         pub const fn usbsmen(&self) -> bool {
@@ -1144,6 +1179,7 @@ pub mod regs {
                 .field("tim3smen", &self.tim3smen())
                 .field("rtcapbsmen", &self.rtcapbsmen())
                 .field("wwdgsmen", &self.wwdgsmen())
+                .field("fdcan1en", &self.fdcan1en())
                 .field("usbsmen", &self.usbsmen())
                 .field("spi2smen", &self.spi2smen())
                 .field("crssmen", &self.crssmen())
@@ -1160,7 +1196,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apbsmenr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apbsmenr1 {{ tim2smen: {=bool:?}, tim3smen: {=bool:?}, rtcapbsmen: {=bool:?}, wwdgsmen: {=bool:?}, usbsmen: {=bool:?}, spi2smen: {=bool:?}, crssmen: {=bool:?}, usart2smen: {=bool:?}, usart3smen: {=bool:?}, usart4smen: {=bool:?}, i2c1smen: {=bool:?}, i2c2smen: {=bool:?}, dbgsmen: {=bool:?}, pwrsmen: {=bool:?} }}" , self . tim2smen () , self . tim3smen () , self . rtcapbsmen () , self . wwdgsmen () , self . usbsmen () , self . spi2smen () , self . crssmen () , self . usart2smen () , self . usart3smen () , self . usart4smen () , self . i2c1smen () , self . i2c2smen () , self . dbgsmen () , self . pwrsmen ())
+            defmt :: write ! (f , "Apbsmenr1 {{ tim2smen: {=bool:?}, tim3smen: {=bool:?}, rtcapbsmen: {=bool:?}, wwdgsmen: {=bool:?}, fdcan1en: {=bool:?}, usbsmen: {=bool:?}, spi2smen: {=bool:?}, crssmen: {=bool:?}, usart2smen: {=bool:?}, usart3smen: {=bool:?}, usart4smen: {=bool:?}, i2c1smen: {=bool:?}, i2c2smen: {=bool:?}, dbgsmen: {=bool:?}, pwrsmen: {=bool:?} }}" , self . tim2smen () , self . tim3smen () , self . rtcapbsmen () , self . wwdgsmen () , self . fdcan1en () , self . usbsmen () , self . spi2smen () , self . crssmen () , self . usart2smen () , self . usart3smen () , self . usart4smen () , self . i2c1smen () , self . i2c2smen () , self . dbgsmen () , self . pwrsmen ())
         }
     }
     #[doc = "RCC APB peripheral clock enable in Sleep/Stop mode register 2"]

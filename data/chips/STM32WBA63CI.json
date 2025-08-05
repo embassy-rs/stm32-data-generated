@@ -1718,6 +1718,18 @@
               "signal": "B",
               "interrupt": "SAI1"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "A",
+              "dma": "GPDMA1",
+              "request": 17
+            },
+            {
+              "signal": "B",
+              "dma": "GPDMA1",
+              "request": 18
+            }
           ]
         },
         {

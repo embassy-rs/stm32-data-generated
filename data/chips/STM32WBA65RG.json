@@ -1214,6 +1214,23 @@
               "signal": "EV",
               "interrupt": "I2C2_EV"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dma": "GPDMA1",
+              "request": 54
+            },
+            {
+              "signal": "TX",
+              "dma": "GPDMA1",
+              "request": 55
+            },
+            {
+              "signal": "EVC",
+              "dma": "GPDMA1",
+              "request": 56
+            }
           ]
         },
         {
@@ -1342,6 +1359,23 @@
             {
               "signal": "EV",
               "interrupt": "I2C4_EV"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dma": "GPDMA1",
+              "request": 57
+            },
+            {
+              "signal": "TX",
+              "dma": "GPDMA1",
+              "request": 58
+            },
+            {
+              "signal": "EVC",
+              "dma": "GPDMA1",
+              "request": 59
             }
           ]
         },
@@ -2081,6 +2115,18 @@
               "signal": "B",
               "interrupt": "SAI1"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "A",
+              "dma": "GPDMA1",
+              "request": 17
+            },
+            {
+              "signal": "B",
+              "dma": "GPDMA1",
+              "request": 18
+            }
           ]
         },
         {
@@ -2241,6 +2287,18 @@
             {
               "signal": "GLOBAL",
               "interrupt": "SPI2"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dma": "GPDMA1",
+              "request": 52
+            },
+            {
+              "signal": "TX",
+              "dma": "GPDMA1",
+              "request": 53
             }
           ]
         },
@@ -3084,6 +3142,33 @@
               "signal": "UP",
               "interrupt": "TIM4"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "CH1",
+              "dma": "GPDMA1",
+              "request": 60
+            },
+            {
+              "signal": "CH2",
+              "dma": "GPDMA1",
+              "request": 61
+            },
+            {
+              "signal": "CH3",
+              "dma": "GPDMA1",
+              "request": 62
+            },
+            {
+              "signal": "CH4",
+              "dma": "GPDMA1",
+              "request": 63
+            },
+            {
+              "signal": "UPD",
+              "dma": "GPDMA1",
+              "request": 64
+            }
           ]
         },
         {
@@ -3596,6 +3681,18 @@
             {
               "signal": "GLOBAL",
               "interrupt": "USART3"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dma": "GPDMA1",
+              "request": 65
+            },
+            {
+              "signal": "TX",
+              "dma": "GPDMA1",
+              "request": 66
             }
           ]
         },

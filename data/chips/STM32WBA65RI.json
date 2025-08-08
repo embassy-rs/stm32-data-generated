@@ -3772,7 +3772,7 @@
           "address": 1174434816,
           "registers": {
             "kind": "vrefbuf",
-            "version": "v1",
+            "version": "v2a1",
             "block": "VREFBUF"
           }
         },

@@ -486,7 +486,7 @@ pub mod tsc;
 pub mod uid;
 #[path = "../../peripherals/usart_v4.rs"]
 pub mod usart;
-#[path = "../../peripherals/vrefbuf_v1.rs"]
+#[path = "../../peripherals/vrefbuf_v2a1.rs"]
 pub mod vrefbuf;
 #[path = "../../peripherals/wwdg_v2.rs"]
 pub mod wwdg;

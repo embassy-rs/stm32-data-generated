@@ -53,24 +53,24 @@ pub mod regs {
         pub fn set_inmsel(&mut self, val: super::vals::Inm) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val.to_bits() as u32) & 0x0f) << 4usize);
         }
-        #[doc = "Input plus selection bit."]
+        #[doc = "Input plus selection bits."]
         #[inline(always)]
         pub const fn inpsel(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x07;
             val as u8
         }
-        #[doc = "Input plus selection bit."]
+        #[doc = "Input plus selection bits."]
         #[inline(always)]
         pub fn set_inpsel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
         }
-        #[doc = "Comparator 1 noninverting input selector for window mode."]
+        #[doc = "Comparator noninverting input selector for window mode."]
         #[inline(always)]
         pub const fn winmode(&self) -> super::vals::WindowMode {
             let val = (self.0 >> 11usize) & 0x01;
             super::vals::WindowMode::from_bits(val as u8)
         }
-        #[doc = "Comparator 1 noninverting input selector for window mode."]
+        #[doc = "Comparator noninverting input selector for window mode."]
         #[inline(always)]
         pub fn set_winmode(&mut self, val: super::vals::WindowMode) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);

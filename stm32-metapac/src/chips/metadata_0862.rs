@@ -153,7 +153,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "COMP1",
         address: 0x46005400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "comp",
+            version: "u5",
+            block: "COMP",
+            ir: &comp::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK7",
             kernel_clock: Clock("PCLK7"),
@@ -198,7 +203,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "COMP2",
         address: 0x46005404,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "comp",
+            version: "u5",
+            block: "COMP",
+            ir: &comp::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK7",
             kernel_clock: Clock("PCLK7"),
@@ -4813,6 +4823,8 @@ pub mod adc;
 pub mod adccommon;
 #[path = "../registers/aes_v3b.rs"]
 pub mod aes;
+#[path = "../registers/comp_u5.rs"]
+pub mod comp;
 #[path = "../registers/crc_v3.rs"]
 pub mod crc;
 #[path = "../registers/dbgmcu_wba.rs"]

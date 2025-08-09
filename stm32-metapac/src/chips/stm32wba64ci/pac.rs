@@ -411,7 +411,7 @@ pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4600_2000usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4600_2400usize as _) };
 pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4600_2800usize as _) };
 pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4600_4400usize as _) };
-pub const COMP1: *mut () = 0x4600_5400usize as _;
+pub const COMP1: comp::Comp = unsafe { comp::Comp::from_ptr(0x4600_5400usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4600_7800usize as _) };
 pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4600_7c00usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4602_0800usize as _) };
@@ -433,6 +433,8 @@ pub mod adc;
 pub mod adccommon;
 #[path = "../../peripherals/aes_v3b.rs"]
 pub mod aes;
+#[path = "../../peripherals/comp_u5.rs"]
+pub mod comp;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/dbgmcu_wba.rs"]

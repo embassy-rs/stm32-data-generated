@@ -28,13 +28,13 @@
       },
       {
         "name": "INPSEL",
-        "description": "Input plus selection bit.",
+        "description": "Input plus selection bits.",
         "bit_offset": 8,
         "bit_size": 3
       },
       {
         "name": "WINMODE",
-        "description": "Comparator 1 noninverting input selector for window mode.",
+        "description": "Comparator noninverting input selector for window mode.",
         "bit_offset": 11,
         "bit_size": 1,
         "enum": "WindowMode"

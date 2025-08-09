@@ -41,7 +41,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             Field {
                 name: "inpsel",
-                description: Some("Input plus selection bit."),
+                description: Some("Input plus selection bits."),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                 bit_size: 3,
                 array: None,
@@ -49,7 +49,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             Field {
                 name: "winmode",
-                description: Some("Comparator 1 noninverting input selector for window mode."),
+                description: Some("Comparator noninverting input selector for window mode."),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                 bit_size: 1,
                 array: None,

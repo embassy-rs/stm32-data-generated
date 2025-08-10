@@ -529,7 +529,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Osr",
+                    ),
                 },
                 Field {
                     name: "mcken",
@@ -965,7 +967,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Micnbr",
+                    ),
                 },
                 Field {
                     name: "cken",
@@ -1271,14 +1275,14 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "READY",
                     description: Some(
-                        "External AC’97 Codec is ready",
+                        "External AC'97 Codec is ready",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "NOT_READY",
                     description: Some(
-                        "External AC’97 Codec is not ready",
+                        "External AC'97 Codec is not ready",
                     ),
                     value: 1,
                 },
@@ -1320,14 +1324,14 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "ONES_COMPLEMENT",
                     description: Some(
-                        "1’s complement representation",
+                        "1's complement representation",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "TWOS_COMPLEMENT",
                     description: Some(
-                        "2’s complement representation",
+                        "2's complement representation",
                     ),
                     value: 1,
                 },
@@ -1397,28 +1401,28 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "QUARTER1",
                     description: Some(
-                        "FIFO <= 1⁄4 but not empty",
+                        "FIFO <= 1/4 but not empty",
                     ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "QUARTER2",
                     description: Some(
-                        "1⁄4 < FIFO <= 1⁄2",
+                        "1/4 < FIFO <= 1/2",
                     ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "QUARTER3",
                     description: Some(
-                        "1⁄2 < FIFO <= 3⁄4",
+                        "1/2 < FIFO <= 3/4",
                     ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "QUARTER4",
                     description: Some(
-                        "3⁄4 < FIFO but not full",
+                        "3/4 < FIFO but not full",
                     ),
                     value: 4,
                 },
@@ -1488,21 +1492,21 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "QUARTER1",
                     description: Some(
-                        "1⁄4 FIFO",
+                        "1/4 FIFO",
                     ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "QUARTER2",
                     description: Some(
-                        "1⁄2 FIFO",
+                        "1/2 FIFO",
                     ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "QUARTER3",
                     description: Some(
-                        "3⁄4 FIFO",
+                        "3/4 FIFO",
                     ),
                     value: 3,
                 },
@@ -1533,6 +1537,41 @@ pub(crate) static REGISTERS: IR = IR {
                         "Data are transferred with LSB first",
                     ),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Micnbr",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "_2MICS",
+                    description: Some(
+                        "Configuration with 2 microphones",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "_4MICS",
+                    description: Some(
+                        "Configuration with 4 microphones",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "_6MICS",
+                    description: Some(
+                        "Configuration with 6 microphones",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "_8MICS",
+                    description: Some(
+                        "Configuration with 8 microphones",
+                    ),
+                    value: 3,
                 },
             ],
         },
@@ -1635,6 +1674,27 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Osr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "LESS_THAN256",
+                    description: Some(
+                        "Master clock frequency = Fless thansub FSless than/sub x 256",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LESS_THAN512",
+                    description: Some(
+                        "Master clock frequency = Fless thansub FSless than/sub x 512",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
             name: "Outdriv",
             description: None,
             bit_size: 1,
@@ -1677,7 +1737,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "AC97",
                     description: Some(
-                        "AC’97 protocol",
+                        "AC'97 protocol",
                     ),
                     value: 2,
                 },

@@ -342,14 +342,14 @@ bits must be configured before setting DMAEN to avoid a DMA request in receiver 
         }
         #[doc = "Oversampling ratio for master clock"]
         #[inline(always)]
-        pub const fn osr(&self) -> bool {
+        pub const fn osr(&self) -> super::vals::Osr {
             let val = (self.0 >> 26usize) & 0x01;
-            val != 0
+            super::vals::Osr::from_bits(val as u8)
         }
         #[doc = "Oversampling ratio for master clock"]
         #[inline(always)]
-        pub fn set_osr(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        pub fn set_osr(&mut self, val: super::vals::Osr) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
         }
         #[doc = "Master clock generation enable"]
         #[inline(always)]
@@ -392,7 +392,7 @@ bits must be configured before setting DMAEN to avoid a DMA request in receiver 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ mode: {:?}, prtcfg: {:?}, ds: {:?}, lsbfirst: {:?}, ckstr: {:?}, syncen: {:?}, mono: {:?}, outdriv: {:?}, saien: {=bool:?}, dmaen: {=bool:?}, nodiv: {:?}, mckdiv: {=u8:?}, osr: {=bool:?}, mcken: {=bool:?} }}" , self . mode () , self . prtcfg () , self . ds () , self . lsbfirst () , self . ckstr () , self . syncen () , self . mono () , self . outdriv () , self . saien () , self . dmaen () , self . nodiv () , self . mckdiv () , self . osr () , self . mcken ())
+            defmt :: write ! (f , "Cr1 {{ mode: {:?}, prtcfg: {:?}, ds: {:?}, lsbfirst: {:?}, ckstr: {:?}, syncen: {:?}, mono: {:?}, outdriv: {:?}, saien: {=bool:?}, dmaen: {=bool:?}, nodiv: {:?}, mckdiv: {=u8:?}, osr: {:?}, mcken: {=bool:?} }}" , self . mode () , self . prtcfg () , self . ds () , self . lsbfirst () , self . ckstr () , self . syncen () , self . mono () , self . outdriv () , self . saien () , self . dmaen () , self . nodiv () , self . mckdiv () , self . osr () , self . mcken ())
         }
     }
     #[doc = "Configuration register 2"]
@@ -832,14 +832,14 @@ bits and the audio block is operates as a receiver."]
         }
         #[doc = "Number of microphones"]
         #[inline(always)]
-        pub const fn micnbr(&self) -> u8 {
+        pub const fn micnbr(&self) -> super::vals::Micnbr {
             let val = (self.0 >> 4usize) & 0x03;
-            val as u8
+            super::vals::Micnbr::from_bits(val as u8)
         }
         #[doc = "Number of microphones"]
         #[inline(always)]
-        pub fn set_micnbr(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+        pub fn set_micnbr(&mut self, val: super::vals::Micnbr) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "Clock enable of bitstream clock number 1"]
         #[inline(always)]
@@ -878,7 +878,7 @@ bits and the audio block is operates as a receiver."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Pdmcr {{ pdmen: {=bool:?}, micnbr: {=u8:?}, cken[0]: {=bool:?}, cken[1]: {=bool:?} }}",
+                "Pdmcr {{ pdmen: {=bool:?}, micnbr: {:?}, cken[0]: {=bool:?}, cken[1]: {=bool:?} }}",
                 self.pdmen(),
                 self.micnbr(),
                 self.cken(0usize),
@@ -1186,9 +1186,9 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cnrdy {
-        #[doc = "External AC’97 Codec is ready"]
+        #[doc = "External AC'97 Codec is ready"]
         READY = 0x0,
-        #[doc = "External AC’97 Codec is not ready"]
+        #[doc = "External AC'97 Codec is not ready"]
         NOT_READY = 0x01,
     }
     impl Cnrdy {
@@ -1251,9 +1251,9 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpl {
-        #[doc = "1’s complement representation"]
+        #[doc = "1's complement representation"]
         ONES_COMPLEMENT = 0x0,
-        #[doc = "2’s complement representation"]
+        #[doc = "2's complement representation"]
         TWOS_COMPLEMENT = 0x01,
     }
     impl Cpl {
@@ -1325,13 +1325,13 @@ pub mod vals {
     pub enum Flvl {
         #[doc = "FIFO empty"]
         EMPTY = 0x0,
-        #[doc = "FIFO <= 1⁄4 but not empty"]
+        #[doc = "FIFO <= 1/4 but not empty"]
         QUARTER1 = 0x01,
-        #[doc = "1⁄4 < FIFO <= 1⁄2"]
+        #[doc = "1/4 < FIFO <= 1/2"]
         QUARTER2 = 0x02,
-        #[doc = "1⁄2 < FIFO <= 3⁄4"]
+        #[doc = "1/2 < FIFO <= 3/4"]
         QUARTER3 = 0x03,
-        #[doc = "3⁄4 < FIFO but not full"]
+        #[doc = "3/4 < FIFO but not full"]
         QUARTER4 = 0x04,
         #[doc = "FIFO full"]
         FULL = 0x05,
@@ -1428,11 +1428,11 @@ pub mod vals {
     pub enum Fth {
         #[doc = "FIFO empty"]
         EMPTY = 0x0,
-        #[doc = "1⁄4 FIFO"]
+        #[doc = "1/4 FIFO"]
         QUARTER1 = 0x01,
-        #[doc = "1⁄2 FIFO"]
+        #[doc = "1/2 FIFO"]
         QUARTER2 = 0x02,
-        #[doc = "3⁄4 FIFO"]
+        #[doc = "3/4 FIFO"]
         QUARTER3 = 0x03,
         #[doc = "FIFO full"]
         FULL = 0x04,
@@ -1491,6 +1491,41 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Lsbfirst) -> u8 {
             Lsbfirst::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Micnbr {
+        #[doc = "Configuration with 2 microphones"]
+        _2MICS = 0x0,
+        #[doc = "Configuration with 4 microphones"]
+        _4MICS = 0x01,
+        #[doc = "Configuration with 6 microphones"]
+        _6MICS = 0x02,
+        #[doc = "Configuration with 8 microphones"]
+        _8MICS = 0x03,
+    }
+    impl Micnbr {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Micnbr {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Micnbr {
+        #[inline(always)]
+        fn from(val: u8) -> Micnbr {
+            Micnbr::from_bits(val)
+        }
+    }
+    impl From<Micnbr> for u8 {
+        #[inline(always)]
+        fn from(val: Micnbr) -> u8 {
+            Micnbr::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1624,6 +1659,37 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Osr {
+        #[doc = "Master clock frequency = Fless thansub FSless than/sub x 256"]
+        LESS_THAN256 = 0x0,
+        #[doc = "Master clock frequency = Fless thansub FSless than/sub x 512"]
+        LESS_THAN512 = 0x01,
+    }
+    impl Osr {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Osr {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Osr {
+        #[inline(always)]
+        fn from(val: u8) -> Osr {
+            Osr::from_bits(val)
+        }
+    }
+    impl From<Osr> for u8 {
+        #[inline(always)]
+        fn from(val: Osr) -> u8 {
+            Osr::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Outdriv {
         #[doc = "Audio block output driven when SAIEN is set"]
         ON_START = 0x0,
@@ -1660,7 +1726,7 @@ pub mod vals {
         FREE = 0x0,
         #[doc = "SPDIF protocol"]
         SPDIF = 0x01,
-        #[doc = "AC’97 protocol"]
+        #[doc = "AC'97 protocol"]
         AC97 = 0x02,
         _RESERVED_3 = 0x03,
     }

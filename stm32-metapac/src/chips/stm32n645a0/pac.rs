@@ -844,7 +844,7 @@ pub const SPI4: spi::Spi = unsafe { spi::Spi::from_ptr(0x4200_3400usize as _) };
 pub const TIM18: *mut () = 0x4200_3c00usize as _;
 pub const TIM15: *mut () = 0x4200_4000usize as _;
 pub const TIM16: *mut () = 0x4200_4400usize as _;
-pub const TIM9: *mut () = 0x4200_4c00usize as _;
+pub const TIM9: timer::Tim2ch = unsafe { timer::Tim2ch::from_ptr(0x4200_4c00usize as _) };
 pub const SPI5: spi::Spi = unsafe { spi::Spi::from_ptr(0x4200_5000usize as _) };
 pub const SAI1: *mut () = 0x4200_5800usize as _;
 pub const SAI2: *mut () = 0x4200_5c00usize as _;
@@ -935,6 +935,8 @@ pub mod pssi;
 pub mod rcc;
 #[path = "../../peripherals/spi_v4.rs"]
 pub mod spi;
+#[path = "../../peripherals/timer_v1.rs"]
+pub mod timer;
 #[path = "../../peripherals/ucpd_v1.rs"]
 pub mod ucpd;
 #[path = "../../peripherals/uid_v1.rs"]

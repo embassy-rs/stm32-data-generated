@@ -9832,6 +9832,11 @@
         {
           "name": "TIM9",
           "address": 1107315712,
+          "registers": {
+            "kind": "timer",
+            "version": "v1",
+            "block": "TIM_2CH"
+          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": "PCLK2_TIM",

@@ -8304,7 +8304,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "TIM9",
         address: 0x42004c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "timer",
+            version: "v1",
+            block: "TIM_2CH",
+            ir: &timer::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
             kernel_clock: Clock("PCLK2_TIM"),
@@ -10667,6 +10672,8 @@ pub mod pssi;
 pub mod rcc;
 #[path = "../registers/spi_v4.rs"]
 pub mod spi;
+#[path = "../registers/timer_v1.rs"]
+pub mod timer;
 #[path = "../registers/ucpd_v1.rs"]
 pub mod ucpd;
 #[path = "../registers/uid_v1.rs"]

@@ -160,13 +160,13 @@ pub mod regs {
         #[doc = "Algorithm selection."]
         #[inline(always)]
         pub const fn algo(&self) -> u8 {
-            let val = (self.0 >> 17usize) & 0x03;
+            let val = (self.0 >> 17usize) & 0x0f;
             val as u8
         }
         #[doc = "Algorithm selection."]
         #[inline(always)]
         pub fn set_algo(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 17usize)) | (((val as u32) & 0x03) << 17usize);
+            self.0 = (self.0 & !(0x0f << 17usize)) | (((val as u32) & 0x0f) << 17usize);
         }
     }
     impl Default for Cr {

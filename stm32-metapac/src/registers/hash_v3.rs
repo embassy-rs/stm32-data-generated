@@ -171,7 +171,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "algo",
                     description: Some("Algorithm selection."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
-                    bit_size: 2,
+                    bit_size: 4,
                     array: None,
                     enumm: None,
                 },

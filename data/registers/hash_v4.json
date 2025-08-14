@@ -117,7 +117,7 @@
         "name": "ALGO",
         "description": "Algorithm selection.",
         "bit_offset": 17,
-        "bit_size": 2
+        "bit_size": 4
       }
     ]
   },

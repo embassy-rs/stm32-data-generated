@@ -732,7 +732,34 @@
               "signal": "TX",
               "interrupt": "USB_HP_CAN1_TX"
             }
-          ]
+          ],
+          "afio": {
+            "register": "MAPR",
+            "field": "CAN1_REMAP",
+            "values": [
+              {
+                "value": 0,
+                "pins": [
+                  "PA11",
+                  "PA12"
+                ]
+              },
+              {
+                "value": 2,
+                "pins": [
+                  "PB8",
+                  "PB9"
+                ]
+              },
+              {
+                "value": 3,
+                "pins": [
+                  "PD0",
+                  "PD1"
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "CRC",
@@ -1042,7 +1069,27 @@
               "signal": "RX",
               "channel": "DMA1_CH7"
             }
-          ]
+          ],
+          "afio": {
+            "register": "MAPR",
+            "field": "I2C1_REMAP",
+            "values": [
+              {
+                "value": 0,
+                "pins": [
+                  "PB6",
+                  "PB7"
+                ]
+              },
+              {
+                "value": 1,
+                "pins": [
+                  "PB8",
+                  "PB9"
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "IWDG",
@@ -1203,7 +1250,31 @@
               "signal": "TX",
               "channel": "DMA1_CH3"
             }
-          ]
+          ],
+          "afio": {
+            "register": "MAPR",
+            "field": "SPI1_REMAP",
+            "values": [
+              {
+                "value": 0,
+                "pins": [
+                  "PA4",
+                  "PA5",
+                  "PA6",
+                  "PA7"
+                ]
+              },
+              {
+                "value": 1,
+                "pins": [
+                  "PA15",
+                  "PB3",
+                  "PB4",
+                  "PB5"
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "TIM1",
@@ -1314,7 +1385,55 @@
               "signal": "CH3",
               "channel": "DMA1_CH6"
             }
-          ]
+          ],
+          "afio": {
+            "register": "MAPR",
+            "field": "TIM1_REMAP",
+            "values": [
+              {
+                "value": 0,
+                "pins": [
+                  "PA12",
+                  "PA8",
+                  "PA9",
+                  "PA10",
+                  "PA11",
+                  "PB12",
+                  "PB13",
+                  "PB14",
+                  "PB15"
+                ]
+              },
+              {
+                "value": 1,
+                "pins": [
+                  "PA12",
+                  "PA8",
+                  "PA9",
+                  "PA10",
+                  "PA11",
+                  "PA6",
+                  "PA7",
+                  "PB0",
+                  "PB1"
+                ]
+              },
+              {
+                "value": 3,
+                "pins": [
+                  "PE7",
+                  "PE9",
+                  "PE11",
+                  "PE13",
+                  "PE14",
+                  "PE15",
+                  "PE8",
+                  "PE10",
+                  "PE12"
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "TIM2",
@@ -1413,7 +1532,49 @@
               "signal": "CH4",
               "channel": "DMA1_CH7"
             }
-          ]
+          ],
+          "afio": {
+            "register": "MAPR",
+            "field": "TIM2_REMAP",
+            "values": [
+              {
+                "value": 0,
+                "pins": [
+                  "PA0",
+                  "PA1",
+                  "PA2",
+                  "PA3"
+                ]
+              },
+              {
+                "value": 1,
+                "pins": [
+                  "PA15",
+                  "PB3",
+                  "PA2",
+                  "PA3"
+                ]
+              },
+              {
+                "value": 2,
+                "pins": [
+                  "PA0",
+                  "PA1",
+                  "PB10",
+                  "PB11"
+                ]
+              },
+              {
+                "value": 3,
+                "pins": [
+                  "PA15",
+                  "PB3",
+                  "PB10",
+                  "PB11"
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "TIM3",
@@ -1504,7 +1665,43 @@
               "signal": "TRIG",
               "channel": "DMA1_CH6"
             }
-          ]
+          ],
+          "afio": {
+            "register": "MAPR",
+            "field": "TIM3_REMAP",
+            "values": [
+              {
+                "value": 0,
+                "pins": [
+                  "PD2",
+                  "PA6",
+                  "PA7",
+                  "PB0",
+                  "PB1"
+                ]
+              },
+              {
+                "value": 2,
+                "pins": [
+                  "PD2",
+                  "PB4",
+                  "PB5",
+                  "PB0",
+                  "PB1"
+                ]
+              },
+              {
+                "value": 3,
+                "pins": [
+                  "PD2",
+                  "PC6",
+                  "PC7",
+                  "PC8",
+                  "PC9"
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "UID",
@@ -1580,7 +1777,33 @@
               "signal": "RX",
               "channel": "DMA1_CH5"
             }
-          ]
+          ],
+          "afio": {
+            "register": "MAPR",
+            "field": "USART1_REMAP",
+            "values": [
+              {
+                "value": 0,
+                "pins": [
+                  "PA11",
+                  "PA12",
+                  "PA8",
+                  "PA9",
+                  "PA10"
+                ]
+              },
+              {
+                "value": 1,
+                "pins": [
+                  "PA11",
+                  "PA12",
+                  "PA8",
+                  "PB6",
+                  "PB7"
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "USART2",
@@ -1639,7 +1862,33 @@
               "signal": "TX",
               "channel": "DMA1_CH7"
             }
-          ]
+          ],
+          "afio": {
+            "register": "MAPR",
+            "field": "USART2_REMAP",
+            "values": [
+              {
+                "value": 0,
+                "pins": [
+                  "PA0",
+                  "PA1",
+                  "PA2",
+                  "PA3",
+                  "PA4"
+                ]
+              },
+              {
+                "value": 1,
+                "pins": [
+                  "PD3",
+                  "PD4",
+                  "PD5",
+                  "PD6",
+                  "PD7"
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "USB",

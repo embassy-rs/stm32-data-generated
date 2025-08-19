@@ -116,6 +116,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "ADC1_2",
         }],
+        afio: None,
     },
     Peripheral {
         name: "ADC12_COMMON",
@@ -125,6 +126,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "ADC2",
@@ -235,6 +237,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "ADC1_2",
         }],
+        afio: None,
     },
     Peripheral {
         name: "ADC3",
@@ -312,6 +315,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "ADC3",
         }],
+        afio: None,
     },
     Peripheral {
         name: "AFIO",
@@ -338,6 +342,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "BKP",
@@ -364,6 +369,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "CAN",
@@ -428,6 +434,24 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "USB_HP_CAN1_TX",
             },
         ],
+        afio: Some(PeripheralAfio {
+            register: "MAPR",
+            field: "CAN1_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PA11", "PA12"],
+                },
+                PeripheralAfioValue {
+                    value: 2,
+                    pins: &["PB8", "PB9"],
+                },
+                PeripheralAfioValue {
+                    value: 3,
+                    pins: &["PD0", "PD1"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "CRC",
@@ -451,6 +475,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "DAC1",
@@ -505,6 +530,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
         ],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "DBGMCU",
@@ -519,6 +545,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "DMA1",
@@ -571,6 +598,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "DMA1_CHANNEL7",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "DMA2",
@@ -615,6 +643,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "DMA2_CHANNEL4_5",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "EXTI",
@@ -694,6 +723,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "EXTI9_5",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "FLASH",
@@ -720,6 +750,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "FLASH",
         }],
+        afio: None,
     },
     Peripheral {
         name: "GPIOA",
@@ -746,6 +777,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "GPIOB",
@@ -772,6 +804,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "GPIOC",
@@ -798,6 +831,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "GPIOD",
@@ -824,6 +858,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "GPIOE",
@@ -850,6 +885,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "GPIOF",
@@ -876,6 +912,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "GPIOG",
@@ -902,6 +939,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "I2C1",
@@ -980,6 +1018,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "I2C1_EV",
             },
         ],
+        afio: Some(PeripheralAfio {
+            register: "MAPR",
+            field: "I2C1_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PB6", "PB7"],
+                },
+                PeripheralAfioValue {
+                    value: 1,
+                    pins: &["PB8", "PB9"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "I2C2",
@@ -1048,6 +1100,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "I2C2_EV",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "IWDG",
@@ -1062,6 +1115,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "PWR",
@@ -1088,6 +1142,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "RCC",
@@ -1131,6 +1186,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "RCC",
         }],
+        afio: None,
     },
     Peripheral {
         name: "RTC",
@@ -1177,6 +1233,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "RTC",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "SDIO",
@@ -1261,6 +1318,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "SDIO",
         }],
+        afio: None,
     },
     Peripheral {
         name: "SPI1",
@@ -1348,6 +1406,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "SPI1",
         }],
+        afio: Some(PeripheralAfio {
+            register: "MAPR",
+            field: "SPI1_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PA4", "PA5", "PA6", "PA7"],
+                },
+                PeripheralAfioValue {
+                    value: 1,
+                    pins: &["PA15", "PB3", "PB4", "PB5"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "SPI2",
@@ -1435,6 +1507,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "SPI2",
         }],
+        afio: None,
     },
     Peripheral {
         name: "SPI3",
@@ -1522,6 +1595,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "SPI3",
         }],
+        afio: Some(PeripheralAfio {
+            register: "MAPR",
+            field: "SPI3_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PC7", "PA15", "PB3", "PB4", "PB5"],
+                },
+                PeripheralAfioValue {
+                    value: 1,
+                    pins: &["PC7", "PA4", "PC10", "PC11", "PC12"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "TIM1",
@@ -1692,6 +1779,24 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM1_UP_TIM10",
             },
         ],
+        afio: Some(PeripheralAfio {
+            register: "MAPR",
+            field: "TIM1_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PA12", "PA8", "PA9", "PA10", "PA11", "PB12", "PB13", "PB14", "PB15"],
+                },
+                PeripheralAfioValue {
+                    value: 1,
+                    pins: &["PA12", "PA8", "PA9", "PA10", "PA11", "PA6", "PA7", "PB0", "PB1"],
+                },
+                PeripheralAfioValue {
+                    value: 3,
+                    pins: &["PE7", "PE9", "PE11", "PE13", "PE14", "PE15", "PE8", "PE10", "PE12"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "TIM10",
@@ -1743,6 +1848,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM1_UP_TIM10",
             },
         ],
+        afio: Some(PeripheralAfio {
+            register: "MAPR2",
+            field: "TIM10_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PB8"],
+                },
+                PeripheralAfioValue {
+                    value: 1,
+                    pins: &["PF6"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "TIM11",
@@ -1794,6 +1913,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM1_TRG_COM_TIM11",
             },
         ],
+        afio: Some(PeripheralAfio {
+            register: "MAPR2",
+            field: "TIM11_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PB9"],
+                },
+                PeripheralAfioValue {
+                    value: 1,
+                    pins: &["PF7"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "TIM12",
@@ -1852,6 +1985,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM8_BRK_TIM12",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM13",
@@ -1903,6 +2037,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM8_UP_TIM13",
             },
         ],
+        afio: Some(PeripheralAfio {
+            register: "MAPR2",
+            field: "TIM13_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PA6"],
+                },
+                PeripheralAfioValue {
+                    value: 1,
+                    pins: &["PF8"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "TIM14",
@@ -1954,6 +2102,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM8_TRG_COM_TIM14",
             },
         ],
+        afio: Some(PeripheralAfio {
+            register: "MAPR2",
+            field: "TIM14_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PA7"],
+                },
+                PeripheralAfioValue {
+                    value: 1,
+                    pins: &["PF9"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "TIM2",
@@ -2093,6 +2255,28 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM2",
             },
         ],
+        afio: Some(PeripheralAfio {
+            register: "MAPR",
+            field: "TIM2_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PA0", "PA1", "PA2", "PA3"],
+                },
+                PeripheralAfioValue {
+                    value: 1,
+                    pins: &["PA15", "PB3", "PA2", "PA3"],
+                },
+                PeripheralAfioValue {
+                    value: 2,
+                    pins: &["PA0", "PA1", "PB10", "PB11"],
+                },
+                PeripheralAfioValue {
+                    value: 3,
+                    pins: &["PA15", "PB3", "PB10", "PB11"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "TIM3",
@@ -2237,6 +2421,24 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM3",
             },
         ],
+        afio: Some(PeripheralAfio {
+            register: "MAPR",
+            field: "TIM3_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PD2", "PA6", "PA7", "PB0", "PB1"],
+                },
+                PeripheralAfioValue {
+                    value: 2,
+                    pins: &["PD2", "PB4", "PB5", "PB0", "PB1"],
+                },
+                PeripheralAfioValue {
+                    value: 3,
+                    pins: &["PD2", "PC6", "PC7", "PC8", "PC9"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "TIM4",
@@ -2338,6 +2540,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM4",
             },
         ],
+        afio: Some(PeripheralAfio {
+            register: "MAPR",
+            field: "TIM4_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PE0", "PB6", "PB7", "PB8", "PB9"],
+                },
+                PeripheralAfioValue {
+                    value: 1,
+                    pins: &["PE0", "PD12", "PD13", "PD14", "PD15"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "TIM5",
@@ -2455,6 +2671,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM5",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM6",
@@ -2509,6 +2726,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM6",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM7",
@@ -2563,6 +2781,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM7",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM8",
@@ -2713,6 +2932,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM8_UP_TIM13",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM9",
@@ -2771,6 +2991,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM1_BRK_TIM9",
             },
         ],
+        afio: Some(PeripheralAfio {
+            register: "MAPR2",
+            field: "TIM9_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PA2", "PA3"],
+                },
+                PeripheralAfioValue {
+                    value: 1,
+                    pins: &["PE5", "PE6"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "UART4",
@@ -2828,6 +3062,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "UART4",
         }],
+        afio: None,
     },
     Peripheral {
         name: "UART5",
@@ -2868,6 +3103,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "UART5",
         }],
+        afio: None,
     },
     Peripheral {
         name: "UID",
@@ -2882,6 +3118,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "USART1",
@@ -2964,6 +3201,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "USART1",
         }],
+        afio: Some(PeripheralAfio {
+            register: "MAPR",
+            field: "USART1_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PA11", "PA12", "PA8", "PA9", "PA10"],
+                },
+                PeripheralAfioValue {
+                    value: 1,
+                    pins: &["PA11", "PA12", "PA8", "PB6", "PB7"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "USART2",
@@ -3036,6 +3287,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "USART2",
         }],
+        afio: Some(PeripheralAfio {
+            register: "MAPR",
+            field: "USART2_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PA0", "PA1", "PA2", "PA3", "PA4"],
+                },
+                PeripheralAfioValue {
+                    value: 1,
+                    pins: &["PD3", "PD4", "PD5", "PD6", "PD7"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "USART3",
@@ -3123,6 +3388,24 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "USART3",
         }],
+        afio: Some(PeripheralAfio {
+            register: "MAPR",
+            field: "USART3_REMAP",
+            values: &[
+                PeripheralAfioValue {
+                    value: 0,
+                    pins: &["PB10", "PB11", "PB12", "PB13", "PB14"],
+                },
+                PeripheralAfioValue {
+                    value: 1,
+                    pins: &["PC10", "PC11", "PC12", "PB13", "PB14"],
+                },
+                PeripheralAfioValue {
+                    value: 3,
+                    pins: &["PD8", "PD9", "PD10", "PD11", "PD12"],
+                },
+            ],
+        }),
     },
     Peripheral {
         name: "USB",
@@ -3173,6 +3456,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "USBWAKEUP",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "USBRAM",
@@ -3187,6 +3471,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "WWDG",
@@ -3222,6 +3507,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "WWDG",
             },
         ],
+        afio: None,
     },
 ];
 pub(crate) static INTERRUPTS: &[Interrupt] = &[

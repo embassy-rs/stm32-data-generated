@@ -139,6 +139,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "ADC",
         }],
+        afio: None,
     },
     Peripheral {
         name: "ADC12_COMMON",
@@ -153,6 +154,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "ADC2",
@@ -278,6 +280,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "ADC",
         }],
+        afio: None,
     },
     Peripheral {
         name: "ADC3",
@@ -358,6 +361,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "ADC3",
         }],
+        afio: None,
     },
     Peripheral {
         name: "ADC3_COMMON",
@@ -372,6 +376,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "BDMA",
@@ -431,6 +436,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "BDMA_CHANNEL7",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "CEC",
@@ -474,6 +480,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "CEC",
         }],
+        afio: None,
     },
     Peripheral {
         name: "COMP1",
@@ -522,6 +529,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "WKUP",
             interrupt: "COMP",
         }],
+        afio: None,
     },
     Peripheral {
         name: "COMP2",
@@ -570,6 +578,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "WKUP",
             interrupt: "COMP",
         }],
+        afio: None,
     },
     Peripheral {
         name: "CORDIC",
@@ -616,6 +625,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "CORDIC",
         }],
+        afio: None,
     },
     Peripheral {
         name: "CRC",
@@ -642,6 +652,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "CRS",
@@ -672,6 +683,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "DAC1",
@@ -729,6 +741,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "TIM6_DAC",
         }],
+        afio: None,
     },
     Peripheral {
         name: "DBGMCU",
@@ -743,6 +756,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "DCMI",
@@ -915,6 +929,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "DCMI_PSSI",
         }],
+        afio: None,
     },
     Peripheral {
         name: "DFSDM1",
@@ -1215,6 +1230,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "DFSDM1_FLT3",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "DMA1",
@@ -1274,6 +1290,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "DMA1_STREAM7",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "DMA2",
@@ -1333,6 +1350,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "DMA2_STREAM7",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "DMA2D",
@@ -1362,6 +1380,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "DMA2D",
         }],
+        afio: None,
     },
     Peripheral {
         name: "DMAMUX1",
@@ -1379,6 +1398,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "OVR",
             interrupt: "DMAMUX1_OVR",
         }],
+        afio: None,
     },
     Peripheral {
         name: "DMAMUX2",
@@ -1396,6 +1416,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "OVR",
             interrupt: "DMAMUX2_OVR",
         }],
+        afio: None,
     },
     Peripheral {
         name: "DTS",
@@ -1425,6 +1446,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "DTS",
         }],
+        afio: None,
     },
     Peripheral {
         name: "ETH",
@@ -1576,6 +1598,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "ETH_WKUP",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "EXTI",
@@ -1655,6 +1678,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "EXTI9_5",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "FDCAN1",
@@ -1728,6 +1752,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "FDCAN1_IT1",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "FDCAN2",
@@ -1791,6 +1816,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "FDCAN2_IT1",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "FDCAN3",
@@ -1840,6 +1866,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "FDCAN3_IT1",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "FDCANRAM",
@@ -1854,6 +1881,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "FLASH",
@@ -1871,6 +1899,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "FLASH",
         }],
+        afio: None,
     },
     Peripheral {
         name: "FMAC",
@@ -1917,6 +1946,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "FMAC",
         }],
+        afio: None,
     },
     Peripheral {
         name: "FMC",
@@ -2350,6 +2380,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "FMC",
         }],
+        afio: None,
     },
     Peripheral {
         name: "GPIOA",
@@ -2376,6 +2407,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "GPIOB",
@@ -2402,6 +2434,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "GPIOC",
@@ -2428,6 +2461,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "GPIOD",
@@ -2454,6 +2488,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "GPIOE",
@@ -2480,6 +2515,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "GPIOF",
@@ -2506,6 +2542,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "GPIOG",
@@ -2532,6 +2569,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "GPIOH",
@@ -2558,6 +2596,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "GPIOJ",
@@ -2584,6 +2623,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "GPIOK",
@@ -2610,6 +2650,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "HSEM",
@@ -2631,6 +2672,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "I2C1",
@@ -2712,6 +2754,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "I2C1_EV",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "I2C2",
@@ -2783,6 +2826,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "I2C2_EV",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "I2C3",
@@ -2854,6 +2898,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "I2C3_EV",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "I2C4",
@@ -2955,6 +3000,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "I2C4_EV",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "I2C5",
@@ -3041,6 +3087,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "I2C5_EV",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "IWDG1",
@@ -3055,6 +3102,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "LPTIM1",
@@ -3108,6 +3156,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "LPTIM1",
         }],
+        afio: None,
     },
     Peripheral {
         name: "LPTIM2",
@@ -3171,6 +3220,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "LPTIM2",
         }],
+        afio: None,
     },
     Peripheral {
         name: "LPTIM3",
@@ -3204,6 +3254,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "LPTIM3",
         }],
+        afio: None,
     },
     Peripheral {
         name: "LPTIM4",
@@ -3237,6 +3288,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "LPTIM4",
         }],
+        afio: None,
     },
     Peripheral {
         name: "LPTIM5",
@@ -3270,6 +3322,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "LPTIM5",
         }],
+        afio: None,
     },
     Peripheral {
         name: "LPUART1",
@@ -3355,6 +3408,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "LPUART1",
         }],
+        afio: None,
     },
     Peripheral {
         name: "LTDC",
@@ -3676,6 +3730,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "LTDC",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "MDIOS",
@@ -3732,6 +3787,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "MDIOS_WKUP",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "MDMA",
@@ -3756,6 +3812,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "MDMA",
         }],
+        afio: None,
     },
     Peripheral {
         name: "OCTOSPI1",
@@ -3788,6 +3845,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "OCTOSPI1",
         }],
+        afio: None,
     },
     Peripheral {
         name: "OCTOSPI2",
@@ -3820,6 +3878,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "OCTOSPI2",
         }],
+        afio: None,
     },
     Peripheral {
         name: "OCTOSPIM",
@@ -4025,6 +4084,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         ],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "OPAMP1",
@@ -4072,6 +4132,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         ],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "OPAMP2",
@@ -4114,6 +4175,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         ],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "PSSI",
@@ -4277,6 +4339,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "DCMI_PSSI",
         }],
+        afio: None,
     },
     Peripheral {
         name: "PWR",
@@ -4332,6 +4395,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         ],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "RCC",
@@ -4386,6 +4450,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "RCC",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "RNG",
@@ -4418,6 +4483,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "RNG",
         }],
+        afio: None,
     },
     Peripheral {
         name: "RTC",
@@ -4502,6 +4568,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "RTC_WKUP",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "SAI1",
@@ -4638,6 +4705,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "SAI1",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "SAI4",
@@ -4841,6 +4909,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "SAI4",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "SDMMC1",
@@ -4949,6 +5018,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "SDMMC1",
         }],
+        afio: None,
     },
     Peripheral {
         name: "SDMMC2",
@@ -5047,6 +5117,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "SDMMC2",
         }],
+        afio: None,
     },
     Peripheral {
         name: "SPDIFRX1",
@@ -5117,6 +5188,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "SPDIF_RX",
         }],
+        afio: None,
     },
     Peripheral {
         name: "SPI1",
@@ -5262,6 +5334,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "SPI1",
         }],
+        afio: None,
     },
     Peripheral {
         name: "SPI2",
@@ -5457,6 +5530,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "SPI2",
         }],
+        afio: None,
     },
     Peripheral {
         name: "SPI3",
@@ -5612,6 +5686,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "SPI3",
         }],
+        afio: None,
     },
     Peripheral {
         name: "SPI4",
@@ -5702,6 +5777,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "SPI4",
         }],
+        afio: None,
     },
     Peripheral {
         name: "SPI6",
@@ -5857,6 +5933,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "SPI6",
         }],
+        afio: None,
     },
     Peripheral {
         name: "SWPMI1",
@@ -5910,6 +5987,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "SWPMI1",
         }],
+        afio: None,
     },
     Peripheral {
         name: "SYSCFG",
@@ -5936,6 +6014,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "TIM1",
@@ -6201,6 +6280,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM1_UP",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM12",
@@ -6259,6 +6339,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM8_BRK_TIM12",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM13",
@@ -6310,6 +6391,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM8_UP_TIM13",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM14",
@@ -6361,6 +6443,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM8_TRG_COM_TIM14",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM15",
@@ -6492,6 +6575,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM15",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM16",
@@ -6572,6 +6656,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM16",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM17",
@@ -6652,6 +6737,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM17",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM2",
@@ -6801,6 +6887,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM2",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM23",
@@ -6901,6 +6988,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM23",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM24",
@@ -7001,6 +7089,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM24",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM3",
@@ -7153,6 +7242,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM3",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM4",
@@ -7279,6 +7369,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM4",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM5",
@@ -7401,6 +7492,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM5",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM6",
@@ -7455,6 +7547,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM6_DAC",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM7",
@@ -7509,6 +7602,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM7",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "TIM8",
@@ -7699,6 +7793,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM8_UP_TIM13",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "UART4",
@@ -7829,6 +7924,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "UART4",
         }],
+        afio: None,
     },
     Peripheral {
         name: "UART5",
@@ -7924,6 +8020,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "UART5",
         }],
+        afio: None,
     },
     Peripheral {
         name: "UART7",
@@ -8019,6 +8116,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "UART7",
         }],
+        afio: None,
     },
     Peripheral {
         name: "UART8",
@@ -8094,6 +8192,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "UART8",
         }],
+        afio: None,
     },
     Peripheral {
         name: "UART9",
@@ -8169,6 +8268,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "UART9",
         }],
+        afio: None,
     },
     Peripheral {
         name: "UID",
@@ -8183,6 +8283,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "USART1",
@@ -8288,6 +8389,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "USART1",
         }],
+        afio: None,
     },
     Peripheral {
         name: "USART10",
@@ -8353,6 +8455,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "USART10",
         }],
+        afio: None,
     },
     Peripheral {
         name: "USART2",
@@ -8473,6 +8576,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "USART2",
         }],
+        afio: None,
     },
     Peripheral {
         name: "USART3",
@@ -8608,6 +8712,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "USART3",
         }],
+        afio: None,
     },
     Peripheral {
         name: "USART6",
@@ -8673,6 +8778,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "USART6",
         }],
+        afio: None,
     },
     Peripheral {
         name: "USB_OTG_HS",
@@ -8805,6 +8911,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "OTG_HS_WKUP",
             },
         ],
+        afio: None,
     },
     Peripheral {
         name: "VREFBUF",
@@ -8819,6 +8926,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         interrupts: &[],
+        afio: None,
     },
     Peripheral {
         name: "WWDG1",
@@ -8851,6 +8959,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "WWDG",
             },
         ],
+        afio: None,
     },
 ];
 pub(crate) static INTERRUPTS: &[Interrupt] = &[

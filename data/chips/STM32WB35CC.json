@@ -1998,7 +1998,7 @@
           "address": 1073828864,
           "registers": {
             "kind": "sai",
-            "version": "v1",
+            "version": "v1_4pdm",
             "block": "SAI"
           },
           "rcc": {

@@ -101,7 +101,10 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
         ],
     ),
     ("saes", &["v1a", "v1b"]),
-    ("sai", &["v1", "v2", "v3_2pdm", "v3_4pdm", "v4_2pdm", "v4_4pdm"]),
+    (
+        "sai",
+        &["v1", "v1_4pdm", "v2", "v3_2pdm", "v3_4pdm", "v4_2pdm", "v4_4pdm"],
+    ),
     ("sdadc", &["v1"]),
     ("sdmmc", &["v1", "v2"]),
     ("spdifrx", &["h7", "v1"]),

@@ -393,7 +393,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Isstd"),
+                    enumm: Some("I2sstd"),
                 },
                 Field {
                     name: "pcmsync",
@@ -409,7 +409,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Iscfg"),
+                    enumm: Some("I2scfg"),
                 },
                 Field {
                     name: "i2se",
@@ -425,7 +425,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ismod"),
+                    enumm: None,
                 },
                 Field {
                     name: "astrten",
@@ -982,7 +982,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Iscfg",
+            name: "I2scfg",
             description: None,
             bit_size: 2,
             variants: &[
@@ -1009,24 +1009,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ismod",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "SPIMODE",
-                    description: Some("SPI mode is selected"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "I2SMODE",
-                    description: Some("I2S mode is selected"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Isstd",
+            name: "I2sstd",
             description: None,
             bit_size: 2,
             variants: &[

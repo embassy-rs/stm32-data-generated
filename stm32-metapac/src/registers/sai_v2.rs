@@ -465,9 +465,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Nodiv",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "mckdiv",
@@ -481,7 +479,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 4,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Mckdiv",
+                    ),
                 },
             ],
         },
@@ -1364,6 +1364,93 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Mckdiv",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: None,
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: None,
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: None,
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV6",
+                    description: None,
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: None,
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV10",
+                    description: None,
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV12",
+                    description: None,
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV14",
+                    description: None,
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: None,
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "DIV18",
+                    description: None,
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "DIV20",
+                    description: None,
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "DIV22",
+                    description: None,
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "DIV24",
+                    description: None,
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "DIV26",
+                    description: None,
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "DIV28",
+                    description: None,
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "DIV30",
+                    description: None,
+                    value: 15,
+                },
+            ],
+        },
+        Enum {
             name: "Mode",
             description: None,
             bit_size: 2,
@@ -1435,27 +1522,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "SEND_LAST",
                     description: Some(
                         "Last values are sent during the mute mode",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Nodiv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "MASTER_CLOCK",
-                    description: Some(
-                        "MCLK output is enabled. Forces the ratio between FS and MCLK to 256 or 512 according to the OSR value",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "NO_DIV",
-                    description: Some(
-                        "MCLK output enable set by the MCKEN bit (where present, else 0). Ratio between FS and MCLK depends on FRL.",
                     ),
                     value: 1,
                 },

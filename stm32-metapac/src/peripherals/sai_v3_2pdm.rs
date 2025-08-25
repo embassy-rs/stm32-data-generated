@@ -320,25 +320,25 @@ bits must be configured before setting DMAEN to avoid a DMA request in receiver 
         }
         #[doc = "No fixed divider between MCLK and FS"]
         #[inline(always)]
-        pub const fn nodiv(&self) -> super::vals::Nodiv {
+        pub const fn nodiv(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
-            super::vals::Nodiv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "No fixed divider between MCLK and FS"]
         #[inline(always)]
-        pub fn set_nodiv(&mut self, val: super::vals::Nodiv) {
-            self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+        pub fn set_nodiv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "Master clock divider. These bits are set and cleared by software. These bits are meaningless when the audio block operates in slave mode. They have to be configured when the audio block is disabled. Others: the master clock frequency is calculated accordingly to the following formula:"]
         #[inline(always)]
-        pub const fn mckdiv(&self) -> u8 {
+        pub const fn mckdiv(&self) -> super::vals::Mckdiv {
             let val = (self.0 >> 20usize) & 0x3f;
-            val as u8
+            super::vals::Mckdiv::from_bits(val as u8)
         }
         #[doc = "Master clock divider. These bits are set and cleared by software. These bits are meaningless when the audio block operates in slave mode. They have to be configured when the audio block is disabled. Others: the master clock frequency is calculated accordingly to the following formula:"]
         #[inline(always)]
-        pub fn set_mckdiv(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 20usize)) | (((val as u32) & 0x3f) << 20usize);
+        pub fn set_mckdiv(&mut self, val: super::vals::Mckdiv) {
+            self.0 = (self.0 & !(0x3f << 20usize)) | (((val.to_bits() as u32) & 0x3f) << 20usize);
         }
         #[doc = "Oversampling ratio for master clock"]
         #[inline(always)]
@@ -380,7 +380,7 @@ bits must be configured before setting DMAEN to avoid a DMA request in receiver 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ mode: {:?}, prtcfg: {:?}, ds: {:?}, lsbfirst: {:?}, ckstr: {:?}, syncen: {:?}, mono: {:?}, outdriv: {:?}, saien: {=bool:?}, dmaen: {=bool:?}, nodiv: {:?}, mckdiv: {=u8:?}, osr: {=bool:?} }}" , self . mode () , self . prtcfg () , self . ds () , self . lsbfirst () , self . ckstr () , self . syncen () , self . mono () , self . outdriv () , self . saien () , self . dmaen () , self . nodiv () , self . mckdiv () , self . osr ())
+            defmt :: write ! (f , "Cr1 {{ mode: {:?}, prtcfg: {:?}, ds: {:?}, lsbfirst: {:?}, ckstr: {:?}, syncen: {:?}, mono: {:?}, outdriv: {:?}, saien: {=bool:?}, dmaen: {=bool:?}, nodiv: {=bool:?}, mckdiv: {:?}, osr: {=bool:?} }}" , self . mode () , self . prtcfg () , self . ds () , self . lsbfirst () , self . ckstr () , self . syncen () , self . mono () , self . outdriv () , self . saien () , self . dmaen () , self . nodiv () , self . mckdiv () , self . osr ())
         }
     }
     #[doc = "Configuration register 2"]
@@ -1484,6 +1484,97 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Mckdiv {
+        _RESERVED_0 = 0x0,
+        DIV1 = 0x01,
+        DIV2 = 0x02,
+        DIV3 = 0x03,
+        DIV4 = 0x04,
+        DIV5 = 0x05,
+        DIV6 = 0x06,
+        DIV7 = 0x07,
+        DIV8 = 0x08,
+        DIV9 = 0x09,
+        DIV10 = 0x0a,
+        DIV11 = 0x0b,
+        DIV12 = 0x0c,
+        DIV13 = 0x0d,
+        DIV14 = 0x0e,
+        DIV15 = 0x0f,
+        DIV16 = 0x10,
+        DIV17 = 0x11,
+        DIV18 = 0x12,
+        DIV19 = 0x13,
+        DIV20 = 0x14,
+        DIV21 = 0x15,
+        DIV22 = 0x16,
+        DIV23 = 0x17,
+        DIV24 = 0x18,
+        DIV25 = 0x19,
+        DIV26 = 0x1a,
+        DIV27 = 0x1b,
+        DIV28 = 0x1c,
+        DIV29 = 0x1d,
+        DIV30 = 0x1e,
+        DIV31 = 0x1f,
+        DIV32 = 0x20,
+        DIV33 = 0x21,
+        DIV34 = 0x22,
+        DIV35 = 0x23,
+        DIV36 = 0x24,
+        DIV37 = 0x25,
+        DIV38 = 0x26,
+        DIV39 = 0x27,
+        DIV40 = 0x28,
+        DIV41 = 0x29,
+        DIV42 = 0x2a,
+        DIV43 = 0x2b,
+        DIV44 = 0x2c,
+        DIV45 = 0x2d,
+        DIV46 = 0x2e,
+        DIV47 = 0x2f,
+        DIV48 = 0x30,
+        DIV49 = 0x31,
+        DIV50 = 0x32,
+        DIV51 = 0x33,
+        DIV52 = 0x34,
+        DIV53 = 0x35,
+        DIV54 = 0x36,
+        DIV55 = 0x37,
+        DIV56 = 0x38,
+        DIV57 = 0x39,
+        DIV58 = 0x3a,
+        DIV59 = 0x3b,
+        DIV60 = 0x3c,
+        DIV61 = 0x3d,
+        DIV62 = 0x3e,
+        DIV63 = 0x3f,
+    }
+    impl Mckdiv {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Mckdiv {
+            unsafe { core::mem::transmute(val & 0x3f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Mckdiv {
+        #[inline(always)]
+        fn from(val: u8) -> Mckdiv {
+            Mckdiv::from_bits(val)
+        }
+    }
+    impl From<Mckdiv> for u8 {
+        #[inline(always)]
+        fn from(val: Mckdiv) -> u8 {
+            Mckdiv::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Master transmitter"]
         MASTER_TX = 0x0,
@@ -1576,37 +1667,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Muteval) -> u8 {
             Muteval::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Nodiv {
-        #[doc = "MCLK output is enabled. Forces the ratio between FS and MCLK to 256 or 512 according to the OSR value"]
-        MASTER_CLOCK = 0x0,
-        #[doc = "MCLK output enable set by the MCKEN bit (where present, else 0). Ratio between FS and MCLK depends on FRL."]
-        NO_DIV = 0x01,
-    }
-    impl Nodiv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Nodiv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Nodiv {
-        #[inline(always)]
-        fn from(val: u8) -> Nodiv {
-            Nodiv::from_bits(val)
-        }
-    }
-    impl From<Nodiv> for u8 {
-        #[inline(always)]
-        fn from(val: Nodiv) -> u8 {
-            Nodiv::to_bits(val)
         }
     }
     #[repr(u8)]

@@ -594,7 +594,7 @@ pub mod sai;
 pub mod sdmmc;
 #[path = "../../peripherals/spdifrx_v1.rs"]
 pub mod spdifrx;
-#[path = "../../peripherals/spi_v2.rs"]
+#[path = "../../peripherals/spi_v3_i2s.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_f7.rs"]
 pub mod syscfg;

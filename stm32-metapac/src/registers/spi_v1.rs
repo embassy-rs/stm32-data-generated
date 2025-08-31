@@ -83,28 +83,6 @@ pub(crate) static REGISTERS: IR = IR {
                     fieldset: Some("Txcrcr"),
                 }),
             },
-            BlockItem {
-                name: "i2scfgr",
-                description: Some("I2S configuration register"),
-                array: None,
-                byte_offset: 0x1c,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("I2scfgr"),
-                }),
-            },
-            BlockItem {
-                name: "i2spr",
-                description: Some("I2S prescaler register"),
-                array: None,
-                byte_offset: 0x20,
-                inner: BlockItemInner::Register(Register {
-                    access: Access::ReadWrite,
-                    bit_size: 32,
-                    fieldset: Some("I2spr"),
-                }),
-            },
         ],
     }],
     fieldsets: &[
@@ -259,14 +237,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "frf",
-                    description: Some("Frame format"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Frf"),
-                },
-                Field {
                     name: "errie",
                     description: Some("Error interrupt enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
@@ -319,110 +289,6 @@ pub(crate) static REGISTERS: IR = IR {
                 array: None,
                 enumm: None,
             }],
-        },
-        FieldSet {
-            name: "I2scfgr",
-            extends: None,
-            description: Some("I2S configuration register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "chlen",
-                    description: Some("Channel length (number of bits per audio channel)"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Chlen"),
-                },
-                Field {
-                    name: "datlen",
-                    description: Some("Data length to be transferred"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some("Datlen"),
-                },
-                Field {
-                    name: "ckpol",
-                    description: Some("Steady state clock polarity"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Ckpol"),
-                },
-                Field {
-                    name: "i2sstd",
-                    description: Some("I2S standard selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some("I2sstd"),
-                },
-                Field {
-                    name: "pcmsync",
-                    description: Some("PCM frame synchronization"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Pcmsync"),
-                },
-                Field {
-                    name: "i2scfg",
-                    description: Some("I2S configuration mode"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some("I2scfg"),
-                },
-                Field {
-                    name: "i2se",
-                    description: Some("I2S Enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2smod",
-                    description: Some("I2S mode selection"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "I2spr",
-            extends: None,
-            description: Some("I2S prescaler register"),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "i2sdiv",
-                    description: Some("I2S Linear prescaler"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "odd",
-                    description: Some("Odd factor for the prescaler"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Odd"),
-                },
-                Field {
-                    name: "mckoe",
-                    description: Some("Master clock output enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
         },
         FieldSet {
             name: "Rxcrcr",
@@ -504,14 +370,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "bsy",
                     description: Some("Busy flag"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "fre",
-                    description: Some("TI frame format error"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -616,23 +474,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Chlen",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "BITS16",
-                    description: Some("16-bit wide"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BITS32",
-                    description: Some("32-bit wide"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Chside",
             description: None,
             bit_size: 1,
@@ -645,23 +486,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "RIGHT",
                     description: Some("Channel right has to be transmitted or has been received"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ckpol",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "IDLE_LOW",
-                    description: Some("I2S clock inactive state is low level"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "IDLE_HIGH",
-                    description: Some("I2S clock inactive state is high level"),
                     value: 1,
                 },
             ],
@@ -718,28 +542,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Datlen",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "BITS16",
-                    description: Some("16-bit data length"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BITS24",
-                    description: Some("24-bit data length"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BITS32",
-                    description: Some("32-bit data length"),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
             name: "Dff",
             description: None,
             bit_size: 1,
@@ -753,77 +555,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "BITS16",
                     description: Some("16-bit data frame format is selected for transmission/reception"),
                     value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Frf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "MOTOROLA",
-                    description: Some("SPI Motorola mode"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "TI",
-                    description: Some("SPI TI mode"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I2scfg",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "SLAVE_TX",
-                    description: Some("Slave - transmit"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SLAVE_RX",
-                    description: Some("Slave - receive"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "MASTER_TX",
-                    description: Some("Master - transmit"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "MASTER_RX",
-                    description: Some("Master - receive"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "I2sstd",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PHILIPS",
-                    description: Some("I2S Philips standard"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MSB",
-                    description: Some("MSB justified standard"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "LSB",
-                    description: Some("LSB justified standard"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "PCM",
-                    description: Some("PCM standard"),
-                    value: 3,
                 },
             ],
         },
@@ -857,40 +588,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "MASTER",
                     description: Some("Master configuration"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Odd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "EVEN",
-                    description: Some("Real divider value is I2SDIV * 2"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ODD",
-                    description: Some("Real divider value is (I2SDIV * 2) + 1"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pcmsync",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "SHORT",
-                    description: Some("Short frame synchronisation"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LONG",
-                    description: Some("Long frame synchronisation"),
                     value: 1,
                 },
             ],

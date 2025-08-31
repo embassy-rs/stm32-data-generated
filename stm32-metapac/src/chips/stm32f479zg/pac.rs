@@ -541,7 +541,7 @@ pub mod rtc;
 pub mod sai;
 #[path = "../../peripherals/sdmmc_v1.rs"]
 pub mod sdmmc;
-#[path = "../../peripherals/spi_v1.rs"]
+#[path = "../../peripherals/spi_v2_i2s.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_f4.rs"]
 pub mod syscfg;

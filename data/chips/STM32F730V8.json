@@ -3072,7 +3072,7 @@
           "address": 1073819648,
           "registers": {
             "kind": "spi",
-            "version": "v2",
+            "version": "v3_i2s",
             "block": "SPI"
           },
           "rcc": {
@@ -3198,7 +3198,7 @@
           "address": 1073756160,
           "registers": {
             "kind": "spi",
-            "version": "v2",
+            "version": "v3_i2s",
             "block": "SPI"
           },
           "rcc": {
@@ -3354,7 +3354,7 @@
           "address": 1073757184,
           "registers": {
             "kind": "spi",
-            "version": "v2",
+            "version": "v3_i2s",
             "block": "SPI"
           },
           "rcc": {
@@ -3500,7 +3500,7 @@
           "address": 1073820672,
           "registers": {
             "kind": "spi",
-            "version": "v2",
+            "version": "v3_i2s",
             "block": "SPI"
           },
           "rcc": {

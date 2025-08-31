@@ -743,7 +743,7 @@ pub mod saes;
 pub mod sai;
 #[path = "../../peripherals/sdmmc_v2.rs"]
 pub mod sdmmc;
-#[path = "../../peripherals/spi_v5.rs"]
+#[path = "../../peripherals/spi_v6.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_u5.rs"]
 pub mod syscfg;

@@ -129,21 +129,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "autocr",
-                    description: None,
-                    array: None,
-                    byte_offset: 0x1c,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Autocr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
                     name: "txdr16",
                     description: Some(
                         "Transmit Data Register - half-word sized",
@@ -305,58 +290,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     fieldsets: &[
-        FieldSet {
-            name: "Autocr",
-            extends: None,
-            description: None,
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "trigsel",
-                    description: Some(
-                        "trigger selection (refer ).\n ...\n Note: these bits can be written only when SPE = 0.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "trigpol",
-                    description: Some(
-                        "trigger polarity\n Note: This bit can be written only when SPE = 0.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 20,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Trigpol",
-                    ),
-                },
-                Field {
-                    name: "trigen",
-                    description: Some(
-                        "trigger of CSTART control enable\n Note: if user can't prevent trigger event during write, the TRIGEN has to be changed when SPI is disabled",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 21,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
         FieldSet {
             name: "Cfg1",
             extends: None,
@@ -2047,27 +1980,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ALL_ONES",
                     description: Some(
                         "All ones TX CRC initialization pattern",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Trigpol",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "RISING_EDGE",
-                    description: Some(
-                        "trigger is active on raising edge",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "FALLING_EDGE",
-                    description: Some(
-                        "trigger is active on falling edge",
                     ),
                     value: 1,
                 },

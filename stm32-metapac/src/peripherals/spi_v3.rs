@@ -29,526 +29,196 @@ impl Spi {
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
     }
-    #[doc = "configuration register 1"]
+    #[doc = "status register"]
     #[inline(always)]
-    pub const fn cfg1(self) -> crate::common::Reg<regs::Cfg1, crate::common::RW> {
+    pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
     }
-    #[doc = "configuration register 2"]
+    #[doc = "data register - half-word sized"]
     #[inline(always)]
-    pub const fn cfg2(self) -> crate::common::Reg<regs::Cfg2, crate::common::RW> {
+    pub const fn dr16(self) -> crate::common::Reg<u16, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
     }
-    #[doc = "Interrupt Enable Register"]
+    #[doc = "data register - byte sized"]
     #[inline(always)]
-    pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
+    pub const fn dr8(self) -> crate::common::Reg<u8, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+    }
+    #[doc = "CRC polynomial register"]
+    #[inline(always)]
+    pub const fn crcpr(self) -> crate::common::Reg<regs::Crcpr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
     }
-    #[doc = "Status Register"]
+    #[doc = "RX CRC register"]
     #[inline(always)]
-    pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
+    pub const fn rxcrcr(self) -> crate::common::Reg<regs::Rxcrcr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
     }
-    #[doc = "Interrupt/Status Flags Clear Register"]
+    #[doc = "TX CRC register"]
     #[inline(always)]
-    pub const fn ifcr(self) -> crate::common::Reg<regs::Ifcr, crate::common::W> {
+    pub const fn txcrcr(self) -> crate::common::Reg<regs::Txcrcr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
-    }
-    #[doc = "Transmit Data Register - half-word sized"]
-    #[inline(always)]
-    pub const fn txdr16(self) -> crate::common::Reg<u16, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
-    }
-    #[doc = "Transmit Data Register"]
-    #[inline(always)]
-    pub const fn txdr32(self) -> crate::common::Reg<u32, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
-    }
-    #[doc = "Transmit Data Register - byte sized"]
-    #[inline(always)]
-    pub const fn txdr8(self) -> crate::common::Reg<u8, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
-    }
-    #[doc = "Receive Data Register - half-word sized"]
-    #[inline(always)]
-    pub const fn rxdr16(self) -> crate::common::Reg<u16, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
-    }
-    #[doc = "Receive Data Register"]
-    #[inline(always)]
-    pub const fn rxdr32(self) -> crate::common::Reg<u32, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
-    }
-    #[doc = "Receive Data Register - byte sized"]
-    #[inline(always)]
-    pub const fn rxdr8(self) -> crate::common::Reg<u8, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
-    }
-    #[doc = "Polynomial Register"]
-    #[inline(always)]
-    pub const fn crcpoly(self) -> crate::common::Reg<regs::Crcpoly, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
-    }
-    #[doc = "Transmitter CRC Register"]
-    #[inline(always)]
-    pub const fn txcrc(self) -> crate::common::Reg<regs::Txcrc, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
-    }
-    #[doc = "Receiver CRC Register"]
-    #[inline(always)]
-    pub const fn rxcrc(self) -> crate::common::Reg<regs::Rxcrc, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
-    }
-    #[doc = "Underrun Data Register"]
-    #[inline(always)]
-    pub const fn udrdr(self) -> crate::common::Reg<regs::Udrdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
-    }
-    #[doc = "I2S Configuration Register"]
-    #[inline(always)]
-    pub const fn i2scfgr(self) -> crate::common::Reg<regs::I2scfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
     }
 }
 pub mod regs {
-    #[doc = "configuration register 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Cfg1(pub u32);
-    impl Cfg1 {
-        #[doc = "Number of bits in at single SPI data frame"]
-        #[inline(always)]
-        pub const fn dsize(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Number of bits in at single SPI data frame"]
-        #[inline(always)]
-        pub fn set_dsize(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
-        }
-        #[doc = "threshold level"]
-        #[inline(always)]
-        pub const fn fthlv(&self) -> super::vals::Fthlv {
-            let val = (self.0 >> 5usize) & 0x0f;
-            super::vals::Fthlv::from_bits(val as u8)
-        }
-        #[doc = "threshold level"]
-        #[inline(always)]
-        pub fn set_fthlv(&mut self, val: super::vals::Fthlv) {
-            self.0 = (self.0 & !(0x0f << 5usize)) | (((val.to_bits() as u32) & 0x0f) << 5usize);
-        }
-        #[doc = "Behavior of slave transmitter at underrun condition"]
-        #[inline(always)]
-        pub const fn udrcfg(&self) -> super::vals::Udrcfg {
-            let val = (self.0 >> 9usize) & 0x03;
-            super::vals::Udrcfg::from_bits(val as u8)
-        }
-        #[doc = "Behavior of slave transmitter at underrun condition"]
-        #[inline(always)]
-        pub fn set_udrcfg(&mut self, val: super::vals::Udrcfg) {
-            self.0 = (self.0 & !(0x03 << 9usize)) | (((val.to_bits() as u32) & 0x03) << 9usize);
-        }
-        #[doc = "Detection of underrun condition at slave transmitter"]
-        #[inline(always)]
-        pub const fn udrdet(&self) -> super::vals::Udrdet {
-            let val = (self.0 >> 11usize) & 0x03;
-            super::vals::Udrdet::from_bits(val as u8)
-        }
-        #[doc = "Detection of underrun condition at slave transmitter"]
-        #[inline(always)]
-        pub fn set_udrdet(&mut self, val: super::vals::Udrdet) {
-            self.0 = (self.0 & !(0x03 << 11usize)) | (((val.to_bits() as u32) & 0x03) << 11usize);
-        }
-        #[doc = "Rx DMA stream enable"]
-        #[inline(always)]
-        pub const fn rxdmaen(&self) -> bool {
-            let val = (self.0 >> 14usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Rx DMA stream enable"]
-        #[inline(always)]
-        pub fn set_rxdmaen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
-        }
-        #[doc = "Tx DMA stream enable"]
-        #[inline(always)]
-        pub const fn txdmaen(&self) -> bool {
-            let val = (self.0 >> 15usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Tx DMA stream enable"]
-        #[inline(always)]
-        pub fn set_txdmaen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
-        }
-        #[doc = "Length of CRC frame to be transacted and compared"]
-        #[inline(always)]
-        pub const fn crcsize(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Length of CRC frame to be transacted and compared"]
-        #[inline(always)]
-        pub fn set_crcsize(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
-        }
-        #[doc = "Hardware CRC computation enable"]
-        #[inline(always)]
-        pub const fn crcen(&self) -> bool {
-            let val = (self.0 >> 22usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Hardware CRC computation enable"]
-        #[inline(always)]
-        pub fn set_crcen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
-        }
-        #[doc = "Master baud rate"]
-        #[inline(always)]
-        pub const fn mbr(&self) -> super::vals::Mbr {
-            let val = (self.0 >> 28usize) & 0x07;
-            super::vals::Mbr::from_bits(val as u8)
-        }
-        #[doc = "Master baud rate"]
-        #[inline(always)]
-        pub fn set_mbr(&mut self, val: super::vals::Mbr) {
-            self.0 = (self.0 & !(0x07 << 28usize)) | (((val.to_bits() as u32) & 0x07) << 28usize);
-        }
-    }
-    impl Default for Cfg1 {
-        #[inline(always)]
-        fn default() -> Cfg1 {
-            Cfg1(0)
-        }
-    }
-    impl core::fmt::Debug for Cfg1 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Cfg1")
-                .field("dsize", &self.dsize())
-                .field("fthlv", &self.fthlv())
-                .field("udrcfg", &self.udrcfg())
-                .field("udrdet", &self.udrdet())
-                .field("rxdmaen", &self.rxdmaen())
-                .field("txdmaen", &self.txdmaen())
-                .field("crcsize", &self.crcsize())
-                .field("crcen", &self.crcen())
-                .field("mbr", &self.mbr())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Cfg1 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfg1 {{ dsize: {=u8:?}, fthlv: {:?}, udrcfg: {:?}, udrdet: {:?}, rxdmaen: {=bool:?}, txdmaen: {=bool:?}, crcsize: {=u8:?}, crcen: {=bool:?}, mbr: {:?} }}" , self . dsize () , self . fthlv () , self . udrcfg () , self . udrdet () , self . rxdmaen () , self . txdmaen () , self . crcsize () , self . crcen () , self . mbr ())
-        }
-    }
-    #[doc = "configuration register 2"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Cfg2(pub u32);
-    impl Cfg2 {
-        #[doc = "Master SS Idleness"]
-        #[inline(always)]
-        pub const fn mssi(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "Master SS Idleness"]
-        #[inline(always)]
-        pub fn set_mssi(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
-        }
-        #[doc = "Master Inter-Data Idleness"]
-        #[inline(always)]
-        pub const fn midi(&self) -> u8 {
-            let val = (self.0 >> 4usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "Master Inter-Data Idleness"]
-        #[inline(always)]
-        pub fn set_midi(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
-        }
-        #[doc = "Swap functionality of MISO and MOSI pins"]
-        #[inline(always)]
-        pub const fn ioswp(&self) -> bool {
-            let val = (self.0 >> 15usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Swap functionality of MISO and MOSI pins"]
-        #[inline(always)]
-        pub fn set_ioswp(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
-        }
-        #[doc = "SPI Communication Mode"]
-        #[inline(always)]
-        pub const fn comm(&self) -> super::vals::Comm {
-            let val = (self.0 >> 17usize) & 0x03;
-            super::vals::Comm::from_bits(val as u8)
-        }
-        #[doc = "SPI Communication Mode"]
-        #[inline(always)]
-        pub fn set_comm(&mut self, val: super::vals::Comm) {
-            self.0 = (self.0 & !(0x03 << 17usize)) | (((val.to_bits() as u32) & 0x03) << 17usize);
-        }
-        #[doc = "Serial Protocol"]
-        #[inline(always)]
-        pub const fn sp(&self) -> super::vals::Sp {
-            let val = (self.0 >> 19usize) & 0x07;
-            super::vals::Sp::from_bits(val as u8)
-        }
-        #[doc = "Serial Protocol"]
-        #[inline(always)]
-        pub fn set_sp(&mut self, val: super::vals::Sp) {
-            self.0 = (self.0 & !(0x07 << 19usize)) | (((val.to_bits() as u32) & 0x07) << 19usize);
-        }
-        #[doc = "SPI Master"]
-        #[inline(always)]
-        pub const fn master(&self) -> super::vals::Master {
-            let val = (self.0 >> 22usize) & 0x01;
-            super::vals::Master::from_bits(val as u8)
-        }
-        #[doc = "SPI Master"]
-        #[inline(always)]
-        pub fn set_master(&mut self, val: super::vals::Master) {
-            self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
-        }
-        #[doc = "Data frame format"]
-        #[inline(always)]
-        pub const fn lsbfirst(&self) -> super::vals::Lsbfirst {
-            let val = (self.0 >> 23usize) & 0x01;
-            super::vals::Lsbfirst::from_bits(val as u8)
-        }
-        #[doc = "Data frame format"]
-        #[inline(always)]
-        pub fn set_lsbfirst(&mut self, val: super::vals::Lsbfirst) {
-            self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
-        }
-        #[doc = "Clock phase"]
-        #[inline(always)]
-        pub const fn cpha(&self) -> super::vals::Cpha {
-            let val = (self.0 >> 24usize) & 0x01;
-            super::vals::Cpha::from_bits(val as u8)
-        }
-        #[doc = "Clock phase"]
-        #[inline(always)]
-        pub fn set_cpha(&mut self, val: super::vals::Cpha) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
-        }
-        #[doc = "Clock polarity"]
-        #[inline(always)]
-        pub const fn cpol(&self) -> super::vals::Cpol {
-            let val = (self.0 >> 25usize) & 0x01;
-            super::vals::Cpol::from_bits(val as u8)
-        }
-        #[doc = "Clock polarity"]
-        #[inline(always)]
-        pub fn set_cpol(&mut self, val: super::vals::Cpol) {
-            self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
-        }
-        #[doc = "Software management of SS signal input"]
-        #[inline(always)]
-        pub const fn ssm(&self) -> bool {
-            let val = (self.0 >> 26usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Software management of SS signal input"]
-        #[inline(always)]
-        pub fn set_ssm(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
-        }
-        #[doc = "SS input/output polarity"]
-        #[inline(always)]
-        pub const fn ssiop(&self) -> super::vals::Ssiop {
-            let val = (self.0 >> 28usize) & 0x01;
-            super::vals::Ssiop::from_bits(val as u8)
-        }
-        #[doc = "SS input/output polarity"]
-        #[inline(always)]
-        pub fn set_ssiop(&mut self, val: super::vals::Ssiop) {
-            self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
-        }
-        #[doc = "SS output enable"]
-        #[inline(always)]
-        pub const fn ssoe(&self) -> bool {
-            let val = (self.0 >> 29usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SS output enable"]
-        #[inline(always)]
-        pub fn set_ssoe(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
-        }
-        #[doc = "SS output management in master mode"]
-        #[inline(always)]
-        pub const fn ssom(&self) -> super::vals::Ssom {
-            let val = (self.0 >> 30usize) & 0x01;
-            super::vals::Ssom::from_bits(val as u8)
-        }
-        #[doc = "SS output management in master mode"]
-        #[inline(always)]
-        pub fn set_ssom(&mut self, val: super::vals::Ssom) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
-        }
-        #[doc = "Alternate function always control GPIOs"]
-        #[inline(always)]
-        pub const fn afcntr(&self) -> bool {
-            let val = (self.0 >> 31usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Alternate function always control GPIOs"]
-        #[inline(always)]
-        pub fn set_afcntr(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
-        }
-    }
-    impl Default for Cfg2 {
-        #[inline(always)]
-        fn default() -> Cfg2 {
-            Cfg2(0)
-        }
-    }
-    impl core::fmt::Debug for Cfg2 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Cfg2")
-                .field("mssi", &self.mssi())
-                .field("midi", &self.midi())
-                .field("ioswp", &self.ioswp())
-                .field("comm", &self.comm())
-                .field("sp", &self.sp())
-                .field("master", &self.master())
-                .field("lsbfirst", &self.lsbfirst())
-                .field("cpha", &self.cpha())
-                .field("cpol", &self.cpol())
-                .field("ssm", &self.ssm())
-                .field("ssiop", &self.ssiop())
-                .field("ssoe", &self.ssoe())
-                .field("ssom", &self.ssom())
-                .field("afcntr", &self.afcntr())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Cfg2 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfg2 {{ mssi: {=u8:?}, midi: {=u8:?}, ioswp: {=bool:?}, comm: {:?}, sp: {:?}, master: {:?}, lsbfirst: {:?}, cpha: {:?}, cpol: {:?}, ssm: {=bool:?}, ssiop: {:?}, ssoe: {=bool:?}, ssom: {:?}, afcntr: {=bool:?} }}" , self . mssi () , self . midi () , self . ioswp () , self . comm () , self . sp () , self . master () , self . lsbfirst () , self . cpha () , self . cpol () , self . ssm () , self . ssiop () , self . ssoe () , self . ssom () , self . afcntr ())
-        }
-    }
     #[doc = "control register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr1(pub u32);
     impl Cr1 {
-        #[doc = "Serial Peripheral Enable"]
+        #[doc = "Clock phase"]
+        #[inline(always)]
+        pub const fn cpha(&self) -> super::vals::Cpha {
+            let val = (self.0 >> 0usize) & 0x01;
+            super::vals::Cpha::from_bits(val as u8)
+        }
+        #[doc = "Clock phase"]
+        #[inline(always)]
+        pub fn set_cpha(&mut self, val: super::vals::Cpha) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Clock polarity"]
+        #[inline(always)]
+        pub const fn cpol(&self) -> super::vals::Cpol {
+            let val = (self.0 >> 1usize) & 0x01;
+            super::vals::Cpol::from_bits(val as u8)
+        }
+        #[doc = "Clock polarity"]
+        #[inline(always)]
+        pub fn set_cpol(&mut self, val: super::vals::Cpol) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Master selection"]
+        #[inline(always)]
+        pub const fn mstr(&self) -> super::vals::Mstr {
+            let val = (self.0 >> 2usize) & 0x01;
+            super::vals::Mstr::from_bits(val as u8)
+        }
+        #[doc = "Master selection"]
+        #[inline(always)]
+        pub fn set_mstr(&mut self, val: super::vals::Mstr) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Baud rate control"]
+        #[inline(always)]
+        pub const fn br(&self) -> super::vals::Br {
+            let val = (self.0 >> 3usize) & 0x07;
+            super::vals::Br::from_bits(val as u8)
+        }
+        #[doc = "Baud rate control"]
+        #[inline(always)]
+        pub fn set_br(&mut self, val: super::vals::Br) {
+            self.0 = (self.0 & !(0x07 << 3usize)) | (((val.to_bits() as u32) & 0x07) << 3usize);
+        }
+        #[doc = "SPI enable"]
         #[inline(always)]
         pub const fn spe(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
+            let val = (self.0 >> 6usize) & 0x01;
             val != 0
         }
-        #[doc = "Serial Peripheral Enable"]
+        #[doc = "SPI enable"]
         #[inline(always)]
         pub fn set_spe(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
-        #[doc = "Master automatic SUSP in Receive mode"]
+        #[doc = "Frame format"]
         #[inline(always)]
-        pub const fn masrx(&self) -> bool {
+        pub const fn lsbfirst(&self) -> super::vals::Lsbfirst {
+            let val = (self.0 >> 7usize) & 0x01;
+            super::vals::Lsbfirst::from_bits(val as u8)
+        }
+        #[doc = "Frame format"]
+        #[inline(always)]
+        pub fn set_lsbfirst(&mut self, val: super::vals::Lsbfirst) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        }
+        #[doc = "Internal slave select"]
+        #[inline(always)]
+        pub const fn ssi(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "Master automatic SUSP in Receive mode"]
+        #[doc = "Internal slave select"]
         #[inline(always)]
-        pub fn set_masrx(&mut self, val: bool) {
+        pub fn set_ssi(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
-        #[doc = "Master transfer start"]
+        #[doc = "Software slave management"]
         #[inline(always)]
-        pub const fn cstart(&self) -> bool {
+        pub const fn ssm(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
             val != 0
         }
-        #[doc = "Master transfer start"]
+        #[doc = "Software slave management"]
         #[inline(always)]
-        pub fn set_cstart(&mut self, val: bool) {
+        pub fn set_ssm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
-        #[doc = "Master SUSPend request"]
+        #[doc = "Receive only"]
         #[inline(always)]
-        pub const fn csusp(&self) -> bool {
+        pub const fn rxonly(&self) -> super::vals::Rxonly {
             let val = (self.0 >> 10usize) & 0x01;
-            val != 0
+            super::vals::Rxonly::from_bits(val as u8)
         }
-        #[doc = "Master SUSPend request"]
+        #[doc = "Receive only"]
         #[inline(always)]
-        pub fn set_csusp(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        pub fn set_rxonly(&mut self, val: super::vals::Rxonly) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
         }
-        #[doc = "Rx/Tx direction at Half-duplex mode"]
+        #[doc = "CRC length"]
         #[inline(always)]
-        pub const fn hddir(&self) -> super::vals::Hddir {
+        pub const fn crcl(&self) -> super::vals::Crcl {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Hddir::from_bits(val as u8)
+            super::vals::Crcl::from_bits(val as u8)
         }
-        #[doc = "Rx/Tx direction at Half-duplex mode"]
+        #[doc = "CRC length"]
         #[inline(always)]
-        pub fn set_hddir(&mut self, val: super::vals::Hddir) {
+        pub fn set_crcl(&mut self, val: super::vals::Crcl) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
         }
-        #[doc = "Internal SS signal input level"]
+        #[doc = "CRC transfer next"]
         #[inline(always)]
-        pub const fn ssi(&self) -> bool {
+        pub const fn crcnext(&self) -> super::vals::Crcnext {
             let val = (self.0 >> 12usize) & 0x01;
-            val != 0
+            super::vals::Crcnext::from_bits(val as u8)
         }
-        #[doc = "Internal SS signal input level"]
+        #[doc = "CRC transfer next"]
         #[inline(always)]
-        pub fn set_ssi(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        pub fn set_crcnext(&mut self, val: super::vals::Crcnext) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
         }
-        #[doc = "Full size (33-bit or 17-bit) CRC polynomial is used"]
+        #[doc = "Hardware CRC calculation enable"]
         #[inline(always)]
-        pub const fn crc33_17(&self) -> bool {
+        pub const fn crcen(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
             val != 0
         }
-        #[doc = "Full size (33-bit or 17-bit) CRC polynomial is used"]
+        #[doc = "Hardware CRC calculation enable"]
         #[inline(always)]
-        pub fn set_crc33_17(&mut self, val: bool) {
+        pub fn set_crcen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
-        #[doc = "CRC calculation initialization pattern control for receiver"]
+        #[doc = "Select the direction of transfer in bidirectional mode"]
         #[inline(always)]
-        pub const fn rcrcini(&self) -> super::vals::Rcrcini {
+        pub const fn bidioe(&self) -> super::vals::Bidioe {
             let val = (self.0 >> 14usize) & 0x01;
-            super::vals::Rcrcini::from_bits(val as u8)
+            super::vals::Bidioe::from_bits(val as u8)
         }
-        #[doc = "CRC calculation initialization pattern control for receiver"]
+        #[doc = "Select the direction of transfer in bidirectional mode"]
         #[inline(always)]
-        pub fn set_rcrcini(&mut self, val: super::vals::Rcrcini) {
+        pub fn set_bidioe(&mut self, val: super::vals::Bidioe) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
         }
-        #[doc = "CRC calculation initialization pattern control for transmitter"]
+        #[doc = "Bidirectional data mode enable"]
         #[inline(always)]
-        pub const fn tcrcini(&self) -> super::vals::Tcrcini {
+        pub const fn bidimode(&self) -> super::vals::Bidimode {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Tcrcini::from_bits(val as u8)
+            super::vals::Bidimode::from_bits(val as u8)
         }
-        #[doc = "CRC calculation initialization pattern control for transmitter"]
+        #[doc = "Bidirectional data mode enable"]
         #[inline(always)]
-        pub fn set_tcrcini(&mut self, val: super::vals::Tcrcini) {
+        pub fn set_bidimode(&mut self, val: super::vals::Bidimode) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
-        }
-        #[doc = "Locking the AF configuration of associated IOs"]
-        #[inline(always)]
-        pub const fn iolock(&self) -> bool {
-            let val = (self.0 >> 16usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Locking the AF configuration of associated IOs"]
-        #[inline(always)]
-        pub fn set_iolock(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
     impl Default for Cr1 {
@@ -560,23 +230,27 @@ pub mod regs {
     impl core::fmt::Debug for Cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr1")
+                .field("cpha", &self.cpha())
+                .field("cpol", &self.cpol())
+                .field("mstr", &self.mstr())
+                .field("br", &self.br())
                 .field("spe", &self.spe())
-                .field("masrx", &self.masrx())
-                .field("cstart", &self.cstart())
-                .field("csusp", &self.csusp())
-                .field("hddir", &self.hddir())
+                .field("lsbfirst", &self.lsbfirst())
                 .field("ssi", &self.ssi())
-                .field("crc33_17", &self.crc33_17())
-                .field("rcrcini", &self.rcrcini())
-                .field("tcrcini", &self.tcrcini())
-                .field("iolock", &self.iolock())
+                .field("ssm", &self.ssm())
+                .field("rxonly", &self.rxonly())
+                .field("crcl", &self.crcl())
+                .field("crcnext", &self.crcnext())
+                .field("crcen", &self.crcen())
+                .field("bidioe", &self.bidioe())
+                .field("bidimode", &self.bidimode())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ spe: {=bool:?}, masrx: {=bool:?}, cstart: {=bool:?}, csusp: {=bool:?}, hddir: {:?}, ssi: {=bool:?}, crc33_17: {=bool:?}, rcrcini: {:?}, tcrcini: {:?}, iolock: {=bool:?} }}" , self . spe () , self . masrx () , self . cstart () , self . csusp () , self . hddir () , self . ssi () , self . crc33_17 () , self . rcrcini () , self . tcrcini () , self . iolock ())
+            defmt :: write ! (f , "Cr1 {{ cpha: {:?}, cpol: {:?}, mstr: {:?}, br: {:?}, spe: {=bool:?}, lsbfirst: {:?}, ssi: {=bool:?}, ssm: {=bool:?}, rxonly: {:?}, crcl: {:?}, crcnext: {:?}, crcen: {=bool:?}, bidioe: {:?}, bidimode: {:?} }}" , self . cpha () , self . cpol () , self . mstr () , self . br () , self . spe () , self . lsbfirst () , self . ssi () , self . ssm () , self . rxonly () , self . crcl () , self . crcnext () , self . crcen () , self . bidioe () , self . bidimode ())
         }
     }
     #[doc = "control register 2"]
@@ -584,27 +258,137 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr2(pub u32);
     impl Cr2 {
-        #[doc = "Number of data at current transfer"]
+        #[doc = "Rx buffer DMA enable"]
         #[inline(always)]
-        pub const fn tsize(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0xffff;
-            val as u16
+        pub const fn rxdmaen(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
         }
-        #[doc = "Number of data at current transfer"]
+        #[doc = "Rx buffer DMA enable"]
         #[inline(always)]
-        pub fn set_tsize(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        pub fn set_rxdmaen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "Number of data transfer extension to be reload into TSIZE just when a previous"]
+        #[doc = "Tx buffer DMA enable"]
         #[inline(always)]
-        pub const fn tser(&self) -> u16 {
-            let val = (self.0 >> 16usize) & 0xffff;
-            val as u16
+        pub const fn txdmaen(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
         }
-        #[doc = "Number of data transfer extension to be reload into TSIZE just when a previous"]
+        #[doc = "Tx buffer DMA enable"]
         #[inline(always)]
-        pub fn set_tser(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
+        pub fn set_txdmaen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "SS output enable"]
+        #[inline(always)]
+        pub const fn ssoe(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SS output enable"]
+        #[inline(always)]
+        pub fn set_ssoe(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "NSS pulse management"]
+        #[inline(always)]
+        pub const fn nssp(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "NSS pulse management"]
+        #[inline(always)]
+        pub fn set_nssp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "Frame format"]
+        #[inline(always)]
+        pub const fn frf(&self) -> super::vals::Frf {
+            let val = (self.0 >> 4usize) & 0x01;
+            super::vals::Frf::from_bits(val as u8)
+        }
+        #[doc = "Frame format"]
+        #[inline(always)]
+        pub fn set_frf(&mut self, val: super::vals::Frf) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Error interrupt enable"]
+        #[inline(always)]
+        pub const fn errie(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Error interrupt enable"]
+        #[inline(always)]
+        pub fn set_errie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "RX buffer not empty interrupt enable"]
+        #[inline(always)]
+        pub const fn rxneie(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "RX buffer not empty interrupt enable"]
+        #[inline(always)]
+        pub fn set_rxneie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "Tx buffer empty interrupt enable"]
+        #[inline(always)]
+        pub const fn txeie(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Tx buffer empty interrupt enable"]
+        #[inline(always)]
+        pub fn set_txeie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "Data size"]
+        #[inline(always)]
+        pub const fn ds(&self) -> super::vals::Ds {
+            let val = (self.0 >> 8usize) & 0x0f;
+            super::vals::Ds::from_bits(val as u8)
+        }
+        #[doc = "Data size"]
+        #[inline(always)]
+        pub fn set_ds(&mut self, val: super::vals::Ds) {
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val.to_bits() as u32) & 0x0f) << 8usize);
+        }
+        #[doc = "FIFO reception threshold"]
+        #[inline(always)]
+        pub const fn frxth(&self) -> super::vals::Frxth {
+            let val = (self.0 >> 12usize) & 0x01;
+            super::vals::Frxth::from_bits(val as u8)
+        }
+        #[doc = "FIFO reception threshold"]
+        #[inline(always)]
+        pub fn set_frxth(&mut self, val: super::vals::Frxth) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        }
+        #[doc = "Last DMA transfer for reception"]
+        #[inline(always)]
+        pub const fn ldma_rx(&self) -> super::vals::LdmaRx {
+            let val = (self.0 >> 13usize) & 0x01;
+            super::vals::LdmaRx::from_bits(val as u8)
+        }
+        #[doc = "Last DMA transfer for reception"]
+        #[inline(always)]
+        pub fn set_ldma_rx(&mut self, val: super::vals::LdmaRx) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        }
+        #[doc = "Last DMA transfer for transmission"]
+        #[inline(always)]
+        pub const fn ldma_tx(&self) -> super::vals::LdmaTx {
+            let val = (self.0 >> 14usize) & 0x01;
+            super::vals::LdmaTx::from_bits(val as u8)
+        }
+        #[doc = "Last DMA transfer for transmission"]
+        #[inline(always)]
+        pub fn set_ldma_tx(&mut self, val: super::vals::LdmaTx) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
         }
     }
     impl Default for Cr2 {
@@ -616,738 +400,220 @@ pub mod regs {
     impl core::fmt::Debug for Cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr2")
-                .field("tsize", &self.tsize())
-                .field("tser", &self.tser())
+                .field("rxdmaen", &self.rxdmaen())
+                .field("txdmaen", &self.txdmaen())
+                .field("ssoe", &self.ssoe())
+                .field("nssp", &self.nssp())
+                .field("frf", &self.frf())
+                .field("errie", &self.errie())
+                .field("rxneie", &self.rxneie())
+                .field("txeie", &self.txeie())
+                .field("ds", &self.ds())
+                .field("frxth", &self.frxth())
+                .field("ldma_rx", &self.ldma_rx())
+                .field("ldma_tx", &self.ldma_tx())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Cr2 {{ tsize: {=u16:?}, tser: {=u16:?} }}",
-                self.tsize(),
-                self.tser()
-            )
+            defmt :: write ! (f , "Cr2 {{ rxdmaen: {=bool:?}, txdmaen: {=bool:?}, ssoe: {=bool:?}, nssp: {=bool:?}, frf: {:?}, errie: {=bool:?}, rxneie: {=bool:?}, txeie: {=bool:?}, ds: {:?}, frxth: {:?}, ldma_rx: {:?}, ldma_tx: {:?} }}" , self . rxdmaen () , self . txdmaen () , self . ssoe () , self . nssp () , self . frf () , self . errie () , self . rxneie () , self . txeie () , self . ds () , self . frxth () , self . ldma_rx () , self . ldma_tx ())
         }
     }
-    #[doc = "Polynomial Register"]
+    #[doc = "CRC polynomial register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Crcpoly(pub u32);
-    impl Crcpoly {
+    pub struct Crcpr(pub u32);
+    impl Crcpr {
         #[doc = "CRC polynomial register"]
         #[inline(always)]
-        pub const fn crcpoly(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
+        pub const fn crcpoly(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
         }
         #[doc = "CRC polynomial register"]
         #[inline(always)]
-        pub fn set_crcpoly(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        pub fn set_crcpoly(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
-    impl Default for Crcpoly {
+    impl Default for Crcpr {
         #[inline(always)]
-        fn default() -> Crcpoly {
-            Crcpoly(0)
+        fn default() -> Crcpr {
+            Crcpr(0)
         }
     }
-    impl core::fmt::Debug for Crcpoly {
+    impl core::fmt::Debug for Crcpr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Crcpoly").field("crcpoly", &self.crcpoly()).finish()
+            f.debug_struct("Crcpr").field("crcpoly", &self.crcpoly()).finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Crcpoly {
+    impl defmt::Format for Crcpr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Crcpoly {{ crcpoly: {=u32:?} }}", self.crcpoly())
+            defmt::write!(f, "Crcpr {{ crcpoly: {=u16:?} }}", self.crcpoly())
         }
     }
-    #[doc = "I2S Configuration Register"]
+    #[doc = "RX CRC register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct I2scfgr(pub u32);
-    impl I2scfgr {
-        #[doc = "I2S mode selection"]
+    pub struct Rxcrcr(pub u32);
+    impl Rxcrcr {
+        #[doc = "Rx CRC register"]
         #[inline(always)]
-        pub const fn i2smod(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
+        pub const fn rx_crc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
         }
-        #[doc = "I2S mode selection"]
+        #[doc = "Rx CRC register"]
         #[inline(always)]
-        pub fn set_i2smod(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "I2S configuration mode"]
-        #[inline(always)]
-        pub const fn i2scfg(&self) -> super::vals::I2scfg {
-            let val = (self.0 >> 1usize) & 0x07;
-            super::vals::I2scfg::from_bits(val as u8)
-        }
-        #[doc = "I2S configuration mode"]
-        #[inline(always)]
-        pub fn set_i2scfg(&mut self, val: super::vals::I2scfg) {
-            self.0 = (self.0 & !(0x07 << 1usize)) | (((val.to_bits() as u32) & 0x07) << 1usize);
-        }
-        #[doc = "I2S standard selection"]
-        #[inline(always)]
-        pub const fn i2sstd(&self) -> super::vals::I2sstd {
-            let val = (self.0 >> 4usize) & 0x03;
-            super::vals::I2sstd::from_bits(val as u8)
-        }
-        #[doc = "I2S standard selection"]
-        #[inline(always)]
-        pub fn set_i2sstd(&mut self, val: super::vals::I2sstd) {
-            self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
-        }
-        #[doc = "PCM frame synchronization"]
-        #[inline(always)]
-        pub const fn pcmsync(&self) -> super::vals::Pcmsync {
-            let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Pcmsync::from_bits(val as u8)
-        }
-        #[doc = "PCM frame synchronization"]
-        #[inline(always)]
-        pub fn set_pcmsync(&mut self, val: super::vals::Pcmsync) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Data length to be transferred"]
-        #[inline(always)]
-        pub const fn datlen(&self) -> super::vals::Datlen {
-            let val = (self.0 >> 8usize) & 0x03;
-            super::vals::Datlen::from_bits(val as u8)
-        }
-        #[doc = "Data length to be transferred"]
-        #[inline(always)]
-        pub fn set_datlen(&mut self, val: super::vals::Datlen) {
-            self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
-        }
-        #[doc = "Channel length (number of bits per audio channel)"]
-        #[inline(always)]
-        pub const fn chlen(&self) -> super::vals::Chlen {
-            let val = (self.0 >> 10usize) & 0x01;
-            super::vals::Chlen::from_bits(val as u8)
-        }
-        #[doc = "Channel length (number of bits per audio channel)"]
-        #[inline(always)]
-        pub fn set_chlen(&mut self, val: super::vals::Chlen) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
-        }
-        #[doc = "Serial audio clock polarity"]
-        #[inline(always)]
-        pub const fn ckpol(&self) -> super::vals::Ckpol {
-            let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Ckpol::from_bits(val as u8)
-        }
-        #[doc = "Serial audio clock polarity"]
-        #[inline(always)]
-        pub fn set_ckpol(&mut self, val: super::vals::Ckpol) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
-        }
-        #[doc = "Fixed channel length in slave"]
-        #[inline(always)]
-        pub const fn fixch(&self) -> super::vals::Fixch {
-            let val = (self.0 >> 12usize) & 0x01;
-            super::vals::Fixch::from_bits(val as u8)
-        }
-        #[doc = "Fixed channel length in slave"]
-        #[inline(always)]
-        pub fn set_fixch(&mut self, val: super::vals::Fixch) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
-        }
-        #[doc = "Word select inversion"]
-        #[inline(always)]
-        pub const fn wsinv(&self) -> bool {
-            let val = (self.0 >> 13usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Word select inversion"]
-        #[inline(always)]
-        pub fn set_wsinv(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
-        }
-        #[doc = "Data format"]
-        #[inline(always)]
-        pub const fn datfmt(&self) -> super::vals::Datfmt {
-            let val = (self.0 >> 14usize) & 0x01;
-            super::vals::Datfmt::from_bits(val as u8)
-        }
-        #[doc = "Data format"]
-        #[inline(always)]
-        pub fn set_datfmt(&mut self, val: super::vals::Datfmt) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
-        }
-        #[doc = "I2S linear prescaler"]
-        #[inline(always)]
-        pub const fn i2sdiv(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0xff;
-            val as u8
-        }
-        #[doc = "I2S linear prescaler"]
-        #[inline(always)]
-        pub fn set_i2sdiv(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Odd factor for the prescaler"]
-        #[inline(always)]
-        pub const fn odd(&self) -> super::vals::Odd {
-            let val = (self.0 >> 24usize) & 0x01;
-            super::vals::Odd::from_bits(val as u8)
-        }
-        #[doc = "Odd factor for the prescaler"]
-        #[inline(always)]
-        pub fn set_odd(&mut self, val: super::vals::Odd) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
-        }
-        #[doc = "Master clock output enable"]
-        #[inline(always)]
-        pub const fn mckoe(&self) -> bool {
-            let val = (self.0 >> 25usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Master clock output enable"]
-        #[inline(always)]
-        pub fn set_mckoe(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
+        pub fn set_rx_crc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
-    impl Default for I2scfgr {
+    impl Default for Rxcrcr {
         #[inline(always)]
-        fn default() -> I2scfgr {
-            I2scfgr(0)
+        fn default() -> Rxcrcr {
+            Rxcrcr(0)
         }
     }
-    impl core::fmt::Debug for I2scfgr {
+    impl core::fmt::Debug for Rxcrcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("I2scfgr")
-                .field("i2smod", &self.i2smod())
-                .field("i2scfg", &self.i2scfg())
-                .field("i2sstd", &self.i2sstd())
-                .field("pcmsync", &self.pcmsync())
-                .field("datlen", &self.datlen())
-                .field("chlen", &self.chlen())
-                .field("ckpol", &self.ckpol())
-                .field("fixch", &self.fixch())
-                .field("wsinv", &self.wsinv())
-                .field("datfmt", &self.datfmt())
-                .field("i2sdiv", &self.i2sdiv())
-                .field("odd", &self.odd())
-                .field("mckoe", &self.mckoe())
-                .finish()
+            f.debug_struct("Rxcrcr").field("rx_crc", &self.rx_crc()).finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for I2scfgr {
+    impl defmt::Format for Rxcrcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "I2scfgr {{ i2smod: {=bool:?}, i2scfg: {:?}, i2sstd: {:?}, pcmsync: {:?}, datlen: {:?}, chlen: {:?}, ckpol: {:?}, fixch: {:?}, wsinv: {=bool:?}, datfmt: {:?}, i2sdiv: {=u8:?}, odd: {:?}, mckoe: {=bool:?} }}" , self . i2smod () , self . i2scfg () , self . i2sstd () , self . pcmsync () , self . datlen () , self . chlen () , self . ckpol () , self . fixch () , self . wsinv () , self . datfmt () , self . i2sdiv () , self . odd () , self . mckoe ())
+            defmt::write!(f, "Rxcrcr {{ rx_crc: {=u16:?} }}", self.rx_crc())
         }
     }
-    #[doc = "Interrupt Enable Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ier(pub u32);
-    impl Ier {
-        #[doc = "RXP Interrupt Enable"]
-        #[inline(always)]
-        pub const fn rxpie(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "RXP Interrupt Enable"]
-        #[inline(always)]
-        pub fn set_rxpie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "TXP interrupt enable"]
-        #[inline(always)]
-        pub const fn txpie(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "TXP interrupt enable"]
-        #[inline(always)]
-        pub fn set_txpie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "DXP interrupt enabled"]
-        #[inline(always)]
-        pub const fn dxpie(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "DXP interrupt enabled"]
-        #[inline(always)]
-        pub fn set_dxpie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "EOT, SUSP and TXC interrupt enable"]
-        #[inline(always)]
-        pub const fn eotie(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "EOT, SUSP and TXC interrupt enable"]
-        #[inline(always)]
-        pub fn set_eotie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "TXTFIE interrupt enable"]
-        #[inline(always)]
-        pub const fn txtfie(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "TXTFIE interrupt enable"]
-        #[inline(always)]
-        pub fn set_txtfie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "UDR interrupt enable"]
-        #[inline(always)]
-        pub const fn udrie(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "UDR interrupt enable"]
-        #[inline(always)]
-        pub fn set_udrie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "OVR interrupt enable"]
-        #[inline(always)]
-        pub const fn ovrie(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "OVR interrupt enable"]
-        #[inline(always)]
-        pub fn set_ovrie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "CRC Interrupt enable"]
-        #[inline(always)]
-        pub const fn crceie(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "CRC Interrupt enable"]
-        #[inline(always)]
-        pub fn set_crceie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "TIFRE interrupt enable"]
-        #[inline(always)]
-        pub const fn tifreie(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "TIFRE interrupt enable"]
-        #[inline(always)]
-        pub fn set_tifreie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Mode Fault interrupt enable"]
-        #[inline(always)]
-        pub const fn modfie(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Mode Fault interrupt enable"]
-        #[inline(always)]
-        pub fn set_modfie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
-        #[doc = "Additional number of transactions reload interrupt enable"]
-        #[inline(always)]
-        pub const fn tserfie(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Additional number of transactions reload interrupt enable"]
-        #[inline(always)]
-        pub fn set_tserfie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-        }
-    }
-    impl Default for Ier {
-        #[inline(always)]
-        fn default() -> Ier {
-            Ier(0)
-        }
-    }
-    impl core::fmt::Debug for Ier {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ier")
-                .field("rxpie", &self.rxpie())
-                .field("txpie", &self.txpie())
-                .field("dxpie", &self.dxpie())
-                .field("eotie", &self.eotie())
-                .field("txtfie", &self.txtfie())
-                .field("udrie", &self.udrie())
-                .field("ovrie", &self.ovrie())
-                .field("crceie", &self.crceie())
-                .field("tifreie", &self.tifreie())
-                .field("modfie", &self.modfie())
-                .field("tserfie", &self.tserfie())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ier {
-        fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier {{ rxpie: {=bool:?}, txpie: {=bool:?}, dxpie: {=bool:?}, eotie: {=bool:?}, txtfie: {=bool:?}, udrie: {=bool:?}, ovrie: {=bool:?}, crceie: {=bool:?}, tifreie: {=bool:?}, modfie: {=bool:?}, tserfie: {=bool:?} }}" , self . rxpie () , self . txpie () , self . dxpie () , self . eotie () , self . txtfie () , self . udrie () , self . ovrie () , self . crceie () , self . tifreie () , self . modfie () , self . tserfie ())
-        }
-    }
-    #[doc = "Interrupt/Status Flags Clear Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ifcr(pub u32);
-    impl Ifcr {
-        #[doc = "End Of Transfer flag clear"]
-        #[inline(always)]
-        pub const fn eotc(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "End Of Transfer flag clear"]
-        #[inline(always)]
-        pub fn set_eotc(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Transmission Transfer Filled flag clear"]
-        #[inline(always)]
-        pub const fn txtfc(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Transmission Transfer Filled flag clear"]
-        #[inline(always)]
-        pub fn set_txtfc(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Underrun flag clear"]
-        #[inline(always)]
-        pub const fn udrc(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Underrun flag clear"]
-        #[inline(always)]
-        pub fn set_udrc(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Overrun flag clear"]
-        #[inline(always)]
-        pub const fn ovrc(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Overrun flag clear"]
-        #[inline(always)]
-        pub fn set_ovrc(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "CRC Error flag clear"]
-        #[inline(always)]
-        pub const fn crcec(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "CRC Error flag clear"]
-        #[inline(always)]
-        pub fn set_crcec(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "TI frame format error flag clear"]
-        #[inline(always)]
-        pub const fn tifrec(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "TI frame format error flag clear"]
-        #[inline(always)]
-        pub fn set_tifrec(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Mode Fault flag clear"]
-        #[inline(always)]
-        pub const fn modfc(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Mode Fault flag clear"]
-        #[inline(always)]
-        pub fn set_modfc(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
-        #[doc = "TSERFC flag clear"]
-        #[inline(always)]
-        pub const fn tserfc(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "TSERFC flag clear"]
-        #[inline(always)]
-        pub fn set_tserfc(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-        }
-        #[doc = "SUSPend flag clear"]
-        #[inline(always)]
-        pub const fn suspc(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SUSPend flag clear"]
-        #[inline(always)]
-        pub fn set_suspc(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-    }
-    impl Default for Ifcr {
-        #[inline(always)]
-        fn default() -> Ifcr {
-            Ifcr(0)
-        }
-    }
-    impl core::fmt::Debug for Ifcr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ifcr")
-                .field("eotc", &self.eotc())
-                .field("txtfc", &self.txtfc())
-                .field("udrc", &self.udrc())
-                .field("ovrc", &self.ovrc())
-                .field("crcec", &self.crcec())
-                .field("tifrec", &self.tifrec())
-                .field("modfc", &self.modfc())
-                .field("tserfc", &self.tserfc())
-                .field("suspc", &self.suspc())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ifcr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ifcr {{ eotc: {=bool:?}, txtfc: {=bool:?}, udrc: {=bool:?}, ovrc: {=bool:?}, crcec: {=bool:?}, tifrec: {=bool:?}, modfc: {=bool:?}, tserfc: {=bool:?}, suspc: {=bool:?} }}" , self . eotc () , self . txtfc () , self . udrc () , self . ovrc () , self . crcec () , self . tifrec () , self . modfc () , self . tserfc () , self . suspc ())
-        }
-    }
-    #[doc = "Receiver CRC Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Rxcrc(pub u32);
-    impl Rxcrc {
-        #[doc = "CRC register for receiver"]
-        #[inline(always)]
-        pub const fn rxcrc(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "CRC register for receiver"]
-        #[inline(always)]
-        pub fn set_rxcrc(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Rxcrc {
-        #[inline(always)]
-        fn default() -> Rxcrc {
-            Rxcrc(0)
-        }
-    }
-    impl core::fmt::Debug for Rxcrc {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Rxcrc").field("rxcrc", &self.rxcrc()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Rxcrc {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Rxcrc {{ rxcrc: {=u32:?} }}", self.rxcrc())
-        }
-    }
-    #[doc = "Status Register"]
+    #[doc = "status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Sr(pub u32);
     impl Sr {
-        #[doc = "Rx-Packet available"]
+        #[doc = "Receive buffer not empty"]
         #[inline(always)]
-        pub const fn rxp(&self) -> bool {
+        pub const fn rxne(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
-        #[doc = "Rx-Packet available"]
+        #[doc = "Receive buffer not empty"]
         #[inline(always)]
-        pub fn set_rxp(&mut self, val: bool) {
+        pub fn set_rxne(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "Tx-Packet space available"]
+        #[doc = "Transmit buffer empty"]
         #[inline(always)]
-        pub const fn txp(&self) -> bool {
+        pub const fn txe(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
-        #[doc = "Tx-Packet space available"]
+        #[doc = "Transmit buffer empty"]
         #[inline(always)]
-        pub fn set_txp(&mut self, val: bool) {
+        pub fn set_txe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "Duplex Packet"]
+        #[doc = "Channel side"]
         #[inline(always)]
-        pub const fn dxp(&self) -> bool {
+        pub const fn chside(&self) -> super::vals::Chside {
             let val = (self.0 >> 2usize) & 0x01;
-            val != 0
+            super::vals::Chside::from_bits(val as u8)
         }
-        #[doc = "Duplex Packet"]
+        #[doc = "Channel side"]
         #[inline(always)]
-        pub fn set_dxp(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        pub fn set_chside(&mut self, val: super::vals::Chside) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
-        #[doc = "End Of Transfer"]
+        #[doc = "Underrun flag"]
         #[inline(always)]
-        pub const fn eot(&self) -> bool {
+        pub const fn udr(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
-        #[doc = "End Of Transfer"]
+        #[doc = "Underrun flag"]
         #[inline(always)]
-        pub fn set_eot(&mut self, val: bool) {
+        pub fn set_udr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
-        #[doc = "Transmission Transfer Filled"]
+        #[doc = "CRC error flag"]
         #[inline(always)]
-        pub const fn txtf(&self) -> bool {
+        pub const fn crcerr(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
-        #[doc = "Transmission Transfer Filled"]
+        #[doc = "CRC error flag"]
         #[inline(always)]
-        pub fn set_txtf(&mut self, val: bool) {
+        pub fn set_crcerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
-        #[doc = "Underrun at slave transmission mode"]
+        #[doc = "Mode fault"]
         #[inline(always)]
-        pub const fn udr(&self) -> bool {
+        pub const fn modf(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
             val != 0
         }
-        #[doc = "Underrun at slave transmission mode"]
+        #[doc = "Mode fault"]
         #[inline(always)]
-        pub fn set_udr(&mut self, val: bool) {
+        pub fn set_modf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
-        #[doc = "Overrun"]
+        #[doc = "Overrun flag"]
         #[inline(always)]
         pub const fn ovr(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
             val != 0
         }
-        #[doc = "Overrun"]
+        #[doc = "Overrun flag"]
         #[inline(always)]
         pub fn set_ovr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
-        #[doc = "CRC Error"]
+        #[doc = "Busy flag"]
         #[inline(always)]
-        pub const fn crce(&self) -> bool {
+        pub const fn bsy(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
             val != 0
         }
-        #[doc = "CRC Error"]
+        #[doc = "Busy flag"]
         #[inline(always)]
-        pub fn set_crce(&mut self, val: bool) {
+        pub fn set_bsy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
-        #[doc = "TI frame format error"]
+        #[doc = "frame format error"]
         #[inline(always)]
-        pub const fn tifre(&self) -> bool {
+        pub const fn fre(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "TI frame format error"]
+        #[doc = "frame format error"]
         #[inline(always)]
-        pub fn set_tifre(&mut self, val: bool) {
+        pub fn set_fre(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
-        #[doc = "Mode Fault"]
+        #[doc = "FIFO reception level"]
         #[inline(always)]
-        pub const fn modf(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
+        pub const fn frlvl(&self) -> super::vals::Frlvl {
+            let val = (self.0 >> 9usize) & 0x03;
+            super::vals::Frlvl::from_bits(val as u8)
         }
-        #[doc = "Mode Fault"]
+        #[doc = "FIFO reception level"]
         #[inline(always)]
-        pub fn set_modf(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        pub fn set_frlvl(&mut self, val: super::vals::Frlvl) {
+            self.0 = (self.0 & !(0x03 << 9usize)) | (((val.to_bits() as u32) & 0x03) << 9usize);
         }
-        #[doc = "Additional number of SPI data to be transacted was reload"]
+        #[doc = "FIFO Transmission Level"]
         #[inline(always)]
-        pub const fn tserf(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
+        pub const fn ftlvl(&self) -> super::vals::Ftlvl {
+            let val = (self.0 >> 11usize) & 0x03;
+            super::vals::Ftlvl::from_bits(val as u8)
         }
-        #[doc = "Additional number of SPI data to be transacted was reload"]
+        #[doc = "FIFO Transmission Level"]
         #[inline(always)]
-        pub fn set_tserf(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-        }
-        #[doc = "SUSPend"]
-        #[inline(always)]
-        pub const fn susp(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SUSPend"]
-        #[inline(always)]
-        pub fn set_susp(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-        #[doc = "TxFIFO transmission complete"]
-        #[inline(always)]
-        pub const fn txc(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
-            val != 0
-        }
-        #[doc = "TxFIFO transmission complete"]
-        #[inline(always)]
-        pub fn set_txc(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
-        }
-        #[doc = "RxFIFO Packing LeVeL"]
-        #[inline(always)]
-        pub const fn rxplvl(&self) -> super::vals::Rxplvl {
-            let val = (self.0 >> 13usize) & 0x03;
-            super::vals::Rxplvl::from_bits(val as u8)
-        }
-        #[doc = "RxFIFO Packing LeVeL"]
-        #[inline(always)]
-        pub fn set_rxplvl(&mut self, val: super::vals::Rxplvl) {
-            self.0 = (self.0 & !(0x03 << 13usize)) | (((val.to_bits() as u32) & 0x03) << 13usize);
-        }
-        #[doc = "RxFIFO Word Not Empty"]
-        #[inline(always)]
-        pub const fn rxwne(&self) -> super::vals::Rxwne {
-            let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Rxwne::from_bits(val as u8)
-        }
-        #[doc = "RxFIFO Word Not Empty"]
-        #[inline(always)]
-        pub fn set_rxwne(&mut self, val: super::vals::Rxwne) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
-        }
-        #[doc = "Number of data frames remaining in current TSIZE session"]
-        #[inline(always)]
-        pub const fn ctsize(&self) -> u16 {
-            let val = (self.0 >> 16usize) & 0xffff;
-            val as u16
-        }
-        #[doc = "Number of data frames remaining in current TSIZE session"]
-        #[inline(always)]
-        pub fn set_ctsize(&mut self, val: u16) {
-            self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
+        pub fn set_ftlvl(&mut self, val: super::vals::Ftlvl) {
+            self.0 = (self.0 & !(0x03 << 11usize)) | (((val.to_bits() as u32) & 0x03) << 11usize);
         }
     }
     impl Default for Sr {
@@ -1359,97 +625,58 @@ pub mod regs {
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
-                .field("rxp", &self.rxp())
-                .field("txp", &self.txp())
-                .field("dxp", &self.dxp())
-                .field("eot", &self.eot())
-                .field("txtf", &self.txtf())
+                .field("rxne", &self.rxne())
+                .field("txe", &self.txe())
+                .field("chside", &self.chside())
                 .field("udr", &self.udr())
-                .field("ovr", &self.ovr())
-                .field("crce", &self.crce())
-                .field("tifre", &self.tifre())
+                .field("crcerr", &self.crcerr())
                 .field("modf", &self.modf())
-                .field("tserf", &self.tserf())
-                .field("susp", &self.susp())
-                .field("txc", &self.txc())
-                .field("rxplvl", &self.rxplvl())
-                .field("rxwne", &self.rxwne())
-                .field("ctsize", &self.ctsize())
+                .field("ovr", &self.ovr())
+                .field("bsy", &self.bsy())
+                .field("fre", &self.fre())
+                .field("frlvl", &self.frlvl())
+                .field("ftlvl", &self.ftlvl())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ rxp: {=bool:?}, txp: {=bool:?}, dxp: {=bool:?}, eot: {=bool:?}, txtf: {=bool:?}, udr: {=bool:?}, ovr: {=bool:?}, crce: {=bool:?}, tifre: {=bool:?}, modf: {=bool:?}, tserf: {=bool:?}, susp: {=bool:?}, txc: {=bool:?}, rxplvl: {:?}, rxwne: {:?}, ctsize: {=u16:?} }}" , self . rxp () , self . txp () , self . dxp () , self . eot () , self . txtf () , self . udr () , self . ovr () , self . crce () , self . tifre () , self . modf () , self . tserf () , self . susp () , self . txc () , self . rxplvl () , self . rxwne () , self . ctsize ())
+            defmt :: write ! (f , "Sr {{ rxne: {=bool:?}, txe: {=bool:?}, chside: {:?}, udr: {=bool:?}, crcerr: {=bool:?}, modf: {=bool:?}, ovr: {=bool:?}, bsy: {=bool:?}, fre: {=bool:?}, frlvl: {:?}, ftlvl: {:?} }}" , self . rxne () , self . txe () , self . chside () , self . udr () , self . crcerr () , self . modf () , self . ovr () , self . bsy () , self . fre () , self . frlvl () , self . ftlvl ())
         }
     }
-    #[doc = "Transmitter CRC Register"]
+    #[doc = "TX CRC register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Txcrc(pub u32);
-    impl Txcrc {
-        #[doc = "CRC register for transmitter"]
+    pub struct Txcrcr(pub u32);
+    impl Txcrcr {
+        #[doc = "Tx CRC register"]
         #[inline(always)]
-        pub const fn txcrc(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
+        pub const fn tx_crc(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
         }
-        #[doc = "CRC register for transmitter"]
+        #[doc = "Tx CRC register"]
         #[inline(always)]
-        pub fn set_txcrc(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Txcrc {
-        #[inline(always)]
-        fn default() -> Txcrc {
-            Txcrc(0)
+        pub fn set_tx_crc(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
-    impl core::fmt::Debug for Txcrc {
+    impl Default for Txcrcr {
+        #[inline(always)]
+        fn default() -> Txcrcr {
+            Txcrcr(0)
+        }
+    }
+    impl core::fmt::Debug for Txcrcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Txcrc").field("txcrc", &self.txcrc()).finish()
+            f.debug_struct("Txcrcr").field("tx_crc", &self.tx_crc()).finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Txcrc {
+    impl defmt::Format for Txcrcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Txcrc {{ txcrc: {=u32:?} }}", self.txcrc())
-        }
-    }
-    #[doc = "Underrun Data Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Udrdr(pub u32);
-    impl Udrdr {
-        #[doc = "Data at slave underrun condition"]
-        #[inline(always)]
-        pub const fn udrdr(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Data at slave underrun condition"]
-        #[inline(always)]
-        pub fn set_udrdr(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Udrdr {
-        #[inline(always)]
-        fn default() -> Udrdr {
-            Udrdr(0)
-        }
-    }
-    impl core::fmt::Debug for Udrdr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Udrdr").field("udrdr", &self.udrdr()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Udrdr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Udrdr {{ udrdr: {=u32:?} }}", self.udrdr())
+            defmt::write!(f, "Txcrcr {{ tx_crc: {=u16:?} }}", self.tx_crc())
         }
     }
 }
@@ -1457,15 +684,15 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Chlen {
-        #[doc = "16 bits per channel"]
-        BITS16 = 0x0,
-        #[doc = "32 bits per channel"]
-        BITS32 = 0x01,
+    pub enum Bidimode {
+        #[doc = "2-line unidirectional data mode selected"]
+        UNIDIRECTIONAL = 0x0,
+        #[doc = "1-line bidirectional data mode selected"]
+        BIDIRECTIONAL = 0x01,
     }
-    impl Chlen {
+    impl Bidimode {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Chlen {
+        pub const fn from_bits(val: u8) -> Bidimode {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -1473,30 +700,30 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Chlen {
+    impl From<u8> for Bidimode {
         #[inline(always)]
-        fn from(val: u8) -> Chlen {
-            Chlen::from_bits(val)
+        fn from(val: u8) -> Bidimode {
+            Bidimode::from_bits(val)
         }
     }
-    impl From<Chlen> for u8 {
+    impl From<Bidimode> for u8 {
         #[inline(always)]
-        fn from(val: Chlen) -> u8 {
-            Chlen::to_bits(val)
+        fn from(val: Bidimode) -> u8 {
+            Bidimode::to_bits(val)
         }
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ckpol {
-        #[doc = "CK idle Level is Low. Signals are sampled on rising and changed on falling clock edges"]
-        IDLE_LOW = 0x0,
-        #[doc = "CK idle level is High. Signals are sampled on falling and changed on rising clock edges"]
-        IDLE_HIGH = 0x01,
+    pub enum Bidioe {
+        #[doc = "Output disabled (receive-only mode)"]
+        RECEIVE = 0x0,
+        #[doc = "Output enabled (transmit-only mode)"]
+        TRANSMIT = 0x01,
     }
-    impl Ckpol {
+    impl Bidioe {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ckpol {
+        pub const fn from_bits(val: u8) -> Bidioe {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -1504,51 +731,90 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Ckpol {
+    impl From<u8> for Bidioe {
         #[inline(always)]
-        fn from(val: u8) -> Ckpol {
-            Ckpol::from_bits(val)
+        fn from(val: u8) -> Bidioe {
+            Bidioe::from_bits(val)
         }
     }
-    impl From<Ckpol> for u8 {
+    impl From<Bidioe> for u8 {
         #[inline(always)]
-        fn from(val: Ckpol) -> u8 {
-            Ckpol::to_bits(val)
+        fn from(val: Bidioe) -> u8 {
+            Bidioe::to_bits(val)
         }
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Comm {
-        #[doc = "Full duplex"]
-        FULL_DUPLEX = 0x0,
-        #[doc = "Simplex transmitter only"]
-        TRANSMITTER = 0x01,
-        #[doc = "Simplex receiver only"]
-        RECEIVER = 0x02,
-        #[doc = "Half duplex"]
-        HALF_DUPLEX = 0x03,
+    pub enum Br {
+        #[doc = "f_PCLK / 2"]
+        DIV2 = 0x0,
+        #[doc = "f_PCLK / 4"]
+        DIV4 = 0x01,
+        #[doc = "f_PCLK / 8"]
+        DIV8 = 0x02,
+        #[doc = "f_PCLK / 16"]
+        DIV16 = 0x03,
+        #[doc = "f_PCLK / 32"]
+        DIV32 = 0x04,
+        #[doc = "f_PCLK / 64"]
+        DIV64 = 0x05,
+        #[doc = "f_PCLK / 128"]
+        DIV128 = 0x06,
+        #[doc = "f_PCLK / 256"]
+        DIV256 = 0x07,
     }
-    impl Comm {
+    impl Br {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Comm {
-            unsafe { core::mem::transmute(val & 0x03) }
+        pub const fn from_bits(val: u8) -> Br {
+            unsafe { core::mem::transmute(val & 0x07) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Comm {
+    impl From<u8> for Br {
         #[inline(always)]
-        fn from(val: u8) -> Comm {
-            Comm::from_bits(val)
+        fn from(val: u8) -> Br {
+            Br::from_bits(val)
         }
     }
-    impl From<Comm> for u8 {
+    impl From<Br> for u8 {
         #[inline(always)]
-        fn from(val: Comm) -> u8 {
-            Comm::to_bits(val)
+        fn from(val: Br) -> u8 {
+            Br::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Chside {
+        #[doc = "Channel left has to be transmitted or has been received"]
+        LEFT = 0x0,
+        #[doc = "Channel right has to be transmitted or has been received"]
+        RIGHT = 0x01,
+    }
+    impl Chside {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Chside {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Chside {
+        #[inline(always)]
+        fn from(val: u8) -> Chside {
+            Chside::from_bits(val)
+        }
+    }
+    impl From<Chside> for u8 {
+        #[inline(always)]
+        fn from(val: Chside) -> u8 {
+            Chside::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1586,9 +852,9 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpol {
-        #[doc = "SCK to 0 when idle"]
+        #[doc = "CK to 0 when idle"]
         IDLE_LOW = 0x0,
-        #[doc = "SCK to 1 when idle"]
+        #[doc = "CK to 1 when idle"]
         IDLE_HIGH = 0x01,
     }
     impl Cpol {
@@ -1616,15 +882,15 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Datfmt {
-        #[doc = "The data inside RXDR and TXDR are right aligned"]
-        RIGHT_ALIGNED = 0x0,
-        #[doc = "The data inside RXDR and TXDR are left aligned"]
-        LEFT_ALIGNED = 0x01,
+    pub enum Crcl {
+        #[doc = "8-bit CRC length"]
+        BITS8 = 0x0,
+        #[doc = "16-bit CRC length"]
+        BITS16 = 0x01,
     }
-    impl Datfmt {
+    impl Crcl {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Datfmt {
+        pub const fn from_bits(val: u8) -> Crcl {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -1632,64 +898,30 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Datfmt {
+    impl From<u8> for Crcl {
         #[inline(always)]
-        fn from(val: u8) -> Datfmt {
-            Datfmt::from_bits(val)
+        fn from(val: u8) -> Crcl {
+            Crcl::from_bits(val)
         }
     }
-    impl From<Datfmt> for u8 {
+    impl From<Crcl> for u8 {
         #[inline(always)]
-        fn from(val: Datfmt) -> u8 {
-            Datfmt::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Datlen {
-        #[doc = "16-bit data length"]
-        BITS16 = 0x0,
-        #[doc = "24-bit data length"]
-        BITS24 = 0x01,
-        #[doc = "32-bit data length"]
-        BITS32 = 0x02,
-        _RESERVED_3 = 0x03,
-    }
-    impl Datlen {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Datlen {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Datlen {
-        #[inline(always)]
-        fn from(val: u8) -> Datlen {
-            Datlen::from_bits(val)
-        }
-    }
-    impl From<Datlen> for u8 {
-        #[inline(always)]
-        fn from(val: Datlen) -> u8 {
-            Datlen::to_bits(val)
+        fn from(val: Crcl) -> u8 {
+            Crcl::to_bits(val)
         }
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Fixch {
-        #[doc = "The channel length in slave mode is different from 16 or 32 bits (CHLEN not taken into account)"]
-        NOT_FIXED = 0x0,
-        #[doc = "The channel length in slave mode is supposed to be 16 or 32 bits (according to CHLEN)"]
-        FIXED = 0x01,
+    pub enum Crcnext {
+        #[doc = "Next transmit value is from Tx buffer"]
+        TX_BUFFER = 0x0,
+        #[doc = "Next transmit value is from Tx CRC register"]
+        CRC = 0x01,
     }
-    impl Fixch {
+    impl Crcnext {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Fixch {
+        pub const fn from_bits(val: u8) -> Crcnext {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -1697,58 +929,55 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Fixch {
+    impl From<u8> for Crcnext {
         #[inline(always)]
-        fn from(val: u8) -> Fixch {
-            Fixch::from_bits(val)
+        fn from(val: u8) -> Crcnext {
+            Crcnext::from_bits(val)
         }
     }
-    impl From<Fixch> for u8 {
+    impl From<Crcnext> for u8 {
         #[inline(always)]
-        fn from(val: Fixch) -> u8 {
-            Fixch::to_bits(val)
+        fn from(val: Crcnext) -> u8 {
+            Crcnext::to_bits(val)
         }
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Fthlv {
-        #[doc = "1 frame"]
-        ONE_FRAME = 0x0,
-        #[doc = "2 frames"]
-        TWO_FRAMES = 0x01,
-        #[doc = "3 frames"]
-        THREE_FRAMES = 0x02,
-        #[doc = "4 frames"]
-        FOUR_FRAMES = 0x03,
-        #[doc = "5 frames"]
-        FIVE_FRAMES = 0x04,
-        #[doc = "6 frames"]
-        SIX_FRAMES = 0x05,
-        #[doc = "7 frames"]
-        SEVEN_FRAMES = 0x06,
-        #[doc = "8 frames"]
-        EIGHT_FRAMES = 0x07,
-        #[doc = "9 frames"]
-        NINE_FRAMES = 0x08,
-        #[doc = "10 frames"]
-        TEN_FRAMES = 0x09,
-        #[doc = "11 frames"]
-        ELEVEN_FRAMES = 0x0a,
-        #[doc = "12 frames"]
-        TWELVE_FRAMES = 0x0b,
-        #[doc = "13 frames"]
-        THIRTEEN_FRAMES = 0x0c,
-        #[doc = "14 frames"]
-        FOURTEEN_FRAMES = 0x0d,
-        #[doc = "15 frames"]
-        FIFTEEN_FRAMES = 0x0e,
-        #[doc = "16 frames"]
-        SIXTEEN_FRAMES = 0x0f,
+    pub enum Ds {
+        _RESERVED_0 = 0x0,
+        _RESERVED_1 = 0x01,
+        _RESERVED_2 = 0x02,
+        #[doc = "4-bit"]
+        BITS4 = 0x03,
+        #[doc = "5-bit"]
+        BITS5 = 0x04,
+        #[doc = "6-bit"]
+        BITS6 = 0x05,
+        #[doc = "7-bit"]
+        BITS7 = 0x06,
+        #[doc = "8-bit"]
+        BITS8 = 0x07,
+        #[doc = "9-bit"]
+        BITS9 = 0x08,
+        #[doc = "10-bit"]
+        BITS10 = 0x09,
+        #[doc = "11-bit"]
+        BITS11 = 0x0a,
+        #[doc = "12-bit"]
+        BITS12 = 0x0b,
+        #[doc = "13-bit"]
+        BITS13 = 0x0c,
+        #[doc = "14-bit"]
+        BITS14 = 0x0d,
+        #[doc = "15-bit"]
+        BITS15 = 0x0e,
+        #[doc = "16-bit"]
+        BITS16 = 0x0f,
     }
-    impl Fthlv {
+    impl Ds {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Fthlv {
+        pub const fn from_bits(val: u8) -> Ds {
             unsafe { core::mem::transmute(val & 0x0f) }
         }
         #[inline(always)]
@@ -1756,30 +985,30 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Fthlv {
+    impl From<u8> for Ds {
         #[inline(always)]
-        fn from(val: u8) -> Fthlv {
-            Fthlv::from_bits(val)
+        fn from(val: u8) -> Ds {
+            Ds::from_bits(val)
         }
     }
-    impl From<Fthlv> for u8 {
+    impl From<Ds> for u8 {
         #[inline(always)]
-        fn from(val: Fthlv) -> u8 {
-            Fthlv::to_bits(val)
+        fn from(val: Ds) -> u8 {
+            Ds::to_bits(val)
         }
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Hddir {
-        #[doc = "Receiver in half duplex mode"]
-        RECEIVER = 0x0,
-        #[doc = "Transmitter in half duplex mode"]
-        TRANSMITTER = 0x01,
+    pub enum Frf {
+        #[doc = "SPI Motorola mode"]
+        MOTOROLA = 0x0,
+        #[doc = "SPI TI mode"]
+        TI = 0x01,
     }
-    impl Hddir {
+    impl Frf {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Hddir {
+        pub const fn from_bits(val: u8) -> Frf {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -1787,75 +1016,34 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Hddir {
+    impl From<u8> for Frf {
         #[inline(always)]
-        fn from(val: u8) -> Hddir {
-            Hddir::from_bits(val)
+        fn from(val: u8) -> Frf {
+            Frf::from_bits(val)
         }
     }
-    impl From<Hddir> for u8 {
+    impl From<Frf> for u8 {
         #[inline(always)]
-        fn from(val: Hddir) -> u8 {
-            Hddir::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum I2scfg {
-        #[doc = "Slave, transmit"]
-        SLAVE_TX = 0x0,
-        #[doc = "Slave, receive"]
-        SLAVE_RX = 0x01,
-        #[doc = "Master, transmit"]
-        MASTER_TX = 0x02,
-        #[doc = "Master, receive"]
-        MASTER_RX = 0x03,
-        #[doc = "Slave, full duplex"]
-        SLAVE_FULL_DUPLEX = 0x04,
-        #[doc = "Master, full duplex"]
-        MASTER_FULL_DUPLEX = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl I2scfg {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> I2scfg {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for I2scfg {
-        #[inline(always)]
-        fn from(val: u8) -> I2scfg {
-            I2scfg::from_bits(val)
-        }
-    }
-    impl From<I2scfg> for u8 {
-        #[inline(always)]
-        fn from(val: I2scfg) -> u8 {
-            I2scfg::to_bits(val)
+        fn from(val: Frf) -> u8 {
+            Frf::to_bits(val)
         }
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum I2sstd {
-        #[doc = "I2S Philips standard"]
-        PHILIPS = 0x0,
-        #[doc = "MSB/left justified standard"]
-        MSB = 0x01,
-        #[doc = "LSB/right justified standard"]
-        LSB = 0x02,
-        #[doc = "PCM standard"]
-        PCM = 0x03,
+    pub enum Frlvl {
+        #[doc = "Rx FIFO Empty"]
+        EMPTY = 0x0,
+        #[doc = "Rx 1/4 FIFO"]
+        QUARTER = 0x01,
+        #[doc = "Rx 1/2 FIFO"]
+        HALF = 0x02,
+        #[doc = "Rx FIFO full"]
+        FULL = 0x03,
     }
-    impl I2sstd {
+    impl Frlvl {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> I2sstd {
+        pub const fn from_bits(val: u8) -> Frlvl {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -1863,16 +1051,144 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for I2sstd {
+    impl From<u8> for Frlvl {
         #[inline(always)]
-        fn from(val: u8) -> I2sstd {
-            I2sstd::from_bits(val)
+        fn from(val: u8) -> Frlvl {
+            Frlvl::from_bits(val)
         }
     }
-    impl From<I2sstd> for u8 {
+    impl From<Frlvl> for u8 {
         #[inline(always)]
-        fn from(val: I2sstd) -> u8 {
-            I2sstd::to_bits(val)
+        fn from(val: Frlvl) -> u8 {
+            Frlvl::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Frxth {
+        #[doc = "RXNE event is generated if the FIFO level is greater than or equal to 1/2 (16-bit)"]
+        HALF = 0x0,
+        #[doc = "RXNE event is generated if the FIFO level is greater than or equal to 1/4 (8-bit)"]
+        QUARTER = 0x01,
+    }
+    impl Frxth {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Frxth {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Frxth {
+        #[inline(always)]
+        fn from(val: u8) -> Frxth {
+            Frxth::from_bits(val)
+        }
+    }
+    impl From<Frxth> for u8 {
+        #[inline(always)]
+        fn from(val: Frxth) -> u8 {
+            Frxth::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Ftlvl {
+        #[doc = "Tx FIFO Empty"]
+        EMPTY = 0x0,
+        #[doc = "Tx 1/4 FIFO"]
+        QUARTER = 0x01,
+        #[doc = "Tx 1/2 FIFO"]
+        HALF = 0x02,
+        #[doc = "Tx FIFO full"]
+        FULL = 0x03,
+    }
+    impl Ftlvl {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ftlvl {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ftlvl {
+        #[inline(always)]
+        fn from(val: u8) -> Ftlvl {
+            Ftlvl::from_bits(val)
+        }
+    }
+    impl From<Ftlvl> for u8 {
+        #[inline(always)]
+        fn from(val: Ftlvl) -> u8 {
+            Ftlvl::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum LdmaRx {
+        #[doc = "Number of data to transfer for receive is even"]
+        EVEN = 0x0,
+        #[doc = "Number of data to transfer for receive is odd"]
+        ODD = 0x01,
+    }
+    impl LdmaRx {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> LdmaRx {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for LdmaRx {
+        #[inline(always)]
+        fn from(val: u8) -> LdmaRx {
+            LdmaRx::from_bits(val)
+        }
+    }
+    impl From<LdmaRx> for u8 {
+        #[inline(always)]
+        fn from(val: LdmaRx) -> u8 {
+            LdmaRx::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum LdmaTx {
+        #[doc = "Number of data to transfer for transmit is even"]
+        EVEN = 0x0,
+        #[doc = "Number of data to transfer for transmit is odd"]
+        ODD = 0x01,
+    }
+    impl LdmaTx {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> LdmaTx {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for LdmaTx {
+        #[inline(always)]
+        fn from(val: u8) -> LdmaTx {
+            LdmaTx::from_bits(val)
+        }
+    }
+    impl From<LdmaTx> for u8 {
+        #[inline(always)]
+        fn from(val: LdmaTx) -> u8 {
+            LdmaTx::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1909,15 +1225,15 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Master {
+    pub enum Mstr {
         #[doc = "Slave configuration"]
         SLAVE = 0x0,
         #[doc = "Master configuration"]
         MASTER = 0x01,
     }
-    impl Master {
+    impl Mstr {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Master {
+        pub const fn from_bits(val: u8) -> Mstr {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -1925,73 +1241,30 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Master {
+    impl From<u8> for Mstr {
         #[inline(always)]
-        fn from(val: u8) -> Master {
-            Master::from_bits(val)
+        fn from(val: u8) -> Mstr {
+            Mstr::from_bits(val)
         }
     }
-    impl From<Master> for u8 {
+    impl From<Mstr> for u8 {
         #[inline(always)]
-        fn from(val: Master) -> u8 {
-            Master::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Mbr {
-        #[doc = "f_spi_ker_ck / 2"]
-        DIV2 = 0x0,
-        #[doc = "f_spi_ker_ck / 4"]
-        DIV4 = 0x01,
-        #[doc = "f_spi_ker_ck / 8"]
-        DIV8 = 0x02,
-        #[doc = "f_spi_ker_ck / 16"]
-        DIV16 = 0x03,
-        #[doc = "f_spi_ker_ck / 32"]
-        DIV32 = 0x04,
-        #[doc = "f_spi_ker_ck / 64"]
-        DIV64 = 0x05,
-        #[doc = "f_spi_ker_ck / 128"]
-        DIV128 = 0x06,
-        #[doc = "f_spi_ker_ck / 256"]
-        DIV256 = 0x07,
-    }
-    impl Mbr {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Mbr {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Mbr {
-        #[inline(always)]
-        fn from(val: u8) -> Mbr {
-            Mbr::from_bits(val)
-        }
-    }
-    impl From<Mbr> for u8 {
-        #[inline(always)]
-        fn from(val: Mbr) -> u8 {
-            Mbr::to_bits(val)
+        fn from(val: Mstr) -> u8 {
+            Mstr::to_bits(val)
         }
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Odd {
-        #[doc = "Real divider value is I2SDIV*2"]
-        EVEN = 0x0,
-        #[doc = "Real divider value is I2SDIV*2 + 1"]
-        ODD = 0x01,
+    pub enum Rxonly {
+        #[doc = "Full duplex (Transmit and receive)"]
+        FULL_DUPLEX = 0x0,
+        #[doc = "Output disabled (Receive-only mode)"]
+        OUTPUT_DISABLED = 0x01,
     }
-    impl Odd {
+    impl Rxonly {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Odd {
+        pub const fn from_bits(val: u8) -> Rxonly {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -1999,342 +1272,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Odd {
+    impl From<u8> for Rxonly {
         #[inline(always)]
-        fn from(val: u8) -> Odd {
-            Odd::from_bits(val)
+        fn from(val: u8) -> Rxonly {
+            Rxonly::from_bits(val)
         }
     }
-    impl From<Odd> for u8 {
+    impl From<Rxonly> for u8 {
         #[inline(always)]
-        fn from(val: Odd) -> u8 {
-            Odd::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Pcmsync {
-        #[doc = "Short PCM frame synchronization"]
-        SHORT = 0x0,
-        #[doc = "Long PCM frame synchronization"]
-        LONG = 0x01,
-    }
-    impl Pcmsync {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pcmsync {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pcmsync {
-        #[inline(always)]
-        fn from(val: u8) -> Pcmsync {
-            Pcmsync::from_bits(val)
-        }
-    }
-    impl From<Pcmsync> for u8 {
-        #[inline(always)]
-        fn from(val: Pcmsync) -> u8 {
-            Pcmsync::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Rcrcini {
-        #[doc = "All zeros RX CRC initialization pattern"]
-        ALL_ZEROS = 0x0,
-        #[doc = "All ones RX CRC initialization pattern"]
-        ALL_ONES = 0x01,
-    }
-    impl Rcrcini {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rcrcini {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rcrcini {
-        #[inline(always)]
-        fn from(val: u8) -> Rcrcini {
-            Rcrcini::from_bits(val)
-        }
-    }
-    impl From<Rcrcini> for u8 {
-        #[inline(always)]
-        fn from(val: Rcrcini) -> u8 {
-            Rcrcini::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Rxplvl {
-        #[doc = "Zero frames beyond packing ratio available"]
-        ZERO_FRAMES = 0x0,
-        #[doc = "One frame beyond packing ratio available"]
-        ONE_FRAME = 0x01,
-        #[doc = "Two frame beyond packing ratio available"]
-        TWO_FRAMES = 0x02,
-        #[doc = "Three frame beyond packing ratio available"]
-        THREE_FRAMES = 0x03,
-    }
-    impl Rxplvl {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rxplvl {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rxplvl {
-        #[inline(always)]
-        fn from(val: u8) -> Rxplvl {
-            Rxplvl::from_bits(val)
-        }
-    }
-    impl From<Rxplvl> for u8 {
-        #[inline(always)]
-        fn from(val: Rxplvl) -> u8 {
-            Rxplvl::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Rxwne {
-        #[doc = "Less than 32-bit data frame received"]
-        LESS_THAN32 = 0x0,
-        #[doc = "At least 32-bit data frame received"]
-        AT_LEAST32 = 0x01,
-    }
-    impl Rxwne {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rxwne {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rxwne {
-        #[inline(always)]
-        fn from(val: u8) -> Rxwne {
-            Rxwne::from_bits(val)
-        }
-    }
-    impl From<Rxwne> for u8 {
-        #[inline(always)]
-        fn from(val: Rxwne) -> u8 {
-            Rxwne::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Sp {
-        #[doc = "Motorola SPI protocol"]
-        MOTOROLA = 0x0,
-        #[doc = "TI SPI protocol"]
-        TI = 0x01,
-        _RESERVED_2 = 0x02,
-        _RESERVED_3 = 0x03,
-        _RESERVED_4 = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl Sp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sp {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Sp {
-        #[inline(always)]
-        fn from(val: u8) -> Sp {
-            Sp::from_bits(val)
-        }
-    }
-    impl From<Sp> for u8 {
-        #[inline(always)]
-        fn from(val: Sp) -> u8 {
-            Sp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ssiop {
-        #[doc = "Low level is active for SS signal"]
-        ACTIVE_LOW = 0x0,
-        #[doc = "High level is active for SS signal"]
-        ACTIVE_HIGH = 0x01,
-    }
-    impl Ssiop {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ssiop {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ssiop {
-        #[inline(always)]
-        fn from(val: u8) -> Ssiop {
-            Ssiop::from_bits(val)
-        }
-    }
-    impl From<Ssiop> for u8 {
-        #[inline(always)]
-        fn from(val: Ssiop) -> u8 {
-            Ssiop::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ssom {
-        #[doc = "SS is asserted until data transfer complete"]
-        ASSERTED = 0x0,
-        #[doc = "Data frames interleaved with SS not asserted during MIDI"]
-        NOT_ASSERTED = 0x01,
-    }
-    impl Ssom {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ssom {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ssom {
-        #[inline(always)]
-        fn from(val: u8) -> Ssom {
-            Ssom::from_bits(val)
-        }
-    }
-    impl From<Ssom> for u8 {
-        #[inline(always)]
-        fn from(val: Ssom) -> u8 {
-            Ssom::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Tcrcini {
-        #[doc = "All zeros TX CRC initialization pattern"]
-        ALL_ZEROS = 0x0,
-        #[doc = "All ones TX CRC initialization pattern"]
-        ALL_ONES = 0x01,
-    }
-    impl Tcrcini {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tcrcini {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tcrcini {
-        #[inline(always)]
-        fn from(val: u8) -> Tcrcini {
-            Tcrcini::from_bits(val)
-        }
-    }
-    impl From<Tcrcini> for u8 {
-        #[inline(always)]
-        fn from(val: Tcrcini) -> u8 {
-            Tcrcini::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Udrcfg {
-        #[doc = "Slave sends a constant underrun pattern"]
-        CONSTANT = 0x0,
-        #[doc = "Slave repeats last received data frame from master"]
-        REPEAT_RECEIVED = 0x01,
-        #[doc = "Slave repeats last transmitted data frame"]
-        REPEAT_TRANSMITTED = 0x02,
-        _RESERVED_3 = 0x03,
-    }
-    impl Udrcfg {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Udrcfg {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Udrcfg {
-        #[inline(always)]
-        fn from(val: u8) -> Udrcfg {
-            Udrcfg::from_bits(val)
-        }
-    }
-    impl From<Udrcfg> for u8 {
-        #[inline(always)]
-        fn from(val: Udrcfg) -> u8 {
-            Udrcfg::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Udrdet {
-        #[doc = "Underrun is detected at begin of data frame"]
-        START_OF_FRAME = 0x0,
-        #[doc = "Underrun is detected at end of last data frame"]
-        END_OF_FRAME = 0x01,
-        #[doc = "Underrun is detected at begin of active SS signal"]
-        START_OF_SLAVE_SELECT = 0x02,
-        _RESERVED_3 = 0x03,
-    }
-    impl Udrdet {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Udrdet {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Udrdet {
-        #[inline(always)]
-        fn from(val: u8) -> Udrdet {
-            Udrdet::from_bits(val)
-        }
-    }
-    impl From<Udrdet> for u8 {
-        #[inline(always)]
-        fn from(val: Udrdet) -> u8 {
-            Udrdet::to_bits(val)
+        fn from(val: Rxonly) -> u8 {
+            Rxonly::to_bits(val)
         }
     }
 }

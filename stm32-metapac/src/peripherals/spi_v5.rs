@@ -54,10 +54,6 @@ impl Spi {
     pub const fn ifcr(self) -> crate::common::Reg<regs::Ifcr, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
-    #[inline(always)]
-    pub const fn autocr(self) -> crate::common::Reg<regs::Autocr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
-    }
     #[doc = "Transmit Data Register - half-word sized"]
     #[inline(always)]
     pub const fn txdr16(self) -> crate::common::Reg<u16, crate::common::W> {
@@ -110,71 +106,6 @@ impl Spi {
     }
 }
 pub mod regs {
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Autocr(pub u32);
-    impl Autocr {
-        #[doc = "trigger selection (refer ). ... Note: these bits can be written only when SPE = 0."]
-        #[inline(always)]
-        pub const fn trigsel(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "trigger selection (refer ). ... Note: these bits can be written only when SPE = 0."]
-        #[inline(always)]
-        pub fn set_trigsel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 16usize)) | (((val as u32) & 0x0f) << 16usize);
-        }
-        #[doc = "trigger polarity Note: This bit can be written only when SPE = 0."]
-        #[inline(always)]
-        pub const fn trigpol(&self) -> super::vals::Trigpol {
-            let val = (self.0 >> 20usize) & 0x01;
-            super::vals::Trigpol::from_bits(val as u8)
-        }
-        #[doc = "trigger polarity Note: This bit can be written only when SPE = 0."]
-        #[inline(always)]
-        pub fn set_trigpol(&mut self, val: super::vals::Trigpol) {
-            self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
-        }
-        #[doc = "trigger of CSTART control enable Note: if user can't prevent trigger event during write, the TRIGEN has to be changed when SPI is disabled"]
-        #[inline(always)]
-        pub const fn trigen(&self) -> bool {
-            let val = (self.0 >> 21usize) & 0x01;
-            val != 0
-        }
-        #[doc = "trigger of CSTART control enable Note: if user can't prevent trigger event during write, the TRIGEN has to be changed when SPI is disabled"]
-        #[inline(always)]
-        pub fn set_trigen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
-        }
-    }
-    impl Default for Autocr {
-        #[inline(always)]
-        fn default() -> Autocr {
-            Autocr(0)
-        }
-    }
-    impl core::fmt::Debug for Autocr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Autocr")
-                .field("trigsel", &self.trigsel())
-                .field("trigpol", &self.trigpol())
-                .field("trigen", &self.trigen())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Autocr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Autocr {{ trigsel: {=u8:?}, trigpol: {:?}, trigen: {=bool:?} }}",
-                self.trigsel(),
-                self.trigpol(),
-                self.trigen()
-            )
-        }
-    }
     #[doc = "configuration register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1886,37 +1817,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Tcrcini) -> u8 {
             Tcrcini::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Trigpol {
-        #[doc = "trigger is active on raising edge"]
-        RISING_EDGE = 0x0,
-        #[doc = "trigger is active on falling edge"]
-        FALLING_EDGE = 0x01,
-    }
-    impl Trigpol {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Trigpol {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Trigpol {
-        #[inline(always)]
-        fn from(val: u8) -> Trigpol {
-            Trigpol::from_bits(val)
-        }
-    }
-    impl From<Trigpol> for u8 {
-        #[inline(always)]
-        fn from(val: Trigpol) -> u8 {
-            Trigpol::to_bits(val)
         }
     }
     #[repr(u8)]

@@ -4787,7 +4787,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x42003000,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5_i2s",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -4953,7 +4953,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40003800,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5_i2s",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -5149,7 +5149,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40003c00,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5_i2s",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -5321,7 +5321,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x42003400,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5_i2s",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -5438,7 +5438,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x42005000,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5_i2s",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -5554,7 +5554,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x58001400,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5_i2s",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -9507,7 +9507,7 @@ pub mod sai;
 pub mod sdmmc;
 #[path = "../registers/spdifrx_h7.rs"]
 pub mod spdifrx;
-#[path = "../registers/spi_v4.rs"]
+#[path = "../registers/spi_v5_i2s.rs"]
 pub mod spi;
 #[path = "../registers/syscfg_h7rs.rs"]
 pub mod syscfg;

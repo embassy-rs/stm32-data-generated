@@ -2294,7 +2294,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40013000,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5_i2s",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -2461,7 +2461,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40003800,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5_i2s",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -2648,7 +2648,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40003c00,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5_i2s",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -2825,7 +2825,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40014c00,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5_i2s",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -5853,7 +5853,7 @@ pub mod rcc;
 pub mod rng;
 #[path = "../registers/rtc_v3u5.rs"]
 pub mod rtc;
-#[path = "../registers/spi_v4.rs"]
+#[path = "../registers/spi_v5_i2s.rs"]
 pub mod spi;
 #[path = "../registers/syscfg_h5.rs"]
 pub mod syscfg;

@@ -226,7 +226,7 @@ pub const LCD: lcd::Lcd = unsafe { lcd::Lcd::from_ptr(0x4000_2400usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4000_2800usize as _) };
 pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00usize as _) };
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000usize as _) };
-pub const SPI2: *mut () = 0x4000_3800usize as _;
+pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800usize as _) };
 pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400usize as _) };
 pub const USART3: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4800usize as _) };
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400usize as _) };
@@ -244,7 +244,7 @@ pub const TIM10: timer::Tim1ch = unsafe { timer::Tim1ch::from_ptr(0x4001_0c00usi
 pub const TIM11: timer::Tim1ch = unsafe { timer::Tim1ch::from_ptr(0x4001_1000usize as _) };
 pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4001_2400usize as _) };
 pub const ADC1_COMMON: *mut () = 0x4001_2700usize as _;
-pub const SPI1: *mut () = 0x4001_3000usize as _;
+pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000usize as _) };
 pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_3800usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4002_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4002_0400usize as _) };
@@ -292,6 +292,8 @@ pub mod pwr;
 pub mod rcc;
 #[path = "../../peripherals/rtc_v2l1.rs"]
 pub mod rtc;
+#[path = "../../peripherals/spi_v2.rs"]
+pub mod spi;
 #[path = "../../peripherals/syscfg_l1.rs"]
 pub mod syscfg;
 #[path = "../../peripherals/timer_v1.rs"]

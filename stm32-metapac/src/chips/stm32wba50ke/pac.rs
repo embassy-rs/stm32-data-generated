@@ -350,7 +350,7 @@ pub mod rcc;
 pub mod rng;
 #[path = "../../peripherals/rtc_v3u5.rs"]
 pub mod rtc;
-#[path = "../../peripherals/spi_v5.rs"]
+#[path = "../../peripherals/spi_v3.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_wba.rs"]
 pub mod syscfg;

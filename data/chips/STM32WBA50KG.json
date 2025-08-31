@@ -1147,7 +1147,7 @@
           "address": 1174413312,
           "registers": {
             "kind": "spi",
-            "version": "v5",
+            "version": "v3",
             "block": "SPI"
           },
           "rcc": {

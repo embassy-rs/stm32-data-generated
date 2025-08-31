@@ -175,7 +175,7 @@ pub mod pwr;
 pub mod rcc;
 #[path = "../../peripherals/rtc_v2f0.rs"]
 pub mod rtc;
-#[path = "../../peripherals/spi_v2.rs"]
+#[path = "../../peripherals/spi_v3.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_f0.rs"]
 pub mod syscfg;

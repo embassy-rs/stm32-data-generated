@@ -476,7 +476,7 @@ pub mod rtc;
 pub mod saes;
 #[path = "../../peripherals/sai_v4_2pdm.rs"]
 pub mod sai;
-#[path = "../../peripherals/spi_v5.rs"]
+#[path = "../../peripherals/spi_v3.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_wba.rs"]
 pub mod syscfg;

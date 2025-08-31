@@ -263,7 +263,7 @@ pub mod pwr;
 pub mod rcc;
 #[path = "../../peripherals/rtc_v1.rs"]
 pub mod rtc;
-#[path = "../../peripherals/spi_f1.rs"]
+#[path = "../../peripherals/spi_v1.rs"]
 pub mod spi;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;

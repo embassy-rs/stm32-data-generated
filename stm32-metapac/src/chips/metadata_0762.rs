@@ -5844,7 +5844,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x42003000,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -6023,7 +6023,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40003800,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -6222,7 +6222,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40003c00,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -6371,7 +6371,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x42003400,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -6455,7 +6455,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x42005000,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -6579,7 +6579,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x46001400,
         registers: Some(PeripheralRegisters {
             kind: "spi",
-            version: "v4",
+            version: "v5",
             block: "SPI",
             ir: &spi::REGISTERS,
         }),
@@ -10623,7 +10623,7 @@ pub mod otg;
 pub mod pssi;
 #[path = "../registers/rcc_n6.rs"]
 pub mod rcc;
-#[path = "../registers/spi_v4.rs"]
+#[path = "../registers/spi_v5.rs"]
 pub mod spi;
 #[path = "../registers/timer_v1.rs"]
 pub mod timer;

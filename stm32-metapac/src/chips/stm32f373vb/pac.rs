@@ -418,7 +418,7 @@ pub mod rcc;
 pub mod rtc;
 #[path = "../../peripherals/sdadc_v1.rs"]
 pub mod sdadc;
-#[path = "../../peripherals/spi_v2.rs"]
+#[path = "../../peripherals/spi_v3_i2s.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_f3.rs"]
 pub mod syscfg;

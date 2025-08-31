@@ -5325,7 +5325,7 @@
           "address": 1107308544,
           "registers": {
             "kind": "spi",
-            "version": "v4",
+            "version": "v5_i2s",
             "block": "SPI"
           },
           "rcc": {
@@ -5484,7 +5484,7 @@
           "address": 1073756160,
           "registers": {
             "kind": "spi",
-            "version": "v4",
+            "version": "v5_i2s",
             "block": "SPI"
           },
           "rcc": {
@@ -5673,7 +5673,7 @@
           "address": 1073757184,
           "registers": {
             "kind": "spi",
-            "version": "v4",
+            "version": "v5_i2s",
             "block": "SPI"
           },
           "rcc": {
@@ -5832,7 +5832,7 @@
           "address": 1107309568,
           "registers": {
             "kind": "spi",
-            "version": "v4",
+            "version": "v5_i2s",
             "block": "SPI"
           },
           "rcc": {
@@ -5931,7 +5931,7 @@
           "address": 1107316736,
           "registers": {
             "kind": "spi",
-            "version": "v4",
+            "version": "v5_i2s",
             "block": "SPI"
           },
           "rcc": {
@@ -6030,7 +6030,7 @@
           "address": 1476400128,
           "registers": {
             "kind": "spi",
-            "version": "v4",
+            "version": "v5_i2s",
             "block": "SPI"
           },
           "rcc": {

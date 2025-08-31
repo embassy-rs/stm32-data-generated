@@ -813,7 +813,7 @@ pub mod sai;
 pub mod sdmmc;
 #[path = "../../peripherals/spdifrx_h7.rs"]
 pub mod spdifrx;
-#[path = "../../peripherals/spi_v3.rs"]
+#[path = "../../peripherals/spi_v4_i2s.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_h7od.rs"]
 pub mod syscfg;

@@ -962,7 +962,7 @@ pub mod otg;
 pub mod pssi;
 #[path = "../../peripherals/rcc_n6.rs"]
 pub mod rcc;
-#[path = "../../peripherals/spi_v4.rs"]
+#[path = "../../peripherals/spi_v5.rs"]
 pub mod spi;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;

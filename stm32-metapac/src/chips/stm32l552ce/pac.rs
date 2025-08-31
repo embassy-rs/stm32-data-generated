@@ -601,7 +601,7 @@ pub mod rng;
 pub mod rtc;
 #[path = "../../peripherals/sai_v3_2pdm.rs"]
 pub mod sai;
-#[path = "../../peripherals/spi_v2.rs"]
+#[path = "../../peripherals/spi_v3.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_l5.rs"]
 pub mod syscfg;

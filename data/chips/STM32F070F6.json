@@ -974,7 +974,7 @@
           "address": 1073819648,
           "registers": {
             "kind": "spi",
-            "version": "v2",
+            "version": "v3",
             "block": "SPI"
           },
           "rcc": {

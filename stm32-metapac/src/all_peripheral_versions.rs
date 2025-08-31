@@ -108,7 +108,12 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("sdadc", &["v1"]),
     ("sdmmc", &["v1", "v2"]),
     ("spdifrx", &["h7", "v1"]),
-    ("spi", &["f1", "v1", "v2", "v3", "v4", "v5"]),
+    (
+        "spi",
+        &[
+            "v1", "v1_i2s", "v2", "v2_i2s", "v3", "v3_i2s", "v4_i2s", "v5", "v5_i2s", "v6",
+        ],
+    ),
     (
         "syscfg",
         &[

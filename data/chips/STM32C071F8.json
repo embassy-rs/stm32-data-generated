@@ -876,6 +876,18 @@
               "signal": "EV",
               "interrupt": "I2C2"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dmamux": "DMAMUX1",
+              "request": 12
+            },
+            {
+              "signal": "TX",
+              "dmamux": "DMAMUX1",
+              "request": 13
+            }
           ]
         },
         {
@@ -1354,6 +1366,18 @@
             {
               "signal": "GLOBAL",
               "interrupt": "SPI2"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dmamux": "DMAMUX1",
+              "request": 18
+            },
+            {
+              "signal": "TX",
+              "dmamux": "DMAMUX1",
+              "request": 19
             }
           ]
         },
@@ -1951,6 +1975,38 @@
             {
               "signal": "UP",
               "interrupt": "TIM2"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "CH1",
+              "dmamux": "DMAMUX1",
+              "request": 26
+            },
+            {
+              "signal": "CH2",
+              "dmamux": "DMAMUX1",
+              "request": 27
+            },
+            {
+              "signal": "CH3",
+              "dmamux": "DMAMUX1",
+              "request": 28
+            },
+            {
+              "signal": "CH4",
+              "dmamux": "DMAMUX1",
+              "request": 29
+            },
+            {
+              "signal": "TRIG",
+              "dmamux": "DMAMUX1",
+              "request": 30
+            },
+            {
+              "signal": "UP",
+              "dmamux": "DMAMUX1",
+              "request": 31
             }
           ]
         },

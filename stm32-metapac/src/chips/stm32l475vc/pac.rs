@@ -470,7 +470,7 @@ pub mod dbgmcu;
 pub mod exti;
 #[path = "../../peripherals/flash_l4.rs"]
 pub mod flash;
-#[path = "../../peripherals/gpio_v2.rs"]
+#[path = "../../peripherals/gpio_v2_l478.rs"]
 pub mod gpio;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;

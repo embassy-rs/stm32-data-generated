@@ -1005,7 +1005,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x48000000,
         registers: Some(PeripheralRegisters {
             kind: "gpio",
-            version: "v2",
+            version: "v2_l478",
             block: "GPIO",
             ir: &gpio::REGISTERS,
         }),
@@ -1032,7 +1032,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x48000400,
         registers: Some(PeripheralRegisters {
             kind: "gpio",
-            version: "v2",
+            version: "v2_l478",
             block: "GPIO",
             ir: &gpio::REGISTERS,
         }),
@@ -1059,7 +1059,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x48000800,
         registers: Some(PeripheralRegisters {
             kind: "gpio",
-            version: "v2",
+            version: "v2_l478",
             block: "GPIO",
             ir: &gpio::REGISTERS,
         }),
@@ -1086,7 +1086,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x48000c00,
         registers: Some(PeripheralRegisters {
             kind: "gpio",
-            version: "v2",
+            version: "v2_l478",
             block: "GPIO",
             ir: &gpio::REGISTERS,
         }),
@@ -1113,7 +1113,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x48001000,
         registers: Some(PeripheralRegisters {
             kind: "gpio",
-            version: "v2",
+            version: "v2_l478",
             block: "GPIO",
             ir: &gpio::REGISTERS,
         }),
@@ -1140,7 +1140,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x48001400,
         registers: Some(PeripheralRegisters {
             kind: "gpio",
-            version: "v2",
+            version: "v2_l478",
             block: "GPIO",
             ir: &gpio::REGISTERS,
         }),
@@ -1167,7 +1167,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x48001800,
         registers: Some(PeripheralRegisters {
             kind: "gpio",
-            version: "v2",
+            version: "v2_l478",
             block: "GPIO",
             ir: &gpio::REGISTERS,
         }),
@@ -1194,7 +1194,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x48001c00,
         registers: Some(PeripheralRegisters {
             kind: "gpio",
-            version: "v2",
+            version: "v2_l478",
             block: "GPIO",
             ir: &gpio::REGISTERS,
         }),
@@ -5833,7 +5833,7 @@ pub mod dbgmcu;
 pub mod exti;
 #[path = "../registers/flash_l4.rs"]
 pub mod flash;
-#[path = "../registers/gpio_v2.rs"]
+#[path = "../registers/gpio_v2_l478.rs"]
 pub mod gpio;
 #[path = "../registers/i2c_v2.rs"]
 pub mod i2c;

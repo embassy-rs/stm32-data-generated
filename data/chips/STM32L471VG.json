@@ -2221,7 +2221,7 @@
           "address": 1207959552,
           "registers": {
             "kind": "gpio",
-            "version": "v2",
+            "version": "v2_l478",
             "block": "GPIO"
           },
           "rcc": {
@@ -2242,7 +2242,7 @@
           "address": 1207960576,
           "registers": {
             "kind": "gpio",
-            "version": "v2",
+            "version": "v2_l478",
             "block": "GPIO"
           },
           "rcc": {
@@ -2263,7 +2263,7 @@
           "address": 1207961600,
           "registers": {
             "kind": "gpio",
-            "version": "v2",
+            "version": "v2_l478",
             "block": "GPIO"
           },
           "rcc": {
@@ -2284,7 +2284,7 @@
           "address": 1207962624,
           "registers": {
             "kind": "gpio",
-            "version": "v2",
+            "version": "v2_l478",
             "block": "GPIO"
           },
           "rcc": {
@@ -2305,7 +2305,7 @@
           "address": 1207963648,
           "registers": {
             "kind": "gpio",
-            "version": "v2",
+            "version": "v2_l478",
             "block": "GPIO"
           },
           "rcc": {
@@ -2326,7 +2326,7 @@
           "address": 1207964672,
           "registers": {
             "kind": "gpio",
-            "version": "v2",
+            "version": "v2_l478",
             "block": "GPIO"
           },
           "rcc": {
@@ -2347,7 +2347,7 @@
           "address": 1207965696,
           "registers": {
             "kind": "gpio",
-            "version": "v2",
+            "version": "v2_l478",
             "block": "GPIO"
           },
           "rcc": {
@@ -2368,7 +2368,7 @@
           "address": 1207966720,
           "registers": {
             "kind": "gpio",
-            "version": "v2",
+            "version": "v2_l478",
             "block": "GPIO"
           },
           "rcc": {

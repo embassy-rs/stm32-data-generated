@@ -780,6 +780,17 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
             let offs = 16usize + ([0usize, 9usize, 10usize, 11usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
+        #[doc = "Update event DMA request enable. Note: If LPTIM does not implement at least 1 channel this bit is reserved."]
+        #[inline(always)]
+        pub const fn uede(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Update event DMA request enable. Note: If LPTIM does not implement at least 1 channel this bit is reserved."]
+        #[inline(always)]
+        pub fn set_uede(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
     }
     impl Default for Dier {
         #[inline(always)]
@@ -813,13 +824,14 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
                 .field("ccde[1]", &self.ccde(1usize))
                 .field("ccde[2]", &self.ccde(2usize))
                 .field("ccde[3]", &self.ccde(3usize))
+                .field("uede", &self.uede())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dier {{ ccie[0]: {=bool:?}, ccie[1]: {=bool:?}, ccie[2]: {=bool:?}, ccie[3]: {=bool:?}, arrmie: {=bool:?}, exttrigie: {=bool:?}, cmpokie[0]: {=bool:?}, cmpokie[1]: {=bool:?}, cmpokie[2]: {=bool:?}, cmpokie[3]: {=bool:?}, arrokie: {=bool:?}, upie: {=bool:?}, downie: {=bool:?}, ueie: {=bool:?}, repokie: {=bool:?}, ccoie[0]: {=bool:?}, ccoie[1]: {=bool:?}, ccoie[2]: {=bool:?}, ccoie[3]: {=bool:?}, ccde[0]: {=bool:?}, ccde[1]: {=bool:?}, ccde[2]: {=bool:?}, ccde[3]: {=bool:?} }}" , self . ccie (0usize) , self . ccie (1usize) , self . ccie (2usize) , self . ccie (3usize) , self . arrmie () , self . exttrigie () , self . cmpokie (0usize) , self . cmpokie (1usize) , self . cmpokie (2usize) , self . cmpokie (3usize) , self . arrokie () , self . upie () , self . downie () , self . ueie () , self . repokie () , self . ccoie (0usize) , self . ccoie (1usize) , self . ccoie (2usize) , self . ccoie (3usize) , self . ccde (0usize) , self . ccde (1usize) , self . ccde (2usize) , self . ccde (3usize))
+            defmt :: write ! (f , "Dier {{ ccie[0]: {=bool:?}, ccie[1]: {=bool:?}, ccie[2]: {=bool:?}, ccie[3]: {=bool:?}, arrmie: {=bool:?}, exttrigie: {=bool:?}, cmpokie[0]: {=bool:?}, cmpokie[1]: {=bool:?}, cmpokie[2]: {=bool:?}, cmpokie[3]: {=bool:?}, arrokie: {=bool:?}, upie: {=bool:?}, downie: {=bool:?}, ueie: {=bool:?}, repokie: {=bool:?}, ccoie[0]: {=bool:?}, ccoie[1]: {=bool:?}, ccoie[2]: {=bool:?}, ccoie[3]: {=bool:?}, ccde[0]: {=bool:?}, ccde[1]: {=bool:?}, ccde[2]: {=bool:?}, ccde[3]: {=bool:?}, uede: {=bool:?} }}" , self . ccie (0usize) , self . ccie (1usize) , self . ccie (2usize) , self . ccie (3usize) , self . arrmie () , self . exttrigie () , self . cmpokie (0usize) , self . cmpokie (1usize) , self . cmpokie (2usize) , self . cmpokie (3usize) , self . arrokie () , self . upie () , self . downie () , self . ueie () , self . repokie () , self . ccoie (0usize) , self . ccoie (1usize) , self . ccoie (2usize) , self . ccoie (3usize) , self . ccde (0usize) , self . ccde (1usize) , self . ccde (2usize) , self . ccde (3usize) , self . uede ())
         }
     }
     #[doc = "LPTIM interrupt clear register."]

@@ -962,6 +962,20 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     enumm: None,
                 },
+                Field {
+                    name: "uede",
+                    description: Some(
+                        "Update event DMA request enable. Note: If LPTIM does not implement at least 1 channel this bit is reserved.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
             ],
         },
         FieldSet {

@@ -938,7 +938,7 @@
           "address": 1342177280,
           "registers": {
             "kind": "adc",
-            "version": "f3",
+            "version": "f3v1",
             "block": "ADC"
           },
           "rcc": {
@@ -1022,7 +1022,7 @@
           "address": 1342177536,
           "registers": {
             "kind": "adc",
-            "version": "f3",
+            "version": "f3v1",
             "block": "ADC"
           },
           "rcc": {
@@ -1123,7 +1123,7 @@
           "address": 1342178304,
           "registers": {
             "kind": "adc",
-            "version": "f3",
+            "version": "f3v1",
             "block": "ADC"
           },
           "rcc": {
@@ -1227,7 +1227,7 @@
           "address": 1342178560,
           "registers": {
             "kind": "adc",
-            "version": "f3",
+            "version": "f3v1",
             "block": "ADC"
           },
           "rcc": {

@@ -608,7 +608,7 @@
           "address": 1073816576,
           "registers": {
             "kind": "adc",
-            "version": "f3_v2",
+            "version": "f3v3",
             "block": "ADC"
           },
           "rcc": {

@@ -260,7 +260,7 @@ pub const NVIC_PRIO_BITS: u8 = 4;
 pub use cortex_m_rt::interrupt;
 #[cfg(feature = "rt")]
 pub use Interrupt as interrupt;
-#[path = "../../peripherals/adc_f3_v1_1.rs"]
+#[path = "../../peripherals/adc_f3v2.rs"]
 pub mod adc;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;

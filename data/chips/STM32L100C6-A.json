@@ -601,7 +601,7 @@
           "address": 1073816576,
           "registers": {
             "kind": "adc",
-            "version": "f3_v1_1",
+            "version": "f3v2",
             "block": "ADC"
           },
           "rcc": {

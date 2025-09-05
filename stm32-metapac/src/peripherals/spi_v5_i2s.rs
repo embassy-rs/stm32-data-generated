@@ -104,6 +104,11 @@ impl Spi {
     pub const fn udrdr(self) -> crate::common::Reg<regs::Udrdr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
     }
+    #[doc = "I2S Configuration Register"]
+    #[inline(always)]
+    pub const fn i2scfgr(self) -> crate::common::Reg<regs::I2scfgr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
+    }
 }
 pub mod regs {
     #[doc = "configuration register 1"]
@@ -664,6 +669,186 @@ pub mod regs {
     impl defmt::Format for Crcpoly {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(f, "Crcpoly {{ crcpoly: {=u32:?} }}", self.crcpoly())
+        }
+    }
+    #[doc = "I2S Configuration Register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct I2scfgr(pub u32);
+    impl I2scfgr {
+        #[doc = "I2S mode selection"]
+        #[inline(always)]
+        pub const fn i2smod(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "I2S mode selection"]
+        #[inline(always)]
+        pub fn set_i2smod(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "I2S configuration mode"]
+        #[inline(always)]
+        pub const fn i2scfg(&self) -> super::vals::I2scfg {
+            let val = (self.0 >> 1usize) & 0x07;
+            super::vals::I2scfg::from_bits(val as u8)
+        }
+        #[doc = "I2S configuration mode"]
+        #[inline(always)]
+        pub fn set_i2scfg(&mut self, val: super::vals::I2scfg) {
+            self.0 = (self.0 & !(0x07 << 1usize)) | (((val.to_bits() as u32) & 0x07) << 1usize);
+        }
+        #[doc = "I2S standard selection"]
+        #[inline(always)]
+        pub const fn i2sstd(&self) -> super::vals::I2sstd {
+            let val = (self.0 >> 4usize) & 0x03;
+            super::vals::I2sstd::from_bits(val as u8)
+        }
+        #[doc = "I2S standard selection"]
+        #[inline(always)]
+        pub fn set_i2sstd(&mut self, val: super::vals::I2sstd) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
+        }
+        #[doc = "PCM frame synchronization"]
+        #[inline(always)]
+        pub const fn pcmsync(&self) -> super::vals::Pcmsync {
+            let val = (self.0 >> 7usize) & 0x01;
+            super::vals::Pcmsync::from_bits(val as u8)
+        }
+        #[doc = "PCM frame synchronization"]
+        #[inline(always)]
+        pub fn set_pcmsync(&mut self, val: super::vals::Pcmsync) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        }
+        #[doc = "Data length to be transferred"]
+        #[inline(always)]
+        pub const fn datlen(&self) -> super::vals::Datlen {
+            let val = (self.0 >> 8usize) & 0x03;
+            super::vals::Datlen::from_bits(val as u8)
+        }
+        #[doc = "Data length to be transferred"]
+        #[inline(always)]
+        pub fn set_datlen(&mut self, val: super::vals::Datlen) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
+        }
+        #[doc = "Channel length (number of bits per audio channel)"]
+        #[inline(always)]
+        pub const fn chlen(&self) -> super::vals::Chlen {
+            let val = (self.0 >> 10usize) & 0x01;
+            super::vals::Chlen::from_bits(val as u8)
+        }
+        #[doc = "Channel length (number of bits per audio channel)"]
+        #[inline(always)]
+        pub fn set_chlen(&mut self, val: super::vals::Chlen) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+        }
+        #[doc = "Serial audio clock polarity"]
+        #[inline(always)]
+        pub const fn ckpol(&self) -> super::vals::Ckpol {
+            let val = (self.0 >> 11usize) & 0x01;
+            super::vals::Ckpol::from_bits(val as u8)
+        }
+        #[doc = "Serial audio clock polarity"]
+        #[inline(always)]
+        pub fn set_ckpol(&mut self, val: super::vals::Ckpol) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        }
+        #[doc = "Fixed channel length in slave"]
+        #[inline(always)]
+        pub const fn fixch(&self) -> super::vals::Fixch {
+            let val = (self.0 >> 12usize) & 0x01;
+            super::vals::Fixch::from_bits(val as u8)
+        }
+        #[doc = "Fixed channel length in slave"]
+        #[inline(always)]
+        pub fn set_fixch(&mut self, val: super::vals::Fixch) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        }
+        #[doc = "Word select inversion"]
+        #[inline(always)]
+        pub const fn wsinv(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Word select inversion"]
+        #[inline(always)]
+        pub fn set_wsinv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+        #[doc = "Data format"]
+        #[inline(always)]
+        pub const fn datfmt(&self) -> super::vals::Datfmt {
+            let val = (self.0 >> 14usize) & 0x01;
+            super::vals::Datfmt::from_bits(val as u8)
+        }
+        #[doc = "Data format"]
+        #[inline(always)]
+        pub fn set_datfmt(&mut self, val: super::vals::Datfmt) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        }
+        #[doc = "I2S linear prescaler"]
+        #[inline(always)]
+        pub const fn i2sdiv(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0xff;
+            val as u8
+        }
+        #[doc = "I2S linear prescaler"]
+        #[inline(always)]
+        pub fn set_i2sdiv(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
+        }
+        #[doc = "Odd factor for the prescaler"]
+        #[inline(always)]
+        pub const fn odd(&self) -> super::vals::Odd {
+            let val = (self.0 >> 24usize) & 0x01;
+            super::vals::Odd::from_bits(val as u8)
+        }
+        #[doc = "Odd factor for the prescaler"]
+        #[inline(always)]
+        pub fn set_odd(&mut self, val: super::vals::Odd) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+        }
+        #[doc = "Master clock output enable"]
+        #[inline(always)]
+        pub const fn mckoe(&self) -> bool {
+            let val = (self.0 >> 25usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Master clock output enable"]
+        #[inline(always)]
+        pub fn set_mckoe(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
+        }
+    }
+    impl Default for I2scfgr {
+        #[inline(always)]
+        fn default() -> I2scfgr {
+            I2scfgr(0)
+        }
+    }
+    impl core::fmt::Debug for I2scfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("I2scfgr")
+                .field("i2smod", &self.i2smod())
+                .field("i2scfg", &self.i2scfg())
+                .field("i2sstd", &self.i2sstd())
+                .field("pcmsync", &self.pcmsync())
+                .field("datlen", &self.datlen())
+                .field("chlen", &self.chlen())
+                .field("ckpol", &self.ckpol())
+                .field("fixch", &self.fixch())
+                .field("wsinv", &self.wsinv())
+                .field("datfmt", &self.datfmt())
+                .field("i2sdiv", &self.i2sdiv())
+                .field("odd", &self.odd())
+                .field("mckoe", &self.mckoe())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for I2scfgr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "I2scfgr {{ i2smod: {=bool:?}, i2scfg: {:?}, i2sstd: {:?}, pcmsync: {:?}, datlen: {:?}, chlen: {:?}, ckpol: {:?}, fixch: {:?}, wsinv: {=bool:?}, datfmt: {:?}, i2sdiv: {=u8:?}, odd: {:?}, mckoe: {=bool:?} }}" , self . i2smod () , self . i2scfg () , self . i2sstd () , self . pcmsync () , self . datlen () , self . chlen () , self . ckpol () , self . fixch () , self . wsinv () , self . datfmt () , self . i2sdiv () , self . odd () , self . mckoe ())
         }
     }
     #[doc = "Interrupt Enable Register"]
@@ -1241,6 +1426,68 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Chlen {
+        #[doc = "16 bits per channel"]
+        BITS16 = 0x0,
+        #[doc = "32 bits per channel"]
+        BITS32 = 0x01,
+    }
+    impl Chlen {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Chlen {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Chlen {
+        #[inline(always)]
+        fn from(val: u8) -> Chlen {
+            Chlen::from_bits(val)
+        }
+    }
+    impl From<Chlen> for u8 {
+        #[inline(always)]
+        fn from(val: Chlen) -> u8 {
+            Chlen::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Ckpol {
+        #[doc = "CK idle Level is Low. Signals are sampled on rising and changed on falling clock edges"]
+        IDLE_LOW = 0x0,
+        #[doc = "CK idle level is High. Signals are sampled on falling and changed on rising clock edges"]
+        IDLE_HIGH = 0x01,
+    }
+    impl Ckpol {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ckpol {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ckpol {
+        #[inline(always)]
+        fn from(val: u8) -> Ckpol {
+            Ckpol::from_bits(val)
+        }
+    }
+    impl From<Ckpol> for u8 {
+        #[inline(always)]
+        fn from(val: Ckpol) -> u8 {
+            Ckpol::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Comm {
         #[doc = "Full duplex"]
         FULL_DUPLEX = 0x0,
@@ -1308,9 +1555,9 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpol {
-        #[doc = "CK to 0 when idle"]
+        #[doc = "SCK to 0 when idle"]
         IDLE_LOW = 0x0,
-        #[doc = "CK to 1 when idle"]
+        #[doc = "SCK to 1 when idle"]
         IDLE_HIGH = 0x01,
     }
     impl Cpol {
@@ -1333,6 +1580,102 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Cpol) -> u8 {
             Cpol::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Datfmt {
+        #[doc = "The data inside RXDR and TXDR are right aligned"]
+        RIGHT_ALIGNED = 0x0,
+        #[doc = "The data inside RXDR and TXDR are left aligned"]
+        LEFT_ALIGNED = 0x01,
+    }
+    impl Datfmt {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Datfmt {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Datfmt {
+        #[inline(always)]
+        fn from(val: u8) -> Datfmt {
+            Datfmt::from_bits(val)
+        }
+    }
+    impl From<Datfmt> for u8 {
+        #[inline(always)]
+        fn from(val: Datfmt) -> u8 {
+            Datfmt::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Datlen {
+        #[doc = "16-bit data length"]
+        BITS16 = 0x0,
+        #[doc = "24-bit data length"]
+        BITS24 = 0x01,
+        #[doc = "32-bit data length"]
+        BITS32 = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Datlen {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Datlen {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Datlen {
+        #[inline(always)]
+        fn from(val: u8) -> Datlen {
+            Datlen::from_bits(val)
+        }
+    }
+    impl From<Datlen> for u8 {
+        #[inline(always)]
+        fn from(val: Datlen) -> u8 {
+            Datlen::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Fixch {
+        #[doc = "The channel length in slave mode is different from 16 or 32 bits (CHLEN not taken into account)"]
+        NOT_FIXED = 0x0,
+        #[doc = "The channel length in slave mode is supposed to be 16 or 32 bits (according to CHLEN)"]
+        FIXED = 0x01,
+    }
+    impl Fixch {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Fixch {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Fixch {
+        #[inline(always)]
+        fn from(val: u8) -> Fixch {
+            Fixch::from_bits(val)
+        }
+    }
+    impl From<Fixch> for u8 {
+        #[inline(always)]
+        fn from(val: Fixch) -> u8 {
+            Fixch::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1423,6 +1766,82 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Hddir) -> u8 {
             Hddir::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum I2scfg {
+        #[doc = "Slave, transmit"]
+        SLAVE_TX = 0x0,
+        #[doc = "Slave, receive"]
+        SLAVE_RX = 0x01,
+        #[doc = "Master, transmit"]
+        MASTER_TX = 0x02,
+        #[doc = "Master, receive"]
+        MASTER_RX = 0x03,
+        #[doc = "Slave, full duplex"]
+        SLAVE_FULL_DUPLEX = 0x04,
+        #[doc = "Master, full duplex"]
+        MASTER_FULL_DUPLEX = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+    }
+    impl I2scfg {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> I2scfg {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for I2scfg {
+        #[inline(always)]
+        fn from(val: u8) -> I2scfg {
+            I2scfg::from_bits(val)
+        }
+    }
+    impl From<I2scfg> for u8 {
+        #[inline(always)]
+        fn from(val: I2scfg) -> u8 {
+            I2scfg::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum I2sstd {
+        #[doc = "I2S Philips standard"]
+        PHILIPS = 0x0,
+        #[doc = "MSB/left justified standard"]
+        MSB = 0x01,
+        #[doc = "LSB/right justified standard"]
+        LSB = 0x02,
+        #[doc = "PCM standard"]
+        PCM = 0x03,
+    }
+    impl I2sstd {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> I2sstd {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for I2sstd {
+        #[inline(always)]
+        fn from(val: u8) -> I2sstd {
+            I2sstd::from_bits(val)
+        }
+    }
+    impl From<I2sstd> for u8 {
+        #[inline(always)]
+        fn from(val: I2sstd) -> u8 {
+            I2sstd::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1528,6 +1947,68 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Mbr) -> u8 {
             Mbr::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Odd {
+        #[doc = "Real divider value is I2SDIV*2"]
+        EVEN = 0x0,
+        #[doc = "Real divider value is I2SDIV*2 + 1"]
+        ODD = 0x01,
+    }
+    impl Odd {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Odd {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Odd {
+        #[inline(always)]
+        fn from(val: u8) -> Odd {
+            Odd::from_bits(val)
+        }
+    }
+    impl From<Odd> for u8 {
+        #[inline(always)]
+        fn from(val: Odd) -> u8 {
+            Odd::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Pcmsync {
+        #[doc = "Short PCM frame synchronization"]
+        SHORT = 0x0,
+        #[doc = "Long PCM frame synchronization"]
+        LONG = 0x01,
+    }
+    impl Pcmsync {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pcmsync {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pcmsync {
+        #[inline(always)]
+        fn from(val: u8) -> Pcmsync {
+            Pcmsync::from_bits(val)
+        }
+    }
+    impl From<Pcmsync> for u8 {
+        #[inline(always)]
+        fn from(val: Pcmsync) -> u8 {
+            Pcmsync::to_bits(val)
         }
     }
     #[repr(u8)]

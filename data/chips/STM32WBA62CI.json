@@ -1863,7 +1863,7 @@
           "address": 1073819648,
           "registers": {
             "kind": "spi",
-            "version": "v3",
+            "version": "v6",
             "block": "SPI"
           },
           "rcc": {
@@ -1937,7 +1937,7 @@
           "address": 1174413312,
           "registers": {
             "kind": "spi",
-            "version": "v3",
+            "version": "v6",
             "block": "SPI"
           },
           "rcc": {

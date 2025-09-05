@@ -403,7 +403,7 @@ pub mod rng;
 pub mod rtc;
 #[path = "../../peripherals/saes_v1a.rs"]
 pub mod saes;
-#[path = "../../peripherals/spi_v3.rs"]
+#[path = "../../peripherals/spi_v6.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_wba.rs"]
 pub mod syscfg;

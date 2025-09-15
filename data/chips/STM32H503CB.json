@@ -640,6 +640,12 @@
         "kind": "ram",
         "address": 536887296,
         "size": 16384
+      },
+      {
+        "name": "BKPSRAM",
+        "kind": "ram",
+        "address": 1073964032,
+        "size": 2048
       }
     ]
   ],

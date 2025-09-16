@@ -3,7 +3,7 @@
 #![allow(clippy::unnecessary_cast)]
 #![allow(clippy::erasing_op)]
 
-#[doc = "Analog to Digital Converter"]
+#[doc = "Analog to Digital Converter instance 1"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct Adc {
     ptr: *mut u8,
@@ -98,56 +98,6 @@ impl Adc {
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0308usize) as _) }
-    }
-    #[doc = "Hardware Configuration Register"]
-    #[inline(always)]
-    pub const fn hwcfgr6(self) -> crate::common::Reg<regs::Hwcfgr6, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03d8usize) as _) }
-    }
-    #[doc = "Hardware Configuration Register"]
-    #[inline(always)]
-    pub const fn hwcfgr5(self) -> crate::common::Reg<regs::Hwcfgr5, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03dcusize) as _) }
-    }
-    #[doc = "Hardware Configuration Register"]
-    #[inline(always)]
-    pub const fn hwcfgr4(self) -> crate::common::Reg<regs::Hwcfgr4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e0usize) as _) }
-    }
-    #[doc = "Hardware Configuration Register"]
-    #[inline(always)]
-    pub const fn hwcfgr3(self) -> crate::common::Reg<regs::Hwcfgr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e4usize) as _) }
-    }
-    #[doc = "Hardware Configuration Register"]
-    #[inline(always)]
-    pub const fn hwcfgr2(self) -> crate::common::Reg<regs::Hwcfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03e8usize) as _) }
-    }
-    #[doc = "Hardware Configuration Register"]
-    #[inline(always)]
-    pub const fn hwcfgr1(self) -> crate::common::Reg<regs::Hwcfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03ecusize) as _) }
-    }
-    #[doc = "Hardware Configuration Register"]
-    #[inline(always)]
-    pub const fn hwcfgr0(self) -> crate::common::Reg<regs::Hwcfgr0, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f0usize) as _) }
-    }
-    #[doc = "EXTI IP Version register"]
-    #[inline(always)]
-    pub const fn verr(self) -> crate::common::Reg<regs::Verr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f4usize) as _) }
-    }
-    #[doc = "EXTI Identification register"]
-    #[inline(always)]
-    pub const fn ipidr(self) -> crate::common::Reg<regs::Ipidr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f8usize) as _) }
-    }
-    #[doc = "EXTI Size ID register"]
-    #[inline(always)]
-    pub const fn sidr(self) -> crate::common::Reg<regs::Sidr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03fcusize) as _) }
     }
 }
 pub mod regs {
@@ -404,14 +354,14 @@ pub mod regs {
     impl Ccr {
         #[doc = "ADC prescaler"]
         #[inline(always)]
-        pub const fn presc(&self) -> u8 {
+        pub const fn presc(&self) -> super::vals::Presc {
             let val = (self.0 >> 18usize) & 0x0f;
-            val as u8
+            super::vals::Presc::from_bits(val as u8)
         }
         #[doc = "ADC prescaler"]
         #[inline(always)]
-        pub fn set_presc(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 18usize)) | (((val as u32) & 0x0f) << 18usize);
+        pub fn set_presc(&mut self, val: super::vals::Presc) {
+            self.0 = (self.0 & !(0x0f << 18usize)) | (((val.to_bits() as u32) & 0x0f) << 18usize);
         }
         #[doc = "VREFINT enable"]
         #[inline(always)]
@@ -468,7 +418,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ccr {{ presc: {=u8:?}, vrefen: {=bool:?}, tsen: {=bool:?}, vbaten: {=bool:?} }}",
+                "Ccr {{ presc: {:?}, vrefen: {=bool:?}, tsen: {=bool:?}, vbaten: {=bool:?} }}",
                 self.presc(),
                 self.vrefen(),
                 self.tsen(),
@@ -505,14 +455,14 @@ pub mod regs {
         }
         #[doc = "Scan sequence direction"]
         #[inline(always)]
-        pub const fn scandir(&self) -> bool {
+        pub const fn scandir(&self) -> super::vals::Scandir {
             let val = (self.0 >> 2usize) & 0x01;
-            val != 0
+            super::vals::Scandir::from_bits(val as u8)
         }
         #[doc = "Scan sequence direction"]
         #[inline(always)]
-        pub fn set_scandir(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        pub fn set_scandir(&mut self, val: super::vals::Scandir) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "ADC data resolution"]
         #[inline(always)]
@@ -527,36 +477,36 @@ pub mod regs {
         }
         #[doc = "ADC data alignement"]
         #[inline(always)]
-        pub const fn align(&self) -> bool {
+        pub const fn align(&self) -> super::vals::Align {
             let val = (self.0 >> 5usize) & 0x01;
-            val != 0
+            super::vals::Align::from_bits(val as u8)
         }
         #[doc = "ADC data alignement"]
         #[inline(always)]
-        pub fn set_align(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        pub fn set_align(&mut self, val: super::vals::Align) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
         #[doc = "ADC group regular external trigger source"]
         #[inline(always)]
-        pub const fn extsel(&self) -> u8 {
+        pub const fn extsel(&self) -> super::vals::Extsel {
             let val = (self.0 >> 6usize) & 0x07;
-            val as u8
+            super::vals::Extsel::from_bits(val as u8)
         }
         #[doc = "ADC group regular external trigger source"]
         #[inline(always)]
-        pub fn set_extsel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 6usize)) | (((val as u32) & 0x07) << 6usize);
+        pub fn set_extsel(&mut self, val: super::vals::Extsel) {
+            self.0 = (self.0 & !(0x07 << 6usize)) | (((val.to_bits() as u32) & 0x07) << 6usize);
         }
         #[doc = "ADC group regular external trigger polarity"]
         #[inline(always)]
-        pub const fn exten(&self) -> u8 {
+        pub const fn exten(&self) -> super::vals::Exten {
             let val = (self.0 >> 10usize) & 0x03;
-            val as u8
+            super::vals::Exten::from_bits(val as u8)
         }
         #[doc = "ADC group regular external trigger polarity"]
         #[inline(always)]
-        pub fn set_exten(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
+        pub fn set_exten(&mut self, val: super::vals::Exten) {
+            self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
         }
         #[doc = "ADC group regular overrun configuration"]
         #[inline(always)]
@@ -648,13 +598,13 @@ pub mod regs {
         }
         #[doc = "ADC analog watchdog 1 monitored channel selection"]
         #[inline(always)]
-        pub const fn awdch1ch(&self) -> u8 {
+        pub const fn awd1ch(&self) -> u8 {
             let val = (self.0 >> 26usize) & 0x1f;
             val as u8
         }
         #[doc = "ADC analog watchdog 1 monitored channel selection"]
         #[inline(always)]
-        pub fn set_awdch1ch(&mut self, val: u8) {
+        pub fn set_awd1ch(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 26usize)) | (((val as u32) & 0x1f) << 26usize);
         }
     }
@@ -682,14 +632,14 @@ pub mod regs {
                 .field("chselrmod", &self.chselrmod())
                 .field("awd1sgl", &self.awd1sgl())
                 .field("awd1en", &self.awd1en())
-                .field("awdch1ch", &self.awdch1ch())
+                .field("awd1ch", &self.awd1ch())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ dmaen: {=bool:?}, dmacfg: {:?}, scandir: {=bool:?}, res: {:?}, align: {=bool:?}, extsel: {=u8:?}, exten: {=u8:?}, ovrmod: {=bool:?}, cont: {=bool:?}, wait: {=bool:?}, autoff: {=bool:?}, discen: {=bool:?}, chselrmod: {=bool:?}, awd1sgl: {=bool:?}, awd1en: {=bool:?}, awdch1ch: {=u8:?} }}" , self . dmaen () , self . dmacfg () , self . scandir () , self . res () , self . align () , self . extsel () , self . exten () , self . ovrmod () , self . cont () , self . wait () , self . autoff () , self . discen () , self . chselrmod () , self . awd1sgl () , self . awd1en () , self . awdch1ch ())
+            defmt :: write ! (f , "Cfgr1 {{ dmaen: {=bool:?}, dmacfg: {:?}, scandir: {:?}, res: {:?}, align: {:?}, extsel: {:?}, exten: {:?}, ovrmod: {=bool:?}, cont: {=bool:?}, wait: {=bool:?}, autoff: {=bool:?}, discen: {=bool:?}, chselrmod: {=bool:?}, awd1sgl: {=bool:?}, awd1en: {=bool:?}, awd1ch: {=u8:?} }}" , self . dmaen () , self . dmacfg () , self . scandir () , self . res () , self . align () , self . extsel () , self . exten () , self . ovrmod () , self . cont () , self . wait () , self . autoff () , self . discen () , self . chselrmod () , self . awd1sgl () , self . awd1en () , self . awd1ch ())
         }
     }
     #[doc = "ADC configuration register 2"]
@@ -710,25 +660,25 @@ pub mod regs {
         }
         #[doc = "ADC oversampling ratio"]
         #[inline(always)]
-        pub const fn ovsr(&self) -> u8 {
+        pub const fn ovsr(&self) -> super::vals::Ovsr {
             let val = (self.0 >> 2usize) & 0x07;
-            val as u8
+            super::vals::Ovsr::from_bits(val as u8)
         }
         #[doc = "ADC oversampling ratio"]
         #[inline(always)]
-        pub fn set_ovsr(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 2usize)) | (((val as u32) & 0x07) << 2usize);
+        pub fn set_ovsr(&mut self, val: super::vals::Ovsr) {
+            self.0 = (self.0 & !(0x07 << 2usize)) | (((val.to_bits() as u32) & 0x07) << 2usize);
         }
         #[doc = "ADC oversampling shift"]
         #[inline(always)]
-        pub const fn ovss(&self) -> u8 {
+        pub const fn ovss(&self) -> super::vals::Ovss {
             let val = (self.0 >> 5usize) & 0x0f;
-            val as u8
+            super::vals::Ovss::from_bits(val as u8)
         }
         #[doc = "ADC oversampling shift"]
         #[inline(always)]
-        pub fn set_ovss(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 5usize)) | (((val as u32) & 0x0f) << 5usize);
+        pub fn set_ovss(&mut self, val: super::vals::Ovss) {
+            self.0 = (self.0 & !(0x0f << 5usize)) | (((val.to_bits() as u32) & 0x0f) << 5usize);
         }
         #[doc = "ADC oversampling discontinuous mode (triggered mode) for ADC group regular"]
         #[inline(always)]
@@ -754,14 +704,14 @@ pub mod regs {
         }
         #[doc = "ADC clock mode"]
         #[inline(always)]
-        pub const fn ckmode(&self) -> u8 {
+        pub const fn ckmode(&self) -> super::vals::Ckmode {
             let val = (self.0 >> 30usize) & 0x03;
-            val as u8
+            super::vals::Ckmode::from_bits(val as u8)
         }
         #[doc = "ADC clock mode"]
         #[inline(always)]
-        pub fn set_ckmode(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        pub fn set_ckmode(&mut self, val: super::vals::Ckmode) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val.to_bits() as u32) & 0x03) << 30usize);
         }
     }
     impl Default for Cfgr2 {
@@ -785,7 +735,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr2 {{ ovse: {=bool:?}, ovsr: {=u8:?}, ovss: {=u8:?}, tovs: {=bool:?}, lftrig: {=bool:?}, ckmode: {=u8:?} }}" , self . ovse () , self . ovsr () , self . ovss () , self . tovs () , self . lftrig () , self . ckmode ())
+            defmt::write!(
+                f,
+                "Cfgr2 {{ ovse: {=bool:?}, ovsr: {:?}, ovss: {:?}, tovs: {=bool:?}, lftrig: {=bool:?}, ckmode: {:?} }}",
+                self.ovse(),
+                self.ovsr(),
+                self.ovss(),
+                self.tovs(),
+                self.lftrig(),
+                self.ckmode()
+            )
         }
     }
     #[doc = "channel selection register"]
@@ -795,14 +754,18 @@ pub mod regs {
     impl Chselr {
         #[doc = "Channel-x selection"]
         #[inline(always)]
-        pub const fn chsel(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0x0007_ffff;
-            val as u32
+        pub const fn chsel(&self, n: usize) -> bool {
+            assert!(n < 19usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
+            val != 0
         }
         #[doc = "Channel-x selection"]
         #[inline(always)]
-        pub fn set_chsel(&mut self, val: u32) {
-            self.0 = (self.0 & !(0x0007_ffff << 0usize)) | (((val as u32) & 0x0007_ffff) << 0usize);
+        pub fn set_chsel(&mut self, n: usize, val: bool) {
+            assert!(n < 19usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Chselr {
@@ -813,13 +776,33 @@ pub mod regs {
     }
     impl core::fmt::Debug for Chselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Chselr").field("chsel", &self.chsel()).finish()
+            f.debug_struct("Chselr")
+                .field("chsel[0]", &self.chsel(0usize))
+                .field("chsel[1]", &self.chsel(1usize))
+                .field("chsel[2]", &self.chsel(2usize))
+                .field("chsel[3]", &self.chsel(3usize))
+                .field("chsel[4]", &self.chsel(4usize))
+                .field("chsel[5]", &self.chsel(5usize))
+                .field("chsel[6]", &self.chsel(6usize))
+                .field("chsel[7]", &self.chsel(7usize))
+                .field("chsel[8]", &self.chsel(8usize))
+                .field("chsel[9]", &self.chsel(9usize))
+                .field("chsel[10]", &self.chsel(10usize))
+                .field("chsel[11]", &self.chsel(11usize))
+                .field("chsel[12]", &self.chsel(12usize))
+                .field("chsel[13]", &self.chsel(13usize))
+                .field("chsel[14]", &self.chsel(14usize))
+                .field("chsel[15]", &self.chsel(15usize))
+                .field("chsel[16]", &self.chsel(16usize))
+                .field("chsel[17]", &self.chsel(17usize))
+                .field("chsel[18]", &self.chsel(18usize))
+                .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Chselr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Chselr {{ chsel: {=u32:?} }}", self.chsel())
+            defmt :: write ! (f , "Chselr {{ chsel[0]: {=bool:?}, chsel[1]: {=bool:?}, chsel[2]: {=bool:?}, chsel[3]: {=bool:?}, chsel[4]: {=bool:?}, chsel[5]: {=bool:?}, chsel[6]: {=bool:?}, chsel[7]: {=bool:?}, chsel[8]: {=bool:?}, chsel[9]: {=bool:?}, chsel[10]: {=bool:?}, chsel[11]: {=bool:?}, chsel[12]: {=bool:?}, chsel[13]: {=bool:?}, chsel[14]: {=bool:?}, chsel[15]: {=bool:?}, chsel[16]: {=bool:?}, chsel[17]: {=bool:?}, chsel[18]: {=bool:?} }}" , self . chsel (0usize) , self . chsel (1usize) , self . chsel (2usize) , self . chsel (3usize) , self . chsel (4usize) , self . chsel (5usize) , self . chsel (6usize) , self . chsel (7usize) , self . chsel (8usize) , self . chsel (9usize) , self . chsel (10usize) , self . chsel (11usize) , self . chsel (12usize) , self . chsel (13usize) , self . chsel (14usize) , self . chsel (15usize) , self . chsel (16usize) , self . chsel (17usize) , self . chsel (18usize))
         }
     }
     #[doc = "channel selection register CHSELRMOD = 1 in ADC_CFGR1"]
@@ -829,91 +812,18 @@ pub mod regs {
     impl Chselr1 {
         #[doc = "conversion of the sequence"]
         #[inline(always)]
-        pub const fn sq1(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x0f;
-            val as u8
+        pub const fn sq(&self, n: usize) -> super::vals::Sq {
+            assert!(n < 8usize);
+            let offs = 0usize + n * 4usize;
+            let val = (self.0 >> offs) & 0x0f;
+            super::vals::Sq::from_bits(val as u8)
         }
         #[doc = "conversion of the sequence"]
         #[inline(always)]
-        pub fn set_sq1(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
-        }
-        #[doc = "conversion of the sequence"]
-        #[inline(always)]
-        pub const fn sq2(&self) -> u8 {
-            let val = (self.0 >> 4usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "conversion of the sequence"]
-        #[inline(always)]
-        pub fn set_sq2(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
-        }
-        #[doc = "conversion of the sequence"]
-        #[inline(always)]
-        pub const fn sq3(&self) -> u8 {
-            let val = (self.0 >> 8usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "conversion of the sequence"]
-        #[inline(always)]
-        pub fn set_sq3(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
-        }
-        #[doc = "conversion of the sequence"]
-        #[inline(always)]
-        pub const fn sq4(&self) -> u8 {
-            let val = (self.0 >> 12usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "conversion of the sequence"]
-        #[inline(always)]
-        pub fn set_sq4(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 12usize)) | (((val as u32) & 0x0f) << 12usize);
-        }
-        #[doc = "conversion of the sequence"]
-        #[inline(always)]
-        pub const fn sq5(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "conversion of the sequence"]
-        #[inline(always)]
-        pub fn set_sq5(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 16usize)) | (((val as u32) & 0x0f) << 16usize);
-        }
-        #[doc = "conversion of the sequence"]
-        #[inline(always)]
-        pub const fn sq6(&self) -> u8 {
-            let val = (self.0 >> 20usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "conversion of the sequence"]
-        #[inline(always)]
-        pub fn set_sq6(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 20usize)) | (((val as u32) & 0x0f) << 20usize);
-        }
-        #[doc = "conversion of the sequence"]
-        #[inline(always)]
-        pub const fn sq7(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "conversion of the sequence"]
-        #[inline(always)]
-        pub fn set_sq7(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
-        }
-        #[doc = "conversion of the sequence"]
-        #[inline(always)]
-        pub const fn sq8(&self) -> u8 {
-            let val = (self.0 >> 28usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "conversion of the sequence"]
-        #[inline(always)]
-        pub fn set_sq8(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 28usize)) | (((val as u32) & 0x0f) << 28usize);
+        pub fn set_sq(&mut self, n: usize, val: super::vals::Sq) {
+            assert!(n < 8usize);
+            let offs = 0usize + n * 4usize;
+            self.0 = (self.0 & !(0x0f << offs)) | (((val.to_bits() as u32) & 0x0f) << offs);
         }
     }
     impl Default for Chselr1 {
@@ -925,21 +835,21 @@ pub mod regs {
     impl core::fmt::Debug for Chselr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Chselr1")
-                .field("sq1", &self.sq1())
-                .field("sq2", &self.sq2())
-                .field("sq3", &self.sq3())
-                .field("sq4", &self.sq4())
-                .field("sq5", &self.sq5())
-                .field("sq6", &self.sq6())
-                .field("sq7", &self.sq7())
-                .field("sq8", &self.sq8())
+                .field("sq[0]", &self.sq(0usize))
+                .field("sq[1]", &self.sq(1usize))
+                .field("sq[2]", &self.sq(2usize))
+                .field("sq[3]", &self.sq(3usize))
+                .field("sq[4]", &self.sq(4usize))
+                .field("sq[5]", &self.sq(5usize))
+                .field("sq[6]", &self.sq(6usize))
+                .field("sq[7]", &self.sq(7usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Chselr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Chselr1 {{ sq1: {=u8:?}, sq2: {=u8:?}, sq3: {=u8:?}, sq4: {=u8:?}, sq5: {=u8:?}, sq6: {=u8:?}, sq7: {=u8:?}, sq8: {=u8:?} }}" , self . sq1 () , self . sq2 () , self . sq3 () , self . sq4 () , self . sq5 () , self . sq6 () , self . sq7 () , self . sq8 ())
+            defmt :: write ! (f , "Chselr1 {{ sq[0]: {:?}, sq[1]: {:?}, sq[2]: {:?}, sq[3]: {:?}, sq[4]: {:?}, sq[5]: {:?}, sq[6]: {:?}, sq[7]: {:?} }}" , self . sq (0usize) , self . sq (1usize) , self . sq (2usize) , self . sq (3usize) , self . sq (4usize) , self . sq (5usize) , self . sq (6usize) , self . sq (7usize))
         }
     }
     #[doc = "ADC control register"]
@@ -1045,13 +955,13 @@ pub mod regs {
     impl Dr {
         #[doc = "ADC group regular conversion data"]
         #[inline(always)]
-        pub const fn regular_data(&self) -> u16 {
+        pub const fn data(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
         #[doc = "ADC group regular conversion data"]
         #[inline(always)]
-        pub fn set_regular_data(&mut self, val: u16) {
+        pub fn set_data(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -1063,555 +973,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Dr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Dr")
-                .field("regular_data", &self.regular_data())
-                .finish()
+            f.debug_struct("Dr").field("data", &self.data()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dr {{ regular_data: {=u16:?} }}", self.regular_data())
-        }
-    }
-    #[doc = "Hardware Configuration Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Hwcfgr0(pub u32);
-    impl Hwcfgr0 {
-        #[doc = "NUM_CHAN_24"]
-        #[inline(always)]
-        pub const fn num_chan_24(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "NUM_CHAN_24"]
-        #[inline(always)]
-        pub fn set_num_chan_24(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
-        }
-        #[doc = "Extra analog watchdog"]
-        #[inline(always)]
-        pub const fn extra_awds(&self) -> u8 {
-            let val = (self.0 >> 4usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "Extra analog watchdog"]
-        #[inline(always)]
-        pub fn set_extra_awds(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
-        }
-        #[doc = "Oversampling"]
-        #[inline(always)]
-        pub const fn ovs(&self) -> u8 {
-            let val = (self.0 >> 8usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "Oversampling"]
-        #[inline(always)]
-        pub fn set_ovs(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
-        }
-    }
-    impl Default for Hwcfgr0 {
-        #[inline(always)]
-        fn default() -> Hwcfgr0 {
-            Hwcfgr0(0)
-        }
-    }
-    impl core::fmt::Debug for Hwcfgr0 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Hwcfgr0")
-                .field("num_chan_24", &self.num_chan_24())
-                .field("extra_awds", &self.extra_awds())
-                .field("ovs", &self.ovs())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Hwcfgr0 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Hwcfgr0 {{ num_chan_24: {=u8:?}, extra_awds: {=u8:?}, ovs: {=u8:?} }}",
-                self.num_chan_24(),
-                self.extra_awds(),
-                self.ovs()
-            )
-        }
-    }
-    #[doc = "Hardware Configuration Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Hwcfgr1(pub u32);
-    impl Hwcfgr1 {
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap3(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap3(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap2(&self) -> u8 {
-            let val = (self.0 >> 8usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap2(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap1(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap1(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap0(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap0(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 24usize)) | (((val as u32) & 0x1f) << 24usize);
-        }
-    }
-    impl Default for Hwcfgr1 {
-        #[inline(always)]
-        fn default() -> Hwcfgr1 {
-            Hwcfgr1(0)
-        }
-    }
-    impl core::fmt::Debug for Hwcfgr1 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Hwcfgr1")
-                .field("chmap3", &self.chmap3())
-                .field("chmap2", &self.chmap2())
-                .field("chmap1", &self.chmap1())
-                .field("chmap0", &self.chmap0())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Hwcfgr1 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Hwcfgr1 {{ chmap3: {=u8:?}, chmap2: {=u8:?}, chmap1: {=u8:?}, chmap0: {=u8:?} }}",
-                self.chmap3(),
-                self.chmap2(),
-                self.chmap1(),
-                self.chmap0()
-            )
-        }
-    }
-    #[doc = "Hardware Configuration Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Hwcfgr2(pub u32);
-    impl Hwcfgr2 {
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap7(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap7(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap6(&self) -> u8 {
-            let val = (self.0 >> 8usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap6(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap5(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap5(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap4(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap4(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 24usize)) | (((val as u32) & 0x1f) << 24usize);
-        }
-    }
-    impl Default for Hwcfgr2 {
-        #[inline(always)]
-        fn default() -> Hwcfgr2 {
-            Hwcfgr2(0)
-        }
-    }
-    impl core::fmt::Debug for Hwcfgr2 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Hwcfgr2")
-                .field("chmap7", &self.chmap7())
-                .field("chmap6", &self.chmap6())
-                .field("chmap5", &self.chmap5())
-                .field("chmap4", &self.chmap4())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Hwcfgr2 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Hwcfgr2 {{ chmap7: {=u8:?}, chmap6: {=u8:?}, chmap5: {=u8:?}, chmap4: {=u8:?} }}",
-                self.chmap7(),
-                self.chmap6(),
-                self.chmap5(),
-                self.chmap4()
-            )
-        }
-    }
-    #[doc = "Hardware Configuration Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Hwcfgr3(pub u32);
-    impl Hwcfgr3 {
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap11(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap11(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap10(&self) -> u8 {
-            let val = (self.0 >> 8usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap10(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap9(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap9(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap8(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap8(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 24usize)) | (((val as u32) & 0x1f) << 24usize);
-        }
-    }
-    impl Default for Hwcfgr3 {
-        #[inline(always)]
-        fn default() -> Hwcfgr3 {
-            Hwcfgr3(0)
-        }
-    }
-    impl core::fmt::Debug for Hwcfgr3 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Hwcfgr3")
-                .field("chmap11", &self.chmap11())
-                .field("chmap10", &self.chmap10())
-                .field("chmap9", &self.chmap9())
-                .field("chmap8", &self.chmap8())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Hwcfgr3 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Hwcfgr3 {{ chmap11: {=u8:?}, chmap10: {=u8:?}, chmap9: {=u8:?}, chmap8: {=u8:?} }}",
-                self.chmap11(),
-                self.chmap10(),
-                self.chmap9(),
-                self.chmap8()
-            )
-        }
-    }
-    #[doc = "Hardware Configuration Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Hwcfgr4(pub u32);
-    impl Hwcfgr4 {
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap15(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap15(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap14(&self) -> u8 {
-            let val = (self.0 >> 8usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap14(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap13(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap13(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap12(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap12(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 24usize)) | (((val as u32) & 0x1f) << 24usize);
-        }
-    }
-    impl Default for Hwcfgr4 {
-        #[inline(always)]
-        fn default() -> Hwcfgr4 {
-            Hwcfgr4(0)
-        }
-    }
-    impl core::fmt::Debug for Hwcfgr4 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Hwcfgr4")
-                .field("chmap15", &self.chmap15())
-                .field("chmap14", &self.chmap14())
-                .field("chmap13", &self.chmap13())
-                .field("chmap12", &self.chmap12())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Hwcfgr4 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Hwcfgr4 {{ chmap15: {=u8:?}, chmap14: {=u8:?}, chmap13: {=u8:?}, chmap12: {=u8:?} }}",
-                self.chmap15(),
-                self.chmap14(),
-                self.chmap13(),
-                self.chmap12()
-            )
-        }
-    }
-    #[doc = "Hardware Configuration Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Hwcfgr5(pub u32);
-    impl Hwcfgr5 {
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap19(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap19(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap18(&self) -> u8 {
-            let val = (self.0 >> 8usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap18(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap17(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap17(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap16(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap16(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 24usize)) | (((val as u32) & 0x1f) << 24usize);
-        }
-    }
-    impl Default for Hwcfgr5 {
-        #[inline(always)]
-        fn default() -> Hwcfgr5 {
-            Hwcfgr5(0)
-        }
-    }
-    impl core::fmt::Debug for Hwcfgr5 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Hwcfgr5")
-                .field("chmap19", &self.chmap19())
-                .field("chmap18", &self.chmap18())
-                .field("chmap17", &self.chmap17())
-                .field("chmap16", &self.chmap16())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Hwcfgr5 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Hwcfgr5 {{ chmap19: {=u8:?}, chmap18: {=u8:?}, chmap17: {=u8:?}, chmap16: {=u8:?} }}",
-                self.chmap19(),
-                self.chmap18(),
-                self.chmap17(),
-                self.chmap16()
-            )
-        }
-    }
-    #[doc = "Hardware Configuration Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Hwcfgr6(pub u32);
-    impl Hwcfgr6 {
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap20(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap20(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap21(&self) -> u8 {
-            let val = (self.0 >> 8usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap21(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap22(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap22(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub const fn chmap23(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x1f;
-            val as u8
-        }
-        #[doc = "Input channel mapping"]
-        #[inline(always)]
-        pub fn set_chmap23(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 24usize)) | (((val as u32) & 0x1f) << 24usize);
-        }
-    }
-    impl Default for Hwcfgr6 {
-        #[inline(always)]
-        fn default() -> Hwcfgr6 {
-            Hwcfgr6(0)
-        }
-    }
-    impl core::fmt::Debug for Hwcfgr6 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Hwcfgr6")
-                .field("chmap20", &self.chmap20())
-                .field("chmap21", &self.chmap21())
-                .field("chmap22", &self.chmap22())
-                .field("chmap23", &self.chmap23())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Hwcfgr6 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Hwcfgr6 {{ chmap20: {=u8:?}, chmap21: {=u8:?}, chmap22: {=u8:?}, chmap23: {=u8:?} }}",
-                self.chmap20(),
-                self.chmap21(),
-                self.chmap22(),
-                self.chmap23()
-            )
+            defmt::write!(f, "Dr {{ data: {=u16:?} }}", self.data())
         }
     }
     #[doc = "ADC interrupt enable register"]
@@ -1758,40 +1126,6 @@ pub mod regs {
             defmt :: write ! (f , "Ier {{ adrdyie: {=bool:?}, eosmpie: {=bool:?}, eocie: {=bool:?}, eosie: {=bool:?}, ovrie: {=bool:?}, awd1ie: {=bool:?}, awd2ie: {=bool:?}, awd3ie: {=bool:?}, eocalie: {=bool:?}, ccrdyie: {=bool:?} }}" , self . adrdyie () , self . eosmpie () , self . eocie () , self . eosie () , self . ovrie () , self . awd1ie () , self . awd2ie () , self . awd3ie () , self . eocalie () , self . ccrdyie ())
         }
     }
-    #[doc = "EXTI Identification register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ipidr(pub u32);
-    impl Ipidr {
-        #[doc = "IP Identification"]
-        #[inline(always)]
-        pub const fn ipid(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "IP Identification"]
-        #[inline(always)]
-        pub fn set_ipid(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Ipidr {
-        #[inline(always)]
-        fn default() -> Ipidr {
-            Ipidr(0)
-        }
-    }
-    impl core::fmt::Debug for Ipidr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ipidr").field("ipid", &self.ipid()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ipidr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Ipidr {{ ipid: {=u32:?} }}", self.ipid())
-        }
-    }
     #[doc = "ADC interrupt and status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1936,40 +1270,6 @@ pub mod regs {
             defmt :: write ! (f , "Isr {{ adrdy: {=bool:?}, eosmp: {=bool:?}, eoc: {=bool:?}, eos: {=bool:?}, ovr: {=bool:?}, awd1: {=bool:?}, awd2: {=bool:?}, awd3: {=bool:?}, eocal: {=bool:?}, ccrdy: {=bool:?} }}" , self . adrdy () , self . eosmp () , self . eoc () , self . eos () , self . ovr () , self . awd1 () , self . awd2 () , self . awd3 () , self . eocal () , self . ccrdy ())
         }
     }
-    #[doc = "EXTI Size ID register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Sidr(pub u32);
-    impl Sidr {
-        #[doc = "Size Identification"]
-        #[inline(always)]
-        pub const fn sid(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Size Identification"]
-        #[inline(always)]
-        pub fn set_sid(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for Sidr {
-        #[inline(always)]
-        fn default() -> Sidr {
-            Sidr(0)
-        }
-    }
-    impl core::fmt::Debug for Sidr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Sidr").field("sid", &self.sid()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Sidr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Sidr {{ sid: {=u32:?} }}", self.sid())
-        }
-    }
     #[doc = "ADC sampling time register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1977,40 +1277,33 @@ pub mod regs {
     impl Smpr {
         #[doc = "Sampling time selection"]
         #[inline(always)]
-        pub const fn smp1(&self) -> super::vals::SampleTime {
-            let val = (self.0 >> 0usize) & 0x07;
+        pub const fn sample_time(&self, n: usize) -> super::vals::SampleTime {
+            assert!(n < 2usize);
+            let offs = 0usize + n * 4usize;
+            let val = (self.0 >> offs) & 0x07;
             super::vals::SampleTime::from_bits(val as u8)
         }
         #[doc = "Sampling time selection"]
         #[inline(always)]
-        pub fn set_smp1(&mut self, val: super::vals::SampleTime) {
-            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
-        }
-        #[doc = "Sampling time selection"]
-        #[inline(always)]
-        pub const fn smp2(&self) -> super::vals::SampleTime {
-            let val = (self.0 >> 4usize) & 0x07;
-            super::vals::SampleTime::from_bits(val as u8)
-        }
-        #[doc = "Sampling time selection"]
-        #[inline(always)]
-        pub fn set_smp2(&mut self, val: super::vals::SampleTime) {
-            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
+        pub fn set_sample_time(&mut self, n: usize, val: super::vals::SampleTime) {
+            assert!(n < 2usize);
+            let offs = 0usize + n * 4usize;
+            self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
         }
         #[doc = "Channel sampling time selection"]
         #[inline(always)]
-        pub const fn smpsel(&self, n: usize) -> bool {
+        pub const fn smpsel(&self, n: usize) -> super::vals::Smpsel {
             assert!(n < 19usize);
             let offs = 8usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            val != 0
+            super::vals::Smpsel::from_bits(val as u8)
         }
         #[doc = "Channel sampling time selection"]
         #[inline(always)]
-        pub fn set_smpsel(&mut self, n: usize, val: bool) {
+        pub fn set_smpsel(&mut self, n: usize, val: super::vals::Smpsel) {
             assert!(n < 19usize);
             let offs = 8usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
         }
     }
     impl Default for Smpr {
@@ -2022,8 +1315,8 @@ pub mod regs {
     impl core::fmt::Debug for Smpr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Smpr")
-                .field("smp1", &self.smp1())
-                .field("smp2", &self.smp2())
+                .field("sample_time[0]", &self.sample_time(0usize))
+                .field("sample_time[1]", &self.sample_time(1usize))
                 .field("smpsel[0]", &self.smpsel(0usize))
                 .field("smpsel[1]", &self.smpsel(1usize))
                 .field("smpsel[2]", &self.smpsel(2usize))
@@ -2049,60 +1342,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Smpr {{ smp1: {:?}, smp2: {:?}, smpsel[0]: {=bool:?}, smpsel[1]: {=bool:?}, smpsel[2]: {=bool:?}, smpsel[3]: {=bool:?}, smpsel[4]: {=bool:?}, smpsel[5]: {=bool:?}, smpsel[6]: {=bool:?}, smpsel[7]: {=bool:?}, smpsel[8]: {=bool:?}, smpsel[9]: {=bool:?}, smpsel[10]: {=bool:?}, smpsel[11]: {=bool:?}, smpsel[12]: {=bool:?}, smpsel[13]: {=bool:?}, smpsel[14]: {=bool:?}, smpsel[15]: {=bool:?}, smpsel[16]: {=bool:?}, smpsel[17]: {=bool:?}, smpsel[18]: {=bool:?} }}" , self . smp1 () , self . smp2 () , self . smpsel (0usize) , self . smpsel (1usize) , self . smpsel (2usize) , self . smpsel (3usize) , self . smpsel (4usize) , self . smpsel (5usize) , self . smpsel (6usize) , self . smpsel (7usize) , self . smpsel (8usize) , self . smpsel (9usize) , self . smpsel (10usize) , self . smpsel (11usize) , self . smpsel (12usize) , self . smpsel (13usize) , self . smpsel (14usize) , self . smpsel (15usize) , self . smpsel (16usize) , self . smpsel (17usize) , self . smpsel (18usize))
-        }
-    }
-    #[doc = "EXTI IP Version register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Verr(pub u32);
-    impl Verr {
-        #[doc = "Minor Revision number"]
-        #[inline(always)]
-        pub const fn minrev(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "Minor Revision number"]
-        #[inline(always)]
-        pub fn set_minrev(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
-        }
-        #[doc = "Major Revision number"]
-        #[inline(always)]
-        pub const fn majrev(&self) -> u8 {
-            let val = (self.0 >> 4usize) & 0x0f;
-            val as u8
-        }
-        #[doc = "Major Revision number"]
-        #[inline(always)]
-        pub fn set_majrev(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
-        }
-    }
-    impl Default for Verr {
-        #[inline(always)]
-        fn default() -> Verr {
-            Verr(0)
-        }
-    }
-    impl core::fmt::Debug for Verr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Verr")
-                .field("minrev", &self.minrev())
-                .field("majrev", &self.majrev())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Verr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Verr {{ minrev: {=u8:?}, majrev: {=u8:?} }}",
-                self.minrev(),
-                self.majrev()
-            )
+            defmt :: write ! (f , "Smpr {{ sample_time[0]: {:?}, sample_time[1]: {:?}, smpsel[0]: {:?}, smpsel[1]: {:?}, smpsel[2]: {:?}, smpsel[3]: {:?}, smpsel[4]: {:?}, smpsel[5]: {:?}, smpsel[6]: {:?}, smpsel[7]: {:?}, smpsel[8]: {:?}, smpsel[9]: {:?}, smpsel[10]: {:?}, smpsel[11]: {:?}, smpsel[12]: {:?}, smpsel[13]: {:?}, smpsel[14]: {:?}, smpsel[15]: {:?}, smpsel[16]: {:?}, smpsel[17]: {:?}, smpsel[18]: {:?} }}" , self . sample_time (0usize) , self . sample_time (1usize) , self . smpsel (0usize) , self . smpsel (1usize) , self . smpsel (2usize) , self . smpsel (3usize) , self . smpsel (4usize) , self . smpsel (5usize) , self . smpsel (6usize) , self . smpsel (7usize) , self . smpsel (8usize) , self . smpsel (9usize) , self . smpsel (10usize) , self . smpsel (11usize) , self . smpsel (12usize) , self . smpsel (13usize) , self . smpsel (14usize) , self . smpsel (15usize) , self . smpsel (16usize) , self . smpsel (17usize) , self . smpsel (18usize))
         }
     }
 }
@@ -2110,10 +1350,76 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Align {
+        #[doc = "Right alignment"]
+        RIGHT = 0x0,
+        #[doc = "Left alignment"]
+        LEFT = 0x01,
+    }
+    impl Align {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Align {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Align {
+        #[inline(always)]
+        fn from(val: u8) -> Align {
+            Align::from_bits(val)
+        }
+    }
+    impl From<Align> for u8 {
+        #[inline(always)]
+        fn from(val: Align) -> u8 {
+            Align::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Ckmode {
+        #[doc = "ADCCLK (Asynchronous clock mode)"]
+        ADCLK = 0x0,
+        #[doc = "PCLK/2 (Synchronous clock mode)"]
+        PCLK_DIV2 = 0x01,
+        #[doc = "PCLK/4 (Synchronous clock mode)"]
+        PCLK_DIV4 = 0x02,
+        #[doc = "PCLK (Synchronous clock mode)"]
+        PCLK = 0x03,
+    }
+    impl Ckmode {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ckmode {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ckmode {
+        #[inline(always)]
+        fn from(val: u8) -> Ckmode {
+            Ckmode::from_bits(val)
+        }
+    }
+    impl From<Ckmode> for u8 {
+        #[inline(always)]
+        fn from(val: Ckmode) -> u8 {
+            Ckmode::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dmacfg {
-        #[doc = "DMA One Shot mode selected"]
+        #[doc = "DMA one shot mode selected"]
         ONE_SHOT = 0x0,
-        #[doc = "DMA Circular mode selected"]
+        #[doc = "DMA circular mode selected"]
         CIRCULAR = 0x01,
     }
     impl Dmacfg {
@@ -2141,14 +1447,240 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Exten {
+        #[doc = "Hardware trigger detection disabled"]
+        DISABLED = 0x0,
+        #[doc = "Hardware trigger detection on the rising edge"]
+        RISING_EDGE = 0x01,
+        #[doc = "Hardware trigger detection on the falling edge"]
+        FALLING_EDGE = 0x02,
+        #[doc = "Hardware trigger detection on both the rising and falling edges"]
+        BOTH_EDGES = 0x03,
+    }
+    impl Exten {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Exten {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Exten {
+        #[inline(always)]
+        fn from(val: u8) -> Exten {
+            Exten::from_bits(val)
+        }
+    }
+    impl From<Exten> for u8 {
+        #[inline(always)]
+        fn from(val: Exten) -> u8 {
+            Exten::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Extsel {
+        #[doc = "Timer 1 TRGO event"]
+        TIM1_TRGO = 0x0,
+        #[doc = "Timer 1 CC4 event"]
+        TIM1_CC4 = 0x01,
+        #[doc = "Timer 2 TRGO event"]
+        TIM2_TRGO = 0x02,
+        #[doc = "Timer 2 CH4 event"]
+        TIM2_CH4 = 0x03,
+        _RESERVED_4 = 0x04,
+        #[doc = "Timer 2 CH3 event"]
+        TIM2_CH3 = 0x05,
+        _RESERVED_6 = 0x06,
+        #[doc = "EXTI line 11 event"]
+        EXTI_LINE11 = 0x07,
+    }
+    impl Extsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Extsel {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Extsel {
+        #[inline(always)]
+        fn from(val: u8) -> Extsel {
+            Extsel::from_bits(val)
+        }
+    }
+    impl From<Extsel> for u8 {
+        #[inline(always)]
+        fn from(val: Extsel) -> u8 {
+            Extsel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Ovsr {
+        #[doc = "2x"]
+        MUL2 = 0x0,
+        #[doc = "4x"]
+        MUL4 = 0x01,
+        #[doc = "8x"]
+        MUL8 = 0x02,
+        #[doc = "16x"]
+        MUL16 = 0x03,
+        #[doc = "32x"]
+        MUL32 = 0x04,
+        #[doc = "64x"]
+        MUL64 = 0x05,
+        #[doc = "128x"]
+        MUL128 = 0x06,
+        #[doc = "256x"]
+        MUL256 = 0x07,
+    }
+    impl Ovsr {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ovsr {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ovsr {
+        #[inline(always)]
+        fn from(val: u8) -> Ovsr {
+            Ovsr::from_bits(val)
+        }
+    }
+    impl From<Ovsr> for u8 {
+        #[inline(always)]
+        fn from(val: Ovsr) -> u8 {
+            Ovsr::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Ovss {
+        #[doc = "No shift"]
+        NO_SHIFT = 0x0,
+        #[doc = "Shift 1-bit"]
+        SHIFT1 = 0x01,
+        #[doc = "Shift 2-bits"]
+        SHIFT2 = 0x02,
+        #[doc = "Shift 3-bits"]
+        SHIFT3 = 0x03,
+        #[doc = "Shift 4-bits"]
+        SHIFT4 = 0x04,
+        #[doc = "Shift 5-bits"]
+        SHIFT5 = 0x05,
+        #[doc = "Shift 6-bits"]
+        SHIFT6 = 0x06,
+        #[doc = "Shift 7-bits"]
+        SHIFT7 = 0x07,
+        #[doc = "Shift 8-bits"]
+        SHIFT8 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Ovss {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ovss {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ovss {
+        #[inline(always)]
+        fn from(val: u8) -> Ovss {
+            Ovss::from_bits(val)
+        }
+    }
+    impl From<Ovss> for u8 {
+        #[inline(always)]
+        fn from(val: Ovss) -> u8 {
+            Ovss::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Presc {
+        #[doc = "Input ADC clock not divided"]
+        DIV1 = 0x0,
+        #[doc = "Input ADC clock divided by 2"]
+        DIV2 = 0x01,
+        #[doc = "Input ADC clock divided by 4"]
+        DIV4 = 0x02,
+        #[doc = "Input ADC clock divided by 6"]
+        DIV6 = 0x03,
+        #[doc = "Input ADC clock divided by 8"]
+        DIV8 = 0x04,
+        #[doc = "Input ADC clock divided by 10"]
+        DIV10 = 0x05,
+        #[doc = "Input ADC clock divided by 12"]
+        DIV12 = 0x06,
+        #[doc = "Input ADC clock divided by 16"]
+        DIV16 = 0x07,
+        #[doc = "Input ADC clock divided by 32"]
+        DIV32 = 0x08,
+        #[doc = "Input ADC clock divided by 64"]
+        DIV64 = 0x09,
+        #[doc = "Input ADC clock divided by 128"]
+        DIV128 = 0x0a,
+        #[doc = "Input ADC clock divided by 256"]
+        DIV256 = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Presc {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Presc {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Presc {
+        #[inline(always)]
+        fn from(val: u8) -> Presc {
+            Presc::from_bits(val)
+        }
+    }
+    impl From<Presc> for u8 {
+        #[inline(always)]
+        fn from(val: Presc) -> u8 {
+            Presc::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Res {
-        #[doc = "12-bit resolution"]
+        #[doc = "12 bits"]
         BITS12 = 0x0,
-        #[doc = "10-bit resolution"]
+        #[doc = "10 bits"]
         BITS10 = 0x01,
-        #[doc = "8-bit resolution"]
+        #[doc = "8 bits"]
         BITS8 = 0x02,
-        #[doc = "6-bit resolution"]
+        #[doc = "6 bits"]
         BITS6 = 0x03,
     }
     impl Res {
@@ -2177,21 +1709,21 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
-        #[doc = "1.5 ADC cycles"]
+        #[doc = "1.5 ADC clock cycles"]
         CYCLES1_5 = 0x0,
-        #[doc = "3.5 ADC cycles"]
+        #[doc = "3.5 ADC clock cycles"]
         CYCLES3_5 = 0x01,
-        #[doc = "7.5 ADC cycles"]
+        #[doc = "7.5 ADC clock cycles"]
         CYCLES7_5 = 0x02,
-        #[doc = "12.5 ADC cycles"]
+        #[doc = "12.5 ADC clock cycles"]
         CYCLES12_5 = 0x03,
-        #[doc = "19.5 ADC cycles"]
+        #[doc = "19.5 ADC clock cycles"]
         CYCLES19_5 = 0x04,
-        #[doc = "39.5 ADC cycles"]
+        #[doc = "39.5 ADC clock cycles"]
         CYCLES39_5 = 0x05,
-        #[doc = "79.5 ADC cycles"]
+        #[doc = "79.5 ADC clock cycles"]
         CYCLES79_5 = 0x06,
-        #[doc = "160.5 ADC cycles"]
+        #[doc = "160.5 ADC clock cycles"]
         CYCLES160_5 = 0x07,
     }
     impl SampleTime {
@@ -2214,6 +1746,127 @@ pub mod vals {
         #[inline(always)]
         fn from(val: SampleTime) -> u8 {
             SampleTime::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Scandir {
+        #[doc = "Upward scan (from CHSEL0 to CHSEL17)"]
+        UPWARD = 0x0,
+        #[doc = "Backward scan (from CHSEL17 to CHSEL0)"]
+        BACKWARD = 0x01,
+    }
+    impl Scandir {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Scandir {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Scandir {
+        #[inline(always)]
+        fn from(val: u8) -> Scandir {
+            Scandir::from_bits(val)
+        }
+    }
+    impl From<Scandir> for u8 {
+        #[inline(always)]
+        fn from(val: Scandir) -> u8 {
+            Scandir::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Smpsel {
+        #[doc = "Sampling time of CHANNELx use the setting of SMP1 register"]
+        SMP1 = 0x0,
+        #[doc = "Sampling time of CHANNELx use the setting of SMP2 register"]
+        SMP2 = 0x01,
+    }
+    impl Smpsel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Smpsel {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Smpsel {
+        #[inline(always)]
+        fn from(val: u8) -> Smpsel {
+            Smpsel::from_bits(val)
+        }
+    }
+    impl From<Smpsel> for u8 {
+        #[inline(always)]
+        fn from(val: Smpsel) -> u8 {
+            Smpsel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Sq {
+        #[doc = "Channel 0 selected for the Nth conversion"]
+        CH0 = 0x0,
+        #[doc = "Channel 1 selected for the Nth conversion"]
+        CH1 = 0x01,
+        #[doc = "Channel 2 selected for the Nth conversion"]
+        CH2 = 0x02,
+        #[doc = "Channel 3 selected for the Nth conversion"]
+        CH3 = 0x03,
+        #[doc = "Channel 4 selected for the Nth conversion"]
+        CH4 = 0x04,
+        #[doc = "Channel 5 selected for the Nth conversion"]
+        CH5 = 0x05,
+        #[doc = "Channel 6 selected for the Nth conversion"]
+        CH6 = 0x06,
+        #[doc = "Channel 7 selected for the Nth conversion"]
+        CH7 = 0x07,
+        #[doc = "Channel 8 selected for the Nth conversion"]
+        CH8 = 0x08,
+        #[doc = "Channel 9 selected for the Nth conversion"]
+        CH9 = 0x09,
+        #[doc = "Channel 10 selected for the Nth conversion"]
+        CH10 = 0x0a,
+        #[doc = "Channel 11 selected for the Nth conversion"]
+        CH11 = 0x0b,
+        #[doc = "Channel 12 selected for the Nth conversion"]
+        CH12 = 0x0c,
+        #[doc = "Channel 13 selected for the Nth conversion"]
+        CH13 = 0x0d,
+        #[doc = "Channel 14 selected for the Nth conversion"]
+        CH14 = 0x0e,
+        #[doc = "End of sequence"]
+        EOS = 0x0f,
+    }
+    impl Sq {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Sq {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Sq {
+        #[inline(always)]
+        fn from(val: u8) -> Sq {
+            Sq::from_bits(val)
+        }
+    }
+    impl From<Sq> for u8 {
+        #[inline(always)]
+        fn from(val: Sq) -> u8 {
+            Sq::to_bits(val)
         }
     }
 }

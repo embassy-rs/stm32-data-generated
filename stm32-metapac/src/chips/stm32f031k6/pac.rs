@@ -179,7 +179,7 @@ pub mod iwdg;
 pub mod pwr;
 #[path = "../../peripherals/rcc_f0v2.rs"]
 pub mod rcc;
-#[path = "../../peripherals/rtc_v2f0.rs"]
+#[path = "../../peripherals/rtc_v2_f0.rs"]
 pub mod rtc;
 #[path = "../../peripherals/spi_v3_i2s.rs"]
 pub mod spi;

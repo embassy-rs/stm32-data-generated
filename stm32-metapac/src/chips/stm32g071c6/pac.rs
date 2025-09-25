@@ -246,7 +246,7 @@ pub mod lptim;
 pub mod pwr;
 #[path = "../../peripherals/rcc_g0x1.rs"]
 pub mod rcc;
-#[path = "../../peripherals/rtc_v3.rs"]
+#[path = "../../peripherals/rtc_v3_base.rs"]
 pub mod rtc;
 #[path = "../../peripherals/spi_v3_i2s.rs"]
 pub mod spi;

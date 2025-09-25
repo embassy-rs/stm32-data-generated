@@ -4413,7 +4413,7 @@
           "address": 1073752064,
           "registers": {
             "kind": "rtc",
-            "version": "v2l4",
+            "version": "v2_l4",
             "block": "RTC"
           },
           "rcc": {

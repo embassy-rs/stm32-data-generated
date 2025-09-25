@@ -96,8 +96,8 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     (
         "rtc",
         &[
-            "v1", "v2f0", "v2f2", "v2f3", "v2f4", "v2f7", "v2h7", "v2l0", "v2l1", "v2l4", "v2wb", "v3", "v3c0",
-            "v3h7rs", "v3l4", "v3l5", "v3u5",
+            "v1", "v2_f0", "v2_f2", "v2_f3", "v2_f4", "v2_f7", "v2_h7", "v2_l0", "v2_l1", "v2_l4", "v2_wb", "v3_base",
+            "v3_c0", "v3_h7rs", "v3_l4", "v3_l5", "v3_u5",
         ],
     ),
     ("saes", &["v1a", "v1b"]),

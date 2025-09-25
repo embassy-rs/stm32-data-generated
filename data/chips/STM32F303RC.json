@@ -2186,7 +2186,7 @@
           "address": 1073752064,
           "registers": {
             "kind": "rtc",
-            "version": "v2f3",
+            "version": "v2_f3",
             "block": "RTC"
           },
           "pins": [

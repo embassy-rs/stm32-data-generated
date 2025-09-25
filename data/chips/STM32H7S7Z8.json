@@ -4423,7 +4423,7 @@
           "address": 1476411392,
           "registers": {
             "kind": "rtc",
-            "version": "v3h7rs",
+            "version": "v3_h7rs",
             "block": "RTC"
           },
           "rcc": {

@@ -6212,7 +6212,7 @@
           "address": 1476411392,
           "registers": {
             "kind": "rtc",
-            "version": "v2h7",
+            "version": "v2_h7",
             "block": "RTC"
           },
           "rcc": {
@@ -16511,7 +16511,7 @@
           "address": 1476411392,
           "registers": {
             "kind": "rtc",
-            "version": "v2h7",
+            "version": "v2_h7",
             "block": "RTC"
           },
           "rcc": {

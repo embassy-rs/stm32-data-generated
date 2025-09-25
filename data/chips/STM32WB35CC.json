@@ -1949,7 +1949,7 @@
           "address": 1073752064,
           "registers": {
             "kind": "rtc",
-            "version": "v2wb",
+            "version": "v2_wb",
             "block": "RTC"
           },
           "rcc": {

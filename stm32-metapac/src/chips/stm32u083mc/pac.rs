@@ -273,7 +273,7 @@ pub mod pwr;
 pub mod rcc;
 #[path = "../../peripherals/rng_v3.rs"]
 pub mod rng;
-#[path = "../../peripherals/rtc_v3.rs"]
+#[path = "../../peripherals/rtc_v3_base.rs"]
 pub mod rtc;
 #[path = "../../peripherals/spi_v3.rs"]
 pub mod spi;

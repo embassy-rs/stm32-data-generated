@@ -317,7 +317,7 @@ pub mod pwr;
 pub mod rcc;
 #[path = "../../peripherals/rng_v1.rs"]
 pub mod rng;
-#[path = "../../peripherals/rtc_v2wb.rs"]
+#[path = "../../peripherals/rtc_v2_wb.rs"]
 pub mod rtc;
 #[path = "../../peripherals/spi_v3.rs"]
 pub mod spi;

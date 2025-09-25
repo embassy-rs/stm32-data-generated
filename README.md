@@ -85,7 +85,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [RAMECC](#ramecc) | | | | | | | | | | | ❌ | | | | | | | | | | | |
 | [RCC](#rcc) | c0, c0v2 | f0v1, f0v2, f0v3, f0v4 | f1, f100, f1cl | f2 | f37, f3v1, f3v2, f3v3 | f4, f410 | f7 | g0x0, g0x1 | g4 | h5, h50 | h7, h7ab, h7rm0433, h7rs | l0, l0_v2 | l1 | l4 | l4plus | l5 | n6 | u0 | u5 | wb | wba | wl5, wle |
 | [RNG](#rng) | | | | v1 | | v1 | v1 | v1 | v1 | v3 | v1 | v1 | | v1 | v1, v2 | v2 | ❌ | v3 | v3 | v1 | v3, wba6 | v2 |
-| [RTC](#rtc) | v3c0 | v2f0 | v1 | v2f2 | v2f3 | v2f4 | v2f7 | v3 | v3 | v3u5 | v2h7, v3h7rs | v2l0 | v2l1 | v2l4, v3l4 | v2l4, v3 | v3l5 | ❌ | v3 | v3u5 | v2wb | v3u5 | v3 |
+| [RTC](#rtc) | v3_c0 | v2_f0 | v1 | v2_f2 | v2_f3 | v2_f4 | v2_f7 | v3_base | v3_base | v3_u5 | v2_h7, v3_h7rs | v2_l0 | v2_l1 | v2_l4, v3_l4 | v2_l4, v3_base | v3_l5 | ❌ | v3_base | v3_u5 | v2_wb | v3_u5 | v3_base |
 | [SAES](#saes) | | | | | | | | | | v1a | ❌ | | | | | | ❌ | | v1b | | v1a | |
 | [SAI](#sai) | | | | | | v1, v2 | v2 | | v4_4pdm | v4_2pdm | v3_4pdm, v4_4pdm | | | v2 | v1 | v3_2pdm | ❌ | | v4_2pdm | v1_4pdm | v4_2pdm | |
 | [SDADC](#sdadc) | | | | | v1, ❌ | | | | | | | | | | | | | | | | | |
@@ -799,22 +799,22 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **v1**: STM32F1
-- **v2f0**: STM32F0
-- **v2f2**: STM32F2
-- **v2f3**: STM32F3
-- **v2f4**: STM32F4
-- **v2f7**: STM32F7
-- **v2h7**: STM32H7
-- **v2l0**: STM32L0
-- **v2l1**: STM32L1
-- **v2l4**: STM32L4, STM32L4+
-- **v2wb**: STM32WB
-- **v3**: STM32G0, STM32G4, STM32L4+, STM32U0, STM32WL
-- **v3c0**: STM32C0
-- **v3h7rs**: STM32H7
-- **v3l4**: STM32L4
-- **v3l5**: STM32L5
-- **v3u5**: STM32H5, STM32U5, STM32WBA
+- **v2_f0**: STM32F0
+- **v2_f2**: STM32F2
+- **v2_f3**: STM32F3
+- **v2_f4**: STM32F4
+- **v2_f7**: STM32F7
+- **v2_h7**: STM32H7
+- **v2_l0**: STM32L0
+- **v2_l1**: STM32L1
+- **v2_l4**: STM32L4, STM32L4+
+- **v2_wb**: STM32WB
+- **v3_base**: STM32G0, STM32G4, STM32L4+, STM32U0, STM32WL
+- **v3_c0**: STM32C0
+- **v3_h7rs**: STM32H7
+- **v3_l4**: STM32L4
+- **v3_l5**: STM32L5
+- **v3_u5**: STM32H5, STM32U5, STM32WBA
 - **❌ Unsupported**: STM32N6
 
 ### SAES

@@ -397,7 +397,7 @@ pub mod quadspi;
 pub mod rcc;
 #[path = "../../peripherals/rng_v1.rs"]
 pub mod rng;
-#[path = "../../peripherals/rtc_v3l4.rs"]
+#[path = "../../peripherals/rtc_v3_l4.rs"]
 pub mod rtc;
 #[path = "../../peripherals/spi_v3.rs"]
 pub mod spi;

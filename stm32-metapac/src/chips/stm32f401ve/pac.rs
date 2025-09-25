@@ -354,7 +354,7 @@ pub mod otg;
 pub mod pwr;
 #[path = "../../peripherals/rcc_f4.rs"]
 pub mod rcc;
-#[path = "../../peripherals/rtc_v2f4.rs"]
+#[path = "../../peripherals/rtc_v2_f4.rs"]
 pub mod rtc;
 #[path = "../../peripherals/sdmmc_v1.rs"]
 pub mod sdmmc;

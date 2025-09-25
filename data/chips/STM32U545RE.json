@@ -4085,7 +4085,7 @@
           "address": 1174435840,
           "registers": {
             "kind": "rtc",
-            "version": "v3u5",
+            "version": "v3_u5",
             "block": "RTC"
           },
           "rcc": {

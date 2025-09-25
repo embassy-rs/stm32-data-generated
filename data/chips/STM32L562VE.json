@@ -3829,7 +3829,7 @@
           "address": 1073752064,
           "registers": {
             "kind": "rtc",
-            "version": "v3l5",
+            "version": "v3_l5",
             "block": "RTC"
           },
           "rcc": {

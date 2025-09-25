@@ -829,7 +829,7 @@ pub mod pwr;
 pub mod rcc;
 #[path = "../../peripherals/rng_v1.rs"]
 pub mod rng;
-#[path = "../../peripherals/rtc_v3h7rs.rs"]
+#[path = "../../peripherals/rtc_v3_h7rs.rs"]
 pub mod rtc;
 #[path = "../../peripherals/sai_v4_4pdm.rs"]
 pub mod sai;

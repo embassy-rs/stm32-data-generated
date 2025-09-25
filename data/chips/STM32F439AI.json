@@ -4100,7 +4100,7 @@
           "address": 1073752064,
           "registers": {
             "kind": "rtc",
-            "version": "v2f4",
+            "version": "v2_f4",
             "block": "RTC"
           },
           "rcc": {

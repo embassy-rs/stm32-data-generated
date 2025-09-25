@@ -400,7 +400,7 @@ pub mod opamp;
 pub mod pwr;
 #[path = "../../peripherals/rcc_f3v1.rs"]
 pub mod rcc;
-#[path = "../../peripherals/rtc_v2f3.rs"]
+#[path = "../../peripherals/rtc_v2_f3.rs"]
 pub mod rtc;
 #[path = "../../peripherals/spi_v3_i2s.rs"]
 pub mod spi;

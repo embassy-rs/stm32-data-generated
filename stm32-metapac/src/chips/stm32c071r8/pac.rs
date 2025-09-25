@@ -206,7 +206,7 @@ pub mod iwdg;
 pub mod pwr;
 #[path = "../../peripherals/rcc_c0v2.rs"]
 pub mod rcc;
-#[path = "../../peripherals/rtc_v3c0.rs"]
+#[path = "../../peripherals/rtc_v3_c0.rs"]
 pub mod rtc;
 #[path = "../../peripherals/spi_v3_i2s.rs"]
 pub mod spi;

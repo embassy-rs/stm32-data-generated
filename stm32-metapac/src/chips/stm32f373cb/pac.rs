@@ -414,7 +414,7 @@ pub mod iwdg;
 pub mod pwr;
 #[path = "../../peripherals/rcc_f37.rs"]
 pub mod rcc;
-#[path = "../../peripherals/rtc_v2f3.rs"]
+#[path = "../../peripherals/rtc_v2_f3.rs"]
 pub mod rtc;
 #[path = "../../peripherals/sdadc_v1.rs"]
 pub mod sdadc;

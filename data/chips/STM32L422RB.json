@@ -2600,7 +2600,7 @@
           "address": 1073752064,
           "registers": {
             "kind": "rtc",
-            "version": "v3",
+            "version": "v3l4",
             "block": "RTC"
           },
           "rcc": {

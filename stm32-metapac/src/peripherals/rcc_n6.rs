@@ -36,7 +36,7 @@ impl Rcc {
     }
     #[doc = "RCC configuration register 1."]
     #[inline(always)]
-    pub const fn cfgr1(self) -> crate::common::Reg<regs::Cfgr1, crate::common::RW> {
+    pub const fn cfgr(self) -> crate::common::Reg<regs::Cfgr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
     }
     #[doc = "RCC configuration register 2."]
@@ -96,175 +96,27 @@ impl Rcc {
     }
     #[doc = "RCC PLL1 configuration register 1."]
     #[inline(always)]
-    pub const fn pllcfgr1(self, n: usize) -> crate::common::Reg<regs::Pll1cfgr1, crate::common::RW> {
+    pub const fn pllcfgr1(self, n: usize) -> crate::common::Reg<regs::Pllcfgr1, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize + n * 16usize) as _) }
     }
     #[doc = "RCC PLL1 configuration register 2."]
     #[inline(always)]
-    pub const fn pllcfgr2(self, n: usize) -> crate::common::Reg<regs::Pll1cfgr2, crate::common::RW> {
+    pub const fn pllcfgr2(self, n: usize) -> crate::common::Reg<regs::Pllcfgr2, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize + n * 16usize) as _) }
     }
     #[doc = "RCC PLL1 configuration register 3."]
     #[inline(always)]
-    pub const fn pllcfgr3(self, n: usize) -> crate::common::Reg<regs::Pll1cfgr3, crate::common::RW> {
+    pub const fn pllcfgr3(self, n: usize) -> crate::common::Reg<regs::Pllcfgr3, crate::common::RW> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize + n * 16usize) as _) }
     }
-    #[doc = "RCC PLL2 configuration register 1."]
+    #[doc = "RCC ICx configuration register."]
     #[inline(always)]
-    pub const fn pll2cfgr1(self, n: usize) -> crate::common::Reg<regs::Pll2cfgr1, crate::common::RW> {
-        assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize + n * 16usize) as _) }
-    }
-    #[doc = "RCC PLL2 configuration register 2."]
-    #[inline(always)]
-    pub const fn pll2cfgr2(self, n: usize) -> crate::common::Reg<regs::Pll2cfgr2, crate::common::RW> {
-        assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x94usize + n * 16usize) as _) }
-    }
-    #[doc = "RCC PLL2 configuration register 3."]
-    #[inline(always)]
-    pub const fn pll2cfgr3(self, n: usize) -> crate::common::Reg<regs::Pll2cfgr3, crate::common::RW> {
-        assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x98usize + n * 16usize) as _) }
-    }
-    #[doc = "RCC PLL3 configuration register 1."]
-    #[inline(always)]
-    pub const fn pll3cfgr1(self, n: usize) -> crate::common::Reg<regs::Pll3cfgr1, crate::common::RW> {
-        assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize + n * 16usize) as _) }
-    }
-    #[doc = "RCC PLL3 configuration register 2."]
-    #[inline(always)]
-    pub const fn pll3cfgr2(self, n: usize) -> crate::common::Reg<regs::Pll3cfgr2, crate::common::RW> {
-        assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa4usize + n * 16usize) as _) }
-    }
-    #[doc = "RCC PLL3 configuration register 3."]
-    #[inline(always)]
-    pub const fn pll3cfgr3(self, n: usize) -> crate::common::Reg<regs::Pll3cfgr3, crate::common::RW> {
-        assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa8usize + n * 16usize) as _) }
-    }
-    #[doc = "RCC PLL4 configuration register 1."]
-    #[inline(always)]
-    pub const fn pll4cfgr1(self, n: usize) -> crate::common::Reg<regs::Pll4cfgr1, crate::common::RW> {
-        assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb0usize + n * 16usize) as _) }
-    }
-    #[doc = "RCC PLL4 configuration register 2."]
-    #[inline(always)]
-    pub const fn pll4cfgr2(self, n: usize) -> crate::common::Reg<regs::Pll4cfgr2, crate::common::RW> {
-        assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb4usize + n * 16usize) as _) }
-    }
-    #[doc = "RCC PLL4 configuration register 3."]
-    #[inline(always)]
-    pub const fn pll4cfgr3(self, n: usize) -> crate::common::Reg<regs::Pll4cfgr3, crate::common::RW> {
-        assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb8usize + n * 16usize) as _) }
-    }
-    #[doc = "RCC IC1 configuration register."]
-    #[inline(always)]
-    pub const fn ic1cfgr(self) -> crate::common::Reg<regs::Ic1cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc4usize) as _) }
-    }
-    #[doc = "RCC IC2 configuration register."]
-    #[inline(always)]
-    pub const fn ic2cfgr(self) -> crate::common::Reg<regs::Ic2cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc8usize) as _) }
-    }
-    #[doc = "RCC IC3 configuration register."]
-    #[inline(always)]
-    pub const fn ic3cfgr(self) -> crate::common::Reg<regs::Ic3cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xccusize) as _) }
-    }
-    #[doc = "RCC IC4 configuration register."]
-    #[inline(always)]
-    pub const fn ic4cfgr(self) -> crate::common::Reg<regs::Ic4cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd0usize) as _) }
-    }
-    #[doc = "RCC IC5 configuration register."]
-    #[inline(always)]
-    pub const fn ic5cfgr(self) -> crate::common::Reg<regs::Ic5cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd4usize) as _) }
-    }
-    #[doc = "RCC IC6 configuration register."]
-    #[inline(always)]
-    pub const fn ic6cfgr(self) -> crate::common::Reg<regs::Ic6cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd8usize) as _) }
-    }
-    #[doc = "RCC IC7 configuration register."]
-    #[inline(always)]
-    pub const fn ic7cfgr(self) -> crate::common::Reg<regs::Ic7cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xdcusize) as _) }
-    }
-    #[doc = "RCC IC8 configuration register."]
-    #[inline(always)]
-    pub const fn ic8cfgr(self) -> crate::common::Reg<regs::Ic8cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe0usize) as _) }
-    }
-    #[doc = "RCC IC9 configuration register."]
-    #[inline(always)]
-    pub const fn ic9cfgr(self) -> crate::common::Reg<regs::Ic9cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe4usize) as _) }
-    }
-    #[doc = "RCC IC10 configuration register."]
-    #[inline(always)]
-    pub const fn ic10cfgr(self) -> crate::common::Reg<regs::Ic10cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe8usize) as _) }
-    }
-    #[doc = "RCC IC11 configuration register."]
-    #[inline(always)]
-    pub const fn ic11cfgr(self) -> crate::common::Reg<regs::Ic11cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xecusize) as _) }
-    }
-    #[doc = "RCC IC12 configuration register."]
-    #[inline(always)]
-    pub const fn ic12cfgr(self) -> crate::common::Reg<regs::Ic12cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize) as _) }
-    }
-    #[doc = "RCC IC13 configuration register."]
-    #[inline(always)]
-    pub const fn ic13cfgr(self) -> crate::common::Reg<regs::Ic13cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf4usize) as _) }
-    }
-    #[doc = "RCC IC14 configuration register."]
-    #[inline(always)]
-    pub const fn ic14cfgr(self) -> crate::common::Reg<regs::Ic14cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf8usize) as _) }
-    }
-    #[doc = "RCC IC15 configuration register."]
-    #[inline(always)]
-    pub const fn ic15cfgr(self) -> crate::common::Reg<regs::Ic15cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xfcusize) as _) }
-    }
-    #[doc = "RCC IC16 configuration register."]
-    #[inline(always)]
-    pub const fn ic16cfgr(self) -> crate::common::Reg<regs::Ic16cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
-    }
-    #[doc = "RCC IC17 configuration register."]
-    #[inline(always)]
-    pub const fn ic17cfgr(self) -> crate::common::Reg<regs::Ic17cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
-    }
-    #[doc = "RCC IC18 configuration register."]
-    #[inline(always)]
-    pub const fn ic18cfgr(self) -> crate::common::Reg<regs::Ic18cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
-    }
-    #[doc = "RCC IC19 configuration register."]
-    #[inline(always)]
-    pub const fn ic19cfgr(self) -> crate::common::Reg<regs::Ic19cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x010cusize) as _) }
-    }
-    #[doc = "RCC IC20 configuration register."]
-    #[inline(always)]
-    pub const fn ic20cfgr(self) -> crate::common::Reg<regs::Ic20cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0110usize) as _) }
+    pub const fn iccfgr(self, n: usize) -> crate::common::Reg<regs::Iccfgr, crate::common::RW> {
+        assert!(n < 20usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc4usize + n * 4usize) as _) }
     }
     #[doc = "RCC clock-source interrupt enable register."]
     #[inline(always)]
@@ -16267,15 +16119,15 @@ pub mod regs {
         pub fn set_ltdcenc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMIPP enable."]
+        #[doc = "DCMI enable."]
         #[inline(always)]
-        pub const fn dcmippenc(&self) -> bool {
+        pub const fn dcmienc(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMIPP enable."]
+        #[doc = "DCMI enable."]
         #[inline(always)]
-        pub fn set_dcmippenc(&mut self, val: bool) {
+        pub fn set_dcmienc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM enable."]
@@ -16322,7 +16174,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5encr")
                 .field("ltdcenc", &self.ltdcenc())
-                .field("dcmippenc", &self.dcmippenc())
+                .field("dcmienc", &self.dcmienc())
                 .field("gfxtimenc", &self.gfxtimenc())
                 .field("vencenc", &self.vencenc())
                 .field("csienc", &self.csienc())
@@ -16332,7 +16184,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5encr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5encr {{ ltdcenc: {=bool:?}, dcmippenc: {=bool:?}, gfxtimenc: {=bool:?}, vencenc: {=bool:?}, csienc: {=bool:?} }}" , self . ltdcenc () , self . dcmippenc () , self . gfxtimenc () , self . vencenc () , self . csienc ())
+            defmt :: write ! (f , "Apb5encr {{ ltdcenc: {=bool:?}, dcmienc: {=bool:?}, gfxtimenc: {=bool:?}, vencenc: {=bool:?}, csienc: {=bool:?} }}" , self . ltdcenc () , self . dcmienc () , self . gfxtimenc () , self . vencenc () , self . csienc ())
         }
     }
     #[doc = "RCC APB5 enable register."]
@@ -16351,15 +16203,15 @@ pub mod regs {
         pub fn set_ltdcen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMIPP enable."]
+        #[doc = "DCMI enable."]
         #[inline(always)]
-        pub const fn dcmippen(&self) -> bool {
+        pub const fn dcmien(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMIPP enable."]
+        #[doc = "DCMI enable."]
         #[inline(always)]
-        pub fn set_dcmippen(&mut self, val: bool) {
+        pub fn set_dcmien(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM enable."]
@@ -16406,7 +16258,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5enr")
                 .field("ltdcen", &self.ltdcen())
-                .field("dcmippen", &self.dcmippen())
+                .field("dcmien", &self.dcmien())
                 .field("gfxtimen", &self.gfxtimen())
                 .field("vencen", &self.vencen())
                 .field("csien", &self.csien())
@@ -16416,7 +16268,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5enr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5enr {{ ltdcen: {=bool:?}, dcmippen: {=bool:?}, gfxtimen: {=bool:?}, vencen: {=bool:?}, csien: {=bool:?} }}" , self . ltdcen () , self . dcmippen () , self . gfxtimen () , self . vencen () , self . csien ())
+            defmt :: write ! (f , "Apb5enr {{ ltdcen: {=bool:?}, dcmien: {=bool:?}, gfxtimen: {=bool:?}, vencen: {=bool:?}, csien: {=bool:?} }}" , self . ltdcen () , self . dcmien () , self . gfxtimen () , self . vencen () , self . csien ())
         }
     }
     #[doc = "RCC APB5 enable register."]
@@ -16435,15 +16287,15 @@ pub mod regs {
         pub fn set_ltdcens(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMIPP enable."]
+        #[doc = "DCMI enable."]
         #[inline(always)]
-        pub const fn dcmippens(&self) -> bool {
+        pub const fn dcmiens(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMIPP enable."]
+        #[doc = "DCMI enable."]
         #[inline(always)]
-        pub fn set_dcmippens(&mut self, val: bool) {
+        pub fn set_dcmiens(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM enable."]
@@ -16490,7 +16342,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5ensr")
                 .field("ltdcens", &self.ltdcens())
-                .field("dcmippens", &self.dcmippens())
+                .field("dcmiens", &self.dcmiens())
                 .field("gfxtimens", &self.gfxtimens())
                 .field("vencens", &self.vencens())
                 .field("csiens", &self.csiens())
@@ -16500,7 +16352,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5ensr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5ensr {{ ltdcens: {=bool:?}, dcmippens: {=bool:?}, gfxtimens: {=bool:?}, vencens: {=bool:?}, csiens: {=bool:?} }}" , self . ltdcens () , self . dcmippens () , self . gfxtimens () , self . vencens () , self . csiens ())
+            defmt :: write ! (f , "Apb5ensr {{ ltdcens: {=bool:?}, dcmiens: {=bool:?}, gfxtimens: {=bool:?}, vencens: {=bool:?}, csiens: {=bool:?} }}" , self . ltdcens () , self . dcmiens () , self . gfxtimens () , self . vencens () , self . csiens ())
         }
     }
     #[doc = "RCC APB5 Sleep enable register."]
@@ -16519,15 +16371,15 @@ pub mod regs {
         pub fn set_ltdclpenc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMIPP sleep enable."]
+        #[doc = "DCMI sleep enable."]
         #[inline(always)]
-        pub const fn dcmipplpenc(&self) -> bool {
+        pub const fn dcmilpenc(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMIPP sleep enable."]
+        #[doc = "DCMI sleep enable."]
         #[inline(always)]
-        pub fn set_dcmipplpenc(&mut self, val: bool) {
+        pub fn set_dcmilpenc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM sleep enable."]
@@ -16574,7 +16426,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5lpencr")
                 .field("ltdclpenc", &self.ltdclpenc())
-                .field("dcmipplpenc", &self.dcmipplpenc())
+                .field("dcmilpenc", &self.dcmilpenc())
                 .field("gfxtimlpenc", &self.gfxtimlpenc())
                 .field("venclpenc", &self.venclpenc())
                 .field("csilpenc", &self.csilpenc())
@@ -16584,7 +16436,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5lpencr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5lpencr {{ ltdclpenc: {=bool:?}, dcmipplpenc: {=bool:?}, gfxtimlpenc: {=bool:?}, venclpenc: {=bool:?}, csilpenc: {=bool:?} }}" , self . ltdclpenc () , self . dcmipplpenc () , self . gfxtimlpenc () , self . venclpenc () , self . csilpenc ())
+            defmt :: write ! (f , "Apb5lpencr {{ ltdclpenc: {=bool:?}, dcmilpenc: {=bool:?}, gfxtimlpenc: {=bool:?}, venclpenc: {=bool:?}, csilpenc: {=bool:?} }}" , self . ltdclpenc () , self . dcmilpenc () , self . gfxtimlpenc () , self . venclpenc () , self . csilpenc ())
         }
     }
     #[doc = "RCC APB5 Sleep enable register."]
@@ -16603,15 +16455,15 @@ pub mod regs {
         pub fn set_ltdclpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMIPP sleep enable."]
+        #[doc = "DCMI sleep enable."]
         #[inline(always)]
-        pub const fn dcmipplpen(&self) -> bool {
+        pub const fn dcmilpen(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMIPP sleep enable."]
+        #[doc = "DCMI sleep enable."]
         #[inline(always)]
-        pub fn set_dcmipplpen(&mut self, val: bool) {
+        pub fn set_dcmilpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM sleep enable."]
@@ -16658,7 +16510,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5lpenr")
                 .field("ltdclpen", &self.ltdclpen())
-                .field("dcmipplpen", &self.dcmipplpen())
+                .field("dcmilpen", &self.dcmilpen())
                 .field("gfxtimlpen", &self.gfxtimlpen())
                 .field("venclpen", &self.venclpen())
                 .field("csilpen", &self.csilpen())
@@ -16668,7 +16520,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5lpenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5lpenr {{ ltdclpen: {=bool:?}, dcmipplpen: {=bool:?}, gfxtimlpen: {=bool:?}, venclpen: {=bool:?}, csilpen: {=bool:?} }}" , self . ltdclpen () , self . dcmipplpen () , self . gfxtimlpen () , self . venclpen () , self . csilpen ())
+            defmt :: write ! (f , "Apb5lpenr {{ ltdclpen: {=bool:?}, dcmilpen: {=bool:?}, gfxtimlpen: {=bool:?}, venclpen: {=bool:?}, csilpen: {=bool:?} }}" , self . ltdclpen () , self . dcmilpen () , self . gfxtimlpen () , self . venclpen () , self . csilpen ())
         }
     }
     #[doc = "RCC APB5 Sleep enable register."]
@@ -16687,15 +16539,15 @@ pub mod regs {
         pub fn set_ltdclpens(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMIPP sleep enable."]
+        #[doc = "DCMI sleep enable."]
         #[inline(always)]
-        pub const fn dcmipplpens(&self) -> bool {
+        pub const fn dcmilpens(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMIPP sleep enable."]
+        #[doc = "DCMI sleep enable."]
         #[inline(always)]
-        pub fn set_dcmipplpens(&mut self, val: bool) {
+        pub fn set_dcmilpens(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM sleep enable."]
@@ -16742,7 +16594,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5lpensr")
                 .field("ltdclpens", &self.ltdclpens())
-                .field("dcmipplpens", &self.dcmipplpens())
+                .field("dcmilpens", &self.dcmilpens())
                 .field("gfxtimlpens", &self.gfxtimlpens())
                 .field("venclpens", &self.venclpens())
                 .field("csilpens", &self.csilpens())
@@ -16752,7 +16604,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5lpensr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5lpensr {{ ltdclpens: {=bool:?}, dcmipplpens: {=bool:?}, gfxtimlpens: {=bool:?}, venclpens: {=bool:?}, csilpens: {=bool:?} }}" , self . ltdclpens () , self . dcmipplpens () , self . gfxtimlpens () , self . venclpens () , self . csilpens ())
+            defmt :: write ! (f , "Apb5lpensr {{ ltdclpens: {=bool:?}, dcmilpens: {=bool:?}, gfxtimlpens: {=bool:?}, venclpens: {=bool:?}, csilpens: {=bool:?} }}" , self . ltdclpens () , self . dcmilpens () , self . gfxtimlpens () , self . venclpens () , self . csilpens ())
         }
     }
     #[doc = "RCC APB5 reset register."]
@@ -16771,15 +16623,15 @@ pub mod regs {
         pub fn set_ltdcrstc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMIPP reset."]
+        #[doc = "DCMI reset."]
         #[inline(always)]
-        pub const fn dcmipprstc(&self) -> bool {
+        pub const fn dcmirstc(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMIPP reset."]
+        #[doc = "DCMI reset."]
         #[inline(always)]
-        pub fn set_dcmipprstc(&mut self, val: bool) {
+        pub fn set_dcmirstc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM reset."]
@@ -16826,7 +16678,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5rstcr")
                 .field("ltdcrstc", &self.ltdcrstc())
-                .field("dcmipprstc", &self.dcmipprstc())
+                .field("dcmirstc", &self.dcmirstc())
                 .field("gfxtimrstc", &self.gfxtimrstc())
                 .field("vencrstc", &self.vencrstc())
                 .field("csirstc", &self.csirstc())
@@ -16836,7 +16688,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5rstcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5rstcr {{ ltdcrstc: {=bool:?}, dcmipprstc: {=bool:?}, gfxtimrstc: {=bool:?}, vencrstc: {=bool:?}, csirstc: {=bool:?} }}" , self . ltdcrstc () , self . dcmipprstc () , self . gfxtimrstc () , self . vencrstc () , self . csirstc ())
+            defmt :: write ! (f , "Apb5rstcr {{ ltdcrstc: {=bool:?}, dcmirstc: {=bool:?}, gfxtimrstc: {=bool:?}, vencrstc: {=bool:?}, csirstc: {=bool:?} }}" , self . ltdcrstc () , self . dcmirstc () , self . gfxtimrstc () , self . vencrstc () , self . csirstc ())
         }
     }
     #[doc = "RCC APB5 reset register."]
@@ -16855,15 +16707,15 @@ pub mod regs {
         pub fn set_ltdcrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMIPP reset."]
+        #[doc = "DCMI reset."]
         #[inline(always)]
-        pub const fn dcmipprst(&self) -> bool {
+        pub const fn dcmirst(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMIPP reset."]
+        #[doc = "DCMI reset."]
         #[inline(always)]
-        pub fn set_dcmipprst(&mut self, val: bool) {
+        pub fn set_dcmirst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM reset."]
@@ -16910,7 +16762,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5rstr")
                 .field("ltdcrst", &self.ltdcrst())
-                .field("dcmipprst", &self.dcmipprst())
+                .field("dcmirst", &self.dcmirst())
                 .field("gfxtimrst", &self.gfxtimrst())
                 .field("vencrst", &self.vencrst())
                 .field("csirst", &self.csirst())
@@ -16920,7 +16772,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5rstr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5rstr {{ ltdcrst: {=bool:?}, dcmipprst: {=bool:?}, gfxtimrst: {=bool:?}, vencrst: {=bool:?}, csirst: {=bool:?} }}" , self . ltdcrst () , self . dcmipprst () , self . gfxtimrst () , self . vencrst () , self . csirst ())
+            defmt :: write ! (f , "Apb5rstr {{ ltdcrst: {=bool:?}, dcmirst: {=bool:?}, gfxtimrst: {=bool:?}, vencrst: {=bool:?}, csirst: {=bool:?} }}" , self . ltdcrst () , self . dcmirst () , self . gfxtimrst () , self . vencrst () , self . csirst ())
         }
     }
     #[doc = "RCC APB5 reset register."]
@@ -16939,15 +16791,15 @@ pub mod regs {
         pub fn set_ltdcrsts(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMIPP reset."]
+        #[doc = "DCMI reset."]
         #[inline(always)]
-        pub const fn dcmipprsts(&self) -> bool {
+        pub const fn dcmirsts(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMIPP reset."]
+        #[doc = "DCMI reset."]
         #[inline(always)]
-        pub fn set_dcmipprsts(&mut self, val: bool) {
+        pub fn set_dcmirsts(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM reset."]
@@ -16994,7 +16846,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5rstsr")
                 .field("ltdcrsts", &self.ltdcrsts())
-                .field("dcmipprsts", &self.dcmipprsts())
+                .field("dcmirsts", &self.dcmirsts())
                 .field("gfxtimrsts", &self.gfxtimrsts())
                 .field("vencrsts", &self.vencrsts())
                 .field("csirsts", &self.csirsts())
@@ -17004,7 +16856,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5rstsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5rstsr {{ ltdcrsts: {=bool:?}, dcmipprsts: {=bool:?}, gfxtimrsts: {=bool:?}, vencrsts: {=bool:?}, csirsts: {=bool:?} }}" , self . ltdcrsts () , self . dcmipprsts () , self . gfxtimrsts () , self . vencrsts () , self . csirsts ())
+            defmt :: write ! (f , "Apb5rstsr {{ ltdcrsts: {=bool:?}, dcmirsts: {=bool:?}, gfxtimrsts: {=bool:?}, vencrsts: {=bool:?}, csirsts: {=bool:?} }}" , self . ltdcrsts () , self . dcmirsts () , self . gfxtimrsts () , self . vencrsts () , self . csirsts ())
         }
     }
     #[doc = "RCC backup domain protection register."]
@@ -18699,15 +18551,15 @@ pub mod regs {
         pub fn set_adcpre(&mut self, val: super::vals::Adcpre) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val.to_bits() as u32) & 0xff) << 8usize);
         }
-        #[doc = "Source selection for the DCMIPP kernel clock."]
+        #[doc = "Source selection for the DCMI kernel clock."]
         #[inline(always)]
-        pub const fn dcmippsel(&self) -> super::vals::Dcmippsel {
+        pub const fn dcmisel(&self) -> super::vals::Dcmisel {
             let val = (self.0 >> 20usize) & 0x03;
-            super::vals::Dcmippsel::from_bits(val as u8)
+            super::vals::Dcmisel::from_bits(val as u8)
         }
-        #[doc = "Source selection for the DCMIPP kernel clock."]
+        #[doc = "Source selection for the DCMI kernel clock."]
         #[inline(always)]
-        pub fn set_dcmippsel(&mut self, val: super::vals::Dcmippsel) {
+        pub fn set_dcmisel(&mut self, val: super::vals::Dcmisel) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
         }
     }
@@ -18723,7 +18575,7 @@ pub mod regs {
                 .field("adf1sel", &self.adf1sel())
                 .field("adc12sel", &self.adc12sel())
                 .field("adcpre", &self.adcpre())
-                .field("dcmippsel", &self.dcmippsel())
+                .field("dcmisel", &self.dcmisel())
                 .finish()
         }
     }
@@ -18732,11 +18584,11 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ccipr1 {{ adf1sel: {:?}, adc12sel: {:?}, adcpre: {:?}, dcmippsel: {:?} }}",
+                "Ccipr1 {{ adf1sel: {:?}, adc12sel: {:?}, adcpre: {:?}, dcmisel: {:?} }}",
                 self.adf1sel(),
                 self.adc12sel(),
                 self.adcpre(),
-                self.dcmippsel()
+                self.dcmisel()
             )
         }
     }
@@ -19307,13 +19159,13 @@ pub mod regs {
     impl Ccipr5 {
         #[doc = "Source selection for the MCO1 kernel clock."]
         #[inline(always)]
-        pub const fn mco1sel(&self) -> super::vals::Mcosel {
+        pub const fn mco1sel(&self) -> super::vals::Mco1sel {
             let val = (self.0 >> 0usize) & 0x07;
-            super::vals::Mcosel::from_bits(val as u8)
+            super::vals::Mco1sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the MCO1 kernel clock."]
         #[inline(always)]
-        pub fn set_mco1sel(&mut self, val: super::vals::Mcosel) {
+        pub fn set_mco1sel(&mut self, val: super::vals::Mco1sel) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "MCO1 Prog clock divider selection (for clock ck_icn_p_mce3)."]
@@ -19329,13 +19181,13 @@ pub mod regs {
         }
         #[doc = "Source selection for the MCO2 kernel clock."]
         #[inline(always)]
-        pub const fn mco2sel(&self) -> super::vals::Mcosel {
+        pub const fn mco2sel(&self) -> super::vals::Mco2sel {
             let val = (self.0 >> 8usize) & 0x07;
-            super::vals::Mcosel::from_bits(val as u8)
+            super::vals::Mco2sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the MCO2 kernel clock."]
         #[inline(always)]
-        pub fn set_mco2sel(&mut self, val: super::vals::Mcosel) {
+        pub fn set_mco2sel(&mut self, val: super::vals::Mco2sel) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "MCO2 Prog clock divider selection (for clock ck_icn_p_mce4)."]
@@ -19872,8 +19724,8 @@ pub mod regs {
     #[doc = "RCC configuration register 1."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Cfgr1(pub u32);
-    impl Cfgr1 {
+    pub struct Cfgr(pub u32);
+    impl Cfgr {
         #[doc = "System clock selection after a wake up from system Stop."]
         #[inline(always)]
         pub const fn stopwuck(&self) -> super::vals::Stopwuck {
@@ -19930,15 +19782,15 @@ pub mod regs {
             self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
         }
     }
-    impl Default for Cfgr1 {
+    impl Default for Cfgr {
         #[inline(always)]
-        fn default() -> Cfgr1 {
-            Cfgr1(0)
+        fn default() -> Cfgr {
+            Cfgr(0)
         }
     }
-    impl core::fmt::Debug for Cfgr1 {
+    impl core::fmt::Debug for Cfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Cfgr1")
+            f.debug_struct("Cfgr")
                 .field("stopwuck", &self.stopwuck())
                 .field("cpusw", &self.cpusw())
                 .field("cpusws", &self.cpusws())
@@ -19948,11 +19800,11 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Cfgr1 {
+    impl defmt::Format for Cfgr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Cfgr1 {{ stopwuck: {:?}, cpusw: {:?}, cpusws: {:?}, syssw: {:?}, syssws: {:?} }}",
+                "Cfgr {{ stopwuck: {:?}, cpusw: {:?}, cpusws: {:?}, syssw: {:?}, syssws: {:?} }}",
                 self.stopwuck(),
                 self.cpusw(),
                 self.cpusws(),
@@ -20073,14 +19925,14 @@ pub mod regs {
     impl Cicr {
         #[doc = "LSI ready interrupt clear."]
         #[inline(always)]
-        pub const fn lsirdyc(&self) -> super::vals::Lsirdyc {
+        pub const fn lsirdyc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Lsirdyc::from_bits(val as u8)
+            val != 0
         }
         #[doc = "LSI ready interrupt clear."]
         #[inline(always)]
-        pub fn set_lsirdyc(&mut self, val: super::vals::Lsirdyc) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_lsirdyc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "LSE ready interrupt clear."]
         #[inline(always)]
@@ -20202,7 +20054,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cicr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cicr {{ lsirdyc: {:?}, lserdyc: {:?}, msirdyc: {:?}, hsirdyc: {:?}, hserdyc: {:?}, pllrdyc[0]: {:?}, pllrdyc[1]: {:?}, pllrdyc[2]: {:?}, pllrdyc[3]: {:?}, lsecssc: {:?}, hsecssc: {:?}, wkupfc: {:?} }}" , self . lsirdyc () , self . lserdyc () , self . msirdyc () , self . hsirdyc () , self . hserdyc () , self . pllrdyc (0usize) , self . pllrdyc (1usize) , self . pllrdyc (2usize) , self . pllrdyc (3usize) , self . lsecssc () , self . hsecssc () , self . wkupfc ())
+            defmt :: write ! (f , "Cicr {{ lsirdyc: {=bool:?}, lserdyc: {:?}, msirdyc: {:?}, hsirdyc: {:?}, hserdyc: {:?}, pllrdyc[0]: {:?}, pllrdyc[1]: {:?}, pllrdyc[2]: {:?}, pllrdyc[3]: {:?}, lsecssc: {:?}, hsecssc: {:?}, wkupfc: {:?} }}" , self . lsirdyc () , self . lserdyc () , self . msirdyc () , self . hsirdyc () , self . hserdyc () , self . pllrdyc (0usize) , self . pllrdyc (1usize) , self . pllrdyc (2usize) , self . pllrdyc (3usize) , self . lsecssc () , self . hsecssc () , self . wkupfc ())
         }
     }
     #[doc = "RCC clock-source interrupt enable register."]
@@ -20212,14 +20064,14 @@ pub mod regs {
     impl Cier {
         #[doc = "LSI ready interrupt enable."]
         #[inline(always)]
-        pub const fn lsirdyie(&self) -> super::vals::Lsirdyie {
+        pub const fn lsirdyie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Lsirdyie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "LSI ready interrupt enable."]
         #[inline(always)]
-        pub fn set_lsirdyie(&mut self, val: super::vals::Lsirdyie) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_lsirdyie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "LSE ready interrupt enable."]
         #[inline(always)]
@@ -20341,7 +20193,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cier {{ lsirdyie: {:?}, lserdyie: {:?}, msirdyie: {:?}, hsirdyie: {:?}, hserdyie: {:?}, pllrdyie[0]: {:?}, pllrdyie[1]: {:?}, pllrdyie[2]: {:?}, pllrdyie[3]: {:?}, lsecssie: {:?}, hsecssie: {:?}, wkupie: {:?} }}" , self . lsirdyie () , self . lserdyie () , self . msirdyie () , self . hsirdyie () , self . hserdyie () , self . pllrdyie (0usize) , self . pllrdyie (1usize) , self . pllrdyie (2usize) , self . pllrdyie (3usize) , self . lsecssie () , self . hsecssie () , self . wkupie ())
+            defmt :: write ! (f , "Cier {{ lsirdyie: {=bool:?}, lserdyie: {:?}, msirdyie: {:?}, hsirdyie: {:?}, hserdyie: {:?}, pllrdyie[0]: {:?}, pllrdyie[1]: {:?}, pllrdyie[2]: {:?}, pllrdyie[3]: {:?}, lsecssie: {:?}, hsecssie: {:?}, wkupie: {:?} }}" , self . lsirdyie () , self . lserdyie () , self . msirdyie () , self . hsirdyie () , self . hserdyie () , self . pllrdyie (0usize) , self . pllrdyie (1usize) , self . pllrdyie (2usize) , self . pllrdyie (3usize) , self . lsecssie () , self . hsecssie () , self . wkupie ())
         }
     }
     #[doc = "RCC clock-source interrupt flag register."]
@@ -20351,14 +20203,14 @@ pub mod regs {
     impl Cifr {
         #[doc = "LSI ready interrupt flag."]
         #[inline(always)]
-        pub const fn lsirdyf(&self) -> super::vals::Lsirdyf {
+        pub const fn lsirdyf(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Lsirdyf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "LSI ready interrupt flag."]
         #[inline(always)]
-        pub fn set_lsirdyf(&mut self, val: super::vals::Lsirdyf) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_lsirdyf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "LSE ready interrupt flag."]
         #[inline(always)]
@@ -20480,7 +20332,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cifr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cifr {{ lsirdyf: {:?}, lserdyf: {:?}, msirdyf: {:?}, hsirdyf: {:?}, hserdyf: {:?}, pllrdyf[0]: {:?}, pllrdyf[1]: {:?}, pllrdyf[2]: {:?}, pllrdyf[3]: {:?}, lsecssf: {:?}, hsecssf: {:?}, wkupf: {:?} }}" , self . lsirdyf () , self . lserdyf () , self . msirdyf () , self . hsirdyf () , self . hserdyf () , self . pllrdyf (0usize) , self . pllrdyf (1usize) , self . pllrdyf (2usize) , self . pllrdyf (3usize) , self . lsecssf () , self . hsecssf () , self . wkupf ())
+            defmt :: write ! (f , "Cifr {{ lsirdyf: {=bool:?}, lserdyf: {:?}, msirdyf: {:?}, hsirdyf: {:?}, hserdyf: {:?}, pllrdyf[0]: {:?}, pllrdyf[1]: {:?}, pllrdyf[2]: {:?}, pllrdyf[3]: {:?}, lsecssf: {:?}, hsecssf: {:?}, wkupf: {:?} }}" , self . lsirdyf () , self . lserdyf () , self . msirdyf () , self . hsirdyf () , self . hserdyf () , self . pllrdyf (0usize) , self . pllrdyf (1usize) , self . pllrdyf (2usize) , self . pllrdyf (3usize) , self . lsecssf () , self . hsecssf () , self . wkupf ())
         }
     }
     #[doc = "RCC clock protection register."]
@@ -22425,14 +22277,14 @@ pub mod regs {
         }
         #[doc = "HSE clock bypass."]
         #[inline(always)]
-        pub const fn hsebyp(&self) -> super::vals::Hsebyp {
+        pub const fn hsebyp(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Hsebyp::from_bits(val as u8)
+            val != 0
         }
         #[doc = "HSE clock bypass."]
         #[inline(always)]
-        pub fn set_hsebyp(&mut self, val: super::vals::Hsebyp) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub fn set_hsebyp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "HSE clock type in Bypass mode."]
         #[inline(always)]
@@ -22493,7 +22345,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hsecfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Hsecfgr {{ hsediv2byp: {:?}, hsecsson: {=bool:?}, hsecssra: {:?}, hsecssd: {:?}, hsecssbyp: {:?}, hsecssbpre: {:?}, hsebyp: {:?}, hseext: {:?}, hsegfon: {=bool:?}, hsedrv: {:?} }}" , self . hsediv2byp () , self . hsecsson () , self . hsecssra () , self . hsecssd () , self . hsecssbyp () , self . hsecssbpre () , self . hsebyp () , self . hseext () , self . hsegfon () , self . hsedrv ())
+            defmt :: write ! (f , "Hsecfgr {{ hsediv2byp: {:?}, hsecsson: {=bool:?}, hsecssra: {:?}, hsecssd: {:?}, hsecssbyp: {:?}, hsecssbpre: {:?}, hsebyp: {=bool:?}, hseext: {:?}, hsegfon: {=bool:?}, hsedrv: {:?} }}" , self . hsediv2byp () , self . hsecsson () , self . hsecssra () , self . hsecssd () , self . hsecssbyp () , self . hsecssbpre () , self . hsebyp () , self . hseext () , self . hsegfon () , self . hsedrv ())
         }
     }
     #[doc = "RCC HSI configuration register."]
@@ -22794,1064 +22646,52 @@ pub mod regs {
             defmt :: write ! (f , "Hwrsr {{ rmvf: {:?}, lckrstf: {:?}, borrstf: {:?}, pinrstf: {:?}, porrstf: {:?}, sftrstf: {:?}, iwdgrstf: {:?}, wwdgrstf: {:?}, lpwrrstf: {:?} }}" , self . rmvf () , self . lckrstf () , self . borrstf () , self . pinrstf () , self . porrstf () , self . sftrstf () , self . iwdgrstf () , self . wwdgrstf () , self . lpwrrstf ())
         }
     }
-    #[doc = "RCC IC10 configuration register."]
+    #[doc = "RCC ICx configuration register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic10cfgr(pub u32);
-    impl Ic10cfgr {
-        #[doc = "Divider IC10 integer division factor."]
+    pub struct Iccfgr(pub u32);
+    impl Iccfgr {
+        #[doc = "Divider ICx integer division factor."]
         #[inline(always)]
-        pub const fn ic10int(&self) -> super::vals::Ic10int {
+        pub const fn icint(&self) -> super::vals::Icint {
             let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic10int::from_bits(val as u8)
+            super::vals::Icint::from_bits(val as u8)
         }
-        #[doc = "Divider IC10 integer division factor."]
+        #[doc = "Divider ICx integer division factor."]
         #[inline(always)]
-        pub fn set_ic10int(&mut self, val: super::vals::Ic10int) {
+        pub fn set_icint(&mut self, val: super::vals::Icint) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
         }
-        #[doc = "Divider IC10 Source Selection."]
+        #[doc = "Divider ICx Source Selection."]
         #[inline(always)]
-        pub const fn ic10sel(&self) -> super::vals::Ic10sel {
+        pub const fn icsel(&self) -> super::vals::Icsel {
             let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic10sel::from_bits(val as u8)
+            super::vals::Icsel::from_bits(val as u8)
         }
-        #[doc = "Divider IC10 Source Selection."]
+        #[doc = "Divider ICx Source Selection."]
         #[inline(always)]
-        pub fn set_ic10sel(&mut self, val: super::vals::Ic10sel) {
+        pub fn set_icsel(&mut self, val: super::vals::Icsel) {
             self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
         }
     }
-    impl Default for Ic10cfgr {
+    impl Default for Iccfgr {
         #[inline(always)]
-        fn default() -> Ic10cfgr {
-            Ic10cfgr(0)
+        fn default() -> Iccfgr {
+            Iccfgr(0)
         }
     }
-    impl core::fmt::Debug for Ic10cfgr {
+    impl core::fmt::Debug for Iccfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic10cfgr")
-                .field("ic10int", &self.ic10int())
-                .field("ic10sel", &self.ic10sel())
+            f.debug_struct("Iccfgr")
+                .field("icint", &self.icint())
+                .field("icsel", &self.icsel())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic10cfgr {
+    impl defmt::Format for Iccfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic10cfgr {{ ic10int: {:?}, ic10sel: {:?} }}",
-                self.ic10int(),
-                self.ic10sel()
-            )
-        }
-    }
-    #[doc = "RCC IC11 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic11cfgr(pub u32);
-    impl Ic11cfgr {
-        #[doc = "Divider IC11 integer division factor."]
-        #[inline(always)]
-        pub const fn ic11int(&self) -> super::vals::Ic11int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic11int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC11 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic11int(&mut self, val: super::vals::Ic11int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC11 Source Selection."]
-        #[inline(always)]
-        pub const fn ic11sel(&self) -> super::vals::Ic11sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic11sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC11 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic11sel(&mut self, val: super::vals::Ic11sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic11cfgr {
-        #[inline(always)]
-        fn default() -> Ic11cfgr {
-            Ic11cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic11cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic11cfgr")
-                .field("ic11int", &self.ic11int())
-                .field("ic11sel", &self.ic11sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic11cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic11cfgr {{ ic11int: {:?}, ic11sel: {:?} }}",
-                self.ic11int(),
-                self.ic11sel()
-            )
-        }
-    }
-    #[doc = "RCC IC12 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic12cfgr(pub u32);
-    impl Ic12cfgr {
-        #[doc = "Divider IC12 integer division factor."]
-        #[inline(always)]
-        pub const fn ic12int(&self) -> super::vals::Ic12int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic12int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC12 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic12int(&mut self, val: super::vals::Ic12int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC12 Source Selection."]
-        #[inline(always)]
-        pub const fn ic12sel(&self) -> super::vals::Ic12sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic12sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC12 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic12sel(&mut self, val: super::vals::Ic12sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic12cfgr {
-        #[inline(always)]
-        fn default() -> Ic12cfgr {
-            Ic12cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic12cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic12cfgr")
-                .field("ic12int", &self.ic12int())
-                .field("ic12sel", &self.ic12sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic12cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic12cfgr {{ ic12int: {:?}, ic12sel: {:?} }}",
-                self.ic12int(),
-                self.ic12sel()
-            )
-        }
-    }
-    #[doc = "RCC IC13 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic13cfgr(pub u32);
-    impl Ic13cfgr {
-        #[doc = "Divider IC13 integer division factor."]
-        #[inline(always)]
-        pub const fn ic13int(&self) -> super::vals::Ic13int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic13int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC13 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic13int(&mut self, val: super::vals::Ic13int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC13 Source Selection."]
-        #[inline(always)]
-        pub const fn ic13sel(&self) -> super::vals::Ic13sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic13sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC13 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic13sel(&mut self, val: super::vals::Ic13sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic13cfgr {
-        #[inline(always)]
-        fn default() -> Ic13cfgr {
-            Ic13cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic13cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic13cfgr")
-                .field("ic13int", &self.ic13int())
-                .field("ic13sel", &self.ic13sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic13cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic13cfgr {{ ic13int: {:?}, ic13sel: {:?} }}",
-                self.ic13int(),
-                self.ic13sel()
-            )
-        }
-    }
-    #[doc = "RCC IC14 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic14cfgr(pub u32);
-    impl Ic14cfgr {
-        #[doc = "Divider IC14 integer division factor."]
-        #[inline(always)]
-        pub const fn ic14int(&self) -> super::vals::Ic14int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic14int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC14 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic14int(&mut self, val: super::vals::Ic14int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC14 Source Selection."]
-        #[inline(always)]
-        pub const fn ic14sel(&self) -> super::vals::Ic14sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic14sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC14 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic14sel(&mut self, val: super::vals::Ic14sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic14cfgr {
-        #[inline(always)]
-        fn default() -> Ic14cfgr {
-            Ic14cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic14cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic14cfgr")
-                .field("ic14int", &self.ic14int())
-                .field("ic14sel", &self.ic14sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic14cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic14cfgr {{ ic14int: {:?}, ic14sel: {:?} }}",
-                self.ic14int(),
-                self.ic14sel()
-            )
-        }
-    }
-    #[doc = "RCC IC15 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic15cfgr(pub u32);
-    impl Ic15cfgr {
-        #[doc = "Divider IC15 integer division factor."]
-        #[inline(always)]
-        pub const fn ic15int(&self) -> super::vals::Ic15int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic15int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC15 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic15int(&mut self, val: super::vals::Ic15int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC15 Source Selection."]
-        #[inline(always)]
-        pub const fn ic15sel(&self) -> super::vals::Ic15sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic15sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC15 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic15sel(&mut self, val: super::vals::Ic15sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic15cfgr {
-        #[inline(always)]
-        fn default() -> Ic15cfgr {
-            Ic15cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic15cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic15cfgr")
-                .field("ic15int", &self.ic15int())
-                .field("ic15sel", &self.ic15sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic15cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic15cfgr {{ ic15int: {:?}, ic15sel: {:?} }}",
-                self.ic15int(),
-                self.ic15sel()
-            )
-        }
-    }
-    #[doc = "RCC IC16 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic16cfgr(pub u32);
-    impl Ic16cfgr {
-        #[doc = "Divider IC16 integer division factor."]
-        #[inline(always)]
-        pub const fn ic16int(&self) -> super::vals::Ic16int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic16int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC16 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic16int(&mut self, val: super::vals::Ic16int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC16 Source Selection."]
-        #[inline(always)]
-        pub const fn ic16sel(&self) -> super::vals::Ic16sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic16sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC16 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic16sel(&mut self, val: super::vals::Ic16sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic16cfgr {
-        #[inline(always)]
-        fn default() -> Ic16cfgr {
-            Ic16cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic16cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic16cfgr")
-                .field("ic16int", &self.ic16int())
-                .field("ic16sel", &self.ic16sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic16cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic16cfgr {{ ic16int: {:?}, ic16sel: {:?} }}",
-                self.ic16int(),
-                self.ic16sel()
-            )
-        }
-    }
-    #[doc = "RCC IC17 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic17cfgr(pub u32);
-    impl Ic17cfgr {
-        #[doc = "Divider IC17 integer division factor."]
-        #[inline(always)]
-        pub const fn ic17int(&self) -> super::vals::Ic17int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic17int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC17 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic17int(&mut self, val: super::vals::Ic17int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC17 Source Selection."]
-        #[inline(always)]
-        pub const fn ic17sel(&self) -> super::vals::Ic17sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic17sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC17 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic17sel(&mut self, val: super::vals::Ic17sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic17cfgr {
-        #[inline(always)]
-        fn default() -> Ic17cfgr {
-            Ic17cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic17cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic17cfgr")
-                .field("ic17int", &self.ic17int())
-                .field("ic17sel", &self.ic17sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic17cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic17cfgr {{ ic17int: {:?}, ic17sel: {:?} }}",
-                self.ic17int(),
-                self.ic17sel()
-            )
-        }
-    }
-    #[doc = "RCC IC18 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic18cfgr(pub u32);
-    impl Ic18cfgr {
-        #[doc = "Divider IC18 integer division factor."]
-        #[inline(always)]
-        pub const fn ic18int(&self) -> super::vals::Ic18int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic18int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC18 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic18int(&mut self, val: super::vals::Ic18int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC18 Source Selection."]
-        #[inline(always)]
-        pub const fn ic18sel(&self) -> super::vals::Ic18sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic18sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC18 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic18sel(&mut self, val: super::vals::Ic18sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic18cfgr {
-        #[inline(always)]
-        fn default() -> Ic18cfgr {
-            Ic18cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic18cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic18cfgr")
-                .field("ic18int", &self.ic18int())
-                .field("ic18sel", &self.ic18sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic18cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic18cfgr {{ ic18int: {:?}, ic18sel: {:?} }}",
-                self.ic18int(),
-                self.ic18sel()
-            )
-        }
-    }
-    #[doc = "RCC IC19 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic19cfgr(pub u32);
-    impl Ic19cfgr {
-        #[doc = "Divider IC19 integer division factor."]
-        #[inline(always)]
-        pub const fn ic19int(&self) -> super::vals::Ic19int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic19int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC19 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic19int(&mut self, val: super::vals::Ic19int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC19 Source Selection."]
-        #[inline(always)]
-        pub const fn ic19sel(&self) -> super::vals::Ic19sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic19sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC19 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic19sel(&mut self, val: super::vals::Ic19sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic19cfgr {
-        #[inline(always)]
-        fn default() -> Ic19cfgr {
-            Ic19cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic19cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic19cfgr")
-                .field("ic19int", &self.ic19int())
-                .field("ic19sel", &self.ic19sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic19cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic19cfgr {{ ic19int: {:?}, ic19sel: {:?} }}",
-                self.ic19int(),
-                self.ic19sel()
-            )
-        }
-    }
-    #[doc = "RCC IC1 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic1cfgr(pub u32);
-    impl Ic1cfgr {
-        #[doc = "Divider IC1 integer division factor."]
-        #[inline(always)]
-        pub const fn ic1int(&self) -> super::vals::Ic1int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic1int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC1 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic1int(&mut self, val: super::vals::Ic1int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC1 Source Selection."]
-        #[inline(always)]
-        pub const fn ic1sel(&self) -> super::vals::Ic1sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic1sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC1 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic1sel(&mut self, val: super::vals::Ic1sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic1cfgr {
-        #[inline(always)]
-        fn default() -> Ic1cfgr {
-            Ic1cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic1cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic1cfgr")
-                .field("ic1int", &self.ic1int())
-                .field("ic1sel", &self.ic1sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic1cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic1cfgr {{ ic1int: {:?}, ic1sel: {:?} }}",
-                self.ic1int(),
-                self.ic1sel()
-            )
-        }
-    }
-    #[doc = "RCC IC20 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic20cfgr(pub u32);
-    impl Ic20cfgr {
-        #[doc = "Divider IC20 integer division factor."]
-        #[inline(always)]
-        pub const fn ic20int(&self) -> super::vals::Ic20int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic20int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC20 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic20int(&mut self, val: super::vals::Ic20int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC20 Source Selection."]
-        #[inline(always)]
-        pub const fn ic20sel(&self) -> super::vals::Ic20sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic20sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC20 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic20sel(&mut self, val: super::vals::Ic20sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic20cfgr {
-        #[inline(always)]
-        fn default() -> Ic20cfgr {
-            Ic20cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic20cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic20cfgr")
-                .field("ic20int", &self.ic20int())
-                .field("ic20sel", &self.ic20sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic20cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic20cfgr {{ ic20int: {:?}, ic20sel: {:?} }}",
-                self.ic20int(),
-                self.ic20sel()
-            )
-        }
-    }
-    #[doc = "RCC IC2 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic2cfgr(pub u32);
-    impl Ic2cfgr {
-        #[doc = "Divider IC2 integer division factor."]
-        #[inline(always)]
-        pub const fn ic2int(&self) -> super::vals::Ic2int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic2int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC2 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic2int(&mut self, val: super::vals::Ic2int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC2 Source Selection."]
-        #[inline(always)]
-        pub const fn ic2sel(&self) -> super::vals::Ic2sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic2sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC2 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic2sel(&mut self, val: super::vals::Ic2sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic2cfgr {
-        #[inline(always)]
-        fn default() -> Ic2cfgr {
-            Ic2cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic2cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic2cfgr")
-                .field("ic2int", &self.ic2int())
-                .field("ic2sel", &self.ic2sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic2cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic2cfgr {{ ic2int: {:?}, ic2sel: {:?} }}",
-                self.ic2int(),
-                self.ic2sel()
-            )
-        }
-    }
-    #[doc = "RCC IC3 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic3cfgr(pub u32);
-    impl Ic3cfgr {
-        #[doc = "Divider IC3 integer division factor."]
-        #[inline(always)]
-        pub const fn ic3int(&self) -> super::vals::Ic3int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic3int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC3 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic3int(&mut self, val: super::vals::Ic3int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC3 Source Selection."]
-        #[inline(always)]
-        pub const fn ic3sel(&self) -> super::vals::Ic3sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic3sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC3 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic3sel(&mut self, val: super::vals::Ic3sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic3cfgr {
-        #[inline(always)]
-        fn default() -> Ic3cfgr {
-            Ic3cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic3cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic3cfgr")
-                .field("ic3int", &self.ic3int())
-                .field("ic3sel", &self.ic3sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic3cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic3cfgr {{ ic3int: {:?}, ic3sel: {:?} }}",
-                self.ic3int(),
-                self.ic3sel()
-            )
-        }
-    }
-    #[doc = "RCC IC4 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic4cfgr(pub u32);
-    impl Ic4cfgr {
-        #[doc = "Divider IC4 integer division factor."]
-        #[inline(always)]
-        pub const fn ic4int(&self) -> super::vals::Ic4int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic4int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC4 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic4int(&mut self, val: super::vals::Ic4int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC4 Source Selection."]
-        #[inline(always)]
-        pub const fn ic4sel(&self) -> super::vals::Ic4sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic4sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC4 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic4sel(&mut self, val: super::vals::Ic4sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic4cfgr {
-        #[inline(always)]
-        fn default() -> Ic4cfgr {
-            Ic4cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic4cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic4cfgr")
-                .field("ic4int", &self.ic4int())
-                .field("ic4sel", &self.ic4sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic4cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic4cfgr {{ ic4int: {:?}, ic4sel: {:?} }}",
-                self.ic4int(),
-                self.ic4sel()
-            )
-        }
-    }
-    #[doc = "RCC IC5 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic5cfgr(pub u32);
-    impl Ic5cfgr {
-        #[doc = "Divider IC5 integer division factor."]
-        #[inline(always)]
-        pub const fn ic5int(&self) -> super::vals::Ic5int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic5int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC5 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic5int(&mut self, val: super::vals::Ic5int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC5 Source Selection."]
-        #[inline(always)]
-        pub const fn ic5sel(&self) -> super::vals::Ic5sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic5sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC5 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic5sel(&mut self, val: super::vals::Ic5sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic5cfgr {
-        #[inline(always)]
-        fn default() -> Ic5cfgr {
-            Ic5cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic5cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic5cfgr")
-                .field("ic5int", &self.ic5int())
-                .field("ic5sel", &self.ic5sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic5cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic5cfgr {{ ic5int: {:?}, ic5sel: {:?} }}",
-                self.ic5int(),
-                self.ic5sel()
-            )
-        }
-    }
-    #[doc = "RCC IC6 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic6cfgr(pub u32);
-    impl Ic6cfgr {
-        #[doc = "Divider IC6 integer division factor."]
-        #[inline(always)]
-        pub const fn ic6int(&self) -> super::vals::Ic6int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic6int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC6 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic6int(&mut self, val: super::vals::Ic6int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC6 Source Selection."]
-        #[inline(always)]
-        pub const fn ic6sel(&self) -> super::vals::Ic6sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic6sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC6 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic6sel(&mut self, val: super::vals::Ic6sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic6cfgr {
-        #[inline(always)]
-        fn default() -> Ic6cfgr {
-            Ic6cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic6cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic6cfgr")
-                .field("ic6int", &self.ic6int())
-                .field("ic6sel", &self.ic6sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic6cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic6cfgr {{ ic6int: {:?}, ic6sel: {:?} }}",
-                self.ic6int(),
-                self.ic6sel()
-            )
-        }
-    }
-    #[doc = "RCC IC7 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic7cfgr(pub u32);
-    impl Ic7cfgr {
-        #[doc = "Divider IC7 integer division factor."]
-        #[inline(always)]
-        pub const fn ic7int(&self) -> super::vals::Ic7int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic7int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC7 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic7int(&mut self, val: super::vals::Ic7int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC7 Source Selection."]
-        #[inline(always)]
-        pub const fn ic7sel(&self) -> super::vals::Ic7sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic7sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC7 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic7sel(&mut self, val: super::vals::Ic7sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic7cfgr {
-        #[inline(always)]
-        fn default() -> Ic7cfgr {
-            Ic7cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic7cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic7cfgr")
-                .field("ic7int", &self.ic7int())
-                .field("ic7sel", &self.ic7sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic7cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic7cfgr {{ ic7int: {:?}, ic7sel: {:?} }}",
-                self.ic7int(),
-                self.ic7sel()
-            )
-        }
-    }
-    #[doc = "RCC IC8 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic8cfgr(pub u32);
-    impl Ic8cfgr {
-        #[doc = "Divider IC8 integer division factor."]
-        #[inline(always)]
-        pub const fn ic8int(&self) -> super::vals::Ic8int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic8int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC8 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic8int(&mut self, val: super::vals::Ic8int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC8 Source Selection."]
-        #[inline(always)]
-        pub const fn ic8sel(&self) -> super::vals::Ic8sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic8sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC8 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic8sel(&mut self, val: super::vals::Ic8sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic8cfgr {
-        #[inline(always)]
-        fn default() -> Ic8cfgr {
-            Ic8cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic8cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic8cfgr")
-                .field("ic8int", &self.ic8int())
-                .field("ic8sel", &self.ic8sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic8cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic8cfgr {{ ic8int: {:?}, ic8sel: {:?} }}",
-                self.ic8int(),
-                self.ic8sel()
-            )
-        }
-    }
-    #[doc = "RCC IC9 configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ic9cfgr(pub u32);
-    impl Ic9cfgr {
-        #[doc = "Divider IC9 integer division factor."]
-        #[inline(always)]
-        pub const fn ic9int(&self) -> super::vals::Ic9int {
-            let val = (self.0 >> 16usize) & 0xff;
-            super::vals::Ic9int::from_bits(val as u8)
-        }
-        #[doc = "Divider IC9 integer division factor."]
-        #[inline(always)]
-        pub fn set_ic9int(&mut self, val: super::vals::Ic9int) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val.to_bits() as u32) & 0xff) << 16usize);
-        }
-        #[doc = "Divider IC9 Source Selection."]
-        #[inline(always)]
-        pub const fn ic9sel(&self) -> super::vals::Ic9sel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Ic9sel::from_bits(val as u8)
-        }
-        #[doc = "Divider IC9 Source Selection."]
-        #[inline(always)]
-        pub fn set_ic9sel(&mut self, val: super::vals::Ic9sel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ic9cfgr {
-        #[inline(always)]
-        fn default() -> Ic9cfgr {
-            Ic9cfgr(0)
-        }
-    }
-    impl core::fmt::Debug for Ic9cfgr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ic9cfgr")
-                .field("ic9int", &self.ic9int())
-                .field("ic9sel", &self.ic9sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic9cfgr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ic9cfgr {{ ic9int: {:?}, ic9sel: {:?} }}",
-                self.ic9int(),
-                self.ic9sel()
-            )
+            defmt::write!(f, "Iccfgr {{ icint: {:?}, icsel: {:?} }}", self.icint(), self.icsel())
         }
     }
     #[doc = "RCC oscillator lock configuration register0."]
@@ -24708,14 +23548,14 @@ pub mod regs {
         }
         #[doc = "LSE clock bypass."]
         #[inline(always)]
-        pub const fn lsebyp(&self) -> super::vals::Lsebyp {
+        pub const fn lsebyp(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Lsebyp::from_bits(val as u8)
+            val != 0
         }
         #[doc = "LSE clock bypass."]
         #[inline(always)]
-        pub fn set_lsebyp(&mut self, val: super::vals::Lsebyp) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub fn set_lsebyp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "LSE clock type in Bypass mode."]
         #[inline(always)]
@@ -24773,7 +23613,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lsecfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Lsecfgr {{ lsecsson: {=bool:?}, lsecssra: {:?}, lsecssd: {:?}, lsebyp: {:?}, lseext: {:?}, lsegfon: {=bool:?}, lsedrv: {:?} }}" , self . lsecsson () , self . lsecssra () , self . lsecssd () , self . lsebyp () , self . lseext () , self . lsegfon () , self . lsedrv ())
+            defmt :: write ! (f , "Lsecfgr {{ lsecsson: {=bool:?}, lsecssra: {:?}, lsecssd: {:?}, lsebyp: {=bool:?}, lseext: {:?}, lsegfon: {=bool:?}, lsedrv: {:?} }}" , self . lsecsson () , self . lsecssra () , self . lsecssd () , self . lsebyp () , self . lseext () , self . lsegfon () , self . lsedrv ())
         }
     }
     #[doc = "RCC memory enable register."]
@@ -27128,1280 +25968,263 @@ pub mod regs {
             )
         }
     }
-    #[doc = "RCC PLL1 configuration register 1."]
+    #[doc = "RCC PLL configuration register 1."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll1cfgr1(pub u32);
-    impl Pll1cfgr1 {
-        #[doc = "PLL1 Integer part for the VCO multiplication factor."]
+    pub struct Pllcfgr1(pub u32);
+    impl Pllcfgr1 {
+        #[doc = "PLL Integer part for the VCO multiplication factor."]
         #[inline(always)]
-        pub const fn plldivn(&self, n: usize) -> u16 {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x0fff;
+        pub const fn plldivn(&self) -> u16 {
+            let val = (self.0 >> 8usize) & 0x0fff;
             val as u16
         }
-        #[doc = "PLL1 Integer part for the VCO multiplication factor."]
+        #[doc = "PLL Integer part for the VCO multiplication factor."]
         #[inline(always)]
-        pub fn set_plldivn(&mut self, n: usize, val: u16) {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            self.0 = (self.0 & !(0x0fff << offs)) | (((val as u32) & 0x0fff) << offs);
+        pub fn set_plldivn(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 8usize)) | (((val as u32) & 0x0fff) << 8usize);
         }
-        #[doc = "PLL1 reference input clock divide frequency ratio."]
+        #[doc = "PLL reference input clock divide frequency ratio."]
         #[inline(always)]
-        pub const fn plldivm(&self, n: usize) -> super::vals::Plldivm {
-            assert!(n < 1usize);
-            let offs = 20usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x3f;
+        pub const fn plldivm(&self) -> super::vals::Plldivm {
+            let val = (self.0 >> 20usize) & 0x3f;
             super::vals::Plldivm::from_bits(val as u8)
         }
-        #[doc = "PLL1 reference input clock divide frequency ratio."]
+        #[doc = "PLL reference input clock divide frequency ratio."]
         #[inline(always)]
-        pub fn set_plldivm(&mut self, n: usize, val: super::vals::Plldivm) {
-            assert!(n < 1usize);
-            let offs = 20usize + n * 0usize;
-            self.0 = (self.0 & !(0x3f << offs)) | (((val.to_bits() as u32) & 0x3f) << offs);
+        pub fn set_plldivm(&mut self, val: super::vals::Plldivm) {
+            self.0 = (self.0 & !(0x3f << 20usize)) | (((val.to_bits() as u32) & 0x3f) << 20usize);
         }
-        #[doc = "PLL1 bypass."]
+        #[doc = "PLL bypass."]
         #[inline(always)]
-        pub const fn pllbyp(&self, n: usize) -> super::vals::Pllbyp {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            super::vals::Pllbyp::from_bits(val as u8)
+        pub const fn pllbyp(&self) -> bool {
+            let val = (self.0 >> 27usize) & 0x01;
+            val != 0
         }
-        #[doc = "PLL1 bypass."]
+        #[doc = "PLL bypass."]
         #[inline(always)]
-        pub fn set_pllbyp(&mut self, n: usize, val: super::vals::Pllbyp) {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+        pub fn set_pllbyp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
-        #[doc = "PLL1 source selection of the reference clock."]
+        #[doc = "PLL source selection of the reference clock."]
         #[inline(always)]
-        pub const fn pllsel(&self, n: usize) -> super::vals::Pllsel {
-            assert!(n < 1usize);
-            let offs = 28usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x07;
+        pub const fn pllsel(&self) -> super::vals::Pllsel {
+            let val = (self.0 >> 28usize) & 0x07;
             super::vals::Pllsel::from_bits(val as u8)
         }
-        #[doc = "PLL1 source selection of the reference clock."]
+        #[doc = "PLL source selection of the reference clock."]
         #[inline(always)]
-        pub fn set_pllsel(&mut self, n: usize, val: super::vals::Pllsel) {
-            assert!(n < 1usize);
-            let offs = 28usize + n * 0usize;
-            self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
+        pub fn set_pllsel(&mut self, val: super::vals::Pllsel) {
+            self.0 = (self.0 & !(0x07 << 28usize)) | (((val.to_bits() as u32) & 0x07) << 28usize);
         }
     }
-    impl Default for Pll1cfgr1 {
+    impl Default for Pllcfgr1 {
         #[inline(always)]
-        fn default() -> Pll1cfgr1 {
-            Pll1cfgr1(0)
+        fn default() -> Pllcfgr1 {
+            Pllcfgr1(0)
         }
     }
-    impl core::fmt::Debug for Pll1cfgr1 {
+    impl core::fmt::Debug for Pllcfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Pll1cfgr1")
-                .field("plldivn[0]", &self.plldivn(0usize))
-                .field("plldivm[0]", &self.plldivm(0usize))
-                .field("pllbyp[0]", &self.pllbyp(0usize))
-                .field("pllsel[0]", &self.pllsel(0usize))
+            f.debug_struct("Pllcfgr1")
+                .field("plldivn", &self.plldivn())
+                .field("plldivm", &self.plldivm())
+                .field("pllbyp", &self.pllbyp())
+                .field("pllsel", &self.pllsel())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Pll1cfgr1 {
+    impl defmt::Format for Pllcfgr1 {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Pll1cfgr1 {{ plldivn[0]: {=u16:?}, plldivm[0]: {:?}, pllbyp[0]: {:?}, pllsel[0]: {:?} }}",
-                self.plldivn(0usize),
-                self.plldivm(0usize),
-                self.pllbyp(0usize),
-                self.pllsel(0usize)
+                "Pllcfgr1 {{ plldivn: {=u16:?}, plldivm: {:?}, pllbyp: {=bool:?}, pllsel: {:?} }}",
+                self.plldivn(),
+                self.plldivm(),
+                self.pllbyp(),
+                self.pllsel()
             )
         }
     }
-    #[doc = "RCC PLL1 configuration register 2."]
+    #[doc = "RCC PLL configuration register 2."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll1cfgr2(pub u32);
-    impl Pll1cfgr2 {
-        #[doc = "PLL1 Fractional part of the VCO multiplication factor."]
+    pub struct Pllcfgr2(pub u32);
+    impl Pllcfgr2 {
+        #[doc = "PLL Fractional part of the VCO multiplication factor."]
         #[inline(always)]
-        pub const fn plldivnfrac(&self, n: usize) -> u32 {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x00ff_ffff;
+        pub const fn plldivnfrac(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0x00ff_ffff;
             val as u32
         }
-        #[doc = "PLL1 Fractional part of the VCO multiplication factor."]
+        #[doc = "PLL Fractional part of the VCO multiplication factor."]
         #[inline(always)]
-        pub fn set_plldivnfrac(&mut self, n: usize, val: u32) {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            self.0 = (self.0 & !(0x00ff_ffff << offs)) | (((val as u32) & 0x00ff_ffff) << offs);
+        pub fn set_plldivnfrac(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x00ff_ffff << 0usize)) | (((val as u32) & 0x00ff_ffff) << 0usize);
         }
     }
-    impl Default for Pll1cfgr2 {
+    impl Default for Pllcfgr2 {
         #[inline(always)]
-        fn default() -> Pll1cfgr2 {
-            Pll1cfgr2(0)
+        fn default() -> Pllcfgr2 {
+            Pllcfgr2(0)
         }
     }
-    impl core::fmt::Debug for Pll1cfgr2 {
+    impl core::fmt::Debug for Pllcfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Pll1cfgr2")
-                .field("plldivnfrac[0]", &self.plldivnfrac(0usize))
+            f.debug_struct("Pllcfgr2")
+                .field("plldivnfrac", &self.plldivnfrac())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Pll1cfgr2 {
+    impl defmt::Format for Pllcfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Pll1cfgr2 {{ plldivnfrac[0]: {=u32:?} }}", self.plldivnfrac(0usize))
+            defmt::write!(f, "Pllcfgr2 {{ plldivnfrac: {=u32:?} }}", self.plldivnfrac())
         }
     }
-    #[doc = "RCC PLL1 configuration register 3."]
+    #[doc = "RCC PLL configuration register 3."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll1cfgr3(pub u32);
-    impl Pll1cfgr3 {
-        #[doc = "PLL1 Modulation Spread Spectrum reset."]
+    pub struct Pllcfgr3(pub u32);
+    impl Pllcfgr3 {
+        #[doc = "PLL Modulation Spread Spectrum reset."]
         #[inline(always)]
-        pub const fn pllmodssrst(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
+        pub const fn pllmodssrst(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
-        #[doc = "PLL1 Modulation Spread Spectrum reset."]
+        #[doc = "PLL Modulation Spread Spectrum reset."]
         #[inline(always)]
-        pub fn set_pllmodssrst(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+        pub fn set_pllmodssrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "PLL1 noise canceling DAC enable in fractional mode."]
+        #[doc = "PLL noise canceling DAC enable in fractional mode."]
         #[inline(always)]
-        pub const fn plldacen(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 1usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
+        pub const fn plldacen(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
-        #[doc = "PLL1 noise canceling DAC enable in fractional mode."]
+        #[doc = "PLL noise canceling DAC enable in fractional mode."]
         #[inline(always)]
-        pub fn set_plldacen(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 1usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+        pub fn set_plldacen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "PLL1 Modulation Spread-Spectrum Disable."]
+        #[doc = "PLL Modulation Spread-Spectrum Disable."]
         #[inline(always)]
-        pub const fn pllmodssdis(&self, n: usize) -> super::vals::Pllmodssdis {
-            assert!(n < 1usize);
-            let offs = 2usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
+        pub const fn pllmodssdis(&self) -> super::vals::Pllmodssdis {
+            let val = (self.0 >> 2usize) & 0x01;
             super::vals::Pllmodssdis::from_bits(val as u8)
         }
-        #[doc = "PLL1 Modulation Spread-Spectrum Disable."]
+        #[doc = "PLL Modulation Spread-Spectrum Disable."]
         #[inline(always)]
-        pub fn set_pllmodssdis(&mut self, n: usize, val: super::vals::Pllmodssdis) {
-            assert!(n < 1usize);
-            let offs = 2usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+        pub fn set_pllmodssdis(&mut self, val: super::vals::Pllmodssdis) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
-        #[doc = "PLL1 Modulation Spread-Spectrum (and Fractional Divide) enable."]
+        #[doc = "PLL Modulation Spread-Spectrum (and Fractional Divide) enable."]
         #[inline(always)]
-        pub const fn pllmoddsen(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 3usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
+        pub const fn pllmoddsen(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
-        #[doc = "PLL1 Modulation Spread-Spectrum (and Fractional Divide) enable."]
+        #[doc = "PLL Modulation Spread-Spectrum (and Fractional Divide) enable."]
         #[inline(always)]
-        pub fn set_pllmoddsen(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 3usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+        pub fn set_pllmoddsen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
-        #[doc = "PLL1 Modulation Spread-Spectrum Down."]
+        #[doc = "PLL Modulation Spread-Spectrum Down."]
         #[inline(always)]
-        pub const fn pllmodsprdw(&self, n: usize) -> super::vals::Pllmodsprdw {
-            assert!(n < 1usize);
-            let offs = 4usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
+        pub const fn pllmodsprdw(&self) -> super::vals::Pllmodsprdw {
+            let val = (self.0 >> 4usize) & 0x01;
             super::vals::Pllmodsprdw::from_bits(val as u8)
         }
-        #[doc = "PLL1 Modulation Spread-Spectrum Down."]
+        #[doc = "PLL Modulation Spread-Spectrum Down."]
         #[inline(always)]
-        pub fn set_pllmodsprdw(&mut self, n: usize, val: super::vals::Pllmodsprdw) {
-            assert!(n < 1usize);
-            let offs = 4usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+        pub fn set_pllmodsprdw(&mut self, val: super::vals::Pllmodsprdw) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
-        #[doc = "PLL1 Modulation Division frequency adjustment."]
+        #[doc = "PLL Modulation Division frequency adjustment."]
         #[inline(always)]
-        pub const fn pllmoddiv(&self, n: usize) -> u8 {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x0f;
+        pub const fn pllmoddiv(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x0f;
             val as u8
         }
-        #[doc = "PLL1 Modulation Division frequency adjustment."]
+        #[doc = "PLL Modulation Division frequency adjustment."]
         #[inline(always)]
-        pub fn set_pllmoddiv(&mut self, n: usize, val: u8) {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            self.0 = (self.0 & !(0x0f << offs)) | (((val as u32) & 0x0f) << offs);
+        pub fn set_pllmoddiv(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
-        #[doc = "PLL1 Modulation Spread depth adjustment."]
+        #[doc = "PLL Modulation Spread depth adjustment."]
         #[inline(always)]
-        pub const fn pllmodspr(&self, n: usize) -> u8 {
-            assert!(n < 1usize);
-            let offs = 16usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x1f;
+        pub const fn pllmodspr(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x1f;
             val as u8
         }
-        #[doc = "PLL1 Modulation Spread depth adjustment."]
+        #[doc = "PLL Modulation Spread depth adjustment."]
         #[inline(always)]
-        pub fn set_pllmodspr(&mut self, n: usize, val: u8) {
-            assert!(n < 1usize);
-            let offs = 16usize + n * 0usize;
-            self.0 = (self.0 & !(0x1f << offs)) | (((val as u32) & 0x1f) << offs);
+        pub fn set_pllmodspr(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
         }
-        #[doc = "PLL1 VCO frequency divider level 2."]
+        #[doc = "PLL VCO frequency divider level 2."]
         #[inline(always)]
-        pub const fn pllpdiv2(&self, n: usize) -> super::vals::Pllpdiv {
-            assert!(n < 1usize);
-            let offs = 24usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x07;
+        pub const fn pllpdiv2(&self) -> super::vals::Pllpdiv {
+            let val = (self.0 >> 24usize) & 0x07;
             super::vals::Pllpdiv::from_bits(val as u8)
         }
-        #[doc = "PLL1 VCO frequency divider level 2."]
+        #[doc = "PLL VCO frequency divider level 2."]
         #[inline(always)]
-        pub fn set_pllpdiv2(&mut self, n: usize, val: super::vals::Pllpdiv) {
-            assert!(n < 1usize);
-            let offs = 24usize + n * 0usize;
-            self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
+        pub fn set_pllpdiv2(&mut self, val: super::vals::Pllpdiv) {
+            self.0 = (self.0 & !(0x07 << 24usize)) | (((val.to_bits() as u32) & 0x07) << 24usize);
         }
-        #[doc = "PLL1 VCO frequency divider level 1."]
+        #[doc = "PLL VCO frequency divider level 1."]
         #[inline(always)]
-        pub const fn pllpdiv1(&self, n: usize) -> super::vals::Pllpdiv {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x07;
+        pub const fn pllpdiv1(&self) -> super::vals::Pllpdiv {
+            let val = (self.0 >> 27usize) & 0x07;
             super::vals::Pllpdiv::from_bits(val as u8)
         }
-        #[doc = "PLL1 VCO frequency divider level 1."]
+        #[doc = "PLL VCO frequency divider level 1."]
         #[inline(always)]
-        pub fn set_pllpdiv1(&mut self, n: usize, val: super::vals::Pllpdiv) {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
+        pub fn set_pllpdiv1(&mut self, val: super::vals::Pllpdiv) {
+            self.0 = (self.0 & !(0x07 << 27usize)) | (((val.to_bits() as u32) & 0x07) << 27usize);
         }
-        #[doc = "PLL1 post divider POSTDIV1, POSTDIV2, and PLL clock output enable."]
+        #[doc = "PLL post divider POSTDIV1, POSTDIV2, and PLL clock output enable."]
         #[inline(always)]
-        pub const fn pllpdiven(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 30usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
+        pub const fn pllpdiven(&self) -> bool {
+            let val = (self.0 >> 30usize) & 0x01;
             val != 0
         }
-        #[doc = "PLL1 post divider POSTDIV1, POSTDIV2, and PLL clock output enable."]
+        #[doc = "PLL post divider POSTDIV1, POSTDIV2, and PLL clock output enable."]
         #[inline(always)]
-        pub fn set_pllpdiven(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 30usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+        pub fn set_pllpdiven(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
     }
-    impl Default for Pll1cfgr3 {
+    impl Default for Pllcfgr3 {
         #[inline(always)]
-        fn default() -> Pll1cfgr3 {
-            Pll1cfgr3(0)
+        fn default() -> Pllcfgr3 {
+            Pllcfgr3(0)
         }
     }
-    impl core::fmt::Debug for Pll1cfgr3 {
+    impl core::fmt::Debug for Pllcfgr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Pll1cfgr3")
-                .field("pllmodssrst[0]", &self.pllmodssrst(0usize))
-                .field("plldacen[0]", &self.plldacen(0usize))
-                .field("pllmodssdis[0]", &self.pllmodssdis(0usize))
-                .field("pllmoddsen[0]", &self.pllmoddsen(0usize))
-                .field("pllmodsprdw[0]", &self.pllmodsprdw(0usize))
-                .field("pllmoddiv[0]", &self.pllmoddiv(0usize))
-                .field("pllmodspr[0]", &self.pllmodspr(0usize))
-                .field("pllpdiv2[0]", &self.pllpdiv2(0usize))
-                .field("pllpdiv1[0]", &self.pllpdiv1(0usize))
-                .field("pllpdiven[0]", &self.pllpdiven(0usize))
+            f.debug_struct("Pllcfgr3")
+                .field("pllmodssrst", &self.pllmodssrst())
+                .field("plldacen", &self.plldacen())
+                .field("pllmodssdis", &self.pllmodssdis())
+                .field("pllmoddsen", &self.pllmoddsen())
+                .field("pllmodsprdw", &self.pllmodsprdw())
+                .field("pllmoddiv", &self.pllmoddiv())
+                .field("pllmodspr", &self.pllmodspr())
+                .field("pllpdiv2", &self.pllpdiv2())
+                .field("pllpdiv1", &self.pllpdiv1())
+                .field("pllpdiven", &self.pllpdiven())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Pll1cfgr3 {
+    impl defmt::Format for Pllcfgr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pll1cfgr3 {{ pllmodssrst[0]: {=bool:?}, plldacen[0]: {=bool:?}, pllmodssdis[0]: {:?}, pllmoddsen[0]: {=bool:?}, pllmodsprdw[0]: {:?}, pllmoddiv[0]: {=u8:?}, pllmodspr[0]: {=u8:?}, pllpdiv2[0]: {:?}, pllpdiv1[0]: {:?}, pllpdiven[0]: {=bool:?} }}" , self . pllmodssrst (0usize) , self . plldacen (0usize) , self . pllmodssdis (0usize) , self . pllmoddsen (0usize) , self . pllmodsprdw (0usize) , self . pllmoddiv (0usize) , self . pllmodspr (0usize) , self . pllpdiv2 (0usize) , self . pllpdiv1 (0usize) , self . pllpdiven (0usize))
-        }
-    }
-    #[doc = "RCC PLL2 configuration register 1."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll2cfgr1(pub u32);
-    impl Pll2cfgr1 {
-        #[doc = "PLL2 Integer part for the VCO multiplication factor."]
-        #[inline(always)]
-        pub const fn plldivn(&self, n: usize) -> u16 {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x0fff;
-            val as u16
-        }
-        #[doc = "PLL2 Integer part for the VCO multiplication factor."]
-        #[inline(always)]
-        pub fn set_plldivn(&mut self, n: usize, val: u16) {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            self.0 = (self.0 & !(0x0fff << offs)) | (((val as u32) & 0x0fff) << offs);
-        }
-        #[doc = "PLL2 reference input clock divide frequency ratio."]
-        #[inline(always)]
-        pub const fn plldivm(&self, n: usize) -> super::vals::Plldivm {
-            assert!(n < 1usize);
-            let offs = 20usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x3f;
-            super::vals::Plldivm::from_bits(val as u8)
-        }
-        #[doc = "PLL2 reference input clock divide frequency ratio."]
-        #[inline(always)]
-        pub fn set_plldivm(&mut self, n: usize, val: super::vals::Plldivm) {
-            assert!(n < 1usize);
-            let offs = 20usize + n * 0usize;
-            self.0 = (self.0 & !(0x3f << offs)) | (((val.to_bits() as u32) & 0x3f) << offs);
-        }
-        #[doc = "PLL2 bypass."]
-        #[inline(always)]
-        pub const fn pllbyp(&self, n: usize) -> super::vals::Pllbyp {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            super::vals::Pllbyp::from_bits(val as u8)
-        }
-        #[doc = "PLL2 bypass."]
-        #[inline(always)]
-        pub fn set_pllbyp(&mut self, n: usize, val: super::vals::Pllbyp) {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL2 source selection of the reference clock."]
-        #[inline(always)]
-        pub const fn pllsel(&self, n: usize) -> super::vals::Pllsel {
-            assert!(n < 1usize);
-            let offs = 28usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x07;
-            super::vals::Pllsel::from_bits(val as u8)
-        }
-        #[doc = "PLL2 source selection of the reference clock."]
-        #[inline(always)]
-        pub fn set_pllsel(&mut self, n: usize, val: super::vals::Pllsel) {
-            assert!(n < 1usize);
-            let offs = 28usize + n * 0usize;
-            self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
-        }
-    }
-    impl Default for Pll2cfgr1 {
-        #[inline(always)]
-        fn default() -> Pll2cfgr1 {
-            Pll2cfgr1(0)
-        }
-    }
-    impl core::fmt::Debug for Pll2cfgr1 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Pll2cfgr1")
-                .field("plldivn[0]", &self.plldivn(0usize))
-                .field("plldivm[0]", &self.plldivm(0usize))
-                .field("pllbyp[0]", &self.pllbyp(0usize))
-                .field("pllsel[0]", &self.pllsel(0usize))
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Pll2cfgr1 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Pll2cfgr1 {{ plldivn[0]: {=u16:?}, plldivm[0]: {:?}, pllbyp[0]: {:?}, pllsel[0]: {:?} }}",
-                self.plldivn(0usize),
-                self.plldivm(0usize),
-                self.pllbyp(0usize),
-                self.pllsel(0usize)
-            )
-        }
-    }
-    #[doc = "RCC PLL2 configuration register 2."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll2cfgr2(pub u32);
-    impl Pll2cfgr2 {
-        #[doc = "PLL2 Fractional part of the VCO multiplication factor."]
-        #[inline(always)]
-        pub const fn plldivnfrac(&self, n: usize) -> u32 {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x00ff_ffff;
-            val as u32
-        }
-        #[doc = "PLL2 Fractional part of the VCO multiplication factor."]
-        #[inline(always)]
-        pub fn set_plldivnfrac(&mut self, n: usize, val: u32) {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            self.0 = (self.0 & !(0x00ff_ffff << offs)) | (((val as u32) & 0x00ff_ffff) << offs);
-        }
-    }
-    impl Default for Pll2cfgr2 {
-        #[inline(always)]
-        fn default() -> Pll2cfgr2 {
-            Pll2cfgr2(0)
-        }
-    }
-    impl core::fmt::Debug for Pll2cfgr2 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Pll2cfgr2")
-                .field("plldivnfrac[0]", &self.plldivnfrac(0usize))
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Pll2cfgr2 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Pll2cfgr2 {{ plldivnfrac[0]: {=u32:?} }}", self.plldivnfrac(0usize))
-        }
-    }
-    #[doc = "RCC PLL2 configuration register 3."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll2cfgr3(pub u32);
-    impl Pll2cfgr3 {
-        #[doc = "PLL2 Modulation Spread Spectrum reset."]
-        #[inline(always)]
-        pub const fn pllmodssrst(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL2 Modulation Spread Spectrum reset."]
-        #[inline(always)]
-        pub fn set_pllmodssrst(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL2 noise canceling DAC enable in fractional mode."]
-        #[inline(always)]
-        pub const fn plldacen(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 1usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL2 noise canceling DAC enable in fractional mode."]
-        #[inline(always)]
-        pub fn set_plldacen(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 1usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL2 Modulation Spread-Spectrum Disable."]
-        #[inline(always)]
-        pub const fn pllmodssdis(&self, n: usize) -> super::vals::Pllmodssdis {
-            assert!(n < 1usize);
-            let offs = 2usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            super::vals::Pllmodssdis::from_bits(val as u8)
-        }
-        #[doc = "PLL2 Modulation Spread-Spectrum Disable."]
-        #[inline(always)]
-        pub fn set_pllmodssdis(&mut self, n: usize, val: super::vals::Pllmodssdis) {
-            assert!(n < 1usize);
-            let offs = 2usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL2 Modulation Spread-Spectrum (and Fractional Divide) enable."]
-        #[inline(always)]
-        pub const fn pllmoddsen(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 3usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL2 Modulation Spread-Spectrum (and Fractional Divide) enable."]
-        #[inline(always)]
-        pub fn set_pllmoddsen(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 3usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL2 Modulation Down Spread."]
-        #[inline(always)]
-        pub const fn pllmodsprdw(&self, n: usize) -> super::vals::Pllmodsprdw {
-            assert!(n < 1usize);
-            let offs = 4usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            super::vals::Pllmodsprdw::from_bits(val as u8)
-        }
-        #[doc = "PLL2 Modulation Down Spread."]
-        #[inline(always)]
-        pub fn set_pllmodsprdw(&mut self, n: usize, val: super::vals::Pllmodsprdw) {
-            assert!(n < 1usize);
-            let offs = 4usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL2 Modulation Division frequency adjustment."]
-        #[inline(always)]
-        pub const fn pllmoddiv(&self, n: usize) -> u8 {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x0f;
-            val as u8
-        }
-        #[doc = "PLL2 Modulation Division frequency adjustment."]
-        #[inline(always)]
-        pub fn set_pllmoddiv(&mut self, n: usize, val: u8) {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            self.0 = (self.0 & !(0x0f << offs)) | (((val as u32) & 0x0f) << offs);
-        }
-        #[doc = "PLL2 Modulation Spread depth adjustment."]
-        #[inline(always)]
-        pub const fn pllmodspr(&self, n: usize) -> u8 {
-            assert!(n < 1usize);
-            let offs = 16usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x1f;
-            val as u8
-        }
-        #[doc = "PLL2 Modulation Spread depth adjustment."]
-        #[inline(always)]
-        pub fn set_pllmodspr(&mut self, n: usize, val: u8) {
-            assert!(n < 1usize);
-            let offs = 16usize + n * 0usize;
-            self.0 = (self.0 & !(0x1f << offs)) | (((val as u32) & 0x1f) << offs);
-        }
-        #[doc = "PLL2 VCO frequency divider level 2."]
-        #[inline(always)]
-        pub const fn pllpdiv2(&self, n: usize) -> super::vals::Pllpdiv {
-            assert!(n < 1usize);
-            let offs = 24usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x07;
-            super::vals::Pllpdiv::from_bits(val as u8)
-        }
-        #[doc = "PLL2 VCO frequency divider level 2."]
-        #[inline(always)]
-        pub fn set_pllpdiv2(&mut self, n: usize, val: super::vals::Pllpdiv) {
-            assert!(n < 1usize);
-            let offs = 24usize + n * 0usize;
-            self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
-        }
-        #[doc = "PLL2 VCO frequency divider level 1."]
-        #[inline(always)]
-        pub const fn pllpdiv1(&self, n: usize) -> super::vals::Pllpdiv {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x07;
-            super::vals::Pllpdiv::from_bits(val as u8)
-        }
-        #[doc = "PLL2 VCO frequency divider level 1."]
-        #[inline(always)]
-        pub fn set_pllpdiv1(&mut self, n: usize, val: super::vals::Pllpdiv) {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
-        }
-        #[doc = "PLL2 post divider POSTDIV1, POSTDIV2, and PLL clock output enable."]
-        #[inline(always)]
-        pub const fn pllpdiven(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 30usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL2 post divider POSTDIV1, POSTDIV2, and PLL clock output enable."]
-        #[inline(always)]
-        pub fn set_pllpdiven(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 30usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-    }
-    impl Default for Pll2cfgr3 {
-        #[inline(always)]
-        fn default() -> Pll2cfgr3 {
-            Pll2cfgr3(0)
-        }
-    }
-    impl core::fmt::Debug for Pll2cfgr3 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Pll2cfgr3")
-                .field("pllmodssrst[0]", &self.pllmodssrst(0usize))
-                .field("plldacen[0]", &self.plldacen(0usize))
-                .field("pllmodssdis[0]", &self.pllmodssdis(0usize))
-                .field("pllmoddsen[0]", &self.pllmoddsen(0usize))
-                .field("pllmodsprdw[0]", &self.pllmodsprdw(0usize))
-                .field("pllmoddiv[0]", &self.pllmoddiv(0usize))
-                .field("pllmodspr[0]", &self.pllmodspr(0usize))
-                .field("pllpdiv2[0]", &self.pllpdiv2(0usize))
-                .field("pllpdiv1[0]", &self.pllpdiv1(0usize))
-                .field("pllpdiven[0]", &self.pllpdiven(0usize))
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Pll2cfgr3 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pll2cfgr3 {{ pllmodssrst[0]: {=bool:?}, plldacen[0]: {=bool:?}, pllmodssdis[0]: {:?}, pllmoddsen[0]: {=bool:?}, pllmodsprdw[0]: {:?}, pllmoddiv[0]: {=u8:?}, pllmodspr[0]: {=u8:?}, pllpdiv2[0]: {:?}, pllpdiv1[0]: {:?}, pllpdiven[0]: {=bool:?} }}" , self . pllmodssrst (0usize) , self . plldacen (0usize) , self . pllmodssdis (0usize) , self . pllmoddsen (0usize) , self . pllmodsprdw (0usize) , self . pllmoddiv (0usize) , self . pllmodspr (0usize) , self . pllpdiv2 (0usize) , self . pllpdiv1 (0usize) , self . pllpdiven (0usize))
-        }
-    }
-    #[doc = "RCC PLL3 configuration register 1."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll3cfgr1(pub u32);
-    impl Pll3cfgr1 {
-        #[doc = "PLL3 Integer part for the VCO multiplication factor."]
-        #[inline(always)]
-        pub const fn plldivn(&self, n: usize) -> u16 {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x0fff;
-            val as u16
-        }
-        #[doc = "PLL3 Integer part for the VCO multiplication factor."]
-        #[inline(always)]
-        pub fn set_plldivn(&mut self, n: usize, val: u16) {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            self.0 = (self.0 & !(0x0fff << offs)) | (((val as u32) & 0x0fff) << offs);
-        }
-        #[doc = "PLL3 reference input clock divide frequency ratio."]
-        #[inline(always)]
-        pub const fn plldivm(&self, n: usize) -> super::vals::Plldivm {
-            assert!(n < 1usize);
-            let offs = 20usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x3f;
-            super::vals::Plldivm::from_bits(val as u8)
-        }
-        #[doc = "PLL3 reference input clock divide frequency ratio."]
-        #[inline(always)]
-        pub fn set_plldivm(&mut self, n: usize, val: super::vals::Plldivm) {
-            assert!(n < 1usize);
-            let offs = 20usize + n * 0usize;
-            self.0 = (self.0 & !(0x3f << offs)) | (((val.to_bits() as u32) & 0x3f) << offs);
-        }
-        #[doc = "PLL3 bypass."]
-        #[inline(always)]
-        pub const fn pllbyp(&self, n: usize) -> super::vals::Pllbyp {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            super::vals::Pllbyp::from_bits(val as u8)
-        }
-        #[doc = "PLL3 bypass."]
-        #[inline(always)]
-        pub fn set_pllbyp(&mut self, n: usize, val: super::vals::Pllbyp) {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL3 source selection of the reference clock."]
-        #[inline(always)]
-        pub const fn pllsel(&self, n: usize) -> super::vals::Pllsel {
-            assert!(n < 1usize);
-            let offs = 28usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x07;
-            super::vals::Pllsel::from_bits(val as u8)
-        }
-        #[doc = "PLL3 source selection of the reference clock."]
-        #[inline(always)]
-        pub fn set_pllsel(&mut self, n: usize, val: super::vals::Pllsel) {
-            assert!(n < 1usize);
-            let offs = 28usize + n * 0usize;
-            self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
-        }
-    }
-    impl Default for Pll3cfgr1 {
-        #[inline(always)]
-        fn default() -> Pll3cfgr1 {
-            Pll3cfgr1(0)
-        }
-    }
-    impl core::fmt::Debug for Pll3cfgr1 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Pll3cfgr1")
-                .field("plldivn[0]", &self.plldivn(0usize))
-                .field("plldivm[0]", &self.plldivm(0usize))
-                .field("pllbyp[0]", &self.pllbyp(0usize))
-                .field("pllsel[0]", &self.pllsel(0usize))
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Pll3cfgr1 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Pll3cfgr1 {{ plldivn[0]: {=u16:?}, plldivm[0]: {:?}, pllbyp[0]: {:?}, pllsel[0]: {:?} }}",
-                self.plldivn(0usize),
-                self.plldivm(0usize),
-                self.pllbyp(0usize),
-                self.pllsel(0usize)
-            )
-        }
-    }
-    #[doc = "RCC PLL3 configuration register 2."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll3cfgr2(pub u32);
-    impl Pll3cfgr2 {
-        #[doc = "PLL3 Fractional part of the VCO multiplication factor."]
-        #[inline(always)]
-        pub const fn plldivnfrac(&self, n: usize) -> u32 {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x00ff_ffff;
-            val as u32
-        }
-        #[doc = "PLL3 Fractional part of the VCO multiplication factor."]
-        #[inline(always)]
-        pub fn set_plldivnfrac(&mut self, n: usize, val: u32) {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            self.0 = (self.0 & !(0x00ff_ffff << offs)) | (((val as u32) & 0x00ff_ffff) << offs);
-        }
-    }
-    impl Default for Pll3cfgr2 {
-        #[inline(always)]
-        fn default() -> Pll3cfgr2 {
-            Pll3cfgr2(0)
-        }
-    }
-    impl core::fmt::Debug for Pll3cfgr2 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Pll3cfgr2")
-                .field("plldivnfrac[0]", &self.plldivnfrac(0usize))
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Pll3cfgr2 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Pll3cfgr2 {{ plldivnfrac[0]: {=u32:?} }}", self.plldivnfrac(0usize))
-        }
-    }
-    #[doc = "RCC PLL3 configuration register 3."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll3cfgr3(pub u32);
-    impl Pll3cfgr3 {
-        #[doc = "PLL3 Modulation Spread Spectrum reset."]
-        #[inline(always)]
-        pub const fn pllmodssrst(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL3 Modulation Spread Spectrum reset."]
-        #[inline(always)]
-        pub fn set_pllmodssrst(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL3 noise canceling DAC enable in fractional mode."]
-        #[inline(always)]
-        pub const fn plldacen(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 1usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL3 noise canceling DAC enable in fractional mode."]
-        #[inline(always)]
-        pub fn set_plldacen(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 1usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL3 Modulation Spread-Spectrum Disable."]
-        #[inline(always)]
-        pub const fn pllmodssdis(&self, n: usize) -> super::vals::Pllmodssdis {
-            assert!(n < 1usize);
-            let offs = 2usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            super::vals::Pllmodssdis::from_bits(val as u8)
-        }
-        #[doc = "PLL3 Modulation Spread-Spectrum Disable."]
-        #[inline(always)]
-        pub fn set_pllmodssdis(&mut self, n: usize, val: super::vals::Pllmodssdis) {
-            assert!(n < 1usize);
-            let offs = 2usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL3 Modulation Spread-Spectrum (and Fractional Divide) enable."]
-        #[inline(always)]
-        pub const fn pllmoddsen(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 3usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL3 Modulation Spread-Spectrum (and Fractional Divide) enable."]
-        #[inline(always)]
-        pub fn set_pllmoddsen(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 3usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL3 Modulation Down Spread."]
-        #[inline(always)]
-        pub const fn pllmodsprdw(&self, n: usize) -> super::vals::Pllmodsprdw {
-            assert!(n < 1usize);
-            let offs = 4usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            super::vals::Pllmodsprdw::from_bits(val as u8)
-        }
-        #[doc = "PLL3 Modulation Down Spread."]
-        #[inline(always)]
-        pub fn set_pllmodsprdw(&mut self, n: usize, val: super::vals::Pllmodsprdw) {
-            assert!(n < 1usize);
-            let offs = 4usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL3 Modulation Division frequency adjustment."]
-        #[inline(always)]
-        pub const fn pllmoddiv(&self, n: usize) -> u8 {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x0f;
-            val as u8
-        }
-        #[doc = "PLL3 Modulation Division frequency adjustment."]
-        #[inline(always)]
-        pub fn set_pllmoddiv(&mut self, n: usize, val: u8) {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            self.0 = (self.0 & !(0x0f << offs)) | (((val as u32) & 0x0f) << offs);
-        }
-        #[doc = "PLL3 Modulation Spread depth adjustment."]
-        #[inline(always)]
-        pub const fn pllmodspr(&self, n: usize) -> u8 {
-            assert!(n < 1usize);
-            let offs = 16usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x1f;
-            val as u8
-        }
-        #[doc = "PLL3 Modulation Spread depth adjustment."]
-        #[inline(always)]
-        pub fn set_pllmodspr(&mut self, n: usize, val: u8) {
-            assert!(n < 1usize);
-            let offs = 16usize + n * 0usize;
-            self.0 = (self.0 & !(0x1f << offs)) | (((val as u32) & 0x1f) << offs);
-        }
-        #[doc = "PLL3 VCO frequency divider level 2."]
-        #[inline(always)]
-        pub const fn pllpdiv2(&self, n: usize) -> super::vals::Pllpdiv {
-            assert!(n < 1usize);
-            let offs = 24usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x07;
-            super::vals::Pllpdiv::from_bits(val as u8)
-        }
-        #[doc = "PLL3 VCO frequency divider level 2."]
-        #[inline(always)]
-        pub fn set_pllpdiv2(&mut self, n: usize, val: super::vals::Pllpdiv) {
-            assert!(n < 1usize);
-            let offs = 24usize + n * 0usize;
-            self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
-        }
-        #[doc = "PLL3 VCO frequency divider level 1."]
-        #[inline(always)]
-        pub const fn pllpdiv1(&self, n: usize) -> super::vals::Pllpdiv {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x07;
-            super::vals::Pllpdiv::from_bits(val as u8)
-        }
-        #[doc = "PLL3 VCO frequency divider level 1."]
-        #[inline(always)]
-        pub fn set_pllpdiv1(&mut self, n: usize, val: super::vals::Pllpdiv) {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
-        }
-        #[doc = "PLL3 post divider POSTDIV1, POSTDIV2, and PLL clock output enable."]
-        #[inline(always)]
-        pub const fn pllpdiven(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 30usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL3 post divider POSTDIV1, POSTDIV2, and PLL clock output enable."]
-        #[inline(always)]
-        pub fn set_pllpdiven(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 30usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-    }
-    impl Default for Pll3cfgr3 {
-        #[inline(always)]
-        fn default() -> Pll3cfgr3 {
-            Pll3cfgr3(0)
-        }
-    }
-    impl core::fmt::Debug for Pll3cfgr3 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Pll3cfgr3")
-                .field("pllmodssrst[0]", &self.pllmodssrst(0usize))
-                .field("plldacen[0]", &self.plldacen(0usize))
-                .field("pllmodssdis[0]", &self.pllmodssdis(0usize))
-                .field("pllmoddsen[0]", &self.pllmoddsen(0usize))
-                .field("pllmodsprdw[0]", &self.pllmodsprdw(0usize))
-                .field("pllmoddiv[0]", &self.pllmoddiv(0usize))
-                .field("pllmodspr[0]", &self.pllmodspr(0usize))
-                .field("pllpdiv2[0]", &self.pllpdiv2(0usize))
-                .field("pllpdiv1[0]", &self.pllpdiv1(0usize))
-                .field("pllpdiven[0]", &self.pllpdiven(0usize))
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Pll3cfgr3 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pll3cfgr3 {{ pllmodssrst[0]: {=bool:?}, plldacen[0]: {=bool:?}, pllmodssdis[0]: {:?}, pllmoddsen[0]: {=bool:?}, pllmodsprdw[0]: {:?}, pllmoddiv[0]: {=u8:?}, pllmodspr[0]: {=u8:?}, pllpdiv2[0]: {:?}, pllpdiv1[0]: {:?}, pllpdiven[0]: {=bool:?} }}" , self . pllmodssrst (0usize) , self . plldacen (0usize) , self . pllmodssdis (0usize) , self . pllmoddsen (0usize) , self . pllmodsprdw (0usize) , self . pllmoddiv (0usize) , self . pllmodspr (0usize) , self . pllpdiv2 (0usize) , self . pllpdiv1 (0usize) , self . pllpdiven (0usize))
-        }
-    }
-    #[doc = "RCC PLL4 configuration register 1."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll4cfgr1(pub u32);
-    impl Pll4cfgr1 {
-        #[doc = "PLL4 Integer part for the VCO multiplication factor."]
-        #[inline(always)]
-        pub const fn plldivn(&self, n: usize) -> u16 {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x0fff;
-            val as u16
-        }
-        #[doc = "PLL4 Integer part for the VCO multiplication factor."]
-        #[inline(always)]
-        pub fn set_plldivn(&mut self, n: usize, val: u16) {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            self.0 = (self.0 & !(0x0fff << offs)) | (((val as u32) & 0x0fff) << offs);
-        }
-        #[doc = "PLL4 reference input clock divide frequency ratio."]
-        #[inline(always)]
-        pub const fn plldivm(&self, n: usize) -> super::vals::Plldivm {
-            assert!(n < 1usize);
-            let offs = 20usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x3f;
-            super::vals::Plldivm::from_bits(val as u8)
-        }
-        #[doc = "PLL4 reference input clock divide frequency ratio."]
-        #[inline(always)]
-        pub fn set_plldivm(&mut self, n: usize, val: super::vals::Plldivm) {
-            assert!(n < 1usize);
-            let offs = 20usize + n * 0usize;
-            self.0 = (self.0 & !(0x3f << offs)) | (((val.to_bits() as u32) & 0x3f) << offs);
-        }
-        #[doc = "PLL4 bypass."]
-        #[inline(always)]
-        pub const fn pllbyp(&self, n: usize) -> super::vals::Pllbyp {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            super::vals::Pllbyp::from_bits(val as u8)
-        }
-        #[doc = "PLL4 bypass."]
-        #[inline(always)]
-        pub fn set_pllbyp(&mut self, n: usize, val: super::vals::Pllbyp) {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL4 source selection of the reference clock."]
-        #[inline(always)]
-        pub const fn pllsel(&self, n: usize) -> super::vals::Pllsel {
-            assert!(n < 1usize);
-            let offs = 28usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x07;
-            super::vals::Pllsel::from_bits(val as u8)
-        }
-        #[doc = "PLL4 source selection of the reference clock."]
-        #[inline(always)]
-        pub fn set_pllsel(&mut self, n: usize, val: super::vals::Pllsel) {
-            assert!(n < 1usize);
-            let offs = 28usize + n * 0usize;
-            self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
-        }
-    }
-    impl Default for Pll4cfgr1 {
-        #[inline(always)]
-        fn default() -> Pll4cfgr1 {
-            Pll4cfgr1(0)
-        }
-    }
-    impl core::fmt::Debug for Pll4cfgr1 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Pll4cfgr1")
-                .field("plldivn[0]", &self.plldivn(0usize))
-                .field("plldivm[0]", &self.plldivm(0usize))
-                .field("pllbyp[0]", &self.pllbyp(0usize))
-                .field("pllsel[0]", &self.pllsel(0usize))
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Pll4cfgr1 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Pll4cfgr1 {{ plldivn[0]: {=u16:?}, plldivm[0]: {:?}, pllbyp[0]: {:?}, pllsel[0]: {:?} }}",
-                self.plldivn(0usize),
-                self.plldivm(0usize),
-                self.pllbyp(0usize),
-                self.pllsel(0usize)
-            )
-        }
-    }
-    #[doc = "RCC PLL4 configuration register 2."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll4cfgr2(pub u32);
-    impl Pll4cfgr2 {
-        #[doc = "PLL4 Fractional part of the VCO multiplication factor."]
-        #[inline(always)]
-        pub const fn plldivnfrac(&self, n: usize) -> u32 {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x00ff_ffff;
-            val as u32
-        }
-        #[doc = "PLL4 Fractional part of the VCO multiplication factor."]
-        #[inline(always)]
-        pub fn set_plldivnfrac(&mut self, n: usize, val: u32) {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            self.0 = (self.0 & !(0x00ff_ffff << offs)) | (((val as u32) & 0x00ff_ffff) << offs);
-        }
-    }
-    impl Default for Pll4cfgr2 {
-        #[inline(always)]
-        fn default() -> Pll4cfgr2 {
-            Pll4cfgr2(0)
-        }
-    }
-    impl core::fmt::Debug for Pll4cfgr2 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Pll4cfgr2")
-                .field("plldivnfrac[0]", &self.plldivnfrac(0usize))
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Pll4cfgr2 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Pll4cfgr2 {{ plldivnfrac[0]: {=u32:?} }}", self.plldivnfrac(0usize))
-        }
-    }
-    #[doc = "RCC PLL4 configuration register 3."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Pll4cfgr3(pub u32);
-    impl Pll4cfgr3 {
-        #[doc = "PLL4 Modulation Spread Spectrum reset."]
-        #[inline(always)]
-        pub const fn pllmodssrst(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL4 Modulation Spread Spectrum reset."]
-        #[inline(always)]
-        pub fn set_pllmodssrst(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL4 noise canceling DAC enable in fractional mode."]
-        #[inline(always)]
-        pub const fn plldacen(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 1usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL4 noise canceling DAC enable in fractional mode."]
-        #[inline(always)]
-        pub fn set_plldacen(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 1usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL4 Modulation Spread-Spectrum Disable."]
-        #[inline(always)]
-        pub const fn pllmodssdis(&self, n: usize) -> super::vals::Pllmodssdis {
-            assert!(n < 1usize);
-            let offs = 2usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            super::vals::Pllmodssdis::from_bits(val as u8)
-        }
-        #[doc = "PLL4 Modulation Spread-Spectrum Disable."]
-        #[inline(always)]
-        pub fn set_pllmodssdis(&mut self, n: usize, val: super::vals::Pllmodssdis) {
-            assert!(n < 1usize);
-            let offs = 2usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL4 Modulation Spread-Spectrum (and Fractional Divide) enable."]
-        #[inline(always)]
-        pub const fn pllmoddsen(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 3usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL4 Modulation Spread-Spectrum (and Fractional Divide) enable."]
-        #[inline(always)]
-        pub fn set_pllmoddsen(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 3usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL4 Modulation Down Spread."]
-        #[inline(always)]
-        pub const fn pllmodsprdw(&self, n: usize) -> super::vals::Pllmodsprdw {
-            assert!(n < 1usize);
-            let offs = 4usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            super::vals::Pllmodsprdw::from_bits(val as u8)
-        }
-        #[doc = "PLL4 Modulation Down Spread."]
-        #[inline(always)]
-        pub fn set_pllmodsprdw(&mut self, n: usize, val: super::vals::Pllmodsprdw) {
-            assert!(n < 1usize);
-            let offs = 4usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
-        }
-        #[doc = "PLL4 Modulation Division frequency adjustment."]
-        #[inline(always)]
-        pub const fn pllmoddiv(&self, n: usize) -> u8 {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x0f;
-            val as u8
-        }
-        #[doc = "PLL4 Modulation Division frequency adjustment."]
-        #[inline(always)]
-        pub fn set_pllmoddiv(&mut self, n: usize, val: u8) {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            self.0 = (self.0 & !(0x0f << offs)) | (((val as u32) & 0x0f) << offs);
-        }
-        #[doc = "PLL4 Modulation Spread depth adjustment."]
-        #[inline(always)]
-        pub const fn pllmodspr(&self, n: usize) -> u8 {
-            assert!(n < 1usize);
-            let offs = 16usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x1f;
-            val as u8
-        }
-        #[doc = "PLL4 Modulation Spread depth adjustment."]
-        #[inline(always)]
-        pub fn set_pllmodspr(&mut self, n: usize, val: u8) {
-            assert!(n < 1usize);
-            let offs = 16usize + n * 0usize;
-            self.0 = (self.0 & !(0x1f << offs)) | (((val as u32) & 0x1f) << offs);
-        }
-        #[doc = "PLL4 VCO frequency divider level 2."]
-        #[inline(always)]
-        pub const fn pllpdiv2(&self, n: usize) -> super::vals::Pllpdiv {
-            assert!(n < 1usize);
-            let offs = 24usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x07;
-            super::vals::Pllpdiv::from_bits(val as u8)
-        }
-        #[doc = "PLL4 VCO frequency divider level 2."]
-        #[inline(always)]
-        pub fn set_pllpdiv2(&mut self, n: usize, val: super::vals::Pllpdiv) {
-            assert!(n < 1usize);
-            let offs = 24usize + n * 0usize;
-            self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
-        }
-        #[doc = "PLL4 VCO frequency divider level 1."]
-        #[inline(always)]
-        pub const fn pllpdiv1(&self, n: usize) -> super::vals::Pllpdiv {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x07;
-            super::vals::Pllpdiv::from_bits(val as u8)
-        }
-        #[doc = "PLL4 VCO frequency divider level 1."]
-        #[inline(always)]
-        pub fn set_pllpdiv1(&mut self, n: usize, val: super::vals::Pllpdiv) {
-            assert!(n < 1usize);
-            let offs = 27usize + n * 0usize;
-            self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
-        }
-        #[doc = "PLL4 post divider POSTDIV1, POSTDIV2, and PLL clock output enable."]
-        #[inline(always)]
-        pub const fn pllpdiven(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 30usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "PLL4 post divider POSTDIV1, POSTDIV2, and PLL clock output enable."]
-        #[inline(always)]
-        pub fn set_pllpdiven(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 30usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-    }
-    impl Default for Pll4cfgr3 {
-        #[inline(always)]
-        fn default() -> Pll4cfgr3 {
-            Pll4cfgr3(0)
-        }
-    }
-    impl core::fmt::Debug for Pll4cfgr3 {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Pll4cfgr3")
-                .field("pllmodssrst[0]", &self.pllmodssrst(0usize))
-                .field("plldacen[0]", &self.plldacen(0usize))
-                .field("pllmodssdis[0]", &self.pllmodssdis(0usize))
-                .field("pllmoddsen[0]", &self.pllmoddsen(0usize))
-                .field("pllmodsprdw[0]", &self.pllmodsprdw(0usize))
-                .field("pllmoddiv[0]", &self.pllmoddiv(0usize))
-                .field("pllmodspr[0]", &self.pllmodspr(0usize))
-                .field("pllpdiv2[0]", &self.pllpdiv2(0usize))
-                .field("pllpdiv1[0]", &self.pllpdiv1(0usize))
-                .field("pllpdiven[0]", &self.pllpdiven(0usize))
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Pll4cfgr3 {
-        fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pll4cfgr3 {{ pllmodssrst[0]: {=bool:?}, plldacen[0]: {=bool:?}, pllmodssdis[0]: {:?}, pllmoddsen[0]: {=bool:?}, pllmodsprdw[0]: {:?}, pllmoddiv[0]: {=u8:?}, pllmodspr[0]: {=u8:?}, pllpdiv2[0]: {:?}, pllpdiv1[0]: {:?}, pllpdiven[0]: {=bool:?} }}" , self . pllmodssrst (0usize) , self . plldacen (0usize) , self . pllmodssdis (0usize) , self . pllmoddsen (0usize) , self . pllmodsprdw (0usize) , self . pllmoddiv (0usize) , self . pllmodspr (0usize) , self . pllpdiv2 (0usize) , self . pllpdiv1 (0usize) , self . pllpdiven (0usize))
+            defmt :: write ! (f , "Pllcfgr3 {{ pllmodssrst: {=bool:?}, plldacen: {=bool:?}, pllmodssdis: {:?}, pllmoddsen: {=bool:?}, pllmodsprdw: {:?}, pllmoddiv: {=u8:?}, pllmodspr: {=u8:?}, pllpdiv2: {:?}, pllpdiv1: {:?}, pllpdiven: {=bool:?} }}" , self . pllmodssrst () , self . plldacen () , self . pllmodssdis () , self . pllmoddsen () , self . pllmodsprdw () , self . pllmoddiv () , self . pllmodspr () , self . pllpdiv2 () , self . pllpdiv1 () , self . pllpdiven ())
         }
     }
     #[doc = "RCC oscillator privilege configuration register0."]
@@ -33411,225 +31234,20 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Seccfgr2(pub u32);
     impl Seccfgr2 {
-        #[doc = "Defines the secure protection of the IC1 divider configuration bits."]
+        #[doc = "Defines the secure protection of the ICx divider configuration bits."]
         #[inline(always)]
-        pub const fn ic1sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
+        pub const fn icsec(&self, n: usize) -> bool {
+            assert!(n < 20usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
+            val != 0
         }
-        #[doc = "Defines the secure protection of the IC1 divider configuration bits."]
+        #[doc = "Defines the secure protection of the ICx divider configuration bits."]
         #[inline(always)]
-        pub fn set_ic1sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Defines the secure protection of the IC2 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic2sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC2 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic2sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Defines the secure protection of the IC3 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic3sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC3 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic3sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Defines the secure protection of the IC4 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic4sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC4 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic4sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Defines the secure protection of the IC5 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic5sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC5 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic5sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Defines the secure protection of the IC6 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic6sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC6 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic6sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Defines the secure protection of the IC7 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic7sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC7 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic7sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Defines the secure protection of the IC8 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic8sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC8 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic8sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Defines the secure protection of the IC9 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic9sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC9 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic9sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
-        }
-        #[doc = "Defines the secure protection of the IC10 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic10sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC10 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic10sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
-        }
-        #[doc = "Defines the secure protection of the IC11 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic11sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 10usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC11 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic11sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
-        }
-        #[doc = "Defines the secure protection of the IC12 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic12sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC12 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic12sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
-        }
-        #[doc = "Defines the secure protection of the IC13 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic13sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 12usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC13 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic13sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
-        }
-        #[doc = "Defines the secure protection of the IC14 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic14sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC14 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic14sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
-        }
-        #[doc = "Defines the secure protection of the IC15 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic15sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 14usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC15 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic15sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
-        }
-        #[doc = "Defines the secure protection of the IC16 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic16sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC16 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic16sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
-        }
-        #[doc = "Defines the secure protection of the IC17 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic17sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 16usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC17 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic17sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
-        }
-        #[doc = "Defines the secure protection of the IC18 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic18sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 17usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC18 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic18sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
-        }
-        #[doc = "Defines the secure protection of the IC19 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic19sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 18usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC19 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic19sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
-        }
-        #[doc = "Defines the secure protection of the IC20 divider configuration bits."]
-        #[inline(always)]
-        pub const fn ic20sec(&self) -> super::vals::Icsec {
-            let val = (self.0 >> 19usize) & 0x01;
-            super::vals::Icsec::from_bits(val as u8)
-        }
-        #[doc = "Defines the secure protection of the IC20 divider configuration bits."]
-        #[inline(always)]
-        pub fn set_ic20sec(&mut self, val: super::vals::Icsec) {
-            self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+        pub fn set_icsec(&mut self, n: usize, val: bool) {
+            assert!(n < 20usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Seccfgr2 {
@@ -33641,33 +31259,33 @@ pub mod regs {
     impl core::fmt::Debug for Seccfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccfgr2")
-                .field("ic1sec", &self.ic1sec())
-                .field("ic2sec", &self.ic2sec())
-                .field("ic3sec", &self.ic3sec())
-                .field("ic4sec", &self.ic4sec())
-                .field("ic5sec", &self.ic5sec())
-                .field("ic6sec", &self.ic6sec())
-                .field("ic7sec", &self.ic7sec())
-                .field("ic8sec", &self.ic8sec())
-                .field("ic9sec", &self.ic9sec())
-                .field("ic10sec", &self.ic10sec())
-                .field("ic11sec", &self.ic11sec())
-                .field("ic12sec", &self.ic12sec())
-                .field("ic13sec", &self.ic13sec())
-                .field("ic14sec", &self.ic14sec())
-                .field("ic15sec", &self.ic15sec())
-                .field("ic16sec", &self.ic16sec())
-                .field("ic17sec", &self.ic17sec())
-                .field("ic18sec", &self.ic18sec())
-                .field("ic19sec", &self.ic19sec())
-                .field("ic20sec", &self.ic20sec())
+                .field("icsec[0]", &self.icsec(0usize))
+                .field("icsec[1]", &self.icsec(1usize))
+                .field("icsec[2]", &self.icsec(2usize))
+                .field("icsec[3]", &self.icsec(3usize))
+                .field("icsec[4]", &self.icsec(4usize))
+                .field("icsec[5]", &self.icsec(5usize))
+                .field("icsec[6]", &self.icsec(6usize))
+                .field("icsec[7]", &self.icsec(7usize))
+                .field("icsec[8]", &self.icsec(8usize))
+                .field("icsec[9]", &self.icsec(9usize))
+                .field("icsec[10]", &self.icsec(10usize))
+                .field("icsec[11]", &self.icsec(11usize))
+                .field("icsec[12]", &self.icsec(12usize))
+                .field("icsec[13]", &self.icsec(13usize))
+                .field("icsec[14]", &self.icsec(14usize))
+                .field("icsec[15]", &self.icsec(15usize))
+                .field("icsec[16]", &self.icsec(16usize))
+                .field("icsec[17]", &self.icsec(17usize))
+                .field("icsec[18]", &self.icsec(18usize))
+                .field("icsec[19]", &self.icsec(19usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccfgr2 {{ ic1sec: {:?}, ic2sec: {:?}, ic3sec: {:?}, ic4sec: {:?}, ic5sec: {:?}, ic6sec: {:?}, ic7sec: {:?}, ic8sec: {:?}, ic9sec: {:?}, ic10sec: {:?}, ic11sec: {:?}, ic12sec: {:?}, ic13sec: {:?}, ic14sec: {:?}, ic15sec: {:?}, ic16sec: {:?}, ic17sec: {:?}, ic18sec: {:?}, ic19sec: {:?}, ic20sec: {:?} }}" , self . ic1sec () , self . ic2sec () , self . ic3sec () , self . ic4sec () , self . ic5sec () , self . ic6sec () , self . ic7sec () , self . ic8sec () , self . ic9sec () , self . ic10sec () , self . ic11sec () , self . ic12sec () , self . ic13sec () , self . ic14sec () , self . ic15sec () , self . ic16sec () , self . ic17sec () , self . ic18sec () , self . ic19sec () , self . ic20sec ())
+            defmt :: write ! (f , "Seccfgr2 {{ icsec[0]: {=bool:?}, icsec[1]: {=bool:?}, icsec[2]: {=bool:?}, icsec[3]: {=bool:?}, icsec[4]: {=bool:?}, icsec[5]: {=bool:?}, icsec[6]: {=bool:?}, icsec[7]: {=bool:?}, icsec[8]: {=bool:?}, icsec[9]: {=bool:?}, icsec[10]: {=bool:?}, icsec[11]: {=bool:?}, icsec[12]: {=bool:?}, icsec[13]: {=bool:?}, icsec[14]: {=bool:?}, icsec[15]: {=bool:?}, icsec[16]: {=bool:?}, icsec[17]: {=bool:?}, icsec[18]: {=bool:?}, icsec[19]: {=bool:?} }}" , self . icsec (0usize) , self . icsec (1usize) , self . icsec (2usize) , self . icsec (3usize) , self . icsec (4usize) , self . icsec (5usize) , self . icsec (6usize) , self . icsec (7usize) , self . icsec (8usize) , self . icsec (9usize) , self . icsec (10usize) , self . icsec (11usize) , self . icsec (12usize) , self . icsec (13usize) , self . icsec (14usize) , self . icsec (15usize) , self . icsec (16usize) , self . icsec (17usize) , self . icsec (18usize) , self . icsec (19usize))
         }
     }
     #[doc = "RCC system secure configuration register3."]
@@ -34085,73 +31703,73 @@ pub mod regs {
     impl Sr {
         #[doc = "LSI clock ready flag."]
         #[inline(always)]
-        pub const fn lsirdy(&self) -> super::vals::Lsirdy {
+        pub const fn lsirdy(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Lsirdy::from_bits(val as u8)
+            val != 0
         }
         #[doc = "LSI clock ready flag."]
         #[inline(always)]
-        pub fn set_lsirdy(&mut self, val: super::vals::Lsirdy) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_lsirdy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "LSE clock ready flag."]
         #[inline(always)]
-        pub const fn lserdy(&self) -> super::vals::Lserdy {
+        pub const fn lserdy(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Lserdy::from_bits(val as u8)
+            val != 0
         }
         #[doc = "LSE clock ready flag."]
         #[inline(always)]
-        pub fn set_lserdy(&mut self, val: super::vals::Lserdy) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_lserdy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "MSI clock ready flag."]
         #[inline(always)]
-        pub const fn msirdy(&self) -> super::vals::Msirdy {
+        pub const fn msirdy(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Msirdy::from_bits(val as u8)
+            val != 0
         }
         #[doc = "MSI clock ready flag."]
         #[inline(always)]
-        pub fn set_msirdy(&mut self, val: super::vals::Msirdy) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub fn set_msirdy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "HSI clock ready flag."]
         #[inline(always)]
-        pub const fn hsirdy(&self) -> super::vals::Hsirdy {
+        pub const fn hsirdy(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Hsirdy::from_bits(val as u8)
+            val != 0
         }
         #[doc = "HSI clock ready flag."]
         #[inline(always)]
-        pub fn set_hsirdy(&mut self, val: super::vals::Hsirdy) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub fn set_hsirdy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "HSE clock ready flag."]
         #[inline(always)]
-        pub const fn hserdy(&self) -> super::vals::Hserdy {
+        pub const fn hserdy(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Hserdy::from_bits(val as u8)
+            val != 0
         }
         #[doc = "HSE clock ready flag."]
         #[inline(always)]
-        pub fn set_hserdy(&mut self, val: super::vals::Hserdy) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub fn set_hserdy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "PLL1 clock ready flag."]
         #[inline(always)]
-        pub const fn pllrdy(&self, n: usize) -> super::vals::Pllrdy {
+        pub const fn pllrdy(&self, n: usize) -> bool {
             assert!(n < 4usize);
             let offs = 8usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
-            super::vals::Pllrdy::from_bits(val as u8)
+            val != 0
         }
         #[doc = "PLL1 clock ready flag."]
         #[inline(always)]
-        pub fn set_pllrdy(&mut self, n: usize, val: super::vals::Pllrdy) {
+        pub fn set_pllrdy(&mut self, n: usize, val: bool) {
             assert!(n < 4usize);
             let offs = 8usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Sr {
@@ -34178,7 +31796,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ lsirdy: {:?}, lserdy: {:?}, msirdy: {:?}, hsirdy: {:?}, hserdy: {:?}, pllrdy[0]: {:?}, pllrdy[1]: {:?}, pllrdy[2]: {:?}, pllrdy[3]: {:?} }}" , self . lsirdy () , self . lserdy () , self . msirdy () , self . hsirdy () , self . hserdy () , self . pllrdy (0usize) , self . pllrdy (1usize) , self . pllrdy (2usize) , self . pllrdy (3usize))
+            defmt :: write ! (f , "Sr {{ lsirdy: {=bool:?}, lserdy: {=bool:?}, msirdy: {=bool:?}, hsirdy: {=bool:?}, hserdy: {=bool:?}, pllrdy[0]: {=bool:?}, pllrdy[1]: {=bool:?}, pllrdy[2]: {=bool:?}, pllrdy[3]: {=bool:?} }}" , self . lsirdy () , self . lserdy () , self . msirdy () , self . hsirdy () , self . hserdy () , self . pllrdy (0usize) , self . pllrdy (1usize) , self . pllrdy (2usize) , self . pllrdy (3usize))
         }
     }
     #[doc = "RCC StopCCR configuration register."]
@@ -34640,13 +32258,13 @@ pub mod vals {
     pub struct Adcpre(u8);
     impl Adcpre {
         #[doc = "ck_icn_p_adf1 is divided by 1."]
-        pub const B_0X0: Self = Self(0x0);
+        pub const DIV1: Self = Self(0x0);
         #[doc = "ck_icn_p_adf1 is divided by 2."]
-        pub const B_0X1: Self = Self(0x01);
+        pub const DIV2: Self = Self(0x01);
         #[doc = "ck_icn_p_adf1 is divided by 3."]
-        pub const B_0X2: Self = Self(0x02);
+        pub const DIV3: Self = Self(0x02);
         #[doc = "ck_icn_p_adf1 is divided by 4."]
-        pub const B_0X3: Self = Self(0x03);
+        pub const DIV4: Self = Self(0x03);
     }
     impl Adcpre {
         pub const fn from_bits(val: u8) -> Adcpre {
@@ -34659,10 +32277,10 @@ pub mod vals {
     impl core::fmt::Debug for Adcpre {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B_0X0"),
-                0x01 => f.write_str("B_0X1"),
-                0x02 => f.write_str("B_0X2"),
-                0x03 => f.write_str("B_0X3"),
+                0x0 => f.write_str("DIV1"),
+                0x01 => f.write_str("DIV2"),
+                0x02 => f.write_str("DIV3"),
+                0x03 => f.write_str("DIV4"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -34671,10 +32289,10 @@ pub mod vals {
     impl defmt::Format for Adcpre {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B_0X0"),
-                0x01 => defmt::write!(f, "B_0X1"),
-                0x02 => defmt::write!(f, "B_0X2"),
-                0x03 => defmt::write!(f, "B_0X3"),
+                0x0 => defmt::write!(f, "DIV1"),
+                0x01 => defmt::write!(f, "DIV2"),
+                0x02 => defmt::write!(f, "DIV3"),
+                0x03 => defmt::write!(f, "DIV4"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -35439,7 +33057,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Dcmippsel {
+    pub enum Dcmisel {
         #[doc = "pclk5 selected as reference clock."]
         PCLK5 = 0x0,
         #[doc = "per_ck selected as reference clock."]
@@ -35449,9 +33067,9 @@ pub mod vals {
         #[doc = "hsi_div_ck selected as reference clock."]
         HSI_DIV = 0x03,
     }
-    impl Dcmippsel {
+    impl Dcmisel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dcmippsel {
+        pub const fn from_bits(val: u8) -> Dcmisel {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -35459,16 +33077,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Dcmippsel {
+    impl From<u8> for Dcmisel {
         #[inline(always)]
-        fn from(val: u8) -> Dcmippsel {
-            Dcmippsel::from_bits(val)
+        fn from(val: u8) -> Dcmisel {
+            Dcmisel::from_bits(val)
         }
     }
-    impl From<Dcmippsel> for u8 {
+    impl From<Dcmisel> for u8 {
         #[inline(always)]
-        fn from(val: Dcmippsel) -> u8 {
-            Dcmippsel::to_bits(val)
+        fn from(val: Dcmisel) -> u8 {
+            Dcmisel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -36034,37 +33652,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Hsebyp {
-        #[doc = "HSE oscillator not bypassed (default after reset)."]
-        NO_BYPASS = 0x0,
-        #[doc = "HSE oscillator bypassed with an external clock."]
-        BYPASS = 0x01,
-    }
-    impl Hsebyp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Hsebyp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Hsebyp {
-        #[inline(always)]
-        fn from(val: u8) -> Hsebyp {
-            Hsebyp::from_bits(val)
-        }
-    }
-    impl From<Hsebyp> for u8 {
-        #[inline(always)]
-        fn from(val: Hsebyp) -> u8 {
-            Hsebyp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsecssbpre {
         #[doc = "HSI clock is divided by 1."]
         DIV1 = 0x0,
@@ -36489,37 +34076,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Hserdy {
-        #[doc = "HSE is not ready (default after reset)."]
-        NO_RDY = 0x0,
-        #[doc = "HSE is ready."]
-        RDY = 0x01,
-    }
-    impl Hserdy {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Hserdy {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Hserdy {
-        #[inline(always)]
-        fn from(val: u8) -> Hserdy {
-            Hserdy::from_bits(val)
-        }
-    }
-    impl From<Hserdy> for u8 {
-        #[inline(always)]
-        fn from(val: Hserdy) -> u8 {
-            Hserdy::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hserdyc {
         #[doc = "HSERDYF not modified (default after reset)."]
         NOT_MODIFIED = 0x0,
@@ -36765,37 +34321,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Hsipv) -> u8 {
             Hsipv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Hsirdy {
-        #[doc = "HSI is not ready."]
-        NO_RDY = 0x0,
-        #[doc = "HSI is ready (default after reset)."]
-        RDY = 0x01,
-    }
-    impl Hsirdy {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Hsirdy {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Hsirdy {
-        #[inline(always)]
-        fn from(val: u8) -> Hsirdy {
-            Hsirdy::from_bits(val)
-        }
-    }
-    impl From<Hsirdy> for u8 {
-        #[inline(always)]
-        fn from(val: Hsirdy) -> u8 {
-            Hsirdy::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -37514,954 +35039,8 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic10int(u8);
-    impl Ic10int {
-        #[doc = "IC10 = pllx_ck (default after reset)."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC10 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC10 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC10 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC10 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic10int {
-        pub const fn from_bits(val: u8) -> Ic10int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic10int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic10int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic10int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic10int {
-            Ic10int::from_bits(val)
-        }
-    }
-    impl From<Ic10int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic10int) -> u8 {
-            Ic10int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic10sel {
-        #[doc = "pll1_ck is selected."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected (default after reset)."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic10sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic10sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic10sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic10sel {
-            Ic10sel::from_bits(val)
-        }
-    }
-    impl From<Ic10sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic10sel) -> u8 {
-            Ic10sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic11int(u8);
-    impl Ic11int {
-        #[doc = "IC11 = pllx_ck."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC11 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC11 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC11 = pllx_ck / 4 (default after reset)."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC11 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic11int {
-        pub const fn from_bits(val: u8) -> Ic11int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic11int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic11int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic11int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic11int {
-            Ic11int::from_bits(val)
-        }
-    }
-    impl From<Ic11int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic11int) -> u8 {
-            Ic11int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic11sel {
-        #[doc = "pll1_ck is selected (default after reset)."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic11sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic11sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic11sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic11sel {
-            Ic11sel::from_bits(val)
-        }
-    }
-    impl From<Ic11sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic11sel) -> u8 {
-            Ic11sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic12int(u8);
-    impl Ic12int {
-        #[doc = "IC12 = pllx_ck (default after reset)."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC12 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC12 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC12 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC12 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic12int {
-        pub const fn from_bits(val: u8) -> Ic12int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic12int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic12int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic12int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic12int {
-            Ic12int::from_bits(val)
-        }
-    }
-    impl From<Ic12int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic12int) -> u8 {
-            Ic12int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic12sel {
-        #[doc = "pll1_ck is selected."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic12sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic12sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic12sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic12sel {
-            Ic12sel::from_bits(val)
-        }
-    }
-    impl From<Ic12sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic12sel) -> u8 {
-            Ic12sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic13int(u8);
-    impl Ic13int {
-        #[doc = "IC13 = pllx_ck (default after reset)."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC13 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC13 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC13 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC13 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic13int {
-        pub const fn from_bits(val: u8) -> Ic13int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic13int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic13int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic13int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic13int {
-            Ic13int::from_bits(val)
-        }
-    }
-    impl From<Ic13int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic13int) -> u8 {
-            Ic13int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic13sel {
-        #[doc = "pll1_ck is selected."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic13sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic13sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic13sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic13sel {
-            Ic13sel::from_bits(val)
-        }
-    }
-    impl From<Ic13sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic13sel) -> u8 {
-            Ic13sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic14int(u8);
-    impl Ic14int {
-        #[doc = "IC14 = pllx_ck (default after reset)."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC14 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC14 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC14 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC14 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic14int {
-        pub const fn from_bits(val: u8) -> Ic14int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic14int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic14int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic14int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic14int {
-            Ic14int::from_bits(val)
-        }
-    }
-    impl From<Ic14int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic14int) -> u8 {
-            Ic14int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic14sel {
-        #[doc = "pll1_ck is selected."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic14sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic14sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic14sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic14sel {
-            Ic14sel::from_bits(val)
-        }
-    }
-    impl From<Ic14sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic14sel) -> u8 {
-            Ic14sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic15int(u8);
-    impl Ic15int {
-        #[doc = "IC15 = pllx_ck (default after reset)."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC15 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC15 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC15 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC15 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic15int {
-        pub const fn from_bits(val: u8) -> Ic15int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic15int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic15int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic15int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic15int {
-            Ic15int::from_bits(val)
-        }
-    }
-    impl From<Ic15int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic15int) -> u8 {
-            Ic15int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic15sel {
-        #[doc = "pll1_ck is selected."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic15sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic15sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic15sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic15sel {
-            Ic15sel::from_bits(val)
-        }
-    }
-    impl From<Ic15sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic15sel) -> u8 {
-            Ic15sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic16int(u8);
-    impl Ic16int {
-        #[doc = "IC16 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC16 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC16 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC16 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic16int {
-        pub const fn from_bits(val: u8) -> Ic16int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic16int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic16int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic16int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic16int {
-            Ic16int::from_bits(val)
-        }
-    }
-    impl From<Ic16int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic16int) -> u8 {
-            Ic16int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic16sel {
-        #[doc = "pll1_ck is selected."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic16sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic16sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic16sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic16sel {
-            Ic16sel::from_bits(val)
-        }
-    }
-    impl From<Ic16sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic16sel) -> u8 {
-            Ic16sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic17int(u8);
-    impl Ic17int {
-        #[doc = "IC17 = pllx_ck (default after reset)."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC17 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC17 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC17 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC17 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic17int {
-        pub const fn from_bits(val: u8) -> Ic17int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic17int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic17int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic17int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic17int {
-            Ic17int::from_bits(val)
-        }
-    }
-    impl From<Ic17int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic17int) -> u8 {
-            Ic17int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic17sel {
-        #[doc = "pll1_ck is selected."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic17sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic17sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic17sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic17sel {
-            Ic17sel::from_bits(val)
-        }
-    }
-    impl From<Ic17sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic17sel) -> u8 {
-            Ic17sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic18int(u8);
-    impl Ic18int {
-        #[doc = "IC18 = pllx_ck (default after reset)."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC18 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC18 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC18 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC18 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic18int {
-        pub const fn from_bits(val: u8) -> Ic18int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic18int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic18int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic18int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic18int {
-            Ic18int::from_bits(val)
-        }
-    }
-    impl From<Ic18int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic18int) -> u8 {
-            Ic18int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic18sel {
-        #[doc = "pll1_ck is selected."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic18sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic18sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic18sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic18sel {
-            Ic18sel::from_bits(val)
-        }
-    }
-    impl From<Ic18sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic18sel) -> u8 {
-            Ic18sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic19int(u8);
-    impl Ic19int {
-        #[doc = "IC19 = pllx_ck (default after reset)."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC19 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC19 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC19 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC19 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic19int {
-        pub const fn from_bits(val: u8) -> Ic19int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic19int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic19int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic19int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic19int {
-            Ic19int::from_bits(val)
-        }
-    }
-    impl From<Ic19int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic19int) -> u8 {
-            Ic19int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic19sel {
-        #[doc = "pll1_ck is selected."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic19sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic19sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic19sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic19sel {
-            Ic19sel::from_bits(val)
-        }
-    }
-    impl From<Ic19sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic19sel) -> u8 {
-            Ic19sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic1int(u8);
-    impl Ic1int {
+    pub struct Icint(u8);
+    impl Icint {
         #[doc = "IC1 = pllx_ck."]
         pub const DIV1: Self = Self(0x0);
         #[doc = "IC1 = pllx_ck / 2."]
@@ -38473,15 +35052,15 @@ pub mod vals {
         #[doc = "IC1 = pllx_ck / 256."]
         pub const DIV256: Self = Self(0xff);
     }
-    impl Ic1int {
-        pub const fn from_bits(val: u8) -> Ic1int {
+    impl Icint {
+        pub const fn from_bits(val: u8) -> Icint {
             Self(val & 0xff)
         }
         pub const fn to_bits(self) -> u8 {
             self.0
         }
     }
-    impl core::fmt::Debug for Ic1int {
+    impl core::fmt::Debug for Icint {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
                 0x0 => f.write_str("DIV1"),
@@ -38494,7 +35073,7 @@ pub mod vals {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic1int {
+    impl defmt::Format for Icint {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
                 0x0 => defmt::write!(f, "DIV1"),
@@ -38506,906 +35085,16 @@ pub mod vals {
             }
         }
     }
-    impl From<u8> for Ic1int {
+    impl From<u8> for Icint {
         #[inline(always)]
-        fn from(val: u8) -> Ic1int {
-            Ic1int::from_bits(val)
+        fn from(val: u8) -> Icint {
+            Icint::from_bits(val)
         }
     }
-    impl From<Ic1int> for u8 {
+    impl From<Icint> for u8 {
         #[inline(always)]
-        fn from(val: Ic1int) -> u8 {
-            Ic1int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic1sel {
-        #[doc = "pll1_ck is selected (default after reset)."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic1sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic1sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic1sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic1sel {
-            Ic1sel::from_bits(val)
-        }
-    }
-    impl From<Ic1sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic1sel) -> u8 {
-            Ic1sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic20int(u8);
-    impl Ic20int {
-        #[doc = "IC20 = pllx_ck (default after reset)."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC20 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC20 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC20 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC20 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic20int {
-        pub const fn from_bits(val: u8) -> Ic20int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic20int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic20int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic20int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic20int {
-            Ic20int::from_bits(val)
-        }
-    }
-    impl From<Ic20int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic20int) -> u8 {
-            Ic20int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic20sel {
-        #[doc = "pll1_ck is selected."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic20sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic20sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic20sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic20sel {
-            Ic20sel::from_bits(val)
-        }
-    }
-    impl From<Ic20sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic20sel) -> u8 {
-            Ic20sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic2int(u8);
-    impl Ic2int {
-        #[doc = "IC2 = pllx_ck."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC2 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC2 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC2 = pllx_ck / 4 (default after reset)."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC2 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic2int {
-        pub const fn from_bits(val: u8) -> Ic2int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic2int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic2int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic2int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic2int {
-            Ic2int::from_bits(val)
-        }
-    }
-    impl From<Ic2int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic2int) -> u8 {
-            Ic2int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic2sel {
-        #[doc = "pll1_ck is selected (default after reset)."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic2sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic2sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic2sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic2sel {
-            Ic2sel::from_bits(val)
-        }
-    }
-    impl From<Ic2sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic2sel) -> u8 {
-            Ic2sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic3int(u8);
-    impl Ic3int {
-        #[doc = "IC3 = pllx_ck (default after reset)."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC3 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC3 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC3 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC3 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic3int {
-        pub const fn from_bits(val: u8) -> Ic3int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic3int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic3int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic3int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic3int {
-            Ic3int::from_bits(val)
-        }
-    }
-    impl From<Ic3int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic3int) -> u8 {
-            Ic3int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic3sel {
-        #[doc = "pll1_ck is selected (default after reset)."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic3sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic3sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic3sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic3sel {
-            Ic3sel::from_bits(val)
-        }
-    }
-    impl From<Ic3sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic3sel) -> u8 {
-            Ic3sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic4int(u8);
-    impl Ic4int {
-        #[doc = "IC4 = pllx_ck (default after reset)."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC4 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC4 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC4 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC4 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic4int {
-        pub const fn from_bits(val: u8) -> Ic4int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic4int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic4int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic4int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic4int {
-            Ic4int::from_bits(val)
-        }
-    }
-    impl From<Ic4int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic4int) -> u8 {
-            Ic4int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic4sel {
-        #[doc = "pll1_ck is selected (default after reset)."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic4sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic4sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic4sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic4sel {
-            Ic4sel::from_bits(val)
-        }
-    }
-    impl From<Ic4sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic4sel) -> u8 {
-            Ic4sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic5int(u8);
-    impl Ic5int {
-        #[doc = "IC5 = pllx_ck (default after reset)."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC5 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC5 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC5 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC5 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic5int {
-        pub const fn from_bits(val: u8) -> Ic5int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic5int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic5int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic5int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic5int {
-            Ic5int::from_bits(val)
-        }
-    }
-    impl From<Ic5int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic5int) -> u8 {
-            Ic5int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic5sel {
-        #[doc = "pll1_ck is selected (default after reset)."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic5sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic5sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic5sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic5sel {
-            Ic5sel::from_bits(val)
-        }
-    }
-    impl From<Ic5sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic5sel) -> u8 {
-            Ic5sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic6int(u8);
-    impl Ic6int {
-        #[doc = "IC6 = pllx_ck."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC6 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC6 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC6 = pllx_ck / 4 (default after reset)."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC6 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic6int {
-        pub const fn from_bits(val: u8) -> Ic6int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic6int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic6int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic6int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic6int {
-            Ic6int::from_bits(val)
-        }
-    }
-    impl From<Ic6int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic6int) -> u8 {
-            Ic6int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic6sel {
-        #[doc = "pll1_ck is selected (default after reset)."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic6sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic6sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic6sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic6sel {
-            Ic6sel::from_bits(val)
-        }
-    }
-    impl From<Ic6sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic6sel) -> u8 {
-            Ic6sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic7int(u8);
-    impl Ic7int {
-        #[doc = "IC7 = pllx_ck (default after reset)."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC7 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC7 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC7 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC7 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic7int {
-        pub const fn from_bits(val: u8) -> Ic7int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic7int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic7int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic7int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic7int {
-            Ic7int::from_bits(val)
-        }
-    }
-    impl From<Ic7int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic7int) -> u8 {
-            Ic7int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic7sel {
-        #[doc = "pll1_ck is selected."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected (default after reset)."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic7sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic7sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic7sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic7sel {
-            Ic7sel::from_bits(val)
-        }
-    }
-    impl From<Ic7sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic7sel) -> u8 {
-            Ic7sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic8int(u8);
-    impl Ic8int {
-        #[doc = "IC8 = pllx_ck (default after reset)."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC8 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC8 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC8 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC8 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic8int {
-        pub const fn from_bits(val: u8) -> Ic8int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic8int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic8int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic8int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic8int {
-            Ic8int::from_bits(val)
-        }
-    }
-    impl From<Ic8int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic8int) -> u8 {
-            Ic8int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic8sel {
-        #[doc = "pll1_ck is selected."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected (default after reset)."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic8sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic8sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic8sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic8sel {
-            Ic8sel::from_bits(val)
-        }
-    }
-    impl From<Ic8sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic8sel) -> u8 {
-            Ic8sel::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Ic9int(u8);
-    impl Ic9int {
-        #[doc = "IC9 = pllx_ck (default after reset)."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC9 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC9 = pllx_ck / 3."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC9 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC9 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
-    }
-    impl Ic9int {
-        pub const fn from_bits(val: u8) -> Ic9int {
-            Self(val & 0xff)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Ic9int {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ic9int {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Ic9int {
-        #[inline(always)]
-        fn from(val: u8) -> Ic9int {
-            Ic9int::from_bits(val)
-        }
-    }
-    impl From<Ic9int> for u8 {
-        #[inline(always)]
-        fn from(val: Ic9int) -> u8 {
-            Ic9int::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ic9sel {
-        #[doc = "pll1_ck is selected."]
-        PLL1 = 0x0,
-        #[doc = "pll2_ck is selected (default after reset)."]
-        PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
-    }
-    impl Ic9sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ic9sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ic9sel {
-        #[inline(always)]
-        fn from(val: u8) -> Ic9sel {
-            Ic9sel::from_bits(val)
-        }
-    }
-    impl From<Ic9sel> for u8 {
-        #[inline(always)]
-        fn from(val: Ic9sel) -> u8 {
-            Ic9sel::to_bits(val)
+        fn from(val: Icint) -> u8 {
+            Icint::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -39504,32 +35193,36 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Icsec {
-        #[doc = "IC10 configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
-        #[doc = "IC10 configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+    pub enum Icsel {
+        #[doc = "pll1_ck is selected (default after reset)."]
+        PLL1 = 0x0,
+        #[doc = "pll2_ck is selected."]
+        PLL2 = 0x01,
+        #[doc = "hsi_ck = hsi_osc_ck / 4."]
+        HSI_OSC_DIV4 = 0x02,
+        #[doc = "hsi_ck = hsi_osc_ck / 8."]
+        HSI_OSC_DIV8 = 0x03,
     }
-    impl Icsec {
+    impl Icsel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Icsec {
-            unsafe { core::mem::transmute(val & 0x01) }
+        pub const fn from_bits(val: u8) -> Icsel {
+            unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Icsec {
+    impl From<u8> for Icsel {
         #[inline(always)]
-        fn from(val: u8) -> Icsec {
-            Icsec::from_bits(val)
+        fn from(val: u8) -> Icsel {
+            Icsel::from_bits(val)
         }
     }
-    impl From<Icsec> for u8 {
+    impl From<Icsel> for u8 {
         #[inline(always)]
-        fn from(val: Icsec) -> u8 {
-            Icsec::to_bits(val)
+        fn from(val: Icsel) -> u8 {
+            Icsel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -39742,37 +35435,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lsebyp {
-        #[doc = "LSE oscillator not bypassed (default after reset)."]
-        NO_BYPASS = 0x0,
-        #[doc = "LSE oscillator bypassed with an external clock."]
-        BYPASS = 0x01,
-    }
-    impl Lsebyp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lsebyp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lsebyp {
-        #[inline(always)]
-        fn from(val: u8) -> Lsebyp {
-            Lsebyp::from_bits(val)
-        }
-    }
-    impl From<Lsebyp> for u8 {
-        #[inline(always)]
-        fn from(val: Lsebyp) -> u8 {
-            Lsebyp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsecssc {
         #[doc = "LSECSSF not modified (default after reset)."]
         NOT_MODIFIED = 0x0,
@@ -39930,13 +35592,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsedrv {
         #[doc = "Lowest drive (default after reset)."]
-        LOWEST = 0x0,
+        LOW = 0x0,
         #[doc = "Medium low drive."]
         MEDIUM_LOW = 0x01,
         #[doc = "Medium high drive."]
         MEDIUM_HIGH = 0x02,
         #[doc = "Highest drive."]
-        HIGHEST = 0x03,
+        HIGH = 0x03,
     }
     impl Lsedrv {
         #[inline(always)]
@@ -40082,37 +35744,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Lsepv) -> u8 {
             Lsepv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lserdy {
-        #[doc = "LSE is not ready (default after reset)."]
-        NOT_READY = 0x0,
-        #[doc = "LSE is ready."]
-        READY = 0x01,
-    }
-    impl Lserdy {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lserdy {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lserdy {
-        #[inline(always)]
-        fn from(val: u8) -> Lserdy {
-            Lserdy::from_bits(val)
-        }
-    }
-    impl From<Lserdy> for u8 {
-        #[inline(always)]
-        fn from(val: Lserdy) -> u8 {
-            Lserdy::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -40335,130 +35966,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lsirdy {
-        #[doc = "LSI is not ready (default after reset)."]
-        NOT_READY = 0x0,
-        #[doc = "LSI is ready."]
-        READY = 0x01,
-    }
-    impl Lsirdy {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lsirdy {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lsirdy {
-        #[inline(always)]
-        fn from(val: u8) -> Lsirdy {
-            Lsirdy::from_bits(val)
-        }
-    }
-    impl From<Lsirdy> for u8 {
-        #[inline(always)]
-        fn from(val: Lsirdy) -> u8 {
-            Lsirdy::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lsirdyc {
-        #[doc = "LSIRDYF not modified (default after reset)."]
-        NOT_MODIFIED = 0x0,
-        #[doc = "LSIRDYF cleared."]
-        CLEARED = 0x01,
-    }
-    impl Lsirdyc {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lsirdyc {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lsirdyc {
-        #[inline(always)]
-        fn from(val: u8) -> Lsirdyc {
-            Lsirdyc::from_bits(val)
-        }
-    }
-    impl From<Lsirdyc> for u8 {
-        #[inline(always)]
-        fn from(val: Lsirdyc) -> u8 {
-            Lsirdyc::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lsirdyf {
-        #[doc = "no clock ready interrupt caused by the LSI (default after reset)."]
-        NO_INTERRUPT = 0x0,
-        #[doc = "clock ready interrupt caused by the LSI."]
-        INTERRUPT = 0x01,
-    }
-    impl Lsirdyf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lsirdyf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lsirdyf {
-        #[inline(always)]
-        fn from(val: u8) -> Lsirdyf {
-            Lsirdyf::from_bits(val)
-        }
-    }
-    impl From<Lsirdyf> for u8 {
-        #[inline(always)]
-        fn from(val: Lsirdyf) -> u8 {
-            Lsirdyf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lsirdyie {
-        #[doc = "LSI ready interrupt disabled (default after reset)."]
-        DISABLED = 0x0,
-        #[doc = "LSI ready interrupt enabled."]
-        ENABLED = 0x01,
-    }
-    impl Lsirdyie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lsirdyie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lsirdyie {
-        #[inline(always)]
-        fn from(val: u8) -> Lsirdyie {
-            Lsirdyie::from_bits(val)
-        }
-    }
-    impl From<Lsirdyie> for u8 {
-        #[inline(always)]
-        fn from(val: Lsirdyie) -> u8 {
-            Lsirdyie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsisec {
         #[doc = "LSI configuration bits are accessible by non-secure software only (default after reset)."]
         NON_SECURE = 0x0,
@@ -40525,6 +36032,92 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Mco1sel {
+        #[doc = "hsi selected as reference clock (default after reset)."]
+        HSI = 0x0,
+        #[doc = "lse_ck selected as reference clock."]
+        LSE = 0x01,
+        #[doc = "msi_ck selected as reference clock."]
+        MSI = 0x02,
+        #[doc = "lsi_ck selected as reference clock."]
+        LSI = 0x03,
+        #[doc = "hse_ck selected as reference clock."]
+        HSE = 0x04,
+        #[doc = "ic5_ck selected as reference clock."]
+        IC5 = 0x05,
+        #[doc = "ic10_ck selected as reference clock."]
+        IC10 = 0x06,
+        #[doc = "sysa_ck selected as reference clock."]
+        SYSA = 0x07,
+    }
+    impl Mco1sel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Mco1sel {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Mco1sel {
+        #[inline(always)]
+        fn from(val: u8) -> Mco1sel {
+            Mco1sel::from_bits(val)
+        }
+    }
+    impl From<Mco1sel> for u8 {
+        #[inline(always)]
+        fn from(val: Mco1sel) -> u8 {
+            Mco1sel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Mco2sel {
+        #[doc = "hsi selected as reference clock (default after reset)."]
+        HSI = 0x0,
+        #[doc = "lse_ck selected as reference clock."]
+        LSE = 0x01,
+        #[doc = "msi_ck selected as reference clock."]
+        MSI = 0x02,
+        #[doc = "lsi_ck selected as reference clock."]
+        LSI = 0x03,
+        #[doc = "hse_ck selected as reference clock."]
+        HSE = 0x04,
+        #[doc = "ic15_ck selected as reference clock."]
+        IC15 = 0x05,
+        #[doc = "ic20_ck selected as reference clock."]
+        IC20 = 0x06,
+        #[doc = "sysb_ck selected as reference clock."]
+        SYSB = 0x07,
+    }
+    impl Mco2sel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Mco2sel {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Mco2sel {
+        #[inline(always)]
+        fn from(val: u8) -> Mco2sel {
+            Mco2sel::from_bits(val)
+        }
+    }
+    impl From<Mco2sel> for u8 {
+        #[inline(always)]
+        fn from(val: Mco2sel) -> u8 {
+            Mco2sel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mcopre {
         #[doc = "ck_icn_p_mce3 is divided by 1."]
         DIV1 = 0x0,
@@ -40568,49 +36161,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Mcopre) -> u8 {
             Mcopre::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Mcosel {
-        #[doc = "hsi_div_ck selected as reference clock (default after reset)."]
-        HSI_DIV = 0x0,
-        #[doc = "lse_ck selected as reference clock."]
-        LSE = 0x01,
-        #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x02,
-        #[doc = "lsi_ck selected as reference clock."]
-        LSI = 0x03,
-        #[doc = "hse_ck selected as reference clock."]
-        HSE = 0x04,
-        #[doc = "ic5_ck selected as reference clock."]
-        IC5 = 0x05,
-        #[doc = "ic10_ck selected as reference clock."]
-        IC10 = 0x06,
-        #[doc = "sysa_ck selected as reference clock."]
-        SYSA = 0x07,
-    }
-    impl Mcosel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Mcosel {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Mcosel {
-        #[inline(always)]
-        fn from(val: u8) -> Mcosel {
-            Mcosel::from_bits(val)
-        }
-    }
-    impl From<Mcosel> for u8 {
-        #[inline(always)]
-        fn from(val: Mcosel) -> u8 {
-            Mcosel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -40977,37 +36527,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Msipv) -> u8 {
             Msipv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Msirdy {
-        #[doc = "MSI is not ready (default after reset)."]
-        NOT_READY = 0x0,
-        #[doc = "MSI is ready."]
-        READY = 0x01,
-    }
-    impl Msirdy {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Msirdy {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Msirdy {
-        #[inline(always)]
-        fn from(val: u8) -> Msirdy {
-            Msirdy::from_bits(val)
-        }
-    }
-    impl From<Msirdy> for u8 {
-        #[inline(always)]
-        fn from(val: Msirdy) -> u8 {
-            Msirdy::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -41494,40 +37013,8 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Pllbyp {
-        #[doc = "PLL output is driven by the VCO, via the optional POSTDIV division."]
-        VCO_POSTDIV = 0x0,
-        #[doc = "PLL output is bypassed and driven by the PLL reference clock (default after reset)."]
-        BYPASS = 0x01,
-    }
-    impl Pllbyp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pllbyp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pllbyp {
-        #[inline(always)]
-        fn from(val: u8) -> Pllbyp {
-            Pllbyp::from_bits(val)
-        }
-    }
-    impl From<Pllbyp> for u8 {
-        #[inline(always)]
-        fn from(val: Pllbyp) -> u8 {
-            Pllbyp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Plldivm {
-        #[doc = "Not applicable when PLL is enabled."]
-        NOT_APPLICABLE = 0x0,
+        _RESERVED_0 = 0x0,
         #[doc = "reference clock is divided by 1 (min value)."]
         DIV1 = 0x01,
         #[doc = "reference clock is divided by 2."]
@@ -41714,8 +37201,7 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllpdiv {
-        #[doc = "Not applicable."]
-        NOT_APPLICABLE = 0x0,
+        _RESERVED_0 = 0x0,
         #[doc = "VCO output is divided by 1 (minimum value) (default after reset)."]
         DIV1 = 0x01,
         _RESERVED_2 = 0x02,
@@ -41808,37 +37294,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Pllpv) -> u8 {
             Pllpv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Pllrdy {
-        #[doc = "PLL1 unlocked (default after reset)."]
-        UNLOCKED = 0x0,
-        #[doc = "PLL1 locked."]
-        LOCKED = 0x01,
-    }
-    impl Pllrdy {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pllrdy {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pllrdy {
-        #[inline(always)]
-        fn from(val: u8) -> Pllrdy {
-            Pllrdy::from_bits(val)
-        }
-    }
-    impl From<Pllrdy> for u8 {
-        #[inline(always)]
-        fn from(val: Pllrdy) -> u8 {
-            Pllrdy::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -42585,7 +38040,8 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtcsel {
-        _RESERVED_0 = 0x0,
+        #[doc = "No clock used as RTC clock."]
+        DISABLE = 0x0,
         #[doc = "lse_ck selected as reference clock."]
         LSE = 0x01,
         #[doc = "lsi_ck selected as reference clock."]

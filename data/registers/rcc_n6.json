@@ -21,10 +21,10 @@
         "fieldset": "STOPCR"
       },
       {
-        "name": "CFGR1",
+        "name": "CFGR",
         "description": "RCC configuration register 1.",
         "byte_offset": 32,
-        "fieldset": "CFGR1"
+        "fieldset": "CFGR"
       },
       {
         "name": "CFGR2",
@@ -100,7 +100,7 @@
           "stride": 16
         },
         "byte_offset": 128,
-        "fieldset": "PLL1CFGR1"
+        "fieldset": "PLLCFGR1"
       },
       {
         "name": "PLLCFGR2",
@@ -110,7 +110,7 @@
           "stride": 16
         },
         "byte_offset": 132,
-        "fieldset": "PLL1CFGR2"
+        "fieldset": "PLLCFGR2"
       },
       {
         "name": "PLLCFGR3",
@@ -120,217 +120,17 @@
           "stride": 16
         },
         "byte_offset": 136,
-        "fieldset": "PLL1CFGR3"
+        "fieldset": "PLLCFGR3"
       },
       {
-        "name": "PLL2CFGR1",
-        "description": "RCC PLL2 configuration register 1.",
+        "name": "ICCFGR",
+        "description": "RCC ICx configuration register.",
         "array": {
-          "len": 4,
-          "stride": 16
+          "len": 20,
+          "stride": 4
         },
-        "byte_offset": 144,
-        "fieldset": "PLL2CFGR1"
-      },
-      {
-        "name": "PLL2CFGR2",
-        "description": "RCC PLL2 configuration register 2.",
-        "array": {
-          "len": 4,
-          "stride": 16
-        },
-        "byte_offset": 148,
-        "fieldset": "PLL2CFGR2"
-      },
-      {
-        "name": "PLL2CFGR3",
-        "description": "RCC PLL2 configuration register 3.",
-        "array": {
-          "len": 4,
-          "stride": 16
-        },
-        "byte_offset": 152,
-        "fieldset": "PLL2CFGR3"
-      },
-      {
-        "name": "PLL3CFGR1",
-        "description": "RCC PLL3 configuration register 1.",
-        "array": {
-          "len": 4,
-          "stride": 16
-        },
-        "byte_offset": 160,
-        "fieldset": "PLL3CFGR1"
-      },
-      {
-        "name": "PLL3CFGR2",
-        "description": "RCC PLL3 configuration register 2.",
-        "array": {
-          "len": 4,
-          "stride": 16
-        },
-        "byte_offset": 164,
-        "fieldset": "PLL3CFGR2"
-      },
-      {
-        "name": "PLL3CFGR3",
-        "description": "RCC PLL3 configuration register 3.",
-        "array": {
-          "len": 4,
-          "stride": 16
-        },
-        "byte_offset": 168,
-        "fieldset": "PLL3CFGR3"
-      },
-      {
-        "name": "PLL4CFGR1",
-        "description": "RCC PLL4 configuration register 1.",
-        "array": {
-          "len": 4,
-          "stride": 16
-        },
-        "byte_offset": 176,
-        "fieldset": "PLL4CFGR1"
-      },
-      {
-        "name": "PLL4CFGR2",
-        "description": "RCC PLL4 configuration register 2.",
-        "array": {
-          "len": 4,
-          "stride": 16
-        },
-        "byte_offset": 180,
-        "fieldset": "PLL4CFGR2"
-      },
-      {
-        "name": "PLL4CFGR3",
-        "description": "RCC PLL4 configuration register 3.",
-        "array": {
-          "len": 4,
-          "stride": 16
-        },
-        "byte_offset": 184,
-        "fieldset": "PLL4CFGR3"
-      },
-      {
-        "name": "IC1CFGR",
-        "description": "RCC IC1 configuration register.",
         "byte_offset": 196,
-        "fieldset": "IC1CFGR"
-      },
-      {
-        "name": "IC2CFGR",
-        "description": "RCC IC2 configuration register.",
-        "byte_offset": 200,
-        "fieldset": "IC2CFGR"
-      },
-      {
-        "name": "IC3CFGR",
-        "description": "RCC IC3 configuration register.",
-        "byte_offset": 204,
-        "fieldset": "IC3CFGR"
-      },
-      {
-        "name": "IC4CFGR",
-        "description": "RCC IC4 configuration register.",
-        "byte_offset": 208,
-        "fieldset": "IC4CFGR"
-      },
-      {
-        "name": "IC5CFGR",
-        "description": "RCC IC5 configuration register.",
-        "byte_offset": 212,
-        "fieldset": "IC5CFGR"
-      },
-      {
-        "name": "IC6CFGR",
-        "description": "RCC IC6 configuration register.",
-        "byte_offset": 216,
-        "fieldset": "IC6CFGR"
-      },
-      {
-        "name": "IC7CFGR",
-        "description": "RCC IC7 configuration register.",
-        "byte_offset": 220,
-        "fieldset": "IC7CFGR"
-      },
-      {
-        "name": "IC8CFGR",
-        "description": "RCC IC8 configuration register.",
-        "byte_offset": 224,
-        "fieldset": "IC8CFGR"
-      },
-      {
-        "name": "IC9CFGR",
-        "description": "RCC IC9 configuration register.",
-        "byte_offset": 228,
-        "fieldset": "IC9CFGR"
-      },
-      {
-        "name": "IC10CFGR",
-        "description": "RCC IC10 configuration register.",
-        "byte_offset": 232,
-        "fieldset": "IC10CFGR"
-      },
-      {
-        "name": "IC11CFGR",
-        "description": "RCC IC11 configuration register.",
-        "byte_offset": 236,
-        "fieldset": "IC11CFGR"
-      },
-      {
-        "name": "IC12CFGR",
-        "description": "RCC IC12 configuration register.",
-        "byte_offset": 240,
-        "fieldset": "IC12CFGR"
-      },
-      {
-        "name": "IC13CFGR",
-        "description": "RCC IC13 configuration register.",
-        "byte_offset": 244,
-        "fieldset": "IC13CFGR"
-      },
-      {
-        "name": "IC14CFGR",
-        "description": "RCC IC14 configuration register.",
-        "byte_offset": 248,
-        "fieldset": "IC14CFGR"
-      },
-      {
-        "name": "IC15CFGR",
-        "description": "RCC IC15 configuration register.",
-        "byte_offset": 252,
-        "fieldset": "IC15CFGR"
-      },
-      {
-        "name": "IC16CFGR",
-        "description": "RCC IC16 configuration register.",
-        "byte_offset": 256,
-        "fieldset": "IC16CFGR"
-      },
-      {
-        "name": "IC17CFGR",
-        "description": "RCC IC17 configuration register.",
-        "byte_offset": 260,
-        "fieldset": "IC17CFGR"
-      },
-      {
-        "name": "IC18CFGR",
-        "description": "RCC IC18 configuration register.",
-        "byte_offset": 264,
-        "fieldset": "IC18CFGR"
-      },
-      {
-        "name": "IC19CFGR",
-        "description": "RCC IC19 configuration register.",
-        "byte_offset": 268,
-        "fieldset": "IC19CFGR"
-      },
-      {
-        "name": "IC20CFGR",
-        "description": "RCC IC20 configuration register.",
-        "byte_offset": 272,
-        "fieldset": "IC20CFGR"
+        "fieldset": "ICCFGR"
       },
       {
         "name": "CIER",
@@ -8282,8 +8082,8 @@
         "bit_size": 1
       },
       {
-        "name": "DCMIPPENC",
-        "description": "DCMIPP enable.",
+        "name": "DCMIENC",
+        "description": "DCMI enable.",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -8317,8 +8117,8 @@
         "bit_size": 1
       },
       {
-        "name": "DCMIPPEN",
-        "description": "DCMIPP enable.",
+        "name": "DCMIEN",
+        "description": "DCMI enable.",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -8352,8 +8152,8 @@
         "bit_size": 1
       },
       {
-        "name": "DCMIPPENS",
-        "description": "DCMIPP enable.",
+        "name": "DCMIENS",
+        "description": "DCMI enable.",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -8387,8 +8187,8 @@
         "bit_size": 1
       },
       {
-        "name": "DCMIPPLPENC",
-        "description": "DCMIPP sleep enable.",
+        "name": "DCMILPENC",
+        "description": "DCMI sleep enable.",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -8422,8 +8222,8 @@
         "bit_size": 1
       },
       {
-        "name": "DCMIPPLPEN",
-        "description": "DCMIPP sleep enable.",
+        "name": "DCMILPEN",
+        "description": "DCMI sleep enable.",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -8457,8 +8257,8 @@
         "bit_size": 1
       },
       {
-        "name": "DCMIPPLPENS",
-        "description": "DCMIPP sleep enable.",
+        "name": "DCMILPENS",
+        "description": "DCMI sleep enable.",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -8492,8 +8292,8 @@
         "bit_size": 1
       },
       {
-        "name": "DCMIPPRSTC",
-        "description": "DCMIPP reset.",
+        "name": "DCMIRSTC",
+        "description": "DCMI reset.",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -8527,8 +8327,8 @@
         "bit_size": 1
       },
       {
-        "name": "DCMIPPRST",
-        "description": "DCMIPP reset.",
+        "name": "DCMIRST",
+        "description": "DCMI reset.",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -8562,8 +8362,8 @@
         "bit_size": 1
       },
       {
-        "name": "DCMIPPRSTS",
-        "description": "DCMIPP reset.",
+        "name": "DCMIRSTS",
+        "description": "DCMI reset.",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -9370,11 +9170,11 @@
         "enum": "ADCPRE"
       },
       {
-        "name": "DCMIPPSEL",
-        "description": "Source selection for the DCMIPP kernel clock.",
+        "name": "DCMISEL",
+        "description": "Source selection for the DCMI kernel clock.",
         "bit_offset": 20,
         "bit_size": 2,
-        "enum": "DCMIPPSEL"
+        "enum": "DCMISEL"
       }
     ]
   },
@@ -9645,7 +9445,7 @@
         "description": "Source selection for the MCO1 kernel clock.",
         "bit_offset": 0,
         "bit_size": 3,
-        "enum": "MCOSEL"
+        "enum": "MCO1SEL"
       },
       {
         "name": "MCO1PRE",
@@ -9659,7 +9459,7 @@
         "description": "Source selection for the MCO2 kernel clock.",
         "bit_offset": 8,
         "bit_size": 3,
-        "enum": "MCOSEL"
+        "enum": "MCO2SEL"
       },
       {
         "name": "MCO2PRE",
@@ -9894,7 +9694,7 @@
       }
     ]
   },
-  "fieldset/CFGR1": {
+  "fieldset/CFGR": {
     "description": "RCC configuration register 1.",
     "fields": [
       {
@@ -9988,8 +9788,7 @@
         "name": "LSIRDYC",
         "description": "LSI ready interrupt clear.",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "LSIRDYC"
+        "bit_size": 1
       },
       {
         "name": "LSERDYC",
@@ -10060,8 +9859,7 @@
         "name": "LSIRDYIE",
         "description": "LSI ready interrupt enable.",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "LSIRDYIE"
+        "bit_size": 1
       },
       {
         "name": "LSERDYIE",
@@ -10132,8 +9930,7 @@
         "name": "LSIRDYF",
         "description": "LSI ready interrupt flag.",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "LSIRDYF"
+        "bit_size": 1
       },
       {
         "name": "LSERDYF",
@@ -11118,8 +10915,7 @@
         "name": "HSEBYP",
         "description": "HSE clock bypass.",
         "bit_offset": 15,
-        "bit_size": 1,
-        "enum": "HSEBYP"
+        "bit_size": 1
       },
       {
         "name": "HSEEXT",
@@ -11270,383 +11066,22 @@
       }
     ]
   },
-  "fieldset/IC10CFGR": {
-    "description": "RCC IC10 configuration register.",
+  "fieldset/ICCFGR": {
+    "description": "RCC ICx configuration register.",
     "fields": [
       {
-        "name": "IC10INT",
-        "description": "Divider IC10 integer division factor.",
+        "name": "ICINT",
+        "description": "Divider ICx integer division factor.",
         "bit_offset": 16,
         "bit_size": 8,
-        "enum": "IC10INT"
+        "enum": "ICINT"
       },
       {
-        "name": "IC10SEL",
-        "description": "Divider IC10 Source Selection.",
+        "name": "ICSEL",
+        "description": "Divider ICx Source Selection.",
         "bit_offset": 28,
         "bit_size": 2,
-        "enum": "IC10SEL"
-      }
-    ]
-  },
-  "fieldset/IC11CFGR": {
-    "description": "RCC IC11 configuration register.",
-    "fields": [
-      {
-        "name": "IC11INT",
-        "description": "Divider IC11 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC11INT"
-      },
-      {
-        "name": "IC11SEL",
-        "description": "Divider IC11 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC11SEL"
-      }
-    ]
-  },
-  "fieldset/IC12CFGR": {
-    "description": "RCC IC12 configuration register.",
-    "fields": [
-      {
-        "name": "IC12INT",
-        "description": "Divider IC12 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC12INT"
-      },
-      {
-        "name": "IC12SEL",
-        "description": "Divider IC12 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC12SEL"
-      }
-    ]
-  },
-  "fieldset/IC13CFGR": {
-    "description": "RCC IC13 configuration register.",
-    "fields": [
-      {
-        "name": "IC13INT",
-        "description": "Divider IC13 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC13INT"
-      },
-      {
-        "name": "IC13SEL",
-        "description": "Divider IC13 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC13SEL"
-      }
-    ]
-  },
-  "fieldset/IC14CFGR": {
-    "description": "RCC IC14 configuration register.",
-    "fields": [
-      {
-        "name": "IC14INT",
-        "description": "Divider IC14 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC14INT"
-      },
-      {
-        "name": "IC14SEL",
-        "description": "Divider IC14 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC14SEL"
-      }
-    ]
-  },
-  "fieldset/IC15CFGR": {
-    "description": "RCC IC15 configuration register.",
-    "fields": [
-      {
-        "name": "IC15INT",
-        "description": "Divider IC15 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC15INT"
-      },
-      {
-        "name": "IC15SEL",
-        "description": "Divider IC15 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC15SEL"
-      }
-    ]
-  },
-  "fieldset/IC16CFGR": {
-    "description": "RCC IC16 configuration register.",
-    "fields": [
-      {
-        "name": "IC16INT",
-        "description": "Divider IC16 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC16INT"
-      },
-      {
-        "name": "IC16SEL",
-        "description": "Divider IC16 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC16SEL"
-      }
-    ]
-  },
-  "fieldset/IC17CFGR": {
-    "description": "RCC IC17 configuration register.",
-    "fields": [
-      {
-        "name": "IC17INT",
-        "description": "Divider IC17 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC17INT"
-      },
-      {
-        "name": "IC17SEL",
-        "description": "Divider IC17 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC17SEL"
-      }
-    ]
-  },
-  "fieldset/IC18CFGR": {
-    "description": "RCC IC18 configuration register.",
-    "fields": [
-      {
-        "name": "IC18INT",
-        "description": "Divider IC18 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC18INT"
-      },
-      {
-        "name": "IC18SEL",
-        "description": "Divider IC18 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC18SEL"
-      }
-    ]
-  },
-  "fieldset/IC19CFGR": {
-    "description": "RCC IC19 configuration register.",
-    "fields": [
-      {
-        "name": "IC19INT",
-        "description": "Divider IC19 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC19INT"
-      },
-      {
-        "name": "IC19SEL",
-        "description": "Divider IC19 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC19SEL"
-      }
-    ]
-  },
-  "fieldset/IC1CFGR": {
-    "description": "RCC IC1 configuration register.",
-    "fields": [
-      {
-        "name": "IC1INT",
-        "description": "Divider IC1 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC1INT"
-      },
-      {
-        "name": "IC1SEL",
-        "description": "Divider IC1 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC1SEL"
-      }
-    ]
-  },
-  "fieldset/IC20CFGR": {
-    "description": "RCC IC20 configuration register.",
-    "fields": [
-      {
-        "name": "IC20INT",
-        "description": "Divider IC20 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC20INT"
-      },
-      {
-        "name": "IC20SEL",
-        "description": "Divider IC20 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC20SEL"
-      }
-    ]
-  },
-  "fieldset/IC2CFGR": {
-    "description": "RCC IC2 configuration register.",
-    "fields": [
-      {
-        "name": "IC2INT",
-        "description": "Divider IC2 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC2INT"
-      },
-      {
-        "name": "IC2SEL",
-        "description": "Divider IC2 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC2SEL"
-      }
-    ]
-  },
-  "fieldset/IC3CFGR": {
-    "description": "RCC IC3 configuration register.",
-    "fields": [
-      {
-        "name": "IC3INT",
-        "description": "Divider IC3 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC3INT"
-      },
-      {
-        "name": "IC3SEL",
-        "description": "Divider IC3 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC3SEL"
-      }
-    ]
-  },
-  "fieldset/IC4CFGR": {
-    "description": "RCC IC4 configuration register.",
-    "fields": [
-      {
-        "name": "IC4INT",
-        "description": "Divider IC4 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC4INT"
-      },
-      {
-        "name": "IC4SEL",
-        "description": "Divider IC4 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC4SEL"
-      }
-    ]
-  },
-  "fieldset/IC5CFGR": {
-    "description": "RCC IC5 configuration register.",
-    "fields": [
-      {
-        "name": "IC5INT",
-        "description": "Divider IC5 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC5INT"
-      },
-      {
-        "name": "IC5SEL",
-        "description": "Divider IC5 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC5SEL"
-      }
-    ]
-  },
-  "fieldset/IC6CFGR": {
-    "description": "RCC IC6 configuration register.",
-    "fields": [
-      {
-        "name": "IC6INT",
-        "description": "Divider IC6 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC6INT"
-      },
-      {
-        "name": "IC6SEL",
-        "description": "Divider IC6 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC6SEL"
-      }
-    ]
-  },
-  "fieldset/IC7CFGR": {
-    "description": "RCC IC7 configuration register.",
-    "fields": [
-      {
-        "name": "IC7INT",
-        "description": "Divider IC7 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC7INT"
-      },
-      {
-        "name": "IC7SEL",
-        "description": "Divider IC7 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC7SEL"
-      }
-    ]
-  },
-  "fieldset/IC8CFGR": {
-    "description": "RCC IC8 configuration register.",
-    "fields": [
-      {
-        "name": "IC8INT",
-        "description": "Divider IC8 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC8INT"
-      },
-      {
-        "name": "IC8SEL",
-        "description": "Divider IC8 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC8SEL"
-      }
-    ]
-  },
-  "fieldset/IC9CFGR": {
-    "description": "RCC IC9 configuration register.",
-    "fields": [
-      {
-        "name": "IC9INT",
-        "description": "Divider IC9 integer division factor.",
-        "bit_offset": 16,
-        "bit_size": 8,
-        "enum": "IC9INT"
-      },
-      {
-        "name": "IC9SEL",
-        "description": "Divider IC9 Source Selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "IC9SEL"
+        "enum": "ICSEL"
       }
     ]
   },
@@ -12082,8 +11517,7 @@
         "name": "LSEBYP",
         "description": "LSE clock bypass.",
         "bit_offset": 15,
-        "bit_size": 1,
-        "enum": "LSEBYP"
+        "bit_size": 1
       },
       {
         "name": "LSEEXT",
@@ -13139,691 +12573,114 @@
       }
     ]
   },
-  "fieldset/PLL1CFGR1": {
-    "description": "RCC PLL1 configuration register 1.",
+  "fieldset/PLLCFGR1": {
+    "description": "RCC PLL configuration register 1.",
     "fields": [
       {
         "name": "PLLDIVN",
-        "description": "PLL1 Integer part for the VCO multiplication factor.",
+        "description": "PLL Integer part for the VCO multiplication factor.",
         "bit_offset": 8,
-        "bit_size": 12,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
+        "bit_size": 12
       },
       {
         "name": "PLLDIVM",
-        "description": "PLL1 reference input clock divide frequency ratio.",
+        "description": "PLL reference input clock divide frequency ratio.",
         "bit_offset": 20,
         "bit_size": 6,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
         "enum": "PLLDIVM"
       },
       {
         "name": "PLLBYP",
-        "description": "PLL1 bypass.",
+        "description": "PLL bypass.",
         "bit_offset": 27,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLBYP"
+        "bit_size": 1
       },
       {
         "name": "PLLSEL",
-        "description": "PLL1 source selection of the reference clock.",
+        "description": "PLL source selection of the reference clock.",
         "bit_offset": 28,
         "bit_size": 3,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
         "enum": "PLLSEL"
       }
     ]
   },
-  "fieldset/PLL1CFGR2": {
-    "description": "RCC PLL1 configuration register 2.",
+  "fieldset/PLLCFGR2": {
+    "description": "RCC PLL configuration register 2.",
     "fields": [
       {
         "name": "PLLDIVNFRAC",
-        "description": "PLL1 Fractional part of the VCO multiplication factor.",
+        "description": "PLL Fractional part of the VCO multiplication factor.",
         "bit_offset": 0,
-        "bit_size": 24,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
+        "bit_size": 24
       }
     ]
   },
-  "fieldset/PLL1CFGR3": {
-    "description": "RCC PLL1 configuration register 3.",
+  "fieldset/PLLCFGR3": {
+    "description": "RCC PLL configuration register 3.",
     "fields": [
       {
         "name": "PLLMODSSRST",
-        "description": "PLL1 Modulation Spread Spectrum reset.",
+        "description": "PLL Modulation Spread Spectrum reset.",
         "bit_offset": 0,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
+        "bit_size": 1
       },
       {
         "name": "PLLDACEN",
-        "description": "PLL1 noise canceling DAC enable in fractional mode.",
+        "description": "PLL noise canceling DAC enable in fractional mode.",
         "bit_offset": 1,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
+        "bit_size": 1
       },
       {
         "name": "PLLMODSSDIS",
-        "description": "PLL1 Modulation Spread-Spectrum Disable.",
+        "description": "PLL Modulation Spread-Spectrum Disable.",
         "bit_offset": 2,
         "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
         "enum": "PLLMODSSDIS"
       },
       {
         "name": "PLLMODDSEN",
-        "description": "PLL1 Modulation Spread-Spectrum (and Fractional Divide) enable.",
+        "description": "PLL Modulation Spread-Spectrum (and Fractional Divide) enable.",
         "bit_offset": 3,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
+        "bit_size": 1
       },
       {
         "name": "PLLMODSPRDW",
-        "description": "PLL1 Modulation Spread-Spectrum Down.",
+        "description": "PLL Modulation Spread-Spectrum Down.",
         "bit_offset": 4,
         "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
         "enum": "PLLMODSPRDW"
       },
       {
         "name": "PLLMODDIV",
-        "description": "PLL1 Modulation Division frequency adjustment.",
+        "description": "PLL Modulation Division frequency adjustment.",
         "bit_offset": 8,
-        "bit_size": 4,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
+        "bit_size": 4
       },
       {
         "name": "PLLMODSPR",
-        "description": "PLL1 Modulation Spread depth adjustment.",
+        "description": "PLL Modulation Spread depth adjustment.",
         "bit_offset": 16,
-        "bit_size": 5,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
+        "bit_size": 5
       },
       {
         "name": "PLLPDIV2",
-        "description": "PLL1 VCO frequency divider level 2.",
+        "description": "PLL VCO frequency divider level 2.",
         "bit_offset": 24,
         "bit_size": 3,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
         "enum": "PLLPDIV"
       },
       {
         "name": "PLLPDIV1",
-        "description": "PLL1 VCO frequency divider level 1.",
+        "description": "PLL VCO frequency divider level 1.",
         "bit_offset": 27,
         "bit_size": 3,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
         "enum": "PLLPDIV"
       },
       {
         "name": "PLLPDIVEN",
-        "description": "PLL1 post divider POSTDIV1, POSTDIV2, and PLL clock output enable.",
+        "description": "PLL post divider POSTDIV1, POSTDIV2, and PLL clock output enable.",
         "bit_offset": 30,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      }
-    ]
-  },
-  "fieldset/PLL2CFGR1": {
-    "description": "RCC PLL2 configuration register 1.",
-    "fields": [
-      {
-        "name": "PLLDIVN",
-        "description": "PLL2 Integer part for the VCO multiplication factor.",
-        "bit_offset": 8,
-        "bit_size": 12,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLDIVM",
-        "description": "PLL2 reference input clock divide frequency ratio.",
-        "bit_offset": 20,
-        "bit_size": 6,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLDIVM"
-      },
-      {
-        "name": "PLLBYP",
-        "description": "PLL2 bypass.",
-        "bit_offset": 27,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLBYP"
-      },
-      {
-        "name": "PLLSEL",
-        "description": "PLL2 source selection of the reference clock.",
-        "bit_offset": 28,
-        "bit_size": 3,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLSEL"
-      }
-    ]
-  },
-  "fieldset/PLL2CFGR2": {
-    "description": "RCC PLL2 configuration register 2.",
-    "fields": [
-      {
-        "name": "PLLDIVNFRAC",
-        "description": "PLL2 Fractional part of the VCO multiplication factor.",
-        "bit_offset": 0,
-        "bit_size": 24,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      }
-    ]
-  },
-  "fieldset/PLL2CFGR3": {
-    "description": "RCC PLL2 configuration register 3.",
-    "fields": [
-      {
-        "name": "PLLMODSSRST",
-        "description": "PLL2 Modulation Spread Spectrum reset.",
-        "bit_offset": 0,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLDACEN",
-        "description": "PLL2 noise canceling DAC enable in fractional mode.",
-        "bit_offset": 1,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLMODSSDIS",
-        "description": "PLL2 Modulation Spread-Spectrum Disable.",
-        "bit_offset": 2,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLMODSSDIS"
-      },
-      {
-        "name": "PLLMODDSEN",
-        "description": "PLL2 Modulation Spread-Spectrum (and Fractional Divide) enable.",
-        "bit_offset": 3,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLMODSPRDW",
-        "description": "PLL2 Modulation Down Spread.",
-        "bit_offset": 4,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLMODSPRDW"
-      },
-      {
-        "name": "PLLMODDIV",
-        "description": "PLL2 Modulation Division frequency adjustment.",
-        "bit_offset": 8,
-        "bit_size": 4,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLMODSPR",
-        "description": "PLL2 Modulation Spread depth adjustment.",
-        "bit_offset": 16,
-        "bit_size": 5,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLPDIV2",
-        "description": "PLL2 VCO frequency divider level 2.",
-        "bit_offset": 24,
-        "bit_size": 3,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLPDIV"
-      },
-      {
-        "name": "PLLPDIV1",
-        "description": "PLL2 VCO frequency divider level 1.",
-        "bit_offset": 27,
-        "bit_size": 3,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLPDIV"
-      },
-      {
-        "name": "PLLPDIVEN",
-        "description": "PLL2 post divider POSTDIV1, POSTDIV2, and PLL clock output enable.",
-        "bit_offset": 30,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      }
-    ]
-  },
-  "fieldset/PLL3CFGR1": {
-    "description": "RCC PLL3 configuration register 1.",
-    "fields": [
-      {
-        "name": "PLLDIVN",
-        "description": "PLL3 Integer part for the VCO multiplication factor.",
-        "bit_offset": 8,
-        "bit_size": 12,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLDIVM",
-        "description": "PLL3 reference input clock divide frequency ratio.",
-        "bit_offset": 20,
-        "bit_size": 6,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLDIVM"
-      },
-      {
-        "name": "PLLBYP",
-        "description": "PLL3 bypass.",
-        "bit_offset": 27,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLBYP"
-      },
-      {
-        "name": "PLLSEL",
-        "description": "PLL3 source selection of the reference clock.",
-        "bit_offset": 28,
-        "bit_size": 3,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLSEL"
-      }
-    ]
-  },
-  "fieldset/PLL3CFGR2": {
-    "description": "RCC PLL3 configuration register 2.",
-    "fields": [
-      {
-        "name": "PLLDIVNFRAC",
-        "description": "PLL3 Fractional part of the VCO multiplication factor.",
-        "bit_offset": 0,
-        "bit_size": 24,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      }
-    ]
-  },
-  "fieldset/PLL3CFGR3": {
-    "description": "RCC PLL3 configuration register 3.",
-    "fields": [
-      {
-        "name": "PLLMODSSRST",
-        "description": "PLL3 Modulation Spread Spectrum reset.",
-        "bit_offset": 0,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLDACEN",
-        "description": "PLL3 noise canceling DAC enable in fractional mode.",
-        "bit_offset": 1,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLMODSSDIS",
-        "description": "PLL3 Modulation Spread-Spectrum Disable.",
-        "bit_offset": 2,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLMODSSDIS"
-      },
-      {
-        "name": "PLLMODDSEN",
-        "description": "PLL3 Modulation Spread-Spectrum (and Fractional Divide) enable.",
-        "bit_offset": 3,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLMODSPRDW",
-        "description": "PLL3 Modulation Down Spread.",
-        "bit_offset": 4,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLMODSPRDW"
-      },
-      {
-        "name": "PLLMODDIV",
-        "description": "PLL3 Modulation Division frequency adjustment.",
-        "bit_offset": 8,
-        "bit_size": 4,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLMODSPR",
-        "description": "PLL3 Modulation Spread depth adjustment.",
-        "bit_offset": 16,
-        "bit_size": 5,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLPDIV2",
-        "description": "PLL3 VCO frequency divider level 2.",
-        "bit_offset": 24,
-        "bit_size": 3,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLPDIV"
-      },
-      {
-        "name": "PLLPDIV1",
-        "description": "PLL3 VCO frequency divider level 1.",
-        "bit_offset": 27,
-        "bit_size": 3,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLPDIV"
-      },
-      {
-        "name": "PLLPDIVEN",
-        "description": "PLL3 post divider POSTDIV1, POSTDIV2, and PLL clock output enable.",
-        "bit_offset": 30,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      }
-    ]
-  },
-  "fieldset/PLL4CFGR1": {
-    "description": "RCC PLL4 configuration register 1.",
-    "fields": [
-      {
-        "name": "PLLDIVN",
-        "description": "PLL4 Integer part for the VCO multiplication factor.",
-        "bit_offset": 8,
-        "bit_size": 12,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLDIVM",
-        "description": "PLL4 reference input clock divide frequency ratio.",
-        "bit_offset": 20,
-        "bit_size": 6,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLDIVM"
-      },
-      {
-        "name": "PLLBYP",
-        "description": "PLL4 bypass.",
-        "bit_offset": 27,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLBYP"
-      },
-      {
-        "name": "PLLSEL",
-        "description": "PLL4 source selection of the reference clock.",
-        "bit_offset": 28,
-        "bit_size": 3,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLSEL"
-      }
-    ]
-  },
-  "fieldset/PLL4CFGR2": {
-    "description": "RCC PLL4 configuration register 2.",
-    "fields": [
-      {
-        "name": "PLLDIVNFRAC",
-        "description": "PLL4 Fractional part of the VCO multiplication factor.",
-        "bit_offset": 0,
-        "bit_size": 24,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      }
-    ]
-  },
-  "fieldset/PLL4CFGR3": {
-    "description": "RCC PLL4 configuration register 3.",
-    "fields": [
-      {
-        "name": "PLLMODSSRST",
-        "description": "PLL4 Modulation Spread Spectrum reset.",
-        "bit_offset": 0,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLDACEN",
-        "description": "PLL4 noise canceling DAC enable in fractional mode.",
-        "bit_offset": 1,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLMODSSDIS",
-        "description": "PLL4 Modulation Spread-Spectrum Disable.",
-        "bit_offset": 2,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLMODSSDIS"
-      },
-      {
-        "name": "PLLMODDSEN",
-        "description": "PLL4 Modulation Spread-Spectrum (and Fractional Divide) enable.",
-        "bit_offset": 3,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLMODSPRDW",
-        "description": "PLL4 Modulation Down Spread.",
-        "bit_offset": 4,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLMODSPRDW"
-      },
-      {
-        "name": "PLLMODDIV",
-        "description": "PLL4 Modulation Division frequency adjustment.",
-        "bit_offset": 8,
-        "bit_size": 4,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLMODSPR",
-        "description": "PLL4 Modulation Spread depth adjustment.",
-        "bit_offset": 16,
-        "bit_size": 5,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
-      },
-      {
-        "name": "PLLPDIV2",
-        "description": "PLL4 VCO frequency divider level 2.",
-        "bit_offset": 24,
-        "bit_size": 3,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLPDIV"
-      },
-      {
-        "name": "PLLPDIV1",
-        "description": "PLL4 VCO frequency divider level 1.",
-        "bit_offset": 27,
-        "bit_size": 3,
-        "array": {
-          "len": 1,
-          "stride": 0
-        },
-        "enum": "PLLPDIV"
-      },
-      {
-        "name": "PLLPDIVEN",
-        "description": "PLL4 post divider POSTDIV1, POSTDIV2, and PLL clock output enable.",
-        "bit_offset": 30,
-        "bit_size": 1,
-        "array": {
-          "len": 1,
-          "stride": 0
-        }
+        "bit_size": 1
       }
     ]
   },
@@ -16177,144 +15034,14 @@
     "description": "RCC divider secure configuration register2.",
     "fields": [
       {
-        "name": "IC1SEC",
-        "description": "Defines the secure protection of the IC1 divider configuration bits.",
+        "name": "ICSEC",
+        "description": "Defines the secure protection of the ICx divider configuration bits.",
         "bit_offset": 0,
         "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC2SEC",
-        "description": "Defines the secure protection of the IC2 divider configuration bits.",
-        "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC3SEC",
-        "description": "Defines the secure protection of the IC3 divider configuration bits.",
-        "bit_offset": 2,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC4SEC",
-        "description": "Defines the secure protection of the IC4 divider configuration bits.",
-        "bit_offset": 3,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC5SEC",
-        "description": "Defines the secure protection of the IC5 divider configuration bits.",
-        "bit_offset": 4,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC6SEC",
-        "description": "Defines the secure protection of the IC6 divider configuration bits.",
-        "bit_offset": 5,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC7SEC",
-        "description": "Defines the secure protection of the IC7 divider configuration bits.",
-        "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC8SEC",
-        "description": "Defines the secure protection of the IC8 divider configuration bits.",
-        "bit_offset": 7,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC9SEC",
-        "description": "Defines the secure protection of the IC9 divider configuration bits.",
-        "bit_offset": 8,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC10SEC",
-        "description": "Defines the secure protection of the IC10 divider configuration bits.",
-        "bit_offset": 9,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC11SEC",
-        "description": "Defines the secure protection of the IC11 divider configuration bits.",
-        "bit_offset": 10,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC12SEC",
-        "description": "Defines the secure protection of the IC12 divider configuration bits.",
-        "bit_offset": 11,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC13SEC",
-        "description": "Defines the secure protection of the IC13 divider configuration bits.",
-        "bit_offset": 12,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC14SEC",
-        "description": "Defines the secure protection of the IC14 divider configuration bits.",
-        "bit_offset": 13,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC15SEC",
-        "description": "Defines the secure protection of the IC15 divider configuration bits.",
-        "bit_offset": 14,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC16SEC",
-        "description": "Defines the secure protection of the IC16 divider configuration bits.",
-        "bit_offset": 15,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC17SEC",
-        "description": "Defines the secure protection of the IC17 divider configuration bits.",
-        "bit_offset": 16,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC18SEC",
-        "description": "Defines the secure protection of the IC18 divider configuration bits.",
-        "bit_offset": 17,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC19SEC",
-        "description": "Defines the secure protection of the IC19 divider configuration bits.",
-        "bit_offset": 18,
-        "bit_size": 1,
-        "enum": "ICSEC"
-      },
-      {
-        "name": "IC20SEC",
-        "description": "Defines the secure protection of the IC20 divider configuration bits.",
-        "bit_offset": 19,
-        "bit_size": 1,
-        "enum": "ICSEC"
+        "array": {
+          "len": 20,
+          "stride": 1
+        }
       }
     ]
   },
@@ -16529,36 +15256,31 @@
         "name": "LSIRDY",
         "description": "LSI clock ready flag.",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "LSIRDY"
+        "bit_size": 1
       },
       {
         "name": "LSERDY",
         "description": "LSE clock ready flag.",
         "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "LSERDY"
+        "bit_size": 1
       },
       {
         "name": "MSIRDY",
         "description": "MSI clock ready flag.",
         "bit_offset": 2,
-        "bit_size": 1,
-        "enum": "MSIRDY"
+        "bit_size": 1
       },
       {
         "name": "HSIRDY",
         "description": "HSI clock ready flag.",
         "bit_offset": 3,
-        "bit_size": 1,
-        "enum": "HSIRDY"
+        "bit_size": 1
       },
       {
         "name": "HSERDY",
         "description": "HSE clock ready flag.",
         "bit_offset": 4,
-        "bit_size": 1,
-        "enum": "HSERDY"
+        "bit_size": 1
       },
       {
         "name": "PLLRDY",
@@ -16568,8 +15290,7 @@
         "array": {
           "len": 4,
           "stride": 1
-        },
-        "enum": "PLLRDY"
+        }
       }
     ]
   },
@@ -16772,22 +15493,22 @@
     "bit_size": 8,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "DIV1",
         "description": "ck_icn_p_adf1 is divided by 1.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "DIV2",
         "description": "ck_icn_p_adf1 is divided by 2.",
         "value": 1
       },
       {
-        "name": "B_0x2",
+        "name": "DIV3",
         "description": "ck_icn_p_adf1 is divided by 3.",
         "value": 2
       },
       {
-        "name": "B_0x3",
+        "name": "DIV4",
         "description": "ck_icn_p_adf1 is divided by 4.",
         "value": 3
       }
@@ -17218,7 +15939,7 @@
       }
     ]
   },
-  "enum/DCMIPPSEL": {
+  "enum/DCMISEL": {
     "bit_size": 2,
     "variants": [
       {
@@ -17583,21 +16304,6 @@
       }
     ]
   },
-  "enum/HSEBYP": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NO_BYPASS",
-        "description": "HSE oscillator not bypassed (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "BYPASS",
-        "description": "HSE oscillator bypassed with an external clock.",
-        "value": 1
-      }
-    ]
-  },
   "enum/HSECSSBPRE": {
     "bit_size": 4,
     "variants": [
@@ -17818,21 +16524,6 @@
       }
     ]
   },
-  "enum/HSERDY": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "No_RDY",
-        "description": "HSE is not ready (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "RDY",
-        "description": "HSE is ready.",
-        "value": 1
-      }
-    ]
-  },
   "enum/HSERDYC": {
     "bit_size": 1,
     "variants": [
@@ -17949,21 +16640,6 @@
       {
         "name": "PRIV",
         "description": "HSI configuration bits are accessible by privilege software only.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/HSIRDY": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NO_RDY",
-        "description": "HSI is not ready.",
-        "value": 0
-      },
-      {
-        "name": "RDY",
-        "description": "HSI is ready (default after reset).",
         "value": 1
       }
     ]
@@ -18403,552 +17079,7 @@
       }
     ]
   },
-  "enum/IC10INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC10 = pllx_ck (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC10 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC10 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC10 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC10 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC10SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected.",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected (default after reset).",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC11INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC11 = pllx_ck.",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC11 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC11 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC11 = pllx_ck / 4 (default after reset).",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC11 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC11SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC12INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC12 = pllx_ck (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC12 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC12 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC12 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC12 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC12SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected.",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC13INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC13 = pllx_ck (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC13 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC13 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC13 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC13 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC13SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected.",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC14INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC14 = pllx_ck (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC14 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC14 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC14 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC14 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC14SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected.",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC15INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC15 = pllx_ck (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC15 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC15 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC15 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC15 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC15SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected.",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC16INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV2",
-        "description": "IC16 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC16 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC16 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC16 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC16SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected.",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC17INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC17 = pllx_ck (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC17 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC17 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC17 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC17 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC17SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected.",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC18INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC18 = pllx_ck (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC18 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC18 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC18 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC18 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC18SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected.",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC19INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC19 = pllx_ck (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC19 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC19 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC19 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC19 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC19SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected.",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC1INT": {
+  "enum/ICINT": {
     "bit_size": 8,
     "variants": [
       {
@@ -18975,526 +17106,6 @@
         "name": "DIV256",
         "description": "IC1 = pllx_ck / 256.",
         "value": 255
-      }
-    ]
-  },
-  "enum/IC1SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC20INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC20 = pllx_ck (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC20 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC20 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC20 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC20 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC20SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected.",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC2INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC2 = pllx_ck.",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC2 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC2 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC2 = pllx_ck / 4 (default after reset).",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC2 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC2SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC3INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC3 = pllx_ck (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC3 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC3 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC3 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC3 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC3SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC4INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC4 = pllx_ck (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC4 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC4 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC4 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC4 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC4SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC5INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC5 = pllx_ck (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC5 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC5 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC5 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC5 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC5SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC6INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC6 = pllx_ck.",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC6 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC6 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC6 = pllx_ck / 4 (default after reset).",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC6 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC6SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected.",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC7INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC7 = pllx_ck (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC7 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC7 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC7 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC7 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC7SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected.",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected (default after reset).",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC8INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC8 = pllx_ck (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC8 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC8 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC8 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC8 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC8SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected.",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected (default after reset).",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/IC9INT": {
-    "bit_size": 8,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "IC9 = pllx_ck (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "IC9 = pllx_ck / 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "IC9 = pllx_ck / 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "IC9 = pllx_ck / 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV256",
-        "description": "IC9 = pllx_ck / 256.",
-        "value": 255
-      }
-    ]
-  },
-  "enum/IC9SEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "PLL1",
-        "description": "pll1_ck is selected.",
-        "value": 0
-      },
-      {
-        "name": "PLL2",
-        "description": "pll2_ck is selected (default after reset).",
-        "value": 1
-      },
-      {
-        "name": "HSI_OSC_DIV4",
-        "description": "hsi_ck = hsi_osc_ck / 4.",
-        "value": 2
-      },
-      {
-        "name": "HSI_OSC_DIV8",
-        "description": "hsi_ck = hsi_osc_ck / 8.",
-        "value": 3
       }
     ]
   },
@@ -19543,18 +17154,28 @@
       }
     ]
   },
-  "enum/ICSEC": {
-    "bit_size": 1,
+  "enum/ICSEL": {
+    "bit_size": 2,
     "variants": [
       {
-        "name": "NON_SECURE",
-        "description": "IC10 configuration bits are accessible by non-secure software only (default after reset).",
+        "name": "PLL1",
+        "description": "pll1_ck is selected (default after reset).",
         "value": 0
       },
       {
-        "name": "SECURE",
-        "description": "IC10 configuration bits are accessible by secure software only.",
+        "name": "PLL2",
+        "description": "pll2_ck is selected.",
         "value": 1
+      },
+      {
+        "name": "HSI_OSC_DIV4",
+        "description": "hsi_ck = hsi_osc_ck / 4.",
+        "value": 2
+      },
+      {
+        "name": "HSI_OSC_DIV8",
+        "description": "hsi_ck = hsi_osc_ck / 8.",
+        "value": 3
       }
     ]
   },
@@ -19693,21 +17314,6 @@
       }
     ]
   },
-  "enum/LSEBYP": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NO_BYPASS",
-        "description": "LSE oscillator not bypassed (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "BYPASS",
-        "description": "LSE oscillator bypassed with an external clock.",
-        "value": 1
-      }
-    ]
-  },
   "enum/LSECSSC": {
     "bit_size": 1,
     "variants": [
@@ -19787,7 +17393,7 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "LOWEST",
+        "name": "LOW",
         "description": "Lowest drive (default after reset).",
         "value": 0
       },
@@ -19802,7 +17408,7 @@
         "value": 2
       },
       {
-        "name": "HIGHEST",
+        "name": "HIGH",
         "description": "Highest drive.",
         "value": 3
       }
@@ -19864,21 +17470,6 @@
       {
         "name": "PRIVILAGE",
         "description": "LSE configuration bits are accessible by privilege software only.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/LSERDY": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NOT_READY",
-        "description": "LSE is not ready (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "READY",
-        "description": "LSE is ready.",
         "value": 1
       }
     ]
@@ -19988,66 +17579,6 @@
       }
     ]
   },
-  "enum/LSIRDY": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NOT_READY",
-        "description": "LSI is not ready (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "READY",
-        "description": "LSI is ready.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/LSIRDYC": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NOT_MODIFIED",
-        "description": "LSIRDYF not modified (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "CLEARED",
-        "description": "LSIRDYF cleared.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/LSIRDYF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NO_INTERRUPT",
-        "description": "no clock ready interrupt caused by the LSI (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "INTERRUPT",
-        "description": "clock ready interrupt caused by the LSI.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/LSIRDYIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "DISABLED",
-        "description": "LSI ready interrupt disabled (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "ENABLED",
-        "description": "LSI ready interrupt enabled.",
-        "value": 1
-      }
-    ]
-  },
   "enum/LSISEC": {
     "bit_size": 1,
     "variants": [
@@ -20088,42 +17619,12 @@
       }
     ]
   },
-  "enum/MCOPRE": {
-    "bit_size": 4,
-    "variants": [
-      {
-        "name": "DIV1",
-        "description": "ck_icn_p_mce3 is divided by 1.",
-        "value": 0
-      },
-      {
-        "name": "DIV2",
-        "description": "ck_icn_p_mce3 is divided by 2.",
-        "value": 1
-      },
-      {
-        "name": "DIV3",
-        "description": "ck_icn_p_mce3 is divided by 3.",
-        "value": 2
-      },
-      {
-        "name": "DIV4",
-        "description": "ck_icn_p_mce3 is divided by 4.",
-        "value": 3
-      },
-      {
-        "name": "DIV16",
-        "description": "ck_icn_p_mce3 is divided by 16.",
-        "value": 15
-      }
-    ]
-  },
-  "enum/MCOSEL": {
+  "enum/MCO1SEL": {
     "bit_size": 3,
     "variants": [
       {
-        "name": "HSI_DIV",
-        "description": "hsi_div_ck selected as reference clock (default after reset).",
+        "name": "HSI",
+        "description": "hsi selected as reference clock (default after reset).",
         "value": 0
       },
       {
@@ -20160,6 +17661,81 @@
         "name": "SYSA",
         "description": "sysa_ck selected as reference clock.",
         "value": 7
+      }
+    ]
+  },
+  "enum/MCO2SEL": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "name": "HSI",
+        "description": "hsi selected as reference clock (default after reset).",
+        "value": 0
+      },
+      {
+        "name": "LSE",
+        "description": "lse_ck selected as reference clock.",
+        "value": 1
+      },
+      {
+        "name": "MSI",
+        "description": "msi_ck selected as reference clock.",
+        "value": 2
+      },
+      {
+        "name": "LSI",
+        "description": "lsi_ck selected as reference clock.",
+        "value": 3
+      },
+      {
+        "name": "HSE",
+        "description": "hse_ck selected as reference clock.",
+        "value": 4
+      },
+      {
+        "name": "IC15",
+        "description": "ic15_ck selected as reference clock.",
+        "value": 5
+      },
+      {
+        "name": "IC20",
+        "description": "ic20_ck selected as reference clock.",
+        "value": 6
+      },
+      {
+        "name": "SYSB",
+        "description": "sysb_ck selected as reference clock.",
+        "value": 7
+      }
+    ]
+  },
+  "enum/MCOPRE": {
+    "bit_size": 4,
+    "variants": [
+      {
+        "name": "DIV1",
+        "description": "ck_icn_p_mce3 is divided by 1.",
+        "value": 0
+      },
+      {
+        "name": "DIV2",
+        "description": "ck_icn_p_mce3 is divided by 2.",
+        "value": 1
+      },
+      {
+        "name": "DIV3",
+        "description": "ck_icn_p_mce3 is divided by 3.",
+        "value": 2
+      },
+      {
+        "name": "DIV4",
+        "description": "ck_icn_p_mce3 is divided by 4.",
+        "value": 3
+      },
+      {
+        "name": "DIV16",
+        "description": "ck_icn_p_mce3 is divided by 16.",
+        "value": 15
       }
     ]
   },
@@ -20409,21 +17985,6 @@
       {
         "name": "PRIVILEGE",
         "description": "MSI configuration bits are accessible by privilege software only.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/MSIRDY": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NOT_READY",
-        "description": "MSI is not ready (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "READY",
-        "description": "MSI is ready.",
         "value": 1
       }
     ]
@@ -20693,29 +18254,9 @@
       }
     ]
   },
-  "enum/PLLBYP": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "VCO_POSTDIV",
-        "description": "PLL output is driven by the VCO, via the optional POSTDIV division.",
-        "value": 0
-      },
-      {
-        "name": "BYPASS",
-        "description": "PLL output is bypassed and driven by the PLL reference clock (default after reset).",
-        "value": 1
-      }
-    ]
-  },
   "enum/PLLDIVM": {
     "bit_size": 6,
     "variants": [
-      {
-        "name": "NOT_APPLICABLE",
-        "description": "Not applicable when PLL is enabled.",
-        "value": 0
-      },
       {
         "name": "DIV1",
         "description": "reference clock is divided by 1 (min value).",
@@ -20782,11 +18323,6 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "NOT_APPLICABLE",
-        "description": "Not applicable.",
-        "value": 0
-      },
-      {
         "name": "DIV1",
         "description": "VCO output is divided by 1 (minimum value) (default after reset).",
         "value": 1
@@ -20824,21 +18360,6 @@
       {
         "name": "PRIVILEGE",
         "description": "PLL1 configuration bits are accessible by privilege software only.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/PLLRDY": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "UNLOCKED",
-        "description": "PLL1 unlocked (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "LOCKED",
-        "description": "PLL1 locked.",
         "value": 1
       }
     ]
@@ -21226,6 +18747,11 @@
   "enum/RTCSEL": {
     "bit_size": 2,
     "variants": [
+      {
+        "name": "DISABLE",
+        "description": "No clock used as RTC clock.",
+        "value": 0
+      },
       {
         "name": "LSE",
         "description": "lse_ck selected as reference clock.",

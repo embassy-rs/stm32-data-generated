@@ -1811,7 +1811,12 @@
         },
         {
           "name": "DBGMCU",
-          "address": 1140854784
+          "address": 1140854784,
+          "registers": {
+            "kind": "dbgmcu",
+            "version": "n6",
+            "block": "DBGMCU"
+          }
         },
         {
           "name": "DCMI",
@@ -1820,6 +1825,21 @@
             "kind": "dcmi",
             "version": "v1",
             "block": "DCMI"
+          },
+          "rcc": {
+            "bus_clock": "PCLK5",
+            "kernel_clock": {
+              "register": "CCIPR1",
+              "field": "DCMISEL"
+            },
+            "enable": {
+              "register": "APB5ENR",
+              "field": "DCMIEN"
+            },
+            "reset": {
+              "register": "APB5RSTR",
+              "field": "DCMIRST"
+            }
           },
           "pins": [
             {
@@ -2108,21 +2128,6 @@
         {
           "name": "DCMIPP",
           "address": 1207967744,
-          "rcc": {
-            "bus_clock": "PCLK5",
-            "kernel_clock": {
-              "register": "CCIPR1",
-              "field": "DCMIPPSEL"
-            },
-            "enable": {
-              "register": "APB5ENR",
-              "field": "DCMIPPEN"
-            },
-            "reset": {
-              "register": "APB5RSTR",
-              "field": "DCMIPPRST"
-            }
-          },
           "pins": [
             {
               "pin": "PA1",
@@ -2727,7 +2732,7 @@
           "address": 1174556672,
           "registers": {
             "kind": "exti",
-            "version": "v1",
+            "version": "n6",
             "block": "EXTI"
           },
           "interrupts": [
@@ -6002,6 +6007,11 @@
         {
           "name": "PWR",
           "address": 1174554624,
+          "registers": {
+            "kind": "pwr",
+            "version": "n6",
+            "block": "PWR"
+          },
           "rcc": {
             "bus_clock": "HCLK4",
             "kernel_clock": "HCLK4",
@@ -7529,6 +7539,11 @@
         {
           "name": "SYSCFG",
           "address": 1174437888,
+          "registers": {
+            "kind": "syscfg",
+            "version": "n6",
+            "block": "SYSCFG"
+          },
           "rcc": {
             "bus_clock": "PCLK4",
             "kernel_clock": "PCLK4",

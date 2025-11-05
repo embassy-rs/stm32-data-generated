@@ -61,7 +61,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "cfgr1",
+                    name: "cfgr",
                     description: Some(
                         "RCC configuration register 1.",
                     ),
@@ -72,7 +72,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cfgr1",
+                                "Cfgr",
                             ),
                         },
                     ),
@@ -283,7 +283,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Pll1cfgr1",
+                                "Pllcfgr1",
                             ),
                         },
                     ),
@@ -307,7 +307,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Pll1cfgr2",
+                                "Pllcfgr2",
                             ),
                         },
                     ),
@@ -331,563 +331,31 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Pll1cfgr3",
+                                "Pllcfgr3",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "pll2cfgr1",
+                    name: "iccfgr",
                     description: Some(
-                        "RCC PLL2 configuration register 1.",
+                        "RCC ICx configuration register.",
                     ),
                     array: Some(
                         Array::Regular(
                             RegularArray {
-                                len: 4,
-                                stride: 16,
+                                len: 20,
+                                stride: 4,
                             },
                         ),
                     ),
-                    byte_offset: 0x90,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pll2cfgr1",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pll2cfgr2",
-                    description: Some(
-                        "RCC PLL2 configuration register 2.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 16,
-                            },
-                        ),
-                    ),
-                    byte_offset: 0x94,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pll2cfgr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pll2cfgr3",
-                    description: Some(
-                        "RCC PLL2 configuration register 3.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 16,
-                            },
-                        ),
-                    ),
-                    byte_offset: 0x98,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pll2cfgr3",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pll3cfgr1",
-                    description: Some(
-                        "RCC PLL3 configuration register 1.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 16,
-                            },
-                        ),
-                    ),
-                    byte_offset: 0xa0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pll3cfgr1",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pll3cfgr2",
-                    description: Some(
-                        "RCC PLL3 configuration register 2.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 16,
-                            },
-                        ),
-                    ),
-                    byte_offset: 0xa4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pll3cfgr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pll3cfgr3",
-                    description: Some(
-                        "RCC PLL3 configuration register 3.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 16,
-                            },
-                        ),
-                    ),
-                    byte_offset: 0xa8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pll3cfgr3",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pll4cfgr1",
-                    description: Some(
-                        "RCC PLL4 configuration register 1.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 16,
-                            },
-                        ),
-                    ),
-                    byte_offset: 0xb0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pll4cfgr1",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pll4cfgr2",
-                    description: Some(
-                        "RCC PLL4 configuration register 2.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 16,
-                            },
-                        ),
-                    ),
-                    byte_offset: 0xb4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pll4cfgr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "pll4cfgr3",
-                    description: Some(
-                        "RCC PLL4 configuration register 3.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 16,
-                            },
-                        ),
-                    ),
-                    byte_offset: 0xb8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pll4cfgr3",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic1cfgr",
-                    description: Some(
-                        "RCC IC1 configuration register.",
-                    ),
-                    array: None,
                     byte_offset: 0xc4,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ic1cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic2cfgr",
-                    description: Some(
-                        "RCC IC2 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xc8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic2cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic3cfgr",
-                    description: Some(
-                        "RCC IC3 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xcc,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic3cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic4cfgr",
-                    description: Some(
-                        "RCC IC4 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xd0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic4cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic5cfgr",
-                    description: Some(
-                        "RCC IC5 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xd4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic5cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic6cfgr",
-                    description: Some(
-                        "RCC IC6 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xd8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic6cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic7cfgr",
-                    description: Some(
-                        "RCC IC7 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xdc,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic7cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic8cfgr",
-                    description: Some(
-                        "RCC IC8 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xe0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic8cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic9cfgr",
-                    description: Some(
-                        "RCC IC9 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xe4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic9cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic10cfgr",
-                    description: Some(
-                        "RCC IC10 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xe8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic10cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic11cfgr",
-                    description: Some(
-                        "RCC IC11 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xec,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic11cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic12cfgr",
-                    description: Some(
-                        "RCC IC12 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xf0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic12cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic13cfgr",
-                    description: Some(
-                        "RCC IC13 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xf4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic13cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic14cfgr",
-                    description: Some(
-                        "RCC IC14 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xf8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic14cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic15cfgr",
-                    description: Some(
-                        "RCC IC15 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xfc,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic15cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic16cfgr",
-                    description: Some(
-                        "RCC IC16 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x100,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic16cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic17cfgr",
-                    description: Some(
-                        "RCC IC17 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x104,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic17cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic18cfgr",
-                    description: Some(
-                        "RCC IC18 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x108,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic18cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic19cfgr",
-                    description: Some(
-                        "RCC IC19 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x10c,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic19cfgr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "ic20cfgr",
-                    description: Some(
-                        "RCC IC20 configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x110,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Ic20cfgr",
+                                "Iccfgr",
                             ),
                         },
                     ),
@@ -19890,9 +19358,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmippenc",
+                    name: "dcmienc",
                     description: Some(
-                        "DCMIPP enable.",
+                        "DCMI enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -19970,9 +19438,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmippen",
+                    name: "dcmien",
                     description: Some(
-                        "DCMIPP enable.",
+                        "DCMI enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -20050,9 +19518,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmippens",
+                    name: "dcmiens",
                     description: Some(
-                        "DCMIPP enable.",
+                        "DCMI enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -20130,9 +19598,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmipplpenc",
+                    name: "dcmilpenc",
                     description: Some(
-                        "DCMIPP sleep enable.",
+                        "DCMI sleep enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -20210,9 +19678,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmipplpen",
+                    name: "dcmilpen",
                     description: Some(
-                        "DCMIPP sleep enable.",
+                        "DCMI sleep enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -20290,9 +19758,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmipplpens",
+                    name: "dcmilpens",
                     description: Some(
-                        "DCMIPP sleep enable.",
+                        "DCMI sleep enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -20370,9 +19838,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmipprstc",
+                    name: "dcmirstc",
                     description: Some(
-                        "DCMIPP reset.",
+                        "DCMI reset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -20450,9 +19918,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmipprst",
+                    name: "dcmirst",
                     description: Some(
-                        "DCMIPP reset.",
+                        "DCMI reset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -20530,9 +19998,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmipprsts",
+                    name: "dcmirsts",
                     description: Some(
-                        "DCMIPP reset.",
+                        "DCMI reset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -22396,9 +21864,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "dcmippsel",
+                    name: "dcmisel",
                     description: Some(
-                        "Source selection for the DCMIPP kernel clock.",
+                        "Source selection for the DCMI kernel clock.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -22408,7 +21876,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Dcmippsel",
+                        "Dcmisel",
                     ),
                 },
             ],
@@ -23018,7 +22486,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Mcosel",
+                        "Mco1sel",
                     ),
                 },
                 Field {
@@ -23050,7 +22518,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Mcosel",
+                        "Mco2sel",
                     ),
                 },
                 Field {
@@ -23577,7 +23045,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cfgr1",
+            name: "Cfgr",
             extends: None,
             description: Some(
                 "RCC configuration register 1.",
@@ -23792,9 +23260,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lsirdyc",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "lserdyc",
@@ -23953,9 +23419,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lsirdyie",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "lserdyie",
@@ -24114,9 +23578,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lsirdyf",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "lserdyf",
@@ -26385,9 +25847,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Hsebyp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "hseext",
@@ -26724,17 +26184,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Ic10cfgr",
+            name: "Iccfgr",
             extends: None,
             description: Some(
-                "RCC IC10 configuration register.",
+                "RCC ICx configuration register.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ic10int",
+                    name: "icint",
                     description: Some(
-                        "Divider IC10 integer division factor.",
+                        "Divider ICx integer division factor.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -26744,13 +26204,13 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 8,
                     array: None,
                     enumm: Some(
-                        "Ic10int",
+                        "Icint",
                     ),
                 },
                 Field {
-                    name: "ic10sel",
+                    name: "icsel",
                     description: Some(
-                        "Divider IC10 Source Selection.",
+                        "Divider ICx Source Selection.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -26760,805 +26220,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Ic10sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic11cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC11 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic11int",
-                    description: Some(
-                        "Divider IC11 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic11int",
-                    ),
-                },
-                Field {
-                    name: "ic11sel",
-                    description: Some(
-                        "Divider IC11 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic11sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic12cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC12 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic12int",
-                    description: Some(
-                        "Divider IC12 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic12int",
-                    ),
-                },
-                Field {
-                    name: "ic12sel",
-                    description: Some(
-                        "Divider IC12 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic12sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic13cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC13 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic13int",
-                    description: Some(
-                        "Divider IC13 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic13int",
-                    ),
-                },
-                Field {
-                    name: "ic13sel",
-                    description: Some(
-                        "Divider IC13 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic13sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic14cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC14 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic14int",
-                    description: Some(
-                        "Divider IC14 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic14int",
-                    ),
-                },
-                Field {
-                    name: "ic14sel",
-                    description: Some(
-                        "Divider IC14 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic14sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic15cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC15 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic15int",
-                    description: Some(
-                        "Divider IC15 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic15int",
-                    ),
-                },
-                Field {
-                    name: "ic15sel",
-                    description: Some(
-                        "Divider IC15 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic15sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic16cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC16 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic16int",
-                    description: Some(
-                        "Divider IC16 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic16int",
-                    ),
-                },
-                Field {
-                    name: "ic16sel",
-                    description: Some(
-                        "Divider IC16 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic16sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic17cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC17 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic17int",
-                    description: Some(
-                        "Divider IC17 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic17int",
-                    ),
-                },
-                Field {
-                    name: "ic17sel",
-                    description: Some(
-                        "Divider IC17 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic17sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic18cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC18 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic18int",
-                    description: Some(
-                        "Divider IC18 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic18int",
-                    ),
-                },
-                Field {
-                    name: "ic18sel",
-                    description: Some(
-                        "Divider IC18 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic18sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic19cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC19 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic19int",
-                    description: Some(
-                        "Divider IC19 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic19int",
-                    ),
-                },
-                Field {
-                    name: "ic19sel",
-                    description: Some(
-                        "Divider IC19 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic19sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic1cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC1 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic1int",
-                    description: Some(
-                        "Divider IC1 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic1int",
-                    ),
-                },
-                Field {
-                    name: "ic1sel",
-                    description: Some(
-                        "Divider IC1 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic1sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic20cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC20 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic20int",
-                    description: Some(
-                        "Divider IC20 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic20int",
-                    ),
-                },
-                Field {
-                    name: "ic20sel",
-                    description: Some(
-                        "Divider IC20 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic20sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic2cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC2 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic2int",
-                    description: Some(
-                        "Divider IC2 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic2int",
-                    ),
-                },
-                Field {
-                    name: "ic2sel",
-                    description: Some(
-                        "Divider IC2 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic2sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic3cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC3 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic3int",
-                    description: Some(
-                        "Divider IC3 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic3int",
-                    ),
-                },
-                Field {
-                    name: "ic3sel",
-                    description: Some(
-                        "Divider IC3 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic3sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic4cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC4 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic4int",
-                    description: Some(
-                        "Divider IC4 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic4int",
-                    ),
-                },
-                Field {
-                    name: "ic4sel",
-                    description: Some(
-                        "Divider IC4 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic4sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic5cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC5 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic5int",
-                    description: Some(
-                        "Divider IC5 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic5int",
-                    ),
-                },
-                Field {
-                    name: "ic5sel",
-                    description: Some(
-                        "Divider IC5 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic5sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic6cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC6 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic6int",
-                    description: Some(
-                        "Divider IC6 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic6int",
-                    ),
-                },
-                Field {
-                    name: "ic6sel",
-                    description: Some(
-                        "Divider IC6 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic6sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic7cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC7 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic7int",
-                    description: Some(
-                        "Divider IC7 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic7int",
-                    ),
-                },
-                Field {
-                    name: "ic7sel",
-                    description: Some(
-                        "Divider IC7 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic7sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic8cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC8 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic8int",
-                    description: Some(
-                        "Divider IC8 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic8int",
-                    ),
-                },
-                Field {
-                    name: "ic8sel",
-                    description: Some(
-                        "Divider IC8 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic8sel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ic9cfgr",
-            extends: None,
-            description: Some(
-                "RCC IC9 configuration register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "ic9int",
-                    description: Some(
-                        "Divider IC9 integer division factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Ic9int",
-                    ),
-                },
-                Field {
-                    name: "ic9sel",
-                    description: Some(
-                        "Divider IC9 Source Selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Ic9sel",
+                        "Icsel",
                     ),
                 },
             ],
@@ -28546,9 +27208,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lsebyp",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "lseext",
@@ -30975,17 +29635,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Pll1cfgr1",
+            name: "Pllcfgr1",
             extends: None,
             description: Some(
-                "RCC PLL1 configuration register 1.",
+                "RCC PLL configuration register 1.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "plldivn",
                     description: Some(
-                        "PLL1 Integer part for the VCO multiplication factor.",
+                        "PLL Integer part for the VCO multiplication factor.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -30993,20 +29653,13 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 12,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: None,
                 },
                 Field {
                     name: "plldivm",
                     description: Some(
-                        "PLL1 reference input clock divide frequency ratio.",
+                        "PLL reference input clock divide frequency ratio.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -31014,14 +29667,7 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 6,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: Some(
                         "Plldivm",
                     ),
@@ -31029,7 +29675,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pllbyp",
                     description: Some(
-                        "PLL1 bypass.",
+                        "PLL bypass.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -31037,22 +29683,13 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllbyp",
-                    ),
+                    array: None,
+                    enumm: None,
                 },
                 Field {
                     name: "pllsel",
                     description: Some(
-                        "PLL1 source selection of the reference clock.",
+                        "PLL source selection of the reference clock.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -31060,14 +29697,7 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 3,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: Some(
                         "Pllsel",
                     ),
@@ -31075,17 +29705,17 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Pll1cfgr2",
+            name: "Pllcfgr2",
             extends: None,
             description: Some(
-                "RCC PLL1 configuration register 2.",
+                "RCC PLL configuration register 2.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "plldivnfrac",
                     description: Some(
-                        "PLL1 Fractional part of the VCO multiplication factor.",
+                        "PLL Fractional part of the VCO multiplication factor.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -31093,30 +29723,23 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 24,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Pll1cfgr3",
+            name: "Pllcfgr3",
             extends: None,
             description: Some(
-                "RCC PLL1 configuration register 3.",
+                "RCC PLL configuration register 3.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "pllmodssrst",
                     description: Some(
-                        "PLL1 Modulation Spread Spectrum reset.",
+                        "PLL Modulation Spread Spectrum reset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -31124,20 +29747,13 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: None,
                 },
                 Field {
                     name: "plldacen",
                     description: Some(
-                        "PLL1 noise canceling DAC enable in fractional mode.",
+                        "PLL noise canceling DAC enable in fractional mode.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -31145,20 +29761,13 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pllmodssdis",
                     description: Some(
-                        "PLL1 Modulation Spread-Spectrum Disable.",
+                        "PLL Modulation Spread-Spectrum Disable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -31166,14 +29775,7 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: Some(
                         "Pllmodssdis",
                     ),
@@ -31181,7 +29783,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pllmoddsen",
                     description: Some(
-                        "PLL1 Modulation Spread-Spectrum (and Fractional Divide) enable.",
+                        "PLL Modulation Spread-Spectrum (and Fractional Divide) enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -31189,20 +29791,13 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pllmodsprdw",
                     description: Some(
-                        "PLL1 Modulation Spread-Spectrum Down.",
+                        "PLL Modulation Spread-Spectrum Down.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -31210,14 +29805,7 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: Some(
                         "Pllmodsprdw",
                     ),
@@ -31225,7 +29813,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pllmoddiv",
                     description: Some(
-                        "PLL1 Modulation Division frequency adjustment.",
+                        "PLL Modulation Division frequency adjustment.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -31233,20 +29821,13 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 4,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pllmodspr",
                     description: Some(
-                        "PLL1 Modulation Spread depth adjustment.",
+                        "PLL Modulation Spread depth adjustment.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -31254,20 +29835,13 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 5,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pllpdiv2",
                     description: Some(
-                        "PLL1 VCO frequency divider level 2.",
+                        "PLL VCO frequency divider level 2.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -31275,14 +29849,7 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 3,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: Some(
                         "Pllpdiv",
                     ),
@@ -31290,7 +29857,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pllpdiv1",
                     description: Some(
-                        "PLL1 VCO frequency divider level 1.",
+                        "PLL VCO frequency divider level 1.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -31298,14 +29865,7 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 3,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: Some(
                         "Pllpdiv",
                     ),
@@ -31313,7 +29873,7 @@ pub(crate) static REGISTERS: IR = IR {
                 Field {
                     name: "pllpdiven",
                     description: Some(
-                        "PLL1 post divider POSTDIV1, POSTDIV2, and PLL clock output enable.",
+                        "PLL post divider POSTDIV1, POSTDIV2, and PLL clock output enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -31321,1091 +29881,7 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pll2cfgr1",
-            extends: None,
-            description: Some(
-                "RCC PLL2 configuration register 1.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "plldivn",
-                    description: Some(
-                        "PLL2 Integer part for the VCO multiplication factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 12,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "plldivm",
-                    description: Some(
-                        "PLL2 reference input clock divide frequency ratio.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 20,
-                        },
-                    ),
-                    bit_size: 6,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Plldivm",
-                    ),
-                },
-                Field {
-                    name: "pllbyp",
-                    description: Some(
-                        "PLL2 bypass.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 27,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllbyp",
-                    ),
-                },
-                Field {
-                    name: "pllsel",
-                    description: Some(
-                        "PLL2 source selection of the reference clock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllsel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pll2cfgr2",
-            extends: None,
-            description: Some(
-                "RCC PLL2 configuration register 2.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "plldivnfrac",
-                    description: Some(
-                        "PLL2 Fractional part of the VCO multiplication factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 24,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pll2cfgr3",
-            extends: None,
-            description: Some(
-                "RCC PLL2 configuration register 3.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pllmodssrst",
-                    description: Some(
-                        "PLL2 Modulation Spread Spectrum reset.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "plldacen",
-                    description: Some(
-                        "PLL2 noise canceling DAC enable in fractional mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "pllmodssdis",
-                    description: Some(
-                        "PLL2 Modulation Spread-Spectrum Disable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllmodssdis",
-                    ),
-                },
-                Field {
-                    name: "pllmoddsen",
-                    description: Some(
-                        "PLL2 Modulation Spread-Spectrum (and Fractional Divide) enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "pllmodsprdw",
-                    description: Some(
-                        "PLL2 Modulation Down Spread.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllmodsprdw",
-                    ),
-                },
-                Field {
-                    name: "pllmoddiv",
-                    description: Some(
-                        "PLL2 Modulation Division frequency adjustment.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 4,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "pllmodspr",
-                    description: Some(
-                        "PLL2 Modulation Spread depth adjustment.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 5,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "pllpdiv2",
-                    description: Some(
-                        "PLL2 VCO frequency divider level 2.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllpdiv",
-                    ),
-                },
-                Field {
-                    name: "pllpdiv1",
-                    description: Some(
-                        "PLL2 VCO frequency divider level 1.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 27,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllpdiv",
-                    ),
-                },
-                Field {
-                    name: "pllpdiven",
-                    description: Some(
-                        "PLL2 post divider POSTDIV1, POSTDIV2, and PLL clock output enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 30,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pll3cfgr1",
-            extends: None,
-            description: Some(
-                "RCC PLL3 configuration register 1.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "plldivn",
-                    description: Some(
-                        "PLL3 Integer part for the VCO multiplication factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 12,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "plldivm",
-                    description: Some(
-                        "PLL3 reference input clock divide frequency ratio.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 20,
-                        },
-                    ),
-                    bit_size: 6,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Plldivm",
-                    ),
-                },
-                Field {
-                    name: "pllbyp",
-                    description: Some(
-                        "PLL3 bypass.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 27,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllbyp",
-                    ),
-                },
-                Field {
-                    name: "pllsel",
-                    description: Some(
-                        "PLL3 source selection of the reference clock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllsel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pll3cfgr2",
-            extends: None,
-            description: Some(
-                "RCC PLL3 configuration register 2.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "plldivnfrac",
-                    description: Some(
-                        "PLL3 Fractional part of the VCO multiplication factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 24,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pll3cfgr3",
-            extends: None,
-            description: Some(
-                "RCC PLL3 configuration register 3.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pllmodssrst",
-                    description: Some(
-                        "PLL3 Modulation Spread Spectrum reset.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "plldacen",
-                    description: Some(
-                        "PLL3 noise canceling DAC enable in fractional mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "pllmodssdis",
-                    description: Some(
-                        "PLL3 Modulation Spread-Spectrum Disable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllmodssdis",
-                    ),
-                },
-                Field {
-                    name: "pllmoddsen",
-                    description: Some(
-                        "PLL3 Modulation Spread-Spectrum (and Fractional Divide) enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "pllmodsprdw",
-                    description: Some(
-                        "PLL3 Modulation Down Spread.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllmodsprdw",
-                    ),
-                },
-                Field {
-                    name: "pllmoddiv",
-                    description: Some(
-                        "PLL3 Modulation Division frequency adjustment.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 4,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "pllmodspr",
-                    description: Some(
-                        "PLL3 Modulation Spread depth adjustment.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 5,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "pllpdiv2",
-                    description: Some(
-                        "PLL3 VCO frequency divider level 2.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllpdiv",
-                    ),
-                },
-                Field {
-                    name: "pllpdiv1",
-                    description: Some(
-                        "PLL3 VCO frequency divider level 1.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 27,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllpdiv",
-                    ),
-                },
-                Field {
-                    name: "pllpdiven",
-                    description: Some(
-                        "PLL3 post divider POSTDIV1, POSTDIV2, and PLL clock output enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 30,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pll4cfgr1",
-            extends: None,
-            description: Some(
-                "RCC PLL4 configuration register 1.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "plldivn",
-                    description: Some(
-                        "PLL4 Integer part for the VCO multiplication factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 12,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "plldivm",
-                    description: Some(
-                        "PLL4 reference input clock divide frequency ratio.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 20,
-                        },
-                    ),
-                    bit_size: 6,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Plldivm",
-                    ),
-                },
-                Field {
-                    name: "pllbyp",
-                    description: Some(
-                        "PLL4 bypass.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 27,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllbyp",
-                    ),
-                },
-                Field {
-                    name: "pllsel",
-                    description: Some(
-                        "PLL4 source selection of the reference clock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllsel",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pll4cfgr2",
-            extends: None,
-            description: Some(
-                "RCC PLL4 configuration register 2.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "plldivnfrac",
-                    description: Some(
-                        "PLL4 Fractional part of the VCO multiplication factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 24,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Pll4cfgr3",
-            extends: None,
-            description: Some(
-                "RCC PLL4 configuration register 3.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "pllmodssrst",
-                    description: Some(
-                        "PLL4 Modulation Spread Spectrum reset.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "plldacen",
-                    description: Some(
-                        "PLL4 noise canceling DAC enable in fractional mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "pllmodssdis",
-                    description: Some(
-                        "PLL4 Modulation Spread-Spectrum Disable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllmodssdis",
-                    ),
-                },
-                Field {
-                    name: "pllmoddsen",
-                    description: Some(
-                        "PLL4 Modulation Spread-Spectrum (and Fractional Divide) enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "pllmodsprdw",
-                    description: Some(
-                        "PLL4 Modulation Down Spread.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllmodsprdw",
-                    ),
-                },
-                Field {
-                    name: "pllmoddiv",
-                    description: Some(
-                        "PLL4 Modulation Division frequency adjustment.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 4,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "pllmodspr",
-                    description: Some(
-                        "PLL4 Modulation Spread depth adjustment.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 5,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-                Field {
-                    name: "pllpdiv2",
-                    description: Some(
-                        "PLL4 VCO frequency divider level 2.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllpdiv",
-                    ),
-                },
-                Field {
-                    name: "pllpdiv1",
-                    description: Some(
-                        "PLL4 VCO frequency divider level 1.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 27,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Pllpdiv",
-                    ),
-                },
-                Field {
-                    name: "pllpdiven",
-                    description: Some(
-                        "PLL4 post divider POSTDIV1, POSTDIV2, and PLL clock output enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 30,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 1,
-                                stride: 0,
-                            },
-                        ),
-                    ),
+                    array: None,
                     enumm: None,
                 },
             ],
@@ -37774,9 +35250,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "ic1sec",
+                    name: "icsec",
                     description: Some(
-                        "Defines the secure protection of the IC1 divider configuration bits.",
+                        "Defines the secure protection of the ICx divider configuration bits.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -37784,314 +35260,15 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 20,
+                                stride: 1,
+                            },
+                        ),
                     ),
-                },
-                Field {
-                    name: "ic2sec",
-                    description: Some(
-                        "Defines the secure protection of the IC2 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic3sec",
-                    description: Some(
-                        "Defines the secure protection of the IC3 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic4sec",
-                    description: Some(
-                        "Defines the secure protection of the IC4 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic5sec",
-                    description: Some(
-                        "Defines the secure protection of the IC5 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic6sec",
-                    description: Some(
-                        "Defines the secure protection of the IC6 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic7sec",
-                    description: Some(
-                        "Defines the secure protection of the IC7 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic8sec",
-                    description: Some(
-                        "Defines the secure protection of the IC8 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 7,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic9sec",
-                    description: Some(
-                        "Defines the secure protection of the IC9 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic10sec",
-                    description: Some(
-                        "Defines the secure protection of the IC10 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic11sec",
-                    description: Some(
-                        "Defines the secure protection of the IC11 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 10,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic12sec",
-                    description: Some(
-                        "Defines the secure protection of the IC12 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 11,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic13sec",
-                    description: Some(
-                        "Defines the secure protection of the IC13 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic14sec",
-                    description: Some(
-                        "Defines the secure protection of the IC14 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 13,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic15sec",
-                    description: Some(
-                        "Defines the secure protection of the IC15 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic16sec",
-                    description: Some(
-                        "Defines the secure protection of the IC16 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 15,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic17sec",
-                    description: Some(
-                        "Defines the secure protection of the IC17 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic18sec",
-                    description: Some(
-                        "Defines the secure protection of the IC18 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 17,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic19sec",
-                    description: Some(
-                        "Defines the secure protection of the IC19 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 18,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
-                },
-                Field {
-                    name: "ic20sec",
-                    description: Some(
-                        "Defines the secure protection of the IC20 divider configuration bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 19,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Icsec",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -38579,9 +35756,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lsirdy",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "lserdy",
@@ -38595,9 +35770,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lserdy",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "msirdy",
@@ -38611,9 +35784,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Msirdy",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "hsirdy",
@@ -38627,9 +35798,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Hsirdy",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "hserdy",
@@ -38643,9 +35812,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Hserdy",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "pllrdy",
@@ -38666,9 +35833,7 @@ pub(crate) static REGISTERS: IR = IR {
                             },
                         ),
                     ),
-                    enumm: Some(
-                        "Pllrdy",
-                    ),
+                    enumm: None,
                 },
             ],
         },
@@ -39018,28 +36183,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "DIV1",
                     description: Some(
                         "ck_icn_p_adf1 is divided by 1.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "DIV2",
                     description: Some(
                         "ck_icn_p_adf1 is divided by 2.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "DIV3",
                     description: Some(
                         "ck_icn_p_adf1 is divided by 3.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "DIV4",
                     description: Some(
                         "ck_icn_p_adf1 is divided by 4.",
                     ),
@@ -39643,7 +36808,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Dcmippsel",
+            name: "Dcmisel",
             description: None,
             bit_size: 2,
             variants: &[
@@ -40154,27 +37319,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Hsebyp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NO_BYPASS",
-                    description: Some(
-                        "HSE oscillator not bypassed (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BYPASS",
-                    description: Some(
-                        "HSE oscillator bypassed with an external clock.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Hsecssbpre",
             description: None,
             bit_size: 4,
@@ -40483,27 +37627,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Hserdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NO_RDY",
-                    description: Some(
-                        "HSE is not ready (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RDY",
-                    description: Some(
-                        "HSE is ready.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Hserdyc",
             description: None,
             bit_size: 1,
@@ -40666,27 +37789,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "PRIV",
                     description: Some(
                         "HSI configuration bits are accessible by privilege software only.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsirdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NO_RDY",
-                    description: Some(
-                        "HSI is not ready.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RDY",
-                    description: Some(
-                        "HSI is ready (default after reset).",
                     ),
                     value: 1,
                 },
@@ -41302,770 +38404,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ic10int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC10 = pllx_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC10 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC10 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC10 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC10 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic10sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected (default after reset).",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic11int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC11 = pllx_ck.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC11 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC11 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC11 = pllx_ck / 4 (default after reset).",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC11 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic11sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic12int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC12 = pllx_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC12 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC12 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC12 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC12 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic12sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic13int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC13 = pllx_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC13 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC13 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC13 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC13 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic13sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic14int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC14 = pllx_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC14 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC14 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC14 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC14 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic14sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic15int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC15 = pllx_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC15 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC15 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC15 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC15 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic15sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic16int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC16 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC16 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC16 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC16 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic16sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic17int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC17 = pllx_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC17 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC17 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC17 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC17 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic17sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic18int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC18 = pllx_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC18 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC18 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC18 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC18 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic18sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic19int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC19 = pllx_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC19 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC19 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC19 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC19 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic19sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic1int",
+            name: "Icint",
             description: None,
             bit_size: 8,
             variants: &[
@@ -42103,734 +38442,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "IC1 = pllx_ck / 256.",
                     ),
                     value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic1sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic20int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC20 = pllx_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC20 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC20 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC20 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC20 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic20sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic2int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC2 = pllx_ck.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC2 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC2 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC2 = pllx_ck / 4 (default after reset).",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC2 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic2sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic3int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC3 = pllx_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC3 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC3 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC3 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC3 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic3sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic4int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC4 = pllx_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC4 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC4 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC4 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC4 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic4sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic5int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC5 = pllx_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC5 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC5 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC5 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC5 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic5sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic6int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC6 = pllx_ck.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC6 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC6 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC6 = pllx_ck / 4 (default after reset).",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC6 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic6sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic7int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC7 = pllx_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC7 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC7 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC7 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC7 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic7sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected (default after reset).",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic8int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC8 = pllx_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC8 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC8 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC8 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC8 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic8sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected (default after reset).",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic9int",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "IC9 = pllx_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "IC9 = pllx_ck / 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "IC9 = pllx_ck / 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "IC9 = pllx_ck / 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "IC9 = pllx_ck / 256.",
-                    ),
-                    value: 255,
-                },
-            ],
-        },
-        Enum {
-            name: "Ic9sel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "PLL1",
-                    description: Some(
-                        "pll1_ck is selected.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLL2",
-                    description: Some(
-                        "pll2_ck is selected (default after reset).",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV4",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HSI_OSC_DIV8",
-                    description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
-                    ),
-                    value: 3,
                 },
             ],
         },
@@ -42898,23 +38509,37 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Icsec",
+            name: "Icsel",
             description: None,
-            bit_size: 1,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NON_SECURE",
+                    name: "PLL1",
                     description: Some(
-                        "IC10 configuration bits are accessible by non-secure software only (default after reset).",
+                        "pll1_ck is selected (default after reset).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SECURE",
+                    name: "PLL2",
                     description: Some(
-                        "IC10 configuration bits are accessible by secure software only.",
+                        "pll2_ck is selected.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "HSI_OSC_DIV4",
+                    description: Some(
+                        "hsi_ck = hsi_osc_ck / 4.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "HSI_OSC_DIV8",
+                    description: Some(
+                        "hsi_ck = hsi_osc_ck / 8.",
+                    ),
+                    value: 3,
                 },
             ],
         },
@@ -43108,27 +38733,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lsebyp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NO_BYPASS",
-                    description: Some(
-                        "LSE oscillator not bypassed (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BYPASS",
-                    description: Some(
-                        "LSE oscillator bypassed with an external clock.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Lsecssc",
             description: None,
             bit_size: 1,
@@ -43239,7 +38843,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "LOWEST",
+                    name: "LOW",
                     description: Some(
                         "Lowest drive (default after reset).",
                     ),
@@ -43260,7 +38864,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HIGHEST",
+                    name: "HIGH",
                     description: Some(
                         "Highest drive.",
                     ),
@@ -43347,27 +38951,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "PRIVILAGE",
                     description: Some(
                         "LSE configuration bits are accessible by privilege software only.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lserdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOT_READY",
-                    description: Some(
-                        "LSE is not ready (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "READY",
-                    description: Some(
-                        "LSE is ready.",
                     ),
                     value: 1,
                 },
@@ -43521,90 +39104,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lsirdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOT_READY",
-                    description: Some(
-                        "LSI is not ready (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "READY",
-                    description: Some(
-                        "LSI is ready.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsirdyc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOT_MODIFIED",
-                    description: Some(
-                        "LSIRDYF not modified (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CLEARED",
-                    description: Some(
-                        "LSIRDYF cleared.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsirdyf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NO_INTERRUPT",
-                    description: Some(
-                        "no clock ready interrupt caused by the LSI (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "INTERRUPT",
-                    description: Some(
-                        "clock ready interrupt caused by the LSI.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsirdyie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "LSI ready interrupt disabled (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ENABLED",
-                    description: Some(
-                        "LSI ready interrupt enabled.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Lsisec",
             description: None,
             bit_size: 1,
@@ -43661,56 +39160,14 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Mcopre",
-            description: None,
-            bit_size: 4,
-            variants: &[
-                EnumVariant {
-                    name: "DIV1",
-                    description: Some(
-                        "ck_icn_p_mce3 is divided by 1.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "ck_icn_p_mce3 is divided by 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: Some(
-                        "ck_icn_p_mce3 is divided by 3.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "ck_icn_p_mce3 is divided by 4.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV16",
-                    description: Some(
-                        "ck_icn_p_mce3 is divided by 16.",
-                    ),
-                    value: 15,
-                },
-            ],
-        },
-        Enum {
-            name: "Mcosel",
+            name: "Mco1sel",
             description: None,
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "HSI_DIV",
+                    name: "HSI",
                     description: Some(
-                        "hsi_div_ck selected as reference clock (default after reset).",
+                        "hsi selected as reference clock (default after reset).",
                     ),
                     value: 0,
                 },
@@ -43762,6 +39219,111 @@ pub(crate) static REGISTERS: IR = IR {
                         "sysa_ck selected as reference clock.",
                     ),
                     value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Mco2sel",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "HSI",
+                    description: Some(
+                        "hsi selected as reference clock (default after reset).",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "lse_ck selected as reference clock.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "MSI",
+                    description: Some(
+                        "msi_ck selected as reference clock.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LSI",
+                    description: Some(
+                        "lsi_ck selected as reference clock.",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "HSE",
+                    description: Some(
+                        "hse_ck selected as reference clock.",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "IC15",
+                    description: Some(
+                        "ic15_ck selected as reference clock.",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "IC20",
+                    description: Some(
+                        "ic20_ck selected as reference clock.",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "SYSB",
+                    description: Some(
+                        "sysb_ck selected as reference clock.",
+                    ),
+                    value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Mcopre",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "DIV1",
+                    description: Some(
+                        "ck_icn_p_mce3 is divided by 1.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "ck_icn_p_mce3 is divided by 2.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "DIV3",
+                    description: Some(
+                        "ck_icn_p_mce3 is divided by 3.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "ck_icn_p_mce3 is divided by 4.",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some(
+                        "ck_icn_p_mce3 is divided by 16.",
+                    ),
+                    value: 15,
                 },
             ],
         },
@@ -44110,27 +39672,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "PRIVILEGE",
                     description: Some(
                         "MSI configuration bits are accessible by privilege software only.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Msirdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NOT_READY",
-                    description: Some(
-                        "MSI is not ready (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "READY",
-                    description: Some(
-                        "MSI is ready.",
                     ),
                     value: 1,
                 },
@@ -44508,38 +40049,10 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Pllbyp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "VCO_POSTDIV",
-                    description: Some(
-                        "PLL output is driven by the VCO, via the optional POSTDIV division.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BYPASS",
-                    description: Some(
-                        "PLL output is bypassed and driven by the PLL reference clock (default after reset).",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Plldivm",
             description: None,
             bit_size: 6,
             variants: &[
-                EnumVariant {
-                    name: "NOT_APPLICABLE",
-                    description: Some(
-                        "Not applicable when PLL is enabled.",
-                    ),
-                    value: 0,
-                },
                 EnumVariant {
                     name: "DIV1",
                     description: Some(
@@ -44632,13 +40145,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "NOT_APPLICABLE",
-                    description: Some(
-                        "Not applicable.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "DIV1",
                     description: Some(
                         "VCO output is divided by 1 (minimum value) (default after reset).",
@@ -44691,27 +40197,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "PRIVILEGE",
                     description: Some(
                         "PLL1 configuration bits are accessible by privilege software only.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllrdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "UNLOCKED",
-                    description: Some(
-                        "PLL1 unlocked (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LOCKED",
-                    description: Some(
-                        "PLL1 locked.",
                     ),
                     value: 1,
                 },
@@ -45254,6 +40739,13 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
+                EnumVariant {
+                    name: "DISABLE",
+                    description: Some(
+                        "No clock used as RTC clock.",
+                    ),
+                    value: 0,
+                },
                 EnumVariant {
                     name: "LSE",
                     description: Some(

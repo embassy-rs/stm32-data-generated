@@ -880,7 +880,7 @@ pub const SAI2: *mut () = 0x4200_5c00usize as _;
 pub const RAMCFG: *mut () = 0x4202_3000usize as _;
 pub const MDF1: *mut () = 0x4202_5000usize as _;
 pub const ADF1: *mut () = 0x4202_6000usize as _;
-pub const DBGMCU: *mut () = 0x4400_1000usize as _;
+pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x4400_1000usize as _) };
 pub const RNG: *mut () = 0x4402_0000usize as _;
 pub const HASH: *mut () = 0x4402_0400usize as _;
 pub const CRYP: cryp::Cryp = unsafe { cryp::Cryp::from_ptr(0x4402_0800usize as _) };
@@ -894,7 +894,7 @@ pub const VREFBUF: *mut () = 0x4600_3c00usize as _;
 pub const RTC: *mut () = 0x4600_4000usize as _;
 pub const TAMP: *mut () = 0x4600_4400usize as _;
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4600_4800usize as _) };
-pub const SYSCFG: *mut () = 0x4600_8000usize as _;
+pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4600_8000usize as _) };
 pub const BSEC: *mut () = 0x4600_9000usize as _;
 pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x4600_9014usize as _) };
 pub const DTS: dts::Dts = unsafe { dts::Dts::from_ptr(0x4600_a000usize as _) };
@@ -910,7 +910,7 @@ pub const GPION: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4602_3400usize as 
 pub const GPIOO: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4602_3800usize as _) };
 pub const GPIOP: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4602_3c00usize as _) };
 pub const GPIOQ: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4602_4000usize as _) };
-pub const PWR: *mut () = 0x4602_4800usize as _;
+pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4602_4800usize as _) };
 pub const CRC: *mut () = 0x4602_4c00usize as _;
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4602_5000usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4602_8000usize as _) };
@@ -945,13 +945,15 @@ pub use cortex_m_rt::interrupt;
 pub use Interrupt as interrupt;
 #[path = "../../peripherals/cryp_v2.rs"]
 pub mod cryp;
+#[path = "../../peripherals/dbgmcu_n6.rs"]
+pub mod dbgmcu;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
 #[path = "../../peripherals/dma2d_v1.rs"]
 pub mod dma2d;
 #[path = "../../peripherals/dts_v1.rs"]
 pub mod dts;
-#[path = "../../peripherals/exti_v1.rs"]
+#[path = "../../peripherals/exti_n6.rs"]
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v1.rs"]
 pub mod fdcanram;
@@ -969,10 +971,14 @@ pub mod mdios;
 pub mod otg;
 #[path = "../../peripherals/pssi_v1.rs"]
 pub mod pssi;
+#[path = "../../peripherals/pwr_n6.rs"]
+pub mod pwr;
 #[path = "../../peripherals/rcc_n6.rs"]
 pub mod rcc;
 #[path = "../../peripherals/spi_v5.rs"]
 pub mod spi;
+#[path = "../../peripherals/syscfg_n6.rs"]
+pub mod syscfg;
 #[path = "../../peripherals/timer_v1.rs"]
 pub mod timer;
 #[path = "../../peripherals/ucpd_v1.rs"]

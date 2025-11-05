@@ -488,7 +488,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "DBGMCU",
         address: 0x44001000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "dbgmcu",
+            version: "n6",
+            block: "DBGMCU",
+            ir: &dbgmcu::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -504,7 +509,22 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             block: "DCMI",
             ir: &dcmi::REGISTERS,
         }),
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            bus_clock: "PCLK5",
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR1",
+                field: "DCMISEL",
+            }),
+            enable: Some(PeripheralRccRegister {
+                register: "APB5ENR",
+                field: "DCMIEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "APB5RSTR",
+                field: "DCMIRST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PA1",
@@ -793,22 +813,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         name: "DCMIPP",
         address: 0x48002000,
         registers: None,
-        rcc: Some(PeripheralRcc {
-            bus_clock: "PCLK5",
-            kernel_clock: Mux(PeripheralRccRegister {
-                register: "CCIPR1",
-                field: "DCMIPPSEL",
-            }),
-            enable: Some(PeripheralRccRegister {
-                register: "APB5ENR",
-                field: "DCMIPPEN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "APB5RSTR",
-                field: "DCMIPPRST",
-            }),
-            stop_mode: StopMode::Stop1,
-        }),
+        rcc: None,
         pins: &[
             PeripheralPin {
                 pin: "PA1",
@@ -1428,7 +1433,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x46025000,
         registers: Some(PeripheralRegisters {
             kind: "exti",
-            version: "v1",
+            version: "n6",
             block: "EXTI",
             ir: &exti::REGISTERS,
         }),
@@ -4903,7 +4908,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "PWR",
         address: 0x46024800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "pwr",
+            version: "n6",
+            block: "PWR",
+            ir: &pwr::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK4",
             kernel_clock: Clock("HCLK4"),
@@ -6491,7 +6501,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SYSCFG",
         address: 0x46008000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "syscfg",
+            version: "n6",
+            block: "SYSCFG",
+            ir: &syscfg::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
             kernel_clock: Clock("PCLK4"),
@@ -10123,13 +10138,15 @@ pub(crate) static PINS: &[Pin] = &[
 ];
 #[path = "../registers/cryp_v2.rs"]
 pub mod cryp;
+#[path = "../registers/dbgmcu_n6.rs"]
+pub mod dbgmcu;
 #[path = "../registers/dcmi_v1.rs"]
 pub mod dcmi;
 #[path = "../registers/dma2d_v1.rs"]
 pub mod dma2d;
 #[path = "../registers/dts_v1.rs"]
 pub mod dts;
-#[path = "../registers/exti_v1.rs"]
+#[path = "../registers/exti_n6.rs"]
 pub mod exti;
 #[path = "../registers/fdcanram_v1.rs"]
 pub mod fdcanram;
@@ -10147,10 +10164,14 @@ pub mod mdios;
 pub mod otg;
 #[path = "../registers/pssi_v1.rs"]
 pub mod pssi;
+#[path = "../registers/pwr_n6.rs"]
+pub mod pwr;
 #[path = "../registers/rcc_n6.rs"]
 pub mod rcc;
 #[path = "../registers/spi_v5.rs"]
 pub mod spi;
+#[path = "../registers/syscfg_n6.rs"]
+pub mod syscfg;
 #[path = "../registers/timer_v1.rs"]
 pub mod timer;
 #[path = "../registers/ucpd_v1.rs"]

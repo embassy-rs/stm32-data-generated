@@ -304,6 +304,36 @@
         "kind": "ram",
         "address": 1073964032,
         "size": 2048
+      },
+      {
+        "name": "FMC_BANK_1",
+        "kind": "ram",
+        "address": 1879048192,
+        "size": 262144000
+      },
+      {
+        "name": "FMC_BANK_3",
+        "kind": "ram",
+        "address": 2147483647,
+        "size": 262144000
+      },
+      {
+        "name": "OCTOSPI_BANK_1",
+        "kind": "ram",
+        "address": 2684354560,
+        "size": 262144000
+      },
+      {
+        "name": "SDRAM_BANK_1",
+        "kind": "ram",
+        "address": 3221225472,
+        "size": 262144000
+      },
+      {
+        "name": "SDRAM_BANK_2",
+        "kind": "ram",
+        "address": 3489660928,
+        "size": 262144000
       }
     ]
   ],

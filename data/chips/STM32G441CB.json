@@ -1170,12 +1170,24 @@
               "signal": "IN2"
             },
             {
+              "pin": "PA1",
+              "signal": "INN1"
+            },
+            {
               "pin": "PA2",
               "signal": "IN3"
             },
             {
+              "pin": "PA2",
+              "signal": "INN2"
+            },
+            {
               "pin": "PA3",
               "signal": "IN4"
+            },
+            {
+              "pin": "PA3",
+              "signal": "INN3"
             },
             {
               "pin": "PB0",
@@ -1186,20 +1198,40 @@
               "signal": "IN12"
             },
             {
+              "pin": "PB1",
+              "signal": "INN11"
+            },
+            {
               "pin": "PB11",
               "signal": "IN14"
+            },
+            {
+              "pin": "PB11",
+              "signal": "INN15"
             },
             {
               "pin": "PB12",
               "signal": "IN11"
             },
             {
+              "pin": "PB12",
+              "signal": "INN10"
+            },
+            {
               "pin": "PB14",
               "signal": "IN5"
             },
             {
+              "pin": "PB14",
+              "signal": "INN4"
+            },
+            {
               "pin": "PF0",
               "signal": "IN10"
+            },
+            {
+              "pin": "PF0",
+              "signal": "INN9"
             }
           ],
           "interrupts": [

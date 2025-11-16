@@ -3883,12 +3883,12 @@
               "request": 61
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 62
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA2",
               "request": 62
             },
@@ -4095,12 +4095,12 @@
               "request": 75
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 76
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA2",
               "request": 76
             }
@@ -4297,12 +4297,12 @@
               "request": 80
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 81
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA2",
               "request": 81
             },
@@ -4362,12 +4362,12 @@
           ],
           "dma_channels": [
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 4
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA2",
               "request": 4
             }
@@ -4417,12 +4417,12 @@
           ],
           "dma_channels": [
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 5
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA2",
               "request": 5
             }

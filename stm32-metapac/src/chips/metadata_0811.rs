@@ -6003,7 +6003,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(45),
             },
             PeripheralDmaChannel {
-                signal: "UPD",
+                signal: "UP",
                 channel: None,
                 dmamux: None,
                 remap: &[],
@@ -6140,7 +6140,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(78),
             },
             PeripheralDmaChannel {
-                signal: "UPD",
+                signal: "UP",
                 channel: None,
                 dmamux: None,
                 remap: &[],
@@ -6247,7 +6247,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(82),
             },
             PeripheralDmaChannel {
-                signal: "UPD",
+                signal: "UP",
                 channel: None,
                 dmamux: None,
                 remap: &[],
@@ -6343,7 +6343,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(84),
             },
             PeripheralDmaChannel {
-                signal: "UPD",
+                signal: "UP",
                 channel: None,
                 dmamux: None,
                 remap: &[],
@@ -6493,7 +6493,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(59),
             },
             PeripheralDmaChannel {
-                signal: "UPD",
+                signal: "UP",
                 channel: None,
                 dmamux: None,
                 remap: &[],
@@ -6663,7 +6663,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(64),
             },
             PeripheralDmaChannel {
-                signal: "UPD",
+                signal: "UP",
                 channel: None,
                 dmamux: None,
                 remap: &[],
@@ -6806,7 +6806,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(70),
             },
             PeripheralDmaChannel {
-                signal: "UPD",
+                signal: "UP",
                 channel: None,
                 dmamux: None,
                 remap: &[],
@@ -6916,7 +6916,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(75),
             },
             PeripheralDmaChannel {
-                signal: "UPD",
+                signal: "UP",
                 channel: None,
                 dmamux: None,
                 remap: &[],
@@ -6980,7 +6980,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         pins: &[],
         dma_channels: &[PeripheralDmaChannel {
-            signal: "UPD",
+            signal: "UP",
             channel: None,
             dmamux: None,
             remap: &[],
@@ -7035,7 +7035,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         pins: &[],
         dma_channels: &[PeripheralDmaChannel {
-            signal: "UPD",
+            signal: "UP",
             channel: None,
             dmamux: None,
             remap: &[],
@@ -7209,7 +7209,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(52),
             },
             PeripheralDmaChannel {
-                signal: "UPD",
+                signal: "UP",
                 channel: None,
                 dmamux: None,
                 remap: &[],

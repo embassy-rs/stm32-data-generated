@@ -8314,7 +8314,7 @@
               "request": 45
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 46
             },
@@ -8446,7 +8446,7 @@
               "request": 78
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 79
             },
@@ -8538,7 +8538,7 @@
               "request": 82
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 83
             }
@@ -8625,7 +8625,7 @@
               "request": 84
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 85
             }
@@ -8757,7 +8757,7 @@
               "request": 59
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 60
             }
@@ -8909,7 +8909,7 @@
               "request": 64
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 65
             },
@@ -9031,7 +9031,7 @@
               "request": 70
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 71
             }
@@ -9168,7 +9168,7 @@
               "request": 75
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 76
             },
@@ -9223,7 +9223,7 @@
           ],
           "dma_channels": [
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 4
             }
@@ -9273,7 +9273,7 @@
           ],
           "dma_channels": [
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 5
             }
@@ -9480,7 +9480,7 @@
               "request": 52
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 53
             },

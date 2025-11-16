@@ -2125,7 +2125,7 @@
               "request": 22
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 23
             },
@@ -2222,7 +2222,7 @@
               "request": 37
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 38
             }
@@ -2299,7 +2299,7 @@
               "request": 39
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 40
             }
@@ -2416,7 +2416,7 @@
               "request": 29
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 30
             }
@@ -2548,7 +2548,7 @@
               "request": 34
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 35
             },

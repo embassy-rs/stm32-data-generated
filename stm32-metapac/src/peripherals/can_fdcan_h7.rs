@@ -4158,13 +4158,13 @@ pub mod regs {
         }
         #[doc = "Gap Enable"]
         #[inline(always)]
-        pub const fn gen(&self) -> bool {
+        pub const fn gaen(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
             val != 0
         }
         #[doc = "Gap Enable"]
         #[inline(always)]
-        pub fn set_gen(&mut self, val: bool) {
+        pub fn set_gaen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Time Master"]
@@ -4266,7 +4266,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ttocf")
                 .field("om", &self.om())
-                .field("gen", &self.gen())
+                .field("gaen", &self.gaen())
                 .field("tm", &self.tm())
                 .field("ldsdl", &self.ldsdl())
                 .field("irto", &self.irto())
@@ -4281,7 +4281,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ttocf {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ttocf {{ om: {=u8:?}, gen: {=bool:?}, tm: {=bool:?}, ldsdl: {=u8:?}, irto: {=u8:?}, eecs: {=bool:?}, awl: {=u8:?}, egtf: {=bool:?}, ecc: {=bool:?}, evtp: {=bool:?} }}" , self . om () , self . gen () , self . tm () , self . ldsdl () , self . irto () , self . eecs () , self . awl () , self . egtf () , self . ecc () , self . evtp ())
+            defmt :: write ! (f , "Ttocf {{ om: {=u8:?}, gaen: {=bool:?}, tm: {=bool:?}, ldsdl: {=u8:?}, irto: {=u8:?}, eecs: {=bool:?}, awl: {=u8:?}, egtf: {=bool:?}, ecc: {=bool:?}, evtp: {=bool:?} }}" , self . om () , self . gaen () , self . tm () , self . ldsdl () , self . irto () , self . eecs () , self . awl () , self . egtf () , self . ecc () , self . evtp ())
         }
     }
     #[doc = "FDCAN TT Operation Control Register"]

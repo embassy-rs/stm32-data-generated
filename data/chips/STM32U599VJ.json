@@ -2743,7 +2743,8 @@
             "reset": {
               "register": "AHB1RSTR",
               "field": "GPDMA1RST"
-            }
+            },
+            "stop_mode": "Stop2"
           },
           "interrupts": [
             {
@@ -3601,7 +3602,7 @@
               "register": "AHB3RSTR",
               "field": "LPDMA1RST"
             },
-            "stop_mode": "Stop2"
+            "stop_mode": "Standby"
           },
           "interrupts": [
             {

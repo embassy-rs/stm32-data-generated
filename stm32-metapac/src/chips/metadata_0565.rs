@@ -837,7 +837,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             block: "LCD",
             ir: &lcd::REGISTERS,
         }),
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            bus_clock: "PCLK1",
+            kernel_clock: Clock("PCLK1"),
+            enable: Some(PeripheralRccRegister {
+                register: "APB1ENR",
+                field: "LCDEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "APB1RSTR",
+                field: "LCDRST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PA1",

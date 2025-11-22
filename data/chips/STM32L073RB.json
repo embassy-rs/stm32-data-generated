@@ -1985,6 +1985,18 @@
             "version": "v2",
             "block": "LCD"
           },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": "PCLK1",
+            "enable": {
+              "register": "APB1ENR",
+              "field": "LCDEN"
+            },
+            "reset": {
+              "register": "APB1RSTR",
+              "field": "LCDRST"
+            }
+          },
           "pins": [
             {
               "pin": "PA1",

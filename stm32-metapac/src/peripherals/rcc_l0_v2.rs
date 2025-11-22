@@ -475,6 +475,17 @@ pub mod regs {
         pub fn set_tim7en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
+        #[doc = "LCD clock enable"]
+        #[inline(always)]
+        pub const fn lcden(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LCD clock enable"]
+        #[inline(always)]
+        pub fn set_lcden(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
         #[doc = "Window watchdog clock enable"]
         #[inline(always)]
         pub const fn wwdgen(&self) -> bool {
@@ -643,6 +654,7 @@ pub mod regs {
                 .field("tim3en", &self.tim3en())
                 .field("tim6en", &self.tim6en())
                 .field("tim7en", &self.tim7en())
+                .field("lcden", &self.lcden())
                 .field("wwdgen", &self.wwdgen())
                 .field("spi2en", &self.spi2en())
                 .field("usart2en", &self.usart2en())
@@ -663,7 +675,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1enr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1enr {{ tim2en: {=bool:?}, tim3en: {=bool:?}, tim6en: {=bool:?}, tim7en: {=bool:?}, wwdgen: {=bool:?}, spi2en: {=bool:?}, usart2en: {=bool:?}, lpuart1en: {=bool:?}, usart4en: {=bool:?}, usart5en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, usben: {=bool:?}, crsen: {=bool:?}, pwren: {=bool:?}, dacen: {=bool:?}, i2c3en: {=bool:?}, lptim1en: {=bool:?} }}" , self . tim2en () , self . tim3en () , self . tim6en () , self . tim7en () , self . wwdgen () , self . spi2en () , self . usart2en () , self . lpuart1en () , self . usart4en () , self . usart5en () , self . i2c1en () , self . i2c2en () , self . usben () , self . crsen () , self . pwren () , self . dacen () , self . i2c3en () , self . lptim1en ())
+            defmt :: write ! (f , "Apb1enr {{ tim2en: {=bool:?}, tim3en: {=bool:?}, tim6en: {=bool:?}, tim7en: {=bool:?}, lcden: {=bool:?}, wwdgen: {=bool:?}, spi2en: {=bool:?}, usart2en: {=bool:?}, lpuart1en: {=bool:?}, usart4en: {=bool:?}, usart5en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, usben: {=bool:?}, crsen: {=bool:?}, pwren: {=bool:?}, dacen: {=bool:?}, i2c3en: {=bool:?}, lptim1en: {=bool:?} }}" , self . tim2en () , self . tim3en () , self . tim6en () , self . tim7en () , self . lcden () , self . wwdgen () , self . spi2en () , self . usart2en () , self . lpuart1en () , self . usart4en () , self . usart5en () , self . i2c1en () , self . i2c2en () , self . usben () , self . crsen () , self . pwren () , self . dacen () , self . i2c3en () , self . lptim1en ())
         }
     }
     #[doc = "APB1 peripheral reset register"]
@@ -714,6 +726,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_tim7rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "LCD reset"]
+        #[inline(always)]
+        pub const fn lcdrst(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LCD reset"]
+        #[inline(always)]
+        pub fn set_lcdrst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Window watchdog reset"]
         #[inline(always)]
@@ -883,6 +906,7 @@ pub mod regs {
                 .field("tim3rst", &self.tim3rst())
                 .field("tim6rst", &self.tim6rst())
                 .field("tim7rst", &self.tim7rst())
+                .field("lcdrst", &self.lcdrst())
                 .field("wwdgrst", &self.wwdgrst())
                 .field("spi2rst", &self.spi2rst())
                 .field("usart2rst", &self.usart2rst())
@@ -903,7 +927,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1rstr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1rstr {{ tim2rst: {=bool:?}, tim3rst: {=bool:?}, tim6rst: {=bool:?}, tim7rst: {=bool:?}, wwdgrst: {=bool:?}, spi2rst: {=bool:?}, usart2rst: {=bool:?}, lpuart1rst: {=bool:?}, usart4rst: {=bool:?}, usart5rst: {=bool:?}, i2c1rst: {=bool:?}, i2c2rst: {=bool:?}, usbrst: {=bool:?}, crsrst: {=bool:?}, pwrrst: {=bool:?}, dacrst: {=bool:?}, i2c3rst: {=bool:?}, lptim1rst: {=bool:?} }}" , self . tim2rst () , self . tim3rst () , self . tim6rst () , self . tim7rst () , self . wwdgrst () , self . spi2rst () , self . usart2rst () , self . lpuart1rst () , self . usart4rst () , self . usart5rst () , self . i2c1rst () , self . i2c2rst () , self . usbrst () , self . crsrst () , self . pwrrst () , self . dacrst () , self . i2c3rst () , self . lptim1rst ())
+            defmt :: write ! (f , "Apb1rstr {{ tim2rst: {=bool:?}, tim3rst: {=bool:?}, tim6rst: {=bool:?}, tim7rst: {=bool:?}, lcdrst: {=bool:?}, wwdgrst: {=bool:?}, spi2rst: {=bool:?}, usart2rst: {=bool:?}, lpuart1rst: {=bool:?}, usart4rst: {=bool:?}, usart5rst: {=bool:?}, i2c1rst: {=bool:?}, i2c2rst: {=bool:?}, usbrst: {=bool:?}, crsrst: {=bool:?}, pwrrst: {=bool:?}, dacrst: {=bool:?}, i2c3rst: {=bool:?}, lptim1rst: {=bool:?} }}" , self . tim2rst () , self . tim3rst () , self . tim6rst () , self . tim7rst () , self . lcdrst () , self . wwdgrst () , self . spi2rst () , self . usart2rst () , self . lpuart1rst () , self . usart4rst () , self . usart5rst () , self . i2c1rst () , self . i2c2rst () , self . usbrst () , self . crsrst () , self . pwrrst () , self . dacrst () , self . i2c3rst () , self . lptim1rst ())
         }
     }
     #[doc = "APB1 peripheral clock enable in sleep mode register"]
@@ -954,6 +978,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_tim7smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "LCD clock enable during Sleep mode"]
+        #[inline(always)]
+        pub const fn lcdsmen(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "LCD clock enable during Sleep mode"]
+        #[inline(always)]
+        pub fn set_lcdsmen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Window watchdog clock enable during sleep mode"]
         #[inline(always)]
@@ -1123,6 +1158,7 @@ pub mod regs {
                 .field("tim3smen", &self.tim3smen())
                 .field("tim6smen", &self.tim6smen())
                 .field("tim7smen", &self.tim7smen())
+                .field("lcdsmen", &self.lcdsmen())
                 .field("wwdgsmen", &self.wwdgsmen())
                 .field("spi2smen", &self.spi2smen())
                 .field("usart2smen", &self.usart2smen())
@@ -1143,7 +1179,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1smenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1smenr {{ tim2smen: {=bool:?}, tim3smen: {=bool:?}, tim6smen: {=bool:?}, tim7smen: {=bool:?}, wwdgsmen: {=bool:?}, spi2smen: {=bool:?}, usart2smen: {=bool:?}, lpuart1smen: {=bool:?}, usart4smen: {=bool:?}, usart5smen: {=bool:?}, i2c1smen: {=bool:?}, i2c2smen: {=bool:?}, usbsmen: {=bool:?}, crssmen: {=bool:?}, pwrsmen: {=bool:?}, dacsmen: {=bool:?}, i2c3smen: {=bool:?}, lptim1smen: {=bool:?} }}" , self . tim2smen () , self . tim3smen () , self . tim6smen () , self . tim7smen () , self . wwdgsmen () , self . spi2smen () , self . usart2smen () , self . lpuart1smen () , self . usart4smen () , self . usart5smen () , self . i2c1smen () , self . i2c2smen () , self . usbsmen () , self . crssmen () , self . pwrsmen () , self . dacsmen () , self . i2c3smen () , self . lptim1smen ())
+            defmt :: write ! (f , "Apb1smenr {{ tim2smen: {=bool:?}, tim3smen: {=bool:?}, tim6smen: {=bool:?}, tim7smen: {=bool:?}, lcdsmen: {=bool:?}, wwdgsmen: {=bool:?}, spi2smen: {=bool:?}, usart2smen: {=bool:?}, lpuart1smen: {=bool:?}, usart4smen: {=bool:?}, usart5smen: {=bool:?}, i2c1smen: {=bool:?}, i2c2smen: {=bool:?}, usbsmen: {=bool:?}, crssmen: {=bool:?}, pwrsmen: {=bool:?}, dacsmen: {=bool:?}, i2c3smen: {=bool:?}, lptim1smen: {=bool:?} }}" , self . tim2smen () , self . tim3smen () , self . tim6smen () , self . tim7smen () , self . lcdsmen () , self . wwdgsmen () , self . spi2smen () , self . usart2smen () , self . lpuart1smen () , self . usart4smen () , self . usart5smen () , self . i2c1smen () , self . i2c2smen () , self . usbsmen () , self . crssmen () , self . pwrsmen () , self . dacsmen () , self . i2c3smen () , self . lptim1smen ())
         }
     }
     #[doc = "APB2 peripheral clock enable register"]

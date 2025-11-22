@@ -731,6 +731,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "lcden",
+                    description: Some(
+                        "LCD clock enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "wwdgen",
                     description: Some(
                         "Window watchdog clock enable",
@@ -993,6 +1007,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "lcdrst",
+                    description: Some(
+                        "LCD reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "wwdgrst",
                     description: Some(
                         "Window watchdog reset",
@@ -1248,6 +1276,20 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lcdsmen",
+                    description: Some(
+                        "LCD clock enable during Sleep mode",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
                         },
                     ),
                     bit_size: 1,

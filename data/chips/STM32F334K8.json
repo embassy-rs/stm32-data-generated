@@ -1644,7 +1644,20 @@
           "pins": [
             {
               "pin": "PA5",
+              "signal": "VINM"
+            },
+            {
+              "pin": "PA5",
               "signal": "VINM1"
+            },
+            {
+              "pin": "PA5",
+              "signal": "VINM_SEC"
+            },
+            {
+              "pin": "PA6",
+              "signal": "DIG",
+              "af": 13
             },
             {
               "pin": "PA6",
@@ -1652,11 +1665,27 @@
             },
             {
               "pin": "PA7",
+              "signal": "VINP"
+            },
+            {
+              "pin": "PA7",
               "signal": "VINP0"
+            },
+            {
+              "pin": "PA7",
+              "signal": "VINP_SEC"
+            },
+            {
+              "pin": "PB0",
+              "signal": "VINP"
             },
             {
               "pin": "PB0",
               "signal": "VINP2"
+            },
+            {
+              "pin": "PB0",
+              "signal": "VINP_SEC"
             }
           ]
         },

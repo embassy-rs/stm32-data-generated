@@ -1706,6 +1706,10 @@
           "pins": [
             {
               "pin": "PA0",
+              "signal": "VINP"
+            },
+            {
+              "pin": "PA0",
               "signal": "VINP2"
             },
             {

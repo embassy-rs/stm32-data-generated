@@ -5971,7 +5971,15 @@
           "pins": [
             {
               "pin": "PA0",
+              "signal": "VINP"
+            },
+            {
+              "pin": "PA0",
               "signal": "VINP0"
+            },
+            {
+              "pin": "PA1",
+              "signal": "VINM"
             },
             {
               "pin": "PA1",
@@ -6006,7 +6014,15 @@
           "pins": [
             {
               "pin": "PA6",
+              "signal": "VINP"
+            },
+            {
+              "pin": "PA6",
               "signal": "VINP0"
+            },
+            {
+              "pin": "PA7",
+              "signal": "VINM"
             },
             {
               "pin": "PA7",

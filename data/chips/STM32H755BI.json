@@ -5943,7 +5943,15 @@
           "pins": [
             {
               "pin": "PA7",
+              "signal": "VINM"
+            },
+            {
+              "pin": "PA7",
               "signal": "VINM1"
+            },
+            {
+              "pin": "PB0",
+              "signal": "VINP"
             },
             {
               "pin": "PB0",
@@ -5952,6 +5960,10 @@
             {
               "pin": "PC4",
               "signal": "VOUT"
+            },
+            {
+              "pin": "PC5",
+              "signal": "VINM"
             },
             {
               "pin": "PC5",
@@ -5986,11 +5998,23 @@
             },
             {
               "pin": "PE8",
+              "signal": "VINM"
+            },
+            {
+              "pin": "PE8",
               "signal": "VINM0"
             },
             {
               "pin": "PE9",
+              "signal": "VINP"
+            },
+            {
+              "pin": "PE9",
               "signal": "VINP0"
+            },
+            {
+              "pin": "PG1",
+              "signal": "VINM"
             },
             {
               "pin": "PG1",
@@ -16475,7 +16499,15 @@
           "pins": [
             {
               "pin": "PA7",
+              "signal": "VINM"
+            },
+            {
+              "pin": "PA7",
               "signal": "VINM1"
+            },
+            {
+              "pin": "PB0",
+              "signal": "VINP"
             },
             {
               "pin": "PB0",
@@ -16484,6 +16516,10 @@
             {
               "pin": "PC4",
               "signal": "VOUT"
+            },
+            {
+              "pin": "PC5",
+              "signal": "VINM"
             },
             {
               "pin": "PC5",
@@ -16518,11 +16554,23 @@
             },
             {
               "pin": "PE8",
+              "signal": "VINM"
+            },
+            {
+              "pin": "PE8",
               "signal": "VINM0"
             },
             {
               "pin": "PE9",
+              "signal": "VINP"
+            },
+            {
+              "pin": "PE9",
               "signal": "VINP0"
+            },
+            {
+              "pin": "PG1",
+              "signal": "VINM"
             },
             {
               "pin": "PG1",

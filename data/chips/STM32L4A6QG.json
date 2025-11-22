@@ -5003,6 +5003,10 @@
           "pins": [
             {
               "pin": "PA0",
+              "signal": "VINP"
+            },
+            {
+              "pin": "PA0",
               "signal": "VINP0"
             },
             {
@@ -5036,6 +5040,10 @@
             }
           },
           "pins": [
+            {
+              "pin": "PA6",
+              "signal": "VINP"
+            },
             {
               "pin": "PA6",
               "signal": "VINP0"

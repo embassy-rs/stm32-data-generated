@@ -124,7 +124,7 @@ unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
 }
 #[cfg(feature = "rt")]
 mod _vectors {
-    extern "C" {
+    unsafe extern "C" {
         fn WWDG();
         fn PVD();
         fn TAMP_STAMP();
@@ -187,8 +187,8 @@ mod _vectors {
         _handler: unsafe extern "C" fn(),
         _reserved: u32,
     }
-    #[link_section = ".vector_table.interrupts"]
-    #[no_mangle]
+    #[unsafe(link_section = ".vector_table.interrupts")]
+    #[unsafe(no_mangle)]
     pub static __INTERRUPTS: [Vector; 86] = [
         Vector { _handler: WWDG },
         Vector { _handler: PVD },

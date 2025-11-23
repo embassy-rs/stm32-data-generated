@@ -74,7 +74,7 @@ unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
 }
 #[cfg(feature = "rt")]
 mod _vectors {
-    extern "C" {
+    unsafe extern "C" {
         fn TZIC_ILA();
         fn PVD_PVM();
         fn RTC_LSECSS();
@@ -112,8 +112,8 @@ mod _vectors {
         _handler: unsafe extern "C" fn(),
         _reserved: u32,
     }
-    #[link_section = ".vector_table.interrupts"]
-    #[no_mangle]
+    #[unsafe(link_section = ".vector_table.interrupts")]
+    #[unsafe(no_mangle)]
     pub static __INTERRUPTS: [Vector; 32] = [
         Vector { _handler: TZIC_ILA },
         Vector { _handler: PVD_PVM },

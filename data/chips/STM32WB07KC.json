@@ -207,9 +207,20 @@
   "memory": [
     [
       {
+        "name": "OTP",
+        "kind": "flash",
+        "address": 268441600,
+        "size": 1024,
+        "settings": {
+          "erase_size": 0,
+          "write_size": 32,
+          "erase_value": 255
+        }
+      },
+      {
         "name": "BANK_1",
         "kind": "flash",
-        "address": 16793600,
+        "address": 268697600,
         "size": 262144,
         "settings": {
           "erase_size": 2048,
@@ -220,19 +231,8 @@
       {
         "name": "SRAM0",
         "kind": "ram",
-        "address": 33554432,
-        "size": 16384
-      },
-      {
-        "name": "OTP",
-        "kind": "flash",
-        "address": 268441600,
-        "size": 1024,
-        "settings": {
-          "erase_size": 0,
-          "write_size": 32,
-          "erase_value": 255
-        }
+        "address": 536870936,
+        "size": 16360
       },
       {
         "name": "SRAM1",

@@ -2395,6 +2395,11 @@
         {
           "name": "COMP1",
           "address": 1073807872,
+          "registers": {
+            "kind": "comp",
+            "version": "v3",
+            "block": "COMP"
+          },
           "pins": [
             {
               "pin": "PB0",
@@ -2433,6 +2438,11 @@
         {
           "name": "COMP2",
           "address": 1073807876,
+          "registers": {
+            "kind": "comp",
+            "version": "v3",
+            "block": "COMP"
+          },
           "pins": [
             {
               "pin": "PB11",

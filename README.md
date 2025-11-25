@@ -21,7 +21,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [CACHEAXI](#cacheaxi) | | | | | | | | | | | | | | | | | ❌ | | | | | | |
 | [CAN](#can) | fdcan_v1 | bxcan | bxcan | bxcan | bxcan | bxcan | bxcan | fdcan_v1 | fdcan_v1 | fdcan_v1 | fdcan_h7, fdcan_v1 | | | bxcan | bxcan | fdcan_v1 | | | fdcan_v1 | | | | |
 | [CEC](#cec) | | v2 | v1 | | v2 | v2 | v2 | v2 | | v2 | v2 | | | | | | | | | | | | |
-| [COMP](#comp) | | ❌ | | | f3_v1, ❌ | | | v1 | v2 | h5 | h7_a, h7_b | ❌ | ❌ | ❌ | ❌ | ❌ | | u0 | u5 | ❌ | | u5 | v3 |
+| [COMP](#comp) | | ❌ | | | f3_v1, ❌ | | | v1 | v2 | h5 | h7_a, h7_b | ❌ | ❌ | v3 | v3 | v3 | | u0 | u5 | ❌ | | u5 | v3 |
 | [CORDIC](#cordic) | | | | | | | | | v1 | v1 | v1 | | | | | | | | v1 | | | | |
 | [CRC](#crc) | v3 | v2, v3 | v1 | v1 | v3 | v1 | v3 | v3 | v3 | v3 | v3 | v3 | v1 | v3 | v3 | v3 | ❌ | v3 | v3 | v3 | v2 | v3 | v3 |
 | [CRS](#crs) | v1 | v1 | | | | | | v1 | v1 | v1 | v1 | v1 | | v1 | v1 | v1 | | v1 | v1 | v1 | | | |
@@ -225,8 +225,8 @@ The following table shows which STM32 peripheral versions are supported across d
 - **u5**: STM32U5, STM32WBA
 - **v1**: STM32G0
 - **v2**: STM32G4
-- **v3**: STM32WL
-- **❌ Unsupported**: STM32F0, STM32F3, STM32L0, STM32L1, STM32L4, STM32L4+, STM32L5, STM32WB
+- **v3**: STM32L4, STM32L4+, STM32L5, STM32WL
+- **❌ Unsupported**: STM32F0, STM32F3, STM32L0, STM32L1, STM32WB
 
 ### CORDIC
 

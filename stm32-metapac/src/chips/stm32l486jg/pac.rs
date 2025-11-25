@@ -415,8 +415,8 @@ pub const SWPMI1: *mut () = 0x4000_8800usize as _;
 pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_9400usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000usize as _) };
 pub const VREFBUF: vrefbuf::Vrefbuf = unsafe { vrefbuf::Vrefbuf::from_ptr(0x4001_0030usize as _) };
-pub const COMP1: *mut () = 0x4001_0200usize as _;
-pub const COMP2: *mut () = 0x4001_0204usize as _;
+pub const COMP1: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_0200usize as _) };
+pub const COMP2: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_0204usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4001_0400usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4001_2800usize as _) };
 pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_2c00usize as _) };
@@ -469,6 +469,8 @@ pub mod aes;
 pub mod bdma;
 #[path = "../../peripherals/can_bxcan.rs"]
 pub mod can;
+#[path = "../../peripherals/comp_v3.rs"]
+pub mod comp;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/dac_v3.rs"]

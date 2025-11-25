@@ -40,6 +40,7 @@ flavors = [
     { regex_feature = "stm32l5.*", target = "thumbv8m.main-none-eabihf" },
     { regex_feature = "stm32u0.*", target = "thumbv6m-none-eabi" },
     { regex_feature = "stm32u5.*", target = "thumbv8m.main-none-eabihf" },
+    { regex_feature = "stm32wb0.*", target = "thumbv6m-none-eabi" },
     { regex_feature = "stm32wba.*", target = "thumbv8m.main-none-eabihf" },
     { regex_feature = "stm32wb.*", target = "thumbv7em-none-eabi" },
     { regex_feature = "stm32wl.*", target = "thumbv7em-none-eabi" },
@@ -1511,6 +1512,14 @@ stm32u5g9bj = []
 stm32u5g9nj = []
 stm32u5g9vj = []
 stm32u5g9zj = []
+stm32wb05kz = []
+stm32wb05tz = []
+stm32wb06cc = []
+stm32wb06kc = []
+stm32wb07cc = []
+stm32wb07kc = []
+stm32wb09ke = []
+stm32wb09te = []
 stm32wb10cc = []
 stm32wb15cc = []
 stm32wb30ce = []

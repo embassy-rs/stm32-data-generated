@@ -3826,7 +3826,7 @@
             },
             {
               "pin": "PB11",
-              "signal": "NCS",
+              "signal": "BK1_NCS",
               "af": 10
             },
             {
@@ -3836,7 +3836,7 @@
             },
             {
               "pin": "PE11",
-              "signal": "NCS",
+              "signal": "BK1_NCS",
               "af": 10
             },
             {

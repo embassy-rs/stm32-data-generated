@@ -2753,7 +2753,7 @@
             },
             {
               "pin": "PB11",
-              "signal": "NCS",
+              "signal": "BK1_NCS",
               "af": 10
             }
           ],

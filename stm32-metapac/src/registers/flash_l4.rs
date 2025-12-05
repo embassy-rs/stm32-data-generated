@@ -472,6 +472,14 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "n_rst_shdw",
+                    description: Some("nRST_SHDW"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "idwg_sw",
                     description: Some("Independent watchdog selection"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),

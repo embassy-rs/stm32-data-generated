@@ -563,6 +563,17 @@ pub mod regs {
         pub fn set_n_rst_stdby(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
+        #[doc = "nRST_SHDW"]
+        #[inline(always)]
+        pub const fn n_rst_shdw(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "nRST_SHDW"]
+        #[inline(always)]
+        pub fn set_n_rst_shdw(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
         #[doc = "Independent watchdog selection"]
         #[inline(always)]
         pub const fn idwg_sw(&self) -> bool {
@@ -698,6 +709,7 @@ pub mod regs {
                 .field("bor_lev", &self.bor_lev())
                 .field("n_rst_stop", &self.n_rst_stop())
                 .field("n_rst_stdby", &self.n_rst_stdby())
+                .field("n_rst_shdw", &self.n_rst_shdw())
                 .field("idwg_sw", &self.idwg_sw())
                 .field("iwdg_stop", &self.iwdg_stop())
                 .field("iwdg_stdby", &self.iwdg_stdby())
@@ -715,7 +727,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Optr {{ rdp: {=u8:?}, bor_lev: {=u8:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, idwg_sw: {=bool:?}, iwdg_stop: {=bool:?}, iwdg_stdby: {=bool:?}, wwdg_sw: {=bool:?}, bfb: {=bool:?}, dualbank: {=bool:?}, n_boot1: {=bool:?}, sram2_pe: {=bool:?}, sram2_rst: {=bool:?}, n_swboot0: {=bool:?}, n_boot0: {=bool:?} }}" , self . rdp () , self . bor_lev () , self . n_rst_stop () , self . n_rst_stdby () , self . idwg_sw () , self . iwdg_stop () , self . iwdg_stdby () , self . wwdg_sw () , self . bfb () , self . dualbank () , self . n_boot1 () , self . sram2_pe () , self . sram2_rst () , self . n_swboot0 () , self . n_boot0 ())
+            defmt :: write ! (f , "Optr {{ rdp: {=u8:?}, bor_lev: {=u8:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, n_rst_shdw: {=bool:?}, idwg_sw: {=bool:?}, iwdg_stop: {=bool:?}, iwdg_stdby: {=bool:?}, wwdg_sw: {=bool:?}, bfb: {=bool:?}, dualbank: {=bool:?}, n_boot1: {=bool:?}, sram2_pe: {=bool:?}, sram2_rst: {=bool:?}, n_swboot0: {=bool:?}, n_boot0: {=bool:?} }}" , self . rdp () , self . bor_lev () , self . n_rst_stop () , self . n_rst_stdby () , self . n_rst_shdw () , self . idwg_sw () , self . iwdg_stop () , self . iwdg_stdby () , self . wwdg_sw () , self . bfb () , self . dualbank () , self . n_boot1 () , self . sram2_pe () , self . sram2_rst () , self . n_swboot0 () , self . n_boot0 ())
         }
     }
     #[doc = "Flash Bank 1 PCROP End address register"]

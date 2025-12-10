@@ -191,6 +191,26 @@ Register"]
     pub const fn bdmadr(self) -> crate::common::Reg<regs::HrtimBdmadr, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f0usize) as _) }
     }
+    #[doc = "High Resolution Timer: ADC Extended Trigger Register"]
+    #[inline(always)]
+    pub const fn adcer(self) -> crate::common::Reg<regs::HrtimAdcer, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03f8usize) as _) }
+    }
+    #[doc = "High Resolution Timer: ADC Trigger Update Register"]
+    #[inline(always)]
+    pub const fn adcur(self) -> crate::common::Reg<regs::HrtimAdcur, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x03fcusize) as _) }
+    }
+    #[doc = "High Resolution Timer: ADC Post Scaler Register 1"]
+    #[inline(always)]
+    pub const fn adcps1(self) -> crate::common::Reg<regs::HrtimAdcps1, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0400usize) as _) }
+    }
+    #[doc = "High Resolution Timer: ADC Post Scaler Register 2"]
+    #[inline(always)]
+    pub const fn adcps2(self) -> crate::common::Reg<regs::HrtimAdcps2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0404usize) as _) }
+    }
 }
 #[doc = "High Resolution Timer: Timing Unit"]
 #[derive(Copy, Clone, Eq, PartialEq)]
@@ -314,6 +334,11 @@ impl HrtimTimx {
     #[inline(always)]
     pub const fn flt(self) -> crate::common::Reg<regs::Timxflt, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
+    }
+    #[doc = "Timer X Control Register 2"]
+    #[inline(always)]
+    pub const fn cr2(self) -> crate::common::Reg<regs::Timxcr2, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x6cusize) as _) }
     }
 }
 pub mod regs {
@@ -656,6 +681,366 @@ pub mod regs {
     impl defmt::Format for HrtimAdc2r {
         fn format(&self, f: defmt::Formatter) {
             defmt :: write ! (f , "HrtimAdc2r {{ adcmc[0]: {=bool:?}, adcmc[1]: {=bool:?}, adcmc[2]: {=bool:?}, adcmc[3]: {=bool:?}, adcmper: {=bool:?}, adceev[0]: {=bool:?}, adceev[1]: {=bool:?}, adceev[2]: {=bool:?}, adceev[3]: {=bool:?}, adceev[4]: {=bool:?}, adctc2[0]: {=bool:?}, adctc2[1]: {=bool:?}, adctc2[2]: {=bool:?}, adctc2[3]: {=bool:?}, adctc2[4]: {=bool:?}, adctc2[5]: {=bool:?}, adctc4[0]: {=bool:?}, adctc4[1]: {=bool:?}, adctc4[2]: {=bool:?}, adctc4[3]: {=bool:?}, adctc4[4]: {=bool:?}, adctper[0]: {=bool:?}, adctper[1]: {=bool:?}, adctper[2]: {=bool:?}, adctper[3]: {=bool:?}, adctper[4]: {=bool:?}, adctc3[0]: {=bool:?}, adctc3[1]: {=bool:?}, adctrst[0]: {=bool:?}, adctrst[1]: {=bool:?}, adctrst[2]: {=bool:?} }}" , self . adcmc (0usize) , self . adcmc (1usize) , self . adcmc (2usize) , self . adcmc (3usize) , self . adcmper () , self . adceev (0usize) , self . adceev (1usize) , self . adceev (2usize) , self . adceev (3usize) , self . adceev (4usize) , self . adctc2 (0usize) , self . adctc2 (1usize) , self . adctc2 (2usize) , self . adctc2 (3usize) , self . adctc2 (4usize) , self . adctc2 (5usize) , self . adctc4 (0usize) , self . adctc4 (1usize) , self . adctc4 (2usize) , self . adctc4 (3usize) , self . adctc4 (4usize) , self . adctper (0usize) , self . adctper (1usize) , self . adctper (2usize) , self . adctper (3usize) , self . adctper (4usize) , self . adctc3 (0usize) , self . adctc3 (1usize) , self . adctrst (0usize) , self . adctrst (1usize) , self . adctrst (2usize))
+        }
+    }
+    #[doc = "HRTIM ADC Extended Trigger Register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct HrtimAdcer(pub u32);
+    impl HrtimAdcer {
+        #[doc = "ADC5TRG."]
+        #[inline(always)]
+        pub const fn adc5trg(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC5TRG."]
+        #[inline(always)]
+        pub fn set_adc5trg(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "ADC6TRG."]
+        #[inline(always)]
+        pub const fn adc6trg(&self) -> u8 {
+            let val = (self.0 >> 5usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC6TRG."]
+        #[inline(always)]
+        pub fn set_adc6trg(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 5usize)) | (((val as u32) & 0x1f) << 5usize);
+        }
+        #[doc = "ADC7TRG."]
+        #[inline(always)]
+        pub const fn adc7trg(&self) -> u8 {
+            let val = (self.0 >> 10usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC7TRG."]
+        #[inline(always)]
+        pub fn set_adc7trg(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 10usize)) | (((val as u32) & 0x1f) << 10usize);
+        }
+        #[doc = "ADC8TRG."]
+        #[inline(always)]
+        pub const fn adc8trg(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC8TRG."]
+        #[inline(always)]
+        pub fn set_adc8trg(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
+        }
+        #[doc = "ADC9TRG."]
+        #[inline(always)]
+        pub const fn adc9trg(&self) -> u8 {
+            let val = (self.0 >> 21usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC9TRG."]
+        #[inline(always)]
+        pub fn set_adc9trg(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 21usize)) | (((val as u32) & 0x1f) << 21usize);
+        }
+        #[doc = "ADC10TRG."]
+        #[inline(always)]
+        pub const fn adc10trg(&self) -> u8 {
+            let val = (self.0 >> 26usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC10TRG."]
+        #[inline(always)]
+        pub fn set_adc10trg(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 26usize)) | (((val as u32) & 0x1f) << 26usize);
+        }
+    }
+    impl Default for HrtimAdcer {
+        #[inline(always)]
+        fn default() -> HrtimAdcer {
+            HrtimAdcer(0)
+        }
+    }
+    impl core::fmt::Debug for HrtimAdcer {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("HrtimAdcer")
+                .field("adc5trg", &self.adc5trg())
+                .field("adc6trg", &self.adc6trg())
+                .field("adc7trg", &self.adc7trg())
+                .field("adc8trg", &self.adc8trg())
+                .field("adc9trg", &self.adc9trg())
+                .field("adc10trg", &self.adc10trg())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HrtimAdcer {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "HrtimAdcer {{ adc5trg: {=u8:?}, adc6trg: {=u8:?}, adc7trg: {=u8:?}, adc8trg: {=u8:?}, adc9trg: {=u8:?}, adc10trg: {=u8:?} }}" , self . adc5trg () , self . adc6trg () , self . adc7trg () , self . adc8trg () , self . adc9trg () , self . adc10trg ())
+        }
+    }
+    #[doc = "HRTIM ADC Post Scaler Register 1"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct HrtimAdcps1(pub u32);
+    impl HrtimAdcps1 {
+        #[doc = "ADC1 Post Scaler"]
+        #[inline(always)]
+        pub const fn adc1psc(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC1 Post Scaler"]
+        #[inline(always)]
+        pub fn set_adc1psc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "ADC2 Post Scaler"]
+        #[inline(always)]
+        pub const fn adc2psc(&self) -> u8 {
+            let val = (self.0 >> 6usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC2 Post Scaler"]
+        #[inline(always)]
+        pub fn set_adc2psc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 6usize)) | (((val as u32) & 0x1f) << 6usize);
+        }
+        #[doc = "ADC3 Post Scaler"]
+        #[inline(always)]
+        pub const fn adc3psc(&self) -> u8 {
+            let val = (self.0 >> 12usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC3 Post Scaler"]
+        #[inline(always)]
+        pub fn set_adc3psc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 12usize)) | (((val as u32) & 0x1f) << 12usize);
+        }
+        #[doc = "ADC4 Post Scaler"]
+        #[inline(always)]
+        pub const fn adc4psc(&self) -> u8 {
+            let val = (self.0 >> 18usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC4 Post Scaler"]
+        #[inline(always)]
+        pub fn set_adc4psc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 18usize)) | (((val as u32) & 0x1f) << 18usize);
+        }
+        #[doc = "ADC5 Post Scaler"]
+        #[inline(always)]
+        pub const fn adc5psc(&self) -> u8 {
+            let val = (self.0 >> 24usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC5 Post Scaler"]
+        #[inline(always)]
+        pub fn set_adc5psc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 24usize)) | (((val as u32) & 0x1f) << 24usize);
+        }
+    }
+    impl Default for HrtimAdcps1 {
+        #[inline(always)]
+        fn default() -> HrtimAdcps1 {
+            HrtimAdcps1(0)
+        }
+    }
+    impl core::fmt::Debug for HrtimAdcps1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("HrtimAdcps1")
+                .field("adc1psc", &self.adc1psc())
+                .field("adc2psc", &self.adc2psc())
+                .field("adc3psc", &self.adc3psc())
+                .field("adc4psc", &self.adc4psc())
+                .field("adc5psc", &self.adc5psc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HrtimAdcps1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "HrtimAdcps1 {{ adc1psc: {=u8:?}, adc2psc: {=u8:?}, adc3psc: {=u8:?}, adc4psc: {=u8:?}, adc5psc: {=u8:?} }}" , self . adc1psc () , self . adc2psc () , self . adc3psc () , self . adc4psc () , self . adc5psc ())
+        }
+    }
+    #[doc = "HRTIM ADC Post Scaler Register 2"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct HrtimAdcps2(pub u32);
+    impl HrtimAdcps2 {
+        #[doc = "ADC6 Post Scaler"]
+        #[inline(always)]
+        pub const fn adc6psc(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC6 Post Scaler"]
+        #[inline(always)]
+        pub fn set_adc6psc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        }
+        #[doc = "ADC7 Post Scaler"]
+        #[inline(always)]
+        pub const fn adc7psc(&self) -> u8 {
+            let val = (self.0 >> 6usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC7 Post Scaler"]
+        #[inline(always)]
+        pub fn set_adc7psc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 6usize)) | (((val as u32) & 0x1f) << 6usize);
+        }
+        #[doc = "ADC8 Post Scaler"]
+        #[inline(always)]
+        pub const fn adc8psc(&self) -> u8 {
+            let val = (self.0 >> 12usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC8 Post Scaler"]
+        #[inline(always)]
+        pub fn set_adc8psc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 12usize)) | (((val as u32) & 0x1f) << 12usize);
+        }
+        #[doc = "ADC9 Post Scaler"]
+        #[inline(always)]
+        pub const fn adc9psc(&self) -> u8 {
+            let val = (self.0 >> 18usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC9 Post Scaler"]
+        #[inline(always)]
+        pub fn set_adc9psc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 18usize)) | (((val as u32) & 0x1f) << 18usize);
+        }
+        #[doc = "ADC10 Post Scaler"]
+        #[inline(always)]
+        pub const fn adc10psc(&self) -> u8 {
+            let val = (self.0 >> 24usize) & 0x1f;
+            val as u8
+        }
+        #[doc = "ADC10 Post Scaler"]
+        #[inline(always)]
+        pub fn set_adc10psc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 24usize)) | (((val as u32) & 0x1f) << 24usize);
+        }
+    }
+    impl Default for HrtimAdcps2 {
+        #[inline(always)]
+        fn default() -> HrtimAdcps2 {
+            HrtimAdcps2(0)
+        }
+    }
+    impl core::fmt::Debug for HrtimAdcps2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("HrtimAdcps2")
+                .field("adc6psc", &self.adc6psc())
+                .field("adc7psc", &self.adc7psc())
+                .field("adc8psc", &self.adc8psc())
+                .field("adc9psc", &self.adc9psc())
+                .field("adc10psc", &self.adc10psc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HrtimAdcps2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "HrtimAdcps2 {{ adc6psc: {=u8:?}, adc7psc: {=u8:?}, adc8psc: {=u8:?}, adc9psc: {=u8:?}, adc10psc: {=u8:?} }}" , self . adc6psc () , self . adc7psc () , self . adc8psc () , self . adc9psc () , self . adc10psc ())
+        }
+    }
+    #[doc = "HRTIM ADC Trigger Update Register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct HrtimAdcur(pub u32);
+    impl HrtimAdcur {
+        #[doc = "AD5USRC."]
+        #[inline(always)]
+        pub const fn ad5usrc(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x07;
+            val as u8
+        }
+        #[doc = "AD5USRC."]
+        #[inline(always)]
+        pub fn set_ad5usrc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        }
+        #[doc = "AD6USRC."]
+        #[inline(always)]
+        pub const fn ad6usrc(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x07;
+            val as u8
+        }
+        #[doc = "AD6USRC."]
+        #[inline(always)]
+        pub fn set_ad6usrc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
+        }
+        #[doc = "AD7USRC."]
+        #[inline(always)]
+        pub const fn ad7usrc(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x07;
+            val as u8
+        }
+        #[doc = "AD7USRC."]
+        #[inline(always)]
+        pub fn set_ad7usrc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
+        }
+        #[doc = "AD8USRC."]
+        #[inline(always)]
+        pub const fn ad8usrc(&self) -> u8 {
+            let val = (self.0 >> 12usize) & 0x07;
+            val as u8
+        }
+        #[doc = "AD8USRC."]
+        #[inline(always)]
+        pub fn set_ad8usrc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 12usize)) | (((val as u32) & 0x07) << 12usize);
+        }
+        #[doc = "AD9USRC."]
+        #[inline(always)]
+        pub const fn ad9usrc(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x07;
+            val as u8
+        }
+        #[doc = "AD9USRC."]
+        #[inline(always)]
+        pub fn set_ad9usrc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
+        }
+        #[doc = "AD10USRC."]
+        #[inline(always)]
+        pub const fn ad10usrc(&self) -> u8 {
+            let val = (self.0 >> 20usize) & 0x07;
+            val as u8
+        }
+        #[doc = "AD10USRC."]
+        #[inline(always)]
+        pub fn set_ad10usrc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 20usize)) | (((val as u32) & 0x07) << 20usize);
+        }
+    }
+    impl Default for HrtimAdcur {
+        #[inline(always)]
+        fn default() -> HrtimAdcur {
+            HrtimAdcur(0)
+        }
+    }
+    impl core::fmt::Debug for HrtimAdcur {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("HrtimAdcur")
+                .field("ad5usrc", &self.ad5usrc())
+                .field("ad6usrc", &self.ad6usrc())
+                .field("ad7usrc", &self.ad7usrc())
+                .field("ad8usrc", &self.ad8usrc())
+                .field("ad9usrc", &self.ad9usrc())
+                .field("ad10usrc", &self.ad10usrc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for HrtimAdcur {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "HrtimAdcur {{ ad5usrc: {=u8:?}, ad6usrc: {=u8:?}, ad7usrc: {=u8:?}, ad8usrc: {=u8:?}, ad9usrc: {=u8:?}, ad10usrc: {=u8:?} }}" , self . ad5usrc () , self . ad6usrc () , self . ad7usrc () , self . ad8usrc () , self . ad9usrc () , self . ad10usrc ())
         }
     }
     #[doc = "High Resolution Timer: Burst DMA Data Register"]
@@ -3730,6 +4115,174 @@ pub mod regs {
     impl defmt::Format for Timxcr {
         fn format(&self, f: defmt::Formatter) {
             defmt :: write ! (f , "Timxcr {{ ckpsc: {=u8:?}, cont: {=bool:?}, retrig: {=bool:?}, half: {=bool:?}, pshpll: {=bool:?}, syncrst: {=bool:?}, syncstrt: {=bool:?}, delcmp2: {:?}, delcmp4: {:?}, repu: {=bool:?}, rstu: {=bool:?}, tu[0]: {=bool:?}, tu[1]: {=bool:?}, tu[2]: {=bool:?}, tu[3]: {=bool:?}, tu[4]: {=bool:?}, mstu: {=bool:?}, dacsync: {:?}, preen: {=bool:?}, updgat: {:?} }}" , self . ckpsc () , self . cont () , self . retrig () , self . half () , self . pshpll () , self . syncrst () , self . syncstrt () , self . delcmp2 () , self . delcmp4 () , self . repu () , self . rstu () , self . tu (0usize) , self . tu (1usize) , self . tu (2usize) , self . tu (3usize) , self . tu (4usize) , self . mstu () , self . dacsync () , self . preen () , self . updgat ())
+        }
+    }
+    #[doc = "HRTIM Timer X Control Register 2"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Timxcr2(pub u32);
+    impl Timxcr2 {
+        #[doc = "Dual Channel DAC trigger enable"]
+        #[inline(always)]
+        pub const fn dcde(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Dual Channel DAC trigger enable"]
+        #[inline(always)]
+        pub fn set_dcde(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Dual Channel DAC Step trigger"]
+        #[inline(always)]
+        pub const fn dcds(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Dual Channel DAC Step trigger"]
+        #[inline(always)]
+        pub fn set_dcds(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Dual Channel DAC Reset trigger"]
+        #[inline(always)]
+        pub const fn dcdr(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Dual Channel DAC Reset trigger"]
+        #[inline(always)]
+        pub fn set_dcdr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Up-Down Mode"]
+        #[inline(always)]
+        pub const fn udm(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Up-Down Mode"]
+        #[inline(always)]
+        pub fn set_udm(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Roll-Over Mode"]
+        #[inline(always)]
+        pub const fn rom(&self) -> u8 {
+            let val = (self.0 >> 6usize) & 0x03;
+            val as u8
+        }
+        #[doc = "Roll-Over Mode"]
+        #[inline(always)]
+        pub fn set_rom(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
+        }
+        #[doc = "Output Roll-Over Mode"]
+        #[inline(always)]
+        pub const fn outrom(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x03;
+            val as u8
+        }
+        #[doc = "Output Roll-Over Mode"]
+        #[inline(always)]
+        pub fn set_outrom(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
+        }
+        #[doc = "ADC Roll-Over Mode"]
+        #[inline(always)]
+        pub const fn adrom(&self) -> u8 {
+            let val = (self.0 >> 10usize) & 0x03;
+            val as u8
+        }
+        #[doc = "ADC Roll-Over Mode"]
+        #[inline(always)]
+        pub fn set_adrom(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
+        }
+        #[doc = "Burst Mode Roll-Over Mode"]
+        #[inline(always)]
+        pub const fn bmrom(&self) -> u8 {
+            let val = (self.0 >> 12usize) & 0x03;
+            val as u8
+        }
+        #[doc = "Burst Mode Roll-Over Mode"]
+        #[inline(always)]
+        pub fn set_bmrom(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u32) & 0x03) << 12usize);
+        }
+        #[doc = "Fault and Event Roll-Over Mode"]
+        #[inline(always)]
+        pub const fn ferom(&self) -> u8 {
+            let val = (self.0 >> 14usize) & 0x03;
+            val as u8
+        }
+        #[doc = "Fault and Event Roll-Over Mode"]
+        #[inline(always)]
+        pub fn set_ferom(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u32) & 0x03) << 14usize);
+        }
+        #[doc = "Greater than Compare 1 PWM mode"]
+        #[inline(always)]
+        pub const fn gtcmp1(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Greater than Compare 1 PWM mode"]
+        #[inline(always)]
+        pub fn set_gtcmp1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "Greater than Compare 3 PWM mode"]
+        #[inline(always)]
+        pub const fn gtcmp3(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Greater than Compare 3 PWM mode"]
+        #[inline(always)]
+        pub fn set_gtcmp3(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "Triggered-half mode"]
+        #[inline(always)]
+        pub const fn trghlf(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Triggered-half mode"]
+        #[inline(always)]
+        pub fn set_trghlf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+    }
+    impl Default for Timxcr2 {
+        #[inline(always)]
+        fn default() -> Timxcr2 {
+            Timxcr2(0)
+        }
+    }
+    impl core::fmt::Debug for Timxcr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Timxcr2")
+                .field("dcde", &self.dcde())
+                .field("dcds", &self.dcds())
+                .field("dcdr", &self.dcdr())
+                .field("udm", &self.udm())
+                .field("rom", &self.rom())
+                .field("outrom", &self.outrom())
+                .field("adrom", &self.adrom())
+                .field("bmrom", &self.bmrom())
+                .field("ferom", &self.ferom())
+                .field("gtcmp1", &self.gtcmp1())
+                .field("gtcmp3", &self.gtcmp3())
+                .field("trghlf", &self.trghlf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Timxcr2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "Timxcr2 {{ dcde: {=bool:?}, dcds: {=bool:?}, dcdr: {=bool:?}, udm: {=bool:?}, rom: {=u8:?}, outrom: {=u8:?}, adrom: {=u8:?}, bmrom: {=u8:?}, ferom: {=u8:?}, gtcmp1: {=bool:?}, gtcmp3: {=bool:?}, trghlf: {=bool:?} }}" , self . dcde () , self . dcds () , self . dcdr () , self . udm () , self . rom () , self . outrom () , self . adrom () , self . bmrom () , self . ferom () , self . gtcmp1 () , self . gtcmp3 () , self . trghlf ())
         }
     }
     #[doc = "Timerx DMA / Interrupt Enable Register"]

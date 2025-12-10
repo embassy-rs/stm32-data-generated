@@ -840,9 +840,9 @@ pub const USART2: *mut () = 0x4000_4400usize as _;
 pub const USART3: *mut () = 0x4000_4800usize as _;
 pub const UART4: *mut () = 0x4000_4c00usize as _;
 pub const UART5: *mut () = 0x4000_5000usize as _;
-pub const I2C1: *mut () = 0x4000_5400usize as _;
-pub const I2C2: *mut () = 0x4000_5800usize as _;
-pub const I2C3: *mut () = 0x4000_5c00usize as _;
+pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400usize as _) };
+pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800usize as _) };
+pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5c00usize as _) };
 pub const I3C1: *mut () = 0x4000_6000usize as _;
 pub const I3C2: *mut () = 0x4000_6400usize as _;
 pub const UART7: *mut () = 0x4000_7800usize as _;
@@ -879,10 +879,10 @@ pub const MDF1: *mut () = 0x4202_5000usize as _;
 pub const ADF1: *mut () = 0x4202_6000usize as _;
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x4400_1000usize as _) };
 pub const RNG: *mut () = 0x4402_0000usize as _;
-pub const HASH: *mut () = 0x4402_0400usize as _;
+pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x4402_0400usize as _) };
 pub const LPUART1: *mut () = 0x4600_0c00usize as _;
 pub const SPI6: spi::Spi = unsafe { spi::Spi::from_ptr(0x4600_1400usize as _) };
-pub const I2C4: *mut () = 0x4600_1c00usize as _;
+pub const I2C4: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4600_1c00usize as _) };
 pub const LPTIM2: *mut () = 0x4600_2400usize as _;
 pub const LPTIM3: *mut () = 0x4600_2800usize as _;
 pub const LPTIM5: *mut () = 0x4600_3000usize as _;
@@ -907,7 +907,7 @@ pub const GPIOO: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4602_3800usize as 
 pub const GPIOP: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4602_3c00usize as _) };
 pub const GPIOQ: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4602_4000usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4602_4800usize as _) };
-pub const CRC: *mut () = 0x4602_4c00usize as _;
+pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4602_4c00usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4602_5000usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4602_8000usize as _) };
 pub const LTDC: *mut () = 0x4800_1000usize as _;
@@ -939,6 +939,8 @@ pub const NVIC_PRIO_BITS: u8 = 4;
 pub use cortex_m_rt::interrupt;
 #[cfg(feature = "rt")]
 pub use Interrupt as interrupt;
+#[path = "../../peripherals/crc_v3.rs"]
+pub mod crc;
 #[path = "../../peripherals/dbgmcu_n6.rs"]
 pub mod dbgmcu;
 #[path = "../../peripherals/dcmi_v1.rs"]
@@ -955,6 +957,10 @@ pub mod fdcanram;
 pub mod gpdma;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/hash_v3.rs"]
+pub mod hash;
+#[path = "../../peripherals/i2c_v3.rs"]
+pub mod i2c;
 #[path = "../../peripherals/iwdg_v3.rs"]
 pub mod iwdg;
 #[path = "../../peripherals/jpeg_v1.rs"]

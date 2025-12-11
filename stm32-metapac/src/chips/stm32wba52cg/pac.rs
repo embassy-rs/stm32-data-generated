@@ -315,7 +315,9 @@ mod _vectors {
         Vector { _handler: WKUP_S },
     ];
 }
+pub const DESIG: desig::Desig = unsafe { desig::Desig::from_ptr(0x0bf9_0500usize as _) };
 pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x0bf9_0700usize as _) };
+pub const VREFINTCAL: vrefintcal::Vrefintcal = unsafe { vrefintcal::Vrefintcal::from_ptr(0x0bf9_07a4usize as _) };
 pub const TIM2: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0000usize as _) };
 pub const TIM3: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0400usize as _) };
 pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00usize as _) };
@@ -373,6 +375,8 @@ pub mod aes;
 pub mod crc;
 #[path = "../../peripherals/dbgmcu_wba.rs"]
 pub mod dbgmcu;
+#[path = "../../peripherals/desig_wba.rs"]
+pub mod desig;
 #[path = "../../peripherals/exti_l5.rs"]
 pub mod exti;
 #[path = "../../peripherals/flash_wba.rs"]
@@ -417,5 +421,7 @@ pub mod tsc;
 pub mod uid;
 #[path = "../../peripherals/usart_v4.rs"]
 pub mod usart;
+#[path = "../../peripherals/vrefintcal_v2.rs"]
+pub mod vrefintcal;
 #[path = "../../peripherals/wwdg_v2.rs"]
 pub mod wwdg;

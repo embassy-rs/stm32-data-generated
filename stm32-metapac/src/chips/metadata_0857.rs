@@ -186,6 +186,21 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "DESIG",
+        address: 0xbf90500,
+        registers: Some(PeripheralRegisters {
+            kind: "desig",
+            version: "wba",
+            block: "DESIG",
+            ir: &desig::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
         name: "EXTI",
         address: 0x46022000,
         registers: Some(PeripheralRegisters {
@@ -1773,6 +1788,21 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "VREFINTCAL",
+        address: 0xbf907a4,
+        registers: Some(PeripheralRegisters {
+            kind: "vrefintcal",
+            version: "v2",
+            block: "VREFINTCAL",
+            ir: &vrefintcal::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
         name: "WWDG",
         address: 0x40002c00,
         registers: Some(PeripheralRegisters {
@@ -2109,6 +2139,8 @@ pub mod aes;
 pub mod crc;
 #[path = "../registers/dbgmcu_wba.rs"]
 pub mod dbgmcu;
+#[path = "../registers/desig_wba.rs"]
+pub mod desig;
 #[path = "../registers/exti_l5.rs"]
 pub mod exti;
 #[path = "../registers/flash_wba.rs"]
@@ -2151,5 +2183,7 @@ pub mod tsc;
 pub mod uid;
 #[path = "../registers/usart_v4.rs"]
 pub mod usart;
+#[path = "../registers/vrefintcal_v2.rs"]
+pub mod vrefintcal;
 #[path = "../registers/wwdg_v2.rs"]
 pub mod wwdg;

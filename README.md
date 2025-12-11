@@ -32,6 +32,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [DCACHE](#dcache) | | | | | | | | | | v1 | | | | | | | | | v1 | | | | |
 | [DCMI](#dcmi) | | | | v1 | | v1 | v1 | | | v1 | v1 | | | v1 | v1 | | v1 | | v1 | | | | |
 | [DCMIPP](#dcmipp) | | | | | | | | | | | ❌ | | | | | | ❌ | | | | | | |
+| [DESIG](#desig) | | | | | | | | | | | | | | | | | | | | | | wba | |
 | [DFSDM](#dfsdm) | | | | | | ❌ | ❌ | | | | ❌ | | | ❌ | ❌ | | | | | | | | |
 | [DMA](#dma) | | | | v2 | | v2 | v2 | | | | v1 | | | | | | | | | | | | |
 | [DMA2D](#dma2d) | | | | | | v1 | v1 | | | | v2 | | | v1 | v1 | | v1 | | v2 | | | | |
@@ -106,7 +107,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [USBRAM](#usbram) | 32_2048 | 16x2_1024 | 16x1_512 | | 16x1_512, 16x2_1024, 16x2_512 | | | 32_2048 | 16x2_1024 | 32_2048 | | 16x2_1024 | 16x1_512 | 16x2_1024 | | 16x2_1024 | | 32_1024 | 32_2048 | 16x2_1024 | | | |
 | [VENC](#venc) | | | | | | | | | | | | | | | | | ❌ | | | | | | |
 | [VREFBUF](#vrefbuf) | | | | | | | | v1 | v2b | v2a2 | v2a1 | | | v1 | v1 | v1 | ❌ | ❌ | v2a1 | v1 | | v2a1 | v1 |
-| [VREFINTCAL](#vrefintcal) | | | | | v1 | | v1 | | | | | | v1 | v1 | v1 | | | | | v1 | | | |
+| [VREFINTCAL](#vrefintcal) | | | | | v1 | | v1 | | | | | | v1 | v1 | v1 | | | | | v1 | | v2 | |
 | [WWDG](#wwdg) | v2 | v1 | v1 | v1 | v1 | v1 | v1 | v2 | v2 | v2 | v2 | v1 | v1 | v1 | v1 | v2 | v2 | v2 | v2 | v2 | | v2 | v2 |
 | [XSPI](#xspi) | | | | | | | | | | | v1 | | | | | | ❌ | | | | | | |
 | [XSPIM](#xspim) | | | | | | | | | | | v1 | | | | | | ❌ | | | | | | |
@@ -318,6 +319,12 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **❌ Unsupported**: STM32H7, STM32N6
+
+### DESIG
+
+**Versions by family:**
+
+- **wba**: STM32WBA
 
 ### DFSDM
 
@@ -1016,6 +1023,7 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **v1**: STM32F3, STM32F7, STM32L1, STM32L4, STM32L4+, STM32WB
+- **v2**: STM32WBA
 
 ### WWDG
 

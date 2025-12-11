@@ -497,6 +497,15 @@
           }
         },
         {
+          "name": "DESIG",
+          "address": 200869120,
+          "registers": {
+            "kind": "desig",
+            "version": "wba",
+            "block": "DESIG"
+          }
+        },
+        {
           "name": "EXTI",
           "address": 1174544384,
           "registers": {
@@ -2702,6 +2711,15 @@
               "request": 14
             }
           ]
+        },
+        {
+          "name": "VREFINTCAL",
+          "address": 200869796,
+          "registers": {
+            "kind": "vrefintcal",
+            "version": "v2",
+            "block": "VREFINTCAL"
+          }
         },
         {
           "name": "WWDG",

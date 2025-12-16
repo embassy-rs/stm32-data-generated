@@ -210,14 +210,14 @@ pub mod regs {
     impl Htcr {
         #[doc = "Health test configuration"]
         #[inline(always)]
-        pub const fn htcfg(&self) -> u32 {
+        pub const fn htcfg(&self) -> super::vals::Htcfg {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
+            super::vals::Htcfg::from_bits(val as u32)
         }
         #[doc = "Health test configuration"]
         #[inline(always)]
-        pub fn set_htcfg(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        pub fn set_htcfg(&mut self, val: super::vals::Htcfg) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val.to_bits() as u32) & 0xffff_ffff) << 0usize);
         }
     }
     impl Default for Htcr {
@@ -234,7 +234,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Htcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Htcr {{ htcfg: {=u32:?} }}", self.htcfg())
+            defmt::write!(f, "Htcr {{ htcfg: {:?} }}", self.htcfg())
         }
     }
     #[doc = "RNG noise source control register."]
@@ -439,6 +439,58 @@ pub mod vals {
             Clkdiv::to_bits(val)
         }
     }
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub struct Htcfg(u32);
+    impl Htcfg {
+        #[doc = "Recommended value for RNG certification (0x0000_6688)"]
+        pub const CONFIG_A: Self = Self(0x6688);
+        #[doc = "Recommended value for config B and C (not NIST certifiable) (0x0000_AAC7)"]
+        pub const CONFIG_B_C: Self = Self(0xaacf);
+        #[doc = "Magic number to be written before any write (0x1759_0ABC)"]
+        pub const MAGIC: Self = Self(0x1759_0abc);
+    }
+    impl Htcfg {
+        pub const fn from_bits(val: u32) -> Htcfg {
+            Self(val & 0xffff_ffff)
+        }
+        pub const fn to_bits(self) -> u32 {
+            self.0
+        }
+    }
+    impl core::fmt::Debug for Htcfg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0x6688 => f.write_str("CONFIG_A"),
+                0xaacf => f.write_str("CONFIG_B_C"),
+                0x1759_0abc => f.write_str("MAGIC"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Htcfg {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0x6688 => defmt::write!(f, "CONFIG_A"),
+                0xaacf => defmt::write!(f, "CONFIG_B_C"),
+                0x1759_0abc => defmt::write!(f, "MAGIC"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    impl From<u32> for Htcfg {
+        #[inline(always)]
+        fn from(val: u32) -> Htcfg {
+            Htcfg::from_bits(val)
+        }
+    }
+    impl From<Htcfg> for u32 {
+        #[inline(always)]
+        fn from(val: Htcfg) -> u32 {
+            Htcfg::to_bits(val)
+        }
+    }
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
@@ -474,10 +526,12 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub struct RngConfig1(u8);
     impl RngConfig1 {
+        #[doc = "Recommended value for config B (not NIST certifiable)"]
+        pub const CONFIG_B: Self = Self(0x01);
         #[doc = "Recommended value for config A (NIST certifiable)"]
         pub const CONFIG_A: Self = Self(0x0f);
-        #[doc = "Recommended value for config B (not NIST certifiable)"]
-        pub const CONFIG_B: Self = Self(0x18);
+        #[doc = "Recommended value for config C (not NIST certifiable) (0x0000_82)"]
+        pub const CONFIG_C: Self = Self(0x82);
     }
     impl RngConfig1 {
         pub const fn from_bits(val: u8) -> RngConfig1 {
@@ -490,8 +544,9 @@ pub mod vals {
     impl core::fmt::Debug for RngConfig1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
+                0x01 => f.write_str("CONFIG_B"),
                 0x0f => f.write_str("CONFIG_A"),
-                0x18 => f.write_str("CONFIG_B"),
+                0x82 => f.write_str("CONFIG_C"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -500,8 +555,9 @@ pub mod vals {
     impl defmt::Format for RngConfig1 {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
+                0x01 => defmt::write!(f, "CONFIG_B"),
                 0x0f => defmt::write!(f, "CONFIG_A"),
-                0x18 => defmt::write!(f, "CONFIG_B"),
+                0x82 => defmt::write!(f, "CONFIG_C"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -572,10 +628,10 @@ pub mod vals {
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
-        #[doc = "Recommended value for config A (NIST certifiable)"]
-        CONFIG_A = 0x0d,
+        _RESERVED_d = 0x0d,
         _RESERVED_e = 0x0e,
-        _RESERVED_f = 0x0f,
+        #[doc = "Recommended value for config A (NIST certifiable)"]
+        CONFIG_A = 0x0f,
     }
     impl RngConfig3 {
         #[inline(always)]

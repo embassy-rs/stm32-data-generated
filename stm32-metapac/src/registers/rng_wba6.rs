@@ -297,7 +297,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 32,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Htcfg",
+                    ),
                 },
             ],
         },
@@ -548,6 +550,34 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Htcfg",
+            description: None,
+            bit_size: 32,
+            variants: &[
+                EnumVariant {
+                    name: "CONFIG_A",
+                    description: Some(
+                        "Recommended value for RNG certification (0x0000_6688)",
+                    ),
+                    value: 26248,
+                },
+                EnumVariant {
+                    name: "CONFIG_B_C",
+                    description: Some(
+                        "Recommended value for config B and C (not NIST certifiable) (0x0000_AAC7)",
+                    ),
+                    value: 43727,
+                },
+                EnumVariant {
+                    name: "MAGIC",
+                    description: Some(
+                        "Magic number to be written before any write (0x1759_0ABC)",
+                    ),
+                    value: 391711420,
+                },
+            ],
+        },
+        Enum {
             name: "Nistc",
             description: None,
             bit_size: 1,
@@ -574,6 +604,13 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
+                    name: "CONFIG_B",
+                    description: Some(
+                        "Recommended value for config B (not NIST certifiable)",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
                     name: "CONFIG_A",
                     description: Some(
                         "Recommended value for config A (NIST certifiable)",
@@ -581,11 +618,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 15,
                 },
                 EnumVariant {
-                    name: "CONFIG_B",
+                    name: "CONFIG_C",
                     description: Some(
-                        "Recommended value for config B (not NIST certifiable)",
+                        "Recommended value for config C (not NIST certifiable) (0x0000_82)",
                     ),
-                    value: 24,
+                    value: 130,
                 },
             ],
         },
@@ -620,7 +657,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Recommended value for config A (NIST certifiable)",
                     ),
-                    value: 13,
+                    value: 15,
                 },
             ],
         },

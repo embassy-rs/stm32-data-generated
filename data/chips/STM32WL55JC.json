@@ -690,7 +690,8 @@
             "reset": {
               "register": "APB2RSTR",
               "field": "ADCRST"
-            }
+            },
+            "stop_mode": "Stop2"
           },
           "pins": [
             {
@@ -1355,7 +1356,8 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "I2C1RST"
-            }
+            },
+            "stop_mode": "Stop2"
           },
           "pins": [
             {
@@ -1445,7 +1447,8 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "I2C2RST"
-            }
+            },
+            "stop_mode": "Stop2"
           },
           "pins": [
             {
@@ -1520,7 +1523,8 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "I2C3RST"
-            }
+            },
+            "stop_mode": "Standby"
           },
           "pins": [
             {
@@ -1661,7 +1665,7 @@
               "register": "APB1RSTR1",
               "field": "LPTIM1RST"
             },
-            "stop_mode": "Stop2"
+            "stop_mode": "Standby"
           },
           "pins": [
             {
@@ -1846,7 +1850,7 @@
               "register": "APB1RSTR2",
               "field": "LPUART1RST"
             },
-            "stop_mode": "Stop2"
+            "stop_mode": "Standby"
           },
           "pins": [
             {
@@ -2426,7 +2430,8 @@
             "reset": {
               "register": "APB3RSTR",
               "field": "SUBGHZSPIRST"
-            }
+            },
+            "stop_mode": "Stop2"
           },
           "pins": [
             {
@@ -3675,7 +3680,8 @@
             "reset": {
               "register": "APB2RSTR",
               "field": "ADCRST"
-            }
+            },
+            "stop_mode": "Stop2"
           },
           "pins": [
             {
@@ -4319,7 +4325,8 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "I2C1RST"
-            }
+            },
+            "stop_mode": "Stop2"
           },
           "pins": [
             {
@@ -4409,7 +4416,8 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "I2C2RST"
-            }
+            },
+            "stop_mode": "Stop2"
           },
           "pins": [
             {
@@ -4484,7 +4492,8 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "I2C3RST"
-            }
+            },
+            "stop_mode": "Standby"
           },
           "pins": [
             {
@@ -4625,7 +4634,7 @@
               "register": "APB1RSTR1",
               "field": "LPTIM1RST"
             },
-            "stop_mode": "Stop2"
+            "stop_mode": "Standby"
           },
           "pins": [
             {
@@ -4810,7 +4819,7 @@
               "register": "APB1RSTR2",
               "field": "LPUART1RST"
             },
-            "stop_mode": "Stop2"
+            "stop_mode": "Standby"
           },
           "pins": [
             {
@@ -5386,7 +5395,8 @@
             "reset": {
               "register": "APB3RSTR",
               "field": "SUBGHZSPIRST"
-            }
+            },
+            "stop_mode": "Stop2"
           },
           "pins": [
             {

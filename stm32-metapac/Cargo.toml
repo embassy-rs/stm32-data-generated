@@ -39,6 +39,7 @@ flavors = [
     { regex_feature = "stm32l4.*", target = "thumbv7em-none-eabi" },
     { regex_feature = "stm32l5.*", target = "thumbv8m.main-none-eabihf" },
     { regex_feature = "stm32u0.*", target = "thumbv6m-none-eabi" },
+    { regex_feature = "stm32u3.*", target = "thumbv8m.main-none-eabihf" },
     { regex_feature = "stm32u5.*", target = "thumbv8m.main-none-eabihf" },
     { regex_feature = "stm32wb0.*", target = "thumbv6m-none-eabi" },
     { regex_feature = "stm32wba.*", target = "thumbv8m.main-none-eabihf" },
@@ -55,11 +56,11 @@ defmt = { version = "0.3.0", optional = true }
 default = ["pac"]
 
 # Build the actual PAC. Set by default.
-# If you just want the metadata, unset it with `default-features = false`. 
+# If you just want the metadata, unset it with `default-features = false`.
 pac = []
 
 # Build the chip metadata.
-# If set, a const `stm32_metapac::METADATA` will be exported, containing all the 
+# If set, a const `stm32_metapac::METADATA` will be exported, containing all the
 # metadata for the currently selected chip.
 metadata = []
 
@@ -1435,6 +1436,18 @@ stm32u083hc = []
 stm32u083kc = []
 stm32u083mc = []
 stm32u083rc = []
+stm32u375ce = []
+stm32u375cg = []
+stm32u375ke = []
+stm32u375kg = []
+stm32u375re = []
+stm32u375rg = []
+stm32u375ve = []
+stm32u375vg = []
+stm32u385cg = []
+stm32u385kg = []
+stm32u385rg = []
+stm32u385vg = []
 stm32u535cb = []
 stm32u535cc = []
 stm32u535ce = []

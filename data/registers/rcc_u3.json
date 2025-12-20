@@ -1,0 +1,3970 @@
+{
+  "block/RCC": {
+    "description": "Reset and clock control.",
+    "items": [
+      {
+        "name": "CR",
+        "description": "RCC clock control register.",
+        "byte_offset": 0,
+        "fieldset": "CR"
+      },
+      {
+        "name": "ICSCR1",
+        "description": "RCC internal clock source calibration register 1.",
+        "byte_offset": 8,
+        "fieldset": "ICSCR1"
+      },
+      {
+        "name": "ICSCR2",
+        "description": "RCC internal clock source calibration register 2.",
+        "byte_offset": 12,
+        "fieldset": "ICSCR2"
+      },
+      {
+        "name": "ICSCR3",
+        "description": "RCC internal clock source calibration register 3.",
+        "byte_offset": 16,
+        "fieldset": "ICSCR3"
+      },
+      {
+        "name": "CRRCR",
+        "description": "RCC clock recovery RC register.",
+        "byte_offset": 20,
+        "access": "Read",
+        "fieldset": "CRRCR"
+      },
+      {
+        "name": "CFGR1",
+        "description": "RCC clock configuration register 1.",
+        "byte_offset": 28,
+        "fieldset": "CFGR1"
+      },
+      {
+        "name": "CFGR2",
+        "description": "RCC clock configuration register 2.",
+        "byte_offset": 32,
+        "fieldset": "CFGR2"
+      },
+      {
+        "name": "CFGR3",
+        "description": "RCC clock configuration register 3.",
+        "byte_offset": 36,
+        "fieldset": "CFGR3"
+      },
+      {
+        "name": "CFGR4",
+        "description": "RCC clock configuration register 4.",
+        "byte_offset": 40,
+        "fieldset": "CFGR4"
+      },
+      {
+        "name": "CIER",
+        "description": "RCC clock interrupt enable register.",
+        "byte_offset": 80,
+        "fieldset": "CIER"
+      },
+      {
+        "name": "CIFR",
+        "description": "RCC clock interrupt flag register.",
+        "byte_offset": 84,
+        "access": "Read",
+        "fieldset": "CIFR"
+      },
+      {
+        "name": "CICR",
+        "description": "RCC clock interrupt clear register.",
+        "byte_offset": 88,
+        "access": "Write",
+        "fieldset": "CICR"
+      },
+      {
+        "name": "AHB1RSTR1",
+        "description": "RCC AHB1 peripheral reset register 1.",
+        "byte_offset": 96,
+        "fieldset": "AHB1RSTR1"
+      },
+      {
+        "name": "AHB2RSTR1",
+        "description": "RCC AHB2 peripheral reset register 1.",
+        "byte_offset": 100,
+        "fieldset": "AHB2RSTR1"
+      },
+      {
+        "name": "AHB2RSTR2",
+        "description": "RCC AHB2 peripheral reset register 2.",
+        "byte_offset": 104,
+        "fieldset": "AHB2RSTR2"
+      },
+      {
+        "name": "APB1RSTR1",
+        "description": "RCC APB1 peripheral reset register 1.",
+        "byte_offset": 116,
+        "fieldset": "APB1RSTR1"
+      },
+      {
+        "name": "APB1RSTR2",
+        "description": "RCC APB1 peripheral reset register 2.",
+        "byte_offset": 120,
+        "fieldset": "APB1RSTR2"
+      },
+      {
+        "name": "APB2RSTR",
+        "description": "RCC APB2 peripheral reset register.",
+        "byte_offset": 124,
+        "fieldset": "APB2RSTR"
+      },
+      {
+        "name": "APB3RSTR",
+        "description": "RCC APB3 peripheral reset register.",
+        "byte_offset": 128,
+        "fieldset": "APB3RSTR"
+      },
+      {
+        "name": "AHB1ENR1",
+        "description": "RCC AHB1 peripheral clock enable register 1.",
+        "byte_offset": 136,
+        "fieldset": "AHB1ENR1"
+      },
+      {
+        "name": "AHB2ENR1",
+        "description": "RCC AHB2 peripheral clock enable register 1.",
+        "byte_offset": 140,
+        "fieldset": "AHB2ENR1"
+      },
+      {
+        "name": "AHB2ENR2",
+        "description": "RCC AHB2 peripheral clock enable register 2.",
+        "byte_offset": 144,
+        "fieldset": "AHB2ENR2"
+      },
+      {
+        "name": "AHB1ENR2",
+        "description": "RCC AHB1 peripheral clock enable register 2.",
+        "byte_offset": 148,
+        "fieldset": "AHB1ENR2"
+      },
+      {
+        "name": "APB1ENR1",
+        "description": "RCC APB1 peripheral clock enable register 1.",
+        "byte_offset": 156,
+        "fieldset": "APB1ENR1"
+      },
+      {
+        "name": "APB1ENR2",
+        "description": "RCC APB1 peripheral clock enable register 2.",
+        "byte_offset": 160,
+        "fieldset": "APB1ENR2"
+      },
+      {
+        "name": "APB2ENR",
+        "description": "RCC APB2 peripheral clock enable register.",
+        "byte_offset": 164,
+        "fieldset": "APB2ENR"
+      },
+      {
+        "name": "APB3ENR",
+        "description": "RCC APB3 peripheral clock enable register.",
+        "byte_offset": 168,
+        "fieldset": "APB3ENR"
+      },
+      {
+        "name": "AHB1SLPENR1",
+        "description": "RCC AHB1 peripheral clock enable in Sleep mode register.",
+        "byte_offset": 176,
+        "fieldset": "AHB1SLPENR1"
+      },
+      {
+        "name": "AHB2SLPENR1",
+        "description": "RCC AHB2 peripheral clock enable in Sleep mode register 1.",
+        "byte_offset": 180,
+        "fieldset": "AHB2SLPENR1"
+      },
+      {
+        "name": "AHB2SLPENR2",
+        "description": "RCC AHB2 peripheral clock enable in Sleep mode register 2.",
+        "byte_offset": 184,
+        "fieldset": "AHB2SLPENR2"
+      },
+      {
+        "name": "AHB1SLPENR2",
+        "description": "RCC AHB1 peripheral clock enable in Sleep mode register 2.",
+        "byte_offset": 188,
+        "fieldset": "AHB1SLPENR2"
+      },
+      {
+        "name": "APB1SLPENR1",
+        "description": "RCC APB1 peripheral clock enable in Sleep mode register 1.",
+        "byte_offset": 196,
+        "fieldset": "APB1SLPENR1"
+      },
+      {
+        "name": "APB1SLPENR2",
+        "description": "RCC APB1 peripheral clock enable in Sleep mode register 2.",
+        "byte_offset": 200,
+        "fieldset": "APB1SLPENR2"
+      },
+      {
+        "name": "APB2SLPENR",
+        "description": "RCC APB2 peripheral clock enable in Sleep mode register.",
+        "byte_offset": 204,
+        "fieldset": "APB2SLPENR"
+      },
+      {
+        "name": "APB3SLPENR",
+        "description": "RCC APB3 peripheral clock enable in Sleep mode register.",
+        "byte_offset": 208,
+        "fieldset": "APB3SLPENR"
+      },
+      {
+        "name": "AHB1STPENR1",
+        "description": "RCC AHB1 peripheral clock enable in Stop mode register.",
+        "byte_offset": 216,
+        "fieldset": "AHB1STPENR1"
+      },
+      {
+        "name": "AHB2STPENR1",
+        "description": "RCC AHB2 peripheral clock enable in Stop mode register 1.",
+        "byte_offset": 220,
+        "fieldset": "AHB2STPENR1"
+      },
+      {
+        "name": "APB1STPENR1",
+        "description": "RCC APB1 peripheral clock enable in Stop mode register 1.",
+        "byte_offset": 236,
+        "fieldset": "APB1STPENR1"
+      },
+      {
+        "name": "APB1STPENR2",
+        "description": "RCC APB1 peripheral clock enable in Stop mode register 2.",
+        "byte_offset": 240,
+        "fieldset": "APB1STPENR2"
+      },
+      {
+        "name": "APB2STPENR",
+        "description": "RCC APB2 peripheral clock enable in Stop mode register.",
+        "byte_offset": 244,
+        "fieldset": "APB2STPENR"
+      },
+      {
+        "name": "APB3STPENR",
+        "description": "RCC APB3 peripheral clock enable in Stop mode register.",
+        "byte_offset": 248,
+        "fieldset": "APB3STPENR"
+      },
+      {
+        "name": "CCIPR1",
+        "description": "RCC peripheral independent clock configuration register 1.",
+        "byte_offset": 256,
+        "fieldset": "CCIPR1"
+      },
+      {
+        "name": "CCIPR2",
+        "description": "RCC peripheral independent clock configuration register 2.",
+        "byte_offset": 260,
+        "fieldset": "CCIPR2"
+      },
+      {
+        "name": "CCIPR3",
+        "description": "RCC peripheral independent clock configuration register 3.",
+        "byte_offset": 264,
+        "fieldset": "CCIPR3"
+      },
+      {
+        "name": "BDCR",
+        "description": "RCC backup domain control register.",
+        "byte_offset": 272,
+        "fieldset": "BDCR"
+      },
+      {
+        "name": "CSR",
+        "description": "RCC control/status register.",
+        "byte_offset": 276,
+        "fieldset": "CSR"
+      },
+      {
+        "name": "SECCFGR",
+        "description": "RCC secure configuration register.",
+        "byte_offset": 304,
+        "fieldset": "SECCFGR"
+      },
+      {
+        "name": "PRIVCFGR",
+        "description": "RCC privilege configuration register.",
+        "byte_offset": 308,
+        "fieldset": "PRIVCFGR"
+      }
+    ]
+  },
+  "fieldset/AHB1ENR1": {
+    "description": "RCC AHB1 peripheral clock enable register 1.",
+    "fields": [
+      {
+        "name": "GPDMA1EN",
+        "description": "GPDMA1 clock enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "ADF1EN",
+        "description": "ADF1 clock enable.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "FLASHEN",
+        "description": "FLASH clock enable.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "CRCEN",
+        "description": "CRC clock enable.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "TSCEN",
+        "description": "Touch sensing controller clock enable.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "RAMCFGEN",
+        "description": "RAMCFG clock enable.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "GTZC1EN",
+        "description": "GTZC1 clock enable.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "SRAM1EN",
+        "description": "SRAM1 clock enable.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/AHB1ENR2": {
+    "description": "RCC AHB1 peripheral clock enable register 2.",
+    "fields": [
+      {
+        "name": "PWREN",
+        "description": "PWR clock enable.",
+        "bit_offset": 2,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/AHB1RSTR1": {
+    "description": "RCC AHB1 peripheral reset register 1.",
+    "fields": [
+      {
+        "name": "GPDMA1RST",
+        "description": "GPDMA1 reset.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "ADF1RST",
+        "description": "ADF1 reset.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "CRCRST",
+        "description": "CRC reset.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "TSCRST",
+        "description": "TSC reset.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "RAMCFGRST",
+        "description": "RAMCFG reset.",
+        "bit_offset": 17,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/AHB1SLPENR1": {
+    "description": "RCC AHB1 peripheral clock enable in Sleep mode register.",
+    "fields": [
+      {
+        "name": "GPDMA1SLPEN",
+        "description": "GPDMA1 clock enable during Sleep mode.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "ADF1SLPEN",
+        "description": "ADF1 clock enable during Sleep mode.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "FLASHSLPEN",
+        "description": "FLASH clock enable during Sleep mode.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "CRCSLPEN",
+        "description": "CRC clock enable during Sleep mode.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "TSCSLPEN",
+        "description": "TSC clock enable during Sleep mode.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "RAMCFGSLPEN",
+        "description": "RAMCFG clock enable during Sleep mode.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "GTZC1SLPEN",
+        "description": "GTZC1 clock enable during Sleep mode.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "ICACHESLPEN",
+        "description": "ICACHE clock enable during Sleep mode.",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "SRAM1SLPEN",
+        "description": "SRAM1 clock enable during Sleep mode.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/AHB1SLPENR2": {
+    "description": "RCC AHB1 peripheral clock enable in Sleep mode register 2.",
+    "fields": [
+      {
+        "name": "PWRSLPEN",
+        "description": "PWR clock enable during Sleep mode.",
+        "bit_offset": 2,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/AHB1STPENR1": {
+    "description": "RCC AHB1 peripheral clock enable in Stop mode register.",
+    "fields": [
+      {
+        "name": "GPDMA1STPEN",
+        "description": "GPDMA1 clock enable during Stop mode.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "ADF1STPEN",
+        "description": "ADF1 clock enable during Stop mode.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "FLASHSTPEN",
+        "description": "FLASH clock enable during Stop mode.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "RAMCFGSTPEN",
+        "description": "RAMCFG clock enable during Stop mode.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "GTZC1STPEN",
+        "description": "GTZC1 clock enable during Stop mode.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "SRAM1STPEN",
+        "description": "SRAM1 clock enable during Stop mode.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/AHB2ENR1": {
+    "description": "RCC AHB2 peripheral clock enable register 1.",
+    "fields": [
+      {
+        "name": "GPIOAEN",
+        "description": "I/O port i clock enable (i = E to A).",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOBEN",
+        "description": "I/O port i clock enable (i = E to A).",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOCEN",
+        "description": "I/O port i clock enable (i = E to A).",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIODEN",
+        "description": "I/O port i clock enable (i = E to A).",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOEEN",
+        "description": "I/O port i clock enable (i = E to A).",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOGEN",
+        "description": "I/O port i clock enable (i = H to G).",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOHEN",
+        "description": "I/O port i clock enable (i = H to G).",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC12EN",
+        "description": "ADC12 clock enable.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "DAC1EN",
+        "description": "DAC1 clock enable.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "AESEN",
+        "description": "AES clock enable.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "HASHEN",
+        "description": "HASH clock enable.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "RNGEN",
+        "description": "RNG clock enable.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "PKAEN",
+        "description": "PKA clock enable.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "SAESEN",
+        "description": "SAES clock enable.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "CCBEN",
+        "description": "CCB clock enable.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "SDMMC1EN",
+        "description": "SDMMC1 clock enable.",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "SRAM2EN",
+        "description": "SRAM2 clock enable.",
+        "bit_offset": 30,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/AHB2ENR2": {
+    "description": "RCC AHB2 peripheral clock enable register 2.",
+    "fields": [
+      {
+        "name": "OCTOSPI1EN",
+        "description": "OCTOSPI1 clock enable.",
+        "bit_offset": 4,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/AHB2RSTR1": {
+    "description": "RCC AHB2 peripheral reset register 1.",
+    "fields": [
+      {
+        "name": "GPIOARST",
+        "description": "I/O port i reset (i = E to A).",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOBRST",
+        "description": "I/O port i reset (i = E to A).",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOCRST",
+        "description": "I/O port i reset (i = E to A).",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIODRST",
+        "description": "I/O port i reset (i = E to A).",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOERST",
+        "description": "I/O port i reset (i = E to A).",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOGRST",
+        "description": "I/O port i reset (i = H to G).",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOHRST",
+        "description": "I/O port i reset (i = H to G).",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC12RST",
+        "description": "ADC12 reset.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "DAC1RST",
+        "description": "DAC1 reset.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "AESRST",
+        "description": "AES hardware accelerator reset.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "HASHRST",
+        "description": "HASH reset.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "RNGRST",
+        "description": "Random number generator reset.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "PKARST",
+        "description": "PKA reset.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "SAESRST",
+        "description": "SAES hardware accelerator reset.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "CCBRST",
+        "description": "CCB reset.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "SDMMC1RST",
+        "description": "SDMMC1 reset.",
+        "bit_offset": 27,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/AHB2RSTR2": {
+    "description": "RCC AHB2 peripheral reset register 2.",
+    "fields": [
+      {
+        "name": "OCTOSPI1RST",
+        "description": "OCTOSPI1 reset.",
+        "bit_offset": 4,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/AHB2SLPENR1": {
+    "description": "RCC AHB2 peripheral clock enable in Sleep mode register 1.",
+    "fields": [
+      {
+        "name": "GPIOASLPEN",
+        "description": "I/O port i clock enable during Sleep mode (i = E to A).",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOBSLPEN",
+        "description": "I/O port i clock enable during Sleep mode (i = E to A).",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOCSLPEN",
+        "description": "I/O port i clock enable during Sleep mode (i = E to A).",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIODSLPEN",
+        "description": "I/O port i clock enable during Sleep mode (i = E to A).",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOESLPEN",
+        "description": "I/O port i clock enable during Sleep mode (i = E to A).",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOGSLPEN",
+        "description": "I/O port i clock enable during Sleep mode (i = H to G).",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOHSLPEN",
+        "description": "I/O port i clock enable during Sleep mode (i = H to G).",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC12SLPEN",
+        "description": "ADC12 clock enable during Sleep mode.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "DAC1SLPEN",
+        "description": "DAC1 clock enable during Sleep mode.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "AESSLPEN",
+        "description": "AES clock enable during Sleep mode.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "HASHSLPEN",
+        "description": "HASH clock enable during Sleep mode.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "RNGSLPEN",
+        "description": "RNG clock enable during Sleep mode.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "PKASLPEN",
+        "description": "PKA clock enable during Sleep mode.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "SAESSLPEN",
+        "description": "SAES accelerator clock enable during Sleep mode.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "CCBSLPEN",
+        "description": "CCB accelerator clock enable during Sleep mode.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "SDMMC1SLPEN",
+        "description": "SDMMC1 clock enable during Sleep mode.",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "SRAM2SLPEN",
+        "description": "SRAM2 clock enable during Sleep mode.",
+        "bit_offset": 30,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/AHB2SLPENR2": {
+    "description": "RCC AHB2 peripheral clock enable in Sleep mode register 2.",
+    "fields": [
+      {
+        "name": "OCTOSPI1SLPEN",
+        "description": "OCTOSPI1 clock enable during Sleep mode.",
+        "bit_offset": 4,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/AHB2STPENR1": {
+    "description": "RCC AHB2 peripheral clock enable in Stop mode register 1.",
+    "fields": [
+      {
+        "name": "GPIOASTPEN",
+        "description": "I/O port i clock enable during Stop mode (i = E to A).",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOBSTPEN",
+        "description": "I/O port i clock enable during Stop mode (i = E to A).",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOCSTPEN",
+        "description": "I/O port i clock enable during Stop mode (i = E to A).",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIODSTPEN",
+        "description": "I/O port i clock enable during Stop mode (i = E to A).",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOESTPEN",
+        "description": "I/O port i clock enable during Stop mode (i = E to A).",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOGSTPEN",
+        "description": "I/O port i clock enable during Stop mode (i = H to G).",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "GPIOHSTPEN",
+        "description": "I/O port i clock enable during Stop mode (i = H to G).",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "DAC1STPEN",
+        "description": "DAC1 clock enable during Stop mode.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "SRAM2STPEN",
+        "description": "SRAM2 clock enable during Stop mode.",
+        "bit_offset": 30,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB1ENR1": {
+    "description": "RCC APB1 peripheral clock enable register 1.",
+    "fields": [
+      {
+        "name": "TIM2EN",
+        "description": "TIMj clock enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM3EN",
+        "description": "TIMj clock enable.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM4EN",
+        "description": "TIMj clock enable.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM6EN",
+        "description": "TIMj clock enable.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM7EN",
+        "description": "TIMj clock enable.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "SPI3EN",
+        "description": "SPI3 clock enable.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "WWDGEN",
+        "description": "WWDG clock enable.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "SPI2EN",
+        "description": "SPI2 clock enable.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "USART3EN",
+        "description": "USART3 clock enable.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "UART4EN",
+        "description": "UART4 clock enable.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "UART5EN",
+        "description": "UART5 clock enable.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "I2C1EN",
+        "description": "I2C1 clock enable.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "I2C2EN",
+        "description": "I2C2 clock enable.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "I3C1EN",
+        "description": "I3C1 clock enable.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "CRSEN",
+        "description": "CRS clock enable.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "OPAMPEN",
+        "description": "OPAMP clock enable.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "VREFEN",
+        "description": "VREFBUF clock enable.",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "RTCAPBEN",
+        "description": "RTC and TAMP APB clock enable.",
+        "bit_offset": 30,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB1ENR2": {
+    "description": "RCC APB1 peripheral clock enable register 2.",
+    "fields": [
+      {
+        "name": "LPTIM2EN",
+        "description": "LPTIM2 clock enable.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "FDCAN1EN",
+        "description": "FDCAN1 clock enable.",
+        "bit_offset": 9,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB1RSTR1": {
+    "description": "RCC APB1 peripheral reset register 1.",
+    "fields": [
+      {
+        "name": "TIM2RST",
+        "description": "TIMj reset.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM3RST",
+        "description": "TIMj reset.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM4RST",
+        "description": "TIMj reset.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM6RST",
+        "description": "TIMj reset.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM7RST",
+        "description": "TIMj reset.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "SPI3RST",
+        "description": "SPI3 reset.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "SPI2RST",
+        "description": "SPI2 reset.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "USART3RST",
+        "description": "USART3 reset.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "UART4RST",
+        "description": "UART4 reset.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "UART5RST",
+        "description": "UART5 reset.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "I2C1RST",
+        "description": "I2C1 reset.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "I2C2RST",
+        "description": "I2C2 reset.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "I3C1RST",
+        "description": "I3C1 reset.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "CRSRST",
+        "description": "CRS reset.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "OPAMPRST",
+        "description": "OPAMP reset.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "VREFRST",
+        "description": "VREFBUF reset.",
+        "bit_offset": 29,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB1RSTR2": {
+    "description": "RCC APB1 peripheral reset register 2.",
+    "fields": [
+      {
+        "name": "LPTIM2RST",
+        "description": "LPTIM2 reset.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "FDCAN1RST",
+        "description": "FDCAN1 reset.",
+        "bit_offset": 9,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB1SLPENR1": {
+    "description": "RCC APB1 peripheral clock enable in Sleep mode register 1.",
+    "fields": [
+      {
+        "name": "TIM2SLPEN",
+        "description": "TIMj clock enable during Sleep mode.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM3SLPEN",
+        "description": "TIMj clock enable during Sleep mode.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM4SLPEN",
+        "description": "TIMj clock enable during Sleep mode.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM6SLPEN",
+        "description": "TIMj clock enable during Sleep mode.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM7SLPEN",
+        "description": "TIMj clock enable during Sleep mode.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "SPI3SLPEN",
+        "description": "SPI3 clock enable during Sleep mode.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "WWDGSLPEN",
+        "description": "WWDG clock enable during Sleep mode.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "SPI2SLPEN",
+        "description": "SPI2 clock enable during Sleep mode.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "USART3SLPEN",
+        "description": "USART3 clock enable during Sleep mode.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "UART4SLPEN",
+        "description": "UART4 clock enable during Sleep mode.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "UART5SLPEN",
+        "description": "UART5 clock enable during Sleep mode.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "I2C1SLPEN",
+        "description": "I2C1 clock enable during Sleep mode.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "I2C2SLPEN",
+        "description": "I2C2 clock enable during Sleep mode.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "I3C1SLPEN",
+        "description": "I3C1 clock enable during Sleep mode.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "CRSSLPEN",
+        "description": "CRS clock enable during Sleep mode.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "OPAMPSLPEN",
+        "description": "OPAMP clock enable during Sleep mode.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "VREFSLPEN",
+        "description": "VREFBUF clock enable during Sleep mode.",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "RTCAPBSLPEN",
+        "description": "RTC and TAMP APB clock enable during Sleep mode.",
+        "bit_offset": 30,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB1SLPENR2": {
+    "description": "RCC APB1 peripheral clock enable in Sleep mode register 2.",
+    "fields": [
+      {
+        "name": "LPTIM2SLPEN",
+        "description": "LPTIM2 clock enable during Sleep mode.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "FDCAN1SLPEN",
+        "description": "FDCAN1 clock enable during Sleep mode.",
+        "bit_offset": 9,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB1STPENR1": {
+    "description": "RCC APB1 peripheral clock enable in Stop mode register 1.",
+    "fields": [
+      {
+        "name": "SPI3STPEN",
+        "description": "SPI3 clock enable during Stop mode.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "SPI2STPEN",
+        "description": "SPI2 clock enable during Stop mode.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "USART3STPEN",
+        "description": "USART3 clock enable during Stop mode.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "UART4STPEN",
+        "description": "UART4 clock enable during Stop mode.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "UART5STPEN",
+        "description": "UART5 clock enable during Stop mode.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "I2C1STPEN",
+        "description": "I2C1 clock enable during Stop mode.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "I2C2STPEN",
+        "description": "I2C2 clock enable during Stop mode.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "I3C1STPEN",
+        "description": "I3C1 clock enable during Stop mode.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "OPAMPSTPEN",
+        "description": "OPAMP clock enable during Stop mode.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "VREFSTPEN",
+        "description": "VREFBUF clock enable during Stop mode.",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "RTCAPBSTPEN",
+        "description": "RTC and TAMP APB clock enable during Stop mode.",
+        "bit_offset": 30,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB1STPENR2": {
+    "description": "RCC APB1 peripheral clock enable in Stop mode register 2.",
+    "fields": [
+      {
+        "name": "LPTIM2STPEN",
+        "description": "LPTIM2 clock enable during Stop mode.",
+        "bit_offset": 5,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB2ENR": {
+    "description": "RCC APB2 peripheral clock enable register.",
+    "fields": [
+      {
+        "name": "TIM1EN",
+        "description": "TIM1 clock enable.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "SPI1EN",
+        "description": "SPI1 clock enable.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "USART1EN",
+        "description": "USART1clock enable.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM15EN",
+        "description": "TIMi clock enable.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM16EN",
+        "description": "TIMi clock enable.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM17EN",
+        "description": "TIMi clock enable.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "SAI1EN",
+        "description": "SAI1 clock enable.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "USBEN",
+        "description": "USB clock enable.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "I3C2EN",
+        "description": "I3C2 clock enable.",
+        "bit_offset": 27,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB2RSTR": {
+    "description": "RCC APB2 peripheral reset register.",
+    "fields": [
+      {
+        "name": "TIM1RST",
+        "description": "TIM1 reset.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "SPI1RST",
+        "description": "SPI1 reset.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "USART1RST",
+        "description": "USART1 reset.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM15RST",
+        "description": "TIMi reset.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM16RST",
+        "description": "TIMi reset.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM17RST",
+        "description": "TIMi reset.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "SAI1RST",
+        "description": "SAI1 reset.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "USBRST",
+        "description": "USB reset.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "I3C2RST",
+        "description": "I3C2 reset.",
+        "bit_offset": 27,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB2SLPENR": {
+    "description": "RCC APB2 peripheral clock enable in Sleep mode register.",
+    "fields": [
+      {
+        "name": "TIM1SLPEN",
+        "description": "TIM1 clock enable during Sleep mode.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "SPI1SLPEN",
+        "description": "SPI1 clock enable during Sleep mode.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "USART1SLPEN",
+        "description": "USART1clock enable during Sleep mode.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM15SLPEN",
+        "description": "TIMi clock enable during Sleep mode.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM16SLPEN",
+        "description": "TIMi clock enable during Sleep mode.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM17SLPEN",
+        "description": "TIMi clock enable during Sleep mode.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "SAI1SLPEN",
+        "description": "SAI1 clock enable during Sleep mode.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "USBSLPEN",
+        "description": "USB clock enable during Sleep mode.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "I3C2SLPEN",
+        "description": "I3C2 clock enable during Sleep mode.",
+        "bit_offset": 27,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB2STPENR": {
+    "description": "RCC APB2 peripheral clock enable in Stop mode register.",
+    "fields": [
+      {
+        "name": "SPI1STPEN",
+        "description": "SPI1 clock enable during Stop mode.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "USART1STPEN",
+        "description": "USART1clock enable during Stop mode.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "USBSTPEN",
+        "description": "USB clock enable during Stop mode.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "I3C2STPEN",
+        "description": "I3C2 clock enable during Stop mode.",
+        "bit_offset": 27,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB3ENR": {
+    "description": "RCC APB3 peripheral clock enable register.",
+    "fields": [
+      {
+        "name": "SYSCFGEN",
+        "description": "SYSCFG clock enable.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "LPUART1EN",
+        "description": "LPUART1 clock enable.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "I2C3EN",
+        "description": "I2C3 clock enable.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "LPTIM1EN",
+        "description": "LPTIM1 clock enable.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "LPTIM3EN",
+        "description": "LPTIMi clock enable.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "LPTIM4EN",
+        "description": "LPTIMi clock enable.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "COMPEN",
+        "description": "COMP clock enable.",
+        "bit_offset": 15,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB3RSTR": {
+    "description": "RCC APB3 peripheral reset register.",
+    "fields": [
+      {
+        "name": "SYSCFGRST",
+        "description": "SYSCFG reset.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "LPUART1RST",
+        "description": "LPUART1 reset.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "I2C3RST",
+        "description": "I2C3 reset.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "LPTIM1RST",
+        "description": "LPTIM1 reset.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "LPTIM3RST",
+        "description": "LPTIMi reset.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "LPTIM4RST",
+        "description": "LPTIMi reset.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "COMPRST",
+        "description": "COMP reset.",
+        "bit_offset": 15,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB3SLPENR": {
+    "description": "RCC APB3 peripheral clock enable in Sleep mode register.",
+    "fields": [
+      {
+        "name": "SYSCFGSLPEN",
+        "description": "SYSCFG clock enable during Sleep mode.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "LPUART1SLPEN",
+        "description": "LPUART1 clock enable during Sleep mode.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "I2C3SLPEN",
+        "description": "I2C3 clock enable during Sleep mode.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "LPTIM1SLPEN",
+        "description": "LPTIM1clock enable during Sleep mode.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "LPTIM3SLPEN",
+        "description": "LPTIMi clock enable during Sleep mode.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "LPTIM4SLPEN",
+        "description": "LPTIMi clock enable during Sleep mode.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "COMPSLPEN",
+        "description": "COMP clock enable during Sleep mode.",
+        "bit_offset": 15,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/APB3STPENR": {
+    "description": "RCC APB3 peripheral clock enable in Stop mode register.",
+    "fields": [
+      {
+        "name": "LPUART1STPEN",
+        "description": "LPUART1 clock enable during Stop mode.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "I2C3STPEN",
+        "description": "I2C3 clock enable during Stop mode.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "LPTIM1STPEN",
+        "description": "LPTIM1clock enable during Stop mode.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "LPTIM3STPEN",
+        "description": "LPTIMi clock enable during Stop mode.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "LPTIM4STPEN",
+        "description": "LPTIMi clock enable during Stop mode.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "COMPSTPEN",
+        "description": "COMP clock enable during Stop mode.",
+        "bit_offset": 15,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/BDCR": {
+    "description": "RCC backup domain control register.",
+    "fields": [
+      {
+        "name": "LSEON",
+        "description": "LSE oscillator enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "LSERDY",
+        "description": "LSE oscillator ready.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "LSEBYP",
+        "description": "LSE oscillator bypass.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "LSEDRV",
+        "description": "LSE oscillator drive capability.",
+        "bit_offset": 3,
+        "bit_size": 2,
+        "enum": "LSEDRV"
+      },
+      {
+        "name": "LSECSSON",
+        "description": "CSS on LSE enable.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "LSECSSD",
+        "description": "CSS on LSE failure detection.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "LSESYSEN",
+        "description": "LSE system clock (LSESYS) enable.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "RTCSEL",
+        "description": "RTC and TAMP clock source selection.",
+        "bit_offset": 8,
+        "bit_size": 2,
+        "enum": "RTCSEL"
+      },
+      {
+        "name": "LSESYSRDY",
+        "description": "LSE system clock (LSESYS) ready.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "LSEGFON",
+        "description": "LSE clock glitch filter enable.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "RTCEN",
+        "description": "RTC and TAMP clock enable.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "BDRST",
+        "description": "Backup domain software reset.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "LSCOEN",
+        "description": "Low-speed clock output (LSCO) enable.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "LSCOSEL",
+        "description": "Low-speed clock output selection.",
+        "bit_offset": 25,
+        "bit_size": 1,
+        "enum": "LSCOSEL"
+      }
+    ]
+  },
+  "fieldset/CCIPR1": {
+    "description": "RCC peripheral independent clock configuration register 1.",
+    "fields": [
+      {
+        "name": "USART1SEL",
+        "description": "USART1 kernel clock source selection.",
+        "bit_offset": 0,
+        "bit_size": 1,
+        "enum": "USARTSEL"
+      },
+      {
+        "name": "USART3SEL",
+        "description": "USART3 kernel clock source selection.",
+        "bit_offset": 2,
+        "bit_size": 1,
+        "enum": "USART3SEL"
+      },
+      {
+        "name": "UART4SEL",
+        "description": "UART4 kernel clock source selection.",
+        "bit_offset": 4,
+        "bit_size": 1,
+        "enum": "UARTSEL"
+      },
+      {
+        "name": "UART5SEL",
+        "description": "UART5 kernel clock source selection.",
+        "bit_offset": 6,
+        "bit_size": 1,
+        "enum": "UARTSEL"
+      },
+      {
+        "name": "I3C1SEL",
+        "description": "I3C1 kernel clock source selection.",
+        "bit_offset": 8,
+        "bit_size": 1,
+        "enum": "I3CSEL"
+      },
+      {
+        "name": "I2C1SEL",
+        "description": "I2C1 kernel clock source selection.",
+        "bit_offset": 10,
+        "bit_size": 1,
+        "enum": "I2CSEL"
+      },
+      {
+        "name": "I2C2SEL",
+        "description": "I2C2 kernel clock source selection.",
+        "bit_offset": 12,
+        "bit_size": 1,
+        "enum": "I2CSEL"
+      },
+      {
+        "name": "I3C2SEL",
+        "description": "I3C2 kernel clock source selection.",
+        "bit_offset": 14,
+        "bit_size": 1,
+        "enum": "I3C2SEL"
+      },
+      {
+        "name": "SPI2SEL",
+        "description": "SPI2 kernel clock source selection.",
+        "bit_offset": 16,
+        "bit_size": 1,
+        "enum": "SPI2SEL"
+      },
+      {
+        "name": "LPTIM2SEL",
+        "description": "Low-power timer 2 kernel clock source selection.",
+        "bit_offset": 18,
+        "bit_size": 2,
+        "enum": "LPTIMSEL"
+      },
+      {
+        "name": "SPI1SEL",
+        "description": "SPI1 kernel clock source selection.",
+        "bit_offset": 20,
+        "bit_size": 1,
+        "enum": "SPISEL"
+      },
+      {
+        "name": "SYSTICKSEL",
+        "description": "SysTick clock source selection.",
+        "bit_offset": 22,
+        "bit_size": 2,
+        "enum": "SYSTICKSEL"
+      },
+      {
+        "name": "FDCAN1SEL",
+        "description": "FDCAN1 kernel clock source selection.",
+        "bit_offset": 24,
+        "bit_size": 1,
+        "enum": "FDCANSEL"
+      },
+      {
+        "name": "ICLKSEL",
+        "description": "Intermediate clock source selection.",
+        "bit_offset": 26,
+        "bit_size": 2,
+        "enum": "ICLKSEL"
+      },
+      {
+        "name": "USBSEL",
+        "description": "USB kernel clock prescaler selection.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMICSEL",
+        "description": "Clock sources for TIM16,TIM17, and LPTIM2 internal input capture.",
+        "bit_offset": 29,
+        "bit_size": 3,
+        "enum": "TIMICSEL"
+      }
+    ]
+  },
+  "fieldset/CCIPR2": {
+    "description": "RCC peripheral independent clock configuration register 2.",
+    "fields": [
+      {
+        "name": "ADF1SEL",
+        "description": "ADF1 kernel clock source selection.",
+        "bit_offset": 0,
+        "bit_size": 2,
+        "enum": "ADFSEL"
+      },
+      {
+        "name": "SPI3SEL",
+        "description": "SPI3 kernel clock source selection.",
+        "bit_offset": 3,
+        "bit_size": 1,
+        "enum": "SPI3SEL"
+      },
+      {
+        "name": "SAI1SEL",
+        "description": "SAI1 kernel clock source selection.",
+        "bit_offset": 5,
+        "bit_size": 2,
+        "enum": "SAISEL"
+      },
+      {
+        "name": "RNGSEL",
+        "description": "RNG kernel clock source selection.",
+        "bit_offset": 11,
+        "bit_size": 1,
+        "enum": "RNGSEL"
+      },
+      {
+        "name": "ADCDACPRE",
+        "description": "ADC12 and DAC1 kernel clock prescaler.",
+        "bit_offset": 12,
+        "bit_size": 4,
+        "enum": "ADCDACPRE"
+      },
+      {
+        "name": "ADCDACSEL",
+        "description": "ADC12 and DAC1 intermediate kernel clock source selection.",
+        "bit_offset": 16,
+        "bit_size": 2,
+        "enum": "ADCDACSEL"
+      },
+      {
+        "name": "DAC1SHSEL",
+        "description": "DAC1 sample and hold clock source selection.",
+        "bit_offset": 19,
+        "bit_size": 1,
+        "enum": "DACSHSEL"
+      },
+      {
+        "name": "OCTOSPISEL",
+        "description": "OCTOSPI1 kernel clock source selection.",
+        "bit_offset": 20,
+        "bit_size": 1,
+        "enum": "OCTOSPISEL"
+      }
+    ]
+  },
+  "fieldset/CCIPR3": {
+    "description": "RCC peripheral independent clock configuration register 3.",
+    "fields": [
+      {
+        "name": "LPUART1SEL",
+        "description": "LPUART1 kernel clock source selection.",
+        "bit_offset": 0,
+        "bit_size": 2,
+        "enum": "LPUARTSEL"
+      },
+      {
+        "name": "I2C3SEL",
+        "description": "I2C3 kernel clock source selection.",
+        "bit_offset": 6,
+        "bit_size": 1,
+        "enum": "I2C3SEL"
+      },
+      {
+        "name": "LPTIM34SEL",
+        "description": "LPTIM3 and LPTIM4 kernel clock source selection.",
+        "bit_offset": 8,
+        "bit_size": 2,
+        "enum": "LPTIMSEL"
+      },
+      {
+        "name": "LPTIM1SEL",
+        "description": "LPTIM1 kernel clock source selection.",
+        "bit_offset": 10,
+        "bit_size": 2,
+        "enum": "LPTIMSEL"
+      }
+    ]
+  },
+  "fieldset/CFGR1": {
+    "description": "RCC clock configuration register 1.",
+    "fields": [
+      {
+        "name": "SW",
+        "description": "System clock switch.",
+        "bit_offset": 0,
+        "bit_size": 2,
+        "enum": "SW"
+      },
+      {
+        "name": "SWS",
+        "description": "System clock switch status.",
+        "bit_offset": 2,
+        "bit_size": 2,
+        "enum": "SWS"
+      },
+      {
+        "name": "STOPWUCK",
+        "description": "Wake-up from Stop and CSS backup clock selection.",
+        "bit_offset": 4,
+        "bit_size": 1,
+        "enum": "STOPWUCK"
+      },
+      {
+        "name": "STOPKERWUCK",
+        "description": "Wake-up from Stop kernel clock automatic enable selection.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "MCO2SEL",
+        "description": "Microcontroller clock output 2.",
+        "bit_offset": 16,
+        "bit_size": 4,
+        "enum": "MCO2SEL"
+      },
+      {
+        "name": "MCO2PRE",
+        "description": "Microcontroller clock output 2 prescaler.",
+        "bit_offset": 20,
+        "bit_size": 3,
+        "enum": "MCOPRE"
+      },
+      {
+        "name": "MCOSEL",
+        "description": "Microcontroller clock output.",
+        "bit_offset": 24,
+        "bit_size": 4,
+        "enum": "MCOSEL"
+      },
+      {
+        "name": "MCOPRE",
+        "description": "Microcontroller clock output prescaler.",
+        "bit_offset": 28,
+        "bit_size": 3,
+        "enum": "MCOPRE"
+      }
+    ]
+  },
+  "fieldset/CFGR2": {
+    "description": "RCC clock configuration register 2.",
+    "fields": [
+      {
+        "name": "HPRE",
+        "description": "AHB prescaler.",
+        "bit_offset": 0,
+        "bit_size": 4,
+        "enum": "HPRE"
+      },
+      {
+        "name": "PPRE1",
+        "description": "APB1 prescaler.",
+        "bit_offset": 4,
+        "bit_size": 3,
+        "enum": "PPRE"
+      },
+      {
+        "name": "PPRE2",
+        "description": "APB2 prescaler.",
+        "bit_offset": 8,
+        "bit_size": 3,
+        "enum": "PPRE"
+      }
+    ]
+  },
+  "fieldset/CFGR3": {
+    "description": "RCC clock configuration register 3.",
+    "fields": [
+      {
+        "name": "PPRE3",
+        "description": "APB3 prescaler.",
+        "bit_offset": 4,
+        "bit_size": 3,
+        "enum": "PPRE"
+      }
+    ]
+  },
+  "fieldset/CFGR4": {
+    "description": "RCC clock configuration register 4.",
+    "fields": [
+      {
+        "name": "BOOSTSEL",
+        "description": "EPOD booster input clock source selection.",
+        "bit_offset": 0,
+        "bit_size": 2,
+        "enum": "BOOSTSEL"
+      },
+      {
+        "name": "BOOSTDIV",
+        "description": "EPOD booster input clock prescaler.",
+        "bit_offset": 12,
+        "bit_size": 4,
+        "enum": "BOOSTDIV"
+      }
+    ]
+  },
+  "fieldset/CICR": {
+    "description": "RCC clock interrupt clear register.",
+    "fields": [
+      {
+        "name": "LSIRDYC",
+        "description": "LSI ready interrupt clear.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "LSERDYC",
+        "description": "LSE ready interrupt clear.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "MSISRDYC",
+        "description": "MSIS ready interrupt clear.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "HSIRDYC",
+        "description": "HSI16 ready interrupt clear.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "HSERDYC",
+        "description": "HSE ready interrupt clear.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "HSI48RDYC",
+        "description": "HSI48 ready interrupt clear.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLL1RDYC",
+        "description": "MSIRC1 PLL mode ready interrupt clear.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLL0RDYC",
+        "description": "MSIRC0 PLL mode ready interrupt clear.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLLUC",
+        "description": "MSI PLL mode with LSE unlock interrupt clear.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLLHSUC",
+        "description": "MSI PLL mode with HSE unlock interrupt clear.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "CSSC",
+        "description": "Clock security system interrupt clear.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIKRDYC",
+        "description": "MSIK oscillator ready interrupt clear.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "LSECSSC",
+        "description": "LSE CSS interrupt clear.",
+        "bit_offset": 12,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/CIER": {
+    "description": "RCC clock interrupt enable register.",
+    "fields": [
+      {
+        "name": "LSIRDYIE",
+        "description": "LSI ready interrupt enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "LSERDYIE",
+        "description": "LSE ready interrupt enable.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "MSISRDYIE",
+        "description": "MSIS ready interrupt enable.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "HSIRDYIE",
+        "description": "HSI16 ready interrupt enable.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "HSERDYIE",
+        "description": "HSE ready interrupt enable.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "HSI48RDYIE",
+        "description": "HSI48 ready interrupt enable.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLL1RDYIE",
+        "description": "MSIRC1 PLL mode ready interrupt enable.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLL0RDYIE",
+        "description": "MSIRC0 PLL mode ready interrupt enable.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLLUIE",
+        "description": "MSI PLL mode with LSE unlock interrupt enable.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLLHSUIE",
+        "description": "MSI PLL mode with HSE unlock interrupt enable.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIKRDYIE",
+        "description": "MSIK ready interrupt enable.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "LSECSSIE",
+        "description": "LSE clock security system interrupt enable.",
+        "bit_offset": 12,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/CIFR": {
+    "description": "RCC clock interrupt flag register.",
+    "fields": [
+      {
+        "name": "LSIRDYF",
+        "description": "LSI ready interrupt flag.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "LSERDYF",
+        "description": "LSE ready interrupt flag.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "MSISRDYF",
+        "description": "MSIS ready interrupt flag.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "HSIRDYF",
+        "description": "HSI16 ready interrupt flag.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "HSERDYF",
+        "description": "HSE ready interrupt flag.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "HSI48RDYF",
+        "description": "HSI48 ready interrupt flag.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLL1RDYF",
+        "description": "MSIRC1 PLL mode ready interrupt enable.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLL0RDYF",
+        "description": "MSIRC0 PLL mode ready interrupt flag.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLLUF",
+        "description": "MSI PLL mode with LSE unlock interrupt flag.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLLHSUF",
+        "description": "MSI PLL mode with HSE unlock interrupt flag.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "CSSF",
+        "description": "Clock security system interrupt flag.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIKRDYF",
+        "description": "MSIK ready interrupt flag.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "LSECSSF",
+        "description": "LSE clock security system interrupt flag.",
+        "bit_offset": 12,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "description": "RCC clock control register.",
+    "fields": [
+      {
+        "name": "MSISON",
+        "description": "MSIS clock enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIKERON",
+        "description": "MSI enable for some peripheral kernels.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "MSISRDY",
+        "description": "MSIS clock ready flag.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIKON",
+        "description": "MSIK clock enable.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIKRDY",
+        "description": "MSIK clock ready flag.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLL1EN",
+        "description": "MSIRC1 PLL mode enable.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLL0EN",
+        "description": "MSIRC0 PLL mode enable.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLL1FAST",
+        "description": "MSIRC1 PLL mode fast startup.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLL0FAST",
+        "description": "MSIRC0 PLL mode fast startup.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLL1RDY",
+        "description": "MSIRC1 PLL mode ready flag.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "MSIPLL0RDY",
+        "description": "MSIRC0 PLL mode ready flag.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "HSION",
+        "description": "HSI16 clock enable.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "HSIKERON",
+        "description": "HSI16 enable for some peripheral kernels.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "HSIRDY",
+        "description": "HSI16 clock ready flag.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "HSI48ON",
+        "description": "HSI48 clock enable.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "HSI48RDY",
+        "description": "HSI48 clock ready flag.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "HSEON",
+        "description": "HSE clock enable.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "HSERDY",
+        "description": "HSE clock ready flag.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "HSEBYP",
+        "description": "HSE crystal oscillator bypass.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "HSECSSON",
+        "description": "Clock security system enable.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "HSEEXT",
+        "description": "HSE external clock bypass mode.",
+        "bit_offset": 20,
+        "bit_size": 1,
+        "enum": "HSEEXT"
+      }
+    ]
+  },
+  "fieldset/CRRCR": {
+    "description": "RCC clock recovery RC register.",
+    "fields": [
+      {
+        "name": "HSI48CAL",
+        "description": "HSI48 clock calibration.",
+        "bit_offset": 0,
+        "bit_size": 9
+      }
+    ]
+  },
+  "fieldset/CSR": {
+    "description": "RCC control/status register.",
+    "fields": [
+      {
+        "name": "LSION",
+        "description": "LSI oscillator enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "LSIRDY",
+        "description": "LSI oscillator ready.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "LSIPREDIV",
+        "description": "Low-speed clock divider configuration.",
+        "bit_offset": 2,
+        "bit_size": 1,
+        "enum": "LSIPREDIV"
+      },
+      {
+        "name": "MSIKDIVS",
+        "description": "MSIK oscillator division after Standby mode.",
+        "bit_offset": 8,
+        "bit_size": 2,
+        "enum": "MSIKDIVS"
+      },
+      {
+        "name": "MSISDIVS",
+        "description": "MSIS oscillator division after Standby mode.",
+        "bit_offset": 12,
+        "bit_size": 2,
+        "enum": "MSISDIVS"
+      },
+      {
+        "name": "RMVF",
+        "description": "Remove reset flag.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "OBLRSTF",
+        "description": "Option-byte loader reset flag.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "PINRSTF",
+        "description": "NRST pin reset flag.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "BORRSTF",
+        "description": "BOR flag.",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "SFTRSTF",
+        "description": "Software reset flag.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "IWDGRSTF",
+        "description": "Independent watchdog reset flag.",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "WWDGRSTF",
+        "description": "Window watchdog reset flag.",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "LPWRRSTF",
+        "description": "Low-power reset flag.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/ICSCR1": {
+    "description": "RCC internal clock source calibration register 1.",
+    "fields": [
+      {
+        "name": "MSICAL1",
+        "description": "MSIRC1 clock calibration for MSI ranges 4 to 7.",
+        "bit_offset": 0,
+        "bit_size": 6
+      },
+      {
+        "name": "MSICAL0",
+        "description": "MSIRC0 clock calibration for MSI ranges 0 to 3.",
+        "bit_offset": 6,
+        "bit_size": 6
+      },
+      {
+        "name": "MSIHSINDIV",
+        "description": "MSIRCx (x = 0, 1) PLL mode HSE input division.",
+        "bit_offset": 19,
+        "bit_size": 1,
+        "enum": "MSIHSINDIV"
+      },
+      {
+        "name": "MSIPLL1SEL",
+        "description": "MSIRC1 PLL mode input clock selection.",
+        "bit_offset": 20,
+        "bit_size": 1,
+        "enum": "MSIPLLSEL"
+      },
+      {
+        "name": "MSIPLL0SEL",
+        "description": "MSIRC0 PLL mode input clock selection.",
+        "bit_offset": 21,
+        "bit_size": 1,
+        "enum": "MSIPLLSEL"
+      },
+      {
+        "name": "MSIBIAS",
+        "description": "MSI bias mode selection.",
+        "bit_offset": 22,
+        "bit_size": 1,
+        "enum": "MSIBIAS"
+      },
+      {
+        "name": "MSIRGSEL",
+        "description": "MSI clock range selection.",
+        "bit_offset": 23,
+        "bit_size": 1,
+        "enum": "MSIRGSEL"
+      },
+      {
+        "name": "MSIPLL1N",
+        "description": "MSIRC1 PLL mode with LSE multiplication factor.",
+        "bit_offset": 24,
+        "bit_size": 2
+      },
+      {
+        "name": "MSIKDIV",
+        "description": "MSIK oscillator division.",
+        "bit_offset": 26,
+        "bit_size": 2,
+        "enum": "MSIKDIV"
+      },
+      {
+        "name": "MSIKSEL",
+        "description": "MSIK clock source selection.",
+        "bit_offset": 28,
+        "bit_size": 1,
+        "enum": "MSIKSEL"
+      },
+      {
+        "name": "MSISDIV",
+        "description": "MSIS oscillator division.",
+        "bit_offset": 29,
+        "bit_size": 2,
+        "enum": "MSISDIV"
+      },
+      {
+        "name": "MSISSEL",
+        "description": "MSIS clock source selection.",
+        "bit_offset": 31,
+        "bit_size": 1,
+        "enum": "MSISSEL"
+      }
+    ]
+  },
+  "fieldset/ICSCR2": {
+    "description": "RCC internal clock source calibration register 2.",
+    "fields": [
+      {
+        "name": "MSITRIM1",
+        "description": "MSIRC1 clock trimming for ranges 4 to 7.",
+        "bit_offset": 0,
+        "bit_size": 6
+      },
+      {
+        "name": "MSITRIM0",
+        "description": "MSIRC0 clock trimming for ranges 0 to 3.",
+        "bit_offset": 6,
+        "bit_size": 6
+      }
+    ]
+  },
+  "fieldset/ICSCR3": {
+    "description": "RCC internal clock source calibration register 3.",
+    "fields": [
+      {
+        "name": "HSICAL",
+        "description": "HSI clock calibration.",
+        "bit_offset": 0,
+        "bit_size": 12
+      },
+      {
+        "name": "HSITRIM",
+        "description": "HSI clock trimming.",
+        "bit_offset": 16,
+        "bit_size": 5
+      }
+    ]
+  },
+  "fieldset/PRIVCFGR": {
+    "description": "RCC privilege configuration register.",
+    "fields": [
+      {
+        "name": "SPRIV",
+        "description": "RCC secure function privilege configuration.",
+        "bit_offset": 0,
+        "bit_size": 1,
+        "enum": "SECURITY"
+      },
+      {
+        "name": "NSPRIV",
+        "description": "RCC nonsecure function privilege configuration.",
+        "bit_offset": 1,
+        "bit_size": 1,
+        "enum": "SECURITY"
+      }
+    ]
+  },
+  "fieldset/SECCFGR": {
+    "description": "RCC secure configuration register.",
+    "fields": [
+      {
+        "name": "HSISEC",
+        "description": "HSI clock configuration and status bit security.",
+        "bit_offset": 0,
+        "bit_size": 1,
+        "enum": "SECURITY"
+      },
+      {
+        "name": "HSESEC",
+        "description": "HSE clock configuration, status bits, and HSE_CSS security.",
+        "bit_offset": 1,
+        "bit_size": 1,
+        "enum": "SECURITY"
+      },
+      {
+        "name": "MSISEC",
+        "description": "MSI clock configuration and status bit security.",
+        "bit_offset": 2,
+        "bit_size": 1,
+        "enum": "SECURITY"
+      },
+      {
+        "name": "LSISEC",
+        "description": "LSI clock configuration and status bit security.",
+        "bit_offset": 3,
+        "bit_size": 1,
+        "enum": "SECURITY"
+      },
+      {
+        "name": "LSESEC",
+        "description": "LSE clock configuration and status bit security.",
+        "bit_offset": 4,
+        "bit_size": 1,
+        "enum": "SECURITY"
+      },
+      {
+        "name": "SYSCLKSEC",
+        "description": "SYSCLK clock selection, STOPWUCK bit, clock output on MCO configuration security.",
+        "bit_offset": 5,
+        "bit_size": 1,
+        "enum": "SECURITY"
+      },
+      {
+        "name": "PRESCSEC",
+        "description": "AHBx/APBx prescaler configuration bit security.",
+        "bit_offset": 6,
+        "bit_size": 1,
+        "enum": "SECURITY"
+      },
+      {
+        "name": "BOOSTSEC",
+        "description": "EPOD booster configuration bit security.",
+        "bit_offset": 7,
+        "bit_size": 1,
+        "enum": "SECURITY"
+      },
+      {
+        "name": "ICLKSEC",
+        "description": "Intermediate clock source selection security.",
+        "bit_offset": 10,
+        "bit_size": 1,
+        "enum": "SECURITY"
+      },
+      {
+        "name": "HSI48SEC",
+        "description": "HSI48 clock configuration and status bit security.",
+        "bit_offset": 11,
+        "bit_size": 1,
+        "enum": "SECURITY"
+      },
+      {
+        "name": "RMVFSEC",
+        "description": "Remove reset flag security.",
+        "bit_offset": 12,
+        "bit_size": 1,
+        "enum": "SECURITY"
+      }
+    ]
+  },
+  "enum/ADCDACPRE": {
+    "bit_size": 4,
+    "variants": [
+      {
+        "name": "Div1",
+        "description": "adcdac_iclk.",
+        "value": 0
+      },
+      {
+        "name": "Div2",
+        "description": "adcdac_iclk/2.",
+        "value": 1
+      },
+      {
+        "name": "Div4",
+        "description": "adcdac_iclk/4.",
+        "value": 8
+      },
+      {
+        "name": "Div8",
+        "description": "adcdac_iclk/8.",
+        "value": 9
+      },
+      {
+        "name": "Div16",
+        "description": "adcdac_iclk/16.",
+        "value": 10
+      },
+      {
+        "name": "Div32",
+        "description": "adcdac_iclk/32.",
+        "value": 11
+      },
+      {
+        "name": "Div64",
+        "description": "adcdac_iclk/64.",
+        "value": 12
+      },
+      {
+        "name": "Div128",
+        "description": "adcdac_iclk/128.",
+        "value": 13
+      },
+      {
+        "name": "Div256",
+        "description": "adcdac_iclk/256.",
+        "value": 14
+      },
+      {
+        "name": "Div512",
+        "description": "adcdac_iclk/512.",
+        "value": 15
+      }
+    ]
+  },
+  "enum/ADCDACSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "HCLK1",
+        "description": "HCLK selected.",
+        "value": 0
+      },
+      {
+        "name": "HSE",
+        "description": "HSE selected.",
+        "value": 1
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected.",
+        "value": 2
+      }
+    ]
+  },
+  "enum/ADFSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "HCLK1",
+        "description": "HCLK.",
+        "value": 0
+      },
+      {
+        "name": "AUDIOCLK",
+        "description": "Input pin AUDIOCLK selected.",
+        "value": 1
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK clock selected.",
+        "value": 2
+      },
+      {
+        "name": "SAI1",
+        "description": "SAI1 kernel clock selected.",
+        "value": 3
+      }
+    ]
+  },
+  "enum/BOOSTDIV": {
+    "bit_size": 4,
+    "variants": [
+      {
+        "name": "Div1",
+        "description": "Divided by 1 (bypass).",
+        "value": 0
+      },
+      {
+        "name": "Div2",
+        "description": "Divided by 2.",
+        "value": 1
+      },
+      {
+        "name": "Div4",
+        "description": "Divided by 4.",
+        "value": 2
+      },
+      {
+        "name": "Div6",
+        "description": "Divided by 6.",
+        "value": 3
+      },
+      {
+        "name": "Div8",
+        "description": "Divided by 8.",
+        "value": 4
+      },
+      {
+        "name": "Div10",
+        "description": "Divided by 10.",
+        "value": 5
+      },
+      {
+        "name": "Div12",
+        "description": "Divided by 12.",
+        "value": 6
+      },
+      {
+        "name": "Div14",
+        "description": "Divided by 14.",
+        "value": 7
+      },
+      {
+        "name": "Div16",
+        "description": "Divided by 16.",
+        "value": 8
+      }
+    ]
+  },
+  "enum/BOOSTSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "DISABLE",
+        "description": "No clock.",
+        "value": 0
+      },
+      {
+        "name": "MSIS",
+        "description": "MSIS selected as EPOD booster clock source.",
+        "value": 1
+      },
+      {
+        "name": "HSI16",
+        "description": "HSI16 selected as EPOD booster clock source.",
+        "value": 2
+      },
+      {
+        "name": "HSE",
+        "description": "HSE selected as EPOD booster clock source.",
+        "value": 3
+      }
+    ]
+  },
+  "enum/DACSHSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "LSE",
+        "description": "LSE selected.",
+        "value": 0
+      },
+      {
+        "name": "LSI",
+        "description": "LSI selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/FDCANSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "SYS",
+        "description": "SYSCLK selected.",
+        "value": 0
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/HPRE": {
+    "bit_size": 4,
+    "variants": [
+      {
+        "name": "Div1",
+        "description": "HCLK = SYSCLK not divided.",
+        "value": 0
+      },
+      {
+        "name": "Div2",
+        "description": "HCLK = SYSCLK divided by 2.",
+        "value": 8
+      },
+      {
+        "name": "Div4",
+        "description": "HCLK = SYSCLK divided by 4.",
+        "value": 9
+      },
+      {
+        "name": "Div8",
+        "description": "HCLK = SYSCLK divided by 8.",
+        "value": 10
+      },
+      {
+        "name": "Div16",
+        "description": "HCLK = SYSCLK divided by 16.",
+        "value": 11
+      },
+      {
+        "name": "Div64",
+        "description": "HCLK = SYSCLK divided by 64.",
+        "value": 12
+      },
+      {
+        "name": "Div128",
+        "description": "HCLK = SYSCLK divided by 128.",
+        "value": 13
+      },
+      {
+        "name": "Div256",
+        "description": "HCLK = SYSCLK divided by 256.",
+        "value": 14
+      },
+      {
+        "name": "Div512",
+        "description": "HCLK = SYSCLK divided by 512.",
+        "value": 15
+      }
+    ]
+  },
+  "enum/HSEEXT": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "ANALOG",
+        "description": "External HSE clock analog mode.",
+        "value": 0
+      },
+      {
+        "name": "DIGITAL",
+        "description": "External HSE clock digital mode (through I/O Schmitt trigger).",
+        "value": 1
+      }
+    ]
+  },
+  "enum/I2C3SEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "PCLK3",
+        "description": "PCLK1 selected.",
+        "value": 0
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/I2CSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "PCLK1",
+        "description": "PCLK1 selected.",
+        "value": 0
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/I3C2SEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "PCLK2",
+        "description": "PCLK2 selected.",
+        "value": 0
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/I3CSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "PCLK1",
+        "description": "PCLK1 selected.",
+        "value": 0
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/ICLKSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "HSI48",
+        "description": "HSI48 selected.",
+        "value": 0
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected.",
+        "value": 1
+      },
+      {
+        "name": "HSE",
+        "description": "HSE selected.",
+        "value": 2
+      },
+      {
+        "name": "SYS",
+        "description": "SYSCLK selected.",
+        "value": 3
+      }
+    ]
+  },
+  "enum/LPTIMSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "MSIK",
+        "description": "MSIK clock selected.",
+        "value": 0
+      },
+      {
+        "name": "LSI",
+        "description": "LSI selected.",
+        "value": 1
+      },
+      {
+        "name": "HSI",
+        "description": "HSI16 selected.",
+        "value": 2
+      },
+      {
+        "name": "LSE",
+        "description": "LSE selected.",
+        "value": 3
+      }
+    ]
+  },
+  "enum/LPUARTSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "PCLK3",
+        "description": "PCLK3 selected.",
+        "value": 0
+      },
+      {
+        "name": "HSI",
+        "description": "HSI16 selected.",
+        "value": 1
+      },
+      {
+        "name": "LSE",
+        "description": "LSE selected.",
+        "value": 2
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected.",
+        "value": 3
+      }
+    ]
+  },
+  "enum/LSCOSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "LSI",
+        "description": "LSI selected.",
+        "value": 0
+      },
+      {
+        "name": "LSE",
+        "description": "LSE selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/LSEDRV": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "Low",
+        "description": "Low driving capability",
+        "value": 0
+      },
+      {
+        "name": "MediumLow",
+        "description": "Medium-low driving capability",
+        "value": 1
+      },
+      {
+        "name": "MediumHigh",
+        "description": "Medium-high driving capability",
+        "value": 2
+      },
+      {
+        "name": "High",
+        "description": "High driving capability",
+        "value": 3
+      }
+    ]
+  },
+  "enum/LSIPREDIV": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "Div1",
+        "description": "LSI not divided.",
+        "value": 0
+      },
+      {
+        "name": "Div128",
+        "description": "LSI divided by 128.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/MCO2SEL": {
+    "bit_size": 4,
+    "variants": [
+      {
+        "name": "DISABLE",
+        "description": "MCO2 output disabled, no clock on MCO2.",
+        "value": 0
+      },
+      {
+        "name": "SYS",
+        "description": "SYSCLK system clock selected.",
+        "value": 1
+      },
+      {
+        "name": "MSIS",
+        "description": "MSIS clock selected.",
+        "value": 2
+      },
+      {
+        "name": "HSI16",
+        "description": "HSI16 clock selected.",
+        "value": 3
+      },
+      {
+        "name": "HSE",
+        "description": "HSE clock selected 0101: LSI clock selected.",
+        "value": 4
+      },
+      {
+        "name": "LSE",
+        "description": "LSE clock selected.",
+        "value": 6
+      },
+      {
+        "name": "HSI48",
+        "description": "HSI48 clock selected.",
+        "value": 7
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK clock selected.",
+        "value": 8
+      }
+    ]
+  },
+  "enum/MCOPRE": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "name": "Div1",
+        "description": "MCO2 divided by 1.",
+        "value": 0
+      },
+      {
+        "name": "Div2",
+        "description": "MCO2 divided by 2.",
+        "value": 1
+      },
+      {
+        "name": "Div4",
+        "description": "MCO2 divided by 4.",
+        "value": 2
+      },
+      {
+        "name": "Div8",
+        "description": "MCO2 divided by 8.",
+        "value": 3
+      },
+      {
+        "name": "Div16",
+        "description": "MCO2 divided by 16.",
+        "value": 4
+      },
+      {
+        "name": "Div32",
+        "description": "MCO2 divided by 32.",
+        "value": 5
+      },
+      {
+        "name": "Div64",
+        "description": "MCO2 divided by 64.",
+        "value": 6
+      },
+      {
+        "name": "Div128",
+        "description": "MCO2 divided by 128.",
+        "value": 7
+      }
+    ]
+  },
+  "enum/MCOSEL": {
+    "bit_size": 4,
+    "variants": [
+      {
+        "name": "DISABLE",
+        "description": "MCO output disabled, no clock on MCO.",
+        "value": 0
+      },
+      {
+        "name": "SYS",
+        "description": "SYSCLK system clock selected.",
+        "value": 1
+      },
+      {
+        "name": "MSIS",
+        "description": "MSIS clock selected.",
+        "value": 2
+      },
+      {
+        "name": "HSI16",
+        "description": "HSI16 clock selected.",
+        "value": 3
+      },
+      {
+        "name": "HSE",
+        "description": "HSE clock selected.",
+        "value": 4
+      },
+      {
+        "name": "LSI",
+        "description": "LSI clock selected.",
+        "value": 5
+      },
+      {
+        "name": "LSE",
+        "description": "LSE clock selected.",
+        "value": 6
+      },
+      {
+        "name": "HSI48",
+        "description": "HSI48 clock selected.",
+        "value": 7
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK clock selected.",
+        "value": 8
+      }
+    ]
+  },
+  "enum/MSIBIAS": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "CONTINUOUS",
+        "description": "MSI bias continuous mode (clock accuracy fast settling time).",
+        "value": 0
+      },
+      {
+        "name": "SAMPLING",
+        "description": "MSI bias sampling mode when the device is in Stop 1 or Stop 2 mode, or when the regulator is in range 2.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/MSIHSINDIV": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "Div1",
+        "description": "HSE (16 MHz) is used as MSI input clock when PLL mode with high-speed clock is selected.",
+        "value": 0
+      },
+      {
+        "name": "Div2",
+        "description": "HSE (32 MHz)/2 is used as MSI input clock when PLL mode with high-speed clock is selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/MSIKDIV": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "Div1",
+        "description": "MSIRC0/1 is selected for MSIK (range 0 around 96 MHz).",
+        "value": 0
+      },
+      {
+        "name": "Div2",
+        "description": "MSIRC0/2 is selected for MSIK (range 1 around 48 MHz).",
+        "value": 1
+      },
+      {
+        "name": "Div4",
+        "description": "MSIRC0/4 is selected for MSIK (range 2 around 24 MHz).",
+        "value": 2
+      },
+      {
+        "name": "Div8",
+        "description": "MSIRC0/8 is selected for MSIK (range 3 around 12 MHz).",
+        "value": 3
+      }
+    ]
+  },
+  "enum/MSIKDIVS": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "RANGE5_12MHZ",
+        "description": "Range 5 around 12 MHz (reset value).",
+        "value": 1
+      },
+      {
+        "name": "RANGE6_6MHZ",
+        "description": "Range 6 around 6 MHz.",
+        "value": 2
+      },
+      {
+        "name": "RANGE7_3MHZ",
+        "description": "Range 7 around 3 MHz.",
+        "value": 3
+      }
+    ]
+  },
+  "enum/MSIKSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "MSIRC0_96MHZ",
+        "description": "MSIRC0 (96 MHz) is selected as source to generate MSIK.",
+        "value": 0
+      },
+      {
+        "name": "MSIRC1_24MHZ",
+        "description": "MSIRC1 (24 MHz) is selected as source to generate MSIK.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/MSIPLLSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "LSE",
+        "description": "LSE is used as MSIRC0 input clock when PLL mode is selected.",
+        "value": 0
+      },
+      {
+        "name": "HSE",
+        "description": "HSE or HSE/2 is used as MSIRC0 input clock when PLL mode is selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/MSIRGSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "RCC_CSR",
+        "description": "MSIS/MSIK ranges provided by MSISDIVS[1:0] and MSIKDIVS[1:0] in RCC_CSR.",
+        "value": 0
+      },
+      {
+        "name": "RCC_ICSCR1",
+        "description": "MSIS/MSIK ranges provided by MSISDIV[1:0] and MSIKDIV[1:0] in RCC_ICSCR1.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/MSISDIV": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "Div1",
+        "description": "MSIRC0/1 is selected for MSIS (range 0 around 96 MHz).",
+        "value": 0
+      },
+      {
+        "name": "Div2",
+        "description": "MSIRC0/2 is selected for MSIS (range 1 around 48 MHz).",
+        "value": 1
+      },
+      {
+        "name": "Div4",
+        "description": "MSIRC0/4 is selected for MSIS (range 2 around 24 MHz).",
+        "value": 2
+      },
+      {
+        "name": "Div8",
+        "description": "MSIRC0/8 is selected for MSIS (range 3 around 12 MHz).",
+        "value": 3
+      }
+    ]
+  },
+  "enum/MSISDIVS": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "RANGE5_12MHZ",
+        "description": "Range 5 around 12 MHz (reset value).",
+        "value": 1
+      },
+      {
+        "name": "RANGE6_6MHZ",
+        "description": "Range 6 around 6 MHz.",
+        "value": 2
+      },
+      {
+        "name": "RANGE7_3MHZ",
+        "description": "Range 7 around 3 MHz.",
+        "value": 3
+      }
+    ]
+  },
+  "enum/MSISSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "MSIRC0_96MHZ",
+        "description": "MSIRC0 (96 MHz) is selected as source to generate MSIS.",
+        "value": 0
+      },
+      {
+        "name": "MSIRC1_24MHZ",
+        "description": "MSIRC1 (24 MHz) is selected as source to generate MSIS.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/OCTOSPISEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "SYS",
+        "description": "SYSCLK selected.",
+        "value": 0
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/PPRE": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "name": "Div1",
+        "description": "PCLK1 = HCLK not divided.",
+        "value": 0
+      },
+      {
+        "name": "Div2",
+        "description": "PCLK1 = HCLK divided by 2.",
+        "value": 4
+      },
+      {
+        "name": "Div4",
+        "description": "PCLK1 = HCLK divided by 4.",
+        "value": 5
+      },
+      {
+        "name": "Div8",
+        "description": "PCLK1 = HCLK divided by 8.",
+        "value": 6
+      },
+      {
+        "name": "Div16",
+        "description": "PCLK1 = HCLK divided by 16.",
+        "value": 7
+      }
+    ]
+  },
+  "enum/RNGSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "HSI48",
+        "description": "HSI48 selected.",
+        "value": 0
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/RTCSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "DISABLE",
+        "description": "No clock selected.",
+        "value": 0
+      },
+      {
+        "name": "LSE",
+        "description": "LSE selected.",
+        "value": 1
+      },
+      {
+        "name": "LSI",
+        "description": "LSI selected.",
+        "value": 2
+      },
+      {
+        "name": "HSE",
+        "description": "HSE/32 selected.",
+        "value": 3
+      }
+    ]
+  },
+  "enum/SAISEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "MSIK",
+        "description": "MSIK selected.",
+        "value": 0
+      },
+      {
+        "name": "AUDIOCLK",
+        "description": "input pin AUDIOCLK selected.",
+        "value": 1
+      },
+      {
+        "name": "HSE",
+        "description": "HSE clock selected.",
+        "value": 2
+      }
+    ]
+  },
+  "enum/SECURITY": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "NON_SECURE",
+        "description": "Nonsecure.",
+        "value": 0
+      },
+      {
+        "name": "SECURE",
+        "description": "Secure.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/SPI2SEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "PCLK1",
+        "description": "PCLK1 selected.",
+        "value": 0
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/SPI3SEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "PCLK1",
+        "description": "PCLK1 selected.",
+        "value": 0
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/SPISEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "PCLK2",
+        "description": "PCLK2 selected.",
+        "value": 0
+      },
+      {
+        "name": "MSIK",
+        "description": "MSIK selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/STOPWUCK": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "MSIS",
+        "description": "MSIS oscillator selected as wake-up from stop clock and CSS backup clock.",
+        "value": 0
+      },
+      {
+        "name": "HSI16",
+        "description": "HSI16 oscillator selected as wake-up from stop clock and CSS backup clock.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/SW": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "MSIS",
+        "description": "MSIS selected as system clock.",
+        "value": 0
+      },
+      {
+        "name": "HSI16",
+        "description": "HSI16 selected as system clock.",
+        "value": 1
+      },
+      {
+        "name": "HSE",
+        "description": "HSE selected as system clock.",
+        "value": 2
+      }
+    ]
+  },
+  "enum/SWS": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "MSIS",
+        "description": "MSIS oscillator used as system clock.",
+        "value": 0
+      },
+      {
+        "name": "HSI16",
+        "description": "HSI16 oscillator used as system clock.",
+        "value": 1
+      },
+      {
+        "name": "HSE",
+        "description": "HSE used as system clock.",
+        "value": 2
+      }
+    ]
+  },
+  "enum/SYSTICKSEL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "HCLK1_DIV_8",
+        "description": "HCLK/8 selected.",
+        "value": 0
+      },
+      {
+        "name": "LSI",
+        "description": "LSI selected.",
+        "value": 1
+      },
+      {
+        "name": "LSE",
+        "description": "LSE selected.",
+        "value": 2
+      }
+    ]
+  },
+  "enum/TIMICSEL": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "name": "DISABLE",
+        "description": "HSI, MSIK and MSIS dividers disabled.",
+        "value": 0
+      },
+      {
+        "name": "HSI256_MSIS1024_MSIS4",
+        "description": "HSI/256, MSIS/1024 and MSIS/4 are generated and can be selected by TIM16, TIM17, and LPTIM2 as internal input capture.",
+        "value": 4
+      },
+      {
+        "name": "HSI256_MSIS1024_MSIK4",
+        "description": "HSI/256, MSIS/1024 and MSIK/4 are generated and can be selected by TIM16, TIM17, and LPTIM2 as internal input capture.",
+        "value": 5
+      },
+      {
+        "name": "HSI256_MSIK1024_MSIS4",
+        "description": "HSI/256, MSIK/1024 and MSIS/4 are generated and can be selected by TIM16, TIM17, and LPTIM2 as internal input capture.",
+        "value": 6
+      },
+      {
+        "name": "HSI256_MSIK1024_MSIK4",
+        "description": "HSI/256, MSIK/1024 and MSIK/4 are generated and can be selected by TIM16, TIM17, and LPTIM2 as internal input capture.",
+        "value": 7
+      }
+    ]
+  },
+  "enum/UARTSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "PCLK1",
+        "description": "PCLK1 selected.",
+        "value": 0
+      },
+      {
+        "name": "HSI",
+        "description": "HSI16 selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/USART3SEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "PCLK1",
+        "description": "PCLK1 selected.",
+        "value": 0
+      },
+      {
+        "name": "HSI",
+        "description": "HSI16 selected.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/USARTSEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "PCLK2",
+        "description": "PCLK2 selected.",
+        "value": 0
+      },
+      {
+        "name": "HSI",
+        "description": "HSI16 selected.",
+        "value": 1
+      }
+    ]
+  }
+}

@@ -3,107 +3,114 @@
     "description": "EXTI address block description.",
     "items": [
       {
-        "name": "RTSR1",
-        "description": "EXTI rising trigger selection register.",
+        "name": "RTSR",
+        "description": "Rising trigger selection register.",
+        "array": {
+          "len": 1,
+          "stride": 4
+        },
         "byte_offset": 0,
-        "fieldset": "RTSR1"
+        "fieldset": "LINES"
       },
       {
-        "name": "FTSR1",
+        "name": "FTSR",
         "description": "EXTI falling trigger selection register.",
+        "array": {
+          "len": 1,
+          "stride": 4
+        },
         "byte_offset": 4,
-        "fieldset": "FTSR1"
+        "fieldset": "LINES"
       },
       {
-        "name": "SWIER1",
+        "name": "SWIER",
         "description": "EXTI software interrupt event register.",
+        "array": {
+          "len": 1,
+          "stride": 4
+        },
         "byte_offset": 8,
-        "fieldset": "SWIER1"
+        "fieldset": "LINES"
       },
       {
-        "name": "RPR1",
+        "name": "RPR",
         "description": "EXTI rising edge pending register.",
+        "array": {
+          "len": 1,
+          "stride": 4
+        },
         "byte_offset": 12,
-        "fieldset": "RPR1"
+        "fieldset": "LINES"
       },
       {
-        "name": "FPR1",
+        "name": "FPR",
         "description": "EXTI falling edge pending register.",
+        "array": {
+          "len": 1,
+          "stride": 4
+        },
         "byte_offset": 16,
-        "fieldset": "FPR1"
+        "fieldset": "LINES"
       },
       {
-        "name": "SECCFGR1",
+        "name": "SECCFGR",
         "description": "EXTI security configuration register.",
+        "array": {
+          "len": 1,
+          "stride": 4
+        },
         "byte_offset": 20,
-        "fieldset": "SECCFGR1"
+        "fieldset": "SECCFGR"
       },
       {
-        "name": "PRIVCFGR1",
+        "name": "PRIVCFGR",
         "description": "EXTI privilege configuration register.",
+        "array": {
+          "len": 1,
+          "stride": 4
+        },
         "byte_offset": 24,
-        "fieldset": "PRIVCFGR1"
+        "fieldset": "PRIVCFGR"
       },
       {
-        "name": "EXTICR1",
+        "name": "EXTICR",
         "description": "EXTI external interrupt selection register.",
+        "array": {
+          "len": 4,
+          "stride": 4
+        },
         "byte_offset": 96,
-        "fieldset": "EXTICR1"
+        "fieldset": "EXTICR"
       },
       {
-        "name": "EXTICR2",
-        "description": "EXTI external interrupt selection register.",
-        "byte_offset": 100,
-        "fieldset": "EXTICR2"
-      },
-      {
-        "name": "EXTICR3",
-        "description": "EXTI external interrupt selection register.",
-        "byte_offset": 104,
-        "fieldset": "EXTICR3"
-      },
-      {
-        "name": "EXTICR4",
-        "description": "EXTI external interrupt selection register.",
-        "byte_offset": 108,
-        "fieldset": "EXTICR4"
-      },
-      {
-        "name": "LOCKR",
+        "name": "LOCKRG",
         "description": "EXTI lock register.",
         "byte_offset": 112,
-        "fieldset": "LOCKR"
+        "fieldset": "LOCKRG"
       },
       {
-        "name": "IMR1",
+        "name": "IMR",
         "description": "EXTI CPU wake-up with interrupt mask register.",
+        "array": {
+          "len": 1,
+          "stride": 4
+        },
         "byte_offset": 128,
-        "fieldset": "IMR1"
+        "fieldset": "LINES"
       },
       {
-        "name": "EMR1",
+        "name": "EMR",
         "description": "EXTI CPU wake-up with event mask register.",
+        "array": {
+          "len": 1,
+          "stride": 4
+        },
         "byte_offset": 132,
-        "fieldset": "EMR1"
+        "fieldset": "LINES"
       }
     ]
   },
-  "fieldset/EMR1": {
-    "description": "EXTI CPU wake-up with event mask register.",
-    "fields": [
-      {
-        "name": "EM",
-        "description": "CPU wake-up with event generation mask on event input i.",
-        "bit_offset": 0,
-        "bit_size": 1,
-        "array": {
-          "len": 23,
-          "stride": 1
-        }
-      }
-    ]
-  },
-  "fieldset/EXTICR1": {
+  "fieldset/EXTICR": {
     "description": "EXTI external interrupt selection register.",
     "fields": [
       {
@@ -118,97 +125,22 @@
       }
     ]
   },
-  "fieldset/EXTICR2": {
-    "description": "EXTI external interrupt selection register.",
+  "fieldset/LINES": {
+    "description": "EXTI lines register, 1 bit per line",
     "fields": [
       {
-        "name": "EXTI",
-        "description": "None.",
-        "bit_offset": 0,
-        "bit_size": 8,
-        "array": {
-          "len": 4,
-          "stride": 8
-        }
-      }
-    ]
-  },
-  "fieldset/EXTICR3": {
-    "description": "EXTI external interrupt selection register.",
-    "fields": [
-      {
-        "name": "EXTI",
-        "description": "None.",
-        "bit_offset": 0,
-        "bit_size": 8,
-        "array": {
-          "len": 4,
-          "stride": 8
-        }
-      }
-    ]
-  },
-  "fieldset/EXTICR4": {
-    "description": "EXTI external interrupt selection register.",
-    "fields": [
-      {
-        "name": "EXTI",
-        "description": "None.",
-        "bit_offset": 0,
-        "bit_size": 8,
-        "array": {
-          "len": 4,
-          "stride": 8
-        }
-      }
-    ]
-  },
-  "fieldset/FPR1": {
-    "description": "EXTI falling edge pending register.",
-    "fields": [
-      {
-        "name": "FPIF",
-        "description": "configurable event inputs i falling edge pending bit.",
+        "name": "LINE",
+        "description": "EXTI line",
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
-          "len": 23,
+          "len": 32,
           "stride": 1
         }
       }
     ]
   },
-  "fieldset/FTSR1": {
-    "description": "EXTI falling trigger selection register.",
-    "fields": [
-      {
-        "name": "FT",
-        "description": "Falling trigger event configuration bit of configurable event input i.",
-        "bit_offset": 0,
-        "bit_size": 1,
-        "array": {
-          "len": 23,
-          "stride": 1
-        }
-      }
-    ]
-  },
-  "fieldset/IMR1": {
-    "description": "EXTI CPU wake-up with interrupt mask register.",
-    "fields": [
-      {
-        "name": "IM",
-        "description": "CPU wake-up with interrupt mask on event input i.",
-        "bit_offset": 0,
-        "bit_size": 1,
-        "array": {
-          "len": 23,
-          "stride": 1
-        }
-      }
-    ]
-  },
-  "fieldset/LOCKR": {
+  "fieldset/LOCKRG": {
     "description": "EXTI lock register.",
     "fields": [
       {
@@ -219,7 +151,7 @@
       }
     ]
   },
-  "fieldset/PRIVCFGR1": {
+  "fieldset/PRIVCFGR": {
     "description": "EXTI privilege configuration register.",
     "fields": [
       {
@@ -228,43 +160,13 @@
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
-          "len": 23,
+          "len": 32,
           "stride": 1
         }
       }
     ]
   },
-  "fieldset/RPR1": {
-    "description": "EXTI rising edge pending register.",
-    "fields": [
-      {
-        "name": "RPIF",
-        "description": "Configurable event input i rising edge pending bit.",
-        "bit_offset": 0,
-        "bit_size": 1,
-        "array": {
-          "len": 23,
-          "stride": 1
-        }
-      }
-    ]
-  },
-  "fieldset/RTSR1": {
-    "description": "EXTI rising trigger selection register.",
-    "fields": [
-      {
-        "name": "RT",
-        "description": "Rising trigger event configuration bit of configurable event input i.",
-        "bit_offset": 0,
-        "bit_size": 1,
-        "array": {
-          "len": 23,
-          "stride": 1
-        }
-      }
-    ]
-  },
-  "fieldset/SECCFGR1": {
+  "fieldset/SECCFGR": {
     "description": "EXTI security configuration register.",
     "fields": [
       {
@@ -273,22 +175,7 @@
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
-          "len": 23,
-          "stride": 1
-        }
-      }
-    ]
-  },
-  "fieldset/SWIER1": {
-    "description": "EXTI software interrupt event register.",
-    "fields": [
-      {
-        "name": "SWI",
-        "description": "Software interrupt on event i.",
-        "bit_offset": 0,
-        "bit_size": 1,
-        "array": {
-          "len": 23,
+          "len": 32,
           "stride": 1
         }
       }

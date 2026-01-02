@@ -88,7 +88,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [RAMECC](#ramecc) | | | | | | | | | | | ❌ | | | | | | | | | | | | | |
 | [RCC](#rcc) | c0, c0v2 | f0v1, f0v2, f0v3, f0v4 | f1, f100, f1cl | f2 | f37, f3v1, f3v2, f3v3 | f4, f410 | f7 | g0x0, g0x1 | g4 | h5, h50 | h7, h7ab, h7rm0433, h7rs | l0, l0_v2 | l1 | l4 | l4plus | l5 | n6 | u0 | u3 | u5 | wb | wb0 | wba | wl5, wle |
 | [RNG](#rng) | | | | v1 | | v1 | v1 | v1 | v1 | v3 | v1 | v1 | | v1 | v1, v2 | v2 | ❌ | v3 | ❌ | v3 | v1 | v1 | v3, wba6 | v2 |
-| [RTC](#rtc) | v3_c0 | v2_f0 | v1 | v2_f2 | v2_f3 | v2_f4 | v2_f7 | v3_base | v3_base | v3_u5 | v2_h7, v3_h7rs | v2_l0 | v2_l1 | v2_l4, v3_l4 | v2_l4, v3_base | v3_l5 | ❌ | v3_base | ❌ | v3_u5 | v2_wb | v3_base | v3_u5 | v3_base |
+| [RTC](#rtc) | v3_c0 | v2_f0 | v1 | v2_f2 | v2_f3 | v2_f4 | v2_f7 | v3_base | v3_base | v3_u5 | v2_h7, v3_h7rs | v2_l0 | v2_l1 | v2_l4, v3_l4 | v2_l4, v3_base | v3_l5 | ❌ | v3_base | v3_u3 | v3_u5 | v2_wb | v3_base | v3_u5 | v3_base |
 | [SAES](#saes) | | | | | | | | | | v1a | ❌ | | | | | | ❌ | | ❌ | v1b | | | v1a | |
 | [SAI](#sai) | | | | | | v1, v2 | v2 | | v4_4pdm | v4_2pdm | v3_4pdm, v4_4pdm | | | v2 | v1 | v3_2pdm | ❌ | | ❌ | v4_2pdm | v1_4pdm | | v4_2pdm | |
 | [SDADC](#sdadc) | | | | | v1, ❌ | | | | | | | | | | | | | | | | | | | |
@@ -843,8 +843,9 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v3_h7rs**: STM32H7
 - **v3_l4**: STM32L4
 - **v3_l5**: STM32L5
+- **v3_u3**: STM32U3
 - **v3_u5**: STM32H5, STM32U5, STM32WBA
-- **❌ Unsupported**: STM32N6, STM32U3
+- **❌ Unsupported**: STM32N6
 
 ### SAES
 

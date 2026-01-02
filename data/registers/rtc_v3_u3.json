@@ -1,106 +1,106 @@
 {
   "block/RTC": {
-    "description": "Real-time clock",
+    "description": "RTC register block.",
     "items": [
       {
         "name": "TR",
-        "description": "Time register",
+        "description": "RTC time register.",
         "byte_offset": 0,
         "fieldset": "TR"
       },
       {
         "name": "DR",
-        "description": "Date register",
+        "description": "RTC date register.",
         "byte_offset": 4,
         "fieldset": "DR"
       },
       {
         "name": "SSR",
-        "description": "Sub second register",
+        "description": "RTC subsecond register.",
         "byte_offset": 8,
         "access": "Read",
         "fieldset": "SSR"
       },
       {
         "name": "ICSR",
-        "description": "Initialization control and status register",
+        "description": "RTC initialization control and status register.",
         "byte_offset": 12,
         "fieldset": "ICSR"
       },
       {
         "name": "PRER",
-        "description": "Prescaler register",
+        "description": "RTC prescaler register.",
         "byte_offset": 16,
         "fieldset": "PRER"
       },
       {
         "name": "WUTR",
-        "description": "Wakeup timer register",
+        "description": "RTC wake-up timer register.",
         "byte_offset": 20,
         "fieldset": "WUTR"
       },
       {
         "name": "CR",
-        "description": "Control register",
+        "description": "RTC control register.",
         "byte_offset": 24,
         "fieldset": "CR"
       },
       {
         "name": "PRIVCR",
-        "description": "Privilege mode control register",
+        "description": "RTC privilege mode control register.",
         "byte_offset": 28,
         "fieldset": "PRIVCR"
       },
       {
         "name": "SECCFGR",
-        "description": "Secure mode control register",
+        "description": "RTC secure configuration register.",
         "byte_offset": 32,
         "fieldset": "SECCFGR"
       },
       {
         "name": "WPR",
-        "description": "Write protection register",
+        "description": "RTC write protection register.",
         "byte_offset": 36,
         "access": "Write",
         "fieldset": "WPR"
       },
       {
         "name": "CALR",
-        "description": "Calibration register",
+        "description": "RTC calibration register.",
         "byte_offset": 40,
         "fieldset": "CALR"
       },
       {
         "name": "SHIFTR",
-        "description": "Shift control register",
+        "description": "RTC shift control register.",
         "byte_offset": 44,
         "access": "Write",
         "fieldset": "SHIFTR"
       },
       {
         "name": "TSTR",
-        "description": "Timestamp time register",
+        "description": "RTC timestamp time register.",
         "byte_offset": 48,
         "access": "Read",
         "fieldset": "TSTR"
       },
       {
         "name": "TSDR",
-        "description": "Timestamp date register",
+        "description": "RTC timestamp date register.",
         "byte_offset": 52,
         "access": "Read",
         "fieldset": "TSDR"
       },
       {
         "name": "TSSSR",
-        "description": "Timestamp sub second register",
+        "description": "RTC timestamp subsecond register.",
         "byte_offset": 56,
         "access": "Read",
         "fieldset": "TSSSR"
       },
       {
         "name": "ALRMR",
-        "description": "Alarm register",
+        "description": "RTC alarm register.",
         "array": {
           "len": 2,
           "stride": 8
@@ -110,7 +110,7 @@
       },
       {
         "name": "ALRMSSR",
-        "description": "Alarm sub second register",
+        "description": "RTC alarm subsecond register.",
         "array": {
           "len": 2,
           "stride": 8
@@ -120,35 +120,48 @@
       },
       {
         "name": "SR",
-        "description": "Status register",
+        "description": "RTC status register.",
         "byte_offset": 80,
         "access": "Read",
         "fieldset": "SR"
       },
       {
         "name": "MISR",
-        "description": "Masked interrupt status register",
+        "description": "RTC nonsecure masked interrupt status register.",
         "byte_offset": 84,
         "access": "Read",
         "fieldset": "MISR"
       },
       {
         "name": "SMISR",
-        "description": "Secure masked interrupt status register",
+        "description": "RTC secure masked interrupt status register.",
         "byte_offset": 88,
         "access": "Read",
         "fieldset": "SMISR"
       },
       {
         "name": "SCR",
-        "description": "Status clear register",
+        "description": "RTC status clear register.",
         "byte_offset": 92,
         "access": "Write",
         "fieldset": "SCR"
       },
       {
+        "name": "TAMPTSCR",
+        "description": "RTC timestamp on tamper control register.",
+        "byte_offset": 100,
+        "fieldset": "TAMPTSCR"
+      },
+      {
+        "name": "TSIDR",
+        "description": "RTC timestamp status register.",
+        "byte_offset": 104,
+        "access": "Read",
+        "fieldset": "TSIDR"
+      },
+      {
         "name": "ALRBINR",
-        "description": "Alarm binary mode register",
+        "description": "RTC alarm binary mode register.",
         "array": {
           "len": 2,
           "stride": 4
@@ -159,129 +172,125 @@
     ]
   },
   "fieldset/ALRBINR": {
-    "description": "RTC alarm A binary mode register",
+    "description": "RTC alarm binary mode register.",
     "fields": [
       {
         "name": "SS",
-        "description": "Synchronous counter alarm value in Binary mode",
+        "description": "Synchronous counter alarm value in Binary mode.",
         "bit_offset": 0,
         "bit_size": 32
       }
     ]
   },
   "fieldset/ALRMR": {
-    "description": "Alarm register",
+    "description": "RTC alarm register.",
     "fields": [
       {
         "name": "SU",
-        "description": "Second units in BCD format",
+        "description": "Second units in BCD format.",
         "bit_offset": 0,
         "bit_size": 4
       },
       {
         "name": "ST",
-        "description": "Second tens in BCD format",
+        "description": "Second tens in BCD format.",
         "bit_offset": 4,
         "bit_size": 3
       },
       {
         "name": "MSK1",
-        "description": "Alarm A seconds mask",
+        "description": "Alarm seconds mask.",
         "bit_offset": 7,
-        "bit_size": 1,
-        "enum": "ALRMR_MSK"
+        "bit_size": 1
       },
       {
         "name": "MNU",
-        "description": "Minute units in BCD format",
+        "description": "Minute units in BCD format.",
         "bit_offset": 8,
         "bit_size": 4
       },
       {
         "name": "MNT",
-        "description": "Minute tens in BCD format",
+        "description": "Minute tens in BCD format.",
         "bit_offset": 12,
         "bit_size": 3
       },
       {
         "name": "MSK2",
-        "description": "Alarm A minutes mask",
+        "description": "Alarm A minutes mask.",
         "bit_offset": 15,
-        "bit_size": 1,
-        "enum": "ALRMR_MSK"
+        "bit_size": 1
       },
       {
         "name": "HU",
-        "description": "Hour units in BCD format",
+        "description": "Hour units in BCD format.",
         "bit_offset": 16,
         "bit_size": 4
       },
       {
         "name": "HT",
-        "description": "Hour tens in BCD format",
+        "description": "Hour tens in BCD format.",
         "bit_offset": 20,
         "bit_size": 2
       },
       {
         "name": "PM",
-        "description": "AM/PM notation",
+        "description": "AM/PM notation.",
         "bit_offset": 22,
         "bit_size": 1,
-        "enum": "ALRMR_PM"
+        "enum": "AMPM"
       },
       {
         "name": "MSK3",
-        "description": "Alarm A hours mask",
+        "description": "Alarm hours mask.",
         "bit_offset": 23,
-        "bit_size": 1,
-        "enum": "ALRMR_MSK"
+        "bit_size": 1
       },
       {
         "name": "DU",
-        "description": "Date units or day in BCD format",
+        "description": "Date units or day in BCD format.",
         "bit_offset": 24,
         "bit_size": 4
       },
       {
         "name": "DT",
-        "description": "Date tens in BCD format",
+        "description": "Date tens in BCD format.",
         "bit_offset": 28,
         "bit_size": 2
       },
       {
         "name": "WDSEL",
-        "description": "Week day selection",
+        "description": "Week day selection.",
         "bit_offset": 30,
         "bit_size": 1,
         "enum": "ALRMR_WDSEL"
       },
       {
         "name": "MSK4",
-        "description": "Alarm A date mask",
+        "description": "Alarm date mask.",
         "bit_offset": 31,
-        "bit_size": 1,
-        "enum": "ALRMR_MSK"
+        "bit_size": 1
       }
     ]
   },
   "fieldset/ALRMSSR": {
-    "description": "Alarm sub second register",
+    "description": "RTC alarm A subsecond register.",
     "fields": [
       {
         "name": "SS",
-        "description": "Sub seconds value",
+        "description": "Subseconds value.",
         "bit_offset": 0,
         "bit_size": 15
       },
       {
         "name": "MASKSS",
-        "description": "Mask the most-significant bits starting at this bit",
+        "description": "Mask the most-significant bits starting at this bit.",
         "bit_offset": 24,
         "bit_size": 6
       },
       {
         "name": "SSCLR",
-        "description": "Clear synchronous counter on alarm (Binary mode only)",
+        "description": "Clear synchronous counter on alarm (Binary mode only).",
         "bit_offset": 31,
         "bit_size": 1,
         "enum": "ALRMSSR_SSCLR"
@@ -289,38 +298,38 @@
     ]
   },
   "fieldset/CALR": {
-    "description": "Calibration register",
+    "description": "RTC calibration register.",
     "fields": [
       {
         "name": "CALM",
-        "description": "Calibration minus",
+        "description": "Calibration minus.",
         "bit_offset": 0,
         "bit_size": 9
       },
       {
         "name": "LPCAL",
-        "description": "Calibration low-power mode",
+        "description": "RTC low-power mode.",
         "bit_offset": 12,
         "bit_size": 1,
         "enum": "LPCAL"
       },
       {
         "name": "CALW16",
-        "description": "Use a 16-second calibration cycle period",
+        "description": "Use a 16-second calibration cycle period.",
         "bit_offset": 13,
         "bit_size": 1,
         "enum": "CALW16"
       },
       {
         "name": "CALW8",
-        "description": "Use an 8-second calibration cycle period",
+        "description": "Use an 8-second calibration cycle period.",
         "bit_offset": 14,
         "bit_size": 1,
         "enum": "CALW8"
       },
       {
         "name": "CALP",
-        "description": "Increase frequency of RTC by 488.5 ppm",
+        "description": "Increase frequency of RTC by 488.",
         "bit_offset": 15,
         "bit_size": 1,
         "enum": "CALP"
@@ -328,50 +337,50 @@
     ]
   },
   "fieldset/CR": {
-    "description": "Control register",
+    "description": "RTC control register.",
     "fields": [
       {
         "name": "WUCKSEL",
-        "description": "Wakeup clock selection",
+        "description": "ck_wut wake-up clock selection.",
         "bit_offset": 0,
         "bit_size": 3,
         "enum": "WUCKSEL"
       },
       {
         "name": "TSEDGE",
-        "description": "Timestamp event active edge",
+        "description": "Timestamp event active edge.",
         "bit_offset": 3,
         "bit_size": 1,
         "enum": "TSEDGE"
       },
       {
         "name": "REFCKON",
-        "description": "RTC_REFIN reference clock detection enable (50 or 60 Hz)",
+        "description": "REFIN reference clock detection enable (50 or 60Hz).",
         "bit_offset": 4,
         "bit_size": 1
       },
       {
         "name": "BYPSHAD",
-        "description": "Bypass the shadow registers",
+        "description": "Bypass the shadow registers.",
         "bit_offset": 5,
         "bit_size": 1
       },
       {
         "name": "FMT",
-        "description": "Hour format",
+        "description": "Hour format.",
         "bit_offset": 6,
         "bit_size": 1,
         "enum": "FMT"
       },
       {
         "name": "SSRUIE",
-        "description": "SSR underflow interrupt enable",
+        "description": "SSR underflow interrupt enable.",
         "bit_offset": 7,
         "bit_size": 1
       },
       {
         "name": "ALRE",
-        "description": "Alarm enable",
+        "description": "Alarm enable.",
         "bit_offset": 8,
         "bit_size": 1,
         "array": {
@@ -381,19 +390,19 @@
       },
       {
         "name": "WUTE",
-        "description": "Wakeup timer enable",
+        "description": "Wake-up timer enable.",
         "bit_offset": 10,
         "bit_size": 1
       },
       {
         "name": "TSE",
-        "description": "Timestamp enable",
+        "description": "timestamp enable.",
         "bit_offset": 11,
         "bit_size": 1
       },
       {
         "name": "ALRIE",
-        "description": "Alarm interrupt enable",
+        "description": "Alarm interrupt enable.",
         "bit_offset": 12,
         "bit_size": 1,
         "array": {
@@ -403,82 +412,82 @@
       },
       {
         "name": "WUTIE",
-        "description": "Wakeup timer interrupt enable",
+        "description": "Wake-up timer interrupt enable.",
         "bit_offset": 14,
         "bit_size": 1
       },
       {
         "name": "TSIE",
-        "description": "Timestamp interrupt enable",
+        "description": "Timestamp interrupt enable.",
         "bit_offset": 15,
         "bit_size": 1
       },
       {
         "name": "ADD1H",
-        "description": "Add 1 hour (summer time change)",
+        "description": "Add 1 hour (summer time change).",
         "bit_offset": 16,
         "bit_size": 1
       },
       {
         "name": "SUB1H",
-        "description": "Subtract 1 hour (winter time change)",
+        "description": "Subtract 1 hour (winter time change).",
         "bit_offset": 17,
         "bit_size": 1
       },
       {
         "name": "BKP",
-        "description": "Backup",
+        "description": "Backup.",
         "bit_offset": 18,
         "bit_size": 1
       },
       {
         "name": "COSEL",
-        "description": "Calibration output selection",
+        "description": "Calibration output selection.",
         "bit_offset": 19,
         "bit_size": 1,
         "enum": "COSEL"
       },
       {
         "name": "POL",
-        "description": "Output polarity",
+        "description": "Output polarity.",
         "bit_offset": 20,
         "bit_size": 1,
         "enum": "POL"
       },
       {
         "name": "OSEL",
-        "description": "Output selection",
+        "description": "Output selection.",
         "bit_offset": 21,
         "bit_size": 2,
         "enum": "OSEL"
       },
       {
         "name": "COE",
-        "description": "Calibration output enable",
+        "description": "Calibration output enable.",
         "bit_offset": 23,
         "bit_size": 1
       },
       {
         "name": "ITSE",
-        "description": "Timestamp on internal event enable",
+        "description": "timestamp on internal event enable.",
         "bit_offset": 24,
         "bit_size": 1
       },
       {
         "name": "TAMPTS",
-        "description": "Activate timestamp on tamper detection event",
+        "description": "Activate timestamp on tamper detection event.",
         "bit_offset": 25,
         "bit_size": 1
       },
       {
         "name": "TAMPOE",
-        "description": "Tamper detection output enable on TAMPALRM",
+        "description": "Tamper detection output enable on TAMPALRM.",
         "bit_offset": 26,
         "bit_size": 1
       },
       {
         "name": "ALRFCLR",
-        "description": "ALRFCLR",
+        "description": "Alarm A flag automatic clear.",
         "bit_offset": 27,
         "bit_size": 1,
         "array": {
@@ -488,208 +497,201 @@
       },
       {
         "name": "TAMPALRM_PU",
-        "description": "TAMPALRM pull-up enable",
+        "description": "TAMPALRM pull-up enable.",
         "bit_offset": 29,
         "bit_size": 1
       },
       {
         "name": "TAMPALRM_TYPE",
-        "description": "TAMPALRM output type",
+        "description": "TAMPALRM output type.",
         "bit_offset": 30,
         "bit_size": 1,
         "enum": "TAMPALRM_TYPE"
       },
       {
         "name": "OUT2EN",
-        "description": "RTC_OUT2 output enable",
+        "description": "OUT2 output enable.",
         "bit_offset": 31,
         "bit_size": 1
       }
     ]
   },
   "fieldset/DR": {
-    "description": "Date register",
+    "description": "RTC date register.",
     "fields": [
       {
         "name": "DU",
-        "description": "Date units in BCD format",
+        "description": "Date units in BCD format.",
         "bit_offset": 0,
         "bit_size": 4
       },
       {
         "name": "DT",
-        "description": "Date tens in BCD format",
+        "description": "Date tens in BCD format.",
         "bit_offset": 4,
         "bit_size": 2
       },
       {
         "name": "MU",
-        "description": "Month units in BCD format",
+        "description": "Month units in BCD format.",
         "bit_offset": 8,
         "bit_size": 4
       },
       {
         "name": "MT",
-        "description": "Month tens in BCD format",
+        "description": "Month tens in BCD format.",
         "bit_offset": 12,
         "bit_size": 1
       },
       {
         "name": "WDU",
-        "description": "Week day units",
+        "description": "Week day units.",
         "bit_offset": 13,
         "bit_size": 3
       },
       {
         "name": "YU",
-        "description": "Year units in BCD format",
+        "description": "Year units in BCD format.",
         "bit_offset": 16,
         "bit_size": 4
       },
       {
         "name": "YT",
-        "description": "Year tens in BCD format",
+        "description": "Year tens in BCD format.",
         "bit_offset": 20,
         "bit_size": 4
       }
     ]
   },
   "fieldset/ICSR": {
-    "description": "Initialization control and status register",
+    "description": "RTC initialization control and status register.",
     "fields": [
       {
         "name": "WUTWF",
-        "description": "Wakeup timer write enabled",
+        "description": "Wake-up timer write flag.",
         "bit_offset": 2,
         "bit_size": 1
       },
       {
         "name": "SHPF",
-        "description": "Shift operation pending",
+        "description": "Shift operation pending.",
         "bit_offset": 3,
         "bit_size": 1
       },
       {
         "name": "INITS",
-        "description": "Initialization status flag",
+        "description": "Initialization status flag.",
         "bit_offset": 4,
         "bit_size": 1
       },
       {
         "name": "RSF",
-        "description": "Registers synchronization flag",
+        "description": "Registers synchronization flag.",
         "bit_offset": 5,
         "bit_size": 1
       },
       {
         "name": "INITF",
-        "description": "Initialization flag",
+        "description": "Initialization flag.",
         "bit_offset": 6,
         "bit_size": 1
       },
       {
         "name": "INIT",
-        "description": "Enter Initialization mode",
+        "description": "Initialization mode.",
         "bit_offset": 7,
         "bit_size": 1
       },
       {
         "name": "BIN",
-        "description": "Binary mode",
+        "description": "Binary mode.",
         "bit_offset": 8,
         "bit_size": 2,
         "enum": "BIN"
       },
       {
         "name": "BCDU",
-        "description": "BCD update",
+        "description": "BCD update (BIN = 10 or 11).",
         "bit_offset": 10,
         "bit_size": 3,
         "enum": "BCDU"
       },
       {
         "name": "RECALPF",
-        "description": "Recalibration pending Flag",
+        "description": "Recalibration pending Flag.",
         "bit_offset": 16,
-        "bit_size": 1,
-        "enum": "RECALPF"
+        "bit_size": 1
       }
     ]
   },
   "fieldset/MISR": {
-    "description": "Masked interrupt status register",
+    "description": "RTC nonsecure masked interrupt status register.",
     "fields": [
       {
         "name": "ALRMF",
-        "description": "Alarm masked flag",
+        "description": "Alarm A masked flag.",
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
           "len": 2,
           "stride": 1
-        },
-        "enum": "ALRMF"
+        }
       },
       {
         "name": "WUTMF",
-        "description": "Wakeup timer masked flag",
+        "description": "Wake-up timer nonsecure masked flag.",
         "bit_offset": 2,
-        "bit_size": 1,
-        "enum": "WUTMF"
+        "bit_size": 1
       },
       {
         "name": "TSMF",
-        "description": "Timestamp masked flag",
+        "description": "Timestamp nonsecure masked flag.",
         "bit_offset": 3,
-        "bit_size": 1,
-        "enum": "TSMF"
+        "bit_size": 1
       },
       {
         "name": "TSOVMF",
-        "description": "Timestamp overflow masked flag",
+        "description": "Timestamp overflow nonsecure masked flag.",
         "bit_offset": 4,
-        "bit_size": 1,
-        "enum": "TSOVMF"
+        "bit_size": 1
       },
       {
         "name": "ITSMF",
-        "description": "Internal timestamp masked flag",
+        "description": "Internal timestamp nonsecure masked flag.",
         "bit_offset": 5,
-        "bit_size": 1,
-        "enum": "ITSMF"
+        "bit_size": 1
       },
       {
         "name": "SSRUMF",
-        "description": "SSR underflow masked flag",
+        "description": "SSR underflow nonsecure masked flag.",
         "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "SSRUMF"
+        "bit_size": 1
       }
     ]
   },
   "fieldset/PRER": {
-    "description": "Prescaler register",
+    "description": "RTC prescaler register.",
     "fields": [
       {
         "name": "PREDIV_S",
-        "description": "Synchronous prescaler factor",
+        "description": "Synchronous prescaler factor.",
         "bit_offset": 0,
         "bit_size": 15
       },
       {
         "name": "PREDIV_A",
-        "description": "Asynchronous prescaler factor",
+        "description": "Asynchronous prescaler factor.",
         "bit_offset": 16,
         "bit_size": 7
       }
     ]
   },
   "fieldset/PRIVCR": {
-    "description": "Privilege mode control register",
+    "description": "RTC privilege mode control register.",
     "fields": [
       {
         "name": "ALRPRIV",
-        "description": "ALRPRIV",
+        "description": "Alarm and SSR underflow privilege protection.",
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
@@ -699,42 +701,42 @@
       },
       {
         "name": "WUTPRIV",
-        "description": "WUTPRIV",
+        "description": "Wake-up timer privilege protection.",
         "bit_offset": 2,
         "bit_size": 1
       },
       {
         "name": "TSPRIV",
-        "description": "TSPRIV",
+        "description": "Timestamp privilege protection.",
         "bit_offset": 3,
         "bit_size": 1
       },
       {
         "name": "CALPRIV",
-        "description": "CALPRIV",
+        "description": "Shift register, Delight saving, calibration and reference clock privilege protection.",
         "bit_offset": 13,
         "bit_size": 1
       },
       {
         "name": "INITPRIV",
-        "description": "INITPRIV",
+        "description": "Initialization privilege protection.",
         "bit_offset": 14,
         "bit_size": 1
       },
       {
         "name": "PRIV",
-        "description": "PRIV",
+        "description": "RTC privilege protection.",
         "bit_offset": 15,
         "bit_size": 1
       }
     ]
   },
   "fieldset/SCR": {
-    "description": "Status clear register",
+    "description": "RTC status clear register.",
     "fields": [
       {
         "name": "CALRF",
-        "description": "Clear alarm x flag",
+        "description": "Clear alarm A flag.",
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
@@ -745,35 +747,35 @@
       },
       {
         "name": "CWUTF",
-        "description": "Clear wakeup timer flag",
+        "description": "Clear wake-up timer flag.",
         "bit_offset": 2,
         "bit_size": 1,
         "enum": "CALRF"
       },
       {
         "name": "CTSF",
-        "description": "Clear timestamp flag",
+        "description": "Clear timestamp flag.",
         "bit_offset": 3,
         "bit_size": 1,
         "enum": "CALRF"
       },
       {
         "name": "CTSOVF",
-        "description": "Clear timestamp overflow flag",
+        "description": "Clear timestamp overflow flag.",
         "bit_offset": 4,
         "bit_size": 1,
         "enum": "CALRF"
       },
       {
         "name": "CITSF",
-        "description": "Clear internal timestamp flag",
+        "description": "Clear internal timestamp flag.",
         "bit_offset": 5,
         "bit_size": 1,
         "enum": "CALRF"
       },
       {
         "name": "CSSRUF",
-        "description": "Clear SSR underflow flag",
+        "description": "Clear SSR underflow flag.",
         "bit_offset": 6,
         "bit_size": 1,
         "enum": "CALRF"
@@ -781,75 +783,75 @@
     ]
   },
   "fieldset/SECCFGR": {
-    "description": "Secure mode control register",
+    "description": "RTC secure configuration register.",
     "fields": [
       {
         "name": "ALRASEC",
-        "description": "ALRASEC",
+        "description": "Alarm A and SSR underflow protection.",
         "bit_offset": 0,
         "bit_size": 1
       },
       {
         "name": "ALRBSEC",
-        "description": "ALRBSEC",
+        "description": "Alarm B protection.",
         "bit_offset": 1,
         "bit_size": 1
       },
       {
         "name": "WUTSEC",
-        "description": "WUTSEC",
+        "description": "Wake-up timer protection.",
         "bit_offset": 2,
         "bit_size": 1
       },
       {
         "name": "TSSEC",
-        "description": "TSSEC",
+        "description": "Timestamp protection.",
         "bit_offset": 3,
         "bit_size": 1
       },
       {
         "name": "CALSEC",
-        "description": "CALSEC",
+        "description": "Shift register, daylight saving, calibration and reference clock protection.",
         "bit_offset": 13,
         "bit_size": 1
       },
       {
         "name": "INITSEC",
-        "description": "INITSEC",
+        "description": "Initialization protection.",
         "bit_offset": 14,
         "bit_size": 1
       },
       {
         "name": "SEC",
-        "description": "SEC",
+        "description": "RTC global protection.",
         "bit_offset": 15,
         "bit_size": 1
       }
     ]
   },
   "fieldset/SHIFTR": {
-    "description": "Shift control register",
+    "description": "RTC shift control register.",
     "fields": [
       {
         "name": "SUBFS",
-        "description": "Subtract a fraction of a second",
+        "description": "Subtract a fraction of a second.",
         "bit_offset": 0,
         "bit_size": 15
       },
       {
         "name": "ADD1S",
-        "description": "Add one second",
+        "description": "Add one second.",
         "bit_offset": 31,
         "bit_size": 1
       }
     ]
   },
   "fieldset/SMISR": {
-    "description": "Secure masked interrupt status register",
+    "description": "RTC secure masked interrupt status register.",
     "fields": [
       {
         "name": "ALRMF",
-        "description": "Alarm x interrupt secure masked flag",
+        "description": "Alarm A interrupt secure masked flag.",
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
@@ -859,140 +861,155 @@
       },
       {
         "name": "WUTMF",
-        "description": "WUTMF",
+        "description": "Wake-up timer interrupt secure masked flag.",
         "bit_offset": 2,
         "bit_size": 1
       },
       {
         "name": "TSMF",
-        "description": "TSMF",
+        "description": "Timestamp interrupt secure masked flag.",
         "bit_offset": 3,
         "bit_size": 1
       },
       {
         "name": "TSOVMF",
-        "description": "TSOVMF",
+        "description": "Timestamp overflow interrupt secure masked flag.",
         "bit_offset": 4,
         "bit_size": 1
       },
       {
         "name": "ITSMF",
-        "description": "ITSMF",
+        "description": "Internal timestamp interrupt secure masked flag.",
         "bit_offset": 5,
         "bit_size": 1
       },
       {
         "name": "SSRUMF",
-        "description": "SSRUMF",
+        "description": "SSR underflow secure masked flag.",
         "bit_offset": 6,
         "bit_size": 1
       }
     ]
   },
   "fieldset/SR": {
-    "description": "Status register",
+    "description": "RTC status register.",
     "fields": [
       {
         "name": "ALRF",
-        "description": "Alarm flag",
+        "description": "Alarm flag.",
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
           "len": 2,
           "stride": 1
-        },
-        "enum": "ALRF"
+        }
       },
       {
         "name": "WUTF",
-        "description": "Wakeup timer flag",
+        "description": "Wake-up timer flag.",
         "bit_offset": 2,
-        "bit_size": 1,
-        "enum": "WUTF"
+        "bit_size": 1
       },
       {
         "name": "TSF",
-        "description": "Timestamp flag",
+        "description": "Timestamp flag.",
         "bit_offset": 3,
-        "bit_size": 1,
-        "enum": "TSF"
+        "bit_size": 1
       },
       {
         "name": "TSOVF",
-        "description": "Timestamp overflow flag",
+        "description": "Timestamp overflow flag.",
         "bit_offset": 4,
-        "bit_size": 1,
-        "enum": "TSOVF"
+        "bit_size": 1
       },
       {
         "name": "ITSF",
-        "description": "Internal timestamp flag",
+        "description": "Internal timestamp flag.",
         "bit_offset": 5,
-        "bit_size": 1,
-        "enum": "ITSF"
+        "bit_size": 1
       },
       {
         "name": "SSRUF",
-        "description": "SSR underflow flag",
+        "description": "SSR underflow flag.",
         "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "SSRUF"
+        "bit_size": 1
       }
     ]
   },
   "fieldset/SSR": {
-    "description": "Sub second register",
+    "description": "RTC subsecond register.",
     "fields": [
       {
         "name": "SS",
-        "description": "Synchronous binary counter",
+        "description": "Synchronous binary counter.",
         "bit_offset": 0,
         "bit_size": 32
       }
     ]
   },
+  "fieldset/TAMPTSCR": {
+    "description": "RTC timestamp on tamper control register.",
+    "fields": [
+      {
+        "name": "TAMPTS",
+        "description": "Timestamp on external tamper TAMP1 event.",
+        "bit_offset": 0,
+        "bit_size": 1,
+        "array": {
+          "len": 5,
+          "stride": 1
+        }
+      },
+      {
+        "name": "ITAMPTS",
+        "description": "Timestamp on internal tamper event.",
+        "bit_offset": 16,
+        "bit_size": 1
+      }
+    ]
+  },
   "fieldset/TR": {
-    "description": "Time register",
+    "description": "RTC time register.",
     "fields": [
       {
         "name": "SU",
-        "description": "Second units in BCD format",
+        "description": "Second units in BCD format.",
         "bit_offset": 0,
         "bit_size": 4
       },
       {
         "name": "ST",
-        "description": "Second tens in BCD format",
+        "description": "Second tens in BCD format.",
         "bit_offset": 4,
         "bit_size": 3
       },
       {
         "name": "MNU",
-        "description": "Minute units in BCD format",
+        "description": "Minute units in BCD format.",
         "bit_offset": 8,
         "bit_size": 4
       },
       {
         "name": "MNT",
-        "description": "Minute tens in BCD format",
+        "description": "Minute tens in BCD format.",
         "bit_offset": 12,
         "bit_size": 3
       },
       {
         "name": "HU",
-        "description": "Hour units in BCD format",
+        "description": "Hour units in BCD format.",
         "bit_offset": 16,
         "bit_size": 4
       },
       {
         "name": "HT",
-        "description": "Hour tens in BCD format",
+        "description": "Hour tens in BCD format.",
         "bit_offset": 20,
         "bit_size": 2
       },
       {
         "name": "PM",
-        "description": "AM/PM notation",
+        "description": "AM/PM notation.",
         "bit_offset": 22,
         "bit_size": 1,
         "enum": "AMPM"
@@ -1000,104 +1017,116 @@
     ]
   },
   "fieldset/TSDR": {
-    "description": "Timestamp date register",
+    "description": "RTC timestamp date register.",
     "fields": [
       {
         "name": "DU",
-        "description": "Date units in BCD format",
+        "description": "Date units in BCD format.",
         "bit_offset": 0,
         "bit_size": 4
       },
       {
         "name": "DT",
-        "description": "Date tens in BCD format",
+        "description": "Date tens in BCD format.",
         "bit_offset": 4,
         "bit_size": 2
       },
       {
         "name": "MU",
-        "description": "Month units in BCD format",
+        "description": "Month units in BCD format.",
         "bit_offset": 8,
         "bit_size": 4
       },
       {
         "name": "MT",
-        "description": "Month tens in BCD format",
+        "description": "Month tens in BCD format.",
         "bit_offset": 12,
         "bit_size": 1
       },
       {
         "name": "WDU",
-        "description": "Week day units",
+        "description": "Week day units.",
         "bit_offset": 13,
         "bit_size": 3
       }
     ]
   },
+  "fieldset/TSIDR": {
+    "description": "RTC timestamp status register.",
+    "fields": [
+      {
+        "name": "TSID",
+        "description": "Timestamp flag source identification.",
+        "bit_offset": 0,
+        "bit_size": 6
+      }
+    ]
+  },
   "fieldset/TSSSR": {
-    "description": "Timestamp sub second register",
+    "description": "RTC timestamp subsecond register.",
     "fields": [
       {
         "name": "SS",
-        "description": "Sub second value",
+        "description": "Subsecond value/synchronous binary counter values.",
         "bit_offset": 0,
         "bit_size": 32
       }
     ]
   },
   "fieldset/TSTR": {
-    "description": "Timestamp time register",
+    "description": "RTC timestamp time register.",
     "fields": [
       {
         "name": "SU",
-        "description": "Second units in BCD format",
+        "description": "Second units in BCD format.",
         "bit_offset": 0,
         "bit_size": 4
       },
       {
         "name": "ST",
-        "description": "Second tens in BCD format",
+        "description": "Second tens in BCD format.",
         "bit_offset": 4,
         "bit_size": 3
       },
       {
         "name": "MNU",
-        "description": "Minute units in BCD format",
+        "description": "Minute units in BCD format.",
         "bit_offset": 8,
         "bit_size": 4
       },
       {
         "name": "MNT",
-        "description": "Minute tens in BCD format",
+        "description": "Minute tens in BCD format.",
         "bit_offset": 12,
         "bit_size": 3
       },
       {
         "name": "HU",
-        "description": "Hour units in BCD format",
+        "description": "Hour units in BCD format.",
         "bit_offset": 16,
         "bit_size": 4
       },
       {
         "name": "HT",
-        "description": "Hour tens in BCD format",
+        "description": "Hour tens in BCD format.",
         "bit_offset": 20,
         "bit_size": 2
       },
       {
         "name": "PM",
-        "description": "AM/PM notation",
+        "description": "AM/PM notation.",
         "bit_offset": 22,
-        "bit_size": 1
+        "bit_size": 1,
+        "enum": "AMPM"
       }
     ]
   },
   "fieldset/WPR": {
-    "description": "Write protection register",
+    "description": "RTC write protection register.",
     "fields": [
       {
         "name": "KEY",
-        "description": "Write protection key",
+        "description": "Write protection key.",
         "bit_offset": 0,
         "bit_size": 8,
         "enum": "KEY"
@@ -1105,69 +1134,19 @@
     ]
   },
   "fieldset/WUTR": {
-    "description": "Wakeup timer register",
+    "description": "RTC wake-up timer register.",
     "fields": [
       {
         "name": "WUT",
-        "description": "Wakeup auto-reload value bits",
+        "description": "Wake-up auto-reload value bits.",
         "bit_offset": 0,
         "bit_size": 16
       },
       {
         "name": "WUTOCLR",
-        "description": "Wakeup auto-reload output clear value",
+        "description": "Wake-up auto-reload output clear value.",
         "bit_offset": 16,
         "bit_size": 16
-      }
-    ]
-  },
-  "enum/ALRF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Match",
-        "description": "This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm A register (RTC_ALRMAR)",
-        "value": 1
-      }
-    ]
-  },
-  "enum/ALRMF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Match",
-        "description": "This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm A register (RTC_ALRMAR)",
-        "value": 1
-      }
-    ]
-  },
-  "enum/ALRMR_MSK": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "ToMatch",
-        "description": "Alarm set if the date/day match",
-        "value": 0
-      },
-      {
-        "name": "NotMatch",
-        "description": "Date/day don’t care in Alarm comparison",
-        "value": 1
-      }
-    ]
-  },
-  "enum/ALRMR_PM": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "AM",
-        "description": "AM or 24-hour format",
-        "value": 0
-      },
-      {
-        "name": "PM",
-        "description": "PM",
-        "value": 1
       }
     ]
   },
@@ -1176,12 +1155,12 @@
     "variants": [
       {
         "name": "DateUnits",
-        "description": "DU[3:0] represents the date units",
+        "description": "DU[3:0] represents the date units.",
         "value": 0
       },
       {
         "name": "WeekDay",
-        "description": "DU[3:0] represents the week day. DT[1:0] is don’t care.",
+        "description": "DU[3:0] represents the week day.",
         "value": 1
       }
     ]
@@ -1191,12 +1170,12 @@
     "variants": [
       {
         "name": "FreeRunning",
-        "description": "The synchronous binary counter (SS[31:0] in RTC_SSR) is free-running",
+        "description": "The synchronous binary counter (SS[31:0] in SSR) is free-running.",
         "value": 0
       },
       {
         "name": "ALRMBINR",
-        "description": "The synchronous binary counter (SS[31:0] in RTC_SSR) is running from 0xFFFF FFFF to RTC_ALRMABINR → SS[31:0] value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRMABINR → SS[31:0]",
+        "description": "The synchronous binary counter (SS[31:0] in SSR) is running from 0xFFFFFFFF to ALRBBINR.",
         "value": 1
       }
     ]
@@ -1206,12 +1185,12 @@
     "variants": [
       {
         "name": "AM",
-        "description": "AM or 24-hour format",
+        "description": "AM or 24-hour format.",
         "value": 0
       },
       {
         "name": "PM",
-        "description": "PM",
+        "description": "PM.",
         "value": 1
       }
     ]
@@ -1221,42 +1200,42 @@
     "variants": [
       {
         "name": "Bit7",
-        "description": "1s increment each time SS[7:0]=0",
+        "description": "1s calendar increment is generated each time SS[7:0] = 0.",
         "value": 0
       },
       {
         "name": "Bit8",
-        "description": "1s increment each time SS[8:0]=0",
+        "description": "1s calendar increment is generated each time SS[8:0] = 0.",
         "value": 1
       },
       {
         "name": "Bit9",
-        "description": "1s increment each time SS[9:0]=0",
+        "description": "1s calendar increment is generated each time SS[9:0] = 0.",
         "value": 2
       },
       {
         "name": "Bit10",
-        "description": "1s increment each time SS[10:0]=0",
+        "description": "1s calendar increment is generated each time SS[10:0] = 0.",
         "value": 3
       },
       {
         "name": "Bit11",
-        "description": "1s increment each time SS[11:0]=0",
+        "description": "1s calendar increment is generated each time SS[11:0] = 0.",
         "value": 4
       },
       {
         "name": "Bit12",
-        "description": "1s increment each time SS[12:0]=0",
+        "description": "1s calendar increment is generated each time SS[12:0] = 0.",
         "value": 5
       },
       {
         "name": "Bit13",
-        "description": "1s increment each time SS[13:0]=0",
+        "description": "1s calendar increment is generated each time SS[13:0] = 0.",
         "value": 6
       },
       {
         "name": "Bit14",
-        "description": "1s increment each time SS[14:0]=0",
+        "description": "1s calendar increment is generated each time SS[14:0] = 0.",
         "value": 7
       }
     ]
@@ -1266,22 +1245,22 @@
     "variants": [
       {
         "name": "BCD",
-        "description": "Free running BCD calendar mode (Binary mode disabled)",
+        "description": "Free running BCD calendar mode (Binary mode disabled).",
         "value": 0
       },
       {
         "name": "Binary",
-        "description": "Free running Binary mode (BCD mode disabled)",
+        "description": "Free running Binary mode (BCD mode disabled).",
         "value": 1
       },
       {
         "name": "BinBCD",
-        "description": "Free running BCD calendar and Binary modes",
+        "description": "Free running BCD calendar and Binary modes.",
         "value": 2
       },
       {
         "name": "BinBCD2",
-        "description": "Free running BCD calendar and Binary modes",
+        "description": "Free running BCD calendar and Binary modes.",
         "value": 3
       }
     ]
@@ -1291,12 +1270,12 @@
     "variants": [
       {
         "name": "NoChange",
-        "description": "No RTCCLK pulses are added",
+        "description": "No RTCCLK pulses are added.",
         "value": 0
       },
       {
         "name": "IncreaseFreq",
-        "description": "One RTCCLK pulse is effectively inserted every 2^11 pulses (frequency increased by 488.5 ppm)",
+        "description": "One RTCCLK pulse is effectively inserted every 2less thansup>11less than/sup> pulses (frequency increased by 488.",
         "value": 1
       }
     ]
@@ -1336,12 +1315,12 @@
     "variants": [
       {
         "name": "CalFreq_512Hz",
-        "description": "Calibration output is 512 Hz (with default prescaler setting)",
+        "description": "Calibration output is 512Hz.",
         "value": 0
       },
       {
         "name": "CalFreq_1Hz",
-        "description": "Calibration output is 1 Hz (with default prescaler setting)",
+        "description": "Calibration output is 1Hz.",
         "value": 1
       }
     ]
@@ -1351,32 +1330,12 @@
     "variants": [
       {
         "name": "TwentyFourHour",
-        "description": "24 hour/day format",
+        "description": "24 hour/day format.",
         "value": 0
       },
       {
         "name": "AmPm",
-        "description": "AM/PM hour format",
-        "value": 1
-      }
-    ]
-  },
-  "enum/ITSF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "TimestampEvent",
-        "description": "This flag is set by hardware when a timestamp on the internal event occurs",
-        "value": 1
-      }
-    ]
-  },
-  "enum/ITSMF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "TimestampEvent",
-        "description": "This flag is set by hardware when a timestamp on the internal event occurs",
+        "description": "AM/PM hour format.",
         "value": 1
       }
     ]
@@ -1406,12 +1365,12 @@
     "variants": [
       {
         "name": "RTCCLK",
-        "description": "Calibration window is 220 RTCCLK, which is a high-consumption mode. This mode should be set only when less than 32s calibration window is required",
+        "description": "Calibration window is 2less thansup>20less than/sup> RTCCLK, which is a high-consumption mode.",
         "value": 0
       },
       {
         "name": "CkApre",
-        "description": "Calibration window is 220 ck_apre, which is the required configuration for ultra-low consumption mode",
+        "description": "Calibration window is 2less thansup>20less than/sup> ck_apre, which is the required configuration for ultra-low consumption mode.",
         "value": 1
       }
     ]
@@ -1421,22 +1380,22 @@
     "variants": [
       {
         "name": "Disabled",
-        "description": "Output disabled",
+        "description": "Output disabled.",
         "value": 0
       },
       {
         "name": "AlarmA",
-        "description": "Alarm A output enabled",
+        "description": "Alarm A output enabled.",
         "value": 1
       },
       {
         "name": "AlarmB",
-        "description": "Alarm B output enabled",
+        "description": "Alarm B output enabled.",
         "value": 2
       },
       {
-        "name": "Wakeup",
-        "description": "Wakeup output enabled",
+        "name": "WakeUp",
+        "description": "Wake-up output enabled.",
         "value": 3
       }
     ]
@@ -1446,42 +1405,12 @@
     "variants": [
       {
         "name": "High",
-        "description": "The pin is high when ALRAF/ALRBF/WUTF is asserted (depending on OSEL[1:0])",
+        "description": "The pin is high when ALRAF/ALRBF/WUTF is asserted (depending on OSEL[1:0]), or when a TAMPxF/ITAMPxF is asserted (if TAMPOE = 1).",
         "value": 0
       },
       {
         "name": "Low",
-        "description": "The pin is low when ALRAF/ALRBF/WUTF is asserted (depending on OSEL[1:0])",
-        "value": 1
-      }
-    ]
-  },
-  "enum/RECALPF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Pending",
-        "description": "The RECALPF status flag is automatically set to 1 when software writes to the RTC_CALR register, indicating that the RTC_CALR register is blocked. When the new calibration settings are taken into account, this bit returns to 0",
-        "value": 1
-      }
-    ]
-  },
-  "enum/SSRUF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Underflow",
-        "description": "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1",
-        "value": 1
-      }
-    ]
-  },
-  "enum/SSRUMF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Underflow",
-        "description": "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1",
+        "description": "The pin is low when ALRAF/ALRBF/WUTF is asserted (depending on OSEL[1:0]), or when a TAMPxF/ITAMPxF is asserted (if TAMPOE = 1).",
         "value": 1
       }
     ]
@@ -1491,12 +1420,12 @@
     "variants": [
       {
         "name": "PushPull",
-        "description": "TAMPALRM is push-pull output",
+        "description": "TAMPALRM is push-pull output.",
         "value": 0
       },
       {
         "name": "OpenDrain",
-        "description": "TAMPALRM is open-drain output",
+        "description": "TAMPALRM is open-drain output.",
         "value": 1
       }
     ]
@@ -1506,52 +1435,12 @@
     "variants": [
       {
         "name": "RisingEdge",
-        "description": "RTC_TS input rising edge generates a time-stamp event",
+        "description": "TS input rising edge generates a timestamp event.",
         "value": 0
       },
       {
         "name": "FallingEdge",
-        "description": "RTC_TS input falling edge generates a time-stamp event",
-        "value": 1
-      }
-    ]
-  },
-  "enum/TSF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "TimestampEvent",
-        "description": "This flag is set by hardware when a time-stamp event occurs",
-        "value": 1
-      }
-    ]
-  },
-  "enum/TSMF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "TimestampEvent",
-        "description": "This flag is set by hardware when a time-stamp event occurs",
-        "value": 1
-      }
-    ]
-  },
-  "enum/TSOVF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Overflow",
-        "description": "This flag is set by hardware when a time-stamp event occurs while TSF is already set",
-        "value": 1
-      }
-    ]
-  },
-  "enum/TSOVMF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Overflow",
-        "description": "This flag is set by hardware when a time-stamp event occurs while TSF is already set",
+        "description": "TS input falling edge generates a timestamp event.",
         "value": 1
       }
     ]
@@ -1561,53 +1450,23 @@
     "variants": [
       {
         "name": "Div16",
-        "description": "RTC/16 clock is selected",
+        "description": "RTC/16 clock is selected.",
         "value": 0
       },
       {
         "name": "Div8",
-        "description": "RTC/8 clock is selected",
+        "description": "RTC/8 clock is selected.",
         "value": 1
       },
       {
         "name": "Div4",
-        "description": "RTC/4 clock is selected",
+        "description": "RTC/4 clock is selected.",
         "value": 2
       },
       {
         "name": "Div2",
-        "description": "RTC/2 clock is selected",
+        "description": "RTC/2 clock is selected.",
         "value": 3
-      },
-      {
-        "name": "ClockSpare",
-        "description": "ck_spre (usually 1 Hz) clock is selected",
-        "value": 4
-      },
-      {
-        "name": "ClockSpareWithOffset",
-        "description": "ck_spre (usually 1 Hz) clock is selected and 2^16 is added to the WUT counter value",
-        "value": 6
-      }
-    ]
-  },
-  "enum/WUTF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Zero",
-        "description": "This flag is set by hardware when the wakeup auto-reload counter reaches 0",
-        "value": 1
-      }
-    ]
-  },
-  "enum/WUTMF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Zero",
-        "description": "This flag is set by hardware when the wakeup auto-reload counter reaches 0",
-        "value": 1
       }
     ]
   }

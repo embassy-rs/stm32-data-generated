@@ -3725,6 +3725,11 @@
         {
           "name": "RTC",
           "address": 1073772544,
+          "registers": {
+            "kind": "rtc",
+            "version": "v3_u3",
+            "block": "RTC"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {

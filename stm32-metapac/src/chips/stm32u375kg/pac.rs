@@ -466,7 +466,7 @@ pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6000usize as _) };
 pub const OPAMP1: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4000_7000usize as _) };
 pub const OPAMP2: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4000_7010usize as _) };
 pub const VREFBUF: vrefbuf::Vrefbuf = unsafe { vrefbuf::Vrefbuf::from_ptr(0x4000_7400usize as _) };
-pub const RTC: *mut () = 0x4000_7800usize as _;
+pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4000_7800usize as _) };
 pub const TAMP: *mut () = 0x4000_7c00usize as _;
 pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_9400usize as _) };
 pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400usize as _) };
@@ -564,6 +564,8 @@ pub mod opamp;
 pub mod pwr;
 #[path = "../../peripherals/rcc_u3.rs"]
 pub mod rcc;
+#[path = "../../peripherals/rtc_v3_u3.rs"]
+pub mod rtc;
 #[path = "../../peripherals/spi_v6.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_u3.rs"]

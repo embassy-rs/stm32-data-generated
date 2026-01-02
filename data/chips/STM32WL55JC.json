@@ -1329,7 +1329,8 @@
             "reset": {
               "register": "AHB3RSTR",
               "field": "HSEMRST"
-            }
+            },
+            "stop_mode": "Stop2"
           },
           "interrupts": [
             {
@@ -1624,7 +1625,8 @@
             "reset": {
               "register": "AHB3RSTR",
               "field": "IPCCRST"
-            }
+            },
+            "stop_mode": "Standby"
           },
           "interrupts": [
             {
@@ -4298,7 +4300,8 @@
             "reset": {
               "register": "AHB3RSTR",
               "field": "HSEMRST"
-            }
+            },
+            "stop_mode": "Stop2"
           },
           "interrupts": [
             {
@@ -4593,7 +4596,8 @@
             "reset": {
               "register": "AHB3RSTR",
               "field": "IPCCRST"
-            }
+            },
+            "stop_mode": "Standby"
           },
           "interrupts": [
             {

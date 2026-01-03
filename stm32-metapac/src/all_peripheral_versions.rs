@@ -6,7 +6,10 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
             "v4", "wba",
         ],
     ),
-    ("adccommon", &["c0", "f3", "h5", "h50", "u3", "u5", "v2", "v3", "v4"]),
+    (
+        "adccommon",
+        &["c0", "f3", "g4", "h5", "h50", "u3", "u5", "v2", "v3", "v4"],
+    ),
     ("adf", &["v1"]),
     ("aes", &["f7", "v1", "v2", "v3a", "v3b"]),
     ("afio", &["f1"]),

@@ -1003,7 +1003,7 @@
           "address": 1342178048,
           "registers": {
             "kind": "adccommon",
-            "version": "v4",
+            "version": "g4",
             "block": "ADC_COMMON"
           }
         },

@@ -1423,7 +1423,7 @@
           "address": 1342178048,
           "registers": {
             "kind": "adccommon",
-            "version": "v4",
+            "version": "g4",
             "block": "ADC_COMMON"
           }
         },
@@ -1706,7 +1706,7 @@
           "address": 1342179072,
           "registers": {
             "kind": "adccommon",
-            "version": "v4",
+            "version": "g4",
             "block": "ADC_COMMON"
           }
         },

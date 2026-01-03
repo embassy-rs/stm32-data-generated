@@ -498,7 +498,7 @@ pub use cortex_m_rt::interrupt;
 pub use Interrupt as interrupt;
 #[path = "../../peripherals/adc_g4.rs"]
 pub mod adc;
-#[path = "../../peripherals/adccommon_v4.rs"]
+#[path = "../../peripherals/adccommon_g4.rs"]
 pub mod adccommon;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;

@@ -11,7 +11,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | Peripheral | C0 | F0 | F1 | F2 | F3 | F4 | F7 | G0 | G4 | H5 | H7 | L0 | L1 | L4 | L4+ | L5 | N6 | U0 | U3 | U5 | WB | WB0 | WBA | WL |
 |------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
 | [ADC](#adc) | c0 | v1, ❌ | f1, ❌ | v2 | f3v1, f3v3 | v2 | v2 | g0 | g4 | h5 | h7rs, v4 | l0, ❌ | f3v2, ❌ | v3 | v3 | v3 | ❌ | u0 | u3 | u5 | v3, ❌ | ❌ | wba | g0 |
-| [ADCCOMMON](#adccommon) | c0 | | | v2 | f3 | v2 | v2 | v3 | v4 | h5, h50 | h5, v4 | | | v3 | v3 | v3 | | v3 | u3 | u5 | v3 | | v3 | v3 |
+| [ADCCOMMON](#adccommon) | c0 | | | v2 | f3 | v2 | v2 | v3 | g4 | h5, h50 | h5, v4 | | | v3 | v3 | v3 | | v3 | u3 | u5 | v3 | | v3 | v3 |
 | [ADF](#adf) | | | | | | | | | | | ❌ | | | | | | ❌ | | ❌ | v1 | | | | |
 | [AES](#aes) | | | | | | v1 | f7 | v2 | v2 | v3b | | v1 | v1 | v1 | v1 | v2 | | v2 | ❌ | v3a | ❌ | | v3b | v2 |
 | [AFIO](#afio) | | | f1 | | | | | | | | | | | | | | | | | | | | | |
@@ -145,13 +145,14 @@ The following table shows which STM32 peripheral versions are supported across d
 
 - **c0**: STM32C0
 - **f3**: STM32F3
+- **g4**: STM32G4
 - **h5**: STM32H5, STM32H7
 - **h50**: STM32H5
 - **u3**: STM32U3
 - **u5**: STM32U5
 - **v2**: STM32F2, STM32F4, STM32F7
 - **v3**: STM32G0, STM32L4, STM32L4+, STM32L5, STM32U0, STM32WB, STM32WBA, STM32WL
-- **v4**: STM32G4, STM32H7
+- **v4**: STM32H7
 
 ### ADF
 

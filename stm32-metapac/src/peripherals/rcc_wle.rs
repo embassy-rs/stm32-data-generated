@@ -2178,35 +2178,35 @@ pub mod regs {
         }
         #[doc = "Low power timer 1 clock source selection"]
         #[inline(always)]
-        pub const fn lptim1sel(&self) -> super::vals::Lptim1sel {
+        pub const fn lptim1sel(&self) -> super::vals::Lptimsel {
             let val = (self.0 >> 18usize) & 0x03;
-            super::vals::Lptim1sel::from_bits(val as u8)
+            super::vals::Lptimsel::from_bits(val as u8)
         }
         #[doc = "Low power timer 1 clock source selection"]
         #[inline(always)]
-        pub fn set_lptim1sel(&mut self, val: super::vals::Lptim1sel) {
+        pub fn set_lptim1sel(&mut self, val: super::vals::Lptimsel) {
             self.0 = (self.0 & !(0x03 << 18usize)) | (((val.to_bits() as u32) & 0x03) << 18usize);
         }
         #[doc = "Low power timer 2 clock source selection"]
         #[inline(always)]
-        pub const fn lptim2sel(&self) -> super::vals::Lptim2sel {
+        pub const fn lptim2sel(&self) -> super::vals::Lptimsel {
             let val = (self.0 >> 20usize) & 0x03;
-            super::vals::Lptim2sel::from_bits(val as u8)
+            super::vals::Lptimsel::from_bits(val as u8)
         }
         #[doc = "Low power timer 2 clock source selection"]
         #[inline(always)]
-        pub fn set_lptim2sel(&mut self, val: super::vals::Lptim2sel) {
+        pub fn set_lptim2sel(&mut self, val: super::vals::Lptimsel) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
         }
         #[doc = "Low power timer 3 clock source selection"]
         #[inline(always)]
-        pub const fn lptim3sel(&self) -> super::vals::Lptim3sel {
+        pub const fn lptim3sel(&self) -> super::vals::Lptimsel {
             let val = (self.0 >> 22usize) & 0x03;
-            super::vals::Lptim3sel::from_bits(val as u8)
+            super::vals::Lptimsel::from_bits(val as u8)
         }
         #[doc = "Low power timer 3 clock source selection"]
         #[inline(always)]
-        pub fn set_lptim3sel(&mut self, val: super::vals::Lptim3sel) {
+        pub fn set_lptim3sel(&mut self, val: super::vals::Lptimsel) {
             self.0 = (self.0 & !(0x03 << 22usize)) | (((val.to_bits() as u32) & 0x03) << 22usize);
         }
         #[doc = "ADC clock source selection"]
@@ -3690,7 +3690,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lptim1sel {
+    pub enum Lptimsel {
         #[doc = "APB clock selected"]
         PCLK1 = 0x0,
         #[doc = "LSI clock selected"]
@@ -3700,9 +3700,9 @@ pub mod vals {
         #[doc = "LSE clock selected"]
         LSE = 0x03,
     }
-    impl Lptim1sel {
+    impl Lptimsel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lptim1sel {
+        pub const fn from_bits(val: u8) -> Lptimsel {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -3710,86 +3710,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Lptim1sel {
+    impl From<u8> for Lptimsel {
         #[inline(always)]
-        fn from(val: u8) -> Lptim1sel {
-            Lptim1sel::from_bits(val)
+        fn from(val: u8) -> Lptimsel {
+            Lptimsel::from_bits(val)
         }
     }
-    impl From<Lptim1sel> for u8 {
+    impl From<Lptimsel> for u8 {
         #[inline(always)]
-        fn from(val: Lptim1sel) -> u8 {
-            Lptim1sel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lptim2sel {
-        #[doc = "APB clock selected"]
-        PCLK1 = 0x0,
-        #[doc = "LSI clock selected"]
-        LSI = 0x01,
-        #[doc = "HSI16 clock selected"]
-        HSI = 0x02,
-        #[doc = "LSE clock selected"]
-        LSE = 0x03,
-    }
-    impl Lptim2sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lptim2sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lptim2sel {
-        #[inline(always)]
-        fn from(val: u8) -> Lptim2sel {
-            Lptim2sel::from_bits(val)
-        }
-    }
-    impl From<Lptim2sel> for u8 {
-        #[inline(always)]
-        fn from(val: Lptim2sel) -> u8 {
-            Lptim2sel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lptim3sel {
-        #[doc = "APB clock selected"]
-        PCLK1 = 0x0,
-        #[doc = "LSI clock selected"]
-        LSI = 0x01,
-        #[doc = "HSI16 clock selected"]
-        HSI = 0x02,
-        #[doc = "LSE clock selected"]
-        LSE = 0x03,
-    }
-    impl Lptim3sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lptim3sel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lptim3sel {
-        #[inline(always)]
-        fn from(val: u8) -> Lptim3sel {
-            Lptim3sel::from_bits(val)
-        }
-    }
-    impl From<Lptim3sel> for u8 {
-        #[inline(always)]
-        fn from(val: Lptim3sel) -> u8 {
-            Lptim3sel::to_bits(val)
+        fn from(val: Lptimsel) -> u8 {
+            Lptimsel::to_bits(val)
         }
     }
     #[repr(u8)]

@@ -2297,7 +2297,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Lptimsel"),
                 },
                 Field {
                     name: "lptim2sel",
@@ -2305,7 +2305,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Lptimsel"),
                 },
                 Field {
                     name: "lptim3sel",
@@ -2313,7 +2313,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Lptimsel"),
                 },
                 Field {
                     name: "adcsel",
@@ -3188,6 +3188,33 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV2",
                     description: None,
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lptimsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some("APB clock selected"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "LSI",
+                    description: Some("LSI clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some("HSI16 clock selected"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some("LSE clock selected"),
+                    value: 3,
                 },
             ],
         },

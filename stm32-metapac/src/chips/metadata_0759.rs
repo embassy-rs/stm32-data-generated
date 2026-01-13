@@ -5257,7 +5257,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "RAMCFG",
         address: 0x42023000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "ramcfg",
+            version: "h5",
+            block: "RAMCFG",
+            ir: &ramcfg::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Clock("HCLK2"),
@@ -11566,6 +11571,8 @@ pub mod otg;
 pub mod pssi;
 #[path = "../registers/pwr_n6.rs"]
 pub mod pwr;
+#[path = "../registers/ramcfg_h5.rs"]
+pub mod ramcfg;
 #[path = "../registers/rcc_n6.rs"]
 pub mod rcc;
 #[path = "../registers/spi_v5.rs"]

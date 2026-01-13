@@ -542,8 +542,10 @@ pub const GPDMA1: gpdma::Gpdma = unsafe { gpdma::Gpdma::from_ptr(0x4002_0000usiz
 pub const GPDMA2: gpdma::Gpdma = unsafe { gpdma::Gpdma::from_ptr(0x4002_1000usize as _) };
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000usize as _) };
+pub const RAMCFG: ramcfg::Ramcfg = unsafe { ramcfg::Ramcfg::from_ptr(0x4002_6000usize as _) };
 pub const ICACHE: *mut () = 0x4003_0400usize as _;
 pub const DCACHE1: dcache::Dcache = unsafe { dcache::Dcache::from_ptr(0x4003_1400usize as _) };
+pub const GTZC: gtzc::Gtzc1Tzsc = unsafe { gtzc::Gtzc1Tzsc::from_ptr(0x4003_2400usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0400usize as _) };
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0800usize as _) };
@@ -617,6 +619,8 @@ pub mod fmc;
 pub mod gpdma;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/gtzc_v1.rs"]
+pub mod gtzc;
 #[path = "../../peripherals/hash_v3.rs"]
 pub mod hash;
 #[path = "../../peripherals/i2c_v2.rs"]
@@ -635,6 +639,8 @@ pub mod pka;
 pub mod pssi;
 #[path = "../../peripherals/pwr_h5.rs"]
 pub mod pwr;
+#[path = "../../peripherals/ramcfg_h5.rs"]
+pub mod ramcfg;
 #[path = "../../peripherals/rcc_h5.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rng_v3.rs"]

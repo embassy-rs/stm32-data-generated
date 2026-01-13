@@ -862,6 +862,15 @@
           }
         },
         {
+          "name": "GTZC",
+          "address": 1073947648,
+          "registers": {
+            "kind": "gtzc",
+            "version": "wba",
+            "block": "GTZC_TZSC"
+          }
+        },
+        {
           "name": "HASH",
           "address": 1108083712,
           "registers": {
@@ -1591,6 +1600,33 @@
             {
               "signal": "WKUP",
               "interrupt": "WKUP"
+            }
+          ]
+        },
+        {
+          "name": "RAMCFG",
+          "address": 1073897472,
+          "registers": {
+            "kind": "ramcfg",
+            "version": "wba",
+            "block": "RAMCFG"
+          },
+          "rcc": {
+            "bus_clock": "HCLK1",
+            "kernel_clock": "HCLK1",
+            "enable": {
+              "register": "AHB1ENR",
+              "field": "RAMCFGEN"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "BKP",
+              "interrupt": "RAMCFG"
+            },
+            {
+              "signal": "ECC",
+              "interrupt": "RAMCFG"
             }
           ]
         },

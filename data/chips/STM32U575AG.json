@@ -4303,6 +4303,15 @@
           }
         },
         {
+          "name": "GTZC",
+          "address": 1073947648,
+          "registers": {
+            "kind": "gtzc",
+            "version": "v1",
+            "block": "GTZC1_TZSC"
+          }
+        },
+        {
           "name": "HASH",
           "address": 1108083712,
           "registers": {
@@ -6706,6 +6715,37 @@
             {
               "signal": "S3WU",
               "interrupt": "PWR_S3WU"
+            }
+          ]
+        },
+        {
+          "name": "RAMCFG",
+          "address": 1073897472,
+          "registers": {
+            "kind": "ramcfg",
+            "version": "u5",
+            "block": "RAMCFG"
+          },
+          "rcc": {
+            "bus_clock": "HCLK1",
+            "kernel_clock": "HCLK1",
+            "enable": {
+              "register": "AHB1ENR",
+              "field": "RAMCFGEN"
+            },
+            "reset": {
+              "register": "AHB1RSTR",
+              "field": "RAMCFGRST"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "BKP",
+              "interrupt": "RAMCFG"
+            },
+            {
+              "signal": "ECC",
+              "interrupt": "RAMCFG"
             }
           ]
         },

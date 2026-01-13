@@ -598,6 +598,21 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "GTZC",
+        address: 0x40032400,
+        registers: Some(PeripheralRegisters {
+            kind: "gtzc",
+            version: "wba",
+            block: "GTZC_TZSC",
+            ir: &gtzc::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
         name: "HASH",
         address: 0x420c0400,
         registers: Some(PeripheralRegisters {
@@ -1240,6 +1255,39 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "WKUP",
             interrupt: "WKUP",
         }],
+        afio: None,
+    },
+    Peripheral {
+        name: "RAMCFG",
+        address: 0x40026000,
+        registers: Some(PeripheralRegisters {
+            kind: "ramcfg",
+            version: "wba",
+            block: "RAMCFG",
+            ir: &ramcfg::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            bus_clock: "HCLK1",
+            kernel_clock: Clock("HCLK1"),
+            enable: Some(PeripheralRccRegister {
+                register: "AHB1ENR",
+                field: "RAMCFGEN",
+            }),
+            reset: None,
+            stop_mode: StopMode::Stop1,
+        }),
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "BKP",
+                interrupt: "RAMCFG",
+            },
+            PeripheralInterrupt {
+                signal: "ECC",
+                interrupt: "RAMCFG",
+            },
+        ],
         afio: None,
     },
     Peripheral {
@@ -3513,6 +3561,8 @@ pub mod flash;
 pub mod gpdma;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../registers/gtzc_wba.rs"]
+pub mod gtzc;
 #[path = "../registers/hash_v4.rs"]
 pub mod hash;
 #[path = "../registers/i2c_v2.rs"]
@@ -3529,6 +3579,8 @@ pub mod otg;
 pub mod pka;
 #[path = "../registers/pwr_wba.rs"]
 pub mod pwr;
+#[path = "../registers/ramcfg_wba.rs"]
+pub mod ramcfg;
 #[path = "../registers/rcc_wba.rs"]
 pub mod rcc;
 #[path = "../registers/rng_wba6.rs"]

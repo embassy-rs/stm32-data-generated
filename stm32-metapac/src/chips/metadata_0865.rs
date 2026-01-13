@@ -932,6 +932,39 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "RAMCFG",
+        address: 0x40026000,
+        registers: Some(PeripheralRegisters {
+            kind: "ramcfg",
+            version: "wba",
+            block: "RAMCFG",
+            ir: &ramcfg::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            bus_clock: "HCLK1",
+            kernel_clock: Clock("HCLK1"),
+            enable: Some(PeripheralRccRegister {
+                register: "AHB1ENR",
+                field: "RAMCFGEN",
+            }),
+            reset: None,
+            stop_mode: StopMode::Stop1,
+        }),
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "BKP",
+                interrupt: "RAMCFG",
+            },
+            PeripheralInterrupt {
+                signal: "ECC",
+                interrupt: "RAMCFG",
+            },
+        ],
+        afio: None,
+    },
+    Peripheral {
         name: "RCC",
         address: 0x46020c00,
         registers: Some(PeripheralRegisters {
@@ -2163,6 +2196,8 @@ pub mod lptim;
 pub mod pka;
 #[path = "../registers/pwr_wba.rs"]
 pub mod pwr;
+#[path = "../registers/ramcfg_wba.rs"]
+pub mod ramcfg;
 #[path = "../registers/rcc_wba.rs"]
 pub mod rcc;
 #[path = "../registers/rng_v3.rs"]

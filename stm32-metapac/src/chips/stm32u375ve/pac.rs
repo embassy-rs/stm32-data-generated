@@ -488,10 +488,12 @@ pub const GPDMA1: gpdma::Gpdma = unsafe { gpdma::Gpdma::from_ptr(0x4002_0000usiz
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000usize as _) };
 pub const TSC: *mut () = 0x4002_4000usize as _;
+pub const RAMCFG: ramcfg::Ramcfg = unsafe { ramcfg::Ramcfg::from_ptr(0x4002_6000usize as _) };
 pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4003_0400usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4003_0800usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4003_0c00usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4003_2000usize as _) };
+pub const GTZC: *mut () = 0x4003_2400usize as _;
 pub const ADF1: *mut () = 0x4003_4000usize as _;
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4004_0400usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4004_2400usize as _) };
@@ -566,6 +568,8 @@ pub mod lptim;
 pub mod opamp;
 #[path = "../../peripherals/pwr_u3.rs"]
 pub mod pwr;
+#[path = "../../peripherals/ramcfg_u5.rs"]
+pub mod ramcfg;
 #[path = "../../peripherals/rcc_u3.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rtc_v3_u3.rs"]

@@ -4533,6 +4533,11 @@
         {
           "name": "RAMCFG",
           "address": 1107439616,
+          "registers": {
+            "kind": "ramcfg",
+            "version": "h5",
+            "block": "RAMCFG"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": "HCLK2",

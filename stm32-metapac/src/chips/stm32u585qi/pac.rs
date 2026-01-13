@@ -603,9 +603,11 @@ pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000usize
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000usize as _) };
 pub const TSC: tsc::Tsc = unsafe { tsc::Tsc::from_ptr(0x4002_4000usize as _) };
 pub const MDF1: *mut () = 0x4002_5000usize as _;
+pub const RAMCFG: ramcfg::Ramcfg = unsafe { ramcfg::Ramcfg::from_ptr(0x4002_6000usize as _) };
 pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x4002_b000usize as _) };
 pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4003_0400usize as _) };
 pub const DCACHE1: dcache::Dcache = unsafe { dcache::Dcache::from_ptr(0x4003_1400usize as _) };
+pub const GTZC: gtzc::Gtzc1Tzsc = unsafe { gtzc::Gtzc1Tzsc::from_ptr(0x4003_2400usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0400usize as _) };
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0800usize as _) };
@@ -703,6 +705,8 @@ pub mod fmac;
 pub mod gpdma;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/gtzc_v1.rs"]
+pub mod gtzc;
 #[path = "../../peripherals/hash_v4.rs"]
 pub mod hash;
 #[path = "../../peripherals/i2c_v2.rs"]
@@ -731,6 +735,8 @@ pub mod pka;
 pub mod pssi;
 #[path = "../../peripherals/pwr_u5.rs"]
 pub mod pwr;
+#[path = "../../peripherals/ramcfg_u5.rs"]
+pub mod ramcfg;
 #[path = "../../peripherals/rcc_u5.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rng_v3.rs"]

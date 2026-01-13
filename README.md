@@ -54,6 +54,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [GPDMA](#gpdma) | | | | | | | | | | v1 | v1 | | | | | | v1 | | v1 | v1 | | | v1 | |
 | [GPIO](#gpio) | v2 | v2 | v1 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2, v2_l478 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v1 | v2 | v2 |
 | [GPU](#gpu) | | | | | | | | | | | ❌ | | | | | | ❌ | | | ❌ | | | | |
+| [GTZC](#gtzc) | | | | | | | | | | h503, v1 | | | | | | ❌ | | | ❌ | v1 | | | wba | |
 | [HASH](#hash) | | | | v1 | | v1, v2 | v2 | | | v3 | v2, v3 | | | v2 | v2 | v2 | v3 | | v3 | v4 | | | v4 | |
 | [HRTIM](#hrtim) | | | | | v1 | | | | v2 | | v1 | | | | | | | | | | | | | |
 | [HSEM](#hsem) | | | | | | | | | | | v1, v2, ❌ | | | | | | | | | | v1, ❌ | | ❌ | v3, v4 |
@@ -84,7 +85,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [PWR](#pwr) | c0 | f0, f0x0 | f1 | f2 | f3 | f4 | f7 | g0 | g4 | h5, h50 | h7rm0399, h7rm0433, h7rm0455, h7rm0468, h7rs | l0 | l1 | l4 | l4 | l5 | n6 | u0 | u3 | u5 | wb, wb55 | wb | wba | wl5 |
 | [QUADSPI](#quadspi) | | | | | | v1 | v1 | | v1 | | v1 | | | v1 | | | | | | | v1 | | | |
 | [RADIO](#radio) | | | | | | | | | | | | | | | | | | | | | | ❌ | | |
-| [RAMCFG](#ramcfg) | | | | | | | | | | | | | | | | | ❌ | | | | | | | |
+| [RAMCFG](#ramcfg) | | | | | | | | | | h5 | | | | | | | h5 | | u5 | u5 | | | wba | |
 | [RAMECC](#ramecc) | | | | | | | | | | | ❌ | | | | | | | | | | | | | |
 | [RCC](#rcc) | c0, c0v2 | f0v1, f0v2, f0v3, f0v4 | f1, f100, f1cl | f2 | f37, f3v1, f3v2, f3v3 | f4, f410 | f7 | g0x0, g0x1 | g4 | h5, h50 | h7, h7ab, h7rm0433, h7rs | l0, l0_v2 | l1 | l4 | l4plus | l5 | n6 | u0 | u3 | u5 | wb | wb0 | wba | wl5, wle |
 | [RNG](#rng) | | | | v1 | | v1 | v1 | v1 | v1 | v3 | v1 | v1 | | v1 | v1, v2 | v2 | ❌ | v3 | ❌ | v3 | v1 | v1 | v3, wba6 | v2 |
@@ -513,6 +514,15 @@ The following table shows which STM32 peripheral versions are supported across d
 
 - **❌ Unsupported**: STM32H7, STM32N6, STM32U5
 
+### GTZC
+
+**Versions by family:**
+
+- **h503**: STM32H5
+- **v1**: STM32H5, STM32U5
+- **wba**: STM32WBA
+- **❌ Unsupported**: STM32L5, STM32U3
+
 ### HASH
 
 **Versions by family:**
@@ -760,7 +770,9 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **❌ Unsupported**: STM32N6
+- **h5**: STM32H5, STM32N6
+- **u5**: STM32U3, STM32U5
+- **wba**: STM32WBA
 
 ### RAMECC
 

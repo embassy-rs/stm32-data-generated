@@ -2725,6 +2725,22 @@
           }
         },
         {
+          "name": "GTZC",
+          "address": 1073947648,
+          "rcc": {
+            "bus_clock": "HCLK1",
+            "kernel_clock": "HCLK1",
+            "enable": {
+              "register": "AHB1ENR",
+              "field": "GTZCEN"
+            },
+            "reset": {
+              "register": "AHB1RSTR",
+              "field": "GTZCRST"
+            }
+          }
+        },
+        {
           "name": "HASH",
           "address": 1108083712,
           "registers": {

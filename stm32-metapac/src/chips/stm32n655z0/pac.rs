@@ -862,7 +862,7 @@ pub const TIM9: timer::Tim2ch = unsafe { timer::Tim2ch::from_ptr(0x4200_4c00usiz
 pub const SPI5: spi::Spi = unsafe { spi::Spi::from_ptr(0x4200_5000usize as _) };
 pub const SAI1: *mut () = 0x4200_5800usize as _;
 pub const SAI2: *mut () = 0x4200_5c00usize as _;
-pub const RAMCFG: *mut () = 0x4202_3000usize as _;
+pub const RAMCFG: ramcfg::Ramcfg = unsafe { ramcfg::Ramcfg::from_ptr(0x4202_3000usize as _) };
 pub const MDF1: *mut () = 0x4202_5000usize as _;
 pub const ADF1: *mut () = 0x4202_6000usize as _;
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x4400_1000usize as _) };
@@ -963,6 +963,8 @@ pub mod otg;
 pub mod pssi;
 #[path = "../../peripherals/pwr_n6.rs"]
 pub mod pwr;
+#[path = "../../peripherals/ramcfg_h5.rs"]
+pub mod ramcfg;
 #[path = "../../peripherals/rcc_n6.rs"]
 pub mod rcc;
 #[path = "../../peripherals/spi_v5.rs"]

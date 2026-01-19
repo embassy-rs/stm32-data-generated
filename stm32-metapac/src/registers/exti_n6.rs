@@ -139,7 +139,7 @@ pub(crate) static REGISTERS: IR = IR {
                 name: "exti",
                 description: Some("EXTI GPIO port selection."),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 16,
+                bit_size: 8,
                 array: Some(Array::Regular(RegularArray { len: 4, stride: 8 })),
                 enumm: None,
             }],

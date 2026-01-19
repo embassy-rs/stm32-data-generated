@@ -93,18 +93,18 @@ pub mod regs {
     impl Exti {
         #[doc = "EXTI GPIO port selection."]
         #[inline(always)]
-        pub const fn exti(&self, n: usize) -> u16 {
+        pub const fn exti(&self, n: usize) -> u8 {
             assert!(n < 4usize);
             let offs = 0usize + n * 8usize;
-            let val = (self.0 >> offs) & 0xffff;
-            val as u16
+            let val = (self.0 >> offs) & 0xff;
+            val as u8
         }
         #[doc = "EXTI GPIO port selection."]
         #[inline(always)]
-        pub fn set_exti(&mut self, n: usize, val: u16) {
+        pub fn set_exti(&mut self, n: usize, val: u8) {
             assert!(n < 4usize);
             let offs = 0usize + n * 8usize;
-            self.0 = (self.0 & !(0xffff << offs)) | (((val as u32) & 0xffff) << offs);
+            self.0 = (self.0 & !(0xff << offs)) | (((val as u32) & 0xff) << offs);
         }
     }
     impl Default for Exti {
@@ -128,7 +128,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Exti {{ exti[0]: {=u16:?}, exti[1]: {=u16:?}, exti[2]: {=u16:?}, exti[3]: {=u16:?} }}",
+                "Exti {{ exti[0]: {=u8:?}, exti[1]: {=u8:?}, exti[2]: {=u8:?}, exti[3]: {=u8:?} }}",
                 self.exti(0usize),
                 self.exti(1usize),
                 self.exti(2usize),

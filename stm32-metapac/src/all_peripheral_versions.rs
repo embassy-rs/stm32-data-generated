@@ -15,6 +15,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("afio", &["f1"]),
     ("bdma", &["v1", "v2"]),
     ("bkp", &["v1"]),
+    ("bsec", &["v2"]),
     ("can", &["bxcan", "fdcan_h7", "fdcan_v1"]),
     ("cec", &["v1", "v2"]),
     (
@@ -57,7 +58,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
         ],
     ),
     ("fmac", &["v1"]),
-    ("fmc", &["v1x3", "v2x1", "v3x1", "v4"]),
+    ("fmc", &["n6", "v1x3", "v2x1", "v3x1", "v4"]),
     ("fmpi2c", &["v2"]),
     ("fsmc", &["v1x0", "v1x3"]),
     ("gfxmmu", &["v1", "v2"]),
@@ -103,6 +104,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
             "l1", "l4", "l4plus", "l5", "n6", "u0", "u3", "u5", "wb", "wb0", "wba", "wl5", "wle",
         ],
     ),
+    ("rifsc", &["n6"]),
     ("rng", &["v1", "v2", "v3", "wba6"]),
     (
         "rtc",

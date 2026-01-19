@@ -1507,6 +1507,11 @@
         {
           "name": "BSEC",
           "address": 1174441984,
+          "registers": {
+            "kind": "bsec",
+            "version": "v2",
+            "block": "BSEC"
+          },
           "rcc": {
             "bus_clock": "PCLK4",
             "kernel_clock": "PCLK4",
@@ -2655,6 +2660,11 @@
         {
           "name": "FMC",
           "address": 1208107008,
+          "registers": {
+            "kind": "fmc",
+            "version": "n6",
+            "block": "FMC"
+          },
           "rcc": {
             "bus_clock": "HCLK5",
             "kernel_clock": {
@@ -4393,6 +4403,11 @@
         {
           "name": "ICACHE",
           "address": 1208176640,
+          "registers": {
+            "kind": "icache",
+            "version": "v1_0crr",
+            "block": "ICACHE"
+          },
           "interrupts": [
             {
               "signal": "GLOBAL",
@@ -5764,6 +5779,23 @@
               "interrupt": "RCC"
             }
           ]
+        },
+        {
+          "name": "RIFSC",
+          "address": 1140998144,
+          "registers": {
+            "kind": "rifsc",
+            "version": "n6",
+            "block": "RIFSC"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RIFSCEN"
+            }
+          }
         },
         {
           "name": "RNG",
@@ -10025,8 +10057,97 @@
           ]
         },
         {
+          "name": "XSPI1",
+          "address": 1208111104,
+          "registers": {
+            "kind": "xspi",
+            "version": "v1",
+            "block": "XSPI"
+          },
+          "rcc": {
+            "bus_clock": "HCLK5",
+            "kernel_clock": {
+              "register": "CCIPR6",
+              "field": "XSPI1SEL"
+            },
+            "enable": {
+              "register": "AHB5ENR",
+              "field": "XSPI1EN"
+            },
+            "reset": {
+              "register": "AHB5RSTR",
+              "field": "XSPI1RST"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "XSPI1"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "XSPI1",
+              "dma": "GPDMA1",
+              "request": 2
+            },
+            {
+              "signal": "XSPI1",
+              "dma": "HPDMA1",
+              "request": 2
+            }
+          ]
+        },
+        {
+          "name": "XSPI2",
+          "address": 1208131584,
+          "registers": {
+            "kind": "xspi",
+            "version": "v1",
+            "block": "XSPI"
+          },
+          "rcc": {
+            "bus_clock": "HCLK5",
+            "kernel_clock": {
+              "register": "CCIPR6",
+              "field": "XSPI2SEL"
+            },
+            "enable": {
+              "register": "AHB5ENR",
+              "field": "XSPI2EN"
+            },
+            "reset": {
+              "register": "AHB5RSTR",
+              "field": "XSPI2RST"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "XSPI2"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "XSPI2",
+              "dma": "GPDMA1",
+              "request": 3
+            },
+            {
+              "signal": "XSPI2",
+              "dma": "HPDMA1",
+              "request": 3
+            }
+          ]
+        },
+        {
           "name": "XSPI3",
-          "address": 2147483648,
+          "address": 1208143872,
+          "registers": {
+            "kind": "xspi",
+            "version": "v1",
+            "block": "XSPI"
+          },
           "rcc": {
             "bus_clock": "HCLK5",
             "kernel_clock": {
@@ -10064,6 +10185,11 @@
         {
           "name": "XSPIM",
           "address": 1208136704,
+          "registers": {
+            "kind": "xspim",
+            "version": "v1",
+            "block": "XSPIM"
+          },
           "rcc": {
             "bus_clock": "HCLK5",
             "kernel_clock": "HCLK5",

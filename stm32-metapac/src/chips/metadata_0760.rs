@@ -446,7 +446,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "BSEC",
         address: 0x46009000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "bsec",
+            version: "v2",
+            block: "BSEC",
+            ir: &bsec::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
             kernel_clock: Clock("PCLK4"),
@@ -1634,7 +1639,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "FMC",
         address: 0x48024000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "fmc",
+            version: "n6",
+            block: "FMC",
+            ir: &fmc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK5",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -3591,7 +3601,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ICACHE",
         address: 0x48035000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "icache",
+            version: "v1_0crr",
+            block: "ICACHE",
+            ir: &icache::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -5001,6 +5016,30 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "RCC",
         }],
+        afio: None,
+    },
+    Peripheral {
+        name: "RIFSC",
+        address: 0x44024000,
+        registers: Some(PeripheralRegisters {
+            kind: "rifsc",
+            version: "n6",
+            block: "RIFSC",
+            ir: &rifsc::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            bus_clock: "HCLK3",
+            kernel_clock: Clock("HCLK3"),
+            enable: Some(PeripheralRccRegister {
+                register: "AHB3ENR",
+                field: "RIFSCEN",
+            }),
+            reset: None,
+            stop_mode: StopMode::Stop1,
+        }),
+        pins: &[],
+        dma_channels: &[],
+        interrupts: &[],
         afio: None,
     },
     Peripheral {
@@ -9837,9 +9876,114 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "XSPI1",
+        address: 0x48025000,
+        registers: Some(PeripheralRegisters {
+            kind: "xspi",
+            version: "v1",
+            block: "XSPI",
+            ir: &xspi::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            bus_clock: "HCLK5",
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR6",
+                field: "XSPI1SEL",
+            }),
+            enable: Some(PeripheralRccRegister {
+                register: "AHB5ENR",
+                field: "XSPI1EN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "AHB5RSTR",
+                field: "XSPI1RST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
+        pins: &[],
+        dma_channels: &[
+            PeripheralDmaChannel {
+                signal: "XSPI1",
+                channel: None,
+                dmamux: None,
+                remap: &[],
+                dma: Some("GPDMA1"),
+                request: Some(2),
+            },
+            PeripheralDmaChannel {
+                signal: "XSPI1",
+                channel: None,
+                dmamux: None,
+                remap: &[],
+                dma: Some("HPDMA1"),
+                request: Some(2),
+            },
+        ],
+        interrupts: &[PeripheralInterrupt {
+            signal: "GLOBAL",
+            interrupt: "XSPI1",
+        }],
+        afio: None,
+    },
+    Peripheral {
+        name: "XSPI2",
+        address: 0x4802a000,
+        registers: Some(PeripheralRegisters {
+            kind: "xspi",
+            version: "v1",
+            block: "XSPI",
+            ir: &xspi::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            bus_clock: "HCLK5",
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR6",
+                field: "XSPI2SEL",
+            }),
+            enable: Some(PeripheralRccRegister {
+                register: "AHB5ENR",
+                field: "XSPI2EN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "AHB5RSTR",
+                field: "XSPI2RST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
+        pins: &[],
+        dma_channels: &[
+            PeripheralDmaChannel {
+                signal: "XSPI2",
+                channel: None,
+                dmamux: None,
+                remap: &[],
+                dma: Some("GPDMA1"),
+                request: Some(3),
+            },
+            PeripheralDmaChannel {
+                signal: "XSPI2",
+                channel: None,
+                dmamux: None,
+                remap: &[],
+                dma: Some("HPDMA1"),
+                request: Some(3),
+            },
+        ],
+        interrupts: &[PeripheralInterrupt {
+            signal: "GLOBAL",
+            interrupt: "XSPI2",
+        }],
+        afio: None,
+    },
+    Peripheral {
         name: "XSPI3",
-        address: 0x80000000,
-        registers: None,
+        address: 0x4802d000,
+        registers: Some(PeripheralRegisters {
+            kind: "xspi",
+            version: "v1",
+            block: "XSPI",
+            ir: &xspi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK5",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -9884,7 +10028,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "XSPIM",
         address: 0x4802b400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "xspim",
+            version: "v1",
+            block: "XSPIM",
+            ir: &xspim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK5",
             kernel_clock: Clock("HCLK5"),
@@ -11017,6 +11166,8 @@ pub(crate) static PINS: &[Pin] = &[
     Pin { name: "PN11" },
     Pin { name: "PN12" },
 ];
+#[path = "../registers/bsec_v2.rs"]
+pub mod bsec;
 #[path = "../registers/crc_v3.rs"]
 pub mod crc;
 #[path = "../registers/dbgmcu_n6.rs"]
@@ -11031,6 +11182,8 @@ pub mod dts;
 pub mod exti;
 #[path = "../registers/fdcanram_v1.rs"]
 pub mod fdcanram;
+#[path = "../registers/fmc_n6.rs"]
+pub mod fmc;
 #[path = "../registers/gpdma_v1.rs"]
 pub mod gpdma;
 #[path = "../registers/gpio_v2.rs"]
@@ -11039,6 +11192,8 @@ pub mod gpio;
 pub mod hash;
 #[path = "../registers/i2c_v3.rs"]
 pub mod i2c;
+#[path = "../registers/icache_v1_0crr.rs"]
+pub mod icache;
 #[path = "../registers/iwdg_v3.rs"]
 pub mod iwdg;
 #[path = "../registers/jpeg_v1.rs"]
@@ -11055,6 +11210,8 @@ pub mod pwr;
 pub mod ramcfg;
 #[path = "../registers/rcc_n6.rs"]
 pub mod rcc;
+#[path = "../registers/rifsc_n6.rs"]
+pub mod rifsc;
 #[path = "../registers/spi_v5.rs"]
 pub mod spi;
 #[path = "../registers/syscfg_n6.rs"]
@@ -11067,3 +11224,7 @@ pub mod ucpd;
 pub mod uid;
 #[path = "../registers/wwdg_v2.rs"]
 pub mod wwdg;
+#[path = "../registers/xspi_v1.rs"]
+pub mod xspi;
+#[path = "../registers/xspim_v1.rs"]
+pub mod xspim;

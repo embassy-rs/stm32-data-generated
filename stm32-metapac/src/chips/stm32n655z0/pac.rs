@@ -871,6 +871,7 @@ pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x4402_0400usize as _
 pub const CRYP: cryp::Cryp = unsafe { cryp::Cryp::from_ptr(0x4402_0800usize as _) };
 pub const SAES: *mut () = 0x4402_1000usize as _;
 pub const PKA: *mut () = 0x4402_2000usize as _;
+pub const RIFSC: rifsc::Rifsc = unsafe { rifsc::Rifsc::from_ptr(0x4402_4000usize as _) };
 pub const LPUART1: *mut () = 0x4600_0c00usize as _;
 pub const SPI6: spi::Spi = unsafe { spi::Spi::from_ptr(0x4600_1400usize as _) };
 pub const I2C4: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4600_1c00usize as _) };
@@ -880,7 +881,7 @@ pub const RTC: *mut () = 0x4600_4000usize as _;
 pub const TAMP: *mut () = 0x4600_4400usize as _;
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4600_4800usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4600_8000usize as _) };
-pub const BSEC: *mut () = 0x4600_9000usize as _;
+pub const BSEC: bsec::Bsec = unsafe { bsec::Bsec::from_ptr(0x4600_9000usize as _) };
 pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x4600_9014usize as _) };
 pub const DTS: dts::Dts = unsafe { dts::Dts::from_ptr(0x4600_a000usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4602_0000usize as _) };
@@ -907,19 +908,21 @@ pub const CSI: *mut () = 0x4800_6000usize as _;
 pub const HPDMA1: gpdma::Gpdma = unsafe { gpdma::Gpdma::from_ptr(0x4802_0000usize as _) };
 pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x4802_1000usize as _) };
 pub const JPEG: jpeg::Jpeg = unsafe { jpeg::Jpeg::from_ptr(0x4802_3000usize as _) };
+pub const XSPI1: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x4802_5000usize as _) };
 pub const PSSI: pssi::Pssi = unsafe { pssi::Pssi::from_ptr(0x4802_6400usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4802_8400usize as _) };
-pub const XSPIM: *mut () = 0x4802_b400usize as _;
+pub const XSPI2: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x4802_a000usize as _) };
+pub const XSPIM: xspim::Xspim = unsafe { xspim::Xspim::from_ptr(0x4802_b400usize as _) };
 pub const MCE1: *mut () = 0x4802_b800usize as _;
 pub const MCE2: *mut () = 0x4802_bc00usize as _;
 pub const MCE3: *mut () = 0x4802_c000usize as _;
+pub const XSPI3: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x4802_d000usize as _) };
 pub const MCE4: *mut () = 0x4802_e000usize as _;
 pub const GFXMMU: *mut () = 0x4803_0000usize as _;
 pub const GPU2D: *mut () = 0x4803_4000usize as _;
-pub const ICACHE: *mut () = 0x4803_5000usize as _;
+pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4803_5000usize as _) };
 pub const USB1_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4804_0000usize as _) };
 pub const USB2_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4808_0000usize as _) };
-pub const XSPI3: *mut () = 0x8000_0000usize as _;
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 4;
@@ -927,6 +930,8 @@ pub const NVIC_PRIO_BITS: u8 = 4;
 pub use cortex_m_rt::interrupt;
 #[cfg(feature = "rt")]
 pub use Interrupt as interrupt;
+#[path = "../../peripherals/bsec_v2.rs"]
+pub mod bsec;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/cryp_v2.rs"]
@@ -951,6 +956,8 @@ pub mod gpio;
 pub mod hash;
 #[path = "../../peripherals/i2c_v3.rs"]
 pub mod i2c;
+#[path = "../../peripherals/icache_v1_0crr.rs"]
+pub mod icache;
 #[path = "../../peripherals/iwdg_v3.rs"]
 pub mod iwdg;
 #[path = "../../peripherals/jpeg_v1.rs"]
@@ -967,6 +974,8 @@ pub mod pwr;
 pub mod ramcfg;
 #[path = "../../peripherals/rcc_n6.rs"]
 pub mod rcc;
+#[path = "../../peripherals/rifsc_n6.rs"]
+pub mod rifsc;
 #[path = "../../peripherals/spi_v5.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_n6.rs"]
@@ -979,3 +988,7 @@ pub mod ucpd;
 pub mod uid;
 #[path = "../../peripherals/wwdg_v2.rs"]
 pub mod wwdg;
+#[path = "../../peripherals/xspi_v1.rs"]
+pub mod xspi;
+#[path = "../../peripherals/xspim_v1.rs"]
+pub mod xspim;

@@ -96,7 +96,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [SDADC](#sdadc) | | | | | v1, ❌ | | | | | | | | | | | | | | | | | | | |
 | [SDMMC](#sdmmc) | | | v1 | v1 | | v1 | v1 | | | v2 | v2 | | v1 | v1 | ❌ | v2 | ❌ | | v2 | v2 | | | | |
 | [SPDIFRX](#spdifrx) | | | | | | v1 | v1 | | | | h7 | | | | | | ❌ | | | | | | | |
-| [SPI](#spi) | v3_i2s | v3, v3_i2s | v1, v1_i2s | v2_i2s | v3, v3_i2s | v2_i2s | v3_i2s | v3_i2s | v3 | v5_i2s | v4_i2s, v5_i2s | v2, v2_i2s | v2, v2_i2s | v3 | v3 | v3 | v5 | v3 | v6 | v6 | v3 | v3 | v6 | v3_i2s |
+| [SPI](#spi) | v3_i2s | v3, v3_i2s | v1, v1_i2s | v2_i2s | v3, v3_i2s | v2_i2s | v3_i2s | v3_i2s | v3_i2s | v5_i2s | v4_i2s, v5_i2s | v2, v2_i2s | v2, v2_i2s | v3 | v3 | v3 | v5 | v3 | v6 | v6 | v3 | v3 | v6 | v3_i2s |
 | [SWPMI](#swpmi) | | | | | | | | | | | ❌ | | | ❌ | | | | | | | | | | |
 | [SYSCFG](#syscfg) | c0 | f0 | | f2 | f3 | f4 | f7 | g0 | g4 | h5, h50 | h7, h7od, h7rs | l0 | l1 | l4 | l4 | l5 | n6 | u0 | u3 | u5 | wb | wb | wba | wl5, wle |
 | [TAMP](#tamp) | | | | | | | | g0 | g4 | h5 | ❌ | | | | | l5 | ❌ | ❌ | ❌ | u5 | | | wba | wl |
@@ -920,8 +920,8 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1_i2s**: STM32F1
 - **v2**: STM32L0, STM32L1
 - **v2_i2s**: STM32F2, STM32F4, STM32L0, STM32L1
-- **v3**: STM32F0, STM32F3, STM32G4, STM32L4, STM32L4+, STM32L5, STM32U0, STM32WB, STM32WB0
-- **v3_i2s**: STM32C0, STM32F0, STM32F3, STM32F7, STM32G0, STM32WL
+- **v3**: STM32F0, STM32F3, STM32L4, STM32L4+, STM32L5, STM32U0, STM32WB, STM32WB0
+- **v3_i2s**: STM32C0, STM32F0, STM32F3, STM32F7, STM32G0, STM32G4, STM32WL
 - **v4_i2s**: STM32H7
 - **v5**: STM32N6
 - **v5_i2s**: STM32H5, STM32H7

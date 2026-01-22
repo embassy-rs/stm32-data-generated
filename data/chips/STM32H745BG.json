@@ -2954,6 +2954,48 @@
               "signal": "CH7",
               "interrupt": "DMA1_Stream7"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "Stream0",
+              "dma": "MDMA",
+              "request": 0
+            },
+            {
+              "signal": "Stream1",
+              "dma": "MDMA",
+              "request": 1
+            },
+            {
+              "signal": "Stream2",
+              "dma": "MDMA",
+              "request": 2
+            },
+            {
+              "signal": "Stream3",
+              "dma": "MDMA",
+              "request": 3
+            },
+            {
+              "signal": "Stream4",
+              "dma": "MDMA",
+              "request": 4
+            },
+            {
+              "signal": "Stream5",
+              "dma": "MDMA",
+              "request": 5
+            },
+            {
+              "signal": "Stream6",
+              "dma": "MDMA",
+              "request": 6
+            },
+            {
+              "signal": "Stream7",
+              "dma": "MDMA",
+              "request": 7
+            }
           ]
         },
         {
@@ -3009,6 +3051,48 @@
               "signal": "CH7",
               "interrupt": "DMA2_Stream7"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "Stream0",
+              "dma": "MDMA",
+              "request": 8
+            },
+            {
+              "signal": "Stream1",
+              "dma": "MDMA",
+              "request": 9
+            },
+            {
+              "signal": "Stream2",
+              "dma": "MDMA",
+              "request": 10
+            },
+            {
+              "signal": "Stream3",
+              "dma": "MDMA",
+              "request": 11
+            },
+            {
+              "signal": "Stream4",
+              "dma": "MDMA",
+              "request": 12
+            },
+            {
+              "signal": "Stream5",
+              "dma": "MDMA",
+              "request": 13
+            },
+            {
+              "signal": "Stream6",
+              "dma": "MDMA",
+              "request": 14
+            },
+            {
+              "signal": "Stream7",
+              "dma": "MDMA",
+              "request": 15
+            }
           ]
         },
         {
@@ -3035,6 +3119,23 @@
             {
               "signal": "GLOBAL",
               "interrupt": "DMA2D"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "CLUT",
+              "dma": "MDMA",
+              "request": 24
+            },
+            {
+              "signal": "TC",
+              "dma": "MDMA",
+              "request": 25
+            },
+            {
+              "signal": "TW",
+              "dma": "MDMA",
+              "request": 26
             }
           ]
         },
@@ -4990,6 +5091,33 @@
               "signal": "GLOBAL",
               "interrupt": "JPEG"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "INFIFO",
+              "dma": "MDMA",
+              "request": 17
+            },
+            {
+              "signal": "INFIFO",
+              "dma": "MDMA",
+              "request": 18
+            },
+            {
+              "signal": "OUTFIFO",
+              "dma": "MDMA",
+              "request": 19
+            },
+            {
+              "signal": "OUTFIFO",
+              "dma": "MDMA",
+              "request": 20
+            },
+            {
+              "signal": "END",
+              "dma": "MDMA",
+              "request": 21
+            }
           ]
         },
         {
@@ -5764,6 +5892,13 @@
               "signal": "GLOBAL",
               "interrupt": "LTDC"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "LINE",
+              "dma": "MDMA",
+              "request": 16
+            }
           ]
         },
         {
@@ -5822,6 +5957,11 @@
         {
           "name": "MDMA",
           "address": 1375731712,
+          "registers": {
+            "kind": "mdma",
+            "version": "v1",
+            "block": "MDMA"
+          },
           "rcc": {
             "bus_clock": "HCLK3",
             "kernel_clock": "HCLK3",
@@ -6148,6 +6288,18 @@
             {
               "signal": "GLOBAL",
               "interrupt": "QUADSPI"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "FIFO",
+              "dma": "MDMA",
+              "request": 22
+            },
+            {
+              "signal": "TC",
+              "dma": "MDMA",
+              "request": 23
             }
           ]
         },
@@ -6966,6 +7118,23 @@
             {
               "signal": "GLOBAL",
               "interrupt": "SDMMC1"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "END",
+              "dma": "MDMA",
+              "request": 27
+            },
+            {
+              "signal": "DMA",
+              "dma": "MDMA",
+              "request": 28
+            },
+            {
+              "signal": "COMMAND",
+              "dma": "MDMA",
+              "request": 29
             }
           ]
         },
@@ -11643,6 +11812,102 @@
           "channel": 7,
           "dmamux": "DMAMUX2",
           "dmamux_channel": 7
+        },
+        {
+          "name": "MDMA_CH0",
+          "dma": "MDMA",
+          "channel": 0,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH1",
+          "dma": "MDMA",
+          "channel": 1,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH2",
+          "dma": "MDMA",
+          "channel": 2,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH3",
+          "dma": "MDMA",
+          "channel": 3,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH4",
+          "dma": "MDMA",
+          "channel": 4,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH5",
+          "dma": "MDMA",
+          "channel": 5,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH6",
+          "dma": "MDMA",
+          "channel": 6,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH7",
+          "dma": "MDMA",
+          "channel": 7,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH8",
+          "dma": "MDMA",
+          "channel": 8,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH9",
+          "dma": "MDMA",
+          "channel": 9,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH10",
+          "dma": "MDMA",
+          "channel": 10,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH11",
+          "dma": "MDMA",
+          "channel": 11,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH12",
+          "dma": "MDMA",
+          "channel": 12,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH13",
+          "dma": "MDMA",
+          "channel": 13,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH14",
+          "dma": "MDMA",
+          "channel": 14,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH15",
+          "dma": "MDMA",
+          "channel": 15,
+          "supports_2d": false
         }
       ],
       "pins": [
@@ -13433,6 +13698,48 @@
               "signal": "CH7",
               "interrupt": "DMA1_Stream7"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "Stream0",
+              "dma": "MDMA",
+              "request": 0
+            },
+            {
+              "signal": "Stream1",
+              "dma": "MDMA",
+              "request": 1
+            },
+            {
+              "signal": "Stream2",
+              "dma": "MDMA",
+              "request": 2
+            },
+            {
+              "signal": "Stream3",
+              "dma": "MDMA",
+              "request": 3
+            },
+            {
+              "signal": "Stream4",
+              "dma": "MDMA",
+              "request": 4
+            },
+            {
+              "signal": "Stream5",
+              "dma": "MDMA",
+              "request": 5
+            },
+            {
+              "signal": "Stream6",
+              "dma": "MDMA",
+              "request": 6
+            },
+            {
+              "signal": "Stream7",
+              "dma": "MDMA",
+              "request": 7
+            }
           ]
         },
         {
@@ -13488,6 +13795,48 @@
               "signal": "CH7",
               "interrupt": "DMA2_Stream7"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "Stream0",
+              "dma": "MDMA",
+              "request": 8
+            },
+            {
+              "signal": "Stream1",
+              "dma": "MDMA",
+              "request": 9
+            },
+            {
+              "signal": "Stream2",
+              "dma": "MDMA",
+              "request": 10
+            },
+            {
+              "signal": "Stream3",
+              "dma": "MDMA",
+              "request": 11
+            },
+            {
+              "signal": "Stream4",
+              "dma": "MDMA",
+              "request": 12
+            },
+            {
+              "signal": "Stream5",
+              "dma": "MDMA",
+              "request": 13
+            },
+            {
+              "signal": "Stream6",
+              "dma": "MDMA",
+              "request": 14
+            },
+            {
+              "signal": "Stream7",
+              "dma": "MDMA",
+              "request": 15
+            }
           ]
         },
         {
@@ -13514,6 +13863,23 @@
             {
               "signal": "GLOBAL",
               "interrupt": "DMA2D"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "CLUT",
+              "dma": "MDMA",
+              "request": 24
+            },
+            {
+              "signal": "TC",
+              "dma": "MDMA",
+              "request": 25
+            },
+            {
+              "signal": "TW",
+              "dma": "MDMA",
+              "request": 26
             }
           ]
         },
@@ -15469,6 +15835,33 @@
               "signal": "GLOBAL",
               "interrupt": "JPEG"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "INFIFO",
+              "dma": "MDMA",
+              "request": 17
+            },
+            {
+              "signal": "INFIFO",
+              "dma": "MDMA",
+              "request": 18
+            },
+            {
+              "signal": "OUTFIFO",
+              "dma": "MDMA",
+              "request": 19
+            },
+            {
+              "signal": "OUTFIFO",
+              "dma": "MDMA",
+              "request": 20
+            },
+            {
+              "signal": "END",
+              "dma": "MDMA",
+              "request": 21
+            }
           ]
         },
         {
@@ -16243,6 +16636,13 @@
               "signal": "GLOBAL",
               "interrupt": "LTDC"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "LINE",
+              "dma": "MDMA",
+              "request": 16
+            }
           ]
         },
         {
@@ -16301,6 +16701,11 @@
         {
           "name": "MDMA",
           "address": 1375731712,
+          "registers": {
+            "kind": "mdma",
+            "version": "v1",
+            "block": "MDMA"
+          },
           "rcc": {
             "bus_clock": "HCLK3",
             "kernel_clock": "HCLK3",
@@ -16627,6 +17032,18 @@
             {
               "signal": "GLOBAL",
               "interrupt": "QUADSPI"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "FIFO",
+              "dma": "MDMA",
+              "request": 22
+            },
+            {
+              "signal": "TC",
+              "dma": "MDMA",
+              "request": 23
             }
           ]
         },
@@ -17445,6 +17862,23 @@
             {
               "signal": "GLOBAL",
               "interrupt": "SDMMC1"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "END",
+              "dma": "MDMA",
+              "request": 27
+            },
+            {
+              "signal": "DMA",
+              "dma": "MDMA",
+              "request": 28
+            },
+            {
+              "signal": "COMMAND",
+              "dma": "MDMA",
+              "request": 29
             }
           ]
         },
@@ -22122,6 +22556,102 @@
           "channel": 7,
           "dmamux": "DMAMUX2",
           "dmamux_channel": 7
+        },
+        {
+          "name": "MDMA_CH0",
+          "dma": "MDMA",
+          "channel": 0,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH1",
+          "dma": "MDMA",
+          "channel": 1,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH2",
+          "dma": "MDMA",
+          "channel": 2,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH3",
+          "dma": "MDMA",
+          "channel": 3,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH4",
+          "dma": "MDMA",
+          "channel": 4,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH5",
+          "dma": "MDMA",
+          "channel": 5,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH6",
+          "dma": "MDMA",
+          "channel": 6,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH7",
+          "dma": "MDMA",
+          "channel": 7,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH8",
+          "dma": "MDMA",
+          "channel": 8,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH9",
+          "dma": "MDMA",
+          "channel": 9,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH10",
+          "dma": "MDMA",
+          "channel": 10,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH11",
+          "dma": "MDMA",
+          "channel": 11,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH12",
+          "dma": "MDMA",
+          "channel": 12,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH13",
+          "dma": "MDMA",
+          "channel": 13,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH14",
+          "dma": "MDMA",
+          "channel": 14,
+          "supports_2d": false
+        },
+        {
+          "name": "MDMA_CH15",
+          "dma": "MDMA",
+          "channel": 15,
+          "supports_2d": false
         }
       ],
       "pins": [

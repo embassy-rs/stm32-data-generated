@@ -80,6 +80,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("lptim", &["v1", "v1a", "v1b", "v1b_g4", "v1b_h7", "v1c", "v2a", "v2b"]),
     ("ltdc", &["v1"]),
     ("mdios", &["v1"]),
+    ("mdma", &["v1"]),
     ("octospi", &["v1", "v2"]),
     ("octospim", &["v1"]),
     ("opamp", &["v2", "v3", "v4", "v5"]),
@@ -105,6 +106,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
         ],
     ),
     ("rifsc", &["n6"]),
+    ("risaf", &["n6"]),
     ("rng", &["v1", "v2", "v3", "wba6"]),
     (
         "rtc",

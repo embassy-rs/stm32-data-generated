@@ -74,7 +74,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [MCE](#mce) | | | | | | | | | | | ❌ | | | | | | ❌ | | | | | | | |
 | [MDF](#mdf) | | | | | | | | | | | | | | | | | ❌ | | | ❌ | | | | |
 | [MDIOS](#mdios) | | | | | | | v1 | | | | v1 | | | | | | v1 | | | | | | | |
-| [MDMA](#mdma) | | | | | | | | | | | ❌ | | | | | | | | | | | | | |
+| [MDMA](#mdma) | | | | | | | | | | | v1 | | | | | | | | | | | | | |
 | [OCTOSPI](#octospi) | | | | | | | | | | v2 | v1 | | | | v1 | v2 | | | ❌ | v1 | | | | |
 | [OCTOSPIM](#octospim) | | | | | | | | | | | v1 | | | | v1 | | | | | v1 | | | | |
 | [OPAMP](#opamp) | | | | | v2 | | | | v5 | v4 | v4 | | ❌ | v3 | v3 | v3 | | v3 | v3 | v3 | | | | |
@@ -89,6 +89,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [RAMECC](#ramecc) | | | | | | | | | | | ❌ | | | | | | | | | | | | | |
 | [RCC](#rcc) | c0, c0v2 | f0v1, f0v2, f0v3, f0v4 | f1, f100, f1cl | f2 | f37, f3v1, f3v2, f3v3 | f4, f410 | f7 | g0x0, g0x1 | g4 | h5, h50 | h7, h7ab, h7rm0433, h7rs | l0, l0_v2 | l1 | l4 | l4plus | l5 | n6 | u0 | u3 | u5 | wb | wb0 | wba | wl5, wle |
 | [RIFSC](#rifsc) | | | | | | | | | | | | | | | | | n6 | | | | | | | |
+| [RISAF](#risaf) | | | | | | | | | | | | | | | | | n6 | | | | | | | |
 | [RNG](#rng) | | | | v1 | | v1 | v1 | v1 | v1 | v3 | v1 | v1 | | v1 | v1, v2 | v2 | ❌ | v3 | ❌ | v3 | v1 | v1 | v3, wba6 | v2 |
 | [RTC](#rtc) | v3_c0 | v2_f0 | v1 | v2_f2 | v2_f3 | v2_f4 | v2_f7 | v3_base | v3_base | v3_u5 | v2_h7, v3_h7rs | v2_l0 | v2_l1 | v2_l4, v3_l4 | v2_l4, v3_base | v3_l5 | ❌ | v3_base | v3_u3 | v3_u5 | v2_wb | v3_base | v3_u5 | v3_base |
 | [SAES](#saes) | | | | | | | | | | v1a | ❌ | | | | | | ❌ | | ❌ | v1b | | | v1a | |
@@ -669,7 +670,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **❌ Unsupported**: STM32H7
+- **v1**: STM32H7
 
 ### OCTOSPI
 
@@ -829,6 +830,12 @@ The following table shows which STM32 peripheral versions are supported across d
 - **wle**: STM32WL
 
 ### RIFSC
+
+**Versions by family:**
+
+- **n6**: STM32N6
+
+### RISAF
 
 **Versions by family:**
 

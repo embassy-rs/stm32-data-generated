@@ -876,6 +876,23 @@ pub const CRYP: cryp::Cryp = unsafe { cryp::Cryp::from_ptr(0x4402_0800usize as _
 pub const SAES: *mut () = 0x4402_1000usize as _;
 pub const PKA: *mut () = 0x4402_2000usize as _;
 pub const RIFSC: rifsc::Rifsc = unsafe { rifsc::Rifsc::from_ptr(0x4402_4000usize as _) };
+pub const RISAF1: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4402_6000usize as _) };
+pub const RISAF2: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4402_7000usize as _) };
+pub const RISAF3: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4402_8000usize as _) };
+pub const RISAF4: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4402_9000usize as _) };
+pub const RISAF5: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4402_a000usize as _) };
+pub const RISAF6: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4402_b000usize as _) };
+pub const RISAF7: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4402_c000usize as _) };
+pub const RISAF8: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4402_d000usize as _) };
+pub const RISAF9: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4402_e000usize as _) };
+pub const RISAF11: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4403_0000usize as _) };
+pub const RISAF12: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4403_1000usize as _) };
+pub const RISAF13: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4403_2000usize as _) };
+pub const RISAF14: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4403_3000usize as _) };
+pub const RISAF15: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4403_4000usize as _) };
+pub const RISAF21: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4403_5000usize as _) };
+pub const RISAF22: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4403_6000usize as _) };
+pub const RISAF23: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4403_7000usize as _) };
 pub const LPUART1: *mut () = 0x4600_0c00usize as _;
 pub const SPI6: spi::Spi = unsafe { spi::Spi::from_ptr(0x4600_1400usize as _) };
 pub const I2C4: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4600_1c00usize as _) };
@@ -981,6 +998,8 @@ pub mod ramcfg;
 pub mod rcc;
 #[path = "../../peripherals/rifsc_n6.rs"]
 pub mod rifsc;
+#[path = "../../peripherals/risaf_n6.rs"]
+pub mod risaf;
 #[path = "../../peripherals/spi_v5.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_n6.rs"]

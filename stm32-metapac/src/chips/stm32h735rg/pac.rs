@@ -688,7 +688,7 @@ pub const FMAC: fmac::Fmac = unsafe { fmac::Fmac::from_ptr(0x4802_4000usize as _
 pub const CORDIC: cordic::Cordic = unsafe { cordic::Cordic::from_ptr(0x4802_4400usize as _) };
 pub const LTDC: ltdc::Ltdc = unsafe { ltdc::Ltdc::from_ptr(0x5000_1000usize as _) };
 pub const WWDG1: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x5000_3000usize as _) };
-pub const MDMA: *mut () = 0x5200_0000usize as _;
+pub const MDMA: mdma::Mdma = unsafe { mdma::Mdma::from_ptr(0x5200_0000usize as _) };
 pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x5200_1000usize as _) };
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x5200_2000usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x5200_5000usize as _) };
@@ -797,6 +797,8 @@ pub mod lptim;
 pub mod ltdc;
 #[path = "../../peripherals/mdios_v1.rs"]
 pub mod mdios;
+#[path = "../../peripherals/mdma_v1.rs"]
+pub mod mdma;
 #[path = "../../peripherals/octospi_v1.rs"]
 pub mod octospi;
 #[path = "../../peripherals/octospim_v1.rs"]

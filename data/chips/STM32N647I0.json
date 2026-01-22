@@ -5655,6 +5655,159 @@
           }
         },
         {
+          "name": "RISAF1",
+          "address": 1141006336,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF11",
+          "address": 1141047296,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF12",
+          "address": 1141051392,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF13",
+          "address": 1141055488,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF14",
+          "address": 1141059584,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF15",
+          "address": 1141063680,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF2",
+          "address": 1141010432,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF21",
+          "address": 1141067776,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF22",
+          "address": 1141071872,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF23",
+          "address": 1141075968,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF3",
+          "address": 1141014528,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF4",
+          "address": 1141018624,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF5",
+          "address": 1141022720,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF6",
+          "address": 1141026816,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF7",
+          "address": 1141030912,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF8",
+          "address": 1141035008,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
+          "name": "RISAF9",
+          "address": 1141039104,
+          "registers": {
+            "kind": "risaf",
+            "version": "n6",
+            "block": "RISAF"
+          }
+        },
+        {
           "name": "RNG",
           "address": 1140981760,
           "rcc": {

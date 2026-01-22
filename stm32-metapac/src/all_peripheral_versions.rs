@@ -105,6 +105,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
         ],
     ),
     ("rifsc", &["n6"]),
+    ("risaf", &["n6"]),
     ("rng", &["v1", "v2", "v3", "wba6"]),
     (
         "rtc",

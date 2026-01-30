@@ -2744,31 +2744,31 @@ pub mod regs {
         #[doc = "Timer X Output Enable"]
         #[inline(always)]
         pub const fn t1oen(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 0usize + ([0usize, 2usize, 4usize, 6usize, 8usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 0usize + ([0usize, 2usize, 4usize, 6usize, 8usize, 10usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Timer X Output Enable"]
         #[inline(always)]
         pub fn set_t1oen(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 0usize + ([0usize, 2usize, 4usize, 6usize, 8usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 0usize + ([0usize, 2usize, 4usize, 6usize, 8usize, 10usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Timer X Complementary Output Enable"]
         #[inline(always)]
         pub const fn t2oen(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 1usize + ([0usize, 2usize, 4usize, 6usize, 8usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 1usize + ([0usize, 2usize, 4usize, 6usize, 8usize, 10usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Timer X Complementary Output Enable"]
         #[inline(always)]
         pub fn set_t2oen(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 1usize + ([0usize, 2usize, 4usize, 6usize, 8usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 1usize + ([0usize, 2usize, 4usize, 6usize, 8usize, 10usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
@@ -2786,18 +2786,20 @@ pub mod regs {
                 .field("t1oen[2]", &self.t1oen(2usize))
                 .field("t1oen[3]", &self.t1oen(3usize))
                 .field("t1oen[4]", &self.t1oen(4usize))
+                .field("t1oen[5]", &self.t1oen(5usize))
                 .field("t2oen[0]", &self.t2oen(0usize))
                 .field("t2oen[1]", &self.t2oen(1usize))
                 .field("t2oen[2]", &self.t2oen(2usize))
                 .field("t2oen[3]", &self.t2oen(3usize))
                 .field("t2oen[4]", &self.t2oen(4usize))
+                .field("t2oen[5]", &self.t2oen(5usize))
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimOenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimOenr {{ t1oen[0]: {=bool:?}, t1oen[1]: {=bool:?}, t1oen[2]: {=bool:?}, t1oen[3]: {=bool:?}, t1oen[4]: {=bool:?}, t2oen[0]: {=bool:?}, t2oen[1]: {=bool:?}, t2oen[2]: {=bool:?}, t2oen[3]: {=bool:?}, t2oen[4]: {=bool:?} }}" , self . t1oen (0usize) , self . t1oen (1usize) , self . t1oen (2usize) , self . t1oen (3usize) , self . t1oen (4usize) , self . t2oen (0usize) , self . t2oen (1usize) , self . t2oen (2usize) , self . t2oen (3usize) , self . t2oen (4usize))
+            defmt :: write ! (f , "HrtimOenr {{ t1oen[0]: {=bool:?}, t1oen[1]: {=bool:?}, t1oen[2]: {=bool:?}, t1oen[3]: {=bool:?}, t1oen[4]: {=bool:?}, t1oen[5]: {=bool:?}, t2oen[0]: {=bool:?}, t2oen[1]: {=bool:?}, t2oen[2]: {=bool:?}, t2oen[3]: {=bool:?}, t2oen[4]: {=bool:?}, t2oen[5]: {=bool:?} }}" , self . t1oen (0usize) , self . t1oen (1usize) , self . t1oen (2usize) , self . t1oen (3usize) , self . t1oen (4usize) , self . t1oen (5usize) , self . t2oen (0usize) , self . t2oen (1usize) , self . t2oen (2usize) , self . t2oen (3usize) , self . t2oen (4usize) , self . t2oen (5usize))
         }
     }
     #[doc = "Master Timer Compare X Register"]
@@ -2986,7 +2988,7 @@ pub mod regs {
         #[doc = "Timer X counter enable"]
         #[inline(always)]
         pub const fn tcen(&self, n: usize) -> bool {
-            assert!(n < 5usize);
+            assert!(n < 6usize);
             let offs = 17usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
             val != 0
@@ -2994,7 +2996,7 @@ pub mod regs {
         #[doc = "Timer X counter enable"]
         #[inline(always)]
         pub fn set_tcen(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
+            assert!(n < 6usize);
             let offs = 17usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
@@ -3067,6 +3069,7 @@ pub mod regs {
                 .field("tcen[2]", &self.tcen(2usize))
                 .field("tcen[3]", &self.tcen(3usize))
                 .field("tcen[4]", &self.tcen(4usize))
+                .field("tcen[5]", &self.tcen(5usize))
                 .field("dacsync", &self.dacsync())
                 .field("preen", &self.preen())
                 .field("mrepu", &self.mrepu())
@@ -3077,7 +3080,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Mcr {{ ckpsc: {=u8:?}, cont: {=bool:?}, retrig: {=bool:?}, half: {=bool:?}, syncin: {:?}, syncrstm: {=bool:?}, syncstrtm: {=bool:?}, syncout: {:?}, syncsrc: {:?}, mcen: {=bool:?}, tcen[0]: {=bool:?}, tcen[1]: {=bool:?}, tcen[2]: {=bool:?}, tcen[3]: {=bool:?}, tcen[4]: {=bool:?}, dacsync: {:?}, preen: {=bool:?}, mrepu: {=bool:?}, brstdma: {:?} }}" , self . ckpsc () , self . cont () , self . retrig () , self . half () , self . syncin () , self . syncrstm () , self . syncstrtm () , self . syncout () , self . syncsrc () , self . mcen () , self . tcen (0usize) , self . tcen (1usize) , self . tcen (2usize) , self . tcen (3usize) , self . tcen (4usize) , self . dacsync () , self . preen () , self . mrepu () , self . brstdma ())
+            defmt :: write ! (f , "Mcr {{ ckpsc: {=u8:?}, cont: {=bool:?}, retrig: {=bool:?}, half: {=bool:?}, syncin: {:?}, syncrstm: {=bool:?}, syncstrtm: {=bool:?}, syncout: {:?}, syncsrc: {:?}, mcen: {=bool:?}, tcen[0]: {=bool:?}, tcen[1]: {=bool:?}, tcen[2]: {=bool:?}, tcen[3]: {=bool:?}, tcen[4]: {=bool:?}, tcen[5]: {=bool:?}, dacsync: {:?}, preen: {=bool:?}, mrepu: {=bool:?}, brstdma: {:?} }}" , self . ckpsc () , self . cont () , self . retrig () , self . half () , self . syncin () , self . syncrstm () , self . syncstrtm () , self . syncout () , self . syncsrc () , self . mcen () , self . tcen (0usize) , self . tcen (1usize) , self . tcen (2usize) , self . tcen (3usize) , self . tcen (4usize) , self . tcen (5usize) , self . dacsync () , self . preen () , self . mrepu () , self . brstdma ())
         }
     }
     #[doc = "Master Timer DMA / Interrupt Enable Register"]

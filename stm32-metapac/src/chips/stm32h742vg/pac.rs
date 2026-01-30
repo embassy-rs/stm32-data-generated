@@ -671,7 +671,7 @@ pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4802_0000usize as _
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4802_1800usize as _) };
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4802_2400usize as _) };
 pub const WWDG1: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x5000_3000usize as _) };
-pub const MDMA: *mut () = 0x5200_0000usize as _;
+pub const MDMA: mdma::Mdma = unsafe { mdma::Mdma::from_ptr(0x5200_0000usize as _) };
 pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x5200_1000usize as _) };
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x5200_2000usize as _) };
 pub const FMC: fmc::Fmc = unsafe { fmc::Fmc::from_ptr(0x5200_4000usize as _) };
@@ -769,6 +769,8 @@ pub mod iwdg;
 pub mod lptim;
 #[path = "../../peripherals/mdios_v1.rs"]
 pub mod mdios;
+#[path = "../../peripherals/mdma_v1.rs"]
+pub mod mdma;
 #[path = "../../peripherals/opamp_v4.rs"]
 pub mod opamp;
 #[path = "../../peripherals/otg_v1.rs"]

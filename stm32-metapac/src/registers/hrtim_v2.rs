@@ -1838,7 +1838,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray {
-                        offsets: &[0, 2, 4, 6, 8],
+                        offsets: &[0, 2, 4, 6, 8, 10],
                     })),
                     enumm: None,
                 },
@@ -1848,7 +1848,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray {
-                        offsets: &[0, 2, 4, 6, 8],
+                        offsets: &[0, 2, 4, 6, 8, 10],
                     })),
                     enumm: None,
                 },
@@ -1973,7 +1973,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Timer X counter enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 5, stride: 1 })),
+                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
                     enumm: None,
                 },
                 Field {

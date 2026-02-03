@@ -3392,7 +3392,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "I2C1SEL"
+            },
             "enable": {
               "register": "APB1ENR1",
               "field": "I2C1EN"
@@ -3472,7 +3475,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "I2C2SEL"
+            },
             "enable": {
               "register": "APB1ENR1",
               "field": "I2C2EN"
@@ -3557,7 +3563,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "I2C3SEL"
+            },
             "enable": {
               "register": "APB1ENR1",
               "field": "I2C3EN"
@@ -3647,7 +3656,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR2",
+              "field": "I2C4SEL"
+            },
             "enable": {
               "register": "APB1ENR2",
               "field": "I2C4EN"
@@ -3756,7 +3768,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "LPTIM1SEL"
+            },
             "enable": {
               "register": "APB1ENR1",
               "field": "LPTIM1EN"
@@ -3831,7 +3846,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "LPUART1SEL"
+            },
             "enable": {
               "register": "APB1ENR2",
               "field": "LPUART1EN"
@@ -4744,7 +4762,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK2",
-            "kernel_clock": "PCLK2",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "SAI1SEL"
+            },
             "enable": {
               "register": "APB2ENR",
               "field": "SAI1EN"
@@ -7273,7 +7294,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "UART4SEL"
+            },
             "enable": {
               "register": "APB1ENR1",
               "field": "UART4EN"
@@ -7339,7 +7363,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "UART5SEL"
+            },
             "enable": {
               "register": "APB1ENR1",
               "field": "UART5EN"
@@ -7521,7 +7548,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK2",
-            "kernel_clock": "PCLK2",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "USART1SEL"
+            },
             "enable": {
               "register": "APB2ENR",
               "field": "USART1EN"
@@ -7627,7 +7657,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "USART2SEL"
+            },
             "enable": {
               "register": "APB1ENR1",
               "field": "USART2EN"
@@ -7763,7 +7796,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "USART3SEL"
+            },
             "enable": {
               "register": "APB1ENR1",
               "field": "USART3EN"

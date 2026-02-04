@@ -35194,14 +35194,14 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Icsel {
-        #[doc = "pll1_ck is selected (default after reset)."]
+        #[doc = "pll1_ck is selected."]
         PLL1 = 0x0,
         #[doc = "pll2_ck is selected."]
         PLL2 = 0x01,
-        #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        HSI_OSC_DIV4 = 0x02,
-        #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        HSI_OSC_DIV8 = 0x03,
+        #[doc = "pll3_ck is selected."]
+        PLL3 = 0x02,
+        #[doc = "pll4_ck is selected."]
+        PLL4 = 0x03,
     }
     impl Icsel {
         #[inline(always)]

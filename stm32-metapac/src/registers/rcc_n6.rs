@@ -38516,7 +38516,7 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "PLL1",
                     description: Some(
-                        "pll1_ck is selected (default after reset).",
+                        "pll1_ck is selected.",
                     ),
                     value: 0,
                 },
@@ -38528,16 +38528,16 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI_OSC_DIV4",
+                    name: "PLL3",
                     description: Some(
-                        "hsi_ck = hsi_osc_ck / 4.",
+                        "pll3_ck is selected.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HSI_OSC_DIV8",
+                    name: "PLL4",
                     description: Some(
-                        "hsi_ck = hsi_osc_ck / 8.",
+                        "pll4_ck is selected.",
                     ),
                     value: 3,
                 },

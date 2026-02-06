@@ -932,7 +932,7 @@ pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4602_4800usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4602_4c00usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4602_5000usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4602_8000usize as _) };
-pub const LTDC: *mut () = 0x4800_1000usize as _;
+pub const LTDC: ltdc::Ltdc = unsafe { ltdc::Ltdc::from_ptr(0x4800_1000usize as _) };
 pub const DCMIPP: *mut () = 0x4800_2000usize as _;
 pub const GFXTIM: *mut () = 0x4800_4000usize as _;
 pub const VENC: *mut () = 0x4800_5000usize as _;
@@ -999,6 +999,8 @@ pub mod icache;
 pub mod iwdg;
 #[path = "../../peripherals/jpeg_v1.rs"]
 pub mod jpeg;
+#[path = "../../peripherals/ltdc_v1_3.rs"]
+pub mod ltdc;
 #[path = "../../peripherals/mdios_v1.rs"]
 pub mod mdios;
 #[path = "../../peripherals/otg_v1.rs"]

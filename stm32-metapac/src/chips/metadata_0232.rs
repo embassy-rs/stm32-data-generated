@@ -3067,7 +3067,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "LTDC_ER",
             },
             PeripheralInterrupt {
-                signal: "GLOBAL",
+                signal: "LO",
                 interrupt: "LTDC",
             },
         ],

@@ -5133,6 +5133,11 @@
         {
           "name": "LTDC",
           "address": 1207963648,
+          "registers": {
+            "kind": "ltdc",
+            "version": "v1_3",
+            "block": "LTDC"
+          },
           "rcc": {
             "bus_clock": "PCLK5",
             "kernel_clock": {
@@ -5432,7 +5437,7 @@
           ],
           "interrupts": [
             {
-              "signal": "ERR",
+              "signal": "ER",
               "interrupt": "LTDC_LO_ERR"
             },
             {

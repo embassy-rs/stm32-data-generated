@@ -70,7 +70,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [LPGPIO](#lpgpio) | | | | | | | | | | | | | | | | | | | | ❌ | | | | |
 | [LPTIM](#lptim) | | | | | | v1a | v1a | v1b | v1b_g4 | v2a | v1b_h7 | v1 | | v1a | v1b | v1c | ❌ | v2b | v2a | v2a | v1b | | v2a | v1c |
 | [LPUART](#lpuart) | | | | | | | | | | | | | | | | | ❌ | | | | | | | |
-| [LTDC](#ltdc) | | | | | | v1 | v1 | | | | v1 | | | | v1, ❌ | | ❌ | | | v1 | | | | |
+| [LTDC](#ltdc) | | | | | | v1 | v1 | | | | v1 | | | | v1, ❌ | | v1_3 | | | v1 | | | | |
 | [MCE](#mce) | | | | | | | | | | | ❌ | | | | | | ❌ | | | | | | | |
 | [MDF](#mdf) | | | | | | | | | | | | | | | | | ❌ | | | ❌ | | | | |
 | [MDIOS](#mdios) | | | | | | | v1 | | | | v1 | | | | | | v1 | | | | | | | |
@@ -646,7 +646,8 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **v1**: STM32F4, STM32F7, STM32H7, STM32L4+, STM32U5
-- **❌ Unsupported**: STM32L4+, STM32N6
+- **v1_3**: STM32N6
+- **❌ Unsupported**: STM32L4+
 
 ### MCE
 

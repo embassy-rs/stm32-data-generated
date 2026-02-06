@@ -78,7 +78,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("lcd", &["v1", "v2"]),
     ("lpdma", &["v1"]),
     ("lptim", &["v1", "v1a", "v1b", "v1b_g4", "v1b_h7", "v1c", "v2a", "v2b"]),
-    ("ltdc", &["v1"]),
+    ("ltdc", &["v1", "v1_3"]),
     ("mdios", &["v1"]),
     ("mdma", &["v1"]),
     ("octospi", &["v1", "v2"]),

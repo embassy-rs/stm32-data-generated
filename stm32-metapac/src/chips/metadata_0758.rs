@@ -2970,7 +2970,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "LTDC",
         address: 0x48001000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "ltdc",
+            version: "v1_3",
+            block: "LTDC",
+            ir: &ltdc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK5",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -3182,7 +3187,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         dma_channels: &[],
         interrupts: &[
             PeripheralInterrupt {
-                signal: "ERR",
+                signal: "ER",
                 interrupt: "LTDC_LO_ERR",
             },
             PeripheralInterrupt {
@@ -9121,6 +9126,8 @@ pub mod icache;
 pub mod iwdg;
 #[path = "../registers/jpeg_v1.rs"]
 pub mod jpeg;
+#[path = "../registers/ltdc_v1_3.rs"]
+pub mod ltdc;
 #[path = "../registers/mdios_v1.rs"]
 pub mod mdios;
 #[path = "../registers/otg_v1.rs"]

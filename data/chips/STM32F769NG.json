@@ -5317,7 +5317,7 @@
               "interrupt": "LTDC_ER"
             },
             {
-              "signal": "GLOBAL",
+              "signal": "LO",
               "interrupt": "LTDC"
             }
           ]

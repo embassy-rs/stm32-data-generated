@@ -4033,7 +4033,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         registers: None,
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
-            kernel_clock: Clock("PCLK1"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR12",
+                field: "LPTIM1SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB1LENR",
                 field: "LPTIM1EN",
@@ -4153,7 +4156,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         registers: None,
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
-            kernel_clock: Clock("PCLK4"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR12",
+                field: "LPTIM2SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB4LENR",
                 field: "LPTIM2EN",
@@ -4273,7 +4279,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         registers: None,
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
-            kernel_clock: Clock("PCLK4"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR12",
+                field: "LPTIM3SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB4LENR",
                 field: "LPTIM3EN",
@@ -4373,7 +4382,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         registers: None,
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
-            kernel_clock: Clock("PCLK4"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR12",
+                field: "LPTIM5SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB4LENR",
                 field: "LPTIM5EN",
@@ -4411,10 +4423,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "LPUART1",
         address: 0x46000c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "usart",
+            version: "v4",
+            block: "LPUART",
+            ir: &usart::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
-            kernel_clock: Clock("PCLK4"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR14",
+                field: "LPUART1SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB4LENR",
                 field: "LPUART1EN",
@@ -9833,10 +9853,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "UART4",
         address: 0x40004c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "usart",
+            version: "v4",
+            block: "USART",
+            ir: &usart::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
-            kernel_clock: Clock("PCLK1"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR13",
+                field: "UART4SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB1LENR",
                 field: "UART4EN",
@@ -9962,10 +9990,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "UART5",
         address: 0x40005000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "usart",
+            version: "v4",
+            block: "USART",
+            ir: &usart::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
-            kernel_clock: Clock("PCLK1"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR13",
+                field: "UART5SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB1LENR",
                 field: "UART5EN",
@@ -10071,10 +10107,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "UART7",
         address: 0x40007800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "usart",
+            version: "v4",
+            block: "USART",
+            ir: &usart::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
-            kernel_clock: Clock("PCLK1"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR13",
+                field: "UART7SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB1LENR",
                 field: "UART7EN",
@@ -10195,10 +10239,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "UART8",
         address: 0x40007c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "usart",
+            version: "v4",
+            block: "USART",
+            ir: &usart::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
-            kernel_clock: Clock("PCLK1"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR13",
+                field: "UART8SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB1LENR",
                 field: "UART8EN",
@@ -10274,10 +10326,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "UART9",
         address: 0x42001800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "usart",
+            version: "v4",
+            block: "USART",
+            ir: &usart::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
-            kernel_clock: Clock("PCLK2"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR14",
+                field: "UART9SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB2ENR",
                 field: "UART9EN",
@@ -10476,10 +10536,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "USART1",
         address: 0x42001000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "usart",
+            version: "v4",
+            block: "USART",
+            ir: &usart::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
-            kernel_clock: Clock("PCLK2"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR13",
+                field: "USART1SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB2ENR",
                 field: "USART1EN",
@@ -10610,10 +10678,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "USART10",
         address: 0x42001c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "usart",
+            version: "v4",
+            block: "USART",
+            ir: &usart::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
-            kernel_clock: Clock("PCLK2"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR14",
+                field: "USART10SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB2ENR",
                 field: "USART10EN",
@@ -10714,10 +10790,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "USART2",
         address: 0x40004400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "usart",
+            version: "v4",
+            block: "USART",
+            ir: &usart::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
-            kernel_clock: Clock("PCLK1"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR13",
+                field: "USART2SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB1LENR",
                 field: "USART2EN",
@@ -10853,10 +10937,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "USART3",
         address: 0x40004800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "usart",
+            version: "v4",
+            block: "USART",
+            ir: &usart::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
-            kernel_clock: Clock("PCLK1"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR13",
+                field: "USART3SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB1LENR",
                 field: "USART3EN",
@@ -11012,10 +11104,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "USART6",
         address: 0x42001400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "usart",
+            version: "v4",
+            block: "USART",
+            ir: &usart::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
-            kernel_clock: Clock("PCLK2"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR13",
+                field: "USART6SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB2ENR",
                 field: "USART6EN",
@@ -12766,6 +12866,8 @@ pub mod timer;
 pub mod ucpd;
 #[path = "../registers/uid_v1.rs"]
 pub mod uid;
+#[path = "../registers/usart_v4.rs"]
+pub mod usart;
 #[path = "../registers/wwdg_v2.rs"]
 pub mod wwdg;
 #[path = "../registers/xspi_v1.rs"]

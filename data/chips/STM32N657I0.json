@@ -4488,7 +4488,10 @@
           "address": 1174414336,
           "rcc": {
             "bus_clock": "PCLK4",
-            "kernel_clock": "PCLK4",
+            "kernel_clock": {
+              "register": "CCIPR12",
+              "field": "LPTIM2SEL"
+            },
             "enable": {
               "register": "APB4LENR",
               "field": "LPTIM2EN"
@@ -4585,7 +4588,10 @@
           "address": 1174415360,
           "rcc": {
             "bus_clock": "PCLK4",
-            "kernel_clock": "PCLK4",
+            "kernel_clock": {
+              "register": "CCIPR12",
+              "field": "LPTIM3SEL"
+            },
             "enable": {
               "register": "APB4LENR",
               "field": "LPTIM3EN"
@@ -4665,9 +4671,17 @@
         {
           "name": "LPUART1",
           "address": 1174408192,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "LPUART"
+          },
           "rcc": {
             "bus_clock": "PCLK4",
-            "kernel_clock": "PCLK4",
+            "kernel_clock": {
+              "register": "CCIPR14",
+              "field": "LPUART1SEL"
+            },
             "enable": {
               "register": "APB4LENR",
               "field": "LPUART1EN"
@@ -9176,9 +9190,17 @@
         {
           "name": "UART4",
           "address": 1073761280,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR13",
+              "field": "UART4SEL"
+            },
             "enable": {
               "register": "APB1LENR",
               "field": "UART4EN"
@@ -9292,9 +9314,17 @@
         {
           "name": "UART5",
           "address": 1073762304,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR13",
+              "field": "UART5SEL"
+            },
             "enable": {
               "register": "APB1LENR",
               "field": "UART5EN"
@@ -9388,9 +9418,17 @@
         {
           "name": "UART7",
           "address": 1073772544,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR13",
+              "field": "UART7SEL"
+            },
             "enable": {
               "register": "APB1LENR",
               "field": "UART7EN"
@@ -9494,9 +9532,17 @@
         {
           "name": "UART9",
           "address": 1107302400,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
           "rcc": {
             "bus_clock": "PCLK2",
-            "kernel_clock": "PCLK2",
+            "kernel_clock": {
+              "register": "CCIPR14",
+              "field": "UART9SEL"
+            },
             "enable": {
               "register": "APB2ENR",
               "field": "UART9EN"
@@ -9650,9 +9696,17 @@
         {
           "name": "USART1",
           "address": 1107300352,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
           "rcc": {
             "bus_clock": "PCLK2",
-            "kernel_clock": "PCLK2",
+            "kernel_clock": {
+              "register": "CCIPR13",
+              "field": "USART1SEL"
+            },
             "enable": {
               "register": "APB2ENR",
               "field": "USART1EN"
@@ -9771,9 +9825,17 @@
         {
           "name": "USART2",
           "address": 1073759232,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR13",
+              "field": "USART2SEL"
+            },
             "enable": {
               "register": "APB1LENR",
               "field": "USART2EN"
@@ -9877,9 +9939,17 @@
         {
           "name": "USART3",
           "address": 1073760256,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR13",
+              "field": "USART3SEL"
+            },
             "enable": {
               "register": "APB1LENR",
               "field": "USART3EN"
@@ -10023,9 +10093,17 @@
         {
           "name": "USART6",
           "address": 1107301376,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
           "rcc": {
             "bus_clock": "PCLK2",
-            "kernel_clock": "PCLK2",
+            "kernel_clock": {
+              "register": "CCIPR13",
+              "field": "USART6SEL"
+            },
             "enable": {
               "register": "APB2ENR",
               "field": "USART6EN"

@@ -133,7 +133,7 @@ impl Rcc {
     pub const fn cicr(self) -> crate::common::Reg<regs::Cicr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x012cusize) as _) }
     }
-    #[doc = "RCC clock configuration for independent peripheral register1."]
+    #[doc = "RCC clock configuration for independent peripheral register 1."]
     #[inline(always)]
     pub const fn ccipr1(self) -> crate::common::Reg<regs::Ccipr1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0144usize) as _) }
@@ -143,52 +143,52 @@ impl Rcc {
     pub const fn ccipr2(self) -> crate::common::Reg<regs::Ccipr2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0148usize) as _) }
     }
-    #[doc = "RCC clock configuration for independent peripheral register3."]
+    #[doc = "RCC clock configuration for independent peripheral register 3."]
     #[inline(always)]
     pub const fn ccipr3(self) -> crate::common::Reg<regs::Ccipr3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x014cusize) as _) }
     }
-    #[doc = "RCC clock configuration for independent peripheral register4."]
+    #[doc = "RCC clock configuration for independent peripheral register 4."]
     #[inline(always)]
     pub const fn ccipr4(self) -> crate::common::Reg<regs::Ccipr4, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0150usize) as _) }
     }
-    #[doc = "RCC lock configuration for independent peripheral register5."]
+    #[doc = "RCC lock configuration for independent peripheral register 5."]
     #[inline(always)]
     pub const fn ccipr5(self) -> crate::common::Reg<regs::Ccipr5, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0154usize) as _) }
     }
-    #[doc = "RCC clock configuration for independent peripheral register6."]
+    #[doc = "RCC clock configuration for independent peripheral register 6."]
     #[inline(always)]
     pub const fn ccipr6(self) -> crate::common::Reg<regs::Ccipr6, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0158usize) as _) }
     }
-    #[doc = "RCC clock configuration for independent peripheral register7."]
+    #[doc = "RCC clock configuration for independent peripheral register 7."]
     #[inline(always)]
     pub const fn ccipr7(self) -> crate::common::Reg<regs::Ccipr7, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x015cusize) as _) }
     }
-    #[doc = "RCC clock configuration for independent peripheral register8."]
+    #[doc = "RCC clock configuration for independent peripheral register 8."]
     #[inline(always)]
     pub const fn ccipr8(self) -> crate::common::Reg<regs::Ccipr8, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0160usize) as _) }
     }
-    #[doc = "RCC clock configuration for independent peripheral register9."]
+    #[doc = "RCC clock configuration for independent peripheral register 9."]
     #[inline(always)]
     pub const fn ccipr9(self) -> crate::common::Reg<regs::Ccipr9, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0164usize) as _) }
     }
-    #[doc = "RCC clock configuration for independent peripheral register12."]
+    #[doc = "RCC clock configuration for independent peripheral register 12."]
     #[inline(always)]
     pub const fn ccipr12(self) -> crate::common::Reg<regs::Ccipr12, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0170usize) as _) }
     }
-    #[doc = "RCC clock configuration for independent peripheral register13."]
+    #[doc = "RCC clock configuration for independent peripheral register 13."]
     #[inline(always)]
     pub const fn ccipr13(self) -> crate::common::Reg<regs::Ccipr13, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0174usize) as _) }
     }
-    #[doc = "RCC clock configuration for independent peripheral register14."]
+    #[doc = "RCC clock configuration for independent peripheral register 14."]
     #[inline(always)]
     pub const fn ccipr14(self) -> crate::common::Reg<regs::Ccipr14, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0178usize) as _) }
@@ -18599,57 +18599,57 @@ pub mod regs {
     impl Ccipr12 {
         #[doc = "Source selection for the LPTIM1 kernel clock."]
         #[inline(always)]
-        pub const fn lptim1sel(&self) -> super::vals::Lptimsel {
+        pub const fn lptim1sel(&self) -> super::vals::Lptim1sel {
             let val = (self.0 >> 8usize) & 0x07;
-            super::vals::Lptimsel::from_bits(val as u8)
+            super::vals::Lptim1sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the LPTIM1 kernel clock."]
         #[inline(always)]
-        pub fn set_lptim1sel(&mut self, val: super::vals::Lptimsel) {
+        pub fn set_lptim1sel(&mut self, val: super::vals::Lptim1sel) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "Source selection for the LPTIM2 kernel clock."]
         #[inline(always)]
-        pub const fn lptim2sel(&self) -> super::vals::Lptimsel {
+        pub const fn lptim2sel(&self) -> super::vals::Lptim2345sel {
             let val = (self.0 >> 12usize) & 0x07;
-            super::vals::Lptimsel::from_bits(val as u8)
+            super::vals::Lptim2345sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the LPTIM2 kernel clock."]
         #[inline(always)]
-        pub fn set_lptim2sel(&mut self, val: super::vals::Lptimsel) {
+        pub fn set_lptim2sel(&mut self, val: super::vals::Lptim2345sel) {
             self.0 = (self.0 & !(0x07 << 12usize)) | (((val.to_bits() as u32) & 0x07) << 12usize);
         }
         #[doc = "Source selection for the LPTIM3 kernel clock."]
         #[inline(always)]
-        pub const fn lptim3sel(&self) -> super::vals::Lptimsel {
+        pub const fn lptim3sel(&self) -> super::vals::Lptim2345sel {
             let val = (self.0 >> 16usize) & 0x07;
-            super::vals::Lptimsel::from_bits(val as u8)
+            super::vals::Lptim2345sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the LPTIM3 kernel clock."]
         #[inline(always)]
-        pub fn set_lptim3sel(&mut self, val: super::vals::Lptimsel) {
+        pub fn set_lptim3sel(&mut self, val: super::vals::Lptim2345sel) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val.to_bits() as u32) & 0x07) << 16usize);
         }
         #[doc = "Source selection for the LPTIM4 kernel clock."]
         #[inline(always)]
-        pub const fn lptim4sel(&self) -> super::vals::Lptimsel {
+        pub const fn lptim4sel(&self) -> super::vals::Lptim2345sel {
             let val = (self.0 >> 20usize) & 0x07;
-            super::vals::Lptimsel::from_bits(val as u8)
+            super::vals::Lptim2345sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the LPTIM4 kernel clock."]
         #[inline(always)]
-        pub fn set_lptim4sel(&mut self, val: super::vals::Lptimsel) {
+        pub fn set_lptim4sel(&mut self, val: super::vals::Lptim2345sel) {
             self.0 = (self.0 & !(0x07 << 20usize)) | (((val.to_bits() as u32) & 0x07) << 20usize);
         }
         #[doc = "Source selection for the LPTIM5 kernel clock."]
         #[inline(always)]
-        pub const fn lptim5sel(&self) -> super::vals::Lptimsel {
+        pub const fn lptim5sel(&self) -> super::vals::Lptim2345sel {
             let val = (self.0 >> 24usize) & 0x07;
-            super::vals::Lptimsel::from_bits(val as u8)
+            super::vals::Lptim2345sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the LPTIM5 kernel clock."]
         #[inline(always)]
-        pub fn set_lptim5sel(&mut self, val: super::vals::Lptimsel) {
+        pub fn set_lptim5sel(&mut self, val: super::vals::Lptim2345sel) {
             self.0 = (self.0 & !(0x07 << 24usize)) | (((val.to_bits() as u32) & 0x07) << 24usize);
         }
     }
@@ -18691,90 +18691,90 @@ pub mod regs {
     impl Ccipr13 {
         #[doc = "Source selection for the USART1 kernel clock."]
         #[inline(always)]
-        pub const fn usart1sel(&self) -> super::vals::Usartsel {
+        pub const fn usart1sel(&self) -> super::vals::Uart16910sel {
             let val = (self.0 >> 0usize) & 0x07;
-            super::vals::Usartsel::from_bits(val as u8)
+            super::vals::Uart16910sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the USART1 kernel clock."]
         #[inline(always)]
-        pub fn set_usart1sel(&mut self, val: super::vals::Usartsel) {
+        pub fn set_usart1sel(&mut self, val: super::vals::Uart16910sel) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "Source selection for the USART2 kernel clock."]
         #[inline(always)]
-        pub const fn usart2sel(&self) -> super::vals::Usartsel {
+        pub const fn usart2sel(&self) -> super::vals::Uart234578sel {
             let val = (self.0 >> 4usize) & 0x07;
-            super::vals::Usartsel::from_bits(val as u8)
+            super::vals::Uart234578sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the USART2 kernel clock."]
         #[inline(always)]
-        pub fn set_usart2sel(&mut self, val: super::vals::Usartsel) {
+        pub fn set_usart2sel(&mut self, val: super::vals::Uart234578sel) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
         }
         #[doc = "Source selection for the USART3 kernel clock."]
         #[inline(always)]
-        pub const fn usart3sel(&self) -> super::vals::Usartsel {
+        pub const fn usart3sel(&self) -> super::vals::Uart234578sel {
             let val = (self.0 >> 8usize) & 0x07;
-            super::vals::Usartsel::from_bits(val as u8)
+            super::vals::Uart234578sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the USART3 kernel clock."]
         #[inline(always)]
-        pub fn set_usart3sel(&mut self, val: super::vals::Usartsel) {
+        pub fn set_usart3sel(&mut self, val: super::vals::Uart234578sel) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "Source selection for the UART4 kernel clock."]
         #[inline(always)]
-        pub const fn uart4sel(&self) -> super::vals::Uartsel {
+        pub const fn uart4sel(&self) -> super::vals::Uart234578sel {
             let val = (self.0 >> 12usize) & 0x07;
-            super::vals::Uartsel::from_bits(val as u8)
+            super::vals::Uart234578sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the UART4 kernel clock."]
         #[inline(always)]
-        pub fn set_uart4sel(&mut self, val: super::vals::Uartsel) {
+        pub fn set_uart4sel(&mut self, val: super::vals::Uart234578sel) {
             self.0 = (self.0 & !(0x07 << 12usize)) | (((val.to_bits() as u32) & 0x07) << 12usize);
         }
         #[doc = "Source selection for the UART5 kernel clock."]
         #[inline(always)]
-        pub const fn uart5sel(&self) -> super::vals::Uartsel {
+        pub const fn uart5sel(&self) -> super::vals::Uart234578sel {
             let val = (self.0 >> 16usize) & 0x07;
-            super::vals::Uartsel::from_bits(val as u8)
+            super::vals::Uart234578sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the UART5 kernel clock."]
         #[inline(always)]
-        pub fn set_uart5sel(&mut self, val: super::vals::Uartsel) {
+        pub fn set_uart5sel(&mut self, val: super::vals::Uart234578sel) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val.to_bits() as u32) & 0x07) << 16usize);
         }
         #[doc = "Source selection for the USART6 kernel clock."]
         #[inline(always)]
-        pub const fn usart6sel(&self) -> super::vals::Usartsel {
+        pub const fn usart6sel(&self) -> super::vals::Uart16910sel {
             let val = (self.0 >> 20usize) & 0x07;
-            super::vals::Usartsel::from_bits(val as u8)
+            super::vals::Uart16910sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the USART6 kernel clock."]
         #[inline(always)]
-        pub fn set_usart6sel(&mut self, val: super::vals::Usartsel) {
+        pub fn set_usart6sel(&mut self, val: super::vals::Uart16910sel) {
             self.0 = (self.0 & !(0x07 << 20usize)) | (((val.to_bits() as u32) & 0x07) << 20usize);
         }
         #[doc = "Source selection for the UART7 kernel clock."]
         #[inline(always)]
-        pub const fn uart7sel(&self) -> super::vals::Uartsel {
+        pub const fn uart7sel(&self) -> super::vals::Uart234578sel {
             let val = (self.0 >> 24usize) & 0x07;
-            super::vals::Uartsel::from_bits(val as u8)
+            super::vals::Uart234578sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the UART7 kernel clock."]
         #[inline(always)]
-        pub fn set_uart7sel(&mut self, val: super::vals::Uartsel) {
+        pub fn set_uart7sel(&mut self, val: super::vals::Uart234578sel) {
             self.0 = (self.0 & !(0x07 << 24usize)) | (((val.to_bits() as u32) & 0x07) << 24usize);
         }
         #[doc = "Source selection for the UART8 kernel clock."]
         #[inline(always)]
-        pub const fn uart8sel(&self) -> super::vals::Uartsel {
+        pub const fn uart8sel(&self) -> super::vals::Uart234578sel {
             let val = (self.0 >> 28usize) & 0x07;
-            super::vals::Uartsel::from_bits(val as u8)
+            super::vals::Uart234578sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the UART8 kernel clock."]
         #[inline(always)]
-        pub fn set_uart8sel(&mut self, val: super::vals::Uartsel) {
+        pub fn set_uart8sel(&mut self, val: super::vals::Uart234578sel) {
             self.0 = (self.0 & !(0x07 << 28usize)) | (((val.to_bits() as u32) & 0x07) << 28usize);
         }
     }
@@ -18811,24 +18811,24 @@ pub mod regs {
     impl Ccipr14 {
         #[doc = "Source selection for the UART9 kernel clock."]
         #[inline(always)]
-        pub const fn uart9sel(&self) -> super::vals::Uartsel {
+        pub const fn uart9sel(&self) -> super::vals::Uart16910sel {
             let val = (self.0 >> 0usize) & 0x07;
-            super::vals::Uartsel::from_bits(val as u8)
+            super::vals::Uart16910sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the UART9 kernel clock."]
         #[inline(always)]
-        pub fn set_uart9sel(&mut self, val: super::vals::Uartsel) {
+        pub fn set_uart9sel(&mut self, val: super::vals::Uart16910sel) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "Source selection for the USART10 kernel clock."]
         #[inline(always)]
-        pub const fn usart10sel(&self) -> super::vals::Usartsel {
+        pub const fn usart10sel(&self) -> super::vals::Uart16910sel {
             let val = (self.0 >> 4usize) & 0x07;
-            super::vals::Usartsel::from_bits(val as u8)
+            super::vals::Uart16910sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the USART10 kernel clock."]
         #[inline(always)]
-        pub fn set_usart10sel(&mut self, val: super::vals::Usartsel) {
+        pub fn set_usart10sel(&mut self, val: super::vals::Uart16910sel) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
         }
         #[doc = "Source selection for the LPUART1 kernel clock."]
@@ -34205,8 +34205,10 @@ pub mod vals {
         DIV1 = 0x0,
         #[doc = "hsi_ck = hsi_osc_ck / 2."]
         DIV2 = 0x01,
-        _RESERVED_2 = 0x02,
-        _RESERVED_3 = 0x03,
+        #[doc = "hsi_ck = hsi_osc_ck / 4."]
+        DIV4 = 0x02,
+        #[doc = "hsi_ck = hsi_osc_ck / 8."]
+        DIV8 = 0x03,
     }
     impl Hsidiv {
         #[inline(always)]
@@ -35037,52 +35039,531 @@ pub mod vals {
             I3c2sel::to_bits(val)
         }
     }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Icint(u8);
-    impl Icint {
-        #[doc = "IC1 = pllx_ck."]
-        pub const DIV1: Self = Self(0x0);
-        #[doc = "IC1 = pllx_ck / 2."]
-        pub const DIV2: Self = Self(0x01);
-        #[doc = "IC1 = pllx_ck / 3 (default after reset)."]
-        pub const DIV3: Self = Self(0x02);
-        #[doc = "IC1 = pllx_ck / 4."]
-        pub const DIV4: Self = Self(0x03);
-        #[doc = "IC1 = pllx_ck / 256."]
-        pub const DIV256: Self = Self(0xff);
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Icint {
+        #[doc = "IC = pllx_ck."]
+        DIV1 = 0x0,
+        #[doc = "IC = pllx_ck / 2."]
+        DIV2 = 0x01,
+        #[doc = "IC = pllx_ck / 3 (default after reset)."]
+        DIV3 = 0x02,
+        #[doc = "IC = pllx_ck / 4."]
+        DIV4 = 0x03,
+        #[doc = "IC = pllx_ck / 5."]
+        DIV5 = 0x04,
+        #[doc = "IC = pllx_ck / 6."]
+        DIV6 = 0x05,
+        #[doc = "IC = pllx_ck / 7."]
+        DIV7 = 0x06,
+        #[doc = "IC = pllx_ck / 8."]
+        DIV8 = 0x07,
+        #[doc = "IC = pllx_ck / 9."]
+        DIV9 = 0x08,
+        #[doc = "IC = pllx_ck / 10."]
+        DIV10 = 0x09,
+        #[doc = "IC = pllx_ck / 11."]
+        DIV11 = 0x0a,
+        #[doc = "IC = pllx_ck / 12."]
+        DIV12 = 0x0b,
+        #[doc = "IC = pllx_ck / 13."]
+        DIV13 = 0x0c,
+        #[doc = "IC = pllx_ck / 14."]
+        DIV14 = 0x0d,
+        #[doc = "IC = pllx_ck / 15."]
+        DIV15 = 0x0e,
+        #[doc = "IC = pllx_ck / 16."]
+        DIV16 = 0x0f,
+        #[doc = "IC = pllx_ck / 17."]
+        DIV17 = 0x10,
+        #[doc = "IC = pllx_ck / 18."]
+        DIV18 = 0x11,
+        #[doc = "IC = pllx_ck / 19."]
+        DIV19 = 0x12,
+        #[doc = "IC = pllx_ck / 20."]
+        DIV20 = 0x13,
+        #[doc = "IC = pllx_ck / 21."]
+        DIV21 = 0x14,
+        #[doc = "IC = pllx_ck / 22."]
+        DIV22 = 0x15,
+        #[doc = "IC = pllx_ck / 23."]
+        DIV23 = 0x16,
+        #[doc = "IC = pllx_ck / 24."]
+        DIV24 = 0x17,
+        #[doc = "IC = pllx_ck / 25."]
+        DIV25 = 0x18,
+        #[doc = "IC = pllx_ck / 26."]
+        DIV26 = 0x19,
+        #[doc = "IC = pllx_ck / 27."]
+        DIV27 = 0x1a,
+        #[doc = "IC = pllx_ck / 28."]
+        DIV28 = 0x1b,
+        #[doc = "IC = pllx_ck / 29."]
+        DIV29 = 0x1c,
+        #[doc = "IC = pllx_ck / 30."]
+        DIV30 = 0x1d,
+        #[doc = "IC = pllx_ck / 31."]
+        DIV31 = 0x1e,
+        #[doc = "IC = pllx_ck / 32."]
+        DIV32 = 0x1f,
+        #[doc = "IC = pllx_ck / 33."]
+        DIV33 = 0x20,
+        #[doc = "IC = pllx_ck / 34."]
+        DIV34 = 0x21,
+        #[doc = "IC = pllx_ck / 35."]
+        DIV35 = 0x22,
+        #[doc = "IC = pllx_ck / 36."]
+        DIV36 = 0x23,
+        #[doc = "IC = pllx_ck / 37."]
+        DIV37 = 0x24,
+        #[doc = "IC = pllx_ck / 38."]
+        DIV38 = 0x25,
+        #[doc = "IC = pllx_ck / 39."]
+        DIV39 = 0x26,
+        #[doc = "IC = pllx_ck / 40."]
+        DIV40 = 0x27,
+        #[doc = "IC = pllx_ck / 41."]
+        DIV41 = 0x28,
+        #[doc = "IC = pllx_ck / 42."]
+        DIV42 = 0x29,
+        #[doc = "IC = pllx_ck / 43."]
+        DIV43 = 0x2a,
+        #[doc = "IC = pllx_ck / 44."]
+        DIV44 = 0x2b,
+        #[doc = "IC = pllx_ck / 45."]
+        DIV45 = 0x2c,
+        #[doc = "IC = pllx_ck / 46."]
+        DIV46 = 0x2d,
+        #[doc = "IC = pllx_ck / 47."]
+        DIV47 = 0x2e,
+        #[doc = "IC = pllx_ck / 48."]
+        DIV48 = 0x2f,
+        #[doc = "IC = pllx_ck / 49."]
+        DIV49 = 0x30,
+        #[doc = "IC = pllx_ck / 50."]
+        DIV50 = 0x31,
+        #[doc = "IC = pllx_ck / 51."]
+        DIV51 = 0x32,
+        #[doc = "IC = pllx_ck / 52."]
+        DIV52 = 0x33,
+        #[doc = "IC = pllx_ck / 53."]
+        DIV53 = 0x34,
+        #[doc = "IC = pllx_ck / 54."]
+        DIV54 = 0x35,
+        #[doc = "IC = pllx_ck / 55."]
+        DIV55 = 0x36,
+        #[doc = "IC = pllx_ck / 56."]
+        DIV56 = 0x37,
+        #[doc = "IC = pllx_ck / 57."]
+        DIV57 = 0x38,
+        #[doc = "IC = pllx_ck / 58."]
+        DIV58 = 0x39,
+        #[doc = "IC = pllx_ck / 59."]
+        DIV59 = 0x3a,
+        #[doc = "IC = pllx_ck / 60."]
+        DIV60 = 0x3b,
+        #[doc = "IC = pllx_ck / 61."]
+        DIV61 = 0x3c,
+        #[doc = "IC = pllx_ck / 62."]
+        DIV62 = 0x3d,
+        #[doc = "IC = pllx_ck / 63."]
+        DIV63 = 0x3e,
+        #[doc = "IC = pllx_ck / 64."]
+        DIV64 = 0x3f,
+        #[doc = "IC = pllx_ck / 65."]
+        DIV65 = 0x40,
+        #[doc = "IC = pllx_ck / 66."]
+        DIV66 = 0x41,
+        #[doc = "IC = pllx_ck / 67."]
+        DIV67 = 0x42,
+        #[doc = "IC = pllx_ck / 68."]
+        DIV68 = 0x43,
+        #[doc = "IC = pllx_ck / 69."]
+        DIV69 = 0x44,
+        #[doc = "IC = pllx_ck / 70."]
+        DIV70 = 0x45,
+        #[doc = "IC = pllx_ck / 71."]
+        DIV71 = 0x46,
+        #[doc = "IC = pllx_ck / 72."]
+        DIV72 = 0x47,
+        #[doc = "IC = pllx_ck / 73."]
+        DIV73 = 0x48,
+        #[doc = "IC = pllx_ck / 74."]
+        DIV74 = 0x49,
+        #[doc = "IC = pllx_ck / 75."]
+        DIV75 = 0x4a,
+        #[doc = "IC = pllx_ck / 76."]
+        DIV76 = 0x4b,
+        #[doc = "IC = pllx_ck / 77."]
+        DIV77 = 0x4c,
+        #[doc = "IC = pllx_ck / 78."]
+        DIV78 = 0x4d,
+        #[doc = "IC = pllx_ck / 79."]
+        DIV79 = 0x4e,
+        #[doc = "IC = pllx_ck / 80."]
+        DIV80 = 0x4f,
+        #[doc = "IC = pllx_ck / 81."]
+        DIV81 = 0x50,
+        #[doc = "IC = pllx_ck / 82."]
+        DIV82 = 0x51,
+        #[doc = "IC = pllx_ck / 83."]
+        DIV83 = 0x52,
+        #[doc = "IC = pllx_ck / 84."]
+        DIV84 = 0x53,
+        #[doc = "IC = pllx_ck / 85."]
+        DIV85 = 0x54,
+        #[doc = "IC = pllx_ck / 86."]
+        DIV86 = 0x55,
+        #[doc = "IC = pllx_ck / 87."]
+        DIV87 = 0x56,
+        #[doc = "IC = pllx_ck / 88."]
+        DIV88 = 0x57,
+        #[doc = "IC = pllx_ck / 89."]
+        DIV89 = 0x58,
+        #[doc = "IC = pllx_ck / 90."]
+        DIV90 = 0x59,
+        #[doc = "IC = pllx_ck / 91."]
+        DIV91 = 0x5a,
+        #[doc = "IC = pllx_ck / 92."]
+        DIV92 = 0x5b,
+        #[doc = "IC = pllx_ck / 93."]
+        DIV93 = 0x5c,
+        #[doc = "IC = pllx_ck / 94."]
+        DIV94 = 0x5d,
+        #[doc = "IC = pllx_ck / 95."]
+        DIV95 = 0x5e,
+        #[doc = "IC = pllx_ck / 96."]
+        DIV96 = 0x5f,
+        #[doc = "IC = pllx_ck / 97."]
+        DIV97 = 0x60,
+        #[doc = "IC = pllx_ck / 98."]
+        DIV98 = 0x61,
+        #[doc = "IC = pllx_ck / 99."]
+        DIV99 = 0x62,
+        #[doc = "IC = pllx_ck / 100."]
+        DIV100 = 0x63,
+        #[doc = "IC = pllx_ck / 101."]
+        DIV101 = 0x64,
+        #[doc = "IC = pllx_ck / 102."]
+        DIV102 = 0x65,
+        #[doc = "IC = pllx_ck / 103."]
+        DIV103 = 0x66,
+        #[doc = "IC = pllx_ck / 104."]
+        DIV104 = 0x67,
+        #[doc = "IC = pllx_ck / 105."]
+        DIV105 = 0x68,
+        #[doc = "IC = pllx_ck / 106."]
+        DIV106 = 0x69,
+        #[doc = "IC = pllx_ck / 107."]
+        DIV107 = 0x6a,
+        #[doc = "IC = pllx_ck / 108."]
+        DIV108 = 0x6b,
+        #[doc = "IC = pllx_ck / 109."]
+        DIV109 = 0x6c,
+        #[doc = "IC = pllx_ck / 110."]
+        DIV110 = 0x6d,
+        #[doc = "IC = pllx_ck / 111."]
+        DIV111 = 0x6e,
+        #[doc = "IC = pllx_ck / 112."]
+        DIV112 = 0x6f,
+        #[doc = "IC = pllx_ck / 113."]
+        DIV113 = 0x70,
+        #[doc = "IC = pllx_ck / 114."]
+        DIV114 = 0x71,
+        #[doc = "IC = pllx_ck / 115."]
+        DIV115 = 0x72,
+        #[doc = "IC = pllx_ck / 116."]
+        DIV116 = 0x73,
+        #[doc = "IC = pllx_ck / 117."]
+        DIV117 = 0x74,
+        #[doc = "IC = pllx_ck / 118."]
+        DIV118 = 0x75,
+        #[doc = "IC = pllx_ck / 119."]
+        DIV119 = 0x76,
+        #[doc = "IC = pllx_ck / 120."]
+        DIV120 = 0x77,
+        #[doc = "IC = pllx_ck / 121."]
+        DIV121 = 0x78,
+        #[doc = "IC = pllx_ck / 122."]
+        DIV122 = 0x79,
+        #[doc = "IC = pllx_ck / 123."]
+        DIV123 = 0x7a,
+        #[doc = "IC = pllx_ck / 124."]
+        DIV124 = 0x7b,
+        #[doc = "IC = pllx_ck / 125."]
+        DIV125 = 0x7c,
+        #[doc = "IC = pllx_ck / 126."]
+        DIV126 = 0x7d,
+        #[doc = "IC = pllx_ck / 127."]
+        DIV127 = 0x7e,
+        #[doc = "IC = pllx_ck / 128."]
+        DIV128 = 0x7f,
+        #[doc = "IC = pllx_ck / 129."]
+        DIV129 = 0x80,
+        #[doc = "IC = pllx_ck / 130."]
+        DIV130 = 0x81,
+        #[doc = "IC = pllx_ck / 131."]
+        DIV131 = 0x82,
+        #[doc = "IC = pllx_ck / 132."]
+        DIV132 = 0x83,
+        #[doc = "IC = pllx_ck / 133."]
+        DIV133 = 0x84,
+        #[doc = "IC = pllx_ck / 134."]
+        DIV134 = 0x85,
+        #[doc = "IC = pllx_ck / 135."]
+        DIV135 = 0x86,
+        #[doc = "IC = pllx_ck / 136."]
+        DIV136 = 0x87,
+        #[doc = "IC = pllx_ck / 137."]
+        DIV137 = 0x88,
+        #[doc = "IC = pllx_ck / 138."]
+        DIV138 = 0x89,
+        #[doc = "IC = pllx_ck / 139."]
+        DIV139 = 0x8a,
+        #[doc = "IC = pllx_ck / 140."]
+        DIV140 = 0x8b,
+        #[doc = "IC = pllx_ck / 141."]
+        DIV141 = 0x8c,
+        #[doc = "IC = pllx_ck / 142."]
+        DIV142 = 0x8d,
+        #[doc = "IC = pllx_ck / 143."]
+        DIV143 = 0x8e,
+        #[doc = "IC = pllx_ck / 144."]
+        DIV144 = 0x8f,
+        #[doc = "IC = pllx_ck / 145."]
+        DIV145 = 0x90,
+        #[doc = "IC = pllx_ck / 146."]
+        DIV146 = 0x91,
+        #[doc = "IC = pllx_ck / 147."]
+        DIV147 = 0x92,
+        #[doc = "IC = pllx_ck / 148."]
+        DIV148 = 0x93,
+        #[doc = "IC = pllx_ck / 149."]
+        DIV149 = 0x94,
+        #[doc = "IC = pllx_ck / 150."]
+        DIV150 = 0x95,
+        #[doc = "IC = pllx_ck / 151."]
+        DIV151 = 0x96,
+        #[doc = "IC = pllx_ck / 152."]
+        DIV152 = 0x97,
+        #[doc = "IC = pllx_ck / 153."]
+        DIV153 = 0x98,
+        #[doc = "IC = pllx_ck / 154."]
+        DIV154 = 0x99,
+        #[doc = "IC = pllx_ck / 155."]
+        DIV155 = 0x9a,
+        #[doc = "IC = pllx_ck / 156."]
+        DIV156 = 0x9b,
+        #[doc = "IC = pllx_ck / 157."]
+        DIV157 = 0x9c,
+        #[doc = "IC = pllx_ck / 158."]
+        DIV158 = 0x9d,
+        #[doc = "IC = pllx_ck / 159."]
+        DIV159 = 0x9e,
+        #[doc = "IC = pllx_ck / 160."]
+        DIV160 = 0x9f,
+        #[doc = "IC = pllx_ck / 161."]
+        DIV161 = 0xa0,
+        #[doc = "IC = pllx_ck / 162."]
+        DIV162 = 0xa1,
+        #[doc = "IC = pllx_ck / 163."]
+        DIV163 = 0xa2,
+        #[doc = "IC = pllx_ck / 164."]
+        DIV164 = 0xa3,
+        #[doc = "IC = pllx_ck / 165."]
+        DIV165 = 0xa4,
+        #[doc = "IC = pllx_ck / 166."]
+        DIV166 = 0xa5,
+        #[doc = "IC = pllx_ck / 167."]
+        DIV167 = 0xa6,
+        #[doc = "IC = pllx_ck / 168."]
+        DIV168 = 0xa7,
+        #[doc = "IC = pllx_ck / 169."]
+        DIV169 = 0xa8,
+        #[doc = "IC = pllx_ck / 170."]
+        DIV170 = 0xa9,
+        #[doc = "IC = pllx_ck / 171."]
+        DIV171 = 0xaa,
+        #[doc = "IC = pllx_ck / 172."]
+        DIV172 = 0xab,
+        #[doc = "IC = pllx_ck / 173."]
+        DIV173 = 0xac,
+        #[doc = "IC = pllx_ck / 174."]
+        DIV174 = 0xad,
+        #[doc = "IC = pllx_ck / 175."]
+        DIV175 = 0xae,
+        #[doc = "IC = pllx_ck / 176."]
+        DIV176 = 0xaf,
+        #[doc = "IC = pllx_ck / 177."]
+        DIV177 = 0xb0,
+        #[doc = "IC = pllx_ck / 178."]
+        DIV178 = 0xb1,
+        #[doc = "IC = pllx_ck / 179."]
+        DIV179 = 0xb2,
+        #[doc = "IC = pllx_ck / 180."]
+        DIV180 = 0xb3,
+        #[doc = "IC = pllx_ck / 181."]
+        DIV181 = 0xb4,
+        #[doc = "IC = pllx_ck / 182."]
+        DIV182 = 0xb5,
+        #[doc = "IC = pllx_ck / 183."]
+        DIV183 = 0xb6,
+        #[doc = "IC = pllx_ck / 184."]
+        DIV184 = 0xb7,
+        #[doc = "IC = pllx_ck / 185."]
+        DIV185 = 0xb8,
+        #[doc = "IC = pllx_ck / 186."]
+        DIV186 = 0xb9,
+        #[doc = "IC = pllx_ck / 187."]
+        DIV187 = 0xba,
+        #[doc = "IC = pllx_ck / 188."]
+        DIV188 = 0xbb,
+        #[doc = "IC = pllx_ck / 189."]
+        DIV189 = 0xbc,
+        #[doc = "IC = pllx_ck / 190."]
+        DIV190 = 0xbd,
+        #[doc = "IC = pllx_ck / 191."]
+        DIV191 = 0xbe,
+        #[doc = "IC = pllx_ck / 192."]
+        DIV192 = 0xbf,
+        #[doc = "IC = pllx_ck / 193."]
+        DIV193 = 0xc0,
+        #[doc = "IC = pllx_ck / 194."]
+        DIV194 = 0xc1,
+        #[doc = "IC = pllx_ck / 195."]
+        DIV195 = 0xc2,
+        #[doc = "IC = pllx_ck / 196."]
+        DIV196 = 0xc3,
+        #[doc = "IC = pllx_ck / 197."]
+        DIV197 = 0xc4,
+        #[doc = "IC = pllx_ck / 198."]
+        DIV198 = 0xc5,
+        #[doc = "IC = pllx_ck / 199."]
+        DIV199 = 0xc6,
+        #[doc = "IC = pllx_ck / 200."]
+        DIV200 = 0xc7,
+        #[doc = "IC = pllx_ck / 201."]
+        DIV201 = 0xc8,
+        #[doc = "IC = pllx_ck / 202."]
+        DIV202 = 0xc9,
+        #[doc = "IC = pllx_ck / 203."]
+        DIV203 = 0xca,
+        #[doc = "IC = pllx_ck / 204."]
+        DIV204 = 0xcb,
+        #[doc = "IC = pllx_ck / 205."]
+        DIV205 = 0xcc,
+        #[doc = "IC = pllx_ck / 206."]
+        DIV206 = 0xcd,
+        #[doc = "IC = pllx_ck / 207."]
+        DIV207 = 0xce,
+        #[doc = "IC = pllx_ck / 208."]
+        DIV208 = 0xcf,
+        #[doc = "IC = pllx_ck / 209."]
+        DIV209 = 0xd0,
+        #[doc = "IC = pllx_ck / 210."]
+        DIV210 = 0xd1,
+        #[doc = "IC = pllx_ck / 211."]
+        DIV211 = 0xd2,
+        #[doc = "IC = pllx_ck / 212."]
+        DIV212 = 0xd3,
+        #[doc = "IC = pllx_ck / 213."]
+        DIV213 = 0xd4,
+        #[doc = "IC = pllx_ck / 214."]
+        DIV214 = 0xd5,
+        #[doc = "IC = pllx_ck / 215."]
+        DIV215 = 0xd6,
+        #[doc = "IC = pllx_ck / 216."]
+        DIV216 = 0xd7,
+        #[doc = "IC = pllx_ck / 217."]
+        DIV217 = 0xd8,
+        #[doc = "IC = pllx_ck / 218."]
+        DIV218 = 0xd9,
+        #[doc = "IC = pllx_ck / 219."]
+        DIV219 = 0xda,
+        #[doc = "IC = pllx_ck / 220."]
+        DIV220 = 0xdb,
+        #[doc = "IC = pllx_ck / 221."]
+        DIV221 = 0xdc,
+        #[doc = "IC = pllx_ck / 222."]
+        DIV222 = 0xdd,
+        #[doc = "IC = pllx_ck / 223."]
+        DIV223 = 0xde,
+        #[doc = "IC = pllx_ck / 224."]
+        DIV224 = 0xdf,
+        #[doc = "IC = pllx_ck / 225."]
+        DIV225 = 0xe0,
+        #[doc = "IC = pllx_ck / 226."]
+        DIV226 = 0xe1,
+        #[doc = "IC = pllx_ck / 227."]
+        DIV227 = 0xe2,
+        #[doc = "IC = pllx_ck / 228."]
+        DIV228 = 0xe3,
+        #[doc = "IC = pllx_ck / 229."]
+        DIV229 = 0xe4,
+        #[doc = "IC = pllx_ck / 230."]
+        DIV230 = 0xe5,
+        #[doc = "IC = pllx_ck / 231."]
+        DIV231 = 0xe6,
+        #[doc = "IC = pllx_ck / 232."]
+        DIV232 = 0xe7,
+        #[doc = "IC = pllx_ck / 233."]
+        DIV233 = 0xe8,
+        #[doc = "IC = pllx_ck / 234."]
+        DIV234 = 0xe9,
+        #[doc = "IC = pllx_ck / 235."]
+        DIV235 = 0xea,
+        #[doc = "IC = pllx_ck / 236."]
+        DIV236 = 0xeb,
+        #[doc = "IC = pllx_ck / 237."]
+        DIV237 = 0xec,
+        #[doc = "IC = pllx_ck / 238."]
+        DIV238 = 0xed,
+        #[doc = "IC = pllx_ck / 239."]
+        DIV239 = 0xee,
+        #[doc = "IC = pllx_ck / 240."]
+        DIV240 = 0xef,
+        #[doc = "IC = pllx_ck / 241."]
+        DIV241 = 0xf0,
+        #[doc = "IC = pllx_ck / 242."]
+        DIV242 = 0xf1,
+        #[doc = "IC = pllx_ck / 243."]
+        DIV243 = 0xf2,
+        #[doc = "IC = pllx_ck / 244."]
+        DIV244 = 0xf3,
+        #[doc = "IC = pllx_ck / 245."]
+        DIV245 = 0xf4,
+        #[doc = "IC = pllx_ck / 246."]
+        DIV246 = 0xf5,
+        #[doc = "IC = pllx_ck / 247."]
+        DIV247 = 0xf6,
+        #[doc = "IC = pllx_ck / 248."]
+        DIV248 = 0xf7,
+        #[doc = "IC = pllx_ck / 249."]
+        DIV249 = 0xf8,
+        #[doc = "IC = pllx_ck / 250."]
+        DIV250 = 0xf9,
+        #[doc = "IC = pllx_ck / 251."]
+        DIV251 = 0xfa,
+        #[doc = "IC = pllx_ck / 252."]
+        DIV252 = 0xfb,
+        #[doc = "IC = pllx_ck / 253."]
+        DIV253 = 0xfc,
+        #[doc = "IC = pllx_ck / 254."]
+        DIV254 = 0xfd,
+        #[doc = "IC = pllx_ck / 255."]
+        DIV255 = 0xfe,
+        #[doc = "IC = pllx_ck / 256."]
+        DIV256 = 0xff,
     }
     impl Icint {
+        #[inline(always)]
         pub const fn from_bits(val: u8) -> Icint {
-            Self(val & 0xff)
+            unsafe { core::mem::transmute(val & 0xff) }
         }
+        #[inline(always)]
         pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Icint {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
-                0xff => f.write_str("DIV256"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Icint {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
-                0xff => defmt::write!(f, "DIV256"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
+            unsafe { core::mem::transmute(self) }
         }
     }
     impl From<u8> for Icint {
@@ -35352,7 +35833,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lptimsel {
+    pub enum Lptim1sel {
         #[doc = "pclk1 selected as reference clock."]
         PCLK1 = 0x0,
         #[doc = "per_ck selected as reference clock."]
@@ -35368,9 +35849,9 @@ pub mod vals {
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
-    impl Lptimsel {
+    impl Lptim1sel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lptimsel {
+        pub const fn from_bits(val: u8) -> Lptim1sel {
             unsafe { core::mem::transmute(val & 0x07) }
         }
         #[inline(always)]
@@ -35378,16 +35859,57 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Lptimsel {
+    impl From<u8> for Lptim1sel {
         #[inline(always)]
-        fn from(val: u8) -> Lptimsel {
-            Lptimsel::from_bits(val)
+        fn from(val: u8) -> Lptim1sel {
+            Lptim1sel::from_bits(val)
         }
     }
-    impl From<Lptimsel> for u8 {
+    impl From<Lptim1sel> for u8 {
         #[inline(always)]
-        fn from(val: Lptimsel) -> u8 {
-            Lptimsel::to_bits(val)
+        fn from(val: Lptim1sel) -> u8 {
+            Lptim1sel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Lptim2345sel {
+        #[doc = "pclk1 selected as reference clock."]
+        PCLK4 = 0x0,
+        #[doc = "per_ck selected as reference clock."]
+        PER = 0x01,
+        #[doc = "ic15_ck selected as reference clock."]
+        IC15 = 0x02,
+        #[doc = "lse_ck selected as reference clock."]
+        LSE = 0x03,
+        #[doc = "lsi_ck selected as reference clock."]
+        LSI = 0x04,
+        #[doc = "timg_ck selected as reference clock."]
+        TIMG = 0x05,
+        _RESERVED_6 = 0x06,
+        _RESERVED_7 = 0x07,
+    }
+    impl Lptim2345sel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Lptim2345sel {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Lptim2345sel {
+        #[inline(always)]
+        fn from(val: u8) -> Lptim2345sel {
+            Lptim2345sel::from_bits(val)
+        }
+    }
+    impl From<Lptim2345sel> for u8 {
+        #[inline(always)]
+        fn from(val: Lptim2345sel) -> u8 {
+            Lptim2345sel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -37019,66 +37541,126 @@ pub mod vals {
         DIV1 = 0x01,
         #[doc = "reference clock is divided by 2."]
         DIV2 = 0x02,
-        _RESERVED_3 = 0x03,
-        _RESERVED_4 = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-        _RESERVED_8 = 0x08,
-        _RESERVED_9 = 0x09,
-        _RESERVED_a = 0x0a,
-        _RESERVED_b = 0x0b,
-        _RESERVED_c = 0x0c,
-        _RESERVED_d = 0x0d,
-        _RESERVED_e = 0x0e,
-        _RESERVED_f = 0x0f,
-        _RESERVED_10 = 0x10,
-        _RESERVED_11 = 0x11,
-        _RESERVED_12 = 0x12,
-        _RESERVED_13 = 0x13,
-        _RESERVED_14 = 0x14,
-        _RESERVED_15 = 0x15,
-        _RESERVED_16 = 0x16,
-        _RESERVED_17 = 0x17,
-        _RESERVED_18 = 0x18,
-        _RESERVED_19 = 0x19,
-        _RESERVED_1a = 0x1a,
-        _RESERVED_1b = 0x1b,
-        _RESERVED_1c = 0x1c,
-        _RESERVED_1d = 0x1d,
-        _RESERVED_1e = 0x1e,
-        _RESERVED_1f = 0x1f,
-        _RESERVED_20 = 0x20,
-        _RESERVED_21 = 0x21,
-        _RESERVED_22 = 0x22,
-        _RESERVED_23 = 0x23,
-        _RESERVED_24 = 0x24,
-        _RESERVED_25 = 0x25,
-        _RESERVED_26 = 0x26,
-        _RESERVED_27 = 0x27,
-        _RESERVED_28 = 0x28,
-        _RESERVED_29 = 0x29,
-        _RESERVED_2a = 0x2a,
-        _RESERVED_2b = 0x2b,
-        _RESERVED_2c = 0x2c,
-        _RESERVED_2d = 0x2d,
-        _RESERVED_2e = 0x2e,
-        _RESERVED_2f = 0x2f,
-        _RESERVED_30 = 0x30,
-        _RESERVED_31 = 0x31,
-        _RESERVED_32 = 0x32,
-        _RESERVED_33 = 0x33,
-        _RESERVED_34 = 0x34,
-        _RESERVED_35 = 0x35,
-        _RESERVED_36 = 0x36,
-        _RESERVED_37 = 0x37,
-        _RESERVED_38 = 0x38,
-        _RESERVED_39 = 0x39,
-        _RESERVED_3a = 0x3a,
-        _RESERVED_3b = 0x3b,
-        _RESERVED_3c = 0x3c,
-        _RESERVED_3d = 0x3d,
-        _RESERVED_3e = 0x3e,
+        #[doc = "reference clock is divided by 3."]
+        DIV3 = 0x03,
+        #[doc = "reference clock is divided by 4."]
+        DIV4 = 0x04,
+        #[doc = "reference clock is divided by 5."]
+        DIV5 = 0x05,
+        #[doc = "reference clock is divided by 6."]
+        DIV6 = 0x06,
+        #[doc = "reference clock is divided by 7."]
+        DIV7 = 0x07,
+        #[doc = "reference clock is divided by 8."]
+        DIV8 = 0x08,
+        #[doc = "reference clock is divided by 9."]
+        DIV9 = 0x09,
+        #[doc = "reference clock is divided by 10."]
+        DIV10 = 0x0a,
+        #[doc = "reference clock is divided by 11."]
+        DIV11 = 0x0b,
+        #[doc = "reference clock is divided by 12."]
+        DIV12 = 0x0c,
+        #[doc = "reference clock is divided by 13."]
+        DIV13 = 0x0d,
+        #[doc = "reference clock is divided by 14."]
+        DIV14 = 0x0e,
+        #[doc = "reference clock is divided by 15."]
+        DIV15 = 0x0f,
+        #[doc = "reference clock is divided by 16."]
+        DIV16 = 0x10,
+        #[doc = "reference clock is divided by 17."]
+        DIV17 = 0x11,
+        #[doc = "reference clock is divided by 18."]
+        DIV18 = 0x12,
+        #[doc = "reference clock is divided by 19."]
+        DIV19 = 0x13,
+        #[doc = "reference clock is divided by 20."]
+        DIV20 = 0x14,
+        #[doc = "reference clock is divided by 21."]
+        DIV21 = 0x15,
+        #[doc = "reference clock is divided by 22."]
+        DIV22 = 0x16,
+        #[doc = "reference clock is divided by 23."]
+        DIV23 = 0x17,
+        #[doc = "reference clock is divided by 24."]
+        DIV24 = 0x18,
+        #[doc = "reference clock is divided by 25."]
+        DIV25 = 0x19,
+        #[doc = "reference clock is divided by 26."]
+        DIV26 = 0x1a,
+        #[doc = "reference clock is divided by 27."]
+        DIV27 = 0x1b,
+        #[doc = "reference clock is divided by 28."]
+        DIV28 = 0x1c,
+        #[doc = "reference clock is divided by 29."]
+        DIV29 = 0x1d,
+        #[doc = "reference clock is divided by 30."]
+        DIV30 = 0x1e,
+        #[doc = "reference clock is divided by 31."]
+        DIV31 = 0x1f,
+        #[doc = "reference clock is divided by 32."]
+        DIV32 = 0x20,
+        #[doc = "reference clock is divided by 33."]
+        DIV33 = 0x21,
+        #[doc = "reference clock is divided by 34."]
+        DIV34 = 0x22,
+        #[doc = "reference clock is divided by 35."]
+        DIV35 = 0x23,
+        #[doc = "reference clock is divided by 36."]
+        DIV36 = 0x24,
+        #[doc = "reference clock is divided by 37."]
+        DIV37 = 0x25,
+        #[doc = "reference clock is divided by 38."]
+        DIV38 = 0x26,
+        #[doc = "reference clock is divided by 39."]
+        DIV39 = 0x27,
+        #[doc = "reference clock is divided by 40."]
+        DIV40 = 0x28,
+        #[doc = "reference clock is divided by 41."]
+        DIV41 = 0x29,
+        #[doc = "reference clock is divided by 42."]
+        DIV42 = 0x2a,
+        #[doc = "reference clock is divided by 43."]
+        DIV43 = 0x2b,
+        #[doc = "reference clock is divided by 44."]
+        DIV44 = 0x2c,
+        #[doc = "reference clock is divided by 45."]
+        DIV45 = 0x2d,
+        #[doc = "reference clock is divided by 46."]
+        DIV46 = 0x2e,
+        #[doc = "reference clock is divided by 47."]
+        DIV47 = 0x2f,
+        #[doc = "reference clock is divided by 48."]
+        DIV48 = 0x30,
+        #[doc = "reference clock is divided by 49."]
+        DIV49 = 0x31,
+        #[doc = "reference clock is divided by 50."]
+        DIV50 = 0x32,
+        #[doc = "reference clock is divided by 51."]
+        DIV51 = 0x33,
+        #[doc = "reference clock is divided by 52."]
+        DIV52 = 0x34,
+        #[doc = "reference clock is divided by 53."]
+        DIV53 = 0x35,
+        #[doc = "reference clock is divided by 54."]
+        DIV54 = 0x36,
+        #[doc = "reference clock is divided by 55."]
+        DIV55 = 0x37,
+        #[doc = "reference clock is divided by 56."]
+        DIV56 = 0x38,
+        #[doc = "reference clock is divided by 57."]
+        DIV57 = 0x39,
+        #[doc = "reference clock is divided by 58."]
+        DIV58 = 0x3a,
+        #[doc = "reference clock is divided by 59."]
+        DIV59 = 0x3b,
+        #[doc = "reference clock is divided by 60."]
+        DIV60 = 0x3c,
+        #[doc = "reference clock is divided by 61."]
+        DIV61 = 0x3d,
+        #[doc = "reference clock is divided by 62."]
+        DIV62 = 0x3e,
         #[doc = "reference clock is divided by 63."]
         DIV63 = 0x3f,
     }
@@ -37204,11 +37786,16 @@ pub mod vals {
         _RESERVED_0 = 0x0,
         #[doc = "VCO output is divided by 1 (minimum value) (default after reset)."]
         DIV1 = 0x01,
-        _RESERVED_2 = 0x02,
-        _RESERVED_3 = 0x03,
-        _RESERVED_4 = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
+        #[doc = "VCO output is divided by 2."]
+        DIV2 = 0x02,
+        #[doc = "VCO output is divided by 3."]
+        DIV3 = 0x03,
+        #[doc = "VCO output is divided by 4."]
+        DIV4 = 0x04,
+        #[doc = "VCO output is divided by 5."]
+        DIV5 = 0x05,
+        #[doc = "VCO output is divided by 6."]
+        DIV6 = 0x06,
         #[doc = "VCO output is divided by 7."]
         DIV7 = 0x07,
     }
@@ -38621,49 +39208,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Uartsel {
-        #[doc = "pclk1 selected as reference clock."]
-        PCLK1 = 0x0,
-        #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
-        #[doc = "ic9_ck selected as reference clock."]
-        IC9 = 0x02,
-        #[doc = "ic14_ck selected as reference clock."]
-        IC14 = 0x03,
-        #[doc = "lse_ck selected as reference clock."]
-        LSE = 0x04,
-        #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x05,
-        #[doc = "hsi_div_ck selected as reference clock."]
-        HSI = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl Uartsel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Uartsel {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Uartsel {
-        #[inline(always)]
-        fn from(val: u8) -> Uartsel {
-            Uartsel::from_bits(val)
-        }
-    }
-    impl From<Uartsel> for u8 {
-        #[inline(always)]
-        fn from(val: Uartsel) -> u8 {
-            Uartsel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Usartsel {
+    pub enum Uart16910sel {
         #[doc = "pclk2 selected as reference clock."]
         PCLK2 = 0x0,
         #[doc = "per_ck selected as reference clock."]
@@ -38680,9 +39225,9 @@ pub mod vals {
         HSI_DIV = 0x06,
         _RESERVED_7 = 0x07,
     }
-    impl Usartsel {
+    impl Uart16910sel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Usartsel {
+        pub const fn from_bits(val: u8) -> Uart16910sel {
             unsafe { core::mem::transmute(val & 0x07) }
         }
         #[inline(always)]
@@ -38690,16 +39235,58 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Usartsel {
+    impl From<u8> for Uart16910sel {
         #[inline(always)]
-        fn from(val: u8) -> Usartsel {
-            Usartsel::from_bits(val)
+        fn from(val: u8) -> Uart16910sel {
+            Uart16910sel::from_bits(val)
         }
     }
-    impl From<Usartsel> for u8 {
+    impl From<Uart16910sel> for u8 {
         #[inline(always)]
-        fn from(val: Usartsel) -> u8 {
-            Usartsel::to_bits(val)
+        fn from(val: Uart16910sel) -> u8 {
+            Uart16910sel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Uart234578sel {
+        #[doc = "pclk1 selected as reference clock."]
+        PCLK1 = 0x0,
+        #[doc = "per_ck selected as reference clock."]
+        PER = 0x01,
+        #[doc = "ic9_ck selected as reference clock."]
+        IC9 = 0x02,
+        #[doc = "ic14_ck selected as reference clock."]
+        IC14 = 0x03,
+        #[doc = "lse_ck selected as reference clock."]
+        LSE = 0x04,
+        #[doc = "msi_ck selected as reference clock."]
+        MSI = 0x05,
+        #[doc = "hsi_div_ck selected as reference clock."]
+        HSI = 0x06,
+        _RESERVED_7 = 0x07,
+    }
+    impl Uart234578sel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Uart234578sel {
+            unsafe { core::mem::transmute(val & 0x07) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Uart234578sel {
+        #[inline(always)]
+        fn from(val: u8) -> Uart234578sel {
+            Uart234578sel::from_bits(val)
+        }
+    }
+    impl From<Uart234578sel> for u8 {
+        #[inline(always)]
+        fn from(val: Uart234578sel) -> u8 {
+            Uart234578sel::to_bits(val)
         }
     }
     #[repr(u8)]

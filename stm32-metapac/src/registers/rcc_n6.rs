@@ -414,7 +414,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "ccipr1",
                     description: Some(
-                        "RCC clock configuration for independent peripheral register1.",
+                        "RCC clock configuration for independent peripheral register 1.",
                     ),
                     array: None,
                     byte_offset: 0x144,
@@ -448,7 +448,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "ccipr3",
                     description: Some(
-                        "RCC clock configuration for independent peripheral register3.",
+                        "RCC clock configuration for independent peripheral register 3.",
                     ),
                     array: None,
                     byte_offset: 0x14c,
@@ -465,7 +465,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "ccipr4",
                     description: Some(
-                        "RCC clock configuration for independent peripheral register4.",
+                        "RCC clock configuration for independent peripheral register 4.",
                     ),
                     array: None,
                     byte_offset: 0x150,
@@ -482,7 +482,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "ccipr5",
                     description: Some(
-                        "RCC lock configuration for independent peripheral register5.",
+                        "RCC lock configuration for independent peripheral register 5.",
                     ),
                     array: None,
                     byte_offset: 0x154,
@@ -499,7 +499,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "ccipr6",
                     description: Some(
-                        "RCC clock configuration for independent peripheral register6.",
+                        "RCC clock configuration for independent peripheral register 6.",
                     ),
                     array: None,
                     byte_offset: 0x158,
@@ -516,7 +516,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "ccipr7",
                     description: Some(
-                        "RCC clock configuration for independent peripheral register7.",
+                        "RCC clock configuration for independent peripheral register 7.",
                     ),
                     array: None,
                     byte_offset: 0x15c,
@@ -533,7 +533,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "ccipr8",
                     description: Some(
-                        "RCC clock configuration for independent peripheral register8.",
+                        "RCC clock configuration for independent peripheral register 8.",
                     ),
                     array: None,
                     byte_offset: 0x160,
@@ -550,7 +550,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "ccipr9",
                     description: Some(
-                        "RCC clock configuration for independent peripheral register9.",
+                        "RCC clock configuration for independent peripheral register 9.",
                     ),
                     array: None,
                     byte_offset: 0x164,
@@ -567,7 +567,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "ccipr12",
                     description: Some(
-                        "RCC clock configuration for independent peripheral register12.",
+                        "RCC clock configuration for independent peripheral register 12.",
                     ),
                     array: None,
                     byte_offset: 0x170,
@@ -584,7 +584,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "ccipr13",
                     description: Some(
-                        "RCC clock configuration for independent peripheral register13.",
+                        "RCC clock configuration for independent peripheral register 13.",
                     ),
                     array: None,
                     byte_offset: 0x174,
@@ -601,7 +601,7 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "ccipr14",
                     description: Some(
-                        "RCC clock configuration for independent peripheral register14.",
+                        "RCC clock configuration for independent peripheral register 14.",
                     ),
                     array: None,
                     byte_offset: 0x178,
@@ -21902,7 +21902,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Lptimsel",
+                        "Lptim1sel",
                     ),
                 },
                 Field {
@@ -21918,7 +21918,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Lptimsel",
+                        "Lptim2345sel",
                     ),
                 },
                 Field {
@@ -21934,7 +21934,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Lptimsel",
+                        "Lptim2345sel",
                     ),
                 },
                 Field {
@@ -21950,7 +21950,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Lptimsel",
+                        "Lptim2345sel",
                     ),
                 },
                 Field {
@@ -21966,7 +21966,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Lptimsel",
+                        "Lptim2345sel",
                     ),
                 },
             ],
@@ -21992,7 +21992,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Usartsel",
+                        "Uart16910sel",
                     ),
                 },
                 Field {
@@ -22008,7 +22008,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Usartsel",
+                        "Uart234578sel",
                     ),
                 },
                 Field {
@@ -22024,7 +22024,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Usartsel",
+                        "Uart234578sel",
                     ),
                 },
                 Field {
@@ -22040,7 +22040,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Uartsel",
+                        "Uart234578sel",
                     ),
                 },
                 Field {
@@ -22056,7 +22056,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Uartsel",
+                        "Uart234578sel",
                     ),
                 },
                 Field {
@@ -22072,7 +22072,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Usartsel",
+                        "Uart16910sel",
                     ),
                 },
                 Field {
@@ -22088,7 +22088,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Uartsel",
+                        "Uart234578sel",
                     ),
                 },
                 Field {
@@ -22104,7 +22104,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Uartsel",
+                        "Uart234578sel",
                     ),
                 },
             ],
@@ -22130,7 +22130,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Uartsel",
+                        "Uart16910sel",
                     ),
                 },
                 Field {
@@ -22146,7 +22146,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 3,
                     array: None,
                     enumm: Some(
-                        "Usartsel",
+                        "Uart16910sel",
                     ),
                 },
                 Field {
@@ -37729,6 +37729,20 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 1,
                 },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "hsi_ck = hsi_osc_ck / 4.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "hsi_ck = hsi_osc_ck / 8.",
+                    ),
+                    value: 3,
+                },
             ],
         },
         Enum {
@@ -38411,35 +38425,1792 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "DIV1",
                     description: Some(
-                        "IC1 = pllx_ck.",
+                        "IC = pllx_ck.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DIV2",
                     description: Some(
-                        "IC1 = pllx_ck / 2.",
+                        "IC = pllx_ck / 2.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "DIV3",
                     description: Some(
-                        "IC1 = pllx_ck / 3 (default after reset).",
+                        "IC = pllx_ck / 3 (default after reset).",
                     ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "DIV4",
                     description: Some(
-                        "IC1 = pllx_ck / 4.",
+                        "IC = pllx_ck / 4.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
+                    name: "DIV5",
+                    description: Some(
+                        "IC = pllx_ck / 5.",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV6",
+                    description: Some(
+                        "IC = pllx_ck / 6.",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV7",
+                    description: Some(
+                        "IC = pllx_ck / 7.",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "IC = pllx_ck / 8.",
+                    ),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DIV9",
+                    description: Some(
+                        "IC = pllx_ck / 9.",
+                    ),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "DIV10",
+                    description: Some(
+                        "IC = pllx_ck / 10.",
+                    ),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "DIV11",
+                    description: Some(
+                        "IC = pllx_ck / 11.",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "DIV12",
+                    description: Some(
+                        "IC = pllx_ck / 12.",
+                    ),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "DIV13",
+                    description: Some(
+                        "IC = pllx_ck / 13.",
+                    ),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "DIV14",
+                    description: Some(
+                        "IC = pllx_ck / 14.",
+                    ),
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "DIV15",
+                    description: Some(
+                        "IC = pllx_ck / 15.",
+                    ),
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some(
+                        "IC = pllx_ck / 16.",
+                    ),
+                    value: 15,
+                },
+                EnumVariant {
+                    name: "DIV17",
+                    description: Some(
+                        "IC = pllx_ck / 17.",
+                    ),
+                    value: 16,
+                },
+                EnumVariant {
+                    name: "DIV18",
+                    description: Some(
+                        "IC = pllx_ck / 18.",
+                    ),
+                    value: 17,
+                },
+                EnumVariant {
+                    name: "DIV19",
+                    description: Some(
+                        "IC = pllx_ck / 19.",
+                    ),
+                    value: 18,
+                },
+                EnumVariant {
+                    name: "DIV20",
+                    description: Some(
+                        "IC = pllx_ck / 20.",
+                    ),
+                    value: 19,
+                },
+                EnumVariant {
+                    name: "DIV21",
+                    description: Some(
+                        "IC = pllx_ck / 21.",
+                    ),
+                    value: 20,
+                },
+                EnumVariant {
+                    name: "DIV22",
+                    description: Some(
+                        "IC = pllx_ck / 22.",
+                    ),
+                    value: 21,
+                },
+                EnumVariant {
+                    name: "DIV23",
+                    description: Some(
+                        "IC = pllx_ck / 23.",
+                    ),
+                    value: 22,
+                },
+                EnumVariant {
+                    name: "DIV24",
+                    description: Some(
+                        "IC = pllx_ck / 24.",
+                    ),
+                    value: 23,
+                },
+                EnumVariant {
+                    name: "DIV25",
+                    description: Some(
+                        "IC = pllx_ck / 25.",
+                    ),
+                    value: 24,
+                },
+                EnumVariant {
+                    name: "DIV26",
+                    description: Some(
+                        "IC = pllx_ck / 26.",
+                    ),
+                    value: 25,
+                },
+                EnumVariant {
+                    name: "DIV27",
+                    description: Some(
+                        "IC = pllx_ck / 27.",
+                    ),
+                    value: 26,
+                },
+                EnumVariant {
+                    name: "DIV28",
+                    description: Some(
+                        "IC = pllx_ck / 28.",
+                    ),
+                    value: 27,
+                },
+                EnumVariant {
+                    name: "DIV29",
+                    description: Some(
+                        "IC = pllx_ck / 29.",
+                    ),
+                    value: 28,
+                },
+                EnumVariant {
+                    name: "DIV30",
+                    description: Some(
+                        "IC = pllx_ck / 30.",
+                    ),
+                    value: 29,
+                },
+                EnumVariant {
+                    name: "DIV31",
+                    description: Some(
+                        "IC = pllx_ck / 31.",
+                    ),
+                    value: 30,
+                },
+                EnumVariant {
+                    name: "DIV32",
+                    description: Some(
+                        "IC = pllx_ck / 32.",
+                    ),
+                    value: 31,
+                },
+                EnumVariant {
+                    name: "DIV33",
+                    description: Some(
+                        "IC = pllx_ck / 33.",
+                    ),
+                    value: 32,
+                },
+                EnumVariant {
+                    name: "DIV34",
+                    description: Some(
+                        "IC = pllx_ck / 34.",
+                    ),
+                    value: 33,
+                },
+                EnumVariant {
+                    name: "DIV35",
+                    description: Some(
+                        "IC = pllx_ck / 35.",
+                    ),
+                    value: 34,
+                },
+                EnumVariant {
+                    name: "DIV36",
+                    description: Some(
+                        "IC = pllx_ck / 36.",
+                    ),
+                    value: 35,
+                },
+                EnumVariant {
+                    name: "DIV37",
+                    description: Some(
+                        "IC = pllx_ck / 37.",
+                    ),
+                    value: 36,
+                },
+                EnumVariant {
+                    name: "DIV38",
+                    description: Some(
+                        "IC = pllx_ck / 38.",
+                    ),
+                    value: 37,
+                },
+                EnumVariant {
+                    name: "DIV39",
+                    description: Some(
+                        "IC = pllx_ck / 39.",
+                    ),
+                    value: 38,
+                },
+                EnumVariant {
+                    name: "DIV40",
+                    description: Some(
+                        "IC = pllx_ck / 40.",
+                    ),
+                    value: 39,
+                },
+                EnumVariant {
+                    name: "DIV41",
+                    description: Some(
+                        "IC = pllx_ck / 41.",
+                    ),
+                    value: 40,
+                },
+                EnumVariant {
+                    name: "DIV42",
+                    description: Some(
+                        "IC = pllx_ck / 42.",
+                    ),
+                    value: 41,
+                },
+                EnumVariant {
+                    name: "DIV43",
+                    description: Some(
+                        "IC = pllx_ck / 43.",
+                    ),
+                    value: 42,
+                },
+                EnumVariant {
+                    name: "DIV44",
+                    description: Some(
+                        "IC = pllx_ck / 44.",
+                    ),
+                    value: 43,
+                },
+                EnumVariant {
+                    name: "DIV45",
+                    description: Some(
+                        "IC = pllx_ck / 45.",
+                    ),
+                    value: 44,
+                },
+                EnumVariant {
+                    name: "DIV46",
+                    description: Some(
+                        "IC = pllx_ck / 46.",
+                    ),
+                    value: 45,
+                },
+                EnumVariant {
+                    name: "DIV47",
+                    description: Some(
+                        "IC = pllx_ck / 47.",
+                    ),
+                    value: 46,
+                },
+                EnumVariant {
+                    name: "DIV48",
+                    description: Some(
+                        "IC = pllx_ck / 48.",
+                    ),
+                    value: 47,
+                },
+                EnumVariant {
+                    name: "DIV49",
+                    description: Some(
+                        "IC = pllx_ck / 49.",
+                    ),
+                    value: 48,
+                },
+                EnumVariant {
+                    name: "DIV50",
+                    description: Some(
+                        "IC = pllx_ck / 50.",
+                    ),
+                    value: 49,
+                },
+                EnumVariant {
+                    name: "DIV51",
+                    description: Some(
+                        "IC = pllx_ck / 51.",
+                    ),
+                    value: 50,
+                },
+                EnumVariant {
+                    name: "DIV52",
+                    description: Some(
+                        "IC = pllx_ck / 52.",
+                    ),
+                    value: 51,
+                },
+                EnumVariant {
+                    name: "DIV53",
+                    description: Some(
+                        "IC = pllx_ck / 53.",
+                    ),
+                    value: 52,
+                },
+                EnumVariant {
+                    name: "DIV54",
+                    description: Some(
+                        "IC = pllx_ck / 54.",
+                    ),
+                    value: 53,
+                },
+                EnumVariant {
+                    name: "DIV55",
+                    description: Some(
+                        "IC = pllx_ck / 55.",
+                    ),
+                    value: 54,
+                },
+                EnumVariant {
+                    name: "DIV56",
+                    description: Some(
+                        "IC = pllx_ck / 56.",
+                    ),
+                    value: 55,
+                },
+                EnumVariant {
+                    name: "DIV57",
+                    description: Some(
+                        "IC = pllx_ck / 57.",
+                    ),
+                    value: 56,
+                },
+                EnumVariant {
+                    name: "DIV58",
+                    description: Some(
+                        "IC = pllx_ck / 58.",
+                    ),
+                    value: 57,
+                },
+                EnumVariant {
+                    name: "DIV59",
+                    description: Some(
+                        "IC = pllx_ck / 59.",
+                    ),
+                    value: 58,
+                },
+                EnumVariant {
+                    name: "DIV60",
+                    description: Some(
+                        "IC = pllx_ck / 60.",
+                    ),
+                    value: 59,
+                },
+                EnumVariant {
+                    name: "DIV61",
+                    description: Some(
+                        "IC = pllx_ck / 61.",
+                    ),
+                    value: 60,
+                },
+                EnumVariant {
+                    name: "DIV62",
+                    description: Some(
+                        "IC = pllx_ck / 62.",
+                    ),
+                    value: 61,
+                },
+                EnumVariant {
+                    name: "DIV63",
+                    description: Some(
+                        "IC = pllx_ck / 63.",
+                    ),
+                    value: 62,
+                },
+                EnumVariant {
+                    name: "DIV64",
+                    description: Some(
+                        "IC = pllx_ck / 64.",
+                    ),
+                    value: 63,
+                },
+                EnumVariant {
+                    name: "DIV65",
+                    description: Some(
+                        "IC = pllx_ck / 65.",
+                    ),
+                    value: 64,
+                },
+                EnumVariant {
+                    name: "DIV66",
+                    description: Some(
+                        "IC = pllx_ck / 66.",
+                    ),
+                    value: 65,
+                },
+                EnumVariant {
+                    name: "DIV67",
+                    description: Some(
+                        "IC = pllx_ck / 67.",
+                    ),
+                    value: 66,
+                },
+                EnumVariant {
+                    name: "DIV68",
+                    description: Some(
+                        "IC = pllx_ck / 68.",
+                    ),
+                    value: 67,
+                },
+                EnumVariant {
+                    name: "DIV69",
+                    description: Some(
+                        "IC = pllx_ck / 69.",
+                    ),
+                    value: 68,
+                },
+                EnumVariant {
+                    name: "DIV70",
+                    description: Some(
+                        "IC = pllx_ck / 70.",
+                    ),
+                    value: 69,
+                },
+                EnumVariant {
+                    name: "DIV71",
+                    description: Some(
+                        "IC = pllx_ck / 71.",
+                    ),
+                    value: 70,
+                },
+                EnumVariant {
+                    name: "DIV72",
+                    description: Some(
+                        "IC = pllx_ck / 72.",
+                    ),
+                    value: 71,
+                },
+                EnumVariant {
+                    name: "DIV73",
+                    description: Some(
+                        "IC = pllx_ck / 73.",
+                    ),
+                    value: 72,
+                },
+                EnumVariant {
+                    name: "DIV74",
+                    description: Some(
+                        "IC = pllx_ck / 74.",
+                    ),
+                    value: 73,
+                },
+                EnumVariant {
+                    name: "DIV75",
+                    description: Some(
+                        "IC = pllx_ck / 75.",
+                    ),
+                    value: 74,
+                },
+                EnumVariant {
+                    name: "DIV76",
+                    description: Some(
+                        "IC = pllx_ck / 76.",
+                    ),
+                    value: 75,
+                },
+                EnumVariant {
+                    name: "DIV77",
+                    description: Some(
+                        "IC = pllx_ck / 77.",
+                    ),
+                    value: 76,
+                },
+                EnumVariant {
+                    name: "DIV78",
+                    description: Some(
+                        "IC = pllx_ck / 78.",
+                    ),
+                    value: 77,
+                },
+                EnumVariant {
+                    name: "DIV79",
+                    description: Some(
+                        "IC = pllx_ck / 79.",
+                    ),
+                    value: 78,
+                },
+                EnumVariant {
+                    name: "DIV80",
+                    description: Some(
+                        "IC = pllx_ck / 80.",
+                    ),
+                    value: 79,
+                },
+                EnumVariant {
+                    name: "DIV81",
+                    description: Some(
+                        "IC = pllx_ck / 81.",
+                    ),
+                    value: 80,
+                },
+                EnumVariant {
+                    name: "DIV82",
+                    description: Some(
+                        "IC = pllx_ck / 82.",
+                    ),
+                    value: 81,
+                },
+                EnumVariant {
+                    name: "DIV83",
+                    description: Some(
+                        "IC = pllx_ck / 83.",
+                    ),
+                    value: 82,
+                },
+                EnumVariant {
+                    name: "DIV84",
+                    description: Some(
+                        "IC = pllx_ck / 84.",
+                    ),
+                    value: 83,
+                },
+                EnumVariant {
+                    name: "DIV85",
+                    description: Some(
+                        "IC = pllx_ck / 85.",
+                    ),
+                    value: 84,
+                },
+                EnumVariant {
+                    name: "DIV86",
+                    description: Some(
+                        "IC = pllx_ck / 86.",
+                    ),
+                    value: 85,
+                },
+                EnumVariant {
+                    name: "DIV87",
+                    description: Some(
+                        "IC = pllx_ck / 87.",
+                    ),
+                    value: 86,
+                },
+                EnumVariant {
+                    name: "DIV88",
+                    description: Some(
+                        "IC = pllx_ck / 88.",
+                    ),
+                    value: 87,
+                },
+                EnumVariant {
+                    name: "DIV89",
+                    description: Some(
+                        "IC = pllx_ck / 89.",
+                    ),
+                    value: 88,
+                },
+                EnumVariant {
+                    name: "DIV90",
+                    description: Some(
+                        "IC = pllx_ck / 90.",
+                    ),
+                    value: 89,
+                },
+                EnumVariant {
+                    name: "DIV91",
+                    description: Some(
+                        "IC = pllx_ck / 91.",
+                    ),
+                    value: 90,
+                },
+                EnumVariant {
+                    name: "DIV92",
+                    description: Some(
+                        "IC = pllx_ck / 92.",
+                    ),
+                    value: 91,
+                },
+                EnumVariant {
+                    name: "DIV93",
+                    description: Some(
+                        "IC = pllx_ck / 93.",
+                    ),
+                    value: 92,
+                },
+                EnumVariant {
+                    name: "DIV94",
+                    description: Some(
+                        "IC = pllx_ck / 94.",
+                    ),
+                    value: 93,
+                },
+                EnumVariant {
+                    name: "DIV95",
+                    description: Some(
+                        "IC = pllx_ck / 95.",
+                    ),
+                    value: 94,
+                },
+                EnumVariant {
+                    name: "DIV96",
+                    description: Some(
+                        "IC = pllx_ck / 96.",
+                    ),
+                    value: 95,
+                },
+                EnumVariant {
+                    name: "DIV97",
+                    description: Some(
+                        "IC = pllx_ck / 97.",
+                    ),
+                    value: 96,
+                },
+                EnumVariant {
+                    name: "DIV98",
+                    description: Some(
+                        "IC = pllx_ck / 98.",
+                    ),
+                    value: 97,
+                },
+                EnumVariant {
+                    name: "DIV99",
+                    description: Some(
+                        "IC = pllx_ck / 99.",
+                    ),
+                    value: 98,
+                },
+                EnumVariant {
+                    name: "DIV100",
+                    description: Some(
+                        "IC = pllx_ck / 100.",
+                    ),
+                    value: 99,
+                },
+                EnumVariant {
+                    name: "DIV101",
+                    description: Some(
+                        "IC = pllx_ck / 101.",
+                    ),
+                    value: 100,
+                },
+                EnumVariant {
+                    name: "DIV102",
+                    description: Some(
+                        "IC = pllx_ck / 102.",
+                    ),
+                    value: 101,
+                },
+                EnumVariant {
+                    name: "DIV103",
+                    description: Some(
+                        "IC = pllx_ck / 103.",
+                    ),
+                    value: 102,
+                },
+                EnumVariant {
+                    name: "DIV104",
+                    description: Some(
+                        "IC = pllx_ck / 104.",
+                    ),
+                    value: 103,
+                },
+                EnumVariant {
+                    name: "DIV105",
+                    description: Some(
+                        "IC = pllx_ck / 105.",
+                    ),
+                    value: 104,
+                },
+                EnumVariant {
+                    name: "DIV106",
+                    description: Some(
+                        "IC = pllx_ck / 106.",
+                    ),
+                    value: 105,
+                },
+                EnumVariant {
+                    name: "DIV107",
+                    description: Some(
+                        "IC = pllx_ck / 107.",
+                    ),
+                    value: 106,
+                },
+                EnumVariant {
+                    name: "DIV108",
+                    description: Some(
+                        "IC = pllx_ck / 108.",
+                    ),
+                    value: 107,
+                },
+                EnumVariant {
+                    name: "DIV109",
+                    description: Some(
+                        "IC = pllx_ck / 109.",
+                    ),
+                    value: 108,
+                },
+                EnumVariant {
+                    name: "DIV110",
+                    description: Some(
+                        "IC = pllx_ck / 110.",
+                    ),
+                    value: 109,
+                },
+                EnumVariant {
+                    name: "DIV111",
+                    description: Some(
+                        "IC = pllx_ck / 111.",
+                    ),
+                    value: 110,
+                },
+                EnumVariant {
+                    name: "DIV112",
+                    description: Some(
+                        "IC = pllx_ck / 112.",
+                    ),
+                    value: 111,
+                },
+                EnumVariant {
+                    name: "DIV113",
+                    description: Some(
+                        "IC = pllx_ck / 113.",
+                    ),
+                    value: 112,
+                },
+                EnumVariant {
+                    name: "DIV114",
+                    description: Some(
+                        "IC = pllx_ck / 114.",
+                    ),
+                    value: 113,
+                },
+                EnumVariant {
+                    name: "DIV115",
+                    description: Some(
+                        "IC = pllx_ck / 115.",
+                    ),
+                    value: 114,
+                },
+                EnumVariant {
+                    name: "DIV116",
+                    description: Some(
+                        "IC = pllx_ck / 116.",
+                    ),
+                    value: 115,
+                },
+                EnumVariant {
+                    name: "DIV117",
+                    description: Some(
+                        "IC = pllx_ck / 117.",
+                    ),
+                    value: 116,
+                },
+                EnumVariant {
+                    name: "DIV118",
+                    description: Some(
+                        "IC = pllx_ck / 118.",
+                    ),
+                    value: 117,
+                },
+                EnumVariant {
+                    name: "DIV119",
+                    description: Some(
+                        "IC = pllx_ck / 119.",
+                    ),
+                    value: 118,
+                },
+                EnumVariant {
+                    name: "DIV120",
+                    description: Some(
+                        "IC = pllx_ck / 120.",
+                    ),
+                    value: 119,
+                },
+                EnumVariant {
+                    name: "DIV121",
+                    description: Some(
+                        "IC = pllx_ck / 121.",
+                    ),
+                    value: 120,
+                },
+                EnumVariant {
+                    name: "DIV122",
+                    description: Some(
+                        "IC = pllx_ck / 122.",
+                    ),
+                    value: 121,
+                },
+                EnumVariant {
+                    name: "DIV123",
+                    description: Some(
+                        "IC = pllx_ck / 123.",
+                    ),
+                    value: 122,
+                },
+                EnumVariant {
+                    name: "DIV124",
+                    description: Some(
+                        "IC = pllx_ck / 124.",
+                    ),
+                    value: 123,
+                },
+                EnumVariant {
+                    name: "DIV125",
+                    description: Some(
+                        "IC = pllx_ck / 125.",
+                    ),
+                    value: 124,
+                },
+                EnumVariant {
+                    name: "DIV126",
+                    description: Some(
+                        "IC = pllx_ck / 126.",
+                    ),
+                    value: 125,
+                },
+                EnumVariant {
+                    name: "DIV127",
+                    description: Some(
+                        "IC = pllx_ck / 127.",
+                    ),
+                    value: 126,
+                },
+                EnumVariant {
+                    name: "DIV128",
+                    description: Some(
+                        "IC = pllx_ck / 128.",
+                    ),
+                    value: 127,
+                },
+                EnumVariant {
+                    name: "DIV129",
+                    description: Some(
+                        "IC = pllx_ck / 129.",
+                    ),
+                    value: 128,
+                },
+                EnumVariant {
+                    name: "DIV130",
+                    description: Some(
+                        "IC = pllx_ck / 130.",
+                    ),
+                    value: 129,
+                },
+                EnumVariant {
+                    name: "DIV131",
+                    description: Some(
+                        "IC = pllx_ck / 131.",
+                    ),
+                    value: 130,
+                },
+                EnumVariant {
+                    name: "DIV132",
+                    description: Some(
+                        "IC = pllx_ck / 132.",
+                    ),
+                    value: 131,
+                },
+                EnumVariant {
+                    name: "DIV133",
+                    description: Some(
+                        "IC = pllx_ck / 133.",
+                    ),
+                    value: 132,
+                },
+                EnumVariant {
+                    name: "DIV134",
+                    description: Some(
+                        "IC = pllx_ck / 134.",
+                    ),
+                    value: 133,
+                },
+                EnumVariant {
+                    name: "DIV135",
+                    description: Some(
+                        "IC = pllx_ck / 135.",
+                    ),
+                    value: 134,
+                },
+                EnumVariant {
+                    name: "DIV136",
+                    description: Some(
+                        "IC = pllx_ck / 136.",
+                    ),
+                    value: 135,
+                },
+                EnumVariant {
+                    name: "DIV137",
+                    description: Some(
+                        "IC = pllx_ck / 137.",
+                    ),
+                    value: 136,
+                },
+                EnumVariant {
+                    name: "DIV138",
+                    description: Some(
+                        "IC = pllx_ck / 138.",
+                    ),
+                    value: 137,
+                },
+                EnumVariant {
+                    name: "DIV139",
+                    description: Some(
+                        "IC = pllx_ck / 139.",
+                    ),
+                    value: 138,
+                },
+                EnumVariant {
+                    name: "DIV140",
+                    description: Some(
+                        "IC = pllx_ck / 140.",
+                    ),
+                    value: 139,
+                },
+                EnumVariant {
+                    name: "DIV141",
+                    description: Some(
+                        "IC = pllx_ck / 141.",
+                    ),
+                    value: 140,
+                },
+                EnumVariant {
+                    name: "DIV142",
+                    description: Some(
+                        "IC = pllx_ck / 142.",
+                    ),
+                    value: 141,
+                },
+                EnumVariant {
+                    name: "DIV143",
+                    description: Some(
+                        "IC = pllx_ck / 143.",
+                    ),
+                    value: 142,
+                },
+                EnumVariant {
+                    name: "DIV144",
+                    description: Some(
+                        "IC = pllx_ck / 144.",
+                    ),
+                    value: 143,
+                },
+                EnumVariant {
+                    name: "DIV145",
+                    description: Some(
+                        "IC = pllx_ck / 145.",
+                    ),
+                    value: 144,
+                },
+                EnumVariant {
+                    name: "DIV146",
+                    description: Some(
+                        "IC = pllx_ck / 146.",
+                    ),
+                    value: 145,
+                },
+                EnumVariant {
+                    name: "DIV147",
+                    description: Some(
+                        "IC = pllx_ck / 147.",
+                    ),
+                    value: 146,
+                },
+                EnumVariant {
+                    name: "DIV148",
+                    description: Some(
+                        "IC = pllx_ck / 148.",
+                    ),
+                    value: 147,
+                },
+                EnumVariant {
+                    name: "DIV149",
+                    description: Some(
+                        "IC = pllx_ck / 149.",
+                    ),
+                    value: 148,
+                },
+                EnumVariant {
+                    name: "DIV150",
+                    description: Some(
+                        "IC = pllx_ck / 150.",
+                    ),
+                    value: 149,
+                },
+                EnumVariant {
+                    name: "DIV151",
+                    description: Some(
+                        "IC = pllx_ck / 151.",
+                    ),
+                    value: 150,
+                },
+                EnumVariant {
+                    name: "DIV152",
+                    description: Some(
+                        "IC = pllx_ck / 152.",
+                    ),
+                    value: 151,
+                },
+                EnumVariant {
+                    name: "DIV153",
+                    description: Some(
+                        "IC = pllx_ck / 153.",
+                    ),
+                    value: 152,
+                },
+                EnumVariant {
+                    name: "DIV154",
+                    description: Some(
+                        "IC = pllx_ck / 154.",
+                    ),
+                    value: 153,
+                },
+                EnumVariant {
+                    name: "DIV155",
+                    description: Some(
+                        "IC = pllx_ck / 155.",
+                    ),
+                    value: 154,
+                },
+                EnumVariant {
+                    name: "DIV156",
+                    description: Some(
+                        "IC = pllx_ck / 156.",
+                    ),
+                    value: 155,
+                },
+                EnumVariant {
+                    name: "DIV157",
+                    description: Some(
+                        "IC = pllx_ck / 157.",
+                    ),
+                    value: 156,
+                },
+                EnumVariant {
+                    name: "DIV158",
+                    description: Some(
+                        "IC = pllx_ck / 158.",
+                    ),
+                    value: 157,
+                },
+                EnumVariant {
+                    name: "DIV159",
+                    description: Some(
+                        "IC = pllx_ck / 159.",
+                    ),
+                    value: 158,
+                },
+                EnumVariant {
+                    name: "DIV160",
+                    description: Some(
+                        "IC = pllx_ck / 160.",
+                    ),
+                    value: 159,
+                },
+                EnumVariant {
+                    name: "DIV161",
+                    description: Some(
+                        "IC = pllx_ck / 161.",
+                    ),
+                    value: 160,
+                },
+                EnumVariant {
+                    name: "DIV162",
+                    description: Some(
+                        "IC = pllx_ck / 162.",
+                    ),
+                    value: 161,
+                },
+                EnumVariant {
+                    name: "DIV163",
+                    description: Some(
+                        "IC = pllx_ck / 163.",
+                    ),
+                    value: 162,
+                },
+                EnumVariant {
+                    name: "DIV164",
+                    description: Some(
+                        "IC = pllx_ck / 164.",
+                    ),
+                    value: 163,
+                },
+                EnumVariant {
+                    name: "DIV165",
+                    description: Some(
+                        "IC = pllx_ck / 165.",
+                    ),
+                    value: 164,
+                },
+                EnumVariant {
+                    name: "DIV166",
+                    description: Some(
+                        "IC = pllx_ck / 166.",
+                    ),
+                    value: 165,
+                },
+                EnumVariant {
+                    name: "DIV167",
+                    description: Some(
+                        "IC = pllx_ck / 167.",
+                    ),
+                    value: 166,
+                },
+                EnumVariant {
+                    name: "DIV168",
+                    description: Some(
+                        "IC = pllx_ck / 168.",
+                    ),
+                    value: 167,
+                },
+                EnumVariant {
+                    name: "DIV169",
+                    description: Some(
+                        "IC = pllx_ck / 169.",
+                    ),
+                    value: 168,
+                },
+                EnumVariant {
+                    name: "DIV170",
+                    description: Some(
+                        "IC = pllx_ck / 170.",
+                    ),
+                    value: 169,
+                },
+                EnumVariant {
+                    name: "DIV171",
+                    description: Some(
+                        "IC = pllx_ck / 171.",
+                    ),
+                    value: 170,
+                },
+                EnumVariant {
+                    name: "DIV172",
+                    description: Some(
+                        "IC = pllx_ck / 172.",
+                    ),
+                    value: 171,
+                },
+                EnumVariant {
+                    name: "DIV173",
+                    description: Some(
+                        "IC = pllx_ck / 173.",
+                    ),
+                    value: 172,
+                },
+                EnumVariant {
+                    name: "DIV174",
+                    description: Some(
+                        "IC = pllx_ck / 174.",
+                    ),
+                    value: 173,
+                },
+                EnumVariant {
+                    name: "DIV175",
+                    description: Some(
+                        "IC = pllx_ck / 175.",
+                    ),
+                    value: 174,
+                },
+                EnumVariant {
+                    name: "DIV176",
+                    description: Some(
+                        "IC = pllx_ck / 176.",
+                    ),
+                    value: 175,
+                },
+                EnumVariant {
+                    name: "DIV177",
+                    description: Some(
+                        "IC = pllx_ck / 177.",
+                    ),
+                    value: 176,
+                },
+                EnumVariant {
+                    name: "DIV178",
+                    description: Some(
+                        "IC = pllx_ck / 178.",
+                    ),
+                    value: 177,
+                },
+                EnumVariant {
+                    name: "DIV179",
+                    description: Some(
+                        "IC = pllx_ck / 179.",
+                    ),
+                    value: 178,
+                },
+                EnumVariant {
+                    name: "DIV180",
+                    description: Some(
+                        "IC = pllx_ck / 180.",
+                    ),
+                    value: 179,
+                },
+                EnumVariant {
+                    name: "DIV181",
+                    description: Some(
+                        "IC = pllx_ck / 181.",
+                    ),
+                    value: 180,
+                },
+                EnumVariant {
+                    name: "DIV182",
+                    description: Some(
+                        "IC = pllx_ck / 182.",
+                    ),
+                    value: 181,
+                },
+                EnumVariant {
+                    name: "DIV183",
+                    description: Some(
+                        "IC = pllx_ck / 183.",
+                    ),
+                    value: 182,
+                },
+                EnumVariant {
+                    name: "DIV184",
+                    description: Some(
+                        "IC = pllx_ck / 184.",
+                    ),
+                    value: 183,
+                },
+                EnumVariant {
+                    name: "DIV185",
+                    description: Some(
+                        "IC = pllx_ck / 185.",
+                    ),
+                    value: 184,
+                },
+                EnumVariant {
+                    name: "DIV186",
+                    description: Some(
+                        "IC = pllx_ck / 186.",
+                    ),
+                    value: 185,
+                },
+                EnumVariant {
+                    name: "DIV187",
+                    description: Some(
+                        "IC = pllx_ck / 187.",
+                    ),
+                    value: 186,
+                },
+                EnumVariant {
+                    name: "DIV188",
+                    description: Some(
+                        "IC = pllx_ck / 188.",
+                    ),
+                    value: 187,
+                },
+                EnumVariant {
+                    name: "DIV189",
+                    description: Some(
+                        "IC = pllx_ck / 189.",
+                    ),
+                    value: 188,
+                },
+                EnumVariant {
+                    name: "DIV190",
+                    description: Some(
+                        "IC = pllx_ck / 190.",
+                    ),
+                    value: 189,
+                },
+                EnumVariant {
+                    name: "DIV191",
+                    description: Some(
+                        "IC = pllx_ck / 191.",
+                    ),
+                    value: 190,
+                },
+                EnumVariant {
+                    name: "DIV192",
+                    description: Some(
+                        "IC = pllx_ck / 192.",
+                    ),
+                    value: 191,
+                },
+                EnumVariant {
+                    name: "DIV193",
+                    description: Some(
+                        "IC = pllx_ck / 193.",
+                    ),
+                    value: 192,
+                },
+                EnumVariant {
+                    name: "DIV194",
+                    description: Some(
+                        "IC = pllx_ck / 194.",
+                    ),
+                    value: 193,
+                },
+                EnumVariant {
+                    name: "DIV195",
+                    description: Some(
+                        "IC = pllx_ck / 195.",
+                    ),
+                    value: 194,
+                },
+                EnumVariant {
+                    name: "DIV196",
+                    description: Some(
+                        "IC = pllx_ck / 196.",
+                    ),
+                    value: 195,
+                },
+                EnumVariant {
+                    name: "DIV197",
+                    description: Some(
+                        "IC = pllx_ck / 197.",
+                    ),
+                    value: 196,
+                },
+                EnumVariant {
+                    name: "DIV198",
+                    description: Some(
+                        "IC = pllx_ck / 198.",
+                    ),
+                    value: 197,
+                },
+                EnumVariant {
+                    name: "DIV199",
+                    description: Some(
+                        "IC = pllx_ck / 199.",
+                    ),
+                    value: 198,
+                },
+                EnumVariant {
+                    name: "DIV200",
+                    description: Some(
+                        "IC = pllx_ck / 200.",
+                    ),
+                    value: 199,
+                },
+                EnumVariant {
+                    name: "DIV201",
+                    description: Some(
+                        "IC = pllx_ck / 201.",
+                    ),
+                    value: 200,
+                },
+                EnumVariant {
+                    name: "DIV202",
+                    description: Some(
+                        "IC = pllx_ck / 202.",
+                    ),
+                    value: 201,
+                },
+                EnumVariant {
+                    name: "DIV203",
+                    description: Some(
+                        "IC = pllx_ck / 203.",
+                    ),
+                    value: 202,
+                },
+                EnumVariant {
+                    name: "DIV204",
+                    description: Some(
+                        "IC = pllx_ck / 204.",
+                    ),
+                    value: 203,
+                },
+                EnumVariant {
+                    name: "DIV205",
+                    description: Some(
+                        "IC = pllx_ck / 205.",
+                    ),
+                    value: 204,
+                },
+                EnumVariant {
+                    name: "DIV206",
+                    description: Some(
+                        "IC = pllx_ck / 206.",
+                    ),
+                    value: 205,
+                },
+                EnumVariant {
+                    name: "DIV207",
+                    description: Some(
+                        "IC = pllx_ck / 207.",
+                    ),
+                    value: 206,
+                },
+                EnumVariant {
+                    name: "DIV208",
+                    description: Some(
+                        "IC = pllx_ck / 208.",
+                    ),
+                    value: 207,
+                },
+                EnumVariant {
+                    name: "DIV209",
+                    description: Some(
+                        "IC = pllx_ck / 209.",
+                    ),
+                    value: 208,
+                },
+                EnumVariant {
+                    name: "DIV210",
+                    description: Some(
+                        "IC = pllx_ck / 210.",
+                    ),
+                    value: 209,
+                },
+                EnumVariant {
+                    name: "DIV211",
+                    description: Some(
+                        "IC = pllx_ck / 211.",
+                    ),
+                    value: 210,
+                },
+                EnumVariant {
+                    name: "DIV212",
+                    description: Some(
+                        "IC = pllx_ck / 212.",
+                    ),
+                    value: 211,
+                },
+                EnumVariant {
+                    name: "DIV213",
+                    description: Some(
+                        "IC = pllx_ck / 213.",
+                    ),
+                    value: 212,
+                },
+                EnumVariant {
+                    name: "DIV214",
+                    description: Some(
+                        "IC = pllx_ck / 214.",
+                    ),
+                    value: 213,
+                },
+                EnumVariant {
+                    name: "DIV215",
+                    description: Some(
+                        "IC = pllx_ck / 215.",
+                    ),
+                    value: 214,
+                },
+                EnumVariant {
+                    name: "DIV216",
+                    description: Some(
+                        "IC = pllx_ck / 216.",
+                    ),
+                    value: 215,
+                },
+                EnumVariant {
+                    name: "DIV217",
+                    description: Some(
+                        "IC = pllx_ck / 217.",
+                    ),
+                    value: 216,
+                },
+                EnumVariant {
+                    name: "DIV218",
+                    description: Some(
+                        "IC = pllx_ck / 218.",
+                    ),
+                    value: 217,
+                },
+                EnumVariant {
+                    name: "DIV219",
+                    description: Some(
+                        "IC = pllx_ck / 219.",
+                    ),
+                    value: 218,
+                },
+                EnumVariant {
+                    name: "DIV220",
+                    description: Some(
+                        "IC = pllx_ck / 220.",
+                    ),
+                    value: 219,
+                },
+                EnumVariant {
+                    name: "DIV221",
+                    description: Some(
+                        "IC = pllx_ck / 221.",
+                    ),
+                    value: 220,
+                },
+                EnumVariant {
+                    name: "DIV222",
+                    description: Some(
+                        "IC = pllx_ck / 222.",
+                    ),
+                    value: 221,
+                },
+                EnumVariant {
+                    name: "DIV223",
+                    description: Some(
+                        "IC = pllx_ck / 223.",
+                    ),
+                    value: 222,
+                },
+                EnumVariant {
+                    name: "DIV224",
+                    description: Some(
+                        "IC = pllx_ck / 224.",
+                    ),
+                    value: 223,
+                },
+                EnumVariant {
+                    name: "DIV225",
+                    description: Some(
+                        "IC = pllx_ck / 225.",
+                    ),
+                    value: 224,
+                },
+                EnumVariant {
+                    name: "DIV226",
+                    description: Some(
+                        "IC = pllx_ck / 226.",
+                    ),
+                    value: 225,
+                },
+                EnumVariant {
+                    name: "DIV227",
+                    description: Some(
+                        "IC = pllx_ck / 227.",
+                    ),
+                    value: 226,
+                },
+                EnumVariant {
+                    name: "DIV228",
+                    description: Some(
+                        "IC = pllx_ck / 228.",
+                    ),
+                    value: 227,
+                },
+                EnumVariant {
+                    name: "DIV229",
+                    description: Some(
+                        "IC = pllx_ck / 229.",
+                    ),
+                    value: 228,
+                },
+                EnumVariant {
+                    name: "DIV230",
+                    description: Some(
+                        "IC = pllx_ck / 230.",
+                    ),
+                    value: 229,
+                },
+                EnumVariant {
+                    name: "DIV231",
+                    description: Some(
+                        "IC = pllx_ck / 231.",
+                    ),
+                    value: 230,
+                },
+                EnumVariant {
+                    name: "DIV232",
+                    description: Some(
+                        "IC = pllx_ck / 232.",
+                    ),
+                    value: 231,
+                },
+                EnumVariant {
+                    name: "DIV233",
+                    description: Some(
+                        "IC = pllx_ck / 233.",
+                    ),
+                    value: 232,
+                },
+                EnumVariant {
+                    name: "DIV234",
+                    description: Some(
+                        "IC = pllx_ck / 234.",
+                    ),
+                    value: 233,
+                },
+                EnumVariant {
+                    name: "DIV235",
+                    description: Some(
+                        "IC = pllx_ck / 235.",
+                    ),
+                    value: 234,
+                },
+                EnumVariant {
+                    name: "DIV236",
+                    description: Some(
+                        "IC = pllx_ck / 236.",
+                    ),
+                    value: 235,
+                },
+                EnumVariant {
+                    name: "DIV237",
+                    description: Some(
+                        "IC = pllx_ck / 237.",
+                    ),
+                    value: 236,
+                },
+                EnumVariant {
+                    name: "DIV238",
+                    description: Some(
+                        "IC = pllx_ck / 238.",
+                    ),
+                    value: 237,
+                },
+                EnumVariant {
+                    name: "DIV239",
+                    description: Some(
+                        "IC = pllx_ck / 239.",
+                    ),
+                    value: 238,
+                },
+                EnumVariant {
+                    name: "DIV240",
+                    description: Some(
+                        "IC = pllx_ck / 240.",
+                    ),
+                    value: 239,
+                },
+                EnumVariant {
+                    name: "DIV241",
+                    description: Some(
+                        "IC = pllx_ck / 241.",
+                    ),
+                    value: 240,
+                },
+                EnumVariant {
+                    name: "DIV242",
+                    description: Some(
+                        "IC = pllx_ck / 242.",
+                    ),
+                    value: 241,
+                },
+                EnumVariant {
+                    name: "DIV243",
+                    description: Some(
+                        "IC = pllx_ck / 243.",
+                    ),
+                    value: 242,
+                },
+                EnumVariant {
+                    name: "DIV244",
+                    description: Some(
+                        "IC = pllx_ck / 244.",
+                    ),
+                    value: 243,
+                },
+                EnumVariant {
+                    name: "DIV245",
+                    description: Some(
+                        "IC = pllx_ck / 245.",
+                    ),
+                    value: 244,
+                },
+                EnumVariant {
+                    name: "DIV246",
+                    description: Some(
+                        "IC = pllx_ck / 246.",
+                    ),
+                    value: 245,
+                },
+                EnumVariant {
+                    name: "DIV247",
+                    description: Some(
+                        "IC = pllx_ck / 247.",
+                    ),
+                    value: 246,
+                },
+                EnumVariant {
+                    name: "DIV248",
+                    description: Some(
+                        "IC = pllx_ck / 248.",
+                    ),
+                    value: 247,
+                },
+                EnumVariant {
+                    name: "DIV249",
+                    description: Some(
+                        "IC = pllx_ck / 249.",
+                    ),
+                    value: 248,
+                },
+                EnumVariant {
+                    name: "DIV250",
+                    description: Some(
+                        "IC = pllx_ck / 250.",
+                    ),
+                    value: 249,
+                },
+                EnumVariant {
+                    name: "DIV251",
+                    description: Some(
+                        "IC = pllx_ck / 251.",
+                    ),
+                    value: 250,
+                },
+                EnumVariant {
+                    name: "DIV252",
+                    description: Some(
+                        "IC = pllx_ck / 252.",
+                    ),
+                    value: 251,
+                },
+                EnumVariant {
+                    name: "DIV253",
+                    description: Some(
+                        "IC = pllx_ck / 253.",
+                    ),
+                    value: 252,
+                },
+                EnumVariant {
+                    name: "DIV254",
+                    description: Some(
+                        "IC = pllx_ck / 254.",
+                    ),
+                    value: 253,
+                },
+                EnumVariant {
+                    name: "DIV255",
+                    description: Some(
+                        "IC = pllx_ck / 255.",
+                    ),
+                    value: 254,
+                },
+                EnumVariant {
                     name: "DIV256",
                     description: Some(
-                        "IC1 = pllx_ck / 256.",
+                        "IC = pllx_ck / 256.",
                     ),
                     value: 255,
                 },
@@ -38628,12 +40399,61 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lptimsel",
+            name: "Lptim1sel",
             description: None,
             bit_size: 3,
             variants: &[
                 EnumVariant {
                     name: "PCLK1",
+                    description: Some(
+                        "pclk1 selected as reference clock.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PER",
+                    description: Some(
+                        "per_ck selected as reference clock.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "IC15",
+                    description: Some(
+                        "ic15_ck selected as reference clock.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "lse_ck selected as reference clock.",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "LSI",
+                    description: Some(
+                        "lsi_ck selected as reference clock.",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "TIMG",
+                    description: Some(
+                        "timg_ck selected as reference clock.",
+                    ),
+                    value: 5,
+                },
+            ],
+        },
+        Enum {
+            name: "Lptim2345sel",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK4",
                     description: Some(
                         "pclk1 selected as reference clock.",
                     ),
@@ -40068,6 +41888,426 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
+                    name: "DIV3",
+                    description: Some(
+                        "reference clock is divided by 3.",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "reference clock is divided by 4.",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV5",
+                    description: Some(
+                        "reference clock is divided by 5.",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV6",
+                    description: Some(
+                        "reference clock is divided by 6.",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV7",
+                    description: Some(
+                        "reference clock is divided by 7.",
+                    ),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "reference clock is divided by 8.",
+                    ),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "DIV9",
+                    description: Some(
+                        "reference clock is divided by 9.",
+                    ),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "DIV10",
+                    description: Some(
+                        "reference clock is divided by 10.",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "DIV11",
+                    description: Some(
+                        "reference clock is divided by 11.",
+                    ),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "DIV12",
+                    description: Some(
+                        "reference clock is divided by 12.",
+                    ),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "DIV13",
+                    description: Some(
+                        "reference clock is divided by 13.",
+                    ),
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "DIV14",
+                    description: Some(
+                        "reference clock is divided by 14.",
+                    ),
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "DIV15",
+                    description: Some(
+                        "reference clock is divided by 15.",
+                    ),
+                    value: 15,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some(
+                        "reference clock is divided by 16.",
+                    ),
+                    value: 16,
+                },
+                EnumVariant {
+                    name: "DIV17",
+                    description: Some(
+                        "reference clock is divided by 17.",
+                    ),
+                    value: 17,
+                },
+                EnumVariant {
+                    name: "DIV18",
+                    description: Some(
+                        "reference clock is divided by 18.",
+                    ),
+                    value: 18,
+                },
+                EnumVariant {
+                    name: "DIV19",
+                    description: Some(
+                        "reference clock is divided by 19.",
+                    ),
+                    value: 19,
+                },
+                EnumVariant {
+                    name: "DIV20",
+                    description: Some(
+                        "reference clock is divided by 20.",
+                    ),
+                    value: 20,
+                },
+                EnumVariant {
+                    name: "DIV21",
+                    description: Some(
+                        "reference clock is divided by 21.",
+                    ),
+                    value: 21,
+                },
+                EnumVariant {
+                    name: "DIV22",
+                    description: Some(
+                        "reference clock is divided by 22.",
+                    ),
+                    value: 22,
+                },
+                EnumVariant {
+                    name: "DIV23",
+                    description: Some(
+                        "reference clock is divided by 23.",
+                    ),
+                    value: 23,
+                },
+                EnumVariant {
+                    name: "DIV24",
+                    description: Some(
+                        "reference clock is divided by 24.",
+                    ),
+                    value: 24,
+                },
+                EnumVariant {
+                    name: "DIV25",
+                    description: Some(
+                        "reference clock is divided by 25.",
+                    ),
+                    value: 25,
+                },
+                EnumVariant {
+                    name: "DIV26",
+                    description: Some(
+                        "reference clock is divided by 26.",
+                    ),
+                    value: 26,
+                },
+                EnumVariant {
+                    name: "DIV27",
+                    description: Some(
+                        "reference clock is divided by 27.",
+                    ),
+                    value: 27,
+                },
+                EnumVariant {
+                    name: "DIV28",
+                    description: Some(
+                        "reference clock is divided by 28.",
+                    ),
+                    value: 28,
+                },
+                EnumVariant {
+                    name: "DIV29",
+                    description: Some(
+                        "reference clock is divided by 29.",
+                    ),
+                    value: 29,
+                },
+                EnumVariant {
+                    name: "DIV30",
+                    description: Some(
+                        "reference clock is divided by 30.",
+                    ),
+                    value: 30,
+                },
+                EnumVariant {
+                    name: "DIV31",
+                    description: Some(
+                        "reference clock is divided by 31.",
+                    ),
+                    value: 31,
+                },
+                EnumVariant {
+                    name: "DIV32",
+                    description: Some(
+                        "reference clock is divided by 32.",
+                    ),
+                    value: 32,
+                },
+                EnumVariant {
+                    name: "DIV33",
+                    description: Some(
+                        "reference clock is divided by 33.",
+                    ),
+                    value: 33,
+                },
+                EnumVariant {
+                    name: "DIV34",
+                    description: Some(
+                        "reference clock is divided by 34.",
+                    ),
+                    value: 34,
+                },
+                EnumVariant {
+                    name: "DIV35",
+                    description: Some(
+                        "reference clock is divided by 35.",
+                    ),
+                    value: 35,
+                },
+                EnumVariant {
+                    name: "DIV36",
+                    description: Some(
+                        "reference clock is divided by 36.",
+                    ),
+                    value: 36,
+                },
+                EnumVariant {
+                    name: "DIV37",
+                    description: Some(
+                        "reference clock is divided by 37.",
+                    ),
+                    value: 37,
+                },
+                EnumVariant {
+                    name: "DIV38",
+                    description: Some(
+                        "reference clock is divided by 38.",
+                    ),
+                    value: 38,
+                },
+                EnumVariant {
+                    name: "DIV39",
+                    description: Some(
+                        "reference clock is divided by 39.",
+                    ),
+                    value: 39,
+                },
+                EnumVariant {
+                    name: "DIV40",
+                    description: Some(
+                        "reference clock is divided by 40.",
+                    ),
+                    value: 40,
+                },
+                EnumVariant {
+                    name: "DIV41",
+                    description: Some(
+                        "reference clock is divided by 41.",
+                    ),
+                    value: 41,
+                },
+                EnumVariant {
+                    name: "DIV42",
+                    description: Some(
+                        "reference clock is divided by 42.",
+                    ),
+                    value: 42,
+                },
+                EnumVariant {
+                    name: "DIV43",
+                    description: Some(
+                        "reference clock is divided by 43.",
+                    ),
+                    value: 43,
+                },
+                EnumVariant {
+                    name: "DIV44",
+                    description: Some(
+                        "reference clock is divided by 44.",
+                    ),
+                    value: 44,
+                },
+                EnumVariant {
+                    name: "DIV45",
+                    description: Some(
+                        "reference clock is divided by 45.",
+                    ),
+                    value: 45,
+                },
+                EnumVariant {
+                    name: "DIV46",
+                    description: Some(
+                        "reference clock is divided by 46.",
+                    ),
+                    value: 46,
+                },
+                EnumVariant {
+                    name: "DIV47",
+                    description: Some(
+                        "reference clock is divided by 47.",
+                    ),
+                    value: 47,
+                },
+                EnumVariant {
+                    name: "DIV48",
+                    description: Some(
+                        "reference clock is divided by 48.",
+                    ),
+                    value: 48,
+                },
+                EnumVariant {
+                    name: "DIV49",
+                    description: Some(
+                        "reference clock is divided by 49.",
+                    ),
+                    value: 49,
+                },
+                EnumVariant {
+                    name: "DIV50",
+                    description: Some(
+                        "reference clock is divided by 50.",
+                    ),
+                    value: 50,
+                },
+                EnumVariant {
+                    name: "DIV51",
+                    description: Some(
+                        "reference clock is divided by 51.",
+                    ),
+                    value: 51,
+                },
+                EnumVariant {
+                    name: "DIV52",
+                    description: Some(
+                        "reference clock is divided by 52.",
+                    ),
+                    value: 52,
+                },
+                EnumVariant {
+                    name: "DIV53",
+                    description: Some(
+                        "reference clock is divided by 53.",
+                    ),
+                    value: 53,
+                },
+                EnumVariant {
+                    name: "DIV54",
+                    description: Some(
+                        "reference clock is divided by 54.",
+                    ),
+                    value: 54,
+                },
+                EnumVariant {
+                    name: "DIV55",
+                    description: Some(
+                        "reference clock is divided by 55.",
+                    ),
+                    value: 55,
+                },
+                EnumVariant {
+                    name: "DIV56",
+                    description: Some(
+                        "reference clock is divided by 56.",
+                    ),
+                    value: 56,
+                },
+                EnumVariant {
+                    name: "DIV57",
+                    description: Some(
+                        "reference clock is divided by 57.",
+                    ),
+                    value: 57,
+                },
+                EnumVariant {
+                    name: "DIV58",
+                    description: Some(
+                        "reference clock is divided by 58.",
+                    ),
+                    value: 58,
+                },
+                EnumVariant {
+                    name: "DIV59",
+                    description: Some(
+                        "reference clock is divided by 59.",
+                    ),
+                    value: 59,
+                },
+                EnumVariant {
+                    name: "DIV60",
+                    description: Some(
+                        "reference clock is divided by 60.",
+                    ),
+                    value: 60,
+                },
+                EnumVariant {
+                    name: "DIV61",
+                    description: Some(
+                        "reference clock is divided by 61.",
+                    ),
+                    value: 61,
+                },
+                EnumVariant {
+                    name: "DIV62",
+                    description: Some(
+                        "reference clock is divided by 62.",
+                    ),
+                    value: 62,
+                },
+                EnumVariant {
                     name: "DIV63",
                     description: Some(
                         "reference clock is divided by 63.",
@@ -40150,6 +42390,41 @@ pub(crate) static REGISTERS: IR = IR {
                         "VCO output is divided by 1 (minimum value) (default after reset).",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "VCO output is divided by 2.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV3",
+                    description: Some(
+                        "VCO output is divided by 3.",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "VCO output is divided by 4.",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIV5",
+                    description: Some(
+                        "VCO output is divided by 5.",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV6",
+                    description: Some(
+                        "VCO output is divided by 6.",
+                    ),
+                    value: 6,
                 },
                 EnumVariant {
                     name: "DIV7",
@@ -41351,63 +43626,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Uartsel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "PCLK1",
-                    description: Some(
-                        "pclk1 selected as reference clock.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PER",
-                    description: Some(
-                        "per_ck selected as reference clock.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "IC9",
-                    description: Some(
-                        "ic9_ck selected as reference clock.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "IC14",
-                    description: Some(
-                        "ic14_ck selected as reference clock.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "LSE",
-                    description: Some(
-                        "lse_ck selected as reference clock.",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "MSI",
-                    description: Some(
-                        "msi_ck selected as reference clock.",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "HSI",
-                    description: Some(
-                        "hsi_div_ck selected as reference clock.",
-                    ),
-                    value: 6,
-                },
-            ],
-        },
-        Enum {
-            name: "Usartsel",
+            name: "Uart16910sel",
             description: None,
             bit_size: 3,
             variants: &[
@@ -41455,6 +43674,62 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "HSI_DIV",
+                    description: Some(
+                        "hsi_div_ck selected as reference clock.",
+                    ),
+                    value: 6,
+                },
+            ],
+        },
+        Enum {
+            name: "Uart234578sel",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some(
+                        "pclk1 selected as reference clock.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PER",
+                    description: Some(
+                        "per_ck selected as reference clock.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "IC9",
+                    description: Some(
+                        "ic9_ck selected as reference clock.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "IC14",
+                    description: Some(
+                        "ic14_ck selected as reference clock.",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "LSE",
+                    description: Some(
+                        "lse_ck selected as reference clock.",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "MSI",
+                    description: Some(
+                        "msi_ck selected as reference clock.",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "HSI",
                     description: Some(
                         "hsi_div_ck selected as reference clock.",
                     ),

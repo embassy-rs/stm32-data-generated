@@ -69,7 +69,6 @@ The following table shows which STM32 peripheral versions are supported across d
 | [LPDMA](#lpdma) | | | | | | | | | | | | | | | | | | | | v1 | | | | |
 | [LPGPIO](#lpgpio) | | | | | | | | | | | | | | | | | | | | ❌ | | | | |
 | [LPTIM](#lptim) | | | | | | v1a | v1a | v1b | v1b_g4 | v2a | v1b_h7 | v1 | | v1a | v1b | v1c | ❌ | v2b | v2a | v2a | v1b | | v2a | v1c |
-| [LPUART](#lpuart) | | | | | | | | | | | | | | | | | ❌ | | | | | | | |
 | [LTDC](#ltdc) | | | | | | v1 | v1 | | | | v1 | | | | v1, ❌ | | v1_3 | | | v1 | | | | |
 | [MCE](#mce) | | | | | | | | | | | ❌ | | | | | | ❌ | | | | | | | |
 | [MDF](#mdf) | | | | | | | | | | | | | | | | | ❌ | | | ❌ | | | | |
@@ -106,7 +105,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [TSC](#tsc) | | v1 | | | v1, ❌ | | | | | | | v3 | | v3 | v3 | v3 | | v2 | ❌ | v3 | v2, ❌ | | v1 | |
 | [UCPD](#ucpd) | | | | | | | | v1 | v1 | h5 | v1 | | | | | v1 | v1 | | | v1 | | | | |
 | [UID](#uid) | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | | v1 | v1 |
-| [USART](#usart) | v4 | v3 | v1, ❌ | v2, ❌ | v3 | v2 | v3 | v4 | v4 | v4 | v4 | v3 | v2, ❌ | v3 | v4 | v4 | ❌ | v4 | v4 | v4 | v4 | v4 | v4 | v4 |
+| [USART](#usart) | v4 | v3 | v1, ❌ | v2, ❌ | v3 | v2 | v3 | v4 | v4 | v4 | v4 | v3 | v2, ❌ | v3 | v4 | v4 | v4 | v4 | v4 | v4 | v4 | v4 | v4 | v4 |
 | [USB](#usb) | v4 | v3 | v1 | | v1, v2 | | | v4 | v3 | v4 | | v3 | v1 | v3 | | v3 | | v4 | v4 | v4 | v3 | | | |
 | [USBRAM](#usbram) | 32_2048 | 16x2_1024 | 16x1_512 | | 16x1_512, 16x2_1024, 16x2_512 | | | 32_2048 | 16x2_1024 | 32_2048 | | 16x2_1024 | 16x1_512 | 16x2_1024 | | 16x2_1024 | | 32_1024 | 32_2048 | 32_2048 | 16x2_1024 | | | |
 | [VENC](#venc) | | | | | | | | | | | | | | | | | ❌ | | | | | | | |
@@ -635,12 +634,6 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v2b**: STM32U0
 - **❌ Unsupported**: STM32N6
 
-### LPUART
-
-**Versions by family:**
-
-- **❌ Unsupported**: STM32N6
-
 ### LTDC
 
 **Versions by family:**
@@ -1027,8 +1020,8 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1**: STM32F1
 - **v2**: STM32F2, STM32F4, STM32L1
 - **v3**: STM32F0, STM32F3, STM32F7, STM32L0, STM32L4
-- **v4**: STM32C0, STM32G0, STM32G4, STM32H5, STM32H7, STM32L4+, STM32L5, STM32U0, STM32U3, STM32U5, STM32WB, STM32WB0, STM32WBA, STM32WL
-- **❌ Unsupported**: STM32F1, STM32F2, STM32L1, STM32N6
+- **v4**: STM32C0, STM32G0, STM32G4, STM32H5, STM32H7, STM32L4+, STM32L5, STM32N6, STM32U0, STM32U3, STM32U5, STM32WB, STM32WB0, STM32WBA, STM32WL
+- **❌ Unsupported**: STM32F1, STM32F2, STM32L1
 
 ### USB
 

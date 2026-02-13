@@ -4007,7 +4007,13 @@
               "register": "AHB4RSTR",
               "field": "HSEMRST"
             }
-          }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "HSEM1"
+            }
+          ]
         },
         {
           "name": "I2C1",
@@ -13239,7 +13245,13 @@
               "register": "AHB4RSTR",
               "field": "HSEMRST"
             }
-          }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "HSEM2"
+            }
+          ]
         },
         {
           "name": "I2C1",

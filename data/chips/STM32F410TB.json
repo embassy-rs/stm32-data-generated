@@ -644,6 +644,16 @@
               "channel": "DMA1_CH5",
               "request": 7
             }
+          ],
+          "triggers": [
+            {
+              "signal": "DAC_CHX_TRG3",
+              "source": "TIM5_TRGO"
+            },
+            {
+              "signal": "DAC_CHX_TRG6",
+              "source": "EXTI9_TRG"
+            }
           ]
         },
         {

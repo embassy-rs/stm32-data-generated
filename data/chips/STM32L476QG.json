@@ -2556,6 +2556,36 @@
               "channel": "DMA2_CH5",
               "request": 3
             }
+          ],
+          "triggers": [
+            {
+              "signal": "DAC_CHX_TRG0",
+              "source": "TIM5_TRGO"
+            },
+            {
+              "signal": "DAC_CHX_TRG1",
+              "source": "TIM5_TRGO"
+            },
+            {
+              "signal": "DAC_CHX_TRG2",
+              "source": "TIM6_TRGO"
+            },
+            {
+              "signal": "DAC_CHX_TRG3",
+              "source": "EXTI9_TRG"
+            },
+            {
+              "signal": "DAC_CHX_TRG4",
+              "source": "TIM5_TRGO"
+            },
+            {
+              "signal": "DAC_CHX_TRG5",
+              "source": "TIM5_TRGO"
+            },
+            {
+              "signal": "DAC_CHX_TRG6",
+              "source": "TIM5_TRGO"
+            }
           ]
         },
         {

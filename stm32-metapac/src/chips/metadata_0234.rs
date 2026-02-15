@@ -559,31 +559,31 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         triggers: &[
             PeripheralTrigger {
                 signal: "DAC_CHX_TRG0",
-                source: "TIM5_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG1",
-                source: "TIM5_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG2",
                 source: "TIM6_TRGO",
             },
             PeripheralTrigger {
+                signal: "DAC_CHX_TRG1",
+                source: "TIM8_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DAC_CHX_TRG2",
+                source: "TIM7_TRGO",
+            },
+            PeripheralTrigger {
                 signal: "DAC_CHX_TRG3",
-                source: "EXTI9_TRG",
+                source: "TIM5_TRGO",
             },
             PeripheralTrigger {
                 signal: "DAC_CHX_TRG4",
-                source: "TIM5_TRGO",
+                source: "TIM2_TRGO",
             },
             PeripheralTrigger {
                 signal: "DAC_CHX_TRG5",
-                source: "TIM5_TRGO",
+                source: "TIM4_TRGO",
             },
             PeripheralTrigger {
                 signal: "DAC_CHX_TRG6",
-                source: "TIM5_TRGO",
+                source: "EXTI9_TRG",
             },
         ],
         interrupts: &[PeripheralInterrupt {

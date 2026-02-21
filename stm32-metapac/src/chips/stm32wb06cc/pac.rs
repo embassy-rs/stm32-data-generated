@@ -179,7 +179,7 @@ pub mod rtc;
 pub mod spi;
 #[path = "../../peripherals/syscfg_wb.rs"]
 pub mod syscfg;
-#[path = "../../peripherals/timer_v1.rs"]
+#[path = "../../peripherals/timer_v3.rs"]
 pub mod timer;
 #[path = "../../peripherals/usart_v4.rs"]
 pub mod usart;

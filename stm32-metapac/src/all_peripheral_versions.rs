@@ -137,7 +137,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
         ],
     ),
     ("tamp", &["g0", "g4", "h5", "l5", "u5", "wba", "wl"]),
-    ("timer", &["l0", "v1", "v2"]),
+    ("timer", &["l0", "v1", "v2", "v3"]),
     ("tsc", &["v1", "v2", "v3"]),
     ("ucpd", &["h5", "v1"]),
     ("uid", &["v1"]),

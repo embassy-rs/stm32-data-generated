@@ -9885,7 +9885,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x42004c00,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_2CH",
             ir: &timer::REGISTERS,
         }),
@@ -12991,7 +12991,7 @@ pub mod risaf;
 pub mod spi;
 #[path = "../registers/syscfg_n6.rs"]
 pub mod syscfg;
-#[path = "../registers/timer_v1.rs"]
+#[path = "../registers/timer_v3.rs"]
 pub mod timer;
 #[path = "../registers/ucpd_v1.rs"]
 pub mod ucpd;

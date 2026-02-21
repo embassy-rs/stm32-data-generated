@@ -809,7 +809,7 @@ pub mod spdifrx;
 pub mod spi;
 #[path = "../../peripherals/syscfg_h7rs.rs"]
 pub mod syscfg;
-#[path = "../../peripherals/timer_v1.rs"]
+#[path = "../../peripherals/timer_v3.rs"]
 pub mod timer;
 #[path = "../../peripherals/ucpd_v1.rs"]
 pub mod ucpd;

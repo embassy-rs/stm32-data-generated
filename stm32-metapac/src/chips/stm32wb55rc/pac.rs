@@ -419,7 +419,7 @@ pub mod sai;
 pub mod spi;
 #[path = "../../peripherals/syscfg_wb.rs"]
 pub mod syscfg;
-#[path = "../../peripherals/timer_v1.rs"]
+#[path = "../../peripherals/timer_v3.rs"]
 pub mod timer;
 #[path = "../../peripherals/tsc_v2.rs"]
 pub mod tsc;

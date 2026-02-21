@@ -101,7 +101,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [SYSCFG](#syscfg) | c0 | f0 | | f2 | f3 | f4 | f7 | g0 | g4 | h5, h50 | h7, h7od, h7rs | l0 | l1 | l4 | l4 | l5 | n6 | u0 | u3 | u5 | wb | wb | wba | wl5, wle |
 | [TAMP](#tamp) | | | | | | | | g0 | g4 | h5 | ❌ | | | | | l5 | ❌ | ❌ | ❌ | u5 | | | wba | wl |
 | [TIM](#tim) | | | | | | | | | | | | | | | | | ❌ | | | | | | | |
-| [TIMER](#timer) | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v2 | v2 | v1 | l0 | v1 | v1 | v1 | v1 | v1 | v2 | v2 | v2 | v1 | v1 | v2 | v1 |
+| [TIMER](#timer) | v3 | v1 | v1 | v1 | v1 | v1 | v1 | v3 | v2 | v2 | v3 | l0 | v1 | v1 | v1 | v1 | v3 | v2 | v2 | v2 | v3 | v3 | v2 | v3 |
 | [TSC](#tsc) | | v1 | | | v1, ❌ | | | | | | | v3 | | v3 | v3 | v3 | | v2 | ❌ | v3 | v2, ❌ | | v1 | |
 | [UCPD](#ucpd) | | | | | | | | v1 | v1 | h5 | v1 | | | | | v1 | v1 | | | v1 | | | | |
 | [UID](#uid) | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | | v1 | v1 |
@@ -988,8 +988,9 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **l0**: STM32L0
-- **v1**: STM32C0, STM32F0, STM32F1, STM32F2, STM32F3, STM32F4, STM32F7, STM32G0, STM32H7, STM32L1, STM32L4, STM32L4+, STM32L5, STM32N6, STM32WB, STM32WB0, STM32WL
+- **v1**: STM32F0, STM32F1, STM32F2, STM32F3, STM32F4, STM32F7, STM32L1, STM32L4, STM32L4+, STM32L5
 - **v2**: STM32G4, STM32H5, STM32U0, STM32U3, STM32U5, STM32WBA
+- **v3**: STM32C0, STM32G0, STM32H7, STM32N6, STM32WB, STM32WB0, STM32WL
 
 ### TSC
 

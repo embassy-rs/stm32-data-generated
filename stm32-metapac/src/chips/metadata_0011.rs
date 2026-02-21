@@ -1283,7 +1283,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40012c00,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_ADV",
             ir: &timer::REGISTERS,
         }),
@@ -1522,7 +1522,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40002000,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_1CH",
             ir: &timer::REGISTERS,
         }),
@@ -1587,7 +1587,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40014400,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_1CH_CMP",
             ir: &timer::REGISTERS,
         }),
@@ -1702,7 +1702,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40014800,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_1CH_CMP",
             ir: &timer::REGISTERS,
         }),
@@ -1817,7 +1817,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40000000,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_GP32",
             ir: &timer::REGISTERS,
         }),
@@ -1966,7 +1966,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40000400,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_GP16",
             ir: &timer::REGISTERS,
         }),
@@ -2829,7 +2829,7 @@ pub mod rtc;
 pub mod spi;
 #[path = "../registers/syscfg_c0.rs"]
 pub mod syscfg;
-#[path = "../registers/timer_v1.rs"]
+#[path = "../registers/timer_v3.rs"]
 pub mod timer;
 #[path = "../registers/uid_v1.rs"]
 pub mod uid;

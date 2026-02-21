@@ -346,15 +346,13 @@ impl Tim2chCmp {
     }
     #[doc = "capture/compare mode register 1 (input mode)"]
     #[inline(always)]
-    pub const fn ccmr_input(self, n: usize) -> crate::common::Reg<regs::CcmrInput1ch, crate::common::RW> {
-        assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
+    pub const fn ccmr_input(self) -> crate::common::Reg<regs::CcmrInput2ch, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "capture/compare mode register 1 (output mode)"]
     #[inline(always)]
-    pub const fn ccmr_output(self, n: usize) -> crate::common::Reg<regs::CcmrOutput1ch, crate::common::RW> {
-        assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 4usize) as _) }
+    pub const fn ccmr_output(self) -> crate::common::Reg<regs::CcmrOutput2ch, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
     }
     #[doc = "capture/compare enable register"]
     #[inline(always)]

@@ -1038,7 +1038,7 @@
           "address": 1073762304,
           "registers": {
             "kind": "timer",
-            "version": "v1",
+            "version": "v3",
             "block": "TIM_1CH_CMP"
           },
           "rcc": {
@@ -1125,7 +1125,7 @@
           "address": 1073766400,
           "registers": {
             "kind": "timer",
-            "version": "v1",
+            "version": "v3",
             "block": "TIM_1CH_CMP"
           },
           "rcc": {
@@ -1217,7 +1217,7 @@
           "address": 1073750016,
           "registers": {
             "kind": "timer",
-            "version": "v1",
+            "version": "v3",
             "block": "TIM_GP32"
           },
           "rcc": {

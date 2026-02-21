@@ -264,7 +264,7 @@ pub mod spi;
 pub mod syscfg;
 #[path = "../../peripherals/tamp_g0.rs"]
 pub mod tamp;
-#[path = "../../peripherals/timer_v1.rs"]
+#[path = "../../peripherals/timer_v3.rs"]
 pub mod timer;
 #[path = "../../peripherals/ucpd_v1.rs"]
 pub mod ucpd;

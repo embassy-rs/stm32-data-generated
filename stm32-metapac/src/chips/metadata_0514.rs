@@ -6216,7 +6216,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x42000000,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_ADV",
             ir: &timer::REGISTERS,
         }),
@@ -6484,7 +6484,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40001800,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_2CH",
             ir: &timer::REGISTERS,
         }),
@@ -6544,7 +6544,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40001c00,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_1CH",
             ir: &timer::REGISTERS,
         }),
@@ -6604,7 +6604,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40002000,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_1CH",
             ir: &timer::REGISTERS,
         }),
@@ -6664,7 +6664,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x42004000,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_2CH_CMP",
             ir: &timer::REGISTERS,
         }),
@@ -6797,7 +6797,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x42004400,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_1CH_CMP",
             ir: &timer::REGISTERS,
         }),
@@ -6902,7 +6902,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x42004800,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_1CH_CMP",
             ir: &timer::REGISTERS,
         }),
@@ -7007,7 +7007,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40000000,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_GP32",
             ir: &timer::REGISTERS,
         }),
@@ -7137,7 +7137,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40000400,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_GP16",
             ir: &timer::REGISTERS,
         }),
@@ -7267,7 +7267,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40000800,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_GP16",
             ir: &timer::REGISTERS,
         }),
@@ -7387,7 +7387,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40000c00,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_GP32",
             ir: &timer::REGISTERS,
         }),
@@ -7487,7 +7487,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40001000,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_BASIC",
             ir: &timer::REGISTERS,
         }),
@@ -7543,7 +7543,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40001400,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_BASIC",
             ir: &timer::REGISTERS,
         }),
@@ -7599,7 +7599,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x42004c00,
         registers: Some(PeripheralRegisters {
             kind: "timer",
-            version: "v1",
+            version: "v3",
             block: "TIM_2CH",
             ir: &timer::REGISTERS,
         }),
@@ -10123,7 +10123,7 @@ pub mod spdifrx;
 pub mod spi;
 #[path = "../registers/syscfg_h7rs.rs"]
 pub mod syscfg;
-#[path = "../registers/timer_v1.rs"]
+#[path = "../registers/timer_v3.rs"]
 pub mod timer;
 #[path = "../registers/ucpd_v1.rs"]
 pub mod ucpd;

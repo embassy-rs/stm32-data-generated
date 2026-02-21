@@ -1001,21 +1001,14 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "capture/compare mode register 1 (input mode)",
                     ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 4,
-                            },
-                        ),
-                    ),
+                    array: None,
                     byte_offset: 0x18,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "CcmrInput1ch",
+                                "CcmrInput2ch",
                             ),
                         },
                     ),
@@ -1025,21 +1018,14 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "capture/compare mode register 1 (output mode)",
                     ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 4,
-                            },
-                        ),
-                    ),
+                    array: None,
                     byte_offset: 0x18,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "CcmrOutput1ch",
+                                "CcmrOutput2ch",
                             ),
                         },
                     ),

@@ -2623,7 +2623,7 @@
           "address": 1208090624,
           "registers": {
             "kind": "rng",
-            "version": "v1",
+            "version": "v3",
             "block": "RNG"
           },
           "rcc": {

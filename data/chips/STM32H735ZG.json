@@ -5978,7 +5978,7 @@
           "address": 1208096768,
           "registers": {
             "kind": "rng",
-            "version": "v1",
+            "version": "v2",
             "block": "RNG"
           },
           "rcc": {

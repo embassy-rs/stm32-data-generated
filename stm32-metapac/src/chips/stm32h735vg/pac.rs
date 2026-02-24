@@ -830,7 +830,7 @@ pub mod pssi;
 pub mod pwr;
 #[path = "../../peripherals/rcc_h7.rs"]
 pub mod rcc;
-#[path = "../../peripherals/rng_v1.rs"]
+#[path = "../../peripherals/rng_v2.rs"]
 pub mod rng;
 #[path = "../../peripherals/rtc_v2_h7.rs"]
 pub mod rtc;

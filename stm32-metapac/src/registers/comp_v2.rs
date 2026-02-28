@@ -37,7 +37,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                 bit_size: 3,
                 array: None,
-                enumm: None,
+                enumm: Some("Inm"),
             },
             Field {
                 name: "inpsel",
@@ -61,7 +61,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                 bit_size: 3,
                 array: None,
-                enumm: Some("Hyst"),
+                enumm: Some("Hysteresis"),
             },
             Field {
                 name: "blanksel",
@@ -69,7 +69,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                 bit_size: 3,
                 array: None,
-                enumm: None,
+                enumm: Some("Blanking"),
             },
             Field {
                 name: "brgen",
@@ -88,7 +88,7 @@ pub(crate) static REGISTERS: IR = IR {
                 enumm: None,
             },
             Field {
-                name: "value_do_not_set",
+                name: "value",
                 description: Some("Comparator output status. (READ ONLY)"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                 bit_size: 1,
@@ -107,7 +107,54 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     enums: &[
         Enum {
-            name: "Hyst",
+            name: "Blanking",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "NO_BLANKING",
+                    description: Some("No blanking."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BLANK1",
+                    description: Some("Check data sheet for blanking options"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BLANK2",
+                    description: Some("Check data sheet for blanking options"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "BLANK3",
+                    description: Some("Check data sheet for blanking options"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "BLANK4",
+                    description: Some("Check data sheet for blanking options"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "BLANK5",
+                    description: Some("Check data sheet for blanking options"),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "BLANK6",
+                    description: Some("Check data sheet for blanking options"),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "BLANK7",
+                    description: Some("Check data sheet for blanking options"),
+                    value: 7,
+                },
+            ],
+        },
+        Enum {
+            name: "Hysteresis",
             description: None,
             bit_size: 3,
             variants: &[
@@ -154,18 +201,65 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Inm",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "QUARTER_VREF",
+                    description: Some("Inverting input set to 1/4 VRef"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HALF_VREF",
+                    description: Some("Inverting input set to 1/2 VRef"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "THREE_QUARTER_VREF",
+                    description: Some("Inverting input set to 3/4 VRef"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "VREF",
+                    description: Some("Inverting input set to VRef"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DACA",
+                    description: Some("Inverting input set to DAC output (RM0440 24.3.2 Table)"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DACB",
+                    description: Some("Inverting input set to DAC output (RM0440 24.3.2 Table)"),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "INM1",
+                    description: Some("Inverting input set to IO (RM0440 24.3.2 Table)"),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "INM2",
+                    description: Some("Inverting input set to IO (RM0440 24.3.2 Table)"),
+                    value: 7,
+                },
+            ],
+        },
+        Enum {
             name: "Polarity",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NON_INVERTED",
-                    description: Some("Non-inverted polarity"),
+                    name: "NOT_INVERTED",
+                    description: Some("Output is not inverted."),
                     value: 0,
                 },
                 EnumVariant {
                     name: "INVERTED",
-                    description: Some("Inverted polarity"),
+                    description: Some("Output is inverted."),
                     value: 1,
                 },
             ],

@@ -3170,6 +3170,15 @@
           }
         },
         {
+          "name": "VREFINTCAL",
+          "address": 536835498,
+          "registers": {
+            "kind": "vrefintcal",
+            "version": "v1",
+            "block": "VREFINTCAL"
+          }
+        },
+        {
           "name": "WWDG",
           "address": 1073753088,
           "registers": {
@@ -6162,6 +6171,15 @@
             "kind": "vrefbuf",
             "version": "v1",
             "block": "VREFBUF"
+          }
+        },
+        {
+          "name": "VREFINTCAL",
+          "address": 536835498,
+          "registers": {
+            "kind": "vrefintcal",
+            "version": "v1",
+            "block": "VREFINTCAL"
           }
         },
         {

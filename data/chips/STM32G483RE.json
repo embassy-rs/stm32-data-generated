@@ -2465,6 +2465,14 @@
             "version": "v2",
             "block": "COMP"
           },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": "PCLK2",
+            "enable": {
+              "register": "APB2ENR",
+              "field": "SYSCFGEN"
+            }
+          },
           "pins": [
             {
               "pin": "PA0",
@@ -2517,6 +2525,14 @@
             "kind": "comp",
             "version": "v2",
             "block": "COMP"
+          },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": "PCLK2",
+            "enable": {
+              "register": "APB2ENR",
+              "field": "SYSCFGEN"
+            }
           },
           "pins": [
             {
@@ -2571,6 +2587,14 @@
             "version": "v2",
             "block": "COMP"
           },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": "PCLK2",
+            "enable": {
+              "register": "APB2ENR",
+              "field": "SYSCFGEN"
+            }
+          },
           "pins": [
             {
               "pin": "PA0",
@@ -2619,6 +2643,14 @@
             "version": "v2",
             "block": "COMP"
           },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": "PCLK2",
+            "enable": {
+              "register": "APB2ENR",
+              "field": "SYSCFGEN"
+            }
+          },
           "pins": [
             {
               "pin": "PB0",
@@ -2659,6 +2691,14 @@
             "version": "v2",
             "block": "COMP"
           },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": "PCLK2",
+            "enable": {
+              "register": "APB2ENR",
+              "field": "SYSCFGEN"
+            }
+          },
           "pins": [
             {
               "pin": "PA9",
@@ -2694,6 +2734,14 @@
             "version": "v2",
             "block": "COMP"
           },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": "PCLK2",
+            "enable": {
+              "register": "APB2ENR",
+              "field": "SYSCFGEN"
+            }
+          },
           "pins": [
             {
               "pin": "PA10",
@@ -2728,6 +2776,14 @@
             "kind": "comp",
             "version": "v2",
             "block": "COMP"
+          },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": "PCLK2",
+            "enable": {
+              "register": "APB2ENR",
+              "field": "SYSCFGEN"
+            }
           },
           "pins": [
             {

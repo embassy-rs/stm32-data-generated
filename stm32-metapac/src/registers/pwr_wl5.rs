@@ -197,7 +197,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 3,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Lpms"),
                 },
                 Field {
                     name: "fpdr",
@@ -205,7 +205,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Fpdr"),
                 },
                 Field {
                     name: "fpds",
@@ -213,7 +213,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Fpds"),
                 },
             ],
         },

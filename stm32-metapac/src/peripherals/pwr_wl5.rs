@@ -110,36 +110,36 @@ pub mod regs {
     impl C2cr1 {
         #[doc = "Low-power mode selection for CPU2"]
         #[inline(always)]
-        pub const fn lpms(&self) -> u8 {
+        pub const fn lpms(&self) -> super::vals::Lpms {
             let val = (self.0 >> 0usize) & 0x07;
-            val as u8
+            super::vals::Lpms::from_bits(val as u8)
         }
         #[doc = "Low-power mode selection for CPU2"]
         #[inline(always)]
-        pub fn set_lpms(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
+        pub fn set_lpms(&mut self, val: super::vals::Lpms) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "Flash memory power down mode during LPRun for CPU2"]
         #[inline(always)]
-        pub const fn fpdr(&self) -> bool {
+        pub const fn fpdr(&self) -> super::vals::Fpdr {
             let val = (self.0 >> 4usize) & 0x01;
-            val != 0
+            super::vals::Fpdr::from_bits(val as u8)
         }
         #[doc = "Flash memory power down mode during LPRun for CPU2"]
         #[inline(always)]
-        pub fn set_fpdr(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        pub fn set_fpdr(&mut self, val: super::vals::Fpdr) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
         #[doc = "Flash memory power down mode during LPSleep for CPU2"]
         #[inline(always)]
-        pub const fn fpds(&self) -> bool {
+        pub const fn fpds(&self) -> super::vals::Fpds {
             let val = (self.0 >> 5usize) & 0x01;
-            val != 0
+            super::vals::Fpds::from_bits(val as u8)
         }
         #[doc = "Flash memory power down mode during LPSleep for CPU2"]
         #[inline(always)]
-        pub fn set_fpds(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        pub fn set_fpds(&mut self, val: super::vals::Fpds) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
     }
     impl Default for C2cr1 {
@@ -162,7 +162,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "C2cr1 {{ lpms: {=u8:?}, fpdr: {=bool:?}, fpds: {=bool:?} }}",
+                "C2cr1 {{ lpms: {:?}, fpdr: {:?}, fpds: {:?} }}",
                 self.lpms(),
                 self.fpdr(),
                 self.fpds()

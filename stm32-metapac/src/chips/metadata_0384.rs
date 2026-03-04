@@ -1804,6 +1804,62 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "DAC_CHX_TRG14",
                 source: "HRTIM_DAC_RESET_TRG6",
             },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG1",
+                source: "TIM8_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG2",
+                source: "TIM7_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG3",
+                source: "TIM15_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG4",
+                source: "TIM2_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG5",
+                source: "TIM4_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG6",
+                source: "EXTI10_TRG",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG7",
+                source: "TIM6_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG8",
+                source: "TIM3_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG9",
+                source: "HRTIM_DAC_STEP_TRG1",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG10",
+                source: "HRTIM_DAC_STEP_TRG2",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG11",
+                source: "HRTIM_DAC_STEP_TRG3",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG12",
+                source: "HRTIM_DAC_STEP_TRG4",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG13",
+                source: "HRTIM_DAC_STEP_TRG5",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG14",
+                source: "HRTIM_DAC_STEP_TRG6",
+            },
         ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
@@ -1912,6 +1968,62 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "DAC_CHX_TRG14",
                 source: "HRTIM_DAC_RESET_TRG6",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG1",
+                source: "TIM1_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG2",
+                source: "TIM7_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG3",
+                source: "TIM15_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG4",
+                source: "TIM2_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG5",
+                source: "TIM4_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG6",
+                source: "EXTI10_TRG",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG7",
+                source: "TIM6_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG8",
+                source: "TIM3_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG9",
+                source: "HRTIM_DAC_STEP_TRG1",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG10",
+                source: "HRTIM_DAC_STEP_TRG2",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG11",
+                source: "HRTIM_DAC_STEP_TRG3",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG12",
+                source: "HRTIM_DAC_STEP_TRG4",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG13",
+                source: "HRTIM_DAC_STEP_TRG5",
+            },
+            PeripheralTrigger {
+                signal: "DAC_INC_CHX_TRG14",
+                source: "HRTIM_DAC_STEP_TRG6",
             },
         ],
         interrupts: &[PeripheralInterrupt {

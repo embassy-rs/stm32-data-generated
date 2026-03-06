@@ -560,64 +560,55 @@
         "name": "LSIRDYIE",
         "description": "LSI Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by internal RC 32 kHz oscillator stabilization.",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "LSIRDYIE"
+        "bit_size": 1
       },
       {
         "name": "LSERDYIE",
         "description": "LSE Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the external 32 kHz oscillator stabilization.",
         "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "LSERDYIE"
+        "bit_size": 1
       },
       {
         "name": "HSIRDYIE",
         "description": "HSI Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the internal RC 64MHz oscillator stabilization.",
         "bit_offset": 3,
-        "bit_size": 1,
-        "enum": "HSIRDYIE"
+        "bit_size": 1
       },
       {
         "name": "HSERDYIE",
         "description": "HSE Ready Interrupt Enable Set and reset by software to enable/disable interrupt caused by the external HSE oscillator stabilization.",
         "bit_offset": 4,
-        "bit_size": 1,
-        "enum": "HSERDYIE"
+        "bit_size": 1
       },
       {
         "name": "HSIPLLRDYIE",
         "description": "HSI PLL Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the HSI 64MHz PLL locked on HSE.",
         "bit_offset": 5,
-        "bit_size": 1,
-        "enum": "HSIPLLRDYIE"
+        "bit_size": 1
       },
       {
         "name": "HSIPLLUNLOCKDETIE",
         "description": "HSIPLLUNLOCKDETIE: HSI PLL unlock detection Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the HSI 64MHz PLL unlock.",
         "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "HSIPLLUNLOCKDETIE"
+        "bit_size": 1
       },
       {
         "name": "RTCRSTIE",
         "description": "RTCRSTIE: RTC reset end Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the RTC reset end.",
         "bit_offset": 7,
-        "bit_size": 1,
-        "enum": "RTCRSTIE"
+        "bit_size": 1
       },
       {
         "name": "WDGRSTIE",
         "description": "WDGRSTIE: Watchdog reset end Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the watchdog reset end.",
         "bit_offset": 8,
-        "bit_size": 1,
-        "enum": "WDGRSTIE"
+        "bit_size": 1
       },
       {
         "name": "LPURSTIE",
         "description": "LPURSTIE: LPUART reset release interrupt enable.",
         "bit_offset": 9,
-        "bit_size": 1,
-        "enum": "LPURSTIE"
+        "bit_size": 1
       }
     ]
   },
@@ -804,15 +795,13 @@
         "name": "EOFSEQ_IE",
         "description": "End of sequence Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the clock system switch.",
         "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "EOFSEQ_IE"
+        "bit_size": 1
       },
       {
         "name": "EOFSEQ_IRQ",
         "description": "End of Sequence flag Set by hardware when clock system swtich is ended.",
         "bit_offset": 7,
-        "bit_size": 1,
-        "enum": "EOFSEQ_IRQ"
+        "bit_size": 1
       }
     ]
   },
@@ -1015,36 +1004,6 @@
       }
     ]
   },
-  "enum/EOFSEQ_IE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "End of sequence interrupt disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "End of sequence interrupt enabled.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/EOFSEQ_IRQ": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "No end of sequence event occured.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "End of sequece event occured.",
-        "value": 1
-      }
-    ]
-  },
   "enum/FMRAT": {
     "bit_size": 1,
     "variants": [
@@ -1115,21 +1074,6 @@
       }
     ]
   },
-  "enum/HSERDYIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "HSE ready interrupt disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "HSE ready interrupt enabled.",
-        "value": 1
-      }
-    ]
-  },
   "enum/HSERDYIF": {
     "bit_size": 1,
     "variants": [
@@ -1190,21 +1134,6 @@
       }
     ]
   },
-  "enum/HSIPLLRDYIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "HSI PLL ready interrupt disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "HSI PLL ready interrupt enabled.",
-        "value": 1
-      }
-    ]
-  },
   "enum/HSIPLLRDYIF": {
     "bit_size": 1,
     "variants": [
@@ -1220,21 +1149,6 @@
       }
     ]
   },
-  "enum/HSIPLLUNLOCKDETIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "HSI PLL unlock detection interrupt disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "HSI PLL unlock detection interrupt enabled.",
-        "value": 1
-      }
-    ]
-  },
   "enum/HSIRDY": {
     "bit_size": 1,
     "variants": [
@@ -1246,21 +1160,6 @@
       {
         "name": "B_0x1",
         "description": "internal RC 64 MHz oscillator ready.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/HSIRDYIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "HSI ready interrupt disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "HSI ready interrupt enabled.",
         "value": 1
       }
     ]
@@ -1350,21 +1249,6 @@
       }
     ]
   },
-  "enum/LPURSTIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "LPUART reset release interrupt is disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "LPUART reset release interrupt is enabled.",
-        "value": 1
-      }
-    ]
-  },
   "enum/LSEBYP": {
     "bit_size": 1,
     "variants": [
@@ -1395,21 +1279,6 @@
       }
     ]
   },
-  "enum/LSERDYIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "LSE ready interrupt disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "LSE ready interrupt enabled.",
-        "value": 1
-      }
-    ]
-  },
   "enum/LSERDYIF": {
     "bit_size": 1,
     "variants": [
@@ -1436,21 +1305,6 @@
       {
         "name": "B_0x1",
         "description": "LSI RC oscillator ready.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/LSIRDYIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "LSI ready interrupt disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "LSI ready interrupt enabled.",
         "value": 1
       }
     ]
@@ -1571,21 +1425,6 @@
       {
         "name": "B_0x1",
         "description": "Reset the value of the reset flags.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/RTCRSTIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "HSI PLL unlock detection interrupt disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "HSI PLL unlock detection interrupt enabled.",
         "value": 1
       }
     ]
@@ -1711,21 +1550,6 @@
       {
         "name": "B_0x1",
         "description": "Watchdog reset occurred.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/WDGRSTIE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "interrupt disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "interrupt enabled.",
         "value": 1
       }
     ]

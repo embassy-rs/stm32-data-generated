@@ -1125,102 +1125,102 @@ pub mod regs {
     impl Cier {
         #[doc = "LSI Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by internal RC 32 kHz oscillator stabilization."]
         #[inline(always)]
-        pub const fn lsirdyie(&self) -> super::vals::Lsirdyie {
+        pub const fn lsirdyie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Lsirdyie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "LSI Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by internal RC 32 kHz oscillator stabilization."]
         #[inline(always)]
-        pub fn set_lsirdyie(&mut self, val: super::vals::Lsirdyie) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub fn set_lsirdyie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "LSE Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the external 32 kHz oscillator stabilization."]
         #[inline(always)]
-        pub const fn lserdyie(&self) -> super::vals::Lserdyie {
+        pub const fn lserdyie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Lserdyie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "LSE Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the external 32 kHz oscillator stabilization."]
         #[inline(always)]
-        pub fn set_lserdyie(&mut self, val: super::vals::Lserdyie) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub fn set_lserdyie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "HSI Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the internal RC 64MHz oscillator stabilization."]
         #[inline(always)]
-        pub const fn hsirdyie(&self) -> super::vals::Hsirdyie {
+        pub const fn hsirdyie(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Hsirdyie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "HSI Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the internal RC 64MHz oscillator stabilization."]
         #[inline(always)]
-        pub fn set_hsirdyie(&mut self, val: super::vals::Hsirdyie) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub fn set_hsirdyie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "HSE Ready Interrupt Enable Set and reset by software to enable/disable interrupt caused by the external HSE oscillator stabilization."]
         #[inline(always)]
-        pub const fn hserdyie(&self) -> super::vals::Hserdyie {
+        pub const fn hserdyie(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Hserdyie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "HSE Ready Interrupt Enable Set and reset by software to enable/disable interrupt caused by the external HSE oscillator stabilization."]
         #[inline(always)]
-        pub fn set_hserdyie(&mut self, val: super::vals::Hserdyie) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub fn set_hserdyie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "HSI PLL Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the HSI 64MHz PLL locked on HSE."]
         #[inline(always)]
-        pub const fn hsipllrdyie(&self) -> super::vals::Hsipllrdyie {
+        pub const fn hsipllrdyie(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Hsipllrdyie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "HSI PLL Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the HSI 64MHz PLL locked on HSE."]
         #[inline(always)]
-        pub fn set_hsipllrdyie(&mut self, val: super::vals::Hsipllrdyie) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        pub fn set_hsipllrdyie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "HSIPLLUNLOCKDETIE: HSI PLL unlock detection Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the HSI 64MHz PLL unlock."]
         #[inline(always)]
-        pub const fn hsipllunlockdetie(&self) -> super::vals::Hsipllunlockdetie {
+        pub const fn hsipllunlockdetie(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Hsipllunlockdetie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "HSIPLLUNLOCKDETIE: HSI PLL unlock detection Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the HSI 64MHz PLL unlock."]
         #[inline(always)]
-        pub fn set_hsipllunlockdetie(&mut self, val: super::vals::Hsipllunlockdetie) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        pub fn set_hsipllunlockdetie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "RTCRSTIE: RTC reset end Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the RTC reset end."]
         #[inline(always)]
-        pub const fn rtcrstie(&self) -> super::vals::Rtcrstie {
+        pub const fn rtcrstie(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Rtcrstie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "RTCRSTIE: RTC reset end Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the RTC reset end."]
         #[inline(always)]
-        pub fn set_rtcrstie(&mut self, val: super::vals::Rtcrstie) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_rtcrstie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "WDGRSTIE: Watchdog reset end Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the watchdog reset end."]
         #[inline(always)]
-        pub const fn wdgrstie(&self) -> super::vals::Wdgrstie {
+        pub const fn wdgrstie(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Wdgrstie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "WDGRSTIE: Watchdog reset end Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the watchdog reset end."]
         #[inline(always)]
-        pub fn set_wdgrstie(&mut self, val: super::vals::Wdgrstie) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub fn set_wdgrstie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "LPURSTIE: LPUART reset release interrupt enable."]
         #[inline(always)]
-        pub const fn lpurstie(&self) -> super::vals::Lpurstie {
+        pub const fn lpurstie(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Lpurstie::from_bits(val as u8)
+            val != 0
         }
         #[doc = "LPURSTIE: LPUART reset release interrupt enable."]
         #[inline(always)]
-        pub fn set_lpurstie(&mut self, val: super::vals::Lpurstie) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+        pub fn set_lpurstie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
     impl Default for Cier {
@@ -1247,7 +1247,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cier {{ lsirdyie: {:?}, lserdyie: {:?}, hsirdyie: {:?}, hserdyie: {:?}, hsipllrdyie: {:?}, hsipllunlockdetie: {:?}, rtcrstie: {:?}, wdgrstie: {:?}, lpurstie: {:?} }}" , self . lsirdyie () , self . lserdyie () , self . hsirdyie () , self . hserdyie () , self . hsipllrdyie () , self . hsipllunlockdetie () , self . rtcrstie () , self . wdgrstie () , self . lpurstie ())
+            defmt :: write ! (f , "Cier {{ lsirdyie: {=bool:?}, lserdyie: {=bool:?}, hsirdyie: {=bool:?}, hserdyie: {=bool:?}, hsipllrdyie: {=bool:?}, hsipllunlockdetie: {=bool:?}, rtcrstie: {=bool:?}, wdgrstie: {=bool:?}, lpurstie: {=bool:?} }}" , self . lsirdyie () , self . lserdyie () , self . hsirdyie () , self . hserdyie () , self . hsipllrdyie () , self . hsipllunlockdetie () , self . rtcrstie () , self . wdgrstie () , self . lpurstie ())
         }
     }
     #[doc = "CIFR register."]
@@ -1602,25 +1602,25 @@ pub mod regs {
         }
         #[doc = "End of sequence Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the clock system switch."]
         #[inline(always)]
-        pub const fn eofseq_ie(&self) -> super::vals::EofseqIe {
+        pub const fn eofseq_ie(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
-            super::vals::EofseqIe::from_bits(val as u8)
+            val != 0
         }
         #[doc = "End of sequence Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the clock system switch."]
         #[inline(always)]
-        pub fn set_eofseq_ie(&mut self, val: super::vals::EofseqIe) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        pub fn set_eofseq_ie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "End of Sequence flag Set by hardware when clock system swtich is ended."]
         #[inline(always)]
-        pub const fn eofseq_irq(&self) -> super::vals::EofseqIrq {
+        pub const fn eofseq_irq(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::EofseqIrq::from_bits(val as u8)
+            val != 0
         }
         #[doc = "End of Sequence flag Set by hardware when clock system swtich is ended."]
         #[inline(always)]
-        pub fn set_eofseq_irq(&mut self, val: super::vals::EofseqIrq) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub fn set_eofseq_irq(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
     impl Default for Cscmdr {
@@ -1643,15 +1643,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cscmdr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Cscmdr {{ request: {:?}, clksysdiv_req: {:?}, status: {:?}, eofseq_ie: {:?}, eofseq_irq: {:?} }}",
-                self.request(),
-                self.clksysdiv_req(),
-                self.status(),
-                self.eofseq_ie(),
-                self.eofseq_irq()
-            )
+            defmt :: write ! (f , "Cscmdr {{ request: {:?}, clksysdiv_req: {:?}, status: {:?}, eofseq_ie: {=bool:?}, eofseq_irq: {=bool:?} }}" , self . request () , self . clksysdiv_req () , self . status () , self . eofseq_ie () , self . eofseq_irq ())
         }
     }
     #[doc = "CSR register."]
@@ -2025,68 +2017,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum EofseqIe {
-        #[doc = "End of sequence interrupt disabled."]
-        B_0X0 = 0x0,
-        #[doc = "End of sequence interrupt enabled."]
-        B_0X1 = 0x01,
-    }
-    impl EofseqIe {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> EofseqIe {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for EofseqIe {
-        #[inline(always)]
-        fn from(val: u8) -> EofseqIe {
-            EofseqIe::from_bits(val)
-        }
-    }
-    impl From<EofseqIe> for u8 {
-        #[inline(always)]
-        fn from(val: EofseqIe) -> u8 {
-            EofseqIe::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum EofseqIrq {
-        #[doc = "No end of sequence event occured."]
-        B_0X0 = 0x0,
-        #[doc = "End of sequece event occured."]
-        B_0X1 = 0x01,
-    }
-    impl EofseqIrq {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> EofseqIrq {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for EofseqIrq {
-        #[inline(always)]
-        fn from(val: u8) -> EofseqIrq {
-            EofseqIrq::from_bits(val)
-        }
-    }
-    impl From<EofseqIrq> for u8 {
-        #[inline(always)]
-        fn from(val: EofseqIrq) -> u8 {
-            EofseqIrq::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmrat {
         #[doc = "no effect."]
         B_0X0 = 0x0,
@@ -2186,37 +2116,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Hserdy) -> u8 {
             Hserdy::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Hserdyie {
-        #[doc = "HSE ready interrupt disabled."]
-        B_0X0 = 0x0,
-        #[doc = "HSE ready interrupt enabled."]
-        B_0X1 = 0x01,
-    }
-    impl Hserdyie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Hserdyie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Hserdyie {
-        #[inline(always)]
-        fn from(val: u8) -> Hserdyie {
-            Hserdyie::from_bits(val)
-        }
-    }
-    impl From<Hserdyie> for u8 {
-        #[inline(always)]
-        fn from(val: Hserdyie) -> u8 {
-            Hserdyie::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -2346,37 +2245,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Hsipllrdyie {
-        #[doc = "HSI PLL ready interrupt disabled."]
-        B_0X0 = 0x0,
-        #[doc = "HSI PLL ready interrupt enabled."]
-        B_0X1 = 0x01,
-    }
-    impl Hsipllrdyie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Hsipllrdyie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Hsipllrdyie {
-        #[inline(always)]
-        fn from(val: u8) -> Hsipllrdyie {
-            Hsipllrdyie::from_bits(val)
-        }
-    }
-    impl From<Hsipllrdyie> for u8 {
-        #[inline(always)]
-        fn from(val: Hsipllrdyie) -> u8 {
-            Hsipllrdyie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsipllrdyif {
         #[doc = "No clock ready interrupt caused by the HSI PLL64 MHz oscillator."]
         B_0X0 = 0x0,
@@ -2408,37 +2276,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Hsipllunlockdetie {
-        #[doc = "HSI PLL unlock detection interrupt disabled."]
-        B_0X0 = 0x0,
-        #[doc = "HSI PLL unlock detection interrupt enabled."]
-        B_0X1 = 0x01,
-    }
-    impl Hsipllunlockdetie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Hsipllunlockdetie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Hsipllunlockdetie {
-        #[inline(always)]
-        fn from(val: u8) -> Hsipllunlockdetie {
-            Hsipllunlockdetie::from_bits(val)
-        }
-    }
-    impl From<Hsipllunlockdetie> for u8 {
-        #[inline(always)]
-        fn from(val: Hsipllunlockdetie) -> u8 {
-            Hsipllunlockdetie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsirdy {
         #[doc = "internal RC 64 MHz oscillator not ready."]
         B_0X0 = 0x0,
@@ -2465,37 +2302,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Hsirdy) -> u8 {
             Hsirdy::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Hsirdyie {
-        #[doc = "HSI ready interrupt disabled."]
-        B_0X0 = 0x0,
-        #[doc = "HSI ready interrupt enabled."]
-        B_0X1 = 0x01,
-    }
-    impl Hsirdyie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Hsirdyie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Hsirdyie {
-        #[inline(always)]
-        fn from(val: u8) -> Hsirdyie {
-            Hsirdyie::from_bits(val)
-        }
-    }
-    impl From<Hsirdyie> for u8 {
-        #[inline(always)]
-        fn from(val: Hsirdyie) -> u8 {
-            Hsirdyie::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -2660,37 +2466,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lpurstie {
-        #[doc = "LPUART reset release interrupt is disabled."]
-        B_0X0 = 0x0,
-        #[doc = "LPUART reset release interrupt is enabled."]
-        B_0X1 = 0x01,
-    }
-    impl Lpurstie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lpurstie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lpurstie {
-        #[inline(always)]
-        fn from(val: u8) -> Lpurstie {
-            Lpurstie::from_bits(val)
-        }
-    }
-    impl From<Lpurstie> for u8 {
-        #[inline(always)]
-        fn from(val: Lpurstie) -> u8 {
-            Lpurstie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsebyp {
         #[doc = "LSE oscillator bypass OFF."]
         B_0X0 = 0x0,
@@ -2753,37 +2528,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lserdyie {
-        #[doc = "LSE ready interrupt disabled."]
-        B_0X0 = 0x0,
-        #[doc = "LSE ready interrupt enabled."]
-        B_0X1 = 0x01,
-    }
-    impl Lserdyie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lserdyie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lserdyie {
-        #[inline(always)]
-        fn from(val: u8) -> Lserdyie {
-            Lserdyie::from_bits(val)
-        }
-    }
-    impl From<Lserdyie> for u8 {
-        #[inline(always)]
-        fn from(val: Lserdyie) -> u8 {
-            Lserdyie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lserdyif {
         #[doc = "No clock ready interrupt caused by the LSE oscillator."]
         B_0X0 = 0x0,
@@ -2841,37 +2585,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Lsirdy) -> u8 {
             Lsirdy::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lsirdyie {
-        #[doc = "LSI ready interrupt disabled."]
-        B_0X0 = 0x0,
-        #[doc = "LSI ready interrupt enabled."]
-        B_0X1 = 0x01,
-    }
-    impl Lsirdyie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lsirdyie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lsirdyie {
-        #[inline(always)]
-        fn from(val: u8) -> Lsirdyie {
-            Lsirdyie::from_bits(val)
-        }
-    }
-    impl From<Lsirdyie> for u8 {
-        #[inline(always)]
-        fn from(val: Lsirdyie) -> u8 {
-            Lsirdyie::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -3070,37 +2783,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Rmvf) -> u8 {
             Rmvf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Rtcrstie {
-        #[doc = "HSI PLL unlock detection interrupt disabled."]
-        B_0X0 = 0x0,
-        #[doc = "HSI PLL unlock detection interrupt enabled."]
-        B_0X1 = 0x01,
-    }
-    impl Rtcrstie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rtcrstie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rtcrstie {
-        #[inline(always)]
-        fn from(val: u8) -> Rtcrstie {
-            Rtcrstie::from_bits(val)
-        }
-    }
-    impl From<Rtcrstie> for u8 {
-        #[inline(always)]
-        fn from(val: Rtcrstie) -> u8 {
-            Rtcrstie::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -3354,37 +3036,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Wdgrstf) -> u8 {
             Wdgrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Wdgrstie {
-        #[doc = "interrupt disabled."]
-        B_0X0 = 0x0,
-        #[doc = "interrupt enabled."]
-        B_0X1 = 0x01,
-    }
-    impl Wdgrstie {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wdgrstie {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wdgrstie {
-        #[inline(always)]
-        fn from(val: u8) -> Wdgrstie {
-            Wdgrstie::from_bits(val)
-        }
-    }
-    impl From<Wdgrstie> for u8 {
-        #[inline(always)]
-        fn from(val: Wdgrstie) -> u8 {
-            Wdgrstie::to_bits(val)
         }
     }
 }

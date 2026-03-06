@@ -3,14 +3,14 @@ use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
-            name: "Rcc",
+            name: "Pwr",
             extends: None,
             description: None,
             items: &[
                 BlockItem {
-                    name: "cr",
+                    name: "cr1",
                     description: Some(
-                        "CR register.",
+                        "CR1 register.",
                     ),
                     array: None,
                     byte_offset: 0x0,
@@ -19,15 +19,32 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cr",
+                                "Cr1",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "cfgr",
+                    name: "cr2",
                     description: Some(
-                        "CFGR register.",
+                        "CR2 register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cr3",
+                    description: Some(
+                        "CR3 register.",
                     ),
                     array: None,
                     byte_offset: 0x8,
@@ -36,32 +53,66 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cfgr",
+                                "Cr3",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "cier",
+                    name: "cr4",
                     description: Some(
-                        "CIER register.",
+                        "CR4 register.",
                     ),
                     array: None,
-                    byte_offset: 0x18,
+                    byte_offset: 0xc,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cier",
+                                "Cr4",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "cifr",
+                    name: "sr1",
                     description: Some(
-                        "CIFR register.",
+                        "SR1 register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x10,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Sr1",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "sr2",
+                    description: Some(
+                        "SR2 register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x14,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Sr2",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cr5",
+                    description: Some(
+                        "CR5 register.",
                     ),
                     array: None,
                     byte_offset: 0x1c,
@@ -70,15 +121,15 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cifr",
+                                "Cr5",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "cscmdr",
+                    name: "pucra",
                     description: Some(
-                        "CSCMDR register.",
+                        "PUCRA register.",
                     ),
                     array: None,
                     byte_offset: 0x20,
@@ -87,15 +138,66 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Cscmdr",
+                                "Pucra",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "ahbrstr",
+                    name: "pdcra",
                     description: Some(
-                        "AHBRSTR register.",
+                        "PDCRA register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pdcra",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pucrb",
+                    description: Some(
+                        "PUCRB register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x28,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pucrb",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pdcrb",
+                    description: Some(
+                        "PDCRB register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x2c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Pdcrb",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cr6",
+                    description: Some(
+                        "CR6 register.",
                     ),
                     array: None,
                     byte_offset: 0x30,
@@ -104,15 +206,15 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ahbrstr",
+                                "Cr6",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "apb0rstr",
+                    name: "cr7",
                     description: Some(
-                        "APB0RSTR register.",
+                        "CR7 register.",
                     ),
                     array: None,
                     byte_offset: 0x34,
@@ -121,15 +223,15 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Apb0rstr",
+                                "Cr7",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "apb1rstr",
+                    name: "sr3",
                     description: Some(
-                        "APB1RSTR register.",
+                        "SR3 register.",
                     ),
                     array: None,
                     byte_offset: 0x38,
@@ -138,15 +240,15 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Apb1rstr",
+                                "Sr3",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "apb2rstr",
+                    name: "iox_cfg",
                     description: Some(
-                        "APB2RSTR register.",
+                        "IOxCFG register.",
                     ),
                     array: None,
                     byte_offset: 0x40,
@@ -155,126 +257,41 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Apb2rstr",
+                                "IoxCfg",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "ahbenr",
+                    name: "dbgr",
                     description: Some(
-                        "AHBENR register.",
+                        "DBGR register.",
                     ),
                     array: None,
-                    byte_offset: 0x50,
+                    byte_offset: 0x84,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Ahbenr",
+                                "Dbgr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "apb0enr",
+                    name: "extsrr",
                     description: Some(
-                        "APB0ENR register.",
+                        "EXTSRR register.",
                     ),
                     array: None,
-                    byte_offset: 0x54,
+                    byte_offset: 0x88,
                     inner: BlockItemInner::Register(
                         Register {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "Apb0enr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "apb1enr",
-                    description: Some(
-                        "APB1ENR register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x58,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Apb1enr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "apb2enr",
-                    description: Some(
-                        "APB2ENR register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x60,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Apb2enr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "csr",
-                    description: Some(
-                        "CSR register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x94,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Csr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rfswhsecr",
-                    description: Some(
-                        "RFSWHSECR register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x98,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Rfswhsecr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "rfhsecr",
-                    description: Some(
-                        "RFHSECR register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x9c,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Rfhsecr",
+                                "Extsrr",
                             ),
                         },
                     ),
@@ -284,17 +301,17 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "Ahbenr",
+            name: "Cr1",
             extends: None,
             description: Some(
-                "AHBENR register.",
+                "CR1 register.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "dmaen",
+                    name: "lpms",
                     description: Some(
-                        "DMA and DMAMUX enable Set and enable by software.",
+                        "LPMS Low Power Mode Selection Selection of the low power mode entered when CPU enters DEEP SLEEP mode and BLE is rdy2sleep.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -303,12 +320,30 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Lpms",
+                    ),
                 },
                 Field {
-                    name: "gpioaen",
+                    name: "ensdnbor",
                     description: Some(
-                        "GPIOA enable. It must be enabled by default.",
+                        "ENSDNBOR: Enable BOR supply monitoring during shutdown mode.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Ensdnbor",
+                    ),
+                },
+                Field {
+                    name: "ibias_run_auto",
+                    description: Some(
+                        "IBIAS_RUN_AUTO: Enable automatic IBIAS control during RUN/DEEPSTOP mode. 0: IBIAS control is manual (and controlled by IBIAS_RUN_STATE register) 1: IBIAS control is automatic (default).",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -320,9 +355,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "gpioben",
+                    name: "ibias_run_state",
                     description: Some(
-                        "GPIOB enable. It must be enabled by default.",
+                        "IBIAS_RUN_STATE: Enable/Disable IBIAS during RUN mode when automatic mode is disabled. 0: IBIAS control is disabled (default). 1: IBIAS control is enabled.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -334,211 +369,57 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "crcen",
+                    name: "apc",
                     description: Some(
-                        "CRC enable Set and enable by software.",
+                        "APC Apply Pull-up and pull-down configuration from CPU.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
-                            offset: 12,
+                            offset: 4,
                         },
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Apc",
+                    ),
                 },
                 Field {
-                    name: "pkaen",
+                    name: "enborh",
                     description: Some(
-                        "PKA clock enable Set and enable by software.",
+                        "ENBORH: enable BORH configuration.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
-                            offset: 16,
+                            offset: 5,
                         },
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Enborh",
+                    ),
                 },
                 Field {
-                    name: "rngen",
+                    name: "selborh",
                     description: Some(
-                        "RNG clock enable Set and enable by software.",
+                        "SELBORH[1:0]: BORH selection of Vbor threshold.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
-                            offset: 18,
+                            offset: 6,
                         },
                     ),
-                    bit_size: 1,
+                    bit_size: 2,
                     array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Ahbrstr",
-            extends: None,
-            description: Some(
-                "AHBRSTR register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dmarst",
-                    description: Some(
-                        "DMA and DMAMUX reset Set and reset by software.",
+                    enumm: Some(
+                        "Selborh",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
                 },
                 Field {
-                    name: "gpioarst",
+                    name: "enborl",
                     description: Some(
-                        "GPIOA reset Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "gpiobrst",
-                    description: Some(
-                        "GPIOB reset Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "crcrst",
-                    description: Some(
-                        "CRC reset Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "pkarst",
-                    description: Some(
-                        "PKA reset Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rngrst",
-                    description: Some(
-                        "RNG reset Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 18,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb0enr",
-            extends: None,
-            description: Some(
-                "APB0ENR register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tim1en",
-                    description: Some(
-                        "TIM1 enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim2en",
-                    description: Some(
-                        "TIM2: Advanced Timer clock enable Set and enable by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim16en",
-                    description: Some(
-                        "TIM16 enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tim17en",
-                    description: Some(
-                        "TIM17 enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "syscfgen",
-                    description: Some(
-                        "SYSTEM CONFIG enable Set and enable by software.",
+                        "ENBORL: Enable BORL reset supervising during RUN mode. 0: No BORL is monitored during RUN mode. 1: BORL is monitored during RUN mode (a POR reset will happen if VDDIO goes below 1.6V during RUN mode) (default). Note: Enabling this feature prevents blocking the device if VDDIO goes below supported voltages during RUN.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -549,48 +430,20 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: None,
                 },
-                Field {
-                    name: "rtcen",
-                    description: Some(
-                        "RTC clock enable Set and enable by software. Reset source only for this field: PORESETn.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wdgen",
-                    description: Some(
-                        "Watchdog clock enable. Set and enable by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
             ],
         },
         FieldSet {
-            name: "Apb0rstr",
+            name: "Cr2",
             extends: None,
             description: Some(
-                "APB0RSTR register.",
+                "CR2 register.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "tim1rst",
+                    name: "pvde",
                     description: Some(
-                        "TIM1: Advanced Timer reset Set and reset by software.",
+                        "PVDE Programmable Voltage Detector Enable When this bit is set the Power Voltage Detector is enabled.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -602,117 +455,25 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "tim16rst",
+                    name: "pvdls",
                     description: Some(
-                        "TIM16 reset.",
+                        "PVDLS[2:0] Programmable Voltage Detector Level selection then PVDO=1).",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 1,
                         },
                     ),
-                    bit_size: 1,
+                    bit_size: 3,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Pvdls",
+                    ),
                 },
                 Field {
-                    name: "tim17rst",
+                    name: "dbgret",
                     description: Some(
-                        "TIM17 reset.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "syscfgrst",
-                    description: Some(
-                        "SYSTEM CONFIG reset Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rtcrst",
-                    description: Some(
-                        "RTC reset Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wdgrst",
-                    description: Some(
-                        "WATCHDOG reset Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wdrst",
-                    description: Some(
-                        "WATCHDOG reset Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb1enr",
-            extends: None,
-            description: Some(
-                "APB1ENR register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "spi1en",
-                    description: Some(
-                        "SPI1 enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "adcdigen",
-                    description: Some(
-                        "AUXADC clock enable for Aux-ADC digital clock Set and enable by software.",
+                        "DBGRET: PA2 and PA3 retention enable after DEEPSTOP 0: PA2, PA3 don't retain their status exiting from DEEPSTOP. (default) 1: PA2, PA3 retain their status exiting from DEEPSTOP.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -724,9 +485,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "adcanaen",
+                    name: "ramret1",
                     description: Some(
-                        "ADC clock enable for Aux-ADC analog clock Set and enable by software.",
+                        "Enables the RAM2 bank retention in DEEPSTOP mode.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -738,671 +499,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "lpuarten",
+                    name: "ramret2",
                     description: Some(
-                        "LPUART clock enable Set and enable by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usart1en",
-                    description: Some(
-                        "USART clock enable Set and enable by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 10,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi2en",
-                    description: Some(
-                        "SPI2 enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi3en",
-                    description: Some(
-                        "SPI3 clock enable Set and enable by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c1en",
-                    description: Some(
-                        "I2C1 clock enable Set and enable by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 21,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c2en",
-                    description: Some(
-                        "I2C2 enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 23,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb1rstr",
-            extends: None,
-            description: Some(
-                "APB1RSTR register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "spi1rst",
-                    description: Some(
-                        "SPI1 reset.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "adcrst",
-                    description: Some(
-                        "ADC reset.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "auxadcrst",
-                    description: Some(
-                        "AUXADC reset for Aux-ADC digital clock Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lpuartrst",
-                    description: Some(
-                        "LPUART reset Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "usartrst",
-                    description: Some(
-                        "USART reset Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 10,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi2rst",
-                    description: Some(
-                        "SPI2 reset.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi3rst",
-                    description: Some(
-                        "SPI3 reset Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c1rst",
-                    description: Some(
-                        "I2C1 reset Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 21,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c21rst",
-                    description: Some(
-                        "I2C1 reset Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 21,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "i2c2rst",
-                    description: Some(
-                        "2C2 reset.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 23,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb2enr",
-            extends: None,
-            description: Some(
-                "APB2ENR register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "mrbleen",
-                    description: Some(
-                        "MR_BLE enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clkblediv",
-                    description: Some(
-                        "MR_BLE clock frequency selection when RCC_APB2ENR.MRBLEEN=1.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Clkblediv",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Apb2rstr",
-            extends: None,
-            description: Some(
-                "APB2RSTR register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "blerst",
-                    description: Some(
-                        "BLE reset.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "mrblerst",
-                    description: Some(
-                        "MR_BLE (Bluetooth radio) reset.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cfgr",
-            extends: None,
-            description: Some(
-                "CFGR register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "smpsinv",
-                    description: Some(
-                        "bit to control inversion of the SMPS clock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Smpsinv",
-                    ),
-                },
-                Field {
-                    name: "hsesel",
-                    description: Some(
-                        "Clock source selection request:.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Hsesel",
-                    ),
-                },
-                Field {
-                    name: "stophsi",
-                    description: Some(
-                        "Stop HSI clock source request.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Stophsi",
-                    ),
-                },
-                Field {
-                    name: "hsesel_status",
-                    description: Some(
-                        "Clock source selection Status.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "HseselStatus",
-                    ),
-                },
-                Field {
-                    name: "clksysdiv",
-                    description: Some(
-                        "CLKSYSDIV: system clock divided factor from HSI_64M. 000: system clock frequency is 64 MHz (not available when HSESEL=1) 001: system clock frequency is 32 MHz 010: system clock frequency is 16 MHz 011: system clock frequency is 8 MHz * 100: system clock frequency is 4 MHz * 101: system clock frequency is 2 MHz * 110: system clock frequency is 1 MHz * 111: not used. *: If RCC_APB2ENR.MRBLEEN bit is set, writing in CLKSYSDIV one of those values is replaced by a 010b = 16 MHz writing at hardware level. Warning: if the software programs the 64 MHz frequency target while the RCC_CFGR.HSESEL=1, the hardware will switch the system clock tree on HSI64MPLL again (and restart HSIPLL64M analog block if RCC_CFGR.STOPHSI=1) To switch the system frequency between 64 / 32 / 16 MHz without risk when the MR_BLE is used, prefer the RCC_CSCMDR register to change the system frequency. the MR_BLE frequency must always be equal or less than the CPU/system clock to have functional radio.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "clksysdiv_status",
-                    description: Some(
-                        "CLKSYSDIV_STATUS: system clock frequency status Set and cleared by hardware to indicate the actual system clock frequency. This register must be read to be sure that the new frequency, selected by CLKSYSDIV, has been applied. 000: system clock frequency is 64 MHz 001: system clock frequency is 32 MHz 010: system clock frequency is 16 MHz 011: system clock frequency is 8 MHz 100: system clock frequency is 4 MHz 101: system clock frequency is 2 MHz 110: system clock frequency is 1 MHz 111: not used. The actual clock frequency switching can be delayed of up to 128 system clock cycles, depending on the RCC internal counter status at the moment the new CLKSYSDIV is applied.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "smpsdiv",
-                    description: Some(
-                        "SMPS clock prescaling factor to generate 4MHz or 8MHz.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Smpsdiv",
-                    ),
-                },
-                Field {
-                    name: "lpuclksel",
-                    description: Some(
-                        "Selection of LPUART clock:.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 13,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Lpuclksel",
-                    ),
-                },
-                Field {
-                    name: "clkslowsel",
-                    description: Some(
-                        "slow clock source selection Set by software to select the clock source. This is no glitch free mechanism Reset source only for this field: PORESETn.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 15,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Clkslowsel",
-                    ),
-                },
-                Field {
-                    name: "ioboosten",
-                    description: Some(
-                        "IO BOOSTER enable Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 17,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ioboostclkexten",
-                    description: Some(
-                        "IO BOOSTER clock enable as external clock Set and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 18,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lcoen",
-                    description: Some(
-                        "LCO output enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 19,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "spi3i2sclksel",
-                    description: Some(
-                        "Selection of I2S1 clock: 1x:64MHz peripheral clock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 22,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Spiisclksel",
-                    ),
-                },
-                Field {
-                    name: "spi2i2sclksel",
-                    description: Some(
-                        "Selection of I2S clock: 1x:64MHz peripheral clock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 23,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lcosel",
-                    description: Some(
-                        "Low speed Configurable Clock Output Selection. Set and reset by software. Glitches propagation possible. Reset source only for this field: PORESETn.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Lcosel",
-                    ),
-                },
-                Field {
-                    name: "mcosel",
-                    description: Some(
-                        "Main Configurable Clock Output Selection. Set and reset by software. Glitches propagation possible.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 26,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Mcosel",
-                    ),
-                },
-                Field {
-                    name: "ccopre",
-                    description: Some(
-                        "Configurable Clock Output Prescaler. Set and reset by software. Glitches propagation if CCOPRE is modified after CCO output is enabled. Others: not used.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 29,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: None,
-                    enumm: Some(
-                        "Ccopre",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cier",
-            extends: None,
-            description: Some(
-                "CIER register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lsirdyie",
-                    description: Some(
-                        "LSI Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by internal RC 32 kHz oscillator stabilization.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lserdyie",
-                    description: Some(
-                        "LSE Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the external 32 kHz oscillator stabilization.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsirdyie",
-                    description: Some(
-                        "HSI Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the internal RC 64MHz oscillator stabilization.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hserdyie",
-                    description: Some(
-                        "HSE Ready Interrupt Enable Set and reset by software to enable/disable interrupt caused by the external HSE oscillator stabilization.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsipllrdyie",
-                    description: Some(
-                        "HSI PLL Ready Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the HSI 64MHz PLL locked on HSE.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hsipllunlockdetie",
-                    description: Some(
-                        "HSIPLLUNLOCKDETIE: HSI PLL unlock detection Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the HSI 64MHz PLL unlock.",
+                        "Enables the RAM2 bank retention in DEEPSTOP mode.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1414,9 +513,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "rtcrstie",
+                    name: "ramret3",
                     description: Some(
-                        "RTCRSTIE: RTC reset end Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the RTC reset end.",
+                        "Enables the RAM3 bank retention in DEEPSTOP mode.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1428,9 +527,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "wdgrstie",
+                    name: "gpioret",
                     description: Some(
-                        "WDGRSTIE: Watchdog reset end Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the watchdog reset end.",
+                        "GPIORET: GPIO retention enable. 0: GPIO don't retain their status during DEEPSTOP and exiting from DEEPSTOP (default) 1: GPIO retain their status during DEEPSTOP and exiting from DEEPSTOP. Note: it's mandatory to ensure this bit is set before entering DEEPSTOP unless DBRG.DEEPSTOP2 bit is set.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1442,9 +541,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "lpurstie",
+                    name: "ents",
                     description: Some(
-                        "LPURSTIE: LPUART reset release interrupt enable.",
+                        "ENTS: Enable Temperature Sensor.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1455,20 +554,34 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: None,
                 },
+                Field {
+                    name: "lsilpmufen",
+                    description: Some(
+                        "LSI LPMU force enable.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
             ],
         },
         FieldSet {
-            name: "Cifr",
+            name: "Cr3",
             extends: None,
             description: Some(
-                "CIFR register.",
+                "CR3 register.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "lsirdyif",
+                    name: "ewu0",
                     description: Some(
-                        "LSI Ready Interrupt flag Set by hardware when LSI clock becomes stable.",
+                        "EWU0 Enable WakeUp line 0 (PB0) When this bit is set the wakeup line 0 is enabled and a rising or falling edge on wakeup line 0 will trigger a CPU wakeup event depending on CR4.WP0 bit.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1477,14 +590,12 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lsirdyif",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "lserdyif",
+                    name: "ewu1",
                     description: Some(
-                        "LSE Ready Interrupt Flag. Set by hardware when LSE clock becomes stable.",
+                        "EWU1 Enable WakeUp line 1 (PB1) When this bit is set the wakeup line 1 is enabled and a rising or falling edge on wakeup line 1 will trigger a CPU wakeup event depending on CR4.WP1 bit.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1493,130 +604,12 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lserdyif",
-                    ),
-                },
-                Field {
-                    name: "hsirdyif",
-                    description: Some(
-                        "HSI Ready Interrupt Flag. Set by hardware when HSI becomes stable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Hsirdyif",
-                    ),
-                },
-                Field {
-                    name: "hserdyif",
-                    description: Some(
-                        "HSE Ready Interrupt Flag. Set by hardware when HSE becomes stable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Hserdyif",
-                    ),
-                },
-                Field {
-                    name: "hsipllrdyif",
-                    description: Some(
-                        "HSI PLL Ready Interrupt Flag. Set by hardware when HSI PLL 64MHz becomes stable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Hsipllrdyif",
-                    ),
-                },
-                Field {
-                    name: "hsipllunlockdetif",
-                    description: Some(
-                        "HSIPLLUNLOCKDETIF: HSI PLL unlock detection Interrupt Flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "rtcrstif",
+                    name: "ewu2",
                     description: Some(
-                        "RTC reset end Interrupt Flag. Raised when reset is released on 32kHz clock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 7,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "wdgrstif",
-                    description: Some(
-                        "WDG reset end Interrupt Flag. Raised when reset is released on 32kHz clock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lpurstf",
-                    description: Some(
-                        "LPUART reset release flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Lpurstf",
-                    ),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Cr",
-            extends: None,
-            description: Some(
-                "CR register.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "lsion",
-                    description: Some(
-                        "Internal Low Speed oscillator enable Set and reset by software. Reset source only for this field: PORESETn.",
+                        "EWU2 Enable WakeUp line 2 (PB2) When this bit is set the wakeup line 2 is enabled and a rising or falling edge on wakeup line 2 will trigger a CPU wakeup event depending on CR4.WP2 bit.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1628,9 +621,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "lsirdy",
+                    name: "ewu3",
                     description: Some(
-                        "Internal Low Speed oscillator Ready Set and reset by hardware to indicate when the Low Speed Internal RC oscillator is stable. Reset source only for this field: PORESETn.",
+                        "EWU3 Enable WakeUp line 3 (PB3) When this bit is set the wakeup line 3 is enabled and a rising or falling edge on wakeup line 3 will trigger a CPU wakeup event depending on CR4.WP3 bit.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1639,14 +632,12 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lsirdy",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "lseon",
+                    name: "ewu4",
                     description: Some(
-                        "External Low Speed Clock enable. Set and reset by software. Reset source only for this field: PORESETn.",
+                        "EWU4 Enable WakeUp line 4 (PB4) When this bit is set the wakeup line 4 is enabled and a rising or falling edge on wakeup line 4 will trigger a CPU wakeup event depending on CR4.WP4 bit.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1658,9 +649,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "lserdy",
+                    name: "ewu5",
                     description: Some(
-                        "External Low Speed Clock ready flag. Set by hardware to indicate that LSE oscillator is stable.",
+                        "EWU5 Enable WakeUp line 5 (PB5) When this bit is set the wakeup line 5 is enabled and a rising or falling edge on wakeup line 5 will trigger a CPU wakeup event depending on CR4.WP5 bit.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1669,14 +660,12 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lserdy",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "lsebyp",
+                    name: "ewu6",
                     description: Some(
-                        "External Low Speed Clock bypass. Set and reset by software. Reset source only for this field: PORESETn.",
+                        "EWU6 Enable WakeUp line 6 (PB6) When this bit is set the wakeup line 6 is enabled and a rising or falling edge on wakeup line 6 will trigger a CPU wakeup event depending on CR4.WP6 bit.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1685,28 +674,54 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lsebyp",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "lockdet_nstop",
+                    name: "ewu7",
                     description: Some(
-                        "Lock detector Nstop value When start_stop signal is high; a counter is incremented every 16 MHz clock cycle. When the counter reaches (NSTOP+1) x 64 value, the lock_det signal is set high indicating that the PLL is locked. As soon as the start_stop signal is low the counter is reset to 0.",
+                        "EWU7 Enable WakeUp line 7 (PB7) When this bit is set the wakeup line 7 is enabled and a rising or falling edge on wakeup line 7 will trigger a CPU wakeup event depending on CR4.WP7 bit.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 7,
                         },
                     ),
-                    bit_size: 3,
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "hsirdy",
+                    name: "ewu8",
                     description: Some(
-                        "Internal High Speed clock ready flag. Set by hardware to indicate that internal RC 64MHz oscillator is stable. This bit is activated only if the RC is enabled by HSION (it is not activated if the RC is enabled by an IP request).",
+                        "EWU8 Enable WakeUp line 8 (PA8) When this bit is set the wakeup line 8 is enabled and a rising or falling edge on wakeup line 8 will trigger a CPU wakeup event depending on CR4.WP8 bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ewu9",
+                    description: Some(
+                        "EWU9 Enable WakeUp line 9 (PA9) When this bit is set the wakeup line 9 is enabled and a rising or falling edge on wakeup line 9 will trigger a CPU wakeup event depending on CR4.WP9 bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ewu10",
+                    description: Some(
+                        "EWU10 Enable WakeUp line 10 (PA10) When this bit is set the wakeup line 10 is enabled and a rising or falling edge on wakeup line 10 will trigger a CPU wakeup event depending on CR4.WP10 bit.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1715,14 +730,26 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Hsirdy",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "hsepllbufon",
+                    name: "ewu11",
                     description: Some(
-                        "External High Speed Clock Buffer for PLL RF2G4 enable. Set and reset by software.",
+                        "EWU11 Enable WakeUp line 11 (PA11) When this bit is set the wakeup line 11 is enabled and a rising or falling edge on wakeup line 11 will trigger a CPU wakeup event depending on CR4.WP11 bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ewble",
+                    description: Some(
+                        "EWBLE: Enable wakeup on BLE event. 0: Wakeup on BLE line is disabled (default). 1: Wakeup on BLE line is enabled.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1734,9 +761,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hsipllon",
+                    name: "ewblehcpu",
                     description: Some(
-                        "Internal High Speed Clock PLL enable.",
+                        "EWBLEHCPU: Enable wakeup on BLE Host CPU event. 0: Wakeup on BLE Host CPU line is disabled (default). 1: Wakeup on BLE Host CPU line is enabled.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1748,9 +775,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hsipllrdy",
+                    name: "eiwl2",
                     description: Some(
-                        "Internal High Speed Clock PLL ready flag.",
+                        "EIWL2: Enable wakeup on Internal event (LPUART). 0: Wakeup on internal line is disabled (default). 1: Wakeup on internal line is enabled.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1759,14 +786,12 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Hsipllrdy",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "fmrat",
+                    name: "eiwl",
                     description: Some(
-                        "Force MR_BLE active transmission status (for debug purpose).",
+                        "EIWL: Enable wakeup on Internal event (RTC). 0: Wakeup on internal line is disabled (default). 1: Wakeup on internal line is enabled.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1775,54 +800,22 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Fmrat",
-                    ),
-                },
-                Field {
-                    name: "hseon",
-                    description: Some(
-                        "External High Speed Clock enable. Set and reset by software. in low power mode, HSE is turned off.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
                     enumm: None,
-                },
-                Field {
-                    name: "hserdy",
-                    description: Some(
-                        "External High Speed Clock ready flag. Set by hardware to indicate that HSE oscillator is stable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 17,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "Hserdy",
-                    ),
                 },
             ],
         },
         FieldSet {
-            name: "Cscmdr",
+            name: "Cr4",
             extends: None,
             description: Some(
-                "CSCMDR register.",
+                "CR4 register.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "request",
+                    name: "wup0",
                     description: Some(
-                        "Request for system clock switching Cleared by hardware when system clock frequency switch is done.",
+                        "WUP0 Wake-up Line Polarity 0 (PB0) This bit defines the polarity used for event detection on external wake-up line 0.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1832,29 +825,213 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Request",
+                        "Wup",
                     ),
                 },
                 Field {
-                    name: "clksysdiv_req",
+                    name: "wup1",
                     description: Some(
-                        "system clock dividing factor from HSI_64M requested Note: behavior depends on BLEEN in APB2ENR register.",
+                        "WUP1 Wake-up Line Polarity 1 (PB1) This bit defines the polarity used for event detection on external wake-up line 1.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 1,
                         },
                     ),
-                    bit_size: 3,
+                    bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "ClksysdivReq",
+                        "Wup",
                     ),
                 },
                 Field {
-                    name: "status",
+                    name: "wup2",
                     description: Some(
-                        "Status of clock switch sequence.",
+                        "WUP2 Wake-up Line Polarity 2 (PB2) This bit defines the polarity used for event detection on external wake-up line 2.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
+                },
+                Field {
+                    name: "wup3",
+                    description: Some(
+                        "WUP3 Wake-up Line Polarity 3 (PB3) This bit defines the polarity used for event detection on external wake-up line 3.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
+                },
+                Field {
+                    name: "wup4",
+                    description: Some(
+                        "WUP4 Wake-up Line Polarity 4 (PB4) This bit defines the polarity used for event detection on external wake-up line 4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
+                },
+                Field {
+                    name: "wup5",
+                    description: Some(
+                        "WUP5 Wake-up Line Polarity 5 (PB5) This bit defines the polarity used for event detection on external wake-up line 5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
+                },
+                Field {
+                    name: "wup6",
+                    description: Some(
+                        "WUP6 Wake-up Line Polarity 6 (PB6) This bit defines the polarity used for event detection on external wake-up line 6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
+                },
+                Field {
+                    name: "wup7",
+                    description: Some(
+                        "WUP7 Wake-up Line Polarity 7 (PB7) This bit defines the polarity used for event detection on external wake-up line 7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
+                },
+                Field {
+                    name: "wup8",
+                    description: Some(
+                        "WUP8 Wake-up Line Polarity 8 (PA8) This bit defines the polarity used for event detection on external wake-up line 8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
+                },
+                Field {
+                    name: "wup9",
+                    description: Some(
+                        "WUP9 Wake-up Line Polarity 9 (PA9) This bit defines the polarity used for event detection on external wake-up line 9.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
+                },
+                Field {
+                    name: "wup10",
+                    description: Some(
+                        "WUP10 Wake-up Line Polarity 10 (PA10) This bit defines the polarity used for event detection on external wake-up line 10.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
+                },
+                Field {
+                    name: "wup11",
+                    description: Some(
+                        "WUP11 Wake-up Line Polarity 11 (PA11) This bit defines the polarity used for event detection on external wake-up line 11.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr5",
+            extends: None,
+            description: Some(
+                "CR5 register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "smpslvl",
+                    description: Some(
+                        "SMPSLVL[3:0] SMPS Output Level Voltage Selection Select the SMPS output voltage with a granularity of 50mV. Default = '0100' (1.4V) Vout = 1.2 + 0.05*SMPSOUT (V).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "smpsbomsel",
+                    description: Some(
+                        "SMPSBOMSEL: SMPS BOM Selection:.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1864,13 +1041,213 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Status",
+                        "Smpsbomsel",
                     ),
                 },
                 Field {
-                    name: "eofseq_ie",
+                    name: "smpsfrdy",
                     description: Some(
-                        "End of sequence Interrupt Enable. Set and reset by software to enable/disable interrupt caused by the clock system switch.",
+                        "SMPSFB Force ready check When this bit is set, the SMPS FSM will consider the SMPS ready.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Smpsfrdy",
+                    ),
+                },
+                Field {
+                    name: "smpslpopen",
+                    description: Some(
+                        "SMPSLPOPEN: In Low Power mode SMPS is in OPEN mode (instead of PRECHARGE mode). When this bit is set, when the chip is in Low power mode the SMPS regulator will be disabled (HZ) Documentation needed.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Smpslpopen",
+                    ),
+                },
+                Field {
+                    name: "smpsfbyp",
+                    description: Some(
+                        "SMPSFB Force SMPS Regulator in bypass mode When this bit is set, the SMPS regulator will be forced to operate in precharge mode. the actual state of SMPS can be observed thanks to the replica SR2.SMPSBYPR.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Smpsfbyp",
+                    ),
+                },
+                Field {
+                    name: "nosmps",
+                    description: Some(
+                        "NOSMPS: No SMPS Mode When this bit is set, the SMPS regulator will be disabled. Note that this configuration should be used only when SMPS_FB pad is directly connected to VBATT or Vext, without L/C BOM.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "smps_ena_dcm",
+                    description: Some(
+                        "SMPS_ENA_DCM: enable discontinuous conduction mode.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "clkdetr_disable",
+                    description: Some(
+                        "CLKDETR_DISABLE: disable SMPS clock detection The SMPS clock detection enables an automatic SMPS bypass switching in case of unwanted loss of SMPS clock.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "smps_prech_cur_sel",
+                    description: Some(
+                        "SMPS_PRECH_CUR_SEL[1:0] Selection for SMPS PRECHARGE limit current.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "SmpsPrechCurSel",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr6",
+            extends: None,
+            description: Some(
+                "CR6 register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ewu12",
+                    description: Some(
+                        "EWU12 Enable WakeUp line 12 (PA0) When this bit is set the wakeup line 12 is enabled and a rising or falling edge on wakeup line 0 will trigger a CPU wakeup event depending on CR7.WP0 bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ewu13",
+                    description: Some(
+                        "EWU13 Enable WakeUp line 13 (PA1) When this bit is set the wakeup line 13 is enabled and a rising or falling edge on wakeup line 1 will trigger a CPU wakeup event depending on CR7.WP1 bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ewu14",
+                    description: Some(
+                        "EWU14 Enable WakeUp line 14 (PA2) When this bit is set the wakeup line 14 is enabled and a rising or falling edge on wakeup line 2 will trigger a CPU wakeup event depending on CR7.WP2 bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ewu15",
+                    description: Some(
+                        "EWU15 Enable WakeUp line 15 (PA3) When this bit is set the wakeup line 15 is enabled and a rising or falling edge on wakeup line 3 will trigger a CPU wakeup event depending on CR7.WP3 bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ewu16",
+                    description: Some(
+                        "EWU16 Enable WakeUp line 16 (PB12) When this bit is set the wakeup line 16 is enabled and a rising or falling edge on wakeup line 4 will trigger a CPU wakeup event depending on CR7.WP4 bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ewu17",
+                    description: Some(
+                        "EWU17 Enable WakeUp line 17 (PB13) When this bit is set the wakeup line 17 is enabled and a rising or falling edge on wakeup line 5 will trigger a CPU wakeup event depending on CR7.WP5 bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ewu18",
+                    description: Some(
+                        "EWU18 Enable WakeUp line 18 (PB14) When this bit is set the wakeup line 18 is enabled and a rising or falling edge on wakeup line 6 will trigger a CPU wakeup event depending on CR7.WP6 bit.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1882,9 +1259,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "eofseq_irq",
+                    name: "ewu19",
                     description: Some(
-                        "End of Sequence flag Set by hardware when clock system swtich is ended.",
+                        "EWU19 Enable WakeUp line 19 (PB15) When this bit is set the wakeup line 19 is enabled and a rising or falling edge on wakeup line 7 will trigger a CPU wakeup event depending on CR7.WP7 bit.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -1895,150 +1272,180 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Csr",
-            extends: None,
-            description: Some(
-                "CSR register.",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "rmvf",
+                    name: "ewu20",
                     description: Some(
-                        "Remove reset flag Set by software to clear the value of the reset flags. It auto clears by HW after clearing reason flags.",
+                        "Enable wakeup on PB8 I/O event.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
-                            offset: 23,
+                            offset: 8,
                         },
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Rmvf",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "padrstf",
+                    name: "ewu21",
                     description: Some(
-                        "SYSTEM reset flag Reset by software by writing the RMVF bit. Set by hardware when a reset from pad occurs.",
+                        "Enable wakeup on PB9 I/O event.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
-                            offset: 26,
+                            offset: 9,
                         },
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Padrstf",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "porrstf",
+                    name: "ewu22",
                     description: Some(
-                        "POWER reset flag Reset by software by writing the RMVF bit. Set by hardware when a power reset occurs from LPMURESET block.",
+                        "Enable wakeup on PB10 I/O event.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
-                            offset: 27,
+                            offset: 10,
                         },
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Porrstf",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "sftrstf",
+                    name: "ewu23",
                     description: Some(
-                        "Software reset flag Reset by software by writing the RMVF bit. Set by hardware when a software reset occurs.",
+                        "Enable wakeup on PB11 I/O event.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
-                            offset: 28,
+                            offset: 11,
                         },
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sftrstf",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "wdgrstf",
+                    name: "ewu24",
                     description: Some(
-                        "Watchdog reset flag Reset by software by writing the RMVF bit. Set by hardware when a watchdog reset from V33 domain occurs.",
+                        "Enable wakeup on PA12 I/O event.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
-                            offset: 29,
+                            offset: 12,
                         },
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Wdgrstf",
-                    ),
+                    enumm: None,
                 },
                 Field {
-                    name: "lockuprstf",
+                    name: "ewu25",
                     description: Some(
-                        "LOCK UP reset flag from CM0 Reset by software by writing the RMVF bit. Set by hardware from unrecoverable exception CPU. It reset V12i domain, FLASH controller and peripherals.",
+                        "Enable wakeup on PA13 I/O event.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
-                            offset: 30,
+                            offset: 13,
                         },
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lockuprstf",
-                    ),
+                    enumm: None,
                 },
-            ],
-        },
-        FieldSet {
-            name: "Rfhsecr",
-            extends: None,
-            description: Some(
-                "RFHSECR register.",
-            ),
-            bit_size: 32,
-            fields: &[
                 Field {
-                    name: "xotune",
+                    name: "ewu26",
                     description: Some(
-                        "RF-HSE capacitor bank tuning Set by option byte loading soon after Power On Reset.",
+                        "Enable wakeup on PA14 I/O event.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
-                            offset: 0,
+                            offset: 14,
                         },
                     ),
-                    bit_size: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ewu27",
+                    description: Some(
+                        "Enable wakeup on PA15 I/O event.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Rfswhsecr",
+            name: "Cr7",
             extends: None,
             description: Some(
-                "RFSWHSECR register.",
+                "CR7 register.",
             ),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "satrg",
+                    name: "wup12",
                     description: Some(
-                        "Sense Amplifier threshold Set by software.",
+                        "WUP12 Wake-up Line Polarity 12 (PA0) This bit defines the polarity used for event detection on external wake-up line 12.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
+                },
+                Field {
+                    name: "wup13",
+                    description: Some(
+                        "WUP13 Wake-up Line Polarity 13 (PA1) This bit defines the polarity used for event detection on external wake-up line 13.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
+                },
+                Field {
+                    name: "wup14",
+                    description: Some(
+                        "WUP14 Wake-up Line Polarity 14 (PA2) This bit defines the polarity used for event detection on external wake-up line 14.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
+                },
+                Field {
+                    name: "wup15",
+                    description: Some(
+                        "WUP15 Wake-up Line Polarity 15 (PA3) This bit defines the polarity used for event detection on external wake-up line 15.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -2048,29 +1455,61 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Satrg",
+                        "Wup",
                     ),
                 },
                 Field {
-                    name: "gmc",
+                    name: "wup16",
                     description: Some(
-                        "High Speed External XO current control Set by software.",
+                        "WUP16 Wake-up Line Polarity 16 (PB12) This bit defines the polarity used for event detection on external wake-up line 16.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 4,
                         },
                     ),
-                    bit_size: 3,
+                    bit_size: 1,
                     array: None,
                     enumm: Some(
-                        "Gmc",
+                        "Wup",
                     ),
                 },
                 Field {
-                    name: "swxotuneen",
+                    name: "wup17",
                     description: Some(
-                        "RF-HSE capacitor bank tuning by SW enable Set by software.",
+                        "WUP17 Wake-up Line Polarity 17 (PB13) This bit defines the polarity used for event detection on external wake-up line 17.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
+                },
+                Field {
+                    name: "wup18",
+                    description: Some(
+                        "WUP18 Wake-up Line Polarity 18 (PB14) This bit defines the polarity used for event detection on external wake-up line 18.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
+                },
+                Field {
+                    name: "wup19",
+                    description: Some(
+                        "WUP19 Wake-up Line Polarity 19 (PB15) This bit defines the polarity used for event detection on external wake-up line 19.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -2079,19 +1518,1061 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Wup",
+                    ),
                 },
                 Field {
-                    name: "swxotune",
+                    name: "wup20",
                     description: Some(
-                        "RF-HSE capacitor bank tuning value by SW Set by software.",
+                        "Wake-up polarity for PB8 IO event.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 8,
                         },
                     ),
-                    bit_size: 6,
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wup21",
+                    description: Some(
+                        "Wake-up polarity for PB9 IO event.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wup22",
+                    description: Some(
+                        "Wake-up polarity for PB10 IO event.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wup23",
+                    description: Some(
+                        "Wake-up polarity for PB11 IO event.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wup24",
+                    description: Some(
+                        "Wake-up polarity for PB12 IO event.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wup25",
+                    description: Some(
+                        "Wake-up polarity for PB13 IO event.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wup26",
+                    description: Some(
+                        "Wake-up polarity for PB14 IO event.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wup27",
+                    description: Some(
+                        "Wake-up polarity for PB15 IO event.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Dbgr",
+            extends: None,
+            description: Some(
+                "DBGR register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "deepstop2",
+                    description: Some(
+                        "DEEPSTOP2: DEEPSTOP2 low power saving emulation enable. 0: normal DEEPSTOP will be applied 1: DEEPSTOP2 (debugger features not lost) will be applied instead of DEEPSTOP.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "dis_prech",
+                    description: Some(
+                        "DIS_PRECH[2:0]: disable precharge during deepstop (debug) - 111: precharge and SMPS monitoring are disabled (whatever CR5.SMPSLPOPEN) - 101: precharge are activated only at deepstop exit (to be used only with CR5.SMPSLPOPEN=1) - else: No effect (default 0x0).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 3,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Extsrr",
+            extends: None,
+            description: Some(
+                "EXTSRR register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "deepstopf",
+                    description: Some(
+                        "DEEPSTOPF System DeepStop Flag This bit is set by hardware and cleared only by a POR reset or by writing '1' in this bit field.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Deepstopf",
+                    ),
+                },
+                Field {
+                    name: "rfphasef",
+                    description: Some(
+                        "RFPHASEF RFPHASE Flag This bit is set by hardware after a Radio wake-up event (BLE activation); it is cleared either by software, writing '1' in this bit field, or by hardware when Ready2Sleep signal is asserted by the Radio IP.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Rfphasef",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "IoxCfg",
+            extends: None,
+            description: Some(
+                "IOxCFG register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "iocfg0",
+                    description: Some(
+                        "Drive configuration for PA8.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "iocfg1",
+                    description: Some(
+                        "Drive configuration for PA9.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "iocfg2",
+                    description: Some(
+                        "Drive configuration for PA10.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "iocfg3",
+                    description: Some(
+                        "Drive configuration for PA11.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "iocfg4",
+                    description: Some(
+                        "Drive configuration for PA4.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "iocfg5",
+                    description: Some(
+                        "Drive configuration for PA5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "iocfg6",
+                    description: Some(
+                        "Drive configuration for PA6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "iocfg7",
+                    description: Some(
+                        "Drive configuration for PA7.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pdcra",
+            extends: None,
+            description: Some(
+                "PDCRA register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pda",
+                    description: Some(
+                        "PDA[x]: Pull Down Pull Down activation on port A[i] pad when APC bit of PWRC CR3 is set.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 16,
+                    array: None,
+                    enumm: Some(
+                        "Pda",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pdcrb",
+            extends: None,
+            description: Some(
+                "PDCRB register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pdb",
+                    description: Some(
+                        "PDB[x]: Pull Down Pull Down activation on port B[i] pad when APC bit of PWRC CR3 is set.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 16,
+                    array: None,
+                    enumm: Some(
+                        "Pdb",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pucra",
+            extends: None,
+            description: Some(
+                "PUCRA register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pua",
+                    description: Some(
+                        "PUA[x] : Pull Up Pull up activation on port A[i] pad when APC bit of PWRC CR3 is set.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 16,
+                    array: None,
+                    enumm: Some(
+                        "Pua",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Pucrb",
+            extends: None,
+            description: Some(
+                "PUCRB register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pub_",
+                    description: Some(
+                        "PUB[x] : Pull Up Pull up activation on port B[i] pad when APC bit of PWRC CR3 is set.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 16,
+                    array: None,
+                    enumm: Some(
+                        "Pub",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sr1",
+            extends: None,
+            description: Some(
+                "SR1 register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wuf0",
+                    description: Some(
+                        "WUF0 WakeUp Flag 0 (PB0) This bit is set when a wakeup is detected on wakeup line 0. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf1",
+                    description: Some(
+                        "WUF1 WakeUp Flag 1 (PB1) This bit is set when a wakeup is detected on wakeup line 1. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf2",
+                    description: Some(
+                        "WUF2 WakeUp Flag 2 (PB2) This bit is set when a wakeup is detected on wakeup line 2. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf3",
+                    description: Some(
+                        "WUF3 WakeUp Flag 3 (PB3) This bit is set when a wakeup is detected on wakeup line 3. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf4",
+                    description: Some(
+                        "WUF4 WakeUp Flag 4 (PB4) This bit is set when a wakeup is detected on wakeup line 4. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf5",
+                    description: Some(
+                        "WUF5 WakeUp Flag 5 (PB5) This bit is set when a wakeup is detected on wakeup line 5. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf6",
+                    description: Some(
+                        "WUF6 WakeUp Flag 6 (PB6) This bit is set when a wakeup is detected on wakeup line 6. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf7",
+                    description: Some(
+                        "WUF7 WakeUp Flag 7 (PB7) This bit is set when a wakeup is detected on wakeup line 7. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf8",
+                    description: Some(
+                        "WUF8 WakeUp Flag 8 (PA8) This bit is set when a wakeup is detected on wakeup line 8. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf9",
+                    description: Some(
+                        "WUF9 WakeUp Flag 9 (PA9) This bit is set when a wakeup is detected on wakeup line 9. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf10",
+                    description: Some(
+                        "WUF10 WakeUp Flag 10 (PA10) This bit is set when a wakeup is detected on wakeup line 10. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf11",
+                    description: Some(
+                        "WUF11 WakeUp Flag 11 (PA11) This bit is set when a wakeup is detected on wakeup line 11. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wblef",
+                    description: Some(
+                        "WBLEF: BLE wakeup flag. 0: no wakeup from BLE occurred since last clear. 1: a wakeup from BLE occurred since last clear. Cleared by writing 1 in this bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wblehcpuf",
+                    description: Some(
+                        "WBLEHCPUF: BLE Host CPU wakeup flag. 0: no wakeup from BLE Host CPU occurred since last clear. 1: a wakeup from BLE Host CPU occurred since last clear. Cleared by writing 1 in this bit.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "iwuf2",
+                    description: Some(
+                        "IWUF2: Internal wakeup 2 flag (LPUART). 0: no wakeup from LPUART occurred since last clear. 1: a wakeup from LPUART occurred since last clear. Note: The user must clear the LPUART wakeup flag inside the LPUART IP to clear this bit (mirror of the LPUART wakeup line on the PWRC block).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "iwuf",
+                    description: Some(
+                        "IWUF: Internal wakeup flag (RTC). 0: no wakeup from RTC occurred since last clear. 1: a wakeup from RTC occurred since last clear. Note: The user must clear the RTC wakeup flag inside the RTC IP to clear this bit (mirror of the RTC wakeup line on the PWRC block).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sr2",
+            extends: None,
+            description: Some(
+                "SR2 register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "smpsbypr",
+                    description: Some(
+                        "SMPSBYPR: SMPS Force Bypass Control Replica This bit mirrors the actual BYPASS_3V3 control signal driven to the SMPS regulator, dependant on the real working state.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "smpsenr",
+                    description: Some(
+                        "SMPSENR: SMPS Enable Control Replica This bit mirrors the actual ENABLE_3V3 control signal driven to the SMPS regulator, dependant on the real working state.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "smpsrdy",
+                    description: Some(
+                        "SMPSRDY: SMPS Ready Status This bit provides the information whether SMPS is ready.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Smpsrdy",
+                    ),
+                },
+                Field {
+                    name: "iobootval2",
+                    description: Some(
+                        "Bit3: PB15 input value on VDD33 latched at POR Bit2: PB14 input value on VDD33 latched at POR Bit1: PB13 input value on VDD33 latched at POR Bit0: PB12 input value on VDD33 latched at POR.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "reglps",
+                    description: Some(
+                        "REGLPS: Regulator Low Power Started This bit provides the information whether low power regulator is ready.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Reglps",
+                    ),
+                },
+                Field {
+                    name: "regms",
+                    description: Some(
+                        "REGMS: Regulator Main LDO Started This bit provides the information whether main regulator is ready.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Regms",
+                    ),
+                },
+                Field {
+                    name: "pvdo",
+                    description: Some(
+                        "PVDO: Power Voltage Detector Output When the Power Voltage Detector is enabled (CR2.PVDE) this bit is set when the system supply (VDDIO) is lower than the selected PVD threshold (CR2.PVDLS).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "iobootval",
+                    description: Some(
+                        "Bit3: PA11 input value on VDD33 latched at POR Bit2: PA10 input value on VDD33 latched at POR Bit1: PA9 input value on VDD33 latched at POR Bit0: PA8 input value on VDD33 latched at POR.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 4,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sr3",
+            extends: None,
+            description: Some(
+                "SR3 register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wuf12",
+                    description: Some(
+                        "WUF12 WakeUp Flag 12 PA0 This bit is set when a wakeup is detected on wakeup line 12. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf13",
+                    description: Some(
+                        "WUF13 WakeUp Flag 13 PA1 This bit is set when a wakeup is detected on wakeup line 13. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf14",
+                    description: Some(
+                        "WUF14 WakeUp Flag 14 PA2 This bit is set when a wakeup is detected on wakeup line 14. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf15",
+                    description: Some(
+                        "WUF15 WakeUp Flag 15 PA3 This bit is set when a wakeup is detected on wakeup line 15. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf16",
+                    description: Some(
+                        "WUF16 WakeUp Flag 16 PB12 This bit is set when a wakeup is detected on wakeup line 16. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf17",
+                    description: Some(
+                        "WUF17 WakeUp Flag 17 PB13 This bit is set when a wakeup is detected on wakeup line 17. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf18",
+                    description: Some(
+                        "WUF18 WakeUp Flag 18 PB14 This bit is set when a wakeup is detected on wakeup line 18. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf19",
+                    description: Some(
+                        "WUF19 WakeUp Flag 19 PB15 This bit is set when a wakeup is detected on wakeup line 19. It is cleared by a reset pad or by writing 1 in this bit field. writting this bit, clears the interrupt:.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wuf",
+                    ),
+                },
+                Field {
+                    name: "wuf20",
+                    description: Some(
+                        "PB8 I/O wake-up flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf21",
+                    description: Some(
+                        "PB9 I/O wake-up flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf22",
+                    description: Some(
+                        "PB10 I/O wake-up flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf23",
+                    description: Some(
+                        "PB11 I/O wake-up flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf24",
+                    description: Some(
+                        "PB12 I/O wake-up flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf25",
+                    description: Some(
+                        "PB13 I/O wake-up flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf26",
+                    description: Some(
+                        "PB14 I/O wake-up flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf27",
+                    description: Some(
+                        "PB15 I/O wake-up flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
+                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -2100,161 +2581,511 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     enums: &[
         Enum {
-            name: "Ccopre",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "CCO clock is divided by 1.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "CCO clock is divided by 2.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X2",
-                    description: Some(
-                        "CCO clock is divided by 4.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B_0X3",
-                    description: Some(
-                        "CCO clock is divided by 8.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "B_0X4",
-                    description: Some(
-                        "CCO clock is divided by 16.",
-                    ),
-                    value: 4,
-                },
-            ],
-        },
-        Enum {
-            name: "Clkblediv",
+            name: "Apc",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "B_0X0",
                     description: Some(
-                        "32MHz.",
+                        "the PUCRx and PDCRx are not used to control the I/O pull-up and pull-down configuration of the product I/Os.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B_0X1",
                     description: Some(
-                        "16MHz.",
+                        "the I/O pull-up and pull-down configurations defined in the PUCRx and PDCRx registers is applied.",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Clkslowsel",
+            name: "Deepstopf",
             description: None,
-            bit_size: 2,
+            bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "B_0X0",
                     description: Some(
-                        "LSILMPU oscillator clock (default).",
+                        "System has not been in DEEPSTOP mode.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B_0X1",
                     description: Some(
-                        "LSE oscillator clock used as slow clock.",
+                        "System has been in DEEPSTOP mode.",
                     ),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X2",
-                    description: Some(
-                        "LSI oscillator clock used as slow clock.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B_0X3",
-                    description: Some(
-                        "HSI_64M divided by 2048 used as slow clock.",
-                    ),
-                    value: 3,
                 },
             ],
         },
         Enum {
-            name: "ClksysdivReq",
+            name: "Enborh",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "BORH off (VBOR0): threshold level for above 1.60V voltage operation.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "BORH is enabled, threshold level depends on SELBOR[1:0].",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Ensdnbor",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "the PD_ALL_SHUTDOWN signal is set during SHUTDOWN mode.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "the PD_ALL_SHUTDOWN signal is not set during SHUTDOWN mode.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lpms",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Deep Stop mode (default).",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Shutdown mode.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pda",
+            description: None,
+            bit_size: 16,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Pull-Down not activated on Port A[i].",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Pull-Down activated on Port A[i] when APC bit of PWRC CR3 bit is set.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pdb",
+            description: None,
+            bit_size: 16,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Pull-Down not activated on Port B[i].",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Pull-Down activated on Port B[i] when APC bit of PWRC CR3 bit is set.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pua",
+            description: None,
+            bit_size: 16,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Pull-Up not activated on port A[i].",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Pull-Up activated on port A[i] when APC bit of PWRC CR3 bit is set and PWR_PDCRA[x] is reset.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pub",
+            description: None,
+            bit_size: 16,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Pull-Up not activated on port B[i].",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Pull-Up activated on port B[i] when APC bit of PWRC CR3 bit is set and PWR_PDCRB[x] is reset.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pvdls",
             description: None,
             bit_size: 3,
             variants: &[
                 EnumVariant {
                     name: "B_0X0",
                     description: Some(
-                        "div 1 (sys clock 64M).",
+                        "2.05 V - Lowest level.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B_0X1",
                     description: Some(
-                        "div 2 (sys clock 32M).",
+                        "2.20 V.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
                     name: "B_0X2",
                     description: Some(
-                        "div 4 (sys clock 16M).",
+                        "2.36 V.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
                     name: "B_0X3",
                     description: Some(
-                        "div 8 (sys clock 8M).",
+                        "2.52 V.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
                     name: "B_0X4",
                     description: Some(
-                        "div 16 (sys clock 4M).",
+                        "2.64 V.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
                     name: "B_0X5",
                     description: Some(
-                        "div 32 (sys clock 2M).",
+                        "2.81 V.",
                     ),
                     value: 5,
                 },
                 EnumVariant {
                     name: "B_0X6",
                     description: Some(
-                        "div 64 (sys clock 1M).",
+                        "2.91 V - Highest level.",
                     ),
                     value: 6,
+                },
+                EnumVariant {
+                    name: "B_0X7",
+                    description: Some(
+                        "External input analog voltage (compare internally to VBGP; When external input <VBGP.",
+                    ),
+                    value: 7,
                 },
             ],
         },
         Enum {
-            name: "Fmrat",
+            name: "Reglps",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "LP regulator is not ready.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "LP regulator is ready.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Regms",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "Main regulator is not ready.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "Main regulator is ready.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Rfphasef",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "RF IP does not require attention.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "RF IP awake and requesting system attention.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Selborh",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "BORH Level 1 (VBOR1): threshold level for above 2.0V voltage operation.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "BORH Level 2 (VBOR2): threshold level for above 2.21 V voltage operation.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "B_0X2",
+                    description: Some(
+                        "BORH Level 3 (VBOR3): threshold level for above 2.52 V voltage operation.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "B_0X3",
+                    description: Some(
+                        "BORH Level 4(VBOR4): threshold level for above 2.81 V voltage operation.",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "SmpsPrechCurSel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "2.5mA.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "5mA.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "B_0X2",
+                    description: Some(
+                        "10mA.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "B_0X3",
+                    description: Some(
+                        "20mA (default).",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Smpsbomsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "BOM1.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "BOM2 (default).",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "B_0X2",
+                    description: Some(
+                        "BOM3.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "B_0X3",
+                    description: Some(
+                        "n/a.",
+                    ),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Smpsfbyp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "no effect (by default).",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "SMPS is disabled and bypassed (ENABLE_3V3=0 and PRECHARGE_3V3=1).",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Smpsfrdy",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "no effect (by default).",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "SMPS is considered READY.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Smpslpopen",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "in Low Power mode, SMPS is in PRECHARGE, output is connected to VDDIO.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "in Low Power mode, SMPS is disabled, output is floating.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Smpsrdy",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "B_0X0",
+                    description: Some(
+                        "SMPS regulator is not ready.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "B_0X1",
+                    description: Some(
+                        "SMPS regulator is ready.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Wuf",
             description: None,
             bit_size: 1,
             variants: &[
@@ -2268,756 +3099,28 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "B_0X1",
                     description: Some(
-                        "active_transmission is force to '1' whatever the HSIPLLRDY status.",
+                        "clear the interrupt.",
                     ),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Gmc",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "max 0.0 001: max 0.57 mA/V.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X2",
-                    description: Some(
-                        "max 0.78 mA/V.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B_0X3",
-                    description: Some(
-                        "max 1.13 mA/V (Default).",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "B_0X4",
-                    description: Some(
-                        "max 0.61 mA/V.",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "B_0X5",
-                    description: Some(
-                        "max 1.65 mA/V.",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "B_0X6",
-                    description: Some(
-                        "max 2.12 mA/V.",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "B_0X7",
-                    description: Some(
-                        "max 2.84 mA/V.",
-                    ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Hserdy",
+            name: "Wup",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "B_0X0",
                     description: Some(
-                        "HSE oscillator not ready.",
+                        "Detection on high level (rising edge).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B_0X1",
                     description: Some(
-                        "HSE oscillator ready.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hserdyif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "No clock ready interrupt caused by the HSE oscillator.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Clock ready interrupt caused by the HSE oscillator.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsesel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "HSI clock source is requested (default).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "HSE clock source is requested.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "HseselStatus",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "HSI clock source is requested (default).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "HSE clock source is requested.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsipllrdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "PLL is unlocked.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "PLL is locked.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsipllrdyif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "No clock ready interrupt caused by the HSI PLL64 MHz oscillator.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Clock ready interrupt caused by the HSI PLL64 MHz oscillator.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsirdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "internal RC 64 MHz oscillator not ready.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "internal RC 64 MHz oscillator ready.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsirdyif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "No clock ready interrupt caused by the HSI oscillator.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Clock ready interrupt caused by the HSI oscillator.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lcosel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "LCO output disabled, no clock on LCO.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "internal 32 KHz (LSI_LPMU) oscillator clock selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X2",
-                    description: Some(
-                        "internal 32 KHz (LSI) oscillator clock selected.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B_0X3",
-                    description: Some(
-                        "external 32 KHz (LSE) oscillator clock selected.",
-                    ),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Lockuprstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "No lockup reset occurred.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "lockup reset occurred.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lpuclksel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "16MHz peripheral clock (default).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "LSE clock.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lpurstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "no LPUART reset release event occurred.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "LPUART reset release event occurred.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsebyp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "LSE oscillator bypass OFF.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "LSE oscillator bypass ON.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lserdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "LSE oscillator not ready.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "LSE oscillator ready.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lserdyif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "No clock ready interrupt caused by the LSE oscillator.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Clock ready interrupt caused by the LSE oscillator.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsirdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "LSI RC oscillator not ready.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "LSI RC oscillator ready.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsirdyif",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "No clock ready interrupt caused by the internal RC 32 KHz oscillator.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Clock ready interrupt caused by the internal RC 32 kHz oscillator.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mcosel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "MCO output disabled, no clock on MCO.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "system clock selected.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X2",
-                    description: Some(
-                        "na.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B_0X3",
-                    description: Some(
-                        "internal RC 64 MHz (HSI) oscillator clock selected.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "B_0X4",
-                    description: Some(
-                        "external oscillator (HSE) clock selected.",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "B_0X5",
-                    description: Some(
-                        "internal RC 64 MHz (HSI) oscillator divided by 2048 and used as slow clock selected.",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "B_0X6",
-                    description: Some(
-                        "SMPS clock selected.",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "B_0X7",
-                    description: Some(
-                        "AUX ADC ANA clock selected.",
-                    ),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Padrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "No reset from pad occurred.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Reset from pad occurred.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Porrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "No POWER reset occurred.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "POWER reset occurred.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Request",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "To cancel an ongiong request - still possible until IRQ assertion.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "To update the system clock frequency.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rmvf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "Nothing done.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Reset the value of the reset flags.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Satrg",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "the bias current is confronted to a reference current with a ratio of 1/2.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "the bias current is confronted to a reference current with a ratio of 3/4.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Sftrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "No software reset occurred.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Software reset occurred.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Smpsdiv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "div 2 when ANADIV=2 or 4 (default ).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "div 4 when ANADIV=1 or 2.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Smpsinv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "SMPS clock not inverted (default value).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "SMPS clock inverted (for debug).",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Spiisclksel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "16MHz peripheral clock (default).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "32MHz peripheral clock.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Status",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "IDLE no switch requested.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "ONGOING clock frequency switch is ongoing.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B_0X2",
-                    description: Some(
-                        "DONE clock frequency switch done.",
-                    ),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Stophsi",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "HSI is enabled (default).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "disable HSI is requested.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Wdgrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B_0X0",
-                    description: Some(
-                        "No watchdog reset occurred.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B_0X1",
-                    description: Some(
-                        "Watchdog reset occurred.",
+                        "Detection on low level (falling edge).",
                     ),
                     value: 1,
                 },

@@ -262,6 +262,11 @@
         {
           "name": "ADC1",
           "address": 1090543616,
+          "registers": {
+            "kind": "adc",
+            "version": "wb0",
+            "block": "ADC"
+          },
           "pins": [
             {
               "pin": "PB0",
@@ -345,7 +350,7 @@
           "address": 1210056704,
           "registers": {
             "kind": "crc",
-            "version": "v2",
+            "version": "v3",
             "block": "CRC"
           },
           "rcc": {
@@ -426,11 +431,26 @@
           }
         },
         {
+          "name": "FLASH",
+          "address": 1073745920,
+          "registers": {
+            "kind": "flash",
+            "version": "wb0",
+            "block": "FLASH"
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "FLASH"
+            }
+          ]
+        },
+        {
           "name": "GPIOA",
           "address": 1207959552,
           "registers": {
             "kind": "gpio",
-            "version": "v1",
+            "version": "v2",
             "block": "GPIO"
           },
           "rcc": {
@@ -451,7 +471,7 @@
           "address": 1209008128,
           "registers": {
             "kind": "gpio",
-            "version": "v1",
+            "version": "v2",
             "block": "GPIO"
           },
           "rcc": {
@@ -698,7 +718,7 @@
           "address": 1213202432,
           "registers": {
             "kind": "pwr",
-            "version": "wb",
+            "version": "wb0",
             "block": "PWR"
           },
           "pins": [
@@ -797,6 +817,11 @@
         {
           "name": "RADIO",
           "address": 1610612736,
+          "registers": {
+            "kind": "radio",
+            "version": "v1",
+            "block": "RADIO"
+          },
           "pins": [
             {
               "pin": "PA10",
@@ -894,6 +919,15 @@
               "register": "AHBRSTR",
               "field": "RNGRST"
             }
+          }
+        },
+        {
+          "name": "RRM",
+          "address": 1610617856,
+          "registers": {
+            "kind": "rrm",
+            "version": "v1",
+            "block": "RRM"
           }
         },
         {
@@ -1201,7 +1235,7 @@
           "address": 1073741824,
           "registers": {
             "kind": "syscfg",
-            "version": "wb",
+            "version": "wb0",
             "block": "SYSCFG"
           },
           "rcc": {

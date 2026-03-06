@@ -124,6 +124,7 @@ mod _vectors {
     ];
 }
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4000_0000usize as _) };
+pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4000_1000usize as _) };
 pub const TIM2: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_2000usize as _) };
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4000_4000usize as _) };
@@ -132,7 +133,7 @@ pub const TIM17: timer::Tim1chCmp = unsafe { timer::Tim1chCmp::from_ptr(0x4000_6
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4100_0000usize as _) };
 pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4100_4000usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4100_5000usize as _) };
-pub const ADC1: *mut () = 0x4100_6000usize as _;
+pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4100_6000usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4100_7000usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4800_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4810_0000usize as _) };
@@ -143,7 +144,8 @@ pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4850_0000usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4860_0000usize as _) };
 pub const DMA1: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4870_0000usize as _) };
 pub const DMAMUX1: dmamux::Dmamux = unsafe { dmamux::Dmamux::from_ptr(0x4880_0000usize as _) };
-pub const RADIO: *mut () = 0x6000_0000usize as _;
+pub const RADIO: radio::Radio = unsafe { radio::Radio::from_ptr(0x6000_0000usize as _) };
+pub const RRM: rrm::Rrm = unsafe { rrm::Rrm::from_ptr(0x6000_1400usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 2;
@@ -151,13 +153,17 @@ pub const NVIC_PRIO_BITS: u8 = 2;
 pub use cortex_m_rt::interrupt;
 #[cfg(feature = "rt")]
 pub use Interrupt as interrupt;
+#[path = "../../peripherals/adc_wb0.rs"]
+pub mod adc;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
-#[path = "../../peripherals/crc_v2.rs"]
+#[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/dmamux_v1.rs"]
 pub mod dmamux;
-#[path = "../../peripherals/gpio_v1.rs"]
+#[path = "../../peripherals/flash_wb0.rs"]
+pub mod flash;
+#[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
 #[path = "../../peripherals/i2c_v1.rs"]
 pub mod i2c;
@@ -165,17 +171,21 @@ pub mod i2c;
 pub mod iwdg;
 #[path = "../../peripherals/pka_v1c.rs"]
 pub mod pka;
-#[path = "../../peripherals/pwr_wb.rs"]
+#[path = "../../peripherals/pwr_wb0.rs"]
 pub mod pwr;
+#[path = "../../peripherals/radio_v1.rs"]
+pub mod radio;
 #[path = "../../peripherals/rcc_wb0.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rng_v1.rs"]
 pub mod rng;
+#[path = "../../peripherals/rrm_v1.rs"]
+pub mod rrm;
 #[path = "../../peripherals/rtc_v3_base.rs"]
 pub mod rtc;
 #[path = "../../peripherals/spi_v3.rs"]
 pub mod spi;
-#[path = "../../peripherals/syscfg_wb.rs"]
+#[path = "../../peripherals/syscfg_wb0.rs"]
 pub mod syscfg;
 #[path = "../../peripherals/timer_v3.rs"]
 pub mod timer;

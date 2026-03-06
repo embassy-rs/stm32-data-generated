@@ -663,7 +663,7 @@ pub mod regs {
         #[inline(always)]
         pub const fn chsel(&self, n: usize) -> bool {
             assert!(n < 22usize);
-            let offs = 0usize + n * 0usize;
+            let offs = 0usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
@@ -671,7 +671,7 @@ pub mod regs {
         #[inline(always)]
         pub fn set_chsel(&mut self, n: usize, val: bool) {
             assert!(n < 22usize);
-            let offs = 0usize + n * 0usize;
+            let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
@@ -724,7 +724,7 @@ pub mod regs {
         #[inline(always)]
         pub const fn sq(&self, n: usize) -> u8 {
             assert!(n < 8usize);
-            let offs = 0usize + n * 0usize;
+            let offs = 0usize + n * 4usize;
             let val = (self.0 >> offs) & 0x0f;
             val as u8
         }
@@ -732,7 +732,7 @@ pub mod regs {
         #[inline(always)]
         pub fn set_sq(&mut self, n: usize, val: u8) {
             assert!(n < 8usize);
-            let offs = 0usize + n * 0usize;
+            let offs = 0usize + n * 4usize;
             self.0 = (self.0 & !(0x0f << offs)) | (((val as u32) & 0x0f) << offs);
         }
     }
@@ -1211,7 +1211,7 @@ pub mod regs {
         #[inline(always)]
         pub const fn smpsel(&self, n: usize) -> bool {
             assert!(n < 22usize);
-            let offs = 8usize + n * 0usize;
+            let offs = 8usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
@@ -1219,7 +1219,7 @@ pub mod regs {
         #[inline(always)]
         pub fn set_smpsel(&mut self, n: usize, val: bool) {
             assert!(n < 22usize);
-            let offs = 8usize + n * 0usize;
+            let offs = 8usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }

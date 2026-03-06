@@ -340,7 +340,7 @@
         "bit_size": 1,
         "array": {
           "len": 22,
-          "stride": 0
+          "stride": 1
         }
       }
     ]
@@ -355,7 +355,7 @@
         "bit_size": 4,
         "array": {
           "len": 8,
-          "stride": 0
+          "stride": 4
         }
       }
     ]
@@ -567,7 +567,7 @@
         "bit_size": 1,
         "array": {
           "len": 22,
-          "stride": 0
+          "stride": 1
         }
       }
     ]

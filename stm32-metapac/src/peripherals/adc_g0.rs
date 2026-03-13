@@ -1483,18 +1483,20 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Extsel {
-        #[doc = "Timer 1 TRGO event"]
-        TIM1_TRGO = 0x0,
+        #[doc = "Timer 1 TRGO2 event"]
+        TIM1_TRGO2 = 0x0,
         #[doc = "Timer 1 CC4 event"]
         TIM1_CC4 = 0x01,
         #[doc = "Timer 2 TRGO event"]
         TIM2_TRGO = 0x02,
-        #[doc = "Timer 2 CH4 event"]
-        TIM2_CH4 = 0x03,
-        _RESERVED_4 = 0x04,
-        #[doc = "Timer 2 CH3 event"]
-        TIM2_CH3 = 0x05,
-        _RESERVED_6 = 0x06,
+        #[doc = "Timer 3 TRGO event"]
+        TIM3_TRGO = 0x03,
+        #[doc = "Timer 15 TRGO event"]
+        TIM15_TRGO = 0x04,
+        #[doc = "Timer 6 TRGO event"]
+        TIM6_TRGO = 0x05,
+        #[doc = "Timer 4 TRGO event"]
+        TIM4_TRGO = 0x06,
         #[doc = "EXTI line 11 event"]
         EXTI_LINE11 = 0x07,
     }

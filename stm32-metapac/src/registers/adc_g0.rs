@@ -925,8 +925,8 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "TIM1_TRGO",
-                    description: Some("Timer 1 TRGO event"),
+                    name: "TIM1_TRGO2",
+                    description: Some("Timer 1 TRGO2 event"),
                     value: 0,
                 },
                 EnumVariant {
@@ -940,14 +940,24 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "TIM2_CH4",
-                    description: Some("Timer 2 CH4 event"),
+                    name: "TIM3_TRGO",
+                    description: Some("Timer 3 TRGO event"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "TIM2_CH3",
-                    description: Some("Timer 2 CH3 event"),
+                    name: "TIM15_TRGO",
+                    description: Some("Timer 15 TRGO event"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "TIM6_TRGO",
+                    description: Some("Timer 6 TRGO event"),
                     value: 5,
+                },
+                EnumVariant {
+                    name: "TIM4_TRGO",
+                    description: Some("Timer 4 TRGO event"),
+                    value: 6,
                 },
                 EnumVariant {
                     name: "EXTI_LINE11",

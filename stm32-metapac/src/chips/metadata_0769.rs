@@ -3394,12 +3394,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "PSSI",
         address: 0x48026400,
-        registers: Some(PeripheralRegisters {
-            kind: "pssi",
-            version: "v1",
-            block: "PSSI",
-            ir: &pssi::REGISTERS,
-        }),
+        registers: None,
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK5",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -8315,8 +8310,6 @@ pub mod ltdc;
 pub mod mdios;
 #[path = "../registers/otg_v1.rs"]
 pub mod otg;
-#[path = "../registers/pssi_v1.rs"]
-pub mod pssi;
 #[path = "../registers/pwr_n6.rs"]
 pub mod pwr;
 #[path = "../registers/ramcfg_h5.rs"]

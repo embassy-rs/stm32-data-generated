@@ -827,7 +827,7 @@ pub mod lptim;
 pub mod mdios;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
-#[path = "../../peripherals/pssi_v1.rs"]
+#[path = "../../peripherals/pssi_v1_h7rs.rs"]
 pub mod pssi;
 #[path = "../../peripherals/pwr_h7rs.rs"]
 pub mod pwr;

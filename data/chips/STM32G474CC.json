@@ -2579,12 +2579,20 @@
             },
             {
               "pin": "PA0",
+              "signal": "INM1"
+            },
+            {
+              "pin": "PA0",
               "signal": "OUT",
               "af": 8
             },
             {
               "pin": "PA1",
               "signal": "INP"
+            },
+            {
+              "pin": "PA1",
+              "signal": "INP0"
             },
             {
               "pin": "PA11",
@@ -2596,6 +2604,10 @@
               "signal": "INM"
             },
             {
+              "pin": "PA4",
+              "signal": "INM0"
+            },
+            {
               "pin": "PA6",
               "signal": "OUT",
               "af": 8
@@ -2603,6 +2615,10 @@
             {
               "pin": "PB1",
               "signal": "INP"
+            },
+            {
+              "pin": "PB1",
+              "signal": "INP1"
             },
             {
               "pin": "PB8",
@@ -2645,6 +2661,10 @@
             },
             {
               "pin": "PA2",
+              "signal": "INM1"
+            },
+            {
+              "pin": "PA2",
               "signal": "OUT",
               "af": 8
             },
@@ -2653,12 +2673,24 @@
               "signal": "INP"
             },
             {
+              "pin": "PA3",
+              "signal": "INP1"
+            },
+            {
               "pin": "PA5",
               "signal": "INM"
             },
             {
+              "pin": "PA5",
+              "signal": "INM0"
+            },
+            {
               "pin": "PA7",
               "signal": "INP"
+            },
+            {
+              "pin": "PA7",
+              "signal": "INP0"
             },
             {
               "pin": "PA7",
@@ -2700,6 +2732,10 @@
               "signal": "INP"
             },
             {
+              "pin": "PA0",
+              "signal": "INP0"
+            },
+            {
               "pin": "PB15",
               "signal": "OUT",
               "af": 3
@@ -2712,6 +2748,10 @@
             {
               "pin": "PF1",
               "signal": "INM"
+            },
+            {
+              "pin": "PF1",
+              "signal": "INM0"
             }
           ],
           "interrupts": [
@@ -2743,6 +2783,10 @@
               "signal": "INP"
             },
             {
+              "pin": "PB0",
+              "signal": "INP0"
+            },
+            {
               "pin": "PB1",
               "signal": "OUT",
               "af": 8
@@ -2755,6 +2799,10 @@
             {
               "pin": "PB2",
               "signal": "INM"
+            },
+            {
+              "pin": "PB2",
+              "signal": "INM1"
             },
             {
               "pin": "PB6",
@@ -2796,8 +2844,16 @@
               "signal": "INM"
             },
             {
+              "pin": "PB10",
+              "signal": "INM0"
+            },
+            {
               "pin": "PB13",
               "signal": "INP"
+            },
+            {
+              "pin": "PB13",
+              "signal": "INP0"
             }
           ],
           "interrupts": [
@@ -2834,8 +2890,16 @@
               "signal": "INP"
             },
             {
+              "pin": "PB11",
+              "signal": "INP0"
+            },
+            {
               "pin": "PB15",
               "signal": "INM"
+            },
+            {
+              "pin": "PB15",
+              "signal": "INM1"
             },
             {
               "pin": "PC6",
@@ -2877,8 +2941,16 @@
               "signal": "INM"
             },
             {
+              "pin": "PB12",
+              "signal": "INM1"
+            },
+            {
               "pin": "PB14",
               "signal": "INP"
+            },
+            {
+              "pin": "PB14",
+              "signal": "INP0"
             }
           ],
           "interrupts": [

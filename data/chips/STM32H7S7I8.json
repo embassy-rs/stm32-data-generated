@@ -5869,7 +5869,7 @@
           "address": 1207960576,
           "registers": {
             "kind": "pssi",
-            "version": "v1",
+            "version": "v1_h7rs",
             "block": "PSSI"
           },
           "rcc": {

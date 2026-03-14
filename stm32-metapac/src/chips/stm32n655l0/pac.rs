@@ -944,7 +944,7 @@ pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x4802_1000usize
 pub const JPEG: jpeg::Jpeg = unsafe { jpeg::Jpeg::from_ptr(0x4802_3000usize as _) };
 pub const FMC: fmc::Fmc = unsafe { fmc::Fmc::from_ptr(0x4802_4000usize as _) };
 pub const XSPI1: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x4802_5000usize as _) };
-pub const PSSI: pssi::Pssi = unsafe { pssi::Pssi::from_ptr(0x4802_6400usize as _) };
+pub const PSSI: *mut () = 0x4802_6400usize as _;
 pub const SDMMC2: *mut () = 0x4802_6800usize as _;
 pub const SDMMC1: *mut () = 0x4802_7000usize as _;
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4802_8400usize as _) };
@@ -1008,8 +1008,6 @@ pub mod ltdc;
 pub mod mdios;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
-#[path = "../../peripherals/pssi_v1.rs"]
-pub mod pssi;
 #[path = "../../peripherals/pwr_n6.rs"]
 pub mod pwr;
 #[path = "../../peripherals/ramcfg_h5.rs"]

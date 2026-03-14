@@ -3707,7 +3707,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x48000400,
         registers: Some(PeripheralRegisters {
             kind: "pssi",
-            version: "v1",
+            version: "v1_h7rs",
             block: "PSSI",
             ir: &pssi::REGISTERS,
         }),
@@ -9307,7 +9307,7 @@ pub mod ltdc;
 pub mod mdios;
 #[path = "../registers/otg_v1.rs"]
 pub mod otg;
-#[path = "../registers/pssi_v1.rs"]
+#[path = "../registers/pssi_v1_h7rs.rs"]
 pub mod pssi;
 #[path = "../registers/pwr_h7rs.rs"]
 pub mod pwr;

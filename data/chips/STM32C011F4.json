@@ -377,6 +377,24 @@
               "dmamux": "DMAMUX1",
               "request": 5
             }
+          ],
+          "triggers": [
+            {
+              "signal": "ADC_EXT_TRG0",
+              "source": "TIM1_TRGO2"
+            },
+            {
+              "signal": "ADC_EXT_TRG1",
+              "source": "TIM1_CC4"
+            },
+            {
+              "signal": "ADC_EXT_TRG3",
+              "source": "TIM3_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG7",
+              "source": "EXTI11_TRG"
+            }
           ]
         },
         {
@@ -386,7 +404,25 @@
             "kind": "adccommon",
             "version": "c0",
             "block": "ADC_COMMON"
-          }
+          },
+          "triggers": [
+            {
+              "signal": "ADC_EXT_TRG0",
+              "source": "TIM1_TRGO2"
+            },
+            {
+              "signal": "ADC_EXT_TRG1",
+              "source": "TIM1_CC4"
+            },
+            {
+              "signal": "ADC_EXT_TRG3",
+              "source": "TIM3_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG7",
+              "source": "EXTI11_TRG"
+            }
+          ]
         },
         {
           "name": "CRC",

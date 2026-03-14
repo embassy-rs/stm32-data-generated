@@ -5240,11 +5240,6 @@
         {
           "name": "PSSI",
           "address": 1208116224,
-          "registers": {
-            "kind": "pssi",
-            "version": "v1",
-            "block": "PSSI"
-          },
           "rcc": {
             "bus_clock": "HCLK5",
             "kernel_clock": {

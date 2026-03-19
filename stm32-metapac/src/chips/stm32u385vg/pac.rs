@@ -530,6 +530,8 @@ pub const SAES: *mut () = 0x420c_0c00usize as _;
 pub const PKA: *mut () = 0x420c_2000usize as _;
 pub const CCB: *mut () = 0x420c_7c00usize as _;
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8000usize as _) };
+pub const DLYB_SDMMC1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_8400usize as _) };
+pub const DLYB_OCTOSPI1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_f000usize as _) };
 pub const OCTOSPI1: *mut () = 0x420d_1400usize as _;
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_4000usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -555,6 +557,8 @@ pub mod crs;
 pub mod dac;
 #[path = "../../peripherals/dbgmcu_u3.rs"]
 pub mod dbgmcu;
+#[path = "../../peripherals/dlyb_v1.rs"]
+pub mod dlyb;
 #[path = "../../peripherals/exti_u3.rs"]
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v1.rs"]

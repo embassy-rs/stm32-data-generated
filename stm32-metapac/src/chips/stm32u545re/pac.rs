@@ -586,6 +586,8 @@ pub const SAES: saes::Saes = unsafe { saes::Saes::from_ptr(0x420c_0c00usize as _
 pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x420c_2000usize as _) };
 pub const OTFDEC1: otfdec::Otfdec = unsafe { otfdec::Otfdec::from_ptr(0x420c_5000usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8000usize as _) };
+pub const DLYB_SDMMC1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_8400usize as _) };
+pub const DLYB_OCTOSPI1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_f000usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x420d_1400usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4600_0400usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4600_2000usize as _) };
@@ -639,6 +641,8 @@ pub mod dac;
 pub mod dbgmcu;
 #[path = "../../peripherals/dcache_v1.rs"]
 pub mod dcache;
+#[path = "../../peripherals/dlyb_v1.rs"]
+pub mod dlyb;
 #[path = "../../peripherals/exti_u5.rs"]
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v1.rs"]

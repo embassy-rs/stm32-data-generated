@@ -1547,6 +1547,54 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "DLYB_QUADSPI",
+        address: 0x52006000,
+        registers: Some(PeripheralRegisters {
+            kind: "dlyb",
+            version: "v1",
+            block: "DLYB",
+            ir: &dlyb::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "DLYB_SDMMC1",
+        address: 0x52008000,
+        registers: Some(PeripheralRegisters {
+            kind: "dlyb",
+            version: "v1",
+            block: "DLYB",
+            ir: &dlyb::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "DLYB_SDMMC2",
+        address: 0x48022800,
+        registers: Some(PeripheralRegisters {
+            kind: "dlyb",
+            version: "v1",
+            block: "DLYB",
+            ir: &dlyb::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
         name: "DMA1",
         address: 0x40020000,
         registers: Some(PeripheralRegisters {
@@ -11331,6 +11379,8 @@ pub mod dac;
 pub mod dbgmcu;
 #[path = "../registers/dcmi_v1.rs"]
 pub mod dcmi;
+#[path = "../registers/dlyb_v1.rs"]
+pub mod dlyb;
 #[path = "../registers/dma_v1.rs"]
 pub mod dma;
 #[path = "../registers/dma2d_v2.rs"]

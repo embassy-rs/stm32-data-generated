@@ -1102,6 +1102,70 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "DLYB_OCTOSPI1",
+        address: 0x420cf000,
+        registers: Some(PeripheralRegisters {
+            kind: "dlyb",
+            version: "v1",
+            block: "DLYB",
+            ir: &dlyb::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "DLYB_OCTOSPI2",
+        address: 0x420cf400,
+        registers: Some(PeripheralRegisters {
+            kind: "dlyb",
+            version: "v1",
+            block: "DLYB",
+            ir: &dlyb::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "DLYB_SDMMC1",
+        address: 0x420c8400,
+        registers: Some(PeripheralRegisters {
+            kind: "dlyb",
+            version: "v1",
+            block: "DLYB",
+            ir: &dlyb::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "DLYB_SDMMC2",
+        address: 0x420c8800,
+        registers: Some(PeripheralRegisters {
+            kind: "dlyb",
+            version: "v1",
+            block: "DLYB",
+            ir: &dlyb::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
         name: "DMA2D",
         address: 0x4002b000,
         registers: Some(PeripheralRegisters {
@@ -9216,6 +9280,8 @@ pub mod dbgmcu;
 pub mod dcache;
 #[path = "../registers/dcmi_v1.rs"]
 pub mod dcmi;
+#[path = "../registers/dlyb_v1.rs"]
+pub mod dlyb;
 #[path = "../registers/dma2d_v2.rs"]
 pub mod dma2d;
 #[path = "../registers/exti_u5.rs"]

@@ -398,6 +398,38 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "DLYB_OCTOSPI1",
+        address: 0x4600f000,
+        registers: Some(PeripheralRegisters {
+            kind: "dlyb",
+            version: "v1",
+            block: "DLYB",
+            ir: &dlyb::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "DLYB_SDMMC1",
+        address: 0x46008400,
+        registers: Some(PeripheralRegisters {
+            kind: "dlyb",
+            version: "v1",
+            block: "DLYB",
+            ir: &dlyb::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
         name: "DTS",
         address: 0x40008c00,
         registers: Some(PeripheralRegisters {
@@ -5275,6 +5307,8 @@ pub mod crs;
 pub mod dac;
 #[path = "../registers/dbgmcu_h5.rs"]
 pub mod dbgmcu;
+#[path = "../registers/dlyb_v1.rs"]
+pub mod dlyb;
 #[path = "../registers/dts_v1.rs"]
 pub mod dts;
 #[path = "../registers/exti_h50.rs"]

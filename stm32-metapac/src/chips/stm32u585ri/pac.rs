@@ -630,7 +630,11 @@ pub const OCTOSPIM: octospim::Octospim = unsafe { octospim::Octospim::from_ptr(0
 pub const OTFDEC1: otfdec::Otfdec = unsafe { otfdec::Otfdec::from_ptr(0x420c_5000usize as _) };
 pub const OTFDEC2: otfdec::Otfdec = unsafe { otfdec::Otfdec::from_ptr(0x420c_5400usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8000usize as _) };
+pub const DLYB_SDMMC1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_8400usize as _) };
+pub const DLYB_SDMMC2: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_8800usize as _) };
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8c00usize as _) };
+pub const DLYB_OCTOSPI1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_f000usize as _) };
+pub const DLYB_OCTOSPI2: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_f400usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x420d_1400usize as _) };
 pub const OCTOSPI2: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x420d_2400usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4600_0400usize as _) };
@@ -689,6 +693,8 @@ pub mod dbgmcu;
 pub mod dcache;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
+#[path = "../../peripherals/dlyb_v1.rs"]
+pub mod dlyb;
 #[path = "../../peripherals/dma2d_v2.rs"]
 pub mod dma2d;
 #[path = "../../peripherals/exti_u5.rs"]

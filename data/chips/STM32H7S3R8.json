@@ -855,6 +855,24 @@
           }
         },
         {
+          "name": "DLYB_SDMMC1",
+          "address": 1375764480,
+          "registers": {
+            "kind": "dlyb",
+            "version": "v1",
+            "block": "DLYB"
+          }
+        },
+        {
+          "name": "DLYB_SDMMC2",
+          "address": 1207969792,
+          "registers": {
+            "kind": "dlyb",
+            "version": "v1",
+            "block": "DLYB"
+          }
+        },
+        {
           "name": "DMA2D",
           "address": 1375735808,
           "registers": {

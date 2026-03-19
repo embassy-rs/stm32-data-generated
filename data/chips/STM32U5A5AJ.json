@@ -3206,6 +3206,42 @@
           ]
         },
         {
+          "name": "DLYB_OCTOSPI1",
+          "address": 1108144128,
+          "registers": {
+            "kind": "dlyb",
+            "version": "v1",
+            "block": "DLYB"
+          }
+        },
+        {
+          "name": "DLYB_OCTOSPI2",
+          "address": 1108145152,
+          "registers": {
+            "kind": "dlyb",
+            "version": "v1",
+            "block": "DLYB"
+          }
+        },
+        {
+          "name": "DLYB_SDMMC1",
+          "address": 1108116480,
+          "registers": {
+            "kind": "dlyb",
+            "version": "v1",
+            "block": "DLYB"
+          }
+        },
+        {
+          "name": "DLYB_SDMMC2",
+          "address": 1108117504,
+          "registers": {
+            "kind": "dlyb",
+            "version": "v1",
+            "block": "DLYB"
+          }
+        },
+        {
           "name": "DMA2D",
           "address": 1073917952,
           "registers": {

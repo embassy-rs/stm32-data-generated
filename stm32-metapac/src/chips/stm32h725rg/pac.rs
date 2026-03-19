@@ -673,6 +673,7 @@ pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4802_0000usize as _
 pub const PSSI: pssi::Pssi = unsafe { pssi::Pssi::from_ptr(0x4802_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4802_1800usize as _) };
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4802_2400usize as _) };
+pub const DLYB_SDMMC2: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x4802_2800usize as _) };
 pub const FMAC: fmac::Fmac = unsafe { fmac::Fmac::from_ptr(0x4802_4000usize as _) };
 pub const CORDIC: cordic::Cordic = unsafe { cordic::Cordic::from_ptr(0x4802_4400usize as _) };
 pub const LTDC: ltdc::Ltdc = unsafe { ltdc::Ltdc::from_ptr(0x5000_1000usize as _) };
@@ -681,8 +682,11 @@ pub const MDMA: mdma::Mdma = unsafe { mdma::Mdma::from_ptr(0x5200_0000usize as _
 pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x5200_1000usize as _) };
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x5200_2000usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x5200_5000usize as _) };
+pub const DLYB_OCTOSPI1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x5200_6000usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x5200_7000usize as _) };
+pub const DLYB_SDMMC1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x5200_8000usize as _) };
 pub const OCTOSPI2: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x5200_a000usize as _) };
+pub const DLYB_OCTOSPI2: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x5200_b000usize as _) };
 pub const OCTOSPIM: octospim::Octospim = unsafe { octospim::Octospim::from_ptr(0x5200_b400usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x5800_0000usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x5800_0400usize as _) };
@@ -750,6 +754,8 @@ pub mod dac;
 pub mod dbgmcu;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
+#[path = "../../peripherals/dlyb_v1.rs"]
+pub mod dlyb;
 #[path = "../../peripherals/dma_v1.rs"]
 pub mod dma;
 #[path = "../../peripherals/dma2d_v2.rs"]

@@ -588,6 +588,8 @@ pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4402_2000usize as _
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x4402_4000usize as _) };
 pub const OTFDEC1: otfdec::Otfdec = unsafe { otfdec::Otfdec::from_ptr(0x4600_5000usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4600_8000usize as _) };
+pub const DLYB_SDMMC1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x4600_8400usize as _) };
+pub const DLYB_OCTOSPI1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x4600_f000usize as _) };
 pub const FMC: fmc::Fmc = unsafe { fmc::Fmc::from_ptr(0x4700_0400usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x4700_1400usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -619,6 +621,8 @@ pub mod dbgmcu;
 pub mod dcache;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
+#[path = "../../peripherals/dlyb_v1.rs"]
+pub mod dlyb;
 #[path = "../../peripherals/dts_v1.rs"]
 pub mod dts;
 #[path = "../../peripherals/exti_h5.rs"]

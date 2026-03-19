@@ -909,6 +909,24 @@
           ]
         },
         {
+          "name": "DLYB_OCTOSPI1",
+          "address": 1108144128,
+          "registers": {
+            "kind": "dlyb",
+            "version": "v1",
+            "block": "DLYB"
+          }
+        },
+        {
+          "name": "DLYB_SDMMC1",
+          "address": 1108116480,
+          "registers": {
+            "kind": "dlyb",
+            "version": "v1",
+            "block": "DLYB"
+          }
+        },
+        {
           "name": "EXTI",
           "address": 1174544384,
           "registers": {

@@ -699,6 +699,7 @@ pub const USB_OTG_FS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4008_0000usize as
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4802_0000usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4802_1800usize as _) };
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4802_2400usize as _) };
+pub const DLYB_SDMMC2: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x4802_2800usize as _) };
 pub const DSIHOST: dsihost::Dsihost = unsafe { dsihost::Dsihost::from_ptr(0x5000_0000usize as _) };
 pub const LTDC: ltdc::Ltdc = unsafe { ltdc::Ltdc::from_ptr(0x5000_1000usize as _) };
 pub const WWDG1: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x5000_3000usize as _) };
@@ -708,7 +709,9 @@ pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x5200_2000usize
 pub const JPEG: jpeg::Jpeg = unsafe { jpeg::Jpeg::from_ptr(0x5200_3000usize as _) };
 pub const FMC: fmc::Fmc = unsafe { fmc::Fmc::from_ptr(0x5200_4000usize as _) };
 pub const QUADSPI: quadspi::Quadspi = unsafe { quadspi::Quadspi::from_ptr(0x5200_5000usize as _) };
+pub const DLYB_QUADSPI: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x5200_6000usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x5200_7000usize as _) };
+pub const DLYB_SDMMC1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x5200_8000usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x5800_0000usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x5800_0400usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x5800_0c00usize as _) };
@@ -774,6 +777,8 @@ pub mod dac;
 pub mod dbgmcu;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
+#[path = "../../peripherals/dlyb_v1.rs"]
+pub mod dlyb;
 #[path = "../../peripherals/dma_v1.rs"]
 pub mod dma;
 #[path = "../../peripherals/dma2d_v2.rs"]

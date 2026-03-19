@@ -1187,6 +1187,24 @@
           ]
         },
         {
+          "name": "DLYB_OCTOSPI1",
+          "address": 1174466560,
+          "registers": {
+            "kind": "dlyb",
+            "version": "v1",
+            "block": "DLYB"
+          }
+        },
+        {
+          "name": "DLYB_SDMMC1",
+          "address": 1174438912,
+          "registers": {
+            "kind": "dlyb",
+            "version": "v1",
+            "block": "DLYB"
+          }
+        },
+        {
           "name": "DTS",
           "address": 1073777664,
           "registers": {

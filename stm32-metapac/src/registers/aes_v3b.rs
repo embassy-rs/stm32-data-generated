@@ -226,6 +226,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
+                    name: "ccf",
+                    description: Some("Computation complete flag clear"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "rweif",
                     description: Some("Read or write error interrupt flag clear"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),

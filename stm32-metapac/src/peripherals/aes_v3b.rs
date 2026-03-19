@@ -244,6 +244,17 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Icr(pub u32);
     impl Icr {
+        #[doc = "Computation complete flag clear"]
+        #[inline(always)]
+        pub const fn ccf(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Computation complete flag clear"]
+        #[inline(always)]
+        pub fn set_ccf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
         #[doc = "Read or write error interrupt flag clear"]
         #[inline(always)]
         pub const fn rweif(&self) -> bool {
@@ -276,6 +287,7 @@ pub mod regs {
     impl core::fmt::Debug for Icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Icr")
+                .field("ccf", &self.ccf())
                 .field("rweif", &self.rweif())
                 .field("keif", &self.keif())
                 .finish()
@@ -286,7 +298,8 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Icr {{ rweif: {=bool:?}, keif: {=bool:?} }}",
+                "Icr {{ ccf: {=bool:?}, rweif: {=bool:?}, keif: {=bool:?} }}",
+                self.ccf(),
                 self.rweif(),
                 self.keif()
             )

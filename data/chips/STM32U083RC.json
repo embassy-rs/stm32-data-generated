@@ -3000,7 +3000,7 @@
           "pins": [
             {
               "pin": "PA10",
-              "signal": "MCO2",
+              "signal": "MCO_2",
               "af": 3
             },
             {
@@ -3014,7 +3014,7 @@
             },
             {
               "pin": "PA8",
-              "signal": "MCO2",
+              "signal": "MCO_2",
               "af": 3
             },
             {
@@ -3042,7 +3042,7 @@
             },
             {
               "pin": "PC2",
-              "signal": "MCO2",
+              "signal": "MCO_2",
               "af": 0
             },
             {

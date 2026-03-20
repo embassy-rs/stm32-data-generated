@@ -2099,7 +2099,7 @@
           "pins": [
             {
               "pin": "PA10",
-              "signal": "MCO2",
+              "signal": "MCO_2",
               "af": 11
             },
             {
@@ -2113,7 +2113,7 @@
             },
             {
               "pin": "PA8",
-              "signal": "MCO2",
+              "signal": "MCO_2",
               "af": 11
             },
             {

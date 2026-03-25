@@ -378,7 +378,7 @@ pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const SAES: saes::Saes = unsafe { saes::Saes::from_ptr(0x420c_0c00usize as _) };
-pub const HSEM: *mut () = 0x420c_1c00usize as _;
+pub const HSEM: hsem::Hsem = unsafe { hsem::Hsem::from_ptr(0x420c_1c00usize as _) };
 pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x420c_2000usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4600_0400usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4600_2000usize as _) };
@@ -428,6 +428,8 @@ pub mod gpio;
 pub mod gtzc;
 #[path = "../../peripherals/hash_v4.rs"]
 pub mod hash;
+#[path = "../../peripherals/hsem_wba.rs"]
+pub mod hsem;
 #[path = "../../peripherals/i2c_v2.rs"]
 pub mod i2c;
 #[path = "../../peripherals/icache_v1_4crr.rs"]

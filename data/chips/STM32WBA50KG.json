@@ -268,7 +268,8 @@
             "reset": {
               "register": "AHB4RSTR",
               "field": "ADC4RST"
-            }
+            },
+            "stop_mode": "Stop2"
           },
           "pins": [
             {
@@ -679,6 +680,11 @@
         {
           "name": "HSEM",
           "address": 1108089856,
+          "registers": {
+            "kind": "hsem",
+            "version": "wba",
+            "block": "HSEM"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": "HCLK2",
@@ -719,7 +725,8 @@
             "reset": {
               "register": "APB7RSTR",
               "field": "I2C3RST"
-            }
+            },
+            "stop_mode": "Standby"
           },
           "pins": [
             {
@@ -818,7 +825,7 @@
               "register": "APB7RSTR",
               "field": "LPTIM1RST"
             },
-            "stop_mode": "Stop2"
+            "stop_mode": "Standby"
           },
           "pins": [
             {
@@ -893,7 +900,7 @@
               "register": "APB7RSTR",
               "field": "LPUART1RST"
             },
-            "stop_mode": "Stop2"
+            "stop_mode": "Standby"
           },
           "pins": [
             {
@@ -1199,7 +1206,8 @@
             "reset": {
               "register": "APB7RSTR",
               "field": "SPI3RST"
-            }
+            },
+            "stop_mode": "Standby"
           },
           "pins": [
             {
@@ -1759,7 +1767,8 @@
             "reset": {
               "register": "APB2RSTR",
               "field": "USART1RST"
-            }
+            },
+            "stop_mode": "Stop2"
           },
           "pins": [
             {

@@ -7595,7 +7595,7 @@ pub mod vals {
         #[doc = "PLL3 “P” (pll3_p_ck) selected"]
         PLL3_P = 0x0,
         #[doc = "DSI PHY PLL output selected (formerly called DCLK, renamed to DSI_PHY to match other chip families)"]
-        DSI_PHY = 0x01,
+        DSI_PHY_DIV_8 = 0x01,
     }
     impl Dsisel {
         #[inline(always)]

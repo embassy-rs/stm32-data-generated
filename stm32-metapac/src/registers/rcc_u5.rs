@@ -8660,7 +8660,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DSI_PHY",
+                    name: "DSI_PHY_DIV_8",
                     description: Some(
                         "DSI PHY PLL output selected (formerly called DCLK, renamed to DSI_PHY to match other chip families)",
                     ),

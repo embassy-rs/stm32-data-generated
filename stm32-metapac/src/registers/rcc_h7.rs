@@ -12445,7 +12445,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DSI_PHY",
+                    name: "DSI_PHY_DIV_8",
                     description: Some(
                         "DSI-PHY used as DSI byte lane clock source (usual case)",
                     ),

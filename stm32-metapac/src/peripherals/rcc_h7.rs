@@ -11097,7 +11097,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dsisel {
         #[doc = "DSI-PHY used as DSI byte lane clock source (usual case)"]
-        DSI_PHY = 0x0,
+        DSI_PHY_DIV_8 = 0x0,
         #[doc = "PLL2_Q used as DSI byte lane clock source, used in case DSI PLL and DSI-PHY are off (low power mode)"]
         PLL2_Q = 0x01,
     }

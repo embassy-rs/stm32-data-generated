@@ -33,23 +33,27 @@ impl Hsem {
     }
     #[doc = "HSEM interrupt enable register."]
     #[inline(always)]
-    pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
+    pub const fn ier(self, n: usize) -> crate::common::Reg<regs::Ier, crate::common::RW> {
+        assert!(n < 1usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize + n * 16usize) as _) }
     }
     #[doc = "HSEM interrupt clear register."]
     #[inline(always)]
-    pub const fn icr(self) -> crate::common::Reg<regs::Icr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
+    pub const fn icr(self, n: usize) -> crate::common::Reg<regs::Icr, crate::common::RW> {
+        assert!(n < 1usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize + n * 16usize) as _) }
     }
     #[doc = "HSEM interrupt status register."]
     #[inline(always)]
-    pub const fn isr(self) -> crate::common::Reg<regs::Isr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
+    pub const fn isr(self, n: usize) -> crate::common::Reg<regs::Isr, crate::common::R> {
+        assert!(n < 1usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize + n * 16usize) as _) }
     }
     #[doc = "HSEM masked interrupt status register."]
     #[inline(always)]
-    pub const fn misr(self) -> crate::common::Reg<regs::Misr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x010cusize) as _) }
+    pub const fn misr(self, n: usize) -> crate::common::Reg<regs::Misr, crate::common::R> {
+        assert!(n < 1usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x010cusize + n * 16usize) as _) }
     }
     #[doc = "HSEM secure interrupt enable register."]
     #[inline(always)]
@@ -98,15 +102,15 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr(pub u32);
     impl Cr {
-        #[doc = "LOCKID of semaphores to be cleared."]
+        #[doc = "COREID of semaphores to be cleared."]
         #[inline(always)]
-        pub const fn lockid(&self) -> u8 {
+        pub const fn coreid(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
             val as u8
         }
-        #[doc = "LOCKID of semaphores to be cleared."]
+        #[doc = "COREID of semaphores to be cleared."]
         #[inline(always)]
-        pub fn set_lockid(&mut self, val: u8) {
+        pub fn set_coreid(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
         #[doc = "SEC value of semaphores to be cleared."]
@@ -152,7 +156,7 @@ pub mod regs {
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
-                .field("lockid", &self.lockid())
+                .field("coreid", &self.coreid())
                 .field("sec", &self.sec())
                 .field("priv_", &self.priv_())
                 .field("key", &self.key())
@@ -164,8 +168,8 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Cr {{ lockid: {=u8:?}, sec: {=bool:?}, priv_: {=bool:?}, key: {=u16:?} }}",
-                self.lockid(),
+                "Cr {{ coreid: {=u8:?}, sec: {=bool:?}, priv_: {=bool:?}, key: {=u16:?} }}",
+                self.coreid(),
                 self.sec(),
                 self.priv_(),
                 self.key()
@@ -497,15 +501,15 @@ pub mod regs {
         pub fn set_procid(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
-        #[doc = "Semaphore lock ID."]
+        #[doc = "Semaphore core ID."]
         #[inline(always)]
-        pub const fn lockid(&self) -> u8 {
+        pub const fn coreid(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
             val as u8
         }
-        #[doc = "Semaphore lock ID."]
+        #[doc = "Semaphore core ID."]
         #[inline(always)]
-        pub fn set_lockid(&mut self, val: u8) {
+        pub fn set_coreid(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
         #[doc = "Semaphore secure bit."]
@@ -552,7 +556,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("R")
                 .field("procid", &self.procid())
-                .field("lockid", &self.lockid())
+                .field("coreid", &self.coreid())
                 .field("sec", &self.sec())
                 .field("priv_", &self.priv_())
                 .field("lock", &self.lock())
@@ -564,9 +568,9 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "R {{ procid: {=u8:?}, lockid: {=u8:?}, sec: {=bool:?}, priv_: {=bool:?}, lock: {=bool:?} }}",
+                "R {{ procid: {=u8:?}, coreid: {=u8:?}, sec: {=bool:?}, priv_: {=bool:?}, lock: {=bool:?} }}",
                 self.procid(),
-                self.lockid(),
+                self.coreid(),
                 self.sec(),
                 self.priv_(),
                 self.lock()
@@ -589,15 +593,15 @@ pub mod regs {
         pub fn set_procid(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
-        #[doc = "Semaphore lock ID."]
+        #[doc = "Semaphore core ID."]
         #[inline(always)]
-        pub const fn lockid(&self) -> u8 {
+        pub const fn coreid(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
             val as u8
         }
-        #[doc = "Semaphore lock ID."]
+        #[doc = "Semaphore core ID."]
         #[inline(always)]
-        pub fn set_lockid(&mut self, val: u8) {
+        pub fn set_coreid(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
         #[doc = "Semaphore secure bit."]
@@ -644,7 +648,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rlr")
                 .field("procid", &self.procid())
-                .field("lockid", &self.lockid())
+                .field("coreid", &self.coreid())
                 .field("sec", &self.sec())
                 .field("priv_", &self.priv_())
                 .field("lock", &self.lock())
@@ -656,9 +660,9 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Rlr {{ procid: {=u8:?}, lockid: {=u8:?}, sec: {=bool:?}, priv_: {=bool:?}, lock: {=bool:?} }}",
+                "Rlr {{ procid: {=u8:?}, coreid: {=u8:?}, sec: {=bool:?}, priv_: {=bool:?}, lock: {=bool:?} }}",
                 self.procid(),
-                self.lockid(),
+                self.coreid(),
                 self.sec(),
                 self.priv_(),
                 self.lock()

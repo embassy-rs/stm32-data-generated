@@ -810,10 +810,6 @@
             {
               "signal": "GLOBAL",
               "interrupt": "HSEM"
-            },
-            {
-              "signal": "HSEM_S",
-              "interrupt": "HSEM_S"
             }
           ]
         },

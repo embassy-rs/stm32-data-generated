@@ -31,7 +31,7 @@ pub(crate) static REGISTERS: IR = IR {
             BlockItem {
                 name: "ier",
                 description: Some("HSEM interrupt enable register."),
-                array: None,
+                array: Some(Array::Regular(RegularArray { len: 1, stride: 16 })),
                 byte_offset: 0x100,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
@@ -42,7 +42,7 @@ pub(crate) static REGISTERS: IR = IR {
             BlockItem {
                 name: "icr",
                 description: Some("HSEM interrupt clear register."),
-                array: None,
+                array: Some(Array::Regular(RegularArray { len: 1, stride: 16 })),
                 byte_offset: 0x104,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
@@ -53,7 +53,7 @@ pub(crate) static REGISTERS: IR = IR {
             BlockItem {
                 name: "isr",
                 description: Some("HSEM interrupt status register."),
-                array: None,
+                array: Some(Array::Regular(RegularArray { len: 1, stride: 16 })),
                 byte_offset: 0x108,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
@@ -64,7 +64,7 @@ pub(crate) static REGISTERS: IR = IR {
             BlockItem {
                 name: "misr",
                 description: Some("HSEM masked interrupt status register."),
-                array: None,
+                array: Some(Array::Regular(RegularArray { len: 1, stride: 16 })),
                 byte_offset: 0x10c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
@@ -170,8 +170,8 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "lockid",
-                    description: Some("LOCKID of semaphores to be cleared."),
+                    name: "coreid",
+                    description: Some("COREID of semaphores to be cleared."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 4,
                     array: None,
@@ -302,8 +302,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "lockid",
-                    description: Some("Semaphore lock ID."),
+                    name: "coreid",
+                    description: Some("Semaphore core ID."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 4,
                     array: None,
@@ -350,8 +350,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "lockid",
-                    description: Some("Semaphore lock ID."),
+                    name: "coreid",
+                    description: Some("Semaphore core ID."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 4,
                     array: None,

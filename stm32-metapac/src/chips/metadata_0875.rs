@@ -671,16 +671,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         triggers: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "HSEM",
-            },
-            PeripheralInterrupt {
-                signal: "HSEM_S",
-                interrupt: "HSEM_S",
-            },
-        ],
+        interrupts: &[PeripheralInterrupt {
+            signal: "GLOBAL",
+            interrupt: "HSEM",
+        }],
         afio: None,
     },
     Peripheral {

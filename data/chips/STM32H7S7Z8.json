@@ -3834,7 +3834,7 @@
           },
           "rcc": {
             "bus_clock": "PCLK5",
-            "kernel_clock": "PCLK5",
+            "kernel_clock": "PLL3_R",
             "enable": {
               "register": "APB5ENR",
               "field": "LTDCEN"

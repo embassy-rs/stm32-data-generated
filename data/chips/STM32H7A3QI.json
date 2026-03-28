@@ -4291,7 +4291,7 @@
           },
           "rcc": {
             "bus_clock": "PCLK3",
-            "kernel_clock": "PCLK3",
+            "kernel_clock": "PLL3_R",
             "enable": {
               "register": "APB3ENR",
               "field": "LTDCEN"

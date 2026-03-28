@@ -3492,7 +3492,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK5",
-            kernel_clock: Clock("PCLK5"),
+            kernel_clock: Clock("PLL3_R"),
             enable: Some(PeripheralRccRegister {
                 register: "APB5ENR",
                 field: "LTDCEN",

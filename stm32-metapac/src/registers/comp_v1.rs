@@ -37,7 +37,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                 bit_size: 4,
                 array: None,
-                enumm: None,
+                enumm: Some("Inm"),
             },
             Field {
                 name: "inpsel",
@@ -53,7 +53,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                 bit_size: 1,
                 array: None,
-                enumm: None,
+                enumm: Some("WindowMode"),
             },
             Field {
                 name: "winout",
@@ -61,7 +61,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                 bit_size: 1,
                 array: None,
-                enumm: None,
+                enumm: Some("WindowOut"),
             },
             Field {
                 name: "polarity",
@@ -77,7 +77,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                 bit_size: 2,
                 array: None,
-                enumm: Some("Hyst"),
+                enumm: Some("Hysteresis"),
             },
             Field {
                 name: "pwrmode",
@@ -85,7 +85,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                 bit_size: 2,
                 array: None,
-                enumm: Some("Pwrmode"),
+                enumm: Some("PowerMode"),
             },
             Field {
                 name: "blanksel",
@@ -93,10 +93,10 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                 bit_size: 5,
                 array: None,
-                enumm: Some("Blanksel"),
+                enumm: Some("Blanking"),
             },
             Field {
-                name: "value_do_not_set",
+                name: "value",
                 description: Some("Comparator output status. (READ ONLY)"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                 bit_size: 1,
@@ -115,44 +115,44 @@ pub(crate) static REGISTERS: IR = IR {
     }],
     enums: &[
         Enum {
-            name: "Blanksel",
+            name: "Blanking",
             description: None,
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "NONE",
-                    description: None,
+                    name: "NO_BLANKING",
+                    description: Some("No blanking."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TIM1OC4",
-                    description: Some("TIM1 OC4"),
+                    name: "BLANK1",
+                    description: Some("Check data sheet for blanking options"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TIM1OC5",
-                    description: Some("TIM1 OC5"),
+                    name: "BLANK2",
+                    description: Some("Check data sheet for blanking options"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "TIM2OC3",
-                    description: Some("TIM2 OC3"),
+                    name: "BLANK3",
+                    description: Some("Check data sheet for blanking options"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "TIM3OC3",
-                    description: Some("TIM3 OC3"),
+                    name: "BLANK4",
+                    description: Some("Check data sheet for blanking options"),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "TIM15OC2",
-                    description: Some("TIM15 OC2"),
+                    name: "BLANK5",
+                    description: Some("Check data sheet for blanking options"),
                     value: 16,
                 },
             ],
         },
         Enum {
-            name: "Hyst",
+            name: "Hysteresis",
             description: None,
             bit_size: 2,
             variants: &[
@@ -179,12 +179,64 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Inm",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "QUARTER_VREF",
+                    description: Some("Inverting input set to 1/4 VRef"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "HALF_VREF",
+                    description: Some("Inverting input set to 1/2 VRef"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "THREE_QUARTER_VREF",
+                    description: Some("Inverting input set to 3/4 VRef"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "VREF",
+                    description: Some("Inverting input set to VRef"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DAC1",
+                    description: Some("Inverting input set to DAC1 output"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DAC2",
+                    description: Some("Inverting input set to DAC2 output"),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "INM1",
+                    description: Some("Inverting input set to IO1"),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "INM2",
+                    description: Some("Inverting input set to IO2"),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "INM3",
+                    description: Some("Inverting input set to IO3"),
+                    value: 8,
+                },
+            ],
+        },
+        Enum {
             name: "Polarity",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NON_INVERTED",
+                    name: "NOT_INVERTED",
                     description: None,
                     value: 0,
                 },
@@ -196,7 +248,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Pwrmode",
+            name: "PowerMode",
             description: None,
             bit_size: 2,
             variants: &[
@@ -208,6 +260,42 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "MEDIUM_SPEED",
                     description: None,
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "WindowMode",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "THIS_INPSEL",
+                    description: Some("Signal selected with INPSEL[1:0] bitfield of this register."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OTHER_INPSEL",
+                    description: Some(
+                        "Signal selected with INPSEL[1:0] bitfield of the other register (required for window mode).",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "WindowOut",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "COMP1_VALUE",
+                    description: Some("Comparator 1 value."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "COMP1_VALUE_XOR_COMP2_VALUE",
+                    description: Some("Comparator 1 value XOR comparator 2 value (required for window mode)."),
                     value: 1,
                 },
             ],

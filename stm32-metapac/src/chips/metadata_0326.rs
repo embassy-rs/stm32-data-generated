@@ -253,7 +253,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             block: "COMP",
             ir: &comp::REGISTERS,
         }),
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            bus_clock: "PCLK1",
+            kernel_clock: Clock("PCLK1"),
+            enable: Some(PeripheralRccRegister {
+                register: "APBENR2",
+                field: "SYSCFGEN",
+            }),
+            reset: None,
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PA0",
@@ -318,7 +327,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             block: "COMP",
             ir: &comp::REGISTERS,
         }),
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            bus_clock: "PCLK1",
+            kernel_clock: Clock("PCLK1"),
+            enable: Some(PeripheralRccRegister {
+                register: "APBENR2",
+                field: "SYSCFGEN",
+            }),
+            reset: None,
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PA12",
@@ -393,7 +411,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             block: "COMP",
             ir: &comp::REGISTERS,
         }),
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            bus_clock: "PCLK1",
+            kernel_clock: Clock("PCLK1"),
+            enable: Some(PeripheralRccRegister {
+                register: "APBENR2",
+                field: "SYSCFGEN",
+            }),
+            reset: None,
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PB0",

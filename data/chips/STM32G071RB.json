@@ -1230,6 +1230,14 @@
             "version": "v1",
             "block": "COMP"
           },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": "PCLK1",
+            "enable": {
+              "register": "APBENR2",
+              "field": "SYSCFGEN"
+            }
+          },
           "pins": [
             {
               "pin": "PA0",
@@ -1295,6 +1303,14 @@
             "kind": "comp",
             "version": "v1",
             "block": "COMP"
+          },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": "PCLK1",
+            "enable": {
+              "register": "APBENR2",
+              "field": "SYSCFGEN"
+            }
           },
           "pins": [
             {

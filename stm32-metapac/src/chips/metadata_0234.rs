@@ -3331,6 +3331,22 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "SPI2_EXT",
+        address: 0x40003400,
+        registers: Some(PeripheralRegisters {
+            kind: "spi",
+            version: "v2_i2s",
+            block: "SPI",
+            ir: &spi::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
         name: "SPI3",
         address: 0x40003c00,
         registers: Some(PeripheralRegisters {
@@ -3488,6 +3504,29 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             signal: "GLOBAL",
             interrupt: "SPI3",
         }],
+        afio: None,
+    },
+    Peripheral {
+        name: "SPI3_EXT",
+        address: 0x40004000,
+        registers: Some(PeripheralRegisters {
+            kind: "spi",
+            version: "v2_i2s",
+            block: "SPI",
+            ir: &spi::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[PeripheralDmaChannel {
+            signal: "RX",
+            channel: Some("DMA1_CH0"),
+            dmamux: None,
+            remap: &[],
+            dma: None,
+            request: Some(3),
+        }],
+        triggers: &[],
+        interrupts: &[],
         afio: None,
     },
     Peripheral {

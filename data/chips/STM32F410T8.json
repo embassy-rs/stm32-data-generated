@@ -1721,6 +1721,31 @@
           ]
         },
         {
+          "name": "SPI2_EXT",
+          "address": 1073755136,
+          "registers": {
+            "kind": "spi",
+            "version": "v2_i2s",
+            "block": "SPI"
+          }
+        },
+        {
+          "name": "SPI3_EXT",
+          "address": 1073758208,
+          "registers": {
+            "kind": "spi",
+            "version": "v2_i2s",
+            "block": "SPI"
+          },
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "channel": "DMA1_CH0",
+              "request": 3
+            }
+          ]
+        },
+        {
           "name": "SYSCFG",
           "address": 1073821696,
           "registers": {

@@ -170,6 +170,17 @@ pub mod regs {
         pub fn set_rxonly(&mut self, val: super::vals::Rxonly) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
         }
+        #[doc = "CRC length"]
+        #[inline(always)]
+        pub const fn crcl(&self) -> super::vals::Crcl {
+            let val = (self.0 >> 11usize) & 0x01;
+            super::vals::Crcl::from_bits(val as u8)
+        }
+        #[doc = "CRC length"]
+        #[inline(always)]
+        pub fn set_crcl(&mut self, val: super::vals::Crcl) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        }
         #[doc = "Data frame format"]
         #[inline(always)]
         pub const fn dff(&self) -> super::vals::Dff {
@@ -244,6 +255,7 @@ pub mod regs {
                 .field("ssi", &self.ssi())
                 .field("ssm", &self.ssm())
                 .field("rxonly", &self.rxonly())
+                .field("crcl", &self.crcl())
                 .field("dff", &self.dff())
                 .field("crcnext", &self.crcnext())
                 .field("crcen", &self.crcen())
@@ -255,7 +267,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ cpha: {:?}, cpol: {:?}, mstr: {:?}, br: {:?}, spe: {=bool:?}, lsbfirst: {:?}, ssi: {=bool:?}, ssm: {=bool:?}, rxonly: {:?}, dff: {:?}, crcnext: {:?}, crcen: {=bool:?}, bidioe: {:?}, bidimode: {:?} }}" , self . cpha () , self . cpol () , self . mstr () , self . br () , self . spe () , self . lsbfirst () , self . ssi () , self . ssm () , self . rxonly () , self . dff () , self . crcnext () , self . crcen () , self . bidioe () , self . bidimode ())
+            defmt :: write ! (f , "Cr1 {{ cpha: {:?}, cpol: {:?}, mstr: {:?}, br: {:?}, spe: {=bool:?}, lsbfirst: {:?}, ssi: {=bool:?}, ssm: {=bool:?}, rxonly: {:?}, crcl: {:?}, dff: {:?}, crcnext: {:?}, crcen: {=bool:?}, bidioe: {:?}, bidimode: {:?} }}" , self . cpha () , self . cpol () , self . mstr () , self . br () , self . spe () , self . lsbfirst () , self . ssi () , self . ssm () , self . rxonly () , self . crcl () , self . dff () , self . crcnext () , self . crcen () , self . bidioe () , self . bidimode ())
         }
     }
     #[doc = "control register 2"]
@@ -295,6 +307,17 @@ pub mod regs {
         #[inline(always)]
         pub fn set_ssoe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "NSS pulse management"]
+        #[inline(always)]
+        pub const fn nssp(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "NSS pulse management"]
+        #[inline(always)]
+        pub fn set_nssp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Frame format"]
         #[inline(always)]
@@ -340,6 +363,50 @@ pub mod regs {
         pub fn set_txeie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
+        #[doc = "Data size"]
+        #[inline(always)]
+        pub const fn ds(&self) -> super::vals::Ds {
+            let val = (self.0 >> 8usize) & 0x0f;
+            super::vals::Ds::from_bits(val as u8)
+        }
+        #[doc = "Data size"]
+        #[inline(always)]
+        pub fn set_ds(&mut self, val: super::vals::Ds) {
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val.to_bits() as u32) & 0x0f) << 8usize);
+        }
+        #[doc = "FIFO reception threshold"]
+        #[inline(always)]
+        pub const fn frxth(&self) -> super::vals::Frxth {
+            let val = (self.0 >> 12usize) & 0x01;
+            super::vals::Frxth::from_bits(val as u8)
+        }
+        #[doc = "FIFO reception threshold"]
+        #[inline(always)]
+        pub fn set_frxth(&mut self, val: super::vals::Frxth) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        }
+        #[doc = "Last DMA transfer for reception"]
+        #[inline(always)]
+        pub const fn ldma_rx(&self) -> super::vals::Odd {
+            let val = (self.0 >> 13usize) & 0x01;
+            super::vals::Odd::from_bits(val as u8)
+        }
+        #[doc = "Last DMA transfer for reception"]
+        #[inline(always)]
+        pub fn set_ldma_rx(&mut self, val: super::vals::Odd) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        }
+        #[doc = "Last DMA transfer for transmission"]
+        #[inline(always)]
+        pub const fn ldma_tx(&self) -> super::vals::Odd {
+            let val = (self.0 >> 14usize) & 0x01;
+            super::vals::Odd::from_bits(val as u8)
+        }
+        #[doc = "Last DMA transfer for transmission"]
+        #[inline(always)]
+        pub fn set_ldma_tx(&mut self, val: super::vals::Odd) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        }
     }
     impl Default for Cr2 {
         #[inline(always)]
@@ -353,17 +420,22 @@ pub mod regs {
                 .field("rxdmaen", &self.rxdmaen())
                 .field("txdmaen", &self.txdmaen())
                 .field("ssoe", &self.ssoe())
+                .field("nssp", &self.nssp())
                 .field("frf", &self.frf())
                 .field("errie", &self.errie())
                 .field("rxneie", &self.rxneie())
                 .field("txeie", &self.txeie())
+                .field("ds", &self.ds())
+                .field("frxth", &self.frxth())
+                .field("ldma_rx", &self.ldma_rx())
+                .field("ldma_tx", &self.ldma_tx())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ rxdmaen: {=bool:?}, txdmaen: {=bool:?}, ssoe: {=bool:?}, frf: {:?}, errie: {=bool:?}, rxneie: {=bool:?}, txeie: {=bool:?} }}" , self . rxdmaen () , self . txdmaen () , self . ssoe () , self . frf () , self . errie () , self . rxneie () , self . txeie ())
+            defmt :: write ! (f , "Cr2 {{ rxdmaen: {=bool:?}, txdmaen: {=bool:?}, ssoe: {=bool:?}, nssp: {=bool:?}, frf: {:?}, errie: {=bool:?}, rxneie: {=bool:?}, txeie: {=bool:?}, ds: {:?}, frxth: {:?}, ldma_rx: {:?}, ldma_tx: {:?} }}" , self . rxdmaen () , self . txdmaen () , self . ssoe () , self . nssp () , self . frf () , self . errie () , self . rxneie () , self . txeie () , self . ds () , self . frxth () , self . ldma_rx () , self . ldma_tx ())
         }
     }
     #[doc = "CRC polynomial register"]
@@ -758,6 +830,28 @@ pub mod regs {
         pub fn set_fre(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
+        #[doc = "FIFO reception level"]
+        #[inline(always)]
+        pub const fn frlvl(&self) -> super::vals::Frl {
+            let val = (self.0 >> 9usize) & 0x03;
+            super::vals::Frl::from_bits(val as u8)
+        }
+        #[doc = "FIFO reception level"]
+        #[inline(always)]
+        pub fn set_frlvl(&mut self, val: super::vals::Frl) {
+            self.0 = (self.0 & !(0x03 << 9usize)) | (((val.to_bits() as u32) & 0x03) << 9usize);
+        }
+        #[doc = "FIFO transmission level"]
+        #[inline(always)]
+        pub const fn ftlvl(&self) -> super::vals::Frl {
+            let val = (self.0 >> 11usize) & 0x03;
+            super::vals::Frl::from_bits(val as u8)
+        }
+        #[doc = "FIFO transmission level"]
+        #[inline(always)]
+        pub fn set_ftlvl(&mut self, val: super::vals::Frl) {
+            self.0 = (self.0 & !(0x03 << 11usize)) | (((val.to_bits() as u32) & 0x03) << 11usize);
+        }
     }
     impl Default for Sr {
         #[inline(always)]
@@ -777,13 +871,15 @@ pub mod regs {
                 .field("ovr", &self.ovr())
                 .field("bsy", &self.bsy())
                 .field("fre", &self.fre())
+                .field("frlvl", &self.frlvl())
+                .field("ftlvl", &self.ftlvl())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ rxne: {=bool:?}, txe: {=bool:?}, chside: {:?}, udr: {=bool:?}, crcerr: {=bool:?}, modf: {=bool:?}, ovr: {=bool:?}, bsy: {=bool:?}, fre: {=bool:?} }}" , self . rxne () , self . txe () , self . chside () , self . udr () , self . crcerr () , self . modf () , self . ovr () , self . bsy () , self . fre ())
+            defmt :: write ! (f , "Sr {{ rxne: {=bool:?}, txe: {=bool:?}, chside: {:?}, udr: {=bool:?}, crcerr: {=bool:?}, modf: {=bool:?}, ovr: {=bool:?}, bsy: {=bool:?}, fre: {=bool:?}, frlvl: {:?}, ftlvl: {:?} }}" , self . rxne () , self . txe () , self . chside () , self . udr () , self . crcerr () , self . modf () , self . ovr () , self . bsy () , self . fre () , self . frlvl () , self . ftlvl ())
         }
     }
     #[doc = "TX CRC register"]
@@ -1085,6 +1181,37 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Crcl {
+        #[doc = "8-bit CRC length"]
+        BITS8 = 0x0,
+        #[doc = "16-bit CRC length"]
+        BITS16 = 0x01,
+    }
+    impl Crcl {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Crcl {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Crcl {
+        #[inline(always)]
+        fn from(val: u8) -> Crcl {
+            Crcl::from_bits(val)
+        }
+    }
+    impl From<Crcl> for u8 {
+        #[inline(always)]
+        fn from(val: Crcl) -> u8 {
+            Crcl::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Crcnext {
         #[doc = "Next transmit value is from Tx buffer"]
         TX_BUFFER = 0x0,
@@ -1181,6 +1308,62 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Ds {
+        _RESERVED_0 = 0x0,
+        _RESERVED_1 = 0x01,
+        _RESERVED_2 = 0x02,
+        #[doc = "4-bit"]
+        BITS4 = 0x03,
+        #[doc = "5-bit"]
+        BITS5 = 0x04,
+        #[doc = "6-bit"]
+        BITS6 = 0x05,
+        #[doc = "7-bit"]
+        BITS7 = 0x06,
+        #[doc = "8-bit"]
+        BITS8 = 0x07,
+        #[doc = "9-bit"]
+        BITS9 = 0x08,
+        #[doc = "10-bit"]
+        BITS10 = 0x09,
+        #[doc = "11-bit"]
+        BITS11 = 0x0a,
+        #[doc = "12-bit"]
+        BITS12 = 0x0b,
+        #[doc = "13-bit"]
+        BITS13 = 0x0c,
+        #[doc = "14-bit"]
+        BITS14 = 0x0d,
+        #[doc = "15-bit"]
+        BITS15 = 0x0e,
+        #[doc = "16-bit"]
+        BITS16 = 0x0f,
+    }
+    impl Ds {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ds {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ds {
+        #[inline(always)]
+        fn from(val: u8) -> Ds {
+            Ds::from_bits(val)
+        }
+    }
+    impl From<Ds> for u8 {
+        #[inline(always)]
+        fn from(val: Ds) -> u8 {
+            Ds::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Frf {
         #[doc = "SPI Motorola mode"]
         MOTOROLA = 0x0,
@@ -1207,6 +1390,72 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Frf) -> u8 {
             Frf::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Frl {
+        #[doc = "Rx FIFO Empty"]
+        EMPTY = 0x0,
+        #[doc = "Rx 1/4 FIFO"]
+        QUARTER = 0x01,
+        #[doc = "Rx 1/2 FIFO"]
+        HALF = 0x02,
+        #[doc = "Rx FIFO full"]
+        FULL = 0x03,
+    }
+    impl Frl {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Frl {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Frl {
+        #[inline(always)]
+        fn from(val: u8) -> Frl {
+            Frl::from_bits(val)
+        }
+    }
+    impl From<Frl> for u8 {
+        #[inline(always)]
+        fn from(val: Frl) -> u8 {
+            Frl::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Frxth {
+        #[doc = "RXNE event is generated if the FIFO level is greater than or equal to 1/2 (16-bit)"]
+        HALF = 0x0,
+        #[doc = "RXNE event is generated if the FIFO level is greater than or equal to 1/4 (8-bit)"]
+        QUARTER = 0x01,
+    }
+    impl Frxth {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Frxth {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Frxth {
+        #[inline(always)]
+        fn from(val: u8) -> Frxth {
+            Frxth::from_bits(val)
+        }
+    }
+    impl From<Frxth> for u8 {
+        #[inline(always)]
+        fn from(val: Frxth) -> u8 {
+            Frxth::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1345,9 +1594,9 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Odd {
-        #[doc = "Real divider value is I2SDIV * 2"]
+        #[doc = "Even Value"]
         EVEN = 0x0,
-        #[doc = "Real divider value is (I2SDIV * 2) + 1"]
+        #[doc = "Odd Value"]
         ODD = 0x01,
     }
     impl Odd {

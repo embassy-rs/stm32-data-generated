@@ -131,6 +131,13 @@
         "enum": "DFF"
       },
       {
+        "name": "CRCL",
+        "description": "CRC length",
+        "bit_offset": 11,
+        "bit_size": 1,
+        "enum": "CRCL"
+      },
+      {
         "name": "CRCNEXT",
         "description": "CRC transfer next",
         "bit_offset": 12,
@@ -181,6 +188,12 @@
         "bit_size": 1
       },
       {
+        "name": "NSSP",
+        "description": "NSS pulse management",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
         "name": "FRF",
         "description": "Frame format",
         "bit_offset": 4,
@@ -204,6 +217,34 @@
         "description": "Tx buffer empty interrupt enable",
         "bit_offset": 7,
         "bit_size": 1
+      },
+      {
+        "name": "DS",
+        "description": "Data size",
+        "bit_offset": 8,
+        "bit_size": 4,
+        "enum": "DS"
+      },
+      {
+        "name": "FRXTH",
+        "description": "FIFO reception threshold",
+        "bit_offset": 12,
+        "bit_size": 1,
+        "enum": "FRXTH"
+      },
+      {
+        "name": "LDMA_RX",
+        "description": "Last DMA transfer for reception",
+        "bit_offset": 13,
+        "bit_size": 1,
+        "enum": "ODD"
+      },
+      {
+        "name": "LDMA_TX",
+        "description": "Last DMA transfer for transmission",
+        "bit_offset": 14,
+        "bit_size": 1,
+        "enum": "ODD"
       }
     ]
   },
@@ -380,6 +421,20 @@
         "description": "TI frame format error",
         "bit_offset": 8,
         "bit_size": 1
+      },
+      {
+        "name": "FRLVL",
+        "description": "FIFO reception level",
+        "bit_offset": 9,
+        "bit_size": 2,
+        "enum": "FRL"
+      },
+      {
+        "name": "FTLVL",
+        "description": "FIFO transmission level",
+        "bit_offset": 11,
+        "bit_size": 2,
+        "enum": "FRL"
       }
     ]
   },
@@ -544,6 +599,21 @@
       }
     ]
   },
+  "enum/CRCL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "Bits8",
+        "description": "8-bit CRC length",
+        "value": 0
+      },
+      {
+        "name": "Bits16",
+        "description": "16-bit CRC length",
+        "value": 1
+      }
+    ]
+  },
   "enum/CRCNEXT": {
     "bit_size": 1,
     "variants": [
@@ -594,6 +664,76 @@
       }
     ]
   },
+  "enum/DS": {
+    "bit_size": 4,
+    "variants": [
+      {
+        "name": "Bits4",
+        "description": "4-bit",
+        "value": 3
+      },
+      {
+        "name": "Bits5",
+        "description": "5-bit",
+        "value": 4
+      },
+      {
+        "name": "Bits6",
+        "description": "6-bit",
+        "value": 5
+      },
+      {
+        "name": "Bits7",
+        "description": "7-bit",
+        "value": 6
+      },
+      {
+        "name": "Bits8",
+        "description": "8-bit",
+        "value": 7
+      },
+      {
+        "name": "Bits9",
+        "description": "9-bit",
+        "value": 8
+      },
+      {
+        "name": "Bits10",
+        "description": "10-bit",
+        "value": 9
+      },
+      {
+        "name": "Bits11",
+        "description": "11-bit",
+        "value": 10
+      },
+      {
+        "name": "Bits12",
+        "description": "12-bit",
+        "value": 11
+      },
+      {
+        "name": "Bits13",
+        "description": "13-bit",
+        "value": 12
+      },
+      {
+        "name": "Bits14",
+        "description": "14-bit",
+        "value": 13
+      },
+      {
+        "name": "Bits15",
+        "description": "15-bit",
+        "value": 14
+      },
+      {
+        "name": "Bits16",
+        "description": "16-bit",
+        "value": 15
+      }
+    ]
+  },
   "enum/FRF": {
     "bit_size": 1,
     "variants": [
@@ -605,6 +745,46 @@
       {
         "name": "TI",
         "description": "SPI TI mode",
+        "value": 1
+      }
+    ]
+  },
+  "enum/FRL": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "Empty",
+        "description": "Rx FIFO Empty",
+        "value": 0
+      },
+      {
+        "name": "Quarter",
+        "description": "Rx 1/4 FIFO",
+        "value": 1
+      },
+      {
+        "name": "Half",
+        "description": "Rx 1/2 FIFO",
+        "value": 2
+      },
+      {
+        "name": "Full",
+        "description": "Rx FIFO full",
+        "value": 3
+      }
+    ]
+  },
+  "enum/FRXTH": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "Half",
+        "description": "RXNE event is generated if the FIFO level is greater than or equal to 1/2 (16-bit)",
+        "value": 0
+      },
+      {
+        "name": "Quarter",
+        "description": "RXNE event is generated if the FIFO level is greater than or equal to 1/4 (8-bit)",
         "value": 1
       }
     ]
@@ -694,12 +874,12 @@
     "variants": [
       {
         "name": "Even",
-        "description": "Real divider value is I2SDIV * 2",
+        "description": "Even Value",
         "value": 0
       },
       {
         "name": "Odd",
-        "description": "Real divider value is (I2SDIV * 2) + 1",
+        "description": "Odd Value",
         "value": 1
       }
     ]

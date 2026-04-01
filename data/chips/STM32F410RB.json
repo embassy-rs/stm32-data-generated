@@ -2084,6 +2084,30 @@
           ]
         },
         {
+          "name": "I2S2",
+          "address": 1073755136,
+          "registers": {
+            "kind": "spi",
+            "version": "v2_i2s",
+            "block": "SPI"
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "SPI2"
+            }
+          ]
+        },
+        {
+          "name": "I2S3",
+          "address": 1073758208,
+          "registers": {
+            "kind": "spi",
+            "version": "v2_i2s",
+            "block": "SPI"
+          }
+        },
+        {
           "name": "IWDG",
           "address": 1073754112,
           "registers": {
@@ -2580,31 +2604,6 @@
               "signal": "TX",
               "channel": "DMA1_CH4",
               "request": 0
-            }
-          ]
-        },
-        {
-          "name": "SPI2_EXT",
-          "address": 1073755136,
-          "registers": {
-            "kind": "spi",
-            "version": "v2_i2s",
-            "block": "SPI"
-          }
-        },
-        {
-          "name": "SPI3_EXT",
-          "address": 1073758208,
-          "registers": {
-            "kind": "spi",
-            "version": "v2_i2s",
-            "block": "SPI"
-          },
-          "dma_channels": [
-            {
-              "signal": "RX",
-              "channel": "DMA1_CH0",
-              "request": 3
             }
           ]
         },

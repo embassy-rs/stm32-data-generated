@@ -2821,6 +2821,65 @@
           ]
         },
         {
+          "name": "I2S2",
+          "address": 1073755136,
+          "registers": {
+            "kind": "spi",
+            "version": "v2_i2s",
+            "block": "SPI"
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "SPI2"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "EXT",
+              "channel": "DMA1_CH3",
+              "request": 3
+            },
+            {
+              "signal": "EXT",
+              "channel": "DMA1_CH4",
+              "request": 2
+            }
+          ]
+        },
+        {
+          "name": "I2S3",
+          "address": 1073758208,
+          "registers": {
+            "kind": "spi",
+            "version": "v2_i2s",
+            "block": "SPI"
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "SPI3"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "EXT",
+              "channel": "DMA1_CH0",
+              "request": 3
+            },
+            {
+              "signal": "EXT",
+              "channel": "DMA1_CH2",
+              "request": 2
+            },
+            {
+              "signal": "EXT",
+              "channel": "DMA1_CH5",
+              "request": 2
+            }
+          ]
+        },
+        {
           "name": "IWDG",
           "address": 1073754112,
           "registers": {
@@ -3726,15 +3785,6 @@
           ]
         },
         {
-          "name": "SPI2_EXT",
-          "address": 1073755136,
-          "registers": {
-            "kind": "spi",
-            "version": "v2_i2s",
-            "block": "SPI"
-          }
-        },
-        {
           "name": "SPI3",
           "address": 1073757184,
           "registers": {
@@ -3882,22 +3932,6 @@
               "signal": "TX",
               "channel": "DMA1_CH7",
               "request": 0
-            }
-          ]
-        },
-        {
-          "name": "SPI3_EXT",
-          "address": 1073758208,
-          "registers": {
-            "kind": "spi",
-            "version": "v2_i2s",
-            "block": "SPI"
-          },
-          "dma_channels": [
-            {
-              "signal": "RX",
-              "channel": "DMA1_CH0",
-              "request": 3
             }
           ]
         },

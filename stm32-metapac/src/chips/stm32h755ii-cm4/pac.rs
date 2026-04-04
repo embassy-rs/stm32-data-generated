@@ -790,7 +790,7 @@ pub mod dma2d;
 pub mod dmamux;
 #[path = "../../peripherals/eth_v2.rs"]
 pub mod eth;
-#[path = "../../peripherals/exti_h7.rs"]
+#[path = "../../peripherals/exti_h7rm0399.rs"]
 pub mod exti;
 #[path = "../../peripherals/fdcanram_h7.rs"]
 pub mod fdcanram;

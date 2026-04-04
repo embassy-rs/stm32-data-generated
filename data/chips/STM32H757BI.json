@@ -3546,7 +3546,7 @@
           "address": 1476395008,
           "registers": {
             "kind": "exti",
-            "version": "h7",
+            "version": "h7rm0399",
             "block": "EXTI"
           },
           "interrupts": [
@@ -14298,7 +14298,7 @@
           "address": 1476395008,
           "registers": {
             "kind": "exti",
-            "version": "h7",
+            "version": "h7rm0399",
             "block": "EXTI"
           },
           "interrupts": [

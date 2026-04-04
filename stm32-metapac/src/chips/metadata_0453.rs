@@ -2185,7 +2185,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x58000000,
         registers: Some(PeripheralRegisters {
             kind: "exti",
-            version: "h7",
+            version: "h7rm0399",
             block: "EXTI",
             ir: &exti::REGISTERS,
         }),
@@ -11769,7 +11769,7 @@ pub mod dma2d;
 pub mod dmamux;
 #[path = "../registers/eth_v2.rs"]
 pub mod eth;
-#[path = "../registers/exti_h7.rs"]
+#[path = "../registers/exti_h7rm0399.rs"]
 pub mod exti;
 #[path = "../registers/fdcanram_h7.rs"]
 pub mod fdcanram;

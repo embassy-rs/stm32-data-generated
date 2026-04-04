@@ -47,7 +47,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     (
         "exti",
         &[
-            "c0", "g0", "h5", "h50", "h7", "l5", "n6", "u0", "u3", "u5", "v1", "w", "wle",
+            "c0", "g0", "h5", "h50", "h7", "h7rm0399", "l5", "n6", "u0", "u3", "u5", "v1", "w", "wle",
         ],
     ),
     ("fdcanram", &["h7", "v1"]),

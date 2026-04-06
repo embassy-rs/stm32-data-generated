@@ -557,14 +557,14 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "Single / continuous conversion mode This bit is set and cleared by software. If it is set, conversion takes place continuously until it is cleared. Note: It is not possible to have both discontinuous mode and continuous mode enabled: it is forbidden to set both bits DISCEN = 1 and CONT = 1. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub const fn cont(&self) -> super::vals::Cont {
+        pub const fn cont(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Cont::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Single / continuous conversion mode This bit is set and cleared by software. If it is set, conversion takes place continuously until it is cleared. Note: It is not possible to have both discontinuous mode and continuous mode enabled: it is forbidden to set both bits DISCEN = 1 and CONT = 1. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_cont(&mut self, val: super::vals::Cont) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub fn set_cont(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Wait conversion mode This bit is set and cleared by software to enable/disable wait conversion mode.sup./sup Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
@@ -590,14 +590,14 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "Mode selection of the CHSELR register This bit is set and cleared by software to control the ADC_CHSELR feature: Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub const fn chselrmod(&self) -> super::vals::Chselrmod {
+        pub const fn chselrmod(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
-            super::vals::Chselrmod::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Mode selection of the CHSELR register This bit is set and cleared by software to control the ADC_CHSELR feature: Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_chselrmod(&mut self, val: super::vals::Chselrmod) {
-            self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+        pub fn set_chselrmod(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "Enable the watchdog on a single channel or on all channels This bit is set and cleared by software to enable the analog watchdog on the channel identified by the AWDCH\\[4:0\\]
 bits or on all the channels Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
@@ -667,7 +667,7 @@ bits must be also set into the CHSELR register. Note: The software is allowed to
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ dmaen: {=bool:?}, dmacfg: {:?}, res: {:?}, scandir: {:?}, align: {:?}, extsel: {:?}, exten: {:?}, ovrmod: {:?}, cont: {:?}, wait: {=bool:?}, discen: {=bool:?}, chselrmod: {:?}, awd1sgl: {:?}, awd1en: {=bool:?}, awd1ch: {=u8:?} }}" , self . dmaen () , self . dmacfg () , self . res () , self . scandir () , self . align () , self . extsel () , self . exten () , self . ovrmod () , self . cont () , self . wait () , self . discen () , self . chselrmod () , self . awd1sgl () , self . awd1en () , self . awd1ch ())
+            defmt :: write ! (f , "Cfgr1 {{ dmaen: {=bool:?}, dmacfg: {:?}, res: {:?}, scandir: {:?}, align: {:?}, extsel: {:?}, exten: {:?}, ovrmod: {:?}, cont: {=bool:?}, wait: {=bool:?}, discen: {=bool:?}, chselrmod: {=bool:?}, awd1sgl: {:?}, awd1en: {=bool:?}, awd1ch: {=u8:?} }}" , self . dmaen () , self . dmacfg () , self . res () , self . scandir () , self . align () , self . extsel () , self . exten () , self . ovrmod () , self . cont () , self . wait () , self . discen () , self . chselrmod () , self . awd1sgl () , self . awd1en () , self . awd1ch ())
         }
     }
     #[doc = "ADC configuration register 2."]
@@ -1435,68 +1435,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Awd1sgl) -> u8 {
             Awd1sgl::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Chselrmod {
-        #[doc = "Each bit of the CHSELR register enables an input."]
-        ENABLE_INPUT = 0x0,
-        #[doc = "CHSELR register is able to sequence up to 8 channels."]
-        SEQUENCE_EIGHT_CHANNELS = 0x01,
-    }
-    impl Chselrmod {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Chselrmod {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Chselrmod {
-        #[inline(always)]
-        fn from(val: u8) -> Chselrmod {
-            Chselrmod::from_bits(val)
-        }
-    }
-    impl From<Chselrmod> for u8 {
-        #[inline(always)]
-        fn from(val: Chselrmod) -> u8 {
-            Chselrmod::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Cont {
-        #[doc = "Single conversion mode."]
-        SINGLE = 0x0,
-        #[doc = "Continuous conversion mode."]
-        CONTINUOUS = 0x01,
-    }
-    impl Cont {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Cont {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Cont {
-        #[inline(always)]
-        fn from(val: u8) -> Cont {
-            Cont::from_bits(val)
-        }
-    }
-    impl From<Cont> for u8 {
-        #[inline(always)]
-        fn from(val: Cont) -> u8 {
-            Cont::to_bits(val)
         }
     }
     #[repr(u8)]

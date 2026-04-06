@@ -285,8 +285,7 @@
         "name": "CONT",
         "description": "Single / continuous conversion mode This bit is set and cleared by software. If it is set, conversion takes place continuously until it is cleared. Note: It is not possible to have both discontinuous mode and continuous mode enabled: it is forbidden to set both bits DISCEN = 1 and CONT = 1. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing).",
         "bit_offset": 13,
-        "bit_size": 1,
-        "enum": "CONT"
+        "bit_size": 1
       },
       {
         "name": "WAIT",
@@ -304,8 +303,7 @@
         "name": "CHSELRMOD",
         "description": "Mode selection of the CHSELR register This bit is set and cleared by software to control the ADC_CHSELR feature: Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing).",
         "bit_offset": 21,
-        "bit_size": 1,
-        "enum": "CHSELRMOD"
+        "bit_size": 1
       },
       {
         "name": "AWD1SGL",
@@ -632,36 +630,6 @@
       {
         "name": "SingleChannel",
         "description": "Analog watchdog 1 enabled on a single channel.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/CHSELRMOD": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "EnableInput",
-        "description": "Each bit of the CHSELR register enables an input.",
-        "value": 0
-      },
-      {
-        "name": "SequenceEightChannels",
-        "description": "CHSELR register is able to sequence up to 8 channels.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/CONT": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Single",
-        "description": "Single conversion mode.",
-        "value": 0
-      },
-      {
-        "name": "Continuous",
-        "description": "Continuous conversion mode.",
         "value": 1
       }
     ]

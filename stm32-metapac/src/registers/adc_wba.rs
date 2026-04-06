@@ -702,9 +702,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Cont",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "wait",
@@ -746,9 +744,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Chselrmod",
-                    ),
+                    enumm: None,
                 },
                 Field {
                     name: "awd1sgl",
@@ -1453,48 +1449,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "SINGLE_CHANNEL",
                     description: Some(
                         "Analog watchdog 1 enabled on a single channel.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Chselrmod",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ENABLE_INPUT",
-                    description: Some(
-                        "Each bit of the CHSELR register enables an input.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SEQUENCE_EIGHT_CHANNELS",
-                    description: Some(
-                        "CHSELR register is able to sequence up to 8 channels.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Cont",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "SINGLE",
-                    description: Some(
-                        "Single conversion mode.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "CONTINUOUS",
-                    description: Some(
-                        "Continuous conversion mode.",
                     ),
                     value: 1,
                 },

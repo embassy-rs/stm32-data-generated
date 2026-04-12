@@ -4208,9 +4208,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Apcs {
         #[doc = "MAC passes all incoming frames unmodified"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "MAC strips the Pad/FCS field on incoming frames only for lengths less than or equal to 1500 bytes"]
-        STRIP = 0x01,
+        Strip = 0x01,
     }
     impl Apcs {
         #[inline(always)]
@@ -4239,9 +4239,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bfd {
         #[doc = "Address filters pass all received broadcast frames"]
-        ENABLED = 0x0,
+        Enabled = 0x0,
         #[doc = "Address filters filter all incoming broadcast frames"]
-        DISABLED = 0x01,
+        Disabled = 0x01,
     }
     impl Bfd {
         #[inline(always)]
@@ -4270,13 +4270,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bl {
         #[doc = "For retransmission n, wait up to 2^min(n, 10) time slots"]
-        BL10 = 0x0,
+        Bl10 = 0x0,
         #[doc = "For retransmission n, wait up to 2^min(n, 8) time slots"]
-        BL8 = 0x01,
+        Bl8 = 0x01,
         #[doc = "For retransmission n, wait up to 2^min(n, 4) time slots"]
-        BL4 = 0x02,
+        Bl4 = 0x02,
         #[doc = "For retransmission n, wait up to 2^min(n, 1) time slots"]
-        BL1 = 0x03,
+        Bl1 = 0x03,
     }
     impl Bl {
         #[inline(always)]
@@ -4306,7 +4306,7 @@ pub mod vals {
     pub enum CounterReset {
         _RESERVED_0 = 0x0,
         #[doc = "Reset all counters. Cleared automatically"]
-        RESET = 0x01,
+        Reset = 0x01,
     }
     impl CounterReset {
         #[inline(always)]
@@ -4335,15 +4335,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cr {
         #[doc = "60-100MHz HCLK/42"]
-        CR_60_100 = 0x0,
+        Cr60100 = 0x0,
         #[doc = "100-150 MHz HCLK/62"]
-        CR_100_150 = 0x01,
+        Cr100150 = 0x01,
         #[doc = "20-35MHz HCLK/16"]
-        CR_20_35 = 0x02,
+        Cr2035 = 0x02,
         #[doc = "35-60MHz HCLK/16"]
-        CR_35_60 = 0x03,
+        Cr3560 = 0x03,
         #[doc = "150-168MHz HCLK/102"]
-        CR_150_168 = 0x04,
+        Cr150168 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -4375,9 +4375,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Csd {
         #[doc = "Errors generated due to loss of carrier"]
-        ENABLED = 0x0,
+        Enabled = 0x0,
         #[doc = "No error generated due to loss of carrier"]
-        DISABLED = 0x01,
+        Disabled = 0x01,
     }
     impl Csd {
         #[inline(always)]
@@ -4406,9 +4406,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Csr {
         #[doc = "Counters roll over to zero after reaching the maximum value"]
-        ROLLOVER = 0x0,
+        Rollover = 0x0,
         #[doc = "Counters do not roll over to zero after reaching the maximum value"]
-        NOT_ROLLOVER = 0x01,
+        NotRollover = 0x01,
     }
     impl Csr {
         #[inline(always)]
@@ -4437,9 +4437,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Da {
         #[doc = "Round-robin with Rx:Tx priority given by PM"]
-        ROUND_ROBIN = 0x0,
+        RoundRobin = 0x0,
         #[doc = "Rx has priority over Tx"]
-        RX_PRIORITY = 0x01,
+        RxPriority = 0x01,
     }
     impl Da {
         #[inline(always)]
@@ -4468,9 +4468,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Daif {
         #[doc = "Normal filtering of frames"]
-        NORMAL = 0x0,
+        Normal = 0x0,
         #[doc = "Address check block operates in inverse filtering mode for the DA address comparison"]
-        INVERT = 0x01,
+        Invert = 0x01,
     }
     impl Daif {
         #[inline(always)]
@@ -4499,9 +4499,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dm {
         #[doc = "MAC operates in half-duplex mode"]
-        HALF_DUPLEX = 0x0,
+        HalfDuplex = 0x0,
         #[doc = "MAC operates in full-duplex mode"]
-        FULL_DUPLEX = 0x01,
+        FullDuplex = 0x01,
     }
     impl Dm {
         #[inline(always)]
@@ -4530,9 +4530,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum DmaomrSr {
         #[doc = "Reception is stopped after transfer of the current frame"]
-        STOPPED = 0x0,
+        Stopped = 0x0,
         #[doc = "Reception is placed in the Running state"]
-        STARTED = 0x01,
+        Started = 0x01,
     }
     impl DmaomrSr {
         #[inline(always)]
@@ -4561,9 +4561,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dtcefd {
         #[doc = "Drop frames with errors only in the receive checksum offload engine"]
-        ENABLED = 0x0,
+        Enabled = 0x0,
         #[doc = "Do not drop frames that only have errors in the receive checksum offload engine"]
-        DISABLED = 0x01,
+        Disabled = 0x01,
     }
     impl Dtcefd {
         #[inline(always)]
@@ -4592,9 +4592,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fb {
         #[doc = "AHB uses SINGLE and INCR burst transfers"]
-        VARIABLE = 0x0,
+        Variable = 0x0,
         #[doc = "AHB uses only fixed burst transfers"]
-        FIXED = 0x01,
+        Fixed = 0x01,
     }
     impl Fb {
         #[inline(always)]
@@ -4623,9 +4623,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fcb {
         #[doc = "In half duplex only, deasserts back pressure"]
-        DISABLE_BACK_PRESSURE = 0x0,
+        DisableBackPressure = 0x0,
         #[doc = "In full duplex, initiate a Pause control frame. In half duplex, assert back pressure"]
-        PAUSE_OR_BACK_PRESSURE = 0x01,
+        PauseOrBackPressure = 0x01,
     }
     impl Fcb {
         #[inline(always)]
@@ -4654,9 +4654,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fef {
         #[doc = "Rx FIFO drops frames with error status"]
-        DROP = 0x0,
+        Drop = 0x0,
         #[doc = "All frames except runt error frames are forwarded to the DMA"]
-        FORWARD = 0x01,
+        Forward = 0x01,
     }
     impl Fef {
         #[inline(always)]
@@ -4685,9 +4685,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fes {
         #[doc = "10 Mbit/s"]
-        FES10 = 0x0,
+        Fes10 = 0x0,
         #[doc = "100 Mbit/s"]
-        FES100 = 0x01,
+        Fes100 = 0x01,
     }
     impl Fes {
         #[inline(always)]
@@ -4748,7 +4748,7 @@ pub mod vals {
     pub enum Ftf {
         _RESERVED_0 = 0x0,
         #[doc = "Transmit FIFO controller logic is reset to its default values. Cleared automatically"]
-        FLUSH = 0x01,
+        Flush = 0x01,
     }
     impl Ftf {
         #[inline(always)]
@@ -4777,9 +4777,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fugf {
         #[doc = "Rx FIFO drops all frames of less than 64 bytes"]
-        DROP = 0x0,
+        Drop = 0x0,
         #[doc = "Rx FIFO forwards undersized frames"]
-        FORWARD = 0x01,
+        Forward = 0x01,
     }
     impl Fugf {
         #[inline(always)]
@@ -4808,9 +4808,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hm {
         #[doc = "MAC performs a perfect destination address filtering for multicast frames"]
-        PERFECT = 0x0,
+        Perfect = 0x0,
         #[doc = "MAC performs destination address filtering of received multicast frames according to the hash table"]
-        HASH = 0x01,
+        Hash = 0x01,
     }
     impl Hm {
         #[inline(always)]
@@ -4839,9 +4839,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hpf {
         #[doc = "If HM or HU is set, only frames that match the Hash filter are passed"]
-        HASH_ONLY = 0x0,
+        HashOnly = 0x0,
         #[doc = "If HM or HU is set, frames that match either the perfect filter or the hash filter are passed"]
-        HASH_OR_PERFECT = 0x01,
+        HashOrPerfect = 0x01,
     }
     impl Hpf {
         #[inline(always)]
@@ -4870,9 +4870,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hu {
         #[doc = "MAC performs a perfect destination address filtering for unicast frames"]
-        PERFECT = 0x0,
+        Perfect = 0x0,
         #[doc = "MAC performs destination address filtering of received unicast frames according to the hash table"]
-        HASH = 0x01,
+        Hash = 0x01,
     }
     impl Hu {
         #[inline(always)]
@@ -4901,21 +4901,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ifg {
         #[doc = "96 bit times"]
-        IFG96 = 0x0,
+        Ifg96 = 0x0,
         #[doc = "88 bit times"]
-        IFG88 = 0x01,
+        Ifg88 = 0x01,
         #[doc = "80 bit times"]
-        IFG80 = 0x02,
+        Ifg80 = 0x02,
         #[doc = "72 bit times"]
-        IFG72 = 0x03,
+        Ifg72 = 0x03,
         #[doc = "64 bit times"]
-        IFG64 = 0x04,
+        Ifg64 = 0x04,
         #[doc = "56 bit times"]
-        IFG56 = 0x05,
+        Ifg56 = 0x05,
         #[doc = "48 bit times"]
-        IFG48 = 0x06,
+        Ifg48 = 0x06,
         #[doc = "40 bit times"]
-        IFG40 = 0x07,
+        Ifg40 = 0x07,
     }
     impl Ifg {
         #[inline(always)]
@@ -4944,9 +4944,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ipco {
         #[doc = "IPv4 checksum offload disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "IPv4 checksums are checked in received frames"]
-        OFFLOAD = 0x01,
+        Offload = 0x01,
     }
     impl Ipco {
         #[inline(always)]
@@ -4975,9 +4975,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Jd {
         #[doc = "Jabber enabled, transmit frames up to 2048 bytes"]
-        ENABLED = 0x0,
+        Enabled = 0x0,
         #[doc = "Jabber disabled, transmit frames up to 16384 bytes"]
-        DISABLED = 0x01,
+        Disabled = 0x01,
     }
     impl Jd {
         #[inline(always)]
@@ -5006,9 +5006,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lm {
         #[doc = "Normal mode"]
-        NORMAL = 0x0,
+        Normal = 0x0,
         #[doc = "MAC operates in loopback mode at the MII"]
-        LOOPBACK = 0x01,
+        Loopback = 0x01,
     }
     impl Lm {
         #[inline(always)]
@@ -5037,9 +5037,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MacahrSa {
         #[doc = "This address is used for comparison with DA fields of the received frame"]
-        DESTINATION = 0x0,
+        Destination = 0x0,
         #[doc = "This address is used for comparison with SA fields of received frames"]
-        SOURCE = 0x01,
+        Source = 0x01,
     }
     impl MacahrSa {
         #[inline(always)]
@@ -5069,7 +5069,7 @@ pub mod vals {
     pub enum MbProgress {
         _RESERVED_0 = 0x0,
         #[doc = "This bit is set to 1 by the application to indicate that a read or write access is in progress"]
-        BUSY = 0x01,
+        Busy = 0x01,
     }
     impl MbProgress {
         #[inline(always)]
@@ -5098,9 +5098,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mw {
         #[doc = "Read operation"]
-        READ = 0x0,
+        Read = 0x0,
         #[doc = "Write operation"]
-        WRITE = 0x01,
+        Write = 0x01,
     }
     impl Mw {
         #[inline(always)]
@@ -5130,17 +5130,17 @@ pub mod vals {
     pub enum Pbl {
         _RESERVED_0 = 0x0,
         #[doc = "Maximum of 1 beat per DMA transaction"]
-        PBL1 = 0x01,
+        Pbl1 = 0x01,
         #[doc = "Maximum of 2 beats per DMA transaction"]
-        PBL2 = 0x02,
+        Pbl2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "Maximum of 4 beats per DMA transaction"]
-        PBL4 = 0x04,
+        Pbl4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "Maximum of 8 beats per DMA transaction"]
-        PBL8 = 0x08,
+        Pbl8 = 0x08,
         _RESERVED_9 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
@@ -5149,7 +5149,7 @@ pub mod vals {
         _RESERVED_e = 0x0e,
         _RESERVED_f = 0x0f,
         #[doc = "Maximum of 16 beats per DMA transaction"]
-        PBL16 = 0x10,
+        Pbl16 = 0x10,
         _RESERVED_11 = 0x11,
         _RESERVED_12 = 0x12,
         _RESERVED_13 = 0x13,
@@ -5166,7 +5166,7 @@ pub mod vals {
         _RESERVED_1e = 0x1e,
         _RESERVED_1f = 0x1f,
         #[doc = "Maximum of 32 beats per DMA transaction"]
-        PBL32 = 0x20,
+        Pbl32 = 0x20,
         _RESERVED_21 = 0x21,
         _RESERVED_22 = 0x22,
         _RESERVED_23 = 0x23,
@@ -5226,13 +5226,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pcf {
         #[doc = "MAC prevents all control frames from reaching the application"]
-        PREVENT_ALL = 0x0,
+        PreventAll = 0x0,
         #[doc = "MAC forwards all control frames to application except Pause"]
-        FORWARD_ALL_EXCEPT_PAUSE = 0x01,
+        ForwardAllExceptPause = 0x01,
         #[doc = "MAC forwards all control frames to application even if they fail the address filter"]
-        FORWARD_ALL = 0x02,
+        ForwardAll = 0x02,
         #[doc = "MAC forwards control frames that pass the address filter"]
-        FORWARD_ALL_FILTERED = 0x03,
+        ForwardAllFiltered = 0x03,
     }
     impl Pcf {
         #[inline(always)]
@@ -5262,7 +5262,7 @@ pub mod vals {
     pub enum Pd {
         _RESERVED_0 = 0x0,
         #[doc = "All received frames will be dropped. Cleared automatically when a magic packet or wakeup frame is received"]
-        ENABLED = 0x01,
+        Enabled = 0x01,
     }
     impl Pd {
         #[inline(always)]
@@ -5291,13 +5291,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Plt {
         #[doc = "Pause time minus 4 slot times"]
-        PLT4 = 0x0,
+        Plt4 = 0x0,
         #[doc = "Pause time minus 28 slot times"]
-        PLT28 = 0x01,
+        Plt28 = 0x01,
         #[doc = "Pause time minus 144 slot times"]
-        PLT144 = 0x02,
+        Plt144 = 0x02,
         #[doc = "Pause time minus 256 slot times"]
-        PLT256 = 0x03,
+        Plt256 = 0x03,
     }
     impl Plt {
         #[inline(always)]
@@ -5326,9 +5326,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pmtim {
         #[doc = "PMT Status interrupt generation enabled"]
-        UNMASKED = 0x0,
+        Unmasked = 0x0,
         #[doc = "PMT Status interrupt generation disabled"]
-        MASKED = 0x01,
+        Masked = 0x01,
     }
     impl Pmtim {
         #[inline(always)]
@@ -5357,13 +5357,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PriorityRxOverTx {
         #[doc = "RxDMA priority over TxDMA is 1:1"]
-        ONE_TO_ONE = 0x0,
+        OneToOne = 0x0,
         #[doc = "RxDMA priority over TxDMA is 2:1"]
-        TWO_TO_ONE = 0x01,
+        TwoToOne = 0x01,
         #[doc = "RxDMA priority over TxDMA is 3:1"]
-        THREE_TO_ONE = 0x02,
+        ThreeToOne = 0x02,
         #[doc = "RxDMA priority over TxDMA is 4:1"]
-        FOUR_TO_ONE = 0x03,
+        FourToOne = 0x03,
     }
     impl PriorityRxOverTx {
         #[inline(always)]
@@ -5392,9 +5392,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rd {
         #[doc = "MAC attempts retries based on the settings of BL"]
-        ENABLED = 0x0,
+        Enabled = 0x0,
         #[doc = "MAC attempts only 1 transmission"]
-        DISABLED = 0x01,
+        Disabled = 0x01,
     }
     impl Rd {
         #[inline(always)]
@@ -5424,17 +5424,17 @@ pub mod vals {
     pub enum Rdp {
         _RESERVED_0 = 0x0,
         #[doc = "1 beat per RxDMA transaction"]
-        RDP1 = 0x01,
+        Rdp1 = 0x01,
         #[doc = "2 beats per RxDMA transaction"]
-        RDP2 = 0x02,
+        Rdp2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "4 beats per RxDMA transaction"]
-        RDP4 = 0x04,
+        Rdp4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "8 beats per RxDMA transaction"]
-        RDP8 = 0x08,
+        Rdp8 = 0x08,
         _RESERVED_9 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
@@ -5443,7 +5443,7 @@ pub mod vals {
         _RESERVED_e = 0x0e,
         _RESERVED_f = 0x0f,
         #[doc = "16 beats per RxDMA transaction"]
-        RDP16 = 0x10,
+        Rdp16 = 0x10,
         _RESERVED_11 = 0x11,
         _RESERVED_12 = 0x12,
         _RESERVED_13 = 0x13,
@@ -5460,7 +5460,7 @@ pub mod vals {
         _RESERVED_1e = 0x1e,
         _RESERVED_1f = 0x1f,
         #[doc = "32 beats per RxDMA transaction"]
-        RDP32 = 0x20,
+        Rdp32 = 0x20,
         _RESERVED_21 = 0x21,
         _RESERVED_22 = 0x22,
         _RESERVED_23 = 0x23,
@@ -5520,9 +5520,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rfaem {
         #[doc = "Received-alignment-error counter half-full interrupt enabled"]
-        UNMASKED = 0x0,
+        Unmasked = 0x0,
         #[doc = "Received-alignment-error counter half-full interrupt disabled"]
-        MASKED = 0x01,
+        Masked = 0x01,
     }
     impl Rfaem {
         #[inline(always)]
@@ -5551,9 +5551,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rfcem {
         #[doc = "Received-crc-error counter half-full interrupt enabled"]
-        UNMASKED = 0x0,
+        Unmasked = 0x0,
         #[doc = "Received-crc-error counter half-full interrupt disabled"]
-        MASKED = 0x01,
+        Masked = 0x01,
     }
     impl Rfcem {
         #[inline(always)]
@@ -5582,9 +5582,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rgufm {
         #[doc = "Received-good-unicast counter half-full interrupt enabled"]
-        UNMASKED = 0x0,
+        Unmasked = 0x0,
         #[doc = "Received-good-unicast counter half-full interrupt disabled"]
-        MASKED = 0x01,
+        Masked = 0x01,
     }
     impl Rgufm {
         #[inline(always)]
@@ -5613,9 +5613,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rod {
         #[doc = "MAC receives all packets from PHY while transmitting"]
-        ENABLED = 0x0,
+        Enabled = 0x0,
         #[doc = "MAC disables reception of frames in half-duplex mode"]
-        DISABLED = 0x01,
+        Disabled = 0x01,
     }
     impl Rod {
         #[inline(always)]
@@ -5644,7 +5644,7 @@ pub mod vals {
     pub struct Rpd(u32);
     impl Rpd {
         #[doc = "Poll the receive descriptor list"]
-        pub const POLL: Self = Self(0x0);
+        pub const Poll: Self = Self(0x0);
     }
     impl Rpd {
         pub const fn from_bits(val: u32) -> Rpd {
@@ -5657,7 +5657,7 @@ pub mod vals {
     impl core::fmt::Debug for Rpd {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("POLL"),
+                0x0 => f.write_str("Poll"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -5666,7 +5666,7 @@ pub mod vals {
     impl defmt::Format for Rpd {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "POLL"),
+                0x0 => defmt::write!(f, "Poll"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -5688,18 +5688,18 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rps {
         #[doc = "Stopped, reset or Stop Receive command issued"]
-        STOPPED = 0x0,
+        Stopped = 0x0,
         #[doc = "Running, fetching receive transfer descriptor"]
-        RUNNING_FETCHING = 0x01,
+        RunningFetching = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "Running, waiting for receive packet"]
-        RUNNING_WAITING = 0x03,
+        RunningWaiting = 0x03,
         #[doc = "Suspended, receive descriptor unavailable"]
-        SUSPENDED = 0x04,
+        Suspended = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         #[doc = "Running, writing data to host memory buffer"]
-        RUNNING_WRITING = 0x07,
+        RunningWriting = 0x07,
     }
     impl Rps {
         #[inline(always)]
@@ -5728,9 +5728,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rsf {
         #[doc = "Rx FIFO operates in cut-through mode, subject to RTC bits"]
-        CUT_THROUGH = 0x0,
+        CutThrough = 0x0,
         #[doc = "Frames are read from Rx FIFO after complete frame has been written"]
-        STORE_FORWARD = 0x01,
+        StoreForward = 0x01,
     }
     impl Rsf {
         #[inline(always)]
@@ -5759,13 +5759,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtc {
         #[doc = "64 bytes"]
-        RTC64 = 0x0,
+        Rtc64 = 0x0,
         #[doc = "32 bytes"]
-        RTC32 = 0x01,
+        Rtc32 = 0x01,
         #[doc = "96 bytes"]
-        RTC96 = 0x02,
+        Rtc96 = 0x02,
         #[doc = "128 bytes"]
-        RTC128 = 0x03,
+        Rtc128 = 0x03,
     }
     impl Rtc {
         #[inline(always)]
@@ -5794,9 +5794,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Saif {
         #[doc = "Source address filter operates normally"]
-        NORMAL = 0x0,
+        Normal = 0x0,
         #[doc = "Source address filter operation inverted"]
-        INVERT = 0x01,
+        Invert = 0x01,
     }
     impl Saif {
         #[inline(always)]
@@ -5825,9 +5825,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum St {
         #[doc = "Transmission is placed in the Stopped state"]
-        STOPPED = 0x0,
+        Stopped = 0x0,
         #[doc = "Transmission is placed in Running state"]
-        STARTED = 0x01,
+        Started = 0x01,
     }
     impl St {
         #[inline(always)]
@@ -5856,9 +5856,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tgfm {
         #[doc = "Transmitted-good counter half-full interrupt enabled"]
-        UNMASKED = 0x0,
+        Unmasked = 0x0,
         #[doc = "Transmitted-good counter half-full interrupt disabled"]
-        MASKED = 0x01,
+        Masked = 0x01,
     }
     impl Tgfm {
         #[inline(always)]
@@ -5887,9 +5887,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tgfmscm {
         #[doc = "Transmitted-good-multiple-collision half-full interrupt enabled"]
-        UNMASKED = 0x0,
+        Unmasked = 0x0,
         #[doc = "Transmitted-good-multiple-collision half-full interrupt disabled"]
-        MASKED = 0x01,
+        Masked = 0x01,
     }
     impl Tgfmscm {
         #[inline(always)]
@@ -5918,9 +5918,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tgfscm {
         #[doc = "Transmitted-good-single-collision half-full interrupt enabled"]
-        UNMASKED = 0x0,
+        Unmasked = 0x0,
         #[doc = "Transmitted-good-single-collision half-full interrupt disabled"]
-        MASKED = 0x01,
+        Masked = 0x01,
     }
     impl Tgfscm {
         #[inline(always)]
@@ -5949,7 +5949,7 @@ pub mod vals {
     pub struct Tpd(u32);
     impl Tpd {
         #[doc = "Poll the transmit descriptor list"]
-        pub const POLL: Self = Self(0x0);
+        pub const Poll: Self = Self(0x0);
     }
     impl Tpd {
         pub const fn from_bits(val: u32) -> Tpd {
@@ -5962,7 +5962,7 @@ pub mod vals {
     impl core::fmt::Debug for Tpd {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("POLL"),
+                0x0 => f.write_str("Poll"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -5971,7 +5971,7 @@ pub mod vals {
     impl defmt::Format for Tpd {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "POLL"),
+                0x0 => defmt::write!(f, "Poll"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -5993,19 +5993,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tps {
         #[doc = "Stopped, Reset or Stop Transmit command issued"]
-        STOPPED = 0x0,
+        Stopped = 0x0,
         #[doc = "Running, fetching transmit transfer descriptor"]
-        RUNNING_FETCHING = 0x01,
+        RunningFetching = 0x01,
         #[doc = "Running, waiting for status"]
-        RUNNING_WAITING = 0x02,
+        RunningWaiting = 0x02,
         #[doc = "Running, reading data from host memory buffer"]
-        RUNNING_READING = 0x03,
+        RunningReading = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         #[doc = "Suspended, transmit descriptor unavailable or transmit buffer underflow"]
-        SUSPENDED = 0x06,
+        Suspended = 0x06,
         #[doc = "Running, closing transmit descriptor"]
-        RUNNING = 0x07,
+        Running = 0x07,
     }
     impl Tps {
         #[inline(always)]
@@ -6034,9 +6034,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tsf {
         #[doc = "Transmission starts when the frame size in the Tx FIFO exceeds TTC threshold"]
-        CUT_THROUGH = 0x0,
+        CutThrough = 0x0,
         #[doc = "Transmission starts when a full frame is in the Tx FIFO"]
-        STORE_FORWARD = 0x01,
+        StoreForward = 0x01,
     }
     impl Tsf {
         #[inline(always)]
@@ -6065,9 +6065,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tstim {
         #[doc = "Time stamp interrupt generation enabled"]
-        UNMASKED = 0x0,
+        Unmasked = 0x0,
         #[doc = "Time stamp interrupt generation disabled"]
-        MASKED = 0x01,
+        Masked = 0x01,
     }
     impl Tstim {
         #[inline(always)]
@@ -6096,21 +6096,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ttc {
         #[doc = "64 bytes"]
-        TTC64 = 0x0,
+        Ttc64 = 0x0,
         #[doc = "128 bytes"]
-        TTC128 = 0x01,
+        Ttc128 = 0x01,
         #[doc = "192 bytes"]
-        TTC192 = 0x02,
+        Ttc192 = 0x02,
         #[doc = "256 bytes"]
-        TTC256 = 0x03,
+        Ttc256 = 0x03,
         #[doc = "40 bytes"]
-        TTC40 = 0x04,
+        Ttc40 = 0x04,
         #[doc = "32 bytes"]
-        TTC32 = 0x05,
+        Ttc32 = 0x05,
         #[doc = "24 bytes"]
-        TTC24 = 0x06,
+        Ttc24 = 0x06,
         #[doc = "16 bytes"]
-        TTC16 = 0x07,
+        Ttc16 = 0x07,
     }
     impl Ttc {
         #[inline(always)]
@@ -6139,9 +6139,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usp {
         #[doc = "PBL value used for both Rx and Tx DMA"]
-        COMBINED = 0x0,
+        Combined = 0x0,
         #[doc = "RxDMA uses RDP value, TxDMA uses PBL value"]
-        SEPARATE = 0x01,
+        Separate = 0x01,
     }
     impl Usp {
         #[inline(always)]
@@ -6170,9 +6170,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vlantc {
         #[doc = "Full 16 bit VLAN identifiers are used for comparison and filtering"]
-        VLANTC16 = 0x0,
+        Vlantc16 = 0x0,
         #[doc = "12 bit VLAN identifies are used for comparison and filtering"]
-        VLANTC12 = 0x01,
+        Vlantc12 = 0x01,
     }
     impl Vlantc {
         #[inline(always)]
@@ -6201,9 +6201,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wd {
         #[doc = "Watchdog enabled, receive frames limited to 2048 bytes"]
-        ENABLED = 0x0,
+        Enabled = 0x0,
         #[doc = "Watchdog disabled, receive frames may be up to to 16384 bytes"]
-        DISABLED = 0x01,
+        Disabled = 0x01,
     }
     impl Wd {
         #[inline(always)]
@@ -6233,7 +6233,7 @@ pub mod vals {
     pub enum Wffrpr {
         _RESERVED_0 = 0x0,
         #[doc = "Reset wakeup frame filter register point to 0b000. Automatically cleared"]
-        RESET = 0x01,
+        Reset = 0x01,
     }
     impl Wffrpr {
         #[inline(always)]
@@ -6262,9 +6262,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Zqpd {
         #[doc = "Normal operation with automatic zero-quanta pause control frame generation"]
-        ENABLED = 0x0,
+        Enabled = 0x0,
         #[doc = "Automatic generation of zero-quanta pause control frames is disabled"]
-        DISABLED = 0x01,
+        Disabled = 0x01,
     }
     impl Zqpd {
         #[inline(always)]

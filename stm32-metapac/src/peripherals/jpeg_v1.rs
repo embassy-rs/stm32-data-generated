@@ -2549,13 +2549,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2568,14 +2568,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem0")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem0 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem0 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem0 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2586,13 +2586,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2605,14 +2605,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem10 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem10")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem10 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem10 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem10 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2623,13 +2623,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2642,14 +2642,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem100 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem100")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem100 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem100 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem100 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2660,13 +2660,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2679,14 +2679,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem101 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem101")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem101 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem101 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem101 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2697,13 +2697,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2716,14 +2716,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem102 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem102")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem102 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem102 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem102 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2734,13 +2734,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2753,14 +2753,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem103 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem103")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem103 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem103 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem103 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2771,13 +2771,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2790,14 +2790,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem11 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem11")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem11 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem11 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem11 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2808,13 +2808,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2827,14 +2827,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem12 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem12")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem12 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem12 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem12 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2845,13 +2845,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2864,14 +2864,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem13 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem13")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem13 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem13 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem13 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2882,13 +2882,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2901,14 +2901,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem14 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem14")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem14 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem14 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem14 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2919,13 +2919,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2938,14 +2938,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem15 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem15")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem15 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem15 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem15 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2956,13 +2956,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2975,14 +2975,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem16 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem16")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem16 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem16 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem16 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -2993,13 +2993,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3012,14 +3012,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem17 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem17")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem17 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem17 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem17 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3030,13 +3030,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3049,14 +3049,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem18 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem18")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem18 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem18 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem18 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3067,13 +3067,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3086,14 +3086,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem19 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem19")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem19 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem19 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem19 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3104,13 +3104,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3123,14 +3123,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem2")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem2 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem2 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3141,13 +3141,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3160,14 +3160,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem20 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem20")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem20 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem20 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem20 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3178,13 +3178,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3197,14 +3197,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem21 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem21")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem21 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem21 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem21 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3215,13 +3215,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3234,14 +3234,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem22 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem22")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem22 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem22 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem22 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3252,13 +3252,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3271,14 +3271,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem23 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem23")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem23 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem23 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem23 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3289,13 +3289,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3308,14 +3308,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem24 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem24")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem24 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem24 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem24 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3326,13 +3326,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3345,14 +3345,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem25 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem25")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem25 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem25 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem25 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3363,13 +3363,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3382,14 +3382,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem26 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem26")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem26 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem26 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem26 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3400,13 +3400,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3419,14 +3419,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem27 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem27")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem27 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem27 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem27 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3437,13 +3437,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3456,14 +3456,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem28 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem28")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem28 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem28 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem28 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3474,13 +3474,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3493,14 +3493,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem29 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem29")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem29 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem29 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem29 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3511,13 +3511,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3530,14 +3530,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem3")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem3 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem3 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3548,13 +3548,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3567,14 +3567,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem30 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem30")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem30 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem30 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem30 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3585,13 +3585,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3604,14 +3604,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem31 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem31")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem31 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem31 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem31 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3622,13 +3622,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3641,14 +3641,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem32 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem32")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem32 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem32 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem32 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3659,13 +3659,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3678,14 +3678,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem33 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem33")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem33 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem33 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem33 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3696,13 +3696,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3715,14 +3715,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem34 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem34")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem34 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem34 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem34 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3733,13 +3733,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3752,14 +3752,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem35 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem35")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem35 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem35 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem35 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3770,13 +3770,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3789,14 +3789,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem36 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem36")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem36 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem36 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem36 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3807,13 +3807,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3826,14 +3826,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem37 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem37")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem37 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem37 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem37 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3844,13 +3844,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3863,14 +3863,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem38 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem38")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem38 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem38 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem38 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3881,13 +3881,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3900,14 +3900,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem39 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem39")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem39 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem39 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem39 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3918,13 +3918,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3937,14 +3937,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem4")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem4 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem4 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem4 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3955,13 +3955,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3974,14 +3974,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem40 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem40")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem40 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem40 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem40 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -3992,13 +3992,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4011,14 +4011,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem41 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem41")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem41 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem41 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem41 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4029,13 +4029,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4048,14 +4048,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem42 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem42")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem42 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem42 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem42 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4066,13 +4066,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4085,14 +4085,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem43 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem43")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem43 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem43 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem43 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4103,13 +4103,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4122,14 +4122,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem44 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem44")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem44 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem44 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem44 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4140,13 +4140,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4159,14 +4159,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem45 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem45")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem45 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem45 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem45 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4177,13 +4177,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4196,14 +4196,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem46 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem46")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem46 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem46 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem46 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4214,13 +4214,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4233,14 +4233,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem47 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem47")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem47 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem47 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem47 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4251,13 +4251,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4270,14 +4270,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem48 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem48")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem48 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem48 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem48 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4288,13 +4288,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4307,14 +4307,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem49 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem49")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem49 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem49 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem49 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4325,13 +4325,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4344,14 +4344,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem5 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem5")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem5 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem5 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem5 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4362,13 +4362,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4381,14 +4381,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem50 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem50")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem50 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem50 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem50 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4399,13 +4399,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4418,14 +4418,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem51 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem51")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem51 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem51 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem51 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4436,13 +4436,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4455,14 +4455,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem52 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem52")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem52 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem52 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem52 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4473,13 +4473,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4492,14 +4492,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem53 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem53")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem53 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem53 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem53 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4510,13 +4510,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4529,14 +4529,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem54 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem54")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem54 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem54 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem54 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4547,13 +4547,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4566,14 +4566,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem55 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem55")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem55 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem55 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem55 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4584,13 +4584,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4603,14 +4603,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem56 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem56")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem56 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem56 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem56 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4621,13 +4621,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4640,14 +4640,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem57 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem57")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem57 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem57 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem57 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4658,13 +4658,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4677,14 +4677,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem58 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem58")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem58 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem58 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem58 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4695,13 +4695,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4714,14 +4714,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem59 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem59")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem59 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem59 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem59 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4732,13 +4732,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4751,14 +4751,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem6 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem6")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem6 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem6 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem6 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4769,13 +4769,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4788,14 +4788,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem60 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem60")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem60 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem60 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem60 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4806,13 +4806,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4825,14 +4825,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem61 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem61")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem61 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem61 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem61 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4843,13 +4843,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4862,14 +4862,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem62 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem62")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem62 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem62 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem62 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4880,13 +4880,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4899,14 +4899,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem63 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem63")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem63 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem63 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem63 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4917,13 +4917,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4936,14 +4936,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem64 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem64")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem64 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem64 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem64 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4954,13 +4954,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -4973,14 +4973,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem65 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem65")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem65 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem65 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem65 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -4991,13 +4991,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5010,14 +5010,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem66 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem66")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem66 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem66 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem66 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5028,13 +5028,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5047,14 +5047,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem67 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem67")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem67 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem67 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem67 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5065,13 +5065,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5084,14 +5084,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem68 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem68")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem68 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem68 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem68 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5102,13 +5102,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5121,14 +5121,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem69 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem69")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem69 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem69 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem69 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5139,13 +5139,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5158,14 +5158,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem7 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem7")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem7 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem7 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem7 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5176,13 +5176,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5195,14 +5195,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem70 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem70")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem70 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem70 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem70 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5213,13 +5213,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5232,14 +5232,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem71 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem71")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem71 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem71 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem71 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5250,13 +5250,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5269,14 +5269,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem72 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem72")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem72 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem72 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem72 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5287,13 +5287,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5306,14 +5306,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem73 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem73")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem73 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem73 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem73 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5324,13 +5324,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5343,14 +5343,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem74 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem74")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem74 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem74 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem74 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5361,13 +5361,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5380,14 +5380,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem75 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem75")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem75 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem75 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem75 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5398,13 +5398,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5417,14 +5417,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem76 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem76")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem76 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem76 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem76 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5435,13 +5435,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5454,14 +5454,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem77 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem77")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem77 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem77 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem77 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5472,13 +5472,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5491,14 +5491,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem78 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem78")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem78 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem78 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem78 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5509,13 +5509,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5528,14 +5528,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem79 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem79")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem79 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem79 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem79 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5546,13 +5546,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5565,14 +5565,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem8 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem8")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem8 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem8 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem8 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5583,13 +5583,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5602,14 +5602,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem80 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem80")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem80 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem80 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem80 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5620,13 +5620,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5639,14 +5639,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem81 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem81")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem81 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem81 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem81 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5657,13 +5657,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5676,14 +5676,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem82 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem82")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem82 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem82 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem82 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5694,13 +5694,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5713,14 +5713,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem83 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem83")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem83 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem83 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem83 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5731,13 +5731,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5750,14 +5750,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem84 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem84")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem84 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem84 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem84 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5768,13 +5768,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5787,14 +5787,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem85 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem85")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem85 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem85 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem85 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5805,13 +5805,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5824,14 +5824,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem86 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem86")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem86 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem86 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem86 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5842,13 +5842,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5861,14 +5861,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem87 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem87")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem87 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem87 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem87 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5879,13 +5879,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5898,14 +5898,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem88 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem88")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem88 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem88 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem88 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5916,13 +5916,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5935,14 +5935,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem89 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem89")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem89 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem89 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem89 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5953,13 +5953,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -5972,14 +5972,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem9 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem9")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem9 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem9 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem9 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -5990,13 +5990,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -6009,14 +6009,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem90 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem90")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem90 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem90 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem90 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6027,13 +6027,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -6046,14 +6046,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem91 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem91")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem91 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem91 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem91 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6064,13 +6064,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -6083,14 +6083,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem92 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem92")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem92 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem92 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem92 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6101,13 +6101,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -6120,14 +6120,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem93 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem93")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem93 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem93 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem93 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6138,13 +6138,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -6157,14 +6157,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem94 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem94")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem94 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem94 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem94 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6175,13 +6175,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -6194,14 +6194,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem95 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem95")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem95 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem95 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem95 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6212,13 +6212,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -6231,14 +6231,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem96 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem96")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem96 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem96 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem96 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6249,13 +6249,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -6268,14 +6268,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem97 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem97")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem97 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem97 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem97 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6286,13 +6286,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -6305,14 +6305,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem98 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem98")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem98 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem98 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem98 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG DHTMem tables"]
@@ -6323,13 +6323,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -6342,14 +6342,14 @@ pub mod regs {
     impl core::fmt::Debug for Dhtmem99 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhtmem99")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dhtmem99 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Dhtmem99 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "Dhtmem99 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG HuffSymb tables"]
@@ -8120,13 +8120,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8139,14 +8139,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc00 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc00")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc00 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc00 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc00 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8157,13 +8157,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8176,14 +8176,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc01 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc01")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc01 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc01 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc01 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8194,13 +8194,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8213,14 +8213,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc010 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc010")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc010 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc010 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc010 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8231,13 +8231,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8250,14 +8250,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc011 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc011")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc011 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc011 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc011 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8268,13 +8268,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8287,14 +8287,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc012 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc012")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc012 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc012 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc012 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8305,13 +8305,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8324,14 +8324,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc013 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc013")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc013 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc013 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc013 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8342,13 +8342,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8361,14 +8361,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc014 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc014")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc014 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc014 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc014 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8379,13 +8379,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8398,14 +8398,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc015 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc015")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc015 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc015 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc015 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8416,13 +8416,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8435,14 +8435,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc016 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc016")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc016 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc016 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc016 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8453,13 +8453,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8472,14 +8472,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc017 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc017")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc017 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc017 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc017 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8490,13 +8490,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8509,14 +8509,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc018 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc018")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc018 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc018 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc018 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8527,13 +8527,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8546,14 +8546,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc019 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc019")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc019 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc019 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc019 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8564,13 +8564,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8583,14 +8583,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc02 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc02")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc02 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc02 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc02 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8601,13 +8601,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8620,14 +8620,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc020 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc020")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc020 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc020 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc020 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8638,13 +8638,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8657,14 +8657,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc021 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc021")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc021 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc021 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc021 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8675,13 +8675,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8694,14 +8694,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc022 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc022")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc022 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc022 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc022 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8712,13 +8712,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8731,14 +8731,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc023 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc023")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc023 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc023 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc023 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8749,13 +8749,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8768,14 +8768,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc024 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc024")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc024 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc024 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc024 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8786,13 +8786,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8805,14 +8805,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc025 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc025")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc025 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc025 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc025 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8823,13 +8823,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8842,14 +8842,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc026 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc026")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc026 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc026 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc026 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8860,13 +8860,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8879,14 +8879,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc027 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc027")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc027 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc027 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc027 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8897,13 +8897,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8916,14 +8916,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc028 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc028")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc028 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc028 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc028 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8934,13 +8934,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8953,14 +8953,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc029 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc029")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc029 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc029 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc029 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -8971,13 +8971,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -8990,14 +8990,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc03 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc03")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc03 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc03 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc03 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9008,13 +9008,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9027,14 +9027,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc030 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc030")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc030 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc030 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc030 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9045,13 +9045,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9064,14 +9064,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc031 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc031")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc031 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc031 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc031 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9082,13 +9082,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9101,14 +9101,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc032 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc032")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc032 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc032 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc032 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9119,13 +9119,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9138,14 +9138,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc033 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc033")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc033 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc033 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc033 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9156,13 +9156,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9175,14 +9175,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc034 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc034")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc034 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc034 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc034 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9193,13 +9193,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9212,14 +9212,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc035 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc035")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc035 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc035 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc035 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9230,13 +9230,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9249,14 +9249,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc036 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc036")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc036 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc036 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc036 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9267,13 +9267,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9286,14 +9286,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc037 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc037")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc037 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc037 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc037 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9304,13 +9304,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9323,14 +9323,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc038 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc038")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc038 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc038 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc038 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9341,13 +9341,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9360,14 +9360,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc039 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc039")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc039 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc039 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc039 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9378,13 +9378,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9397,14 +9397,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc04 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc04")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc04 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc04 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc04 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9415,13 +9415,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9434,14 +9434,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc040 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc040")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc040 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc040 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc040 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9452,13 +9452,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9471,14 +9471,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc041 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc041")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc041 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc041 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc041 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9489,13 +9489,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9508,14 +9508,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc042 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc042")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc042 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc042 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc042 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9526,13 +9526,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9545,14 +9545,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc043 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc043")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc043 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc043 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc043 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9563,13 +9563,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9582,14 +9582,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc044 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc044")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc044 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc044 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc044 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9600,13 +9600,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9619,14 +9619,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc045 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc045")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc045 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc045 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc045 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9637,13 +9637,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9656,14 +9656,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc046 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc046")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc046 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc046 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc046 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9674,13 +9674,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9693,14 +9693,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc047 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc047")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc047 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc047 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc047 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9711,13 +9711,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9730,14 +9730,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc048 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc048")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc048 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc048 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc048 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9748,13 +9748,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9767,14 +9767,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc049 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc049")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc049 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc049 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc049 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9785,13 +9785,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9804,14 +9804,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc05 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc05")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc05 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc05 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc05 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9822,13 +9822,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9841,14 +9841,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc050 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc050")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc050 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc050 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc050 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9859,13 +9859,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9878,14 +9878,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc051 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc051")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc051 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc051 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc051 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9896,13 +9896,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9915,14 +9915,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc052 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc052")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc052 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc052 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc052 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9933,13 +9933,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9952,14 +9952,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc053 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc053")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc053 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc053 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc053 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -9970,13 +9970,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -9989,14 +9989,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc054 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc054")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc054 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc054 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc054 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10007,13 +10007,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10026,14 +10026,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc055 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc055")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc055 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc055 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc055 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10044,13 +10044,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10063,14 +10063,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc056 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc056")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc056 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc056 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc056 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10081,13 +10081,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10100,14 +10100,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc057 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc057")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc057 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc057 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc057 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10118,13 +10118,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10137,14 +10137,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc058 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc058")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc058 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc058 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc058 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10155,13 +10155,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10174,14 +10174,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc059 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc059")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc059 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc059 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc059 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10192,13 +10192,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10211,14 +10211,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc06 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc06")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc06 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc06 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc06 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10229,13 +10229,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10248,14 +10248,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc060 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc060")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc060 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc060 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc060 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10266,13 +10266,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10285,14 +10285,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc061 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc061")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc061 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc061 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc061 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10303,13 +10303,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10322,14 +10322,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc062 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc062")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc062 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc062 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc062 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10340,13 +10340,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10359,14 +10359,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc063 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc063")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc063 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc063 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc063 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10377,13 +10377,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10396,14 +10396,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc064 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc064")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc064 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc064 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc064 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10414,13 +10414,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10433,14 +10433,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc065 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc065")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc065 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc065 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc065 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10451,13 +10451,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10470,14 +10470,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc066 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc066")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc066 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc066 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc066 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10488,13 +10488,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10507,14 +10507,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc067 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc067")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc067 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc067 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc067 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10525,13 +10525,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10544,14 +10544,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc068 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc068")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc068 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc068 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc068 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10562,13 +10562,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10581,14 +10581,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc069 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc069")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc069 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc069 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc069 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10599,13 +10599,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10618,14 +10618,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc07 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc07")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc07 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc07 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc07 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10636,13 +10636,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10655,14 +10655,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc070 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc070")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc070 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc070 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc070 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10673,13 +10673,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10692,14 +10692,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc071 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc071")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc071 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc071 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc071 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10710,13 +10710,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10729,14 +10729,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc072 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc072")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc072 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc072 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc072 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10747,13 +10747,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10766,14 +10766,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc073 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc073")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc073 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc073 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc073 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10784,13 +10784,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10803,14 +10803,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc074 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc074")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc074 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc074 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc074 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10821,13 +10821,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10840,14 +10840,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc075 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc075")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc075 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc075 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc075 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10858,13 +10858,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10877,14 +10877,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc076 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc076")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc076 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc076 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc076 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10895,13 +10895,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10914,14 +10914,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc077 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc077")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc077 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc077 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc077 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10932,13 +10932,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10951,14 +10951,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc078 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc078")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc078 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc078 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc078 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -10969,13 +10969,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -10988,14 +10988,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc079 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc079")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc079 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc079 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc079 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11006,13 +11006,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11025,14 +11025,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc08 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc08")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc08 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc08 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc08 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11043,13 +11043,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11062,14 +11062,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc080 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc080")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc080 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc080 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc080 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11080,13 +11080,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11099,14 +11099,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc081 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc081")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc081 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc081 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc081 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11117,13 +11117,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11136,14 +11136,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc082 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc082")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc082 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc082 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc082 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11154,13 +11154,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11173,14 +11173,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc083 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc083")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc083 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc083 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc083 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11191,13 +11191,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11210,14 +11210,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc084 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc084")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc084 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc084 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc084 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11228,13 +11228,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11247,14 +11247,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc085 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc085")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc085 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc085 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc085 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11265,13 +11265,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11284,14 +11284,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc086 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc086")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc086 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc086 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc086 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11302,13 +11302,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11321,14 +11321,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc087 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc087")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc087 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc087 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc087 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 0"]
@@ -11339,13 +11339,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11358,14 +11358,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc09 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc09")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc09 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc09 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc09 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11376,13 +11376,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11395,14 +11395,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc10 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc10")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc10 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc10 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc10 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11413,13 +11413,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11432,14 +11432,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc11 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc11")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc11 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc11 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc11 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11450,13 +11450,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11469,14 +11469,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc110 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc110")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc110 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc110 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc110 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11487,13 +11487,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11506,14 +11506,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc111 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc111")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc111 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc111 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc111 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11524,13 +11524,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11543,14 +11543,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc112 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc112")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc112 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc112 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc112 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11561,13 +11561,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11580,14 +11580,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc113 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc113")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc113 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc113 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc113 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11598,13 +11598,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11617,14 +11617,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc114 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc114")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc114 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc114 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc114 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11635,13 +11635,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11654,14 +11654,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc115 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc115")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc115 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc115 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc115 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11672,13 +11672,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11691,14 +11691,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc116 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc116")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc116 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc116 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc116 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11709,13 +11709,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11728,14 +11728,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc117 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc117")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc117 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc117 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc117 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11746,13 +11746,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11765,14 +11765,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc118 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc118")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc118 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc118 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc118 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11783,13 +11783,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11802,14 +11802,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc119 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc119")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc119 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc119 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc119 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11820,13 +11820,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11839,14 +11839,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc12 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc12")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc12 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc12 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc12 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11857,13 +11857,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11876,14 +11876,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc120 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc120")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc120 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc120 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc120 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11894,13 +11894,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11913,14 +11913,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc121 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc121")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc121 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc121 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc121 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11931,13 +11931,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11950,14 +11950,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc122 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc122")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc122 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc122 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc122 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -11968,13 +11968,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -11987,14 +11987,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc123 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc123")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc123 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc123 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc123 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12005,13 +12005,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12024,14 +12024,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc124 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc124")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc124 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc124 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc124 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12042,13 +12042,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12061,14 +12061,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc125 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc125")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc125 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc125 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc125 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12079,13 +12079,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12098,14 +12098,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc126 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc126")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc126 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc126 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc126 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12116,13 +12116,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12135,14 +12135,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc127 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc127")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc127 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc127 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc127 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12153,13 +12153,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12172,14 +12172,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc128 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc128")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc128 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc128 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc128 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12190,13 +12190,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12209,14 +12209,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc129 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc129")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc129 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc129 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc129 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12227,13 +12227,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12246,14 +12246,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc13 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc13")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc13 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc13 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc13 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12264,13 +12264,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12283,14 +12283,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc130 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc130")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc130 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc130 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc130 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12301,13 +12301,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12320,14 +12320,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc131 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc131")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc131 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc131 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc131 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12338,13 +12338,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12357,14 +12357,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc132 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc132")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc132 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc132 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc132 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12375,13 +12375,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12394,14 +12394,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc133 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc133")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc133 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc133 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc133 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12412,13 +12412,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12431,14 +12431,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc134 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc134")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc134 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc134 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc134 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12449,13 +12449,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12468,14 +12468,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc135 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc135")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc135 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc135 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc135 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12486,13 +12486,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12505,14 +12505,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc136 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc136")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc136 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc136 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc136 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12523,13 +12523,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12542,14 +12542,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc137 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc137")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc137 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc137 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc137 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12560,13 +12560,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12579,14 +12579,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc138 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc138")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc138 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc138 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc138 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12597,13 +12597,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12616,14 +12616,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc139 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc139")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc139 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc139 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc139 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12634,13 +12634,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12653,14 +12653,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc14 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc14")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc14 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc14 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc14 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12671,13 +12671,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12690,14 +12690,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc140 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc140")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc140 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc140 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc140 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12708,13 +12708,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12727,14 +12727,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc141 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc141")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc141 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc141 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc141 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12745,13 +12745,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12764,14 +12764,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc142 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc142")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc142 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc142 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc142 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12782,13 +12782,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12801,14 +12801,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc143 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc143")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc143 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc143 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc143 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12819,13 +12819,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12838,14 +12838,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc144 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc144")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc144 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc144 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc144 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12856,13 +12856,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12875,14 +12875,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc145 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc145")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc145 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc145 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc145 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12893,13 +12893,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12912,14 +12912,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc146 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc146")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc146 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc146 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc146 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12930,13 +12930,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12949,14 +12949,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc147 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc147")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc147 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc147 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc147 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -12967,13 +12967,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -12986,14 +12986,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc148 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc148")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc148 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc148 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc148 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13004,13 +13004,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13023,14 +13023,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc149 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc149")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc149 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc149 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc149 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13041,13 +13041,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13060,14 +13060,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc15 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc15")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc15 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc15 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc15 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13078,13 +13078,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13097,14 +13097,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc150 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc150")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc150 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc150 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc150 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13115,13 +13115,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13134,14 +13134,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc151 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc151")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc151 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc151 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc151 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13152,13 +13152,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13171,14 +13171,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc152 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc152")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc152 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc152 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc152 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13189,13 +13189,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13208,14 +13208,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc153 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc153")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc153 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc153 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc153 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13226,13 +13226,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13245,14 +13245,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc154 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc154")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc154 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc154 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc154 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13263,13 +13263,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13282,14 +13282,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc155 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc155")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc155 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc155 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc155 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13300,13 +13300,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13319,14 +13319,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc156 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc156")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc156 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc156 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc156 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13337,13 +13337,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13356,14 +13356,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc157 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc157")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc157 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc157 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc157 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13374,13 +13374,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13393,14 +13393,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc158 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc158")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc158 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc158 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc158 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13411,13 +13411,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13430,14 +13430,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc159 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc159")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc159 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc159 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc159 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13448,13 +13448,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13467,14 +13467,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc16 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc16")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc16 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc16 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc16 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13485,13 +13485,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13504,14 +13504,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc160 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc160")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc160 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc160 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc160 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13522,13 +13522,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13541,14 +13541,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc161 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc161")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc161 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc161 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc161 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13559,13 +13559,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13578,14 +13578,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc162 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc162")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc162 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc162 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc162 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13596,13 +13596,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13615,14 +13615,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc163 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc163")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc163 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc163 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc163 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13633,13 +13633,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13652,14 +13652,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc164 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc164")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc164 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc164 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc164 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13670,13 +13670,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13689,14 +13689,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc165 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc165")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc165 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc165 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc165 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13707,13 +13707,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13726,14 +13726,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc166 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc166")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc166 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc166 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc166 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13744,13 +13744,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13763,14 +13763,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc167 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc167")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc167 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc167 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc167 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13781,13 +13781,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13800,14 +13800,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc168 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc168")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc168 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc168 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc168 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13818,13 +13818,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13837,14 +13837,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc169 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc169")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc169 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc169 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc169 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13855,13 +13855,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13874,14 +13874,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc17 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc17")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc17 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc17 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc17 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13892,13 +13892,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13911,14 +13911,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc170 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc170")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc170 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc170 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc170 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13929,13 +13929,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13948,14 +13948,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc171 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc171")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc171 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc171 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc171 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -13966,13 +13966,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -13985,14 +13985,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc172 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc172")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc172 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc172 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc172 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14003,13 +14003,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14022,14 +14022,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc173 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc173")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc173 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc173 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc173 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14040,13 +14040,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14059,14 +14059,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc174 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc174")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc174 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc174 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc174 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14077,13 +14077,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14096,14 +14096,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc175 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc175")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc175 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc175 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc175 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14114,13 +14114,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14133,14 +14133,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc176 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc176")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc176 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc176 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc176 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14151,13 +14151,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14170,14 +14170,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc177 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc177")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc177 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc177 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc177 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14188,13 +14188,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14207,14 +14207,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc178 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc178")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc178 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc178 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc178 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14225,13 +14225,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14244,14 +14244,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc179 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc179")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc179 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc179 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc179 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14262,13 +14262,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14281,14 +14281,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc18 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc18")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc18 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc18 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc18 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14299,13 +14299,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14318,14 +14318,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc180 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc180")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc180 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc180 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc180 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14336,13 +14336,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14355,14 +14355,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc181 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc181")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc181 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc181 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc181 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14373,13 +14373,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14392,14 +14392,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc182 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc182")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc182 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc182 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc182 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14410,13 +14410,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14429,14 +14429,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc183 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc183")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc183 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc183 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc183 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14447,13 +14447,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14466,14 +14466,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc184 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc184")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc184 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc184 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc184 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14484,13 +14484,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14503,14 +14503,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc185 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc185")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc185 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc185 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc185 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14521,13 +14521,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14540,14 +14540,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc186 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc186")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc186 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc186 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc186 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14558,13 +14558,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14577,14 +14577,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc187 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc187")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc187 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc187 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc187 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, AC Huffman table 1"]
@@ -14595,13 +14595,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14614,14 +14614,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencAc19 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencAc19")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencAc19 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencAc19 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencAc19 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -14632,13 +14632,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14651,14 +14651,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc00 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc00")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc00 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc00 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc00 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -14669,13 +14669,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14688,14 +14688,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc01 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc01")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc01 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc01 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc01 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -14706,13 +14706,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14725,14 +14725,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc02 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc02")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc02 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc02 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc02 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -14743,13 +14743,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14762,14 +14762,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc03 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc03")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc03 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc03 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc03 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -14780,13 +14780,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14799,14 +14799,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc04 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc04")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc04 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc04 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc04 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -14817,13 +14817,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14836,14 +14836,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc05 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc05")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc05 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc05 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc05 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -14854,13 +14854,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14873,14 +14873,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc06 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc06")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc06 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc06 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc06 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 0"]
@@ -14891,13 +14891,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14910,14 +14910,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc07 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc07")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc07 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc07 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc07 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -14928,13 +14928,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14947,14 +14947,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc10 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc10")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc10 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc10 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc10 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -14965,13 +14965,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -14984,14 +14984,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc11 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc11")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc11 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc11 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc11 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -15002,13 +15002,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -15021,14 +15021,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc12 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc12")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc12 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc12 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc12 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -15039,13 +15039,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -15058,14 +15058,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc13 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc13")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc13 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc13 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc13 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -15076,13 +15076,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -15095,14 +15095,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc14 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc14")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc14 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc14 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc14 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -15113,13 +15113,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -15132,14 +15132,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc15 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc15")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc15 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc15 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc15 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -15150,13 +15150,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -15169,14 +15169,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc16 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc16")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc16 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc16 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc16 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG encoder, DC Huffman table 1"]
@@ -15187,13 +15187,13 @@ pub mod regs {
         #[doc = "DHTMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn dhtmem_ram(&self) -> u32 {
+        pub const fn dht_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "DHTMem RAM"]
         #[inline(always)]
-        pub const fn set_dhtmem_ram(&mut self, val: u32) {
+        pub const fn set_dht_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -15206,14 +15206,14 @@ pub mod regs {
     impl core::fmt::Debug for HuffencDc17 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HuffencDc17")
-                .field("dhtmem_ram", &self.dhtmem_ram())
+                .field("dht_mem_ram", &self.dht_mem_ram())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for HuffencDc17 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "HuffencDc17 {{ dhtmem_ram: {=u32:?} }}", self.dhtmem_ram())
+            defmt::write!(f, "HuffencDc17 {{ dht_mem_ram: {=u32:?} }}", self.dht_mem_ram())
         }
     }
     #[doc = "JPEG HuffMin tables"]
@@ -19982,13 +19982,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20000,13 +20000,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem00 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem00").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem00").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem00 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem00 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem00 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20017,13 +20017,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20035,13 +20035,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem01 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem01").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem01").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem01 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem01 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem01 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20052,13 +20052,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20070,13 +20070,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem010 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem010").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem010").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem010 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem010 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem010 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20087,13 +20087,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20105,13 +20105,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem011 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem011").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem011").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem011 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem011 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem011 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20122,13 +20122,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20140,13 +20140,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem012 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem012").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem012").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem012 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem012 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem012 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20157,13 +20157,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20175,13 +20175,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem013 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem013").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem013").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem013 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem013 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem013 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20192,13 +20192,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20210,13 +20210,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem014 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem014").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem014").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem014 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem014 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem014 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20227,13 +20227,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20245,13 +20245,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem015 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem015").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem015").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem015 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem015 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem015 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20262,13 +20262,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20280,13 +20280,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem02 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem02").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem02").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem02 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem02 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem02 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20297,13 +20297,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20315,13 +20315,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem03 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem03").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem03").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem03 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem03 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem03 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20332,13 +20332,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20350,13 +20350,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem04 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem04").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem04").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem04 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem04 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem04 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20367,13 +20367,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20385,13 +20385,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem05 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem05").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem05").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem05 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem05 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem05 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20402,13 +20402,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20420,13 +20420,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem06 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem06").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem06").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem06 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem06 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem06 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20437,13 +20437,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20455,13 +20455,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem07 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem07").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem07").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem07 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem07 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem07 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20472,13 +20472,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20490,13 +20490,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem08 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem08").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem08").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem08 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem08 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem08 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20507,13 +20507,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20525,13 +20525,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem09 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem09").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem09").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem09 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem09 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem09 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20542,13 +20542,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20560,13 +20560,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem10 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem10").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem10").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem10 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem10 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem10 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20577,13 +20577,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20595,13 +20595,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem11 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem11").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem11").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem11 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem11 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem11 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20612,13 +20612,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20630,13 +20630,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem110 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem110").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem110").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem110 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem110 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem110 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20647,13 +20647,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20665,13 +20665,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem111 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem111").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem111").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem111 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem111 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem111 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20682,13 +20682,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20700,13 +20700,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem112 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem112").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem112").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem112 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem112 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem112 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20717,13 +20717,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20735,13 +20735,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem113 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem113").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem113").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem113 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem113 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem113 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20752,13 +20752,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20770,13 +20770,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem114 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem114").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem114").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem114 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem114 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem114 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20787,13 +20787,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20805,13 +20805,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem115 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem115").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem115").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem115 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem115 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem115 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20822,13 +20822,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20840,13 +20840,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem12 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem12").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem12").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem12 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem12 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem12 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20857,13 +20857,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20875,13 +20875,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem13 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem13").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem13").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem13 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem13 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem13 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20892,13 +20892,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20910,13 +20910,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem14 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem14").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem14").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem14 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem14 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem14 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20927,13 +20927,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20945,13 +20945,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem15 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem15").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem15").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem15 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem15 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem15 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20962,13 +20962,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -20980,13 +20980,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem16 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem16").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem16").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem16 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem16 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem16 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -20997,13 +20997,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21015,13 +21015,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem17 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem17").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem17").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem17 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem17 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem17 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21032,13 +21032,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21050,13 +21050,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem18 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem18").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem18").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem18 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem18 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem18 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21067,13 +21067,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21085,13 +21085,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem19 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem19").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem19").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem19 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem19 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem19 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21102,13 +21102,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21120,13 +21120,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem20 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem20").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem20").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem20 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem20 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem20 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21137,13 +21137,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21155,13 +21155,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem21 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem21").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem21").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem21 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem21 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem21 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21172,13 +21172,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21190,13 +21190,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem210 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem210").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem210").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem210 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem210 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem210 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21207,13 +21207,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21225,13 +21225,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem211 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem211").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem211").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem211 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem211 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem211 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21242,13 +21242,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21260,13 +21260,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem212 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem212").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem212").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem212 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem212 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem212 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21277,13 +21277,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21295,13 +21295,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem213 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem213").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem213").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem213 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem213 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem213 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21312,13 +21312,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21330,13 +21330,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem214 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem214").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem214").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem214 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem214 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem214 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21347,13 +21347,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21365,13 +21365,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem215 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem215").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem215").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem215 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem215 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem215 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21382,13 +21382,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21400,13 +21400,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem22 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem22").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem22").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem22 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem22 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem22 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21417,13 +21417,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21435,13 +21435,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem23 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem23").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem23").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem23 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem23 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem23 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21452,13 +21452,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21470,13 +21470,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem24 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem24").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem24").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem24 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem24 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem24 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21487,13 +21487,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21505,13 +21505,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem25 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem25").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem25").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem25 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem25 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem25 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21522,13 +21522,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21540,13 +21540,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem26 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem26").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem26").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem26 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem26 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem26 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21557,13 +21557,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21575,13 +21575,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem27 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem27").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem27").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem27 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem27 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem27 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21592,13 +21592,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21610,13 +21610,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem28 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem28").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem28").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem28 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem28 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem28 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21627,13 +21627,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21645,13 +21645,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem29 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem29").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem29").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem29 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem29 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem29 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21662,13 +21662,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21680,13 +21680,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem30 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem30").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem30").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem30 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem30 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem30 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21697,13 +21697,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21715,13 +21715,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem31 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem31").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem31").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem31 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem31 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem31 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21732,13 +21732,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21750,13 +21750,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem310 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem310").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem310").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem310 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem310 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem310 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21767,13 +21767,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21785,13 +21785,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem311 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem311").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem311").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem311 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem311 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem311 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21802,13 +21802,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21820,13 +21820,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem312 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem312").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem312").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem312 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem312 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem312 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21837,13 +21837,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21855,13 +21855,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem313 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem313").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem313").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem313 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem313 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem313 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21872,13 +21872,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21890,13 +21890,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem314 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem314").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem314").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem314 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem314 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem314 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21907,13 +21907,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21925,13 +21925,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem315 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem315").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem315").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem315 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem315 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem315 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21942,13 +21942,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21960,13 +21960,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem32 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem32").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem32").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem32 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem32 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem32 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -21977,13 +21977,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -21995,13 +21995,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem33 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem33").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem33").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem33 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem33 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem33 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22012,13 +22012,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -22030,13 +22030,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem34 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem34").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem34").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem34 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem34 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem34 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22047,13 +22047,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -22065,13 +22065,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem35 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem35").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem35").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem35 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem35 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem35 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22082,13 +22082,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -22100,13 +22100,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem36 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem36").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem36").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem36 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem36 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem36 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22117,13 +22117,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -22135,13 +22135,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem37 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem37").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem37").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem37 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem37 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem37 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22152,13 +22152,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -22170,13 +22170,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem38 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem38").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem38").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem38 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem38 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem38 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
     #[doc = "JPEG quantization tables"]
@@ -22187,13 +22187,13 @@ pub mod regs {
         #[doc = "QMem RAM"]
         #[must_use]
         #[inline(always)]
-        pub const fn qmem_ram(&self) -> u32 {
+        pub const fn q_mem_ram(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "QMem RAM"]
         #[inline(always)]
-        pub const fn set_qmem_ram(&mut self, val: u32) {
+        pub const fn set_q_mem_ram(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -22205,13 +22205,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Qmem39 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Qmem39").field("qmem_ram", &self.qmem_ram()).finish()
+            f.debug_struct("Qmem39").field("q_mem_ram", &self.q_mem_ram()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Qmem39 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Qmem39 {{ qmem_ram: {=u32:?} }}", self.qmem_ram())
+            defmt::write!(f, "Qmem39 {{ q_mem_ram: {=u32:?} }}", self.q_mem_ram())
         }
     }
 }

@@ -1728,13 +1728,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Abrmod {
         #[doc = "Measurement of the start bit is used to detect the baud rate"]
-        START = 0x0,
+        Start = 0x0,
         #[doc = "Falling edge to falling edge measurement"]
-        EDGE = 0x01,
+        Edge = 0x01,
         #[doc = "0x7F frame detection"]
-        FRAME7F = 0x02,
+        Frame7f = 0x02,
         #[doc = "0x55 frame detection"]
-        FRAME55 = 0x03,
+        Frame55 = 0x03,
     }
     impl Abrmod {
         #[inline(always)]
@@ -1763,9 +1763,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Addm {
         #[doc = "4-bit address detection"]
-        BIT4 = 0x0,
+        Bit4 = 0x0,
         #[doc = "7-bit address detection"]
-        BIT7 = 0x01,
+        Bit7 = 0x01,
     }
     impl Addm {
         #[inline(always)]
@@ -1794,9 +1794,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpha {
         #[doc = "The first clock transition is the first data capture edge"]
-        FIRST = 0x0,
+        First = 0x0,
         #[doc = "The second clock transition is the first data capture edge"]
-        SECOND = 0x01,
+        Second = 0x01,
     }
     impl Cpha {
         #[inline(always)]
@@ -1825,9 +1825,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpol {
         #[doc = "Steady low value on CK pin outside transmission window"]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "Steady high value on CK pin outside transmission window"]
-        HIGH = 0x01,
+        High = 0x01,
     }
     impl Cpol {
         #[inline(always)]
@@ -1856,9 +1856,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dep {
         #[doc = "DE signal is active high"]
-        HIGH = 0x0,
+        High = 0x0,
         #[doc = "DE signal is active low"]
-        LOW = 0x01,
+        Low = 0x01,
     }
     impl Dep {
         #[inline(always)]
@@ -1887,9 +1887,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Irlp {
         #[doc = "Normal mode"]
-        NORMAL = 0x0,
+        Normal = 0x0,
         #[doc = "Low-power mode"]
-        LOW_POWER = 0x01,
+        LowPower = 0x01,
     }
     impl Irlp {
         #[inline(always)]
@@ -1918,9 +1918,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lbdl {
         #[doc = "10-bit break detection"]
-        BIT10 = 0x0,
+        Bit10 = 0x0,
         #[doc = "11-bit break detection"]
-        BIT11 = 0x01,
+        Bit11 = 0x01,
     }
     impl Lbdl {
         #[inline(always)]
@@ -1949,9 +1949,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum M0 {
         #[doc = "1 start bit, 8 data bits, n stop bits"]
-        BIT8 = 0x0,
+        Bit8 = 0x0,
         #[doc = "1 start bit, 9 data bits, n stop bits"]
-        BIT9 = 0x01,
+        Bit9 = 0x01,
     }
     impl M0 {
         #[inline(always)]
@@ -1982,7 +1982,7 @@ pub mod vals {
         #[doc = "Use M0 to set the data bits"]
         M0 = 0x0,
         #[doc = "1 start bit, 7 data bits, n stop bits"]
-        BIT7 = 0x01,
+        Bit7 = 0x01,
     }
     impl M1 {
         #[inline(always)]
@@ -2011,9 +2011,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msbfirst {
         #[doc = "data is transmitted/received with data bit 0 first, following the start bit"]
-        LSB = 0x0,
+        Lsb = 0x0,
         #[doc = "data is transmitted/received with MSB (bit 7/8/9) first, following the start bit"]
-        MSB = 0x01,
+        Msb = 0x01,
     }
     impl Msbfirst {
         #[inline(always)]
@@ -2042,9 +2042,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Over8 {
         #[doc = "Oversampling by 16"]
-        OVERSAMPLING16 = 0x0,
+        Oversampling16 = 0x0,
         #[doc = "Oversampling by 8"]
-        OVERSAMPLING8 = 0x01,
+        Oversampling8 = 0x01,
     }
     impl Over8 {
         #[inline(always)]
@@ -2073,9 +2073,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ps {
         #[doc = "Even parity"]
-        EVEN = 0x0,
+        Even = 0x0,
         #[doc = "Odd parity"]
-        ODD = 0x01,
+        Odd = 0x01,
     }
     impl Ps {
         #[inline(always)]
@@ -2104,9 +2104,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rwu {
         #[doc = "Receiver in active mode"]
-        ACTIVE = 0x0,
+        Active = 0x0,
         #[doc = "Receiver in mute mode"]
-        MUTE = 0x01,
+        Mute = 0x01,
     }
     impl Rwu {
         #[inline(always)]
@@ -2135,13 +2135,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Stop {
         #[doc = "1 stop bit"]
-        STOP1 = 0x0,
+        Stop1 = 0x0,
         #[doc = "0.5 stop bits"]
-        STOP0P5 = 0x01,
+        Stop0p5 = 0x01,
         #[doc = "2 stop bits"]
-        STOP2 = 0x02,
+        Stop2 = 0x02,
         #[doc = "1.5 stop bits"]
-        STOP1P5 = 0x03,
+        Stop1p5 = 0x03,
     }
     impl Stop {
         #[inline(always)]
@@ -2170,9 +2170,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wake {
         #[doc = "USART wakeup on idle line"]
-        IDLE_LINE = 0x0,
+        IdleLine = 0x0,
         #[doc = "USART wakeup on address mark"]
-        ADDRESS_MARK = 0x01,
+        AddressMark = 0x01,
     }
     impl Wake {
         #[inline(always)]
@@ -2201,12 +2201,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wus {
         #[doc = "WUF active on address match"]
-        ADDRESS = 0x0,
+        Address = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "WuF active on Start bit detection"]
-        START = 0x02,
+        Start = 0x02,
         #[doc = "WUF active on RXNE"]
-        RXNE = 0x03,
+        Rxne = 0x03,
     }
     impl Wus {
         #[inline(always)]

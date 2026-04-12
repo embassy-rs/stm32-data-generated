@@ -2812,28 +2812,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DIV2",
+                    name: "Div2",
                     description: Some(
                         "PCLK divided by 2",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV4",
+                    name: "Div4",
                     description: Some(
                         "PCLK divided by 4",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DIV6",
+                    name: "Div6",
                     description: Some(
                         "PCLK divided by 6",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DIV8",
+                    name: "Div8",
                     description: Some(
                         "PCLK divided by 8",
                     ),
@@ -2847,84 +2847,84 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "DIV1",
+                    name: "Div1",
                     description: Some(
                         "PLL clock not divided",
                     ),
                     value: 16,
                 },
                 EnumVariant {
-                    name: "DIV10",
+                    name: "Div10",
                     description: Some(
                         "PLL clock divided by 10",
                     ),
                     value: 21,
                 },
                 EnumVariant {
-                    name: "DIV12",
+                    name: "Div12",
                     description: Some(
                         "PLL clock divided by 12",
                     ),
                     value: 22,
                 },
                 EnumVariant {
-                    name: "DIV128",
+                    name: "Div128",
                     description: Some(
                         "PLL clock divided by 128",
                     ),
                     value: 26,
                 },
                 EnumVariant {
-                    name: "DIV16",
+                    name: "Div16",
                     description: Some(
                         "PLL clock divided by 16",
                     ),
                     value: 23,
                 },
                 EnumVariant {
-                    name: "DIV2",
+                    name: "Div2",
                     description: Some(
                         "PLL clock divided by 2",
                     ),
                     value: 17,
                 },
                 EnumVariant {
-                    name: "DIV256",
+                    name: "Div256",
                     description: Some(
                         "PLL clock divided by 256",
                     ),
                     value: 27,
                 },
                 EnumVariant {
-                    name: "DIV32",
+                    name: "Div32",
                     description: Some(
                         "PLL clock divided by 32",
                     ),
                     value: 24,
                 },
                 EnumVariant {
-                    name: "DIV4",
+                    name: "Div4",
                     description: Some(
                         "PLL clock divided by 4",
                     ),
                     value: 18,
                 },
                 EnumVariant {
-                    name: "DIV6",
+                    name: "Div6",
                     description: Some(
                         "PLL clock divided by 6",
                     ),
                     value: 19,
                 },
                 EnumVariant {
-                    name: "DIV64",
+                    name: "Div64",
                     description: Some(
                         "PLL clock divided by 64",
                     ),
                     value: 25,
                 },
                 EnumVariant {
-                    name: "DIV8",
+                    name: "Div8",
                     description: Some(
                         "PLL clock divided by 8",
                     ),
@@ -2938,14 +2938,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HSI_DIV_244",
+                    name: "HsiDiv244",
                     description: Some(
                         "HSI clock divided by 244 selected as CEC clock source",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LSE",
+                    name: "Lse",
                     description: Some(
                         "LSE clock selected as CEC clock source",
                     ),
@@ -2959,63 +2959,63 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "DIV1",
+                    name: "Div1",
                     description: Some(
                         "SYSCLK not divided",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV128",
+                    name: "Div128",
                     description: Some(
                         "SYSCLK divided by 128",
                     ),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "DIV16",
+                    name: "Div16",
                     description: Some(
                         "SYSCLK divided by 16",
                     ),
                     value: 11,
                 },
                 EnumVariant {
-                    name: "DIV2",
+                    name: "Div2",
                     description: Some(
                         "SYSCLK divided by 2",
                     ),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "DIV256",
+                    name: "Div256",
                     description: Some(
                         "SYSCLK divided by 256",
                     ),
                     value: 14,
                 },
                 EnumVariant {
-                    name: "DIV4",
+                    name: "Div4",
                     description: Some(
                         "SYSCLK divided by 4",
                     ),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "DIV512",
+                    name: "Div512",
                     description: Some(
                         "SYSCLK divided by 512",
                     ),
                     value: 15,
                 },
                 EnumVariant {
-                    name: "DIV64",
+                    name: "Div64",
                     description: Some(
                         "SYSCLK divided by 64",
                     ),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "DIV8",
+                    name: "Div8",
                     description: Some(
                         "SYSCLK divided by 8",
                     ),
@@ -3029,14 +3029,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HSI",
+                    name: "Hsi",
                     description: Some(
                         "HSI clock selected as I2C clock source",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYS",
+                    name: "Sys",
                     description: Some(
                         "SYSCLK clock selected as I2C clock source",
                     ),
@@ -3050,14 +3050,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CKIN",
+                    name: "Ckin",
                     description: Some(
                         "External clock mapped on the I2S_CKIN pin used as I2S clock source",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SYS",
+                    name: "Sys",
                     description: Some(
                         "System clock used as I2S clock source",
                     ),
@@ -3071,28 +3071,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HIGH",
+                    name: "High",
                     description: Some(
                         "High driving capability",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "LOW",
+                    name: "Low",
                     description: Some(
                         "Low driving capability",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEDIUM_HIGH",
+                    name: "MediumHigh",
                     description: Some(
                         "Medium high driving capability",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MEDIUM_LOW",
+                    name: "MediumLow",
                     description: Some(
                         "Medium low driving capability",
                     ),
@@ -3106,49 +3106,49 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "DISABLE",
+                    name: "Disable",
                     description: Some(
                         "MCO output disabled, no clock on MCO",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HSE",
+                    name: "Hse",
                     description: Some(
                         "External 4-32 MHz (HSE) oscillator clock selected",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "HSI",
+                    name: "Hsi",
                     description: Some(
                         "Internal RC 8 MHz (HSI) oscillator clock selected",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "LSE",
+                    name: "Lse",
                     description: Some(
                         "External low speed (LSE) oscillator clock selected",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "LSI",
+                    name: "Lsi",
                     description: Some(
                         "Internal low speed (LSI) oscillator clock selected",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PLL_DIV_2",
+                    name: "PllDiv2",
                     description: Some(
                         "PLL clock divided by 2",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "SYS",
+                    name: "Sys",
                     description: Some(
                         "System clock selected",
                     ),
@@ -3162,105 +3162,105 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "MUL10",
+                    name: "Mul10",
                     description: Some(
                         "PLL input clock x10",
                     ),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "MUL11",
+                    name: "Mul11",
                     description: Some(
                         "PLL input clock x11",
                     ),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "MUL12",
+                    name: "Mul12",
                     description: Some(
                         "PLL input clock x12",
                     ),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "MUL13",
+                    name: "Mul13",
                     description: Some(
                         "PLL input clock x13",
                     ),
                     value: 11,
                 },
                 EnumVariant {
-                    name: "MUL14",
+                    name: "Mul14",
                     description: Some(
                         "PLL input clock x14",
                     ),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "MUL15",
+                    name: "Mul15",
                     description: Some(
                         "PLL input clock x15",
                     ),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "MUL16",
+                    name: "Mul16",
                     description: Some(
                         "PLL input clock x16",
                     ),
                     value: 14,
                 },
                 EnumVariant {
-                    name: "MUL2",
+                    name: "Mul2",
                     description: Some(
                         "PLL input clock x2",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MUL3",
+                    name: "Mul3",
                     description: Some(
                         "PLL input clock x3",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MUL4",
+                    name: "Mul4",
                     description: Some(
                         "PLL input clock x4",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MUL5",
+                    name: "Mul5",
                     description: Some(
                         "PLL input clock x5",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "MUL6",
+                    name: "Mul6",
                     description: Some(
                         "PLL input clock x6",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "MUL7",
+                    name: "Mul7",
                     description: Some(
                         "PLL input clock x7",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "MUL8",
+                    name: "Mul8",
                     description: Some(
                         "PLL input clock x8",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "MUL9",
+                    name: "Mul9",
                     description: Some(
                         "PLL input clock x9",
                     ),
@@ -3274,14 +3274,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HSE_DIV_PREDIV",
+                    name: "HseDivPrediv",
                     description: Some(
                         "HSE divided by PREDIV selected as PLL input clock",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI_DIV2",
+                    name: "HsiDiv2",
                     description: Some(
                         "HSI divided by 2 selected as PLL input clock",
                     ),
@@ -3295,14 +3295,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DIV1",
+                    name: "Div1",
                     description: Some(
                         "HSE clock not divided",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV2",
+                    name: "Div2",
                     description: Some(
                         "HSE clock divided by 2",
                     ),
@@ -3316,35 +3316,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "DIV1",
+                    name: "Div1",
                     description: Some(
                         "HCLK not divided",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV16",
+                    name: "Div16",
                     description: Some(
                         "HCLK divided by 16",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "DIV2",
+                    name: "Div2",
                     description: Some(
                         "HCLK divided by 2",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "DIV4",
+                    name: "Div4",
                     description: Some(
                         "HCLK divided by 4",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DIV8",
+                    name: "Div8",
                     description: Some(
                         "HCLK divided by 8",
                     ),
@@ -3358,112 +3358,112 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "DIV1",
+                    name: "Div1",
                     description: Some(
                         "PREDIV input clock not divided",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV10",
+                    name: "Div10",
                     description: Some(
                         "PREDIV input clock divided by 10",
                     ),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "DIV11",
+                    name: "Div11",
                     description: Some(
                         "PREDIV input clock divided by 11",
                     ),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "DIV12",
+                    name: "Div12",
                     description: Some(
                         "PREDIV input clock divided by 12",
                     ),
                     value: 11,
                 },
                 EnumVariant {
-                    name: "DIV13",
+                    name: "Div13",
                     description: Some(
                         "PREDIV input clock divided by 13",
                     ),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "DIV14",
+                    name: "Div14",
                     description: Some(
                         "PREDIV input clock divided by 14",
                     ),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "DIV15",
+                    name: "Div15",
                     description: Some(
                         "PREDIV input clock divided by 15",
                     ),
                     value: 14,
                 },
                 EnumVariant {
-                    name: "DIV16",
+                    name: "Div16",
                     description: Some(
                         "PREDIV input clock divided by 16",
                     ),
                     value: 15,
                 },
                 EnumVariant {
-                    name: "DIV2",
+                    name: "Div2",
                     description: Some(
                         "PREDIV input clock divided by 2",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DIV3",
+                    name: "Div3",
                     description: Some(
                         "PREDIV input clock divided by 3",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DIV4",
+                    name: "Div4",
                     description: Some(
                         "PREDIV input clock divided by 4",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DIV5",
+                    name: "Div5",
                     description: Some(
                         "PREDIV input clock divided by 5",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "DIV6",
+                    name: "Div6",
                     description: Some(
                         "PREDIV input clock divided by 6",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DIV7",
+                    name: "Div7",
                     description: Some(
                         "PREDIV input clock divided by 7",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DIV8",
+                    name: "Div8",
                     description: Some(
                         "PREDIV input clock divided by 8",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "DIV9",
+                    name: "Div9",
                     description: Some(
                         "PREDIV input clock divided by 9",
                     ),
@@ -3477,28 +3477,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DISABLE",
+                    name: "Disable",
                     description: Some(
                         "No clock",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HSE",
+                    name: "Hse",
                     description: Some(
                         "HSE oscillator clock divided by a prescaler used as RTC clock",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "LSE",
+                    name: "Lse",
                     description: Some(
                         "LSE oscillator clock used as RTC clock",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "LSI",
+                    name: "Lsi",
                     description: Some(
                         "LSI oscillator clock used as RTC clock",
                     ),
@@ -3512,112 +3512,112 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "DIV10",
+                    name: "Div10",
                     description: Some(
                         "SYSCLK divided by 10",
                     ),
                     value: 20,
                 },
                 EnumVariant {
-                    name: "DIV12",
+                    name: "Div12",
                     description: Some(
                         "SYSCLK divided by 12",
                     ),
                     value: 21,
                 },
                 EnumVariant {
-                    name: "DIV14",
+                    name: "Div14",
                     description: Some(
                         "SYSCLK divided by 14",
                     ),
                     value: 22,
                 },
                 EnumVariant {
-                    name: "DIV16",
+                    name: "Div16",
                     description: Some(
                         "SYSCLK divided by 16",
                     ),
                     value: 23,
                 },
                 EnumVariant {
-                    name: "DIV2",
+                    name: "Div2",
                     description: Some(
                         "SYSCLK divided by 2",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV20",
+                    name: "Div20",
                     description: Some(
                         "SYSCLK divided by 20",
                     ),
                     value: 24,
                 },
                 EnumVariant {
-                    name: "DIV24",
+                    name: "Div24",
                     description: Some(
                         "SYSCLK divided by 24",
                     ),
                     value: 25,
                 },
                 EnumVariant {
-                    name: "DIV28",
+                    name: "Div28",
                     description: Some(
                         "SYSCLK divided by 28",
                     ),
                     value: 26,
                 },
                 EnumVariant {
-                    name: "DIV32",
+                    name: "Div32",
                     description: Some(
                         "SYSCLK divided by 32",
                     ),
                     value: 27,
                 },
                 EnumVariant {
-                    name: "DIV36",
+                    name: "Div36",
                     description: Some(
                         "SYSCLK divided by 36",
                     ),
                     value: 28,
                 },
                 EnumVariant {
-                    name: "DIV4",
+                    name: "Div4",
                     description: Some(
                         "SYSCLK divided by 4",
                     ),
                     value: 17,
                 },
                 EnumVariant {
-                    name: "DIV40",
+                    name: "Div40",
                     description: Some(
                         "SYSCLK divided by 40",
                     ),
                     value: 29,
                 },
                 EnumVariant {
-                    name: "DIV44",
+                    name: "Div44",
                     description: Some(
                         "SYSCLK divided by 44",
                     ),
                     value: 30,
                 },
                 EnumVariant {
-                    name: "DIV48",
+                    name: "Div48",
                     description: Some(
                         "SYSCLK divided by 48",
                     ),
                     value: 31,
                 },
                 EnumVariant {
-                    name: "DIV6",
+                    name: "Div6",
                     description: Some(
                         "SYSCLK divided by 6",
                     ),
                     value: 18,
                 },
                 EnumVariant {
-                    name: "DIV8",
+                    name: "Div8",
                     description: Some(
                         "SYSCLK divided by 8",
                     ),
@@ -3631,21 +3631,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HSE",
+                    name: "Hse",
                     description: Some(
                         "HSE oscillator used as system clock",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI",
+                    name: "Hsi",
                     description: Some(
                         "HSI oscillator used as system clock",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLL1_P",
+                    name: "Pll1P",
                     description: Some(
                         "PLL used as system clock",
                     ),
@@ -3659,14 +3659,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "PCLK1_TIM",
+                    name: "Pclk1Tim",
                     description: Some(
                         "PCLK2 clock (doubled frequency when prescaled)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLL1_P",
+                    name: "Pll1P",
                     description: Some(
                         "PLL vco output (running up to 144 MHz)",
                     ),
@@ -3680,14 +3680,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "PCLK2_TIM",
+                    name: "Pclk2Tim",
                     description: Some(
                         "PCLK2 clock (doubled frequency when prescaled)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLL1_P",
+                    name: "Pll1P",
                     description: Some(
                         "PLL vco output (running up to 144 MHz)",
                     ),
@@ -3701,28 +3701,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HSI",
+                    name: "Hsi",
                     description: Some(
                         "HSI selected as USART clock source",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "LSE",
+                    name: "Lse",
                     description: Some(
                         "LSE selected as USART clock source",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PCLK2",
+                    name: "Pclk2",
                     description: Some(
                         "PCLK selected as USART clock source",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYS",
+                    name: "Sys",
                     description: Some(
                         "SYSCLK selected as USART clock source",
                     ),
@@ -3736,28 +3736,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HSI",
+                    name: "Hsi",
                     description: Some(
                         "HSI selected as USART clock source",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "LSE",
+                    name: "Lse",
                     description: Some(
                         "LSE selected as USART clock source",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PCLK1",
+                    name: "Pclk1",
                     description: Some(
                         "PCLK selected as USART clock source",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYS",
+                    name: "Sys",
                     description: Some(
                         "SYSCLK selected as USART clock source",
                     ),
@@ -3771,14 +3771,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DIV1",
+                    name: "Div1",
                     description: Some(
                         "PLL clock is not divided",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DIV1_5",
+                    name: "Div15",
                     description: Some(
                         "PLL clock is divided by 1.5",
                     ),

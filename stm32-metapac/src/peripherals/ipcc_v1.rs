@@ -59,7 +59,7 @@ impl IpccCpu {
     }
     #[doc = "CPUx to CPUy status register"]
     #[inline(always)]
-    pub const fn sr(self) -> crate::common::Reg<regs::CxToySr, crate::common::R> {
+    pub const fn sr(self) -> crate::common::Reg<regs::CxTOySr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
 }
@@ -258,8 +258,8 @@ pub mod regs {
     #[doc = "CPUx to CPUy status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct CxToySr(pub u32);
-    impl CxToySr {
+    pub struct CxTOySr(pub u32);
+    impl CxTOySr {
         #[doc = "processor x transmit to process y Receive channel z status flag"]
         #[must_use]
         #[inline(always)]
@@ -277,15 +277,15 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
-    impl Default for CxToySr {
+    impl Default for CxTOySr {
         #[inline(always)]
-        fn default() -> CxToySr {
-            CxToySr(0)
+        fn default() -> CxTOySr {
+            CxTOySr(0)
         }
     }
-    impl core::fmt::Debug for CxToySr {
+    impl core::fmt::Debug for CxTOySr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("CxToySr")
+            f.debug_struct("CxTOySr")
                 .field("chf[0]", &self.chf(0usize))
                 .field("chf[1]", &self.chf(1usize))
                 .field("chf[2]", &self.chf(2usize))
@@ -296,9 +296,9 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for CxToySr {
+    impl defmt::Format for CxTOySr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "CxToySr {{ chf[0]: {=bool:?}, chf[1]: {=bool:?}, chf[2]: {=bool:?}, chf[3]: {=bool:?}, chf[4]: {=bool:?}, chf[5]: {=bool:?} }}" , self . chf (0usize) , self . chf (1usize) , self . chf (2usize) , self . chf (3usize) , self . chf (4usize) , self . chf (5usize))
+            defmt :: write ! (f , "CxTOySr {{ chf[0]: {=bool:?}, chf[1]: {=bool:?}, chf[2]: {=bool:?}, chf[3]: {=bool:?}, chf[4]: {=bool:?}, chf[5]: {=bool:?} }}" , self . chf (0usize) , self . chf (1usize) , self . chf (2usize) , self . chf (3usize) , self . chf (4usize) , self . chf (5usize))
         }
     }
 }

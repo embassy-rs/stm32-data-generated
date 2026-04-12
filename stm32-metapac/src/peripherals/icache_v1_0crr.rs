@@ -387,9 +387,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Waysel {
         #[doc = "direct mapped cache (1-way cache)"]
-        DIRECT_MAPPED = 0x0,
+        DirectMapped = 0x0,
         #[doc = "n-way set associative cache (reset value)"]
-        NWAY_SET_ASSOCIATIVE = 0x01,
+        NWaySetAssociative = 0x01,
     }
     impl Waysel {
         #[inline(always)]

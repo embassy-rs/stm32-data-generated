@@ -3177,9 +3177,9 @@ pub mod vals {
     pub struct BootrSecbootLock(u8);
     impl BootrSecbootLock {
         #[doc = "The BOOT_UBE and SECBOOTADD are frozen. SWAP_BANK can only be modified with TZEN set to 0xC3 (disabled)."]
-        pub const B_0X_B4: Self = Self(0xb4);
+        pub const B0xB4: Self = Self(0xb4);
         #[doc = "The BOOT_UBE, SWAP_ BANK and SECBOOTADD can still be modified following their individual rules."]
-        pub const B_0X_C3: Self = Self(0xc3);
+        pub const B0xC3: Self = Self(0xc3);
     }
     impl BootrSecbootLock {
         pub const fn from_bits(val: u8) -> BootrSecbootLock {
@@ -3192,8 +3192,8 @@ pub mod vals {
     impl core::fmt::Debug for BootrSecbootLock {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0xb4 => f.write_str("B_0X_B4"),
-                0xc3 => f.write_str("B_0X_C3"),
+                0xb4 => f.write_str("B0xB4"),
+                0xc3 => f.write_str("B0xC3"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -3202,8 +3202,8 @@ pub mod vals {
     impl defmt::Format for BootrSecbootLock {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0xb4 => defmt::write!(f, "B_0X_B4"),
-                0xc3 => defmt::write!(f, "B_0X_C3"),
+                0xb4 => defmt::write!(f, "B0xB4"),
+                0xc3 => defmt::write!(f, "B0xC3"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -3225,21 +3225,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CodeOp {
         #[doc = "No flash operation on going during previous reset"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Single write operation interrupted"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         #[doc = "OBK alternate sector erase"]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         #[doc = "Sector erase operation interrupted"]
-        B_0X3 = 0x03,
+        B0x3 = 0x03,
         #[doc = "Bank erase operation interrupted"]
-        B_0X4 = 0x04,
+        B0x4 = 0x04,
         #[doc = "Mass erase operation interrupted"]
-        B_0X5 = 0x05,
+        B0x5 = 0x05,
         #[doc = "Option change operation interrupted"]
-        B_0X6 = 0x06,
+        B0x6 = 0x06,
         #[doc = "OBK swap sector request"]
-        B_0X7 = 0x07,
+        B0x7 = 0x07,
     }
     impl CodeOp {
         #[inline(always)]
@@ -3268,9 +3268,9 @@ pub mod vals {
     pub struct NsbootrNsbootLock(u8);
     impl NsbootrNsbootLock {
         #[doc = "The NSBOOTADD is frozen. SWAP_ BANK can only be modified with TZEN set to 0xB4 (enabled)."]
-        pub const B_0X_B4: Self = Self(0xb4);
+        pub const B0xB4: Self = Self(0xb4);
         #[doc = "The SWAP_ BANK and NSBOOTADD can still be modified following their individual rules."]
-        pub const B_0X_C3: Self = Self(0xc3);
+        pub const B0xC3: Self = Self(0xc3);
     }
     impl NsbootrNsbootLock {
         pub const fn from_bits(val: u8) -> NsbootrNsbootLock {
@@ -3283,8 +3283,8 @@ pub mod vals {
     impl core::fmt::Debug for NsbootrNsbootLock {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0xb4 => f.write_str("B_0X_B4"),
-                0xc3 => f.write_str("B_0X_C3"),
+                0xb4 => f.write_str("B0xB4"),
+                0xc3 => f.write_str("B0xC3"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -3293,8 +3293,8 @@ pub mod vals {
     impl defmt::Format for NsbootrNsbootLock {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0xb4 => defmt::write!(f, "B_0X_B4"),
-                0xc3 => defmt::write!(f, "B_0X_C3"),
+                0xb4 => defmt::write!(f, "B0xB4"),
+                0xc3 => defmt::write!(f, "B0xC3"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -3316,9 +3316,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NscrBksel {
         #[doc = "Bank1 is selected for Bank erase / sector erase / interrupt enable"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Bank2 is selected for BER / SER"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl NscrBksel {
         #[inline(always)]
@@ -3347,9 +3347,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nspriv {
         #[doc = "access to non secure registers is always granted"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "access to non secure registers is denied in case of unprivileged access."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Nspriv {
         #[inline(always)]
@@ -3378,9 +3378,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptcrSwapBank {
         #[doc = "Bank1 and Bank2 not swapped"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Bank1 and Bank2 swapped"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptcrSwapBank {
         #[inline(always)]
@@ -3409,9 +3409,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrBkpramEcc {
         #[doc = "BKPRAM ECC check enabled"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "BKPRAM ECC check disabled"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrBkpramEcc {
         #[inline(always)]
@@ -3440,9 +3440,9 @@ pub mod vals {
     pub struct OptsrBootUbe(u8);
     impl OptsrBootUbe {
         #[doc = "OEM-iRoT (user flash) selected. In Open PRODUCT_STATE this value selects bootloader. Defaut value."]
-        pub const B_0X_B4: Self = Self(0xb4);
+        pub const B0xB4: Self = Self(0xb4);
         #[doc = "ST-iRoT (system flash) selected"]
-        pub const B_0X_C3: Self = Self(0xc3);
+        pub const B0xC3: Self = Self(0xc3);
     }
     impl OptsrBootUbe {
         pub const fn from_bits(val: u8) -> OptsrBootUbe {
@@ -3455,8 +3455,8 @@ pub mod vals {
     impl core::fmt::Debug for OptsrBootUbe {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0xb4 => f.write_str("B_0X_B4"),
-                0xc3 => f.write_str("B_0X_C3"),
+                0xb4 => f.write_str("B0xB4"),
+                0xc3 => f.write_str("B0xC3"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -3465,8 +3465,8 @@ pub mod vals {
     impl defmt::Format for OptsrBootUbe {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0xb4 => defmt::write!(f, "B_0X_B4"),
-                0xc3 => defmt::write!(f, "B_0X_C3"),
+                0xb4 => defmt::write!(f, "B0xB4"),
+                0xc3 => defmt::write!(f, "B0xC3"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -3489,9 +3489,9 @@ pub mod vals {
     pub enum OptsrBorLev {
         _RESERVED_0 = 0x0,
         #[doc = "BOR Level 2, the threshold level is medium (around 2.4 V)"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         #[doc = "BOR Level 3, the threshold level is high (around 2.7 V)"]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl OptsrBorLev {
@@ -3521,9 +3521,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIoVddHslv {
         #[doc = "High-speed IO at low V<sub>DD</sub> voltage feature disabled (V<sub>DD</sub> can exceed 2.7�V)"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "High-speed IO at low V<sub>DD</sub> voltage feature enabled (V<sub>DD</sub> remains below 2.7�V)"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrIoVddHslv {
         #[inline(always)]
@@ -3552,9 +3552,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIoVddioHslv {
         #[doc = "High-speed IO at low V<sub>DDIO2</sub> voltage feature disabled (V<sub>DDIO2</sub> can exceed 2.7�V)"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "High-speed IO at low V<sub>DDIO2</sub> voltage feature enabled (V<sub>DDIO2</sub> remains below 2.7�V)"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrIoVddioHslv {
         #[inline(always)]
@@ -3583,9 +3583,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIwdgStdby {
         #[doc = "Independent watchdog frozen in Standby mode"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Independent watchdog keep running in Standby mode."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrIwdgStdby {
         #[inline(always)]
@@ -3614,9 +3614,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIwdgStop {
         #[doc = "Independent watchdog frozen in system Stop mode"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Independent watchdog keep running in system Stop mode."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrIwdgStop {
         #[inline(always)]
@@ -3645,9 +3645,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIwdgSw {
         #[doc = "IWDG watchdog is controlled by hardware"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "IWDG watchdog is controlled by software"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrIwdgSw {
         #[inline(always)]
@@ -3676,9 +3676,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrNrstStdby {
         #[doc = "a reset is generated when entering Standby mode on core domain"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "no reset generated when entering Standby mode on core domain."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrNrstStdby {
         #[inline(always)]
@@ -3707,9 +3707,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrNrstStop {
         #[doc = "a reset is generated when entering Stop mode on core domain"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "no reset generated when entering Stop mode on core domain."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrNrstStop {
         #[inline(always)]
@@ -3738,9 +3738,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrSramEcc {
         #[doc = "SRAM2 ECC check enabled"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "SRAM2 ECC check disabled"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrSramEcc {
         #[inline(always)]
@@ -3769,9 +3769,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrSwapBank {
         #[doc = "Bank1 and Bank2 not swapped"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Bank1 and Bank2 swapped"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrSwapBank {
         #[inline(always)]
@@ -3800,9 +3800,9 @@ pub mod vals {
     pub struct OptsrTzen(u8);
     impl OptsrTzen {
         #[doc = "TrustZone enabled."]
-        pub const B_0X_B4: Self = Self(0xb4);
+        pub const B0xB4: Self = Self(0xb4);
         #[doc = "TrustZone disabled"]
-        pub const B_0X_C3: Self = Self(0xc3);
+        pub const B0xC3: Self = Self(0xc3);
     }
     impl OptsrTzen {
         pub const fn from_bits(val: u8) -> OptsrTzen {
@@ -3815,8 +3815,8 @@ pub mod vals {
     impl core::fmt::Debug for OptsrTzen {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0xb4 => f.write_str("B_0X_B4"),
-                0xc3 => f.write_str("B_0X_C3"),
+                0xb4 => f.write_str("B0xB4"),
+                0xc3 => f.write_str("B0xC3"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -3825,8 +3825,8 @@ pub mod vals {
     impl defmt::Format for OptsrTzen {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0xb4 => defmt::write!(f, "B_0X_B4"),
-                0xc3 => defmt::write!(f, "B_0X_C3"),
+                0xb4 => defmt::write!(f, "B0xB4"),
+                0xc3 => defmt::write!(f, "B0xC3"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -3848,9 +3848,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrWwdgSw {
         #[doc = "WWDG watchdog is controlled by hardware"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "WWDG watchdog is controlled by software"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrWwdgSw {
         #[inline(always)]
@@ -3879,9 +3879,9 @@ pub mod vals {
     pub struct PrivbbrPrivbb(u32);
     impl PrivbbrPrivbb {
         #[doc = "sectors (32 * (x-1) + y) in bank 2 is unprivileged"]
-        pub const B_0X0: Self = Self(0x0);
+        pub const B0x0: Self = Self(0x0);
         #[doc = "sector (32 * (x-1) + y) in bank 2 is privileged"]
-        pub const B_0X1: Self = Self(0x01);
+        pub const B0x1: Self = Self(0x01);
     }
     impl PrivbbrPrivbb {
         pub const fn from_bits(val: u32) -> PrivbbrPrivbb {
@@ -3894,8 +3894,8 @@ pub mod vals {
     impl core::fmt::Debug for PrivbbrPrivbb {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B_0X0"),
-                0x01 => f.write_str("B_0X1"),
+                0x0 => f.write_str("B0x0"),
+                0x01 => f.write_str("B0x1"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -3904,8 +3904,8 @@ pub mod vals {
     impl defmt::Format for PrivbbrPrivbb {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B_0X0"),
-                0x01 => defmt::write!(f, "B_0X1"),
+                0x0 => defmt::write!(f, "B0x0"),
+                0x01 => defmt::write!(f, "B0x1"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -3927,9 +3927,9 @@ pub mod vals {
     pub struct SecbbrSecbb(u32);
     impl SecbbrSecbb {
         #[doc = "sectors (32 * (x-1) + y) in bank 2 is non secure"]
-        pub const B_0X0: Self = Self(0x0);
+        pub const B0x0: Self = Self(0x0);
         #[doc = "sector (32 * (x-1) + y) in bank 2 is secure"]
-        pub const B_0X1: Self = Self(0x01);
+        pub const B0x1: Self = Self(0x01);
     }
     impl SecbbrSecbb {
         pub const fn from_bits(val: u32) -> SecbbrSecbb {
@@ -3942,8 +3942,8 @@ pub mod vals {
     impl core::fmt::Debug for SecbbrSecbb {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B_0X0"),
-                0x01 => f.write_str("B_0X1"),
+                0x0 => f.write_str("B0x0"),
+                0x01 => f.write_str("B0x1"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -3952,8 +3952,8 @@ pub mod vals {
     impl defmt::Format for SecbbrSecbb {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B_0X0"),
-                0x01 => defmt::write!(f, "B_0X1"),
+                0x0 => defmt::write!(f, "B0x0"),
+                0x01 => defmt::write!(f, "B0x1"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -3975,9 +3975,9 @@ pub mod vals {
     pub struct SecbootrSecbootLock(u8);
     impl SecbootrSecbootLock {
         #[doc = "The BOOT_UBE and SECBOOTADD are frozen. SWAP_ BANK can only be modified with TZEN set to 0xC3 (disabled)."]
-        pub const B_0X_B4: Self = Self(0xb4);
+        pub const B0xB4: Self = Self(0xb4);
         #[doc = "The BOOT_UBE, SWAP_BANK and SECBOOTADD can still be modified following their individual rules."]
-        pub const B_0X_C3: Self = Self(0xc3);
+        pub const B0xC3: Self = Self(0xc3);
     }
     impl SecbootrSecbootLock {
         pub const fn from_bits(val: u8) -> SecbootrSecbootLock {
@@ -3990,8 +3990,8 @@ pub mod vals {
     impl core::fmt::Debug for SecbootrSecbootLock {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0xb4 => f.write_str("B_0X_B4"),
-                0xc3 => f.write_str("B_0X_C3"),
+                0xb4 => f.write_str("B0xB4"),
+                0xc3 => f.write_str("B0xC3"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -4000,8 +4000,8 @@ pub mod vals {
     impl defmt::Format for SecbootrSecbootLock {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0xb4 => defmt::write!(f, "B_0X_B4"),
-                0xc3 => defmt::write!(f, "B_0X_C3"),
+                0xb4 => defmt::write!(f, "B0xB4"),
+                0xc3 => defmt::write!(f, "B0xC3"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -4023,9 +4023,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SeccrBksel {
         #[doc = "Bank1 is selected for Bank erase / sector erase / interrupt enable"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Bank2 is selected for BER / SER"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl SeccrBksel {
         #[inline(always)]
@@ -4054,9 +4054,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spriv {
         #[doc = "access to secure registers is always granted"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "access to secure registers is denied in case of unprivileged access."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Spriv {
         #[inline(always)]

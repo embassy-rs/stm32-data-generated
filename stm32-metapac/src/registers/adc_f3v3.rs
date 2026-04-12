@@ -1015,54 +1015,54 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "DISCNUM_1",
+                    name: "Discnum1",
                     description: Some(
                         "1 conversions are discontinued and the conversion is carried out on one channel",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DISCNUM_2",
+                    name: "Discnum2",
                     description: Some("2 conversion is discontinued and the conversions are carried out on 2 channels"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DISCNUM_3",
+                    name: "Discnum3",
                     description: Some(
                         "3 conversions are discontinued and the conversions are carried out on 3 channels",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DISCNUM_4",
+                    name: "Discnum4",
                     description: Some(
                         "4 conversions are discontinued and the conversions are carried out on 4 channels",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DISCNUM_5",
+                    name: "Discnum5",
                     description: Some(
                         "5 conversions are discontinued and the conversions are carried out on 5 channels",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "DISCNUM_6",
+                    name: "Discnum6",
                     description: Some(
                         "6 conversions are discontinued and the conversions are carried out on 6 channels",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DISCNUM_7",
+                    name: "Discnum7",
                     description: Some(
                         "7 conversions are discontinued and the conversions are carried out on 7 channels",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DISCNUM_8",
+                    name: "Discnum8",
                     description: Some(
                         "8 conversions are discontinued and the conversions are carried out on 8 channels",
                     ),
@@ -1076,42 +1076,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "CYCLES13_5",
+                    name: "Cycles135",
                     description: Some("13.5 ADC clock cycles"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "CYCLES1_5",
+                    name: "Cycles15",
                     description: Some("1.5 ADC clock cycles"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CYCLES239_5",
+                    name: "Cycles2395",
                     description: Some("239.5 ADC clock cycles"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "CYCLES28_5",
+                    name: "Cycles285",
                     description: Some("28.5 ADC clock cycles"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "CYCLES41_5",
+                    name: "Cycles415",
                     description: Some("41.5 ADC clock cycles"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "CYCLES55_5",
+                    name: "Cycles555",
                     description: Some("55.5 ADC clock cycles"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "CYCLES71_5",
+                    name: "Cycles715",
                     description: Some("71.5 ADC clock cycles"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "CYCLES7_5",
+                    name: "Cycles75",
                     description: Some("7.5 ADC clock cycles"),
                     value: 1,
                 },

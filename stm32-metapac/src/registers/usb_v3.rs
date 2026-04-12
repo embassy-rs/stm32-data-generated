@@ -1054,14 +1054,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FROM",
+                    name: "From",
                     description: Some(
                         "data received by the USB peripheral from the host PC",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TO",
+                    name: "To",
                     description: Some(
                         "data transmitted by the USB peripheral to the host PC",
                     ),
@@ -1075,28 +1075,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BULK",
+                    name: "Bulk",
                     description: Some(
                         "Bulk endpoint",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CONTROL",
+                    name: "Control",
                     description: Some(
                         "Control endpoint",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "INTERRUPT",
+                    name: "Interrupt",
                     description: Some(
                         "Interrupt endpoint",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "ISO",
+                    name: "Iso",
                     description: Some(
                         "Iso endpoint",
                     ),
@@ -1110,14 +1110,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACK",
+                    name: "Ack",
                     description: Some(
                         "the valid LPM Token will be ACK",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NYET",
+                    name: "Nyet",
                     description: Some(
                         "the valid LPM Token will be NYET",
                     ),
@@ -1131,14 +1131,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CDP",
+                    name: "Cdp",
                     description: Some(
                         "CDP detected",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DCP",
+                    name: "Dcp",
                     description: Some(
                         "DCP detected",
                     ),
@@ -1152,28 +1152,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "Disabled",
                     description: Some(
                         "all requests addressed to this endpoint are ignored",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NAK",
+                    name: "Nak",
                     description: Some(
                         "the endpoint is naked and all requests result in a NAK handshake",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "STALL",
+                    name: "Stall",
                     description: Some(
                         "the endpoint is stalled and all requests result in a STALL handshake",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "VALID",
+                    name: "Valid",
                     description: Some(
                         "this endpoint is enabled, requests are ACKed",
                     ),

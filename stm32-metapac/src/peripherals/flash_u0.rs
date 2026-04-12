@@ -1162,13 +1162,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BorrLev {
         #[doc = "BOR rising level 1 with threshold around 2.1 V"]
-        LEVEL1 = 0x0,
+        Level1 = 0x0,
         #[doc = "BOR rising level 2 with threshold around 2.3 V"]
-        LEVEL2 = 0x01,
+        Level2 = 0x01,
         #[doc = "BOR rising level 3 with threshold around 2.6 V"]
-        LEVEL3 = 0x02,
+        Level3 = 0x02,
         #[doc = "BOR rising level 4 with threshold around 2.9 V"]
-        LEVEL4 = 0x03,
+        Level4 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
@@ -1202,11 +1202,11 @@ pub mod vals {
     pub enum NrstMode {
         _RESERVED_0 = 0x0,
         #[doc = "Reset input only: a low level on the NRST pin generates system reset; internal RESET is not propagated to the NRST pin."]
-        ONLY_INPUT = 0x01,
+        OnlyInput = 0x01,
         #[doc = "Standard GPIO: only internal RESET is possible"]
-        ONLY_INTERNAL = 0x02,
+        OnlyInternal = 0x02,
         #[doc = "Bidirectional reset: the NRST pin is configured in reset input/output (legacy) mode"]
-        BIDIRECTIONAL = 0x03,
+        Bidirectional = 0x03,
     }
     impl NrstMode {
         #[inline(always)]
@@ -1235,9 +1235,9 @@ pub mod vals {
     pub struct Rdp(u8);
     impl Rdp {
         #[doc = "Level 0, read protection not active"]
-        pub const LEVEL0: Self = Self(0xaa);
+        pub const Level0: Self = Self(0xaa);
         #[doc = "Level 2, chip read protection active"]
-        pub const LEVEL2: Self = Self(0xcc);
+        pub const Level2: Self = Self(0xcc);
     }
     impl Rdp {
         pub const fn from_bits(val: u8) -> Rdp {
@@ -1250,8 +1250,8 @@ pub mod vals {
     impl core::fmt::Debug for Rdp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0xaa => f.write_str("LEVEL0"),
-                0xcc => f.write_str("LEVEL2"),
+                0xaa => f.write_str("Level0"),
+                0xcc => f.write_str("Level2"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -1260,8 +1260,8 @@ pub mod vals {
     impl defmt::Format for Rdp {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0xaa => defmt::write!(f, "LEVEL0"),
-                0xcc => defmt::write!(f, "LEVEL2"),
+                0xaa => defmt::write!(f, "Level0"),
+                0xcc => defmt::write!(f, "Level2"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }

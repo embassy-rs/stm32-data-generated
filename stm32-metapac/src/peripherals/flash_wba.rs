@@ -2443,15 +2443,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BorLev {
         #[doc = "BOR level 0 (reset level threshold around 1.7V)"]
-        LEVEL0 = 0x0,
+        Level0 = 0x0,
         #[doc = "BOR level 1 (reset level threshold around 2.0V)"]
-        LEVEL1 = 0x01,
+        Level1 = 0x01,
         #[doc = "BOR level 2 (reset level threshold around 2.2V)"]
-        LEVEL2 = 0x02,
+        Level2 = 0x02,
         #[doc = "BOR level 3 (reset level threshold around 2.5V)"]
-        LEVEL3 = 0x03,
+        Level3 = 0x03,
         #[doc = "BOR level 4 (reset level threshold around 2.8V)"]
-        LEVEL4 = 0x04,
+        Level4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -2483,19 +2483,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CodeOp {
         #[doc = "No Flash operation interrupted by previous reset"]
-        NO_FLASH_INT = 0x0,
+        NoFlashInt = 0x0,
         #[doc = "Single write operation interrupted"]
-        SINGLE_WR_INT = 0x01,
+        SingleWrInt = 0x01,
         #[doc = "Burst write operation interrupted"]
-        BURST_WR_INT = 0x02,
+        BurstWrInt = 0x02,
         #[doc = "Page erase operation interrupted"]
-        PG_ERASE_INT = 0x03,
+        PgEraseInt = 0x03,
         #[doc = "Bank erase operation interrupted"]
-        BANK_ERASE_INT = 0x04,
+        BankEraseInt = 0x04,
         #[doc = "Mass erase operation interrupted"]
-        MASS_ERASE_INT = 0x05,
+        MassEraseInt = 0x05,
         #[doc = "Option change operation interrupted"]
-        OPT_CHANGE_INT = 0x06,
+        OptChangeInt = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl CodeOp {
@@ -2525,11 +2525,11 @@ pub mod vals {
     pub struct Rdp(u8);
     impl Rdp {
         #[doc = "Level 0.5 (readout protection not active, only non-secure debug access is possible). Only available when TrustZone is active (TZEN=1)"]
-        pub const B_0X55: Self = Self(0x55);
+        pub const B0x55: Self = Self(0x55);
         #[doc = "Level 0 (readout protection not active)"]
-        pub const B_0X_AA: Self = Self(0xaa);
+        pub const B0xAa: Self = Self(0xaa);
         #[doc = "Level 2 (chip readout protection active)"]
-        pub const B_0X_CC: Self = Self(0xcc);
+        pub const B0xCc: Self = Self(0xcc);
     }
     impl Rdp {
         pub const fn from_bits(val: u8) -> Rdp {
@@ -2542,9 +2542,9 @@ pub mod vals {
     impl core::fmt::Debug for Rdp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x55 => f.write_str("B_0X55"),
-                0xaa => f.write_str("B_0X_AA"),
-                0xcc => f.write_str("B_0X_CC"),
+                0x55 => f.write_str("B0x55"),
+                0xaa => f.write_str("B0xAa"),
+                0xcc => f.write_str("B0xCc"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2553,9 +2553,9 @@ pub mod vals {
     impl defmt::Format for Rdp {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x55 => defmt::write!(f, "B_0X55"),
-                0xaa => defmt::write!(f, "B_0X_AA"),
-                0xcc => defmt::write!(f, "B_0X_CC"),
+                0x55 => defmt::write!(f, "B0x55"),
+                0xaa => defmt::write!(f, "B0xAa"),
+                0xcc => defmt::write!(f, "B0xCc"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }

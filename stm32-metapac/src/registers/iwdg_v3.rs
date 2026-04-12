@@ -355,21 +355,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 16,
             variants: &[
                 EnumVariant {
-                    name: "ENABLE",
+                    name: "Enable",
                     description: Some(
                         "Enable access to PR, RLR and WINR registers (0x5555)",
                     ),
                     value: 21845,
                 },
                 EnumVariant {
-                    name: "RESET",
+                    name: "Reset",
                     description: Some(
                         "Reset the watchdog value (0xAAAA)",
                     ),
                     value: 43690,
                 },
                 EnumVariant {
-                    name: "START",
+                    name: "Start",
                     description: Some(
                         "Start the watchdog (0xCCCC)",
                     ),
@@ -383,63 +383,63 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "DIVIDE_BY1024",
+                    name: "DivideBy1024",
                     description: Some(
                         "Divider /1024",
                     ),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "DIVIDE_BY128",
+                    name: "DivideBy128",
                     description: Some(
                         "Divider /128",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DIVIDE_BY16",
+                    name: "DivideBy16",
                     description: Some(
                         "Divider /16",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DIVIDE_BY256",
+                    name: "DivideBy256",
                     description: Some(
                         "Divider /256",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DIVIDE_BY32",
+                    name: "DivideBy32",
                     description: Some(
                         "Divider /32",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DIVIDE_BY4",
+                    name: "DivideBy4",
                     description: Some(
                         "Divider /4",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIVIDE_BY512",
+                    name: "DivideBy512",
                     description: Some(
                         "Divider /512",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "DIVIDE_BY64",
+                    name: "DivideBy64",
                     description: Some(
                         "Divider /64",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "DIVIDE_BY8",
+                    name: "DivideBy8",
                     description: Some(
                         "Divider /8",
                     ),

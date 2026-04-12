@@ -748,7 +748,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "i2c_pbx_fmp",
+                    name: "i2c_p_bx_fmp",
                     description: Some(
                         "Fast Mode Plus (FM+) driving capability activation bits",
                     ),
@@ -790,7 +790,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "i2c_pax_fmp",
+                    name: "i2c_p_ax_fmp",
                     description: Some(
                         "Fast Mode Plus (FM+) driving capability activation bits",
                     ),
@@ -2331,28 +2331,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MAIN_FLASH",
+                    name: "MainFlash",
                     description: Some(
                         "Main Flash memory mapped at address 0",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MAIN_FLASH_ALT",
+                    name: "MainFlashAlt",
                     description: Some(
                         "Main Flash memory mapped at address 0 (alternate encoding)",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SRAM",
+                    name: "Sram",
                     description: Some(
                         "Embedded SRAM mapped at address 0",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "SYSTEM_FLASH",
+                    name: "SystemFlash",
                     description: Some(
                         "System Flash memory mapped at address 0",
                     ),

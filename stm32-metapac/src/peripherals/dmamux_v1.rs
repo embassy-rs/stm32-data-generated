@@ -376,13 +376,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pol {
         #[doc = "No event, i.e. no synchronization nor detection"]
-        NO_EDGE = 0x0,
+        NoEdge = 0x0,
         #[doc = "Rising edge"]
-        RISING_EDGE = 0x01,
+        RisingEdge = 0x01,
         #[doc = "Falling edge"]
-        FALLING_EDGE = 0x02,
+        FallingEdge = 0x02,
         #[doc = "Rising and falling edges"]
-        BOTH_EDGES = 0x03,
+        BothEdges = 0x03,
     }
     impl Pol {
         #[inline(always)]

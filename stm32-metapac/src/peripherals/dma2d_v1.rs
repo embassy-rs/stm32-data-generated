@@ -1565,7 +1565,7 @@ pub mod vals {
     pub enum Abort {
         _RESERVED_0 = 0x0,
         #[doc = "Transfer abort requested"]
-        ABORT_REQUEST = 0x01,
+        AbortRequest = 0x01,
     }
     impl Abort {
         #[inline(always)]
@@ -1594,11 +1594,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BgpfccrAm {
         #[doc = "No modification of alpha channel"]
-        NO_MODIFY = 0x0,
+        NoModify = 0x0,
         #[doc = "Replace with value in ALPHA\\[7:0\\]"]
-        REPLACE = 0x01,
+        Replace = 0x01,
         #[doc = "Multiply with value in ALPHA\\[7:0\\]"]
-        MULTIPLY = 0x02,
+        Multiply = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl BgpfccrAm {
@@ -1628,9 +1628,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BgpfccrCcm {
         #[doc = "CLUT color format ARGB8888"]
-        ARGB8888 = 0x0,
+        Argb8888 = 0x0,
         #[doc = "CLUT color format RGB888"]
-        RGB888 = 0x01,
+        Rgb888 = 0x01,
     }
     impl BgpfccrCcm {
         #[inline(always)]
@@ -1659,21 +1659,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BgpfccrCm {
         #[doc = "Color mode ARGB8888"]
-        ARGB8888 = 0x0,
+        Argb8888 = 0x0,
         #[doc = "Color mode RGB888"]
-        RGB888 = 0x01,
+        Rgb888 = 0x01,
         #[doc = "Color mode RGB565"]
-        RGB565 = 0x02,
+        Rgb565 = 0x02,
         #[doc = "Color mode ARGB1555"]
-        ARGB1555 = 0x03,
+        Argb1555 = 0x03,
         #[doc = "Color mode ARGB4444"]
-        ARGB4444 = 0x04,
+        Argb4444 = 0x04,
         #[doc = "Color mode L8"]
         L8 = 0x05,
         #[doc = "Color mode AL44"]
-        AL44 = 0x06,
+        Al44 = 0x06,
         #[doc = "Color mode AL88"]
-        AL88 = 0x07,
+        Al88 = 0x07,
         #[doc = "Color mode L4"]
         L4 = 0x08,
         #[doc = "Color mode A8"]
@@ -1714,7 +1714,7 @@ pub mod vals {
     pub enum BgpfccrStart {
         _RESERVED_0 = 0x0,
         #[doc = "Start the automatic loading of the CLUT"]
-        START = 0x01,
+        Start = 0x01,
     }
     impl BgpfccrStart {
         #[inline(always)]
@@ -1744,7 +1744,7 @@ pub mod vals {
     pub enum Caecif {
         _RESERVED_0 = 0x0,
         #[doc = "Clear the CAEIF flag in the ISR register"]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Caecif {
         #[inline(always)]
@@ -1774,7 +1774,7 @@ pub mod vals {
     pub enum Cceif {
         _RESERVED_0 = 0x0,
         #[doc = "Clear the CEIF flag in the ISR register"]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Cceif {
         #[inline(always)]
@@ -1804,7 +1804,7 @@ pub mod vals {
     pub enum Cctcif {
         _RESERVED_0 = 0x0,
         #[doc = "Clear the CTCIF flag in the ISR register"]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Cctcif {
         #[inline(always)]
@@ -1834,7 +1834,7 @@ pub mod vals {
     pub enum CrStart {
         _RESERVED_0 = 0x0,
         #[doc = "Launch the DMA2D"]
-        START = 0x01,
+        Start = 0x01,
     }
     impl CrStart {
         #[inline(always)]
@@ -1864,7 +1864,7 @@ pub mod vals {
     pub enum Ctcif {
         _RESERVED_0 = 0x0,
         #[doc = "Clear the TCIF flag in the ISR register"]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Ctcif {
         #[inline(always)]
@@ -1894,7 +1894,7 @@ pub mod vals {
     pub enum Cteif {
         _RESERVED_0 = 0x0,
         #[doc = "Clear the TEIF flag in the ISR register"]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Cteif {
         #[inline(always)]
@@ -1924,7 +1924,7 @@ pub mod vals {
     pub enum Ctwif {
         _RESERVED_0 = 0x0,
         #[doc = "Clear the TWIF flag in the ISR register"]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Ctwif {
         #[inline(always)]
@@ -1953,11 +1953,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FgpfccrAm {
         #[doc = "No modification of alpha channel"]
-        NO_MODIFY = 0x0,
+        NoModify = 0x0,
         #[doc = "Replace with value in ALPHA\\[7:0\\]"]
-        REPLACE = 0x01,
+        Replace = 0x01,
         #[doc = "Multiply with value in ALPHA\\[7:0\\]"]
-        MULTIPLY = 0x02,
+        Multiply = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl FgpfccrAm {
@@ -1987,9 +1987,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FgpfccrCcm {
         #[doc = "CLUT color format ARGB8888"]
-        ARGB8888 = 0x0,
+        Argb8888 = 0x0,
         #[doc = "CLUT color format RGB888"]
-        RGB888 = 0x01,
+        Rgb888 = 0x01,
     }
     impl FgpfccrCcm {
         #[inline(always)]
@@ -2018,21 +2018,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FgpfccrCm {
         #[doc = "Color mode ARGB8888"]
-        ARGB8888 = 0x0,
+        Argb8888 = 0x0,
         #[doc = "Color mode RGB888"]
-        RGB888 = 0x01,
+        Rgb888 = 0x01,
         #[doc = "Color mode RGB565"]
-        RGB565 = 0x02,
+        Rgb565 = 0x02,
         #[doc = "Color mode ARGB1555"]
-        ARGB1555 = 0x03,
+        Argb1555 = 0x03,
         #[doc = "Color mode ARGB4444"]
-        ARGB4444 = 0x04,
+        Argb4444 = 0x04,
         #[doc = "Color mode L8"]
         L8 = 0x05,
         #[doc = "Color mode AL44"]
-        AL44 = 0x06,
+        Al44 = 0x06,
         #[doc = "Color mode AL88"]
-        AL88 = 0x07,
+        Al88 = 0x07,
         #[doc = "Color mode L4"]
         L4 = 0x08,
         #[doc = "Color mode A8"]
@@ -2073,7 +2073,7 @@ pub mod vals {
     pub enum FgpfccrStart {
         _RESERVED_0 = 0x0,
         #[doc = "Start the automatic loading of the CLUT"]
-        START = 0x01,
+        Start = 0x01,
     }
     impl FgpfccrStart {
         #[inline(always)]
@@ -2102,13 +2102,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Memory-to-memory (FG fetch only)"]
-        MEMORY_TO_MEMORY = 0x0,
+        MemoryToMemory = 0x0,
         #[doc = "Memory-to-memory with PFC (FG fetch only with FG PFC active)"]
-        MEMORY_TO_MEMORY_PFC = 0x01,
+        MemoryToMemoryPfc = 0x01,
         #[doc = "Memory-to-memory with blending (FG and BG fetch with PFC and blending)"]
-        MEMORY_TO_MEMORY_PFCBLENDING = 0x02,
+        MemoryToMemoryPfcBlending = 0x02,
         #[doc = "Register-to-memory"]
-        REGISTER_TO_MEMORY = 0x03,
+        RegisterToMemory = 0x03,
     }
     impl Mode {
         #[inline(always)]
@@ -2137,15 +2137,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OpfccrCm {
         #[doc = "ARGB8888"]
-        ARGB8888 = 0x0,
+        Argb8888 = 0x0,
         #[doc = "RGB888"]
-        RGB888 = 0x01,
+        Rgb888 = 0x01,
         #[doc = "RGB565"]
-        RGB565 = 0x02,
+        Rgb565 = 0x02,
         #[doc = "ARGB1555"]
-        ARGB1555 = 0x03,
+        Argb1555 = 0x03,
         #[doc = "ARGB4444"]
-        ARGB4444 = 0x04,
+        Argb4444 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,

@@ -324,17 +324,17 @@ pub(crate) static REGISTERS: IR = IR {
         bit_size: 2,
         variants: &[
             EnumVariant {
-                name: "DISABLED",
+                name: "Disabled",
                 description: Some("Wave generation disabled"),
                 value: 0,
             },
             EnumVariant {
-                name: "NOISE",
+                name: "Noise",
                 description: Some("Noise wave generation enabled"),
                 value: 1,
             },
             EnumVariant {
-                name: "TRIANGLE",
+                name: "Triangle",
                 description: Some("Triangle wave generation enabled"),
                 value: 2,
             },

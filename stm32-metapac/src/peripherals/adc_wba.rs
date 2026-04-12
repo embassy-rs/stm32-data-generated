@@ -1441,9 +1441,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Align {
         #[doc = "Right alignment."]
-        RIGHT = 0x0,
+        Right = 0x0,
         #[doc = "Left alignment."]
-        LEFT = 0x01,
+        Left = 0x01,
     }
     impl Align {
         #[inline(always)]
@@ -1472,9 +1472,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Awd1sgl {
         #[doc = "Analog watchdog 1 enabled on all channels."]
-        ALL_CHANNELS = 0x0,
+        AllChannels = 0x0,
         #[doc = "Analog watchdog 1 enabled on a single channel."]
-        SINGLE_CHANNEL = 0x01,
+        SingleChannel = 0x01,
     }
     impl Awd1sgl {
         #[inline(always)]
@@ -1503,9 +1503,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dmacfg {
         #[doc = "DMA One Shot mode selected."]
-        ONE_SHOT = 0x0,
+        OneShot = 0x0,
         #[doc = "DMA Circular mode selected."]
-        CIRCULAR = 0x01,
+        Circular = 0x01,
     }
     impl Dmacfg {
         #[inline(always)]
@@ -1534,13 +1534,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Exten {
         #[doc = "Trigger detection disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Trigger detection on the rising edge"]
-        RISING_EDGE = 0x01,
+        RisingEdge = 0x01,
         #[doc = "Trigger detection on the falling edge"]
-        FALLING_EDGE = 0x02,
+        FallingEdge = 0x02,
         #[doc = "Trigger detection on both the rising and falling edges"]
-        BOTH_EDGES = 0x03,
+        BothEdges = 0x03,
     }
     impl Exten {
         #[inline(always)]
@@ -1569,21 +1569,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Extsel {
         #[doc = "adc_trg0."]
-        TRG0 = 0x0,
+        Trg0 = 0x0,
         #[doc = "adc_trg1."]
-        TRG1 = 0x01,
+        Trg1 = 0x01,
         #[doc = "adc_trg2."]
-        TRG2 = 0x02,
+        Trg2 = 0x02,
         #[doc = "adc_trg3."]
-        TRG3 = 0x03,
+        Trg3 = 0x03,
         #[doc = "adc_trg4."]
-        TRG4 = 0x04,
+        Trg4 = 0x04,
         #[doc = "adc_trg5."]
-        TRG5 = 0x05,
+        Trg5 = 0x05,
         #[doc = "adc_trg6."]
-        TRG6 = 0x06,
+        Trg6 = 0x06,
         #[doc = "adc_trg7."]
-        TRG7 = 0x07,
+        Trg7 = 0x07,
     }
     impl Extsel {
         #[inline(always)]
@@ -1612,21 +1612,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OversamplingRatio {
         #[doc = "Oversample 2 times"]
-        OVERSAMPLE2X = 0x0,
+        Oversample2x = 0x0,
         #[doc = "Oversample 4 times"]
-        OVERSAMPLE4X = 0x01,
+        Oversample4x = 0x01,
         #[doc = "Oversample 8 times"]
-        OVERSAMPLE8X = 0x02,
+        Oversample8x = 0x02,
         #[doc = "Oversample 16 times"]
-        OVERSAMPLE16X = 0x03,
+        Oversample16x = 0x03,
         #[doc = "Oversample 32 times"]
-        OVERSAMPLE32X = 0x04,
+        Oversample32x = 0x04,
         #[doc = "Oversample 64 times"]
-        OVERSAMPLE64X = 0x05,
+        Oversample64x = 0x05,
         #[doc = "Oversample 128 times"]
-        OVERSAMPLE128X = 0x06,
+        Oversample128x = 0x06,
         #[doc = "Oversample 256 times"]
-        OVERSAMPLE256X = 0x07,
+        Oversample256x = 0x07,
     }
     impl OversamplingRatio {
         #[inline(always)]
@@ -1655,9 +1655,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ovrmod {
         #[doc = "DR register is preserved with the old data when an overrun is detected."]
-        PRESERVE = 0x0,
+        Preserve = 0x0,
         #[doc = "DR register is overwritten with the last conversion result when an overrun is detected."]
-        OVERWRITE = 0x01,
+        Overwrite = 0x01,
     }
     impl Ovrmod {
         #[inline(always)]
@@ -1686,23 +1686,23 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ovss {
         #[doc = "No shift."]
-        SHIFT0 = 0x0,
+        Shift0 = 0x0,
         #[doc = "Shift 1-bit."]
-        SHIFT1 = 0x01,
+        Shift1 = 0x01,
         #[doc = "Shift 2-bits."]
-        SHIFT2 = 0x02,
+        Shift2 = 0x02,
         #[doc = "Shift 3-bits."]
-        SHIFT3 = 0x03,
+        Shift3 = 0x03,
         #[doc = "Shift 4-bits."]
-        SHIFT4 = 0x04,
+        Shift4 = 0x04,
         #[doc = "Shift 5-bits."]
-        SHIFT5 = 0x05,
+        Shift5 = 0x05,
         #[doc = "Shift 6-bits."]
-        SHIFT6 = 0x06,
+        Shift6 = 0x06,
         #[doc = "Shift 7-bits."]
-        SHIFT7 = 0x07,
+        Shift7 = 0x07,
         #[doc = "Shift 8-bits."]
-        SHIFT8 = 0x08,
+        Shift8 = 0x08,
         _RESERVED_9 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
@@ -1738,29 +1738,29 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Presc {
         #[doc = "input ADC clock not divided."]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "input ADC clock divided by 2."]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "input ADC clock divided by 4."]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         #[doc = "input ADC clock divided by 6."]
-        DIV6 = 0x03,
+        Div6 = 0x03,
         #[doc = "input ADC clock divided by 8."]
-        DIV8 = 0x04,
+        Div8 = 0x04,
         #[doc = "input ADC clock divided by 10."]
-        DIV10 = 0x05,
+        Div10 = 0x05,
         #[doc = "input ADC clock divided by 12."]
-        DIV12 = 0x06,
+        Div12 = 0x06,
         #[doc = "input ADC clock divided by 16."]
-        DIV16 = 0x07,
+        Div16 = 0x07,
         #[doc = "input ADC clock divided by 32."]
-        DIV32 = 0x08,
+        Div32 = 0x08,
         #[doc = "input ADC clock divided by 64."]
-        DIV64 = 0x09,
+        Div64 = 0x09,
         #[doc = "input ADC clock divided by 128."]
-        DIV128 = 0x0a,
+        Div128 = 0x0a,
         #[doc = "input ADC clock divided by 256."]
-        DIV256 = 0x0b,
+        Div256 = 0x0b,
         _RESERVED_c = 0x0c,
         _RESERVED_d = 0x0d,
         _RESERVED_e = 0x0e,
@@ -1793,13 +1793,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Res {
         #[doc = "12-bit resolution"]
-        BITS12 = 0x0,
+        Bits12 = 0x0,
         #[doc = "10-bit resolution"]
-        BITS10 = 0x01,
+        Bits10 = 0x01,
         #[doc = "8-bit resolution"]
-        BITS8 = 0x02,
+        Bits8 = 0x02,
         #[doc = "6-bit resolution"]
-        BITS6 = 0x03,
+        Bits6 = 0x03,
     }
     impl Res {
         #[inline(always)]
@@ -1828,21 +1828,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "1.5 ADC cycles"]
-        CYCLES1_5 = 0x0,
+        Cycles15 = 0x0,
         #[doc = "3.5 ADC cycles"]
-        CYCLES3_5 = 0x01,
+        Cycles35 = 0x01,
         #[doc = "7.5 ADC cycles"]
-        CYCLES7_5 = 0x02,
+        Cycles75 = 0x02,
         #[doc = "12.5 ADC cycles"]
-        CYCLES12_5 = 0x03,
+        Cycles125 = 0x03,
         #[doc = "19.5 ADC cycles"]
-        CYCLES19_5 = 0x04,
+        Cycles195 = 0x04,
         #[doc = "39.5 ADC cycles"]
-        CYCLES39_5 = 0x05,
+        Cycles395 = 0x05,
         #[doc = "79.5 ADC cycles"]
-        CYCLES79_5 = 0x06,
+        Cycles795 = 0x06,
         #[doc = "814.5 ADC cycles"]
-        CYCLES814_5 = 0x07,
+        Cycles8145 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]
@@ -1871,9 +1871,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Scandir {
         #[doc = "Upward scan (from CHSEL0 to CHSEL11)."]
-        UPWARDS = 0x0,
+        Upwards = 0x0,
         #[doc = "Backward scan (from CHSEL11 to CHSEL0)."]
-        BACKWARDS = 0x01,
+        Backwards = 0x01,
     }
     impl Scandir {
         #[inline(always)]
@@ -1903,10 +1903,10 @@ pub mod vals {
     pub enum Smpsel {
         #[doc = "Sampling time of CHANNELx use the setting of SMP1\\[2:0\\]
 register."]
-        SMP1 = 0x0,
+        Smp1 = 0x0,
         #[doc = "Sampling time of CHANNELx use the setting of SMP2\\[2:0\\]
 register."]
-        SMP2 = 0x01,
+        Smp2 = 0x01,
     }
     impl Smpsel {
         #[inline(always)]
@@ -1935,9 +1935,9 @@ register."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tovs {
         #[doc = "All oversampled conversions for a channel are done consecutively after a trigger."]
-        ALL_AFTER_TRIGGER = 0x0,
+        AllAfterTrigger = 0x0,
         #[doc = "Each oversampled conversion for a channel needs a trigger."]
-        EACH_AFTER_TRIGGER = 0x01,
+        EachAfterTrigger = 0x01,
     }
     impl Tovs {
         #[inline(always)]

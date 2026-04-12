@@ -637,9 +637,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BootSel {
         #[doc = "BOOT0 signal is defined by nBOOT0 option bit"]
-        N_BOOT0 = 0x0,
+        NBoot0 = 0x0,
         #[doc = "BOOT0 signal is defined by BOOT0 pin value (legacy mode)"]
-        BOOT0 = 0x01,
+        Boot0 = 0x01,
     }
     impl BootSel {
         #[inline(always)]
@@ -668,9 +668,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Latency {
         #[doc = "0 wait states"]
-        WS0 = 0x0,
+        Ws0 = 0x0,
         #[doc = "1 wait state"]
-        WS1 = 0x01,
+        Ws1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
@@ -705,9 +705,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NRstStdby {
         #[doc = "Reset generated when entering Standby mode"]
-        RESET = 0x0,
+        Reset = 0x0,
         #[doc = "No reset generated"]
-        NO_RESET = 0x01,
+        NoReset = 0x01,
     }
     impl NRstStdby {
         #[inline(always)]
@@ -736,9 +736,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NRstStop {
         #[doc = "Reset generated when entering Stop mode"]
-        RESET = 0x0,
+        Reset = 0x0,
         #[doc = "No reset generated"]
-        NO_RESET = 0x01,
+        NoReset = 0x01,
     }
     impl NRstStop {
         #[inline(always)]
@@ -767,9 +767,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RamParityCheck {
         #[doc = "RAM parity check enabled"]
-        ENABLED = 0x0,
+        Enabled = 0x0,
         #[doc = "RAM parity check disabled"]
-        DISABLED = 0x01,
+        Disabled = 0x01,
     }
     impl RamParityCheck {
         #[inline(always)]
@@ -798,12 +798,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rdprt {
         #[doc = "Level 0"]
-        LEVEL0 = 0x0,
+        Level0 = 0x0,
         #[doc = "Level 1"]
-        LEVEL1 = 0x01,
+        Level1 = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "Level 2"]
-        LEVEL2 = 0x03,
+        Level2 = 0x03,
     }
     impl Rdprt {
         #[inline(always)]
@@ -832,9 +832,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WdgSw {
         #[doc = "Hardware watchdog"]
-        HARDWARE = 0x0,
+        Hardware = 0x0,
         #[doc = "Software watchdog"]
-        SOFTWARE = 0x01,
+        Software = 0x01,
     }
     impl WdgSw {
         #[inline(always)]

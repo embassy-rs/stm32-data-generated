@@ -1693,9 +1693,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dmacfg {
         #[doc = "DMA One Shot mode selected"]
-        ONE_SHOT = 0x0,
+        OneShot = 0x0,
         #[doc = "DMA Circular mode selected"]
-        CIRCULAR = 0x01,
+        Circular = 0x01,
     }
     impl Dmacfg {
         #[inline(always)]
@@ -1724,21 +1724,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OversamplingRatio {
         #[doc = "2x Oversampling Ratio"]
-        RATIO2 = 0x0,
+        Ratio2 = 0x0,
         #[doc = "4x Oversampling Ratio"]
-        RATIO4 = 0x01,
+        Ratio4 = 0x01,
         #[doc = "8x Oversampling Ratio"]
-        RATIO8 = 0x02,
+        Ratio8 = 0x02,
         #[doc = "16x Oversampling Ratio"]
-        RATIO16 = 0x03,
+        Ratio16 = 0x03,
         #[doc = "32x Oversampling Ratio"]
-        RATIO32 = 0x04,
+        Ratio32 = 0x04,
         #[doc = "64x Oversampling Ratio"]
-        RATIO64 = 0x05,
+        Ratio64 = 0x05,
         #[doc = "128x Oversampling Ratio"]
-        RATIO128 = 0x06,
+        Ratio128 = 0x06,
         #[doc = "256x Oversampling Ratio"]
-        RATIO256 = 0x07,
+        Ratio256 = 0x07,
     }
     impl OversamplingRatio {
         #[inline(always)]
@@ -1767,23 +1767,23 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OversamplingShift {
         #[doc = "No shift"]
-        SHIFT0 = 0x0,
+        Shift0 = 0x0,
         #[doc = "Shift 1-bit"]
-        SHIFT1 = 0x01,
+        Shift1 = 0x01,
         #[doc = "Shift 2-bits"]
-        SHIFT2 = 0x02,
+        Shift2 = 0x02,
         #[doc = "Shift 3-bits"]
-        SHIFT3 = 0x03,
+        Shift3 = 0x03,
         #[doc = "Shift 4-bits"]
-        SHIFT4 = 0x04,
+        Shift4 = 0x04,
         #[doc = "Shift 5-bits"]
-        SHIFT5 = 0x05,
+        Shift5 = 0x05,
         #[doc = "Shift 6-bits"]
-        SHIFT6 = 0x06,
+        Shift6 = 0x06,
         #[doc = "Shift 7-bits"]
-        SHIFT7 = 0x07,
+        Shift7 = 0x07,
         #[doc = "Shift 8-bits"]
-        SHIFT8 = 0x08,
+        Shift8 = 0x08,
         _RESERVED_9 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
@@ -1819,13 +1819,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Res {
         #[doc = "12-bit resolution"]
-        BITS12 = 0x0,
+        Bits12 = 0x0,
         #[doc = "10-bit resolution"]
-        BITS10 = 0x01,
+        Bits10 = 0x01,
         #[doc = "8-bit resolution"]
-        BITS8 = 0x02,
+        Bits8 = 0x02,
         #[doc = "6-bit resolution"]
-        BITS6 = 0x03,
+        Bits6 = 0x03,
     }
     impl Res {
         #[inline(always)]
@@ -1854,9 +1854,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rovsm {
         #[doc = "Oversampling is temporarily stopped and continued after injection sequence"]
-        CONTINUED = 0x0,
+        Continued = 0x0,
         #[doc = "Oversampling is aborted and resumed from start after injection sequence"]
-        RESUMED = 0x01,
+        Resumed = 0x01,
     }
     impl Rovsm {
         #[inline(always)]
@@ -1885,21 +1885,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "2.5 ADC cycles"]
-        CYCLES2_5 = 0x0,
+        Cycles25 = 0x0,
         #[doc = "6.5 ADC cycles"]
-        CYCLES6_5 = 0x01,
+        Cycles65 = 0x01,
         #[doc = "12.5 ADC cycles"]
-        CYCLES12_5 = 0x02,
+        Cycles125 = 0x02,
         #[doc = "24.5 ADC cycles"]
-        CYCLES24_5 = 0x03,
+        Cycles245 = 0x03,
         #[doc = "47.5 ADC cycles"]
-        CYCLES47_5 = 0x04,
+        Cycles475 = 0x04,
         #[doc = "92.5 ADC cycles"]
-        CYCLES92_5 = 0x05,
+        Cycles925 = 0x05,
         #[doc = "247.5 ADC cycles"]
-        CYCLES247_5 = 0x06,
+        Cycles2475 = 0x06,
         #[doc = "640.5 ADC cycles"]
-        CYCLES640_5 = 0x07,
+        Cycles6405 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]
@@ -1928,9 +1928,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trovs {
         #[doc = "All oversampled conversions for a channel are done consecutively following a trigger"]
-        AUTOMATIC = 0x0,
+        Automatic = 0x0,
         #[doc = "Each oversampled conversion for a channel needs a new trigger"]
-        TRIGGERED = 0x01,
+        Triggered = 0x01,
     }
     impl Trovs {
         #[inline(always)]

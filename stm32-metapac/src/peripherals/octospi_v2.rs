@@ -2093,9 +2093,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FlashSelect {
         #[doc = "FLASH 1 selected (data exchanged over IO\\[3:0\\])"]
-        FLASH_ONE = 0x0,
+        FlashOne = 0x0,
         #[doc = "FLASH 2 selected (data exchanged over IO\\[7:4\\])"]
-        FLASH_TWO = 0x01,
+        FlashTwo = 0x01,
     }
     impl FlashSelect {
         #[inline(always)]
@@ -2124,13 +2124,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FunctionalMode {
         #[doc = "Indirect-write mode"]
-        INDIRECT_WRITE = 0x0,
+        IndirectWrite = 0x0,
         #[doc = "Indirect-read mode"]
-        INDIRECT_READ = 0x01,
+        IndirectRead = 0x01,
         #[doc = "Automatic status-polling mode"]
-        AUTO_STATUS_POLLING = 0x02,
+        AutoStatusPolling = 0x02,
         #[doc = "Memory-mapped mode"]
-        MEMORY_MAPPED = 0x03,
+        MemoryMapped = 0x03,
     }
     impl FunctionalMode {
         #[inline(always)]
@@ -2159,9 +2159,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum LatencyMode {
         #[doc = "Variable initial latency"]
-        VARIABLE = 0x0,
+        Variable = 0x0,
         #[doc = "Fixed latency"]
-        FIXED = 0x01,
+        Fixed = 0x01,
     }
     impl LatencyMode {
         #[inline(always)]
@@ -2190,9 +2190,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MatchMode {
         #[doc = "AND-match mode, SMF is set if all the unmasked bits received from the device match the corresponding bits in the match register."]
-        MATCH_AND = 0x0,
+        MatchAnd = 0x0,
         #[doc = "OR-match mode, SMF is set if any of the unmasked bits received from the device matches its corresponding bit in the match register."]
-        MATCH_OR = 0x01,
+        MatchOr = 0x01,
     }
     impl MatchMode {
         #[inline(always)]
@@ -2221,17 +2221,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MemType {
         #[doc = "Micron mode, D0/D1 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes."]
-        MICRON = 0x0,
+        Micron = 0x0,
         #[doc = "Macronix mode, D1/D0 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes."]
-        MACRONIX = 0x01,
+        Macronix = 0x01,
         #[doc = "Standard mode"]
-        B_STANDARD = 0x02,
+        BStandard = 0x02,
         #[doc = "Macronix RAM mode, D1/D0 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes with dedicated address mapping."]
-        MACRONIX_RAM = 0x03,
+        MacronixRam = 0x03,
         #[doc = "HyperBus memory mode, the protocol follows the HyperBus specification. 8-data-bit DTR mode must be selected."]
-        HYPER_BUS_MEMORY = 0x04,
+        HyperBusMemory = 0x04,
         #[doc = "HyperBus register mode, addressing register space. The memory-mapped accesses in. this mode must be non-cacheable, or Indirect read/write modes must be used."]
-        HYPER_BUS_REGISTER = 0x05,
+        HyperBusRegister = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -2262,15 +2262,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PhaseMode {
         #[doc = "No alternate bytes"]
-        NONE = 0x0,
+        None = 0x0,
         #[doc = "Alternate bytes on a single line"]
-        ONE_LINE = 0x01,
+        OneLine = 0x01,
         #[doc = "Alternate bytes on two lines"]
-        TWO_LINES = 0x02,
+        TwoLines = 0x02,
         #[doc = "Alternate bytes on four lines"]
-        FOUR_LINES = 0x03,
+        FourLines = 0x03,
         #[doc = "Alternate bytes on eight lines"]
-        EIGHT_LINES = 0x04,
+        EightLines = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -2302,9 +2302,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleShift {
         #[doc = "No shift"]
-        NONE = 0x0,
+        None = 0x0,
         #[doc = "1/2 cycle shift"]
-        HALF_CYCLE = 0x01,
+        HalfCycle = 0x01,
     }
     impl SampleShift {
         #[inline(always)]
@@ -2333,13 +2333,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SizeInBits {
         #[doc = "8-bit alternate bytes"]
-        _8BIT = 0x0,
+        _8bit = 0x0,
         #[doc = "16-bit alternate bytes"]
-        _16BIT = 0x01,
+        _16bit = 0x01,
         #[doc = "24-bit alternate bytes"]
-        _24BIT = 0x02,
+        _24bit = 0x02,
         #[doc = "32-bit alternate bytes"]
-        _32BIT = 0x03,
+        _32bit = 0x03,
     }
     impl SizeInBits {
         #[inline(always)]
@@ -2368,9 +2368,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Threshold {
         #[doc = "FTF is set if there are one or more free bytes available to be written to in the FIFO in Indirect-write mode, or if there are one or more valid bytes can be read from the FIFO in Indirect-read mode."]
-        NEED_ONE_BYTE = 0x0,
+        NeedOneByte = 0x0,
         #[doc = "FTF is set if there are two or more free bytes available to be written to in the FIFO in Indirect‑write mode, or if there are two or more valid bytes can be read from the FIFO in Indirect-read mode."]
-        NEED_TWO_BYTES = 0x01,
+        NeedTwoBytes = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
@@ -2401,7 +2401,7 @@ pub mod vals {
         _RESERVED_1d = 0x1d,
         _RESERVED_1e = 0x1e,
         #[doc = "FTF is set if there are 32 free bytes available to be written to in the FIFO in Indirect-write mode, or if there are 32 valid bytes can be read from the FIFO in Indirect-read mode."]
-        NEED_THIRTY_TWO_BYTES = 0x1f,
+        NeedThirtyTwoBytes = 0x1f,
     }
     impl Threshold {
         #[inline(always)]

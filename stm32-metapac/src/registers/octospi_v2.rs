@@ -2166,14 +2166,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FLASH_ONE",
+                    name: "FlashOne",
                     description: Some(
                         "FLASH 1 selected (data exchanged over IO[3:0])",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FLASH_TWO",
+                    name: "FlashTwo",
                     description: Some(
                         "FLASH 2 selected (data exchanged over IO[7:4])",
                     ),
@@ -2187,28 +2187,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "AUTO_STATUS_POLLING",
+                    name: "AutoStatusPolling",
                     description: Some(
                         "Automatic status-polling mode",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "INDIRECT_READ",
+                    name: "IndirectRead",
                     description: Some(
                         "Indirect-read mode",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "INDIRECT_WRITE",
+                    name: "IndirectWrite",
                     description: Some(
                         "Indirect-write mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEMORY_MAPPED",
+                    name: "MemoryMapped",
                     description: Some(
                         "Memory-mapped mode",
                     ),
@@ -2222,14 +2222,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FIXED",
+                    name: "Fixed",
                     description: Some(
                         "Fixed latency",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "VARIABLE",
+                    name: "Variable",
                     description: Some(
                         "Variable initial latency",
                     ),
@@ -2243,14 +2243,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MATCH_AND",
+                    name: "MatchAnd",
                     description: Some(
                         "AND-match mode, SMF is set if all the unmasked bits received from the device match the corresponding bits in the match register.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MATCH_OR",
+                    name: "MatchOr",
                     description: Some(
                         "OR-match mode, SMF is set if any of the unmasked bits received from the device matches its corresponding bit in the match register.",
                     ),
@@ -2264,42 +2264,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_STANDARD",
+                    name: "BStandard",
                     description: Some(
                         "Standard mode",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HYPER_BUS_MEMORY",
+                    name: "HyperBusMemory",
                     description: Some(
                         "HyperBus memory mode, the protocol follows the HyperBus specification. 8-data-bit DTR mode must be selected.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "HYPER_BUS_REGISTER",
+                    name: "HyperBusRegister",
                     description: Some(
                         "HyperBus register mode, addressing register space. The memory-mapped accesses in. this mode must be non-cacheable, or Indirect read/write modes must be used.",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "MACRONIX",
+                    name: "Macronix",
                     description: Some(
                         "Macronix mode, D1/D0 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MACRONIX_RAM",
+                    name: "MacronixRam",
                     description: Some(
                         "Macronix RAM mode, D1/D0 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes with dedicated address mapping.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "MICRON",
+                    name: "Micron",
                     description: Some(
                         "Micron mode, D0/D1 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes.",
                     ),
@@ -2313,35 +2313,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "EIGHT_LINES",
+                    name: "EightLines",
                     description: Some(
                         "Alternate bytes on eight lines",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "FOUR_LINES",
+                    name: "FourLines",
                     description: Some(
                         "Alternate bytes on four lines",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "NONE",
+                    name: "None",
                     description: Some(
                         "No alternate bytes",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ONE_LINE",
+                    name: "OneLine",
                     description: Some(
                         "Alternate bytes on a single line",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TWO_LINES",
+                    name: "TwoLines",
                     description: Some(
                         "Alternate bytes on two lines",
                     ),
@@ -2355,14 +2355,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HALF_CYCLE",
+                    name: "HalfCycle",
                     description: Some(
                         "1/2 cycle shift",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NONE",
+                    name: "None",
                     description: Some(
                         "No shift",
                     ),
@@ -2376,28 +2376,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "_16BIT",
+                    name: "_16bit",
                     description: Some(
                         "16-bit alternate bytes",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "_24BIT",
+                    name: "_24bit",
                     description: Some(
                         "24-bit alternate bytes",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "_32BIT",
+                    name: "_32bit",
                     description: Some(
                         "32-bit alternate bytes",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "_8BIT",
+                    name: "_8bit",
                     description: Some(
                         "8-bit alternate bytes",
                     ),
@@ -2411,21 +2411,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "NEED_ONE_BYTE",
+                    name: "NeedOneByte",
                     description: Some(
                         "FTF is set if there are one or more free bytes available to be written to in the FIFO in Indirect-write mode, or if there are one or more valid bytes can be read from the FIFO in Indirect-read mode.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NEED_THIRTY_TWO_BYTES",
+                    name: "NeedThirtyTwoBytes",
                     description: Some(
                         "FTF is set if there are 32 free bytes available to be written to in the FIFO in Indirect-write mode, or if there are 32 valid bytes can be read from the FIFO in Indirect-read mode.",
                     ),
                     value: 31,
                 },
                 EnumVariant {
-                    name: "NEED_TWO_BYTES",
+                    name: "NeedTwoBytes",
                     description: Some(
                         "FTF is set if there are two or more free bytes available to be written to in the FIFO in Indirect‑write mode, or if there are two or more valid bytes can be read from the FIFO in Indirect-read mode.",
                     ),

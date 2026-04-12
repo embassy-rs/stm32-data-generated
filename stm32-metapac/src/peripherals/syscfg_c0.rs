@@ -1333,11 +1333,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum IrMod {
         #[doc = "TIM16"]
-        TIM16 = 0x0,
+        Tim16 = 0x0,
         #[doc = "USART1"]
-        USART1 = 0x01,
+        Usart1 = 0x01,
         #[doc = "USART2"]
-        USART2 = 0x02,
+        Usart2 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl IrMod {
@@ -1367,13 +1367,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MemMode {
         #[doc = "Main Flash memory mapped at address 0"]
-        MAIN_FLASH = 0x0,
+        MainFlash = 0x0,
         #[doc = "System Flash memory mapped at address 0"]
-        SYSTEM_FLASH = 0x01,
+        SystemFlash = 0x01,
         #[doc = "Main Flash memory mapped at address 0 (alternate encoding)"]
-        MAIN_FLASH_ALT = 0x02,
+        MainFlashAlt = 0x02,
         #[doc = "Embedded SRAM mapped at address 0"]
-        SRAM = 0x03,
+        Sram = 0x03,
     }
     impl MemMode {
         #[inline(always)]
@@ -1402,9 +1402,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pinmux0 {
         #[doc = "PB7"]
-        PB7 = 0x0,
+        Pb7 = 0x0,
         #[doc = "PC14"]
-        PC14 = 0x01,
+        Pc14 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -1435,13 +1435,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pinmux1 {
         #[doc = "PF2"]
-        PF2 = 0x0,
+        Pf2 = 0x0,
         #[doc = "PA0"]
-        PA0 = 0x01,
+        Pa0 = 0x01,
         #[doc = "PA1"]
-        PA1 = 0x02,
+        Pa1 = 0x02,
         #[doc = "PA2"]
-        PA2 = 0x03,
+        Pa2 = 0x03,
     }
     impl Pinmux1 {
         #[inline(always)]
@@ -1470,9 +1470,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pinmux2 {
         #[doc = "PA8"]
-        PA8 = 0x0,
+        Pa8 = 0x0,
         #[doc = "PA11"]
-        PA11 = 0x01,
+        Pa11 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -1503,11 +1503,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pinmux3 {
         #[doc = "PA14"]
-        PA14 = 0x0,
+        Pa14 = 0x0,
         #[doc = "PB6"]
-        PB6 = 0x01,
+        Pb6 = 0x01,
         #[doc = "PC15"]
-        PC15 = 0x02,
+        Pc15 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Pinmux3 {
@@ -1537,9 +1537,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pinmux4 {
         #[doc = "PA7"]
-        PA7 = 0x0,
+        Pa7 = 0x0,
         #[doc = "PA12"]
-        PA12 = 0x01,
+        Pa12 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -1570,13 +1570,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pinmux5 {
         #[doc = "PA3"]
-        PA3 = 0x0,
+        Pa3 = 0x0,
         #[doc = "PA4"]
-        PA4 = 0x01,
+        Pa4 = 0x01,
         #[doc = "PA5"]
-        PA5 = 0x02,
+        Pa5 = 0x02,
         #[doc = "PA6"]
-        PA6 = 0x03,
+        Pa6 = 0x03,
     }
     impl Pinmux5 {
         #[inline(always)]

@@ -2002,9 +2002,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adcaldif {
         #[doc = "Calibration for single-ended mode"]
-        SINGLE_ENDED = 0x0,
+        SingleEnded = 0x0,
         #[doc = "Calibration for differential mode"]
-        DIFFERENTIAL = 0x01,
+        Differential = 0x01,
     }
     impl Adcaldif {
         #[inline(always)]
@@ -2033,9 +2033,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Align {
         #[doc = "Right alignment"]
-        RIGHT = 0x0,
+        Right = 0x0,
         #[doc = "Left alignment"]
-        LEFT = 0x01,
+        Left = 0x01,
     }
     impl Align {
         #[inline(always)]
@@ -2064,9 +2064,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Awd1sgl {
         #[doc = "Analog watchdog 1 enabled on all channels"]
-        ALL = 0x0,
+        All = 0x0,
         #[doc = "Analog watchdog 1 enabled on single channel selected in AWD1CH"]
-        SINGLE = 0x01,
+        Single = 0x01,
     }
     impl Awd1sgl {
         #[inline(always)]
@@ -2095,9 +2095,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dmacfg {
         #[doc = "DMA One Shot mode selected"]
-        ONE_SHOT = 0x0,
+        OneShot = 0x0,
         #[doc = "DMA Circular mode selected"]
-        CIRCULAR = 0x01,
+        Circular = 0x01,
     }
     impl Dmacfg {
         #[inline(always)]
@@ -2126,13 +2126,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Exten {
         #[doc = "Hardware trigger detection disabled (conversions can be launched by software)"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Hardware trigger detection on the rising edge"]
-        RISING_EDGE = 0x01,
+        RisingEdge = 0x01,
         #[doc = "Hardware trigger detection on the falling edge"]
-        FALLING_EDGE = 0x02,
+        FallingEdge = 0x02,
         #[doc = "Hardware trigger detection on both the rising and falling edge"]
-        BOTH_EDGES = 0x03,
+        BothEdges = 0x03,
     }
     impl Exten {
         #[inline(always)]
@@ -2161,9 +2161,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Jqm {
         #[doc = "JSQR Mode 0: Queue maintains the last written configuration into JSQR"]
-        MODE0 = 0x0,
+        Mode0 = 0x0,
         #[doc = "JSQR Mode 1: An empty queue disables software and hardware triggers of the injected sequence"]
-        MODE1 = 0x01,
+        Mode1 = 0x01,
     }
     impl Jqm {
         #[inline(always)]
@@ -2192,9 +2192,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Offsetpos {
         #[doc = "Negative offset"]
-        NEGATIVE = 0x0,
+        Negative = 0x0,
         #[doc = "Positive offset"]
-        POSITIVE = 0x01,
+        Positive = 0x01,
     }
     impl Offsetpos {
         #[inline(always)]
@@ -2223,9 +2223,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ovrmod {
         #[doc = "Preserve DR register when an overrun is detected"]
-        PRESERVE = 0x0,
+        Preserve = 0x0,
         #[doc = "Overwrite DR register when an overrun is detected"]
-        OVERWRITE = 0x01,
+        Overwrite = 0x01,
     }
     impl Ovrmod {
         #[inline(always)]
@@ -2289,13 +2289,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Res {
         #[doc = "12-bit resolution"]
-        BITS12 = 0x0,
+        Bits12 = 0x0,
         #[doc = "10-bit resolution"]
-        BITS10 = 0x01,
+        Bits10 = 0x01,
         #[doc = "8-bit resolution"]
-        BITS8 = 0x02,
+        Bits8 = 0x02,
         #[doc = "6-bit resolution"]
-        BITS6 = 0x03,
+        Bits6 = 0x03,
     }
     impl Res {
         #[inline(always)]
@@ -2324,9 +2324,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rovsm {
         #[doc = "Oversampling is temporary stopped and continued after injection sequence"]
-        CONTINUED = 0x0,
+        Continued = 0x0,
         #[doc = "Oversampling is aborted and resumed from start after injection sequence"]
-        RESUMED = 0x01,
+        Resumed = 0x01,
     }
     impl Rovsm {
         #[inline(always)]
@@ -2355,21 +2355,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "2.5 ADC clock cycles"]
-        CYCLES2_5 = 0x0,
+        Cycles25 = 0x0,
         #[doc = "6.5 ADC clock cycles"]
-        CYCLES6_5 = 0x01,
+        Cycles65 = 0x01,
         #[doc = "12.5 ADC clock cycles"]
-        CYCLES12_5 = 0x02,
+        Cycles125 = 0x02,
         #[doc = "24.5 ADC clock cycles"]
-        CYCLES24_5 = 0x03,
+        Cycles245 = 0x03,
         #[doc = "47.5 ADC clock cycles"]
-        CYCLES47_5 = 0x04,
+        Cycles475 = 0x04,
         #[doc = "92.5 ADC clock cycles"]
-        CYCLES92_5 = 0x05,
+        Cycles925 = 0x05,
         #[doc = "247.5 ADC clock cycles"]
-        CYCLES247_5 = 0x06,
+        Cycles2475 = 0x06,
         #[doc = "640.5 ADC clock cycles"]
-        CYCLES640_5 = 0x07,
+        Cycles6405 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]
@@ -2398,9 +2398,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpplus {
         #[doc = "The sampling time remains set to 2.5 ADC clock cycles remains"]
-        CYCLES2_5 = 0x0,
+        Cycles25 = 0x0,
         #[doc = "2.5 ADC clock cycle sampling time becomes 3.5 ADC clock cycles for the ADC_SMPR1 and ADC_SMPR2 registers."]
-        CYCLES3_5 = 0x01,
+        Cycles35 = 0x01,
     }
     impl Smpplus {
         #[inline(always)]
@@ -2429,9 +2429,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Swtrig {
         #[doc = "Software trigger starts the conversion for sampling time control trigger mode"]
-        CONVERSION = 0x0,
+        Conversion = 0x0,
         #[doc = "Software trigger starts the sampling for sampling time control trigger mode"]
-        SAMPLING = 0x01,
+        Sampling = 0x01,
     }
     impl Swtrig {
         #[inline(always)]
@@ -2460,9 +2460,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trovs {
         #[doc = "All oversampled conversions for a channel are run following a trigger"]
-        AUTOMATIC = 0x0,
+        Automatic = 0x0,
         #[doc = "Each oversampled conversion for a channel needs a new trigger"]
-        TRIGGERED = 0x01,
+        Triggered = 0x01,
     }
     impl Trovs {
         #[inline(always)]

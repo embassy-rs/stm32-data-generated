@@ -2416,14 +2416,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Automatic status-polling mode is stopped only by abort or by disabling the XSPI.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Automatic status-polling mode stops as soon as there is a match.",
                     ),
@@ -2437,28 +2437,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "no alternate bytes",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "alternate bytes on a single line",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "alternate bytes on two lines",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "alternate bytes on four lines",
                     ),
@@ -2472,28 +2472,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "8-bit alternate bytes",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "16-bit alternate bytes",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "24-bit alternate bytes",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "32-bit alternate bytes",
                     ),
@@ -2507,35 +2507,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "no address",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "address on a single line",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "address on two lines",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "address on four lines",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "B0x4",
                     description: Some(
                         "address on eight lines",
                     ),
@@ -2549,28 +2549,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "8-bit address",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "16-bit address",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "24-bit address",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "32-bit address",
                     ),
@@ -2584,42 +2584,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "no data",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "data on a single line",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "data on two lines",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "data on four lines",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "B0x4",
                     description: Some(
                         "data on eight lines",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B_0X5",
+                    name: "B0x5",
                     description: Some(
                         "data on 16 lines",
                     ),
@@ -2633,35 +2633,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "no instruction",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "instruction on a single line",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "instruction on two lines",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "instruction on four lines",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "B0x4",
                     description: Some(
                         "instruction on eight lines",
                     ),
@@ -2675,28 +2675,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "8-bit instruction",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "16-bit instruction",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "24-bit instruction",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "32-bit instruction",
                     ),
@@ -2710,14 +2710,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "CLK must stay low while NCS is high (chip-select released), referred to as clock mode 0.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "CLK must stay high while NCS is high (chip-select released), referred to as clock mode 3.",
                     ),
@@ -2731,7 +2731,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "NCS boundary disabled",
                     ),
@@ -2745,21 +2745,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 6,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "NCS stays high for at least 1 cycle between external device commands.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "NCS stays high for at least 2 cycles between external device commands.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X3F",
+                    name: "B0x3f",
                     description: Some(
                         "NCS stays high for at least 64 cycles between external device commands.",
                     ),
@@ -2773,14 +2773,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "NCS1 active",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "NCS2 active",
                     ),
@@ -2794,28 +2794,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "indirect-write mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "indirect-read mode",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "automatic status-polling mode",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "memory-mapped mode",
                     ),
@@ -2829,21 +2829,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 6,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "FTF is set if there are one or more free bytes available to be written to in the FIFO",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "FTF is set if there are two or more free bytes available to be written to in the FIFO",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X3F",
+                    name: "B0x3f",
                     description: Some(
                         "FTF is set if there are 64 free bytes available to be written to in the FIFO",
                     ),
@@ -2857,14 +2857,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Variable initial latency",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Fixed latency",
                     ),
@@ -2878,14 +2878,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "bit n of the data received in automatic status-polling mode is masked and its value is not considered in the matching logic.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "bit n of the data received in automatic status-polling mode is unmasked and its value is considered in the matching logic.",
                     ),
@@ -2899,7 +2899,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "maximum communication disabled",
                     ),
@@ -2913,28 +2913,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "data exchanged over IO[3:0]",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "data exchanged over IO[7:4]",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "data exchanged over IO[11:8]",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "data exchanged over IO[15:12]",
                     ),
@@ -2948,42 +2948,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Micron mode, D0/D1 ordering in DTR 8-data-bit mode. Regular-command protocol in single-, dual-, quad-, and octal-SPI modes.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Macronix mode, D1/D0 ordering in DTR 8-data-bit mode. Regular-command protocol in single-, dual-, quad-, and octal-SPI modes.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "Standard mode",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "Macronix RAM mode, D1/D0 ordering in DTR 8-data-bit mode. Regular-command protocol in single-, dual-, quad-, and octal-SPI modes with dedicated address mapping.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "B0x4",
                     description: Some(
                         "HyperBus memory mode, the protocol follows the HyperBus<sup> </sup>specification. 8-data-bit DTR mode must be selected.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B_0X5",
+                    name: "B0x5",
                     description: Some(
                         "HyperBus register mode, addressing register space. The memory-mapped accesses in this mode must be non-cacheable, or indirect read/write modes must be used.",
                     ),
@@ -2997,14 +2997,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "AND-match mode, SMF is set if all the unmasked bits received from the device match the corresponding bits in the match register.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "OR-match mode, SMF is set if any of the unmasked bits received from the device matches its corresponding bit in the match register.",
                     ),
@@ -3018,7 +3018,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "refresh disabled",
                     ),
@@ -3032,35 +3032,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "no alternate bytes",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "alternate bytes on a single line",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "alternate bytes on two lines",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "alternate bytes on four lines",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "B0x4",
                     description: Some(
                         "alternate bytes on eight lines",
                     ),
@@ -3074,28 +3074,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "8-bit alternate bytes",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "16-bit alternate bytes",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "24-bit alternate bytes",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "32-bit alternate bytes",
                     ),
@@ -3109,35 +3109,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "no address",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "address on a single line",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "address on two lines",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "address on four lines",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "B0x4",
                     description: Some(
                         "address on eight lines",
                     ),
@@ -3151,28 +3151,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "8-bit address",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "16-bit address",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "24-bit address",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "32-bit address",
                     ),
@@ -3186,49 +3186,49 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "no data",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "data on a single line",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "data on two lines",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "data on four lines",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "B0x4",
                     description: Some(
                         "data on eight lines",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B_0X5",
+                    name: "B0x5",
                     description: Some(
                         "Data on 16 lines",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "B_0X7",
+                    name: "B0x7",
                     description: Some(
                         "DATA reserved",
                     ),
@@ -3242,35 +3242,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "no instruction",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "instruction on a single line",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "instruction on two lines",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "instruction on four lines",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "B0x4",
                     description: Some(
                         "instruction on eight lines",
                     ),
@@ -3284,28 +3284,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "8-bit instruction",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "16-bit instruction",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "24-bit instruction",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "32-bit instruction",
                     ),
@@ -3319,49 +3319,49 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "no alternate bytes",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "alternate bytes on a single line",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "alternate bytes on two lines",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "alternate bytes on four lines",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "B0x4",
                     description: Some(
                         "alternate bytes on eight lines",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B_0X5",
+                    name: "B0x5",
                     description: Some(
                         "alternate bytes on 16 lines",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "B_0X7",
+                    name: "B0x7",
                     description: Some(
                         "DATA reserved",
                     ),
@@ -3375,28 +3375,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "8-bit alternate bytes",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "16-bit alternate bytes",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "24-bit alternate bytes",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "32-bit alternate bytes",
                     ),
@@ -3410,35 +3410,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "no address",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "address on a single line",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "address on two lines",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "address on four lines",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "B0x4",
                     description: Some(
                         "address on eight lines",
                     ),
@@ -3452,28 +3452,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "8-bit address",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "16-bit address",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "24-bit address",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "32-bit address",
                     ),
@@ -3487,35 +3487,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "no data",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "data on a single line",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "data on two lines",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "data on four lines",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "B0x4",
                     description: Some(
                         "data on eight lines",
                     ),
@@ -3529,35 +3529,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "no instruction",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "instruction on a single line",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "instruction on two lines",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "instruction on four lines",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "B0x4",
                     description: Some(
                         "instruction on eight lines",
                     ),
@@ -3571,28 +3571,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "8-bit instruction",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "16-bit instruction",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "24-bit instruction",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "32-bit instruction",
                     ),
@@ -3606,35 +3606,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "wrapped reads are not supported by the memory.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "external memory supports wrap size of 16 bytes.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "external memory supports wrap size of 32 bytes.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "B0x4",
                     description: Some(
                         "external memory supports wrap size of 64 bytes.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B_0X5",
+                    name: "B0x5",
                     description: Some(
                         "external memory supports wrap size of 128 bytes.",
                     ),
@@ -3648,14 +3648,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "latency on write accesses",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "no latency on write accesses",
                     ),

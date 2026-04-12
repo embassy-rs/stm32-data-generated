@@ -946,9 +946,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bidimode {
         #[doc = "2-line unidirectional data mode selected"]
-        UNIDIRECTIONAL = 0x0,
+        Unidirectional = 0x0,
         #[doc = "1-line bidirectional data mode selected"]
-        BIDIRECTIONAL = 0x01,
+        Bidirectional = 0x01,
     }
     impl Bidimode {
         #[inline(always)]
@@ -977,9 +977,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bidioe {
         #[doc = "Output disabled (receive-only mode)"]
-        RECEIVE = 0x0,
+        Receive = 0x0,
         #[doc = "Output enabled (transmit-only mode)"]
-        TRANSMIT = 0x01,
+        Transmit = 0x01,
     }
     impl Bidioe {
         #[inline(always)]
@@ -1008,21 +1008,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Br {
         #[doc = "f_PCLK / 2"]
-        DIV2 = 0x0,
+        Div2 = 0x0,
         #[doc = "f_PCLK / 4"]
-        DIV4 = 0x01,
+        Div4 = 0x01,
         #[doc = "f_PCLK / 8"]
-        DIV8 = 0x02,
+        Div8 = 0x02,
         #[doc = "f_PCLK / 16"]
-        DIV16 = 0x03,
+        Div16 = 0x03,
         #[doc = "f_PCLK / 32"]
-        DIV32 = 0x04,
+        Div32 = 0x04,
         #[doc = "f_PCLK / 64"]
-        DIV64 = 0x05,
+        Div64 = 0x05,
         #[doc = "f_PCLK / 128"]
-        DIV128 = 0x06,
+        Div128 = 0x06,
         #[doc = "f_PCLK / 256"]
-        DIV256 = 0x07,
+        Div256 = 0x07,
     }
     impl Br {
         #[inline(always)]
@@ -1051,9 +1051,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Chlen {
         #[doc = "16-bit wide"]
-        BITS16 = 0x0,
+        Bits16 = 0x0,
         #[doc = "32-bit wide"]
-        BITS32 = 0x01,
+        Bits32 = 0x01,
     }
     impl Chlen {
         #[inline(always)]
@@ -1082,9 +1082,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Chside {
         #[doc = "Channel left has to be transmitted or has been received"]
-        LEFT = 0x0,
+        Left = 0x0,
         #[doc = "Channel right has to be transmitted or has been received"]
-        RIGHT = 0x01,
+        Right = 0x01,
     }
     impl Chside {
         #[inline(always)]
@@ -1113,9 +1113,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckpol {
         #[doc = "I2S clock inactive state is low level"]
-        IDLE_LOW = 0x0,
+        IdleLow = 0x0,
         #[doc = "I2S clock inactive state is high level"]
-        IDLE_HIGH = 0x01,
+        IdleHigh = 0x01,
     }
     impl Ckpol {
         #[inline(always)]
@@ -1144,9 +1144,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpha {
         #[doc = "The first clock transition is the first data capture edge"]
-        FIRST_EDGE = 0x0,
+        FirstEdge = 0x0,
         #[doc = "The second clock transition is the first data capture edge"]
-        SECOND_EDGE = 0x01,
+        SecondEdge = 0x01,
     }
     impl Cpha {
         #[inline(always)]
@@ -1175,9 +1175,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpol {
         #[doc = "CK to 0 when idle"]
-        IDLE_LOW = 0x0,
+        IdleLow = 0x0,
         #[doc = "CK to 1 when idle"]
-        IDLE_HIGH = 0x01,
+        IdleHigh = 0x01,
     }
     impl Cpol {
         #[inline(always)]
@@ -1206,9 +1206,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Crcl {
         #[doc = "8-bit CRC length"]
-        BITS8 = 0x0,
+        Bits8 = 0x0,
         #[doc = "16-bit CRC length"]
-        BITS16 = 0x01,
+        Bits16 = 0x01,
     }
     impl Crcl {
         #[inline(always)]
@@ -1237,9 +1237,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Crcnext {
         #[doc = "Next transmit value is from Tx buffer"]
-        TX_BUFFER = 0x0,
+        TxBuffer = 0x0,
         #[doc = "Next transmit value is from Tx CRC register"]
-        CRC = 0x01,
+        Crc = 0x01,
     }
     impl Crcnext {
         #[inline(always)]
@@ -1268,11 +1268,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Datlen {
         #[doc = "16-bit data length"]
-        BITS16 = 0x0,
+        Bits16 = 0x0,
         #[doc = "24-bit data length"]
-        BITS24 = 0x01,
+        Bits24 = 0x01,
         #[doc = "32-bit data length"]
-        BITS32 = 0x02,
+        Bits32 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Datlen {
@@ -1305,31 +1305,31 @@ pub mod vals {
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "4-bit"]
-        BITS4 = 0x03,
+        Bits4 = 0x03,
         #[doc = "5-bit"]
-        BITS5 = 0x04,
+        Bits5 = 0x04,
         #[doc = "6-bit"]
-        BITS6 = 0x05,
+        Bits6 = 0x05,
         #[doc = "7-bit"]
-        BITS7 = 0x06,
+        Bits7 = 0x06,
         #[doc = "8-bit"]
-        BITS8 = 0x07,
+        Bits8 = 0x07,
         #[doc = "9-bit"]
-        BITS9 = 0x08,
+        Bits9 = 0x08,
         #[doc = "10-bit"]
-        BITS10 = 0x09,
+        Bits10 = 0x09,
         #[doc = "11-bit"]
-        BITS11 = 0x0a,
+        Bits11 = 0x0a,
         #[doc = "12-bit"]
-        BITS12 = 0x0b,
+        Bits12 = 0x0b,
         #[doc = "13-bit"]
-        BITS13 = 0x0c,
+        Bits13 = 0x0c,
         #[doc = "14-bit"]
-        BITS14 = 0x0d,
+        Bits14 = 0x0d,
         #[doc = "15-bit"]
-        BITS15 = 0x0e,
+        Bits15 = 0x0e,
         #[doc = "16-bit"]
-        BITS16 = 0x0f,
+        Bits16 = 0x0f,
     }
     impl Ds {
         #[inline(always)]
@@ -1358,9 +1358,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Frf {
         #[doc = "SPI Motorola mode"]
-        MOTOROLA = 0x0,
+        Motorola = 0x0,
         #[doc = "SPI TI mode"]
-        TI = 0x01,
+        Ti = 0x01,
     }
     impl Frf {
         #[inline(always)]
@@ -1389,13 +1389,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Frlvl {
         #[doc = "Rx FIFO Empty"]
-        EMPTY = 0x0,
+        Empty = 0x0,
         #[doc = "Rx 1/4 FIFO"]
-        QUARTER = 0x01,
+        Quarter = 0x01,
         #[doc = "Rx 1/2 FIFO"]
-        HALF = 0x02,
+        Half = 0x02,
         #[doc = "Rx FIFO full"]
-        FULL = 0x03,
+        Full = 0x03,
     }
     impl Frlvl {
         #[inline(always)]
@@ -1424,9 +1424,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Frxth {
         #[doc = "RXNE event is generated if the FIFO level is greater than or equal to 1/2 (16-bit)"]
-        HALF = 0x0,
+        Half = 0x0,
         #[doc = "RXNE event is generated if the FIFO level is greater than or equal to 1/4 (8-bit)"]
-        QUARTER = 0x01,
+        Quarter = 0x01,
     }
     impl Frxth {
         #[inline(always)]
@@ -1455,13 +1455,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ftlvl {
         #[doc = "Tx FIFO Empty"]
-        EMPTY = 0x0,
+        Empty = 0x0,
         #[doc = "Tx 1/4 FIFO"]
-        QUARTER = 0x01,
+        Quarter = 0x01,
         #[doc = "Tx 1/2 FIFO"]
-        HALF = 0x02,
+        Half = 0x02,
         #[doc = "Tx FIFO full"]
-        FULL = 0x03,
+        Full = 0x03,
     }
     impl Ftlvl {
         #[inline(always)]
@@ -1490,13 +1490,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2scfg {
         #[doc = "Slave - transmit"]
-        SLAVE_TX = 0x0,
+        SlaveTx = 0x0,
         #[doc = "Slave - receive"]
-        SLAVE_RX = 0x01,
+        SlaveRx = 0x01,
         #[doc = "Master - transmit"]
-        MASTER_TX = 0x02,
+        MasterTx = 0x02,
         #[doc = "Master - receive"]
-        MASTER_RX = 0x03,
+        MasterRx = 0x03,
     }
     impl I2scfg {
         #[inline(always)]
@@ -1525,13 +1525,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2sstd {
         #[doc = "I2S Philips standard"]
-        PHILIPS = 0x0,
+        Philips = 0x0,
         #[doc = "MSB justified standard"]
-        MSB = 0x01,
+        Msb = 0x01,
         #[doc = "LSB justified standard"]
-        LSB = 0x02,
+        Lsb = 0x02,
         #[doc = "PCM standard"]
-        PCM = 0x03,
+        Pcm = 0x03,
     }
     impl I2sstd {
         #[inline(always)]
@@ -1560,9 +1560,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum LdmaRx {
         #[doc = "Number of data to transfer for receive is even"]
-        EVEN = 0x0,
+        Even = 0x0,
         #[doc = "Number of data to transfer for receive is odd"]
-        ODD = 0x01,
+        Odd = 0x01,
     }
     impl LdmaRx {
         #[inline(always)]
@@ -1591,9 +1591,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum LdmaTx {
         #[doc = "Number of data to transfer for transmit is even"]
-        EVEN = 0x0,
+        Even = 0x0,
         #[doc = "Number of data to transfer for transmit is odd"]
-        ODD = 0x01,
+        Odd = 0x01,
     }
     impl LdmaTx {
         #[inline(always)]
@@ -1622,9 +1622,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsbfirst {
         #[doc = "Data is transmitted/received with the MSB first"]
-        MSBFIRST = 0x0,
+        MsbFirst = 0x0,
         #[doc = "Data is transmitted/received with the LSB first"]
-        LSBFIRST = 0x01,
+        LsbFirst = 0x01,
     }
     impl Lsbfirst {
         #[inline(always)]
@@ -1653,9 +1653,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mstr {
         #[doc = "Slave configuration"]
-        SLAVE = 0x0,
+        Slave = 0x0,
         #[doc = "Master configuration"]
-        MASTER = 0x01,
+        Master = 0x01,
     }
     impl Mstr {
         #[inline(always)]
@@ -1684,9 +1684,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Odd {
         #[doc = "Real divider value is I2SDIV * 2"]
-        EVEN = 0x0,
+        Even = 0x0,
         #[doc = "Real divider value is (I2SDIV * 2) + 1"]
-        ODD = 0x01,
+        Odd = 0x01,
     }
     impl Odd {
         #[inline(always)]
@@ -1715,9 +1715,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pcmsync {
         #[doc = "Short frame synchronisation"]
-        SHORT = 0x0,
+        Short = 0x0,
         #[doc = "Long frame synchronisation"]
-        LONG = 0x01,
+        Long = 0x01,
     }
     impl Pcmsync {
         #[inline(always)]
@@ -1746,9 +1746,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rxonly {
         #[doc = "Full duplex (Transmit and receive)"]
-        FULL_DUPLEX = 0x0,
+        FullDuplex = 0x0,
         #[doc = "Output disabled (Receive-only mode)"]
-        OUTPUT_DISABLED = 0x01,
+        OutputDisabled = 0x01,
     }
     impl Rxonly {
         #[inline(always)]

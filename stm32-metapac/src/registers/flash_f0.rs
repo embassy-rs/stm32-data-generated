@@ -405,12 +405,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BOOT0",
+                    name: "Boot0",
                     description: Some("BOOT0 signal is defined by BOOT0 pin value (legacy mode)"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "N_BOOT0",
+                    name: "NBoot0",
                     description: Some("BOOT0 signal is defined by nBOOT0 option bit"),
                     value: 0,
                 },
@@ -422,12 +422,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "WS0",
+                    name: "Ws0",
                     description: Some("0 wait states"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WS1",
+                    name: "Ws1",
                     description: Some("1 wait state"),
                     value: 1,
                 },
@@ -439,12 +439,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NO_RESET",
+                    name: "NoReset",
                     description: Some("No reset generated"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RESET",
+                    name: "Reset",
                     description: Some("Reset generated when entering Standby mode"),
                     value: 0,
                 },
@@ -456,12 +456,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NO_RESET",
+                    name: "NoReset",
                     description: Some("No reset generated"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RESET",
+                    name: "Reset",
                     description: Some("Reset generated when entering Stop mode"),
                     value: 0,
                 },
@@ -473,12 +473,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "Disabled",
                     description: Some("RAM parity check disabled"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "Enabled",
                     description: Some("RAM parity check enabled"),
                     value: 0,
                 },
@@ -490,17 +490,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "LEVEL0",
+                    name: "Level0",
                     description: Some("Level 0"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LEVEL1",
+                    name: "Level1",
                     description: Some("Level 1"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "LEVEL2",
+                    name: "Level2",
                     description: Some("Level 2"),
                     value: 3,
                 },
@@ -512,12 +512,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HARDWARE",
+                    name: "Hardware",
                     description: Some("Hardware watchdog"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SOFTWARE",
+                    name: "Software",
                     description: Some("Software watchdog"),
                     value: 1,
                 },

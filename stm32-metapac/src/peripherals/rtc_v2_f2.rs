@@ -1529,9 +1529,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AlrmrMsk {
         #[doc = "Alarm set if the date/day match"]
-        TO_MATCH = 0x0,
+        ToMatch = 0x0,
         #[doc = "Date/day don’t care in Alarm comparison"]
-        NOT_MATCH = 0x01,
+        NotMatch = 0x01,
     }
     impl AlrmrMsk {
         #[inline(always)]
@@ -1560,9 +1560,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AlrmrPm {
         #[doc = "AM or 24-hour format"]
-        AM = 0x0,
+        Am = 0x0,
         #[doc = "PM"]
-        PM = 0x01,
+        Pm = 0x01,
     }
     impl AlrmrPm {
         #[inline(always)]
@@ -1592,11 +1592,11 @@ pub mod vals {
     pub enum AlrmrWdsel {
         #[doc = "DU\\[3:0\\]
 represents the date units"]
-        DATE_UNITS = 0x0,
+        DateUnits = 0x0,
         #[doc = "DU\\[3:0\\]
 represents the week day. DT\\[1:0\\]
 is don’t care"]
-        WEEK_DAY = 0x01,
+        WeekDay = 0x01,
     }
     impl AlrmrWdsel {
         #[inline(always)]
@@ -1625,9 +1625,9 @@ is don’t care"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ampm {
         #[doc = "AM or 24-hour format"]
-        AM = 0x0,
+        Am = 0x0,
         #[doc = "PM"]
-        PM = 0x01,
+        Pm = 0x01,
     }
     impl Ampm {
         #[inline(always)]
@@ -1656,13 +1656,13 @@ is don’t care"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Osel {
         #[doc = "Output disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Alarm A output enabled"]
-        ALARM_A = 0x01,
+        AlarmA = 0x01,
         #[doc = "Alarm B output enabled"]
-        ALARM_B = 0x02,
+        AlarmB = 0x02,
         #[doc = "Wakeup output enabled"]
-        WAKEUP = 0x03,
+        Wakeup = 0x03,
     }
     impl Osel {
         #[inline(always)]
@@ -1691,9 +1691,9 @@ is don’t care"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pol {
         #[doc = "The pin is high when ALRAF/ALRBF/WUTF is asserted (depending on OSEL\\[1:0\\])"]
-        HIGH = 0x0,
+        High = 0x0,
         #[doc = "The pin is low when ALRAF/ALRBF/WUTF is asserted (depending on OSEL\\[1:0\\])"]
-        LOW = 0x01,
+        Low = 0x01,
     }
     impl Pol {
         #[inline(always)]
@@ -1722,9 +1722,9 @@ is don’t care"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tamptrg {
         #[doc = "If TAMPFLT = 00: RTC_TAMPx input rising edge triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input staying low triggers a tamper detection event."]
-        RISING_EDGE = 0x0,
+        RisingEdge = 0x0,
         #[doc = "If TAMPFLT = 00: RTC_TAMPx input staying high triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input falling edge triggers a tamper detection event"]
-        FALLING_EDGE = 0x01,
+        FallingEdge = 0x01,
     }
     impl Tamptrg {
         #[inline(always)]
@@ -1753,9 +1753,9 @@ is don’t care"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tsedge {
         #[doc = "RTC_TS input rising edge generates a time-stamp event"]
-        RISING_EDGE = 0x0,
+        RisingEdge = 0x0,
         #[doc = "RTC_TS input falling edge generates a time-stamp event"]
-        FALLING_EDGE = 0x01,
+        FallingEdge = 0x01,
     }
     impl Tsedge {
         #[inline(always)]
@@ -1784,18 +1784,18 @@ is don’t care"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wucksel {
         #[doc = "RTC/16 clock is selected"]
-        DIV16 = 0x0,
+        Div16 = 0x0,
         #[doc = "RTC/8 clock is selected"]
-        DIV8 = 0x01,
+        Div8 = 0x01,
         #[doc = "RTC/4 clock is selected"]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         #[doc = "RTC/2 clock is selected"]
-        DIV2 = 0x03,
+        Div2 = 0x03,
         #[doc = "ck_spre (usually 1 Hz) clock is selected"]
-        CLOCK_SPARE = 0x04,
+        ClockSpare = 0x04,
         _RESERVED_5 = 0x05,
         #[doc = "ck_spre (usually 1 Hz) clock is selected and 2^16 is added to the WUT counter value"]
-        CLOCK_SPARE_WITH_OFFSET = 0x06,
+        ClockSpareWithOffset = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Wucksel {

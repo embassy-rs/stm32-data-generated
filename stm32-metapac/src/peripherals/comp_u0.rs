@@ -200,19 +200,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Blanking {
         #[doc = "No blanking."]
-        NO_BLANKING = 0x0,
+        NoBlanking = 0x0,
         #[doc = "TIM1 OC4 enabled as blanking source"]
-        TIM1OC4 = 0x01,
+        Tim1oc4 = 0x01,
         #[doc = "TIM1 OC5 enabled as blanking source"]
-        TIM1OC5 = 0x02,
+        Tim1oc5 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "TIM5 OC3 enabled as blanking source"]
-        TIM2OC3 = 0x04,
+        Tim2oc3 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "TIM3 OC3 enabled as blanking source"]
-        TIM3OC3 = 0x08,
+        Tim3oc3 = 0x08,
         _RESERVED_9 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
@@ -221,7 +221,7 @@ pub mod vals {
         _RESERVED_e = 0x0e,
         _RESERVED_f = 0x0f,
         #[doc = "TIM15 OC2 enabled as blanking source"]
-        TIM15OC2 = 0x10,
+        Tim15oc2 = 0x10,
         _RESERVED_11 = 0x11,
         _RESERVED_12 = 0x12,
         _RESERVED_13 = 0x13,
@@ -264,10 +264,10 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hyst {
-        NONE = 0x0,
-        LOW = 0x01,
-        MEDIUM = 0x02,
-        HIGH = 0x03,
+        None = 0x0,
+        Low = 0x01,
+        Medium = 0x02,
+        High = 0x03,
     }
     impl Hyst {
         #[inline(always)]
@@ -296,9 +296,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Polarity {
         #[doc = "Output is not inverted."]
-        NOT_INVERTED = 0x0,
+        NotInverted = 0x0,
         #[doc = "Output is inverted."]
-        INVERTED = 0x01,
+        Inverted = 0x01,
     }
     impl Polarity {
         #[inline(always)]
@@ -327,12 +327,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pwrmode {
         #[doc = "High speed / full power."]
-        HIGH_SPEED = 0x0,
+        HighSpeed = 0x0,
         #[doc = "Medium speed / medium power."]
-        MEDIUM_SPEED = 0x01,
+        MediumSpeed = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "Very-low speed / ultra-low power."]
-        LOW_SPEED = 0x03,
+        LowSpeed = 0x03,
     }
     impl Pwrmode {
         #[inline(always)]
@@ -362,10 +362,10 @@ pub mod vals {
     pub enum WindowMode {
         #[doc = "Signal selected with INPSEL\\[2:0\\]
 bitfield of this register."]
-        THIS_INPSEL = 0x0,
+        ThisInpsel = 0x0,
         #[doc = "Signal selected with INPSEL\\[2:0\\]
 bitfield of the other register (required for window mode)."]
-        OTHER_INPSEL = 0x01,
+        OtherInpsel = 0x01,
     }
     impl WindowMode {
         #[inline(always)]
@@ -394,9 +394,9 @@ bitfield of the other register (required for window mode)."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WindowOut {
         #[doc = "Comparator 1 value."]
-        COMP1_VALUE = 0x0,
+        Comp1Value = 0x0,
         #[doc = "Comparator 1 value XOR comparator 2 value (required for window mode)."]
-        COMP1_VALUE_XOR_COMP2_VALUE = 0x01,
+        Comp1ValueXorComp2Value = 0x01,
     }
     impl WindowOut {
         #[inline(always)]

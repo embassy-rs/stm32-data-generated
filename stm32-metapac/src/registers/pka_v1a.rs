@@ -378,14 +378,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ALL",
+                    name: "All",
                     description: Some(
                         "All values documented in MODE bitfield can be used.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LIMITED",
+                    name: "Limited",
                     description: Some(
                         "Only ECDSA verification (MODE = 0x26) is supported by the PKA.",
                     ),

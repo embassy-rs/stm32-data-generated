@@ -2106,7 +2106,7 @@ pub mod vals {
     pub enum Adstp {
         _RESERVED_0 = 0x0,
         #[doc = "Stop conversion of channel"]
-        STOP = 0x01,
+        Stop = 0x01,
     }
     impl Adstp {
         #[inline(always)]
@@ -2135,13 +2135,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dmngt {
         #[doc = "Regular conversion data stored in DR only."]
-        DR = 0x0,
+        Dr = 0x0,
         #[doc = "DMA one-shot mode selected."]
-        DMA_ONE_SHOT = 0x01,
+        DmaOneShot = 0x01,
         #[doc = "MDF mode detected."]
-        MDF = 0x02,
+        Mdf = 0x02,
         #[doc = "DMA circular mode selected."]
-        DMA_CIRCULAR = 0x03,
+        DmaCircular = 0x03,
     }
     impl Dmngt {
         #[inline(always)]
@@ -2170,13 +2170,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Exten {
         #[doc = "Trigger detection disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Trigger detection on the rising edge"]
-        RISING_EDGE = 0x01,
+        RisingEdge = 0x01,
         #[doc = "Trigger detection on the falling edge"]
-        FALLING_EDGE = 0x02,
+        FallingEdge = 0x02,
         #[doc = "Trigger detection on both the rising and falling edges"]
-        BOTH_EDGES = 0x03,
+        BothEdges = 0x03,
     }
     impl Exten {
         #[inline(always)]
@@ -2205,9 +2205,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pcsel {
         #[doc = "Input channel i (Vless thansub>INPless than/sub>\\[i\\]) is not preselected for conversion, the result of the ADC conversion for this channel is wrong."]
-        NOT_PRESELECTED = 0x0,
+        NotPreselected = 0x0,
         #[doc = "Input channel i (Vless thansub>INPless than/sub>\\[i\\]) is preselected for conversion."]
-        PRESELECTED = 0x01,
+        Preselected = 0x01,
     }
     impl Pcsel {
         #[inline(always)]
@@ -2236,13 +2236,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Res {
         #[doc = "12-bit."]
-        BITS12 = 0x0,
+        Bits12 = 0x0,
         #[doc = "10-bit."]
-        BITS10 = 0x01,
+        Bits10 = 0x01,
         #[doc = "8-bit."]
-        BITS8 = 0x02,
+        Bits8 = 0x02,
         #[doc = "6-bit."]
-        BITS6 = 0x03,
+        Bits6 = 0x03,
     }
     impl Res {
         #[inline(always)]
@@ -2271,21 +2271,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "1.5 ADC clock cycles."]
-        CYCLES1_5 = 0x0,
+        Cycles15 = 0x0,
         #[doc = "2.5 ADC clock cycles."]
-        CYCLES2_5 = 0x01,
+        Cycles25 = 0x01,
         #[doc = "6.5 ADC clock cycles."]
-        CYCLES6_5 = 0x02,
+        Cycles65 = 0x02,
         #[doc = "11.5 ADC clock cycles."]
-        CYCLES11_5 = 0x03,
+        Cycles115 = 0x03,
         #[doc = "23.5 ADC clock cycles."]
-        CYCLES23_5 = 0x04,
+        Cycles235 = 0x04,
         #[doc = "46.5 ADC clock cycles."]
-        CYCLES46_5 = 0x05,
+        Cycles465 = 0x05,
         #[doc = "246.5 ADC clock cycles."]
-        CYCLES246_5 = 0x06,
+        Cycles2465 = 0x06,
         #[doc = "1499.5 ADC clock cycles."]
-        CYCLES1499_5 = 0x07,
+        Cycles14995 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]

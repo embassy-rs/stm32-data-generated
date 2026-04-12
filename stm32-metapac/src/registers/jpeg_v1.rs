@@ -5559,7 +5559,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5573,7 +5573,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5587,7 +5587,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5601,7 +5601,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5615,7 +5615,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5629,7 +5629,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5643,7 +5643,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5657,7 +5657,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5671,7 +5671,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5685,7 +5685,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5699,7 +5699,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5713,7 +5713,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5727,7 +5727,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5741,7 +5741,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5755,7 +5755,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5769,7 +5769,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5783,7 +5783,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5797,7 +5797,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5811,7 +5811,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5825,7 +5825,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5839,7 +5839,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5853,7 +5853,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5867,7 +5867,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5881,7 +5881,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5895,7 +5895,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5909,7 +5909,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5923,7 +5923,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5937,7 +5937,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5951,7 +5951,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5965,7 +5965,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5979,7 +5979,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -5993,7 +5993,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6007,7 +6007,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6021,7 +6021,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6035,7 +6035,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6049,7 +6049,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6063,7 +6063,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6077,7 +6077,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6091,7 +6091,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6105,7 +6105,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6119,7 +6119,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6133,7 +6133,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6147,7 +6147,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6161,7 +6161,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6175,7 +6175,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6189,7 +6189,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6203,7 +6203,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6217,7 +6217,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6231,7 +6231,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6245,7 +6245,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6259,7 +6259,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6273,7 +6273,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6287,7 +6287,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6301,7 +6301,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6315,7 +6315,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6329,7 +6329,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6343,7 +6343,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6357,7 +6357,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6371,7 +6371,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6385,7 +6385,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6399,7 +6399,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6413,7 +6413,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6427,7 +6427,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6441,7 +6441,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6455,7 +6455,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6469,7 +6469,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6483,7 +6483,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6497,7 +6497,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6511,7 +6511,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6525,7 +6525,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6539,7 +6539,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6553,7 +6553,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6567,7 +6567,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6581,7 +6581,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6595,7 +6595,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6609,7 +6609,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6623,7 +6623,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6637,7 +6637,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6651,7 +6651,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6665,7 +6665,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6679,7 +6679,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6693,7 +6693,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6707,7 +6707,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6721,7 +6721,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6735,7 +6735,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6749,7 +6749,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6763,7 +6763,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6777,7 +6777,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6791,7 +6791,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6805,7 +6805,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6819,7 +6819,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6833,7 +6833,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6847,7 +6847,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6861,7 +6861,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6875,7 +6875,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6889,7 +6889,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6903,7 +6903,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6917,7 +6917,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6931,7 +6931,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6945,7 +6945,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6959,7 +6959,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6973,7 +6973,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -6987,7 +6987,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG DHTMem tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7769,7 +7769,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7783,7 +7783,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7797,7 +7797,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7811,7 +7811,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7825,7 +7825,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7839,7 +7839,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7853,7 +7853,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7867,7 +7867,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7881,7 +7881,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7895,7 +7895,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7909,7 +7909,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7923,7 +7923,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7937,7 +7937,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7951,7 +7951,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7965,7 +7965,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7979,7 +7979,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -7993,7 +7993,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8007,7 +8007,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8021,7 +8021,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8035,7 +8035,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8049,7 +8049,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8063,7 +8063,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8077,7 +8077,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8091,7 +8091,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8105,7 +8105,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8119,7 +8119,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8133,7 +8133,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8147,7 +8147,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8161,7 +8161,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8175,7 +8175,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8189,7 +8189,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8203,7 +8203,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8217,7 +8217,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8231,7 +8231,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8245,7 +8245,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8259,7 +8259,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8273,7 +8273,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8287,7 +8287,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8301,7 +8301,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8315,7 +8315,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8329,7 +8329,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8343,7 +8343,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8357,7 +8357,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8371,7 +8371,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8385,7 +8385,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8399,7 +8399,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8413,7 +8413,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8427,7 +8427,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8441,7 +8441,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8455,7 +8455,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8469,7 +8469,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8483,7 +8483,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8497,7 +8497,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8511,7 +8511,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8525,7 +8525,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8539,7 +8539,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8553,7 +8553,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8567,7 +8567,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8581,7 +8581,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8595,7 +8595,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8609,7 +8609,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8623,7 +8623,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8637,7 +8637,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8651,7 +8651,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8665,7 +8665,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8679,7 +8679,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8693,7 +8693,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8707,7 +8707,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8721,7 +8721,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8735,7 +8735,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8749,7 +8749,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8763,7 +8763,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8777,7 +8777,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8791,7 +8791,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8805,7 +8805,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8819,7 +8819,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8833,7 +8833,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8847,7 +8847,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8861,7 +8861,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8875,7 +8875,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8889,7 +8889,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8903,7 +8903,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8917,7 +8917,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8931,7 +8931,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8945,7 +8945,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8959,7 +8959,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8973,7 +8973,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -8987,7 +8987,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9001,7 +9001,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9015,7 +9015,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9029,7 +9029,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9043,7 +9043,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9057,7 +9057,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9071,7 +9071,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9085,7 +9085,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9099,7 +9099,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9113,7 +9113,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9127,7 +9127,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9141,7 +9141,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9155,7 +9155,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9169,7 +9169,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9183,7 +9183,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9197,7 +9197,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9211,7 +9211,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9225,7 +9225,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9239,7 +9239,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9253,7 +9253,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9267,7 +9267,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9281,7 +9281,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9295,7 +9295,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9309,7 +9309,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9323,7 +9323,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9337,7 +9337,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9351,7 +9351,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9365,7 +9365,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9379,7 +9379,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9393,7 +9393,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9407,7 +9407,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9421,7 +9421,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9435,7 +9435,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9449,7 +9449,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9463,7 +9463,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9477,7 +9477,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9491,7 +9491,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9505,7 +9505,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9519,7 +9519,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9533,7 +9533,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9547,7 +9547,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9561,7 +9561,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9575,7 +9575,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9589,7 +9589,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9603,7 +9603,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9617,7 +9617,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9631,7 +9631,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9645,7 +9645,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9659,7 +9659,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9673,7 +9673,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9687,7 +9687,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9701,7 +9701,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9715,7 +9715,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9729,7 +9729,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9743,7 +9743,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9757,7 +9757,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9771,7 +9771,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9785,7 +9785,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9799,7 +9799,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9813,7 +9813,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9827,7 +9827,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9841,7 +9841,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9855,7 +9855,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9869,7 +9869,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9883,7 +9883,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9897,7 +9897,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9911,7 +9911,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9925,7 +9925,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9939,7 +9939,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9953,7 +9953,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9967,7 +9967,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9981,7 +9981,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -9995,7 +9995,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10009,7 +10009,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10023,7 +10023,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10037,7 +10037,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10051,7 +10051,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10065,7 +10065,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10079,7 +10079,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10093,7 +10093,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10107,7 +10107,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10121,7 +10121,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10135,7 +10135,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10149,7 +10149,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10163,7 +10163,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10177,7 +10177,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10191,7 +10191,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10205,7 +10205,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10219,7 +10219,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10233,7 +10233,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10247,7 +10247,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10261,7 +10261,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10275,7 +10275,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10289,7 +10289,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10303,7 +10303,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10317,7 +10317,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10331,7 +10331,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10345,7 +10345,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10359,7 +10359,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10373,7 +10373,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10387,7 +10387,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10401,7 +10401,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10415,7 +10415,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10429,7 +10429,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -10443,7 +10443,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
             fields: &[Field {
-                name: "dhtmem_ram",
+                name: "dht_mem_ram",
                 description: Some("DHTMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12391,7 +12391,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12405,7 +12405,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12419,7 +12419,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12433,7 +12433,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12447,7 +12447,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12461,7 +12461,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12475,7 +12475,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12489,7 +12489,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12503,7 +12503,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12517,7 +12517,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12531,7 +12531,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12545,7 +12545,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12559,7 +12559,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12573,7 +12573,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12587,7 +12587,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12601,7 +12601,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12615,7 +12615,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12629,7 +12629,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12643,7 +12643,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12657,7 +12657,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12671,7 +12671,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12685,7 +12685,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12699,7 +12699,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12713,7 +12713,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12727,7 +12727,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12741,7 +12741,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12755,7 +12755,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12769,7 +12769,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12783,7 +12783,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12797,7 +12797,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12811,7 +12811,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12825,7 +12825,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12839,7 +12839,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12853,7 +12853,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12867,7 +12867,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12881,7 +12881,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12895,7 +12895,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12909,7 +12909,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12923,7 +12923,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12937,7 +12937,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12951,7 +12951,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12965,7 +12965,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12979,7 +12979,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -12993,7 +12993,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13007,7 +13007,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13021,7 +13021,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13035,7 +13035,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13049,7 +13049,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13063,7 +13063,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13077,7 +13077,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13091,7 +13091,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13105,7 +13105,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13119,7 +13119,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13133,7 +13133,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13147,7 +13147,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13161,7 +13161,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13175,7 +13175,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13189,7 +13189,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13203,7 +13203,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13217,7 +13217,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13231,7 +13231,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13245,7 +13245,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13259,7 +13259,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -13273,7 +13273,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("JPEG quantization tables"),
             bit_size: 32,
             fields: &[Field {
-                name: "qmem_ram",
+                name: "q_mem_ram",
                 description: Some("QMem RAM"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,

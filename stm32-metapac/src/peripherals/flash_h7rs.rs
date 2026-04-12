@@ -2770,13 +2770,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BorLev {
         #[doc = "BOR OFF, POR/PDR reset threshold level is applied."]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "BOR Level 1, the threshold level is low (around 2.1 V)."]
-        LEVEL1 = 0x01,
+        Level1 = 0x01,
         #[doc = "BOR Level 2, the threshold level is medium (around 2.4 V)."]
-        LEVEL2 = 0x02,
+        Level2 = 0x02,
         #[doc = "BOR Level 3, the threshold level is high (around 2.7 V)."]
-        LEVEL3 = 0x03,
+        Level3 = 0x03,
     }
     impl BorLev {
         #[inline(always)]
@@ -2805,13 +2805,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CrcBurst {
         #[doc = "every burst has a size of 4 Flash words (64 Bytes)."]
-        WORD4 = 0x0,
+        Word4 = 0x0,
         #[doc = "every burst has a size of 16 Flash words (256 Bytes)."]
-        WORD16 = 0x01,
+        Word16 = 0x01,
         #[doc = "every burst has a size of 64 Flash words (1 Kbytes)."]
-        WORD64 = 0x02,
+        Word64 = 0x02,
         #[doc = "every burst has a size of 256 Flash words (4 Kbytes)."]
-        WORD256 = 0x03,
+        Word256 = 0x03,
     }
     impl CrcBurst {
         #[inline(always)]
@@ -2840,13 +2840,13 @@ pub mod vals {
     pub struct DbgAuth(u8);
     impl DbgAuth {
         #[doc = "Authentication method using ECDSA signature (NIST P256)."]
-        pub const ECDSA: Self = Self(0x51);
+        pub const Ecdsa: Self = Self(0x51);
         #[doc = "Delegated debug (to OEM iRoT code in user Flash)."]
-        pub const DELEGATED: Self = Self(0x6f);
+        pub const Delegated: Self = Self(0x6f);
         #[doc = "Authentication method using password."]
-        pub const PASSWORD: Self = Self(0x8a);
+        pub const Password: Self = Self(0x8a);
         #[doc = "Locked device (no debug allowed)."]
-        pub const LOCKED: Self = Self(0xb4);
+        pub const Locked: Self = Self(0xb4);
     }
     impl DbgAuth {
         pub const fn from_bits(val: u8) -> DbgAuth {
@@ -2859,10 +2859,10 @@ pub mod vals {
     impl core::fmt::Debug for DbgAuth {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x51 => f.write_str("ECDSA"),
-                0x6f => f.write_str("DELEGATED"),
-                0x8a => f.write_str("PASSWORD"),
-                0xb4 => f.write_str("LOCKED"),
+                0x51 => f.write_str("Ecdsa"),
+                0x6f => f.write_str("Delegated"),
+                0x8a => f.write_str("Password"),
+                0xb4 => f.write_str("Locked"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2871,10 +2871,10 @@ pub mod vals {
     impl defmt::Format for DbgAuth {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x51 => defmt::write!(f, "ECDSA"),
-                0x6f => defmt::write!(f, "DELEGATED"),
-                0x8a => defmt::write!(f, "PASSWORD"),
-                0xb4 => defmt::write!(f, "LOCKED"),
+                0x51 => defmt::write!(f, "Ecdsa"),
+                0x6f => defmt::write!(f, "Delegated"),
+                0x8a => defmt::write!(f, "Password"),
+                0xb4 => defmt::write!(f, "Locked"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -2896,7 +2896,7 @@ pub mod vals {
     pub struct IrotSelect(u8);
     impl IrotSelect {
         #[doc = "ST iRoT is selected at boot."]
-        pub const SELECTED: Self = Self(0xb4);
+        pub const Selected: Self = Self(0xb4);
     }
     impl IrotSelect {
         pub const fn from_bits(val: u8) -> IrotSelect {
@@ -2909,7 +2909,7 @@ pub mod vals {
     impl core::fmt::Debug for IrotSelect {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0xb4 => f.write_str("SELECTED"),
+                0xb4 => f.write_str("Selected"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2918,7 +2918,7 @@ pub mod vals {
     impl defmt::Format for IrotSelect {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0xb4 => defmt::write!(f, "SELECTED"),
+                0xb4 => defmt::write!(f, "Selected"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -2940,9 +2940,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nextkl {
         #[doc = "OBKINDEX represents the index of the option byte key stored for the hide protection level indicated in SBS_HDPLSR."]
-        PLUS0 = 0x0,
+        Plus0 = 0x0,
         #[doc = "OBKINDEX represents the index of the option byte key stored for the hide protection level indicated in SBS_HDPLSR plus one (e.g. if HDPL=1 in SBS_HDPLR the key of level 2 is selected)."]
-        PLUS1 = 0x01,
+        Plus1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -2973,9 +2973,9 @@ pub mod vals {
     pub struct NvsrNvstate(u8);
     impl NvsrNvstate {
         #[doc = "CLOSED device."]
-        pub const CLOSED: Self = Self(0x51);
+        pub const Closed: Self = Self(0x51);
         #[doc = "OPEN device."]
-        pub const OPEN: Self = Self(0xb4);
+        pub const Open: Self = Self(0xb4);
     }
     impl NvsrNvstate {
         pub const fn from_bits(val: u8) -> NvsrNvstate {
@@ -2988,8 +2988,8 @@ pub mod vals {
     impl core::fmt::Debug for NvsrNvstate {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x51 => f.write_str("CLOSED"),
-                0xb4 => f.write_str("OPEN"),
+                0x51 => f.write_str("Closed"),
+                0xb4 => f.write_str("Open"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2998,8 +2998,8 @@ pub mod vals {
     impl defmt::Format for NvsrNvstate {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x51 => defmt::write!(f, "CLOSED"),
-                0xb4 => defmt::write!(f, "OPEN"),
+                0x51 => defmt::write!(f, "Closed"),
+                0xb4 => defmt::write!(f, "Open"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -3021,9 +3021,9 @@ pub mod vals {
     pub struct NvsrpNvstate(u8);
     impl NvsrpNvstate {
         #[doc = "CLOSE."]
-        pub const CLOSE: Self = Self(0x51);
+        pub const Close: Self = Self(0x51);
         #[doc = "OPEN."]
-        pub const OPEN: Self = Self(0xb4);
+        pub const Open: Self = Self(0xb4);
     }
     impl NvsrpNvstate {
         pub const fn from_bits(val: u8) -> NvsrpNvstate {
@@ -3036,8 +3036,8 @@ pub mod vals {
     impl core::fmt::Debug for NvsrpNvstate {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x51 => f.write_str("CLOSE"),
-                0xb4 => f.write_str("OPEN"),
+                0x51 => f.write_str("Close"),
+                0xb4 => f.write_str("Open"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -3046,8 +3046,8 @@ pub mod vals {
     impl defmt::Format for NvsrpNvstate {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x51 => defmt::write!(f, "CLOSE"),
-                0xb4 => defmt::write!(f, "OPEN"),
+                0x51 => defmt::write!(f, "Close"),
+                0xb4 => defmt::write!(f, "Open"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -3069,13 +3069,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Obksize {
         #[doc = "Key size is 32 bits."]
-        BITS32 = 0x0,
+        Bits32 = 0x0,
         #[doc = "Key size is 64 bits."]
-        BITS64 = 0x01,
+        Bits64 = 0x01,
         #[doc = "Key size is 128 bits."]
-        BITS128 = 0x02,
+        Bits128 = 0x02,
         #[doc = "Key size is 256 bits."]
-        BITS256 = 0x03,
+        Bits256 = 0x03,
     }
     impl Obksize {
         #[inline(always)]
@@ -3104,7 +3104,7 @@ pub mod vals {
     pub struct OemProvd(u8);
     impl OemProvd {
         #[doc = "Device has been provisioned by the OEM."]
-        pub const PROVISIONED: Self = Self(0xb4);
+        pub const Provisioned: Self = Self(0xb4);
     }
     impl OemProvd {
         pub const fn from_bits(val: u8) -> OemProvd {
@@ -3117,7 +3117,7 @@ pub mod vals {
     impl core::fmt::Debug for OemProvd {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0xb4 => f.write_str("PROVISIONED"),
+                0xb4 => f.write_str("Provisioned"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -3126,7 +3126,7 @@ pub mod vals {
     impl defmt::Format for OemProvd {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0xb4 => defmt::write!(f, "PROVISIONED"),
+                0xb4 => defmt::write!(f, "Provisioned"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }

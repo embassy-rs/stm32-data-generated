@@ -1475,9 +1475,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dmacfg {
         #[doc = "DMA One Shot mode selected"]
-        ONE_SHOT = 0x0,
+        OneShot = 0x0,
         #[doc = "DMA Circular mode selected"]
-        CIRCULAR = 0x01,
+        Circular = 0x01,
     }
     impl Dmacfg {
         #[inline(always)]
@@ -1506,13 +1506,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Res {
         #[doc = "12-bit resolution"]
-        BITS12 = 0x0,
+        Bits12 = 0x0,
         #[doc = "10-bit resolution"]
-        BITS10 = 0x01,
+        Bits10 = 0x01,
         #[doc = "8-bit resolution"]
-        BITS8 = 0x02,
+        Bits8 = 0x02,
         #[doc = "6-bit resolution"]
-        BITS6 = 0x03,
+        Bits6 = 0x03,
     }
     impl Res {
         #[inline(always)]
@@ -1541,21 +1541,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "1.5 ADC cycles"]
-        CYCLES1_5 = 0x0,
+        Cycles15 = 0x0,
         #[doc = "3.5 ADC cycles"]
-        CYCLES3_5 = 0x01,
+        Cycles35 = 0x01,
         #[doc = "7.5 ADC cycles"]
-        CYCLES7_5 = 0x02,
+        Cycles75 = 0x02,
         #[doc = "12.5 ADC cycles"]
-        CYCLES12_5 = 0x03,
+        Cycles125 = 0x03,
         #[doc = "19.5 ADC cycles"]
-        CYCLES19_5 = 0x04,
+        Cycles195 = 0x04,
         #[doc = "39.5 ADC cycles"]
-        CYCLES39_5 = 0x05,
+        Cycles395 = 0x05,
         #[doc = "79.5 ADC cycles"]
-        CYCLES79_5 = 0x06,
+        Cycles795 = 0x06,
         #[doc = "160.5 ADC cycles"]
-        CYCLES160_5 = 0x07,
+        Cycles1605 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]

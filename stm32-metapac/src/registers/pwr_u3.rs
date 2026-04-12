@@ -5421,14 +5421,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOW_POWER",
+                    name: "LowPower",
                     description: Some(
                         "Flash memory enters low-power mode in Stop 0 and Stop 1 modes (lower-power consumption).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NORMAL",
+                    name: "Normal",
                     description: Some(
                         "Flash memory remains in normal mode in Stop 0 and Stop 1 modes (faster wakeup time).",
                     ),
@@ -5442,56 +5442,56 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "STOP0",
+                    name: "Stop0",
                     description: Some(
                         "Stop 0 mode.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "STOP1",
+                    name: "Stop1",
                     description: Some(
                         "Stop 1 mode.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "STOP2",
+                    name: "Stop2",
                     description: Some(
                         "Stop 2 mode.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "STOP3",
+                    name: "Stop3",
                     description: Some(
                         "Stop 3 mode.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "STOP4",
+                    name: "Stop4",
                     description: Some(
                         "Standby mode.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "STOP5",
+                    name: "Stop5",
                     description: Some(
                         "Standby mode.",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "STOP6",
+                    name: "Stop6",
                     description: Some(
                         "Shutdown mode.",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "STOP7",
+                    name: "Stop7",
                     description: Some(
                         "Shutdown mode.",
                     ),
@@ -5505,14 +5505,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOST",
+                    name: "Lost",
                     description: Some(
                         "Content lost in Stop modes.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RETAINED",
+                    name: "Retained",
                     description: Some(
                         "Contents retained in Stop modes.",
                     ),
@@ -5526,7 +5526,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "PVD_IN",
+                    name: "PvdIn",
                     description: Some(
                         "External input analog voltage PVD_IN (compared internally to VREFINT).",
                     ),
@@ -5589,14 +5589,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ABOVE_OR_EQUAL",
+                    name: "AboveOrEqual",
                     description: Some(
                         "VDD is equal or above the PVD threshold selected by PVDLS[2:0].",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BELOW",
+                    name: "Below",
                     description: Some(
                         "VDD is below the PVD threshold selected by PVDLS[2:0].",
                     ),
@@ -5610,14 +5610,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LDO",
+                    name: "Ldo",
                     description: Some(
                         "LDO selected.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SMPS",
+                    name: "Smps",
                     description: Some(
                         "SMPS selected.",
                     ),
@@ -5631,14 +5631,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOW_POWER",
+                    name: "LowPower",
                     description: Some(
                         "SRAMs enters low-power mode in Stop 0 and Stop 1 modes (source biasing for lower-power consumption).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NORMAL",
+                    name: "Normal",
                     description: Some(
                         "SRAMs remains in normal mode in Stop 0 and Stop 1 modes (higher consumption but no SRAM wakeup time).",
                     ),
@@ -5652,14 +5652,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "POWERED_OFF",
+                    name: "PoweredOff",
                     description: Some(
                         "SRAM1 powered off.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "POWERED_ON",
+                    name: "PoweredOn",
                     description: Some(
                         "SRAM1 powered on.",
                     ),
@@ -5673,14 +5673,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CHARGE_1_5K",
+                    name: "Charge15k",
                     description: Some(
                         "Charge VBAT through a 1.5 k ohm resistor.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "CHARGE_5K",
+                    name: "Charge5k",
                     description: Some(
                         "Charge VBAT through a 5 k ohm resistor.",
                     ),
@@ -5694,14 +5694,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HIGH",
+                    name: "High",
                     description: Some(
                         "Detection on high level (rising edge).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOW",
+                    name: "Low",
                     description: Some(
                         "Detection on low level (falling edge).",
                     ),
@@ -5715,28 +5715,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "WKUPX_0",
+                    name: "WkuPx0",
                     description: Some(
                         "WKUPx_0.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WKUPX_1",
+                    name: "WkuPx1",
                     description: Some(
                         "WKUPx_1.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "WKUPX_2",
+                    name: "WkuPx2",
                     description: Some(
                         "WKUPx_2.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "WKUPX_3",
+                    name: "WkuPx3",
                     description: Some(
                         "WKUPx_3.",
                     ),

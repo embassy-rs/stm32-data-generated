@@ -698,18 +698,18 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SwjCfg {
         #[doc = "Full SWJ (JTAG-DP + SW-DP) (Reset state)"]
-        RESET = 0x0,
+        Reset = 0x0,
         #[doc = "Full SWJ (JTAG-DP + SW-DP) but without NJTRST"]
-        NO_JNT_RST = 0x01,
+        NoJntRst = 0x01,
         #[doc = "JTAG-DP Disabled and SW-DP Enabled"]
-        JTAG_DISABLE = 0x02,
+        JtagDisable = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "JTAG-DP Disabled and SW-DP Disabled"]
-        DISABLE = 0x04,
+        Disable = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         #[doc = "Sets all bits to 1, indicating that the configuration should remain unchanged"]
-        NO_OP = 0x07,
+        NoOp = 0x07,
     }
     impl SwjCfg {
         #[inline(always)]

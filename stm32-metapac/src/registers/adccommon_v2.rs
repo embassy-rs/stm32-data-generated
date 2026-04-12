@@ -184,22 +184,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DIV2",
+                    name: "Div2",
                     description: Some("PCLK2 divided by 2"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV4",
+                    name: "Div4",
                     description: Some("PCLK2 divided by 4"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DIV6",
+                    name: "Div6",
                     description: Some("PCLK2 divided by 6"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DIV8",
+                    name: "Div8",
                     description: Some("PCLK2 divided by 8"),
                     value: 3,
                 },
@@ -211,12 +211,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CONTINUOUS",
+                    name: "Continuous",
                     description: Some("DMA requests are issued as long as data are converted and DMA=01, 10 or 11"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SINGLE",
+                    name: "Single",
                     description: Some("No new DMA request is issued after the last transfer"),
                     value: 0,
                 },
@@ -228,22 +228,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "Disabled",
                     description: Some("DMA mode disabled"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MODE1",
+                    name: "Mode1",
                     description: Some("DMA mode 1 enabled (2 / 3 half-words one by one - 1 then 2 then 3)"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MODE2",
+                    name: "Mode2",
                     description: Some("DMA mode 2 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MODE3",
+                    name: "Mode3",
                     description: Some("DMA mode 3 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"),
                     value: 3,
                 },
@@ -255,67 +255,67 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "DUAL_A",
+                    name: "DualA",
                     description: Some("Dual ADC1 and ADC2, alternate trigger mode only"),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "DUAL_I",
+                    name: "DualI",
                     description: Some("Dual ADC1 and ADC2, interleaved mode only"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "DUAL_J",
+                    name: "DualJ",
                     description: Some("Dual ADC1 and ADC2, injected simultaneous mode only"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DUAL_R",
+                    name: "DualR",
                     description: Some("Dual ADC1 and ADC2, regular simultaneous mode only"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DUAL_RA",
+                    name: "DualRa",
                     description: Some("Dual ADC1 and ADC2, combined regular and alternate trigger mode"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DUAL_RJ",
+                    name: "DualRj",
                     description: Some("Dual ADC1 and ADC2, combined regular and injected simultaneous mode"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "INDEPENDENT",
+                    name: "Independent",
                     description: Some("All the ADCs independent: independent mode"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TRIPLE_A",
+                    name: "TripleA",
                     description: Some("Triple ADC, alternate trigger mode only"),
                     value: 24,
                 },
                 EnumVariant {
-                    name: "TRIPLE_I",
+                    name: "TripleI",
                     description: Some("Triple ADC, interleaved mode only"),
                     value: 23,
                 },
                 EnumVariant {
-                    name: "TRIPLE_J",
+                    name: "TripleJ",
                     description: Some("Triple ADC, injected simultaneous mode only"),
                     value: 21,
                 },
                 EnumVariant {
-                    name: "TRIPLE_R",
+                    name: "TripleR",
                     description: Some("Triple ADC, regular simultaneous mode only"),
                     value: 22,
                 },
                 EnumVariant {
-                    name: "TRIPLE_RA",
+                    name: "TripleRa",
                     description: Some("Triple ADC, regular and alternate trigger mode"),
                     value: 18,
                 },
                 EnumVariant {
-                    name: "TRIPLE_RJ",
+                    name: "TripleRj",
                     description: Some("Triple ADC, regular and injected simultaneous mode"),
                     value: 17,
                 },

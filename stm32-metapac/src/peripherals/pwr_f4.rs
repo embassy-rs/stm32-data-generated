@@ -462,9 +462,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pdds {
         #[doc = "Enter Stop mode when the CPU enters deepsleep"]
-        STOP_MODE = 0x0,
+        StopMode = 0x0,
         #[doc = "Enter Standby mode when the CPU enters deepsleep"]
-        STANDBY_MODE = 0x01,
+        StandbyMode = 0x01,
     }
     impl Pdds {
         #[inline(always)]
@@ -495,11 +495,11 @@ pub mod vals {
         _RESERVED_0 = 0x0,
         #[doc = "Scale 3 mode (STM32F4\\[23\\]
 ONLY)"]
-        SCALE3 = 0x01,
+        Scale3 = 0x01,
         #[doc = "Scale 2 mode"]
-        SCALE2 = 0x02,
+        Scale2 = 0x02,
         #[doc = "Scale 1 mode (reset value)"]
-        SCALE1 = 0x03,
+        Scale1 = 0x03,
     }
     impl Vos {
         #[inline(always)]

@@ -324,37 +324,37 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "NO_BLANKING",
+                    name: "NoBlanking",
                     description: None,
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TIM15OC1",
+                    name: "Tim15oc1",
                     description: None,
                     value: 6,
                 },
                 EnumVariant {
-                    name: "TIM1OC5",
+                    name: "Tim1oc5",
                     description: None,
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TIM2OC3",
+                    name: "Tim2oc3",
                     description: None,
                     value: 2,
                 },
                 EnumVariant {
-                    name: "TIM3OC3",
+                    name: "Tim3oc3",
                     description: None,
                     value: 3,
                 },
                 EnumVariant {
-                    name: "TIM3OC4",
+                    name: "Tim3oc4",
                     description: None,
                     value: 4,
                 },
                 EnumVariant {
-                    name: "TIM8OC5",
+                    name: "Tim8oc5",
                     description: None,
                     value: 5,
                 },
@@ -366,22 +366,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HIGH",
+                    name: "High",
                     description: None,
                     value: 3,
                 },
                 EnumVariant {
-                    name: "LOW",
+                    name: "Low",
                     description: None,
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MEDIUM",
+                    name: "Medium",
                     description: None,
                     value: 2,
                 },
                 EnumVariant {
-                    name: "NONE",
+                    name: "None",
                     description: None,
                     value: 0,
                 },
@@ -393,42 +393,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "COMPX_INM1",
+                    name: "ComPxInm1",
                     description: None,
                     value: 6,
                 },
                 EnumVariant {
-                    name: "COMPX_INM2",
+                    name: "ComPxInm2",
                     description: None,
                     value: 7,
                 },
                 EnumVariant {
-                    name: "INM1",
+                    name: "Inm1",
                     description: None,
                     value: 4,
                 },
                 EnumVariant {
-                    name: "INM2",
+                    name: "Inm2",
                     description: None,
                     value: 5,
                 },
                 EnumVariant {
-                    name: "VREF",
+                    name: "VRef",
                     description: None,
                     value: 3,
                 },
                 EnumVariant {
-                    name: "VREF_1OVER2",
+                    name: "VRef1over2",
                     description: None,
                     value: 1,
                 },
                 EnumVariant {
-                    name: "VREF_1OVER4",
+                    name: "VRef1over4",
                     description: None,
                     value: 0,
                 },
                 EnumVariant {
-                    name: "VREF_3OVER4",
+                    name: "VRef3over4",
                     description: None,
                     value: 2,
                 },
@@ -440,12 +440,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "INP1",
+                    name: "Inp1",
                     description: None,
                     value: 0,
                 },
                 EnumVariant {
-                    name: "INP2",
+                    name: "Inp2",
                     description: None,
                     value: 1,
                 },
@@ -457,22 +457,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HIGH",
+                    name: "High",
                     description: Some("High speed / full power"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOW",
+                    name: "Low",
                     description: Some("Ultra low power / ultra-low-power"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "MEDIUM",
+                    name: "Medium",
                     description: Some("Medium speed / medium power"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MEDIUM_EITHER",
+                    name: "MediumEither",
                     description: Some("Medium speed / medium power"),
                     value: 2,
                 },

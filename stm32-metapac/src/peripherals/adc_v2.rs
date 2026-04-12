@@ -724,6 +724,18 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Smpr1(pub u32);
     impl Smpr1 {
+        #[doc = "Sample time bits"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sm_px_x(&self) -> super::vals::SmprSmPxX {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            super::vals::SmprSmPxX::from_bits(val as u32)
+        }
+        #[doc = "Sample time bits"]
+        #[inline(always)]
+        pub const fn set_sm_px_x(&mut self, val: super::vals::SmprSmPxX) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val.to_bits() as u32) & 0xffff_ffff) << 0usize);
+        }
         #[doc = "Channel 10 sampling time selection"]
         #[must_use]
         #[inline(always)]
@@ -739,18 +751,6 @@ pub mod regs {
             assert!(n < 9usize);
             let offs = 0usize + n * 3usize;
             self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
-        }
-        #[doc = "Sample time bits"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn smpx_x(&self) -> super::vals::SmprSmpxX {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            super::vals::SmprSmpxX::from_bits(val as u32)
-        }
-        #[doc = "Sample time bits"]
-        #[inline(always)]
-        pub const fn set_smpx_x(&mut self, val: super::vals::SmprSmpxX) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val.to_bits() as u32) & 0xffff_ffff) << 0usize);
         }
     }
     impl Default for Smpr1 {
@@ -762,6 +762,7 @@ pub mod regs {
     impl core::fmt::Debug for Smpr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Smpr1")
+                .field("sm_px_x", &self.sm_px_x())
                 .field("smp[0]", &self.smp(0usize))
                 .field("smp[1]", &self.smp(1usize))
                 .field("smp[2]", &self.smp(2usize))
@@ -771,14 +772,13 @@ pub mod regs {
                 .field("smp[6]", &self.smp(6usize))
                 .field("smp[7]", &self.smp(7usize))
                 .field("smp[8]", &self.smp(8usize))
-                .field("smpx_x", &self.smpx_x())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Smpr1 {{ smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?}, smp[8]: {:?}, smpx_x: {:?} }}" , self . smp (0usize) , self . smp (1usize) , self . smp (2usize) , self . smp (3usize) , self . smp (4usize) , self . smp (5usize) , self . smp (6usize) , self . smp (7usize) , self . smp (8usize) , self . smpx_x ())
+            defmt :: write ! (f , "Smpr1 {{ sm_px_x: {:?}, smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?}, smp[8]: {:?} }}" , self . sm_px_x () , self . smp (0usize) , self . smp (1usize) , self . smp (2usize) , self . smp (3usize) , self . smp (4usize) , self . smp (5usize) , self . smp (6usize) , self . smp (7usize) , self . smp (8usize))
         }
     }
     #[doc = "sample time register 2"]
@@ -786,6 +786,18 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Smpr2(pub u32);
     impl Smpr2 {
+        #[doc = "Sample time bits"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sm_px_x(&self) -> super::vals::SmprSmPxX {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            super::vals::SmprSmPxX::from_bits(val as u32)
+        }
+        #[doc = "Sample time bits"]
+        #[inline(always)]
+        pub const fn set_sm_px_x(&mut self, val: super::vals::SmprSmPxX) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val.to_bits() as u32) & 0xffff_ffff) << 0usize);
+        }
         #[doc = "Channel 0 sampling time selection"]
         #[must_use]
         #[inline(always)]
@@ -802,18 +814,6 @@ pub mod regs {
             let offs = 0usize + n * 3usize;
             self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
         }
-        #[doc = "Sample time bits"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn smpx_x(&self) -> super::vals::SmprSmpxX {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            super::vals::SmprSmpxX::from_bits(val as u32)
-        }
-        #[doc = "Sample time bits"]
-        #[inline(always)]
-        pub const fn set_smpx_x(&mut self, val: super::vals::SmprSmpxX) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val.to_bits() as u32) & 0xffff_ffff) << 0usize);
-        }
     }
     impl Default for Smpr2 {
         #[inline(always)]
@@ -824,6 +824,7 @@ pub mod regs {
     impl core::fmt::Debug for Smpr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Smpr2")
+                .field("sm_px_x", &self.sm_px_x())
                 .field("smp[0]", &self.smp(0usize))
                 .field("smp[1]", &self.smp(1usize))
                 .field("smp[2]", &self.smp(2usize))
@@ -834,14 +835,13 @@ pub mod regs {
                 .field("smp[7]", &self.smp(7usize))
                 .field("smp[8]", &self.smp(8usize))
                 .field("smp[9]", &self.smp(9usize))
-                .field("smpx_x", &self.smpx_x())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Smpr2 {{ smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?}, smp[8]: {:?}, smp[9]: {:?}, smpx_x: {:?} }}" , self . smp (0usize) , self . smp (1usize) , self . smp (2usize) , self . smp (3usize) , self . smp (4usize) , self . smp (5usize) , self . smp (6usize) , self . smp (7usize) , self . smp (8usize) , self . smp (9usize) , self . smpx_x ())
+            defmt :: write ! (f , "Smpr2 {{ sm_px_x: {:?}, smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?}, smp[8]: {:?}, smp[9]: {:?} }}" , self . sm_px_x () , self . smp (0usize) , self . smp (1usize) , self . smp (2usize) , self . smp (3usize) , self . smp (4usize) , self . smp (5usize) , self . smp (6usize) , self . smp (7usize) , self . smp (8usize) , self . smp (9usize))
         }
     }
     #[doc = "regular sequence register 1"]
@@ -1110,9 +1110,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Align {
         #[doc = "Right alignment"]
-        RIGHT = 0x0,
+        Right = 0x0,
         #[doc = "Left alignment"]
-        LEFT = 0x01,
+        Left = 0x01,
     }
     impl Align {
         #[inline(always)]
@@ -1141,9 +1141,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Awdsgl {
         #[doc = "Analog watchdog enabled on all channels"]
-        ALL_CHANNELS = 0x0,
+        AllChannels = 0x0,
         #[doc = "Analog watchdog enabled on a single channel"]
-        SINGLE_CHANNEL = 0x01,
+        SingleChannel = 0x01,
     }
     impl Awdsgl {
         #[inline(always)]
@@ -1172,9 +1172,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dds {
         #[doc = "No new DMA request is issued after the last transfer"]
-        SINGLE = 0x0,
+        Single = 0x0,
         #[doc = "DMA requests are issued as long as data are converted and DMA=1"]
-        CONTINUOUS = 0x01,
+        Continuous = 0x01,
     }
     impl Dds {
         #[inline(always)]
@@ -1203,9 +1203,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Eocs {
         #[doc = "The EOC bit is set at the end of each sequence of regular conversions"]
-        EACH_SEQUENCE = 0x0,
+        EachSequence = 0x0,
         #[doc = "The EOC bit is set at the end of each regular conversion"]
-        EACH_CONVERSION = 0x01,
+        EachConversion = 0x01,
     }
     impl Eocs {
         #[inline(always)]
@@ -1234,13 +1234,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Exten {
         #[doc = "Trigger detection disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Trigger detection on the rising edge"]
-        RISING_EDGE = 0x01,
+        RisingEdge = 0x01,
         #[doc = "Trigger detection on the falling edge"]
-        FALLING_EDGE = 0x02,
+        FallingEdge = 0x02,
         #[doc = "Trigger detection on both the rising and falling edges"]
-        BOTH_EDGES = 0x03,
+        BothEdges = 0x03,
     }
     impl Exten {
         #[inline(always)]
@@ -1269,13 +1269,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Res {
         #[doc = "12-bit (15 ADCCLK cycles)"]
-        BITS12 = 0x0,
+        Bits12 = 0x0,
         #[doc = "10-bit (13 ADCCLK cycles)"]
-        BITS10 = 0x01,
+        Bits10 = 0x01,
         #[doc = "8-bit (11 ADCCLK cycles)"]
-        BITS8 = 0x02,
+        Bits8 = 0x02,
         #[doc = "6-bit (9 ADCCLK cycles)"]
-        BITS6 = 0x03,
+        Bits6 = 0x03,
     }
     impl Res {
         #[inline(always)]
@@ -1304,21 +1304,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "3 cycles"]
-        CYCLES3 = 0x0,
+        Cycles3 = 0x0,
         #[doc = "15 cycles"]
-        CYCLES15 = 0x01,
+        Cycles15 = 0x01,
         #[doc = "28 cycles"]
-        CYCLES28 = 0x02,
+        Cycles28 = 0x02,
         #[doc = "56 cycles"]
-        CYCLES56 = 0x03,
+        Cycles56 = 0x03,
         #[doc = "84 cycles"]
-        CYCLES84 = 0x04,
+        Cycles84 = 0x04,
         #[doc = "112 cycles"]
-        CYCLES112 = 0x05,
+        Cycles112 = 0x05,
         #[doc = "144 cycles"]
-        CYCLES144 = 0x06,
+        Cycles144 = 0x06,
         #[doc = "480 cycles"]
-        CYCLES480 = 0x07,
+        Cycles480 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]
@@ -1344,74 +1344,74 @@ pub mod vals {
     }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct SmprSmpxX(u32);
-    impl SmprSmpxX {
+    pub struct SmprSmPxX(u32);
+    impl SmprSmPxX {
         #[doc = "3 cycles"]
-        pub const CYCLES3: Self = Self(0x0);
+        pub const Cycles3: Self = Self(0x0);
         #[doc = "15 cycles"]
-        pub const CYCLES15: Self = Self(0x01);
+        pub const Cycles15: Self = Self(0x01);
         #[doc = "28 cycles"]
-        pub const CYCLES28: Self = Self(0x02);
+        pub const Cycles28: Self = Self(0x02);
         #[doc = "56 cycles"]
-        pub const CYCLES56: Self = Self(0x03);
+        pub const Cycles56: Self = Self(0x03);
         #[doc = "84 cycles"]
-        pub const CYCLES84: Self = Self(0x04);
+        pub const Cycles84: Self = Self(0x04);
         #[doc = "112 cycles"]
-        pub const CYCLES112: Self = Self(0x05);
+        pub const Cycles112: Self = Self(0x05);
         #[doc = "144 cycles"]
-        pub const CYCLES144: Self = Self(0x06);
+        pub const Cycles144: Self = Self(0x06);
         #[doc = "480 cycles"]
-        pub const CYCLES480: Self = Self(0x07);
+        pub const Cycles480: Self = Self(0x07);
     }
-    impl SmprSmpxX {
-        pub const fn from_bits(val: u32) -> SmprSmpxX {
+    impl SmprSmPxX {
+        pub const fn from_bits(val: u32) -> SmprSmPxX {
             Self(val & 0xffff_ffff)
         }
         pub const fn to_bits(self) -> u32 {
             self.0
         }
     }
-    impl core::fmt::Debug for SmprSmpxX {
+    impl core::fmt::Debug for SmprSmPxX {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("CYCLES3"),
-                0x01 => f.write_str("CYCLES15"),
-                0x02 => f.write_str("CYCLES28"),
-                0x03 => f.write_str("CYCLES56"),
-                0x04 => f.write_str("CYCLES84"),
-                0x05 => f.write_str("CYCLES112"),
-                0x06 => f.write_str("CYCLES144"),
-                0x07 => f.write_str("CYCLES480"),
+                0x0 => f.write_str("Cycles3"),
+                0x01 => f.write_str("Cycles15"),
+                0x02 => f.write_str("Cycles28"),
+                0x03 => f.write_str("Cycles56"),
+                0x04 => f.write_str("Cycles84"),
+                0x05 => f.write_str("Cycles112"),
+                0x06 => f.write_str("Cycles144"),
+                0x07 => f.write_str("Cycles480"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for SmprSmpxX {
+    impl defmt::Format for SmprSmPxX {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "CYCLES3"),
-                0x01 => defmt::write!(f, "CYCLES15"),
-                0x02 => defmt::write!(f, "CYCLES28"),
-                0x03 => defmt::write!(f, "CYCLES56"),
-                0x04 => defmt::write!(f, "CYCLES84"),
-                0x05 => defmt::write!(f, "CYCLES112"),
-                0x06 => defmt::write!(f, "CYCLES144"),
-                0x07 => defmt::write!(f, "CYCLES480"),
+                0x0 => defmt::write!(f, "Cycles3"),
+                0x01 => defmt::write!(f, "Cycles15"),
+                0x02 => defmt::write!(f, "Cycles28"),
+                0x03 => defmt::write!(f, "Cycles56"),
+                0x04 => defmt::write!(f, "Cycles84"),
+                0x05 => defmt::write!(f, "Cycles112"),
+                0x06 => defmt::write!(f, "Cycles144"),
+                0x07 => defmt::write!(f, "Cycles480"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
     }
-    impl From<u32> for SmprSmpxX {
+    impl From<u32> for SmprSmPxX {
         #[inline(always)]
-        fn from(val: u32) -> SmprSmpxX {
-            SmprSmpxX::from_bits(val)
+        fn from(val: u32) -> SmprSmPxX {
+            SmprSmPxX::from_bits(val)
         }
     }
-    impl From<SmprSmpxX> for u32 {
+    impl From<SmprSmPxX> for u32 {
         #[inline(always)]
-        fn from(val: SmprSmpxX) -> u32 {
-            SmprSmpxX::to_bits(val)
+        fn from(val: SmprSmPxX) -> u32 {
+            SmprSmPxX::to_bits(val)
         }
     }
 }

@@ -1065,23 +1065,23 @@ pub mod vals {
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 16 MHz."]
-        MHZ16 = 0x03,
+        Mhz16 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 19.2 MHz."]
-        MHZ19_2 = 0x08,
+        Mhz192 = 0x08,
         #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 20MHz."]
-        MHZ20 = 0x09,
+        Mhz20 = 0x09,
         #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 24 MHz (default after reset)."]
-        MHZ24 = 0x0a,
+        Mhz24 = 0x0a,
         #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 32 MHz."]
-        MHZ32 = 0x0b,
+        Mhz32 = 0x0b,
         _RESERVED_c = 0x0c,
         _RESERVED_d = 0x0d,
         #[doc = "The kernel clock frequency provided to the OTG_HS PHY is 26 MHz."]
-        MHZ26 = 0x0e,
+        Mhz26 = 0x0e,
         _RESERVED_f = 0x0f,
     }
     impl Usbrefcksel {

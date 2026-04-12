@@ -573,11 +573,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Latency {
         #[doc = "Zero wait state, if 0 < SYSCLK≤ 24 MHz"]
-        WS0 = 0x0,
+        Ws0 = 0x0,
         #[doc = "One wait state, if 24 MHz < SYSCLK ≤ 48 MHz"]
-        WS1 = 0x01,
+        Ws1 = 0x01,
         #[doc = "Two wait states, if 48 MHz < SYSCLK ≤ 72 MHz"]
-        WS2 = 0x02,
+        Ws2 = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,

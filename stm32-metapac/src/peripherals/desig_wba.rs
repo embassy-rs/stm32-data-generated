@@ -533,9 +533,9 @@ pub mod vals {
     pub struct Devid(u8);
     impl Devid {
         #[doc = "STM32WBA5xxx"]
-        pub const STM32WBA5: Self = Self(0x2a);
+        pub const Stm32wba5: Self = Self(0x2a);
         #[doc = "STM32WBA6xxx"]
-        pub const STM32WBA6: Self = Self(0x2c);
+        pub const Stm32wba6: Self = Self(0x2c);
     }
     impl Devid {
         pub const fn from_bits(val: u8) -> Devid {
@@ -548,8 +548,8 @@ pub mod vals {
     impl core::fmt::Debug for Devid {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x2a => f.write_str("STM32WBA5"),
-                0x2c => f.write_str("STM32WBA6"),
+                0x2a => f.write_str("Stm32wba5"),
+                0x2c => f.write_str("Stm32wba6"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -558,8 +558,8 @@ pub mod vals {
     impl defmt::Format for Devid {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x2a => defmt::write!(f, "STM32WBA5"),
-                0x2c => defmt::write!(f, "STM32WBA6"),
+                0x2a => defmt::write!(f, "Stm32wba5"),
+                0x2c => defmt::write!(f, "Stm32wba6"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -585,26 +585,26 @@ pub mod vals {
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "UFQFPN48 USB"]
-        UFQFPN48_USB = 0x03,
+        Ufqfpn48Usb = 0x03,
         _RESERVED_4 = 0x04,
         #[doc = "WLSCP88 USB"]
-        WLSCP88_USB = 0x05,
+        Wlscp88Usb = 0x05,
         _RESERVED_6 = 0x06,
         #[doc = "UFBGA121 USB"]
-        UFBGA121_USB = 0x07,
+        Ufbga121Usb = 0x07,
         _RESERVED_8 = 0x08,
         _RESERVED_9 = 0x09,
         #[doc = "UFQFPN48 SMPS"]
-        UFQFPN48_SMPS = 0x0a,
+        Ufqfpn48Smps = 0x0a,
         #[doc = "UFQFPN48 SMPS USB"]
-        UFQFPN48_SMPS_USB = 0x0b,
+        Ufqfpn48SmpsUsb = 0x0b,
         #[doc = "VFQFPN68 SMPS USB"]
-        VFQFPN68_SMPS_USB = 0x0c,
+        Vfqfpn68SmpsUsb = 0x0c,
         #[doc = "WLSCP88 SMPS USB"]
-        WLSCP88_SMPS_USB = 0x0d,
+        Wlscp88SmpsUsb = 0x0d,
         _RESERVED_e = 0x0e,
         #[doc = "UFBGA121 SMPS USB"]
-        UFBGA121_SMPS_USB = 0x0f,
+        Ufbga121SmpsUsb = 0x0f,
         _RESERVED_10 = 0x10,
         _RESERVED_11 = 0x11,
         _RESERVED_12 = 0x12,
@@ -650,7 +650,7 @@ pub mod vals {
     pub struct Stid(u32);
     impl Stid {
         #[doc = "STMicroelectronics"]
-        pub const STMICROELECTRONICS: Self = Self(0x80e1);
+        pub const Stmicroelectronics: Self = Self(0x80e1);
     }
     impl Stid {
         pub const fn from_bits(val: u32) -> Stid {
@@ -663,7 +663,7 @@ pub mod vals {
     impl core::fmt::Debug for Stid {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x80e1 => f.write_str("STMICROELECTRONICS"),
+                0x80e1 => f.write_str("Stmicroelectronics"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -672,7 +672,7 @@ pub mod vals {
     impl defmt::Format for Stid {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x80e1 => defmt::write!(f, "STMICROELECTRONICS"),
+                0x80e1 => defmt::write!(f, "Stmicroelectronics"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }

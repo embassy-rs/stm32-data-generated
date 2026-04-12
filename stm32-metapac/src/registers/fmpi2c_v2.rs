@@ -1386,14 +1386,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BIT10",
+                    name: "Bit10",
                     description: Some(
                         "10-bit addressing mode",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "BIT7",
+                    name: "Bit7",
                     description: Some(
                         "7-bit addressing mode",
                     ),
@@ -1407,14 +1407,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "AUTOMATIC",
+                    name: "Automatic",
                     description: Some(
                         "Automatic end mode: a STOP condition is automatically sent when NBYTES data are transferred",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SOFTWARE",
+                    name: "Software",
                     description: Some(
                         "Software end mode: TC flag is set when NBYTES data are transferred, stretching SCL low",
                     ),
@@ -1428,14 +1428,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "READ",
+                    name: "Read",
                     description: Some(
                         "Read transfer, slave enters transmitter mode",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "WRITE",
+                    name: "Write",
                     description: Some(
                         "Write transfer, slave enters receiver mode",
                     ),
@@ -1449,112 +1449,112 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "FILTER1",
+                    name: "Filter1",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 1 tI2CCLK",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FILTER10",
+                    name: "Filter10",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 10 tI2CCLK",
                     ),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "FILTER11",
+                    name: "Filter11",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 11 tI2CCLK",
                     ),
                     value: 11,
                 },
                 EnumVariant {
-                    name: "FILTER12",
+                    name: "Filter12",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 12 tI2CCLK",
                     ),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "FILTER13",
+                    name: "Filter13",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 13 tI2CCLK",
                     ),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "FILTER14",
+                    name: "Filter14",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 14 tI2CCLK",
                     ),
                     value: 14,
                 },
                 EnumVariant {
-                    name: "FILTER15",
+                    name: "Filter15",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 15 tI2CCLK",
                     ),
                     value: 15,
                 },
                 EnumVariant {
-                    name: "FILTER2",
+                    name: "Filter2",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 2 tI2CCLK",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FILTER3",
+                    name: "Filter3",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 3 tI2CCLK",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "FILTER4",
+                    name: "Filter4",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 4 tI2CCLK",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "FILTER5",
+                    name: "Filter5",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 5 tI2CCLK",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "FILTER6",
+                    name: "Filter6",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 6 tI2CCLK",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "FILTER7",
+                    name: "Filter7",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 7 tI2CCLK",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "FILTER8",
+                    name: "Filter8",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 8 tI2CCLK",
                     ),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "FILTER9",
+                    name: "Filter9",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 9 tI2CCLK",
                     ),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "NO_FILTER",
+                    name: "NoFilter",
                     description: Some(
                         "Digital filter disabled",
                     ),
@@ -1568,14 +1568,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "COMPLETE",
+                    name: "Complete",
                     description: Some(
                         "The master sends the complete 10 bit slave address read sequence",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PARTIAL",
+                    name: "Partial",
                     description: Some(
                         "The master only sends the 1st 7 bits of the 10 bit address, followed by Read direction",
                     ),
@@ -1589,56 +1589,56 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "MASK1",
+                    name: "Mask1",
                     description: Some(
                         "OA2[1] is masked and don’t care. Only OA2[7:2] are compared",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MASK2",
+                    name: "Mask2",
                     description: Some(
                         "OA2[2:1] are masked and don’t care. Only OA2[7:3] are compared",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MASK3",
+                    name: "Mask3",
                     description: Some(
                         "OA2[3:1] are masked and don’t care. Only OA2[7:4] are compared",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "MASK4",
+                    name: "Mask4",
                     description: Some(
                         "OA2[4:1] are masked and don’t care. Only OA2[7:5] are compared",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "MASK5",
+                    name: "Mask5",
                     description: Some(
                         "OA2[5:1] are masked and don’t care. Only OA2[7:6] are compared",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "MASK6",
+                    name: "Mask6",
                     description: Some(
                         "OA2[6:1] are masked and don’t care. Only OA2[7] is compared.",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "MASK7",
+                    name: "Mask7",
                     description: Some(
                         "OA2[7:1] are masked and don’t care. No comparison is done, and all (except reserved) 7-bit received addresses are acknowledged",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "NO_MASK",
+                    name: "NoMask",
                     description: Some(
                         "No mask",
                     ),
@@ -1652,14 +1652,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "COMPLETED",
+                    name: "Completed",
                     description: Some(
                         "The transfer is completed after the NBYTES data transfer (STOP or RESTART will follow)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOT_COMPLETED",
+                    name: "NotCompleted",
                     description: Some(
                         "The transfer is not completed after the NBYTES data transfer (NBYTES will be reloaded)",
                     ),

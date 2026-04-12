@@ -548,13 +548,13 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Blanking {
-        NO_BLANKING = 0x0,
-        TIM1OC5 = 0x01,
-        TIM2OC3 = 0x02,
-        TIM3OC3 = 0x03,
-        TIM3OC4 = 0x04,
-        TIM8OC5 = 0x05,
-        TIM15OC1 = 0x06,
+        NoBlanking = 0x0,
+        Tim1oc5 = 0x01,
+        Tim2oc3 = 0x02,
+        Tim3oc3 = 0x03,
+        Tim3oc4 = 0x04,
+        Tim8oc5 = 0x05,
+        Tim15oc1 = 0x06,
         _RESERVED_7 = 0x07,
         _RESERVED_8 = 0x08,
         _RESERVED_9 = 0x09,
@@ -591,10 +591,10 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hyst {
-        NONE = 0x0,
-        LOW = 0x01,
-        MEDIUM = 0x02,
-        HIGH = 0x03,
+        None = 0x0,
+        Low = 0x01,
+        Medium = 0x02,
+        High = 0x03,
     }
     impl Hyst {
         #[inline(always)]
@@ -622,16 +622,16 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Inmsel {
-        VREF_1OVER4 = 0x0,
-        VREF_1OVER2 = 0x01,
-        VREF_3OVER4 = 0x02,
-        VREF = 0x03,
-        INM4 = 0x04,
-        INM5 = 0x05,
-        INM6 = 0x06,
-        INM7 = 0x07,
-        INM8 = 0x08,
-        INM9 = 0x09,
+        VRef1over4 = 0x0,
+        VRef1over2 = 0x01,
+        VRef3over4 = 0x02,
+        VRef = 0x03,
+        Inm4 = 0x04,
+        Inm5 = 0x05,
+        Inm6 = 0x06,
+        Inm7 = 0x07,
+        Inm8 = 0x08,
+        Inm9 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
@@ -665,8 +665,8 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Inpsel {
-        INP1 = 0x0,
-        INP2 = 0x01,
+        Inp1 = 0x0,
+        Inp2 = 0x01,
     }
     impl Inpsel {
         #[inline(always)]
@@ -695,13 +695,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pwrmode {
         #[doc = "High speed / full power"]
-        HIGH = 0x0,
+        High = 0x0,
         #[doc = "Medium speed / medium power"]
-        MEDIUM = 0x01,
+        Medium = 0x01,
         #[doc = "Medium speed / medium power"]
-        MEDIUM_EITHER = 0x02,
+        MediumEither = 0x02,
         #[doc = "Ultra low power / ultra-low-power"]
-        LOW = 0x03,
+        Low = 0x03,
     }
     impl Pwrmode {
         #[inline(always)]

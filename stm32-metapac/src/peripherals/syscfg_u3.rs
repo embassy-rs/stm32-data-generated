@@ -887,11 +887,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum IrMod {
         #[doc = "TIM16."]
-        TIM16 = 0x0,
+        Tim16 = 0x0,
         #[doc = "USART1."]
-        USART1 = 0x01,
+        Usart1 = 0x01,
         #[doc = "UART4."]
-        UART4 = 0x02,
+        Uart4 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl IrMod {

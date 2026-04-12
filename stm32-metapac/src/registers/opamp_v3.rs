@@ -324,14 +324,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NMOS",
+                    name: "Nmos",
                     description: Some(
                         "NMOS calibration, 0.2 V applied to OPAMP inputs during calibration",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PMOS",
+                    name: "Pmos",
                     description: Some(
                         "PMOS calibration, VDDA - 0.2 V applied to OPAMP inputs during calibration",
                     ),
@@ -345,14 +345,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HIGH",
+                    name: "High",
                     description: Some(
                         "High range (VDDA > 2.4 V)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "LOW",
+                    name: "Low",
                     description: Some(
                         "Low range (VDDA < 2.4 V)",
                     ),
@@ -366,28 +366,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DISABLE",
+                    name: "Disable",
                     description: Some(
                         "Internal PGA disable",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DISABLE2",
+                    name: "Disable2",
                     description: Some(
                         "Internal PGA disable (duplicate)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ENABLE",
+                    name: "Enable",
                     description: Some(
                         "Internal PGA enable, gain programmed in PGA_GAIN",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FOLLOWER",
+                    name: "Follower",
                     description: Some(
                         "Internal follower",
                     ),
@@ -401,28 +401,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "GAIN16",
+                    name: "Gain16",
                     description: Some(
                         "Gain 16",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "GAIN2",
+                    name: "Gain2",
                     description: Some(
                         "Gain 2",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "GAIN4",
+                    name: "Gain4",
                     description: Some(
                         "Gain 4",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "GAIN8",
+                    name: "Gain8",
                     description: Some(
                         "Gain 8",
                     ),
@@ -436,21 +436,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "GPIO",
+                    name: "Gpio",
                     description: Some(
                         "GPIO connected to VINM (valid also in PGA mode for filtering)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOW_LEAKAGE",
+                    name: "LowLeakage",
                     description: Some(
                         "Low leakage inputs connected (only available in certain packages)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NOT_CONNECTED",
+                    name: "NotConnected",
                     description: Some(
                         "VINM not externally connected, valid only in PGA mode",
                     ),
@@ -464,14 +464,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DAC",
+                    name: "Dac",
                     description: Some(
                         "DAC connected to VINP",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "GPIO",
+                    name: "Gpio",
                     description: Some(
                         "GPIO connected to VINP",
                     ),

@@ -2217,14 +2217,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Backup SRAM double ECC error signal disconnected from TIM1/8/15/16/17 break inputs.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Backup SRAM double ECC error signal connected to TIM1/8/15/16/17 break inputs.",
                     ),
@@ -2238,14 +2238,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "BOOT0 pin connected to VSS (or left open if BOOT0_PD = 0).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "BOOT0 pin connected to VDD.",
                     ),
@@ -2259,14 +2259,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Pull-down enabled. The BOOT0 pin can be left open and takes a value of 0 if open.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Pull-down disabled. The BOOT0 pin must not be left open.",
                     ),
@@ -2280,14 +2280,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "BOOT1 pin connected to VSS (or left open if BOOT1_PD = 0 in BOOTCR).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "BOOT1 pin connected to VDD.",
                     ),
@@ -2301,14 +2301,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Pull-down enabled. The BOOT1 pin can be left open and takes a value of 0 if open.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Pull-down disabled. The BOOT1 pin must not be left open.",
                     ),
@@ -2322,14 +2322,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "No retiming on Rx path.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Retiming on Rx path.",
                     ),
@@ -2343,14 +2343,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "No retiming on Tx path.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Retiming on Tx path.",
                     ),
@@ -2364,14 +2364,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "B_0X8",
+                    name: "B0x8",
                     description: Some(
                         "128 Kbytes (default value).",
                     ),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "B_0X9",
+                    name: "B0x9",
                     description: Some(
                         "256 Kbytes.",
                     ),
@@ -2385,21 +2385,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "B_0X7",
+                    name: "B0x7",
                     description: Some(
                         "64 KB (default value).",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "B_0X8",
+                    name: "B0x8",
                     description: Some(
                         "128 Kbytes.",
                     ),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "B_0X9",
+                    name: "B0x9",
                     description: Some(
                         "256 Kbytes.",
                     ),
@@ -2413,14 +2413,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Cortex-M55 cache double ECC error signal disconnected from TIM1/8/15/16/17 break inputs.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Cortex-M55 cache double ECC error signal connected to TIM1/8/15/16/17 break inputs.",
                     ),
@@ -2434,14 +2434,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Cortex-M55 lockup output disconnected from TIM1/8/15/16/17 break inputs.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Cortex-M55 lockup output disconnected from TIM1/8/15/16/17 break inputs.",
                     ),
@@ -2455,14 +2455,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Cortex-M55 TCM double ECC error signal disconnected from TIM1/8/15/16/17 break inputs.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Cortex-M55 TCM double ECC error signal connected to TIM1/8/15/16/17 break inputs.",
                     ),
@@ -2476,14 +2476,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Warm reset (default value).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Power-on reset.",
                     ),
@@ -2497,14 +2497,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Interleaving disabled.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Interleaving enabled.",
                     ),
@@ -2518,14 +2518,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "High-speed mode disabled, or use ADC ANA pin.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "High-speed mode enabled, or connect internal ADC ANA signal to GPIO.",
                     ),
@@ -2539,14 +2539,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Lockup state must be recovered from NVIC interrupt (default value).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Lockup generates a NMI on the core.",
                     ),
@@ -2560,14 +2560,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Lockup state shall be recovered from interrupt (default value).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Lockup requests a warm reset to the RCC.",
                     ),
@@ -2581,14 +2581,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Error capture.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Clean error.",
                     ),
@@ -2602,14 +2602,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "PKA, SAES, CRYP1/2, and HASH reset in case of potential tamper.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "PKA, SAES, CRYP1/2, and HASH not reset in case of potential tamper.",
                     ),
@@ -2623,14 +2623,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "PVD interrupt disconnected from TIM1/8/15/16/17 break input. PVDE bits can be programmed by the application.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "PVD interrupt connected to TIM1/8/15/16/17 break input. PVDE and bits are read only.",
                     ),
@@ -2644,14 +2644,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Default RW margin settings.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Use external pin RW margin setting.",
                     ),
@@ -2665,14 +2665,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Default RW margin settings.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Use external pin RW margin setting.",
                     ),
@@ -2686,14 +2686,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "No delay on the feedback clock.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Half a cycle delay on the feedback clock.",
                     ),
@@ -2707,14 +2707,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response.",
                     ),
@@ -2728,14 +2728,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response.",
                     ),
@@ -2749,35 +2749,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Standard run mode (no HDP).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X_C",
+                    name: "B0xC",
                     description: Some(
                         "Analyze fsm mode analysis.",
                     ),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "B_0X_D",
+                    name: "B0xD",
                     description: Some(
                         "Analyze fsm mos analysis.",
                     ),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "B_0X_E",
+                    name: "B0xE",
                     description: Some(
                         "Analyze fsm rampe analysis.",
                     ),
                     value: 14,
                 },
                 EnumVariant {
-                    name: "B_0X_F",
+                    name: "B0xF",
                     description: Some(
                         "Analyze fsm mode analysis.",
                     ),
@@ -2791,14 +2791,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response.",
                     ),
@@ -2812,14 +2812,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response.",
                     ),
@@ -2833,14 +2833,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIOx I/O code from the cell (available in the VDDIOxCCSR).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIOx I/O code from RANSRC[3:0] and RAPSRC[3:0] in this register.",
                     ),
@@ -2854,14 +2854,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIOx I/O compensation cell disabled.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIOx I/O compensation cell enabled.",
                     ),
@@ -2875,14 +2875,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIOx I/O compensation cell not ready.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIOx I/O compensation cell ready.",
                     ),
@@ -2896,14 +2896,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIOx I/O code from the cell (available in the VDDIOxCCSR).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIOx I/O code from RANSRC[3:0] and RAPSRC[3:0] in this register.",
                     ),
@@ -2917,14 +2917,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIOx I/O compensation cell disabled.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIOx I/O compensation cell enabled.",
                     ),
@@ -2938,14 +2938,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIOx I/O compensation cell not ready.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIOx I/O compensation cell ready.",
                     ),
@@ -2959,14 +2959,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIOx I/O code from the cell (available in the VDDIOxCCSR).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIOx I/O code from RANSRC[3:0] and RAPSRC[3:0] in this register.",
                     ),
@@ -2980,14 +2980,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIOx I/O compensation cell disabled.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIOx I/O compensation cell enabled.",
                     ),
@@ -3001,14 +3001,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIOx I/O compensation cell not ready.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIOx I/O compensation cell ready.",
                     ),
@@ -3022,14 +3022,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIOx I/O code from the cell (available in the VDDIOxCCSR).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIOx I/O code from RANSRC[3:0] and RAPSRC[3:0] in this register.",
                     ),
@@ -3043,14 +3043,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIOx I/O compensation cell disabled.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIOx I/O compensation cell enabled.",
                     ),
@@ -3064,14 +3064,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIOx I/O compensation cell not ready.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIOx I/O compensation cell ready.",
                     ),
@@ -3085,14 +3085,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIO I/O code from the cell (available in the VDDIOCCSR).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIO I/O code from RANSRC[3:0] and RAPSRC[3:0].",
                     ),
@@ -3106,14 +3106,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIO I/O compensation cell disabled.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIO I/O compensation cell enabled.",
                     ),
@@ -3127,14 +3127,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIO I/O compensation cell not ready.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIO I/O compensation cell ready.",
                     ),

@@ -1097,9 +1097,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpha {
         #[doc = "The first clock transition is the first data capture edge"]
-        FIRST = 0x0,
+        First = 0x0,
         #[doc = "The second clock transition is the first data capture edge"]
-        SECOND = 0x01,
+        Second = 0x01,
     }
     impl Cpha {
         #[inline(always)]
@@ -1128,9 +1128,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpol {
         #[doc = "Steady low value on CK pin outside transmission window"]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "Steady high value on CK pin outside transmission window"]
-        HIGH = 0x01,
+        High = 0x01,
     }
     impl Cpol {
         #[inline(always)]
@@ -1159,9 +1159,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Irlp {
         #[doc = "Normal mode"]
-        NORMAL = 0x0,
+        Normal = 0x0,
         #[doc = "Low-power mode"]
-        LOW_POWER = 0x01,
+        LowPower = 0x01,
     }
     impl Irlp {
         #[inline(always)]
@@ -1190,9 +1190,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lbdl {
         #[doc = "10-bit break detection"]
-        BIT10 = 0x0,
+        Bit10 = 0x0,
         #[doc = "11-bit break detection"]
-        BIT11 = 0x01,
+        Bit11 = 0x01,
     }
     impl Lbdl {
         #[inline(always)]
@@ -1221,9 +1221,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum M0 {
         #[doc = "1 start bit, 8 data bits, n stop bits"]
-        BIT8 = 0x0,
+        Bit8 = 0x0,
         #[doc = "1 start bit, 9 data bits, n stop bits"]
-        BIT9 = 0x01,
+        Bit9 = 0x01,
     }
     impl M0 {
         #[inline(always)]
@@ -1252,9 +1252,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ps {
         #[doc = "Even parity"]
-        EVEN = 0x0,
+        Even = 0x0,
         #[doc = "Odd parity"]
-        ODD = 0x01,
+        Odd = 0x01,
     }
     impl Ps {
         #[inline(always)]
@@ -1283,9 +1283,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rwu {
         #[doc = "Receiver in active mode"]
-        ACTIVE = 0x0,
+        Active = 0x0,
         #[doc = "Receiver in mute mode"]
-        MUTE = 0x01,
+        Mute = 0x01,
     }
     impl Rwu {
         #[inline(always)]
@@ -1314,13 +1314,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Stop {
         #[doc = "1 stop bit"]
-        STOP1 = 0x0,
+        Stop1 = 0x0,
         #[doc = "0.5 stop bits"]
-        STOP0P5 = 0x01,
+        Stop0p5 = 0x01,
         #[doc = "2 stop bits"]
-        STOP2 = 0x02,
+        Stop2 = 0x02,
         #[doc = "1.5 stop bits"]
-        STOP1P5 = 0x03,
+        Stop1p5 = 0x03,
     }
     impl Stop {
         #[inline(always)]
@@ -1349,9 +1349,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wake {
         #[doc = "USART wakeup on idle line"]
-        IDLE_LINE = 0x0,
+        IdleLine = 0x0,
         #[doc = "USART wakeup on address mark"]
-        ADDRESS_MARK = 0x01,
+        AddressMark = 0x01,
     }
     impl Wake {
         #[inline(always)]

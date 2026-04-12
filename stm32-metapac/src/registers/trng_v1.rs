@@ -1464,14 +1464,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "AES core is idle.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "AES core is busy.",
                     ),
@@ -1485,14 +1485,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "AES core is not initialized (no key or state set).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "AES core is fully initialized.",
                     ),
@@ -1506,14 +1506,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "AES core is waiting for 128 random bits from the entropy sources for generating its key.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "AES key register has been loaded with a random key.",
                     ),
@@ -1527,14 +1527,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "No effect.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Reset AES core.",
                     ),
@@ -1548,14 +1548,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "At least one oscillator is ON.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "All oscillators are down.",
                     ),
@@ -1569,14 +1569,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "no reset.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "reset revclk flag.",
                     ),
@@ -1590,14 +1590,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "No fault detected.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Embedded heath monitor detects an error in bit stream quality.",
                     ),
@@ -1611,14 +1611,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "FIFO is not full.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "The internal data FIFO is full and four 32-bit random values can be read.",
                     ),
@@ -1632,14 +1632,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Internal clock for RNG clock is present.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Internal RNG clock is not present.",
                     ),
@@ -1653,14 +1653,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "no reset.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "reset health flag.",
                     ),
@@ -1674,14 +1674,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "No value is ready in FIFO.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "A 32-bit value is available in the internal FIFO.",
                     ),

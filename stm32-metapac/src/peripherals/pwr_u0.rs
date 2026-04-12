@@ -3392,13 +3392,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpms {
         #[doc = "Stop 0 mode"]
-        STOP0 = 0x0,
+        Stop0 = 0x0,
         #[doc = "Stop 1 mode"]
-        STOP1 = 0x01,
+        Stop1 = 0x01,
         #[doc = "Stop 2 mode"]
-        STOP2 = 0x02,
+        Stop2 = 0x02,
         #[doc = "Standby mode"]
-        STANDBY = 0x03,
+        Standby = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
@@ -3431,21 +3431,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pls {
         #[doc = "V<sub>PVD0</sub> around 2.01V"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "V<sub>PVD1</sub> around 2.21V"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         #[doc = "V<sub>PVD2</sub> around 2.41V"]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         #[doc = "V<sub>PVD3</sub> around 2.51V"]
-        B_0X3 = 0x03,
+        B0x3 = 0x03,
         #[doc = "V<sub>PVD4</sub> around 2.61V"]
-        B_0X4 = 0x04,
+        B0x4 = 0x04,
         #[doc = "V<sub>PVD5</sub> around 2.81V"]
-        B_0X5 = 0x05,
+        B0x5 = 0x05,
         #[doc = "V<sub>PVD6</sub> around 2.91V"]
-        B_0X6 = 0x06,
+        B0x6 = 0x06,
         #[doc = "External input analog voltage PVD_IN (compared internally to VREFINT)"]
-        B_0X7 = 0x07,
+        B0x7 = 0x07,
     }
     impl Pls {
         #[inline(always)]
@@ -3474,16 +3474,16 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Stopf {
         #[doc = "The device did not enter any Stop mode."]
-        NONE = 0x0,
+        None = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "The device entered in Stop 0 mode."]
-        STOP0 = 0x04,
+        Stop0 = 0x04,
         #[doc = "The device entered in Stop 1 mode."]
-        STOP1 = 0x05,
+        Stop1 = 0x05,
         #[doc = "The device entered in Stop 2 mode."]
-        STOP2 = 0x06,
+        Stop2 = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Stopf {
@@ -3514,9 +3514,9 @@ pub mod vals {
     pub enum Vos {
         _RESERVED_0 = 0x0,
         #[doc = "Range 1"]
-        RANGE1 = 0x01,
+        Range1 = 0x01,
         #[doc = "Range 2"]
-        RANGE2 = 0x02,
+        Range2 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Vos {

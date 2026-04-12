@@ -5595,11 +5595,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Brstdma {
         #[doc = "Update done independently from the DMA burst transfer completion"]
-        INDEPENDENT = 0x0,
+        Independent = 0x0,
         #[doc = "Update done when the DMA burst transfer is completed"]
-        COMPLETION = 0x01,
+        Completion = 0x01,
         #[doc = "Update done on master timer roll-over following a DMA burst transfer completion"]
-        ROLLOVER = 0x02,
+        Rollover = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Brstdma {
@@ -5629,9 +5629,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cppstat {
         #[doc = "Signal applied on output 1 and output 2 forced inactive"]
-        OUTPUT1ACTIVE = 0x0,
+        Output1active = 0x0,
         #[doc = "Signal applied on output 2 and output 1 forced inactive"]
-        OUTPUT2ACTIVE = 0x01,
+        Output2active = 0x01,
     }
     impl Cppstat {
         #[inline(always)]
@@ -5660,13 +5660,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dacsync {
         #[doc = "No DAC trigger generated"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Trigger generated on DACSync1"]
-        DACSYNC1 = 0x01,
+        DacSync1 = 0x01,
         #[doc = "Trigger generated on DACSync2"]
-        DACSYNC2 = 0x02,
+        DacSync2 = 0x02,
         #[doc = "Trigger generated on DACSync3"]
-        DACSYNC3 = 0x03,
+        DacSync3 = 0x03,
     }
     impl Dacsync {
         #[inline(always)]
@@ -5695,13 +5695,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Delcmp {
         #[doc = "CMP register is always active (standard compare mode)"]
-        STANDARD = 0x0,
+        Standard = 0x0,
         #[doc = "CMP is recomputed and is active following a capture 1 event"]
-        CAPTURE1 = 0x01,
+        Capture1 = 0x01,
         #[doc = "CMP is recomputed and is active following a capture 1 event or a Compare 1 match"]
-        CAPTURE_X_COMPARE1 = 0x02,
+        CaptureXCompare1 = 0x02,
         #[doc = "CMP is recomputed and is active following a capture 1 event or a Compare 3 match"]
-        CAPTURE_X_COMPARE3 = 0x03,
+        CaptureXCompare3 = 0x03,
     }
     impl Delcmp {
         #[inline(always)]
@@ -5730,21 +5730,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dlyprt {
         #[doc = "Output 1 delayed idle on external event 6"]
-        OUTPUT1_EE6 = 0x0,
+        Output1Ee6 = 0x0,
         #[doc = "Output 2 delayed idle on external event 6"]
-        OUTPUT2_EE6 = 0x01,
+        Output2Ee6 = 0x01,
         #[doc = "Output 1 and 2 delayed idle on external event 6"]
-        OUTPUT1_2_EE6 = 0x02,
+        Output12Ee6 = 0x02,
         #[doc = "Balanced idle on external event 6"]
-        BALANCED_EE6 = 0x03,
+        BalancedEe6 = 0x03,
         #[doc = "Output 1 delayed idle on external event 7"]
-        OUTPUT1_EE7 = 0x04,
+        Output1Ee7 = 0x04,
         #[doc = "Output 2 delayed idle on external event 7"]
-        OUTPUT2_EE7 = 0x05,
+        Output2Ee7 = 0x05,
         #[doc = "Output 1 and 2 delayed idle on external event 7"]
-        OUTPUT1_2_EE7 = 0x06,
+        Output12Ee7 = 0x06,
         #[doc = "Balanced idle on external event 7"]
-        BALANCED_EE7 = 0x07,
+        BalancedEe7 = 0x07,
     }
     impl Dlyprt {
         #[inline(always)]
@@ -5773,37 +5773,37 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Eefltr {
         #[doc = "No filtering"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Blanking from counter reset/roll-over to Compare 1"]
-        BLANK_RESET_TO_COMPARE1 = 0x01,
+        BlankResetToCompare1 = 0x01,
         #[doc = "Blanking from counter reset/roll-over to Compare 2"]
-        BLANK_RESET_TO_COMPARE2 = 0x02,
+        BlankResetToCompare2 = 0x02,
         #[doc = "Blanking from counter reset/roll-over to Compare 3"]
-        BLANK_RESET_TO_COMPARE3 = 0x03,
+        BlankResetToCompare3 = 0x03,
         #[doc = "Blanking from counter reset/roll-over to Compare 4"]
-        BLANK_RESET_TO_COMPARE4 = 0x04,
+        BlankResetToCompare4 = 0x04,
         #[doc = "Blanking from another timing unit: TIMFLTR1 source"]
-        BLANK_TIMFLTR1 = 0x05,
+        BlankTimfltr1 = 0x05,
         #[doc = "Blanking from another timing unit: TIMFLTR2 source"]
-        BLANK_TIMFLTR2 = 0x06,
+        BlankTimfltr2 = 0x06,
         #[doc = "Blanking from another timing unit: TIMFLTR3 source"]
-        BLANK_TIMFLTR3 = 0x07,
+        BlankTimfltr3 = 0x07,
         #[doc = "Blanking from another timing unit: TIMFLTR4 source"]
-        BLANK_TIMFLTR4 = 0x08,
+        BlankTimfltr4 = 0x08,
         #[doc = "Blanking from another timing unit: TIMFLTR5 source"]
-        BLANK_TIMFLTR5 = 0x09,
+        BlankTimfltr5 = 0x09,
         #[doc = "Blanking from another timing unit: TIMFLTR6 source"]
-        BLANK_TIMFLTR6 = 0x0a,
+        BlankTimfltr6 = 0x0a,
         #[doc = "Blanking from another timing unit: TIMFLTR7 source"]
-        BLANK_TIMFLTR7 = 0x0b,
+        BlankTimfltr7 = 0x0b,
         #[doc = "Blanking from another timing unit: TIMFLTR8 source"]
-        BLANK_TIMFLTR8 = 0x0c,
+        BlankTimfltr8 = 0x0c,
         #[doc = "Windowing from counter reset/roll-over to compare 2"]
-        WINDOW_RESET_TO_COMPARE2 = 0x0d,
+        WindowResetToCompare2 = 0x0d,
         #[doc = "Windowing from counter reset/roll-over to compare 3"]
-        WINDOW_RESET_TO_COMPARE3 = 0x0e,
+        WindowResetToCompare3 = 0x0e,
         #[doc = "Windowing from another timing unit: TIMWIN source"]
-        WINDOW_TIMWIN = 0x0f,
+        WindowTimwin = 0x0f,
     }
     impl Eefltr {
         #[inline(always)]
@@ -5832,13 +5832,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fault {
         #[doc = "No action: the output is not affected by the fault input and stays in run mode"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Output goes to active state after a fault event"]
-        SET_ACTIVE = 0x01,
+        SetActive = 0x01,
         #[doc = "Output goes to inactive state after a fault event"]
-        SET_INACTIVE = 0x02,
+        SetInactive = 0x02,
         #[doc = "Output goes to high-z state after a fault event"]
-        SET_HIGH_Z = 0x03,
+        SetHighZ = 0x03,
     }
     impl Fault {
         #[inline(always)]
@@ -5867,9 +5867,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ippstat {
         #[doc = "Protection occurred when the output 1 was active and output 2 forced inactive"]
-        OUTPUT1ACTIVE = 0x0,
+        Output1active = 0x0,
         #[doc = "Protection occurred when the output 2 was active and output 1 forced inactive"]
-        OUTPUT2ACTIVE = 0x01,
+        Output2active = 0x01,
     }
     impl Ippstat {
         #[inline(always)]
@@ -5898,9 +5898,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pol {
         #[doc = "Positive polarity (output active high)"]
-        ACTIVE_HIGH = 0x0,
+        ActiveHigh = 0x0,
         #[doc = "Negative polarity (output active low)"]
-        ACTIVE_LOW = 0x01,
+        ActiveLow = 0x01,
     }
     impl Pol {
         #[inline(always)]
@@ -5929,9 +5929,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdt {
         #[doc = "Positive deadtime (both outputs inactive during deadtime)"]
-        POSITIVE = 0x0,
+        Positive = 0x0,
         #[doc = "Negative deadtime (both outputs active during deadtime)"]
-        NEGATIVE = 0x01,
+        Negative = 0x01,
     }
     impl Sdt {
         #[inline(always)]
@@ -5960,12 +5960,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syncin {
         #[doc = "Disabled. HRTIM is not synchronized and runs in standalone mode"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "Internal event: the HRTIM is synchronized with the on-chip timer"]
-        INTERNAL = 0x02,
+        Internal = 0x02,
         #[doc = "External event: a positive pulse on HRTIM_SCIN input triggers the HRTIM"]
-        EXTERNAL = 0x03,
+        External = 0x03,
     }
     impl Syncin {
         #[inline(always)]
@@ -5994,12 +5994,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syncout {
         #[doc = "Disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "Positive pulse on SCOUT output (16x f_HRTIM clock cycles)"]
-        POSITIVE_PULSE = 0x02,
+        PositivePulse = 0x02,
         #[doc = "Negative pulse on SCOUT output (16x f_HRTIM clock cycles)"]
-        NEGATIVE_PULSE = 0x03,
+        NegativePulse = 0x03,
     }
     impl Syncout {
         #[inline(always)]
@@ -6028,13 +6028,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syncsrc {
         #[doc = "Master timer Start"]
-        MASTER_START = 0x0,
+        MasterStart = 0x0,
         #[doc = "Master timer Compare 1 event"]
-        MASTER_COMPARE1 = 0x01,
+        MasterCompare1 = 0x01,
         #[doc = "Timer A start/reset"]
-        TIMER_ASTART = 0x02,
+        TimerAStart = 0x02,
         #[doc = "Timer A Compare 1 event"]
-        TIMER_ACOMPARE1 = 0x03,
+        TimerACompare1 = 0x03,
     }
     impl Syncsrc {
         #[inline(always)]
@@ -6063,23 +6063,23 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Updgat {
         #[doc = "Update occurs independently from the DMA burst transfer"]
-        INDEPENDENT = 0x0,
+        Independent = 0x0,
         #[doc = "Update occurs when the DMA burst transfer is completed"]
-        DMABURST = 0x01,
+        DmaBurst = 0x01,
         #[doc = "Update occurs on the update event following DMA burst transfer completion"]
-        DMABURST_UPDATE = 0x02,
+        DmaBurstUpdate = 0x02,
         #[doc = "Update occurs on a rising edge of HRTIM update enable input 1"]
-        INPUT1 = 0x03,
+        Input1 = 0x03,
         #[doc = "Update occurs on a rising edge of HRTIM update enable input 2"]
-        INPUT2 = 0x04,
+        Input2 = 0x04,
         #[doc = "Update occurs on a rising edge of HRTIM update enable input 3"]
-        INPUT3 = 0x05,
+        Input3 = 0x05,
         #[doc = "Update occurs on the update event following a rising edge of HRTIM update enable input 1"]
-        INPUT1_UPDATE = 0x06,
+        Input1Update = 0x06,
         #[doc = "Update occurs on the update event following a rising edge of HRTIM update enable input 2"]
-        INPUT2_UPDATE = 0x07,
+        Input2Update = 0x07,
         #[doc = "Update occurs on the update event following a rising edge of HRTIM update enable input 3"]
-        INPUT3_UPDATE = 0x08,
+        Input3Update = 0x08,
         _RESERVED_9 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,

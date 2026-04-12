@@ -78,42 +78,42 @@ impl EthernetDma {
     }
     #[doc = "Channel transmit control register"]
     #[inline(always)]
-    pub const fn dmactx_cr(self) -> crate::common::Reg<regs::DmactxCr, crate::common::RW> {
+    pub const fn dmac_tx_cr(self) -> crate::common::Reg<regs::DmacTxCr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0104usize) as _) }
     }
     #[doc = "Channel receive control register"]
     #[inline(always)]
-    pub const fn dmacrx_cr(self) -> crate::common::Reg<regs::DmacrxCr, crate::common::RW> {
+    pub const fn dmac_rx_cr(self) -> crate::common::Reg<regs::DmacRxCr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0108usize) as _) }
     }
     #[doc = "Channel Tx descriptor list address register"]
     #[inline(always)]
-    pub const fn dmactx_dlar(self) -> crate::common::Reg<regs::DmactxDlar, crate::common::RW> {
+    pub const fn dmac_tx_dlar(self) -> crate::common::Reg<regs::DmacTxDlar, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0114usize) as _) }
     }
     #[doc = "Channel Rx descriptor list address register"]
     #[inline(always)]
-    pub const fn dmacrx_dlar(self) -> crate::common::Reg<regs::DmacrxDlar, crate::common::RW> {
+    pub const fn dmac_rx_dlar(self) -> crate::common::Reg<regs::DmacRxDlar, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x011cusize) as _) }
     }
     #[doc = "Channel Tx descriptor tail pointer register"]
     #[inline(always)]
-    pub const fn dmactx_dtpr(self) -> crate::common::Reg<regs::DmactxDtpr, crate::common::RW> {
+    pub const fn dmac_tx_dtpr(self) -> crate::common::Reg<regs::DmacTxDtpr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0120usize) as _) }
     }
     #[doc = "Channel Rx descriptor tail pointer register"]
     #[inline(always)]
-    pub const fn dmacrx_dtpr(self) -> crate::common::Reg<regs::DmacrxDtpr, crate::common::RW> {
+    pub const fn dmac_rx_dtpr(self) -> crate::common::Reg<regs::DmacRxDtpr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0128usize) as _) }
     }
     #[doc = "Channel Tx descriptor ring length register"]
     #[inline(always)]
-    pub const fn dmactx_rlr(self) -> crate::common::Reg<regs::DmactxRlr, crate::common::RW> {
+    pub const fn dmac_tx_rlr(self) -> crate::common::Reg<regs::DmacTxRlr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x012cusize) as _) }
     }
     #[doc = "Channel Rx descriptor ring length register"]
     #[inline(always)]
-    pub const fn dmacrx_rlr(self) -> crate::common::Reg<regs::DmacrxRlr, crate::common::RW> {
+    pub const fn dmac_rx_rlr(self) -> crate::common::Reg<regs::DmacRxRlr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0130usize) as _) }
     }
     #[doc = "Channel interrupt enable register"]
@@ -123,27 +123,27 @@ impl EthernetDma {
     }
     #[doc = "Channel Rx interrupt watchdog timer register"]
     #[inline(always)]
-    pub const fn dmacrx_iwtr(self) -> crate::common::Reg<regs::DmacrxIwtr, crate::common::RW> {
+    pub const fn dmac_rx_iwtr(self) -> crate::common::Reg<regs::DmacRxIwtr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0138usize) as _) }
     }
     #[doc = "Channel current application transmit descriptor register"]
     #[inline(always)]
-    pub const fn dmaccatx_dr(self) -> crate::common::Reg<regs::DmaccatxDr, crate::common::R> {
+    pub const fn dmacca_tx_dr(self) -> crate::common::Reg<regs::DmaccaTxDr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0144usize) as _) }
     }
     #[doc = "Channel current application receive descriptor register"]
     #[inline(always)]
-    pub const fn dmaccarx_dr(self) -> crate::common::Reg<regs::DmaccarxDr, crate::common::R> {
+    pub const fn dmacca_rx_dr(self) -> crate::common::Reg<regs::DmaccaRxDr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x014cusize) as _) }
     }
     #[doc = "Channel current application transmit buffer register"]
     #[inline(always)]
-    pub const fn dmaccatx_br(self) -> crate::common::Reg<regs::DmaccatxBr, crate::common::R> {
+    pub const fn dmacca_tx_br(self) -> crate::common::Reg<regs::DmaccaTxBr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0154usize) as _) }
     }
     #[doc = "Channel current application receive buffer register"]
     #[inline(always)]
-    pub const fn dmaccarx_br(self) -> crate::common::Reg<regs::DmaccarxBr, crate::common::R> {
+    pub const fn dmacca_rx_br(self) -> crate::common::Reg<regs::DmaccaRxBr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x015cusize) as _) }
     }
     #[doc = "Channel status register"]
@@ -221,12 +221,12 @@ impl EthernetMac {
     }
     #[doc = "Tx Queue flow control register"]
     #[inline(always)]
-    pub const fn macqtx_fcr(self) -> crate::common::Reg<regs::MacqtxFcr, crate::common::RW> {
+    pub const fn macq_tx_fcr(self) -> crate::common::Reg<regs::MacqTxFcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x70usize) as _) }
     }
     #[doc = "Rx flow control register"]
     #[inline(always)]
-    pub const fn macrx_fcr(self) -> crate::common::Reg<regs::MacrxFcr, crate::common::RW> {
+    pub const fn mac_rx_fcr(self) -> crate::common::Reg<regs::MacRxFcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x90usize) as _) }
     }
     #[doc = "Interrupt status register"]
@@ -241,7 +241,7 @@ impl EthernetMac {
     }
     #[doc = "Rx Tx status register"]
     #[inline(always)]
-    pub const fn macrx_tx_sr(self) -> crate::common::Reg<regs::MacrxTxSr, crate::common::R> {
+    pub const fn mac_rx_tx_sr(self) -> crate::common::Reg<regs::MacRxTxSr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xb8usize) as _) }
     }
     #[doc = "PMT control status register"]
@@ -514,12 +514,12 @@ impl EthernetMac {
     }
     #[doc = "Tx timestamp status nanoseconds register"]
     #[inline(always)]
-    pub const fn mactx_tssnr(self) -> crate::common::Reg<regs::MactxTssnr, crate::common::R> {
+    pub const fn mac_tx_tssnr(self) -> crate::common::Reg<regs::MacTxTssnr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0b30usize) as _) }
     }
     #[doc = "Tx timestamp status seconds register"]
     #[inline(always)]
-    pub const fn mactx_tsssr(self) -> crate::common::Reg<regs::MactxTsssr, crate::common::R> {
+    pub const fn mac_tx_tsssr(self) -> crate::common::Reg<regs::MacTxTsssr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0b34usize) as _) }
     }
     #[doc = "Auxiliary control register"]
@@ -636,17 +636,17 @@ impl EthernetMtl {
     }
     #[doc = "Tx queue operating mode Register"]
     #[inline(always)]
-    pub const fn mtltx_qomr(self) -> crate::common::Reg<regs::MtltxQomr, crate::common::RW> {
+    pub const fn mtl_tx_qomr(self) -> crate::common::Reg<regs::MtlTxQomr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize) as _) }
     }
     #[doc = "Tx queue underflow register"]
     #[inline(always)]
-    pub const fn mtltx_qur(self) -> crate::common::Reg<regs::MtltxQur, crate::common::R> {
+    pub const fn mtl_tx_qur(self) -> crate::common::Reg<regs::MtlTxQur, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0104usize) as _) }
     }
     #[doc = "Tx queue debug Register"]
     #[inline(always)]
-    pub const fn mtltx_qdr(self) -> crate::common::Reg<regs::MtltxQdr, crate::common::R> {
+    pub const fn mtl_tx_qdr(self) -> crate::common::Reg<regs::MtlTxQdr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0108usize) as _) }
     }
     #[doc = "Queue interrupt control status Register"]
@@ -656,26 +656,437 @@ impl EthernetMtl {
     }
     #[doc = "Rx queue operating mode register"]
     #[inline(always)]
-    pub const fn mtlrx_qomr(self) -> crate::common::Reg<regs::MtlrxQomr, crate::common::RW> {
+    pub const fn mtl_rx_qomr(self) -> crate::common::Reg<regs::MtlRxQomr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0130usize) as _) }
     }
     #[doc = "Rx queue missed packet and overflow counter register"]
     #[inline(always)]
-    pub const fn mtlrx_qmpocr(self) -> crate::common::Reg<regs::MtlrxQmpocr, crate::common::R> {
+    pub const fn mtl_rx_qmpocr(self) -> crate::common::Reg<regs::MtlRxQmpocr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0134usize) as _) }
     }
     #[doc = "Rx queue debug register"]
     #[inline(always)]
-    pub const fn mtlrx_qdr(self) -> crate::common::Reg<regs::MtlrxQdr, crate::common::R> {
+    pub const fn mtl_rx_qdr(self) -> crate::common::Reg<regs::MtlRxQdr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0138usize) as _) }
     }
 }
 pub mod regs {
+    #[doc = "Channel receive control register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct DmacRxCr(pub u32);
+    impl DmacRxCr {
+        #[doc = "Start or Stop Receive Command"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sr(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Start or Stop Receive Command"]
+        #[inline(always)]
+        pub const fn set_sr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Receive Buffer size"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rbsz(&self) -> u16 {
+            let val = (self.0 >> 1usize) & 0x3fff;
+            val as u16
+        }
+        #[doc = "Receive Buffer size"]
+        #[inline(always)]
+        pub const fn set_rbsz(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x3fff << 1usize)) | (((val as u32) & 0x3fff) << 1usize);
+        }
+        #[doc = "RXPBL"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rxpbl(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "RXPBL"]
+        #[inline(always)]
+        pub const fn set_rxpbl(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
+        }
+        #[doc = "DMA Rx Channel Packet Flush"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rpf(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DMA Rx Channel Packet Flush"]
+        #[inline(always)]
+        pub const fn set_rpf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for DmacRxCr {
+        #[inline(always)]
+        fn default() -> DmacRxCr {
+            DmacRxCr(0)
+        }
+    }
+    impl core::fmt::Debug for DmacRxCr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DmacRxCr")
+                .field("sr", &self.sr())
+                .field("rbsz", &self.rbsz())
+                .field("rxpbl", &self.rxpbl())
+                .field("rpf", &self.rpf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DmacRxCr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DmacRxCr {{ sr: {=bool:?}, rbsz: {=u16:?}, rxpbl: {=u8:?}, rpf: {=bool:?} }}",
+                self.sr(),
+                self.rbsz(),
+                self.rxpbl(),
+                self.rpf()
+            )
+        }
+    }
+    #[doc = "Channel Rx descriptor list address register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct DmacRxDlar(pub u32);
+    impl DmacRxDlar {
+        #[doc = "Start of Receive List"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rdesla(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "Start of Receive List"]
+        #[inline(always)]
+        pub const fn set_rdesla(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for DmacRxDlar {
+        #[inline(always)]
+        fn default() -> DmacRxDlar {
+            DmacRxDlar(0)
+        }
+    }
+    impl core::fmt::Debug for DmacRxDlar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DmacRxDlar").field("rdesla", &self.rdesla()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DmacRxDlar {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "DmacRxDlar {{ rdesla: {=u32:?} }}", self.rdesla())
+        }
+    }
+    #[doc = "Channel Rx descriptor tail pointer register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct DmacRxDtpr(pub u32);
+    impl DmacRxDtpr {
+        #[doc = "Receive Descriptor Tail Pointer"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rdt(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "Receive Descriptor Tail Pointer"]
+        #[inline(always)]
+        pub const fn set_rdt(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for DmacRxDtpr {
+        #[inline(always)]
+        fn default() -> DmacRxDtpr {
+            DmacRxDtpr(0)
+        }
+    }
+    impl core::fmt::Debug for DmacRxDtpr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DmacRxDtpr").field("rdt", &self.rdt()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DmacRxDtpr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "DmacRxDtpr {{ rdt: {=u32:?} }}", self.rdt())
+        }
+    }
+    #[doc = "Channel Rx interrupt watchdog timer register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct DmacRxIwtr(pub u32);
+    impl DmacRxIwtr {
+        #[doc = "Receive Interrupt Watchdog Timer Count"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rwt(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "Receive Interrupt Watchdog Timer Count"]
+        #[inline(always)]
+        pub const fn set_rwt(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+    }
+    impl Default for DmacRxIwtr {
+        #[inline(always)]
+        fn default() -> DmacRxIwtr {
+            DmacRxIwtr(0)
+        }
+    }
+    impl core::fmt::Debug for DmacRxIwtr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DmacRxIwtr").field("rwt", &self.rwt()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DmacRxIwtr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "DmacRxIwtr {{ rwt: {=u8:?} }}", self.rwt())
+        }
+    }
+    #[doc = "Channel Rx descriptor ring length register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct DmacRxRlr(pub u32);
+    impl DmacRxRlr {
+        #[doc = "Receive Descriptor Ring Length"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rdrl(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x03ff;
+            val as u16
+        }
+        #[doc = "Receive Descriptor Ring Length"]
+        #[inline(always)]
+        pub const fn set_rdrl(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
+        }
+    }
+    impl Default for DmacRxRlr {
+        #[inline(always)]
+        fn default() -> DmacRxRlr {
+            DmacRxRlr(0)
+        }
+    }
+    impl core::fmt::Debug for DmacRxRlr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DmacRxRlr").field("rdrl", &self.rdrl()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DmacRxRlr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "DmacRxRlr {{ rdrl: {=u16:?} }}", self.rdrl())
+        }
+    }
+    #[doc = "Channel transmit control register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct DmacTxCr(pub u32);
+    impl DmacTxCr {
+        #[doc = "Start or Stop Transmission Command"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn st(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Start or Stop Transmission Command"]
+        #[inline(always)]
+        pub const fn set_st(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Operate on Second Packet"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn osf(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Operate on Second Packet"]
+        #[inline(always)]
+        pub const fn set_osf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "TCP Segmentation Enabled"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tse(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "TCP Segmentation Enabled"]
+        #[inline(always)]
+        pub const fn set_tse(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "Transmit Programmable Burst Length"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn txpbl(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "Transmit Programmable Burst Length"]
+        #[inline(always)]
+        pub const fn set_txpbl(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
+        }
+    }
+    impl Default for DmacTxCr {
+        #[inline(always)]
+        fn default() -> DmacTxCr {
+            DmacTxCr(0)
+        }
+    }
+    impl core::fmt::Debug for DmacTxCr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DmacTxCr")
+                .field("st", &self.st())
+                .field("osf", &self.osf())
+                .field("tse", &self.tse())
+                .field("txpbl", &self.txpbl())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DmacTxCr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "DmacTxCr {{ st: {=bool:?}, osf: {=bool:?}, tse: {=bool:?}, txpbl: {=u8:?} }}",
+                self.st(),
+                self.osf(),
+                self.tse(),
+                self.txpbl()
+            )
+        }
+    }
+    #[doc = "Channel Tx descriptor list address register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct DmacTxDlar(pub u32);
+    impl DmacTxDlar {
+        #[doc = "Start of Transmit List"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tdesla(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "Start of Transmit List"]
+        #[inline(always)]
+        pub const fn set_tdesla(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for DmacTxDlar {
+        #[inline(always)]
+        fn default() -> DmacTxDlar {
+            DmacTxDlar(0)
+        }
+    }
+    impl core::fmt::Debug for DmacTxDlar {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DmacTxDlar").field("tdesla", &self.tdesla()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DmacTxDlar {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "DmacTxDlar {{ tdesla: {=u32:?} }}", self.tdesla())
+        }
+    }
+    #[doc = "Channel Tx descriptor tail pointer register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct DmacTxDtpr(pub u32);
+    impl DmacTxDtpr {
+        #[doc = "Transmit Descriptor Tail Pointer"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tdt(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "Transmit Descriptor Tail Pointer"]
+        #[inline(always)]
+        pub const fn set_tdt(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for DmacTxDtpr {
+        #[inline(always)]
+        fn default() -> DmacTxDtpr {
+            DmacTxDtpr(0)
+        }
+    }
+    impl core::fmt::Debug for DmacTxDtpr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DmacTxDtpr").field("tdt", &self.tdt()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DmacTxDtpr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "DmacTxDtpr {{ tdt: {=u32:?} }}", self.tdt())
+        }
+    }
+    #[doc = "Channel Tx descriptor ring length register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct DmacTxRlr(pub u32);
+    impl DmacTxRlr {
+        #[doc = "Transmit Descriptor Ring Length"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tdrl(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x03ff;
+            val as u16
+        }
+        #[doc = "Transmit Descriptor Ring Length"]
+        #[inline(always)]
+        pub const fn set_tdrl(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
+        }
+    }
+    impl Default for DmacTxRlr {
+        #[inline(always)]
+        fn default() -> DmacTxRlr {
+            DmacTxRlr(0)
+        }
+    }
+    impl core::fmt::Debug for DmacTxRlr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("DmacTxRlr").field("tdrl", &self.tdrl()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for DmacTxRlr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "DmacTxRlr {{ tdrl: {=u16:?} }}", self.tdrl())
+        }
+    }
     #[doc = "Channel current application receive buffer register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DmaccarxBr(pub u32);
-    impl DmaccarxBr {
+    pub struct DmaccaRxBr(pub u32);
+    impl DmaccaRxBr {
         #[doc = "Application Receive Buffer Address Pointer"]
         #[must_use]
         #[inline(always)]
@@ -689,30 +1100,30 @@ pub mod regs {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
-    impl Default for DmaccarxBr {
+    impl Default for DmaccaRxBr {
         #[inline(always)]
-        fn default() -> DmaccarxBr {
-            DmaccarxBr(0)
+        fn default() -> DmaccaRxBr {
+            DmaccaRxBr(0)
         }
     }
-    impl core::fmt::Debug for DmaccarxBr {
+    impl core::fmt::Debug for DmaccaRxBr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("DmaccarxBr")
+            f.debug_struct("DmaccaRxBr")
                 .field("currbufaptr", &self.currbufaptr())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for DmaccarxBr {
+    impl defmt::Format for DmaccaRxBr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "DmaccarxBr {{ currbufaptr: {=u32:?} }}", self.currbufaptr())
+            defmt::write!(f, "DmaccaRxBr {{ currbufaptr: {=u32:?} }}", self.currbufaptr())
         }
     }
     #[doc = "Channel current application receive descriptor register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DmaccarxDr(pub u32);
-    impl DmaccarxDr {
+    pub struct DmaccaRxDr(pub u32);
+    impl DmaccaRxDr {
         #[doc = "Application Receive Descriptor Address Pointer"]
         #[must_use]
         #[inline(always)]
@@ -726,30 +1137,30 @@ pub mod regs {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
-    impl Default for DmaccarxDr {
+    impl Default for DmaccaRxDr {
         #[inline(always)]
-        fn default() -> DmaccarxDr {
-            DmaccarxDr(0)
+        fn default() -> DmaccaRxDr {
+            DmaccaRxDr(0)
         }
     }
-    impl core::fmt::Debug for DmaccarxDr {
+    impl core::fmt::Debug for DmaccaRxDr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("DmaccarxDr")
+            f.debug_struct("DmaccaRxDr")
                 .field("currdesaptr", &self.currdesaptr())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for DmaccarxDr {
+    impl defmt::Format for DmaccaRxDr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "DmaccarxDr {{ currdesaptr: {=u32:?} }}", self.currdesaptr())
+            defmt::write!(f, "DmaccaRxDr {{ currdesaptr: {=u32:?} }}", self.currdesaptr())
         }
     }
     #[doc = "Channel current application transmit buffer register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DmaccatxBr(pub u32);
-    impl DmaccatxBr {
+    pub struct DmaccaTxBr(pub u32);
+    impl DmaccaTxBr {
         #[doc = "Application Transmit Buffer Address Pointer"]
         #[must_use]
         #[inline(always)]
@@ -763,30 +1174,30 @@ pub mod regs {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
-    impl Default for DmaccatxBr {
+    impl Default for DmaccaTxBr {
         #[inline(always)]
-        fn default() -> DmaccatxBr {
-            DmaccatxBr(0)
+        fn default() -> DmaccaTxBr {
+            DmaccaTxBr(0)
         }
     }
-    impl core::fmt::Debug for DmaccatxBr {
+    impl core::fmt::Debug for DmaccaTxBr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("DmaccatxBr")
+            f.debug_struct("DmaccaTxBr")
                 .field("curtbufaptr", &self.curtbufaptr())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for DmaccatxBr {
+    impl defmt::Format for DmaccaTxBr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "DmaccatxBr {{ curtbufaptr: {=u32:?} }}", self.curtbufaptr())
+            defmt::write!(f, "DmaccaTxBr {{ curtbufaptr: {=u32:?} }}", self.curtbufaptr())
         }
     }
     #[doc = "Channel current application transmit descriptor register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DmaccatxDr(pub u32);
-    impl DmaccatxDr {
+    pub struct DmaccaTxDr(pub u32);
+    impl DmaccaTxDr {
         #[doc = "Application Transmit Descriptor Address Pointer"]
         #[must_use]
         #[inline(always)]
@@ -800,23 +1211,23 @@ pub mod regs {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
-    impl Default for DmaccatxDr {
+    impl Default for DmaccaTxDr {
         #[inline(always)]
-        fn default() -> DmaccatxDr {
-            DmaccatxDr(0)
+        fn default() -> DmaccaTxDr {
+            DmaccaTxDr(0)
         }
     }
-    impl core::fmt::Debug for DmaccatxDr {
+    impl core::fmt::Debug for DmaccaTxDr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("DmaccatxDr")
+            f.debug_struct("DmaccaTxDr")
                 .field("curtdesaptr", &self.curtdesaptr())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for DmaccatxDr {
+    impl defmt::Format for DmaccaTxDr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "DmaccatxDr {{ curtdesaptr: {=u32:?} }}", self.curtdesaptr())
+            defmt::write!(f, "DmaccaTxDr {{ curtdesaptr: {=u32:?} }}", self.curtdesaptr())
         }
     }
     #[doc = "Channel control register"]
@@ -1136,229 +1547,6 @@ pub mod regs {
             )
         }
     }
-    #[doc = "Channel receive control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DmacrxCr(pub u32);
-    impl DmacrxCr {
-        #[doc = "Start or Stop Receive Command"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn sr(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Start or Stop Receive Command"]
-        #[inline(always)]
-        pub const fn set_sr(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Receive Buffer size"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rbsz(&self) -> u16 {
-            let val = (self.0 >> 1usize) & 0x3fff;
-            val as u16
-        }
-        #[doc = "Receive Buffer size"]
-        #[inline(always)]
-        pub const fn set_rbsz(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x3fff << 1usize)) | (((val as u32) & 0x3fff) << 1usize);
-        }
-        #[doc = "RXPBL"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rxpbl(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x3f;
-            val as u8
-        }
-        #[doc = "RXPBL"]
-        #[inline(always)]
-        pub const fn set_rxpbl(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
-        }
-        #[doc = "DMA Rx Channel Packet Flush"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rpf(&self) -> bool {
-            let val = (self.0 >> 31usize) & 0x01;
-            val != 0
-        }
-        #[doc = "DMA Rx Channel Packet Flush"]
-        #[inline(always)]
-        pub const fn set_rpf(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
-        }
-    }
-    impl Default for DmacrxCr {
-        #[inline(always)]
-        fn default() -> DmacrxCr {
-            DmacrxCr(0)
-        }
-    }
-    impl core::fmt::Debug for DmacrxCr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("DmacrxCr")
-                .field("sr", &self.sr())
-                .field("rbsz", &self.rbsz())
-                .field("rxpbl", &self.rxpbl())
-                .field("rpf", &self.rpf())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DmacrxCr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "DmacrxCr {{ sr: {=bool:?}, rbsz: {=u16:?}, rxpbl: {=u8:?}, rpf: {=bool:?} }}",
-                self.sr(),
-                self.rbsz(),
-                self.rxpbl(),
-                self.rpf()
-            )
-        }
-    }
-    #[doc = "Channel Rx descriptor list address register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DmacrxDlar(pub u32);
-    impl DmacrxDlar {
-        #[doc = "Start of Receive List"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rdesla(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Start of Receive List"]
-        #[inline(always)]
-        pub const fn set_rdesla(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DmacrxDlar {
-        #[inline(always)]
-        fn default() -> DmacrxDlar {
-            DmacrxDlar(0)
-        }
-    }
-    impl core::fmt::Debug for DmacrxDlar {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("DmacrxDlar").field("rdesla", &self.rdesla()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DmacrxDlar {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "DmacrxDlar {{ rdesla: {=u32:?} }}", self.rdesla())
-        }
-    }
-    #[doc = "Channel Rx descriptor tail pointer register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DmacrxDtpr(pub u32);
-    impl DmacrxDtpr {
-        #[doc = "Receive Descriptor Tail Pointer"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rdt(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Receive Descriptor Tail Pointer"]
-        #[inline(always)]
-        pub const fn set_rdt(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DmacrxDtpr {
-        #[inline(always)]
-        fn default() -> DmacrxDtpr {
-            DmacrxDtpr(0)
-        }
-    }
-    impl core::fmt::Debug for DmacrxDtpr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("DmacrxDtpr").field("rdt", &self.rdt()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DmacrxDtpr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "DmacrxDtpr {{ rdt: {=u32:?} }}", self.rdt())
-        }
-    }
-    #[doc = "Channel Rx interrupt watchdog timer register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DmacrxIwtr(pub u32);
-    impl DmacrxIwtr {
-        #[doc = "Receive Interrupt Watchdog Timer Count"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rwt(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[doc = "Receive Interrupt Watchdog Timer Count"]
-        #[inline(always)]
-        pub const fn set_rwt(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-    }
-    impl Default for DmacrxIwtr {
-        #[inline(always)]
-        fn default() -> DmacrxIwtr {
-            DmacrxIwtr(0)
-        }
-    }
-    impl core::fmt::Debug for DmacrxIwtr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("DmacrxIwtr").field("rwt", &self.rwt()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DmacrxIwtr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "DmacrxIwtr {{ rwt: {=u8:?} }}", self.rwt())
-        }
-    }
-    #[doc = "Channel Rx descriptor ring length register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DmacrxRlr(pub u32);
-    impl DmacrxRlr {
-        #[doc = "Receive Descriptor Ring Length"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rdrl(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0x03ff;
-            val as u16
-        }
-        #[doc = "Receive Descriptor Ring Length"]
-        #[inline(always)]
-        pub const fn set_rdrl(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
-        }
-    }
-    impl Default for DmacrxRlr {
-        #[inline(always)]
-        fn default() -> DmacrxRlr {
-            DmacrxRlr(0)
-        }
-    }
-    impl core::fmt::Debug for DmacrxRlr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("DmacrxRlr").field("rdrl", &self.rdrl()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DmacrxRlr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "DmacrxRlr {{ rdrl: {=u16:?} }}", self.rdrl())
-        }
-    }
     #[doc = "Channel status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1576,194 +1764,6 @@ pub mod regs {
     impl defmt::Format for Dmacsr {
         fn format(&self, f: defmt::Formatter) {
             defmt :: write ! (f , "Dmacsr {{ ti: {=bool:?}, tps: {=bool:?}, tbu: {=bool:?}, ri: {=bool:?}, rbu: {=bool:?}, rps: {=bool:?}, rwt: {=bool:?}, et: {=bool:?}, er: {=bool:?}, fbe: {=bool:?}, cde: {=bool:?}, ais: {=bool:?}, nis: {=bool:?}, teb: {=u8:?}, reb: {=u8:?} }}" , self . ti () , self . tps () , self . tbu () , self . ri () , self . rbu () , self . rps () , self . rwt () , self . et () , self . er () , self . fbe () , self . cde () , self . ais () , self . nis () , self . teb () , self . reb ())
-        }
-    }
-    #[doc = "Channel transmit control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DmactxCr(pub u32);
-    impl DmactxCr {
-        #[doc = "Start or Stop Transmission Command"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn st(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Start or Stop Transmission Command"]
-        #[inline(always)]
-        pub const fn set_st(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Operate on Second Packet"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn osf(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Operate on Second Packet"]
-        #[inline(always)]
-        pub const fn set_osf(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "TCP Segmentation Enabled"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn tse(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
-            val != 0
-        }
-        #[doc = "TCP Segmentation Enabled"]
-        #[inline(always)]
-        pub const fn set_tse(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
-        }
-        #[doc = "Transmit Programmable Burst Length"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn txpbl(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x3f;
-            val as u8
-        }
-        #[doc = "Transmit Programmable Burst Length"]
-        #[inline(always)]
-        pub const fn set_txpbl(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
-        }
-    }
-    impl Default for DmactxCr {
-        #[inline(always)]
-        fn default() -> DmactxCr {
-            DmactxCr(0)
-        }
-    }
-    impl core::fmt::Debug for DmactxCr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("DmactxCr")
-                .field("st", &self.st())
-                .field("osf", &self.osf())
-                .field("tse", &self.tse())
-                .field("txpbl", &self.txpbl())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DmactxCr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "DmactxCr {{ st: {=bool:?}, osf: {=bool:?}, tse: {=bool:?}, txpbl: {=u8:?} }}",
-                self.st(),
-                self.osf(),
-                self.tse(),
-                self.txpbl()
-            )
-        }
-    }
-    #[doc = "Channel Tx descriptor list address register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DmactxDlar(pub u32);
-    impl DmactxDlar {
-        #[doc = "Start of Transmit List"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn tdesla(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Start of Transmit List"]
-        #[inline(always)]
-        pub const fn set_tdesla(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DmactxDlar {
-        #[inline(always)]
-        fn default() -> DmactxDlar {
-            DmactxDlar(0)
-        }
-    }
-    impl core::fmt::Debug for DmactxDlar {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("DmactxDlar").field("tdesla", &self.tdesla()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DmactxDlar {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "DmactxDlar {{ tdesla: {=u32:?} }}", self.tdesla())
-        }
-    }
-    #[doc = "Channel Tx descriptor tail pointer register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DmactxDtpr(pub u32);
-    impl DmactxDtpr {
-        #[doc = "Transmit Descriptor Tail Pointer"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn tdt(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Transmit Descriptor Tail Pointer"]
-        #[inline(always)]
-        pub const fn set_tdt(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for DmactxDtpr {
-        #[inline(always)]
-        fn default() -> DmactxDtpr {
-            DmactxDtpr(0)
-        }
-    }
-    impl core::fmt::Debug for DmactxDtpr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("DmactxDtpr").field("tdt", &self.tdt()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DmactxDtpr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "DmactxDtpr {{ tdt: {=u32:?} }}", self.tdt())
-        }
-    }
-    #[doc = "Channel Tx descriptor ring length register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DmactxRlr(pub u32);
-    impl DmactxRlr {
-        #[doc = "Transmit Descriptor Ring Length"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn tdrl(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0x03ff;
-            val as u16
-        }
-        #[doc = "Transmit Descriptor Ring Length"]
-        #[inline(always)]
-        pub const fn set_tdrl(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
-        }
-    }
-    impl Default for DmactxRlr {
-        #[inline(always)]
-        fn default() -> DmactxRlr {
-            DmactxRlr(0)
-        }
-    }
-    impl core::fmt::Debug for DmactxRlr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("DmactxRlr").field("tdrl", &self.tdrl()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DmactxRlr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "DmactxRlr {{ tdrl: {=u16:?} }}", self.tdrl())
         }
     }
     #[doc = "Debug status register"]
@@ -2119,6 +2119,261 @@ pub mod regs {
     impl defmt::Format for Mac1ustcr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(f, "Mac1ustcr {{ tic_1us_cntr: {=u16:?} }}", self.tic_1us_cntr())
+        }
+    }
+    #[doc = "Rx flow control register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct MacRxFcr(pub u32);
+    impl MacRxFcr {
+        #[doc = "Receive Flow Control Enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rfe(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Receive Flow Control Enable"]
+        #[inline(always)]
+        pub const fn set_rfe(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Unicast Pause Packet Detect"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn up(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Unicast Pause Packet Detect"]
+        #[inline(always)]
+        pub const fn set_up(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+    }
+    impl Default for MacRxFcr {
+        #[inline(always)]
+        fn default() -> MacRxFcr {
+            MacRxFcr(0)
+        }
+    }
+    impl core::fmt::Debug for MacRxFcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MacRxFcr")
+                .field("rfe", &self.rfe())
+                .field("up", &self.up())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MacRxFcr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MacRxFcr {{ rfe: {=bool:?}, up: {=bool:?} }}", self.rfe(), self.up())
+        }
+    }
+    #[doc = "Rx Tx status register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct MacRxTxSr(pub u32);
+    impl MacRxTxSr {
+        #[doc = "Transmit Jabber Timeout"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tjt(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Transmit Jabber Timeout"]
+        #[inline(always)]
+        pub const fn set_tjt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "No Carrier"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ncarr(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "No Carrier"]
+        #[inline(always)]
+        pub const fn set_ncarr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Loss of Carrier"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lcarr(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Loss of Carrier"]
+        #[inline(always)]
+        pub const fn set_lcarr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Excessive Deferral"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn exdef(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Excessive Deferral"]
+        #[inline(always)]
+        pub const fn set_exdef(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "Late Collision"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lcol(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Late Collision"]
+        #[inline(always)]
+        pub const fn set_lcol(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Excessive Collisions"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn excol(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Excessive Collisions"]
+        #[inline(always)]
+        pub const fn set_excol(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "Receive Watchdog Timeout"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rwt(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Receive Watchdog Timeout"]
+        #[inline(always)]
+        pub const fn set_rwt(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+    }
+    impl Default for MacRxTxSr {
+        #[inline(always)]
+        fn default() -> MacRxTxSr {
+            MacRxTxSr(0)
+        }
+    }
+    impl core::fmt::Debug for MacRxTxSr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MacRxTxSr")
+                .field("tjt", &self.tjt())
+                .field("ncarr", &self.ncarr())
+                .field("lcarr", &self.lcarr())
+                .field("exdef", &self.exdef())
+                .field("lcol", &self.lcol())
+                .field("excol", &self.excol())
+                .field("rwt", &self.rwt())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MacRxTxSr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MacRxTxSr {{ tjt: {=bool:?}, ncarr: {=bool:?}, lcarr: {=bool:?}, exdef: {=bool:?}, lcol: {=bool:?}, excol: {=bool:?}, rwt: {=bool:?} }}" , self . tjt () , self . ncarr () , self . lcarr () , self . exdef () , self . lcol () , self . excol () , self . rwt ())
+        }
+    }
+    #[doc = "Tx timestamp status nanoseconds register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct MacTxTssnr(pub u32);
+    impl MacTxTssnr {
+        #[doc = "Transmit Timestamp Status Low"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn txtsslo(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0x7fff_ffff;
+            val as u32
+        }
+        #[doc = "Transmit Timestamp Status Low"]
+        #[inline(always)]
+        pub const fn set_txtsslo(&mut self, val: u32) {
+            self.0 = (self.0 & !(0x7fff_ffff << 0usize)) | (((val as u32) & 0x7fff_ffff) << 0usize);
+        }
+        #[doc = "Transmit Timestamp Status Missed"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn txtssmis(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Transmit Timestamp Status Missed"]
+        #[inline(always)]
+        pub const fn set_txtssmis(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for MacTxTssnr {
+        #[inline(always)]
+        fn default() -> MacTxTssnr {
+            MacTxTssnr(0)
+        }
+    }
+    impl core::fmt::Debug for MacTxTssnr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MacTxTssnr")
+                .field("txtsslo", &self.txtsslo())
+                .field("txtssmis", &self.txtssmis())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MacTxTssnr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MacTxTssnr {{ txtsslo: {=u32:?}, txtssmis: {=bool:?} }}",
+                self.txtsslo(),
+                self.txtssmis()
+            )
+        }
+    }
+    #[doc = "Tx timestamp status seconds register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct MacTxTsssr(pub u32);
+    impl MacTxTsssr {
+        #[doc = "Transmit Timestamp Status High"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn txtsshi(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "Transmit Timestamp Status High"]
+        #[inline(always)]
+        pub const fn set_txtsshi(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for MacTxTsssr {
+        #[inline(always)]
+        fn default() -> MacTxTsssr {
+            MacTxTsssr(0)
+        }
+    }
+    impl core::fmt::Debug for MacTxTsssr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MacTxTsssr").field("txtsshi", &self.txtsshi()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MacTxTsssr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "MacTxTsssr {{ txtsshi: {=u32:?} }}", self.txtsshi())
         }
     }
     #[doc = "Address 0 high register"]
@@ -5640,8 +5895,8 @@ pub mod regs {
     #[doc = "Tx Queue flow control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MacqtxFcr(pub u32);
-    impl MacqtxFcr {
+    pub struct MacqTxFcr(pub u32);
+    impl MacqTxFcr {
         #[doc = "Flow Control Busy or Backpressure Activate"]
         #[must_use]
         #[inline(always)]
@@ -5703,15 +5958,15 @@ pub mod regs {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
-    impl Default for MacqtxFcr {
+    impl Default for MacqTxFcr {
         #[inline(always)]
-        fn default() -> MacqtxFcr {
-            MacqtxFcr(0)
+        fn default() -> MacqTxFcr {
+            MacqTxFcr(0)
         }
     }
-    impl core::fmt::Debug for MacqtxFcr {
+    impl core::fmt::Debug for MacqTxFcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("MacqtxFcr")
+            f.debug_struct("MacqTxFcr")
                 .field("fcb_bpa", &self.fcb_bpa())
                 .field("tfe", &self.tfe())
                 .field("plt", &self.plt())
@@ -5721,11 +5976,11 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for MacqtxFcr {
+    impl defmt::Format for MacqTxFcr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "MacqtxFcr {{ fcb_bpa: {=bool:?}, tfe: {=bool:?}, plt: {=u8:?}, dzpq: {=bool:?}, pt: {=u16:?} }}",
+                "MacqTxFcr {{ fcb_bpa: {=bool:?}, tfe: {=bool:?}, plt: {=u8:?}, dzpq: {=bool:?}, pt: {=u16:?} }}",
                 self.fcb_bpa(),
                 self.tfe(),
                 self.plt(),
@@ -5769,171 +6024,6 @@ pub mod regs {
     impl defmt::Format for Macrwkpfr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(f, "Macrwkpfr {{ macrwkpfr: {=u32:?} }}", self.macrwkpfr())
-        }
-    }
-    #[doc = "Rx flow control register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MacrxFcr(pub u32);
-    impl MacrxFcr {
-        #[doc = "Receive Flow Control Enable"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rfe(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Receive Flow Control Enable"]
-        #[inline(always)]
-        pub const fn set_rfe(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Unicast Pause Packet Detect"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn up(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Unicast Pause Packet Detect"]
-        #[inline(always)]
-        pub const fn set_up(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-    }
-    impl Default for MacrxFcr {
-        #[inline(always)]
-        fn default() -> MacrxFcr {
-            MacrxFcr(0)
-        }
-    }
-    impl core::fmt::Debug for MacrxFcr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("MacrxFcr")
-                .field("rfe", &self.rfe())
-                .field("up", &self.up())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MacrxFcr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "MacrxFcr {{ rfe: {=bool:?}, up: {=bool:?} }}", self.rfe(), self.up())
-        }
-    }
-    #[doc = "Rx Tx status register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MacrxTxSr(pub u32);
-    impl MacrxTxSr {
-        #[doc = "Transmit Jabber Timeout"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn tjt(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Transmit Jabber Timeout"]
-        #[inline(always)]
-        pub const fn set_tjt(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "No Carrier"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn ncarr(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "No Carrier"]
-        #[inline(always)]
-        pub const fn set_ncarr(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Loss of Carrier"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn lcarr(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Loss of Carrier"]
-        #[inline(always)]
-        pub const fn set_lcarr(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Excessive Deferral"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn exdef(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Excessive Deferral"]
-        #[inline(always)]
-        pub const fn set_exdef(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Late Collision"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn lcol(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Late Collision"]
-        #[inline(always)]
-        pub const fn set_lcol(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Excessive Collisions"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn excol(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Excessive Collisions"]
-        #[inline(always)]
-        pub const fn set_excol(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Receive Watchdog Timeout"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rwt(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Receive Watchdog Timeout"]
-        #[inline(always)]
-        pub const fn set_rwt(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-    }
-    impl Default for MacrxTxSr {
-        #[inline(always)]
-        fn default() -> MacrxTxSr {
-            MacrxTxSr(0)
-        }
-    }
-    impl core::fmt::Debug for MacrxTxSr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("MacrxTxSr")
-                .field("tjt", &self.tjt())
-                .field("ncarr", &self.ncarr())
-                .field("lcarr", &self.lcarr())
-                .field("exdef", &self.exdef())
-                .field("lcol", &self.lcol())
-                .field("excol", &self.excol())
-                .field("rwt", &self.rwt())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MacrxTxSr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MacrxTxSr {{ tjt: {=bool:?}, ncarr: {=bool:?}, lcarr: {=bool:?}, exdef: {=bool:?}, lcol: {=bool:?}, excol: {=bool:?}, rwt: {=bool:?} }}" , self . tjt () , self . ncarr () , self . lcarr () , self . exdef () , self . lcol () , self . excol () , self . rwt ())
         }
     }
     #[doc = "PTP Source Port Identity 0 Register"]
@@ -6802,96 +6892,6 @@ pub mod regs {
     impl defmt::Format for Mactssr {
         fn format(&self, f: defmt::Formatter) {
             defmt :: write ! (f , "Mactssr {{ tssovf: {=bool:?}, tstargt0: {=bool:?}, auxtstrig: {=bool:?}, tstrgterr0: {=bool:?}, txtssis: {=bool:?}, atsstn: {=u8:?}, atsstm: {=bool:?}, atsns: {=u8:?} }}" , self . tssovf () , self . tstargt0 () , self . auxtstrig () , self . tstrgterr0 () , self . txtssis () , self . atsstn () , self . atsstm () , self . atsns ())
-        }
-    }
-    #[doc = "Tx timestamp status nanoseconds register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MactxTssnr(pub u32);
-    impl MactxTssnr {
-        #[doc = "Transmit Timestamp Status Low"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn txtsslo(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0x7fff_ffff;
-            val as u32
-        }
-        #[doc = "Transmit Timestamp Status Low"]
-        #[inline(always)]
-        pub const fn set_txtsslo(&mut self, val: u32) {
-            self.0 = (self.0 & !(0x7fff_ffff << 0usize)) | (((val as u32) & 0x7fff_ffff) << 0usize);
-        }
-        #[doc = "Transmit Timestamp Status Missed"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn txtssmis(&self) -> bool {
-            let val = (self.0 >> 31usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Transmit Timestamp Status Missed"]
-        #[inline(always)]
-        pub const fn set_txtssmis(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
-        }
-    }
-    impl Default for MactxTssnr {
-        #[inline(always)]
-        fn default() -> MactxTssnr {
-            MactxTssnr(0)
-        }
-    }
-    impl core::fmt::Debug for MactxTssnr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("MactxTssnr")
-                .field("txtsslo", &self.txtsslo())
-                .field("txtssmis", &self.txtssmis())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MactxTssnr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "MactxTssnr {{ txtsslo: {=u32:?}, txtssmis: {=bool:?} }}",
-                self.txtsslo(),
-                self.txtssmis()
-            )
-        }
-    }
-    #[doc = "Tx timestamp status seconds register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MactxTsssr(pub u32);
-    impl MactxTsssr {
-        #[doc = "Transmit Timestamp Status High"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn txtsshi(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "Transmit Timestamp Status High"]
-        #[inline(always)]
-        pub const fn set_txtsshi(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for MactxTsssr {
-        #[inline(always)]
-        fn default() -> MactxTsssr {
-            MactxTsssr(0)
-        }
-    }
-    impl core::fmt::Debug for MactxTsssr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("MactxTsssr").field("txtsshi", &self.txtsshi()).finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MactxTsssr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "MactxTsssr {{ txtsshi: {=u32:?} }}", self.txtsshi())
         }
     }
     #[doc = "VLAN Hash table register"]
@@ -7795,6 +7795,573 @@ pub mod regs {
             defmt :: write ! (f , "MmcTxInterruptMask {{ txscolgpim: {=bool:?}, txmcolgpim: {=bool:?}, txgpktim: {=bool:?}, txlpiuscim: {=bool:?}, txlpitrcim: {=bool:?} }}" , self . txscolgpim () , self . txmcolgpim () , self . txgpktim () , self . txlpiuscim () , self . txlpitrcim ())
         }
     }
+    #[doc = "Rx queue debug register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct MtlRxQdr(pub u32);
+    impl MtlRxQdr {
+        #[doc = "MTL Rx Queue Write Controller Active Status"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rwcsts(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "MTL Rx Queue Write Controller Active Status"]
+        #[inline(always)]
+        pub const fn set_rwcsts(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "MTL Rx Queue Read Controller State"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rrcsts(&self) -> u8 {
+            let val = (self.0 >> 1usize) & 0x03;
+            val as u8
+        }
+        #[doc = "MTL Rx Queue Read Controller State"]
+        #[inline(always)]
+        pub const fn set_rrcsts(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 1usize)) | (((val as u32) & 0x03) << 1usize);
+        }
+        #[doc = "MTL Rx Queue Fill-Level Status"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rxqsts(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x03;
+            val as u8
+        }
+        #[doc = "MTL Rx Queue Fill-Level Status"]
+        #[inline(always)]
+        pub const fn set_rxqsts(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
+        }
+        #[doc = "Number of Packets in Receive Queue"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn prxq(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x3fff;
+            val as u16
+        }
+        #[doc = "Number of Packets in Receive Queue"]
+        #[inline(always)]
+        pub const fn set_prxq(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x3fff << 16usize)) | (((val as u32) & 0x3fff) << 16usize);
+        }
+    }
+    impl Default for MtlRxQdr {
+        #[inline(always)]
+        fn default() -> MtlRxQdr {
+            MtlRxQdr(0)
+        }
+    }
+    impl core::fmt::Debug for MtlRxQdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MtlRxQdr")
+                .field("rwcsts", &self.rwcsts())
+                .field("rrcsts", &self.rrcsts())
+                .field("rxqsts", &self.rxqsts())
+                .field("prxq", &self.prxq())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MtlRxQdr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MtlRxQdr {{ rwcsts: {=bool:?}, rrcsts: {=u8:?}, rxqsts: {=u8:?}, prxq: {=u16:?} }}",
+                self.rwcsts(),
+                self.rrcsts(),
+                self.rxqsts(),
+                self.prxq()
+            )
+        }
+    }
+    #[doc = "Rx queue missed packet and overflow counter register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct MtlRxQmpocr(pub u32);
+    impl MtlRxQmpocr {
+        #[doc = "Overflow Packet Counter"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ovfpktcnt(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x07ff;
+            val as u16
+        }
+        #[doc = "Overflow Packet Counter"]
+        #[inline(always)]
+        pub const fn set_ovfpktcnt(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x07ff << 0usize)) | (((val as u32) & 0x07ff) << 0usize);
+        }
+        #[doc = "Overflow Counter Overflow Bit"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ovfcntovf(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Overflow Counter Overflow Bit"]
+        #[inline(always)]
+        pub const fn set_ovfcntovf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "Missed Packet Counter"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mispktcnt(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0x07ff;
+            val as u16
+        }
+        #[doc = "Missed Packet Counter"]
+        #[inline(always)]
+        pub const fn set_mispktcnt(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x07ff << 16usize)) | (((val as u32) & 0x07ff) << 16usize);
+        }
+        #[doc = "Missed Packet Counter Overflow Bit"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn miscntovf(&self) -> bool {
+            let val = (self.0 >> 27usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Missed Packet Counter Overflow Bit"]
+        #[inline(always)]
+        pub const fn set_miscntovf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
+        }
+    }
+    impl Default for MtlRxQmpocr {
+        #[inline(always)]
+        fn default() -> MtlRxQmpocr {
+            MtlRxQmpocr(0)
+        }
+    }
+    impl core::fmt::Debug for MtlRxQmpocr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MtlRxQmpocr")
+                .field("ovfpktcnt", &self.ovfpktcnt())
+                .field("ovfcntovf", &self.ovfcntovf())
+                .field("mispktcnt", &self.mispktcnt())
+                .field("miscntovf", &self.miscntovf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MtlRxQmpocr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MtlRxQmpocr {{ ovfpktcnt: {=u16:?}, ovfcntovf: {=bool:?}, mispktcnt: {=u16:?}, miscntovf: {=bool:?} }}" , self . ovfpktcnt () , self . ovfcntovf () , self . mispktcnt () , self . miscntovf ())
+        }
+    }
+    #[doc = "Rx queue operating mode register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct MtlRxQomr(pub u32);
+    impl MtlRxQomr {
+        #[doc = "Receive Queue Threshold Control"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rtc(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0x03;
+            val as u8
+        }
+        #[doc = "Receive Queue Threshold Control"]
+        #[inline(always)]
+        pub const fn set_rtc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
+        }
+        #[doc = "Forward Undersized Good Packets"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fup(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Forward Undersized Good Packets"]
+        #[inline(always)]
+        pub const fn set_fup(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "Forward Error Packets"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fep(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Forward Error Packets"]
+        #[inline(always)]
+        pub const fn set_fep(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Receive Queue Store and Forward"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rsf(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Receive Queue Store and Forward"]
+        #[inline(always)]
+        pub const fn set_rsf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "Disable Dropping of TCP/IP Checksum Error Packets"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dis_tcp_ef(&self) -> bool {
+            let val = (self.0 >> 6usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Disable Dropping of TCP/IP Checksum Error Packets"]
+        #[inline(always)]
+        pub const fn set_dis_tcp_ef(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
+        }
+        #[doc = "Enable Hardware Flow Control"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ehfc(&self) -> bool {
+            let val = (self.0 >> 7usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Enable Hardware Flow Control"]
+        #[inline(always)]
+        pub const fn set_ehfc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "Threshold for Activating Flow Control (in half-duplex and full-duplex modes)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rfa(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x07;
+            val as u8
+        }
+        #[doc = "Threshold for Activating Flow Control (in half-duplex and full-duplex modes)"]
+        #[inline(always)]
+        pub const fn set_rfa(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
+        }
+        #[doc = "Threshold for Deactivating Flow Control (in half-duplex and full-duplex modes)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rfd(&self) -> u8 {
+            let val = (self.0 >> 14usize) & 0x07;
+            val as u8
+        }
+        #[doc = "Threshold for Deactivating Flow Control (in half-duplex and full-duplex modes)"]
+        #[inline(always)]
+        pub const fn set_rfd(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 14usize)) | (((val as u32) & 0x07) << 14usize);
+        }
+        #[doc = "Receive Queue Size"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rqs(&self) -> u8 {
+            let val = (self.0 >> 20usize) & 0x07;
+            val as u8
+        }
+        #[doc = "Receive Queue Size"]
+        #[inline(always)]
+        pub const fn set_rqs(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 20usize)) | (((val as u32) & 0x07) << 20usize);
+        }
+    }
+    impl Default for MtlRxQomr {
+        #[inline(always)]
+        fn default() -> MtlRxQomr {
+            MtlRxQomr(0)
+        }
+    }
+    impl core::fmt::Debug for MtlRxQomr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MtlRxQomr")
+                .field("rtc", &self.rtc())
+                .field("fup", &self.fup())
+                .field("fep", &self.fep())
+                .field("rsf", &self.rsf())
+                .field("dis_tcp_ef", &self.dis_tcp_ef())
+                .field("ehfc", &self.ehfc())
+                .field("rfa", &self.rfa())
+                .field("rfd", &self.rfd())
+                .field("rqs", &self.rqs())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MtlRxQomr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MtlRxQomr {{ rtc: {=u8:?}, fup: {=bool:?}, fep: {=bool:?}, rsf: {=bool:?}, dis_tcp_ef: {=bool:?}, ehfc: {=bool:?}, rfa: {=u8:?}, rfd: {=u8:?}, rqs: {=u8:?} }}" , self . rtc () , self . fup () , self . fep () , self . rsf () , self . dis_tcp_ef () , self . ehfc () , self . rfa () , self . rfd () , self . rqs ())
+        }
+    }
+    #[doc = "Tx queue debug Register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct MtlTxQdr(pub u32);
+    impl MtlTxQdr {
+        #[doc = "Transmit Queue in Pause"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn txqpaused(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Transmit Queue in Pause"]
+        #[inline(always)]
+        pub const fn set_txqpaused(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "MTL Tx Queue Read Controller Status"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trcsts(&self) -> u8 {
+            let val = (self.0 >> 1usize) & 0x03;
+            val as u8
+        }
+        #[doc = "MTL Tx Queue Read Controller Status"]
+        #[inline(always)]
+        pub const fn set_trcsts(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 1usize)) | (((val as u32) & 0x03) << 1usize);
+        }
+        #[doc = "MTL Tx Queue Write Controller Status"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn twcsts(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "MTL Tx Queue Write Controller Status"]
+        #[inline(always)]
+        pub const fn set_twcsts(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "MTL Tx Queue Not Empty Status"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn txqsts(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "MTL Tx Queue Not Empty Status"]
+        #[inline(always)]
+        pub const fn set_txqsts(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "MTL Tx Status FIFO Full Status"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn txstsfsts(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "MTL Tx Status FIFO Full Status"]
+        #[inline(always)]
+        pub const fn set_txstsfsts(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "Number of Packets in the Transmit Queue"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ptxq(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x07;
+            val as u8
+        }
+        #[doc = "Number of Packets in the Transmit Queue"]
+        #[inline(always)]
+        pub const fn set_ptxq(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
+        }
+        #[doc = "Number of Status Words in Tx Status FIFO of Queue"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn stxstsf(&self) -> u8 {
+            let val = (self.0 >> 20usize) & 0x07;
+            val as u8
+        }
+        #[doc = "Number of Status Words in Tx Status FIFO of Queue"]
+        #[inline(always)]
+        pub const fn set_stxstsf(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 20usize)) | (((val as u32) & 0x07) << 20usize);
+        }
+    }
+    impl Default for MtlTxQdr {
+        #[inline(always)]
+        fn default() -> MtlTxQdr {
+            MtlTxQdr(0)
+        }
+    }
+    impl core::fmt::Debug for MtlTxQdr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MtlTxQdr")
+                .field("txqpaused", &self.txqpaused())
+                .field("trcsts", &self.trcsts())
+                .field("twcsts", &self.twcsts())
+                .field("txqsts", &self.txqsts())
+                .field("txstsfsts", &self.txstsfsts())
+                .field("ptxq", &self.ptxq())
+                .field("stxstsf", &self.stxstsf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MtlTxQdr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "MtlTxQdr {{ txqpaused: {=bool:?}, trcsts: {=u8:?}, twcsts: {=bool:?}, txqsts: {=bool:?}, txstsfsts: {=bool:?}, ptxq: {=u8:?}, stxstsf: {=u8:?} }}" , self . txqpaused () , self . trcsts () , self . twcsts () , self . txqsts () , self . txstsfsts () , self . ptxq () , self . stxstsf ())
+        }
+    }
+    #[doc = "Tx queue operating mode Register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct MtlTxQomr(pub u32);
+    impl MtlTxQomr {
+        #[doc = "Flush Transmit Queue"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ftq(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Flush Transmit Queue"]
+        #[inline(always)]
+        pub const fn set_ftq(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Transmit Store and Forward"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tsf(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Transmit Store and Forward"]
+        #[inline(always)]
+        pub const fn set_tsf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Transmit Queue Enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn txqen(&self) -> u8 {
+            let val = (self.0 >> 2usize) & 0x03;
+            val as u8
+        }
+        #[doc = "Transmit Queue Enable"]
+        #[inline(always)]
+        pub const fn set_txqen(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
+        }
+        #[doc = "Transmit Threshold Control"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ttc(&self) -> u8 {
+            let val = (self.0 >> 4usize) & 0x07;
+            val as u8
+        }
+        #[doc = "Transmit Threshold Control"]
+        #[inline(always)]
+        pub const fn set_ttc(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
+        }
+        #[doc = "Transmit Queue Size"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tqs(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0x07;
+            val as u8
+        }
+        #[doc = "Transmit Queue Size"]
+        #[inline(always)]
+        pub const fn set_tqs(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
+        }
+    }
+    impl Default for MtlTxQomr {
+        #[inline(always)]
+        fn default() -> MtlTxQomr {
+            MtlTxQomr(0)
+        }
+    }
+    impl core::fmt::Debug for MtlTxQomr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MtlTxQomr")
+                .field("ftq", &self.ftq())
+                .field("tsf", &self.tsf())
+                .field("txqen", &self.txqen())
+                .field("ttc", &self.ttc())
+                .field("tqs", &self.tqs())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MtlTxQomr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MtlTxQomr {{ ftq: {=bool:?}, tsf: {=bool:?}, txqen: {=u8:?}, ttc: {=u8:?}, tqs: {=u8:?} }}",
+                self.ftq(),
+                self.tsf(),
+                self.txqen(),
+                self.ttc(),
+                self.tqs()
+            )
+        }
+    }
+    #[doc = "Tx queue underflow register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct MtlTxQur(pub u32);
+    impl MtlTxQur {
+        #[doc = "Underflow Packet Counter"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn uffrmcnt(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x07ff;
+            val as u16
+        }
+        #[doc = "Underflow Packet Counter"]
+        #[inline(always)]
+        pub const fn set_uffrmcnt(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x07ff << 0usize)) | (((val as u32) & 0x07ff) << 0usize);
+        }
+        #[doc = "Overflow Bit for Underflow Packet Counter"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ufcntovf(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Overflow Bit for Underflow Packet Counter"]
+        #[inline(always)]
+        pub const fn set_ufcntovf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+    }
+    impl Default for MtlTxQur {
+        #[inline(always)]
+        fn default() -> MtlTxQur {
+            MtlTxQur(0)
+        }
+    }
+    impl core::fmt::Debug for MtlTxQur {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MtlTxQur")
+                .field("uffrmcnt", &self.uffrmcnt())
+                .field("ufcntovf", &self.ufcntovf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MtlTxQur {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MtlTxQur {{ uffrmcnt: {=u16:?}, ufcntovf: {=bool:?} }}",
+                self.uffrmcnt(),
+                self.ufcntovf()
+            )
+        }
+    }
     #[doc = "Interrupt status Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -7979,573 +8546,6 @@ pub mod regs {
                 self.txuie(),
                 self.rxovfis(),
                 self.rxoie()
-            )
-        }
-    }
-    #[doc = "Rx queue debug register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MtlrxQdr(pub u32);
-    impl MtlrxQdr {
-        #[doc = "MTL Rx Queue Write Controller Active Status"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rwcsts(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "MTL Rx Queue Write Controller Active Status"]
-        #[inline(always)]
-        pub const fn set_rwcsts(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "MTL Rx Queue Read Controller State"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rrcsts(&self) -> u8 {
-            let val = (self.0 >> 1usize) & 0x03;
-            val as u8
-        }
-        #[doc = "MTL Rx Queue Read Controller State"]
-        #[inline(always)]
-        pub const fn set_rrcsts(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 1usize)) | (((val as u32) & 0x03) << 1usize);
-        }
-        #[doc = "MTL Rx Queue Fill-Level Status"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rxqsts(&self) -> u8 {
-            let val = (self.0 >> 4usize) & 0x03;
-            val as u8
-        }
-        #[doc = "MTL Rx Queue Fill-Level Status"]
-        #[inline(always)]
-        pub const fn set_rxqsts(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
-        }
-        #[doc = "Number of Packets in Receive Queue"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn prxq(&self) -> u16 {
-            let val = (self.0 >> 16usize) & 0x3fff;
-            val as u16
-        }
-        #[doc = "Number of Packets in Receive Queue"]
-        #[inline(always)]
-        pub const fn set_prxq(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x3fff << 16usize)) | (((val as u32) & 0x3fff) << 16usize);
-        }
-    }
-    impl Default for MtlrxQdr {
-        #[inline(always)]
-        fn default() -> MtlrxQdr {
-            MtlrxQdr(0)
-        }
-    }
-    impl core::fmt::Debug for MtlrxQdr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("MtlrxQdr")
-                .field("rwcsts", &self.rwcsts())
-                .field("rrcsts", &self.rrcsts())
-                .field("rxqsts", &self.rxqsts())
-                .field("prxq", &self.prxq())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MtlrxQdr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "MtlrxQdr {{ rwcsts: {=bool:?}, rrcsts: {=u8:?}, rxqsts: {=u8:?}, prxq: {=u16:?} }}",
-                self.rwcsts(),
-                self.rrcsts(),
-                self.rxqsts(),
-                self.prxq()
-            )
-        }
-    }
-    #[doc = "Rx queue missed packet and overflow counter register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MtlrxQmpocr(pub u32);
-    impl MtlrxQmpocr {
-        #[doc = "Overflow Packet Counter"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn ovfpktcnt(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0x07ff;
-            val as u16
-        }
-        #[doc = "Overflow Packet Counter"]
-        #[inline(always)]
-        pub const fn set_ovfpktcnt(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x07ff << 0usize)) | (((val as u32) & 0x07ff) << 0usize);
-        }
-        #[doc = "Overflow Counter Overflow Bit"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn ovfcntovf(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Overflow Counter Overflow Bit"]
-        #[inline(always)]
-        pub const fn set_ovfcntovf(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-        #[doc = "Missed Packet Counter"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn mispktcnt(&self) -> u16 {
-            let val = (self.0 >> 16usize) & 0x07ff;
-            val as u16
-        }
-        #[doc = "Missed Packet Counter"]
-        #[inline(always)]
-        pub const fn set_mispktcnt(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x07ff << 16usize)) | (((val as u32) & 0x07ff) << 16usize);
-        }
-        #[doc = "Missed Packet Counter Overflow Bit"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn miscntovf(&self) -> bool {
-            let val = (self.0 >> 27usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Missed Packet Counter Overflow Bit"]
-        #[inline(always)]
-        pub const fn set_miscntovf(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
-        }
-    }
-    impl Default for MtlrxQmpocr {
-        #[inline(always)]
-        fn default() -> MtlrxQmpocr {
-            MtlrxQmpocr(0)
-        }
-    }
-    impl core::fmt::Debug for MtlrxQmpocr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("MtlrxQmpocr")
-                .field("ovfpktcnt", &self.ovfpktcnt())
-                .field("ovfcntovf", &self.ovfcntovf())
-                .field("mispktcnt", &self.mispktcnt())
-                .field("miscntovf", &self.miscntovf())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MtlrxQmpocr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MtlrxQmpocr {{ ovfpktcnt: {=u16:?}, ovfcntovf: {=bool:?}, mispktcnt: {=u16:?}, miscntovf: {=bool:?} }}" , self . ovfpktcnt () , self . ovfcntovf () , self . mispktcnt () , self . miscntovf ())
-        }
-    }
-    #[doc = "Rx queue operating mode register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MtlrxQomr(pub u32);
-    impl MtlrxQomr {
-        #[doc = "Receive Queue Threshold Control"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rtc(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x03;
-            val as u8
-        }
-        #[doc = "Receive Queue Threshold Control"]
-        #[inline(always)]
-        pub const fn set_rtc(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
-        }
-        #[doc = "Forward Undersized Good Packets"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn fup(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Forward Undersized Good Packets"]
-        #[inline(always)]
-        pub const fn set_fup(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Forward Error Packets"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn fep(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Forward Error Packets"]
-        #[inline(always)]
-        pub const fn set_fep(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Receive Queue Store and Forward"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rsf(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Receive Queue Store and Forward"]
-        #[inline(always)]
-        pub const fn set_rsf(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Disable Dropping of TCP/IP Checksum Error Packets"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dis_tcp_ef(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Disable Dropping of TCP/IP Checksum Error Packets"]
-        #[inline(always)]
-        pub const fn set_dis_tcp_ef(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "Enable Hardware Flow Control"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn ehfc(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Enable Hardware Flow Control"]
-        #[inline(always)]
-        pub const fn set_ehfc(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Threshold for Activating Flow Control (in half-duplex and full-duplex modes)"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rfa(&self) -> u8 {
-            let val = (self.0 >> 8usize) & 0x07;
-            val as u8
-        }
-        #[doc = "Threshold for Activating Flow Control (in half-duplex and full-duplex modes)"]
-        #[inline(always)]
-        pub const fn set_rfa(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
-        }
-        #[doc = "Threshold for Deactivating Flow Control (in half-duplex and full-duplex modes)"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rfd(&self) -> u8 {
-            let val = (self.0 >> 14usize) & 0x07;
-            val as u8
-        }
-        #[doc = "Threshold for Deactivating Flow Control (in half-duplex and full-duplex modes)"]
-        #[inline(always)]
-        pub const fn set_rfd(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 14usize)) | (((val as u32) & 0x07) << 14usize);
-        }
-        #[doc = "Receive Queue Size"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn rqs(&self) -> u8 {
-            let val = (self.0 >> 20usize) & 0x07;
-            val as u8
-        }
-        #[doc = "Receive Queue Size"]
-        #[inline(always)]
-        pub const fn set_rqs(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 20usize)) | (((val as u32) & 0x07) << 20usize);
-        }
-    }
-    impl Default for MtlrxQomr {
-        #[inline(always)]
-        fn default() -> MtlrxQomr {
-            MtlrxQomr(0)
-        }
-    }
-    impl core::fmt::Debug for MtlrxQomr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("MtlrxQomr")
-                .field("rtc", &self.rtc())
-                .field("fup", &self.fup())
-                .field("fep", &self.fep())
-                .field("rsf", &self.rsf())
-                .field("dis_tcp_ef", &self.dis_tcp_ef())
-                .field("ehfc", &self.ehfc())
-                .field("rfa", &self.rfa())
-                .field("rfd", &self.rfd())
-                .field("rqs", &self.rqs())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MtlrxQomr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MtlrxQomr {{ rtc: {=u8:?}, fup: {=bool:?}, fep: {=bool:?}, rsf: {=bool:?}, dis_tcp_ef: {=bool:?}, ehfc: {=bool:?}, rfa: {=u8:?}, rfd: {=u8:?}, rqs: {=u8:?} }}" , self . rtc () , self . fup () , self . fep () , self . rsf () , self . dis_tcp_ef () , self . ehfc () , self . rfa () , self . rfd () , self . rqs ())
-        }
-    }
-    #[doc = "Tx queue debug Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MtltxQdr(pub u32);
-    impl MtltxQdr {
-        #[doc = "Transmit Queue in Pause"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn txqpaused(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Transmit Queue in Pause"]
-        #[inline(always)]
-        pub const fn set_txqpaused(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "MTL Tx Queue Read Controller Status"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn trcsts(&self) -> u8 {
-            let val = (self.0 >> 1usize) & 0x03;
-            val as u8
-        }
-        #[doc = "MTL Tx Queue Read Controller Status"]
-        #[inline(always)]
-        pub const fn set_trcsts(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 1usize)) | (((val as u32) & 0x03) << 1usize);
-        }
-        #[doc = "MTL Tx Queue Write Controller Status"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn twcsts(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "MTL Tx Queue Write Controller Status"]
-        #[inline(always)]
-        pub const fn set_twcsts(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "MTL Tx Queue Not Empty Status"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn txqsts(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "MTL Tx Queue Not Empty Status"]
-        #[inline(always)]
-        pub const fn set_txqsts(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "MTL Tx Status FIFO Full Status"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn txstsfsts(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "MTL Tx Status FIFO Full Status"]
-        #[inline(always)]
-        pub const fn set_txstsfsts(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Number of Packets in the Transmit Queue"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn ptxq(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x07;
-            val as u8
-        }
-        #[doc = "Number of Packets in the Transmit Queue"]
-        #[inline(always)]
-        pub const fn set_ptxq(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
-        }
-        #[doc = "Number of Status Words in Tx Status FIFO of Queue"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn stxstsf(&self) -> u8 {
-            let val = (self.0 >> 20usize) & 0x07;
-            val as u8
-        }
-        #[doc = "Number of Status Words in Tx Status FIFO of Queue"]
-        #[inline(always)]
-        pub const fn set_stxstsf(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 20usize)) | (((val as u32) & 0x07) << 20usize);
-        }
-    }
-    impl Default for MtltxQdr {
-        #[inline(always)]
-        fn default() -> MtltxQdr {
-            MtltxQdr(0)
-        }
-    }
-    impl core::fmt::Debug for MtltxQdr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("MtltxQdr")
-                .field("txqpaused", &self.txqpaused())
-                .field("trcsts", &self.trcsts())
-                .field("twcsts", &self.twcsts())
-                .field("txqsts", &self.txqsts())
-                .field("txstsfsts", &self.txstsfsts())
-                .field("ptxq", &self.ptxq())
-                .field("stxstsf", &self.stxstsf())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MtltxQdr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MtltxQdr {{ txqpaused: {=bool:?}, trcsts: {=u8:?}, twcsts: {=bool:?}, txqsts: {=bool:?}, txstsfsts: {=bool:?}, ptxq: {=u8:?}, stxstsf: {=u8:?} }}" , self . txqpaused () , self . trcsts () , self . twcsts () , self . txqsts () , self . txstsfsts () , self . ptxq () , self . stxstsf ())
-        }
-    }
-    #[doc = "Tx queue operating mode Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MtltxQomr(pub u32);
-    impl MtltxQomr {
-        #[doc = "Flush Transmit Queue"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn ftq(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Flush Transmit Queue"]
-        #[inline(always)]
-        pub const fn set_ftq(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Transmit Store and Forward"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn tsf(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Transmit Store and Forward"]
-        #[inline(always)]
-        pub const fn set_tsf(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Transmit Queue Enable"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn txqen(&self) -> u8 {
-            let val = (self.0 >> 2usize) & 0x03;
-            val as u8
-        }
-        #[doc = "Transmit Queue Enable"]
-        #[inline(always)]
-        pub const fn set_txqen(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
-        }
-        #[doc = "Transmit Threshold Control"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn ttc(&self) -> u8 {
-            let val = (self.0 >> 4usize) & 0x07;
-            val as u8
-        }
-        #[doc = "Transmit Threshold Control"]
-        #[inline(always)]
-        pub const fn set_ttc(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
-        }
-        #[doc = "Transmit Queue Size"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn tqs(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0x07;
-            val as u8
-        }
-        #[doc = "Transmit Queue Size"]
-        #[inline(always)]
-        pub const fn set_tqs(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
-        }
-    }
-    impl Default for MtltxQomr {
-        #[inline(always)]
-        fn default() -> MtltxQomr {
-            MtltxQomr(0)
-        }
-    }
-    impl core::fmt::Debug for MtltxQomr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("MtltxQomr")
-                .field("ftq", &self.ftq())
-                .field("tsf", &self.tsf())
-                .field("txqen", &self.txqen())
-                .field("ttc", &self.ttc())
-                .field("tqs", &self.tqs())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MtltxQomr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "MtltxQomr {{ ftq: {=bool:?}, tsf: {=bool:?}, txqen: {=u8:?}, ttc: {=u8:?}, tqs: {=u8:?} }}",
-                self.ftq(),
-                self.tsf(),
-                self.txqen(),
-                self.ttc(),
-                self.tqs()
-            )
-        }
-    }
-    #[doc = "Tx queue underflow register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct MtltxQur(pub u32);
-    impl MtltxQur {
-        #[doc = "Underflow Packet Counter"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn uffrmcnt(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0x07ff;
-            val as u16
-        }
-        #[doc = "Underflow Packet Counter"]
-        #[inline(always)]
-        pub const fn set_uffrmcnt(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x07ff << 0usize)) | (((val as u32) & 0x07ff) << 0usize);
-        }
-        #[doc = "Overflow Bit for Underflow Packet Counter"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn ufcntovf(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Overflow Bit for Underflow Packet Counter"]
-        #[inline(always)]
-        pub const fn set_ufcntovf(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-    }
-    impl Default for MtltxQur {
-        #[inline(always)]
-        fn default() -> MtltxQur {
-            MtltxQur(0)
-        }
-    }
-    impl core::fmt::Debug for MtltxQur {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("MtltxQur")
-                .field("uffrmcnt", &self.uffrmcnt())
-                .field("ufcntovf", &self.ufcntovf())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for MtltxQur {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "MtltxQur {{ uffrmcnt: {=u16:?}, ufcntovf: {=bool:?} }}",
-                self.uffrmcnt(),
-                self.ufcntovf()
             )
         }
     }

@@ -2164,13 +2164,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adcpre {
         #[doc = "PCLK2 divided by 2"]
-        DIV2 = 0x0,
+        Div2 = 0x0,
         #[doc = "PCLK2 divided by 4"]
-        DIV4 = 0x01,
+        Div4 = 0x01,
         #[doc = "PCLK2 divided by 6"]
-        DIV6 = 0x02,
+        Div6 = 0x02,
         #[doc = "PCLK2 divided by 8"]
-        DIV8 = 0x03,
+        Div8 = 0x03,
     }
     impl Adcpre {
         #[inline(always)]
@@ -2199,7 +2199,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hpre {
         #[doc = "SYSCLK not divided"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -2208,21 +2208,21 @@ pub mod vals {
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "SYSCLK divided by 2"]
-        DIV2 = 0x08,
+        Div2 = 0x08,
         #[doc = "SYSCLK divided by 4"]
-        DIV4 = 0x09,
+        Div4 = 0x09,
         #[doc = "SYSCLK divided by 8"]
-        DIV8 = 0x0a,
+        Div8 = 0x0a,
         #[doc = "SYSCLK divided by 16"]
-        DIV16 = 0x0b,
+        Div16 = 0x0b,
         #[doc = "SYSCLK divided by 64"]
-        DIV64 = 0x0c,
+        Div64 = 0x0c,
         #[doc = "SYSCLK divided by 128"]
-        DIV128 = 0x0d,
+        Div128 = 0x0d,
         #[doc = "SYSCLK divided by 256"]
-        DIV256 = 0x0e,
+        Div256 = 0x0e,
         #[doc = "SYSCLK divided by 512"]
-        DIV512 = 0x0f,
+        Div512 = 0x0f,
     }
     impl Hpre {
         #[inline(always)]
@@ -2251,18 +2251,18 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mcosel {
         #[doc = "MCO output disabled, no clock on MCO"]
-        DISABLE = 0x0,
+        Disable = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "System clock selected"]
-        SYS = 0x04,
+        Sys = 0x04,
         #[doc = "HSI oscillator clock selected"]
-        HSI = 0x05,
+        Hsi = 0x05,
         #[doc = "HSE oscillator clock selected"]
-        HSE = 0x06,
+        Hse = 0x06,
         #[doc = "PLL clock divided by 2 selected"]
-        PLL = 0x07,
+        Pll = 0x07,
     }
     impl Mcosel {
         #[inline(always)]
@@ -2291,35 +2291,35 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllmul {
         #[doc = "PLL input clock x2"]
-        MUL2 = 0x0,
+        Mul2 = 0x0,
         #[doc = "PLL input clock x3"]
-        MUL3 = 0x01,
+        Mul3 = 0x01,
         #[doc = "PLL input clock x4"]
-        MUL4 = 0x02,
+        Mul4 = 0x02,
         #[doc = "PLL input clock x5"]
-        MUL5 = 0x03,
+        Mul5 = 0x03,
         #[doc = "PLL input clock x6"]
-        MUL6 = 0x04,
+        Mul6 = 0x04,
         #[doc = "PLL input clock x7"]
-        MUL7 = 0x05,
+        Mul7 = 0x05,
         #[doc = "PLL input clock x8"]
-        MUL8 = 0x06,
+        Mul8 = 0x06,
         #[doc = "PLL input clock x9"]
-        MUL9 = 0x07,
+        Mul9 = 0x07,
         #[doc = "PLL input clock x10"]
-        MUL10 = 0x08,
+        Mul10 = 0x08,
         #[doc = "PLL input clock x11"]
-        MUL11 = 0x09,
+        Mul11 = 0x09,
         #[doc = "PLL input clock x12"]
-        MUL12 = 0x0a,
+        Mul12 = 0x0a,
         #[doc = "PLL input clock x13"]
-        MUL13 = 0x0b,
+        Mul13 = 0x0b,
         #[doc = "PLL input clock x14"]
-        MUL14 = 0x0c,
+        Mul14 = 0x0c,
         #[doc = "PLL input clock x15"]
-        MUL15 = 0x0d,
+        Mul15 = 0x0d,
         #[doc = "PLL input clock x16"]
-        MUL16 = 0x0e,
+        Mul16 = 0x0e,
         _RESERVED_f = 0x0f,
     }
     impl Pllmul {
@@ -2349,9 +2349,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllsrc {
         #[doc = "HSI divided by 2 selected as PLL input clock"]
-        HSI_DIV2 = 0x0,
+        HsiDiv2 = 0x0,
         #[doc = "HSE divided by PREDIV selected as PLL input clock"]
-        HSE_DIV_PREDIV = 0x01,
+        HseDivPrediv = 0x01,
     }
     impl Pllsrc {
         #[inline(always)]
@@ -2380,9 +2380,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllxtpre {
         #[doc = "HSE clock not divided"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "HSE clock divided by 2"]
-        DIV2 = 0x01,
+        Div2 = 0x01,
     }
     impl Pllxtpre {
         #[inline(always)]
@@ -2411,18 +2411,18 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ppre {
         #[doc = "HCLK not divided"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "HCLK divided by 2"]
-        DIV2 = 0x04,
+        Div2 = 0x04,
         #[doc = "HCLK divided by 4"]
-        DIV4 = 0x05,
+        Div4 = 0x05,
         #[doc = "HCLK divided by 8"]
-        DIV8 = 0x06,
+        Div8 = 0x06,
         #[doc = "HCLK divided by 16"]
-        DIV16 = 0x07,
+        Div16 = 0x07,
     }
     impl Ppre {
         #[inline(always)]
@@ -2451,13 +2451,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtcsel {
         #[doc = "No clock"]
-        DISABLE = 0x0,
+        Disable = 0x0,
         #[doc = "LSE oscillator clock used as RTC clock"]
-        LSE = 0x01,
+        Lse = 0x01,
         #[doc = "LSI oscillator clock used as RTC clock"]
-        LSI = 0x02,
+        Lsi = 0x02,
         #[doc = "HSE oscillator clock divided by a prescaler used as RTC clock"]
-        HSE = 0x03,
+        Hse = 0x03,
     }
     impl Rtcsel {
         #[inline(always)]
@@ -2486,11 +2486,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sw {
         #[doc = "HSI selected as system clock"]
-        HSI = 0x0,
+        Hsi = 0x0,
         #[doc = "HSE selected as system clock"]
-        HSE = 0x01,
+        Hse = 0x01,
         #[doc = "PLL selected as system clock"]
-        PLL1_P = 0x02,
+        Pll1P = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Sw {
@@ -2520,9 +2520,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usbpre {
         #[doc = "PLL clock is divided by 1.5"]
-        DIV1_5 = 0x0,
+        Div15 = 0x0,
         #[doc = "PLL clock is not divided"]
-        DIV1 = 0x01,
+        Div1 = 0x01,
     }
     impl Usbpre {
         #[inline(always)]

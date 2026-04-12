@@ -555,11 +555,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wave {
         #[doc = "Wave generation disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Noise wave generation enabled"]
-        NOISE = 0x01,
+        Noise = 0x01,
         #[doc = "Triangle wave generation enabled"]
-        TRIANGLE = 0x02,
+        Triangle = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Wave {

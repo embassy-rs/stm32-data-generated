@@ -524,14 +524,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DECRYPTION",
+                    name: "Decryption",
                     description: Some(
                         "OTFDEC working in decryption mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENCRYPTION",
+                    name: "Encryption",
                     description: Some(
                         "OTFDEC working in encryption mode",
                     ),
@@ -545,14 +545,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ENHANCED",
+                    name: "Enhanced",
                     description: Some(
                         "Enhanced encryption mode is activated, and only instruction accesses are decrypted",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "STANDARD",
+                    name: "Standard",
                     description: Some(
                         "All read accesses are decrypted (instruction or data).",
                     ),

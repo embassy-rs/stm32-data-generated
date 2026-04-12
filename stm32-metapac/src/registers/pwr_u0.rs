@@ -3244,28 +3244,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "STANDBY",
+                    name: "Standby",
                     description: Some(
                         "Standby mode",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "STOP0",
+                    name: "Stop0",
                     description: Some(
                         "Stop 0 mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "STOP1",
+                    name: "Stop1",
                     description: Some(
                         "Stop 1 mode",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "STOP2",
+                    name: "Stop2",
                     description: Some(
                         "Stop 2 mode",
                     ),
@@ -3279,56 +3279,56 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "V<sub>PVD0</sub> around 2.01V",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "V<sub>PVD1</sub> around 2.21V",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "V<sub>PVD2</sub> around 2.41V",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "V<sub>PVD3</sub> around 2.51V",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "B0x4",
                     description: Some(
                         "V<sub>PVD4</sub> around 2.61V",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B_0X5",
+                    name: "B0x5",
                     description: Some(
                         "V<sub>PVD5</sub> around 2.81V",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "B_0X6",
+                    name: "B0x6",
                     description: Some(
                         "V<sub>PVD6</sub> around 2.91V",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "B_0X7",
+                    name: "B0x7",
                     description: Some(
                         "External input analog voltage PVD_IN (compared internally to VREFINT)",
                     ),
@@ -3342,28 +3342,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "NONE",
+                    name: "None",
                     description: Some(
                         "The device did not enter any Stop mode.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "STOP0",
+                    name: "Stop0",
                     description: Some(
                         "The device entered in Stop 0 mode.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "STOP1",
+                    name: "Stop1",
                     description: Some(
                         "The device entered in Stop 1 mode.",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "STOP2",
+                    name: "Stop2",
                     description: Some(
                         "The device entered in Stop 2 mode.",
                     ),
@@ -3377,14 +3377,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "RANGE1",
+                    name: "Range1",
                     description: Some(
                         "Range 1",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RANGE2",
+                    name: "Range2",
                     description: Some(
                         "Range 2",
                     ),

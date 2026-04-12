@@ -676,9 +676,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Idr {
         #[doc = "Input is logic low"]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "Input is logic high"]
-        HIGH = 0x01,
+        High = 0x01,
     }
     impl Idr {
         #[inline(always)]
@@ -707,13 +707,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Moder {
         #[doc = "Input mode (reset state)"]
-        INPUT = 0x0,
+        Input = 0x0,
         #[doc = "General purpose output mode"]
-        OUTPUT = 0x01,
+        Output = 0x01,
         #[doc = "Alternate function mode"]
-        ALTERNATE = 0x02,
+        Alternate = 0x02,
         #[doc = "Analog mode"]
-        ANALOG = 0x03,
+        Analog = 0x03,
     }
     impl Moder {
         #[inline(always)]
@@ -742,9 +742,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Odr {
         #[doc = "Set output to logic low"]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "Set output to logic high"]
-        HIGH = 0x01,
+        High = 0x01,
     }
     impl Odr {
         #[inline(always)]
@@ -773,13 +773,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ospeedr {
         #[doc = "Low speed"]
-        LOW_SPEED = 0x0,
+        LowSpeed = 0x0,
         #[doc = "Medium speed"]
-        MEDIUM_SPEED = 0x01,
+        MediumSpeed = 0x01,
         #[doc = "High speed"]
-        HIGH_SPEED = 0x02,
+        HighSpeed = 0x02,
         #[doc = "Very high speed"]
-        VERY_HIGH_SPEED = 0x03,
+        VeryHighSpeed = 0x03,
     }
     impl Ospeedr {
         #[inline(always)]
@@ -808,9 +808,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ot {
         #[doc = "Output push-pull (reset state)"]
-        PUSH_PULL = 0x0,
+        PushPull = 0x0,
         #[doc = "Output open-drain"]
-        OPEN_DRAIN = 0x01,
+        OpenDrain = 0x01,
     }
     impl Ot {
         #[inline(always)]
@@ -839,11 +839,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pupdr {
         #[doc = "No pull-up, pull-down"]
-        FLOATING = 0x0,
+        Floating = 0x0,
         #[doc = "Pull-up"]
-        PULL_UP = 0x01,
+        PullUp = 0x01,
         #[doc = "Pull-down"]
-        PULL_DOWN = 0x02,
+        PullDown = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Pupdr {

@@ -4285,14 +4285,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "CONSTANT",
+                    name: "Constant",
                     description: Some(
                         "constant alpha.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "PIXEL",
+                    name: "Pixel",
                     description: Some(
                         "pixel alpha x constant alpha.",
                     ),
@@ -4306,14 +4306,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "CONSTANT",
+                    name: "Constant",
                     description: Some(
                         "1 - constant alpha.",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "PIXEL",
+                    name: "Pixel",
                     description: Some(
                         "1 - (pixel alpha x constant alpha).",
                     ),
@@ -4327,21 +4327,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "MAXIMUM",
+                    name: "Maximum",
                     description: Some(
                         "maximum burst length (16 words 64 bits, thus 128 Bytes).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WORD1",
+                    name: "Word1",
                     description: Some(
                         "1 word (of 64 bits) per burst.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "WORD16",
+                    name: "Word16",
                     description: Some(
                         "16 words (of 64 bits) per burst.",
                     ),
@@ -4355,14 +4355,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CONFIGURABLE",
+                    name: "Configurable",
                     description: Some(
                         "Blending Order Configurable.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FIXED",
+                    name: "Fixed",
                     description: Some(
                         "Blending Order Fixed.",
                     ),
@@ -4376,14 +4376,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BACKGROUND",
+                    name: "Background",
                     description: Some(
                         "layer set in background.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FOREGROUND",
+                    name: "Foreground",
                     description: Some(
                         "layer set in foreground.",
                     ),
@@ -4397,21 +4397,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "BUS128",
+                    name: "Bus128",
                     description: Some(
                         "128-Bit Bus.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "BUS32",
+                    name: "Bus32",
                     description: Some(
                         "32-Bit Bus.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BUS64",
+                    name: "Bus64",
                     description: Some(
                         "64-Bit Bus.",
                     ),
@@ -4425,7 +4425,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CLEAR",
+                    name: "Clear",
                     description: Some(
                         "Clears The Crcif Flag In Isrx.",
                     ),
@@ -4439,7 +4439,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CLEAR",
+                    name: "Clear",
                     description: Some(
                         "Clears The Fuif Flag In Isrx",
                     ),
@@ -4453,7 +4453,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CLEAR",
+                    name: "Clear",
                     description: Some(
                         "Clears The Fuwif Flag In Isrx.",
                     ),
@@ -4467,7 +4467,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CLEAR",
+                    name: "Clear",
                     description: Some(
                         "Clears The Lif Flag In Isrx.",
                     ),
@@ -4481,14 +4481,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "AVAILABLE",
+                    name: "Available",
                     description: Some(
                         "Crc Computation Available.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NOT_AVAILABLE",
+                    name: "NotAvailable",
                     description: Some(
                         "Crc No Computation Available.",
                     ),
@@ -4502,7 +4502,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CLEAR",
+                    name: "Clear",
                     description: Some(
                         "Clears The Rrif Flag In Isrx.",
                     ),
@@ -4516,7 +4516,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CLEAR",
+                    name: "Clear",
                     description: Some(
                         "Clears The Terrif Flag In Isrx.",
                     ),
@@ -4530,14 +4530,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE_HIGH",
+                    name: "ActiveHigh",
                     description: Some(
                         "Blanking (No Data/Pixel) Polarity Is Active High.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ACTIVE_LOW",
+                    name: "ActiveLow",
                     description: Some(
                         "Blanking (No Data/Pixel) Polarity Is Active Low.",
                     ),
@@ -4551,21 +4551,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NO_DITHERING",
+                    name: "NoDithering",
                     description: Some(
                         "No Dithering.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ORDERED",
+                    name: "Ordered",
                     description: Some(
                         "Ordered 4X4 Bayer.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PSEUDO_RANDOM",
+                    name: "PseudoRandom",
                     description: Some(
                         "Pseudo-Random Lfsr.",
                     ),
@@ -4579,21 +4579,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "GAMMA_INTERPOLATED",
+                    name: "GammaInterpolated",
                     description: Some(
                         "Gamma With 8 Interpolated Segments.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "GAMMA_SAMPLES",
+                    name: "GammaSamples",
                     description: Some(
                         "Gamma With 256 Samples.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NO_GAMMA",
+                    name: "NoGamma",
                     description: Some(
                         "No Gamma.",
                     ),
@@ -4607,14 +4607,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE",
+                    name: "Active",
                     description: Some(
                         "global reload active for this layer (control from LTDC_SRCR enabled).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MASKED",
+                    name: "Masked",
                     description: Some(
                         "global reload masked for this layer (control from LTDC_SRCR disabled).",
                     ),
@@ -4628,14 +4628,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE_HIGH",
+                    name: "ActiveHigh",
                     description: Some(
                         "Horizontal Synchronization Polarity Is Active High.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ACTIVE_LOW",
+                    name: "ActiveLow",
                     description: Some(
                         "Horizontal Synchronization Polarity Is Active Low.",
                     ),
@@ -4649,14 +4649,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NO_EFFECT",
+                    name: "NoEffect",
                     description: Some(
                         "No Effect",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RELOAD",
+                    name: "Reload",
                     description: Some(
                         "The Shadow Registers Are Reloaded Immediately.",
                     ),
@@ -4670,14 +4670,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CB_FIRST",
+                    name: "CbFirst",
                     description: Some(
                         "Cb Is Output First (Y0Cb, Then Y1Cr, Y2Cb And So On).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CR_FIRST",
+                    name: "CrFirst",
                     description: Some(
                         "Cr Is Output First (Y0Cr, Then Y1Cb, Y2Cr And So On).",
                     ),
@@ -4691,14 +4691,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BT601",
+                    name: "Bt601",
                     description: Some(
                         "Use Itu-R Bt.601 Set (For Typically Sdtv Analog-Like Displays).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BT709",
+                    name: "Bt709",
                     description: Some(
                         "Use Itu-R Bt.709 Set (For Typically Hdtv Digital-Like Displays).",
                     ),
@@ -4712,14 +4712,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FALLING_EDGE",
+                    name: "FallingEdge",
                     description: Some(
                         "The Pixel And Sync Data Are Generated At The Falling-Edge Of The Output Lcd_Clk Clock.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RISING_EDGE",
+                    name: "RisingEdge",
                     description: Some(
                         "The Pixel And Sync Data Are Generated At The Rising-Edge Of The Output Lcd_Clk Clock.",
                     ),
@@ -4733,56 +4733,56 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "ABGR8888",
+                    name: "Abgr8888",
                     description: Some(
                         "ABGR8888 (32 bpp).",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ARGB8888",
+                    name: "Argb8888",
                     description: Some(
                         "ARGB8888 (32 bpp).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BGR565",
+                    name: "Bgr565",
                     description: Some(
                         "BGR565 (16 bpp, A = 255).",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "BGRA8888",
+                    name: "Bgra8888",
                     description: Some(
                         "BGRA8888 (32 bpp).",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "FLEXIBLE",
+                    name: "Flexible",
                     description: Some(
                         "Flexible pixel format selected.",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "RGB565",
+                    name: "Rgb565",
                     description: Some(
                         "RGB565 (16 bpp, A = 255).",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "RGB888",
+                    name: "Rgb888",
                     description: Some(
                         "RGB888 (24 bpp packed, A = 255).",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "RGBA8888",
+                    name: "Rgba8888",
                     description: Some(
                         "RGBA8888 (32 bpp).",
                     ),
@@ -4796,14 +4796,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NO_ACTION",
+                    name: "NoAction",
                     description: Some(
                         "No Action.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ONE_FRAME",
+                    name: "OneFrame",
                     description: Some(
                         "Triggers One Frame.",
                     ),
@@ -4817,14 +4817,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NO_EFFECT",
+                    name: "NoEffect",
                     description: Some(
                         "No Effect",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RELOAD",
+                    name: "Reload",
                     description: Some(
                         "The Shadow Registers Are Reloaded During The Vertical Blanking Period (At The Beginning Of The First Line After The Active Display Area).",
                     ),
@@ -4838,14 +4838,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE_HIGH",
+                    name: "ActiveHigh",
                     description: Some(
                         "Vertical Synchronization Is Active High.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ACTIVE_LOW",
+                    name: "ActiveLow",
                     description: Some(
                         "Vertical Synchronization Is Active Low.",
                     ),
@@ -4859,21 +4859,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "FULL_PLANAR",
+                    name: "FullPlanar",
                     description: Some(
                         "full-Planar 420: (Cb and Cr component are replicated horizontally and vertically. The layer main configuration defines the access to the Y buffer, and auxiliary registers define the access to the Cb and Cr buffers).",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "INTERLEAVED",
+                    name: "Interleaved",
                     description: Some(
                         "interleaved 422 (Cb and Cr component are replicated horizontally for pixels P and P+1).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SEMI_PLANAR",
+                    name: "SemiPlanar",
                     description: Some(
                         "semi-Planar 420: (Cb and Cr component are replicated horizontally and vertically.The layer main configuration defines the access to the Y buffer, and auxiliary registers define the access to the Cb and Cr buffers).",
                     ),

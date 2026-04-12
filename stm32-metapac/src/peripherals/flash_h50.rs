@@ -1894,9 +1894,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bksel {
         #[doc = "Bank1 is selected for Bank erase / sector erase / interrupt enable"]
-        BANK1 = 0x0,
+        Bank1 = 0x0,
         #[doc = "Bank1 is selected for Bank erase / sector erase / interrupt enable"]
-        BANK2 = 0x01,
+        Bank2 = 0x01,
     }
     impl Bksel {
         #[inline(always)]
@@ -1925,18 +1925,18 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CodeOp {
         #[doc = "No Flash operation on going during previous reset"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Single write operation interrupted"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "Sector erase operation interrupted"]
-        B_0X3 = 0x03,
+        B0x3 = 0x03,
         #[doc = "Bank erase operation interrupted"]
-        B_0X4 = 0x04,
+        B0x4 = 0x04,
         #[doc = "Mass erase operation interrupted"]
-        B_0X5 = 0x05,
+        B0x5 = 0x05,
         #[doc = "Option change operation interrupted"]
-        B_0X6 = 0x06,
+        B0x6 = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl CodeOp {
@@ -1966,9 +1966,9 @@ pub mod vals {
     pub struct NsbootrNsbootLock(u8);
     impl NsbootrNsbootLock {
         #[doc = "The NSBOOTADD and SWAP_BANK are frozen."]
-        pub const B_0X_B4: Self = Self(0xb4);
+        pub const B0xB4: Self = Self(0xb4);
         #[doc = "The SWAP_BANK and NSBOOTADD can still be modified following their individual rules."]
-        pub const B_0X_C3: Self = Self(0xc3);
+        pub const B0xC3: Self = Self(0xc3);
     }
     impl NsbootrNsbootLock {
         pub const fn from_bits(val: u8) -> NsbootrNsbootLock {
@@ -1981,8 +1981,8 @@ pub mod vals {
     impl core::fmt::Debug for NsbootrNsbootLock {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0xb4 => f.write_str("B_0X_B4"),
-                0xc3 => f.write_str("B_0X_C3"),
+                0xb4 => f.write_str("B0xB4"),
+                0xc3 => f.write_str("B0xC3"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -1991,8 +1991,8 @@ pub mod vals {
     impl defmt::Format for NsbootrNsbootLock {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0xb4 => defmt::write!(f, "B_0X_B4"),
-                0xc3 => defmt::write!(f, "B_0X_C3"),
+                0xb4 => defmt::write!(f, "B0xB4"),
+                0xc3 => defmt::write!(f, "B0xC3"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -2014,9 +2014,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nspriv {
         #[doc = "access to non secure registers is always granted"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "access to non secure registers is denied in case of non privileged access."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Nspriv {
         #[inline(always)]
@@ -2045,9 +2045,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrBkpramEcc {
         #[doc = "BKPRAM ECC check enabled"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "BKPRAM ECC check disabled"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrBkpramEcc {
         #[inline(always)]
@@ -2076,13 +2076,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrBorLev {
         #[doc = "BOR OFF, POR/PDR reset threshold level is applied"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "BOR Level 1, the threshold level is low (around 2.1 V)"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         #[doc = "BOR Level 2, the threshold level is medium (around 2.4 V)"]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         #[doc = "BOR Level 3, the threshold level is high (around 2.7 V)"]
-        B_0X3 = 0x03,
+        B0x3 = 0x03,
     }
     impl OptsrBorLev {
         #[inline(always)]
@@ -2111,9 +2111,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIoVddHslv {
         #[doc = "High-speed IO at low VDD voltage feature disabled (VDD can exceed 2.5 V)"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "High-speed IO at low VDD voltage feature enabled (VDD remains below 2.5 V)"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrIoVddHslv {
         #[inline(always)]
@@ -2142,9 +2142,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIoVddioHslv {
         #[doc = "High-speed IO at low VDDIO2 voltage feature disabled (VDDIO2 can exceed 2.5 V)"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "High-speed IO at low VDDIO2 voltage feature enabled (VDDIO2 remains below 2.5 V)"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrIoVddioHslv {
         #[inline(always)]
@@ -2173,9 +2173,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIwdgStdby {
         #[doc = "Independent watchdog frozen in Standby mode"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Independent watchdog keep running in Standby mode."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrIwdgStdby {
         #[inline(always)]
@@ -2204,9 +2204,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIwdgStop {
         #[doc = "Independent watchdog frozen in system Stop mode"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Independent watchdog keep running in system Stop mode."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrIwdgStop {
         #[inline(always)]
@@ -2235,9 +2235,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIwdgSw {
         #[doc = "IWDG watchdog is controlled by hardware"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "IWDG watchdog is controlled by software"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrIwdgSw {
         #[inline(always)]
@@ -2266,9 +2266,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrNrstShdw {
         #[doc = "a reset is generated when entering Shutdown mode on core domain"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "no reset generated when entering Shutdown mode on core domain."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrNrstShdw {
         #[inline(always)]
@@ -2297,9 +2297,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrNrstStdby {
         #[doc = "a reset is generated when entering Standby mode on core domain"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "no reset generated when entering Standby mode on core domain."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrNrstStdby {
         #[inline(always)]
@@ -2328,9 +2328,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrNrstStop {
         #[doc = "a reset is generated when entering Stop mode on core domain"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "no reset generated when entering Stop mode on core domain."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrNrstStop {
         #[inline(always)]
@@ -2359,9 +2359,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrSramEcc {
         #[doc = "SRAM2 ECC check enabled"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "SRAM2 ECC check disabled"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrSramEcc {
         #[inline(always)]
@@ -2390,9 +2390,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrWwdgSw {
         #[doc = "WWDG watchdog is controlled by hardware"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "WWDG watchdog is controlled by software"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl OptsrWwdgSw {
         #[inline(always)]
@@ -2421,9 +2421,9 @@ pub mod vals {
     pub struct Privbb(u8);
     impl Privbb {
         #[doc = "sectors y in bank 1 is non privileged"]
-        pub const B_0X0: Self = Self(0x0);
+        pub const B0x0: Self = Self(0x0);
         #[doc = "sector y in bank 1 is privileged"]
-        pub const B_0X1: Self = Self(0x01);
+        pub const B0x1: Self = Self(0x01);
     }
     impl Privbb {
         pub const fn from_bits(val: u8) -> Privbb {
@@ -2436,8 +2436,8 @@ pub mod vals {
     impl core::fmt::Debug for Privbb {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B_0X0"),
-                0x01 => f.write_str("B_0X1"),
+                0x0 => f.write_str("B0x0"),
+                0x01 => f.write_str("B0x1"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2446,8 +2446,8 @@ pub mod vals {
     impl defmt::Format for Privbb {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B_0X0"),
-                0x01 => defmt::write!(f, "B_0X1"),
+                0x0 => defmt::write!(f, "B0x0"),
+                0x01 => defmt::write!(f, "B0x1"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -2469,17 +2469,17 @@ pub mod vals {
     pub struct ProductState(u8);
     impl ProductState {
         #[doc = "Provisioning"]
-        pub const PROVISIONING: Self = Self(0x17);
+        pub const Provisioning: Self = Self(0x17);
         #[doc = "iROT-Provisioned"]
-        pub const IROT_PROVISIONED: Self = Self(0x2e);
+        pub const IrotProvisioned: Self = Self(0x2e);
         #[doc = "Locked"]
-        pub const LOCKED: Self = Self(0x5c);
+        pub const Locked: Self = Self(0x5c);
         #[doc = "Closed"]
-        pub const CLOSED: Self = Self(0x72);
+        pub const Closed: Self = Self(0x72);
         #[doc = "Regression"]
-        pub const REGRESSION: Self = Self(0x9a);
+        pub const Regression: Self = Self(0x9a);
         #[doc = "Open"]
-        pub const OPEN: Self = Self(0xed);
+        pub const Open: Self = Self(0xed);
     }
     impl ProductState {
         pub const fn from_bits(val: u8) -> ProductState {
@@ -2492,12 +2492,12 @@ pub mod vals {
     impl core::fmt::Debug for ProductState {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x17 => f.write_str("PROVISIONING"),
-                0x2e => f.write_str("IROT_PROVISIONED"),
-                0x5c => f.write_str("LOCKED"),
-                0x72 => f.write_str("CLOSED"),
-                0x9a => f.write_str("REGRESSION"),
-                0xed => f.write_str("OPEN"),
+                0x17 => f.write_str("Provisioning"),
+                0x2e => f.write_str("IrotProvisioned"),
+                0x5c => f.write_str("Locked"),
+                0x72 => f.write_str("Closed"),
+                0x9a => f.write_str("Regression"),
+                0xed => f.write_str("Open"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2506,12 +2506,12 @@ pub mod vals {
     impl defmt::Format for ProductState {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x17 => defmt::write!(f, "PROVISIONING"),
-                0x2e => defmt::write!(f, "IROT_PROVISIONED"),
-                0x5c => defmt::write!(f, "LOCKED"),
-                0x72 => defmt::write!(f, "CLOSED"),
-                0x9a => defmt::write!(f, "REGRESSION"),
-                0xed => defmt::write!(f, "OPEN"),
+                0x17 => defmt::write!(f, "Provisioning"),
+                0x2e => defmt::write!(f, "IrotProvisioned"),
+                0x5c => defmt::write!(f, "Locked"),
+                0x72 => defmt::write!(f, "Closed"),
+                0x9a => defmt::write!(f, "Regression"),
+                0xed => defmt::write!(f, "Open"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }

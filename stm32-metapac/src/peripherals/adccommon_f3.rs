@@ -496,13 +496,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckmode {
         #[doc = "Use Kernel Clock adc_ker_ck_input divided by PRESC. Asynchronous mode"]
-        ASYNCHRONOUS = 0x0,
+        Asynchronous = 0x0,
         #[doc = "Use AHB clock rcc_hclk3. In this case rcc_hclk must equal sys_d1cpre_ck."]
-        SYNC_DIV1 = 0x01,
+        SyncDiv1 = 0x01,
         #[doc = "Use AHB clock rcc_hclk3 divided by 2."]
-        SYNC_DIV2 = 0x02,
+        SyncDiv2 = 0x02,
         #[doc = "Use AHB clock rcc_hclk3 divided by 4."]
-        SYNC_DIV4 = 0x03,
+        SyncDiv4 = 0x03,
     }
     impl Ckmode {
         #[inline(always)]
@@ -531,9 +531,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dmacfg {
         #[doc = "DMA One Shot mode selected"]
-        ONE_SHOT = 0x0,
+        OneShot = 0x0,
         #[doc = "DMA Circular mode selected"]
-        CIRCULATOR = 0x01,
+        Circulator = 0x01,
     }
     impl Dmacfg {
         #[inline(always)]
@@ -563,23 +563,23 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dual {
         #[doc = "Independent mode"]
-        INDEPENDENT = 0x0,
+        Independent = 0x0,
         #[doc = "Dual, combined regular simultaneous + injected simultaneous mode"]
-        DUAL_RJ = 0x01,
+        DualRj = 0x01,
         #[doc = "Dual, combined regular simultaneous + alternate trigger mode"]
-        DUAL_RA = 0x02,
+        DualRa = 0x02,
         #[doc = "Dual, combined injected simultaneous + fast interleaved mode"]
-        DUAL_IJ = 0x03,
+        DualIj = 0x03,
         _RESERVED_4 = 0x04,
         #[doc = "Dual, injected simultaneous mode only"]
-        DUAL_J = 0x05,
+        DualJ = 0x05,
         #[doc = "Dual, regular simultaneous mode only"]
-        DUAL_R = 0x06,
+        DualR = 0x06,
         #[doc = "dual, interleaved mode only"]
-        DUAL_I = 0x07,
+        DualI = 0x07,
         _RESERVED_8 = 0x08,
         #[doc = "Dual, alternate trigger mode only"]
-        DUAL_A = 0x09,
+        DualA = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
@@ -631,12 +631,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mdma {
         #[doc = "MDMA mode disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "MDMA mode enabled for 12 and 10-bit resolution"]
-        BITS12_10 = 0x02,
+        Bits1210 = 0x02,
         #[doc = "MDMA mode enabled for 8 and 6-bit resolution"]
-        BITS8_6 = 0x03,
+        Bits86 = 0x03,
     }
     impl Mdma {
         #[inline(always)]

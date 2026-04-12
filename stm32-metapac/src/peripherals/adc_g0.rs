@@ -1418,9 +1418,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Align {
         #[doc = "Right alignment"]
-        RIGHT = 0x0,
+        Right = 0x0,
         #[doc = "Left alignment"]
-        LEFT = 0x01,
+        Left = 0x01,
     }
     impl Align {
         #[inline(always)]
@@ -1449,13 +1449,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckmode {
         #[doc = "ADCCLK (Asynchronous clock mode)"]
-        ADCLK = 0x0,
+        Adclk = 0x0,
         #[doc = "PCLK/2 (Synchronous clock mode)"]
-        PCLK_DIV2 = 0x01,
+        PclkDiv2 = 0x01,
         #[doc = "PCLK/4 (Synchronous clock mode)"]
-        PCLK_DIV4 = 0x02,
+        PclkDiv4 = 0x02,
         #[doc = "PCLK (Synchronous clock mode)"]
-        PCLK = 0x03,
+        Pclk = 0x03,
     }
     impl Ckmode {
         #[inline(always)]
@@ -1484,9 +1484,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dmacfg {
         #[doc = "DMA one shot mode selected"]
-        ONE_SHOT = 0x0,
+        OneShot = 0x0,
         #[doc = "DMA circular mode selected"]
-        CIRCULAR = 0x01,
+        Circular = 0x01,
     }
     impl Dmacfg {
         #[inline(always)]
@@ -1515,13 +1515,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Exten {
         #[doc = "Hardware trigger detection disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Hardware trigger detection on the rising edge"]
-        RISING_EDGE = 0x01,
+        RisingEdge = 0x01,
         #[doc = "Hardware trigger detection on the falling edge"]
-        FALLING_EDGE = 0x02,
+        FallingEdge = 0x02,
         #[doc = "Hardware trigger detection on both the rising and falling edges"]
-        BOTH_EDGES = 0x03,
+        BothEdges = 0x03,
     }
     impl Exten {
         #[inline(always)]
@@ -1550,21 +1550,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Extsel {
         #[doc = "Timer 1 TRGO2 event"]
-        TIM1_TRGO2 = 0x0,
+        Tim1Trgo2 = 0x0,
         #[doc = "Timer 1 CC4 event"]
-        TIM1_CC4 = 0x01,
+        Tim1Cc4 = 0x01,
         #[doc = "Timer 2 TRGO event"]
-        TIM2_TRGO = 0x02,
+        Tim2Trgo = 0x02,
         #[doc = "Timer 3 TRGO event"]
-        TIM3_TRGO = 0x03,
+        Tim3Trgo = 0x03,
         #[doc = "Timer 15 TRGO event"]
-        TIM15_TRGO = 0x04,
+        Tim15Trgo = 0x04,
         #[doc = "Timer 6 TRGO event"]
-        TIM6_TRGO = 0x05,
+        Tim6Trgo = 0x05,
         #[doc = "Timer 4 TRGO event"]
-        TIM4_TRGO = 0x06,
+        Tim4Trgo = 0x06,
         #[doc = "EXTI line 11 event"]
-        EXTI_LINE11 = 0x07,
+        ExtiLine11 = 0x07,
     }
     impl Extsel {
         #[inline(always)]
@@ -1593,21 +1593,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ovsr {
         #[doc = "2x"]
-        MUL2 = 0x0,
+        Mul2 = 0x0,
         #[doc = "4x"]
-        MUL4 = 0x01,
+        Mul4 = 0x01,
         #[doc = "8x"]
-        MUL8 = 0x02,
+        Mul8 = 0x02,
         #[doc = "16x"]
-        MUL16 = 0x03,
+        Mul16 = 0x03,
         #[doc = "32x"]
-        MUL32 = 0x04,
+        Mul32 = 0x04,
         #[doc = "64x"]
-        MUL64 = 0x05,
+        Mul64 = 0x05,
         #[doc = "128x"]
-        MUL128 = 0x06,
+        Mul128 = 0x06,
         #[doc = "256x"]
-        MUL256 = 0x07,
+        Mul256 = 0x07,
     }
     impl Ovsr {
         #[inline(always)]
@@ -1636,23 +1636,23 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ovss {
         #[doc = "No shift"]
-        NO_SHIFT = 0x0,
+        NoShift = 0x0,
         #[doc = "Shift 1-bit"]
-        SHIFT1 = 0x01,
+        Shift1 = 0x01,
         #[doc = "Shift 2-bits"]
-        SHIFT2 = 0x02,
+        Shift2 = 0x02,
         #[doc = "Shift 3-bits"]
-        SHIFT3 = 0x03,
+        Shift3 = 0x03,
         #[doc = "Shift 4-bits"]
-        SHIFT4 = 0x04,
+        Shift4 = 0x04,
         #[doc = "Shift 5-bits"]
-        SHIFT5 = 0x05,
+        Shift5 = 0x05,
         #[doc = "Shift 6-bits"]
-        SHIFT6 = 0x06,
+        Shift6 = 0x06,
         #[doc = "Shift 7-bits"]
-        SHIFT7 = 0x07,
+        Shift7 = 0x07,
         #[doc = "Shift 8-bits"]
-        SHIFT8 = 0x08,
+        Shift8 = 0x08,
         _RESERVED_9 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
@@ -1688,29 +1688,29 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Presc {
         #[doc = "Input ADC clock not divided"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "Input ADC clock divided by 2"]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "Input ADC clock divided by 4"]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         #[doc = "Input ADC clock divided by 6"]
-        DIV6 = 0x03,
+        Div6 = 0x03,
         #[doc = "Input ADC clock divided by 8"]
-        DIV8 = 0x04,
+        Div8 = 0x04,
         #[doc = "Input ADC clock divided by 10"]
-        DIV10 = 0x05,
+        Div10 = 0x05,
         #[doc = "Input ADC clock divided by 12"]
-        DIV12 = 0x06,
+        Div12 = 0x06,
         #[doc = "Input ADC clock divided by 16"]
-        DIV16 = 0x07,
+        Div16 = 0x07,
         #[doc = "Input ADC clock divided by 32"]
-        DIV32 = 0x08,
+        Div32 = 0x08,
         #[doc = "Input ADC clock divided by 64"]
-        DIV64 = 0x09,
+        Div64 = 0x09,
         #[doc = "Input ADC clock divided by 128"]
-        DIV128 = 0x0a,
+        Div128 = 0x0a,
         #[doc = "Input ADC clock divided by 256"]
-        DIV256 = 0x0b,
+        Div256 = 0x0b,
         _RESERVED_c = 0x0c,
         _RESERVED_d = 0x0d,
         _RESERVED_e = 0x0e,
@@ -1743,13 +1743,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Res {
         #[doc = "12 bits"]
-        BITS12 = 0x0,
+        Bits12 = 0x0,
         #[doc = "10 bits"]
-        BITS10 = 0x01,
+        Bits10 = 0x01,
         #[doc = "8 bits"]
-        BITS8 = 0x02,
+        Bits8 = 0x02,
         #[doc = "6 bits"]
-        BITS6 = 0x03,
+        Bits6 = 0x03,
     }
     impl Res {
         #[inline(always)]
@@ -1778,21 +1778,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "1.5 ADC clock cycles"]
-        CYCLES1_5 = 0x0,
+        Cycles15 = 0x0,
         #[doc = "3.5 ADC clock cycles"]
-        CYCLES3_5 = 0x01,
+        Cycles35 = 0x01,
         #[doc = "7.5 ADC clock cycles"]
-        CYCLES7_5 = 0x02,
+        Cycles75 = 0x02,
         #[doc = "12.5 ADC clock cycles"]
-        CYCLES12_5 = 0x03,
+        Cycles125 = 0x03,
         #[doc = "19.5 ADC clock cycles"]
-        CYCLES19_5 = 0x04,
+        Cycles195 = 0x04,
         #[doc = "39.5 ADC clock cycles"]
-        CYCLES39_5 = 0x05,
+        Cycles395 = 0x05,
         #[doc = "79.5 ADC clock cycles"]
-        CYCLES79_5 = 0x06,
+        Cycles795 = 0x06,
         #[doc = "160.5 ADC clock cycles"]
-        CYCLES160_5 = 0x07,
+        Cycles1605 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]
@@ -1821,9 +1821,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Scandir {
         #[doc = "Upward scan (from CHSEL0 to CHSEL17)"]
-        UPWARD = 0x0,
+        Upward = 0x0,
         #[doc = "Backward scan (from CHSEL17 to CHSEL0)"]
-        BACKWARD = 0x01,
+        Backward = 0x01,
     }
     impl Scandir {
         #[inline(always)]
@@ -1852,9 +1852,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpsel {
         #[doc = "Sampling time of CHANNELx use the setting of SMP1 register"]
-        SMP1 = 0x0,
+        Smp1 = 0x0,
         #[doc = "Sampling time of CHANNELx use the setting of SMP2 register"]
-        SMP2 = 0x01,
+        Smp2 = 0x01,
     }
     impl Smpsel {
         #[inline(always)]
@@ -1883,37 +1883,37 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sq {
         #[doc = "Channel 0 selected for the Nth conversion"]
-        CH0 = 0x0,
+        Ch0 = 0x0,
         #[doc = "Channel 1 selected for the Nth conversion"]
-        CH1 = 0x01,
+        Ch1 = 0x01,
         #[doc = "Channel 2 selected for the Nth conversion"]
-        CH2 = 0x02,
+        Ch2 = 0x02,
         #[doc = "Channel 3 selected for the Nth conversion"]
-        CH3 = 0x03,
+        Ch3 = 0x03,
         #[doc = "Channel 4 selected for the Nth conversion"]
-        CH4 = 0x04,
+        Ch4 = 0x04,
         #[doc = "Channel 5 selected for the Nth conversion"]
-        CH5 = 0x05,
+        Ch5 = 0x05,
         #[doc = "Channel 6 selected for the Nth conversion"]
-        CH6 = 0x06,
+        Ch6 = 0x06,
         #[doc = "Channel 7 selected for the Nth conversion"]
-        CH7 = 0x07,
+        Ch7 = 0x07,
         #[doc = "Channel 8 selected for the Nth conversion"]
-        CH8 = 0x08,
+        Ch8 = 0x08,
         #[doc = "Channel 9 selected for the Nth conversion"]
-        CH9 = 0x09,
+        Ch9 = 0x09,
         #[doc = "Channel 10 selected for the Nth conversion"]
-        CH10 = 0x0a,
+        Ch10 = 0x0a,
         #[doc = "Channel 11 selected for the Nth conversion"]
-        CH11 = 0x0b,
+        Ch11 = 0x0b,
         #[doc = "Channel 12 selected for the Nth conversion"]
-        CH12 = 0x0c,
+        Ch12 = 0x0c,
         #[doc = "Channel 13 selected for the Nth conversion"]
-        CH13 = 0x0d,
+        Ch13 = 0x0d,
         #[doc = "Channel 14 selected for the Nth conversion"]
-        CH14 = 0x0e,
+        Ch14 = 0x0e,
         #[doc = "End of sequence"]
-        EOS = 0x0f,
+        Eos = 0x0f,
     }
     impl Sq {
         #[inline(always)]

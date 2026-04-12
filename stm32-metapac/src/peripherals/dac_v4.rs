@@ -905,21 +905,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Normal mode, external pin only, buffer enabled"]
-        NORMAL_EXT_BUFEN = 0x0,
+        NormalExtBufen = 0x0,
         #[doc = "Normal mode, external pin and internal peripherals, buffer enabled"]
-        NORMAL_EXT_INT_BUFEN = 0x01,
+        NormalExtIntBufen = 0x01,
         #[doc = "Normal mode, external pin only, buffer disabled"]
-        NORMAL_EXT_BUFDIS = 0x02,
+        NormalExtBufdis = 0x02,
         #[doc = "Normal mode, internal peripherals only, buffer disabled"]
-        NORMAL_INT_BUFDIS = 0x03,
+        NormalIntBufdis = 0x03,
         #[doc = "Sample and hold mode, external pin only, buffer enabled"]
-        SAMPHOLD_EXT_BUFEN = 0x04,
+        SampholdExtBufen = 0x04,
         #[doc = "Sample and hold mode, external pin and internal peripherals, buffer enabled"]
-        SAMPHOLD_EXT_INT_BUFEN = 0x05,
+        SampholdExtIntBufen = 0x05,
         #[doc = "Sample and hold mode, external pin and internal peripherals, buffer disabled"]
-        SAMPHOLD_EXT_INT_BUFDIS = 0x06,
+        SampholdExtIntBufdis = 0x06,
         #[doc = "Sample and hold mode, internal peripherals only, buffer disabled"]
-        SAMPHOLD_INT_BUFDIS = 0x07,
+        SampholdIntBufdis = 0x07,
     }
     impl Mode {
         #[inline(always)]
@@ -948,11 +948,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wave {
         #[doc = "Wave generation disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Noise wave generation enabled"]
-        NOISE = 0x01,
+        Noise = 0x01,
         #[doc = "Triangle wave generation enabled"]
-        TRIANGLE = 0x02,
+        Triangle = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Wave {

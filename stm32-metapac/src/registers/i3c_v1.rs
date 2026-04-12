@@ -3067,12 +3067,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MUST_ACKED",
+                    name: "MustAcKed",
                     description: None,
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MUST_NACKED",
+                    name: "MustNacKed",
                     description: None,
                     value: 0,
                 },
@@ -3084,77 +3084,77 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "CE0",
+                    name: "Ce0",
                     description: Some(
                         "Transaction after sending CCC. Controller detected an illegally formatted CCC",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CE1",
+                    name: "Ce1",
                     description: Some(
                         "Monitoring error. Controller detected that transmitted data on the bus is different from expected",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "CE2",
+                    name: "Ce2",
                     description: Some(
                         "No response to broadcast address. Controller detected a not acknowledged broadcast address (0b111_1110)",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "CE3",
+                    name: "Ce3",
                     description: Some(
                         "Failed controller-role hand-off. Controller detected the new controller did not drive bus after controller-role hand-off",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "TE0",
+                    name: "Te0",
                     description: Some(
                         "Invalid broadcast address 0b111_1110 + W. Target detected an invalid broadcast address 0b111_1110 + W",
                     ),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "TE1",
+                    name: "Te1",
                     description: Some(
                         "CCC code. Target detected a parity error on a CCC code via a parity check (vs. T bit)",
                     ),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "TE2",
+                    name: "Te2",
                     description: Some(
                         "Write data. Target detected a parity error on a write data via a parity check (vs. T bit)",
                     ),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "TE3",
+                    name: "Te3",
                     description: Some(
                         "Assigned address during dynamic address arbitration. Target detected a parity error on the assigned address during dynamic address arbitration via a parity check (vs. PAR bit)",
                     ),
                     value: 11,
                 },
                 EnumVariant {
-                    name: "TE4",
+                    name: "Te4",
                     description: Some(
                         "0b111_1110 + R missing after Sr during dynamic address arbitration. Target detected a 0b111_1110 + R missing after Sr during dynamic address arbitration",
                     ),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "TE5",
+                    name: "Te5",
                     description: Some(
                         "Transaction after detecting CCC. Target detected an illegally formatted CCC",
                     ),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "TE6",
+                    name: "Te6",
                     description: Some(
                         "Monitoring error. Target detected that transmitted data on the bus is different from expected",
                     ),
@@ -3168,14 +3168,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CONTROLLER",
+                    name: "Controller",
                     description: Some(
                         "Once enabled by setting EN = 1, the peripheral initially acts as a controller. It has the I3C\ncontroller role, so drives SCL line and enables SDA pull-up, until it eventually offers the\ncontroller role to an I3C secondary controller.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TARGET",
+                    name: "Target",
                     description: Some(
                         "Once enabled by setting EN = 1, the peripheral initially acts as a target. I3C does not drive SCL line and does not enable SDA pull-up, until it eventually acquires the controller role.",
                     ),
@@ -3189,12 +3189,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "READ",
+                    name: "Read",
                     description: None,
                     value: 1,
                 },
                 EnumVariant {
-                    name: "WRITE",
+                    name: "Write",
                     description: None,
                     value: 0,
                 },
@@ -3206,14 +3206,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ALLOWED",
+                    name: "Allowed",
                     description: Some(
                         "write to DA[7:0] and to IBIDEN in the I3C_DEVRx register is allowed",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOCKED",
+                    name: "Locked",
                     description: Some(
                         "write to DA[7:0] and to IBIDEN is disabled/locked",
                     ),
@@ -3227,14 +3227,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "REPEATED_START",
+                    name: "RepeatedStart",
                     description: Some(
                         "this message from controller is followed by a repeated start (Sr), before another message must be emitted",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "STOP",
+                    name: "Stop",
                     description: Some(
                         "this message from controller ends with a stop (P), being the last message of a frame",
                     ),
@@ -3248,14 +3248,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "READ",
+                    name: "Read",
                     description: Some(
                         "read message",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "WRITE",
+                    name: "Write",
                     description: Some(
                         "write message",
                     ),
@@ -3269,24 +3269,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "FIRST_LEVEL",
+                    name: "FirstLevel",
                     description: Some(
                         "first level of reset: the application software must either:\na) partially reset the peripheral, by a write and clear of the enable bit of the I3C\nconfiguration register (write EN = 0). This resets the I3C bus interface and the I3C kernel\nsub-parts, without modifying the content of the I3C APB registers (except the EN bit).\nb) fully reset the peripheral, including all its registers, via a write and set of the I3C reset\ncontrol bit of the RCC (reset and clock controller) register.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NO_RESET",
+                    name: "NoReset",
                     description: None,
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NO_RESET_EITHER",
+                    name: "NoResetEither",
                     description: None,
                     value: 3,
                 },
                 EnumVariant {
-                    name: "SECOND_LEVEL",
+                    name: "SecondLevel",
                     description: Some(
                         "second level of reset: the application software must issue a warm reset, also known as a\nsystem reset. This (see Section 11: Reset and clock control (RCC)) has the same impact as a\npin reset (NRST = 0):\n  – the software writes and sets the SYSRESETREQ control bit of the AITR register, when\n  the device is controlled by a Cortex®-M.\n  – the software writes and sets SYSRST = 1 in the RCC_GRSTCSETR register, when the\n  device is controlled by a Cortex®-A.",
                     ),
@@ -3300,14 +3300,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BYTE",
+                    name: "Byte",
                     description: Some(
                         "TXFNFF is set when 1 byte must be written in TX-FIFO (in I3C_TDR).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WORD",
+                    name: "Word",
                     description: Some(
                         "TXFNFF is set when 1 word / 4 bytes must be written in TX-FIFO (in the I3C_TDWR\nregister). If the a number of the last transmitted data is not a multiple of 4 bytes\n(XDCNT[1:0] = 00 in the I3C_SR register), only the relevant 1, 2, or 3 valid LSB bytes of\nthe last word are taken into account by the hardware, and sent on the I3C bus.",
                     ),

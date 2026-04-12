@@ -1597,14 +1597,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOT_MATCH",
+                    name: "NotMatch",
                     description: Some(
                         "Date/day don’t care in Alarm comparison",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TO_MATCH",
+                    name: "ToMatch",
                     description: Some(
                         "Alarm set if the date/day match",
                     ),
@@ -1618,14 +1618,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "AM",
+                    name: "Am",
                     description: Some(
                         "AM or 24-hour format",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PM",
+                    name: "Pm",
                     description: Some(
                         "PM",
                     ),
@@ -1639,14 +1639,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DATE_UNITS",
+                    name: "DateUnits",
                     description: Some(
                         "DU[3:0] represents the date units",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WEEK_DAY",
+                    name: "WeekDay",
                     description: Some(
                         "DU[3:0] represents the week day. DT[1:0] is don’t care",
                     ),
@@ -1660,14 +1660,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "AM",
+                    name: "Am",
                     description: Some(
                         "AM or 24-hour format",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PM",
+                    name: "Pm",
                     description: Some(
                         "PM",
                     ),
@@ -1681,28 +1681,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ALARM_A",
+                    name: "AlarmA",
                     description: Some(
                         "Alarm A output enabled",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ALARM_B",
+                    name: "AlarmB",
                     description: Some(
                         "Alarm B output enabled",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "Disabled",
                     description: Some(
                         "Output disabled",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WAKEUP",
+                    name: "Wakeup",
                     description: Some(
                         "Wakeup output enabled",
                     ),
@@ -1716,14 +1716,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HIGH",
+                    name: "High",
                     description: Some(
                         "The pin is high when ALRAF/ALRBF/WUTF is asserted (depending on OSEL[1:0])",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOW",
+                    name: "Low",
                     description: Some(
                         "The pin is low when ALRAF/ALRBF/WUTF is asserted (depending on OSEL[1:0])",
                     ),
@@ -1737,14 +1737,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FALLING_EDGE",
+                    name: "FallingEdge",
                     description: Some(
                         "If TAMPFLT = 00: RTC_TAMPx input staying high triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input falling edge triggers a tamper detection event",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RISING_EDGE",
+                    name: "RisingEdge",
                     description: Some(
                         "If TAMPFLT = 00: RTC_TAMPx input rising edge triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input staying low triggers a tamper detection event.",
                     ),
@@ -1758,14 +1758,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FALLING_EDGE",
+                    name: "FallingEdge",
                     description: Some(
                         "RTC_TS input falling edge generates a time-stamp event",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RISING_EDGE",
+                    name: "RisingEdge",
                     description: Some(
                         "RTC_TS input rising edge generates a time-stamp event",
                     ),
@@ -1779,42 +1779,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "CLOCK_SPARE",
+                    name: "ClockSpare",
                     description: Some(
                         "ck_spre (usually 1 Hz) clock is selected",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "CLOCK_SPARE_WITH_OFFSET",
+                    name: "ClockSpareWithOffset",
                     description: Some(
                         "ck_spre (usually 1 Hz) clock is selected and 2^16 is added to the WUT counter value",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DIV16",
+                    name: "Div16",
                     description: Some(
                         "RTC/16 clock is selected",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV2",
+                    name: "Div2",
                     description: Some(
                         "RTC/2 clock is selected",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DIV4",
+                    name: "Div4",
                     description: Some(
                         "RTC/4 clock is selected",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DIV8",
+                    name: "Div8",
                     description: Some(
                         "RTC/8 clock is selected",
                     ),

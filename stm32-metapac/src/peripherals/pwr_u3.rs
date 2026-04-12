@@ -5141,9 +5141,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Flashfwu {
         #[doc = "Flash memory enters low-power mode in Stop 0 and Stop 1 modes (lower-power consumption)."]
-        LOW_POWER = 0x0,
+        LowPower = 0x0,
         #[doc = "Flash memory remains in normal mode in Stop 0 and Stop 1 modes (faster wakeup time)."]
-        NORMAL = 0x01,
+        Normal = 0x01,
     }
     impl Flashfwu {
         #[inline(always)]
@@ -5172,21 +5172,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpms {
         #[doc = "Stop 0 mode."]
-        STOP0 = 0x0,
+        Stop0 = 0x0,
         #[doc = "Stop 1 mode."]
-        STOP1 = 0x01,
+        Stop1 = 0x01,
         #[doc = "Stop 2 mode."]
-        STOP2 = 0x02,
+        Stop2 = 0x02,
         #[doc = "Stop 3 mode."]
-        STOP3 = 0x03,
+        Stop3 = 0x03,
         #[doc = "Standby mode."]
-        STOP4 = 0x04,
+        Stop4 = 0x04,
         #[doc = "Standby mode."]
-        STOP5 = 0x05,
+        Stop5 = 0x05,
         #[doc = "Shutdown mode."]
-        STOP6 = 0x06,
+        Stop6 = 0x06,
         #[doc = "Shutdown mode."]
-        STOP7 = 0x07,
+        Stop7 = 0x07,
     }
     impl Lpms {
         #[inline(always)]
@@ -5215,9 +5215,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pds {
         #[doc = "Contents retained in Stop modes."]
-        RETAINED = 0x0,
+        Retained = 0x0,
         #[doc = "Content lost in Stop modes."]
-        LOST = 0x01,
+        Lost = 0x01,
     }
     impl Pds {
         #[inline(always)]
@@ -5260,7 +5260,7 @@ pub mod vals {
         #[doc = "VPVD6 around 2.9V."]
         V29 = 0x06,
         #[doc = "External input analog voltage PVD_IN (compared internally to VREFINT)."]
-        PVD_IN = 0x07,
+        PvdIn = 0x07,
     }
     impl Pvdls {
         #[inline(always)]
@@ -5289,9 +5289,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pvdo {
         #[doc = "VDD is equal or above the PVD threshold selected by PVDLS\\[2:0\\]."]
-        ABOVE_OR_EQUAL = 0x0,
+        AboveOrEqual = 0x0,
         #[doc = "VDD is below the PVD threshold selected by PVDLS\\[2:0\\]."]
-        BELOW = 0x01,
+        Below = 0x01,
     }
     impl Pvdo {
         #[inline(always)]
@@ -5320,9 +5320,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Regsel {
         #[doc = "LDO selected."]
-        LDO = 0x0,
+        Ldo = 0x0,
         #[doc = "SMPS selected."]
-        SMPS = 0x01,
+        Smps = 0x01,
     }
     impl Regsel {
         #[inline(always)]
@@ -5351,9 +5351,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sramfwu {
         #[doc = "SRAMs enters low-power mode in Stop 0 and Stop 1 modes (source biasing for lower-power consumption)."]
-        LOW_POWER = 0x0,
+        LowPower = 0x0,
         #[doc = "SRAMs remains in normal mode in Stop 0 and Stop 1 modes (higher consumption but no SRAM wakeup time)."]
-        NORMAL = 0x01,
+        Normal = 0x01,
     }
     impl Sramfwu {
         #[inline(always)]
@@ -5382,9 +5382,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Srampd {
         #[doc = "SRAM1 powered on."]
-        POWERED_ON = 0x0,
+        PoweredOn = 0x0,
         #[doc = "SRAM1 powered off."]
-        POWERED_OFF = 0x01,
+        PoweredOff = 0x01,
     }
     impl Srampd {
         #[inline(always)]
@@ -5413,9 +5413,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbrs {
         #[doc = "Charge VBAT through a 5 k ohm resistor."]
-        CHARGE_5K = 0x0,
+        Charge5k = 0x0,
         #[doc = "Charge VBAT through a 1.5 k ohm resistor."]
-        CHARGE_1_5K = 0x01,
+        Charge15k = 0x01,
     }
     impl Vbrs {
         #[inline(always)]
@@ -5444,9 +5444,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wupp {
         #[doc = "Detection on high level (rising edge)."]
-        HIGH = 0x0,
+        High = 0x0,
         #[doc = "Detection on low level (falling edge)."]
-        LOW = 0x01,
+        Low = 0x01,
     }
     impl Wupp {
         #[inline(always)]
@@ -5475,13 +5475,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wusel {
         #[doc = "WKUPx_0."]
-        WKUPX_0 = 0x0,
+        WkuPx0 = 0x0,
         #[doc = "WKUPx_1."]
-        WKUPX_1 = 0x01,
+        WkuPx1 = 0x01,
         #[doc = "WKUPx_2."]
-        WKUPX_2 = 0x02,
+        WkuPx2 = 0x02,
         #[doc = "WKUPx_3."]
-        WKUPX_3 = 0x03,
+        WkuPx3 = 0x03,
     }
     impl Wusel {
         #[inline(always)]

@@ -5513,12 +5513,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adcsel {
         #[doc = "No clock selected"]
-        DISABLE = 0x0,
+        Disable = 0x0,
         #[doc = "PLLADC1CLK clock selected"]
-        PLLSAI1_R = 0x01,
+        Pllsai1R = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "SYSCLK clock selected"]
-        SYS = 0x03,
+        Sys = 0x03,
     }
     impl Adcsel {
         #[inline(always)]
@@ -5547,11 +5547,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adfsdmsel {
         #[doc = "SAI1clock selected as DFSDM audio clock"]
-        PLLSAI1_P = 0x0,
+        Pllsai1P = 0x0,
         #[doc = "HSI clock selected as DFSDM audio clock"]
-        HSI = 0x01,
+        Hsi = 0x01,
         #[doc = "MSI clock selected as DFSDM audio clock"]
-        MSI = 0x02,
+        Msi = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Adfsdmsel {
@@ -5581,13 +5581,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Clk48sel {
         #[doc = "HSI48 clock selected"]
-        HSI48 = 0x0,
+        Hsi48 = 0x0,
         #[doc = "PLLSAI1_Q aka PLL48M1CLK clock selected"]
-        PLLSAI1_Q = 0x01,
+        Pllsai1Q = 0x01,
         #[doc = "PLL_Q aka PLL48M2CLK clock selected"]
-        PLL1_Q = 0x02,
+        Pll1Q = 0x02,
         #[doc = "MSI clock selected"]
-        MSI = 0x03,
+        Msi = 0x03,
     }
     impl Clk48sel {
         #[inline(always)]
@@ -5616,9 +5616,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dfsdmsel {
         #[doc = "APB2 clock (PCLK2) selected as DFSDM kernel clock"]
-        PCLK2 = 0x0,
+        Pclk2 = 0x0,
         #[doc = "System clock selected as DFSDM kernel clock"]
-        SYS = 0x01,
+        Sys = 0x01,
     }
     impl Dfsdmsel {
         #[inline(always)]
@@ -5647,9 +5647,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dsisel {
         #[doc = "DSI-PHY is selected as DSI byte lane clock source (usual case)"]
-        DSI_PHY_DIV_8 = 0x0,
+        DsiPhyDiv8 = 0x0,
         #[doc = "PLLDSICLK is selected as DSI byte lane clock source, used in case DSI PLL and DSIPHY are off (low-power mode)"]
-        PLLSAI2_Q = 0x01,
+        Pllsai2Q = 0x01,
     }
     impl Dsisel {
         #[inline(always)]
@@ -5678,7 +5678,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hpre {
         #[doc = "system clock not divided"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -5687,21 +5687,21 @@ pub mod vals {
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "system clock divided by 2"]
-        DIV2 = 0x08,
+        Div2 = 0x08,
         #[doc = "system clock divided by 4"]
-        DIV4 = 0x09,
+        Div4 = 0x09,
         #[doc = "system clock divided by 8"]
-        DIV8 = 0x0a,
+        Div8 = 0x0a,
         #[doc = "system clock divided by 16"]
-        DIV16 = 0x0b,
+        Div16 = 0x0b,
         #[doc = "system clock divided by 64"]
-        DIV64 = 0x0c,
+        Div64 = 0x0c,
         #[doc = "system clock divided by 128"]
-        DIV128 = 0x0d,
+        Div128 = 0x0d,
         #[doc = "system clock divided by 256"]
-        DIV256 = 0x0e,
+        Div256 = 0x0e,
         #[doc = "system clock divided by 512"]
-        DIV512 = 0x0f,
+        Div512 = 0x0f,
     }
     impl Hpre {
         #[inline(always)]
@@ -5730,11 +5730,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2c1sel {
         #[doc = "PCLK clock selected"]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "SYSCLK clock selected"]
-        SYS = 0x01,
+        Sys = 0x01,
         #[doc = "HSI clock selected"]
-        HSI = 0x02,
+        Hsi = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl I2c1sel {
@@ -5764,11 +5764,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2c2sel {
         #[doc = "PCLK clock selected"]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "SYSCLK clock selected"]
-        SYS = 0x01,
+        Sys = 0x01,
         #[doc = "HSI clock selected"]
-        HSI = 0x02,
+        Hsi = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl I2c2sel {
@@ -5798,11 +5798,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2c3sel {
         #[doc = "PCLK clock selected"]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "SYSCLK clock selected"]
-        SYS = 0x01,
+        Sys = 0x01,
         #[doc = "HSI clock selected"]
-        HSI = 0x02,
+        Hsi = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl I2c3sel {
@@ -5832,11 +5832,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2c4sel {
         #[doc = "PCLK clock selected"]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "SYSCLK clock selected"]
-        SYS = 0x01,
+        Sys = 0x01,
         #[doc = "HSI clock selected"]
-        HSI = 0x02,
+        Hsi = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl I2c4sel {
@@ -5866,13 +5866,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lptim1sel {
         #[doc = "PCLK clock selected"]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "LSI clock selected"]
-        LSI = 0x01,
+        Lsi = 0x01,
         #[doc = "HSI clock selected"]
-        HSI = 0x02,
+        Hsi = 0x02,
         #[doc = "LSE clock selected"]
-        LSE = 0x03,
+        Lse = 0x03,
     }
     impl Lptim1sel {
         #[inline(always)]
@@ -5901,13 +5901,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lptim2sel {
         #[doc = "PCLK clock selected"]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "LSI clock selected"]
-        LSI = 0x01,
+        Lsi = 0x01,
         #[doc = "HSI clock selected"]
-        HSI = 0x02,
+        Hsi = 0x02,
         #[doc = "LSE clock selected"]
-        LSE = 0x03,
+        Lse = 0x03,
     }
     impl Lptim2sel {
         #[inline(always)]
@@ -5936,13 +5936,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpuart1sel {
         #[doc = "PCLK clock selected"]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "SYSCLK clock selected"]
-        SYS = 0x01,
+        Sys = 0x01,
         #[doc = "HSI clock selected"]
-        HSI = 0x02,
+        Hsi = 0x02,
         #[doc = "LSE clock selected"]
-        LSE = 0x03,
+        Lse = 0x03,
     }
     impl Lpuart1sel {
         #[inline(always)]
@@ -5971,9 +5971,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lscosel {
         #[doc = "LSI clock selected"]
-        LSI = 0x0,
+        Lsi = 0x0,
         #[doc = "LSE clock selected"]
-        LSE = 0x01,
+        Lse = 0x01,
     }
     impl Lscosel {
         #[inline(always)]
@@ -6002,13 +6002,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsedrv {
         #[doc = "Low driving capability"]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "Medium low driving capability"]
-        MEDIUM_LOW = 0x01,
+        MediumLow = 0x01,
         #[doc = "Medium high driving capability"]
-        MEDIUM_HIGH = 0x02,
+        MediumHigh = 0x02,
         #[doc = "High driving capability"]
-        HIGH = 0x03,
+        High = 0x03,
     }
     impl Lsedrv {
         #[inline(always)]
@@ -6037,15 +6037,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mcopre {
         #[doc = "No division"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "Division by 2"]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "Division by 4"]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         #[doc = "Division by 8"]
-        DIV8 = 0x03,
+        Div8 = 0x03,
         #[doc = "Division by 16"]
-        DIV16 = 0x04,
+        Div16 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -6077,23 +6077,23 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mcosel {
         #[doc = "No clock"]
-        DISABLE = 0x0,
+        Disable = 0x0,
         #[doc = "SYSCLK clock selected"]
-        SYS = 0x01,
+        Sys = 0x01,
         #[doc = "MSI oscillator clock selected"]
-        MSI = 0x02,
+        Msi = 0x02,
         #[doc = "HSI oscillator clock selected"]
-        HSI = 0x03,
+        Hsi = 0x03,
         #[doc = "HSE oscillator clock selected"]
-        HSE = 0x04,
+        Hse = 0x04,
         #[doc = "PLL clock selected"]
-        PLL = 0x05,
+        Pll = 0x05,
         #[doc = "LSI oscillator clock selected"]
-        LSI = 0x06,
+        Lsi = 0x06,
         #[doc = "LSE oscillator clock selected"]
-        LSE = 0x07,
+        Lse = 0x07,
         #[doc = "HSI48 oscillator clock selected"]
-        HSI48 = 0x08,
+        Hsi48 = 0x08,
         _RESERVED_9 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
@@ -6129,29 +6129,29 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msirange {
         #[doc = "range 0 around 100 kHz"]
-        RANGE100K = 0x0,
+        Range100k = 0x0,
         #[doc = "range 1 around 200 kHz"]
-        RANGE200K = 0x01,
+        Range200k = 0x01,
         #[doc = "range 2 around 400 kHz"]
-        RANGE400K = 0x02,
+        Range400k = 0x02,
         #[doc = "range 3 around 800 kHz"]
-        RANGE800K = 0x03,
+        Range800k = 0x03,
         #[doc = "range 4 around 1 MHz"]
-        RANGE1M = 0x04,
+        Range1m = 0x04,
         #[doc = "range 5 around 2 MHz"]
-        RANGE2M = 0x05,
+        Range2m = 0x05,
         #[doc = "range 6 around 4 MHz"]
-        RANGE4M = 0x06,
+        Range4m = 0x06,
         #[doc = "range 7 around 8 MHz"]
-        RANGE8M = 0x07,
+        Range8m = 0x07,
         #[doc = "range 8 around 16 MHz"]
-        RANGE16M = 0x08,
+        Range16m = 0x08,
         #[doc = "range 9 around 24 MHz"]
-        RANGE24M = 0x09,
+        Range24m = 0x09,
         #[doc = "range 10 around 32 MHz"]
-        RANGE32M = 0x0a,
+        Range32m = 0x0a,
         #[doc = "range 11 around 48 MHz"]
-        RANGE48M = 0x0b,
+        Range48m = 0x0b,
         _RESERVED_c = 0x0c,
         _RESERVED_d = 0x0d,
         _RESERVED_e = 0x0e,
@@ -6185,10 +6185,10 @@ pub mod vals {
     pub enum Msirgsel {
         #[doc = "MSI Range is provided by MSISRANGE\\[3:0\\]
 in RCC_CSR register"]
-        CSR = 0x0,
+        Csr = 0x0,
         #[doc = "MSI Range is provided by MSIRANGE\\[3:0\\]
 in the RCC_CR register"]
-        CR = 0x01,
+        Cr = 0x01,
     }
     impl Msirgsel {
         #[inline(always)]
@@ -6217,11 +6217,11 @@ in the RCC_CR register"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Octospisel {
         #[doc = "System clock selected as OctoSPI kernel clock"]
-        SYS = 0x0,
+        Sys = 0x0,
         #[doc = "MSI clock selected as OctoSPI kernel clock"]
-        MSI = 0x01,
+        Msi = 0x01,
         #[doc = "PLL48M1CLK clock selected as OctoSPI kernel clock"]
-        PLL1_Q = 0x02,
+        Pll1Q = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Octospisel {
@@ -6250,22 +6250,22 @@ in the RCC_CR register"]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllm {
-        DIV1 = 0x0,
-        DIV2 = 0x01,
-        DIV3 = 0x02,
-        DIV4 = 0x03,
-        DIV5 = 0x04,
-        DIV6 = 0x05,
-        DIV7 = 0x06,
-        DIV8 = 0x07,
-        DIV9 = 0x08,
-        DIV10 = 0x09,
-        DIV11 = 0x0a,
-        DIV12 = 0x0b,
-        DIV13 = 0x0c,
-        DIV14 = 0x0d,
-        DIV15 = 0x0e,
-        DIV16 = 0x0f,
+        Div1 = 0x0,
+        Div2 = 0x01,
+        Div3 = 0x02,
+        Div4 = 0x03,
+        Div5 = 0x04,
+        Div6 = 0x05,
+        Div7 = 0x06,
+        Div8 = 0x07,
+        Div9 = 0x08,
+        Div10 = 0x09,
+        Div11 = 0x0a,
+        Div12 = 0x0b,
+        Div13 = 0x0c,
+        Div14 = 0x0d,
+        Div15 = 0x0e,
+        Div16 = 0x0f,
     }
     impl Pllm {
         #[inline(always)]
@@ -6301,126 +6301,126 @@ in the RCC_CR register"]
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
-        MUL8 = 0x08,
-        MUL9 = 0x09,
-        MUL10 = 0x0a,
-        MUL11 = 0x0b,
-        MUL12 = 0x0c,
-        MUL13 = 0x0d,
-        MUL14 = 0x0e,
-        MUL15 = 0x0f,
-        MUL16 = 0x10,
-        MUL17 = 0x11,
-        MUL18 = 0x12,
-        MUL19 = 0x13,
-        MUL20 = 0x14,
-        MUL21 = 0x15,
-        MUL22 = 0x16,
-        MUL23 = 0x17,
-        MUL24 = 0x18,
-        MUL25 = 0x19,
-        MUL26 = 0x1a,
-        MUL27 = 0x1b,
-        MUL28 = 0x1c,
-        MUL29 = 0x1d,
-        MUL30 = 0x1e,
-        MUL31 = 0x1f,
-        MUL32 = 0x20,
-        MUL33 = 0x21,
-        MUL34 = 0x22,
-        MUL35 = 0x23,
-        MUL36 = 0x24,
-        MUL37 = 0x25,
-        MUL38 = 0x26,
-        MUL39 = 0x27,
-        MUL40 = 0x28,
-        MUL41 = 0x29,
-        MUL42 = 0x2a,
-        MUL43 = 0x2b,
-        MUL44 = 0x2c,
-        MUL45 = 0x2d,
-        MUL46 = 0x2e,
-        MUL47 = 0x2f,
-        MUL48 = 0x30,
-        MUL49 = 0x31,
-        MUL50 = 0x32,
-        MUL51 = 0x33,
-        MUL52 = 0x34,
-        MUL53 = 0x35,
-        MUL54 = 0x36,
-        MUL55 = 0x37,
-        MUL56 = 0x38,
-        MUL57 = 0x39,
-        MUL58 = 0x3a,
-        MUL59 = 0x3b,
-        MUL60 = 0x3c,
-        MUL61 = 0x3d,
-        MUL62 = 0x3e,
-        MUL63 = 0x3f,
-        MUL64 = 0x40,
-        MUL65 = 0x41,
-        MUL66 = 0x42,
-        MUL67 = 0x43,
-        MUL68 = 0x44,
-        MUL69 = 0x45,
-        MUL70 = 0x46,
-        MUL71 = 0x47,
-        MUL72 = 0x48,
-        MUL73 = 0x49,
-        MUL74 = 0x4a,
-        MUL75 = 0x4b,
-        MUL76 = 0x4c,
-        MUL77 = 0x4d,
-        MUL78 = 0x4e,
-        MUL79 = 0x4f,
-        MUL80 = 0x50,
-        MUL81 = 0x51,
-        MUL82 = 0x52,
-        MUL83 = 0x53,
-        MUL84 = 0x54,
-        MUL85 = 0x55,
-        MUL86 = 0x56,
-        MUL87 = 0x57,
-        MUL88 = 0x58,
-        MUL89 = 0x59,
-        MUL90 = 0x5a,
-        MUL91 = 0x5b,
-        MUL92 = 0x5c,
-        MUL93 = 0x5d,
-        MUL94 = 0x5e,
-        MUL95 = 0x5f,
-        MUL96 = 0x60,
-        MUL97 = 0x61,
-        MUL98 = 0x62,
-        MUL99 = 0x63,
-        MUL100 = 0x64,
-        MUL101 = 0x65,
-        MUL102 = 0x66,
-        MUL103 = 0x67,
-        MUL104 = 0x68,
-        MUL105 = 0x69,
-        MUL106 = 0x6a,
-        MUL107 = 0x6b,
-        MUL108 = 0x6c,
-        MUL109 = 0x6d,
-        MUL110 = 0x6e,
-        MUL111 = 0x6f,
-        MUL112 = 0x70,
-        MUL113 = 0x71,
-        MUL114 = 0x72,
-        MUL115 = 0x73,
-        MUL116 = 0x74,
-        MUL117 = 0x75,
-        MUL118 = 0x76,
-        MUL119 = 0x77,
-        MUL120 = 0x78,
-        MUL121 = 0x79,
-        MUL122 = 0x7a,
-        MUL123 = 0x7b,
-        MUL124 = 0x7c,
-        MUL125 = 0x7d,
-        MUL126 = 0x7e,
-        MUL127 = 0x7f,
+        Mul8 = 0x08,
+        Mul9 = 0x09,
+        Mul10 = 0x0a,
+        Mul11 = 0x0b,
+        Mul12 = 0x0c,
+        Mul13 = 0x0d,
+        Mul14 = 0x0e,
+        Mul15 = 0x0f,
+        Mul16 = 0x10,
+        Mul17 = 0x11,
+        Mul18 = 0x12,
+        Mul19 = 0x13,
+        Mul20 = 0x14,
+        Mul21 = 0x15,
+        Mul22 = 0x16,
+        Mul23 = 0x17,
+        Mul24 = 0x18,
+        Mul25 = 0x19,
+        Mul26 = 0x1a,
+        Mul27 = 0x1b,
+        Mul28 = 0x1c,
+        Mul29 = 0x1d,
+        Mul30 = 0x1e,
+        Mul31 = 0x1f,
+        Mul32 = 0x20,
+        Mul33 = 0x21,
+        Mul34 = 0x22,
+        Mul35 = 0x23,
+        Mul36 = 0x24,
+        Mul37 = 0x25,
+        Mul38 = 0x26,
+        Mul39 = 0x27,
+        Mul40 = 0x28,
+        Mul41 = 0x29,
+        Mul42 = 0x2a,
+        Mul43 = 0x2b,
+        Mul44 = 0x2c,
+        Mul45 = 0x2d,
+        Mul46 = 0x2e,
+        Mul47 = 0x2f,
+        Mul48 = 0x30,
+        Mul49 = 0x31,
+        Mul50 = 0x32,
+        Mul51 = 0x33,
+        Mul52 = 0x34,
+        Mul53 = 0x35,
+        Mul54 = 0x36,
+        Mul55 = 0x37,
+        Mul56 = 0x38,
+        Mul57 = 0x39,
+        Mul58 = 0x3a,
+        Mul59 = 0x3b,
+        Mul60 = 0x3c,
+        Mul61 = 0x3d,
+        Mul62 = 0x3e,
+        Mul63 = 0x3f,
+        Mul64 = 0x40,
+        Mul65 = 0x41,
+        Mul66 = 0x42,
+        Mul67 = 0x43,
+        Mul68 = 0x44,
+        Mul69 = 0x45,
+        Mul70 = 0x46,
+        Mul71 = 0x47,
+        Mul72 = 0x48,
+        Mul73 = 0x49,
+        Mul74 = 0x4a,
+        Mul75 = 0x4b,
+        Mul76 = 0x4c,
+        Mul77 = 0x4d,
+        Mul78 = 0x4e,
+        Mul79 = 0x4f,
+        Mul80 = 0x50,
+        Mul81 = 0x51,
+        Mul82 = 0x52,
+        Mul83 = 0x53,
+        Mul84 = 0x54,
+        Mul85 = 0x55,
+        Mul86 = 0x56,
+        Mul87 = 0x57,
+        Mul88 = 0x58,
+        Mul89 = 0x59,
+        Mul90 = 0x5a,
+        Mul91 = 0x5b,
+        Mul92 = 0x5c,
+        Mul93 = 0x5d,
+        Mul94 = 0x5e,
+        Mul95 = 0x5f,
+        Mul96 = 0x60,
+        Mul97 = 0x61,
+        Mul98 = 0x62,
+        Mul99 = 0x63,
+        Mul100 = 0x64,
+        Mul101 = 0x65,
+        Mul102 = 0x66,
+        Mul103 = 0x67,
+        Mul104 = 0x68,
+        Mul105 = 0x69,
+        Mul106 = 0x6a,
+        Mul107 = 0x6b,
+        Mul108 = 0x6c,
+        Mul109 = 0x6d,
+        Mul110 = 0x6e,
+        Mul111 = 0x6f,
+        Mul112 = 0x70,
+        Mul113 = 0x71,
+        Mul114 = 0x72,
+        Mul115 = 0x73,
+        Mul116 = 0x74,
+        Mul117 = 0x75,
+        Mul118 = 0x76,
+        Mul119 = 0x77,
+        Mul120 = 0x78,
+        Mul121 = 0x79,
+        Mul122 = 0x7a,
+        Mul123 = 0x7b,
+        Mul124 = 0x7c,
+        Mul125 = 0x7d,
+        Mul126 = 0x7e,
+        Mul127 = 0x7f,
     }
     impl Plln {
         #[inline(always)]
@@ -6450,36 +6450,36 @@ in the RCC_CR register"]
     pub enum Pllp {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
-        DIV2 = 0x02,
-        DIV3 = 0x03,
-        DIV4 = 0x04,
-        DIV5 = 0x05,
-        DIV6 = 0x06,
-        DIV7 = 0x07,
-        DIV8 = 0x08,
-        DIV9 = 0x09,
-        DIV10 = 0x0a,
-        DIV11 = 0x0b,
-        DIV12 = 0x0c,
-        DIV13 = 0x0d,
-        DIV14 = 0x0e,
-        DIV15 = 0x0f,
-        DIV16 = 0x10,
-        DIV17 = 0x11,
-        DIV18 = 0x12,
-        DIV19 = 0x13,
-        DIV20 = 0x14,
-        DIV21 = 0x15,
-        DIV22 = 0x16,
-        DIV23 = 0x17,
-        DIV24 = 0x18,
-        DIV25 = 0x19,
-        DIV26 = 0x1a,
-        DIV27 = 0x1b,
-        DIV28 = 0x1c,
-        DIV29 = 0x1d,
-        DIV30 = 0x1e,
-        DIV31 = 0x1f,
+        Div2 = 0x02,
+        Div3 = 0x03,
+        Div4 = 0x04,
+        Div5 = 0x05,
+        Div6 = 0x06,
+        Div7 = 0x07,
+        Div8 = 0x08,
+        Div9 = 0x09,
+        Div10 = 0x0a,
+        Div11 = 0x0b,
+        Div12 = 0x0c,
+        Div13 = 0x0d,
+        Div14 = 0x0e,
+        Div15 = 0x0f,
+        Div16 = 0x10,
+        Div17 = 0x11,
+        Div18 = 0x12,
+        Div19 = 0x13,
+        Div20 = 0x14,
+        Div21 = 0x15,
+        Div22 = 0x16,
+        Div23 = 0x17,
+        Div24 = 0x18,
+        Div25 = 0x19,
+        Div26 = 0x1a,
+        Div27 = 0x1b,
+        Div28 = 0x1c,
+        Div29 = 0x1d,
+        Div30 = 0x1e,
+        Div31 = 0x1f,
     }
     impl Pllp {
         #[inline(always)]
@@ -6507,8 +6507,8 @@ in the RCC_CR register"]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllpbit {
-        DIV7 = 0x0,
-        DIV17 = 0x01,
+        Div7 = 0x0,
+        Div17 = 0x01,
     }
     impl Pllpbit {
         #[inline(always)]
@@ -6536,10 +6536,10 @@ in the RCC_CR register"]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllq {
-        DIV2 = 0x0,
-        DIV4 = 0x01,
-        DIV6 = 0x02,
-        DIV8 = 0x03,
+        Div2 = 0x0,
+        Div4 = 0x01,
+        Div6 = 0x02,
+        Div8 = 0x03,
     }
     impl Pllq {
         #[inline(always)]
@@ -6567,10 +6567,10 @@ in the RCC_CR register"]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllr {
-        DIV2 = 0x0,
-        DIV4 = 0x01,
-        DIV6 = 0x02,
-        DIV8 = 0x03,
+        Div2 = 0x0,
+        Div4 = 0x01,
+        Div6 = 0x02,
+        Div8 = 0x03,
     }
     impl Pllr {
         #[inline(always)]
@@ -6599,13 +6599,13 @@ in the RCC_CR register"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllsrc {
         #[doc = "No clock sent to PLL"]
-        DISABLE = 0x0,
+        Disable = 0x0,
         #[doc = "MSI selected as PLL input clock"]
-        MSI = 0x01,
+        Msi = 0x01,
         #[doc = "HSI selected as PLL input clock"]
-        HSI = 0x02,
+        Hsi = 0x02,
         #[doc = "HSE selected as PLL input clock"]
-        HSE = 0x03,
+        Hse = 0x03,
     }
     impl Pllsrc {
         #[inline(always)]
@@ -6634,18 +6634,18 @@ in the RCC_CR register"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ppre {
         #[doc = "HCLK not divided"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "HCLK divided by 2"]
-        DIV2 = 0x04,
+        Div2 = 0x04,
         #[doc = "HCLK divided by 4"]
-        DIV4 = 0x05,
+        Div4 = 0x05,
         #[doc = "HCLK divided by 8"]
-        DIV8 = 0x06,
+        Div8 = 0x06,
         #[doc = "HCLK divided by 16"]
-        DIV16 = 0x07,
+        Div16 = 0x07,
     }
     impl Ppre {
         #[inline(always)]
@@ -6674,13 +6674,13 @@ in the RCC_CR register"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtcsel {
         #[doc = "No clock"]
-        DISABLE = 0x0,
+        Disable = 0x0,
         #[doc = "LSE oscillator clock used as RTC clock"]
-        LSE = 0x01,
+        Lse = 0x01,
         #[doc = "LSI oscillator clock used as RTC clock"]
-        LSI = 0x02,
+        Lsi = 0x02,
         #[doc = "HSE oscillator clock divided by 32 used as the RTC clock"]
-        HSE = 0x03,
+        Hse = 0x03,
     }
     impl Rtcsel {
         #[inline(always)]
@@ -6709,15 +6709,15 @@ in the RCC_CR register"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sai1sel {
         #[doc = "PLLSAI1CLK clock is selected as SAIx clock"]
-        PLLSAI1_P = 0x0,
+        Pllsai1P = 0x0,
         #[doc = "PLLSAI2CLK clock is selected as SAIx clock"]
-        PLLSAI2_P = 0x01,
+        Pllsai2P = 0x01,
         #[doc = "PLLSAI3CLK clock is selected as SAIx clock"]
-        PLL1_P = 0x02,
+        Pll1P = 0x02,
         #[doc = "External clock SAIx_EXTCLK clock selected as SAIx clock"]
-        SAI1_EXTCLK = 0x03,
+        Sai1Extclk = 0x03,
         #[doc = "HSI clock selected as SAIx clock"]
-        HSI = 0x04,
+        Hsi = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -6749,15 +6749,15 @@ in the RCC_CR register"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sai2sel {
         #[doc = "PLLSAI1CLK clock is selected as SAIx clock"]
-        PLLSAI1_P = 0x0,
+        Pllsai1P = 0x0,
         #[doc = "PLLSAI2CLK clock is selected as SAIx clock"]
-        PLLSAI2_P = 0x01,
+        Pllsai2P = 0x01,
         #[doc = "PLLSAI3CLK clock is selected as SAIx clock"]
-        PLL1_P = 0x02,
+        Pll1P = 0x02,
         #[doc = "External clock SAIx_EXTCLK clock selected as SAIx clock"]
-        SAI2_EXTCLK = 0x03,
+        Sai2Extclk = 0x03,
         #[doc = "HSI clock selected as SAIx clock"]
-        HSI = 0x04,
+        Hsi = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -6789,9 +6789,9 @@ in the RCC_CR register"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdmmcsel {
         #[doc = "48 MHz clock is selected as SDMMC kernel clock"]
-        HSI48 = 0x0,
+        Hsi48 = 0x0,
         #[doc = "PLLSAI3CLK is selected as SDMMC kernel clock, used in case higher frequency than 48MHz is needed (for SDR50 mode)"]
-        PLL1_P = 0x01,
+        Pll1P = 0x01,
     }
     impl Sdmmcsel {
         #[inline(always)]
@@ -6820,9 +6820,9 @@ in the RCC_CR register"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Stopwuck {
         #[doc = "MSI oscillator selected as wake-up from Stop clock"]
-        MSI = 0x0,
+        Msi = 0x0,
         #[doc = "HSI oscillator selected as wake-up from Stop clock"]
-        HSI = 0x01,
+        Hsi = 0x01,
     }
     impl Stopwuck {
         #[inline(always)]
@@ -6851,13 +6851,13 @@ in the RCC_CR register"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sw {
         #[doc = "MSI selected as system clock"]
-        MSI = 0x0,
+        Msi = 0x0,
         #[doc = "HSI selected as system clock"]
-        HSI = 0x01,
+        Hsi = 0x01,
         #[doc = "HSE selected as system clock"]
-        HSE = 0x02,
+        Hse = 0x02,
         #[doc = "PLL selected as system clock"]
-        PLL1_R = 0x03,
+        Pll1R = 0x03,
     }
     impl Sw {
         #[inline(always)]
@@ -6886,13 +6886,13 @@ in the RCC_CR register"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usart1sel {
         #[doc = "PCLK clock selected"]
-        PCLK2 = 0x0,
+        Pclk2 = 0x0,
         #[doc = "SYSCLK clock selected"]
-        SYS = 0x01,
+        Sys = 0x01,
         #[doc = "HSI clock selected"]
-        HSI = 0x02,
+        Hsi = 0x02,
         #[doc = "LSE clock selected"]
-        LSE = 0x03,
+        Lse = 0x03,
     }
     impl Usart1sel {
         #[inline(always)]
@@ -6921,13 +6921,13 @@ in the RCC_CR register"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usartsel {
         #[doc = "PCLK clock selected"]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "SYSCLK clock selected"]
-        SYS = 0x01,
+        Sys = 0x01,
         #[doc = "HSI clock selected"]
-        HSI = 0x02,
+        Hsi = 0x02,
         #[doc = "LSE clock selected"]
-        LSE = 0x03,
+        Lse = 0x03,
     }
     impl Usartsel {
         #[inline(always)]

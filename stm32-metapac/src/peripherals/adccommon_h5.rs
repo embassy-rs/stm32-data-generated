@@ -669,13 +669,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckmode {
         #[doc = "Use Kernel Clock adc_ker_ck_input divided by PRESC. Asynchronous to AHB clock"]
-        ASYNCHRONOUS = 0x0,
+        Asynchronous = 0x0,
         #[doc = "Use AHB clock rcc_hclk3. In this case rcc_hclk must equal sys_d1cpre_ck"]
-        SYNC_DIV1 = 0x01,
+        SyncDiv1 = 0x01,
         #[doc = "Use AHB clock rcc_hclk3 divided by 2"]
-        SYNC_DIV2 = 0x02,
+        SyncDiv2 = 0x02,
         #[doc = "Use AHB clock rcc_hclk3 divided by 4"]
-        SYNC_DIV4 = 0x03,
+        SyncDiv4 = 0x03,
     }
     impl Ckmode {
         #[inline(always)]
@@ -704,9 +704,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dmacfg {
         #[doc = "DMA One Shot mode selected"]
-        ONE_SHOT = 0x0,
+        OneShot = 0x0,
         #[doc = "DMA Circular mode selected"]
-        CIRCULAR = 0x01,
+        Circular = 0x01,
     }
     impl Dmacfg {
         #[inline(always)]
@@ -735,23 +735,23 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dual {
         #[doc = "Independent mode"]
-        INDEPENDENT = 0x0,
+        Independent = 0x0,
         #[doc = "Dual, combined regular simultaneous + injected simultaneous mode"]
-        DUAL_RJ = 0x01,
+        DualRj = 0x01,
         #[doc = "Dual, combined regular simultaneous + alternate trigger mode"]
-        DUAL_RA = 0x02,
+        DualRa = 0x02,
         #[doc = "Dual, combined interleaved mode + injected simultaneous mode"]
-        DUAL_IJ = 0x03,
+        DualIj = 0x03,
         _RESERVED_4 = 0x04,
         #[doc = "Dual, injected simultaneous mode only"]
-        DUAL_J = 0x05,
+        DualJ = 0x05,
         #[doc = "Dual, regular simultaneous mode only"]
-        DUAL_R = 0x06,
+        DualR = 0x06,
         #[doc = "Dual, interleaved mode only"]
-        DUAL_I = 0x07,
+        DualI = 0x07,
         _RESERVED_8 = 0x08,
         #[doc = "Dual, alternate trigger mode only"]
-        DUAL_A = 0x09,
+        DualA = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
@@ -804,7 +804,7 @@ pub mod vals {
         #[doc = "Dummy channel selection is 0x13"]
         H13 = 0x0,
         #[doc = "Dummy channel selection is 0x1F"]
-        H1F = 0x01,
+        H1f = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
@@ -847,12 +847,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mdma {
         #[doc = "Without data packing, CDR/CDR2 not used"]
-        NO_PACK = 0x0,
+        NoPack = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "CDR formatted for 32-bit down to 10-bit resolution"]
-        FORMAT32TO10 = 0x02,
+        Format32to10 = 0x02,
         #[doc = "CDR formatted for 8-bit resolution"]
-        FORMAT8 = 0x03,
+        Format8 = 0x03,
     }
     impl Mdma {
         #[inline(always)]
@@ -881,29 +881,29 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Presc {
         #[doc = "adc_ker_ck_input not divided"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "adc_ker_ck_input divided by 2"]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "adc_ker_ck_input divided by 4"]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         #[doc = "adc_ker_ck_input divided by 6"]
-        DIV6 = 0x03,
+        Div6 = 0x03,
         #[doc = "adc_ker_ck_input divided by 8"]
-        DIV8 = 0x04,
+        Div8 = 0x04,
         #[doc = "adc_ker_ck_input divided by 10"]
-        DIV10 = 0x05,
+        Div10 = 0x05,
         #[doc = "adc_ker_ck_input divided by 12"]
-        DIV12 = 0x06,
+        Div12 = 0x06,
         #[doc = "adc_ker_ck_input divided by 16"]
-        DIV16 = 0x07,
+        Div16 = 0x07,
         #[doc = "adc_ker_ck_input divided by 32"]
-        DIV32 = 0x08,
+        Div32 = 0x08,
         #[doc = "adc_ker_ck_input divided by 64"]
-        DIV64 = 0x09,
+        Div64 = 0x09,
         #[doc = "adc_ker_ck_input divided by 128"]
-        DIV128 = 0x0a,
+        Div128 = 0x0a,
         #[doc = "adc_ker_ck_input divided by 256"]
-        DIV256 = 0x0b,
+        Div256 = 0x0b,
         _RESERVED_c = 0x0c,
         _RESERVED_d = 0x0d,
         _RESERVED_e = 0x0e,

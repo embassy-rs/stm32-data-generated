@@ -467,12 +467,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BIDIRECTIONAL",
+                    name: "Bidirectional",
                     description: Some("1-line bidirectional data mode selected"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "UNIDIRECTIONAL",
+                    name: "Unidirectional",
                     description: Some("2-line unidirectional data mode selected"),
                     value: 0,
                 },
@@ -484,12 +484,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RECEIVE",
+                    name: "Receive",
                     description: Some("Output disabled (receive-only mode)"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TRANSMIT",
+                    name: "Transmit",
                     description: Some("Output enabled (transmit-only mode)"),
                     value: 1,
                 },
@@ -501,42 +501,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "DIV128",
+                    name: "Div128",
                     description: Some("f_PCLK / 128"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DIV16",
+                    name: "Div16",
                     description: Some("f_PCLK / 16"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DIV2",
+                    name: "Div2",
                     description: Some("f_PCLK / 2"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV256",
+                    name: "Div256",
                     description: Some("f_PCLK / 256"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "DIV32",
+                    name: "Div32",
                     description: Some("f_PCLK / 32"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "DIV4",
+                    name: "Div4",
                     description: Some("f_PCLK / 4"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DIV64",
+                    name: "Div64",
                     description: Some("f_PCLK / 64"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DIV8",
+                    name: "Div8",
                     description: Some("f_PCLK / 8"),
                     value: 2,
                 },
@@ -548,12 +548,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LEFT",
+                    name: "Left",
                     description: Some("Channel left has to be transmitted or has been received"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RIGHT",
+                    name: "Right",
                     description: Some("Channel right has to be transmitted or has been received"),
                     value: 1,
                 },
@@ -565,12 +565,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FIRST_EDGE",
+                    name: "FirstEdge",
                     description: Some("The first clock transition is the first data capture edge"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SECOND_EDGE",
+                    name: "SecondEdge",
                     description: Some("The second clock transition is the first data capture edge"),
                     value: 1,
                 },
@@ -582,12 +582,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "IDLE_HIGH",
+                    name: "IdleHigh",
                     description: Some("CK to 1 when idle"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "IDLE_LOW",
+                    name: "IdleLow",
                     description: Some("CK to 0 when idle"),
                     value: 0,
                 },
@@ -599,12 +599,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BITS16",
+                    name: "Bits16",
                     description: Some("16-bit CRC length"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "BITS8",
+                    name: "Bits8",
                     description: Some("8-bit CRC length"),
                     value: 0,
                 },
@@ -616,12 +616,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CRC",
+                    name: "Crc",
                     description: Some("Next transmit value is from Tx CRC register"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TX_BUFFER",
+                    name: "TxBuffer",
                     description: Some("Next transmit value is from Tx buffer"),
                     value: 0,
                 },
@@ -633,67 +633,67 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "BITS10",
+                    name: "Bits10",
                     description: Some("10-bit"),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "BITS11",
+                    name: "Bits11",
                     description: Some("11-bit"),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "BITS12",
+                    name: "Bits12",
                     description: Some("12-bit"),
                     value: 11,
                 },
                 EnumVariant {
-                    name: "BITS13",
+                    name: "Bits13",
                     description: Some("13-bit"),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "BITS14",
+                    name: "Bits14",
                     description: Some("14-bit"),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "BITS15",
+                    name: "Bits15",
                     description: Some("15-bit"),
                     value: 14,
                 },
                 EnumVariant {
-                    name: "BITS16",
+                    name: "Bits16",
                     description: Some("16-bit"),
                     value: 15,
                 },
                 EnumVariant {
-                    name: "BITS4",
+                    name: "Bits4",
                     description: Some("4-bit"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "BITS5",
+                    name: "Bits5",
                     description: Some("5-bit"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "BITS6",
+                    name: "Bits6",
                     description: Some("6-bit"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "BITS7",
+                    name: "Bits7",
                     description: Some("7-bit"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "BITS8",
+                    name: "Bits8",
                     description: Some("8-bit"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "BITS9",
+                    name: "Bits9",
                     description: Some("9-bit"),
                     value: 8,
                 },
@@ -705,12 +705,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MOTOROLA",
+                    name: "Motorola",
                     description: Some("SPI Motorola mode"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TI",
+                    name: "Ti",
                     description: Some("SPI TI mode"),
                     value: 1,
                 },
@@ -722,22 +722,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "EMPTY",
+                    name: "Empty",
                     description: Some("Rx FIFO Empty"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FULL",
+                    name: "Full",
                     description: Some("Rx FIFO full"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "HALF",
+                    name: "Half",
                     description: Some("Rx 1/2 FIFO"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "QUARTER",
+                    name: "Quarter",
                     description: Some("Rx 1/4 FIFO"),
                     value: 1,
                 },
@@ -749,14 +749,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HALF",
+                    name: "Half",
                     description: Some(
                         "RXNE event is generated if the FIFO level is greater than or equal to 1/2 (16-bit)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "QUARTER",
+                    name: "Quarter",
                     description: Some(
                         "RXNE event is generated if the FIFO level is greater than or equal to 1/4 (8-bit)",
                     ),
@@ -770,22 +770,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "EMPTY",
+                    name: "Empty",
                     description: Some("Tx FIFO Empty"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FULL",
+                    name: "Full",
                     description: Some("Tx FIFO full"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "HALF",
+                    name: "Half",
                     description: Some("Tx 1/2 FIFO"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "QUARTER",
+                    name: "Quarter",
                     description: Some("Tx 1/4 FIFO"),
                     value: 1,
                 },
@@ -797,12 +797,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "EVEN",
+                    name: "Even",
                     description: Some("Number of data to transfer for receive is even"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ODD",
+                    name: "Odd",
                     description: Some("Number of data to transfer for receive is odd"),
                     value: 1,
                 },
@@ -814,12 +814,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "EVEN",
+                    name: "Even",
                     description: Some("Number of data to transfer for transmit is even"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ODD",
+                    name: "Odd",
                     description: Some("Number of data to transfer for transmit is odd"),
                     value: 1,
                 },
@@ -831,12 +831,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LSBFIRST",
+                    name: "LsbFirst",
                     description: Some("Data is transmitted/received with the LSB first"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MSBFIRST",
+                    name: "MsbFirst",
                     description: Some("Data is transmitted/received with the MSB first"),
                     value: 0,
                 },
@@ -848,12 +848,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MASTER",
+                    name: "Master",
                     description: Some("Master configuration"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SLAVE",
+                    name: "Slave",
                     description: Some("Slave configuration"),
                     value: 0,
                 },
@@ -865,12 +865,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FULL_DUPLEX",
+                    name: "FullDuplex",
                     description: Some("Full duplex (Transmit and receive)"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OUTPUT_DISABLED",
+                    name: "OutputDisabled",
                     description: Some("Output disabled (Receive-only mode)"),
                     value: 1,
                 },

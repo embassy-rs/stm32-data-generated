@@ -213,11 +213,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Blanking {
         #[doc = "No blanking."]
-        NO_BLANKING = 0x0,
+        NoBlanking = 0x0,
         #[doc = "TIM1 OC5 selected as blanking source."]
-        TIM1OC5 = 0x01,
+        Tim1oc5 = 0x01,
         #[doc = "TIM2 OC3 selected as blanking source."]
-        TIM2OC3 = 0x02,
+        Tim2oc3 = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
@@ -250,10 +250,10 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hyst {
-        NONE = 0x0,
-        LOW = 0x01,
-        MEDIUM = 0x02,
-        HIGH = 0x03,
+        None = 0x0,
+        Low = 0x01,
+        Medium = 0x02,
+        High = 0x03,
     }
     impl Hyst {
         #[inline(always)]
@@ -282,9 +282,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Polarity {
         #[doc = "Output is not inverted."]
-        NOT_INVERTED = 0x0,
+        NotInverted = 0x0,
         #[doc = "Output is inverted."]
-        INVERTED = 0x01,
+        Inverted = 0x01,
     }
     impl Polarity {
         #[inline(always)]
@@ -313,13 +313,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pwrmode {
         #[doc = "High speed / full power."]
-        HIGH_SPEED = 0x0,
+        HighSpeed = 0x0,
         #[doc = "Medium speed / medium power."]
-        MEDIUM_SPEED = 0x01,
+        MediumSpeed = 0x01,
         #[doc = "Low speed / low power."]
-        LOW_SPEED = 0x02,
+        LowSpeed = 0x02,
         #[doc = "Very-low speed / ultra-low power."]
-        VERY_LOW_SPEED = 0x03,
+        VeryLowSpeed = 0x03,
     }
     impl Pwrmode {
         #[inline(always)]

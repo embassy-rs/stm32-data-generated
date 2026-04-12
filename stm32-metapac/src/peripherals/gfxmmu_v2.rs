@@ -597,9 +597,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bm192 {
         #[doc = "256 blocks per line."]
-        _256BLOCKS_PER_LINE = 0x0,
+        _256blocksPerLine = 0x0,
         #[doc = "192 blocks per line."]
-        _192BLOCKS_PER_LINE = 0x01,
+        _192blocksPerLine = 0x01,
     }
     impl Bm192 {
         #[inline(always)]
@@ -628,13 +628,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Clb {
         #[doc = "Cache locked on buffer 0."]
-        LOCKED_ON_BUFFER0 = 0x0,
+        LockedOnBuffer0 = 0x0,
         #[doc = "Cache locked on buffer 1."]
-        LOCKED_ON_BUFFER1 = 0x01,
+        LockedOnBuffer1 = 0x01,
         #[doc = "Cache locked on buffer 2."]
-        LOCKED_ON_BUFFER2 = 0x02,
+        LockedOnBuffer2 = 0x02,
         #[doc = "Cache locked on buffer 3."]
-        LOCKED_ON_BUFFER3 = 0x03,
+        LockedOnBuffer3 = 0x03,
     }
     impl Clb {
         #[inline(always)]

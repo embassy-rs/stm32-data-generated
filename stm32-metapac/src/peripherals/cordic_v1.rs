@@ -210,25 +210,25 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Func {
         #[doc = "Cosine function."]
-        COSINE = 0x0,
+        Cosine = 0x0,
         #[doc = "Sine function."]
-        SINE = 0x01,
+        Sine = 0x01,
         #[doc = "Phase function."]
-        PHASE = 0x02,
+        Phase = 0x02,
         #[doc = "Modulus function."]
-        MODULUS = 0x03,
+        Modulus = 0x03,
         #[doc = "Arctangent function."]
-        ARCTANGENT = 0x04,
+        Arctangent = 0x04,
         #[doc = "Hyperbolic Cosine function."]
-        HYPERBOLIC_COSINE = 0x05,
+        HyperbolicCosine = 0x05,
         #[doc = "Hyperbolic Sine function."]
-        HYPERBOLIC_SINE = 0x06,
+        HyperbolicSine = 0x06,
         #[doc = "Arctanh function."]
-        ARCTANH = 0x07,
+        Arctanh = 0x07,
         #[doc = "Natural Logarithm function."]
-        NATURAL_LOGARITHM = 0x08,
+        NaturalLogarithm = 0x08,
         #[doc = "Square Root function."]
-        SQUARE_ROOT = 0x09,
+        SquareRoot = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
@@ -263,9 +263,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Num {
         #[doc = "1 input/output"]
-        NUM1 = 0x0,
+        Num1 = 0x0,
         #[doc = "2 input/output"]
-        NUM2 = 0x01,
+        Num2 = 0x01,
     }
     impl Num {
         #[inline(always)]
@@ -295,35 +295,35 @@ pub mod vals {
     pub enum Precision {
         _RESERVED_0 = 0x0,
         #[doc = "4 iterations."]
-        ITERS4 = 0x01,
+        Iters4 = 0x01,
         #[doc = "8 iterations."]
-        ITERS8 = 0x02,
+        Iters8 = 0x02,
         #[doc = "12 iterations."]
-        ITERS12 = 0x03,
+        Iters12 = 0x03,
         #[doc = "16 iterations."]
-        ITERS16 = 0x04,
+        Iters16 = 0x04,
         #[doc = "20 iterations."]
-        ITERS20 = 0x05,
+        Iters20 = 0x05,
         #[doc = "24 iterations."]
-        ITERS24 = 0x06,
+        Iters24 = 0x06,
         #[doc = "28 iterations."]
-        ITERS28 = 0x07,
+        Iters28 = 0x07,
         #[doc = "32 iterations."]
-        ITERS32 = 0x08,
+        Iters32 = 0x08,
         #[doc = "36 iterations."]
-        ITERS36 = 0x09,
+        Iters36 = 0x09,
         #[doc = "40 iterations."]
-        ITERS40 = 0x0a,
+        Iters40 = 0x0a,
         #[doc = "44 iterations."]
-        ITERS44 = 0x0b,
+        Iters44 = 0x0b,
         #[doc = "48 iterations."]
-        ITERS48 = 0x0c,
+        Iters48 = 0x0c,
         #[doc = "52 iterations."]
-        ITERS52 = 0x0d,
+        Iters52 = 0x0d,
         #[doc = "56 iterations."]
-        ITERS56 = 0x0e,
+        Iters56 = 0x0e,
         #[doc = "60 iterations."]
-        ITERS60 = 0x0f,
+        Iters60 = 0x0f,
     }
     impl Precision {
         #[inline(always)]
@@ -352,21 +352,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Scale {
         #[doc = "Argument multiplied by 1, result multiplied by 1"]
-        A1_R1 = 0x0,
+        A1R1 = 0x0,
         #[doc = "Argument multiplied by 1/2, result multiplied by 2"]
-        A1O2_R2 = 0x01,
+        A1o2R2 = 0x01,
         #[doc = "Argument multiplied by 1/4, result multiplied by 4"]
-        A1O4_R4 = 0x02,
+        A1o4R4 = 0x02,
         #[doc = "Argument multiplied by 1/8, result multiplied by 8"]
-        A1O8_R8 = 0x03,
+        A1o8R8 = 0x03,
         #[doc = "Argument multiplied by 1/16, result multiplied by 16"]
-        A1O16_R16 = 0x04,
+        A1o16R16 = 0x04,
         #[doc = "Argument multiplied by 1/32, result multiplied by 32"]
-        A1O32_R32 = 0x05,
+        A1o32R32 = 0x05,
         #[doc = "Argument multiplied by 1/64, result multiplied by 64"]
-        A1O64_R64 = 0x06,
+        A1o64R64 = 0x06,
         #[doc = "Argument multiplied by 1/128, result multiplied by 128"]
-        A1O128_R128 = 0x07,
+        A1o128R128 = 0x07,
     }
     impl Scale {
         #[inline(always)]
@@ -395,9 +395,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Size {
         #[doc = "Use 32 bit input/output values."]
-        BITS32 = 0x0,
+        Bits32 = 0x0,
         #[doc = "Use 16 bit input/output values."]
-        BITS16 = 0x01,
+        Bits16 = 0x01,
     }
     impl Size {
         #[inline(always)]

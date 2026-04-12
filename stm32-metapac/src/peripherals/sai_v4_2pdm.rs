@@ -1216,9 +1216,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckstr {
         #[doc = "Data strobing edge is falling edge of SCK"]
-        FALLING_EDGE = 0x0,
+        FallingEdge = 0x0,
         #[doc = "Data strobing edge is rising edge of SCK"]
-        RISING_EDGE = 0x01,
+        RisingEdge = 0x01,
     }
     impl Ckstr {
         #[inline(always)]
@@ -1247,9 +1247,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cnrdy {
         #[doc = "External AC'97 Codec is ready"]
-        READY = 0x0,
+        Ready = 0x0,
         #[doc = "External AC'97 Codec is not ready"]
-        NOT_READY = 0x01,
+        NotReady = 0x01,
     }
     impl Cnrdy {
         #[inline(always)]
@@ -1278,12 +1278,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Comp {
         #[doc = "No companding algorithm"]
-        NO_COMPANDING = 0x0,
+        NoCompanding = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "μ-Law algorithm"]
-        MU_LAW = 0x02,
+        MuLaw = 0x02,
         #[doc = "A-Law algorithm"]
-        ALAW = 0x03,
+        ALaw = 0x03,
     }
     impl Comp {
         #[inline(always)]
@@ -1312,9 +1312,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpl {
         #[doc = "1's complement representation"]
-        ONES_COMPLEMENT = 0x0,
+        OnesComplement = 0x0,
         #[doc = "2's complement representation"]
-        TWOS_COMPLEMENT = 0x01,
+        TwosComplement = 0x01,
     }
     impl Cpl {
         #[inline(always)]
@@ -1345,17 +1345,17 @@ pub mod vals {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "8 bits"]
-        BIT8 = 0x02,
+        Bit8 = 0x02,
         #[doc = "10 bits"]
-        BIT10 = 0x03,
+        Bit10 = 0x03,
         #[doc = "16 bits"]
-        BIT16 = 0x04,
+        Bit16 = 0x04,
         #[doc = "20 bits"]
-        BIT20 = 0x05,
+        Bit20 = 0x05,
         #[doc = "24 bits"]
-        BIT24 = 0x06,
+        Bit24 = 0x06,
         #[doc = "32 bits"]
-        BIT32 = 0x07,
+        Bit32 = 0x07,
     }
     impl Ds {
         #[inline(always)]
@@ -1384,17 +1384,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Flvl {
         #[doc = "FIFO empty"]
-        EMPTY = 0x0,
+        Empty = 0x0,
         #[doc = "FIFO <= 1/4 but not empty"]
-        QUARTER1 = 0x01,
+        Quarter1 = 0x01,
         #[doc = "1/4 < FIFO <= 1/2"]
-        QUARTER2 = 0x02,
+        Quarter2 = 0x02,
         #[doc = "1/2 < FIFO <= 3/4"]
-        QUARTER3 = 0x03,
+        Quarter3 = 0x03,
         #[doc = "3/4 < FIFO but not full"]
-        QUARTER4 = 0x04,
+        Quarter4 = 0x04,
         #[doc = "FIFO full"]
-        FULL = 0x05,
+        Full = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -1425,9 +1425,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fsoff {
         #[doc = "FS is asserted on the first bit of the slot 0"]
-        ON_FIRST = 0x0,
+        OnFirst = 0x0,
         #[doc = "FS is asserted one bit before the first bit of the slot 0"]
-        BEFORE_FIRST = 0x01,
+        BeforeFirst = 0x01,
     }
     impl Fsoff {
         #[inline(always)]
@@ -1456,9 +1456,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fspol {
         #[doc = "FS is active low (falling edge)"]
-        FALLING_EDGE = 0x0,
+        FallingEdge = 0x0,
         #[doc = "FS is active high (rising edge)"]
-        RISING_EDGE = 0x01,
+        RisingEdge = 0x01,
     }
     impl Fspol {
         #[inline(always)]
@@ -1487,15 +1487,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fth {
         #[doc = "FIFO empty"]
-        EMPTY = 0x0,
+        Empty = 0x0,
         #[doc = "1/4 FIFO"]
-        QUARTER1 = 0x01,
+        Quarter1 = 0x01,
         #[doc = "1/2 FIFO"]
-        QUARTER2 = 0x02,
+        Quarter2 = 0x02,
         #[doc = "3/4 FIFO"]
-        QUARTER3 = 0x03,
+        Quarter3 = 0x03,
         #[doc = "FIFO full"]
-        FULL = 0x04,
+        Full = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -1527,9 +1527,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsbfirst {
         #[doc = "Data are transferred with MSB first"]
-        MSB_FIRST = 0x0,
+        MsbFirst = 0x0,
         #[doc = "Data are transferred with LSB first"]
-        LSB_FIRST = 0x01,
+        LsbFirst = 0x01,
     }
     impl Lsbfirst {
         #[inline(always)]
@@ -1558,69 +1558,69 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mckdiv {
         _RESERVED_0 = 0x0,
-        DIV1 = 0x01,
-        DIV2 = 0x02,
-        DIV3 = 0x03,
-        DIV4 = 0x04,
-        DIV5 = 0x05,
-        DIV6 = 0x06,
-        DIV7 = 0x07,
-        DIV8 = 0x08,
-        DIV9 = 0x09,
-        DIV10 = 0x0a,
-        DIV11 = 0x0b,
-        DIV12 = 0x0c,
-        DIV13 = 0x0d,
-        DIV14 = 0x0e,
-        DIV15 = 0x0f,
-        DIV16 = 0x10,
-        DIV17 = 0x11,
-        DIV18 = 0x12,
-        DIV19 = 0x13,
-        DIV20 = 0x14,
-        DIV21 = 0x15,
-        DIV22 = 0x16,
-        DIV23 = 0x17,
-        DIV24 = 0x18,
-        DIV25 = 0x19,
-        DIV26 = 0x1a,
-        DIV27 = 0x1b,
-        DIV28 = 0x1c,
-        DIV29 = 0x1d,
-        DIV30 = 0x1e,
-        DIV31 = 0x1f,
-        DIV32 = 0x20,
-        DIV33 = 0x21,
-        DIV34 = 0x22,
-        DIV35 = 0x23,
-        DIV36 = 0x24,
-        DIV37 = 0x25,
-        DIV38 = 0x26,
-        DIV39 = 0x27,
-        DIV40 = 0x28,
-        DIV41 = 0x29,
-        DIV42 = 0x2a,
-        DIV43 = 0x2b,
-        DIV44 = 0x2c,
-        DIV45 = 0x2d,
-        DIV46 = 0x2e,
-        DIV47 = 0x2f,
-        DIV48 = 0x30,
-        DIV49 = 0x31,
-        DIV50 = 0x32,
-        DIV51 = 0x33,
-        DIV52 = 0x34,
-        DIV53 = 0x35,
-        DIV54 = 0x36,
-        DIV55 = 0x37,
-        DIV56 = 0x38,
-        DIV57 = 0x39,
-        DIV58 = 0x3a,
-        DIV59 = 0x3b,
-        DIV60 = 0x3c,
-        DIV61 = 0x3d,
-        DIV62 = 0x3e,
-        DIV63 = 0x3f,
+        Div1 = 0x01,
+        Div2 = 0x02,
+        Div3 = 0x03,
+        Div4 = 0x04,
+        Div5 = 0x05,
+        Div6 = 0x06,
+        Div7 = 0x07,
+        Div8 = 0x08,
+        Div9 = 0x09,
+        Div10 = 0x0a,
+        Div11 = 0x0b,
+        Div12 = 0x0c,
+        Div13 = 0x0d,
+        Div14 = 0x0e,
+        Div15 = 0x0f,
+        Div16 = 0x10,
+        Div17 = 0x11,
+        Div18 = 0x12,
+        Div19 = 0x13,
+        Div20 = 0x14,
+        Div21 = 0x15,
+        Div22 = 0x16,
+        Div23 = 0x17,
+        Div24 = 0x18,
+        Div25 = 0x19,
+        Div26 = 0x1a,
+        Div27 = 0x1b,
+        Div28 = 0x1c,
+        Div29 = 0x1d,
+        Div30 = 0x1e,
+        Div31 = 0x1f,
+        Div32 = 0x20,
+        Div33 = 0x21,
+        Div34 = 0x22,
+        Div35 = 0x23,
+        Div36 = 0x24,
+        Div37 = 0x25,
+        Div38 = 0x26,
+        Div39 = 0x27,
+        Div40 = 0x28,
+        Div41 = 0x29,
+        Div42 = 0x2a,
+        Div43 = 0x2b,
+        Div44 = 0x2c,
+        Div45 = 0x2d,
+        Div46 = 0x2e,
+        Div47 = 0x2f,
+        Div48 = 0x30,
+        Div49 = 0x31,
+        Div50 = 0x32,
+        Div51 = 0x33,
+        Div52 = 0x34,
+        Div53 = 0x35,
+        Div54 = 0x36,
+        Div55 = 0x37,
+        Div56 = 0x38,
+        Div57 = 0x39,
+        Div58 = 0x3a,
+        Div59 = 0x3b,
+        Div60 = 0x3c,
+        Div61 = 0x3d,
+        Div62 = 0x3e,
+        Div63 = 0x3f,
     }
     impl Mckdiv {
         #[inline(always)]
@@ -1649,13 +1649,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Micnbr {
         #[doc = "Configuration with 2 microphones"]
-        _2MICS = 0x0,
+        _2mics = 0x0,
         #[doc = "Configuration with 4 microphones"]
-        _4MICS = 0x01,
+        _4mics = 0x01,
         #[doc = "Configuration with 6 microphones"]
-        _6MICS = 0x02,
+        _6mics = 0x02,
         #[doc = "Configuration with 8 microphones"]
-        _8MICS = 0x03,
+        _8mics = 0x03,
     }
     impl Micnbr {
         #[inline(always)]
@@ -1684,13 +1684,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Master transmitter"]
-        MASTER_TX = 0x0,
+        MasterTx = 0x0,
         #[doc = "Master receiver"]
-        MASTER_RX = 0x01,
+        MasterRx = 0x01,
         #[doc = "Slave transmitter"]
-        SLAVE_TX = 0x02,
+        SlaveTx = 0x02,
         #[doc = "Slave receiver"]
-        SLAVE_RX = 0x03,
+        SlaveRx = 0x03,
     }
     impl Mode {
         #[inline(always)]
@@ -1719,9 +1719,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mono {
         #[doc = "Stereo mode"]
-        STEREO = 0x0,
+        Stereo = 0x0,
         #[doc = "Mono mode"]
-        MONO = 0x01,
+        Mono = 0x01,
     }
     impl Mono {
         #[inline(always)]
@@ -1750,9 +1750,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Muteval {
         #[doc = "Bit value 0 is sent during the mute mode"]
-        SEND_ZERO = 0x0,
+        SendZero = 0x0,
         #[doc = "Last values are sent during the mute mode"]
-        SEND_LAST = 0x01,
+        SendLast = 0x01,
     }
     impl Muteval {
         #[inline(always)]
@@ -1781,9 +1781,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Osr {
         #[doc = "Master clock frequency = Fless thansub FSless than/sub x 256"]
-        LESS_THAN256 = 0x0,
+        LessThan256 = 0x0,
         #[doc = "Master clock frequency = Fless thansub FSless than/sub x 512"]
-        LESS_THAN512 = 0x01,
+        LessThan512 = 0x01,
     }
     impl Osr {
         #[inline(always)]
@@ -1812,9 +1812,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Outdriv {
         #[doc = "Audio block output driven when SAIEN is set"]
-        ON_START = 0x0,
+        OnStart = 0x0,
         #[doc = "Audio block output driven immediately after the setting of this bit"]
-        IMMEDIATELY = 0x01,
+        Immediately = 0x01,
     }
     impl Outdriv {
         #[inline(always)]
@@ -1843,11 +1843,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Prtcfg {
         #[doc = "Free protocol. Free protocol allows to use the powerful configuration of the audio block to address a specific audio protocol"]
-        FREE = 0x0,
+        Free = 0x0,
         #[doc = "SPDIF protocol"]
-        SPDIF = 0x01,
+        Spdif = 0x01,
         #[doc = "AC'97 protocol"]
-        AC97 = 0x02,
+        Ac97 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Prtcfg {
@@ -1877,9 +1877,9 @@ pub mod vals {
     pub struct Sloten(u16);
     impl Sloten {
         #[doc = "Inactive slot"]
-        pub const INACTIVE: Self = Self(0x0);
+        pub const Inactive: Self = Self(0x0);
         #[doc = "Active slot"]
-        pub const ACTIVE: Self = Self(0x01);
+        pub const Active: Self = Self(0x01);
     }
     impl Sloten {
         pub const fn from_bits(val: u16) -> Sloten {
@@ -1892,8 +1892,8 @@ pub mod vals {
     impl core::fmt::Debug for Sloten {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("INACTIVE"),
-                0x01 => f.write_str("ACTIVE"),
+                0x0 => f.write_str("Inactive"),
+                0x01 => f.write_str("Active"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -1902,8 +1902,8 @@ pub mod vals {
     impl defmt::Format for Sloten {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "INACTIVE"),
-                0x01 => defmt::write!(f, "ACTIVE"),
+                0x0 => defmt::write!(f, "Inactive"),
+                0x01 => defmt::write!(f, "Active"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -1926,11 +1926,11 @@ pub mod vals {
     pub enum Slotsz {
         #[doc = "The slot size is equivalent to the data size (specified in DS\\[3:0\\]
 in the SAI_xCR1 register)"]
-        DATA_SIZE = 0x0,
+        DataSize = 0x0,
         #[doc = "16-bit"]
-        BIT16 = 0x01,
+        Bit16 = 0x01,
         #[doc = "32-bit"]
-        BIT32 = 0x02,
+        Bit32 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Slotsz {
@@ -1960,11 +1960,11 @@ in the SAI_xCR1 register)"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syncen {
         #[doc = "audio sub-block in asynchronous mode"]
-        ASYNCHRONOUS = 0x0,
+        Asynchronous = 0x0,
         #[doc = "audio sub-block is synchronous with the other internal audio sub-block. In this case, the audio sub-block must be configured in slave mode"]
-        INTERNAL = 0x01,
+        Internal = 0x01,
         #[doc = "audio sub-block is synchronous with an external SAI embedded peripheral. In this case the audio sub-block should be configured in Slave mode"]
-        EXTERNAL = 0x02,
+        External = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Syncen {
@@ -1994,9 +1994,9 @@ in the SAI_xCR1 register)"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wckcfg {
         #[doc = "Clock configuration is correct"]
-        CORRECT = 0x0,
+        Correct = 0x0,
         #[doc = "Clock configuration does not respect the rule concerning the frame length specification"]
-        WRONG = 0x01,
+        Wrong = 0x01,
     }
     impl Wckcfg {
         #[inline(always)]

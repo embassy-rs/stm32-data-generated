@@ -6476,22 +6476,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DATA0",
+                    name: "Data0",
                     description: None,
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DATA1",
+                    name: "Data1",
                     description: None,
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DATA2",
+                    name: "Data2",
                     description: None,
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MDATA",
+                    name: "Mdata",
                     description: None,
                     value: 3,
                 },
@@ -6503,21 +6503,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "FULL_SPEED_EXTERNAL",
+                    name: "FullSpeedExternal",
                     description: Some(
                         "Full speed using external ULPI PHY",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FULL_SPEED_INTERNAL",
+                    name: "FullSpeedInternal",
                     description: Some(
                         "Full speed using internal embedded PHY",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "HIGH_SPEED",
+                    name: "HighSpeed",
                     description: Some(
                         "High speed",
                     ),
@@ -6531,22 +6531,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BULK",
+                    name: "Bulk",
                     description: None,
                     value: 2,
                 },
                 EnumVariant {
-                    name: "CONTROL",
+                    name: "Control",
                     description: None,
                     value: 0,
                 },
                 EnumVariant {
-                    name: "INTERRUPT",
+                    name: "Interrupt",
                     description: None,
                     value: 3,
                 },
                 EnumVariant {
-                    name: "ISOCHRONOUS",
+                    name: "Isochronous",
                     description: None,
                     value: 1,
                 },
@@ -6558,28 +6558,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "LEN16",
+                    name: "Len16",
                     description: Some(
                         "Length = 16",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "LEN32",
+                    name: "Len32",
                     description: Some(
                         "Length = 32",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "LEN64",
+                    name: "Len64",
                     description: Some(
                         "Length = 64",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "LEN8",
+                    name: "Len8",
                     description: Some(
                         "Length = 8",
                     ),
@@ -6593,28 +6593,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "FRAME_INTERVAL_80",
+                    name: "FrameInterval80",
                     description: Some(
                         "80% of the frame interval",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FRAME_INTERVAL_85",
+                    name: "FrameInterval85",
                     description: Some(
                         "85% of the frame interval",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FRAME_INTERVAL_90",
+                    name: "FrameInterval90",
                     description: Some(
                         "90% of the frame interval",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FRAME_INTERVAL_95",
+                    name: "FrameInterval95",
                     description: Some(
                         "95% of the frame interval",
                     ),
@@ -6628,35 +6628,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "OUT_DATA_DONE",
+                    name: "OutDataDone",
                     description: Some(
                         "OUT transfer completed (triggers an interrupt)",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "OUT_DATA_RX",
+                    name: "OutDataRx",
                     description: Some(
                         "OUT data packet received",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "OUT_NAK",
+                    name: "OutNak",
                     description: Some(
                         "Global OUT NAK (triggers an interrupt)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SETUP_DATA_DONE",
+                    name: "SetupDataDone",
                     description: Some(
                         "SETUP transaction completed (triggers an interrupt)",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "SETUP_DATA_RX",
+                    name: "SetupDataRx",
                     description: Some(
                         "SETUP data packet received",
                     ),
@@ -6670,28 +6670,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "CHANNEL_HALTED",
+                    name: "ChannelHalted",
                     description: Some(
                         "Channel halted (triggers an interrupt)",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "DATA_TOGGLE_ERR",
+                    name: "DataToggleErr",
                     description: Some(
                         "Data toggle error (triggers an interrupt)",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "IN_DATA_DONE",
+                    name: "InDataDone",
                     description: Some(
                         "IN transfer completed (triggers an interrupt)",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "IN_DATA_RX",
+                    name: "InDataRx",
                     description: Some(
                         "IN data packet received",
                     ),

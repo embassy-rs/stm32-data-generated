@@ -2867,9 +2867,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ccds {
         #[doc = "CCx DMA request sent when CCx event occurs"]
-        ON_COMPARE = 0x0,
+        OnCompare = 0x0,
         #[doc = "CCx DMA request sent when update event occurs"]
-        ON_UPDATE = 0x01,
+        OnUpdate = 0x01,
     }
     impl Ccds {
         #[inline(always)]
@@ -2899,11 +2899,11 @@ pub mod vals {
     pub enum CcmrInputCcs {
         _RESERVED_0 = 0x0,
         #[doc = "CCx channel is configured as input, normal mapping: ICx mapped to TIx"]
-        TI4 = 0x01,
+        Ti4 = 0x01,
         #[doc = "CCx channel is configured as input, alternate mapping (switches 1 with 2, 3 with 4)"]
-        TI3 = 0x02,
+        Ti3 = 0x02,
         #[doc = "CCx channel is configured as input, ICx is mapped on TRC"]
-        TRC = 0x03,
+        Trc = 0x03,
     }
     impl CcmrInputCcs {
         #[inline(always)]
@@ -2932,7 +2932,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcmrOutputCcs {
         #[doc = "CCx channel is configured as output"]
-        OUTPUT = 0x0,
+        Output = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -2964,11 +2964,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckd {
         #[doc = "t_DTS = t_CK_INT"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "t_DTS = 2 × t_CK_INT"]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "t_DTS = 4 × t_CK_INT"]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Ckd {
@@ -2998,13 +2998,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cms {
         #[doc = "The counter counts up or down depending on the direction bit"]
-        EDGE_ALIGNED = 0x0,
+        EdgeAligned = 0x0,
         #[doc = "The counter counts up and down alternatively. Output compare interrupt flags are set only when the counter is counting down."]
-        CENTER_ALIGNED1 = 0x01,
+        CenterAligned1 = 0x01,
         #[doc = "The counter counts up and down alternatively. Output compare interrupt flags are set only when the counter is counting up."]
-        CENTER_ALIGNED2 = 0x02,
+        CenterAligned2 = 0x02,
         #[doc = "The counter counts up and down alternatively. Output compare interrupt flags are set both when the counter is counting up or down."]
-        CENTER_ALIGNED3 = 0x03,
+        CenterAligned3 = 0x03,
     }
     impl Cms {
         #[inline(always)]
@@ -3033,9 +3033,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dir {
         #[doc = "Counter used as upcounter"]
-        UP = 0x0,
+        Up = 0x0,
         #[doc = "Counter used as downcounter"]
-        DOWN = 0x01,
+        Down = 0x01,
     }
     impl Dir {
         #[inline(always)]
@@ -3064,9 +3064,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Etp {
         #[doc = "ETR is noninverted, active at high level or rising edge"]
-        NOT_INVERTED = 0x0,
+        NotInverted = 0x0,
         #[doc = "ETR is inverted, active at low level or falling edge"]
-        INVERTED = 0x01,
+        Inverted = 0x01,
     }
     impl Etp {
         #[inline(always)]
@@ -3095,13 +3095,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Etps {
         #[doc = "Prescaler OFF"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "ETRP frequency divided by 2"]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "ETRP frequency divided by 4"]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         #[doc = "ETRP frequency divided by 8"]
-        DIV8 = 0x03,
+        Div8 = 0x03,
     }
     impl Etps {
         #[inline(always)]
@@ -3130,37 +3130,37 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FilterValue {
         #[doc = "No filter, sampling is done at fDTS"]
-        NO_FILTER = 0x0,
+        NoFilter = 0x0,
         #[doc = "fSAMPLING=fCK_INT, N=2"]
-        FCK_INT_N2 = 0x01,
+        FckIntN2 = 0x01,
         #[doc = "fSAMPLING=fCK_INT, N=4"]
-        FCK_INT_N4 = 0x02,
+        FckIntN4 = 0x02,
         #[doc = "fSAMPLING=fCK_INT, N=8"]
-        FCK_INT_N8 = 0x03,
+        FckIntN8 = 0x03,
         #[doc = "fSAMPLING=fDTS/2, N=6"]
-        FDTS_DIV2_N6 = 0x04,
+        FdtsDiv2N6 = 0x04,
         #[doc = "fSAMPLING=fDTS/2, N=8"]
-        FDTS_DIV2_N8 = 0x05,
+        FdtsDiv2N8 = 0x05,
         #[doc = "fSAMPLING=fDTS/4, N=6"]
-        FDTS_DIV4_N6 = 0x06,
+        FdtsDiv4N6 = 0x06,
         #[doc = "fSAMPLING=fDTS/4, N=8"]
-        FDTS_DIV4_N8 = 0x07,
+        FdtsDiv4N8 = 0x07,
         #[doc = "fSAMPLING=fDTS/8, N=6"]
-        FDTS_DIV8_N6 = 0x08,
+        FdtsDiv8N6 = 0x08,
         #[doc = "fSAMPLING=fDTS/8, N=8"]
-        FDTS_DIV8_N8 = 0x09,
+        FdtsDiv8N8 = 0x09,
         #[doc = "fSAMPLING=fDTS/16, N=5"]
-        FDTS_DIV16_N5 = 0x0a,
+        FdtsDiv16N5 = 0x0a,
         #[doc = "fSAMPLING=fDTS/16, N=6"]
-        FDTS_DIV16_N6 = 0x0b,
+        FdtsDiv16N6 = 0x0b,
         #[doc = "fSAMPLING=fDTS/16, N=8"]
-        FDTS_DIV16_N8 = 0x0c,
+        FdtsDiv16N8 = 0x0c,
         #[doc = "fSAMPLING=fDTS/32, N=5"]
-        FDTS_DIV32_N5 = 0x0d,
+        FdtsDiv32N5 = 0x0d,
         #[doc = "fSAMPLING=fDTS/32, N=6"]
-        FDTS_DIV32_N6 = 0x0e,
+        FdtsDiv32N6 = 0x0e,
         #[doc = "fSAMPLING=fDTS/32, N=8"]
-        FDTS_DIV32_N8 = 0x0f,
+        FdtsDiv32N8 = 0x0f,
     }
     impl FilterValue {
         #[inline(always)]
@@ -3189,21 +3189,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mms {
         #[doc = "The UG bit from the TIMx_EGR register is used as trigger output"]
-        RESET = 0x0,
+        Reset = 0x0,
         #[doc = "The counter enable signal, CNT_EN, is used as trigger output"]
-        ENABLE = 0x01,
+        Enable = 0x01,
         #[doc = "The update event is selected as trigger output"]
-        UPDATE = 0x02,
+        Update = 0x02,
         #[doc = "The trigger output send a positive pulse when the CC1IF flag it to be set, as soon as a capture or a compare match occurred"]
-        COMPARE_PULSE = 0x03,
+        ComparePulse = 0x03,
         #[doc = "OC1REF signal is used as trigger output"]
-        COMPARE_OC1 = 0x04,
+        CompareOc1 = 0x04,
         #[doc = "OC2REF signal is used as trigger output"]
-        COMPARE_OC2 = 0x05,
+        CompareOc2 = 0x05,
         #[doc = "OC3REF signal is used as trigger output"]
-        COMPARE_OC3 = 0x06,
+        CompareOc3 = 0x06,
         #[doc = "OC4REF signal is used as trigger output"]
-        COMPARE_OC4 = 0x07,
+        CompareOc4 = 0x07,
     }
     impl Mms {
         #[inline(always)]
@@ -3232,9 +3232,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msm {
         #[doc = "No action"]
-        NO_SYNC = 0x0,
+        NoSync = 0x0,
         #[doc = "The effect of an event on the trigger input (TRGI) is delayed to allow a perfect synchronization between the current timer and its slaves (through TRGO). It is useful if we want to synchronize several timers on a single external event."]
-        SYNC = 0x01,
+        Sync = 0x01,
     }
     impl Msm {
         #[inline(always)]
@@ -3263,21 +3263,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ocm {
         #[doc = "The comparison between the output compare register TIMx_CCRy and the counter TIMx_CNT has no effect on the outputs"]
-        FROZEN = 0x0,
+        Frozen = 0x0,
         #[doc = "Set channel to active level on match. OCyREF signal is forced high when the counter matches the capture/compare register"]
-        ACTIVE_ON_MATCH = 0x01,
+        ActiveOnMatch = 0x01,
         #[doc = "Set channel to inactive level on match. OCyREF signal is forced low when the counter matches the capture/compare register"]
-        INACTIVE_ON_MATCH = 0x02,
+        InactiveOnMatch = 0x02,
         #[doc = "OCyREF toggles when TIMx_CNT=TIMx_CCRy"]
-        TOGGLE = 0x03,
+        Toggle = 0x03,
         #[doc = "OCyREF is forced low"]
-        FORCE_INACTIVE = 0x04,
+        ForceInactive = 0x04,
         #[doc = "OCyREF is forced high"]
-        FORCE_ACTIVE = 0x05,
+        ForceActive = 0x05,
         #[doc = "In upcounting, channel is active as long as TIMx_CNT<TIMx_CCRy else inactive. In downcounting, channel is inactive as long as TIMx_CNT>TIMx_CCRy else active"]
-        PWM_MODE1 = 0x06,
+        PwmMode1 = 0x06,
         #[doc = "Inversely to PwmMode1"]
-        PWM_MODE2 = 0x07,
+        PwmMode2 = 0x07,
     }
     impl Ocm {
         #[inline(always)]
@@ -3306,21 +3306,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sms {
         #[doc = "Slave mode disabled - if CEN = '1' then the prescaler is clocked directly by the internal clock."]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Encoder mode 1 - Counter counts up/down on TI2FP1 edge depending on TI1FP2 level."]
-        ENCODER_MODE_1 = 0x01,
+        EncoderMode1 = 0x01,
         #[doc = "Encoder mode 2 - Counter counts up/down on TI1FP2 edge depending on TI2FP1 level."]
-        ENCODER_MODE_2 = 0x02,
+        EncoderMode2 = 0x02,
         #[doc = "Encoder mode 3 - Counter counts up/down on both TI1FP1 and TI2FP2 edges depending on the level of the other input."]
-        ENCODER_MODE_3 = 0x03,
+        EncoderMode3 = 0x03,
         #[doc = "Reset Mode - Rising edge of the selected trigger input (TRGI) reinitializes the counter and generates an update of the registers."]
-        RESET_MODE = 0x04,
+        ResetMode = 0x04,
         #[doc = "Gated Mode - The counter clock is enabled when the trigger input (TRGI) is high. The counter stops (but is not reset) as soon as the trigger becomes low. Both start and stop of the counter are controlled."]
-        GATED_MODE = 0x05,
+        GatedMode = 0x05,
         #[doc = "Trigger Mode - The counter starts at a rising edge of the trigger TRGI (but it is not reset). Only the start of the counter is controlled."]
-        TRIGGER_MODE = 0x06,
+        TriggerMode = 0x06,
         #[doc = "External Clock Mode 1 - Rising edges of the selected trigger (TRGI) clock the counter."]
-        EXT_CLOCK_MODE = 0x07,
+        ExtClockMode = 0x07,
     }
     impl Sms {
         #[inline(always)]
@@ -3349,9 +3349,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ti1s {
         #[doc = "The TIMx_CH1 pin is connected to TI1 input"]
-        NORMAL = 0x0,
+        Normal = 0x0,
         #[doc = "The TIMx_CH1, CH2, CH3 pins are connected to TI1 input"]
-        XOR = 0x01,
+        Xor = 0x01,
     }
     impl Ti1s {
         #[inline(always)]
@@ -3380,21 +3380,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ts {
         #[doc = "Internal Trigger 0 (ITR0)"]
-        ITR0 = 0x0,
+        Itr0 = 0x0,
         #[doc = "Internal Trigger 1 (ITR1)"]
-        ITR1 = 0x01,
+        Itr1 = 0x01,
         #[doc = "Internal Trigger 2 (ITR2)"]
-        ITR2 = 0x02,
+        Itr2 = 0x02,
         #[doc = "Internal Trigger 3 (ITR3)"]
-        ITR3 = 0x03,
+        Itr3 = 0x03,
         #[doc = "TI1 Edge Detector (TI1F_ED)"]
-        TI1F_ED = 0x04,
+        Ti1fEd = 0x04,
         #[doc = "Filtered Timer Input 1 (TI1FP1)"]
-        TI1FP1 = 0x05,
+        Ti1fp1 = 0x05,
         #[doc = "Filtered Timer Input 2 (TI2FP2)"]
-        TI2FP2 = 0x06,
+        Ti2fp2 = 0x06,
         #[doc = "External Trigger input (ETRF)"]
-        ETRF = 0x07,
+        Etrf = 0x07,
     }
     impl Ts {
         #[inline(always)]
@@ -3423,9 +3423,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Urs {
         #[doc = "Any of counter overflow/underflow, setting UG, or update through slave mode, generates an update interrupt or DMA request"]
-        ANY_EVENT = 0x0,
+        AnyEvent = 0x0,
         #[doc = "Only counter overflow/underflow generates an update interrupt or DMA request"]
-        COUNTER_ONLY = 0x01,
+        CounterOnly = 0x01,
     }
     impl Urs {
         #[inline(always)]

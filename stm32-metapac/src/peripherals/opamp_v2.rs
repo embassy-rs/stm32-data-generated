@@ -265,13 +265,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calsel {
         #[doc = "VREFOPAMP = 3.3% VDDA"]
-        PERCENT3_3 = 0x0,
+        Percent33 = 0x0,
         #[doc = "VREFOPAMP = 10% VDDA"]
-        PERCENT10 = 0x01,
+        Percent10 = 0x01,
         #[doc = "VREFOPAMP = 50% VDDA"]
-        PERCENT50 = 0x02,
+        Percent50 = 0x02,
         #[doc = "VREFOPAMP = 90% VDDA"]
-        PERCENT90 = 0x03,
+        Percent90 = 0x03,
     }
     impl Calsel {
         #[inline(always)]
@@ -300,33 +300,33 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PgaGain {
         #[doc = "Gain 2"]
-        GAIN2 = 0x0,
+        Gain2 = 0x0,
         #[doc = "Gain 4"]
-        GAIN4 = 0x01,
+        Gain4 = 0x01,
         #[doc = "Gain 8"]
-        GAIN8 = 0x02,
+        Gain8 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "Gain 16"]
-        GAIN16 = 0x04,
+        Gain16 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "Gain 2, feedback connected to VM0"]
-        GAIN2_VM0 = 0x08,
+        Gain2Vm0 = 0x08,
         #[doc = "Gain 4, feedback connected to VM0"]
-        GAIN4_VM0 = 0x09,
+        Gain4Vm0 = 0x09,
         #[doc = "Gain 8, feedback connected to VM0"]
-        GAIN8_VM0 = 0x0a,
+        Gain8Vm0 = 0x0a,
         #[doc = "Gain 16, feedback connected to VM0"]
-        GAIN16_VM0 = 0x0b,
+        Gain16Vm0 = 0x0b,
         #[doc = "Gain 2, feedback connected to VM1"]
-        GAIN2_VM1 = 0x0c,
+        Gain2Vm1 = 0x0c,
         #[doc = "Gain 4, feedback connected to VM1"]
-        GAIN4_VM1 = 0x0d,
+        Gain4Vm1 = 0x0d,
         #[doc = "Gain 8, feedback connected to VM1"]
-        GAIN8_VM1 = 0x0e,
+        Gain8Vm1 = 0x0e,
         #[doc = "Gain 16, feedback connected to VM1"]
-        GAIN16_VM1 = 0x0f,
+        Gain16Vm1 = 0x0f,
     }
     impl PgaGain {
         #[inline(always)]
@@ -355,13 +355,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VmSel {
         #[doc = "PC5 (VM0) used as OPAMP2 inverting input"]
-        PC5 = 0x0,
+        Pc5 = 0x0,
         #[doc = "PA5 (VM1) used as OPAMP2 inverting input"]
-        PA5 = 0x01,
+        Pa5 = 0x01,
         #[doc = "Resistor feedback output (PGA mode)"]
-        PGA = 0x02,
+        Pga = 0x02,
         #[doc = "Follower mode"]
-        FOLLOWER = 0x03,
+        Follower = 0x03,
     }
     impl VmSel {
         #[inline(always)]
@@ -390,9 +390,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VmsSel {
         #[doc = "PC5 (VM0) used as OPAMP2 inverting input when TCM_EN = 1"]
-        PC5 = 0x0,
+        Pc5 = 0x0,
         #[doc = "PA5 (VM1) used as OPAMP2 inverting input when TCM_EN = 1"]
-        PA5 = 0x01,
+        Pa5 = 0x01,
     }
     impl VmsSel {
         #[inline(always)]
@@ -422,11 +422,11 @@ pub mod vals {
     pub enum VpSel {
         _RESERVED_0 = 0x0,
         #[doc = "PB14 used as OPAMP2 non-inverting input"]
-        PB14 = 0x01,
+        Pb14 = 0x01,
         #[doc = "PB0 used as OPAMP2 non-inverting input"]
-        PB0 = 0x02,
+        Pb0 = 0x02,
         #[doc = "PA7 used as OPAMP2 non-inverting input"]
-        PA7 = 0x03,
+        Pa7 = 0x03,
     }
     impl VpSel {
         #[inline(always)]
@@ -456,11 +456,11 @@ pub mod vals {
     pub enum VpsSel {
         _RESERVED_0 = 0x0,
         #[doc = "PB14 used as OPAMP2 non-inverting input when TCM_EN=1"]
-        PB14 = 0x01,
+        Pb14 = 0x01,
         #[doc = "PB0 used as OPAMP2 non-inverting input when TCM_EN=1"]
-        PB0 = 0x02,
+        Pb0 = 0x02,
         #[doc = "PA7 used as OPAMP2 non-inverting input when TCM_EN=1"]
-        PA7 = 0x03,
+        Pa7 = 0x03,
     }
     impl VpsSel {
         #[inline(always)]

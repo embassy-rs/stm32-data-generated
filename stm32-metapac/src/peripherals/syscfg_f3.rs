@@ -934,9 +934,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Ext13Rmp {
         #[doc = "Trigger source is TIM6_TRGO"]
-        TIM6 = 0x0,
+        Tim6 = 0x0,
         #[doc = "Trigger source is TIM20_CC2"]
-        TIM20 = 0x01,
+        Tim20 = 0x01,
     }
     impl Adc12Ext13Rmp {
         #[inline(always)]
@@ -965,9 +965,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Ext15Rmp {
         #[doc = "Trigger source is TIM3_CC4"]
-        TIM3 = 0x0,
+        Tim3 = 0x0,
         #[doc = "Trigger source is TIM20_CC3"]
-        TIM20 = 0x01,
+        Tim20 = 0x01,
     }
     impl Adc12Ext15Rmp {
         #[inline(always)]
@@ -996,9 +996,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Ext2Rmp {
         #[doc = "Trigger source is TIM3_CC3"]
-        TIM1 = 0x0,
+        Tim1 = 0x0,
         #[doc = "rigger source is TIM20_TRGO"]
-        TIM20 = 0x01,
+        Tim20 = 0x01,
     }
     impl Adc12Ext2Rmp {
         #[inline(always)]
@@ -1027,9 +1027,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Ext3Rmp {
         #[doc = "Trigger source is TIM2_CC2"]
-        TIM2 = 0x0,
+        Tim2 = 0x0,
         #[doc = "rigger source is TIM20_TRGO2"]
-        TIM20 = 0x01,
+        Tim20 = 0x01,
     }
     impl Adc12Ext3Rmp {
         #[inline(always)]
@@ -1058,9 +1058,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Ext5Rmp {
         #[doc = "Trigger source is TIM4_CC4"]
-        TIM4 = 0x0,
+        Tim4 = 0x0,
         #[doc = "Trigger source is TIM20_CC1"]
-        TIM20 = 0x01,
+        Tim20 = 0x01,
     }
     impl Adc12Ext5Rmp {
         #[inline(always)]
@@ -1089,9 +1089,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Jext13Rmp {
         #[doc = "Trigger source is TIM3_CC1"]
-        TIM3 = 0x0,
+        Tim3 = 0x0,
         #[doc = "Trigger source is TIM20_CC4"]
-        TIM20 = 0x01,
+        Tim20 = 0x01,
     }
     impl Adc12Jext13Rmp {
         #[inline(always)]
@@ -1120,9 +1120,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Jext3Rmp {
         #[doc = "Trigger source is TIM2_CC1"]
-        TIM2 = 0x0,
+        Tim2 = 0x0,
         #[doc = "Trigger source is TIM20_TRGO"]
-        TIM20 = 0x01,
+        Tim20 = 0x01,
     }
     impl Adc12Jext3Rmp {
         #[inline(always)]
@@ -1151,9 +1151,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc12Jext6Rmp {
         #[doc = "Trigger source is EXTI line 15"]
-        EXTI15 = 0x0,
+        Exti15 = 0x0,
         #[doc = "Trigger source is TIM20_TRGO2"]
-        TIM20 = 0x01,
+        Tim20 = 0x01,
     }
     impl Adc12Jext6Rmp {
         #[inline(always)]
@@ -1184,9 +1184,9 @@ pub mod vals {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "ADC2 mapped on DMA1 channel 2"]
-        MAP_DMA1CH2 = 0x02,
+        MapDma1ch2 = 0x02,
         #[doc = "ADC2 mapped on DMA1 channel 4"]
-        MAP_DMA1CH4 = 0x03,
+        MapDma1ch4 = 0x03,
     }
     impl Adc2DmaRmpCfgr3 {
         #[inline(always)]
@@ -1215,9 +1215,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc34Ext15Rmp {
         #[doc = "Trigger source is TIM2_CC1"]
-        TIM2 = 0x0,
+        Tim2 = 0x0,
         #[doc = "Trigger source is TIM20_CC1"]
-        TIM20 = 0x01,
+        Tim20 = 0x01,
     }
     impl Adc34Ext15Rmp {
         #[inline(always)]
@@ -1246,9 +1246,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc34Ext5Rmp {
         #[doc = "Trigger source is EXTI line 2 when reset at 0"]
-        EXTI2 = 0x0,
+        Exti2 = 0x0,
         #[doc = "Trigger source is TIM20_TRGO"]
-        TIM20 = 0x01,
+        Tim20 = 0x01,
     }
     impl Adc34Ext5Rmp {
         #[inline(always)]
@@ -1277,9 +1277,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc34Ext6Rmp {
         #[doc = "Trigger source is TIM4_CC1"]
-        TIM4 = 0x0,
+        Tim4 = 0x0,
         #[doc = "Trigger source is TIM20_TRGO2"]
-        TIM20 = 0x01,
+        Tim20 = 0x01,
     }
     impl Adc34Ext6Rmp {
         #[inline(always)]
@@ -1308,9 +1308,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc34Jext11Rmp {
         #[doc = "Trigger source is TIM1_CC3"]
-        TIM1 = 0x0,
+        Tim1 = 0x0,
         #[doc = "Trigger source is TIM20_TRGO2"]
-        TIM20 = 0x01,
+        Tim20 = 0x01,
     }
     impl Adc34Jext11Rmp {
         #[inline(always)]
@@ -1339,9 +1339,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc34Jext14Rmp {
         #[doc = "Trigger source is TIM7_TRGO"]
-        TIM7 = 0x0,
+        Tim7 = 0x0,
         #[doc = "Trigger source is TIM20_CC2"]
-        TIM20 = 0x01,
+        Tim20 = 0x01,
     }
     impl Adc34Jext14Rmp {
         #[inline(always)]
@@ -1370,9 +1370,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc34Jext5Rmp {
         #[doc = "Trigger source is TIM4_CC3"]
-        TIM4 = 0x0,
+        Tim4 = 0x0,
         #[doc = "Trigger source is TIM20_TRGO"]
-        TIM20 = 0x01,
+        Tim20 = 0x01,
     }
     impl Adc34Jext5Rmp {
         #[inline(always)]
@@ -1401,9 +1401,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dac1Trig3Rmp {
         #[doc = "DAC trigger is TIM15_TRGO"]
-        TIM15 = 0x0,
+        Tim15 = 0x0,
         #[doc = "DAC trigger is HRTIM1_DAC1_TRIG1"]
-        HR_TIM1 = 0x01,
+        HrTim1 = 0x01,
     }
     impl Dac1Trig3Rmp {
         #[inline(always)]
@@ -1432,11 +1432,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EncoderMode {
         #[doc = "No redirection"]
-        NO_REDIRECTION = 0x0,
+        NoRedirection = 0x0,
         #[doc = "TIM2 IC1 and TIM2 IC2 are connected to TIM15 IC1 and TIM15 IC2 respectively"]
-        MAP_TIM2TIM15 = 0x01,
+        MapTim2tim15 = 0x01,
         #[doc = "TIM3 IC1 and TIM3 IC2 are connected to TIM15 IC1 and TIM15 IC2 respectively"]
-        MAP_TIM3TIM15 = 0x02,
+        MapTim3tim15 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl EncoderMode {
@@ -1466,9 +1466,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmp {
         #[doc = "Standard"]
-        STANDARD = 0x0,
+        Standard = 0x0,
         #[doc = "FM+"]
-        FMP = 0x01,
+        Fmp = 0x01,
     }
     impl Fmp {
         #[inline(always)]
@@ -1497,11 +1497,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2c1RxDmaRmp {
         #[doc = "I2C1_RX mapped on DMA1 CH7"]
-        MAP_DMA1CH7 = 0x0,
+        MapDma1ch7 = 0x0,
         #[doc = "I2C1_RX mapped on DMA1 CH3"]
-        MAP_DMA1CH3 = 0x01,
+        MapDma1ch3 = 0x01,
         #[doc = "I2C1_RX mapped on DMA1 CH5"]
-        MAP_DMA1CH5 = 0x02,
+        MapDma1ch5 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl I2c1RxDmaRmp {
@@ -1531,11 +1531,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2c1TxDmaRmp {
         #[doc = "I2C1_TX mapped on DMA1 CH6"]
-        MAP_DMA1CH6 = 0x0,
+        MapDma1ch6 = 0x0,
         #[doc = "I2C1_TX mapped on DMA1 CH2"]
-        MAP_DMA1CH2 = 0x01,
+        MapDma1ch2 = 0x01,
         #[doc = "I2C1_TX mapped on DMA1 CH4"]
-        MAP_DMA1CH4 = 0x02,
+        MapDma1ch4 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl I2c1TxDmaRmp {
@@ -1565,13 +1565,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MemMode {
         #[doc = "Main Flash memory mapped at 0x0000_0000"]
-        MAIN_FLASH = 0x0,
+        MainFlash = 0x0,
         #[doc = "System Flash memory mapped at 0x0000_0000"]
-        SYSTEM_FLASH = 0x01,
+        SystemFlash = 0x01,
         #[doc = "Main Flash memory mapped at 0x0000_0000"]
-        MAIN_FLASH2 = 0x02,
+        MainFlash2 = 0x02,
         #[doc = "Embedded SRAM mapped at 0x0000_0000"]
-        SRAM = 0x03,
+        Sram = 0x03,
     }
     impl MemMode {
         #[inline(always)]
@@ -1600,11 +1600,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spi1RxDmaRmp {
         #[doc = "SPI1_RX mapped on DMA1 CH2"]
-        MAP_DMA1CH3 = 0x0,
+        MapDma1ch3 = 0x0,
         #[doc = "SPI1_RX mapped on DMA1 CH4"]
-        MAP_DMA1CH5 = 0x01,
+        MapDma1ch5 = 0x01,
         #[doc = "SPI1_RX mapped on DMA1 CH6"]
-        MAP_DMA1CH7 = 0x02,
+        MapDma1ch7 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Spi1RxDmaRmp {
@@ -1634,11 +1634,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spi1TxDmaRmp {
         #[doc = "SPI1_TX mapped on DMA1 CH3"]
-        MAP_DMA1CH3 = 0x0,
+        MapDma1ch3 = 0x0,
         #[doc = "SPI1_TX mapped on DMA1 CH5"]
-        MAP_DMA1CH5 = 0x01,
+        MapDma1ch5 = 0x01,
         #[doc = "SPI1_TX mapped on DMA1 CH7"]
-        MAP_DMA1CH7 = 0x02,
+        MapDma1ch7 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Spi1TxDmaRmp {

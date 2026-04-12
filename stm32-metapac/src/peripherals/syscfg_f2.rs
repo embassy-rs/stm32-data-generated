@@ -227,13 +227,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MemMode {
         #[doc = "Main Flash memory mapped at 0x0000_0000"]
-        MAIN_FLASH = 0x0,
+        MainFlash = 0x0,
         #[doc = "System Flash memory mapped at 0x0000_0000"]
-        SYSTEM_FLASH = 0x01,
+        SystemFlash = 0x01,
         #[doc = "FSMC Bank1 (NOR/PSRAM 1 and 2) mapped at 0x0000_0000"]
-        FSMC = 0x02,
+        Fsmc = 0x02,
         #[doc = "Embedded SRAM mapped at 0x0000_0000"]
-        SRAM = 0x03,
+        Sram = 0x03,
     }
     impl MemMode {
         #[inline(always)]

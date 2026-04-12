@@ -1521,15 +1521,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpms {
         #[doc = "Stop0 mode"]
-        STOP0 = 0x0,
+        Stop0 = 0x0,
         #[doc = "Stop1 mode"]
-        STOP1 = 0x01,
+        Stop1 = 0x01,
         #[doc = "Stop2 mode"]
-        STOP2 = 0x02,
+        Stop2 = 0x02,
         #[doc = "Standby mode"]
-        STANDBY = 0x03,
+        Standby = 0x03,
         #[doc = "Shutdown mode"]
-        SHUTDOWN = 0x04,
+        Shutdown = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -1562,9 +1562,9 @@ pub mod vals {
     pub enum Vos {
         _RESERVED_0 = 0x0,
         #[doc = "Range 1"]
-        RANGE1 = 0x01,
+        Range1 = 0x01,
         #[doc = "Range 2"]
-        RANGE2 = 0x02,
+        Range2 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Vos {

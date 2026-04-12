@@ -1424,35 +1424,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "ASYNCHRONOUS_CONTINUOUS",
+                    name: "AsynchronousContinuous",
                     description: Some(
                         "Asynchronous continuous acquisition mode.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ASYNCHRONOUS_SINGLE_SHOT",
+                    name: "AsynchronousSingleShot",
                     description: Some(
                         "Asynchronous single-shot acquisition mode",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SYNCRONOUS_CONTINUOUS",
+                    name: "SyncronousContinuous",
                     description: Some(
                         "Synchronous continuous acquisition mode.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SYNCRONOUS_SINGLE_SHOT",
+                    name: "SyncronousSingleShot",
                     description: Some(
                         "Synchronous single-shot acquisition mode.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "WINDOW_CONTINUOUS",
+                    name: "WindowContinuous",
                     description: Some(
                         "Window continuous acquisition mode.",
                     ),
@@ -1468,224 +1468,224 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "BS0_F",
+                    name: "Bs0F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "BS0_R",
+                    name: "Bs0R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BS10_F",
+                    name: "Bs10F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 21,
                 },
                 EnumVariant {
-                    name: "BS10_R",
+                    name: "Bs10R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 20,
                 },
                 EnumVariant {
-                    name: "BS11_F",
+                    name: "Bs11F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 23,
                 },
                 EnumVariant {
-                    name: "BS11_R",
+                    name: "Bs11R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 22,
                 },
                 EnumVariant {
-                    name: "BS12_F",
+                    name: "Bs12F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 25,
                 },
                 EnumVariant {
-                    name: "BS12_R",
+                    name: "Bs12R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 24,
                 },
                 EnumVariant {
-                    name: "BS13_F",
+                    name: "Bs13F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 27,
                 },
                 EnumVariant {
-                    name: "BS13_R",
+                    name: "Bs13R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 26,
                 },
                 EnumVariant {
-                    name: "BS14_F",
+                    name: "Bs14F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 29,
                 },
                 EnumVariant {
-                    name: "BS14_R",
+                    name: "Bs14R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 28,
                 },
                 EnumVariant {
-                    name: "BS15_F",
+                    name: "Bs15F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 31,
                 },
                 EnumVariant {
-                    name: "BS15_R",
+                    name: "Bs15R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 30,
                 },
                 EnumVariant {
-                    name: "BS1_F",
+                    name: "Bs1F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "BS1_R",
+                    name: "Bs1R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BS2_F",
+                    name: "Bs2F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "BS2_R",
+                    name: "Bs2R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "BS3_F",
+                    name: "Bs3F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "BS3_R",
+                    name: "Bs3R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "BS4_F",
+                    name: "Bs4F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "BS4_R",
+                    name: "Bs4R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "BS5_F",
+                    name: "Bs5F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 11,
                 },
                 EnumVariant {
-                    name: "BS5_R",
+                    name: "Bs5R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "BS6_F",
+                    name: "Bs6F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "BS6_R",
+                    name: "Bs6R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "BS7_F",
+                    name: "Bs7F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 15,
                 },
                 EnumVariant {
-                    name: "BS7_R",
+                    name: "Bs7R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 14,
                 },
                 EnumVariant {
-                    name: "BS8_F",
+                    name: "Bs8F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 17,
                 },
                 EnumVariant {
-                    name: "BS8_R",
+                    name: "Bs8R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
                     value: 16,
                 },
                 EnumVariant {
-                    name: "BS9_F",
+                    name: "Bs9F",
                     description: Some(
                         "bsx_f provided to DFLTy (and SCDy).",
                     ),
                     value: 19,
                 },
                 EnumVariant {
-                    name: "BS9_R",
+                    name: "Bs9R",
                     description: Some(
                         "bsx_r provided to DFLTy (and SCDy).",
                     ),
@@ -1701,14 +1701,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "INPUT",
+                    name: "Input",
                     description: Some(
                         "CCK is an input.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OUTPUT",
+                    name: "Output",
                     description: Some(
                         "CCK is an output.",
                     ),
@@ -1724,112 +1724,112 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "DIV1",
+                    name: "Div1",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV10",
+                    name: "Div10",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck divided by 10.",
                     ),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "DIV11",
+                    name: "Div11",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck divided by 11.",
                     ),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "DIV12",
+                    name: "Div12",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck divided by 12.",
                     ),
                     value: 11,
                 },
                 EnumVariant {
-                    name: "DIV13",
+                    name: "Div13",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck divided by 13.",
                     ),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "DIV14",
+                    name: "Div14",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck divided by 14.",
                     ),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "DIV15",
+                    name: "Div15",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck divided by 15.",
                     ),
                     value: 14,
                 },
                 EnumVariant {
-                    name: "DIV16",
+                    name: "Div16",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck divided by 16.",
                     ),
                     value: 15,
                 },
                 EnumVariant {
-                    name: "DIV2",
+                    name: "Div2",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck divided by 2.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DIV3",
+                    name: "Div3",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck divided by 3.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DIV4",
+                    name: "Div4",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck divided by 4.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DIV5",
+                    name: "Div5",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck divided by 5.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "DIV6",
+                    name: "Div6",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck divided by 6.",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DIV7",
+                    name: "Div7",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck divided by 7.",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DIV8",
+                    name: "Div8",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck divided by 8.",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "DIV9",
+                    name: "Div9",
                     description: Some(
                         "The ADF_CCK clock is adf_proc_ck divided by 9.",
                     ),
@@ -1845,14 +1845,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "GENERATED",
+                    name: "Generated",
                     description: Some(
                         "Bitstream clock generated on the CCK pin.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NOT_GENERATED",
+                    name: "NotGenerated",
                     description: Some(
                         "Bitstream clock not generated.",
                     ),
@@ -1868,14 +1868,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "SINC4",
+                    name: "Sinc4",
                     description: Some(
                         "MCIC configured in single Sinc4 filter.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "SINC5",
+                    name: "Sinc5",
                     description: Some(
                         "MCIC configured in single Sinc5 filter.",
                     ),
@@ -1891,14 +1891,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "IMMEDIATE",
+                    name: "Immediate",
                     description: Some(
                         "The kernel clock is provided to the dividers as soon as CKGDEN is set to 1.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TRIGGER",
+                    name: "Trigger",
                     description: Some(
                         "The kernel clock is provided to the dividers when CKGDEN is set to 1 and the trigger condition met.",
                     ),
@@ -1914,21 +1914,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "Disabled",
                     description: Some(
                         "Samples from DFLT0 not transfered into the memory.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "Enabled",
                     description: Some(
                         "Samples from DFLT0 transfered into memory when SAD and DFLT0 are enabled.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "ON_DETECTED",
+                    name: "OnDetected",
                     description: Some(
                         "Samples from DFLT0 transfered into the memory when SAD is in DETECT state.",
                     ),
@@ -1944,21 +1944,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ADCITF1",
+                    name: "Adcitf1",
                     description: Some(
                         "Stream coming from the ADCITF1 selected",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "ADCITF2",
+                    name: "Adcitf2",
                     description: Some(
                         "Stream coming from the ADCITF2 selected",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "BSMX",
+                    name: "Bsmx",
                     description: Some(
                         "Stream coming from the BSMX selected",
                     ),
@@ -1974,14 +1974,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DETECT",
+                    name: "Detect",
                     description: Some(
                         "sddet_evt generated when SAD enters or exits the DETECT state.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MONITOR",
+                    name: "Monitor",
                     description: Some(
                         "sddet_evt generated when SAD enters the MONITOR state.",
                     ),
@@ -1997,49 +1997,49 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "SAMPLES128",
+                    name: "Samples128",
                     description: Some(
                         "128 samples.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "SAMPLES16",
+                    name: "Samples16",
                     description: Some(
                         "16 samples.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SAMPLES256",
+                    name: "Samples256",
                     description: Some(
                         "256 samples.",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "SAMPLES32",
+                    name: "Samples32",
                     description: Some(
                         "32 samples.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SAMPLES512",
+                    name: "Samples512",
                     description: Some(
                         "512 samples.",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "SAMPLES64",
+                    name: "Samples64",
                     description: Some(
                         "64 samples.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "SAMPLES8",
+                    name: "Samples8",
                     description: Some(
                         "8 sample.",
                     ),
@@ -2055,56 +2055,56 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "FRAMES_128",
+                    name: "Frames128",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "FRAMES_16",
+                    name: "Frames16",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FRAMES_256",
+                    name: "Frames256",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "FRAMES_32",
+                    name: "Frames32",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "FRAMES_4",
+                    name: "Frames4",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FRAMES_512",
+                    name: "Frames512",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "FRAMES_64",
+                    name: "Frames64",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "FRAMES_8",
+                    name: "Frames8",
                     description: Some(
                         "SAD back to MONITOR state if sound is below threshold for 4 frames.",
                     ),
@@ -2120,28 +2120,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HIGH",
+                    name: "High",
                     description: Some(
                         "Cut-off frequency = 0.00250 x FPCM",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "LOW",
+                    name: "Low",
                     description: Some(
                         "Cut-off frequency = 0.000625 x FPCM.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MAXIMUM",
+                    name: "Maximum",
                     description: Some(
                         "Cut-off frequency = 0.00950 x FPCM",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "MEDIUM",
+                    name: "Medium",
                     description: Some(
                         "Cut-off frequency = 0.00125 x FPCM.",
                     ),
@@ -2157,35 +2157,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "FRAMES_16",
+                    name: "Frames16",
                     description: Some(
                         "16 samples.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "FRAMES_2",
+                    name: "Frames2",
                     description: Some(
                         "2 samples.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FRAMES_32",
+                    name: "Frames32",
                     description: Some(
                         "32 samples.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "FRAMES_4",
+                    name: "Frames4",
                     description: Some(
                         "4 samples.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FRAMES_8",
+                    name: "Frames8",
                     description: Some(
                         "8 samples.",
                     ),
@@ -2201,14 +2201,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DECIMATION1",
+                    name: "Decimation1",
                     description: Some(
                         "Decimation ratio is 1.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DECIMATION4",
+                    name: "Decimation4",
                     description: Some(
                         "Decimation ratio is 4 (default value).",
                     ),
@@ -2224,14 +2224,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HALF_FULL",
+                    name: "HalfFull",
                     description: Some(
                         "RXFIFO threshold event generated when the RXFIFO is half-full",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NOT_EMPTY",
+                    name: "NotEmpty",
                     description: Some(
                         "RXFIFO threshold event generated when the RXFIFO is not empty",
                     ),
@@ -2247,21 +2247,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "THRESHOLD_ESTIMATED_AMBIENT_NOISE",
+                    name: "ThresholdEstimatedAmbientNoise",
                     description: Some(
                         "Threshold value computed according to the estimated ambient noise. The SAD triggers when the sound level (SDLVL) is bigger than the defined threshold. In this mode, the SAD works like a voice activity detector.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "THRESHOLD_MINIMUM_NOISELEVEL",
+                    name: "ThresholdMinimumNoiselevel",
                     description: Some(
                         "Threshold value equal to ANMIN[12:0], multiplied by the gain selected by SNTHR[3:0] The SAD triggers when the sound level (SDLVL) is bigger than the defined threshold. In this mode, the SAD works like a sound detector.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "THRESHOLD_MINIMUM_NOISELEVELX4",
+                    name: "ThresholdMinimumNoiselevelx4",
                     description: Some(
                         "Threshold value given by 4 x ANMIN[12:0]. The SAD triggers when the estimated ambient noise (ANLVL), multiplied by the gain selected by SNTHR[3:0] is bigger than the defined threshold. In this mode, the SAD is working like an ambient noise estimator. Hysteresis function cannot be used in this mode.",
                     ),
@@ -2277,21 +2277,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DETECT",
+                    name: "Detect",
                     description: Some(
                         "SAD in DETECT state.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "LEARN",
+                    name: "Learn",
                     description: Some(
                         "SAD in LEARN state.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MONITOR",
+                    name: "Monitor",
                     description: Some(
                         "SAD in MONITOR state.",
                     ),
@@ -2307,28 +2307,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "CCK0",
+                    name: "Cck0",
                     description: Some(
                         "Serial clock source is CCK0.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CCK1",
+                    name: "Cck1",
                     description: Some(
                         "Serial clock source is CCK1.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "CKI0",
+                    name: "Cki0",
                     description: Some(
                         "Serial clock source is CCI0.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "CKI1",
+                    name: "Cki1",
                     description: Some(
                         "Serial clock source is CCI1.",
                     ),
@@ -2344,28 +2344,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MANCHESTER_FALLING",
+                    name: "ManchesterFalling",
                     description: Some(
                         "Manchester mode rising edge = logic 0, falling edge = logic 1.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MANCHESTER_RISING",
+                    name: "ManchesterRising",
                     description: Some(
                         "Manchester mode rising edge = logic 1, falling edge = logic 0.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "MASTER_SPI",
+                    name: "MasterSpi",
                     description: Some(
                         "LF_MASTER SPI mode.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NORMAL_SPI",
+                    name: "NormalSpi",
                     description: Some(
                         "Normal SPI mode.",
                     ),
@@ -2381,70 +2381,70 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "NOISE_PLUS_12",
+                    name: "NoisePlus12",
                     description: Some(
                         "Threshold is 12 dB higher than ANLVL",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "NOISE_PLUS_15_6",
+                    name: "NoisePlus156",
                     description: Some(
                         "Threshold is 15.6 dB higher than ANLVL",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "NOISE_PLUS_18",
+                    name: "NoisePlus18",
                     description: Some(
                         "Threshold is 18 dB higher than ANLVL",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "NOISE_PLUS_21_6",
+                    name: "NoisePlus216",
                     description: Some(
                         "Threshold is 21.6 dB higher than ANLVL",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "NOISE_PLUS_24_1",
+                    name: "NoisePlus241",
                     description: Some(
                         "Threshold is 24.1 dB higher than ANLVL",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "NOISE_PLUS_27_6",
+                    name: "NoisePlus276",
                     description: Some(
                         "Threshold is 27.6 dB higher than ANLVL",
                     ),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "NOISE_PLUS_30_1",
+                    name: "NoisePlus301",
                     description: Some(
                         "Threshold is 30.1 dB higher than ANLVL",
                     ),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "NOISE_PLUS_3_5",
+                    name: "NoisePlus35",
                     description: Some(
                         "Threshold is 3.5 dB higher than ANLVL",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOISE_PLUS_6_0",
+                    name: "NoisePlus60",
                     description: Some(
                         "Threshold is 6.0 dB higher than ANLVL",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NOISE_PLUS_9_5",
+                    name: "NoisePlus95",
                     description: Some(
                         "Threshold is 9.5 dB higher than ANLVL",
                     ),
@@ -2460,14 +2460,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FALLING_EDGE",
+                    name: "FallingEdge",
                     description: Some(
                         "A falling edge even triggers the activation of CKGEN dividers.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RISING_EDGE",
+                    name: "RisingEdge",
                     description: Some(
                         "A rising edge event triggers the activation of CKGEN dividers.",
                     ),
@@ -2483,14 +2483,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "TRG1",
+                    name: "Trg1",
                     description: Some(
                         "adf_trg1 selected.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "TRGO",
+                    name: "Trgo",
                     description: Some(
                         "TRGO Selected.",
                     ),

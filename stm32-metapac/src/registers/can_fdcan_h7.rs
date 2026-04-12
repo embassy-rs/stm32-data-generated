@@ -3625,12 +3625,12 @@ pub(crate) static REGISTERS: IR = IR {
         bit_size: 1,
         variants: &[
             EnumVariant {
-                name: "FIFO",
+                name: "Fifo",
                 description: Some("Tx FIFO operation"),
                 value: 0,
             },
             EnumVariant {
-                name: "QUEUE",
+                name: "Queue",
                 description: Some("Tx queue operation"),
                 value: 1,
             },

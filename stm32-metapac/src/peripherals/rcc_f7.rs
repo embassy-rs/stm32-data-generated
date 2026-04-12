@@ -5559,9 +5559,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adfsdmsel {
         #[doc = "SAI1 clock selected as DFSDM1 Audio clock source"]
-        SAI1 = 0x0,
+        Sai1 = 0x0,
         #[doc = "SAI2 clock selected as DFSDM1 Audio clock source"]
-        SAI2 = 0x01,
+        Sai2 = 0x01,
     }
     impl Adfsdmsel {
         #[inline(always)]
@@ -5590,9 +5590,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cecsel {
         #[doc = "LSE clock is selected as HDMI-CEC clock"]
-        LSE = 0x0,
+        Lse = 0x0,
         #[doc = "HSI divided by 488 clock is selected as HDMI-CEC clock"]
-        HSI_DIV_488 = 0x01,
+        HsiDiv488 = 0x01,
     }
     impl Cecsel {
         #[inline(always)]
@@ -5621,9 +5621,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Clk48sel {
         #[doc = "48MHz clock from PLL is selected"]
-        PLL1_Q = 0x0,
+        Pll1Q = 0x0,
         #[doc = "48MHz clock from PLLSAI is selected"]
-        PLLSAI1_P = 0x01,
+        Pllsai1P = 0x01,
     }
     impl Clk48sel {
         #[inline(always)]
@@ -5652,9 +5652,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dfsdmsel {
         #[doc = "APB2 clock (PCLK2) selected as DFSDM1 Kernel clock source"]
-        PCLK2 = 0x0,
+        Pclk2 = 0x0,
         #[doc = "System clock (SYSCLK) clock selected as DFSDM1 Kernel clock source"]
-        SYS = 0x01,
+        Sys = 0x01,
     }
     impl Dfsdmsel {
         #[inline(always)]
@@ -5683,9 +5683,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dsisel {
         #[doc = "DSI-PHY used as DSI byte lane clock source (usual case)"]
-        DSI_PHY_DIV_8 = 0x0,
+        DsiPhyDiv8 = 0x0,
         #[doc = "PLLR used as DSI byte lane clock source, used in case DSI PLL and DSI-PHY are off (low power mode)"]
-        PLL1_R = 0x01,
+        Pll1R = 0x01,
     }
     impl Dsisel {
         #[inline(always)]
@@ -5714,7 +5714,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hpre {
         #[doc = "SYSCLK not divided"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -5723,21 +5723,21 @@ pub mod vals {
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "SYSCLK divided by 2"]
-        DIV2 = 0x08,
+        Div2 = 0x08,
         #[doc = "SYSCLK divided by 4"]
-        DIV4 = 0x09,
+        Div4 = 0x09,
         #[doc = "SYSCLK divided by 8"]
-        DIV8 = 0x0a,
+        Div8 = 0x0a,
         #[doc = "SYSCLK divided by 16"]
-        DIV16 = 0x0b,
+        Div16 = 0x0b,
         #[doc = "SYSCLK divided by 64"]
-        DIV64 = 0x0c,
+        Div64 = 0x0c,
         #[doc = "SYSCLK divided by 128"]
-        DIV128 = 0x0d,
+        Div128 = 0x0d,
         #[doc = "SYSCLK divided by 256"]
-        DIV256 = 0x0e,
+        Div256 = 0x0e,
         #[doc = "SYSCLK divided by 512"]
-        DIV512 = 0x0f,
+        Div512 = 0x0f,
     }
     impl Hpre {
         #[inline(always)]
@@ -5766,11 +5766,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2csel {
         #[doc = "APB clock selected as I2C clock"]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "System clock selected as I2C clock"]
-        SYS = 0x01,
+        Sys = 0x01,
         #[doc = "HSI clock selected as I2C clock"]
-        HSI = 0x02,
+        Hsi = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl I2csel {
@@ -5800,9 +5800,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Issrc {
         #[doc = "PLLI2S clock used as I2S clock source"]
-        PLLI2S = 0x0,
+        Plli2s = 0x0,
         #[doc = "External clock mapped on the I2S_CKIN pin used as I2S clock source"]
-        CKIN = 0x01,
+        Ckin = 0x01,
     }
     impl Issrc {
         #[inline(always)]
@@ -5831,13 +5831,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lptimsel {
         #[doc = "APB1 clock (PCLK1) selected as LPTILM1 clock"]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "LSI clock is selected as LPTILM1 clock"]
-        LSI = 0x01,
+        Lsi = 0x01,
         #[doc = "HSI clock is selected as LPTILM1 clock"]
-        HSI = 0x02,
+        Hsi = 0x02,
         #[doc = "LSE clock is selected as LPTILM1 clock"]
-        LSE = 0x03,
+        Lse = 0x03,
     }
     impl Lptimsel {
         #[inline(always)]
@@ -5866,13 +5866,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsedrv {
         #[doc = "Low driving capability"]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "Medium high driving capability"]
-        MEDIUM_HIGH = 0x01,
+        MediumHigh = 0x01,
         #[doc = "Medium low driving capability"]
-        MEDIUM_LOW = 0x02,
+        MediumLow = 0x02,
         #[doc = "High driving capability"]
-        HIGH = 0x03,
+        High = 0x03,
     }
     impl Lsedrv {
         #[inline(always)]
@@ -5901,13 +5901,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mco1sel {
         #[doc = "HSI clock selected"]
-        HSI = 0x0,
+        Hsi = 0x0,
         #[doc = "LSE oscillator selected"]
-        LSE = 0x01,
+        Lse = 0x01,
         #[doc = "HSE oscillator clock selected"]
-        HSE = 0x02,
+        Hse = 0x02,
         #[doc = "PLL clock selected"]
-        PLL = 0x03,
+        Pll = 0x03,
     }
     impl Mco1sel {
         #[inline(always)]
@@ -5936,13 +5936,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mco2sel {
         #[doc = "System clock (SYSCLK) selected"]
-        SYS = 0x0,
+        Sys = 0x0,
         #[doc = "PLLI2S clock selected"]
-        PLLI2S = 0x01,
+        Plli2s = 0x01,
         #[doc = "HSE oscillator clock selected"]
-        HSE = 0x02,
+        Hse = 0x02,
         #[doc = "PLL clock selected"]
-        PLL = 0x03,
+        Pll = 0x03,
     }
     impl Mco2sel {
         #[inline(always)]
@@ -5971,18 +5971,18 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mcopre {
         #[doc = "No division"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "Division by 2"]
-        DIV2 = 0x04,
+        Div2 = 0x04,
         #[doc = "Division by 3"]
-        DIV3 = 0x05,
+        Div3 = 0x05,
         #[doc = "Division by 4"]
-        DIV4 = 0x06,
+        Div4 = 0x06,
         #[doc = "Division by 5"]
-        DIV5 = 0x07,
+        Div5 = 0x07,
     }
     impl Mcopre {
         #[inline(always)]
@@ -6011,69 +6011,69 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Plli2sdivq {
         #[doc = "PLLI2SDIVQ = /1"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "PLLI2SDIVQ = /2"]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "PLLI2SDIVQ = /3"]
-        DIV3 = 0x02,
+        Div3 = 0x02,
         #[doc = "PLLI2SDIVQ = /4"]
-        DIV4 = 0x03,
+        Div4 = 0x03,
         #[doc = "PLLI2SDIVQ = /5"]
-        DIV5 = 0x04,
+        Div5 = 0x04,
         #[doc = "PLLI2SDIVQ = /6"]
-        DIV6 = 0x05,
+        Div6 = 0x05,
         #[doc = "PLLI2SDIVQ = /7"]
-        DIV7 = 0x06,
+        Div7 = 0x06,
         #[doc = "PLLI2SDIVQ = /8"]
-        DIV8 = 0x07,
+        Div8 = 0x07,
         #[doc = "PLLI2SDIVQ = /9"]
-        DIV9 = 0x08,
+        Div9 = 0x08,
         #[doc = "PLLI2SDIVQ = /10"]
-        DIV10 = 0x09,
+        Div10 = 0x09,
         #[doc = "PLLI2SDIVQ = /11"]
-        DIV11 = 0x0a,
+        Div11 = 0x0a,
         #[doc = "PLLI2SDIVQ = /12"]
-        DIV12 = 0x0b,
+        Div12 = 0x0b,
         #[doc = "PLLI2SDIVQ = /13"]
-        DIV13 = 0x0c,
+        Div13 = 0x0c,
         #[doc = "PLLI2SDIVQ = /14"]
-        DIV14 = 0x0d,
+        Div14 = 0x0d,
         #[doc = "PLLI2SDIVQ = /15"]
-        DIV15 = 0x0e,
+        Div15 = 0x0e,
         #[doc = "PLLI2SDIVQ = /16"]
-        DIV16 = 0x0f,
+        Div16 = 0x0f,
         #[doc = "PLLI2SDIVQ = /17"]
-        DIV17 = 0x10,
+        Div17 = 0x10,
         #[doc = "PLLI2SDIVQ = /18"]
-        DIV18 = 0x11,
+        Div18 = 0x11,
         #[doc = "PLLI2SDIVQ = /19"]
-        DIV19 = 0x12,
+        Div19 = 0x12,
         #[doc = "PLLI2SDIVQ = /20"]
-        DIV20 = 0x13,
+        Div20 = 0x13,
         #[doc = "PLLI2SDIVQ = /21"]
-        DIV21 = 0x14,
+        Div21 = 0x14,
         #[doc = "PLLI2SDIVQ = /22"]
-        DIV22 = 0x15,
+        Div22 = 0x15,
         #[doc = "PLLI2SDIVQ = /23"]
-        DIV23 = 0x16,
+        Div23 = 0x16,
         #[doc = "PLLI2SDIVQ = /24"]
-        DIV24 = 0x17,
+        Div24 = 0x17,
         #[doc = "PLLI2SDIVQ = /25"]
-        DIV25 = 0x18,
+        Div25 = 0x18,
         #[doc = "PLLI2SDIVQ = /26"]
-        DIV26 = 0x19,
+        Div26 = 0x19,
         #[doc = "PLLI2SDIVQ = /27"]
-        DIV27 = 0x1a,
+        Div27 = 0x1a,
         #[doc = "PLLI2SDIVQ = /28"]
-        DIV28 = 0x1b,
+        Div28 = 0x1b,
         #[doc = "PLLI2SDIVQ = /29"]
-        DIV29 = 0x1c,
+        Div29 = 0x1c,
         #[doc = "PLLI2SDIVQ = /30"]
-        DIV30 = 0x1d,
+        Div30 = 0x1d,
         #[doc = "PLLI2SDIVQ = /31"]
-        DIV31 = 0x1e,
+        Div31 = 0x1e,
         #[doc = "PLLI2SDIVQ = /32"]
-        DIV32 = 0x1f,
+        Div32 = 0x1f,
     }
     impl Plli2sdivq {
         #[inline(always)]
@@ -6103,68 +6103,68 @@ pub mod vals {
     pub enum Pllm {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
-        DIV2 = 0x02,
-        DIV3 = 0x03,
-        DIV4 = 0x04,
-        DIV5 = 0x05,
-        DIV6 = 0x06,
-        DIV7 = 0x07,
-        DIV8 = 0x08,
-        DIV9 = 0x09,
-        DIV10 = 0x0a,
-        DIV11 = 0x0b,
-        DIV12 = 0x0c,
-        DIV13 = 0x0d,
-        DIV14 = 0x0e,
-        DIV15 = 0x0f,
-        DIV16 = 0x10,
-        DIV17 = 0x11,
-        DIV18 = 0x12,
-        DIV19 = 0x13,
-        DIV20 = 0x14,
-        DIV21 = 0x15,
-        DIV22 = 0x16,
-        DIV23 = 0x17,
-        DIV24 = 0x18,
-        DIV25 = 0x19,
-        DIV26 = 0x1a,
-        DIV27 = 0x1b,
-        DIV28 = 0x1c,
-        DIV29 = 0x1d,
-        DIV30 = 0x1e,
-        DIV31 = 0x1f,
-        DIV32 = 0x20,
-        DIV33 = 0x21,
-        DIV34 = 0x22,
-        DIV35 = 0x23,
-        DIV36 = 0x24,
-        DIV37 = 0x25,
-        DIV38 = 0x26,
-        DIV39 = 0x27,
-        DIV40 = 0x28,
-        DIV41 = 0x29,
-        DIV42 = 0x2a,
-        DIV43 = 0x2b,
-        DIV44 = 0x2c,
-        DIV45 = 0x2d,
-        DIV46 = 0x2e,
-        DIV47 = 0x2f,
-        DIV48 = 0x30,
-        DIV49 = 0x31,
-        DIV50 = 0x32,
-        DIV51 = 0x33,
-        DIV52 = 0x34,
-        DIV53 = 0x35,
-        DIV54 = 0x36,
-        DIV55 = 0x37,
-        DIV56 = 0x38,
-        DIV57 = 0x39,
-        DIV58 = 0x3a,
-        DIV59 = 0x3b,
-        DIV60 = 0x3c,
-        DIV61 = 0x3d,
-        DIV62 = 0x3e,
-        DIV63 = 0x3f,
+        Div2 = 0x02,
+        Div3 = 0x03,
+        Div4 = 0x04,
+        Div5 = 0x05,
+        Div6 = 0x06,
+        Div7 = 0x07,
+        Div8 = 0x08,
+        Div9 = 0x09,
+        Div10 = 0x0a,
+        Div11 = 0x0b,
+        Div12 = 0x0c,
+        Div13 = 0x0d,
+        Div14 = 0x0e,
+        Div15 = 0x0f,
+        Div16 = 0x10,
+        Div17 = 0x11,
+        Div18 = 0x12,
+        Div19 = 0x13,
+        Div20 = 0x14,
+        Div21 = 0x15,
+        Div22 = 0x16,
+        Div23 = 0x17,
+        Div24 = 0x18,
+        Div25 = 0x19,
+        Div26 = 0x1a,
+        Div27 = 0x1b,
+        Div28 = 0x1c,
+        Div29 = 0x1d,
+        Div30 = 0x1e,
+        Div31 = 0x1f,
+        Div32 = 0x20,
+        Div33 = 0x21,
+        Div34 = 0x22,
+        Div35 = 0x23,
+        Div36 = 0x24,
+        Div37 = 0x25,
+        Div38 = 0x26,
+        Div39 = 0x27,
+        Div40 = 0x28,
+        Div41 = 0x29,
+        Div42 = 0x2a,
+        Div43 = 0x2b,
+        Div44 = 0x2c,
+        Div45 = 0x2d,
+        Div46 = 0x2e,
+        Div47 = 0x2f,
+        Div48 = 0x30,
+        Div49 = 0x31,
+        Div50 = 0x32,
+        Div51 = 0x33,
+        Div52 = 0x34,
+        Div53 = 0x35,
+        Div54 = 0x36,
+        Div55 = 0x37,
+        Div56 = 0x38,
+        Div57 = 0x39,
+        Div58 = 0x3a,
+        Div59 = 0x3b,
+        Div60 = 0x3c,
+        Div61 = 0x3d,
+        Div62 = 0x3e,
+        Div63 = 0x3f,
     }
     impl Pllm {
         #[inline(always)]
@@ -6242,389 +6242,389 @@ pub mod vals {
         _RESERVED_2f = 0x2f,
         _RESERVED_30 = 0x30,
         _RESERVED_31 = 0x31,
-        MUL50 = 0x32,
-        MUL51 = 0x33,
-        MUL52 = 0x34,
-        MUL53 = 0x35,
-        MUL54 = 0x36,
-        MUL55 = 0x37,
-        MUL56 = 0x38,
-        MUL57 = 0x39,
-        MUL58 = 0x3a,
-        MUL59 = 0x3b,
-        MUL60 = 0x3c,
-        MUL61 = 0x3d,
-        MUL62 = 0x3e,
-        MUL63 = 0x3f,
-        MUL64 = 0x40,
-        MUL65 = 0x41,
-        MUL66 = 0x42,
-        MUL67 = 0x43,
-        MUL68 = 0x44,
-        MUL69 = 0x45,
-        MUL70 = 0x46,
-        MUL71 = 0x47,
-        MUL72 = 0x48,
-        MUL73 = 0x49,
-        MUL74 = 0x4a,
-        MUL75 = 0x4b,
-        MUL76 = 0x4c,
-        MUL77 = 0x4d,
-        MUL78 = 0x4e,
-        MUL79 = 0x4f,
-        MUL80 = 0x50,
-        MUL81 = 0x51,
-        MUL82 = 0x52,
-        MUL83 = 0x53,
-        MUL84 = 0x54,
-        MUL85 = 0x55,
-        MUL86 = 0x56,
-        MUL87 = 0x57,
-        MUL88 = 0x58,
-        MUL89 = 0x59,
-        MUL90 = 0x5a,
-        MUL91 = 0x5b,
-        MUL92 = 0x5c,
-        MUL93 = 0x5d,
-        MUL94 = 0x5e,
-        MUL95 = 0x5f,
-        MUL96 = 0x60,
-        MUL97 = 0x61,
-        MUL98 = 0x62,
-        MUL99 = 0x63,
-        MUL100 = 0x64,
-        MUL101 = 0x65,
-        MUL102 = 0x66,
-        MUL103 = 0x67,
-        MUL104 = 0x68,
-        MUL105 = 0x69,
-        MUL106 = 0x6a,
-        MUL107 = 0x6b,
-        MUL108 = 0x6c,
-        MUL109 = 0x6d,
-        MUL110 = 0x6e,
-        MUL111 = 0x6f,
-        MUL112 = 0x70,
-        MUL113 = 0x71,
-        MUL114 = 0x72,
-        MUL115 = 0x73,
-        MUL116 = 0x74,
-        MUL117 = 0x75,
-        MUL118 = 0x76,
-        MUL119 = 0x77,
-        MUL120 = 0x78,
-        MUL121 = 0x79,
-        MUL122 = 0x7a,
-        MUL123 = 0x7b,
-        MUL124 = 0x7c,
-        MUL125 = 0x7d,
-        MUL126 = 0x7e,
-        MUL127 = 0x7f,
-        MUL128 = 0x80,
-        MUL129 = 0x81,
-        MUL130 = 0x82,
-        MUL131 = 0x83,
-        MUL132 = 0x84,
-        MUL133 = 0x85,
-        MUL134 = 0x86,
-        MUL135 = 0x87,
-        MUL136 = 0x88,
-        MUL137 = 0x89,
-        MUL138 = 0x8a,
-        MUL139 = 0x8b,
-        MUL140 = 0x8c,
-        MUL141 = 0x8d,
-        MUL142 = 0x8e,
-        MUL143 = 0x8f,
-        MUL144 = 0x90,
-        MUL145 = 0x91,
-        MUL146 = 0x92,
-        MUL147 = 0x93,
-        MUL148 = 0x94,
-        MUL149 = 0x95,
-        MUL150 = 0x96,
-        MUL151 = 0x97,
-        MUL152 = 0x98,
-        MUL153 = 0x99,
-        MUL154 = 0x9a,
-        MUL155 = 0x9b,
-        MUL156 = 0x9c,
-        MUL157 = 0x9d,
-        MUL158 = 0x9e,
-        MUL159 = 0x9f,
-        MUL160 = 0xa0,
-        MUL161 = 0xa1,
-        MUL162 = 0xa2,
-        MUL163 = 0xa3,
-        MUL164 = 0xa4,
-        MUL165 = 0xa5,
-        MUL166 = 0xa6,
-        MUL167 = 0xa7,
-        MUL168 = 0xa8,
-        MUL169 = 0xa9,
-        MUL170 = 0xaa,
-        MUL171 = 0xab,
-        MUL172 = 0xac,
-        MUL173 = 0xad,
-        MUL174 = 0xae,
-        MUL175 = 0xaf,
-        MUL176 = 0xb0,
-        MUL177 = 0xb1,
-        MUL178 = 0xb2,
-        MUL179 = 0xb3,
-        MUL180 = 0xb4,
-        MUL181 = 0xb5,
-        MUL182 = 0xb6,
-        MUL183 = 0xb7,
-        MUL184 = 0xb8,
-        MUL185 = 0xb9,
-        MUL186 = 0xba,
-        MUL187 = 0xbb,
-        MUL188 = 0xbc,
-        MUL189 = 0xbd,
-        MUL190 = 0xbe,
-        MUL191 = 0xbf,
-        MUL192 = 0xc0,
-        MUL193 = 0xc1,
-        MUL194 = 0xc2,
-        MUL195 = 0xc3,
-        MUL196 = 0xc4,
-        MUL197 = 0xc5,
-        MUL198 = 0xc6,
-        MUL199 = 0xc7,
-        MUL200 = 0xc8,
-        MUL201 = 0xc9,
-        MUL202 = 0xca,
-        MUL203 = 0xcb,
-        MUL204 = 0xcc,
-        MUL205 = 0xcd,
-        MUL206 = 0xce,
-        MUL207 = 0xcf,
-        MUL208 = 0xd0,
-        MUL209 = 0xd1,
-        MUL210 = 0xd2,
-        MUL211 = 0xd3,
-        MUL212 = 0xd4,
-        MUL213 = 0xd5,
-        MUL214 = 0xd6,
-        MUL215 = 0xd7,
-        MUL216 = 0xd8,
-        MUL217 = 0xd9,
-        MUL218 = 0xda,
-        MUL219 = 0xdb,
-        MUL220 = 0xdc,
-        MUL221 = 0xdd,
-        MUL222 = 0xde,
-        MUL223 = 0xdf,
-        MUL224 = 0xe0,
-        MUL225 = 0xe1,
-        MUL226 = 0xe2,
-        MUL227 = 0xe3,
-        MUL228 = 0xe4,
-        MUL229 = 0xe5,
-        MUL230 = 0xe6,
-        MUL231 = 0xe7,
-        MUL232 = 0xe8,
-        MUL233 = 0xe9,
-        MUL234 = 0xea,
-        MUL235 = 0xeb,
-        MUL236 = 0xec,
-        MUL237 = 0xed,
-        MUL238 = 0xee,
-        MUL239 = 0xef,
-        MUL240 = 0xf0,
-        MUL241 = 0xf1,
-        MUL242 = 0xf2,
-        MUL243 = 0xf3,
-        MUL244 = 0xf4,
-        MUL245 = 0xf5,
-        MUL246 = 0xf6,
-        MUL247 = 0xf7,
-        MUL248 = 0xf8,
-        MUL249 = 0xf9,
-        MUL250 = 0xfa,
-        MUL251 = 0xfb,
-        MUL252 = 0xfc,
-        MUL253 = 0xfd,
-        MUL254 = 0xfe,
-        MUL255 = 0xff,
-        MUL256 = 0x0100,
-        MUL257 = 0x0101,
-        MUL258 = 0x0102,
-        MUL259 = 0x0103,
-        MUL260 = 0x0104,
-        MUL261 = 0x0105,
-        MUL262 = 0x0106,
-        MUL263 = 0x0107,
-        MUL264 = 0x0108,
-        MUL265 = 0x0109,
-        MUL266 = 0x010a,
-        MUL267 = 0x010b,
-        MUL268 = 0x010c,
-        MUL269 = 0x010d,
-        MUL270 = 0x010e,
-        MUL271 = 0x010f,
-        MUL272 = 0x0110,
-        MUL273 = 0x0111,
-        MUL274 = 0x0112,
-        MUL275 = 0x0113,
-        MUL276 = 0x0114,
-        MUL277 = 0x0115,
-        MUL278 = 0x0116,
-        MUL279 = 0x0117,
-        MUL280 = 0x0118,
-        MUL281 = 0x0119,
-        MUL282 = 0x011a,
-        MUL283 = 0x011b,
-        MUL284 = 0x011c,
-        MUL285 = 0x011d,
-        MUL286 = 0x011e,
-        MUL287 = 0x011f,
-        MUL288 = 0x0120,
-        MUL289 = 0x0121,
-        MUL290 = 0x0122,
-        MUL291 = 0x0123,
-        MUL292 = 0x0124,
-        MUL293 = 0x0125,
-        MUL294 = 0x0126,
-        MUL295 = 0x0127,
-        MUL296 = 0x0128,
-        MUL297 = 0x0129,
-        MUL298 = 0x012a,
-        MUL299 = 0x012b,
-        MUL300 = 0x012c,
-        MUL301 = 0x012d,
-        MUL302 = 0x012e,
-        MUL303 = 0x012f,
-        MUL304 = 0x0130,
-        MUL305 = 0x0131,
-        MUL306 = 0x0132,
-        MUL307 = 0x0133,
-        MUL308 = 0x0134,
-        MUL309 = 0x0135,
-        MUL310 = 0x0136,
-        MUL311 = 0x0137,
-        MUL312 = 0x0138,
-        MUL313 = 0x0139,
-        MUL314 = 0x013a,
-        MUL315 = 0x013b,
-        MUL316 = 0x013c,
-        MUL317 = 0x013d,
-        MUL318 = 0x013e,
-        MUL319 = 0x013f,
-        MUL320 = 0x0140,
-        MUL321 = 0x0141,
-        MUL322 = 0x0142,
-        MUL323 = 0x0143,
-        MUL324 = 0x0144,
-        MUL325 = 0x0145,
-        MUL326 = 0x0146,
-        MUL327 = 0x0147,
-        MUL328 = 0x0148,
-        MUL329 = 0x0149,
-        MUL330 = 0x014a,
-        MUL331 = 0x014b,
-        MUL332 = 0x014c,
-        MUL333 = 0x014d,
-        MUL334 = 0x014e,
-        MUL335 = 0x014f,
-        MUL336 = 0x0150,
-        MUL337 = 0x0151,
-        MUL338 = 0x0152,
-        MUL339 = 0x0153,
-        MUL340 = 0x0154,
-        MUL341 = 0x0155,
-        MUL342 = 0x0156,
-        MUL343 = 0x0157,
-        MUL344 = 0x0158,
-        MUL345 = 0x0159,
-        MUL346 = 0x015a,
-        MUL347 = 0x015b,
-        MUL348 = 0x015c,
-        MUL349 = 0x015d,
-        MUL350 = 0x015e,
-        MUL351 = 0x015f,
-        MUL352 = 0x0160,
-        MUL353 = 0x0161,
-        MUL354 = 0x0162,
-        MUL355 = 0x0163,
-        MUL356 = 0x0164,
-        MUL357 = 0x0165,
-        MUL358 = 0x0166,
-        MUL359 = 0x0167,
-        MUL360 = 0x0168,
-        MUL361 = 0x0169,
-        MUL362 = 0x016a,
-        MUL363 = 0x016b,
-        MUL364 = 0x016c,
-        MUL365 = 0x016d,
-        MUL366 = 0x016e,
-        MUL367 = 0x016f,
-        MUL368 = 0x0170,
-        MUL369 = 0x0171,
-        MUL370 = 0x0172,
-        MUL371 = 0x0173,
-        MUL372 = 0x0174,
-        MUL373 = 0x0175,
-        MUL374 = 0x0176,
-        MUL375 = 0x0177,
-        MUL376 = 0x0178,
-        MUL377 = 0x0179,
-        MUL378 = 0x017a,
-        MUL379 = 0x017b,
-        MUL380 = 0x017c,
-        MUL381 = 0x017d,
-        MUL382 = 0x017e,
-        MUL383 = 0x017f,
-        MUL384 = 0x0180,
-        MUL385 = 0x0181,
-        MUL386 = 0x0182,
-        MUL387 = 0x0183,
-        MUL388 = 0x0184,
-        MUL389 = 0x0185,
-        MUL390 = 0x0186,
-        MUL391 = 0x0187,
-        MUL392 = 0x0188,
-        MUL393 = 0x0189,
-        MUL394 = 0x018a,
-        MUL395 = 0x018b,
-        MUL396 = 0x018c,
-        MUL397 = 0x018d,
-        MUL398 = 0x018e,
-        MUL399 = 0x018f,
-        MUL400 = 0x0190,
-        MUL401 = 0x0191,
-        MUL402 = 0x0192,
-        MUL403 = 0x0193,
-        MUL404 = 0x0194,
-        MUL405 = 0x0195,
-        MUL406 = 0x0196,
-        MUL407 = 0x0197,
-        MUL408 = 0x0198,
-        MUL409 = 0x0199,
-        MUL410 = 0x019a,
-        MUL411 = 0x019b,
-        MUL412 = 0x019c,
-        MUL413 = 0x019d,
-        MUL414 = 0x019e,
-        MUL415 = 0x019f,
-        MUL416 = 0x01a0,
-        MUL417 = 0x01a1,
-        MUL418 = 0x01a2,
-        MUL419 = 0x01a3,
-        MUL420 = 0x01a4,
-        MUL421 = 0x01a5,
-        MUL422 = 0x01a6,
-        MUL423 = 0x01a7,
-        MUL424 = 0x01a8,
-        MUL425 = 0x01a9,
-        MUL426 = 0x01aa,
-        MUL427 = 0x01ab,
-        MUL428 = 0x01ac,
-        MUL429 = 0x01ad,
-        MUL430 = 0x01ae,
-        MUL431 = 0x01af,
-        MUL432 = 0x01b0,
+        Mul50 = 0x32,
+        Mul51 = 0x33,
+        Mul52 = 0x34,
+        Mul53 = 0x35,
+        Mul54 = 0x36,
+        Mul55 = 0x37,
+        Mul56 = 0x38,
+        Mul57 = 0x39,
+        Mul58 = 0x3a,
+        Mul59 = 0x3b,
+        Mul60 = 0x3c,
+        Mul61 = 0x3d,
+        Mul62 = 0x3e,
+        Mul63 = 0x3f,
+        Mul64 = 0x40,
+        Mul65 = 0x41,
+        Mul66 = 0x42,
+        Mul67 = 0x43,
+        Mul68 = 0x44,
+        Mul69 = 0x45,
+        Mul70 = 0x46,
+        Mul71 = 0x47,
+        Mul72 = 0x48,
+        Mul73 = 0x49,
+        Mul74 = 0x4a,
+        Mul75 = 0x4b,
+        Mul76 = 0x4c,
+        Mul77 = 0x4d,
+        Mul78 = 0x4e,
+        Mul79 = 0x4f,
+        Mul80 = 0x50,
+        Mul81 = 0x51,
+        Mul82 = 0x52,
+        Mul83 = 0x53,
+        Mul84 = 0x54,
+        Mul85 = 0x55,
+        Mul86 = 0x56,
+        Mul87 = 0x57,
+        Mul88 = 0x58,
+        Mul89 = 0x59,
+        Mul90 = 0x5a,
+        Mul91 = 0x5b,
+        Mul92 = 0x5c,
+        Mul93 = 0x5d,
+        Mul94 = 0x5e,
+        Mul95 = 0x5f,
+        Mul96 = 0x60,
+        Mul97 = 0x61,
+        Mul98 = 0x62,
+        Mul99 = 0x63,
+        Mul100 = 0x64,
+        Mul101 = 0x65,
+        Mul102 = 0x66,
+        Mul103 = 0x67,
+        Mul104 = 0x68,
+        Mul105 = 0x69,
+        Mul106 = 0x6a,
+        Mul107 = 0x6b,
+        Mul108 = 0x6c,
+        Mul109 = 0x6d,
+        Mul110 = 0x6e,
+        Mul111 = 0x6f,
+        Mul112 = 0x70,
+        Mul113 = 0x71,
+        Mul114 = 0x72,
+        Mul115 = 0x73,
+        Mul116 = 0x74,
+        Mul117 = 0x75,
+        Mul118 = 0x76,
+        Mul119 = 0x77,
+        Mul120 = 0x78,
+        Mul121 = 0x79,
+        Mul122 = 0x7a,
+        Mul123 = 0x7b,
+        Mul124 = 0x7c,
+        Mul125 = 0x7d,
+        Mul126 = 0x7e,
+        Mul127 = 0x7f,
+        Mul128 = 0x80,
+        Mul129 = 0x81,
+        Mul130 = 0x82,
+        Mul131 = 0x83,
+        Mul132 = 0x84,
+        Mul133 = 0x85,
+        Mul134 = 0x86,
+        Mul135 = 0x87,
+        Mul136 = 0x88,
+        Mul137 = 0x89,
+        Mul138 = 0x8a,
+        Mul139 = 0x8b,
+        Mul140 = 0x8c,
+        Mul141 = 0x8d,
+        Mul142 = 0x8e,
+        Mul143 = 0x8f,
+        Mul144 = 0x90,
+        Mul145 = 0x91,
+        Mul146 = 0x92,
+        Mul147 = 0x93,
+        Mul148 = 0x94,
+        Mul149 = 0x95,
+        Mul150 = 0x96,
+        Mul151 = 0x97,
+        Mul152 = 0x98,
+        Mul153 = 0x99,
+        Mul154 = 0x9a,
+        Mul155 = 0x9b,
+        Mul156 = 0x9c,
+        Mul157 = 0x9d,
+        Mul158 = 0x9e,
+        Mul159 = 0x9f,
+        Mul160 = 0xa0,
+        Mul161 = 0xa1,
+        Mul162 = 0xa2,
+        Mul163 = 0xa3,
+        Mul164 = 0xa4,
+        Mul165 = 0xa5,
+        Mul166 = 0xa6,
+        Mul167 = 0xa7,
+        Mul168 = 0xa8,
+        Mul169 = 0xa9,
+        Mul170 = 0xaa,
+        Mul171 = 0xab,
+        Mul172 = 0xac,
+        Mul173 = 0xad,
+        Mul174 = 0xae,
+        Mul175 = 0xaf,
+        Mul176 = 0xb0,
+        Mul177 = 0xb1,
+        Mul178 = 0xb2,
+        Mul179 = 0xb3,
+        Mul180 = 0xb4,
+        Mul181 = 0xb5,
+        Mul182 = 0xb6,
+        Mul183 = 0xb7,
+        Mul184 = 0xb8,
+        Mul185 = 0xb9,
+        Mul186 = 0xba,
+        Mul187 = 0xbb,
+        Mul188 = 0xbc,
+        Mul189 = 0xbd,
+        Mul190 = 0xbe,
+        Mul191 = 0xbf,
+        Mul192 = 0xc0,
+        Mul193 = 0xc1,
+        Mul194 = 0xc2,
+        Mul195 = 0xc3,
+        Mul196 = 0xc4,
+        Mul197 = 0xc5,
+        Mul198 = 0xc6,
+        Mul199 = 0xc7,
+        Mul200 = 0xc8,
+        Mul201 = 0xc9,
+        Mul202 = 0xca,
+        Mul203 = 0xcb,
+        Mul204 = 0xcc,
+        Mul205 = 0xcd,
+        Mul206 = 0xce,
+        Mul207 = 0xcf,
+        Mul208 = 0xd0,
+        Mul209 = 0xd1,
+        Mul210 = 0xd2,
+        Mul211 = 0xd3,
+        Mul212 = 0xd4,
+        Mul213 = 0xd5,
+        Mul214 = 0xd6,
+        Mul215 = 0xd7,
+        Mul216 = 0xd8,
+        Mul217 = 0xd9,
+        Mul218 = 0xda,
+        Mul219 = 0xdb,
+        Mul220 = 0xdc,
+        Mul221 = 0xdd,
+        Mul222 = 0xde,
+        Mul223 = 0xdf,
+        Mul224 = 0xe0,
+        Mul225 = 0xe1,
+        Mul226 = 0xe2,
+        Mul227 = 0xe3,
+        Mul228 = 0xe4,
+        Mul229 = 0xe5,
+        Mul230 = 0xe6,
+        Mul231 = 0xe7,
+        Mul232 = 0xe8,
+        Mul233 = 0xe9,
+        Mul234 = 0xea,
+        Mul235 = 0xeb,
+        Mul236 = 0xec,
+        Mul237 = 0xed,
+        Mul238 = 0xee,
+        Mul239 = 0xef,
+        Mul240 = 0xf0,
+        Mul241 = 0xf1,
+        Mul242 = 0xf2,
+        Mul243 = 0xf3,
+        Mul244 = 0xf4,
+        Mul245 = 0xf5,
+        Mul246 = 0xf6,
+        Mul247 = 0xf7,
+        Mul248 = 0xf8,
+        Mul249 = 0xf9,
+        Mul250 = 0xfa,
+        Mul251 = 0xfb,
+        Mul252 = 0xfc,
+        Mul253 = 0xfd,
+        Mul254 = 0xfe,
+        Mul255 = 0xff,
+        Mul256 = 0x0100,
+        Mul257 = 0x0101,
+        Mul258 = 0x0102,
+        Mul259 = 0x0103,
+        Mul260 = 0x0104,
+        Mul261 = 0x0105,
+        Mul262 = 0x0106,
+        Mul263 = 0x0107,
+        Mul264 = 0x0108,
+        Mul265 = 0x0109,
+        Mul266 = 0x010a,
+        Mul267 = 0x010b,
+        Mul268 = 0x010c,
+        Mul269 = 0x010d,
+        Mul270 = 0x010e,
+        Mul271 = 0x010f,
+        Mul272 = 0x0110,
+        Mul273 = 0x0111,
+        Mul274 = 0x0112,
+        Mul275 = 0x0113,
+        Mul276 = 0x0114,
+        Mul277 = 0x0115,
+        Mul278 = 0x0116,
+        Mul279 = 0x0117,
+        Mul280 = 0x0118,
+        Mul281 = 0x0119,
+        Mul282 = 0x011a,
+        Mul283 = 0x011b,
+        Mul284 = 0x011c,
+        Mul285 = 0x011d,
+        Mul286 = 0x011e,
+        Mul287 = 0x011f,
+        Mul288 = 0x0120,
+        Mul289 = 0x0121,
+        Mul290 = 0x0122,
+        Mul291 = 0x0123,
+        Mul292 = 0x0124,
+        Mul293 = 0x0125,
+        Mul294 = 0x0126,
+        Mul295 = 0x0127,
+        Mul296 = 0x0128,
+        Mul297 = 0x0129,
+        Mul298 = 0x012a,
+        Mul299 = 0x012b,
+        Mul300 = 0x012c,
+        Mul301 = 0x012d,
+        Mul302 = 0x012e,
+        Mul303 = 0x012f,
+        Mul304 = 0x0130,
+        Mul305 = 0x0131,
+        Mul306 = 0x0132,
+        Mul307 = 0x0133,
+        Mul308 = 0x0134,
+        Mul309 = 0x0135,
+        Mul310 = 0x0136,
+        Mul311 = 0x0137,
+        Mul312 = 0x0138,
+        Mul313 = 0x0139,
+        Mul314 = 0x013a,
+        Mul315 = 0x013b,
+        Mul316 = 0x013c,
+        Mul317 = 0x013d,
+        Mul318 = 0x013e,
+        Mul319 = 0x013f,
+        Mul320 = 0x0140,
+        Mul321 = 0x0141,
+        Mul322 = 0x0142,
+        Mul323 = 0x0143,
+        Mul324 = 0x0144,
+        Mul325 = 0x0145,
+        Mul326 = 0x0146,
+        Mul327 = 0x0147,
+        Mul328 = 0x0148,
+        Mul329 = 0x0149,
+        Mul330 = 0x014a,
+        Mul331 = 0x014b,
+        Mul332 = 0x014c,
+        Mul333 = 0x014d,
+        Mul334 = 0x014e,
+        Mul335 = 0x014f,
+        Mul336 = 0x0150,
+        Mul337 = 0x0151,
+        Mul338 = 0x0152,
+        Mul339 = 0x0153,
+        Mul340 = 0x0154,
+        Mul341 = 0x0155,
+        Mul342 = 0x0156,
+        Mul343 = 0x0157,
+        Mul344 = 0x0158,
+        Mul345 = 0x0159,
+        Mul346 = 0x015a,
+        Mul347 = 0x015b,
+        Mul348 = 0x015c,
+        Mul349 = 0x015d,
+        Mul350 = 0x015e,
+        Mul351 = 0x015f,
+        Mul352 = 0x0160,
+        Mul353 = 0x0161,
+        Mul354 = 0x0162,
+        Mul355 = 0x0163,
+        Mul356 = 0x0164,
+        Mul357 = 0x0165,
+        Mul358 = 0x0166,
+        Mul359 = 0x0167,
+        Mul360 = 0x0168,
+        Mul361 = 0x0169,
+        Mul362 = 0x016a,
+        Mul363 = 0x016b,
+        Mul364 = 0x016c,
+        Mul365 = 0x016d,
+        Mul366 = 0x016e,
+        Mul367 = 0x016f,
+        Mul368 = 0x0170,
+        Mul369 = 0x0171,
+        Mul370 = 0x0172,
+        Mul371 = 0x0173,
+        Mul372 = 0x0174,
+        Mul373 = 0x0175,
+        Mul374 = 0x0176,
+        Mul375 = 0x0177,
+        Mul376 = 0x0178,
+        Mul377 = 0x0179,
+        Mul378 = 0x017a,
+        Mul379 = 0x017b,
+        Mul380 = 0x017c,
+        Mul381 = 0x017d,
+        Mul382 = 0x017e,
+        Mul383 = 0x017f,
+        Mul384 = 0x0180,
+        Mul385 = 0x0181,
+        Mul386 = 0x0182,
+        Mul387 = 0x0183,
+        Mul388 = 0x0184,
+        Mul389 = 0x0185,
+        Mul390 = 0x0186,
+        Mul391 = 0x0187,
+        Mul392 = 0x0188,
+        Mul393 = 0x0189,
+        Mul394 = 0x018a,
+        Mul395 = 0x018b,
+        Mul396 = 0x018c,
+        Mul397 = 0x018d,
+        Mul398 = 0x018e,
+        Mul399 = 0x018f,
+        Mul400 = 0x0190,
+        Mul401 = 0x0191,
+        Mul402 = 0x0192,
+        Mul403 = 0x0193,
+        Mul404 = 0x0194,
+        Mul405 = 0x0195,
+        Mul406 = 0x0196,
+        Mul407 = 0x0197,
+        Mul408 = 0x0198,
+        Mul409 = 0x0199,
+        Mul410 = 0x019a,
+        Mul411 = 0x019b,
+        Mul412 = 0x019c,
+        Mul413 = 0x019d,
+        Mul414 = 0x019e,
+        Mul415 = 0x019f,
+        Mul416 = 0x01a0,
+        Mul417 = 0x01a1,
+        Mul418 = 0x01a2,
+        Mul419 = 0x01a3,
+        Mul420 = 0x01a4,
+        Mul421 = 0x01a5,
+        Mul422 = 0x01a6,
+        Mul423 = 0x01a7,
+        Mul424 = 0x01a8,
+        Mul425 = 0x01a9,
+        Mul426 = 0x01aa,
+        Mul427 = 0x01ab,
+        Mul428 = 0x01ac,
+        Mul429 = 0x01ad,
+        Mul430 = 0x01ae,
+        Mul431 = 0x01af,
+        Mul432 = 0x01b0,
         _RESERVED_1b1 = 0x01b1,
         _RESERVED_1b2 = 0x01b2,
         _RESERVED_1b3 = 0x01b3,
@@ -6732,13 +6732,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllp {
         #[doc = "PLLP=2"]
-        DIV2 = 0x0,
+        Div2 = 0x0,
         #[doc = "PLLP=4"]
-        DIV4 = 0x01,
+        Div4 = 0x01,
         #[doc = "PLLP=6"]
-        DIV6 = 0x02,
+        Div6 = 0x02,
         #[doc = "PLLP=8"]
-        DIV8 = 0x03,
+        Div8 = 0x03,
     }
     impl Pllp {
         #[inline(always)]
@@ -6768,20 +6768,20 @@ pub mod vals {
     pub enum Pllq {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
-        DIV2 = 0x02,
-        DIV3 = 0x03,
-        DIV4 = 0x04,
-        DIV5 = 0x05,
-        DIV6 = 0x06,
-        DIV7 = 0x07,
-        DIV8 = 0x08,
-        DIV9 = 0x09,
-        DIV10 = 0x0a,
-        DIV11 = 0x0b,
-        DIV12 = 0x0c,
-        DIV13 = 0x0d,
-        DIV14 = 0x0e,
-        DIV15 = 0x0f,
+        Div2 = 0x02,
+        Div3 = 0x03,
+        Div4 = 0x04,
+        Div5 = 0x05,
+        Div6 = 0x06,
+        Div7 = 0x07,
+        Div8 = 0x08,
+        Div9 = 0x09,
+        Div10 = 0x0a,
+        Div11 = 0x0b,
+        Div12 = 0x0c,
+        Div13 = 0x0d,
+        Div14 = 0x0e,
+        Div15 = 0x0f,
     }
     impl Pllq {
         #[inline(always)]
@@ -6811,12 +6811,12 @@ pub mod vals {
     pub enum Pllr {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
-        DIV2 = 0x02,
-        DIV3 = 0x03,
-        DIV4 = 0x04,
-        DIV5 = 0x05,
-        DIV6 = 0x06,
-        DIV7 = 0x07,
+        Div2 = 0x02,
+        Div3 = 0x03,
+        Div4 = 0x04,
+        Div5 = 0x05,
+        Div6 = 0x06,
+        Div7 = 0x07,
     }
     impl Pllr {
         #[inline(always)]
@@ -6845,69 +6845,69 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllsaidivq {
         #[doc = "PLLSAIDIVQ = /1"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "PLLSAIDIVQ = /2"]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "PLLSAIDIVQ = /3"]
-        DIV3 = 0x02,
+        Div3 = 0x02,
         #[doc = "PLLSAIDIVQ = /4"]
-        DIV4 = 0x03,
+        Div4 = 0x03,
         #[doc = "PLLSAIDIVQ = /5"]
-        DIV5 = 0x04,
+        Div5 = 0x04,
         #[doc = "PLLSAIDIVQ = /6"]
-        DIV6 = 0x05,
+        Div6 = 0x05,
         #[doc = "PLLSAIDIVQ = /7"]
-        DIV7 = 0x06,
+        Div7 = 0x06,
         #[doc = "PLLSAIDIVQ = /8"]
-        DIV8 = 0x07,
+        Div8 = 0x07,
         #[doc = "PLLSAIDIVQ = /9"]
-        DIV9 = 0x08,
+        Div9 = 0x08,
         #[doc = "PLLSAIDIVQ = /10"]
-        DIV10 = 0x09,
+        Div10 = 0x09,
         #[doc = "PLLSAIDIVQ = /11"]
-        DIV11 = 0x0a,
+        Div11 = 0x0a,
         #[doc = "PLLSAIDIVQ = /12"]
-        DIV12 = 0x0b,
+        Div12 = 0x0b,
         #[doc = "PLLSAIDIVQ = /13"]
-        DIV13 = 0x0c,
+        Div13 = 0x0c,
         #[doc = "PLLSAIDIVQ = /14"]
-        DIV14 = 0x0d,
+        Div14 = 0x0d,
         #[doc = "PLLSAIDIVQ = /15"]
-        DIV15 = 0x0e,
+        Div15 = 0x0e,
         #[doc = "PLLSAIDIVQ = /16"]
-        DIV16 = 0x0f,
+        Div16 = 0x0f,
         #[doc = "PLLSAIDIVQ = /17"]
-        DIV17 = 0x10,
+        Div17 = 0x10,
         #[doc = "PLLSAIDIVQ = /18"]
-        DIV18 = 0x11,
+        Div18 = 0x11,
         #[doc = "PLLSAIDIVQ = /19"]
-        DIV19 = 0x12,
+        Div19 = 0x12,
         #[doc = "PLLSAIDIVQ = /20"]
-        DIV20 = 0x13,
+        Div20 = 0x13,
         #[doc = "PLLSAIDIVQ = /21"]
-        DIV21 = 0x14,
+        Div21 = 0x14,
         #[doc = "PLLSAIDIVQ = /22"]
-        DIV22 = 0x15,
+        Div22 = 0x15,
         #[doc = "PLLSAIDIVQ = /23"]
-        DIV23 = 0x16,
+        Div23 = 0x16,
         #[doc = "PLLSAIDIVQ = /24"]
-        DIV24 = 0x17,
+        Div24 = 0x17,
         #[doc = "PLLSAIDIVQ = /25"]
-        DIV25 = 0x18,
+        Div25 = 0x18,
         #[doc = "PLLSAIDIVQ = /26"]
-        DIV26 = 0x19,
+        Div26 = 0x19,
         #[doc = "PLLSAIDIVQ = /27"]
-        DIV27 = 0x1a,
+        Div27 = 0x1a,
         #[doc = "PLLSAIDIVQ = /28"]
-        DIV28 = 0x1b,
+        Div28 = 0x1b,
         #[doc = "PLLSAIDIVQ = /29"]
-        DIV29 = 0x1c,
+        Div29 = 0x1c,
         #[doc = "PLLSAIDIVQ = /30"]
-        DIV30 = 0x1d,
+        Div30 = 0x1d,
         #[doc = "PLLSAIDIVQ = /31"]
-        DIV31 = 0x1e,
+        Div31 = 0x1e,
         #[doc = "PLLSAIDIVQ = /32"]
-        DIV32 = 0x1f,
+        Div32 = 0x1f,
     }
     impl Pllsaidivq {
         #[inline(always)]
@@ -6936,13 +6936,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllsaidivr {
         #[doc = "PLLSAIDIVR = /2"]
-        DIV2 = 0x0,
+        Div2 = 0x0,
         #[doc = "PLLSAIDIVR = /4"]
-        DIV4 = 0x01,
+        Div4 = 0x01,
         #[doc = "PLLSAIDIVR = /8"]
-        DIV8 = 0x02,
+        Div8 = 0x02,
         #[doc = "PLLSAIDIVR = /16"]
-        DIV16 = 0x03,
+        Div16 = 0x03,
     }
     impl Pllsaidivr {
         #[inline(always)]
@@ -6971,9 +6971,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllsrc {
         #[doc = "HSI clock selected as PLL and PLLI2S clock entry"]
-        HSI = 0x0,
+        Hsi = 0x0,
         #[doc = "HSE oscillator clock selected as PLL and PLLI2S clock entry"]
-        HSE = 0x01,
+        Hse = 0x01,
     }
     impl Pllsrc {
         #[inline(always)]
@@ -7002,18 +7002,18 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ppre {
         #[doc = "HCLK not divided"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "HCLK divided by 2"]
-        DIV2 = 0x04,
+        Div2 = 0x04,
         #[doc = "HCLK divided by 4"]
-        DIV4 = 0x05,
+        Div4 = 0x05,
         #[doc = "HCLK divided by 8"]
-        DIV8 = 0x06,
+        Div8 = 0x06,
         #[doc = "HCLK divided by 16"]
-        DIV16 = 0x07,
+        Div16 = 0x07,
     }
     impl Ppre {
         #[inline(always)]
@@ -7042,13 +7042,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtcsel {
         #[doc = "No clock"]
-        DISABLE = 0x0,
+        Disable = 0x0,
         #[doc = "LSE oscillator clock used as RTC clock"]
-        LSE = 0x01,
+        Lse = 0x01,
         #[doc = "LSI oscillator clock used as RTC clock"]
-        LSI = 0x02,
+        Lsi = 0x02,
         #[doc = "HSE oscillator clock divided by a prescaler used as RTC clock"]
-        HSE = 0x03,
+        Hse = 0x03,
     }
     impl Rtcsel {
         #[inline(always)]
@@ -7077,13 +7077,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Saisel {
         #[doc = "SAI2 clock frequency = f(PLLSAI_Q) / PLLSAIDIVQ"]
-        PLLSAI1_Q = 0x0,
+        Pllsai1Q = 0x0,
         #[doc = "SAI2 clock frequency = f(PLLI2S_Q) / PLLI2SDIVQ"]
-        PLLI2S1_Q = 0x01,
+        Plli2s1Q = 0x01,
         #[doc = "SAI2 clock frequency = Alternate function input frequency"]
-        AFIF = 0x02,
+        Afif = 0x02,
         #[doc = "SAI2 clock frequency = HSI or HSE"]
-        HSI_HSE = 0x03,
+        HsiHse = 0x03,
     }
     impl Saisel {
         #[inline(always)]
@@ -7112,9 +7112,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdmmcsel {
         #[doc = "48 MHz clock is selected as SD clock"]
-        CLK48 = 0x0,
+        Clk48 = 0x0,
         #[doc = "System clock is selected as SD clock"]
-        SYS = 0x01,
+        Sys = 0x01,
     }
     impl Sdmmcsel {
         #[inline(always)]
@@ -7143,9 +7143,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spreadsel {
         #[doc = "Center spread"]
-        CENTER = 0x0,
+        Center = 0x0,
         #[doc = "Down spread"]
-        DOWN = 0x01,
+        Down = 0x01,
     }
     impl Spreadsel {
         #[inline(always)]
@@ -7174,11 +7174,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sw {
         #[doc = "HSI oscillator used as system clock"]
-        HSI = 0x0,
+        Hsi = 0x0,
         #[doc = "HSE oscillator used as system clock"]
-        HSE = 0x01,
+        Hse = 0x01,
         #[doc = "PLL used as system clock"]
-        PLL1_P = 0x02,
+        Pll1P = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Sw {
@@ -7208,9 +7208,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Timpre {
         #[doc = "If the APB prescaler is configured 1, TIMxCLK = PCLKx. Otherwise, TIMxCLK = 2xPCLKx"]
-        MUL2 = 0x0,
+        Mul2 = 0x0,
         #[doc = "If the APB prescaler is configured 1, 2 or 4, TIMxCLK = HCLK. Otherwise, TIMxCLK = 4xPCLKx"]
-        MUL4 = 0x01,
+        Mul4 = 0x01,
     }
     impl Timpre {
         #[inline(always)]
@@ -7239,13 +7239,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usart1sel {
         #[doc = "APB2 clock (PCLK2) is selected as USART clock"]
-        PCLK2 = 0x0,
+        Pclk2 = 0x0,
         #[doc = "System clock is selected as USART clock"]
-        SYS = 0x01,
+        Sys = 0x01,
         #[doc = "HSI clock is selected as USART clock"]
-        HSI = 0x02,
+        Hsi = 0x02,
         #[doc = "LSE clock is selected as USART clock"]
-        LSE = 0x03,
+        Lse = 0x03,
     }
     impl Usart1sel {
         #[inline(always)]
@@ -7274,13 +7274,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usart2sel {
         #[doc = "APB1 clock (PCLK1) is selected as USART clock"]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "System clock is selected as USART clock"]
-        SYS = 0x01,
+        Sys = 0x01,
         #[doc = "HSI clock is selected as USART clock"]
-        HSI = 0x02,
+        Hsi = 0x02,
         #[doc = "LSE clock is selected as USART clock"]
-        LSE = 0x03,
+        Lse = 0x03,
     }
     impl Usart2sel {
         #[inline(always)]

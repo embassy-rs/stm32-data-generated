@@ -3841,7 +3841,7 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PLL1_VCO_DIV_2",
+            "kernel_clock": "PLL1_VCO_DIV2",
             "enable": {
               "register": "APB1ENR",
               "field": "USBEN"

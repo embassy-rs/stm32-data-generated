@@ -1453,9 +1453,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cds {
         #[doc = "CPU is running or in sleep"]
-        RUNNING_OR_SLEEP = 0x0,
+        RunningOrSleep = 0x0,
         #[doc = "CPU is in Deep-Sleep"]
-        DEEP_SLEEP = 0x01,
+        DeepSleep = 0x01,
     }
     impl Cds {
         #[inline(always)]
@@ -1484,9 +1484,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fpdr {
         #[doc = "Flash memory in Idle mode when system is in LPRun mode"]
-        IDLE = 0x0,
+        Idle = 0x0,
         #[doc = "Flash memory in Power-down mode when system is in LPRun mode"]
-        POWER_DOWN = 0x01,
+        PowerDown = 0x01,
     }
     impl Fpdr {
         #[inline(always)]
@@ -1515,9 +1515,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fpds {
         #[doc = "Flash memory in Idle mode when system is in LPSleep mode"]
-        IDLE = 0x0,
+        Idle = 0x0,
         #[doc = "Flash memory in Power-down mode when system is in LPSleep mode"]
-        POWER_DOWN = 0x01,
+        PowerDown = 0x01,
     }
     impl Fpds {
         #[inline(always)]
@@ -1546,15 +1546,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpms {
         #[doc = "Stop 0 mode"]
-        STOP0 = 0x0,
+        Stop0 = 0x0,
         #[doc = "Stop 1 mode"]
-        STOP1 = 0x01,
+        Stop1 = 0x01,
         #[doc = "Stop 2 mode"]
-        STOP2 = 0x02,
+        Stop2 = 0x02,
         #[doc = "Standby mode"]
-        STANDBY = 0x03,
+        Standby = 0x03,
         #[doc = "Shutdown mode"]
-        SHUTDOWN = 0x04,
+        Shutdown = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -1586,9 +1586,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpr {
         #[doc = "Voltage regulator in Main mode in Low-power run mode"]
-        MAIN_MODE = 0x0,
+        MainMode = 0x0,
         #[doc = "Voltage regulator in low-power mode in Low-power run mode"]
-        LOW_POWER_MODE = 0x01,
+        LowPowerMode = 0x01,
     }
     impl Lpr {
         #[inline(always)]
@@ -1617,21 +1617,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pls {
         #[doc = "2.0V"]
-        V2_0 = 0x0,
+        V20 = 0x0,
         #[doc = "2.2V"]
-        V2_2 = 0x01,
+        V22 = 0x01,
         #[doc = "2.4V"]
-        V2_4 = 0x02,
+        V24 = 0x02,
         #[doc = "2.5V"]
-        V2_5 = 0x03,
+        V25 = 0x03,
         #[doc = "2.6V"]
-        V2_6 = 0x04,
+        V26 = 0x04,
         #[doc = "2.8V"]
-        V2_8 = 0x05,
+        V28 = 0x05,
         #[doc = "2.9V"]
-        V2_9 = 0x06,
+        V29 = 0x06,
         #[doc = "External input analog voltage PVD_IN (compared internally to VREFINT)"]
-        EXTERNAL = 0x07,
+        External = 0x07,
     }
     impl Pls {
         #[inline(always)]
@@ -1660,9 +1660,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Subghzspinsssel {
         #[doc = "sub-GHz SPI NSS signal driven from PWR_SUBGHZSPICR.NSS (RFBUSYMS functionality enabled)"]
-        SUBGHZSPICR = 0x0,
+        Subghzspicr = 0x0,
         #[doc = "sub-GHz SPI NSS signal driven from LPTIM3_OUT (RFBUSYMS functionality disabled)"]
-        LPTIM3 = 0x01,
+        Lptim3 = 0x01,
     }
     impl Subghzspinsssel {
         #[inline(always)]
@@ -1691,9 +1691,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbrs {
         #[doc = "VBAT charging through a 5 kΩ resistor"]
-        R5K = 0x0,
+        R5k = 0x0,
         #[doc = "VBAT charging through a 1.5 kΩ resistor"]
-        R1_5K = 0x01,
+        R15k = 0x01,
     }
     impl Vbrs {
         #[inline(always)]
@@ -1723,9 +1723,9 @@ pub mod vals {
     pub enum Vos {
         _RESERVED_0 = 0x0,
         #[doc = "1.2 V (range 1)"]
-        RANGE1 = 0x01,
+        Range1 = 0x01,
         #[doc = "1.0 V (range 2)"]
-        RANGE2 = 0x02,
+        Range2 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Vos {
@@ -1755,9 +1755,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wp {
         #[doc = "Detection on high level (rising edge)"]
-        RISING_EDGE = 0x0,
+        RisingEdge = 0x0,
         #[doc = "Detection on low level (falling edge)"]
-        FALLING_EDGE = 0x01,
+        FallingEdge = 0x01,
     }
     impl Wp {
         #[inline(always)]

@@ -393,22 +393,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "INCR16",
+                    name: "Incr16",
                     description: Some("Incremental burst of 16 beats"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "INCR4",
+                    name: "Incr4",
                     description: Some("Incremental burst of 4 beats"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "INCR8",
+                    name: "Incr8",
                     description: Some("Incremental burst of 8 beats"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SINGLE",
+                    name: "Single",
                     description: Some("Single transfer"),
                     value: 0,
                 },
@@ -420,12 +420,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MEMORY0",
+                    name: "Memory0",
                     description: Some("The current target memory is Memory 0"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEMORY1",
+                    name: "Memory1",
                     description: Some("The current target memory is Memory 1"),
                     value: 1,
                 },
@@ -437,17 +437,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MEMORY_TO_MEMORY",
+                    name: "MemoryToMemory",
                     description: Some("Memory-to-memory"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MEMORY_TO_PERIPHERAL",
+                    name: "MemoryToPeripheral",
                     description: Some("Memory-to-peripheral"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PERIPHERAL_TO_MEMORY",
+                    name: "PeripheralToMemory",
                     description: Some("Peripheral-to-memory"),
                     value: 0,
                 },
@@ -459,12 +459,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "Disabled",
                     description: Some("Direct mode is disabled"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "Enabled",
                     description: Some("Direct mode is enabled"),
                     value: 0,
                 },
@@ -476,32 +476,32 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "EMPTY",
+                    name: "Empty",
                     description: Some("FIFO is empty"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "FULL",
+                    name: "Full",
                     description: Some("FIFO is full"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "QUARTER1",
+                    name: "Quarter1",
                     description: Some("0 < fifo_level < 1/4"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "QUARTER2",
+                    name: "Quarter2",
                     description: Some("1/4 <= fifo_level < 1/2"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "QUARTER3",
+                    name: "Quarter3",
                     description: Some("1/2 <= fifo_level < 3/4"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "QUARTER4",
+                    name: "Quarter4",
                     description: Some("3/4 <= fifo_level < full"),
                     value: 3,
                 },
@@ -513,22 +513,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "FULL",
+                    name: "Full",
                     description: Some("Full FIFO"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "HALF",
+                    name: "Half",
                     description: Some("1/2 full FIFO"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "QUARTER",
+                    name: "Quarter",
                     description: Some("1/4 full FIFO"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "THREE_QUARTERS",
+                    name: "ThreeQuarters",
                     description: Some("3/4 full FIFO"),
                     value: 2,
                 },
@@ -540,12 +540,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DMA",
+                    name: "Dma",
                     description: Some("The DMA is the flow controller"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PERIPHERAL",
+                    name: "Peripheral",
                     description: Some("The peripheral is the flow controller"),
                     value: 1,
                 },
@@ -557,14 +557,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FIXED4",
+                    name: "Fixed4",
                     description: Some(
                         "The offset size for the peripheral address calculation is fixed to 4 (32-bit alignment)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PSIZE",
+                    name: "Psize",
                     description: Some("The offset size for the peripheral address calculation is linked to the PSIZE"),
                     value: 0,
                 },
@@ -576,22 +576,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HIGH",
+                    name: "High",
                     description: Some("High"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "LOW",
+                    name: "Low",
                     description: Some("Low"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEDIUM",
+                    name: "Medium",
                     description: Some("Medium"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "VERY_HIGH",
+                    name: "VeryHigh",
                     description: Some("Very high"),
                     value: 3,
                 },
@@ -603,17 +603,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BITS16",
+                    name: "Bits16",
                     description: Some("Half-word (16-bit)"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "BITS32",
+                    name: "Bits32",
                     description: Some("Word (32-bit)"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BITS8",
+                    name: "Bits8",
                     description: Some("Byte (8-bit)"),
                     value: 0,
                 },

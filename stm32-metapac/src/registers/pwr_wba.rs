@@ -1550,14 +1550,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RANGE1",
+                    name: "Range1",
                     description: Some(
                         "Range 1 (highest frequency)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RANGE2",
+                    name: "Range2",
                     description: Some(
                         "Range 2 (lowest power)",
                     ),
@@ -1571,14 +1571,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VsubCORE/sub is above or below the current voltage scaling provided by ACTVOS.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VsubCORE /subis equal to the current voltage scaling provided by ACTVOS.",
                     ),
@@ -1592,7 +1592,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Low power regulator clock not divided.",
                     ),
@@ -1606,14 +1606,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "2.4 GHz RADIO encryption function disabled.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "2.4 GHz RADIO encryption function enabled.",
                     ),
@@ -1627,14 +1627,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOW_POWER",
+                    name: "LowPower",
                     description: Some(
                         "Flash memory enters low-power mode in Stop 0 and Stop 1 modes (lower-power consumption).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NORMAL",
+                    name: "Normal",
                     description: Some(
                         "Flash memory remains in normal mode in Stop 0 and Stop 1 modes (faster wakeup time).",
                     ),
@@ -1648,14 +1648,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "LDO fast startup disabled (limited inrush current).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "LDO fast startup enabled.",
                     ),
@@ -1669,14 +1669,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOT_RETAINED",
+                    name: "NotRetained",
                     description: Some(
                         "ICACHE SRAM content lost in Stop modes",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RETAINED",
+                    name: "Retained",
                     description: Some(
                         "ICACHE SRAM content retained in Stop modes",
                     ),
@@ -1690,14 +1690,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDIO2 not supplied, electrical and logical isolation enabled.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDIO2 supply present, electrical and logical isolation disabled.",
                     ),
@@ -1711,14 +1711,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "STOP0",
+                    name: "Stop0",
                     description: Some(
                         "Stop 0 mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "STOP1",
+                    name: "Stop1",
                     description: Some(
                         "Stop 1 mode",
                     ),
@@ -1732,14 +1732,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "CR1, CR2 and CSSF in the SR can be read and written with secure or non-secure access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "CR1, CR2, and CSSF in the SR can be read and written only with secure access.",
                     ),
@@ -1753,14 +1753,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DEEP_SLEEP",
+                    name: "DeepSleep",
                     description: Some(
                         "2.4 GHz RADIO deep sleep mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SLEEP",
+                    name: "Sleep",
                     description: Some(
                         "2.4 GHz RADIO sleep mode",
                     ),
@@ -1774,14 +1774,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "2.4 GHz RADIO Sleep mode.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "2.4 GHz RADIO Standby mode.",
                     ),
@@ -1795,14 +1795,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "PKA SRAM content retained in Stop modes.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "PKA SRAM content lost in Stop modes.",
                     ),
@@ -1816,14 +1816,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "OTG SRAM content retained in Stop modes.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "OTG SRAM content lost in Stop modes.",
                     ),
@@ -1837,14 +1837,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Cleared by software, writing 0.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Set by hardware when Stop 2 mode PTA retention is enabled in PTASREN and Stop 2 mode is entered.",
                     ),
@@ -1858,14 +1858,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "PTA output signals Stop 2 retention feature disabled.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "PTA output signals Stop 2 retention feature enabled.",
                     ),
@@ -1879,7 +1879,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "PVD_IN",
+                    name: "PvdIn",
                     description: Some(
                         "External input analog voltage PVD_IN (compared internally to VREFINT)",
                     ),
@@ -1942,14 +1942,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ABOVE_OR_EQUAL",
+                    name: "AboveOrEqual",
                     description: Some(
                         "VDD is equal or above the PVD threshold selected by PVDLS[2:0].",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BELOW",
+                    name: "Below",
                     description: Some(
                         "VDD is below the PVD threshold selected by PVDLS[2:0].",
                     ),
@@ -1963,14 +1963,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDRFPA pin selected as regulator REG_VDDHPA input supply.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "regulator REG_VDDHPA input supply selection between VDDRFPA and VDD11, dependent on requested regulated output voltage.",
                     ),
@@ -1984,14 +1984,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "LDO selected.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "SMPS selected.",
                     ),
@@ -2005,14 +2005,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "LDO selected.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "SMPS selected.",
                     ),
@@ -2026,14 +2026,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "The device did not enter Standby mode.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "The device entered Standby mode.",
                     ),
@@ -2047,14 +2047,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "POWERED_OFF",
+                    name: "PoweredOff",
                     description: Some(
                         "SRAM1 192KB, page 5 to 7 content lost in Stop modes",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "POWERED_ON",
+                    name: "PoweredOn",
                     description: Some(
                         "SRAM1 192KB, page 5 to 7 content retained in Stop modes",
                     ),
@@ -2068,14 +2068,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "POWERED_OFF",
+                    name: "PoweredOff",
                     description: Some(
                         "SRAM1 content lost in Stop modes",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "POWERED_ON",
+                    name: "PoweredOn",
                     description: Some(
                         "SRAM1 content retained in Stop modes",
                     ),
@@ -2089,14 +2089,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "VDDUSB not supplied, electrical and logical isolation enabled.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "VDDUSB supply present, electrical and logical isolation disabled.",
                     ),
@@ -2110,14 +2110,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "V11 feedback fixed before Epod.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "V11 feedback switch enabled:.",
                     ),
@@ -2131,14 +2131,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "DBPCR can be read and written with secure or non-secure access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "DBPCR can be read and written only with secure access.",
                     ),
@@ -2152,14 +2152,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "SVMCR and CR3 can be read and written with secure or non-secure access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "SVMCR and CR3 can be read and written only with secure access.",
                     ),
@@ -2173,14 +2173,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RANGE1",
+                    name: "Range1",
                     description: Some(
                         "Range 1 (highest frequency).",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RANGE2",
+                    name: "Range2",
                     description: Some(
                         "Range 2 (lowest power)",
                     ),
@@ -2194,14 +2194,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HIGH",
+                    name: "High",
                     description: Some(
                         "Detection on high level (rising edge)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOW",
+                    name: "Low",
                     description: Some(
                         "Detection on low level (falling edge)",
                     ),
@@ -2215,28 +2215,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "reserved",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "WKUP3_1",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "WKUP3_2",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "reserved",
                     ),

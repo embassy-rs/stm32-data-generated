@@ -46,7 +46,7 @@ impl Sdmmc {
     }
     #[doc = "response 1..4 register"]
     #[inline(always)]
-    pub const fn respr(self, n: usize) -> crate::common::Reg<regs::RespxR, crate::common::R> {
+    pub const fn respr(self, n: usize) -> crate::common::Reg<regs::ResPxR, crate::common::R> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize + n * 4usize) as _) }
     }
@@ -315,13 +315,13 @@ pub mod regs {
         #[doc = "SD I/O suspend command"]
         #[must_use]
         #[inline(always)]
-        pub const fn sdiosuspend(&self) -> bool {
+        pub const fn sdio_suspend(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
             val != 0
         }
         #[doc = "SD I/O suspend command"]
         #[inline(always)]
-        pub const fn set_sdiosuspend(&mut self, val: bool) {
+        pub const fn set_sdio_suspend(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
     }
@@ -339,14 +339,14 @@ pub mod regs {
                 .field("waitint", &self.waitint())
                 .field("waitpend", &self.waitpend())
                 .field("cpsmen", &self.cpsmen())
-                .field("sdiosuspend", &self.sdiosuspend())
+                .field("sdio_suspend", &self.sdio_suspend())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cmdr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cmdr {{ cmdindex: {=u8:?}, waitresp: {=u8:?}, waitint: {=bool:?}, waitpend: {=bool:?}, cpsmen: {=bool:?}, sdiosuspend: {=bool:?} }}" , self . cmdindex () , self . waitresp () , self . waitint () , self . waitpend () , self . cpsmen () , self . sdiosuspend ())
+            defmt :: write ! (f , "Cmdr {{ cmdindex: {=u8:?}, waitresp: {=u8:?}, waitint: {=bool:?}, waitpend: {=bool:?}, cpsmen: {=bool:?}, sdio_suspend: {=bool:?} }}" , self . cmdindex () , self . waitresp () , self . waitint () , self . waitpend () , self . cpsmen () , self . sdio_suspend ())
         }
     }
     #[doc = "data counter register"]
@@ -638,13 +638,13 @@ pub mod regs {
         #[doc = "Receive and transmit FIFO data"]
         #[must_use]
         #[inline(always)]
-        pub const fn fifodata(&self) -> u32 {
+        pub const fn fifo_data(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
             val as u32
         }
         #[doc = "Receive and transmit FIFO data"]
         #[inline(always)]
-        pub const fn set_fifodata(&mut self, val: u32) {
+        pub const fn set_fifo_data(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -656,13 +656,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Fifor {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Fifor").field("fifodata", &self.fifodata()).finish()
+            f.debug_struct("Fifor").field("fifo_data", &self.fifo_data()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fifor {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Fifor {{ fifodata: {=u32:?} }}", self.fifodata())
+            defmt::write!(f, "Fifor {{ fifo_data: {=u32:?} }}", self.fifo_data())
         }
     }
     #[doc = "interrupt clear register"]
@@ -1203,6 +1203,43 @@ pub mod regs {
             defmt::write!(f, "Power {{ pwrctrl: {=u8:?} }}", self.pwrctrl())
         }
     }
+    #[doc = "response 1..4 register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct ResPxR(pub u32);
+    impl ResPxR {
+        #[doc = "see Table 132"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cardstatus(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "see Table 132"]
+        #[inline(always)]
+        pub const fn set_cardstatus(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for ResPxR {
+        #[inline(always)]
+        fn default() -> ResPxR {
+            ResPxR(0)
+        }
+    }
+    impl core::fmt::Debug for ResPxR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ResPxR")
+                .field("cardstatus", &self.cardstatus())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ResPxR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ResPxR {{ cardstatus: {=u32:?} }}", self.cardstatus())
+        }
+    }
     #[doc = "command response register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1236,43 +1273,6 @@ pub mod regs {
     impl defmt::Format for Respcmdr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(f, "Respcmdr {{ respcmd: {=u8:?} }}", self.respcmd())
-        }
-    }
-    #[doc = "response 1..4 register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RespxR(pub u32);
-    impl RespxR {
-        #[doc = "see Table 132"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn cardstatus(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "see Table 132"]
-        #[inline(always)]
-        pub const fn set_cardstatus(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RespxR {
-        #[inline(always)]
-        fn default() -> RespxR {
-            RespxR(0)
-        }
-    }
-    impl core::fmt::Debug for RespxR {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("RespxR")
-                .field("cardstatus", &self.cardstatus())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RespxR {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "RespxR {{ cardstatus: {=u32:?} }}", self.cardstatus())
         }
     }
     #[doc = "status register"]

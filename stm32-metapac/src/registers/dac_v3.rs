@@ -468,42 +468,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "NORMAL_EXT_BUFDIS",
+                    name: "NormalExtBufdis",
                     description: Some("Normal mode, external pin only, buffer disabled"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "NORMAL_EXT_BUFEN",
+                    name: "NormalExtBufen",
                     description: Some("Normal mode, external pin only, buffer enabled"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NORMAL_EXT_INT_BUFEN",
+                    name: "NormalExtIntBufen",
                     description: Some("Normal mode, external pin and internal peripherals, buffer enabled"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NORMAL_INT_BUFDIS",
+                    name: "NormalIntBufdis",
                     description: Some("Normal mode, internal peripherals only, buffer disabled"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "SAMPHOLD_EXT_BUFEN",
+                    name: "SampholdExtBufen",
                     description: Some("Sample and hold mode, external pin only, buffer enabled"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "SAMPHOLD_EXT_INT_BUFDIS",
+                    name: "SampholdExtIntBufdis",
                     description: Some("Sample and hold mode, external pin and internal peripherals, buffer disabled"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "SAMPHOLD_EXT_INT_BUFEN",
+                    name: "SampholdExtIntBufen",
                     description: Some("Sample and hold mode, external pin and internal peripherals, buffer enabled"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "SAMPHOLD_INT_BUFDIS",
+                    name: "SampholdIntBufdis",
                     description: Some("Sample and hold mode, internal peripherals only, buffer disabled"),
                     value: 7,
                 },
@@ -515,17 +515,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "Disabled",
                     description: Some("Wave generation disabled"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NOISE",
+                    name: "Noise",
                     description: Some("Noise wave generation enabled"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TRIANGLE",
+                    name: "Triangle",
                     description: Some("Triangle wave generation enabled"),
                     value: 2,
                 },

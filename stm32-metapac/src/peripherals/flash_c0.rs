@@ -1170,13 +1170,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BorfLev {
         #[doc = "BOR falling level 1 with threshold around 2.0V"]
-        FALLING_0 = 0x0,
+        Falling0 = 0x0,
         #[doc = "BOR falling level 2 with threshold around 2.2V"]
-        FALLING_1 = 0x01,
+        Falling1 = 0x01,
         #[doc = "BOR falling level 3 with threshold around 2.5V"]
-        FALLING_2 = 0x02,
+        Falling2 = 0x02,
         #[doc = "BOR falling level 4 with threshold around 2.8V"]
-        FALLING_3 = 0x03,
+        Falling3 = 0x03,
     }
     impl BorfLev {
         #[inline(always)]
@@ -1205,13 +1205,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BorrLev {
         #[doc = "BOR rising level 1 with threshold around 2.1V"]
-        RISING_0 = 0x0,
+        Rising0 = 0x0,
         #[doc = "BOR rising level 2 with threshold around 2.3V"]
-        RISING_1 = 0x01,
+        Rising1 = 0x01,
         #[doc = "BOR rising level 3 with threshold around 2.6V"]
-        RISING_2 = 0x02,
+        Rising2 = 0x02,
         #[doc = "BOR rising level 4 with threshold around 2.9V"]
-        RISING_3 = 0x03,
+        Rising3 = 0x03,
     }
     impl BorrLev {
         #[inline(always)]
@@ -1240,9 +1240,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Latency {
         #[doc = "Zero wait states"]
-        WS0 = 0x0,
+        Ws0 = 0x0,
         #[doc = "One wait state"]
-        WS1 = 0x01,
+        Ws1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
@@ -1278,11 +1278,11 @@ pub mod vals {
     pub enum NrstMode {
         _RESERVED_0 = 0x0,
         #[doc = "Reset pin is in reset input mode only"]
-        INPUT_ONLY = 0x01,
+        InputOnly = 0x01,
         #[doc = "Reset pin is in GPIO mode only"]
-        GPIO = 0x02,
+        Gpio = 0x02,
         #[doc = "Reset pin is in resety input and output mode"]
-        INPUT_OUTPUT = 0x03,
+        InputOutput = 0x03,
     }
     impl NrstMode {
         #[inline(always)]
@@ -1311,11 +1311,11 @@ pub mod vals {
     pub struct Rdp(u8);
     impl Rdp {
         #[doc = "Read protection not active"]
-        pub const LEVEL_0: Self = Self(0xaa);
+        pub const Level0: Self = Self(0xaa);
         #[doc = "Memories read protection active"]
-        pub const LEVEL_1: Self = Self(0xbb);
+        pub const Level1: Self = Self(0xbb);
         #[doc = "Chip read protection active"]
-        pub const LEVEL_2: Self = Self(0xcc);
+        pub const Level2: Self = Self(0xcc);
     }
     impl Rdp {
         pub const fn from_bits(val: u8) -> Rdp {
@@ -1328,9 +1328,9 @@ pub mod vals {
     impl core::fmt::Debug for Rdp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0xaa => f.write_str("LEVEL_0"),
-                0xbb => f.write_str("LEVEL_1"),
-                0xcc => f.write_str("LEVEL_2"),
+                0xaa => f.write_str("Level0"),
+                0xbb => f.write_str("Level1"),
+                0xcc => f.write_str("Level2"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -1339,9 +1339,9 @@ pub mod vals {
     impl defmt::Format for Rdp {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0xaa => defmt::write!(f, "LEVEL_0"),
-                0xbb => defmt::write!(f, "LEVEL_1"),
-                0xcc => defmt::write!(f, "LEVEL_2"),
+                0xaa => defmt::write!(f, "Level0"),
+                0xbb => defmt::write!(f, "Level1"),
+                0xcc => defmt::write!(f, "Level2"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }

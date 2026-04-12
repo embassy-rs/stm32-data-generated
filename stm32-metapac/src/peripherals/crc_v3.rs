@@ -146,13 +146,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Polysize {
         #[doc = "32-bit polynomial"]
-        POLYSIZE32 = 0x0,
+        Polysize32 = 0x0,
         #[doc = "16-bit polynomial"]
-        POLYSIZE16 = 0x01,
+        Polysize16 = 0x01,
         #[doc = "8-bit polynomial"]
-        POLYSIZE8 = 0x02,
+        Polysize8 = 0x02,
         #[doc = "7-bit polynomial"]
-        POLYSIZE7 = 0x03,
+        Polysize7 = 0x03,
     }
     impl Polysize {
         #[inline(always)]
@@ -181,13 +181,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RevIn {
         #[doc = "Bit order not affected"]
-        NORMAL = 0x0,
+        Normal = 0x0,
         #[doc = "Bit reversal done by byte"]
-        BYTE = 0x01,
+        Byte = 0x01,
         #[doc = "Bit reversal done by half-word"]
-        HALF_WORD = 0x02,
+        HalfWord = 0x02,
         #[doc = "Bit reversal done by word"]
-        WORD = 0x03,
+        Word = 0x03,
     }
     impl RevIn {
         #[inline(always)]
@@ -216,9 +216,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RevOut {
         #[doc = "Bit order not affected"]
-        NORMAL = 0x0,
+        Normal = 0x0,
         #[doc = "Bit reversed output"]
-        REVERSED = 0x01,
+        Reversed = 0x01,
     }
     impl RevOut {
         #[inline(always)]

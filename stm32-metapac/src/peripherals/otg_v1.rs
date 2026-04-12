@@ -6021,10 +6021,10 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dpid {
-        DATA0 = 0x0,
-        DATA2 = 0x01,
-        DATA1 = 0x02,
-        MDATA = 0x03,
+        Data0 = 0x0,
+        Data2 = 0x01,
+        Data1 = 0x02,
+        Mdata = 0x03,
     }
     impl Dpid {
         #[inline(always)]
@@ -6053,12 +6053,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dspd {
         #[doc = "High speed"]
-        HIGH_SPEED = 0x0,
+        HighSpeed = 0x0,
         #[doc = "Full speed using external ULPI PHY"]
-        FULL_SPEED_EXTERNAL = 0x01,
+        FullSpeedExternal = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "Full speed using internal embedded PHY"]
-        FULL_SPEED_INTERNAL = 0x03,
+        FullSpeedInternal = 0x03,
     }
     impl Dspd {
         #[inline(always)]
@@ -6086,10 +6086,10 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Eptyp {
-        CONTROL = 0x0,
-        ISOCHRONOUS = 0x01,
-        BULK = 0x02,
-        INTERRUPT = 0x03,
+        Control = 0x0,
+        Isochronous = 0x01,
+        Bulk = 0x02,
+        Interrupt = 0x03,
     }
     impl Eptyp {
         #[inline(always)]
@@ -6118,13 +6118,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Frlistlen {
         #[doc = "Length = 8"]
-        LEN8 = 0x0,
+        Len8 = 0x0,
         #[doc = "Length = 16"]
-        LEN16 = 0x01,
+        Len16 = 0x01,
         #[doc = "Length = 32"]
-        LEN32 = 0x02,
+        Len32 = 0x02,
         #[doc = "Length = 64"]
-        LEN64 = 0x03,
+        Len64 = 0x03,
     }
     impl Frlistlen {
         #[inline(always)]
@@ -6153,13 +6153,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pfivl {
         #[doc = "80% of the frame interval"]
-        FRAME_INTERVAL_80 = 0x0,
+        FrameInterval80 = 0x0,
         #[doc = "85% of the frame interval"]
-        FRAME_INTERVAL_85 = 0x01,
+        FrameInterval85 = 0x01,
         #[doc = "90% of the frame interval"]
-        FRAME_INTERVAL_90 = 0x02,
+        FrameInterval90 = 0x02,
         #[doc = "95% of the frame interval"]
-        FRAME_INTERVAL_95 = 0x03,
+        FrameInterval95 = 0x03,
     }
     impl Pfivl {
         #[inline(always)]
@@ -6189,16 +6189,16 @@ pub mod vals {
     pub enum Pktstsd {
         _RESERVED_0 = 0x0,
         #[doc = "Global OUT NAK (triggers an interrupt)"]
-        OUT_NAK = 0x01,
+        OutNak = 0x01,
         #[doc = "OUT data packet received"]
-        OUT_DATA_RX = 0x02,
+        OutDataRx = 0x02,
         #[doc = "OUT transfer completed (triggers an interrupt)"]
-        OUT_DATA_DONE = 0x03,
+        OutDataDone = 0x03,
         #[doc = "SETUP transaction completed (triggers an interrupt)"]
-        SETUP_DATA_DONE = 0x04,
+        SetupDataDone = 0x04,
         _RESERVED_5 = 0x05,
         #[doc = "SETUP data packet received"]
-        SETUP_DATA_RX = 0x06,
+        SetupDataRx = 0x06,
         _RESERVED_7 = 0x07,
         _RESERVED_8 = 0x08,
         _RESERVED_9 = 0x09,
@@ -6238,15 +6238,15 @@ pub mod vals {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "IN data packet received"]
-        IN_DATA_RX = 0x02,
+        InDataRx = 0x02,
         #[doc = "IN transfer completed (triggers an interrupt)"]
-        IN_DATA_DONE = 0x03,
+        InDataDone = 0x03,
         _RESERVED_4 = 0x04,
         #[doc = "Data toggle error (triggers an interrupt)"]
-        DATA_TOGGLE_ERR = 0x05,
+        DataToggleErr = 0x05,
         _RESERVED_6 = 0x06,
         #[doc = "Channel halted (triggers an interrupt)"]
-        CHANNEL_HALTED = 0x07,
+        ChannelHalted = 0x07,
         _RESERVED_8 = 0x08,
         _RESERVED_9 = 0x09,
         _RESERVED_a = 0x0a,

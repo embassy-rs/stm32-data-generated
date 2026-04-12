@@ -2210,9 +2210,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adcaldif {
         #[doc = "Calibration for single-ended mode"]
-        SINGLE_ENDED = 0x0,
+        SingleEnded = 0x0,
         #[doc = "Calibration for differential mode"]
-        DIFFERENTIAL = 0x01,
+        Differential = 0x01,
     }
     impl Adcaldif {
         #[inline(always)]
@@ -2242,7 +2242,7 @@ pub mod vals {
     pub enum Adstp {
         _RESERVED_0 = 0x0,
         #[doc = "Stop conversion of channel"]
-        STOP = 0x01,
+        Stop = 0x01,
     }
     impl Adstp {
         #[inline(always)]
@@ -2271,9 +2271,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Awd1sgl {
         #[doc = "Analog watchdog 1 enabled on all channels"]
-        ALL = 0x0,
+        All = 0x0,
         #[doc = "Analog watchdog 1 enabled on single channel selected in AWD1CH"]
-        SINGLE = 0x01,
+        Single = 0x01,
     }
     impl Awd1sgl {
         #[inline(always)]
@@ -2302,13 +2302,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Boost {
         #[doc = "Boost mode used when clock ≤ 6.25 MHz"]
-        LT6_25 = 0x0,
+        Lt625 = 0x0,
         #[doc = "Boost mode used when 6.25 MHz < clock ≤ 12.5 MHz"]
-        LT12_5 = 0x01,
+        Lt125 = 0x01,
         #[doc = "Boost mode used when 12.5 MHz < clock ≤ 25.0 MHz"]
-        LT25 = 0x02,
+        Lt25 = 0x02,
         #[doc = "Boost mode used when 25.0 MHz < clock ≤ 50.0 MHz"]
-        LT50 = 0x03,
+        Lt50 = 0x03,
     }
     impl Boost {
         #[inline(always)]
@@ -2337,9 +2337,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Difsel {
         #[doc = "Input channel is configured in single-ended mode"]
-        SINGLE_ENDED = 0x0,
+        SingleEnded = 0x0,
         #[doc = "Input channel is configured in differential mode"]
-        DIFFERENTIAL = 0x01,
+        Differential = 0x01,
     }
     impl Difsel {
         #[inline(always)]
@@ -2368,13 +2368,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dmngt {
         #[doc = "Store output data in DR only"]
-        DR = 0x0,
+        Dr = 0x0,
         #[doc = "DMA One Shot Mode selected"]
-        DMA_ONE_SHOT = 0x01,
+        DmaOneShot = 0x01,
         #[doc = "DFSDM mode selected"]
-        DFSDM = 0x02,
+        Dfsdm = 0x02,
         #[doc = "DMA Circular Mode selected"]
-        DMA_CIRCULAR = 0x03,
+        DmaCircular = 0x03,
     }
     impl Dmngt {
         #[inline(always)]
@@ -2403,13 +2403,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Exten {
         #[doc = "Trigger detection disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Trigger detection on the rising edge"]
-        RISING_EDGE = 0x01,
+        RisingEdge = 0x01,
         #[doc = "Trigger detection on the falling edge"]
-        FALLING_EDGE = 0x02,
+        FallingEdge = 0x02,
         #[doc = "Trigger detection on both the rising and falling edges"]
-        BOTH_EDGES = 0x03,
+        BothEdges = 0x03,
     }
     impl Exten {
         #[inline(always)]
@@ -2438,9 +2438,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Jqm {
         #[doc = "JSQR Mode 0: Queue maintains the last written configuration into JSQR"]
-        MODE0 = 0x0,
+        Mode0 = 0x0,
         #[doc = "JSQR Mode 1: An empty queue disables software and hardware triggers of the injected sequence"]
-        MODE1 = 0x01,
+        Mode1 = 0x01,
     }
     impl Jqm {
         #[inline(always)]
@@ -2469,9 +2469,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ovrmod {
         #[doc = "Preserve DR register when an overrun is detected"]
-        PRESERVE = 0x0,
+        Preserve = 0x0,
         #[doc = "Overwrite DR register when an overrun is detected"]
-        OVERWRITE = 0x01,
+        Overwrite = 0x01,
     }
     impl Ovrmod {
         #[inline(always)]
@@ -2500,9 +2500,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pcsel {
         #[doc = "Input channel x is not pre-selected"]
-        NOT_PRESELECTED = 0x0,
+        NotPreselected = 0x0,
         #[doc = "Pre-select input channel x"]
-        PRESELECTED = 0x01,
+        Preselected = 0x01,
     }
     impl Pcsel {
         #[inline(always)]
@@ -2531,20 +2531,20 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Res {
         #[doc = "16-bit resolution"]
-        BITS16 = 0x0,
+        Bits16 = 0x0,
         #[doc = "14-bit resolution in legacy mode (not optimized power consumption)"]
-        BITS14 = 0x01,
+        Bits14 = 0x01,
         #[doc = "12-bit resolution in legacy mode (not optimized power consumption)"]
-        BITS12 = 0x02,
+        Bits12 = 0x02,
         #[doc = "10-bit resolution"]
-        BITS10 = 0x03,
+        Bits10 = 0x03,
         _RESERVED_4 = 0x04,
         #[doc = "14-bit resolution"]
-        BITS14V = 0x05,
+        Bits14v = 0x05,
         #[doc = "12-bit resolution"]
-        BITS12V = 0x06,
+        Bits12v = 0x06,
         #[doc = "8-bit resolution"]
-        BITS8 = 0x07,
+        Bits8 = 0x07,
     }
     impl Res {
         #[inline(always)]
@@ -2573,9 +2573,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rovsm {
         #[doc = "Oversampling is temporary stopped and continued after injection sequence"]
-        CONTINUED = 0x0,
+        Continued = 0x0,
         #[doc = "Oversampling is aborted and resumed from start after injection sequence"]
-        RESUMED = 0x01,
+        Resumed = 0x01,
     }
     impl Rovsm {
         #[inline(always)]
@@ -2604,21 +2604,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "1.5 clock cycles"]
-        CYCLES1_5 = 0x0,
+        Cycles15 = 0x0,
         #[doc = "2.5 clock cycles"]
-        CYCLES2_5 = 0x01,
+        Cycles25 = 0x01,
         #[doc = "8.5 clock cycles"]
-        CYCLES8_5 = 0x02,
+        Cycles85 = 0x02,
         #[doc = "16.5 clock cycles"]
-        CYCLES16_5 = 0x03,
+        Cycles165 = 0x03,
         #[doc = "32.5 clock cycles"]
-        CYCLES32_5 = 0x04,
+        Cycles325 = 0x04,
         #[doc = "64.5 clock cycles"]
-        CYCLES64_5 = 0x05,
+        Cycles645 = 0x05,
         #[doc = "387.5 clock cycles"]
-        CYCLES387_5 = 0x06,
+        Cycles3875 = 0x06,
         #[doc = "810.5 clock cycles"]
-        CYCLES810_5 = 0x07,
+        Cycles8105 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]
@@ -2647,9 +2647,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trovs {
         #[doc = "All oversampled conversions for a channel are run following a trigger"]
-        AUTOMATIC = 0x0,
+        Automatic = 0x0,
         #[doc = "Each oversampled conversion for a channel needs a new trigger"]
-        TRIGGERED = 0x01,
+        Triggered = 0x01,
     }
     impl Trovs {
         #[inline(always)]

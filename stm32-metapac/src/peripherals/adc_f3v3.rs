@@ -1667,21 +1667,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Discnum {
         #[doc = "1 conversions are discontinued and the conversion is carried out on one channel"]
-        DISCNUM_1 = 0x0,
+        Discnum1 = 0x0,
         #[doc = "2 conversion is discontinued and the conversions are carried out on 2 channels"]
-        DISCNUM_2 = 0x01,
+        Discnum2 = 0x01,
         #[doc = "3 conversions are discontinued and the conversions are carried out on 3 channels"]
-        DISCNUM_3 = 0x02,
+        Discnum3 = 0x02,
         #[doc = "4 conversions are discontinued and the conversions are carried out on 4 channels"]
-        DISCNUM_4 = 0x03,
+        Discnum4 = 0x03,
         #[doc = "5 conversions are discontinued and the conversions are carried out on 5 channels"]
-        DISCNUM_5 = 0x04,
+        Discnum5 = 0x04,
         #[doc = "6 conversions are discontinued and the conversions are carried out on 6 channels"]
-        DISCNUM_6 = 0x05,
+        Discnum6 = 0x05,
         #[doc = "7 conversions are discontinued and the conversions are carried out on 7 channels"]
-        DISCNUM_7 = 0x06,
+        Discnum7 = 0x06,
         #[doc = "8 conversions are discontinued and the conversions are carried out on 8 channels"]
-        DISCNUM_8 = 0x07,
+        Discnum8 = 0x07,
     }
     impl Discnum {
         #[inline(always)]
@@ -1710,21 +1710,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "1.5 ADC clock cycles"]
-        CYCLES1_5 = 0x0,
+        Cycles15 = 0x0,
         #[doc = "7.5 ADC clock cycles"]
-        CYCLES7_5 = 0x01,
+        Cycles75 = 0x01,
         #[doc = "13.5 ADC clock cycles"]
-        CYCLES13_5 = 0x02,
+        Cycles135 = 0x02,
         #[doc = "28.5 ADC clock cycles"]
-        CYCLES28_5 = 0x03,
+        Cycles285 = 0x03,
         #[doc = "41.5 ADC clock cycles"]
-        CYCLES41_5 = 0x04,
+        Cycles415 = 0x04,
         #[doc = "55.5 ADC clock cycles"]
-        CYCLES55_5 = 0x05,
+        Cycles555 = 0x05,
         #[doc = "71.5 ADC clock cycles"]
-        CYCLES71_5 = 0x06,
+        Cycles715 = 0x06,
         #[doc = "239.5 ADC clock cycles"]
-        CYCLES239_5 = 0x07,
+        Cycles2395 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]

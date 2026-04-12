@@ -782,27 +782,27 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "WS0",
+                    name: "Ws0",
                     description: Some("Zero wait states"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WS1",
+                    name: "Ws1",
                     description: Some("One wait state"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "WS2",
+                    name: "Ws2",
                     description: Some("Two wait states"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "WS3",
+                    name: "Ws3",
                     description: Some("Three wait states"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "WS4",
+                    name: "Ws4",
                     description: Some("Four wait states"),
                     value: 4,
                 },
@@ -814,17 +814,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "GPIO",
+                    name: "Gpio",
                     description: Some("Reset pin is in GPIO mode only"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "INPUT_ONLY",
+                    name: "InputOnly",
                     description: Some("Reset pin is in reset input mode only"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "INPUT_OUTPUT",
+                    name: "InputOutput",
                     description: Some("Reset pin is in reset input and output mode"),
                     value: 3,
                 },
@@ -836,17 +836,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "LEVEL_0",
+                    name: "Level0",
                     description: Some("Read protection not active"),
                     value: 170,
                 },
                 EnumVariant {
-                    name: "LEVEL_1",
+                    name: "Level1",
                     description: Some("Memories read protection active"),
                     value: 187,
                 },
                 EnumVariant {
-                    name: "LEVEL_2",
+                    name: "Level2",
                     description: Some("Chip read protection active"),
                     value: 204,
                 },

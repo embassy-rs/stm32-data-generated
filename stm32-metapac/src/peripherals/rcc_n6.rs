@@ -34097,9 +34097,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclknclock {
         #[doc = "ACLKNC configuration bits are accessible by non-lock software only (default after reset)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "ACLKNC configuration bits are accessible by lock software only."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Aclknclock {
         #[inline(always)]
@@ -34128,9 +34128,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclkncpub {
         #[doc = "ACLKNC configuration bits are accessible by non-public software only (default after reset)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "ACLKNC configuration bits are accessible by public software only."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Aclkncpub {
         #[inline(always)]
@@ -34159,9 +34159,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclkncpv {
         #[doc = "ACLKNC configuration bits are accessible by non-privilege software only (default after reset)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "ACLKNC configuration bits are accessible by privilege software only."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Aclkncpv {
         #[inline(always)]
@@ -34190,9 +34190,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclkncsec {
         #[doc = "ACLKNC configuration bits are accessible by non-secure software only (default after reset)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "ACLKNC configuration bits are accessible by secure software only."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Aclkncsec {
         #[inline(always)]
@@ -34221,9 +34221,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclknlock {
         #[doc = "ACLKN configuration bits are accessible by non-lock software only (default after reset)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "ACLKN configuration bits are accessible by lock software only."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Aclknlock {
         #[inline(always)]
@@ -34252,9 +34252,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclknpub {
         #[doc = "ACLKN configuration bits are accessible by non-public software only (default after reset)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "ACLKN configuration bits are accessible by public software only."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Aclknpub {
         #[inline(always)]
@@ -34283,9 +34283,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclknpv {
         #[doc = "ACLKN configuration bits are accessible by non-privilege software only (default after reset)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "ACLKN configuration bits are accessible by privilege software only."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Aclknpv {
         #[inline(always)]
@@ -34314,9 +34314,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclknsec {
         #[doc = "ACLKN configuration bits are accessible by non-secure software only (default after reset)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "ACLKN configuration bits are accessible by secure software only."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Aclknsec {
         #[inline(always)]
@@ -34345,13 +34345,13 @@ pub mod vals {
     pub struct Adcpre(u8);
     impl Adcpre {
         #[doc = "ck_icn_p_adf1 is divided by 1."]
-        pub const DIV1: Self = Self(0x0);
+        pub const Div1: Self = Self(0x0);
         #[doc = "ck_icn_p_adf1 is divided by 2."]
-        pub const DIV2: Self = Self(0x01);
+        pub const Div2: Self = Self(0x01);
         #[doc = "ck_icn_p_adf1 is divided by 3."]
-        pub const DIV3: Self = Self(0x02);
+        pub const Div3: Self = Self(0x02);
         #[doc = "ck_icn_p_adf1 is divided by 4."]
-        pub const DIV4: Self = Self(0x03);
+        pub const Div4: Self = Self(0x03);
     }
     impl Adcpre {
         pub const fn from_bits(val: u8) -> Adcpre {
@@ -34364,10 +34364,10 @@ pub mod vals {
     impl core::fmt::Debug for Adcpre {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("DIV1"),
-                0x01 => f.write_str("DIV2"),
-                0x02 => f.write_str("DIV3"),
-                0x03 => f.write_str("DIV4"),
+                0x0 => f.write_str("Div1"),
+                0x01 => f.write_str("Div2"),
+                0x02 => f.write_str("Div3"),
+                0x03 => f.write_str("Div4"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -34376,10 +34376,10 @@ pub mod vals {
     impl defmt::Format for Adcpre {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "DIV1"),
-                0x01 => defmt::write!(f, "DIV2"),
-                0x02 => defmt::write!(f, "DIV3"),
-                0x03 => defmt::write!(f, "DIV4"),
+                0x0 => defmt::write!(f, "Div1"),
+                0x01 => defmt::write!(f, "Div2"),
+                0x02 => defmt::write!(f, "Div3"),
+                0x03 => defmt::write!(f, "Div4"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -34401,21 +34401,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adcsel {
         #[doc = "hclk1 selected as reference clock."]
-        HCLK1 = 0x0,
+        Hclk1 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic7_ck selected as reference clock."]
-        IC7 = 0x02,
+        Ic7 = 0x02,
         #[doc = "ic8_ck selected as reference clock."]
-        IC8 = 0x03,
+        Ic8 = 0x03,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x04,
+        Msi = 0x04,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x05,
+        HsiDiv = 0x05,
         #[doc = "I2S_CKIN selected as reference clock."]
-        I2S_CKIN = 0x06,
+        I2sCkin = 0x06,
         #[doc = "timg_ck selected as reference clock."]
-        TIMG = 0x07,
+        Timg = 0x07,
     }
     impl Adcsel {
         #[inline(always)]
@@ -34444,21 +34444,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adfsel {
         #[doc = "hclk2 selected as reference clock."]
-        HCLK2 = 0x0,
+        Hclk2 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic7_ck selected as reference clock."]
-        IC7 = 0x02,
+        Ic7 = 0x02,
         #[doc = "ic8_ck selected as reference clock."]
-        IC8 = 0x03,
+        Ic8 = 0x03,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x04,
+        Msi = 0x04,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x05,
+        HsiDiv = 0x05,
         #[doc = "I2S_CKIN selected as reference clock."]
-        I2S_CKIN = 0x06,
+        I2sCkin = 0x06,
         #[doc = "timg_ck selected as reference clock."]
-        TIMG = 0x07,
+        Timg = 0x07,
     }
     impl Adfsel {
         #[inline(always)]
@@ -34487,9 +34487,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahblock {
         #[doc = "AHB1 configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "AHB1 configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Ahblock {
         #[inline(always)]
@@ -34518,9 +34518,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbmlock {
         #[doc = "AHBM configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "AHBM configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Ahbmlock {
         #[inline(always)]
@@ -34549,9 +34549,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbmpub {
         #[doc = "AHBM configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "AHBM configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Ahbmpub {
         #[inline(always)]
@@ -34580,9 +34580,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbmpv {
         #[doc = "AHBM configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIV = 0x0,
+        NonPriv = 0x0,
         #[doc = "AHBM configuration bits are accessible by privilege software only."]
-        PRIV = 0x01,
+        Priv = 0x01,
     }
     impl Ahbmpv {
         #[inline(always)]
@@ -34611,9 +34611,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbmsec {
         #[doc = "AHBM configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "AHBM configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Ahbmsec {
         #[inline(always)]
@@ -34642,9 +34642,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbpub {
         #[doc = "AHB1 configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "AHB1 configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Ahbpub {
         #[inline(always)]
@@ -34673,9 +34673,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbpv {
         #[doc = "AHB1 configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIV = 0x0,
+        NonPriv = 0x0,
         #[doc = "AHB1 configuration bits are accessible by privilege software only."]
-        PRIV = 0x01,
+        Priv = 0x01,
     }
     impl Ahbpv {
         #[inline(always)]
@@ -34704,9 +34704,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbsec {
         #[doc = "AHB1 configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "AHB1 configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Ahbsec {
         #[inline(always)]
@@ -34735,9 +34735,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbsrampub {
         #[doc = "AHBSRAM1 configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "AHBSRAM1 configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Ahbsrampub {
         #[inline(always)]
@@ -34766,9 +34766,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Apblock {
         #[doc = "APB1 configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "APB1 configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Apblock {
         #[inline(always)]
@@ -34797,9 +34797,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Apbpub {
         #[doc = "APB1 configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "APB1 configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Apbpub {
         #[inline(always)]
@@ -34828,9 +34828,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Apbpv {
         #[doc = "APB1 configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIV = 0x0,
+        NonPriv = 0x0,
         #[doc = "APB1 configuration bits are accessible by privilege software only."]
-        PRIV = 0x01,
+        Priv = 0x01,
     }
     impl Apbpv {
         #[inline(always)]
@@ -34859,9 +34859,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Apbsec {
         #[doc = "APB1 configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "APB1 configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Apbsec {
         #[inline(always)]
@@ -34890,9 +34890,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Axisrampub {
         #[doc = "AXISRAM1 configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "AXISRAM1 configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Axisrampub {
         #[inline(always)]
@@ -34921,9 +34921,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bkpsrampub {
         #[doc = "BKPSRAM configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "BKPSRAM configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Bkpsrampub {
         #[inline(always)]
@@ -34952,9 +34952,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Buslock {
         #[doc = "BUS configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "BUS configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Buslock {
         #[inline(always)]
@@ -34983,9 +34983,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Buspub {
         #[doc = "BUS configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "BUS configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Buspub {
         #[inline(always)]
@@ -35014,9 +35014,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Buspv {
         #[doc = "BUS configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIV = 0x0,
+        NonPriv = 0x0,
         #[doc = "BUS configuration bits are accessible by privilege software only."]
-        PRIV = 0x01,
+        Priv = 0x01,
     }
     impl Buspv {
         #[inline(always)]
@@ -35045,9 +35045,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bussec {
         #[doc = "BUS configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "BUS configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Bussec {
         #[inline(always)]
@@ -35076,13 +35076,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpusw {
         #[doc = "hsi_ck selected as system clock (default after reset)."]
-        HSI = 0x0,
+        Hsi = 0x0,
         #[doc = "msi_ck selected as system clock."]
-        MSI = 0x01,
+        Msi = 0x01,
         #[doc = "hse_ck selected as system clock."]
-        HSE = 0x02,
+        Hse = 0x02,
         #[doc = "ic1_ck selected as system clock."]
-        IC1 = 0x03,
+        Ic1 = 0x03,
     }
     impl Cpusw {
         #[inline(always)]
@@ -35111,13 +35111,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpusws {
         #[doc = "hsi_ck selected as system clock (default after reset)."]
-        HSI = 0x0,
+        Hsi = 0x0,
         #[doc = "msi_ck selected as system clock."]
-        MSI = 0x01,
+        Msi = 0x01,
         #[doc = "hse_ck selected as system clock."]
-        HSE = 0x02,
+        Hse = 0x02,
         #[doc = "ic1_ck selected as system clock."]
-        IC1 = 0x03,
+        Ic1 = 0x03,
     }
     impl Cpusws {
         #[inline(always)]
@@ -35146,13 +35146,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dcmisel {
         #[doc = "pclk5 selected as reference clock."]
-        PCLK5 = 0x0,
+        Pclk5 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic17_ck selected as reference clock."]
-        IC17 = 0x02,
+        Ic17 = 0x02,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x03,
+        HsiDiv = 0x03,
     }
     impl Dcmisel {
         #[inline(always)]
@@ -35181,9 +35181,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dftlock {
         #[doc = "DFT configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "DFT configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Dftlock {
         #[inline(always)]
@@ -35212,9 +35212,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dftpub {
         #[doc = "DFT configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "DFT configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Dftpub {
         #[inline(always)]
@@ -35243,9 +35243,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dftpv {
         #[doc = "DFT configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIV = 0x0,
+        NonPriv = 0x0,
         #[doc = "DFT configuration bits are accessible by privilege software only."]
-        PRIV = 0x01,
+        Priv = 0x01,
     }
     impl Dftpv {
         #[inline(always)]
@@ -35274,9 +35274,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dftsec {
         #[doc = "DFT configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "DFT configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Dftsec {
         #[inline(always)]
@@ -35305,9 +35305,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dftsel {
         #[doc = "jtag_tck selected as reference clock (default after reset)."]
-        JTAG_TCK = 0x0,
+        JtagTck = 0x0,
         #[doc = "pclk3 selected as reference clock."]
-        PCLK3 = 0x01,
+        Pclk3 = 0x01,
     }
     impl Dftsel {
         #[inline(always)]
@@ -35336,11 +35336,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Eadly {
         #[doc = "sysrstn low pulse duration is guaranteed by the pulse stretcher of the PAD. The RPCTL is bypassed (default after reset)."]
-        BYPASS = 0x0,
+        Bypass = 0x0,
         #[doc = "The guaranteed sysrstn low pulse duration is about 1 ms (1 x 32 lsi_ck cycles)."]
-        _1MS = 0x01,
+        _1ms = 0x01,
         #[doc = "The guaranteed sysrstn low pulse duration is about 2 ms (2 x 32 lsi_ck cycles)."]
-        _2MS = 0x02,
+        _2ms = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
@@ -35382,13 +35382,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ethclksel {
         #[doc = "hclke selected as reference clock."]
-        HCLKE = 0x0,
+        Hclke = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic12_ck selected as reference clock."]
-        IC12 = 0x02,
+        Ic12 = 0x02,
         #[doc = "hse_ck selected as reference clock."]
-        HSE = 0x03,
+        Hse = 0x03,
     }
     impl Ethclksel {
         #[inline(always)]
@@ -35417,9 +35417,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ethgtxclksel {
         #[doc = "MII."]
-        MII = 0x0,
+        Mii = 0x0,
         #[doc = "RGMII."]
-        RGMII = 0x01,
+        Rgmii = 0x01,
     }
     impl Ethgtxclksel {
         #[inline(always)]
@@ -35448,13 +35448,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ethptpdiv {
         #[doc = "ck_ker_eth1ptp is divided by 1."]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "ck_ker_eth1ptp is divided by 2."]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "ck_ker_eth1ptp is divided by 3."]
-        DIV3 = 0x02,
+        Div3 = 0x02,
         #[doc = "ck_ker_eth1ptp is divided by 4."]
-        DIV4 = 0x03,
+        Div4 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
@@ -35467,7 +35467,7 @@ pub mod vals {
         _RESERVED_d = 0x0d,
         _RESERVED_e = 0x0e,
         #[doc = "ck_ker_eth1ptp is divided by 16."]
-        DIV16 = 0x0f,
+        Div16 = 0x0f,
     }
     impl Ethptpdiv {
         #[inline(always)]
@@ -35496,13 +35496,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ethptpsel {
         #[doc = "hclke selected as reference clock."]
-        HCLKE = 0x0,
+        Hclke = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic13_ck selected as reference clock."]
-        IC13 = 0x02,
+        Ic13 = 0x02,
         #[doc = "hse_ck selected as reference clock."]
-        HSE = 0x03,
+        Hse = 0x03,
     }
     impl Ethptpsel {
         #[inline(always)]
@@ -35531,9 +35531,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ethpwrdownack {
         #[doc = "Power-down sequence start not yet acknowledged."]
-        NOT_ACK = 0x0,
+        NotAck = 0x0,
         #[doc = "Power-down sequence start acknowledged."]
-        ACK = 0x01,
+        Ack = 0x01,
     }
     impl Ethpwrdownack {
         #[inline(always)]
@@ -35562,13 +35562,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fdcansel {
         #[doc = "pclk1 selected as reference clock."]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic19_ck selected as reference clock."]
-        IC19 = 0x02,
+        Ic19 = 0x02,
         #[doc = "hse_ck selected as reference clock."]
-        HSE = 0x03,
+        Hse = 0x03,
     }
     impl Fdcansel {
         #[inline(always)]
@@ -35597,9 +35597,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Flexrampub {
         #[doc = "FLEXRAM configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "FLEXRAM configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Flexrampub {
         #[inline(always)]
@@ -35628,13 +35628,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmcsel {
         #[doc = "hclk5 selected as reference clock."]
-        HCLK5 = 0x0,
+        Hclk5 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic3_ck selected as reference clock."]
-        IC3 = 0x02,
+        Ic3 = 0x02,
         #[doc = "ic4_ck selected as reference clock."]
-        IC4 = 0x03,
+        Ic4 = 0x03,
     }
     impl Fmcsel {
         #[inline(always)]
@@ -35663,13 +35663,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmcsels {
         #[doc = "hclk5 selected as FMC clock (default after reset)."]
-        HCLK5 = 0x0,
+        Hclk5 = 0x0,
         #[doc = "per_ck selected as FMC clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic3_ck selected as FMC clock."]
-        IC3 = 0x02,
+        Ic3 = 0x02,
         #[doc = "ic4_ck selected as FMC clock."]
-        IC4 = 0x03,
+        Ic4 = 0x03,
     }
     impl Fmcsels {
         #[inline(always)]
@@ -35698,21 +35698,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hpre {
         #[doc = "sys_bus2_ck= sys_bus_ck."]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "sys_bus2_ck = sys_bus_ck / 2 (default after reset)."]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "sys_bus2_ck= sys_bus_ck / 4."]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         #[doc = "sys_bus2_ck = sys_bus_ck / 8."]
-        DIV8 = 0x03,
+        Div8 = 0x03,
         #[doc = "sys_bus2_ck = sys_bus_ck / 16."]
-        DIV16 = 0x04,
+        Div16 = 0x04,
         #[doc = "sys_bus2_ck = sys_bus_ck / 32."]
-        DIV32 = 0x05,
+        Div32 = 0x05,
         #[doc = "sys_bus2_ck = sys_bus_ck / 64."]
-        DIV64 = 0x06,
+        Div64 = 0x06,
         #[doc = "sys_bus2_ck = sys_bus_ck / 128."]
-        DIV128 = 0x07,
+        Div128 = 0x07,
     }
     impl Hpre {
         #[inline(always)]
@@ -35741,13 +35741,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsecssbpre {
         #[doc = "HSI clock is divided by 1."]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "HSI clock is divided by 2 (default after reset)."]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "HSI clock is divided by 3."]
-        DIV3 = 0x02,
+        Div3 = 0x02,
         #[doc = "HSI clock is divided by 4."]
-        DIV4 = 0x03,
+        Div4 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
@@ -35760,7 +35760,7 @@ pub mod vals {
         _RESERVED_d = 0x0d,
         _RESERVED_e = 0x0e,
         #[doc = "HSI clock is divided by 15."]
-        DIV15 = 0x0f,
+        Div15 = 0x0f,
     }
     impl Hsecssbpre {
         #[inline(always)]
@@ -35789,9 +35789,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsecssbyp {
         #[doc = "clock Security System Bypass of the HSE oscillator is OFF (default after reset)."]
-        NO_BYPASS = 0x0,
+        NoBypass = 0x0,
         #[doc = "clock Security System Bypass on the HSE oscillator is ON."]
-        BYPASS = 0x01,
+        Bypass = 0x01,
     }
     impl Hsecssbyp {
         #[inline(always)]
@@ -35820,9 +35820,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsecssc {
         #[doc = "HSECSSF not modified (default after reset)."]
-        NOT_MODIFIED = 0x0,
+        NotModified = 0x0,
         #[doc = "HSECSSF cleared."]
-        CLEARED = 0x01,
+        Cleared = 0x01,
     }
     impl Hsecssc {
         #[inline(always)]
@@ -35851,9 +35851,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsecssd {
         #[doc = "No failure detected on the oscillator (default after reset)."]
-        NO_FAILURE = 0x0,
+        NoFailure = 0x0,
         #[doc = "Failure detected on the oscillator."]
-        FAILURE = 0x01,
+        Failure = 0x01,
     }
     impl Hsecssd {
         #[inline(always)]
@@ -35882,9 +35882,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsecssf {
         #[doc = "no clock ready interrupt caused by the HSE (default after reset)."]
-        NO_CLOCK_READY = 0x0,
+        NoClockReady = 0x0,
         #[doc = "clock ready interrupt caused by the HSE."]
-        CLOCK_READY = 0x01,
+        ClockReady = 0x01,
     }
     impl Hsecssf {
         #[inline(always)]
@@ -35913,9 +35913,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsecssie {
         #[doc = "HSE CSS interrupt disabled."]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "HSE CSS interrupt enabled (default after reset)."]
-        ENABLED = 0x01,
+        Enabled = 0x01,
     }
     impl Hsecssie {
         #[inline(always)]
@@ -35944,9 +35944,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsecssra {
         #[doc = "Writing 0 has no effect (default after reset)."]
-        NO_RE_ARM = 0x0,
+        NoReArm = 0x0,
         #[doc = "Writing 1 generates a re-arm pulse for the HSECSS function."]
-        RE_ARM = 0x01,
+        ReArm = 0x01,
     }
     impl Hsecssra {
         #[inline(always)]
@@ -35975,9 +35975,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsedivbyp {
         #[doc = "HSE: hse_div2_osc_ck = hse_osc_ck/2 (default after reset)."]
-        DIV2 = 0x0,
+        Div2 = 0x0,
         #[doc = "HSE: hse_div2_osc_ck = hse_osc_ck."]
-        DIV1 = 0x01,
+        Div1 = 0x01,
     }
     impl Hsedivbyp {
         #[inline(always)]
@@ -36006,13 +36006,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsedrv {
         #[doc = "Lowest drive (default after reset)."]
-        LOWEST = 0x0,
+        Lowest = 0x0,
         #[doc = "Medium low drive."]
-        LOW = 0x01,
+        Low = 0x01,
         #[doc = "Medium high drive."]
-        HIGH = 0x02,
+        High = 0x02,
         #[doc = "Highest drive."]
-        HIGHEST = 0x03,
+        Highest = 0x03,
     }
     impl Hsedrv {
         #[inline(always)]
@@ -36041,9 +36041,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hseext {
         #[doc = "HSE in analog mode (default after reset)."]
-        ANALOG = 0x0,
+        Analog = 0x0,
         #[doc = "HSE in digital mode."]
-        DIGITAL = 0x01,
+        Digital = 0x01,
     }
     impl Hseext {
         #[inline(always)]
@@ -36072,9 +36072,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hselock {
         #[doc = "HSE configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "HSE configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Hselock {
         #[inline(always)]
@@ -36103,9 +36103,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsepub {
         #[doc = "HSE configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "HSE configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Hsepub {
         #[inline(always)]
@@ -36134,9 +36134,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsepv {
         #[doc = "HSE configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIV = 0x0,
+        NonPriv = 0x0,
         #[doc = "HSE configuration bits are accessible by privilege software only."]
-        PRIV = 0x01,
+        Priv = 0x01,
     }
     impl Hsepv {
         #[inline(always)]
@@ -36165,9 +36165,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hserdyc {
         #[doc = "HSERDYF not modified (default after reset)."]
-        NOT_MODIFIED = 0x0,
+        NotModified = 0x0,
         #[doc = "HSERDYF cleared."]
-        CLEARED = 0x01,
+        Cleared = 0x01,
     }
     impl Hserdyc {
         #[inline(always)]
@@ -36196,9 +36196,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hserdyf {
         #[doc = "no clock ready interrupt caused by the HSE (default after reset)."]
-        NO_CLOCK_READY = 0x0,
+        NoClockReady = 0x0,
         #[doc = "clock ready interrupt caused by the HSE."]
-        CLOCK_READY = 0x01,
+        ClockReady = 0x01,
     }
     impl Hserdyf {
         #[inline(always)]
@@ -36227,9 +36227,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hserdyie {
         #[doc = "HSE ready interrupt disabled (default after reset)."]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "HSE ready interrupt enabled."]
-        ENABLED = 0x01,
+        Enabled = 0x01,
     }
     impl Hserdyie {
         #[inline(always)]
@@ -36258,9 +36258,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsesec {
         #[doc = "HSE configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "HSE configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Hsesec {
         #[inline(always)]
@@ -36289,13 +36289,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsidiv {
         #[doc = "hsi_ck = hsi_osc_ck (default after reset)."]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "hsi_ck = hsi_osc_ck / 2."]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "hsi_ck = hsi_osc_ck / 4."]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         #[doc = "hsi_ck = hsi_osc_ck / 8."]
-        DIV8 = 0x03,
+        Div8 = 0x03,
     }
     impl Hsidiv {
         #[inline(always)]
@@ -36324,9 +36324,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsilock {
         #[doc = "HSI configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "HSI configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Hsilock {
         #[inline(always)]
@@ -36355,9 +36355,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsipub {
         #[doc = "HSI configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "HSI configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Hsipub {
         #[inline(always)]
@@ -36386,9 +36386,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsipv {
         #[doc = "HSI configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIV = 0x0,
+        NonPriv = 0x0,
         #[doc = "HSI configuration bits are accessible by privilege software only."]
-        PRIV = 0x01,
+        Priv = 0x01,
     }
     impl Hsipv {
         #[inline(always)]
@@ -36417,9 +36417,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsirdyc {
         #[doc = "HSIRDYF not modified (default after reset)."]
-        NOT_MODIFIED = 0x0,
+        NotModified = 0x0,
         #[doc = "HSIRDYF cleared."]
-        CLEARED = 0x01,
+        Cleared = 0x01,
     }
     impl Hsirdyc {
         #[inline(always)]
@@ -36448,9 +36448,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsirdyf {
         #[doc = "no clock ready interrupt caused by the HSI (default after reset)."]
-        NO_CLOCK_READY = 0x0,
+        NoClockReady = 0x0,
         #[doc = "clock ready interrupt caused by the HSI."]
-        CLOCK_READY = 0x01,
+        ClockReady = 0x01,
     }
     impl Hsirdyf {
         #[inline(always)]
@@ -36479,9 +36479,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsirdyie {
         #[doc = "HSI ready interrupt disabled (default after reset)."]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "HSI ready interrupt enabled."]
-        ENABLED = 0x01,
+        Enabled = 0x01,
     }
     impl Hsirdyie {
         #[inline(always)]
@@ -36510,9 +36510,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsisec {
         #[doc = "HSI configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "HSI configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Hsisec {
         #[inline(always)]
@@ -36542,19 +36542,19 @@ pub mod vals {
     impl Hsitrim {
         #[doc = "bsec_hsi_cal\\[8:0\\]
 (default after reset)."]
-        pub const ZERO: Self = Self(0x0);
+        pub const Zero: Self = Self(0x0);
         #[doc = "bsec_hsi_cal\\[8:0\\]
 + 62."]
-        pub const PLUS_62: Self = Self(0x3e);
+        pub const Plus62: Self = Self(0x3e);
         #[doc = "bsec_hsi_cal\\[8:0\\]
 + 63."]
-        pub const PLUS_63: Self = Self(0x3f);
+        pub const Plus63: Self = Self(0x3f);
         #[doc = "bsec_hsi_cal\\[8:0\\]
 - 64."]
-        pub const MINUS_64: Self = Self(0x40);
+        pub const Minus64: Self = Self(0x40);
         #[doc = "bsec_hsi_cal\\[8:0\\]
 - 63."]
-        pub const MINUS_63: Self = Self(0x41);
+        pub const Minus63: Self = Self(0x41);
     }
     impl Hsitrim {
         pub const fn from_bits(val: u8) -> Hsitrim {
@@ -36567,11 +36567,11 @@ pub mod vals {
     impl core::fmt::Debug for Hsitrim {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("ZERO"),
-                0x3e => f.write_str("PLUS_62"),
-                0x3f => f.write_str("PLUS_63"),
-                0x40 => f.write_str("MINUS_64"),
-                0x41 => f.write_str("MINUS_63"),
+                0x0 => f.write_str("Zero"),
+                0x3e => f.write_str("Plus62"),
+                0x3f => f.write_str("Plus63"),
+                0x40 => f.write_str("Minus64"),
+                0x41 => f.write_str("Minus63"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -36580,11 +36580,11 @@ pub mod vals {
     impl defmt::Format for Hsitrim {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "ZERO"),
-                0x3e => defmt::write!(f, "PLUS_62"),
-                0x3f => defmt::write!(f, "PLUS_63"),
-                0x40 => defmt::write!(f, "MINUS_64"),
-                0x41 => defmt::write!(f, "MINUS_63"),
+                0x0 => defmt::write!(f, "Zero"),
+                0x3e => defmt::write!(f, "Plus62"),
+                0x3f => defmt::write!(f, "Plus63"),
+                0x40 => defmt::write!(f, "Minus64"),
+                0x41 => defmt::write!(f, "Minus63"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -36606,9 +36606,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HwrsrBorrstf {
         #[doc = "no BOR occurred."]
-        NOT_OCCURRED = 0x0,
+        NotOccurred = 0x0,
         #[doc = "BOR occurred (default after power-on reset)."]
-        OCCURRED = 0x01,
+        Occurred = 0x01,
     }
     impl HwrsrBorrstf {
         #[inline(always)]
@@ -36637,9 +36637,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HwrsrIwdgrstf {
         #[doc = "no Independent Watchdog Reset occurred (default after power-on reset)."]
-        NOT_OCCURRED = 0x0,
+        NotOccurred = 0x0,
         #[doc = "Independent Watchdog Reset occurred."]
-        OCCURRED = 0x01,
+        Occurred = 0x01,
     }
     impl HwrsrIwdgrstf {
         #[inline(always)]
@@ -36668,9 +36668,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HwrsrLckrstf {
         #[doc = "No reset from CPU lockup occurred."]
-        NOT_OCCURRED = 0x0,
+        NotOccurred = 0x0,
         #[doc = "Reset from CPU lockup occurred."]
-        OCCURRED = 0x01,
+        Occurred = 0x01,
     }
     impl HwrsrLckrstf {
         #[inline(always)]
@@ -36699,9 +36699,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HwrsrLpwrrstf {
         #[doc = "no illegal reset occurred (default after power-on reset)."]
-        NOT_OCCURRED = 0x0,
+        NotOccurred = 0x0,
         #[doc = "illegal Stop or Standby reset occurred."]
-        OCCURRED = 0x01,
+        Occurred = 0x01,
     }
     impl HwrsrLpwrrstf {
         #[inline(always)]
@@ -36730,9 +36730,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HwrsrPinrstf {
         #[doc = "no reset from pin occurred."]
-        NOT_OCCURRED = 0x0,
+        NotOccurred = 0x0,
         #[doc = "Reset from Pin occurred (default after power-on reset)."]
-        OCCURRED = 0x01,
+        Occurred = 0x01,
     }
     impl HwrsrPinrstf {
         #[inline(always)]
@@ -36761,9 +36761,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HwrsrPorrstf {
         #[doc = "no POR/PDR reset occurred."]
-        NOT_OCCURRED = 0x0,
+        NotOccurred = 0x0,
         #[doc = "POR/PDR reset occurred (default after power-on reset)."]
-        OCCURRED = 0x01,
+        Occurred = 0x01,
     }
     impl HwrsrPorrstf {
         #[inline(always)]
@@ -36792,9 +36792,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HwrsrRmvf {
         #[doc = "clear of the reset flags not activated (default after power-on reset)."]
-        NO_CLEAR = 0x0,
+        NoClear = 0x0,
         #[doc = "clear the value of the reset flags."]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl HwrsrRmvf {
         #[inline(always)]
@@ -36823,9 +36823,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HwrsrSftrstf {
         #[doc = "no Software System reset occurred (default after power-on reset)."]
-        NOT_OCCURRED = 0x0,
+        NotOccurred = 0x0,
         #[doc = "a Software System reset has been generated by the CPU."]
-        OCCURRED = 0x01,
+        Occurred = 0x01,
     }
     impl HwrsrSftrstf {
         #[inline(always)]
@@ -36854,9 +36854,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HwrsrWwdgrstf {
         #[doc = "no Window Watchdog Reset occurred from WWDG (default after power-on reset)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Window Watchdog Reset occurred from WWDG."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl HwrsrWwdgrstf {
         #[inline(always)]
@@ -36885,17 +36885,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2c1sel {
         #[doc = "pclk1 selected as reference clock."]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic10_ck selected as reference clock."]
-        IC10 = 0x02,
+        Ic10 = 0x02,
         #[doc = "ic15_ck selected as reference clock."]
-        IC15 = 0x03,
+        Ic15 = 0x03,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x04,
+        Msi = 0x04,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x05,
+        HsiDiv = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -36926,17 +36926,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2c2sel {
         #[doc = "pclk1 selected as reference clock."]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic10_ck selected as reference clock."]
-        IC10 = 0x02,
+        Ic10 = 0x02,
         #[doc = "ic15_ck selected as reference clock."]
-        IC15 = 0x03,
+        Ic15 = 0x03,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x04,
+        Msi = 0x04,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x05,
+        HsiDiv = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -36967,17 +36967,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2c3sel {
         #[doc = "pclk1 selected as reference clock."]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic10_ck selected as reference clock."]
-        IC10 = 0x02,
+        Ic10 = 0x02,
         #[doc = "ic15_ck selected as reference clock."]
-        IC15 = 0x03,
+        Ic15 = 0x03,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x04,
+        Msi = 0x04,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x05,
+        HsiDiv = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -37008,17 +37008,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2c4sel {
         #[doc = "pclk1 selected as reference clock."]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic10_ck selected as reference clock."]
-        IC10 = 0x02,
+        Ic10 = 0x02,
         #[doc = "ic15_ck selected as reference clock."]
-        IC15 = 0x03,
+        Ic15 = 0x03,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x04,
+        Msi = 0x04,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x05,
+        HsiDiv = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -37049,17 +37049,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I3c1sel {
         #[doc = "pclk1 selected as reference clock."]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic10_ck selected as reference clock."]
-        IC10 = 0x02,
+        Ic10 = 0x02,
         #[doc = "ic15_ck selected as reference clock."]
-        IC15 = 0x03,
+        Ic15 = 0x03,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x04,
+        Msi = 0x04,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x05,
+        HsiDiv = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -37090,17 +37090,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I3c2sel {
         #[doc = "pclk1 selected as reference clock."]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic10_ck selected as reference clock."]
-        IC10 = 0x02,
+        Ic10 = 0x02,
         #[doc = "ic15_ck selected as reference clock."]
-        IC15 = 0x03,
+        Ic15 = 0x03,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x04,
+        Msi = 0x04,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x05,
+        HsiDiv = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -37131,517 +37131,517 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Icint {
         #[doc = "IC = pllx_ck."]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "IC = pllx_ck / 2."]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "IC = pllx_ck / 3 (default after reset)."]
-        DIV3 = 0x02,
+        Div3 = 0x02,
         #[doc = "IC = pllx_ck / 4."]
-        DIV4 = 0x03,
+        Div4 = 0x03,
         #[doc = "IC = pllx_ck / 5."]
-        DIV5 = 0x04,
+        Div5 = 0x04,
         #[doc = "IC = pllx_ck / 6."]
-        DIV6 = 0x05,
+        Div6 = 0x05,
         #[doc = "IC = pllx_ck / 7."]
-        DIV7 = 0x06,
+        Div7 = 0x06,
         #[doc = "IC = pllx_ck / 8."]
-        DIV8 = 0x07,
+        Div8 = 0x07,
         #[doc = "IC = pllx_ck / 9."]
-        DIV9 = 0x08,
+        Div9 = 0x08,
         #[doc = "IC = pllx_ck / 10."]
-        DIV10 = 0x09,
+        Div10 = 0x09,
         #[doc = "IC = pllx_ck / 11."]
-        DIV11 = 0x0a,
+        Div11 = 0x0a,
         #[doc = "IC = pllx_ck / 12."]
-        DIV12 = 0x0b,
+        Div12 = 0x0b,
         #[doc = "IC = pllx_ck / 13."]
-        DIV13 = 0x0c,
+        Div13 = 0x0c,
         #[doc = "IC = pllx_ck / 14."]
-        DIV14 = 0x0d,
+        Div14 = 0x0d,
         #[doc = "IC = pllx_ck / 15."]
-        DIV15 = 0x0e,
+        Div15 = 0x0e,
         #[doc = "IC = pllx_ck / 16."]
-        DIV16 = 0x0f,
+        Div16 = 0x0f,
         #[doc = "IC = pllx_ck / 17."]
-        DIV17 = 0x10,
+        Div17 = 0x10,
         #[doc = "IC = pllx_ck / 18."]
-        DIV18 = 0x11,
+        Div18 = 0x11,
         #[doc = "IC = pllx_ck / 19."]
-        DIV19 = 0x12,
+        Div19 = 0x12,
         #[doc = "IC = pllx_ck / 20."]
-        DIV20 = 0x13,
+        Div20 = 0x13,
         #[doc = "IC = pllx_ck / 21."]
-        DIV21 = 0x14,
+        Div21 = 0x14,
         #[doc = "IC = pllx_ck / 22."]
-        DIV22 = 0x15,
+        Div22 = 0x15,
         #[doc = "IC = pllx_ck / 23."]
-        DIV23 = 0x16,
+        Div23 = 0x16,
         #[doc = "IC = pllx_ck / 24."]
-        DIV24 = 0x17,
+        Div24 = 0x17,
         #[doc = "IC = pllx_ck / 25."]
-        DIV25 = 0x18,
+        Div25 = 0x18,
         #[doc = "IC = pllx_ck / 26."]
-        DIV26 = 0x19,
+        Div26 = 0x19,
         #[doc = "IC = pllx_ck / 27."]
-        DIV27 = 0x1a,
+        Div27 = 0x1a,
         #[doc = "IC = pllx_ck / 28."]
-        DIV28 = 0x1b,
+        Div28 = 0x1b,
         #[doc = "IC = pllx_ck / 29."]
-        DIV29 = 0x1c,
+        Div29 = 0x1c,
         #[doc = "IC = pllx_ck / 30."]
-        DIV30 = 0x1d,
+        Div30 = 0x1d,
         #[doc = "IC = pllx_ck / 31."]
-        DIV31 = 0x1e,
+        Div31 = 0x1e,
         #[doc = "IC = pllx_ck / 32."]
-        DIV32 = 0x1f,
+        Div32 = 0x1f,
         #[doc = "IC = pllx_ck / 33."]
-        DIV33 = 0x20,
+        Div33 = 0x20,
         #[doc = "IC = pllx_ck / 34."]
-        DIV34 = 0x21,
+        Div34 = 0x21,
         #[doc = "IC = pllx_ck / 35."]
-        DIV35 = 0x22,
+        Div35 = 0x22,
         #[doc = "IC = pllx_ck / 36."]
-        DIV36 = 0x23,
+        Div36 = 0x23,
         #[doc = "IC = pllx_ck / 37."]
-        DIV37 = 0x24,
+        Div37 = 0x24,
         #[doc = "IC = pllx_ck / 38."]
-        DIV38 = 0x25,
+        Div38 = 0x25,
         #[doc = "IC = pllx_ck / 39."]
-        DIV39 = 0x26,
+        Div39 = 0x26,
         #[doc = "IC = pllx_ck / 40."]
-        DIV40 = 0x27,
+        Div40 = 0x27,
         #[doc = "IC = pllx_ck / 41."]
-        DIV41 = 0x28,
+        Div41 = 0x28,
         #[doc = "IC = pllx_ck / 42."]
-        DIV42 = 0x29,
+        Div42 = 0x29,
         #[doc = "IC = pllx_ck / 43."]
-        DIV43 = 0x2a,
+        Div43 = 0x2a,
         #[doc = "IC = pllx_ck / 44."]
-        DIV44 = 0x2b,
+        Div44 = 0x2b,
         #[doc = "IC = pllx_ck / 45."]
-        DIV45 = 0x2c,
+        Div45 = 0x2c,
         #[doc = "IC = pllx_ck / 46."]
-        DIV46 = 0x2d,
+        Div46 = 0x2d,
         #[doc = "IC = pllx_ck / 47."]
-        DIV47 = 0x2e,
+        Div47 = 0x2e,
         #[doc = "IC = pllx_ck / 48."]
-        DIV48 = 0x2f,
+        Div48 = 0x2f,
         #[doc = "IC = pllx_ck / 49."]
-        DIV49 = 0x30,
+        Div49 = 0x30,
         #[doc = "IC = pllx_ck / 50."]
-        DIV50 = 0x31,
+        Div50 = 0x31,
         #[doc = "IC = pllx_ck / 51."]
-        DIV51 = 0x32,
+        Div51 = 0x32,
         #[doc = "IC = pllx_ck / 52."]
-        DIV52 = 0x33,
+        Div52 = 0x33,
         #[doc = "IC = pllx_ck / 53."]
-        DIV53 = 0x34,
+        Div53 = 0x34,
         #[doc = "IC = pllx_ck / 54."]
-        DIV54 = 0x35,
+        Div54 = 0x35,
         #[doc = "IC = pllx_ck / 55."]
-        DIV55 = 0x36,
+        Div55 = 0x36,
         #[doc = "IC = pllx_ck / 56."]
-        DIV56 = 0x37,
+        Div56 = 0x37,
         #[doc = "IC = pllx_ck / 57."]
-        DIV57 = 0x38,
+        Div57 = 0x38,
         #[doc = "IC = pllx_ck / 58."]
-        DIV58 = 0x39,
+        Div58 = 0x39,
         #[doc = "IC = pllx_ck / 59."]
-        DIV59 = 0x3a,
+        Div59 = 0x3a,
         #[doc = "IC = pllx_ck / 60."]
-        DIV60 = 0x3b,
+        Div60 = 0x3b,
         #[doc = "IC = pllx_ck / 61."]
-        DIV61 = 0x3c,
+        Div61 = 0x3c,
         #[doc = "IC = pllx_ck / 62."]
-        DIV62 = 0x3d,
+        Div62 = 0x3d,
         #[doc = "IC = pllx_ck / 63."]
-        DIV63 = 0x3e,
+        Div63 = 0x3e,
         #[doc = "IC = pllx_ck / 64."]
-        DIV64 = 0x3f,
+        Div64 = 0x3f,
         #[doc = "IC = pllx_ck / 65."]
-        DIV65 = 0x40,
+        Div65 = 0x40,
         #[doc = "IC = pllx_ck / 66."]
-        DIV66 = 0x41,
+        Div66 = 0x41,
         #[doc = "IC = pllx_ck / 67."]
-        DIV67 = 0x42,
+        Div67 = 0x42,
         #[doc = "IC = pllx_ck / 68."]
-        DIV68 = 0x43,
+        Div68 = 0x43,
         #[doc = "IC = pllx_ck / 69."]
-        DIV69 = 0x44,
+        Div69 = 0x44,
         #[doc = "IC = pllx_ck / 70."]
-        DIV70 = 0x45,
+        Div70 = 0x45,
         #[doc = "IC = pllx_ck / 71."]
-        DIV71 = 0x46,
+        Div71 = 0x46,
         #[doc = "IC = pllx_ck / 72."]
-        DIV72 = 0x47,
+        Div72 = 0x47,
         #[doc = "IC = pllx_ck / 73."]
-        DIV73 = 0x48,
+        Div73 = 0x48,
         #[doc = "IC = pllx_ck / 74."]
-        DIV74 = 0x49,
+        Div74 = 0x49,
         #[doc = "IC = pllx_ck / 75."]
-        DIV75 = 0x4a,
+        Div75 = 0x4a,
         #[doc = "IC = pllx_ck / 76."]
-        DIV76 = 0x4b,
+        Div76 = 0x4b,
         #[doc = "IC = pllx_ck / 77."]
-        DIV77 = 0x4c,
+        Div77 = 0x4c,
         #[doc = "IC = pllx_ck / 78."]
-        DIV78 = 0x4d,
+        Div78 = 0x4d,
         #[doc = "IC = pllx_ck / 79."]
-        DIV79 = 0x4e,
+        Div79 = 0x4e,
         #[doc = "IC = pllx_ck / 80."]
-        DIV80 = 0x4f,
+        Div80 = 0x4f,
         #[doc = "IC = pllx_ck / 81."]
-        DIV81 = 0x50,
+        Div81 = 0x50,
         #[doc = "IC = pllx_ck / 82."]
-        DIV82 = 0x51,
+        Div82 = 0x51,
         #[doc = "IC = pllx_ck / 83."]
-        DIV83 = 0x52,
+        Div83 = 0x52,
         #[doc = "IC = pllx_ck / 84."]
-        DIV84 = 0x53,
+        Div84 = 0x53,
         #[doc = "IC = pllx_ck / 85."]
-        DIV85 = 0x54,
+        Div85 = 0x54,
         #[doc = "IC = pllx_ck / 86."]
-        DIV86 = 0x55,
+        Div86 = 0x55,
         #[doc = "IC = pllx_ck / 87."]
-        DIV87 = 0x56,
+        Div87 = 0x56,
         #[doc = "IC = pllx_ck / 88."]
-        DIV88 = 0x57,
+        Div88 = 0x57,
         #[doc = "IC = pllx_ck / 89."]
-        DIV89 = 0x58,
+        Div89 = 0x58,
         #[doc = "IC = pllx_ck / 90."]
-        DIV90 = 0x59,
+        Div90 = 0x59,
         #[doc = "IC = pllx_ck / 91."]
-        DIV91 = 0x5a,
+        Div91 = 0x5a,
         #[doc = "IC = pllx_ck / 92."]
-        DIV92 = 0x5b,
+        Div92 = 0x5b,
         #[doc = "IC = pllx_ck / 93."]
-        DIV93 = 0x5c,
+        Div93 = 0x5c,
         #[doc = "IC = pllx_ck / 94."]
-        DIV94 = 0x5d,
+        Div94 = 0x5d,
         #[doc = "IC = pllx_ck / 95."]
-        DIV95 = 0x5e,
+        Div95 = 0x5e,
         #[doc = "IC = pllx_ck / 96."]
-        DIV96 = 0x5f,
+        Div96 = 0x5f,
         #[doc = "IC = pllx_ck / 97."]
-        DIV97 = 0x60,
+        Div97 = 0x60,
         #[doc = "IC = pllx_ck / 98."]
-        DIV98 = 0x61,
+        Div98 = 0x61,
         #[doc = "IC = pllx_ck / 99."]
-        DIV99 = 0x62,
+        Div99 = 0x62,
         #[doc = "IC = pllx_ck / 100."]
-        DIV100 = 0x63,
+        Div100 = 0x63,
         #[doc = "IC = pllx_ck / 101."]
-        DIV101 = 0x64,
+        Div101 = 0x64,
         #[doc = "IC = pllx_ck / 102."]
-        DIV102 = 0x65,
+        Div102 = 0x65,
         #[doc = "IC = pllx_ck / 103."]
-        DIV103 = 0x66,
+        Div103 = 0x66,
         #[doc = "IC = pllx_ck / 104."]
-        DIV104 = 0x67,
+        Div104 = 0x67,
         #[doc = "IC = pllx_ck / 105."]
-        DIV105 = 0x68,
+        Div105 = 0x68,
         #[doc = "IC = pllx_ck / 106."]
-        DIV106 = 0x69,
+        Div106 = 0x69,
         #[doc = "IC = pllx_ck / 107."]
-        DIV107 = 0x6a,
+        Div107 = 0x6a,
         #[doc = "IC = pllx_ck / 108."]
-        DIV108 = 0x6b,
+        Div108 = 0x6b,
         #[doc = "IC = pllx_ck / 109."]
-        DIV109 = 0x6c,
+        Div109 = 0x6c,
         #[doc = "IC = pllx_ck / 110."]
-        DIV110 = 0x6d,
+        Div110 = 0x6d,
         #[doc = "IC = pllx_ck / 111."]
-        DIV111 = 0x6e,
+        Div111 = 0x6e,
         #[doc = "IC = pllx_ck / 112."]
-        DIV112 = 0x6f,
+        Div112 = 0x6f,
         #[doc = "IC = pllx_ck / 113."]
-        DIV113 = 0x70,
+        Div113 = 0x70,
         #[doc = "IC = pllx_ck / 114."]
-        DIV114 = 0x71,
+        Div114 = 0x71,
         #[doc = "IC = pllx_ck / 115."]
-        DIV115 = 0x72,
+        Div115 = 0x72,
         #[doc = "IC = pllx_ck / 116."]
-        DIV116 = 0x73,
+        Div116 = 0x73,
         #[doc = "IC = pllx_ck / 117."]
-        DIV117 = 0x74,
+        Div117 = 0x74,
         #[doc = "IC = pllx_ck / 118."]
-        DIV118 = 0x75,
+        Div118 = 0x75,
         #[doc = "IC = pllx_ck / 119."]
-        DIV119 = 0x76,
+        Div119 = 0x76,
         #[doc = "IC = pllx_ck / 120."]
-        DIV120 = 0x77,
+        Div120 = 0x77,
         #[doc = "IC = pllx_ck / 121."]
-        DIV121 = 0x78,
+        Div121 = 0x78,
         #[doc = "IC = pllx_ck / 122."]
-        DIV122 = 0x79,
+        Div122 = 0x79,
         #[doc = "IC = pllx_ck / 123."]
-        DIV123 = 0x7a,
+        Div123 = 0x7a,
         #[doc = "IC = pllx_ck / 124."]
-        DIV124 = 0x7b,
+        Div124 = 0x7b,
         #[doc = "IC = pllx_ck / 125."]
-        DIV125 = 0x7c,
+        Div125 = 0x7c,
         #[doc = "IC = pllx_ck / 126."]
-        DIV126 = 0x7d,
+        Div126 = 0x7d,
         #[doc = "IC = pllx_ck / 127."]
-        DIV127 = 0x7e,
+        Div127 = 0x7e,
         #[doc = "IC = pllx_ck / 128."]
-        DIV128 = 0x7f,
+        Div128 = 0x7f,
         #[doc = "IC = pllx_ck / 129."]
-        DIV129 = 0x80,
+        Div129 = 0x80,
         #[doc = "IC = pllx_ck / 130."]
-        DIV130 = 0x81,
+        Div130 = 0x81,
         #[doc = "IC = pllx_ck / 131."]
-        DIV131 = 0x82,
+        Div131 = 0x82,
         #[doc = "IC = pllx_ck / 132."]
-        DIV132 = 0x83,
+        Div132 = 0x83,
         #[doc = "IC = pllx_ck / 133."]
-        DIV133 = 0x84,
+        Div133 = 0x84,
         #[doc = "IC = pllx_ck / 134."]
-        DIV134 = 0x85,
+        Div134 = 0x85,
         #[doc = "IC = pllx_ck / 135."]
-        DIV135 = 0x86,
+        Div135 = 0x86,
         #[doc = "IC = pllx_ck / 136."]
-        DIV136 = 0x87,
+        Div136 = 0x87,
         #[doc = "IC = pllx_ck / 137."]
-        DIV137 = 0x88,
+        Div137 = 0x88,
         #[doc = "IC = pllx_ck / 138."]
-        DIV138 = 0x89,
+        Div138 = 0x89,
         #[doc = "IC = pllx_ck / 139."]
-        DIV139 = 0x8a,
+        Div139 = 0x8a,
         #[doc = "IC = pllx_ck / 140."]
-        DIV140 = 0x8b,
+        Div140 = 0x8b,
         #[doc = "IC = pllx_ck / 141."]
-        DIV141 = 0x8c,
+        Div141 = 0x8c,
         #[doc = "IC = pllx_ck / 142."]
-        DIV142 = 0x8d,
+        Div142 = 0x8d,
         #[doc = "IC = pllx_ck / 143."]
-        DIV143 = 0x8e,
+        Div143 = 0x8e,
         #[doc = "IC = pllx_ck / 144."]
-        DIV144 = 0x8f,
+        Div144 = 0x8f,
         #[doc = "IC = pllx_ck / 145."]
-        DIV145 = 0x90,
+        Div145 = 0x90,
         #[doc = "IC = pllx_ck / 146."]
-        DIV146 = 0x91,
+        Div146 = 0x91,
         #[doc = "IC = pllx_ck / 147."]
-        DIV147 = 0x92,
+        Div147 = 0x92,
         #[doc = "IC = pllx_ck / 148."]
-        DIV148 = 0x93,
+        Div148 = 0x93,
         #[doc = "IC = pllx_ck / 149."]
-        DIV149 = 0x94,
+        Div149 = 0x94,
         #[doc = "IC = pllx_ck / 150."]
-        DIV150 = 0x95,
+        Div150 = 0x95,
         #[doc = "IC = pllx_ck / 151."]
-        DIV151 = 0x96,
+        Div151 = 0x96,
         #[doc = "IC = pllx_ck / 152."]
-        DIV152 = 0x97,
+        Div152 = 0x97,
         #[doc = "IC = pllx_ck / 153."]
-        DIV153 = 0x98,
+        Div153 = 0x98,
         #[doc = "IC = pllx_ck / 154."]
-        DIV154 = 0x99,
+        Div154 = 0x99,
         #[doc = "IC = pllx_ck / 155."]
-        DIV155 = 0x9a,
+        Div155 = 0x9a,
         #[doc = "IC = pllx_ck / 156."]
-        DIV156 = 0x9b,
+        Div156 = 0x9b,
         #[doc = "IC = pllx_ck / 157."]
-        DIV157 = 0x9c,
+        Div157 = 0x9c,
         #[doc = "IC = pllx_ck / 158."]
-        DIV158 = 0x9d,
+        Div158 = 0x9d,
         #[doc = "IC = pllx_ck / 159."]
-        DIV159 = 0x9e,
+        Div159 = 0x9e,
         #[doc = "IC = pllx_ck / 160."]
-        DIV160 = 0x9f,
+        Div160 = 0x9f,
         #[doc = "IC = pllx_ck / 161."]
-        DIV161 = 0xa0,
+        Div161 = 0xa0,
         #[doc = "IC = pllx_ck / 162."]
-        DIV162 = 0xa1,
+        Div162 = 0xa1,
         #[doc = "IC = pllx_ck / 163."]
-        DIV163 = 0xa2,
+        Div163 = 0xa2,
         #[doc = "IC = pllx_ck / 164."]
-        DIV164 = 0xa3,
+        Div164 = 0xa3,
         #[doc = "IC = pllx_ck / 165."]
-        DIV165 = 0xa4,
+        Div165 = 0xa4,
         #[doc = "IC = pllx_ck / 166."]
-        DIV166 = 0xa5,
+        Div166 = 0xa5,
         #[doc = "IC = pllx_ck / 167."]
-        DIV167 = 0xa6,
+        Div167 = 0xa6,
         #[doc = "IC = pllx_ck / 168."]
-        DIV168 = 0xa7,
+        Div168 = 0xa7,
         #[doc = "IC = pllx_ck / 169."]
-        DIV169 = 0xa8,
+        Div169 = 0xa8,
         #[doc = "IC = pllx_ck / 170."]
-        DIV170 = 0xa9,
+        Div170 = 0xa9,
         #[doc = "IC = pllx_ck / 171."]
-        DIV171 = 0xaa,
+        Div171 = 0xaa,
         #[doc = "IC = pllx_ck / 172."]
-        DIV172 = 0xab,
+        Div172 = 0xab,
         #[doc = "IC = pllx_ck / 173."]
-        DIV173 = 0xac,
+        Div173 = 0xac,
         #[doc = "IC = pllx_ck / 174."]
-        DIV174 = 0xad,
+        Div174 = 0xad,
         #[doc = "IC = pllx_ck / 175."]
-        DIV175 = 0xae,
+        Div175 = 0xae,
         #[doc = "IC = pllx_ck / 176."]
-        DIV176 = 0xaf,
+        Div176 = 0xaf,
         #[doc = "IC = pllx_ck / 177."]
-        DIV177 = 0xb0,
+        Div177 = 0xb0,
         #[doc = "IC = pllx_ck / 178."]
-        DIV178 = 0xb1,
+        Div178 = 0xb1,
         #[doc = "IC = pllx_ck / 179."]
-        DIV179 = 0xb2,
+        Div179 = 0xb2,
         #[doc = "IC = pllx_ck / 180."]
-        DIV180 = 0xb3,
+        Div180 = 0xb3,
         #[doc = "IC = pllx_ck / 181."]
-        DIV181 = 0xb4,
+        Div181 = 0xb4,
         #[doc = "IC = pllx_ck / 182."]
-        DIV182 = 0xb5,
+        Div182 = 0xb5,
         #[doc = "IC = pllx_ck / 183."]
-        DIV183 = 0xb6,
+        Div183 = 0xb6,
         #[doc = "IC = pllx_ck / 184."]
-        DIV184 = 0xb7,
+        Div184 = 0xb7,
         #[doc = "IC = pllx_ck / 185."]
-        DIV185 = 0xb8,
+        Div185 = 0xb8,
         #[doc = "IC = pllx_ck / 186."]
-        DIV186 = 0xb9,
+        Div186 = 0xb9,
         #[doc = "IC = pllx_ck / 187."]
-        DIV187 = 0xba,
+        Div187 = 0xba,
         #[doc = "IC = pllx_ck / 188."]
-        DIV188 = 0xbb,
+        Div188 = 0xbb,
         #[doc = "IC = pllx_ck / 189."]
-        DIV189 = 0xbc,
+        Div189 = 0xbc,
         #[doc = "IC = pllx_ck / 190."]
-        DIV190 = 0xbd,
+        Div190 = 0xbd,
         #[doc = "IC = pllx_ck / 191."]
-        DIV191 = 0xbe,
+        Div191 = 0xbe,
         #[doc = "IC = pllx_ck / 192."]
-        DIV192 = 0xbf,
+        Div192 = 0xbf,
         #[doc = "IC = pllx_ck / 193."]
-        DIV193 = 0xc0,
+        Div193 = 0xc0,
         #[doc = "IC = pllx_ck / 194."]
-        DIV194 = 0xc1,
+        Div194 = 0xc1,
         #[doc = "IC = pllx_ck / 195."]
-        DIV195 = 0xc2,
+        Div195 = 0xc2,
         #[doc = "IC = pllx_ck / 196."]
-        DIV196 = 0xc3,
+        Div196 = 0xc3,
         #[doc = "IC = pllx_ck / 197."]
-        DIV197 = 0xc4,
+        Div197 = 0xc4,
         #[doc = "IC = pllx_ck / 198."]
-        DIV198 = 0xc5,
+        Div198 = 0xc5,
         #[doc = "IC = pllx_ck / 199."]
-        DIV199 = 0xc6,
+        Div199 = 0xc6,
         #[doc = "IC = pllx_ck / 200."]
-        DIV200 = 0xc7,
+        Div200 = 0xc7,
         #[doc = "IC = pllx_ck / 201."]
-        DIV201 = 0xc8,
+        Div201 = 0xc8,
         #[doc = "IC = pllx_ck / 202."]
-        DIV202 = 0xc9,
+        Div202 = 0xc9,
         #[doc = "IC = pllx_ck / 203."]
-        DIV203 = 0xca,
+        Div203 = 0xca,
         #[doc = "IC = pllx_ck / 204."]
-        DIV204 = 0xcb,
+        Div204 = 0xcb,
         #[doc = "IC = pllx_ck / 205."]
-        DIV205 = 0xcc,
+        Div205 = 0xcc,
         #[doc = "IC = pllx_ck / 206."]
-        DIV206 = 0xcd,
+        Div206 = 0xcd,
         #[doc = "IC = pllx_ck / 207."]
-        DIV207 = 0xce,
+        Div207 = 0xce,
         #[doc = "IC = pllx_ck / 208."]
-        DIV208 = 0xcf,
+        Div208 = 0xcf,
         #[doc = "IC = pllx_ck / 209."]
-        DIV209 = 0xd0,
+        Div209 = 0xd0,
         #[doc = "IC = pllx_ck / 210."]
-        DIV210 = 0xd1,
+        Div210 = 0xd1,
         #[doc = "IC = pllx_ck / 211."]
-        DIV211 = 0xd2,
+        Div211 = 0xd2,
         #[doc = "IC = pllx_ck / 212."]
-        DIV212 = 0xd3,
+        Div212 = 0xd3,
         #[doc = "IC = pllx_ck / 213."]
-        DIV213 = 0xd4,
+        Div213 = 0xd4,
         #[doc = "IC = pllx_ck / 214."]
-        DIV214 = 0xd5,
+        Div214 = 0xd5,
         #[doc = "IC = pllx_ck / 215."]
-        DIV215 = 0xd6,
+        Div215 = 0xd6,
         #[doc = "IC = pllx_ck / 216."]
-        DIV216 = 0xd7,
+        Div216 = 0xd7,
         #[doc = "IC = pllx_ck / 217."]
-        DIV217 = 0xd8,
+        Div217 = 0xd8,
         #[doc = "IC = pllx_ck / 218."]
-        DIV218 = 0xd9,
+        Div218 = 0xd9,
         #[doc = "IC = pllx_ck / 219."]
-        DIV219 = 0xda,
+        Div219 = 0xda,
         #[doc = "IC = pllx_ck / 220."]
-        DIV220 = 0xdb,
+        Div220 = 0xdb,
         #[doc = "IC = pllx_ck / 221."]
-        DIV221 = 0xdc,
+        Div221 = 0xdc,
         #[doc = "IC = pllx_ck / 222."]
-        DIV222 = 0xdd,
+        Div222 = 0xdd,
         #[doc = "IC = pllx_ck / 223."]
-        DIV223 = 0xde,
+        Div223 = 0xde,
         #[doc = "IC = pllx_ck / 224."]
-        DIV224 = 0xdf,
+        Div224 = 0xdf,
         #[doc = "IC = pllx_ck / 225."]
-        DIV225 = 0xe0,
+        Div225 = 0xe0,
         #[doc = "IC = pllx_ck / 226."]
-        DIV226 = 0xe1,
+        Div226 = 0xe1,
         #[doc = "IC = pllx_ck / 227."]
-        DIV227 = 0xe2,
+        Div227 = 0xe2,
         #[doc = "IC = pllx_ck / 228."]
-        DIV228 = 0xe3,
+        Div228 = 0xe3,
         #[doc = "IC = pllx_ck / 229."]
-        DIV229 = 0xe4,
+        Div229 = 0xe4,
         #[doc = "IC = pllx_ck / 230."]
-        DIV230 = 0xe5,
+        Div230 = 0xe5,
         #[doc = "IC = pllx_ck / 231."]
-        DIV231 = 0xe6,
+        Div231 = 0xe6,
         #[doc = "IC = pllx_ck / 232."]
-        DIV232 = 0xe7,
+        Div232 = 0xe7,
         #[doc = "IC = pllx_ck / 233."]
-        DIV233 = 0xe8,
+        Div233 = 0xe8,
         #[doc = "IC = pllx_ck / 234."]
-        DIV234 = 0xe9,
+        Div234 = 0xe9,
         #[doc = "IC = pllx_ck / 235."]
-        DIV235 = 0xea,
+        Div235 = 0xea,
         #[doc = "IC = pllx_ck / 236."]
-        DIV236 = 0xeb,
+        Div236 = 0xeb,
         #[doc = "IC = pllx_ck / 237."]
-        DIV237 = 0xec,
+        Div237 = 0xec,
         #[doc = "IC = pllx_ck / 238."]
-        DIV238 = 0xed,
+        Div238 = 0xed,
         #[doc = "IC = pllx_ck / 239."]
-        DIV239 = 0xee,
+        Div239 = 0xee,
         #[doc = "IC = pllx_ck / 240."]
-        DIV240 = 0xef,
+        Div240 = 0xef,
         #[doc = "IC = pllx_ck / 241."]
-        DIV241 = 0xf0,
+        Div241 = 0xf0,
         #[doc = "IC = pllx_ck / 242."]
-        DIV242 = 0xf1,
+        Div242 = 0xf1,
         #[doc = "IC = pllx_ck / 243."]
-        DIV243 = 0xf2,
+        Div243 = 0xf2,
         #[doc = "IC = pllx_ck / 244."]
-        DIV244 = 0xf3,
+        Div244 = 0xf3,
         #[doc = "IC = pllx_ck / 245."]
-        DIV245 = 0xf4,
+        Div245 = 0xf4,
         #[doc = "IC = pllx_ck / 246."]
-        DIV246 = 0xf5,
+        Div246 = 0xf5,
         #[doc = "IC = pllx_ck / 247."]
-        DIV247 = 0xf6,
+        Div247 = 0xf6,
         #[doc = "IC = pllx_ck / 248."]
-        DIV248 = 0xf7,
+        Div248 = 0xf7,
         #[doc = "IC = pllx_ck / 249."]
-        DIV249 = 0xf8,
+        Div249 = 0xf8,
         #[doc = "IC = pllx_ck / 250."]
-        DIV250 = 0xf9,
+        Div250 = 0xf9,
         #[doc = "IC = pllx_ck / 251."]
-        DIV251 = 0xfa,
+        Div251 = 0xfa,
         #[doc = "IC = pllx_ck / 252."]
-        DIV252 = 0xfb,
+        Div252 = 0xfb,
         #[doc = "IC = pllx_ck / 253."]
-        DIV253 = 0xfc,
+        Div253 = 0xfc,
         #[doc = "IC = pllx_ck / 254."]
-        DIV254 = 0xfd,
+        Div254 = 0xfd,
         #[doc = "IC = pllx_ck / 255."]
-        DIV255 = 0xfe,
+        Div255 = 0xfe,
         #[doc = "IC = pllx_ck / 256."]
-        DIV256 = 0xff,
+        Div256 = 0xff,
     }
     impl Icint {
         #[inline(always)]
@@ -37670,9 +37670,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Iclock {
         #[doc = "IC10 configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "IC10 configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Iclock {
         #[inline(always)]
@@ -37701,9 +37701,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Icpub {
         #[doc = "IC10 configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "IC10 configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Icpub {
         #[inline(always)]
@@ -37732,9 +37732,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Icpv {
         #[doc = "IC10 configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIVILEGE = 0x0,
+        NonPrivilege = 0x0,
         #[doc = "IC10 configuration bits are accessible by privilege software only."]
-        PRIVILEGE = 0x01,
+        Privilege = 0x01,
     }
     impl Icpv {
         #[inline(always)]
@@ -37763,13 +37763,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Icsel {
         #[doc = "pll1_ck is selected."]
-        PLL1 = 0x0,
+        Pll1 = 0x0,
         #[doc = "pll2_ck is selected."]
-        PLL2 = 0x01,
+        Pll2 = 0x01,
         #[doc = "pll3_ck is selected."]
-        PLL3 = 0x02,
+        Pll3 = 0x02,
         #[doc = "pll4_ck is selected."]
-        PLL4 = 0x03,
+        Pll4 = 0x03,
     }
     impl Icsel {
         #[inline(always)]
@@ -37798,9 +37798,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Intlock {
         #[doc = "INT configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "INT configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Intlock {
         #[inline(always)]
@@ -37829,9 +37829,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Intpub {
         #[doc = "INT configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "INT configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Intpub {
         #[inline(always)]
@@ -37860,9 +37860,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Intpv {
         #[doc = "INT configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIVILEGE = 0x0,
+        NonPrivilege = 0x0,
         #[doc = "INT configuration bits are accessible by privilege software only."]
-        PRIVILEGE = 0x01,
+        Privilege = 0x01,
     }
     impl Intpv {
         #[inline(always)]
@@ -37891,9 +37891,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Intsec {
         #[doc = "INT configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "INT configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Intsec {
         #[inline(always)]
@@ -37922,17 +37922,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lptim1sel {
         #[doc = "pclk1 selected as reference clock."]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic15_ck selected as reference clock."]
-        IC15 = 0x02,
+        Ic15 = 0x02,
         #[doc = "lse_ck selected as reference clock."]
-        LSE = 0x03,
+        Lse = 0x03,
         #[doc = "lsi_ck selected as reference clock."]
-        LSI = 0x04,
+        Lsi = 0x04,
         #[doc = "timg_ck selected as reference clock."]
-        TIMG = 0x05,
+        Timg = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -37963,17 +37963,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lptim2345sel {
         #[doc = "pclk1 selected as reference clock."]
-        PCLK4 = 0x0,
+        Pclk4 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic15_ck selected as reference clock."]
-        IC15 = 0x02,
+        Ic15 = 0x02,
         #[doc = "lse_ck selected as reference clock."]
-        LSE = 0x03,
+        Lse = 0x03,
         #[doc = "lsi_ck selected as reference clock."]
-        LSI = 0x04,
+        Lsi = 0x04,
         #[doc = "timg_ck selected as reference clock."]
-        TIMG = 0x05,
+        Timg = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -38004,19 +38004,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpuartsel {
         #[doc = "pclk4 selected as reference clock."]
-        PCLK4 = 0x0,
+        Pclk4 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic9_ck selected as reference clock."]
-        IC9 = 0x02,
+        Ic9 = 0x02,
         #[doc = "ic14_ck selected as reference clock."]
-        IC14 = 0x03,
+        Ic14 = 0x03,
         #[doc = "lse_ck selected as reference clock."]
-        LSE = 0x04,
+        Lse = 0x04,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x05,
+        Msi = 0x05,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x06,
+        HsiDiv = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Lpuartsel {
@@ -38046,9 +38046,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsecssc {
         #[doc = "LSECSSF not modified (default after reset)."]
-        NOT_MODIFIED = 0x0,
+        NotModified = 0x0,
         #[doc = "LSECSSF cleared."]
-        CLEARED = 0x01,
+        Cleared = 0x01,
     }
     impl Lsecssc {
         #[inline(always)]
@@ -38077,9 +38077,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsecssd {
         #[doc = "No failure detected on the oscillator (default after reset)."]
-        NOT_DETECTED = 0x0,
+        NotDetected = 0x0,
         #[doc = "Failure detected on the oscillator."]
-        DETECTED = 0x01,
+        Detected = 0x01,
     }
     impl Lsecssd {
         #[inline(always)]
@@ -38108,9 +38108,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsecssf {
         #[doc = "no clock ready interrupt caused by the LSE (default after reset)."]
-        NO_READY = 0x0,
+        NoReady = 0x0,
         #[doc = "clock ready interrupt caused by the LSE."]
-        READY = 0x01,
+        Ready = 0x01,
     }
     impl Lsecssf {
         #[inline(always)]
@@ -38139,9 +38139,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsecssie {
         #[doc = "LSE CSS interrupt disabled (default after reset)."]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "LSE CSS interrupt enabled."]
-        ENABLED = 0x01,
+        Enabled = 0x01,
     }
     impl Lsecssie {
         #[inline(always)]
@@ -38170,9 +38170,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsecssra {
         #[doc = "Writing 0 has no effect (default after reset)."]
-        NO_EFFECT = 0x0,
+        NoEffect = 0x0,
         #[doc = "Writing 1 generates a re-arm pulse for the LSECSS function."]
-        RE_ARM = 0x01,
+        ReArm = 0x01,
     }
     impl Lsecssra {
         #[inline(always)]
@@ -38201,13 +38201,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsedrv {
         #[doc = "Lowest drive (default after reset)."]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "Medium low drive."]
-        MEDIUM_LOW = 0x01,
+        MediumLow = 0x01,
         #[doc = "Medium high drive."]
-        MEDIUM_HIGH = 0x02,
+        MediumHigh = 0x02,
         #[doc = "Highest drive."]
-        HIGH = 0x03,
+        High = 0x03,
     }
     impl Lsedrv {
         #[inline(always)]
@@ -38236,9 +38236,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lseext {
         #[doc = "LSE in analog mode (default after reset)."]
-        ANALOG = 0x0,
+        Analog = 0x0,
         #[doc = "LSE in digital mode."]
-        DIGITAL = 0x01,
+        Digital = 0x01,
     }
     impl Lseext {
         #[inline(always)]
@@ -38267,9 +38267,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lselock {
         #[doc = "LSE configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "LSE configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Lselock {
         #[inline(always)]
@@ -38298,9 +38298,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsepub {
         #[doc = "LSE configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "LSE configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Lsepub {
         #[inline(always)]
@@ -38329,9 +38329,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsepv {
         #[doc = "LSE configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIVILEGE = 0x0,
+        NonPrivilege = 0x0,
         #[doc = "LSE configuration bits are accessible by privilege software only."]
-        PRIVILAGE = 0x01,
+        Privilage = 0x01,
     }
     impl Lsepv {
         #[inline(always)]
@@ -38360,9 +38360,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lserdyc {
         #[doc = "LSERDYF not modified (default after reset)."]
-        NOT_MODIFIED = 0x0,
+        NotModified = 0x0,
         #[doc = "LSERDYF cleared."]
-        CLEARED = 0x01,
+        Cleared = 0x01,
     }
     impl Lserdyc {
         #[inline(always)]
@@ -38391,9 +38391,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lserdyf {
         #[doc = "no clock ready interrupt caused by the LSE (default after reset)."]
-        NO_READY = 0x0,
+        NoReady = 0x0,
         #[doc = "clock ready interrupt caused by the LSE."]
-        READY = 0x01,
+        Ready = 0x01,
     }
     impl Lserdyf {
         #[inline(always)]
@@ -38422,9 +38422,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lserdyie {
         #[doc = "LSE ready interrupt disabled (default after reset)."]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "LSE ready interrupt enabled."]
-        ENABLED = 0x01,
+        Enabled = 0x01,
     }
     impl Lserdyie {
         #[inline(always)]
@@ -38453,9 +38453,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsesec {
         #[doc = "LSE configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "LSE configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Lsesec {
         #[inline(always)]
@@ -38484,9 +38484,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsilock {
         #[doc = "LSI configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "LSI configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Lsilock {
         #[inline(always)]
@@ -38515,9 +38515,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsipub {
         #[doc = "LSI configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "LSI configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Lsipub {
         #[inline(always)]
@@ -38546,9 +38546,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsipv {
         #[doc = "LSI configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIVILEGE = 0x0,
+        NonPrivilege = 0x0,
         #[doc = "LSI configuration bits are accessible by privilege software only."]
-        PRIVILEGE = 0x01,
+        Privilege = 0x01,
     }
     impl Lsipv {
         #[inline(always)]
@@ -38577,9 +38577,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsisec {
         #[doc = "LSI configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "LSI configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Lsisec {
         #[inline(always)]
@@ -38608,13 +38608,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ltdcsel {
         #[doc = "pclk5 selected as reference clock."]
-        PCLK5 = 0x0,
+        Pclk5 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic16_ck selected as reference clock."]
-        IC16 = 0x02,
+        Ic16 = 0x02,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x03,
+        HsiDiv = 0x03,
     }
     impl Ltdcsel {
         #[inline(always)]
@@ -38643,21 +38643,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mco1sel {
         #[doc = "hsi selected as reference clock (default after reset)."]
-        HSI = 0x0,
+        Hsi = 0x0,
         #[doc = "lse_ck selected as reference clock."]
-        LSE = 0x01,
+        Lse = 0x01,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x02,
+        Msi = 0x02,
         #[doc = "lsi_ck selected as reference clock."]
-        LSI = 0x03,
+        Lsi = 0x03,
         #[doc = "hse_ck selected as reference clock."]
-        HSE = 0x04,
+        Hse = 0x04,
         #[doc = "ic5_ck selected as reference clock."]
-        IC5 = 0x05,
+        Ic5 = 0x05,
         #[doc = "ic10_ck selected as reference clock."]
-        IC10 = 0x06,
+        Ic10 = 0x06,
         #[doc = "sysa_ck selected as reference clock."]
-        SYSA = 0x07,
+        Sysa = 0x07,
     }
     impl Mco1sel {
         #[inline(always)]
@@ -38686,21 +38686,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mco2sel {
         #[doc = "hsi selected as reference clock (default after reset)."]
-        HSI = 0x0,
+        Hsi = 0x0,
         #[doc = "lse_ck selected as reference clock."]
-        LSE = 0x01,
+        Lse = 0x01,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x02,
+        Msi = 0x02,
         #[doc = "lsi_ck selected as reference clock."]
-        LSI = 0x03,
+        Lsi = 0x03,
         #[doc = "hse_ck selected as reference clock."]
-        HSE = 0x04,
+        Hse = 0x04,
         #[doc = "ic15_ck selected as reference clock."]
-        IC15 = 0x05,
+        Ic15 = 0x05,
         #[doc = "ic20_ck selected as reference clock."]
-        IC20 = 0x06,
+        Ic20 = 0x06,
         #[doc = "sysb_ck selected as reference clock."]
-        SYSB = 0x07,
+        Sysb = 0x07,
     }
     impl Mco2sel {
         #[inline(always)]
@@ -38729,13 +38729,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mcopre {
         #[doc = "ck_icn_p_mce3 is divided by 1."]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "ck_icn_p_mce3 is divided by 2."]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "ck_icn_p_mce3 is divided by 3."]
-        DIV3 = 0x02,
+        Div3 = 0x02,
         #[doc = "ck_icn_p_mce3 is divided by 4."]
-        DIV4 = 0x03,
+        Div4 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
@@ -38748,7 +38748,7 @@ pub mod vals {
         _RESERVED_d = 0x0d,
         _RESERVED_e = 0x0e,
         #[doc = "ck_icn_p_mce3 is divided by 16."]
-        DIV16 = 0x0f,
+        Div16 = 0x0f,
     }
     impl Mcopre {
         #[inline(always)]
@@ -38777,21 +38777,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mdfsel {
         #[doc = "hclk2 selected as reference clock."]
-        HCLK2 = 0x0,
+        Hclk2 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic7_ck selected as reference clock."]
-        IC7 = 0x02,
+        Ic7 = 0x02,
         #[doc = "ic8_ck selected as reference clock."]
-        IC8 = 0x03,
+        Ic8 = 0x03,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x04,
+        Msi = 0x04,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x05,
+        HsiDiv = 0x05,
         #[doc = "I2S_CKIN selected as reference clock."]
-        I2S_CKIN = 0x06,
+        I2sCkin = 0x06,
         #[doc = "timg_ck selected as reference clock."]
-        TIMG = 0x07,
+        Timg = 0x07,
     }
     impl Mdfsel {
         #[inline(always)]
@@ -38820,9 +38820,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Modlock {
         #[doc = "MOD configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "MOD configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Modlock {
         #[inline(always)]
@@ -38851,9 +38851,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Modpub {
         #[doc = "MOD configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "MOD configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Modpub {
         #[inline(always)]
@@ -38882,9 +38882,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Modpv {
         #[doc = "MOD configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIVILEGE = 0x0,
+        NonPrivilege = 0x0,
         #[doc = "MOD configuration bits are accessible by privilege software only."]
-        PRIVILEGE = 0x01,
+        Privilege = 0x01,
     }
     impl Modpv {
         #[inline(always)]
@@ -38913,9 +38913,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Modsec {
         #[doc = "MOD configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "MOD configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Modsec {
         #[inline(always)]
@@ -38944,37 +38944,37 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mrd {
         #[doc = "No extra delay added by the BOOTROM."]
-        NO_DELAY = 0x0,
+        NoDelay = 0x0,
         #[doc = "100 us."]
-        _100US = 0x01,
+        _100us = 0x01,
         #[doc = "200 us."]
-        _200US = 0x02,
+        _200us = 0x02,
         #[doc = "500 us."]
-        _500US = 0x03,
+        _500us = 0x03,
         #[doc = "1 ms."]
-        _1MS = 0x04,
+        _1ms = 0x04,
         #[doc = "2 ms."]
-        _2MS = 0x05,
+        _2ms = 0x05,
         #[doc = "5 ms (default after reset)."]
-        _5MS = 0x06,
+        _5ms = 0x06,
         #[doc = "10 ms."]
-        _10MS = 0x07,
+        _10ms = 0x07,
         #[doc = "20 ms."]
-        _20MS = 0x08,
+        _20ms = 0x08,
         #[doc = "50 ms."]
-        _50MS = 0x09,
+        _50ms = 0x09,
         #[doc = "100 ms."]
-        _100MS = 0x0a,
+        _100ms = 0x0a,
         #[doc = "200 ms."]
-        _200MS = 0x0b,
+        _200ms = 0x0b,
         #[doc = "500 ms."]
-        _500MS = 0x0c,
+        _500ms = 0x0c,
         #[doc = "1 s."]
-        _1S = 0x0d,
+        _1s = 0x0d,
         #[doc = "2 s."]
-        _2S = 0x0e,
+        _2s = 0x0e,
         #[doc = "5 s."]
-        _3S = 0x0f,
+        _3s = 0x0f,
         _RESERVED_10 = 0x10,
         _RESERVED_11 = 0x11,
         _RESERVED_12 = 0x12,
@@ -39019,9 +39019,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msifreqsel {
         #[doc = "MSI oscillator frequency is 4 MHz (default after backup domain reset)."]
-        _4MHZ = 0x0,
+        _4mhz = 0x0,
         #[doc = "MSI oscillator frequency is 16 MHz."]
-        _16MHZ = 0x01,
+        _16mhz = 0x01,
     }
     impl Msifreqsel {
         #[inline(always)]
@@ -39050,9 +39050,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msilock {
         #[doc = "MSI configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "MSI configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Msilock {
         #[inline(always)]
@@ -39081,9 +39081,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msipub {
         #[doc = "MSI configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUB = 0x0,
+        NonPub = 0x0,
         #[doc = "MSI configuration bits are accessible by public software only."]
-        PUB = 0x01,
+        Pub = 0x01,
     }
     impl Msipub {
         #[inline(always)]
@@ -39112,9 +39112,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msipv {
         #[doc = "MSI configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIVILEGE = 0x0,
+        NonPrivilege = 0x0,
         #[doc = "MSI configuration bits are accessible by privilege software only."]
-        PRIVILEGE = 0x01,
+        Privilege = 0x01,
     }
     impl Msipv {
         #[inline(always)]
@@ -39143,9 +39143,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msirdyc {
         #[doc = "MSIRDYF not modified (default after reset)."]
-        NOT_MODIFIED = 0x0,
+        NotModified = 0x0,
         #[doc = "MSIRDYF cleared."]
-        CLEARED = 0x01,
+        Cleared = 0x01,
     }
     impl Msirdyc {
         #[inline(always)]
@@ -39174,9 +39174,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msirdyf {
         #[doc = "no clock ready interrupt caused by the MSI (default after reset)."]
-        NO_INTERRUPT = 0x0,
+        NoInterrupt = 0x0,
         #[doc = "clock ready interrupt caused by the MSI."]
-        INTERRUPT = 0x01,
+        Interrupt = 0x01,
     }
     impl Msirdyf {
         #[inline(always)]
@@ -39205,9 +39205,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msirdyie {
         #[doc = "MSI ready interrupt disabled (default after reset)."]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "MSI ready interrupt enabled."]
-        ENABLED = 0x01,
+        Enabled = 0x01,
     }
     impl Msirdyie {
         #[inline(always)]
@@ -39236,9 +39236,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msisec {
         #[doc = "MSI configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "MSI configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Msisec {
         #[inline(always)]
@@ -39267,9 +39267,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Noclock {
         #[doc = "NOC configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "NOC configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Noclock {
         #[inline(always)]
@@ -39298,9 +39298,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nocpub {
         #[doc = "NOC configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "NOC configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Nocpub {
         #[inline(always)]
@@ -39329,9 +39329,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nocpv {
         #[doc = "NOC configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIVILEGE = 0x0,
+        NonPrivilege = 0x0,
         #[doc = "NOC configuration bits are accessible by privilege software only."]
-        PRIVILEGE = 0x01,
+        Privilege = 0x01,
     }
     impl Nocpv {
         #[inline(always)]
@@ -39360,9 +39360,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nocsec {
         #[doc = "NOC configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "NOC configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Nocsec {
         #[inline(always)]
@@ -39391,9 +39391,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Npucacherampub {
         #[doc = "NPUCACHERAM configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "NPUCACHERAM configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Npucacherampub {
         #[inline(always)]
@@ -39422,13 +39422,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Otgphysel {
         #[doc = "hse_ck selected as reference clock."]
-        HSE = 0x0,
+        Hse = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic15_ck selected as reference clock."]
-        IC15 = 0x02,
+        Ic15 = 0x02,
         #[doc = "hse_div2_osc_ck selected as reference clock."]
-        HSE_DIV2_OSC = 0x03,
+        HseDiv2Osc = 0x03,
     }
     impl Otgphysel {
         #[inline(always)]
@@ -39457,9 +39457,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Perlock {
         #[doc = "PER configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "PER configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Perlock {
         #[inline(always)]
@@ -39488,9 +39488,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Perpub {
         #[doc = "PER configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "PER configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Perpub {
         #[inline(always)]
@@ -39519,9 +39519,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Perpv {
         #[doc = "PER configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIVILEGE = 0x0,
+        NonPrivilege = 0x0,
         #[doc = "PER configuration bits are accessible by privilege software only."]
-        PRIVILEGE = 0x01,
+        Privilege = 0x01,
     }
     impl Perpv {
         #[inline(always)]
@@ -39550,9 +39550,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Persec {
         #[doc = "PER configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "PER configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Persec {
         #[inline(always)]
@@ -39581,21 +39581,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Persel {
         #[doc = "hsi_ck selected as reference clock."]
-        HSI = 0x0,
+        Hsi = 0x0,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x01,
+        Msi = 0x01,
         #[doc = "hse_ck selected as reference clock."]
-        HSE = 0x02,
+        Hse = 0x02,
         #[doc = "ic19_ck selected as reference clock."]
-        IC19 = 0x03,
+        Ic19 = 0x03,
         #[doc = "ic5_ck selected as reference clock."]
-        IC5 = 0x04,
+        Ic5 = 0x04,
         #[doc = "ic10_ck selected as reference clock."]
-        IC10 = 0x05,
+        Ic10 = 0x05,
         #[doc = "ic15_ck selected as reference clock."]
-        IC15 = 0x06,
+        Ic15 = 0x06,
         #[doc = "ic20_ck selected as reference clock."]
-        IC20 = 0x07,
+        Ic20 = 0x07,
     }
     impl Persel {
         #[inline(always)]
@@ -39625,131 +39625,131 @@ pub mod vals {
     pub enum Plldivm {
         _RESERVED_0 = 0x0,
         #[doc = "reference clock is divided by 1 (min value)."]
-        DIV1 = 0x01,
+        Div1 = 0x01,
         #[doc = "reference clock is divided by 2."]
-        DIV2 = 0x02,
+        Div2 = 0x02,
         #[doc = "reference clock is divided by 3."]
-        DIV3 = 0x03,
+        Div3 = 0x03,
         #[doc = "reference clock is divided by 4."]
-        DIV4 = 0x04,
+        Div4 = 0x04,
         #[doc = "reference clock is divided by 5."]
-        DIV5 = 0x05,
+        Div5 = 0x05,
         #[doc = "reference clock is divided by 6."]
-        DIV6 = 0x06,
+        Div6 = 0x06,
         #[doc = "reference clock is divided by 7."]
-        DIV7 = 0x07,
+        Div7 = 0x07,
         #[doc = "reference clock is divided by 8."]
-        DIV8 = 0x08,
+        Div8 = 0x08,
         #[doc = "reference clock is divided by 9."]
-        DIV9 = 0x09,
+        Div9 = 0x09,
         #[doc = "reference clock is divided by 10."]
-        DIV10 = 0x0a,
+        Div10 = 0x0a,
         #[doc = "reference clock is divided by 11."]
-        DIV11 = 0x0b,
+        Div11 = 0x0b,
         #[doc = "reference clock is divided by 12."]
-        DIV12 = 0x0c,
+        Div12 = 0x0c,
         #[doc = "reference clock is divided by 13."]
-        DIV13 = 0x0d,
+        Div13 = 0x0d,
         #[doc = "reference clock is divided by 14."]
-        DIV14 = 0x0e,
+        Div14 = 0x0e,
         #[doc = "reference clock is divided by 15."]
-        DIV15 = 0x0f,
+        Div15 = 0x0f,
         #[doc = "reference clock is divided by 16."]
-        DIV16 = 0x10,
+        Div16 = 0x10,
         #[doc = "reference clock is divided by 17."]
-        DIV17 = 0x11,
+        Div17 = 0x11,
         #[doc = "reference clock is divided by 18."]
-        DIV18 = 0x12,
+        Div18 = 0x12,
         #[doc = "reference clock is divided by 19."]
-        DIV19 = 0x13,
+        Div19 = 0x13,
         #[doc = "reference clock is divided by 20."]
-        DIV20 = 0x14,
+        Div20 = 0x14,
         #[doc = "reference clock is divided by 21."]
-        DIV21 = 0x15,
+        Div21 = 0x15,
         #[doc = "reference clock is divided by 22."]
-        DIV22 = 0x16,
+        Div22 = 0x16,
         #[doc = "reference clock is divided by 23."]
-        DIV23 = 0x17,
+        Div23 = 0x17,
         #[doc = "reference clock is divided by 24."]
-        DIV24 = 0x18,
+        Div24 = 0x18,
         #[doc = "reference clock is divided by 25."]
-        DIV25 = 0x19,
+        Div25 = 0x19,
         #[doc = "reference clock is divided by 26."]
-        DIV26 = 0x1a,
+        Div26 = 0x1a,
         #[doc = "reference clock is divided by 27."]
-        DIV27 = 0x1b,
+        Div27 = 0x1b,
         #[doc = "reference clock is divided by 28."]
-        DIV28 = 0x1c,
+        Div28 = 0x1c,
         #[doc = "reference clock is divided by 29."]
-        DIV29 = 0x1d,
+        Div29 = 0x1d,
         #[doc = "reference clock is divided by 30."]
-        DIV30 = 0x1e,
+        Div30 = 0x1e,
         #[doc = "reference clock is divided by 31."]
-        DIV31 = 0x1f,
+        Div31 = 0x1f,
         #[doc = "reference clock is divided by 32."]
-        DIV32 = 0x20,
+        Div32 = 0x20,
         #[doc = "reference clock is divided by 33."]
-        DIV33 = 0x21,
+        Div33 = 0x21,
         #[doc = "reference clock is divided by 34."]
-        DIV34 = 0x22,
+        Div34 = 0x22,
         #[doc = "reference clock is divided by 35."]
-        DIV35 = 0x23,
+        Div35 = 0x23,
         #[doc = "reference clock is divided by 36."]
-        DIV36 = 0x24,
+        Div36 = 0x24,
         #[doc = "reference clock is divided by 37."]
-        DIV37 = 0x25,
+        Div37 = 0x25,
         #[doc = "reference clock is divided by 38."]
-        DIV38 = 0x26,
+        Div38 = 0x26,
         #[doc = "reference clock is divided by 39."]
-        DIV39 = 0x27,
+        Div39 = 0x27,
         #[doc = "reference clock is divided by 40."]
-        DIV40 = 0x28,
+        Div40 = 0x28,
         #[doc = "reference clock is divided by 41."]
-        DIV41 = 0x29,
+        Div41 = 0x29,
         #[doc = "reference clock is divided by 42."]
-        DIV42 = 0x2a,
+        Div42 = 0x2a,
         #[doc = "reference clock is divided by 43."]
-        DIV43 = 0x2b,
+        Div43 = 0x2b,
         #[doc = "reference clock is divided by 44."]
-        DIV44 = 0x2c,
+        Div44 = 0x2c,
         #[doc = "reference clock is divided by 45."]
-        DIV45 = 0x2d,
+        Div45 = 0x2d,
         #[doc = "reference clock is divided by 46."]
-        DIV46 = 0x2e,
+        Div46 = 0x2e,
         #[doc = "reference clock is divided by 47."]
-        DIV47 = 0x2f,
+        Div47 = 0x2f,
         #[doc = "reference clock is divided by 48."]
-        DIV48 = 0x30,
+        Div48 = 0x30,
         #[doc = "reference clock is divided by 49."]
-        DIV49 = 0x31,
+        Div49 = 0x31,
         #[doc = "reference clock is divided by 50."]
-        DIV50 = 0x32,
+        Div50 = 0x32,
         #[doc = "reference clock is divided by 51."]
-        DIV51 = 0x33,
+        Div51 = 0x33,
         #[doc = "reference clock is divided by 52."]
-        DIV52 = 0x34,
+        Div52 = 0x34,
         #[doc = "reference clock is divided by 53."]
-        DIV53 = 0x35,
+        Div53 = 0x35,
         #[doc = "reference clock is divided by 54."]
-        DIV54 = 0x36,
+        Div54 = 0x36,
         #[doc = "reference clock is divided by 55."]
-        DIV55 = 0x37,
+        Div55 = 0x37,
         #[doc = "reference clock is divided by 56."]
-        DIV56 = 0x38,
+        Div56 = 0x38,
         #[doc = "reference clock is divided by 57."]
-        DIV57 = 0x39,
+        Div57 = 0x39,
         #[doc = "reference clock is divided by 58."]
-        DIV58 = 0x3a,
+        Div58 = 0x3a,
         #[doc = "reference clock is divided by 59."]
-        DIV59 = 0x3b,
+        Div59 = 0x3b,
         #[doc = "reference clock is divided by 60."]
-        DIV60 = 0x3c,
+        Div60 = 0x3c,
         #[doc = "reference clock is divided by 61."]
-        DIV61 = 0x3d,
+        Div61 = 0x3d,
         #[doc = "reference clock is divided by 62."]
-        DIV62 = 0x3e,
+        Div62 = 0x3e,
         #[doc = "reference clock is divided by 63."]
-        DIV63 = 0x3f,
+        Div63 = 0x3f,
     }
     impl Plldivm {
         #[inline(always)]
@@ -39778,9 +39778,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Plllock {
         #[doc = "PLL1 configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "PLL1 configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Plllock {
         #[inline(always)]
@@ -39809,9 +39809,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllmodsprdw {
         #[doc = "Center-spread modulation selected (default after reset)."]
-        CENTER_SPREAD = 0x0,
+        CenterSpread = 0x0,
         #[doc = "Down-spread modulation selected."]
-        DOWN_SPREAD = 0x01,
+        DownSpread = 0x01,
     }
     impl Pllmodsprdw {
         #[inline(always)]
@@ -39840,9 +39840,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllmodssdis {
         #[doc = "Modulation Spread-Spectrum is active (and Fractional Divide inactive)."]
-        MODULATION_SPREAD_SPECTRUM = 0x0,
+        ModulationSpreadSpectrum = 0x0,
         #[doc = "Fractional Divide is active (and the Modulation Spread-Spectrum inactive) (default after reset)."]
-        FRACTIONAL_DIVIDE = 0x01,
+        FractionalDivide = 0x01,
     }
     impl Pllmodssdis {
         #[inline(always)]
@@ -39872,19 +39872,19 @@ pub mod vals {
     pub enum Pllpdiv {
         _RESERVED_0 = 0x0,
         #[doc = "VCO output is divided by 1 (minimum value) (default after reset)."]
-        DIV1 = 0x01,
+        Div1 = 0x01,
         #[doc = "VCO output is divided by 2."]
-        DIV2 = 0x02,
+        Div2 = 0x02,
         #[doc = "VCO output is divided by 3."]
-        DIV3 = 0x03,
+        Div3 = 0x03,
         #[doc = "VCO output is divided by 4."]
-        DIV4 = 0x04,
+        Div4 = 0x04,
         #[doc = "VCO output is divided by 5."]
-        DIV5 = 0x05,
+        Div5 = 0x05,
         #[doc = "VCO output is divided by 6."]
-        DIV6 = 0x06,
+        Div6 = 0x06,
         #[doc = "VCO output is divided by 7."]
-        DIV7 = 0x07,
+        Div7 = 0x07,
     }
     impl Pllpdiv {
         #[inline(always)]
@@ -39913,9 +39913,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllpub {
         #[doc = "PLL1 configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "PLL1 configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Pllpub {
         #[inline(always)]
@@ -39944,9 +39944,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllpv {
         #[doc = "PLL1 configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIVILEGE = 0x0,
+        NonPrivilege = 0x0,
         #[doc = "PLL1 configuration bits are accessible by privilege software only."]
-        PRIVILEGE = 0x01,
+        Privilege = 0x01,
     }
     impl Pllpv {
         #[inline(always)]
@@ -39975,9 +39975,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllrdyc {
         #[doc = "PLL1RDYF not modified (default after reset)."]
-        NOT_MODIFIED = 0x0,
+        NotModified = 0x0,
         #[doc = "PLL1RDYF cleared."]
-        CLEARED = 0x01,
+        Cleared = 0x01,
     }
     impl Pllrdyc {
         #[inline(always)]
@@ -40006,9 +40006,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllrdyf {
         #[doc = "no clock ready interrupt caused by the PLL1 (default after reset)."]
-        NO_INTERRUPT = 0x0,
+        NoInterrupt = 0x0,
         #[doc = "clock ready interrupt caused by the PLL1."]
-        INTERRUPT = 0x01,
+        Interrupt = 0x01,
     }
     impl Pllrdyf {
         #[inline(always)]
@@ -40037,9 +40037,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllrdyie {
         #[doc = "PLL1 lock interrupt disabled (default after reset)."]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "PLL1 lock interrupt enabled."]
-        ENABLED = 0x01,
+        Enabled = 0x01,
     }
     impl Pllrdyie {
         #[inline(always)]
@@ -40068,9 +40068,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllsec {
         #[doc = "PLL1 configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "PLL1 configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Pllsec {
         #[inline(always)]
@@ -40099,13 +40099,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllsel {
         #[doc = "hsi_ck selected as reference clock."]
-        HSI = 0x0,
+        Hsi = 0x0,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x01,
+        Msi = 0x01,
         #[doc = "hse_ck selected as reference clock."]
-        HSE = 0x02,
+        Hse = 0x02,
         #[doc = "I2S_CKIN selected as reference clock."]
-        I2S_CKIN = 0x03,
+        I2sCkin = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
@@ -40138,21 +40138,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ppre {
         #[doc = "rcc_pclk1 = sys_bus2_ck (default after reset)."]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "rcc_pclk1 = sys_bus2_ck / 2."]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "rcc_pclk1 = sys_bus2_ck / 4."]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         #[doc = "rcc_pclk1 = sys_bus2_ck / 8."]
-        DIV8 = 0x03,
+        Div8 = 0x03,
         #[doc = "rcc_pclk1 = sys_bus2_ck / 16."]
-        DIV16 = 0x04,
+        Div16 = 0x04,
         #[doc = "rcc_pclk1 = sys_bus2_ck / 32."]
-        DIV32 = 0x05,
+        Div32 = 0x05,
         #[doc = "rcc_pclk1 = sys_bus2_ck / 64."]
-        DIV64 = 0x06,
+        Div64 = 0x06,
         #[doc = "rcc_pclk1 = sys_bus2_ck / 128."]
-        DIV128 = 0x07,
+        Div128 = 0x07,
     }
     impl Ppre {
         #[inline(always)]
@@ -40181,13 +40181,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pssisel {
         #[doc = "hclk5 selected as reference clock."]
-        HCLK5 = 0x0,
+        Hclk5 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic20_ck selected as reference clock."]
-        IC20 = 0x02,
+        Ic20 = 0x02,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x03,
+        HsiDiv = 0x03,
     }
     impl Pssisel {
         #[inline(always)]
@@ -40216,9 +40216,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RsrBorrstf {
         #[doc = "no BOR occurred."]
-        ABSENCE = 0x0,
+        Absence = 0x0,
         #[doc = "BOR occurred (default after power-on reset)."]
-        OCCURRED = 0x01,
+        Occurred = 0x01,
     }
     impl RsrBorrstf {
         #[inline(always)]
@@ -40247,9 +40247,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RsrIwdgrstf {
         #[doc = "no Independent Watchdog reset occurred (default after power-on reset)."]
-        ABSENCE = 0x0,
+        Absence = 0x0,
         #[doc = "Independent Watchdog reset occurred."]
-        OCCURRED = 0x01,
+        Occurred = 0x01,
     }
     impl RsrIwdgrstf {
         #[inline(always)]
@@ -40278,9 +40278,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RsrLckrstf {
         #[doc = "No reset from CPU lockup occurred."]
-        ABSENCE = 0x0,
+        Absence = 0x0,
         #[doc = "Reset from CPU lockup occurred."]
-        OCCURRED = 0x01,
+        Occurred = 0x01,
     }
     impl RsrLckrstf {
         #[inline(always)]
@@ -40309,9 +40309,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RsrLpwrrstf {
         #[doc = "no illegal reset occurred (default after power-on reset)."]
-        ABSENCE = 0x0,
+        Absence = 0x0,
         #[doc = "illegal Stop or Standby reset occurred."]
-        OCCURRED = 0x01,
+        Occurred = 0x01,
     }
     impl RsrLpwrrstf {
         #[inline(always)]
@@ -40340,9 +40340,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RsrPinrstf {
         #[doc = "no reset from Pin occurred."]
-        ABSENCE = 0x0,
+        Absence = 0x0,
         #[doc = "Reset from Pin occurred (default after power-on reset)."]
-        OCCURRED = 0x01,
+        Occurred = 0x01,
     }
     impl RsrPinrstf {
         #[inline(always)]
@@ -40371,9 +40371,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RsrPorrstf {
         #[doc = "no POR/PDR reset occurred."]
-        ABSENCE = 0x0,
+        Absence = 0x0,
         #[doc = "POR/PDR reset occurred (default after power-on reset)."]
-        OCCURRED = 0x01,
+        Occurred = 0x01,
     }
     impl RsrPorrstf {
         #[inline(always)]
@@ -40402,9 +40402,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RsrRmvf {
         #[doc = "clear of the reset flags not activated (default after power-on reset)."]
-        NO_CLEAR = 0x0,
+        NoClear = 0x0,
         #[doc = "clear the value of the reset flags."]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl RsrRmvf {
         #[inline(always)]
@@ -40433,9 +40433,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RsrSftrstf {
         #[doc = "no Software System reset occurred (default after power-on reset)."]
-        ABSENCE = 0x0,
+        Absence = 0x0,
         #[doc = "a Software System reset has been generated by the CPU."]
-        OCCURRED = 0x01,
+        Occurred = 0x01,
     }
     impl RsrSftrstf {
         #[inline(always)]
@@ -40464,9 +40464,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RsrWwdgrstf {
         #[doc = "no Window Watchdog reset occurred from WWDG (default after power-on reset)."]
-        ABSENCE = 0x0,
+        Absence = 0x0,
         #[doc = "Window Watchdog reset occurred from WWDG."]
-        OCCURRED = 0x01,
+        Occurred = 0x01,
     }
     impl RsrWwdgrstf {
         #[inline(always)]
@@ -40495,9 +40495,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rstlock {
         #[doc = "RST configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "RST configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Rstlock {
         #[inline(always)]
@@ -40526,9 +40526,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rstpub {
         #[doc = "RST configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "RST configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Rstpub {
         #[inline(always)]
@@ -40557,9 +40557,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rstpv {
         #[doc = "RST configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIVILEGE = 0x0,
+        NonPrivilege = 0x0,
         #[doc = "RST configuration bits are accessible by privilege software only."]
-        PRIVILEGE = 0x01,
+        Privilege = 0x01,
     }
     impl Rstpv {
         #[inline(always)]
@@ -40588,9 +40588,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rstsec {
         #[doc = "RST configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "RST configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Rstsec {
         #[inline(always)]
@@ -40619,13 +40619,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtcpre {
         #[doc = "ck_icn_p_risaf is divided by 1."]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "ck_icn_p_risaf is divided by 2."]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "ck_icn_p_risaf is divided by 3."]
-        DIV3 = 0x02,
+        Div3 = 0x02,
         #[doc = "ck_icn_p_risaf is divided by 4."]
-        DIV4 = 0x03,
+        Div4 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
@@ -40686,7 +40686,7 @@ pub mod vals {
         _RESERVED_3d = 0x3d,
         _RESERVED_3e = 0x3e,
         #[doc = "ck_icn_p_risaf is divided by 64."]
-        DIV64 = 0x3f,
+        Div64 = 0x3f,
     }
     impl Rtcpre {
         #[inline(always)]
@@ -40715,13 +40715,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtcsel {
         #[doc = "No clock used as RTC clock."]
-        DISABLE = 0x0,
+        Disable = 0x0,
         #[doc = "lse_ck selected as reference clock."]
-        LSE = 0x01,
+        Lse = 0x01,
         #[doc = "lsi_ck selected as reference clock."]
-        LSI = 0x02,
+        Lsi = 0x02,
         #[doc = "hse_rtc_ck selected as reference clock."]
-        HSE_RTC = 0x03,
+        HseRtc = 0x03,
     }
     impl Rtcsel {
         #[inline(always)]
@@ -40750,21 +40750,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Saisel {
         #[doc = "pclk2 selected as reference clock."]
-        PCLK2 = 0x0,
+        Pclk2 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic7_ck selected as reference clock."]
-        IC7 = 0x02,
+        Ic7 = 0x02,
         #[doc = "ic8_ck selected as reference clock."]
-        IC8 = 0x03,
+        Ic8 = 0x03,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x04,
+        Msi = 0x04,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x05,
+        HsiDiv = 0x05,
         #[doc = "I2S_CKIN selected as reference clock."]
-        I2S_CKIN = 0x06,
+        I2sCkin = 0x06,
         #[doc = "spdif_symb_ck selected as reference clock."]
-        SPDIF_SYMB = 0x07,
+        SpdifSymb = 0x07,
     }
     impl Saisel {
         #[inline(always)]
@@ -40793,13 +40793,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdmmcsel {
         #[doc = "hclku selected as reference clock."]
-        HCLKU = 0x0,
+        Hclku = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic4_ck selected as reference clock."]
-        IC4 = 0x02,
+        Ic4 = 0x02,
         #[doc = "ic5_ck selected as reference clock."]
-        IC5 = 0x03,
+        Ic5 = 0x03,
     }
     impl Sdmmcsel {
         #[inline(always)]
@@ -40828,19 +40828,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spdifrxsel {
         #[doc = "pclk1 selected as reference clock."]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic7_ck selected as reference clock."]
-        IC7 = 0x02,
+        Ic7 = 0x02,
         #[doc = "ic8_ck selected as reference clock."]
-        IC8 = 0x03,
+        Ic8 = 0x03,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x04,
+        Msi = 0x04,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x05,
+        HsiDiv = 0x05,
         #[doc = "I2S_CKIN selected as reference clock."]
-        I2S_CKIN = 0x06,
+        I2sCkin = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Spdifrxsel {
@@ -40870,19 +40870,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spisel1 {
         #[doc = "pclk2 selected as reference clock."]
-        PCLK2 = 0x0,
+        Pclk2 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic8_ck selected as reference clock."]
-        IC8 = 0x02,
+        Ic8 = 0x02,
         #[doc = "ic9_ck selected as reference clock."]
-        IC9 = 0x03,
+        Ic9 = 0x03,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x04,
+        Msi = 0x04,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x05,
+        HsiDiv = 0x05,
         #[doc = "I2S_CKIN selected as reference clock."]
-        I2S_CKIN = 0x06,
+        I2sCkin = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Spisel1 {
@@ -40912,19 +40912,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spisel23 {
         #[doc = "pclk1 selected as reference clock."]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic8_ck selected as reference clock."]
-        IC8 = 0x02,
+        Ic8 = 0x02,
         #[doc = "ic9_ck selected as reference clock."]
-        IC9 = 0x03,
+        Ic9 = 0x03,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x04,
+        Msi = 0x04,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x05,
+        HsiDiv = 0x05,
         #[doc = "I2S_CKIN selected as reference clock."]
-        I2S_CKIN = 0x06,
+        I2sCkin = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Spisel23 {
@@ -40954,19 +40954,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spisel45 {
         #[doc = "pclk2 selected as reference clock."]
-        PCLK2 = 0x0,
+        Pclk2 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic9_ck selected as reference clock."]
-        IC9 = 0x02,
+        Ic9 = 0x02,
         #[doc = "ic14_ck selected as reference clock."]
-        IC14 = 0x03,
+        Ic14 = 0x03,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x04,
+        Msi = 0x04,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x05,
+        HsiDiv = 0x05,
         #[doc = "I2S_CKIN selected as reference clock."]
-        I2S_CKIN = 0x06,
+        I2sCkin = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Spisel45 {
@@ -40996,19 +40996,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spisel6 {
         #[doc = "pclk2 selected as reference clock."]
-        PCLK4 = 0x0,
+        Pclk4 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic8_ck selected as reference clock."]
-        IC8 = 0x02,
+        Ic8 = 0x02,
         #[doc = "ic9_ck selected as reference clock."]
-        IC9 = 0x03,
+        Ic9 = 0x03,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x04,
+        Msi = 0x04,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x05,
+        HsiDiv = 0x05,
         #[doc = "I2S_CKIN selected as reference clock."]
-        I2S_CKIN = 0x06,
+        I2sCkin = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Spisel6 {
@@ -41038,9 +41038,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Stopwuck {
         #[doc = "HSI selected as wake up clock from system Stop (default after reset)."]
-        HSI = 0x0,
+        Hsi = 0x0,
         #[doc = "CSI selected as wake up clock from system Stop."]
-        CSI = 0x01,
+        Csi = 0x01,
     }
     impl Stopwuck {
         #[inline(always)]
@@ -41069,9 +41069,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syslock {
         #[doc = "SYS configuration bits are accessible by non-lock software only (default after reset)."]
-        NON_LOCK = 0x0,
+        NonLock = 0x0,
         #[doc = "SYS configuration bits are accessible by lock software only."]
-        LOCK = 0x01,
+        Lock = 0x01,
     }
     impl Syslock {
         #[inline(always)]
@@ -41100,9 +41100,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syspub {
         #[doc = "SYS configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "SYS configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Syspub {
         #[inline(always)]
@@ -41131,9 +41131,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syspv {
         #[doc = "SYS configuration bits are accessible by non-privilege software only (default after reset)."]
-        NON_PRIVILEGE = 0x0,
+        NonPrivilege = 0x0,
         #[doc = "SYS configuration bits are accessible by privilege software only."]
-        PRIVILEGE = 0x01,
+        Privilege = 0x01,
     }
     impl Syspv {
         #[inline(always)]
@@ -41162,9 +41162,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syssec {
         #[doc = "SYS configuration bits are accessible by non-secure software only (default after reset)."]
-        NON_SECURE = 0x0,
+        NonSecure = 0x0,
         #[doc = "SYS configuration bits are accessible by secure software only."]
-        SECURE = 0x01,
+        Secure = 0x01,
     }
     impl Syssec {
         #[inline(always)]
@@ -41193,13 +41193,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syssw {
         #[doc = "hsi_ck selected as system clock (default after reset)."]
-        HSI = 0x0,
+        Hsi = 0x0,
         #[doc = "msi_ck selected as system clock."]
-        MSI = 0x01,
+        Msi = 0x01,
         #[doc = "hse_ck selected as system clock."]
-        HSE = 0x02,
+        Hse = 0x02,
         #[doc = "ic2_ck selected as system clock."]
-        IC2 = 0x03,
+        Ic2 = 0x03,
     }
     impl Syssw {
         #[inline(always)]
@@ -41228,13 +41228,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syssws {
         #[doc = "hsi_ck selected as system clock (default after reset)."]
-        HSI = 0x0,
+        Hsi = 0x0,
         #[doc = "msi_ck selected as system clock."]
-        MSI = 0x01,
+        Msi = 0x01,
         #[doc = "hse_ck selected as system clock."]
-        HSE = 0x02,
+        Hse = 0x02,
         #[doc = "ic2_ck selected as system clock."]
-        IC2 = 0x03,
+        Ic2 = 0x03,
     }
     impl Syssws {
         #[inline(always)]
@@ -41263,11 +41263,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Timpre {
         #[doc = "timg_ck = sys_bus_ck (default after reset)."]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "timg_ck = sys_bus_ck / 2."]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "timg_ck = sys_bus_ck / 4."]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Timpre {
@@ -41297,19 +41297,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Uart16910sel {
         #[doc = "pclk2 selected as reference clock."]
-        PCLK2 = 0x0,
+        Pclk2 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic9_ck selected as reference clock."]
-        IC9 = 0x02,
+        Ic9 = 0x02,
         #[doc = "ic14_ck selected as reference clock."]
-        IC14 = 0x03,
+        Ic14 = 0x03,
         #[doc = "lse_ck selected as reference clock."]
-        LSE = 0x04,
+        Lse = 0x04,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x05,
+        Msi = 0x05,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI_DIV = 0x06,
+        HsiDiv = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Uart16910sel {
@@ -41339,19 +41339,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Uart234578sel {
         #[doc = "pclk1 selected as reference clock."]
-        PCLK1 = 0x0,
+        Pclk1 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic9_ck selected as reference clock."]
-        IC9 = 0x02,
+        Ic9 = 0x02,
         #[doc = "ic14_ck selected as reference clock."]
-        IC14 = 0x03,
+        Ic14 = 0x03,
         #[doc = "lse_ck selected as reference clock."]
-        LSE = 0x04,
+        Lse = 0x04,
         #[doc = "msi_ck selected as reference clock."]
-        MSI = 0x05,
+        Msi = 0x05,
         #[doc = "hsi_div_ck selected as reference clock."]
-        HSI = 0x06,
+        Hsi = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Uart234578sel {
@@ -41381,9 +41381,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vencrampub {
         #[doc = "VENCRAM configuration bits are accessible by non-public software only (default after reset)."]
-        NON_PUBLIC = 0x0,
+        NonPublic = 0x0,
         #[doc = "VENCRAM configuration bits are accessible by public software only."]
-        PUBLIC = 0x01,
+        Public = 0x01,
     }
     impl Vencrampub {
         #[inline(always)]
@@ -41412,9 +41412,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupf {
         #[doc = "no wakeup interrupt caused by the PWR (default after reset)."]
-        NO_INTERRUPT = 0x0,
+        NoInterrupt = 0x0,
         #[doc = "wakeup interrupt caused by the PWR."]
-        INTERRUPT = 0x01,
+        Interrupt = 0x01,
     }
     impl Wkupf {
         #[inline(always)]
@@ -41443,9 +41443,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupfc {
         #[doc = "WKUPF not modified (default after reset)."]
-        NOT_MODIFIED = 0x0,
+        NotModified = 0x0,
         #[doc = "WKUPF cleared."]
-        CLEARED = 0x01,
+        Cleared = 0x01,
     }
     impl Wkupfc {
         #[inline(always)]
@@ -41474,9 +41474,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupie {
         #[doc = "Wakeup interrupt disabled (default after reset)."]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Wakeup interrupt enabled."]
-        ENABLED = 0x01,
+        Enabled = 0x01,
     }
     impl Wkupie {
         #[inline(always)]
@@ -41505,13 +41505,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Xspisel {
         #[doc = "hclk5 selected as reference clock."]
-        HCLK5 = 0x0,
+        Hclk5 = 0x0,
         #[doc = "per_ck selected as reference clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic3_ck selected as reference clock."]
-        IC3 = 0x02,
+        Ic3 = 0x02,
         #[doc = "ic4_ck selected as reference clock."]
-        IC4 = 0x03,
+        Ic4 = 0x03,
     }
     impl Xspisel {
         #[inline(always)]
@@ -41540,13 +41540,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Xspisels {
         #[doc = "hclk5 selected as XSPI1 clock (default after reset)."]
-        HCLK5 = 0x0,
+        Hclk5 = 0x0,
         #[doc = "per_ck selected as XSPI1 clock."]
-        PER = 0x01,
+        Per = 0x01,
         #[doc = "ic3_ck selected as XSPI1 clock."]
-        IC3 = 0x02,
+        Ic3 = 0x02,
         #[doc = "ic4_ck selected as XSPI1 clock."]
-        IC4 = 0x03,
+        Ic4 = 0x03,
     }
     impl Xspisels {
         #[inline(always)]

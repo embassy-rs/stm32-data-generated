@@ -1224,21 +1224,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Burst {
         #[doc = "Single transfer"]
-        SINGLE = 0x0,
+        Single = 0x0,
         #[doc = "Incremental burst of 4 beats"]
-        INCR4 = 0x01,
+        Incr4 = 0x01,
         #[doc = "Incremental burst of 8 beats"]
-        INCR8 = 0x02,
+        Incr8 = 0x02,
         #[doc = "Incremental burst of 16 beats"]
-        INCR16 = 0x03,
+        Incr16 = 0x03,
         #[doc = "Incremental burst of 32 beats"]
-        INCR32 = 0x04,
+        Incr32 = 0x04,
         #[doc = "Incremental burst of 64 beats"]
-        INCR64 = 0x05,
+        Incr64 = 0x05,
         #[doc = "Incremental burst of 128 beats"]
-        INCR128 = 0x06,
+        Incr128 = 0x06,
         #[doc = "Incremental burst of 256 beats"]
-        INCR256 = 0x07,
+        Incr256 = 0x07,
     }
     impl Burst {
         #[inline(always)]
@@ -1267,9 +1267,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bus {
         #[doc = "System/AXI bus"]
-        SYSTEM = 0x0,
+        System = 0x0,
         #[doc = "AHB bus/TCM"]
-        AHB = 0x01,
+        Ahb = 0x01,
     }
     impl Bus {
         #[inline(always)]
@@ -1298,13 +1298,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Incmode {
         #[doc = "Address pointer is fixed"]
-        FIXED = 0x0,
+        Fixed = 0x0,
         #[doc = "Reserved"]
-        RESERVED = 0x01,
+        Reserved = 0x01,
         #[doc = "Address pointer is incremented after each data transfer"]
-        INCREMENT = 0x02,
+        Increment = 0x02,
         #[doc = "Address pointer is decremented after each data transfer"]
-        DECREMENT = 0x03,
+        Decrement = 0x03,
     }
     impl Incmode {
         #[inline(always)]
@@ -1333,11 +1333,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pam {
         #[doc = "Right aligned, padded with 0s (default). If source data is larger than destination size, only LSB part of the source is written to the destination address. The reminder part is discarded"]
-        RIGHT_PADDED = 0x0,
+        RightPadded = 0x0,
         #[doc = "Right aligned, sign extended"]
-        RIGHT_SIGN_EXTENDED = 0x01,
+        RightSignExtended = 0x01,
         #[doc = "Left aligned (padded with 0s). if source data is larger than destination size, only MSB part of the source is written to the destination address. The reminder part is discarded"]
-        LEFT_PADDED = 0x02,
+        LeftPadded = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Pam {
@@ -1367,13 +1367,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pl {
         #[doc = "Low"]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "Medium"]
-        MEDIUM = 0x01,
+        Medium = 0x01,
         #[doc = "High"]
-        HIGH = 0x02,
+        High = 0x02,
         #[doc = "Very high"]
-        VERY_HIGH = 0x03,
+        VeryHigh = 0x03,
     }
     impl Pl {
         #[inline(always)]
@@ -1402,13 +1402,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trgm {
         #[doc = "Each MDMA request (software or hardware) triggers a buffer transfer"]
-        BUFFER = 0x0,
+        Buffer = 0x0,
         #[doc = "Each MDMA request (software or hardware) triggers a block transfer"]
-        BLOCK = 0x01,
+        Block = 0x01,
         #[doc = "Each MDMA request (software or hardware) triggers a repeated block transfer"]
-        REPEATED = 0x02,
+        Repeated = 0x02,
         #[doc = "Each MDMA request (software or hardware) triggers the transfer of the whole data for the respective channel (for example linked list) until the channel reach the end and it is disabled."]
-        WHOLE_DATA = 0x03,
+        WholeData = 0x03,
     }
     impl Trgm {
         #[inline(always)]
@@ -1437,9 +1437,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Updatemode {
         #[doc = "Add"]
-        ADD = 0x0,
+        Add = 0x0,
         #[doc = "Subtract"]
-        SUBTRACT = 0x01,
+        Subtract = 0x01,
     }
     impl Updatemode {
         #[inline(always)]
@@ -1468,13 +1468,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wordsize {
         #[doc = "Byte (8-bit)"]
-        BYTE = 0x0,
+        Byte = 0x0,
         #[doc = "HalfWord (16-bit)"]
-        HALF_WORD = 0x01,
+        HalfWord = 0x01,
         #[doc = "Word (32-bit)"]
-        WORD = 0x02,
+        Word = 0x02,
         #[doc = "DoubleWord (64-bit)"]
-        DOUBLE_WORD = 0x03,
+        DoubleWord = 0x03,
     }
     impl Wordsize {
         #[inline(always)]

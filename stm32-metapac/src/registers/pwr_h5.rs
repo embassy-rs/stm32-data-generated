@@ -1379,28 +1379,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "LEVEL0",
+                    name: "Level0",
                     description: Some(
                         "AVD level0 (VAVD0 ~ 1.7 V)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LEVEL1",
+                    name: "Level1",
                     description: Some(
                         "AVD level1 (VAVD1 ~ 2.1 V)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "LEVEL2",
+                    name: "Level2",
                     description: Some(
                         "AVD level2 (VAVD2 ~ 2.5 V)",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "LEVEL3",
+                    name: "Level3",
                     description: Some(
                         "AVD level3 (VAVD3 ~ 2.8 V)",
                     ),
@@ -1414,14 +1414,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "STANDBY",
+                    name: "Standby",
                     description: Some(
                         "Allows Standby mode when entering DeepSleep.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "STOP",
+                    name: "Stop",
                     description: Some(
                         "Keeps Stop mode when entering DeepSleep.",
                     ),
@@ -1435,56 +1435,56 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "LEVEL0",
+                    name: "Level0",
                     description: Some(
                         "PVD level0 (VPVD0 ~ 1.95 V)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LEVEL1",
+                    name: "Level1",
                     description: Some(
                         "PVD level1 (VPVD1 ~ 2.10 V)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "LEVEL2",
+                    name: "Level2",
                     description: Some(
                         "PVD level2 (VPVD2 ~ 2.25 V)",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "LEVEL3",
+                    name: "Level3",
                     description: Some(
                         "PVD level3 (VPVD3 ~ 2.40 V)",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "LEVEL4",
+                    name: "Level4",
                     description: Some(
                         "PVD level4 (VPVD4 ~ 2.55 V)",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "LEVEL5",
+                    name: "Level5",
                     description: Some(
                         "PVD level5 (VPVD5 ~ 2.70 V)",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "LEVEL6",
+                    name: "Level6",
                     description: Some(
                         "PVD level6 (VPVD6 ~ 2.85 V)",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "PVDIN_PIN",
+                    name: "PvdInPin",
                     description: Some(
                         "PVD_IN pin",
                     ),
@@ -1498,14 +1498,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOW_POWER",
+                    name: "LowPower",
                     description: Some(
                         "Enters low-power mode when the system enters Stop mode (low-power consumption).",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NORMAL",
+                    name: "Normal",
                     description: Some(
                         "Remains in normal mode when the system enters Stop mode (quick restart time).",
                     ),
@@ -1519,14 +1519,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOST",
+                    name: "Lost",
                     description: Some(
                         "Content is lost.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PRESERVED",
+                    name: "Preserved",
                     description: Some(
                         "Content is preserved.",
                     ),
@@ -1540,14 +1540,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "KEPT",
+                    name: "Kept",
                     description: Some(
                         "Content is kept.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOST",
+                    name: "Lost",
                     description: Some(
                         "Content is lost.",
                     ),
@@ -1561,21 +1561,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "SCALE3",
+                    name: "Scale3",
                     description: Some(
                         "SVOS3 scale 3 (default)",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "SCALE4",
+                    name: "Scale4",
                     description: Some(
                         "SVOS4 scale 4",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SCALE5",
+                    name: "Scale5",
                     description: Some(
                         "SVOS5 scale 5",
                     ),
@@ -1589,14 +1589,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "R1_5K_OHM",
+                    name: "R15kOhm",
                     description: Some(
                         "Charge VBAT through a 1.5 kΩ resistor.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "R5K_OHM",
+                    name: "R5kOhm",
                     description: Some(
                         "Charge VBAT through a 5 kΩ resistor.",
                     ),
@@ -1610,22 +1610,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "SCALE0",
+                    name: "Scale0",
                     description: None,
                     value: 3,
                 },
                 EnumVariant {
-                    name: "SCALE1",
+                    name: "Scale1",
                     description: None,
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SCALE2",
+                    name: "Scale2",
                     description: None,
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SCALE3",
+                    name: "Scale3",
                     description: None,
                     value: 0,
                 },
@@ -1637,14 +1637,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HIGH",
+                    name: "High",
                     description: Some(
                         "detection on high level (rising edge)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOW",
+                    name: "Low",
                     description: Some(
                         "detection on low level (falling edge)",
                     ),
@@ -1658,17 +1658,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NO_PULL_UP",
+                    name: "NoPullUp",
                     description: None,
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PULL_DOWN",
+                    name: "PullDown",
                     description: None,
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PULL_UP",
+                    name: "PullUp",
                     description: None,
                     value: 1,
                 },

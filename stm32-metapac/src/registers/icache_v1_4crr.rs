@@ -507,12 +507,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "INCREMENT",
+                    name: "Increment",
                     description: None,
                     value: 1,
                 },
                 EnumVariant {
-                    name: "WRAP",
+                    name: "Wrap",
                     description: None,
                     value: 0,
                 },
@@ -524,12 +524,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MASTER1SELECTED",
+                    name: "Master1selected",
                     description: None,
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MASTER2SELECTED",
+                    name: "Master2selected",
                     description: None,
                     value: 1,
                 },
@@ -541,37 +541,37 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "MEGA_BYTES128",
+                    name: "MegaBytes128",
                     description: None,
                     value: 7,
                 },
                 EnumVariant {
-                    name: "MEGA_BYTES16",
+                    name: "MegaBytes16",
                     description: None,
                     value: 4,
                 },
                 EnumVariant {
-                    name: "MEGA_BYTES2",
+                    name: "MegaBytes2",
                     description: None,
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MEGA_BYTES32",
+                    name: "MegaBytes32",
                     description: None,
                     value: 5,
                 },
                 EnumVariant {
-                    name: "MEGA_BYTES4",
+                    name: "MegaBytes4",
                     description: None,
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MEGA_BYTES64",
+                    name: "MegaBytes64",
                     description: None,
                     value: 6,
                 },
                 EnumVariant {
-                    name: "MEGA_BYTES8",
+                    name: "MegaBytes8",
                     description: None,
                     value: 3,
                 },
@@ -583,14 +583,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DIRECT_MAPPED",
+                    name: "DirectMapped",
                     description: Some(
                         "direct mapped cache (1-way cache)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NWAY_SET_ASSOCIATIVE",
+                    name: "NWaySetAssociative",
                     description: Some(
                         "n-way set associative cache (reset value)",
                     ),

@@ -1389,17 +1389,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Atcksel {
         #[doc = "RTCCLK is selected"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "RTCCLK/2 is selected when (PREDIV_A+1) = 128 (actually selects 1st flip flop output)"]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "RTCCLK/4 is selected when (PREDIV_A+1) = 128 (actually selects 2nd flip flop output)"]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         #[doc = "RTCCLK/128 is selected when (PREDIV_A+1) = 128 (actually selects 7th flip flop output)"]
-        DIV128 = 0x07,
+        Div128 = 0x07,
     }
     impl Atcksel {
         #[inline(always)]
@@ -1428,13 +1428,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tampflt {
         #[doc = "Tamper event is activated on edge of INx input transitions to the active level (no internal pull-up on INx input)."]
-        NO_FILTER = 0x0,
+        NoFilter = 0x0,
         #[doc = "Tamper event is activated after 2 consecutive samples at the active level."]
-        FILTER2 = 0x01,
+        Filter2 = 0x01,
         #[doc = "Tamper event is activated after 4 consecutive samples at the active level."]
-        FILTER4 = 0x02,
+        Filter4 = 0x02,
         #[doc = "Tamper event is activated after 8 consecutive samples at the active level."]
-        FILTER8 = 0x03,
+        Filter8 = 0x03,
     }
     impl Tampflt {
         #[inline(always)]
@@ -1463,21 +1463,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tampfreq {
         #[doc = "RTCCLK / 32768 (1 Hz when RTCCLK = 32768 Hz)"]
-        HZ_1 = 0x0,
+        Hz1 = 0x0,
         #[doc = "RTCCLK / 16384 (2 Hz when RTCCLK = 32768 Hz)"]
-        HZ_2 = 0x01,
+        Hz2 = 0x01,
         #[doc = "RTCCLK / 8192 (4 Hz when RTCCLK = 32768 Hz)"]
-        HZ_4 = 0x02,
+        Hz4 = 0x02,
         #[doc = "RTCCLK / 4096 (8 Hz when RTCCLK = 32768 Hz)"]
-        HZ_8 = 0x03,
+        Hz8 = 0x03,
         #[doc = "RTCCLK / 2048 (16 Hz when RTCCLK = 32768 Hz)"]
-        HZ_16 = 0x04,
+        Hz16 = 0x04,
         #[doc = "RTCCLK / 1024 (32 Hz when RTCCLK = 32768 Hz)"]
-        HZ_32 = 0x05,
+        Hz32 = 0x05,
         #[doc = "RTCCLK / 512 (64 Hz when RTCCLK = 32768 Hz)"]
-        HZ_64 = 0x06,
+        Hz64 = 0x06,
         #[doc = "RTCCLK / 256 (128 Hz when RTCCLK = 32768 Hz)"]
-        HZ_128 = 0x07,
+        Hz128 = 0x07,
     }
     impl Tampfreq {
         #[inline(always)]
@@ -1506,13 +1506,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tampprch {
         #[doc = "1 RTCCLK cycle"]
-        CYCLES1 = 0x0,
+        Cycles1 = 0x0,
         #[doc = "2 RTCCLK cycles"]
-        CYCLES2 = 0x01,
+        Cycles2 = 0x01,
         #[doc = "4 RTCCLK cycles"]
-        CYCLES4 = 0x02,
+        Cycles4 = 0x02,
         #[doc = "8 RTCCLK cycles"]
-        CYCLES8 = 0x03,
+        Cycles8 = 0x03,
     }
     impl Tampprch {
         #[inline(always)]
@@ -1541,9 +1541,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tamptrg {
         #[doc = "If TAMPFLT 00 Tamper 2 input staying low triggers a tamper detection event."]
-        FILTERED_LOW_OR_UNFILTERED_HIGH = 0x0,
+        FilteredLowOrUnfilteredHigh = 0x0,
         #[doc = "If TAMPFLT 00 Tamper 2 input staying high triggers a tamper detection event."]
-        FILTERED_HIGH_OR_UNFILTERED_LOW = 0x01,
+        FilteredHighOrUnfilteredLow = 0x01,
     }
     impl Tamptrg {
         #[inline(always)]

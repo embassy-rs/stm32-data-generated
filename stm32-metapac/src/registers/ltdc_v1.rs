@@ -1689,14 +1689,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "CONSTANT",
+                    name: "Constant",
                     description: Some(
                         "BF1 = constant alpha",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "PIXEL",
+                    name: "Pixel",
                     description: Some(
                         "BF1 = pixel alpha * constant alpha",
                     ),
@@ -1710,14 +1710,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "CONSTANT",
+                    name: "Constant",
                     description: Some(
                         "BF2 = 1 - constant alpha",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "PIXEL",
+                    name: "Pixel",
                     description: Some(
                         "BF2 = 1 - pixel alpha * constant alpha",
                     ),
@@ -1731,7 +1731,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CLEAR",
+                    name: "Clear",
                     description: Some(
                         "Clears the FUIF flag in the ISR register",
                     ),
@@ -1745,7 +1745,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CLEAR",
+                    name: "Clear",
                     description: Some(
                         "Clears the LIF flag in the ISR register",
                     ),
@@ -1759,7 +1759,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CLEAR",
+                    name: "Clear",
                     description: Some(
                         "Clears the RRIF flag in the ISR register",
                     ),
@@ -1773,7 +1773,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CLEAR",
+                    name: "Clear",
                     description: Some(
                         "Clears the TERRIF flag in the ISR register",
                     ),
@@ -1787,14 +1787,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE_HIGH",
+                    name: "ActiveHigh",
                     description: Some(
                         "Data enable polarity is active high",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ACTIVE_LOW",
+                    name: "ActiveLow",
                     description: Some(
                         "Data enable polarity is active low",
                     ),
@@ -1808,14 +1808,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE_HIGH",
+                    name: "ActiveHigh",
                     description: Some(
                         "Horizontal synchronization polarity is active high",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ACTIVE_LOW",
+                    name: "ActiveLow",
                     description: Some(
                         "Horizontal synchronization polarity is active low",
                     ),
@@ -1829,14 +1829,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NO_EFFECT",
+                    name: "NoEffect",
                     description: Some(
                         "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RELOAD",
+                    name: "Reload",
                     description: Some(
                         "The shadow registers are reloaded immediately. This bit is set by software and cleared only by hardware after reload",
                     ),
@@ -1850,14 +1850,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FALLING_EDGE",
+                    name: "FallingEdge",
                     description: Some(
                         "Pixel clock on falling edge",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RISING_EDGE",
+                    name: "RisingEdge",
                     description: Some(
                         "Pixel clock on rising edge",
                     ),
@@ -1871,35 +1871,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "AL44",
+                    name: "Al44",
                     description: Some(
                         "AL44 (4-bit alpha, 4-bit luminance)",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "AL88",
+                    name: "Al88",
                     description: Some(
                         "AL88 (8-bit alpha, 8-bit luminance)",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "ARGB1555",
+                    name: "Argb1555",
                     description: Some(
                         "ARGB1555",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "ARGB4444",
+                    name: "Argb4444",
                     description: Some(
                         "ARGB4444",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "ARGB8888",
+                    name: "Argb8888",
                     description: Some(
                         "ARGB8888",
                     ),
@@ -1913,14 +1913,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 5,
                 },
                 EnumVariant {
-                    name: "RGB565",
+                    name: "Rgb565",
                     description: Some(
                         "RGB565",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "RGB888",
+                    name: "Rgb888",
                     description: Some(
                         "RGB888",
                     ),
@@ -1934,14 +1934,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NO_EFFECT",
+                    name: "NoEffect",
                     description: Some(
                         "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RELOAD",
+                    name: "Reload",
                     description: Some(
                         "The shadow registers are reloaded during the vertical blanking period (at the beginning of the first line after the active display area).",
                     ),
@@ -1955,14 +1955,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE_HIGH",
+                    name: "ActiveHigh",
                     description: Some(
                         "Vertical synchronization polarity is active high",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ACTIVE_LOW",
+                    name: "ActiveLow",
                     description: Some(
                         "Vertical synchronization polarity is active low",
                     ),

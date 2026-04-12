@@ -1108,9 +1108,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AxiramWs {
         #[doc = "No wait state added when accessing any AXIRAM with ECC = 0."]
-        WS0 = 0x0,
+        Ws0 = 0x0,
         #[doc = "One wait state added when accessing any AXIRAM with ECC = 0. In this case, Fmax = 500 MHz is not guaranteed. (TBC)."]
-        WS1 = 0x01,
+        Ws1 = 0x01,
     }
     impl AxiramWs {
         #[inline(always)]
@@ -1139,11 +1139,11 @@ pub mod vals {
     pub struct DbgAuthHdpl(u8);
     impl DbgAuthHdpl {
         #[doc = "HDPL1."]
-        pub const HDPL1: Self = Self(0x51);
+        pub const Hdpl1: Self = Self(0x51);
         #[doc = "HDPL3."]
-        pub const HDPL3: Self = Self(0x6f);
+        pub const Hdpl3: Self = Self(0x6f);
         #[doc = "HDPL2."]
-        pub const HDPL2: Self = Self(0x8a);
+        pub const Hdpl2: Self = Self(0x8a);
     }
     impl DbgAuthHdpl {
         pub const fn from_bits(val: u8) -> DbgAuthHdpl {
@@ -1156,9 +1156,9 @@ pub mod vals {
     impl core::fmt::Debug for DbgAuthHdpl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x51 => f.write_str("HDPL1"),
-                0x6f => f.write_str("HDPL3"),
-                0x8a => f.write_str("HDPL2"),
+                0x51 => f.write_str("Hdpl1"),
+                0x6f => f.write_str("Hdpl3"),
+                0x8a => f.write_str("Hdpl2"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -1167,9 +1167,9 @@ pub mod vals {
     impl defmt::Format for DbgAuthHdpl {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x51 => defmt::write!(f, "HDPL1"),
-                0x6f => defmt::write!(f, "HDPL3"),
-                0x8a => defmt::write!(f, "HDPL2"),
+                0x51 => defmt::write!(f, "Hdpl1"),
+                0x6f => defmt::write!(f, "Hdpl3"),
+                0x8a => defmt::write!(f, "Hdpl2"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -1191,7 +1191,7 @@ pub mod vals {
     pub struct DbgcfgLock(u8);
     impl DbgcfgLock {
         #[doc = "Writes to SBS_DBGCR allowed (default)."]
-        pub const UNLOCK: Self = Self(0xb4);
+        pub const Unlock: Self = Self(0xb4);
     }
     impl DbgcfgLock {
         pub const fn from_bits(val: u8) -> DbgcfgLock {
@@ -1204,7 +1204,7 @@ pub mod vals {
     impl core::fmt::Debug for DbgcfgLock {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0xb4 => f.write_str("UNLOCK"),
+                0xb4 => f.write_str("Unlock"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -1213,7 +1213,7 @@ pub mod vals {
     impl defmt::Format for DbgcfgLock {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0xb4 => defmt::write!(f, "UNLOCK"),
+                0xb4 => defmt::write!(f, "Unlock"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -1235,12 +1235,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EthSelPhy {
         #[doc = "GMII or MII"]
-        MII_GMII = 0x0,
+        MiiGmii = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "RMII"]
-        RMII = 0x04,
+        Rmii = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -1272,11 +1272,11 @@ pub mod vals {
     pub struct Hdpl(u8);
     impl Hdpl {
         #[doc = "HDPL1."]
-        pub const HDPL1: Self = Self(0x51);
+        pub const Hdpl1: Self = Self(0x51);
         #[doc = "HDPL2."]
-        pub const HDPL2: Self = Self(0x8a);
+        pub const Hdpl2: Self = Self(0x8a);
         #[doc = "HDPL0, corresponding to ST-RSS (default when device is close)."]
-        pub const HDPL0: Self = Self(0xb4);
+        pub const Hdpl0: Self = Self(0xb4);
     }
     impl Hdpl {
         pub const fn from_bits(val: u8) -> Hdpl {
@@ -1289,9 +1289,9 @@ pub mod vals {
     impl core::fmt::Debug for Hdpl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x51 => f.write_str("HDPL1"),
-                0x8a => f.write_str("HDPL2"),
-                0xb4 => f.write_str("HDPL0"),
+                0x51 => f.write_str("Hdpl1"),
+                0x8a => f.write_str("Hdpl2"),
+                0xb4 => f.write_str("Hdpl0"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -1300,9 +1300,9 @@ pub mod vals {
     impl defmt::Format for Hdpl {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x51 => defmt::write!(f, "HDPL1"),
-                0x8a => defmt::write!(f, "HDPL2"),
-                0xb4 => defmt::write!(f, "HDPL0"),
+                0x51 => defmt::write!(f, "Hdpl1"),
+                0x8a => defmt::write!(f, "Hdpl2"),
+                0xb4 => defmt::write!(f, "Hdpl0"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }

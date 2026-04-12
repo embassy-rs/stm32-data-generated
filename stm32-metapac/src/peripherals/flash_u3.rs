@@ -196,7 +196,7 @@ impl Flash {
     }
     #[doc = "FLASH HDP extension register."]
     #[inline(always)]
-    pub const fn sechdpex_tr(self) -> crate::common::Reg<regs::SechdpexTr, crate::common::RW> {
+    pub const fn sechdp_ex_tr(self) -> crate::common::Reg<regs::SechdpExTr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xc8usize) as _) }
     }
     #[doc = "FLASH privilege block-based bank 1 register 1."]
@@ -9024,6 +9024,61 @@ bytes key."]
             defmt :: write ! (f , "Secbb2r4 {{ sec0: {=bool:?}, sec1: {=bool:?}, sec2: {=bool:?}, sec3: {=bool:?}, sec4: {=bool:?}, sec5: {=bool:?}, sec6: {=bool:?}, sec7: {=bool:?}, sec8: {=bool:?}, sec9: {=bool:?}, sec10: {=bool:?}, sec11: {=bool:?}, sec12: {=bool:?}, sec13: {=bool:?}, sec14: {=bool:?}, sec15: {=bool:?}, sec16: {=bool:?}, sec17: {=bool:?}, sec18: {=bool:?}, sec19: {=bool:?}, sec20: {=bool:?}, sec21: {=bool:?}, sec22: {=bool:?}, sec23: {=bool:?}, sec24: {=bool:?}, sec25: {=bool:?}, sec26: {=bool:?}, sec27: {=bool:?}, sec28: {=bool:?}, sec29: {=bool:?}, sec30: {=bool:?}, sec31: {=bool:?} }}" , self . sec0 () , self . sec1 () , self . sec2 () , self . sec3 () , self . sec4 () , self . sec5 () , self . sec6 () , self . sec7 () , self . sec8 () , self . sec9 () , self . sec10 () , self . sec11 () , self . sec12 () , self . sec13 () , self . sec14 () , self . sec15 () , self . sec16 () , self . sec17 () , self . sec18 () , self . sec19 () , self . sec20 () , self . sec21 () , self . sec22 () , self . sec23 () , self . sec24 () , self . sec25 () , self . sec26 () , self . sec27 () , self . sec28 () , self . sec29 () , self . sec30 () , self . sec31 ())
         }
     }
+    #[doc = "FLASH HDP extension register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct SechdpExTr(pub u32);
+    impl SechdpExTr {
+        #[doc = "HDP area extension in 4-Kbyte pages in bank 1."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hdp1_ex_t(&self) -> u8 {
+            let val = (self.0 >> 0usize) & 0xff;
+            val as u8
+        }
+        #[doc = "HDP area extension in 4-Kbyte pages in bank 1."]
+        #[inline(always)]
+        pub const fn set_hdp1_ex_t(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        }
+        #[doc = "HDP area extension in 4-Kbyte pages in bank 2."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hdp2_ex_t(&self) -> u8 {
+            let val = (self.0 >> 16usize) & 0xff;
+            val as u8
+        }
+        #[doc = "HDP area extension in 4-Kbyte pages in bank 2."]
+        #[inline(always)]
+        pub const fn set_hdp2_ex_t(&mut self, val: u8) {
+            self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
+        }
+    }
+    impl Default for SechdpExTr {
+        #[inline(always)]
+        fn default() -> SechdpExTr {
+            SechdpExTr(0)
+        }
+    }
+    impl core::fmt::Debug for SechdpExTr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SechdpExTr")
+                .field("hdp1_ex_t", &self.hdp1_ex_t())
+                .field("hdp2_ex_t", &self.hdp2_ex_t())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SechdpExTr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SechdpExTr {{ hdp1_ex_t: {=u8:?}, hdp2_ex_t: {=u8:?} }}",
+                self.hdp1_ex_t(),
+                self.hdp2_ex_t()
+            )
+        }
+    }
     #[doc = "FLASH secure HDP control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -9098,61 +9153,6 @@ bytes key."]
     impl defmt::Format for Sechdpcr {
         fn format(&self, f: defmt::Formatter) {
             defmt :: write ! (f , "Sechdpcr {{ hdp1_accdis: {=u8:?}, hdp2_accdis: {=u8:?}, hdp1ex_t_accdis: {=u8:?}, hdp2ex_t_accdis: {=u8:?} }}" , self . hdp1_accdis () , self . hdp2_accdis () , self . hdp1ex_t_accdis () , self . hdp2ex_t_accdis ())
-        }
-    }
-    #[doc = "FLASH HDP extension register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SechdpexTr(pub u32);
-    impl SechdpexTr {
-        #[doc = "HDP area extension in 4-Kbyte pages in bank 1."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn hdp1_ex_t(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
-            val as u8
-        }
-        #[doc = "HDP area extension in 4-Kbyte pages in bank 1."]
-        #[inline(always)]
-        pub const fn set_hdp1_ex_t(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
-        }
-        #[doc = "HDP area extension in 4-Kbyte pages in bank 2."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn hdp2_ex_t(&self) -> u8 {
-            let val = (self.0 >> 16usize) & 0xff;
-            val as u8
-        }
-        #[doc = "HDP area extension in 4-Kbyte pages in bank 2."]
-        #[inline(always)]
-        pub const fn set_hdp2_ex_t(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
-        }
-    }
-    impl Default for SechdpexTr {
-        #[inline(always)]
-        fn default() -> SechdpexTr {
-            SechdpexTr(0)
-        }
-    }
-    impl core::fmt::Debug for SechdpexTr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SechdpexTr")
-                .field("hdp1_ex_t", &self.hdp1_ex_t())
-                .field("hdp2_ex_t", &self.hdp2_ex_t())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for SechdpexTr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "SechdpexTr {{ hdp1_ex_t: {=u8:?}, hdp2_ex_t: {=u8:?} }}",
-                self.hdp1_ex_t(),
-                self.hdp2_ex_t()
-            )
         }
     }
     #[doc = "FLASH secure watermark1 register 1."]
@@ -10040,15 +10040,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BorLev {
         #[doc = "BOR level 0 (reset level threshold around 1."]
-        LEVEL0 = 0x0,
+        Level0 = 0x0,
         #[doc = "BOR level 1 (reset level threshold around 2."]
-        LEVEL1 = 0x01,
+        Level1 = 0x01,
         #[doc = "BOR level 2 (reset level threshold around 2."]
-        LEVEL2 = 0x02,
+        Level2 = 0x02,
         #[doc = "BOR level 3 (reset level threshold around 2."]
-        LEVEL3 = 0x03,
+        Level3 = 0x03,
         #[doc = "BOR level 4 (reset level threshold around 2."]
-        LEVEL4 = 0x04,
+        Level4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -10080,19 +10080,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CodeOp {
         #[doc = "No flash operation interrupted by previous reset."]
-        NO_FLASH_INT = 0x0,
+        NoFlashInt = 0x0,
         #[doc = "Single write operation interrupted."]
-        SINGLE_WR_INT = 0x01,
+        SingleWrInt = 0x01,
         #[doc = "Burst write operation interrupted."]
-        BURST_WR_INT = 0x02,
+        BurstWrInt = 0x02,
         #[doc = "Page erase operation interrupted."]
-        PG_ERASE_INT = 0x03,
+        PgEraseInt = 0x03,
         #[doc = "Bank erase operation interrupted."]
-        BANK_ERASE_INT = 0x04,
+        BankEraseInt = 0x04,
         #[doc = "Mass erase operation interrupted."]
-        MASS_ERASE_INT = 0x05,
+        MassEraseInt = 0x05,
         #[doc = "Option change operation interrupted."]
-        OPT_CHANGE_INT = 0x06,
+        OptChangeInt = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl CodeOp {
@@ -10122,11 +10122,11 @@ pub mod vals {
     pub struct Rdp(u8);
     impl Rdp {
         #[doc = "Level 0."]
-        pub const LEVEL0: Self = Self(0x55);
+        pub const Level0: Self = Self(0x55);
         #[doc = "Level 0 (readout protection not active)."]
-        pub const LEVEL0ROPROT_ACTIVE: Self = Self(0xaa);
+        pub const Level0roProtActive: Self = Self(0xaa);
         #[doc = "Level 2 (chip readout protection active)."]
-        pub const LEVEL2: Self = Self(0xcc);
+        pub const Level2: Self = Self(0xcc);
     }
     impl Rdp {
         pub const fn from_bits(val: u8) -> Rdp {
@@ -10139,9 +10139,9 @@ pub mod vals {
     impl core::fmt::Debug for Rdp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x55 => f.write_str("LEVEL0"),
-                0xaa => f.write_str("LEVEL0ROPROT_ACTIVE"),
-                0xcc => f.write_str("LEVEL2"),
+                0x55 => f.write_str("Level0"),
+                0xaa => f.write_str("Level0roProtActive"),
+                0xcc => f.write_str("Level2"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -10150,9 +10150,9 @@ pub mod vals {
     impl defmt::Format for Rdp {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x55 => defmt::write!(f, "LEVEL0"),
-                0xaa => defmt::write!(f, "LEVEL0ROPROT_ACTIVE"),
-                0xcc => defmt::write!(f, "LEVEL2"),
+                0x55 => defmt::write!(f, "Level0"),
+                0xaa => defmt::write!(f, "Level0roProtActive"),
+                0xcc => defmt::write!(f, "Level2"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }

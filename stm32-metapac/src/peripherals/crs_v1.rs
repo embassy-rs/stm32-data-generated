@@ -497,11 +497,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syncsrc {
         #[doc = "GPIO selected as SYNC signal source"]
-        GPIO = 0x0,
+        Gpio = 0x0,
         #[doc = "LSE selected as SYNC signal source"]
-        LSE = 0x01,
+        Lse = 0x01,
         #[doc = "USB SOF selected as SYNC signal source"]
-        USB = 0x02,
+        Usb = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Syncsrc {

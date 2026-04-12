@@ -437,9 +437,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckpol {
         #[doc = "Falling edge active for inputs or rising edge active for outputs."]
-        FALLING_EDGE = 0x0,
+        FallingEdge = 0x0,
         #[doc = "Rising edge active for inputs or falling edge active for outputs."]
-        RISING_EDGE = 0x01,
+        RisingEdge = 0x01,
     }
     impl Ckpol {
         #[inline(always)]
@@ -468,9 +468,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Depol {
         #[doc = "PSSI_DE active low (0 indicates that data is valid)."]
-        ACTIVE_LOW = 0x0,
+        ActiveLow = 0x0,
         #[doc = "PSSI_DE active high (1 indicates that data is valid)."]
-        ACTIVE_HIGH = 0x01,
+        ActiveHigh = 0x01,
     }
     impl Depol {
         #[inline(always)]
@@ -499,21 +499,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Derdycfg {
         #[doc = "PSSI_DE and PSSI_RDY both disabled."]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Only PSSI_RDY enabled."]
-        RDY = 0x01,
+        Rdy = 0x01,
         #[doc = "Only PSSI_DE enabled."]
-        DE = 0x02,
+        De = 0x02,
         #[doc = "Both PSSI_RDY and PSSI_DE alternate functions enabled."]
-        RDY_DE_ALT = 0x03,
+        RdyDeAlt = 0x03,
         #[doc = "Both PSSI_RDY and PSSI_DE features enabled - bidirectional on PSSI_RDY pin."]
-        RDY_DE = 0x04,
+        RdyDe = 0x04,
         #[doc = "Only PSSI_RDY function enabled, but mapped to PSSI_DE pin."]
-        RDY_REMAPPED = 0x05,
+        RdyRemapped = 0x05,
         #[doc = "Only PSSI_DE function enabled, but mapped to PSSI_RDY pin."]
-        DE_REMAPPED = 0x06,
+        DeRemapped = 0x06,
         #[doc = "Both PSSI_RDY and PSSI_DE features enabled - bidirectional on PSSI_DE pin."]
-        RDY_DE_BIDI = 0x07,
+        RdyDeBidi = 0x07,
     }
     impl Derdycfg {
         #[inline(always)]
@@ -542,11 +542,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Edm {
         #[doc = "Interface captures 8-bit data on every parallel data clock."]
-        BIT_WIDTH8 = 0x0,
+        BitWidth8 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "The interface captures 16-bit data on every parallel data clock."]
-        BIT_WIDTH16 = 0x03,
+        BitWidth16 = 0x03,
     }
     impl Edm {
         #[inline(always)]
@@ -575,9 +575,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Outen {
         #[doc = "Data is input synchronously with PSSI_PDCK."]
-        RECEIVE_MODE = 0x0,
+        ReceiveMode = 0x0,
         #[doc = "Data is output synchronously with PSSI_PDCK."]
-        TRANSMIT_MODE = 0x01,
+        TransmitMode = 0x01,
     }
     impl Outen {
         #[inline(always)]
@@ -606,9 +606,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rdypol {
         #[doc = "PSSI_RDY active low (0 indicates that the receiver is ready to receive)."]
-        ACTIVE_LOW = 0x0,
+        ActiveLow = 0x0,
         #[doc = "PSSI_RDY active high (1 indicates that the receiver is ready to receive)."]
-        ACTIVE_HIGH = 0x01,
+        ActiveHigh = 0x01,
     }
     impl Rdypol {
         #[inline(always)]

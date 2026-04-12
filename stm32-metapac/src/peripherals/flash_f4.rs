@@ -570,37 +570,37 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Latency {
         #[doc = "0 wait states"]
-        WS0 = 0x0,
+        Ws0 = 0x0,
         #[doc = "1 wait states"]
-        WS1 = 0x01,
+        Ws1 = 0x01,
         #[doc = "2 wait states"]
-        WS2 = 0x02,
+        Ws2 = 0x02,
         #[doc = "3 wait states"]
-        WS3 = 0x03,
+        Ws3 = 0x03,
         #[doc = "4 wait states"]
-        WS4 = 0x04,
+        Ws4 = 0x04,
         #[doc = "5 wait states"]
-        WS5 = 0x05,
+        Ws5 = 0x05,
         #[doc = "6 wait states"]
-        WS6 = 0x06,
+        Ws6 = 0x06,
         #[doc = "7 wait states"]
-        WS7 = 0x07,
+        Ws7 = 0x07,
         #[doc = "8 wait states"]
-        WS8 = 0x08,
+        Ws8 = 0x08,
         #[doc = "9 wait states"]
-        WS9 = 0x09,
+        Ws9 = 0x09,
         #[doc = "10 wait states"]
-        WS10 = 0x0a,
+        Ws10 = 0x0a,
         #[doc = "11 wait states"]
-        WS11 = 0x0b,
+        Ws11 = 0x0b,
         #[doc = "12 wait states"]
-        WS12 = 0x0c,
+        Ws12 = 0x0c,
         #[doc = "13 wait states"]
-        WS13 = 0x0d,
+        Ws13 = 0x0d,
         #[doc = "14 wait states"]
-        WS14 = 0x0e,
+        Ws14 = 0x0e,
         #[doc = "15 wait states"]
-        WS15 = 0x0f,
+        Ws15 = 0x0f,
     }
     impl Latency {
         #[inline(always)]
@@ -629,13 +629,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Psize {
         #[doc = "Program x8"]
-        PSIZE8 = 0x0,
+        Psize8 = 0x0,
         #[doc = "Program x16"]
-        PSIZE16 = 0x01,
+        Psize16 = 0x01,
         #[doc = "Program x32"]
-        PSIZE32 = 0x02,
+        Psize32 = 0x02,
         #[doc = "Program x64"]
-        PSIZE64 = 0x03,
+        Psize64 = 0x03,
     }
     impl Psize {
         #[inline(always)]

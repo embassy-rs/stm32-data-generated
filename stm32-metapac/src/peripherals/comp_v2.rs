@@ -187,21 +187,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Blanking {
         #[doc = "No blanking."]
-        NO_BLANKING = 0x0,
+        NoBlanking = 0x0,
         #[doc = "Check data sheet for blanking options"]
-        BLANK1 = 0x01,
+        Blank1 = 0x01,
         #[doc = "Check data sheet for blanking options"]
-        BLANK2 = 0x02,
+        Blank2 = 0x02,
         #[doc = "Check data sheet for blanking options"]
-        BLANK3 = 0x03,
+        Blank3 = 0x03,
         #[doc = "Check data sheet for blanking options"]
-        BLANK4 = 0x04,
+        Blank4 = 0x04,
         #[doc = "Check data sheet for blanking options"]
-        BLANK5 = 0x05,
+        Blank5 = 0x05,
         #[doc = "Check data sheet for blanking options"]
-        BLANK6 = 0x06,
+        Blank6 = 0x06,
         #[doc = "Check data sheet for blanking options"]
-        BLANK7 = 0x07,
+        Blank7 = 0x07,
     }
     impl Blanking {
         #[inline(always)]
@@ -229,21 +229,21 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hysteresis {
-        NONE = 0x0,
+        None = 0x0,
         #[doc = "10mV hysteresis"]
-        HYST10M = 0x01,
+        Hyst10m = 0x01,
         #[doc = "20mV hysteresis"]
-        HYST20M = 0x02,
+        Hyst20m = 0x02,
         #[doc = "30mV hysteresis"]
-        HYST30M = 0x03,
+        Hyst30m = 0x03,
         #[doc = "40mV hysteresis"]
-        HYST40M = 0x04,
+        Hyst40m = 0x04,
         #[doc = "50mV hysteresis"]
-        HYST50M = 0x05,
+        Hyst50m = 0x05,
         #[doc = "60mV hysteresis"]
-        HYST60M = 0x06,
+        Hyst60m = 0x06,
         #[doc = "70mV hysteresis"]
-        HYST70M = 0x07,
+        Hyst70m = 0x07,
     }
     impl Hysteresis {
         #[inline(always)]
@@ -272,21 +272,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Inm {
         #[doc = "Inverting input set to 1/4 VRef"]
-        QUARTER_VREF = 0x0,
+        QuarterVRef = 0x0,
         #[doc = "Inverting input set to 1/2 VRef"]
-        HALF_VREF = 0x01,
+        HalfVRef = 0x01,
         #[doc = "Inverting input set to 3/4 VRef"]
-        THREE_QUARTER_VREF = 0x02,
+        ThreeQuarterVRef = 0x02,
         #[doc = "Inverting input set to VRef"]
-        VREF = 0x03,
+        VRef = 0x03,
         #[doc = "Inverting input set to DAC output (RM0440 24.3.2 Table)"]
-        DACA = 0x04,
+        Daca = 0x04,
         #[doc = "Inverting input set to DAC output (RM0440 24.3.2 Table)"]
-        DACB = 0x05,
+        Dacb = 0x05,
         #[doc = "Inverting input set to IO (RM0440 24.3.2 Table)"]
-        INM1 = 0x06,
+        Inm1 = 0x06,
         #[doc = "Inverting input set to IO (RM0440 24.3.2 Table)"]
-        INM2 = 0x07,
+        Inm2 = 0x07,
     }
     impl Inm {
         #[inline(always)]
@@ -315,9 +315,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Polarity {
         #[doc = "Output is not inverted."]
-        NOT_INVERTED = 0x0,
+        NotInverted = 0x0,
         #[doc = "Output is inverted."]
-        INVERTED = 0x01,
+        Inverted = 0x01,
     }
     impl Polarity {
         #[inline(always)]

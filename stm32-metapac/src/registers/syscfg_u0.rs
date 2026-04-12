@@ -2564,21 +2564,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "TIM16",
+                    name: "Tim16",
                     description: Some(
                         "TIM16",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "USART1",
+                    name: "Usart1",
                     description: Some(
                         "USART1",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "USART2",
+                    name: "Usart2",
                     description: Some(
                         "USART2",
                     ),
@@ -2592,14 +2592,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "SRAM",
+                    name: "Sram",
                     description: Some(
                         "Embedded SRAM mapped at 0x000010000",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "SYSTEM_FLASH",
+                    name: "SystemFlash",
                     description: Some(
                         "System flash memory mapped at 0x000010000",
                     ),

@@ -529,9 +529,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtoff {
         #[doc = "Last write operation on RTC registers is still ongoing"]
-        ONGOING = 0x0,
+        Ongoing = 0x0,
         #[doc = "Last write operation on RTC registers terminated"]
-        TERMINATED = 0x01,
+        Terminated = 0x01,
     }
     impl Rtoff {
         #[inline(always)]

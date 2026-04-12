@@ -1085,17 +1085,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "Disabled",
                     description: Some("ADC voltage regulator disabled"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "Enabled",
                     description: Some("ADC voltage regulator enabled"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "INTERMEDIATE",
+                    name: "Intermediate",
                     description: Some(
                         "Intermediate state required when moving the ADC voltage regulator between states",
                     ),
@@ -1109,12 +1109,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LEFT",
+                    name: "Left",
                     description: Some("Left alignment"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RIGHT",
+                    name: "Right",
                     description: Some("Right alignment"),
                     value: 0,
                 },
@@ -1126,12 +1126,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ALL",
+                    name: "All",
                     description: Some("Analog watchdog 1 enabled on all channels"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SINGLE",
+                    name: "Single",
                     description: Some("Analog watchdog 1 enabled on single channel selected in AWD1CH"),
                     value: 1,
                 },
@@ -1143,12 +1143,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DIFFERENTIAL",
+                    name: "Differential",
                     description: Some("Input channel is configured in differential mode"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SINGLE_ENDED",
+                    name: "SingleEnded",
                     description: Some("Input channel is configured in single-ended mode"),
                     value: 0,
                 },
@@ -1160,12 +1160,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CIRCULAR",
+                    name: "Circular",
                     description: Some("DMA Circular mode selected"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ONE_SHOT",
+                    name: "OneShot",
                     description: Some("DMA One Shot mode selected"),
                     value: 0,
                 },
@@ -1177,22 +1177,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BOTH_EDGES",
+                    name: "BothEdges",
                     description: Some("Trigger detection on both the rising and falling edges"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "Disabled",
                     description: Some("Trigger detection disabled"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FALLING_EDGE",
+                    name: "FallingEdge",
                     description: Some("Trigger detection on the falling edge"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "RISING_EDGE",
+                    name: "RisingEdge",
                     description: Some("Trigger detection on the rising edge"),
                     value: 1,
                 },
@@ -1204,12 +1204,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MODE0",
+                    name: "Mode0",
                     description: Some("JSQR Mode 0: Queue maintains the last written configuration into JSQR"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MODE1",
+                    name: "Mode1",
                     description: Some(
                         "JSQR Mode 1: An empty queue disables software and hardware triggers of the injected sequence",
                     ),
@@ -1223,22 +1223,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BITS10",
+                    name: "Bits10",
                     description: Some("10-bit resolution"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "BITS12",
+                    name: "Bits12",
                     description: Some("12-bit resolution"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BITS6",
+                    name: "Bits6",
                     description: Some("6-bit resolution"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "BITS8",
+                    name: "Bits8",
                     description: Some("8-bit resolution"),
                     value: 2,
                 },
@@ -1250,42 +1250,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "CYCLES181_5",
-                    description: Some("181.5 ADC clock cycles"),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "CYCLES19_5",
-                    description: Some("19.5 ADC clock cycles"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "CYCLES1_5",
+                    name: "Cycles15",
                     description: Some("1.5 ADC clock cycles"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CYCLES2_5",
+                    name: "Cycles1815",
+                    description: Some("181.5 ADC clock cycles"),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "Cycles195",
+                    description: Some("19.5 ADC clock cycles"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "Cycles25",
                     description: Some("2.5 ADC clock cycles"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "CYCLES4_5",
+                    name: "Cycles45",
                     description: Some("4.5 ADC clock cycles"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "CYCLES601_5",
+                    name: "Cycles6015",
                     description: Some("601.5 ADC clock cycles"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "CYCLES61_5",
+                    name: "Cycles615",
                     description: Some("61.5 ADC clock cycles"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "CYCLES7_5",
+                    name: "Cycles75",
                     description: Some("7.5 ADC clock cycles"),
                     value: 3,
                 },

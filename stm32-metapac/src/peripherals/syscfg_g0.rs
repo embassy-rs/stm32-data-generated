@@ -305,13 +305,13 @@ pub mod regs {
         #[doc = "Fast Mode Plus (FM+) driving capability activation bits"]
         #[must_use]
         #[inline(always)]
-        pub const fn i2c_pbx_fmp(&self) -> u8 {
+        pub const fn i2c_p_bx_fmp(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x0f;
             val as u8
         }
         #[doc = "Fast Mode Plus (FM+) driving capability activation bits"]
         #[inline(always)]
-        pub const fn set_i2c_pbx_fmp(&mut self, val: u8) {
+        pub const fn set_i2c_p_bx_fmp(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 16usize)) | (((val as u32) & 0x0f) << 16usize);
         }
         #[doc = "FM+ driving capability activation for I2C1"]
@@ -341,13 +341,13 @@ pub mod regs {
         #[doc = "Fast Mode Plus (FM+) driving capability activation bits"]
         #[must_use]
         #[inline(always)]
-        pub const fn i2c_pax_fmp(&self) -> u8 {
+        pub const fn i2c_p_ax_fmp(&self) -> u8 {
             let val = (self.0 >> 22usize) & 0x03;
             val as u8
         }
         #[doc = "Fast Mode Plus (FM+) driving capability activation bits"]
         #[inline(always)]
-        pub const fn set_i2c_pax_fmp(&mut self, val: u8) {
+        pub const fn set_i2c_p_ax_fmp(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 22usize)) | (((val as u32) & 0x03) << 22usize);
         }
     }
@@ -368,17 +368,17 @@ pub mod regs {
                 .field("boosten", &self.boosten())
                 .field("ucpd1_strobe", &self.ucpd1_strobe())
                 .field("ucpd2_strobe", &self.ucpd2_strobe())
-                .field("i2c_pbx_fmp", &self.i2c_pbx_fmp())
+                .field("i2c_p_bx_fmp", &self.i2c_p_bx_fmp())
                 .field("i2c1_fmp", &self.i2c1_fmp())
                 .field("i2c2_fmp", &self.i2c2_fmp())
-                .field("i2c_pax_fmp", &self.i2c_pax_fmp())
+                .field("i2c_p_ax_fmp", &self.i2c_p_ax_fmp())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ mem_mode: {:?}, pa11_rmp: {=bool:?}, pa12_rmp: {=bool:?}, ir_pol: {=bool:?}, ir_mod: {=u8:?}, boosten: {=bool:?}, ucpd1_strobe: {=bool:?}, ucpd2_strobe: {=bool:?}, i2c_pbx_fmp: {=u8:?}, i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c_pax_fmp: {=u8:?} }}" , self . mem_mode () , self . pa11_rmp () , self . pa12_rmp () , self . ir_pol () , self . ir_mod () , self . boosten () , self . ucpd1_strobe () , self . ucpd2_strobe () , self . i2c_pbx_fmp () , self . i2c1_fmp () , self . i2c2_fmp () , self . i2c_pax_fmp ())
+            defmt :: write ! (f , "Cfgr1 {{ mem_mode: {:?}, pa11_rmp: {=bool:?}, pa12_rmp: {=bool:?}, ir_pol: {=bool:?}, ir_mod: {=u8:?}, boosten: {=bool:?}, ucpd1_strobe: {=bool:?}, ucpd2_strobe: {=bool:?}, i2c_p_bx_fmp: {=u8:?}, i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c_p_ax_fmp: {=u8:?} }}" , self . mem_mode () , self . pa11_rmp () , self . pa12_rmp () , self . ir_pol () , self . ir_mod () , self . boosten () , self . ucpd1_strobe () , self . ucpd2_strobe () , self . i2c_p_bx_fmp () , self . i2c1_fmp () , self . i2c2_fmp () , self . i2c_p_ax_fmp ())
         }
     }
     #[doc = "configuration register 1"]
@@ -2348,13 +2348,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MemMode {
         #[doc = "Main Flash memory mapped at address 0"]
-        MAIN_FLASH = 0x0,
+        MainFlash = 0x0,
         #[doc = "System Flash memory mapped at address 0"]
-        SYSTEM_FLASH = 0x01,
+        SystemFlash = 0x01,
         #[doc = "Main Flash memory mapped at address 0 (alternate encoding)"]
-        MAIN_FLASH_ALT = 0x02,
+        MainFlashAlt = 0x02,
         #[doc = "Embedded SRAM mapped at address 0"]
-        SRAM = 0x03,
+        Sram = 0x03,
     }
     impl MemMode {
         #[inline(always)]

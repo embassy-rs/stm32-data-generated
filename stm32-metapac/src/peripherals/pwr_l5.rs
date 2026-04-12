@@ -1106,15 +1106,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpms {
         #[doc = "Stop 0 mode"]
-        STOP0 = 0x0,
+        Stop0 = 0x0,
         #[doc = "Stop 1 mode"]
-        STOP1 = 0x01,
+        Stop1 = 0x01,
         #[doc = "Stop 2 mode"]
-        STOP2 = 0x02,
+        Stop2 = 0x02,
         #[doc = "Standby mode"]
-        STANDBY = 0x03,
+        Standby = 0x03,
         #[doc = "Shutdown mode"]
-        SHUTDOWN = 0x04,
+        Shutdown = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -1146,9 +1146,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpr {
         #[doc = "Voltage regulator in Main mode"]
-        MAIN_MODE = 0x0,
+        MainMode = 0x0,
         #[doc = "Voltage regulator in low-power mode"]
-        LOW_POWER_MODE = 0x01,
+        LowPowerMode = 0x01,
     }
     impl Lpr {
         #[inline(always)]
@@ -1177,21 +1177,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pls {
         #[doc = "2.0V"]
-        V2_0 = 0x0,
+        V20 = 0x0,
         #[doc = "2.2V"]
-        V2_2 = 0x01,
+        V22 = 0x01,
         #[doc = "2.4V"]
-        V2_4 = 0x02,
+        V24 = 0x02,
         #[doc = "2.5V"]
-        V2_5 = 0x03,
+        V25 = 0x03,
         #[doc = "2.6V"]
-        V2_6 = 0x04,
+        V26 = 0x04,
         #[doc = "2.8V"]
-        V2_8 = 0x05,
+        V28 = 0x05,
         #[doc = "2.9V"]
-        V2_9 = 0x06,
+        V29 = 0x06,
         #[doc = "External input analog voltage PVD_IN (compared internally to VREFINT)"]
-        EXTERNAL = 0x07,
+        External = 0x07,
     }
     impl Pls {
         #[inline(always)]
@@ -1220,11 +1220,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rrs {
         #[doc = "SRAM2 powered off in Standby mode (SRAM2 content lost)"]
-        POWER_OFF = 0x0,
+        PowerOff = 0x0,
         #[doc = "SRAM2 powered by the low-power regulator in Standby mode (SRAM2 content kept)"]
-        ON_LPR = 0x01,
+        OnLpr = 0x01,
         #[doc = "Only the upper 4 Kbytes of SRAM2 are powered by the low-power regulator in Standby mode (upper 4 Kbytes of SRAM2 content 0x2003 F000 - 0x2003 FFFF is kept)."]
-        ON_LPRTOP4KB = 0x02,
+        OnLprTop4kb = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Rrs {
@@ -1254,11 +1254,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vos {
         #[doc = "Range 0"]
-        RANGE0 = 0x0,
+        Range0 = 0x0,
         #[doc = "Range 1"]
-        RANGE1 = 0x01,
+        Range1 = 0x01,
         #[doc = "Range 2"]
-        RANGE2 = 0x02,
+        Range2 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Vos {

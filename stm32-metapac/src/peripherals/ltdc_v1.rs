@@ -1726,10 +1726,10 @@ pub mod vals {
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "BF1 = constant alpha"]
-        CONSTANT = 0x04,
+        Constant = 0x04,
         _RESERVED_5 = 0x05,
         #[doc = "BF1 = pixel alpha * constant alpha"]
-        PIXEL = 0x06,
+        Pixel = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Bf1 {
@@ -1764,10 +1764,10 @@ pub mod vals {
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
         #[doc = "BF2 = 1 - constant alpha"]
-        CONSTANT = 0x05,
+        Constant = 0x05,
         _RESERVED_6 = 0x06,
         #[doc = "BF2 = 1 - pixel alpha * constant alpha"]
-        PIXEL = 0x07,
+        Pixel = 0x07,
     }
     impl Bf2 {
         #[inline(always)]
@@ -1797,7 +1797,7 @@ pub mod vals {
     pub enum Cfuif {
         _RESERVED_0 = 0x0,
         #[doc = "Clears the FUIF flag in the ISR register"]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Cfuif {
         #[inline(always)]
@@ -1827,7 +1827,7 @@ pub mod vals {
     pub enum Clif {
         _RESERVED_0 = 0x0,
         #[doc = "Clears the LIF flag in the ISR register"]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Clif {
         #[inline(always)]
@@ -1857,7 +1857,7 @@ pub mod vals {
     pub enum Crrif {
         _RESERVED_0 = 0x0,
         #[doc = "Clears the RRIF flag in the ISR register"]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Crrif {
         #[inline(always)]
@@ -1887,7 +1887,7 @@ pub mod vals {
     pub enum Cterrif {
         _RESERVED_0 = 0x0,
         #[doc = "Clears the TERRIF flag in the ISR register"]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Cterrif {
         #[inline(always)]
@@ -1916,9 +1916,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Depol {
         #[doc = "Data enable polarity is active low"]
-        ACTIVE_LOW = 0x0,
+        ActiveLow = 0x0,
         #[doc = "Data enable polarity is active high"]
-        ACTIVE_HIGH = 0x01,
+        ActiveHigh = 0x01,
     }
     impl Depol {
         #[inline(always)]
@@ -1947,9 +1947,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hspol {
         #[doc = "Horizontal synchronization polarity is active low"]
-        ACTIVE_LOW = 0x0,
+        ActiveLow = 0x0,
         #[doc = "Horizontal synchronization polarity is active high"]
-        ACTIVE_HIGH = 0x01,
+        ActiveHigh = 0x01,
     }
     impl Hspol {
         #[inline(always)]
@@ -1978,9 +1978,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Imr {
         #[doc = "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)"]
-        NO_EFFECT = 0x0,
+        NoEffect = 0x0,
         #[doc = "The shadow registers are reloaded immediately. This bit is set by software and cleared only by hardware after reload"]
-        RELOAD = 0x01,
+        Reload = 0x01,
     }
     impl Imr {
         #[inline(always)]
@@ -2009,9 +2009,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pcpol {
         #[doc = "Pixel clock on rising edge"]
-        RISING_EDGE = 0x0,
+        RisingEdge = 0x0,
         #[doc = "Pixel clock on falling edge"]
-        FALLING_EDGE = 0x01,
+        FallingEdge = 0x01,
     }
     impl Pcpol {
         #[inline(always)]
@@ -2040,21 +2040,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pf {
         #[doc = "ARGB8888"]
-        ARGB8888 = 0x0,
+        Argb8888 = 0x0,
         #[doc = "RGB888"]
-        RGB888 = 0x01,
+        Rgb888 = 0x01,
         #[doc = "RGB565"]
-        RGB565 = 0x02,
+        Rgb565 = 0x02,
         #[doc = "ARGB1555"]
-        ARGB1555 = 0x03,
+        Argb1555 = 0x03,
         #[doc = "ARGB4444"]
-        ARGB4444 = 0x04,
+        Argb4444 = 0x04,
         #[doc = "L8 (8-bit luminance)"]
         L8 = 0x05,
         #[doc = "AL44 (4-bit alpha, 4-bit luminance)"]
-        AL44 = 0x06,
+        Al44 = 0x06,
         #[doc = "AL88 (8-bit alpha, 8-bit luminance)"]
-        AL88 = 0x07,
+        Al88 = 0x07,
     }
     impl Pf {
         #[inline(always)]
@@ -2083,9 +2083,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbr {
         #[doc = "This bit is set by software and cleared only by hardware after reload (it cannot be cleared through register write once it is set)"]
-        NO_EFFECT = 0x0,
+        NoEffect = 0x0,
         #[doc = "The shadow registers are reloaded during the vertical blanking period (at the beginning of the first line after the active display area)."]
-        RELOAD = 0x01,
+        Reload = 0x01,
     }
     impl Vbr {
         #[inline(always)]
@@ -2114,9 +2114,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vspol {
         #[doc = "Vertical synchronization polarity is active low"]
-        ACTIVE_LOW = 0x0,
+        ActiveLow = 0x0,
         #[doc = "Vertical synchronization polarity is active high"]
-        ACTIVE_HIGH = 0x01,
+        ActiveHigh = 0x01,
     }
     impl Vspol {
         #[inline(always)]

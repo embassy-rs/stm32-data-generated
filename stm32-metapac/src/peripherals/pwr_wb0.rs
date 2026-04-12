@@ -90,7 +90,7 @@ impl Pwr {
     }
     #[doc = "IOxCFG register."]
     #[inline(always)]
-    pub const fn iox_cfg(self) -> crate::common::Reg<regs::IoxCfg, crate::common::RW> {
+    pub const fn i_ox_cfg(self) -> crate::common::Reg<regs::IOxCfg, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
     }
     #[doc = "DBGR register."]
@@ -1510,8 +1510,8 @@ Selection for SMPS PRECHARGE limit current."]
     #[doc = "IOxCFG register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct IoxCfg(pub u32);
-    impl IoxCfg {
+    pub struct IOxCfg(pub u32);
+    impl IOxCfg {
         #[doc = "Drive configuration for PA8."]
         #[must_use]
         #[inline(always)]
@@ -1609,15 +1609,15 @@ Selection for SMPS PRECHARGE limit current."]
             self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u32) & 0x03) << 14usize);
         }
     }
-    impl Default for IoxCfg {
+    impl Default for IOxCfg {
         #[inline(always)]
-        fn default() -> IoxCfg {
-            IoxCfg(0)
+        fn default() -> IOxCfg {
+            IOxCfg(0)
         }
     }
-    impl core::fmt::Debug for IoxCfg {
+    impl core::fmt::Debug for IOxCfg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("IoxCfg")
+            f.debug_struct("IOxCfg")
                 .field("iocfg0", &self.iocfg0())
                 .field("iocfg1", &self.iocfg1())
                 .field("iocfg2", &self.iocfg2())
@@ -1630,9 +1630,9 @@ Selection for SMPS PRECHARGE limit current."]
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for IoxCfg {
+    impl defmt::Format for IOxCfg {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "IoxCfg {{ iocfg0: {=u8:?}, iocfg1: {=u8:?}, iocfg2: {=u8:?}, iocfg3: {=u8:?}, iocfg4: {=u8:?}, iocfg5: {=u8:?}, iocfg6: {=u8:?}, iocfg7: {=u8:?} }}" , self . iocfg0 () , self . iocfg1 () , self . iocfg2 () , self . iocfg3 () , self . iocfg4 () , self . iocfg5 () , self . iocfg6 () , self . iocfg7 ())
+            defmt :: write ! (f , "IOxCfg {{ iocfg0: {=u8:?}, iocfg1: {=u8:?}, iocfg2: {=u8:?}, iocfg3: {=u8:?}, iocfg4: {=u8:?}, iocfg5: {=u8:?}, iocfg6: {=u8:?}, iocfg7: {=u8:?} }}" , self . iocfg0 () , self . iocfg1 () , self . iocfg2 () , self . iocfg3 () , self . iocfg4 () , self . iocfg5 () , self . iocfg6 () , self . iocfg7 ())
         }
     }
     #[doc = "PDCRA register."]
@@ -2386,9 +2386,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Apc {
         #[doc = "the PUCRx and PDCRx are not used to control the I/O pull-up and pull-down configuration of the product I/Os."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "the I/O pull-up and pull-down configurations defined in the PUCRx and PDCRx registers is applied."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Apc {
         #[inline(always)]
@@ -2417,9 +2417,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Deepstopf {
         #[doc = "System has not been in DEEPSTOP mode."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "System has been in DEEPSTOP mode."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Deepstopf {
         #[inline(always)]
@@ -2448,9 +2448,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Enborh {
         #[doc = "BORH off (VBOR0): threshold level for above 1.60V voltage operation."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "BORH is enabled, threshold level depends on SELBOR\\[1:0\\]."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Enborh {
         #[inline(always)]
@@ -2479,9 +2479,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ensdnbor {
         #[doc = "the PD_ALL_SHUTDOWN signal is set during SHUTDOWN mode."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "the PD_ALL_SHUTDOWN signal is not set during SHUTDOWN mode."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Ensdnbor {
         #[inline(always)]
@@ -2510,9 +2510,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpms {
         #[doc = "Deep Stop mode (default)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Shutdown mode."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Lpms {
         #[inline(always)]
@@ -2541,10 +2541,10 @@ pub mod vals {
     pub struct Pda(u16);
     impl Pda {
         #[doc = "Pull-Down not activated on Port A\\[i\\]."]
-        pub const B_0X0: Self = Self(0x0);
+        pub const B0x0: Self = Self(0x0);
         #[doc = "Pull-Down activated on Port A\\[i\\]
 when APC bit of PWRC CR3 bit is set."]
-        pub const B_0X1: Self = Self(0x01);
+        pub const B0x1: Self = Self(0x01);
     }
     impl Pda {
         pub const fn from_bits(val: u16) -> Pda {
@@ -2557,8 +2557,8 @@ when APC bit of PWRC CR3 bit is set."]
     impl core::fmt::Debug for Pda {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B_0X0"),
-                0x01 => f.write_str("B_0X1"),
+                0x0 => f.write_str("B0x0"),
+                0x01 => f.write_str("B0x1"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2567,8 +2567,8 @@ when APC bit of PWRC CR3 bit is set."]
     impl defmt::Format for Pda {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B_0X0"),
-                0x01 => defmt::write!(f, "B_0X1"),
+                0x0 => defmt::write!(f, "B0x0"),
+                0x01 => defmt::write!(f, "B0x1"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -2590,10 +2590,10 @@ when APC bit of PWRC CR3 bit is set."]
     pub struct Pdb(u16);
     impl Pdb {
         #[doc = "Pull-Down not activated on Port B\\[i\\]."]
-        pub const B_0X0: Self = Self(0x0);
+        pub const B0x0: Self = Self(0x0);
         #[doc = "Pull-Down activated on Port B\\[i\\]
 when APC bit of PWRC CR3 bit is set."]
-        pub const B_0X1: Self = Self(0x01);
+        pub const B0x1: Self = Self(0x01);
     }
     impl Pdb {
         pub const fn from_bits(val: u16) -> Pdb {
@@ -2606,8 +2606,8 @@ when APC bit of PWRC CR3 bit is set."]
     impl core::fmt::Debug for Pdb {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B_0X0"),
-                0x01 => f.write_str("B_0X1"),
+                0x0 => f.write_str("B0x0"),
+                0x01 => f.write_str("B0x1"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2616,8 +2616,8 @@ when APC bit of PWRC CR3 bit is set."]
     impl defmt::Format for Pdb {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B_0X0"),
-                0x01 => defmt::write!(f, "B_0X1"),
+                0x0 => defmt::write!(f, "B0x0"),
+                0x01 => defmt::write!(f, "B0x1"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -2639,11 +2639,11 @@ when APC bit of PWRC CR3 bit is set."]
     pub struct Pua(u16);
     impl Pua {
         #[doc = "Pull-Up not activated on port A\\[i\\]."]
-        pub const B_0X0: Self = Self(0x0);
+        pub const B0x0: Self = Self(0x0);
         #[doc = "Pull-Up activated on port A\\[i\\]
 when APC bit of PWRC CR3 bit is set and PWR_PDCRA\\[x\\]
 is reset."]
-        pub const B_0X1: Self = Self(0x01);
+        pub const B0x1: Self = Self(0x01);
     }
     impl Pua {
         pub const fn from_bits(val: u16) -> Pua {
@@ -2656,8 +2656,8 @@ is reset."]
     impl core::fmt::Debug for Pua {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B_0X0"),
-                0x01 => f.write_str("B_0X1"),
+                0x0 => f.write_str("B0x0"),
+                0x01 => f.write_str("B0x1"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2666,8 +2666,8 @@ is reset."]
     impl defmt::Format for Pua {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B_0X0"),
-                0x01 => defmt::write!(f, "B_0X1"),
+                0x0 => defmt::write!(f, "B0x0"),
+                0x01 => defmt::write!(f, "B0x1"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -2689,11 +2689,11 @@ is reset."]
     pub struct Pub(u16);
     impl Pub {
         #[doc = "Pull-Up not activated on port B\\[i\\]."]
-        pub const B_0X0: Self = Self(0x0);
+        pub const B0x0: Self = Self(0x0);
         #[doc = "Pull-Up activated on port B\\[i\\]
 when APC bit of PWRC CR3 bit is set and PWR_PDCRB\\[x\\]
 is reset."]
-        pub const B_0X1: Self = Self(0x01);
+        pub const B0x1: Self = Self(0x01);
     }
     impl Pub {
         pub const fn from_bits(val: u16) -> Pub {
@@ -2706,8 +2706,8 @@ is reset."]
     impl core::fmt::Debug for Pub {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B_0X0"),
-                0x01 => f.write_str("B_0X1"),
+                0x0 => f.write_str("B0x0"),
+                0x01 => f.write_str("B0x1"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2716,8 +2716,8 @@ is reset."]
     impl defmt::Format for Pub {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B_0X0"),
-                0x01 => defmt::write!(f, "B_0X1"),
+                0x0 => defmt::write!(f, "B0x0"),
+                0x01 => defmt::write!(f, "B0x1"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -2739,21 +2739,21 @@ is reset."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pvdls {
         #[doc = "2.05 V - Lowest level."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "2.20 V."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         #[doc = "2.36 V."]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         #[doc = "2.52 V."]
-        B_0X3 = 0x03,
+        B0x3 = 0x03,
         #[doc = "2.64 V."]
-        B_0X4 = 0x04,
+        B0x4 = 0x04,
         #[doc = "2.81 V."]
-        B_0X5 = 0x05,
+        B0x5 = 0x05,
         #[doc = "2.91 V - Highest level."]
-        B_0X6 = 0x06,
+        B0x6 = 0x06,
         #[doc = "External input analog voltage (compare internally to VBGP; When external input <VBGP."]
-        B_0X7 = 0x07,
+        B0x7 = 0x07,
     }
     impl Pvdls {
         #[inline(always)]
@@ -2782,9 +2782,9 @@ is reset."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Reglps {
         #[doc = "LP regulator is not ready."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "LP regulator is ready."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Reglps {
         #[inline(always)]
@@ -2813,9 +2813,9 @@ is reset."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Regms {
         #[doc = "Main regulator is not ready."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Main regulator is ready."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Regms {
         #[inline(always)]
@@ -2844,9 +2844,9 @@ is reset."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rfphasef {
         #[doc = "RF IP does not require attention."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "RF IP awake and requesting system attention."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Rfphasef {
         #[inline(always)]
@@ -2875,13 +2875,13 @@ is reset."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Selborh {
         #[doc = "BORH Level 1 (VBOR1): threshold level for above 2.0V voltage operation."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "BORH Level 2 (VBOR2): threshold level for above 2.21 V voltage operation."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         #[doc = "BORH Level 3 (VBOR3): threshold level for above 2.52 V voltage operation."]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         #[doc = "BORH Level 4(VBOR4): threshold level for above 2.81 V voltage operation."]
-        B_0X3 = 0x03,
+        B0x3 = 0x03,
     }
     impl Selborh {
         #[inline(always)]
@@ -2910,13 +2910,13 @@ is reset."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SmpsPrechCurSel {
         #[doc = "2.5mA."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "5mA."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         #[doc = "10mA."]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         #[doc = "20mA (default)."]
-        B_0X3 = 0x03,
+        B0x3 = 0x03,
     }
     impl SmpsPrechCurSel {
         #[inline(always)]
@@ -2945,13 +2945,13 @@ is reset."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpsbomsel {
         #[doc = "BOM1."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "BOM2 (default)."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         #[doc = "BOM3."]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         #[doc = "n/a."]
-        B_0X3 = 0x03,
+        B0x3 = 0x03,
     }
     impl Smpsbomsel {
         #[inline(always)]
@@ -2980,9 +2980,9 @@ is reset."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpsfbyp {
         #[doc = "no effect (by default)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "SMPS is disabled and bypassed (ENABLE_3V3=0 and PRECHARGE_3V3=1)."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Smpsfbyp {
         #[inline(always)]
@@ -3011,9 +3011,9 @@ is reset."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpsfrdy {
         #[doc = "no effect (by default)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "SMPS is considered READY."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Smpsfrdy {
         #[inline(always)]
@@ -3042,9 +3042,9 @@ is reset."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpslpopen {
         #[doc = "in Low Power mode, SMPS is in PRECHARGE, output is connected to VDDIO."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "in Low Power mode, SMPS is disabled, output is floating."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Smpslpopen {
         #[inline(always)]
@@ -3073,9 +3073,9 @@ is reset."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpsrdy {
         #[doc = "SMPS regulator is not ready."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "SMPS regulator is ready."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Smpsrdy {
         #[inline(always)]
@@ -3104,9 +3104,9 @@ is reset."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wuf {
         #[doc = "no effect."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "clear the interrupt."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Wuf {
         #[inline(always)]
@@ -3135,9 +3135,9 @@ is reset."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wup {
         #[doc = "Detection on high level (rising edge)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Detection on low level (falling edge)."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Wup {
         #[inline(always)]

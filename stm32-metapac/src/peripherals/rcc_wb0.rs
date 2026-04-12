@@ -1984,15 +1984,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ccopre {
         #[doc = "CCO clock is divided by 1."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "CCO clock is divided by 2."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         #[doc = "CCO clock is divided by 4."]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         #[doc = "CCO clock is divided by 8."]
-        B_0X3 = 0x03,
+        B0x3 = 0x03,
         #[doc = "CCO clock is divided by 16."]
-        B_0X4 = 0x04,
+        B0x4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -2024,9 +2024,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Clkblediv {
         #[doc = "32MHz."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "16MHz."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Clkblediv {
         #[inline(always)]
@@ -2055,13 +2055,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Clkslowsel {
         #[doc = "LSILMPU oscillator clock (default)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "LSE oscillator clock used as slow clock."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         #[doc = "LSI oscillator clock used as slow clock."]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         #[doc = "HSI_64M divided by 2048 used as slow clock."]
-        B_0X3 = 0x03,
+        B0x3 = 0x03,
     }
     impl Clkslowsel {
         #[inline(always)]
@@ -2090,19 +2090,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum ClksysdivReq {
         #[doc = "div 1 (sys clock 64M)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "div 2 (sys clock 32M)."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         #[doc = "div 4 (sys clock 16M)."]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         #[doc = "div 8 (sys clock 8M)."]
-        B_0X3 = 0x03,
+        B0x3 = 0x03,
         #[doc = "div 16 (sys clock 4M)."]
-        B_0X4 = 0x04,
+        B0x4 = 0x04,
         #[doc = "div 32 (sys clock 2M)."]
-        B_0X5 = 0x05,
+        B0x5 = 0x05,
         #[doc = "div 64 (sys clock 1M)."]
-        B_0X6 = 0x06,
+        B0x6 = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl ClksysdivReq {
@@ -2132,9 +2132,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmrat {
         #[doc = "no effect."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "active_transmission is force to '1' whatever the HSIPLLRDY status."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Fmrat {
         #[inline(always)]
@@ -2163,20 +2163,20 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Gmc {
         #[doc = "max 0.0 001: max 0.57 mA/V."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "max 0.78 mA/V."]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         #[doc = "max 1.13 mA/V (Default)."]
-        B_0X3 = 0x03,
+        B0x3 = 0x03,
         #[doc = "max 0.61 mA/V."]
-        B_0X4 = 0x04,
+        B0x4 = 0x04,
         #[doc = "max 1.65 mA/V."]
-        B_0X5 = 0x05,
+        B0x5 = 0x05,
         #[doc = "max 2.12 mA/V."]
-        B_0X6 = 0x06,
+        B0x6 = 0x06,
         #[doc = "max 2.84 mA/V."]
-        B_0X7 = 0x07,
+        B0x7 = 0x07,
     }
     impl Gmc {
         #[inline(always)]
@@ -2205,9 +2205,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hserdy {
         #[doc = "HSE oscillator not ready."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "HSE oscillator ready."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Hserdy {
         #[inline(always)]
@@ -2236,9 +2236,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hserdyif {
         #[doc = "No clock ready interrupt caused by the HSE oscillator."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Clock ready interrupt caused by the HSE oscillator."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Hserdyif {
         #[inline(always)]
@@ -2267,9 +2267,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsesel {
         #[doc = "HSI clock source is requested (default)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "HSE clock source is requested."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Hsesel {
         #[inline(always)]
@@ -2298,9 +2298,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HseselStatus {
         #[doc = "HSI clock source is requested (default)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "HSE clock source is requested."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl HseselStatus {
         #[inline(always)]
@@ -2329,9 +2329,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsipllrdy {
         #[doc = "PLL is unlocked."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "PLL is locked."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Hsipllrdy {
         #[inline(always)]
@@ -2360,9 +2360,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsipllrdyif {
         #[doc = "No clock ready interrupt caused by the HSI PLL64 MHz oscillator."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Clock ready interrupt caused by the HSI PLL64 MHz oscillator."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Hsipllrdyif {
         #[inline(always)]
@@ -2391,9 +2391,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsirdy {
         #[doc = "internal RC 64 MHz oscillator not ready."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "internal RC 64 MHz oscillator ready."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Hsirdy {
         #[inline(always)]
@@ -2422,9 +2422,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsirdyif {
         #[doc = "No clock ready interrupt caused by the HSI oscillator."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Clock ready interrupt caused by the HSI oscillator."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Hsirdyif {
         #[inline(always)]
@@ -2453,13 +2453,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lcosel {
         #[doc = "LCO output disabled, no clock on LCO."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "internal 32 KHz (LSI_LPMU) oscillator clock selected."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         #[doc = "internal 32 KHz (LSI) oscillator clock selected."]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         #[doc = "external 32 KHz (LSE) oscillator clock selected."]
-        B_0X3 = 0x03,
+        B0x3 = 0x03,
     }
     impl Lcosel {
         #[inline(always)]
@@ -2488,9 +2488,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lockuprstf {
         #[doc = "No lockup reset occurred."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "lockup reset occurred."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Lockuprstf {
         #[inline(always)]
@@ -2519,9 +2519,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpuclksel {
         #[doc = "16MHz peripheral clock (default)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "LSE clock."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Lpuclksel {
         #[inline(always)]
@@ -2550,9 +2550,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpurstf {
         #[doc = "no LPUART reset release event occurred."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "LPUART reset release event occurred."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Lpurstf {
         #[inline(always)]
@@ -2581,9 +2581,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsebyp {
         #[doc = "LSE oscillator bypass OFF."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "LSE oscillator bypass ON."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Lsebyp {
         #[inline(always)]
@@ -2612,9 +2612,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lserdy {
         #[doc = "LSE oscillator not ready."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "LSE oscillator ready."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Lserdy {
         #[inline(always)]
@@ -2643,9 +2643,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lserdyif {
         #[doc = "No clock ready interrupt caused by the LSE oscillator."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Clock ready interrupt caused by the LSE oscillator."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Lserdyif {
         #[inline(always)]
@@ -2674,9 +2674,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsirdy {
         #[doc = "LSI RC oscillator not ready."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "LSI RC oscillator ready."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Lsirdy {
         #[inline(always)]
@@ -2705,9 +2705,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsirdyif {
         #[doc = "No clock ready interrupt caused by the internal RC 32 KHz oscillator."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Clock ready interrupt caused by the internal RC 32 kHz oscillator."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Lsirdyif {
         #[inline(always)]
@@ -2736,21 +2736,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mcosel {
         #[doc = "MCO output disabled, no clock on MCO."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "system clock selected."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         #[doc = "na."]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         #[doc = "internal RC 64 MHz (HSI) oscillator clock selected."]
-        B_0X3 = 0x03,
+        B0x3 = 0x03,
         #[doc = "external oscillator (HSE) clock selected."]
-        B_0X4 = 0x04,
+        B0x4 = 0x04,
         #[doc = "internal RC 64 MHz (HSI) oscillator divided by 2048 and used as slow clock selected."]
-        B_0X5 = 0x05,
+        B0x5 = 0x05,
         #[doc = "SMPS clock selected."]
-        B_0X6 = 0x06,
+        B0x6 = 0x06,
         #[doc = "AUX ADC ANA clock selected."]
-        B_0X7 = 0x07,
+        B0x7 = 0x07,
     }
     impl Mcosel {
         #[inline(always)]
@@ -2779,9 +2779,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Padrstf {
         #[doc = "No reset from pad occurred."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Reset from pad occurred."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Padrstf {
         #[inline(always)]
@@ -2810,9 +2810,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Porrstf {
         #[doc = "No POWER reset occurred."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "POWER reset occurred."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Porrstf {
         #[inline(always)]
@@ -2841,9 +2841,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Request {
         #[doc = "To cancel an ongiong request - still possible until IRQ assertion."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "To update the system clock frequency."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Request {
         #[inline(always)]
@@ -2872,9 +2872,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rmvf {
         #[doc = "Nothing done."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Reset the value of the reset flags."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Rmvf {
         #[inline(always)]
@@ -2903,9 +2903,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Satrg {
         #[doc = "the bias current is confronted to a reference current with a ratio of 1/2."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "the bias current is confronted to a reference current with a ratio of 3/4."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Satrg {
         #[inline(always)]
@@ -2934,9 +2934,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sftrstf {
         #[doc = "No software reset occurred."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Software reset occurred."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Sftrstf {
         #[inline(always)]
@@ -2965,9 +2965,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpsdiv {
         #[doc = "div 2 when ANADIV=2 or 4 (default )."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "div 4 when ANADIV=1 or 2."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Smpsdiv {
         #[inline(always)]
@@ -2996,9 +2996,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpsinv {
         #[doc = "SMPS clock not inverted (default value)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "SMPS clock inverted (for debug)."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Smpsinv {
         #[inline(always)]
@@ -3027,9 +3027,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spiisclksel {
         #[doc = "16MHz peripheral clock (default)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "32MHz peripheral clock."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -3060,11 +3060,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Status {
         #[doc = "IDLE no switch requested."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "ONGOING clock frequency switch is ongoing."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         #[doc = "DONE clock frequency switch done."]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Status {
@@ -3094,9 +3094,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Stophsi {
         #[doc = "HSI is enabled (default)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "disable HSI is requested."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Stophsi {
         #[inline(always)]
@@ -3125,9 +3125,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wdgrstf {
         #[doc = "No watchdog reset occurred."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Watchdog reset occurred."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Wdgrstf {
         #[inline(always)]

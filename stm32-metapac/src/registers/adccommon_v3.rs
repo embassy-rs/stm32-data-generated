@@ -297,12 +297,12 @@ pub(crate) static REGISTERS: IR = IR {
         bit_size: 1,
         variants: &[
             EnumVariant {
-                name: "CIRCULAR",
+                name: "Circular",
                 description: Some("DMA Circular mode selected"),
                 value: 1,
             },
             EnumVariant {
-                name: "ONE_SHOT",
+                name: "OneShot",
                 description: Some("DMA One Shot mode selected"),
                 value: 0,
             },

@@ -654,10 +654,10 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Kmod {
         #[doc = "Normal-key mode. Key registers are freely usable."]
-        NORMAL = 0x0,
+        Normal = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "Shared-key mode. If shared-key mode is properly initialized in SAES peripheral, the CRYP peripheral automatically loads its key registers with the data stored in the SAES key registers. The key value is available in CRYP key registers when BUSY bit is cleared and KEYVALID is set in the CRYP_SR register. Key error flag KERF is set otherwise in the CRYP_SR register."]
-        SHARED = 0x02,
+        Shared = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Kmod {

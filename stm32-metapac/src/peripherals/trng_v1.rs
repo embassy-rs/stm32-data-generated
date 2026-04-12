@@ -1468,9 +1468,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AesBusy {
         #[doc = "AES core is idle."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "AES core is busy."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl AesBusy {
         #[inline(always)]
@@ -1499,9 +1499,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AesInit {
         #[doc = "AES core is not initialized (no key or state set)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "AES core is fully initialized."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl AesInit {
         #[inline(always)]
@@ -1530,9 +1530,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AesKeyLd {
         #[doc = "AES core is waiting for 128 random bits from the entropy sources for generating its key."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "AES key register has been loaded with a random key."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl AesKeyLd {
         #[inline(always)]
@@ -1561,9 +1561,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AesReset {
         #[doc = "No effect."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Reset AES core."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl AesReset {
         #[inline(always)]
@@ -1592,9 +1592,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AllOscsDown {
         #[doc = "At least one oscillator is ON."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "All oscillators are down."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl AllOscsDown {
         #[inline(always)]
@@ -1623,9 +1623,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum ClrRevclkFlag {
         #[doc = "no reset."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "reset revclk flag."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl ClrRevclkFlag {
         #[inline(always)]
@@ -1654,9 +1654,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EntropyErr {
         #[doc = "No fault detected."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Embedded heath monitor detects an error in bit stream quality."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl EntropyErr {
         #[inline(always)]
@@ -1685,9 +1685,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FifoFull {
         #[doc = "FIFO is not full."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "The internal data FIFO is full and four 32-bit random values can be read."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl FifoFull {
         #[inline(always)]
@@ -1716,9 +1716,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RevealClkErr {
         #[doc = "Internal clock for RNG clock is present."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Internal RNG clock is not present."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl RevealClkErr {
         #[inline(always)]
@@ -1747,9 +1747,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RstHealthFlags {
         #[doc = "no reset."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "reset health flag."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl RstHealthFlags {
         #[inline(always)]
@@ -1778,9 +1778,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum ValReady {
         #[doc = "No value is ready in FIFO."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "A 32-bit value is available in the internal FIFO."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl ValReady {
         #[inline(always)]

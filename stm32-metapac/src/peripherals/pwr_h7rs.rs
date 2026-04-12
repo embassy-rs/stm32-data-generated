@@ -1677,13 +1677,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Als {
         #[doc = "AVD level 1."]
-        LEVEL1 = 0x0,
+        Level1 = 0x0,
         #[doc = "AVD level 2."]
-        LEVEL2 = 0x01,
+        Level2 = 0x01,
         #[doc = "AVD level 3."]
-        LEVEL3 = 0x02,
+        Level3 = 0x02,
         #[doc = "AVD level 4."]
-        LEVEL4 = 0x03,
+        Level4 = 0x03,
     }
     impl Als {
         #[inline(always)]
@@ -1713,10 +1713,10 @@ pub mod vals {
     pub enum Avdo {
         #[doc = "VDDA is equal or higher than the AVD threshold selected with the ALS\\[1:0\\]
 bits."]
-        ABOVE_OR_EQUAL = 0x0,
+        AboveOrEqual = 0x0,
         #[doc = "VDDA is lower than the AVD threshold selected with the ALS\\[1:0\\]
 bits."]
-        BELOW = 0x01,
+        Below = 0x01,
     }
     impl Avdo {
         #[inline(always)]
@@ -1745,9 +1745,9 @@ bits."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pdds {
         #[doc = "Stop mode when device enters Deepsleep."]
-        STOP = 0x0,
+        Stop = 0x0,
         #[doc = "Standby mode when device enters Deepsleep."]
-        STANDBY = 0x01,
+        Standby = 0x01,
     }
     impl Pdds {
         #[inline(always)]
@@ -1776,21 +1776,21 @@ bits."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pls {
         #[doc = "PVD level 1."]
-        LEVEL1 = 0x0,
+        Level1 = 0x0,
         #[doc = "PVD level 2."]
-        LEVEL2 = 0x01,
+        Level2 = 0x01,
         #[doc = "PVD level 3."]
-        LEVEL3 = 0x02,
+        Level3 = 0x02,
         #[doc = "PVD level 4."]
-        LEVEL4 = 0x03,
+        Level4 = 0x03,
         #[doc = "PVD level 5."]
-        LEVEL5 = 0x04,
+        Level5 = 0x04,
         #[doc = "PVD level 6."]
-        LEVEL6 = 0x05,
+        Level6 = 0x05,
         #[doc = "PVD level 7."]
-        LEVEL7 = 0x06,
+        Level7 = 0x06,
         #[doc = "External voltage level on PVD_IN pin, compared to internal VREFINT level."]
-        EXTERNAL = 0x07,
+        External = 0x07,
     }
     impl Pls {
         #[inline(always)]
@@ -1819,9 +1819,9 @@ bits."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pvdo {
         #[doc = "VDD or PVD_IN voltage is equal or higher than the PVD threshold selected through the."]
-        ABOVE_OR_EQUAL = 0x0,
+        AboveOrEqual = 0x0,
         #[doc = "VDD or PVD_IN voltage is lower than the PVD threshold selected through the PLS\\[2:0\\]."]
-        BELOW = 0x01,
+        Below = 0x01,
     }
     impl Pvdo {
         #[inline(always)]
@@ -1850,9 +1850,9 @@ bits."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rlpsn {
         #[doc = "RAM enters to low power mode when system enters to STOP."]
-        LOW_POWER = 0x0,
+        LowPower = 0x0,
         #[doc = "RAM remains in normal mode when system enters to STOP."]
-        NORMAL = 0x01,
+        Normal = 0x01,
     }
     impl Rlpsn {
         #[inline(always)]
@@ -1880,8 +1880,8 @@ bits."]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdlevel {
-        RESET = 0x0,
-        V1_8 = 0x01,
+        Reset = 0x0,
+        V18 = 0x01,
     }
     impl Sdlevel {
         #[inline(always)]
@@ -1910,9 +1910,9 @@ bits."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Svos {
         #[doc = "SVOS Low."]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "SVOS High (default)."]
-        HIGH = 0x01,
+        High = 0x01,
     }
     impl Svos {
         #[inline(always)]
@@ -1941,9 +1941,9 @@ bits."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SyncAdc {
         #[doc = "SD_Converter clock free running."]
-        FREE_RUNNING = 0x0,
+        FreeRunning = 0x0,
         #[doc = "SD_Converter clock synchronised to ADC."]
-        SYNCHRONIZED = 0x01,
+        Synchronized = 0x01,
     }
     impl SyncAdc {
         #[inline(always)]
@@ -1972,9 +1972,9 @@ bits."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Unlocked {
         #[doc = "accessed locked: key was not written and after each register write access."]
-        LOCKED = 0x0,
+        Locked = 0x0,
         #[doc = "after key 0xCAFECAFE was written in this register."]
-        UNLOCKED = 0x01,
+        Unlocked = 0x01,
     }
     impl Unlocked {
         #[inline(always)]
@@ -2003,9 +2003,9 @@ bits."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbrs {
         #[doc = "Charge VBAT through a 5 k resistor."]
-        OHM5K = 0x0,
+        Ohm5k = 0x0,
         #[doc = "Charge VBAT through a 1.5 k resistor."]
-        OHM1_5K = 0x01,
+        Ohm15k = 0x01,
     }
     impl Vbrs {
         #[inline(always)]
@@ -2034,9 +2034,9 @@ bits."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vos {
         #[doc = "VOS Low level (default)."]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "VOS High level."]
-        HIGH = 0x01,
+        High = 0x01,
     }
     impl Vos {
         #[inline(always)]
@@ -2065,9 +2065,9 @@ bits."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupp {
         #[doc = "Detection on high level (rising edge)."]
-        HIGH = 0x0,
+        High = 0x0,
         #[doc = "Detection on low level (falling edge)."]
-        LOW = 0x01,
+        Low = 0x01,
     }
     impl Wkupp {
         #[inline(always)]
@@ -2096,11 +2096,11 @@ bits."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkuppupd {
         #[doc = "No pull-up."]
-        NO_PULL = 0x0,
+        NoPull = 0x0,
         #[doc = "Pull-up."]
-        PULL_UP = 0x01,
+        PullUp = 0x01,
         #[doc = "Pull-down."]
-        PULL_DOWN = 0x02,
+        PullDown = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Wkuppupd {
@@ -2130,13 +2130,13 @@ bits."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Xspicap {
         #[doc = "XSPI Capacitor OFF (default) note: to confirm with analog design."]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "XSPI Capacitor set to 1/3."]
-        ONE_THIRD = 0x01,
+        OneThird = 0x01,
         #[doc = "XSPI Capacitor set to 2/3."]
-        TWO_THIRDS = 0x02,
+        TwoThirds = 0x02,
         #[doc = "XSPI Capacitor set to full capacitance."]
-        FULL = 0x03,
+        Full = 0x03,
     }
     impl Xspicap {
         #[inline(always)]

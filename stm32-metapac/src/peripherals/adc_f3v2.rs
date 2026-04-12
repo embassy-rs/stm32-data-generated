@@ -1803,9 +1803,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AdcCfg {
         #[doc = "Bank A selected for channels ADC_IN0..31"]
-        BANK_A = 0x0,
+        BankA = 0x0,
         #[doc = "Bank B selected for channels ADC_IN0..31b"]
-        BANK_B = 0x01,
+        BankB = 0x01,
     }
     impl AdcCfg {
         #[inline(always)]
@@ -1834,21 +1834,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dels {
         #[doc = "No Delay"]
-        NO_DELAY = 0x0,
+        NoDelay = 0x0,
         #[doc = "Until the converted data have been read"]
-        AFTER_READ = 0x01,
+        AfterRead = 0x01,
         #[doc = "Delay 7 APB clock cycles after the conversion"]
-        DELAY_7_CLK = 0x02,
+        Delay7Clk = 0x02,
         #[doc = "Delay 16 APB clock cycles after the conversion"]
-        DELAY_15_CLK = 0x03,
+        Delay15Clk = 0x03,
         #[doc = "Delay 31 APB clock cycles after the conversion"]
-        DELAY_31_CLK = 0x04,
+        Delay31Clk = 0x04,
         #[doc = "Delay 63 APB clock cycles after the conversion"]
-        DELAY_63_CLK = 0x05,
+        Delay63Clk = 0x05,
         #[doc = "Delay 127 APB clock cycles after the conversion"]
-        DELAY_127_CLK = 0x06,
+        Delay127Clk = 0x06,
         #[doc = "Delay 255 APB clock cycles after the conversion"]
-        DELAY_255_CLK = 0x07,
+        Delay255Clk = 0x07,
     }
     impl Dels {
         #[inline(always)]
@@ -1877,21 +1877,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Discnum {
         #[doc = "1 conversions are discontinued and the conversion is carried out on one channel"]
-        DISCNUM_1 = 0x0,
+        Discnum1 = 0x0,
         #[doc = "2 conversion is discontinued and the conversions are carried out on 2 channels"]
-        DISCNUM_2 = 0x01,
+        Discnum2 = 0x01,
         #[doc = "3 conversions are discontinued and the conversions are carried out on 3 channels"]
-        DISCNUM_3 = 0x02,
+        Discnum3 = 0x02,
         #[doc = "4 conversions are discontinued and the conversions are carried out on 4 channels"]
-        DISCNUM_4 = 0x03,
+        Discnum4 = 0x03,
         #[doc = "5 conversions are discontinued and the conversions are carried out on 5 channels"]
-        DISCNUM_5 = 0x04,
+        Discnum5 = 0x04,
         #[doc = "6 conversions are discontinued and the conversions are carried out on 6 channels"]
-        DISCNUM_6 = 0x05,
+        Discnum6 = 0x05,
         #[doc = "7 conversions are discontinued and the conversions are carried out on 7 channels"]
-        DISCNUM_7 = 0x06,
+        Discnum7 = 0x06,
         #[doc = "8 conversions are discontinued and the conversions are carried out on 8 channels"]
-        DISCNUM_8 = 0x07,
+        Discnum8 = 0x07,
     }
     impl Discnum {
         #[inline(always)]
@@ -1920,13 +1920,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Exten {
         #[doc = "Trigger detection disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Trigger detection on the rising edge"]
-        RISING = 0x01,
+        Rising = 0x01,
         #[doc = "Trigger detection on the falling edge"]
-        FALLING = 0x02,
+        Falling = 0x02,
         #[doc = "Trigger detection on both edges"]
-        BOTH = 0x03,
+        Both = 0x03,
     }
     impl Exten {
         #[inline(always)]
@@ -1955,33 +1955,33 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Extsel {
         #[doc = "Timer 9 CC2 event"]
-        TIM9_CC2 = 0x0,
+        Tim9Cc2 = 0x0,
         #[doc = "Timer 9 TRGO event"]
-        TIM9_TRGO = 0x01,
+        Tim9Trgo = 0x01,
         #[doc = "Timer 2 CC3 event"]
-        TIM2_CC3 = 0x02,
+        Tim2Cc3 = 0x02,
         #[doc = "Timer 2 CC2 event"]
-        TIM2_CC2 = 0x03,
+        Tim2Cc2 = 0x03,
         #[doc = "Timer 3 TRGO event"]
-        TIM3_TRGO = 0x04,
+        Tim3Trgo = 0x04,
         #[doc = "Timer 4 CC4 event"]
-        TIM4_CC4 = 0x05,
+        Tim4Cc4 = 0x05,
         #[doc = "Timer 2 TRGO event"]
-        TIM2_TRGO = 0x06,
+        Tim2Trgo = 0x06,
         #[doc = "Timer 3 CC1 event"]
-        TIM3_CC1 = 0x07,
+        Tim3Cc1 = 0x07,
         #[doc = "Timer 3 CC3 event"]
-        TIM3_CC3 = 0x08,
+        Tim3Cc3 = 0x08,
         #[doc = "Timer 4 TRGO event"]
-        TIM4_TRGO = 0x09,
+        Tim4Trgo = 0x09,
         #[doc = "Timer 6 TRGO event"]
-        TIM6_TRGO = 0x0a,
+        Tim6Trgo = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
         _RESERVED_d = 0x0d,
         _RESERVED_e = 0x0e,
         #[doc = "External interrupt line 11"]
-        EXTI_LINE11 = 0x0f,
+        ExtiLine11 = 0x0f,
     }
     impl Extsel {
         #[inline(always)]
@@ -2010,33 +2010,33 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Jextsel {
         #[doc = "Timer 9 CC1 event"]
-        TIM9_CC1 = 0x0,
+        Tim9Cc1 = 0x0,
         #[doc = "Timer 9 TRGO event"]
-        TIM9_TRGO = 0x01,
+        Tim9Trgo = 0x01,
         #[doc = "Timer 2 TRGO event"]
-        TIM2_TRGO = 0x02,
+        Tim2Trgo = 0x02,
         #[doc = "Timer 2 CC1 event"]
-        TIM2_CC1 = 0x03,
+        Tim2Cc1 = 0x03,
         #[doc = "Timer 3 CC4 event"]
-        TIM3_CC4 = 0x04,
+        Tim3Cc4 = 0x04,
         #[doc = "Timer 4 TRGO event"]
-        TIM4_TRGO = 0x05,
+        Tim4Trgo = 0x05,
         #[doc = "Timer 4 CC1 event"]
-        TIM4_CC1 = 0x06,
+        Tim4Cc1 = 0x06,
         #[doc = "Timer 4 CC2 event"]
-        TIM4_CC2 = 0x07,
+        Tim4Cc2 = 0x07,
         #[doc = "Timer 4 CC3 event"]
-        TIM4_CC3 = 0x08,
+        Tim4Cc3 = 0x08,
         #[doc = "Timer 4 CC3 event"]
-        TIM10_CC1 = 0x09,
+        Tim10Cc1 = 0x09,
         #[doc = "Timer 7 TRGO event"]
-        TIM7_TRGO = 0x0a,
+        Tim7Trgo = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
         _RESERVED_d = 0x0d,
         _RESERVED_e = 0x0e,
         #[doc = "External interrupt line 15"]
-        EXTI_LINE15 = 0x0f,
+        ExtiLine15 = 0x0f,
     }
     impl Jextsel {
         #[inline(always)]
@@ -2065,13 +2065,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Res {
         #[doc = "12-bit resolution"]
-        BITS12 = 0x0,
+        Bits12 = 0x0,
         #[doc = "10-bit resolution"]
-        BITS10 = 0x01,
+        Bits10 = 0x01,
         #[doc = "8-bit resolution"]
-        BITS8 = 0x02,
+        Bits8 = 0x02,
         #[doc = "6-bit resolution"]
-        BITS6 = 0x03,
+        Bits6 = 0x03,
     }
     impl Res {
         #[inline(always)]
@@ -2100,21 +2100,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "4 ADC clock cycles"]
-        CYCLES4 = 0x0,
+        Cycles4 = 0x0,
         #[doc = "9 ADC clock cycles"]
-        CYCLES9 = 0x01,
+        Cycles9 = 0x01,
         #[doc = "16 ADC clock cycles"]
-        CYCLES16 = 0x02,
+        Cycles16 = 0x02,
         #[doc = "24 ADC clock cycles"]
-        CYCLES24 = 0x03,
+        Cycles24 = 0x03,
         #[doc = "48 ADC clock cycles"]
-        CYCLES48 = 0x04,
+        Cycles48 = 0x04,
         #[doc = "96 ADC clock cycles"]
-        CYCLES96 = 0x05,
+        Cycles96 = 0x05,
         #[doc = "192 ADC clock cycles"]
-        CYCLES192 = 0x06,
+        Cycles192 = 0x06,
         #[doc = "384 ADC clock cycles"]
-        CYCLES384 = 0x07,
+        Cycles384 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]

@@ -1488,9 +1488,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Breq {
         #[doc = "the selected hardware request is driven by a peripheral with a hardware request/acknowledge protocol at a burst level."]
-        BURST = 0x0,
+        Burst = 0x0,
         #[doc = "the selected hardware request is driven by a peripheral with a hardware request/acknowledge protocol at a block level (see )."]
-        BLOCK = 0x01,
+        Block = 0x01,
     }
     impl Breq {
         #[inline(always)]
@@ -1519,9 +1519,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dec {
         #[doc = "The address is incremented by the programmed offset."]
-        ADD = 0x0,
+        Add = 0x0,
         #[doc = "The address is decremented by the programmed offset."]
-        SUBTRACT = 0x01,
+        Subtract = 0x01,
     }
     impl Dec {
         #[inline(always)]
@@ -1550,9 +1550,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dreq {
         #[doc = "selected hardware request driven by a source peripheral (request signal taken into account by the LPDMA transfer scheduler over the source/read port)"]
-        SOURCE_PERIPHERAL = 0x0,
+        SourcePeripheral = 0x0,
         #[doc = "selected hardware request driven by a destination peripheral (request signal taken into account by the LPDMA transfer scheduler over the destination/write port)"]
-        DESTINATION_PERIPHERAL = 0x01,
+        DestinationPeripheral = 0x01,
     }
     impl Dreq {
         #[inline(always)]
@@ -1581,11 +1581,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dw {
         #[doc = "byte"]
-        BYTE = 0x0,
+        Byte = 0x0,
         #[doc = "half-word (2 bytes)"]
-        HALF_WORD = 0x01,
+        HalfWord = 0x01,
         #[doc = "word (4 bytes)"]
-        WORD = 0x02,
+        Word = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Dw {
@@ -1618,9 +1618,9 @@ pub mod vals {
 = 0) and all the update bits are null (UT1 =UB1 = UT2 = USA = UDA = ULL = 0 and UT3 = UB2 = 0 if present). Then CH\\[x\\].BR1.BNDT\\[15:0\\]
 = 0 and CH\\[x\\].BR1.BRC\\[10:0\\]
 = 0 if present."]
-        RUN_TO_COMPLETION = 0x0,
+        RunToCompletion = 0x0,
         #[doc = "channel executed once for the current LLI"]
-        LINK_STEP = 0x01,
+        LinkStep = 0x01,
     }
     impl Lsm {
         #[inline(always)]
@@ -1649,11 +1649,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pam {
         #[doc = "If destination is wider: source data is transferred as right aligned, padded with 0s up to the destination data width If source is wider: source data is transferred as right aligned, left-truncated down to the destination data width"]
-        ZERO_EXTEND_OR_LEFT_TRUNCATE = 0x0,
+        ZeroExtendOrLeftTruncate = 0x0,
         #[doc = "If destination is wider: source data is transferred as right aligned, sign extended up to the destination data width If source is wider: source data is transferred as left-aligned, right-truncated down to the destination data width"]
-        SIGN_EXTEND_OR_RIGHT_TRUNCATE = 0x01,
+        SignExtendOrRightTruncate = 0x01,
         #[doc = "source data is FIFO queued and packed/unpacked at the destination data width, to be transferred in a left (LSB) to right (MSB) order (named little endian) to the destination"]
-        PACK = 0x02,
+        Pack = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Pam {
@@ -1683,13 +1683,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Prio {
         #[doc = "low priority, low weight"]
-        LOW_WITH_LOWH_WEIGHT = 0x0,
+        LowWithLowhWeight = 0x0,
         #[doc = "low priority, mid weight"]
-        LOW_WITH_MID_WEIGHT = 0x01,
+        LowWithMidWeight = 0x01,
         #[doc = "low priority, high weight"]
-        LOW_WITH_HIGH_WEIGHT = 0x02,
+        LowWithHighWeight = 0x02,
         #[doc = "high priority"]
-        HIGH = 0x03,
+        High = 0x03,
     }
     impl Prio {
         #[inline(always)]
@@ -1719,10 +1719,10 @@ pub mod vals {
     pub enum Swreq {
         #[doc = "no software request. The selected hardware request REQSEL\\[6:0\\]
 is taken into account."]
-        HARDWARE = 0x0,
+        Hardware = 0x0,
         #[doc = "software request for a memory-to-memory transfer. The default selected hardware request as per REQSEL\\[6:0\\]
 is ignored."]
-        SOFTWARE = 0x01,
+        Software = 0x01,
     }
     impl Swreq {
         #[inline(always)]
@@ -1752,16 +1752,16 @@ is ignored."]
     pub enum Tcem {
         #[doc = "at block level (when CH\\[x\\].BR1.BNDT\\[15:0\\]
 = 0): the complete (and the half) transfer event is generated at the (respectively half of the) end of a block."]
-        EACH_BLOCK = 0x0,
+        EachBlock = 0x0,
         #[doc = "channel x = 0 to 11, same as 00; channel x=12 to 15, at 2D/repeated block level (when CH\\[x\\].BR1.BRC\\[10:0\\]
 = 0 and CH\\[x\\].BR1.BNDT\\[15:0\\]
 = 0), the complete (and the half) transfer event is generated at the end (respectively half of the end) of the 2D/repeated block."]
-        EACH2DBLOCK = 0x01,
+        Each2dBlock = 0x01,
         #[doc = "at LLI level: the complete transfer event is generated at the end of the LLI transfer, including the update of the LLI if any. The half transfer event is generated at the half of the LLI data transfer (the LLI data transfer being a block transfer or a 2D/repeated block transfer for channel x = 12 to 15), if any data transfer."]
-        EACH_LINKED_LIST_ITEM = 0x02,
+        EachLinkedListItem = 0x02,
         #[doc = "at channel level: the complete transfer event is generated at the end of the last LLI transfer. The half transfer event is generated at the half of the data transfer of the last LLI. The last LLI updates the link address CH\\[x\\].LLR.LA\\[15:2\\]
 to zero and clears all the CH\\[x\\].LLR update bits (UT1, UT2, UB1, USA, UDA and ULL, plus UT3 and UB2 if present). If the channel transfer is continuous/infinite, no event is generated."]
-        LAST_LINKED_LIST_ITEM = 0x03,
+        LastLinkedListItem = 0x03,
     }
     impl Tcem {
         #[inline(always)]
@@ -1791,13 +1791,13 @@ to zero and clears all the CH\\[x\\].LLR update bits (UT1, UT2, UB1, USA, UDA an
     pub enum Trigm {
         #[doc = "at block level: the first burst read of each block transfer is conditioned by one hit trigger (channel x = 12 to 15, for each block if a 2D/repeated block is configured with CH\\[x\\].BR1.BRC\\[10:0\\]
 ≠ 0)."]
-        BLOCK = 0x0,
+        Block = 0x0,
         #[doc = "channel x = 0 to 11, same as 00; channel x=12 to 15, at 2D/repeated block level, the"]
-        _2DBLOCK = 0x01,
+        _2dBlock = 0x01,
         #[doc = "at link level: a LLI link transfer is conditioned by one hit trigger. The LLI data transfer (if any) is not conditioned."]
-        LINKED_LIST_ITEM = 0x02,
+        LinkedListItem = 0x02,
         #[doc = "at programmed burst level: If SWREQ = 1, each programmed burst read is conditioned by one hit trigger. If SWREQ = 0, each programmed burst that is requested by the selected peripheral, is conditioned by one hit trigger."]
-        BURST = 0x03,
+        Burst = 0x03,
     }
     impl Trigm {
         #[inline(always)]
@@ -1826,13 +1826,13 @@ to zero and clears all the CH\\[x\\].LLR update bits (UT1, UT2, UB1, USA, UDA an
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trigpol {
         #[doc = "no trigger (masked trigger event)"]
-        NONE = 0x0,
+        None = 0x0,
         #[doc = "trigger on the rising edge"]
-        RISING_EDGE = 0x01,
+        RisingEdge = 0x01,
         #[doc = "trigger on the falling edge"]
-        FALLING_EDGE = 0x02,
+        FallingEdge = 0x02,
         #[doc = "same as 00"]
-        NONE_ALT = 0x03,
+        NoneAlt = 0x03,
     }
     impl Trigpol {
         #[inline(always)]

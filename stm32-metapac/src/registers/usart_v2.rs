@@ -725,12 +725,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FIRST",
+                    name: "First",
                     description: Some("The first clock transition is the first data capture edge"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SECOND",
+                    name: "Second",
                     description: Some("The second clock transition is the first data capture edge"),
                     value: 1,
                 },
@@ -742,12 +742,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HIGH",
+                    name: "High",
                     description: Some("Steady high value on CK pin outside transmission window"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "LOW",
+                    name: "Low",
                     description: Some("Steady low value on CK pin outside transmission window"),
                     value: 0,
                 },
@@ -759,12 +759,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOW_POWER",
+                    name: "LowPower",
                     description: Some("Low-power mode"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NORMAL",
+                    name: "Normal",
                     description: Some("Normal mode"),
                     value: 0,
                 },
@@ -776,12 +776,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BIT10",
+                    name: "Bit10",
                     description: Some("10-bit break detection"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BIT11",
+                    name: "Bit11",
                     description: Some("11-bit break detection"),
                     value: 1,
                 },
@@ -793,12 +793,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BIT8",
+                    name: "Bit8",
                     description: Some("1 start bit, 8 data bits, n stop bits"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BIT9",
+                    name: "Bit9",
                     description: Some("1 start bit, 9 data bits, n stop bits"),
                     value: 1,
                 },
@@ -810,12 +810,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "OVERSAMPLING16",
+                    name: "Oversampling16",
                     description: Some("Oversampling by 16"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OVERSAMPLING8",
+                    name: "Oversampling8",
                     description: Some("Oversampling by 8"),
                     value: 1,
                 },
@@ -827,12 +827,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "EVEN",
+                    name: "Even",
                     description: Some("Even parity"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ODD",
+                    name: "Odd",
                     description: Some("Odd parity"),
                     value: 1,
                 },
@@ -844,12 +844,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE",
+                    name: "Active",
                     description: Some("Receiver in active mode"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MUTE",
+                    name: "Mute",
                     description: Some("Receiver in mute mode"),
                     value: 1,
                 },
@@ -861,22 +861,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "STOP0P5",
+                    name: "Stop0p5",
                     description: Some("0.5 stop bits"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "STOP1",
+                    name: "Stop1",
                     description: Some("1 stop bit"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "STOP1P5",
+                    name: "Stop1p5",
                     description: Some("1.5 stop bits"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "STOP2",
+                    name: "Stop2",
                     description: Some("2 stop bits"),
                     value: 2,
                 },
@@ -888,12 +888,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ADDRESS_MARK",
+                    name: "AddressMark",
                     description: Some("USART wakeup on address mark"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "IDLE_LINE",
+                    name: "IdleLine",
                     description: Some("USART wakeup on idle line"),
                     value: 0,
                 },

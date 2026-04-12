@@ -2050,14 +2050,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOT_MATCH",
+                    name: "NotMatch",
                     description: Some(
                         "Date/day don’t care in Alarm comparison",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TO_MATCH",
+                    name: "ToMatch",
                     description: Some(
                         "Alarm set if the date/day match",
                     ),
@@ -2071,14 +2071,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "AM",
+                    name: "Am",
                     description: Some(
                         "AM or 24-hour format",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PM",
+                    name: "Pm",
                     description: Some(
                         "PM",
                     ),
@@ -2092,14 +2092,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DATE_UNITS",
+                    name: "DateUnits",
                     description: Some(
                         "DU[3:0] represents the date units",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WEEK_DAY",
+                    name: "WeekDay",
                     description: Some(
                         "DU[3:0] represents the week day. DT[1:0] is don’t care",
                     ),
@@ -2113,14 +2113,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "AM",
+                    name: "Am",
                     description: Some(
                         "AM or 24-hour format",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PM",
+                    name: "Pm",
                     description: Some(
                         "PM",
                     ),
@@ -2134,14 +2134,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "INCREASE_FREQ",
+                    name: "IncreaseFreq",
                     description: Some(
                         "One RTCCLK pulse is effectively inserted every 2^11 pulses (frequency increased by 488.5 ppm)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NO_CHANGE",
+                    name: "NoChange",
                     description: Some(
                         "No RTCCLK pulses are added",
                     ),
@@ -2155,7 +2155,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "SIXTEEN_SECOND",
+                    name: "SixteenSecond",
                     description: Some(
                         "When CALW16 is set to ‘1’, the 16-second calibration cycle period is selected.This bit must not be set to ‘1’ if CALW8=1",
                     ),
@@ -2169,7 +2169,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "EIGHT_SECOND",
+                    name: "EightSecond",
                     description: Some(
                         "When CALW8 is set to ‘1’, the 8-second calibration cycle period is selected",
                     ),
@@ -2183,14 +2183,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CAL_FREQ_1HZ",
+                    name: "CalFreq1hz",
                     description: Some(
                         "Calibration output is 1 Hz (with default prescaler setting)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "CAL_FREQ_512HZ",
+                    name: "CalFreq512hz",
                     description: Some(
                         "Calibration output is 512 Hz (with default prescaler setting)",
                     ),
@@ -2204,14 +2204,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "AM_PM",
+                    name: "AmPm",
                     description: Some(
                         "AM/PM hour format",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TWENTY_FOUR_HOUR",
+                    name: "TwentyFourHour",
                     description: Some(
                         "24 hour/day format",
                     ),
@@ -2225,28 +2225,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ALARM_A",
+                    name: "AlarmA",
                     description: Some(
                         "Alarm A output enabled",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ALARM_B",
+                    name: "AlarmB",
                     description: Some(
                         "Alarm B output enabled",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "Disabled",
                     description: Some(
                         "Output disabled",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WAKEUP",
+                    name: "Wakeup",
                     description: Some(
                         "Wakeup output enabled",
                     ),
@@ -2260,14 +2260,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HIGH",
+                    name: "High",
                     description: Some(
                         "The pin is high when ALRAF/ALRBF/WUTF is asserted (depending on OSEL[1:0])",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOW",
+                    name: "Low",
                     description: Some(
                         "The pin is low when ALRAF/ALRBF/WUTF is asserted (depending on OSEL[1:0])",
                     ),
@@ -2281,7 +2281,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "PENDING",
+                    name: "Pending",
                     description: Some(
                         "The RECALPF status flag is automatically set to 1 when software writes to the RTC_CALR register, indicating that the RTC_CALR register is blocked. When the new calibration settings are taken into account, this bit returns to 0",
                     ),
@@ -2295,28 +2295,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "IMMEDIATE",
+                    name: "Immediate",
                     description: Some(
                         "Tamper event is activated on edge of RTC_TAMPx input transitions to the active level (no internal pull-up on RTC_TAMPx input)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SAMPLES2",
+                    name: "Samples2",
                     description: Some(
                         "Tamper event is activated after 2 consecutive samples at the active level",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SAMPLES4",
+                    name: "Samples4",
                     description: Some(
                         "Tamper event is activated after 4 consecutive samples at the active level",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SAMPLES8",
+                    name: "Samples8",
                     description: Some(
                         "Tamper event is activated after 8 consecutive samples at the active level",
                     ),
@@ -2330,56 +2330,56 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "DIV1024",
+                    name: "Div1024",
                     description: Some(
                         "RTCCLK / 1024 (32 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DIV16384",
+                    name: "Div16384",
                     description: Some(
                         "RTCCLK / 16384 (2 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DIV2048",
+                    name: "Div2048",
                     description: Some(
                         "RTCCLK / 2048 (16 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "DIV256",
+                    name: "Div256",
                     description: Some(
                         "RTCCLK / 256 (128 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "DIV32768",
+                    name: "Div32768",
                     description: Some(
                         "RTCCLK / 32768 (1 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV4096",
+                    name: "Div4096",
                     description: Some(
                         "RTCCLK / 4096 (8 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DIV512",
+                    name: "Div512",
                     description: Some(
                         "RTCCLK / 512 (64 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DIV8192",
+                    name: "Div8192",
                     description: Some(
                         "RTCCLK / 8192 (4 Hz when RTCCLK = 32768 Hz)",
                     ),
@@ -2393,28 +2393,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "CYCLES1",
+                    name: "Cycles1",
                     description: Some(
                         "1 RTCCLK cycle",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CYCLES2",
+                    name: "Cycles2",
                     description: Some(
                         "2 RTCCLK cycles",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "CYCLES4",
+                    name: "Cycles4",
                     description: Some(
                         "4 RTCCLK cycles",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "CYCLES8",
+                    name: "Cycles8",
                     description: Some(
                         "8 RTCCLK cycles",
                     ),
@@ -2428,14 +2428,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "Disabled",
                     description: Some(
                         "Disable precharge of RTC_TAMPx pins",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ENABLED",
+                    name: "Enabled",
                     description: Some(
                         "Precharge RTC_TAMPx pins before sampling (enable internal pull-up)",
                     ),
@@ -2449,14 +2449,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FALLING_EDGE",
+                    name: "FallingEdge",
                     description: Some(
                         "If TAMPFLT = 00: RTC_TAMPx input staying high triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input falling edge triggers a tamper detection event",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RISING_EDGE",
+                    name: "RisingEdge",
                     description: Some(
                         "If TAMPFLT = 00: RTC_TAMPx input rising edge triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input staying low triggers a tamper detection event.",
                     ),
@@ -2470,14 +2470,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FALLING_EDGE",
+                    name: "FallingEdge",
                     description: Some(
                         "RTC_TS input falling edge generates a time-stamp event",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RISING_EDGE",
+                    name: "RisingEdge",
                     description: Some(
                         "RTC_TS input rising edge generates a time-stamp event",
                     ),
@@ -2491,42 +2491,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "CLOCK_SPARE",
+                    name: "ClockSpare",
                     description: Some(
                         "ck_spre (usually 1 Hz) clock is selected",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "CLOCK_SPARE_WITH_OFFSET",
+                    name: "ClockSpareWithOffset",
                     description: Some(
                         "ck_spre (usually 1 Hz) clock is selected and 2^16 is added to the WUT counter value",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DIV16",
+                    name: "Div16",
                     description: Some(
                         "RTC/16 clock is selected",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV2",
+                    name: "Div2",
                     description: Some(
                         "RTC/2 clock is selected",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DIV4",
+                    name: "Div4",
                     description: Some(
                         "RTC/4 clock is selected",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DIV8",
+                    name: "Div8",
                     description: Some(
                         "RTC/8 clock is selected",
                     ),

@@ -343,13 +343,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adcpre {
         #[doc = "PCLK2 divided by 2"]
-        DIV2 = 0x0,
+        Div2 = 0x0,
         #[doc = "PCLK2 divided by 4"]
-        DIV4 = 0x01,
+        Div4 = 0x01,
         #[doc = "PCLK2 divided by 6"]
-        DIV6 = 0x02,
+        Div6 = 0x02,
         #[doc = "PCLK2 divided by 8"]
-        DIV8 = 0x03,
+        Div8 = 0x03,
     }
     impl Adcpre {
         #[inline(always)]
@@ -378,9 +378,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dds {
         #[doc = "No new DMA request is issued after the last transfer"]
-        SINGLE = 0x0,
+        Single = 0x0,
         #[doc = "DMA requests are issued as long as data are converted and DMA=01, 10 or 11"]
-        CONTINUOUS = 0x01,
+        Continuous = 0x01,
     }
     impl Dds {
         #[inline(always)]
@@ -409,13 +409,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dma {
         #[doc = "DMA mode disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "DMA mode 1 enabled (2 / 3 half-words one by one - 1 then 2 then 3)"]
-        MODE1 = 0x01,
+        Mode1 = 0x01,
         #[doc = "DMA mode 2 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"]
-        MODE2 = 0x02,
+        Mode2 = 0x02,
         #[doc = "DMA mode 3 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"]
-        MODE3 = 0x03,
+        Mode3 = 0x03,
     }
     impl Dma {
         #[inline(always)]
@@ -444,22 +444,22 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Multi {
         #[doc = "All the ADCs independent: independent mode"]
-        INDEPENDENT = 0x0,
+        Independent = 0x0,
         #[doc = "Dual ADC1 and ADC2, combined regular and injected simultaneous mode"]
-        DUAL_RJ = 0x01,
+        DualRj = 0x01,
         #[doc = "Dual ADC1 and ADC2, combined regular and alternate trigger mode"]
-        DUAL_RA = 0x02,
+        DualRa = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
         #[doc = "Dual ADC1 and ADC2, injected simultaneous mode only"]
-        DUAL_J = 0x05,
+        DualJ = 0x05,
         #[doc = "Dual ADC1 and ADC2, regular simultaneous mode only"]
-        DUAL_R = 0x06,
+        DualR = 0x06,
         #[doc = "Dual ADC1 and ADC2, interleaved mode only"]
-        DUAL_I = 0x07,
+        DualI = 0x07,
         _RESERVED_8 = 0x08,
         #[doc = "Dual ADC1 and ADC2, alternate trigger mode only"]
-        DUAL_A = 0x09,
+        DualA = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
@@ -468,19 +468,19 @@ pub mod vals {
         _RESERVED_f = 0x0f,
         _RESERVED_10 = 0x10,
         #[doc = "Triple ADC, regular and injected simultaneous mode"]
-        TRIPLE_RJ = 0x11,
+        TripleRj = 0x11,
         #[doc = "Triple ADC, regular and alternate trigger mode"]
-        TRIPLE_RA = 0x12,
+        TripleRa = 0x12,
         _RESERVED_13 = 0x13,
         _RESERVED_14 = 0x14,
         #[doc = "Triple ADC, injected simultaneous mode only"]
-        TRIPLE_J = 0x15,
+        TripleJ = 0x15,
         #[doc = "Triple ADC, regular simultaneous mode only"]
-        TRIPLE_R = 0x16,
+        TripleR = 0x16,
         #[doc = "Triple ADC, interleaved mode only"]
-        TRIPLE_I = 0x17,
+        TripleI = 0x17,
         #[doc = "Triple ADC, alternate trigger mode only"]
-        TRIPLE_A = 0x18,
+        TripleA = 0x18,
         _RESERVED_19 = 0x19,
         _RESERVED_1a = 0x1a,
         _RESERVED_1b = 0x1b,

@@ -644,15 +644,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Chmod {
         #[doc = "Electronic codebook"]
-        ECB = 0x0,
+        Ecb = 0x0,
         #[doc = "Cipher-block chaining"]
-        CBC = 0x01,
+        Cbc = 0x01,
         #[doc = "Counter mode"]
-        CTR = 0x02,
+        Ctr = 0x02,
         #[doc = "Galois counter mode and Galois message authentication code"]
-        GCM_GMAC = 0x03,
+        GcmGmac = 0x03,
         #[doc = "Counter with CBC-MAC"]
-        CCM = 0x04,
+        Ccm = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -684,13 +684,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Datatype {
         #[doc = "No swapping (32-bit data)."]
-        NONE = 0x0,
+        None = 0x0,
         #[doc = "Half-word swapping (16-bit data)"]
-        HALF_WORD = 0x01,
+        HalfWord = 0x01,
         #[doc = "Byte swapping (8-bit data)"]
-        BYTE = 0x02,
+        Byte = 0x02,
         #[doc = "Bit-level swapping"]
-        BIT = 0x03,
+        Bit = 0x03,
     }
     impl Datatype {
         #[inline(always)]
@@ -719,13 +719,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Gcmph {
         #[doc = "Initialization phase"]
-        INIT_PHASE = 0x0,
+        InitPhase = 0x0,
         #[doc = "Header phase"]
-        HEADER_PHASE = 0x01,
+        HeaderPhase = 0x01,
         #[doc = "Payload phase"]
-        PAYLOAD_PHASE = 0x02,
+        PayloadPhase = 0x02,
         #[doc = "Final phase"]
-        FINAL_PHASE = 0x03,
+        FinalPhase = 0x03,
     }
     impl Gcmph {
         #[inline(always)]
@@ -754,14 +754,14 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Keysel {
         #[doc = "Software key, loaded in key registers SAES_KEYx"]
-        SOFTWARE_KEY = 0x0,
+        SoftwareKey = 0x0,
         #[doc = "Derived hardware unique key"]
-        DHUK = 0x01,
+        Dhuk = 0x01,
         #[doc = "Boot hardware key"]
-        BHK = 0x02,
+        Bhk = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "XOR of DHUK and BHK"]
-        XOR_DHUK_BHK = 0x04,
+        XorDhukBhk = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -793,9 +793,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Keysize {
         #[doc = "128-bit"]
-        BITS128 = 0x0,
+        Bits128 = 0x0,
         #[doc = "256-bit"]
-        BITS256 = 0x01,
+        Bits256 = 0x01,
     }
     impl Keysize {
         #[inline(always)]
@@ -824,13 +824,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Kmod {
         #[doc = "AES peripheral"]
-        NORMAL = 0x0,
+        Normal = 0x0,
         #[doc = "Wrapped key for SAES mode. Key loaded in key registers can only be used to encrypt or decrypt AES keys. Hence, when a decryption is selected, read-as-zero SAES_DOUTR register is automatically loaded into SAES key registers after a successful decryption process."]
-        WRAPPED_KEY = 0x01,
+        WrappedKey = 0x01,
         #[doc = "Shared key mode. After a successful decryption process (unwrapping), SAES key registers are shared with the peripheral described in KSHAREID\\[1:0\\]
 bitfield. This sharing is valid only while KMOD\\[1:0\\]
 at 0x2 and KEYVALID=1. When a decryption is selected, read-as-zero SAES_DOUTR register is automatically loaded into SAES key registers after a successful decryption process."]
-        SHARED_KEY = 0x02,
+        SharedKey = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Kmod {
@@ -860,7 +860,7 @@ at 0x2 and KEYVALID=1. When a decryption is selected, read-as-zero SAES_DOUTR re
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Kshareid {
         #[doc = "AES peripheral"]
-        AES = 0x0,
+        Aes = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -891,10 +891,10 @@ at 0x2 and KEYVALID=1. When a decryption is selected, read-as-zero SAES_DOUTR re
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
-        ENCRYPTION = 0x0,
+        Encryption = 0x0,
         #[doc = "Key derivation (or key preparation), for ECB/CBC decryption only"]
-        KEY_DERIVATION = 0x01,
-        DECRYPTION = 0x02,
+        KeyDerivation = 0x01,
+        Decryption = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Mode {

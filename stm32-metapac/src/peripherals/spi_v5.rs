@@ -1316,13 +1316,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Comm {
         #[doc = "Full duplex"]
-        FULL_DUPLEX = 0x0,
+        FullDuplex = 0x0,
         #[doc = "Simplex transmitter only"]
-        TRANSMITTER = 0x01,
+        Transmitter = 0x01,
         #[doc = "Simplex receiver only"]
-        RECEIVER = 0x02,
+        Receiver = 0x02,
         #[doc = "Half duplex"]
-        HALF_DUPLEX = 0x03,
+        HalfDuplex = 0x03,
     }
     impl Comm {
         #[inline(always)]
@@ -1351,9 +1351,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpha {
         #[doc = "The first clock transition is the first data capture edge"]
-        FIRST_EDGE = 0x0,
+        FirstEdge = 0x0,
         #[doc = "The second clock transition is the first data capture edge"]
-        SECOND_EDGE = 0x01,
+        SecondEdge = 0x01,
     }
     impl Cpha {
         #[inline(always)]
@@ -1382,9 +1382,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpol {
         #[doc = "CK to 0 when idle"]
-        IDLE_LOW = 0x0,
+        IdleLow = 0x0,
         #[doc = "CK to 1 when idle"]
-        IDLE_HIGH = 0x01,
+        IdleHigh = 0x01,
     }
     impl Cpol {
         #[inline(always)]
@@ -1413,37 +1413,37 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fthlv {
         #[doc = "1 frame"]
-        ONE_FRAME = 0x0,
+        OneFrame = 0x0,
         #[doc = "2 frames"]
-        TWO_FRAMES = 0x01,
+        TwoFrames = 0x01,
         #[doc = "3 frames"]
-        THREE_FRAMES = 0x02,
+        ThreeFrames = 0x02,
         #[doc = "4 frames"]
-        FOUR_FRAMES = 0x03,
+        FourFrames = 0x03,
         #[doc = "5 frames"]
-        FIVE_FRAMES = 0x04,
+        FiveFrames = 0x04,
         #[doc = "6 frames"]
-        SIX_FRAMES = 0x05,
+        SixFrames = 0x05,
         #[doc = "7 frames"]
-        SEVEN_FRAMES = 0x06,
+        SevenFrames = 0x06,
         #[doc = "8 frames"]
-        EIGHT_FRAMES = 0x07,
+        EightFrames = 0x07,
         #[doc = "9 frames"]
-        NINE_FRAMES = 0x08,
+        NineFrames = 0x08,
         #[doc = "10 frames"]
-        TEN_FRAMES = 0x09,
+        TenFrames = 0x09,
         #[doc = "11 frames"]
-        ELEVEN_FRAMES = 0x0a,
+        ElevenFrames = 0x0a,
         #[doc = "12 frames"]
-        TWELVE_FRAMES = 0x0b,
+        TwelveFrames = 0x0b,
         #[doc = "13 frames"]
-        THIRTEEN_FRAMES = 0x0c,
+        ThirteenFrames = 0x0c,
         #[doc = "14 frames"]
-        FOURTEEN_FRAMES = 0x0d,
+        FourteenFrames = 0x0d,
         #[doc = "15 frames"]
-        FIFTEEN_FRAMES = 0x0e,
+        FifteenFrames = 0x0e,
         #[doc = "16 frames"]
-        SIXTEEN_FRAMES = 0x0f,
+        SixteenFrames = 0x0f,
     }
     impl Fthlv {
         #[inline(always)]
@@ -1472,9 +1472,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hddir {
         #[doc = "Receiver in half duplex mode"]
-        RECEIVER = 0x0,
+        Receiver = 0x0,
         #[doc = "Transmitter in half duplex mode"]
-        TRANSMITTER = 0x01,
+        Transmitter = 0x01,
     }
     impl Hddir {
         #[inline(always)]
@@ -1503,9 +1503,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsbfirst {
         #[doc = "Data is transmitted/received with the MSB first"]
-        MSBFIRST = 0x0,
+        MsbFirst = 0x0,
         #[doc = "Data is transmitted/received with the LSB first"]
-        LSBFIRST = 0x01,
+        LsbFirst = 0x01,
     }
     impl Lsbfirst {
         #[inline(always)]
@@ -1534,9 +1534,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Master {
         #[doc = "Slave configuration"]
-        SLAVE = 0x0,
+        Slave = 0x0,
         #[doc = "Master configuration"]
-        MASTER = 0x01,
+        Master = 0x01,
     }
     impl Master {
         #[inline(always)]
@@ -1565,21 +1565,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mbr {
         #[doc = "f_spi_ker_ck / 2"]
-        DIV2 = 0x0,
+        Div2 = 0x0,
         #[doc = "f_spi_ker_ck / 4"]
-        DIV4 = 0x01,
+        Div4 = 0x01,
         #[doc = "f_spi_ker_ck / 8"]
-        DIV8 = 0x02,
+        Div8 = 0x02,
         #[doc = "f_spi_ker_ck / 16"]
-        DIV16 = 0x03,
+        Div16 = 0x03,
         #[doc = "f_spi_ker_ck / 32"]
-        DIV32 = 0x04,
+        Div32 = 0x04,
         #[doc = "f_spi_ker_ck / 64"]
-        DIV64 = 0x05,
+        Div64 = 0x05,
         #[doc = "f_spi_ker_ck / 128"]
-        DIV128 = 0x06,
+        Div128 = 0x06,
         #[doc = "f_spi_ker_ck / 256"]
-        DIV256 = 0x07,
+        Div256 = 0x07,
     }
     impl Mbr {
         #[inline(always)]
@@ -1608,9 +1608,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rcrcini {
         #[doc = "All zeros RX CRC initialization pattern"]
-        ALL_ZEROS = 0x0,
+        AllZeros = 0x0,
         #[doc = "All ones RX CRC initialization pattern"]
-        ALL_ONES = 0x01,
+        AllOnes = 0x01,
     }
     impl Rcrcini {
         #[inline(always)]
@@ -1639,9 +1639,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rdiom {
         #[doc = "RDY signal is defined internally fixed as permanently active (RDIOP setting has no effect)"]
-        PERMANENTLY_ACTIVE = 0x0,
+        PermanentlyActive = 0x0,
         #[doc = "RDY signal is overtaken from alternate function input (at master case) or output (at slave case) of the dedicated pin (RDIOP setting takes effect)"]
-        FROM_INPUT = 0x01,
+        FromInput = 0x01,
     }
     impl Rdiom {
         #[inline(always)]
@@ -1670,9 +1670,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rdiop {
         #[doc = "high level of the signal means the slave is ready for communication"]
-        READY_HIGH = 0x0,
+        ReadyHigh = 0x0,
         #[doc = "low level of the signal means the slave is ready for communication"]
-        READY_LOW = 0x01,
+        ReadyLow = 0x01,
     }
     impl Rdiop {
         #[inline(always)]
@@ -1701,13 +1701,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rxplvl {
         #[doc = "Zero frames beyond packing ratio available"]
-        ZERO_FRAMES = 0x0,
+        ZeroFrames = 0x0,
         #[doc = "One frame beyond packing ratio available"]
-        ONE_FRAME = 0x01,
+        OneFrame = 0x01,
         #[doc = "Two frame beyond packing ratio available"]
-        TWO_FRAMES = 0x02,
+        TwoFrames = 0x02,
         #[doc = "Three frame beyond packing ratio available"]
-        THREE_FRAMES = 0x03,
+        ThreeFrames = 0x03,
     }
     impl Rxplvl {
         #[inline(always)]
@@ -1736,9 +1736,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rxwne {
         #[doc = "Less than 32-bit data frame received"]
-        LESS_THAN32 = 0x0,
+        LessThan32 = 0x0,
         #[doc = "At least 32-bit data frame received"]
-        AT_LEAST32 = 0x01,
+        AtLeast32 = 0x01,
     }
     impl Rxwne {
         #[inline(always)]
@@ -1767,9 +1767,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sp {
         #[doc = "Motorola SPI protocol"]
-        MOTOROLA = 0x0,
+        Motorola = 0x0,
         #[doc = "TI SPI protocol"]
-        TI = 0x01,
+        Ti = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
@@ -1804,9 +1804,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ssiop {
         #[doc = "Low level is active for SS signal"]
-        ACTIVE_LOW = 0x0,
+        ActiveLow = 0x0,
         #[doc = "High level is active for SS signal"]
-        ACTIVE_HIGH = 0x01,
+        ActiveHigh = 0x01,
     }
     impl Ssiop {
         #[inline(always)]
@@ -1835,9 +1835,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ssom {
         #[doc = "SS is asserted until data transfer complete"]
-        ASSERTED = 0x0,
+        Asserted = 0x0,
         #[doc = "Data frames interleaved with SS not asserted during MIDI"]
-        NOT_ASSERTED = 0x01,
+        NotAsserted = 0x01,
     }
     impl Ssom {
         #[inline(always)]
@@ -1866,9 +1866,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tcrcini {
         #[doc = "All zeros TX CRC initialization pattern"]
-        ALL_ZEROS = 0x0,
+        AllZeros = 0x0,
         #[doc = "All ones TX CRC initialization pattern"]
-        ALL_ONES = 0x01,
+        AllOnes = 0x01,
     }
     impl Tcrcini {
         #[inline(always)]
@@ -1897,11 +1897,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Udrcfg {
         #[doc = "Slave sends a constant underrun pattern"]
-        CONSTANT = 0x0,
+        Constant = 0x0,
         #[doc = "Slave repeats last received data frame from master"]
-        REPEAT_RECEIVED = 0x01,
+        RepeatReceived = 0x01,
         #[doc = "Slave repeats last transmitted data frame"]
-        REPEAT_TRANSMITTED = 0x02,
+        RepeatTransmitted = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Udrcfg {

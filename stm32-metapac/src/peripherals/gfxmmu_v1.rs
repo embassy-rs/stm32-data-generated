@@ -451,9 +451,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bm192 {
         #[doc = "256 blocks per line."]
-        _256BLOCKS_PER_LINE = 0x0,
+        _256blocksPerLine = 0x0,
         #[doc = "192 blocks per line."]
-        _192BLOCKS_PER_LINE = 0x01,
+        _192blocksPerLine = 0x01,
     }
     impl Bm192 {
         #[inline(always)]

@@ -156,9 +156,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hiz {
         #[doc = "VREF+ pin is internally connected to the voltage reference buffer output."]
-        CONNECTED = 0x0,
+        Connected = 0x0,
         #[doc = "VREF+ pin is high impedance."]
-        HIGH_Z = 0x01,
+        HighZ = 0x01,
     }
     impl Hiz {
         #[inline(always)]
@@ -187,9 +187,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vrs {
         #[doc = "Voltage reference set to around 2.048 V."]
-        VREF0 = 0x0,
+        Vref0 = 0x0,
         #[doc = "Voltage reference set to around 2.5 V."]
-        VREF1 = 0x01,
+        Vref1 = 0x01,
     }
     impl Vrs {
         #[inline(always)]

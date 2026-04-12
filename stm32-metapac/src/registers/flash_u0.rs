@@ -1193,28 +1193,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "LEVEL1",
+                    name: "Level1",
                     description: Some(
                         "BOR rising level 1 with threshold around 2.1 V",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LEVEL2",
+                    name: "Level2",
                     description: Some(
                         "BOR rising level 2 with threshold around 2.3 V",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "LEVEL3",
+                    name: "Level3",
                     description: Some(
                         "BOR rising level 3 with threshold around 2.6 V",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "LEVEL4",
+                    name: "Level4",
                     description: Some(
                         "BOR rising level 4 with threshold around 2.9 V",
                     ),
@@ -1228,21 +1228,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BIDIRECTIONAL",
+                    name: "Bidirectional",
                     description: Some(
                         "Bidirectional reset: the NRST pin is configured in reset input/output (legacy) mode",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "ONLY_INPUT",
+                    name: "OnlyInput",
                     description: Some(
                         "Reset input only: a low level on the NRST pin generates system reset; internal RESET is not propagated to the NRST pin.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ONLY_INTERNAL",
+                    name: "OnlyInternal",
                     description: Some(
                         "Standard GPIO: only internal RESET is possible",
                     ),
@@ -1256,14 +1256,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "LEVEL0",
+                    name: "Level0",
                     description: Some(
                         "Level 0, read protection not active",
                     ),
                     value: 170,
                 },
                 EnumVariant {
-                    name: "LEVEL2",
+                    name: "Level2",
                     description: Some(
                         "Level 2, chip read protection active",
                     ),

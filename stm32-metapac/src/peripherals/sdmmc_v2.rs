@@ -46,7 +46,7 @@ impl Sdmmc {
     }
     #[doc = "The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response."]
     #[inline(always)]
-    pub const fn respr(self, n: usize) -> crate::common::Reg<regs::RespxR, crate::common::R> {
+    pub const fn respr(self, n: usize) -> crate::common::Reg<regs::ResPxR, crate::common::R> {
         assert!(n < 4usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize + n * 4usize) as _) }
     }
@@ -1695,6 +1695,43 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             )
         }
     }
+    #[doc = "The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct ResPxR(pub u32);
+    impl ResPxR {
+        #[doc = "see Table 432"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cardstatus(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[doc = "see Table 432"]
+        #[inline(always)]
+        pub const fn set_cardstatus(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for ResPxR {
+        #[inline(always)]
+        fn default() -> ResPxR {
+            ResPxR(0)
+        }
+    }
+    impl core::fmt::Debug for ResPxR {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("ResPxR")
+                .field("cardstatus", &self.cardstatus())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for ResPxR {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "ResPxR {{ cardstatus: {=u32:?} }}", self.cardstatus())
+        }
+    }
     #[doc = "SDMMC command response register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -1728,43 +1765,6 @@ are always 0 and read only). This register can be written by firmware when DPSM 
     impl defmt::Format for Respcmdr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(f, "Respcmdr {{ respcmd: {=u8:?} }}", self.respcmd())
-        }
-    }
-    #[doc = "The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct RespxR(pub u32);
-    impl RespxR {
-        #[doc = "see Table 432"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn cardstatus(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
-        }
-        #[doc = "see Table 432"]
-        #[inline(always)]
-        pub const fn set_cardstatus(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
-        }
-    }
-    impl Default for RespxR {
-        #[inline(always)]
-        fn default() -> RespxR {
-            RespxR(0)
-        }
-    }
-    impl core::fmt::Debug for RespxR {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("RespxR")
-                .field("cardstatus", &self.cardstatus())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for RespxR {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "RespxR {{ cardstatus: {=u32:?} }}", self.cardstatus())
         }
     }
     #[doc = "The SDMMC_STAR register is a read-only register. It contains two types of flag:Static flags (bits \\[29,21,11:0\\]): these bits remain asserted until they are cleared by writing to the SDMMC interrupt Clear register (see SDMMC_ICR)Dynamic flags (bits \\[20:12\\]): these bits change state depending on the state of the underlying logic (for example, FIFO full and empty flags are asserted and de-asserted as data while written to the FIFO)"]

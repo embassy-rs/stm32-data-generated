@@ -60,7 +60,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(Register {
                         access: Access::Read,
                         bit_size: 32,
-                        fieldset: Some("CxToySr"),
+                        fieldset: Some("CxTOySr"),
                     }),
                 },
             ],
@@ -140,7 +140,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "CxToySr",
+            name: "CxTOySr",
             extends: None,
             description: Some("CPUx to CPUy status register"),
             bit_size: 32,

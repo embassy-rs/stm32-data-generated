@@ -362,9 +362,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lmf {
         #[doc = "All values documented in MODE bitfield can be used."]
-        ALL = 0x0,
+        All = 0x0,
         #[doc = "Only ECDSA verification (MODE = 0x26) is supported by the PKA."]
-        LIMITED = 0x01,
+        Limited = 0x01,
     }
     impl Lmf {
         #[inline(always)]

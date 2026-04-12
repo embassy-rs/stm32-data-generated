@@ -113,7 +113,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "RespxR",
+                                "ResPxR",
                             ),
                         },
                     ),
@@ -1794,6 +1794,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "ResPxR",
+            extends: None,
+            description: Some(
+                "The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cardstatus",
+                    description: Some(
+                        "see Table 432",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Respcmdr",
             extends: None,
             description: Some(
@@ -1812,30 +1836,6 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "RespxR",
-            extends: None,
-            description: Some(
-                "The SDMMC_RESP1/2/3/4R registers contain the status of a card, which is part of the received response.",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cardstatus",
-                    description: Some(
-                        "see Table 432",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },

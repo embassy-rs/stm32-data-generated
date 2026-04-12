@@ -1511,7 +1511,7 @@ pub mod vals {
     pub enum Ap0Enable {
         _RESERVED_0 = 0x0,
         #[doc = "Always enable."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Ap0Enable {
         #[inline(always)]
@@ -1541,7 +1541,7 @@ pub mod vals {
     pub enum Ap0Present {
         _RESERVED_0 = 0x0,
         #[doc = "AP present."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Ap0Present {
         #[inline(always)]
@@ -1570,9 +1570,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ap1Enable {
         #[doc = "AP disabled (debug access locked)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "AP enabled (debug access open)."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Ap1Enable {
         #[inline(always)]
@@ -1602,7 +1602,7 @@ pub mod vals {
     pub enum Ap1Present {
         _RESERVED_0 = 0x0,
         #[doc = "AP present."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Ap1Present {
         #[inline(always)]
@@ -1631,9 +1631,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dbgclken {
         #[doc = "Debug clock is off."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Debug clock is on."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Dbgclken {
         #[inline(always)]
@@ -1662,9 +1662,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dbtrgoen {
         #[doc = "DBTRGIO connected to DBTRGIN."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "DBTRGIO connected to DBTRGOUT."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Dbtrgoen {
         #[inline(always)]
@@ -1693,7 +1693,7 @@ pub mod vals {
     pub struct DevId(u16);
     impl DevId {
         #[doc = "STM32N6xx."]
-        pub const B_0X486: Self = Self(0x0486);
+        pub const B0x486: Self = Self(0x0486);
     }
     impl DevId {
         pub const fn from_bits(val: u16) -> DevId {
@@ -1706,7 +1706,7 @@ pub mod vals {
     impl core::fmt::Debug for DevId {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0486 => f.write_str("B_0X486"),
+                0x0486 => f.write_str("B0x486"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -1715,7 +1715,7 @@ pub mod vals {
     impl defmt::Format for DevId {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0486 => defmt::write!(f, "B_0X486"),
+                0x0486 => defmt::write!(f, "B0x486"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -1737,9 +1737,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum DeviceAck {
         #[doc = "Debugger has read DBG_AUTH_DEV."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Processor has written DBG_AUTH_DEV."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl DeviceAck {
         #[inline(always)]
@@ -1768,9 +1768,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HltTsgenEn {
         #[doc = "TSGEN keeps on counting when processor is in halt."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "TSGEN stops counting when processor is in halt."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl HltTsgenEn {
         #[inline(always)]
@@ -1799,9 +1799,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HostAck {
         #[doc = "Processor has read DBG_AUTH_HOST."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Debugger has written DBG_AUTH_HOST."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl HostAck {
         #[inline(always)]
@@ -1830,9 +1830,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NpuDbgFreeze {
         #[doc = "Normal operation. The NPU continues to operate while Cortex-M55 is in debug mode."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Stop in debug. NPU is suspended while Cortex-M55 is in debug mode."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl NpuDbgFreeze {
         #[inline(always)]
@@ -1861,9 +1861,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Traceclken {
         #[doc = "TPIU clock is off."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "TPIU clock is on."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Traceclken {
         #[inline(always)]

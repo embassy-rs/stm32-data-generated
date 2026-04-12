@@ -326,12 +326,12 @@ pub(crate) static REGISTERS: IR = IR {
         bit_size: 1,
         variants: &[
             EnumVariant {
-                name: "ONGOING",
+                name: "Ongoing",
                 description: Some("Last write operation on RTC registers is still ongoing"),
                 value: 0,
             },
             EnumVariant {
-                name: "TERMINATED",
+                name: "Terminated",
                 description: Some("Last write operation on RTC registers terminated"),
                 value: 1,
             },

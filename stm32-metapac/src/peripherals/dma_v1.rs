@@ -606,13 +606,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Burst {
         #[doc = "Single transfer"]
-        SINGLE = 0x0,
+        Single = 0x0,
         #[doc = "Incremental burst of 4 beats"]
-        INCR4 = 0x01,
+        Incr4 = 0x01,
         #[doc = "Incremental burst of 8 beats"]
-        INCR8 = 0x02,
+        Incr8 = 0x02,
         #[doc = "Incremental burst of 16 beats"]
-        INCR16 = 0x03,
+        Incr16 = 0x03,
     }
     impl Burst {
         #[inline(always)]
@@ -641,9 +641,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ct {
         #[doc = "The current target memory is Memory 0"]
-        MEMORY0 = 0x0,
+        Memory0 = 0x0,
         #[doc = "The current target memory is Memory 1"]
-        MEMORY1 = 0x01,
+        Memory1 = 0x01,
     }
     impl Ct {
         #[inline(always)]
@@ -672,11 +672,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dir {
         #[doc = "Peripheral-to-memory"]
-        PERIPHERAL_TO_MEMORY = 0x0,
+        PeripheralToMemory = 0x0,
         #[doc = "Memory-to-peripheral"]
-        MEMORY_TO_PERIPHERAL = 0x01,
+        MemoryToPeripheral = 0x01,
         #[doc = "Memory-to-memory"]
-        MEMORY_TO_MEMORY = 0x02,
+        MemoryToMemory = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Dir {
@@ -706,9 +706,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dmdis {
         #[doc = "Direct mode is enabled"]
-        ENABLED = 0x0,
+        Enabled = 0x0,
         #[doc = "Direct mode is disabled"]
-        DISABLED = 0x01,
+        Disabled = 0x01,
     }
     impl Dmdis {
         #[inline(always)]
@@ -737,17 +737,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fs {
         #[doc = "0 < fifo_level < 1/4"]
-        QUARTER1 = 0x0,
+        Quarter1 = 0x0,
         #[doc = "1/4 <= fifo_level < 1/2"]
-        QUARTER2 = 0x01,
+        Quarter2 = 0x01,
         #[doc = "1/2 <= fifo_level < 3/4"]
-        QUARTER3 = 0x02,
+        Quarter3 = 0x02,
         #[doc = "3/4 <= fifo_level < full"]
-        QUARTER4 = 0x03,
+        Quarter4 = 0x03,
         #[doc = "FIFO is empty"]
-        EMPTY = 0x04,
+        Empty = 0x04,
         #[doc = "FIFO is full"]
-        FULL = 0x05,
+        Full = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -778,13 +778,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fth {
         #[doc = "1/4 full FIFO"]
-        QUARTER = 0x0,
+        Quarter = 0x0,
         #[doc = "1/2 full FIFO"]
-        HALF = 0x01,
+        Half = 0x01,
         #[doc = "3/4 full FIFO"]
-        THREE_QUARTERS = 0x02,
+        ThreeQuarters = 0x02,
         #[doc = "Full FIFO"]
-        FULL = 0x03,
+        Full = 0x03,
     }
     impl Fth {
         #[inline(always)]
@@ -813,9 +813,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pfctrl {
         #[doc = "The DMA is the flow controller"]
-        DMA = 0x0,
+        Dma = 0x0,
         #[doc = "The peripheral is the flow controller"]
-        PERIPHERAL = 0x01,
+        Peripheral = 0x01,
     }
     impl Pfctrl {
         #[inline(always)]
@@ -844,9 +844,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pincos {
         #[doc = "The offset size for the peripheral address calculation is linked to the PSIZE"]
-        PSIZE = 0x0,
+        Psize = 0x0,
         #[doc = "The offset size for the peripheral address calculation is fixed to 4 (32-bit alignment)"]
-        FIXED4 = 0x01,
+        Fixed4 = 0x01,
     }
     impl Pincos {
         #[inline(always)]
@@ -875,13 +875,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pl {
         #[doc = "Low"]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "Medium"]
-        MEDIUM = 0x01,
+        Medium = 0x01,
         #[doc = "High"]
-        HIGH = 0x02,
+        High = 0x02,
         #[doc = "Very high"]
-        VERY_HIGH = 0x03,
+        VeryHigh = 0x03,
     }
     impl Pl {
         #[inline(always)]
@@ -910,11 +910,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Size {
         #[doc = "Byte (8-bit)"]
-        BITS8 = 0x0,
+        Bits8 = 0x0,
         #[doc = "Half-word (16-bit)"]
-        BITS16 = 0x01,
+        Bits16 = 0x01,
         #[doc = "Word (32-bit)"]
-        BITS32 = 0x02,
+        Bits32 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Size {

@@ -898,21 +898,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BOTH",
+                    name: "Both",
                     description: Some(
                         "both edges are active edges. When both external clock signal edges are considered active ones, the LPTIM must also be clocked by an internal clock source with a frequency equal to at least four times the external clock frequency. If the LPTIM is configured in Encoder mode (ENC bit is set), the encoder sub-mode 3 is active.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FALLING",
+                    name: "Falling",
                     description: Some(
                         "the falling edge is the active edge used for counting. If the LPTIM is configured in Encoder mode (ENC bit is set), the encoder sub-mode 2 is active.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RISING",
+                    name: "Rising",
                     description: Some(
                         "the rising edge is the active edge used for counting. If the LPTIM is configured in Encoder mode (ENC bit is set), the encoder sub-mode 1 is active.",
                     ),
@@ -926,14 +926,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "EXTERNAL",
+                    name: "External",
                     description: Some(
                         "clocked by an external clock source through the LPTIM external Input1",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "INTERNAL",
+                    name: "Internal",
                     description: Some(
                         "clocked by internal clock source (APB clock or any of the embedded oscillators)",
                     ),
@@ -947,22 +947,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "COUNT1",
+                    name: "Count1",
                     description: None,
                     value: 0,
                 },
                 EnumVariant {
-                    name: "COUNT2",
+                    name: "Count2",
                     description: None,
                     value: 1,
                 },
                 EnumVariant {
-                    name: "COUNT4",
+                    name: "Count4",
                     description: None,
                     value: 2,
                 },
                 EnumVariant {
-                    name: "COUNT8",
+                    name: "Count8",
                     description: None,
                     value: 3,
                 },
@@ -974,42 +974,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "DIV1",
+                    name: "Div1",
                     description: None,
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV128",
+                    name: "Div128",
                     description: None,
                     value: 7,
                 },
                 EnumVariant {
-                    name: "DIV16",
+                    name: "Div16",
                     description: None,
                     value: 4,
                 },
                 EnumVariant {
-                    name: "DIV2",
+                    name: "Div2",
                     description: None,
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DIV32",
+                    name: "Div32",
                     description: None,
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DIV4",
+                    name: "Div4",
                     description: None,
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DIV64",
+                    name: "Div64",
                     description: None,
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DIV8",
+                    name: "Div8",
                     description: None,
                     value: 3,
                 },
@@ -1021,28 +1021,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BOTH_EDGE",
+                    name: "BothEdge",
                     description: Some(
                         "both edges are active edges",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "FALLING_EDGE",
+                    name: "FallingEdge",
                     description: Some(
                         "falling edge is the active edge",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "RISING_EDGE",
+                    name: "RisingEdge",
                     description: Some(
                         "rising edge is the active edge",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SOFTWARE",
+                    name: "Software",
                     description: Some(
                         "software trigger (counting start is initiated by software)",
                     ),
@@ -1056,14 +1056,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NEGATIVE",
+                    name: "Negative",
                     description: Some(
                         "The LPTIM output reflects the inverse of the compare results between LPTIM_ARR and LPTIM_CMP registers.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "POSITIVE",
+                    name: "Positive",
                     description: Some(
                         "The LPTIM output reflects the compare results between LPTIM_ARR and LPTIM_CMP registers.",
                     ),

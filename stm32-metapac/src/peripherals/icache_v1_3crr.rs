@@ -494,8 +494,8 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hburst {
-        WRAP = 0x0,
-        INCREMENT = 0x01,
+        Wrap = 0x0,
+        Increment = 0x01,
     }
     impl Hburst {
         #[inline(always)]
@@ -523,8 +523,8 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mstsel {
-        MASTER1SELECTED = 0x0,
-        MASTER2SELECTED = 0x01,
+        Master1selected = 0x0,
+        Master2selected = 0x01,
     }
     impl Mstsel {
         #[inline(always)]
@@ -553,13 +553,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rsize {
         _RESERVED_0 = 0x0,
-        MEGA_BYTES2 = 0x01,
-        MEGA_BYTES4 = 0x02,
-        MEGA_BYTES8 = 0x03,
-        MEGA_BYTES16 = 0x04,
-        MEGA_BYTES32 = 0x05,
-        MEGA_BYTES64 = 0x06,
-        MEGA_BYTES128 = 0x07,
+        MegaBytes2 = 0x01,
+        MegaBytes4 = 0x02,
+        MegaBytes8 = 0x03,
+        MegaBytes16 = 0x04,
+        MegaBytes32 = 0x05,
+        MegaBytes64 = 0x06,
+        MegaBytes128 = 0x07,
     }
     impl Rsize {
         #[inline(always)]
@@ -588,9 +588,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Waysel {
         #[doc = "direct mapped cache (1-way cache)"]
-        DIRECT_MAPPED = 0x0,
+        DirectMapped = 0x0,
         #[doc = "n-way set associative cache (reset value)"]
-        NWAY_SET_ASSOCIATIVE = 0x01,
+        NWaySetAssociative = 0x01,
     }
     impl Waysel {
         #[inline(always)]

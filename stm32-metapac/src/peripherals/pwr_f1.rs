@@ -236,9 +236,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pdds {
         #[doc = "Enter Stop mode when the CPU enters deepsleep"]
-        STOP_MODE = 0x0,
+        StopMode = 0x0,
         #[doc = "Enter Standby mode when the CPU enters deepsleep"]
-        STANDBY_MODE = 0x01,
+        StandbyMode = 0x01,
     }
     impl Pdds {
         #[inline(always)]

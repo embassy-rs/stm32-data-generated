@@ -325,9 +325,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Asos {
         #[doc = "RTC Alarm pulse output selected"]
-        ALARM = 0x0,
+        Alarm = 0x0,
         #[doc = "RTC Second pulse output selected"]
-        SECOND = 0x01,
+        Second = 0x01,
     }
     impl Asos {
         #[inline(always)]
@@ -356,9 +356,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tpal {
         #[doc = "A high level on the TAMPER pin resets all data backup registers (if TPE bit is set)"]
-        HIGH = 0x0,
+        High = 0x0,
         #[doc = "A low level on the TAMPER pin resets all data backup registers (if TPE bit is set)"]
-        LOW = 0x01,
+        Low = 0x01,
     }
     impl Tpal {
         #[inline(always)]

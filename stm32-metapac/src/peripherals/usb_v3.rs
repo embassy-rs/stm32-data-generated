@@ -1015,9 +1015,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dir {
         #[doc = "data transmitted by the USB peripheral to the host PC"]
-        TO = 0x0,
+        To = 0x0,
         #[doc = "data received by the USB peripheral from the host PC"]
-        FROM = 0x01,
+        From = 0x01,
     }
     impl Dir {
         #[inline(always)]
@@ -1046,13 +1046,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EpType {
         #[doc = "Bulk endpoint"]
-        BULK = 0x0,
+        Bulk = 0x0,
         #[doc = "Control endpoint"]
-        CONTROL = 0x01,
+        Control = 0x01,
         #[doc = "Iso endpoint"]
-        ISO = 0x02,
+        Iso = 0x02,
         #[doc = "Interrupt endpoint"]
-        INTERRUPT = 0x03,
+        Interrupt = 0x03,
     }
     impl EpType {
         #[inline(always)]
@@ -1081,9 +1081,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpmack {
         #[doc = "the valid LPM Token will be NYET"]
-        NYET = 0x0,
+        Nyet = 0x0,
         #[doc = "the valid LPM Token will be ACK"]
-        ACK = 0x01,
+        Ack = 0x01,
     }
     impl Lpmack {
         #[inline(always)]
@@ -1112,9 +1112,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdet {
         #[doc = "CDP detected"]
-        CDP = 0x0,
+        Cdp = 0x0,
         #[doc = "DCP detected"]
-        DCP = 0x01,
+        Dcp = 0x01,
     }
     impl Sdet {
         #[inline(always)]
@@ -1143,13 +1143,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Stat {
         #[doc = "all requests addressed to this endpoint are ignored"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "the endpoint is stalled and all requests result in a STALL handshake"]
-        STALL = 0x01,
+        Stall = 0x01,
         #[doc = "the endpoint is naked and all requests result in a NAK handshake"]
-        NAK = 0x02,
+        Nak = 0x02,
         #[doc = "this endpoint is enabled, requests are ACKed"]
-        VALID = 0x03,
+        Valid = 0x03,
     }
     impl Stat {
         #[inline(always)]

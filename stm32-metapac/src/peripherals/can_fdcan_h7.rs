@@ -6270,9 +6270,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tfqm {
         #[doc = "Tx FIFO operation"]
-        FIFO = 0x0,
+        Fifo = 0x0,
         #[doc = "Tx queue operation"]
-        QUEUE = 0x01,
+        Queue = 0x01,
     }
     impl Tfqm {
         #[inline(always)]

@@ -2629,11 +2629,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum IrMod {
         #[doc = "TIM16"]
-        TIM16 = 0x0,
+        Tim16 = 0x0,
         #[doc = "USART1"]
-        USART1 = 0x01,
+        Usart1 = 0x01,
         #[doc = "USART2"]
-        USART2 = 0x02,
+        Usart2 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl IrMod {
@@ -2664,10 +2664,10 @@ pub mod vals {
     pub enum MemMode {
         _RESERVED_0 = 0x0,
         #[doc = "System flash memory mapped at 0x000010000"]
-        SYSTEM_FLASH = 0x01,
+        SystemFlash = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "Embedded SRAM mapped at 0x000010000"]
-        SRAM = 0x03,
+        Sram = 0x03,
     }
     impl MemMode {
         #[inline(always)]

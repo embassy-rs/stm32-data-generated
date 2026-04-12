@@ -69,7 +69,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
-                    fieldset: Some("RespxR"),
+                    fieldset: Some("ResPxR"),
                 }),
             },
             BlockItem {
@@ -299,7 +299,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "sdiosuspend",
+                    name: "sdio_suspend",
                     description: Some("SD I/O suspend command"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
@@ -450,7 +450,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("data FIFO register"),
             bit_size: 32,
             fields: &[Field {
-                name: "fifodata",
+                name: "fifo_data",
                 description: Some("Receive and transmit FIFO data"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
@@ -769,6 +769,20 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
+            name: "ResPxR",
+            extends: None,
+            description: Some("response 1..4 register"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "cardstatus",
+                description: Some("see Table 132"),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
+        },
+        FieldSet {
             name: "Respcmdr",
             extends: None,
             description: Some("command response register"),
@@ -778,20 +792,6 @@ pub(crate) static REGISTERS: IR = IR {
                 description: Some("Response command index"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 6,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "RespxR",
-            extends: None,
-            description: Some("response 1..4 register"),
-            bit_size: 32,
-            fields: &[Field {
-                name: "cardstatus",
-                description: Some("see Table 132"),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 32,
                 array: None,
                 enumm: None,
             }],

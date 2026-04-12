@@ -3544,9 +3544,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc4Dmacfg {
         #[doc = "DMA One Shot mode selected"]
-        ONE_SHOT = 0x0,
+        OneShot = 0x0,
         #[doc = "DMA Circular mode selected"]
-        CIRCULAR = 0x01,
+        Circular = 0x01,
     }
     impl Adc4Dmacfg {
         #[inline(always)]
@@ -3575,13 +3575,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc4Exten {
         #[doc = "Trigger detection disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Trigger detection on the rising edge"]
-        RISING_EDGE = 0x01,
+        RisingEdge = 0x01,
         #[doc = "Trigger detection on the falling edge"]
-        FALLING_EDGE = 0x02,
+        FallingEdge = 0x02,
         #[doc = "Trigger detection on both the rising and falling edges"]
-        BOTH_EDGES = 0x03,
+        BothEdges = 0x03,
     }
     impl Adc4Exten {
         #[inline(always)]
@@ -3610,21 +3610,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc4OversamplingRatio {
         #[doc = "Oversample 2 times"]
-        OVERSAMPLE2X = 0x0,
+        Oversample2x = 0x0,
         #[doc = "Oversample 4 times"]
-        OVERSAMPLE4X = 0x01,
+        Oversample4x = 0x01,
         #[doc = "Oversample 8 times"]
-        OVERSAMPLE8X = 0x02,
+        Oversample8x = 0x02,
         #[doc = "Oversample 16 times"]
-        OVERSAMPLE16X = 0x03,
+        Oversample16x = 0x03,
         #[doc = "Oversample 32 times"]
-        OVERSAMPLE32X = 0x04,
+        Oversample32x = 0x04,
         #[doc = "Oversample 64 times"]
-        OVERSAMPLE64X = 0x05,
+        Oversample64x = 0x05,
         #[doc = "Oversample 128 times"]
-        OVERSAMPLE128X = 0x06,
+        Oversample128x = 0x06,
         #[doc = "Oversample 256 times"]
-        OVERSAMPLE256X = 0x07,
+        Oversample256x = 0x07,
     }
     impl Adc4OversamplingRatio {
         #[inline(always)]
@@ -3653,29 +3653,29 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc4Presc {
         #[doc = "adc_ker_ck_input not divided"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "adc_ker_ck_input divided by 2"]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "adc_ker_ck_input divided by 4"]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         #[doc = "adc_ker_ck_input divided by 6"]
-        DIV6 = 0x03,
+        Div6 = 0x03,
         #[doc = "adc_ker_ck_input divided by 8"]
-        DIV8 = 0x04,
+        Div8 = 0x04,
         #[doc = "adc_ker_ck_input divided by 10"]
-        DIV10 = 0x05,
+        Div10 = 0x05,
         #[doc = "adc_ker_ck_input divided by 12"]
-        DIV12 = 0x06,
+        Div12 = 0x06,
         #[doc = "adc_ker_ck_input divided by 16"]
-        DIV16 = 0x07,
+        Div16 = 0x07,
         #[doc = "adc_ker_ck_input divided by 32"]
-        DIV32 = 0x08,
+        Div32 = 0x08,
         #[doc = "adc_ker_ck_input divided by 64"]
-        DIV64 = 0x09,
+        Div64 = 0x09,
         #[doc = "adc_ker_ck_input divided by 128"]
-        DIV128 = 0x0a,
+        Div128 = 0x0a,
         #[doc = "adc_ker_ck_input divided by 256"]
-        DIV256 = 0x0b,
+        Div256 = 0x0b,
         _RESERVED_c = 0x0c,
         _RESERVED_d = 0x0d,
         _RESERVED_e = 0x0e,
@@ -3708,13 +3708,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc4Res {
         #[doc = "12-bit resolution"]
-        BITS12 = 0x0,
+        Bits12 = 0x0,
         #[doc = "10-bit resolution"]
-        BITS10 = 0x01,
+        Bits10 = 0x01,
         #[doc = "8-bit resolution"]
-        BITS8 = 0x02,
+        Bits8 = 0x02,
         #[doc = "6-bit resolution"]
-        BITS6 = 0x03,
+        Bits6 = 0x03,
     }
     impl Adc4Res {
         #[inline(always)]
@@ -3743,21 +3743,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc4SampleTime {
         #[doc = "1.5 ADC cycles"]
-        CYCLES1_5 = 0x0,
+        Cycles15 = 0x0,
         #[doc = "3.5 ADC cycles"]
-        CYCLES3_5 = 0x01,
+        Cycles35 = 0x01,
         #[doc = "7.5 ADC cycles"]
-        CYCLES7_5 = 0x02,
+        Cycles75 = 0x02,
         #[doc = "12.5 ADC cycles"]
-        CYCLES12_5 = 0x03,
+        Cycles125 = 0x03,
         #[doc = "19.5 ADC cycles"]
-        CYCLES19_5 = 0x04,
+        Cycles195 = 0x04,
         #[doc = "39.5 ADC cycles"]
-        CYCLES39_5 = 0x05,
+        Cycles395 = 0x05,
         #[doc = "79.5 ADC cycles"]
-        CYCLES79_5 = 0x06,
+        Cycles795 = 0x06,
         #[doc = "160.5 ADC cycles"]
-        CYCLES814_5 = 0x07,
+        Cycles8145 = 0x07,
     }
     impl Adc4SampleTime {
         #[inline(always)]
@@ -3787,7 +3787,7 @@ pub mod vals {
     pub enum Adstp {
         _RESERVED_0 = 0x0,
         #[doc = "Stop conversion of channel"]
-        STOP = 0x01,
+        Stop = 0x01,
     }
     impl Adstp {
         #[inline(always)]
@@ -3816,9 +3816,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Difsel {
         #[doc = "Input channel is configured in single-ended mode"]
-        SINGLE_ENDED = 0x0,
+        SingleEnded = 0x0,
         #[doc = "Input channel is configured in differential mode"]
-        DIFFERENTIAL = 0x01,
+        Differential = 0x01,
     }
     impl Difsel {
         #[inline(always)]
@@ -3847,13 +3847,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dmngt {
         #[doc = "Store output data in DR only"]
-        DR = 0x0,
+        Dr = 0x0,
         #[doc = "DMA One Shot Mode selected"]
-        DMA_ONE_SHOT = 0x01,
+        DmaOneShot = 0x01,
         #[doc = "MDF mode selected"]
-        MDF = 0x02,
+        Mdf = 0x02,
         #[doc = "DMA Circular Mode selected"]
-        DMA_CIRCULAR = 0x03,
+        DmaCircular = 0x03,
     }
     impl Dmngt {
         #[inline(always)]
@@ -3882,13 +3882,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Exten {
         #[doc = "Trigger detection disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Trigger detection on the rising edge"]
-        RISING_EDGE = 0x01,
+        RisingEdge = 0x01,
         #[doc = "Trigger detection on the falling edge"]
-        FALLING_EDGE = 0x02,
+        FallingEdge = 0x02,
         #[doc = "Trigger detection on both the rising and falling edges"]
-        BOTH_EDGES = 0x03,
+        BothEdges = 0x03,
     }
     impl Exten {
         #[inline(always)]
@@ -3917,9 +3917,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pcsel {
         #[doc = "Input channel x is not pre-selected"]
-        NOT_PRESELECTED = 0x0,
+        NotPreselected = 0x0,
         #[doc = "Pre-select input channel x"]
-        PRESELECTED = 0x01,
+        Preselected = 0x01,
     }
     impl Pcsel {
         #[inline(always)]
@@ -3948,13 +3948,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Res {
         #[doc = "14-bit resolution"]
-        BITS14 = 0x0,
+        Bits14 = 0x0,
         #[doc = "12-bit resolution"]
-        BITS12 = 0x01,
+        Bits12 = 0x01,
         #[doc = "10-bit resolution"]
-        BITS10 = 0x02,
+        Bits10 = 0x02,
         #[doc = "8-bit resolution"]
-        BITS8 = 0x03,
+        Bits8 = 0x03,
     }
     impl Res {
         #[inline(always)]
@@ -3983,21 +3983,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "1.5 ADC cycles"]
-        CYCLES1_5 = 0x0,
+        Cycles15 = 0x0,
         #[doc = "3.5 ADC cycles"]
-        CYCLES3_5 = 0x01,
+        Cycles35 = 0x01,
         #[doc = "7.5 ADC cycles"]
-        CYCLES7_5 = 0x02,
+        Cycles75 = 0x02,
         #[doc = "12.5 ADC cycles"]
-        CYCLES12_5 = 0x03,
+        Cycles125 = 0x03,
         #[doc = "19.5 ADC cycles"]
-        CYCLES19_5 = 0x04,
+        Cycles195 = 0x04,
         #[doc = "39.5 ADC cycles"]
-        CYCLES39_5 = 0x05,
+        Cycles395 = 0x05,
         #[doc = "79.5 ADC cycles"]
-        CYCLES79_5 = 0x06,
+        Cycles795 = 0x06,
         #[doc = "160.5 ADC cycles"]
-        CYCLES160_5 = 0x07,
+        Cycles1605 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]

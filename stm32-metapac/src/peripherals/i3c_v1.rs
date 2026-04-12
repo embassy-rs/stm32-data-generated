@@ -3120,8 +3120,8 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ack {
-        MUST_NACKED = 0x0,
-        MUST_ACKED = 0x01,
+        MustNacKed = 0x0,
+        MustAcKed = 0x01,
     }
     impl Ack {
         #[inline(always)]
@@ -3150,31 +3150,31 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Coderr {
         #[doc = "Transaction after sending CCC. Controller detected an illegally formatted CCC"]
-        CE0 = 0x0,
+        Ce0 = 0x0,
         #[doc = "Monitoring error. Controller detected that transmitted data on the bus is different from expected"]
-        CE1 = 0x01,
+        Ce1 = 0x01,
         #[doc = "No response to broadcast address. Controller detected a not acknowledged broadcast address (0b111_1110)"]
-        CE2 = 0x02,
+        Ce2 = 0x02,
         #[doc = "Failed controller-role hand-off. Controller detected the new controller did not drive bus after controller-role hand-off"]
-        CE3 = 0x03,
+        Ce3 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "Invalid broadcast address 0b111_1110 + W. Target detected an invalid broadcast address 0b111_1110 + W"]
-        TE0 = 0x08,
+        Te0 = 0x08,
         #[doc = "CCC code. Target detected a parity error on a CCC code via a parity check (vs. T bit)"]
-        TE1 = 0x09,
+        Te1 = 0x09,
         #[doc = "Write data. Target detected a parity error on a write data via a parity check (vs. T bit)"]
-        TE2 = 0x0a,
+        Te2 = 0x0a,
         #[doc = "Assigned address during dynamic address arbitration. Target detected a parity error on the assigned address during dynamic address arbitration via a parity check (vs. PAR bit)"]
-        TE3 = 0x0b,
+        Te3 = 0x0b,
         #[doc = "0b111_1110 + R missing after Sr during dynamic address arbitration. Target detected a 0b111_1110 + R missing after Sr during dynamic address arbitration"]
-        TE4 = 0x0c,
+        Te4 = 0x0c,
         #[doc = "Transaction after detecting CCC. Target detected an illegally formatted CCC"]
-        TE5 = 0x0d,
+        Te5 = 0x0d,
         #[doc = "Monitoring error. Target detected that transmitted data on the bus is different from expected"]
-        TE6 = 0x0e,
+        Te6 = 0x0e,
         _RESERVED_f = 0x0f,
     }
     impl Coderr {
@@ -3204,9 +3204,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Crinit {
         #[doc = "Once enabled by setting EN = 1, the peripheral initially acts as a target. I3C does not drive SCL line and does not enable SDA pull-up, until it eventually acquires the controller role."]
-        TARGET = 0x0,
+        Target = 0x0,
         #[doc = "Once enabled by setting EN = 1, the peripheral initially acts as a controller. It has the I3C controller role, so drives SCL line and enables SDA pull-up, until it eventually offers the controller role to an I3C secondary controller."]
-        CONTROLLER = 0x01,
+        Controller = 0x01,
     }
     impl Crinit {
         #[inline(always)]
@@ -3234,8 +3234,8 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dir {
-        WRITE = 0x0,
-        READ = 0x01,
+        Write = 0x0,
+        Read = 0x01,
     }
     impl Dir {
         #[inline(always)]
@@ -3265,10 +3265,10 @@ pub mod vals {
     pub enum Dis {
         #[doc = "write to DA\\[7:0\\]
 and to IBIDEN in the I3C_DEVRx register is allowed"]
-        ALLOWED = 0x0,
+        Allowed = 0x0,
         #[doc = "write to DA\\[7:0\\]
 and to IBIDEN is disabled/locked"]
-        LOCKED = 0x01,
+        Locked = 0x01,
     }
     impl Dis {
         #[inline(always)]
@@ -3297,9 +3297,9 @@ and to IBIDEN is disabled/locked"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mend {
         #[doc = "this message from controller is followed by a repeated start (Sr), before another message must be emitted"]
-        REPEATED_START = 0x0,
+        RepeatedStart = 0x0,
         #[doc = "this message from controller ends with a stop (P), being the last message of a frame"]
-        STOP = 0x01,
+        Stop = 0x01,
     }
     impl Mend {
         #[inline(always)]
@@ -3328,9 +3328,9 @@ and to IBIDEN is disabled/locked"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rnw {
         #[doc = "write message"]
-        WRITE = 0x0,
+        Write = 0x0,
         #[doc = "read message"]
-        READ = 0x01,
+        Read = 0x01,
     }
     impl Rnw {
         #[inline(always)]
@@ -3358,12 +3358,12 @@ and to IBIDEN is disabled/locked"]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rstact {
-        NO_RESET = 0x0,
+        NoReset = 0x0,
         #[doc = "first level of reset: the application software must either: a) partially reset the peripheral, by a write and clear of the enable bit of the I3C configuration register (write EN = 0). This resets the I3C bus interface and the I3C kernel sub-parts, without modifying the content of the I3C APB registers (except the EN bit). b) fully reset the peripheral, including all its registers, via a write and set of the I3C reset control bit of the RCC (reset and clock controller) register."]
-        FIRST_LEVEL = 0x01,
+        FirstLevel = 0x01,
         #[doc = "second level of reset: the application software must issue a warm reset, also known as a system reset. This (see Section 11: Reset and clock control (RCC)) has the same impact as a pin reset (NRST = 0): – the software writes and sets the SYSRESETREQ control bit of the AITR register, when the device is controlled by a Cortex®-M. – the software writes and sets SYSRST = 1 in the RCC_GRSTCSETR register, when the device is controlled by a Cortex®-A."]
-        SECOND_LEVEL = 0x02,
-        NO_RESET_EITHER = 0x03,
+        SecondLevel = 0x02,
+        NoResetEither = 0x03,
     }
     impl Rstact {
         #[inline(always)]
@@ -3392,10 +3392,10 @@ and to IBIDEN is disabled/locked"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Thres {
         #[doc = "TXFNFF is set when 1 byte must be written in TX-FIFO (in I3C_TDR)."]
-        BYTE = 0x0,
+        Byte = 0x0,
         #[doc = "TXFNFF is set when 1 word / 4 bytes must be written in TX-FIFO (in the I3C_TDWR register). If the a number of the last transmitted data is not a multiple of 4 bytes (XDCNT\\[1:0\\]
 = 00 in the I3C_SR register), only the relevant 1, 2, or 3 valid LSB bytes of the last word are taken into account by the hardware, and sent on the I3C bus."]
-        WORD = 0x01,
+        Word = 0x01,
     }
     impl Thres {
         #[inline(always)]

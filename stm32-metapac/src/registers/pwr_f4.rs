@@ -279,12 +279,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "STANDBY_MODE",
+                    name: "StandbyMode",
                     description: Some("Enter Standby mode when the CPU enters deepsleep"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "STOP_MODE",
+                    name: "StopMode",
                     description: Some("Enter Stop mode when the CPU enters deepsleep"),
                     value: 0,
                 },
@@ -296,17 +296,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "SCALE1",
+                    name: "Scale1",
                     description: Some("Scale 1 mode (reset value)"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "SCALE2",
+                    name: "Scale2",
                     description: Some("Scale 2 mode"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SCALE3",
+                    name: "Scale3",
                     description: Some("Scale 3 mode (STM32F4[23] ONLY)"),
                     value: 1,
                 },

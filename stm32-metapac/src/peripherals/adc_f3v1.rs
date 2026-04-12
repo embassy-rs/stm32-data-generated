@@ -1882,11 +1882,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Advregen {
         #[doc = "Intermediate state required when moving the ADC voltage regulator between states"]
-        INTERMEDIATE = 0x0,
+        Intermediate = 0x0,
         #[doc = "ADC voltage regulator enabled"]
-        ENABLED = 0x01,
+        Enabled = 0x01,
         #[doc = "ADC voltage regulator disabled"]
-        DISABLED = 0x02,
+        Disabled = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Advregen {
@@ -1916,9 +1916,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Align {
         #[doc = "Right alignment"]
-        RIGHT = 0x0,
+        Right = 0x0,
         #[doc = "Left alignment"]
-        LEFT = 0x01,
+        Left = 0x01,
     }
     impl Align {
         #[inline(always)]
@@ -1947,9 +1947,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Awd1sgl {
         #[doc = "Analog watchdog 1 enabled on all channels"]
-        ALL = 0x0,
+        All = 0x0,
         #[doc = "Analog watchdog 1 enabled on single channel selected in AWD1CH"]
-        SINGLE = 0x01,
+        Single = 0x01,
     }
     impl Awd1sgl {
         #[inline(always)]
@@ -1978,9 +1978,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Difsel10 {
         #[doc = "Input channel is configured in single-ended mode"]
-        SINGLE_ENDED = 0x0,
+        SingleEnded = 0x0,
         #[doc = "Input channel is configured in differential mode"]
-        DIFFERENTIAL = 0x01,
+        Differential = 0x01,
     }
     impl Difsel10 {
         #[inline(always)]
@@ -2009,9 +2009,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dmacfg {
         #[doc = "DMA One Shot mode selected"]
-        ONE_SHOT = 0x0,
+        OneShot = 0x0,
         #[doc = "DMA Circular mode selected"]
-        CIRCULAR = 0x01,
+        Circular = 0x01,
     }
     impl Dmacfg {
         #[inline(always)]
@@ -2040,13 +2040,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Exten {
         #[doc = "Trigger detection disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Trigger detection on the rising edge"]
-        RISING_EDGE = 0x01,
+        RisingEdge = 0x01,
         #[doc = "Trigger detection on the falling edge"]
-        FALLING_EDGE = 0x02,
+        FallingEdge = 0x02,
         #[doc = "Trigger detection on both the rising and falling edges"]
-        BOTH_EDGES = 0x03,
+        BothEdges = 0x03,
     }
     impl Exten {
         #[inline(always)]
@@ -2075,9 +2075,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Jqm {
         #[doc = "JSQR Mode 0: Queue maintains the last written configuration into JSQR"]
-        MODE0 = 0x0,
+        Mode0 = 0x0,
         #[doc = "JSQR Mode 1: An empty queue disables software and hardware triggers of the injected sequence"]
-        MODE1 = 0x01,
+        Mode1 = 0x01,
     }
     impl Jqm {
         #[inline(always)]
@@ -2106,13 +2106,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Res {
         #[doc = "12-bit resolution"]
-        BITS12 = 0x0,
+        Bits12 = 0x0,
         #[doc = "10-bit resolution"]
-        BITS10 = 0x01,
+        Bits10 = 0x01,
         #[doc = "8-bit resolution"]
-        BITS8 = 0x02,
+        Bits8 = 0x02,
         #[doc = "6-bit resolution"]
-        BITS6 = 0x03,
+        Bits6 = 0x03,
     }
     impl Res {
         #[inline(always)]
@@ -2141,21 +2141,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "1.5 ADC clock cycles"]
-        CYCLES1_5 = 0x0,
+        Cycles15 = 0x0,
         #[doc = "2.5 ADC clock cycles"]
-        CYCLES2_5 = 0x01,
+        Cycles25 = 0x01,
         #[doc = "4.5 ADC clock cycles"]
-        CYCLES4_5 = 0x02,
+        Cycles45 = 0x02,
         #[doc = "7.5 ADC clock cycles"]
-        CYCLES7_5 = 0x03,
+        Cycles75 = 0x03,
         #[doc = "19.5 ADC clock cycles"]
-        CYCLES19_5 = 0x04,
+        Cycles195 = 0x04,
         #[doc = "61.5 ADC clock cycles"]
-        CYCLES61_5 = 0x05,
+        Cycles615 = 0x05,
         #[doc = "181.5 ADC clock cycles"]
-        CYCLES181_5 = 0x06,
+        Cycles1815 = 0x06,
         #[doc = "601.5 ADC clock cycles"]
-        CYCLES601_5 = 0x07,
+        Cycles6015 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]

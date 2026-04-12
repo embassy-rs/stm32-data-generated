@@ -2271,7 +2271,7 @@ pub mod vals {
     pub enum Alrf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm register (RTC_ALRMR)"]
-        MATCH = 0x01,
+        Match = 0x01,
     }
     impl Alrf {
         #[inline(always)]
@@ -2300,9 +2300,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Alrfclr {
         #[doc = "Alarm x event generates a trigger event and ALRxF must be cleared by software to allow next alarm event."]
-        MANUAL = 0x0,
+        Manual = 0x0,
         #[doc = "Alarm x event generates a trigger event. ALRxF is automatically cleared by hardware after 1 ck_apre cycle."]
-        AUTOMATIC = 0x01,
+        Automatic = 0x01,
     }
     impl Alrfclr {
         #[inline(always)]
@@ -2332,7 +2332,7 @@ pub mod vals {
     pub enum Alrmf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm register (RTC_ALRMR)"]
-        MATCH = 0x01,
+        Match = 0x01,
     }
     impl Alrmf {
         #[inline(always)]
@@ -2361,9 +2361,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AlrmrMsk {
         #[doc = "Alarm set if the date/day match"]
-        TO_MATCH = 0x0,
+        ToMatch = 0x0,
         #[doc = "Date/day dont care in Alarm comparison"]
-        NOT_MATCH = 0x01,
+        NotMatch = 0x01,
     }
     impl AlrmrMsk {
         #[inline(always)]
@@ -2392,9 +2392,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AlrmrPm {
         #[doc = "AM or 24-hour format"]
-        AM = 0x0,
+        Am = 0x0,
         #[doc = "PM"]
-        PM = 0x01,
+        Pm = 0x01,
     }
     impl AlrmrPm {
         #[inline(always)]
@@ -2424,11 +2424,11 @@ pub mod vals {
     pub enum AlrmrWdsel {
         #[doc = "DU\\[3:0\\]
 represents the date units"]
-        DATE_UNITS = 0x0,
+        DateUnits = 0x0,
         #[doc = "DU\\[3:0\\]
 represents the week day. DT\\[1:0\\]
 is dont care."]
-        WEEK_DAY = 0x01,
+        WeekDay = 0x01,
     }
     impl AlrmrWdsel {
         #[inline(always)]
@@ -2458,11 +2458,11 @@ is dont care."]
     pub enum AlrmssrSsclr {
         #[doc = "The synchronous binary counter (SS\\[31:0\\]
 in RTC_SSR) is free-running"]
-        FREE_RUNNING = 0x0,
+        FreeRunning = 0x0,
         #[doc = "The synchronous binary counter (SS\\[31:0\\]
 in RTC_SSR) is running from 0xFFFF FFFF to RTC_ALRBINR â†’ SS\\[31:0\\]
 value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â†’ SS\\[31:0\\]"]
-        ALRMBINR = 0x01,
+        Alrmbinr = 0x01,
     }
     impl AlrmssrSsclr {
         #[inline(always)]
@@ -2491,9 +2491,9 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ampm {
         #[doc = "AM or 24-hour format"]
-        AM = 0x0,
+        Am = 0x0,
         #[doc = "PM"]
-        PM = 0x01,
+        Pm = 0x01,
     }
     impl Ampm {
         #[inline(always)]
@@ -2523,28 +2523,28 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub enum Bcdu {
         #[doc = "1s calendar increment is generated each time SS\\[7:0\\]
 = 0"]
-        BIT7 = 0x0,
+        Bit7 = 0x0,
         #[doc = "1s calendar increment is generated each time SS\\[8:0\\]
 = 0"]
-        BIT8 = 0x01,
+        Bit8 = 0x01,
         #[doc = "1s calendar increment is generated each time SS\\[9:0\\]
 = 0"]
-        BIT9 = 0x02,
+        Bit9 = 0x02,
         #[doc = "1s calendar increment is generated each time SS\\[10:0\\]
 = 0"]
-        BIT10 = 0x03,
+        Bit10 = 0x03,
         #[doc = "1s calendar increment is generated each time SS\\[11:0\\]
 = 0"]
-        BIT11 = 0x04,
+        Bit11 = 0x04,
         #[doc = "1s calendar increment is generated each time SS\\[12:0\\]
 = 0"]
-        BIT12 = 0x05,
+        Bit12 = 0x05,
         #[doc = "1s calendar increment is generated each time SS\\[13:0\\]
 = 0"]
-        BIT13 = 0x06,
+        Bit13 = 0x06,
         #[doc = "1s calendar increment is generated each time SS\\[14:0\\]
 = 0"]
-        BIT14 = 0x07,
+        Bit14 = 0x07,
     }
     impl Bcdu {
         #[inline(always)]
@@ -2573,13 +2573,13 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bin {
         #[doc = "Free running BCD calendar mode (Binary mode disabled)"]
-        BCD = 0x0,
+        Bcd = 0x0,
         #[doc = "Free running Binary mode (BCD mode disabled)"]
-        BINARY = 0x01,
+        Binary = 0x01,
         #[doc = "Free running BCD calendar and Binary modes"]
-        BIN_BCD = 0x02,
+        BinBcd = 0x02,
         #[doc = "Free running BCD calendar and Binary modes"]
-        BIN_BCD2 = 0x03,
+        BinBcd2 = 0x03,
     }
     impl Bin {
         #[inline(always)]
@@ -2608,9 +2608,9 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calp {
         #[doc = "No RTCCLK pulses are added"]
-        NO_CHANGE = 0x0,
+        NoChange = 0x0,
         #[doc = "One RTCCLK pulse is effectively inserted every 2^11 pulses (frequency increased by 488.5 ppm)"]
-        INCREASE_FREQ = 0x01,
+        IncreaseFreq = 0x01,
     }
     impl Calp {
         #[inline(always)]
@@ -2640,7 +2640,7 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub enum Calrf {
         _RESERVED_0 = 0x0,
         #[doc = "Clear interrupt flag by writing 1"]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Calrf {
         #[inline(always)]
@@ -2670,7 +2670,7 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub enum Calw16 {
         _RESERVED_0 = 0x0,
         #[doc = "When CALW16 is set to â€˜1â€™, the 16-second calibration cycle period is selected.This bit must not be set to â€˜1â€™ if CALW8=1"]
-        SIXTEEN_SECONDS = 0x01,
+        SixteenSeconds = 0x01,
     }
     impl Calw16 {
         #[inline(always)]
@@ -2700,7 +2700,7 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub enum Calw8 {
         _RESERVED_0 = 0x0,
         #[doc = "When CALW8 is set to â€˜1â€™, the 8-second calibration cycle period is selected"]
-        EIGHT_SECONDS = 0x01,
+        EightSeconds = 0x01,
     }
     impl Calw8 {
         #[inline(always)]
@@ -2729,9 +2729,9 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cosel {
         #[doc = "Calibration output is 512 Hz (with default prescaler setting)"]
-        CAL_FREQ_512HZ = 0x0,
+        CalFreq512hz = 0x0,
         #[doc = "Calibration output is 1 Hz (with default prescaler setting)"]
-        CAL_FREQ_1HZ = 0x01,
+        CalFreq1hz = 0x01,
     }
     impl Cosel {
         #[inline(always)]
@@ -2760,9 +2760,9 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmt {
         #[doc = "24 hour/day format"]
-        TWENTY_FOUR_HOUR = 0x0,
+        TwentyFourHour = 0x0,
         #[doc = "AM/PM hour format"]
-        AM_PM = 0x01,
+        AmPm = 0x01,
     }
     impl Fmt {
         #[inline(always)]
@@ -2792,7 +2792,7 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub enum Itsf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a timestamp on the internal event occurs"]
-        TIMESTAMP_EVENT = 0x01,
+        TimestampEvent = 0x01,
     }
     impl Itsf {
         #[inline(always)]
@@ -2822,7 +2822,7 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub enum Itsmf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a timestamp on the internal event occurs"]
-        TIMESTAMP_EVENT = 0x01,
+        TimestampEvent = 0x01,
     }
     impl Itsmf {
         #[inline(always)]
@@ -2851,11 +2851,11 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub struct Key(u8);
     impl Key {
         #[doc = "Activate write protection (any value that is not the keys)"]
-        pub const ACTIVATE: Self = Self(0x0);
+        pub const Activate: Self = Self(0x0);
         #[doc = "Key 2"]
-        pub const DEACTIVATE2: Self = Self(0x53);
+        pub const Deactivate2: Self = Self(0x53);
         #[doc = "Key 1"]
-        pub const DEACTIVATE1: Self = Self(0xca);
+        pub const Deactivate1: Self = Self(0xca);
     }
     impl Key {
         pub const fn from_bits(val: u8) -> Key {
@@ -2868,9 +2868,9 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     impl core::fmt::Debug for Key {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("ACTIVATE"),
-                0x53 => f.write_str("DEACTIVATE2"),
-                0xca => f.write_str("DEACTIVATE1"),
+                0x0 => f.write_str("Activate"),
+                0x53 => f.write_str("Deactivate2"),
+                0xca => f.write_str("Deactivate1"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2879,9 +2879,9 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     impl defmt::Format for Key {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "ACTIVATE"),
-                0x53 => defmt::write!(f, "DEACTIVATE2"),
-                0xca => defmt::write!(f, "DEACTIVATE1"),
+                0x0 => defmt::write!(f, "Activate"),
+                0x53 => defmt::write!(f, "Deactivate2"),
+                0xca => defmt::write!(f, "Deactivate1"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -2903,9 +2903,9 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpcal {
         #[doc = "Calibration window is 220 RTCCLK, which is a high-consumption mode. This mode should be set only when less than 32s calibration window is required"]
-        RTCCLK = 0x0,
+        Rtcclk = 0x0,
         #[doc = "Calibration window is 220 ck_apre, which is the required configuration for ultra-low consumption mode"]
-        CK_APRE = 0x01,
+        CkApre = 0x01,
     }
     impl Lpcal {
         #[inline(always)]
@@ -2934,13 +2934,13 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Osel {
         #[doc = "Output disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Alarm A output enabled"]
-        ALARM_A = 0x01,
+        AlarmA = 0x01,
         #[doc = "Alarm B output enabled"]
-        ALARM_B = 0x02,
+        AlarmB = 0x02,
         #[doc = "Wakeup output enabled"]
-        WAKEUP = 0x03,
+        Wakeup = 0x03,
     }
     impl Osel {
         #[inline(always)]
@@ -2969,9 +2969,9 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pol {
         #[doc = "The pin is high when ALRAF/ALRBF/WUTF is asserted (depending on OSEL\\[1:0\\]), or when a TAMPxF/ITAMPxF is asserted (if TAMPOE = 1)."]
-        HIGH = 0x0,
+        High = 0x0,
         #[doc = "The pin is low when ALRAF/ALRBF/WUTF is asserted (depending on OSEL\\[1:0\\]), or when a TAMPxF/ITAMPxF is asserted (if TAMPOE = 1)."]
-        LOW = 0x01,
+        Low = 0x01,
     }
     impl Pol {
         #[inline(always)]
@@ -3000,9 +3000,9 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Priv {
         #[doc = "Alarm and SSR underflow configuration and interrupt clear can be written when the APB access is privileged or non-privileged."]
-        ANYTIME = 0x0,
+        Anytime = 0x0,
         #[doc = "Alarm and SSR underflow configuration and interrupt clear can be written only when the APB access is privileged."]
-        PRIVILEGED = 0x01,
+        Privileged = 0x01,
     }
     impl Priv {
         #[inline(always)]
@@ -3032,7 +3032,7 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub enum Recalpf {
         _RESERVED_0 = 0x0,
         #[doc = "The RECALPF status flag is automatically set to 1 when software writes to the RTC_CALR register, indicating that the RTC_CALR register is blocked. When the new calibration settings are taken into account, this bit returns to 0"]
-        PENDING = 0x01,
+        Pending = 0x01,
     }
     impl Recalpf {
         #[inline(always)]
@@ -3062,7 +3062,7 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub enum Ssruf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1"]
-        UNDERFLOW = 0x01,
+        Underflow = 0x01,
     }
     impl Ssruf {
         #[inline(always)]
@@ -3092,7 +3092,7 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub enum Ssrumf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when the SSR rolls under 0. SSRUF is not set when SSCLR=1"]
-        UNDERFLOW = 0x01,
+        Underflow = 0x01,
     }
     impl Ssrumf {
         #[inline(always)]
@@ -3121,9 +3121,9 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum TampalrmType {
         #[doc = "TAMPALRM is push-pull output"]
-        PUSH_PULL = 0x0,
+        PushPull = 0x0,
         #[doc = "TAMPALRM is open-drain output"]
-        OPEN_DRAIN = 0x01,
+        OpenDrain = 0x01,
     }
     impl TampalrmType {
         #[inline(always)]
@@ -3152,9 +3152,9 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tsedge {
         #[doc = "RTC_TS input rising edge generates a time-stamp event"]
-        RISING_EDGE = 0x0,
+        RisingEdge = 0x0,
         #[doc = "RTC_TS input falling edge generates a time-stamp event"]
-        FALLING_EDGE = 0x01,
+        FallingEdge = 0x01,
     }
     impl Tsedge {
         #[inline(always)]
@@ -3184,7 +3184,7 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub enum Tsf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a time-stamp event occurs"]
-        TIMESTAMP_EVENT = 0x01,
+        TimestampEvent = 0x01,
     }
     impl Tsf {
         #[inline(always)]
@@ -3214,7 +3214,7 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub enum Tsmf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a time-stamp event occurs"]
-        TIMESTAMP_EVENT = 0x01,
+        TimestampEvent = 0x01,
     }
     impl Tsmf {
         #[inline(always)]
@@ -3244,7 +3244,7 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub enum Tsovf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a time-stamp event occurs while TSF is already set"]
-        OVERFLOW = 0x01,
+        Overflow = 0x01,
     }
     impl Tsovf {
         #[inline(always)]
@@ -3274,7 +3274,7 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub enum Tsovmf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a time-stamp event occurs while TSF is already set"]
-        OVERFLOW = 0x01,
+        Overflow = 0x01,
     }
     impl Tsovmf {
         #[inline(always)]
@@ -3303,18 +3303,18 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wucksel {
         #[doc = "RTC/16 clock is selected"]
-        DIV16 = 0x0,
+        Div16 = 0x0,
         #[doc = "RTC/8 clock is selected"]
-        DIV8 = 0x01,
+        Div8 = 0x01,
         #[doc = "RTC/4 clock is selected"]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         #[doc = "RTC/2 clock is selected"]
-        DIV2 = 0x03,
+        Div2 = 0x03,
         #[doc = "ck_spre (usually 1 Hz) clock is selected"]
-        CLOCK_SPARE = 0x04,
+        ClockSpare = 0x04,
         _RESERVED_5 = 0x05,
         #[doc = "ck_spre (usually 1 Hz) clock is selected and 2^16 is added to the WUT counter value"]
-        CLOCK_SPARE_WITH_OFFSET = 0x06,
+        ClockSpareWithOffset = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Wucksel {
@@ -3345,7 +3345,7 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub enum Wutf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when the wakeup auto-reload counter reaches 0"]
-        ZERO = 0x01,
+        Zero = 0x01,
     }
     impl Wutf {
         #[inline(always)]
@@ -3375,7 +3375,7 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
     pub enum Wutmf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when the wakeup auto-reload counter reaches 0"]
-        ZERO = 0x01,
+        Zero = 0x01,
     }
     impl Wutmf {
         #[inline(always)]

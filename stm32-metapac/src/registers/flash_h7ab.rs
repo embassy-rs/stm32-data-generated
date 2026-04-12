@@ -2210,7 +2210,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wrpsn",
+                    name: "wrp_sn",
                     description: Some(
                         "Bank 1 sector write protection option status byte",
                     ),
@@ -2234,7 +2234,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "wrpsn",
+                    name: "wrp_sn",
                     description: Some(
                         "Bank 1 sector write protection configuration byte",
                     ),

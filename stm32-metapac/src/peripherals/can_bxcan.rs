@@ -2145,9 +2145,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ide {
         #[doc = "Standard identifier"]
-        STANDARD = 0x0,
+        Standard = 0x0,
         #[doc = "Extended identifier"]
-        EXTENDED = 0x01,
+        Extended = 0x01,
     }
     impl Ide {
         #[inline(always)]
@@ -2176,21 +2176,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lec {
         #[doc = "No Error"]
-        NO_ERROR = 0x0,
+        NoError = 0x0,
         #[doc = "Stuff Error"]
-        STUFF = 0x01,
+        Stuff = 0x01,
         #[doc = "Form Error"]
-        FORM = 0x02,
+        Form = 0x02,
         #[doc = "Acknowledgment Error"]
-        ACK = 0x03,
+        Ack = 0x03,
         #[doc = "Bit recessive Error"]
-        BIT_RECESSIVE = 0x04,
+        BitRecessive = 0x04,
         #[doc = "Bit dominant Error"]
-        BIT_DOMINANT = 0x05,
+        BitDominant = 0x05,
         #[doc = "CRC Error"]
-        CRC = 0x06,
+        Crc = 0x06,
         #[doc = "Set by software"]
-        CUSTOM = 0x07,
+        Custom = 0x07,
     }
     impl Lec {
         #[inline(always)]
@@ -2219,9 +2219,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtr {
         #[doc = "Data frame"]
-        DATA = 0x0,
+        Data = 0x0,
         #[doc = "Remote frame"]
-        REMOTE = 0x01,
+        Remote = 0x01,
     }
     impl Rtr {
         #[inline(always)]
@@ -2250,9 +2250,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Silm {
         #[doc = "Normal operation"]
-        NORMAL = 0x0,
+        Normal = 0x0,
         #[doc = "Silent Mode"]
-        SILENT = 0x01,
+        Silent = 0x01,
     }
     impl Silm {
         #[inline(always)]

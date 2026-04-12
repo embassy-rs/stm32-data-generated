@@ -320,9 +320,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calsel {
         #[doc = "NMOS calibration, 0.2 V applied to OPAMP inputs during calibration"]
-        NMOS = 0x0,
+        Nmos = 0x0,
         #[doc = "PMOS calibration, VDDA - 0.2 V applied to OPAMP inputs during calibration"]
-        PMOS = 0x01,
+        Pmos = 0x01,
     }
     impl Calsel {
         #[inline(always)]
@@ -351,9 +351,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OpaRange {
         #[doc = "Low range (VDDA < 2.4 V)"]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "High range (VDDA > 2.4 V)"]
-        HIGH = 0x01,
+        High = 0x01,
     }
     impl OpaRange {
         #[inline(always)]
@@ -382,13 +382,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Opamode {
         #[doc = "Internal PGA disable"]
-        DISABLE = 0x0,
+        Disable = 0x0,
         #[doc = "Internal PGA disable (duplicate)"]
-        DISABLE2 = 0x01,
+        Disable2 = 0x01,
         #[doc = "Internal PGA enable, gain programmed in PGA_GAIN"]
-        ENABLE = 0x02,
+        Enable = 0x02,
         #[doc = "Internal follower"]
-        FOLLOWER = 0x03,
+        Follower = 0x03,
     }
     impl Opamode {
         #[inline(always)]
@@ -417,13 +417,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PgaGain {
         #[doc = "Gain 2"]
-        GAIN2 = 0x0,
+        Gain2 = 0x0,
         #[doc = "Gain 4"]
-        GAIN4 = 0x01,
+        Gain4 = 0x01,
         #[doc = "Gain 8"]
-        GAIN8 = 0x02,
+        Gain8 = 0x02,
         #[doc = "Gain 16"]
-        GAIN16 = 0x03,
+        Gain16 = 0x03,
     }
     impl PgaGain {
         #[inline(always)]
@@ -452,11 +452,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VmSel {
         #[doc = "GPIO connected to VINM (valid also in PGA mode for filtering)"]
-        GPIO = 0x0,
+        Gpio = 0x0,
         #[doc = "Low leakage inputs connected (only available in certain packages)"]
-        LOW_LEAKAGE = 0x01,
+        LowLeakage = 0x01,
         #[doc = "VINM not externally connected, valid only in PGA mode"]
-        NOT_CONNECTED = 0x02,
+        NotConnected = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl VmSel {
@@ -486,9 +486,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VpSel {
         #[doc = "GPIO connected to VINP"]
-        GPIO = 0x0,
+        Gpio = 0x0,
         #[doc = "DAC connected to VINP"]
-        DAC = 0x01,
+        Dac = 0x01,
     }
     impl VpSel {
         #[inline(always)]

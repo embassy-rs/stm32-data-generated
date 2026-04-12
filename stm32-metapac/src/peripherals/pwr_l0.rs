@@ -372,9 +372,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum DsEeKoff {
         #[doc = "NVM woken up when exiting from Deepsleep mode even if the bit RUN_PD is set"]
-        NVMWAKE_UP = 0x0,
+        NvmWakeUp = 0x0,
         #[doc = "NVM not woken up when exiting from low-power mode (if the bit RUN_PD is set)"]
-        NVMSLEEP = 0x01,
+        NvmSleep = 0x01,
     }
     impl DsEeKoff {
         #[inline(always)]
@@ -403,9 +403,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Voltage regulator in Main mode"]
-        MAIN_MODE = 0x0,
+        MainMode = 0x0,
         #[doc = "Voltage regulator switches to low-power mode"]
-        LOW_POWER_MODE = 0x01,
+        LowPowerMode = 0x01,
     }
     impl Mode {
         #[inline(always)]
@@ -434,9 +434,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pdds {
         #[doc = "Enter Stop mode when the CPU enters deepsleep"]
-        STOP_MODE = 0x0,
+        StopMode = 0x0,
         #[doc = "Enter Standby mode when the CPU enters deepsleep"]
-        STANDBY_MODE = 0x01,
+        StandbyMode = 0x01,
     }
     impl Pdds {
         #[inline(always)]
@@ -465,21 +465,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pls {
         #[doc = "1.9 V"]
-        V1_9 = 0x0,
+        V19 = 0x0,
         #[doc = "2.1 V"]
-        V2_1 = 0x01,
+        V21 = 0x01,
         #[doc = "2.3 V"]
-        V2_3 = 0x02,
+        V23 = 0x02,
         #[doc = "2.5 V"]
-        V2_5 = 0x03,
+        V25 = 0x03,
         #[doc = "2.7 V"]
-        V2_7 = 0x04,
+        V27 = 0x04,
         #[doc = "2.9 V"]
-        V2_9 = 0x05,
+        V29 = 0x05,
         #[doc = "3.1 V"]
-        V3_1 = 0x06,
+        V31 = 0x06,
         #[doc = "External input analog voltage (Compare internally to VREFINT)"]
-        EXTERNAL = 0x07,
+        External = 0x07,
     }
     impl Pls {
         #[inline(always)]
@@ -509,11 +509,11 @@ pub mod vals {
     pub enum Vos {
         _RESERVED_0 = 0x0,
         #[doc = "1.8 V (range 1)"]
-        RANGE1 = 0x01,
+        Range1 = 0x01,
         #[doc = "1.5 V (range 2)"]
-        RANGE2 = 0x02,
+        Range2 = 0x02,
         #[doc = "1.2 V (range 3)"]
-        RANGE3 = 0x03,
+        Range3 = 0x03,
     }
     impl Vos {
         #[inline(always)]

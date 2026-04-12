@@ -889,9 +889,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vos {
         _RESERVED_0 = 0x0,
-        SCALE3 = 0x01,
-        SCALE2 = 0x02,
-        SCALE1 = 0x03,
+        Scale3 = 0x01,
+        Scale2 = 0x02,
+        Scale1 = 0x03,
     }
     impl Vos {
         #[inline(always)]
@@ -920,11 +920,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkuppupd {
         #[doc = "No pull-up."]
-        NO_PULL = 0x0,
+        NoPull = 0x0,
         #[doc = "Pull-up."]
-        PULL_UP = 0x01,
+        PullUp = 0x01,
         #[doc = "Pull-down."]
-        PULL_DOWN = 0x02,
+        PullDown = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Wkuppupd {

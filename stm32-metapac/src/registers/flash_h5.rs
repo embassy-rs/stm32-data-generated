@@ -3644,14 +3644,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0X_B4",
+                    name: "B0xB4",
                     description: Some(
                         "The BOOT_UBE and SECBOOTADD are frozen. SWAP_BANK can only be modified with TZEN set to 0xC3 (disabled).",
                     ),
                     value: 180,
                 },
                 EnumVariant {
-                    name: "B_0X_C3",
+                    name: "B0xC3",
                     description: Some(
                         "The BOOT_UBE, SWAP_ BANK and SECBOOTADD can still be modified following their individual rules.",
                     ),
@@ -3665,56 +3665,56 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "No flash operation on going during previous reset",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Single write operation interrupted",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "OBK alternate sector erase",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B_0X3",
+                    name: "B0x3",
                     description: Some(
                         "Sector erase operation interrupted",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B_0X4",
+                    name: "B0x4",
                     description: Some(
                         "Bank erase operation interrupted",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B_0X5",
+                    name: "B0x5",
                     description: Some(
                         "Mass erase operation interrupted",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "B_0X6",
+                    name: "B0x6",
                     description: Some(
                         "Option change operation interrupted",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "B_0X7",
+                    name: "B0x7",
                     description: Some(
                         "OBK swap sector request",
                     ),
@@ -3728,14 +3728,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0X_B4",
+                    name: "B0xB4",
                     description: Some(
                         "The NSBOOTADD is frozen. SWAP_ BANK can only be modified with TZEN set to 0xB4 (enabled).",
                     ),
                     value: 180,
                 },
                 EnumVariant {
-                    name: "B_0X_C3",
+                    name: "B0xC3",
                     description: Some(
                         "The SWAP_ BANK and NSBOOTADD can still be modified following their individual rules.",
                     ),
@@ -3749,14 +3749,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Bank1 is selected for Bank erase / sector erase / interrupt enable",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Bank2 is selected for BER / SER",
                     ),
@@ -3770,14 +3770,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "access to non secure registers is always granted",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "access to non secure registers is denied in case of unprivileged access.",
                     ),
@@ -3791,14 +3791,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Bank1 and Bank2 not swapped",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Bank1 and Bank2 swapped",
                     ),
@@ -3812,14 +3812,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "BKPRAM ECC check enabled",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "BKPRAM ECC check disabled",
                     ),
@@ -3833,14 +3833,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0X_B4",
+                    name: "B0xB4",
                     description: Some(
                         "OEM-iRoT (user flash) selected. In Open PRODUCT_STATE this value selects bootloader. Defaut value.",
                     ),
                     value: 180,
                 },
                 EnumVariant {
-                    name: "B_0X_C3",
+                    name: "B0xC3",
                     description: Some(
                         "ST-iRoT (system flash) selected",
                     ),
@@ -3854,14 +3854,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "BOR Level 2, the threshold level is medium (around 2.4 V)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
+                    name: "B0x2",
                     description: Some(
                         "BOR Level 3, the threshold level is high (around 2.7 V)",
                     ),
@@ -3875,14 +3875,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "High-speed IO at low V<sub>DD</sub> voltage feature disabled (V<sub>DD</sub> can exceed 2.7�V)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "High-speed IO at low V<sub>DD</sub> voltage feature enabled (V<sub>DD</sub> remains below 2.7�V)",
                     ),
@@ -3896,14 +3896,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "High-speed IO at low V<sub>DDIO2</sub> voltage feature disabled (V<sub>DDIO2</sub> can exceed 2.7�V)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "High-speed IO at low V<sub>DDIO2</sub> voltage feature enabled (V<sub>DDIO2</sub> remains below 2.7�V)",
                     ),
@@ -3917,14 +3917,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Independent watchdog frozen in Standby mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Independent watchdog keep running in Standby mode.",
                     ),
@@ -3938,14 +3938,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Independent watchdog frozen in system Stop mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Independent watchdog keep running in system Stop mode.",
                     ),
@@ -3959,14 +3959,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "IWDG watchdog is controlled by hardware",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "IWDG watchdog is controlled by software",
                     ),
@@ -3980,14 +3980,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "a reset is generated when entering Standby mode on core domain",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "no reset generated when entering Standby mode on core domain.",
                     ),
@@ -4001,14 +4001,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "a reset is generated when entering Stop mode on core domain",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "no reset generated when entering Stop mode on core domain.",
                     ),
@@ -4022,14 +4022,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "SRAM2 ECC check enabled",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "SRAM2 ECC check disabled",
                     ),
@@ -4043,14 +4043,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Bank1 and Bank2 not swapped",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Bank1 and Bank2 swapped",
                     ),
@@ -4064,14 +4064,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0X_B4",
+                    name: "B0xB4",
                     description: Some(
                         "TrustZone enabled.",
                     ),
                     value: 180,
                 },
                 EnumVariant {
-                    name: "B_0X_C3",
+                    name: "B0xC3",
                     description: Some(
                         "TrustZone disabled",
                     ),
@@ -4085,14 +4085,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "WWDG watchdog is controlled by hardware",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "WWDG watchdog is controlled by software",
                     ),
@@ -4106,14 +4106,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "sectors (32 * (x-1) + y) in bank 2 is unprivileged",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "sector (32 * (x-1) + y) in bank 2 is privileged",
                     ),
@@ -4127,14 +4127,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "sectors (32 * (x-1) + y) in bank 2 is non secure",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "sector (32 * (x-1) + y) in bank 2 is secure",
                     ),
@@ -4148,14 +4148,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0X_B4",
+                    name: "B0xB4",
                     description: Some(
                         "The BOOT_UBE and SECBOOTADD are frozen. SWAP_ BANK can only be modified with TZEN set to 0xC3 (disabled).",
                     ),
                     value: 180,
                 },
                 EnumVariant {
-                    name: "B_0X_C3",
+                    name: "B0xC3",
                     description: Some(
                         "The BOOT_UBE, SWAP_BANK and SECBOOTADD can still be modified following their individual rules.",
                     ),
@@ -4169,14 +4169,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Bank1 is selected for Bank erase / sector erase / interrupt enable",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "Bank2 is selected for BER / SER",
                     ),
@@ -4190,14 +4190,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "access to secure registers is always granted",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "access to secure registers is denied in case of unprivileged access.",
                     ),

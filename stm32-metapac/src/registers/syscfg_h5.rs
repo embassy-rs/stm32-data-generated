@@ -1178,14 +1178,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CELL",
+                    name: "Cell",
                     description: Some(
                         "Code from the cell (available in the SBS_CCVR)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SOFTWARE",
+                    name: "Software",
                     description: Some(
                         "Code from SBS_CCCR",
                     ),
@@ -1199,21 +1199,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0X51",
+                    name: "B0x51",
                     description: Some(
                         "HDPL1",
                     ),
                     value: 81,
                 },
                 EnumVariant {
-                    name: "B_0X6F",
+                    name: "B0x6f",
                     description: Some(
                         "HDPL3",
                     ),
                     value: 111,
                 },
                 EnumVariant {
-                    name: "B_0X8A",
+                    name: "B0x8a",
                     description: Some(
                         "HDPL2",
                     ),
@@ -1227,7 +1227,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0X_B4",
+                    name: "B0xB4",
                     description: Some(
                         "Writes to SBS_DBGCR allowed (default)",
                     ),
@@ -1241,14 +1241,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "SEC_EPOCH counter input selected",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "NS_EPOCH (non-secure) input selected",
                     ),
@@ -1262,21 +1262,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "MII_GMII",
+                    name: "MiiGmii",
                     description: Some(
                         "GMII or MII",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RESERVED_RGMII",
+                    name: "ReservedRgmii",
                     description: Some(
                         "reserved (RGMII)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RMII",
+                    name: "Rmii",
                     description: Some(
                         "RMII",
                     ),
@@ -1290,28 +1290,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0X51",
+                    name: "B0x51",
                     description: Some(
                         "HDPL1, iRoT",
                     ),
                     value: 81,
                 },
                 EnumVariant {
-                    name: "B_0X6F",
+                    name: "B0x6f",
                     description: Some(
                         "HDPL3, application (secure/non-secure)",
                     ),
                     value: 111,
                 },
                 EnumVariant {
-                    name: "B_0X8A",
+                    name: "B0x8a",
                     description: Some(
                         "HDPL2, uRoT",
                     ),
                     value: 138,
                 },
                 EnumVariant {
-                    name: "B_0X_B4",
+                    name: "B0xB4",
                     description: Some(
                         "HDPL0, RSS",
                     ),
@@ -1325,14 +1325,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0X6A",
+                    name: "B0x6a",
                     description: Some(
                         "recommended value to increment HDPL level by one",
                     ),
                     value: 106,
                 },
                 EnumVariant {
-                    name: "B_0X_B4",
+                    name: "B0xB4",
                     description: Some(
                         "no increment",
                     ),
@@ -1346,14 +1346,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "SBS_CFGR2 register accessible through secure or non-secure transaction",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some(
                         "SBS_CFGR2 register only accessible through secure transaction",
                     ),

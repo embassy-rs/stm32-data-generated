@@ -160,22 +160,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PERCENT10",
+                    name: "Percent10",
                     description: Some("VREFOPAMP = 10% VDDA"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PERCENT3_3",
+                    name: "Percent33",
                     description: Some("VREFOPAMP = 3.3% VDDA"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PERCENT50",
+                    name: "Percent50",
                     description: Some("VREFOPAMP = 50% VDDA"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PERCENT90",
+                    name: "Percent90",
                     description: Some("VREFOPAMP = 90% VDDA"),
                     value: 3,
                 },
@@ -187,62 +187,62 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "GAIN16",
+                    name: "Gain16",
                     description: Some("Gain 16"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "GAIN16_VM0",
+                    name: "Gain16Vm0",
                     description: Some("Gain 16, feedback connected to VM0"),
                     value: 11,
                 },
                 EnumVariant {
-                    name: "GAIN16_VM1",
+                    name: "Gain16Vm1",
                     description: Some("Gain 16, feedback connected to VM1"),
                     value: 15,
                 },
                 EnumVariant {
-                    name: "GAIN2",
+                    name: "Gain2",
                     description: Some("Gain 2"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "GAIN2_VM0",
+                    name: "Gain2Vm0",
                     description: Some("Gain 2, feedback connected to VM0"),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "GAIN2_VM1",
+                    name: "Gain2Vm1",
                     description: Some("Gain 2, feedback connected to VM1"),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "GAIN4",
+                    name: "Gain4",
                     description: Some("Gain 4"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "GAIN4_VM0",
+                    name: "Gain4Vm0",
                     description: Some("Gain 4, feedback connected to VM0"),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "GAIN4_VM1",
+                    name: "Gain4Vm1",
                     description: Some("Gain 4, feedback connected to VM1"),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "GAIN8",
+                    name: "Gain8",
                     description: Some("Gain 8"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "GAIN8_VM0",
+                    name: "Gain8Vm0",
                     description: Some("Gain 8, feedback connected to VM0"),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "GAIN8_VM1",
+                    name: "Gain8Vm1",
                     description: Some("Gain 8, feedback connected to VM1"),
                     value: 14,
                 },
@@ -254,22 +254,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "FOLLOWER",
+                    name: "Follower",
                     description: Some("Follower mode"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "PA5",
+                    name: "Pa5",
                     description: Some("PA5 (VM1) used as OPAMP2 inverting input"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PC5",
+                    name: "Pc5",
                     description: Some("PC5 (VM0) used as OPAMP2 inverting input"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PGA",
+                    name: "Pga",
                     description: Some("Resistor feedback output (PGA mode)"),
                     value: 2,
                 },
@@ -281,12 +281,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "PA5",
+                    name: "Pa5",
                     description: Some("PA5 (VM1) used as OPAMP2 inverting input when TCM_EN = 1"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PC5",
+                    name: "Pc5",
                     description: Some("PC5 (VM0) used as OPAMP2 inverting input when TCM_EN = 1"),
                     value: 0,
                 },
@@ -298,17 +298,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PA7",
+                    name: "Pa7",
                     description: Some("PA7 used as OPAMP2 non-inverting input"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "PB0",
+                    name: "Pb0",
                     description: Some("PB0 used as OPAMP2 non-inverting input"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PB14",
+                    name: "Pb14",
                     description: Some("PB14 used as OPAMP2 non-inverting input"),
                     value: 1,
                 },
@@ -320,17 +320,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PA7",
+                    name: "Pa7",
                     description: Some("PA7 used as OPAMP2 non-inverting input when TCM_EN=1"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "PB0",
+                    name: "Pb0",
                     description: Some("PB0 used as OPAMP2 non-inverting input when TCM_EN=1"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PB14",
+                    name: "Pb14",
                     description: Some("PB14 used as OPAMP2 non-inverting input when TCM_EN=1"),
                     value: 1,
                 },

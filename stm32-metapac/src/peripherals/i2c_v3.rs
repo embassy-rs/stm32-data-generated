@@ -1375,9 +1375,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Addmode {
         #[doc = "7-bit addressing mode"]
-        BIT7 = 0x0,
+        Bit7 = 0x0,
         #[doc = "10-bit addressing mode"]
-        BIT10 = 0x01,
+        Bit10 = 0x01,
     }
     impl Addmode {
         #[inline(always)]
@@ -1406,9 +1406,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Autoend {
         #[doc = "Software end mode: TC flag is set when NBYTES data are transferred, stretching SCL low"]
-        SOFTWARE = 0x0,
+        Software = 0x0,
         #[doc = "Automatic end mode: a STOP condition is automatically sent when NBYTES data are transferred"]
-        AUTOMATIC = 0x01,
+        Automatic = 0x01,
     }
     impl Autoend {
         #[inline(always)]
@@ -1437,9 +1437,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dir {
         #[doc = "Write transfer, slave enters receiver mode"]
-        WRITE = 0x0,
+        Write = 0x0,
         #[doc = "Read transfer, slave enters transmitter mode"]
-        READ = 0x01,
+        Read = 0x01,
     }
     impl Dir {
         #[inline(always)]
@@ -1468,37 +1468,37 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dnf {
         #[doc = "Digital filter disabled"]
-        NO_FILTER = 0x0,
+        NoFilter = 0x0,
         #[doc = "Digital filter enabled and filtering capability up to 1 tI2CCLK"]
-        FILTER1 = 0x01,
+        Filter1 = 0x01,
         #[doc = "Digital filter enabled and filtering capability up to 2 tI2CCLK"]
-        FILTER2 = 0x02,
+        Filter2 = 0x02,
         #[doc = "Digital filter enabled and filtering capability up to 3 tI2CCLK"]
-        FILTER3 = 0x03,
+        Filter3 = 0x03,
         #[doc = "Digital filter enabled and filtering capability up to 4 tI2CCLK"]
-        FILTER4 = 0x04,
+        Filter4 = 0x04,
         #[doc = "Digital filter enabled and filtering capability up to 5 tI2CCLK"]
-        FILTER5 = 0x05,
+        Filter5 = 0x05,
         #[doc = "Digital filter enabled and filtering capability up to 6 tI2CCLK"]
-        FILTER6 = 0x06,
+        Filter6 = 0x06,
         #[doc = "Digital filter enabled and filtering capability up to 7 tI2CCLK"]
-        FILTER7 = 0x07,
+        Filter7 = 0x07,
         #[doc = "Digital filter enabled and filtering capability up to 8 tI2CCLK"]
-        FILTER8 = 0x08,
+        Filter8 = 0x08,
         #[doc = "Digital filter enabled and filtering capability up to 9 tI2CCLK"]
-        FILTER9 = 0x09,
+        Filter9 = 0x09,
         #[doc = "Digital filter enabled and filtering capability up to 10 tI2CCLK"]
-        FILTER10 = 0x0a,
+        Filter10 = 0x0a,
         #[doc = "Digital filter enabled and filtering capability up to 11 tI2CCLK"]
-        FILTER11 = 0x0b,
+        Filter11 = 0x0b,
         #[doc = "Digital filter enabled and filtering capability up to 12 tI2CCLK"]
-        FILTER12 = 0x0c,
+        Filter12 = 0x0c,
         #[doc = "Digital filter enabled and filtering capability up to 13 tI2CCLK"]
-        FILTER13 = 0x0d,
+        Filter13 = 0x0d,
         #[doc = "Digital filter enabled and filtering capability up to 14 tI2CCLK"]
-        FILTER14 = 0x0e,
+        Filter14 = 0x0e,
         #[doc = "Digital filter enabled and filtering capability up to 15 tI2CCLK"]
-        FILTER15 = 0x0f,
+        Filter15 = 0x0f,
     }
     impl Dnf {
         #[inline(always)]
@@ -1527,9 +1527,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Headr {
         #[doc = "The master sends the complete 10 bit slave address read sequence"]
-        COMPLETE = 0x0,
+        Complete = 0x0,
         #[doc = "The master only sends the 1st 7 bits of the 10 bit address, followed by Read direction"]
-        PARTIAL = 0x01,
+        Partial = 0x01,
     }
     impl Headr {
         #[inline(always)]
@@ -1558,34 +1558,34 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Oamsk {
         #[doc = "No mask"]
-        NO_MASK = 0x0,
+        NoMask = 0x0,
         #[doc = "OA2\\[1\\]
 is masked and don’t care. Only OA2\\[7:2\\]
 are compared"]
-        MASK1 = 0x01,
+        Mask1 = 0x01,
         #[doc = "OA2\\[2:1\\]
 are masked and don’t care. Only OA2\\[7:3\\]
 are compared"]
-        MASK2 = 0x02,
+        Mask2 = 0x02,
         #[doc = "OA2\\[3:1\\]
 are masked and don’t care. Only OA2\\[7:4\\]
 are compared"]
-        MASK3 = 0x03,
+        Mask3 = 0x03,
         #[doc = "OA2\\[4:1\\]
 are masked and don’t care. Only OA2\\[7:5\\]
 are compared"]
-        MASK4 = 0x04,
+        Mask4 = 0x04,
         #[doc = "OA2\\[5:1\\]
 are masked and don’t care. Only OA2\\[7:6\\]
 are compared"]
-        MASK5 = 0x05,
+        Mask5 = 0x05,
         #[doc = "OA2\\[6:1\\]
 are masked and don’t care. Only OA2\\[7\\]
 is compared."]
-        MASK6 = 0x06,
+        Mask6 = 0x06,
         #[doc = "OA2\\[7:1\\]
 are masked and don’t care. No comparison is done, and all (except reserved) 7-bit received addresses are acknowledged"]
-        MASK7 = 0x07,
+        Mask7 = 0x07,
     }
     impl Oamsk {
         #[inline(always)]
@@ -1614,9 +1614,9 @@ are masked and don’t care. No comparison is done, and all (except reserved) 7-
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Reload {
         #[doc = "The transfer is completed after the NBYTES data transfer (STOP or RESTART will follow)"]
-        COMPLETED = 0x0,
+        Completed = 0x0,
         #[doc = "The transfer is not completed after the NBYTES data transfer (NBYTES will be reloaded)"]
-        NOT_COMPLETED = 0x01,
+        NotCompleted = 0x01,
     }
     impl Reload {
         #[inline(always)]

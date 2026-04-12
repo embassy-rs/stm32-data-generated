@@ -192,12 +192,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ALARM",
+                    name: "Alarm",
                     description: Some("RTC Alarm pulse output selected"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SECOND",
+                    name: "Second",
                     description: Some("RTC Second pulse output selected"),
                     value: 1,
                 },
@@ -209,14 +209,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HIGH",
+                    name: "High",
                     description: Some(
                         "A high level on the TAMPER pin resets all data backup registers (if TPE bit is set)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LOW",
+                    name: "Low",
                     description: Some(
                         "A low level on the TAMPER pin resets all data backup registers (if TPE bit is set)",
                     ),

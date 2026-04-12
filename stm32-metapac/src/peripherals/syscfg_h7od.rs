@@ -1482,12 +1482,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EthSelPhy {
         #[doc = "GMII or MII"]
-        MII_GMII = 0x0,
+        MiiGmii = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "RMII"]
-        RMII = 0x04,
+        Rmii = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,

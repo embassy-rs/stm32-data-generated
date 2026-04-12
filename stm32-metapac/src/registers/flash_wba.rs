@@ -2546,35 +2546,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "LEVEL0",
+                    name: "Level0",
                     description: Some(
                         "BOR level 0 (reset level threshold around 1.7V)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LEVEL1",
+                    name: "Level1",
                     description: Some(
                         "BOR level 1 (reset level threshold around 2.0V)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "LEVEL2",
+                    name: "Level2",
                     description: Some(
                         "BOR level 2 (reset level threshold around 2.2V)",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "LEVEL3",
+                    name: "Level3",
                     description: Some(
                         "BOR level 3 (reset level threshold around 2.5V)",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "LEVEL4",
+                    name: "Level4",
                     description: Some(
                         "BOR level 4 (reset level threshold around 2.8V)",
                     ),
@@ -2588,49 +2588,49 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "BANK_ERASE_INT",
+                    name: "BankEraseInt",
                     description: Some(
                         "Bank erase operation interrupted",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "BURST_WR_INT",
+                    name: "BurstWrInt",
                     description: Some(
                         "Burst write operation interrupted",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MASS_ERASE_INT",
+                    name: "MassEraseInt",
                     description: Some(
                         "Mass erase operation interrupted",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "NO_FLASH_INT",
+                    name: "NoFlashInt",
                     description: Some(
                         "No Flash operation interrupted by previous reset",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OPT_CHANGE_INT",
+                    name: "OptChangeInt",
                     description: Some(
                         "Option change operation interrupted",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "PG_ERASE_INT",
+                    name: "PgEraseInt",
                     description: Some(
                         "Page erase operation interrupted",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "SINGLE_WR_INT",
+                    name: "SingleWrInt",
                     description: Some(
                         "Single write operation interrupted",
                     ),
@@ -2644,21 +2644,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B_0X55",
+                    name: "B0x55",
                     description: Some(
                         "Level 0.5 (readout protection not active, only non-secure debug access is possible). Only available when TrustZone is active (TZEN=1)",
                     ),
                     value: 85,
                 },
                 EnumVariant {
-                    name: "B_0X_AA",
+                    name: "B0xAa",
                     description: Some(
                         "Level 0 (readout protection not active)",
                     ),
                     value: 170,
                 },
                 EnumVariant {
-                    name: "B_0X_CC",
+                    name: "B0xCc",
                     description: Some(
                         "Level 2 (chip readout protection active)",
                     ),

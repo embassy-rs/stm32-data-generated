@@ -3245,13 +3245,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Act {
         #[doc = "Synchronizing: node is synchronizing on CAN communication."]
-        SYNC = 0x0,
+        Sync = 0x0,
         #[doc = "Idle: node is neither receiver nor transmitter."]
-        IDLE = 0x01,
+        Idle = 0x01,
         #[doc = "Receiver: node is operating as receiver."]
-        RX = 0x02,
+        Rx = 0x02,
         #[doc = "Transmitter: node is operating as transmitter."]
-        TX = 0x03,
+        Tx = 0x03,
     }
     impl Act {
         #[inline(always)]
@@ -3280,11 +3280,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Anfe {
         #[doc = "Accept in Rx FIFO 0"]
-        ACCEPT_FIFO_0 = 0x0,
+        AcceptFifo0 = 0x0,
         #[doc = "Accept in Rx FIFO 1"]
-        ACCEPT_FIFO_1 = 0x01,
+        AcceptFifo1 = 0x01,
         #[doc = "Reject"]
-        REJECT = 0x02,
+        Reject = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Anfe {
@@ -3314,11 +3314,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Anfs {
         #[doc = "Accept in Rx FIFO 0"]
-        ACCEPT_FIFO_0 = 0x0,
+        AcceptFifo0 = 0x0,
         #[doc = "Accept in Rx FIFO 1"]
-        ACCEPT_FIFO_1 = 0x01,
+        AcceptFifo1 = 0x01,
         #[doc = "Reject"]
-        REJECT = 0x02,
+        Reject = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Anfs {
@@ -3348,21 +3348,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lec {
         #[doc = "No Error: No error occurred since LEC has been reset by successful reception or transmission."]
-        NO_ERROR = 0x0,
+        NoError = 0x0,
         #[doc = "Stuff Error: More than 5 equal bits in a sequence have occurred in a part of a received message where this is not allowed."]
-        STUFF = 0x01,
+        Stuff = 0x01,
         #[doc = "Form Error: A fixed format part of a received frame has the wrong format."]
-        FORM = 0x02,
+        Form = 0x02,
         #[doc = "AckError: The message transmitted by the FDCAN was not acknowledged by another node."]
-        ACK = 0x03,
+        Ack = 0x03,
         #[doc = "Bit1Error: During the transmission of a message (with the exception of the arbitration field), the device wanted to send a recessive level (bit of logical value 1), but the monitored bus value was dominant."]
-        BIT_1 = 0x04,
+        Bit1 = 0x04,
         #[doc = "Bit0Error: During the transmission of a message (or acknowledge bit, or active error flag, or overload flag), the device wanted to send a dominant level (data or identifier bit logical value 0), but the monitored bus value was recessive. During Bus_Off recovery this status is set each time a sequence of 11 recessive bits has been monitored. This enables the CPU to monitor the proceeding of the Bus_Off recovery sequence (indicating the bus is not stuck at dominant or continuously disturbed)."]
-        BIT_0 = 0x05,
+        Bit0 = 0x05,
         #[doc = "CRCError: The CRC check sum of a received message was incorrect. The CRC of an incoming message does not match with the CRC calculated from the received data."]
-        CRC = 0x06,
+        Crc = 0x06,
         #[doc = "NoChange: Any read access to the Protocol status register re-initializes the LEC to ‘7’. When the LEC shows the value ‘7’, no CAN bus event was detected since the last CPU read access to the Protocol status register."]
-        NO_CHANGE = 0x07,
+        NoChange = 0x07,
     }
     impl Lec {
         #[inline(always)]
@@ -3391,13 +3391,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msi {
         #[doc = "No FIFO selected"]
-        NO_FIFO = 0x0,
+        NoFifo = 0x0,
         #[doc = "FIFO overrun"]
-        OVERRUN = 0x01,
+        Overrun = 0x01,
         #[doc = "Message stored in FIFO 0"]
-        FIFO_0 = 0x02,
+        Fifo0 = 0x02,
         #[doc = "Message stored in FIFO 1"]
-        FIFO_1 = 0x03,
+        Fifo1 = 0x03,
     }
     impl Msi {
         #[inline(always)]
@@ -3426,37 +3426,37 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pdiv {
         #[doc = "Divide by 1"]
-        DIV_1 = 0x0,
+        Div1 = 0x0,
         #[doc = "Divide by 2"]
-        DIV_2 = 0x01,
+        Div2 = 0x01,
         #[doc = "Divide by 4"]
-        DIV_4 = 0x02,
+        Div4 = 0x02,
         #[doc = "Divide by 6"]
-        DIV_6 = 0x03,
+        Div6 = 0x03,
         #[doc = "Divide by 8"]
-        DIV_8 = 0x04,
+        Div8 = 0x04,
         #[doc = "Divide by 10"]
-        DIV_10 = 0x05,
+        Div10 = 0x05,
         #[doc = "Divide by 12"]
-        DIV_12 = 0x06,
+        Div12 = 0x06,
         #[doc = "Divide by 14"]
-        DIV_14 = 0x07,
+        Div14 = 0x07,
         #[doc = "Divide by 16"]
-        DIV_16 = 0x08,
+        Div16 = 0x08,
         #[doc = "Divide by 18"]
-        DIV_18 = 0x09,
+        Div18 = 0x09,
         #[doc = "Divide by 20"]
-        DIV_20 = 0x0a,
+        Div20 = 0x0a,
         #[doc = "Divide by 22"]
-        DIV_22 = 0x0b,
+        Div22 = 0x0b,
         #[doc = "Divide by 24"]
-        DIV_24 = 0x0c,
+        Div24 = 0x0c,
         #[doc = "Divide by 26"]
-        DIV_26 = 0x0d,
+        Div26 = 0x0d,
         #[doc = "Divide by 28"]
-        DIV_28 = 0x0e,
+        Div28 = 0x0e,
         #[doc = "Divide by 30"]
-        DIV_30 = 0x0f,
+        Div30 = 0x0f,
     }
     impl Pdiv {
         #[inline(always)]
@@ -3485,9 +3485,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tfqm {
         #[doc = "Tx FIFO operation"]
-        FIFO = 0x0,
+        Fifo = 0x0,
         #[doc = "Tx queue operation"]
-        QUEUE = 0x01,
+        Queue = 0x01,
     }
     impl Tfqm {
         #[inline(always)]
@@ -3516,13 +3516,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tos {
         #[doc = "Continuous operation"]
-        CONTINUOUS = 0x0,
+        Continuous = 0x0,
         #[doc = "Timeout controlled by Tx event FIFO"]
-        TX_EVENT_FIFO = 0x01,
+        TxEventFifo = 0x01,
         #[doc = "Timeout controlled by Rx FIFO 0"]
-        RX_FIFO_0 = 0x02,
+        RxFifo0 = 0x02,
         #[doc = "Timeout controlled by Rx FIFO 1"]
-        RX_FIFO_1 = 0x03,
+        RxFifo1 = 0x03,
     }
     impl Tos {
         #[inline(always)]
@@ -3551,11 +3551,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tss {
         #[doc = "Timestamp counter value always 0x0000"]
-        ZERO = 0x0,
+        Zero = 0x0,
         #[doc = "Timestamp counter value incremented according to TCP"]
-        INCREMENT = 0x01,
+        Increment = 0x01,
         #[doc = "External timestamp counter from TIM3 value (tim3_cnt\\[0:15\\])"]
-        EXTERNAL = 0x02,
+        External = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Tss {
@@ -3585,13 +3585,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tx {
         #[doc = "Reset value, FDCANx_TX TX is controlled by the CAN core, updated at the end of the CAN bit time"]
-        RESET = 0x0,
+        Reset = 0x0,
         #[doc = "Sample point can be monitored at pin FDCANx_TX"]
-        SAMPLE_POINT = 0x01,
+        SamplePoint = 0x01,
         #[doc = "Dominant (0) level at pin FDCANx_TX"]
-        DOMINANT = 0x02,
+        Dominant = 0x02,
         #[doc = "Recessive (1) at pin FDCANx_TX"]
-        RECESSIVE = 0x03,
+        Recessive = 0x03,
     }
     impl Tx {
         #[inline(always)]

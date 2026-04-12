@@ -1098,25 +1098,25 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dualmod {
         #[doc = "Independent mode."]
-        INDEPENDENT = 0x0,
+        Independent = 0x0,
         #[doc = "Combined regular simultaneous + injected simultaneous mode"]
-        REGULAR_INJECTED = 0x01,
+        RegularInjected = 0x01,
         #[doc = "Combined regular simultaneous + alternate trigger mode"]
-        REGULAR_ALTERNATE_TRIGGER = 0x02,
+        RegularAlternateTrigger = 0x02,
         #[doc = "Combined injected simultaneous + fast interleaved mode"]
-        INJECTED_FAST_INTERLEAVED = 0x03,
+        InjectedFastInterleaved = 0x03,
         #[doc = "Combined injected simultaneous + slow Interleaved mode"]
-        INJECTED_SLOW_INTERLEAVED = 0x04,
+        InjectedSlowInterleaved = 0x04,
         #[doc = "Injected simultaneous mode only"]
-        INJECTED = 0x05,
+        Injected = 0x05,
         #[doc = "Regular simultaneous mode only"]
-        REGULAR = 0x06,
+        Regular = 0x06,
         #[doc = "Fast interleaved mode only"]
-        FAST_INTERLEAVED = 0x07,
+        FastInterleaved = 0x07,
         #[doc = "Slow interleaved mode only"]
-        SLOW_INTERLEAVED = 0x08,
+        SlowInterleaved = 0x08,
         #[doc = "Alternate trigger mode only"]
-        ALTERNATE_TRIGGER = 0x09,
+        AlternateTrigger = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
@@ -1151,21 +1151,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "1.5 cycles"]
-        CYCLES1_5 = 0x0,
+        Cycles15 = 0x0,
         #[doc = "7.5 cycles"]
-        CYCLES7_5 = 0x01,
+        Cycles75 = 0x01,
         #[doc = "13.5 cycles"]
-        CYCLES13_5 = 0x02,
+        Cycles135 = 0x02,
         #[doc = "28.5 cycles"]
-        CYCLES28_5 = 0x03,
+        Cycles285 = 0x03,
         #[doc = "41.5 cycles"]
-        CYCLES41_5 = 0x04,
+        Cycles415 = 0x04,
         #[doc = "55.5 cycles"]
-        CYCLES55_5 = 0x05,
+        Cycles555 = 0x05,
         #[doc = "71.5 cycles"]
-        CYCLES71_5 = 0x06,
+        Cycles715 = 0x06,
         #[doc = "239.5 cycles"]
-        CYCLES239_5 = 0x07,
+        Cycles2395 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]

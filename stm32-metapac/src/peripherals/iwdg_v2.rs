@@ -262,11 +262,11 @@ pub mod vals {
     pub struct Key(u16);
     impl Key {
         #[doc = "Enable access to PR, RLR and WINR registers (0x5555)"]
-        pub const ENABLE: Self = Self(0x5555);
+        pub const Enable: Self = Self(0x5555);
         #[doc = "Reset the watchdog value (0xAAAA)"]
-        pub const RESET: Self = Self(0xaaaa);
+        pub const Reset: Self = Self(0xaaaa);
         #[doc = "Start the watchdog (0xCCCC)"]
-        pub const START: Self = Self(0xcccc);
+        pub const Start: Self = Self(0xcccc);
     }
     impl Key {
         pub const fn from_bits(val: u16) -> Key {
@@ -279,9 +279,9 @@ pub mod vals {
     impl core::fmt::Debug for Key {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x5555 => f.write_str("ENABLE"),
-                0xaaaa => f.write_str("RESET"),
-                0xcccc => f.write_str("START"),
+                0x5555 => f.write_str("Enable"),
+                0xaaaa => f.write_str("Reset"),
+                0xcccc => f.write_str("Start"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -290,9 +290,9 @@ pub mod vals {
     impl defmt::Format for Key {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x5555 => defmt::write!(f, "ENABLE"),
-                0xaaaa => defmt::write!(f, "RESET"),
-                0xcccc => defmt::write!(f, "START"),
+                0x5555 => defmt::write!(f, "Enable"),
+                0xaaaa => defmt::write!(f, "Reset"),
+                0xcccc => defmt::write!(f, "Start"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -314,21 +314,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pr {
         #[doc = "Divider /4"]
-        DIVIDE_BY4 = 0x0,
+        DivideBy4 = 0x0,
         #[doc = "Divider /8"]
-        DIVIDE_BY8 = 0x01,
+        DivideBy8 = 0x01,
         #[doc = "Divider /16"]
-        DIVIDE_BY16 = 0x02,
+        DivideBy16 = 0x02,
         #[doc = "Divider /32"]
-        DIVIDE_BY32 = 0x03,
+        DivideBy32 = 0x03,
         #[doc = "Divider /64"]
-        DIVIDE_BY64 = 0x04,
+        DivideBy64 = 0x04,
         #[doc = "Divider /128"]
-        DIVIDE_BY128 = 0x05,
+        DivideBy128 = 0x05,
         #[doc = "Divider /256"]
-        DIVIDE_BY256 = 0x06,
+        DivideBy256 = 0x06,
         #[doc = "Divider /256"]
-        DIVIDE_BY256BIS = 0x07,
+        DivideBy256bis = 0x07,
     }
     impl Pr {
         #[inline(always)]

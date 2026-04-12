@@ -2129,13 +2129,13 @@ pub mod regs {
         #[doc = "Bank 1 sector write protection option status byte"]
         #[must_use]
         #[inline(always)]
-        pub const fn wrpsn(&self) -> u8 {
+        pub const fn wrp_sn(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
         #[doc = "Bank 1 sector write protection option status byte"]
         #[inline(always)]
-        pub const fn set_wrpsn(&mut self, val: u8) {
+        pub const fn set_wrp_sn(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -2147,13 +2147,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for WpsnCurr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("WpsnCurr").field("wrpsn", &self.wrpsn()).finish()
+            f.debug_struct("WpsnCurr").field("wrp_sn", &self.wrp_sn()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for WpsnCurr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "WpsnCurr {{ wrpsn: {=u8:?} }}", self.wrpsn())
+            defmt::write!(f, "WpsnCurr {{ wrp_sn: {=u8:?} }}", self.wrp_sn())
         }
     }
     #[doc = "FLASH write sector protection for bank 1"]
@@ -2164,13 +2164,13 @@ pub mod regs {
         #[doc = "Bank 1 sector write protection configuration byte"]
         #[must_use]
         #[inline(always)]
-        pub const fn wrpsn(&self) -> u8 {
+        pub const fn wrp_sn(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
         #[doc = "Bank 1 sector write protection configuration byte"]
         #[inline(always)]
-        pub const fn set_wrpsn(&mut self, val: u8) {
+        pub const fn set_wrp_sn(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -2182,13 +2182,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for WpsnPrgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("WpsnPrgr").field("wrpsn", &self.wrpsn()).finish()
+            f.debug_struct("WpsnPrgr").field("wrp_sn", &self.wrp_sn()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for WpsnPrgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "WpsnPrgr {{ wrpsn: {=u8:?} }}", self.wrpsn())
+            defmt::write!(f, "WpsnPrgr {{ wrp_sn: {=u8:?} }}", self.wrp_sn())
         }
     }
 }

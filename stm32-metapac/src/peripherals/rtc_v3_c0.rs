@@ -1741,7 +1741,7 @@ pub mod vals {
     pub enum Alrf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm A register (RTC_ALRMAR)"]
-        MATCH = 0x01,
+        Match = 0x01,
     }
     impl Alrf {
         #[inline(always)]
@@ -1771,7 +1771,7 @@ pub mod vals {
     pub enum Alrmf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm A register (RTC_ALRMAR)"]
-        MATCH = 0x01,
+        Match = 0x01,
     }
     impl Alrmf {
         #[inline(always)]
@@ -1800,9 +1800,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AlrmrMsk {
         #[doc = "Alarm set if the date/day match"]
-        TO_MATCH = 0x0,
+        ToMatch = 0x0,
         #[doc = "Date/day don’t care in Alarm comparison"]
-        NOT_MATCH = 0x01,
+        NotMatch = 0x01,
     }
     impl AlrmrMsk {
         #[inline(always)]
@@ -1831,9 +1831,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AlrmrPm {
         #[doc = "AM or 24-hour format"]
-        AM = 0x0,
+        Am = 0x0,
         #[doc = "PM"]
-        PM = 0x01,
+        Pm = 0x01,
     }
     impl AlrmrPm {
         #[inline(always)]
@@ -1863,11 +1863,11 @@ pub mod vals {
     pub enum AlrmrWdsel {
         #[doc = "DU\\[3:0\\]
 represents the date units"]
-        DATE_UNITS = 0x0,
+        DateUnits = 0x0,
         #[doc = "DU\\[3:0\\]
 represents the week day. DT\\[1:0\\]
 is don’t care."]
-        WEEK_DAY = 0x01,
+        WeekDay = 0x01,
     }
     impl AlrmrWdsel {
         #[inline(always)]
@@ -1896,9 +1896,9 @@ is don’t care."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ampm {
         #[doc = "AM or 24-hour format"]
-        AM = 0x0,
+        Am = 0x0,
         #[doc = "PM"]
-        PM = 0x01,
+        Pm = 0x01,
     }
     impl Ampm {
         #[inline(always)]
@@ -1927,9 +1927,9 @@ is don’t care."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calp {
         #[doc = "No RTCCLK pulses are added"]
-        NO_CHANGE = 0x0,
+        NoChange = 0x0,
         #[doc = "One RTCCLK pulse is effectively inserted every 2^11 pulses (frequency increased by 488.5 ppm)"]
-        INCREASE_FREQ = 0x01,
+        IncreaseFreq = 0x01,
     }
     impl Calp {
         #[inline(always)]
@@ -1959,7 +1959,7 @@ is don’t care."]
     pub enum Calrf {
         _RESERVED_0 = 0x0,
         #[doc = "Clear interrupt flag by writing 1"]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Calrf {
         #[inline(always)]
@@ -1989,7 +1989,7 @@ is don’t care."]
     pub enum Calw16 {
         _RESERVED_0 = 0x0,
         #[doc = "When CALW16 is set to ‘1’, the 16-second calibration cycle period is selected.This bit must not be set to ‘1’ if CALW8=1"]
-        SIXTEEN_SECONDS = 0x01,
+        SixteenSeconds = 0x01,
     }
     impl Calw16 {
         #[inline(always)]
@@ -2019,7 +2019,7 @@ is don’t care."]
     pub enum Calw8 {
         _RESERVED_0 = 0x0,
         #[doc = "When CALW8 is set to ‘1’, the 8-second calibration cycle period is selected"]
-        EIGHT_SECONDS = 0x01,
+        EightSeconds = 0x01,
     }
     impl Calw8 {
         #[inline(always)]
@@ -2048,9 +2048,9 @@ is don’t care."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cosel {
         #[doc = "Calibration output is 512 Hz (with default prescaler setting)"]
-        CAL_FREQ_512HZ = 0x0,
+        CalFreq512hz = 0x0,
         #[doc = "Calibration output is 1 Hz (with default prescaler setting)"]
-        CAL_FREQ_1HZ = 0x01,
+        CalFreq1hz = 0x01,
     }
     impl Cosel {
         #[inline(always)]
@@ -2079,9 +2079,9 @@ is don’t care."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmt {
         #[doc = "24 hour/day format"]
-        TWENTY_FOUR_HOUR = 0x0,
+        TwentyFourHour = 0x0,
         #[doc = "AM/PM hour format"]
-        AM_PM = 0x01,
+        AmPm = 0x01,
     }
     impl Fmt {
         #[inline(always)]
@@ -2110,11 +2110,11 @@ is don’t care."]
     pub struct Key(u8);
     impl Key {
         #[doc = "Activate write protection (any value that is not the keys)"]
-        pub const ACTIVATE: Self = Self(0x0);
+        pub const Activate: Self = Self(0x0);
         #[doc = "Key 2"]
-        pub const DEACTIVATE2: Self = Self(0x53);
+        pub const Deactivate2: Self = Self(0x53);
         #[doc = "Key 1"]
-        pub const DEACTIVATE1: Self = Self(0xca);
+        pub const Deactivate1: Self = Self(0xca);
     }
     impl Key {
         pub const fn from_bits(val: u8) -> Key {
@@ -2127,9 +2127,9 @@ is don’t care."]
     impl core::fmt::Debug for Key {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("ACTIVATE"),
-                0x53 => f.write_str("DEACTIVATE2"),
-                0xca => f.write_str("DEACTIVATE1"),
+                0x0 => f.write_str("Activate"),
+                0x53 => f.write_str("Deactivate2"),
+                0xca => f.write_str("Deactivate1"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2138,9 +2138,9 @@ is don’t care."]
     impl defmt::Format for Key {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "ACTIVATE"),
-                0x53 => defmt::write!(f, "DEACTIVATE2"),
-                0xca => defmt::write!(f, "DEACTIVATE1"),
+                0x0 => defmt::write!(f, "Activate"),
+                0x53 => defmt::write!(f, "Deactivate2"),
+                0xca => defmt::write!(f, "Deactivate1"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -2162,13 +2162,13 @@ is don’t care."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Osel {
         #[doc = "Output disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Alarm A output enabled"]
-        ALARM_A = 0x01,
+        AlarmA = 0x01,
         #[doc = "Alarm B output enabled"]
-        ALARM_B = 0x02,
+        AlarmB = 0x02,
         #[doc = "Wakeup output enabled"]
-        WAKEUP = 0x03,
+        Wakeup = 0x03,
     }
     impl Osel {
         #[inline(always)]
@@ -2197,9 +2197,9 @@ is don’t care."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pol {
         #[doc = "The pin is high when ALRAF/ALRBF/WUTF is asserted (depending on OSEL\\[1:0\\])"]
-        HIGH = 0x0,
+        High = 0x0,
         #[doc = "The pin is low when ALRAF/ALRBF/WUTF is asserted (depending on OSEL\\[1:0\\])"]
-        LOW = 0x01,
+        Low = 0x01,
     }
     impl Pol {
         #[inline(always)]
@@ -2229,7 +2229,7 @@ is don’t care."]
     pub enum Recalpf {
         _RESERVED_0 = 0x0,
         #[doc = "The RECALPF status flag is automatically set to 1 when software writes to the RTC_CALR register, indicating that the RTC_CALR register is blocked. When the new calibration settings are taken into account, this bit returns to 0"]
-        PENDING = 0x01,
+        Pending = 0x01,
     }
     impl Recalpf {
         #[inline(always)]
@@ -2258,9 +2258,9 @@ is don’t care."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum TampalrmType {
         #[doc = "TAMPALRM is push-pull output"]
-        PUSH_PULL = 0x0,
+        PushPull = 0x0,
         #[doc = "TAMPALRM is open-drain output"]
-        OPEN_DRAIN = 0x01,
+        OpenDrain = 0x01,
     }
     impl TampalrmType {
         #[inline(always)]
@@ -2289,9 +2289,9 @@ is don’t care."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tsedge {
         #[doc = "RTC_TS input rising edge generates a time-stamp event"]
-        RISING_EDGE = 0x0,
+        RisingEdge = 0x0,
         #[doc = "RTC_TS input falling edge generates a time-stamp event"]
-        FALLING_EDGE = 0x01,
+        FallingEdge = 0x01,
     }
     impl Tsedge {
         #[inline(always)]
@@ -2321,7 +2321,7 @@ is don’t care."]
     pub enum Tsf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a time-stamp event occurs"]
-        TIMESTAMP_EVENT = 0x01,
+        TimestampEvent = 0x01,
     }
     impl Tsf {
         #[inline(always)]
@@ -2351,7 +2351,7 @@ is don’t care."]
     pub enum Tsmf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a time-stamp event occurs"]
-        TIMESTAMP_EVENT = 0x01,
+        TimestampEvent = 0x01,
     }
     impl Tsmf {
         #[inline(always)]
@@ -2381,7 +2381,7 @@ is don’t care."]
     pub enum Tsovf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a time-stamp event occurs while TSF is already set"]
-        OVERFLOW = 0x01,
+        Overflow = 0x01,
     }
     impl Tsovf {
         #[inline(always)]
@@ -2411,7 +2411,7 @@ is don’t care."]
     pub enum Tsovmf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when a time-stamp event occurs while TSF is already set"]
-        OVERFLOW = 0x01,
+        Overflow = 0x01,
     }
     impl Tsovmf {
         #[inline(always)]

@@ -2826,28 +2826,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "Disabled",
                     description: Some(
                         "BOR OFF, POR/PDR reset threshold level is applied.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LEVEL1",
+                    name: "Level1",
                     description: Some(
                         "BOR Level 1, the threshold level is low (around 2.1 V).",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "LEVEL2",
+                    name: "Level2",
                     description: Some(
                         "BOR Level 2, the threshold level is medium (around 2.4 V).",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "LEVEL3",
+                    name: "Level3",
                     description: Some(
                         "BOR Level 3, the threshold level is high (around 2.7 V).",
                     ),
@@ -2861,28 +2861,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "WORD16",
+                    name: "Word16",
                     description: Some(
                         "every burst has a size of 16 Flash words (256 Bytes).",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "WORD256",
+                    name: "Word256",
                     description: Some(
                         "every burst has a size of 256 Flash words (4 Kbytes).",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "WORD4",
+                    name: "Word4",
                     description: Some(
                         "every burst has a size of 4 Flash words (64 Bytes).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WORD64",
+                    name: "Word64",
                     description: Some(
                         "every burst has a size of 64 Flash words (1 Kbytes).",
                     ),
@@ -2896,28 +2896,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "DELEGATED",
+                    name: "Delegated",
                     description: Some(
                         "Delegated debug (to OEM iRoT code in user Flash).",
                     ),
                     value: 111,
                 },
                 EnumVariant {
-                    name: "ECDSA",
+                    name: "Ecdsa",
                     description: Some(
                         "Authentication method using ECDSA signature (NIST P256).",
                     ),
                     value: 81,
                 },
                 EnumVariant {
-                    name: "LOCKED",
+                    name: "Locked",
                     description: Some(
                         "Locked device (no debug allowed).",
                     ),
                     value: 180,
                 },
                 EnumVariant {
-                    name: "PASSWORD",
+                    name: "Password",
                     description: Some(
                         "Authentication method using password.",
                     ),
@@ -2931,7 +2931,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "SELECTED",
+                    name: "Selected",
                     description: Some(
                         "ST iRoT is selected at boot.",
                     ),
@@ -2945,14 +2945,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PLUS0",
+                    name: "Plus0",
                     description: Some(
                         "OBKINDEX represents the index of the option byte key stored for the hide protection level indicated in SBS_HDPLSR.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PLUS1",
+                    name: "Plus1",
                     description: Some(
                         "OBKINDEX represents the index of the option byte key stored for the hide protection level indicated in SBS_HDPLSR plus one (e.g. if HDPL=1 in SBS_HDPLR the key of level 2 is selected).",
                     ),
@@ -2966,14 +2966,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "CLOSED",
+                    name: "Closed",
                     description: Some(
                         "CLOSED device.",
                     ),
                     value: 81,
                 },
                 EnumVariant {
-                    name: "OPEN",
+                    name: "Open",
                     description: Some(
                         "OPEN device.",
                     ),
@@ -2987,14 +2987,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "CLOSE",
+                    name: "Close",
                     description: Some(
                         "CLOSE.",
                     ),
                     value: 81,
                 },
                 EnumVariant {
-                    name: "OPEN",
+                    name: "Open",
                     description: Some(
                         "OPEN.",
                     ),
@@ -3008,28 +3008,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BITS128",
+                    name: "Bits128",
                     description: Some(
                         "Key size is 128 bits.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BITS256",
+                    name: "Bits256",
                     description: Some(
                         "Key size is 256 bits.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "BITS32",
+                    name: "Bits32",
                     description: Some(
                         "Key size is 32 bits.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BITS64",
+                    name: "Bits64",
                     description: Some(
                         "Key size is 64 bits.",
                     ),
@@ -3043,7 +3043,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "PROVISIONED",
+                    name: "Provisioned",
                     description: Some(
                         "Device has been provisioned by the OEM.",
                     ),

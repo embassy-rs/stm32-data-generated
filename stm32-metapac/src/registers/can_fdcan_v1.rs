@@ -3172,28 +3172,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "IDLE",
+                    name: "Idle",
                     description: Some(
                         "Idle: node is neither receiver nor transmitter.",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RX",
+                    name: "Rx",
                     description: Some(
                         "Receiver: node is operating as receiver.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SYNC",
+                    name: "Sync",
                     description: Some(
                         "Synchronizing: node is synchronizing on CAN communication.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TX",
+                    name: "Tx",
                     description: Some(
                         "Transmitter: node is operating as transmitter.",
                     ),
@@ -3207,21 +3207,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ACCEPT_FIFO_0",
+                    name: "AcceptFifo0",
                     description: Some(
                         "Accept in Rx FIFO 0",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACCEPT_FIFO_1",
+                    name: "AcceptFifo1",
                     description: Some(
                         "Accept in Rx FIFO 1",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "REJECT",
+                    name: "Reject",
                     description: Some(
                         "Reject",
                     ),
@@ -3235,21 +3235,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ACCEPT_FIFO_0",
+                    name: "AcceptFifo0",
                     description: Some(
                         "Accept in Rx FIFO 0",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "ACCEPT_FIFO_1",
+                    name: "AcceptFifo1",
                     description: Some(
                         "Accept in Rx FIFO 1",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "REJECT",
+                    name: "Reject",
                     description: Some(
                         "Reject",
                     ),
@@ -3263,56 +3263,56 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "ACK",
+                    name: "Ack",
                     description: Some(
                         "AckError: The message transmitted by the FDCAN was not acknowledged by another node.",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "BIT_0",
+                    name: "Bit0",
                     description: Some(
                         "Bit0Error: During the transmission of a message (or acknowledge bit, or active error flag, or overload flag), the device wanted to send a dominant level (data or identifier bit logical value 0), but the monitored bus value was recessive. During Bus_Off recovery this status is set each time a sequence of 11 recessive bits has been monitored. This enables the CPU to monitor the proceeding of the Bus_Off recovery sequence (indicating the bus is not stuck at dominant or continuously disturbed).",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "BIT_1",
+                    name: "Bit1",
                     description: Some(
                         "Bit1Error: During the transmission of a message (with the exception of the arbitration field), the device wanted to send a recessive level (bit of logical value 1), but the monitored bus value was dominant.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "CRC",
+                    name: "Crc",
                     description: Some(
                         "CRCError: The CRC check sum of a received message was incorrect. The CRC of an incoming message does not match with the CRC calculated from the received data.",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "FORM",
+                    name: "Form",
                     description: Some(
                         "Form Error: A fixed format part of a received frame has the wrong format.",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "NO_CHANGE",
+                    name: "NoChange",
                     description: Some(
                         "NoChange: Any read access to the Protocol status register re-initializes the LEC to ‘7’. When the LEC shows the value ‘7’, no CAN bus event was detected since the last CPU read access to the Protocol status register.",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "NO_ERROR",
+                    name: "NoError",
                     description: Some(
                         "No Error: No error occurred since LEC has been reset by successful reception or transmission.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "STUFF",
+                    name: "Stuff",
                     description: Some(
                         "Stuff Error: More than 5 equal bits in a sequence have occurred in a part of a received message where this is not allowed.",
                     ),
@@ -3326,28 +3326,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "FIFO_0",
+                    name: "Fifo0",
                     description: Some(
                         "Message stored in FIFO 0",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FIFO_1",
+                    name: "Fifo1",
                     description: Some(
                         "Message stored in FIFO 1",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "NO_FIFO",
+                    name: "NoFifo",
                     description: Some(
                         "No FIFO selected",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "OVERRUN",
+                    name: "Overrun",
                     description: Some(
                         "FIFO overrun",
                     ),
@@ -3361,112 +3361,112 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "DIV_1",
+                    name: "Div1",
                     description: Some(
                         "Divide by 1",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV_10",
+                    name: "Div10",
                     description: Some(
                         "Divide by 10",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DIV_12",
+                    name: "Div12",
                     description: Some(
                         "Divide by 12",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DIV_14",
+                    name: "Div14",
                     description: Some(
                         "Divide by 14",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "DIV_16",
+                    name: "Div16",
                     description: Some(
                         "Divide by 16",
                     ),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "DIV_18",
+                    name: "Div18",
                     description: Some(
                         "Divide by 18",
                     ),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "DIV_2",
+                    name: "Div2",
                     description: Some(
                         "Divide by 2",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DIV_20",
+                    name: "Div20",
                     description: Some(
                         "Divide by 20",
                     ),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "DIV_22",
+                    name: "Div22",
                     description: Some(
                         "Divide by 22",
                     ),
                     value: 11,
                 },
                 EnumVariant {
-                    name: "DIV_24",
+                    name: "Div24",
                     description: Some(
                         "Divide by 24",
                     ),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "DIV_26",
+                    name: "Div26",
                     description: Some(
                         "Divide by 26",
                     ),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "DIV_28",
+                    name: "Div28",
                     description: Some(
                         "Divide by 28",
                     ),
                     value: 14,
                 },
                 EnumVariant {
-                    name: "DIV_30",
+                    name: "Div30",
                     description: Some(
                         "Divide by 30",
                     ),
                     value: 15,
                 },
                 EnumVariant {
-                    name: "DIV_4",
+                    name: "Div4",
                     description: Some(
                         "Divide by 4",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DIV_6",
+                    name: "Div6",
                     description: Some(
                         "Divide by 6",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DIV_8",
+                    name: "Div8",
                     description: Some(
                         "Divide by 8",
                     ),
@@ -3480,14 +3480,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FIFO",
+                    name: "Fifo",
                     description: Some(
                         "Tx FIFO operation",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "QUEUE",
+                    name: "Queue",
                     description: Some(
                         "Tx queue operation",
                     ),
@@ -3501,28 +3501,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "CONTINUOUS",
+                    name: "Continuous",
                     description: Some(
                         "Continuous operation",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RX_FIFO_0",
+                    name: "RxFifo0",
                     description: Some(
                         "Timeout controlled by Rx FIFO 0",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "RX_FIFO_1",
+                    name: "RxFifo1",
                     description: Some(
                         "Timeout controlled by Rx FIFO 1",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "TX_EVENT_FIFO",
+                    name: "TxEventFifo",
                     description: Some(
                         "Timeout controlled by Tx event FIFO",
                     ),
@@ -3536,21 +3536,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "EXTERNAL",
+                    name: "External",
                     description: Some(
                         "External timestamp counter from TIM3 value (tim3_cnt[0:15])",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "INCREMENT",
+                    name: "Increment",
                     description: Some(
                         "Timestamp counter value incremented according to TCP",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ZERO",
+                    name: "Zero",
                     description: Some(
                         "Timestamp counter value always 0x0000",
                     ),
@@ -3564,28 +3564,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DOMINANT",
+                    name: "Dominant",
                     description: Some(
                         "Dominant (0) level at pin FDCANx_TX",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "RECESSIVE",
+                    name: "Recessive",
                     description: Some(
                         "Recessive (1) at pin FDCANx_TX",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "RESET",
+                    name: "Reset",
                     description: Some(
                         "Reset value, FDCANx_TX TX is controlled by the CAN core, updated at the end of the CAN bit time",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SAMPLE_POINT",
+                    name: "SamplePoint",
                     description: Some(
                         "Sample point can be monitored at pin FDCANx_TX",
                     ),

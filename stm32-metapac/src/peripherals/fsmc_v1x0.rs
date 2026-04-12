@@ -512,15 +512,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpsize {
         #[doc = "No burst split when crossing page boundary"]
-        NO_BURST_SPLIT = 0x0,
+        NoBurstSplit = 0x0,
         #[doc = "128 bytes CRAM page size"]
-        BYTES128 = 0x01,
+        Bytes128 = 0x01,
         #[doc = "256 bytes CRAM page size"]
-        BYTES256 = 0x02,
+        Bytes256 = 0x02,
         #[doc = "512 bytes CRAM page size"]
-        BYTES512 = 0x03,
+        Bytes512 = 0x03,
         #[doc = "1024 bytes CRAM page size"]
-        BYTES1024 = 0x04,
+        Bytes1024 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -552,11 +552,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mtyp {
         #[doc = "SRAM memory type"]
-        SRAM = 0x0,
+        Sram = 0x0,
         #[doc = "PSRAM (CRAM) memory type"]
-        PSRAM = 0x01,
+        Psram = 0x01,
         #[doc = "NOR Flash/OneNAND Flash"]
-        FLASH = 0x02,
+        Flash = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Mtyp {
@@ -586,11 +586,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mwid {
         #[doc = "Memory data bus width 8 bits"]
-        BITS8 = 0x0,
+        Bits8 = 0x0,
         #[doc = "Memory data bus width 16 bits"]
-        BITS16 = 0x01,
+        Bits16 = 0x01,
         #[doc = "Memory data bus width 32 bits"]
-        BITS32 = 0x02,
+        Bits32 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Mwid {
@@ -620,9 +620,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Waitcfg {
         #[doc = "NWAIT signal is active one data cycle before wait state"]
-        BEFORE_WAIT_STATE = 0x0,
+        BeforeWaitState = 0x0,
         #[doc = "NWAIT signal is active during wait state"]
-        DURING_WAIT_STATE = 0x01,
+        DuringWaitState = 0x01,
     }
     impl Waitcfg {
         #[inline(always)]
@@ -651,9 +651,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Waitpol {
         #[doc = "NWAIT active low"]
-        ACTIVE_LOW = 0x0,
+        ActiveLow = 0x0,
         #[doc = "NWAIT active high"]
-        ACTIVE_HIGH = 0x01,
+        ActiveHigh = 0x01,
     }
     impl Waitpol {
         #[inline(always)]

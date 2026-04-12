@@ -318,22 +318,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BIT",
+                    name: "Bit",
                     description: Some("Bit"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "BYTE",
+                    name: "Byte",
                     description: Some("Byte (8-bit)"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HALF_WORD",
+                    name: "HalfWord",
                     description: Some("Half-word (16-bit)"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NONE",
+                    name: "None",
                     description: Some("Word"),
                     value: 0,
                 },
@@ -345,22 +345,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "FINAL_PHASE",
+                    name: "FinalPhase",
                     description: Some("Final phase"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "HEADER_PHASE",
+                    name: "HeaderPhase",
                     description: Some("Header phase"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "INIT_PHASE",
+                    name: "InitPhase",
                     description: Some("Init phase"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PAYLOAD_PHASE",
+                    name: "PayloadPhase",
                     description: Some("Payload phase"),
                     value: 2,
                 },
@@ -372,22 +372,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MODE1",
+                    name: "Mode1",
                     description: Some("Encryption"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MODE2",
+                    name: "Mode2",
                     description: Some("Key derivation (or key preparation for ECB/CBC decryption)"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MODE3",
+                    name: "Mode3",
                     description: Some("Decryption"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "MODE4",
+                    name: "Mode4",
                     description: Some("Key derivation then single decryption"),
                     value: 3,
                 },

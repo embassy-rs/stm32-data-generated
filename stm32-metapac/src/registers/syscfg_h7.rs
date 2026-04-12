@@ -897,12 +897,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "MII_GMII",
+                    name: "MiiGmii",
                     description: Some("GMII or MII"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RMII",
+                    name: "Rmii",
                     description: Some("RMII"),
                     value: 4,
                 },
@@ -914,22 +914,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ITCM128AXI256",
+                    name: "Itcm128axi256",
                     description: Some("128 Kbyte ITCM-RAM / 256 Kbyte AXI-SRAM"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ITCM192AXI192",
+                    name: "Itcm192axi192",
                     description: Some("192 Kbyte ITCM-RAM / 192 Kbyte AXI-SRAM"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "ITCM256AXI128",
+                    name: "Itcm256axi128",
                     description: Some("256 Kbyte ITCM-RAM / 128 Kbyte AXI-SRAM"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "ITCM64AXI320",
+                    name: "Itcm64axi320",
                     description: Some("64 Kbyte ITCM-RAM / 320 Kbyte AXI-SRAM"),
                     value: 0,
                 },

@@ -638,11 +638,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Latency {
         #[doc = "0 wait states, if 0 < HCLK <= 24 MHz"]
-        WS0 = 0x0,
+        Ws0 = 0x0,
         #[doc = "1 wait state, if 24 < HCLK <= 48 MHz"]
-        WS1 = 0x01,
+        Ws1 = 0x01,
         #[doc = "2 wait states, if 48 < HCLK <= 72 MHz"]
-        WS2 = 0x02,
+        Ws2 = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
@@ -676,9 +676,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NRstStdby {
         #[doc = "Reset generated when entering Standby mode"]
-        RESET = 0x0,
+        Reset = 0x0,
         #[doc = "No reset generated"]
-        NO_RESET = 0x01,
+        NoReset = 0x01,
     }
     impl NRstStdby {
         #[inline(always)]
@@ -707,9 +707,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NRstStop {
         #[doc = "Reset generated when entering Stop mode"]
-        RESET = 0x0,
+        Reset = 0x0,
         #[doc = "No reset generated"]
-        NO_RESET = 0x01,
+        NoReset = 0x01,
     }
     impl NRstStop {
         #[inline(always)]
@@ -738,12 +738,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rdprt {
         #[doc = "Level 0"]
-        LEVEL0 = 0x0,
+        Level0 = 0x0,
         #[doc = "Level 1"]
-        LEVEL1 = 0x01,
+        Level1 = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "Level 2"]
-        LEVEL2 = 0x03,
+        Level2 = 0x03,
     }
     impl Rdprt {
         #[inline(always)]
@@ -772,9 +772,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WdgSw {
         #[doc = "Hardware watchdog"]
-        HARDWARE = 0x0,
+        Hardware = 0x0,
         #[doc = "Software watchdog"]
-        SOFTWARE = 0x01,
+        Software = 0x01,
     }
     impl WdgSw {
         #[inline(always)]

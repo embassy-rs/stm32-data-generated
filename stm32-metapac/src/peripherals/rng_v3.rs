@@ -347,37 +347,37 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Clkdiv {
         #[doc = "Internal RNG clock after divider is similar to incoming RNG clock"]
-        NO_DIV = 0x0,
+        NoDiv = 0x0,
         #[doc = "Divide RNG clock by 2^1"]
-        DIV_2_1 = 0x01,
+        Div21 = 0x01,
         #[doc = "Divide RNG clock by 2^2"]
-        DIV_2_2 = 0x02,
+        Div22 = 0x02,
         #[doc = "Divide RNG clock by 2^3"]
-        DIV_2_3 = 0x03,
+        Div23 = 0x03,
         #[doc = "Divide RNG clock by 2^4"]
-        DIV_2_4 = 0x04,
+        Div24 = 0x04,
         #[doc = "Divide RNG clock by 2^5"]
-        DIV_2_5 = 0x05,
+        Div25 = 0x05,
         #[doc = "Divide RNG clock by 2^6"]
-        DIV_2_6 = 0x06,
+        Div26 = 0x06,
         #[doc = "Divide RNG clock by 2^7"]
-        DIV_2_7 = 0x07,
+        Div27 = 0x07,
         #[doc = "Divide RNG clock by 2^8"]
-        DIV_2_8 = 0x08,
+        Div28 = 0x08,
         #[doc = "Divide RNG clock by 2^9"]
-        DIV_2_9 = 0x09,
+        Div29 = 0x09,
         #[doc = "Divide RNG clock by 2^10"]
-        DIV_2_10 = 0x0a,
+        Div210 = 0x0a,
         #[doc = "Divide RNG clock by 2^11"]
-        DIV_2_11 = 0x0b,
+        Div211 = 0x0b,
         #[doc = "Divide RNG clock by 2^12"]
-        DIV_2_12 = 0x0c,
+        Div212 = 0x0c,
         #[doc = "Divide RNG clock by 2^13"]
-        DIV_2_13 = 0x0d,
+        Div213 = 0x0d,
         #[doc = "Divide RNG clock by 2^14"]
-        DIV_2_14 = 0x0e,
+        Div214 = 0x0e,
         #[doc = "Divide RNG clock by 2^15"]
-        DIV_2_15 = 0x0f,
+        Div215 = 0x0f,
     }
     impl Clkdiv {
         #[inline(always)]
@@ -406,9 +406,9 @@ pub mod vals {
     pub struct Htcfg(u32);
     impl Htcfg {
         #[doc = "Recommended value for RNG certification (0x0000_AA74)"]
-        pub const RECOMMENDED: Self = Self(0xaa74);
+        pub const Recommended: Self = Self(0xaa74);
         #[doc = "Magic number to be written before any write (0x1759_0ABC)"]
-        pub const MAGIC: Self = Self(0x1759_0abc);
+        pub const Magic: Self = Self(0x1759_0abc);
     }
     impl Htcfg {
         pub const fn from_bits(val: u32) -> Htcfg {
@@ -421,8 +421,8 @@ pub mod vals {
     impl core::fmt::Debug for Htcfg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0xaa74 => f.write_str("RECOMMENDED"),
-                0x1759_0abc => f.write_str("MAGIC"),
+                0xaa74 => f.write_str("Recommended"),
+                0x1759_0abc => f.write_str("Magic"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -431,8 +431,8 @@ pub mod vals {
     impl defmt::Format for Htcfg {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0xaa74 => defmt::write!(f, "RECOMMENDED"),
-                0x1759_0abc => defmt::write!(f, "MAGIC"),
+                0xaa74 => defmt::write!(f, "Recommended"),
+                0x1759_0abc => defmt::write!(f, "Magic"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -454,9 +454,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nistc {
         #[doc = "Hardware default values for NIST compliant RNG. In this configuration per 128-bit output two conditioning loops are performed and 256 bits of noise source are used"]
-        DEFAULT = 0x0,
+        Default = 0x0,
         #[doc = "Custom values for NIST compliant RNG"]
-        CUSTOM = 0x01,
+        Custom = 0x01,
     }
     impl Nistc {
         #[inline(always)]
@@ -500,7 +500,7 @@ pub mod vals {
         _RESERVED_d = 0x0d,
         _RESERVED_e = 0x0e,
         #[doc = "Recommended value for config A (NIST certifiable)"]
-        CONFIG_A = 0x0f,
+        ConfigA = 0x0f,
         _RESERVED_10 = 0x10,
         _RESERVED_11 = 0x11,
         _RESERVED_12 = 0x12,
@@ -510,7 +510,7 @@ pub mod vals {
         _RESERVED_16 = 0x16,
         _RESERVED_17 = 0x17,
         #[doc = "Recommended value for config B (not NIST certifiable)"]
-        CONFIG_B = 0x18,
+        ConfigB = 0x18,
         _RESERVED_19 = 0x19,
         _RESERVED_1a = 0x1a,
         _RESERVED_1b = 0x1b,
@@ -578,7 +578,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RngConfig2 {
         #[doc = "Recommended value for config A and B"]
-        CONFIG_A_B = 0x0,
+        ConfigAB = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -614,7 +614,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RngConfig3 {
         #[doc = "Recommended value for config B (not NIST certifiable)"]
-        CONFIG_B = 0x0,
+        ConfigB = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -628,7 +628,7 @@ pub mod vals {
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
         #[doc = "Recommended value for config A (NIST certifiable)"]
-        CONFIG_A = 0x0d,
+        ConfigA = 0x0d,
         _RESERVED_e = 0x0e,
         _RESERVED_f = 0x0f,
     }

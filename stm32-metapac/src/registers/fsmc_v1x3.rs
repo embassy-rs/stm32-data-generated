@@ -481,7 +481,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "iosetx",
+                    name: "iose_tx",
                     description: Some("IOSETx"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 8,
@@ -489,7 +489,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "iowaitx",
+                    name: "iowai_tx",
                     description: Some("IOWAITx"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 8,
@@ -497,7 +497,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ioholdx",
+                    name: "iohol_dx",
                     description: Some("IOHOLDx"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 8,
@@ -505,7 +505,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "iohizx",
+                    name: "iohi_zx",
                     description: Some("IOHIZx"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 8,
@@ -653,27 +653,27 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "BYTES1024",
+                    name: "Bytes1024",
                     description: Some("1024 bytes CRAM page size"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "BYTES128",
+                    name: "Bytes128",
                     description: Some("128 bytes CRAM page size"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "BYTES256",
+                    name: "Bytes256",
                     description: Some("256 bytes CRAM page size"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BYTES512",
+                    name: "Bytes512",
                     description: Some("512 bytes CRAM page size"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "NO_BURST_SPLIT",
+                    name: "NoBurstSplit",
                     description: Some("No burst split when crossing page boundary"),
                     value: 0,
                 },
@@ -685,32 +685,32 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "BYTES1024",
+                    name: "Bytes1024",
                     description: Some("ECC page size 1024 bytes"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BYTES2048",
+                    name: "Bytes2048",
                     description: Some("ECC page size 2048 bytes"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "BYTES256",
+                    name: "Bytes256",
                     description: Some("ECC page size 256 bytes"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "BYTES4096",
+                    name: "Bytes4096",
                     description: Some("ECC page size 4096 bytes"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "BYTES512",
+                    name: "Bytes512",
                     description: Some("ECC page size 512 bytes"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "BYTES8192",
+                    name: "Bytes8192",
                     description: Some("ECC page size 8192 bytes"),
                     value: 5,
                 },
@@ -722,17 +722,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "FLASH",
+                    name: "Flash",
                     description: Some("NOR Flash/OneNAND Flash"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PSRAM",
+                    name: "Psram",
                     description: Some("PSRAM (CRAM) memory type"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SRAM",
+                    name: "Sram",
                     description: Some("SRAM memory type"),
                     value: 0,
                 },
@@ -744,17 +744,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BITS16",
+                    name: "Bits16",
                     description: Some("Memory data bus width 16 bits"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "BITS32",
+                    name: "Bits32",
                     description: Some("Memory data bus width 32 bits"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BITS8",
+                    name: "Bits8",
                     description: Some("Memory data bus width 8 bits"),
                     value: 0,
                 },
@@ -765,7 +765,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 1,
             variants: &[EnumVariant {
-                name: "NANDFLASH",
+                name: "NandFlash",
                 description: Some("NAND Flash"),
                 value: 1,
             }],
@@ -776,12 +776,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BITS16",
+                    name: "Bits16",
                     description: Some("External memory device width 16 bits"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "BITS8",
+                    name: "Bits8",
                     description: Some("External memory device width 8 bits"),
                     value: 0,
                 },
@@ -793,12 +793,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BEFORE_WAIT_STATE",
+                    name: "BeforeWaitState",
                     description: Some("NWAIT signal is active one data cycle before wait state"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DURING_WAIT_STATE",
+                    name: "DuringWaitState",
                     description: Some("NWAIT signal is active during wait state"),
                     value: 1,
                 },
@@ -810,12 +810,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE_HIGH",
+                    name: "ActiveHigh",
                     description: Some("NWAIT active high"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ACTIVE_LOW",
+                    name: "ActiveLow",
                     description: Some("NWAIT active low"),
                     value: 0,
                 },

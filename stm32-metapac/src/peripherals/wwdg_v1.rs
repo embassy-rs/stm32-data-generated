@@ -197,13 +197,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wdgtb {
         #[doc = "Counter clock (PCLK1 div 4096) div 1"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "Counter clock (PCLK1 div 4096) div 2"]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "Counter clock (PCLK1 div 4096) div 4"]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         #[doc = "Counter clock (PCLK1 div 4096) div 8"]
-        DIV8 = 0x03,
+        Div8 = 0x03,
     }
     impl Wdgtb {
         #[inline(always)]

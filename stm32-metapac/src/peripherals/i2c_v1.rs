@@ -1009,9 +1009,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Addmode {
         #[doc = "7-bit addressing mode"]
-        BIT7 = 0x0,
+        Bit7 = 0x0,
         #[doc = "10-bit addressing mode"]
-        BIT10 = 0x01,
+        Bit10 = 0x01,
     }
     impl Addmode {
         #[inline(always)]
@@ -1040,37 +1040,37 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dnf {
         #[doc = "Digital filter disabled"]
-        NO_FILTER = 0x0,
+        NoFilter = 0x0,
         #[doc = "Digital filter enabled and filtering capability up to 1 tI2CCLK"]
-        FILTER1 = 0x01,
+        Filter1 = 0x01,
         #[doc = "Digital filter enabled and filtering capability up to 2 tI2CCLK"]
-        FILTER2 = 0x02,
+        Filter2 = 0x02,
         #[doc = "Digital filter enabled and filtering capability up to 3 tI2CCLK"]
-        FILTER3 = 0x03,
+        Filter3 = 0x03,
         #[doc = "Digital filter enabled and filtering capability up to 4 tI2CCLK"]
-        FILTER4 = 0x04,
+        Filter4 = 0x04,
         #[doc = "Digital filter enabled and filtering capability up to 5 tI2CCLK"]
-        FILTER5 = 0x05,
+        Filter5 = 0x05,
         #[doc = "Digital filter enabled and filtering capability up to 6 tI2CCLK"]
-        FILTER6 = 0x06,
+        Filter6 = 0x06,
         #[doc = "Digital filter enabled and filtering capability up to 7 tI2CCLK"]
-        FILTER7 = 0x07,
+        Filter7 = 0x07,
         #[doc = "Digital filter enabled and filtering capability up to 8 tI2CCLK"]
-        FILTER8 = 0x08,
+        Filter8 = 0x08,
         #[doc = "Digital filter enabled and filtering capability up to 9 tI2CCLK"]
-        FILTER9 = 0x09,
+        Filter9 = 0x09,
         #[doc = "Digital filter enabled and filtering capability up to 10 tI2CCLK"]
-        FILTER10 = 0x0a,
+        Filter10 = 0x0a,
         #[doc = "Digital filter enabled and filtering capability up to 11 tI2CCLK"]
-        FILTER11 = 0x0b,
+        Filter11 = 0x0b,
         #[doc = "Digital filter enabled and filtering capability up to 12 tI2CCLK"]
-        FILTER12 = 0x0c,
+        Filter12 = 0x0c,
         #[doc = "Digital filter enabled and filtering capability up to 13 tI2CCLK"]
-        FILTER13 = 0x0d,
+        Filter13 = 0x0d,
         #[doc = "Digital filter enabled and filtering capability up to 14 tI2CCLK"]
-        FILTER14 = 0x0e,
+        Filter14 = 0x0e,
         #[doc = "Digital filter enabled and filtering capability up to 15 tI2CCLK"]
-        FILTER15 = 0x0f,
+        Filter15 = 0x0f,
     }
     impl Dnf {
         #[inline(always)]
@@ -1099,9 +1099,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Duty {
         #[doc = "Duty cycle t_low/t_high = 2/1"]
-        DUTY2_1 = 0x0,
+        Duty21 = 0x0,
         #[doc = "Duty cycle t_low/t_high = 16/9"]
-        DUTY16_9 = 0x01,
+        Duty169 = 0x01,
     }
     impl Duty {
         #[inline(always)]
@@ -1130,9 +1130,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Endual {
         #[doc = "Single addressing mode"]
-        SINGLE = 0x0,
+        Single = 0x0,
         #[doc = "Dual addressing mode"]
-        DUAL = 0x01,
+        Dual = 0x01,
     }
     impl Endual {
         #[inline(always)]
@@ -1161,9 +1161,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FS {
         #[doc = "Standard mode I2C"]
-        STANDARD = 0x0,
+        Standard = 0x0,
         #[doc = "Fast mode I2C"]
-        FAST = 0x01,
+        Fast = 0x01,
     }
     impl FS {
         #[inline(always)]
@@ -1192,9 +1192,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pos {
         #[doc = "ACK bit controls the (N)ACK of the current byte being received"]
-        CURRENT = 0x0,
+        Current = 0x0,
         #[doc = "ACK bit controls the (N)ACK of the next byte to be received"]
-        NEXT = 0x01,
+        Next = 0x01,
     }
     impl Pos {
         #[inline(always)]
@@ -1223,9 +1223,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smbtype {
         #[doc = "SMBus Device"]
-        DEVICE = 0x0,
+        Device = 0x0,
         #[doc = "SMBus Host"]
-        HOST = 0x01,
+        Host = 0x01,
     }
     impl Smbtype {
         #[inline(always)]
@@ -1254,9 +1254,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smbus {
         #[doc = "I2C Mode"]
-        I2C = 0x0,
+        I2c = 0x0,
         #[doc = "SMBus"]
-        SMBUS = 0x01,
+        SmBus = 0x01,
     }
     impl Smbus {
         #[inline(always)]

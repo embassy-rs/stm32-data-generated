@@ -759,49 +759,49 @@ pub mod regs {
         #[doc = "IOSETx"]
         #[must_use]
         #[inline(always)]
-        pub const fn iosetx(&self) -> u8 {
+        pub const fn iose_tx(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
         #[doc = "IOSETx"]
         #[inline(always)]
-        pub const fn set_iosetx(&mut self, val: u8) {
+        pub const fn set_iose_tx(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "IOWAITx"]
         #[must_use]
         #[inline(always)]
-        pub const fn iowaitx(&self) -> u8 {
+        pub const fn iowai_tx(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
             val as u8
         }
         #[doc = "IOWAITx"]
         #[inline(always)]
-        pub const fn set_iowaitx(&mut self, val: u8) {
+        pub const fn set_iowai_tx(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "IOHOLDx"]
         #[must_use]
         #[inline(always)]
-        pub const fn ioholdx(&self) -> u8 {
+        pub const fn iohol_dx(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
             val as u8
         }
         #[doc = "IOHOLDx"]
         #[inline(always)]
-        pub const fn set_ioholdx(&mut self, val: u8) {
+        pub const fn set_iohol_dx(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
         #[doc = "IOHIZx"]
         #[must_use]
         #[inline(always)]
-        pub const fn iohizx(&self) -> u8 {
+        pub const fn iohi_zx(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0xff;
             val as u8
         }
         #[doc = "IOHIZx"]
         #[inline(always)]
-        pub const fn set_iohizx(&mut self, val: u8) {
+        pub const fn set_iohi_zx(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 24usize)) | (((val as u32) & 0xff) << 24usize);
         }
     }
@@ -814,10 +814,10 @@ pub mod regs {
     impl core::fmt::Debug for Pio4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pio4")
-                .field("iosetx", &self.iosetx())
-                .field("iowaitx", &self.iowaitx())
-                .field("ioholdx", &self.ioholdx())
-                .field("iohizx", &self.iohizx())
+                .field("iose_tx", &self.iose_tx())
+                .field("iowai_tx", &self.iowai_tx())
+                .field("iohol_dx", &self.iohol_dx())
+                .field("iohi_zx", &self.iohi_zx())
                 .finish()
         }
     }
@@ -826,11 +826,11 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Pio4 {{ iosetx: {=u8:?}, iowaitx: {=u8:?}, ioholdx: {=u8:?}, iohizx: {=u8:?} }}",
-                self.iosetx(),
-                self.iowaitx(),
-                self.ioholdx(),
-                self.iohizx()
+                "Pio4 {{ iose_tx: {=u8:?}, iowai_tx: {=u8:?}, iohol_dx: {=u8:?}, iohi_zx: {=u8:?} }}",
+                self.iose_tx(),
+                self.iowai_tx(),
+                self.iohol_dx(),
+                self.iohi_zx()
             )
         }
     }
@@ -1074,15 +1074,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpsize {
         #[doc = "No burst split when crossing page boundary"]
-        NO_BURST_SPLIT = 0x0,
+        NoBurstSplit = 0x0,
         #[doc = "128 bytes CRAM page size"]
-        BYTES128 = 0x01,
+        Bytes128 = 0x01,
         #[doc = "256 bytes CRAM page size"]
-        BYTES256 = 0x02,
+        Bytes256 = 0x02,
         #[doc = "512 bytes CRAM page size"]
-        BYTES512 = 0x03,
+        Bytes512 = 0x03,
         #[doc = "1024 bytes CRAM page size"]
-        BYTES1024 = 0x04,
+        Bytes1024 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -1114,17 +1114,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Eccps {
         #[doc = "ECC page size 256 bytes"]
-        BYTES256 = 0x0,
+        Bytes256 = 0x0,
         #[doc = "ECC page size 512 bytes"]
-        BYTES512 = 0x01,
+        Bytes512 = 0x01,
         #[doc = "ECC page size 1024 bytes"]
-        BYTES1024 = 0x02,
+        Bytes1024 = 0x02,
         #[doc = "ECC page size 2048 bytes"]
-        BYTES2048 = 0x03,
+        Bytes2048 = 0x03,
         #[doc = "ECC page size 4096 bytes"]
-        BYTES4096 = 0x04,
+        Bytes4096 = 0x04,
         #[doc = "ECC page size 8192 bytes"]
-        BYTES8192 = 0x05,
+        Bytes8192 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -1155,11 +1155,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mtyp {
         #[doc = "SRAM memory type"]
-        SRAM = 0x0,
+        Sram = 0x0,
         #[doc = "PSRAM (CRAM) memory type"]
-        PSRAM = 0x01,
+        Psram = 0x01,
         #[doc = "NOR Flash/OneNAND Flash"]
-        FLASH = 0x02,
+        Flash = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Mtyp {
@@ -1189,11 +1189,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mwid {
         #[doc = "Memory data bus width 8 bits"]
-        BITS8 = 0x0,
+        Bits8 = 0x0,
         #[doc = "Memory data bus width 16 bits"]
-        BITS16 = 0x01,
+        Bits16 = 0x01,
         #[doc = "Memory data bus width 32 bits"]
-        BITS32 = 0x02,
+        Bits32 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Mwid {
@@ -1224,7 +1224,7 @@ pub mod vals {
     pub enum Ptyp {
         _RESERVED_0 = 0x0,
         #[doc = "NAND Flash"]
-        NANDFLASH = 0x01,
+        NandFlash = 0x01,
     }
     impl Ptyp {
         #[inline(always)]
@@ -1253,9 +1253,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pwid {
         #[doc = "External memory device width 8 bits"]
-        BITS8 = 0x0,
+        Bits8 = 0x0,
         #[doc = "External memory device width 16 bits"]
-        BITS16 = 0x01,
+        Bits16 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -1286,9 +1286,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Waitcfg {
         #[doc = "NWAIT signal is active one data cycle before wait state"]
-        BEFORE_WAIT_STATE = 0x0,
+        BeforeWaitState = 0x0,
         #[doc = "NWAIT signal is active during wait state"]
-        DURING_WAIT_STATE = 0x01,
+        DuringWaitState = 0x01,
     }
     impl Waitcfg {
         #[inline(always)]
@@ -1317,9 +1317,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Waitpol {
         #[doc = "NWAIT active low"]
-        ACTIVE_LOW = 0x0,
+        ActiveLow = 0x0,
         #[doc = "NWAIT active high"]
-        ACTIVE_HIGH = 0x01,
+        ActiveHigh = 0x01,
     }
     impl Waitpol {
         #[inline(always)]

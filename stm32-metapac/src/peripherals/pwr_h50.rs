@@ -1079,13 +1079,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Als {
         #[doc = "AVD level0 (VAVD0 ~ 1.7 V)"]
-        LEVEL0 = 0x0,
+        Level0 = 0x0,
         #[doc = "AVD level1 (VAVD1 ~ 2.1 V)"]
-        LEVEL1 = 0x01,
+        Level1 = 0x01,
         #[doc = "AVD level2 (VAVD2 ~ 2.5 V)"]
-        LEVEL2 = 0x02,
+        Level2 = 0x02,
         #[doc = "AVD level3 (VAVD3 ~ 2.8 V)"]
-        LEVEL3 = 0x03,
+        Level3 = 0x03,
     }
     impl Als {
         #[inline(always)]
@@ -1114,9 +1114,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpms {
         #[doc = "Keeps Stop mode when entering DeepSleep."]
-        STOP = 0x0,
+        Stop = 0x0,
         #[doc = "Allows Standby mode when entering DeepSleep."]
-        STANDBY = 0x01,
+        Standby = 0x01,
     }
     impl Lpms {
         #[inline(always)]
@@ -1145,21 +1145,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pls {
         #[doc = "PVD level0 (VPVD0 ~ 1.95 V)"]
-        LEVEL0 = 0x0,
+        Level0 = 0x0,
         #[doc = "PVD level1 (VPVD1 ~ 2.10 V)"]
-        LEVEL1 = 0x01,
+        Level1 = 0x01,
         #[doc = "PVD level2 (VPVD2 ~ 2.25 V)"]
-        LEVEL2 = 0x02,
+        Level2 = 0x02,
         #[doc = "PVD level3 (VPVD3 ~ 2.40 V)"]
-        LEVEL3 = 0x03,
+        Level3 = 0x03,
         #[doc = "PVD level4 (VPVD4 ~ 2.55 V)"]
-        LEVEL4 = 0x04,
+        Level4 = 0x04,
         #[doc = "PVD level5 (VPVD5 ~ 2.70 V)"]
-        LEVEL5 = 0x05,
+        Level5 = 0x05,
         #[doc = "PVD level6 (VPVD6 ~ 2.85 V)"]
-        LEVEL6 = 0x06,
+        Level6 = 0x06,
         #[doc = "PVD_IN pin"]
-        PVDIN_PIN = 0x07,
+        PvdInPin = 0x07,
     }
     impl Pls {
         #[inline(always)]
@@ -1188,9 +1188,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PowerModeInStopMode {
         #[doc = "Remains in normal mode when the system enters Stop mode (quick restart time)."]
-        NORMAL = 0x0,
+        Normal = 0x0,
         #[doc = "Enters low-power mode when the system enters Stop mode (low-power consumption)."]
-        LOW_POWER = 0x01,
+        LowPower = 0x01,
     }
     impl PowerModeInStopMode {
         #[inline(always)]
@@ -1219,9 +1219,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Retention {
         #[doc = "Content is lost."]
-        LOST = 0x0,
+        Lost = 0x0,
         #[doc = "Content is preserved."]
-        PRESERVED = 0x01,
+        Preserved = 0x01,
     }
     impl Retention {
         #[inline(always)]
@@ -1250,9 +1250,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum ShutOff {
         #[doc = "Content is kept."]
-        KEPT = 0x0,
+        Kept = 0x0,
         #[doc = "Content is lost."]
-        LOST = 0x01,
+        Lost = 0x01,
     }
     impl ShutOff {
         #[inline(always)]
@@ -1282,11 +1282,11 @@ pub mod vals {
     pub enum Svos {
         _RESERVED_0 = 0x0,
         #[doc = "SVOS5 scale 5"]
-        SCALE5 = 0x01,
+        Scale5 = 0x01,
         #[doc = "SVOS4 scale 4"]
-        SCALE4 = 0x02,
+        Scale4 = 0x02,
         #[doc = "SVOS3 scale 3 (default)"]
-        SCALE3 = 0x03,
+        Scale3 = 0x03,
     }
     impl Svos {
         #[inline(always)]
@@ -1315,9 +1315,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbrs {
         #[doc = "Charge VBAT through a 5 kΩ resistor."]
-        R5K_OHM = 0x0,
+        R5kOhm = 0x0,
         #[doc = "Charge VBAT through a 1.5 kΩ resistor."]
-        R1_5K_OHM = 0x01,
+        R15kOhm = 0x01,
     }
     impl Vbrs {
         #[inline(always)]
@@ -1345,10 +1345,10 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vos {
-        SCALE3 = 0x0,
-        SCALE2 = 0x01,
-        SCALE1 = 0x02,
-        SCALE0 = 0x03,
+        Scale3 = 0x0,
+        Scale2 = 0x01,
+        Scale1 = 0x02,
+        Scale0 = 0x03,
     }
     impl Vos {
         #[inline(always)]
@@ -1377,9 +1377,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wupp {
         #[doc = "detection on high level (rising edge)"]
-        HIGH = 0x0,
+        High = 0x0,
         #[doc = "detection on low level (falling edge)"]
-        LOW = 0x01,
+        Low = 0x01,
     }
     impl Wupp {
         #[inline(always)]
@@ -1407,9 +1407,9 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wuppupd {
-        NO_PULL_UP = 0x0,
-        PULL_UP = 0x01,
-        PULL_DOWN = 0x02,
+        NoPullUp = 0x0,
+        PullUp = 0x01,
+        PullDown = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Wuppupd {

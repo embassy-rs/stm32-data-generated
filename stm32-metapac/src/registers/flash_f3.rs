@@ -405,17 +405,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "WS0",
+                    name: "Ws0",
                     description: Some("0 wait states, if 0 < HCLK <= 24 MHz"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WS1",
+                    name: "Ws1",
                     description: Some("1 wait state, if 24 < HCLK <= 48 MHz"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "WS2",
+                    name: "Ws2",
                     description: Some("2 wait states, if 48 < HCLK <= 72 MHz"),
                     value: 2,
                 },
@@ -427,12 +427,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NO_RESET",
+                    name: "NoReset",
                     description: Some("No reset generated"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RESET",
+                    name: "Reset",
                     description: Some("Reset generated when entering Standby mode"),
                     value: 0,
                 },
@@ -444,12 +444,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NO_RESET",
+                    name: "NoReset",
                     description: Some("No reset generated"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RESET",
+                    name: "Reset",
                     description: Some("Reset generated when entering Stop mode"),
                     value: 0,
                 },
@@ -461,17 +461,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "LEVEL0",
+                    name: "Level0",
                     description: Some("Level 0"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "LEVEL1",
+                    name: "Level1",
                     description: Some("Level 1"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "LEVEL2",
+                    name: "Level2",
                     description: Some("Level 2"),
                     value: 3,
                 },
@@ -483,12 +483,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HARDWARE",
+                    name: "Hardware",
                     description: Some("Hardware watchdog"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SOFTWARE",
+                    name: "Software",
                     description: Some("Software watchdog"),
                     value: 1,
                 },

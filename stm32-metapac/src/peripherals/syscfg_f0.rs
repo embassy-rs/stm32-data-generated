@@ -520,9 +520,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmp {
         #[doc = "Standard"]
-        STANDARD = 0x0,
+        Standard = 0x0,
         #[doc = "FM+"]
-        FMP = 0x01,
+        Fmp = 0x01,
     }
     impl Fmp {
         #[inline(always)]
@@ -551,11 +551,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum IrMod {
         #[doc = "TIM16 selected"]
-        TIM16 = 0x0,
+        Tim16 = 0x0,
         #[doc = "USART1 selected"]
-        USART1 = 0x01,
+        Usart1 = 0x01,
         #[doc = "USART4 selected"]
-        USART4 = 0x02,
+        Usart4 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl IrMod {
@@ -585,13 +585,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MemMode {
         #[doc = "Main Flash memory mapped at 0x0000_0000"]
-        MAIN_FLASH = 0x0,
+        MainFlash = 0x0,
         #[doc = "System Flash memory mapped at 0x0000_0000"]
-        SYSTEM_FLASH = 0x01,
+        SystemFlash = 0x01,
         #[doc = "Main Flash memory mapped at 0x0000_0000"]
-        MAIN_FLASH2 = 0x02,
+        MainFlash2 = 0x02,
         #[doc = "Embedded SRAM mapped at 0x0000_0000"]
-        SRAM = 0x03,
+        Sram = 0x03,
     }
     impl MemMode {
         #[inline(always)]

@@ -298,22 +298,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ASYNCHRONOUS",
+                    name: "Asynchronous",
                     description: Some("Use Kernel Clock adc_ker_ck_input divided by PRESC. Asynchronous mode"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYNC_DIV1",
+                    name: "SyncDiv1",
                     description: Some("Use AHB clock rcc_hclk3. In this case rcc_hclk must equal sys_d1cpre_ck."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SYNC_DIV2",
+                    name: "SyncDiv2",
                     description: Some("Use AHB clock rcc_hclk3 divided by 2."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SYNC_DIV4",
+                    name: "SyncDiv4",
                     description: Some("Use AHB clock rcc_hclk3 divided by 4."),
                     value: 3,
                 },
@@ -325,12 +325,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CIRCULATOR",
+                    name: "Circulator",
                     description: Some("DMA Circular mode selected"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ONE_SHOT",
+                    name: "OneShot",
                     description: Some("DMA One Shot mode selected"),
                     value: 0,
                 },
@@ -342,42 +342,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "DUAL_A",
+                    name: "DualA",
                     description: Some("Dual, alternate trigger mode only"),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "DUAL_I",
+                    name: "DualI",
                     description: Some("dual, interleaved mode only"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "DUAL_IJ",
+                    name: "DualIj",
                     description: Some("Dual, combined injected simultaneous + fast interleaved mode"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DUAL_J",
+                    name: "DualJ",
                     description: Some("Dual, injected simultaneous mode only"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DUAL_R",
+                    name: "DualR",
                     description: Some("Dual, regular simultaneous mode only"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DUAL_RA",
+                    name: "DualRa",
                     description: Some("Dual, combined regular simultaneous + alternate trigger mode"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DUAL_RJ",
+                    name: "DualRj",
                     description: Some("Dual, combined regular simultaneous + injected simultaneous mode"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "INDEPENDENT",
+                    name: "Independent",
                     description: Some("Independent mode"),
                     value: 0,
                 },
@@ -389,17 +389,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BITS12_10",
+                    name: "Bits1210",
                     description: Some("MDMA mode enabled for 12 and 10-bit resolution"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BITS8_6",
+                    name: "Bits86",
                     description: Some("MDMA mode enabled for 8 and 6-bit resolution"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DISABLED",
+                    name: "Disabled",
                     description: Some("MDMA mode disabled"),
                     value: 0,
                 },

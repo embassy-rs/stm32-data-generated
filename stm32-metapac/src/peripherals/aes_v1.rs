@@ -423,13 +423,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Datatype {
         #[doc = "Word"]
-        NONE = 0x0,
+        None = 0x0,
         #[doc = "Half-word (16-bit)"]
-        HALF_WORD = 0x01,
+        HalfWord = 0x01,
         #[doc = "Byte (8-bit)"]
-        BYTE = 0x02,
+        Byte = 0x02,
         #[doc = "Bit"]
-        BIT = 0x03,
+        Bit = 0x03,
     }
     impl Datatype {
         #[inline(always)]
@@ -458,13 +458,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Encryption"]
-        MODE1 = 0x0,
+        Mode1 = 0x0,
         #[doc = "Key derivation (or key preparation for ECB/CBC decryption)"]
-        MODE2 = 0x01,
+        Mode2 = 0x01,
         #[doc = "Decryption"]
-        MODE3 = 0x02,
+        Mode3 = 0x02,
         #[doc = "Key derivation then single decryption"]
-        MODE4 = 0x03,
+        Mode4 = 0x03,
     }
     impl Mode {
         #[inline(always)]

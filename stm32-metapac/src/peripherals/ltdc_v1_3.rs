@@ -4245,10 +4245,10 @@ pub mod vals {
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "constant alpha."]
-        CONSTANT = 0x04,
+        Constant = 0x04,
         _RESERVED_5 = 0x05,
         #[doc = "pixel alpha x constant alpha."]
-        PIXEL = 0x06,
+        Pixel = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Bf1 {
@@ -4283,10 +4283,10 @@ pub mod vals {
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
         #[doc = "1 - constant alpha."]
-        CONSTANT = 0x05,
+        Constant = 0x05,
         _RESERVED_6 = 0x06,
         #[doc = "1 - (pixel alpha x constant alpha)."]
-        PIXEL = 0x07,
+        Pixel = 0x07,
     }
     impl Bf2 {
         #[inline(always)]
@@ -4315,11 +4315,11 @@ pub mod vals {
     pub struct Bl(u8);
     impl Bl {
         #[doc = "maximum burst length (16 words 64 bits, thus 128 Bytes)."]
-        pub const MAXIMUM: Self = Self(0x0);
+        pub const Maximum: Self = Self(0x0);
         #[doc = "1 word (of 64 bits) per burst."]
-        pub const WORD1: Self = Self(0x01);
+        pub const Word1: Self = Self(0x01);
         #[doc = "16 words (of 64 bits) per burst."]
-        pub const WORD16: Self = Self(0x10);
+        pub const Word16: Self = Self(0x10);
     }
     impl Bl {
         pub const fn from_bits(val: u8) -> Bl {
@@ -4332,9 +4332,9 @@ pub mod vals {
     impl core::fmt::Debug for Bl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("MAXIMUM"),
-                0x01 => f.write_str("WORD1"),
-                0x10 => f.write_str("WORD16"),
+                0x0 => f.write_str("Maximum"),
+                0x01 => f.write_str("Word1"),
+                0x10 => f.write_str("Word16"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -4343,9 +4343,9 @@ pub mod vals {
     impl defmt::Format for Bl {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "MAXIMUM"),
-                0x01 => defmt::write!(f, "WORD1"),
-                0x10 => defmt::write!(f, "WORD16"),
+                0x0 => defmt::write!(f, "Maximum"),
+                0x01 => defmt::write!(f, "Word1"),
+                0x10 => defmt::write!(f, "Word16"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -4367,9 +4367,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Boa {
         #[doc = "Blending Order Fixed."]
-        FIXED = 0x0,
+        Fixed = 0x0,
         #[doc = "Blending Order Configurable."]
-        CONFIGURABLE = 0x01,
+        Configurable = 0x01,
     }
     impl Boa {
         #[inline(always)]
@@ -4398,9 +4398,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bor {
         #[doc = "layer set in background."]
-        BACKGROUND = 0x0,
+        Background = 0x0,
         #[doc = "layer set in foreground."]
-        FOREGROUND = 0x01,
+        Foreground = 0x01,
     }
     impl Bor {
         #[inline(always)]
@@ -4431,11 +4431,11 @@ pub mod vals {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "32-Bit Bus."]
-        BUS32 = 0x02,
+        Bus32 = 0x02,
         #[doc = "64-Bit Bus."]
-        BUS64 = 0x03,
+        Bus64 = 0x03,
         #[doc = "128-Bit Bus."]
-        BUS128 = 0x04,
+        Bus128 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -4468,7 +4468,7 @@ pub mod vals {
     pub enum Ccrcif {
         _RESERVED_0 = 0x0,
         #[doc = "Clears The Crcif Flag In Isrx."]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Ccrcif {
         #[inline(always)]
@@ -4498,7 +4498,7 @@ pub mod vals {
     pub enum Cfuif {
         _RESERVED_0 = 0x0,
         #[doc = "Clears The Fuif Flag In Isrx"]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Cfuif {
         #[inline(always)]
@@ -4528,7 +4528,7 @@ pub mod vals {
     pub enum Cfuwif {
         _RESERVED_0 = 0x0,
         #[doc = "Clears The Fuwif Flag In Isrx."]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Cfuwif {
         #[inline(always)]
@@ -4558,7 +4558,7 @@ pub mod vals {
     pub enum Clif {
         _RESERVED_0 = 0x0,
         #[doc = "Clears The Lif Flag In Isrx."]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Clif {
         #[inline(always)]
@@ -4587,9 +4587,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Crca {
         #[doc = "Crc No Computation Available."]
-        NOT_AVAILABLE = 0x0,
+        NotAvailable = 0x0,
         #[doc = "Crc Computation Available."]
-        AVAILABLE = 0x01,
+        Available = 0x01,
     }
     impl Crca {
         #[inline(always)]
@@ -4619,7 +4619,7 @@ pub mod vals {
     pub enum Crrif {
         _RESERVED_0 = 0x0,
         #[doc = "Clears The Rrif Flag In Isrx."]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Crrif {
         #[inline(always)]
@@ -4649,7 +4649,7 @@ pub mod vals {
     pub enum Cterrif {
         _RESERVED_0 = 0x0,
         #[doc = "Clears The Terrif Flag In Isrx."]
-        CLEAR = 0x01,
+        Clear = 0x01,
     }
     impl Cterrif {
         #[inline(always)]
@@ -4678,9 +4678,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Depol {
         #[doc = "Blanking (No Data/Pixel) Polarity Is Active Low."]
-        ACTIVE_LOW = 0x0,
+        ActiveLow = 0x0,
         #[doc = "Blanking (No Data/Pixel) Polarity Is Active High."]
-        ACTIVE_HIGH = 0x01,
+        ActiveHigh = 0x01,
     }
     impl Depol {
         #[inline(always)]
@@ -4709,12 +4709,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dt {
         #[doc = "No Dithering."]
-        NO_DITHERING = 0x0,
+        NoDithering = 0x0,
         #[doc = "Ordered 4X4 Bayer."]
-        ORDERED = 0x01,
+        Ordered = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "Pseudo-Random Lfsr."]
-        PSEUDO_RANDOM = 0x03,
+        PseudoRandom = 0x03,
     }
     impl Dt {
         #[inline(always)]
@@ -4743,11 +4743,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Gct {
         #[doc = "No Gamma."]
-        NO_GAMMA = 0x0,
+        NoGamma = 0x0,
         #[doc = "Gamma With 256 Samples."]
-        GAMMA_SAMPLES = 0x01,
+        GammaSamples = 0x01,
         #[doc = "Gamma With 8 Interpolated Segments."]
-        GAMMA_INTERPOLATED = 0x02,
+        GammaInterpolated = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
@@ -4781,9 +4781,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Grmsk {
         #[doc = "global reload active for this layer (control from LTDC_SRCR enabled)."]
-        ACTIVE = 0x0,
+        Active = 0x0,
         #[doc = "global reload masked for this layer (control from LTDC_SRCR disabled)."]
-        MASKED = 0x01,
+        Masked = 0x01,
     }
     impl Grmsk {
         #[inline(always)]
@@ -4812,9 +4812,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hspol {
         #[doc = "Horizontal Synchronization Polarity Is Active Low."]
-        ACTIVE_LOW = 0x0,
+        ActiveLow = 0x0,
         #[doc = "Horizontal Synchronization Polarity Is Active High."]
-        ACTIVE_HIGH = 0x01,
+        ActiveHigh = 0x01,
     }
     impl Hspol {
         #[inline(always)]
@@ -4843,9 +4843,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Imr {
         #[doc = "No Effect"]
-        NO_EFFECT = 0x0,
+        NoEffect = 0x0,
         #[doc = "The Shadow Registers Are Reloaded Immediately."]
-        RELOAD = 0x01,
+        Reload = 0x01,
     }
     impl Imr {
         #[inline(always)]
@@ -4874,9 +4874,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ocyco {
         #[doc = "Cb Is Output First (Y0Cb, Then Y1Cr, Y2Cb And So On)."]
-        CB_FIRST = 0x0,
+        CbFirst = 0x0,
         #[doc = "Cr Is Output First (Y0Cr, Then Y1Cb, Y2Cr And So On)."]
-        CR_FIRST = 0x01,
+        CrFirst = 0x01,
     }
     impl Ocyco {
         #[inline(always)]
@@ -4905,9 +4905,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ocysel {
         #[doc = "Use Itu-R Bt.601 Set (For Typically Sdtv Analog-Like Displays)."]
-        BT601 = 0x0,
+        Bt601 = 0x0,
         #[doc = "Use Itu-R Bt.709 Set (For Typically Hdtv Digital-Like Displays)."]
-        BT709 = 0x01,
+        Bt709 = 0x01,
     }
     impl Ocysel {
         #[inline(always)]
@@ -4936,9 +4936,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pcpol {
         #[doc = "The Pixel And Sync Data Are Generated At The Rising-Edge Of The Output Lcd_Clk Clock."]
-        RISING_EDGE = 0x0,
+        RisingEdge = 0x0,
         #[doc = "The Pixel And Sync Data Are Generated At The Falling-Edge Of The Output Lcd_Clk Clock."]
-        FALLING_EDGE = 0x01,
+        FallingEdge = 0x01,
     }
     impl Pcpol {
         #[inline(always)]
@@ -4967,21 +4967,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pf {
         #[doc = "ARGB8888 (32 bpp)."]
-        ARGB8888 = 0x0,
+        Argb8888 = 0x0,
         #[doc = "ABGR8888 (32 bpp)."]
-        ABGR8888 = 0x01,
+        Abgr8888 = 0x01,
         #[doc = "RGBA8888 (32 bpp)."]
-        RGBA8888 = 0x02,
+        Rgba8888 = 0x02,
         #[doc = "BGRA8888 (32 bpp)."]
-        BGRA8888 = 0x03,
+        Bgra8888 = 0x03,
         #[doc = "RGB565 (16 bpp, A = 255)."]
-        RGB565 = 0x04,
+        Rgb565 = 0x04,
         #[doc = "BGR565 (16 bpp, A = 255)."]
-        BGR565 = 0x05,
+        Bgr565 = 0x05,
         #[doc = "RGB888 (24 bpp packed, A = 255)."]
-        RGB888 = 0x06,
+        Rgb888 = 0x06,
         #[doc = "Flexible pixel format selected."]
-        FLEXIBLE = 0x07,
+        Flexible = 0x07,
     }
     impl Pf {
         #[inline(always)]
@@ -5010,9 +5010,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sfswtr {
         #[doc = "No Action."]
-        NO_ACTION = 0x0,
+        NoAction = 0x0,
         #[doc = "Triggers One Frame."]
-        ONE_FRAME = 0x01,
+        OneFrame = 0x01,
     }
     impl Sfswtr {
         #[inline(always)]
@@ -5041,9 +5041,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbr {
         #[doc = "No Effect"]
-        NO_EFFECT = 0x0,
+        NoEffect = 0x0,
         #[doc = "The Shadow Registers Are Reloaded During The Vertical Blanking Period (At The Beginning Of The First Line After The Active Display Area)."]
-        RELOAD = 0x01,
+        Reload = 0x01,
     }
     impl Vbr {
         #[inline(always)]
@@ -5072,9 +5072,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vspol {
         #[doc = "Vertical Synchronization Is Active Low."]
-        ACTIVE_LOW = 0x0,
+        ActiveLow = 0x0,
         #[doc = "Vertical Synchronization Is Active High."]
-        ACTIVE_HIGH = 0x01,
+        ActiveHigh = 0x01,
     }
     impl Vspol {
         #[inline(always)]
@@ -5103,11 +5103,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ycm {
         #[doc = "interleaved 422 (Cb and Cr component are replicated horizontally for pixels P and P+1)."]
-        INTERLEAVED = 0x0,
+        Interleaved = 0x0,
         #[doc = "semi-Planar 420: (Cb and Cr component are replicated horizontally and vertically.The layer main configuration defines the access to the Y buffer, and auxiliary registers define the access to the Cb and Cr buffers)."]
-        SEMI_PLANAR = 0x01,
+        SemiPlanar = 0x01,
         #[doc = "full-Planar 420: (Cb and Cr component are replicated horizontally and vertically. The layer main configuration defines the access to the Y buffer, and auxiliary registers define the access to the Cb and Cr buffers)."]
-        FULL_PLANAR = 0x02,
+        FullPlanar = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Ycm {

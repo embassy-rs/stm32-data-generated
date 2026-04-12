@@ -480,9 +480,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Enc {
         #[doc = "OTFDEC working in decryption mode"]
-        DECRYPTION = 0x0,
+        Decryption = 0x0,
         #[doc = "OTFDEC working in encryption mode"]
-        ENCRYPTION = 0x01,
+        Encryption = 0x01,
     }
     impl Enc {
         #[inline(always)]
@@ -513,9 +513,9 @@ pub mod vals {
         _RESERVED_0 = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "All read accesses are decrypted (instruction or data)."]
-        STANDARD = 0x02,
+        Standard = 0x02,
         #[doc = "Enhanced encryption mode is activated, and only instruction accesses are decrypted"]
-        ENHANCED = 0x03,
+        Enhanced = 0x03,
     }
     impl Mode {
         #[inline(always)]

@@ -346,13 +346,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calsel {
         #[doc = "VREFOPAMP = 3.3% VDDA"]
-        PERCENT3_3 = 0x0,
+        Percent33 = 0x0,
         #[doc = "VREFOPAMP = 10% VDDA"]
-        PERCENT10 = 0x01,
+        Percent10 = 0x01,
         #[doc = "VREFOPAMP = 50% VDDA"]
-        PERCENT50 = 0x02,
+        Percent50 = 0x02,
         #[doc = "VREFOPAMP = 90% VDDA"]
-        PERCENT90 = 0x03,
+        Percent90 = 0x03,
     }
     impl Calsel {
         #[inline(always)]
@@ -381,59 +381,59 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PgaGain {
         #[doc = "Gain 2"]
-        GAIN2 = 0x0,
+        Gain2 = 0x0,
         #[doc = "Gain 4"]
-        GAIN4 = 0x01,
+        Gain4 = 0x01,
         #[doc = "Gain 8"]
-        GAIN8 = 0x02,
+        Gain8 = 0x02,
         #[doc = "Gain 16"]
-        GAIN16 = 0x03,
+        Gain16 = 0x03,
         #[doc = "Gain 32"]
-        GAIN32 = 0x04,
+        Gain32 = 0x04,
         #[doc = "Gain 64"]
-        GAIN64 = 0x05,
+        Gain64 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "Gain 2, input/bias connected to VINM0 or inverting gain"]
-        GAIN2_INPUT_VINM0 = 0x08,
+        Gain2InputVinm0 = 0x08,
         #[doc = "Gain 4, input/bias connected to VINM0 or inverting gain"]
-        GAIN4_INPUT_VINM0 = 0x09,
+        Gain4InputVinm0 = 0x09,
         #[doc = "Gain 8, input/bias connected to VINM0 or inverting gain"]
-        GAIN8_INPUT_VINM0 = 0x0a,
+        Gain8InputVinm0 = 0x0a,
         #[doc = "Gain 16, input/bias connected to VINM0 or inverting gain"]
-        GAIN16_INPUT_VINM0 = 0x0b,
+        Gain16InputVinm0 = 0x0b,
         #[doc = "Gain 32, input/bias connected to VINM0 or inverting gain"]
-        GAIN32_INPUT_VINM0 = 0x0c,
+        Gain32InputVinm0 = 0x0c,
         #[doc = "Gain 64, input/bias connected to VINM0 or inverting gain"]
-        GAIN64_INPUT_VINM0 = 0x0d,
+        Gain64InputVinm0 = 0x0d,
         _RESERVED_e = 0x0e,
         _RESERVED_f = 0x0f,
         #[doc = "Gain 2, with filtering on VINM0"]
-        GAIN2_FILTERING_VINM0 = 0x10,
+        Gain2FilteringVinm0 = 0x10,
         #[doc = "Gain 4, with filtering on VINM0"]
-        GAIN4_FILTERING_VINM0 = 0x11,
+        Gain4FilteringVinm0 = 0x11,
         #[doc = "Gain 8, with filtering on VINM0"]
-        GAIN8_FILTERING_VINM0 = 0x12,
+        Gain8FilteringVinm0 = 0x12,
         #[doc = "Gain 16, with filtering on VINM0"]
-        GAIN16_FILTERING_VINM0 = 0x13,
+        Gain16FilteringVinm0 = 0x13,
         #[doc = "Gain 32, with filtering on VINM0"]
-        GAIN32_FILTERING_VINM0 = 0x14,
+        Gain32FilteringVinm0 = 0x14,
         #[doc = "Gain 64, with filtering on VINM0"]
-        GAIN64_FILTERING_VINM0 = 0x15,
+        Gain64FilteringVinm0 = 0x15,
         _RESERVED_16 = 0x16,
         _RESERVED_17 = 0x17,
         #[doc = "Gain 2, input/bias connected to VINM0 with filtering on VINM1 or inverting gain"]
-        GAIN2_INPUT_VINM0FILTERING_VINM1 = 0x18,
+        Gain2InputVinm0filteringVinm1 = 0x18,
         #[doc = "Gain 4, input/bias connected to VINM0 with filtering on VINM1 or inverting gain"]
-        GAIN4_INPUT_VINM0FILTERING_VINM1 = 0x19,
+        Gain4InputVinm0filteringVinm1 = 0x19,
         #[doc = "Gain 8, input/bias connected to VINM0 with filtering on VINM1 or inverting gain"]
-        GAIN8_INPUT_VINM0FILTERING_VINM1 = 0x1a,
+        Gain8InputVinm0filteringVinm1 = 0x1a,
         #[doc = "Gain 16, input/bias connected to VINM0 with filtering on VINM1 or inverting gain"]
-        GAIN16_INPUT_VINM0FILTERING_VINM1 = 0x1b,
+        Gain16InputVinm0filteringVinm1 = 0x1b,
         #[doc = "Gain 32, input/bias connected to VINM0 with filtering on VINM1 or inverting gain"]
-        GAIN32_INPUT_VINM0FILTERING_VINM1 = 0x1c,
+        Gain32InputVinm0filteringVinm1 = 0x1c,
         #[doc = "Gain 64, input/bias connected to VINM0 with filtering on VINM1 or inverting gain"]
-        GAIN64_INPUT_VINM0FILTERING_VINM1 = 0x1d,
+        Gain64InputVinm0filteringVinm1 = 0x1d,
         _RESERVED_1e = 0x1e,
         _RESERVED_1f = 0x1f,
     }
@@ -464,13 +464,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VmSel {
         #[doc = "VINM0 connected to VINM input"]
-        VINM0 = 0x0,
+        Vinm0 = 0x0,
         #[doc = "VINM1 connected to VINM input"]
-        VINM1 = 0x01,
+        Vinm1 = 0x01,
         #[doc = "Feedback resistor connected to VINM (PGA mode)"]
-        PGA = 0x02,
+        Pga = 0x02,
         #[doc = "OpAmp output connected to VINM (Follower mode)"]
-        OUTPUT = 0x03,
+        Output = 0x03,
     }
     impl VmSel {
         #[inline(always)]
@@ -499,13 +499,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VpSel {
         #[doc = "VINP0 connected to VINP input"]
-        VINP0 = 0x0,
+        Vinp0 = 0x0,
         #[doc = "VINP1 connected to VINP input"]
-        VINP1 = 0x01,
+        Vinp1 = 0x01,
         #[doc = "VINP2 connected to VINP input"]
-        VINP2 = 0x02,
+        Vinp2 = 0x02,
         #[doc = "DAC3_CH1 connected to VINP input"]
-        DAC3_CH1 = 0x03,
+        Dac3Ch1 = 0x03,
     }
     impl VpSel {
         #[inline(always)]
@@ -534,13 +534,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VpsSel {
         #[doc = "VINP0 connected to VINP input"]
-        VINP0 = 0x0,
+        Vinp0 = 0x0,
         #[doc = "VINP1 connected to VINP input"]
-        VINP1 = 0x01,
+        Vinp1 = 0x01,
         #[doc = "VINP2 connected to VINP input"]
-        VINP2 = 0x02,
+        Vinp2 = 0x02,
         #[doc = "DAC3_CH1 connected to VINP input"]
-        DAC3_CH1 = 0x03,
+        Dac3Ch1 = 0x03,
     }
     impl VpsSel {
         #[inline(always)]

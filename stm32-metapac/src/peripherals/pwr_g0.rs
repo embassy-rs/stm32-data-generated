@@ -705,8 +705,8 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vos {
         _RESERVED_0 = 0x0,
-        RANGE1 = 0x01,
-        RANGE2 = 0x02,
+        Range1 = 0x01,
+        Range2 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Vos {

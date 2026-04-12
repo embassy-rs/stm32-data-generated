@@ -231,12 +231,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NVMSLEEP",
+                    name: "NvmSleep",
                     description: Some("NVM not woken up when exiting from low-power mode (if the bit RUN_PD is set)"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NVMWAKE_UP",
+                    name: "NvmWakeUp",
                     description: Some("NVM woken up when exiting from Deepsleep mode even if the bit RUN_PD is set"),
                     value: 0,
                 },
@@ -248,12 +248,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOW_POWER_MODE",
+                    name: "LowPowerMode",
                     description: Some("Voltage regulator switches to low-power mode"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MAIN_MODE",
+                    name: "MainMode",
                     description: Some("Voltage regulator in Main mode"),
                     value: 0,
                 },
@@ -265,12 +265,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "STANDBY_MODE",
+                    name: "StandbyMode",
                     description: Some("Enter Standby mode when the CPU enters deepsleep"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "STOP_MODE",
+                    name: "StopMode",
                     description: Some("Enter Stop mode when the CPU enters deepsleep"),
                     value: 0,
                 },
@@ -282,42 +282,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "EXTERNAL",
+                    name: "External",
                     description: Some("External input analog voltage (Compare internally to VREFINT)"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "V1_9",
+                    name: "V19",
                     description: Some("1.9 V"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "V2_1",
+                    name: "V21",
                     description: Some("2.1 V"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "V2_3",
+                    name: "V23",
                     description: Some("2.3 V"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "V2_5",
+                    name: "V25",
                     description: Some("2.5 V"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "V2_7",
+                    name: "V27",
                     description: Some("2.7 V"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "V2_9",
+                    name: "V29",
                     description: Some("2.9 V"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "V3_1",
+                    name: "V31",
                     description: Some("3.1 V"),
                     value: 6,
                 },
@@ -329,17 +329,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "RANGE1",
+                    name: "Range1",
                     description: Some("1.8 V (range 1)"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RANGE2",
+                    name: "Range2",
                     description: Some("1.5 V (range 2)"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "RANGE3",
+                    name: "Range3",
                     description: Some("1.2 V (range 3)"),
                     value: 3,
                 },

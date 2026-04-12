@@ -1752,9 +1752,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Anamode {
         #[doc = "Source"]
-        SOURCE = 0x0,
+        Source = 0x0,
         #[doc = "Sink"]
-        SINK = 0x01,
+        Sink = 0x01,
     }
     impl Anamode {
         #[inline(always)]
@@ -1783,13 +1783,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ccenable {
         #[doc = "Disable both PHYs"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Enable CC1 PHY"]
-        CC1 = 0x01,
+        Cc1 = 0x01,
         #[doc = "Enable CC2 PHY"]
-        CC2 = 0x02,
+        Cc2 = 0x02,
         #[doc = "Enable CC1 and CC2 PHY"]
-        BOTH = 0x03,
+        Both = 0x03,
     }
     impl Ccenable {
         #[inline(always)]
@@ -1818,9 +1818,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Phyccsel {
         #[doc = "Use CC1 IO for Power Delivery communication"]
-        CC1 = 0x0,
+        Cc1 = 0x0,
         #[doc = "Use CC2 IO for Power Delivery communication"]
-        CC2 = 0x01,
+        Cc2 = 0x01,
     }
     impl Phyccsel {
         #[inline(always)]
@@ -1849,15 +1849,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PscUsbpdclk {
         #[doc = "1 (bypass)"]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "2"]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "4"]
-        DIV4 = 0x02,
+        Div4 = 0x02,
         #[doc = "8"]
-        DIV8 = 0x03,
+        Div8 = 0x03,
         #[doc = "16"]
-        DIV16 = 0x04,
+        Div16 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -1889,21 +1889,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rxordset {
         #[doc = "SOP code detected in receiver"]
-        SOP = 0x0,
+        Sop = 0x0,
         #[doc = "SOP' code detected in receiver"]
-        SOP_PRIME = 0x01,
+        SopPrime = 0x01,
         #[doc = "SOP'' code detected in receiver"]
-        SOP_DOUBLE_PRIME = 0x02,
+        SopDoublePrime = 0x02,
         #[doc = "SOP'_Debug detected in receiver"]
-        SOP_PRIME_DEBUG = 0x03,
+        SopPrimeDebug = 0x03,
         #[doc = "SOP''_Debug detected in receiver"]
-        SOP_DOUBLE_PRIME_DEBUG = 0x04,
+        SopDoublePrimeDebug = 0x04,
         #[doc = "Cable Reset detected in receiver"]
-        CABLE_RESET = 0x05,
+        CableReset = 0x05,
         #[doc = "SOP extension#1 detected in receiver"]
-        EXT1 = 0x06,
+        Ext1 = 0x06,
         #[doc = "SOP extension#2 detected in receiver"]
-        EXT2 = 0x07,
+        Ext2 = 0x07,
     }
     impl Rxordset {
         #[inline(always)]
@@ -1932,15 +1932,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rxsopkinvalid {
         #[doc = "No K‑code corrupted"]
-        NONE = 0x0,
+        None = 0x0,
         #[doc = "First K‑code corrupted"]
-        FIRST = 0x01,
+        First = 0x01,
         #[doc = "Second K‑code corrupted"]
-        SECOND = 0x02,
+        Second = 0x02,
         #[doc = "Third K‑code corrupted"]
-        THIRD = 0x03,
+        Third = 0x03,
         #[doc = "Fourth K‑code corrupted"]
-        FOURTH = 0x04,
+        Fourth = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -1972,11 +1972,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Txmode {
         #[doc = "Transmission of Tx packet previously defined in other registers"]
-        PACKET = 0x0,
+        Packet = 0x0,
         #[doc = "Cable Reset sequence"]
-        CABLE_RESET = 0x01,
+        CableReset = 0x01,
         #[doc = "BIST test sequence (BIST Carrier Mode 2)"]
-        BIST = 0x02,
+        Bist = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Txmode {
@@ -2006,13 +2006,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum TypecVstateCc {
         #[doc = "Lowest"]
-        LOWEST = 0x0,
+        Lowest = 0x0,
         #[doc = "Low"]
-        LOW = 0x01,
+        Low = 0x01,
         #[doc = "High"]
-        HIGH = 0x02,
+        High = 0x02,
         #[doc = "Highest"]
-        HIGHEST = 0x03,
+        Highest = 0x03,
     }
     impl TypecVstateCc {
         #[inline(always)]

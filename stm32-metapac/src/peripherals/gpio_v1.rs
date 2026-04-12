@@ -480,11 +480,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CnfIn {
         #[doc = "Analog mode"]
-        ANALOG = 0x0,
+        Analog = 0x0,
         #[doc = "Floating input (reset state)"]
-        FLOATING = 0x01,
+        Floating = 0x01,
         #[doc = "Input with pull-up/pull-down"]
-        PULL = 0x02,
+        Pull = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl CnfIn {
@@ -514,13 +514,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CnfOut {
         #[doc = "Push-Pull mode"]
-        PUSH_PULL = 0x0,
+        PushPull = 0x0,
         #[doc = "Open Drain-Mode"]
-        OPEN_DRAIN = 0x01,
+        OpenDrain = 0x01,
         #[doc = "Alternate Function Push-Pull Mode"]
-        ALT_PUSH_PULL = 0x02,
+        AltPushPull = 0x02,
         #[doc = "Alternate Function Open-Drain Mode"]
-        ALT_OPEN_DRAIN = 0x03,
+        AltOpenDrain = 0x03,
     }
     impl CnfOut {
         #[inline(always)]
@@ -549,9 +549,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Idr {
         #[doc = "Input is logic low"]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "Input is logic high"]
-        HIGH = 0x01,
+        High = 0x01,
     }
     impl Idr {
         #[inline(always)]
@@ -580,13 +580,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Input mode (reset state)"]
-        INPUT = 0x0,
+        Input = 0x0,
         #[doc = "Output mode 10 MHz"]
-        OUTPUT10MHZ = 0x01,
+        Output10mhz = 0x01,
         #[doc = "Output mode 2 MHz"]
-        OUTPUT2MHZ = 0x02,
+        Output2mhz = 0x02,
         #[doc = "Output mode 50 MHz"]
-        OUTPUT50MHZ = 0x03,
+        Output50mhz = 0x03,
     }
     impl Mode {
         #[inline(always)]
@@ -615,9 +615,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Odr {
         #[doc = "Set output to logic low"]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "Set output to logic high"]
-        HIGH = 0x01,
+        High = 0x01,
     }
     impl Odr {
         #[inline(always)]

@@ -702,7 +702,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RESET",
+                    name: "Reset",
                     description: Some(
                         "Reset backup registers",
                     ),
@@ -716,28 +716,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "FILTER2",
+                    name: "Filter2",
                     description: Some(
                         "Tamper event is activated after 2 consecutive samples at the active level\"",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FILTER4",
+                    name: "Filter4",
                     description: Some(
                         "Tamper event is activated after 4 consecutive samples at the active level\"",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FILTER8",
+                    name: "Filter8",
                     description: Some(
                         "Tamper event is activated after 8 consecutive samples at the active level\"",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "NO_FILTER",
+                    name: "NoFilter",
                     description: Some(
                         "Tamper event is activated on edge of TAMP_INx input transitions to the active level (no internal pull-up on TAMP_INx input)\"",
                     ),
@@ -751,56 +751,56 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "HZ_1",
+                    name: "Hz1",
                     description: Some(
                         "RTCCLK / 32768 (1 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HZ_128",
+                    name: "Hz128",
                     description: Some(
                         "RTCCLK / 256 (128 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "HZ_16",
+                    name: "Hz16",
                     description: Some(
                         "RTCCLK / 2048 (16 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "HZ_2",
+                    name: "Hz2",
                     description: Some(
                         "RTCCLK / 16384 (2 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HZ_32",
+                    name: "Hz32",
                     description: Some(
                         "RTCCLK / 1024 (32 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "HZ_4",
+                    name: "Hz4",
                     description: Some(
                         "RTCCLK / 8192 (4 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HZ_64",
+                    name: "Hz64",
                     description: Some(
                         "RTCCLK / 512 (64 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "HZ_8",
+                    name: "Hz8",
                     description: Some(
                         "RTCCLK / 4096 (8 Hz when RTCCLK = 32768 Hz)",
                     ),
@@ -814,14 +814,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RESET_BY_HARDWARE",
+                    name: "ResetByHardware",
                     description: Some(
                         "Tamper x event generates a trigger event. TAMPxF is masked and internally cleared by hardware. The backup registers are not erased. The tamper x interrupt must not be enabled when TAMP3MSK is set",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RESET_BY_SOFTWARE",
+                    name: "ResetBySoftware",
                     description: Some(
                         "Tamper x event generates a trigger event and TAMPxF must be cleared by software to allow next tamper event detection",
                     ),
@@ -835,28 +835,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "CYCLES1",
+                    name: "Cycles1",
                     description: Some(
                         "1 RTCCLK cycle",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CYCLES2",
+                    name: "Cycles2",
                     description: Some(
                         "2 RTCCLK cycles",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "CYCLES4",
+                    name: "Cycles4",
                     description: Some(
                         "4 RTCCLK cycles",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "CYCLES8",
+                    name: "Cycles8",
                     description: Some(
                         "8 RTCCLK cycles",
                     ),
@@ -870,14 +870,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FILTERED_HIGH_OR_UNFILTERED_LOW",
+                    name: "FilteredHighOrUnfilteredLow",
                     description: Some(
                         "If TAMPFLT != 00 Tamper x input staying high triggers a tamper detection event. If TAMPFLT = 00 Tamper x input falling edge and low level triggers a tamper detection event",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FILTERED_LOW_OR_UNFILTERED_HIGH",
+                    name: "FilteredLowOrUnfilteredHigh",
                     description: Some(
                         "If TAMPFLT != 00 Tamper x input staying low triggers a tamper detection event. If TAMPFLT = 00 Tamper x input rising edge and high level triggers a tamper detection event",
                     ),

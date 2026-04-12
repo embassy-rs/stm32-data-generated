@@ -409,12 +409,12 @@ pub(crate) static REGISTERS: IR = IR {
         bit_size: 2,
         variants: &[
             EnumVariant {
-                name: "RANGE1",
+                name: "Range1",
                 description: None,
                 value: 1,
             },
             EnumVariant {
-                name: "RANGE2",
+                name: "Range2",
                 description: None,
                 value: 2,
             },

@@ -469,9 +469,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dir {
         #[doc = "Read from peripheral"]
-        FROM_PERIPHERAL = 0x0,
+        FromPeripheral = 0x0,
         #[doc = "Read from memory"]
-        FROM_MEMORY = 0x01,
+        FromMemory = 0x01,
     }
     impl Dir {
         #[inline(always)]
@@ -500,13 +500,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pl {
         #[doc = "Low priority"]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "Medium priority"]
-        MEDIUM = 0x01,
+        Medium = 0x01,
         #[doc = "High priority"]
-        HIGH = 0x02,
+        High = 0x02,
         #[doc = "Very high priority"]
-        VERY_HIGH = 0x03,
+        VeryHigh = 0x03,
     }
     impl Pl {
         #[inline(always)]
@@ -535,11 +535,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Size {
         #[doc = "8-bit size"]
-        BITS8 = 0x0,
+        Bits8 = 0x0,
         #[doc = "16-bit size"]
-        BITS16 = 0x01,
+        Bits16 = 0x01,
         #[doc = "32-bit size"]
-        BITS32 = 0x02,
+        Bits32 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Size {

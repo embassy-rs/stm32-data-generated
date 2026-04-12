@@ -1336,21 +1336,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "TIM16",
+                    name: "Tim16",
                     description: Some(
                         "TIM16",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "USART1",
+                    name: "Usart1",
                     description: Some(
                         "USART1",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "USART2",
+                    name: "Usart2",
                     description: Some(
                         "USART2",
                     ),
@@ -1364,28 +1364,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MAIN_FLASH",
+                    name: "MainFlash",
                     description: Some(
                         "Main Flash memory mapped at address 0",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MAIN_FLASH_ALT",
+                    name: "MainFlashAlt",
                     description: Some(
                         "Main Flash memory mapped at address 0 (alternate encoding)",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SRAM",
+                    name: "Sram",
                     description: Some(
                         "Embedded SRAM mapped at address 0",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "SYSTEM_FLASH",
+                    name: "SystemFlash",
                     description: Some(
                         "System Flash memory mapped at address 0",
                     ),
@@ -1399,14 +1399,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PB7",
+                    name: "Pb7",
                     description: Some(
                         "PB7",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PC14",
+                    name: "Pc14",
                     description: Some(
                         "PC14",
                     ),
@@ -1420,28 +1420,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PA0",
+                    name: "Pa0",
                     description: Some(
                         "PA0",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PA1",
+                    name: "Pa1",
                     description: Some(
                         "PA1",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PA2",
+                    name: "Pa2",
                     description: Some(
                         "PA2",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "PF2",
+                    name: "Pf2",
                     description: Some(
                         "PF2",
                     ),
@@ -1455,14 +1455,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PA11",
+                    name: "Pa11",
                     description: Some(
                         "PA11",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PA8",
+                    name: "Pa8",
                     description: Some(
                         "PA8",
                     ),
@@ -1476,21 +1476,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PA14",
+                    name: "Pa14",
                     description: Some(
                         "PA14",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PB6",
+                    name: "Pb6",
                     description: Some(
                         "PB6",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PC15",
+                    name: "Pc15",
                     description: Some(
                         "PC15",
                     ),
@@ -1504,14 +1504,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PA12",
+                    name: "Pa12",
                     description: Some(
                         "PA12",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PA7",
+                    name: "Pa7",
                     description: Some(
                         "PA7",
                     ),
@@ -1525,28 +1525,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PA3",
+                    name: "Pa3",
                     description: Some(
                         "PA3",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PA4",
+                    name: "Pa4",
                     description: Some(
                         "PA4",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PA5",
+                    name: "Pa5",
                     description: Some(
                         "PA5",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PA6",
+                    name: "Pa6",
                     description: Some(
                         "PA6",
                     ),

@@ -1193,14 +1193,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FALLING_EDGE",
+                    name: "FallingEdge",
                     description: Some(
                         "Data strobing edge is falling edge of SCK",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RISING_EDGE",
+                    name: "RisingEdge",
                     description: Some(
                         "Data strobing edge is rising edge of SCK",
                     ),
@@ -1214,14 +1214,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOT_READY",
+                    name: "NotReady",
                     description: Some(
                         "External AC’97 Codec is not ready",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "READY",
+                    name: "Ready",
                     description: Some(
                         "External AC’97 Codec is ready",
                     ),
@@ -1235,21 +1235,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ALAW",
+                    name: "ALaw",
                     description: Some(
                         "A-Law algorithm",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "MU_LAW",
+                    name: "MuLaw",
                     description: Some(
                         "μ-Law algorithm",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "NO_COMPANDING",
+                    name: "NoCompanding",
                     description: Some(
                         "No companding algorithm",
                     ),
@@ -1263,14 +1263,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ONES_COMPLEMENT",
+                    name: "OnesComplement",
                     description: Some(
                         "1’s complement representation",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TWOS_COMPLEMENT",
+                    name: "TwosComplement",
                     description: Some(
                         "2’s complement representation",
                     ),
@@ -1284,42 +1284,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "BIT10",
+                    name: "Bit10",
                     description: Some(
                         "10 bits",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "BIT16",
+                    name: "Bit16",
                     description: Some(
                         "16 bits",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "BIT20",
+                    name: "Bit20",
                     description: Some(
                         "20 bits",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "BIT24",
+                    name: "Bit24",
                     description: Some(
                         "24 bits",
                     ),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "BIT32",
+                    name: "Bit32",
                     description: Some(
                         "32 bits",
                     ),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "BIT8",
+                    name: "Bit8",
                     description: Some(
                         "8 bits",
                     ),
@@ -1333,42 +1333,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "EMPTY",
+                    name: "Empty",
                     description: Some(
                         "FIFO empty",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FULL",
+                    name: "Full",
                     description: Some(
                         "FIFO full",
                     ),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "QUARTER1",
+                    name: "Quarter1",
                     description: Some(
                         "FIFO <= 1⁄4 but not empty",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "QUARTER2",
+                    name: "Quarter2",
                     description: Some(
                         "1⁄4 < FIFO <= 1⁄2",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "QUARTER3",
+                    name: "Quarter3",
                     description: Some(
                         "1⁄2 < FIFO <= 3⁄4",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "QUARTER4",
+                    name: "Quarter4",
                     description: Some(
                         "3⁄4 < FIFO but not full",
                     ),
@@ -1382,14 +1382,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BEFORE_FIRST",
+                    name: "BeforeFirst",
                     description: Some(
                         "FS is asserted one bit before the first bit of the slot 0",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ON_FIRST",
+                    name: "OnFirst",
                     description: Some(
                         "FS is asserted on the first bit of the slot 0",
                     ),
@@ -1403,14 +1403,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FALLING_EDGE",
+                    name: "FallingEdge",
                     description: Some(
                         "FS is active low (falling edge)",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RISING_EDGE",
+                    name: "RisingEdge",
                     description: Some(
                         "FS is active high (rising edge)",
                     ),
@@ -1424,35 +1424,35 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "EMPTY",
+                    name: "Empty",
                     description: Some(
                         "FIFO empty",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FULL",
+                    name: "Full",
                     description: Some(
                         "FIFO full",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "QUARTER1",
+                    name: "Quarter1",
                     description: Some(
                         "1⁄4 FIFO",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "QUARTER2",
+                    name: "Quarter2",
                     description: Some(
                         "1⁄2 FIFO",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "QUARTER3",
+                    name: "Quarter3",
                     description: Some(
                         "3⁄4 FIFO",
                     ),
@@ -1466,14 +1466,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LSB_FIRST",
+                    name: "LsbFirst",
                     description: Some(
                         "Data are transferred with LSB first",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MSB_FIRST",
+                    name: "MsbFirst",
                     description: Some(
                         "Data are transferred with MSB first",
                     ),
@@ -1487,317 +1487,317 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 6,
             variants: &[
                 EnumVariant {
-                    name: "DIV1",
+                    name: "Div1",
                     description: None,
                     value: 1,
                 },
                 EnumVariant {
-                    name: "DIV10",
+                    name: "Div10",
                     description: None,
                     value: 10,
                 },
                 EnumVariant {
-                    name: "DIV11",
+                    name: "Div11",
                     description: None,
                     value: 11,
                 },
                 EnumVariant {
-                    name: "DIV12",
+                    name: "Div12",
                     description: None,
                     value: 12,
                 },
                 EnumVariant {
-                    name: "DIV13",
+                    name: "Div13",
                     description: None,
                     value: 13,
                 },
                 EnumVariant {
-                    name: "DIV14",
+                    name: "Div14",
                     description: None,
                     value: 14,
                 },
                 EnumVariant {
-                    name: "DIV15",
+                    name: "Div15",
                     description: None,
                     value: 15,
                 },
                 EnumVariant {
-                    name: "DIV16",
+                    name: "Div16",
                     description: None,
                     value: 16,
                 },
                 EnumVariant {
-                    name: "DIV17",
+                    name: "Div17",
                     description: None,
                     value: 17,
                 },
                 EnumVariant {
-                    name: "DIV18",
+                    name: "Div18",
                     description: None,
                     value: 18,
                 },
                 EnumVariant {
-                    name: "DIV19",
+                    name: "Div19",
                     description: None,
                     value: 19,
                 },
                 EnumVariant {
-                    name: "DIV2",
+                    name: "Div2",
                     description: None,
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DIV20",
+                    name: "Div20",
                     description: None,
                     value: 20,
                 },
                 EnumVariant {
-                    name: "DIV21",
+                    name: "Div21",
                     description: None,
                     value: 21,
                 },
                 EnumVariant {
-                    name: "DIV22",
+                    name: "Div22",
                     description: None,
                     value: 22,
                 },
                 EnumVariant {
-                    name: "DIV23",
+                    name: "Div23",
                     description: None,
                     value: 23,
                 },
                 EnumVariant {
-                    name: "DIV24",
+                    name: "Div24",
                     description: None,
                     value: 24,
                 },
                 EnumVariant {
-                    name: "DIV25",
+                    name: "Div25",
                     description: None,
                     value: 25,
                 },
                 EnumVariant {
-                    name: "DIV26",
+                    name: "Div26",
                     description: None,
                     value: 26,
                 },
                 EnumVariant {
-                    name: "DIV27",
+                    name: "Div27",
                     description: None,
                     value: 27,
                 },
                 EnumVariant {
-                    name: "DIV28",
+                    name: "Div28",
                     description: None,
                     value: 28,
                 },
                 EnumVariant {
-                    name: "DIV29",
+                    name: "Div29",
                     description: None,
                     value: 29,
                 },
                 EnumVariant {
-                    name: "DIV3",
+                    name: "Div3",
                     description: None,
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DIV30",
+                    name: "Div30",
                     description: None,
                     value: 30,
                 },
                 EnumVariant {
-                    name: "DIV31",
+                    name: "Div31",
                     description: None,
                     value: 31,
                 },
                 EnumVariant {
-                    name: "DIV32",
+                    name: "Div32",
                     description: None,
                     value: 32,
                 },
                 EnumVariant {
-                    name: "DIV33",
+                    name: "Div33",
                     description: None,
                     value: 33,
                 },
                 EnumVariant {
-                    name: "DIV34",
+                    name: "Div34",
                     description: None,
                     value: 34,
                 },
                 EnumVariant {
-                    name: "DIV35",
+                    name: "Div35",
                     description: None,
                     value: 35,
                 },
                 EnumVariant {
-                    name: "DIV36",
+                    name: "Div36",
                     description: None,
                     value: 36,
                 },
                 EnumVariant {
-                    name: "DIV37",
+                    name: "Div37",
                     description: None,
                     value: 37,
                 },
                 EnumVariant {
-                    name: "DIV38",
+                    name: "Div38",
                     description: None,
                     value: 38,
                 },
                 EnumVariant {
-                    name: "DIV39",
+                    name: "Div39",
                     description: None,
                     value: 39,
                 },
                 EnumVariant {
-                    name: "DIV4",
+                    name: "Div4",
                     description: None,
                     value: 4,
                 },
                 EnumVariant {
-                    name: "DIV40",
+                    name: "Div40",
                     description: None,
                     value: 40,
                 },
                 EnumVariant {
-                    name: "DIV41",
+                    name: "Div41",
                     description: None,
                     value: 41,
                 },
                 EnumVariant {
-                    name: "DIV42",
+                    name: "Div42",
                     description: None,
                     value: 42,
                 },
                 EnumVariant {
-                    name: "DIV43",
+                    name: "Div43",
                     description: None,
                     value: 43,
                 },
                 EnumVariant {
-                    name: "DIV44",
+                    name: "Div44",
                     description: None,
                     value: 44,
                 },
                 EnumVariant {
-                    name: "DIV45",
+                    name: "Div45",
                     description: None,
                     value: 45,
                 },
                 EnumVariant {
-                    name: "DIV46",
+                    name: "Div46",
                     description: None,
                     value: 46,
                 },
                 EnumVariant {
-                    name: "DIV47",
+                    name: "Div47",
                     description: None,
                     value: 47,
                 },
                 EnumVariant {
-                    name: "DIV48",
+                    name: "Div48",
                     description: None,
                     value: 48,
                 },
                 EnumVariant {
-                    name: "DIV49",
+                    name: "Div49",
                     description: None,
                     value: 49,
                 },
                 EnumVariant {
-                    name: "DIV5",
+                    name: "Div5",
                     description: None,
                     value: 5,
                 },
                 EnumVariant {
-                    name: "DIV50",
+                    name: "Div50",
                     description: None,
                     value: 50,
                 },
                 EnumVariant {
-                    name: "DIV51",
+                    name: "Div51",
                     description: None,
                     value: 51,
                 },
                 EnumVariant {
-                    name: "DIV52",
+                    name: "Div52",
                     description: None,
                     value: 52,
                 },
                 EnumVariant {
-                    name: "DIV53",
+                    name: "Div53",
                     description: None,
                     value: 53,
                 },
                 EnumVariant {
-                    name: "DIV54",
+                    name: "Div54",
                     description: None,
                     value: 54,
                 },
                 EnumVariant {
-                    name: "DIV55",
+                    name: "Div55",
                     description: None,
                     value: 55,
                 },
                 EnumVariant {
-                    name: "DIV56",
+                    name: "Div56",
                     description: None,
                     value: 56,
                 },
                 EnumVariant {
-                    name: "DIV57",
+                    name: "Div57",
                     description: None,
                     value: 57,
                 },
                 EnumVariant {
-                    name: "DIV58",
+                    name: "Div58",
                     description: None,
                     value: 58,
                 },
                 EnumVariant {
-                    name: "DIV59",
+                    name: "Div59",
                     description: None,
                     value: 59,
                 },
                 EnumVariant {
-                    name: "DIV6",
+                    name: "Div6",
                     description: None,
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DIV60",
+                    name: "Div60",
                     description: None,
                     value: 60,
                 },
                 EnumVariant {
-                    name: "DIV61",
+                    name: "Div61",
                     description: None,
                     value: 61,
                 },
                 EnumVariant {
-                    name: "DIV62",
+                    name: "Div62",
                     description: None,
                     value: 62,
                 },
                 EnumVariant {
-                    name: "DIV63",
+                    name: "Div63",
                     description: None,
                     value: 63,
                 },
                 EnumVariant {
-                    name: "DIV7",
+                    name: "Div7",
                     description: None,
                     value: 7,
                 },
                 EnumVariant {
-                    name: "DIV8",
+                    name: "Div8",
                     description: None,
                     value: 8,
                 },
                 EnumVariant {
-                    name: "DIV9",
+                    name: "Div9",
                     description: None,
                     value: 9,
                 },
@@ -1809,28 +1809,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MASTER_RX",
+                    name: "MasterRx",
                     description: Some(
                         "Master receiver",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "MASTER_TX",
+                    name: "MasterTx",
                     description: Some(
                         "Master transmitter",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SLAVE_RX",
+                    name: "SlaveRx",
                     description: Some(
                         "Slave receiver",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "SLAVE_TX",
+                    name: "SlaveTx",
                     description: Some(
                         "Slave transmitter",
                     ),
@@ -1844,14 +1844,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MONO",
+                    name: "Mono",
                     description: Some(
                         "Mono mode",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "STEREO",
+                    name: "Stereo",
                     description: Some(
                         "Stereo mode",
                     ),
@@ -1865,14 +1865,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "SEND_LAST",
+                    name: "SendLast",
                     description: Some(
                         "Last values are sent during the mute mode",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SEND_ZERO",
+                    name: "SendZero",
                     description: Some(
                         "Bit value 0 is sent during the mute mode",
                     ),
@@ -1886,14 +1886,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "IMMEDIATELY",
+                    name: "Immediately",
                     description: Some(
                         "Audio block output driven immediately after the setting of this bit",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ON_START",
+                    name: "OnStart",
                     description: Some(
                         "Audio block output driven when SAIEN is set",
                     ),
@@ -1907,21 +1907,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "AC97",
+                    name: "Ac97",
                     description: Some(
                         "AC’97 protocol",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FREE",
+                    name: "Free",
                     description: Some(
                         "Free protocol. Free protocol allows to use the powerful configuration of the audio block to address a specific audio protocol",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SPDIF",
+                    name: "Spdif",
                     description: Some(
                         "SPDIF protocol",
                     ),
@@ -1935,14 +1935,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 16,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE",
+                    name: "Active",
                     description: Some(
                         "Active slot",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "INACTIVE",
+                    name: "Inactive",
                     description: Some(
                         "Inactive slot",
                     ),
@@ -1956,21 +1956,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BIT16",
+                    name: "Bit16",
                     description: Some(
                         "16-bit",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "BIT32",
+                    name: "Bit32",
                     description: Some(
                         "32-bit",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DATA_SIZE",
+                    name: "DataSize",
                     description: Some(
                         "The slot size is equivalent to the data size (specified in DS[3:0] in the SAI_xCR1 register)",
                     ),
@@ -1984,21 +1984,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ASYNCHRONOUS",
+                    name: "Asynchronous",
                     description: Some(
                         "audio sub-block in asynchronous mode",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "EXTERNAL",
+                    name: "External",
                     description: Some(
                         "audio sub-block is synchronous with an external SAI embedded peripheral. In this case the audio sub-block should be configured in Slave mode",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "INTERNAL",
+                    name: "Internal",
                     description: Some(
                         "audio sub-block is synchronous with the other internal audio sub-block. In this case, the audio sub-block must be configured in slave mode",
                     ),
@@ -2012,14 +2012,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CORRECT",
+                    name: "Correct",
                     description: Some(
                         "Clock configuration is correct",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WRONG",
+                    name: "Wrong",
                     description: Some(
                         "Clock configuration does not respect the rule concerning the frame length specification",
                     ),

@@ -1137,14 +1137,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "WS0",
+                    name: "Ws0",
                     description: Some(
                         "No wait state added when accessing any AXIRAM with ECC = 0.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WS1",
+                    name: "Ws1",
                     description: Some(
                         "One wait state added when accessing any AXIRAM with ECC = 0. In this case, Fmax = 500 MHz is not guaranteed. (TBC).",
                     ),
@@ -1158,21 +1158,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "HDPL1",
+                    name: "Hdpl1",
                     description: Some(
                         "HDPL1.",
                     ),
                     value: 81,
                 },
                 EnumVariant {
-                    name: "HDPL2",
+                    name: "Hdpl2",
                     description: Some(
                         "HDPL2.",
                     ),
                     value: 138,
                 },
                 EnumVariant {
-                    name: "HDPL3",
+                    name: "Hdpl3",
                     description: Some(
                         "HDPL3.",
                     ),
@@ -1186,7 +1186,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "UNLOCK",
+                    name: "Unlock",
                     description: Some(
                         "Writes to SBS_DBGCR allowed (default).",
                     ),
@@ -1200,14 +1200,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "MII_GMII",
+                    name: "MiiGmii",
                     description: Some(
                         "GMII or MII",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RMII",
+                    name: "Rmii",
                     description: Some(
                         "RMII",
                     ),
@@ -1221,21 +1221,21 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "HDPL0",
+                    name: "Hdpl0",
                     description: Some(
                         "HDPL0, corresponding to ST-RSS (default when device is close).",
                     ),
                     value: 180,
                 },
                 EnumVariant {
-                    name: "HDPL1",
+                    name: "Hdpl1",
                     description: Some(
                         "HDPL1.",
                     ),
                     value: 81,
                 },
                 EnumVariant {
-                    name: "HDPL2",
+                    name: "Hdpl2",
                     description: Some(
                         "HDPL2.",
                     ),

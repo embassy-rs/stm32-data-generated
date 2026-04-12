@@ -326,9 +326,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pdds {
         #[doc = "Enter Stop mode when the CPU enters deepsleep"]
-        STOP_MODE = 0x0,
+        StopMode = 0x0,
         #[doc = "Enter Standby mode when the CPU enters deepsleep"]
-        STANDBY_MODE = 0x01,
+        StandbyMode = 0x01,
     }
     impl Pdds {
         #[inline(always)]
@@ -358,11 +358,11 @@ pub mod vals {
     pub enum Vos {
         _RESERVED_0 = 0x0,
         #[doc = "Range 1"]
-        RANGE1 = 0x01,
+        Range1 = 0x01,
         #[doc = "Range 2"]
-        RANGE2 = 0x02,
+        Range2 = 0x02,
         #[doc = "Range 3"]
-        RANGE3 = 0x03,
+        Range3 = 0x03,
     }
     impl Vos {
         #[inline(always)]

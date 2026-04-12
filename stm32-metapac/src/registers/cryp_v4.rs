@@ -741,14 +741,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NORMAL",
+                    name: "Normal",
                     description: Some(
                         "Normal-key mode. Key registers are freely usable.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SHARED",
+                    name: "Shared",
                     description: Some(
                         "Shared-key mode. If shared-key mode is properly initialized in SAES peripheral, the CRYP peripheral automatically loads its key registers with the data stored in the SAES key registers. The key value is available in CRYP key registers when BUSY bit is cleared and KEYVALID is set in the CRYP_SR register. Key error flag KERF is set otherwise in the CRYP_SR register.",
                     ),

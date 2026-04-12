@@ -1905,11 +1905,11 @@ pub mod vals {
     pub enum Cas {
         _RESERVED_0 = 0x0,
         #[doc = "1 cycle"]
-        CLOCKS1 = 0x01,
+        Clocks1 = 0x01,
         #[doc = "2 cycles"]
-        CLOCKS2 = 0x02,
+        Clocks2 = 0x02,
         #[doc = "3 cycles"]
-        CLOCKS3 = 0x03,
+        Clocks3 = 0x03,
     }
     impl Cas {
         #[inline(always)]
@@ -1938,9 +1938,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cburstrw {
         #[doc = "Write operations are always performed in Asynchronous mode."]
-        ASYNCHRONOUS = 0x0,
+        Asynchronous = 0x0,
         #[doc = "Write operations are performed in Synchronous mode."]
-        SYNCHRONOUS = 0x01,
+        Synchronous = 0x01,
     }
     impl Cburstrw {
         #[inline(always)]
@@ -1969,15 +1969,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpsize {
         #[doc = "No burst split when crossing page boundary"]
-        NO_BURST_SPLIT = 0x0,
+        NoBurstSplit = 0x0,
         #[doc = "128 bytes CRAM page size"]
-        BYTES128 = 0x01,
+        Bytes128 = 0x01,
         #[doc = "256 bytes CRAM page size"]
-        BYTES256 = 0x02,
+        Bytes256 = 0x02,
         #[doc = "512 bytes CRAM page size"]
-        BYTES512 = 0x03,
+        Bytes512 = 0x03,
         #[doc = "1024 bytes CRAM page size"]
-        BYTES1024 = 0x04,
+        Bytes1024 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -2009,17 +2009,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Eccps {
         #[doc = "ECC page size 256 bytes"]
-        BYTES256 = 0x0,
+        Bytes256 = 0x0,
         #[doc = "ECC page size 512 bytes"]
-        BYTES512 = 0x01,
+        Bytes512 = 0x01,
         #[doc = "ECC page size 1024 bytes"]
-        BYTES1024 = 0x02,
+        Bytes1024 = 0x02,
         #[doc = "ECC page size 2048 bytes"]
-        BYTES2048 = 0x03,
+        Bytes2048 = 0x03,
         #[doc = "ECC page size 4096 bytes"]
-        BYTES4096 = 0x04,
+        Bytes4096 = 0x04,
         #[doc = "ECC page size 8192 bytes"]
-        BYTES8192 = 0x05,
+        Bytes8192 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -2050,19 +2050,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Normal Mode"]
-        NORMAL = 0x0,
+        Normal = 0x0,
         #[doc = "Clock Configuration Enable"]
-        CLOCK_CONFIGURATION_ENABLE = 0x01,
+        ClockConfigurationEnable = 0x01,
         #[doc = "PALL (All Bank Precharge) command"]
-        PALL = 0x02,
+        Pall = 0x02,
         #[doc = "Auto-refresh command"]
-        AUTO_REFRESH_COMMAND = 0x03,
+        AutoRefreshCommand = 0x03,
         #[doc = "Load Mode Resgier"]
-        LOAD_MODE_REGISTER = 0x04,
+        LoadModeRegister = 0x04,
         #[doc = "Self-refresh command"]
-        SELF_REFRESH_COMMAND = 0x05,
+        SelfRefreshCommand = 0x05,
         #[doc = "Power-down command"]
-        POWER_DOWN_COMMAND = 0x06,
+        PowerDownCommand = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Mode {
@@ -2092,11 +2092,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Modes {
         #[doc = "Normal Mode"]
-        NORMAL = 0x0,
+        Normal = 0x0,
         #[doc = "Self-refresh mode"]
-        SELF_REFRESH = 0x01,
+        SelfRefresh = 0x01,
         #[doc = "Power-down mode"]
-        POWER_DOWN = 0x02,
+        PowerDown = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Modes {
@@ -2126,11 +2126,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mtyp {
         #[doc = "SRAM memory type"]
-        SRAM = 0x0,
+        Sram = 0x0,
         #[doc = "PSRAM (CRAM) memory type"]
-        PSRAM = 0x01,
+        Psram = 0x01,
         #[doc = "NOR Flash/OneNAND Flash"]
-        FLASH = 0x02,
+        Flash = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Mtyp {
@@ -2160,11 +2160,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mwid {
         #[doc = "Memory data bus width 8 bits"]
-        BITS8 = 0x0,
+        Bits8 = 0x0,
         #[doc = "Memory data bus width 16 bits"]
-        BITS16 = 0x01,
+        Bits16 = 0x01,
         #[doc = "Memory data bus width 32 bits"]
-        BITS32 = 0x02,
+        Bits32 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Mwid {
@@ -2194,9 +2194,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nb {
         #[doc = "Two internal Banks"]
-        NB2 = 0x0,
+        Nb2 = 0x0,
         #[doc = "Four internal Banks"]
-        NB4 = 0x01,
+        Nb4 = 0x01,
     }
     impl Nb {
         #[inline(always)]
@@ -2225,13 +2225,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nc {
         #[doc = "8 bits"]
-        BITS8 = 0x0,
+        Bits8 = 0x0,
         #[doc = "9 bits"]
-        BITS9 = 0x01,
+        Bits9 = 0x01,
         #[doc = "10 bits"]
-        BITS10 = 0x02,
+        Bits10 = 0x02,
         #[doc = "11 bits"]
-        BITS11 = 0x03,
+        Bits11 = 0x03,
     }
     impl Nc {
         #[inline(always)]
@@ -2260,11 +2260,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nr {
         #[doc = "11 bits"]
-        BITS11 = 0x0,
+        Bits11 = 0x0,
         #[doc = "12 bits"]
-        BITS12 = 0x01,
+        Bits12 = 0x01,
         #[doc = "13 bits"]
-        BITS13 = 0x02,
+        Bits13 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Nr {
@@ -2295,7 +2295,7 @@ pub mod vals {
     pub enum Ptyp {
         _RESERVED_0 = 0x0,
         #[doc = "NAND flash"]
-        NAND = 0x01,
+        Nand = 0x01,
     }
     impl Ptyp {
         #[inline(always)]
@@ -2324,9 +2324,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pwid {
         #[doc = "External memory device width 8 bits"]
-        BITS8 = 0x0,
+        Bits8 = 0x0,
         #[doc = "External memory device width 16 bits"]
-        BITS16 = 0x01,
+        Bits16 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -2357,11 +2357,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rpipe {
         #[doc = "No clock cycle delay"]
-        NO_DELAY = 0x0,
+        NoDelay = 0x0,
         #[doc = "One clock cycle delay"]
-        CLOCKS1 = 0x01,
+        Clocks1 = 0x01,
         #[doc = "Two clock cycles delay"]
-        CLOCKS2 = 0x02,
+        Clocks2 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Rpipe {
@@ -2391,12 +2391,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdclk {
         #[doc = "SDCLK clock disabled"]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "SDCLK period = 2 x HCLK period"]
-        DIV2 = 0x02,
+        Div2 = 0x02,
         #[doc = "SDCLK period = 3 x HCLK period"]
-        DIV3 = 0x03,
+        Div3 = 0x03,
     }
     impl Sdclk {
         #[inline(always)]
@@ -2425,9 +2425,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Waitcfg {
         #[doc = "NWAIT signal is active one data cycle before wait state"]
-        BEFORE_WAIT_STATE = 0x0,
+        BeforeWaitState = 0x0,
         #[doc = "NWAIT signal is active during wait state"]
-        DURING_WAIT_STATE = 0x01,
+        DuringWaitState = 0x01,
     }
     impl Waitcfg {
         #[inline(always)]
@@ -2456,9 +2456,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Waitpol {
         #[doc = "NWAIT active low"]
-        ACTIVE_LOW = 0x0,
+        ActiveLow = 0x0,
         #[doc = "NWAIT active high"]
-        ACTIVE_HIGH = 0x01,
+        ActiveHigh = 0x01,
     }
     impl Waitpol {
         #[inline(always)]

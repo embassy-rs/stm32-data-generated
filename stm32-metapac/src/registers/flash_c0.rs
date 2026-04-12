@@ -730,22 +730,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "FALLING_0",
+                    name: "Falling0",
                     description: Some("BOR falling level 1 with threshold around 2.0V"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "FALLING_1",
+                    name: "Falling1",
                     description: Some("BOR falling level 2 with threshold around 2.2V"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FALLING_2",
+                    name: "Falling2",
                     description: Some("BOR falling level 3 with threshold around 2.5V"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "FALLING_3",
+                    name: "Falling3",
                     description: Some("BOR falling level 4 with threshold around 2.8V"),
                     value: 3,
                 },
@@ -757,22 +757,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "RISING_0",
+                    name: "Rising0",
                     description: Some("BOR rising level 1 with threshold around 2.1V"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "RISING_1",
+                    name: "Rising1",
                     description: Some("BOR rising level 2 with threshold around 2.3V"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RISING_2",
+                    name: "Rising2",
                     description: Some("BOR rising level 3 with threshold around 2.6V"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "RISING_3",
+                    name: "Rising3",
                     description: Some("BOR rising level 4 with threshold around 2.9V"),
                     value: 3,
                 },
@@ -784,12 +784,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "WS0",
+                    name: "Ws0",
                     description: Some("Zero wait states"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "WS1",
+                    name: "Ws1",
                     description: Some("One wait state"),
                     value: 1,
                 },
@@ -801,17 +801,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "GPIO",
+                    name: "Gpio",
                     description: Some("Reset pin is in GPIO mode only"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "INPUT_ONLY",
+                    name: "InputOnly",
                     description: Some("Reset pin is in reset input mode only"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "INPUT_OUTPUT",
+                    name: "InputOutput",
                     description: Some("Reset pin is in resety input and output mode"),
                     value: 3,
                 },
@@ -823,17 +823,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "LEVEL_0",
+                    name: "Level0",
                     description: Some("Read protection not active"),
                     value: 170,
                 },
                 EnumVariant {
-                    name: "LEVEL_1",
+                    name: "Level1",
                     description: Some("Memories read protection active"),
                     value: 187,
                 },
                 EnumVariant {
-                    name: "LEVEL_2",
+                    name: "Level2",
                     description: Some("Chip read protection active"),
                     value: 204,
                 },

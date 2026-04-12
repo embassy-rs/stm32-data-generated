@@ -479,13 +479,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpms {
         #[doc = "Selects Stop mode when entering DeepSleep."]
-        STOP = 0x0,
+        Stop = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "Selects Standby mode when entering DeepSleep."]
-        STANDBY = 0x03,
+        Standby = 0x03,
         #[doc = "Selects Shutdown mode when entering DeepSleep."]
-        SHUTDOWN = 0x04,
+        Shutdown = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,

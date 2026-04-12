@@ -1546,9 +1546,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Actvos {
         #[doc = "Range 2 (lowest power)"]
-        RANGE2 = 0x0,
+        Range2 = 0x0,
         #[doc = "Range 1 (highest frequency)"]
-        RANGE1 = 0x01,
+        Range1 = 0x01,
     }
     impl Actvos {
         #[inline(always)]
@@ -1577,9 +1577,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Actvosrdy {
         #[doc = "VsubCORE/sub is above or below the current voltage scaling provided by ACTVOS."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VsubCORE /subis equal to the current voltage scaling provided by ACTVOS."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Actvosrdy {
         #[inline(always)]
@@ -1608,7 +1608,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Divclp {
         #[doc = "Low power regulator clock not divided."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -1644,9 +1644,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Encmode {
         #[doc = "2.4 GHz RADIO encryption function disabled."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "2.4 GHz RADIO encryption function enabled."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Encmode {
         #[inline(always)]
@@ -1675,9 +1675,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Flashfwu {
         #[doc = "Flash memory enters low-power mode in Stop 0 and Stop 1 modes (lower-power consumption)."]
-        LOW_POWER = 0x0,
+        LowPower = 0x0,
         #[doc = "Flash memory remains in normal mode in Stop 0 and Stop 1 modes (faster wakeup time)."]
-        NORMAL = 0x01,
+        Normal = 0x01,
     }
     impl Flashfwu {
         #[inline(always)]
@@ -1706,9 +1706,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fsten {
         #[doc = "LDO fast startup disabled (limited inrush current)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "LDO fast startup enabled."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Fsten {
         #[inline(always)]
@@ -1737,9 +1737,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Icrampds {
         #[doc = "ICACHE SRAM content retained in Stop modes"]
-        RETAINED = 0x0,
+        Retained = 0x0,
         #[doc = "ICACHE SRAM content lost in Stop modes"]
-        NOT_RETAINED = 0x01,
+        NotRetained = 0x01,
     }
     impl Icrampds {
         #[inline(always)]
@@ -1768,9 +1768,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Io2sv {
         #[doc = "VDDIO2 not supplied, electrical and logical isolation enabled."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIO2 supply present, electrical and logical isolation disabled."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Io2sv {
         #[inline(always)]
@@ -1799,9 +1799,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpms {
         #[doc = "Stop 0 mode"]
-        STOP0 = 0x0,
+        Stop0 = 0x0,
         #[doc = "Stop 1 mode"]
-        STOP1 = 0x01,
+        Stop1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
@@ -1836,9 +1836,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpmsec {
         #[doc = "CR1, CR2 and CSSF in the SR can be read and written with secure or non-secure access."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "CR1, CR2, and CSSF in the SR can be read and written only with secure access."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Lpmsec {
         #[inline(always)]
@@ -1867,9 +1867,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "2.4 GHz RADIO deep sleep mode"]
-        DEEP_SLEEP = 0x0,
+        DeepSleep = 0x0,
         #[doc = "2.4 GHz RADIO sleep mode"]
-        SLEEP = 0x01,
+        Sleep = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -1900,9 +1900,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Phymode {
         #[doc = "2.4 GHz RADIO Sleep mode."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "2.4 GHz RADIO Standby mode."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Phymode {
         #[inline(always)]
@@ -1931,9 +1931,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pkarampds {
         #[doc = "PKA SRAM content retained in Stop modes."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "PKA SRAM content lost in Stop modes."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Pkarampds {
         #[inline(always)]
@@ -1962,9 +1962,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Prampds {
         #[doc = "OTG SRAM content retained in Stop modes."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "OTG SRAM content lost in Stop modes."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Prampds {
         #[inline(always)]
@@ -1993,9 +1993,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ptasr {
         #[doc = "Cleared by software, writing 0."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Set by hardware when Stop 2 mode PTA retention is enabled in PTASREN and Stop 2 mode is entered."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Ptasr {
         #[inline(always)]
@@ -2024,9 +2024,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ptasren {
         #[doc = "PTA output signals Stop 2 retention feature disabled."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "PTA output signals Stop 2 retention feature enabled."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Ptasren {
         #[inline(always)]
@@ -2069,7 +2069,7 @@ pub mod vals {
         #[doc = "VPVD6 around 2.9 V"]
         V29 = 0x06,
         #[doc = "External input analog voltage PVD_IN (compared internally to VREFINT)"]
-        PVD_IN = 0x07,
+        PvdIn = 0x07,
     }
     impl Pvdls {
         #[inline(always)]
@@ -2098,9 +2098,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pvdo {
         #[doc = "VDD is equal or above the PVD threshold selected by PVDLS\\[2:0\\]."]
-        ABOVE_OR_EQUAL = 0x0,
+        AboveOrEqual = 0x0,
         #[doc = "VDD is below the PVD threshold selected by PVDLS\\[2:0\\]."]
-        BELOW = 0x01,
+        Below = 0x01,
     }
     impl Pvdo {
         #[inline(always)]
@@ -2129,9 +2129,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Regpasel {
         #[doc = "VDDRFPA pin selected as regulator REG_VDDHPA input supply."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "regulator REG_VDDHPA input supply selection between VDDRFPA and VDD11, dependent on requested regulated output voltage."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Regpasel {
         #[inline(always)]
@@ -2160,9 +2160,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Regs {
         #[doc = "LDO selected."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "SMPS selected."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Regs {
         #[inline(always)]
@@ -2191,9 +2191,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Regsel {
         #[doc = "LDO selected."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "SMPS selected."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Regsel {
         #[inline(always)]
@@ -2222,9 +2222,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sbf {
         #[doc = "The device did not enter Standby mode."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "The device entered Standby mode."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Sbf {
         #[inline(always)]
@@ -2253,9 +2253,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sram1pds567 {
         #[doc = "SRAM1 192KB, page 5 to 7 content retained in Stop modes"]
-        POWERED_ON = 0x0,
+        PoweredOn = 0x0,
         #[doc = "SRAM1 192KB, page 5 to 7 content lost in Stop modes"]
-        POWERED_OFF = 0x01,
+        PoweredOff = 0x01,
     }
     impl Sram1pds567 {
         #[inline(always)]
@@ -2284,9 +2284,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Srampds {
         #[doc = "SRAM1 content retained in Stop modes"]
-        POWERED_ON = 0x0,
+        PoweredOn = 0x0,
         #[doc = "SRAM1 content lost in Stop modes"]
-        POWERED_OFF = 0x01,
+        PoweredOff = 0x01,
     }
     impl Srampds {
         #[inline(always)]
@@ -2315,9 +2315,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usv {
         #[doc = "VDDUSB not supplied, electrical and logical isolation enabled."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDUSB supply present, electrical and logical isolation disabled."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Usv {
         #[inline(always)]
@@ -2346,9 +2346,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum V11fbsw {
         #[doc = "V11 feedback fixed before Epod."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "V11 feedback switch enabled:."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl V11fbsw {
         #[inline(always)]
@@ -2377,9 +2377,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbsec {
         #[doc = "DBPCR can be read and written with secure or non-secure access."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "DBPCR can be read and written only with secure access."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Vbsec {
         #[inline(always)]
@@ -2408,9 +2408,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vdmsec {
         #[doc = "SVMCR and CR3 can be read and written with secure or non-secure access."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "SVMCR and CR3 can be read and written only with secure access."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Vdmsec {
         #[inline(always)]
@@ -2439,9 +2439,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vos {
         #[doc = "Range 2 (lowest power)"]
-        RANGE2 = 0x0,
+        Range2 = 0x0,
         #[doc = "Range 1 (highest frequency)."]
-        RANGE1 = 0x01,
+        Range1 = 0x01,
     }
     impl Vos {
         #[inline(always)]
@@ -2470,9 +2470,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wupp {
         #[doc = "Detection on high level (rising edge)"]
-        HIGH = 0x0,
+        High = 0x0,
         #[doc = "Detection on low level (falling edge)"]
-        LOW = 0x01,
+        Low = 0x01,
     }
     impl Wupp {
         #[inline(always)]
@@ -2501,13 +2501,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wusel {
         #[doc = "reserved"]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "WKUP3_1"]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
         #[doc = "WKUP3_2"]
-        B_0X2 = 0x02,
+        B0x2 = 0x02,
         #[doc = "reserved"]
-        B_0X3 = 0x03,
+        B0x3 = 0x03,
     }
     impl Wusel {
         #[inline(always)]

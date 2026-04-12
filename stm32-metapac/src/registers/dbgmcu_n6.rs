@@ -927,7 +927,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 1,
             variants: &[EnumVariant {
-                name: "B_0X1",
+                name: "B0x1",
                 description: Some("Always enable."),
                 value: 1,
             }],
@@ -937,7 +937,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 1,
             variants: &[EnumVariant {
-                name: "B_0X1",
+                name: "B0x1",
                 description: Some("AP present."),
                 value: 1,
             }],
@@ -948,12 +948,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some("AP disabled (debug access locked)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some("AP enabled (debug access open)."),
                     value: 1,
                 },
@@ -964,7 +964,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 1,
             variants: &[EnumVariant {
-                name: "B_0X1",
+                name: "B0x1",
                 description: Some("AP present."),
                 value: 1,
             }],
@@ -975,12 +975,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some("Debug clock is off."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some("Debug clock is on."),
                     value: 1,
                 },
@@ -992,12 +992,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some("DBTRGIO connected to DBTRGIN."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some("DBTRGIO connected to DBTRGOUT."),
                     value: 1,
                 },
@@ -1008,7 +1008,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 12,
             variants: &[EnumVariant {
-                name: "B_0X486",
+                name: "B0x486",
                 description: Some("STM32N6xx."),
                 value: 1158,
             }],
@@ -1019,12 +1019,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some("Debugger has read DBG_AUTH_DEV."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some("Processor has written DBG_AUTH_DEV."),
                     value: 1,
                 },
@@ -1036,12 +1036,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some("TSGEN keeps on counting when processor is in halt."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some("TSGEN stops counting when processor is in halt."),
                     value: 1,
                 },
@@ -1053,12 +1053,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some("Processor has read DBG_AUTH_HOST."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some("Debugger has written DBG_AUTH_HOST."),
                     value: 1,
                 },
@@ -1070,14 +1070,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some(
                         "Normal operation. The NPU continues to operate while Cortex-M55 is in debug mode.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some("Stop in debug. NPU is suspended while Cortex-M55 is in debug mode."),
                     value: 1,
                 },
@@ -1089,12 +1089,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B_0X0",
+                    name: "B0x0",
                     description: Some("TPIU clock is off."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B_0X1",
+                    name: "B0x1",
                     description: Some("TPIU clock is on."),
                     value: 1,
                 },

@@ -186,13 +186,13 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hyst {
-        NONE = 0x0,
+        None = 0x0,
         #[doc = "Low hysteresis"]
-        LOW = 0x01,
+        Low = 0x01,
         #[doc = "Medium hysteresis"]
-        MEDIUM = 0x02,
+        Medium = 0x02,
         #[doc = "High hysteresis"]
-        HIGH = 0x03,
+        High = 0x03,
     }
     impl Hyst {
         #[inline(always)]
@@ -221,13 +221,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "High Speed mode"]
-        HIGH_SPEED = 0x0,
+        HighSpeed = 0x0,
         #[doc = "Medium Speed mode"]
-        MEDIUM_SPEED = 0x01,
+        MediumSpeed = 0x01,
         #[doc = "Low Speed mode"]
-        LOW_SPEED = 0x02,
+        LowSpeed = 0x02,
         #[doc = "Very Low Speed mode"]
-        VERY_LOW_SPEED = 0x03,
+        VeryLowSpeed = 0x03,
     }
     impl Mode {
         #[inline(always)]

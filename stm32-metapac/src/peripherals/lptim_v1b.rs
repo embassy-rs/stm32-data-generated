@@ -839,11 +839,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckpol {
         #[doc = "the rising edge is the active edge used for counting. If the LPTIM is configured in Encoder mode (ENC bit is set), the encoder sub-mode 1 is active."]
-        RISING = 0x0,
+        Rising = 0x0,
         #[doc = "the falling edge is the active edge used for counting. If the LPTIM is configured in Encoder mode (ENC bit is set), the encoder sub-mode 2 is active."]
-        FALLING = 0x01,
+        Falling = 0x01,
         #[doc = "both edges are active edges. When both external clock signal edges are considered active ones, the LPTIM must also be clocked by an internal clock source with a frequency equal to at least four times the external clock frequency. If the LPTIM is configured in Encoder mode (ENC bit is set), the encoder sub-mode 3 is active."]
-        BOTH = 0x02,
+        Both = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Ckpol {
@@ -873,9 +873,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum ClockSource {
         #[doc = "clocked by internal clock source (APB clock or any of the embedded oscillators)"]
-        INTERNAL = 0x0,
+        Internal = 0x0,
         #[doc = "clocked by an external clock source through the LPTIM external Input1"]
-        EXTERNAL = 0x01,
+        External = 0x01,
     }
     impl ClockSource {
         #[inline(always)]
@@ -903,10 +903,10 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Filter {
-        COUNT1 = 0x0,
-        COUNT2 = 0x01,
-        COUNT4 = 0x02,
-        COUNT8 = 0x03,
+        Count1 = 0x0,
+        Count2 = 0x01,
+        Count4 = 0x02,
+        Count8 = 0x03,
     }
     impl Filter {
         #[inline(always)]
@@ -934,14 +934,14 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Presc {
-        DIV1 = 0x0,
-        DIV2 = 0x01,
-        DIV4 = 0x02,
-        DIV8 = 0x03,
-        DIV16 = 0x04,
-        DIV32 = 0x05,
-        DIV64 = 0x06,
-        DIV128 = 0x07,
+        Div1 = 0x0,
+        Div2 = 0x01,
+        Div4 = 0x02,
+        Div8 = 0x03,
+        Div16 = 0x04,
+        Div32 = 0x05,
+        Div64 = 0x06,
+        Div128 = 0x07,
     }
     impl Presc {
         #[inline(always)]
@@ -970,13 +970,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trigen {
         #[doc = "software trigger (counting start is initiated by software)"]
-        SOFTWARE = 0x0,
+        Software = 0x0,
         #[doc = "rising edge is the active edge"]
-        RISING_EDGE = 0x01,
+        RisingEdge = 0x01,
         #[doc = "falling edge is the active edge"]
-        FALLING_EDGE = 0x02,
+        FallingEdge = 0x02,
         #[doc = "both edges are active edges"]
-        BOTH_EDGE = 0x03,
+        BothEdge = 0x03,
     }
     impl Trigen {
         #[inline(always)]
@@ -1005,9 +1005,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wavpol {
         #[doc = "The LPTIM output reflects the compare results between LPTIM_ARR and LPTIM_CMP registers."]
-        POSITIVE = 0x0,
+        Positive = 0x0,
         #[doc = "The LPTIM output reflects the inverse of the compare results between LPTIM_ARR and LPTIM_CMP registers."]
-        NEGATIVE = 0x01,
+        Negative = 0x01,
     }
     impl Wavpol {
         #[inline(always)]

@@ -143,7 +143,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dmactx_cr",
+                    name: "dmac_tx_cr",
                     description: Some(
                         "Channel transmit control register",
                     ),
@@ -154,13 +154,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "DmactxCr",
+                                "DmacTxCr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmacrx_cr",
+                    name: "dmac_rx_cr",
                     description: Some(
                         "Channel receive control register",
                     ),
@@ -171,13 +171,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "DmacrxCr",
+                                "DmacRxCr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmactx_dlar",
+                    name: "dmac_tx_dlar",
                     description: Some(
                         "Channel Tx descriptor list address register",
                     ),
@@ -188,13 +188,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "DmactxDlar",
+                                "DmacTxDlar",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmacrx_dlar",
+                    name: "dmac_rx_dlar",
                     description: Some(
                         "Channel Rx descriptor list address register",
                     ),
@@ -205,13 +205,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "DmacrxDlar",
+                                "DmacRxDlar",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmactx_dtpr",
+                    name: "dmac_tx_dtpr",
                     description: Some(
                         "Channel Tx descriptor tail pointer register",
                     ),
@@ -222,13 +222,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "DmactxDtpr",
+                                "DmacTxDtpr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmacrx_dtpr",
+                    name: "dmac_rx_dtpr",
                     description: Some(
                         "Channel Rx descriptor tail pointer register",
                     ),
@@ -239,13 +239,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "DmacrxDtpr",
+                                "DmacRxDtpr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmactx_rlr",
+                    name: "dmac_tx_rlr",
                     description: Some(
                         "Channel Tx descriptor ring length register",
                     ),
@@ -256,13 +256,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "DmactxRlr",
+                                "DmacTxRlr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmacrx_rlr",
+                    name: "dmac_rx_rlr",
                     description: Some(
                         "Channel Rx descriptor ring length register",
                     ),
@@ -273,7 +273,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "DmacrxRlr",
+                                "DmacRxRlr",
                             ),
                         },
                     ),
@@ -296,7 +296,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "dmacrx_iwtr",
+                    name: "dmac_rx_iwtr",
                     description: Some(
                         "Channel Rx interrupt watchdog timer register",
                     ),
@@ -307,13 +307,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "DmacrxIwtr",
+                                "DmacRxIwtr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmaccatx_dr",
+                    name: "dmacca_tx_dr",
                     description: Some(
                         "Channel current application transmit descriptor register",
                     ),
@@ -324,13 +324,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "DmaccatxDr",
+                                "DmaccaTxDr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmaccarx_dr",
+                    name: "dmacca_rx_dr",
                     description: Some(
                         "Channel current application receive descriptor register",
                     ),
@@ -341,13 +341,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "DmaccarxDr",
+                                "DmaccaRxDr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmaccatx_br",
+                    name: "dmacca_tx_br",
                     description: Some(
                         "Channel current application transmit buffer register",
                     ),
@@ -358,13 +358,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "DmaccatxBr",
+                                "DmaccaTxBr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "dmaccarx_br",
+                    name: "dmacca_rx_br",
                     description: Some(
                         "Channel current application receive buffer register",
                     ),
@@ -375,7 +375,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "DmaccarxBr",
+                                "DmaccaRxBr",
                             ),
                         },
                     ),
@@ -584,7 +584,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "macqtx_fcr",
+                    name: "macq_tx_fcr",
                     description: Some(
                         "Tx Queue flow control register",
                     ),
@@ -595,13 +595,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "MacqtxFcr",
+                                "MacqTxFcr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "macrx_fcr",
+                    name: "mac_rx_fcr",
                     description: Some(
                         "Rx flow control register",
                     ),
@@ -612,7 +612,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "MacrxFcr",
+                                "MacRxFcr",
                             ),
                         },
                     ),
@@ -652,7 +652,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "macrx_tx_sr",
+                    name: "mac_rx_tx_sr",
                     description: Some(
                         "Rx Tx status register",
                     ),
@@ -663,7 +663,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "MacrxTxSr",
+                                "MacRxTxSr",
                             ),
                         },
                     ),
@@ -1567,7 +1567,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "mactx_tssnr",
+                    name: "mac_tx_tssnr",
                     description: Some(
                         "Tx timestamp status nanoseconds register",
                     ),
@@ -1578,13 +1578,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "MactxTssnr",
+                                "MacTxTssnr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "mactx_tsssr",
+                    name: "mac_tx_tsssr",
                     description: Some(
                         "Tx timestamp status seconds register",
                     ),
@@ -1595,7 +1595,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "MactxTsssr",
+                                "MacTxTsssr",
                             ),
                         },
                     ),
@@ -1933,7 +1933,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "mtltx_qomr",
+                    name: "mtl_tx_qomr",
                     description: Some(
                         "Tx queue operating mode Register",
                     ),
@@ -1944,13 +1944,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "MtltxQomr",
+                                "MtlTxQomr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "mtltx_qur",
+                    name: "mtl_tx_qur",
                     description: Some(
                         "Tx queue underflow register",
                     ),
@@ -1961,13 +1961,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "MtltxQur",
+                                "MtlTxQur",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "mtltx_qdr",
+                    name: "mtl_tx_qdr",
                     description: Some(
                         "Tx queue debug Register",
                     ),
@@ -1978,7 +1978,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "MtltxQdr",
+                                "MtlTxQdr",
                             ),
                         },
                     ),
@@ -2001,7 +2001,7 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
-                    name: "mtlrx_qomr",
+                    name: "mtl_rx_qomr",
                     description: Some(
                         "Rx queue operating mode register",
                     ),
@@ -2012,13 +2012,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "MtlrxQomr",
+                                "MtlRxQomr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "mtlrx_qmpocr",
+                    name: "mtl_rx_qmpocr",
                     description: Some(
                         "Rx queue missed packet and overflow counter register",
                     ),
@@ -2029,13 +2029,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "MtlrxQmpocr",
+                                "MtlRxQmpocr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "mtlrx_qdr",
+                    name: "mtl_rx_qdr",
                     description: Some(
                         "Rx queue debug register",
                     ),
@@ -2046,7 +2046,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "MtlrxQdr",
+                                "MtlRxQdr",
                             ),
                         },
                     ),
@@ -2056,7 +2056,307 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "DmaccarxBr",
+            name: "DmacRxCr",
+            extends: None,
+            description: Some(
+                "Channel receive control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sr",
+                    description: Some(
+                        "Start or Stop Receive Command",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rbsz",
+                    description: Some(
+                        "Receive Buffer size",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 14,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxpbl",
+                    description: Some(
+                        "RXPBL",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rpf",
+                    description: Some(
+                        "DMA Rx Channel Packet Flush",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmacRxDlar",
+            extends: None,
+            description: Some(
+                "Channel Rx descriptor list address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rdesla",
+                    description: Some(
+                        "Start of Receive List",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmacRxDtpr",
+            extends: None,
+            description: Some(
+                "Channel Rx descriptor tail pointer register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rdt",
+                    description: Some(
+                        "Receive Descriptor Tail Pointer",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmacRxIwtr",
+            extends: None,
+            description: Some(
+                "Channel Rx interrupt watchdog timer register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rwt",
+                    description: Some(
+                        "Receive Interrupt Watchdog Timer Count",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 8,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmacRxRlr",
+            extends: None,
+            description: Some(
+                "Channel Rx descriptor ring length register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rdrl",
+                    description: Some(
+                        "Receive Descriptor Ring Length",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 10,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmacTxCr",
+            extends: None,
+            description: Some(
+                "Channel transmit control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "st",
+                    description: Some(
+                        "Start or Stop Transmission Command",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "osf",
+                    description: Some(
+                        "Operate on Second Packet",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "tse",
+                    description: Some(
+                        "TCP Segmentation Enabled",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txpbl",
+                    description: Some(
+                        "Transmit Programmable Burst Length",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 6,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmacTxDlar",
+            extends: None,
+            description: Some(
+                "Channel Tx descriptor list address register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tdesla",
+                    description: Some(
+                        "Start of Transmit List",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmacTxDtpr",
+            extends: None,
+            description: Some(
+                "Channel Tx descriptor tail pointer register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tdt",
+                    description: Some(
+                        "Transmit Descriptor Tail Pointer",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmacTxRlr",
+            extends: None,
+            description: Some(
+                "Channel Tx descriptor ring length register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tdrl",
+                    description: Some(
+                        "Transmit Descriptor Ring Length",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 10,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "DmaccaRxBr",
             extends: None,
             description: Some(
                 "Channel current application receive buffer register",
@@ -2080,7 +2380,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "DmaccarxDr",
+            name: "DmaccaRxDr",
             extends: None,
             description: Some(
                 "Channel current application receive descriptor register",
@@ -2104,7 +2404,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "DmaccatxBr",
+            name: "DmaccaTxBr",
             extends: None,
             description: Some(
                 "Channel current application transmit buffer register",
@@ -2128,7 +2428,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "DmaccatxDr",
+            name: "DmaccaTxDr",
             extends: None,
             description: Some(
                 "Channel current application transmit descriptor register",
@@ -2434,168 +2734,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "DmacrxCr",
-            extends: None,
-            description: Some(
-                "Channel receive control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sr",
-                    description: Some(
-                        "Start or Stop Receive Command",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rbsz",
-                    description: Some(
-                        "Receive Buffer size",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
-                    bit_size: 14,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxpbl",
-                    description: Some(
-                        "RXPBL",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rpf",
-                    description: Some(
-                        "DMA Rx Channel Packet Flush",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 31,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmacrxDlar",
-            extends: None,
-            description: Some(
-                "Channel Rx descriptor list address register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rdesla",
-                    description: Some(
-                        "Start of Receive List",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmacrxDtpr",
-            extends: None,
-            description: Some(
-                "Channel Rx descriptor tail pointer register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rdt",
-                    description: Some(
-                        "Receive Descriptor Tail Pointer",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmacrxIwtr",
-            extends: None,
-            description: Some(
-                "Channel Rx interrupt watchdog timer register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rwt",
-                    description: Some(
-                        "Receive Interrupt Watchdog Timer Count",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmacrxRlr",
-            extends: None,
-            description: Some(
-                "Channel Rx descriptor ring length register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rdrl",
-                    description: Some(
-                        "Receive Descriptor Ring Length",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 10,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
             name: "Dmacsr",
             extends: None,
             description: Some(
@@ -2810,144 +2948,6 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 3,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmactxCr",
-            extends: None,
-            description: Some(
-                "Channel transmit control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "st",
-                    description: Some(
-                        "Start or Stop Transmission Command",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "osf",
-                    description: Some(
-                        "Operate on Second Packet",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tse",
-                    description: Some(
-                        "TCP Segmentation Enabled",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txpbl",
-                    description: Some(
-                        "Transmit Programmable Burst Length",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmactxDlar",
-            extends: None,
-            description: Some(
-                "Channel Tx descriptor list address register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tdesla",
-                    description: Some(
-                        "Start of Transmit List",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmactxDtpr",
-            extends: None,
-            description: Some(
-                "Channel Tx descriptor tail pointer register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tdt",
-                    description: Some(
-                        "Transmit Descriptor Tail Pointer",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "DmactxRlr",
-            extends: None,
-            description: Some(
-                "Channel Tx descriptor ring length register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tdrl",
-                    description: Some(
-                        "Transmit Descriptor Ring Length",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 10,
                     array: None,
                     enumm: None,
                 },
@@ -3222,6 +3222,214 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MacRxFcr",
+            extends: None,
+            description: Some(
+                "Rx flow control register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "rfe",
+                    description: Some(
+                        "Receive Flow Control Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "up",
+                    description: Some(
+                        "Unicast Pause Packet Detect",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MacRxTxSr",
+            extends: None,
+            description: Some(
+                "Rx Tx status register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "tjt",
+                    description: Some(
+                        "Transmit Jabber Timeout",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ncarr",
+                    description: Some(
+                        "No Carrier",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lcarr",
+                    description: Some(
+                        "Loss of Carrier",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "exdef",
+                    description: Some(
+                        "Excessive Deferral",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lcol",
+                    description: Some(
+                        "Late Collision",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "excol",
+                    description: Some(
+                        "Excessive Collisions",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rwt",
+                    description: Some(
+                        "Receive Watchdog Timeout",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MacTxTssnr",
+            extends: None,
+            description: Some(
+                "Tx timestamp status nanoseconds register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "txtsslo",
+                    description: Some(
+                        "Transmit Timestamp Status Low",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 31,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txtssmis",
+                    description: Some(
+                        "Transmit Timestamp Status Missed",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MacTxTsssr",
+            extends: None,
+            description: Some(
+                "Tx timestamp status seconds register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "txtsshi",
+                    description: Some(
+                        "Transmit Timestamp Status High",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -6311,7 +6519,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "MacqtxFcr",
+            name: "MacqTxFcr",
             extends: None,
             description: Some(
                 "Tx Queue flow control register",
@@ -6409,152 +6617,6 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "MacrxFcr",
-            extends: None,
-            description: Some(
-                "Rx flow control register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "rfe",
-                    description: Some(
-                        "Receive Flow Control Enable",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "up",
-                    description: Some(
-                        "Unicast Pause Packet Detect",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "MacrxTxSr",
-            extends: None,
-            description: Some(
-                "Rx Tx status register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "tjt",
-                    description: Some(
-                        "Transmit Jabber Timeout",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "ncarr",
-                    description: Some(
-                        "No Carrier",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lcarr",
-                    description: Some(
-                        "Loss of Carrier",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "exdef",
-                    description: Some(
-                        "Excessive Deferral",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "lcol",
-                    description: Some(
-                        "Late Collision",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "excol",
-                    description: Some(
-                        "Excessive Collisions",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rwt",
-                    description: Some(
-                        "Receive Watchdog Timeout",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 1,
                     array: None,
                     enumm: None,
                 },
@@ -7265,68 +7327,6 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 5,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "MactxTssnr",
-            extends: None,
-            description: Some(
-                "Tx timestamp status nanoseconds register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txtsslo",
-                    description: Some(
-                        "Transmit Timestamp Status Low",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 31,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txtssmis",
-                    description: Some(
-                        "Transmit Timestamp Status Missed",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 31,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "MactxTsssr",
-            extends: None,
-            description: Some(
-                "Tx timestamp status seconds register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txtsshi",
-                    description: Some(
-                        "Transmit Timestamp Status High",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -8133,149 +8133,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Mtlisr",
-            extends: None,
-            description: Some(
-                "Interrupt status Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "q0is",
-                    description: Some(
-                        "Queue interrupt status",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mtlomr",
-            extends: None,
-            description: Some(
-                "Operating mode Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dtxsts",
-                    description: Some(
-                        "Drop Transmit Status",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cntprst",
-                    description: Some(
-                        "Counters Preset",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "cntclr",
-                    description: Some(
-                        "Counters Reset",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Mtlqicsr",
-            extends: None,
-            description: Some(
-                "Queue interrupt control status Register",
-            ),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "txunfis",
-                    description: Some(
-                        "Transmit Queue Underflow Interrupt Status",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "txuie",
-                    description: Some(
-                        "Transmit Queue Underflow Interrupt Enable",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxovfis",
-                    description: Some(
-                        "Receive Queue Overflow Interrupt Status",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "rxoie",
-                    description: Some(
-                        "Receive Queue Overflow Interrupt Enable",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "MtlrxQdr",
+            name: "MtlRxQdr",
             extends: None,
             description: Some(
                 "Rx queue debug register",
@@ -8341,7 +8199,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "MtlrxQmpocr",
+            name: "MtlRxQmpocr",
             extends: None,
             description: Some(
                 "Rx queue missed packet and overflow counter register",
@@ -8407,7 +8265,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "MtlrxQomr",
+            name: "MtlRxQomr",
             extends: None,
             description: Some(
                 "Rx queue operating mode register",
@@ -8543,7 +8401,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "MtltxQdr",
+            name: "MtlTxQdr",
             extends: None,
             description: Some(
                 "Tx queue debug Register",
@@ -8651,7 +8509,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "MtltxQomr",
+            name: "MtlTxQomr",
             extends: None,
             description: Some(
                 "Tx queue operating mode Register",
@@ -8731,7 +8589,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "MtltxQur",
+            name: "MtlTxQur",
             extends: None,
             description: Some(
                 "Tx queue underflow register",
@@ -8760,6 +8618,148 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mtlisr",
+            extends: None,
+            description: Some(
+                "Interrupt status Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "q0is",
+                    description: Some(
+                        "Queue interrupt status",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mtlomr",
+            extends: None,
+            description: Some(
+                "Operating mode Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "dtxsts",
+                    description: Some(
+                        "Drop Transmit Status",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cntprst",
+                    description: Some(
+                        "Counters Preset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "cntclr",
+                    description: Some(
+                        "Counters Reset",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Mtlqicsr",
+            extends: None,
+            description: Some(
+                "Queue interrupt control status Register",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "txunfis",
+                    description: Some(
+                        "Transmit Queue Underflow Interrupt Status",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "txuie",
+                    description: Some(
+                        "Transmit Queue Underflow Interrupt Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxovfis",
+                    description: Some(
+                        "Receive Queue Overflow Interrupt Status",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "rxoie",
+                    description: Some(
+                        "Receive Queue Overflow Interrupt Enable",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
                         },
                     ),
                     bit_size: 1,

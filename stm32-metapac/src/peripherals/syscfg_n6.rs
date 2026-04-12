@@ -2209,9 +2209,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bkpraml {
         #[doc = "Backup SRAM double ECC error signal disconnected from TIM1/8/15/16/17 break inputs."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Backup SRAM double ECC error signal connected to TIM1/8/15/16/17 break inputs."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Bkpraml {
         #[inline(always)]
@@ -2240,9 +2240,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Boot0 {
         #[doc = "BOOT0 pin connected to VSS (or left open if BOOT0_PD = 0)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "BOOT0 pin connected to VDD."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Boot0 {
         #[inline(always)]
@@ -2271,9 +2271,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Boot0Pd {
         #[doc = "Pull-down enabled. The BOOT0 pin can be left open and takes a value of 0 if open."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Pull-down disabled. The BOOT0 pin must not be left open."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Boot0Pd {
         #[inline(always)]
@@ -2302,9 +2302,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Boot1 {
         #[doc = "BOOT1 pin connected to VSS (or left open if BOOT1_PD = 0 in BOOTCR)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "BOOT1 pin connected to VDD."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Boot1 {
         #[inline(always)]
@@ -2333,9 +2333,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Boot1Pd {
         #[doc = "Pull-down enabled. The BOOT1 pin can be left open and takes a value of 0 if open."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Pull-down disabled. The BOOT1 pin must not be left open."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Boot1Pd {
         #[inline(always)]
@@ -2364,9 +2364,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CfgRetimeRx {
         #[doc = "No retiming on Rx path."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Retiming on Rx path."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl CfgRetimeRx {
         #[inline(always)]
@@ -2395,9 +2395,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CfgRetimeTx {
         #[doc = "No retiming on Tx path."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Retiming on Tx path."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl CfgRetimeTx {
         #[inline(always)]
@@ -2434,9 +2434,9 @@ pub mod vals {
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "128 Kbytes (default value)."]
-        B_0X8 = 0x08,
+        B0x8 = 0x08,
         #[doc = "256 Kbytes."]
-        B_0X9 = 0x09,
+        B0x9 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
@@ -2478,11 +2478,11 @@ pub mod vals {
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         #[doc = "64 KB (default value)."]
-        B_0X7 = 0x07,
+        B0x7 = 0x07,
         #[doc = "128 Kbytes."]
-        B_0X8 = 0x08,
+        B0x8 = 0x08,
         #[doc = "256 Kbytes."]
-        B_0X9 = 0x09,
+        B0x9 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
@@ -2517,9 +2517,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cm55cachel {
         #[doc = "Cortex-M55 cache double ECC error signal disconnected from TIM1/8/15/16/17 break inputs."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Cortex-M55 cache double ECC error signal connected to TIM1/8/15/16/17 break inputs."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Cm55cachel {
         #[inline(always)]
@@ -2548,9 +2548,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cm55l {
         #[doc = "Cortex-M55 lockup output disconnected from TIM1/8/15/16/17 break inputs."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Cortex-M55 lockup output disconnected from TIM1/8/15/16/17 break inputs."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Cm55l {
         #[inline(always)]
@@ -2579,9 +2579,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cm55tcml {
         #[doc = "Cortex-M55 TCM double ECC error signal disconnected from TIM1/8/15/16/17 break inputs."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Cortex-M55 TCM double ECC error signal connected to TIM1/8/15/16/17 break inputs."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Cm55tcml {
         #[inline(always)]
@@ -2610,9 +2610,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CoreResetType {
         #[doc = "Warm reset (default value)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Power-on reset."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl CoreResetType {
         #[inline(always)]
@@ -2641,9 +2641,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum InterleavingActive {
         #[doc = "Interleaving disabled."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Interleaving enabled."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl InterleavingActive {
         #[inline(always)]
@@ -2672,9 +2672,9 @@ pub mod vals {
     pub struct Iocr(u32);
     impl Iocr {
         #[doc = "High-speed mode disabled, or use ADC ANA pin."]
-        pub const B_0X0: Self = Self(0x0);
+        pub const B0x0: Self = Self(0x0);
         #[doc = "High-speed mode enabled, or connect internal ADC ANA signal to GPIO."]
-        pub const B_0X1: Self = Self(0x01);
+        pub const B0x1: Self = Self(0x01);
     }
     impl Iocr {
         pub const fn from_bits(val: u32) -> Iocr {
@@ -2687,8 +2687,8 @@ pub mod vals {
     impl core::fmt::Debug for Iocr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B_0X0"),
-                0x01 => f.write_str("B_0X1"),
+                0x0 => f.write_str("B0x0"),
+                0x01 => f.write_str("B0x1"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2697,8 +2697,8 @@ pub mod vals {
     impl defmt::Format for Iocr {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B_0X0"),
-                0x01 => defmt::write!(f, "B_0X1"),
+                0x0 => defmt::write!(f, "B0x0"),
+                0x01 => defmt::write!(f, "B0x1"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -2720,9 +2720,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum LockupNmiEn {
         #[doc = "Lockup state must be recovered from NVIC interrupt (default value)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Lockup generates a NMI on the core."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl LockupNmiEn {
         #[inline(always)]
@@ -2751,9 +2751,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum LockupRstEn {
         #[doc = "Lockup state shall be recovered from interrupt (default value)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Lockup requests a warm reset to the RCC."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl LockupRstEn {
         #[inline(always)]
@@ -2782,9 +2782,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PahbErrorAck {
         #[doc = "Error capture."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Clean error."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl PahbErrorAck {
         #[inline(always)]
@@ -2813,9 +2813,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pottampersetmask {
         #[doc = "PKA, SAES, CRYP1/2, and HASH reset in case of potential tamper."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "PKA, SAES, CRYP1/2, and HASH not reset in case of potential tamper."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Pottampersetmask {
         #[inline(always)]
@@ -2844,9 +2844,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PvdlLock {
         #[doc = "PVD interrupt disconnected from TIM1/8/15/16/17 break input. PVDE bits can be programmed by the application."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "PVD interrupt connected to TIM1/8/15/16/17 break input. PVDE and bits are read only."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl PvdlLock {
         #[inline(always)]
@@ -2875,9 +2875,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RmeCache {
         #[doc = "Default RW margin settings."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Use external pin RW margin setting."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl RmeCache {
         #[inline(always)]
@@ -2906,9 +2906,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RmeTcm {
         #[doc = "Default RW margin settings."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Use external pin RW margin setting."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl RmeTcm {
         #[inline(always)]
@@ -2937,9 +2937,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdfbclk180 {
         #[doc = "No delay on the feedback clock."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Half a cycle delay on the feedback clock."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Sdfbclk180 {
         #[inline(always)]
@@ -2968,9 +2968,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdmmc1EarlyWrRspEnable {
         #[doc = "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Sdmmc1EarlyWrRspEnable {
         #[inline(always)]
@@ -2999,9 +2999,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdmmc2EarlyWrRspEnable {
         #[doc = "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Sdmmc2EarlyWrRspEnable {
         #[inline(always)]
@@ -3030,7 +3030,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpshdpsel {
         #[doc = "Standard run mode (no HDP)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -3043,13 +3043,13 @@ pub mod vals {
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         #[doc = "Analyze fsm mode analysis."]
-        B_0X_C = 0x0c,
+        B0xC = 0x0c,
         #[doc = "Analyze fsm mos analysis."]
-        B_0X_D = 0x0d,
+        B0xD = 0x0d,
         #[doc = "Analyze fsm rampe analysis."]
-        B_0X_E = 0x0e,
+        B0xE = 0x0e,
         #[doc = "Analyze fsm mode analysis."]
-        B_0X_F = 0x0f,
+        B0xF = 0x0f,
     }
     impl Smpshdpsel {
         #[inline(always)]
@@ -3078,9 +3078,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usb1EarlyWrRspEnable {
         #[doc = "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Usb1EarlyWrRspEnable {
         #[inline(always)]
@@ -3109,9 +3109,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usb2EarlyWrRspEnable {
         #[doc = "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Usb2EarlyWrRspEnable {
         #[inline(always)]
@@ -3140,11 +3140,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio1cccrCs {
         #[doc = "VDDIOx I/O code from the cell (available in the VDDIOxCCSR)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIOx I/O code from RANSRC\\[3:0\\]
 and RAPSRC\\[3:0\\]
 in this register."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Vddio1cccrCs {
         #[inline(always)]
@@ -3173,9 +3173,9 @@ in this register."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio1cccrEn {
         #[doc = "VDDIOx I/O compensation cell disabled."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIOx I/O compensation cell enabled."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Vddio1cccrEn {
         #[inline(always)]
@@ -3204,9 +3204,9 @@ in this register."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio1ccsrReady {
         #[doc = "VDDIOx I/O compensation cell not ready."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIOx I/O compensation cell ready."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Vddio1ccsrReady {
         #[inline(always)]
@@ -3235,11 +3235,11 @@ in this register."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio2cccrCs {
         #[doc = "VDDIOx I/O code from the cell (available in the VDDIOxCCSR)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIOx I/O code from RANSRC\\[3:0\\]
 and RAPSRC\\[3:0\\]
 in this register."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Vddio2cccrCs {
         #[inline(always)]
@@ -3268,9 +3268,9 @@ in this register."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio2cccrEn {
         #[doc = "VDDIOx I/O compensation cell disabled."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIOx I/O compensation cell enabled."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Vddio2cccrEn {
         #[inline(always)]
@@ -3299,9 +3299,9 @@ in this register."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio2ccsrReady {
         #[doc = "VDDIOx I/O compensation cell not ready."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIOx I/O compensation cell ready."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Vddio2ccsrReady {
         #[inline(always)]
@@ -3330,11 +3330,11 @@ in this register."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio3cccrCs {
         #[doc = "VDDIOx I/O code from the cell (available in the VDDIOxCCSR)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIOx I/O code from RANSRC\\[3:0\\]
 and RAPSRC\\[3:0\\]
 in this register."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Vddio3cccrCs {
         #[inline(always)]
@@ -3363,9 +3363,9 @@ in this register."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio3cccrEn {
         #[doc = "VDDIOx I/O compensation cell disabled."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIOx I/O compensation cell enabled."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Vddio3cccrEn {
         #[inline(always)]
@@ -3394,9 +3394,9 @@ in this register."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio3ccsrReady {
         #[doc = "VDDIOx I/O compensation cell not ready."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIOx I/O compensation cell ready."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Vddio3ccsrReady {
         #[inline(always)]
@@ -3425,11 +3425,11 @@ in this register."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio4cccrCs {
         #[doc = "VDDIOx I/O code from the cell (available in the VDDIOxCCSR)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIOx I/O code from RANSRC\\[3:0\\]
 and RAPSRC\\[3:0\\]
 in this register."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Vddio4cccrCs {
         #[inline(always)]
@@ -3458,9 +3458,9 @@ in this register."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio4cccrEn {
         #[doc = "VDDIOx I/O compensation cell disabled."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIOx I/O compensation cell enabled."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Vddio4cccrEn {
         #[inline(always)]
@@ -3489,9 +3489,9 @@ in this register."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio4ccsrReady {
         #[doc = "VDDIOx I/O compensation cell not ready."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIOx I/O compensation cell ready."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl Vddio4ccsrReady {
         #[inline(always)]
@@ -3520,10 +3520,10 @@ in this register."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VddiocccrCs {
         #[doc = "VDDIO I/O code from the cell (available in the VDDIOCCSR)."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIO I/O code from RANSRC\\[3:0\\]
 and RAPSRC\\[3:0\\]."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl VddiocccrCs {
         #[inline(always)]
@@ -3552,9 +3552,9 @@ and RAPSRC\\[3:0\\]."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VddiocccrEn {
         #[doc = "VDDIO I/O compensation cell disabled."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIO I/O compensation cell enabled."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl VddiocccrEn {
         #[inline(always)]
@@ -3583,9 +3583,9 @@ and RAPSRC\\[3:0\\]."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VddioccsrReady {
         #[doc = "VDDIO I/O compensation cell not ready."]
-        B_0X0 = 0x0,
+        B0x0 = 0x0,
         #[doc = "VDDIO I/O compensation cell ready."]
-        B_0X1 = 0x01,
+        B0x1 = 0x01,
     }
     impl VddioccsrReady {
         #[inline(always)]

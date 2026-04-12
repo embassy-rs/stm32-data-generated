@@ -320,13 +320,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calsel {
         #[doc = "VREFOPAMP = 3.3% VDDA"]
-        PERCENT3_3 = 0x0,
+        Percent33 = 0x0,
         #[doc = "VREFOPAMP = 10% VDDA"]
-        PERCENT10 = 0x01,
+        Percent10 = 0x01,
         #[doc = "VREFOPAMP = 50% VDDA"]
-        PERCENT50 = 0x02,
+        Percent50 = 0x02,
         #[doc = "VREFOPAMP = 90% VDDA"]
-        PERCENT90 = 0x03,
+        Percent90 = 0x03,
     }
     impl Calsel {
         #[inline(always)]
@@ -355,37 +355,37 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PgaGain {
         #[doc = "Non-inverting internal gain 2, VREF- referenced"]
-        GAIN2 = 0x0,
+        Gain2 = 0x0,
         #[doc = "Non-inverting internal gain 4, VREF- referenced"]
-        GAIN4 = 0x01,
+        Gain4 = 0x01,
         #[doc = "Non-inverting internal gain 8, VREF- referenced"]
-        GAIN8 = 0x02,
+        Gain8 = 0x02,
         #[doc = "Non-inverting internal gain 16, VREF- referenced"]
-        GAIN16 = 0x03,
+        Gain16 = 0x03,
         #[doc = "Non-inverting internal gain 2 with filtering on INM0, VREF- referenced"]
-        GAIN2_FILTERING_VINM0 = 0x04,
+        Gain2FilteringVinm0 = 0x04,
         #[doc = "Non-inverting internal gain 4 with filtering on INM0, VREF- referenced"]
-        GAIN4_FILTERING_VINM0 = 0x05,
+        Gain4FilteringVinm0 = 0x05,
         #[doc = "Non-inverting internal gain 8 with filtering on INM0, VREF- referenced"]
-        GAIN8_FILTERING_VINM0 = 0x06,
+        Gain8FilteringVinm0 = 0x06,
         #[doc = "Non-inverting internal gain 8 with filtering on INM0, VREF- referenced"]
-        GAIN16_FILTERING_VINM0 = 0x07,
+        Gain16FilteringVinm0 = 0x07,
         #[doc = "Inverting gain=-1/ Non-inverting gain =2 with INM0 node for input or bias"]
-        GAIN2INV_GAIN_NEG1_INPUT_VINM0 = 0x08,
+        Gain2invGainNeg1InputVinm0 = 0x08,
         #[doc = "Inverting gain=-3/ Non-inverting gain =4 with INM0 node for input or bias"]
-        GAIN4INV_GAIN_NEG3_INPUT_VINM0 = 0x09,
+        Gain4invGainNeg3InputVinm0 = 0x09,
         #[doc = "Inverting gain=-7/ Non-inverting gain =8 with INM0 node for input or bias"]
-        GAIN8INV_GAIN_NEG7_INPUT_VINM0 = 0x0a,
+        Gain8invGainNeg7InputVinm0 = 0x0a,
         #[doc = "Inverting gain=-15/ Non-inverting gain =16 with INM0 node for input or bias"]
-        GAIN16INV_GAIN_NEG15_INPUT_VINM0 = 0x0b,
+        Gain16invGainNeg15InputVinm0 = 0x0b,
         #[doc = "Inverting gain=-1/ Non-inverting gain =2 with INM0 node for input or bias, INM1 node for filtering"]
-        GAIN2INV_GAIN_NEG1_INPUT_VINM0FILTERING_VINM1 = 0x0c,
+        Gain2invGainNeg1InputVinm0filteringVinm1 = 0x0c,
         #[doc = "Inverting gain=-3/ Non-inverting gain =4 with INM0 node for input or bias, INM1 node for filtering"]
-        GAIN4INV_GAIN_NEG3_INPUT_VINM0FILTERING_VINM1 = 0x0d,
+        Gain4invGainNeg3InputVinm0filteringVinm1 = 0x0d,
         #[doc = "Inverting gain=-7/ Non-inverting gain =8 with INM0 node for input or bias, INM1 node for filtering"]
-        GAIN8INV_GAIN_NEG7_INPUT_VINM0FILTERING_VINM1 = 0x0e,
+        Gain8invGainNeg7InputVinm0filteringVinm1 = 0x0e,
         #[doc = "Inverting gain=-15/ Non-inverting gain =16 with INM0 node for input or bias, INM1 node for filtering"]
-        GAIN16INV_GAIN_NEG15_INPUT_VINM0FILTERING_VINM1 = 0x0f,
+        Gain16invGainNeg15InputVinm0filteringVinm1 = 0x0f,
     }
     impl PgaGain {
         #[inline(always)]
@@ -414,13 +414,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VmSel {
         #[doc = "INM0 connected to OPAMP_VINM input"]
-        INM0 = 0x0,
+        Inm0 = 0x0,
         #[doc = "INM1 connected to OPAMP_VINM input"]
-        INM1 = 0x01,
+        Inm1 = 0x01,
         #[doc = "Feedback resistor connected to the OPAMP_VINM input (PGA mode), Inverting input selection depends on the PGA_GAIN setting"]
-        PGA = 0x02,
+        Pga = 0x02,
         #[doc = "opamp_out connected to OPAMP_VINM input (Follower mode)"]
-        FOLLOWER = 0x03,
+        Follower = 0x03,
     }
     impl VmSel {
         #[inline(always)]
@@ -449,11 +449,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VpSel {
         #[doc = "GPIO INP0 connected to VINP"]
-        GPIO_INP0 = 0x0,
+        GpioInp0 = 0x0,
         #[doc = "DAC connected to VINP"]
-        DAC_OUT = 0x01,
+        DacOut = 0x01,
         #[doc = "GPIO INP2 connected to OPAMP_VINP (not available on all chips)"]
-        GPIO_INP2 = 0x02,
+        GpioInp2 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl VpSel {

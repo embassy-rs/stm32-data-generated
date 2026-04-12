@@ -1504,12 +1504,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EthSelPhy {
         #[doc = "GMII or MII"]
-        MII_GMII = 0x0,
+        MiiGmii = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "RMII"]
-        RMII = 0x04,
+        Rmii = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -1541,13 +1541,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum ItcmAxiRamSize {
         #[doc = "64 Kbyte ITCM-RAM / 320 Kbyte AXI-SRAM"]
-        ITCM64AXI320 = 0x0,
+        Itcm64axi320 = 0x0,
         #[doc = "128 Kbyte ITCM-RAM / 256 Kbyte AXI-SRAM"]
-        ITCM128AXI256 = 0x01,
+        Itcm128axi256 = 0x01,
         #[doc = "192 Kbyte ITCM-RAM / 192 Kbyte AXI-SRAM"]
-        ITCM192AXI192 = 0x02,
+        Itcm192axi192 = 0x02,
         #[doc = "256 Kbyte ITCM-RAM / 128 Kbyte AXI-SRAM"]
-        ITCM256AXI128 = 0x03,
+        Itcm256axi128 = 0x03,
     }
     impl ItcmAxiRamSize {
         #[inline(always)]

@@ -300,17 +300,17 @@ pub(crate) static REGISTERS: IR = IR {
         bit_size: 2,
         variants: &[
             EnumVariant {
-                name: "GPIO",
+                name: "Gpio",
                 description: Some("GPIO selected as SYNC signal source"),
                 value: 0,
             },
             EnumVariant {
-                name: "LSE",
+                name: "Lse",
                 description: Some("LSE selected as SYNC signal source"),
                 value: 1,
             },
             EnumVariant {
-                name: "USB",
+                name: "Usb",
                 description: Some("USB SOF selected as SYNC signal source"),
                 value: 2,
             },

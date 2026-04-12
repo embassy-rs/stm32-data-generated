@@ -1378,15 +1378,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Acqmod {
         #[doc = "Asynchronous continuous acquisition mode."]
-        ASYNCHRONOUS_CONTINUOUS = 0x0,
+        AsynchronousContinuous = 0x0,
         #[doc = "Asynchronous single-shot acquisition mode"]
-        ASYNCHRONOUS_SINGLE_SHOT = 0x01,
+        AsynchronousSingleShot = 0x01,
         #[doc = "Synchronous continuous acquisition mode."]
-        SYNCRONOUS_CONTINUOUS = 0x02,
+        SyncronousContinuous = 0x02,
         #[doc = "Synchronous single-shot acquisition mode."]
-        SYNCRONOUS_SINGLE_SHOT = 0x03,
+        SyncronousSingleShot = 0x03,
         #[doc = "Window continuous acquisition mode."]
-        WINDOW_CONTINUOUS = 0x04,
+        WindowContinuous = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -1419,69 +1419,69 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bssel {
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS0_R = 0x0,
+        Bs0R = 0x0,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS0_F = 0x01,
+        Bs0F = 0x01,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS1_R = 0x02,
+        Bs1R = 0x02,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS1_F = 0x03,
+        Bs1F = 0x03,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS2_R = 0x04,
+        Bs2R = 0x04,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS2_F = 0x05,
+        Bs2F = 0x05,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS3_R = 0x06,
+        Bs3R = 0x06,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS3_F = 0x07,
+        Bs3F = 0x07,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS4_R = 0x08,
+        Bs4R = 0x08,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS4_F = 0x09,
+        Bs4F = 0x09,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS5_R = 0x0a,
+        Bs5R = 0x0a,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS5_F = 0x0b,
+        Bs5F = 0x0b,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS6_R = 0x0c,
+        Bs6R = 0x0c,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS6_F = 0x0d,
+        Bs6F = 0x0d,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS7_R = 0x0e,
+        Bs7R = 0x0e,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS7_F = 0x0f,
+        Bs7F = 0x0f,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS8_R = 0x10,
+        Bs8R = 0x10,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS8_F = 0x11,
+        Bs8F = 0x11,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS9_R = 0x12,
+        Bs9R = 0x12,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS9_F = 0x13,
+        Bs9F = 0x13,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS10_R = 0x14,
+        Bs10R = 0x14,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS10_F = 0x15,
+        Bs10F = 0x15,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS11_R = 0x16,
+        Bs11R = 0x16,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS11_F = 0x17,
+        Bs11F = 0x17,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS12_R = 0x18,
+        Bs12R = 0x18,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS12_F = 0x19,
+        Bs12F = 0x19,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS13_R = 0x1a,
+        Bs13R = 0x1a,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS13_F = 0x1b,
+        Bs13F = 0x1b,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS14_R = 0x1c,
+        Bs14R = 0x1c,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS14_F = 0x1d,
+        Bs14F = 0x1d,
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
-        BS15_R = 0x1e,
+        Bs15R = 0x1e,
         #[doc = "bsx_f provided to DFLTy (and SCDy)."]
-        BS15_F = 0x1f,
+        Bs15F = 0x1f,
     }
     impl Bssel {
         #[inline(always)]
@@ -1511,9 +1511,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cckdir {
         #[doc = "CCK is an input."]
-        INPUT = 0x0,
+        Input = 0x0,
         #[doc = "CCK is an output."]
-        OUTPUT = 0x01,
+        Output = 0x01,
     }
     impl Cckdir {
         #[inline(always)]
@@ -1543,37 +1543,37 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cckdiv {
         #[doc = "The ADF_CCK clock is adf_proc_ck."]
-        DIV1 = 0x0,
+        Div1 = 0x0,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 2."]
-        DIV2 = 0x01,
+        Div2 = 0x01,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 3."]
-        DIV3 = 0x02,
+        Div3 = 0x02,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 4."]
-        DIV4 = 0x03,
+        Div4 = 0x03,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 5."]
-        DIV5 = 0x04,
+        Div5 = 0x04,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 6."]
-        DIV6 = 0x05,
+        Div6 = 0x05,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 7."]
-        DIV7 = 0x06,
+        Div7 = 0x06,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 8."]
-        DIV8 = 0x07,
+        Div8 = 0x07,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 9."]
-        DIV9 = 0x08,
+        Div9 = 0x08,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 10."]
-        DIV10 = 0x09,
+        Div10 = 0x09,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 11."]
-        DIV11 = 0x0a,
+        Div11 = 0x0a,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 12."]
-        DIV12 = 0x0b,
+        Div12 = 0x0b,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 13."]
-        DIV13 = 0x0c,
+        Div13 = 0x0c,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 14."]
-        DIV14 = 0x0d,
+        Div14 = 0x0d,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 15."]
-        DIV15 = 0x0e,
+        Div15 = 0x0e,
         #[doc = "The ADF_CCK clock is adf_proc_ck divided by 16."]
-        DIV16 = 0x0f,
+        Div16 = 0x0f,
     }
     impl Cckdiv {
         #[inline(always)]
@@ -1603,9 +1603,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ccken {
         #[doc = "Bitstream clock not generated."]
-        NOT_GENERATED = 0x0,
+        NotGenerated = 0x0,
         #[doc = "Bitstream clock generated on the CCK pin."]
-        GENERATED = 0x01,
+        Generated = 0x01,
     }
     impl Ccken {
         #[inline(always)]
@@ -1639,9 +1639,9 @@ pub mod vals {
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "MCIC configured in single Sinc4 filter."]
-        SINC4 = 0x04,
+        Sinc4 = 0x04,
         #[doc = "MCIC configured in single Sinc5 filter."]
-        SINC5 = 0x05,
+        Sinc5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -1673,9 +1673,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckgmod {
         #[doc = "The kernel clock is provided to the dividers as soon as CKGDEN is set to 1."]
-        IMMEDIATE = 0x0,
+        Immediate = 0x0,
         #[doc = "The kernel clock is provided to the dividers when CKGDEN is set to 1 and the trigger condition met."]
-        TRIGGER = 0x01,
+        Trigger = 0x01,
     }
     impl Ckgmod {
         #[inline(always)]
@@ -1705,11 +1705,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Datcap {
         #[doc = "Samples from DFLT0 not transfered into the memory."]
-        DISABLED = 0x0,
+        Disabled = 0x0,
         #[doc = "Samples from DFLT0 transfered into the memory when SAD is in DETECT state."]
-        ON_DETECTED = 0x01,
+        OnDetected = 0x01,
         #[doc = "Samples from DFLT0 transfered into memory when SAD and DFLT0 are enabled."]
-        ENABLED = 0x02,
+        Enabled = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Datcap {
@@ -1740,12 +1740,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Datsrc {
         #[doc = "Stream coming from the BSMX selected"]
-        BSMX = 0x0,
+        Bsmx = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "Stream coming from the ADCITF1 selected"]
-        ADCITF1 = 0x02,
+        Adcitf1 = 0x02,
         #[doc = "Stream coming from the ADCITF2 selected"]
-        ADCITF2 = 0x03,
+        Adcitf2 = 0x03,
     }
     impl Datsrc {
         #[inline(always)]
@@ -1775,9 +1775,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Detcfg {
         #[doc = "sddet_evt generated when SAD enters the MONITOR state."]
-        MONITOR = 0x0,
+        Monitor = 0x0,
         #[doc = "sddet_evt generated when SAD enters or exits the DETECT state."]
-        DETECT = 0x01,
+        Detect = 0x01,
     }
     impl Detcfg {
         #[inline(always)]
@@ -1807,19 +1807,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Frsize {
         #[doc = "8 sample."]
-        SAMPLES8 = 0x0,
+        Samples8 = 0x0,
         #[doc = "16 samples."]
-        SAMPLES16 = 0x01,
+        Samples16 = 0x01,
         #[doc = "32 samples."]
-        SAMPLES32 = 0x02,
+        Samples32 = 0x02,
         #[doc = "64 samples."]
-        SAMPLES64 = 0x03,
+        Samples64 = 0x03,
         #[doc = "128 samples."]
-        SAMPLES128 = 0x04,
+        Samples128 = 0x04,
         #[doc = "256 samples."]
-        SAMPLES256 = 0x05,
+        Samples256 = 0x05,
         #[doc = "512 samples."]
-        SAMPLES512 = 0x06,
+        Samples512 = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Frsize {
@@ -1850,21 +1850,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hgovr {
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES_4 = 0x0,
+        Frames4 = 0x0,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES_8 = 0x01,
+        Frames8 = 0x01,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES_16 = 0x02,
+        Frames16 = 0x02,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES_32 = 0x03,
+        Frames32 = 0x03,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES_64 = 0x04,
+        Frames64 = 0x04,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES_128 = 0x05,
+        Frames128 = 0x05,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES_256 = 0x06,
+        Frames256 = 0x06,
         #[doc = "SAD back to MONITOR state if sound is below threshold for 4 frames."]
-        FRAMES_512 = 0x07,
+        Frames512 = 0x07,
     }
     impl Hgovr {
         #[inline(always)]
@@ -1894,13 +1894,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hpfc {
         #[doc = "Cut-off frequency = 0.000625 x FPCM."]
-        LOW = 0x0,
+        Low = 0x0,
         #[doc = "Cut-off frequency = 0.00125 x FPCM."]
-        MEDIUM = 0x01,
+        Medium = 0x01,
         #[doc = "Cut-off frequency = 0.00250 x FPCM"]
-        HIGH = 0x02,
+        High = 0x02,
         #[doc = "Cut-off frequency = 0.00950 x FPCM"]
-        MAXIMUM = 0x03,
+        Maximum = 0x03,
     }
     impl Hpfc {
         #[inline(always)]
@@ -1930,15 +1930,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lfrnb {
         #[doc = "2 samples."]
-        FRAMES_2 = 0x0,
+        Frames2 = 0x0,
         #[doc = "4 samples."]
-        FRAMES_4 = 0x01,
+        Frames4 = 0x01,
         #[doc = "8 samples."]
-        FRAMES_8 = 0x02,
+        Frames8 = 0x02,
         #[doc = "16 samples."]
-        FRAMES_16 = 0x03,
+        Frames16 = 0x03,
         #[doc = "32 samples."]
-        FRAMES_32 = 0x04,
+        Frames32 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -1971,9 +1971,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rsfltd {
         #[doc = "Decimation ratio is 4 (default value)."]
-        DECIMATION4 = 0x0,
+        Decimation4 = 0x0,
         #[doc = "Decimation ratio is 1."]
-        DECIMATION1 = 0x01,
+        Decimation1 = 0x01,
     }
     impl Rsfltd {
         #[inline(always)]
@@ -2003,9 +2003,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rxfifo {
         #[doc = "RXFIFO threshold event generated when the RXFIFO is not empty"]
-        NOT_EMPTY = 0x0,
+        NotEmpty = 0x0,
         #[doc = "RXFIFO threshold event generated when the RXFIFO is half-full"]
-        HALF_FULL = 0x01,
+        HalfFull = 0x01,
     }
     impl Rxfifo {
         #[inline(always)]
@@ -2035,13 +2035,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sadmod {
         #[doc = "Threshold value computed according to the estimated ambient noise. The SAD triggers when the sound level (SDLVL) is bigger than the defined threshold. In this mode, the SAD works like a voice activity detector."]
-        THRESHOLD_ESTIMATED_AMBIENT_NOISE = 0x0,
+        ThresholdEstimatedAmbientNoise = 0x0,
         #[doc = "Threshold value equal to ANMIN\\[12:0\\], multiplied by the gain selected by SNTHR\\[3:0\\]
 The SAD triggers when the sound level (SDLVL) is bigger than the defined threshold. In this mode, the SAD works like a sound detector."]
-        THRESHOLD_MINIMUM_NOISELEVEL = 0x01,
+        ThresholdMinimumNoiselevel = 0x01,
         #[doc = "Threshold value given by 4 x ANMIN\\[12:0\\]. The SAD triggers when the estimated ambient noise (ANLVL), multiplied by the gain selected by SNTHR\\[3:0\\]
 is bigger than the defined threshold. In this mode, the SAD is working like an ambient noise estimator. Hysteresis function cannot be used in this mode."]
-        THRESHOLD_MINIMUM_NOISELEVELX4 = 0x02,
+        ThresholdMinimumNoiselevelx4 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Sadmod {
@@ -2072,11 +2072,11 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sadst {
         #[doc = "SAD in LEARN state."]
-        LEARN = 0x0,
+        Learn = 0x0,
         #[doc = "SAD in MONITOR state."]
-        MONITOR = 0x01,
+        Monitor = 0x01,
         #[doc = "SAD in DETECT state."]
-        DETECT = 0x02,
+        Detect = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Sadst {
@@ -2107,13 +2107,13 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Scksrc {
         #[doc = "Serial clock source is CCK0."]
-        CCK0 = 0x0,
+        Cck0 = 0x0,
         #[doc = "Serial clock source is CCK1."]
-        CCK1 = 0x01,
+        Cck1 = 0x01,
         #[doc = "Serial clock source is CCI0."]
-        CKI0 = 0x02,
+        Cki0 = 0x02,
         #[doc = "Serial clock source is CCI1."]
-        CKI1 = 0x03,
+        Cki1 = 0x03,
     }
     impl Scksrc {
         #[inline(always)]
@@ -2143,13 +2143,13 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sitfmod {
         #[doc = "LF_MASTER SPI mode."]
-        MASTER_SPI = 0x0,
+        MasterSpi = 0x0,
         #[doc = "Normal SPI mode."]
-        NORMAL_SPI = 0x01,
+        NormalSpi = 0x01,
         #[doc = "Manchester mode rising edge = logic 0, falling edge = logic 1."]
-        MANCHESTER_FALLING = 0x02,
+        ManchesterFalling = 0x02,
         #[doc = "Manchester mode rising edge = logic 1, falling edge = logic 0."]
-        MANCHESTER_RISING = 0x03,
+        ManchesterRising = 0x03,
     }
     impl Sitfmod {
         #[inline(always)]
@@ -2179,25 +2179,25 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Snthr {
         #[doc = "Threshold is 3.5 dB higher than ANLVL"]
-        NOISE_PLUS_3_5 = 0x0,
+        NoisePlus35 = 0x0,
         #[doc = "Threshold is 6.0 dB higher than ANLVL"]
-        NOISE_PLUS_6_0 = 0x01,
+        NoisePlus60 = 0x01,
         #[doc = "Threshold is 9.5 dB higher than ANLVL"]
-        NOISE_PLUS_9_5 = 0x02,
+        NoisePlus95 = 0x02,
         #[doc = "Threshold is 12 dB higher than ANLVL"]
-        NOISE_PLUS_12 = 0x03,
+        NoisePlus12 = 0x03,
         #[doc = "Threshold is 15.6 dB higher than ANLVL"]
-        NOISE_PLUS_15_6 = 0x04,
+        NoisePlus156 = 0x04,
         #[doc = "Threshold is 18 dB higher than ANLVL"]
-        NOISE_PLUS_18 = 0x05,
+        NoisePlus18 = 0x05,
         #[doc = "Threshold is 21.6 dB higher than ANLVL"]
-        NOISE_PLUS_21_6 = 0x06,
+        NoisePlus216 = 0x06,
         #[doc = "Threshold is 24.1 dB higher than ANLVL"]
-        NOISE_PLUS_24_1 = 0x07,
+        NoisePlus241 = 0x07,
         #[doc = "Threshold is 27.6 dB higher than ANLVL"]
-        NOISE_PLUS_27_6 = 0x08,
+        NoisePlus276 = 0x08,
         #[doc = "Threshold is 30.1 dB higher than ANLVL"]
-        NOISE_PLUS_30_1 = 0x09,
+        NoisePlus301 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
@@ -2233,9 +2233,9 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trgsens {
         #[doc = "A rising edge event triggers the activation of CKGEN dividers."]
-        RISING_EDGE = 0x0,
+        RisingEdge = 0x0,
         #[doc = "A falling edge even triggers the activation of CKGEN dividers."]
-        FALLING_EDGE = 0x01,
+        FallingEdge = 0x01,
     }
     impl Trgsens {
         #[inline(always)]
@@ -2265,10 +2265,10 @@ is bigger than the defined threshold. In this mode, the SAD is working like an a
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trgsrc {
         #[doc = "TRGO Selected."]
-        TRGO = 0x0,
+        Trgo = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "adf_trg1 selected."]
-        TRG1 = 0x02,
+        Trg1 = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,

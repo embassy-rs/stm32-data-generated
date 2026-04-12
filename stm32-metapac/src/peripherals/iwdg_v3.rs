@@ -22,32 +22,32 @@ impl Iwdg {
     #[doc = "Key register"]
     #[inline(always)]
     pub const fn kr(self) -> crate::common::Reg<regs::Kr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Prescaler register"]
     #[inline(always)]
     pub const fn pr(self) -> crate::common::Reg<regs::Pr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Reload register"]
     #[inline(always)]
     pub const fn rlr(self) -> crate::common::Reg<regs::Rlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "Status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "Window register"]
     #[inline(always)]
     pub const fn winr(self) -> crate::common::Reg<regs::Winr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "IWDG early wakeup interrupt register."]
     #[inline(always)]
     pub const fn ewcr(self) -> crate::common::Reg<regs::Ewcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
 }
 pub mod regs {
@@ -59,6 +59,7 @@ pub mod regs {
         #[doc = "Watchdog counter window value These bits are write access protected (see ). They are written by software to define at which position of the IWDCNT down-counter the early wakeup interrupt must be generated. The early interrupt is generated when the IWDCNT is lower or equal to EWIT\\[11:0\\]
 - 1. EWIT\\[11:0\\]
 must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit in the must be reset to be able to change the reload value. Note: Reading this register returns the Early wakeup comparator value and the Interrupt enable bit from the VDD voltage domain. This value may not be up to date/valid if a write operation to this register is ongoing, hence the value read from this register is valid only when the EWU bit in the is reset."]
+        #[must_use]
         #[inline(always)]
         pub const fn ewit(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -68,10 +69,11 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
 - 1. EWIT\\[11:0\\]
 must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit in the must be reset to be able to change the reload value. Note: Reading this register returns the Early wakeup comparator value and the Interrupt enable bit from the VDD voltage domain. This value may not be up to date/valid if a write operation to this register is ongoing, hence the value read from this register is valid only when the EWU bit in the is reset."]
         #[inline(always)]
-        pub fn set_ewit(&mut self, val: u16) {
+        pub const fn set_ewit(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
         #[doc = "Watchdog early interrupt acknowledge The software must write a 1 into this bit in order to acknowledge the early wakeup interrupt and to clear the EWIF flag. Writing 0 has not effect, reading this flag returns a 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn ewic(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -79,10 +81,11 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
         }
         #[doc = "Watchdog early interrupt acknowledge The software must write a 1 into this bit in order to acknowledge the early wakeup interrupt and to clear the EWIF flag. Writing 0 has not effect, reading this flag returns a 0."]
         #[inline(always)]
-        pub fn set_ewic(&mut self, val: bool) {
+        pub const fn set_ewic(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Watchdog early interrupt enable Set and reset by software. The EWU bit in the must be reset to be able to change the value of this bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn ewie(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -90,7 +93,7 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
         }
         #[doc = "Watchdog early interrupt enable Set and reset by software. The EWU bit in the must be reset to be able to change the value of this bit."]
         #[inline(always)]
-        pub fn set_ewie(&mut self, val: bool) {
+        pub const fn set_ewie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }
@@ -127,6 +130,7 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
     pub struct Kr(pub u32);
     impl Kr {
         #[doc = "Key value (write only, read 0000h)"]
+        #[must_use]
         #[inline(always)]
         pub const fn key(&self) -> super::vals::Key {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -134,7 +138,7 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
         }
         #[doc = "Key value (write only, read 0000h)"]
         #[inline(always)]
-        pub fn set_key(&mut self, val: super::vals::Key) {
+        pub const fn set_key(&mut self, val: super::vals::Key) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val.to_bits() as u32) & 0xffff) << 0usize);
         }
     }
@@ -161,6 +165,7 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
     pub struct Pr(pub u32);
     impl Pr {
         #[doc = "Prescaler divider"]
+        #[must_use]
         #[inline(always)]
         pub const fn pr(&self) -> super::vals::Pr {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -168,7 +173,7 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
         }
         #[doc = "Prescaler divider"]
         #[inline(always)]
-        pub fn set_pr(&mut self, val: super::vals::Pr) {
+        pub const fn set_pr(&mut self, val: super::vals::Pr) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val.to_bits() as u32) & 0x0f) << 0usize);
         }
     }
@@ -195,6 +200,7 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
     pub struct Rlr(pub u32);
     impl Rlr {
         #[doc = "Watchdog counter reload value"]
+        #[must_use]
         #[inline(always)]
         pub const fn rl(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -202,7 +208,7 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
         }
         #[doc = "Watchdog counter reload value"]
         #[inline(always)]
-        pub fn set_rl(&mut self, val: u16) {
+        pub const fn set_rl(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
     }
@@ -229,6 +235,7 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
     pub struct Sr(pub u32);
     impl Sr {
         #[doc = "Watchdog prescaler value update"]
+        #[must_use]
         #[inline(always)]
         pub const fn pvu(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -236,10 +243,11 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
         }
         #[doc = "Watchdog prescaler value update"]
         #[inline(always)]
-        pub fn set_pvu(&mut self, val: bool) {
+        pub const fn set_pvu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Watchdog counter reload value update"]
+        #[must_use]
         #[inline(always)]
         pub const fn rvu(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -247,10 +255,11 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
         }
         #[doc = "Watchdog counter reload value update"]
         #[inline(always)]
-        pub fn set_rvu(&mut self, val: bool) {
+        pub const fn set_rvu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Watchdog counter window value update"]
+        #[must_use]
         #[inline(always)]
         pub const fn wvu(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -258,11 +267,12 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
         }
         #[doc = "Watchdog counter window value update"]
         #[inline(always)]
-        pub fn set_wvu(&mut self, val: bool) {
+        pub const fn set_wvu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Watchdog interrupt comparator value update This bit is set by hardware to indicate that an update of the interrupt comparator value (EWIT\\[11:0\\]) or an update of the EWIE is ongoing. It is reset by hardware when the update operation is completed in the VDD voltage domain (takes up to three periods of the IWDG kernel clock iwdg_ker_ck). The EWIT\\[11:0\\]
 and EWIE fields can be updated only when EWU bit is reset."]
+        #[must_use]
         #[inline(always)]
         pub const fn ewu(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -271,10 +281,11 @@ and EWIE fields can be updated only when EWU bit is reset."]
         #[doc = "Watchdog interrupt comparator value update This bit is set by hardware to indicate that an update of the interrupt comparator value (EWIT\\[11:0\\]) or an update of the EWIE is ongoing. It is reset by hardware when the update operation is completed in the VDD voltage domain (takes up to three periods of the IWDG kernel clock iwdg_ker_ck). The EWIT\\[11:0\\]
 and EWIE fields can be updated only when EWU bit is reset."]
         #[inline(always)]
-        pub fn set_ewu(&mut self, val: bool) {
+        pub const fn set_ewu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Watchdog early interrupt flag This bit is set to ‘1’ by hardware in order to indicate that an early interrupt is pending. This bit must be cleared by the software by writing the bit EWIC of IWDG_EWCR register to ‘1’."]
+        #[must_use]
         #[inline(always)]
         pub const fn ewif(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -282,7 +293,7 @@ and EWIE fields can be updated only when EWU bit is reset."]
         }
         #[doc = "Watchdog early interrupt flag This bit is set to ‘1’ by hardware in order to indicate that an early interrupt is pending. This bit must be cleared by the software by writing the bit EWIC of IWDG_EWCR register to ‘1’."]
         #[inline(always)]
-        pub fn set_ewif(&mut self, val: bool) {
+        pub const fn set_ewif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
     }
@@ -323,6 +334,7 @@ and EWIE fields can be updated only when EWU bit is reset."]
     pub struct Winr(pub u32);
     impl Winr {
         #[doc = "Watchdog counter window value"]
+        #[must_use]
         #[inline(always)]
         pub const fn win(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -330,7 +342,7 @@ and EWIE fields can be updated only when EWU bit is reset."]
         }
         #[doc = "Watchdog counter window value"]
         #[inline(always)]
-        pub fn set_win(&mut self, val: u16) {
+        pub const fn set_win(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
     }

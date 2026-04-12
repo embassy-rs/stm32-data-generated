@@ -23,47 +23,47 @@ impl Hsem {
     #[inline(always)]
     pub const fn r(self, n: usize) -> crate::common::Reg<regs::R, crate::common::RW> {
         assert!(n < 32usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize + n * 4usize) as _) }
     }
     #[doc = "HSEM Read lock register."]
     #[inline(always)]
     pub const fn rlr(self, n: usize) -> crate::common::Reg<regs::Rlr, crate::common::R> {
         assert!(n < 32usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80usize + n * 4usize) as _) }
     }
     #[doc = "HSEM Interrupt enable register."]
     #[inline(always)]
     pub const fn ier(self, n: usize) -> crate::common::Reg<regs::Ier, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize + n * 16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize + n * 16usize) as _) }
     }
     #[doc = "HSEM Interrupt clear register."]
     #[inline(always)]
     pub const fn icr(self, n: usize) -> crate::common::Reg<regs::Icr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize + n * 16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0104usize + n * 16usize) as _) }
     }
     #[doc = "HSEM Interrupt status register."]
     #[inline(always)]
     pub const fn isr(self, n: usize) -> crate::common::Reg<regs::Isr, crate::common::R> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize + n * 16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0108usize + n * 16usize) as _) }
     }
     #[doc = "HSEM Masked interrupt status register."]
     #[inline(always)]
     pub const fn misr(self, n: usize) -> crate::common::Reg<regs::Misr, crate::common::R> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x010cusize + n * 16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x010cusize + n * 16usize) as _) }
     }
     #[doc = "HSEM Clear register."]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0140usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0140usize) as _) }
     }
     #[doc = "HSEM Interrupt clear register."]
     #[inline(always)]
     pub const fn keyr(self) -> crate::common::Reg<regs::Keyr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0144usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0144usize) as _) }
     }
 }
 pub mod regs {
@@ -73,6 +73,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "COREID of semaphores to be cleared."]
+        #[must_use]
         #[inline(always)]
         pub const fn coreid(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
@@ -80,10 +81,11 @@ pub mod regs {
         }
         #[doc = "COREID of semaphores to be cleared."]
         #[inline(always)]
-        pub fn set_coreid(&mut self, val: u8) {
+        pub const fn set_coreid(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
         #[doc = "Semaphore clear Key."]
+        #[must_use]
         #[inline(always)]
         pub const fn key(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0xffff;
@@ -91,7 +93,7 @@ pub mod regs {
         }
         #[doc = "Semaphore clear Key."]
         #[inline(always)]
-        pub fn set_key(&mut self, val: u16) {
+        pub const fn set_key(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
@@ -121,6 +123,7 @@ pub mod regs {
     pub struct Icr(pub u32);
     impl Icr {
         #[doc = "Interrupt semaphore x clear bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn isc(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -130,7 +133,7 @@ pub mod regs {
         }
         #[doc = "Interrupt semaphore x clear bit."]
         #[inline(always)]
-        pub fn set_isc(&mut self, n: usize, val: bool) {
+        pub const fn set_isc(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -192,6 +195,7 @@ pub mod regs {
     pub struct Ier(pub u32);
     impl Ier {
         #[doc = "Interrupt semaphore x enable bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn ise(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -201,7 +205,7 @@ pub mod regs {
         }
         #[doc = "Interrupt semaphore x enable bit."]
         #[inline(always)]
-        pub fn set_ise(&mut self, n: usize, val: bool) {
+        pub const fn set_ise(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -263,6 +267,7 @@ pub mod regs {
     pub struct Isr(pub u32);
     impl Isr {
         #[doc = "Interrupt semaphore x status bit before enable (mask)."]
+        #[must_use]
         #[inline(always)]
         pub const fn isf(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -272,7 +277,7 @@ pub mod regs {
         }
         #[doc = "Interrupt semaphore x status bit before enable (mask)."]
         #[inline(always)]
-        pub fn set_isf(&mut self, n: usize, val: bool) {
+        pub const fn set_isf(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -334,6 +339,7 @@ pub mod regs {
     pub struct Keyr(pub u32);
     impl Keyr {
         #[doc = "Semaphore Clear Key."]
+        #[must_use]
         #[inline(always)]
         pub const fn key(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0xffff;
@@ -341,7 +347,7 @@ pub mod regs {
         }
         #[doc = "Semaphore Clear Key."]
         #[inline(always)]
-        pub fn set_key(&mut self, val: u16) {
+        pub const fn set_key(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
@@ -368,6 +374,7 @@ pub mod regs {
     pub struct Misr(pub u32);
     impl Misr {
         #[doc = "masked interrupt semaphore x status bit after enable (mask)."]
+        #[must_use]
         #[inline(always)]
         pub const fn misf(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -377,7 +384,7 @@ pub mod regs {
         }
         #[doc = "masked interrupt semaphore x status bit after enable (mask)."]
         #[inline(always)]
-        pub fn set_misf(&mut self, n: usize, val: bool) {
+        pub const fn set_misf(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -439,6 +446,7 @@ pub mod regs {
     pub struct R(pub u32);
     impl R {
         #[doc = "Semaphore ProcessID."]
+        #[must_use]
         #[inline(always)]
         pub const fn procid(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -446,10 +454,11 @@ pub mod regs {
         }
         #[doc = "Semaphore ProcessID."]
         #[inline(always)]
-        pub fn set_procid(&mut self, val: u8) {
+        pub const fn set_procid(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "Semaphore COREID."]
+        #[must_use]
         #[inline(always)]
         pub const fn coreid(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
@@ -457,10 +466,11 @@ pub mod regs {
         }
         #[doc = "Semaphore COREID."]
         #[inline(always)]
-        pub fn set_coreid(&mut self, val: u8) {
+        pub const fn set_coreid(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
         #[doc = "Lock indication."]
+        #[must_use]
         #[inline(always)]
         pub const fn lock(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -468,7 +478,7 @@ pub mod regs {
         }
         #[doc = "Lock indication."]
         #[inline(always)]
-        pub fn set_lock(&mut self, val: bool) {
+        pub const fn set_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -505,6 +515,7 @@ pub mod regs {
     pub struct Rlr(pub u32);
     impl Rlr {
         #[doc = "Semaphore ProcessID."]
+        #[must_use]
         #[inline(always)]
         pub const fn procid(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -512,10 +523,11 @@ pub mod regs {
         }
         #[doc = "Semaphore ProcessID."]
         #[inline(always)]
-        pub fn set_procid(&mut self, val: u8) {
+        pub const fn set_procid(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "Semaphore COREID."]
+        #[must_use]
         #[inline(always)]
         pub const fn coreid(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
@@ -523,10 +535,11 @@ pub mod regs {
         }
         #[doc = "Semaphore COREID."]
         #[inline(always)]
-        pub fn set_coreid(&mut self, val: u8) {
+        pub const fn set_coreid(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
         #[doc = "Lock indication."]
+        #[must_use]
         #[inline(always)]
         pub const fn lock(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -534,7 +547,7 @@ pub mod regs {
         }
         #[doc = "Lock indication."]
         #[inline(always)]
-        pub fn set_lock(&mut self, val: bool) {
+        pub const fn set_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }

@@ -1096,18 +1096,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "STOP",
-                    description: Some(
-                        "Keeps Stop mode when entering DeepSleep.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "STANDBY",
                     description: Some(
                         "Allows Standby mode when entering DeepSleep.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "STOP",
+                    description: Some(
+                        "Keeps Stop mode when entering DeepSleep.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1180,18 +1180,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NORMAL",
-                    description: Some(
-                        "Remains in normal mode when the system enters Stop mode (quick restart time).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "LOW_POWER",
                     description: Some(
                         "Enters low-power mode when the system enters Stop mode (low-power consumption).",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NORMAL",
+                    description: Some(
+                        "Remains in normal mode when the system enters Stop mode (quick restart time).",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1243,11 +1243,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "SCALE5",
+                    name: "SCALE3",
                     description: Some(
-                        "SVOS5 scale 5",
+                        "SVOS3 scale 3 (default)",
                     ),
-                    value: 1,
+                    value: 3,
                 },
                 EnumVariant {
                     name: "SCALE4",
@@ -1257,11 +1257,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SCALE3",
+                    name: "SCALE5",
                     description: Some(
-                        "SVOS3 scale 3 (default)",
+                        "SVOS5 scale 5",
                     ),
-                    value: 3,
+                    value: 1,
                 },
             ],
         },
@@ -1271,18 +1271,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "R5K_OHM",
-                    description: Some(
-                        "Charge VBAT through a 5 kΩ resistor.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "R1_5K_OHM",
                     description: Some(
                         "Charge VBAT through a 1.5 kΩ resistor.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "R5K_OHM",
+                    description: Some(
+                        "Charge VBAT through a 5 kΩ resistor.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1292,14 +1292,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "SCALE3",
+                    name: "SCALE0",
                     description: None,
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SCALE2",
-                    description: None,
-                    value: 1,
+                    value: 3,
                 },
                 EnumVariant {
                     name: "SCALE1",
@@ -1307,9 +1302,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SCALE0",
+                    name: "SCALE2",
                     description: None,
-                    value: 3,
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "SCALE3",
+                    description: None,
+                    value: 0,
                 },
             ],
         },
@@ -1345,14 +1345,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PULL_UP",
-                    description: None,
-                    value: 1,
-                },
-                EnumVariant {
                     name: "PULL_DOWN",
                     description: None,
                     value: 2,
+                },
+                EnumVariant {
+                    name: "PULL_UP",
+                    description: None,
+                    value: 1,
                 },
             ],
         },

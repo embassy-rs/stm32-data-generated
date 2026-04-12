@@ -873,14 +873,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RUNNING_OR_SLEEP",
-                    description: Some("CPU is running or in sleep"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "DEEP_SLEEP",
                     description: Some("CPU is in Deep-Sleep"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "RUNNING_OR_SLEEP",
+                    description: Some("CPU is running or in sleep"),
+                    value: 0,
                 },
             ],
         },
@@ -924,6 +924,16 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
+                    name: "SHUTDOWN",
+                    description: Some("Shutdown mode"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "STANDBY",
+                    description: Some("Standby mode"),
+                    value: 3,
+                },
+                EnumVariant {
                     name: "STOP0",
                     description: Some("Stop 0 mode"),
                     value: 0,
@@ -938,16 +948,6 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Stop 2 mode"),
                     value: 2,
                 },
-                EnumVariant {
-                    name: "STANDBY",
-                    description: Some("Standby mode"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "SHUTDOWN",
-                    description: Some("Shutdown mode"),
-                    value: 4,
-                },
             ],
         },
         Enum {
@@ -956,14 +956,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MAIN_MODE",
-                    description: Some("Voltage regulator in Main mode in Low-power run mode"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "LOW_POWER_MODE",
                     description: Some("Voltage regulator in low-power mode in Low-power run mode"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "MAIN_MODE",
+                    description: Some("Voltage regulator in Main mode in Low-power run mode"),
+                    value: 0,
                 },
             ],
         },
@@ -972,6 +972,11 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 3,
             variants: &[
+                EnumVariant {
+                    name: "EXTERNAL",
+                    description: Some("External input analog voltage PVD_IN (compared internally to VREFINT)"),
+                    value: 7,
+                },
                 EnumVariant {
                     name: "V2_0",
                     description: Some("2.0V"),
@@ -1007,11 +1012,6 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("2.9V"),
                     value: 6,
                 },
-                EnumVariant {
-                    name: "EXTERNAL",
-                    description: Some("External input analog voltage PVD_IN (compared internally to VREFINT)"),
-                    value: 7,
-                },
             ],
         },
         Enum {
@@ -1020,18 +1020,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "SUBGHZSPICR",
-                    description: Some(
-                        "sub-GHz SPI NSS signal driven from PWR_SUBGHZSPICR.NSS (RFBUSYMS functionality enabled)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "LPTIM3",
                     description: Some(
                         "sub-GHz SPI NSS signal driven from LPTIM3_OUT (RFBUSYMS functionality disabled)",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "SUBGHZSPICR",
+                    description: Some(
+                        "sub-GHz SPI NSS signal driven from PWR_SUBGHZSPICR.NSS (RFBUSYMS functionality enabled)",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1041,14 +1041,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "R5K",
-                    description: Some("VBAT charging through a 5 kΩ resistor"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "R1_5K",
                     description: Some("VBAT charging through a 1.5 kΩ resistor"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "R5K",
+                    description: Some("VBAT charging through a 5 kΩ resistor"),
+                    value: 0,
                 },
             ],
         },
@@ -1075,14 +1075,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RISING_EDGE",
-                    description: Some("Detection on high level (rising edge)"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FALLING_EDGE",
                     description: Some("Detection on low level (falling edge)"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "RISING_EDGE",
+                    description: Some("Detection on high level (rising edge)"),
+                    value: 0,
                 },
             ],
         },

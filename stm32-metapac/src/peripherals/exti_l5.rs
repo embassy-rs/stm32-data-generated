@@ -23,66 +23,66 @@ impl Exti {
     #[inline(always)]
     pub const fn rtsr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize + n * 32usize) as _) }
     }
     #[doc = "Falling Trigger selection register"]
     #[inline(always)]
     pub const fn ftsr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize + n * 32usize) as _) }
     }
     #[doc = "Software interrupt event register"]
     #[inline(always)]
     pub const fn swier(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize + n * 32usize) as _) }
     }
     #[doc = "Rising pending register"]
     #[inline(always)]
     pub const fn rpr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize + n * 32usize) as _) }
     }
     #[doc = "Falling pending register"]
     #[inline(always)]
     pub const fn fpr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize + n * 32usize) as _) }
     }
     #[doc = "Security configuration register"]
     #[inline(always)]
     pub const fn seccfgr(self, n: usize) -> crate::common::Reg<regs::Seccfgr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize + n * 36usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize + n * 36usize) as _) }
     }
     #[doc = "Privilege configuration register"]
     #[inline(always)]
     pub const fn privcfgr(self, n: usize) -> crate::common::Reg<regs::Privcfgr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize + n * 28usize) as _) }
     }
     #[doc = "Configuration register"]
     #[inline(always)]
     pub const fn exticr(self, n: usize) -> crate::common::Reg<regs::Exticr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x60usize + n * 4usize) as _) }
     }
     #[doc = "EXTI lock register"]
     #[inline(always)]
     pub const fn lockrg(self) -> crate::common::Reg<regs::Lockrg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x70usize) as _) }
     }
     #[doc = "Interrupt mask register"]
     #[inline(always)]
     pub const fn imr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize + n * 16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80usize + n * 16usize) as _) }
     }
     #[doc = "Event mask register"]
     #[inline(always)]
     pub const fn emr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize + n * 16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x84usize + n * 16usize) as _) }
     }
 }
 pub mod regs {
@@ -92,6 +92,7 @@ pub mod regs {
     pub struct Exticr(pub u32);
     impl Exticr {
         #[doc = "EXTI configuration bits"]
+        #[must_use]
         #[inline(always)]
         pub const fn exti(&self, n: usize) -> u8 {
             assert!(n < 4usize);
@@ -101,7 +102,7 @@ pub mod regs {
         }
         #[doc = "EXTI configuration bits"]
         #[inline(always)]
-        pub fn set_exti(&mut self, n: usize, val: u8) {
+        pub const fn set_exti(&mut self, n: usize, val: u8) {
             assert!(n < 4usize);
             let offs = 0usize + n * 8usize;
             self.0 = (self.0 & !(0xff << offs)) | (((val as u32) & 0xff) << offs);
@@ -142,6 +143,7 @@ pub mod regs {
     pub struct Lines(pub u32);
     impl Lines {
         #[doc = "EXTI line"]
+        #[must_use]
         #[inline(always)]
         pub const fn line(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -151,7 +153,7 @@ pub mod regs {
         }
         #[doc = "EXTI line"]
         #[inline(always)]
-        pub fn set_line(&mut self, n: usize, val: bool) {
+        pub const fn set_line(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -213,6 +215,7 @@ pub mod regs {
     pub struct Lockrg(pub u32);
     impl Lockrg {
         #[doc = "LOCK"]
+        #[must_use]
         #[inline(always)]
         pub const fn lock(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -220,7 +223,7 @@ pub mod regs {
         }
         #[doc = "LOCK"]
         #[inline(always)]
-        pub fn set_lock(&mut self, val: bool) {
+        pub const fn set_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -247,6 +250,7 @@ pub mod regs {
     pub struct Privcfgr(pub u32);
     impl Privcfgr {
         #[doc = "Security enable on event input x"]
+        #[must_use]
         #[inline(always)]
         pub const fn priv_(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -256,7 +260,7 @@ pub mod regs {
         }
         #[doc = "Security enable on event input x"]
         #[inline(always)]
-        pub fn set_priv_(&mut self, n: usize, val: bool) {
+        pub const fn set_priv_(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -318,6 +322,7 @@ pub mod regs {
     pub struct Seccfgr(pub u32);
     impl Seccfgr {
         #[doc = "Security enable on event input x"]
+        #[must_use]
         #[inline(always)]
         pub const fn sec(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -327,7 +332,7 @@ pub mod regs {
         }
         #[doc = "Security enable on event input x"]
         #[inline(always)]
-        pub fn set_sec(&mut self, n: usize, val: bool) {
+        pub const fn set_sec(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);

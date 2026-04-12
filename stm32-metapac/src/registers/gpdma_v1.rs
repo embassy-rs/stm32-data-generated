@@ -1606,18 +1606,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BURST",
-                    description: Some(
-                        "the selected hardware request is driven by a peripheral with a hardware request/acknowledge protocol at a burst level.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "BLOCK",
                     description: Some(
                         "the selected hardware request is driven by a peripheral with a hardware request/acknowledge protocol at a block level (see ).",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "BURST",
+                    description: Some(
+                        "the selected hardware request is driven by a peripheral with a hardware request/acknowledge protocol at a burst level.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1648,18 +1648,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "SOURCE_PERIPHERAL",
-                    description: Some(
-                        "selected hardware request driven by a source peripheral (request signal taken into account by the GPDMA transfer scheduler over the source/read port)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "DESTINATION_PERIPHERAL",
                     description: Some(
                         "selected hardware request driven by a destination peripheral (request signal taken into account by the GPDMA transfer scheduler over the destination/write port)",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "SOURCE_PERIPHERAL",
+                    description: Some(
+                        "selected hardware request driven by a source peripheral (request signal taken into account by the GPDMA transfer scheduler over the source/read port)",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1697,18 +1697,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RUN_TO_COMPLETION",
-                    description: Some(
-                        "channel executed for the full linked-list and completed at the end of the last LLI (CH[x].LLR = 0). The 16 low-significant bits of the link address are null (LA[15:0] = 0) and all the update bits are null (UT1 =UB1 = UT2 = USA = UDA = ULL = 0 and UT3 = UB2 = 0 if present). Then CH[x].BR1.BNDT[15:0] = 0 and CH[x].BR1.BRC[10:0] = 0 if present.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "LINK_STEP",
                     description: Some(
                         "channel executed once for the current LLI",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "RUN_TO_COMPLETION",
+                    description: Some(
+                        "channel executed for the full linked-list and completed at the end of the last LLI (CH[x].LLR = 0). The 16 low-significant bits of the link address are null (LA[15:0] = 0) and all the update bits are null (UT1 =UB1 = UT2 = USA = UDA = ULL = 0 and UT3 = UB2 = 0 if present). Then CH[x].BR1.BNDT[15:0] = 0 and CH[x].BR1.BRC[10:0] = 0 if present.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1718,11 +1718,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ZERO_EXTEND_OR_LEFT_TRUNCATE",
+                    name: "PACK",
                     description: Some(
-                        "If destination is wider: source data is transferred as right aligned, padded with 0s up to the destination data width\nIf source is wider: source data is transferred as right aligned, left-truncated down to the destination data width",
+                        "source data is FIFO queued and packed/unpacked at the destination data width, to be transferred in a left (LSB) to right (MSB) order (named little endian) to the destination",
                     ),
-                    value: 0,
+                    value: 2,
                 },
                 EnumVariant {
                     name: "SIGN_EXTEND_OR_RIGHT_TRUNCATE",
@@ -1732,11 +1732,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PACK",
+                    name: "ZERO_EXTEND_OR_LEFT_TRUNCATE",
                     description: Some(
-                        "source data is FIFO queued and packed/unpacked at the destination data width, to be transferred in a left (LSB) to right (MSB) order (named little endian) to the destination",
+                        "If destination is wider: source data is transferred as right aligned, padded with 0s up to the destination data width\nIf source is wider: source data is transferred as right aligned, left-truncated down to the destination data width",
                     ),
-                    value: 2,
+                    value: 0,
                 },
             ],
         },
@@ -1745,6 +1745,20 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
+                EnumVariant {
+                    name: "HIGH",
+                    description: Some(
+                        "high priority",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "LOW_WITH_HIGH_WEIGHT",
+                    description: Some(
+                        "low priority, high weight",
+                    ),
+                    value: 2,
+                },
                 EnumVariant {
                     name: "LOW_WITH_LOWH_WEIGHT",
                     description: Some(
@@ -1758,20 +1772,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "low priority, mid weight",
                     ),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "LOW_WITH_HIGH_WEIGHT",
-                    description: Some(
-                        "low priority, high weight",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HIGH",
-                    description: Some(
-                        "high priority",
-                    ),
-                    value: 3,
                 },
             ],
         },
@@ -1802,18 +1802,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "EACH_BLOCK",
-                    description: Some(
-                        "at block level (when CH[x].BR1.BNDT[15:0] = 0): the complete (and the half) transfer event is generated at the (respectively half of the) end of a block.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "EACH2DBLOCK",
                     description: Some(
                         "channel x = 0 to 11, same as 00; channel x=12 to 15, at 2D/repeated block level (when CH[x].BR1.BRC[10:0] =  0 and CH[x].BR1.BNDT[15:0] =  0), the complete (and the half) transfer event is generated at the end (respectively half of the end) of the 2D/repeated block.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "EACH_BLOCK",
+                    description: Some(
+                        "at block level (when CH[x].BR1.BNDT[15:0] = 0): the complete (and the half) transfer event is generated at the (respectively half of the) end of a block.",
+                    ),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "EACH_LINKED_LIST_ITEM",
@@ -1844,11 +1844,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "_2DBLOCK",
+                    name: "BURST",
                     description: Some(
-                        "channel x = 0 to 11, same as 00; channel x=12 to 15, at 2D/repeated block level, the",
+                        "at programmed burst level: If SWREQ = 1, each programmed burst read is conditioned by one hit trigger. If SWREQ = 0, each programmed burst that is requested by the selected peripheral, is conditioned by one hit trigger.",
                     ),
-                    value: 1,
+                    value: 3,
                 },
                 EnumVariant {
                     name: "LINKED_LIST_ITEM",
@@ -1858,11 +1858,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BURST",
+                    name: "_2DBLOCK",
                     description: Some(
-                        "at programmed burst level: If SWREQ = 1, each programmed burst read is conditioned by one hit trigger. If SWREQ = 0, each programmed burst that is requested by the selected peripheral, is conditioned by one hit trigger.",
+                        "channel x = 0 to 11, same as 00; channel x=12 to 15, at 2D/repeated block level, the",
                     ),
-                    value: 3,
+                    value: 1,
                 },
             ],
         },
@@ -1872,20 +1872,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NONE",
-                    description: Some(
-                        "no trigger (masked trigger event)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RISING_EDGE",
-                    description: Some(
-                        "trigger on the rising edge",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "FALLING_EDGE",
                     description: Some(
                         "trigger on the falling edge",
@@ -1893,11 +1879,25 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
+                    name: "NONE",
+                    description: Some(
+                        "no trigger (masked trigger event)",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
                     name: "NONE_ALT",
                     description: Some(
                         "same as 00",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "RISING_EDGE",
+                    description: Some(
+                        "trigger on the rising edge",
+                    ),
+                    value: 1,
                 },
             ],
         },

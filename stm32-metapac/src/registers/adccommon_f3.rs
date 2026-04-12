@@ -325,14 +325,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ONE_SHOT",
-                    description: Some("DMA One Shot mode selected"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "CIRCULATOR",
                     description: Some("DMA Circular mode selected"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "ONE_SHOT",
+                    description: Some("DMA One Shot mode selected"),
+                    value: 0,
                 },
             ],
         },
@@ -342,19 +342,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "INDEPENDENT",
-                    description: Some("Independent mode"),
-                    value: 0,
+                    name: "DUAL_A",
+                    description: Some("Dual, alternate trigger mode only"),
+                    value: 9,
                 },
                 EnumVariant {
-                    name: "DUAL_RJ",
-                    description: Some("Dual, combined regular simultaneous + injected simultaneous mode"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DUAL_RA",
-                    description: Some("Dual, combined regular simultaneous + alternate trigger mode"),
-                    value: 2,
+                    name: "DUAL_I",
+                    description: Some("dual, interleaved mode only"),
+                    value: 7,
                 },
                 EnumVariant {
                     name: "DUAL_IJ",
@@ -372,14 +367,19 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DUAL_I",
-                    description: Some("dual, interleaved mode only"),
-                    value: 7,
+                    name: "DUAL_RA",
+                    description: Some("Dual, combined regular simultaneous + alternate trigger mode"),
+                    value: 2,
                 },
                 EnumVariant {
-                    name: "DUAL_A",
-                    description: Some("Dual, alternate trigger mode only"),
-                    value: 9,
+                    name: "DUAL_RJ",
+                    description: Some("Dual, combined regular simultaneous + injected simultaneous mode"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "INDEPENDENT",
+                    description: Some("Independent mode"),
+                    value: 0,
                 },
             ],
         },
@@ -389,11 +389,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
-                    description: Some("MDMA mode disabled"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "BITS12_10",
                     description: Some("MDMA mode enabled for 12 and 10-bit resolution"),
                     value: 2,
@@ -402,6 +397,11 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "BITS8_6",
                     description: Some("MDMA mode enabled for 8 and 6-bit resolution"),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("MDMA mode disabled"),
+                    value: 0,
                 },
             ],
         },

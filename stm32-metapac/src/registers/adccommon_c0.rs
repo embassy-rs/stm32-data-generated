@@ -60,9 +60,39 @@ pub(crate) static REGISTERS: IR = IR {
                 value: 0,
             },
             EnumVariant {
+                name: "DIV10",
+                description: Some("adc_ker_ck_input divided by 10"),
+                value: 5,
+            },
+            EnumVariant {
+                name: "DIV12",
+                description: Some("adc_ker_ck_input divided by 12"),
+                value: 6,
+            },
+            EnumVariant {
+                name: "DIV128",
+                description: Some("adc_ker_ck_input divided by 128"),
+                value: 10,
+            },
+            EnumVariant {
+                name: "DIV16",
+                description: Some("adc_ker_ck_input divided by 16"),
+                value: 7,
+            },
+            EnumVariant {
                 name: "DIV2",
                 description: Some("adc_ker_ck_input divided by 2"),
                 value: 1,
+            },
+            EnumVariant {
+                name: "DIV256",
+                description: Some("adc_ker_ck_input divided by 256"),
+                value: 11,
+            },
+            EnumVariant {
+                name: "DIV32",
+                description: Some("adc_ker_ck_input divided by 32"),
+                value: 8,
             },
             EnumVariant {
                 name: "DIV4",
@@ -75,44 +105,14 @@ pub(crate) static REGISTERS: IR = IR {
                 value: 3,
             },
             EnumVariant {
-                name: "DIV8",
-                description: Some("adc_ker_ck_input divided by 8"),
-                value: 4,
-            },
-            EnumVariant {
-                name: "DIV10",
-                description: Some("adc_ker_ck_input divided by 10"),
-                value: 5,
-            },
-            EnumVariant {
-                name: "DIV12",
-                description: Some("adc_ker_ck_input divided by 12"),
-                value: 6,
-            },
-            EnumVariant {
-                name: "DIV16",
-                description: Some("adc_ker_ck_input divided by 16"),
-                value: 7,
-            },
-            EnumVariant {
-                name: "DIV32",
-                description: Some("adc_ker_ck_input divided by 32"),
-                value: 8,
-            },
-            EnumVariant {
                 name: "DIV64",
                 description: Some("adc_ker_ck_input divided by 64"),
                 value: 9,
             },
             EnumVariant {
-                name: "DIV128",
-                description: Some("adc_ker_ck_input divided by 128"),
-                value: 10,
-            },
-            EnumVariant {
-                name: "DIV256",
-                description: Some("adc_ker_ck_input divided by 256"),
-                value: 11,
+                name: "DIV8",
+                description: Some("adc_ker_ck_input divided by 8"),
+                value: 4,
             },
         ],
     }],

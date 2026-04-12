@@ -22,157 +22,157 @@ impl Flash {
     #[doc = "FLASH access control register"]
     #[inline(always)]
     pub const fn acr(self) -> crate::common::Reg<regs::Acr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "FLASH key register"]
     #[inline(always)]
     pub const fn nskeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "FLASH option key register"]
     #[inline(always)]
     pub const fn optkeyr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "FLASH operation status register"]
     #[inline(always)]
     pub const fn opsr(self) -> crate::common::Reg<regs::Opsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "FLASH option control register"]
     #[inline(always)]
     pub const fn optcr(self) -> crate::common::Reg<regs::Optcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "FLASH non-secure status register"]
     #[inline(always)]
     pub const fn nssr(self) -> crate::common::Reg<regs::Nssr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "FLASH secure status register"]
     #[inline(always)]
     pub const fn secsr(self) -> crate::common::Reg<regs::Secsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "FLASH Non Secure control register"]
     #[inline(always)]
     pub const fn nscr(self) -> crate::common::Reg<regs::Nscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "FLASH non-secure clear control register"]
     #[inline(always)]
     pub const fn nsccr(self) -> crate::common::Reg<regs::Nsccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
     }
     #[doc = "FLASH privilege configuration register"]
     #[inline(always)]
     pub const fn privcfgr(self) -> crate::common::Reg<regs::Privcfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3cusize) as _) }
     }
     #[doc = "FLASH HDP extension register"]
     #[inline(always)]
     pub const fn hdpextr(self) -> crate::common::Reg<regs::Hdpextr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
     }
     #[doc = "FLASH option status register"]
     #[inline(always)]
     pub const fn optsr_cur(self) -> crate::common::Reg<regs::Optsr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
     }
     #[doc = "FLASH option status register"]
     #[inline(always)]
     pub const fn optsr_prg(self) -> crate::common::Reg<regs::Optsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x54usize) as _) }
     }
     #[doc = "FLASH option status register 2"]
     #[inline(always)]
     pub const fn optsr2_cur(self) -> crate::common::Reg<regs::Optsr2, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x70usize) as _) }
     }
     #[doc = "FLASH option status register 2"]
     #[inline(always)]
     pub const fn optsr2_prg(self) -> crate::common::Reg<regs::Optsr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x74usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x74usize) as _) }
     }
     #[doc = "FLASH non-secure unique boot entry register"]
     #[inline(always)]
     pub const fn nsbootr_cur(self) -> crate::common::Reg<regs::Nsbootr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80usize) as _) }
     }
     #[doc = "FLASH non-secure unique boot entry address"]
     #[inline(always)]
     pub const fn nsbootr_prg(self) -> crate::common::Reg<regs::Nsbootr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x84usize) as _) }
     }
     #[doc = "FLASH non-secure OTP block lock"]
     #[inline(always)]
     pub const fn otpblr_cur(self) -> crate::common::Reg<regs::Otpblr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x90usize) as _) }
     }
     #[doc = "FLASH non-secure OTP block lock"]
     #[inline(always)]
     pub const fn otpblr_prg(self) -> crate::common::Reg<regs::Otpblr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x94usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x94usize) as _) }
     }
     #[doc = "FLASH privilege register for bank 1"]
     #[inline(always)]
     pub const fn privbb1r(self) -> crate::common::Reg<regs::Privbb, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xc0usize) as _) }
     }
     #[doc = "FLASH write sector protection for Bank1"]
     #[inline(always)]
     pub const fn wrpsgn1r_cur(self) -> crate::common::Reg<regs::Wrp, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xe8usize) as _) }
     }
     #[doc = "FLASH write sector protection for Bank1"]
     #[inline(always)]
     pub const fn wrpsgn1r_prg(self) -> crate::common::Reg<regs::Wrp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xecusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xecusize) as _) }
     }
     #[doc = "FLASH HDP Bank1 register"]
     #[inline(always)]
     pub const fn hdp1r_cur(self) -> crate::common::Reg<regs::Hdp1r, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf8usize) as _) }
     }
     #[doc = "FLASH HDP Bank1 register"]
     #[inline(always)]
     pub const fn hdp1r_prg(self) -> crate::common::Reg<regs::Hdp1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xfcusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xfcusize) as _) }
     }
     #[doc = "FLASH Flash ECC correction register"]
     #[inline(always)]
     pub const fn ecccorr(self) -> crate::common::Reg<regs::Ecccorr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize) as _) }
     }
     #[doc = "FLASH ECC detection register"]
     #[inline(always)]
     pub const fn eccdetr(self) -> crate::common::Reg<regs::Eccdetr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0104usize) as _) }
     }
     #[doc = "FLASH ECC data"]
     #[inline(always)]
     pub const fn eccdr(self) -> crate::common::Reg<regs::Eccdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0108usize) as _) }
     }
     #[doc = "FLASH write sector protection for Bank2"]
     #[inline(always)]
     pub const fn wrpsgn2r_cur(self) -> crate::common::Reg<regs::Wrp, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01e8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01e8usize) as _) }
     }
     #[doc = "FLASH write sector protection for Bank2"]
     #[inline(always)]
     pub const fn wrpsgn2r_prg(self) -> crate::common::Reg<regs::Wrp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01ecusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01ecusize) as _) }
     }
     #[doc = "FLASH HDP Bank2 register"]
     #[inline(always)]
     pub const fn hdp2r_cur(self) -> crate::common::Reg<regs::Hdp2r, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01f8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01f8usize) as _) }
     }
     #[doc = "FLASH HDP Bank2 register"]
     #[inline(always)]
     pub const fn hdp2r_prg(self) -> crate::common::Reg<regs::Hdp2r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01fcusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01fcusize) as _) }
     }
 }
 pub mod regs {
@@ -182,6 +182,7 @@ pub mod regs {
     pub struct Acr(pub u32);
     impl Acr {
         #[doc = "Read latency These bits are used to control the number of wait states used during read operations on both non-volatile memory banks. The application software has to program them to the correct value depending on the embedded Flash memory interface frequency and voltage conditions. ... Note: No check is performed by hardware to verify that the configuration is correct."]
+        #[must_use]
         #[inline(always)]
         pub const fn latency(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -189,10 +190,11 @@ pub mod regs {
         }
         #[doc = "Read latency These bits are used to control the number of wait states used during read operations on both non-volatile memory banks. The application software has to program them to the correct value depending on the embedded Flash memory interface frequency and voltage conditions. ... Note: No check is performed by hardware to verify that the configuration is correct."]
         #[inline(always)]
-        pub fn set_latency(&mut self, val: u8) {
+        pub const fn set_latency(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "Flash signal delay These bits are used to control the delay between non-volatile memory signals during programming operations. Application software has to program them to the correct value depending on the embedded Flash memory interface frequency. Please refer to for details. Note: No check is performed to verify that the configuration is correct. Two WRHIGHFREQ values can be selected for some frequencies."]
+        #[must_use]
         #[inline(always)]
         pub const fn wrhighfreq(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -200,10 +202,11 @@ pub mod regs {
         }
         #[doc = "Flash signal delay These bits are used to control the delay between non-volatile memory signals during programming operations. Application software has to program them to the correct value depending on the embedded Flash memory interface frequency. Please refer to for details. Note: No check is performed to verify that the configuration is correct. Two WRHIGHFREQ values can be selected for some frequencies."]
         #[inline(always)]
-        pub fn set_wrhighfreq(&mut self, val: u8) {
+        pub const fn set_wrhighfreq(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
         #[doc = "Prefetch enable. When bit value is modified, user must read back ACR register to be sure PRFTEN has been taken into account. Bits used to control the prefetch."]
+        #[must_use]
         #[inline(always)]
         pub const fn prften(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -211,10 +214,11 @@ pub mod regs {
         }
         #[doc = "Prefetch enable. When bit value is modified, user must read back ACR register to be sure PRFTEN has been taken into account. Bits used to control the prefetch."]
         #[inline(always)]
-        pub fn set_prften(&mut self, val: bool) {
+        pub const fn set_prften(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Smart prefetch enable. When bit value is modified, user must read back ACR register to be sure S_PRFTEN has been taken into account. Bits used to control the prefetch functionality."]
+        #[must_use]
         #[inline(always)]
         pub const fn s_prften(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -222,7 +226,7 @@ pub mod regs {
         }
         #[doc = "Smart prefetch enable. When bit value is modified, user must read back ACR register to be sure S_PRFTEN has been taken into account. Bits used to control the prefetch functionality."]
         #[inline(always)]
-        pub fn set_s_prften(&mut self, val: bool) {
+        pub const fn set_s_prften(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
@@ -261,6 +265,7 @@ pub mod regs {
     pub struct Ecccorr(pub u32);
     impl Ecccorr {
         #[doc = "ECC error address When an ECC error occurs (for single correction) during a read operation, the ADDR_ECC contains the address that generated the error. ADDR_ECC is reset when the flag error is reset. The embedded Flash memory programs the address in this register only when no ECC error flags are set. This means that only the first address that generated an ECC error is saved. The address in ADDR_ECC is relative to the Flash memory area where the error occurred (user Flash memory, system Flash memory, data area, read-only/OTP area)."]
+        #[must_use]
         #[inline(always)]
         pub const fn addr_ecc(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -268,10 +273,11 @@ pub mod regs {
         }
         #[doc = "ECC error address When an ECC error occurs (for single correction) during a read operation, the ADDR_ECC contains the address that generated the error. ADDR_ECC is reset when the flag error is reset. The embedded Flash memory programs the address in this register only when no ECC error flags are set. This means that only the first address that generated an ECC error is saved. The address in ADDR_ECC is relative to the Flash memory area where the error occurred (user Flash memory, system Flash memory, data area, read-only/OTP area)."]
         #[inline(always)]
-        pub fn set_addr_ecc(&mut self, val: u16) {
+        pub const fn set_addr_ecc(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
         #[doc = "ECC bank flag for corrected ECC error It indicates which bank is concerned by ECC error"]
+        #[must_use]
         #[inline(always)]
         pub const fn bk_ecc(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -279,10 +285,11 @@ pub mod regs {
         }
         #[doc = "ECC bank flag for corrected ECC error It indicates which bank is concerned by ECC error"]
         #[inline(always)]
-        pub fn set_bk_ecc(&mut self, val: bool) {
+        pub const fn set_bk_ecc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "ECC flag for corrected ECC error in system FLASH It indicates if system Flash memory is concerned by ECC error."]
+        #[must_use]
         #[inline(always)]
         pub const fn sysf_ecc(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -290,10 +297,11 @@ pub mod regs {
         }
         #[doc = "ECC flag for corrected ECC error in system FLASH It indicates if system Flash memory is concerned by ECC error."]
         #[inline(always)]
-        pub fn set_sysf_ecc(&mut self, val: bool) {
+        pub const fn set_sysf_ecc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "OTP ECC error bit This bit is set to 1 when one single ECC correction occurred during the last successful read operation from the read-only/ OTP area. The address of the ECC error is available in ADDR_ECC bitfield."]
+        #[must_use]
         #[inline(always)]
         pub const fn otp_ecc(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -301,10 +309,11 @@ pub mod regs {
         }
         #[doc = "OTP ECC error bit This bit is set to 1 when one single ECC correction occurred during the last successful read operation from the read-only/ OTP area. The address of the ECC error is available in ADDR_ECC bitfield."]
         #[inline(always)]
-        pub fn set_otp_ecc(&mut self, val: bool) {
+        pub const fn set_otp_ecc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "ECC single correction error interrupt enable bit When ECCCIE bit is set to 1, an interrupt is generated when an ECC single correction error occurs during a read operation."]
+        #[must_use]
         #[inline(always)]
         pub const fn ecccie(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -312,10 +321,11 @@ pub mod regs {
         }
         #[doc = "ECC single correction error interrupt enable bit When ECCCIE bit is set to 1, an interrupt is generated when an ECC single correction error occurs during a read operation."]
         #[inline(always)]
-        pub fn set_ecccie(&mut self, val: bool) {
+        pub const fn set_ecccie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "ECC correction set by hardware when single ECC error has been detected and corrected. Cleared by writing 1."]
+        #[must_use]
         #[inline(always)]
         pub const fn eccc(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -323,7 +333,7 @@ pub mod regs {
         }
         #[doc = "ECC correction set by hardware when single ECC error has been detected and corrected. Cleared by writing 1."]
         #[inline(always)]
-        pub fn set_eccc(&mut self, val: bool) {
+        pub const fn set_eccc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
     }
@@ -357,6 +367,7 @@ pub mod regs {
     pub struct Eccdetr(pub u32);
     impl Eccdetr {
         #[doc = "ECC error address When an ECC error occurs (double detection) during a read operation, the ADDR_ECC contains the address that generated the error. ADDR_ECC is reset when the flag error is reset. The embedded Flash memory programs the address in this register only when no ECC error flags are set. This means that only the first address that generated an double ECC error is saved. The address in ADDR_ECC is relative to the Flash memory area where the error occurred (user Flash memory, system Flash memory, data area, read-only/OTP area)."]
+        #[must_use]
         #[inline(always)]
         pub const fn addr_ecc(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -364,10 +375,11 @@ pub mod regs {
         }
         #[doc = "ECC error address When an ECC error occurs (double detection) during a read operation, the ADDR_ECC contains the address that generated the error. ADDR_ECC is reset when the flag error is reset. The embedded Flash memory programs the address in this register only when no ECC error flags are set. This means that only the first address that generated an double ECC error is saved. The address in ADDR_ECC is relative to the Flash memory area where the error occurred (user Flash memory, system Flash memory, data area, read-only/OTP area)."]
         #[inline(always)]
-        pub fn set_addr_ecc(&mut self, val: u16) {
+        pub const fn set_addr_ecc(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
         #[doc = "ECC fail bank for double ECC Error It indicates which bank is concerned by ECC error"]
+        #[must_use]
         #[inline(always)]
         pub const fn bk_ecc(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -375,10 +387,11 @@ pub mod regs {
         }
         #[doc = "ECC fail bank for double ECC Error It indicates which bank is concerned by ECC error"]
         #[inline(always)]
-        pub fn set_bk_ecc(&mut self, val: bool) {
+        pub const fn set_bk_ecc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "ECC fail for double ECC error in system Flash memory It indicates if system Flash memory is concerned by ECC error."]
+        #[must_use]
         #[inline(always)]
         pub const fn sysf_ecc(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -386,10 +399,11 @@ pub mod regs {
         }
         #[doc = "ECC fail for double ECC error in system Flash memory It indicates if system Flash memory is concerned by ECC error."]
         #[inline(always)]
-        pub fn set_sysf_ecc(&mut self, val: bool) {
+        pub const fn set_sysf_ecc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "OTP ECC error bit This bit is set to 1 when double ECC detection occurred during the last read operation from the read-only/ OTP area. The address of the ECC error is available in ADDR_ECC bit field."]
+        #[must_use]
         #[inline(always)]
         pub const fn otp_ecc(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -397,10 +411,11 @@ pub mod regs {
         }
         #[doc = "OTP ECC error bit This bit is set to 1 when double ECC detection occurred during the last read operation from the read-only/ OTP area. The address of the ECC error is available in ADDR_ECC bit field."]
         #[inline(always)]
-        pub fn set_otp_ecc(&mut self, val: bool) {
+        pub const fn set_otp_ecc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "ECC detection set by hardware when two ECC error has been detected. When this bit is set, a NMI is generated. Cleared by writing 1. Needs to be cleared in order to detect subsequent double ECC errors."]
+        #[must_use]
         #[inline(always)]
         pub const fn eccd(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -408,7 +423,7 @@ pub mod regs {
         }
         #[doc = "ECC detection set by hardware when two ECC error has been detected. When this bit is set, a NMI is generated. Cleared by writing 1. Needs to be cleared in order to detect subsequent double ECC errors."]
         #[inline(always)]
-        pub fn set_eccd(&mut self, val: bool) {
+        pub const fn set_eccd(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -441,6 +456,7 @@ pub mod regs {
     pub struct Eccdr(pub u32);
     impl Eccdr {
         #[doc = "ECC error data When an double detection ECC error occurs on special areas with 6-bit ECC on 16-bit of data (data area, read-only/OTP area), the failing data is read to this register. By checking if it is possible to determine whether the failure was on a real data, or due to access to uninitialized memory."]
+        #[must_use]
         #[inline(always)]
         pub const fn data_ecc(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -448,7 +464,7 @@ pub mod regs {
         }
         #[doc = "ECC error data When an double detection ECC error occurs on special areas with 6-bit ECC on 16-bit of data (data area, read-only/OTP area), the failing data is read to this register. By checking if it is possible to determine whether the failure was on a real data, or due to access to uninitialized memory."]
         #[inline(always)]
-        pub fn set_data_ecc(&mut self, val: u16) {
+        pub const fn set_data_ecc(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -475,6 +491,7 @@ pub mod regs {
     pub struct Hdp1r(pub u32);
     impl Hdp1r {
         #[doc = "HDPL barrier start set in number of 8 Kbytes sectors"]
+        #[must_use]
         #[inline(always)]
         pub const fn hdp1_strt(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -482,10 +499,11 @@ pub mod regs {
         }
         #[doc = "HDPL barrier start set in number of 8 Kbytes sectors"]
         #[inline(always)]
-        pub fn set_hdp1_strt(&mut self, val: u8) {
+        pub const fn set_hdp1_strt(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "HDPL barrier end set in number of 8 Kbytes sectors"]
+        #[must_use]
         #[inline(always)]
         pub const fn hdp1_end(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x07;
@@ -493,7 +511,7 @@ pub mod regs {
         }
         #[doc = "HDPL barrier end set in number of 8 Kbytes sectors"]
         #[inline(always)]
-        pub fn set_hdp1_end(&mut self, val: u8) {
+        pub const fn set_hdp1_end(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
         }
     }
@@ -528,6 +546,7 @@ pub mod regs {
     pub struct Hdp2r(pub u32);
     impl Hdp2r {
         #[doc = "Bank 2 HDPL barrier start set in number of 8 Kbytes sectors"]
+        #[must_use]
         #[inline(always)]
         pub const fn hdp2_strt(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -535,10 +554,11 @@ pub mod regs {
         }
         #[doc = "Bank 2 HDPL barrier start set in number of 8 Kbytes sectors"]
         #[inline(always)]
-        pub fn set_hdp2_strt(&mut self, val: u8) {
+        pub const fn set_hdp2_strt(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Bank 2 HDPL barrier end set in number of 8 Kbytes sectors"]
+        #[must_use]
         #[inline(always)]
         pub const fn hdp2_end(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x07;
@@ -546,7 +566,7 @@ pub mod regs {
         }
         #[doc = "Bank 2 HDPL barrier end set in number of 8 Kbytes sectors"]
         #[inline(always)]
-        pub fn set_hdp2_end(&mut self, val: u8) {
+        pub const fn set_hdp2_end(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
         }
     }
@@ -581,6 +601,7 @@ pub mod regs {
     pub struct Hdpextr(pub u32);
     impl Hdpextr {
         #[doc = "HDP area extension in 8 Kbytes sectors in Bank1. Extension is added after the HDP1_END sector."]
+        #[must_use]
         #[inline(always)]
         pub const fn hdp1_ext(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -588,10 +609,11 @@ pub mod regs {
         }
         #[doc = "HDP area extension in 8 Kbytes sectors in Bank1. Extension is added after the HDP1_END sector."]
         #[inline(always)]
-        pub fn set_hdp1_ext(&mut self, val: u8) {
+        pub const fn set_hdp1_ext(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "HDP area extension in 8 Kbytes sectors in Bank2. Extension is added after the HDP2_END sector."]
+        #[must_use]
         #[inline(always)]
         pub const fn hdp2_ext(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x07;
@@ -599,7 +621,7 @@ pub mod regs {
         }
         #[doc = "HDP area extension in 8 Kbytes sectors in Bank2. Extension is added after the HDP2_END sector."]
         #[inline(always)]
-        pub fn set_hdp2_ext(&mut self, val: u8) {
+        pub const fn set_hdp2_ext(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
         }
     }
@@ -634,6 +656,7 @@ pub mod regs {
     pub struct Nsbootr(pub u32);
     impl Nsbootr {
         #[doc = "A field locking the values of SWAP_BANK, and NSBOOTADD settings."]
+        #[must_use]
         #[inline(always)]
         pub const fn nsboot_lock(&self) -> super::vals::NsbootrNsbootLock {
             let val = (self.0 >> 0usize) & 0xff;
@@ -641,10 +664,11 @@ pub mod regs {
         }
         #[doc = "A field locking the values of SWAP_BANK, and NSBOOTADD settings."]
         #[inline(always)]
-        pub fn set_nsboot_lock(&mut self, val: super::vals::NsbootrNsbootLock) {
+        pub const fn set_nsboot_lock(&mut self, val: super::vals::NsbootrNsbootLock) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val.to_bits() as u32) & 0xff) << 0usize);
         }
         #[doc = "unique boot entry address These bits reflect the UBE address"]
+        #[must_use]
         #[inline(always)]
         pub const fn nsbootadd(&self) -> u32 {
             let val = (self.0 >> 8usize) & 0x00ff_ffff;
@@ -652,7 +676,7 @@ pub mod regs {
         }
         #[doc = "unique boot entry address These bits reflect the UBE address"]
         #[inline(always)]
-        pub fn set_nsbootadd(&mut self, val: u32) {
+        pub const fn set_nsbootadd(&mut self, val: u32) {
             self.0 = (self.0 & !(0x00ff_ffff << 8usize)) | (((val as u32) & 0x00ff_ffff) << 8usize);
         }
     }
@@ -687,6 +711,7 @@ pub mod regs {
     pub struct Nsccr(pub u32);
     impl Nsccr {
         #[doc = "EOP flag clear bit Setting this bit to 1 resets to 0 EOP flag in FLASH_NSSR register."]
+        #[must_use]
         #[inline(always)]
         pub const fn clr_eop(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -694,10 +719,11 @@ pub mod regs {
         }
         #[doc = "EOP flag clear bit Setting this bit to 1 resets to 0 EOP flag in FLASH_NSSR register."]
         #[inline(always)]
-        pub fn set_clr_eop(&mut self, val: bool) {
+        pub const fn set_clr_eop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "WRPERR flag clear bit Setting this bit to 1 resets to 0 WRPERR flag in FLASH_NSSR register."]
+        #[must_use]
         #[inline(always)]
         pub const fn clr_wrperr(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -705,10 +731,11 @@ pub mod regs {
         }
         #[doc = "WRPERR flag clear bit Setting this bit to 1 resets to 0 WRPERR flag in FLASH_NSSR register."]
         #[inline(always)]
-        pub fn set_clr_wrperr(&mut self, val: bool) {
+        pub const fn set_clr_wrperr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "PGSERR flag clear bit Setting this bit to 1 resets to 0 PGSERR flag in FLASH_NSSR register."]
+        #[must_use]
         #[inline(always)]
         pub const fn clr_pgserr(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -716,10 +743,11 @@ pub mod regs {
         }
         #[doc = "PGSERR flag clear bit Setting this bit to 1 resets to 0 PGSERR flag in FLASH_NSSR register."]
         #[inline(always)]
-        pub fn set_clr_pgserr(&mut self, val: bool) {
+        pub const fn set_clr_pgserr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "STRBERR flag clear bit Setting this bit to 1 resets to 0 STRBERR flag in FLASH_NSSR register."]
+        #[must_use]
         #[inline(always)]
         pub const fn clr_strberr(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -727,10 +755,11 @@ pub mod regs {
         }
         #[doc = "STRBERR flag clear bit Setting this bit to 1 resets to 0 STRBERR flag in FLASH_NSSR register."]
         #[inline(always)]
-        pub fn set_clr_strberr(&mut self, val: bool) {
+        pub const fn set_clr_strberr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "INCERR flag clear bit Setting this bit to 1 resets to 0 INCERR flag in FLASH_NSSR register."]
+        #[must_use]
         #[inline(always)]
         pub const fn clr_incerr(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -738,10 +767,11 @@ pub mod regs {
         }
         #[doc = "INCERR flag clear bit Setting this bit to 1 resets to 0 INCERR flag in FLASH_NSSR register."]
         #[inline(always)]
-        pub fn set_clr_incerr(&mut self, val: bool) {
+        pub const fn set_clr_incerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "Clear the flag corresponding flag in FLASH_NSSR by writing this bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn clr_optchangeerr(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -749,7 +779,7 @@ pub mod regs {
         }
         #[doc = "Clear the flag corresponding flag in FLASH_NSSR by writing this bit."]
         #[inline(always)]
-        pub fn set_clr_optchangeerr(&mut self, val: bool) {
+        pub const fn set_clr_optchangeerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
     }
@@ -783,6 +813,7 @@ pub mod regs {
     pub struct Nscr(pub u32);
     impl Nscr {
         #[doc = "configuration lock bit This bit locks the FLASH_NSCR register. The correct write sequence to FLASH_NSKEYR register unlocks this bit. If a wrong sequence is executed, or if the unlock sequence to FLASH_NSKEYR is performed twice, this bit remains locked until the next system reset. LOCK can be set by programming it to 1. When set to 1, a new unlock sequence is mandatory to unlock it. When LOCK changes from 0 to 1, the other bits of FLASH_NSCR register do not change."]
+        #[must_use]
         #[inline(always)]
         pub const fn lock(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -790,10 +821,11 @@ pub mod regs {
         }
         #[doc = "configuration lock bit This bit locks the FLASH_NSCR register. The correct write sequence to FLASH_NSKEYR register unlocks this bit. If a wrong sequence is executed, or if the unlock sequence to FLASH_NSKEYR is performed twice, this bit remains locked until the next system reset. LOCK can be set by programming it to 1. When set to 1, a new unlock sequence is mandatory to unlock it. When LOCK changes from 0 to 1, the other bits of FLASH_NSCR register do not change."]
         #[inline(always)]
-        pub fn set_lock(&mut self, val: bool) {
+        pub const fn set_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "programming control bit PG can be programmed only when LOCK is cleared to 0. PG allows programming in Bank1 and Bank2."]
+        #[must_use]
         #[inline(always)]
         pub const fn pg(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -801,10 +833,11 @@ pub mod regs {
         }
         #[doc = "programming control bit PG can be programmed only when LOCK is cleared to 0. PG allows programming in Bank1 and Bank2."]
         #[inline(always)]
-        pub fn set_pg(&mut self, val: bool) {
+        pub const fn set_pg(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "sector erase request Setting SER bit to 1 requests a sector erase. SER can be programmed only when LOCK is cleared to 0. If MER and SER are also set, a PGSERR is raised."]
+        #[must_use]
         #[inline(always)]
         pub const fn ser(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -812,10 +845,11 @@ pub mod regs {
         }
         #[doc = "sector erase request Setting SER bit to 1 requests a sector erase. SER can be programmed only when LOCK is cleared to 0. If MER and SER are also set, a PGSERR is raised."]
         #[inline(always)]
-        pub fn set_ser(&mut self, val: bool) {
+        pub const fn set_ser(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "erase request Setting BER bit to 1 requests a bank erase operation (user Flash memory only). BER can be programmed only when LOCK is cleared to 0. If MER and SER are also set, a PGSERR is raised. Note: Write protection error is triggered when a bank erase is required and some sectors are protected."]
+        #[must_use]
         #[inline(always)]
         pub const fn ber(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -823,10 +857,11 @@ pub mod regs {
         }
         #[doc = "erase request Setting BER bit to 1 requests a bank erase operation (user Flash memory only). BER can be programmed only when LOCK is cleared to 0. If MER and SER are also set, a PGSERR is raised. Note: Write protection error is triggered when a bank erase is required and some sectors are protected."]
         #[inline(always)]
-        pub fn set_ber(&mut self, val: bool) {
+        pub const fn set_ber(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "write forcing control bit FW forces a write operation even if the write buffer is not full. In this case all bits not written are set to 1 by hardware. FW can be programmed only when LOCK is cleared to 0. The embedded Flash memory resets FW when the corresponding operation has been acknowledged. Note: Using a force-write operation prevents the application from updating later the missing bits with something else than 1, because it is likely that it leads to permanent ECC error. Write forcing is effective only if the write buffer is not empty (in particular, FW does not start several write operations when the force-write operations are performed consecutively). Since there is just one write buffer, FW can force a write in bank1 or bank2."]
+        #[must_use]
         #[inline(always)]
         pub const fn fw(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -834,10 +869,11 @@ pub mod regs {
         }
         #[doc = "write forcing control bit FW forces a write operation even if the write buffer is not full. In this case all bits not written are set to 1 by hardware. FW can be programmed only when LOCK is cleared to 0. The embedded Flash memory resets FW when the corresponding operation has been acknowledged. Note: Using a force-write operation prevents the application from updating later the missing bits with something else than 1, because it is likely that it leads to permanent ECC error. Write forcing is effective only if the write buffer is not empty (in particular, FW does not start several write operations when the force-write operations are performed consecutively). Since there is just one write buffer, FW can force a write in bank1 or bank2."]
         #[inline(always)]
-        pub fn set_fw(&mut self, val: bool) {
+        pub const fn set_fw(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "erase start control bit STRT bit is used to start a sector erase or a bank erase operation. STRT can be programmed only when LOCK is cleared to 0. STRT is reset at the end of the operation or when an error occurs. It cannot be reseted by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn strt(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -845,10 +881,11 @@ pub mod regs {
         }
         #[doc = "erase start control bit STRT bit is used to start a sector erase or a bank erase operation. STRT can be programmed only when LOCK is cleared to 0. STRT is reset at the end of the operation or when an error occurs. It cannot be reseted by software."]
         #[inline(always)]
-        pub fn set_strt(&mut self, val: bool) {
+        pub const fn set_strt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "sector erase selection number These bits are used to select the target sector for an erase operation (they are unused otherwise). SNB can be programmed only when LOCK is cleared to 0. ..."]
+        #[must_use]
         #[inline(always)]
         pub const fn snb(&self) -> u8 {
             let val = (self.0 >> 6usize) & 0x07;
@@ -856,10 +893,11 @@ pub mod regs {
         }
         #[doc = "sector erase selection number These bits are used to select the target sector for an erase operation (they are unused otherwise). SNB can be programmed only when LOCK is cleared to 0. ..."]
         #[inline(always)]
-        pub fn set_snb(&mut self, val: u8) {
+        pub const fn set_snb(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 6usize)) | (((val as u32) & 0x07) << 6usize);
         }
         #[doc = "Mass erase request Setting MER bit to 1 requests a mass erase operation (user Flash memory only). MER can be programmed only when LOCK is cleared to 0. If BER or SER are both set, a PGSERR is raised. Error is triggered when a mass erase is required and some sectors are protected."]
+        #[must_use]
         #[inline(always)]
         pub const fn mer(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -867,10 +905,11 @@ pub mod regs {
         }
         #[doc = "Mass erase request Setting MER bit to 1 requests a mass erase operation (user Flash memory only). MER can be programmed only when LOCK is cleared to 0. If BER or SER are both set, a PGSERR is raised. Error is triggered when a mass erase is required and some sectors are protected."]
         #[inline(always)]
-        pub fn set_mer(&mut self, val: bool) {
+        pub const fn set_mer(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "end of operation interrupt control bit Setting EOPIE bit to 1 enables the generation of an interrupt at the end of a program or erase operation. EOPIE can be programmed only when LOCK is cleared to 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn eopie(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -878,10 +917,11 @@ pub mod regs {
         }
         #[doc = "end of operation interrupt control bit Setting EOPIE bit to 1 enables the generation of an interrupt at the end of a program or erase operation. EOPIE can be programmed only when LOCK is cleared to 0."]
         #[inline(always)]
-        pub fn set_eopie(&mut self, val: bool) {
+        pub const fn set_eopie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "write protection error interrupt enable bit When WRPERRIE bit is set to 1, an interrupt is generated when a protection error occurs during a program operation. WRPERRIE can be programmed only when LOCK is cleared to 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn wrperrie(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -889,10 +929,11 @@ pub mod regs {
         }
         #[doc = "write protection error interrupt enable bit When WRPERRIE bit is set to 1, an interrupt is generated when a protection error occurs during a program operation. WRPERRIE can be programmed only when LOCK is cleared to 0."]
         #[inline(always)]
-        pub fn set_wrperrie(&mut self, val: bool) {
+        pub const fn set_wrperrie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "programming sequence error interrupt enable bit When PGSERRIE bit is set to 1, an interrupt is generated when a sequence error occurs during a program operation. PGSERRIE can be programmed only when LOCK is cleared to 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn pgserrie(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -900,10 +941,11 @@ pub mod regs {
         }
         #[doc = "programming sequence error interrupt enable bit When PGSERRIE bit is set to 1, an interrupt is generated when a sequence error occurs during a program operation. PGSERRIE can be programmed only when LOCK is cleared to 0."]
         #[inline(always)]
-        pub fn set_pgserrie(&mut self, val: bool) {
+        pub const fn set_pgserrie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "strobe error interrupt enable bit When STRBERRIE bit is set to 1, an interrupt is generated when a strobe error occurs (the master programs several times the same byte in the write buffer) during a write operation. STRBERRIE can be programmed only when LOCK is cleared to 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn strberrie(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -911,10 +953,11 @@ pub mod regs {
         }
         #[doc = "strobe error interrupt enable bit When STRBERRIE bit is set to 1, an interrupt is generated when a strobe error occurs (the master programs several times the same byte in the write buffer) during a write operation. STRBERRIE can be programmed only when LOCK is cleared to 0."]
         #[inline(always)]
-        pub fn set_strberrie(&mut self, val: bool) {
+        pub const fn set_strberrie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "inconsistency error interrupt enable bit When INCERRIE bit is set to 1, an interrupt is generated when an inconsistency error occurs during a write operation. INCERRIE can be programmed only when LOCK is cleared to 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn incerrie(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -922,10 +965,11 @@ pub mod regs {
         }
         #[doc = "inconsistency error interrupt enable bit When INCERRIE bit is set to 1, an interrupt is generated when an inconsistency error occurs during a write operation. INCERRIE can be programmed only when LOCK is cleared to 0."]
         #[inline(always)]
-        pub fn set_incerrie(&mut self, val: bool) {
+        pub const fn set_incerrie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "Option byte change error interrupt enable bit OPTCHANGEERRIE bit controls if an interrupt has to be generated when an error occurs during an option byte change. This bit can be programmed only when LOCK bit is cleared to 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn optchangeerrie(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -933,10 +977,11 @@ pub mod regs {
         }
         #[doc = "Option byte change error interrupt enable bit OPTCHANGEERRIE bit controls if an interrupt has to be generated when an error occurs during an option byte change. This bit can be programmed only when LOCK bit is cleared to 0."]
         #[inline(always)]
-        pub fn set_optchangeerrie(&mut self, val: bool) {
+        pub const fn set_optchangeerrie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "Bank selector bit BKSEL can only be programmed when LOCK is cleared to 0. The bit selects physical bank, SWAP_BANK setting is ignored."]
+        #[must_use]
         #[inline(always)]
         pub const fn bksel(&self) -> super::vals::Bksel {
             let val = (self.0 >> 31usize) & 0x01;
@@ -944,7 +989,7 @@ pub mod regs {
         }
         #[doc = "Bank selector bit BKSEL can only be programmed when LOCK is cleared to 0. The bit selects physical bank, SWAP_BANK setting is ignored."]
         #[inline(always)]
-        pub fn set_bksel(&mut self, val: super::vals::Bksel) {
+        pub const fn set_bksel(&mut self, val: super::vals::Bksel) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
         }
     }
@@ -987,6 +1032,7 @@ pub mod regs {
     pub struct Nssr(pub u32);
     impl Nssr {
         #[doc = "busy flag BSY flag indicates that a Flash memory is busy by an operation (write, erase, option byte change). It is set at the beginning of a Flash memory operation and cleared when the operation finishes or an error occurs."]
+        #[must_use]
         #[inline(always)]
         pub const fn bsy(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -994,10 +1040,11 @@ pub mod regs {
         }
         #[doc = "busy flag BSY flag indicates that a Flash memory is busy by an operation (write, erase, option byte change). It is set at the beginning of a Flash memory operation and cleared when the operation finishes or an error occurs."]
         #[inline(always)]
-        pub fn set_bsy(&mut self, val: bool) {
+        pub const fn set_bsy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "write buffer not empty flag WBNE flag is set when the embedded Flash memory is waiting for new data to complete the write buffer. In this state, the write buffer is not empty. WBNE is reset by hardware each time the write buffer is complete or the write buffer is emptied following one of the event below: the application software forces the write operation using FW bit in FLASH_NSCR the embedded Flash memory detects an error that involves data loss This bit cannot be reset by software writing 0 directly. To reset it, clear the write buffer by performing any of the above listed actions, or send the missing data."]
+        #[must_use]
         #[inline(always)]
         pub const fn wbne(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1005,10 +1052,11 @@ pub mod regs {
         }
         #[doc = "write buffer not empty flag WBNE flag is set when the embedded Flash memory is waiting for new data to complete the write buffer. In this state, the write buffer is not empty. WBNE is reset by hardware each time the write buffer is complete or the write buffer is emptied following one of the event below: the application software forces the write operation using FW bit in FLASH_NSCR the embedded Flash memory detects an error that involves data loss This bit cannot be reset by software writing 0 directly. To reset it, clear the write buffer by performing any of the above listed actions, or send the missing data."]
         #[inline(always)]
-        pub fn set_wbne(&mut self, val: bool) {
+        pub const fn set_wbne(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "data buffer not empty flag DBNE flag is set when the embedded Flash memory interface is processing 6-bits ECC data in dedicated buffer. This bit cannot be set to 0 by software. The hardware resets it once the buffer is free."]
+        #[must_use]
         #[inline(always)]
         pub const fn dbne(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1016,10 +1064,11 @@ pub mod regs {
         }
         #[doc = "data buffer not empty flag DBNE flag is set when the embedded Flash memory interface is processing 6-bits ECC data in dedicated buffer. This bit cannot be set to 0 by software. The hardware resets it once the buffer is free."]
         #[inline(always)]
-        pub fn set_dbne(&mut self, val: bool) {
+        pub const fn set_dbne(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "end of operation flag EOP flag is set when a operation (program/erase) completes. An interrupt is generated if the EOPIE is set to 1. It is not necessary to reset EOP before starting a new operation. EOP bit is cleared by writing 1 to CLR_EOP bit in FLASH_NSCCR register."]
+        #[must_use]
         #[inline(always)]
         pub const fn eop(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1027,10 +1076,11 @@ pub mod regs {
         }
         #[doc = "end of operation flag EOP flag is set when a operation (program/erase) completes. An interrupt is generated if the EOPIE is set to 1. It is not necessary to reset EOP before starting a new operation. EOP bit is cleared by writing 1 to CLR_EOP bit in FLASH_NSCCR register."]
         #[inline(always)]
-        pub fn set_eop(&mut self, val: bool) {
+        pub const fn set_eop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "write protection error flag WRPERR flag is raised when a protection error occurs during a program operation. An interrupt is also generated if the WRPERRIE is set to 1. Writing 1 to CLR_WRPERR bit in FLASH_NSCCR register clears WRPERR."]
+        #[must_use]
         #[inline(always)]
         pub const fn wrperr(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -1038,10 +1088,11 @@ pub mod regs {
         }
         #[doc = "write protection error flag WRPERR flag is raised when a protection error occurs during a program operation. An interrupt is also generated if the WRPERRIE is set to 1. Writing 1 to CLR_WRPERR bit in FLASH_NSCCR register clears WRPERR."]
         #[inline(always)]
-        pub fn set_wrperr(&mut self, val: bool) {
+        pub const fn set_wrperr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "programming sequence error flag PGSERR flag is raised when a sequence error occurs. An interrupt is generated if the PGSERRIE bit is set to 1. Writing 1 to CLR_PGSERR bit in FLASH_NSCCR register clears PGSERR."]
+        #[must_use]
         #[inline(always)]
         pub const fn pgserr(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -1049,10 +1100,11 @@ pub mod regs {
         }
         #[doc = "programming sequence error flag PGSERR flag is raised when a sequence error occurs. An interrupt is generated if the PGSERRIE bit is set to 1. Writing 1 to CLR_PGSERR bit in FLASH_NSCCR register clears PGSERR."]
         #[inline(always)]
-        pub fn set_pgserr(&mut self, val: bool) {
+        pub const fn set_pgserr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "strobe error flag STRBERR flag is raised when a strobe error occurs (when the master attempts to write several times the same byte in the write buffer). An interrupt is generated if the STRBERRIE bit is set to 1. Writing 1 to CLR_STRBERR bit in FLASH_NSCCR register clears STRBERR."]
+        #[must_use]
         #[inline(always)]
         pub const fn strberr(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -1060,10 +1112,11 @@ pub mod regs {
         }
         #[doc = "strobe error flag STRBERR flag is raised when a strobe error occurs (when the master attempts to write several times the same byte in the write buffer). An interrupt is generated if the STRBERRIE bit is set to 1. Writing 1 to CLR_STRBERR bit in FLASH_NSCCR register clears STRBERR."]
         #[inline(always)]
-        pub fn set_strberr(&mut self, val: bool) {
+        pub const fn set_strberr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "inconsistency error flag INCERR flag is raised when a inconsistency error occurs. An interrupt is generated if INCERRIE is set to 1. Writing 1 to CLR_INCERR bit in the FLASH_NSCCR register clears INCERR."]
+        #[must_use]
         #[inline(always)]
         pub const fn incerr(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -1071,10 +1124,11 @@ pub mod regs {
         }
         #[doc = "inconsistency error flag INCERR flag is raised when a inconsistency error occurs. An interrupt is generated if INCERRIE is set to 1. Writing 1 to CLR_INCERR bit in the FLASH_NSCCR register clears INCERR."]
         #[inline(always)]
-        pub fn set_incerr(&mut self, val: bool) {
+        pub const fn set_incerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "Option byte change error flag OPTCHANGEERR flag indicates that an error occurred during an option byte change operation. When OPTCHANGEERR is set to 1, the option byte change operation did not successfully complete. An interrupt is generated when this flag is raised if the OPTCHANGEERRIE bit of FLASH_NSCR register is set to 1. Writing 1 to CLR_OPTCHANGEERR of register FLASH_CCR clears OPTCHANGEERR. Note: The OPTSTRT bit in FLASH_OPTCR cannot be set while OPTCHANGEERR is set."]
+        #[must_use]
         #[inline(always)]
         pub const fn optchangeerr(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -1082,7 +1136,7 @@ pub mod regs {
         }
         #[doc = "Option byte change error flag OPTCHANGEERR flag indicates that an error occurred during an option byte change operation. When OPTCHANGEERR is set to 1, the option byte change operation did not successfully complete. An interrupt is generated when this flag is raised if the OPTCHANGEERRIE bit of FLASH_NSCR register is set to 1. Writing 1 to CLR_OPTCHANGEERR of register FLASH_CCR clears OPTCHANGEERR. Note: The OPTSTRT bit in FLASH_OPTCR cannot be set while OPTCHANGEERR is set."]
         #[inline(always)]
-        pub fn set_optchangeerr(&mut self, val: bool) {
+        pub const fn set_optchangeerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
     }
@@ -1119,6 +1173,7 @@ pub mod regs {
     pub struct Opsr(pub u32);
     impl Opsr {
         #[doc = "Interrupted operation address."]
+        #[must_use]
         #[inline(always)]
         pub const fn addr_op(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x000f_ffff;
@@ -1126,10 +1181,11 @@ pub mod regs {
         }
         #[doc = "Interrupted operation address."]
         #[inline(always)]
-        pub fn set_addr_op(&mut self, val: u32) {
+        pub const fn set_addr_op(&mut self, val: u32) {
             self.0 = (self.0 & !(0x000f_ffff << 0usize)) | (((val as u32) & 0x000f_ffff) << 0usize);
         }
         #[doc = "Interrupted operation bank It indicates which bank was concerned by operation."]
+        #[must_use]
         #[inline(always)]
         pub const fn bk_op(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -1137,10 +1193,11 @@ pub mod regs {
         }
         #[doc = "Interrupted operation bank It indicates which bank was concerned by operation."]
         #[inline(always)]
-        pub fn set_bk_op(&mut self, val: bool) {
+        pub const fn set_bk_op(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "Operation in system Flash memory interrupted Indicates that reset interrupted an ongoing operation in System Flash."]
+        #[must_use]
         #[inline(always)]
         pub const fn sysf_op(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -1148,10 +1205,11 @@ pub mod regs {
         }
         #[doc = "Operation in system Flash memory interrupted Indicates that reset interrupted an ongoing operation in System Flash."]
         #[inline(always)]
-        pub fn set_sysf_op(&mut self, val: bool) {
+        pub const fn set_sysf_op(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "OTP operation interrupted Indicates that reset interrupted an ongoing operation in OTP area."]
+        #[must_use]
         #[inline(always)]
         pub const fn otp_op(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -1159,10 +1217,11 @@ pub mod regs {
         }
         #[doc = "OTP operation interrupted Indicates that reset interrupted an ongoing operation in OTP area."]
         #[inline(always)]
-        pub fn set_otp_op(&mut self, val: bool) {
+        pub const fn set_otp_op(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "Flash memory operation code"]
+        #[must_use]
         #[inline(always)]
         pub const fn code_op(&self) -> super::vals::CodeOp {
             let val = (self.0 >> 29usize) & 0x07;
@@ -1170,7 +1229,7 @@ pub mod regs {
         }
         #[doc = "Flash memory operation code"]
         #[inline(always)]
-        pub fn set_code_op(&mut self, val: super::vals::CodeOp) {
+        pub const fn set_code_op(&mut self, val: super::vals::CodeOp) {
             self.0 = (self.0 & !(0x07 << 29usize)) | (((val.to_bits() as u32) & 0x07) << 29usize);
         }
     }
@@ -1211,6 +1270,7 @@ pub mod regs {
     pub struct Optcr(pub u32);
     impl Optcr {
         #[doc = "FLASH_OPTCR lock option configuration bit The OPTLOCK bit locks the FLASH_OPTCR register as well as all _PRG registers. The correct write sequence to FLASH_OPTKEYR register unlocks this bit. If a wrong sequence is executed, or the unlock sequence to FLASH_OPTKEYR is performed twice, this bit remains locked until next system reset. It is possible to set OPTLOCK by programming it to 1. When set to 1, a new unlock sequence is mandatory to unlock it. When OPTLOCK changes from 0 to 1, the others bits of FLASH_OPTCR register do not change."]
+        #[must_use]
         #[inline(always)]
         pub const fn optlock(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1218,10 +1278,11 @@ pub mod regs {
         }
         #[doc = "FLASH_OPTCR lock option configuration bit The OPTLOCK bit locks the FLASH_OPTCR register as well as all _PRG registers. The correct write sequence to FLASH_OPTKEYR register unlocks this bit. If a wrong sequence is executed, or the unlock sequence to FLASH_OPTKEYR is performed twice, this bit remains locked until next system reset. It is possible to set OPTLOCK by programming it to 1. When set to 1, a new unlock sequence is mandatory to unlock it. When OPTLOCK changes from 0 to 1, the others bits of FLASH_OPTCR register do not change."]
         #[inline(always)]
-        pub fn set_optlock(&mut self, val: bool) {
+        pub const fn set_optlock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Option byte start change option configuration bit OPTSTRT triggers an option byte change operation. The user can set OPTSTRT only when the OPTLOCK bit is cleared to 0. It’s set only by Software and cleared when the option byte change is completed or an error occurs (PGSERR or OPTCHANGEERR). It’s reseted at the same time as BSY bit. The user application cannot modify any FLASH_XXX_PRG embedded Flash memory register until the option change operation has been completed. Before setting this bit, the user has to write the required values in the FLASH_XXX_PRG registers. The FLASH_XXX_PRG registers are locked until the option byte change operation has been executed in non-volatile memory."]
+        #[must_use]
         #[inline(always)]
         pub const fn optstrt(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1229,10 +1290,11 @@ pub mod regs {
         }
         #[doc = "Option byte start change option configuration bit OPTSTRT triggers an option byte change operation. The user can set OPTSTRT only when the OPTLOCK bit is cleared to 0. It’s set only by Software and cleared when the option byte change is completed or an error occurs (PGSERR or OPTCHANGEERR). It’s reseted at the same time as BSY bit. The user application cannot modify any FLASH_XXX_PRG embedded Flash memory register until the option change operation has been completed. Before setting this bit, the user has to write the required values in the FLASH_XXX_PRG registers. The FLASH_XXX_PRG registers are locked until the option byte change operation has been executed in non-volatile memory."]
         #[inline(always)]
-        pub fn set_optstrt(&mut self, val: bool) {
+        pub const fn set_optstrt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Bank swapping option configuration bit SWAP_BANK controls whether Bank1 and Bank2 are swapped or not. This bit is loaded with the SWAP_BANK bit of FLASH_OPTSR_CUR register only after reset or POR."]
+        #[must_use]
         #[inline(always)]
         pub const fn swap_bank(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -1240,7 +1302,7 @@ pub mod regs {
         }
         #[doc = "Bank swapping option configuration bit SWAP_BANK controls whether Bank1 and Bank2 are swapped or not. This bit is loaded with the SWAP_BANK bit of FLASH_OPTSR_CUR register only after reset or POR."]
         #[inline(always)]
-        pub fn set_swap_bank(&mut self, val: bool) {
+        pub const fn set_swap_bank(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -1277,6 +1339,7 @@ pub mod regs {
     pub struct Optsr(pub u32);
     impl Optsr {
         #[doc = "Brownout level option status bit These bits reflects the power level that generates a system reset."]
+        #[must_use]
         #[inline(always)]
         pub const fn bor_lev(&self) -> super::vals::OptsrBorLev {
             let val = (self.0 >> 0usize) & 0x03;
@@ -1284,10 +1347,11 @@ pub mod regs {
         }
         #[doc = "Brownout level option status bit These bits reflects the power level that generates a system reset."]
         #[inline(always)]
-        pub fn set_bor_lev(&mut self, val: super::vals::OptsrBorLev) {
+        pub const fn set_bor_lev(&mut self, val: super::vals::OptsrBorLev) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "Brownout high enable status bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn borh_en(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1295,10 +1359,11 @@ pub mod regs {
         }
         #[doc = "Brownout high enable status bit"]
         #[inline(always)]
-        pub fn set_borh_en(&mut self, val: bool) {
+        pub const fn set_borh_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "IWDG control mode option status bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn iwdg_sw(&self) -> super::vals::OptsrIwdgSw {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1306,10 +1371,11 @@ pub mod regs {
         }
         #[doc = "IWDG control mode option status bit"]
         #[inline(always)]
-        pub fn set_iwdg_sw(&mut self, val: super::vals::OptsrIwdgSw) {
+        pub const fn set_iwdg_sw(&mut self, val: super::vals::OptsrIwdgSw) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
         }
         #[doc = "WWDG control mode option status bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn wwdg_sw(&self) -> super::vals::OptsrWwdgSw {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1317,10 +1383,11 @@ pub mod regs {
         }
         #[doc = "WWDG control mode option status bit"]
         #[inline(always)]
-        pub fn set_wwdg_sw(&mut self, val: super::vals::OptsrWwdgSw) {
+        pub const fn set_wwdg_sw(&mut self, val: super::vals::OptsrWwdgSw) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
         #[doc = "Core domain Shutdown entry reset option status bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn nrst_shdw(&self) -> super::vals::OptsrNrstShdw {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1328,10 +1395,11 @@ pub mod regs {
         }
         #[doc = "Core domain Shutdown entry reset option status bit"]
         #[inline(always)]
-        pub fn set_nrst_shdw(&mut self, val: super::vals::OptsrNrstShdw) {
+        pub const fn set_nrst_shdw(&mut self, val: super::vals::OptsrNrstShdw) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
         #[doc = "Core domain Stop entry reset option status bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn nrst_stop(&self) -> super::vals::OptsrNrstStop {
             let val = (self.0 >> 6usize) & 0x01;
@@ -1339,10 +1407,11 @@ pub mod regs {
         }
         #[doc = "Core domain Stop entry reset option status bit"]
         #[inline(always)]
-        pub fn set_nrst_stop(&mut self, val: super::vals::OptsrNrstStop) {
+        pub const fn set_nrst_stop(&mut self, val: super::vals::OptsrNrstStop) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
         }
         #[doc = "Core domain Standby entry reset option status bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn nrst_stdby(&self) -> super::vals::OptsrNrstStdby {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1350,10 +1419,11 @@ pub mod regs {
         }
         #[doc = "Core domain Standby entry reset option status bit"]
         #[inline(always)]
-        pub fn set_nrst_stdby(&mut self, val: super::vals::OptsrNrstStdby) {
+        pub const fn set_nrst_stdby(&mut self, val: super::vals::OptsrNrstStdby) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
         }
         #[doc = "Life state code (based on Hamming 8,4)."]
+        #[must_use]
         #[inline(always)]
         pub const fn product_state(&self) -> super::vals::ProductState {
             let val = (self.0 >> 8usize) & 0xff;
@@ -1361,10 +1431,11 @@ pub mod regs {
         }
         #[doc = "Life state code (based on Hamming 8,4)."]
         #[inline(always)]
-        pub fn set_product_state(&mut self, val: super::vals::ProductState) {
+        pub const fn set_product_state(&mut self, val: super::vals::ProductState) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val.to_bits() as u32) & 0xff) << 8usize);
         }
         #[doc = "High-speed IO at low VDD voltage status bit. This bit can be set only with VDD below 2.5 V."]
+        #[must_use]
         #[inline(always)]
         pub const fn io_vdd_hslv(&self) -> super::vals::OptsrIoVddHslv {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1372,10 +1443,11 @@ pub mod regs {
         }
         #[doc = "High-speed IO at low VDD voltage status bit. This bit can be set only with VDD below 2.5 V."]
         #[inline(always)]
-        pub fn set_io_vdd_hslv(&mut self, val: super::vals::OptsrIoVddHslv) {
+        pub const fn set_io_vdd_hslv(&mut self, val: super::vals::OptsrIoVddHslv) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
         #[doc = "High-speed IO at low VDDIO2 voltage status bit. This bit can be set only with VDDIO2 below 2.5 V."]
+        #[must_use]
         #[inline(always)]
         pub const fn io_vddio2_hslv(&self) -> super::vals::OptsrIoVddioHslv {
             let val = (self.0 >> 17usize) & 0x01;
@@ -1383,10 +1455,11 @@ pub mod regs {
         }
         #[doc = "High-speed IO at low VDDIO2 voltage status bit. This bit can be set only with VDDIO2 below 2.5 V."]
         #[inline(always)]
-        pub fn set_io_vddio2_hslv(&mut self, val: super::vals::OptsrIoVddioHslv) {
+        pub const fn set_io_vddio2_hslv(&mut self, val: super::vals::OptsrIoVddioHslv) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
         }
         #[doc = "IWDG Stop mode freeze option status bit When set the independent watchdog IWDG is in system Stop mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn iwdg_stop(&self) -> super::vals::OptsrIwdgStop {
             let val = (self.0 >> 20usize) & 0x01;
@@ -1394,10 +1467,11 @@ pub mod regs {
         }
         #[doc = "IWDG Stop mode freeze option status bit When set the independent watchdog IWDG is in system Stop mode."]
         #[inline(always)]
-        pub fn set_iwdg_stop(&mut self, val: super::vals::OptsrIwdgStop) {
+        pub const fn set_iwdg_stop(&mut self, val: super::vals::OptsrIwdgStop) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
         }
         #[doc = "IWDG Standby mode freeze option status bit When set the independent watchdog IWDG is frozen in system Standby mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn iwdg_stdby(&self) -> super::vals::OptsrIwdgStdby {
             let val = (self.0 >> 21usize) & 0x01;
@@ -1405,10 +1479,11 @@ pub mod regs {
         }
         #[doc = "IWDG Standby mode freeze option status bit When set the independent watchdog IWDG is frozen in system Standby mode."]
         #[inline(always)]
-        pub fn set_iwdg_stdby(&mut self, val: super::vals::OptsrIwdgStdby) {
+        pub const fn set_iwdg_stdby(&mut self, val: super::vals::OptsrIwdgStdby) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
         }
         #[doc = "Bank swapping option status bit SWAP_BANK reflects whether Bank1 and Bank2 are swapped or not. SWAP_BANK is loaded to SWAP_BANK of FLASH_OPTCR after a reset."]
+        #[must_use]
         #[inline(always)]
         pub const fn swap_bank(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -1416,7 +1491,7 @@ pub mod regs {
         }
         #[doc = "Bank swapping option status bit SWAP_BANK reflects whether Bank1 and Bank2 are swapped or not. SWAP_BANK is loaded to SWAP_BANK of FLASH_OPTCR after a reset."]
         #[inline(always)]
-        pub fn set_swap_bank(&mut self, val: bool) {
+        pub const fn set_swap_bank(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -1457,6 +1532,7 @@ pub mod regs {
     pub struct Optsr2(pub u32);
     impl Optsr2 {
         #[doc = "SRAM2 erase when system reset"]
+        #[must_use]
         #[inline(always)]
         pub const fn sram2_rst(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1464,10 +1540,11 @@ pub mod regs {
         }
         #[doc = "SRAM2 erase when system reset"]
         #[inline(always)]
-        pub fn set_sram2_rst(&mut self, val: bool) {
+        pub const fn set_sram2_rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Backup RAM ECC detection and correction disable"]
+        #[must_use]
         #[inline(always)]
         pub const fn bkpram_ecc(&self) -> super::vals::OptsrBkpramEcc {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1475,10 +1552,11 @@ pub mod regs {
         }
         #[doc = "Backup RAM ECC detection and correction disable"]
         #[inline(always)]
-        pub fn set_bkpram_ecc(&mut self, val: super::vals::OptsrBkpramEcc) {
+        pub const fn set_bkpram_ecc(&mut self, val: super::vals::OptsrBkpramEcc) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
         #[doc = "SRAM2 ECC detection and correction disable"]
+        #[must_use]
         #[inline(always)]
         pub const fn sram2_ecc(&self) -> super::vals::OptsrSramEcc {
             let val = (self.0 >> 6usize) & 0x01;
@@ -1486,10 +1564,11 @@ pub mod regs {
         }
         #[doc = "SRAM2 ECC detection and correction disable"]
         #[inline(always)]
-        pub fn set_sram2_ecc(&mut self, val: super::vals::OptsrSramEcc) {
+        pub const fn set_sram2_ecc(&mut self, val: super::vals::OptsrSramEcc) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
         }
         #[doc = "SRAM1 erase upon system reset"]
+        #[must_use]
         #[inline(always)]
         pub const fn sram1_rst(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -1497,10 +1576,11 @@ pub mod regs {
         }
         #[doc = "SRAM1 erase upon system reset"]
         #[inline(always)]
-        pub fn set_sram1_rst(&mut self, val: bool) {
+        pub const fn set_sram1_rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "SRAM1 ECC detection and correction disable"]
+        #[must_use]
         #[inline(always)]
         pub const fn sram1_ecc(&self) -> super::vals::OptsrSramEcc {
             let val = (self.0 >> 10usize) & 0x01;
@@ -1508,7 +1588,7 @@ pub mod regs {
         }
         #[doc = "SRAM1 ECC detection and correction disable"]
         #[inline(always)]
-        pub fn set_sram1_ecc(&mut self, val: super::vals::OptsrSramEcc) {
+        pub const fn set_sram1_ecc(&mut self, val: super::vals::OptsrSramEcc) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
         }
     }
@@ -1543,6 +1623,7 @@ pub mod regs {
         #[doc = "OTP block lock Block n corresponds to OTP 16-bit word 32 x n to 32 x n + 31. LOCKBL\\[n\\]
 = 1 indicates that all OTP 16-bit words in OTP Block n are locked and attempt to program them results in WRPERR. LOCKBL\\[n\\]
 = 0 indicates that all OTP 16-bit words in OTP Block n are not locked. When one block is locked, it is not possible to remove the write protection. LOCKBL bits can be set if the corresponding bit in FLASH_OTPBLR_CUR is cleared."]
+        #[must_use]
         #[inline(always)]
         pub const fn lockbl(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1552,7 +1633,7 @@ pub mod regs {
 = 1 indicates that all OTP 16-bit words in OTP Block n are locked and attempt to program them results in WRPERR. LOCKBL\\[n\\]
 = 0 indicates that all OTP 16-bit words in OTP Block n are not locked. When one block is locked, it is not possible to remove the write protection. LOCKBL bits can be set if the corresponding bit in FLASH_OTPBLR_CUR is cleared."]
         #[inline(always)]
-        pub fn set_lockbl(&mut self, val: u32) {
+        pub const fn set_lockbl(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1579,6 +1660,7 @@ pub mod regs {
     pub struct Privbb(pub u32);
     impl Privbb {
         #[doc = "Privileged / unprivileged 8 Kbytes Flash Bank1 sector attribute (y = 0 to 7)"]
+        #[must_use]
         #[inline(always)]
         pub const fn privbb(&self) -> super::vals::Privbb {
             let val = (self.0 >> 0usize) & 0xff;
@@ -1586,7 +1668,7 @@ pub mod regs {
         }
         #[doc = "Privileged / unprivileged 8 Kbytes Flash Bank1 sector attribute (y = 0 to 7)"]
         #[inline(always)]
-        pub fn set_privbb(&mut self, val: super::vals::Privbb) {
+        pub const fn set_privbb(&mut self, val: super::vals::Privbb) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val.to_bits() as u32) & 0xff) << 0usize);
         }
     }
@@ -1613,6 +1695,7 @@ pub mod regs {
     pub struct Privcfgr(pub u32);
     impl Privcfgr {
         #[doc = "privilege attribute for non secure registers"]
+        #[must_use]
         #[inline(always)]
         pub const fn nspriv(&self) -> super::vals::Nspriv {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1620,7 +1703,7 @@ pub mod regs {
         }
         #[doc = "privilege attribute for non secure registers"]
         #[inline(always)]
-        pub fn set_nspriv(&mut self, val: super::vals::Nspriv) {
+        pub const fn set_nspriv(&mut self, val: super::vals::Nspriv) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
     }
@@ -1647,6 +1730,7 @@ pub mod regs {
     pub struct Secsr(pub u32);
     impl Secsr {
         #[doc = "busy flag BSY flag indicates that a FLASH memory is busy by an operation (write, erase, option byte change, OBK operations, PUF operation). It is set at the beginning of a Flash memory operation and cleared when the operation finishes or an error occurs."]
+        #[must_use]
         #[inline(always)]
         pub const fn secbsy(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1654,10 +1738,11 @@ pub mod regs {
         }
         #[doc = "busy flag BSY flag indicates that a FLASH memory is busy by an operation (write, erase, option byte change, OBK operations, PUF operation). It is set at the beginning of a Flash memory operation and cleared when the operation finishes or an error occurs."]
         #[inline(always)]
-        pub fn set_secbsy(&mut self, val: bool) {
+        pub const fn set_secbsy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "write buffer not empty flag WBNE flag is set when the embedded Flash memory is waiting for new data to complete the write buffer. In this state, the write buffer is not empty. WBNE is reset by hardware each time the write buffer is complete or the write buffer is emptied following one of the event below: the application software forces the write operation using FW bit in FLASH_SECCR the embedded Flash memory detects an error that involves data loss This bit cannot be reset by writing 0 directly by software. To reset it, clear the write buffer by performing any of the above listed actions, or send the missing data."]
+        #[must_use]
         #[inline(always)]
         pub const fn secwbne(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1665,10 +1750,11 @@ pub mod regs {
         }
         #[doc = "write buffer not empty flag WBNE flag is set when the embedded Flash memory is waiting for new data to complete the write buffer. In this state, the write buffer is not empty. WBNE is reset by hardware each time the write buffer is complete or the write buffer is emptied following one of the event below: the application software forces the write operation using FW bit in FLASH_SECCR the embedded Flash memory detects an error that involves data loss This bit cannot be reset by writing 0 directly by software. To reset it, clear the write buffer by performing any of the above listed actions, or send the missing data."]
         #[inline(always)]
-        pub fn set_secwbne(&mut self, val: bool) {
+        pub const fn set_secwbne(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "data buffer not empty flag DBNE flag is set when the embedded Flash memory interface is processing 6-bits ECC data in dedicated buffer. This bit cannot be set to 0 by software. The hardware resets it once the buffer is free."]
+        #[must_use]
         #[inline(always)]
         pub const fn secdbne(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1676,10 +1762,11 @@ pub mod regs {
         }
         #[doc = "data buffer not empty flag DBNE flag is set when the embedded Flash memory interface is processing 6-bits ECC data in dedicated buffer. This bit cannot be set to 0 by software. The hardware resets it once the buffer is free."]
         #[inline(always)]
-        pub fn set_secdbne(&mut self, val: bool) {
+        pub const fn set_secdbne(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "end of operation flag EOP flag is set when a operation (program/erase) completes. An interrupt is generated if the EOPIE is set to. It is not necessary to reset EOP before starting a new operation. EOP bit is cleared by writing 1 to CLR_EOP bit in FLASH_SECCCR register."]
+        #[must_use]
         #[inline(always)]
         pub const fn seceop(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1687,10 +1774,11 @@ pub mod regs {
         }
         #[doc = "end of operation flag EOP flag is set when a operation (program/erase) completes. An interrupt is generated if the EOPIE is set to. It is not necessary to reset EOP before starting a new operation. EOP bit is cleared by writing 1 to CLR_EOP bit in FLASH_SECCCR register."]
         #[inline(always)]
-        pub fn set_seceop(&mut self, val: bool) {
+        pub const fn set_seceop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "write protection error flag WRPERR flag is raised when a protection error occurs during a program operation. An interrupt is also generated if the WRPERRIE is set to 1. Writing 1 to CLR_WRPERR bit in FLASH_SECCCR register clears WRPERR."]
+        #[must_use]
         #[inline(always)]
         pub const fn secwrperr(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -1698,10 +1786,11 @@ pub mod regs {
         }
         #[doc = "write protection error flag WRPERR flag is raised when a protection error occurs during a program operation. An interrupt is also generated if the WRPERRIE is set to 1. Writing 1 to CLR_WRPERR bit in FLASH_SECCCR register clears WRPERR."]
         #[inline(always)]
-        pub fn set_secwrperr(&mut self, val: bool) {
+        pub const fn set_secwrperr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "programming sequence error flag PGSERR flag is raised when a sequence error occurs. An interrupt is generated if the PGSERRIE bit is set to 1. Writing 1 to CLR_PGSERR bit in FLASH_SECCCR register clears PGSERR."]
+        #[must_use]
         #[inline(always)]
         pub const fn secpgserr(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -1709,10 +1798,11 @@ pub mod regs {
         }
         #[doc = "programming sequence error flag PGSERR flag is raised when a sequence error occurs. An interrupt is generated if the PGSERRIE bit is set to 1. Writing 1 to CLR_PGSERR bit in FLASH_SECCCR register clears PGSERR."]
         #[inline(always)]
-        pub fn set_secpgserr(&mut self, val: bool) {
+        pub const fn set_secpgserr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "strobe error flag STRBERR flag is raised when a strobe error occurs (when the master attempts to write several times the same byte in the write buffer). An interrupt is generated if the STRBERRIE bit is set to 1. Writing 1 to CLR_STRBERR bit in FLASH_SECCCR register clears STRBERR."]
+        #[must_use]
         #[inline(always)]
         pub const fn secstrberr(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -1720,10 +1810,11 @@ pub mod regs {
         }
         #[doc = "strobe error flag STRBERR flag is raised when a strobe error occurs (when the master attempts to write several times the same byte in the write buffer). An interrupt is generated if the STRBERRIE bit is set to 1. Writing 1 to CLR_STRBERR bit in FLASH_SECCCR register clears STRBERR."]
         #[inline(always)]
-        pub fn set_secstrberr(&mut self, val: bool) {
+        pub const fn set_secstrberr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "inconsistency error flag INCERR flag is raised when a inconsistency error occurs. An interrupt is generated if INCERRIE is set to 1. Writing 1 to CLR_INCERR bit in the FLASH_SECCCR register clears INCERR."]
+        #[must_use]
         #[inline(always)]
         pub const fn secincerr(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -1731,7 +1822,7 @@ pub mod regs {
         }
         #[doc = "inconsistency error flag INCERR flag is raised when a inconsistency error occurs. An interrupt is generated if INCERRIE is set to 1. Writing 1 to CLR_INCERR bit in the FLASH_SECCCR register clears INCERR."]
         #[inline(always)]
-        pub fn set_secincerr(&mut self, val: bool) {
+        pub const fn set_secincerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
     }
@@ -1767,6 +1858,7 @@ pub mod regs {
     pub struct Wrp(pub u32);
     impl Wrp {
         #[doc = "Bank2 sector protection option status byte Setting WRPSG2 bits to 0 write protects the corresponding sectors in bank 2 (0: write protected; 1: not write protected)"]
+        #[must_use]
         #[inline(always)]
         pub const fn wrpsg(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -1774,7 +1866,7 @@ pub mod regs {
         }
         #[doc = "Bank2 sector protection option status byte Setting WRPSG2 bits to 0 write protects the corresponding sectors in bank 2 (0: write protected; 1: not write protected)"]
         #[inline(always)]
-        pub fn set_wrpsg(&mut self, val: u8) {
+        pub const fn set_wrpsg(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }

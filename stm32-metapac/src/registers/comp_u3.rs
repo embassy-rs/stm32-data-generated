@@ -120,11 +120,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "NO_BLANKING",
-                    description: Some("No blanking."),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "BLANK1",
                     description: Some("Check data sheet for blanking options"),
                     value: 1,
@@ -139,6 +134,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Check data sheet for blanking options"),
                     value: 4,
                 },
+                EnumVariant {
+                    name: "NO_BLANKING",
+                    description: Some("No blanking."),
+                    value: 0,
+                },
             ],
         },
         Enum {
@@ -147,9 +147,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NONE",
+                    name: "HIGH",
                     description: None,
-                    value: 0,
+                    value: 3,
                 },
                 EnumVariant {
                     name: "LOW",
@@ -162,9 +162,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HIGH",
+                    name: "NONE",
                     description: None,
-                    value: 3,
+                    value: 0,
                 },
             ],
         },
@@ -173,26 +173,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 4,
             variants: &[
-                EnumVariant {
-                    name: "QUARTER_VREF",
-                    description: Some("Inverting input set to 1/4 VRef"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HALF_VREF",
-                    description: Some("Inverting input set to 1/2 VRef"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "THREE_QUARTER_VREF",
-                    description: Some("Inverting input set to 3/4 VRef"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "VREF",
-                    description: Some("Inverting input set to VRef"),
-                    value: 3,
-                },
                 EnumVariant {
                     name: "DAC1",
                     description: Some("Inverting input set to DAC1 output"),
@@ -204,6 +184,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 5,
                 },
                 EnumVariant {
+                    name: "HALF_VREF",
+                    description: Some("Inverting input set to 1/2 VRef"),
+                    value: 1,
+                },
+                EnumVariant {
                     name: "INM1",
                     description: Some("Inverting input set to IO1 (PB7)"),
                     value: 6,
@@ -213,6 +198,21 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Inverting input set to IO2 (PB3)"),
                     value: 7,
                 },
+                EnumVariant {
+                    name: "QUARTER_VREF",
+                    description: Some("Inverting input set to 1/4 VRef"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "THREE_QUARTER_VREF",
+                    description: Some("Inverting input set to 3/4 VRef"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "VREF",
+                    description: Some("Inverting input set to VRef"),
+                    value: 3,
+                },
             ],
         },
         Enum {
@@ -221,14 +221,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOT_INVERTED",
-                    description: Some("Output is not inverted."),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "INVERTED",
                     description: Some("Output is inverted."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NOT_INVERTED",
+                    description: Some("Output is not inverted."),
+                    value: 0,
                 },
             ],
         },
@@ -265,16 +265,16 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "THIS_INPSEL",
-                    description: Some("Signal selected with INPSEL[2:0] bitfield of this register."),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "OTHER_INPSEL",
                     description: Some(
                         "Signal selected with INPSEL[2:0] bitfield of the other register (required for window mode).",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "THIS_INPSEL",
+                    description: Some("Signal selected with INPSEL[2:0] bitfield of this register."),
+                    value: 0,
                 },
             ],
         },

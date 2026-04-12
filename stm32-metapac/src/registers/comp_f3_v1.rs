@@ -112,9 +112,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NONE",
-                    description: None,
-                    value: 0,
+                    name: "HIGH",
+                    description: Some("High hysteresis"),
+                    value: 3,
                 },
                 EnumVariant {
                     name: "LOW",
@@ -127,9 +127,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HIGH",
-                    description: Some("High hysteresis"),
-                    value: 3,
+                    name: "NONE",
+                    description: None,
+                    value: 0,
                 },
             ],
         },
@@ -144,14 +144,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEDIUM_SPEED",
-                    description: Some("Medium Speed mode"),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "LOW_SPEED",
                     description: Some("Low Speed mode"),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "MEDIUM_SPEED",
+                    description: Some("Medium Speed mode"),
+                    value: 1,
                 },
                 EnumVariant {
                     name: "VERY_LOW_SPEED",

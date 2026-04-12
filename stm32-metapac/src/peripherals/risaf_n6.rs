@@ -22,51 +22,51 @@ impl Risaf {
     #[doc = "RISAF configuration register."]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "RISAF illegal access status register."]
     #[inline(always)]
     pub const fn iasr(self) -> crate::common::Reg<regs::Iasr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "RISAF illegal access clear register."]
     #[inline(always)]
     pub const fn iacr(self) -> crate::common::Reg<regs::Iacr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "RISAF illegal access error status register."]
     #[inline(always)]
     pub const fn iaesr(self) -> crate::common::Reg<regs::Iaesr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "RISAF illegal address register."]
     #[inline(always)]
     pub const fn iaddr(self) -> crate::common::Reg<regs::Iaddr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "RISAF region configuration register."]
     #[inline(always)]
     pub const fn reg_cfgr(self, n: usize) -> crate::common::Reg<regs::RegCfgr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize + n * 64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize + n * 64usize) as _) }
     }
     #[doc = "RISAF region start address register."]
     #[inline(always)]
     pub const fn reg_startr(self, n: usize) -> crate::common::Reg<regs::RegStartr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize + n * 64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize + n * 64usize) as _) }
     }
     #[doc = "RISAF region end address register."]
     #[inline(always)]
     pub const fn reg_endr(self, n: usize) -> crate::common::Reg<regs::RegEndr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize + n * 64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize + n * 64usize) as _) }
     }
     #[doc = "RISAF region CID configuration register."]
     #[inline(always)]
     pub const fn reg_cidcfgr(self, n: usize) -> crate::common::Reg<regs::RegCidcfgr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize + n * 64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x4cusize + n * 64usize) as _) }
     }
 }
 pub mod regs {
@@ -76,6 +76,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "Global lock. When set, writes to RISAF registers are ignored except for IACR and region configuration registers."]
+        #[must_use]
         #[inline(always)]
         pub const fn glock(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -83,7 +84,7 @@ pub mod regs {
         }
         #[doc = "Global lock. When set, writes to RISAF registers are ignored except for IACR and region configuration registers."]
         #[inline(always)]
-        pub fn set_glock(&mut self, val: bool) {
+        pub const fn set_glock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -110,6 +111,7 @@ pub mod regs {
     pub struct Iacr(pub u32);
     impl Iacr {
         #[doc = "Clear configuration access error flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn caef(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -117,10 +119,11 @@ pub mod regs {
         }
         #[doc = "Clear configuration access error flag."]
         #[inline(always)]
-        pub fn set_caef(&mut self, val: bool) {
+        pub const fn set_caef(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Clear illegal access error flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn iaef(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -128,7 +131,7 @@ pub mod regs {
         }
         #[doc = "Clear illegal access error flag."]
         #[inline(always)]
-        pub fn set_iaef(&mut self, val: bool) {
+        pub const fn set_iaef(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -163,6 +166,7 @@ pub mod regs {
     pub struct Iaddr(pub u32);
     impl Iaddr {
         #[doc = "Illegal access address."]
+        #[must_use]
         #[inline(always)]
         pub const fn iadd(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -170,7 +174,7 @@ pub mod regs {
         }
         #[doc = "Illegal access address."]
         #[inline(always)]
-        pub fn set_iadd(&mut self, val: u32) {
+        pub const fn set_iadd(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -197,6 +201,7 @@ pub mod regs {
     pub struct Iaesr(pub u32);
     impl Iaesr {
         #[doc = "Illegal access compartment ID."]
+        #[must_use]
         #[inline(always)]
         pub const fn iacid(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -204,10 +209,11 @@ pub mod regs {
         }
         #[doc = "Illegal access compartment ID."]
         #[inline(always)]
-        pub fn set_iacid(&mut self, val: u8) {
+        pub const fn set_iacid(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Illegal access was privileged."]
+        #[must_use]
         #[inline(always)]
         pub const fn iapriv(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -215,10 +221,11 @@ pub mod regs {
         }
         #[doc = "Illegal access was privileged."]
         #[inline(always)]
-        pub fn set_iapriv(&mut self, val: bool) {
+        pub const fn set_iapriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Illegal access was secure."]
+        #[must_use]
         #[inline(always)]
         pub const fn iasec(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -226,10 +233,11 @@ pub mod regs {
         }
         #[doc = "Illegal access was secure."]
         #[inline(always)]
-        pub fn set_iasec(&mut self, val: bool) {
+        pub const fn set_iasec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Illegal access was a write (0 = read/fetch, 1 = write)."]
+        #[must_use]
         #[inline(always)]
         pub const fn ianrw(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -237,7 +245,7 @@ pub mod regs {
         }
         #[doc = "Illegal access was a write (0 = read/fetch, 1 = write)."]
         #[inline(always)]
-        pub fn set_ianrw(&mut self, val: bool) {
+        pub const fn set_ianrw(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
@@ -276,6 +284,7 @@ pub mod regs {
     pub struct Iasr(pub u32);
     impl Iasr {
         #[doc = "Configuration access error flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn caef(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -283,10 +292,11 @@ pub mod regs {
         }
         #[doc = "Configuration access error flag."]
         #[inline(always)]
-        pub fn set_caef(&mut self, val: bool) {
+        pub const fn set_caef(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Illegal access error flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn iaef(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -294,7 +304,7 @@ pub mod regs {
         }
         #[doc = "Illegal access error flag."]
         #[inline(always)]
-        pub fn set_iaef(&mut self, val: bool) {
+        pub const fn set_iaef(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -329,6 +339,7 @@ pub mod regs {
     pub struct RegCfgr(pub u32);
     impl RegCfgr {
         #[doc = "Base region enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn bren(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -336,10 +347,11 @@ pub mod regs {
         }
         #[doc = "Base region enable."]
         #[inline(always)]
-        pub fn set_bren(&mut self, val: bool) {
+        pub const fn set_bren(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Secure region. When set, only secure requests can access this region."]
+        #[must_use]
         #[inline(always)]
         pub const fn sec(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -347,10 +359,11 @@ pub mod regs {
         }
         #[doc = "Secure region. When set, only secure requests can access this region."]
         #[inline(always)]
-        pub fn set_sec(&mut self, val: bool) {
+        pub const fn set_sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Privileged access for compartment y. When set, compartment y can only access in privileged mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn privc(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -360,7 +373,7 @@ pub mod regs {
         }
         #[doc = "Privileged access for compartment y. When set, compartment y can only access in privileged mode."]
         #[inline(always)]
-        pub fn set_privc(&mut self, n: usize, val: bool) {
+        pub const fn set_privc(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 16usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -400,6 +413,7 @@ pub mod regs {
     pub struct RegCidcfgr(pub u32);
     impl RegCidcfgr {
         #[doc = "Read enable for compartment y."]
+        #[must_use]
         #[inline(always)]
         pub const fn rdenc(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -409,12 +423,13 @@ pub mod regs {
         }
         #[doc = "Read enable for compartment y."]
         #[inline(always)]
-        pub fn set_rdenc(&mut self, n: usize, val: bool) {
+        pub const fn set_rdenc(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Write enable for compartment y."]
+        #[must_use]
         #[inline(always)]
         pub const fn wrenc(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -424,7 +439,7 @@ pub mod regs {
         }
         #[doc = "Write enable for compartment y."]
         #[inline(always)]
-        pub fn set_wrenc(&mut self, n: usize, val: bool) {
+        pub const fn set_wrenc(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 16usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -470,6 +485,7 @@ pub mod regs {
     pub struct RegEndr(pub u32);
     impl RegEndr {
         #[doc = "Base region end address."]
+        #[must_use]
         #[inline(always)]
         pub const fn baddend(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -477,7 +493,7 @@ pub mod regs {
         }
         #[doc = "Base region end address."]
         #[inline(always)]
-        pub fn set_baddend(&mut self, val: u32) {
+        pub const fn set_baddend(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -504,6 +520,7 @@ pub mod regs {
     pub struct RegStartr(pub u32);
     impl RegStartr {
         #[doc = "Base region start address."]
+        #[must_use]
         #[inline(always)]
         pub const fn baddstart(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -511,7 +528,7 @@ pub mod regs {
         }
         #[doc = "Base region start address."]
         #[inline(always)]
-        pub fn set_baddstart(&mut self, val: u32) {
+        pub const fn set_baddstart(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }

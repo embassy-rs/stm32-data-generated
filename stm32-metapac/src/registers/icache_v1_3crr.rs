@@ -507,14 +507,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "WRAP",
-                    description: None,
-                    value: 0,
-                },
-                EnumVariant {
                     name: "INCREMENT",
                     description: None,
                     value: 1,
+                },
+                EnumVariant {
+                    name: "WRAP",
+                    description: None,
+                    value: 0,
                 },
             ],
         },
@@ -541,19 +541,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "MEGA_BYTES2",
+                    name: "MEGA_BYTES128",
                     description: None,
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "MEGA_BYTES4",
-                    description: None,
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "MEGA_BYTES8",
-                    description: None,
-                    value: 3,
+                    value: 7,
                 },
                 EnumVariant {
                     name: "MEGA_BYTES16",
@@ -561,9 +551,19 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 4,
                 },
                 EnumVariant {
+                    name: "MEGA_BYTES2",
+                    description: None,
+                    value: 1,
+                },
+                EnumVariant {
                     name: "MEGA_BYTES32",
                     description: None,
                     value: 5,
+                },
+                EnumVariant {
+                    name: "MEGA_BYTES4",
+                    description: None,
+                    value: 2,
                 },
                 EnumVariant {
                     name: "MEGA_BYTES64",
@@ -571,9 +571,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 6,
                 },
                 EnumVariant {
-                    name: "MEGA_BYTES128",
+                    name: "MEGA_BYTES8",
                     description: None,
-                    value: 7,
+                    value: 3,
                 },
             ],
         },

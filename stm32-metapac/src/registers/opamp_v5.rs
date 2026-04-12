@@ -215,14 +215,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PERCENT3_3",
-                    description: Some("VREFOPAMP = 3.3% VDDA"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "PERCENT10",
                     description: Some("VREFOPAMP = 10% VDDA"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "PERCENT3_3",
+                    description: Some("VREFOPAMP = 3.3% VDDA"),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "PERCENT50",
@@ -242,79 +242,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "GAIN2",
-                    description: Some("Gain 2"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "GAIN4",
-                    description: Some("Gain 4"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "GAIN8",
-                    description: Some("Gain 8"),
-                    value: 2,
-                },
-                EnumVariant {
                     name: "GAIN16",
                     description: Some("Gain 16"),
                     value: 3,
-                },
-                EnumVariant {
-                    name: "GAIN32",
-                    description: Some("Gain 32"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "GAIN64",
-                    description: Some("Gain 64"),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "GAIN2_INPUT_VINM0",
-                    description: Some("Gain 2, input/bias connected to VINM0 or inverting gain"),
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "GAIN4_INPUT_VINM0",
-                    description: Some("Gain 4, input/bias connected to VINM0 or inverting gain"),
-                    value: 9,
-                },
-                EnumVariant {
-                    name: "GAIN8_INPUT_VINM0",
-                    description: Some("Gain 8, input/bias connected to VINM0 or inverting gain"),
-                    value: 10,
-                },
-                EnumVariant {
-                    name: "GAIN16_INPUT_VINM0",
-                    description: Some("Gain 16, input/bias connected to VINM0 or inverting gain"),
-                    value: 11,
-                },
-                EnumVariant {
-                    name: "GAIN32_INPUT_VINM0",
-                    description: Some("Gain 32, input/bias connected to VINM0 or inverting gain"),
-                    value: 12,
-                },
-                EnumVariant {
-                    name: "GAIN64_INPUT_VINM0",
-                    description: Some("Gain 64, input/bias connected to VINM0 or inverting gain"),
-                    value: 13,
-                },
-                EnumVariant {
-                    name: "GAIN2_FILTERING_VINM0",
-                    description: Some("Gain 2, with filtering on VINM0"),
-                    value: 16,
-                },
-                EnumVariant {
-                    name: "GAIN4_FILTERING_VINM0",
-                    description: Some("Gain 4, with filtering on VINM0"),
-                    value: 17,
-                },
-                EnumVariant {
-                    name: "GAIN8_FILTERING_VINM0",
-                    description: Some("Gain 8, with filtering on VINM0"),
-                    value: 18,
                 },
                 EnumVariant {
                     name: "GAIN16_FILTERING_VINM0",
@@ -322,35 +252,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 19,
                 },
                 EnumVariant {
-                    name: "GAIN32_FILTERING_VINM0",
-                    description: Some("Gain 32, with filtering on VINM0"),
-                    value: 20,
-                },
-                EnumVariant {
-                    name: "GAIN64_FILTERING_VINM0",
-                    description: Some("Gain 64, with filtering on VINM0"),
-                    value: 21,
-                },
-                EnumVariant {
-                    name: "GAIN2_INPUT_VINM0FILTERING_VINM1",
-                    description: Some(
-                        "Gain 2, input/bias connected to VINM0 with filtering on VINM1 or inverting gain",
-                    ),
-                    value: 24,
-                },
-                EnumVariant {
-                    name: "GAIN4_INPUT_VINM0FILTERING_VINM1",
-                    description: Some(
-                        "Gain 4, input/bias connected to VINM0 with filtering on VINM1 or inverting gain",
-                    ),
-                    value: 25,
-                },
-                EnumVariant {
-                    name: "GAIN8_INPUT_VINM0FILTERING_VINM1",
-                    description: Some(
-                        "Gain 8, input/bias connected to VINM0 with filtering on VINM1 or inverting gain",
-                    ),
-                    value: 26,
+                    name: "GAIN16_INPUT_VINM0",
+                    description: Some("Gain 16, input/bias connected to VINM0 or inverting gain"),
+                    value: 11,
                 },
                 EnumVariant {
                     name: "GAIN16_INPUT_VINM0FILTERING_VINM1",
@@ -360,11 +264,85 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 27,
                 },
                 EnumVariant {
+                    name: "GAIN2",
+                    description: Some("Gain 2"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "GAIN2_FILTERING_VINM0",
+                    description: Some("Gain 2, with filtering on VINM0"),
+                    value: 16,
+                },
+                EnumVariant {
+                    name: "GAIN2_INPUT_VINM0",
+                    description: Some("Gain 2, input/bias connected to VINM0 or inverting gain"),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "GAIN2_INPUT_VINM0FILTERING_VINM1",
+                    description: Some(
+                        "Gain 2, input/bias connected to VINM0 with filtering on VINM1 or inverting gain",
+                    ),
+                    value: 24,
+                },
+                EnumVariant {
+                    name: "GAIN32",
+                    description: Some("Gain 32"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "GAIN32_FILTERING_VINM0",
+                    description: Some("Gain 32, with filtering on VINM0"),
+                    value: 20,
+                },
+                EnumVariant {
+                    name: "GAIN32_INPUT_VINM0",
+                    description: Some("Gain 32, input/bias connected to VINM0 or inverting gain"),
+                    value: 12,
+                },
+                EnumVariant {
                     name: "GAIN32_INPUT_VINM0FILTERING_VINM1",
                     description: Some(
                         "Gain 32, input/bias connected to VINM0 with filtering on VINM1 or inverting gain",
                     ),
                     value: 28,
+                },
+                EnumVariant {
+                    name: "GAIN4",
+                    description: Some("Gain 4"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "GAIN4_FILTERING_VINM0",
+                    description: Some("Gain 4, with filtering on VINM0"),
+                    value: 17,
+                },
+                EnumVariant {
+                    name: "GAIN4_INPUT_VINM0",
+                    description: Some("Gain 4, input/bias connected to VINM0 or inverting gain"),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "GAIN4_INPUT_VINM0FILTERING_VINM1",
+                    description: Some(
+                        "Gain 4, input/bias connected to VINM0 with filtering on VINM1 or inverting gain",
+                    ),
+                    value: 25,
+                },
+                EnumVariant {
+                    name: "GAIN64",
+                    description: Some("Gain 64"),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "GAIN64_FILTERING_VINM0",
+                    description: Some("Gain 64, with filtering on VINM0"),
+                    value: 21,
+                },
+                EnumVariant {
+                    name: "GAIN64_INPUT_VINM0",
+                    description: Some("Gain 64, input/bias connected to VINM0 or inverting gain"),
+                    value: 13,
                 },
                 EnumVariant {
                     name: "GAIN64_INPUT_VINM0FILTERING_VINM1",
@@ -373,6 +351,28 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 29,
                 },
+                EnumVariant {
+                    name: "GAIN8",
+                    description: Some("Gain 8"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "GAIN8_FILTERING_VINM0",
+                    description: Some("Gain 8, with filtering on VINM0"),
+                    value: 18,
+                },
+                EnumVariant {
+                    name: "GAIN8_INPUT_VINM0",
+                    description: Some("Gain 8, input/bias connected to VINM0 or inverting gain"),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "GAIN8_INPUT_VINM0FILTERING_VINM1",
+                    description: Some(
+                        "Gain 8, input/bias connected to VINM0 with filtering on VINM1 or inverting gain",
+                    ),
+                    value: 26,
+                },
             ],
         },
         Enum {
@@ -380,6 +380,16 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
+                EnumVariant {
+                    name: "OUTPUT",
+                    description: Some("OpAmp output connected to VINM (Follower mode)"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "PGA",
+                    description: Some("Feedback resistor connected to VINM (PGA mode)"),
+                    value: 2,
+                },
                 EnumVariant {
                     name: "VINM0",
                     description: Some("VINM0 connected to VINM input"),
@@ -390,16 +400,6 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("VINM1 connected to VINM input"),
                     value: 1,
                 },
-                EnumVariant {
-                    name: "PGA",
-                    description: Some("Feedback resistor connected to VINM (PGA mode)"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "OUTPUT",
-                    description: Some("OpAmp output connected to VINM (Follower mode)"),
-                    value: 3,
-                },
             ],
         },
         Enum {
@@ -407,6 +407,11 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
+                EnumVariant {
+                    name: "DAC3_CH1",
+                    description: Some("DAC3_CH1 connected to VINP input"),
+                    value: 3,
+                },
                 EnumVariant {
                     name: "VINP0",
                     description: Some("VINP0 connected to VINP input"),
@@ -421,11 +426,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "VINP2",
                     description: Some("VINP2 connected to VINP input"),
                     value: 2,
-                },
-                EnumVariant {
-                    name: "DAC3_CH1",
-                    description: Some("DAC3_CH1 connected to VINP input"),
-                    value: 3,
                 },
             ],
         },
@@ -435,6 +435,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
+                    name: "DAC3_CH1",
+                    description: Some("DAC3_CH1 connected to VINP input"),
+                    value: 3,
+                },
+                EnumVariant {
                     name: "VINP0",
                     description: Some("VINP0 connected to VINP input"),
                     value: 0,
@@ -448,11 +453,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "VINP2",
                     description: Some("VINP2 connected to VINP input"),
                     value: 2,
-                },
-                EnumVariant {
-                    name: "DAC3_CH1",
-                    description: Some("DAC3_CH1 connected to VINP input"),
-                    value: 3,
                 },
             ],
         },

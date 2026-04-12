@@ -22,32 +22,32 @@ impl Crc {
     #[doc = "Data register - half-word sized"]
     #[inline(always)]
     pub const fn dr16(self) -> crate::common::Reg<u16, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Data register"]
     #[inline(always)]
     pub const fn dr32(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Data register - byte sized"]
     #[inline(always)]
     pub const fn dr8(self) -> crate::common::Reg<u8, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Independent Data register"]
     #[inline(always)]
     pub const fn idr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "Initial CRC value"]
     #[inline(always)]
     pub const fn init(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
 }
 pub mod regs {
@@ -57,6 +57,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "RESET bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn reset(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -64,10 +65,11 @@ pub mod regs {
         }
         #[doc = "RESET bit"]
         #[inline(always)]
-        pub fn set_reset(&mut self, val: bool) {
+        pub const fn set_reset(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Polynomial size"]
+        #[must_use]
         #[inline(always)]
         pub const fn polysize(&self) -> super::vals::Polysize {
             let val = (self.0 >> 3usize) & 0x03;
@@ -75,10 +77,11 @@ pub mod regs {
         }
         #[doc = "Polynomial size"]
         #[inline(always)]
-        pub fn set_polysize(&mut self, val: super::vals::Polysize) {
+        pub const fn set_polysize(&mut self, val: super::vals::Polysize) {
             self.0 = (self.0 & !(0x03 << 3usize)) | (((val.to_bits() as u32) & 0x03) << 3usize);
         }
         #[doc = "Reverse input data"]
+        #[must_use]
         #[inline(always)]
         pub const fn rev_in(&self) -> super::vals::RevIn {
             let val = (self.0 >> 5usize) & 0x03;
@@ -86,10 +89,11 @@ pub mod regs {
         }
         #[doc = "Reverse input data"]
         #[inline(always)]
-        pub fn set_rev_in(&mut self, val: super::vals::RevIn) {
+        pub const fn set_rev_in(&mut self, val: super::vals::RevIn) {
             self.0 = (self.0 & !(0x03 << 5usize)) | (((val.to_bits() as u32) & 0x03) << 5usize);
         }
         #[doc = "Reverse output data"]
+        #[must_use]
         #[inline(always)]
         pub const fn rev_out(&self) -> super::vals::RevOut {
             let val = (self.0 >> 7usize) & 0x01;
@@ -97,7 +101,7 @@ pub mod regs {
         }
         #[doc = "Reverse output data"]
         #[inline(always)]
-        pub fn set_rev_out(&mut self, val: super::vals::RevOut) {
+        pub const fn set_rev_out(&mut self, val: super::vals::RevOut) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
         }
     }

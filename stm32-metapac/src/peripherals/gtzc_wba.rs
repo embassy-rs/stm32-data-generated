@@ -22,37 +22,37 @@ impl GtzcTzsc {
     #[doc = "GTZC1 TZSC control register."]
     #[inline(always)]
     pub const fn tzsc_cr(self) -> crate::common::Reg<regs::TzscCr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "GTZC1 TZSC secure configuration register 1."]
     #[inline(always)]
     pub const fn tzsc_seccfgr1(self) -> crate::common::Reg<regs::TzscSeccfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "GTZC1 TZSC secure configuration register 2."]
     #[inline(always)]
     pub const fn tzsc_seccfgr2(self) -> crate::common::Reg<regs::TzscSeccfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "GTZC1 TZSC secure configuration register 3."]
     #[inline(always)]
     pub const fn tzsc_seccfgr3(self) -> crate::common::Reg<regs::TzscSeccfgr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "GTZC1 TZSC privilege configuration register 1."]
     #[inline(always)]
     pub const fn tzsc_privcfgr1(self) -> crate::common::Reg<regs::TzscPrivcfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "GTZC1 TZSC privilege configuration register 2."]
     #[inline(always)]
     pub const fn tzsc_privcfgr2(self) -> crate::common::Reg<regs::TzscPrivcfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "GTZC1 TZSC privilege configuration register 3."]
     #[inline(always)]
     pub const fn tzsc_privcfgr3(self) -> crate::common::Reg<regs::TzscPrivcfgr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
 }
 pub mod regs {
@@ -62,6 +62,7 @@ pub mod regs {
     pub struct TzscCr(pub u32);
     impl TzscCr {
         #[doc = "Lock the configuration of TZSC_SECCFGRn and TZSC_PRIVCFGRn registers until next reset."]
+        #[must_use]
         #[inline(always)]
         pub const fn lck(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -69,7 +70,7 @@ pub mod regs {
         }
         #[doc = "Lock the configuration of TZSC_SECCFGRn and TZSC_PRIVCFGRn registers until next reset."]
         #[inline(always)]
-        pub fn set_lck(&mut self, val: bool) {
+        pub const fn set_lck(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -96,6 +97,7 @@ pub mod regs {
     pub struct TzscPrivcfgr1(pub u32);
     impl TzscPrivcfgr1 {
         #[doc = "Privileged access mode for TIM2."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim2priv(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -103,10 +105,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for TIM2."]
         #[inline(always)]
-        pub fn set_tim2priv(&mut self, val: bool) {
+        pub const fn set_tim2priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Privileged access mode for TIM3."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim3priv(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -114,10 +117,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for TIM3."]
         #[inline(always)]
-        pub fn set_tim3priv(&mut self, val: bool) {
+        pub const fn set_tim3priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Privileged access mode for TIM4."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim4priv(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -125,10 +129,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for TIM4."]
         #[inline(always)]
-        pub fn set_tim4priv(&mut self, val: bool) {
+        pub const fn set_tim4priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Privileged access mode for WWDG."]
+        #[must_use]
         #[inline(always)]
         pub const fn wwdgpriv(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -136,10 +141,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for WWDG."]
         #[inline(always)]
-        pub fn set_wwdgpriv(&mut self, val: bool) {
+        pub const fn set_wwdgpriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Privileged access mode for IWDG."]
+        #[must_use]
         #[inline(always)]
         pub const fn iwdgpriv(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -147,10 +153,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for IWDG."]
         #[inline(always)]
-        pub fn set_iwdgpriv(&mut self, val: bool) {
+        pub const fn set_iwdgpriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Privileged access mode for SPI2."]
+        #[must_use]
         #[inline(always)]
         pub const fn spi2priv(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -158,10 +165,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for SPI2."]
         #[inline(always)]
-        pub fn set_spi2priv(&mut self, val: bool) {
+        pub const fn set_spi2priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Privileged access mode for USART2."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart2priv(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -169,10 +177,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for USART2."]
         #[inline(always)]
-        pub fn set_usart2priv(&mut self, val: bool) {
+        pub const fn set_usart2priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Privileged access mode for USART3."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart3priv(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -180,10 +189,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for USART3."]
         #[inline(always)]
-        pub fn set_usart3priv(&mut self, val: bool) {
+        pub const fn set_usart3priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Privileged access mode for I2C1."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c1priv(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -191,10 +201,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for I2C1."]
         #[inline(always)]
-        pub fn set_i2c1priv(&mut self, val: bool) {
+        pub const fn set_i2c1priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Privileged access mode for I2C2."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c2priv(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -202,10 +213,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for I2C2."]
         #[inline(always)]
-        pub fn set_i2c2priv(&mut self, val: bool) {
+        pub const fn set_i2c2priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Privileged access mode for I2C4."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c4priv(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -213,10 +225,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for I2C4."]
         #[inline(always)]
-        pub fn set_i2c4priv(&mut self, val: bool) {
+        pub const fn set_i2c4priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Privileged access mode for LPTIM2."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim2priv(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -224,7 +237,7 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for LPTIM2."]
         #[inline(always)]
-        pub fn set_lptim2priv(&mut self, val: bool) {
+        pub const fn set_lptim2priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
     }
@@ -264,6 +277,7 @@ pub mod regs {
     pub struct TzscPrivcfgr2(pub u32);
     impl TzscPrivcfgr2 {
         #[doc = "Privileged access mode for TIM1."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim1priv(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -271,10 +285,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for TIM1."]
         #[inline(always)]
-        pub fn set_tim1priv(&mut self, val: bool) {
+        pub const fn set_tim1priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Privileged access mode for SPI1PRIV."]
+        #[must_use]
         #[inline(always)]
         pub const fn spi1priv(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -282,10 +297,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for SPI1PRIV."]
         #[inline(always)]
-        pub fn set_spi1priv(&mut self, val: bool) {
+        pub const fn set_spi1priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Privileged access mode for USART1."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart1priv(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -293,10 +309,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for USART1."]
         #[inline(always)]
-        pub fn set_usart1priv(&mut self, val: bool) {
+        pub const fn set_usart1priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Privileged access mode for TIM16."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim16priv(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -304,10 +321,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for TIM16."]
         #[inline(always)]
-        pub fn set_tim16priv(&mut self, val: bool) {
+        pub const fn set_tim16priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Privileged access mode for TIM17."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim17priv(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -315,10 +333,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for TIM17."]
         #[inline(always)]
-        pub fn set_tim17priv(&mut self, val: bool) {
+        pub const fn set_tim17priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Privileged access mode for SAI1."]
+        #[must_use]
         #[inline(always)]
         pub const fn sai1priv(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -326,10 +345,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for SAI1."]
         #[inline(always)]
-        pub fn set_sai1priv(&mut self, val: bool) {
+        pub const fn set_sai1priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Privileged access mode for SPI3."]
+        #[must_use]
         #[inline(always)]
         pub const fn spi3priv(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -337,10 +357,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for SPI3."]
         #[inline(always)]
-        pub fn set_spi3priv(&mut self, val: bool) {
+        pub const fn set_spi3priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Privileged access mode for LPUART1."]
+        #[must_use]
         #[inline(always)]
         pub const fn lpuart1priv(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -348,10 +369,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for LPUART1."]
         #[inline(always)]
-        pub fn set_lpuart1priv(&mut self, val: bool) {
+        pub const fn set_lpuart1priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "Privileged access mode for I2C3."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c3priv(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -359,10 +381,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for I2C3."]
         #[inline(always)]
-        pub fn set_i2c3priv(&mut self, val: bool) {
+        pub const fn set_i2c3priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Privileged access mode for LPTIM1."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim1priv(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -370,10 +393,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for LPTIM1."]
         #[inline(always)]
-        pub fn set_lptim1priv(&mut self, val: bool) {
+        pub const fn set_lptim1priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "Privileged access mode for COMP."]
+        #[must_use]
         #[inline(always)]
         pub const fn comppriv(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -381,10 +405,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for COMP."]
         #[inline(always)]
-        pub fn set_comppriv(&mut self, val: bool) {
+        pub const fn set_comppriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "Privileged access mode for ADC4."]
+        #[must_use]
         #[inline(always)]
         pub const fn adc4priv(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -392,10 +417,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for ADC4."]
         #[inline(always)]
-        pub fn set_adc4priv(&mut self, val: bool) {
+        pub const fn set_adc4priv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "Privileged access mode for VREFBUF."]
+        #[must_use]
         #[inline(always)]
         pub const fn vrefbufpriv(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -403,7 +429,7 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for VREFBUF."]
         #[inline(always)]
-        pub fn set_vrefbufpriv(&mut self, val: bool) {
+        pub const fn set_vrefbufpriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
     }
@@ -444,6 +470,7 @@ pub mod regs {
     pub struct TzscPrivcfgr3(pub u32);
     impl TzscPrivcfgr3 {
         #[doc = "Privileged access mode for CRC."]
+        #[must_use]
         #[inline(always)]
         pub const fn crcpriv(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -451,10 +478,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for CRC."]
         #[inline(always)]
-        pub fn set_crcpriv(&mut self, val: bool) {
+        pub const fn set_crcpriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Privileged access mode for TSC."]
+        #[must_use]
         #[inline(always)]
         pub const fn tscpriv(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -462,10 +490,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for TSC."]
         #[inline(always)]
-        pub fn set_tscpriv(&mut self, val: bool) {
+        pub const fn set_tscpriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Privileged access mode for ICACHE registers."]
+        #[must_use]
         #[inline(always)]
         pub const fn icache_regpriv(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -473,10 +502,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for ICACHE registers."]
         #[inline(always)]
-        pub fn set_icache_regpriv(&mut self, val: bool) {
+        pub const fn set_icache_regpriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Privileged access mode for USB OTG_HS."]
+        #[must_use]
         #[inline(always)]
         pub const fn otgpriv(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -484,10 +514,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for USB OTG_HS."]
         #[inline(always)]
-        pub fn set_otgpriv(&mut self, val: bool) {
+        pub const fn set_otgpriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Privileged access mode for AES."]
+        #[must_use]
         #[inline(always)]
         pub const fn aespriv(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -495,10 +526,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for AES."]
         #[inline(always)]
-        pub fn set_aespriv(&mut self, val: bool) {
+        pub const fn set_aespriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Privileged access mode for HASH."]
+        #[must_use]
         #[inline(always)]
         pub const fn hashpriv(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -506,10 +538,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for HASH."]
         #[inline(always)]
-        pub fn set_hashpriv(&mut self, val: bool) {
+        pub const fn set_hashpriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Privileged access mode for RNG."]
+        #[must_use]
         #[inline(always)]
         pub const fn rngpriv(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -517,10 +550,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for RNG."]
         #[inline(always)]
-        pub fn set_rngpriv(&mut self, val: bool) {
+        pub const fn set_rngpriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Privileged access mode for SAES."]
+        #[must_use]
         #[inline(always)]
         pub const fn saespriv(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -528,10 +562,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for SAES."]
         #[inline(always)]
-        pub fn set_saespriv(&mut self, val: bool) {
+        pub const fn set_saespriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Privileged access mode for PKA."]
+        #[must_use]
         #[inline(always)]
         pub const fn pkapriv(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -539,10 +574,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for PKA."]
         #[inline(always)]
-        pub fn set_pkapriv(&mut self, val: bool) {
+        pub const fn set_pkapriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Privileged access mode for RAMCFG."]
+        #[must_use]
         #[inline(always)]
         pub const fn ramcfgpriv(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -550,10 +586,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for RAMCFG."]
         #[inline(always)]
-        pub fn set_ramcfgpriv(&mut self, val: bool) {
+        pub const fn set_ramcfgpriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "Privileged access mode for 2."]
+        #[must_use]
         #[inline(always)]
         pub const fn radiopriv(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -561,10 +598,11 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for 2."]
         #[inline(always)]
-        pub fn set_radiopriv(&mut self, val: bool) {
+        pub const fn set_radiopriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "Privileged access mode for PTACONV."]
+        #[must_use]
         #[inline(always)]
         pub const fn ptaconvpriv(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -572,7 +610,7 @@ pub mod regs {
         }
         #[doc = "Privileged access mode for PTACONV."]
         #[inline(always)]
-        pub fn set_ptaconvpriv(&mut self, val: bool) {
+        pub const fn set_ptaconvpriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
     }
@@ -612,6 +650,7 @@ pub mod regs {
     pub struct TzscSeccfgr1(pub u32);
     impl TzscSeccfgr1 {
         #[doc = "Secure access mode for TIM2."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim2sec(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -619,10 +658,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for TIM2."]
         #[inline(always)]
-        pub fn set_tim2sec(&mut self, val: bool) {
+        pub const fn set_tim2sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Secure access mode for TIM3."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim3sec(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -630,10 +670,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for TIM3."]
         #[inline(always)]
-        pub fn set_tim3sec(&mut self, val: bool) {
+        pub const fn set_tim3sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Secure access mode for TIM4."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim4sec(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -641,10 +682,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for TIM4."]
         #[inline(always)]
-        pub fn set_tim4sec(&mut self, val: bool) {
+        pub const fn set_tim4sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Secure access mode for WWDG."]
+        #[must_use]
         #[inline(always)]
         pub const fn wwdgsec(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -652,10 +694,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for WWDG."]
         #[inline(always)]
-        pub fn set_wwdgsec(&mut self, val: bool) {
+        pub const fn set_wwdgsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Secure access mode for IWDG."]
+        #[must_use]
         #[inline(always)]
         pub const fn iwdgsec(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -663,10 +706,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for IWDG."]
         #[inline(always)]
-        pub fn set_iwdgsec(&mut self, val: bool) {
+        pub const fn set_iwdgsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Secure access mode for SPI2."]
+        #[must_use]
         #[inline(always)]
         pub const fn spi2sec(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -674,10 +718,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for SPI2."]
         #[inline(always)]
-        pub fn set_spi2sec(&mut self, val: bool) {
+        pub const fn set_spi2sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Secure access mode for USART2."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart2sec(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -685,10 +730,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for USART2."]
         #[inline(always)]
-        pub fn set_usart2sec(&mut self, val: bool) {
+        pub const fn set_usart2sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Secure access mode for USART3."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart3sec(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -696,10 +742,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for USART3."]
         #[inline(always)]
-        pub fn set_usart3sec(&mut self, val: bool) {
+        pub const fn set_usart3sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Secure access mode for I2C1."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c1sec(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -707,10 +754,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for I2C1."]
         #[inline(always)]
-        pub fn set_i2c1sec(&mut self, val: bool) {
+        pub const fn set_i2c1sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Secure access mode for I2C2."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c2sec(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -718,10 +766,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for I2C2."]
         #[inline(always)]
-        pub fn set_i2c2sec(&mut self, val: bool) {
+        pub const fn set_i2c2sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Secure access mode for I2C4."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c4sec(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -729,10 +778,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for I2C4."]
         #[inline(always)]
-        pub fn set_i2c4sec(&mut self, val: bool) {
+        pub const fn set_i2c4sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Secure access mode for LPTIM2."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim2sec(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -740,7 +790,7 @@ pub mod regs {
         }
         #[doc = "Secure access mode for LPTIM2."]
         #[inline(always)]
-        pub fn set_lptim2sec(&mut self, val: bool) {
+        pub const fn set_lptim2sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
     }
@@ -780,6 +830,7 @@ pub mod regs {
     pub struct TzscSeccfgr2(pub u32);
     impl TzscSeccfgr2 {
         #[doc = "Secure access mode for TIM1."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim1sec(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -787,10 +838,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for TIM1."]
         #[inline(always)]
-        pub fn set_tim1sec(&mut self, val: bool) {
+        pub const fn set_tim1sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Secure access mode for SPI1."]
+        #[must_use]
         #[inline(always)]
         pub const fn spi1sec(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -798,10 +850,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for SPI1."]
         #[inline(always)]
-        pub fn set_spi1sec(&mut self, val: bool) {
+        pub const fn set_spi1sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Secure access mode for USART1."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart1sec(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -809,10 +862,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for USART1."]
         #[inline(always)]
-        pub fn set_usart1sec(&mut self, val: bool) {
+        pub const fn set_usart1sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Secure access mode for TIM16."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim16sec(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -820,10 +874,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for TIM16."]
         #[inline(always)]
-        pub fn set_tim16sec(&mut self, val: bool) {
+        pub const fn set_tim16sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Secure access mode for TIM17."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim17sec(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -831,10 +886,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for TIM17."]
         #[inline(always)]
-        pub fn set_tim17sec(&mut self, val: bool) {
+        pub const fn set_tim17sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Secure access mode for SAI1."]
+        #[must_use]
         #[inline(always)]
         pub const fn sai1sec(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -842,10 +898,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for SAI1."]
         #[inline(always)]
-        pub fn set_sai1sec(&mut self, val: bool) {
+        pub const fn set_sai1sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Secure access mode for SPI3."]
+        #[must_use]
         #[inline(always)]
         pub const fn spi3sec(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -853,10 +910,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for SPI3."]
         #[inline(always)]
-        pub fn set_spi3sec(&mut self, val: bool) {
+        pub const fn set_spi3sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Secure access mode for LPUART1."]
+        #[must_use]
         #[inline(always)]
         pub const fn lpuart1sec(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -864,10 +922,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for LPUART1."]
         #[inline(always)]
-        pub fn set_lpuart1sec(&mut self, val: bool) {
+        pub const fn set_lpuart1sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "Secure access mode for I2C3."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c3sec(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -875,10 +934,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for I2C3."]
         #[inline(always)]
-        pub fn set_i2c3sec(&mut self, val: bool) {
+        pub const fn set_i2c3sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Secure access mode for LPTIM1."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim1sec(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -886,10 +946,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for LPTIM1."]
         #[inline(always)]
-        pub fn set_lptim1sec(&mut self, val: bool) {
+        pub const fn set_lptim1sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "Secure access mode for COMP."]
+        #[must_use]
         #[inline(always)]
         pub const fn compsec(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -897,10 +958,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for COMP."]
         #[inline(always)]
-        pub fn set_compsec(&mut self, val: bool) {
+        pub const fn set_compsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "Secure access mode for ADC4."]
+        #[must_use]
         #[inline(always)]
         pub const fn adc4sec(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -908,10 +970,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for ADC4."]
         #[inline(always)]
-        pub fn set_adc4sec(&mut self, val: bool) {
+        pub const fn set_adc4sec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "Secure access mode for VREFBUF."]
+        #[must_use]
         #[inline(always)]
         pub const fn vrefbufsec(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -919,7 +982,7 @@ pub mod regs {
         }
         #[doc = "Secure access mode for VREFBUF."]
         #[inline(always)]
-        pub fn set_vrefbufsec(&mut self, val: bool) {
+        pub const fn set_vrefbufsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
     }
@@ -960,6 +1023,7 @@ pub mod regs {
     pub struct TzscSeccfgr3(pub u32);
     impl TzscSeccfgr3 {
         #[doc = "Secure access mode for CRC."]
+        #[must_use]
         #[inline(always)]
         pub const fn crcsec(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -967,10 +1031,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for CRC."]
         #[inline(always)]
-        pub fn set_crcsec(&mut self, val: bool) {
+        pub const fn set_crcsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Secure access mode for TSC."]
+        #[must_use]
         #[inline(always)]
         pub const fn tscsec(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -978,10 +1043,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for TSC."]
         #[inline(always)]
-        pub fn set_tscsec(&mut self, val: bool) {
+        pub const fn set_tscsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Secure access mode for ICACHE registers."]
+        #[must_use]
         #[inline(always)]
         pub const fn icache_regsec(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -989,10 +1055,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for ICACHE registers."]
         #[inline(always)]
-        pub fn set_icache_regsec(&mut self, val: bool) {
+        pub const fn set_icache_regsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Secure access mode for USB OTG_HS."]
+        #[must_use]
         #[inline(always)]
         pub const fn otgsec(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -1000,10 +1067,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for USB OTG_HS."]
         #[inline(always)]
-        pub fn set_otgsec(&mut self, val: bool) {
+        pub const fn set_otgsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Secure access mode for AES."]
+        #[must_use]
         #[inline(always)]
         pub const fn aessec(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1011,10 +1079,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for AES."]
         #[inline(always)]
-        pub fn set_aessec(&mut self, val: bool) {
+        pub const fn set_aessec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Secure access mode for HASH."]
+        #[must_use]
         #[inline(always)]
         pub const fn hashsec(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -1022,10 +1091,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for HASH."]
         #[inline(always)]
-        pub fn set_hashsec(&mut self, val: bool) {
+        pub const fn set_hashsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Secure access mode for RNG."]
+        #[must_use]
         #[inline(always)]
         pub const fn rngsec(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -1033,10 +1103,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for RNG."]
         #[inline(always)]
-        pub fn set_rngsec(&mut self, val: bool) {
+        pub const fn set_rngsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Secure access mode for SAES."]
+        #[must_use]
         #[inline(always)]
         pub const fn saessec(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -1044,10 +1115,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for SAES."]
         #[inline(always)]
-        pub fn set_saessec(&mut self, val: bool) {
+        pub const fn set_saessec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Secure access mode for PKA."]
+        #[must_use]
         #[inline(always)]
         pub const fn pkasec(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1055,10 +1127,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for PKA."]
         #[inline(always)]
-        pub fn set_pkasec(&mut self, val: bool) {
+        pub const fn set_pkasec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Secure access mode for RAMCFG."]
+        #[must_use]
         #[inline(always)]
         pub const fn ramcfgsec(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -1066,10 +1139,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for RAMCFG."]
         #[inline(always)]
-        pub fn set_ramcfgsec(&mut self, val: bool) {
+        pub const fn set_ramcfgsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "Secure access mode for 2."]
+        #[must_use]
         #[inline(always)]
         pub const fn radiosec(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -1077,10 +1151,11 @@ pub mod regs {
         }
         #[doc = "Secure access mode for 2."]
         #[inline(always)]
-        pub fn set_radiosec(&mut self, val: bool) {
+        pub const fn set_radiosec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "Secure access mode for PTACONV."]
+        #[must_use]
         #[inline(always)]
         pub const fn ptaconvsec(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -1088,7 +1163,7 @@ pub mod regs {
         }
         #[doc = "Secure access mode for PTACONV."]
         #[inline(always)]
-        pub fn set_ptaconvsec(&mut self, val: bool) {
+        pub const fn set_ptaconvsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
     }

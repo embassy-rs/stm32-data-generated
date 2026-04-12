@@ -22,17 +22,17 @@ impl Wwdg {
     #[doc = "Control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Configuration register"]
     #[inline(always)]
     pub const fn cfr(self) -> crate::common::Reg<regs::Cfr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
 }
 pub mod regs {
@@ -42,6 +42,7 @@ pub mod regs {
     pub struct Cfr(pub u32);
     impl Cfr {
         #[doc = "7-bit window value"]
+        #[must_use]
         #[inline(always)]
         pub const fn w(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -49,10 +50,11 @@ pub mod regs {
         }
         #[doc = "7-bit window value"]
         #[inline(always)]
-        pub fn set_w(&mut self, val: u8) {
+        pub const fn set_w(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "Timer base"]
+        #[must_use]
         #[inline(always)]
         pub const fn wdgtb(&self) -> super::vals::Wdgtb {
             let val = (self.0 >> 7usize) & 0x03;
@@ -60,10 +62,11 @@ pub mod regs {
         }
         #[doc = "Timer base"]
         #[inline(always)]
-        pub fn set_wdgtb(&mut self, val: super::vals::Wdgtb) {
+        pub const fn set_wdgtb(&mut self, val: super::vals::Wdgtb) {
             self.0 = (self.0 & !(0x03 << 7usize)) | (((val.to_bits() as u32) & 0x03) << 7usize);
         }
         #[doc = "Early wakeup interrupt"]
+        #[must_use]
         #[inline(always)]
         pub const fn ewi(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -71,7 +74,7 @@ pub mod regs {
         }
         #[doc = "Early wakeup interrupt"]
         #[inline(always)]
-        pub fn set_ewi(&mut self, val: bool) {
+        pub const fn set_ewi(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
@@ -108,6 +111,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "7-bit counter (MSB to LSB)"]
+        #[must_use]
         #[inline(always)]
         pub const fn t(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -115,10 +119,11 @@ pub mod regs {
         }
         #[doc = "7-bit counter (MSB to LSB)"]
         #[inline(always)]
-        pub fn set_t(&mut self, val: u8) {
+        pub const fn set_t(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "Watchdog activated"]
+        #[must_use]
         #[inline(always)]
         pub const fn wdga(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -126,7 +131,7 @@ pub mod regs {
         }
         #[doc = "Watchdog activated"]
         #[inline(always)]
-        pub fn set_wdga(&mut self, val: bool) {
+        pub const fn set_wdga(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
@@ -156,6 +161,7 @@ pub mod regs {
     pub struct Sr(pub u32);
     impl Sr {
         #[doc = "Early wakeup interrupt flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn ewif(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -163,7 +169,7 @@ pub mod regs {
         }
         #[doc = "Early wakeup interrupt flag"]
         #[inline(always)]
-        pub fn set_ewif(&mut self, val: bool) {
+        pub const fn set_ewif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }

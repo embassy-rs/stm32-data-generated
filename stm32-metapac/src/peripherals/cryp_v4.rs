@@ -22,66 +22,66 @@ impl Cryp {
     #[doc = "control register."]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "status register."]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "data input register."]
     #[inline(always)]
     pub const fn din(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "data output register."]
     #[inline(always)]
     pub const fn dout(self) -> crate::common::Reg<u32, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "DMA control register."]
     #[inline(always)]
     pub const fn dmacr(self) -> crate::common::Reg<regs::Dmacr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "interrupt mask set/clear register."]
     #[inline(always)]
     pub const fn imscr(self) -> crate::common::Reg<regs::Imscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "raw interrupt status register."]
     #[inline(always)]
     pub const fn risr(self) -> crate::common::Reg<regs::Risr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "masked interrupt status register."]
     #[inline(always)]
     pub const fn misr(self) -> crate::common::Reg<regs::Misr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "Cluster KEY%s, containing K?LR, K?RR."]
     #[inline(always)]
     pub const fn key(self, n: usize) -> Key {
         assert!(n < 4usize);
-        unsafe { Key::from_ptr(self.ptr.add(0x20usize + n * 8usize) as _) }
+        unsafe { Key::from_ptr(self.ptr.wrapping_add(0x20usize + n * 8usize) as _) }
     }
     #[doc = "Cluster INIT%s, containing IV?LR, IV?RR."]
     #[inline(always)]
     pub const fn init(self, n: usize) -> Init {
         assert!(n < 2usize);
-        unsafe { Init::from_ptr(self.ptr.add(0x40usize + n * 8usize) as _) }
+        unsafe { Init::from_ptr(self.ptr.wrapping_add(0x40usize + n * 8usize) as _) }
     }
     #[doc = "context swap register."]
     #[inline(always)]
     pub const fn csgcmccmr(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize + n * 4usize) as _) }
     }
     #[doc = "context swap register."]
     #[inline(always)]
     pub const fn csgcmr(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x70usize + n * 4usize) as _) }
     }
 }
 #[doc = "Cluster INIT%s, containing IV?LR, IV?RR."]
@@ -103,12 +103,12 @@ impl Init {
     #[doc = "initialization vector registers."]
     #[inline(always)]
     pub const fn ivlr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "initialization vector registers."]
     #[inline(always)]
     pub const fn ivrr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
 }
 #[doc = "Cluster KEY%s, containing K?LR, K?RR."]
@@ -130,12 +130,12 @@ impl Key {
     #[doc = "key registers."]
     #[inline(always)]
     pub const fn klr(self) -> crate::common::Reg<u32, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "key registers."]
     #[inline(always)]
     pub const fn krr(self) -> crate::common::Reg<u32, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
 }
 pub mod regs {
@@ -145,6 +145,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "Algorithm direction."]
+        #[must_use]
         #[inline(always)]
         pub const fn algodir(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -152,10 +153,11 @@ pub mod regs {
         }
         #[doc = "Algorithm direction."]
         #[inline(always)]
-        pub fn set_algodir(&mut self, val: bool) {
+        pub const fn set_algodir(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Algorithm mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn algomode0(&self) -> u8 {
             let val = (self.0 >> 3usize) & 0x07;
@@ -163,10 +165,11 @@ pub mod regs {
         }
         #[doc = "Algorithm mode."]
         #[inline(always)]
-        pub fn set_algomode0(&mut self, val: u8) {
+        pub const fn set_algomode0(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 3usize)) | (((val as u32) & 0x07) << 3usize);
         }
         #[doc = "Data type selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn datatype(&self) -> u8 {
             let val = (self.0 >> 6usize) & 0x03;
@@ -174,10 +177,11 @@ pub mod regs {
         }
         #[doc = "Data type selection."]
         #[inline(always)]
-        pub fn set_datatype(&mut self, val: u8) {
+        pub const fn set_datatype(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
         }
         #[doc = "Key size selection (AES mode only)."]
+        #[must_use]
         #[inline(always)]
         pub const fn keysize(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x03;
@@ -185,10 +189,11 @@ pub mod regs {
         }
         #[doc = "Key size selection (AES mode only)."]
         #[inline(always)]
-        pub fn set_keysize(&mut self, val: u8) {
+        pub const fn set_keysize(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
         }
         #[doc = "FIFO flush."]
+        #[must_use]
         #[inline(always)]
         pub const fn fflush(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -196,10 +201,11 @@ pub mod regs {
         }
         #[doc = "FIFO flush."]
         #[inline(always)]
-        pub fn set_fflush(&mut self, val: bool) {
+        pub const fn set_fflush(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Cryptographic processor enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn crypen(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -207,10 +213,11 @@ pub mod regs {
         }
         #[doc = "Cryptographic processor enable."]
         #[inline(always)]
-        pub fn set_crypen(&mut self, val: bool) {
+        pub const fn set_crypen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "GCM_CCMPH."]
+        #[must_use]
         #[inline(always)]
         pub const fn gcm_ccmph(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x03;
@@ -218,10 +225,11 @@ pub mod regs {
         }
         #[doc = "GCM_CCMPH."]
         #[inline(always)]
-        pub fn set_gcm_ccmph(&mut self, val: u8) {
+        pub const fn set_gcm_ccmph(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
         }
         #[doc = "ALGOMODE."]
+        #[must_use]
         #[inline(always)]
         pub const fn algomode3(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -229,10 +237,11 @@ pub mod regs {
         }
         #[doc = "ALGOMODE."]
         #[inline(always)]
-        pub fn set_algomode3(&mut self, val: bool) {
+        pub const fn set_algomode3(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "Number of Padding Bytes in Last Block of payload."]
+        #[must_use]
         #[inline(always)]
         pub const fn npblb(&self) -> u8 {
             let val = (self.0 >> 20usize) & 0x0f;
@@ -240,11 +249,12 @@ pub mod regs {
         }
         #[doc = "Number of Padding Bytes in Last Block of payload."]
         #[inline(always)]
-        pub fn set_npblb(&mut self, val: u8) {
+        pub const fn set_npblb(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 20usize)) | (((val as u32) & 0x0f) << 20usize);
         }
         #[doc = "Key mode selection This bitfield defines how the CRYP key can be used by the application. KEYSIZE must be correctly initialized when setting KMOD\\[1:0\\]
 different from zero. Others: Reserved Attempts to write the bitfield are ignored when BUSY is set."]
+        #[must_use]
         #[inline(always)]
         pub const fn kmod(&self) -> super::vals::Kmod {
             let val = (self.0 >> 24usize) & 0x03;
@@ -253,10 +263,11 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         #[doc = "Key mode selection This bitfield defines how the CRYP key can be used by the application. KEYSIZE must be correctly initialized when setting KMOD\\[1:0\\]
 different from zero. Others: Reserved Attempts to write the bitfield are ignored when BUSY is set."]
         #[inline(always)]
-        pub fn set_kmod(&mut self, val: super::vals::Kmod) {
+        pub const fn set_kmod(&mut self, val: super::vals::Kmod) {
             self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
         }
         #[doc = "CRYP peripheral software reset Setting the bit resets the CRYP peripheral, putting all registers to their default values, except the IPRST bit itself. This bit must be kept cleared while writing any configuration registers."]
+        #[must_use]
         #[inline(always)]
         pub const fn iprst(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -264,7 +275,7 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         }
         #[doc = "CRYP peripheral software reset Setting the bit resets the CRYP peripheral, putting all registers to their default values, except the IPRST bit itself. This bit must be kept cleared while writing any configuration registers."]
         #[inline(always)]
-        pub fn set_iprst(&mut self, val: bool) {
+        pub const fn set_iprst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -303,6 +314,7 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
     pub struct Dmacr(pub u32);
     impl Dmacr {
         #[doc = "DMA input enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn dien(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -310,10 +322,11 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         }
         #[doc = "DMA input enable."]
         #[inline(always)]
-        pub fn set_dien(&mut self, val: bool) {
+        pub const fn set_dien(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "DMA output enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn doen(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -321,7 +334,7 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         }
         #[doc = "DMA output enable."]
         #[inline(always)]
-        pub fn set_doen(&mut self, val: bool) {
+        pub const fn set_doen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -356,6 +369,7 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
     pub struct Imscr(pub u32);
     impl Imscr {
         #[doc = "Input FIFO service interrupt mask."]
+        #[must_use]
         #[inline(always)]
         pub const fn inim(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -363,10 +377,11 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         }
         #[doc = "Input FIFO service interrupt mask."]
         #[inline(always)]
-        pub fn set_inim(&mut self, val: bool) {
+        pub const fn set_inim(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Output FIFO service interrupt mask."]
+        #[must_use]
         #[inline(always)]
         pub const fn outim(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -374,7 +389,7 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         }
         #[doc = "Output FIFO service interrupt mask."]
         #[inline(always)]
-        pub fn set_outim(&mut self, val: bool) {
+        pub const fn set_outim(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -409,6 +424,7 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
     pub struct Misr(pub u32);
     impl Misr {
         #[doc = "Input FIFO service masked interrupt status."]
+        #[must_use]
         #[inline(always)]
         pub const fn inmis(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -416,10 +432,11 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         }
         #[doc = "Input FIFO service masked interrupt status."]
         #[inline(always)]
-        pub fn set_inmis(&mut self, val: bool) {
+        pub const fn set_inmis(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Output FIFO service masked interrupt status."]
+        #[must_use]
         #[inline(always)]
         pub const fn outmis(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -427,7 +444,7 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         }
         #[doc = "Output FIFO service masked interrupt status."]
         #[inline(always)]
-        pub fn set_outmis(&mut self, val: bool) {
+        pub const fn set_outmis(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -462,6 +479,7 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
     pub struct Risr(pub u32);
     impl Risr {
         #[doc = "Input FIFO service raw interrupt status."]
+        #[must_use]
         #[inline(always)]
         pub const fn inris(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -469,10 +487,11 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         }
         #[doc = "Input FIFO service raw interrupt status."]
         #[inline(always)]
-        pub fn set_inris(&mut self, val: bool) {
+        pub const fn set_inris(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Output FIFO service raw interrupt status."]
+        #[must_use]
         #[inline(always)]
         pub const fn outris(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -480,7 +499,7 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         }
         #[doc = "Output FIFO service raw interrupt status."]
         #[inline(always)]
-        pub fn set_outris(&mut self, val: bool) {
+        pub const fn set_outris(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -515,6 +534,7 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
     pub struct Sr(pub u32);
     impl Sr {
         #[doc = "Input FIFO empty."]
+        #[must_use]
         #[inline(always)]
         pub const fn ifem(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -522,10 +542,11 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         }
         #[doc = "Input FIFO empty."]
         #[inline(always)]
-        pub fn set_ifem(&mut self, val: bool) {
+        pub const fn set_ifem(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Input FIFO not full."]
+        #[must_use]
         #[inline(always)]
         pub const fn ifnf(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -533,10 +554,11 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         }
         #[doc = "Input FIFO not full."]
         #[inline(always)]
-        pub fn set_ifnf(&mut self, val: bool) {
+        pub const fn set_ifnf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Output FIFO not empty."]
+        #[must_use]
         #[inline(always)]
         pub const fn ofne(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -544,10 +566,11 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         }
         #[doc = "Output FIFO not empty."]
         #[inline(always)]
-        pub fn set_ofne(&mut self, val: bool) {
+        pub const fn set_ofne(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Output FIFO full."]
+        #[must_use]
         #[inline(always)]
         pub const fn offu(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -555,10 +578,11 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         }
         #[doc = "Output FIFO full."]
         #[inline(always)]
-        pub fn set_offu(&mut self, val: bool) {
+        pub const fn set_offu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Busy bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn busy(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -566,10 +590,11 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         }
         #[doc = "Busy bit."]
         #[inline(always)]
-        pub fn set_busy(&mut self, val: bool) {
+        pub const fn set_busy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Key error flag This read-only bit is set by hardware when key information failed to load into key registers. KERF is triggered upon any of the following errors: CRYP_KxR/LR register write does not respect the correct order (refer to Section 60.4.16: CRYP key registers for details). CRYP fails to load the key shared by SAES peripheral (KMOD = 0x2). KERF must be cleared by the application software, otherwise KEYVALID cannot be set. It can be done through IPRST bit of CRYP_CR, or when a correct key writing sequence starts."]
+        #[must_use]
         #[inline(always)]
         pub const fn kerf(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -577,12 +602,13 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
         }
         #[doc = "Key error flag This read-only bit is set by hardware when key information failed to load into key registers. KERF is triggered upon any of the following errors: CRYP_KxR/LR register write does not respect the correct order (refer to Section 60.4.16: CRYP key registers for details). CRYP fails to load the key shared by SAES peripheral (KMOD = 0x2). KERF must be cleared by the application software, otherwise KEYVALID cannot be set. It can be done through IPRST bit of CRYP_CR, or when a correct key writing sequence starts."]
         #[inline(always)]
-        pub fn set_kerf(&mut self, val: bool) {
+        pub const fn set_kerf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Key valid flag This read-only bit is set by hardware when the key of size defined by KEYSIZE is loaded in CRYP_KxR/LR key registers. The CRYPEN bit can only be set when KEYVALID is set. In normal mode when KMOD\\[1:0\\]
 is at zero, the key must be written in the key registers in the correct sequence, otherwise the KERF flag is set and KEYVALID remains cleared. When KMOD\\[1:0\\]
 is different from zero, the BUSY flag is automatically set by CRYP. When the key is loaded successfully, BUSY is cleared and KEYVALID set. Upon an error, KERF is set, BUSY cleared and KEYVALID remains cleared. If set, KERF must be cleared, otherwise KEYVALID cannot be set. For further information on key loading, refer to Section 60.4.16: CRYP key registers."]
+        #[must_use]
         #[inline(always)]
         pub const fn keyvalid(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -592,7 +618,7 @@ is different from zero, the BUSY flag is automatically set by CRYP. When the key
 is at zero, the key must be written in the key registers in the correct sequence, otherwise the KERF flag is set and KEYVALID remains cleared. When KMOD\\[1:0\\]
 is different from zero, the BUSY flag is automatically set by CRYP. When the key is loaded successfully, BUSY is cleared and KEYVALID set. Upon an error, KERF is set, BUSY cleared and KEYVALID remains cleared. If set, KERF must be cleared, otherwise KEYVALID cannot be set. For further information on key loading, refer to Section 60.4.16: CRYP key registers."]
         #[inline(always)]
-        pub fn set_keyvalid(&mut self, val: bool) {
+        pub const fn set_keyvalid(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }

@@ -22,122 +22,122 @@ impl Syscfg {
     #[doc = "configuration register 1"]
     #[inline(always)]
     pub const fn cfgr1(self) -> crate::common::Reg<regs::Cfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "configuration register 2"]
     #[inline(always)]
     pub const fn cfgr2(self) -> crate::common::Reg<regs::Cfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "configuration register 3"]
     #[inline(always)]
     pub const fn cfgr3(self) -> crate::common::Reg<regs::Cfgr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3cusize) as _) }
     }
     #[doc = "interrupt line 0 status register"]
     #[inline(always)]
     pub const fn itline0(self) -> crate::common::Reg<regs::Itline0, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80usize) as _) }
     }
     #[doc = "interrupt line 2 status register"]
     #[inline(always)]
     pub const fn itline2(self) -> crate::common::Reg<regs::Itline2, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x88usize) as _) }
     }
     #[doc = "interrupt line 3 status register"]
     #[inline(always)]
     pub const fn itline3(self) -> crate::common::Reg<regs::Itline3, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x8cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8cusize) as _) }
     }
     #[doc = "interrupt line 4 status register"]
     #[inline(always)]
     pub const fn itline4(self) -> crate::common::Reg<regs::Itline4, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x90usize) as _) }
     }
     #[doc = "interrupt line 5 status register"]
     #[inline(always)]
     pub const fn itline5(self) -> crate::common::Reg<regs::Itline5, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x94usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x94usize) as _) }
     }
     #[doc = "interrupt line 6 status register"]
     #[inline(always)]
     pub const fn itline6(self) -> crate::common::Reg<regs::Itline6, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x98usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x98usize) as _) }
     }
     #[doc = "interrupt line 7 status register"]
     #[inline(always)]
     pub const fn itline7(self) -> crate::common::Reg<regs::Itline7, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x9cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x9cusize) as _) }
     }
     #[doc = "interrupt line 9 status register"]
     #[inline(always)]
     pub const fn itline9(self) -> crate::common::Reg<regs::Itline9, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xa4usize) as _) }
     }
     #[doc = "interrupt line 10 status register"]
     #[inline(always)]
     pub const fn itline10(self) -> crate::common::Reg<regs::Itline10, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xa8usize) as _) }
     }
     #[doc = "interrupt line 11 status register"]
     #[inline(always)]
     pub const fn itline11(self) -> crate::common::Reg<regs::Itline11, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xacusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xacusize) as _) }
     }
     #[doc = "interrupt line 12 status register"]
     #[inline(always)]
     pub const fn itline12(self) -> crate::common::Reg<regs::Itline12, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xb0usize) as _) }
     }
     #[doc = "interrupt line 13 status register"]
     #[inline(always)]
     pub const fn itline13(self) -> crate::common::Reg<regs::Itline13, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xb4usize) as _) }
     }
     #[doc = "interrupt line 14 status register"]
     #[inline(always)]
     pub const fn itline14(self) -> crate::common::Reg<regs::Itline14, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xb8usize) as _) }
     }
     #[doc = "interrupt line 16 status register"]
     #[inline(always)]
     pub const fn itline16(self) -> crate::common::Reg<regs::Itline16, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xc0usize) as _) }
     }
     #[doc = "interrupt line 19 status register"]
     #[inline(always)]
     pub const fn itline19(self) -> crate::common::Reg<regs::Itline19, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xccusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xccusize) as _) }
     }
     #[doc = "interrupt line 21 status register"]
     #[inline(always)]
     pub const fn itline21(self) -> crate::common::Reg<regs::Itline21, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xd4usize) as _) }
     }
     #[doc = "interrupt line 22 status register"]
     #[inline(always)]
     pub const fn itline22(self) -> crate::common::Reg<regs::Itline22, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xd8usize) as _) }
     }
     #[doc = "interrupt line 23 status register"]
     #[inline(always)]
     pub const fn itline23(self) -> crate::common::Reg<regs::Itline23, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xdcusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xdcusize) as _) }
     }
     #[doc = "interrupt line 25 status register"]
     #[inline(always)]
     pub const fn itline25(self) -> crate::common::Reg<regs::Itline25, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xe4usize) as _) }
     }
     #[doc = "interrupt line 27 status register"]
     #[inline(always)]
     pub const fn itline27(self) -> crate::common::Reg<regs::Itline27, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xecusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xecusize) as _) }
     }
     #[doc = "interrupt line 28 status register"]
     #[inline(always)]
     pub const fn itline28(self) -> crate::common::Reg<regs::Itline28, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf0usize) as _) }
     }
 }
 pub mod regs {
@@ -147,6 +147,7 @@ pub mod regs {
     pub struct Cfgr1(pub u32);
     impl Cfgr1 {
         #[doc = "Memory mapping selection bits. This bitfield controlled by software selects the memory internally mapped at the address 0x0000_0000. Its reset value is determined by the boot mode configuration. Refer to Reference Manual section 2.5 for more details."]
+        #[must_use]
         #[inline(always)]
         pub const fn mem_mode(&self) -> super::vals::MemMode {
             let val = (self.0 >> 0usize) & 0x03;
@@ -154,10 +155,11 @@ pub mod regs {
         }
         #[doc = "Memory mapping selection bits. This bitfield controlled by software selects the memory internally mapped at the address 0x0000_0000. Its reset value is determined by the boot mode configuration. Refer to Reference Manual section 2.5 for more details."]
         #[inline(always)]
-        pub fn set_mem_mode(&mut self, val: super::vals::MemMode) {
+        pub const fn set_mem_mode(&mut self, val: super::vals::MemMode) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "PA11 pin remapping This bit is set and cleared by software. When set, it remaps the PA11 pin to operate as PA9 GPIO port, instead as PA11 GPIO port."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa11_rmp(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -165,10 +167,11 @@ pub mod regs {
         }
         #[doc = "PA11 pin remapping This bit is set and cleared by software. When set, it remaps the PA11 pin to operate as PA9 GPIO port, instead as PA11 GPIO port."]
         #[inline(always)]
-        pub fn set_pa11_rmp(&mut self, val: bool) {
+        pub const fn set_pa11_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "PA12 pin remapping This bit is set and cleared by software. When set, it remaps the PA12 pin to operate as PA10 GPIO port, instead as PA12 GPIO port."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa12_rmp(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -176,10 +179,11 @@ pub mod regs {
         }
         #[doc = "PA12 pin remapping This bit is set and cleared by software. When set, it remaps the PA12 pin to operate as PA10 GPIO port, instead as PA12 GPIO port."]
         #[inline(always)]
-        pub fn set_pa12_rmp(&mut self, val: bool) {
+        pub const fn set_pa12_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "IR output polarity selection"]
+        #[must_use]
         #[inline(always)]
         pub const fn ir_pol(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -187,10 +191,11 @@ pub mod regs {
         }
         #[doc = "IR output polarity selection"]
         #[inline(always)]
-        pub fn set_ir_pol(&mut self, val: bool) {
+        pub const fn set_ir_pol(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "IR Modulation Envelope signal selection This bitfield selects the signal for IR modulation envelope:"]
+        #[must_use]
         #[inline(always)]
         pub const fn ir_mod(&self) -> super::vals::IrMod {
             let val = (self.0 >> 6usize) & 0x03;
@@ -198,10 +203,11 @@ pub mod regs {
         }
         #[doc = "IR Modulation Envelope signal selection This bitfield selects the signal for IR modulation envelope:"]
         #[inline(always)]
-        pub fn set_ir_mod(&mut self, val: super::vals::IrMod) {
+        pub const fn set_ir_mod(&mut self, val: super::vals::IrMod) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
         }
         #[doc = "Fast Mode Plus (FM+) enable for PB6 This bit is set and cleared by software. It enables I2C FM+ driving capability on PB6 I/O port. With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c_pb6_fmp(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -209,10 +215,11 @@ pub mod regs {
         }
         #[doc = "Fast Mode Plus (FM+) enable for PB6 This bit is set and cleared by software. It enables I2C FM+ driving capability on PB6 I/O port. With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored."]
         #[inline(always)]
-        pub fn set_i2c_pb6_fmp(&mut self, val: bool) {
+        pub const fn set_i2c_pb6_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Fast Mode Plus (FM+) enable for PB7 This bit is set and cleared by software. It enables I2C FM+ driving capability on PB7 I/O port. With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c_pb7_fmp(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -220,10 +227,11 @@ pub mod regs {
         }
         #[doc = "Fast Mode Plus (FM+) enable for PB7 This bit is set and cleared by software. It enables I2C FM+ driving capability on PB7 I/O port. With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored."]
         #[inline(always)]
-        pub fn set_i2c_pb7_fmp(&mut self, val: bool) {
+        pub const fn set_i2c_pb7_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "Fast Mode Plus (FM+) enable for PB8 This bit is set and cleared by software. It enables I2C FM+ driving capability on PB8 I/O port. With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c_pb8_fmp(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -231,10 +239,11 @@ pub mod regs {
         }
         #[doc = "Fast Mode Plus (FM+) enable for PB8 This bit is set and cleared by software. It enables I2C FM+ driving capability on PB8 I/O port. With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored."]
         #[inline(always)]
-        pub fn set_i2c_pb8_fmp(&mut self, val: bool) {
+        pub const fn set_i2c_pb8_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Fast Mode Plus (FM+) enable for PB9 This bit is set and cleared by software. It enables I2C FM+ driving capability on PB9 I/O port. With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c_pb9_fmp(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -242,10 +251,11 @@ pub mod regs {
         }
         #[doc = "Fast Mode Plus (FM+) enable for PB9 This bit is set and cleared by software. It enables I2C FM+ driving capability on PB9 I/O port. With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored."]
         #[inline(always)]
-        pub fn set_i2c_pb9_fmp(&mut self, val: bool) {
+        pub const fn set_i2c_pb9_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "Fast Mode Plus (FM+) enable for I2C1 This bit is set and cleared by software. It enables I2C FM+ driving capability on I/O ports configured as I2C1 through GPIOx_AFR registers. With this bit in disable state, the I2C FM+ driving capability on I/O ports configured as I2C1 can be enabled through their corresponding I2Cx_FMP bit. When I2C FM+ is enabled, the speed control is ignored."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c1_fmp(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -253,10 +263,11 @@ pub mod regs {
         }
         #[doc = "Fast Mode Plus (FM+) enable for I2C1 This bit is set and cleared by software. It enables I2C FM+ driving capability on I/O ports configured as I2C1 through GPIOx_AFR registers. With this bit in disable state, the I2C FM+ driving capability on I/O ports configured as I2C1 can be enabled through their corresponding I2Cx_FMP bit. When I2C FM+ is enabled, the speed control is ignored."]
         #[inline(always)]
-        pub fn set_i2c1_fmp(&mut self, val: bool) {
+        pub const fn set_i2c1_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "Fast Mode Plus (FM+) enable for PA9 This bit is set and cleared by software. It enables I2C FM+ driving capability on PA9 I/O port. With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c_pa9_fmp(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -264,10 +275,11 @@ pub mod regs {
         }
         #[doc = "Fast Mode Plus (FM+) enable for PA9 This bit is set and cleared by software. It enables I2C FM+ driving capability on PA9 I/O port. With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored."]
         #[inline(always)]
-        pub fn set_i2c_pa9_fmp(&mut self, val: bool) {
+        pub const fn set_i2c_pa9_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "Fast Mode Plus (FM+) enable for PA10 This bit is set and cleared by software. It enables I2C FM+ driving capability on PA10 I/O port. With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c_pa10_fmp(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -275,10 +287,11 @@ pub mod regs {
         }
         #[doc = "Fast Mode Plus (FM+) enable for PA10 This bit is set and cleared by software. It enables I2C FM+ driving capability on PA10 I/O port. With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored."]
         #[inline(always)]
-        pub fn set_i2c_pa10_fmp(&mut self, val: bool) {
+        pub const fn set_i2c_pa10_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "Fast Mode Plus (FM+) enable for PC14 This bit is set and cleared by software. It enables I2C FM+ driving capability on PC14 I/O port. With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c_pc14_fmp(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -286,7 +299,7 @@ pub mod regs {
         }
         #[doc = "Fast Mode Plus (FM+) enable for PC14 This bit is set and cleared by software. It enables I2C FM+ driving capability on PC14 I/O port. With this bit in disable state, the I2C FM+ driving capability on this I/O port can be enabled through one of I2Cx_FMP bits. When I2C FM+ is enabled, the speed control is ignored."]
         #[inline(always)]
-        pub fn set_i2c_pc14_fmp(&mut self, val: bool) {
+        pub const fn set_i2c_pc14_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
     }
@@ -327,6 +340,7 @@ pub mod regs {
     pub struct Cfgr2(pub u32);
     impl Cfgr2 {
         #[doc = "Cortex<Superscript>�<Default � Font>-M0+ LOCKUP enable This bit is set by software and cleared by system reset. When set, it enables the connection of Cortex<Superscript>�<Default � Font>-M0+ LOCKUP (HardFault) output to the TIM1/16/17 Break input."]
+        #[must_use]
         #[inline(always)]
         pub const fn lockup_lock(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -334,7 +348,7 @@ pub mod regs {
         }
         #[doc = "Cortex<Superscript>�<Default � Font>-M0+ LOCKUP enable This bit is set by software and cleared by system reset. When set, it enables the connection of Cortex<Superscript>�<Default � Font>-M0+ LOCKUP (HardFault) output to the TIM1/16/17 Break input."]
         #[inline(always)]
-        pub fn set_lockup_lock(&mut self, val: bool) {
+        pub const fn set_lockup_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -363,6 +377,7 @@ pub mod regs {
     pub struct Cfgr3(pub u32);
     impl Cfgr3 {
         #[doc = "Pin GPIO multiplexer 0 This bit is set by software and cleared by system reset. It assigns a GPIO to a pin. 1x: Reserved Pin F2 of WLCSP14 package GPIO assignment 1x: Reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn pinmux0(&self) -> super::vals::Pinmux0 {
             let val = (self.0 >> 0usize) & 0x03;
@@ -370,10 +385,11 @@ pub mod regs {
         }
         #[doc = "Pin GPIO multiplexer 0 This bit is set by software and cleared by system reset. It assigns a GPIO to a pin. 1x: Reserved Pin F2 of WLCSP14 package GPIO assignment 1x: Reserved"]
         #[inline(always)]
-        pub fn set_pinmux0(&mut self, val: super::vals::Pinmux0) {
+        pub const fn set_pinmux0(&mut self, val: super::vals::Pinmux0) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "Pin GPIO multiplexer 1 This bit is set by software and cleared by system reset. It assigns a GPIO to a pin. 1x: Reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn pinmux1(&self) -> super::vals::Pinmux1 {
             let val = (self.0 >> 2usize) & 0x03;
@@ -381,10 +397,11 @@ pub mod regs {
         }
         #[doc = "Pin GPIO multiplexer 1 This bit is set by software and cleared by system reset. It assigns a GPIO to a pin. 1x: Reserved"]
         #[inline(always)]
-        pub fn set_pinmux1(&mut self, val: super::vals::Pinmux1) {
+        pub const fn set_pinmux1(&mut self, val: super::vals::Pinmux1) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
         #[doc = "Pin GPIO multiplexer 2 This bit is set by software and cleared by system reset. It assigns a GPIO to a pin. 1x: Reserved 1x: Reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn pinmux2(&self) -> super::vals::Pinmux2 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -392,10 +409,11 @@ pub mod regs {
         }
         #[doc = "Pin GPIO multiplexer 2 This bit is set by software and cleared by system reset. It assigns a GPIO to a pin. 1x: Reserved 1x: Reserved"]
         #[inline(always)]
-        pub fn set_pinmux2(&mut self, val: super::vals::Pinmux2) {
+        pub const fn set_pinmux2(&mut self, val: super::vals::Pinmux2) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "Pin GPIO multiplexer 3 This bit is set by software and cleared by system reset. It assigns a GPIO to a pin. 1x: Reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn pinmux3(&self) -> super::vals::Pinmux3 {
             let val = (self.0 >> 6usize) & 0x03;
@@ -403,10 +421,11 @@ pub mod regs {
         }
         #[doc = "Pin GPIO multiplexer 3 This bit is set by software and cleared by system reset. It assigns a GPIO to a pin. 1x: Reserved"]
         #[inline(always)]
-        pub fn set_pinmux3(&mut self, val: super::vals::Pinmux3) {
+        pub const fn set_pinmux3(&mut self, val: super::vals::Pinmux3) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
         }
         #[doc = "Pin GPIO multiplexer 4 This bit is set by software and cleared by system reset. It assigns a GPIO to a pin. 1x: Reserved 1x: Reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn pinmux4(&self) -> super::vals::Pinmux4 {
             let val = (self.0 >> 8usize) & 0x03;
@@ -414,10 +433,11 @@ pub mod regs {
         }
         #[doc = "Pin GPIO multiplexer 4 This bit is set by software and cleared by system reset. It assigns a GPIO to a pin. 1x: Reserved 1x: Reserved"]
         #[inline(always)]
-        pub fn set_pinmux4(&mut self, val: super::vals::Pinmux4) {
+        pub const fn set_pinmux4(&mut self, val: super::vals::Pinmux4) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
         #[doc = "Pin GPIO multiplexer 5 This bit is set by software and cleared by system reset. It assigns a GPIO to a pin. 1x: Reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn pinmux5(&self) -> super::vals::Pinmux5 {
             let val = (self.0 >> 10usize) & 0x03;
@@ -425,7 +445,7 @@ pub mod regs {
         }
         #[doc = "Pin GPIO multiplexer 5 This bit is set by software and cleared by system reset. It assigns a GPIO to a pin. 1x: Reserved"]
         #[inline(always)]
-        pub fn set_pinmux5(&mut self, val: super::vals::Pinmux5) {
+        pub const fn set_pinmux5(&mut self, val: super::vals::Pinmux5) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
         }
     }
@@ -468,6 +488,7 @@ pub mod regs {
     pub struct Itline0(pub u32);
     impl Itline0 {
         #[doc = "Window watchdog interrupt pending flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn wwdg(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -475,7 +496,7 @@ pub mod regs {
         }
         #[doc = "Window watchdog interrupt pending flag"]
         #[inline(always)]
-        pub fn set_wwdg(&mut self, val: bool) {
+        pub const fn set_wwdg(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -502,6 +523,7 @@ pub mod regs {
     pub struct Itline10(pub u32);
     impl Itline10 {
         #[doc = "DMA1 channel 2 interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn dma1_ch2(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -509,10 +531,11 @@ pub mod regs {
         }
         #[doc = "DMA1 channel 2 interrupt request pending"]
         #[inline(always)]
-        pub fn set_dma1_ch2(&mut self, val: bool) {
+        pub const fn set_dma1_ch2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "DMA1 channel 3 interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn dma1_ch3(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -520,7 +543,7 @@ pub mod regs {
         }
         #[doc = "DMA1 channel 3 interrupt request pending"]
         #[inline(always)]
-        pub fn set_dma1_ch3(&mut self, val: bool) {
+        pub const fn set_dma1_ch3(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -555,6 +578,7 @@ pub mod regs {
     pub struct Itline11(pub u32);
     impl Itline11 {
         #[doc = "DMAMUX interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn dmamux(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -562,7 +586,7 @@ pub mod regs {
         }
         #[doc = "DMAMUX interrupt request pending"]
         #[inline(always)]
-        pub fn set_dmamux(&mut self, val: bool) {
+        pub const fn set_dmamux(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -589,6 +613,7 @@ pub mod regs {
     pub struct Itline12(pub u32);
     impl Itline12 {
         #[doc = "ADC interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -596,7 +621,7 @@ pub mod regs {
         }
         #[doc = "ADC interrupt request pending"]
         #[inline(always)]
-        pub fn set_adc(&mut self, val: bool) {
+        pub const fn set_adc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -623,6 +648,7 @@ pub mod regs {
     pub struct Itline13(pub u32);
     impl Itline13 {
         #[doc = "Timer 1 commutation interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim1_ccu(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -630,10 +656,11 @@ pub mod regs {
         }
         #[doc = "Timer 1 commutation interrupt request pending"]
         #[inline(always)]
-        pub fn set_tim1_ccu(&mut self, val: bool) {
+        pub const fn set_tim1_ccu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Timer 1 trigger interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim1_trg(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -641,10 +668,11 @@ pub mod regs {
         }
         #[doc = "Timer 1 trigger interrupt request pending"]
         #[inline(always)]
-        pub fn set_tim1_trg(&mut self, val: bool) {
+        pub const fn set_tim1_trg(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Timer 1 update interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim1_upd(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -652,10 +680,11 @@ pub mod regs {
         }
         #[doc = "Timer 1 update interrupt request pending"]
         #[inline(always)]
-        pub fn set_tim1_upd(&mut self, val: bool) {
+        pub const fn set_tim1_upd(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Timer 1 break interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim1_brk(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -663,7 +692,7 @@ pub mod regs {
         }
         #[doc = "Timer 1 break interrupt request pending"]
         #[inline(always)]
-        pub fn set_tim1_brk(&mut self, val: bool) {
+        pub const fn set_tim1_brk(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
@@ -702,6 +731,7 @@ pub mod regs {
     pub struct Itline14(pub u32);
     impl Itline14 {
         #[doc = "Timer 1 capture compare interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim1_cc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -709,7 +739,7 @@ pub mod regs {
         }
         #[doc = "Timer 1 capture compare interrupt request pending"]
         #[inline(always)]
-        pub fn set_tim1_cc(&mut self, val: bool) {
+        pub const fn set_tim1_cc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -736,6 +766,7 @@ pub mod regs {
     pub struct Itline16(pub u32);
     impl Itline16 {
         #[doc = "Timer 3 interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim3(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -743,7 +774,7 @@ pub mod regs {
         }
         #[doc = "Timer 3 interrupt request pending"]
         #[inline(always)]
-        pub fn set_tim3(&mut self, val: bool) {
+        pub const fn set_tim3(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -770,6 +801,7 @@ pub mod regs {
     pub struct Itline19(pub u32);
     impl Itline19 {
         #[doc = "Timer 14 interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim14(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -777,7 +809,7 @@ pub mod regs {
         }
         #[doc = "Timer 14 interrupt request pending"]
         #[inline(always)]
-        pub fn set_tim14(&mut self, val: bool) {
+        pub const fn set_tim14(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -804,6 +836,7 @@ pub mod regs {
     pub struct Itline2(pub u32);
     impl Itline2 {
         #[doc = "RTC interrupt request pending (EXTI line 19)"]
+        #[must_use]
         #[inline(always)]
         pub const fn rtc(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -811,7 +844,7 @@ pub mod regs {
         }
         #[doc = "RTC interrupt request pending (EXTI line 19)"]
         #[inline(always)]
-        pub fn set_rtc(&mut self, val: bool) {
+        pub const fn set_rtc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -838,6 +871,7 @@ pub mod regs {
     pub struct Itline21(pub u32);
     impl Itline21 {
         #[doc = "Timer 16 interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim16(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -845,7 +879,7 @@ pub mod regs {
         }
         #[doc = "Timer 16 interrupt request pending"]
         #[inline(always)]
-        pub fn set_tim16(&mut self, val: bool) {
+        pub const fn set_tim16(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -872,6 +906,7 @@ pub mod regs {
     pub struct Itline22(pub u32);
     impl Itline22 {
         #[doc = "Timer 17 interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim17(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -879,7 +914,7 @@ pub mod regs {
         }
         #[doc = "Timer 17 interrupt request pending"]
         #[inline(always)]
-        pub fn set_tim17(&mut self, val: bool) {
+        pub const fn set_tim17(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -906,6 +941,7 @@ pub mod regs {
     pub struct Itline23(pub u32);
     impl Itline23 {
         #[doc = "I2C1 interrupt request pending, combined with EXTI line 23"]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c1(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -913,7 +949,7 @@ pub mod regs {
         }
         #[doc = "I2C1 interrupt request pending, combined with EXTI line 23"]
         #[inline(always)]
-        pub fn set_i2c1(&mut self, val: bool) {
+        pub const fn set_i2c1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -940,6 +976,7 @@ pub mod regs {
     pub struct Itline25(pub u32);
     impl Itline25 {
         #[doc = "SPI1 interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn spi1(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -947,7 +984,7 @@ pub mod regs {
         }
         #[doc = "SPI1 interrupt request pending"]
         #[inline(always)]
-        pub fn set_spi1(&mut self, val: bool) {
+        pub const fn set_spi1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -974,6 +1011,7 @@ pub mod regs {
     pub struct Itline27(pub u32);
     impl Itline27 {
         #[doc = "USART1 interrupt request pending, combined with EXTI line 25"]
+        #[must_use]
         #[inline(always)]
         pub const fn usart1(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -981,7 +1019,7 @@ pub mod regs {
         }
         #[doc = "USART1 interrupt request pending, combined with EXTI line 25"]
         #[inline(always)]
-        pub fn set_usart1(&mut self, val: bool) {
+        pub const fn set_usart1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -1008,6 +1046,7 @@ pub mod regs {
     pub struct Itline28(pub u32);
     impl Itline28 {
         #[doc = "USART2 interrupt request pending (EXTI line 26)"]
+        #[must_use]
         #[inline(always)]
         pub const fn usart2(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1015,7 +1054,7 @@ pub mod regs {
         }
         #[doc = "USART2 interrupt request pending (EXTI line 26)"]
         #[inline(always)]
-        pub fn set_usart2(&mut self, val: bool) {
+        pub const fn set_usart2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -1042,6 +1081,7 @@ pub mod regs {
     pub struct Itline3(pub u32);
     impl Itline3 {
         #[doc = "Flash interface interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn flash_itf(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1049,7 +1089,7 @@ pub mod regs {
         }
         #[doc = "Flash interface interrupt request pending"]
         #[inline(always)]
-        pub fn set_flash_itf(&mut self, val: bool) {
+        pub const fn set_flash_itf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -1076,6 +1116,7 @@ pub mod regs {
     pub struct Itline4(pub u32);
     impl Itline4 {
         #[doc = "Reset and clock control interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn rcc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1083,7 +1124,7 @@ pub mod regs {
         }
         #[doc = "Reset and clock control interrupt request pending"]
         #[inline(always)]
-        pub fn set_rcc(&mut self, val: bool) {
+        pub const fn set_rcc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -1110,6 +1151,7 @@ pub mod regs {
     pub struct Itline5(pub u32);
     impl Itline5 {
         #[doc = "EXTI"]
+        #[must_use]
         #[inline(always)]
         pub const fn exti(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -1119,7 +1161,7 @@ pub mod regs {
         }
         #[doc = "EXTI"]
         #[inline(always)]
-        pub fn set_exti(&mut self, n: usize, val: bool) {
+        pub const fn set_exti(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -1156,6 +1198,7 @@ pub mod regs {
     pub struct Itline6(pub u32);
     impl Itline6 {
         #[doc = "EXTI"]
+        #[must_use]
         #[inline(always)]
         pub const fn exti(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -1165,7 +1208,7 @@ pub mod regs {
         }
         #[doc = "EXTI"]
         #[inline(always)]
-        pub fn set_exti(&mut self, n: usize, val: bool) {
+        pub const fn set_exti(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -1202,6 +1245,7 @@ pub mod regs {
     pub struct Itline7(pub u32);
     impl Itline7 {
         #[doc = "EXTI"]
+        #[must_use]
         #[inline(always)]
         pub const fn exti(&self, n: usize) -> bool {
             assert!(n < 12usize);
@@ -1211,7 +1255,7 @@ pub mod regs {
         }
         #[doc = "EXTI"]
         #[inline(always)]
-        pub fn set_exti(&mut self, n: usize, val: bool) {
+        pub const fn set_exti(&mut self, n: usize, val: bool) {
             assert!(n < 12usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -1253,6 +1297,7 @@ pub mod regs {
     pub struct Itline9(pub u32);
     impl Itline9 {
         #[doc = "DMA1 channel 1interrupt request pending"]
+        #[must_use]
         #[inline(always)]
         pub const fn dma1_ch1(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1260,7 +1305,7 @@ pub mod regs {
         }
         #[doc = "DMA1 channel 1interrupt request pending"]
         #[inline(always)]
-        pub fn set_dma1_ch1(&mut self, val: bool) {
+        pub const fn set_dma1_ch1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }

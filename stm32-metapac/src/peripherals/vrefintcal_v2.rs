@@ -22,7 +22,7 @@ impl Vrefintcal {
     #[doc = "Factory calibration"]
     #[inline(always)]
     pub const fn data(self) -> crate::common::Reg<regs::VrefintcalData, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
 }
 pub mod regs {
@@ -32,6 +32,7 @@ pub mod regs {
     pub struct VrefintcalData(pub u32);
     impl VrefintcalData {
         #[doc = "VREFINT calibration value"]
+        #[must_use]
         #[inline(always)]
         pub const fn vrefint_cal(&self) -> u16 {
             let val = (self.0 >> 8usize) & 0x0fff;
@@ -39,7 +40,7 @@ pub mod regs {
         }
         #[doc = "VREFINT calibration value"]
         #[inline(always)]
-        pub fn set_vrefint_cal(&mut self, val: u16) {
+        pub const fn set_vrefint_cal(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 8usize)) | (((val as u32) & 0x0fff) << 8usize);
         }
     }

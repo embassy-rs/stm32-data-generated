@@ -1301,6 +1301,13 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
+                    name: "DIV128",
+                    description: Some(
+                        "RTCCLK/128 is selected when (PREDIV_A+1) = 128 (actually selects 7th flip flop output)",
+                    ),
+                    value: 7,
+                },
+                EnumVariant {
                     name: "DIV2",
                     description: Some(
                         "RTCCLK/2 is selected when (PREDIV_A+1) = 128 (actually selects 1st flip flop output)",
@@ -1314,13 +1321,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 2,
                 },
-                EnumVariant {
-                    name: "DIV128",
-                    description: Some(
-                        "RTCCLK/128 is selected when (PREDIV_A+1) = 128 (actually selects 7th flip flop output)",
-                    ),
-                    value: 7,
-                },
             ],
         },
         Enum {
@@ -1328,13 +1328,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
-                EnumVariant {
-                    name: "NO_FILTER",
-                    description: Some(
-                        "Tamper event is activated on edge of INx input transitions to the active level (no internal pull-up on INx input).",
-                    ),
-                    value: 0,
-                },
                 EnumVariant {
                     name: "FILTER2",
                     description: Some(
@@ -1356,6 +1349,13 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 3,
                 },
+                EnumVariant {
+                    name: "NO_FILTER",
+                    description: Some(
+                        "Tamper event is activated on edge of INx input transitions to the active level (no internal pull-up on INx input).",
+                    ),
+                    value: 0,
+                },
             ],
         },
         Enum {
@@ -1371,25 +1371,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HZ_2",
+                    name: "HZ_128",
                     description: Some(
-                        "RTCCLK / 16384 (2 Hz when RTCCLK = 32768 Hz)",
+                        "RTCCLK / 256 (128 Hz when RTCCLK = 32768 Hz)",
                     ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HZ_4",
-                    description: Some(
-                        "RTCCLK / 8192 (4 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HZ_8",
-                    description: Some(
-                        "RTCCLK / 4096 (8 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 3,
+                    value: 7,
                 },
                 EnumVariant {
                     name: "HZ_16",
@@ -1399,11 +1385,25 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 4,
                 },
                 EnumVariant {
+                    name: "HZ_2",
+                    description: Some(
+                        "RTCCLK / 16384 (2 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
                     name: "HZ_32",
                     description: Some(
                         "RTCCLK / 1024 (32 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 5,
+                },
+                EnumVariant {
+                    name: "HZ_4",
+                    description: Some(
+                        "RTCCLK / 8192 (4 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 2,
                 },
                 EnumVariant {
                     name: "HZ_64",
@@ -1413,11 +1413,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 6,
                 },
                 EnumVariant {
-                    name: "HZ_128",
+                    name: "HZ_8",
                     description: Some(
-                        "RTCCLK / 256 (128 Hz when RTCCLK = 32768 Hz)",
+                        "RTCCLK / 4096 (8 Hz when RTCCLK = 32768 Hz)",
                     ),
-                    value: 7,
+                    value: 3,
                 },
             ],
         },
@@ -1462,18 +1462,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FILTERED_LOW_OR_UNFILTERED_HIGH",
-                    description: Some(
-                        "If TAMPFLT 00 Tamper 2 input staying low triggers a tamper detection event.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FILTERED_HIGH_OR_UNFILTERED_LOW",
                     description: Some(
                         "If TAMPFLT 00 Tamper 2 input staying high triggers a tamper detection event.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "FILTERED_LOW_OR_UNFILTERED_HIGH",
+                    description: Some(
+                        "If TAMPFLT 00 Tamper 2 input staying low triggers a tamper detection event.",
+                    ),
+                    value: 0,
                 },
             ],
         },

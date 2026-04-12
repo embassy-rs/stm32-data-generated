@@ -627,14 +627,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BIT7",
-                    description: Some("7-bit addressing mode"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "BIT10",
                     description: Some("10-bit addressing mode"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "BIT7",
+                    description: Some("7-bit addressing mode"),
+                    value: 0,
                 },
             ],
         },
@@ -644,14 +644,39 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "NO_FILTER",
-                    description: Some("Digital filter disabled"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FILTER1",
                     description: Some("Digital filter enabled and filtering capability up to 1 tI2CCLK"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "FILTER10",
+                    description: Some("Digital filter enabled and filtering capability up to 10 tI2CCLK"),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "FILTER11",
+                    description: Some("Digital filter enabled and filtering capability up to 11 tI2CCLK"),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "FILTER12",
+                    description: Some("Digital filter enabled and filtering capability up to 12 tI2CCLK"),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "FILTER13",
+                    description: Some("Digital filter enabled and filtering capability up to 13 tI2CCLK"),
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "FILTER14",
+                    description: Some("Digital filter enabled and filtering capability up to 14 tI2CCLK"),
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "FILTER15",
+                    description: Some("Digital filter enabled and filtering capability up to 15 tI2CCLK"),
+                    value: 15,
                 },
                 EnumVariant {
                     name: "FILTER2",
@@ -694,34 +719,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 9,
                 },
                 EnumVariant {
-                    name: "FILTER10",
-                    description: Some("Digital filter enabled and filtering capability up to 10 tI2CCLK"),
-                    value: 10,
-                },
-                EnumVariant {
-                    name: "FILTER11",
-                    description: Some("Digital filter enabled and filtering capability up to 11 tI2CCLK"),
-                    value: 11,
-                },
-                EnumVariant {
-                    name: "FILTER12",
-                    description: Some("Digital filter enabled and filtering capability up to 12 tI2CCLK"),
-                    value: 12,
-                },
-                EnumVariant {
-                    name: "FILTER13",
-                    description: Some("Digital filter enabled and filtering capability up to 13 tI2CCLK"),
-                    value: 13,
-                },
-                EnumVariant {
-                    name: "FILTER14",
-                    description: Some("Digital filter enabled and filtering capability up to 14 tI2CCLK"),
-                    value: 14,
-                },
-                EnumVariant {
-                    name: "FILTER15",
-                    description: Some("Digital filter enabled and filtering capability up to 15 tI2CCLK"),
-                    value: 15,
+                    name: "NO_FILTER",
+                    description: Some("Digital filter disabled"),
+                    value: 0,
                 },
             ],
         },
@@ -731,14 +731,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DUTY2_1",
-                    description: Some("Duty cycle t_low/t_high = 2/1"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "DUTY16_9",
                     description: Some("Duty cycle t_low/t_high = 16/9"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "DUTY2_1",
+                    description: Some("Duty cycle t_low/t_high = 2/1"),
+                    value: 0,
                 },
             ],
         },
@@ -748,14 +748,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "SINGLE",
-                    description: Some("Single addressing mode"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "DUAL",
                     description: Some("Dual addressing mode"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "SINGLE",
+                    description: Some("Single addressing mode"),
+                    value: 0,
                 },
             ],
         },
@@ -765,14 +765,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "STANDARD",
-                    description: Some("Standard mode I2C"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FAST",
                     description: Some("Fast mode I2C"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "STANDARD",
+                    description: Some("Standard mode I2C"),
+                    value: 0,
                 },
             ],
         },

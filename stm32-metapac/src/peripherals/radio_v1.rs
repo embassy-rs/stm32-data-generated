@@ -21,262 +21,262 @@ impl Radio {
     #[doc = "AA0_DIG_USR register."]
     #[inline(always)]
     pub const fn aa0_dig_usr(self) -> crate::common::Reg<regs::Aa0DigUsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "AA1_DIG_USR register."]
     #[inline(always)]
     pub const fn aa1_dig_usr(self) -> crate::common::Reg<regs::Aa1DigUsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "AA2_DIG_USR register."]
     #[inline(always)]
     pub const fn aa2_dig_usr(self) -> crate::common::Reg<regs::Aa2DigUsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "AA3_DIG_USR register."]
     #[inline(always)]
     pub const fn aa3_dig_usr(self) -> crate::common::Reg<regs::Aa3DigUsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "DEM_MOD_DIG_USR register."]
     #[inline(always)]
     pub const fn dem_mod_dig_usr(self) -> crate::common::Reg<regs::DemModDigUsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "RADIO_FSM_USR register."]
     #[inline(always)]
     pub const fn radio_fsm_usr(self) -> crate::common::Reg<regs::RadioFsmUsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "PHYCTRL_DIG_USR register."]
     #[inline(always)]
     pub const fn phyctrl_dig_usr(self) -> crate::common::Reg<regs::PhyctrlDigUsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "AFC1_DIG_ENG register."]
     #[inline(always)]
     pub const fn afc1_dig_eng(self) -> crate::common::Reg<regs::Afc1DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
     }
     #[doc = "CR0_DIG_ENG register."]
     #[inline(always)]
     pub const fn cr0_dig_eng(self) -> crate::common::Reg<regs::Cr0DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x54usize) as _) }
     }
     #[doc = "CR0_LR register."]
     #[inline(always)]
     pub const fn cr0_lr(self) -> crate::common::Reg<regs::Cr0Lr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x68usize) as _) }
     }
     #[doc = "VIT_CONF_DIG_ENG register."]
     #[inline(always)]
     pub const fn vit_conf_dig_eng(self) -> crate::common::Reg<regs::VitConfDigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x6cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x6cusize) as _) }
     }
     #[doc = "LR_PD_THR_DIG_ENG register."]
     #[inline(always)]
     pub const fn lr_pd_thr_dig_eng(self) -> crate::common::Reg<regs::LrPdThrDigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x84usize) as _) }
     }
     #[doc = "LR_RSSI_THR_DIG_ENG register."]
     #[inline(always)]
     pub const fn lr_rssi_thr_dig_eng(self) -> crate::common::Reg<regs::LrRssiThrDigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x88usize) as _) }
     }
     #[doc = "LR_AAC_THR_DIG_ENG register."]
     #[inline(always)]
     pub const fn lr_aac_thr_dig_eng(self) -> crate::common::Reg<regs::LrAacThrDigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x8cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8cusize) as _) }
     }
     #[doc = "SYNTHCAL0_DIG_ENG register."]
     #[inline(always)]
     pub const fn synthcal0_dig_eng(self) -> crate::common::Reg<regs::Synthcal0DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xa8usize) as _) }
     }
     #[doc = "DTB5_DIG_ENG register."]
     #[inline(always)]
     pub const fn dtb5_dig_eng(self) -> crate::common::Reg<regs::Dtb5DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf0usize) as _) }
     }
     #[doc = "RXADC_ANA_USR register."]
     #[inline(always)]
     pub const fn rxadc_ana_usr(self) -> crate::common::Reg<regs::RxadcAnaUsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0148usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0148usize) as _) }
     }
     #[doc = "LDO_ANA_ENG register."]
     #[inline(always)]
     pub const fn ldo_ana_eng(self) -> crate::common::Reg<regs::LdoAnaEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0154usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0154usize) as _) }
     }
     #[doc = "CBIAS0_ANA_ENG register."]
     #[inline(always)]
     pub const fn cbias0_ana_eng(self) -> crate::common::Reg<regs::Cbias0AnaEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0174usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0174usize) as _) }
     }
     #[doc = "CBIAS1_ANA_ENG register."]
     #[inline(always)]
     pub const fn cbias1_ana_eng(self) -> crate::common::Reg<regs::Cbias1AnaEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0178usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0178usize) as _) }
     }
     #[doc = "SYNTHCAL0_DIG_OUT register."]
     #[inline(always)]
     pub const fn synthcal0_dig_out(self) -> crate::common::Reg<regs::Synthcal0DigOut, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0180usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0180usize) as _) }
     }
     #[doc = "SYNTHCAL1_DIG_OUT register."]
     #[inline(always)]
     pub const fn synthcal1_dig_out(self) -> crate::common::Reg<regs::Synthcal1DigOut, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0184usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0184usize) as _) }
     }
     #[doc = "SYNTHCAL2_DIG_OUT register."]
     #[inline(always)]
     pub const fn synthcal2_dig_out(self) -> crate::common::Reg<regs::Synthcal2DigOut, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0188usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0188usize) as _) }
     }
     #[doc = "SYNTHCAL3_DIG_OUT register."]
     #[inline(always)]
     pub const fn synthcal3_dig_out(self) -> crate::common::Reg<regs::Synthcal3DigOut, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x018cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x018cusize) as _) }
     }
     #[doc = "SYNTHCAL4_DIG_OUT register."]
     #[inline(always)]
     pub const fn synthcal4_dig_out(self) -> crate::common::Reg<regs::Synthcal4DigOut, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0190usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0190usize) as _) }
     }
     #[doc = "SYNTHCAL5_DIG_OUT register."]
     #[inline(always)]
     pub const fn synthcal5_dig_out(self) -> crate::common::Reg<regs::Synthcal5DigOut, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0194usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0194usize) as _) }
     }
     #[doc = "FSM_STATUS_DIG_OUT register."]
     #[inline(always)]
     pub const fn fsm_status_dig_out(self) -> crate::common::Reg<regs::FsmStatusDigOut, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0198usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0198usize) as _) }
     }
     #[doc = "RSSI0_DIG_OUT register."]
     #[inline(always)]
     pub const fn rssi0_dig_out(self) -> crate::common::Reg<regs::Rssi0DigOut, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01a4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01a4usize) as _) }
     }
     #[doc = "RSSI1_DIG_OUT register."]
     #[inline(always)]
     pub const fn rssi1_dig_out(self) -> crate::common::Reg<regs::Rssi1DigOut, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01a8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01a8usize) as _) }
     }
     #[doc = "AGC_DIG_OUT register."]
     #[inline(always)]
     pub const fn agc_dig_out(self) -> crate::common::Reg<regs::AgcDigOut, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01acusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01acusize) as _) }
     }
     #[doc = "DEMOD_DIG_OUT register."]
     #[inline(always)]
     pub const fn demod_dig_out(self) -> crate::common::Reg<regs::DemodDigOut, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01b0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01b0usize) as _) }
     }
     #[doc = "AGC2_ANA_TST register."]
     #[inline(always)]
     pub const fn agc2_ana_tst(self) -> crate::common::Reg<regs::Agc2AnaTst, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01bcusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01bcusize) as _) }
     }
     #[doc = "AGC0_DIG_ENG register."]
     #[inline(always)]
     pub const fn agc0_dig_eng(self) -> crate::common::Reg<regs::Agc0DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01c0usize) as _) }
     }
     #[doc = "AGC1_DIG_ENG register."]
     #[inline(always)]
     pub const fn agc1_dig_eng(self) -> crate::common::Reg<regs::Agc1DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01c4usize) as _) }
     }
     #[doc = "AGC10_DIG_ENG register."]
     #[inline(always)]
     pub const fn agc10_dig_eng(self) -> crate::common::Reg<regs::Agc10DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01e8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01e8usize) as _) }
     }
     #[doc = "AGC11_DIG_ENG register."]
     #[inline(always)]
     pub const fn agc11_dig_eng(self) -> crate::common::Reg<regs::Agc11DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01ecusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01ecusize) as _) }
     }
     #[doc = "AGC12_DIG_ENG register."]
     #[inline(always)]
     pub const fn agc12_dig_eng(self) -> crate::common::Reg<regs::Agc12DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01f0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01f0usize) as _) }
     }
     #[doc = "AGC13_DIG_ENG register."]
     #[inline(always)]
     pub const fn agc13_dig_eng(self) -> crate::common::Reg<regs::Agc13DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01f4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01f4usize) as _) }
     }
     #[doc = "AGC14_DIG_ENG register."]
     #[inline(always)]
     pub const fn agc14_dig_eng(self) -> crate::common::Reg<regs::Agc14DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01f8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01f8usize) as _) }
     }
     #[doc = "AGC15_DIG_ENG register."]
     #[inline(always)]
     pub const fn agc15_dig_eng(self) -> crate::common::Reg<regs::Agc15DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01fcusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01fcusize) as _) }
     }
     #[doc = "AGC16_DIG_ENG register."]
     #[inline(always)]
     pub const fn agc16_dig_eng(self) -> crate::common::Reg<regs::Agc16DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0200usize) as _) }
     }
     #[doc = "AGC17_DIG_ENG register."]
     #[inline(always)]
     pub const fn agc17_dig_eng(self) -> crate::common::Reg<regs::Agc17DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0204usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0204usize) as _) }
     }
     #[doc = "AGC18_DIG_ENG register."]
     #[inline(always)]
     pub const fn agc18_dig_eng(self) -> crate::common::Reg<regs::Agc18DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0208usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0208usize) as _) }
     }
     #[doc = "AGC19_DIG_ENG register."]
     #[inline(always)]
     pub const fn agc19_dig_eng(self) -> crate::common::Reg<regs::Agc19DigEng, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x020cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x020cusize) as _) }
     }
     #[doc = "RXADC_HW_TRIM_OUT register."]
     #[inline(always)]
     pub const fn rxadc_hw_trim_out(self) -> crate::common::Reg<regs::RxadcHwTrimOut, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0224usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0224usize) as _) }
     }
     #[doc = "CBIAS0_HW_TRIM_OUT register."]
     #[inline(always)]
     pub const fn cbias0_hw_trim_out(self) -> crate::common::Reg<regs::Cbias0HwTrimOut, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0228usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0228usize) as _) }
     }
     #[doc = "AGC_HW_TRIM_OUT register."]
     #[inline(always)]
     pub const fn agc_hw_trim_out(self) -> crate::common::Reg<regs::AgcHwTrimOut, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0230usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0230usize) as _) }
     }
     #[doc = "DEMOD_IQ2_DIG_TST register."]
     #[inline(always)]
     pub const fn demod_iq2_dig_tst(self) -> crate::common::Reg<regs::DemodIq2DigTst, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x023cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x023cusize) as _) }
     }
     #[doc = "ANTSW0_DIG_USR register."]
     #[inline(always)]
     pub const fn antsw0_dig_usr(self) -> crate::common::Reg<regs::Antsw0DigUsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0240usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0240usize) as _) }
     }
     #[doc = "ANTSW1_DIG_USR register."]
     #[inline(always)]
     pub const fn antsw1_dig_usr(self) -> crate::common::Reg<regs::Antsw1DigUsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0244usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0244usize) as _) }
     }
     #[doc = "ANTSW2_DIG_USR register."]
     #[inline(always)]
     pub const fn antsw2_dig_usr(self) -> crate::common::Reg<regs::Antsw2DigUsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0248usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0248usize) as _) }
     }
     #[doc = "ANTSW3_DIG_USR register."]
     #[inline(always)]
     pub const fn antsw3_dig_usr(self) -> crate::common::Reg<regs::Antsw3DigUsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x024cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x024cusize) as _) }
     }
 }
 pub mod regs {
@@ -286,6 +286,7 @@ pub mod regs {
     pub struct Aa0DigUsr(pub u32);
     impl Aa0DigUsr {
         #[doc = "Least significant byte of the Bluetooth LE Access Address code."]
+        #[must_use]
         #[inline(always)]
         pub const fn aa_7_0(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -293,7 +294,7 @@ pub mod regs {
         }
         #[doc = "Least significant byte of the Bluetooth LE Access Address code."]
         #[inline(always)]
-        pub fn set_aa_7_0(&mut self, val: u8) {
+        pub const fn set_aa_7_0(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -320,6 +321,7 @@ pub mod regs {
     pub struct Aa1DigUsr(pub u32);
     impl Aa1DigUsr {
         #[doc = "Next byte of the Bluetooth LE Access Address code."]
+        #[must_use]
         #[inline(always)]
         pub const fn aa_15_8(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -327,7 +329,7 @@ pub mod regs {
         }
         #[doc = "Next byte of the Bluetooth LE Access Address code."]
         #[inline(always)]
-        pub fn set_aa_15_8(&mut self, val: u8) {
+        pub const fn set_aa_15_8(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -354,6 +356,7 @@ pub mod regs {
     pub struct Aa2DigUsr(pub u32);
     impl Aa2DigUsr {
         #[doc = "Next byte of the Bluetooth LE Access Address code."]
+        #[must_use]
         #[inline(always)]
         pub const fn aa_23_16(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -361,7 +364,7 @@ pub mod regs {
         }
         #[doc = "Next byte of the Bluetooth LE Access Address code."]
         #[inline(always)]
-        pub fn set_aa_23_16(&mut self, val: u8) {
+        pub const fn set_aa_23_16(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -388,6 +391,7 @@ pub mod regs {
     pub struct Aa3DigUsr(pub u32);
     impl Aa3DigUsr {
         #[doc = "Most significant byte of the Bluetooth LE Access Address code."]
+        #[must_use]
         #[inline(always)]
         pub const fn aa_31_24(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -395,7 +399,7 @@ pub mod regs {
         }
         #[doc = "Most significant byte of the Bluetooth LE Access Address code."]
         #[inline(always)]
-        pub fn set_aa_31_24(&mut self, val: u8) {
+        pub const fn set_aa_31_24(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -422,6 +426,7 @@ pub mod regs {
     pub struct Afc1DigEng(pub u32);
     impl Afc1DigEng {
         #[doc = "Set the decay factor of the AFC loop after Access Address detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn afc_delay_after(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -429,10 +434,11 @@ pub mod regs {
         }
         #[doc = "Set the decay factor of the AFC loop after Access Address detection."]
         #[inline(always)]
-        pub fn set_afc_delay_after(&mut self, val: u8) {
+        pub const fn set_afc_delay_after(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "Set the decay factor of the AFC loop before Access Address detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn afc_delay_before(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -440,7 +446,7 @@ pub mod regs {
         }
         #[doc = "Set the decay factor of the AFC loop before Access Address detection."]
         #[inline(always)]
-        pub fn set_afc_delay_before(&mut self, val: u8) {
+        pub const fn set_afc_delay_before(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
     }
@@ -475,6 +481,7 @@ pub mod regs {
     pub struct Agc0DigEng(pub u32);
     impl Agc0DigEng {
         #[doc = "High AGC threshold."]
+        #[must_use]
         #[inline(always)]
         pub const fn agc_thr_high(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
@@ -482,10 +489,11 @@ pub mod regs {
         }
         #[doc = "High AGC threshold."]
         #[inline(always)]
-        pub fn set_agc_thr_high(&mut self, val: u8) {
+        pub const fn set_agc_thr_high(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
         #[doc = "Enable AGC."]
+        #[must_use]
         #[inline(always)]
         pub const fn agc_enable(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -493,7 +501,7 @@ pub mod regs {
         }
         #[doc = "Enable AGC."]
         #[inline(always)]
-        pub fn set_agc_enable(&mut self, val: bool) {
+        pub const fn set_agc_enable(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
     }
@@ -528,6 +536,7 @@ pub mod regs {
     pub struct Agc10DigEng(pub u32);
     impl Agc10DigEng {
         #[doc = "Attenuation at IF Level for the AGC step 0:."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_if_0(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -535,10 +544,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at IF Level for the AGC step 0:."]
         #[inline(always)]
-        pub fn set_att_if_0(&mut self, val: u8) {
+        pub const fn set_att_if_0(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Attenuation at LNA Level for the AGC step 0:."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_lna_0(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -546,10 +556,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at LNA Level for the AGC step 0:."]
         #[inline(always)]
-        pub fn set_att_lna_0(&mut self, val: bool) {
+        pub const fn set_att_lna_0(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 0:."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_ant_0(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -557,7 +568,7 @@ pub mod regs {
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 0:."]
         #[inline(always)]
-        pub fn set_att_ant_0(&mut self, val: u8) {
+        pub const fn set_att_ant_0(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
     }
@@ -594,6 +605,7 @@ pub mod regs {
     pub struct Agc11DigEng(pub u32);
     impl Agc11DigEng {
         #[doc = "Attenuation at IF Level for the AGC step 1."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_if_1(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -601,10 +613,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at IF Level for the AGC step 1."]
         #[inline(always)]
-        pub fn set_att_if_1(&mut self, val: u8) {
+        pub const fn set_att_if_1(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Attenuation at LNA Level for the AGC step 1."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_lna_1(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -612,10 +625,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at LNA Level for the AGC step 1."]
         #[inline(always)]
-        pub fn set_att_lna_1(&mut self, val: bool) {
+        pub const fn set_att_lna_1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 1."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_ant_1(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -623,7 +637,7 @@ pub mod regs {
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 1."]
         #[inline(always)]
-        pub fn set_att_ant_1(&mut self, val: u8) {
+        pub const fn set_att_ant_1(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
     }
@@ -660,6 +674,7 @@ pub mod regs {
     pub struct Agc12DigEng(pub u32);
     impl Agc12DigEng {
         #[doc = "Attenuation at IF Level for the AGC step 2."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_if_2(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -667,10 +682,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at IF Level for the AGC step 2."]
         #[inline(always)]
-        pub fn set_att_if_2(&mut self, val: u8) {
+        pub const fn set_att_if_2(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Attenuation at LNA Level for the AGC step 2."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_lna_2(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -678,10 +694,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at LNA Level for the AGC step 2."]
         #[inline(always)]
-        pub fn set_att_lna_2(&mut self, val: bool) {
+        pub const fn set_att_lna_2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 2."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_ant_2(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -689,7 +706,7 @@ pub mod regs {
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 2."]
         #[inline(always)]
-        pub fn set_att_ant_2(&mut self, val: u8) {
+        pub const fn set_att_ant_2(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
     }
@@ -726,6 +743,7 @@ pub mod regs {
     pub struct Agc13DigEng(pub u32);
     impl Agc13DigEng {
         #[doc = "Attenuation at IF Level for the AGC step 3."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_if_3(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -733,10 +751,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at IF Level for the AGC step 3."]
         #[inline(always)]
-        pub fn set_att_if_3(&mut self, val: u8) {
+        pub const fn set_att_if_3(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Attenuation at LNA Level for the AGC step 3."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_lna_3(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -744,10 +763,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at LNA Level for the AGC step 3."]
         #[inline(always)]
-        pub fn set_att_lna_3(&mut self, val: bool) {
+        pub const fn set_att_lna_3(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 3."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_ant_3(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -755,7 +775,7 @@ pub mod regs {
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 3."]
         #[inline(always)]
-        pub fn set_att_ant_3(&mut self, val: u8) {
+        pub const fn set_att_ant_3(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
     }
@@ -792,6 +812,7 @@ pub mod regs {
     pub struct Agc14DigEng(pub u32);
     impl Agc14DigEng {
         #[doc = "Attenuation at IF Level for the AGC step 4."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_if_4(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -799,10 +820,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at IF Level for the AGC step 4."]
         #[inline(always)]
-        pub fn set_att_if_4(&mut self, val: u8) {
+        pub const fn set_att_if_4(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Attenuation at LNA Level for the AGC step 4."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_lna_4(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -810,10 +832,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at LNA Level for the AGC step 4."]
         #[inline(always)]
-        pub fn set_att_lna_4(&mut self, val: bool) {
+        pub const fn set_att_lna_4(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 4."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_ant_4(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -821,7 +844,7 @@ pub mod regs {
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 4."]
         #[inline(always)]
-        pub fn set_att_ant_4(&mut self, val: u8) {
+        pub const fn set_att_ant_4(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
     }
@@ -858,6 +881,7 @@ pub mod regs {
     pub struct Agc15DigEng(pub u32);
     impl Agc15DigEng {
         #[doc = "Attenuation at IF Level for the AGC step 5."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_if_5(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -865,10 +889,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at IF Level for the AGC step 5."]
         #[inline(always)]
-        pub fn set_att_if_5(&mut self, val: u8) {
+        pub const fn set_att_if_5(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Attenuation at LNA Level for the AGC step 5."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_lna_5(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -876,10 +901,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at LNA Level for the AGC step 5."]
         #[inline(always)]
-        pub fn set_att_lna_5(&mut self, val: bool) {
+        pub const fn set_att_lna_5(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 5."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_ant_5(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -887,7 +913,7 @@ pub mod regs {
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 5."]
         #[inline(always)]
-        pub fn set_att_ant_5(&mut self, val: u8) {
+        pub const fn set_att_ant_5(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
     }
@@ -924,6 +950,7 @@ pub mod regs {
     pub struct Agc16DigEng(pub u32);
     impl Agc16DigEng {
         #[doc = "Attenuation at IF Level for the AGC step 6."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_if_6(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -931,10 +958,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at IF Level for the AGC step 6."]
         #[inline(always)]
-        pub fn set_att_if_6(&mut self, val: u8) {
+        pub const fn set_att_if_6(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Attenuation at LNA Level for the AGC step 6."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_lna_6(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -942,10 +970,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at LNA Level for the AGC step 6."]
         #[inline(always)]
-        pub fn set_att_lna_6(&mut self, val: bool) {
+        pub const fn set_att_lna_6(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 6."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_ant_6(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -953,7 +982,7 @@ pub mod regs {
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 6."]
         #[inline(always)]
-        pub fn set_att_ant_6(&mut self, val: u8) {
+        pub const fn set_att_ant_6(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
     }
@@ -990,6 +1019,7 @@ pub mod regs {
     pub struct Agc17DigEng(pub u32);
     impl Agc17DigEng {
         #[doc = "Attenuation at IF Level for the AGC step 7."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_if_7(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -997,10 +1027,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at IF Level for the AGC step 7."]
         #[inline(always)]
-        pub fn set_att_if_7(&mut self, val: u8) {
+        pub const fn set_att_if_7(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Attenuation at LNA Level for the AGC step 7."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_lna_7(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1008,10 +1039,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at LNA Level for the AGC step 7."]
         #[inline(always)]
-        pub fn set_att_lna_7(&mut self, val: bool) {
+        pub const fn set_att_lna_7(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 7."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_ant_7(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -1019,7 +1051,7 @@ pub mod regs {
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 7."]
         #[inline(always)]
-        pub fn set_att_ant_7(&mut self, val: u8) {
+        pub const fn set_att_ant_7(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
     }
@@ -1056,6 +1088,7 @@ pub mod regs {
     pub struct Agc18DigEng(pub u32);
     impl Agc18DigEng {
         #[doc = "Attenuation at IF Level for the AGC step 8."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_if_8(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -1063,10 +1096,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at IF Level for the AGC step 8."]
         #[inline(always)]
-        pub fn set_att_if_8(&mut self, val: u8) {
+        pub const fn set_att_if_8(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Attenuation at LNA Level for the AGC step 8."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_lna_8(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1074,10 +1108,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at LNA Level for the AGC step 8."]
         #[inline(always)]
-        pub fn set_att_lna_8(&mut self, val: bool) {
+        pub const fn set_att_lna_8(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 8."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_ant_8(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -1085,7 +1120,7 @@ pub mod regs {
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 8."]
         #[inline(always)]
-        pub fn set_att_ant_8(&mut self, val: u8) {
+        pub const fn set_att_ant_8(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
     }
@@ -1122,6 +1157,7 @@ pub mod regs {
     pub struct Agc19DigEng(pub u32);
     impl Agc19DigEng {
         #[doc = "Attenuation at IF Level for the AGC step 9."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_if_9(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -1129,10 +1165,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at IF Level for the AGC step 9."]
         #[inline(always)]
-        pub fn set_att_if_9(&mut self, val: u8) {
+        pub const fn set_att_if_9(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Attenuation at LNA Level for the AGC step 9."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_lna_9(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1140,10 +1177,11 @@ pub mod regs {
         }
         #[doc = "Attenuation at LNA Level for the AGC step 9."]
         #[inline(always)]
-        pub fn set_att_lna_9(&mut self, val: bool) {
+        pub const fn set_att_lna_9(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 9."]
+        #[must_use]
         #[inline(always)]
         pub const fn att_ant_9(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -1151,7 +1189,7 @@ pub mod regs {
         }
         #[doc = "Attenuation at Antenna Level for the AGC step 9."]
         #[inline(always)]
-        pub fn set_att_ant_9(&mut self, val: u8) {
+        pub const fn set_att_ant_9(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
     }
@@ -1188,6 +1226,7 @@ pub mod regs {
     pub struct Agc1DigEng(pub u32);
     impl Agc1DigEng {
         #[doc = "Low threshold for 6dB steps."]
+        #[must_use]
         #[inline(always)]
         pub const fn agc_thr_low_6(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
@@ -1195,10 +1234,11 @@ pub mod regs {
         }
         #[doc = "Low threshold for 6dB steps."]
         #[inline(always)]
-        pub fn set_agc_thr_low_6(&mut self, val: u8) {
+        pub const fn set_agc_thr_low_6(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
         #[doc = "AGC locks when level is steady between high threshold and lock threshold."]
+        #[must_use]
         #[inline(always)]
         pub const fn agc_autolock(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -1206,10 +1246,11 @@ pub mod regs {
         }
         #[doc = "AGC locks when level is steady between high threshold and lock threshold."]
         #[inline(always)]
-        pub fn set_agc_autolock(&mut self, val: bool) {
+        pub const fn set_agc_autolock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "AGC locks when Access Address is detected (recommended)."]
+        #[must_use]
         #[inline(always)]
         pub const fn agc_lock_sync(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1217,7 +1258,7 @@ pub mod regs {
         }
         #[doc = "AGC locks when Access Address is detected (recommended)."]
         #[inline(always)]
-        pub fn set_agc_lock_sync(&mut self, val: bool) {
+        pub const fn set_agc_lock_sync(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
@@ -1254,6 +1295,7 @@ pub mod regs {
     pub struct Agc2AnaTst(pub u32);
     impl Agc2AnaTst {
         #[doc = "Selection:."]
+        #[must_use]
         #[inline(always)]
         pub const fn agc2_ana_tst_sel(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1261,10 +1303,11 @@ pub mod regs {
         }
         #[doc = "Selection:."]
         #[inline(always)]
-        pub fn set_agc2_ana_tst_sel(&mut self, val: bool) {
+        pub const fn set_agc2_ana_tst_sel(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "the AGC antenna trimming value ( when AGC2_ANA_TST_SEL = 1)."]
+        #[must_use]
         #[inline(always)]
         pub const fn agc_antennae_usr_trim(&self) -> u8 {
             let val = (self.0 >> 1usize) & 0x07;
@@ -1272,7 +1315,7 @@ pub mod regs {
         }
         #[doc = "the AGC antenna trimming value ( when AGC2_ANA_TST_SEL = 1)."]
         #[inline(always)]
-        pub fn set_agc_antennae_usr_trim(&mut self, val: u8) {
+        pub const fn set_agc_antennae_usr_trim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 1usize)) | (((val as u32) & 0x07) << 1usize);
         }
     }
@@ -1307,6 +1350,7 @@ pub mod regs {
     pub struct AgcDigOut(pub u32);
     impl AgcDigOut {
         #[doc = "AGC attenuation value."]
+        #[must_use]
         #[inline(always)]
         pub const fn agc_att_out(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -1314,7 +1358,7 @@ pub mod regs {
         }
         #[doc = "AGC attenuation value."]
         #[inline(always)]
-        pub fn set_agc_att_out(&mut self, val: u8) {
+        pub const fn set_agc_att_out(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
     }
@@ -1343,6 +1387,7 @@ pub mod regs {
     pub struct AgcHwTrimOut(pub u32);
     impl AgcHwTrimOut {
         #[doc = "AGC trim value (provided by the HW trimming, automatically loaded on POR)."]
+        #[must_use]
         #[inline(always)]
         pub const fn hw_agc_antennae_trim(&self) -> u8 {
             let val = (self.0 >> 1usize) & 0x07;
@@ -1350,7 +1395,7 @@ pub mod regs {
         }
         #[doc = "AGC trim value (provided by the HW trimming, automatically loaded on POR)."]
         #[inline(always)]
-        pub fn set_hw_agc_antennae_trim(&mut self, val: u8) {
+        pub const fn set_hw_agc_antennae_trim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 1usize)) | (((val as u32) & 0x07) << 1usize);
         }
     }
@@ -1383,6 +1428,7 @@ pub mod regs {
     pub struct Antsw0DigUsr(pub u32);
     impl Antsw0DigUsr {
         #[doc = "specifies the exact timing of the first I/Q sampling in the reference period."]
+        #[must_use]
         #[inline(always)]
         pub const fn rx_time_to_sample(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -1390,7 +1436,7 @@ pub mod regs {
         }
         #[doc = "specifies the exact timing of the first I/Q sampling in the reference period."]
         #[inline(always)]
-        pub fn set_rx_time_to_sample(&mut self, val: u8) {
+        pub const fn set_rx_time_to_sample(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
     }
@@ -1423,6 +1469,7 @@ pub mod regs {
     pub struct Antsw1DigUsr(pub u32);
     impl Antsw1DigUsr {
         #[doc = "specifies the exact timing of the antenna switching at receiver level (in AoA)."]
+        #[must_use]
         #[inline(always)]
         pub const fn rx_time_to_switch(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
@@ -1430,7 +1477,7 @@ pub mod regs {
         }
         #[doc = "specifies the exact timing of the antenna switching at receiver level (in AoA)."]
         #[inline(always)]
-        pub fn set_rx_time_to_switch(&mut self, val: u8) {
+        pub const fn set_rx_time_to_switch(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -1463,6 +1510,7 @@ pub mod regs {
     pub struct Antsw2DigUsr(pub u32);
     impl Antsw2DigUsr {
         #[doc = "specifies the exact timing of the antenna switching during transmission at LE_1M baud rate (in AoD)."]
+        #[must_use]
         #[inline(always)]
         pub const fn tx_time_to_switch(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -1470,7 +1518,7 @@ pub mod regs {
         }
         #[doc = "specifies the exact timing of the antenna switching during transmission at LE_1M baud rate (in AoD)."]
         #[inline(always)]
-        pub fn set_tx_time_to_switch(&mut self, val: u8) {
+        pub const fn set_tx_time_to_switch(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
     }
@@ -1503,6 +1551,7 @@ pub mod regs {
     pub struct Antsw3DigUsr(pub u32);
     impl Antsw3DigUsr {
         #[doc = "specifies the exact timing of the antenna switching during transmission at LE_2M baud rate (in AoD)."]
+        #[must_use]
         #[inline(always)]
         pub const fn tx_time_to_switch_2m(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -1510,7 +1559,7 @@ pub mod regs {
         }
         #[doc = "specifies the exact timing of the antenna switching during transmission at LE_2M baud rate (in AoD)."]
         #[inline(always)]
-        pub fn set_tx_time_to_switch_2m(&mut self, val: u8) {
+        pub const fn set_tx_time_to_switch_2m(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
     }
@@ -1543,6 +1592,7 @@ pub mod regs {
     pub struct Cbias0AnaEng(pub u32);
     impl Cbias0AnaEng {
         #[doc = "overloaded value for cbias current trimming (when CBIAS0_TRIM_TST_SEL = 1)."]
+        #[must_use]
         #[inline(always)]
         pub const fn rfd_cbias_ibias_trim(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -1550,10 +1600,11 @@ pub mod regs {
         }
         #[doc = "overloaded value for cbias current trimming (when CBIAS0_TRIM_TST_SEL = 1)."]
         #[inline(always)]
-        pub fn set_rfd_cbias_ibias_trim(&mut self, val: u8) {
+        pub const fn set_rfd_cbias_ibias_trim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "overloaded value for cbias current trimming (when CBIAS0_TRIM_TST_SEL = 1)."]
+        #[must_use]
         #[inline(always)]
         pub const fn rfd_cbias_iptat_trim(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -1561,7 +1612,7 @@ pub mod regs {
         }
         #[doc = "overloaded value for cbias current trimming (when CBIAS0_TRIM_TST_SEL = 1)."]
         #[inline(always)]
-        pub fn set_rfd_cbias_iptat_trim(&mut self, val: u8) {
+        pub const fn set_rfd_cbias_iptat_trim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
     }
@@ -1596,6 +1647,7 @@ pub mod regs {
     pub struct Cbias0HwTrimOut(pub u32);
     impl Cbias0HwTrimOut {
         #[doc = "CBIAS current (provided by the HW trimming, automatically loaded on POR)."]
+        #[must_use]
         #[inline(always)]
         pub const fn hw_cbias_ibias_trim(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -1603,10 +1655,11 @@ pub mod regs {
         }
         #[doc = "CBIAS current (provided by the HW trimming, automatically loaded on POR)."]
         #[inline(always)]
-        pub fn set_hw_cbias_ibias_trim(&mut self, val: u8) {
+        pub const fn set_hw_cbias_ibias_trim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "CBIAS current (provided by the HW trimming, automatically loaded on POR)."]
+        #[must_use]
         #[inline(always)]
         pub const fn hw_cbias_iptat_trim(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -1614,7 +1667,7 @@ pub mod regs {
         }
         #[doc = "CBIAS current (provided by the HW trimming, automatically loaded on POR)."]
         #[inline(always)]
-        pub fn set_hw_cbias_iptat_trim(&mut self, val: u8) {
+        pub const fn set_hw_cbias_iptat_trim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
     }
@@ -1649,6 +1702,7 @@ pub mod regs {
     pub struct Cbias1AnaEng(pub u32);
     impl Cbias1AnaEng {
         #[doc = "When set, RFD_CBIAS_(IPTAT/IBIAS)_TRIM are used instead of HW trimmings."]
+        #[must_use]
         #[inline(always)]
         pub const fn cbias0_trim_tst_sel(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1656,7 +1710,7 @@ pub mod regs {
         }
         #[doc = "When set, RFD_CBIAS_(IPTAT/IBIAS)_TRIM are used instead of HW trimmings."]
         #[inline(always)]
-        pub fn set_cbias0_trim_tst_sel(&mut self, val: bool) {
+        pub const fn set_cbias0_trim_tst_sel(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
@@ -1689,6 +1743,7 @@ pub mod regs {
     pub struct Cr0DigEng(pub u32);
     impl Cr0DigEng {
         #[doc = "Set the gain of the clock recovery loop before Access Address detection to the value."]
+        #[must_use]
         #[inline(always)]
         pub const fn cr_gain_after(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -1696,10 +1751,11 @@ pub mod regs {
         }
         #[doc = "Set the gain of the clock recovery loop before Access Address detection to the value."]
         #[inline(always)]
-        pub fn set_cr_gain_after(&mut self, val: u8) {
+        pub const fn set_cr_gain_after(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "Set the gain of the clock recovery loop before Access Address detection to the value."]
+        #[must_use]
         #[inline(always)]
         pub const fn cr_gain_before(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -1707,7 +1763,7 @@ pub mod regs {
         }
         #[doc = "Set the gain of the clock recovery loop before Access Address detection to the value."]
         #[inline(always)]
-        pub fn set_cr_gain_before(&mut self, val: u8) {
+        pub const fn set_cr_gain_before(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
     }
@@ -1742,6 +1798,7 @@ pub mod regs {
     pub struct Cr0Lr(pub u32);
     impl Cr0Lr {
         #[doc = "Set the gain of the clock recovery loop after Access Address detection to the value 2^(-CR_LR_GAIN_ AFTER) when the coded PHY is in use."]
+        #[must_use]
         #[inline(always)]
         pub const fn cr_lr_gain_after(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -1749,10 +1806,11 @@ pub mod regs {
         }
         #[doc = "Set the gain of the clock recovery loop after Access Address detection to the value 2^(-CR_LR_GAIN_ AFTER) when the coded PHY is in use."]
         #[inline(always)]
-        pub fn set_cr_lr_gain_after(&mut self, val: u8) {
+        pub const fn set_cr_lr_gain_after(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "Set the gain of the clock recovery loop before Access Address detection to the value 2^(-CR_LR_GAIN_ BEFORE) when the coded PHY is in use."]
+        #[must_use]
         #[inline(always)]
         pub const fn cr_lr_gain_before(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -1760,7 +1818,7 @@ pub mod regs {
         }
         #[doc = "Set the gain of the clock recovery loop before Access Address detection to the value 2^(-CR_LR_GAIN_ BEFORE) when the coded PHY is in use."]
         #[inline(always)]
-        pub fn set_cr_lr_gain_before(&mut self, val: u8) {
+        pub const fn set_cr_lr_gain_before(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
     }
@@ -1795,6 +1853,7 @@ pub mod regs {
     pub struct DemModDigUsr(pub u32);
     impl DemModDigUsr {
         #[doc = "Index for internal lock up table in which the synthesizer setup is contained."]
+        #[must_use]
         #[inline(always)]
         pub const fn channel_num(&self) -> u8 {
             let val = (self.0 >> 1usize) & 0x7f;
@@ -1802,7 +1861,7 @@ pub mod regs {
         }
         #[doc = "Index for internal lock up table in which the synthesizer setup is contained."]
         #[inline(always)]
-        pub fn set_channel_num(&mut self, val: u8) {
+        pub const fn set_channel_num(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 1usize)) | (((val as u32) & 0x7f) << 1usize);
         }
     }
@@ -1831,6 +1890,7 @@ pub mod regs {
     pub struct DemodDigOut(pub u32);
     impl DemodDigOut {
         #[doc = "CI field."]
+        #[must_use]
         #[inline(always)]
         pub const fn ci_field(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
@@ -1838,10 +1898,11 @@ pub mod regs {
         }
         #[doc = "CI field."]
         #[inline(always)]
-        pub fn set_ci_field(&mut self, val: u8) {
+        pub const fn set_ci_field(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
         #[doc = "aac_found."]
+        #[must_use]
         #[inline(always)]
         pub const fn aac_found(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1849,10 +1910,11 @@ pub mod regs {
         }
         #[doc = "aac_found."]
         #[inline(always)]
-        pub fn set_aac_found(&mut self, val: bool) {
+        pub const fn set_aac_found(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "pd_found."]
+        #[must_use]
         #[inline(always)]
         pub const fn pd_found(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1860,10 +1922,11 @@ pub mod regs {
         }
         #[doc = "pd_found."]
         #[inline(always)]
-        pub fn set_pd_found(&mut self, val: bool) {
+        pub const fn set_pd_found(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "rx_end."]
+        #[must_use]
         #[inline(always)]
         pub const fn rx_end(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1871,7 +1934,7 @@ pub mod regs {
         }
         #[doc = "rx_end."]
         #[inline(always)]
-        pub fn set_rx_end(&mut self, val: bool) {
+        pub const fn set_rx_end(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
     }
@@ -1910,6 +1973,7 @@ pub mod regs {
     pub struct DemodIq2DigTst(pub u32);
     impl DemodIq2DigTst {
         #[doc = "Defines the sampling time, when extended configuration is enabled:."]
+        #[must_use]
         #[inline(always)]
         pub const fn extcfg_sampling_time(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
@@ -1917,10 +1981,11 @@ pub mod regs {
         }
         #[doc = "Defines the sampling time, when extended configuration is enabled:."]
         #[inline(always)]
-        pub fn set_extcfg_sampling_time(&mut self, val: u8) {
+        pub const fn set_extcfg_sampling_time(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
         #[doc = "Defines the trigger/anchor point of the IQ sampling, when extended configuration is enabled:."]
+        #[must_use]
         #[inline(always)]
         pub const fn extcfg_trig_selection(&self) -> u8 {
             let val = (self.0 >> 2usize) & 0x03;
@@ -1928,7 +1993,7 @@ pub mod regs {
         }
         #[doc = "Defines the trigger/anchor point of the IQ sampling, when extended configuration is enabled:."]
         #[inline(always)]
-        pub fn set_extcfg_trig_selection(&mut self, val: u8) {
+        pub const fn set_extcfg_trig_selection(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
         }
     }
@@ -1963,6 +2028,7 @@ pub mod regs {
     pub struct Dtb5DigEng(pub u32);
     impl Dtb5DigEng {
         #[doc = "enable the possibility to control some signals by the other register bits instead of system design:."]
+        #[must_use]
         #[inline(always)]
         pub const fn rxtx_start_sel(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1970,10 +2036,11 @@ pub mod regs {
         }
         #[doc = "enable the possibility to control some signals by the other register bits instead of system design:."]
         #[inline(always)]
-        pub fn set_rxtx_start_sel(&mut self, val: bool) {
+        pub const fn set_rxtx_start_sel(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Force TX_ACTIVE signal."]
+        #[must_use]
         #[inline(always)]
         pub const fn tx_active(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1981,10 +2048,11 @@ pub mod regs {
         }
         #[doc = "Force TX_ACTIVE signal."]
         #[inline(always)]
-        pub fn set_tx_active(&mut self, val: bool) {
+        pub const fn set_tx_active(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Force RX_ACTIVE signal."]
+        #[must_use]
         #[inline(always)]
         pub const fn rx_active(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1992,10 +2060,11 @@ pub mod regs {
         }
         #[doc = "Force RX_ACTIVE signal."]
         #[inline(always)]
-        pub fn set_rx_active(&mut self, val: bool) {
+        pub const fn set_rx_active(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Force INITIALIZE signal (emulate a token request of the IP_BLE)."]
+        #[must_use]
         #[inline(always)]
         pub const fn initialize(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -2003,10 +2072,11 @@ pub mod regs {
         }
         #[doc = "Force INITIALIZE signal (emulate a token request of the IP_BLE)."]
         #[inline(always)]
-        pub fn set_initialize(&mut self, val: bool) {
+        pub const fn set_initialize(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "enable port selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn port_selected_en(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -2014,11 +2084,12 @@ pub mod regs {
         }
         #[doc = "enable port selection."]
         #[inline(always)]
-        pub fn set_port_selected_en(&mut self, val: bool) {
+        pub const fn set_port_selected_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "force port_selected\\[0\\]
 signal."]
+        #[must_use]
         #[inline(always)]
         pub const fn port_selected_0(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -2027,7 +2098,7 @@ signal."]
         #[doc = "force port_selected\\[0\\]
 signal."]
         #[inline(always)]
-        pub fn set_port_selected_0(&mut self, val: bool) {
+        pub const fn set_port_selected_0(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
     }
@@ -2061,6 +2132,7 @@ signal."]
     pub struct FsmStatusDigOut(pub u32);
     impl FsmStatusDigOut {
         #[doc = "RF FSM state:."]
+        #[must_use]
         #[inline(always)]
         pub const fn status(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x1f;
@@ -2068,10 +2140,11 @@ signal."]
         }
         #[doc = "RF FSM state:."]
         #[inline(always)]
-        pub fn set_status(&mut self, val: u8) {
+        pub const fn set_status(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
         #[doc = "PLL calibration error."]
+        #[must_use]
         #[inline(always)]
         pub const fn synth_cal_error(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -2079,7 +2152,7 @@ signal."]
         }
         #[doc = "PLL calibration error."]
         #[inline(always)]
-        pub fn set_synth_cal_error(&mut self, val: bool) {
+        pub const fn set_synth_cal_error(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
@@ -2114,6 +2187,7 @@ signal."]
     pub struct LdoAnaEng(pub u32);
     impl LdoAnaEng {
         #[doc = "RF_REG Bypass mode:."]
+        #[must_use]
         #[inline(always)]
         pub const fn rfd_rf_reg_bypass(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2121,7 +2195,7 @@ signal."]
         }
         #[doc = "RF_REG Bypass mode:."]
         #[inline(always)]
-        pub fn set_rfd_rf_reg_bypass(&mut self, val: bool) {
+        pub const fn set_rfd_rf_reg_bypass(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -2154,6 +2228,7 @@ signal."]
     pub struct LrAacThrDigEng(pub u32);
     impl LrAacThrDigEng {
         #[doc = "address coded correlation threshold."]
+        #[must_use]
         #[inline(always)]
         pub const fn lr_aac_thr(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -2161,7 +2236,7 @@ signal."]
         }
         #[doc = "address coded correlation threshold."]
         #[inline(always)]
-        pub fn set_lr_aac_thr(&mut self, val: u8) {
+        pub const fn set_lr_aac_thr(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -2190,6 +2265,7 @@ signal."]
     pub struct LrPdThrDigEng(pub u32);
     impl LrPdThrDigEng {
         #[doc = "preamble detect threshold value."]
+        #[must_use]
         #[inline(always)]
         pub const fn lr_pd_thr(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -2197,7 +2273,7 @@ signal."]
         }
         #[doc = "preamble detect threshold value."]
         #[inline(always)]
-        pub fn set_lr_pd_thr(&mut self, val: u8) {
+        pub const fn set_lr_pd_thr(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -2226,6 +2302,7 @@ signal."]
     pub struct LrRssiThrDigEng(pub u32);
     impl LrRssiThrDigEng {
         #[doc = "RSSI or peak threshold value."]
+        #[must_use]
         #[inline(always)]
         pub const fn lr_rssi_thr(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -2233,7 +2310,7 @@ signal."]
         }
         #[doc = "RSSI or peak threshold value."]
         #[inline(always)]
-        pub fn set_lr_rssi_thr(&mut self, val: u8) {
+        pub const fn set_lr_rssi_thr(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -2262,6 +2339,7 @@ signal."]
     pub struct PhyctrlDigUsr(pub u32);
     impl PhyctrlDigUsr {
         #[doc = "RXTXPHY selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn rxtxphy(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -2269,7 +2347,7 @@ signal."]
         }
         #[doc = "RXTXPHY selection."]
         #[inline(always)]
-        pub fn set_rxtxphy(&mut self, val: u8) {
+        pub const fn set_rxtxphy(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
     }
@@ -2298,6 +2376,7 @@ signal."]
     pub struct RadioFsmUsr(pub u32);
     impl RadioFsmUsr {
         #[doc = "CBP calibration enable bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn en_calib_cbp(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -2305,10 +2384,11 @@ signal."]
         }
         #[doc = "CBP calibration enable bit."]
         #[inline(always)]
-        pub fn set_en_calib_cbp(&mut self, val: bool) {
+        pub const fn set_en_calib_cbp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "SYNTH calibration enable bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn en_calib_synth(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -2316,10 +2396,11 @@ signal."]
         }
         #[doc = "SYNTH calibration enable bit."]
         #[inline(always)]
-        pub fn set_en_calib_synth(&mut self, val: bool) {
+        pub const fn set_en_calib_synth(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "PA Power coefficient."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa_power(&self) -> u8 {
             let val = (self.0 >> 3usize) & 0x1f;
@@ -2327,7 +2408,7 @@ signal."]
         }
         #[doc = "PA Power coefficient."]
         #[inline(always)]
-        pub fn set_pa_power(&mut self, val: u8) {
+        pub const fn set_pa_power(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 3usize)) | (((val as u32) & 0x1f) << 3usize);
         }
     }
@@ -2364,6 +2445,7 @@ signal."]
     pub struct Rssi0DigOut(pub u32);
     impl Rssi0DigOut {
         #[doc = "Measure of the received signal strength."]
+        #[must_use]
         #[inline(always)]
         pub const fn rssi_meas_out_7_0(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -2371,7 +2453,7 @@ signal."]
         }
         #[doc = "Measure of the received signal strength."]
         #[inline(always)]
-        pub fn set_rssi_meas_out_7_0(&mut self, val: u8) {
+        pub const fn set_rssi_meas_out_7_0(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -2404,6 +2486,7 @@ signal."]
     pub struct Rssi1DigOut(pub u32);
     impl Rssi1DigOut {
         #[doc = "Measure of the received signal strength."]
+        #[must_use]
         #[inline(always)]
         pub const fn rssi_meas_out_15_8(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -2411,7 +2494,7 @@ signal."]
         }
         #[doc = "Measure of the received signal strength."]
         #[inline(always)]
-        pub fn set_rssi_meas_out_15_8(&mut self, val: u8) {
+        pub const fn set_rssi_meas_out_15_8(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -2444,6 +2527,7 @@ signal."]
     pub struct RxadcAnaUsr(pub u32);
     impl RxadcAnaUsr {
         #[doc = "ADC loop delay control bits for I channel to apply when SW overload is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn rfd_rxadc_delaytrim_i(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -2451,10 +2535,11 @@ signal."]
         }
         #[doc = "ADC loop delay control bits for I channel to apply when SW overload is enabled."]
         #[inline(always)]
-        pub fn set_rfd_rxadc_delaytrim_i(&mut self, val: u8) {
+        pub const fn set_rfd_rxadc_delaytrim_i(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "ADC loop delay control bits for Q channel to apply when SW overload is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn rfd_rxadc_delaytrim_q(&self) -> u8 {
             let val = (self.0 >> 3usize) & 0x07;
@@ -2462,10 +2547,11 @@ signal."]
         }
         #[doc = "ADC loop delay control bits for Q channel to apply when SW overload is enabled."]
         #[inline(always)]
-        pub fn set_rfd_rxadc_delaytrim_q(&mut self, val: u8) {
+        pub const fn set_rfd_rxadc_delaytrim_q(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 3usize)) | (((val as u32) & 0x07) << 3usize);
         }
         #[doc = "Enable the SW overload on RXADX delay trimming."]
+        #[must_use]
         #[inline(always)]
         pub const fn rxadc_delaytrim_i_tst_sel(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -2473,10 +2559,11 @@ signal."]
         }
         #[doc = "Enable the SW overload on RXADX delay trimming."]
         #[inline(always)]
-        pub fn set_rxadc_delaytrim_i_tst_sel(&mut self, val: bool) {
+        pub const fn set_rxadc_delaytrim_i_tst_sel(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Enable the SW overload on RXADX delay trimming."]
+        #[must_use]
         #[inline(always)]
         pub const fn rxadc_delaytrim_q_tst_sel(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -2484,7 +2571,7 @@ signal."]
         }
         #[doc = "Enable the SW overload on RXADX delay trimming."]
         #[inline(always)]
-        pub fn set_rxadc_delaytrim_q_tst_sel(&mut self, val: bool) {
+        pub const fn set_rxadc_delaytrim_q_tst_sel(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
@@ -2516,6 +2603,7 @@ signal."]
     pub struct RxadcHwTrimOut(pub u32);
     impl RxadcHwTrimOut {
         #[doc = "control bits of the RX ADC loop delay for I channel (provided by the HW trimming, automatically loaded on POR)."]
+        #[must_use]
         #[inline(always)]
         pub const fn hw_rxadc_delaytrim_i(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -2523,10 +2611,11 @@ signal."]
         }
         #[doc = "control bits of the RX ADC loop delay for I channel (provided by the HW trimming, automatically loaded on POR)."]
         #[inline(always)]
-        pub fn set_hw_rxadc_delaytrim_i(&mut self, val: u8) {
+        pub const fn set_hw_rxadc_delaytrim_i(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "control bits of the RX ADC loop delay for Q channel (provided by the HW trimming, automatically loaded on POR)."]
+        #[must_use]
         #[inline(always)]
         pub const fn hw_rxadc_delaytrim_q(&self) -> u8 {
             let val = (self.0 >> 3usize) & 0x07;
@@ -2534,7 +2623,7 @@ signal."]
         }
         #[doc = "control bits of the RX ADC loop delay for Q channel (provided by the HW trimming, automatically loaded on POR)."]
         #[inline(always)]
-        pub fn set_hw_rxadc_delaytrim_q(&mut self, val: u8) {
+        pub const fn set_hw_rxadc_delaytrim_q(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 3usize)) | (((val as u32) & 0x07) << 3usize);
         }
     }
@@ -2569,6 +2658,7 @@ signal."]
     pub struct Synthcal0DigEng(pub u32);
     impl Synthcal0DigEng {
         #[doc = "for Debug purpose."]
+        #[must_use]
         #[inline(always)]
         pub const fn synthcal_debug_bus_sel(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -2576,10 +2666,11 @@ signal."]
         }
         #[doc = "for Debug purpose."]
         #[inline(always)]
-        pub fn set_synthcal_debug_bus_sel(&mut self, val: u8) {
+        pub const fn set_synthcal_debug_bus_sel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "Define the frequency applied on the PLL during calibration phase."]
+        #[must_use]
         #[inline(always)]
         pub const fn synth_if_freq_cal(&self) -> u8 {
             let val = (self.0 >> 6usize) & 0x03;
@@ -2587,7 +2678,7 @@ signal."]
         }
         #[doc = "Define the frequency applied on the PLL during calibration phase."]
         #[inline(always)]
-        pub fn set_synth_if_freq_cal(&mut self, val: u8) {
+        pub const fn set_synth_if_freq_cal(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
         }
     }
@@ -2622,6 +2713,7 @@ signal."]
     pub struct Synthcal0DigOut(pub u32);
     impl Synthcal0DigOut {
         #[doc = "VCO CALAMP value."]
+        #[must_use]
         #[inline(always)]
         pub const fn vco_calamp_out_6_0(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -2629,7 +2721,7 @@ signal."]
         }
         #[doc = "VCO CALAMP value."]
         #[inline(always)]
-        pub fn set_vco_calamp_out_6_0(&mut self, val: u8) {
+        pub const fn set_vco_calamp_out_6_0(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
     }
@@ -2662,6 +2754,7 @@ signal."]
     pub struct Synthcal1DigOut(pub u32);
     impl Synthcal1DigOut {
         #[doc = "VCO CALAMP value."]
+        #[must_use]
         #[inline(always)]
         pub const fn vco_calamp_out_10_7(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -2669,7 +2762,7 @@ signal."]
         }
         #[doc = "VCO CALAMP value."]
         #[inline(always)]
-        pub fn set_vco_calamp_out_10_7(&mut self, val: u8) {
+        pub const fn set_vco_calamp_out_10_7(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
     }
@@ -2702,6 +2795,7 @@ signal."]
     pub struct Synthcal2DigOut(pub u32);
     impl Synthcal2DigOut {
         #[doc = "VCO CALFREQ value."]
+        #[must_use]
         #[inline(always)]
         pub const fn vco_calfreq_out(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -2709,7 +2803,7 @@ signal."]
         }
         #[doc = "VCO CALFREQ value."]
         #[inline(always)]
-        pub fn set_vco_calfreq_out(&mut self, val: u8) {
+        pub const fn set_vco_calfreq_out(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
     }
@@ -2742,6 +2836,7 @@ signal."]
     pub struct Synthcal3DigOut(pub u32);
     impl Synthcal3DigOut {
         #[doc = "Calibration debug bus."]
+        #[must_use]
         #[inline(always)]
         pub const fn synthcal_debug_bus(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -2749,7 +2844,7 @@ signal."]
         }
         #[doc = "Calibration debug bus."]
         #[inline(always)]
-        pub fn set_synthcal_debug_bus(&mut self, val: u8) {
+        pub const fn set_synthcal_debug_bus(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -2782,6 +2877,7 @@ signal."]
     pub struct Synthcal4DigOut(pub u32);
     impl Synthcal4DigOut {
         #[doc = "Calibration word."]
+        #[must_use]
         #[inline(always)]
         pub const fn mod_ref_dac_word_out(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
@@ -2789,7 +2885,7 @@ signal."]
         }
         #[doc = "Calibration word."]
         #[inline(always)]
-        pub fn set_mod_ref_dac_word_out(&mut self, val: u8) {
+        pub const fn set_mod_ref_dac_word_out(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -2822,6 +2918,7 @@ signal."]
     pub struct Synthcal5DigOut(pub u32);
     impl Synthcal5DigOut {
         #[doc = "CBP Calibration word."]
+        #[must_use]
         #[inline(always)]
         pub const fn cbp_calib_word(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -2829,7 +2926,7 @@ signal."]
         }
         #[doc = "CBP Calibration word."]
         #[inline(always)]
-        pub fn set_cbp_calib_word(&mut self, val: u8) {
+        pub const fn set_cbp_calib_word(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
     }
@@ -2862,6 +2959,7 @@ signal."]
     pub struct VitConfDigEng(pub u32);
     impl VitConfDigEng {
         #[doc = "Viterbi enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn vit_en(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2869,10 +2967,11 @@ signal."]
         }
         #[doc = "Viterbi enable."]
         #[inline(always)]
-        pub fn set_vit_en(&mut self, val: bool) {
+        pub const fn set_vit_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "spare."]
+        #[must_use]
         #[inline(always)]
         pub const fn spare(&self) -> u8 {
             let val = (self.0 >> 2usize) & 0x3f;
@@ -2880,7 +2979,7 @@ signal."]
         }
         #[doc = "spare."]
         #[inline(always)]
-        pub fn set_spare(&mut self, val: u8) {
+        pub const fn set_spare(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 2usize)) | (((val as u32) & 0x3f) << 2usize);
         }
     }

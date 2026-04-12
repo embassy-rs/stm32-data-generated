@@ -22,37 +22,37 @@ impl Cec {
     #[doc = "configuration register."]
     #[inline(always)]
     pub const fn cfgr(self) -> crate::common::Reg<regs::Cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "CEC own address register."]
     #[inline(always)]
     pub const fn oar(self) -> crate::common::Reg<regs::Oar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Rx Data Register."]
     #[inline(always)]
     pub const fn pres(self) -> crate::common::Reg<regs::Pres, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "CEC error status register."]
     #[inline(always)]
     pub const fn esr(self) -> crate::common::Reg<regs::Esr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "CEC control and status register."]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "CEC Tx data register."]
     #[inline(always)]
     pub const fn txd(self) -> crate::common::Reg<regs::Txd, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "CEC Rx data register."]
     #[inline(always)]
     pub const fn rxd(self) -> crate::common::Reg<regs::Rxd, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
 }
 pub mod regs {
@@ -62,6 +62,7 @@ pub mod regs {
     pub struct Cfgr(pub u32);
     impl Cfgr {
         #[doc = "Peripheral enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn pe(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -69,10 +70,11 @@ pub mod regs {
         }
         #[doc = "Peripheral enable."]
         #[inline(always)]
-        pub fn set_pe(&mut self, val: bool) {
+        pub const fn set_pe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn ie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -80,10 +82,11 @@ pub mod regs {
         }
         #[doc = "Interrupt enable."]
         #[inline(always)]
-        pub fn set_ie(&mut self, val: bool) {
+        pub const fn set_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Bit timing error mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn btem(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -91,10 +94,11 @@ pub mod regs {
         }
         #[doc = "Bit timing error mode."]
         #[inline(always)]
-        pub fn set_btem(&mut self, val: bool) {
+        pub const fn set_btem(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Bit period error mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn bpem(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -102,7 +106,7 @@ pub mod regs {
         }
         #[doc = "Bit period error mode."]
         #[inline(always)]
-        pub fn set_bpem(&mut self, val: bool) {
+        pub const fn set_bpem(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
@@ -141,6 +145,7 @@ pub mod regs {
     pub struct Csr(pub u32);
     impl Csr {
         #[doc = "Tx start of message."]
+        #[must_use]
         #[inline(always)]
         pub const fn tsom(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -148,10 +153,11 @@ pub mod regs {
         }
         #[doc = "Tx start of message."]
         #[inline(always)]
-        pub fn set_tsom(&mut self, val: bool) {
+        pub const fn set_tsom(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Tx end of message."]
+        #[must_use]
         #[inline(always)]
         pub const fn teom(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -159,10 +165,11 @@ pub mod regs {
         }
         #[doc = "Tx end of message."]
         #[inline(always)]
-        pub fn set_teom(&mut self, val: bool) {
+        pub const fn set_teom(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Tx error."]
+        #[must_use]
         #[inline(always)]
         pub const fn terr(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -170,10 +177,11 @@ pub mod regs {
         }
         #[doc = "Tx error."]
         #[inline(always)]
-        pub fn set_terr(&mut self, val: bool) {
+        pub const fn set_terr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Tx byte transfer request or block transfer finished."]
+        #[must_use]
         #[inline(always)]
         pub const fn tbtrf(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -181,10 +189,11 @@ pub mod regs {
         }
         #[doc = "Tx byte transfer request or block transfer finished."]
         #[inline(always)]
-        pub fn set_tbtrf(&mut self, val: bool) {
+        pub const fn set_tbtrf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Rx start of message."]
+        #[must_use]
         #[inline(always)]
         pub const fn rsom(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -192,10 +201,11 @@ pub mod regs {
         }
         #[doc = "Rx start of message."]
         #[inline(always)]
-        pub fn set_rsom(&mut self, val: bool) {
+        pub const fn set_rsom(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Rx end of message."]
+        #[must_use]
         #[inline(always)]
         pub const fn reom(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -203,10 +213,11 @@ pub mod regs {
         }
         #[doc = "Rx end of message."]
         #[inline(always)]
-        pub fn set_reom(&mut self, val: bool) {
+        pub const fn set_reom(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Rx error."]
+        #[must_use]
         #[inline(always)]
         pub const fn rerr(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -214,10 +225,11 @@ pub mod regs {
         }
         #[doc = "Rx error."]
         #[inline(always)]
-        pub fn set_rerr(&mut self, val: bool) {
+        pub const fn set_rerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Rx byte/block transfer finished."]
+        #[must_use]
         #[inline(always)]
         pub const fn rbtf(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -225,7 +237,7 @@ pub mod regs {
         }
         #[doc = "Rx byte/block transfer finished."]
         #[inline(always)]
-        pub fn set_rbtf(&mut self, val: bool) {
+        pub const fn set_rbtf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
@@ -261,6 +273,7 @@ pub mod regs {
     pub struct Esr(pub u32);
     impl Esr {
         #[doc = "Bit timing error."]
+        #[must_use]
         #[inline(always)]
         pub const fn bte(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -268,10 +281,11 @@ pub mod regs {
         }
         #[doc = "Bit timing error."]
         #[inline(always)]
-        pub fn set_bte(&mut self, val: bool) {
+        pub const fn set_bte(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Bit period error."]
+        #[must_use]
         #[inline(always)]
         pub const fn bpe(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -279,10 +293,11 @@ pub mod regs {
         }
         #[doc = "Bit period error."]
         #[inline(always)]
-        pub fn set_bpe(&mut self, val: bool) {
+        pub const fn set_bpe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Rx block transfer finished error."]
+        #[must_use]
         #[inline(always)]
         pub const fn rbtfe(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -290,10 +305,11 @@ pub mod regs {
         }
         #[doc = "Rx block transfer finished error."]
         #[inline(always)]
-        pub fn set_rbtfe(&mut self, val: bool) {
+        pub const fn set_rbtfe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Start bit error."]
+        #[must_use]
         #[inline(always)]
         pub const fn sbe(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -301,10 +317,11 @@ pub mod regs {
         }
         #[doc = "Start bit error."]
         #[inline(always)]
-        pub fn set_sbe(&mut self, val: bool) {
+        pub const fn set_sbe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Block acknowledge error."]
+        #[must_use]
         #[inline(always)]
         pub const fn acke(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -312,10 +329,11 @@ pub mod regs {
         }
         #[doc = "Block acknowledge error."]
         #[inline(always)]
-        pub fn set_acke(&mut self, val: bool) {
+        pub const fn set_acke(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Line error."]
+        #[must_use]
         #[inline(always)]
         pub const fn line(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -323,10 +341,11 @@ pub mod regs {
         }
         #[doc = "Line error."]
         #[inline(always)]
-        pub fn set_line(&mut self, val: bool) {
+        pub const fn set_line(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Tx block transfer finished error."]
+        #[must_use]
         #[inline(always)]
         pub const fn tbtfe(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -334,7 +353,7 @@ pub mod regs {
         }
         #[doc = "Tx block transfer finished error."]
         #[inline(always)]
-        pub fn set_tbtfe(&mut self, val: bool) {
+        pub const fn set_tbtfe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
     }
@@ -369,6 +388,7 @@ pub mod regs {
     pub struct Oar(pub u32);
     impl Oar {
         #[doc = "Own address."]
+        #[must_use]
         #[inline(always)]
         pub const fn oa(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -376,7 +396,7 @@ pub mod regs {
         }
         #[doc = "Own address."]
         #[inline(always)]
-        pub fn set_oa(&mut self, val: u8) {
+        pub const fn set_oa(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
     }
@@ -403,6 +423,7 @@ pub mod regs {
     pub struct Pres(pub u32);
     impl Pres {
         #[doc = "CEC Rx Data Register."]
+        #[must_use]
         #[inline(always)]
         pub const fn presc(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x3fff;
@@ -410,7 +431,7 @@ pub mod regs {
         }
         #[doc = "CEC Rx Data Register."]
         #[inline(always)]
-        pub fn set_presc(&mut self, val: u16) {
+        pub const fn set_presc(&mut self, val: u16) {
             self.0 = (self.0 & !(0x3fff << 0usize)) | (((val as u32) & 0x3fff) << 0usize);
         }
     }
@@ -437,6 +458,7 @@ pub mod regs {
     pub struct Rxd(pub u32);
     impl Rxd {
         #[doc = "Rx data."]
+        #[must_use]
         #[inline(always)]
         pub const fn rxd(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -444,7 +466,7 @@ pub mod regs {
         }
         #[doc = "Rx data."]
         #[inline(always)]
-        pub fn set_rxd(&mut self, val: u8) {
+        pub const fn set_rxd(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -471,6 +493,7 @@ pub mod regs {
     pub struct Txd(pub u32);
     impl Txd {
         #[doc = "Tx Data register."]
+        #[must_use]
         #[inline(always)]
         pub const fn txd(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -478,7 +501,7 @@ pub mod regs {
         }
         #[doc = "Tx Data register."]
         #[inline(always)]
-        pub fn set_txd(&mut self, val: u8) {
+        pub const fn set_txd(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }

@@ -23,37 +23,37 @@ impl Exti {
     #[inline(always)]
     pub const fn rtsr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize + n * 0usize) as _) }
     }
     #[doc = "Falling Trigger selection register"]
     #[inline(always)]
     pub const fn ftsr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize + n * 0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize + n * 0usize) as _) }
     }
     #[doc = "Software interrupt event register"]
     #[inline(always)]
     pub const fn swier(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize + n * 0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize + n * 0usize) as _) }
     }
     #[doc = "Interrupt mask register"]
     #[inline(always)]
     pub const fn imr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize + n * 0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80usize + n * 0usize) as _) }
     }
     #[doc = "Event mask register"]
     #[inline(always)]
     pub const fn emr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize + n * 0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x84usize + n * 0usize) as _) }
     }
     #[doc = "Pending register"]
     #[inline(always)]
     pub const fn pr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 1usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize + n * 0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x88usize + n * 0usize) as _) }
     }
 }
 pub mod regs {
@@ -63,6 +63,7 @@ pub mod regs {
     pub struct Lines(pub u32);
     impl Lines {
         #[doc = "EXTI line"]
+        #[must_use]
         #[inline(always)]
         pub const fn line(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -72,7 +73,7 @@ pub mod regs {
         }
         #[doc = "EXTI line"]
         #[inline(always)]
-        pub fn set_line(&mut self, n: usize, val: bool) {
+        pub const fn set_line(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);

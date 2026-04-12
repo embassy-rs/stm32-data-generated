@@ -22,112 +22,112 @@ impl Dma2d {
     #[doc = "control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Interrupt Status Register"]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::Isr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "interrupt flag clear register"]
     #[inline(always)]
     pub const fn ifcr(self) -> crate::common::Reg<regs::Ifcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "foreground memory address register"]
     #[inline(always)]
     pub const fn fgmar(self) -> crate::common::Reg<regs::Fgmar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "foreground offset register"]
     #[inline(always)]
     pub const fn fgor(self) -> crate::common::Reg<regs::Fgor, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "background memory address register"]
     #[inline(always)]
     pub const fn bgmar(self) -> crate::common::Reg<regs::Bgmar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "background offset register"]
     #[inline(always)]
     pub const fn bgor(self) -> crate::common::Reg<regs::Bgor, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "foreground PFC control register"]
     #[inline(always)]
     pub const fn fgpfccr(self) -> crate::common::Reg<regs::Fgpfccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "foreground color register"]
     #[inline(always)]
     pub const fn fgcolr(self) -> crate::common::Reg<regs::Fgcolr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "background PFC control register"]
     #[inline(always)]
     pub const fn bgpfccr(self) -> crate::common::Reg<regs::Bgpfccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "background color register"]
     #[inline(always)]
     pub const fn bgcolr(self) -> crate::common::Reg<regs::Bgcolr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "foreground CLUT memory address register"]
     #[inline(always)]
     pub const fn fgcmar(self) -> crate::common::Reg<regs::Fgcmar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
     }
     #[doc = "background CLUT memory address register"]
     #[inline(always)]
     pub const fn bgcmar(self) -> crate::common::Reg<regs::Bgcmar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
     }
     #[doc = "output PFC control register"]
     #[inline(always)]
     pub const fn opfccr(self) -> crate::common::Reg<regs::Opfccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
     }
     #[doc = "output color register"]
     #[inline(always)]
     pub const fn ocolr(self) -> crate::common::Reg<regs::Ocolr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x38usize) as _) }
     }
     #[doc = "output memory address register"]
     #[inline(always)]
     pub const fn omar(self) -> crate::common::Reg<regs::Omar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3cusize) as _) }
     }
     #[doc = "output offset register"]
     #[inline(always)]
     pub const fn oor(self) -> crate::common::Reg<regs::Oor, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
     }
     #[doc = "number of line register"]
     #[inline(always)]
     pub const fn nlr(self) -> crate::common::Reg<regs::Nlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
     }
     #[doc = "line watermark register"]
     #[inline(always)]
     pub const fn lwr(self) -> crate::common::Reg<regs::Lwr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
     }
     #[doc = "AHB master timer configuration register"]
     #[inline(always)]
     pub const fn amtcr(self) -> crate::common::Reg<regs::Amtcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x4cusize) as _) }
     }
     #[doc = "FGCLUT"]
     #[inline(always)]
     pub const fn fgclut(self) -> crate::common::Reg<regs::Fgclut, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0400usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0400usize) as _) }
     }
     #[doc = "BGCLUT"]
     #[inline(always)]
     pub const fn bgclut(self) -> crate::common::Reg<regs::Bgclut, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0800usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0800usize) as _) }
     }
 }
 pub mod regs {
@@ -137,6 +137,7 @@ pub mod regs {
     pub struct Amtcr(pub u32);
     impl Amtcr {
         #[doc = "Enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn en(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -144,10 +145,11 @@ pub mod regs {
         }
         #[doc = "Enable"]
         #[inline(always)]
-        pub fn set_en(&mut self, val: bool) {
+        pub const fn set_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Dead Time"]
+        #[must_use]
         #[inline(always)]
         pub const fn dt(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -155,7 +157,7 @@ pub mod regs {
         }
         #[doc = "Dead Time"]
         #[inline(always)]
-        pub fn set_dt(&mut self, val: u8) {
+        pub const fn set_dt(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
     }
@@ -185,6 +187,7 @@ pub mod regs {
     pub struct Bgclut(pub u32);
     impl Bgclut {
         #[doc = "BLUE"]
+        #[must_use]
         #[inline(always)]
         pub const fn blue(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -192,10 +195,11 @@ pub mod regs {
         }
         #[doc = "BLUE"]
         #[inline(always)]
-        pub fn set_blue(&mut self, val: u8) {
+        pub const fn set_blue(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "GREEN"]
+        #[must_use]
         #[inline(always)]
         pub const fn green(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -203,10 +207,11 @@ pub mod regs {
         }
         #[doc = "GREEN"]
         #[inline(always)]
-        pub fn set_green(&mut self, val: u8) {
+        pub const fn set_green(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "RED"]
+        #[must_use]
         #[inline(always)]
         pub const fn red(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
@@ -214,10 +219,11 @@ pub mod regs {
         }
         #[doc = "RED"]
         #[inline(always)]
-        pub fn set_red(&mut self, val: u8) {
+        pub const fn set_red(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
         #[doc = "APLHA"]
+        #[must_use]
         #[inline(always)]
         pub const fn aplha(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0xff;
@@ -225,7 +231,7 @@ pub mod regs {
         }
         #[doc = "APLHA"]
         #[inline(always)]
-        pub fn set_aplha(&mut self, val: u8) {
+        pub const fn set_aplha(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 24usize)) | (((val as u32) & 0xff) << 24usize);
         }
     }
@@ -264,6 +270,7 @@ pub mod regs {
     pub struct Bgcmar(pub u32);
     impl Bgcmar {
         #[doc = "Memory address"]
+        #[must_use]
         #[inline(always)]
         pub const fn ma(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -271,7 +278,7 @@ pub mod regs {
         }
         #[doc = "Memory address"]
         #[inline(always)]
-        pub fn set_ma(&mut self, val: u32) {
+        pub const fn set_ma(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -298,6 +305,7 @@ pub mod regs {
     pub struct Bgcolr(pub u32);
     impl Bgcolr {
         #[doc = "Blue Value"]
+        #[must_use]
         #[inline(always)]
         pub const fn blue(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -305,10 +313,11 @@ pub mod regs {
         }
         #[doc = "Blue Value"]
         #[inline(always)]
-        pub fn set_blue(&mut self, val: u8) {
+        pub const fn set_blue(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "Green Value"]
+        #[must_use]
         #[inline(always)]
         pub const fn green(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -316,10 +325,11 @@ pub mod regs {
         }
         #[doc = "Green Value"]
         #[inline(always)]
-        pub fn set_green(&mut self, val: u8) {
+        pub const fn set_green(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "Red Value"]
+        #[must_use]
         #[inline(always)]
         pub const fn red(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
@@ -327,7 +337,7 @@ pub mod regs {
         }
         #[doc = "Red Value"]
         #[inline(always)]
-        pub fn set_red(&mut self, val: u8) {
+        pub const fn set_red(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
     }
@@ -364,6 +374,7 @@ pub mod regs {
     pub struct Bgmar(pub u32);
     impl Bgmar {
         #[doc = "Memory address"]
+        #[must_use]
         #[inline(always)]
         pub const fn ma(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -371,7 +382,7 @@ pub mod regs {
         }
         #[doc = "Memory address"]
         #[inline(always)]
-        pub fn set_ma(&mut self, val: u32) {
+        pub const fn set_ma(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -398,6 +409,7 @@ pub mod regs {
     pub struct Bgor(pub u32);
     impl Bgor {
         #[doc = "Line offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn lo(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x3fff;
@@ -405,7 +417,7 @@ pub mod regs {
         }
         #[doc = "Line offset"]
         #[inline(always)]
-        pub fn set_lo(&mut self, val: u16) {
+        pub const fn set_lo(&mut self, val: u16) {
             self.0 = (self.0 & !(0x3fff << 0usize)) | (((val as u32) & 0x3fff) << 0usize);
         }
     }
@@ -432,6 +444,7 @@ pub mod regs {
     pub struct Bgpfccr(pub u32);
     impl Bgpfccr {
         #[doc = "Color mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn cm(&self) -> super::vals::BgpfccrCm {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -439,10 +452,11 @@ pub mod regs {
         }
         #[doc = "Color mode"]
         #[inline(always)]
-        pub fn set_cm(&mut self, val: super::vals::BgpfccrCm) {
+        pub const fn set_cm(&mut self, val: super::vals::BgpfccrCm) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val.to_bits() as u32) & 0x0f) << 0usize);
         }
         #[doc = "CLUT Color mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn ccm(&self) -> super::vals::BgpfccrCcm {
             let val = (self.0 >> 4usize) & 0x01;
@@ -450,10 +464,11 @@ pub mod regs {
         }
         #[doc = "CLUT Color mode"]
         #[inline(always)]
-        pub fn set_ccm(&mut self, val: super::vals::BgpfccrCcm) {
+        pub const fn set_ccm(&mut self, val: super::vals::BgpfccrCcm) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
         #[doc = "Start"]
+        #[must_use]
         #[inline(always)]
         pub const fn start(&self) -> super::vals::BgpfccrStart {
             let val = (self.0 >> 5usize) & 0x01;
@@ -461,10 +476,11 @@ pub mod regs {
         }
         #[doc = "Start"]
         #[inline(always)]
-        pub fn set_start(&mut self, val: super::vals::BgpfccrStart) {
+        pub const fn set_start(&mut self, val: super::vals::BgpfccrStart) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
         #[doc = "CLUT size"]
+        #[must_use]
         #[inline(always)]
         pub const fn cs(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -472,10 +488,11 @@ pub mod regs {
         }
         #[doc = "CLUT size"]
         #[inline(always)]
-        pub fn set_cs(&mut self, val: u8) {
+        pub const fn set_cs(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "Alpha mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn am(&self) -> super::vals::BgpfccrAm {
             let val = (self.0 >> 16usize) & 0x03;
@@ -483,10 +500,11 @@ pub mod regs {
         }
         #[doc = "Alpha mode"]
         #[inline(always)]
-        pub fn set_am(&mut self, val: super::vals::BgpfccrAm) {
+        pub const fn set_am(&mut self, val: super::vals::BgpfccrAm) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
         }
         #[doc = "Alpha value"]
+        #[must_use]
         #[inline(always)]
         pub const fn alpha(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0xff;
@@ -494,7 +512,7 @@ pub mod regs {
         }
         #[doc = "Alpha value"]
         #[inline(always)]
-        pub fn set_alpha(&mut self, val: u8) {
+        pub const fn set_alpha(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 24usize)) | (((val as u32) & 0xff) << 24usize);
         }
     }
@@ -537,6 +555,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "Start"]
+        #[must_use]
         #[inline(always)]
         pub const fn start(&self) -> super::vals::CrStart {
             let val = (self.0 >> 0usize) & 0x01;
@@ -544,10 +563,11 @@ pub mod regs {
         }
         #[doc = "Start"]
         #[inline(always)]
-        pub fn set_start(&mut self, val: super::vals::CrStart) {
+        pub const fn set_start(&mut self, val: super::vals::CrStart) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
         #[doc = "Suspend"]
+        #[must_use]
         #[inline(always)]
         pub const fn susp(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -555,10 +575,11 @@ pub mod regs {
         }
         #[doc = "Suspend"]
         #[inline(always)]
-        pub fn set_susp(&mut self, val: bool) {
+        pub const fn set_susp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Abort"]
+        #[must_use]
         #[inline(always)]
         pub const fn abort(&self) -> super::vals::Abort {
             let val = (self.0 >> 2usize) & 0x01;
@@ -566,10 +587,11 @@ pub mod regs {
         }
         #[doc = "Abort"]
         #[inline(always)]
-        pub fn set_abort(&mut self, val: super::vals::Abort) {
+        pub const fn set_abort(&mut self, val: super::vals::Abort) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "Transfer error interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn teie(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -577,10 +599,11 @@ pub mod regs {
         }
         #[doc = "Transfer error interrupt enable"]
         #[inline(always)]
-        pub fn set_teie(&mut self, val: bool) {
+        pub const fn set_teie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Transfer complete interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn tcie(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -588,10 +611,11 @@ pub mod regs {
         }
         #[doc = "Transfer complete interrupt enable"]
         #[inline(always)]
-        pub fn set_tcie(&mut self, val: bool) {
+        pub const fn set_tcie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Transfer watermark interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn twie(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -599,10 +623,11 @@ pub mod regs {
         }
         #[doc = "Transfer watermark interrupt enable"]
         #[inline(always)]
-        pub fn set_twie(&mut self, val: bool) {
+        pub const fn set_twie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "CLUT access error interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn caeie(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -610,10 +635,11 @@ pub mod regs {
         }
         #[doc = "CLUT access error interrupt enable"]
         #[inline(always)]
-        pub fn set_caeie(&mut self, val: bool) {
+        pub const fn set_caeie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "CLUT transfer complete interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn ctcie(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -621,10 +647,11 @@ pub mod regs {
         }
         #[doc = "CLUT transfer complete interrupt enable"]
         #[inline(always)]
-        pub fn set_ctcie(&mut self, val: bool) {
+        pub const fn set_ctcie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Configuration Error Interrupt Enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn ceie(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -632,10 +659,11 @@ pub mod regs {
         }
         #[doc = "Configuration Error Interrupt Enable"]
         #[inline(always)]
-        pub fn set_ceie(&mut self, val: bool) {
+        pub const fn set_ceie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "DMA2D mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn mode(&self) -> super::vals::Mode {
             let val = (self.0 >> 16usize) & 0x03;
@@ -643,7 +671,7 @@ pub mod regs {
         }
         #[doc = "DMA2D mode"]
         #[inline(always)]
-        pub fn set_mode(&mut self, val: super::vals::Mode) {
+        pub const fn set_mode(&mut self, val: super::vals::Mode) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
         }
     }
@@ -681,6 +709,7 @@ pub mod regs {
     pub struct Fgclut(pub u32);
     impl Fgclut {
         #[doc = "BLUE"]
+        #[must_use]
         #[inline(always)]
         pub const fn blue(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -688,10 +717,11 @@ pub mod regs {
         }
         #[doc = "BLUE"]
         #[inline(always)]
-        pub fn set_blue(&mut self, val: u8) {
+        pub const fn set_blue(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "GREEN"]
+        #[must_use]
         #[inline(always)]
         pub const fn green(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -699,10 +729,11 @@ pub mod regs {
         }
         #[doc = "GREEN"]
         #[inline(always)]
-        pub fn set_green(&mut self, val: u8) {
+        pub const fn set_green(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "RED"]
+        #[must_use]
         #[inline(always)]
         pub const fn red(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
@@ -710,10 +741,11 @@ pub mod regs {
         }
         #[doc = "RED"]
         #[inline(always)]
-        pub fn set_red(&mut self, val: u8) {
+        pub const fn set_red(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
         #[doc = "APLHA"]
+        #[must_use]
         #[inline(always)]
         pub const fn aplha(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0xff;
@@ -721,7 +753,7 @@ pub mod regs {
         }
         #[doc = "APLHA"]
         #[inline(always)]
-        pub fn set_aplha(&mut self, val: u8) {
+        pub const fn set_aplha(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 24usize)) | (((val as u32) & 0xff) << 24usize);
         }
     }
@@ -760,6 +792,7 @@ pub mod regs {
     pub struct Fgcmar(pub u32);
     impl Fgcmar {
         #[doc = "Memory Address"]
+        #[must_use]
         #[inline(always)]
         pub const fn ma(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -767,7 +800,7 @@ pub mod regs {
         }
         #[doc = "Memory Address"]
         #[inline(always)]
-        pub fn set_ma(&mut self, val: u32) {
+        pub const fn set_ma(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -794,6 +827,7 @@ pub mod regs {
     pub struct Fgcolr(pub u32);
     impl Fgcolr {
         #[doc = "Blue Value"]
+        #[must_use]
         #[inline(always)]
         pub const fn blue(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -801,10 +835,11 @@ pub mod regs {
         }
         #[doc = "Blue Value"]
         #[inline(always)]
-        pub fn set_blue(&mut self, val: u8) {
+        pub const fn set_blue(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "Green Value"]
+        #[must_use]
         #[inline(always)]
         pub const fn green(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -812,10 +847,11 @@ pub mod regs {
         }
         #[doc = "Green Value"]
         #[inline(always)]
-        pub fn set_green(&mut self, val: u8) {
+        pub const fn set_green(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "Red Value"]
+        #[must_use]
         #[inline(always)]
         pub const fn red(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
@@ -823,7 +859,7 @@ pub mod regs {
         }
         #[doc = "Red Value"]
         #[inline(always)]
-        pub fn set_red(&mut self, val: u8) {
+        pub const fn set_red(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
     }
@@ -860,6 +896,7 @@ pub mod regs {
     pub struct Fgmar(pub u32);
     impl Fgmar {
         #[doc = "Memory address"]
+        #[must_use]
         #[inline(always)]
         pub const fn ma(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -867,7 +904,7 @@ pub mod regs {
         }
         #[doc = "Memory address"]
         #[inline(always)]
-        pub fn set_ma(&mut self, val: u32) {
+        pub const fn set_ma(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -894,6 +931,7 @@ pub mod regs {
     pub struct Fgor(pub u32);
     impl Fgor {
         #[doc = "Line offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn lo(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x3fff;
@@ -901,7 +939,7 @@ pub mod regs {
         }
         #[doc = "Line offset"]
         #[inline(always)]
-        pub fn set_lo(&mut self, val: u16) {
+        pub const fn set_lo(&mut self, val: u16) {
             self.0 = (self.0 & !(0x3fff << 0usize)) | (((val as u32) & 0x3fff) << 0usize);
         }
     }
@@ -928,6 +966,7 @@ pub mod regs {
     pub struct Fgpfccr(pub u32);
     impl Fgpfccr {
         #[doc = "Color mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn cm(&self) -> super::vals::FgpfccrCm {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -935,10 +974,11 @@ pub mod regs {
         }
         #[doc = "Color mode"]
         #[inline(always)]
-        pub fn set_cm(&mut self, val: super::vals::FgpfccrCm) {
+        pub const fn set_cm(&mut self, val: super::vals::FgpfccrCm) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val.to_bits() as u32) & 0x0f) << 0usize);
         }
         #[doc = "CLUT color mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn ccm(&self) -> super::vals::FgpfccrCcm {
             let val = (self.0 >> 4usize) & 0x01;
@@ -946,10 +986,11 @@ pub mod regs {
         }
         #[doc = "CLUT color mode"]
         #[inline(always)]
-        pub fn set_ccm(&mut self, val: super::vals::FgpfccrCcm) {
+        pub const fn set_ccm(&mut self, val: super::vals::FgpfccrCcm) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
         #[doc = "Start"]
+        #[must_use]
         #[inline(always)]
         pub const fn start(&self) -> super::vals::FgpfccrStart {
             let val = (self.0 >> 5usize) & 0x01;
@@ -957,10 +998,11 @@ pub mod regs {
         }
         #[doc = "Start"]
         #[inline(always)]
-        pub fn set_start(&mut self, val: super::vals::FgpfccrStart) {
+        pub const fn set_start(&mut self, val: super::vals::FgpfccrStart) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
         #[doc = "CLUT size"]
+        #[must_use]
         #[inline(always)]
         pub const fn cs(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -968,10 +1010,11 @@ pub mod regs {
         }
         #[doc = "CLUT size"]
         #[inline(always)]
-        pub fn set_cs(&mut self, val: u8) {
+        pub const fn set_cs(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "Alpha mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn am(&self) -> super::vals::FgpfccrAm {
             let val = (self.0 >> 16usize) & 0x03;
@@ -979,10 +1022,11 @@ pub mod regs {
         }
         #[doc = "Alpha mode"]
         #[inline(always)]
-        pub fn set_am(&mut self, val: super::vals::FgpfccrAm) {
+        pub const fn set_am(&mut self, val: super::vals::FgpfccrAm) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
         }
         #[doc = "Alpha value"]
+        #[must_use]
         #[inline(always)]
         pub const fn alpha(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0xff;
@@ -990,7 +1034,7 @@ pub mod regs {
         }
         #[doc = "Alpha value"]
         #[inline(always)]
-        pub fn set_alpha(&mut self, val: u8) {
+        pub const fn set_alpha(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 24usize)) | (((val as u32) & 0xff) << 24usize);
         }
     }
@@ -1033,6 +1077,7 @@ pub mod regs {
     pub struct Ifcr(pub u32);
     impl Ifcr {
         #[doc = "Clear Transfer error interrupt flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn cteif(&self) -> super::vals::Cteif {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1040,10 +1085,11 @@ pub mod regs {
         }
         #[doc = "Clear Transfer error interrupt flag"]
         #[inline(always)]
-        pub fn set_cteif(&mut self, val: super::vals::Cteif) {
+        pub const fn set_cteif(&mut self, val: super::vals::Cteif) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
         #[doc = "Clear transfer complete interrupt flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn ctcif(&self) -> super::vals::Ctcif {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1051,10 +1097,11 @@ pub mod regs {
         }
         #[doc = "Clear transfer complete interrupt flag"]
         #[inline(always)]
-        pub fn set_ctcif(&mut self, val: super::vals::Ctcif) {
+        pub const fn set_ctcif(&mut self, val: super::vals::Ctcif) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "Clear transfer watermark interrupt flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn ctwif(&self) -> super::vals::Ctwif {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1062,10 +1109,11 @@ pub mod regs {
         }
         #[doc = "Clear transfer watermark interrupt flag"]
         #[inline(always)]
-        pub fn set_ctwif(&mut self, val: super::vals::Ctwif) {
+        pub const fn set_ctwif(&mut self, val: super::vals::Ctwif) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "Clear CLUT access error interrupt flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn caecif(&self) -> super::vals::Caecif {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1073,10 +1121,11 @@ pub mod regs {
         }
         #[doc = "Clear CLUT access error interrupt flag"]
         #[inline(always)]
-        pub fn set_caecif(&mut self, val: super::vals::Caecif) {
+        pub const fn set_caecif(&mut self, val: super::vals::Caecif) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
         }
         #[doc = "Clear CLUT transfer complete interrupt flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn cctcif(&self) -> super::vals::Cctcif {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1084,10 +1133,11 @@ pub mod regs {
         }
         #[doc = "Clear CLUT transfer complete interrupt flag"]
         #[inline(always)]
-        pub fn set_cctcif(&mut self, val: super::vals::Cctcif) {
+        pub const fn set_cctcif(&mut self, val: super::vals::Cctcif) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
         #[doc = "Clear configuration error interrupt flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn cceif(&self) -> super::vals::Cceif {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1095,7 +1145,7 @@ pub mod regs {
         }
         #[doc = "Clear configuration error interrupt flag"]
         #[inline(always)]
-        pub fn set_cceif(&mut self, val: super::vals::Cceif) {
+        pub const fn set_cceif(&mut self, val: super::vals::Cceif) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
     }
@@ -1138,6 +1188,7 @@ pub mod regs {
     pub struct Isr(pub u32);
     impl Isr {
         #[doc = "Transfer error interrupt flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn teif(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1145,10 +1196,11 @@ pub mod regs {
         }
         #[doc = "Transfer error interrupt flag"]
         #[inline(always)]
-        pub fn set_teif(&mut self, val: bool) {
+        pub const fn set_teif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Transfer complete interrupt flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn tcif(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1156,10 +1208,11 @@ pub mod regs {
         }
         #[doc = "Transfer complete interrupt flag"]
         #[inline(always)]
-        pub fn set_tcif(&mut self, val: bool) {
+        pub const fn set_tcif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Transfer watermark interrupt flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn twif(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1167,10 +1220,11 @@ pub mod regs {
         }
         #[doc = "Transfer watermark interrupt flag"]
         #[inline(always)]
-        pub fn set_twif(&mut self, val: bool) {
+        pub const fn set_twif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "CLUT access error interrupt flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn caeif(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1178,10 +1232,11 @@ pub mod regs {
         }
         #[doc = "CLUT access error interrupt flag"]
         #[inline(always)]
-        pub fn set_caeif(&mut self, val: bool) {
+        pub const fn set_caeif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "CLUT transfer complete interrupt flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn ctcif(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1189,10 +1244,11 @@ pub mod regs {
         }
         #[doc = "CLUT transfer complete interrupt flag"]
         #[inline(always)]
-        pub fn set_ctcif(&mut self, val: bool) {
+        pub const fn set_ctcif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Configuration error interrupt flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn ceif(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1200,7 +1256,7 @@ pub mod regs {
         }
         #[doc = "Configuration error interrupt flag"]
         #[inline(always)]
-        pub fn set_ceif(&mut self, val: bool) {
+        pub const fn set_ceif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
     }
@@ -1234,6 +1290,7 @@ pub mod regs {
     pub struct Lwr(pub u32);
     impl Lwr {
         #[doc = "Line watermark"]
+        #[must_use]
         #[inline(always)]
         pub const fn lw(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -1241,7 +1298,7 @@ pub mod regs {
         }
         #[doc = "Line watermark"]
         #[inline(always)]
-        pub fn set_lw(&mut self, val: u16) {
+        pub const fn set_lw(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -1268,6 +1325,7 @@ pub mod regs {
     pub struct Nlr(pub u32);
     impl Nlr {
         #[doc = "Number of lines"]
+        #[must_use]
         #[inline(always)]
         pub const fn nl(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -1275,10 +1333,11 @@ pub mod regs {
         }
         #[doc = "Number of lines"]
         #[inline(always)]
-        pub fn set_nl(&mut self, val: u16) {
+        pub const fn set_nl(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
         #[doc = "Pixel per lines"]
+        #[must_use]
         #[inline(always)]
         pub const fn pl(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0x3fff;
@@ -1286,7 +1345,7 @@ pub mod regs {
         }
         #[doc = "Pixel per lines"]
         #[inline(always)]
-        pub fn set_pl(&mut self, val: u16) {
+        pub const fn set_pl(&mut self, val: u16) {
             self.0 = (self.0 & !(0x3fff << 16usize)) | (((val as u32) & 0x3fff) << 16usize);
         }
     }
@@ -1316,6 +1375,7 @@ pub mod regs {
     pub struct Ocolr(pub u32);
     impl Ocolr {
         #[doc = "Blue Value"]
+        #[must_use]
         #[inline(always)]
         pub const fn blue(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -1323,10 +1383,11 @@ pub mod regs {
         }
         #[doc = "Blue Value"]
         #[inline(always)]
-        pub fn set_blue(&mut self, val: u8) {
+        pub const fn set_blue(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "Green Value"]
+        #[must_use]
         #[inline(always)]
         pub const fn green(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -1334,10 +1395,11 @@ pub mod regs {
         }
         #[doc = "Green Value"]
         #[inline(always)]
-        pub fn set_green(&mut self, val: u8) {
+        pub const fn set_green(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "Red Value"]
+        #[must_use]
         #[inline(always)]
         pub const fn red(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
@@ -1345,10 +1407,11 @@ pub mod regs {
         }
         #[doc = "Red Value"]
         #[inline(always)]
-        pub fn set_red(&mut self, val: u8) {
+        pub const fn set_red(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
         #[doc = "Alpha Channel Value"]
+        #[must_use]
         #[inline(always)]
         pub const fn aplha(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0xff;
@@ -1356,7 +1419,7 @@ pub mod regs {
         }
         #[doc = "Alpha Channel Value"]
         #[inline(always)]
-        pub fn set_aplha(&mut self, val: u8) {
+        pub const fn set_aplha(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 24usize)) | (((val as u32) & 0xff) << 24usize);
         }
     }
@@ -1395,6 +1458,7 @@ pub mod regs {
     pub struct Omar(pub u32);
     impl Omar {
         #[doc = "Memory Address"]
+        #[must_use]
         #[inline(always)]
         pub const fn ma(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1402,7 +1466,7 @@ pub mod regs {
         }
         #[doc = "Memory Address"]
         #[inline(always)]
-        pub fn set_ma(&mut self, val: u32) {
+        pub const fn set_ma(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1429,6 +1493,7 @@ pub mod regs {
     pub struct Oor(pub u32);
     impl Oor {
         #[doc = "Line Offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn lo(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x3fff;
@@ -1436,7 +1501,7 @@ pub mod regs {
         }
         #[doc = "Line Offset"]
         #[inline(always)]
-        pub fn set_lo(&mut self, val: u16) {
+        pub const fn set_lo(&mut self, val: u16) {
             self.0 = (self.0 & !(0x3fff << 0usize)) | (((val as u32) & 0x3fff) << 0usize);
         }
     }
@@ -1463,6 +1528,7 @@ pub mod regs {
     pub struct Opfccr(pub u32);
     impl Opfccr {
         #[doc = "Color mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn cm(&self) -> super::vals::OpfccrCm {
             let val = (self.0 >> 0usize) & 0x07;
@@ -1470,7 +1536,7 @@ pub mod regs {
         }
         #[doc = "Color mode"]
         #[inline(always)]
-        pub fn set_cm(&mut self, val: super::vals::OpfccrCm) {
+        pub const fn set_cm(&mut self, val: super::vals::OpfccrCm) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
     }

@@ -3172,13 +3172,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "SYNC",
-                    description: Some(
-                        "Synchronizing: node is synchronizing on CAN communication.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "IDLE",
                     description: Some(
                         "Idle: node is neither receiver nor transmitter.",
@@ -3191,6 +3184,13 @@ pub(crate) static REGISTERS: IR = IR {
                         "Receiver: node is operating as receiver.",
                     ),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "SYNC",
+                    description: Some(
+                        "Synchronizing: node is synchronizing on CAN communication.",
+                    ),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "TX",
@@ -3263,6 +3263,48 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
+                    name: "ACK",
+                    description: Some(
+                        "AckError: The message transmitted by the FDCAN was not acknowledged by another node.",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "BIT_0",
+                    description: Some(
+                        "Bit0Error: During the transmission of a message (or acknowledge bit, or active error flag, or overload flag), the device wanted to send a dominant level (data or identifier bit logical value 0), but the monitored bus value was recessive. During Bus_Off recovery this status is set each time a sequence of 11 recessive bits has been monitored. This enables the CPU to monitor the proceeding of the Bus_Off recovery sequence (indicating the bus is not stuck at dominant or continuously disturbed).",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "BIT_1",
+                    description: Some(
+                        "Bit1Error: During the transmission of a message (with the exception of the arbitration field), the device wanted to send a recessive level (bit of logical value 1), but the monitored bus value was dominant.",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "CRC",
+                    description: Some(
+                        "CRCError: The CRC check sum of a received message was incorrect. The CRC of an incoming message does not match with the CRC calculated from the received data.",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "FORM",
+                    description: Some(
+                        "Form Error: A fixed format part of a received frame has the wrong format.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "NO_CHANGE",
+                    description: Some(
+                        "NoChange: Any read access to the Protocol status register re-initializes the LEC to ‘7’. When the LEC shows the value ‘7’, no CAN bus event was detected since the last CPU read access to the Protocol status register.",
+                    ),
+                    value: 7,
+                },
+                EnumVariant {
                     name: "NO_ERROR",
                     description: Some(
                         "No Error: No error occurred since LEC has been reset by successful reception or transmission.",
@@ -3276,48 +3318,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 1,
                 },
-                EnumVariant {
-                    name: "FORM",
-                    description: Some(
-                        "Form Error: A fixed format part of a received frame has the wrong format.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "ACK",
-                    description: Some(
-                        "AckError: The message transmitted by the FDCAN was not acknowledged by another node.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "BIT_1",
-                    description: Some(
-                        "Bit1Error: During the transmission of a message (with the exception of the arbitration field), the device wanted to send a recessive level (bit of logical value 1), but the monitored bus value was dominant.",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "BIT_0",
-                    description: Some(
-                        "Bit0Error: During the transmission of a message (or acknowledge bit, or active error flag, or overload flag), the device wanted to send a dominant level (data or identifier bit logical value 0), but the monitored bus value was recessive. During Bus_Off recovery this status is set each time a sequence of 11 recessive bits has been monitored. This enables the CPU to monitor the proceeding of the Bus_Off recovery sequence (indicating the bus is not stuck at dominant or continuously disturbed).",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "CRC",
-                    description: Some(
-                        "CRCError: The CRC check sum of a received message was incorrect. The CRC of an incoming message does not match with the CRC calculated from the received data.",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "NO_CHANGE",
-                    description: Some(
-                        "NoChange: Any read access to the Protocol status register re-initializes the LEC to ‘7’. When the LEC shows the value ‘7’, no CAN bus event was detected since the last CPU read access to the Protocol status register.",
-                    ),
-                    value: 7,
-                },
             ],
         },
         Enum {
@@ -3325,20 +3325,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
-                EnumVariant {
-                    name: "NO_FIFO",
-                    description: Some(
-                        "No FIFO selected",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "OVERRUN",
-                    description: Some(
-                        "FIFO overrun",
-                    ),
-                    value: 1,
-                },
                 EnumVariant {
                     name: "FIFO_0",
                     description: Some(
@@ -3353,6 +3339,20 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 3,
                 },
+                EnumVariant {
+                    name: "NO_FIFO",
+                    description: Some(
+                        "No FIFO selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OVERRUN",
+                    description: Some(
+                        "FIFO overrun",
+                    ),
+                    value: 1,
+                },
             ],
         },
         Enum {
@@ -3366,34 +3366,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Divide by 1",
                     ),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "DIV_2",
-                    description: Some(
-                        "Divide by 2",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV_4",
-                    description: Some(
-                        "Divide by 4",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV_6",
-                    description: Some(
-                        "Divide by 6",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV_8",
-                    description: Some(
-                        "Divide by 8",
-                    ),
-                    value: 4,
                 },
                 EnumVariant {
                     name: "DIV_10",
@@ -3429,6 +3401,13 @@ pub(crate) static REGISTERS: IR = IR {
                         "Divide by 18",
                     ),
                     value: 9,
+                },
+                EnumVariant {
+                    name: "DIV_2",
+                    description: Some(
+                        "Divide by 2",
+                    ),
+                    value: 1,
                 },
                 EnumVariant {
                     name: "DIV_20",
@@ -3472,6 +3451,27 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 15,
                 },
+                EnumVariant {
+                    name: "DIV_4",
+                    description: Some(
+                        "Divide by 4",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV_6",
+                    description: Some(
+                        "Divide by 6",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV_8",
+                    description: Some(
+                        "Divide by 8",
+                    ),
+                    value: 4,
+                },
             ],
         },
         Enum {
@@ -3508,13 +3508,6 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "TX_EVENT_FIFO",
-                    description: Some(
-                        "Timeout controlled by Tx event FIFO",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "RX_FIFO_0",
                     description: Some(
                         "Timeout controlled by Rx FIFO 0",
@@ -3528,6 +3521,13 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 3,
                 },
+                EnumVariant {
+                    name: "TX_EVENT_FIFO",
+                    description: Some(
+                        "Timeout controlled by Tx event FIFO",
+                    ),
+                    value: 1,
+                },
             ],
         },
         Enum {
@@ -3536,11 +3536,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ZERO",
+                    name: "EXTERNAL",
                     description: Some(
-                        "Timestamp counter value always 0x0000",
+                        "External timestamp counter from TIM3 value (tim3_cnt[0:15])",
                     ),
-                    value: 0,
+                    value: 2,
                 },
                 EnumVariant {
                     name: "INCREMENT",
@@ -3550,11 +3550,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "EXTERNAL",
+                    name: "ZERO",
                     description: Some(
-                        "External timestamp counter from TIM3 value (tim3_cnt[0:15])",
+                        "Timestamp counter value always 0x0000",
                     ),
-                    value: 2,
+                    value: 0,
                 },
             ],
         },
@@ -3563,20 +3563,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
-                EnumVariant {
-                    name: "RESET",
-                    description: Some(
-                        "Reset value, FDCANx_TX TX is controlled by the CAN core, updated at the end of the CAN bit time",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SAMPLE_POINT",
-                    description: Some(
-                        "Sample point can be monitored at pin FDCANx_TX",
-                    ),
-                    value: 1,
-                },
                 EnumVariant {
                     name: "DOMINANT",
                     description: Some(
@@ -3590,6 +3576,20 @@ pub(crate) static REGISTERS: IR = IR {
                         "Recessive (1) at pin FDCANx_TX",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "RESET",
+                    description: Some(
+                        "Reset value, FDCANx_TX TX is controlled by the CAN core, updated at the end of the CAN bit time",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SAMPLE_POINT",
+                    description: Some(
+                        "Sample point can be monitored at pin FDCANx_TX",
+                    ),
+                    value: 1,
                 },
             ],
         },

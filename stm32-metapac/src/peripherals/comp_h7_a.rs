@@ -22,27 +22,27 @@ impl Comp {
     #[doc = "Comparator status register."]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Comparator interrupt clear flag register."]
     #[inline(always)]
     pub const fn icfr(self) -> crate::common::Reg<regs::Icfr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Comparator option register."]
     #[inline(always)]
     pub const fn or(self) -> crate::common::Reg<regs::Or, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "Comparator configuration register 1."]
     #[inline(always)]
     pub const fn cfgr1(self) -> crate::common::Reg<regs::Cfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "Comparator configuration register 2."]
     #[inline(always)]
     pub const fn cfgr2(self) -> crate::common::Reg<regs::Cfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
 }
 pub mod regs {
@@ -52,6 +52,7 @@ pub mod regs {
     pub struct Cfgr1(pub u32);
     impl Cfgr1 {
         #[doc = "COMP channel 1 enable bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn en(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -59,10 +60,11 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 enable bit."]
         #[inline(always)]
-        pub fn set_en(&mut self, val: bool) {
+        pub const fn set_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Scaler bridge enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn brgen(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -70,10 +72,11 @@ pub mod regs {
         }
         #[doc = "Scaler bridge enable."]
         #[inline(always)]
-        pub fn set_brgen(&mut self, val: bool) {
+        pub const fn set_brgen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Voltage scaler enable bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn scalen(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -81,10 +84,11 @@ pub mod regs {
         }
         #[doc = "Voltage scaler enable bit."]
         #[inline(always)]
-        pub fn set_scalen(&mut self, val: bool) {
+        pub const fn set_scalen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "COMP channel 1 polarity selection bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn polarity(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -92,10 +96,11 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 polarity selection bit."]
         #[inline(always)]
-        pub fn set_polarity(&mut self, val: bool) {
+        pub const fn set_polarity(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "COMP channel 1 interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn iten(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -103,10 +108,11 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 interrupt enable."]
         #[inline(always)]
-        pub fn set_iten(&mut self, val: bool) {
+        pub const fn set_iten(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "COMP channel 1 hysteresis selection bits."]
+        #[must_use]
         #[inline(always)]
         pub const fn hyst(&self) -> super::vals::Hyst {
             let val = (self.0 >> 8usize) & 0x03;
@@ -114,10 +120,11 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 hysteresis selection bits."]
         #[inline(always)]
-        pub fn set_hyst(&mut self, val: super::vals::Hyst) {
+        pub const fn set_hyst(&mut self, val: super::vals::Hyst) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
         #[doc = "Power Mode of the COMP channel 1."]
+        #[must_use]
         #[inline(always)]
         pub const fn pwrmode(&self) -> super::vals::Pwrmode {
             let val = (self.0 >> 12usize) & 0x03;
@@ -125,10 +132,11 @@ pub mod regs {
         }
         #[doc = "Power Mode of the COMP channel 1."]
         #[inline(always)]
-        pub fn set_pwrmode(&mut self, val: super::vals::Pwrmode) {
+        pub const fn set_pwrmode(&mut self, val: super::vals::Pwrmode) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
         #[doc = "COMP channel 1 inverting input selection field."]
+        #[must_use]
         #[inline(always)]
         pub const fn inmsel(&self) -> super::vals::Inmsel {
             let val = (self.0 >> 16usize) & 0x0f;
@@ -136,10 +144,11 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 inverting input selection field."]
         #[inline(always)]
-        pub fn set_inmsel(&mut self, val: super::vals::Inmsel) {
+        pub const fn set_inmsel(&mut self, val: super::vals::Inmsel) {
             self.0 = (self.0 & !(0x0f << 16usize)) | (((val.to_bits() as u32) & 0x0f) << 16usize);
         }
         #[doc = "COMP channel 1 non-inverting input selection bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn inpsel(&self) -> super::vals::Inpsel {
             let val = (self.0 >> 20usize) & 0x01;
@@ -147,10 +156,11 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 non-inverting input selection bit."]
         #[inline(always)]
-        pub fn set_inpsel(&mut self, val: super::vals::Inpsel) {
+        pub const fn set_inpsel(&mut self, val: super::vals::Inpsel) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
         }
         #[doc = "COMP channel 1 blanking source selection bits."]
+        #[must_use]
         #[inline(always)]
         pub const fn blanking(&self) -> super::vals::Blanking {
             let val = (self.0 >> 24usize) & 0x0f;
@@ -158,10 +168,11 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 blanking source selection bits."]
         #[inline(always)]
-        pub fn set_blanking(&mut self, val: super::vals::Blanking) {
+        pub const fn set_blanking(&mut self, val: super::vals::Blanking) {
             self.0 = (self.0 & !(0x0f << 24usize)) | (((val.to_bits() as u32) & 0x0f) << 24usize);
         }
         #[doc = "Lock bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn lock(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -169,7 +180,7 @@ pub mod regs {
         }
         #[doc = "Lock bit."]
         #[inline(always)]
-        pub fn set_lock(&mut self, val: bool) {
+        pub const fn set_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -208,6 +219,7 @@ pub mod regs {
     pub struct Cfgr2(pub u32);
     impl Cfgr2 {
         #[doc = "COMP channel 1 enable bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn en(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -215,10 +227,11 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 enable bit."]
         #[inline(always)]
-        pub fn set_en(&mut self, val: bool) {
+        pub const fn set_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Scaler bridge enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn brgen(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -226,10 +239,11 @@ pub mod regs {
         }
         #[doc = "Scaler bridge enable."]
         #[inline(always)]
-        pub fn set_brgen(&mut self, val: bool) {
+        pub const fn set_brgen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Voltage scaler enable bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn scalen(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -237,10 +251,11 @@ pub mod regs {
         }
         #[doc = "Voltage scaler enable bit."]
         #[inline(always)]
-        pub fn set_scalen(&mut self, val: bool) {
+        pub const fn set_scalen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "COMP channel 1 polarity selection bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn polarity(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -248,10 +263,11 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 polarity selection bit."]
         #[inline(always)]
-        pub fn set_polarity(&mut self, val: bool) {
+        pub const fn set_polarity(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Window comparator mode selection bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn winmode(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -259,10 +275,11 @@ pub mod regs {
         }
         #[doc = "Window comparator mode selection bit."]
         #[inline(always)]
-        pub fn set_winmode(&mut self, val: bool) {
+        pub const fn set_winmode(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "COMP channel 1 interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn iten(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -270,10 +287,11 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 interrupt enable."]
         #[inline(always)]
-        pub fn set_iten(&mut self, val: bool) {
+        pub const fn set_iten(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "COMP channel 1 hysteresis selection bits."]
+        #[must_use]
         #[inline(always)]
         pub const fn hyst(&self) -> super::vals::Hyst {
             let val = (self.0 >> 8usize) & 0x03;
@@ -281,10 +299,11 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 hysteresis selection bits."]
         #[inline(always)]
-        pub fn set_hyst(&mut self, val: super::vals::Hyst) {
+        pub const fn set_hyst(&mut self, val: super::vals::Hyst) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
         #[doc = "Power Mode of the COMP channel 1."]
+        #[must_use]
         #[inline(always)]
         pub const fn pwrmode(&self) -> super::vals::Pwrmode {
             let val = (self.0 >> 12usize) & 0x03;
@@ -292,10 +311,11 @@ pub mod regs {
         }
         #[doc = "Power Mode of the COMP channel 1."]
         #[inline(always)]
-        pub fn set_pwrmode(&mut self, val: super::vals::Pwrmode) {
+        pub const fn set_pwrmode(&mut self, val: super::vals::Pwrmode) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
         #[doc = "COMP channel 1 inverting input selection field."]
+        #[must_use]
         #[inline(always)]
         pub const fn inmsel(&self) -> super::vals::Inmsel {
             let val = (self.0 >> 16usize) & 0x0f;
@@ -303,10 +323,11 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 inverting input selection field."]
         #[inline(always)]
-        pub fn set_inmsel(&mut self, val: super::vals::Inmsel) {
+        pub const fn set_inmsel(&mut self, val: super::vals::Inmsel) {
             self.0 = (self.0 & !(0x0f << 16usize)) | (((val.to_bits() as u32) & 0x0f) << 16usize);
         }
         #[doc = "COMP channel 1 non-inverting input selection bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn inpsel(&self) -> super::vals::Inpsel {
             let val = (self.0 >> 20usize) & 0x01;
@@ -314,10 +335,11 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 non-inverting input selection bit."]
         #[inline(always)]
-        pub fn set_inpsel(&mut self, val: super::vals::Inpsel) {
+        pub const fn set_inpsel(&mut self, val: super::vals::Inpsel) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
         }
         #[doc = "COMP channel 1 blanking source selection bits."]
+        #[must_use]
         #[inline(always)]
         pub const fn blanking(&self) -> super::vals::Blanking {
             let val = (self.0 >> 24usize) & 0x0f;
@@ -325,10 +347,11 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 blanking source selection bits."]
         #[inline(always)]
-        pub fn set_blanking(&mut self, val: super::vals::Blanking) {
+        pub const fn set_blanking(&mut self, val: super::vals::Blanking) {
             self.0 = (self.0 & !(0x0f << 24usize)) | (((val.to_bits() as u32) & 0x0f) << 24usize);
         }
         #[doc = "Lock bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn lock(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -336,7 +359,7 @@ pub mod regs {
         }
         #[doc = "Lock bit."]
         #[inline(always)]
-        pub fn set_lock(&mut self, val: bool) {
+        pub const fn set_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -376,6 +399,7 @@ pub mod regs {
     pub struct Icfr(pub u32);
     impl Icfr {
         #[doc = "Clear COMP channel 1 Interrupt Flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn ccif(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -385,7 +409,7 @@ pub mod regs {
         }
         #[doc = "Clear COMP channel 1 Interrupt Flag."]
         #[inline(always)]
-        pub fn set_ccif(&mut self, n: usize, val: bool) {
+        pub const fn set_ccif(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 16usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -422,6 +446,7 @@ pub mod regs {
     pub struct Or(pub u32);
     impl Or {
         #[doc = "Selection of source for alternate function of output ports."]
+        #[must_use]
         #[inline(always)]
         pub const fn afop(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x07ff;
@@ -429,7 +454,7 @@ pub mod regs {
         }
         #[doc = "Selection of source for alternate function of output ports."]
         #[inline(always)]
-        pub fn set_afop(&mut self, val: u16) {
+        pub const fn set_afop(&mut self, val: u16) {
             self.0 = (self.0 & !(0x07ff << 0usize)) | (((val as u32) & 0x07ff) << 0usize);
         }
     }
@@ -456,6 +481,7 @@ pub mod regs {
     pub struct Sr(pub u32);
     impl Sr {
         #[doc = "COMP channel 1 output status bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn cval(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -465,12 +491,13 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 output status bit."]
         #[inline(always)]
-        pub fn set_cval(&mut self, n: usize, val: bool) {
+        pub const fn set_cval(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "COMP channel 1 Interrupt Flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn cif(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -480,7 +507,7 @@ pub mod regs {
         }
         #[doc = "COMP channel 1 Interrupt Flag."]
         #[inline(always)]
-        pub fn set_cif(&mut self, n: usize, val: bool) {
+        pub const fn set_cif(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 16usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);

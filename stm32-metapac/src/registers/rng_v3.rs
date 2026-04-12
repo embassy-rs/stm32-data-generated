@@ -367,18 +367,53 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "NO_DIV",
-                    description: Some(
-                        "Internal RNG clock after divider is similar to incoming RNG clock",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "DIV_2_1",
                     description: Some(
                         "Divide RNG clock by 2^1",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "DIV_2_10",
+                    description: Some(
+                        "Divide RNG clock by 2^10",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "DIV_2_11",
+                    description: Some(
+                        "Divide RNG clock by 2^11",
+                    ),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "DIV_2_12",
+                    description: Some(
+                        "Divide RNG clock by 2^12",
+                    ),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "DIV_2_13",
+                    description: Some(
+                        "Divide RNG clock by 2^13",
+                    ),
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "DIV_2_14",
+                    description: Some(
+                        "Divide RNG clock by 2^14",
+                    ),
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "DIV_2_15",
+                    description: Some(
+                        "Divide RNG clock by 2^15",
+                    ),
+                    value: 15,
                 },
                 EnumVariant {
                     name: "DIV_2_2",
@@ -437,46 +472,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 9,
                 },
                 EnumVariant {
-                    name: "DIV_2_10",
+                    name: "NO_DIV",
                     description: Some(
-                        "Divide RNG clock by 2^10",
+                        "Internal RNG clock after divider is similar to incoming RNG clock",
                     ),
-                    value: 10,
-                },
-                EnumVariant {
-                    name: "DIV_2_11",
-                    description: Some(
-                        "Divide RNG clock by 2^11",
-                    ),
-                    value: 11,
-                },
-                EnumVariant {
-                    name: "DIV_2_12",
-                    description: Some(
-                        "Divide RNG clock by 2^12",
-                    ),
-                    value: 12,
-                },
-                EnumVariant {
-                    name: "DIV_2_13",
-                    description: Some(
-                        "Divide RNG clock by 2^13",
-                    ),
-                    value: 13,
-                },
-                EnumVariant {
-                    name: "DIV_2_14",
-                    description: Some(
-                        "Divide RNG clock by 2^14",
-                    ),
-                    value: 14,
-                },
-                EnumVariant {
-                    name: "DIV_2_15",
-                    description: Some(
-                        "Divide RNG clock by 2^15",
-                    ),
-                    value: 15,
+                    value: 0,
                 },
             ],
         },
@@ -486,18 +486,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             variants: &[
                 EnumVariant {
-                    name: "RECOMMENDED",
-                    description: Some(
-                        "Recommended value for RNG certification (0x0000_AA74)",
-                    ),
-                    value: 43636,
-                },
-                EnumVariant {
                     name: "MAGIC",
                     description: Some(
                         "Magic number to be written before any write (0x1759_0ABC)",
                     ),
                     value: 391711420,
+                },
+                EnumVariant {
+                    name: "RECOMMENDED",
+                    description: Some(
+                        "Recommended value for RNG certification (0x0000_AA74)",
+                    ),
+                    value: 43636,
                 },
             ],
         },
@@ -507,18 +507,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "DEFAULT",
-                    description: Some(
-                        "Hardware default values for NIST compliant RNG. In this configuration per 128-bit output two conditioning loops are performed and 256 bits of noise source are used",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "CUSTOM",
                     description: Some(
                         "Custom values for NIST compliant RNG",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "DEFAULT",
+                    description: Some(
+                        "Hardware default values for NIST compliant RNG. In this configuration per 128-bit output two conditioning loops are performed and 256 bits of noise source are used",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -563,18 +563,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "CONFIG_B",
-                    description: Some(
-                        "Recommended value for config B (not NIST certifiable)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "CONFIG_A",
                     description: Some(
                         "Recommended value for config A (NIST certifiable)",
                     ),
                     value: 13,
+                },
+                EnumVariant {
+                    name: "CONFIG_B",
+                    description: Some(
+                        "Recommended value for config B (not NIST certifiable)",
+                    ),
+                    value: 0,
                 },
             ],
         },

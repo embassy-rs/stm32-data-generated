@@ -1255,18 +1255,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "READY",
-                    description: Some(
-                        "External AC’97 Codec is ready",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "NOT_READY",
                     description: Some(
                         "External AC’97 Codec is not ready",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "READY",
+                    description: Some(
+                        "External AC’97 Codec is ready",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1276,11 +1276,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NO_COMPANDING",
+                    name: "ALAW",
                     description: Some(
-                        "No companding algorithm",
+                        "A-Law algorithm",
                     ),
-                    value: 0,
+                    value: 3,
                 },
                 EnumVariant {
                     name: "MU_LAW",
@@ -1290,11 +1290,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "ALAW",
+                    name: "NO_COMPANDING",
                     description: Some(
-                        "A-Law algorithm",
+                        "No companding algorithm",
                     ),
-                    value: 3,
+                    value: 0,
                 },
             ],
         },
@@ -1324,13 +1324,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 3,
             variants: &[
-                EnumVariant {
-                    name: "BIT8",
-                    description: Some(
-                        "8 bits",
-                    ),
-                    value: 2,
-                },
                 EnumVariant {
                     name: "BIT10",
                     description: Some(
@@ -1366,6 +1359,13 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 7,
                 },
+                EnumVariant {
+                    name: "BIT8",
+                    description: Some(
+                        "8 bits",
+                    ),
+                    value: 2,
+                },
             ],
         },
         Enum {
@@ -1379,6 +1379,13 @@ pub(crate) static REGISTERS: IR = IR {
                         "FIFO empty",
                     ),
                     value: 0,
+                },
+                EnumVariant {
+                    name: "FULL",
+                    description: Some(
+                        "FIFO full",
+                    ),
+                    value: 5,
                 },
                 EnumVariant {
                     name: "QUARTER1",
@@ -1408,13 +1415,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 4,
                 },
-                EnumVariant {
-                    name: "FULL",
-                    description: Some(
-                        "FIFO full",
-                    ),
-                    value: 5,
-                },
             ],
         },
         Enum {
@@ -1423,18 +1423,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ON_FIRST",
-                    description: Some(
-                        "FS is asserted on the first bit of the slot 0",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "BEFORE_FIRST",
                     description: Some(
                         "FS is asserted one bit before the first bit of the slot 0",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "ON_FIRST",
+                    description: Some(
+                        "FS is asserted on the first bit of the slot 0",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1472,6 +1472,13 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
+                    name: "FULL",
+                    description: Some(
+                        "FIFO full",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
                     name: "QUARTER1",
                     description: Some(
                         "1⁄4 FIFO",
@@ -1492,13 +1499,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 3,
                 },
-                EnumVariant {
-                    name: "FULL",
-                    description: Some(
-                        "FIFO full",
-                    ),
-                    value: 4,
-                },
             ],
         },
         Enum {
@@ -1507,18 +1507,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MSB_FIRST",
-                    description: Some(
-                        "Data are transferred with MSB first",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "LSB_FIRST",
                     description: Some(
                         "Data are transferred with LSB first",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "MSB_FIRST",
+                    description: Some(
+                        "Data are transferred with MSB first",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1531,46 +1531,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV1",
                     description: None,
                     value: 1,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: None,
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: None,
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: None,
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIV5",
-                    description: None,
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DIV6",
-                    description: None,
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DIV7",
-                    description: None,
-                    value: 7,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: None,
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "DIV9",
-                    description: None,
-                    value: 9,
                 },
                 EnumVariant {
                     name: "DIV10",
@@ -1623,6 +1583,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 19,
                 },
                 EnumVariant {
+                    name: "DIV2",
+                    description: None,
+                    value: 2,
+                },
+                EnumVariant {
                     name: "DIV20",
                     description: None,
                     value: 20,
@@ -1671,6 +1636,11 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV29",
                     description: None,
                     value: 29,
+                },
+                EnumVariant {
+                    name: "DIV3",
+                    description: None,
+                    value: 3,
                 },
                 EnumVariant {
                     name: "DIV30",
@@ -1723,6 +1693,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 39,
                 },
                 EnumVariant {
+                    name: "DIV4",
+                    description: None,
+                    value: 4,
+                },
+                EnumVariant {
                     name: "DIV40",
                     description: None,
                     value: 40,
@@ -1771,6 +1746,11 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV49",
                     description: None,
                     value: 49,
+                },
+                EnumVariant {
+                    name: "DIV5",
+                    description: None,
+                    value: 5,
                 },
                 EnumVariant {
                     name: "DIV50",
@@ -1823,6 +1803,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 59,
                 },
                 EnumVariant {
+                    name: "DIV6",
+                    description: None,
+                    value: 6,
+                },
+                EnumVariant {
                     name: "DIV60",
                     description: None,
                     value: 60,
@@ -1842,6 +1827,21 @@ pub(crate) static REGISTERS: IR = IR {
                     description: None,
                     value: 63,
                 },
+                EnumVariant {
+                    name: "DIV7",
+                    description: None,
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: None,
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "DIV9",
+                    description: None,
+                    value: 9,
+                },
             ],
         },
         Enum {
@@ -1850,13 +1850,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MASTER_TX",
-                    description: Some(
-                        "Master transmitter",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "MASTER_RX",
                     description: Some(
                         "Master receiver",
@@ -1864,11 +1857,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SLAVE_TX",
+                    name: "MASTER_TX",
                     description: Some(
-                        "Slave transmitter",
+                        "Master transmitter",
                     ),
-                    value: 2,
+                    value: 0,
                 },
                 EnumVariant {
                     name: "SLAVE_RX",
@@ -1876,6 +1869,13 @@ pub(crate) static REGISTERS: IR = IR {
                         "Slave receiver",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "SLAVE_TX",
+                    description: Some(
+                        "Slave transmitter",
+                    ),
+                    value: 2,
                 },
             ],
         },
@@ -1885,18 +1885,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "STEREO",
-                    description: Some(
-                        "Stereo mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "MONO",
                     description: Some(
                         "Mono mode",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "STEREO",
+                    description: Some(
+                        "Stereo mode",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1906,18 +1906,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "SEND_ZERO",
-                    description: Some(
-                        "Bit value 0 is sent during the mute mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "SEND_LAST",
                     description: Some(
                         "Last values are sent during the mute mode",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "SEND_ZERO",
+                    description: Some(
+                        "Bit value 0 is sent during the mute mode",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1927,18 +1927,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ON_START",
-                    description: Some(
-                        "Audio block output driven when SAIEN is set",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "IMMEDIATELY",
                     description: Some(
                         "Audio block output driven immediately after the setting of this bit",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "ON_START",
+                    description: Some(
+                        "Audio block output driven when SAIEN is set",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1947,6 +1947,13 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
+                EnumVariant {
+                    name: "AC97",
+                    description: Some(
+                        "AC’97 protocol",
+                    ),
+                    value: 2,
+                },
                 EnumVariant {
                     name: "FREE",
                     description: Some(
@@ -1961,13 +1968,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 1,
                 },
-                EnumVariant {
-                    name: "AC97",
-                    description: Some(
-                        "AC’97 protocol",
-                    ),
-                    value: 2,
-                },
             ],
         },
         Enum {
@@ -1976,18 +1976,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 16,
             variants: &[
                 EnumVariant {
-                    name: "INACTIVE",
-                    description: Some(
-                        "Inactive slot",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "ACTIVE",
                     description: Some(
                         "Active slot",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "INACTIVE",
+                    description: Some(
+                        "Inactive slot",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1996,13 +1996,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
-                EnumVariant {
-                    name: "DATA_SIZE",
-                    description: Some(
-                        "The slot size is equivalent to the data size (specified in DS[3:0] in the SAI_xCR1 register)",
-                    ),
-                    value: 0,
-                },
                 EnumVariant {
                     name: "BIT16",
                     description: Some(
@@ -2016,6 +2009,13 @@ pub(crate) static REGISTERS: IR = IR {
                         "32-bit",
                     ),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "DATA_SIZE",
+                    description: Some(
+                        "The slot size is equivalent to the data size (specified in DS[3:0] in the SAI_xCR1 register)",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2032,18 +2032,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "INTERNAL",
-                    description: Some(
-                        "audio sub-block is synchronous with the other internal audio sub-block. In this case, the audio sub-block must be configured in slave mode",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "EXTERNAL",
                     description: Some(
                         "audio sub-block is synchronous with an external SAI embedded peripheral. In this case the audio sub-block should be configured in Slave mode",
                     ),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "INTERNAL",
+                    description: Some(
+                        "audio sub-block is synchronous with the other internal audio sub-block. In this case, the audio sub-block must be configured in slave mode",
+                    ),
+                    value: 1,
                 },
             ],
         },

@@ -23,32 +23,32 @@ impl Usb {
     #[inline(always)]
     pub const fn epr(self, n: usize) -> crate::common::Reg<regs::Epr, crate::common::RW> {
         assert!(n < 8usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize + n * 4usize) as _) }
     }
     #[doc = "control register"]
     #[inline(always)]
     pub const fn cntr(self) -> crate::common::Reg<regs::Cntr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
     }
     #[doc = "interrupt status register"]
     #[inline(always)]
     pub const fn istr(self) -> crate::common::Reg<regs::Istr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
     }
     #[doc = "frame number register"]
     #[inline(always)]
     pub const fn fnr(self) -> crate::common::Reg<regs::Fnr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
     }
     #[doc = "device address"]
     #[inline(always)]
     pub const fn daddr(self) -> crate::common::Reg<regs::Daddr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x4cusize) as _) }
     }
     #[doc = "Buffer table address"]
     #[inline(always)]
     pub const fn btable(self) -> crate::common::Reg<regs::Btable, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
     }
 }
 pub mod regs {
@@ -58,6 +58,7 @@ pub mod regs {
     pub struct Btable(pub u32);
     impl Btable {
         #[doc = "BTABLE"]
+        #[must_use]
         #[inline(always)]
         pub const fn btable(&self) -> u16 {
             let val = (self.0 >> 3usize) & 0x1fff;
@@ -65,7 +66,7 @@ pub mod regs {
         }
         #[doc = "BTABLE"]
         #[inline(always)]
-        pub fn set_btable(&mut self, val: u16) {
+        pub const fn set_btable(&mut self, val: u16) {
             self.0 = (self.0 & !(0x1fff << 3usize)) | (((val as u32) & 0x1fff) << 3usize);
         }
     }
@@ -92,6 +93,7 @@ pub mod regs {
     pub struct Cntr(pub u32);
     impl Cntr {
         #[doc = "Force a reset of the USB peripheral, exactly like a RESET signaling on the USB"]
+        #[must_use]
         #[inline(always)]
         pub const fn fres(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -99,10 +101,11 @@ pub mod regs {
         }
         #[doc = "Force a reset of the USB peripheral, exactly like a RESET signaling on the USB"]
         #[inline(always)]
-        pub fn set_fres(&mut self, val: bool) {
+        pub const fn set_fres(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Enter power down mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn pdwn(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -110,10 +113,11 @@ pub mod regs {
         }
         #[doc = "Enter power down mode"]
         #[inline(always)]
-        pub fn set_pdwn(&mut self, val: bool) {
+        pub const fn set_pdwn(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Enter low-power mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn lpmode(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -121,10 +125,11 @@ pub mod regs {
         }
         #[doc = "Enter low-power mode"]
         #[inline(always)]
-        pub fn set_lpmode(&mut self, val: bool) {
+        pub const fn set_lpmode(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Enter suspend mode. Clocks and static power dissipation in the analog transceiver are left unaffected"]
+        #[must_use]
         #[inline(always)]
         pub const fn fsusp(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -132,10 +137,11 @@ pub mod regs {
         }
         #[doc = "Enter suspend mode. Clocks and static power dissipation in the analog transceiver are left unaffected"]
         #[inline(always)]
-        pub fn set_fsusp(&mut self, val: bool) {
+        pub const fn set_fsusp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Resume request"]
+        #[must_use]
         #[inline(always)]
         pub const fn resume(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -143,10 +149,11 @@ pub mod regs {
         }
         #[doc = "Resume request"]
         #[inline(always)]
-        pub fn set_resume(&mut self, val: bool) {
+        pub const fn set_resume(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "ESOF Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
+        #[must_use]
         #[inline(always)]
         pub const fn esofm(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -154,10 +161,11 @@ pub mod regs {
         }
         #[doc = "ESOF Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
         #[inline(always)]
-        pub fn set_esofm(&mut self, val: bool) {
+        pub const fn set_esofm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "SOF Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
+        #[must_use]
         #[inline(always)]
         pub const fn sofm(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -165,10 +173,11 @@ pub mod regs {
         }
         #[doc = "SOF Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
         #[inline(always)]
-        pub fn set_sofm(&mut self, val: bool) {
+        pub const fn set_sofm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "RESET Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
+        #[must_use]
         #[inline(always)]
         pub const fn resetm(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -176,10 +185,11 @@ pub mod regs {
         }
         #[doc = "RESET Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
         #[inline(always)]
-        pub fn set_resetm(&mut self, val: bool) {
+        pub const fn set_resetm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "SUSP Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
+        #[must_use]
         #[inline(always)]
         pub const fn suspm(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -187,10 +197,11 @@ pub mod regs {
         }
         #[doc = "SUSP Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
         #[inline(always)]
-        pub fn set_suspm(&mut self, val: bool) {
+        pub const fn set_suspm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "WKUP Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
+        #[must_use]
         #[inline(always)]
         pub const fn wkupm(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -198,10 +209,11 @@ pub mod regs {
         }
         #[doc = "WKUP Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
         #[inline(always)]
-        pub fn set_wkupm(&mut self, val: bool) {
+        pub const fn set_wkupm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "ERR Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
+        #[must_use]
         #[inline(always)]
         pub const fn errm(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -209,10 +221,11 @@ pub mod regs {
         }
         #[doc = "ERR Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
         #[inline(always)]
-        pub fn set_errm(&mut self, val: bool) {
+        pub const fn set_errm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "PMAOVR Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
+        #[must_use]
         #[inline(always)]
         pub const fn pmaovrm(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -220,10 +233,11 @@ pub mod regs {
         }
         #[doc = "PMAOVR Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
         #[inline(always)]
-        pub fn set_pmaovrm(&mut self, val: bool) {
+        pub const fn set_pmaovrm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "CTR Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
+        #[must_use]
         #[inline(always)]
         pub const fn ctrm(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -231,7 +245,7 @@ pub mod regs {
         }
         #[doc = "CTR Interrupt enabled, an interrupt request is generated when the corresponding bit in the USB_ISTR register is set"]
         #[inline(always)]
-        pub fn set_ctrm(&mut self, val: bool) {
+        pub const fn set_ctrm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }
@@ -272,6 +286,7 @@ pub mod regs {
     pub struct Daddr(pub u32);
     impl Daddr {
         #[doc = "device address"]
+        #[must_use]
         #[inline(always)]
         pub const fn add(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -279,10 +294,11 @@ pub mod regs {
         }
         #[doc = "device address"]
         #[inline(always)]
-        pub fn set_add(&mut self, val: u8) {
+        pub const fn set_add(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "USB device enabled"]
+        #[must_use]
         #[inline(always)]
         pub const fn ef(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -290,7 +306,7 @@ pub mod regs {
         }
         #[doc = "USB device enabled"]
         #[inline(always)]
-        pub fn set_ef(&mut self, val: bool) {
+        pub const fn set_ef(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
@@ -320,6 +336,7 @@ pub mod regs {
     pub struct Epr(pub u32);
     impl Epr {
         #[doc = "EA"]
+        #[must_use]
         #[inline(always)]
         pub const fn ea(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -327,10 +344,11 @@ pub mod regs {
         }
         #[doc = "EA"]
         #[inline(always)]
-        pub fn set_ea(&mut self, val: u8) {
+        pub const fn set_ea(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "STAT_TX"]
+        #[must_use]
         #[inline(always)]
         pub const fn stat_tx(&self) -> super::vals::Stat {
             let val = (self.0 >> 4usize) & 0x03;
@@ -338,10 +356,11 @@ pub mod regs {
         }
         #[doc = "STAT_TX"]
         #[inline(always)]
-        pub fn set_stat_tx(&mut self, val: super::vals::Stat) {
+        pub const fn set_stat_tx(&mut self, val: super::vals::Stat) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "DTOG_TX"]
+        #[must_use]
         #[inline(always)]
         pub const fn dtog_tx(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -349,10 +368,11 @@ pub mod regs {
         }
         #[doc = "DTOG_TX"]
         #[inline(always)]
-        pub fn set_dtog_tx(&mut self, val: bool) {
+        pub const fn set_dtog_tx(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "CTR_TX"]
+        #[must_use]
         #[inline(always)]
         pub const fn ctr_tx(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -360,10 +380,11 @@ pub mod regs {
         }
         #[doc = "CTR_TX"]
         #[inline(always)]
-        pub fn set_ctr_tx(&mut self, val: bool) {
+        pub const fn set_ctr_tx(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "EP_KIND"]
+        #[must_use]
         #[inline(always)]
         pub const fn ep_kind(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -371,10 +392,11 @@ pub mod regs {
         }
         #[doc = "EP_KIND"]
         #[inline(always)]
-        pub fn set_ep_kind(&mut self, val: bool) {
+        pub const fn set_ep_kind(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "EPTYPE"]
+        #[must_use]
         #[inline(always)]
         pub const fn ep_type(&self) -> super::vals::EpType {
             let val = (self.0 >> 9usize) & 0x03;
@@ -382,10 +404,11 @@ pub mod regs {
         }
         #[doc = "EPTYPE"]
         #[inline(always)]
-        pub fn set_ep_type(&mut self, val: super::vals::EpType) {
+        pub const fn set_ep_type(&mut self, val: super::vals::EpType) {
             self.0 = (self.0 & !(0x03 << 9usize)) | (((val.to_bits() as u32) & 0x03) << 9usize);
         }
         #[doc = "SETUP"]
+        #[must_use]
         #[inline(always)]
         pub const fn setup(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -393,10 +416,11 @@ pub mod regs {
         }
         #[doc = "SETUP"]
         #[inline(always)]
-        pub fn set_setup(&mut self, val: bool) {
+        pub const fn set_setup(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "STAT_RX"]
+        #[must_use]
         #[inline(always)]
         pub const fn stat_rx(&self) -> super::vals::Stat {
             let val = (self.0 >> 12usize) & 0x03;
@@ -404,10 +428,11 @@ pub mod regs {
         }
         #[doc = "STAT_RX"]
         #[inline(always)]
-        pub fn set_stat_rx(&mut self, val: super::vals::Stat) {
+        pub const fn set_stat_rx(&mut self, val: super::vals::Stat) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
         #[doc = "DTOG_RX"]
+        #[must_use]
         #[inline(always)]
         pub const fn dtog_rx(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -415,10 +440,11 @@ pub mod regs {
         }
         #[doc = "DTOG_RX"]
         #[inline(always)]
-        pub fn set_dtog_rx(&mut self, val: bool) {
+        pub const fn set_dtog_rx(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "CTR_RX"]
+        #[must_use]
         #[inline(always)]
         pub const fn ctr_rx(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -426,7 +452,7 @@ pub mod regs {
         }
         #[doc = "CTR_RX"]
         #[inline(always)]
-        pub fn set_ctr_rx(&mut self, val: bool) {
+        pub const fn set_ctr_rx(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }
@@ -464,6 +490,7 @@ pub mod regs {
     pub struct Fnr(pub u32);
     impl Fnr {
         #[doc = "FN"]
+        #[must_use]
         #[inline(always)]
         pub const fn fn_(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x07ff;
@@ -471,10 +498,11 @@ pub mod regs {
         }
         #[doc = "FN"]
         #[inline(always)]
-        pub fn set_fn_(&mut self, val: u16) {
+        pub const fn set_fn_(&mut self, val: u16) {
             self.0 = (self.0 & !(0x07ff << 0usize)) | (((val as u32) & 0x07ff) << 0usize);
         }
         #[doc = "LSOF"]
+        #[must_use]
         #[inline(always)]
         pub const fn lsof(&self) -> u8 {
             let val = (self.0 >> 11usize) & 0x03;
@@ -482,10 +510,11 @@ pub mod regs {
         }
         #[doc = "LSOF"]
         #[inline(always)]
-        pub fn set_lsof(&mut self, val: u8) {
+        pub const fn set_lsof(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 11usize)) | (((val as u32) & 0x03) << 11usize);
         }
         #[doc = "the frame timer remains in this state until an USB reset or USB suspend event occurs"]
+        #[must_use]
         #[inline(always)]
         pub const fn lck(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -493,10 +522,11 @@ pub mod regs {
         }
         #[doc = "the frame timer remains in this state until an USB reset or USB suspend event occurs"]
         #[inline(always)]
-        pub fn set_lck(&mut self, val: bool) {
+        pub const fn set_lck(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "received data minus upstream port data line"]
+        #[must_use]
         #[inline(always)]
         pub const fn rxdm(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -504,10 +534,11 @@ pub mod regs {
         }
         #[doc = "received data minus upstream port data line"]
         #[inline(always)]
-        pub fn set_rxdm(&mut self, val: bool) {
+        pub const fn set_rxdm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "received data plus upstream port data line"]
+        #[must_use]
         #[inline(always)]
         pub const fn rxdp(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -515,7 +546,7 @@ pub mod regs {
         }
         #[doc = "received data plus upstream port data line"]
         #[inline(always)]
-        pub fn set_rxdp(&mut self, val: bool) {
+        pub const fn set_rxdp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }
@@ -556,6 +587,7 @@ pub mod regs {
     pub struct Istr(pub u32);
     impl Istr {
         #[doc = "EP_ID"]
+        #[must_use]
         #[inline(always)]
         pub const fn ep_id(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -563,10 +595,11 @@ pub mod regs {
         }
         #[doc = "EP_ID"]
         #[inline(always)]
-        pub fn set_ep_id(&mut self, val: u8) {
+        pub const fn set_ep_id(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "DIR"]
+        #[must_use]
         #[inline(always)]
         pub const fn dir(&self) -> super::vals::Dir {
             let val = (self.0 >> 4usize) & 0x01;
@@ -574,10 +607,11 @@ pub mod regs {
         }
         #[doc = "DIR"]
         #[inline(always)]
-        pub fn set_dir(&mut self, val: super::vals::Dir) {
+        pub const fn set_dir(&mut self, val: super::vals::Dir) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
         #[doc = "an SOF packet is expected but not received"]
+        #[must_use]
         #[inline(always)]
         pub const fn esof(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -585,10 +619,11 @@ pub mod regs {
         }
         #[doc = "an SOF packet is expected but not received"]
         #[inline(always)]
-        pub fn set_esof(&mut self, val: bool) {
+        pub const fn set_esof(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "beginning of a new USB frame and it is set when a SOF packet arrives through the USB bus"]
+        #[must_use]
         #[inline(always)]
         pub const fn sof(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -596,10 +631,11 @@ pub mod regs {
         }
         #[doc = "beginning of a new USB frame and it is set when a SOF packet arrives through the USB bus"]
         #[inline(always)]
-        pub fn set_sof(&mut self, val: bool) {
+        pub const fn set_sof(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "peripheral detects an active USB RESET signal at its inputs"]
+        #[must_use]
         #[inline(always)]
         pub const fn reset(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -607,10 +643,11 @@ pub mod regs {
         }
         #[doc = "peripheral detects an active USB RESET signal at its inputs"]
         #[inline(always)]
-        pub fn set_reset(&mut self, val: bool) {
+        pub const fn set_reset(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "no traffic has been received for 3 ms, indicating a suspend mode request from the USB bus"]
+        #[must_use]
         #[inline(always)]
         pub const fn susp(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -618,10 +655,11 @@ pub mod regs {
         }
         #[doc = "no traffic has been received for 3 ms, indicating a suspend mode request from the USB bus"]
         #[inline(always)]
-        pub fn set_susp(&mut self, val: bool) {
+        pub const fn set_susp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "activity is detected that wakes up the USB peripheral"]
+        #[must_use]
         #[inline(always)]
         pub const fn wkup(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -629,10 +667,11 @@ pub mod regs {
         }
         #[doc = "activity is detected that wakes up the USB peripheral"]
         #[inline(always)]
-        pub fn set_wkup(&mut self, val: bool) {
+        pub const fn set_wkup(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "One of No ANSwer, Cyclic Redundancy Check, Bit Stuffing or Framing format Violation error occurred"]
+        #[must_use]
         #[inline(always)]
         pub const fn err(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -640,10 +679,11 @@ pub mod regs {
         }
         #[doc = "One of No ANSwer, Cyclic Redundancy Check, Bit Stuffing or Framing format Violation error occurred"]
         #[inline(always)]
-        pub fn set_err(&mut self, val: bool) {
+        pub const fn set_err(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "microcontroller has not been able to respond in time to an USB memory request"]
+        #[must_use]
         #[inline(always)]
         pub const fn pmaovr(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -651,10 +691,11 @@ pub mod regs {
         }
         #[doc = "microcontroller has not been able to respond in time to an USB memory request"]
         #[inline(always)]
-        pub fn set_pmaovr(&mut self, val: bool) {
+        pub const fn set_pmaovr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "endpoint has successfully completed a transaction"]
+        #[must_use]
         #[inline(always)]
         pub const fn ctr(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -662,7 +703,7 @@ pub mod regs {
         }
         #[doc = "endpoint has successfully completed a transaction"]
         #[inline(always)]
-        pub fn set_ctr(&mut self, val: bool) {
+        pub const fn set_ctr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }

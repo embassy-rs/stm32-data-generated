@@ -23,135 +23,135 @@ impl Bsec {
     #[inline(always)]
     pub const fn fvr(self, n: usize) -> crate::common::Reg<regs::Fvr, crate::common::RW> {
         assert!(n < 376usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize + n * 4usize) as _) }
     }
     #[doc = "BSEC sticky program lock register."]
     #[inline(always)]
     pub const fn splock(self, n: usize) -> crate::common::Reg<regs::Lockr, crate::common::RW> {
         assert!(n < 12usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0800usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0800usize + n * 4usize) as _) }
     }
     #[doc = "BSEC sticky write lock register."]
     #[inline(always)]
     pub const fn swlock(self, n: usize) -> crate::common::Reg<regs::Lockr, crate::common::RW> {
         assert!(n < 12usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0840usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0840usize + n * 4usize) as _) }
     }
     #[doc = "BSEC sticky read lock register."]
     #[inline(always)]
     pub const fn srlock(self, n: usize) -> crate::common::Reg<regs::Lockr, crate::common::RW> {
         assert!(n < 12usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0880usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0880usize + n * 4usize) as _) }
     }
     #[doc = "BSEC OTP valid status register."]
     #[inline(always)]
     pub const fn otpvldr(self, n: usize) -> crate::common::Reg<regs::Vldr, crate::common::R> {
         assert!(n < 12usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08c0usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08c0usize + n * 4usize) as _) }
     }
     #[doc = "BSEC shadow fuse status register."]
     #[inline(always)]
     pub const fn sfsr(self, n: usize) -> crate::common::Reg<regs::Sfsr, crate::common::R> {
         assert!(n < 12usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0940usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0940usize + n * 4usize) as _) }
     }
     #[doc = "BSEC OTP control register."]
     #[inline(always)]
     pub const fn otpcr(self) -> crate::common::Reg<regs::Otpcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0c04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0c04usize) as _) }
     }
     #[doc = "BSEC OTP write data register."]
     #[inline(always)]
     pub const fn wdr(self) -> crate::common::Reg<regs::Wdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0c08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0c08usize) as _) }
     }
     #[doc = "BSEC scratch register."]
     #[inline(always)]
     pub const fn scratchr(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e00usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0e00usize + n * 4usize) as _) }
     }
     #[doc = "BSEC global lock register."]
     #[inline(always)]
     pub const fn lockr(self) -> crate::common::Reg<regs::Glockr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0e10usize) as _) }
     }
     #[doc = "BSEC JTAG input register."]
     #[inline(always)]
     pub const fn jtaginr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0e14usize) as _) }
     }
     #[doc = "BSEC JTAG output register."]
     #[inline(always)]
     pub const fn jtagoutr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0e18usize) as _) }
     }
     #[doc = "BSEC unmap register."]
     #[inline(always)]
     pub const fn unmapr(self) -> crate::common::Reg<regs::Unmapr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0e24usize) as _) }
     }
     #[doc = "BSEC status register."]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0e40usize) as _) }
     }
     #[doc = "BSEC OTP status register."]
     #[inline(always)]
     pub const fn otpsr(self) -> crate::common::Reg<regs::Otpsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0e44usize) as _) }
     }
     #[doc = "BSEC epoch register."]
     #[inline(always)]
     pub const fn epochr(self, n: usize) -> crate::common::Reg<u32, crate::common::R> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e80usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0e80usize + n * 4usize) as _) }
     }
     #[doc = "BSEC epoch select register."]
     #[inline(always)]
     pub const fn epoch_selr(self) -> crate::common::Reg<regs::EpochSelr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0e88usize) as _) }
     }
     #[doc = "BSEC debug control register."]
     #[inline(always)]
     pub const fn dbgcr(self) -> crate::common::Reg<regs::Dbgcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e8cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0e8cusize) as _) }
     }
     #[doc = "BSEC AP unlock register."]
     #[inline(always)]
     pub const fn ap_unlock(self) -> crate::common::Reg<regs::ApUnlock, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e90usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0e90usize) as _) }
     }
     #[doc = "BSEC HDPL status register."]
     #[inline(always)]
     pub const fn hdplsr(self) -> crate::common::Reg<regs::Hdplsr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e94usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0e94usize) as _) }
     }
     #[doc = "BSEC HDPL control register."]
     #[inline(always)]
     pub const fn hdplcr(self) -> crate::common::Reg<regs::Hdplcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e98usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0e98usize) as _) }
     }
     #[doc = "BSEC next HDPL register."]
     #[inline(always)]
     pub const fn nextlr(self) -> crate::common::Reg<regs::Nextlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0e9cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0e9cusize) as _) }
     }
     #[doc = "BSEC write-once scratch register."]
     #[inline(always)]
     pub const fn woscr(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 8usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0f40usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0f40usize + n * 4usize) as _) }
     }
     #[doc = "BSEC hot reset count register."]
     #[inline(always)]
     pub const fn hrcr(self) -> crate::common::Reg<u32, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fe8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0fe8usize) as _) }
     }
     #[doc = "BSEC warm reset count register."]
     #[inline(always)]
     pub const fn wrcr(self) -> crate::common::Reg<u32, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fecusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0fecusize) as _) }
     }
 }
 pub mod regs {
@@ -161,6 +161,7 @@ pub mod regs {
     pub struct ApUnlock(pub u32);
     impl ApUnlock {
         #[doc = "Access port unlock key."]
+        #[must_use]
         #[inline(always)]
         pub const fn ap_unlock(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -168,7 +169,7 @@ pub mod regs {
         }
         #[doc = "Access port unlock key."]
         #[inline(always)]
-        pub fn set_ap_unlock(&mut self, val: u32) {
+        pub const fn set_ap_unlock(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -197,6 +198,7 @@ pub mod regs {
     pub struct Dbgcr(pub u32);
     impl Dbgcr {
         #[doc = "Debug enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn dbgen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -204,10 +206,11 @@ pub mod regs {
         }
         #[doc = "Debug enable."]
         #[inline(always)]
-        pub fn set_dbgen(&mut self, val: bool) {
+        pub const fn set_dbgen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Non-invasive debug enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn niden(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -215,10 +218,11 @@ pub mod regs {
         }
         #[doc = "Non-invasive debug enable."]
         #[inline(always)]
-        pub fn set_niden(&mut self, val: bool) {
+        pub const fn set_niden(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Secure privileged invasive debug enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn spiden(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -226,10 +230,11 @@ pub mod regs {
         }
         #[doc = "Secure privileged invasive debug enable."]
         #[inline(always)]
-        pub fn set_spiden(&mut self, val: bool) {
+        pub const fn set_spiden(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Secure privileged non-invasive debug enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn spniden(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -237,10 +242,11 @@ pub mod regs {
         }
         #[doc = "Secure privileged non-invasive debug enable."]
         #[inline(always)]
-        pub fn set_spniden(&mut self, val: bool) {
+        pub const fn set_spniden(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Debug software enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn dbgswen(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -248,7 +254,7 @@ pub mod regs {
         }
         #[doc = "Debug software enable."]
         #[inline(always)]
-        pub fn set_dbgswen(&mut self, val: bool) {
+        pub const fn set_dbgswen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
     }
@@ -281,6 +287,7 @@ pub mod regs {
     pub struct EpochSelr(pub u32);
     impl EpochSelr {
         #[doc = "Epoch select."]
+        #[must_use]
         #[inline(always)]
         pub const fn epoch_sel(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -288,7 +295,7 @@ pub mod regs {
         }
         #[doc = "Epoch select."]
         #[inline(always)]
-        pub fn set_epoch_sel(&mut self, val: bool) {
+        pub const fn set_epoch_sel(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -317,6 +324,7 @@ pub mod regs {
     pub struct Fvr(pub u32);
     impl Fvr {
         #[doc = "Fuse value."]
+        #[must_use]
         #[inline(always)]
         pub const fn fv(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -324,7 +332,7 @@ pub mod regs {
         }
         #[doc = "Fuse value."]
         #[inline(always)]
-        pub fn set_fv(&mut self, val: u32) {
+        pub const fn set_fv(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -351,6 +359,7 @@ pub mod regs {
     pub struct Glockr(pub u32);
     impl Glockr {
         #[doc = "Global lock. When set, all writes to BSEC are ignored until next reset."]
+        #[must_use]
         #[inline(always)]
         pub const fn glock(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -358,7 +367,7 @@ pub mod regs {
         }
         #[doc = "Global lock. When set, all writes to BSEC are ignored until next reset."]
         #[inline(always)]
-        pub fn set_glock(&mut self, val: bool) {
+        pub const fn set_glock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -385,6 +394,7 @@ pub mod regs {
     pub struct Hdplcr(pub u32);
     impl Hdplcr {
         #[doc = "Increment HDPL. Write HDPL_INCR_CODE to increment HDPL."]
+        #[must_use]
         #[inline(always)]
         pub const fn incr_hdpl(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -392,7 +402,7 @@ pub mod regs {
         }
         #[doc = "Increment HDPL. Write HDPL_INCR_CODE to increment HDPL."]
         #[inline(always)]
-        pub fn set_incr_hdpl(&mut self, val: u8) {
+        pub const fn set_incr_hdpl(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -419,6 +429,7 @@ pub mod regs {
     pub struct Hdplsr(pub u32);
     impl Hdplsr {
         #[doc = "Current hardware device protection level."]
+        #[must_use]
         #[inline(always)]
         pub const fn hdpl(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -426,7 +437,7 @@ pub mod regs {
         }
         #[doc = "Current hardware device protection level."]
         #[inline(always)]
-        pub fn set_hdpl(&mut self, val: u8) {
+        pub const fn set_hdpl(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -453,6 +464,7 @@ pub mod regs {
     pub struct Lockr(pub u32);
     impl Lockr {
         #[doc = "Lock bits for fuse words 0 to 31 of the corresponding group."]
+        #[must_use]
         #[inline(always)]
         pub const fn lock(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -462,7 +474,7 @@ pub mod regs {
         }
         #[doc = "Lock bits for fuse words 0 to 31 of the corresponding group."]
         #[inline(always)]
-        pub fn set_lock(&mut self, n: usize, val: bool) {
+        pub const fn set_lock(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -524,6 +536,7 @@ pub mod regs {
     pub struct Nextlr(pub u32);
     impl Nextlr {
         #[doc = "Next HDPL level."]
+        #[must_use]
         #[inline(always)]
         pub const fn nextl(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
@@ -531,7 +544,7 @@ pub mod regs {
         }
         #[doc = "Next HDPL level."]
         #[inline(always)]
-        pub fn set_nextl(&mut self, val: u8) {
+        pub const fn set_nextl(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
     }
@@ -558,6 +571,7 @@ pub mod regs {
     pub struct Otpcr(pub u32);
     impl Otpcr {
         #[doc = "Fuse word address."]
+        #[must_use]
         #[inline(always)]
         pub const fn addr(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x01ff;
@@ -565,10 +579,11 @@ pub mod regs {
         }
         #[doc = "Fuse word address."]
         #[inline(always)]
-        pub fn set_addr(&mut self, val: u16) {
+        pub const fn set_addr(&mut self, val: u16) {
             self.0 = (self.0 & !(0x01ff << 0usize)) | (((val as u32) & 0x01ff) << 0usize);
         }
         #[doc = "Fuse word programming."]
+        #[must_use]
         #[inline(always)]
         pub const fn prog(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -576,10 +591,11 @@ pub mod regs {
         }
         #[doc = "Fuse word programming."]
         #[inline(always)]
-        pub fn set_prog(&mut self, val: bool) {
+        pub const fn set_prog(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Permanent programming lock."]
+        #[must_use]
         #[inline(always)]
         pub const fn pplock(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -587,10 +603,11 @@ pub mod regs {
         }
         #[doc = "Permanent programming lock."]
         #[inline(always)]
-        pub fn set_pplock(&mut self, val: bool) {
+        pub const fn set_pplock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Backup registers security."]
+        #[must_use]
         #[inline(always)]
         pub const fn bkpsec(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -598,7 +615,7 @@ pub mod regs {
         }
         #[doc = "Backup registers security."]
         #[inline(always)]
-        pub fn set_bkpsec(&mut self, val: bool) {
+        pub const fn set_bkpsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
@@ -637,6 +654,7 @@ pub mod regs {
     pub struct Otpsr(pub u32);
     impl Otpsr {
         #[doc = "OTP busy flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn busy(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -644,10 +662,11 @@ pub mod regs {
         }
         #[doc = "OTP busy flag."]
         #[inline(always)]
-        pub fn set_busy(&mut self, val: bool) {
+        pub const fn set_busy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Hide-up status."]
+        #[must_use]
         #[inline(always)]
         pub const fn hideup(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -655,10 +674,11 @@ pub mod regs {
         }
         #[doc = "Hide-up status."]
         #[inline(always)]
-        pub fn set_hideup(&mut self, val: bool) {
+        pub const fn set_hideup(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Programming permanent lock status."]
+        #[must_use]
         #[inline(always)]
         pub const fn pplock(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -666,10 +686,11 @@ pub mod regs {
         }
         #[doc = "Programming permanent lock status."]
         #[inline(always)]
-        pub fn set_pplock(&mut self, val: bool) {
+        pub const fn set_pplock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "OTP error."]
+        #[must_use]
         #[inline(always)]
         pub const fn otperr(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -677,10 +698,11 @@ pub mod regs {
         }
         #[doc = "OTP error."]
         #[inline(always)]
-        pub fn set_otperr(&mut self, val: bool) {
+        pub const fn set_otperr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "OTP security."]
+        #[must_use]
         #[inline(always)]
         pub const fn otpsec(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -688,7 +710,7 @@ pub mod regs {
         }
         #[doc = "OTP security."]
         #[inline(always)]
-        pub fn set_otpsec(&mut self, val: bool) {
+        pub const fn set_otpsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
     }
@@ -721,6 +743,7 @@ pub mod regs {
     pub struct Sfsr(pub u32);
     impl Sfsr {
         #[doc = "Shadow fuse status bits."]
+        #[must_use]
         #[inline(always)]
         pub const fn sfsr(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -730,7 +753,7 @@ pub mod regs {
         }
         #[doc = "Shadow fuse status bits."]
         #[inline(always)]
-        pub fn set_sfsr(&mut self, n: usize, val: bool) {
+        pub const fn set_sfsr(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -792,6 +815,7 @@ pub mod regs {
     pub struct Sr(pub u32);
     impl Sr {
         #[doc = "Hardware key valid. When set, DHUK can be used in SAES."]
+        #[must_use]
         #[inline(always)]
         pub const fn hvalid(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -799,10 +823,11 @@ pub mod regs {
         }
         #[doc = "Hardware key valid. When set, DHUK can be used in SAES."]
         #[inline(always)]
-        pub fn set_hvalid(&mut self, val: bool) {
+        pub const fn set_hvalid(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Debug request. Host debugger is requesting debug."]
+        #[must_use]
         #[inline(always)]
         pub const fn dbgreq(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -810,10 +835,11 @@ pub mod regs {
         }
         #[doc = "Debug request. Host debugger is requesting debug."]
         #[inline(always)]
-        pub fn set_dbgreq(&mut self, val: bool) {
+        pub const fn set_dbgreq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Non-volatile state."]
+        #[must_use]
         #[inline(always)]
         pub const fn nvstate(&self) -> u8 {
             let val = (self.0 >> 26usize) & 0x3f;
@@ -821,7 +847,7 @@ pub mod regs {
         }
         #[doc = "Non-volatile state."]
         #[inline(always)]
-        pub fn set_nvstate(&mut self, val: u8) {
+        pub const fn set_nvstate(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 26usize)) | (((val as u32) & 0x3f) << 26usize);
         }
     }
@@ -858,6 +884,7 @@ pub mod regs {
     pub struct Unmapr(pub u32);
     impl Unmapr {
         #[doc = "Unmap OTP area."]
+        #[must_use]
         #[inline(always)]
         pub const fn unmap(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -865,7 +892,7 @@ pub mod regs {
         }
         #[doc = "Unmap OTP area."]
         #[inline(always)]
-        pub fn set_unmap(&mut self, val: bool) {
+        pub const fn set_unmap(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -892,6 +919,7 @@ pub mod regs {
     pub struct Vldr(pub u32);
     impl Vldr {
         #[doc = "OTP valid status bits."]
+        #[must_use]
         #[inline(always)]
         pub const fn otpvld(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -901,7 +929,7 @@ pub mod regs {
         }
         #[doc = "OTP valid status bits."]
         #[inline(always)]
-        pub fn set_otpvld(&mut self, n: usize, val: bool) {
+        pub const fn set_otpvld(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -963,6 +991,7 @@ pub mod regs {
     pub struct Wdr(pub u32);
     impl Wdr {
         #[doc = "Write data value to program in OTP."]
+        #[must_use]
         #[inline(always)]
         pub const fn wdata(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -970,7 +999,7 @@ pub mod regs {
         }
         #[doc = "Write data value to program in OTP."]
         #[inline(always)]
-        pub fn set_wdata(&mut self, val: u32) {
+        pub const fn set_wdata(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }

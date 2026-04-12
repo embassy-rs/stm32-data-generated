@@ -22,152 +22,152 @@ impl Ramcfg {
     #[doc = "RAMCFG SRAM x control register."]
     #[inline(always)]
     pub const fn ram1cr(self) -> crate::common::Reg<regs::Ram1cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "RAMCFG RAMx interrupt status register."]
     #[inline(always)]
     pub const fn ram1isr(self) -> crate::common::Reg<regs::Ram1isr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "RAMCFG SRAM x erase key register."]
     #[inline(always)]
     pub const fn ram1erkeyr(self) -> crate::common::Reg<regs::Ram1erkeyr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "RAMCFG SRAM x control register."]
     #[inline(always)]
     pub const fn ram2cr(self) -> crate::common::Reg<regs::Ram2cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
     }
     #[doc = "RAMCFG SRAM x interrupt enable register."]
     #[inline(always)]
     pub const fn ram2ier(self) -> crate::common::Reg<regs::Ram2ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
     }
     #[doc = "RAMCFG RAMx interrupt status register."]
     #[inline(always)]
     pub const fn ram2isr(self) -> crate::common::Reg<regs::Ram2isr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
     }
     #[doc = "RAMCFG RAM x ECC single error address register."]
     #[inline(always)]
     pub const fn ram2sear(self) -> crate::common::Reg<regs::Ram2sear, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x4cusize) as _) }
     }
     #[doc = "RAMCFG RAM x ECC double error address register."]
     #[inline(always)]
     pub const fn ram2dear(self) -> crate::common::Reg<regs::Ram2dear, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
     }
     #[doc = "RAMCFG RAM x interrupt clear register x."]
     #[inline(always)]
     pub const fn ram2icr(self) -> crate::common::Reg<regs::Ram2icr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x54usize) as _) }
     }
     #[doc = "RAMCFG SRAM2 write protection register 1."]
     #[inline(always)]
     pub const fn ram2wpr1(self) -> crate::common::Reg<regs::Ram2wpr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x58usize) as _) }
     }
     #[doc = "RAMCFG SRAM2 write protection register 2."]
     #[inline(always)]
     pub const fn ram2wpr2(self) -> crate::common::Reg<regs::Ram2wpr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x5cusize) as _) }
     }
     #[doc = "RAMCFG SRAM x ECC key register."]
     #[inline(always)]
     pub const fn ram2ecckeyr(self) -> crate::common::Reg<regs::Ram2ecckeyr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x64usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x64usize) as _) }
     }
     #[doc = "RAMCFG SRAM x erase key register."]
     #[inline(always)]
     pub const fn ram2erkeyr(self) -> crate::common::Reg<regs::Ram2erkeyr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x68usize) as _) }
     }
     #[doc = "RAMCFG SRAM x control register."]
     #[inline(always)]
     pub const fn ram3cr(self) -> crate::common::Reg<regs::Ram3cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80usize) as _) }
     }
     #[doc = "RAMCFG SRAM x interrupt enable register."]
     #[inline(always)]
     pub const fn ram3ier(self) -> crate::common::Reg<regs::Ram3ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x84usize) as _) }
     }
     #[doc = "RAMCFG RAMx interrupt status register."]
     #[inline(always)]
     pub const fn ram3isr(self) -> crate::common::Reg<regs::Ram3isr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x88usize) as _) }
     }
     #[doc = "RAMCFG RAM x ECC single error address register."]
     #[inline(always)]
     pub const fn ram3sear(self) -> crate::common::Reg<regs::Ram3sear, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x8cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8cusize) as _) }
     }
     #[doc = "RAMCFG RAM x ECC double error address register."]
     #[inline(always)]
     pub const fn ram3dear(self) -> crate::common::Reg<regs::Ram3dear, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x90usize) as _) }
     }
     #[doc = "RAMCFG RAM x interrupt clear register x."]
     #[inline(always)]
     pub const fn ram3icr(self) -> crate::common::Reg<regs::Ram3icr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x94usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x94usize) as _) }
     }
     #[doc = "RAMCFG SRAM x ECC key register."]
     #[inline(always)]
     pub const fn ram3ecckeyr(self) -> crate::common::Reg<regs::Ram3ecckeyr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xa4usize) as _) }
     }
     #[doc = "RAMCFG SRAM x erase key register."]
     #[inline(always)]
     pub const fn ram3erkeyr(self) -> crate::common::Reg<regs::Ram3erkeyr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xa8usize) as _) }
     }
     #[doc = "RAMCFG SRAM x control register."]
     #[inline(always)]
     pub const fn ram4cr(self) -> crate::common::Reg<regs::Ram4cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xc0usize) as _) }
     }
     #[doc = "RAMCFG RAMx interrupt status register."]
     #[inline(always)]
     pub const fn ram4isr(self) -> crate::common::Reg<regs::Ram4isr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xc8usize) as _) }
     }
     #[doc = "RAMCFG SRAM x erase key register."]
     #[inline(always)]
     pub const fn ram4erkeyr(self) -> crate::common::Reg<regs::Ram4erkeyr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xe8usize) as _) }
     }
     #[doc = "RAMCFG SRAM x control register."]
     #[inline(always)]
     pub const fn ram5cr(self) -> crate::common::Reg<regs::Ram5cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize) as _) }
     }
     #[doc = "RAMCFG SRAM x interrupt enable register."]
     #[inline(always)]
     pub const fn ram5ier(self) -> crate::common::Reg<regs::Ram5ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0104usize) as _) }
     }
     #[doc = "RAMCFG RAMx interrupt status register."]
     #[inline(always)]
     pub const fn ram5isr(self) -> crate::common::Reg<regs::Ram5isr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0108usize) as _) }
     }
     #[doc = "RAMCFG RAM x ECC single error address register."]
     #[inline(always)]
     pub const fn ram5sear(self) -> crate::common::Reg<regs::Ram5sear, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x010cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x010cusize) as _) }
     }
     #[doc = "RAMCFG RAM x ECC double error address register."]
     #[inline(always)]
     pub const fn ram5dear(self) -> crate::common::Reg<regs::Ram5dear, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0110usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0110usize) as _) }
     }
     #[doc = "RAMCFG RAM x interrupt clear register x."]
     #[inline(always)]
     pub const fn ram5icr(self) -> crate::common::Reg<regs::Ram5icr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0114usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0114usize) as _) }
     }
 }
 pub mod regs {
@@ -177,6 +177,7 @@ pub mod regs {
     pub struct Ram1cr(pub u32);
     impl Ram1cr {
         #[doc = "ECCE."]
+        #[must_use]
         #[inline(always)]
         pub const fn ecce(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -184,10 +185,11 @@ pub mod regs {
         }
         #[doc = "ECCE."]
         #[inline(always)]
-        pub fn set_ecce(&mut self, val: bool) {
+        pub const fn set_ecce(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "ALE."]
+        #[must_use]
         #[inline(always)]
         pub const fn ale(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -195,10 +197,11 @@ pub mod regs {
         }
         #[doc = "ALE."]
         #[inline(always)]
-        pub fn set_ale(&mut self, val: bool) {
+        pub const fn set_ale(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "SRAMER."]
+        #[must_use]
         #[inline(always)]
         pub const fn sramer(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -206,10 +209,11 @@ pub mod regs {
         }
         #[doc = "SRAMER."]
         #[inline(always)]
-        pub fn set_sramer(&mut self, val: bool) {
+        pub const fn set_sramer(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "WSC."]
+        #[must_use]
         #[inline(always)]
         pub const fn wsc(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x07;
@@ -217,7 +221,7 @@ pub mod regs {
         }
         #[doc = "WSC."]
         #[inline(always)]
-        pub fn set_wsc(&mut self, val: u8) {
+        pub const fn set_wsc(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
         }
     }
@@ -256,6 +260,7 @@ pub mod regs {
     pub struct Ram1erkeyr(pub u32);
     impl Ram1erkeyr {
         #[doc = "ERASEKEY."]
+        #[must_use]
         #[inline(always)]
         pub const fn erasekey(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -263,7 +268,7 @@ pub mod regs {
         }
         #[doc = "ERASEKEY."]
         #[inline(always)]
-        pub fn set_erasekey(&mut self, val: u8) {
+        pub const fn set_erasekey(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -292,6 +297,7 @@ pub mod regs {
     pub struct Ram1isr(pub u32);
     impl Ram1isr {
         #[doc = "SEDC."]
+        #[must_use]
         #[inline(always)]
         pub const fn sedc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -299,10 +305,11 @@ pub mod regs {
         }
         #[doc = "SEDC."]
         #[inline(always)]
-        pub fn set_sedc(&mut self, val: bool) {
+        pub const fn set_sedc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "DED."]
+        #[must_use]
         #[inline(always)]
         pub const fn ded(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -310,10 +317,11 @@ pub mod regs {
         }
         #[doc = "DED."]
         #[inline(always)]
-        pub fn set_ded(&mut self, val: bool) {
+        pub const fn set_ded(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "SRAMBUSY."]
+        #[must_use]
         #[inline(always)]
         pub const fn srambusy(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -321,7 +329,7 @@ pub mod regs {
         }
         #[doc = "SRAMBUSY."]
         #[inline(always)]
-        pub fn set_srambusy(&mut self, val: bool) {
+        pub const fn set_srambusy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
@@ -358,6 +366,7 @@ pub mod regs {
     pub struct Ram2cr(pub u32);
     impl Ram2cr {
         #[doc = "ECCE."]
+        #[must_use]
         #[inline(always)]
         pub const fn ecce(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -365,10 +374,11 @@ pub mod regs {
         }
         #[doc = "ECCE."]
         #[inline(always)]
-        pub fn set_ecce(&mut self, val: bool) {
+        pub const fn set_ecce(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "ALE."]
+        #[must_use]
         #[inline(always)]
         pub const fn ale(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -376,10 +386,11 @@ pub mod regs {
         }
         #[doc = "ALE."]
         #[inline(always)]
-        pub fn set_ale(&mut self, val: bool) {
+        pub const fn set_ale(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "SRAMER."]
+        #[must_use]
         #[inline(always)]
         pub const fn sramer(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -387,10 +398,11 @@ pub mod regs {
         }
         #[doc = "SRAMER."]
         #[inline(always)]
-        pub fn set_sramer(&mut self, val: bool) {
+        pub const fn set_sramer(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "WSC."]
+        #[must_use]
         #[inline(always)]
         pub const fn wsc(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x07;
@@ -398,7 +410,7 @@ pub mod regs {
         }
         #[doc = "WSC."]
         #[inline(always)]
-        pub fn set_wsc(&mut self, val: u8) {
+        pub const fn set_wsc(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
         }
     }
@@ -437,6 +449,7 @@ pub mod regs {
     pub struct Ram2dear(pub u32);
     impl Ram2dear {
         #[doc = "EDEA."]
+        #[must_use]
         #[inline(always)]
         pub const fn edea(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -444,7 +457,7 @@ pub mod regs {
         }
         #[doc = "EDEA."]
         #[inline(always)]
-        pub fn set_edea(&mut self, val: u32) {
+        pub const fn set_edea(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -471,6 +484,7 @@ pub mod regs {
     pub struct Ram2ecckeyr(pub u32);
     impl Ram2ecckeyr {
         #[doc = "ECCKEY."]
+        #[must_use]
         #[inline(always)]
         pub const fn ecckey(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -478,7 +492,7 @@ pub mod regs {
         }
         #[doc = "ECCKEY."]
         #[inline(always)]
-        pub fn set_ecckey(&mut self, val: u8) {
+        pub const fn set_ecckey(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -505,6 +519,7 @@ pub mod regs {
     pub struct Ram2erkeyr(pub u32);
     impl Ram2erkeyr {
         #[doc = "ERASEKEY."]
+        #[must_use]
         #[inline(always)]
         pub const fn erasekey(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -512,7 +527,7 @@ pub mod regs {
         }
         #[doc = "ERASEKEY."]
         #[inline(always)]
-        pub fn set_erasekey(&mut self, val: u8) {
+        pub const fn set_erasekey(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -541,6 +556,7 @@ pub mod regs {
     pub struct Ram2icr(pub u32);
     impl Ram2icr {
         #[doc = "CSEDC."]
+        #[must_use]
         #[inline(always)]
         pub const fn csedc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -548,10 +564,11 @@ pub mod regs {
         }
         #[doc = "CSEDC."]
         #[inline(always)]
-        pub fn set_csedc(&mut self, val: bool) {
+        pub const fn set_csedc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "CDED."]
+        #[must_use]
         #[inline(always)]
         pub const fn cded(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -559,7 +576,7 @@ pub mod regs {
         }
         #[doc = "CDED."]
         #[inline(always)]
-        pub fn set_cded(&mut self, val: bool) {
+        pub const fn set_cded(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -594,6 +611,7 @@ pub mod regs {
     pub struct Ram2ier(pub u32);
     impl Ram2ier {
         #[doc = "SEIE."]
+        #[must_use]
         #[inline(always)]
         pub const fn seie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -601,10 +619,11 @@ pub mod regs {
         }
         #[doc = "SEIE."]
         #[inline(always)]
-        pub fn set_seie(&mut self, val: bool) {
+        pub const fn set_seie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "DEIE."]
+        #[must_use]
         #[inline(always)]
         pub const fn deie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -612,10 +631,11 @@ pub mod regs {
         }
         #[doc = "DEIE."]
         #[inline(always)]
-        pub fn set_deie(&mut self, val: bool) {
+        pub const fn set_deie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "ECCNMI."]
+        #[must_use]
         #[inline(always)]
         pub const fn eccnmi(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -623,7 +643,7 @@ pub mod regs {
         }
         #[doc = "ECCNMI."]
         #[inline(always)]
-        pub fn set_eccnmi(&mut self, val: bool) {
+        pub const fn set_eccnmi(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
@@ -660,6 +680,7 @@ pub mod regs {
     pub struct Ram2isr(pub u32);
     impl Ram2isr {
         #[doc = "SEDC."]
+        #[must_use]
         #[inline(always)]
         pub const fn sedc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -667,10 +688,11 @@ pub mod regs {
         }
         #[doc = "SEDC."]
         #[inline(always)]
-        pub fn set_sedc(&mut self, val: bool) {
+        pub const fn set_sedc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "DED."]
+        #[must_use]
         #[inline(always)]
         pub const fn ded(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -678,10 +700,11 @@ pub mod regs {
         }
         #[doc = "DED."]
         #[inline(always)]
-        pub fn set_ded(&mut self, val: bool) {
+        pub const fn set_ded(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "SRAMBUSY."]
+        #[must_use]
         #[inline(always)]
         pub const fn srambusy(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -689,7 +712,7 @@ pub mod regs {
         }
         #[doc = "SRAMBUSY."]
         #[inline(always)]
-        pub fn set_srambusy(&mut self, val: bool) {
+        pub const fn set_srambusy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
@@ -726,6 +749,7 @@ pub mod regs {
     pub struct Ram2sear(pub u32);
     impl Ram2sear {
         #[doc = "ESEA."]
+        #[must_use]
         #[inline(always)]
         pub const fn esea(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -733,7 +757,7 @@ pub mod regs {
         }
         #[doc = "ESEA."]
         #[inline(always)]
-        pub fn set_esea(&mut self, val: u32) {
+        pub const fn set_esea(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -760,6 +784,7 @@ pub mod regs {
     pub struct Ram2wpr1(pub u32);
     impl Ram2wpr1 {
         #[doc = "P0WP."]
+        #[must_use]
         #[inline(always)]
         pub const fn pwp(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -769,7 +794,7 @@ pub mod regs {
         }
         #[doc = "P0WP."]
         #[inline(always)]
-        pub fn set_pwp(&mut self, n: usize, val: bool) {
+        pub const fn set_pwp(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -831,6 +856,7 @@ pub mod regs {
     pub struct Ram2wpr2(pub u32);
     impl Ram2wpr2 {
         #[doc = "P32WP."]
+        #[must_use]
         #[inline(always)]
         pub const fn pwp(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -840,7 +866,7 @@ pub mod regs {
         }
         #[doc = "P32WP."]
         #[inline(always)]
-        pub fn set_pwp(&mut self, n: usize, val: bool) {
+        pub const fn set_pwp(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -902,6 +928,7 @@ pub mod regs {
     pub struct Ram3cr(pub u32);
     impl Ram3cr {
         #[doc = "ECCE."]
+        #[must_use]
         #[inline(always)]
         pub const fn ecce(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -909,10 +936,11 @@ pub mod regs {
         }
         #[doc = "ECCE."]
         #[inline(always)]
-        pub fn set_ecce(&mut self, val: bool) {
+        pub const fn set_ecce(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "ALE."]
+        #[must_use]
         #[inline(always)]
         pub const fn ale(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -920,10 +948,11 @@ pub mod regs {
         }
         #[doc = "ALE."]
         #[inline(always)]
-        pub fn set_ale(&mut self, val: bool) {
+        pub const fn set_ale(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "SRAMER."]
+        #[must_use]
         #[inline(always)]
         pub const fn sramer(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -931,10 +960,11 @@ pub mod regs {
         }
         #[doc = "SRAMER."]
         #[inline(always)]
-        pub fn set_sramer(&mut self, val: bool) {
+        pub const fn set_sramer(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "WSC."]
+        #[must_use]
         #[inline(always)]
         pub const fn wsc(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x07;
@@ -942,7 +972,7 @@ pub mod regs {
         }
         #[doc = "WSC."]
         #[inline(always)]
-        pub fn set_wsc(&mut self, val: u8) {
+        pub const fn set_wsc(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
         }
     }
@@ -981,6 +1011,7 @@ pub mod regs {
     pub struct Ram3dear(pub u32);
     impl Ram3dear {
         #[doc = "EDEA."]
+        #[must_use]
         #[inline(always)]
         pub const fn edea(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -988,7 +1019,7 @@ pub mod regs {
         }
         #[doc = "EDEA."]
         #[inline(always)]
-        pub fn set_edea(&mut self, val: u32) {
+        pub const fn set_edea(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1015,6 +1046,7 @@ pub mod regs {
     pub struct Ram3ecckeyr(pub u32);
     impl Ram3ecckeyr {
         #[doc = "ECCKEY."]
+        #[must_use]
         #[inline(always)]
         pub const fn ecckey(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -1022,7 +1054,7 @@ pub mod regs {
         }
         #[doc = "ECCKEY."]
         #[inline(always)]
-        pub fn set_ecckey(&mut self, val: u8) {
+        pub const fn set_ecckey(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -1049,6 +1081,7 @@ pub mod regs {
     pub struct Ram3erkeyr(pub u32);
     impl Ram3erkeyr {
         #[doc = "ERASEKEY."]
+        #[must_use]
         #[inline(always)]
         pub const fn erasekey(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -1056,7 +1089,7 @@ pub mod regs {
         }
         #[doc = "ERASEKEY."]
         #[inline(always)]
-        pub fn set_erasekey(&mut self, val: u8) {
+        pub const fn set_erasekey(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -1085,6 +1118,7 @@ pub mod regs {
     pub struct Ram3icr(pub u32);
     impl Ram3icr {
         #[doc = "CSEDC."]
+        #[must_use]
         #[inline(always)]
         pub const fn csedc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1092,10 +1126,11 @@ pub mod regs {
         }
         #[doc = "CSEDC."]
         #[inline(always)]
-        pub fn set_csedc(&mut self, val: bool) {
+        pub const fn set_csedc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "CDED."]
+        #[must_use]
         #[inline(always)]
         pub const fn cded(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1103,7 +1138,7 @@ pub mod regs {
         }
         #[doc = "CDED."]
         #[inline(always)]
-        pub fn set_cded(&mut self, val: bool) {
+        pub const fn set_cded(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -1138,6 +1173,7 @@ pub mod regs {
     pub struct Ram3ier(pub u32);
     impl Ram3ier {
         #[doc = "SEIE."]
+        #[must_use]
         #[inline(always)]
         pub const fn seie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1145,10 +1181,11 @@ pub mod regs {
         }
         #[doc = "SEIE."]
         #[inline(always)]
-        pub fn set_seie(&mut self, val: bool) {
+        pub const fn set_seie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "DEIE."]
+        #[must_use]
         #[inline(always)]
         pub const fn deie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1156,10 +1193,11 @@ pub mod regs {
         }
         #[doc = "DEIE."]
         #[inline(always)]
-        pub fn set_deie(&mut self, val: bool) {
+        pub const fn set_deie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "ECCNMI."]
+        #[must_use]
         #[inline(always)]
         pub const fn eccnmi(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1167,7 +1205,7 @@ pub mod regs {
         }
         #[doc = "ECCNMI."]
         #[inline(always)]
-        pub fn set_eccnmi(&mut self, val: bool) {
+        pub const fn set_eccnmi(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
@@ -1204,6 +1242,7 @@ pub mod regs {
     pub struct Ram3isr(pub u32);
     impl Ram3isr {
         #[doc = "SEDC."]
+        #[must_use]
         #[inline(always)]
         pub const fn sedc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1211,10 +1250,11 @@ pub mod regs {
         }
         #[doc = "SEDC."]
         #[inline(always)]
-        pub fn set_sedc(&mut self, val: bool) {
+        pub const fn set_sedc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "DED."]
+        #[must_use]
         #[inline(always)]
         pub const fn ded(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1222,10 +1262,11 @@ pub mod regs {
         }
         #[doc = "DED."]
         #[inline(always)]
-        pub fn set_ded(&mut self, val: bool) {
+        pub const fn set_ded(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "SRAMBUSY."]
+        #[must_use]
         #[inline(always)]
         pub const fn srambusy(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -1233,7 +1274,7 @@ pub mod regs {
         }
         #[doc = "SRAMBUSY."]
         #[inline(always)]
-        pub fn set_srambusy(&mut self, val: bool) {
+        pub const fn set_srambusy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
@@ -1270,6 +1311,7 @@ pub mod regs {
     pub struct Ram3sear(pub u32);
     impl Ram3sear {
         #[doc = "ESEA."]
+        #[must_use]
         #[inline(always)]
         pub const fn esea(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1277,7 +1319,7 @@ pub mod regs {
         }
         #[doc = "ESEA."]
         #[inline(always)]
-        pub fn set_esea(&mut self, val: u32) {
+        pub const fn set_esea(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1304,6 +1346,7 @@ pub mod regs {
     pub struct Ram4cr(pub u32);
     impl Ram4cr {
         #[doc = "ECCE."]
+        #[must_use]
         #[inline(always)]
         pub const fn ecce(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1311,10 +1354,11 @@ pub mod regs {
         }
         #[doc = "ECCE."]
         #[inline(always)]
-        pub fn set_ecce(&mut self, val: bool) {
+        pub const fn set_ecce(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "ALE."]
+        #[must_use]
         #[inline(always)]
         pub const fn ale(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1322,10 +1366,11 @@ pub mod regs {
         }
         #[doc = "ALE."]
         #[inline(always)]
-        pub fn set_ale(&mut self, val: bool) {
+        pub const fn set_ale(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "SRAMER."]
+        #[must_use]
         #[inline(always)]
         pub const fn sramer(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -1333,10 +1378,11 @@ pub mod regs {
         }
         #[doc = "SRAMER."]
         #[inline(always)]
-        pub fn set_sramer(&mut self, val: bool) {
+        pub const fn set_sramer(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "WSC."]
+        #[must_use]
         #[inline(always)]
         pub const fn wsc(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x07;
@@ -1344,7 +1390,7 @@ pub mod regs {
         }
         #[doc = "WSC."]
         #[inline(always)]
-        pub fn set_wsc(&mut self, val: u8) {
+        pub const fn set_wsc(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
         }
     }
@@ -1383,6 +1429,7 @@ pub mod regs {
     pub struct Ram4erkeyr(pub u32);
     impl Ram4erkeyr {
         #[doc = "ERASEKEY."]
+        #[must_use]
         #[inline(always)]
         pub const fn erasekey(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -1390,7 +1437,7 @@ pub mod regs {
         }
         #[doc = "ERASEKEY."]
         #[inline(always)]
-        pub fn set_erasekey(&mut self, val: u8) {
+        pub const fn set_erasekey(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -1419,6 +1466,7 @@ pub mod regs {
     pub struct Ram4isr(pub u32);
     impl Ram4isr {
         #[doc = "SEDC."]
+        #[must_use]
         #[inline(always)]
         pub const fn sedc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1426,10 +1474,11 @@ pub mod regs {
         }
         #[doc = "SEDC."]
         #[inline(always)]
-        pub fn set_sedc(&mut self, val: bool) {
+        pub const fn set_sedc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "DED."]
+        #[must_use]
         #[inline(always)]
         pub const fn ded(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1437,10 +1486,11 @@ pub mod regs {
         }
         #[doc = "DED."]
         #[inline(always)]
-        pub fn set_ded(&mut self, val: bool) {
+        pub const fn set_ded(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "SRAMBUSY."]
+        #[must_use]
         #[inline(always)]
         pub const fn srambusy(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -1448,7 +1498,7 @@ pub mod regs {
         }
         #[doc = "SRAMBUSY."]
         #[inline(always)]
-        pub fn set_srambusy(&mut self, val: bool) {
+        pub const fn set_srambusy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
@@ -1485,6 +1535,7 @@ pub mod regs {
     pub struct Ram5cr(pub u32);
     impl Ram5cr {
         #[doc = "ECCE."]
+        #[must_use]
         #[inline(always)]
         pub const fn ecce(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1492,10 +1543,11 @@ pub mod regs {
         }
         #[doc = "ECCE."]
         #[inline(always)]
-        pub fn set_ecce(&mut self, val: bool) {
+        pub const fn set_ecce(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "ALE."]
+        #[must_use]
         #[inline(always)]
         pub const fn ale(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1503,10 +1555,11 @@ pub mod regs {
         }
         #[doc = "ALE."]
         #[inline(always)]
-        pub fn set_ale(&mut self, val: bool) {
+        pub const fn set_ale(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "SRAMER."]
+        #[must_use]
         #[inline(always)]
         pub const fn sramer(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -1514,10 +1567,11 @@ pub mod regs {
         }
         #[doc = "SRAMER."]
         #[inline(always)]
-        pub fn set_sramer(&mut self, val: bool) {
+        pub const fn set_sramer(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "WSC."]
+        #[must_use]
         #[inline(always)]
         pub const fn wsc(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x07;
@@ -1525,7 +1579,7 @@ pub mod regs {
         }
         #[doc = "WSC."]
         #[inline(always)]
-        pub fn set_wsc(&mut self, val: u8) {
+        pub const fn set_wsc(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val as u32) & 0x07) << 16usize);
         }
     }
@@ -1564,6 +1618,7 @@ pub mod regs {
     pub struct Ram5dear(pub u32);
     impl Ram5dear {
         #[doc = "EDEA."]
+        #[must_use]
         #[inline(always)]
         pub const fn edea(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1571,7 +1626,7 @@ pub mod regs {
         }
         #[doc = "EDEA."]
         #[inline(always)]
-        pub fn set_edea(&mut self, val: u32) {
+        pub const fn set_edea(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1598,6 +1653,7 @@ pub mod regs {
     pub struct Ram5icr(pub u32);
     impl Ram5icr {
         #[doc = "CSEDC."]
+        #[must_use]
         #[inline(always)]
         pub const fn csedc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1605,10 +1661,11 @@ pub mod regs {
         }
         #[doc = "CSEDC."]
         #[inline(always)]
-        pub fn set_csedc(&mut self, val: bool) {
+        pub const fn set_csedc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "CDED."]
+        #[must_use]
         #[inline(always)]
         pub const fn cded(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1616,7 +1673,7 @@ pub mod regs {
         }
         #[doc = "CDED."]
         #[inline(always)]
-        pub fn set_cded(&mut self, val: bool) {
+        pub const fn set_cded(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -1651,6 +1708,7 @@ pub mod regs {
     pub struct Ram5ier(pub u32);
     impl Ram5ier {
         #[doc = "SEIE."]
+        #[must_use]
         #[inline(always)]
         pub const fn seie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1658,10 +1716,11 @@ pub mod regs {
         }
         #[doc = "SEIE."]
         #[inline(always)]
-        pub fn set_seie(&mut self, val: bool) {
+        pub const fn set_seie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "DEIE."]
+        #[must_use]
         #[inline(always)]
         pub const fn deie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1669,10 +1728,11 @@ pub mod regs {
         }
         #[doc = "DEIE."]
         #[inline(always)]
-        pub fn set_deie(&mut self, val: bool) {
+        pub const fn set_deie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "ECCNMI."]
+        #[must_use]
         #[inline(always)]
         pub const fn eccnmi(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1680,7 +1740,7 @@ pub mod regs {
         }
         #[doc = "ECCNMI."]
         #[inline(always)]
-        pub fn set_eccnmi(&mut self, val: bool) {
+        pub const fn set_eccnmi(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
@@ -1717,6 +1777,7 @@ pub mod regs {
     pub struct Ram5isr(pub u32);
     impl Ram5isr {
         #[doc = "SEDC."]
+        #[must_use]
         #[inline(always)]
         pub const fn sedc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1724,10 +1785,11 @@ pub mod regs {
         }
         #[doc = "SEDC."]
         #[inline(always)]
-        pub fn set_sedc(&mut self, val: bool) {
+        pub const fn set_sedc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "DED."]
+        #[must_use]
         #[inline(always)]
         pub const fn ded(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1735,10 +1797,11 @@ pub mod regs {
         }
         #[doc = "DED."]
         #[inline(always)]
-        pub fn set_ded(&mut self, val: bool) {
+        pub const fn set_ded(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "SRAMBUSY."]
+        #[must_use]
         #[inline(always)]
         pub const fn srambusy(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -1746,7 +1809,7 @@ pub mod regs {
         }
         #[doc = "SRAMBUSY."]
         #[inline(always)]
-        pub fn set_srambusy(&mut self, val: bool) {
+        pub const fn set_srambusy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
@@ -1783,6 +1846,7 @@ pub mod regs {
     pub struct Ram5sear(pub u32);
     impl Ram5sear {
         #[doc = "ESEA."]
+        #[must_use]
         #[inline(always)]
         pub const fn esea(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1790,7 +1854,7 @@ pub mod regs {
         }
         #[doc = "ESEA."]
         #[inline(always)]
-        pub fn set_esea(&mut self, val: u32) {
+        pub const fn set_esea(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }

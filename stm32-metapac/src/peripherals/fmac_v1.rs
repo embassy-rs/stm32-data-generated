@@ -22,42 +22,42 @@ impl Fmac {
     #[doc = "X1 buffer configuration register"]
     #[inline(always)]
     pub const fn x1bufcfg(self) -> crate::common::Reg<regs::X1bufcfg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "X2 buffer configuration register"]
     #[inline(always)]
     pub const fn x2bufcfg(self) -> crate::common::Reg<regs::X2bufcfg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Y buffer configuration register"]
     #[inline(always)]
     pub const fn ybufcfg(self) -> crate::common::Reg<regs::Ybufcfg, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "Parameter register"]
     #[inline(always)]
     pub const fn param(self) -> crate::common::Reg<regs::Param, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "Control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "Status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "Write data register"]
     #[inline(always)]
     pub const fn wdata(self) -> crate::common::Reg<regs::Wdata, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "Read data register"]
     #[inline(always)]
     pub const fn rdata(self) -> crate::common::Reg<regs::Rdata, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
 }
 pub mod regs {
@@ -67,6 +67,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "Enable read interrupt"]
+        #[must_use]
         #[inline(always)]
         pub const fn rien(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -74,10 +75,11 @@ pub mod regs {
         }
         #[doc = "Enable read interrupt"]
         #[inline(always)]
-        pub fn set_rien(&mut self, val: bool) {
+        pub const fn set_rien(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Enable write interrupt"]
+        #[must_use]
         #[inline(always)]
         pub const fn wien(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -85,10 +87,11 @@ pub mod regs {
         }
         #[doc = "Enable write interrupt"]
         #[inline(always)]
-        pub fn set_wien(&mut self, val: bool) {
+        pub const fn set_wien(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Enable overflow error interrupts"]
+        #[must_use]
         #[inline(always)]
         pub const fn ovflien(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -96,10 +99,11 @@ pub mod regs {
         }
         #[doc = "Enable overflow error interrupts"]
         #[inline(always)]
-        pub fn set_ovflien(&mut self, val: bool) {
+        pub const fn set_ovflien(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Enable underflow error interrupts"]
+        #[must_use]
         #[inline(always)]
         pub const fn unflien(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -107,10 +111,11 @@ pub mod regs {
         }
         #[doc = "Enable underflow error interrupts"]
         #[inline(always)]
-        pub fn set_unflien(&mut self, val: bool) {
+        pub const fn set_unflien(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Enable saturation error interrupts"]
+        #[must_use]
         #[inline(always)]
         pub const fn satien(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -118,10 +123,11 @@ pub mod regs {
         }
         #[doc = "Enable saturation error interrupts"]
         #[inline(always)]
-        pub fn set_satien(&mut self, val: bool) {
+        pub const fn set_satien(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Enable DMA read channel requests"]
+        #[must_use]
         #[inline(always)]
         pub const fn dmaren(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -129,10 +135,11 @@ pub mod regs {
         }
         #[doc = "Enable DMA read channel requests"]
         #[inline(always)]
-        pub fn set_dmaren(&mut self, val: bool) {
+        pub const fn set_dmaren(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Enable DMA write channel requests"]
+        #[must_use]
         #[inline(always)]
         pub const fn dmawen(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -140,10 +147,11 @@ pub mod regs {
         }
         #[doc = "Enable DMA write channel requests"]
         #[inline(always)]
-        pub fn set_dmawen(&mut self, val: bool) {
+        pub const fn set_dmawen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Enable clipping"]
+        #[must_use]
         #[inline(always)]
         pub const fn clipen(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -151,10 +159,11 @@ pub mod regs {
         }
         #[doc = "Enable clipping"]
         #[inline(always)]
-        pub fn set_clipen(&mut self, val: bool) {
+        pub const fn set_clipen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Reset FMAC unit"]
+        #[must_use]
         #[inline(always)]
         pub const fn reset(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -162,7 +171,7 @@ pub mod regs {
         }
         #[doc = "Reset FMAC unit"]
         #[inline(always)]
-        pub fn set_reset(&mut self, val: bool) {
+        pub const fn set_reset(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
@@ -199,6 +208,7 @@ pub mod regs {
     pub struct Param(pub u32);
     impl Param {
         #[doc = "Input parameter P"]
+        #[must_use]
         #[inline(always)]
         pub const fn p(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -206,10 +216,11 @@ pub mod regs {
         }
         #[doc = "Input parameter P"]
         #[inline(always)]
-        pub fn set_p(&mut self, val: u8) {
+        pub const fn set_p(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "Input parameter Q"]
+        #[must_use]
         #[inline(always)]
         pub const fn q(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -217,10 +228,11 @@ pub mod regs {
         }
         #[doc = "Input parameter Q"]
         #[inline(always)]
-        pub fn set_q(&mut self, val: u8) {
+        pub const fn set_q(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "Input parameter R"]
+        #[must_use]
         #[inline(always)]
         pub const fn r(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
@@ -228,10 +240,11 @@ pub mod regs {
         }
         #[doc = "Input parameter R"]
         #[inline(always)]
-        pub fn set_r(&mut self, val: u8) {
+        pub const fn set_r(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
         #[doc = "Function"]
+        #[must_use]
         #[inline(always)]
         pub const fn func(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x7f;
@@ -239,10 +252,11 @@ pub mod regs {
         }
         #[doc = "Function"]
         #[inline(always)]
-        pub fn set_func(&mut self, val: u8) {
+        pub const fn set_func(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 24usize)) | (((val as u32) & 0x7f) << 24usize);
         }
         #[doc = "Enable execution"]
+        #[must_use]
         #[inline(always)]
         pub const fn start(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -250,7 +264,7 @@ pub mod regs {
         }
         #[doc = "Enable execution"]
         #[inline(always)]
-        pub fn set_start(&mut self, val: bool) {
+        pub const fn set_start(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -291,6 +305,7 @@ pub mod regs {
     pub struct Rdata(pub u32);
     impl Rdata {
         #[doc = "Read data (contents of the Y output buffer at the address indicated by the READ pointer)"]
+        #[must_use]
         #[inline(always)]
         pub const fn res(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -298,7 +313,7 @@ pub mod regs {
         }
         #[doc = "Read data (contents of the Y output buffer at the address indicated by the READ pointer)"]
         #[inline(always)]
-        pub fn set_res(&mut self, val: u16) {
+        pub const fn set_res(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -325,6 +340,7 @@ pub mod regs {
     pub struct Sr(pub u32);
     impl Sr {
         #[doc = "Y buffer empty flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn yempty(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -332,10 +348,11 @@ pub mod regs {
         }
         #[doc = "Y buffer empty flag"]
         #[inline(always)]
-        pub fn set_yempty(&mut self, val: bool) {
+        pub const fn set_yempty(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "X1 buffer full flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn x1full(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -343,10 +360,11 @@ pub mod regs {
         }
         #[doc = "X1 buffer full flag"]
         #[inline(always)]
-        pub fn set_x1full(&mut self, val: bool) {
+        pub const fn set_x1full(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Overflow error flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn ovfl(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -354,10 +372,11 @@ pub mod regs {
         }
         #[doc = "Overflow error flag"]
         #[inline(always)]
-        pub fn set_ovfl(&mut self, val: bool) {
+        pub const fn set_ovfl(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Underflow error flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn unfl(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -365,10 +384,11 @@ pub mod regs {
         }
         #[doc = "Underflow error flag"]
         #[inline(always)]
-        pub fn set_unfl(&mut self, val: bool) {
+        pub const fn set_unfl(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Saturation error flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn sat(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -376,7 +396,7 @@ pub mod regs {
         }
         #[doc = "Saturation error flag"]
         #[inline(always)]
-        pub fn set_sat(&mut self, val: bool) {
+        pub const fn set_sat(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
     }
@@ -417,6 +437,7 @@ pub mod regs {
     pub struct Wdata(pub u32);
     impl Wdata {
         #[doc = "Write data (write data are transferred to the address indicated by the write pointer)"]
+        #[must_use]
         #[inline(always)]
         pub const fn wdata(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -424,7 +445,7 @@ pub mod regs {
         }
         #[doc = "Write data (write data are transferred to the address indicated by the write pointer)"]
         #[inline(always)]
-        pub fn set_wdata(&mut self, val: u16) {
+        pub const fn set_wdata(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -451,6 +472,7 @@ pub mod regs {
     pub struct X1bufcfg(pub u32);
     impl X1bufcfg {
         #[doc = "Base address of X1 buffer"]
+        #[must_use]
         #[inline(always)]
         pub const fn x1_base(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -458,10 +480,11 @@ pub mod regs {
         }
         #[doc = "Base address of X1 buffer"]
         #[inline(always)]
-        pub fn set_x1_base(&mut self, val: u8) {
+        pub const fn set_x1_base(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "Allocated size of X1 buffer in 16-bit words"]
+        #[must_use]
         #[inline(always)]
         pub const fn x1_buf_size(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -469,10 +492,11 @@ pub mod regs {
         }
         #[doc = "Allocated size of X1 buffer in 16-bit words"]
         #[inline(always)]
-        pub fn set_x1_buf_size(&mut self, val: u8) {
+        pub const fn set_x1_buf_size(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "Watermark for buffer full flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn full_wm(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x03;
@@ -480,7 +504,7 @@ pub mod regs {
         }
         #[doc = "Watermark for buffer full flag"]
         #[inline(always)]
-        pub fn set_full_wm(&mut self, val: u8) {
+        pub const fn set_full_wm(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 24usize)) | (((val as u32) & 0x03) << 24usize);
         }
     }
@@ -517,6 +541,7 @@ pub mod regs {
     pub struct X2bufcfg(pub u32);
     impl X2bufcfg {
         #[doc = "Base address of X2 buffer"]
+        #[must_use]
         #[inline(always)]
         pub const fn x2_base(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -524,10 +549,11 @@ pub mod regs {
         }
         #[doc = "Base address of X2 buffer"]
         #[inline(always)]
-        pub fn set_x2_base(&mut self, val: u8) {
+        pub const fn set_x2_base(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "Size of X2 buffer in 16-bit words"]
+        #[must_use]
         #[inline(always)]
         pub const fn x2_buf_size(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -535,7 +561,7 @@ pub mod regs {
         }
         #[doc = "Size of X2 buffer in 16-bit words"]
         #[inline(always)]
-        pub fn set_x2_buf_size(&mut self, val: u8) {
+        pub const fn set_x2_buf_size(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
     }
@@ -570,6 +596,7 @@ pub mod regs {
     pub struct Ybufcfg(pub u32);
     impl Ybufcfg {
         #[doc = "Base address of Y buffer"]
+        #[must_use]
         #[inline(always)]
         pub const fn y_base(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -577,10 +604,11 @@ pub mod regs {
         }
         #[doc = "Base address of Y buffer"]
         #[inline(always)]
-        pub fn set_y_base(&mut self, val: u8) {
+        pub const fn set_y_base(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "Size of Y buffer in 16-bit words"]
+        #[must_use]
         #[inline(always)]
         pub const fn y_buf_size(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -588,10 +616,11 @@ pub mod regs {
         }
         #[doc = "Size of Y buffer in 16-bit words"]
         #[inline(always)]
-        pub fn set_y_buf_size(&mut self, val: u8) {
+        pub const fn set_y_buf_size(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "Watermark for buffer empty flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn empty_wm(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x03;
@@ -599,7 +628,7 @@ pub mod regs {
         }
         #[doc = "Watermark for buffer empty flag"]
         #[inline(always)]
-        pub fn set_empty_wm(&mut self, val: u8) {
+        pub const fn set_empty_wm(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 24usize)) | (((val as u32) & 0x03) << 24usize);
         }
     }

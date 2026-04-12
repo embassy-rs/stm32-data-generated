@@ -405,14 +405,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "N_BOOT0",
-                    description: Some("BOOT0 signal is defined by nBOOT0 option bit"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "BOOT0",
                     description: Some("BOOT0 signal is defined by BOOT0 pin value (legacy mode)"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "N_BOOT0",
+                    description: Some("BOOT0 signal is defined by nBOOT0 option bit"),
+                    value: 0,
                 },
             ],
         },
@@ -439,14 +439,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RESET",
-                    description: Some("Reset generated when entering Standby mode"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "NO_RESET",
                     description: Some("No reset generated"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "RESET",
+                    description: Some("Reset generated when entering Standby mode"),
+                    value: 0,
                 },
             ],
         },
@@ -456,14 +456,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RESET",
-                    description: Some("Reset generated when entering Stop mode"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "NO_RESET",
                     description: Some("No reset generated"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "RESET",
+                    description: Some("Reset generated when entering Stop mode"),
+                    value: 0,
                 },
             ],
         },
@@ -473,14 +473,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ENABLED",
-                    description: Some("RAM parity check enabled"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "DISABLED",
                     description: Some("RAM parity check disabled"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "ENABLED",
+                    description: Some("RAM parity check enabled"),
+                    value: 0,
                 },
             ],
         },

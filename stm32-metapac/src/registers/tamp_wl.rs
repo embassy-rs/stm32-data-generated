@@ -716,13 +716,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NO_FILTER",
-                    description: Some(
-                        "Tamper event is activated on edge of TAMP_INx input transitions to the active level (no internal pull-up on TAMP_INx input)\"",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FILTER2",
                     description: Some(
                         "Tamper event is activated after 2 consecutive samples at the active level\"",
@@ -743,6 +736,13 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 3,
                 },
+                EnumVariant {
+                    name: "NO_FILTER",
+                    description: Some(
+                        "Tamper event is activated on edge of TAMP_INx input transitions to the active level (no internal pull-up on TAMP_INx input)\"",
+                    ),
+                    value: 0,
+                },
             ],
         },
         Enum {
@@ -758,25 +758,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "HZ_2",
+                    name: "HZ_128",
                     description: Some(
-                        "RTCCLK / 16384 (2 Hz when RTCCLK = 32768 Hz)",
+                        "RTCCLK / 256 (128 Hz when RTCCLK = 32768 Hz)",
                     ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "HZ_4",
-                    description: Some(
-                        "RTCCLK / 8192 (4 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "HZ_8",
-                    description: Some(
-                        "RTCCLK / 4096 (8 Hz when RTCCLK = 32768 Hz)",
-                    ),
-                    value: 3,
+                    value: 7,
                 },
                 EnumVariant {
                     name: "HZ_16",
@@ -786,11 +772,25 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 4,
                 },
                 EnumVariant {
+                    name: "HZ_2",
+                    description: Some(
+                        "RTCCLK / 16384 (2 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
                     name: "HZ_32",
                     description: Some(
                         "RTCCLK / 1024 (32 Hz when RTCCLK = 32768 Hz)",
                     ),
                     value: 5,
+                },
+                EnumVariant {
+                    name: "HZ_4",
+                    description: Some(
+                        "RTCCLK / 8192 (4 Hz when RTCCLK = 32768 Hz)",
+                    ),
+                    value: 2,
                 },
                 EnumVariant {
                     name: "HZ_64",
@@ -800,11 +800,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 6,
                 },
                 EnumVariant {
-                    name: "HZ_128",
+                    name: "HZ_8",
                     description: Some(
-                        "RTCCLK / 256 (128 Hz when RTCCLK = 32768 Hz)",
+                        "RTCCLK / 4096 (8 Hz when RTCCLK = 32768 Hz)",
                     ),
-                    value: 7,
+                    value: 3,
                 },
             ],
         },
@@ -814,18 +814,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RESET_BY_SOFTWARE",
-                    description: Some(
-                        "Tamper x event generates a trigger event and TAMPxF must be cleared by software to allow next tamper event detection",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "RESET_BY_HARDWARE",
                     description: Some(
                         "Tamper x event generates a trigger event. TAMPxF is masked and internally cleared by hardware. The backup registers are not erased. The tamper x interrupt must not be enabled when TAMP3MSK is set",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "RESET_BY_SOFTWARE",
+                    description: Some(
+                        "Tamper x event generates a trigger event and TAMPxF must be cleared by software to allow next tamper event detection",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -870,18 +870,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FILTERED_LOW_OR_UNFILTERED_HIGH",
-                    description: Some(
-                        "If TAMPFLT != 00 Tamper x input staying low triggers a tamper detection event. If TAMPFLT = 00 Tamper x input rising edge and high level triggers a tamper detection event",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FILTERED_HIGH_OR_UNFILTERED_LOW",
                     description: Some(
                         "If TAMPFLT != 00 Tamper x input staying high triggers a tamper detection event. If TAMPFLT = 00 Tamper x input falling edge and low level triggers a tamper detection event",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "FILTERED_LOW_OR_UNFILTERED_HIGH",
+                    description: Some(
+                        "If TAMPFLT != 00 Tamper x input staying low triggers a tamper detection event. If TAMPFLT = 00 Tamper x input rising edge and high level triggers a tamper detection event",
+                    ),
+                    value: 0,
                 },
             ],
         },

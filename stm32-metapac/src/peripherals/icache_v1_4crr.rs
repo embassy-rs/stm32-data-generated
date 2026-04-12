@@ -22,38 +22,38 @@ impl Icache {
     #[doc = "ICACHE control register."]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "ICACHE status register."]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "ICACHE interrupt enable register."]
     #[inline(always)]
     pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "ICACHE flag clear register."]
     #[inline(always)]
     pub const fn fcr(self) -> crate::common::Reg<regs::Fcr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "ICACHE hit monitor register."]
     #[inline(always)]
     pub const fn hmonr(self) -> crate::common::Reg<u32, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "ICACHE miss monitor register."]
     #[inline(always)]
     pub const fn mmonr(self) -> crate::common::Reg<regs::Mmonr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "Cluster CRR%s, container region configuration registers."]
     #[inline(always)]
     pub const fn crr(self, n: usize) -> crate::common::Reg<regs::Crr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize + n * 4usize) as _) }
     }
 }
 pub mod regs {
@@ -63,6 +63,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "EN."]
+        #[must_use]
         #[inline(always)]
         pub const fn en(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -70,10 +71,11 @@ pub mod regs {
         }
         #[doc = "EN."]
         #[inline(always)]
-        pub fn set_en(&mut self, val: bool) {
+        pub const fn set_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Set by software and cleared by hardware when the BUSYF flag is set (during cache maintenance operation). Writing 0 has no effect."]
+        #[must_use]
         #[inline(always)]
         pub const fn cacheinv(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -81,10 +83,11 @@ pub mod regs {
         }
         #[doc = "Set by software and cleared by hardware when the BUSYF flag is set (during cache maintenance operation). Writing 0 has no effect."]
         #[inline(always)]
-        pub fn set_cacheinv(&mut self, val: bool) {
+        pub const fn set_cacheinv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "This bit allows user to choose ICACHE set-associativity. It can be written by software only when cache is disabled (EN = 0)."]
+        #[must_use]
         #[inline(always)]
         pub const fn waysel(&self) -> super::vals::Waysel {
             let val = (self.0 >> 2usize) & 0x01;
@@ -92,10 +95,11 @@ pub mod regs {
         }
         #[doc = "This bit allows user to choose ICACHE set-associativity. It can be written by software only when cache is disabled (EN = 0)."]
         #[inline(always)]
-        pub fn set_waysel(&mut self, val: super::vals::Waysel) {
+        pub const fn set_waysel(&mut self, val: super::vals::Waysel) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "Hit monitor enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn hitmen(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -103,10 +107,11 @@ pub mod regs {
         }
         #[doc = "Hit monitor enable."]
         #[inline(always)]
-        pub fn set_hitmen(&mut self, val: bool) {
+        pub const fn set_hitmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Miss monitor enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn missmen(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -114,10 +119,11 @@ pub mod regs {
         }
         #[doc = "Miss monitor enable."]
         #[inline(always)]
-        pub fn set_missmen(&mut self, val: bool) {
+        pub const fn set_missmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "Hit monitor reset."]
+        #[must_use]
         #[inline(always)]
         pub const fn hitmrst(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -125,10 +131,11 @@ pub mod regs {
         }
         #[doc = "Hit monitor reset."]
         #[inline(always)]
-        pub fn set_hitmrst(&mut self, val: bool) {
+        pub const fn set_hitmrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Miss monitor reset."]
+        #[must_use]
         #[inline(always)]
         pub const fn missmrst(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -136,7 +143,7 @@ pub mod regs {
         }
         #[doc = "Miss monitor reset."]
         #[inline(always)]
-        pub fn set_missmrst(&mut self, val: bool) {
+        pub const fn set_missmrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
     }
@@ -171,6 +178,7 @@ pub mod regs {
     pub struct Crr(pub u32);
     impl Crr {
         #[doc = "base address for region."]
+        #[must_use]
         #[inline(always)]
         pub const fn baseaddr(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -178,10 +186,11 @@ pub mod regs {
         }
         #[doc = "base address for region."]
         #[inline(always)]
-        pub fn set_baseaddr(&mut self, val: u8) {
+        pub const fn set_baseaddr(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "size for region."]
+        #[must_use]
         #[inline(always)]
         pub const fn rsize(&self) -> super::vals::Rsize {
             let val = (self.0 >> 9usize) & 0x07;
@@ -189,10 +198,11 @@ pub mod regs {
         }
         #[doc = "size for region."]
         #[inline(always)]
-        pub fn set_rsize(&mut self, val: super::vals::Rsize) {
+        pub const fn set_rsize(&mut self, val: super::vals::Rsize) {
             self.0 = (self.0 & !(0x07 << 9usize)) | (((val.to_bits() as u32) & 0x07) << 9usize);
         }
         #[doc = "enable for region."]
+        #[must_use]
         #[inline(always)]
         pub const fn ren(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -200,10 +210,11 @@ pub mod regs {
         }
         #[doc = "enable for region."]
         #[inline(always)]
-        pub fn set_ren(&mut self, val: bool) {
+        pub const fn set_ren(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "remapped address for region."]
+        #[must_use]
         #[inline(always)]
         pub const fn remapaddr(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0x07ff;
@@ -211,10 +222,11 @@ pub mod regs {
         }
         #[doc = "remapped address for region."]
         #[inline(always)]
-        pub fn set_remapaddr(&mut self, val: u16) {
+        pub const fn set_remapaddr(&mut self, val: u16) {
             self.0 = (self.0 & !(0x07ff << 16usize)) | (((val as u32) & 0x07ff) << 16usize);
         }
         #[doc = "AHB cache master selection for region."]
+        #[must_use]
         #[inline(always)]
         pub const fn mstsel(&self) -> super::vals::Mstsel {
             let val = (self.0 >> 28usize) & 0x01;
@@ -222,10 +234,11 @@ pub mod regs {
         }
         #[doc = "AHB cache master selection for region."]
         #[inline(always)]
-        pub fn set_mstsel(&mut self, val: super::vals::Mstsel) {
+        pub const fn set_mstsel(&mut self, val: super::vals::Mstsel) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
         }
         #[doc = "output burst type for region."]
+        #[must_use]
         #[inline(always)]
         pub const fn hburst(&self) -> super::vals::Hburst {
             let val = (self.0 >> 31usize) & 0x01;
@@ -233,7 +246,7 @@ pub mod regs {
         }
         #[doc = "output burst type for region."]
         #[inline(always)]
-        pub fn set_hburst(&mut self, val: super::vals::Hburst) {
+        pub const fn set_hburst(&mut self, val: super::vals::Hburst) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
         }
     }
@@ -267,6 +280,7 @@ pub mod regs {
     pub struct Fcr(pub u32);
     impl Fcr {
         #[doc = "Clear busy end flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn cbsyendf(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -274,10 +288,11 @@ pub mod regs {
         }
         #[doc = "Clear busy end flag."]
         #[inline(always)]
-        pub fn set_cbsyendf(&mut self, val: bool) {
+        pub const fn set_cbsyendf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Clear ERRF flag in SR."]
+        #[must_use]
         #[inline(always)]
         pub const fn cerrf(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -285,7 +300,7 @@ pub mod regs {
         }
         #[doc = "Clear ERRF flag in SR."]
         #[inline(always)]
-        pub fn set_cerrf(&mut self, val: bool) {
+        pub const fn set_cerrf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
     }
@@ -320,6 +335,7 @@ pub mod regs {
     pub struct Ier(pub u32);
     impl Ier {
         #[doc = "Interrupt enable on busy end."]
+        #[must_use]
         #[inline(always)]
         pub const fn bsyendie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -327,10 +343,11 @@ pub mod regs {
         }
         #[doc = "Interrupt enable on busy end."]
         #[inline(always)]
-        pub fn set_bsyendie(&mut self, val: bool) {
+        pub const fn set_bsyendie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Error interrupt on cache error."]
+        #[must_use]
         #[inline(always)]
         pub const fn errie(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -338,7 +355,7 @@ pub mod regs {
         }
         #[doc = "Error interrupt on cache error."]
         #[inline(always)]
-        pub fn set_errie(&mut self, val: bool) {
+        pub const fn set_errie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
     }
@@ -373,6 +390,7 @@ pub mod regs {
     pub struct Mmonr(pub u32);
     impl Mmonr {
         #[doc = "Miss monitor register."]
+        #[must_use]
         #[inline(always)]
         pub const fn missmon(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -380,7 +398,7 @@ pub mod regs {
         }
         #[doc = "Miss monitor register."]
         #[inline(always)]
-        pub fn set_missmon(&mut self, val: u16) {
+        pub const fn set_missmon(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -407,6 +425,7 @@ pub mod regs {
     pub struct Sr(pub u32);
     impl Sr {
         #[doc = "cache busy executing a full invalidate CACHEINV operation."]
+        #[must_use]
         #[inline(always)]
         pub const fn busyf(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -414,10 +433,11 @@ pub mod regs {
         }
         #[doc = "cache busy executing a full invalidate CACHEINV operation."]
         #[inline(always)]
-        pub fn set_busyf(&mut self, val: bool) {
+        pub const fn set_busyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "full invalidate CACHEINV operation finished."]
+        #[must_use]
         #[inline(always)]
         pub const fn bsyendf(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -425,10 +445,11 @@ pub mod regs {
         }
         #[doc = "full invalidate CACHEINV operation finished."]
         #[inline(always)]
-        pub fn set_bsyendf(&mut self, val: bool) {
+        pub const fn set_bsyendf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "an error occurred during the operation."]
+        #[must_use]
         #[inline(always)]
         pub const fn errf(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -436,7 +457,7 @@ pub mod regs {
         }
         #[doc = "an error occurred during the operation."]
         #[inline(always)]
-        pub fn set_errf(&mut self, val: bool) {
+        pub const fn set_errf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
     }

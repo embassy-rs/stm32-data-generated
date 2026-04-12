@@ -2084,18 +2084,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B_0X2",
-                    description: Some(
-                        "~ 2 ms guaranteed minimum low time (2 x 32 LSI cycles).",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
                     name: "B_0X1F",
                     description: Some(
                         "~ 31 ms guaranteed minimum low time (31 x 32 LSI cycles).",
                     ),
                     value: 31,
+                },
+                EnumVariant {
+                    name: "B_0X2",
+                    description: Some(
+                        "~ 2 ms guaranteed minimum low time (2 x 32 LSI cycles).",
+                    ),
+                    value: 2,
                 },
             ],
         },

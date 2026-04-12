@@ -545,18 +545,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "STANDARD",
-                    description: Some(
-                        "All read accesses are decrypted (instruction or data).",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
                     name: "ENHANCED",
                     description: Some(
                         "Enhanced encryption mode is activated, and only instruction accesses are decrypted",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "STANDARD",
+                    description: Some(
+                        "All read accesses are decrypted (instruction or data).",
+                    ),
+                    value: 2,
                 },
             ],
         },

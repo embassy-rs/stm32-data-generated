@@ -182,34 +182,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "DIVIDE_BY4",
-                    description: Some("Divider /4"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIVIDE_BY8",
-                    description: Some("Divider /8"),
-                    value: 1,
+                    name: "DIVIDE_BY128",
+                    description: Some("Divider /128"),
+                    value: 5,
                 },
                 EnumVariant {
                     name: "DIVIDE_BY16",
                     description: Some("Divider /16"),
                     value: 2,
-                },
-                EnumVariant {
-                    name: "DIVIDE_BY32",
-                    description: Some("Divider /32"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIVIDE_BY64",
-                    description: Some("Divider /64"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIVIDE_BY128",
-                    description: Some("Divider /128"),
-                    value: 5,
                 },
                 EnumVariant {
                     name: "DIVIDE_BY256",
@@ -220,6 +200,26 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIVIDE_BY256BIS",
                     description: Some("Divider /256"),
                     value: 7,
+                },
+                EnumVariant {
+                    name: "DIVIDE_BY32",
+                    description: Some("Divider /32"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIVIDE_BY4",
+                    description: Some("Divider /4"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIVIDE_BY64",
+                    description: Some("Divider /64"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIVIDE_BY8",
+                    description: Some("Divider /8"),
+                    value: 1,
                 },
             ],
         },

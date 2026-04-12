@@ -556,18 +556,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "STANDARD",
-                    description: Some(
-                        "Standard",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FMP",
                     description: Some(
                         "FM+",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "STANDARD",
+                    description: Some(
+                        "Standard",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -612,13 +612,6 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSTEM_FLASH",
-                    description: Some(
-                        "System Flash memory mapped at 0x0000_0000",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "MAIN_FLASH2",
                     description: Some(
                         "Main Flash memory mapped at 0x0000_0000",
@@ -631,6 +624,13 @@ pub(crate) static REGISTERS: IR = IR {
                         "Embedded SRAM mapped at 0x0000_0000",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "SYSTEM_FLASH",
+                    description: Some(
+                        "System Flash memory mapped at 0x0000_0000",
+                    ),
+                    value: 1,
                 },
             ],
         },

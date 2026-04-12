@@ -914,11 +914,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "ITCM64AXI320",
-                    description: Some("64 Kbyte ITCM-RAM / 320 Kbyte AXI-SRAM"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "ITCM128AXI256",
                     description: Some("128 Kbyte ITCM-RAM / 256 Kbyte AXI-SRAM"),
                     value: 1,
@@ -932,6 +927,11 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "ITCM256AXI128",
                     description: Some("256 Kbyte ITCM-RAM / 128 Kbyte AXI-SRAM"),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "ITCM64AXI320",
+                    description: Some("64 Kbyte ITCM-RAM / 320 Kbyte AXI-SRAM"),
+                    value: 0,
                 },
             ],
         },

@@ -457,18 +457,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "_256BLOCKS_PER_LINE",
-                    description: Some(
-                        "256 blocks per line.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "_192BLOCKS_PER_LINE",
                     description: Some(
                         "192 blocks per line.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "_256BLOCKS_PER_LINE",
+                    description: Some(
+                        "256 blocks per line.",
+                    ),
+                    value: 0,
                 },
             ],
         },

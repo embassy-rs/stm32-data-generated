@@ -974,9 +974,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SCALE3",
+                    name: "SCALE1",
                     description: None,
-                    value: 1,
+                    value: 3,
                 },
                 EnumVariant {
                     name: "SCALE2",
@@ -984,9 +984,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "SCALE1",
+                    name: "SCALE3",
                     description: None,
-                    value: 3,
+                    value: 1,
                 },
             ],
         },
@@ -1003,18 +1003,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PULL_UP",
-                    description: Some(
-                        "Pull-up.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "PULL_DOWN",
                     description: Some(
                         "Pull-down.",
                     ),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "PULL_UP",
+                    description: Some(
+                        "Pull-up.",
+                    ),
+                    value: 1,
                 },
             ],
         },

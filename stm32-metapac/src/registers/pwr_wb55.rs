@@ -988,6 +988,16 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
+                    name: "SHUTDOWN",
+                    description: Some("Shutdown mode"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "STANDBY",
+                    description: Some("Standby mode"),
+                    value: 3,
+                },
+                EnumVariant {
                     name: "STOP0",
                     description: Some("Stop0 mode"),
                     value: 0,
@@ -1001,16 +1011,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "STOP2",
                     description: Some("Stop2 mode"),
                     value: 2,
-                },
-                EnumVariant {
-                    name: "STANDBY",
-                    description: Some("Standby mode"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "SHUTDOWN",
-                    description: Some("Shutdown mode"),
-                    value: 4,
                 },
             ],
         },

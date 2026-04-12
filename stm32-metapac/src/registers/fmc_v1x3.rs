@@ -1141,9 +1141,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "NO_BURST_SPLIT",
-                    description: Some("No burst split when crossing page boundary"),
-                    value: 0,
+                    name: "BYTES1024",
+                    description: Some("1024 bytes CRAM page size"),
+                    value: 4,
                 },
                 EnumVariant {
                     name: "BYTES128",
@@ -1161,9 +1161,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "BYTES1024",
-                    description: Some("1024 bytes CRAM page size"),
-                    value: 4,
+                    name: "NO_BURST_SPLIT",
+                    description: Some("No burst split when crossing page boundary"),
+                    value: 0,
                 },
             ],
         },
@@ -1172,16 +1172,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 3,
             variants: &[
-                EnumVariant {
-                    name: "BYTES256",
-                    description: Some("ECC page size 256 bytes"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BYTES512",
-                    description: Some("ECC page size 512 bytes"),
-                    value: 1,
-                },
                 EnumVariant {
                     name: "BYTES1024",
                     description: Some("ECC page size 1024 bytes"),
@@ -1193,9 +1183,19 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
+                    name: "BYTES256",
+                    description: Some("ECC page size 256 bytes"),
+                    value: 0,
+                },
+                EnumVariant {
                     name: "BYTES4096",
                     description: Some("ECC page size 4096 bytes"),
                     value: 4,
+                },
+                EnumVariant {
+                    name: "BYTES512",
+                    description: Some("ECC page size 512 bytes"),
+                    value: 1,
                 },
                 EnumVariant {
                     name: "BYTES8192",
@@ -1210,9 +1210,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "NORMAL",
-                    description: Some("Normal Mode"),
-                    value: 0,
+                    name: "AUTO_REFRESH_COMMAND",
+                    description: Some("Auto-refresh command"),
+                    value: 3,
                 },
                 EnumVariant {
                     name: "CLOCK_CONFIGURATION_ENABLE",
@@ -1220,29 +1220,29 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "PALL",
-                    description: Some("PALL (All Bank Precharge) command"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "AUTO_REFRESH_COMMAND",
-                    description: Some("Auto-refresh command"),
-                    value: 3,
-                },
-                EnumVariant {
                     name: "LOAD_MODE_REGISTER",
                     description: Some("Load Mode Resgier"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "SELF_REFRESH_COMMAND",
-                    description: Some("Self-refresh command"),
-                    value: 5,
+                    name: "NORMAL",
+                    description: Some("Normal Mode"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PALL",
+                    description: Some("PALL (All Bank Precharge) command"),
+                    value: 2,
                 },
                 EnumVariant {
                     name: "POWER_DOWN_COMMAND",
                     description: Some("Power-down command"),
                     value: 6,
+                },
+                EnumVariant {
+                    name: "SELF_REFRESH_COMMAND",
+                    description: Some("Self-refresh command"),
+                    value: 5,
                 },
             ],
         },
@@ -1257,14 +1257,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SELF_REFRESH",
-                    description: Some("Self-refresh mode"),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "POWER_DOWN",
                     description: Some("Power-down mode"),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "SELF_REFRESH",
+                    description: Some("Self-refresh mode"),
+                    value: 1,
                 },
             ],
         },
@@ -1274,9 +1274,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "SRAM",
-                    description: Some("SRAM memory type"),
-                    value: 0,
+                    name: "FLASH",
+                    description: Some("NOR Flash/OneNAND Flash"),
+                    value: 2,
                 },
                 EnumVariant {
                     name: "PSRAM",
@@ -1284,9 +1284,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "FLASH",
-                    description: Some("NOR Flash/OneNAND Flash"),
-                    value: 2,
+                    name: "SRAM",
+                    description: Some("SRAM memory type"),
+                    value: 0,
                 },
             ],
         },
@@ -1296,11 +1296,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BITS8",
-                    description: Some("Memory data bus width 8 bits"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "BITS16",
                     description: Some("Memory data bus width 16 bits"),
                     value: 1,
@@ -1309,6 +1304,11 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "BITS32",
                     description: Some("Memory data bus width 32 bits"),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "BITS8",
+                    description: Some("Memory data bus width 8 bits"),
+                    value: 0,
                 },
             ],
         },
@@ -1335,16 +1335,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BITS8",
-                    description: Some("8 bits"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BITS9",
-                    description: Some("9 bits"),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "BITS10",
                     description: Some("10 bits"),
                     value: 2,
@@ -1353,6 +1343,16 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "BITS11",
                     description: Some("11 bits"),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "BITS8",
+                    description: Some("8 bits"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BITS9",
+                    description: Some("9 bits"),
+                    value: 1,
                 },
             ],
         },
@@ -1394,14 +1394,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BITS8",
-                    description: Some("External memory device width 8 bits"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "BITS16",
                     description: Some("External memory device width 16 bits"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "BITS8",
+                    description: Some("External memory device width 8 bits"),
+                    value: 0,
                 },
             ],
         },
@@ -1411,11 +1411,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NO_DELAY",
-                    description: Some("No clock cycle delay"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "CLOCKS1",
                     description: Some("One clock cycle delay"),
                     value: 1,
@@ -1424,6 +1419,11 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "CLOCKS2",
                     description: Some("Two clock cycles delay"),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "NO_DELAY",
+                    description: Some("No clock cycle delay"),
+                    value: 0,
                 },
             ],
         },
@@ -1472,14 +1472,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE_LOW",
-                    description: Some("NWAIT active low"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "ACTIVE_HIGH",
                     description: Some("NWAIT active high"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "ACTIVE_LOW",
+                    description: Some("NWAIT active low"),
+                    value: 0,
                 },
             ],
         },

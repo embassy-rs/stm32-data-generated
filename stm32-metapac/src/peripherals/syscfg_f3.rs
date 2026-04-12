@@ -22,33 +22,33 @@ impl Syscfg {
     #[doc = "configuration register 1"]
     #[inline(always)]
     pub const fn cfgr1(self) -> crate::common::Reg<regs::Cfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "CCM SRAM protection register"]
     #[inline(always)]
     pub const fn rcr(self) -> crate::common::Reg<regs::Rcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "external interrupt configuration register"]
     #[inline(always)]
     pub const fn exticr(self, n: usize) -> crate::common::Reg<regs::Exticr, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize + n * 4usize) as _) }
     }
     #[doc = "configuration register 2"]
     #[inline(always)]
     pub const fn cfgr2(self) -> crate::common::Reg<regs::Cfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "configuration register 4"]
     #[inline(always)]
     pub const fn cfgr4(self) -> crate::common::Reg<regs::Cfgr4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
     }
     #[doc = "configuration register 3"]
     #[inline(always)]
     pub const fn cfgr3(self) -> crate::common::Reg<regs::Cfgr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
     }
 }
 pub mod regs {
@@ -58,6 +58,7 @@ pub mod regs {
     pub struct Cfgr1(pub u32);
     impl Cfgr1 {
         #[doc = "Memory mapping selection bits"]
+        #[must_use]
         #[inline(always)]
         pub const fn mem_mode(&self) -> super::vals::MemMode {
             let val = (self.0 >> 0usize) & 0x03;
@@ -65,10 +66,11 @@ pub mod regs {
         }
         #[doc = "Memory mapping selection bits"]
         #[inline(always)]
-        pub fn set_mem_mode(&mut self, val: super::vals::MemMode) {
+        pub const fn set_mem_mode(&mut self, val: super::vals::MemMode) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "USB interrupt remap 0: USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 19, 20 and 42 respectively 1: USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 74, 75 and 76 respectively"]
+        #[must_use]
         #[inline(always)]
         pub const fn usb_it_rmp(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -76,10 +78,11 @@ pub mod regs {
         }
         #[doc = "USB interrupt remap 0: USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 19, 20 and 42 respectively 1: USB_HP, USB_LP and USB_WAKEUP interrupts are mapped on interrupt lines 74, 75 and 76 respectively"]
         #[inline(always)]
-        pub fn set_usb_it_rmp(&mut self, val: bool) {
+        pub const fn set_usb_it_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Timer 1 ITR3 selection 0: Not remapped 1: TIM1_ITR3 = TIM17_OC"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim1_itr3_rmp(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -87,10 +90,11 @@ pub mod regs {
         }
         #[doc = "Timer 1 ITR3 selection 0: Not remapped 1: TIM1_ITR3 = TIM17_OC"]
         #[inline(always)]
-        pub fn set_tim1_itr3_rmp(&mut self, val: bool) {
+        pub const fn set_tim1_itr3_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "DAC trigger remap (when TSEL = 001) 0: DAC trigger is TIM8_TRGO in STM32F303xB/C and STM32F358xC devices 1: DAC trigger is TIM3_TRGO"]
+        #[must_use]
         #[inline(always)]
         pub const fn dac1_trig_rmp(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -98,10 +102,11 @@ pub mod regs {
         }
         #[doc = "DAC trigger remap (when TSEL = 001) 0: DAC trigger is TIM8_TRGO in STM32F303xB/C and STM32F358xC devices 1: DAC trigger is TIM3_TRGO"]
         #[inline(always)]
-        pub fn set_dac1_trig_rmp(&mut self, val: bool) {
+        pub const fn set_dac1_trig_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "DAC trigger remap (when TSEL = 001) 0: Not remapped 1: DAC trigger is TIM3_TRGO"]
+        #[must_use]
         #[inline(always)]
         pub const fn dac_trig_rmp(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -109,10 +114,11 @@ pub mod regs {
         }
         #[doc = "DAC trigger remap (when TSEL = 001) 0: Not remapped 1: DAC trigger is TIM3_TRGO"]
         #[inline(always)]
-        pub fn set_dac_trig_rmp(&mut self, val: bool) {
+        pub const fn set_dac_trig_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "ADC24 DMA remapping bit 0: ADC24 DMA requests mapped on DMA2 channels 1 and 2 1: ADC24 DMA requests mapped on DMA2 channels 3 and 4"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc2_dma_rmp(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -120,10 +126,11 @@ pub mod regs {
         }
         #[doc = "ADC24 DMA remapping bit 0: ADC24 DMA requests mapped on DMA2 channels 1 and 2 1: ADC24 DMA requests mapped on DMA2 channels 3 and 4"]
         #[inline(always)]
-        pub fn set_adc2_dma_rmp(&mut self, val: bool) {
+        pub const fn set_adc2_dma_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "TIM16 DMA request remapping bit 0: TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 3 1: TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 4"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim16_dma_rmp(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -131,10 +138,11 @@ pub mod regs {
         }
         #[doc = "TIM16 DMA request remapping bit 0: TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 3 1: TIM16_CH1 and TIM16_UP DMA requests mapped on DMA channel 4"]
         #[inline(always)]
-        pub fn set_tim16_dma_rmp(&mut self, val: bool) {
+        pub const fn set_tim16_dma_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "TIM17 DMA request remapping bit 0: TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 1 1: TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 2"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim17_dma_rmp(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -142,10 +150,11 @@ pub mod regs {
         }
         #[doc = "TIM17 DMA request remapping bit 0: TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 1 1: TIM17_CH1 and TIM17_UP DMA requests mapped on DMA channel 2"]
         #[inline(always)]
-        pub fn set_tim17_dma_rmp(&mut self, val: bool) {
+        pub const fn set_tim17_dma_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "TIM6 and DAC1 DMA request remapping bit 0: TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3 1: TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim6_dac1_ch1_dma_rmp(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -153,10 +162,11 @@ pub mod regs {
         }
         #[doc = "TIM6 and DAC1 DMA request remapping bit 0: TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3 1: TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3"]
         #[inline(always)]
-        pub fn set_tim6_dac1_ch1_dma_rmp(&mut self, val: bool) {
+        pub const fn set_tim6_dac1_ch1_dma_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "TIM6 and DAC1 DMA request remapping bit 0: TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3 1: TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim6_dac1_dma_rmp(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -164,10 +174,11 @@ pub mod regs {
         }
         #[doc = "TIM6 and DAC1 DMA request remapping bit 0: TIM6_UP and DAC_CH1 DMA requests mapped on DMA2 channel 3 1: TIM6_UP and DAC_CH1 DMA requests mapped on DMA1 channel 3"]
         #[inline(always)]
-        pub fn set_tim6_dac1_dma_rmp(&mut self, val: bool) {
+        pub const fn set_tim6_dac1_dma_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "TIM6 and DAC1 DMA request remapping bit 0: TIM7 and DAC1_OUT1 DMA requests mapped on DMA2 channel 3 1: TIM7 and DAC1_OUT1 DMA requests mapped on DMA1 channel 3"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim6_dac1_out1_dma_rmp(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -175,10 +186,11 @@ pub mod regs {
         }
         #[doc = "TIM6 and DAC1 DMA request remapping bit 0: TIM7 and DAC1_OUT1 DMA requests mapped on DMA2 channel 3 1: TIM7 and DAC1_OUT1 DMA requests mapped on DMA1 channel 3"]
         #[inline(always)]
-        pub fn set_tim6_dac1_out1_dma_rmp(&mut self, val: bool) {
+        pub const fn set_tim6_dac1_out1_dma_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "TIM7 and DAC2 DMA request remapping bit 0: Not remapped 1: TIM7_UP and DAC_CH2 DMA requests mapped on DMA1 channel 4"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim7_dac1_ch2_dma_rmp(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -186,10 +198,11 @@ pub mod regs {
         }
         #[doc = "TIM7 and DAC2 DMA request remapping bit 0: Not remapped 1: TIM7_UP and DAC_CH2 DMA requests mapped on DMA1 channel 4"]
         #[inline(always)]
-        pub fn set_tim7_dac1_ch2_dma_rmp(&mut self, val: bool) {
+        pub const fn set_tim7_dac1_ch2_dma_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "TIM7 and DAC2 DMA request remapping bit 0: TIM7 and DAC1_OUT2 DMA requests mapped on DMA2 channel 4 1: TIM7 and DAC1_OUT2 DMA requests mapped on DMA1 channel 4"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim7_dac1_out2_dma_rmp(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -197,10 +210,11 @@ pub mod regs {
         }
         #[doc = "TIM7 and DAC2 DMA request remapping bit 0: TIM7 and DAC1_OUT2 DMA requests mapped on DMA2 channel 4 1: TIM7 and DAC1_OUT2 DMA requests mapped on DMA1 channel 4"]
         #[inline(always)]
-        pub fn set_tim7_dac1_out2_dma_rmp(&mut self, val: bool) {
+        pub const fn set_tim7_dac1_out2_dma_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "DAC2 channel1 DMA remap 0: Not remapped 1: DAC2_CH1 DMA requests mapped on DMA1 channel 5"]
+        #[must_use]
         #[inline(always)]
         pub const fn dac2_ch1_dma_rmp(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -208,10 +222,11 @@ pub mod regs {
         }
         #[doc = "DAC2 channel1 DMA remap 0: Not remapped 1: DAC2_CH1 DMA requests mapped on DMA1 channel 5"]
         #[inline(always)]
-        pub fn set_dac2_ch1_dma_rmp(&mut self, val: bool) {
+        pub const fn set_dac2_ch1_dma_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "TIM18 and DAC2_OUT1 DMA request remapping bit 0: TIM18 and DAC2_OUT1 DMA requests mapped on DMA2 channel 5 1: TIM18 and DAC2_OUT1 DMA requests mapped on DMA1 channel 5"]
+        #[must_use]
         #[inline(always)]
         pub const fn tim18_dac2_out1_dma_rmp(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -219,10 +234,11 @@ pub mod regs {
         }
         #[doc = "TIM18 and DAC2_OUT1 DMA request remapping bit 0: TIM18 and DAC2_OUT1 DMA requests mapped on DMA2 channel 5 1: TIM18 and DAC2_OUT1 DMA requests mapped on DMA1 channel 5"]
         #[inline(always)]
-        pub fn set_tim18_dac2_out1_dma_rmp(&mut self, val: bool) {
+        pub const fn set_tim18_dac2_out1_dma_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB6 pin operate in standard mode 1: I2C FM+ mode enabled on PB6 and the Speed control is bypassed"]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c_pb6_fmp(&self) -> super::vals::Fmp {
             let val = (self.0 >> 16usize) & 0x01;
@@ -230,10 +246,11 @@ pub mod regs {
         }
         #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB6 pin operate in standard mode 1: I2C FM+ mode enabled on PB6 and the Speed control is bypassed"]
         #[inline(always)]
-        pub fn set_i2c_pb6_fmp(&mut self, val: super::vals::Fmp) {
+        pub const fn set_i2c_pb6_fmp(&mut self, val: super::vals::Fmp) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
         #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB7 pin operate in standard mode 1: I2C FM+ mode enabled on PB7 and the Speed control is bypassed"]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c_pb7_fmp(&self) -> super::vals::Fmp {
             let val = (self.0 >> 17usize) & 0x01;
@@ -241,10 +258,11 @@ pub mod regs {
         }
         #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB7 pin operate in standard mode 1: I2C FM+ mode enabled on PB7 and the Speed control is bypassed"]
         #[inline(always)]
-        pub fn set_i2c_pb7_fmp(&mut self, val: super::vals::Fmp) {
+        pub const fn set_i2c_pb7_fmp(&mut self, val: super::vals::Fmp) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
         }
         #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB8 pin operate in standard mode 1: I2C FM+ mode enabled on PB8 and the Speed control is bypassed"]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c_pb8_fmp(&self) -> super::vals::Fmp {
             let val = (self.0 >> 18usize) & 0x01;
@@ -252,10 +270,11 @@ pub mod regs {
         }
         #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB8 pin operate in standard mode 1: I2C FM+ mode enabled on PB8 and the Speed control is bypassed"]
         #[inline(always)]
-        pub fn set_i2c_pb8_fmp(&mut self, val: super::vals::Fmp) {
+        pub const fn set_i2c_pb8_fmp(&mut self, val: super::vals::Fmp) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
         }
         #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB9 pin operate in standard mode 1: I2C FM+ mode enabled on PB9 and the Speed control is bypassed"]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c_pb9_fmp(&self) -> super::vals::Fmp {
             let val = (self.0 >> 19usize) & 0x01;
@@ -263,10 +282,11 @@ pub mod regs {
         }
         #[doc = "Fast Mode Plus (FM+) driving capability activation bits. 0: PB9 pin operate in standard mode 1: I2C FM+ mode enabled on PB9 and the Speed control is bypassed"]
         #[inline(always)]
-        pub fn set_i2c_pb9_fmp(&mut self, val: super::vals::Fmp) {
+        pub const fn set_i2c_pb9_fmp(&mut self, val: super::vals::Fmp) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
         }
         #[doc = "I2C1 Fast Mode Plus 0: FM+ mode is controlled by I2C_Pxx_FMP bits only 1: FM+ mode is enabled on all I2C1 pins selected through selection through IOPORT control registers AF selection bits"]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c1_fmp(&self) -> super::vals::Fmp {
             let val = (self.0 >> 20usize) & 0x01;
@@ -274,10 +294,11 @@ pub mod regs {
         }
         #[doc = "I2C1 Fast Mode Plus 0: FM+ mode is controlled by I2C_Pxx_FMP bits only 1: FM+ mode is enabled on all I2C1 pins selected through selection through IOPORT control registers AF selection bits"]
         #[inline(always)]
-        pub fn set_i2c1_fmp(&mut self, val: super::vals::Fmp) {
+        pub const fn set_i2c1_fmp(&mut self, val: super::vals::Fmp) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
         }
         #[doc = "I2C2 Fast Mode Plus 0: FM+ mode is controlled by I2C_Pxx_FMP bits only 1: FM+ mode is enabled on all I2C2 pins selected through selection through IOPORT control registers AF selection bits"]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c2_fmp(&self) -> super::vals::Fmp {
             let val = (self.0 >> 21usize) & 0x01;
@@ -285,10 +306,11 @@ pub mod regs {
         }
         #[doc = "I2C2 Fast Mode Plus 0: FM+ mode is controlled by I2C_Pxx_FMP bits only 1: FM+ mode is enabled on all I2C2 pins selected through selection through IOPORT control registers AF selection bits"]
         #[inline(always)]
-        pub fn set_i2c2_fmp(&mut self, val: super::vals::Fmp) {
+        pub const fn set_i2c2_fmp(&mut self, val: super::vals::Fmp) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
         }
         #[doc = "Encoder mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn encoder_mode(&self) -> super::vals::EncoderMode {
             let val = (self.0 >> 22usize) & 0x03;
@@ -296,10 +318,11 @@ pub mod regs {
         }
         #[doc = "Encoder mode"]
         #[inline(always)]
-        pub fn set_encoder_mode(&mut self, val: super::vals::EncoderMode) {
+        pub const fn set_encoder_mode(&mut self, val: super::vals::EncoderMode) {
             self.0 = (self.0 & !(0x03 << 22usize)) | (((val.to_bits() as u32) & 0x03) << 22usize);
         }
         #[doc = "I2C3 Fast Mode Plus 0: FM+ mode is controlled by I2C_Pxx_FMP bits only 1: FM+ mode is enabled on all I2C3 pins selected through selection trhough IOPORT control registers AF selection bits"]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c3_fmp(&self) -> super::vals::Fmp {
             let val = (self.0 >> 24usize) & 0x01;
@@ -307,10 +330,11 @@ pub mod regs {
         }
         #[doc = "I2C3 Fast Mode Plus 0: FM+ mode is controlled by I2C_Pxx_FMP bits only 1: FM+ mode is enabled on all I2C3 pins selected through selection trhough IOPORT control registers AF selection bits"]
         #[inline(always)]
-        pub fn set_i2c3_fmp(&mut self, val: super::vals::Fmp) {
+        pub const fn set_i2c3_fmp(&mut self, val: super::vals::Fmp) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
         }
         #[doc = "Enable the power switch to deliver VBAT voltage on ADC channel 18 input"]
+        #[must_use]
         #[inline(always)]
         pub const fn vbat_mon(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -318,10 +342,11 @@ pub mod regs {
         }
         #[doc = "Enable the power switch to deliver VBAT voltage on ADC channel 18 input"]
         #[inline(always)]
-        pub fn set_vbat_mon(&mut self, val: bool) {
+        pub const fn set_vbat_mon(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "Idx 0: Invalid operation interrupt enable; Idx 1: Devide-by-zero interrupt enable; Idx 2: Underflow interrupt enable; Idx 3: Overflow interrupt enable; Idx 4: Input denormal interrupt enable; Idx 5: Inexact interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn fpu_ie(&self, n: usize) -> bool {
             assert!(n < 6usize);
@@ -331,7 +356,7 @@ pub mod regs {
         }
         #[doc = "Idx 0: Invalid operation interrupt enable; Idx 1: Devide-by-zero interrupt enable; Idx 2: Underflow interrupt enable; Idx 3: Overflow interrupt enable; Idx 4: Input denormal interrupt enable; Idx 5: Inexact interrupt enable"]
         #[inline(always)]
-        pub fn set_fpu_ie(&mut self, n: usize, val: bool) {
+        pub const fn set_fpu_ie(&mut self, n: usize, val: bool) {
             assert!(n < 6usize);
             let offs = 26usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -391,6 +416,7 @@ pub mod regs {
     pub struct Cfgr2(pub u32);
     impl Cfgr2 {
         #[doc = "Cortex-M0 LOCKUP bit enable bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn lockup_lock(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -398,10 +424,11 @@ pub mod regs {
         }
         #[doc = "Cortex-M0 LOCKUP bit enable bit"]
         #[inline(always)]
-        pub fn set_lockup_lock(&mut self, val: bool) {
+        pub const fn set_lockup_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "SRAM parity lock bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn sram_parity_lock(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -409,10 +436,11 @@ pub mod regs {
         }
         #[doc = "SRAM parity lock bit"]
         #[inline(always)]
-        pub fn set_sram_parity_lock(&mut self, val: bool) {
+        pub const fn set_sram_parity_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "PVD lock enable bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn pvd_lock(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -420,10 +448,11 @@ pub mod regs {
         }
         #[doc = "PVD lock enable bit"]
         #[inline(always)]
-        pub fn set_pvd_lock(&mut self, val: bool) {
+        pub const fn set_pvd_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Bypass address bit 29 in parity calculation"]
+        #[must_use]
         #[inline(always)]
         pub const fn byp_addr_par(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -431,10 +460,11 @@ pub mod regs {
         }
         #[doc = "Bypass address bit 29 in parity calculation"]
         #[inline(always)]
-        pub fn set_byp_addr_par(&mut self, val: bool) {
+        pub const fn set_byp_addr_par(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "SRAM parity flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn sram_pef(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -442,7 +472,7 @@ pub mod regs {
         }
         #[doc = "SRAM parity flag"]
         #[inline(always)]
-        pub fn set_sram_pef(&mut self, val: bool) {
+        pub const fn set_sram_pef(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
@@ -475,6 +505,7 @@ pub mod regs {
     pub struct Cfgr3(pub u32);
     impl Cfgr3 {
         #[doc = "SPI1_RX DMA remapping bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn spi1_rx_dma_rmp(&self) -> super::vals::Spi1RxDmaRmp {
             let val = (self.0 >> 0usize) & 0x03;
@@ -482,10 +513,11 @@ pub mod regs {
         }
         #[doc = "SPI1_RX DMA remapping bit"]
         #[inline(always)]
-        pub fn set_spi1_rx_dma_rmp(&mut self, val: super::vals::Spi1RxDmaRmp) {
+        pub const fn set_spi1_rx_dma_rmp(&mut self, val: super::vals::Spi1RxDmaRmp) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "SPI1_TX DMA remapping bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn spi1_tx_dma_rmp(&self) -> super::vals::Spi1TxDmaRmp {
             let val = (self.0 >> 2usize) & 0x03;
@@ -493,10 +525,11 @@ pub mod regs {
         }
         #[doc = "SPI1_TX DMA remapping bit"]
         #[inline(always)]
-        pub fn set_spi1_tx_dma_rmp(&mut self, val: super::vals::Spi1TxDmaRmp) {
+        pub const fn set_spi1_tx_dma_rmp(&mut self, val: super::vals::Spi1TxDmaRmp) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
         #[doc = "I2C1_RX DMA remapping bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c1_rx_dma_rmp(&self) -> super::vals::I2c1RxDmaRmp {
             let val = (self.0 >> 4usize) & 0x03;
@@ -504,10 +537,11 @@ pub mod regs {
         }
         #[doc = "I2C1_RX DMA remapping bit"]
         #[inline(always)]
-        pub fn set_i2c1_rx_dma_rmp(&mut self, val: super::vals::I2c1RxDmaRmp) {
+        pub const fn set_i2c1_rx_dma_rmp(&mut self, val: super::vals::I2c1RxDmaRmp) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "I2C1_TX DMA remapping bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c1_tx_dma_rmp(&self) -> super::vals::I2c1TxDmaRmp {
             let val = (self.0 >> 6usize) & 0x03;
@@ -515,10 +549,11 @@ pub mod regs {
         }
         #[doc = "I2C1_TX DMA remapping bit"]
         #[inline(always)]
-        pub fn set_i2c1_tx_dma_rmp(&mut self, val: super::vals::I2c1TxDmaRmp) {
+        pub const fn set_i2c1_tx_dma_rmp(&mut self, val: super::vals::I2c1TxDmaRmp) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
         }
         #[doc = "ADC2 DMA remapping bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc2_dma_rmp(&self) -> super::vals::Adc2DmaRmpCfgr3 {
             let val = (self.0 >> 8usize) & 0x03;
@@ -526,10 +561,11 @@ pub mod regs {
         }
         #[doc = "ADC2 DMA remapping bit"]
         #[inline(always)]
-        pub fn set_adc2_dma_rmp(&mut self, val: super::vals::Adc2DmaRmpCfgr3) {
+        pub const fn set_adc2_dma_rmp(&mut self, val: super::vals::Adc2DmaRmpCfgr3) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
         #[doc = "DAC1_CH1 / DAC1_CH2 Trigger remap"]
+        #[must_use]
         #[inline(always)]
         pub const fn dac1_trig3_rmp(&self) -> super::vals::Dac1Trig3Rmp {
             let val = (self.0 >> 16usize) & 0x01;
@@ -537,10 +573,11 @@ pub mod regs {
         }
         #[doc = "DAC1_CH1 / DAC1_CH2 Trigger remap"]
         #[inline(always)]
-        pub fn set_dac1_trig3_rmp(&mut self, val: super::vals::Dac1Trig3Rmp) {
+        pub const fn set_dac1_trig3_rmp(&mut self, val: super::vals::Dac1Trig3Rmp) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
         #[doc = "DAC1_CH1 / DAC1_CH2 Trigger remap 0: Not remapped 1: DAC trigger is HRTIM1_DAC1_TRIG2"]
+        #[must_use]
         #[inline(always)]
         pub const fn dac1_trig5_rmp(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -548,7 +585,7 @@ pub mod regs {
         }
         #[doc = "DAC1_CH1 / DAC1_CH2 Trigger remap 0: Not remapped 1: DAC trigger is HRTIM1_DAC1_TRIG2"]
         #[inline(always)]
-        pub fn set_dac1_trig5_rmp(&mut self, val: bool) {
+        pub const fn set_dac1_trig5_rmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
     }
@@ -583,6 +620,7 @@ pub mod regs {
     pub struct Cfgr4(pub u32);
     impl Cfgr4 {
         #[doc = "Controls the Input trigger of ADC12 regular channel EXT2"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc12_ext2_rmp(&self) -> super::vals::Adc12Ext2Rmp {
             let val = (self.0 >> 0usize) & 0x01;
@@ -590,10 +628,11 @@ pub mod regs {
         }
         #[doc = "Controls the Input trigger of ADC12 regular channel EXT2"]
         #[inline(always)]
-        pub fn set_adc12_ext2_rmp(&mut self, val: super::vals::Adc12Ext2Rmp) {
+        pub const fn set_adc12_ext2_rmp(&mut self, val: super::vals::Adc12Ext2Rmp) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
         #[doc = "Controls the Input trigger of ADC12 regular channel EXT3"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc12_ext3_rmp(&self) -> super::vals::Adc12Ext3Rmp {
             let val = (self.0 >> 1usize) & 0x01;
@@ -601,10 +640,11 @@ pub mod regs {
         }
         #[doc = "Controls the Input trigger of ADC12 regular channel EXT3"]
         #[inline(always)]
-        pub fn set_adc12_ext3_rmp(&mut self, val: super::vals::Adc12Ext3Rmp) {
+        pub const fn set_adc12_ext3_rmp(&mut self, val: super::vals::Adc12Ext3Rmp) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "Controls the Input trigger of ADC12 regular channel EXT5"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc12_ext5_rmp(&self) -> super::vals::Adc12Ext5Rmp {
             let val = (self.0 >> 2usize) & 0x01;
@@ -612,10 +652,11 @@ pub mod regs {
         }
         #[doc = "Controls the Input trigger of ADC12 regular channel EXT5"]
         #[inline(always)]
-        pub fn set_adc12_ext5_rmp(&mut self, val: super::vals::Adc12Ext5Rmp) {
+        pub const fn set_adc12_ext5_rmp(&mut self, val: super::vals::Adc12Ext5Rmp) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "Controls the Input trigger of ADC12 regular channel EXT13"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc12_ext13_rmp(&self) -> super::vals::Adc12Ext13Rmp {
             let val = (self.0 >> 3usize) & 0x01;
@@ -623,10 +664,11 @@ pub mod regs {
         }
         #[doc = "Controls the Input trigger of ADC12 regular channel EXT13"]
         #[inline(always)]
-        pub fn set_adc12_ext13_rmp(&mut self, val: super::vals::Adc12Ext13Rmp) {
+        pub const fn set_adc12_ext13_rmp(&mut self, val: super::vals::Adc12Ext13Rmp) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
         }
         #[doc = "Controls the Input trigger of ADC12 regular channel EXT15"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc12_ext15_rmp(&self) -> super::vals::Adc12Ext15Rmp {
             let val = (self.0 >> 4usize) & 0x01;
@@ -634,10 +676,11 @@ pub mod regs {
         }
         #[doc = "Controls the Input trigger of ADC12 regular channel EXT15"]
         #[inline(always)]
-        pub fn set_adc12_ext15_rmp(&mut self, val: super::vals::Adc12Ext15Rmp) {
+        pub const fn set_adc12_ext15_rmp(&mut self, val: super::vals::Adc12Ext15Rmp) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
         #[doc = "Controls the Input trigger of ADC12 injected channel JEXT3"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc12_jext3_rmp(&self) -> super::vals::Adc12Jext3Rmp {
             let val = (self.0 >> 5usize) & 0x01;
@@ -645,10 +688,11 @@ pub mod regs {
         }
         #[doc = "Controls the Input trigger of ADC12 injected channel JEXT3"]
         #[inline(always)]
-        pub fn set_adc12_jext3_rmp(&mut self, val: super::vals::Adc12Jext3Rmp) {
+        pub const fn set_adc12_jext3_rmp(&mut self, val: super::vals::Adc12Jext3Rmp) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
         #[doc = "Controls the Input trigger of ADC12 injected channel JEXT6"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc12_jext6_rmp(&self) -> super::vals::Adc12Jext6Rmp {
             let val = (self.0 >> 6usize) & 0x01;
@@ -656,10 +700,11 @@ pub mod regs {
         }
         #[doc = "Controls the Input trigger of ADC12 injected channel JEXT6"]
         #[inline(always)]
-        pub fn set_adc12_jext6_rmp(&mut self, val: super::vals::Adc12Jext6Rmp) {
+        pub const fn set_adc12_jext6_rmp(&mut self, val: super::vals::Adc12Jext6Rmp) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
         }
         #[doc = "Controls the Input trigger of ADC12 injected channel JEXT13"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc12_jext13_rmp(&self) -> super::vals::Adc12Jext13Rmp {
             let val = (self.0 >> 7usize) & 0x01;
@@ -667,10 +712,11 @@ pub mod regs {
         }
         #[doc = "Controls the Input trigger of ADC12 injected channel JEXT13"]
         #[inline(always)]
-        pub fn set_adc12_jext13_rmp(&mut self, val: super::vals::Adc12Jext13Rmp) {
+        pub const fn set_adc12_jext13_rmp(&mut self, val: super::vals::Adc12Jext13Rmp) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
         }
         #[doc = "Controls the Input trigger of ADC34 regular channel EXT5"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc34_ext5_rmp(&self) -> super::vals::Adc34Ext5Rmp {
             let val = (self.0 >> 8usize) & 0x01;
@@ -678,10 +724,11 @@ pub mod regs {
         }
         #[doc = "Controls the Input trigger of ADC34 regular channel EXT5"]
         #[inline(always)]
-        pub fn set_adc34_ext5_rmp(&mut self, val: super::vals::Adc34Ext5Rmp) {
+        pub const fn set_adc34_ext5_rmp(&mut self, val: super::vals::Adc34Ext5Rmp) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
         }
         #[doc = "Controls the Input trigger of ADC34 regular channel EXT6"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc34_ext6_rmp(&self) -> super::vals::Adc34Ext6Rmp {
             let val = (self.0 >> 9usize) & 0x01;
@@ -689,10 +736,11 @@ pub mod regs {
         }
         #[doc = "Controls the Input trigger of ADC34 regular channel EXT6"]
         #[inline(always)]
-        pub fn set_adc34_ext6_rmp(&mut self, val: super::vals::Adc34Ext6Rmp) {
+        pub const fn set_adc34_ext6_rmp(&mut self, val: super::vals::Adc34Ext6Rmp) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
         }
         #[doc = "Controls the Input trigger of ADC34 regular channel EXT15"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc34_ext15_rmp(&self) -> super::vals::Adc34Ext15Rmp {
             let val = (self.0 >> 10usize) & 0x01;
@@ -700,10 +748,11 @@ pub mod regs {
         }
         #[doc = "Controls the Input trigger of ADC34 regular channel EXT15"]
         #[inline(always)]
-        pub fn set_adc34_ext15_rmp(&mut self, val: super::vals::Adc34Ext15Rmp) {
+        pub const fn set_adc34_ext15_rmp(&mut self, val: super::vals::Adc34Ext15Rmp) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
         }
         #[doc = "Controls the Input trigger of ADC34 injected channel JEXT5"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc34_jext5_rmp(&self) -> super::vals::Adc34Jext5Rmp {
             let val = (self.0 >> 11usize) & 0x01;
@@ -711,10 +760,11 @@ pub mod regs {
         }
         #[doc = "Controls the Input trigger of ADC34 injected channel JEXT5"]
         #[inline(always)]
-        pub fn set_adc34_jext5_rmp(&mut self, val: super::vals::Adc34Jext5Rmp) {
+        pub const fn set_adc34_jext5_rmp(&mut self, val: super::vals::Adc34Jext5Rmp) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
         }
         #[doc = "Controls the Input trigger of ADC34 injected channel JEXT11"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc34_jext11_rmp(&self) -> super::vals::Adc34Jext11Rmp {
             let val = (self.0 >> 12usize) & 0x01;
@@ -722,10 +772,11 @@ pub mod regs {
         }
         #[doc = "Controls the Input trigger of ADC34 injected channel JEXT11"]
         #[inline(always)]
-        pub fn set_adc34_jext11_rmp(&mut self, val: super::vals::Adc34Jext11Rmp) {
+        pub const fn set_adc34_jext11_rmp(&mut self, val: super::vals::Adc34Jext11Rmp) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
         }
         #[doc = "Controls the Input trigger of ADC34 injected channel JEXT14"]
+        #[must_use]
         #[inline(always)]
         pub const fn adc34_jext14_rmp(&self) -> super::vals::Adc34Jext14Rmp {
             let val = (self.0 >> 13usize) & 0x01;
@@ -733,7 +784,7 @@ pub mod regs {
         }
         #[doc = "Controls the Input trigger of ADC34 injected channel JEXT14"]
         #[inline(always)]
-        pub fn set_adc34_jext14_rmp(&mut self, val: super::vals::Adc34Jext14Rmp) {
+        pub const fn set_adc34_jext14_rmp(&mut self, val: super::vals::Adc34Jext14Rmp) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
         }
     }
@@ -775,6 +826,7 @@ pub mod regs {
     pub struct Exticr(pub u32);
     impl Exticr {
         #[doc = "EXTI x configuration"]
+        #[must_use]
         #[inline(always)]
         pub const fn exti(&self, n: usize) -> u8 {
             assert!(n < 4usize);
@@ -784,7 +836,7 @@ pub mod regs {
         }
         #[doc = "EXTI x configuration"]
         #[inline(always)]
-        pub fn set_exti(&mut self, n: usize, val: u8) {
+        pub const fn set_exti(&mut self, n: usize, val: u8) {
             assert!(n < 4usize);
             let offs = 0usize + n * 4usize;
             self.0 = (self.0 & !(0x0f << offs)) | (((val as u32) & 0x0f) << offs);
@@ -825,6 +877,7 @@ pub mod regs {
     pub struct Rcr(pub u32);
     impl Rcr {
         #[doc = "CCM SRAM page x write protection enabled"]
+        #[must_use]
         #[inline(always)]
         pub const fn page_wp(&self, n: usize) -> bool {
             assert!(n < 16usize);
@@ -834,7 +887,7 @@ pub mod regs {
         }
         #[doc = "CCM SRAM page x write protection enabled"]
         #[inline(always)]
-        pub fn set_page_wp(&mut self, n: usize, val: bool) {
+        pub const fn set_page_wp(&mut self, n: usize, val: bool) {
             assert!(n < 16usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);

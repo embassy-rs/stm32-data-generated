@@ -22,81 +22,81 @@ impl Can {
     #[doc = "master control register"]
     #[inline(always)]
     pub const fn mcr(self) -> crate::common::Reg<regs::Mcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "master status register"]
     #[inline(always)]
     pub const fn msr(self) -> crate::common::Reg<regs::Msr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "transmit status register"]
     #[inline(always)]
     pub const fn tsr(self) -> crate::common::Reg<regs::Tsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "receive FIFO 0 register"]
     #[inline(always)]
     pub const fn rfr(self, n: usize) -> crate::common::Reg<regs::Rfr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize + n * 4usize) as _) }
     }
     #[doc = "interrupt enable register"]
     #[inline(always)]
     pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "error status register"]
     #[inline(always)]
     pub const fn esr(self) -> crate::common::Reg<regs::Esr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "bit timing register"]
     #[inline(always)]
     pub const fn btr(self) -> crate::common::Reg<regs::Btr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "CAN Transmit cluster"]
     #[inline(always)]
     pub const fn tx(self, n: usize) -> Tx {
         assert!(n < 3usize);
-        unsafe { Tx::from_ptr(self.ptr.add(0x0180usize + n * 16usize) as _) }
+        unsafe { Tx::from_ptr(self.ptr.wrapping_add(0x0180usize + n * 16usize) as _) }
     }
     #[doc = "CAN Receive cluster"]
     #[inline(always)]
     pub const fn rx(self, n: usize) -> Rx {
         assert!(n < 2usize);
-        unsafe { Rx::from_ptr(self.ptr.add(0x01b0usize + n * 16usize) as _) }
+        unsafe { Rx::from_ptr(self.ptr.wrapping_add(0x01b0usize + n * 16usize) as _) }
     }
     #[doc = "filter master register"]
     #[inline(always)]
     pub const fn fmr(self) -> crate::common::Reg<regs::Fmr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0200usize) as _) }
     }
     #[doc = "filter mode register"]
     #[inline(always)]
     pub const fn fm1r(self) -> crate::common::Reg<regs::Fm1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0204usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0204usize) as _) }
     }
     #[doc = "filter scale register"]
     #[inline(always)]
     pub const fn fs1r(self) -> crate::common::Reg<regs::Fs1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x020cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x020cusize) as _) }
     }
     #[doc = "filter FIFO assignment register"]
     #[inline(always)]
     pub const fn ffa1r(self) -> crate::common::Reg<regs::Ffa1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0214usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0214usize) as _) }
     }
     #[doc = "filter activation register"]
     #[inline(always)]
     pub const fn fa1r(self) -> crate::common::Reg<regs::Fa1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x021cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x021cusize) as _) }
     }
     #[doc = "CAN Filter Bank cluster"]
     #[inline(always)]
     pub const fn fb(self, n: usize) -> Fb {
         assert!(n < 28usize);
-        unsafe { Fb::from_ptr(self.ptr.add(0x0240usize + n * 8usize) as _) }
+        unsafe { Fb::from_ptr(self.ptr.wrapping_add(0x0240usize + n * 8usize) as _) }
     }
 }
 #[doc = "CAN Filter Bank cluster"]
@@ -118,12 +118,12 @@ impl Fb {
     #[doc = "Filter bank 0 register 1"]
     #[inline(always)]
     pub const fn fr1(self) -> crate::common::Reg<regs::Fr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Filter bank 0 register 2"]
     #[inline(always)]
     pub const fn fr2(self) -> crate::common::Reg<regs::Fr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
 }
 #[doc = "CAN Receive cluster"]
@@ -145,22 +145,22 @@ impl Rx {
     #[doc = "receive FIFO mailbox identifier register"]
     #[inline(always)]
     pub const fn rir(self) -> crate::common::Reg<regs::Rir, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "mailbox data high register"]
     #[inline(always)]
     pub const fn rdtr(self) -> crate::common::Reg<regs::Rdtr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "mailbox data high register"]
     #[inline(always)]
     pub const fn rdlr(self) -> crate::common::Reg<regs::Rdlr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "receive FIFO mailbox data high register"]
     #[inline(always)]
     pub const fn rdhr(self) -> crate::common::Reg<regs::Rdhr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
 }
 #[doc = "CAN Transmit cluster"]
@@ -182,22 +182,22 @@ impl Tx {
     #[doc = "TX mailbox identifier register"]
     #[inline(always)]
     pub const fn tir(self) -> crate::common::Reg<regs::Tir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "mailbox data length control and time stamp register"]
     #[inline(always)]
     pub const fn tdtr(self) -> crate::common::Reg<regs::Tdtr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "mailbox data low register"]
     #[inline(always)]
     pub const fn tdlr(self) -> crate::common::Reg<regs::Tdlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "mailbox data high register"]
     #[inline(always)]
     pub const fn tdhr(self) -> crate::common::Reg<regs::Tdhr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
 }
 pub mod regs {
@@ -207,6 +207,7 @@ pub mod regs {
     pub struct Btr(pub u32);
     impl Btr {
         #[doc = "BRP"]
+        #[must_use]
         #[inline(always)]
         pub const fn brp(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x03ff;
@@ -214,10 +215,11 @@ pub mod regs {
         }
         #[doc = "BRP"]
         #[inline(always)]
-        pub fn set_brp(&mut self, val: u16) {
+        pub const fn set_brp(&mut self, val: u16) {
             self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
         }
         #[doc = "TS1"]
+        #[must_use]
         #[inline(always)]
         pub const fn ts(&self, n: usize) -> u8 {
             assert!(n < 2usize);
@@ -227,12 +229,13 @@ pub mod regs {
         }
         #[doc = "TS1"]
         #[inline(always)]
-        pub fn set_ts(&mut self, n: usize, val: u8) {
+        pub const fn set_ts(&mut self, n: usize, val: u8) {
             assert!(n < 2usize);
             let offs = 16usize + n * 4usize;
             self.0 = (self.0 & !(0x0f << offs)) | (((val as u32) & 0x0f) << offs);
         }
         #[doc = "SJW"]
+        #[must_use]
         #[inline(always)]
         pub const fn sjw(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x03;
@@ -240,10 +243,11 @@ pub mod regs {
         }
         #[doc = "SJW"]
         #[inline(always)]
-        pub fn set_sjw(&mut self, val: u8) {
+        pub const fn set_sjw(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 24usize)) | (((val as u32) & 0x03) << 24usize);
         }
         #[doc = "Loop Back Mode enabled"]
+        #[must_use]
         #[inline(always)]
         pub const fn lbkm(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -251,10 +255,11 @@ pub mod regs {
         }
         #[doc = "Loop Back Mode enabled"]
         #[inline(always)]
-        pub fn set_lbkm(&mut self, val: bool) {
+        pub const fn set_lbkm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "SILM"]
+        #[must_use]
         #[inline(always)]
         pub const fn silm(&self) -> super::vals::Silm {
             let val = (self.0 >> 31usize) & 0x01;
@@ -262,7 +267,7 @@ pub mod regs {
         }
         #[doc = "SILM"]
         #[inline(always)]
-        pub fn set_silm(&mut self, val: super::vals::Silm) {
+        pub const fn set_silm(&mut self, val: super::vals::Silm) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
         }
     }
@@ -305,6 +310,7 @@ pub mod regs {
     pub struct Esr(pub u32);
     impl Esr {
         #[doc = "EWGF"]
+        #[must_use]
         #[inline(always)]
         pub const fn ewgf(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -312,10 +318,11 @@ pub mod regs {
         }
         #[doc = "EWGF"]
         #[inline(always)]
-        pub fn set_ewgf(&mut self, val: bool) {
+        pub const fn set_ewgf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "EPVF"]
+        #[must_use]
         #[inline(always)]
         pub const fn epvf(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -323,10 +330,11 @@ pub mod regs {
         }
         #[doc = "EPVF"]
         #[inline(always)]
-        pub fn set_epvf(&mut self, val: bool) {
+        pub const fn set_epvf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "BOFF"]
+        #[must_use]
         #[inline(always)]
         pub const fn boff(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -334,10 +342,11 @@ pub mod regs {
         }
         #[doc = "BOFF"]
         #[inline(always)]
-        pub fn set_boff(&mut self, val: bool) {
+        pub const fn set_boff(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "LEC"]
+        #[must_use]
         #[inline(always)]
         pub const fn lec(&self) -> super::vals::Lec {
             let val = (self.0 >> 4usize) & 0x07;
@@ -345,10 +354,11 @@ pub mod regs {
         }
         #[doc = "LEC"]
         #[inline(always)]
-        pub fn set_lec(&mut self, val: super::vals::Lec) {
+        pub const fn set_lec(&mut self, val: super::vals::Lec) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
         }
         #[doc = "TEC"]
+        #[must_use]
         #[inline(always)]
         pub const fn tec(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
@@ -356,10 +366,11 @@ pub mod regs {
         }
         #[doc = "TEC"]
         #[inline(always)]
-        pub fn set_tec(&mut self, val: u8) {
+        pub const fn set_tec(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
         #[doc = "REC"]
+        #[must_use]
         #[inline(always)]
         pub const fn rec(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0xff;
@@ -367,7 +378,7 @@ pub mod regs {
         }
         #[doc = "REC"]
         #[inline(always)]
-        pub fn set_rec(&mut self, val: u8) {
+        pub const fn set_rec(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 24usize)) | (((val as u32) & 0xff) << 24usize);
         }
     }
@@ -410,6 +421,7 @@ pub mod regs {
     pub struct Fa1r(pub u32);
     impl Fa1r {
         #[doc = "Filter active"]
+        #[must_use]
         #[inline(always)]
         pub const fn fact(&self, n: usize) -> bool {
             assert!(n < 28usize);
@@ -419,7 +431,7 @@ pub mod regs {
         }
         #[doc = "Filter active"]
         #[inline(always)]
-        pub fn set_fact(&mut self, n: usize, val: bool) {
+        pub const fn set_fact(&mut self, n: usize, val: bool) {
             assert!(n < 28usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -477,6 +489,7 @@ pub mod regs {
     pub struct Ffa1r(pub u32);
     impl Ffa1r {
         #[doc = "Filter FIFO assignment for filter 0"]
+        #[must_use]
         #[inline(always)]
         pub const fn ffa(&self, n: usize) -> bool {
             assert!(n < 28usize);
@@ -486,7 +499,7 @@ pub mod regs {
         }
         #[doc = "Filter FIFO assignment for filter 0"]
         #[inline(always)]
-        pub fn set_ffa(&mut self, n: usize, val: bool) {
+        pub const fn set_ffa(&mut self, n: usize, val: bool) {
             assert!(n < 28usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -544,6 +557,7 @@ pub mod regs {
     pub struct Fm1r(pub u32);
     impl Fm1r {
         #[doc = "Filter mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn fbm(&self, n: usize) -> bool {
             assert!(n < 28usize);
@@ -553,7 +567,7 @@ pub mod regs {
         }
         #[doc = "Filter mode"]
         #[inline(always)]
-        pub fn set_fbm(&mut self, n: usize, val: bool) {
+        pub const fn set_fbm(&mut self, n: usize, val: bool) {
             assert!(n < 28usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -611,6 +625,7 @@ pub mod regs {
     pub struct Fmr(pub u32);
     impl Fmr {
         #[doc = "FINIT"]
+        #[must_use]
         #[inline(always)]
         pub const fn finit(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -618,10 +633,11 @@ pub mod regs {
         }
         #[doc = "FINIT"]
         #[inline(always)]
-        pub fn set_finit(&mut self, val: bool) {
+        pub const fn set_finit(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "CAN2SB"]
+        #[must_use]
         #[inline(always)]
         pub const fn can2sb(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x3f;
@@ -629,7 +645,7 @@ pub mod regs {
         }
         #[doc = "CAN2SB"]
         #[inline(always)]
-        pub fn set_can2sb(&mut self, val: u8) {
+        pub const fn set_can2sb(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 8usize)) | (((val as u32) & 0x3f) << 8usize);
         }
     }
@@ -664,6 +680,7 @@ pub mod regs {
     pub struct Fr1(pub u32);
     impl Fr1 {
         #[doc = "Filter bits"]
+        #[must_use]
         #[inline(always)]
         pub const fn fb(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -673,7 +690,7 @@ pub mod regs {
         }
         #[doc = "Filter bits"]
         #[inline(always)]
-        pub fn set_fb(&mut self, n: usize, val: bool) {
+        pub const fn set_fb(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -735,6 +752,7 @@ pub mod regs {
     pub struct Fr2(pub u32);
     impl Fr2 {
         #[doc = "Filter bits"]
+        #[must_use]
         #[inline(always)]
         pub const fn fb(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -744,7 +762,7 @@ pub mod regs {
         }
         #[doc = "Filter bits"]
         #[inline(always)]
-        pub fn set_fb(&mut self, n: usize, val: bool) {
+        pub const fn set_fb(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -806,6 +824,7 @@ pub mod regs {
     pub struct Fs1r(pub u32);
     impl Fs1r {
         #[doc = "Filter scale configuration"]
+        #[must_use]
         #[inline(always)]
         pub const fn fsc(&self, n: usize) -> bool {
             assert!(n < 28usize);
@@ -815,7 +834,7 @@ pub mod regs {
         }
         #[doc = "Filter scale configuration"]
         #[inline(always)]
-        pub fn set_fsc(&mut self, n: usize, val: bool) {
+        pub const fn set_fsc(&mut self, n: usize, val: bool) {
             assert!(n < 28usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -873,6 +892,7 @@ pub mod regs {
     pub struct Ier(pub u32);
     impl Ier {
         #[doc = "TMEIE"]
+        #[must_use]
         #[inline(always)]
         pub const fn tmeie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -880,10 +900,11 @@ pub mod regs {
         }
         #[doc = "TMEIE"]
         #[inline(always)]
-        pub fn set_tmeie(&mut self, val: bool) {
+        pub const fn set_tmeie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "FMPIE0"]
+        #[must_use]
         #[inline(always)]
         pub const fn fmpie(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -893,12 +914,13 @@ pub mod regs {
         }
         #[doc = "FMPIE0"]
         #[inline(always)]
-        pub fn set_fmpie(&mut self, n: usize, val: bool) {
+        pub const fn set_fmpie(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 1usize + n * 3usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "FFIE0"]
+        #[must_use]
         #[inline(always)]
         pub const fn ffie(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -908,12 +930,13 @@ pub mod regs {
         }
         #[doc = "FFIE0"]
         #[inline(always)]
-        pub fn set_ffie(&mut self, n: usize, val: bool) {
+        pub const fn set_ffie(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 2usize + n * 3usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "FOVIE0"]
+        #[must_use]
         #[inline(always)]
         pub const fn fovie(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -923,12 +946,13 @@ pub mod regs {
         }
         #[doc = "FOVIE0"]
         #[inline(always)]
-        pub fn set_fovie(&mut self, n: usize, val: bool) {
+        pub const fn set_fovie(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 3usize + n * 3usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "EWGIE"]
+        #[must_use]
         #[inline(always)]
         pub const fn ewgie(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -936,10 +960,11 @@ pub mod regs {
         }
         #[doc = "EWGIE"]
         #[inline(always)]
-        pub fn set_ewgie(&mut self, val: bool) {
+        pub const fn set_ewgie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "EPVIE"]
+        #[must_use]
         #[inline(always)]
         pub const fn epvie(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -947,10 +972,11 @@ pub mod regs {
         }
         #[doc = "EPVIE"]
         #[inline(always)]
-        pub fn set_epvie(&mut self, val: bool) {
+        pub const fn set_epvie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "BOFIE"]
+        #[must_use]
         #[inline(always)]
         pub const fn bofie(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -958,10 +984,11 @@ pub mod regs {
         }
         #[doc = "BOFIE"]
         #[inline(always)]
-        pub fn set_bofie(&mut self, val: bool) {
+        pub const fn set_bofie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "LECIE"]
+        #[must_use]
         #[inline(always)]
         pub const fn lecie(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -969,10 +996,11 @@ pub mod regs {
         }
         #[doc = "LECIE"]
         #[inline(always)]
-        pub fn set_lecie(&mut self, val: bool) {
+        pub const fn set_lecie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "ERRIE"]
+        #[must_use]
         #[inline(always)]
         pub const fn errie(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -980,10 +1008,11 @@ pub mod regs {
         }
         #[doc = "ERRIE"]
         #[inline(always)]
-        pub fn set_errie(&mut self, val: bool) {
+        pub const fn set_errie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "WKUIE"]
+        #[must_use]
         #[inline(always)]
         pub const fn wkuie(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -991,10 +1020,11 @@ pub mod regs {
         }
         #[doc = "WKUIE"]
         #[inline(always)]
-        pub fn set_wkuie(&mut self, val: bool) {
+        pub const fn set_wkuie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "SLKIE"]
+        #[must_use]
         #[inline(always)]
         pub const fn slkie(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -1002,7 +1032,7 @@ pub mod regs {
         }
         #[doc = "SLKIE"]
         #[inline(always)]
-        pub fn set_slkie(&mut self, val: bool) {
+        pub const fn set_slkie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
     }
@@ -1044,6 +1074,7 @@ pub mod regs {
     pub struct Mcr(pub u32);
     impl Mcr {
         #[doc = "INRQ"]
+        #[must_use]
         #[inline(always)]
         pub const fn inrq(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1051,10 +1082,11 @@ pub mod regs {
         }
         #[doc = "INRQ"]
         #[inline(always)]
-        pub fn set_inrq(&mut self, val: bool) {
+        pub const fn set_inrq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "SLEEP"]
+        #[must_use]
         #[inline(always)]
         pub const fn sleep(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1062,10 +1094,11 @@ pub mod regs {
         }
         #[doc = "SLEEP"]
         #[inline(always)]
-        pub fn set_sleep(&mut self, val: bool) {
+        pub const fn set_sleep(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "TXFP"]
+        #[must_use]
         #[inline(always)]
         pub const fn txfp(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1073,10 +1106,11 @@ pub mod regs {
         }
         #[doc = "TXFP"]
         #[inline(always)]
-        pub fn set_txfp(&mut self, val: bool) {
+        pub const fn set_txfp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "RFLM"]
+        #[must_use]
         #[inline(always)]
         pub const fn rflm(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1084,10 +1118,11 @@ pub mod regs {
         }
         #[doc = "RFLM"]
         #[inline(always)]
-        pub fn set_rflm(&mut self, val: bool) {
+        pub const fn set_rflm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "NART"]
+        #[must_use]
         #[inline(always)]
         pub const fn nart(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1095,10 +1130,11 @@ pub mod regs {
         }
         #[doc = "NART"]
         #[inline(always)]
-        pub fn set_nart(&mut self, val: bool) {
+        pub const fn set_nart(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "AWUM"]
+        #[must_use]
         #[inline(always)]
         pub const fn awum(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1106,10 +1142,11 @@ pub mod regs {
         }
         #[doc = "AWUM"]
         #[inline(always)]
-        pub fn set_awum(&mut self, val: bool) {
+        pub const fn set_awum(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "ABOM"]
+        #[must_use]
         #[inline(always)]
         pub const fn abom(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -1117,10 +1154,11 @@ pub mod regs {
         }
         #[doc = "ABOM"]
         #[inline(always)]
-        pub fn set_abom(&mut self, val: bool) {
+        pub const fn set_abom(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "TTCM"]
+        #[must_use]
         #[inline(always)]
         pub const fn ttcm(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1128,10 +1166,11 @@ pub mod regs {
         }
         #[doc = "TTCM"]
         #[inline(always)]
-        pub fn set_ttcm(&mut self, val: bool) {
+        pub const fn set_ttcm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "RESET"]
+        #[must_use]
         #[inline(always)]
         pub const fn reset(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -1139,10 +1178,11 @@ pub mod regs {
         }
         #[doc = "RESET"]
         #[inline(always)]
-        pub fn set_reset(&mut self, val: bool) {
+        pub const fn set_reset(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "DBF"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbf(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1150,7 +1190,7 @@ pub mod regs {
         }
         #[doc = "DBF"]
         #[inline(always)]
-        pub fn set_dbf(&mut self, val: bool) {
+        pub const fn set_dbf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
@@ -1188,6 +1228,7 @@ pub mod regs {
     pub struct Msr(pub u32);
     impl Msr {
         #[doc = "INAK"]
+        #[must_use]
         #[inline(always)]
         pub const fn inak(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1195,10 +1236,11 @@ pub mod regs {
         }
         #[doc = "INAK"]
         #[inline(always)]
-        pub fn set_inak(&mut self, val: bool) {
+        pub const fn set_inak(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "SLAK"]
+        #[must_use]
         #[inline(always)]
         pub const fn slak(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1206,10 +1248,11 @@ pub mod regs {
         }
         #[doc = "SLAK"]
         #[inline(always)]
-        pub fn set_slak(&mut self, val: bool) {
+        pub const fn set_slak(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "ERRI"]
+        #[must_use]
         #[inline(always)]
         pub const fn erri(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1217,10 +1260,11 @@ pub mod regs {
         }
         #[doc = "ERRI"]
         #[inline(always)]
-        pub fn set_erri(&mut self, val: bool) {
+        pub const fn set_erri(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "WKUI"]
+        #[must_use]
         #[inline(always)]
         pub const fn wkui(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1228,10 +1272,11 @@ pub mod regs {
         }
         #[doc = "WKUI"]
         #[inline(always)]
-        pub fn set_wkui(&mut self, val: bool) {
+        pub const fn set_wkui(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "SLAKI"]
+        #[must_use]
         #[inline(always)]
         pub const fn slaki(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1239,10 +1284,11 @@ pub mod regs {
         }
         #[doc = "SLAKI"]
         #[inline(always)]
-        pub fn set_slaki(&mut self, val: bool) {
+        pub const fn set_slaki(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "TXM"]
+        #[must_use]
         #[inline(always)]
         pub const fn txm(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -1250,10 +1296,11 @@ pub mod regs {
         }
         #[doc = "TXM"]
         #[inline(always)]
-        pub fn set_txm(&mut self, val: bool) {
+        pub const fn set_txm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "RXM"]
+        #[must_use]
         #[inline(always)]
         pub const fn rxm(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -1261,10 +1308,11 @@ pub mod regs {
         }
         #[doc = "RXM"]
         #[inline(always)]
-        pub fn set_rxm(&mut self, val: bool) {
+        pub const fn set_rxm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "SAMP"]
+        #[must_use]
         #[inline(always)]
         pub const fn samp(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -1272,10 +1320,11 @@ pub mod regs {
         }
         #[doc = "SAMP"]
         #[inline(always)]
-        pub fn set_samp(&mut self, val: bool) {
+        pub const fn set_samp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "RX"]
+        #[must_use]
         #[inline(always)]
         pub const fn rx(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1283,7 +1332,7 @@ pub mod regs {
         }
         #[doc = "RX"]
         #[inline(always)]
-        pub fn set_rx(&mut self, val: bool) {
+        pub const fn set_rx(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
     }
@@ -1320,6 +1369,7 @@ pub mod regs {
     pub struct Rdhr(pub u32);
     impl Rdhr {
         #[doc = "DATA4"]
+        #[must_use]
         #[inline(always)]
         pub const fn data(&self, n: usize) -> u8 {
             assert!(n < 4usize);
@@ -1329,7 +1379,7 @@ pub mod regs {
         }
         #[doc = "DATA4"]
         #[inline(always)]
-        pub fn set_data(&mut self, n: usize, val: u8) {
+        pub const fn set_data(&mut self, n: usize, val: u8) {
             assert!(n < 4usize);
             let offs = 0usize + n * 8usize;
             self.0 = (self.0 & !(0xff << offs)) | (((val as u32) & 0xff) << offs);
@@ -1370,6 +1420,7 @@ pub mod regs {
     pub struct Rdlr(pub u32);
     impl Rdlr {
         #[doc = "DATA0"]
+        #[must_use]
         #[inline(always)]
         pub const fn data(&self, n: usize) -> u8 {
             assert!(n < 4usize);
@@ -1379,7 +1430,7 @@ pub mod regs {
         }
         #[doc = "DATA0"]
         #[inline(always)]
-        pub fn set_data(&mut self, n: usize, val: u8) {
+        pub const fn set_data(&mut self, n: usize, val: u8) {
             assert!(n < 4usize);
             let offs = 0usize + n * 8usize;
             self.0 = (self.0 & !(0xff << offs)) | (((val as u32) & 0xff) << offs);
@@ -1420,6 +1471,7 @@ pub mod regs {
     pub struct Rdtr(pub u32);
     impl Rdtr {
         #[doc = "DLC"]
+        #[must_use]
         #[inline(always)]
         pub const fn dlc(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -1427,10 +1479,11 @@ pub mod regs {
         }
         #[doc = "DLC"]
         #[inline(always)]
-        pub fn set_dlc(&mut self, val: u8) {
+        pub const fn set_dlc(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "FMI"]
+        #[must_use]
         #[inline(always)]
         pub const fn fmi(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -1438,10 +1491,11 @@ pub mod regs {
         }
         #[doc = "FMI"]
         #[inline(always)]
-        pub fn set_fmi(&mut self, val: u8) {
+        pub const fn set_fmi(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "TIME"]
+        #[must_use]
         #[inline(always)]
         pub const fn time(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0xffff;
@@ -1449,7 +1503,7 @@ pub mod regs {
         }
         #[doc = "TIME"]
         #[inline(always)]
-        pub fn set_time(&mut self, val: u16) {
+        pub const fn set_time(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
@@ -1486,6 +1540,7 @@ pub mod regs {
     pub struct Rfr(pub u32);
     impl Rfr {
         #[doc = "FMP0"]
+        #[must_use]
         #[inline(always)]
         pub const fn fmp(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
@@ -1493,10 +1548,11 @@ pub mod regs {
         }
         #[doc = "FMP0"]
         #[inline(always)]
-        pub fn set_fmp(&mut self, val: u8) {
+        pub const fn set_fmp(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
         #[doc = "FULL0"]
+        #[must_use]
         #[inline(always)]
         pub const fn full(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1504,10 +1560,11 @@ pub mod regs {
         }
         #[doc = "FULL0"]
         #[inline(always)]
-        pub fn set_full(&mut self, val: bool) {
+        pub const fn set_full(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "FOVR0"]
+        #[must_use]
         #[inline(always)]
         pub const fn fovr(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1515,10 +1572,11 @@ pub mod regs {
         }
         #[doc = "FOVR0"]
         #[inline(always)]
-        pub fn set_fovr(&mut self, val: bool) {
+        pub const fn set_fovr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "RFOM0"]
+        #[must_use]
         #[inline(always)]
         pub const fn rfom(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1526,7 +1584,7 @@ pub mod regs {
         }
         #[doc = "RFOM0"]
         #[inline(always)]
-        pub fn set_rfom(&mut self, val: bool) {
+        pub const fn set_rfom(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
     }
@@ -1565,6 +1623,7 @@ pub mod regs {
     pub struct Rir(pub u32);
     impl Rir {
         #[doc = "RTR"]
+        #[must_use]
         #[inline(always)]
         pub const fn rtr(&self) -> super::vals::Rtr {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1572,10 +1631,11 @@ pub mod regs {
         }
         #[doc = "RTR"]
         #[inline(always)]
-        pub fn set_rtr(&mut self, val: super::vals::Rtr) {
+        pub const fn set_rtr(&mut self, val: super::vals::Rtr) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "IDE"]
+        #[must_use]
         #[inline(always)]
         pub const fn ide(&self) -> super::vals::Ide {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1583,10 +1643,11 @@ pub mod regs {
         }
         #[doc = "IDE"]
         #[inline(always)]
-        pub fn set_ide(&mut self, val: super::vals::Ide) {
+        pub const fn set_ide(&mut self, val: super::vals::Ide) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "EXID"]
+        #[must_use]
         #[inline(always)]
         pub const fn exid(&self) -> u32 {
             let val = (self.0 >> 3usize) & 0x0003_ffff;
@@ -1594,10 +1655,11 @@ pub mod regs {
         }
         #[doc = "EXID"]
         #[inline(always)]
-        pub fn set_exid(&mut self, val: u32) {
+        pub const fn set_exid(&mut self, val: u32) {
             self.0 = (self.0 & !(0x0003_ffff << 3usize)) | (((val as u32) & 0x0003_ffff) << 3usize);
         }
         #[doc = "STID"]
+        #[must_use]
         #[inline(always)]
         pub const fn stid(&self) -> u16 {
             let val = (self.0 >> 21usize) & 0x07ff;
@@ -1605,7 +1667,7 @@ pub mod regs {
         }
         #[doc = "STID"]
         #[inline(always)]
-        pub fn set_stid(&mut self, val: u16) {
+        pub const fn set_stid(&mut self, val: u16) {
             self.0 = (self.0 & !(0x07ff << 21usize)) | (((val as u32) & 0x07ff) << 21usize);
         }
     }
@@ -1644,6 +1706,7 @@ pub mod regs {
     pub struct Tdhr(pub u32);
     impl Tdhr {
         #[doc = "DATA4"]
+        #[must_use]
         #[inline(always)]
         pub const fn data(&self, n: usize) -> u8 {
             assert!(n < 4usize);
@@ -1653,7 +1716,7 @@ pub mod regs {
         }
         #[doc = "DATA4"]
         #[inline(always)]
-        pub fn set_data(&mut self, n: usize, val: u8) {
+        pub const fn set_data(&mut self, n: usize, val: u8) {
             assert!(n < 4usize);
             let offs = 0usize + n * 8usize;
             self.0 = (self.0 & !(0xff << offs)) | (((val as u32) & 0xff) << offs);
@@ -1694,6 +1757,7 @@ pub mod regs {
     pub struct Tdlr(pub u32);
     impl Tdlr {
         #[doc = "DATA0"]
+        #[must_use]
         #[inline(always)]
         pub const fn data(&self, n: usize) -> u8 {
             assert!(n < 4usize);
@@ -1703,7 +1767,7 @@ pub mod regs {
         }
         #[doc = "DATA0"]
         #[inline(always)]
-        pub fn set_data(&mut self, n: usize, val: u8) {
+        pub const fn set_data(&mut self, n: usize, val: u8) {
             assert!(n < 4usize);
             let offs = 0usize + n * 8usize;
             self.0 = (self.0 & !(0xff << offs)) | (((val as u32) & 0xff) << offs);
@@ -1744,6 +1808,7 @@ pub mod regs {
     pub struct Tdtr(pub u32);
     impl Tdtr {
         #[doc = "DLC"]
+        #[must_use]
         #[inline(always)]
         pub const fn dlc(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -1751,10 +1816,11 @@ pub mod regs {
         }
         #[doc = "DLC"]
         #[inline(always)]
-        pub fn set_dlc(&mut self, val: u8) {
+        pub const fn set_dlc(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "TGT"]
+        #[must_use]
         #[inline(always)]
         pub const fn tgt(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -1762,10 +1828,11 @@ pub mod regs {
         }
         #[doc = "TGT"]
         #[inline(always)]
-        pub fn set_tgt(&mut self, val: bool) {
+        pub const fn set_tgt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "TIME"]
+        #[must_use]
         #[inline(always)]
         pub const fn time(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0xffff;
@@ -1773,7 +1840,7 @@ pub mod regs {
         }
         #[doc = "TIME"]
         #[inline(always)]
-        pub fn set_time(&mut self, val: u16) {
+        pub const fn set_time(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
@@ -1810,6 +1877,7 @@ pub mod regs {
     pub struct Tir(pub u32);
     impl Tir {
         #[doc = "TXRQ"]
+        #[must_use]
         #[inline(always)]
         pub const fn txrq(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1817,10 +1885,11 @@ pub mod regs {
         }
         #[doc = "TXRQ"]
         #[inline(always)]
-        pub fn set_txrq(&mut self, val: bool) {
+        pub const fn set_txrq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "RTR"]
+        #[must_use]
         #[inline(always)]
         pub const fn rtr(&self) -> super::vals::Rtr {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1828,10 +1897,11 @@ pub mod regs {
         }
         #[doc = "RTR"]
         #[inline(always)]
-        pub fn set_rtr(&mut self, val: super::vals::Rtr) {
+        pub const fn set_rtr(&mut self, val: super::vals::Rtr) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "IDE"]
+        #[must_use]
         #[inline(always)]
         pub const fn ide(&self) -> super::vals::Ide {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1839,10 +1909,11 @@ pub mod regs {
         }
         #[doc = "IDE"]
         #[inline(always)]
-        pub fn set_ide(&mut self, val: super::vals::Ide) {
+        pub const fn set_ide(&mut self, val: super::vals::Ide) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "EXID"]
+        #[must_use]
         #[inline(always)]
         pub const fn exid(&self) -> u32 {
             let val = (self.0 >> 3usize) & 0x0003_ffff;
@@ -1850,10 +1921,11 @@ pub mod regs {
         }
         #[doc = "EXID"]
         #[inline(always)]
-        pub fn set_exid(&mut self, val: u32) {
+        pub const fn set_exid(&mut self, val: u32) {
             self.0 = (self.0 & !(0x0003_ffff << 3usize)) | (((val as u32) & 0x0003_ffff) << 3usize);
         }
         #[doc = "STID"]
+        #[must_use]
         #[inline(always)]
         pub const fn stid(&self) -> u16 {
             let val = (self.0 >> 21usize) & 0x07ff;
@@ -1861,7 +1933,7 @@ pub mod regs {
         }
         #[doc = "STID"]
         #[inline(always)]
-        pub fn set_stid(&mut self, val: u16) {
+        pub const fn set_stid(&mut self, val: u16) {
             self.0 = (self.0 & !(0x07ff << 21usize)) | (((val as u32) & 0x07ff) << 21usize);
         }
     }
@@ -1902,6 +1974,7 @@ pub mod regs {
     pub struct Tsr(pub u32);
     impl Tsr {
         #[doc = "RQCP0"]
+        #[must_use]
         #[inline(always)]
         pub const fn rqcp(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -1911,12 +1984,13 @@ pub mod regs {
         }
         #[doc = "RQCP0"]
         #[inline(always)]
-        pub fn set_rqcp(&mut self, n: usize, val: bool) {
+        pub const fn set_rqcp(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 0usize + n * 8usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "TXOK0"]
+        #[must_use]
         #[inline(always)]
         pub const fn txok(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -1926,12 +2000,13 @@ pub mod regs {
         }
         #[doc = "TXOK0"]
         #[inline(always)]
-        pub fn set_txok(&mut self, n: usize, val: bool) {
+        pub const fn set_txok(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 1usize + n * 8usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "ALST0"]
+        #[must_use]
         #[inline(always)]
         pub const fn alst(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -1941,12 +2016,13 @@ pub mod regs {
         }
         #[doc = "ALST0"]
         #[inline(always)]
-        pub fn set_alst(&mut self, n: usize, val: bool) {
+        pub const fn set_alst(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 2usize + n * 8usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "TERR0"]
+        #[must_use]
         #[inline(always)]
         pub const fn terr(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -1956,12 +2032,13 @@ pub mod regs {
         }
         #[doc = "TERR0"]
         #[inline(always)]
-        pub fn set_terr(&mut self, n: usize, val: bool) {
+        pub const fn set_terr(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 3usize + n * 8usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "ABRQ0"]
+        #[must_use]
         #[inline(always)]
         pub const fn abrq(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -1971,12 +2048,13 @@ pub mod regs {
         }
         #[doc = "ABRQ0"]
         #[inline(always)]
-        pub fn set_abrq(&mut self, n: usize, val: bool) {
+        pub const fn set_abrq(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 7usize + n * 8usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "CODE"]
+        #[must_use]
         #[inline(always)]
         pub const fn code(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x03;
@@ -1984,10 +2062,11 @@ pub mod regs {
         }
         #[doc = "CODE"]
         #[inline(always)]
-        pub fn set_code(&mut self, val: u8) {
+        pub const fn set_code(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 24usize)) | (((val as u32) & 0x03) << 24usize);
         }
         #[doc = "Lowest priority flag for mailbox 0"]
+        #[must_use]
         #[inline(always)]
         pub const fn tme(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -1997,12 +2076,13 @@ pub mod regs {
         }
         #[doc = "Lowest priority flag for mailbox 0"]
         #[inline(always)]
-        pub fn set_tme(&mut self, n: usize, val: bool) {
+        pub const fn set_tme(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 26usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Lowest priority flag for mailbox 0"]
+        #[must_use]
         #[inline(always)]
         pub const fn low(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -2012,7 +2092,7 @@ pub mod regs {
         }
         #[doc = "Lowest priority flag for mailbox 0"]
         #[inline(always)]
-        pub fn set_low(&mut self, n: usize, val: bool) {
+        pub const fn set_low(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 29usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);

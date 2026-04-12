@@ -22,22 +22,22 @@ impl Rng {
     #[doc = "control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "data register"]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<u32, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "health test control register"]
     #[inline(always)]
     pub const fn htcr(self) -> crate::common::Reg<regs::Htcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
 }
 pub mod regs {
@@ -47,6 +47,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "Random number generator enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn rngen(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -54,10 +55,11 @@ pub mod regs {
         }
         #[doc = "Random number generator enable"]
         #[inline(always)]
-        pub fn set_rngen(&mut self, val: bool) {
+        pub const fn set_rngen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn ie(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -65,10 +67,11 @@ pub mod regs {
         }
         #[doc = "Interrupt enable"]
         #[inline(always)]
-        pub fn set_ie(&mut self, val: bool) {
+        pub const fn set_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Clock error detection"]
+        #[must_use]
         #[inline(always)]
         pub const fn ced(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -76,10 +79,11 @@ pub mod regs {
         }
         #[doc = "Clock error detection"]
         #[inline(always)]
-        pub fn set_ced(&mut self, val: bool) {
+        pub const fn set_ced(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "RNG configuration 3"]
+        #[must_use]
         #[inline(always)]
         pub const fn rng_config3(&self) -> super::vals::RngConfig3 {
             let val = (self.0 >> 8usize) & 0x0f;
@@ -87,10 +91,11 @@ pub mod regs {
         }
         #[doc = "RNG configuration 3"]
         #[inline(always)]
-        pub fn set_rng_config3(&mut self, val: super::vals::RngConfig3) {
+        pub const fn set_rng_config3(&mut self, val: super::vals::RngConfig3) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val.to_bits() as u32) & 0x0f) << 8usize);
         }
         #[doc = "Non NIST compliant"]
+        #[must_use]
         #[inline(always)]
         pub const fn nistc(&self) -> super::vals::Nistc {
             let val = (self.0 >> 12usize) & 0x01;
@@ -98,10 +103,11 @@ pub mod regs {
         }
         #[doc = "Non NIST compliant"]
         #[inline(always)]
-        pub fn set_nistc(&mut self, val: super::vals::Nistc) {
+        pub const fn set_nistc(&mut self, val: super::vals::Nistc) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
         }
         #[doc = "RNG configuration 2"]
+        #[must_use]
         #[inline(always)]
         pub const fn rng_config2(&self) -> super::vals::RngConfig2 {
             let val = (self.0 >> 13usize) & 0x07;
@@ -109,10 +115,11 @@ pub mod regs {
         }
         #[doc = "RNG configuration 2"]
         #[inline(always)]
-        pub fn set_rng_config2(&mut self, val: super::vals::RngConfig2) {
+        pub const fn set_rng_config2(&mut self, val: super::vals::RngConfig2) {
             self.0 = (self.0 & !(0x07 << 13usize)) | (((val.to_bits() as u32) & 0x07) << 13usize);
         }
         #[doc = "Clock divider factor"]
+        #[must_use]
         #[inline(always)]
         pub const fn clkdiv(&self) -> super::vals::Clkdiv {
             let val = (self.0 >> 16usize) & 0x0f;
@@ -120,10 +127,11 @@ pub mod regs {
         }
         #[doc = "Clock divider factor"]
         #[inline(always)]
-        pub fn set_clkdiv(&mut self, val: super::vals::Clkdiv) {
+        pub const fn set_clkdiv(&mut self, val: super::vals::Clkdiv) {
             self.0 = (self.0 & !(0x0f << 16usize)) | (((val.to_bits() as u32) & 0x0f) << 16usize);
         }
         #[doc = "RNG configuration 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn rng_config1(&self) -> super::vals::RngConfig1 {
             let val = (self.0 >> 20usize) & 0x3f;
@@ -131,10 +139,11 @@ pub mod regs {
         }
         #[doc = "RNG configuration 1"]
         #[inline(always)]
-        pub fn set_rng_config1(&mut self, val: super::vals::RngConfig1) {
+        pub const fn set_rng_config1(&mut self, val: super::vals::RngConfig1) {
             self.0 = (self.0 & !(0x3f << 20usize)) | (((val.to_bits() as u32) & 0x3f) << 20usize);
         }
         #[doc = "Conditioning soft reset"]
+        #[must_use]
         #[inline(always)]
         pub const fn condrst(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -142,10 +151,11 @@ pub mod regs {
         }
         #[doc = "Conditioning soft reset"]
         #[inline(always)]
-        pub fn set_condrst(&mut self, val: bool) {
+        pub const fn set_condrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "Config Lock"]
+        #[must_use]
         #[inline(always)]
         pub const fn configlock(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -153,7 +163,7 @@ pub mod regs {
         }
         #[doc = "Config Lock"]
         #[inline(always)]
-        pub fn set_configlock(&mut self, val: bool) {
+        pub const fn set_configlock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -191,6 +201,7 @@ pub mod regs {
     pub struct Htcr(pub u32);
     impl Htcr {
         #[doc = "Health test configuration"]
+        #[must_use]
         #[inline(always)]
         pub const fn htcfg(&self) -> super::vals::Htcfg {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -198,7 +209,7 @@ pub mod regs {
         }
         #[doc = "Health test configuration"]
         #[inline(always)]
-        pub fn set_htcfg(&mut self, val: super::vals::Htcfg) {
+        pub const fn set_htcfg(&mut self, val: super::vals::Htcfg) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val.to_bits() as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -225,6 +236,7 @@ pub mod regs {
     pub struct Sr(pub u32);
     impl Sr {
         #[doc = "Data ready"]
+        #[must_use]
         #[inline(always)]
         pub const fn drdy(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -232,10 +244,11 @@ pub mod regs {
         }
         #[doc = "Data ready"]
         #[inline(always)]
-        pub fn set_drdy(&mut self, val: bool) {
+        pub const fn set_drdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Clock error current status"]
+        #[must_use]
         #[inline(always)]
         pub const fn cecs(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -243,10 +256,11 @@ pub mod regs {
         }
         #[doc = "Clock error current status"]
         #[inline(always)]
-        pub fn set_cecs(&mut self, val: bool) {
+        pub const fn set_cecs(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Seed error current status"]
+        #[must_use]
         #[inline(always)]
         pub const fn secs(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -254,10 +268,11 @@ pub mod regs {
         }
         #[doc = "Seed error current status"]
         #[inline(always)]
-        pub fn set_secs(&mut self, val: bool) {
+        pub const fn set_secs(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Clock error interrupt status"]
+        #[must_use]
         #[inline(always)]
         pub const fn ceis(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -265,10 +280,11 @@ pub mod regs {
         }
         #[doc = "Clock error interrupt status"]
         #[inline(always)]
-        pub fn set_ceis(&mut self, val: bool) {
+        pub const fn set_ceis(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Seed error interrupt status"]
+        #[must_use]
         #[inline(always)]
         pub const fn seis(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -276,7 +292,7 @@ pub mod regs {
         }
         #[doc = "Seed error interrupt status"]
         #[inline(always)]
-        pub fn set_seis(&mut self, val: bool) {
+        pub const fn set_seis(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
     }

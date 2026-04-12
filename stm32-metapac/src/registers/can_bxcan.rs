@@ -1099,14 +1099,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "STANDARD",
-                    description: Some("Standard identifier"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "EXTENDED",
                     description: Some("Extended identifier"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "STANDARD",
+                    description: Some("Standard identifier"),
+                    value: 0,
                 },
             ],
         },
@@ -1116,34 +1116,19 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "NO_ERROR",
-                    description: Some("No Error"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "STUFF",
-                    description: Some("Stuff Error"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "FORM",
-                    description: Some("Form Error"),
-                    value: 2,
-                },
-                EnumVariant {
                     name: "ACK",
                     description: Some("Acknowledgment Error"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "BIT_RECESSIVE",
-                    description: Some("Bit recessive Error"),
-                    value: 4,
-                },
-                EnumVariant {
                     name: "BIT_DOMINANT",
                     description: Some("Bit dominant Error"),
                     value: 5,
+                },
+                EnumVariant {
+                    name: "BIT_RECESSIVE",
+                    description: Some("Bit recessive Error"),
+                    value: 4,
                 },
                 EnumVariant {
                     name: "CRC",
@@ -1154,6 +1139,21 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "CUSTOM",
                     description: Some("Set by software"),
                     value: 7,
+                },
+                EnumVariant {
+                    name: "FORM",
+                    description: Some("Form Error"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "NO_ERROR",
+                    description: Some("No Error"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "STUFF",
+                    description: Some("Stuff Error"),
+                    value: 1,
                 },
             ],
         },

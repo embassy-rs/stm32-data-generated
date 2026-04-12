@@ -22,27 +22,27 @@ impl Iwdg {
     #[doc = "Key register"]
     #[inline(always)]
     pub const fn kr(self) -> crate::common::Reg<regs::Kr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Prescaler register"]
     #[inline(always)]
     pub const fn pr(self) -> crate::common::Reg<regs::Pr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Reload register"]
     #[inline(always)]
     pub const fn rlr(self) -> crate::common::Reg<regs::Rlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "Status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "Window register"]
     #[inline(always)]
     pub const fn winr(self) -> crate::common::Reg<regs::Winr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
 }
 pub mod regs {
@@ -52,6 +52,7 @@ pub mod regs {
     pub struct Kr(pub u32);
     impl Kr {
         #[doc = "Key value (write only, read 0000h)"]
+        #[must_use]
         #[inline(always)]
         pub const fn key(&self) -> super::vals::Key {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -59,7 +60,7 @@ pub mod regs {
         }
         #[doc = "Key value (write only, read 0000h)"]
         #[inline(always)]
-        pub fn set_key(&mut self, val: super::vals::Key) {
+        pub const fn set_key(&mut self, val: super::vals::Key) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val.to_bits() as u32) & 0xffff) << 0usize);
         }
     }
@@ -86,6 +87,7 @@ pub mod regs {
     pub struct Pr(pub u32);
     impl Pr {
         #[doc = "Prescaler divider"]
+        #[must_use]
         #[inline(always)]
         pub const fn pr(&self) -> super::vals::Pr {
             let val = (self.0 >> 0usize) & 0x07;
@@ -93,7 +95,7 @@ pub mod regs {
         }
         #[doc = "Prescaler divider"]
         #[inline(always)]
-        pub fn set_pr(&mut self, val: super::vals::Pr) {
+        pub const fn set_pr(&mut self, val: super::vals::Pr) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
     }
@@ -120,6 +122,7 @@ pub mod regs {
     pub struct Rlr(pub u32);
     impl Rlr {
         #[doc = "Watchdog counter reload value"]
+        #[must_use]
         #[inline(always)]
         pub const fn rl(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -127,7 +130,7 @@ pub mod regs {
         }
         #[doc = "Watchdog counter reload value"]
         #[inline(always)]
-        pub fn set_rl(&mut self, val: u16) {
+        pub const fn set_rl(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
     }
@@ -154,6 +157,7 @@ pub mod regs {
     pub struct Sr(pub u32);
     impl Sr {
         #[doc = "Watchdog prescaler value update"]
+        #[must_use]
         #[inline(always)]
         pub const fn pvu(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -161,10 +165,11 @@ pub mod regs {
         }
         #[doc = "Watchdog prescaler value update"]
         #[inline(always)]
-        pub fn set_pvu(&mut self, val: bool) {
+        pub const fn set_pvu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Watchdog counter reload value update"]
+        #[must_use]
         #[inline(always)]
         pub const fn rvu(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -172,10 +177,11 @@ pub mod regs {
         }
         #[doc = "Watchdog counter reload value update"]
         #[inline(always)]
-        pub fn set_rvu(&mut self, val: bool) {
+        pub const fn set_rvu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Watchdog counter window value update"]
+        #[must_use]
         #[inline(always)]
         pub const fn wvu(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -183,7 +189,7 @@ pub mod regs {
         }
         #[doc = "Watchdog counter window value update"]
         #[inline(always)]
-        pub fn set_wvu(&mut self, val: bool) {
+        pub const fn set_wvu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
     }
@@ -220,6 +226,7 @@ pub mod regs {
     pub struct Winr(pub u32);
     impl Winr {
         #[doc = "Watchdog counter window value"]
+        #[must_use]
         #[inline(always)]
         pub const fn win(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -227,7 +234,7 @@ pub mod regs {
         }
         #[doc = "Watchdog counter window value"]
         #[inline(always)]
-        pub fn set_win(&mut self, val: u16) {
+        pub const fn set_win(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
     }

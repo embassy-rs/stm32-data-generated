@@ -1142,14 +1142,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "INPUT_ONLY",
-                    description: Some("Reset pin is in reset input mode only"),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "GPIO",
                     description: Some("Reset pin is in GPIO mode only"),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "INPUT_ONLY",
+                    description: Some("Reset pin is in reset input mode only"),
+                    value: 1,
                 },
                 EnumVariant {
                     name: "INPUT_OUTPUT",

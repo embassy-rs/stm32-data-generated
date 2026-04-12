@@ -2201,11 +2201,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "INDIRECT_WRITE",
+                    name: "AUTO_STATUS_POLLING",
                     description: Some(
-                        "Indirect-write mode",
+                        "Automatic status-polling mode",
                     ),
-                    value: 0,
+                    value: 2,
                 },
                 EnumVariant {
                     name: "INDIRECT_READ",
@@ -2215,11 +2215,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "AUTO_STATUS_POLLING",
+                    name: "INDIRECT_WRITE",
                     description: Some(
-                        "Automatic status-polling mode",
+                        "Indirect-write mode",
                     ),
-                    value: 2,
+                    value: 0,
                 },
                 EnumVariant {
                     name: "MEMORY_MAPPED",
@@ -2236,18 +2236,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "VARIABLE",
-                    description: Some(
-                        "Variable initial latency",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FIXED",
                     description: Some(
                         "Fixed latency",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "VARIABLE",
+                    description: Some(
+                        "Variable initial latency",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2278,32 +2278,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "MICRON",
-                    description: Some(
-                        "Micron mode, D0/D1 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "MACRONIX",
-                    description: Some(
-                        "Macronix mode, D1/D0 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "B_STANDARD",
                     description: Some(
                         "Standard mode",
                     ),
                     value: 2,
-                },
-                EnumVariant {
-                    name: "MACRONIX_RAM",
-                    description: Some(
-                        "Macronix RAM mode, D1/D0 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes with dedicated address mapping.",
-                    ),
-                    value: 3,
                 },
                 EnumVariant {
                     name: "HYPER_BUS_MEMORY",
@@ -2319,6 +2298,27 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 5,
                 },
+                EnumVariant {
+                    name: "MACRONIX",
+                    description: Some(
+                        "Macronix mode, D1/D0 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "MACRONIX_RAM",
+                    description: Some(
+                        "Macronix RAM mode, D1/D0 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes with dedicated address mapping.",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "MICRON",
+                    description: Some(
+                        "Micron mode, D0/D1 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes.",
+                    ),
+                    value: 0,
+                },
             ],
         },
         Enum {
@@ -2326,6 +2326,20 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 3,
             variants: &[
+                EnumVariant {
+                    name: "EIGHT_LINES",
+                    description: Some(
+                        "Alternate bytes on eight lines",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "FOUR_LINES",
+                    description: Some(
+                        "Alternate bytes on four lines",
+                    ),
+                    value: 3,
+                },
                 EnumVariant {
                     name: "NONE",
                     description: Some(
@@ -2347,20 +2361,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 2,
                 },
-                EnumVariant {
-                    name: "FOUR_LINES",
-                    description: Some(
-                        "Alternate bytes on four lines",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "EIGHT_LINES",
-                    description: Some(
-                        "Alternate bytes on eight lines",
-                    ),
-                    value: 4,
-                },
             ],
         },
         Enum {
@@ -2369,18 +2369,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NONE",
-                    description: Some(
-                        "No shift",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "HALF_CYCLE",
                     description: Some(
                         "1/2 cycle shift",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NONE",
+                    description: Some(
+                        "No shift",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2389,13 +2389,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
-                EnumVariant {
-                    name: "_8BIT",
-                    description: Some(
-                        "8-bit alternate bytes",
-                    ),
-                    value: 0,
-                },
                 EnumVariant {
                     name: "_16BIT",
                     description: Some(
@@ -2417,6 +2410,13 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 3,
                 },
+                EnumVariant {
+                    name: "_8BIT",
+                    description: Some(
+                        "8-bit alternate bytes",
+                    ),
+                    value: 0,
+                },
             ],
         },
         Enum {
@@ -2432,18 +2432,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NEED_TWO_BYTES",
-                    description: Some(
-                        "FTF is set if there are two or more free bytes available to be written to in the FIFO in Indirect‑write mode, or if there are two or more valid bytes can be read from the FIFO in Indirect-read mode.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "NEED_THIRTY_TWO_BYTES",
                     description: Some(
                         "FTF is set if there are 32 free bytes available to be written to in the FIFO in Indirect-write mode, or if there are 32 valid bytes can be read from the FIFO in Indirect-read mode.",
                     ),
                     value: 31,
+                },
+                EnumVariant {
+                    name: "NEED_TWO_BYTES",
+                    description: Some(
+                        "FTF is set if there are two or more free bytes available to be written to in the FIFO in Indirect‑write mode, or if there are two or more valid bytes can be read from the FIFO in Indirect-read mode.",
+                    ),
+                    value: 1,
                 },
             ],
         },

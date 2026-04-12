@@ -2205,18 +2205,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "RANGE4",
+                    name: "RANGE1",
                     description: Some(
-                        "Range 4 (lowest power)",
+                        "Range 1 (highest frequency)",
                     ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RANGE3",
-                    description: Some(
-                        "Range 3",
-                    ),
-                    value: 1,
+                    value: 3,
                 },
                 EnumVariant {
                     name: "RANGE2",
@@ -2226,11 +2219,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "RANGE1",
+                    name: "RANGE3",
                     description: Some(
-                        "Range 1 (highest frequency)",
+                        "Range 3",
                     ),
-                    value: 3,
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "RANGE4",
+                    description: Some(
+                        "Range 4 (lowest power)",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2296,18 +2296,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RETAINED",
-                    description: Some(
-                        "Content retained in Stop modes",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "LOST",
                     description: Some(
                         "Content lost in Stop modes",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "RETAINED",
+                    description: Some(
+                        "Content retained in Stop modes",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2316,6 +2316,13 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 3,
             variants: &[
+                EnumVariant {
+                    name: "PVD_IN",
+                    description: Some(
+                        "External input analog voltage PVD_IN (compared internally to VREFINT)",
+                    ),
+                    value: 7,
+                },
                 EnumVariant {
                     name: "V20",
                     description: Some(
@@ -2364,13 +2371,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "VPVD6 around 2.9 V",
                     ),
                     value: 6,
-                },
-                EnumVariant {
-                    name: "PVD_IN",
-                    description: Some(
-                        "External input analog voltage PVD_IN (compared internally to VREFINT)",
-                    ),
-                    value: 7,
                 },
             ],
         },
@@ -2443,18 +2443,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "POWERED_ON",
-                    description: Some(
-                        "SRAM1 powered on",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "POWERED_OFF",
                     description: Some(
                         "SRAM1 powered off",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "POWERED_ON",
+                    description: Some(
+                        "SRAM1 powered on",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2569,18 +2569,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "RANGE4",
+                    name: "RANGE1",
                     description: Some(
-                        "Range 4 (lowest power)",
+                        "Range 1 (highest frequency). This value cannot be written when VCOREMEN = 1 in TAMP_OR register.",
                     ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RANGE3",
-                    description: Some(
-                        "Range 3",
-                    ),
-                    value: 1,
+                    value: 3,
                 },
                 EnumVariant {
                     name: "RANGE2",
@@ -2590,11 +2583,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "RANGE1",
+                    name: "RANGE3",
                     description: Some(
-                        "Range 1 (highest frequency). This value cannot be written when VCOREMEN = 1 in TAMP_OR register.",
+                        "Range 3",
                     ),
-                    value: 3,
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "RANGE4",
+                    description: Some(
+                        "Range 4 (lowest power)",
+                    ),
+                    value: 0,
                 },
             ],
         },

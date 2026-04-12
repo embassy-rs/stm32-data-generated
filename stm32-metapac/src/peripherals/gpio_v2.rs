@@ -22,48 +22,48 @@ impl Gpio {
     #[doc = "GPIO port mode register"]
     #[inline(always)]
     pub const fn moder(self) -> crate::common::Reg<regs::Moder, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "GPIO port output type register"]
     #[inline(always)]
     pub const fn otyper(self) -> crate::common::Reg<regs::Otyper, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "GPIO port output speed register"]
     #[inline(always)]
     pub const fn ospeedr(self) -> crate::common::Reg<regs::Ospeedr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "GPIO port pull-up/pull-down register"]
     #[inline(always)]
     pub const fn pupdr(self) -> crate::common::Reg<regs::Pupdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "GPIO port input data register"]
     #[inline(always)]
     pub const fn idr(self) -> crate::common::Reg<regs::Idr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "GPIO port output data register"]
     #[inline(always)]
     pub const fn odr(self) -> crate::common::Reg<regs::Odr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "GPIO port bit set/reset register"]
     #[inline(always)]
     pub const fn bsrr(self) -> crate::common::Reg<regs::Bsrr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "GPIO port configuration lock register"]
     #[inline(always)]
     pub const fn lckr(self) -> crate::common::Reg<regs::Lckr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "GPIO alternate function registers. The register described in the datasheet as AFRL is index 0 in this array, and AFRH is index 1. Note that when operating on AFRH, you need to subtract 8 from any operations on the field array it contains -- the alternate function for pin 9 is at index 1, for instance."]
     #[inline(always)]
     pub const fn afr(self, n: usize) -> crate::common::Reg<regs::Afr, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize + n * 4usize) as _) }
     }
 }
 pub mod regs {
@@ -73,6 +73,7 @@ pub mod regs {
     pub struct Afr(pub u32);
     impl Afr {
         #[doc = "Alternate function selection for one of the pins controlled by this register (0-7)."]
+        #[must_use]
         #[inline(always)]
         pub const fn afr(&self, n: usize) -> u8 {
             assert!(n < 8usize);
@@ -82,7 +83,7 @@ pub mod regs {
         }
         #[doc = "Alternate function selection for one of the pins controlled by this register (0-7)."]
         #[inline(always)]
-        pub fn set_afr(&mut self, n: usize, val: u8) {
+        pub const fn set_afr(&mut self, n: usize, val: u8) {
             assert!(n < 8usize);
             let offs = 0usize + n * 4usize;
             self.0 = (self.0 & !(0x0f << offs)) | (((val as u32) & 0x0f) << offs);
@@ -120,6 +121,7 @@ pub mod regs {
     pub struct Bsrr(pub u32);
     impl Bsrr {
         #[doc = "Port x set bit y (y= 0..15)"]
+        #[must_use]
         #[inline(always)]
         pub const fn bs(&self, n: usize) -> bool {
             assert!(n < 16usize);
@@ -129,12 +131,13 @@ pub mod regs {
         }
         #[doc = "Port x set bit y (y= 0..15)"]
         #[inline(always)]
-        pub fn set_bs(&mut self, n: usize, val: bool) {
+        pub const fn set_bs(&mut self, n: usize, val: bool) {
             assert!(n < 16usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Port x set bit y (y= 0..15)"]
+        #[must_use]
         #[inline(always)]
         pub const fn br(&self, n: usize) -> bool {
             assert!(n < 16usize);
@@ -144,7 +147,7 @@ pub mod regs {
         }
         #[doc = "Port x set bit y (y= 0..15)"]
         #[inline(always)]
-        pub fn set_br(&mut self, n: usize, val: bool) {
+        pub const fn set_br(&mut self, n: usize, val: bool) {
             assert!(n < 16usize);
             let offs = 16usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -206,6 +209,7 @@ pub mod regs {
     pub struct Idr(pub u32);
     impl Idr {
         #[doc = "Port input data (y = 0..15)"]
+        #[must_use]
         #[inline(always)]
         pub const fn idr(&self, n: usize) -> super::vals::Idr {
             assert!(n < 16usize);
@@ -215,7 +219,7 @@ pub mod regs {
         }
         #[doc = "Port input data (y = 0..15)"]
         #[inline(always)]
-        pub fn set_idr(&mut self, n: usize, val: super::vals::Idr) {
+        pub const fn set_idr(&mut self, n: usize, val: super::vals::Idr) {
             assert!(n < 16usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
@@ -261,6 +265,7 @@ pub mod regs {
     pub struct Lckr(pub u32);
     impl Lckr {
         #[doc = "Port configuration locked"]
+        #[must_use]
         #[inline(always)]
         pub const fn lck(&self, n: usize) -> bool {
             assert!(n < 16usize);
@@ -270,12 +275,13 @@ pub mod regs {
         }
         #[doc = "Port configuration locked"]
         #[inline(always)]
-        pub fn set_lck(&mut self, n: usize, val: bool) {
+        pub const fn set_lck(&mut self, n: usize, val: bool) {
             assert!(n < 16usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Port configuration lock key active"]
+        #[must_use]
         #[inline(always)]
         pub const fn lckk(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -283,7 +289,7 @@ pub mod regs {
         }
         #[doc = "Port configuration lock key active"]
         #[inline(always)]
-        pub fn set_lckk(&mut self, val: bool) {
+        pub const fn set_lckk(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
@@ -328,6 +334,7 @@ pub mod regs {
     pub struct Moder(pub u32);
     impl Moder {
         #[doc = "Port x configuration bits (y = 0..15)"]
+        #[must_use]
         #[inline(always)]
         pub const fn moder(&self, n: usize) -> super::vals::Moder {
             assert!(n < 16usize);
@@ -337,7 +344,7 @@ pub mod regs {
         }
         #[doc = "Port x configuration bits (y = 0..15)"]
         #[inline(always)]
-        pub fn set_moder(&mut self, n: usize, val: super::vals::Moder) {
+        pub const fn set_moder(&mut self, n: usize, val: super::vals::Moder) {
             assert!(n < 16usize);
             let offs = 0usize + n * 2usize;
             self.0 = (self.0 & !(0x03 << offs)) | (((val.to_bits() as u32) & 0x03) << offs);
@@ -383,6 +390,7 @@ pub mod regs {
     pub struct Odr(pub u32);
     impl Odr {
         #[doc = "Port output data (y = 0..15)"]
+        #[must_use]
         #[inline(always)]
         pub const fn odr(&self, n: usize) -> super::vals::Odr {
             assert!(n < 16usize);
@@ -392,7 +400,7 @@ pub mod regs {
         }
         #[doc = "Port output data (y = 0..15)"]
         #[inline(always)]
-        pub fn set_odr(&mut self, n: usize, val: super::vals::Odr) {
+        pub const fn set_odr(&mut self, n: usize, val: super::vals::Odr) {
             assert!(n < 16usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
@@ -438,6 +446,7 @@ pub mod regs {
     pub struct Ospeedr(pub u32);
     impl Ospeedr {
         #[doc = "Port x configuration bits (y = 0..15)"]
+        #[must_use]
         #[inline(always)]
         pub const fn ospeedr(&self, n: usize) -> super::vals::Ospeedr {
             assert!(n < 16usize);
@@ -447,7 +456,7 @@ pub mod regs {
         }
         #[doc = "Port x configuration bits (y = 0..15)"]
         #[inline(always)]
-        pub fn set_ospeedr(&mut self, n: usize, val: super::vals::Ospeedr) {
+        pub const fn set_ospeedr(&mut self, n: usize, val: super::vals::Ospeedr) {
             assert!(n < 16usize);
             let offs = 0usize + n * 2usize;
             self.0 = (self.0 & !(0x03 << offs)) | (((val.to_bits() as u32) & 0x03) << offs);
@@ -493,6 +502,7 @@ pub mod regs {
     pub struct Otyper(pub u32);
     impl Otyper {
         #[doc = "Port x configuration bits (y = 0..15)"]
+        #[must_use]
         #[inline(always)]
         pub const fn ot(&self, n: usize) -> super::vals::Ot {
             assert!(n < 16usize);
@@ -502,7 +512,7 @@ pub mod regs {
         }
         #[doc = "Port x configuration bits (y = 0..15)"]
         #[inline(always)]
-        pub fn set_ot(&mut self, n: usize, val: super::vals::Ot) {
+        pub const fn set_ot(&mut self, n: usize, val: super::vals::Ot) {
             assert!(n < 16usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
@@ -548,6 +558,7 @@ pub mod regs {
     pub struct Pupdr(pub u32);
     impl Pupdr {
         #[doc = "Port x configuration bits (y = 0..15)"]
+        #[must_use]
         #[inline(always)]
         pub const fn pupdr(&self, n: usize) -> super::vals::Pupdr {
             assert!(n < 16usize);
@@ -557,7 +568,7 @@ pub mod regs {
         }
         #[doc = "Port x configuration bits (y = 0..15)"]
         #[inline(always)]
-        pub fn set_pupdr(&mut self, n: usize, val: super::vals::Pupdr) {
+        pub const fn set_pupdr(&mut self, n: usize, val: super::vals::Pupdr) {
             assert!(n < 16usize);
             let offs = 0usize + n * 2usize;
             self.0 = (self.0 & !(0x03 << offs)) | (((val.to_bits() as u32) & 0x03) << offs);

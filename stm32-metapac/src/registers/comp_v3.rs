@@ -150,9 +150,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NONE",
+                    name: "HIGH",
                     description: None,
-                    value: 0,
+                    value: 3,
                 },
                 EnumVariant {
                     name: "LOW",
@@ -165,9 +165,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HIGH",
+                    name: "NONE",
                     description: None,
-                    value: 3,
+                    value: 0,
                 },
             ],
         },
@@ -177,14 +177,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOT_INVERTED",
-                    description: Some("Output is not inverted."),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "INVERTED",
                     description: Some("Output is inverted."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NOT_INVERTED",
+                    description: Some("Output is not inverted."),
+                    value: 0,
                 },
             ],
         },
@@ -199,14 +199,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "MEDIUM_SPEED",
-                    description: Some("Medium speed / medium power."),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "LOW_SPEED",
                     description: Some("Low speed / low power."),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "MEDIUM_SPEED",
+                    description: Some("Medium speed / medium power."),
+                    value: 1,
                 },
                 EnumVariant {
                     name: "VERY_LOW_SPEED",

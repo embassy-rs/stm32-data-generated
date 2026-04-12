@@ -2686,18 +2686,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FREE_RUNNING",
-                    description: Some(
-                        "The synchronous binary counter (SS[31:0] in SSR) is free-running.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "ALRMBINR",
                     description: Some(
                         "The synchronous binary counter (SS[31:0] in SSR) is running from 0xFFFFFFFF to ALRBBINR.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "FREE_RUNNING",
+                    description: Some(
+                        "The synchronous binary counter (SS[31:0] in SSR) is free-running.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2727,27 +2727,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 3,
             variants: &[
-                EnumVariant {
-                    name: "BIT7",
-                    description: Some(
-                        "1s calendar increment is generated each time SS[7:0] = 0.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BIT8",
-                    description: Some(
-                        "1s calendar increment is generated each time SS[8:0] = 0.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "BIT9",
-                    description: Some(
-                        "1s calendar increment is generated each time SS[9:0] = 0.",
-                    ),
-                    value: 2,
-                },
                 EnumVariant {
                     name: "BIT10",
                     description: Some(
@@ -2782,6 +2761,27 @@ pub(crate) static REGISTERS: IR = IR {
                         "1s calendar increment is generated each time SS[14:0] = 0.",
                     ),
                     value: 7,
+                },
+                EnumVariant {
+                    name: "BIT7",
+                    description: Some(
+                        "1s calendar increment is generated each time SS[7:0] = 0.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BIT8",
+                    description: Some(
+                        "1s calendar increment is generated each time SS[8:0] = 0.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "BIT9",
+                    description: Some(
+                        "1s calendar increment is generated each time SS[9:0] = 0.",
+                    ),
+                    value: 2,
                 },
             ],
         },
@@ -2826,18 +2826,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NO_CHANGE",
-                    description: Some(
-                        "No RTCCLK pulses are added.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "INCREASE_FREQ",
                     description: Some(
                         "One RTCCLK pulse is effectively inserted every 2less thansup>11less than/sup> pulses (frequency increased by 488.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NO_CHANGE",
+                    description: Some(
+                        "No RTCCLK pulses are added.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2889,18 +2889,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CAL_FREQ_512HZ",
-                    description: Some(
-                        "Calibration output is 512Hz.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "CAL_FREQ_1HZ",
                     description: Some(
                         "Calibration output is 1Hz.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "CAL_FREQ_512HZ",
+                    description: Some(
+                        "Calibration output is 512Hz.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2910,18 +2910,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TWENTY_FOUR_HOUR",
-                    description: Some(
-                        "24 hour/day format.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "AM_PM",
                     description: Some(
                         "AM/PM hour format.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "TWENTY_FOUR_HOUR",
+                    description: Some(
+                        "24 hour/day format.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2938,18 +2938,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DEACTIVATE2",
-                    description: Some(
-                        "Key 2",
-                    ),
-                    value: 83,
-                },
-                EnumVariant {
                     name: "DEACTIVATE1",
                     description: Some(
                         "Key 1",
                     ),
                     value: 202,
+                },
+                EnumVariant {
+                    name: "DEACTIVATE2",
+                    description: Some(
+                        "Key 2",
+                    ),
+                    value: 83,
                 },
             ],
         },
@@ -2959,18 +2959,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RTCCLK",
-                    description: Some(
-                        "Calibration window is 2less thansup>20less than/sup> RTCCLK, which is a high-consumption mode.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "CK_APRE",
                     description: Some(
                         "Calibration window is 2less thansup>20less than/sup> ck_apre, which is the required configuration for ultra-low consumption mode.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "RTCCLK",
+                    description: Some(
+                        "Calibration window is 2less thansup>20less than/sup> RTCCLK, which is a high-consumption mode.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2979,13 +2979,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Output disabled.",
-                    ),
-                    value: 0,
-                },
                 EnumVariant {
                     name: "ALARM_A",
                     description: Some(
@@ -2999,6 +2992,13 @@ pub(crate) static REGISTERS: IR = IR {
                         "Alarm B output enabled.",
                     ),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Output disabled.",
+                    ),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "WAKE_UP",
@@ -3036,18 +3036,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "PUSH_PULL",
-                    description: Some(
-                        "TAMPALRM is push-pull output.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "OPEN_DRAIN",
                     description: Some(
                         "TAMPALRM is open-drain output.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "PUSH_PULL",
+                    description: Some(
+                        "TAMPALRM is push-pull output.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -3057,18 +3057,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RISING_EDGE",
-                    description: Some(
-                        "TS input rising edge generates a timestamp event.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FALLING_EDGE",
                     description: Some(
                         "TS input falling edge generates a timestamp event.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "RISING_EDGE",
+                    description: Some(
+                        "TS input rising edge generates a timestamp event.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -3085,11 +3085,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV8",
+                    name: "DIV2",
                     description: Some(
-                        "RTC/8 clock is selected.",
+                        "RTC/2 clock is selected.",
                     ),
-                    value: 1,
+                    value: 3,
                 },
                 EnumVariant {
                     name: "DIV4",
@@ -3099,11 +3099,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "DIV2",
+                    name: "DIV8",
                     description: Some(
-                        "RTC/2 clock is selected.",
+                        "RTC/8 clock is selected.",
                     ),
-                    value: 3,
+                    value: 1,
                 },
             ],
         },

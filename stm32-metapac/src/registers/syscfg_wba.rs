@@ -990,18 +990,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 10,
                 },
                 EnumVariant {
-                    name: "MHZ32",
-                    description: Some(
-                        "The kernel clock frequency provided to the OTG_HS PHY is 32 MHz.",
-                    ),
-                    value: 11,
-                },
-                EnumVariant {
                     name: "MHZ26",
                     description: Some(
                         "The kernel clock frequency provided to the OTG_HS PHY is 26 MHz.",
                     ),
                     value: 14,
+                },
+                EnumVariant {
+                    name: "MHZ32",
+                    description: Some(
+                        "The kernel clock frequency provided to the OTG_HS PHY is 32 MHz.",
+                    ),
+                    value: 11,
                 },
             ],
         },

@@ -2861,13 +2861,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "WORD4",
-                    description: Some(
-                        "every burst has a size of 4 Flash words (64 Bytes).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "WORD16",
                     description: Some(
                         "every burst has a size of 16 Flash words (256 Bytes).",
@@ -2875,18 +2868,25 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "WORD64",
-                    description: Some(
-                        "every burst has a size of 64 Flash words (1 Kbytes).",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
                     name: "WORD256",
                     description: Some(
                         "every burst has a size of 256 Flash words (4 Kbytes).",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "WORD4",
+                    description: Some(
+                        "every burst has a size of 4 Flash words (64 Bytes).",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "WORD64",
+                    description: Some(
+                        "every burst has a size of 64 Flash words (1 Kbytes).",
+                    ),
+                    value: 2,
                 },
             ],
         },
@@ -2896,13 +2896,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "ECDSA",
-                    description: Some(
-                        "Authentication method using ECDSA signature (NIST P256).",
-                    ),
-                    value: 81,
-                },
-                EnumVariant {
                     name: "DELEGATED",
                     description: Some(
                         "Delegated debug (to OEM iRoT code in user Flash).",
@@ -2910,11 +2903,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 111,
                 },
                 EnumVariant {
-                    name: "PASSWORD",
+                    name: "ECDSA",
                     description: Some(
-                        "Authentication method using password.",
+                        "Authentication method using ECDSA signature (NIST P256).",
                     ),
-                    value: 138,
+                    value: 81,
                 },
                 EnumVariant {
                     name: "LOCKED",
@@ -2922,6 +2915,13 @@ pub(crate) static REGISTERS: IR = IR {
                         "Locked device (no debug allowed).",
                     ),
                     value: 180,
+                },
+                EnumVariant {
+                    name: "PASSWORD",
+                    description: Some(
+                        "Authentication method using password.",
+                    ),
+                    value: 138,
                 },
             ],
         },
@@ -3008,20 +3008,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "BITS32",
-                    description: Some(
-                        "Key size is 32 bits.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "BITS64",
-                    description: Some(
-                        "Key size is 64 bits.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "BITS128",
                     description: Some(
                         "Key size is 128 bits.",
@@ -3034,6 +3020,20 @@ pub(crate) static REGISTERS: IR = IR {
                         "Key size is 256 bits.",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "BITS32",
+                    description: Some(
+                        "Key size is 32 bits.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "BITS64",
+                    description: Some(
+                        "Key size is 64 bits.",
+                    ),
+                    value: 1,
                 },
             ],
         },

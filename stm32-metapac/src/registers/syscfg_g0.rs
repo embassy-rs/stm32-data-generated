@@ -2338,13 +2338,6 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSTEM_FLASH",
-                    description: Some(
-                        "System Flash memory mapped at address 0",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "MAIN_FLASH_ALT",
                     description: Some(
                         "Main Flash memory mapped at address 0 (alternate encoding)",
@@ -2357,6 +2350,13 @@ pub(crate) static REGISTERS: IR = IR {
                         "Embedded SRAM mapped at address 0",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "SYSTEM_FLASH",
+                    description: Some(
+                        "System Flash memory mapped at address 0",
+                    ),
+                    value: 1,
                 },
             ],
         },

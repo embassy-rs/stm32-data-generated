@@ -246,39 +246,25 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "COSINE",
-                    description: Some(
-                        "Cosine function.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SINE",
-                    description: Some(
-                        "Sine function.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "PHASE",
-                    description: Some(
-                        "Phase function.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "MODULUS",
-                    description: Some(
-                        "Modulus function.",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
                     name: "ARCTANGENT",
                     description: Some(
                         "Arctangent function.",
                     ),
                     value: 4,
+                },
+                EnumVariant {
+                    name: "ARCTANH",
+                    description: Some(
+                        "Arctanh function.",
+                    ),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "COSINE",
+                    description: Some(
+                        "Cosine function.",
+                    ),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "HYPERBOLIC_COSINE",
@@ -295,11 +281,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 6,
                 },
                 EnumVariant {
-                    name: "ARCTANH",
+                    name: "MODULUS",
                     description: Some(
-                        "Arctanh function.",
+                        "Modulus function.",
                     ),
-                    value: 7,
+                    value: 3,
                 },
                 EnumVariant {
                     name: "NATURAL_LOGARITHM",
@@ -307,6 +293,20 @@ pub(crate) static REGISTERS: IR = IR {
                         "Natural Logarithm function.",
                     ),
                     value: 8,
+                },
+                EnumVariant {
+                    name: "PHASE",
+                    description: Some(
+                        "Phase function.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "SINE",
+                    description: Some(
+                        "Sine function.",
+                    ),
+                    value: 1,
                 },
                 EnumVariant {
                     name: "SQUARE_ROOT",
@@ -343,20 +343,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 4,
             variants: &[
-                EnumVariant {
-                    name: "ITERS4",
-                    description: Some(
-                        "4 iterations.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "ITERS8",
-                    description: Some(
-                        "8 iterations.",
-                    ),
-                    value: 2,
-                },
                 EnumVariant {
                     name: "ITERS12",
                     description: Some(
@@ -407,6 +393,13 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 9,
                 },
                 EnumVariant {
+                    name: "ITERS4",
+                    description: Some(
+                        "4 iterations.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
                     name: "ITERS40",
                     description: Some(
                         "40 iterations.",
@@ -448,6 +441,13 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 15,
                 },
+                EnumVariant {
+                    name: "ITERS8",
+                    description: Some(
+                        "8 iterations.",
+                    ),
+                    value: 2,
+                },
             ],
         },
         Enum {
@@ -456,32 +456,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "A1_R1",
+                    name: "A1O128_R128",
                     description: Some(
-                        "Argument multiplied by 1, result multiplied by 1",
+                        "Argument multiplied by 1/128, result multiplied by 128",
                     ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "A1O2_R2",
-                    description: Some(
-                        "Argument multiplied by 1/2, result multiplied by 2",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "A1O4_R4",
-                    description: Some(
-                        "Argument multiplied by 1/4, result multiplied by 4",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "A1O8_R8",
-                    description: Some(
-                        "Argument multiplied by 1/8, result multiplied by 8",
-                    ),
-                    value: 3,
+                    value: 7,
                 },
                 EnumVariant {
                     name: "A1O16_R16",
@@ -491,11 +470,25 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 4,
                 },
                 EnumVariant {
+                    name: "A1O2_R2",
+                    description: Some(
+                        "Argument multiplied by 1/2, result multiplied by 2",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
                     name: "A1O32_R32",
                     description: Some(
                         "Argument multiplied by 1/32, result multiplied by 32",
                     ),
                     value: 5,
+                },
+                EnumVariant {
+                    name: "A1O4_R4",
+                    description: Some(
+                        "Argument multiplied by 1/4, result multiplied by 4",
+                    ),
+                    value: 2,
                 },
                 EnumVariant {
                     name: "A1O64_R64",
@@ -505,11 +498,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 6,
                 },
                 EnumVariant {
-                    name: "A1O128_R128",
+                    name: "A1O8_R8",
                     description: Some(
-                        "Argument multiplied by 1/128, result multiplied by 128",
+                        "Argument multiplied by 1/8, result multiplied by 8",
                     ),
-                    value: 7,
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "A1_R1",
+                    description: Some(
+                        "Argument multiplied by 1, result multiplied by 1",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -519,18 +519,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BITS32",
-                    description: Some(
-                        "Use 32 bit input/output values.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "BITS16",
                     description: Some(
                         "Use 16 bit input/output values.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "BITS32",
+                    description: Some(
+                        "Use 32 bit input/output values.",
+                    ),
+                    value: 0,
                 },
             ],
         },

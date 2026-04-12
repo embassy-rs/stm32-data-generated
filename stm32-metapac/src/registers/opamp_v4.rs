@@ -320,18 +320,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PERCENT3_3",
-                    description: Some(
-                        "VREFOPAMP = 3.3% VDDA",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "PERCENT10",
                     description: Some(
                         "VREFOPAMP = 10% VDDA",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "PERCENT3_3",
+                    description: Some(
+                        "VREFOPAMP = 3.3% VDDA",
+                    ),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "PERCENT50",
@@ -355,81 +355,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "GAIN2",
-                    description: Some(
-                        "Non-inverting internal gain 2, VREF- referenced",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "GAIN4",
-                    description: Some(
-                        "Non-inverting internal gain 4, VREF- referenced",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "GAIN8",
-                    description: Some(
-                        "Non-inverting internal gain 8, VREF- referenced",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
                     name: "GAIN16",
                     description: Some(
                         "Non-inverting internal gain 16, VREF- referenced",
                     ),
                     value: 3,
-                },
-                EnumVariant {
-                    name: "GAIN2_FILTERING_VINM0",
-                    description: Some(
-                        "Non-inverting internal gain 2 with filtering on INM0, VREF- referenced",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "GAIN4_FILTERING_VINM0",
-                    description: Some(
-                        "Non-inverting internal gain 4 with filtering on INM0, VREF- referenced",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "GAIN8_FILTERING_VINM0",
-                    description: Some(
-                        "Non-inverting internal gain 8 with filtering on INM0, VREF- referenced",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "GAIN16_FILTERING_VINM0",
-                    description: Some(
-                        "Non-inverting internal gain 8 with filtering on INM0, VREF- referenced",
-                    ),
-                    value: 7,
-                },
-                EnumVariant {
-                    name: "GAIN2INV_GAIN_NEG1_INPUT_VINM0",
-                    description: Some(
-                        "Inverting gain=-1/ Non-inverting gain =2 with INM0 node for input or bias",
-                    ),
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "GAIN4INV_GAIN_NEG3_INPUT_VINM0",
-                    description: Some(
-                        "Inverting gain=-3/ Non-inverting gain =4 with INM0 node for input or bias",
-                    ),
-                    value: 9,
-                },
-                EnumVariant {
-                    name: "GAIN8INV_GAIN_NEG7_INPUT_VINM0",
-                    description: Some(
-                        "Inverting gain=-7/ Non-inverting gain =8 with INM0 node for input or bias",
-                    ),
-                    value: 10,
                 },
                 EnumVariant {
                     name: "GAIN16INV_GAIN_NEG15_INPUT_VINM0",
@@ -439,11 +369,60 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 11,
                 },
                 EnumVariant {
+                    name: "GAIN16INV_GAIN_NEG15_INPUT_VINM0FILTERING_VINM1",
+                    description: Some(
+                        "Inverting gain=-15/ Non-inverting gain =16 with INM0 node for input or bias, INM1 node for filtering",
+                    ),
+                    value: 15,
+                },
+                EnumVariant {
+                    name: "GAIN16_FILTERING_VINM0",
+                    description: Some(
+                        "Non-inverting internal gain 8 with filtering on INM0, VREF- referenced",
+                    ),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "GAIN2",
+                    description: Some(
+                        "Non-inverting internal gain 2, VREF- referenced",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "GAIN2INV_GAIN_NEG1_INPUT_VINM0",
+                    description: Some(
+                        "Inverting gain=-1/ Non-inverting gain =2 with INM0 node for input or bias",
+                    ),
+                    value: 8,
+                },
+                EnumVariant {
                     name: "GAIN2INV_GAIN_NEG1_INPUT_VINM0FILTERING_VINM1",
                     description: Some(
                         "Inverting gain=-1/ Non-inverting gain =2 with INM0 node for input or bias, INM1 node for filtering",
                     ),
                     value: 12,
+                },
+                EnumVariant {
+                    name: "GAIN2_FILTERING_VINM0",
+                    description: Some(
+                        "Non-inverting internal gain 2 with filtering on INM0, VREF- referenced",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "GAIN4",
+                    description: Some(
+                        "Non-inverting internal gain 4, VREF- referenced",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "GAIN4INV_GAIN_NEG3_INPUT_VINM0",
+                    description: Some(
+                        "Inverting gain=-3/ Non-inverting gain =4 with INM0 node for input or bias",
+                    ),
+                    value: 9,
                 },
                 EnumVariant {
                     name: "GAIN4INV_GAIN_NEG3_INPUT_VINM0FILTERING_VINM1",
@@ -453,6 +432,27 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 13,
                 },
                 EnumVariant {
+                    name: "GAIN4_FILTERING_VINM0",
+                    description: Some(
+                        "Non-inverting internal gain 4 with filtering on INM0, VREF- referenced",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "GAIN8",
+                    description: Some(
+                        "Non-inverting internal gain 8, VREF- referenced",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "GAIN8INV_GAIN_NEG7_INPUT_VINM0",
+                    description: Some(
+                        "Inverting gain=-7/ Non-inverting gain =8 with INM0 node for input or bias",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
                     name: "GAIN8INV_GAIN_NEG7_INPUT_VINM0FILTERING_VINM1",
                     description: Some(
                         "Inverting gain=-7/ Non-inverting gain =8 with INM0 node for input or bias, INM1 node for filtering",
@@ -460,11 +460,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 14,
                 },
                 EnumVariant {
-                    name: "GAIN16INV_GAIN_NEG15_INPUT_VINM0FILTERING_VINM1",
+                    name: "GAIN8_FILTERING_VINM0",
                     description: Some(
-                        "Inverting gain=-15/ Non-inverting gain =16 with INM0 node for input or bias, INM1 node for filtering",
+                        "Non-inverting internal gain 8 with filtering on INM0, VREF- referenced",
                     ),
-                    value: 15,
+                    value: 6,
                 },
             ],
         },
@@ -473,6 +473,13 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
+                EnumVariant {
+                    name: "FOLLOWER",
+                    description: Some(
+                        "opamp_out connected to OPAMP_VINM input (Follower mode)",
+                    ),
+                    value: 3,
+                },
                 EnumVariant {
                     name: "INM0",
                     description: Some(
@@ -494,13 +501,6 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 2,
                 },
-                EnumVariant {
-                    name: "FOLLOWER",
-                    description: Some(
-                        "opamp_out connected to OPAMP_VINM input (Follower mode)",
-                    ),
-                    value: 3,
-                },
             ],
         },
         Enum {
@@ -509,18 +509,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "GPIO_INP0",
-                    description: Some(
-                        "GPIO INP0 connected to VINP",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "DAC_OUT",
                     description: Some(
                         "DAC connected to VINP",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "GPIO_INP0",
+                    description: Some(
+                        "GPIO INP0 connected to VINP",
+                    ),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "GPIO_INP2",

@@ -318,14 +318,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NONE",
-                    description: Some("Word"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HALF_WORD",
-                    description: Some("Half-word (16-bit)"),
-                    value: 1,
+                    name: "BIT",
+                    description: Some("Bit"),
+                    value: 3,
                 },
                 EnumVariant {
                     name: "BYTE",
@@ -333,9 +328,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BIT",
-                    description: Some("Bit"),
-                    value: 3,
+                    name: "HALF_WORD",
+                    description: Some("Half-word (16-bit)"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "NONE",
+                    description: Some("Word"),
+                    value: 0,
                 },
             ],
         },
@@ -345,9 +345,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "INIT_PHASE",
-                    description: Some("Init phase"),
-                    value: 0,
+                    name: "FINAL_PHASE",
+                    description: Some("Final phase"),
+                    value: 3,
                 },
                 EnumVariant {
                     name: "HEADER_PHASE",
@@ -355,14 +355,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
+                    name: "INIT_PHASE",
+                    description: Some("Init phase"),
+                    value: 0,
+                },
+                EnumVariant {
                     name: "PAYLOAD_PHASE",
                     description: Some("Payload phase"),
                     value: 2,
-                },
-                EnumVariant {
-                    name: "FINAL_PHASE",
-                    description: Some("Final phase"),
-                    value: 3,
                 },
             ],
         },

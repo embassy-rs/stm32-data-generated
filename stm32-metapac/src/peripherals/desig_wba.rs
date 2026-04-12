@@ -22,47 +22,47 @@ impl Desig {
     #[doc = "package data register"]
     #[inline(always)]
     pub const fn pkgr(self) -> crate::common::Reg<regs::Pkgr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "temperature calibration 1 register"]
     #[inline(always)]
     pub const fn tscal1r(self) -> crate::common::Reg<regs::Tscal1r, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0210usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0210usize) as _) }
     }
     #[doc = "temperature calibration 2 register"]
     #[inline(always)]
     pub const fn tscal2r(self) -> crate::common::Reg<regs::Tscal2r, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0240usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0240usize) as _) }
     }
     #[doc = "FLASH size data register"]
     #[inline(always)]
     pub const fn flashsizer(self) -> crate::common::Reg<regs::Flashsizer, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02a0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x02a0usize) as _) }
     }
     #[doc = "voltage reference buffer calibration register"]
     #[inline(always)]
     pub const fn vrefbufcalr(self) -> crate::common::Reg<regs::Vrefbufcalr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02a8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x02a8usize) as _) }
     }
     #[doc = "resistor calibration register"]
     #[inline(always)]
     pub const fn rcalr(self) -> crate::common::Reg<regs::Rcalr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02f0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x02f0usize) as _) }
     }
     #[doc = "radio gain calibration register"]
     #[inline(always)]
     pub const fn rfgaincalr(self) -> crate::common::Reg<regs::Rfgaincalr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x02f4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x02f4usize) as _) }
     }
     #[doc = "IEEE 64-bit unique device ID register 1"]
     #[inline(always)]
     pub const fn uid64r1(self) -> crate::common::Reg<regs::Uid64r1, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0500usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0500usize) as _) }
     }
     #[doc = "IEEE 64-bit unique device ID register 2"]
     #[inline(always)]
     pub const fn uid64r2(self) -> crate::common::Reg<regs::Uid64r2, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0504usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0504usize) as _) }
     }
 }
 pub mod regs {
@@ -72,6 +72,7 @@ pub mod regs {
     pub struct Flashsizer(pub u32);
     impl Flashsizer {
         #[doc = "Flash memory size in Kbytes"]
+        #[must_use]
         #[inline(always)]
         pub const fn flash_size(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -79,10 +80,11 @@ pub mod regs {
         }
         #[doc = "Flash memory size in Kbytes"]
         #[inline(always)]
-        pub fn set_flash_size(&mut self, val: u16) {
+        pub const fn set_flash_size(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
         #[doc = "RAM memory size in Kbytes"]
+        #[must_use]
         #[inline(always)]
         pub const fn ram_size(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0xffff;
@@ -90,7 +92,7 @@ pub mod regs {
         }
         #[doc = "RAM memory size in Kbytes"]
         #[inline(always)]
-        pub fn set_ram_size(&mut self, val: u16) {
+        pub const fn set_ram_size(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
@@ -125,6 +127,7 @@ pub mod regs {
     pub struct Pkgr(pub u32);
     impl Pkgr {
         #[doc = "Package type"]
+        #[must_use]
         #[inline(always)]
         pub const fn pkg(&self) -> super::vals::Pkg {
             let val = (self.0 >> 0usize) & 0x1f;
@@ -132,10 +135,11 @@ pub mod regs {
         }
         #[doc = "Package type"]
         #[inline(always)]
-        pub fn set_pkg(&mut self, val: super::vals::Pkg) {
+        pub const fn set_pkg(&mut self, val: super::vals::Pkg) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val.to_bits() as u32) & 0x1f) << 0usize);
         }
         #[doc = "Reserved, must be kept at reset value"]
+        #[must_use]
         #[inline(always)]
         pub const fn reserved(&self) -> u32 {
             let val = (self.0 >> 5usize) & 0x07ff_ffff;
@@ -143,7 +147,7 @@ pub mod regs {
         }
         #[doc = "Reserved, must be kept at reset value"]
         #[inline(always)]
-        pub fn set_reserved(&mut self, val: u32) {
+        pub const fn set_reserved(&mut self, val: u32) {
             self.0 = (self.0 & !(0x07ff_ffff << 5usize)) | (((val as u32) & 0x07ff_ffff) << 5usize);
         }
     }
@@ -178,6 +182,7 @@ pub mod regs {
     pub struct Rcalr(pub u32);
     impl Rcalr {
         #[doc = "Resistor calibration value"]
+        #[must_use]
         #[inline(always)]
         pub const fn r_cal(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -185,7 +190,7 @@ pub mod regs {
         }
         #[doc = "Resistor calibration value"]
         #[inline(always)]
-        pub fn set_r_cal(&mut self, val: u8) {
+        pub const fn set_r_cal(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -212,6 +217,7 @@ pub mod regs {
     pub struct Rfgaincalr(pub u32);
     impl Rfgaincalr {
         #[doc = "Radio gain 1 calibration value"]
+        #[must_use]
         #[inline(always)]
         pub const fn gain1_cal(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -219,10 +225,11 @@ pub mod regs {
         }
         #[doc = "Radio gain 1 calibration value"]
         #[inline(always)]
-        pub fn set_gain1_cal(&mut self, val: u8) {
+        pub const fn set_gain1_cal(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "Radio gain 2 calibration value"]
+        #[must_use]
         #[inline(always)]
         pub const fn gain2_cal(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -230,10 +237,11 @@ pub mod regs {
         }
         #[doc = "Radio gain 2 calibration value"]
         #[inline(always)]
-        pub fn set_gain2_cal(&mut self, val: u8) {
+        pub const fn set_gain2_cal(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "Radio gain 3 calibration value"]
+        #[must_use]
         #[inline(always)]
         pub const fn gain3_cal(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
@@ -241,10 +249,11 @@ pub mod regs {
         }
         #[doc = "Radio gain 3 calibration value"]
         #[inline(always)]
-        pub fn set_gain3_cal(&mut self, val: u8) {
+        pub const fn set_gain3_cal(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
         #[doc = "Radio gain 4 calibration value"]
+        #[must_use]
         #[inline(always)]
         pub const fn gain4_cal(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0xff;
@@ -252,7 +261,7 @@ pub mod regs {
         }
         #[doc = "Radio gain 4 calibration value"]
         #[inline(always)]
-        pub fn set_gain4_cal(&mut self, val: u8) {
+        pub const fn set_gain4_cal(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 24usize)) | (((val as u32) & 0xff) << 24usize);
         }
     }
@@ -291,6 +300,7 @@ pub mod regs {
     pub struct Tscal1r(pub u32);
     impl Tscal1r {
         #[doc = "Factory temperature sensor calibration 1 value for ADC4"]
+        #[must_use]
         #[inline(always)]
         pub const fn ts_cal1(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -298,7 +308,7 @@ pub mod regs {
         }
         #[doc = "Factory temperature sensor calibration 1 value for ADC4"]
         #[inline(always)]
-        pub fn set_ts_cal1(&mut self, val: u16) {
+        pub const fn set_ts_cal1(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
     }
@@ -325,6 +335,7 @@ pub mod regs {
     pub struct Tscal2r(pub u32);
     impl Tscal2r {
         #[doc = "Factory temperature sensor calibration 2 value for ADC4"]
+        #[must_use]
         #[inline(always)]
         pub const fn ts_cal2(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0x0fff;
@@ -332,7 +343,7 @@ pub mod regs {
         }
         #[doc = "Factory temperature sensor calibration 2 value for ADC4"]
         #[inline(always)]
-        pub fn set_ts_cal2(&mut self, val: u16) {
+        pub const fn set_ts_cal2(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 16usize)) | (((val as u32) & 0x0fff) << 16usize);
         }
     }
@@ -359,6 +370,7 @@ pub mod regs {
     pub struct Uid64r1(pub u32);
     impl Uid64r1 {
         #[doc = "Device number"]
+        #[must_use]
         #[inline(always)]
         pub const fn devnum(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -366,7 +378,7 @@ pub mod regs {
         }
         #[doc = "Device number"]
         #[inline(always)]
-        pub fn set_devnum(&mut self, val: u32) {
+        pub const fn set_devnum(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -393,6 +405,7 @@ pub mod regs {
     pub struct Uid64r2(pub u32);
     impl Uid64r2 {
         #[doc = "Device ID"]
+        #[must_use]
         #[inline(always)]
         pub const fn devid(&self) -> super::vals::Devid {
             let val = (self.0 >> 0usize) & 0xff;
@@ -400,10 +413,11 @@ pub mod regs {
         }
         #[doc = "Device ID"]
         #[inline(always)]
-        pub fn set_devid(&mut self, val: super::vals::Devid) {
+        pub const fn set_devid(&mut self, val: super::vals::Devid) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val.to_bits() as u32) & 0xff) << 0usize);
         }
         #[doc = "Company ID"]
+        #[must_use]
         #[inline(always)]
         pub const fn stid(&self) -> super::vals::Stid {
             let val = (self.0 >> 8usize) & 0x00ff_ffff;
@@ -411,7 +425,7 @@ pub mod regs {
         }
         #[doc = "Company ID"]
         #[inline(always)]
-        pub fn set_stid(&mut self, val: super::vals::Stid) {
+        pub const fn set_stid(&mut self, val: super::vals::Stid) {
             self.0 = (self.0 & !(0x00ff_ffff << 8usize)) | (((val.to_bits() as u32) & 0x00ff_ffff) << 8usize);
         }
     }
@@ -441,6 +455,7 @@ pub mod regs {
     pub struct Vrefbufcalr(pub u32);
     impl Vrefbufcalr {
         #[doc = "VREFBUF0 factory voltage reference buffer calibration value"]
+        #[must_use]
         #[inline(always)]
         pub const fn vrefbuf0_trim(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
@@ -448,10 +463,11 @@ pub mod regs {
         }
         #[doc = "VREFBUF0 factory voltage reference buffer calibration value"]
         #[inline(always)]
-        pub fn set_vrefbuf0_trim(&mut self, val: u8) {
+        pub const fn set_vrefbuf0_trim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
         #[doc = "VREFBUF1 factory voltage reference buffer calibration value"]
+        #[must_use]
         #[inline(always)]
         pub const fn vrefbuf1_trim(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x3f;
@@ -459,10 +475,11 @@ pub mod regs {
         }
         #[doc = "VREFBUF1 factory voltage reference buffer calibration value"]
         #[inline(always)]
-        pub fn set_vrefbuf1_trim(&mut self, val: u8) {
+        pub const fn set_vrefbuf1_trim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 8usize)) | (((val as u32) & 0x3f) << 8usize);
         }
         #[doc = "VREFBUF2 factory voltage reference buffer calibration value"]
+        #[must_use]
         #[inline(always)]
         pub const fn vrefbuf2_trim(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x3f;
@@ -470,10 +487,11 @@ pub mod regs {
         }
         #[doc = "VREFBUF2 factory voltage reference buffer calibration value"]
         #[inline(always)]
-        pub fn set_vrefbuf2_trim(&mut self, val: u8) {
+        pub const fn set_vrefbuf2_trim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 16usize)) | (((val as u32) & 0x3f) << 16usize);
         }
         #[doc = "VREFBUF3 factory voltage reference buffer calibration value"]
+        #[must_use]
         #[inline(always)]
         pub const fn vrefbuf3_trim(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x3f;
@@ -481,7 +499,7 @@ pub mod regs {
         }
         #[doc = "VREFBUF3 factory voltage reference buffer calibration value"]
         #[inline(always)]
-        pub fn set_vrefbuf3_trim(&mut self, val: u8) {
+        pub const fn set_vrefbuf3_trim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 24usize)) | (((val as u32) & 0x3f) << 24usize);
         }
     }

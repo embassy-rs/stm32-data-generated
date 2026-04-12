@@ -22,17 +22,17 @@ impl Opamp {
     #[doc = "Control/status register"]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Offset trimming register in normal mode"]
     #[inline(always)]
     pub const fn otr(self) -> crate::common::Reg<regs::Otr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Offset trimming register in low-power mode"]
     #[inline(always)]
     pub const fn hsotr(self) -> crate::common::Reg<regs::Hsotr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
 }
 pub mod regs {
@@ -42,6 +42,7 @@ pub mod regs {
     pub struct Csr(pub u32);
     impl Csr {
         #[doc = "Enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn opampen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -49,10 +50,11 @@ pub mod regs {
         }
         #[doc = "Enable"]
         #[inline(always)]
-        pub fn set_opampen(&mut self, val: bool) {
+        pub const fn set_opampen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Force internal reference on VP (reserved for test)"]
+        #[must_use]
         #[inline(always)]
         pub const fn force_vp(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -60,10 +62,11 @@ pub mod regs {
         }
         #[doc = "Force internal reference on VP (reserved for test)"]
         #[inline(always)]
-        pub fn set_force_vp(&mut self, val: bool) {
+        pub const fn set_force_vp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Non-inverting input selection"]
+        #[must_use]
         #[inline(always)]
         pub const fn vp_sel(&self) -> super::vals::VpSel {
             let val = (self.0 >> 2usize) & 0x03;
@@ -71,10 +74,11 @@ pub mod regs {
         }
         #[doc = "Non-inverting input selection"]
         #[inline(always)]
-        pub fn set_vp_sel(&mut self, val: super::vals::VpSel) {
+        pub const fn set_vp_sel(&mut self, val: super::vals::VpSel) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
         #[doc = "Inverting input selection"]
+        #[must_use]
         #[inline(always)]
         pub const fn vm_sel(&self) -> super::vals::VmSel {
             let val = (self.0 >> 5usize) & 0x03;
@@ -82,10 +86,11 @@ pub mod regs {
         }
         #[doc = "Inverting input selection"]
         #[inline(always)]
-        pub fn set_vm_sel(&mut self, val: super::vals::VmSel) {
+        pub const fn set_vm_sel(&mut self, val: super::vals::VmSel) {
             self.0 = (self.0 & !(0x03 << 5usize)) | (((val.to_bits() as u32) & 0x03) << 5usize);
         }
         #[doc = "High-speed mode enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn opahsm(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -93,10 +98,11 @@ pub mod regs {
         }
         #[doc = "High-speed mode enable"]
         #[inline(always)]
-        pub fn set_opahsm(&mut self, val: bool) {
+        pub const fn set_opahsm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Calibration mode enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn calon(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -104,10 +110,11 @@ pub mod regs {
         }
         #[doc = "Calibration mode enable"]
         #[inline(always)]
-        pub fn set_calon(&mut self, val: bool) {
+        pub const fn set_calon(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Calibration selection"]
+        #[must_use]
         #[inline(always)]
         pub const fn calsel(&self) -> super::vals::Calsel {
             let val = (self.0 >> 12usize) & 0x03;
@@ -115,10 +122,11 @@ pub mod regs {
         }
         #[doc = "Calibration selection"]
         #[inline(always)]
-        pub fn set_calsel(&mut self, val: super::vals::Calsel) {
+        pub const fn set_calsel(&mut self, val: super::vals::Calsel) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
         #[doc = "Gain in PGA mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn pga_gain(&self) -> super::vals::PgaGain {
             let val = (self.0 >> 14usize) & 0x0f;
@@ -126,10 +134,11 @@ pub mod regs {
         }
         #[doc = "Gain in PGA mode"]
         #[inline(always)]
-        pub fn set_pga_gain(&mut self, val: super::vals::PgaGain) {
+        pub const fn set_pga_gain(&mut self, val: super::vals::PgaGain) {
             self.0 = (self.0 & !(0x0f << 14usize)) | (((val.to_bits() as u32) & 0x0f) << 14usize);
         }
         #[doc = "User trimming enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn usertrim(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -137,10 +146,11 @@ pub mod regs {
         }
         #[doc = "User trimming enable"]
         #[inline(always)]
-        pub fn set_usertrim(&mut self, val: bool) {
+        pub const fn set_usertrim(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Output the internal reference voltage"]
+        #[must_use]
         #[inline(always)]
         pub const fn tstref(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -148,10 +158,11 @@ pub mod regs {
         }
         #[doc = "Output the internal reference voltage"]
         #[inline(always)]
-        pub fn set_tstref(&mut self, val: bool) {
+        pub const fn set_tstref(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "Calibration output"]
+        #[must_use]
         #[inline(always)]
         pub const fn calout(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -159,7 +170,7 @@ pub mod regs {
         }
         #[doc = "Calibration output"]
         #[inline(always)]
-        pub fn set_calout(&mut self, val: bool) {
+        pub const fn set_calout(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
     }
@@ -198,6 +209,7 @@ pub mod regs {
     pub struct Hsotr(pub u32);
     impl Hsotr {
         #[doc = "Offset trimming value (NMOS)"]
+        #[must_use]
         #[inline(always)]
         pub const fn trimlpoffsetn(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x1f;
@@ -205,10 +217,11 @@ pub mod regs {
         }
         #[doc = "Offset trimming value (NMOS)"]
         #[inline(always)]
-        pub fn set_trimlpoffsetn(&mut self, val: u8) {
+        pub const fn set_trimlpoffsetn(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
         #[doc = "Offset trimming value (PMOS)"]
+        #[must_use]
         #[inline(always)]
         pub const fn trimlpoffsetp(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x1f;
@@ -216,7 +229,7 @@ pub mod regs {
         }
         #[doc = "Offset trimming value (PMOS)"]
         #[inline(always)]
-        pub fn set_trimlpoffsetp(&mut self, val: u8) {
+        pub const fn set_trimlpoffsetp(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
         }
     }
@@ -251,6 +264,7 @@ pub mod regs {
     pub struct Otr(pub u32);
     impl Otr {
         #[doc = "Offset trimming value (NMOS)"]
+        #[must_use]
         #[inline(always)]
         pub const fn trimoffsetn(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x1f;
@@ -258,10 +272,11 @@ pub mod regs {
         }
         #[doc = "Offset trimming value (NMOS)"]
         #[inline(always)]
-        pub fn set_trimoffsetn(&mut self, val: u8) {
+        pub const fn set_trimoffsetn(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
         #[doc = "Offset trimming value (PMOS)"]
+        #[must_use]
         #[inline(always)]
         pub const fn trimoffsetp(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x1f;
@@ -269,7 +284,7 @@ pub mod regs {
         }
         #[doc = "Offset trimming value (PMOS)"]
         #[inline(always)]
-        pub fn set_trimoffsetp(&mut self, val: u8) {
+        pub const fn set_trimoffsetp(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
         }
     }

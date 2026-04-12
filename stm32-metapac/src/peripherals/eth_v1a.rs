@@ -22,17 +22,17 @@ impl Eth {
     #[doc = "Ethernet: media access control (MAC)"]
     #[inline(always)]
     pub const fn ethernet_mac(self) -> EthernetMac {
-        unsafe { EthernetMac::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { EthernetMac::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Ethernet: Precision Time Protocol (PTP)"]
     #[inline(always)]
     pub const fn ethernet_ptp(self) -> EthernetPtp {
-        unsafe { EthernetPtp::from_ptr(self.ptr.add(0x0700usize) as _) }
+        unsafe { EthernetPtp::from_ptr(self.ptr.wrapping_add(0x0700usize) as _) }
     }
     #[doc = "Ethernet: DMA mode register (DMA)"]
     #[inline(always)]
     pub const fn ethernet_dma(self) -> EthernetDma {
-        unsafe { EthernetDma::from_ptr(self.ptr.add(0x1000usize) as _) }
+        unsafe { EthernetDma::from_ptr(self.ptr.wrapping_add(0x1000usize) as _) }
     }
 }
 #[doc = "Ethernet: DMA controller operation"]
@@ -54,67 +54,67 @@ impl EthernetDma {
     #[doc = "Ethernet DMA bus mode register"]
     #[inline(always)]
     pub const fn dmabmr(self) -> crate::common::Reg<regs::Dmabmr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Ethernet DMA transmit poll demand register"]
     #[inline(always)]
     pub const fn dmatpdr(self) -> crate::common::Reg<regs::Dmatpdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "EHERNET DMA receive poll demand register"]
     #[inline(always)]
     pub const fn dmarpdr(self) -> crate::common::Reg<regs::Dmarpdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "Ethernet DMA receive descriptor list address register"]
     #[inline(always)]
     pub const fn dmardlar(self) -> crate::common::Reg<regs::Dmardlar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "Ethernet DMA transmit descriptor list address register"]
     #[inline(always)]
     pub const fn dmatdlar(self) -> crate::common::Reg<regs::Dmatdlar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "Ethernet DMA status register"]
     #[inline(always)]
     pub const fn dmasr(self) -> crate::common::Reg<regs::Dmasr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "Ethernet DMA operation mode register"]
     #[inline(always)]
     pub const fn dmaomr(self) -> crate::common::Reg<regs::Dmaomr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "Ethernet DMA interrupt enable register"]
     #[inline(always)]
     pub const fn dmaier(self) -> crate::common::Reg<regs::Dmaier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "Ethernet DMA missed frame and buffer overflow counter register"]
     #[inline(always)]
     pub const fn dmamfbocr(self) -> crate::common::Reg<regs::Dmamfbocr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "Ethernet DMA current host transmit descriptor register"]
     #[inline(always)]
     pub const fn dmachtdr(self) -> crate::common::Reg<regs::Dmachtdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
     }
     #[doc = "Ethernet DMA current host receive descriptor register"]
     #[inline(always)]
     pub const fn dmachrdr(self) -> crate::common::Reg<regs::Dmachrdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x4cusize) as _) }
     }
     #[doc = "Ethernet DMA current host transmit buffer address register"]
     #[inline(always)]
     pub const fn dmachtbar(self) -> crate::common::Reg<regs::Dmachtbar, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
     }
     #[doc = "Ethernet DMA current host receive buffer address register"]
     #[inline(always)]
     pub const fn dmachrbar(self) -> crate::common::Reg<regs::Dmachrbar, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x54usize) as _) }
     }
 }
 #[doc = "Ethernet: media access control (MAC)"]
@@ -136,144 +136,144 @@ impl EthernetMac {
     #[doc = "Ethernet MAC configuration register"]
     #[inline(always)]
     pub const fn maccr(self) -> crate::common::Reg<regs::Maccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Ethernet MAC frame filter register"]
     #[inline(always)]
     pub const fn macffr(self) -> crate::common::Reg<regs::Macffr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Ethernet MAC hash table high register"]
     #[inline(always)]
     pub const fn machthr(self) -> crate::common::Reg<regs::Machthr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "Ethernet MAC hash table low register"]
     #[inline(always)]
     pub const fn machtlr(self) -> crate::common::Reg<regs::Machtlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "Ethernet MAC MII address register"]
     #[inline(always)]
     pub const fn macmiiar(self) -> crate::common::Reg<regs::Macmiiar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "Ethernet MAC MII data register"]
     #[inline(always)]
     pub const fn macmiidr(self) -> crate::common::Reg<regs::Macmiidr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "Ethernet MAC flow control register"]
     #[inline(always)]
     pub const fn macfcr(self) -> crate::common::Reg<regs::Macfcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "Ethernet MAC VLAN tag register"]
     #[inline(always)]
     pub const fn macvlantr(self) -> crate::common::Reg<regs::Macvlantr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "Ethernet MAC remote wakeup frame filter register"]
     #[inline(always)]
     pub const fn macrwuffr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "Ethernet MAC PMT control and status register"]
     #[inline(always)]
     pub const fn macpmtcsr(self) -> crate::common::Reg<regs::Macpmtcsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
     }
     #[doc = "Ethernet MAC debug register"]
     #[inline(always)]
     pub const fn macdbgr(self) -> crate::common::Reg<regs::Macdbgr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
     }
     #[doc = "Ethernet MAC interrupt status register"]
     #[inline(always)]
     pub const fn macsr(self) -> crate::common::Reg<regs::Macsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x38usize) as _) }
     }
     #[doc = "Ethernet MAC interrupt mask register"]
     #[inline(always)]
     pub const fn macimr(self) -> crate::common::Reg<regs::Macimr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3cusize) as _) }
     }
     #[doc = "Ethernet MAC address 0 high register"]
     #[inline(always)]
     pub const fn maca0hr(self) -> crate::common::Reg<regs::Maca0hr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
     }
     #[doc = "Ethernet MAC address 0 low register"]
     #[inline(always)]
     pub const fn maca0lr(self) -> crate::common::Reg<regs::Maca0lr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
     }
     #[doc = "Ethernet MAC address 1/2/3 high register"]
     #[inline(always)]
     pub const fn macahr(self, n: usize) -> crate::common::Reg<regs::Macahr, crate::common::RW> {
         assert!(n < 3usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize + n * 8usize) as _) }
     }
     #[doc = "Ethernet MAC address 1/2/3 low register"]
     #[inline(always)]
     pub const fn macalr(self, n: usize) -> crate::common::Reg<regs::Macalr, crate::common::RW> {
         assert!(n < 3usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x4cusize + n * 8usize) as _) }
     }
     #[doc = "Ethernet MMC control register"]
     #[inline(always)]
     pub const fn mmccr(self) -> crate::common::Reg<regs::Mmccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize) as _) }
     }
     #[doc = "Ethernet MMC receive interrupt register"]
     #[inline(always)]
     pub const fn mmcrir(self) -> crate::common::Reg<regs::Mmcrir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0104usize) as _) }
     }
     #[doc = "Ethernet MMC transmit interrupt register"]
     #[inline(always)]
     pub const fn mmctir(self) -> crate::common::Reg<regs::Mmctir, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0108usize) as _) }
     }
     #[doc = "Ethernet MMC receive interrupt mask register"]
     #[inline(always)]
     pub const fn mmcrimr(self) -> crate::common::Reg<regs::Mmcrimr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x010cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x010cusize) as _) }
     }
     #[doc = "Ethernet MMC transmit interrupt mask register"]
     #[inline(always)]
     pub const fn mmctimr(self) -> crate::common::Reg<regs::Mmctimr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0110usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0110usize) as _) }
     }
     #[doc = "Ethernet MMC transmitted good frames after a single collision counter"]
     #[inline(always)]
     pub const fn mmctgfsccr(self) -> crate::common::Reg<regs::Mmctgfsccr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x014cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x014cusize) as _) }
     }
     #[doc = "Ethernet MMC transmitted good frames after more than a single collision"]
     #[inline(always)]
     pub const fn mmctgfmsccr(self) -> crate::common::Reg<regs::Mmctgfmsccr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0150usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0150usize) as _) }
     }
     #[doc = "Ethernet MMC transmitted good frames counter register"]
     #[inline(always)]
     pub const fn mmctgfcr(self) -> crate::common::Reg<regs::Mmctgfcr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0168usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0168usize) as _) }
     }
     #[doc = "Ethernet MMC received frames with CRC error counter register"]
     #[inline(always)]
     pub const fn mmcrfcecr(self) -> crate::common::Reg<regs::Mmcrfcecr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0194usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0194usize) as _) }
     }
     #[doc = "Ethernet MMC received frames with alignment error counter register"]
     #[inline(always)]
     pub const fn mmcrfaecr(self) -> crate::common::Reg<regs::Mmcrfaecr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0198usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0198usize) as _) }
     }
     #[doc = "MMC received good unicast frames counter register"]
     #[inline(always)]
     pub const fn mmcrgufcr(self) -> crate::common::Reg<regs::Mmcrgufcr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01c4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01c4usize) as _) }
     }
 }
 #[doc = "Ethernet: Precision time protocol"]
@@ -295,57 +295,57 @@ impl EthernetPtp {
     #[doc = "Ethernet PTP time stamp control register"]
     #[inline(always)]
     pub const fn ptptscr(self) -> crate::common::Reg<regs::Ptptscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Ethernet PTP subsecond increment register"]
     #[inline(always)]
     pub const fn ptpssir(self) -> crate::common::Reg<regs::Ptpssir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Ethernet PTP time stamp high register"]
     #[inline(always)]
     pub const fn ptptshr(self) -> crate::common::Reg<regs::Ptptshr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "Ethernet PTP time stamp low register"]
     #[inline(always)]
     pub const fn ptptslr(self) -> crate::common::Reg<regs::Ptptslr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "Ethernet PTP time stamp high update register"]
     #[inline(always)]
     pub const fn ptptshur(self) -> crate::common::Reg<regs::Ptptshur, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "Ethernet PTP time stamp low update register"]
     #[inline(always)]
     pub const fn ptptslur(self) -> crate::common::Reg<regs::Ptptslur, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "Ethernet PTP time stamp addend register"]
     #[inline(always)]
     pub const fn ptptsar(self) -> crate::common::Reg<regs::Ptptsar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "Ethernet PTP target time high register"]
     #[inline(always)]
     pub const fn ptptthr(self) -> crate::common::Reg<regs::Ptptthr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "Ethernet PTP target time low register"]
     #[inline(always)]
     pub const fn ptpttlr(self) -> crate::common::Reg<regs::Ptpttlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "Ethernet PTP time stamp status register"]
     #[inline(always)]
     pub const fn ptptssr(self) -> crate::common::Reg<regs::Ptptssr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "Ethernet PTP PPS control register"]
     #[inline(always)]
     pub const fn ptpppscr(self) -> crate::common::Reg<regs::Ptpppscr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
     }
 }
 pub mod regs {
@@ -355,6 +355,7 @@ pub mod regs {
     pub struct Dmabmr(pub u32);
     impl Dmabmr {
         #[doc = "Software reset"]
+        #[must_use]
         #[inline(always)]
         pub const fn sr(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -362,10 +363,11 @@ pub mod regs {
         }
         #[doc = "Software reset"]
         #[inline(always)]
-        pub fn set_sr(&mut self, val: bool) {
+        pub const fn set_sr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "DMA arbitration"]
+        #[must_use]
         #[inline(always)]
         pub const fn da(&self) -> super::vals::Da {
             let val = (self.0 >> 1usize) & 0x01;
@@ -373,10 +375,11 @@ pub mod regs {
         }
         #[doc = "DMA arbitration"]
         #[inline(always)]
-        pub fn set_da(&mut self, val: super::vals::Da) {
+        pub const fn set_da(&mut self, val: super::vals::Da) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "Descriptor skip length"]
+        #[must_use]
         #[inline(always)]
         pub const fn dsl(&self) -> u8 {
             let val = (self.0 >> 2usize) & 0x1f;
@@ -384,10 +387,11 @@ pub mod regs {
         }
         #[doc = "Descriptor skip length"]
         #[inline(always)]
-        pub fn set_dsl(&mut self, val: u8) {
+        pub const fn set_dsl(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 2usize)) | (((val as u32) & 0x1f) << 2usize);
         }
         #[doc = "Programmable burst length"]
+        #[must_use]
         #[inline(always)]
         pub const fn pbl(&self) -> super::vals::Pbl {
             let val = (self.0 >> 8usize) & 0x3f;
@@ -395,10 +399,11 @@ pub mod regs {
         }
         #[doc = "Programmable burst length"]
         #[inline(always)]
-        pub fn set_pbl(&mut self, val: super::vals::Pbl) {
+        pub const fn set_pbl(&mut self, val: super::vals::Pbl) {
             self.0 = (self.0 & !(0x3f << 8usize)) | (((val.to_bits() as u32) & 0x3f) << 8usize);
         }
         #[doc = "Rx-Tx priority ratio"]
+        #[must_use]
         #[inline(always)]
         pub const fn pm(&self) -> super::vals::PriorityRxOverTx {
             let val = (self.0 >> 14usize) & 0x03;
@@ -406,10 +411,11 @@ pub mod regs {
         }
         #[doc = "Rx-Tx priority ratio"]
         #[inline(always)]
-        pub fn set_pm(&mut self, val: super::vals::PriorityRxOverTx) {
+        pub const fn set_pm(&mut self, val: super::vals::PriorityRxOverTx) {
             self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
         }
         #[doc = "Fixed burst"]
+        #[must_use]
         #[inline(always)]
         pub const fn fb(&self) -> super::vals::Fb {
             let val = (self.0 >> 16usize) & 0x01;
@@ -417,10 +423,11 @@ pub mod regs {
         }
         #[doc = "Fixed burst"]
         #[inline(always)]
-        pub fn set_fb(&mut self, val: super::vals::Fb) {
+        pub const fn set_fb(&mut self, val: super::vals::Fb) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
         #[doc = "Rx DMA PBL"]
+        #[must_use]
         #[inline(always)]
         pub const fn rdp(&self) -> super::vals::Rdp {
             let val = (self.0 >> 17usize) & 0x3f;
@@ -428,10 +435,11 @@ pub mod regs {
         }
         #[doc = "Rx DMA PBL"]
         #[inline(always)]
-        pub fn set_rdp(&mut self, val: super::vals::Rdp) {
+        pub const fn set_rdp(&mut self, val: super::vals::Rdp) {
             self.0 = (self.0 & !(0x3f << 17usize)) | (((val.to_bits() as u32) & 0x3f) << 17usize);
         }
         #[doc = "Use separate PBL"]
+        #[must_use]
         #[inline(always)]
         pub const fn usp(&self) -> super::vals::Usp {
             let val = (self.0 >> 23usize) & 0x01;
@@ -439,10 +447,11 @@ pub mod regs {
         }
         #[doc = "Use separate PBL"]
         #[inline(always)]
-        pub fn set_usp(&mut self, val: super::vals::Usp) {
+        pub const fn set_usp(&mut self, val: super::vals::Usp) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
         }
         #[doc = "4xPBL mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn fpm(&self) -> super::vals::Fpm {
             let val = (self.0 >> 24usize) & 0x01;
@@ -450,10 +459,11 @@ pub mod regs {
         }
         #[doc = "4xPBL mode"]
         #[inline(always)]
-        pub fn set_fpm(&mut self, val: super::vals::Fpm) {
+        pub const fn set_fpm(&mut self, val: super::vals::Fpm) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
         }
         #[doc = "Address-aligned beats"]
+        #[must_use]
         #[inline(always)]
         pub const fn aab(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -461,7 +471,7 @@ pub mod regs {
         }
         #[doc = "Address-aligned beats"]
         #[inline(always)]
-        pub fn set_aab(&mut self, val: bool) {
+        pub const fn set_aab(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
     }
@@ -499,6 +509,7 @@ pub mod regs {
     pub struct Dmachrbar(pub u32);
     impl Dmachrbar {
         #[doc = "Host receive buffer address pointer"]
+        #[must_use]
         #[inline(always)]
         pub const fn hrbap(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -506,7 +517,7 @@ pub mod regs {
         }
         #[doc = "Host receive buffer address pointer"]
         #[inline(always)]
-        pub fn set_hrbap(&mut self, val: u32) {
+        pub const fn set_hrbap(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -533,6 +544,7 @@ pub mod regs {
     pub struct Dmachrdr(pub u32);
     impl Dmachrdr {
         #[doc = "Host receive descriptor address pointer"]
+        #[must_use]
         #[inline(always)]
         pub const fn hrdap(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -540,7 +552,7 @@ pub mod regs {
         }
         #[doc = "Host receive descriptor address pointer"]
         #[inline(always)]
-        pub fn set_hrdap(&mut self, val: u32) {
+        pub const fn set_hrdap(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -567,6 +579,7 @@ pub mod regs {
     pub struct Dmachtbar(pub u32);
     impl Dmachtbar {
         #[doc = "Host transmit buffer address pointer"]
+        #[must_use]
         #[inline(always)]
         pub const fn htbap(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -574,7 +587,7 @@ pub mod regs {
         }
         #[doc = "Host transmit buffer address pointer"]
         #[inline(always)]
-        pub fn set_htbap(&mut self, val: u32) {
+        pub const fn set_htbap(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -601,6 +614,7 @@ pub mod regs {
     pub struct Dmachtdr(pub u32);
     impl Dmachtdr {
         #[doc = "Host transmit descriptor address pointer"]
+        #[must_use]
         #[inline(always)]
         pub const fn htdap(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -608,7 +622,7 @@ pub mod regs {
         }
         #[doc = "Host transmit descriptor address pointer"]
         #[inline(always)]
-        pub fn set_htdap(&mut self, val: u32) {
+        pub const fn set_htdap(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -635,6 +649,7 @@ pub mod regs {
     pub struct Dmaier(pub u32);
     impl Dmaier {
         #[doc = "Transmit interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn tie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -642,10 +657,11 @@ pub mod regs {
         }
         #[doc = "Transmit interrupt enable"]
         #[inline(always)]
-        pub fn set_tie(&mut self, val: bool) {
+        pub const fn set_tie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Transmit process stopped interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn tpsie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -653,10 +669,11 @@ pub mod regs {
         }
         #[doc = "Transmit process stopped interrupt enable"]
         #[inline(always)]
-        pub fn set_tpsie(&mut self, val: bool) {
+        pub const fn set_tpsie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Transmit buffer unavailable interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn tbuie(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -664,10 +681,11 @@ pub mod regs {
         }
         #[doc = "Transmit buffer unavailable interrupt enable"]
         #[inline(always)]
-        pub fn set_tbuie(&mut self, val: bool) {
+        pub const fn set_tbuie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Transmit jabber timeout interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn tjtie(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -675,10 +693,11 @@ pub mod regs {
         }
         #[doc = "Transmit jabber timeout interrupt enable"]
         #[inline(always)]
-        pub fn set_tjtie(&mut self, val: bool) {
+        pub const fn set_tjtie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Receive overflow interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn roie(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -686,10 +705,11 @@ pub mod regs {
         }
         #[doc = "Receive overflow interrupt enable"]
         #[inline(always)]
-        pub fn set_roie(&mut self, val: bool) {
+        pub const fn set_roie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Transmit underflow interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn tuie(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -697,10 +717,11 @@ pub mod regs {
         }
         #[doc = "Transmit underflow interrupt enable"]
         #[inline(always)]
-        pub fn set_tuie(&mut self, val: bool) {
+        pub const fn set_tuie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Receive interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn rie(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -708,10 +729,11 @@ pub mod regs {
         }
         #[doc = "Receive interrupt enable"]
         #[inline(always)]
-        pub fn set_rie(&mut self, val: bool) {
+        pub const fn set_rie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Receive buffer unavailable interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn rbuie(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -719,10 +741,11 @@ pub mod regs {
         }
         #[doc = "Receive buffer unavailable interrupt enable"]
         #[inline(always)]
-        pub fn set_rbuie(&mut self, val: bool) {
+        pub const fn set_rbuie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Receive process stopped interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn rpsie(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -730,10 +753,11 @@ pub mod regs {
         }
         #[doc = "Receive process stopped interrupt enable"]
         #[inline(always)]
-        pub fn set_rpsie(&mut self, val: bool) {
+        pub const fn set_rpsie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Receive watchdog timeout interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn rwtie(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -741,10 +765,11 @@ pub mod regs {
         }
         #[doc = "Receive watchdog timeout interrupt enable"]
         #[inline(always)]
-        pub fn set_rwtie(&mut self, val: bool) {
+        pub const fn set_rwtie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Early transmit interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn etie(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -752,10 +777,11 @@ pub mod regs {
         }
         #[doc = "Early transmit interrupt enable"]
         #[inline(always)]
-        pub fn set_etie(&mut self, val: bool) {
+        pub const fn set_etie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Fatal bus error interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn fbeie(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -763,10 +789,11 @@ pub mod regs {
         }
         #[doc = "Fatal bus error interrupt enable"]
         #[inline(always)]
-        pub fn set_fbeie(&mut self, val: bool) {
+        pub const fn set_fbeie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Early receive interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn erie(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -774,10 +801,11 @@ pub mod regs {
         }
         #[doc = "Early receive interrupt enable"]
         #[inline(always)]
-        pub fn set_erie(&mut self, val: bool) {
+        pub const fn set_erie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Abnormal interrupt summary enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn aise(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -785,10 +813,11 @@ pub mod regs {
         }
         #[doc = "Abnormal interrupt summary enable"]
         #[inline(always)]
-        pub fn set_aise(&mut self, val: bool) {
+        pub const fn set_aise(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Normal interrupt summary enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn nise(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -796,7 +825,7 @@ pub mod regs {
         }
         #[doc = "Normal interrupt summary enable"]
         #[inline(always)]
-        pub fn set_nise(&mut self, val: bool) {
+        pub const fn set_nise(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
@@ -839,6 +868,7 @@ pub mod regs {
     pub struct Dmamfbocr(pub u32);
     impl Dmamfbocr {
         #[doc = "Missed frames by the controller"]
+        #[must_use]
         #[inline(always)]
         pub const fn mfc(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -846,10 +876,11 @@ pub mod regs {
         }
         #[doc = "Missed frames by the controller"]
         #[inline(always)]
-        pub fn set_mfc(&mut self, val: u16) {
+        pub const fn set_mfc(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
         #[doc = "Overflow bit for missed frame counter"]
+        #[must_use]
         #[inline(always)]
         pub const fn omfc(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -857,10 +888,11 @@ pub mod regs {
         }
         #[doc = "Overflow bit for missed frame counter"]
         #[inline(always)]
-        pub fn set_omfc(&mut self, val: bool) {
+        pub const fn set_omfc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Missed frames by the application"]
+        #[must_use]
         #[inline(always)]
         pub const fn mfa(&self) -> u16 {
             let val = (self.0 >> 17usize) & 0x07ff;
@@ -868,10 +900,11 @@ pub mod regs {
         }
         #[doc = "Missed frames by the application"]
         #[inline(always)]
-        pub fn set_mfa(&mut self, val: u16) {
+        pub const fn set_mfa(&mut self, val: u16) {
             self.0 = (self.0 & !(0x07ff << 17usize)) | (((val as u32) & 0x07ff) << 17usize);
         }
         #[doc = "Overflow bit for FIFO overflow counter"]
+        #[must_use]
         #[inline(always)]
         pub const fn ofoc(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -879,7 +912,7 @@ pub mod regs {
         }
         #[doc = "Overflow bit for FIFO overflow counter"]
         #[inline(always)]
-        pub fn set_ofoc(&mut self, val: bool) {
+        pub const fn set_ofoc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
     }
@@ -918,6 +951,7 @@ pub mod regs {
     pub struct Dmaomr(pub u32);
     impl Dmaomr {
         #[doc = "Start/stop receive"]
+        #[must_use]
         #[inline(always)]
         pub const fn sr(&self) -> super::vals::DmaomrSr {
             let val = (self.0 >> 1usize) & 0x01;
@@ -925,10 +959,11 @@ pub mod regs {
         }
         #[doc = "Start/stop receive"]
         #[inline(always)]
-        pub fn set_sr(&mut self, val: super::vals::DmaomrSr) {
+        pub const fn set_sr(&mut self, val: super::vals::DmaomrSr) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "Operate on second frame"]
+        #[must_use]
         #[inline(always)]
         pub const fn osf(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -936,10 +971,11 @@ pub mod regs {
         }
         #[doc = "Operate on second frame"]
         #[inline(always)]
-        pub fn set_osf(&mut self, val: bool) {
+        pub const fn set_osf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Receive threshold control"]
+        #[must_use]
         #[inline(always)]
         pub const fn rtc(&self) -> super::vals::Rtc {
             let val = (self.0 >> 3usize) & 0x03;
@@ -947,10 +983,11 @@ pub mod regs {
         }
         #[doc = "Receive threshold control"]
         #[inline(always)]
-        pub fn set_rtc(&mut self, val: super::vals::Rtc) {
+        pub const fn set_rtc(&mut self, val: super::vals::Rtc) {
             self.0 = (self.0 & !(0x03 << 3usize)) | (((val.to_bits() as u32) & 0x03) << 3usize);
         }
         #[doc = "Forward undersized good frames"]
+        #[must_use]
         #[inline(always)]
         pub const fn fugf(&self) -> super::vals::Fugf {
             let val = (self.0 >> 6usize) & 0x01;
@@ -958,10 +995,11 @@ pub mod regs {
         }
         #[doc = "Forward undersized good frames"]
         #[inline(always)]
-        pub fn set_fugf(&mut self, val: super::vals::Fugf) {
+        pub const fn set_fugf(&mut self, val: super::vals::Fugf) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
         }
         #[doc = "Forward error frames"]
+        #[must_use]
         #[inline(always)]
         pub const fn fef(&self) -> super::vals::Fef {
             let val = (self.0 >> 7usize) & 0x01;
@@ -969,10 +1007,11 @@ pub mod regs {
         }
         #[doc = "Forward error frames"]
         #[inline(always)]
-        pub fn set_fef(&mut self, val: super::vals::Fef) {
+        pub const fn set_fef(&mut self, val: super::vals::Fef) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
         }
         #[doc = "Start/stop transmission"]
+        #[must_use]
         #[inline(always)]
         pub const fn st(&self) -> super::vals::St {
             let val = (self.0 >> 13usize) & 0x01;
@@ -980,10 +1019,11 @@ pub mod regs {
         }
         #[doc = "Start/stop transmission"]
         #[inline(always)]
-        pub fn set_st(&mut self, val: super::vals::St) {
+        pub const fn set_st(&mut self, val: super::vals::St) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
         }
         #[doc = "Transmit threshold control"]
+        #[must_use]
         #[inline(always)]
         pub const fn ttc(&self) -> super::vals::Ttc {
             let val = (self.0 >> 14usize) & 0x07;
@@ -991,10 +1031,11 @@ pub mod regs {
         }
         #[doc = "Transmit threshold control"]
         #[inline(always)]
-        pub fn set_ttc(&mut self, val: super::vals::Ttc) {
+        pub const fn set_ttc(&mut self, val: super::vals::Ttc) {
             self.0 = (self.0 & !(0x07 << 14usize)) | (((val.to_bits() as u32) & 0x07) << 14usize);
         }
         #[doc = "Flush transmit FIFO"]
+        #[must_use]
         #[inline(always)]
         pub const fn ftf(&self) -> super::vals::Ftf {
             let val = (self.0 >> 20usize) & 0x01;
@@ -1002,10 +1043,11 @@ pub mod regs {
         }
         #[doc = "Flush transmit FIFO"]
         #[inline(always)]
-        pub fn set_ftf(&mut self, val: super::vals::Ftf) {
+        pub const fn set_ftf(&mut self, val: super::vals::Ftf) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
         }
         #[doc = "Transmit store and forward"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsf(&self) -> super::vals::Tsf {
             let val = (self.0 >> 21usize) & 0x01;
@@ -1013,10 +1055,11 @@ pub mod regs {
         }
         #[doc = "Transmit store and forward"]
         #[inline(always)]
-        pub fn set_tsf(&mut self, val: super::vals::Tsf) {
+        pub const fn set_tsf(&mut self, val: super::vals::Tsf) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
         }
         #[doc = "Disable flushing of received frames"]
+        #[must_use]
         #[inline(always)]
         pub const fn dfrf(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -1024,10 +1067,11 @@ pub mod regs {
         }
         #[doc = "Disable flushing of received frames"]
         #[inline(always)]
-        pub fn set_dfrf(&mut self, val: bool) {
+        pub const fn set_dfrf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "Receive store and forward"]
+        #[must_use]
         #[inline(always)]
         pub const fn rsf(&self) -> super::vals::Rsf {
             let val = (self.0 >> 25usize) & 0x01;
@@ -1035,10 +1079,11 @@ pub mod regs {
         }
         #[doc = "Receive store and forward"]
         #[inline(always)]
-        pub fn set_rsf(&mut self, val: super::vals::Rsf) {
+        pub const fn set_rsf(&mut self, val: super::vals::Rsf) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
         }
         #[doc = "Dropping of TCP/IP checksum error frames disable"]
+        #[must_use]
         #[inline(always)]
         pub const fn dtcefd(&self) -> super::vals::Dtcefd {
             let val = (self.0 >> 26usize) & 0x01;
@@ -1046,7 +1091,7 @@ pub mod regs {
         }
         #[doc = "Dropping of TCP/IP checksum error frames disable"]
         #[inline(always)]
-        pub fn set_dtcefd(&mut self, val: super::vals::Dtcefd) {
+        pub const fn set_dtcefd(&mut self, val: super::vals::Dtcefd) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
         }
     }
@@ -1086,6 +1131,7 @@ pub mod regs {
     pub struct Dmardlar(pub u32);
     impl Dmardlar {
         #[doc = "Start of receive list"]
+        #[must_use]
         #[inline(always)]
         pub const fn srl(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1093,7 +1139,7 @@ pub mod regs {
         }
         #[doc = "Start of receive list"]
         #[inline(always)]
-        pub fn set_srl(&mut self, val: u32) {
+        pub const fn set_srl(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1120,6 +1166,7 @@ pub mod regs {
     pub struct Dmarpdr(pub u32);
     impl Dmarpdr {
         #[doc = "Receive poll demand"]
+        #[must_use]
         #[inline(always)]
         pub const fn rpd(&self) -> super::vals::Rpd {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1127,7 +1174,7 @@ pub mod regs {
         }
         #[doc = "Receive poll demand"]
         #[inline(always)]
-        pub fn set_rpd(&mut self, val: super::vals::Rpd) {
+        pub const fn set_rpd(&mut self, val: super::vals::Rpd) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val.to_bits() as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1154,6 +1201,7 @@ pub mod regs {
     pub struct Dmasr(pub u32);
     impl Dmasr {
         #[doc = "Transmit status"]
+        #[must_use]
         #[inline(always)]
         pub const fn ts(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1161,10 +1209,11 @@ pub mod regs {
         }
         #[doc = "Transmit status"]
         #[inline(always)]
-        pub fn set_ts(&mut self, val: bool) {
+        pub const fn set_ts(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Transmit process stopped status"]
+        #[must_use]
         #[inline(always)]
         pub const fn tpss(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1172,10 +1221,11 @@ pub mod regs {
         }
         #[doc = "Transmit process stopped status"]
         #[inline(always)]
-        pub fn set_tpss(&mut self, val: bool) {
+        pub const fn set_tpss(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Transmit buffer unavailable status"]
+        #[must_use]
         #[inline(always)]
         pub const fn tbus(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1183,10 +1233,11 @@ pub mod regs {
         }
         #[doc = "Transmit buffer unavailable status"]
         #[inline(always)]
-        pub fn set_tbus(&mut self, val: bool) {
+        pub const fn set_tbus(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Transmit jabber timeout status"]
+        #[must_use]
         #[inline(always)]
         pub const fn tjts(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1194,10 +1245,11 @@ pub mod regs {
         }
         #[doc = "Transmit jabber timeout status"]
         #[inline(always)]
-        pub fn set_tjts(&mut self, val: bool) {
+        pub const fn set_tjts(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Receive overflow status"]
+        #[must_use]
         #[inline(always)]
         pub const fn ros(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1205,10 +1257,11 @@ pub mod regs {
         }
         #[doc = "Receive overflow status"]
         #[inline(always)]
-        pub fn set_ros(&mut self, val: bool) {
+        pub const fn set_ros(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Transmit underflow status"]
+        #[must_use]
         #[inline(always)]
         pub const fn tus(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1216,10 +1269,11 @@ pub mod regs {
         }
         #[doc = "Transmit underflow status"]
         #[inline(always)]
-        pub fn set_tus(&mut self, val: bool) {
+        pub const fn set_tus(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Receive status"]
+        #[must_use]
         #[inline(always)]
         pub const fn rs(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -1227,10 +1281,11 @@ pub mod regs {
         }
         #[doc = "Receive status"]
         #[inline(always)]
-        pub fn set_rs(&mut self, val: bool) {
+        pub const fn set_rs(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Receive buffer unavailable status"]
+        #[must_use]
         #[inline(always)]
         pub const fn rbus(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1238,10 +1293,11 @@ pub mod regs {
         }
         #[doc = "Receive buffer unavailable status"]
         #[inline(always)]
-        pub fn set_rbus(&mut self, val: bool) {
+        pub const fn set_rbus(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Receive process stopped status"]
+        #[must_use]
         #[inline(always)]
         pub const fn rpss(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -1249,10 +1305,11 @@ pub mod regs {
         }
         #[doc = "Receive process stopped status"]
         #[inline(always)]
-        pub fn set_rpss(&mut self, val: bool) {
+        pub const fn set_rpss(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "PWTS"]
+        #[must_use]
         #[inline(always)]
         pub const fn pwts(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -1260,10 +1317,11 @@ pub mod regs {
         }
         #[doc = "PWTS"]
         #[inline(always)]
-        pub fn set_pwts(&mut self, val: bool) {
+        pub const fn set_pwts(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Early transmit status"]
+        #[must_use]
         #[inline(always)]
         pub const fn ets(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -1271,10 +1329,11 @@ pub mod regs {
         }
         #[doc = "Early transmit status"]
         #[inline(always)]
-        pub fn set_ets(&mut self, val: bool) {
+        pub const fn set_ets(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Fatal bus error status"]
+        #[must_use]
         #[inline(always)]
         pub const fn fbes(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -1282,10 +1341,11 @@ pub mod regs {
         }
         #[doc = "Fatal bus error status"]
         #[inline(always)]
-        pub fn set_fbes(&mut self, val: bool) {
+        pub const fn set_fbes(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Early receive status"]
+        #[must_use]
         #[inline(always)]
         pub const fn ers(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -1293,10 +1353,11 @@ pub mod regs {
         }
         #[doc = "Early receive status"]
         #[inline(always)]
-        pub fn set_ers(&mut self, val: bool) {
+        pub const fn set_ers(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Abnormal interrupt summary"]
+        #[must_use]
         #[inline(always)]
         pub const fn ais(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -1304,10 +1365,11 @@ pub mod regs {
         }
         #[doc = "Abnormal interrupt summary"]
         #[inline(always)]
-        pub fn set_ais(&mut self, val: bool) {
+        pub const fn set_ais(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Normal interrupt summary"]
+        #[must_use]
         #[inline(always)]
         pub const fn nis(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1315,10 +1377,11 @@ pub mod regs {
         }
         #[doc = "Normal interrupt summary"]
         #[inline(always)]
-        pub fn set_nis(&mut self, val: bool) {
+        pub const fn set_nis(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Receive process state"]
+        #[must_use]
         #[inline(always)]
         pub const fn rps(&self) -> super::vals::Rps {
             let val = (self.0 >> 17usize) & 0x07;
@@ -1326,10 +1389,11 @@ pub mod regs {
         }
         #[doc = "Receive process state"]
         #[inline(always)]
-        pub fn set_rps(&mut self, val: super::vals::Rps) {
+        pub const fn set_rps(&mut self, val: super::vals::Rps) {
             self.0 = (self.0 & !(0x07 << 17usize)) | (((val.to_bits() as u32) & 0x07) << 17usize);
         }
         #[doc = "Transmit process state"]
+        #[must_use]
         #[inline(always)]
         pub const fn tps(&self) -> super::vals::Tps {
             let val = (self.0 >> 20usize) & 0x07;
@@ -1337,10 +1401,11 @@ pub mod regs {
         }
         #[doc = "Transmit process state"]
         #[inline(always)]
-        pub fn set_tps(&mut self, val: super::vals::Tps) {
+        pub const fn set_tps(&mut self, val: super::vals::Tps) {
             self.0 = (self.0 & !(0x07 << 20usize)) | (((val.to_bits() as u32) & 0x07) << 20usize);
         }
         #[doc = "Error bits status"]
+        #[must_use]
         #[inline(always)]
         pub const fn ebs(&self) -> u8 {
             let val = (self.0 >> 23usize) & 0x07;
@@ -1348,10 +1413,11 @@ pub mod regs {
         }
         #[doc = "Error bits status"]
         #[inline(always)]
-        pub fn set_ebs(&mut self, val: u8) {
+        pub const fn set_ebs(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 23usize)) | (((val as u32) & 0x07) << 23usize);
         }
         #[doc = "MMC status"]
+        #[must_use]
         #[inline(always)]
         pub const fn mmcs(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
@@ -1359,10 +1425,11 @@ pub mod regs {
         }
         #[doc = "MMC status"]
         #[inline(always)]
-        pub fn set_mmcs(&mut self, val: bool) {
+        pub const fn set_mmcs(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
         #[doc = "PMT status"]
+        #[must_use]
         #[inline(always)]
         pub const fn pmts(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -1370,10 +1437,11 @@ pub mod regs {
         }
         #[doc = "PMT status"]
         #[inline(always)]
-        pub fn set_pmts(&mut self, val: bool) {
+        pub const fn set_pmts(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "Time stamp trigger status"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsts(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -1381,7 +1449,7 @@ pub mod regs {
         }
         #[doc = "Time stamp trigger status"]
         #[inline(always)]
-        pub fn set_tsts(&mut self, val: bool) {
+        pub const fn set_tsts(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
     }
@@ -1430,6 +1498,7 @@ pub mod regs {
     pub struct Dmatdlar(pub u32);
     impl Dmatdlar {
         #[doc = "Start of transmit list"]
+        #[must_use]
         #[inline(always)]
         pub const fn stl(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1437,7 +1506,7 @@ pub mod regs {
         }
         #[doc = "Start of transmit list"]
         #[inline(always)]
-        pub fn set_stl(&mut self, val: u32) {
+        pub const fn set_stl(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1464,6 +1533,7 @@ pub mod regs {
     pub struct Dmatpdr(pub u32);
     impl Dmatpdr {
         #[doc = "Transmit poll demand"]
+        #[must_use]
         #[inline(always)]
         pub const fn tpd(&self) -> super::vals::Tpd {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1471,7 +1541,7 @@ pub mod regs {
         }
         #[doc = "Transmit poll demand"]
         #[inline(always)]
-        pub fn set_tpd(&mut self, val: super::vals::Tpd) {
+        pub const fn set_tpd(&mut self, val: super::vals::Tpd) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val.to_bits() as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1498,6 +1568,7 @@ pub mod regs {
     pub struct Maca0hr(pub u32);
     impl Maca0hr {
         #[doc = "MAC address 0 high"]
+        #[must_use]
         #[inline(always)]
         pub const fn maca0h(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -1505,10 +1576,11 @@ pub mod regs {
         }
         #[doc = "MAC address 0 high"]
         #[inline(always)]
-        pub fn set_maca0h(&mut self, val: u16) {
+        pub const fn set_maca0h(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
         #[doc = "Always 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn mo(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -1516,7 +1588,7 @@ pub mod regs {
         }
         #[doc = "Always 1"]
         #[inline(always)]
-        pub fn set_mo(&mut self, val: bool) {
+        pub const fn set_mo(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -1551,6 +1623,7 @@ pub mod regs {
     pub struct Maca0lr(pub u32);
     impl Maca0lr {
         #[doc = "Ethernet MAC address 0 low"]
+        #[must_use]
         #[inline(always)]
         pub const fn maca0l(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1558,7 +1631,7 @@ pub mod regs {
         }
         #[doc = "Ethernet MAC address 0 low"]
         #[inline(always)]
-        pub fn set_maca0l(&mut self, val: u32) {
+        pub const fn set_maca0l(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1585,6 +1658,7 @@ pub mod regs {
     pub struct Macahr(pub u32);
     impl Macahr {
         #[doc = "Ethernet MAC address 1/2/3 high"]
+        #[must_use]
         #[inline(always)]
         pub const fn macah(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -1592,10 +1666,11 @@ pub mod regs {
         }
         #[doc = "Ethernet MAC address 1/2/3 high"]
         #[inline(always)]
-        pub fn set_macah(&mut self, val: u16) {
+        pub const fn set_macah(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
         #[doc = "MBC"]
+        #[must_use]
         #[inline(always)]
         pub const fn mbc(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x3f;
@@ -1603,10 +1678,11 @@ pub mod regs {
         }
         #[doc = "MBC"]
         #[inline(always)]
-        pub fn set_mbc(&mut self, val: u8) {
+        pub const fn set_mbc(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 24usize)) | (((val as u32) & 0x3f) << 24usize);
         }
         #[doc = "SA"]
+        #[must_use]
         #[inline(always)]
         pub const fn sa(&self) -> super::vals::MacahrSa {
             let val = (self.0 >> 30usize) & 0x01;
@@ -1614,10 +1690,11 @@ pub mod regs {
         }
         #[doc = "SA"]
         #[inline(always)]
-        pub fn set_sa(&mut self, val: super::vals::MacahrSa) {
+        pub const fn set_sa(&mut self, val: super::vals::MacahrSa) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
         }
         #[doc = "AE"]
+        #[must_use]
         #[inline(always)]
         pub const fn ae(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -1625,7 +1702,7 @@ pub mod regs {
         }
         #[doc = "AE"]
         #[inline(always)]
-        pub fn set_ae(&mut self, val: bool) {
+        pub const fn set_ae(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -1664,6 +1741,7 @@ pub mod regs {
     pub struct Macalr(pub u32);
     impl Macalr {
         #[doc = "Ethernet MAC address 1/2/3 low"]
+        #[must_use]
         #[inline(always)]
         pub const fn macal(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1671,7 +1749,7 @@ pub mod regs {
         }
         #[doc = "Ethernet MAC address 1/2/3 low"]
         #[inline(always)]
-        pub fn set_macal(&mut self, val: u32) {
+        pub const fn set_macal(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1698,6 +1776,7 @@ pub mod regs {
     pub struct Maccr(pub u32);
     impl Maccr {
         #[doc = "Receiver enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn re(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1705,10 +1784,11 @@ pub mod regs {
         }
         #[doc = "Receiver enable"]
         #[inline(always)]
-        pub fn set_re(&mut self, val: bool) {
+        pub const fn set_re(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Transmitter enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn te(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1716,10 +1796,11 @@ pub mod regs {
         }
         #[doc = "Transmitter enable"]
         #[inline(always)]
-        pub fn set_te(&mut self, val: bool) {
+        pub const fn set_te(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Deferral check"]
+        #[must_use]
         #[inline(always)]
         pub const fn dc(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1727,10 +1808,11 @@ pub mod regs {
         }
         #[doc = "Deferral check"]
         #[inline(always)]
-        pub fn set_dc(&mut self, val: bool) {
+        pub const fn set_dc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Back-off limit"]
+        #[must_use]
         #[inline(always)]
         pub const fn bl(&self) -> super::vals::Bl {
             let val = (self.0 >> 5usize) & 0x03;
@@ -1738,10 +1820,11 @@ pub mod regs {
         }
         #[doc = "Back-off limit"]
         #[inline(always)]
-        pub fn set_bl(&mut self, val: super::vals::Bl) {
+        pub const fn set_bl(&mut self, val: super::vals::Bl) {
             self.0 = (self.0 & !(0x03 << 5usize)) | (((val.to_bits() as u32) & 0x03) << 5usize);
         }
         #[doc = "Automatic pad/CRC stripping"]
+        #[must_use]
         #[inline(always)]
         pub const fn apcs(&self) -> super::vals::Apcs {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1749,10 +1832,11 @@ pub mod regs {
         }
         #[doc = "Automatic pad/CRC stripping"]
         #[inline(always)]
-        pub fn set_apcs(&mut self, val: super::vals::Apcs) {
+        pub const fn set_apcs(&mut self, val: super::vals::Apcs) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
         }
         #[doc = "Retry disable"]
+        #[must_use]
         #[inline(always)]
         pub const fn rd(&self) -> super::vals::Rd {
             let val = (self.0 >> 9usize) & 0x01;
@@ -1760,10 +1844,11 @@ pub mod regs {
         }
         #[doc = "Retry disable"]
         #[inline(always)]
-        pub fn set_rd(&mut self, val: super::vals::Rd) {
+        pub const fn set_rd(&mut self, val: super::vals::Rd) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
         }
         #[doc = "IPv4 checksum offload"]
+        #[must_use]
         #[inline(always)]
         pub const fn ipco(&self) -> super::vals::Ipco {
             let val = (self.0 >> 10usize) & 0x01;
@@ -1771,10 +1856,11 @@ pub mod regs {
         }
         #[doc = "IPv4 checksum offload"]
         #[inline(always)]
-        pub fn set_ipco(&mut self, val: super::vals::Ipco) {
+        pub const fn set_ipco(&mut self, val: super::vals::Ipco) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
         }
         #[doc = "Duplex mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn dm(&self) -> super::vals::Dm {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1782,10 +1868,11 @@ pub mod regs {
         }
         #[doc = "Duplex mode"]
         #[inline(always)]
-        pub fn set_dm(&mut self, val: super::vals::Dm) {
+        pub const fn set_dm(&mut self, val: super::vals::Dm) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
         }
         #[doc = "Loopback mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn lm(&self) -> super::vals::Lm {
             let val = (self.0 >> 12usize) & 0x01;
@@ -1793,10 +1880,11 @@ pub mod regs {
         }
         #[doc = "Loopback mode"]
         #[inline(always)]
-        pub fn set_lm(&mut self, val: super::vals::Lm) {
+        pub const fn set_lm(&mut self, val: super::vals::Lm) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
         }
         #[doc = "Receive own disable"]
+        #[must_use]
         #[inline(always)]
         pub const fn rod(&self) -> super::vals::Rod {
             let val = (self.0 >> 13usize) & 0x01;
@@ -1804,10 +1892,11 @@ pub mod regs {
         }
         #[doc = "Receive own disable"]
         #[inline(always)]
-        pub fn set_rod(&mut self, val: super::vals::Rod) {
+        pub const fn set_rod(&mut self, val: super::vals::Rod) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
         }
         #[doc = "Fast Ethernet speed"]
+        #[must_use]
         #[inline(always)]
         pub const fn fes(&self) -> super::vals::Fes {
             let val = (self.0 >> 14usize) & 0x01;
@@ -1815,10 +1904,11 @@ pub mod regs {
         }
         #[doc = "Fast Ethernet speed"]
         #[inline(always)]
-        pub fn set_fes(&mut self, val: super::vals::Fes) {
+        pub const fn set_fes(&mut self, val: super::vals::Fes) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
         }
         #[doc = "Carrier sense disable"]
+        #[must_use]
         #[inline(always)]
         pub const fn csd(&self) -> super::vals::Csd {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1826,10 +1916,11 @@ pub mod regs {
         }
         #[doc = "Carrier sense disable"]
         #[inline(always)]
-        pub fn set_csd(&mut self, val: super::vals::Csd) {
+        pub const fn set_csd(&mut self, val: super::vals::Csd) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
         #[doc = "Interframe gap"]
+        #[must_use]
         #[inline(always)]
         pub const fn ifg(&self) -> super::vals::Ifg {
             let val = (self.0 >> 17usize) & 0x07;
@@ -1837,10 +1928,11 @@ pub mod regs {
         }
         #[doc = "Interframe gap"]
         #[inline(always)]
-        pub fn set_ifg(&mut self, val: super::vals::Ifg) {
+        pub const fn set_ifg(&mut self, val: super::vals::Ifg) {
             self.0 = (self.0 & !(0x07 << 17usize)) | (((val.to_bits() as u32) & 0x07) << 17usize);
         }
         #[doc = "Jabber disable"]
+        #[must_use]
         #[inline(always)]
         pub const fn jd(&self) -> super::vals::Jd {
             let val = (self.0 >> 22usize) & 0x01;
@@ -1848,10 +1940,11 @@ pub mod regs {
         }
         #[doc = "Jabber disable"]
         #[inline(always)]
-        pub fn set_jd(&mut self, val: super::vals::Jd) {
+        pub const fn set_jd(&mut self, val: super::vals::Jd) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
         }
         #[doc = "Watchdog disable"]
+        #[must_use]
         #[inline(always)]
         pub const fn wd(&self) -> super::vals::Wd {
             let val = (self.0 >> 23usize) & 0x01;
@@ -1859,7 +1952,7 @@ pub mod regs {
         }
         #[doc = "Watchdog disable"]
         #[inline(always)]
-        pub fn set_wd(&mut self, val: super::vals::Wd) {
+        pub const fn set_wd(&mut self, val: super::vals::Wd) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
         }
     }
@@ -1902,6 +1995,7 @@ pub mod regs {
     pub struct Macdbgr(pub u32);
     impl Macdbgr {
         #[doc = "MAC MII receive protocol engine active"]
+        #[must_use]
         #[inline(always)]
         pub const fn mmrpea(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1909,10 +2003,11 @@ pub mod regs {
         }
         #[doc = "MAC MII receive protocol engine active"]
         #[inline(always)]
-        pub fn set_mmrpea(&mut self, val: bool) {
+        pub const fn set_mmrpea(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "MAC small FIFO read/write controllers status"]
+        #[must_use]
         #[inline(always)]
         pub const fn msfrwcs(&self) -> u8 {
             let val = (self.0 >> 1usize) & 0x03;
@@ -1920,10 +2015,11 @@ pub mod regs {
         }
         #[doc = "MAC small FIFO read/write controllers status"]
         #[inline(always)]
-        pub fn set_msfrwcs(&mut self, val: u8) {
+        pub const fn set_msfrwcs(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 1usize)) | (((val as u32) & 0x03) << 1usize);
         }
         #[doc = "Rx FIFO write controller active"]
+        #[must_use]
         #[inline(always)]
         pub const fn rfwra(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1931,10 +2027,11 @@ pub mod regs {
         }
         #[doc = "Rx FIFO write controller active"]
         #[inline(always)]
-        pub fn set_rfwra(&mut self, val: bool) {
+        pub const fn set_rfwra(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Rx FIFO read controller status"]
+        #[must_use]
         #[inline(always)]
         pub const fn rfrcs(&self) -> u8 {
             let val = (self.0 >> 5usize) & 0x03;
@@ -1942,10 +2039,11 @@ pub mod regs {
         }
         #[doc = "Rx FIFO read controller status"]
         #[inline(always)]
-        pub fn set_rfrcs(&mut self, val: u8) {
+        pub const fn set_rfrcs(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 5usize)) | (((val as u32) & 0x03) << 5usize);
         }
         #[doc = "Rx FIFO fill level"]
+        #[must_use]
         #[inline(always)]
         pub const fn rffl(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x03;
@@ -1953,10 +2051,11 @@ pub mod regs {
         }
         #[doc = "Rx FIFO fill level"]
         #[inline(always)]
-        pub fn set_rffl(&mut self, val: u8) {
+        pub const fn set_rffl(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
         }
         #[doc = "MAC MII transmit engine active"]
+        #[must_use]
         #[inline(always)]
         pub const fn mmtea(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1964,10 +2063,11 @@ pub mod regs {
         }
         #[doc = "MAC MII transmit engine active"]
         #[inline(always)]
-        pub fn set_mmtea(&mut self, val: bool) {
+        pub const fn set_mmtea(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "MAC transmit frame controller status"]
+        #[must_use]
         #[inline(always)]
         pub const fn mtfcs(&self) -> u8 {
             let val = (self.0 >> 17usize) & 0x03;
@@ -1975,10 +2075,11 @@ pub mod regs {
         }
         #[doc = "MAC transmit frame controller status"]
         #[inline(always)]
-        pub fn set_mtfcs(&mut self, val: u8) {
+        pub const fn set_mtfcs(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 17usize)) | (((val as u32) & 0x03) << 17usize);
         }
         #[doc = "MAC transmitter in pause"]
+        #[must_use]
         #[inline(always)]
         pub const fn mtp(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -1986,10 +2087,11 @@ pub mod regs {
         }
         #[doc = "MAC transmitter in pause"]
         #[inline(always)]
-        pub fn set_mtp(&mut self, val: bool) {
+        pub const fn set_mtp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "Tx FIFO read status"]
+        #[must_use]
         #[inline(always)]
         pub const fn tfrs(&self) -> u8 {
             let val = (self.0 >> 20usize) & 0x03;
@@ -1997,10 +2099,11 @@ pub mod regs {
         }
         #[doc = "Tx FIFO read status"]
         #[inline(always)]
-        pub fn set_tfrs(&mut self, val: u8) {
+        pub const fn set_tfrs(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val as u32) & 0x03) << 20usize);
         }
         #[doc = "Tx FIFO write active"]
+        #[must_use]
         #[inline(always)]
         pub const fn tfwa(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -2008,10 +2111,11 @@ pub mod regs {
         }
         #[doc = "Tx FIFO write active"]
         #[inline(always)]
-        pub fn set_tfwa(&mut self, val: bool) {
+        pub const fn set_tfwa(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "Tx FIFO not empty"]
+        #[must_use]
         #[inline(always)]
         pub const fn tfne(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -2019,10 +2123,11 @@ pub mod regs {
         }
         #[doc = "Tx FIFO not empty"]
         #[inline(always)]
-        pub fn set_tfne(&mut self, val: bool) {
+        pub const fn set_tfne(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "Tx FIFO full"]
+        #[must_use]
         #[inline(always)]
         pub const fn tff(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -2030,7 +2135,7 @@ pub mod regs {
         }
         #[doc = "Tx FIFO full"]
         #[inline(always)]
-        pub fn set_tff(&mut self, val: bool) {
+        pub const fn set_tff(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
     }
@@ -2070,6 +2175,7 @@ pub mod regs {
     pub struct Macfcr(pub u32);
     impl Macfcr {
         #[doc = "Flow control busy/back pressure activate"]
+        #[must_use]
         #[inline(always)]
         pub const fn fcb(&self) -> super::vals::Fcb {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2077,10 +2183,11 @@ pub mod regs {
         }
         #[doc = "Flow control busy/back pressure activate"]
         #[inline(always)]
-        pub fn set_fcb(&mut self, val: super::vals::Fcb) {
+        pub const fn set_fcb(&mut self, val: super::vals::Fcb) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
         #[doc = "Transmit flow control enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn tfce(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -2088,10 +2195,11 @@ pub mod regs {
         }
         #[doc = "Transmit flow control enable"]
         #[inline(always)]
-        pub fn set_tfce(&mut self, val: bool) {
+        pub const fn set_tfce(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Receive flow control enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn rfce(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -2099,10 +2207,11 @@ pub mod regs {
         }
         #[doc = "Receive flow control enable"]
         #[inline(always)]
-        pub fn set_rfce(&mut self, val: bool) {
+        pub const fn set_rfce(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Unicast pause frame detect"]
+        #[must_use]
         #[inline(always)]
         pub const fn upfd(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -2110,10 +2219,11 @@ pub mod regs {
         }
         #[doc = "Unicast pause frame detect"]
         #[inline(always)]
-        pub fn set_upfd(&mut self, val: bool) {
+        pub const fn set_upfd(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Pause low threshold"]
+        #[must_use]
         #[inline(always)]
         pub const fn plt(&self) -> super::vals::Plt {
             let val = (self.0 >> 4usize) & 0x03;
@@ -2121,10 +2231,11 @@ pub mod regs {
         }
         #[doc = "Pause low threshold"]
         #[inline(always)]
-        pub fn set_plt(&mut self, val: super::vals::Plt) {
+        pub const fn set_plt(&mut self, val: super::vals::Plt) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "Zero-quanta pause disable"]
+        #[must_use]
         #[inline(always)]
         pub const fn zqpd(&self) -> super::vals::Zqpd {
             let val = (self.0 >> 7usize) & 0x01;
@@ -2132,10 +2243,11 @@ pub mod regs {
         }
         #[doc = "Zero-quanta pause disable"]
         #[inline(always)]
-        pub fn set_zqpd(&mut self, val: super::vals::Zqpd) {
+        pub const fn set_zqpd(&mut self, val: super::vals::Zqpd) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
         }
         #[doc = "Pause time"]
+        #[must_use]
         #[inline(always)]
         pub const fn pt(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0xffff;
@@ -2143,7 +2255,7 @@ pub mod regs {
         }
         #[doc = "Pause time"]
         #[inline(always)]
-        pub fn set_pt(&mut self, val: u16) {
+        pub const fn set_pt(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
@@ -2178,6 +2290,7 @@ pub mod regs {
     pub struct Macffr(pub u32);
     impl Macffr {
         #[doc = "Promiscuous mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn pm(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2185,10 +2298,11 @@ pub mod regs {
         }
         #[doc = "Promiscuous mode"]
         #[inline(always)]
-        pub fn set_pm(&mut self, val: bool) {
+        pub const fn set_pm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Hash unicast"]
+        #[must_use]
         #[inline(always)]
         pub const fn hu(&self) -> super::vals::Hu {
             let val = (self.0 >> 1usize) & 0x01;
@@ -2196,10 +2310,11 @@ pub mod regs {
         }
         #[doc = "Hash unicast"]
         #[inline(always)]
-        pub fn set_hu(&mut self, val: super::vals::Hu) {
+        pub const fn set_hu(&mut self, val: super::vals::Hu) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "Hash multicast"]
+        #[must_use]
         #[inline(always)]
         pub const fn hm(&self) -> super::vals::Hm {
             let val = (self.0 >> 2usize) & 0x01;
@@ -2207,10 +2322,11 @@ pub mod regs {
         }
         #[doc = "Hash multicast"]
         #[inline(always)]
-        pub fn set_hm(&mut self, val: super::vals::Hm) {
+        pub const fn set_hm(&mut self, val: super::vals::Hm) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "Destination address unique filtering"]
+        #[must_use]
         #[inline(always)]
         pub const fn daif(&self) -> super::vals::Daif {
             let val = (self.0 >> 3usize) & 0x01;
@@ -2218,10 +2334,11 @@ pub mod regs {
         }
         #[doc = "Destination address unique filtering"]
         #[inline(always)]
-        pub fn set_daif(&mut self, val: super::vals::Daif) {
+        pub const fn set_daif(&mut self, val: super::vals::Daif) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
         }
         #[doc = "Pass all multicast"]
+        #[must_use]
         #[inline(always)]
         pub const fn pam(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -2229,10 +2346,11 @@ pub mod regs {
         }
         #[doc = "Pass all multicast"]
         #[inline(always)]
-        pub fn set_pam(&mut self, val: bool) {
+        pub const fn set_pam(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Broadcast frames disable"]
+        #[must_use]
         #[inline(always)]
         pub const fn bfd(&self) -> super::vals::Bfd {
             let val = (self.0 >> 5usize) & 0x01;
@@ -2240,10 +2358,11 @@ pub mod regs {
         }
         #[doc = "Broadcast frames disable"]
         #[inline(always)]
-        pub fn set_bfd(&mut self, val: super::vals::Bfd) {
+        pub const fn set_bfd(&mut self, val: super::vals::Bfd) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
         #[doc = "Pass control frames"]
+        #[must_use]
         #[inline(always)]
         pub const fn pcf(&self) -> super::vals::Pcf {
             let val = (self.0 >> 6usize) & 0x03;
@@ -2251,10 +2370,11 @@ pub mod regs {
         }
         #[doc = "Pass control frames"]
         #[inline(always)]
-        pub fn set_pcf(&mut self, val: super::vals::Pcf) {
+        pub const fn set_pcf(&mut self, val: super::vals::Pcf) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
         }
         #[doc = "Source address inverse filtering"]
+        #[must_use]
         #[inline(always)]
         pub const fn saif(&self) -> super::vals::Saif {
             let val = (self.0 >> 7usize) & 0x01;
@@ -2262,10 +2382,11 @@ pub mod regs {
         }
         #[doc = "Source address inverse filtering"]
         #[inline(always)]
-        pub fn set_saif(&mut self, val: super::vals::Saif) {
+        pub const fn set_saif(&mut self, val: super::vals::Saif) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
         }
         #[doc = "Source address filter"]
+        #[must_use]
         #[inline(always)]
         pub const fn saf(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -2273,10 +2394,11 @@ pub mod regs {
         }
         #[doc = "Source address filter"]
         #[inline(always)]
-        pub fn set_saf(&mut self, val: bool) {
+        pub const fn set_saf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Hash or perfect filter"]
+        #[must_use]
         #[inline(always)]
         pub const fn hpf(&self) -> super::vals::Hpf {
             let val = (self.0 >> 9usize) & 0x01;
@@ -2284,10 +2406,11 @@ pub mod regs {
         }
         #[doc = "Hash or perfect filter"]
         #[inline(always)]
-        pub fn set_hpf(&mut self, val: super::vals::Hpf) {
+        pub const fn set_hpf(&mut self, val: super::vals::Hpf) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
         }
         #[doc = "Receive all"]
+        #[must_use]
         #[inline(always)]
         pub const fn ra(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -2295,7 +2418,7 @@ pub mod regs {
         }
         #[doc = "Receive all"]
         #[inline(always)]
-        pub fn set_ra(&mut self, val: bool) {
+        pub const fn set_ra(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -2334,6 +2457,7 @@ pub mod regs {
     pub struct Machthr(pub u32);
     impl Machthr {
         #[doc = "Upper 32 bits of hash table"]
+        #[must_use]
         #[inline(always)]
         pub const fn hth(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -2341,7 +2465,7 @@ pub mod regs {
         }
         #[doc = "Upper 32 bits of hash table"]
         #[inline(always)]
-        pub fn set_hth(&mut self, val: u32) {
+        pub const fn set_hth(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2368,6 +2492,7 @@ pub mod regs {
     pub struct Machtlr(pub u32);
     impl Machtlr {
         #[doc = "Lower 32 bits of hash table"]
+        #[must_use]
         #[inline(always)]
         pub const fn htl(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -2375,7 +2500,7 @@ pub mod regs {
         }
         #[doc = "Lower 32 bits of hash table"]
         #[inline(always)]
-        pub fn set_htl(&mut self, val: u32) {
+        pub const fn set_htl(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2402,6 +2527,7 @@ pub mod regs {
     pub struct Macimr(pub u32);
     impl Macimr {
         #[doc = "PMT interrupt mask"]
+        #[must_use]
         #[inline(always)]
         pub const fn pmtim(&self) -> super::vals::Pmtim {
             let val = (self.0 >> 3usize) & 0x01;
@@ -2409,10 +2535,11 @@ pub mod regs {
         }
         #[doc = "PMT interrupt mask"]
         #[inline(always)]
-        pub fn set_pmtim(&mut self, val: super::vals::Pmtim) {
+        pub const fn set_pmtim(&mut self, val: super::vals::Pmtim) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
         }
         #[doc = "Time stamp trigger interrupt mask"]
+        #[must_use]
         #[inline(always)]
         pub const fn tstim(&self) -> super::vals::Tstim {
             let val = (self.0 >> 9usize) & 0x01;
@@ -2420,7 +2547,7 @@ pub mod regs {
         }
         #[doc = "Time stamp trigger interrupt mask"]
         #[inline(always)]
-        pub fn set_tstim(&mut self, val: super::vals::Tstim) {
+        pub const fn set_tstim(&mut self, val: super::vals::Tstim) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
         }
     }
@@ -2450,6 +2577,7 @@ pub mod regs {
     pub struct Macmiiar(pub u32);
     impl Macmiiar {
         #[doc = "MII busy"]
+        #[must_use]
         #[inline(always)]
         pub const fn mb(&self) -> super::vals::MbProgress {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2457,10 +2585,11 @@ pub mod regs {
         }
         #[doc = "MII busy"]
         #[inline(always)]
-        pub fn set_mb(&mut self, val: super::vals::MbProgress) {
+        pub const fn set_mb(&mut self, val: super::vals::MbProgress) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
         #[doc = "MII write"]
+        #[must_use]
         #[inline(always)]
         pub const fn mw(&self) -> super::vals::Mw {
             let val = (self.0 >> 1usize) & 0x01;
@@ -2468,10 +2597,11 @@ pub mod regs {
         }
         #[doc = "MII write"]
         #[inline(always)]
-        pub fn set_mw(&mut self, val: super::vals::Mw) {
+        pub const fn set_mw(&mut self, val: super::vals::Mw) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "Clock range"]
+        #[must_use]
         #[inline(always)]
         pub const fn cr(&self) -> super::vals::Cr {
             let val = (self.0 >> 2usize) & 0x07;
@@ -2479,10 +2609,11 @@ pub mod regs {
         }
         #[doc = "Clock range"]
         #[inline(always)]
-        pub fn set_cr(&mut self, val: super::vals::Cr) {
+        pub const fn set_cr(&mut self, val: super::vals::Cr) {
             self.0 = (self.0 & !(0x07 << 2usize)) | (((val.to_bits() as u32) & 0x07) << 2usize);
         }
         #[doc = "MII register - select the desired MII register in the PHY device"]
+        #[must_use]
         #[inline(always)]
         pub const fn mr(&self) -> u8 {
             let val = (self.0 >> 6usize) & 0x1f;
@@ -2490,10 +2621,11 @@ pub mod regs {
         }
         #[doc = "MII register - select the desired MII register in the PHY device"]
         #[inline(always)]
-        pub fn set_mr(&mut self, val: u8) {
+        pub const fn set_mr(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 6usize)) | (((val as u32) & 0x1f) << 6usize);
         }
         #[doc = "PHY address - select which of possible 32 PHYs is being accessed"]
+        #[must_use]
         #[inline(always)]
         pub const fn pa(&self) -> u8 {
             let val = (self.0 >> 11usize) & 0x1f;
@@ -2501,7 +2633,7 @@ pub mod regs {
         }
         #[doc = "PHY address - select which of possible 32 PHYs is being accessed"]
         #[inline(always)]
-        pub fn set_pa(&mut self, val: u8) {
+        pub const fn set_pa(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 11usize)) | (((val as u32) & 0x1f) << 11usize);
         }
     }
@@ -2542,6 +2674,7 @@ pub mod regs {
     pub struct Macmiidr(pub u32);
     impl Macmiidr {
         #[doc = "MII data read from/written to the PHY"]
+        #[must_use]
         #[inline(always)]
         pub const fn md(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -2549,7 +2682,7 @@ pub mod regs {
         }
         #[doc = "MII data read from/written to the PHY"]
         #[inline(always)]
-        pub fn set_md(&mut self, val: u16) {
+        pub const fn set_md(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -2576,6 +2709,7 @@ pub mod regs {
     pub struct Macpmtcsr(pub u32);
     impl Macpmtcsr {
         #[doc = "Power down"]
+        #[must_use]
         #[inline(always)]
         pub const fn pd(&self) -> super::vals::Pd {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2583,10 +2717,11 @@ pub mod regs {
         }
         #[doc = "Power down"]
         #[inline(always)]
-        pub fn set_pd(&mut self, val: super::vals::Pd) {
+        pub const fn set_pd(&mut self, val: super::vals::Pd) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
         #[doc = "Magic packet enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn mpe(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -2594,10 +2729,11 @@ pub mod regs {
         }
         #[doc = "Magic packet enable"]
         #[inline(always)]
-        pub fn set_mpe(&mut self, val: bool) {
+        pub const fn set_mpe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Wakeup frame enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn wfe(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -2605,10 +2741,11 @@ pub mod regs {
         }
         #[doc = "Wakeup frame enable"]
         #[inline(always)]
-        pub fn set_wfe(&mut self, val: bool) {
+        pub const fn set_wfe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Magic packet received"]
+        #[must_use]
         #[inline(always)]
         pub const fn mpr(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -2616,10 +2753,11 @@ pub mod regs {
         }
         #[doc = "Magic packet received"]
         #[inline(always)]
-        pub fn set_mpr(&mut self, val: bool) {
+        pub const fn set_mpr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Wakeup frame received"]
+        #[must_use]
         #[inline(always)]
         pub const fn wfr(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -2627,10 +2765,11 @@ pub mod regs {
         }
         #[doc = "Wakeup frame received"]
         #[inline(always)]
-        pub fn set_wfr(&mut self, val: bool) {
+        pub const fn set_wfr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Global unicast"]
+        #[must_use]
         #[inline(always)]
         pub const fn gu(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -2638,10 +2777,11 @@ pub mod regs {
         }
         #[doc = "Global unicast"]
         #[inline(always)]
-        pub fn set_gu(&mut self, val: bool) {
+        pub const fn set_gu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Wakeup frame filter register pointer reset"]
+        #[must_use]
         #[inline(always)]
         pub const fn wffrpr(&self) -> super::vals::Wffrpr {
             let val = (self.0 >> 31usize) & 0x01;
@@ -2649,7 +2789,7 @@ pub mod regs {
         }
         #[doc = "Wakeup frame filter register pointer reset"]
         #[inline(always)]
-        pub fn set_wffrpr(&mut self, val: super::vals::Wffrpr) {
+        pub const fn set_wffrpr(&mut self, val: super::vals::Wffrpr) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
         }
     }
@@ -2684,6 +2824,7 @@ pub mod regs {
     pub struct Macsr(pub u32);
     impl Macsr {
         #[doc = "PMT status"]
+        #[must_use]
         #[inline(always)]
         pub const fn pmts(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -2691,10 +2832,11 @@ pub mod regs {
         }
         #[doc = "PMT status"]
         #[inline(always)]
-        pub fn set_pmts(&mut self, val: bool) {
+        pub const fn set_pmts(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "MMC status"]
+        #[must_use]
         #[inline(always)]
         pub const fn mmcs(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -2702,10 +2844,11 @@ pub mod regs {
         }
         #[doc = "MMC status"]
         #[inline(always)]
-        pub fn set_mmcs(&mut self, val: bool) {
+        pub const fn set_mmcs(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "MMC receive status"]
+        #[must_use]
         #[inline(always)]
         pub const fn mmcrs(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -2713,10 +2856,11 @@ pub mod regs {
         }
         #[doc = "MMC receive status"]
         #[inline(always)]
-        pub fn set_mmcrs(&mut self, val: bool) {
+        pub const fn set_mmcrs(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "MMC transmit status"]
+        #[must_use]
         #[inline(always)]
         pub const fn mmcts(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -2724,10 +2868,11 @@ pub mod regs {
         }
         #[doc = "MMC transmit status"]
         #[inline(always)]
-        pub fn set_mmcts(&mut self, val: bool) {
+        pub const fn set_mmcts(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Time stamp trigger status"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsts(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -2735,7 +2880,7 @@ pub mod regs {
         }
         #[doc = "Time stamp trigger status"]
         #[inline(always)]
-        pub fn set_tsts(&mut self, val: bool) {
+        pub const fn set_tsts(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
@@ -2776,6 +2921,7 @@ pub mod regs {
     pub struct Macvlantr(pub u32);
     impl Macvlantr {
         #[doc = "VLAN tag identifier (for receive frames)"]
+        #[must_use]
         #[inline(always)]
         pub const fn vlanti(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -2783,10 +2929,11 @@ pub mod regs {
         }
         #[doc = "VLAN tag identifier (for receive frames)"]
         #[inline(always)]
-        pub fn set_vlanti(&mut self, val: u16) {
+        pub const fn set_vlanti(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
         #[doc = "12-bit VLAN tag comparison"]
+        #[must_use]
         #[inline(always)]
         pub const fn vlantc(&self) -> super::vals::Vlantc {
             let val = (self.0 >> 16usize) & 0x01;
@@ -2794,7 +2941,7 @@ pub mod regs {
         }
         #[doc = "12-bit VLAN tag comparison"]
         #[inline(always)]
-        pub fn set_vlantc(&mut self, val: super::vals::Vlantc) {
+        pub const fn set_vlantc(&mut self, val: super::vals::Vlantc) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
     }
@@ -2829,6 +2976,7 @@ pub mod regs {
     pub struct Mmccr(pub u32);
     impl Mmccr {
         #[doc = "Counter reset"]
+        #[must_use]
         #[inline(always)]
         pub const fn cr(&self) -> super::vals::CounterReset {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2836,10 +2984,11 @@ pub mod regs {
         }
         #[doc = "Counter reset"]
         #[inline(always)]
-        pub fn set_cr(&mut self, val: super::vals::CounterReset) {
+        pub const fn set_cr(&mut self, val: super::vals::CounterReset) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
         #[doc = "Counter stop rollover"]
+        #[must_use]
         #[inline(always)]
         pub const fn csr(&self) -> super::vals::Csr {
             let val = (self.0 >> 1usize) & 0x01;
@@ -2847,10 +2996,11 @@ pub mod regs {
         }
         #[doc = "Counter stop rollover"]
         #[inline(always)]
-        pub fn set_csr(&mut self, val: super::vals::Csr) {
+        pub const fn set_csr(&mut self, val: super::vals::Csr) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "Reset on read"]
+        #[must_use]
         #[inline(always)]
         pub const fn ror(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -2858,10 +3008,11 @@ pub mod regs {
         }
         #[doc = "Reset on read"]
         #[inline(always)]
-        pub fn set_ror(&mut self, val: bool) {
+        pub const fn set_ror(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "MMC counter freeze"]
+        #[must_use]
         #[inline(always)]
         pub const fn mcf(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -2869,7 +3020,7 @@ pub mod regs {
         }
         #[doc = "MMC counter freeze"]
         #[inline(always)]
-        pub fn set_mcf(&mut self, val: bool) {
+        pub const fn set_mcf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
@@ -2908,6 +3059,7 @@ pub mod regs {
     pub struct Mmcrfaecr(pub u32);
     impl Mmcrfaecr {
         #[doc = "RFAEC"]
+        #[must_use]
         #[inline(always)]
         pub const fn rfaec(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -2915,7 +3067,7 @@ pub mod regs {
         }
         #[doc = "RFAEC"]
         #[inline(always)]
-        pub fn set_rfaec(&mut self, val: u32) {
+        pub const fn set_rfaec(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2942,6 +3094,7 @@ pub mod regs {
     pub struct Mmcrfcecr(pub u32);
     impl Mmcrfcecr {
         #[doc = "RFCFC"]
+        #[must_use]
         #[inline(always)]
         pub const fn rfcfc(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -2949,7 +3102,7 @@ pub mod regs {
         }
         #[doc = "RFCFC"]
         #[inline(always)]
-        pub fn set_rfcfc(&mut self, val: u32) {
+        pub const fn set_rfcfc(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2976,6 +3129,7 @@ pub mod regs {
     pub struct Mmcrgufcr(pub u32);
     impl Mmcrgufcr {
         #[doc = "RGUFC"]
+        #[must_use]
         #[inline(always)]
         pub const fn rgufc(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -2983,7 +3137,7 @@ pub mod regs {
         }
         #[doc = "RGUFC"]
         #[inline(always)]
-        pub fn set_rgufc(&mut self, val: u32) {
+        pub const fn set_rgufc(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3010,6 +3164,7 @@ pub mod regs {
     pub struct Mmcrimr(pub u32);
     impl Mmcrimr {
         #[doc = "Received frame CRC error mask"]
+        #[must_use]
         #[inline(always)]
         pub const fn rfcem(&self) -> super::vals::Rfcem {
             let val = (self.0 >> 5usize) & 0x01;
@@ -3017,10 +3172,11 @@ pub mod regs {
         }
         #[doc = "Received frame CRC error mask"]
         #[inline(always)]
-        pub fn set_rfcem(&mut self, val: super::vals::Rfcem) {
+        pub const fn set_rfcem(&mut self, val: super::vals::Rfcem) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
         #[doc = "Received frames alignment error mask"]
+        #[must_use]
         #[inline(always)]
         pub const fn rfaem(&self) -> super::vals::Rfaem {
             let val = (self.0 >> 6usize) & 0x01;
@@ -3028,10 +3184,11 @@ pub mod regs {
         }
         #[doc = "Received frames alignment error mask"]
         #[inline(always)]
-        pub fn set_rfaem(&mut self, val: super::vals::Rfaem) {
+        pub const fn set_rfaem(&mut self, val: super::vals::Rfaem) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
         }
         #[doc = "Received good Unicast frames mask"]
+        #[must_use]
         #[inline(always)]
         pub const fn rgufm(&self) -> super::vals::Rgufm {
             let val = (self.0 >> 17usize) & 0x01;
@@ -3039,7 +3196,7 @@ pub mod regs {
         }
         #[doc = "Received good Unicast frames mask"]
         #[inline(always)]
-        pub fn set_rgufm(&mut self, val: super::vals::Rgufm) {
+        pub const fn set_rgufm(&mut self, val: super::vals::Rgufm) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
         }
     }
@@ -3076,6 +3233,7 @@ pub mod regs {
     pub struct Mmcrir(pub u32);
     impl Mmcrir {
         #[doc = "Received frames CRC error status"]
+        #[must_use]
         #[inline(always)]
         pub const fn rfces(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -3083,10 +3241,11 @@ pub mod regs {
         }
         #[doc = "Received frames CRC error status"]
         #[inline(always)]
-        pub fn set_rfces(&mut self, val: bool) {
+        pub const fn set_rfces(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Received frames alignment error status"]
+        #[must_use]
         #[inline(always)]
         pub const fn rfaes(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -3094,10 +3253,11 @@ pub mod regs {
         }
         #[doc = "Received frames alignment error status"]
         #[inline(always)]
-        pub fn set_rfaes(&mut self, val: bool) {
+        pub const fn set_rfaes(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Received good Unicast frames status"]
+        #[must_use]
         #[inline(always)]
         pub const fn rgufs(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -3105,7 +3265,7 @@ pub mod regs {
         }
         #[doc = "Received good Unicast frames status"]
         #[inline(always)]
-        pub fn set_rgufs(&mut self, val: bool) {
+        pub const fn set_rgufs(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
     }
@@ -3142,6 +3302,7 @@ pub mod regs {
     pub struct Mmctgfcr(pub u32);
     impl Mmctgfcr {
         #[doc = "HTL"]
+        #[must_use]
         #[inline(always)]
         pub const fn tgfc(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -3149,7 +3310,7 @@ pub mod regs {
         }
         #[doc = "HTL"]
         #[inline(always)]
-        pub fn set_tgfc(&mut self, val: u32) {
+        pub const fn set_tgfc(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3176,6 +3337,7 @@ pub mod regs {
     pub struct Mmctgfmsccr(pub u32);
     impl Mmctgfmsccr {
         #[doc = "TGFMSCC"]
+        #[must_use]
         #[inline(always)]
         pub const fn tgfmscc(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -3183,7 +3345,7 @@ pub mod regs {
         }
         #[doc = "TGFMSCC"]
         #[inline(always)]
-        pub fn set_tgfmscc(&mut self, val: u32) {
+        pub const fn set_tgfmscc(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3210,6 +3372,7 @@ pub mod regs {
     pub struct Mmctgfsccr(pub u32);
     impl Mmctgfsccr {
         #[doc = "Transmitted good frames single collision counter"]
+        #[must_use]
         #[inline(always)]
         pub const fn tgfscc(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -3217,7 +3380,7 @@ pub mod regs {
         }
         #[doc = "Transmitted good frames single collision counter"]
         #[inline(always)]
-        pub fn set_tgfscc(&mut self, val: u32) {
+        pub const fn set_tgfscc(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3244,6 +3407,7 @@ pub mod regs {
     pub struct Mmctimr(pub u32);
     impl Mmctimr {
         #[doc = "Transmitted good frames single collision mask"]
+        #[must_use]
         #[inline(always)]
         pub const fn tgfscm(&self) -> super::vals::Tgfscm {
             let val = (self.0 >> 14usize) & 0x01;
@@ -3251,10 +3415,11 @@ pub mod regs {
         }
         #[doc = "Transmitted good frames single collision mask"]
         #[inline(always)]
-        pub fn set_tgfscm(&mut self, val: super::vals::Tgfscm) {
+        pub const fn set_tgfscm(&mut self, val: super::vals::Tgfscm) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
         }
         #[doc = "Transmitted good frames more than single collision mask"]
+        #[must_use]
         #[inline(always)]
         pub const fn tgfmscm(&self) -> super::vals::Tgfmscm {
             let val = (self.0 >> 15usize) & 0x01;
@@ -3262,10 +3427,11 @@ pub mod regs {
         }
         #[doc = "Transmitted good frames more than single collision mask"]
         #[inline(always)]
-        pub fn set_tgfmscm(&mut self, val: super::vals::Tgfmscm) {
+        pub const fn set_tgfmscm(&mut self, val: super::vals::Tgfmscm) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
         }
         #[doc = "Transmitted good frames mask"]
+        #[must_use]
         #[inline(always)]
         pub const fn tgfm(&self) -> super::vals::Tgfm {
             let val = (self.0 >> 16usize) & 0x01;
@@ -3273,7 +3439,7 @@ pub mod regs {
         }
         #[doc = "Transmitted good frames mask"]
         #[inline(always)]
-        pub fn set_tgfm(&mut self, val: super::vals::Tgfm) {
+        pub const fn set_tgfm(&mut self, val: super::vals::Tgfm) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
     }
@@ -3310,6 +3476,7 @@ pub mod regs {
     pub struct Mmctir(pub u32);
     impl Mmctir {
         #[doc = "Transmitted good frames single collision status"]
+        #[must_use]
         #[inline(always)]
         pub const fn tgfscs(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -3317,10 +3484,11 @@ pub mod regs {
         }
         #[doc = "Transmitted good frames single collision status"]
         #[inline(always)]
-        pub fn set_tgfscs(&mut self, val: bool) {
+        pub const fn set_tgfscs(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Transmitted good frames more than single collision status"]
+        #[must_use]
         #[inline(always)]
         pub const fn tgfmscs(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -3328,10 +3496,11 @@ pub mod regs {
         }
         #[doc = "Transmitted good frames more than single collision status"]
         #[inline(always)]
-        pub fn set_tgfmscs(&mut self, val: bool) {
+        pub const fn set_tgfmscs(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Transmitted good frames status"]
+        #[must_use]
         #[inline(always)]
         pub const fn tgfs(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -3339,7 +3508,7 @@ pub mod regs {
         }
         #[doc = "Transmitted good frames status"]
         #[inline(always)]
-        pub fn set_tgfs(&mut self, val: bool) {
+        pub const fn set_tgfs(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
     }
@@ -3376,6 +3545,7 @@ pub mod regs {
     pub struct Ptpppscr(pub u32);
     impl Ptpppscr {
         #[doc = "TSSO"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsso(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -3383,10 +3553,11 @@ pub mod regs {
         }
         #[doc = "TSSO"]
         #[inline(always)]
-        pub fn set_tsso(&mut self, val: bool) {
+        pub const fn set_tsso(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "TSTTR"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsttr(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -3394,7 +3565,7 @@ pub mod regs {
         }
         #[doc = "TSTTR"]
         #[inline(always)]
-        pub fn set_tsttr(&mut self, val: bool) {
+        pub const fn set_tsttr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -3429,6 +3600,7 @@ pub mod regs {
     pub struct Ptpssir(pub u32);
     impl Ptpssir {
         #[doc = "STSSI"]
+        #[must_use]
         #[inline(always)]
         pub const fn stssi(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -3436,7 +3608,7 @@ pub mod regs {
         }
         #[doc = "STSSI"]
         #[inline(always)]
-        pub fn set_stssi(&mut self, val: u8) {
+        pub const fn set_stssi(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -3463,6 +3635,7 @@ pub mod regs {
     pub struct Ptptsar(pub u32);
     impl Ptptsar {
         #[doc = "TSA"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsa(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -3470,7 +3643,7 @@ pub mod regs {
         }
         #[doc = "TSA"]
         #[inline(always)]
-        pub fn set_tsa(&mut self, val: u32) {
+        pub const fn set_tsa(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3497,6 +3670,7 @@ pub mod regs {
     pub struct Ptptscr(pub u32);
     impl Ptptscr {
         #[doc = "TSE"]
+        #[must_use]
         #[inline(always)]
         pub const fn tse(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -3504,10 +3678,11 @@ pub mod regs {
         }
         #[doc = "TSE"]
         #[inline(always)]
-        pub fn set_tse(&mut self, val: bool) {
+        pub const fn set_tse(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "TSFCU"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsfcu(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -3515,10 +3690,11 @@ pub mod regs {
         }
         #[doc = "TSFCU"]
         #[inline(always)]
-        pub fn set_tsfcu(&mut self, val: bool) {
+        pub const fn set_tsfcu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "TSSTI"]
+        #[must_use]
         #[inline(always)]
         pub const fn tssti(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -3526,10 +3702,11 @@ pub mod regs {
         }
         #[doc = "TSSTI"]
         #[inline(always)]
-        pub fn set_tssti(&mut self, val: bool) {
+        pub const fn set_tssti(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "TSSTU"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsstu(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -3537,10 +3714,11 @@ pub mod regs {
         }
         #[doc = "TSSTU"]
         #[inline(always)]
-        pub fn set_tsstu(&mut self, val: bool) {
+        pub const fn set_tsstu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "TSITE"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsite(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -3548,10 +3726,11 @@ pub mod regs {
         }
         #[doc = "TSITE"]
         #[inline(always)]
-        pub fn set_tsite(&mut self, val: bool) {
+        pub const fn set_tsite(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "TTSARU"]
+        #[must_use]
         #[inline(always)]
         pub const fn ttsaru(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -3559,10 +3738,11 @@ pub mod regs {
         }
         #[doc = "TTSARU"]
         #[inline(always)]
-        pub fn set_ttsaru(&mut self, val: bool) {
+        pub const fn set_ttsaru(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "TSSARFE"]
+        #[must_use]
         #[inline(always)]
         pub const fn tssarfe(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -3570,10 +3750,11 @@ pub mod regs {
         }
         #[doc = "TSSARFE"]
         #[inline(always)]
-        pub fn set_tssarfe(&mut self, val: bool) {
+        pub const fn set_tssarfe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "TSSSR"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsssr(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -3581,10 +3762,11 @@ pub mod regs {
         }
         #[doc = "TSSSR"]
         #[inline(always)]
-        pub fn set_tsssr(&mut self, val: bool) {
+        pub const fn set_tsssr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "TSPTPPSV2E"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsptppsv2e(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -3592,10 +3774,11 @@ pub mod regs {
         }
         #[doc = "TSPTPPSV2E"]
         #[inline(always)]
-        pub fn set_tsptppsv2e(&mut self, val: bool) {
+        pub const fn set_tsptppsv2e(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "TSSPTPOEFE"]
+        #[must_use]
         #[inline(always)]
         pub const fn tssptpoefe(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -3603,10 +3786,11 @@ pub mod regs {
         }
         #[doc = "TSSPTPOEFE"]
         #[inline(always)]
-        pub fn set_tssptpoefe(&mut self, val: bool) {
+        pub const fn set_tssptpoefe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "TSSIPV6FE"]
+        #[must_use]
         #[inline(always)]
         pub const fn tssipv6fe(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -3614,10 +3798,11 @@ pub mod regs {
         }
         #[doc = "TSSIPV6FE"]
         #[inline(always)]
-        pub fn set_tssipv6fe(&mut self, val: bool) {
+        pub const fn set_tssipv6fe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "TSSIPV4FE"]
+        #[must_use]
         #[inline(always)]
         pub const fn tssipv4fe(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -3625,10 +3810,11 @@ pub mod regs {
         }
         #[doc = "TSSIPV4FE"]
         #[inline(always)]
-        pub fn set_tssipv4fe(&mut self, val: bool) {
+        pub const fn set_tssipv4fe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "TSSEME"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsseme(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -3636,10 +3822,11 @@ pub mod regs {
         }
         #[doc = "TSSEME"]
         #[inline(always)]
-        pub fn set_tsseme(&mut self, val: bool) {
+        pub const fn set_tsseme(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "TSSMRME"]
+        #[must_use]
         #[inline(always)]
         pub const fn tssmrme(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -3647,10 +3834,11 @@ pub mod regs {
         }
         #[doc = "TSSMRME"]
         #[inline(always)]
-        pub fn set_tssmrme(&mut self, val: bool) {
+        pub const fn set_tssmrme(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "TSCNT"]
+        #[must_use]
         #[inline(always)]
         pub const fn tscnt(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x03;
@@ -3658,10 +3846,11 @@ pub mod regs {
         }
         #[doc = "TSCNT"]
         #[inline(always)]
-        pub fn set_tscnt(&mut self, val: u8) {
+        pub const fn set_tscnt(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
         }
         #[doc = "TSPFFMAE"]
+        #[must_use]
         #[inline(always)]
         pub const fn tspffmae(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -3669,7 +3858,7 @@ pub mod regs {
         }
         #[doc = "TSPFFMAE"]
         #[inline(always)]
-        pub fn set_tspffmae(&mut self, val: bool) {
+        pub const fn set_tspffmae(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
     }
@@ -3713,6 +3902,7 @@ pub mod regs {
     pub struct Ptptshr(pub u32);
     impl Ptptshr {
         #[doc = "STS"]
+        #[must_use]
         #[inline(always)]
         pub const fn sts(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -3720,7 +3910,7 @@ pub mod regs {
         }
         #[doc = "STS"]
         #[inline(always)]
-        pub fn set_sts(&mut self, val: u32) {
+        pub const fn set_sts(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3747,6 +3937,7 @@ pub mod regs {
     pub struct Ptptshur(pub u32);
     impl Ptptshur {
         #[doc = "TSUS"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsus(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -3754,7 +3945,7 @@ pub mod regs {
         }
         #[doc = "TSUS"]
         #[inline(always)]
-        pub fn set_tsus(&mut self, val: u32) {
+        pub const fn set_tsus(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3781,6 +3972,7 @@ pub mod regs {
     pub struct Ptptslr(pub u32);
     impl Ptptslr {
         #[doc = "STSS"]
+        #[must_use]
         #[inline(always)]
         pub const fn stss(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x7fff_ffff;
@@ -3788,10 +3980,11 @@ pub mod regs {
         }
         #[doc = "STSS"]
         #[inline(always)]
-        pub fn set_stss(&mut self, val: u32) {
+        pub const fn set_stss(&mut self, val: u32) {
             self.0 = (self.0 & !(0x7fff_ffff << 0usize)) | (((val as u32) & 0x7fff_ffff) << 0usize);
         }
         #[doc = "STPNS"]
+        #[must_use]
         #[inline(always)]
         pub const fn stpns(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -3799,7 +3992,7 @@ pub mod regs {
         }
         #[doc = "STPNS"]
         #[inline(always)]
-        pub fn set_stpns(&mut self, val: bool) {
+        pub const fn set_stpns(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -3834,6 +4027,7 @@ pub mod regs {
     pub struct Ptptslur(pub u32);
     impl Ptptslur {
         #[doc = "TSUSS"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsuss(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x7fff_ffff;
@@ -3841,10 +4035,11 @@ pub mod regs {
         }
         #[doc = "TSUSS"]
         #[inline(always)]
-        pub fn set_tsuss(&mut self, val: u32) {
+        pub const fn set_tsuss(&mut self, val: u32) {
             self.0 = (self.0 & !(0x7fff_ffff << 0usize)) | (((val as u32) & 0x7fff_ffff) << 0usize);
         }
         #[doc = "TSUPNS"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsupns(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -3852,7 +4047,7 @@ pub mod regs {
         }
         #[doc = "TSUPNS"]
         #[inline(always)]
-        pub fn set_tsupns(&mut self, val: bool) {
+        pub const fn set_tsupns(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -3887,6 +4082,7 @@ pub mod regs {
     pub struct Ptptssr(pub u32);
     impl Ptptssr {
         #[doc = "TSSO"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsso(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -3894,10 +4090,11 @@ pub mod regs {
         }
         #[doc = "TSSO"]
         #[inline(always)]
-        pub fn set_tsso(&mut self, val: bool) {
+        pub const fn set_tsso(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "TSSO"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsttr(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -3905,7 +4102,7 @@ pub mod regs {
         }
         #[doc = "TSSO"]
         #[inline(always)]
-        pub fn set_tsttr(&mut self, val: bool) {
+        pub const fn set_tsttr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -3940,6 +4137,7 @@ pub mod regs {
     pub struct Ptptthr(pub u32);
     impl Ptptthr {
         #[doc = "0"]
+        #[must_use]
         #[inline(always)]
         pub const fn ttsh(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -3947,7 +4145,7 @@ pub mod regs {
         }
         #[doc = "0"]
         #[inline(always)]
-        pub fn set_ttsh(&mut self, val: u32) {
+        pub const fn set_ttsh(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -3974,6 +4172,7 @@ pub mod regs {
     pub struct Ptpttlr(pub u32);
     impl Ptpttlr {
         #[doc = "TTSL"]
+        #[must_use]
         #[inline(always)]
         pub const fn ttsl(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -3981,7 +4180,7 @@ pub mod regs {
         }
         #[doc = "TTSL"]
         #[inline(always)]
-        pub fn set_ttsl(&mut self, val: u32) {
+        pub const fn set_ttsl(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }

@@ -1076,19 +1076,19 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
+                    name: "CYCLES13_5",
+                    description: Some("13.5 ADC clock cycles"),
+                    value: 2,
+                },
+                EnumVariant {
                     name: "CYCLES1_5",
                     description: Some("1.5 ADC clock cycles"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "CYCLES7_5",
-                    description: Some("7.5 ADC clock cycles"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "CYCLES13_5",
-                    description: Some("13.5 ADC clock cycles"),
-                    value: 2,
+                    name: "CYCLES239_5",
+                    description: Some("239.5 ADC clock cycles"),
+                    value: 7,
                 },
                 EnumVariant {
                     name: "CYCLES28_5",
@@ -1111,9 +1111,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 6,
                 },
                 EnumVariant {
-                    name: "CYCLES239_5",
-                    description: Some("239.5 ADC clock cycles"),
-                    value: 7,
+                    name: "CYCLES7_5",
+                    description: Some("7.5 ADC clock cycles"),
+                    value: 1,
                 },
             ],
         },

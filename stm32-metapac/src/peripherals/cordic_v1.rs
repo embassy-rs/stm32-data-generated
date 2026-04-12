@@ -22,17 +22,17 @@ impl Cordic {
     #[doc = "Control and status register."]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Argument register."]
     #[inline(always)]
     pub const fn wdata(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Result register."]
     #[inline(always)]
     pub const fn rdata(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
 }
 pub mod regs {
@@ -42,6 +42,7 @@ pub mod regs {
     pub struct Csr(pub u32);
     impl Csr {
         #[doc = "Function."]
+        #[must_use]
         #[inline(always)]
         pub const fn func(&self) -> super::vals::Func {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -49,10 +50,11 @@ pub mod regs {
         }
         #[doc = "Function."]
         #[inline(always)]
-        pub fn set_func(&mut self, val: super::vals::Func) {
+        pub const fn set_func(&mut self, val: super::vals::Func) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val.to_bits() as u32) & 0x0f) << 0usize);
         }
         #[doc = "Precision required (number of iterations/cycles), where PRECISION = (number of iterations/4)."]
+        #[must_use]
         #[inline(always)]
         pub const fn precision(&self) -> super::vals::Precision {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -60,10 +62,11 @@ pub mod regs {
         }
         #[doc = "Precision required (number of iterations/cycles), where PRECISION = (number of iterations/4)."]
         #[inline(always)]
-        pub fn set_precision(&mut self, val: super::vals::Precision) {
+        pub const fn set_precision(&mut self, val: super::vals::Precision) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val.to_bits() as u32) & 0x0f) << 4usize);
         }
         #[doc = "Scaling factor. Input value has been multiplied by 2^(-n) before for argument. Output value will need to be multiplied by 2^n later for results."]
+        #[must_use]
         #[inline(always)]
         pub const fn scale(&self) -> super::vals::Scale {
             let val = (self.0 >> 8usize) & 0x07;
@@ -71,10 +74,11 @@ pub mod regs {
         }
         #[doc = "Scaling factor. Input value has been multiplied by 2^(-n) before for argument. Output value will need to be multiplied by 2^n later for results."]
         #[inline(always)]
-        pub fn set_scale(&mut self, val: super::vals::Scale) {
+        pub const fn set_scale(&mut self, val: super::vals::Scale) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "Enable interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn ien(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -82,10 +86,11 @@ pub mod regs {
         }
         #[doc = "Enable interrupt."]
         #[inline(always)]
-        pub fn set_ien(&mut self, val: bool) {
+        pub const fn set_ien(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Enable DMA wread channel."]
+        #[must_use]
         #[inline(always)]
         pub const fn dmaren(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -93,10 +98,11 @@ pub mod regs {
         }
         #[doc = "Enable DMA wread channel."]
         #[inline(always)]
-        pub fn set_dmaren(&mut self, val: bool) {
+        pub const fn set_dmaren(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "Enable DMA write channel."]
+        #[must_use]
         #[inline(always)]
         pub const fn dmawen(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -104,10 +110,11 @@ pub mod regs {
         }
         #[doc = "Enable DMA write channel."]
         #[inline(always)]
-        pub fn set_dmawen(&mut self, val: bool) {
+        pub const fn set_dmawen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Number of results in the RDATA register."]
+        #[must_use]
         #[inline(always)]
         pub const fn nres(&self) -> super::vals::Num {
             let val = (self.0 >> 19usize) & 0x01;
@@ -115,10 +122,11 @@ pub mod regs {
         }
         #[doc = "Number of results in the RDATA register."]
         #[inline(always)]
-        pub fn set_nres(&mut self, val: super::vals::Num) {
+        pub const fn set_nres(&mut self, val: super::vals::Num) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
         }
         #[doc = "Number of arguments expected by the WDATA register."]
+        #[must_use]
         #[inline(always)]
         pub const fn nargs(&self) -> super::vals::Num {
             let val = (self.0 >> 20usize) & 0x01;
@@ -126,10 +134,11 @@ pub mod regs {
         }
         #[doc = "Number of arguments expected by the WDATA register."]
         #[inline(always)]
-        pub fn set_nargs(&mut self, val: super::vals::Num) {
+        pub const fn set_nargs(&mut self, val: super::vals::Num) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
         }
         #[doc = "Width of output data."]
+        #[must_use]
         #[inline(always)]
         pub const fn ressize(&self) -> super::vals::Size {
             let val = (self.0 >> 21usize) & 0x01;
@@ -137,10 +146,11 @@ pub mod regs {
         }
         #[doc = "Width of output data."]
         #[inline(always)]
-        pub fn set_ressize(&mut self, val: super::vals::Size) {
+        pub const fn set_ressize(&mut self, val: super::vals::Size) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
         }
         #[doc = "Width of input data."]
+        #[must_use]
         #[inline(always)]
         pub const fn argsize(&self) -> super::vals::Size {
             let val = (self.0 >> 22usize) & 0x01;
@@ -148,10 +158,11 @@ pub mod regs {
         }
         #[doc = "Width of input data."]
         #[inline(always)]
-        pub fn set_argsize(&mut self, val: super::vals::Size) {
+        pub const fn set_argsize(&mut self, val: super::vals::Size) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
         }
         #[doc = "Result ready flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn rrdy(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -159,7 +170,7 @@ pub mod regs {
         }
         #[doc = "Result ready flag."]
         #[inline(always)]
-        pub fn set_rrdy(&mut self, val: bool) {
+        pub const fn set_rrdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }

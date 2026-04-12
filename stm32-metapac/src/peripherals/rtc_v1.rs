@@ -22,52 +22,52 @@ impl Rtc {
     #[doc = "Control Register High"]
     #[inline(always)]
     pub const fn crh(self) -> crate::common::Reg<regs::Crh, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Control Register Low"]
     #[inline(always)]
     pub const fn crl(self) -> crate::common::Reg<regs::Crl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Prescaler Load Register High"]
     #[inline(always)]
     pub const fn prlh(self) -> crate::common::Reg<regs::Prlh, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "Prescaler Load Register Low"]
     #[inline(always)]
     pub const fn prll(self) -> crate::common::Reg<regs::Prll, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "Prescaler Divider Register High"]
     #[inline(always)]
     pub const fn divh(self) -> crate::common::Reg<regs::Divh, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "Prescaler Divider Register Low"]
     #[inline(always)]
     pub const fn divl(self) -> crate::common::Reg<regs::Divl, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "Counter Register High"]
     #[inline(always)]
     pub const fn cnth(self) -> crate::common::Reg<regs::Cnth, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "Counter Register Low"]
     #[inline(always)]
     pub const fn cntl(self) -> crate::common::Reg<regs::Cntl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "Alarm Register High"]
     #[inline(always)]
     pub const fn alrh(self) -> crate::common::Reg<regs::Alrh, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "Alarm Register Low"]
     #[inline(always)]
     pub const fn alrl(self) -> crate::common::Reg<regs::Alrl, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
 }
 pub mod regs {
@@ -77,6 +77,7 @@ pub mod regs {
     pub struct Alrh(pub u32);
     impl Alrh {
         #[doc = "Alarm register high"]
+        #[must_use]
         #[inline(always)]
         pub const fn alrh(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -84,7 +85,7 @@ pub mod regs {
         }
         #[doc = "Alarm register high"]
         #[inline(always)]
-        pub fn set_alrh(&mut self, val: u16) {
+        pub const fn set_alrh(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -111,6 +112,7 @@ pub mod regs {
     pub struct Alrl(pub u32);
     impl Alrl {
         #[doc = "Alarm register low"]
+        #[must_use]
         #[inline(always)]
         pub const fn alrl(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -118,7 +120,7 @@ pub mod regs {
         }
         #[doc = "Alarm register low"]
         #[inline(always)]
-        pub fn set_alrl(&mut self, val: u16) {
+        pub const fn set_alrl(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -145,6 +147,7 @@ pub mod regs {
     pub struct Cnth(pub u32);
     impl Cnth {
         #[doc = "Counter register high"]
+        #[must_use]
         #[inline(always)]
         pub const fn cnth(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -152,7 +155,7 @@ pub mod regs {
         }
         #[doc = "Counter register high"]
         #[inline(always)]
-        pub fn set_cnth(&mut self, val: u16) {
+        pub const fn set_cnth(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -179,6 +182,7 @@ pub mod regs {
     pub struct Cntl(pub u32);
     impl Cntl {
         #[doc = "Counter register low"]
+        #[must_use]
         #[inline(always)]
         pub const fn cntl(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -186,7 +190,7 @@ pub mod regs {
         }
         #[doc = "Counter register low"]
         #[inline(always)]
-        pub fn set_cntl(&mut self, val: u16) {
+        pub const fn set_cntl(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -213,6 +217,7 @@ pub mod regs {
     pub struct Crh(pub u32);
     impl Crh {
         #[doc = "Second interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn secie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -220,10 +225,11 @@ pub mod regs {
         }
         #[doc = "Second interrupt enable"]
         #[inline(always)]
-        pub fn set_secie(&mut self, val: bool) {
+        pub const fn set_secie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Alarm interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn alrie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -231,10 +237,11 @@ pub mod regs {
         }
         #[doc = "Alarm interrupt enable"]
         #[inline(always)]
-        pub fn set_alrie(&mut self, val: bool) {
+        pub const fn set_alrie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Overflow interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn owie(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -242,7 +249,7 @@ pub mod regs {
         }
         #[doc = "Overflow interrupt enable"]
         #[inline(always)]
-        pub fn set_owie(&mut self, val: bool) {
+        pub const fn set_owie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
     }
@@ -279,6 +286,7 @@ pub mod regs {
     pub struct Crl(pub u32);
     impl Crl {
         #[doc = "Second flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn secf(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -286,10 +294,11 @@ pub mod regs {
         }
         #[doc = "Second flag"]
         #[inline(always)]
-        pub fn set_secf(&mut self, val: bool) {
+        pub const fn set_secf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Alarm flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn alrf(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -297,10 +306,11 @@ pub mod regs {
         }
         #[doc = "Alarm flag"]
         #[inline(always)]
-        pub fn set_alrf(&mut self, val: bool) {
+        pub const fn set_alrf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Overflow flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn owf(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -308,10 +318,11 @@ pub mod regs {
         }
         #[doc = "Overflow flag"]
         #[inline(always)]
-        pub fn set_owf(&mut self, val: bool) {
+        pub const fn set_owf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Registers synchronized flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn rsf(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -319,10 +330,11 @@ pub mod regs {
         }
         #[doc = "Registers synchronized flag"]
         #[inline(always)]
-        pub fn set_rsf(&mut self, val: bool) {
+        pub const fn set_rsf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Enter configuration mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn cnf(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -330,10 +342,11 @@ pub mod regs {
         }
         #[doc = "Enter configuration mode"]
         #[inline(always)]
-        pub fn set_cnf(&mut self, val: bool) {
+        pub const fn set_cnf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "RTC operation OFF"]
+        #[must_use]
         #[inline(always)]
         pub const fn rtoff(&self) -> super::vals::Rtoff {
             let val = (self.0 >> 5usize) & 0x01;
@@ -341,7 +354,7 @@ pub mod regs {
         }
         #[doc = "RTC operation OFF"]
         #[inline(always)]
-        pub fn set_rtoff(&mut self, val: super::vals::Rtoff) {
+        pub const fn set_rtoff(&mut self, val: super::vals::Rtoff) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
     }
@@ -375,6 +388,7 @@ pub mod regs {
     pub struct Divh(pub u32);
     impl Divh {
         #[doc = "Prescaler divider register high"]
+        #[must_use]
         #[inline(always)]
         pub const fn divh(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -382,7 +396,7 @@ pub mod regs {
         }
         #[doc = "Prescaler divider register high"]
         #[inline(always)]
-        pub fn set_divh(&mut self, val: u8) {
+        pub const fn set_divh(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
     }
@@ -409,6 +423,7 @@ pub mod regs {
     pub struct Divl(pub u32);
     impl Divl {
         #[doc = "Prescaler divider register low"]
+        #[must_use]
         #[inline(always)]
         pub const fn divl(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -416,7 +431,7 @@ pub mod regs {
         }
         #[doc = "Prescaler divider register low"]
         #[inline(always)]
-        pub fn set_divl(&mut self, val: u16) {
+        pub const fn set_divl(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -443,6 +458,7 @@ pub mod regs {
     pub struct Prlh(pub u32);
     impl Prlh {
         #[doc = "Prescaler load register high"]
+        #[must_use]
         #[inline(always)]
         pub const fn prlh(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -450,7 +466,7 @@ pub mod regs {
         }
         #[doc = "Prescaler load register high"]
         #[inline(always)]
-        pub fn set_prlh(&mut self, val: u8) {
+        pub const fn set_prlh(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
     }
@@ -477,6 +493,7 @@ pub mod regs {
     pub struct Prll(pub u32);
     impl Prll {
         #[doc = "Prescaler divider register low"]
+        #[must_use]
         #[inline(always)]
         pub const fn prll(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -484,7 +501,7 @@ pub mod regs {
         }
         #[doc = "Prescaler divider register low"]
         #[inline(always)]
-        pub fn set_prll(&mut self, val: u16) {
+        pub const fn set_prll(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }

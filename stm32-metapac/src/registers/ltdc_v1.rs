@@ -1787,18 +1787,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE_LOW",
-                    description: Some(
-                        "Data enable polarity is active low",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "ACTIVE_HIGH",
                     description: Some(
                         "Data enable polarity is active high",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "ACTIVE_LOW",
+                    description: Some(
+                        "Data enable polarity is active low",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1808,18 +1808,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE_LOW",
-                    description: Some(
-                        "Horizontal synchronization polarity is active low",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "ACTIVE_HIGH",
                     description: Some(
                         "Horizontal synchronization polarity is active high",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "ACTIVE_LOW",
+                    description: Some(
+                        "Horizontal synchronization polarity is active low",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1850,18 +1850,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RISING_EDGE",
-                    description: Some(
-                        "Pixel clock on rising edge",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FALLING_EDGE",
                     description: Some(
                         "Pixel clock on falling edge",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "RISING_EDGE",
+                    description: Some(
+                        "Pixel clock on rising edge",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1871,25 +1871,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "ARGB8888",
+                    name: "AL44",
                     description: Some(
-                        "ARGB8888",
+                        "AL44 (4-bit alpha, 4-bit luminance)",
                     ),
-                    value: 0,
+                    value: 6,
                 },
                 EnumVariant {
-                    name: "RGB888",
+                    name: "AL88",
                     description: Some(
-                        "RGB888",
+                        "AL88 (8-bit alpha, 8-bit luminance)",
                     ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "RGB565",
-                    description: Some(
-                        "RGB565",
-                    ),
-                    value: 2,
+                    value: 7,
                 },
                 EnumVariant {
                     name: "ARGB1555",
@@ -1906,6 +1899,13 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 4,
                 },
                 EnumVariant {
+                    name: "ARGB8888",
+                    description: Some(
+                        "ARGB8888",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
                     name: "L8",
                     description: Some(
                         "L8 (8-bit luminance)",
@@ -1913,18 +1913,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 5,
                 },
                 EnumVariant {
-                    name: "AL44",
+                    name: "RGB565",
                     description: Some(
-                        "AL44 (4-bit alpha, 4-bit luminance)",
+                        "RGB565",
                     ),
-                    value: 6,
+                    value: 2,
                 },
                 EnumVariant {
-                    name: "AL88",
+                    name: "RGB888",
                     description: Some(
-                        "AL88 (8-bit alpha, 8-bit luminance)",
+                        "RGB888",
                     ),
-                    value: 7,
+                    value: 1,
                 },
             ],
         },
@@ -1955,18 +1955,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE_LOW",
-                    description: Some(
-                        "Vertical synchronization polarity is active low",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "ACTIVE_HIGH",
                     description: Some(
                         "Vertical synchronization polarity is active high",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "ACTIVE_LOW",
+                    description: Some(
+                        "Vertical synchronization polarity is active low",
+                    ),
+                    value: 0,
                 },
             ],
         },

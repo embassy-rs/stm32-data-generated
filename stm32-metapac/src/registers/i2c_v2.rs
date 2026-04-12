@@ -1386,18 +1386,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "BIT7",
-                    description: Some(
-                        "7-bit addressing mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "BIT10",
                     description: Some(
                         "10-bit addressing mode",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "BIT7",
+                    description: Some(
+                        "7-bit addressing mode",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1407,18 +1407,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "SOFTWARE",
-                    description: Some(
-                        "Software end mode: TC flag is set when NBYTES data are transferred, stretching SCL low",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "AUTOMATIC",
                     description: Some(
                         "Automatic end mode: a STOP condition is automatically sent when NBYTES data are transferred",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "SOFTWARE",
+                    description: Some(
+                        "Software end mode: TC flag is set when NBYTES data are transferred, stretching SCL low",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1428,18 +1428,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "WRITE",
-                    description: Some(
-                        "Write transfer, slave enters receiver mode",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "READ",
                     description: Some(
                         "Read transfer, slave enters transmitter mode",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "WRITE",
+                    description: Some(
+                        "Write transfer, slave enters receiver mode",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1449,18 +1449,53 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "NO_FILTER",
-                    description: Some(
-                        "Digital filter disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FILTER1",
                     description: Some(
                         "Digital filter enabled and filtering capability up to 1 tI2CCLK",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "FILTER10",
+                    description: Some(
+                        "Digital filter enabled and filtering capability up to 10 tI2CCLK",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "FILTER11",
+                    description: Some(
+                        "Digital filter enabled and filtering capability up to 11 tI2CCLK",
+                    ),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "FILTER12",
+                    description: Some(
+                        "Digital filter enabled and filtering capability up to 12 tI2CCLK",
+                    ),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "FILTER13",
+                    description: Some(
+                        "Digital filter enabled and filtering capability up to 13 tI2CCLK",
+                    ),
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "FILTER14",
+                    description: Some(
+                        "Digital filter enabled and filtering capability up to 14 tI2CCLK",
+                    ),
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "FILTER15",
+                    description: Some(
+                        "Digital filter enabled and filtering capability up to 15 tI2CCLK",
+                    ),
+                    value: 15,
                 },
                 EnumVariant {
                     name: "FILTER2",
@@ -1519,46 +1554,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 9,
                 },
                 EnumVariant {
-                    name: "FILTER10",
+                    name: "NO_FILTER",
                     description: Some(
-                        "Digital filter enabled and filtering capability up to 10 tI2CCLK",
+                        "Digital filter disabled",
                     ),
-                    value: 10,
-                },
-                EnumVariant {
-                    name: "FILTER11",
-                    description: Some(
-                        "Digital filter enabled and filtering capability up to 11 tI2CCLK",
-                    ),
-                    value: 11,
-                },
-                EnumVariant {
-                    name: "FILTER12",
-                    description: Some(
-                        "Digital filter enabled and filtering capability up to 12 tI2CCLK",
-                    ),
-                    value: 12,
-                },
-                EnumVariant {
-                    name: "FILTER13",
-                    description: Some(
-                        "Digital filter enabled and filtering capability up to 13 tI2CCLK",
-                    ),
-                    value: 13,
-                },
-                EnumVariant {
-                    name: "FILTER14",
-                    description: Some(
-                        "Digital filter enabled and filtering capability up to 14 tI2CCLK",
-                    ),
-                    value: 14,
-                },
-                EnumVariant {
-                    name: "FILTER15",
-                    description: Some(
-                        "Digital filter enabled and filtering capability up to 15 tI2CCLK",
-                    ),
-                    value: 15,
+                    value: 0,
                 },
             ],
         },
@@ -1588,13 +1588,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 3,
             variants: &[
-                EnumVariant {
-                    name: "NO_MASK",
-                    description: Some(
-                        "No mask",
-                    ),
-                    value: 0,
-                },
                 EnumVariant {
                     name: "MASK1",
                     description: Some(
@@ -1643,6 +1636,13 @@ pub(crate) static REGISTERS: IR = IR {
                         "OA2[7:1] are masked and don’t care. No comparison is done, and all (except reserved) 7-bit received addresses are acknowledged",
                     ),
                     value: 7,
+                },
+                EnumVariant {
+                    name: "NO_MASK",
+                    description: Some(
+                        "No mask",
+                    ),
+                    value: 0,
                 },
             ],
         },

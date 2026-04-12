@@ -1011,18 +1011,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TIM6",
-                    description: Some(
-                        "Trigger source is TIM6_TRGO",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "TIM20",
                     description: Some(
                         "Trigger source is TIM20_CC2",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "TIM6",
+                    description: Some(
+                        "Trigger source is TIM6_TRGO",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1032,18 +1032,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TIM3",
-                    description: Some(
-                        "Trigger source is TIM3_CC4",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "TIM20",
                     description: Some(
                         "Trigger source is TIM20_CC3",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "TIM3",
+                    description: Some(
+                        "Trigger source is TIM3_CC4",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1095,18 +1095,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TIM4",
-                    description: Some(
-                        "Trigger source is TIM4_CC4",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "TIM20",
                     description: Some(
                         "Trigger source is TIM20_CC1",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "TIM4",
+                    description: Some(
+                        "Trigger source is TIM4_CC4",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1116,18 +1116,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TIM3",
-                    description: Some(
-                        "Trigger source is TIM3_CC1",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "TIM20",
                     description: Some(
                         "Trigger source is TIM20_CC4",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "TIM3",
+                    description: Some(
+                        "Trigger source is TIM3_CC1",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1242,18 +1242,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TIM4",
-                    description: Some(
-                        "Trigger source is TIM4_CC1",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "TIM20",
                     description: Some(
                         "Trigger source is TIM20_TRGO2",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "TIM4",
+                    description: Some(
+                        "Trigger source is TIM4_CC1",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1284,18 +1284,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TIM7",
-                    description: Some(
-                        "Trigger source is TIM7_TRGO",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "TIM20",
                     description: Some(
                         "Trigger source is TIM20_CC2",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "TIM7",
+                    description: Some(
+                        "Trigger source is TIM7_TRGO",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1305,18 +1305,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TIM4",
-                    description: Some(
-                        "Trigger source is TIM4_CC3",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "TIM20",
                     description: Some(
                         "Trigger source is TIM20_TRGO",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "TIM4",
+                    description: Some(
+                        "Trigger source is TIM4_CC3",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1326,18 +1326,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TIM15",
-                    description: Some(
-                        "DAC trigger is TIM15_TRGO",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "HR_TIM1",
                     description: Some(
                         "DAC trigger is HRTIM1_DAC1_TRIG1",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "TIM15",
+                    description: Some(
+                        "DAC trigger is TIM15_TRGO",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1346,13 +1346,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
-                EnumVariant {
-                    name: "NO_REDIRECTION",
-                    description: Some(
-                        "No redirection",
-                    ),
-                    value: 0,
-                },
                 EnumVariant {
                     name: "MAP_TIM2TIM15",
                     description: Some(
@@ -1367,6 +1360,13 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 2,
                 },
+                EnumVariant {
+                    name: "NO_REDIRECTION",
+                    description: Some(
+                        "No redirection",
+                    ),
+                    value: 0,
+                },
             ],
         },
         Enum {
@@ -1375,18 +1375,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "STANDARD",
-                    description: Some(
-                        "Standard",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FMP",
                     description: Some(
                         "FM+",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "STANDARD",
+                    description: Some(
+                        "Standard",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1395,13 +1395,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
-                EnumVariant {
-                    name: "MAP_DMA1CH7",
-                    description: Some(
-                        "I2C1_RX mapped on DMA1 CH7",
-                    ),
-                    value: 0,
-                },
                 EnumVariant {
                     name: "MAP_DMA1CH3",
                     description: Some(
@@ -1416,6 +1409,13 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 2,
                 },
+                EnumVariant {
+                    name: "MAP_DMA1CH7",
+                    description: Some(
+                        "I2C1_RX mapped on DMA1 CH7",
+                    ),
+                    value: 0,
+                },
             ],
         },
         Enum {
@@ -1423,13 +1423,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
-                EnumVariant {
-                    name: "MAP_DMA1CH6",
-                    description: Some(
-                        "I2C1_TX mapped on DMA1 CH6",
-                    ),
-                    value: 0,
-                },
                 EnumVariant {
                     name: "MAP_DMA1CH2",
                     description: Some(
@@ -1443,6 +1436,13 @@ pub(crate) static REGISTERS: IR = IR {
                         "I2C1_TX mapped on DMA1 CH4",
                     ),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "MAP_DMA1CH6",
+                    description: Some(
+                        "I2C1_TX mapped on DMA1 CH6",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1459,13 +1459,6 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "SYSTEM_FLASH",
-                    description: Some(
-                        "System Flash memory mapped at 0x0000_0000",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "MAIN_FLASH2",
                     description: Some(
                         "Main Flash memory mapped at 0x0000_0000",
@@ -1478,6 +1471,13 @@ pub(crate) static REGISTERS: IR = IR {
                         "Embedded SRAM mapped at 0x0000_0000",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "SYSTEM_FLASH",
+                    description: Some(
+                        "System Flash memory mapped at 0x0000_0000",
+                    ),
+                    value: 1,
                 },
             ],
         },

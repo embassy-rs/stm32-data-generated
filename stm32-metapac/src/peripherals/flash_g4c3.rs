@@ -22,92 +22,92 @@ impl Flash {
     #[doc = "Access control register"]
     #[inline(always)]
     pub const fn acr(self) -> crate::common::Reg<regs::Acr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Power down key register"]
     #[inline(always)]
     pub const fn pdkeyr(self) -> crate::common::Reg<u32, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Flash key register"]
     #[inline(always)]
     pub const fn keyr(self) -> crate::common::Reg<u32, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "Option byte key register"]
     #[inline(always)]
     pub const fn optkeyr(self) -> crate::common::Reg<u32, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "Status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "Flash control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "Flash ECC register"]
     #[inline(always)]
     pub const fn eccr(self) -> crate::common::Reg<regs::Eccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "Flash option register"]
     #[inline(always)]
     pub const fn optr(self) -> crate::common::Reg<regs::Optr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "Flash Bank 1 PCROP Start address register"]
     #[inline(always)]
     pub const fn pcrop1sr(self) -> crate::common::Reg<regs::Pcrop1sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "Flash Bank 1 PCROP End address register"]
     #[inline(always)]
     pub const fn pcrop1er(self) -> crate::common::Reg<regs::Pcrop1er, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "Flash Bank 1 WRP area A address register"]
     #[inline(always)]
     pub const fn wrp1ar(self) -> crate::common::Reg<regs::Wrp1ar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
     }
     #[doc = "Flash Bank 1 WRP area B address register"]
     #[inline(always)]
     pub const fn wrp1br(self) -> crate::common::Reg<regs::Wrp1br, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
     }
     #[doc = "Flash Bank 2 PCROP Start address register"]
     #[inline(always)]
     pub const fn pcrop2sr(self) -> crate::common::Reg<regs::Pcrop2sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
     }
     #[doc = "Flash Bank 2 PCROP End address register"]
     #[inline(always)]
     pub const fn pcrop2er(self) -> crate::common::Reg<regs::Pcrop2er, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
     }
     #[doc = "Flash Bank 2 WRP area A address register"]
     #[inline(always)]
     pub const fn wrp2ar(self) -> crate::common::Reg<regs::Wrp2ar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x4cusize) as _) }
     }
     #[doc = "Flash Bank 2 WRP area B address register"]
     #[inline(always)]
     pub const fn wrp2br(self) -> crate::common::Reg<regs::Wrp2br, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
     }
     #[doc = "securable area bank1 register"]
     #[inline(always)]
     pub const fn sec1r(self) -> crate::common::Reg<regs::Sec1r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x70usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x70usize) as _) }
     }
     #[doc = "securable area bank2 register"]
     #[inline(always)]
     pub const fn sec2r(self) -> crate::common::Reg<regs::Sec2r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x74usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x74usize) as _) }
     }
 }
 pub mod regs {
@@ -117,6 +117,7 @@ pub mod regs {
     pub struct Acr(pub u32);
     impl Acr {
         #[doc = "Latency"]
+        #[must_use]
         #[inline(always)]
         pub const fn latency(&self) -> super::vals::Latency {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -124,10 +125,11 @@ pub mod regs {
         }
         #[doc = "Latency"]
         #[inline(always)]
-        pub fn set_latency(&mut self, val: super::vals::Latency) {
+        pub const fn set_latency(&mut self, val: super::vals::Latency) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val.to_bits() as u32) & 0x0f) << 0usize);
         }
         #[doc = "Prefetch enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn prften(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -135,10 +137,11 @@ pub mod regs {
         }
         #[doc = "Prefetch enable"]
         #[inline(always)]
-        pub fn set_prften(&mut self, val: bool) {
+        pub const fn set_prften(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Instruction cache enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn icen(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -146,10 +149,11 @@ pub mod regs {
         }
         #[doc = "Instruction cache enable"]
         #[inline(always)]
-        pub fn set_icen(&mut self, val: bool) {
+        pub const fn set_icen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Data cache enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn dcen(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -157,10 +161,11 @@ pub mod regs {
         }
         #[doc = "Data cache enable"]
         #[inline(always)]
-        pub fn set_dcen(&mut self, val: bool) {
+        pub const fn set_dcen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Instruction cache reset"]
+        #[must_use]
         #[inline(always)]
         pub const fn icrst(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -168,10 +173,11 @@ pub mod regs {
         }
         #[doc = "Instruction cache reset"]
         #[inline(always)]
-        pub fn set_icrst(&mut self, val: bool) {
+        pub const fn set_icrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Data cache reset"]
+        #[must_use]
         #[inline(always)]
         pub const fn dcrst(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -179,10 +185,11 @@ pub mod regs {
         }
         #[doc = "Data cache reset"]
         #[inline(always)]
-        pub fn set_dcrst(&mut self, val: bool) {
+        pub const fn set_dcrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Flash Power-down mode during Low-power run mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn run_pd(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -190,10 +197,11 @@ pub mod regs {
         }
         #[doc = "Flash Power-down mode during Low-power run mode"]
         #[inline(always)]
-        pub fn set_run_pd(&mut self, val: bool) {
+        pub const fn set_run_pd(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Flash Power-down mode during Low-power sleep mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn sleep_pd(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -201,10 +209,11 @@ pub mod regs {
         }
         #[doc = "Flash Power-down mode during Low-power sleep mode"]
         #[inline(always)]
-        pub fn set_sleep_pd(&mut self, val: bool) {
+        pub const fn set_sleep_pd(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Debug software enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_swen(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -212,7 +221,7 @@ pub mod regs {
         }
         #[doc = "Debug software enable"]
         #[inline(always)]
-        pub fn set_dbg_swen(&mut self, val: bool) {
+        pub const fn set_dbg_swen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
     }
@@ -249,6 +258,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "Programming"]
+        #[must_use]
         #[inline(always)]
         pub const fn pg(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -256,10 +266,11 @@ pub mod regs {
         }
         #[doc = "Programming"]
         #[inline(always)]
-        pub fn set_pg(&mut self, val: bool) {
+        pub const fn set_pg(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Page erase"]
+        #[must_use]
         #[inline(always)]
         pub const fn per(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -267,10 +278,11 @@ pub mod regs {
         }
         #[doc = "Page erase"]
         #[inline(always)]
-        pub fn set_per(&mut self, val: bool) {
+        pub const fn set_per(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Bank 1 Mass erase"]
+        #[must_use]
         #[inline(always)]
         pub const fn mer1(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -278,10 +290,11 @@ pub mod regs {
         }
         #[doc = "Bank 1 Mass erase"]
         #[inline(always)]
-        pub fn set_mer1(&mut self, val: bool) {
+        pub const fn set_mer1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Page number"]
+        #[must_use]
         #[inline(always)]
         pub const fn pnb(&self) -> u8 {
             let val = (self.0 >> 3usize) & 0x7f;
@@ -289,10 +302,11 @@ pub mod regs {
         }
         #[doc = "Page number"]
         #[inline(always)]
-        pub fn set_pnb(&mut self, val: u8) {
+        pub const fn set_pnb(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 3usize)) | (((val as u32) & 0x7f) << 3usize);
         }
         #[doc = "Bank erase"]
+        #[must_use]
         #[inline(always)]
         pub const fn bker(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -300,10 +314,11 @@ pub mod regs {
         }
         #[doc = "Bank erase"]
         #[inline(always)]
-        pub fn set_bker(&mut self, val: bool) {
+        pub const fn set_bker(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Bank 2 Mass erase"]
+        #[must_use]
         #[inline(always)]
         pub const fn mer2(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -311,10 +326,11 @@ pub mod regs {
         }
         #[doc = "Bank 2 Mass erase"]
         #[inline(always)]
-        pub fn set_mer2(&mut self, val: bool) {
+        pub const fn set_mer2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Start"]
+        #[must_use]
         #[inline(always)]
         pub const fn strt(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -322,10 +338,11 @@ pub mod regs {
         }
         #[doc = "Start"]
         #[inline(always)]
-        pub fn set_strt(&mut self, val: bool) {
+        pub const fn set_strt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Options modification start"]
+        #[must_use]
         #[inline(always)]
         pub const fn optstrt(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -333,10 +350,11 @@ pub mod regs {
         }
         #[doc = "Options modification start"]
         #[inline(always)]
-        pub fn set_optstrt(&mut self, val: bool) {
+        pub const fn set_optstrt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "Fast programming"]
+        #[must_use]
         #[inline(always)]
         pub const fn fstpg(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -344,10 +362,11 @@ pub mod regs {
         }
         #[doc = "Fast programming"]
         #[inline(always)]
-        pub fn set_fstpg(&mut self, val: bool) {
+        pub const fn set_fstpg(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "End of operation interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn eopie(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -355,10 +374,11 @@ pub mod regs {
         }
         #[doc = "End of operation interrupt enable"]
         #[inline(always)]
-        pub fn set_eopie(&mut self, val: bool) {
+        pub const fn set_eopie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "Error interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn errie(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -366,10 +386,11 @@ pub mod regs {
         }
         #[doc = "Error interrupt enable"]
         #[inline(always)]
-        pub fn set_errie(&mut self, val: bool) {
+        pub const fn set_errie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "PCROP read error interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn rderrie(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
@@ -377,10 +398,11 @@ pub mod regs {
         }
         #[doc = "PCROP read error interrupt enable"]
         #[inline(always)]
-        pub fn set_rderrie(&mut self, val: bool) {
+        pub const fn set_rderrie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "Force the option byte loading"]
+        #[must_use]
         #[inline(always)]
         pub const fn obl_launch(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
@@ -388,10 +410,11 @@ pub mod regs {
         }
         #[doc = "Force the option byte loading"]
         #[inline(always)]
-        pub fn set_obl_launch(&mut self, val: bool) {
+        pub const fn set_obl_launch(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
         #[doc = "Securable memory area protection bit for bank 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn sec_prot1(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -399,10 +422,11 @@ pub mod regs {
         }
         #[doc = "Securable memory area protection bit for bank 1"]
         #[inline(always)]
-        pub fn set_sec_prot1(&mut self, val: bool) {
+        pub const fn set_sec_prot1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "Securable memory area protection bit for bank 2"]
+        #[must_use]
         #[inline(always)]
         pub const fn sec_prot2(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -410,10 +434,11 @@ pub mod regs {
         }
         #[doc = "Securable memory area protection bit for bank 2"]
         #[inline(always)]
-        pub fn set_sec_prot2(&mut self, val: bool) {
+        pub const fn set_sec_prot2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "Options Lock"]
+        #[must_use]
         #[inline(always)]
         pub const fn optlock(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -421,10 +446,11 @@ pub mod regs {
         }
         #[doc = "Options Lock"]
         #[inline(always)]
-        pub fn set_optlock(&mut self, val: bool) {
+        pub const fn set_optlock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "FLASH_CR Lock"]
+        #[must_use]
         #[inline(always)]
         pub const fn lock(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -432,7 +458,7 @@ pub mod regs {
         }
         #[doc = "FLASH_CR Lock"]
         #[inline(always)]
-        pub fn set_lock(&mut self, val: bool) {
+        pub const fn set_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -477,6 +503,7 @@ pub mod regs {
     pub struct Eccr(pub u32);
     impl Eccr {
         #[doc = "ECC fail address"]
+        #[must_use]
         #[inline(always)]
         pub const fn addr_ecc(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x0007_ffff;
@@ -484,10 +511,11 @@ pub mod regs {
         }
         #[doc = "ECC fail address"]
         #[inline(always)]
-        pub fn set_addr_ecc(&mut self, val: u32) {
+        pub const fn set_addr_ecc(&mut self, val: u32) {
             self.0 = (self.0 & !(0x0007_ffff << 0usize)) | (((val as u32) & 0x0007_ffff) << 0usize);
         }
         #[doc = "ECC fail for Corrected ECC Error or Double ECC Error in info block"]
+        #[must_use]
         #[inline(always)]
         pub const fn bk_ecc(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -495,10 +523,11 @@ pub mod regs {
         }
         #[doc = "ECC fail for Corrected ECC Error or Double ECC Error in info block"]
         #[inline(always)]
-        pub fn set_bk_ecc(&mut self, val: bool) {
+        pub const fn set_bk_ecc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "ECC fail for Corrected ECC Error or Double ECC Error in info block"]
+        #[must_use]
         #[inline(always)]
         pub const fn sysf_ecc(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -506,10 +535,11 @@ pub mod regs {
         }
         #[doc = "ECC fail for Corrected ECC Error or Double ECC Error in info block"]
         #[inline(always)]
-        pub fn set_sysf_ecc(&mut self, val: bool) {
+        pub const fn set_sysf_ecc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "ECC correction interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn eccie(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -517,10 +547,11 @@ pub mod regs {
         }
         #[doc = "ECC correction interrupt enable"]
         #[inline(always)]
-        pub fn set_eccie(&mut self, val: bool) {
+        pub const fn set_eccie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "ECC correction"]
+        #[must_use]
         #[inline(always)]
         pub const fn eccc2(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -528,10 +559,11 @@ pub mod regs {
         }
         #[doc = "ECC correction"]
         #[inline(always)]
-        pub fn set_eccc2(&mut self, val: bool) {
+        pub const fn set_eccc2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "ECC2 detection"]
+        #[must_use]
         #[inline(always)]
         pub const fn eccd2(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -539,10 +571,11 @@ pub mod regs {
         }
         #[doc = "ECC2 detection"]
         #[inline(always)]
-        pub fn set_eccd2(&mut self, val: bool) {
+        pub const fn set_eccd2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "ECC correction"]
+        #[must_use]
         #[inline(always)]
         pub const fn eccc(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -550,10 +583,11 @@ pub mod regs {
         }
         #[doc = "ECC correction"]
         #[inline(always)]
-        pub fn set_eccc(&mut self, val: bool) {
+        pub const fn set_eccc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "ECC detection"]
+        #[must_use]
         #[inline(always)]
         pub const fn eccd(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -561,7 +595,7 @@ pub mod regs {
         }
         #[doc = "ECC detection"]
         #[inline(always)]
-        pub fn set_eccd(&mut self, val: bool) {
+        pub const fn set_eccd(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -597,6 +631,7 @@ pub mod regs {
     pub struct Optr(pub u32);
     impl Optr {
         #[doc = "Read protection level"]
+        #[must_use]
         #[inline(always)]
         pub const fn rdp(&self) -> super::vals::Rdp {
             let val = (self.0 >> 0usize) & 0xff;
@@ -604,10 +639,11 @@ pub mod regs {
         }
         #[doc = "Read protection level"]
         #[inline(always)]
-        pub fn set_rdp(&mut self, val: super::vals::Rdp) {
+        pub const fn set_rdp(&mut self, val: super::vals::Rdp) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val.to_bits() as u32) & 0xff) << 0usize);
         }
         #[doc = "BOR reset Level"]
+        #[must_use]
         #[inline(always)]
         pub const fn bor_lev(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x07;
@@ -615,10 +651,11 @@ pub mod regs {
         }
         #[doc = "BOR reset Level"]
         #[inline(always)]
-        pub fn set_bor_lev(&mut self, val: u8) {
+        pub const fn set_bor_lev(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
         }
         #[doc = "nRST_STOP"]
+        #[must_use]
         #[inline(always)]
         pub const fn n_rst_stop(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -626,10 +663,11 @@ pub mod regs {
         }
         #[doc = "nRST_STOP"]
         #[inline(always)]
-        pub fn set_n_rst_stop(&mut self, val: bool) {
+        pub const fn set_n_rst_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "nRST_STDBY"]
+        #[must_use]
         #[inline(always)]
         pub const fn n_rst_stdby(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -637,10 +675,11 @@ pub mod regs {
         }
         #[doc = "nRST_STDBY"]
         #[inline(always)]
-        pub fn set_n_rst_stdby(&mut self, val: bool) {
+        pub const fn set_n_rst_stdby(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "nRST_SHDW"]
+        #[must_use]
         #[inline(always)]
         pub const fn n_rst_shdw(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -648,10 +687,11 @@ pub mod regs {
         }
         #[doc = "nRST_SHDW"]
         #[inline(always)]
-        pub fn set_n_rst_shdw(&mut self, val: bool) {
+        pub const fn set_n_rst_shdw(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Independent watchdog selection"]
+        #[must_use]
         #[inline(always)]
         pub const fn idwg_sw(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -659,10 +699,11 @@ pub mod regs {
         }
         #[doc = "Independent watchdog selection"]
         #[inline(always)]
-        pub fn set_idwg_sw(&mut self, val: bool) {
+        pub const fn set_idwg_sw(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Independent watchdog counter freeze in Stop mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn iwdg_stop(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -670,10 +711,11 @@ pub mod regs {
         }
         #[doc = "Independent watchdog counter freeze in Stop mode"]
         #[inline(always)]
-        pub fn set_iwdg_stop(&mut self, val: bool) {
+        pub const fn set_iwdg_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "Independent watchdog counter freeze in Standby mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn iwdg_stdby(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -681,10 +723,11 @@ pub mod regs {
         }
         #[doc = "Independent watchdog counter freeze in Standby mode"]
         #[inline(always)]
-        pub fn set_iwdg_stdby(&mut self, val: bool) {
+        pub const fn set_iwdg_stdby(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Window watchdog selection"]
+        #[must_use]
         #[inline(always)]
         pub const fn wwdg_sw(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -692,10 +735,11 @@ pub mod regs {
         }
         #[doc = "Window watchdog selection"]
         #[inline(always)]
-        pub fn set_wwdg_sw(&mut self, val: bool) {
+        pub const fn set_wwdg_sw(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "Dual bank boot"]
+        #[must_use]
         #[inline(always)]
         pub const fn bfb2(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -703,10 +747,11 @@ pub mod regs {
         }
         #[doc = "Dual bank boot"]
         #[inline(always)]
-        pub fn set_bfb2(&mut self, val: bool) {
+        pub const fn set_bfb2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "Dual bank memory mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbank(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -714,10 +759,11 @@ pub mod regs {
         }
         #[doc = "Dual bank memory mode"]
         #[inline(always)]
-        pub fn set_dbank(&mut self, val: bool) {
+        pub const fn set_dbank(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "Boot configuration"]
+        #[must_use]
         #[inline(always)]
         pub const fn n_boot1(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -725,10 +771,11 @@ pub mod regs {
         }
         #[doc = "Boot configuration"]
         #[inline(always)]
-        pub fn set_n_boot1(&mut self, val: bool) {
+        pub const fn set_n_boot1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "SRAM1 and CCM SRAM parity check enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn sram_pe(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -736,10 +783,11 @@ pub mod regs {
         }
         #[doc = "SRAM1 and CCM SRAM parity check enable"]
         #[inline(always)]
-        pub fn set_sram_pe(&mut self, val: bool) {
+        pub const fn set_sram_pe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "CCM SRAM Erase when system reset"]
+        #[must_use]
         #[inline(always)]
         pub const fn ccmsram_rst(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -747,10 +795,11 @@ pub mod regs {
         }
         #[doc = "CCM SRAM Erase when system reset"]
         #[inline(always)]
-        pub fn set_ccmsram_rst(&mut self, val: bool) {
+        pub const fn set_ccmsram_rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "Software BOOT0"]
+        #[must_use]
         #[inline(always)]
         pub const fn n_swboot0(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
@@ -758,10 +807,11 @@ pub mod regs {
         }
         #[doc = "Software BOOT0"]
         #[inline(always)]
-        pub fn set_n_swboot0(&mut self, val: bool) {
+        pub const fn set_n_swboot0(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "nBOOT0 option bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn n_boot0(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
@@ -769,10 +819,11 @@ pub mod regs {
         }
         #[doc = "nBOOT0 option bit"]
         #[inline(always)]
-        pub fn set_n_boot0(&mut self, val: bool) {
+        pub const fn set_n_boot0(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
         #[doc = "NRST_MODE"]
+        #[must_use]
         #[inline(always)]
         pub const fn nrst_mode(&self) -> super::vals::NrstMode {
             let val = (self.0 >> 28usize) & 0x03;
@@ -780,10 +831,11 @@ pub mod regs {
         }
         #[doc = "NRST_MODE"]
         #[inline(always)]
-        pub fn set_nrst_mode(&mut self, val: super::vals::NrstMode) {
+        pub const fn set_nrst_mode(&mut self, val: super::vals::NrstMode) {
             self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
         }
         #[doc = "Internal reset holder enable bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn irhen(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -791,7 +843,7 @@ pub mod regs {
         }
         #[doc = "Internal reset holder enable bit"]
         #[inline(always)]
-        pub fn set_irhen(&mut self, val: bool) {
+        pub const fn set_irhen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
     }
@@ -837,6 +889,7 @@ pub mod regs {
     pub struct Pcrop1er(pub u32);
     impl Pcrop1er {
         #[doc = "Bank 1 PCROP area end offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn pcrop1_end(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x7fff;
@@ -844,10 +897,11 @@ pub mod regs {
         }
         #[doc = "Bank 1 PCROP area end offset"]
         #[inline(always)]
-        pub fn set_pcrop1_end(&mut self, val: u16) {
+        pub const fn set_pcrop1_end(&mut self, val: u16) {
             self.0 = (self.0 & !(0x7fff << 0usize)) | (((val as u32) & 0x7fff) << 0usize);
         }
         #[doc = "PCROP area preserved when RDP level decreased"]
+        #[must_use]
         #[inline(always)]
         pub const fn pcrop_rdp(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -855,7 +909,7 @@ pub mod regs {
         }
         #[doc = "PCROP area preserved when RDP level decreased"]
         #[inline(always)]
-        pub fn set_pcrop_rdp(&mut self, val: bool) {
+        pub const fn set_pcrop_rdp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -890,6 +944,7 @@ pub mod regs {
     pub struct Pcrop1sr(pub u32);
     impl Pcrop1sr {
         #[doc = "Bank 1 PCROP area start offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn pcrop1_strt(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x7fff;
@@ -897,7 +952,7 @@ pub mod regs {
         }
         #[doc = "Bank 1 PCROP area start offset"]
         #[inline(always)]
-        pub fn set_pcrop1_strt(&mut self, val: u16) {
+        pub const fn set_pcrop1_strt(&mut self, val: u16) {
             self.0 = (self.0 & !(0x7fff << 0usize)) | (((val as u32) & 0x7fff) << 0usize);
         }
     }
@@ -926,6 +981,7 @@ pub mod regs {
     pub struct Pcrop2er(pub u32);
     impl Pcrop2er {
         #[doc = "Bank 2 PCROP area end offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn pcrop2_end(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x7fff;
@@ -933,7 +989,7 @@ pub mod regs {
         }
         #[doc = "Bank 2 PCROP area end offset"]
         #[inline(always)]
-        pub fn set_pcrop2_end(&mut self, val: u16) {
+        pub const fn set_pcrop2_end(&mut self, val: u16) {
             self.0 = (self.0 & !(0x7fff << 0usize)) | (((val as u32) & 0x7fff) << 0usize);
         }
     }
@@ -962,6 +1018,7 @@ pub mod regs {
     pub struct Pcrop2sr(pub u32);
     impl Pcrop2sr {
         #[doc = "Bank 2 PCROP area start offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn pcrop2_strt(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x7fff;
@@ -969,7 +1026,7 @@ pub mod regs {
         }
         #[doc = "Bank 2 PCROP area start offset"]
         #[inline(always)]
-        pub fn set_pcrop2_strt(&mut self, val: u16) {
+        pub const fn set_pcrop2_strt(&mut self, val: u16) {
             self.0 = (self.0 & !(0x7fff << 0usize)) | (((val as u32) & 0x7fff) << 0usize);
         }
     }
@@ -998,6 +1055,7 @@ pub mod regs {
     pub struct Sec1r(pub u32);
     impl Sec1r {
         #[doc = "SEC_SIZE1"]
+        #[must_use]
         #[inline(always)]
         pub const fn sec_size1(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -1005,10 +1063,11 @@ pub mod regs {
         }
         #[doc = "SEC_SIZE1"]
         #[inline(always)]
-        pub fn set_sec_size1(&mut self, val: u8) {
+        pub const fn set_sec_size1(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "used to force boot from user area"]
+        #[must_use]
         #[inline(always)]
         pub const fn boot_lock(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1016,7 +1075,7 @@ pub mod regs {
         }
         #[doc = "used to force boot from user area"]
         #[inline(always)]
-        pub fn set_boot_lock(&mut self, val: bool) {
+        pub const fn set_boot_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
@@ -1051,6 +1110,7 @@ pub mod regs {
     pub struct Sec2r(pub u32);
     impl Sec2r {
         #[doc = "SEC_SIZE2"]
+        #[must_use]
         #[inline(always)]
         pub const fn sec_size2(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -1058,7 +1118,7 @@ pub mod regs {
         }
         #[doc = "SEC_SIZE2"]
         #[inline(always)]
-        pub fn set_sec_size2(&mut self, val: u8) {
+        pub const fn set_sec_size2(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -1085,6 +1145,7 @@ pub mod regs {
     pub struct Sr(pub u32);
     impl Sr {
         #[doc = "End of operation"]
+        #[must_use]
         #[inline(always)]
         pub const fn eop(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1092,10 +1153,11 @@ pub mod regs {
         }
         #[doc = "End of operation"]
         #[inline(always)]
-        pub fn set_eop(&mut self, val: bool) {
+        pub const fn set_eop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Operation error"]
+        #[must_use]
         #[inline(always)]
         pub const fn operr(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1103,10 +1165,11 @@ pub mod regs {
         }
         #[doc = "Operation error"]
         #[inline(always)]
-        pub fn set_operr(&mut self, val: bool) {
+        pub const fn set_operr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Programming error"]
+        #[must_use]
         #[inline(always)]
         pub const fn progerr(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1114,10 +1177,11 @@ pub mod regs {
         }
         #[doc = "Programming error"]
         #[inline(always)]
-        pub fn set_progerr(&mut self, val: bool) {
+        pub const fn set_progerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Write protected error"]
+        #[must_use]
         #[inline(always)]
         pub const fn wrperr(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1125,10 +1189,11 @@ pub mod regs {
         }
         #[doc = "Write protected error"]
         #[inline(always)]
-        pub fn set_wrperr(&mut self, val: bool) {
+        pub const fn set_wrperr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Programming alignment error"]
+        #[must_use]
         #[inline(always)]
         pub const fn pgaerr(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1136,10 +1201,11 @@ pub mod regs {
         }
         #[doc = "Programming alignment error"]
         #[inline(always)]
-        pub fn set_pgaerr(&mut self, val: bool) {
+        pub const fn set_pgaerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Size error"]
+        #[must_use]
         #[inline(always)]
         pub const fn sizerr(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -1147,10 +1213,11 @@ pub mod regs {
         }
         #[doc = "Size error"]
         #[inline(always)]
-        pub fn set_sizerr(&mut self, val: bool) {
+        pub const fn set_sizerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Programming sequence error"]
+        #[must_use]
         #[inline(always)]
         pub const fn pgserr(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1158,10 +1225,11 @@ pub mod regs {
         }
         #[doc = "Programming sequence error"]
         #[inline(always)]
-        pub fn set_pgserr(&mut self, val: bool) {
+        pub const fn set_pgserr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Fast programming data miss error"]
+        #[must_use]
         #[inline(always)]
         pub const fn miserr(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -1169,10 +1237,11 @@ pub mod regs {
         }
         #[doc = "Fast programming data miss error"]
         #[inline(always)]
-        pub fn set_miserr(&mut self, val: bool) {
+        pub const fn set_miserr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Fast programming error"]
+        #[must_use]
         #[inline(always)]
         pub const fn fasterr(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -1180,10 +1249,11 @@ pub mod regs {
         }
         #[doc = "Fast programming error"]
         #[inline(always)]
-        pub fn set_fasterr(&mut self, val: bool) {
+        pub const fn set_fasterr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "PCROP read error"]
+        #[must_use]
         #[inline(always)]
         pub const fn rderr(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -1191,10 +1261,11 @@ pub mod regs {
         }
         #[doc = "PCROP read error"]
         #[inline(always)]
-        pub fn set_rderr(&mut self, val: bool) {
+        pub const fn set_rderr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Option validity error"]
+        #[must_use]
         #[inline(always)]
         pub const fn optverr(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -1202,10 +1273,11 @@ pub mod regs {
         }
         #[doc = "Option validity error"]
         #[inline(always)]
-        pub fn set_optverr(&mut self, val: bool) {
+        pub const fn set_optverr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Busy"]
+        #[must_use]
         #[inline(always)]
         pub const fn bsy(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1213,7 +1285,7 @@ pub mod regs {
         }
         #[doc = "Busy"]
         #[inline(always)]
-        pub fn set_bsy(&mut self, val: bool) {
+        pub const fn set_bsy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
@@ -1253,6 +1325,7 @@ pub mod regs {
     pub struct Wrp1ar(pub u32);
     impl Wrp1ar {
         #[doc = "Bank 1 WRP first area start offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn wrp1a_strt(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -1260,10 +1333,11 @@ pub mod regs {
         }
         #[doc = "Bank 1 WRP first area start offset"]
         #[inline(always)]
-        pub fn set_wrp1a_strt(&mut self, val: u8) {
+        pub const fn set_wrp1a_strt(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "Bank 1 WRP first area A end offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn wrp1a_end(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x7f;
@@ -1271,7 +1345,7 @@ pub mod regs {
         }
         #[doc = "Bank 1 WRP first area A end offset"]
         #[inline(always)]
-        pub fn set_wrp1a_end(&mut self, val: u8) {
+        pub const fn set_wrp1a_end(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
         }
     }
@@ -1306,6 +1380,7 @@ pub mod regs {
     pub struct Wrp1br(pub u32);
     impl Wrp1br {
         #[doc = "Bank 1 WRP second area B end offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn wrp1b_strt(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -1313,10 +1388,11 @@ pub mod regs {
         }
         #[doc = "Bank 1 WRP second area B end offset"]
         #[inline(always)]
-        pub fn set_wrp1b_strt(&mut self, val: u8) {
+        pub const fn set_wrp1b_strt(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "Bank 1 WRP second area B start offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn wrp1b_end(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x7f;
@@ -1324,7 +1400,7 @@ pub mod regs {
         }
         #[doc = "Bank 1 WRP second area B start offset"]
         #[inline(always)]
-        pub fn set_wrp1b_end(&mut self, val: u8) {
+        pub const fn set_wrp1b_end(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
         }
     }
@@ -1359,6 +1435,7 @@ pub mod regs {
     pub struct Wrp2ar(pub u32);
     impl Wrp2ar {
         #[doc = "Bank 2 WRP first area “A” start offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn wrp2a_strt(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -1366,10 +1443,11 @@ pub mod regs {
         }
         #[doc = "Bank 2 WRP first area “A” start offset"]
         #[inline(always)]
-        pub fn set_wrp2a_strt(&mut self, val: u8) {
+        pub const fn set_wrp2a_strt(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "Bank 2 WRP first area “A” end offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn wrp2a_end(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x7f;
@@ -1377,7 +1455,7 @@ pub mod regs {
         }
         #[doc = "Bank 2 WRP first area “A” end offset"]
         #[inline(always)]
-        pub fn set_wrp2a_end(&mut self, val: u8) {
+        pub const fn set_wrp2a_end(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
         }
     }
@@ -1412,6 +1490,7 @@ pub mod regs {
     pub struct Wrp2br(pub u32);
     impl Wrp2br {
         #[doc = "Bank 2 WRP second area “B” start offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn wrp2b_strt(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -1419,10 +1498,11 @@ pub mod regs {
         }
         #[doc = "Bank 2 WRP second area “B” start offset"]
         #[inline(always)]
-        pub fn set_wrp2b_strt(&mut self, val: u8) {
+        pub const fn set_wrp2b_strt(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "Bank 2 WRP second area “B” end offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn wrp2b_end(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x7f;
@@ -1430,7 +1510,7 @@ pub mod regs {
         }
         #[doc = "Bank 2 WRP second area “B” end offset"]
         #[inline(always)]
-        pub fn set_wrp2b_end(&mut self, val: u8) {
+        pub const fn set_wrp2b_end(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
         }
     }

@@ -22,157 +22,157 @@ impl Xspi {
     #[doc = "XSPI control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "XSPI device configuration register 1"]
     #[inline(always)]
     pub const fn dcr1(self) -> crate::common::Reg<regs::Dcr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "XSPI device configuration register 2"]
     #[inline(always)]
     pub const fn dcr2(self) -> crate::common::Reg<regs::Dcr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "XSPI device configuration register 3"]
     #[inline(always)]
     pub const fn dcr3(self) -> crate::common::Reg<regs::Dcr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "XSPI device configuration register 4"]
     #[inline(always)]
     pub const fn dcr4(self) -> crate::common::Reg<regs::Dcr4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "XSPI status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "XSPI flag clear register"]
     #[inline(always)]
     pub const fn fcr(self) -> crate::common::Reg<regs::Fcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "XSPI data length register"]
     #[inline(always)]
     pub const fn dlr(self) -> crate::common::Reg<regs::Dlr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
     }
     #[doc = "XSPIaddress register"]
     #[inline(always)]
     pub const fn ar(self) -> crate::common::Reg<regs::Ar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
     }
     #[doc = "XSPI data register"]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<regs::Dr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
     }
     #[doc = "XSPI polling status mask register"]
     #[inline(always)]
     pub const fn psmkr(self) -> crate::common::Reg<regs::Psmkr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80usize) as _) }
     }
     #[doc = "XSPI polling status match register"]
     #[inline(always)]
     pub const fn psmar(self) -> crate::common::Reg<regs::Psmar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x88usize) as _) }
     }
     #[doc = "XSPI polling interval register"]
     #[inline(always)]
     pub const fn pir(self) -> crate::common::Reg<regs::Pir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x90usize) as _) }
     }
     #[doc = "XSPI communication configuration register"]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize) as _) }
     }
     #[doc = "XSPI timing configuration register"]
     #[inline(always)]
     pub const fn tcr(self) -> crate::common::Reg<regs::Tcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0108usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0108usize) as _) }
     }
     #[doc = "XSPI instruction register"]
     #[inline(always)]
     pub const fn ir(self) -> crate::common::Reg<regs::Ir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0110usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0110usize) as _) }
     }
     #[doc = "XSPI alternate bytes register"]
     #[inline(always)]
     pub const fn abr(self) -> crate::common::Reg<regs::Abr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0120usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0120usize) as _) }
     }
     #[doc = "XSPI low-power timeout register"]
     #[inline(always)]
     pub const fn lptr(self) -> crate::common::Reg<regs::Lptr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0130usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0130usize) as _) }
     }
     #[doc = "XSPI wrap communication configuration register"]
     #[inline(always)]
     pub const fn wpccr(self) -> crate::common::Reg<regs::Wpccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0140usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0140usize) as _) }
     }
     #[doc = "XSPI wrap timing configuration register"]
     #[inline(always)]
     pub const fn wptcr(self) -> crate::common::Reg<regs::Wptcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0148usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0148usize) as _) }
     }
     #[doc = "XSPI wrap instruction register"]
     #[inline(always)]
     pub const fn wpir(self) -> crate::common::Reg<regs::Wpir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0150usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0150usize) as _) }
     }
     #[doc = "XSPI wrap alternate byte register"]
     #[inline(always)]
     pub const fn wpabr(self) -> crate::common::Reg<regs::Wpabr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0160usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0160usize) as _) }
     }
     #[doc = "XSPI write communication configuration register"]
     #[inline(always)]
     pub const fn wccr(self) -> crate::common::Reg<regs::Wccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0180usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0180usize) as _) }
     }
     #[doc = "XSPI write timing configuration register"]
     #[inline(always)]
     pub const fn wtcr(self) -> crate::common::Reg<regs::Wtcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0188usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0188usize) as _) }
     }
     #[doc = "XSPI write instruction register"]
     #[inline(always)]
     pub const fn wir(self) -> crate::common::Reg<regs::Wir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0190usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0190usize) as _) }
     }
     #[doc = "XSPI write alternate byte register"]
     #[inline(always)]
     pub const fn wabr(self) -> crate::common::Reg<regs::Wabr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x01a0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x01a0usize) as _) }
     }
     #[doc = "XSPI HyperBus latency configuration register"]
     #[inline(always)]
     pub const fn hlcr(self) -> crate::common::Reg<regs::Hlcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0200usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0200usize) as _) }
     }
     #[doc = "XSPI full-cycle calibration configuration"]
     #[inline(always)]
     pub const fn calfcr(self) -> crate::common::Reg<regs::Calfcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0210usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0210usize) as _) }
     }
     #[doc = "XSPI DLL master calibration configuration"]
     #[inline(always)]
     pub const fn calmr(self) -> crate::common::Reg<regs::Calmr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0218usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0218usize) as _) }
     }
     #[doc = "XSPI DLL slave output calibration configuration"]
     #[inline(always)]
     pub const fn calsor(self) -> crate::common::Reg<regs::Calsor, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0220usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0220usize) as _) }
     }
     #[doc = "XSPI DLL slave input calibration configuration"]
     #[inline(always)]
     pub const fn calsir(self) -> crate::common::Reg<regs::Calsir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0228usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0228usize) as _) }
     }
 }
 pub mod regs {
@@ -182,6 +182,7 @@ pub mod regs {
     pub struct Abr(pub u32);
     impl Abr {
         #[doc = "Alternate bytes Optional data to be sent to the external SPI device right after the address."]
+        #[must_use]
         #[inline(always)]
         pub const fn alternate(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -189,7 +190,7 @@ pub mod regs {
         }
         #[doc = "Alternate bytes Optional data to be sent to the external SPI device right after the address."]
         #[inline(always)]
-        pub fn set_alternate(&mut self, val: u32) {
+        pub const fn set_alternate(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -217,6 +218,7 @@ pub mod regs {
     impl Ar {
         #[doc = "Address Address to be sent to the external device. In HyperBus protocol, this field must be even as this protocol is 16-bit word oriented. In dual-memory configuration, AR\\[0\\]
 is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 11 (memory-mapped mode). Some memory specifications consider that each address corresponds to a 16-bit value. XSPI considers that each address corresponds to an 8-bit value. So the software needs to multiple the address by two when accessing the memory registers."]
+        #[must_use]
         #[inline(always)]
         pub const fn address(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -225,7 +227,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         #[doc = "Address Address to be sent to the external device. In HyperBus protocol, this field must be even as this protocol is 16-bit word oriented. In dual-memory configuration, AR\\[0\\]
 is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 11 (memory-mapped mode). Some memory specifications consider that each address corresponds to a 16-bit value. XSPI considers that each address corresponds to an 8-bit value. So the software needs to multiple the address by two when accessing the memory registers."]
         #[inline(always)]
-        pub fn set_address(&mut self, val: u32) {
+        pub const fn set_address(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -252,6 +254,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
     pub struct Calfcr(pub u32);
     impl Calfcr {
         #[doc = "Fine calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
+        #[must_use]
         #[inline(always)]
         pub const fn fine(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -259,10 +262,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Fine calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
         #[inline(always)]
-        pub fn set_fine(&mut self, val: u8) {
+        pub const fn set_fine(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "Coarse calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
+        #[must_use]
         #[inline(always)]
         pub const fn coarse(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x1f;
@@ -270,10 +274,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Coarse calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
         #[inline(always)]
-        pub fn set_coarse(&mut self, val: u8) {
+        pub const fn set_coarse(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
         }
         #[doc = "Max value This bit gets set when the memory-clock period is outside the range of DLL master, in which case XSPI_CALFCR and XSPI_CALSR are updated with the values for the maximum delay."]
+        #[must_use]
         #[inline(always)]
         pub const fn calmax(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -281,7 +286,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Max value This bit gets set when the memory-clock period is outside the range of DLL master, in which case XSPI_CALFCR and XSPI_CALSR are updated with the values for the maximum delay."]
         #[inline(always)]
-        pub fn set_calmax(&mut self, val: bool) {
+        pub const fn set_calmax(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -318,6 +323,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
     pub struct Calmr(pub u32);
     impl Calmr {
         #[doc = "Fine calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
+        #[must_use]
         #[inline(always)]
         pub const fn fine(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -325,10 +331,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Fine calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
         #[inline(always)]
-        pub fn set_fine(&mut self, val: u8) {
+        pub const fn set_fine(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "Coarse calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
+        #[must_use]
         #[inline(always)]
         pub const fn coarse(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x1f;
@@ -336,7 +343,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Coarse calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
         #[inline(always)]
-        pub fn set_coarse(&mut self, val: u8) {
+        pub const fn set_coarse(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
         }
     }
@@ -371,6 +378,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
     pub struct Calsir(pub u32);
     impl Calsir {
         #[doc = "Fine calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
+        #[must_use]
         #[inline(always)]
         pub const fn fine(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -378,10 +386,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Fine calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
         #[inline(always)]
-        pub fn set_fine(&mut self, val: u8) {
+        pub const fn set_fine(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "Coarse calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
+        #[must_use]
         #[inline(always)]
         pub const fn coarse(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x1f;
@@ -389,7 +398,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Coarse calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
         #[inline(always)]
-        pub fn set_coarse(&mut self, val: u8) {
+        pub const fn set_coarse(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
         }
     }
@@ -424,6 +433,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
     pub struct Calsor(pub u32);
     impl Calsor {
         #[doc = "Fine calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
+        #[must_use]
         #[inline(always)]
         pub const fn fine(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -431,10 +441,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Fine calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
         #[inline(always)]
-        pub fn set_fine(&mut self, val: u8) {
+        pub const fn set_fine(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "Coarse calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
+        #[must_use]
         #[inline(always)]
         pub const fn coarse(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x1f;
@@ -442,7 +453,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Coarse calibration The unitary value of delay for this field depends on product technology (refer to the product datasheet)."]
         #[inline(always)]
-        pub fn set_coarse(&mut self, val: u8) {
+        pub const fn set_coarse(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
         }
     }
@@ -477,6 +488,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
     pub struct Ccr(pub u32);
     impl Ccr {
         #[doc = "Instruction mode This field defines the instruction phase mode of operation. Others: reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn imode(&self) -> super::vals::CcrImode {
             let val = (self.0 >> 0usize) & 0x07;
@@ -484,10 +496,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Instruction mode This field defines the instruction phase mode of operation. Others: reserved"]
         #[inline(always)]
-        pub fn set_imode(&mut self, val: super::vals::CcrImode) {
+        pub const fn set_imode(&mut self, val: super::vals::CcrImode) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "Instruction double transfer rate This bit sets the DTR mode for the instruction phase."]
+        #[must_use]
         #[inline(always)]
         pub const fn idtr(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -495,10 +508,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Instruction double transfer rate This bit sets the DTR mode for the instruction phase."]
         #[inline(always)]
-        pub fn set_idtr(&mut self, val: bool) {
+        pub const fn set_idtr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Instruction size This bit defines instruction size."]
+        #[must_use]
         #[inline(always)]
         pub const fn isize(&self) -> super::vals::CcrIsize {
             let val = (self.0 >> 4usize) & 0x03;
@@ -506,10 +520,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Instruction size This bit defines instruction size."]
         #[inline(always)]
-        pub fn set_isize(&mut self, val: super::vals::CcrIsize) {
+        pub const fn set_isize(&mut self, val: super::vals::CcrIsize) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "Address mode This field defines the address phase mode of operation. Others: reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn admode(&self) -> super::vals::CcrAdmode {
             let val = (self.0 >> 8usize) & 0x07;
@@ -517,10 +532,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Address mode This field defines the address phase mode of operation. Others: reserved"]
         #[inline(always)]
-        pub fn set_admode(&mut self, val: super::vals::CcrAdmode) {
+        pub const fn set_admode(&mut self, val: super::vals::CcrAdmode) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "Address double transfer rate This bit sets the DTR mode for the address phase."]
+        #[must_use]
         #[inline(always)]
         pub const fn addtr(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -528,10 +544,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Address double transfer rate This bit sets the DTR mode for the address phase."]
         #[inline(always)]
-        pub fn set_addtr(&mut self, val: bool) {
+        pub const fn set_addtr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Address size This field defines address size."]
+        #[must_use]
         #[inline(always)]
         pub const fn adsize(&self) -> super::vals::CcrAdsize {
             let val = (self.0 >> 12usize) & 0x03;
@@ -539,10 +556,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Address size This field defines address size."]
         #[inline(always)]
-        pub fn set_adsize(&mut self, val: super::vals::CcrAdsize) {
+        pub const fn set_adsize(&mut self, val: super::vals::CcrAdsize) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
         #[doc = "Alternate-byte mode This field defines the alternate byte phase mode of operation. Others: reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn abmode(&self) -> super::vals::CcrAbmode {
             let val = (self.0 >> 16usize) & 0x07;
@@ -550,10 +568,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Alternate-byte mode This field defines the alternate byte phase mode of operation. Others: reserved"]
         #[inline(always)]
-        pub fn set_abmode(&mut self, val: super::vals::CcrAbmode) {
+        pub const fn set_abmode(&mut self, val: super::vals::CcrAbmode) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val.to_bits() as u32) & 0x07) << 16usize);
         }
         #[doc = "Alternate bytes double transfer rate This bit sets the DTR mode for the alternate bytes phase. Note: This field can be written only when BUSY = 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn abdtr(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -561,10 +580,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Alternate bytes double transfer rate This bit sets the DTR mode for the alternate bytes phase. Note: This field can be written only when BUSY = 0."]
         #[inline(always)]
-        pub fn set_abdtr(&mut self, val: bool) {
+        pub const fn set_abdtr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "Alternate bytes size This bit defines alternate bytes size."]
+        #[must_use]
         #[inline(always)]
         pub const fn absize(&self) -> super::vals::CcrAbsize {
             let val = (self.0 >> 20usize) & 0x03;
@@ -572,10 +592,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Alternate bytes size This bit defines alternate bytes size."]
         #[inline(always)]
-        pub fn set_absize(&mut self, val: super::vals::CcrAbsize) {
+        pub const fn set_absize(&mut self, val: super::vals::CcrAbsize) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
         }
         #[doc = "Data mode This field defines the data phase mode of operation. Others: reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn dmode(&self) -> super::vals::CcrDmode {
             let val = (self.0 >> 24usize) & 0x07;
@@ -583,10 +604,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Data mode This field defines the data phase mode of operation. Others: reserved"]
         #[inline(always)]
-        pub fn set_dmode(&mut self, val: super::vals::CcrDmode) {
+        pub const fn set_dmode(&mut self, val: super::vals::CcrDmode) {
             self.0 = (self.0 & !(0x07 << 24usize)) | (((val.to_bits() as u32) & 0x07) << 24usize);
         }
         #[doc = "Data double transfer rate This bit sets the DTR mode for the data phase."]
+        #[must_use]
         #[inline(always)]
         pub const fn ddtr(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
@@ -594,10 +616,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Data double transfer rate This bit sets the DTR mode for the data phase."]
         #[inline(always)]
-        pub fn set_ddtr(&mut self, val: bool) {
+        pub const fn set_ddtr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
         #[doc = "DQS enable This bit enables the data strobe management."]
+        #[must_use]
         #[inline(always)]
         pub const fn dqse(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -605,7 +628,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "DQS enable This bit enables the data strobe management."]
         #[inline(always)]
-        pub fn set_dqse(&mut self, val: bool) {
+        pub const fn set_dqse(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
     }
@@ -645,6 +668,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "Enable This bit enables the XSPI. The DMA request can be aborted without having received the ACK in case this EN bit is cleared during the operation. Note: In case this bit is set to 0 during a DMA transfer, the REQ signal to DMA returns to inactive state without waiting for the ACK signal from DMA to be active."]
+        #[must_use]
         #[inline(always)]
         pub const fn en(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -652,10 +676,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Enable This bit enables the XSPI. The DMA request can be aborted without having received the ACK in case this EN bit is cleared during the operation. Note: In case this bit is set to 0 during a DMA transfer, the REQ signal to DMA returns to inactive state without waiting for the ACK signal from DMA to be active."]
         #[inline(always)]
-        pub fn set_en(&mut self, val: bool) {
+        pub const fn set_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Abort request This bit aborts the on-going command sequence. It is automatically reset once the abort is completed. This bit stops the current transfer. Note: This bit is always read as 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn abort(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -663,10 +688,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Abort request This bit aborts the on-going command sequence. It is automatically reset once the abort is completed. This bit stops the current transfer. Note: This bit is always read as 0."]
         #[inline(always)]
-        pub fn set_abort(&mut self, val: bool) {
+        pub const fn set_abort(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "DMA enable In indirect mode, the DMA can be used to input or output data via XSPI_DR. DMA transfers are initiated when FTF is set. Note: Resetting the DMAEN bit while a DMA transfer is ongoing, breaks the handshake with the DMA. Do not write this bit during DMA operation."]
+        #[must_use]
         #[inline(always)]
         pub const fn dmaen(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -674,11 +700,12 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "DMA enable In indirect mode, the DMA can be used to input or output data via XSPI_DR. DMA transfers are initiated when FTF is set. Note: Resetting the DMAEN bit while a DMA transfer is ongoing, breaks the handshake with the DMA. Do not write this bit during DMA operation."]
         #[inline(always)]
-        pub fn set_dmaen(&mut self, val: bool) {
+        pub const fn set_dmaen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Timeout counter enable This bit is valid only when the memory-mapped mode (FMODE\\[1:0\\]
 = 11) is selected. This bit enables the timeout counter. Note: This bit can be modified only when BUSY = 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn tcen(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -687,10 +714,11 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         #[doc = "Timeout counter enable This bit is valid only when the memory-mapped mode (FMODE\\[1:0\\]
 = 11) is selected. This bit enables the timeout counter. Note: This bit can be modified only when BUSY = 0."]
         #[inline(always)]
-        pub fn set_tcen(&mut self, val: bool) {
+        pub const fn set_tcen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Dual-memory configuration This bit activates the dual-memory configuration, where two external devices are used simultaneously to double the throughput and the capacity Note: This bit can be modified only when BUSY = 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn dmm(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -698,11 +726,12 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
         }
         #[doc = "Dual-memory configuration This bit activates the dual-memory configuration, where two external devices are used simultaneously to double the throughput and the capacity Note: This bit can be modified only when BUSY = 0."]
         #[inline(always)]
-        pub fn set_dmm(&mut self, val: bool) {
+        pub const fn set_dmm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "FIFO threshold level This field defines, in indirect mode, the threshold number of bytes in the FIFO that causes the FIFO threshold flag FTF in XSPI_SR, to be set. ... Note: If DMAEN = 1, the DMA controller for the corresponding channel must be disabled before changing the FTHRES\\[5:0\\]
 value."]
+        #[must_use]
         #[inline(always)]
         pub const fn fthres(&self) -> super::vals::Fthres {
             let val = (self.0 >> 8usize) & 0x3f;
@@ -711,10 +740,11 @@ value."]
         #[doc = "FIFO threshold level This field defines, in indirect mode, the threshold number of bytes in the FIFO that causes the FIFO threshold flag FTF in XSPI_SR, to be set. ... Note: If DMAEN = 1, the DMA controller for the corresponding channel must be disabled before changing the FTHRES\\[5:0\\]
 value."]
         #[inline(always)]
-        pub fn set_fthres(&mut self, val: super::vals::Fthres) {
+        pub const fn set_fthres(&mut self, val: super::vals::Fthres) {
             self.0 = (self.0 & !(0x3f << 8usize)) | (((val.to_bits() as u32) & 0x3f) << 8usize);
         }
         #[doc = "Transfer error interrupt enable This bit enables the transfer error interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn teie(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -722,10 +752,11 @@ value."]
         }
         #[doc = "Transfer error interrupt enable This bit enables the transfer error interrupt."]
         #[inline(always)]
-        pub fn set_teie(&mut self, val: bool) {
+        pub const fn set_teie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Transfer complete interrupt enable This bit enables the transfer complete interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn tcie(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -733,10 +764,11 @@ value."]
         }
         #[doc = "Transfer complete interrupt enable This bit enables the transfer complete interrupt."]
         #[inline(always)]
-        pub fn set_tcie(&mut self, val: bool) {
+        pub const fn set_tcie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "FIFO threshold interrupt enable This bit enables the FIFO threshold interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn ftie(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -744,10 +776,11 @@ value."]
         }
         #[doc = "FIFO threshold interrupt enable This bit enables the FIFO threshold interrupt."]
         #[inline(always)]
-        pub fn set_ftie(&mut self, val: bool) {
+        pub const fn set_ftie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Status match interrupt enable This bit enables the status match interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn smie(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -755,10 +788,11 @@ value."]
         }
         #[doc = "Status match interrupt enable This bit enables the status match interrupt."]
         #[inline(always)]
-        pub fn set_smie(&mut self, val: bool) {
+        pub const fn set_smie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "Timeout interrupt enable This bit enables the timeout interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn toie(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -766,10 +800,11 @@ value."]
         }
         #[doc = "Timeout interrupt enable This bit enables the timeout interrupt."]
         #[inline(always)]
-        pub fn set_toie(&mut self, val: bool) {
+        pub const fn set_toie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "Automatic status-polling mode stop This bit determines if the automatic status-polling is stopped after a match. Note: This bit can be modified only when BUSY = 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn apms(&self) -> super::vals::Apms {
             let val = (self.0 >> 22usize) & 0x01;
@@ -777,10 +812,11 @@ value."]
         }
         #[doc = "Automatic status-polling mode stop This bit determines if the automatic status-polling is stopped after a match. Note: This bit can be modified only when BUSY = 0."]
         #[inline(always)]
-        pub fn set_apms(&mut self, val: super::vals::Apms) {
+        pub const fn set_apms(&mut self, val: super::vals::Apms) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
         }
         #[doc = "Polling match mode This bit indicates which method must be used to determine a match during the automatic status-polling mode. Note: This bit can be modified only when BUSY = 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn pmm(&self) -> super::vals::Pmm {
             let val = (self.0 >> 23usize) & 0x01;
@@ -788,10 +824,11 @@ value."]
         }
         #[doc = "Polling match mode This bit indicates which method must be used to determine a match during the automatic status-polling mode. Note: This bit can be modified only when BUSY = 0."]
         #[inline(always)]
-        pub fn set_pmm(&mut self, val: super::vals::Pmm) {
+        pub const fn set_pmm(&mut self, val: super::vals::Pmm) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
         }
         #[doc = "chip select selection This bit indicates if the XSPI must activate NCS1 or NCS2. Note: This bit can be modified only when BUSY = 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn cssel(&self) -> super::vals::Cssel {
             let val = (self.0 >> 24usize) & 0x01;
@@ -799,13 +836,14 @@ value."]
         }
         #[doc = "chip select selection This bit indicates if the XSPI must activate NCS1 or NCS2. Note: This bit can be modified only when BUSY = 0."]
         #[inline(always)]
-        pub fn set_cssel(&mut self, val: super::vals::Cssel) {
+        pub const fn set_cssel(&mut self, val: super::vals::Cssel) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
         }
         #[doc = "Functional mode This field defines the XSPI functional mode of operation. If DMAEN = 1 already, then the DMA controller for the corresponding channel must be disabled before changing the FMODE\\[1:0\\]
 value. If FMODE\\[1:0\\]
 and FTHRES\\[4:0\\]
 are wrongly updated while DMAEN = 1, the DMA request signal automatically goes to inactive state. Note: This bitfield can be modified only when BUSY = 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn fmode(&self) -> super::vals::Fmode {
             let val = (self.0 >> 28usize) & 0x03;
@@ -816,10 +854,11 @@ value. If FMODE\\[1:0\\]
 and FTHRES\\[4:0\\]
 are wrongly updated while DMAEN = 1, the DMA request signal automatically goes to inactive state. Note: This bitfield can be modified only when BUSY = 0."]
         #[inline(always)]
-        pub fn set_fmode(&mut self, val: super::vals::Fmode) {
+        pub const fn set_fmode(&mut self, val: super::vals::Fmode) {
             self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
         }
         #[doc = "Flash select"]
+        #[must_use]
         #[inline(always)]
         pub const fn msel(&self) -> super::vals::Msel {
             let val = (self.0 >> 30usize) & 0x03;
@@ -827,7 +866,7 @@ are wrongly updated while DMAEN = 1, the DMA request signal automatically goes t
         }
         #[doc = "Flash select"]
         #[inline(always)]
-        pub fn set_msel(&mut self, val: super::vals::Msel) {
+        pub const fn set_msel(&mut self, val: super::vals::Msel) {
             self.0 = (self.0 & !(0x03 << 30usize)) | (((val.to_bits() as u32) & 0x03) << 30usize);
         }
     }
@@ -871,6 +910,7 @@ are wrongly updated while DMAEN = 1, the DMA request signal automatically goes t
     pub struct Dcr1(pub u32);
     impl Dcr1 {
         #[doc = "clock mode 0/mode 3 This bit indicates the level taken by the CLK between commands (when NCS = 1)."]
+        #[must_use]
         #[inline(always)]
         pub const fn ckmode(&self) -> super::vals::Ckmode {
             let val = (self.0 >> 0usize) & 0x01;
@@ -878,10 +918,11 @@ are wrongly updated while DMAEN = 1, the DMA request signal automatically goes t
         }
         #[doc = "clock mode 0/mode 3 This bit indicates the level taken by the CLK between commands (when NCS = 1)."]
         #[inline(always)]
-        pub fn set_ckmode(&mut self, val: super::vals::Ckmode) {
+        pub const fn set_ckmode(&mut self, val: super::vals::Ckmode) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
         #[doc = "Free running clock This bit configures the free running clock."]
+        #[must_use]
         #[inline(always)]
         pub const fn frck(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -889,10 +930,11 @@ are wrongly updated while DMAEN = 1, the DMA request signal automatically goes t
         }
         #[doc = "Free running clock This bit configures the free running clock."]
         #[inline(always)]
-        pub fn set_frck(&mut self, val: bool) {
+        pub const fn set_frck(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Chip-select high time CSHT + 1 defines the minimum number of CLK cycles where the chip-select (NCS) must remain high between commands issued to the external device. ..."]
+        #[must_use]
         #[inline(always)]
         pub const fn csht(&self) -> super::vals::Csht {
             let val = (self.0 >> 8usize) & 0x3f;
@@ -900,11 +942,12 @@ are wrongly updated while DMAEN = 1, the DMA request signal automatically goes t
         }
         #[doc = "Chip-select high time CSHT + 1 defines the minimum number of CLK cycles where the chip-select (NCS) must remain high between commands issued to the external device. ..."]
         #[inline(always)]
-        pub fn set_csht(&mut self, val: super::vals::Csht) {
+        pub const fn set_csht(&mut self, val: super::vals::Csht) {
             self.0 = (self.0 & !(0x3f << 8usize)) | (((val.to_bits() as u32) & 0x3f) << 8usize);
         }
         #[doc = "Device size This field defines the size of the external device using the following formula: Number of bytes in device = 2<sup>\\[DEVSIZE+1\\]</sup>. DEVSIZE+1 is effectively the number of address bits required to address the external device. The device capacity can be up to 4 Gbytes (addressed using 32-bits) in indirect mode, but the addressable space in memory-mapped mode is limited to 256 Mbytes. In regular-command protocol, if DMM = 1, DEVSIZE\\[4:0\\]
 indicates the total capacity of the two devices together."]
+        #[must_use]
         #[inline(always)]
         pub const fn devsize(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x1f;
@@ -913,11 +956,12 @@ indicates the total capacity of the two devices together."]
         #[doc = "Device size This field defines the size of the external device using the following formula: Number of bytes in device = 2<sup>\\[DEVSIZE+1\\]</sup>. DEVSIZE+1 is effectively the number of address bits required to address the external device. The device capacity can be up to 4 Gbytes (addressed using 32-bits) in indirect mode, but the addressable space in memory-mapped mode is limited to 256 Mbytes. In regular-command protocol, if DMM = 1, DEVSIZE\\[4:0\\]
 indicates the total capacity of the two devices together."]
         #[inline(always)]
-        pub fn set_devsize(&mut self, val: u8) {
+        pub const fn set_devsize(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
         }
         #[doc = "Memory type This bit indicates the type of memory to be supported. Note: In this mode, DQS signal polarity is inverted with respect to the memory clock signal. This is the default value and care must be taken to change MTYP\\[2:0\\]
 for memories different from Micron. Others: Reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn mtyp(&self) -> super::vals::Mtyp {
             let val = (self.0 >> 24usize) & 0x07;
@@ -926,7 +970,7 @@ for memories different from Micron. Others: Reserved"]
         #[doc = "Memory type This bit indicates the type of memory to be supported. Note: In this mode, DQS signal polarity is inverted with respect to the memory clock signal. This is the default value and care must be taken to change MTYP\\[2:0\\]
 for memories different from Micron. Others: Reserved"]
         #[inline(always)]
-        pub fn set_mtyp(&mut self, val: super::vals::Mtyp) {
+        pub const fn set_mtyp(&mut self, val: super::vals::Mtyp) {
             self.0 = (self.0 & !(0x07 << 24usize)) | (((val.to_bits() as u32) & 0x07) << 24usize);
         }
     }
@@ -967,6 +1011,7 @@ for memories different from Micron. Others: Reserved"]
     pub struct Dcr2(pub u32);
     impl Dcr2 {
         #[doc = "Clock prescaler This field defines the scaler factor for generating the CLK based on the kernel clock (value + 1). ... For odd clock division factors, the CLK duty cycle is not 50 %. The clock signal remains low one cycle longer than it stays high. Writing this field automatically starts a new calibration of high-speed interface DLL at the start of next transfer, except in case XSPI_CALOSR or XSPI_CALISR have been written in the meantime. BUSY stays high during the whole calibration execution."]
+        #[must_use]
         #[inline(always)]
         pub const fn prescaler(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -974,10 +1019,11 @@ for memories different from Micron. Others: Reserved"]
         }
         #[doc = "Clock prescaler This field defines the scaler factor for generating the CLK based on the kernel clock (value + 1). ... For odd clock division factors, the CLK duty cycle is not 50 %. The clock signal remains low one cycle longer than it stays high. Writing this field automatically starts a new calibration of high-speed interface DLL at the start of next transfer, except in case XSPI_CALOSR or XSPI_CALISR have been written in the meantime. BUSY stays high during the whole calibration execution."]
         #[inline(always)]
-        pub fn set_prescaler(&mut self, val: u8) {
+        pub const fn set_prescaler(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "Wrap size This field indicates the wrap size to which the memory is configured. For memories which have a separate command for wrapped instructions, this field indicates the wrap-size associated with the command held in XSPI_WPIR. Others: reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn wrapsize(&self) -> super::vals::Wrapsize {
             let val = (self.0 >> 16usize) & 0x07;
@@ -985,7 +1031,7 @@ for memories different from Micron. Others: Reserved"]
         }
         #[doc = "Wrap size This field indicates the wrap size to which the memory is configured. For memories which have a separate command for wrapped instructions, this field indicates the wrap-size associated with the command held in XSPI_WPIR. Others: reserved"]
         #[inline(always)]
-        pub fn set_wrapsize(&mut self, val: super::vals::Wrapsize) {
+        pub const fn set_wrapsize(&mut self, val: super::vals::Wrapsize) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val.to_bits() as u32) & 0x07) << 16usize);
         }
     }
@@ -1020,6 +1066,7 @@ for memories different from Micron. Others: Reserved"]
     pub struct Dcr3(pub u32);
     impl Dcr3 {
         #[doc = "Maximum transfer This field enables the communication regulation feature. The NCS is released every MAXTRAN+1 clock cycles when the other XSPI request the access to the bus. Others: maximum communication is set to MAXTRAN + 1 bytes."]
+        #[must_use]
         #[inline(always)]
         pub const fn maxtran(&self) -> super::vals::Maxtran {
             let val = (self.0 >> 0usize) & 0xff;
@@ -1027,10 +1074,11 @@ for memories different from Micron. Others: Reserved"]
         }
         #[doc = "Maximum transfer This field enables the communication regulation feature. The NCS is released every MAXTRAN+1 clock cycles when the other XSPI request the access to the bus. Others: maximum communication is set to MAXTRAN + 1 bytes."]
         #[inline(always)]
-        pub fn set_maxtran(&mut self, val: super::vals::Maxtran) {
+        pub const fn set_maxtran(&mut self, val: super::vals::Maxtran) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val.to_bits() as u32) & 0xff) << 0usize);
         }
         #[doc = "NCS boundary This field enables the transaction boundary feature. When active, a minimum value of 3 is recommended. The NCS is released on each boundary of 2<sup>CSBOUND</sup> bytes. Others: NCS boundary set to 2<sup>CSBOUND</sup> bytes"]
+        #[must_use]
         #[inline(always)]
         pub const fn csbound(&self) -> super::vals::Csbound {
             let val = (self.0 >> 16usize) & 0x1f;
@@ -1038,7 +1086,7 @@ for memories different from Micron. Others: Reserved"]
         }
         #[doc = "NCS boundary This field enables the transaction boundary feature. When active, a minimum value of 3 is recommended. The NCS is released on each boundary of 2<sup>CSBOUND</sup> bytes. Others: NCS boundary set to 2<sup>CSBOUND</sup> bytes"]
         #[inline(always)]
-        pub fn set_csbound(&mut self, val: super::vals::Csbound) {
+        pub const fn set_csbound(&mut self, val: super::vals::Csbound) {
             self.0 = (self.0 & !(0x1f << 16usize)) | (((val.to_bits() as u32) & 0x1f) << 16usize);
         }
     }
@@ -1073,6 +1121,7 @@ for memories different from Micron. Others: Reserved"]
     pub struct Dcr4(pub u32);
     impl Dcr4 {
         #[doc = "Refresh rate This field enables the refresh rate feature. The NCS is released every REFRESH + 1 clock cycles for writes, and REFRESH + 4 clock cycles for reads. Note: These two values can be extended with few clock cycles when refresh occurs during a byte transmission in single-, dual- or quad-SPI mode, because the byte transmission must be completed. Others: maximum communication length is set to REFRESH + 1 clock cycles."]
+        #[must_use]
         #[inline(always)]
         pub const fn refresh(&self) -> super::vals::Refresh {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1080,7 +1129,7 @@ for memories different from Micron. Others: Reserved"]
         }
         #[doc = "Refresh rate This field enables the refresh rate feature. The NCS is released every REFRESH + 1 clock cycles for writes, and REFRESH + 4 clock cycles for reads. Note: These two values can be extended with few clock cycles when refresh occurs during a byte transmission in single-, dual- or quad-SPI mode, because the byte transmission must be completed. Others: maximum communication length is set to REFRESH + 1 clock cycles."]
         #[inline(always)]
-        pub fn set_refresh(&mut self, val: super::vals::Refresh) {
+        pub const fn set_refresh(&mut self, val: super::vals::Refresh) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val.to_bits() as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1107,6 +1156,7 @@ for memories different from Micron. Others: Reserved"]
     pub struct Dlr(pub u32);
     impl Dlr {
         #[doc = "Data length"]
+        #[must_use]
         #[inline(always)]
         pub const fn dl(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1114,7 +1164,7 @@ for memories different from Micron. Others: Reserved"]
         }
         #[doc = "Data length"]
         #[inline(always)]
-        pub fn set_dl(&mut self, val: u32) {
+        pub const fn set_dl(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1142,6 +1192,7 @@ for memories different from Micron. Others: Reserved"]
     impl Dr {
         #[doc = "Data Data to be sent/received to/from the external SPI device In indirect-write mode, data written to this register is stored on the FIFO before it is sent to the external device during the data phase. If the FIFO is too full, a write operation is stalled until the FIFO has enough space to accept the amount of data being written. In indirect-read mode, reading this register gives (via the FIFO) the data that was received from the external device. If the FIFO does not have as many bytes as requested by the read operation and if BUSY = 1, the read operation is stalled until enough data is present or until the transfer is complete, whichever happens first. In automatic status-polling mode, this register contains the last data read from the external device (without masking). Word, half-word, and byte accesses to this register are supported. In indirect-write mode, a byte write adds 1 byte to the FIFO, a half-word write 2 bytes, and a word write 4 bytes. Similarly, in indirect-read mode, a byte read removes 1 byte from the FIFO, a halfword read 2 bytes, and a word read 4 bytes. Accesses in indirect mode must be aligned to the bottom of this register: A byte read must read DATA\\[7:0\\]
 and a half-word read must read DATA\\[15:0\\]."]
+        #[must_use]
         #[inline(always)]
         pub const fn data(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1150,7 +1201,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[doc = "Data Data to be sent/received to/from the external SPI device In indirect-write mode, data written to this register is stored on the FIFO before it is sent to the external device during the data phase. If the FIFO is too full, a write operation is stalled until the FIFO has enough space to accept the amount of data being written. In indirect-read mode, reading this register gives (via the FIFO) the data that was received from the external device. If the FIFO does not have as many bytes as requested by the read operation and if BUSY = 1, the read operation is stalled until enough data is present or until the transfer is complete, whichever happens first. In automatic status-polling mode, this register contains the last data read from the external device (without masking). Word, half-word, and byte accesses to this register are supported. In indirect-write mode, a byte write adds 1 byte to the FIFO, a half-word write 2 bytes, and a word write 4 bytes. Similarly, in indirect-read mode, a byte read removes 1 byte from the FIFO, a halfword read 2 bytes, and a word read 4 bytes. Accesses in indirect mode must be aligned to the bottom of this register: A byte read must read DATA\\[7:0\\]
 and a half-word read must read DATA\\[15:0\\]."]
         #[inline(always)]
-        pub fn set_data(&mut self, val: u32) {
+        pub const fn set_data(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1177,6 +1228,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Fcr(pub u32);
     impl Fcr {
         #[doc = "Clear transfer error flag Writing 1 clears the TEF flag in the XSPI_SR register."]
+        #[must_use]
         #[inline(always)]
         pub const fn ctef(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1184,10 +1236,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Clear transfer error flag Writing 1 clears the TEF flag in the XSPI_SR register."]
         #[inline(always)]
-        pub fn set_ctef(&mut self, val: bool) {
+        pub const fn set_ctef(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Clear transfer complete flag Writing 1 clears the TCF flag in the XSPI_SR register."]
+        #[must_use]
         #[inline(always)]
         pub const fn ctcf(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1195,10 +1248,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Clear transfer complete flag Writing 1 clears the TCF flag in the XSPI_SR register."]
         #[inline(always)]
-        pub fn set_ctcf(&mut self, val: bool) {
+        pub const fn set_ctcf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Clear status match flag Writing 1 clears the SMF flag in the XSPI_SR register."]
+        #[must_use]
         #[inline(always)]
         pub const fn csmf(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1206,10 +1260,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Clear status match flag Writing 1 clears the SMF flag in the XSPI_SR register."]
         #[inline(always)]
-        pub fn set_csmf(&mut self, val: bool) {
+        pub const fn set_csmf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Clear timeout flag Writing 1 clears the TOF flag in the XSPI_SR register."]
+        #[must_use]
         #[inline(always)]
         pub const fn ctof(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1217,7 +1272,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Clear timeout flag Writing 1 clears the TOF flag in the XSPI_SR register."]
         #[inline(always)]
-        pub fn set_ctof(&mut self, val: bool) {
+        pub const fn set_ctof(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
     }
@@ -1256,6 +1311,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Hlcr(pub u32);
     impl Hlcr {
         #[doc = "Latency mode This bit selects the Latency mode. Note: This bit must be set when using the dual-octal HyperBus configuration."]
+        #[must_use]
         #[inline(always)]
         pub const fn lm(&self) -> super::vals::Lm {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1263,10 +1319,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Latency mode This bit selects the Latency mode. Note: This bit must be set when using the dual-octal HyperBus configuration."]
         #[inline(always)]
-        pub fn set_lm(&mut self, val: super::vals::Lm) {
+        pub const fn set_lm(&mut self, val: super::vals::Lm) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
         #[doc = "Write zero latency This bit enables zero latency on write operations."]
+        #[must_use]
         #[inline(always)]
         pub const fn wzl(&self) -> super::vals::Wzl {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1274,10 +1331,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Write zero latency This bit enables zero latency on write operations."]
         #[inline(always)]
-        pub fn set_wzl(&mut self, val: super::vals::Wzl) {
+        pub const fn set_wzl(&mut self, val: super::vals::Wzl) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "Access time Device access time expressed in number of communication clock cycles"]
+        #[must_use]
         #[inline(always)]
         pub const fn tacc(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -1285,10 +1343,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Access time Device access time expressed in number of communication clock cycles"]
         #[inline(always)]
-        pub fn set_tacc(&mut self, val: u8) {
+        pub const fn set_tacc(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "Read write recovery time Device read write recovery time expressed in number of communication clock cycles"]
+        #[must_use]
         #[inline(always)]
         pub const fn trwr(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
@@ -1296,7 +1355,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Read write recovery time Device read write recovery time expressed in number of communication clock cycles"]
         #[inline(always)]
-        pub fn set_trwr(&mut self, val: u8) {
+        pub const fn set_trwr(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
     }
@@ -1335,6 +1394,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Ir(pub u32);
     impl Ir {
         #[doc = "Instruction Instruction to be sent to the external SPI device"]
+        #[must_use]
         #[inline(always)]
         pub const fn instruction(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1342,7 +1402,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Instruction Instruction to be sent to the external SPI device"]
         #[inline(always)]
-        pub fn set_instruction(&mut self, val: u32) {
+        pub const fn set_instruction(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1369,6 +1429,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Lptr(pub u32);
     impl Lptr {
         #[doc = "Timeout period After each access in memory-mapped mode, the XSPI prefetches the subsequent bytes and hold them in the FIFO. This field indicates how many CLK cycles the XSPI waits after the clock becomes inactive and until it raises the NCS, putting the external device in a lower-consumption state."]
+        #[must_use]
         #[inline(always)]
         pub const fn timeout(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -1376,7 +1437,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Timeout period After each access in memory-mapped mode, the XSPI prefetches the subsequent bytes and hold them in the FIFO. This field indicates how many CLK cycles the XSPI waits after the clock becomes inactive and until it raises the NCS, putting the external device in a lower-consumption state."]
         #[inline(always)]
-        pub fn set_timeout(&mut self, val: u16) {
+        pub const fn set_timeout(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -1403,6 +1464,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Pir(pub u32);
     impl Pir {
         #[doc = "Polling interval Number of CLK cycle between a read during the automatic status-polling phases"]
+        #[must_use]
         #[inline(always)]
         pub const fn interval(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -1410,7 +1472,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Polling interval Number of CLK cycle between a read during the automatic status-polling phases"]
         #[inline(always)]
-        pub fn set_interval(&mut self, val: u16) {
+        pub const fn set_interval(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -1437,6 +1499,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Psmar(pub u32);
     impl Psmar {
         #[doc = "Status match Value to be compared with the masked status register to get a match"]
+        #[must_use]
         #[inline(always)]
         pub const fn match_(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1444,7 +1507,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Status match Value to be compared with the masked status register to get a match"]
         #[inline(always)]
-        pub fn set_match_(&mut self, val: u32) {
+        pub const fn set_match_(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1471,6 +1534,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Psmkr(pub u32);
     impl Psmkr {
         #[doc = "Status mask Mask to be applied to the status bytes received in automatic status-polling mode For bit n:"]
+        #[must_use]
         #[inline(always)]
         pub const fn mask(&self) -> super::vals::Mask {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1478,7 +1542,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Status mask Mask to be applied to the status bytes received in automatic status-polling mode For bit n:"]
         #[inline(always)]
-        pub fn set_mask(&mut self, val: super::vals::Mask) {
+        pub const fn set_mask(&mut self, val: super::vals::Mask) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val.to_bits() as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1505,6 +1569,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Sr(pub u32);
     impl Sr {
         #[doc = "Transfer error flag This bit is set in indirect mode when an invalid address is being accessed in indirect mode. It is cleared by writing 1 to CTEF."]
+        #[must_use]
         #[inline(always)]
         pub const fn tef(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1512,10 +1577,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Transfer error flag This bit is set in indirect mode when an invalid address is being accessed in indirect mode. It is cleared by writing 1 to CTEF."]
         #[inline(always)]
-        pub fn set_tef(&mut self, val: bool) {
+        pub const fn set_tef(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Transfer complete flag This bit is set in indirect mode when the programmed number of data has been transferred or in any mode when the transfer has been aborted.It is cleared by writing 1 to CTCF."]
+        #[must_use]
         #[inline(always)]
         pub const fn tcf(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1523,10 +1589,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Transfer complete flag This bit is set in indirect mode when the programmed number of data has been transferred or in any mode when the transfer has been aborted.It is cleared by writing 1 to CTCF."]
         #[inline(always)]
-        pub fn set_tcf(&mut self, val: bool) {
+        pub const fn set_tcf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "FIFO threshold flag In indirect mode, this bit is set when the FIFO threshold has been reached, or if there is any data left in the FIFO after the reads from the external device are complete. It is cleared automatically as soon as the threshold condition is no longer true. In automatic status-polling mode this bit is set every time the status register is read, and the bit is cleared when the data register is read."]
+        #[must_use]
         #[inline(always)]
         pub const fn ftf(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1534,10 +1601,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "FIFO threshold flag In indirect mode, this bit is set when the FIFO threshold has been reached, or if there is any data left in the FIFO after the reads from the external device are complete. It is cleared automatically as soon as the threshold condition is no longer true. In automatic status-polling mode this bit is set every time the status register is read, and the bit is cleared when the data register is read."]
         #[inline(always)]
-        pub fn set_ftf(&mut self, val: bool) {
+        pub const fn set_ftf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Status match flag This bit is set in automatic status-polling mode when the unmasked received data matches the corresponding bits in the match register (XSPI_PSMAR). It is cleared by writing 1 to CSMF."]
+        #[must_use]
         #[inline(always)]
         pub const fn smf(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1545,10 +1613,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Status match flag This bit is set in automatic status-polling mode when the unmasked received data matches the corresponding bits in the match register (XSPI_PSMAR). It is cleared by writing 1 to CSMF."]
         #[inline(always)]
-        pub fn set_smf(&mut self, val: bool) {
+        pub const fn set_smf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Timeout flag This bit is set when timeout occurs. It is cleared by writing 1 to CTOF."]
+        #[must_use]
         #[inline(always)]
         pub const fn tof(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1556,10 +1625,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Timeout flag This bit is set when timeout occurs. It is cleared by writing 1 to CTOF."]
         #[inline(always)]
-        pub fn set_tof(&mut self, val: bool) {
+        pub const fn set_tof(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Busy This bit is set when an operation is ongoing. It is cleared automatically when the operation with the external device is finished and the FIFO is empty."]
+        #[must_use]
         #[inline(always)]
         pub const fn busy(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1567,10 +1637,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Busy This bit is set when an operation is ongoing. It is cleared automatically when the operation with the external device is finished and the FIFO is empty."]
         #[inline(always)]
-        pub fn set_busy(&mut self, val: bool) {
+        pub const fn set_busy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "FIFO level This field gives the number of valid bytes that are being held in the FIFO. FLEVEL = 0 when the FIFO is empty, and 64 when it is full. In automatic-status polling mode, FLEVEL is zero."]
+        #[must_use]
         #[inline(always)]
         pub const fn flevel(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x7f;
@@ -1578,7 +1649,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "FIFO level This field gives the number of valid bytes that are being held in the FIFO. FLEVEL = 0 when the FIFO is empty, and 64 when it is full. In automatic-status polling mode, FLEVEL is zero."]
         #[inline(always)]
-        pub fn set_flevel(&mut self, val: u8) {
+        pub const fn set_flevel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 8usize)) | (((val as u32) & 0x7f) << 8usize);
         }
     }
@@ -1613,6 +1684,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Tcr(pub u32);
     impl Tcr {
         #[doc = "Number of dummy cycles This field defines the duration of the dummy phase. In both SDR and DTR modes, it specifies a number of CLK cycles (0-31)."]
+        #[must_use]
         #[inline(always)]
         pub const fn dcyc(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x1f;
@@ -1620,10 +1692,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Number of dummy cycles This field defines the duration of the dummy phase. In both SDR and DTR modes, it specifies a number of CLK cycles (0-31)."]
         #[inline(always)]
-        pub fn set_dcyc(&mut self, val: u8) {
+        pub const fn set_dcyc(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
         #[doc = "Delay hold quarter cycle"]
+        #[must_use]
         #[inline(always)]
         pub const fn dhqc(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -1631,10 +1704,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Delay hold quarter cycle"]
         #[inline(always)]
-        pub fn set_dhqc(&mut self, val: bool) {
+        pub const fn set_dhqc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "Sample shift By default, the XSPI samples data 1/2 of a CLK cycle after the data is driven by the external device. This bit allows the data to be sampled later in order to consider the external signal delays. The software must ensure that SSHIFT = 0 when the data phase is configured in DTR mode (when DDTR = 1.)"]
+        #[must_use]
         #[inline(always)]
         pub const fn sshift(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -1642,7 +1716,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Sample shift By default, the XSPI samples data 1/2 of a CLK cycle after the data is driven by the external device. This bit allows the data to be sampled later in order to consider the external signal delays. The software must ensure that SSHIFT = 0 when the data phase is configured in DTR mode (when DDTR = 1.)"]
         #[inline(always)]
-        pub fn set_sshift(&mut self, val: bool) {
+        pub const fn set_sshift(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
     }
@@ -1679,6 +1753,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Wabr(pub u32);
     impl Wabr {
         #[doc = "Alternate bytes Optional data to be sent to the external SPI device right after the address"]
+        #[must_use]
         #[inline(always)]
         pub const fn alternate(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1686,7 +1761,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Alternate bytes Optional data to be sent to the external SPI device right after the address"]
         #[inline(always)]
-        pub fn set_alternate(&mut self, val: u32) {
+        pub const fn set_alternate(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1713,6 +1788,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Wccr(pub u32);
     impl Wccr {
         #[doc = "Instruction mode This field defines the instruction phase mode of operation. Others: reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn imode(&self) -> super::vals::WccrImode {
             let val = (self.0 >> 0usize) & 0x07;
@@ -1720,10 +1796,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Instruction mode This field defines the instruction phase mode of operation. Others: reserved"]
         #[inline(always)]
-        pub fn set_imode(&mut self, val: super::vals::WccrImode) {
+        pub const fn set_imode(&mut self, val: super::vals::WccrImode) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "Instruction double transfer rate This bit sets the DTR mode for the instruction phase."]
+        #[must_use]
         #[inline(always)]
         pub const fn idtr(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1731,10 +1808,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Instruction double transfer rate This bit sets the DTR mode for the instruction phase."]
         #[inline(always)]
-        pub fn set_idtr(&mut self, val: bool) {
+        pub const fn set_idtr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Instruction size This bit defines instruction size:"]
+        #[must_use]
         #[inline(always)]
         pub const fn isize(&self) -> super::vals::WccrIsize {
             let val = (self.0 >> 4usize) & 0x03;
@@ -1742,10 +1820,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Instruction size This bit defines instruction size:"]
         #[inline(always)]
-        pub fn set_isize(&mut self, val: super::vals::WccrIsize) {
+        pub const fn set_isize(&mut self, val: super::vals::WccrIsize) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "Address mode This field defines the address phase mode of operation. Others: reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn admode(&self) -> super::vals::WccrAdmode {
             let val = (self.0 >> 8usize) & 0x07;
@@ -1753,10 +1832,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Address mode This field defines the address phase mode of operation. Others: reserved"]
         #[inline(always)]
-        pub fn set_admode(&mut self, val: super::vals::WccrAdmode) {
+        pub const fn set_admode(&mut self, val: super::vals::WccrAdmode) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "Address double transfer rate This bit sets the DTR mode for the address phase."]
+        #[must_use]
         #[inline(always)]
         pub const fn addtr(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1764,10 +1844,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Address double transfer rate This bit sets the DTR mode for the address phase."]
         #[inline(always)]
-        pub fn set_addtr(&mut self, val: bool) {
+        pub const fn set_addtr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Address size This field defines address size."]
+        #[must_use]
         #[inline(always)]
         pub const fn adsize(&self) -> super::vals::WccrAdsize {
             let val = (self.0 >> 12usize) & 0x03;
@@ -1775,10 +1856,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Address size This field defines address size."]
         #[inline(always)]
-        pub fn set_adsize(&mut self, val: super::vals::WccrAdsize) {
+        pub const fn set_adsize(&mut self, val: super::vals::WccrAdsize) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
         #[doc = "Alternate-byte mode This field defines the alternate-byte phase mode of operation. Others: reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn abmode(&self) -> super::vals::WccrAbmode {
             let val = (self.0 >> 16usize) & 0x07;
@@ -1786,10 +1868,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Alternate-byte mode This field defines the alternate-byte phase mode of operation. Others: reserved"]
         #[inline(always)]
-        pub fn set_abmode(&mut self, val: super::vals::WccrAbmode) {
+        pub const fn set_abmode(&mut self, val: super::vals::WccrAbmode) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val.to_bits() as u32) & 0x07) << 16usize);
         }
         #[doc = "Alternate bytes double-transfer rate This bit sets the DTR mode for the alternate-bytes phase."]
+        #[must_use]
         #[inline(always)]
         pub const fn abdtr(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -1797,10 +1880,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Alternate bytes double-transfer rate This bit sets the DTR mode for the alternate-bytes phase."]
         #[inline(always)]
-        pub fn set_abdtr(&mut self, val: bool) {
+        pub const fn set_abdtr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "Alternate bytes size This field defines alternate bytes size:"]
+        #[must_use]
         #[inline(always)]
         pub const fn absize(&self) -> super::vals::WccrAbsize {
             let val = (self.0 >> 20usize) & 0x03;
@@ -1808,10 +1892,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Alternate bytes size This field defines alternate bytes size:"]
         #[inline(always)]
-        pub fn set_absize(&mut self, val: super::vals::WccrAbsize) {
+        pub const fn set_absize(&mut self, val: super::vals::WccrAbsize) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
         }
         #[doc = "Data mode This field defines the data phase mode of operation."]
+        #[must_use]
         #[inline(always)]
         pub const fn dmode(&self) -> super::vals::WccrDmode {
             let val = (self.0 >> 24usize) & 0x07;
@@ -1819,10 +1904,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Data mode This field defines the data phase mode of operation."]
         #[inline(always)]
-        pub fn set_dmode(&mut self, val: super::vals::WccrDmode) {
+        pub const fn set_dmode(&mut self, val: super::vals::WccrDmode) {
             self.0 = (self.0 & !(0x07 << 24usize)) | (((val.to_bits() as u32) & 0x07) << 24usize);
         }
         #[doc = "data double transfer rate This bit sets the DTR mode for the data phase."]
+        #[must_use]
         #[inline(always)]
         pub const fn ddtr(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
@@ -1830,10 +1916,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "data double transfer rate This bit sets the DTR mode for the data phase."]
         #[inline(always)]
-        pub fn set_ddtr(&mut self, val: bool) {
+        pub const fn set_ddtr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
         #[doc = "DQS enable This bit enables the data strobe management."]
+        #[must_use]
         #[inline(always)]
         pub const fn dqse(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -1841,7 +1928,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "DQS enable This bit enables the data strobe management."]
         #[inline(always)]
-        pub fn set_dqse(&mut self, val: bool) {
+        pub const fn set_dqse(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
     }
@@ -1881,6 +1968,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Wir(pub u32);
     impl Wir {
         #[doc = "Instruction Instruction to be sent to the external SPI device"]
+        #[must_use]
         #[inline(always)]
         pub const fn instruction(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1888,7 +1976,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Instruction Instruction to be sent to the external SPI device"]
         #[inline(always)]
-        pub fn set_instruction(&mut self, val: u32) {
+        pub const fn set_instruction(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1915,6 +2003,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Wpabr(pub u32);
     impl Wpabr {
         #[doc = "Alternate bytes Optional data to be sent to the external SPI device right after the address"]
+        #[must_use]
         #[inline(always)]
         pub const fn alternate(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1922,7 +2011,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Alternate bytes Optional data to be sent to the external SPI device right after the address"]
         #[inline(always)]
-        pub fn set_alternate(&mut self, val: u32) {
+        pub const fn set_alternate(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1949,6 +2038,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Wpccr(pub u32);
     impl Wpccr {
         #[doc = "Instruction mode This field defines the instruction phase mode of operation. Others: reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn imode(&self) -> super::vals::WpccrImode {
             let val = (self.0 >> 0usize) & 0x07;
@@ -1956,10 +2046,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Instruction mode This field defines the instruction phase mode of operation. Others: reserved"]
         #[inline(always)]
-        pub fn set_imode(&mut self, val: super::vals::WpccrImode) {
+        pub const fn set_imode(&mut self, val: super::vals::WpccrImode) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "Instruction double transfer rate This bit sets the DTR mode for the instruction phase."]
+        #[must_use]
         #[inline(always)]
         pub const fn idtr(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1967,10 +2058,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Instruction double transfer rate This bit sets the DTR mode for the instruction phase."]
         #[inline(always)]
-        pub fn set_idtr(&mut self, val: bool) {
+        pub const fn set_idtr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Instruction size This field defines instruction size."]
+        #[must_use]
         #[inline(always)]
         pub const fn isize(&self) -> super::vals::WpccrIsize {
             let val = (self.0 >> 4usize) & 0x03;
@@ -1978,10 +2070,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Instruction size This field defines instruction size."]
         #[inline(always)]
-        pub fn set_isize(&mut self, val: super::vals::WpccrIsize) {
+        pub const fn set_isize(&mut self, val: super::vals::WpccrIsize) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "Address mode This field defines the address phase mode of operation. Others: reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn admode(&self) -> super::vals::WpccrAdmode {
             let val = (self.0 >> 8usize) & 0x07;
@@ -1989,10 +2082,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Address mode This field defines the address phase mode of operation. Others: reserved"]
         #[inline(always)]
-        pub fn set_admode(&mut self, val: super::vals::WpccrAdmode) {
+        pub const fn set_admode(&mut self, val: super::vals::WpccrAdmode) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "Address double transfer rate This bit sets the DTR mode for the address phase."]
+        #[must_use]
         #[inline(always)]
         pub const fn addtr(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -2000,10 +2094,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Address double transfer rate This bit sets the DTR mode for the address phase."]
         #[inline(always)]
-        pub fn set_addtr(&mut self, val: bool) {
+        pub const fn set_addtr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Address size This field defines address size."]
+        #[must_use]
         #[inline(always)]
         pub const fn adsize(&self) -> super::vals::WpccrAdsize {
             let val = (self.0 >> 12usize) & 0x03;
@@ -2011,10 +2106,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Address size This field defines address size."]
         #[inline(always)]
-        pub fn set_adsize(&mut self, val: super::vals::WpccrAdsize) {
+        pub const fn set_adsize(&mut self, val: super::vals::WpccrAdsize) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
         #[doc = "Alternate-byte mode This field defines the alternate byte phase mode of operation."]
+        #[must_use]
         #[inline(always)]
         pub const fn abmode(&self) -> super::vals::WpccrAbmode {
             let val = (self.0 >> 16usize) & 0x07;
@@ -2022,10 +2118,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Alternate-byte mode This field defines the alternate byte phase mode of operation."]
         #[inline(always)]
-        pub fn set_abmode(&mut self, val: super::vals::WpccrAbmode) {
+        pub const fn set_abmode(&mut self, val: super::vals::WpccrAbmode) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val.to_bits() as u32) & 0x07) << 16usize);
         }
         #[doc = "Alternate bytes double transfer rate This bit sets the DTR mode for the alternate bytes phase."]
+        #[must_use]
         #[inline(always)]
         pub const fn abdtr(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -2033,10 +2130,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Alternate bytes double transfer rate This bit sets the DTR mode for the alternate bytes phase."]
         #[inline(always)]
-        pub fn set_abdtr(&mut self, val: bool) {
+        pub const fn set_abdtr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "Alternate bytes size This bit defines alternate bytes size."]
+        #[must_use]
         #[inline(always)]
         pub const fn absize(&self) -> super::vals::WpccrAbsize {
             let val = (self.0 >> 20usize) & 0x03;
@@ -2044,10 +2142,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Alternate bytes size This bit defines alternate bytes size."]
         #[inline(always)]
-        pub fn set_absize(&mut self, val: super::vals::WpccrAbsize) {
+        pub const fn set_absize(&mut self, val: super::vals::WpccrAbsize) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
         }
         #[doc = "Data mode This field defines the data phase mode of operation. 101; data on 16 lines Others: reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn dmode(&self) -> super::vals::WpccrDmode {
             let val = (self.0 >> 24usize) & 0x07;
@@ -2055,10 +2154,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Data mode This field defines the data phase mode of operation. 101; data on 16 lines Others: reserved"]
         #[inline(always)]
-        pub fn set_dmode(&mut self, val: super::vals::WpccrDmode) {
+        pub const fn set_dmode(&mut self, val: super::vals::WpccrDmode) {
             self.0 = (self.0 & !(0x07 << 24usize)) | (((val.to_bits() as u32) & 0x07) << 24usize);
         }
         #[doc = "Data double transfer rate This bit sets the DTR mode for the data phase."]
+        #[must_use]
         #[inline(always)]
         pub const fn ddtr(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
@@ -2066,10 +2166,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Data double transfer rate This bit sets the DTR mode for the data phase."]
         #[inline(always)]
-        pub fn set_ddtr(&mut self, val: bool) {
+        pub const fn set_ddtr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
         #[doc = "DQS enable This bit enables the data strobe management."]
+        #[must_use]
         #[inline(always)]
         pub const fn dqse(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -2077,7 +2178,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "DQS enable This bit enables the data strobe management."]
         #[inline(always)]
-        pub fn set_dqse(&mut self, val: bool) {
+        pub const fn set_dqse(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
     }
@@ -2117,6 +2218,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Wpir(pub u32);
     impl Wpir {
         #[doc = "Instruction Instruction to be sent to the external SPI device"]
+        #[must_use]
         #[inline(always)]
         pub const fn instruction(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -2124,7 +2226,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Instruction Instruction to be sent to the external SPI device"]
         #[inline(always)]
-        pub fn set_instruction(&mut self, val: u32) {
+        pub const fn set_instruction(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -2153,6 +2255,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Wptcr(pub u32);
     impl Wptcr {
         #[doc = "Number of dummy cycles This field defines the duration of the dummy phase. In both SDR and DTR modes, it specifies a number of CLK cycles (0-31)."]
+        #[must_use]
         #[inline(always)]
         pub const fn dcyc(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x1f;
@@ -2160,10 +2263,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Number of dummy cycles This field defines the duration of the dummy phase. In both SDR and DTR modes, it specifies a number of CLK cycles (0-31)."]
         #[inline(always)]
-        pub fn set_dcyc(&mut self, val: u8) {
+        pub const fn set_dcyc(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
         #[doc = "Delay hold quarter cycle Add a quarter cycle delay on the outputs in DTR communication to match hold requirement."]
+        #[must_use]
         #[inline(always)]
         pub const fn dhqc(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -2171,10 +2275,11 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Delay hold quarter cycle Add a quarter cycle delay on the outputs in DTR communication to match hold requirement."]
         #[inline(always)]
-        pub fn set_dhqc(&mut self, val: bool) {
+        pub const fn set_dhqc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "Sample shift By default, the XSPI samples data 1/2 of a CLK cycle after the data is driven by the external device. This bit allows the data to be sampled later in order to consider the external signal delays. The firmware must assure that SSHIFT=0 when the data phase is configured in DTR mode (when DDTR = 1)."]
+        #[must_use]
         #[inline(always)]
         pub const fn sshift(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -2182,7 +2287,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Sample shift By default, the XSPI samples data 1/2 of a CLK cycle after the data is driven by the external device. This bit allows the data to be sampled later in order to consider the external signal delays. The firmware must assure that SSHIFT=0 when the data phase is configured in DTR mode (when DDTR = 1)."]
         #[inline(always)]
-        pub fn set_sshift(&mut self, val: bool) {
+        pub const fn set_sshift(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
     }
@@ -2219,6 +2324,7 @@ and a half-word read must read DATA\\[15:0\\]."]
     pub struct Wtcr(pub u32);
     impl Wtcr {
         #[doc = "Number of dummy cycles This field defines the duration of the dummy phase. In both SDR and DTR modes, it specifies a number of CLK cycles (0-31). It is recommended to have at least 5 dummy cycles when using memories with DQS activated."]
+        #[must_use]
         #[inline(always)]
         pub const fn dcyc(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x1f;
@@ -2226,7 +2332,7 @@ and a half-word read must read DATA\\[15:0\\]."]
         }
         #[doc = "Number of dummy cycles This field defines the duration of the dummy phase. In both SDR and DTR modes, it specifies a number of CLK cycles (0-31). It is recommended to have at least 5 dummy cycles when using memories with DQS activated."]
         #[inline(always)]
-        pub fn set_dcyc(&mut self, val: u8) {
+        pub const fn set_dcyc(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
     }

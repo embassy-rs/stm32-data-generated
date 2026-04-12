@@ -560,6 +560,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
+                    name: "NORMAL_EXT_BUFDIS",
+                    description: Some("Normal mode, external pin only, buffer disabled"),
+                    value: 2,
+                },
+                EnumVariant {
                     name: "NORMAL_EXT_BUFEN",
                     description: Some("Normal mode, external pin only, buffer enabled"),
                     value: 0,
@@ -568,11 +573,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "NORMAL_EXT_INT_BUFEN",
                     description: Some("Normal mode, external pin and internal peripherals, buffer enabled"),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "NORMAL_EXT_BUFDIS",
-                    description: Some("Normal mode, external pin only, buffer disabled"),
-                    value: 2,
                 },
                 EnumVariant {
                     name: "NORMAL_INT_BUFDIS",
@@ -585,14 +585,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 4,
                 },
                 EnumVariant {
-                    name: "SAMPHOLD_EXT_INT_BUFEN",
-                    description: Some("Sample and hold mode, external pin and internal peripherals, buffer enabled"),
-                    value: 5,
-                },
-                EnumVariant {
                     name: "SAMPHOLD_EXT_INT_BUFDIS",
                     description: Some("Sample and hold mode, external pin and internal peripherals, buffer disabled"),
                     value: 6,
+                },
+                EnumVariant {
+                    name: "SAMPHOLD_EXT_INT_BUFEN",
+                    description: Some("Sample and hold mode, external pin and internal peripherals, buffer enabled"),
+                    value: 5,
                 },
                 EnumVariant {
                     name: "SAMPHOLD_INT_BUFDIS",

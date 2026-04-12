@@ -341,14 +341,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "UFQFPN48_USB",
-                    description: Some("UFQFPN48 USB"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "WLSCP88_USB",
-                    description: Some("WLSCP88 USB"),
-                    value: 5,
+                    name: "UFBGA121_SMPS_USB",
+                    description: Some("UFBGA121 SMPS USB"),
+                    value: 15,
                 },
                 EnumVariant {
                     name: "UFBGA121_USB",
@@ -366,6 +361,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 11,
                 },
                 EnumVariant {
+                    name: "UFQFPN48_USB",
+                    description: Some("UFQFPN48 USB"),
+                    value: 3,
+                },
+                EnumVariant {
                     name: "VFQFPN68_SMPS_USB",
                     description: Some("VFQFPN68 SMPS USB"),
                     value: 12,
@@ -376,9 +376,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 13,
                 },
                 EnumVariant {
-                    name: "UFBGA121_SMPS_USB",
-                    description: Some("UFBGA121 SMPS USB"),
-                    value: 15,
+                    name: "WLSCP88_USB",
+                    description: Some("WLSCP88 USB"),
+                    value: 5,
                 },
             ],
         },

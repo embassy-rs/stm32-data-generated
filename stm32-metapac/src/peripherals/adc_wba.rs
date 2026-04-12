@@ -22,87 +22,87 @@ impl Adc4 {
     #[doc = "ADC interrupt and status register."]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::Isr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "ADC interrupt enable register."]
     #[inline(always)]
     pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "ADC control register."]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "ADC configuration register 1."]
     #[inline(always)]
     pub const fn cfgr1(self) -> crate::common::Reg<regs::Cfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "ADC configuration register 2."]
     #[inline(always)]
     pub const fn cfgr2(self) -> crate::common::Reg<regs::Cfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "ADC sampling time register."]
     #[inline(always)]
     pub const fn smpr(self) -> crate::common::Reg<regs::Smpr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "ADC watchdog threshold register."]
     #[inline(always)]
     pub const fn awd1tr(self) -> crate::common::Reg<regs::Awd1tr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "ADC watchdog threshold register."]
     #[inline(always)]
     pub const fn awd2tr(self) -> crate::common::Reg<regs::Awd2tr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "ADC channel selection register \\[alternate\\]."]
     #[inline(always)]
     pub const fn chselr(self) -> crate::common::Reg<regs::Chselr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "ADC channel selection register \\[alternate\\]."]
     #[inline(always)]
     pub const fn chselr_alternate(self) -> crate::common::Reg<regs::ChselrAlternate, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "ADC watchdog threshold register."]
     #[inline(always)]
     pub const fn awd3tr(self) -> crate::common::Reg<regs::Awd3tr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
     }
     #[doc = "ADC data register."]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<regs::Dr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
     }
     #[doc = "ADC Power register."]
     #[inline(always)]
     pub const fn pwr(self) -> crate::common::Reg<regs::Pwr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
     }
     #[doc = "ADC Analog Watchdog 2 Configuration register."]
     #[inline(always)]
     pub const fn awd2cr(self) -> crate::common::Reg<regs::Awd2cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xa0usize) as _) }
     }
     #[doc = "ADC Analog Watchdog 3 Configuration register."]
     #[inline(always)]
     pub const fn awd3cr(self) -> crate::common::Reg<regs::Awd3cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xa4usize) as _) }
     }
     #[doc = "ADC Calibration factor."]
     #[inline(always)]
     pub const fn calfact(self) -> crate::common::Reg<regs::Calfact, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xc4usize) as _) }
     }
     #[doc = "ADC common configuration register."]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0308usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0308usize) as _) }
     }
 }
 pub mod regs {
@@ -112,6 +112,7 @@ pub mod regs {
     pub struct Awd1tr(pub u32);
     impl Awd1tr {
         #[doc = "Analog watchdog 1 lower threshold These bits are written by software to define the lower threshold for the analog watchdog. Refer to Section 20.4.25: Analog window watchdog on page 638."]
+        #[must_use]
         #[inline(always)]
         pub const fn lt1(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -119,10 +120,11 @@ pub mod regs {
         }
         #[doc = "Analog watchdog 1 lower threshold These bits are written by software to define the lower threshold for the analog watchdog. Refer to Section 20.4.25: Analog window watchdog on page 638."]
         #[inline(always)]
-        pub fn set_lt1(&mut self, val: u16) {
+        pub const fn set_lt1(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
         #[doc = "Analog watchdog 1 higher threshold These bits are written by software to define the higher threshold for the analog watchdog. Refer to Section 20.4.25: Analog window watchdog on page 638."]
+        #[must_use]
         #[inline(always)]
         pub const fn ht1(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0x0fff;
@@ -130,7 +132,7 @@ pub mod regs {
         }
         #[doc = "Analog watchdog 1 higher threshold These bits are written by software to define the higher threshold for the analog watchdog. Refer to Section 20.4.25: Analog window watchdog on page 638."]
         #[inline(always)]
-        pub fn set_ht1(&mut self, val: u16) {
+        pub const fn set_ht1(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 16usize)) | (((val as u32) & 0x0fff) << 16usize);
         }
     }
@@ -161,6 +163,7 @@ pub mod regs {
     impl Awd2cr {
         #[doc = "Analog watchdog channel selection These bits are set and cleared by software. They enable and select the input channels to be guarded by analog watchdog 2 (AWD2). Note: The channels selected through AWD2CR must be also configured into the ADC_CHSELR registers. Refer to SQ8\\[3:0\\]
 for a definition of channel selection. The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn awd2ch(&self, n: usize) -> bool {
             assert!(n < 14usize);
@@ -171,7 +174,7 @@ for a definition of channel selection. The software is allowed to write this bit
         #[doc = "Analog watchdog channel selection These bits are set and cleared by software. They enable and select the input channels to be guarded by analog watchdog 2 (AWD2). Note: The channels selected through AWD2CR must be also configured into the ADC_CHSELR registers. Refer to SQ8\\[3:0\\]
 for a definition of channel selection. The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_awd2ch(&mut self, n: usize, val: bool) {
+        pub const fn set_awd2ch(&mut self, n: usize, val: bool) {
             assert!(n < 14usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -215,6 +218,7 @@ for a definition of channel selection. The software is allowed to write this bit
     pub struct Awd2tr(pub u32);
     impl Awd2tr {
         #[doc = "Analog watchdog 2 lower threshold These bits are written by software to define the lower threshold for the analog watchdog. Refer to Section 20.4.25: Analog window watchdog on page 638."]
+        #[must_use]
         #[inline(always)]
         pub const fn lt2(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -222,10 +226,11 @@ for a definition of channel selection. The software is allowed to write this bit
         }
         #[doc = "Analog watchdog 2 lower threshold These bits are written by software to define the lower threshold for the analog watchdog. Refer to Section 20.4.25: Analog window watchdog on page 638."]
         #[inline(always)]
-        pub fn set_lt2(&mut self, val: u16) {
+        pub const fn set_lt2(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
         #[doc = "Analog watchdog 2 higher threshold These bits are written by software to define the higher threshold for the analog watchdog. Refer to Section 20.4.25: Analog window watchdog on page 638."]
+        #[must_use]
         #[inline(always)]
         pub const fn ht2(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0x0fff;
@@ -233,7 +238,7 @@ for a definition of channel selection. The software is allowed to write this bit
         }
         #[doc = "Analog watchdog 2 higher threshold These bits are written by software to define the higher threshold for the analog watchdog. Refer to Section 20.4.25: Analog window watchdog on page 638."]
         #[inline(always)]
-        pub fn set_ht2(&mut self, val: u16) {
+        pub const fn set_ht2(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 16usize)) | (((val as u32) & 0x0fff) << 16usize);
         }
     }
@@ -264,6 +269,7 @@ for a definition of channel selection. The software is allowed to write this bit
     impl Awd3cr {
         #[doc = "Analog watchdog channel selection These bits are set and cleared by software. They enable and select the input channels to be guarded by analog watchdog 3 (AWD3). Note: The channels selected through AWD3CR must be also configured into the ADC_CHSELR registers. Refer to SQ8\\[3:0\\]
 for a definition of channel selection. The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn awd3ch(&self, n: usize) -> bool {
             assert!(n < 14usize);
@@ -274,7 +280,7 @@ for a definition of channel selection. The software is allowed to write this bit
         #[doc = "Analog watchdog channel selection These bits are set and cleared by software. They enable and select the input channels to be guarded by analog watchdog 3 (AWD3). Note: The channels selected through AWD3CR must be also configured into the ADC_CHSELR registers. Refer to SQ8\\[3:0\\]
 for a definition of channel selection. The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_awd3ch(&mut self, n: usize, val: bool) {
+        pub const fn set_awd3ch(&mut self, n: usize, val: bool) {
             assert!(n < 14usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -318,6 +324,7 @@ for a definition of channel selection. The software is allowed to write this bit
     pub struct Awd3tr(pub u32);
     impl Awd3tr {
         #[doc = "Analog watchdog 3lower threshold These bits are written by software to define the lower threshold for the analog watchdog. Refer to Section 20.4.25: Analog window watchdog on page 638."]
+        #[must_use]
         #[inline(always)]
         pub const fn lt3(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -325,10 +332,11 @@ for a definition of channel selection. The software is allowed to write this bit
         }
         #[doc = "Analog watchdog 3lower threshold These bits are written by software to define the lower threshold for the analog watchdog. Refer to Section 20.4.25: Analog window watchdog on page 638."]
         #[inline(always)]
-        pub fn set_lt3(&mut self, val: u16) {
+        pub const fn set_lt3(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
         #[doc = "Analog watchdog 3 higher threshold These bits are written by software to define the higher threshold for the analog watchdog. Refer to Section 20.4.25: Analog window watchdog on page 638."]
+        #[must_use]
         #[inline(always)]
         pub const fn ht3(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0x0fff;
@@ -336,7 +344,7 @@ for a definition of channel selection. The software is allowed to write this bit
         }
         #[doc = "Analog watchdog 3 higher threshold These bits are written by software to define the higher threshold for the analog watchdog. Refer to Section 20.4.25: Analog window watchdog on page 638."]
         #[inline(always)]
-        pub fn set_ht3(&mut self, val: u16) {
+        pub const fn set_ht3(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 16usize)) | (((val as u32) & 0x0fff) << 16usize);
         }
     }
@@ -367,6 +375,7 @@ for a definition of channel selection. The software is allowed to write this bit
     impl Calfact {
         #[doc = "Calibration factor These bits are written by hardware or by software. Once a calibration is complete, they are updated by hardware with the calibration factors. Software can write these bits with a new calibration factor. If the new calibration factor is different from the current one stored into the analog ADC, it is then applied once a new calibration is launched. Just after a calibration is complete, DATA\\[6:0\\]
 contains the calibration factor. Note: Software can write these bits only when ADEN = 1 (ADC is enabled and no calibration is ongoing and no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn calfact(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -375,7 +384,7 @@ contains the calibration factor. Note: Software can write these bits only when A
         #[doc = "Calibration factor These bits are written by hardware or by software. Once a calibration is complete, they are updated by hardware with the calibration factors. Software can write these bits with a new calibration factor. If the new calibration factor is different from the current one stored into the analog ADC, it is then applied once a new calibration is launched. Just after a calibration is complete, DATA\\[6:0\\]
 contains the calibration factor. Note: Software can write these bits only when ADEN = 1 (ADC is enabled and no calibration is ongoing and no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_calfact(&mut self, val: u8) {
+        pub const fn set_calfact(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
     }
@@ -402,6 +411,7 @@ contains the calibration factor. Note: Software can write these bits only when A
     pub struct Ccr(pub u32);
     impl Ccr {
         #[doc = "ADC prescaler Set and cleared by software to select the frequency of the clock to the ADC. Other: Reserved Note: Software is allowed to write these bits only when the ADC is disabled (ADCAL = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
+        #[must_use]
         #[inline(always)]
         pub const fn presc(&self) -> super::vals::Presc {
             let val = (self.0 >> 18usize) & 0x0f;
@@ -409,10 +419,11 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "ADC prescaler Set and cleared by software to select the frequency of the clock to the ADC. Other: Reserved Note: Software is allowed to write these bits only when the ADC is disabled (ADCAL = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
         #[inline(always)]
-        pub fn set_presc(&mut self, val: super::vals::Presc) {
+        pub const fn set_presc(&mut self, val: super::vals::Presc) {
             self.0 = (self.0 & !(0x0f << 18usize)) | (((val.to_bits() as u32) & 0x0f) << 18usize);
         }
         #[doc = "VsubREFINT/sub enable This bit is set and cleared by software to enable/disable the VsubREFINT/sub buffer. Note: Software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn vrefen(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -420,10 +431,11 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "VsubREFINT/sub enable This bit is set and cleared by software to enable/disable the VsubREFINT/sub buffer. Note: Software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_vrefen(&mut self, val: bool) {
+        pub const fn set_vrefen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "Temperature sensor selection This bit is set and cleared by software to enable/disable the temperature sensor. Note: Software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn vsensesel(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -431,7 +443,7 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "Temperature sensor selection This bit is set and cleared by software to enable/disable the temperature sensor. Note: Software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_vsensesel(&mut self, val: bool) {
+        pub const fn set_vsensesel(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
     }
@@ -468,6 +480,7 @@ contains the calibration factor. Note: Software can write these bits only when A
     pub struct Cfgr1(pub u32);
     impl Cfgr1 {
         #[doc = "Direct memory access enable This bit is set and cleared by software to enable the generation of DMA requests. This allows the automatic management of the converted data by the DMA controller. For more details, refer to Section : Managing converted data using the DMA on page 632. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn dmaen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -475,10 +488,11 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "Direct memory access enable This bit is set and cleared by software to enable the generation of DMA requests. This allows the automatic management of the converted data by the DMA controller. For more details, refer to Section : Managing converted data using the DMA on page 632. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_dmaen(&mut self, val: bool) {
+        pub const fn set_dmaen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Direct memory access configuration This bit is set and cleared by software to select between two DMA modes of operation and is effective only when DMAEN = 1. For more details, refer to Section : Managing converted data using the DMA on page 632 Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn dmacfg(&self) -> super::vals::Dmacfg {
             let val = (self.0 >> 1usize) & 0x01;
@@ -486,10 +500,11 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "Direct memory access configuration This bit is set and cleared by software to select between two DMA modes of operation and is effective only when DMAEN = 1. For more details, refer to Section : Managing converted data using the DMA on page 632 Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_dmacfg(&mut self, val: super::vals::Dmacfg) {
+        pub const fn set_dmacfg(&mut self, val: super::vals::Dmacfg) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "Data resolution These bits are written by software to select the resolution of the conversion. Note: The software is allowed to write these bits only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn res(&self) -> super::vals::Res {
             let val = (self.0 >> 2usize) & 0x03;
@@ -497,10 +512,11 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "Data resolution These bits are written by software to select the resolution of the conversion. Note: The software is allowed to write these bits only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_res(&mut self, val: super::vals::Res) {
+        pub const fn set_res(&mut self, val: super::vals::Res) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
         #[doc = "Scan sequence direction This bit is set and cleared by software to select the direction in which the channels is scanned in the sequence. It is effective only if CHSELRMOD bit is cleared to 0. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn scandir(&self) -> super::vals::Scandir {
             let val = (self.0 >> 4usize) & 0x01;
@@ -508,10 +524,11 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "Scan sequence direction This bit is set and cleared by software to select the direction in which the channels is scanned in the sequence. It is effective only if CHSELRMOD bit is cleared to 0. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_scandir(&mut self, val: super::vals::Scandir) {
+        pub const fn set_scandir(&mut self, val: super::vals::Scandir) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
         #[doc = "Data alignment This bit is set and cleared by software to select right or left alignment. Refer to Figure 78: Data alignment and resolution (oversampling disabled: OVSE = 0) on page 631 Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn align(&self) -> super::vals::Align {
             let val = (self.0 >> 5usize) & 0x01;
@@ -519,10 +536,11 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "Data alignment This bit is set and cleared by software to select right or left alignment. Refer to Figure 78: Data alignment and resolution (oversampling disabled: OVSE = 0) on page 631 Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_align(&mut self, val: super::vals::Align) {
+        pub const fn set_align(&mut self, val: super::vals::Align) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
         #[doc = "External trigger selection These bits select the external event used to trigger the start of conversion (refer to table ADC interconnection in Section 20.4.2: ADC pins and internal signals for details): Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn extsel(&self) -> super::vals::Extsel {
             let val = (self.0 >> 6usize) & 0x07;
@@ -530,10 +548,11 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "External trigger selection These bits select the external event used to trigger the start of conversion (refer to table ADC interconnection in Section 20.4.2: ADC pins and internal signals for details): Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_extsel(&mut self, val: super::vals::Extsel) {
+        pub const fn set_extsel(&mut self, val: super::vals::Extsel) {
             self.0 = (self.0 & !(0x07 << 6usize)) | (((val.to_bits() as u32) & 0x07) << 6usize);
         }
         #[doc = "External trigger enable and polarity selection These bits are set and cleared by software to select the external trigger polarity and enable the trigger. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn exten(&self) -> super::vals::Exten {
             let val = (self.0 >> 10usize) & 0x03;
@@ -541,10 +560,11 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "External trigger enable and polarity selection These bits are set and cleared by software to select the external trigger polarity and enable the trigger. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_exten(&mut self, val: super::vals::Exten) {
+        pub const fn set_exten(&mut self, val: super::vals::Exten) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
         }
         #[doc = "Overrun management mode This bit is set and cleared by software and configure the way data overruns are managed. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn ovrmod(&self) -> super::vals::Ovrmod {
             let val = (self.0 >> 12usize) & 0x01;
@@ -552,10 +572,11 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "Overrun management mode This bit is set and cleared by software and configure the way data overruns are managed. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_ovrmod(&mut self, val: super::vals::Ovrmod) {
+        pub const fn set_ovrmod(&mut self, val: super::vals::Ovrmod) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
         }
         #[doc = "Single / continuous conversion mode This bit is set and cleared by software. If it is set, conversion takes place continuously until it is cleared. Note: It is not possible to have both discontinuous mode and continuous mode enabled: it is forbidden to set both bits DISCEN = 1 and CONT = 1. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn cont(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -563,10 +584,11 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "Single / continuous conversion mode This bit is set and cleared by software. If it is set, conversion takes place continuously until it is cleared. Note: It is not possible to have both discontinuous mode and continuous mode enabled: it is forbidden to set both bits DISCEN = 1 and CONT = 1. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_cont(&mut self, val: bool) {
+        pub const fn set_cont(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Wait conversion mode This bit is set and cleared by software to enable/disable wait conversion mode.sup./sup Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn wait(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -574,10 +596,11 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "Wait conversion mode This bit is set and cleared by software to enable/disable wait conversion mode.sup./sup Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_wait(&mut self, val: bool) {
+        pub const fn set_wait(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Discontinuous mode This bit is set and cleared by software to enable/disable discontinuous mode. Note: It is not possible to have both discontinuous mode and continuous mode enabled: it is forbidden to set both bits DISCEN = 1 and CONT = 1. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn discen(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -585,10 +608,11 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "Discontinuous mode This bit is set and cleared by software to enable/disable discontinuous mode. Note: It is not possible to have both discontinuous mode and continuous mode enabled: it is forbidden to set both bits DISCEN = 1 and CONT = 1. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_discen(&mut self, val: bool) {
+        pub const fn set_discen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Mode selection of the CHSELR register This bit is set and cleared by software to control the ADC_CHSELR feature: Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn chselrmod(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -596,11 +620,12 @@ contains the calibration factor. Note: Software can write these bits only when A
         }
         #[doc = "Mode selection of the CHSELR register This bit is set and cleared by software to control the ADC_CHSELR feature: Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_chselrmod(&mut self, val: bool) {
+        pub const fn set_chselrmod(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "Enable the watchdog on a single channel or on all channels This bit is set and cleared by software to enable the analog watchdog on the channel identified by the AWDCH\\[4:0\\]
 bits or on all the channels Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn awd1sgl(&self) -> super::vals::Awd1sgl {
             let val = (self.0 >> 22usize) & 0x01;
@@ -609,10 +634,11 @@ bits or on all the channels Note: The software is allowed to write this bit only
         #[doc = "Enable the watchdog on a single channel or on all channels This bit is set and cleared by software to enable the analog watchdog on the channel identified by the AWDCH\\[4:0\\]
 bits or on all the channels Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_awd1sgl(&mut self, val: super::vals::Awd1sgl) {
+        pub const fn set_awd1sgl(&mut self, val: super::vals::Awd1sgl) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
         }
         #[doc = "Analog watchdog enable This bit is set and cleared by software. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn awd1en(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -620,11 +646,12 @@ bits or on all the channels Note: The software is allowed to write this bit only
         }
         #[doc = "Analog watchdog enable This bit is set and cleared by software. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_awd1en(&mut self, val: bool) {
+        pub const fn set_awd1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "Analog watchdog channel selection These bits are set and cleared by software. They select the input channel to be guarded by the analog watchdog. ..... Others: Reserved The channel selected by the AWDCH\\[4:0\\]
 bits must be also set into the CHSELR register. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn awd1ch(&self) -> u8 {
             let val = (self.0 >> 26usize) & 0x1f;
@@ -633,7 +660,7 @@ bits must be also set into the CHSELR register. Note: The software is allowed to
         #[doc = "Analog watchdog channel selection These bits are set and cleared by software. They select the input channel to be guarded by the analog watchdog. ..... Others: Reserved The channel selected by the AWDCH\\[4:0\\]
 bits must be also set into the CHSELR register. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_awd1ch(&mut self, val: u8) {
+        pub const fn set_awd1ch(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 26usize)) | (((val as u32) & 0x1f) << 26usize);
         }
     }
@@ -676,6 +703,7 @@ bits must be also set into the CHSELR register. Note: The software is allowed to
     pub struct Cfgr2(pub u32);
     impl Cfgr2 {
         #[doc = "Oversampler Enable This bit is set and cleared by software. Note: Software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn ovse(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -683,10 +711,11 @@ bits must be also set into the CHSELR register. Note: The software is allowed to
         }
         #[doc = "Oversampler Enable This bit is set and cleared by software. Note: Software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_ovse(&mut self, val: bool) {
+        pub const fn set_ovse(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Oversampling ratio This bit filed defines the number of oversampling ratio. Note: The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn ovsr(&self) -> super::vals::OversamplingRatio {
             let val = (self.0 >> 2usize) & 0x07;
@@ -694,10 +723,11 @@ bits must be also set into the CHSELR register. Note: The software is allowed to
         }
         #[doc = "Oversampling ratio This bit filed defines the number of oversampling ratio. Note: The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_ovsr(&mut self, val: super::vals::OversamplingRatio) {
+        pub const fn set_ovsr(&mut self, val: super::vals::OversamplingRatio) {
             self.0 = (self.0 & !(0x07 << 2usize)) | (((val.to_bits() as u32) & 0x07) << 2usize);
         }
         #[doc = "Oversampling shift This bit is set and cleared by software. Others: Reserved Note: The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1(which ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn ovss(&self) -> super::vals::Ovss {
             let val = (self.0 >> 5usize) & 0x0f;
@@ -705,10 +735,11 @@ bits must be also set into the CHSELR register. Note: The software is allowed to
         }
         #[doc = "Oversampling shift This bit is set and cleared by software. Others: Reserved Note: The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1(which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_ovss(&mut self, val: super::vals::Ovss) {
+        pub const fn set_ovss(&mut self, val: super::vals::Ovss) {
             self.0 = (self.0 & !(0x0f << 5usize)) | (((val.to_bits() as u32) & 0x0f) << 5usize);
         }
         #[doc = "Triggered Oversampling This bit is set and cleared by software. Note: The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn tovs(&self) -> super::vals::Tovs {
             let val = (self.0 >> 9usize) & 0x01;
@@ -716,10 +747,11 @@ bits must be also set into the CHSELR register. Note: The software is allowed to
         }
         #[doc = "Triggered Oversampling This bit is set and cleared by software. Note: The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_tovs(&mut self, val: super::vals::Tovs) {
+        pub const fn set_tovs(&mut self, val: super::vals::Tovs) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
         }
         #[doc = "Low frequency trigger mode enable This bit must be set by software. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn lftrig(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -727,7 +759,7 @@ bits must be also set into the CHSELR register. Note: The software is allowed to
         }
         #[doc = "Low frequency trigger mode enable This bit must be set by software. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_lftrig(&mut self, val: bool) {
+        pub const fn set_lftrig(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
     }
@@ -768,6 +800,7 @@ bits must be also set into the CHSELR register. Note: The software is allowed to
     pub struct Chselr(pub u32);
     impl Chselr {
         #[doc = "Channel x selection These bits are written by software and define which channels are part of the sequence of channels to be converted. Note: The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn chsel0(&self, n: usize) -> bool {
             assert!(n < 14usize);
@@ -777,7 +810,7 @@ bits must be also set into the CHSELR register. Note: The software is allowed to
         }
         #[doc = "Channel x selection These bits are written by software and define which channels are part of the sequence of channels to be converted. Note: The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_chsel0(&mut self, n: usize, val: bool) {
+        pub const fn set_chsel0(&mut self, n: usize, val: bool) {
             assert!(n < 14usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -822,6 +855,7 @@ bits must be also set into the CHSELR register. Note: The software is allowed to
     impl ChselrAlternate {
         #[doc = "1st conversion of the sequence These bits are programmed by software with the channel number assigned to the 1st conversion of the sequence. 0b1111 indicates end of the sequence. When 0b1111 (end of sequence) is programmed to the lower sequence channels, these bits are ignored. Refer to SQ8\\[3:0\\]
 for a definition of channel selection. Note: The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn sq(&self, n: usize) -> u8 {
             assert!(n < 8usize);
@@ -832,7 +866,7 @@ for a definition of channel selection. Note: The software is allowed to write th
         #[doc = "1st conversion of the sequence These bits are programmed by software with the channel number assigned to the 1st conversion of the sequence. 0b1111 indicates end of the sequence. When 0b1111 (end of sequence) is programmed to the lower sequence channels, these bits are ignored. Refer to SQ8\\[3:0\\]
 for a definition of channel selection. Note: The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_sq(&mut self, n: usize, val: u8) {
+        pub const fn set_sq(&mut self, n: usize, val: u8) {
             assert!(n < 8usize);
             let offs = 0usize + n * 4usize;
             self.0 = (self.0 & !(0x0f << offs)) | (((val as u32) & 0x0f) << offs);
@@ -870,6 +904,7 @@ for a definition of channel selection. Note: The software is allowed to write th
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "ADC enable command This bit is set by software to enable the ADC. The ADC is effectively ready to operate once the ADRDY flag has been set. It is cleared by hardware when the ADC is disabled, after the execution of the ADDIS command. Note: The software is allowed to set ADEN only when all bits of CR registers are 0 (ADCAL = 0, ADSTP = 0, ADSTART = 0, ADDIS = 0 and ADEN = 0)."]
+        #[must_use]
         #[inline(always)]
         pub const fn aden(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -877,10 +912,11 @@ for a definition of channel selection. Note: The software is allowed to write th
         }
         #[doc = "ADC enable command This bit is set by software to enable the ADC. The ADC is effectively ready to operate once the ADRDY flag has been set. It is cleared by hardware when the ADC is disabled, after the execution of the ADDIS command. Note: The software is allowed to set ADEN only when all bits of CR registers are 0 (ADCAL = 0, ADSTP = 0, ADSTART = 0, ADDIS = 0 and ADEN = 0)."]
         #[inline(always)]
-        pub fn set_aden(&mut self, val: bool) {
+        pub const fn set_aden(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "ADC disable command This bit is set by software to disable the ADC (ADDIS command) and put it into power-down state (OFF state). It is cleared by hardware once the ADC is effectively disabled (ADEN is also cleared by hardware at this time). Note: Setting ADDIS to 1 is only effective when ADEN = 1 and ADSTART = 0 (which ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn addis(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -888,11 +924,12 @@ for a definition of channel selection. Note: The software is allowed to write th
         }
         #[doc = "ADC disable command This bit is set by software to disable the ADC (ADDIS command) and put it into power-down state (OFF state). It is cleared by hardware once the ADC is effectively disabled (ADEN is also cleared by hardware at this time). Note: Setting ADDIS to 1 is only effective when ADEN = 1 and ADSTART = 0 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_addis(&mut self, val: bool) {
+        pub const fn set_addis(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "ADC start conversion command This bit is set by software to start ADC conversion. Depending on the EXTEN \\[1:0\\]
 configuration bits, a conversion either starts immediately (software trigger configuration) or once a hardware trigger event occurs (hardware trigger configuration). It is cleared by hardware: In single conversion mode (CONT = 0, DISCEN = 0), when software trigger is selected (EXTEN = 00): at the assertion of the end of Conversion Sequence (EOS) flag. In discontinuous conversion mode(CONT=0, DISCEN = 1), when the software trigger is selected (EXTEN = 00): at the assertion of the end of Conversion (EOC) flag. In all other cases: after the execution of the ADSTP command, at the same time as the ADSTP bit is cleared by hardware. Note: The software is allowed to set ADSTART only when ADEN = 1 and ADDIS = 0 (ADC is enabled and there is no pending request to disable the ADC)."]
+        #[must_use]
         #[inline(always)]
         pub const fn adstart(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -901,10 +938,11 @@ configuration bits, a conversion either starts immediately (software trigger con
         #[doc = "ADC start conversion command This bit is set by software to start ADC conversion. Depending on the EXTEN \\[1:0\\]
 configuration bits, a conversion either starts immediately (software trigger configuration) or once a hardware trigger event occurs (hardware trigger configuration). It is cleared by hardware: In single conversion mode (CONT = 0, DISCEN = 0), when software trigger is selected (EXTEN = 00): at the assertion of the end of Conversion Sequence (EOS) flag. In discontinuous conversion mode(CONT=0, DISCEN = 1), when the software trigger is selected (EXTEN = 00): at the assertion of the end of Conversion (EOC) flag. In all other cases: after the execution of the ADSTP command, at the same time as the ADSTP bit is cleared by hardware. Note: The software is allowed to set ADSTART only when ADEN = 1 and ADDIS = 0 (ADC is enabled and there is no pending request to disable the ADC)."]
         #[inline(always)]
-        pub fn set_adstart(&mut self, val: bool) {
+        pub const fn set_adstart(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "ADC stop conversion command This bit is set by software to stop and discard an ongoing conversion (ADSTP Command). It is cleared by hardware when the conversion is effectively discarded and the ADC is ready to accept a new start conversion command. Note: To clear the A/D converter state, ADSTP must be set to 1 even if ADSTART is cleared to 0 after the software trigger A/D conversion. It is recommended to set ADSTP to 1 whenever the configuration needs to be modified."]
+        #[must_use]
         #[inline(always)]
         pub const fn adstp(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -912,10 +950,11 @@ configuration bits, a conversion either starts immediately (software trigger con
         }
         #[doc = "ADC stop conversion command This bit is set by software to stop and discard an ongoing conversion (ADSTP Command). It is cleared by hardware when the conversion is effectively discarded and the ADC is ready to accept a new start conversion command. Note: To clear the A/D converter state, ADSTP must be set to 1 even if ADSTART is cleared to 0 after the software trigger A/D conversion. It is recommended to set ADSTP to 1 whenever the configuration needs to be modified."]
         #[inline(always)]
-        pub fn set_adstp(&mut self, val: bool) {
+        pub const fn set_adstp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "ADC voltage regulator enable This bit is set by software, to enable the ADC internal voltage regulator. The voltage regulator output is available after tsubADCVREG_SETUP/sub. It is cleared by software to disable the voltage regulator. It can be cleared only if ADEN is et to 0. Note: The software is allowed to program this bit field only when the ADC is disabled (ADCAL = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
+        #[must_use]
         #[inline(always)]
         pub const fn advregen(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -923,10 +962,11 @@ configuration bits, a conversion either starts immediately (software trigger con
         }
         #[doc = "ADC voltage regulator enable This bit is set by software, to enable the ADC internal voltage regulator. The voltage regulator output is available after tsubADCVREG_SETUP/sub. It is cleared by software to disable the voltage regulator. It can be cleared only if ADEN is et to 0. Note: The software is allowed to program this bit field only when the ADC is disabled (ADCAL = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
         #[inline(always)]
-        pub fn set_advregen(&mut self, val: bool) {
+        pub const fn set_advregen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "ADC calibration This bit is set by software to start the calibration of the ADC. It is cleared by hardware after calibration is complete. Note: The software is allowed to set ADCAL only when the ADC is disabled (ADCAL = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0, AUTOFF = 0, and ADEN = 0). Note: The software is allowed to update the calibration factor by writing CALFACT only when ADEN is set to 1 and ADSTART is cleared to 0 by writing ADSTP to 1 (ADC enabled and no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn adcal(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -934,7 +974,7 @@ configuration bits, a conversion either starts immediately (software trigger con
         }
         #[doc = "ADC calibration This bit is set by software to start the calibration of the ADC. It is cleared by hardware after calibration is complete. Note: The software is allowed to set ADCAL only when the ADC is disabled (ADCAL = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0, AUTOFF = 0, and ADEN = 0). Note: The software is allowed to update the calibration factor by writing CALFACT only when ADEN is set to 1 and ADSTART is cleared to 0 by writing ADSTP to 1 (ADC enabled and no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_adcal(&mut self, val: bool) {
+        pub const fn set_adcal(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -969,6 +1009,7 @@ configuration bits, a conversion either starts immediately (software trigger con
     impl Dr {
         #[doc = "Converted data These bits are read-only. They contain the conversion result from the last converted channel. The data are left- or right-aligned as shown in Figure 78: Data alignment and resolution (oversampling disabled: OVSE = 0) on page 631. Just after a calibration is complete, DATA\\[6:0\\]
 contains the calibration factor."]
+        #[must_use]
         #[inline(always)]
         pub const fn data(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -977,7 +1018,7 @@ contains the calibration factor."]
         #[doc = "Converted data These bits are read-only. They contain the conversion result from the last converted channel. The data are left- or right-aligned as shown in Figure 78: Data alignment and resolution (oversampling disabled: OVSE = 0) on page 631. Just after a calibration is complete, DATA\\[6:0\\]
 contains the calibration factor."]
         #[inline(always)]
-        pub fn set_data(&mut self, val: u16) {
+        pub const fn set_data(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -1004,6 +1045,7 @@ contains the calibration factor."]
     pub struct Ier(pub u32);
     impl Ier {
         #[doc = "ADC ready interrupt enable This bit is set and cleared by software to enable/disable the ADC Ready interrupt. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn adrdyie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1011,10 +1053,11 @@ contains the calibration factor."]
         }
         #[doc = "ADC ready interrupt enable This bit is set and cleared by software to enable/disable the ADC Ready interrupt. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_adrdyie(&mut self, val: bool) {
+        pub const fn set_adrdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "End of sampling flag interrupt enable This bit is set and cleared by software to enable/disable the end of the sampling phase interrupt. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn eosmpie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1022,10 +1065,11 @@ contains the calibration factor."]
         }
         #[doc = "End of sampling flag interrupt enable This bit is set and cleared by software to enable/disable the end of the sampling phase interrupt. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_eosmpie(&mut self, val: bool) {
+        pub const fn set_eosmpie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "End of conversion interrupt enable This bit is set and cleared by software to enable/disable the end of conversion interrupt. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn eocie(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1033,10 +1077,11 @@ contains the calibration factor."]
         }
         #[doc = "End of conversion interrupt enable This bit is set and cleared by software to enable/disable the end of conversion interrupt. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_eocie(&mut self, val: bool) {
+        pub const fn set_eocie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "End of conversion sequence interrupt enable This bit is set and cleared by software to enable/disable the end of sequence of conversions interrupt. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn eosie(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1044,10 +1089,11 @@ contains the calibration factor."]
         }
         #[doc = "End of conversion sequence interrupt enable This bit is set and cleared by software to enable/disable the end of sequence of conversions interrupt. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_eosie(&mut self, val: bool) {
+        pub const fn set_eosie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Overrun interrupt enable This bit is set and cleared by software to enable/disable the overrun interrupt. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn ovrie(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1055,10 +1101,11 @@ contains the calibration factor."]
         }
         #[doc = "Overrun interrupt enable This bit is set and cleared by software to enable/disable the overrun interrupt. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_ovrie(&mut self, val: bool) {
+        pub const fn set_ovrie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Analog watchdog 1 interrupt enable This bit is set and cleared by software to enable/disable the analog watchdog interrupt. Note: The Software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn awdie(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -1068,12 +1115,13 @@ contains the calibration factor."]
         }
         #[doc = "Analog watchdog 1 interrupt enable This bit is set and cleared by software to enable/disable the analog watchdog interrupt. Note: The Software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_awdie(&mut self, n: usize, val: bool) {
+        pub const fn set_awdie(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 7usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "End of calibration interrupt enable This bit is set and cleared by software to enable/disable the end of calibration interrupt. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn eocalie(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1081,10 +1129,11 @@ contains the calibration factor."]
         }
         #[doc = "End of calibration interrupt enable This bit is set and cleared by software to enable/disable the end of calibration interrupt. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_eocalie(&mut self, val: bool) {
+        pub const fn set_eocalie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "LDO ready interrupt enable This bit is set and cleared by software. It is used to enable/disable the LDORDY interrupt. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensure that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn ldordyie(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -1092,7 +1141,7 @@ contains the calibration factor."]
         }
         #[doc = "LDO ready interrupt enable This bit is set and cleared by software. It is used to enable/disable the LDORDY interrupt. Note: The software is allowed to write this bit only when ADSTART bit is cleared to 0 by writing ADSTP to 1 (this ensure that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_ldordyie(&mut self, val: bool) {
+        pub const fn set_ldordyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
     }
@@ -1130,6 +1179,7 @@ contains the calibration factor."]
     pub struct Isr(pub u32);
     impl Isr {
         #[doc = "ADC ready This bit is set by hardware after the ADC has been enabled (ADEN = 1) and when the ADC reaches a state where it is ready to accept conversion requests. It is cleared by software writing 1 to it."]
+        #[must_use]
         #[inline(always)]
         pub const fn adrdy(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1137,10 +1187,11 @@ contains the calibration factor."]
         }
         #[doc = "ADC ready This bit is set by hardware after the ADC has been enabled (ADEN = 1) and when the ADC reaches a state where it is ready to accept conversion requests. It is cleared by software writing 1 to it."]
         #[inline(always)]
-        pub fn set_adrdy(&mut self, val: bool) {
+        pub const fn set_adrdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "End of sampling flag This bit is set by hardware during the conversion, at the end of the sampling phase.It is cleared by software by writing 1 to it."]
+        #[must_use]
         #[inline(always)]
         pub const fn eosmp(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1148,10 +1199,11 @@ contains the calibration factor."]
         }
         #[doc = "End of sampling flag This bit is set by hardware during the conversion, at the end of the sampling phase.It is cleared by software by writing 1 to it."]
         #[inline(always)]
-        pub fn set_eosmp(&mut self, val: bool) {
+        pub const fn set_eosmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "End of conversion flag This bit is set by hardware at the end of each conversion of a channel when a new data result is available in the DR register. It is cleared by software writing 1 to it or by reading the ADC_DR register."]
+        #[must_use]
         #[inline(always)]
         pub const fn eoc(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1159,10 +1211,11 @@ contains the calibration factor."]
         }
         #[doc = "End of conversion flag This bit is set by hardware at the end of each conversion of a channel when a new data result is available in the DR register. It is cleared by software writing 1 to it or by reading the ADC_DR register."]
         #[inline(always)]
-        pub fn set_eoc(&mut self, val: bool) {
+        pub const fn set_eoc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "End of sequence flag This bit is set by hardware at the end of the conversion of a sequence of channels selected by the CHSEL bits. It is cleared by software writing 1 to it."]
+        #[must_use]
         #[inline(always)]
         pub const fn eos(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1170,10 +1223,11 @@ contains the calibration factor."]
         }
         #[doc = "End of sequence flag This bit is set by hardware at the end of the conversion of a sequence of channels selected by the CHSEL bits. It is cleared by software writing 1 to it."]
         #[inline(always)]
-        pub fn set_eos(&mut self, val: bool) {
+        pub const fn set_eos(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "ADC overrun This bit is set by hardware when an overrun occurs, meaning that a new conversion has complete while the EOC flag was already set. It is cleared by software writing 1 to it."]
+        #[must_use]
         #[inline(always)]
         pub const fn ovr(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1181,10 +1235,11 @@ contains the calibration factor."]
         }
         #[doc = "ADC overrun This bit is set by hardware when an overrun occurs, meaning that a new conversion has complete while the EOC flag was already set. It is cleared by software writing 1 to it."]
         #[inline(always)]
-        pub fn set_ovr(&mut self, val: bool) {
+        pub const fn set_ovr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Analog watchdog 1 flag This bit is set by hardware when the converted voltage crosses the values programmed in TR1 and ADC_HR1 registers. It is cleared by software by writing 1 to it."]
+        #[must_use]
         #[inline(always)]
         pub const fn awd(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -1194,12 +1249,13 @@ contains the calibration factor."]
         }
         #[doc = "Analog watchdog 1 flag This bit is set by hardware when the converted voltage crosses the values programmed in TR1 and ADC_HR1 registers. It is cleared by software by writing 1 to it."]
         #[inline(always)]
-        pub fn set_awd(&mut self, n: usize, val: bool) {
+        pub const fn set_awd(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 7usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "End of calibration flag This bit is set by hardware when calibration is complete. It is cleared by software writing 1 to it."]
+        #[must_use]
         #[inline(always)]
         pub const fn eocal(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1207,10 +1263,11 @@ contains the calibration factor."]
         }
         #[doc = "End of calibration flag This bit is set by hardware when calibration is complete. It is cleared by software writing 1 to it."]
         #[inline(always)]
-        pub fn set_eocal(&mut self, val: bool) {
+        pub const fn set_eocal(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "LDO ready This bit is set by hardware. It indicates that the ADC internal LDO output is ready. It is cleared by software by writing 1 to it."]
+        #[must_use]
         #[inline(always)]
         pub const fn ldordy(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -1218,7 +1275,7 @@ contains the calibration factor."]
         }
         #[doc = "LDO ready This bit is set by hardware. It indicates that the ADC internal LDO output is ready. It is cleared by software by writing 1 to it."]
         #[inline(always)]
-        pub fn set_ldordy(&mut self, val: bool) {
+        pub const fn set_ldordy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
     }
@@ -1256,6 +1313,7 @@ contains the calibration factor."]
     pub struct Pwr(pub u32);
     impl Pwr {
         #[doc = "Auto-off mode bit This bit is set and cleared by software. it is used to enable/disable the Auto-off mode. Note: The software is allowed to write this bit only when ADEN bit is cleared to 0 (this ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn autoff(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1263,10 +1321,11 @@ contains the calibration factor."]
         }
         #[doc = "Auto-off mode bit This bit is set and cleared by software. it is used to enable/disable the Auto-off mode. Note: The software is allowed to write this bit only when ADEN bit is cleared to 0 (this ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_autoff(&mut self, val: bool) {
+        pub const fn set_autoff(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Deep-power-down mode bit This bit is set and cleared by software. It is used to enable/disable Deep-power-down mode in Autonomous mode when the ADC is not used. Note: The software is allowed to write this bit only when ADEN bit is cleared to 0 (this ensures that no conversion is ongoing). Note: Setting DPD in Auto-off mode automatically disables the LDO."]
+        #[must_use]
         #[inline(always)]
         pub const fn dpd(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1274,7 +1333,7 @@ contains the calibration factor."]
         }
         #[doc = "Deep-power-down mode bit This bit is set and cleared by software. It is used to enable/disable Deep-power-down mode in Autonomous mode when the ADC is not used. Note: The software is allowed to write this bit only when ADEN bit is cleared to 0 (this ensures that no conversion is ongoing). Note: Setting DPD in Auto-off mode automatically disables the LDO."]
         #[inline(always)]
-        pub fn set_dpd(&mut self, val: bool) {
+        pub const fn set_dpd(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -1309,6 +1368,7 @@ contains the calibration factor."]
     pub struct Smpr(pub u32);
     impl Smpr {
         #[doc = "Sampling time selection 1 These bits are written by software to select the sampling time that applies to all channels. Note: The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn smp(&self, n: usize) -> super::vals::SampleTime {
             assert!(n < 2usize);
@@ -1318,12 +1378,13 @@ contains the calibration factor."]
         }
         #[doc = "Sampling time selection 1 These bits are written by software to select the sampling time that applies to all channels. Note: The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_smp(&mut self, n: usize, val: super::vals::SampleTime) {
+        pub const fn set_smp(&mut self, n: usize, val: super::vals::SampleTime) {
             assert!(n < 2usize);
             let offs = 0usize + n * 4usize;
             self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
         }
         #[doc = "Channel-x sampling time selection These bits are written by software to define which sampling time is used. Note: The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
+        #[must_use]
         #[inline(always)]
         pub const fn smpsel(&self, n: usize) -> super::vals::Smpsel {
             assert!(n < 14usize);
@@ -1333,7 +1394,7 @@ contains the calibration factor."]
         }
         #[doc = "Channel-x sampling time selection These bits are written by software to define which sampling time is used. Note: The software is allowed to write this bit only when ADSTART is cleared to 0 by writing ADSTP to 1 (which ensures that no conversion is ongoing)."]
         #[inline(always)]
-        pub fn set_smpsel(&mut self, n: usize, val: super::vals::Smpsel) {
+        pub const fn set_smpsel(&mut self, n: usize, val: super::vals::Smpsel) {
             assert!(n < 14usize);
             let offs = 8usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);

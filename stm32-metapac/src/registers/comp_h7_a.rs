@@ -329,6 +329,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
+                    name: "TIM15OC1",
+                    description: None,
+                    value: 6,
+                },
+                EnumVariant {
                     name: "TIM1OC5",
                     description: None,
                     value: 1,
@@ -353,11 +358,6 @@ pub(crate) static REGISTERS: IR = IR {
                     description: None,
                     value: 5,
                 },
-                EnumVariant {
-                    name: "TIM15OC1",
-                    description: None,
-                    value: 6,
-                },
             ],
         },
         Enum {
@@ -366,9 +366,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NONE",
+                    name: "HIGH",
                     description: None,
-                    value: 0,
+                    value: 3,
                 },
                 EnumVariant {
                     name: "LOW",
@@ -381,9 +381,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HIGH",
+                    name: "NONE",
                     description: None,
-                    value: 3,
+                    value: 0,
                 },
             ],
         },
@@ -392,26 +392,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 4,
             variants: &[
-                EnumVariant {
-                    name: "VREF_1OVER4",
-                    description: None,
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "VREF_1OVER2",
-                    description: None,
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "VREF_3OVER4",
-                    description: None,
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "VREF",
-                    description: None,
-                    value: 3,
-                },
                 EnumVariant {
                     name: "INM4",
                     description: None,
@@ -441,6 +421,26 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "INM9",
                     description: None,
                     value: 9,
+                },
+                EnumVariant {
+                    name: "VREF",
+                    description: None,
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "VREF_1OVER2",
+                    description: None,
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "VREF_1OVER4",
+                    description: None,
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "VREF_3OVER4",
+                    description: None,
+                    value: 2,
                 },
             ],
         },
@@ -472,6 +472,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
+                    name: "LOW",
+                    description: Some("Ultra low power / ultra-low-power"),
+                    value: 3,
+                },
+                EnumVariant {
                     name: "MEDIUM",
                     description: Some("Medium speed / medium power"),
                     value: 1,
@@ -480,11 +485,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "MEDIUM_EITHER",
                     description: Some("Medium speed / medium power"),
                     value: 2,
-                },
-                EnumVariant {
-                    name: "LOW",
-                    description: Some("Ultra low power / ultra-low-power"),
-                    value: 3,
                 },
             ],
         },

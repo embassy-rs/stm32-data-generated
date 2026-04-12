@@ -2592,18 +2592,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "SYSTEM_FLASH",
-                    description: Some(
-                        "System flash memory mapped at 0x000010000",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "SRAM",
                     description: Some(
                         "Embedded SRAM mapped at 0x000010000",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "SYSTEM_FLASH",
+                    description: Some(
+                        "System flash memory mapped at 0x000010000",
+                    ),
+                    value: 1,
                 },
             ],
         },

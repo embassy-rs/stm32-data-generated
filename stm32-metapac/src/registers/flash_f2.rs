@@ -402,11 +402,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PSIZE8",
-                    description: Some("Program x8"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "PSIZE16",
                     description: Some("Program x16"),
                     value: 1,
@@ -420,6 +415,11 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "PSIZE64",
                     description: Some("Program x64"),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "PSIZE8",
+                    description: Some("Program x8"),
+                    value: 0,
                 },
             ],
         },

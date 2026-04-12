@@ -345,18 +345,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOW",
-                    description: Some(
-                        "Low range (VDDA < 2.4 V)",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "HIGH",
                     description: Some(
                         "High range (VDDA > 2.4 V)",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "LOW",
+                    description: Some(
+                        "Low range (VDDA < 2.4 V)",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -401,6 +401,13 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
+                    name: "GAIN16",
+                    description: Some(
+                        "Gain 16",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
                     name: "GAIN2",
                     description: Some(
                         "Gain 2",
@@ -420,13 +427,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Gain 8",
                     ),
                     value: 2,
-                },
-                EnumVariant {
-                    name: "GAIN16",
-                    description: Some(
-                        "Gain 16",
-                    ),
-                    value: 3,
                 },
             ],
         },
@@ -464,18 +464,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "GPIO",
-                    description: Some(
-                        "GPIO connected to VINP",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "DAC",
                     description: Some(
                         "DAC connected to VINP",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "GPIO",
+                    description: Some(
+                        "GPIO connected to VINP",
+                    ),
+                    value: 0,
                 },
             ],
         },

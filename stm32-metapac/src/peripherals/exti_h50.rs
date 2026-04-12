@@ -23,55 +23,55 @@ impl Exti {
     #[inline(always)]
     pub const fn rtsr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize + n * 32usize) as _) }
     }
     #[doc = "falling trigger selection register"]
     #[inline(always)]
     pub const fn ftsr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize + n * 32usize) as _) }
     }
     #[doc = "software interrupt event register"]
     #[inline(always)]
     pub const fn swier(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize + n * 32usize) as _) }
     }
     #[doc = "rising edge pending register"]
     #[inline(always)]
     pub const fn rpr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize + n * 32usize) as _) }
     }
     #[doc = "falling edge pending register"]
     #[inline(always)]
     pub const fn fpr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize + n * 32usize) as _) }
     }
     #[doc = "privilege configuration register"]
     #[inline(always)]
     pub const fn privcfgr(self, n: usize) -> crate::common::Reg<regs::Priv, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize + n * 32usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize + n * 32usize) as _) }
     }
     #[doc = "external interrupt selection register"]
     #[inline(always)]
     pub const fn exticr(self, n: usize) -> crate::common::Reg<regs::Exti, crate::common::RW> {
         assert!(n < 4usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x60usize + n * 4usize) as _) }
     }
     #[doc = "CPU wakeup with interrupt mask register"]
     #[inline(always)]
     pub const fn imr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize + n * 16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80usize + n * 16usize) as _) }
     }
     #[doc = "CPU wakeup with event mask register"]
     #[inline(always)]
     pub const fn emr(self, n: usize) -> crate::common::Reg<regs::Lines, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize + n * 16usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x84usize + n * 16usize) as _) }
     }
 }
 pub mod regs {
@@ -81,6 +81,7 @@ pub mod regs {
     pub struct Exti(pub u32);
     impl Exti {
         #[doc = "EXTI12 GPIO port selection These bits are written by software to select the source input for EXTI12 external interrupt. When EXTI_PRIVCFGR.PRIV12 is disabled, EXTI12 can be accessed with privileged and unprivileged access. When EXTI_PRIVCFGR.PRIV12 is enabled, EXTI12 can only be accessed with privileged access. Unprivileged write to this bit is discarded. Others: reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn exti(&self, n: usize) -> u8 {
             assert!(n < 4usize);
@@ -90,7 +91,7 @@ pub mod regs {
         }
         #[doc = "EXTI12 GPIO port selection These bits are written by software to select the source input for EXTI12 external interrupt. When EXTI_PRIVCFGR.PRIV12 is disabled, EXTI12 can be accessed with privileged and unprivileged access. When EXTI_PRIVCFGR.PRIV12 is enabled, EXTI12 can only be accessed with privileged access. Unprivileged write to this bit is discarded. Others: reserved"]
         #[inline(always)]
-        pub fn set_exti(&mut self, n: usize, val: u8) {
+        pub const fn set_exti(&mut self, n: usize, val: u8) {
             assert!(n < 4usize);
             let offs = 0usize + n * 8usize;
             self.0 = (self.0 & !(0xff << offs)) | (((val as u32) & 0xff) << offs);
@@ -131,6 +132,7 @@ pub mod regs {
     pub struct Lines(pub u32);
     impl Lines {
         #[doc = "EXTI line"]
+        #[must_use]
         #[inline(always)]
         pub const fn line(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -140,7 +142,7 @@ pub mod regs {
         }
         #[doc = "EXTI line"]
         #[inline(always)]
-        pub fn set_line(&mut self, n: usize, val: bool) {
+        pub const fn set_line(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -202,6 +204,7 @@ pub mod regs {
     pub struct Priv(pub u32);
     impl Priv {
         #[doc = "Security enable on event input x When EXTI_SECCFGR.SECx is disabled, PRIVx can be accessed with secure and non-secure access. When EXTI_SECCFGR.SECx is enabled, PRIVx can only be written with secure access. Non-secure write to this PRIVx is discarded."]
+        #[must_use]
         #[inline(always)]
         pub const fn priv_(&self, n: usize) -> bool {
             assert!(n < 32usize);
@@ -211,7 +214,7 @@ pub mod regs {
         }
         #[doc = "Security enable on event input x When EXTI_SECCFGR.SECx is disabled, PRIVx can be accessed with secure and non-secure access. When EXTI_SECCFGR.SECx is enabled, PRIVx can only be written with secure access. Non-secure write to this PRIVx is discarded."]
         #[inline(always)]
-        pub fn set_priv_(&mut self, n: usize, val: bool) {
+        pub const fn set_priv_(&mut self, n: usize, val: bool) {
             assert!(n < 32usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);

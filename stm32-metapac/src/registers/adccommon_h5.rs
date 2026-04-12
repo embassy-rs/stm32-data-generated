@@ -737,18 +737,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ONE_SHOT",
-                    description: Some(
-                        "DMA One Shot mode selected",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "CIRCULAR",
                     description: Some(
                         "DMA Circular mode selected",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "ONE_SHOT",
+                    description: Some(
+                        "DMA One Shot mode selected",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -758,25 +758,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "INDEPENDENT",
+                    name: "DUAL_A",
                     description: Some(
-                        "Independent mode",
+                        "Dual, alternate trigger mode only",
                     ),
-                    value: 0,
+                    value: 9,
                 },
                 EnumVariant {
-                    name: "DUAL_RJ",
+                    name: "DUAL_I",
                     description: Some(
-                        "Dual, combined regular simultaneous + injected simultaneous mode",
+                        "Dual, interleaved mode only",
                     ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DUAL_RA",
-                    description: Some(
-                        "Dual, combined regular simultaneous + alternate trigger mode",
-                    ),
-                    value: 2,
+                    value: 7,
                 },
                 EnumVariant {
                     name: "DUAL_IJ",
@@ -800,18 +793,25 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 6,
                 },
                 EnumVariant {
-                    name: "DUAL_I",
+                    name: "DUAL_RA",
                     description: Some(
-                        "Dual, interleaved mode only",
+                        "Dual, combined regular simultaneous + alternate trigger mode",
                     ),
-                    value: 7,
+                    value: 2,
                 },
                 EnumVariant {
-                    name: "DUAL_A",
+                    name: "DUAL_RJ",
                     description: Some(
-                        "Dual, alternate trigger mode only",
+                        "Dual, combined regular simultaneous + injected simultaneous mode",
                     ),
-                    value: 9,
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "INDEPENDENT",
+                    description: Some(
+                        "Independent mode",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -842,13 +842,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NO_PACK",
-                    description: Some(
-                        "Without data packing, CDR/CDR2 not used",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FORMAT32TO10",
                     description: Some(
                         "CDR formatted for 32-bit down to 10-bit resolution",
@@ -861,6 +854,13 @@ pub(crate) static REGISTERS: IR = IR {
                         "CDR formatted for 8-bit resolution",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "NO_PACK",
+                    description: Some(
+                        "Without data packing, CDR/CDR2 not used",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -877,11 +877,53 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
+                    name: "DIV10",
+                    description: Some(
+                        "adc_ker_ck_input divided by 10",
+                    ),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DIV12",
+                    description: Some(
+                        "adc_ker_ck_input divided by 12",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DIV128",
+                    description: Some(
+                        "adc_ker_ck_input divided by 128",
+                    ),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some(
+                        "adc_ker_ck_input divided by 16",
+                    ),
+                    value: 7,
+                },
+                EnumVariant {
                     name: "DIV2",
                     description: Some(
                         "adc_ker_ck_input divided by 2",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "DIV256",
+                    description: Some(
+                        "adc_ker_ck_input divided by 256",
+                    ),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "DIV32",
+                    description: Some(
+                        "adc_ker_ck_input divided by 32",
+                    ),
+                    value: 8,
                 },
                 EnumVariant {
                     name: "DIV4",
@@ -898,41 +940,6 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "adc_ker_ck_input divided by 8",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIV10",
-                    description: Some(
-                        "adc_ker_ck_input divided by 10",
-                    ),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DIV12",
-                    description: Some(
-                        "adc_ker_ck_input divided by 12",
-                    ),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DIV16",
-                    description: Some(
-                        "adc_ker_ck_input divided by 16",
-                    ),
-                    value: 7,
-                },
-                EnumVariant {
-                    name: "DIV32",
-                    description: Some(
-                        "adc_ker_ck_input divided by 32",
-                    ),
-                    value: 8,
-                },
-                EnumVariant {
                     name: "DIV64",
                     description: Some(
                         "adc_ker_ck_input divided by 64",
@@ -940,18 +947,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 9,
                 },
                 EnumVariant {
-                    name: "DIV128",
+                    name: "DIV8",
                     description: Some(
-                        "adc_ker_ck_input divided by 128",
+                        "adc_ker_ck_input divided by 8",
                     ),
-                    value: 10,
-                },
-                EnumVariant {
-                    name: "DIV256",
-                    description: Some(
-                        "adc_ker_ck_input divided by 256",
-                    ),
-                    value: 11,
+                    value: 4,
                 },
             ],
         },

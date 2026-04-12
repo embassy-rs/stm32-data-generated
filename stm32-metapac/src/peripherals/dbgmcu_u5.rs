@@ -22,102 +22,102 @@ impl Dbgmcu {
     #[doc = "DBGMCU_IDCODE"]
     #[inline(always)]
     pub const fn idcode(self) -> crate::common::Reg<regs::Idcode, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Debug MCU configuration register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Debug MCU APB1L peripheral freeze register"]
     #[inline(always)]
     pub const fn apb1lfzr(self) -> crate::common::Reg<regs::Apb1lfzr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "Debug MCU APB1H peripheral freeze register"]
     #[inline(always)]
     pub const fn apb1hfzr(self) -> crate::common::Reg<regs::Apb1hfzr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "Debug MCU APB2 peripheral freeze register"]
     #[inline(always)]
     pub const fn apb2fzr(self) -> crate::common::Reg<regs::Apb2fzr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "Debug MCU APB3 peripheral freeze register"]
     #[inline(always)]
     pub const fn apb3fzr(self) -> crate::common::Reg<regs::Apb3fzr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "Debug MCU AHB1 peripheral freeze register"]
     #[inline(always)]
     pub const fn ahb1fzr(self) -> crate::common::Reg<regs::Ahb1fzr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "Debug MCU AHB3 peripheral freeze register"]
     #[inline(always)]
     pub const fn ahb3fzr(self) -> crate::common::Reg<regs::Ahb3fzr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "DBGMCU status register"]
     #[inline(always)]
     pub const fn dbgmcu_sr(self) -> crate::common::Reg<regs::DbgmcuSr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xfcusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xfcusize) as _) }
     }
     #[doc = "DBGMCU debug host authentication register"]
     #[inline(always)]
     pub const fn dbgmcu_dbg_auth_host(self) -> crate::common::Reg<regs::DbgmcuDbgAuthHost, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize) as _) }
     }
     #[doc = "DBGMCU debug device authentication register"]
     #[inline(always)]
     pub const fn dbgmcu_dbg_auth_device(self) -> crate::common::Reg<regs::DbgmcuDbgAuthDevice, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0104usize) as _) }
     }
     #[doc = "Debug MCU CoreSight peripheral identity register 4"]
     #[inline(always)]
     pub const fn pidr4(self) -> crate::common::Reg<regs::Pidr4, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fd0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0fd0usize) as _) }
     }
     #[doc = "Debug MCU CoreSight peripheral identity register 0"]
     #[inline(always)]
     pub const fn pidr0(self) -> crate::common::Reg<regs::Pidr0, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fe0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0fe0usize) as _) }
     }
     #[doc = "Debug MCU CoreSight peripheral identity register 1"]
     #[inline(always)]
     pub const fn pidr1(self) -> crate::common::Reg<regs::Pidr1, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fe4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0fe4usize) as _) }
     }
     #[doc = "Debug MCU CoreSight peripheral identity register 2"]
     #[inline(always)]
     pub const fn pidr2(self) -> crate::common::Reg<regs::Pidr2, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fe8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0fe8usize) as _) }
     }
     #[doc = "Debug MCU CoreSight peripheral identity register 3"]
     #[inline(always)]
     pub const fn pidr3(self) -> crate::common::Reg<regs::Pidr3, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0fecusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0fecusize) as _) }
     }
     #[doc = "Debug MCU CoreSight component identity register 0"]
     #[inline(always)]
     pub const fn cidr0(self) -> crate::common::Reg<regs::Cidr0, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ff0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0ff0usize) as _) }
     }
     #[doc = "Debug MCU CoreSight component identity register 1"]
     #[inline(always)]
     pub const fn cidr1(self) -> crate::common::Reg<regs::Cidr1, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ff4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0ff4usize) as _) }
     }
     #[doc = "Debug MCU CoreSight component identity register 2"]
     #[inline(always)]
     pub const fn cidr2(self) -> crate::common::Reg<regs::Cidr2, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ff8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0ff8usize) as _) }
     }
     #[doc = "Debug MCU CoreSight component identity register 3"]
     #[inline(always)]
     pub const fn cidr3(self) -> crate::common::Reg<regs::Cidr3, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0ffcusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0ffcusize) as _) }
     }
 }
 pub mod regs {
@@ -127,6 +127,7 @@ pub mod regs {
     pub struct Ahb1fzr(pub u32);
     impl Ahb1fzr {
         #[doc = "GPDMA channel 0 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma0_stop(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -134,10 +135,11 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 0 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma0_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma0_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "GPDMA channel 1 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma1_stop(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -145,10 +147,11 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 1 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma1_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma1_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "GPDMA channel 2 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma2_stop(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -156,10 +159,11 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 2 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma2_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma2_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GPDMA channel 3 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma3_stop(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -167,10 +171,11 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 3 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma3_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma3_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "GPDMA channel 4 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma4_stop(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -178,10 +183,11 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 4 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma4_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma4_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "GPDMA channel 5 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma5_stop(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -189,10 +195,11 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 5 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma5_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma5_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "GPDMA channel 6 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma6_stop(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -200,10 +207,11 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 6 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma6_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma6_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "GPDMA channel 7 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma7_stop(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -211,10 +219,11 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 7 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma7_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma7_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "GPDMA channel 8 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma8_stop(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -222,10 +231,11 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 8 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma8_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma8_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "GPDMA channel 9 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma9_stop(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -233,10 +243,11 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 9 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma9_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma9_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "GPDMA channel 10 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma10_stop(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -244,10 +255,11 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 10 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma10_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma10_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "GPDMA channel 11 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma11_stop(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -255,10 +267,11 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 11 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma11_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma11_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "GPDMA channel 12 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma12_stop(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -266,10 +279,11 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 12 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma12_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma12_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "GPDMA channel 13 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma13_stop(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -277,10 +291,11 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 13 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma13_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma13_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "GPDMA channel 14 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma14_stop(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -288,10 +303,11 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 14 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma14_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma14_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "GPDMA channel 15 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_gpdma15_stop(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -299,7 +315,7 @@ pub mod regs {
         }
         #[doc = "GPDMA channel 15 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_gpdma15_stop(&mut self, val: bool) {
+        pub const fn set_dbg_gpdma15_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }
@@ -343,6 +359,7 @@ pub mod regs {
     pub struct Ahb3fzr(pub u32);
     impl Ahb3fzr {
         #[doc = "LPDMA channel 0 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_lpdma0_stop(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -350,10 +367,11 @@ pub mod regs {
         }
         #[doc = "LPDMA channel 0 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_lpdma0_stop(&mut self, val: bool) {
+        pub const fn set_dbg_lpdma0_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "LPDMA channel 1 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_lpdma1_stop(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -361,10 +379,11 @@ pub mod regs {
         }
         #[doc = "LPDMA channel 1 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_lpdma1_stop(&mut self, val: bool) {
+        pub const fn set_dbg_lpdma1_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "LPDMA channel 2 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_lpdma2_stop(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -372,10 +391,11 @@ pub mod regs {
         }
         #[doc = "LPDMA channel 2 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_lpdma2_stop(&mut self, val: bool) {
+        pub const fn set_dbg_lpdma2_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "LPDMA channel 3 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_lpdma3_stop(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -383,7 +403,7 @@ pub mod regs {
         }
         #[doc = "LPDMA channel 3 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_lpdma3_stop(&mut self, val: bool) {
+        pub const fn set_dbg_lpdma3_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
@@ -415,6 +435,7 @@ pub mod regs {
     pub struct Apb1hfzr(pub u32);
     impl Apb1hfzr {
         #[doc = "I2C4 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_i2c4_stop(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -422,10 +443,11 @@ pub mod regs {
         }
         #[doc = "I2C4 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_i2c4_stop(&mut self, val: bool) {
+        pub const fn set_dbg_i2c4_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "LPTIM2 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_lptim2_stop(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -433,7 +455,7 @@ pub mod regs {
         }
         #[doc = "LPTIM2 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_lptim2_stop(&mut self, val: bool) {
+        pub const fn set_dbg_lptim2_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
     }
@@ -468,6 +490,7 @@ pub mod regs {
     pub struct Apb1lfzr(pub u32);
     impl Apb1lfzr {
         #[doc = "TIM2 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_tim2_stop(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -475,10 +498,11 @@ pub mod regs {
         }
         #[doc = "TIM2 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_tim2_stop(&mut self, val: bool) {
+        pub const fn set_dbg_tim2_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "TIM3 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_tim3_stop(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -486,10 +510,11 @@ pub mod regs {
         }
         #[doc = "TIM3 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_tim3_stop(&mut self, val: bool) {
+        pub const fn set_dbg_tim3_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "TIM4 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_tim4_stop(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -497,10 +522,11 @@ pub mod regs {
         }
         #[doc = "TIM4 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_tim4_stop(&mut self, val: bool) {
+        pub const fn set_dbg_tim4_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "TIM5 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_tim5_stop(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -508,10 +534,11 @@ pub mod regs {
         }
         #[doc = "TIM5 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_tim5_stop(&mut self, val: bool) {
+        pub const fn set_dbg_tim5_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "TIM6 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_tim6_stop(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -519,10 +546,11 @@ pub mod regs {
         }
         #[doc = "TIM6 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_tim6_stop(&mut self, val: bool) {
+        pub const fn set_dbg_tim6_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "TIM7 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_tim7_stop(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -530,10 +558,11 @@ pub mod regs {
         }
         #[doc = "TIM7 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_tim7_stop(&mut self, val: bool) {
+        pub const fn set_dbg_tim7_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Window watchdog counter stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_wwdg_stop(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -541,10 +570,11 @@ pub mod regs {
         }
         #[doc = "Window watchdog counter stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_wwdg_stop(&mut self, val: bool) {
+        pub const fn set_dbg_wwdg_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Independent watchdog counter stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_iwdg_stop(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -552,10 +582,11 @@ pub mod regs {
         }
         #[doc = "Independent watchdog counter stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_iwdg_stop(&mut self, val: bool) {
+        pub const fn set_dbg_iwdg_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "I2C1 SMBUS timeout stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_i2c1_stop(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -563,10 +594,11 @@ pub mod regs {
         }
         #[doc = "I2C1 SMBUS timeout stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_i2c1_stop(&mut self, val: bool) {
+        pub const fn set_dbg_i2c1_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "I2C2 SMBUS timeout stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_i2c2_stop(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -574,7 +606,7 @@ pub mod regs {
         }
         #[doc = "I2C2 SMBUS timeout stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_i2c2_stop(&mut self, val: bool) {
+        pub const fn set_dbg_i2c2_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
     }
@@ -612,6 +644,7 @@ pub mod regs {
     pub struct Apb2fzr(pub u32);
     impl Apb2fzr {
         #[doc = "TIM1 counter stopped when core is halted"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_tim1_stop(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -619,10 +652,11 @@ pub mod regs {
         }
         #[doc = "TIM1 counter stopped when core is halted"]
         #[inline(always)]
-        pub fn set_dbg_tim1_stop(&mut self, val: bool) {
+        pub const fn set_dbg_tim1_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "TIM8 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_tim8_stop(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -630,10 +664,11 @@ pub mod regs {
         }
         #[doc = "TIM8 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_tim8_stop(&mut self, val: bool) {
+        pub const fn set_dbg_tim8_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "TIM15 counter stopped when core is halted"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_tim15_stop(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -641,10 +676,11 @@ pub mod regs {
         }
         #[doc = "TIM15 counter stopped when core is halted"]
         #[inline(always)]
-        pub fn set_dbg_tim15_stop(&mut self, val: bool) {
+        pub const fn set_dbg_tim15_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "TIM16 counter stopped when core is halted"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_tim16_stop(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -652,10 +688,11 @@ pub mod regs {
         }
         #[doc = "TIM16 counter stopped when core is halted"]
         #[inline(always)]
-        pub fn set_dbg_tim16_stop(&mut self, val: bool) {
+        pub const fn set_dbg_tim16_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "DBG_TIM17_STOP"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_tim17_stop(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -663,7 +700,7 @@ pub mod regs {
         }
         #[doc = "DBG_TIM17_STOP"]
         #[inline(always)]
-        pub fn set_dbg_tim17_stop(&mut self, val: bool) {
+        pub const fn set_dbg_tim17_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
     }
@@ -696,6 +733,7 @@ pub mod regs {
     pub struct Apb3fzr(pub u32);
     impl Apb3fzr {
         #[doc = "I2C3 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_i2c3_stop(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -703,10 +741,11 @@ pub mod regs {
         }
         #[doc = "I2C3 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_i2c3_stop(&mut self, val: bool) {
+        pub const fn set_dbg_i2c3_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "LPTIM1 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_lptim1_stop(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -714,10 +753,11 @@ pub mod regs {
         }
         #[doc = "LPTIM1 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_lptim1_stop(&mut self, val: bool) {
+        pub const fn set_dbg_lptim1_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "LPTIM3 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_lptim3_stop(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -725,10 +765,11 @@ pub mod regs {
         }
         #[doc = "LPTIM3 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_lptim3_stop(&mut self, val: bool) {
+        pub const fn set_dbg_lptim3_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "LPTIM4 stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_lptim4_stop(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -736,10 +777,11 @@ pub mod regs {
         }
         #[doc = "LPTIM4 stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_lptim4_stop(&mut self, val: bool) {
+        pub const fn set_dbg_lptim4_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "RTC stop in debug"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_rtc_stop(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -747,7 +789,7 @@ pub mod regs {
         }
         #[doc = "RTC stop in debug"]
         #[inline(always)]
-        pub fn set_dbg_rtc_stop(&mut self, val: bool) {
+        pub const fn set_dbg_rtc_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
     }
@@ -780,6 +822,7 @@ pub mod regs {
     pub struct Cidr0(pub u32);
     impl Cidr0 {
         #[doc = "component identification bits \\[7:0\\]"]
+        #[must_use]
         #[inline(always)]
         pub const fn preamble(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -787,7 +830,7 @@ pub mod regs {
         }
         #[doc = "component identification bits \\[7:0\\]"]
         #[inline(always)]
-        pub fn set_preamble(&mut self, val: u8) {
+        pub const fn set_preamble(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -814,6 +857,7 @@ pub mod regs {
     pub struct Cidr1(pub u32);
     impl Cidr1 {
         #[doc = "component identification bits \\[11:8\\]"]
+        #[must_use]
         #[inline(always)]
         pub const fn preamble(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -821,11 +865,12 @@ pub mod regs {
         }
         #[doc = "component identification bits \\[11:8\\]"]
         #[inline(always)]
-        pub fn set_preamble(&mut self, val: u8) {
+        pub const fn set_preamble(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "component identification bits \\[15:12\\]
 - component class"]
+        #[must_use]
         #[inline(always)]
         pub const fn class(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -834,7 +879,7 @@ pub mod regs {
         #[doc = "component identification bits \\[15:12\\]
 - component class"]
         #[inline(always)]
-        pub fn set_class(&mut self, val: u8) {
+        pub const fn set_class(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
     }
@@ -869,6 +914,7 @@ pub mod regs {
     pub struct Cidr2(pub u32);
     impl Cidr2 {
         #[doc = "component identification bits \\[23:16\\]"]
+        #[must_use]
         #[inline(always)]
         pub const fn preamble(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -876,7 +922,7 @@ pub mod regs {
         }
         #[doc = "component identification bits \\[23:16\\]"]
         #[inline(always)]
-        pub fn set_preamble(&mut self, val: u8) {
+        pub const fn set_preamble(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -903,6 +949,7 @@ pub mod regs {
     pub struct Cidr3(pub u32);
     impl Cidr3 {
         #[doc = "component identification bits \\[31:24\\]"]
+        #[must_use]
         #[inline(always)]
         pub const fn preamble(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -910,7 +957,7 @@ pub mod regs {
         }
         #[doc = "component identification bits \\[31:24\\]"]
         #[inline(always)]
-        pub fn set_preamble(&mut self, val: u8) {
+        pub const fn set_preamble(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -937,6 +984,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "Debug Stop mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_stop(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -944,10 +992,11 @@ pub mod regs {
         }
         #[doc = "Debug Stop mode"]
         #[inline(always)]
-        pub fn set_dbg_stop(&mut self, val: bool) {
+        pub const fn set_dbg_stop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Debug Standby mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbg_standby(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -955,10 +1004,11 @@ pub mod regs {
         }
         #[doc = "Debug Standby mode"]
         #[inline(always)]
-        pub fn set_dbg_standby(&mut self, val: bool) {
+        pub const fn set_dbg_standby(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Trace pin assignment control"]
+        #[must_use]
         #[inline(always)]
         pub const fn trace_ioen(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -966,10 +1016,11 @@ pub mod regs {
         }
         #[doc = "Trace pin assignment control"]
         #[inline(always)]
-        pub fn set_trace_ioen(&mut self, val: bool) {
+        pub const fn set_trace_ioen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "trace port and clock enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn trace_en(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -977,10 +1028,11 @@ pub mod regs {
         }
         #[doc = "trace port and clock enable"]
         #[inline(always)]
-        pub fn set_trace_en(&mut self, val: bool) {
+        pub const fn set_trace_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Trace pin assignment control"]
+        #[must_use]
         #[inline(always)]
         pub const fn trace_mode(&self) -> u8 {
             let val = (self.0 >> 6usize) & 0x03;
@@ -988,7 +1040,7 @@ pub mod regs {
         }
         #[doc = "Trace pin assignment control"]
         #[inline(always)]
-        pub fn set_trace_mode(&mut self, val: u8) {
+        pub const fn set_trace_mode(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
         }
     }
@@ -1021,6 +1073,7 @@ pub mod regs {
     pub struct DbgmcuDbgAuthDevice(pub u32);
     impl DbgmcuDbgAuthDevice {
         #[doc = "Device specific ID Device specific ID used for RDP regression."]
+        #[must_use]
         #[inline(always)]
         pub const fn auth_id(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1028,7 +1081,7 @@ pub mod regs {
         }
         #[doc = "Device specific ID Device specific ID used for RDP regression."]
         #[inline(always)]
-        pub fn set_auth_id(&mut self, val: u32) {
+        pub const fn set_auth_id(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1057,6 +1110,7 @@ pub mod regs {
     pub struct DbgmcuDbgAuthHost(pub u32);
     impl DbgmcuDbgAuthHost {
         #[doc = "Device authentication key The device specific 64-bit authentication key (OEM key) must be written to this register (in two successive 32-bit writes, least significant word first) to permit RDP regression. Writing a wrong key locks access to the device and prevent code execution from the Flash memory."]
+        #[must_use]
         #[inline(always)]
         pub const fn auth_key(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -1064,7 +1118,7 @@ pub mod regs {
         }
         #[doc = "Device authentication key The device specific 64-bit authentication key (OEM key) must be written to this register (in two successive 32-bit writes, least significant word first) to permit RDP regression. Writing a wrong key locks access to the device and prevent code execution from the Flash memory."]
         #[inline(always)]
-        pub fn set_auth_key(&mut self, val: u32) {
+        pub const fn set_auth_key(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -1093,6 +1147,7 @@ pub mod regs {
     pub struct DbgmcuSr(pub u32);
     impl DbgmcuSr {
         #[doc = "Bit n identifies whether access port AP n is present in device Bit n = 0: APn absent Bit n = 1: APn present"]
+        #[must_use]
         #[inline(always)]
         pub const fn ap_present(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -1100,10 +1155,11 @@ pub mod regs {
         }
         #[doc = "Bit n identifies whether access port AP n is present in device Bit n = 0: APn absent Bit n = 1: APn present"]
         #[inline(always)]
-        pub fn set_ap_present(&mut self, val: u8) {
+        pub const fn set_ap_present(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "DECLARATION TO BE CONFIRMED by PRODUCT OWNER! Bit n identifies whether access port AP n is open (can be accessed via the debug port) or locked (debug access to the AP is blocked) Bit n = 0: APn locked Bit n = 1: APn enabled"]
+        #[must_use]
         #[inline(always)]
         pub const fn ap_locked(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -1111,7 +1167,7 @@ pub mod regs {
         }
         #[doc = "DECLARATION TO BE CONFIRMED by PRODUCT OWNER! Bit n identifies whether access port AP n is open (can be accessed via the debug port) or locked (debug access to the AP is blocked) Bit n = 0: APn locked Bit n = 1: APn enabled"]
         #[inline(always)]
-        pub fn set_ap_locked(&mut self, val: u8) {
+        pub const fn set_ap_locked(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
     }
@@ -1146,6 +1202,7 @@ pub mod regs {
     pub struct Idcode(pub u32);
     impl Idcode {
         #[doc = "Device dentification"]
+        #[must_use]
         #[inline(always)]
         pub const fn dev_id(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -1153,10 +1210,11 @@ pub mod regs {
         }
         #[doc = "Device dentification"]
         #[inline(always)]
-        pub fn set_dev_id(&mut self, val: u16) {
+        pub const fn set_dev_id(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
         #[doc = "Revision"]
+        #[must_use]
         #[inline(always)]
         pub const fn rev_id(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0xffff;
@@ -1164,7 +1222,7 @@ pub mod regs {
         }
         #[doc = "Revision"]
         #[inline(always)]
-        pub fn set_rev_id(&mut self, val: u16) {
+        pub const fn set_rev_id(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
@@ -1199,6 +1257,7 @@ pub mod regs {
     pub struct Pidr0(pub u32);
     impl Pidr0 {
         #[doc = "part number bits \\[7:0\\]"]
+        #[must_use]
         #[inline(always)]
         pub const fn partnum(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -1206,7 +1265,7 @@ pub mod regs {
         }
         #[doc = "part number bits \\[7:0\\]"]
         #[inline(always)]
-        pub fn set_partnum(&mut self, val: u8) {
+        pub const fn set_partnum(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -1233,6 +1292,7 @@ pub mod regs {
     pub struct Pidr1(pub u32);
     impl Pidr1 {
         #[doc = "part number bits \\[11:8\\]"]
+        #[must_use]
         #[inline(always)]
         pub const fn partnum(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -1240,10 +1300,11 @@ pub mod regs {
         }
         #[doc = "part number bits \\[11:8\\]"]
         #[inline(always)]
-        pub fn set_partnum(&mut self, val: u8) {
+        pub const fn set_partnum(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "JEP106 identity code bits \\[3:0\\]"]
+        #[must_use]
         #[inline(always)]
         pub const fn jep106id(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -1251,7 +1312,7 @@ pub mod regs {
         }
         #[doc = "JEP106 identity code bits \\[3:0\\]"]
         #[inline(always)]
-        pub fn set_jep106id(&mut self, val: u8) {
+        pub const fn set_jep106id(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
     }
@@ -1286,6 +1347,7 @@ pub mod regs {
     pub struct Pidr2(pub u32);
     impl Pidr2 {
         #[doc = "JEP106 identity code bits \\[6:4\\]"]
+        #[must_use]
         #[inline(always)]
         pub const fn jep106id(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -1293,10 +1355,11 @@ pub mod regs {
         }
         #[doc = "JEP106 identity code bits \\[6:4\\]"]
         #[inline(always)]
-        pub fn set_jep106id(&mut self, val: u8) {
+        pub const fn set_jep106id(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "JEDEC assigned value"]
+        #[must_use]
         #[inline(always)]
         pub const fn jedec(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1304,10 +1367,11 @@ pub mod regs {
         }
         #[doc = "JEDEC assigned value"]
         #[inline(always)]
-        pub fn set_jedec(&mut self, val: bool) {
+        pub const fn set_jedec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "component revision number"]
+        #[must_use]
         #[inline(always)]
         pub const fn revision(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -1315,7 +1379,7 @@ pub mod regs {
         }
         #[doc = "component revision number"]
         #[inline(always)]
-        pub fn set_revision(&mut self, val: u8) {
+        pub const fn set_revision(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
     }
@@ -1352,6 +1416,7 @@ pub mod regs {
     pub struct Pidr3(pub u32);
     impl Pidr3 {
         #[doc = "customer modified"]
+        #[must_use]
         #[inline(always)]
         pub const fn cmod(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -1359,10 +1424,11 @@ pub mod regs {
         }
         #[doc = "customer modified"]
         #[inline(always)]
-        pub fn set_cmod(&mut self, val: u8) {
+        pub const fn set_cmod(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "metal fix version"]
+        #[must_use]
         #[inline(always)]
         pub const fn revand(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -1370,7 +1436,7 @@ pub mod regs {
         }
         #[doc = "metal fix version"]
         #[inline(always)]
-        pub fn set_revand(&mut self, val: u8) {
+        pub const fn set_revand(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
     }
@@ -1405,6 +1471,7 @@ pub mod regs {
     pub struct Pidr4(pub u32);
     impl Pidr4 {
         #[doc = "JEP106 continuation code"]
+        #[must_use]
         #[inline(always)]
         pub const fn jep106con(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -1412,10 +1479,11 @@ pub mod regs {
         }
         #[doc = "JEP106 continuation code"]
         #[inline(always)]
-        pub fn set_jep106con(&mut self, val: u8) {
+        pub const fn set_jep106con(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "register file size"]
+        #[must_use]
         #[inline(always)]
         pub const fn kcount_4(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -1423,7 +1491,7 @@ pub mod regs {
         }
         #[doc = "register file size"]
         #[inline(always)]
-        pub fn set_kcount_4(&mut self, val: u8) {
+        pub const fn set_kcount_4(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
     }

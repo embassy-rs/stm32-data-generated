@@ -22,77 +22,77 @@ impl Adf {
     #[doc = "ADF Global Control Register."]
     #[inline(always)]
     pub const fn gcr(self) -> crate::common::Reg<regs::Gcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "ADF clock generator control register."]
     #[inline(always)]
     pub const fn ckgcr(self) -> crate::common::Reg<regs::Ckgcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "ADF serial interface control register 0."]
     #[inline(always)]
     pub const fn sitfcr(self) -> crate::common::Reg<regs::Sitfcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80usize) as _) }
     }
     #[doc = "ADF bitstream matrix control register 0."]
     #[inline(always)]
     pub const fn bsmxcr(self) -> crate::common::Reg<regs::Bsmxcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x84usize) as _) }
     }
     #[doc = "ADF digital filter control register 0."]
     #[inline(always)]
     pub const fn dfltcr(self) -> crate::common::Reg<regs::Dfltcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x88usize) as _) }
     }
     #[doc = "ADF digital filer configuration register 0."]
     #[inline(always)]
     pub const fn dfltcicr(self) -> crate::common::Reg<regs::Dfltcicr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x8cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x8cusize) as _) }
     }
     #[doc = "ADF reshape filter configuration register 0."]
     #[inline(always)]
     pub const fn dfltrsfr(self) -> crate::common::Reg<regs::Dfltrsfr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x90usize) as _) }
     }
     #[doc = "ADF delay control register 0."]
     #[inline(always)]
     pub const fn dlycr(self) -> crate::common::Reg<regs::Dlycr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xa4usize) as _) }
     }
     #[doc = "ADF DFLT0 interrupt enable register."]
     #[inline(always)]
     pub const fn dfltier(self) -> crate::common::Reg<regs::Dfltier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xacusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xacusize) as _) }
     }
     #[doc = "ADF DFLT0 interrupt status register 0."]
     #[inline(always)]
     pub const fn dfltisr(self) -> crate::common::Reg<regs::Dfltisr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xb0usize) as _) }
     }
     #[doc = "ADF SAD control register."]
     #[inline(always)]
     pub const fn sadcr(self) -> crate::common::Reg<regs::Sadcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xb8usize) as _) }
     }
     #[doc = "ADF SAD configuration register."]
     #[inline(always)]
     pub const fn sadcfgr(self) -> crate::common::Reg<regs::Sadcfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xbcusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xbcusize) as _) }
     }
     #[doc = "ADF SAD sound level register."]
     #[inline(always)]
     pub const fn sadsdlvr(self) -> crate::common::Reg<regs::Sadsdlvr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xc0usize) as _) }
     }
     #[doc = "ADF SAD ambient noise level register."]
     #[inline(always)]
     pub const fn sadanlvr(self) -> crate::common::Reg<regs::Sadanlvr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xc4usize) as _) }
     }
     #[doc = "ADF digital filter data register 0."]
     #[inline(always)]
     pub const fn dfltdr(self) -> crate::common::Reg<regs::Dfltdr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf0usize) as _) }
     }
 }
 pub mod regs {
@@ -102,6 +102,7 @@ pub mod regs {
     pub struct Bsmxcr(pub u32);
     impl Bsmxcr {
         #[doc = "Bitstream selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn bssel(&self) -> super::vals::Bssel {
             let val = (self.0 >> 0usize) & 0x1f;
@@ -109,11 +110,12 @@ pub mod regs {
         }
         #[doc = "Bitstream selection."]
         #[inline(always)]
-        pub fn set_bssel(&mut self, val: super::vals::Bssel) {
+        pub const fn set_bssel(&mut self, val: super::vals::Bssel) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val.to_bits() as u32) & 0x1f) << 0usize);
         }
         #[doc = "BSMX active flag. This bit is set and cleared by hardware. It is used by the application to check if the BSMX is effectively enabled (active) or not. BSSEL\\[4:0\\]
 can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go to 0 if DFLT0 is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn bsmxactive(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -122,7 +124,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         #[doc = "BSMX active flag. This bit is set and cleared by hardware. It is used by the application to check if the BSMX is effectively enabled (active) or not. BSSEL\\[4:0\\]
 can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go to 0 if DFLT0 is enabled."]
         #[inline(always)]
-        pub fn set_bsmxactive(&mut self, val: bool) {
+        pub const fn set_bsmxactive(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -157,6 +159,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     pub struct Ckgcr(pub u32);
     impl Ckgcr {
         #[doc = "Clock generator dividers enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn ckgden(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -164,10 +167,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Clock generator dividers enable."]
         #[inline(always)]
-        pub fn set_ckgden(&mut self, val: bool) {
+        pub const fn set_ckgden(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "CCK0 clock enable. This bit is set and reset by software. It is used to control the generation of the bitstream clock on the CCK pin."]
+        #[must_use]
         #[inline(always)]
         pub const fn cck0en(&self) -> super::vals::Ccken {
             let val = (self.0 >> 1usize) & 0x01;
@@ -175,10 +179,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "CCK0 clock enable. This bit is set and reset by software. It is used to control the generation of the bitstream clock on the CCK pin."]
         #[inline(always)]
-        pub fn set_cck0en(&mut self, val: super::vals::Ccken) {
+        pub const fn set_cck0en(&mut self, val: super::vals::Ccken) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "CCK1 clock enable. This bit is set and reset by software. It is used to control the generation of the bitstream clock on the CCK pin."]
+        #[must_use]
         #[inline(always)]
         pub const fn cck1en(&self) -> super::vals::Ccken {
             let val = (self.0 >> 2usize) & 0x01;
@@ -186,10 +191,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "CCK1 clock enable. This bit is set and reset by software. It is used to control the generation of the bitstream clock on the CCK pin."]
         #[inline(always)]
-        pub fn set_cck1en(&mut self, val: super::vals::Ccken) {
+        pub const fn set_cck1en(&mut self, val: super::vals::Ccken) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "Clock generator mode. This bit is set and reset by software. It is used to define the way the clock generator is enabled. This bit must not be changed if the filter is enabled (DFTEN = 1)."]
+        #[must_use]
         #[inline(always)]
         pub const fn ckgmod(&self) -> super::vals::Ckgmod {
             let val = (self.0 >> 4usize) & 0x01;
@@ -197,10 +203,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Clock generator mode. This bit is set and reset by software. It is used to define the way the clock generator is enabled. This bit must not be changed if the filter is enabled (DFTEN = 1)."]
         #[inline(always)]
-        pub fn set_ckgmod(&mut self, val: super::vals::Ckgmod) {
+        pub const fn set_ckgmod(&mut self, val: super::vals::Ckgmod) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
         #[doc = "CCK0 direction. This bit is set and reset by software. It is used to control the direction of the ADF_CCK0 pin."]
+        #[must_use]
         #[inline(always)]
         pub const fn cck0dir(&self) -> super::vals::Cckdir {
             let val = (self.0 >> 5usize) & 0x01;
@@ -208,10 +215,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "CCK0 direction. This bit is set and reset by software. It is used to control the direction of the ADF_CCK0 pin."]
         #[inline(always)]
-        pub fn set_cck0dir(&mut self, val: super::vals::Cckdir) {
+        pub const fn set_cck0dir(&mut self, val: super::vals::Cckdir) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
         #[doc = "CCK1 direction. This bit is set and reset by software. It is used to control the direction of the ADF_CCK1 pin."]
+        #[must_use]
         #[inline(always)]
         pub const fn cck1dir(&self) -> super::vals::Cckdir {
             let val = (self.0 >> 6usize) & 0x01;
@@ -219,10 +227,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "CCK1 direction. This bit is set and reset by software. It is used to control the direction of the ADF_CCK1 pin."]
         #[inline(always)]
-        pub fn set_cck1dir(&mut self, val: super::vals::Cckdir) {
+        pub const fn set_cck1dir(&mut self, val: super::vals::Cckdir) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
         }
         #[doc = "CKGEN trigger sensitivity selection. This bit is set and cleared by software. It is used to select the trigger sensitivity of the trigger signals. This bit is not significant if the CKGMOD = 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn trgsens(&self) -> super::vals::Trgsens {
             let val = (self.0 >> 8usize) & 0x01;
@@ -230,10 +239,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "CKGEN trigger sensitivity selection. This bit is set and cleared by software. It is used to select the trigger sensitivity of the trigger signals. This bit is not significant if the CKGMOD = 0."]
         #[inline(always)]
-        pub fn set_trgsens(&mut self, val: super::vals::Trgsens) {
+        pub const fn set_trgsens(&mut self, val: super::vals::Trgsens) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
         }
         #[doc = "Digital filter trigger signal selection. This bit is set and cleared by software. It is used to select the trigger signal for the digital filter. This bit is not significant if the CKGMOD = 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn trgsrc(&self) -> super::vals::Trgsrc {
             let val = (self.0 >> 12usize) & 0x0f;
@@ -241,10 +251,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Digital filter trigger signal selection. This bit is set and cleared by software. It is used to select the trigger signal for the digital filter. This bit is not significant if the CKGMOD = 0."]
         #[inline(always)]
-        pub fn set_trgsrc(&mut self, val: super::vals::Trgsrc) {
+        pub const fn set_trgsrc(&mut self, val: super::vals::Trgsrc) {
             self.0 = (self.0 & !(0x0f << 12usize)) | (((val.to_bits() as u32) & 0x0f) << 12usize);
         }
         #[doc = "Divider to control the CCK clock."]
+        #[must_use]
         #[inline(always)]
         pub const fn cckdiv(&self) -> super::vals::Cckdiv {
             let val = (self.0 >> 16usize) & 0x0f;
@@ -252,10 +263,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Divider to control the CCK clock."]
         #[inline(always)]
-        pub fn set_cckdiv(&mut self, val: super::vals::Cckdiv) {
+        pub const fn set_cckdiv(&mut self, val: super::vals::Cckdiv) {
             self.0 = (self.0 & !(0x0f << 16usize)) | (((val.to_bits() as u32) & 0x0f) << 16usize);
         }
         #[doc = "Divider to control the serial interface clock."]
+        #[must_use]
         #[inline(always)]
         pub const fn procdiv(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x7f;
@@ -263,10 +275,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Divider to control the serial interface clock."]
         #[inline(always)]
-        pub fn set_procdiv(&mut self, val: u8) {
+        pub const fn set_procdiv(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 24usize)) | (((val as u32) & 0x7f) << 24usize);
         }
         #[doc = "Clock generator active flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn ckgactive(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -274,7 +287,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Clock generator active flag."]
         #[inline(always)]
-        pub fn set_ckgactive(&mut self, val: bool) {
+        pub const fn set_ckgactive(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -313,6 +326,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     pub struct Dfltcicr(pub u32);
     impl Dfltcicr {
         #[doc = "Source data for the digital filter."]
+        #[must_use]
         #[inline(always)]
         pub const fn datsrc(&self) -> super::vals::Datsrc {
             let val = (self.0 >> 0usize) & 0x03;
@@ -320,10 +334,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Source data for the digital filter."]
         #[inline(always)]
-        pub fn set_datsrc(&mut self, val: super::vals::Datsrc) {
+        pub const fn set_datsrc(&mut self, val: super::vals::Datsrc) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "Select the CIC order."]
+        #[must_use]
         #[inline(always)]
         pub const fn cicmod(&self) -> super::vals::Cicmod {
             let val = (self.0 >> 4usize) & 0x07;
@@ -331,10 +346,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Select the CIC order."]
         #[inline(always)]
-        pub fn set_cicmod(&mut self, val: super::vals::Cicmod) {
+        pub const fn set_cicmod(&mut self, val: super::vals::Cicmod) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
         }
         #[doc = "CIC decimation ratio selection. This bitfield is set and cleared by software.It is used to select the CIC decimation ratio. A decimation ratio smaller than two is not allowed. The decimation ratio is given by (CICDEC+1)."]
+        #[must_use]
         #[inline(always)]
         pub const fn mcicd(&self) -> u16 {
             let val = (self.0 >> 8usize) & 0x01ff;
@@ -342,10 +358,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "CIC decimation ratio selection. This bitfield is set and cleared by software.It is used to select the CIC decimation ratio. A decimation ratio smaller than two is not allowed. The decimation ratio is given by (CICDEC+1)."]
         #[inline(always)]
-        pub fn set_mcicd(&mut self, val: u16) {
+        pub const fn set_mcicd(&mut self, val: u16) {
             self.0 = (self.0 & !(0x01ff << 8usize)) | (((val as u32) & 0x01ff) << 8usize);
         }
         #[doc = "Scaling factor selection. This bitfield is set and cleared by software. It is used to select the gain to be applied at CIC output. If the application attempts to write a new gain value while the previous one is not yet applied, this new gain value is ignored. Reading back this bitfield informs the application on the current gain value."]
+        #[must_use]
         #[inline(always)]
         pub const fn scale(&self) -> u8 {
             let val = (self.0 >> 20usize) & 0x3f;
@@ -353,7 +370,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Scaling factor selection. This bitfield is set and cleared by software. It is used to select the gain to be applied at CIC output. If the application attempts to write a new gain value while the previous one is not yet applied, this new gain value is ignored. Reading back this bitfield informs the application on the current gain value."]
         #[inline(always)]
-        pub fn set_scale(&mut self, val: u8) {
+        pub const fn set_scale(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 20usize)) | (((val as u32) & 0x3f) << 20usize);
         }
     }
@@ -392,6 +409,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     pub struct Dfltcr(pub u32);
     impl Dfltcr {
         #[doc = "DFLT enable. This bit is set and reset by software. It is used to enable the digital filter."]
+        #[must_use]
         #[inline(always)]
         pub const fn dflten(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -399,10 +417,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "DFLT enable. This bit is set and reset by software. It is used to enable the digital filter."]
         #[inline(always)]
-        pub fn set_dflten(&mut self, val: bool) {
+        pub const fn set_dflten(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "DMA requests enable. This bit is set and reset by software. It is used to control the generation of DMA request to transfer the processed samples into the memory."]
+        #[must_use]
         #[inline(always)]
         pub const fn dmaen(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -410,10 +429,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "DMA requests enable. This bit is set and reset by software. It is used to control the generation of DMA request to transfer the processed samples into the memory."]
         #[inline(always)]
-        pub fn set_dmaen(&mut self, val: bool) {
+        pub const fn set_dmaen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "RXFIFO threshold selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn fth(&self) -> super::vals::Rxfifo {
             let val = (self.0 >> 2usize) & 0x01;
@@ -421,10 +441,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "RXFIFO threshold selection."]
         #[inline(always)]
-        pub fn set_fth(&mut self, val: super::vals::Rxfifo) {
+        pub const fn set_fth(&mut self, val: super::vals::Rxfifo) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "DFLT trigger mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn acqmod(&self) -> super::vals::Acqmod {
             let val = (self.0 >> 4usize) & 0x07;
@@ -432,10 +453,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "DFLT trigger mode."]
         #[inline(always)]
-        pub fn set_acqmod(&mut self, val: super::vals::Acqmod) {
+        pub const fn set_acqmod(&mut self, val: super::vals::Acqmod) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
         }
         #[doc = "DFLT trigger signal selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn trgsrc(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0x0f;
@@ -443,10 +465,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "DFLT trigger signal selection."]
         #[inline(always)]
-        pub fn set_trgsrc(&mut self, val: u8) {
+        pub const fn set_trgsrc(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 12usize)) | (((val as u32) & 0x0f) << 12usize);
         }
         #[doc = "Number of samples to be discarded."]
+        #[must_use]
         #[inline(always)]
         pub const fn nbdis(&self) -> u8 {
             let val = (self.0 >> 20usize) & 0xff;
@@ -454,10 +477,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Number of samples to be discarded."]
         #[inline(always)]
-        pub fn set_nbdis(&mut self, val: u8) {
+        pub const fn set_nbdis(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 20usize)) | (((val as u32) & 0xff) << 20usize);
         }
         #[doc = "DFLT run status flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn dfltrun(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -465,10 +489,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "DFLT run status flag."]
         #[inline(always)]
-        pub fn set_dfltrun(&mut self, val: bool) {
+        pub const fn set_dfltrun(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "DFLT active flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn dfltactive(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -476,7 +501,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "DFLT active flag."]
         #[inline(always)]
-        pub fn set_dfltactive(&mut self, val: bool) {
+        pub const fn set_dfltactive(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -512,6 +537,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     pub struct Dfltdr(pub u32);
     impl Dfltdr {
         #[doc = "DR. Data processed by DFT"]
+        #[must_use]
         #[inline(always)]
         pub const fn dr(&self) -> u32 {
             let val = (self.0 >> 8usize) & 0x00ff_ffff;
@@ -519,7 +545,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "DR. Data processed by DFT"]
         #[inline(always)]
-        pub fn set_dr(&mut self, val: u32) {
+        pub const fn set_dr(&mut self, val: u32) {
             self.0 = (self.0 & !(0x00ff_ffff << 8usize)) | (((val as u32) & 0x00ff_ffff) << 8usize);
         }
     }
@@ -546,6 +572,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     pub struct Dfltier(pub u32);
     impl Dfltier {
         #[doc = "RXFIFO threshold interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn fthie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -553,10 +580,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "RXFIFO threshold interrupt enable."]
         #[inline(always)]
-        pub fn set_fthie(&mut self, val: bool) {
+        pub const fn set_fthie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Data overflow interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn dovrie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -564,10 +592,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Data overflow interrupt enable."]
         #[inline(always)]
-        pub fn set_dovrie(&mut self, val: bool) {
+        pub const fn set_dovrie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Saturation detection interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn satie(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -575,10 +604,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Saturation detection interrupt enable."]
         #[inline(always)]
-        pub fn set_satie(&mut self, val: bool) {
+        pub const fn set_satie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Clock absence detection interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn ckabie(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -586,10 +616,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Clock absence detection interrupt enable."]
         #[inline(always)]
-        pub fn set_ckabie(&mut self, val: bool) {
+        pub const fn set_ckabie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Reshape filter overrun interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn rfovrie(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -597,10 +628,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Reshape filter overrun interrupt enable."]
         #[inline(always)]
-        pub fn set_rfovrie(&mut self, val: bool) {
+        pub const fn set_rfovrie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Sound activity detection interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn sddetie(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -608,10 +640,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Sound activity detection interrupt enable."]
         #[inline(always)]
-        pub fn set_sddetie(&mut self, val: bool) {
+        pub const fn set_sddetie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "SAD sound-level value ready enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn sdlvlie(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -619,7 +652,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "SAD sound-level value ready enable."]
         #[inline(always)]
-        pub fn set_sdlvlie(&mut self, val: bool) {
+        pub const fn set_sdlvlie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
     }
@@ -654,6 +687,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     pub struct Dfltisr(pub u32);
     impl Dfltisr {
         #[doc = "RXFIFO threshold flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn fthf(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -661,10 +695,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "RXFIFO threshold flag."]
         #[inline(always)]
-        pub fn set_fthf(&mut self, val: bool) {
+        pub const fn set_fthf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Data overflow flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn dovrf(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -672,10 +707,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Data overflow flag."]
         #[inline(always)]
-        pub fn set_dovrf(&mut self, val: bool) {
+        pub const fn set_dovrf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "RXFIFO not empty flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn rxnef(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -683,10 +719,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "RXFIFO not empty flag."]
         #[inline(always)]
-        pub fn set_rxnef(&mut self, val: bool) {
+        pub const fn set_rxnef(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Saturation detection flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn satf(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -694,10 +731,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Saturation detection flag."]
         #[inline(always)]
-        pub fn set_satf(&mut self, val: bool) {
+        pub const fn set_satf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Clock absence detection flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn ckabf(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -705,10 +743,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Clock absence detection flag."]
         #[inline(always)]
-        pub fn set_ckabf(&mut self, val: bool) {
+        pub const fn set_ckabf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Reshape filter overrun detection flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn rfovrf(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -716,10 +755,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Reshape filter overrun detection flag."]
         #[inline(always)]
-        pub fn set_rfovrf(&mut self, val: bool) {
+        pub const fn set_rfovrf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Sound activity detection flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn sddetf(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -727,10 +767,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Sound activity detection flag."]
         #[inline(always)]
-        pub fn set_sddetf(&mut self, val: bool) {
+        pub const fn set_sddetf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Sound level value ready flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn sdlvlf(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -738,7 +779,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Sound level value ready flag."]
         #[inline(always)]
-        pub fn set_sdlvlf(&mut self, val: bool) {
+        pub const fn set_sdlvlf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
     }
@@ -774,6 +815,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     pub struct Dfltrsfr(pub u32);
     impl Dfltrsfr {
         #[doc = "Reshaper filter bypass."]
+        #[must_use]
         #[inline(always)]
         pub const fn rsfltbyp(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -781,10 +823,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Reshaper filter bypass."]
         #[inline(always)]
-        pub fn set_rsfltbyp(&mut self, val: bool) {
+        pub const fn set_rsfltbyp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Reshaper filter decimation ratio."]
+        #[must_use]
         #[inline(always)]
         pub const fn rsfltd(&self) -> super::vals::Rsfltd {
             let val = (self.0 >> 4usize) & 0x01;
@@ -792,10 +835,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Reshaper filter decimation ratio."]
         #[inline(always)]
-        pub fn set_rsfltd(&mut self, val: super::vals::Rsfltd) {
+        pub const fn set_rsfltd(&mut self, val: super::vals::Rsfltd) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
         #[doc = "High-pass filter bypass. This bit is set and cleared by software. It is used to bypass the high-pass filter."]
+        #[must_use]
         #[inline(always)]
         pub const fn hpfbyp(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -803,10 +847,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "High-pass filter bypass. This bit is set and cleared by software. It is used to bypass the high-pass filter."]
         #[inline(always)]
-        pub fn set_hpfbyp(&mut self, val: bool) {
+        pub const fn set_hpfbyp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "High-pass filter cut-off frequency. This bitfield is set and cleared by software. it is used to select the cut-off frequency of the high-pass filter. F PCM represents the sampling frequency at HPF input."]
+        #[must_use]
         #[inline(always)]
         pub const fn hpfc(&self) -> super::vals::Hpfc {
             let val = (self.0 >> 8usize) & 0x03;
@@ -814,7 +859,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "High-pass filter cut-off frequency. This bitfield is set and cleared by software. it is used to select the cut-off frequency of the high-pass filter. F PCM represents the sampling frequency at HPF input."]
         #[inline(always)]
-        pub fn set_hpfc(&mut self, val: super::vals::Hpfc) {
+        pub const fn set_hpfc(&mut self, val: super::vals::Hpfc) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
     }
@@ -853,6 +898,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     pub struct Dlycr(pub u32);
     impl Dlycr {
         #[doc = "Delay to apply to a bitstream. This bitfield is set and cleared by software. It defines the number of input samples that are skipped. Skipping is applied immediately after writing to this bitfield, if SKPBF = 0 and DFLTEN = 1. If SKPBF = 1, the value written into the register is ignored by the delay state machine."]
+        #[must_use]
         #[inline(always)]
         pub const fn skpdly(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -860,10 +906,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Delay to apply to a bitstream. This bitfield is set and cleared by software. It defines the number of input samples that are skipped. Skipping is applied immediately after writing to this bitfield, if SKPBF = 0 and DFLTEN = 1. If SKPBF = 1, the value written into the register is ignored by the delay state machine."]
         #[inline(always)]
-        pub fn set_skpdly(&mut self, val: u8) {
+        pub const fn set_skpdly(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "Skip busy flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn skpbf(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -871,7 +918,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Skip busy flag."]
         #[inline(always)]
-        pub fn set_skpbf(&mut self, val: bool) {
+        pub const fn set_skpbf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -906,6 +953,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     pub struct Gcr(pub u32);
     impl Gcr {
         #[doc = "Trigger output control Set by software and reset by."]
+        #[must_use]
         #[inline(always)]
         pub const fn trgo(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -913,7 +961,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Trigger output control Set by software and reset by."]
         #[inline(always)]
-        pub fn set_trgo(&mut self, val: bool) {
+        pub const fn set_trgo(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -940,6 +988,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     pub struct Sadanlvr(pub u32);
     impl Sadanlvr {
         #[doc = "ANLVL."]
+        #[must_use]
         #[inline(always)]
         pub const fn anlvl(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x7fff;
@@ -947,7 +996,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "ANLVL."]
         #[inline(always)]
-        pub fn set_anlvl(&mut self, val: u16) {
+        pub const fn set_anlvl(&mut self, val: u16) {
             self.0 = (self.0 & !(0x7fff << 0usize)) | (((val as u32) & 0x7fff) << 0usize);
         }
     }
@@ -974,6 +1023,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     pub struct Sadcfgr(pub u32);
     impl Sadcfgr {
         #[doc = "SNTHR."]
+        #[must_use]
         #[inline(always)]
         pub const fn snthr(&self) -> super::vals::Snthr {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -981,10 +1031,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "SNTHR."]
         #[inline(always)]
-        pub fn set_snthr(&mut self, val: super::vals::Snthr) {
+        pub const fn set_snthr(&mut self, val: super::vals::Snthr) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val.to_bits() as u32) & 0x0f) << 0usize);
         }
         #[doc = "ANSLP."]
+        #[must_use]
         #[inline(always)]
         pub const fn anslp(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x07;
@@ -992,10 +1043,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "ANSLP."]
         #[inline(always)]
-        pub fn set_anslp(&mut self, val: u8) {
+        pub const fn set_anslp(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
         }
         #[doc = "LFRNB."]
+        #[must_use]
         #[inline(always)]
         pub const fn lfrnb(&self) -> super::vals::Lfrnb {
             let val = (self.0 >> 8usize) & 0x07;
@@ -1003,10 +1055,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "LFRNB."]
         #[inline(always)]
-        pub fn set_lfrnb(&mut self, val: super::vals::Lfrnb) {
+        pub const fn set_lfrnb(&mut self, val: super::vals::Lfrnb) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "Hangover time window."]
+        #[must_use]
         #[inline(always)]
         pub const fn hgovr(&self) -> super::vals::Hgovr {
             let val = (self.0 >> 12usize) & 0x07;
@@ -1014,10 +1067,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Hangover time window."]
         #[inline(always)]
-        pub fn set_hgovr(&mut self, val: super::vals::Hgovr) {
+        pub const fn set_hgovr(&mut self, val: super::vals::Hgovr) {
             self.0 = (self.0 & !(0x07 << 12usize)) | (((val.to_bits() as u32) & 0x07) << 12usize);
         }
         #[doc = "ANMIN."]
+        #[must_use]
         #[inline(always)]
         pub const fn anmin(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0x1fff;
@@ -1025,7 +1079,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "ANMIN."]
         #[inline(always)]
-        pub fn set_anmin(&mut self, val: u16) {
+        pub const fn set_anmin(&mut self, val: u16) {
             self.0 = (self.0 & !(0x1fff << 16usize)) | (((val as u32) & 0x1fff) << 16usize);
         }
     }
@@ -1066,6 +1120,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     pub struct Sadcr(pub u32);
     impl Sadcr {
         #[doc = "Sound activity detector enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn saden(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1073,10 +1128,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Sound activity detector enable."]
         #[inline(always)]
-        pub fn set_saden(&mut self, val: bool) {
+        pub const fn set_saden(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Data capture mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn datcap(&self) -> super::vals::Datcap {
             let val = (self.0 >> 1usize) & 0x03;
@@ -1084,10 +1140,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Data capture mode."]
         #[inline(always)]
-        pub fn set_datcap(&mut self, val: super::vals::Datcap) {
+        pub const fn set_datcap(&mut self, val: super::vals::Datcap) {
             self.0 = (self.0 & !(0x03 << 1usize)) | (((val.to_bits() as u32) & 0x03) << 1usize);
         }
         #[doc = "Sound trigger event configuration."]
+        #[must_use]
         #[inline(always)]
         pub const fn detcfg(&self) -> super::vals::Detcfg {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1095,10 +1152,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Sound trigger event configuration."]
         #[inline(always)]
-        pub fn set_detcfg(&mut self, val: super::vals::Detcfg) {
+        pub const fn set_detcfg(&mut self, val: super::vals::Detcfg) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
         }
         #[doc = "SAD state."]
+        #[must_use]
         #[inline(always)]
         pub const fn sadst(&self) -> super::vals::Sadst {
             let val = (self.0 >> 4usize) & 0x03;
@@ -1106,10 +1164,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "SAD state."]
         #[inline(always)]
-        pub fn set_sadst(&mut self, val: super::vals::Sadst) {
+        pub const fn set_sadst(&mut self, val: super::vals::Sadst) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "Hysteresis enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn hysten(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1117,10 +1176,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Hysteresis enable."]
         #[inline(always)]
-        pub fn set_hysten(&mut self, val: bool) {
+        pub const fn set_hysten(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Frame size."]
+        #[must_use]
         #[inline(always)]
         pub const fn frsize(&self) -> super::vals::Frsize {
             let val = (self.0 >> 8usize) & 0x07;
@@ -1128,10 +1188,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Frame size."]
         #[inline(always)]
-        pub fn set_frsize(&mut self, val: super::vals::Frsize) {
+        pub const fn set_frsize(&mut self, val: super::vals::Frsize) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "Sound activity detector working mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn sadmod(&self) -> super::vals::Sadmod {
             let val = (self.0 >> 12usize) & 0x03;
@@ -1139,10 +1200,11 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Sound activity detector working mode."]
         #[inline(always)]
-        pub fn set_sadmod(&mut self, val: super::vals::Sadmod) {
+        pub const fn set_sadmod(&mut self, val: super::vals::Sadmod) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
         #[doc = "SAD Active flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn sadactive(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -1150,7 +1212,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "SAD Active flag."]
         #[inline(always)]
-        pub fn set_sadactive(&mut self, val: bool) {
+        pub const fn set_sadactive(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -1186,6 +1248,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     pub struct Sadsdlvr(pub u32);
     impl Sadsdlvr {
         #[doc = "Short term sound level. This bitfield is set by hardware. It contains the latest sound level computed by the SAD. To refresh this value, SDLVLF must be cleared."]
+        #[must_use]
         #[inline(always)]
         pub const fn sdlvl(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x7fff;
@@ -1193,7 +1256,7 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
         }
         #[doc = "Short term sound level. This bitfield is set by hardware. It contains the latest sound level computed by the SAD. To refresh this value, SDLVLF must be cleared."]
         #[inline(always)]
-        pub fn set_sdlvl(&mut self, val: u16) {
+        pub const fn set_sdlvl(&mut self, val: u16) {
             self.0 = (self.0 & !(0x7fff << 0usize)) | (((val as u32) & 0x7fff) << 0usize);
         }
     }
@@ -1219,35 +1282,39 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Sitfcr(pub u32);
     impl Sitfcr {
+        #[must_use]
         #[inline(always)]
         pub const fn sitfen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[inline(always)]
-        pub fn set_sitfen(&mut self, val: bool) {
+        pub const fn set_sitfen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn scksrc(&self) -> super::vals::Scksrc {
             let val = (self.0 >> 1usize) & 0x03;
             super::vals::Scksrc::from_bits(val as u8)
         }
         #[inline(always)]
-        pub fn set_scksrc(&mut self, val: super::vals::Scksrc) {
+        pub const fn set_scksrc(&mut self, val: super::vals::Scksrc) {
             self.0 = (self.0 & !(0x03 << 1usize)) | (((val.to_bits() as u32) & 0x03) << 1usize);
         }
+        #[must_use]
         #[inline(always)]
         pub const fn sitfmod(&self) -> super::vals::Sitfmod {
             let val = (self.0 >> 4usize) & 0x03;
             super::vals::Sitfmod::from_bits(val as u8)
         }
         #[inline(always)]
-        pub fn set_sitfmod(&mut self, val: super::vals::Sitfmod) {
+        pub const fn set_sitfmod(&mut self, val: super::vals::Sitfmod) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "Manchester symbol threshold/SPI threshold. This bitfield is set and cleared by software. It is used for Manchester mode to define the expected symbol threshold levels (seer to Manchester mode for details on computation). In addition this bitfield is used to define the timeout value for the clock absence detection in Normal SPI mode. STH\\[4:0\\]
 values lower than four are invalid."]
+        #[must_use]
         #[inline(always)]
         pub const fn sth(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x1f;
@@ -1256,10 +1323,11 @@ values lower than four are invalid."]
         #[doc = "Manchester symbol threshold/SPI threshold. This bitfield is set and cleared by software. It is used for Manchester mode to define the expected symbol threshold levels (seer to Manchester mode for details on computation). In addition this bitfield is used to define the timeout value for the clock absence detection in Normal SPI mode. STH\\[4:0\\]
 values lower than four are invalid."]
         #[inline(always)]
-        pub fn set_sth(&mut self, val: u8) {
+        pub const fn set_sth(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
         }
         #[doc = "SITFACTIVE."]
+        #[must_use]
         #[inline(always)]
         pub const fn sitfactive(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -1267,7 +1335,7 @@ values lower than four are invalid."]
         }
         #[doc = "SITFACTIVE."]
         #[inline(always)]
-        pub fn set_sitfactive(&mut self, val: bool) {
+        pub const fn set_sitfactive(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }

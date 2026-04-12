@@ -5505,18 +5505,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RETAINED",
-                    description: Some(
-                        "Contents retained in Stop modes.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "LOST",
                     description: Some(
                         "Content lost in Stop modes.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "RETAINED",
+                    description: Some(
+                        "Contents retained in Stop modes.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -5525,6 +5525,13 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 3,
             variants: &[
+                EnumVariant {
+                    name: "PVD_IN",
+                    description: Some(
+                        "External input analog voltage PVD_IN (compared internally to VREFINT).",
+                    ),
+                    value: 7,
+                },
                 EnumVariant {
                     name: "V20",
                     description: Some(
@@ -5573,13 +5580,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "VPVD6 around 2.9V.",
                     ),
                     value: 6,
-                },
-                EnumVariant {
-                    name: "PVD_IN",
-                    description: Some(
-                        "External input analog voltage PVD_IN (compared internally to VREFINT).",
-                    ),
-                    value: 7,
                 },
             ],
         },
@@ -5652,18 +5652,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "POWERED_ON",
-                    description: Some(
-                        "SRAM1 powered on.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "POWERED_OFF",
                     description: Some(
                         "SRAM1 powered off.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "POWERED_ON",
+                    description: Some(
+                        "SRAM1 powered on.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -5673,18 +5673,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "CHARGE_5K",
-                    description: Some(
-                        "Charge VBAT through a 5 k ohm resistor.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "CHARGE_1_5K",
                     description: Some(
                         "Charge VBAT through a 1.5 k ohm resistor.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "CHARGE_5K",
+                    description: Some(
+                        "Charge VBAT through a 5 k ohm resistor.",
+                    ),
+                    value: 0,
                 },
             ],
         },

@@ -22,77 +22,77 @@ impl Adc {
     #[doc = "interrupt and status register"]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::Isr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "interrupt enable register"]
     #[inline(always)]
     pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "control register"]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "configuration register 1"]
     #[inline(always)]
     pub const fn cfgr1(self) -> crate::common::Reg<regs::Cfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "configuration register 2"]
     #[inline(always)]
     pub const fn cfgr2(self) -> crate::common::Reg<regs::Cfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "sampling time register"]
     #[inline(always)]
     pub const fn smpr(self) -> crate::common::Reg<regs::Smpr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "watchdog threshold register"]
     #[inline(always)]
     pub const fn awd1tr(self) -> crate::common::Reg<regs::Awd1tr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "watchdog threshold register"]
     #[inline(always)]
     pub const fn awd2tr(self) -> crate::common::Reg<regs::Awd2tr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "channel selection register CHSELRMOD = 0 in ADC_CFGR1"]
     #[inline(always)]
     pub const fn chselr(self) -> crate::common::Reg<regs::Chselr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "channel selection register CHSELRMOD = 1 (seqencer enabled) in ADC_CFGR1"]
     #[inline(always)]
     pub const fn chselr_sq(self) -> crate::common::Reg<regs::ChselrSq, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "watchdog threshold register"]
     #[inline(always)]
     pub const fn awd3tr(self) -> crate::common::Reg<regs::Awd3tr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
     }
     #[doc = "data register"]
     #[inline(always)]
     pub const fn dr(self) -> crate::common::Reg<regs::Dr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
     }
     #[doc = "analog Watchdog 2 Configuration register"]
     #[inline(always)]
     pub const fn awd2cr(self) -> crate::common::Reg<regs::Awd2cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xa0usize) as _) }
     }
     #[doc = "analog Watchdog 3 Configuration register"]
     #[inline(always)]
     pub const fn awd3cr(self) -> crate::common::Reg<regs::Awd3cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xa4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xa4usize) as _) }
     }
     #[doc = "Calibration factor"]
     #[inline(always)]
     pub const fn calfact(self) -> crate::common::Reg<regs::Calfact, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xb4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xb4usize) as _) }
     }
 }
 pub mod regs {
@@ -102,6 +102,7 @@ pub mod regs {
     pub struct Awd1tr(pub u32);
     impl Awd1tr {
         #[doc = "analog watchdog 1 lower threshold"]
+        #[must_use]
         #[inline(always)]
         pub const fn lt1(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -109,10 +110,11 @@ pub mod regs {
         }
         #[doc = "analog watchdog 1 lower threshold"]
         #[inline(always)]
-        pub fn set_lt1(&mut self, val: u16) {
+        pub const fn set_lt1(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
         #[doc = "analog watchdog 1 higher threshold"]
+        #[must_use]
         #[inline(always)]
         pub const fn ht1(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0x0fff;
@@ -120,7 +122,7 @@ pub mod regs {
         }
         #[doc = "analog watchdog 1 higher threshold"]
         #[inline(always)]
-        pub fn set_ht1(&mut self, val: u16) {
+        pub const fn set_ht1(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 16usize)) | (((val as u32) & 0x0fff) << 16usize);
         }
     }
@@ -150,6 +152,7 @@ pub mod regs {
     pub struct Awd2cr(pub u32);
     impl Awd2cr {
         #[doc = "analog watchdog channel selection"]
+        #[must_use]
         #[inline(always)]
         pub const fn awd2ch(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x007f_ffff;
@@ -157,7 +160,7 @@ pub mod regs {
         }
         #[doc = "analog watchdog channel selection"]
         #[inline(always)]
-        pub fn set_awd2ch(&mut self, val: u32) {
+        pub const fn set_awd2ch(&mut self, val: u32) {
             self.0 = (self.0 & !(0x007f_ffff << 0usize)) | (((val as u32) & 0x007f_ffff) << 0usize);
         }
     }
@@ -184,6 +187,7 @@ pub mod regs {
     pub struct Awd2tr(pub u32);
     impl Awd2tr {
         #[doc = "analog watchdog 2 lower threshold"]
+        #[must_use]
         #[inline(always)]
         pub const fn lt2(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -191,10 +195,11 @@ pub mod regs {
         }
         #[doc = "analog watchdog 2 lower threshold"]
         #[inline(always)]
-        pub fn set_lt2(&mut self, val: u16) {
+        pub const fn set_lt2(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
         #[doc = "analog watchdog 2 higher threshold"]
+        #[must_use]
         #[inline(always)]
         pub const fn ht2(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0x0fff;
@@ -202,7 +207,7 @@ pub mod regs {
         }
         #[doc = "analog watchdog 2 higher threshold"]
         #[inline(always)]
-        pub fn set_ht2(&mut self, val: u16) {
+        pub const fn set_ht2(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 16usize)) | (((val as u32) & 0x0fff) << 16usize);
         }
     }
@@ -232,6 +237,7 @@ pub mod regs {
     pub struct Awd3cr(pub u32);
     impl Awd3cr {
         #[doc = "analog watchdog channel selection"]
+        #[must_use]
         #[inline(always)]
         pub const fn awd3ch(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x007f_ffff;
@@ -239,7 +245,7 @@ pub mod regs {
         }
         #[doc = "analog watchdog channel selection"]
         #[inline(always)]
-        pub fn set_awd3ch(&mut self, val: u32) {
+        pub const fn set_awd3ch(&mut self, val: u32) {
             self.0 = (self.0 & !(0x007f_ffff << 0usize)) | (((val as u32) & 0x007f_ffff) << 0usize);
         }
     }
@@ -266,6 +272,7 @@ pub mod regs {
     pub struct Awd3tr(pub u32);
     impl Awd3tr {
         #[doc = "analog watchdog 3lower threshold"]
+        #[must_use]
         #[inline(always)]
         pub const fn lt3(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -273,10 +280,11 @@ pub mod regs {
         }
         #[doc = "analog watchdog 3lower threshold"]
         #[inline(always)]
-        pub fn set_lt3(&mut self, val: u16) {
+        pub const fn set_lt3(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
         #[doc = "analog watchdog 3 higher threshold"]
+        #[must_use]
         #[inline(always)]
         pub const fn ht3(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0x0fff;
@@ -284,7 +292,7 @@ pub mod regs {
         }
         #[doc = "analog watchdog 3 higher threshold"]
         #[inline(always)]
-        pub fn set_ht3(&mut self, val: u16) {
+        pub const fn set_ht3(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 16usize)) | (((val as u32) & 0x0fff) << 16usize);
         }
     }
@@ -314,6 +322,7 @@ pub mod regs {
     pub struct Calfact(pub u32);
     impl Calfact {
         #[doc = "calibration factor in single-ended mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn calfact(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -321,7 +330,7 @@ pub mod regs {
         }
         #[doc = "calibration factor in single-ended mode"]
         #[inline(always)]
-        pub fn set_calfact(&mut self, val: u8) {
+        pub const fn set_calfact(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
     }
@@ -348,6 +357,7 @@ pub mod regs {
     pub struct Cfgr1(pub u32);
     impl Cfgr1 {
         #[doc = "direct memory access enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn dmaen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -355,10 +365,11 @@ pub mod regs {
         }
         #[doc = "direct memory access enable"]
         #[inline(always)]
-        pub fn set_dmaen(&mut self, val: bool) {
+        pub const fn set_dmaen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "direct memory access configuration"]
+        #[must_use]
         #[inline(always)]
         pub const fn dmacfg(&self) -> super::vals::Dmacfg {
             let val = (self.0 >> 1usize) & 0x01;
@@ -366,10 +377,11 @@ pub mod regs {
         }
         #[doc = "direct memory access configuration"]
         #[inline(always)]
-        pub fn set_dmacfg(&mut self, val: super::vals::Dmacfg) {
+        pub const fn set_dmacfg(&mut self, val: super::vals::Dmacfg) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "scan sequence direction"]
+        #[must_use]
         #[inline(always)]
         pub const fn scandir(&self) -> super::vals::Scandir {
             let val = (self.0 >> 2usize) & 0x01;
@@ -377,10 +389,11 @@ pub mod regs {
         }
         #[doc = "scan sequence direction"]
         #[inline(always)]
-        pub fn set_scandir(&mut self, val: super::vals::Scandir) {
+        pub const fn set_scandir(&mut self, val: super::vals::Scandir) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "data resolution"]
+        #[must_use]
         #[inline(always)]
         pub const fn res(&self) -> super::vals::Res {
             let val = (self.0 >> 3usize) & 0x03;
@@ -388,10 +401,11 @@ pub mod regs {
         }
         #[doc = "data resolution"]
         #[inline(always)]
-        pub fn set_res(&mut self, val: super::vals::Res) {
+        pub const fn set_res(&mut self, val: super::vals::Res) {
             self.0 = (self.0 & !(0x03 << 3usize)) | (((val.to_bits() as u32) & 0x03) << 3usize);
         }
         #[doc = "data alignment"]
+        #[must_use]
         #[inline(always)]
         pub const fn align(&self) -> super::vals::Align {
             let val = (self.0 >> 5usize) & 0x01;
@@ -399,10 +413,11 @@ pub mod regs {
         }
         #[doc = "data alignment"]
         #[inline(always)]
-        pub fn set_align(&mut self, val: super::vals::Align) {
+        pub const fn set_align(&mut self, val: super::vals::Align) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
         #[doc = "external trigger selection"]
+        #[must_use]
         #[inline(always)]
         pub const fn extsel(&self) -> u8 {
             let val = (self.0 >> 6usize) & 0x07;
@@ -410,10 +425,11 @@ pub mod regs {
         }
         #[doc = "external trigger selection"]
         #[inline(always)]
-        pub fn set_extsel(&mut self, val: u8) {
+        pub const fn set_extsel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 6usize)) | (((val as u32) & 0x07) << 6usize);
         }
         #[doc = "external trigger enable and polarity selection"]
+        #[must_use]
         #[inline(always)]
         pub const fn exten(&self) -> super::vals::Exten {
             let val = (self.0 >> 10usize) & 0x03;
@@ -421,10 +437,11 @@ pub mod regs {
         }
         #[doc = "external trigger enable and polarity selection"]
         #[inline(always)]
-        pub fn set_exten(&mut self, val: super::vals::Exten) {
+        pub const fn set_exten(&mut self, val: super::vals::Exten) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
         }
         #[doc = "overrun management mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn ovrmod(&self) -> super::vals::Ovrmod {
             let val = (self.0 >> 12usize) & 0x01;
@@ -432,10 +449,11 @@ pub mod regs {
         }
         #[doc = "overrun management mode"]
         #[inline(always)]
-        pub fn set_ovrmod(&mut self, val: super::vals::Ovrmod) {
+        pub const fn set_ovrmod(&mut self, val: super::vals::Ovrmod) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
         }
         #[doc = "single / continuous conversion mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn cont(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -443,10 +461,11 @@ pub mod regs {
         }
         #[doc = "single / continuous conversion mode"]
         #[inline(always)]
-        pub fn set_cont(&mut self, val: bool) {
+        pub const fn set_cont(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "wait conversion mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn wait(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -454,10 +473,11 @@ pub mod regs {
         }
         #[doc = "wait conversion mode"]
         #[inline(always)]
-        pub fn set_wait(&mut self, val: bool) {
+        pub const fn set_wait(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "auto-off mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn autoff(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -465,10 +485,11 @@ pub mod regs {
         }
         #[doc = "auto-off mode"]
         #[inline(always)]
-        pub fn set_autoff(&mut self, val: bool) {
+        pub const fn set_autoff(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "discontinuous mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn discen(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -476,10 +497,11 @@ pub mod regs {
         }
         #[doc = "discontinuous mode"]
         #[inline(always)]
-        pub fn set_discen(&mut self, val: bool) {
+        pub const fn set_discen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "mode selection of the ADC_CHSELR register"]
+        #[must_use]
         #[inline(always)]
         pub const fn chselrmod(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -487,10 +509,11 @@ pub mod regs {
         }
         #[doc = "mode selection of the ADC_CHSELR register"]
         #[inline(always)]
-        pub fn set_chselrmod(&mut self, val: bool) {
+        pub const fn set_chselrmod(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "enable the watchdog on a single channel or on all channels"]
+        #[must_use]
         #[inline(always)]
         pub const fn awd1sgl(&self) -> super::vals::Awd1sgl {
             let val = (self.0 >> 22usize) & 0x01;
@@ -498,10 +521,11 @@ pub mod regs {
         }
         #[doc = "enable the watchdog on a single channel or on all channels"]
         #[inline(always)]
-        pub fn set_awd1sgl(&mut self, val: super::vals::Awd1sgl) {
+        pub const fn set_awd1sgl(&mut self, val: super::vals::Awd1sgl) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
         }
         #[doc = "analog watchdog enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn awd1en(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -509,10 +533,11 @@ pub mod regs {
         }
         #[doc = "analog watchdog enable"]
         #[inline(always)]
-        pub fn set_awd1en(&mut self, val: bool) {
+        pub const fn set_awd1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "analog watchdog channel selection"]
+        #[must_use]
         #[inline(always)]
         pub const fn awd1ch(&self) -> u8 {
             let val = (self.0 >> 26usize) & 0x1f;
@@ -520,7 +545,7 @@ pub mod regs {
         }
         #[doc = "analog watchdog channel selection"]
         #[inline(always)]
-        pub fn set_awd1ch(&mut self, val: u8) {
+        pub const fn set_awd1ch(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 26usize)) | (((val as u32) & 0x1f) << 26usize);
         }
     }
@@ -564,6 +589,7 @@ pub mod regs {
     pub struct Cfgr2(pub u32);
     impl Cfgr2 {
         #[doc = "oversampler enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn ovse(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -571,10 +597,11 @@ pub mod regs {
         }
         #[doc = "oversampler enable"]
         #[inline(always)]
-        pub fn set_ovse(&mut self, val: bool) {
+        pub const fn set_ovse(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "oversampling ratio"]
+        #[must_use]
         #[inline(always)]
         pub const fn ovsr(&self) -> super::vals::Ovsr {
             let val = (self.0 >> 2usize) & 0x07;
@@ -582,10 +609,11 @@ pub mod regs {
         }
         #[doc = "oversampling ratio"]
         #[inline(always)]
-        pub fn set_ovsr(&mut self, val: super::vals::Ovsr) {
+        pub const fn set_ovsr(&mut self, val: super::vals::Ovsr) {
             self.0 = (self.0 & !(0x07 << 2usize)) | (((val.to_bits() as u32) & 0x07) << 2usize);
         }
         #[doc = "oversampling shift"]
+        #[must_use]
         #[inline(always)]
         pub const fn ovss(&self) -> u8 {
             let val = (self.0 >> 5usize) & 0x0f;
@@ -593,10 +621,11 @@ pub mod regs {
         }
         #[doc = "oversampling shift"]
         #[inline(always)]
-        pub fn set_ovss(&mut self, val: u8) {
+        pub const fn set_ovss(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 5usize)) | (((val as u32) & 0x0f) << 5usize);
         }
         #[doc = "oversampling discontinuous mode (triggered mode) for ADC group regular"]
+        #[must_use]
         #[inline(always)]
         pub const fn tovs(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -604,10 +633,11 @@ pub mod regs {
         }
         #[doc = "oversampling discontinuous mode (triggered mode) for ADC group regular"]
         #[inline(always)]
-        pub fn set_tovs(&mut self, val: bool) {
+        pub const fn set_tovs(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "low frequency trigger mode enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn lftrig(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -615,10 +645,11 @@ pub mod regs {
         }
         #[doc = "low frequency trigger mode enable"]
         #[inline(always)]
-        pub fn set_lftrig(&mut self, val: bool) {
+        pub const fn set_lftrig(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "clock mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn ckmode(&self) -> super::vals::Ckmode {
             let val = (self.0 >> 30usize) & 0x03;
@@ -626,7 +657,7 @@ pub mod regs {
         }
         #[doc = "clock mode"]
         #[inline(always)]
-        pub fn set_ckmode(&mut self, val: super::vals::Ckmode) {
+        pub const fn set_ckmode(&mut self, val: super::vals::Ckmode) {
             self.0 = (self.0 & !(0x03 << 30usize)) | (((val.to_bits() as u32) & 0x03) << 30usize);
         }
     }
@@ -660,6 +691,7 @@ pub mod regs {
     pub struct Chselr(pub u32);
     impl Chselr {
         #[doc = "ADC channel selection for canversion"]
+        #[must_use]
         #[inline(always)]
         pub const fn chsel(&self, n: usize) -> bool {
             assert!(n < 22usize);
@@ -669,7 +701,7 @@ pub mod regs {
         }
         #[doc = "ADC channel selection for canversion"]
         #[inline(always)]
-        pub fn set_chsel(&mut self, n: usize, val: bool) {
+        pub const fn set_chsel(&mut self, n: usize, val: bool) {
             assert!(n < 22usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -721,6 +753,7 @@ pub mod regs {
     pub struct ChselrSq(pub u32);
     impl ChselrSq {
         #[doc = "Conversion sequence definition"]
+        #[must_use]
         #[inline(always)]
         pub const fn sq(&self, n: usize) -> u8 {
             assert!(n < 8usize);
@@ -730,7 +763,7 @@ pub mod regs {
         }
         #[doc = "Conversion sequence definition"]
         #[inline(always)]
-        pub fn set_sq(&mut self, n: usize, val: u8) {
+        pub const fn set_sq(&mut self, n: usize, val: u8) {
             assert!(n < 8usize);
             let offs = 0usize + n * 4usize;
             self.0 = (self.0 & !(0x0f << offs)) | (((val as u32) & 0x0f) << offs);
@@ -768,6 +801,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "ADC enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn aden(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -775,10 +809,11 @@ pub mod regs {
         }
         #[doc = "ADC enable"]
         #[inline(always)]
-        pub fn set_aden(&mut self, val: bool) {
+        pub const fn set_aden(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "ADC disable"]
+        #[must_use]
         #[inline(always)]
         pub const fn addis(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -786,10 +821,11 @@ pub mod regs {
         }
         #[doc = "ADC disable"]
         #[inline(always)]
-        pub fn set_addis(&mut self, val: bool) {
+        pub const fn set_addis(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "ADC group regular conversion start"]
+        #[must_use]
         #[inline(always)]
         pub const fn adstart(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -797,10 +833,11 @@ pub mod regs {
         }
         #[doc = "ADC group regular conversion start"]
         #[inline(always)]
-        pub fn set_adstart(&mut self, val: bool) {
+        pub const fn set_adstart(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "ADC group regular conversion stop"]
+        #[must_use]
         #[inline(always)]
         pub const fn adstp(&self) -> super::vals::Adstp {
             let val = (self.0 >> 4usize) & 0x01;
@@ -808,10 +845,11 @@ pub mod regs {
         }
         #[doc = "ADC group regular conversion stop"]
         #[inline(always)]
-        pub fn set_adstp(&mut self, val: super::vals::Adstp) {
+        pub const fn set_adstp(&mut self, val: super::vals::Adstp) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
         #[doc = "ADC voltage regulator enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn advregen(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -819,10 +857,11 @@ pub mod regs {
         }
         #[doc = "ADC voltage regulator enable"]
         #[inline(always)]
-        pub fn set_advregen(&mut self, val: bool) {
+        pub const fn set_advregen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "ADC calibration"]
+        #[must_use]
         #[inline(always)]
         pub const fn adcal(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -830,7 +869,7 @@ pub mod regs {
         }
         #[doc = "ADC calibration"]
         #[inline(always)]
-        pub fn set_adcal(&mut self, val: bool) {
+        pub const fn set_adcal(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -864,6 +903,7 @@ pub mod regs {
     pub struct Dr(pub u32);
     impl Dr {
         #[doc = "group regular conversion data"]
+        #[must_use]
         #[inline(always)]
         pub const fn data(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -871,7 +911,7 @@ pub mod regs {
         }
         #[doc = "group regular conversion data"]
         #[inline(always)]
-        pub fn set_data(&mut self, val: u16) {
+        pub const fn set_data(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -898,6 +938,7 @@ pub mod regs {
     pub struct Ier(pub u32);
     impl Ier {
         #[doc = "ready interrupt"]
+        #[must_use]
         #[inline(always)]
         pub const fn adrdyie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -905,10 +946,11 @@ pub mod regs {
         }
         #[doc = "ready interrupt"]
         #[inline(always)]
-        pub fn set_adrdyie(&mut self, val: bool) {
+        pub const fn set_adrdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "ADC group regular end of sampling interrupt"]
+        #[must_use]
         #[inline(always)]
         pub const fn eosmpie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -916,10 +958,11 @@ pub mod regs {
         }
         #[doc = "ADC group regular end of sampling interrupt"]
         #[inline(always)]
-        pub fn set_eosmpie(&mut self, val: bool) {
+        pub const fn set_eosmpie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "ADC group regular end of unitary conversion interrupt"]
+        #[must_use]
         #[inline(always)]
         pub const fn eocie(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -927,10 +970,11 @@ pub mod regs {
         }
         #[doc = "ADC group regular end of unitary conversion interrupt"]
         #[inline(always)]
-        pub fn set_eocie(&mut self, val: bool) {
+        pub const fn set_eocie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "ADC group regular end of sequence conversions interrupt"]
+        #[must_use]
         #[inline(always)]
         pub const fn eosie(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -938,10 +982,11 @@ pub mod regs {
         }
         #[doc = "ADC group regular end of sequence conversions interrupt"]
         #[inline(always)]
-        pub fn set_eosie(&mut self, val: bool) {
+        pub const fn set_eosie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "ADC group regular overrun interrupt"]
+        #[must_use]
         #[inline(always)]
         pub const fn ovrie(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -949,10 +994,11 @@ pub mod regs {
         }
         #[doc = "ADC group regular overrun interrupt"]
         #[inline(always)]
-        pub fn set_ovrie(&mut self, val: bool) {
+        pub const fn set_ovrie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "ADC analog watchdog 1 interrupt"]
+        #[must_use]
         #[inline(always)]
         pub const fn awd1ie(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -960,10 +1006,11 @@ pub mod regs {
         }
         #[doc = "ADC analog watchdog 1 interrupt"]
         #[inline(always)]
-        pub fn set_awd1ie(&mut self, val: bool) {
+        pub const fn set_awd1ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "ADC analog watchdog 2 interrupt"]
+        #[must_use]
         #[inline(always)]
         pub const fn awd2ie(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -971,10 +1018,11 @@ pub mod regs {
         }
         #[doc = "ADC analog watchdog 2 interrupt"]
         #[inline(always)]
-        pub fn set_awd2ie(&mut self, val: bool) {
+        pub const fn set_awd2ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "ADC analog watchdog 3 interrupt"]
+        #[must_use]
         #[inline(always)]
         pub const fn awd3ie(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -982,10 +1030,11 @@ pub mod regs {
         }
         #[doc = "ADC analog watchdog 3 interrupt"]
         #[inline(always)]
-        pub fn set_awd3ie(&mut self, val: bool) {
+        pub const fn set_awd3ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "end of calibration interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn eocalie(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -993,10 +1042,11 @@ pub mod regs {
         }
         #[doc = "end of calibration interrupt enable"]
         #[inline(always)]
-        pub fn set_eocalie(&mut self, val: bool) {
+        pub const fn set_eocalie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "channel configuration ready interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn ccrdyie(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -1004,7 +1054,7 @@ pub mod regs {
         }
         #[doc = "channel configuration ready interrupt enable"]
         #[inline(always)]
-        pub fn set_ccrdyie(&mut self, val: bool) {
+        pub const fn set_ccrdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
     }
@@ -1042,6 +1092,7 @@ pub mod regs {
     pub struct Isr(pub u32);
     impl Isr {
         #[doc = "ADC ready flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn adrdy(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1049,10 +1100,11 @@ pub mod regs {
         }
         #[doc = "ADC ready flag"]
         #[inline(always)]
-        pub fn set_adrdy(&mut self, val: bool) {
+        pub const fn set_adrdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "ADC group regular end of sampling flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn eosmp(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1060,10 +1112,11 @@ pub mod regs {
         }
         #[doc = "ADC group regular end of sampling flag"]
         #[inline(always)]
-        pub fn set_eosmp(&mut self, val: bool) {
+        pub const fn set_eosmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "ADC group regular end of unitary conversion flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn eoc(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1071,10 +1124,11 @@ pub mod regs {
         }
         #[doc = "ADC group regular end of unitary conversion flag"]
         #[inline(always)]
-        pub fn set_eoc(&mut self, val: bool) {
+        pub const fn set_eoc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "ADC group regular end of sequence conversions flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn eos(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1082,10 +1136,11 @@ pub mod regs {
         }
         #[doc = "ADC group regular end of sequence conversions flag"]
         #[inline(always)]
-        pub fn set_eos(&mut self, val: bool) {
+        pub const fn set_eos(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "ADC group regular overrun flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn ovr(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1093,10 +1148,11 @@ pub mod regs {
         }
         #[doc = "ADC group regular overrun flag"]
         #[inline(always)]
-        pub fn set_ovr(&mut self, val: bool) {
+        pub const fn set_ovr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "ADC analog watchdog 1 flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn awd1(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1104,10 +1160,11 @@ pub mod regs {
         }
         #[doc = "ADC analog watchdog 1 flag"]
         #[inline(always)]
-        pub fn set_awd1(&mut self, val: bool) {
+        pub const fn set_awd1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "ADC analog watchdog 2 flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn awd2(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -1115,10 +1172,11 @@ pub mod regs {
         }
         #[doc = "ADC analog watchdog 2 flag"]
         #[inline(always)]
-        pub fn set_awd2(&mut self, val: bool) {
+        pub const fn set_awd2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "ADC analog watchdog 3 flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn awd3(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -1126,10 +1184,11 @@ pub mod regs {
         }
         #[doc = "ADC analog watchdog 3 flag"]
         #[inline(always)]
-        pub fn set_awd3(&mut self, val: bool) {
+        pub const fn set_awd3(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "End Of Calibration flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn eocal(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1137,10 +1196,11 @@ pub mod regs {
         }
         #[doc = "End Of Calibration flag"]
         #[inline(always)]
-        pub fn set_eocal(&mut self, val: bool) {
+        pub const fn set_eocal(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Channel Configuration Ready flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn ccrdy(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -1148,7 +1208,7 @@ pub mod regs {
         }
         #[doc = "Channel Configuration Ready flag"]
         #[inline(always)]
-        pub fn set_ccrdy(&mut self, val: bool) {
+        pub const fn set_ccrdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
     }
@@ -1186,6 +1246,7 @@ pub mod regs {
     pub struct Smpr(pub u32);
     impl Smpr {
         #[doc = "sampling time selection 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn smp1(&self) -> super::vals::SampleTime {
             let val = (self.0 >> 0usize) & 0x07;
@@ -1193,10 +1254,11 @@ pub mod regs {
         }
         #[doc = "sampling time selection 1"]
         #[inline(always)]
-        pub fn set_smp1(&mut self, val: super::vals::SampleTime) {
+        pub const fn set_smp1(&mut self, val: super::vals::SampleTime) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "sampling time selection 2"]
+        #[must_use]
         #[inline(always)]
         pub const fn smp2(&self) -> super::vals::SampleTime {
             let val = (self.0 >> 4usize) & 0x07;
@@ -1204,10 +1266,11 @@ pub mod regs {
         }
         #[doc = "sampling time selection 2"]
         #[inline(always)]
-        pub fn set_smp2(&mut self, val: super::vals::SampleTime) {
+        pub const fn set_smp2(&mut self, val: super::vals::SampleTime) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
         }
         #[doc = "channel sampling time selection"]
+        #[must_use]
         #[inline(always)]
         pub const fn smpsel(&self, n: usize) -> bool {
             assert!(n < 22usize);
@@ -1217,7 +1280,7 @@ pub mod regs {
         }
         #[doc = "channel sampling time selection"]
         #[inline(always)]
-        pub fn set_smpsel(&mut self, n: usize, val: bool) {
+        pub const fn set_smpsel(&mut self, n: usize, val: bool) {
             assert!(n < 22usize);
             let offs = 8usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);

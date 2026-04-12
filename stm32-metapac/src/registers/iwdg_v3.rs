@@ -383,39 +383,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "DIVIDE_BY4",
+                    name: "DIVIDE_BY1024",
                     description: Some(
-                        "Divider /4",
+                        "Divider /1024",
                     ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIVIDE_BY8",
-                    description: Some(
-                        "Divider /8",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIVIDE_BY16",
-                    description: Some(
-                        "Divider /16",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIVIDE_BY32",
-                    description: Some(
-                        "Divider /32",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIVIDE_BY64",
-                    description: Some(
-                        "Divider /64",
-                    ),
-                    value: 4,
+                    value: 8,
                 },
                 EnumVariant {
                     name: "DIVIDE_BY128",
@@ -425,11 +397,32 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 5,
                 },
                 EnumVariant {
+                    name: "DIVIDE_BY16",
+                    description: Some(
+                        "Divider /16",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
                     name: "DIVIDE_BY256",
                     description: Some(
                         "Divider /256",
                     ),
                     value: 6,
+                },
+                EnumVariant {
+                    name: "DIVIDE_BY32",
+                    description: Some(
+                        "Divider /32",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIVIDE_BY4",
+                    description: Some(
+                        "Divider /4",
+                    ),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "DIVIDE_BY512",
@@ -439,11 +432,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 7,
                 },
                 EnumVariant {
-                    name: "DIVIDE_BY1024",
+                    name: "DIVIDE_BY64",
                     description: Some(
-                        "Divider /1024",
+                        "Divider /64",
                     ),
-                    value: 8,
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "DIVIDE_BY8",
+                    description: Some(
+                        "Divider /8",
+                    ),
+                    value: 1,
                 },
             ],
         },

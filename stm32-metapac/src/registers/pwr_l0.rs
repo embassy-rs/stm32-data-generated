@@ -231,14 +231,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NVMWAKE_UP",
-                    description: Some("NVM woken up when exiting from Deepsleep mode even if the bit RUN_PD is set"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "NVMSLEEP",
                     description: Some("NVM not woken up when exiting from low-power mode (if the bit RUN_PD is set)"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NVMWAKE_UP",
+                    description: Some("NVM woken up when exiting from Deepsleep mode even if the bit RUN_PD is set"),
+                    value: 0,
                 },
             ],
         },
@@ -248,14 +248,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MAIN_MODE",
-                    description: Some("Voltage regulator in Main mode"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "LOW_POWER_MODE",
                     description: Some("Voltage regulator switches to low-power mode"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "MAIN_MODE",
+                    description: Some("Voltage regulator in Main mode"),
+                    value: 0,
                 },
             ],
         },
@@ -265,14 +265,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "STOP_MODE",
-                    description: Some("Enter Stop mode when the CPU enters deepsleep"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "STANDBY_MODE",
                     description: Some("Enter Standby mode when the CPU enters deepsleep"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "STOP_MODE",
+                    description: Some("Enter Stop mode when the CPU enters deepsleep"),
+                    value: 0,
                 },
             ],
         },
@@ -281,6 +281,11 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 3,
             variants: &[
+                EnumVariant {
+                    name: "EXTERNAL",
+                    description: Some("External input analog voltage (Compare internally to VREFINT)"),
+                    value: 7,
+                },
                 EnumVariant {
                     name: "V1_9",
                     description: Some("1.9 V"),
@@ -315,11 +320,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "V3_1",
                     description: Some("3.1 V"),
                     value: 6,
-                },
-                EnumVariant {
-                    name: "EXTERNAL",
-                    description: Some("External input analog voltage (Compare internally to VREFINT)"),
-                    value: 7,
                 },
             ],
         },

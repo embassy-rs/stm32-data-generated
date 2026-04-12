@@ -6206,14 +6206,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "NO_FLASH_INT",
-                    description: Some("No flash operation interrupted by previous reset."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "SINGLE_WR_INT",
-                    description: Some("Single write operation interrupted."),
-                    value: 1,
+                    name: "BANK_ERASE_INT",
+                    description: Some("Bank erase operation interrupted."),
+                    value: 4,
                 },
                 EnumVariant {
                     name: "BURST_WR_INT",
@@ -6221,24 +6216,29 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PG_ERASE_INT",
-                    description: Some("Page erase operation interrupted."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "BANK_ERASE_INT",
-                    description: Some("Bank erase operation interrupted."),
-                    value: 4,
-                },
-                EnumVariant {
                     name: "MASS_ERASE_INT",
                     description: Some("Mass erase operation interrupted."),
                     value: 5,
                 },
                 EnumVariant {
+                    name: "NO_FLASH_INT",
+                    description: Some("No flash operation interrupted by previous reset."),
+                    value: 0,
+                },
+                EnumVariant {
                     name: "OPT_CHANGE_INT",
                     description: Some("Option change operation interrupted."),
                     value: 6,
+                },
+                EnumVariant {
+                    name: "PG_ERASE_INT",
+                    description: Some("Page erase operation interrupted."),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "SINGLE_WR_INT",
+                    description: Some("Single write operation interrupted."),
+                    value: 1,
                 },
             ],
         },

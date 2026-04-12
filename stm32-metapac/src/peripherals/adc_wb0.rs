@@ -22,112 +22,112 @@ impl Adc {
     #[doc = "VERSION_ID register."]
     #[inline(always)]
     pub const fn version_id(self) -> crate::common::Reg<regs::VersionId, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "CONF register."]
     #[inline(always)]
     pub const fn conf(self) -> crate::common::Reg<regs::Conf, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "CTRL register."]
     #[inline(always)]
     pub const fn ctrl(self) -> crate::common::Reg<regs::Ctrl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "Occasionnal mode control register."]
     #[inline(always)]
     pub const fn ocm_ctrl(self) -> crate::common::Reg<regs::OcmCtrl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "PGA configuration register."]
     #[inline(always)]
     pub const fn pga_conf(self) -> crate::common::Reg<regs::PgaConf, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "SWITCH register."]
     #[inline(always)]
     pub const fn switch(self) -> crate::common::Reg<regs::Switch, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "Decimation filter configuration register."]
     #[inline(always)]
     pub const fn df_conf(self) -> crate::common::Reg<regs::DfConf, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "DS_CONF register."]
     #[inline(always)]
     pub const fn ds_conf(self) -> crate::common::Reg<regs::DsConf, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "SEQ_1 register."]
     #[inline(always)]
     pub const fn seq_1(self) -> crate::common::Reg<regs::Seq1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "SEQ_2 register."]
     #[inline(always)]
     pub const fn seq_2(self) -> crate::common::Reg<regs::Seq2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "COMP_1 register."]
     #[inline(always)]
     pub const fn comp_1(self) -> crate::common::Reg<regs::Comp1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "COMP_2 register."]
     #[inline(always)]
     pub const fn comp_2(self) -> crate::common::Reg<regs::Comp2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
     }
     #[doc = "COMP_3 register."]
     #[inline(always)]
     pub const fn comp_3(self) -> crate::common::Reg<regs::Comp3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
     }
     #[doc = "COMP_4 register."]
     #[inline(always)]
     pub const fn comp_4(self) -> crate::common::Reg<regs::Comp4, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
     }
     #[doc = "COMP_SEL register."]
     #[inline(always)]
     pub const fn comp_sel(self) -> crate::common::Reg<regs::CompSel, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x38usize) as _) }
     }
     #[doc = "WD_TH register."]
     #[inline(always)]
     pub const fn wd_th(self) -> crate::common::Reg<regs::WdTh, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3cusize) as _) }
     }
     #[doc = "WD_CONF register."]
     #[inline(always)]
     pub const fn wd_conf(self) -> crate::common::Reg<regs::WdConf, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
     }
     #[doc = "DS_DATAOUT register."]
     #[inline(always)]
     pub const fn ds_dataout(self) -> crate::common::Reg<regs::DsDataout, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
     }
     #[doc = "Decimation filter Data output register."]
     #[inline(always)]
     pub const fn df_dataout(self) -> crate::common::Reg<regs::DfDataout, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
     }
     #[doc = "IRQ_STATUS register."]
     #[inline(always)]
     pub const fn irq_status(self) -> crate::common::Reg<regs::IrqStatus, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x4cusize) as _) }
     }
     #[doc = "IRQ_ENABLE register."]
     #[inline(always)]
     pub const fn irq_enable(self) -> crate::common::Reg<regs::IrqEnable, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
     }
     #[doc = "Time to add after an LDO Enable or ADC Enable to let the HW to be stable before using it."]
     #[inline(always)]
     pub const fn timer_conf(self) -> crate::common::Reg<regs::TimerConf, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x54usize) as _) }
     }
 }
 pub mod regs {
@@ -137,6 +137,7 @@ pub mod regs {
     pub struct Comp1(pub u32);
     impl Comp1 {
         #[doc = "GAIN1\\[11:0\\]: first calibration point: gain AUXADC_GAIN_1V2\\[11:0\\]."]
+        #[must_use]
         #[inline(always)]
         pub const fn gain1(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -144,11 +145,12 @@ pub mod regs {
         }
         #[doc = "GAIN1\\[11:0\\]: first calibration point: gain AUXADC_GAIN_1V2\\[11:0\\]."]
         #[inline(always)]
-        pub fn set_gain1(&mut self, val: u16) {
+        pub const fn set_gain1(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
         #[doc = "OFFSET1\\[7:0\\]: first calibration point: offset compensation\\[7:0\\]
 with sign."]
+        #[must_use]
         #[inline(always)]
         pub const fn offset1(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0xff;
@@ -157,7 +159,7 @@ with sign."]
         #[doc = "OFFSET1\\[7:0\\]: first calibration point: offset compensation\\[7:0\\]
 with sign."]
         #[inline(always)]
-        pub fn set_offset1(&mut self, val: u8) {
+        pub const fn set_offset1(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 12usize)) | (((val as u32) & 0xff) << 12usize);
         }
     }
@@ -192,6 +194,7 @@ with sign."]
     pub struct Comp2(pub u32);
     impl Comp2 {
         #[doc = "GAIN2\\[11:0\\]: second calibration point: gain AUXADC_GAIN_1V2\\[11:0\\]."]
+        #[must_use]
         #[inline(always)]
         pub const fn gain2(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -199,11 +202,12 @@ with sign."]
         }
         #[doc = "GAIN2\\[11:0\\]: second calibration point: gain AUXADC_GAIN_1V2\\[11:0\\]."]
         #[inline(always)]
-        pub fn set_gain2(&mut self, val: u16) {
+        pub const fn set_gain2(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
         #[doc = "OFFSET2\\[7:0\\]: second calibration point: offset compensation\\[7:0\\]
 with sign."]
+        #[must_use]
         #[inline(always)]
         pub const fn offset2(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0xff;
@@ -212,7 +216,7 @@ with sign."]
         #[doc = "OFFSET2\\[7:0\\]: second calibration point: offset compensation\\[7:0\\]
 with sign."]
         #[inline(always)]
-        pub fn set_offset2(&mut self, val: u8) {
+        pub const fn set_offset2(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 12usize)) | (((val as u32) & 0xff) << 12usize);
         }
     }
@@ -247,6 +251,7 @@ with sign."]
     pub struct Comp3(pub u32);
     impl Comp3 {
         #[doc = "GAIN3\\[11:0\\]: third calibration point: gain AUXADC_GAIN_1V2\\[11:0\\]."]
+        #[must_use]
         #[inline(always)]
         pub const fn gain3(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -254,11 +259,12 @@ with sign."]
         }
         #[doc = "GAIN3\\[11:0\\]: third calibration point: gain AUXADC_GAIN_1V2\\[11:0\\]."]
         #[inline(always)]
-        pub fn set_gain3(&mut self, val: u16) {
+        pub const fn set_gain3(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
         #[doc = "OFFSET3\\[7:0\\]: third calibration point: offset compensation\\[7:0\\]
 with sign."]
+        #[must_use]
         #[inline(always)]
         pub const fn offset3(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0xff;
@@ -267,7 +273,7 @@ with sign."]
         #[doc = "OFFSET3\\[7:0\\]: third calibration point: offset compensation\\[7:0\\]
 with sign."]
         #[inline(always)]
-        pub fn set_offset3(&mut self, val: u8) {
+        pub const fn set_offset3(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 12usize)) | (((val as u32) & 0xff) << 12usize);
         }
     }
@@ -302,6 +308,7 @@ with sign."]
     pub struct Comp4(pub u32);
     impl Comp4 {
         #[doc = "GAIN4\\[11:0\\]: fourth calibration point: gain AUXADC_GAIN_1V2\\[11:0\\]."]
+        #[must_use]
         #[inline(always)]
         pub const fn gain4(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -309,11 +316,12 @@ with sign."]
         }
         #[doc = "GAIN4\\[11:0\\]: fourth calibration point: gain AUXADC_GAIN_1V2\\[11:0\\]."]
         #[inline(always)]
-        pub fn set_gain4(&mut self, val: u16) {
+        pub const fn set_gain4(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
         #[doc = "OFFSET4\\[7:0\\]: fourth calibration point: offset compensation\\[7:0\\]
 with sign."]
+        #[must_use]
         #[inline(always)]
         pub const fn offset4(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0xff;
@@ -322,7 +330,7 @@ with sign."]
         #[doc = "OFFSET4\\[7:0\\]: fourth calibration point: offset compensation\\[7:0\\]
 with sign."]
         #[inline(always)]
-        pub fn set_offset4(&mut self, val: u8) {
+        pub const fn set_offset4(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 12usize)) | (((val as u32) & 0xff) << 12usize);
         }
     }
@@ -357,6 +365,7 @@ with sign."]
     pub struct CompSel(pub u32);
     impl CompSel {
         #[doc = "gain / offset used in ADC single negative mode with Vinput range = 1.2V."]
+        #[must_use]
         #[inline(always)]
         pub const fn gain_offset0(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
@@ -364,10 +373,11 @@ with sign."]
         }
         #[doc = "gain / offset used in ADC single negative mode with Vinput range = 1.2V."]
         #[inline(always)]
-        pub fn set_gain_offset0(&mut self, val: u8) {
+        pub const fn set_gain_offset0(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
         #[doc = "OFFSET_GAIN0\\[1:0\\]: gain / offset used in ADC single negative mode with Vinput range = 1.2V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
+        #[must_use]
         #[inline(always)]
         pub const fn offset_gain0(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
@@ -375,10 +385,11 @@ with sign."]
         }
         #[doc = "OFFSET_GAIN0\\[1:0\\]: gain / offset used in ADC single negative mode with Vinput range = 1.2V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
         #[inline(always)]
-        pub fn set_offset_gain0(&mut self, val: u8) {
+        pub const fn set_offset_gain0(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
         #[doc = "gain / offset used in ADC single positive mode with Vinput range = 1.2V."]
+        #[must_use]
         #[inline(always)]
         pub const fn gain_offset1(&self) -> u8 {
             let val = (self.0 >> 2usize) & 0x03;
@@ -386,10 +397,11 @@ with sign."]
         }
         #[doc = "gain / offset used in ADC single positive mode with Vinput range = 1.2V."]
         #[inline(always)]
-        pub fn set_gain_offset1(&mut self, val: u8) {
+        pub const fn set_gain_offset1(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
         }
         #[doc = "OFFSET_GAIN1\\[1:0\\]: gain / offset used in ADC single positive mode with Vinput range = 1.2V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
+        #[must_use]
         #[inline(always)]
         pub const fn offset_gain1(&self) -> u8 {
             let val = (self.0 >> 2usize) & 0x03;
@@ -397,10 +409,11 @@ with sign."]
         }
         #[doc = "OFFSET_GAIN1\\[1:0\\]: gain / offset used in ADC single positive mode with Vinput range = 1.2V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
         #[inline(always)]
-        pub fn set_offset_gain1(&mut self, val: u8) {
+        pub const fn set_offset_gain1(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
         }
         #[doc = "gain / offset used in ADC differential mode with Vinput range = 1.2V."]
+        #[must_use]
         #[inline(always)]
         pub const fn gain_offset2(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -408,10 +421,11 @@ with sign."]
         }
         #[doc = "gain / offset used in ADC differential mode with Vinput range = 1.2V."]
         #[inline(always)]
-        pub fn set_gain_offset2(&mut self, val: u8) {
+        pub const fn set_gain_offset2(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
         #[doc = "OFFSET_GAIN2\\[1:0\\]: gain / offset used in ADC differential mode with Vinput range = 1.2V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
+        #[must_use]
         #[inline(always)]
         pub const fn offset_gain2(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -419,10 +433,11 @@ with sign."]
         }
         #[doc = "OFFSET_GAIN2\\[1:0\\]: gain / offset used in ADC differential mode with Vinput range = 1.2V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
         #[inline(always)]
-        pub fn set_offset_gain2(&mut self, val: u8) {
+        pub const fn set_offset_gain2(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
         #[doc = "gain / offset used in ADC single negative mode with Vinput range = 2.4V."]
+        #[must_use]
         #[inline(always)]
         pub const fn gain_offset3(&self) -> u8 {
             let val = (self.0 >> 6usize) & 0x03;
@@ -430,10 +445,11 @@ with sign."]
         }
         #[doc = "gain / offset used in ADC single negative mode with Vinput range = 2.4V."]
         #[inline(always)]
-        pub fn set_gain_offset3(&mut self, val: u8) {
+        pub const fn set_gain_offset3(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
         }
         #[doc = "OFFSET_GAIN3\\[1:0\\]: gain / offset used in ADC single negative mode with Vinput range = 2.4V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
+        #[must_use]
         #[inline(always)]
         pub const fn offset_gain3(&self) -> u8 {
             let val = (self.0 >> 6usize) & 0x03;
@@ -441,10 +457,11 @@ with sign."]
         }
         #[doc = "OFFSET_GAIN3\\[1:0\\]: gain / offset used in ADC single negative mode with Vinput range = 2.4V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
         #[inline(always)]
-        pub fn set_offset_gain3(&mut self, val: u8) {
+        pub const fn set_offset_gain3(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
         }
         #[doc = "gain / offset used in ADC single positive mode with Vinput range = 2.4V."]
+        #[must_use]
         #[inline(always)]
         pub const fn gain_offset4(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x03;
@@ -452,10 +469,11 @@ with sign."]
         }
         #[doc = "gain / offset used in ADC single positive mode with Vinput range = 2.4V."]
         #[inline(always)]
-        pub fn set_gain_offset4(&mut self, val: u8) {
+        pub const fn set_gain_offset4(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
         }
         #[doc = "OFFSET_GAIN4\\[1:0\\]: gain / offset used in ADC single positive mode with Vinput range = 2.4V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
+        #[must_use]
         #[inline(always)]
         pub const fn offset_gain4(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x03;
@@ -463,10 +481,11 @@ with sign."]
         }
         #[doc = "OFFSET_GAIN4\\[1:0\\]: gain / offset used in ADC single positive mode with Vinput range = 2.4V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
         #[inline(always)]
-        pub fn set_offset_gain4(&mut self, val: u8) {
+        pub const fn set_offset_gain4(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
         }
         #[doc = "gain / offset used in ADC differential mode with Vinput range = 2.4V."]
+        #[must_use]
         #[inline(always)]
         pub const fn gain_offset5(&self) -> u8 {
             let val = (self.0 >> 10usize) & 0x03;
@@ -474,10 +493,11 @@ with sign."]
         }
         #[doc = "gain / offset used in ADC differential mode with Vinput range = 2.4V."]
         #[inline(always)]
-        pub fn set_gain_offset5(&mut self, val: u8) {
+        pub const fn set_gain_offset5(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
         }
         #[doc = "OFFSET_GAIN5\\[1:0\\]: gain / offset used in ADC differential mode with Vinput range = 2.4V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
+        #[must_use]
         #[inline(always)]
         pub const fn offset_gain5(&self) -> u8 {
             let val = (self.0 >> 10usize) & 0x03;
@@ -485,10 +505,11 @@ with sign."]
         }
         #[doc = "OFFSET_GAIN5\\[1:0\\]: gain / offset used in ADC differential mode with Vinput range = 2.4V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
         #[inline(always)]
-        pub fn set_offset_gain5(&mut self, val: u8) {
+        pub const fn set_offset_gain5(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
         }
         #[doc = "gain / offset used in ADC single negative mode with Vinput range = 3.6V."]
+        #[must_use]
         #[inline(always)]
         pub const fn gain_offset6(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0x03;
@@ -496,10 +517,11 @@ with sign."]
         }
         #[doc = "gain / offset used in ADC single negative mode with Vinput range = 3.6V."]
         #[inline(always)]
-        pub fn set_gain_offset6(&mut self, val: u8) {
+        pub const fn set_gain_offset6(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u32) & 0x03) << 12usize);
         }
         #[doc = "OFFSET_GAIN6\\[1:0\\]: gain / offset used in ADC single negative mode with Vinput range = 3.6V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
+        #[must_use]
         #[inline(always)]
         pub const fn offset_gain6(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0x03;
@@ -507,10 +529,11 @@ with sign."]
         }
         #[doc = "OFFSET_GAIN6\\[1:0\\]: gain / offset used in ADC single negative mode with Vinput range = 3.6V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
         #[inline(always)]
-        pub fn set_offset_gain6(&mut self, val: u8) {
+        pub const fn set_offset_gain6(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u32) & 0x03) << 12usize);
         }
         #[doc = "gain / offset used in ADC single positive mode with Vinput range = 3.6V."]
+        #[must_use]
         #[inline(always)]
         pub const fn gain_offset7(&self) -> u8 {
             let val = (self.0 >> 14usize) & 0x03;
@@ -518,10 +541,11 @@ with sign."]
         }
         #[doc = "gain / offset used in ADC single positive mode with Vinput range = 3.6V."]
         #[inline(always)]
-        pub fn set_gain_offset7(&mut self, val: u8) {
+        pub const fn set_gain_offset7(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u32) & 0x03) << 14usize);
         }
         #[doc = "OFFSET_GAIN7\\[1:0\\]: gain / offset used in ADC single positive mode with Vinput range = 3.6V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
+        #[must_use]
         #[inline(always)]
         pub const fn offset_gain7(&self) -> u8 {
             let val = (self.0 >> 14usize) & 0x03;
@@ -529,10 +553,11 @@ with sign."]
         }
         #[doc = "OFFSET_GAIN7\\[1:0\\]: gain / offset used in ADC single positive mode with Vinput range = 3.6V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
         #[inline(always)]
-        pub fn set_offset_gain7(&mut self, val: u8) {
+        pub const fn set_offset_gain7(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u32) & 0x03) << 14usize);
         }
         #[doc = "gain / offset used in ADC differential mode with Vinput range = 3.6V."]
+        #[must_use]
         #[inline(always)]
         pub const fn gain_offset8(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x03;
@@ -540,10 +565,11 @@ with sign."]
         }
         #[doc = "gain / offset used in ADC differential mode with Vinput range = 3.6V."]
         #[inline(always)]
-        pub fn set_gain_offset8(&mut self, val: u8) {
+        pub const fn set_gain_offset8(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
         }
         #[doc = "OFFSET_GAIN8\\[1:0\\]: gain / offset used in ADC differential mode with Vinput range = 3.6V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
+        #[must_use]
         #[inline(always)]
         pub const fn offset_gain8(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x03;
@@ -551,7 +577,7 @@ with sign."]
         }
         #[doc = "OFFSET_GAIN8\\[1:0\\]: gain / offset used in ADC differential mode with Vinput range = 3.6V: 00: OFFSET1 and GAIN1 from COMP_1 01: OFFSET2 and GAIN2 from COMP_2 10: OFFSET3 and GAIN3 from COMP_3 11: OFFSET4 and GAIN4 from COMP_4."]
         #[inline(always)]
-        pub fn set_offset_gain8(&mut self, val: u8) {
+        pub const fn set_offset_gain8(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
         }
     }
@@ -597,6 +623,7 @@ with sign."]
     pub struct Conf(pub u32);
     impl Conf {
         #[doc = "CONT: regular sequence runs continuously when ADC mode is enabled: 0: enable the single conversion: when the sequence is over, the conversion stops 1: enable the continuous conversion: when the sequence is over, the sequence starts again until the software sets the CTRL.STOP_OP_MODE bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn cont(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -604,10 +631,11 @@ with sign."]
         }
         #[doc = "CONT: regular sequence runs continuously when ADC mode is enabled: 0: enable the single conversion: when the sequence is over, the conversion stops 1: enable the continuous conversion: when the sequence is over, the sequence starts again until the software sets the CTRL.STOP_OP_MODE bit."]
         #[inline(always)]
-        pub fn set_cont(&mut self, val: bool) {
+        pub const fn set_cont(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "SEQUENCE: enable the sequence mode (active by default): 0: sequence mode is disabled, only SEQ0 is selected 1: sequence mode is enabled, conversions from SEQ0 to SEQx with x=SEQ_LEN Note: clearing this bit is equivalent to SEQUENCE=1 and SEQ_LEN=0000. Ideally, this bit can be kept high as redundant with keeping high and setting SEQ_LEN=0000."]
+        #[must_use]
         #[inline(always)]
         pub const fn sequence(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -615,10 +643,11 @@ with sign."]
         }
         #[doc = "SEQUENCE: enable the sequence mode (active by default): 0: sequence mode is disabled, only SEQ0 is selected 1: sequence mode is enabled, conversions from SEQ0 to SEQx with x=SEQ_LEN Note: clearing this bit is equivalent to SEQUENCE=1 and SEQ_LEN=0000. Ideally, this bit can be kept high as redundant with keeping high and setting SEQ_LEN=0000."]
         #[inline(always)]
-        pub fn set_sequence(&mut self, val: bool) {
+        pub const fn set_sequence(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "SEQ_LEN\\[3:0\\]: number of conversions in a regular sequence: 0000: 1 conversion, starting from SEQ0 0001: 2 conversions, starting from SEQ0 ... 1111: 16 conversions, starting from SEQ0."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq_len(&self) -> u8 {
             let val = (self.0 >> 2usize) & 0x0f;
@@ -626,10 +655,11 @@ with sign."]
         }
         #[doc = "SEQ_LEN\\[3:0\\]: number of conversions in a regular sequence: 0000: 1 conversion, starting from SEQ0 0001: 2 conversions, starting from SEQ0 ... 1111: 16 conversions, starting from SEQ0."]
         #[inline(always)]
-        pub fn set_seq_len(&mut self, val: u8) {
+        pub const fn set_seq_len(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 2usize)) | (((val as u32) & 0x0f) << 2usize);
         }
         #[doc = "SMPS_SYNCHRO_ENA: synchronize the ADC start conversion with a pulse generated by the SMPS: 0: SMPS synchronization is disabled for all ADC clock frequencies 1: SMPS synchronization is enabled (only when ADC clock is 8 MHz or 16 MHz) Note: SMPS_SYNCHRO_ENA must be 0 when the ADC analog clock is 32 MHz or when PWRC_CR5.NOSMPS = 1."]
+        #[must_use]
         #[inline(always)]
         pub const fn smps_synchro_ena(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -637,10 +667,11 @@ with sign."]
         }
         #[doc = "SMPS_SYNCHRO_ENA: synchronize the ADC start conversion with a pulse generated by the SMPS: 0: SMPS synchronization is disabled for all ADC clock frequencies 1: SMPS synchronization is enabled (only when ADC clock is 8 MHz or 16 MHz) Note: SMPS_SYNCHRO_ENA must be 0 when the ADC analog clock is 32 MHz or when PWRC_CR5.NOSMPS = 1."]
         #[inline(always)]
-        pub fn set_smps_synchro_ena(&mut self, val: bool) {
+        pub const fn set_smps_synchro_ena(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "ADC mode selection (= data path selection)."]
+        #[must_use]
         #[inline(always)]
         pub const fn op_mode(&self) -> u8 {
             let val = (self.0 >> 7usize) & 0x03;
@@ -648,10 +679,11 @@ with sign."]
         }
         #[doc = "ADC mode selection (= data path selection)."]
         #[inline(always)]
-        pub fn set_op_mode(&mut self, val: u8) {
+        pub const fn set_op_mode(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 7usize)) | (((val as u32) & 0x03) << 7usize);
         }
         #[doc = "SAMPLE_RATE_LSB: Sample Rate LSB This field is an extension of SAMPLE_RATE definition in bits 12,11 of CONF register. It impacts the conversion rate of ADC (F_ADC). See SAMPLE_RATE bits for the full description. When this field is set to a value different than 0, SMPS synchronization is not feasible. This value is hidden to the user."]
+        #[must_use]
         #[inline(always)]
         pub const fn sample_rate_lsb(&self) -> u8 {
             let val = (self.0 >> 9usize) & 0x03;
@@ -659,10 +691,11 @@ with sign."]
         }
         #[doc = "SAMPLE_RATE_LSB: Sample Rate LSB This field is an extension of SAMPLE_RATE definition in bits 12,11 of CONF register. It impacts the conversion rate of ADC (F_ADC). See SAMPLE_RATE bits for the full description. When this field is set to a value different than 0, SMPS synchronization is not feasible. This value is hidden to the user."]
         #[inline(always)]
-        pub fn set_sample_rate_lsb(&mut self, val: u8) {
+        pub const fn set_sample_rate_lsb(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 9usize)) | (((val as u32) & 0x03) << 9usize);
         }
         #[doc = "SAMPLE_RATE\\[1:0\\]: conversion rate of ADC (F_ADC): F_ADC = F_ADC_CLK/(16 + 16*SAMPLE_RATE_MSB + 4*SAMPLE_RATE + SAMPLE_RATE_LSB),where F_ADC_CLK is the analog ADC clock frequency. By default F_ADC_CLK is 16MHz frequency."]
+        #[must_use]
         #[inline(always)]
         pub const fn sample_rate(&self) -> u8 {
             let val = (self.0 >> 11usize) & 0x03;
@@ -670,10 +703,11 @@ with sign."]
         }
         #[doc = "SAMPLE_RATE\\[1:0\\]: conversion rate of ADC (F_ADC): F_ADC = F_ADC_CLK/(16 + 16*SAMPLE_RATE_MSB + 4*SAMPLE_RATE + SAMPLE_RATE_LSB),where F_ADC_CLK is the analog ADC clock frequency. By default F_ADC_CLK is 16MHz frequency."]
         #[inline(always)]
-        pub fn set_sample_rate(&mut self, val: u8) {
+        pub const fn set_sample_rate(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 11usize)) | (((val as u32) & 0x03) << 11usize);
         }
         #[doc = "DMA_DS_EN: enable the DMA mode for the Down Sampler data path: 0: DMA mode is disabled 1: DMA mode is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn dma_ds_ena(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -681,10 +715,11 @@ with sign."]
         }
         #[doc = "DMA_DS_EN: enable the DMA mode for the Down Sampler data path: 0: DMA mode is disabled 1: DMA mode is enabled."]
         #[inline(always)]
-        pub fn set_dma_ds_ena(&mut self, val: bool) {
+        pub const fn set_dma_ds_ena(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "enable DMA mode for Decimation Filter data path."]
+        #[must_use]
         #[inline(always)]
         pub const fn dma_df_ena(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -692,10 +727,11 @@ with sign."]
         }
         #[doc = "enable DMA mode for Decimation Filter data path."]
         #[inline(always)]
-        pub fn set_dma_df_ena(&mut self, val: bool) {
+        pub const fn set_dma_df_ena(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "OVR_DS_CFG: Down Sampler overrun configuration: 0: the previous data is kept, the new one is lost 1: the previous data is lost, the new one is kept."]
+        #[must_use]
         #[inline(always)]
         pub const fn ovr_ds_cfg(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -703,10 +739,11 @@ with sign."]
         }
         #[doc = "OVR_DS_CFG: Down Sampler overrun configuration: 0: the previous data is kept, the new one is lost 1: the previous data is lost, the new one is kept."]
         #[inline(always)]
-        pub fn set_ovr_ds_cfg(&mut self, val: bool) {
+        pub const fn set_ovr_ds_cfg(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "decimation overrun configuration."]
+        #[must_use]
         #[inline(always)]
         pub const fn ovr_df_cfg(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -714,10 +751,11 @@ with sign."]
         }
         #[doc = "decimation overrun configuration."]
         #[inline(always)]
-        pub fn set_ovr_df_cfg(&mut self, val: bool) {
+        pub const fn set_ovr_df_cfg(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "BIT_INVERT_SN: invert bit to bit the ADC data output (1's complement) when a single negative input is connected to the ADC: 0: no inversion (default) 1: enable the inversion."]
+        #[must_use]
         #[inline(always)]
         pub const fn bit_invert_sn(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -725,10 +763,11 @@ with sign."]
         }
         #[doc = "BIT_INVERT_SN: invert bit to bit the ADC data output (1's complement) when a single negative input is connected to the ADC: 0: no inversion (default) 1: enable the inversion."]
         #[inline(always)]
-        pub fn set_bit_invert_sn(&mut self, val: bool) {
+        pub const fn set_bit_invert_sn(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "BIT_INVERT_DIFF: invert bit to bit the ADC data output (1's complement) when a differential input is connected to the ADC: 0: no inversion (default) 1: enable the inversion."]
+        #[must_use]
         #[inline(always)]
         pub const fn bit_invert_diff(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -736,10 +775,11 @@ with sign."]
         }
         #[doc = "BIT_INVERT_DIFF: invert bit to bit the ADC data output (1's complement) when a differential input is connected to the ADC: 0: no inversion (default) 1: enable the inversion."]
         #[inline(always)]
-        pub fn set_bit_invert_diff(&mut self, val: bool) {
+        pub const fn set_bit_invert_diff(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "ADC_CONT_1V2: select the input sampling method: 0: sampling only at conversion start (default) 1: sampling starts at the end of conversion."]
+        #[must_use]
         #[inline(always)]
         pub const fn adc_cont_1v2(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -747,10 +787,11 @@ with sign."]
         }
         #[doc = "ADC_CONT_1V2: select the input sampling method: 0: sampling only at conversion start (default) 1: sampling starts at the end of conversion."]
         #[inline(always)]
-        pub fn set_adc_cont_1v2(&mut self, val: bool) {
+        pub const fn set_adc_cont_1v2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "possibility to keep the VBIAS_PRECH enabled to deactivate the filter."]
+        #[must_use]
         #[inline(always)]
         pub const fn vbias_prech_force(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -758,10 +799,11 @@ with sign."]
         }
         #[doc = "possibility to keep the VBIAS_PRECH enabled to deactivate the filter."]
         #[inline(always)]
-        pub fn set_vbias_prech_force(&mut self, val: bool) {
+        pub const fn set_vbias_prech_force(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "SAMPLE_RATE_MSB: Sample Rate MSB This field is an extension of SAMPLE_RATE definition in bits 12,11 of CONF register. It impacts the conversion rate of ADC (F_ADC). See SAMPLE_RATE bits for the full description."]
+        #[must_use]
         #[inline(always)]
         pub const fn sample_rate_msb(&self) -> u8 {
             let val = (self.0 >> 21usize) & 0x07;
@@ -769,7 +811,7 @@ with sign."]
         }
         #[doc = "SAMPLE_RATE_MSB: Sample Rate MSB This field is an extension of SAMPLE_RATE definition in bits 12,11 of CONF register. It impacts the conversion rate of ADC (F_ADC). See SAMPLE_RATE bits for the full description."]
         #[inline(always)]
-        pub fn set_sample_rate_msb(&mut self, val: u8) {
+        pub const fn set_sample_rate_msb(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 21usize)) | (((val as u32) & 0x07) << 21usize);
         }
     }
@@ -813,6 +855,7 @@ with sign."]
     pub struct Ctrl(pub u32);
     impl Ctrl {
         #[doc = "ADC_ON_OFF: 0: power off the ADC 1: power on the ADC."]
+        #[must_use]
         #[inline(always)]
         pub const fn adc_on_off(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -820,10 +863,11 @@ with sign."]
         }
         #[doc = "ADC_ON_OFF: 0: power off the ADC 1: power on the ADC."]
         #[inline(always)]
-        pub fn set_adc_on_off(&mut self, val: bool) {
+        pub const fn set_adc_on_off(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "generate a start pulse to initiate an ADC conversion."]
+        #[must_use]
         #[inline(always)]
         pub const fn start_con(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -831,10 +875,11 @@ with sign."]
         }
         #[doc = "generate a start pulse to initiate an ADC conversion."]
         #[inline(always)]
-        pub fn set_start_con(&mut self, val: bool) {
+        pub const fn set_start_con(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "START_CONV (1): generate a start pulse to initiate an ADC conversion: 0: no effect 1: start the ADC conversion Note: this bit is set by software and cleared by hardware."]
+        #[must_use]
         #[inline(always)]
         pub const fn start_conv(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -842,10 +887,11 @@ with sign."]
         }
         #[doc = "START_CONV (1): generate a start pulse to initiate an ADC conversion: 0: no effect 1: start the ADC conversion Note: this bit is set by software and cleared by hardware."]
         #[inline(always)]
-        pub fn set_start_conv(&mut self, val: bool) {
+        pub const fn set_start_conv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "stop the on-going OP_MODE (ADC mode, Analog audio mode, Full."]
+        #[must_use]
         #[inline(always)]
         pub const fn stop_op_mod(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -853,10 +899,11 @@ with sign."]
         }
         #[doc = "stop the on-going OP_MODE (ADC mode, Analog audio mode, Full."]
         #[inline(always)]
-        pub fn set_stop_op_mod(&mut self, val: bool) {
+        pub const fn set_stop_op_mod(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "STOP_OP_MODE (1): stop the on-going OP_MODE (ADC mode, Analog audio mode, Full mode): 0: no effect 1: stop on-going ADC mode Note: this bit is set by software and cleared by hardware. When setting the STOP_MODE_OP, the user has to wait around 10 us before to start a new ADC conversion by setting the START_CONV bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn stop_op_mode(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -864,10 +911,11 @@ with sign."]
         }
         #[doc = "STOP_OP_MODE (1): stop the on-going OP_MODE (ADC mode, Analog audio mode, Full mode): 0: no effect 1: stop on-going ADC mode Note: this bit is set by software and cleared by hardware. When setting the STOP_MODE_OP, the user has to wait around 10 us before to start a new ADC conversion by setting the START_CONV bit."]
         #[inline(always)]
-        pub fn set_stop_op_mode(&mut self, val: bool) {
+        pub const fn set_stop_op_mode(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "enable the digital audio mode (the data path uses. the decimation filter)."]
+        #[must_use]
         #[inline(always)]
         pub const fn dig_aud_mode(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -875,10 +923,11 @@ with sign."]
         }
         #[doc = "enable the digital audio mode (the data path uses. the decimation filter)."]
         #[inline(always)]
-        pub fn set_dig_aud_mode(&mut self, val: bool) {
+        pub const fn set_dig_aud_mode(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "TEST_MODE: select the functional or the test mode of the ADC: 0: functional mode (one of the four main functional modes is used) 1: test mode (for debug, test, calibration)."]
+        #[must_use]
         #[inline(always)]
         pub const fn test_mode(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -886,10 +935,11 @@ with sign."]
         }
         #[doc = "TEST_MODE: select the functional or the test mode of the ADC: 0: functional mode (one of the four main functional modes is used) 1: test mode (for debug, test, calibration)."]
         #[inline(always)]
-        pub fn set_test_mode(&mut self, val: bool) {
+        pub const fn set_test_mode(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "ADC_LDO_ENA: enable the LDO associated to the ADC block: 0: disable the ADC LDO 1: enable the ADC LDO."]
+        #[must_use]
         #[inline(always)]
         pub const fn adc_ldo_ena(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -897,7 +947,7 @@ with sign."]
         }
         #[doc = "ADC_LDO_ENA: enable the LDO associated to the ADC block: 0: disable the ADC LDO 1: enable the ADC LDO."]
         #[inline(always)]
-        pub fn set_adc_ldo_ena(&mut self, val: bool) {
+        pub const fn set_adc_ldo_ena(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
     }
@@ -932,16 +982,18 @@ with sign."]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct DfConf(pub u32);
     impl DfConf {
+        #[must_use]
         #[inline(always)]
         pub const fn df_cic_dec_factor(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
             val as u8
         }
         #[inline(always)]
-        pub fn set_df_cic_dec_factor(&mut self, val: u8) {
+        pub const fn set_df_cic_dec_factor(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "CIC filter decimator half factor."]
+        #[must_use]
         #[inline(always)]
         pub const fn df_cic_dhf(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -949,10 +1001,11 @@ with sign."]
         }
         #[doc = "CIC filter decimator half factor."]
         #[inline(always)]
-        pub fn set_df_cic_dhf(&mut self, val: bool) {
+        pub const fn set_df_cic_dhf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "1.2 fractional interpolator enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn df_itp1p2(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -960,10 +1013,11 @@ with sign."]
         }
         #[doc = "1.2 fractional interpolator enable."]
         #[inline(always)]
-        pub fn set_df_itp1p2(&mut self, val: bool) {
+        pub const fn set_df_itp1p2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "select signed/unsigned format for input."]
+        #[must_use]
         #[inline(always)]
         pub const fn df_i_u2s(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -971,10 +1025,11 @@ with sign."]
         }
         #[doc = "select signed/unsigned format for input."]
         #[inline(always)]
-        pub fn set_df_i_u2s(&mut self, val: bool) {
+        pub const fn set_df_i_u2s(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "select signed/unsigned format for data output."]
+        #[must_use]
         #[inline(always)]
         pub const fn df_o_s2u(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -982,10 +1037,11 @@ with sign."]
         }
         #[doc = "select signed/unsigned format for data output."]
         #[inline(always)]
-        pub fn set_df_o_s2u(&mut self, val: bool) {
+        pub const fn set_df_o_s2u(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "select the PDM clock rate."]
+        #[must_use]
         #[inline(always)]
         pub const fn pdm_rate(&self) -> u8 {
             let val = (self.0 >> 11usize) & 0x0f;
@@ -993,10 +1049,11 @@ with sign."]
         }
         #[doc = "select the PDM clock rate."]
         #[inline(always)]
-        pub fn set_pdm_rate(&mut self, val: u8) {
+        pub const fn set_pdm_rate(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 11usize)) | (((val as u32) & 0x0f) << 11usize);
         }
         #[doc = "left/right channel selection on digital microphone."]
+        #[must_use]
         #[inline(always)]
         pub const fn df_microl_rn(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -1004,10 +1061,11 @@ with sign."]
         }
         #[doc = "left/right channel selection on digital microphone."]
         #[inline(always)]
-        pub fn set_df_microl_rn(&mut self, val: bool) {
+        pub const fn set_df_microl_rn(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "high pass filter enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn df_hpf_en(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1015,10 +1073,11 @@ with sign."]
         }
         #[doc = "high pass filter enable."]
         #[inline(always)]
-        pub fn set_df_hpf_en(&mut self, val: bool) {
+        pub const fn set_df_hpf_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "half dynamic enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn df_half_d_en(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -1026,7 +1085,7 @@ with sign."]
         }
         #[doc = "half dynamic enable."]
         #[inline(always)]
-        pub fn set_df_half_d_en(&mut self, val: bool) {
+        pub const fn set_df_half_d_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
     }
@@ -1063,6 +1122,7 @@ with sign."]
     pub struct DfDataout(pub u32);
     impl DfDataout {
         #[doc = "contain the converted data at the output of the. decimation filter."]
+        #[must_use]
         #[inline(always)]
         pub const fn df_data(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -1070,7 +1130,7 @@ with sign."]
         }
         #[doc = "contain the converted data at the output of the. decimation filter."]
         #[inline(always)]
-        pub fn set_df_data(&mut self, val: u16) {
+        pub const fn set_df_data(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -1097,6 +1157,7 @@ with sign."]
     pub struct DsConf(pub u32);
     impl DsConf {
         #[doc = "DS_RATIO\\[2:0\\]: program the Down Sampler ratio (N factor) 000: ratio = 1, no down sampling (default) 001: ratio = 2 010: ratio = 4 011: ratio = 8 100: ratio = 16 101: ratio = 32 110: ratio = 64 111: ratio = 128."]
+        #[must_use]
         #[inline(always)]
         pub const fn ds_ratio(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -1104,10 +1165,11 @@ with sign."]
         }
         #[doc = "DS_RATIO\\[2:0\\]: program the Down Sampler ratio (N factor) 000: ratio = 1, no down sampling (default) 001: ratio = 2 010: ratio = 4 011: ratio = 8 100: ratio = 16 101: ratio = 32 110: ratio = 64 111: ratio = 128."]
         #[inline(always)]
-        pub fn set_ds_ratio(&mut self, val: u8) {
+        pub const fn set_ds_ratio(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "DS_WIDTH\\[2:0\\]: program the Down Sampler width of data output (DSDTATA) 000: DS_DATA output on 12-bit (default) 001: DS_DATA output on 13-bit 010: DS_DATA output on 14-bit 011: DS_DATA output on 15-bit 100: DS_DATA output on 16-bit 1xx: reserved."]
+        #[must_use]
         #[inline(always)]
         pub const fn ds_width(&self) -> u8 {
             let val = (self.0 >> 3usize) & 0x07;
@@ -1115,7 +1177,7 @@ with sign."]
         }
         #[doc = "DS_WIDTH\\[2:0\\]: program the Down Sampler width of data output (DSDTATA) 000: DS_DATA output on 12-bit (default) 001: DS_DATA output on 13-bit 010: DS_DATA output on 14-bit 011: DS_DATA output on 15-bit 100: DS_DATA output on 16-bit 1xx: reserved."]
         #[inline(always)]
-        pub fn set_ds_width(&mut self, val: u8) {
+        pub const fn set_ds_width(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 3usize)) | (((val as u32) & 0x07) << 3usize);
         }
     }
@@ -1150,6 +1212,7 @@ with sign."]
     pub struct DsDataout(pub u32);
     impl DsDataout {
         #[doc = "DS_DATA\\[15:0\\]: contain the converted data at the output of the Down Sampler."]
+        #[must_use]
         #[inline(always)]
         pub const fn ds_data(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -1157,7 +1220,7 @@ with sign."]
         }
         #[doc = "DS_DATA\\[15:0\\]: contain the converted data at the output of the Down Sampler."]
         #[inline(always)]
-        pub fn set_ds_data(&mut self, val: u16) {
+        pub const fn set_ds_data(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -1184,6 +1247,7 @@ with sign."]
     pub struct IrqEnable(pub u32);
     impl IrqEnable {
         #[doc = "EOC_IRQ (Used in test mode only): set when the ADC conversion is completed. When read, provide the status of the interrupt: 0: ADC conversion is not completed 1: ADC conversion is completed Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn eoc_irq(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1191,10 +1255,11 @@ with sign."]
         }
         #[doc = "EOC_IRQ (Used in test mode only): set when the ADC conversion is completed. When read, provide the status of the interrupt: 0: ADC conversion is not completed 1: ADC conversion is completed Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
         #[inline(always)]
-        pub fn set_eoc_irq(&mut self, val: bool) {
+        pub const fn set_eoc_irq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "(Used in test mode only): End of ADC conversion interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn eoc_irq_ena(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1202,10 +1267,11 @@ with sign."]
         }
         #[doc = "(Used in test mode only): End of ADC conversion interrupt enable."]
         #[inline(always)]
-        pub fn set_eoc_irq_ena(&mut self, val: bool) {
+        pub const fn set_eoc_irq_ena(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "EODS_IRQ: set when the Down Sampler conversion is completed. When read, provide the status of the interrupt: 0: Down Sampler conversion is not completed 1: Down Sampler conversion is completed Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn eods_irq(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1213,10 +1279,11 @@ with sign."]
         }
         #[doc = "EODS_IRQ: set when the Down Sampler conversion is completed. When read, provide the status of the interrupt: 0: Down Sampler conversion is not completed 1: Down Sampler conversion is completed Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
         #[inline(always)]
-        pub fn set_eods_irq(&mut self, val: bool) {
+        pub const fn set_eods_irq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "End of conversion interrupt enable for the Down Sampler output."]
+        #[must_use]
         #[inline(always)]
         pub const fn eods_irq_ena(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1224,10 +1291,11 @@ with sign."]
         }
         #[doc = "End of conversion interrupt enable for the Down Sampler output."]
         #[inline(always)]
-        pub fn set_eods_irq_ena(&mut self, val: bool) {
+        pub const fn set_eods_irq_ena(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "End of conversion interrupt enable for the decimation filter output."]
+        #[must_use]
         #[inline(always)]
         pub const fn eodf_irq_ena(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1235,10 +1303,11 @@ with sign."]
         }
         #[doc = "End of conversion interrupt enable for the decimation filter output."]
         #[inline(always)]
-        pub fn set_eodf_irq_ena(&mut self, val: bool) {
+        pub const fn set_eodf_irq_ena(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "EOS_IRQ: set when a sequence of conversion is completed. When read, provide the status of the interrupt: 0: sequence of conversion is not completed 1: sequence of conversion is completed Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn eos_irq(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1246,10 +1315,11 @@ with sign."]
         }
         #[doc = "EOS_IRQ: set when a sequence of conversion is completed. When read, provide the status of the interrupt: 0: sequence of conversion is not completed 1: sequence of conversion is completed Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
         #[inline(always)]
-        pub fn set_eos_irq(&mut self, val: bool) {
+        pub const fn set_eos_irq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "End of regular sequence interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn eos_irq_ena(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1257,10 +1327,11 @@ with sign."]
         }
         #[doc = "End of regular sequence interrupt enable."]
         #[inline(always)]
-        pub fn set_eos_irq_ena(&mut self, val: bool) {
+        pub const fn set_eos_irq_ena(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "AWD_IRQ: set when an analog watchdog event occurs. When read, provide the status of the interrupt: 0: no analog watchdog event occurred 1: analog watchdog event has occurred Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn awd_irq(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1268,10 +1339,11 @@ with sign."]
         }
         #[doc = "AWD_IRQ: set when an analog watchdog event occurs. When read, provide the status of the interrupt: 0: no analog watchdog event occurred 1: analog watchdog event has occurred Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
         #[inline(always)]
-        pub fn set_awd_irq(&mut self, val: bool) {
+        pub const fn set_awd_irq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "analog watchdog interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn awd_irq_ena(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1279,10 +1351,11 @@ with sign."]
         }
         #[doc = "analog watchdog interrupt enable."]
         #[inline(always)]
-        pub fn set_awd_irq_ena(&mut self, val: bool) {
+        pub const fn set_awd_irq_ena(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "OVR_DS_IRQ: set to indicate a Down Sampler overrun (at least one data is lost) When read, provide the status of the interrupt: 0: no overrun occurred 1: overrun occurred Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn ovr_ds_irq(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1290,10 +1363,11 @@ with sign."]
         }
         #[doc = "OVR_DS_IRQ: set to indicate a Down Sampler overrun (at least one data is lost) When read, provide the status of the interrupt: 0: no overrun occurred 1: overrun occurred Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
         #[inline(always)]
-        pub fn set_ovr_ds_irq(&mut self, val: bool) {
+        pub const fn set_ovr_ds_irq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Down Sampler overrun interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn ovr_ds_irq_ena(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1301,10 +1375,11 @@ with sign."]
         }
         #[doc = "Down Sampler overrun interrupt enable."]
         #[inline(always)]
-        pub fn set_ovr_ds_irq_ena(&mut self, val: bool) {
+        pub const fn set_ovr_ds_irq_ena(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "decimation filter overrun interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn ovr_df_irq_ena(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -1312,10 +1387,11 @@ with sign."]
         }
         #[doc = "decimation filter overrun interrupt enable."]
         #[inline(always)]
-        pub fn set_ovr_df_irq_ena(&mut self, val: bool) {
+        pub const fn set_ovr_df_irq_ena(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "decimation filter saturation interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn df_ovrfl_irq_ena(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1323,7 +1399,7 @@ with sign."]
         }
         #[doc = "decimation filter saturation interrupt enable."]
         #[inline(always)]
-        pub fn set_df_ovrfl_irq_ena(&mut self, val: bool) {
+        pub const fn set_df_ovrfl_irq_ena(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
@@ -1364,6 +1440,7 @@ with sign."]
     pub struct IrqStatus(pub u32);
     impl IrqStatus {
         #[doc = "EOC_IRQ (Used in test mode only): set when the ADC conversion is completed. When read, provide the status of the interrupt: 0: ADC conversion is not completed 1: ADC conversion is completed Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn eoc_irq(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1371,10 +1448,11 @@ with sign."]
         }
         #[doc = "EOC_IRQ (Used in test mode only): set when the ADC conversion is completed. When read, provide the status of the interrupt: 0: ADC conversion is not completed 1: ADC conversion is completed Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
         #[inline(always)]
-        pub fn set_eoc_irq(&mut self, val: bool) {
+        pub const fn set_eoc_irq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "EODS_IRQ: set when the Down Sampler conversion is completed. When read, provide the status of the interrupt: 0: Down Sampler conversion is not completed 1: Down Sampler conversion is completed Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn eods_irq(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1382,10 +1460,11 @@ with sign."]
         }
         #[doc = "EODS_IRQ: set when the Down Sampler conversion is completed. When read, provide the status of the interrupt: 0: Down Sampler conversion is not completed 1: Down Sampler conversion is completed Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
         #[inline(always)]
-        pub fn set_eods_irq(&mut self, val: bool) {
+        pub const fn set_eods_irq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "set when the decimation filter conversion is completed."]
+        #[must_use]
         #[inline(always)]
         pub const fn eodf_irq(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1393,10 +1472,11 @@ with sign."]
         }
         #[doc = "set when the decimation filter conversion is completed."]
         #[inline(always)]
-        pub fn set_eodf_irq(&mut self, val: bool) {
+        pub const fn set_eodf_irq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "EOS_IRQ: set when a sequence of conversion is completed. When read, provide the status of the interrupt: 0: sequence of conversion is not completed 1: sequence of conversion is completed Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn eos_irq(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1404,10 +1484,11 @@ with sign."]
         }
         #[doc = "EOS_IRQ: set when a sequence of conversion is completed. When read, provide the status of the interrupt: 0: sequence of conversion is not completed 1: sequence of conversion is completed Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
         #[inline(always)]
-        pub fn set_eos_irq(&mut self, val: bool) {
+        pub const fn set_eos_irq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "AWD_IRQ: set when an analog watchdog event occurs. When read, provide the status of the interrupt: 0: no analog watchdog event occurred 1: analog watchdog event has occurred Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn awd_irq(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1415,10 +1496,11 @@ with sign."]
         }
         #[doc = "AWD_IRQ: set when an analog watchdog event occurs. When read, provide the status of the interrupt: 0: no analog watchdog event occurred 1: analog watchdog event has occurred Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
         #[inline(always)]
-        pub fn set_awd_irq(&mut self, val: bool) {
+        pub const fn set_awd_irq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "OVR_DS_IRQ: set to indicate a Down Sampler overrun (at least one data is lost) When read, provide the status of the interrupt: 0: no overrun occurred 1: overrun occurred Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
+        #[must_use]
         #[inline(always)]
         pub const fn ovr_ds_irq(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1426,10 +1508,11 @@ with sign."]
         }
         #[doc = "OVR_DS_IRQ: set to indicate a Down Sampler overrun (at least one data is lost) When read, provide the status of the interrupt: 0: no overrun occurred 1: overrun occurred Writing this bit clears the status of the interrupt: 0: no effect 1: clear the interrupt."]
         #[inline(always)]
-        pub fn set_ovr_ds_irq(&mut self, val: bool) {
+        pub const fn set_ovr_ds_irq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "set to indicate a decimation filter overrun (a data is lost)."]
+        #[must_use]
         #[inline(always)]
         pub const fn ovr_df_irq(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -1437,10 +1520,11 @@ with sign."]
         }
         #[doc = "set to indicate a decimation filter overrun (a data is lost)."]
         #[inline(always)]
-        pub fn set_ovr_df_irq(&mut self, val: bool) {
+        pub const fn set_ovr_df_irq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "set to indicate the decimation filter is saturated."]
+        #[must_use]
         #[inline(always)]
         pub const fn df_ovrfl_irq(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1448,7 +1532,7 @@ with sign."]
         }
         #[doc = "set to indicate the decimation filter is saturated."]
         #[inline(always)]
-        pub fn set_df_ovrfl_irq(&mut self, val: bool) {
+        pub const fn set_df_ovrfl_irq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
@@ -1484,6 +1568,7 @@ with sign."]
     pub struct OcmCtrl(pub u32);
     impl OcmCtrl {
         #[doc = "select the occasional conversion source."]
+        #[must_use]
         #[inline(always)]
         pub const fn ocm_src(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1491,10 +1576,11 @@ with sign."]
         }
         #[doc = "select the occasional conversion source."]
         #[inline(always)]
-        pub fn set_ocm_src(&mut self, val: bool) {
+        pub const fn set_ocm_src(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "start occasional conversion in analog audio and full. modes."]
+        #[must_use]
         #[inline(always)]
         pub const fn ocm_ena(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1502,7 +1588,7 @@ with sign."]
         }
         #[doc = "start occasional conversion in analog audio and full. modes."]
         #[inline(always)]
-        pub fn set_ocm_ena(&mut self, val: bool) {
+        pub const fn set_ocm_ena(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -1537,6 +1623,7 @@ with sign."]
     pub struct PgaConf(pub u32);
     impl PgaConf {
         #[doc = "from 6 to 30 dB."]
+        #[must_use]
         #[inline(always)]
         pub const fn pga_gain(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -1544,10 +1631,11 @@ with sign."]
         }
         #[doc = "from 6 to 30 dB."]
         #[inline(always)]
-        pub fn set_pga_gain(&mut self, val: u8) {
+        pub const fn set_pga_gain(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "set the microphone bias voltage."]
+        #[must_use]
         #[inline(always)]
         pub const fn pga_bias(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x07;
@@ -1555,7 +1643,7 @@ with sign."]
         }
         #[doc = "set the microphone bias voltage."]
         #[inline(always)]
-        pub fn set_pga_bias(&mut self, val: u8) {
+        pub const fn set_pga_bias(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
         }
     }
@@ -1602,6 +1690,7 @@ to ADC differential input 1001: VINP\\[1\\]-VINM\\[1\\]
 to ADC differential input 1010: VINP\\[2\\]-VINM\\[2\\]
 to ADC differential input 1011: VINP\\[3\\]-VINM\\[3\\]
 to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature sensor 111x: reserved."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq0(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -1621,10 +1710,11 @@ to ADC differential input 1010: VINP\\[2\\]-VINM\\[2\\]
 to ADC differential input 1011: VINP\\[3\\]-VINM\\[3\\]
 to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature sensor 111x: reserved."]
         #[inline(always)]
-        pub fn set_seq0(&mut self, val: u8) {
+        pub const fn set_seq0(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "SEQ1\\[3:0\\]: channel number code for second conversion of the sequence. See SEQ0 for code detail."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq1(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -1632,10 +1722,11 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "SEQ1\\[3:0\\]: channel number code for second conversion of the sequence. See SEQ0 for code detail."]
         #[inline(always)]
-        pub fn set_seq1(&mut self, val: u8) {
+        pub const fn set_seq1(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
         #[doc = "SEQ2\\[3:0\\]: channel number code for 3rd conversion of the sequence. See SEQ0 for code detail."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq2(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
@@ -1643,10 +1734,11 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "SEQ2\\[3:0\\]: channel number code for 3rd conversion of the sequence. See SEQ0 for code detail."]
         #[inline(always)]
-        pub fn set_seq2(&mut self, val: u8) {
+        pub const fn set_seq2(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
         #[doc = "SEQ3\\[3:0\\]: channel number code for 4th conversion of the sequence. See SEQ0 for code detail."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq3(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0x0f;
@@ -1654,10 +1746,11 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "SEQ3\\[3:0\\]: channel number code for 4th conversion of the sequence. See SEQ0 for code detail."]
         #[inline(always)]
-        pub fn set_seq3(&mut self, val: u8) {
+        pub const fn set_seq3(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 12usize)) | (((val as u32) & 0x0f) << 12usize);
         }
         #[doc = "SEQ4\\[3:0\\]: channel number code for 5th conversion of the sequence. See SEQ0 for code detail."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq4(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x0f;
@@ -1665,10 +1758,11 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "SEQ4\\[3:0\\]: channel number code for 5th conversion of the sequence. See SEQ0 for code detail."]
         #[inline(always)]
-        pub fn set_seq4(&mut self, val: u8) {
+        pub const fn set_seq4(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 16usize)) | (((val as u32) & 0x0f) << 16usize);
         }
         #[doc = "SEQ5\\[3:0\\]: channel number code for 6th conversion of the sequence. See SEQ0 for code detail."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq5(&self) -> u8 {
             let val = (self.0 >> 20usize) & 0x0f;
@@ -1676,10 +1770,11 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "SEQ5\\[3:0\\]: channel number code for 6th conversion of the sequence. See SEQ0 for code detail."]
         #[inline(always)]
-        pub fn set_seq5(&mut self, val: u8) {
+        pub const fn set_seq5(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 20usize)) | (((val as u32) & 0x0f) << 20usize);
         }
         #[doc = "SEQ6\\[3:0\\]: channel number code for 7th conversion of the sequence. See SEQ0 for code detail."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq6(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x0f;
@@ -1687,10 +1782,11 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "SEQ6\\[3:0\\]: channel number code for 7th conversion of the sequence. See SEQ0 for code detail."]
         #[inline(always)]
-        pub fn set_seq6(&mut self, val: u8) {
+        pub const fn set_seq6(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
         }
         #[doc = "SEQ7\\[3:0\\]: channel number code for 8th conversion of the sequence. See SEQ0 for code detail."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq7(&self) -> u8 {
             let val = (self.0 >> 28usize) & 0x0f;
@@ -1698,7 +1794,7 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "SEQ7\\[3:0\\]: channel number code for 8th conversion of the sequence. See SEQ0 for code detail."]
         #[inline(always)]
-        pub fn set_seq7(&mut self, val: u8) {
+        pub const fn set_seq7(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 28usize)) | (((val as u32) & 0x0f) << 28usize);
         }
     }
@@ -1746,6 +1842,7 @@ to ADC differential input 1001: VINP\\[1\\]-VINM\\[1\\]
 to ADC differential input 1010: VINP\\[2\\]-VINM\\[2\\]
 to ADC differential input 1011: VINP\\[3\\]-VINM\\[3\\]
 to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature sensor 111x: reserved."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq8(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -1765,10 +1862,11 @@ to ADC differential input 1010: VINP\\[2\\]-VINM\\[2\\]
 to ADC differential input 1011: VINP\\[3\\]-VINM\\[3\\]
 to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature sensor 111x: reserved."]
         #[inline(always)]
-        pub fn set_seq8(&mut self, val: u8) {
+        pub const fn set_seq8(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "SEQ9\\[3:0\\]: channel number code for 10th conversion of the sequence. See SEQ0 for code detail."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq9(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -1776,10 +1874,11 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "SEQ9\\[3:0\\]: channel number code for 10th conversion of the sequence. See SEQ0 for code detail."]
         #[inline(always)]
-        pub fn set_seq9(&mut self, val: u8) {
+        pub const fn set_seq9(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
         #[doc = "SEQ10\\[3:0\\]: channel number code for 11th conversion of the sequence. See SEQ0 for code detail."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq10(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
@@ -1787,10 +1886,11 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "SEQ10\\[3:0\\]: channel number code for 11th conversion of the sequence. See SEQ0 for code detail."]
         #[inline(always)]
-        pub fn set_seq10(&mut self, val: u8) {
+        pub const fn set_seq10(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
         #[doc = "SEQ11\\[3:0\\]: channel number code for 12th conversion of the sequence. See SEQ0 for code detail."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq11(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0x0f;
@@ -1798,10 +1898,11 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "SEQ11\\[3:0\\]: channel number code for 12th conversion of the sequence. See SEQ0 for code detail."]
         #[inline(always)]
-        pub fn set_seq11(&mut self, val: u8) {
+        pub const fn set_seq11(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 12usize)) | (((val as u32) & 0x0f) << 12usize);
         }
         #[doc = "SEQ12\\[3:0\\]: channel number code for 13th conversion of the sequence. See SEQ0 for code detail."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq12(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x0f;
@@ -1809,10 +1910,11 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "SEQ12\\[3:0\\]: channel number code for 13th conversion of the sequence. See SEQ0 for code detail."]
         #[inline(always)]
-        pub fn set_seq12(&mut self, val: u8) {
+        pub const fn set_seq12(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 16usize)) | (((val as u32) & 0x0f) << 16usize);
         }
         #[doc = "SEQ13\\[3:0\\]: channel number code for 14th conversion of the sequence. See SEQ0 for code detail."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq13(&self) -> u8 {
             let val = (self.0 >> 20usize) & 0x0f;
@@ -1820,10 +1922,11 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "SEQ13\\[3:0\\]: channel number code for 14th conversion of the sequence. See SEQ0 for code detail."]
         #[inline(always)]
-        pub fn set_seq13(&mut self, val: u8) {
+        pub const fn set_seq13(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 20usize)) | (((val as u32) & 0x0f) << 20usize);
         }
         #[doc = "SEQ14\\[3:0\\]: channel number code for 15th conversion of the sequence. See SEQ0 for code detail."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq14(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x0f;
@@ -1831,10 +1934,11 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "SEQ14\\[3:0\\]: channel number code for 15th conversion of the sequence. See SEQ0 for code detail."]
         #[inline(always)]
-        pub fn set_seq14(&mut self, val: u8) {
+        pub const fn set_seq14(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
         }
         #[doc = "SEQ15\\[3:0\\]: channel number code for 16th conversion of the sequence. See SEQ0 for code detail."]
+        #[must_use]
         #[inline(always)]
         pub const fn seq15(&self) -> u8 {
             let val = (self.0 >> 28usize) & 0x0f;
@@ -1842,7 +1946,7 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "SEQ15\\[3:0\\]: channel number code for 16th conversion of the sequence. See SEQ0 for code detail."]
         #[inline(always)]
-        pub fn set_seq15(&mut self, val: u8) {
+        pub const fn set_seq15(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 28usize)) | (((val as u32) & 0x0f) << 28usize);
         }
     }
@@ -1880,6 +1984,7 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         #[doc = "SE_VIN_0\\[1:0\\]: input voltage for VINM\\[0\\]
 / VINP\\[0\\]-VINM\\[0\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
+        #[must_use]
         #[inline(always)]
         pub const fn se_vin_0(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
@@ -1889,12 +1994,13 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
 / VINP\\[0\\]-VINM\\[0\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
         #[inline(always)]
-        pub fn set_se_vin_0(&mut self, val: u8) {
+        pub const fn set_se_vin_0(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
         #[doc = "SE_VIN_1\\[1:0\\]: input voltage for VINM\\[1\\]
 / VINP\\[1\\]-VINM\\[1\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
+        #[must_use]
         #[inline(always)]
         pub const fn se_vin_1(&self) -> u8 {
             let val = (self.0 >> 2usize) & 0x03;
@@ -1904,12 +2010,13 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
 / VINP\\[1\\]-VINM\\[1\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
         #[inline(always)]
-        pub fn set_se_vin_1(&mut self, val: u8) {
+        pub const fn set_se_vin_1(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val as u32) & 0x03) << 2usize);
         }
         #[doc = "SE_VIN_2\\[1:0\\]: input voltage for VINM\\[2\\]
 / VINP\\[2\\]-VINM\\[2\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
+        #[must_use]
         #[inline(always)]
         pub const fn se_vin_2(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -1919,12 +2026,13 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
 / VINP\\[2\\]-VINM\\[2\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
         #[inline(always)]
-        pub fn set_se_vin_2(&mut self, val: u8) {
+        pub const fn set_se_vin_2(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
         #[doc = "SE_VIN_3\\[1:0\\]: input voltage for VINM\\[3\\]
 / VINP\\[3\\]-VINM\\[3\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
+        #[must_use]
         #[inline(always)]
         pub const fn se_vin_3(&self) -> u8 {
             let val = (self.0 >> 6usize) & 0x03;
@@ -1934,11 +2042,12 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
 / VINP\\[3\\]-VINM\\[3\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
         #[inline(always)]
-        pub fn set_se_vin_3(&mut self, val: u8) {
+        pub const fn set_se_vin_3(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
         }
         #[doc = "SE_VIN_4\\[1:0\\]: input voltage for VINP\\[0\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
+        #[must_use]
         #[inline(always)]
         pub const fn se_vin_4(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x03;
@@ -1947,11 +2056,12 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         #[doc = "SE_VIN_4\\[1:0\\]: input voltage for VINP\\[0\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
         #[inline(always)]
-        pub fn set_se_vin_4(&mut self, val: u8) {
+        pub const fn set_se_vin_4(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
         }
         #[doc = "SE_VIN_5\\[1:0\\]: input voltage for VINP\\[1\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
+        #[must_use]
         #[inline(always)]
         pub const fn se_vin_5(&self) -> u8 {
             let val = (self.0 >> 10usize) & 0x03;
@@ -1960,11 +2070,12 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         #[doc = "SE_VIN_5\\[1:0\\]: input voltage for VINP\\[1\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
         #[inline(always)]
-        pub fn set_se_vin_5(&mut self, val: u8) {
+        pub const fn set_se_vin_5(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
         }
         #[doc = "SE_VIN_6\\[1:0\\]: input voltage for VINP\\[2\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
+        #[must_use]
         #[inline(always)]
         pub const fn se_vin_6(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0x03;
@@ -1973,11 +2084,12 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         #[doc = "SE_VIN_6\\[1:0\\]: input voltage for VINP\\[2\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
         #[inline(always)]
-        pub fn set_se_vin_6(&mut self, val: u8) {
+        pub const fn set_se_vin_6(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val as u32) & 0x03) << 12usize);
         }
         #[doc = "SE_VIN_7\\[1:0\\]: input voltage for VINP\\[3\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
+        #[must_use]
         #[inline(always)]
         pub const fn se_vin_7(&self) -> u8 {
             let val = (self.0 >> 14usize) & 0x03;
@@ -1986,7 +2098,7 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         #[doc = "SE_VIN_7\\[1:0\\]: input voltage for VINP\\[3\\]
 00: Vinput = 1.2V 01: reserved (not used for this cut) 10: Vinput = 2.4V 11: Vinput = 3.6V."]
         #[inline(always)]
-        pub fn set_se_vin_7(&mut self, val: u8) {
+        pub const fn set_se_vin_7(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 14usize)) | (((val as u32) & 0x03) << 14usize);
         }
     }
@@ -2022,6 +2134,7 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
     pub struct TimerConf(pub u32);
     impl TimerConf {
         #[doc = "define the duration of a waiting time to be inserted between the ADC_LDO enable and the ADC ON to let time to the LDO to stabilize before starting a conversion."]
+        #[must_use]
         #[inline(always)]
         pub const fn adc_ldo_delay(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -2029,10 +2142,11 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "define the duration of a waiting time to be inserted between the ADC_LDO enable and the ADC ON to let time to the LDO to stabilize before starting a conversion."]
         #[inline(always)]
-        pub fn set_adc_ldo_delay(&mut self, val: u8) {
+        pub const fn set_adc_ldo_delay(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "define the duration of a waiting time starting at rising edge of PGA_EN signal and corresponding to the VBIAS precharge duration."]
+        #[must_use]
         #[inline(always)]
         pub const fn vbias_prech_delay(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -2040,10 +2154,11 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "define the duration of a waiting time starting at rising edge of PGA_EN signal and corresponding to the VBIAS precharge duration."]
         #[inline(always)]
-        pub fn set_vbias_prech_delay(&mut self, val: u8) {
+        pub const fn set_vbias_prech_delay(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "Select the time step PD_STEP for the VBIAS_PRECH_DELAY timer."]
+        #[must_use]
         #[inline(always)]
         pub const fn prech_delay_sel(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -2051,7 +2166,7 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "Select the time step PD_STEP for the VBIAS_PRECH_DELAY timer."]
         #[inline(always)]
-        pub fn set_prech_delay_sel(&mut self, val: bool) {
+        pub const fn set_prech_delay_sel(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
@@ -2088,6 +2203,7 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
     pub struct VersionId(pub u32);
     impl VersionId {
         #[doc = "VERSION_ID\\[7:0\\]: version of the embedded IP."]
+        #[must_use]
         #[inline(always)]
         pub const fn version_id(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -2095,7 +2211,7 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
         }
         #[doc = "VERSION_ID\\[7:0\\]: version of the embedded IP."]
         #[inline(always)]
-        pub fn set_version_id(&mut self, val: u8) {
+        pub const fn set_version_id(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
     }
@@ -2132,6 +2248,7 @@ to ADC positive input Bit9: VINP\\[1\\]
 to ADC positive input Bit10: VINP\\[2\\]
 to ADC positive input Bit11: VINP\\[3\\]
 to ADC positive input Bit12: Not used Bit13: TEMP to ADC positive input Bit14: GND to ADC positive input Bit15: VDDA to ADC positive input."]
+        #[must_use]
         #[inline(always)]
         pub const fn awd_chx(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -2147,7 +2264,7 @@ to ADC positive input Bit10: VINP\\[2\\]
 to ADC positive input Bit11: VINP\\[3\\]
 to ADC positive input Bit12: Not used Bit13: TEMP to ADC positive input Bit14: GND to ADC positive input Bit15: VDDA to ADC positive input."]
         #[inline(always)]
-        pub fn set_awd_chx(&mut self, val: u16) {
+        pub const fn set_awd_chx(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -2174,6 +2291,7 @@ to ADC positive input Bit12: Not used Bit13: TEMP to ADC positive input Bit14: G
     pub struct WdTh(pub u32);
     impl WdTh {
         #[doc = "WD_LT\\[11:0\\]: analog watchdog low level threshold."]
+        #[must_use]
         #[inline(always)]
         pub const fn wd_lt(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0x0fff;
@@ -2181,10 +2299,11 @@ to ADC positive input Bit12: Not used Bit13: TEMP to ADC positive input Bit14: G
         }
         #[doc = "WD_LT\\[11:0\\]: analog watchdog low level threshold."]
         #[inline(always)]
-        pub fn set_wd_lt(&mut self, val: u16) {
+        pub const fn set_wd_lt(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
         }
         #[doc = "WD_HT\\[11:0\\]: analog watchdog high level threshold."]
+        #[must_use]
         #[inline(always)]
         pub const fn wd_ht(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0x0fff;
@@ -2192,7 +2311,7 @@ to ADC positive input Bit12: Not used Bit13: TEMP to ADC positive input Bit14: G
         }
         #[doc = "WD_HT\\[11:0\\]: analog watchdog high level threshold."]
         #[inline(always)]
-        pub fn set_wd_ht(&mut self, val: u16) {
+        pub const fn set_wd_ht(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 16usize)) | (((val as u32) & 0x0fff) << 16usize);
         }
     }

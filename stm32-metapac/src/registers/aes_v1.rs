@@ -259,14 +259,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NONE",
-                    description: Some("Word"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HALF_WORD",
-                    description: Some("Half-word (16-bit)"),
-                    value: 1,
+                    name: "BIT",
+                    description: Some("Bit"),
+                    value: 3,
                 },
                 EnumVariant {
                     name: "BYTE",
@@ -274,9 +269,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BIT",
-                    description: Some("Bit"),
-                    value: 3,
+                    name: "HALF_WORD",
+                    description: Some("Half-word (16-bit)"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "NONE",
+                    description: Some("Word"),
+                    value: 0,
                 },
             ],
         },

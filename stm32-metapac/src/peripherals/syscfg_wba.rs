@@ -22,67 +22,67 @@ impl Syscfg {
     #[doc = "secure configuration register"]
     #[inline(always)]
     pub const fn seccfgr(self) -> crate::common::Reg<regs::Seccfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "configuration register 1"]
     #[inline(always)]
     pub const fn cfgr1(self) -> crate::common::Reg<regs::Cfgr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "FPU interrupt mask register"]
     #[inline(always)]
     pub const fn fpuimr(self) -> crate::common::Reg<regs::Fpuimr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "CPU non-secure lock register"]
     #[inline(always)]
     pub const fn cnslckr(self) -> crate::common::Reg<regs::Cnslckr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "CPU secure lock register"]
     #[inline(always)]
     pub const fn cslockr(self) -> crate::common::Reg<regs::Cslockr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "configuration register 2"]
     #[inline(always)]
     pub const fn cfgr2(self) -> crate::common::Reg<regs::Cfgr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "memory erase status register"]
     #[inline(always)]
     pub const fn mesr(self) -> crate::common::Reg<regs::Mesr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "compensation cell control/status register"]
     #[inline(always)]
     pub const fn cccsr(self) -> crate::common::Reg<regs::Cccsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "compensation cell value register"]
     #[inline(always)]
     pub const fn ccvr(self) -> crate::common::Reg<regs::Ccvr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "compensation cell code register"]
     #[inline(always)]
     pub const fn cccr(self) -> crate::common::Reg<regs::Cccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "RSS command register"]
     #[inline(always)]
     pub const fn rsscmdr(self) -> crate::common::Reg<regs::Rsscmdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
     }
     #[doc = "OTG_HS PHY register"]
     #[inline(always)]
     pub const fn otghsphycr(self) -> crate::common::Reg<regs::Otghsphycr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x74usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x74usize) as _) }
     }
     #[doc = "OTG_HS PHY tune register 2"]
     #[inline(always)]
     pub const fn otghsphytuner2(self) -> crate::common::Reg<regs::Otghsphytuner2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x7cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x7cusize) as _) }
     }
 }
 pub mod regs {
@@ -92,6 +92,7 @@ pub mod regs {
     pub struct Cccr(pub u32);
     impl Cccr {
         #[doc = "NMOS compensation code of the I/Os supplied by V<sub>DD</sub> These bits are written by software to define an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set."]
+        #[must_use]
         #[inline(always)]
         pub const fn ncc1(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -99,10 +100,11 @@ pub mod regs {
         }
         #[doc = "NMOS compensation code of the I/Os supplied by V<sub>DD</sub> These bits are written by software to define an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set."]
         #[inline(always)]
-        pub fn set_ncc1(&mut self, val: u8) {
+        pub const fn set_ncc1(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "PMOS compensation code of the I/Os supplied by V<sub>DD</sub> These bits are written by software to define an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set."]
+        #[must_use]
         #[inline(always)]
         pub const fn pcc1(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -110,10 +112,11 @@ pub mod regs {
         }
         #[doc = "PMOS compensation code of the I/Os supplied by V<sub>DD</sub> These bits are written by software to define an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is set."]
         #[inline(always)]
-        pub fn set_pcc1(&mut self, val: u8) {
+        pub const fn set_pcc1(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
         #[doc = "NMOS compensation code of the I/Os supplied by V<sub>DDIO2</sub> These bits are written by software to define an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is set."]
+        #[must_use]
         #[inline(always)]
         pub const fn ncc2(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
@@ -121,10 +124,11 @@ pub mod regs {
         }
         #[doc = "NMOS compensation code of the I/Os supplied by V<sub>DDIO2</sub> These bits are written by software to define an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is set."]
         #[inline(always)]
-        pub fn set_ncc2(&mut self, val: u8) {
+        pub const fn set_ncc2(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
         #[doc = "PMOS compensation code of the I/Os supplied by V<sub>DDIO2</sub> These bits are written by software to define an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is set."]
+        #[must_use]
         #[inline(always)]
         pub const fn pcc2(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0x0f;
@@ -132,7 +136,7 @@ pub mod regs {
         }
         #[doc = "PMOS compensation code of the I/Os supplied by V<sub>DDIO2</sub> These bits are written by software to define an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is set."]
         #[inline(always)]
-        pub fn set_pcc2(&mut self, val: u8) {
+        pub const fn set_pcc2(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 12usize)) | (((val as u32) & 0x0f) << 12usize);
         }
     }
@@ -171,6 +175,7 @@ pub mod regs {
     pub struct Cccsr(pub u32);
     impl Cccsr {
         #[doc = "VDD I/Os compensation cell enable This bit enables the compensation cell of the I/Os supplied by V<sub>DD</sub>."]
+        #[must_use]
         #[inline(always)]
         pub const fn en1(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -178,10 +183,11 @@ pub mod regs {
         }
         #[doc = "VDD I/Os compensation cell enable This bit enables the compensation cell of the I/Os supplied by V<sub>DD</sub>."]
         #[inline(always)]
-        pub fn set_en1(&mut self, val: bool) {
+        pub const fn set_en1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "VDD I/Os code selection This bit selects the code to be applied for the compensation cell of the I/Os supplied by V<sub>DD</sub>."]
+        #[must_use]
         #[inline(always)]
         pub const fn cs1(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -189,10 +195,11 @@ pub mod regs {
         }
         #[doc = "VDD I/Os code selection This bit selects the code to be applied for the compensation cell of the I/Os supplied by V<sub>DD</sub>."]
         #[inline(always)]
-        pub fn set_cs1(&mut self, val: bool) {
+        pub const fn set_cs1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "VDDIO2 I/Os compensation cell enable This bit enables the compensation cell of the I/Os supplied by V<sub>DDIO2</sub>."]
+        #[must_use]
         #[inline(always)]
         pub const fn en2(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -200,10 +207,11 @@ pub mod regs {
         }
         #[doc = "VDDIO2 I/Os compensation cell enable This bit enables the compensation cell of the I/Os supplied by V<sub>DDIO2</sub>."]
         #[inline(always)]
-        pub fn set_en2(&mut self, val: bool) {
+        pub const fn set_en2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "VDDIO2 I/Os code selection This bit selects the code to be applied for the compensation cell of the I/Os supplied by V<sub>DDIO2</sub>."]
+        #[must_use]
         #[inline(always)]
         pub const fn cs2(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -211,10 +219,11 @@ pub mod regs {
         }
         #[doc = "VDDIO2 I/Os code selection This bit selects the code to be applied for the compensation cell of the I/Os supplied by V<sub>DDIO2</sub>."]
         #[inline(always)]
-        pub fn set_cs2(&mut self, val: bool) {
+        pub const fn set_cs2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "VDD I/Os compensation cell ready flag This bit provides the compensation cell status of the I/Os supplied by V<sub>DD</sub>. Note: The HSI clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY1) is not set if the HSI clock is not enabled (HSION)."]
+        #[must_use]
         #[inline(always)]
         pub const fn rdy1(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -222,10 +231,11 @@ pub mod regs {
         }
         #[doc = "VDD I/Os compensation cell ready flag This bit provides the compensation cell status of the I/Os supplied by V<sub>DD</sub>. Note: The HSI clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY1) is not set if the HSI clock is not enabled (HSION)."]
         #[inline(always)]
-        pub fn set_rdy1(&mut self, val: bool) {
+        pub const fn set_rdy1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "VDDIO2 I/Os compensation cell ready flag This bit provides the compensation cell status of the I/Os supplied by V<sub>DDIO2</sub>. Note: The HSI clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY2) is not set if the HSI clock is not enabled (HSION)."]
+        #[must_use]
         #[inline(always)]
         pub const fn rdy2(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -233,7 +243,7 @@ pub mod regs {
         }
         #[doc = "VDDIO2 I/Os compensation cell ready flag This bit provides the compensation cell status of the I/Os supplied by V<sub>DDIO2</sub>. Note: The HSI clock is required for the compensation cell to work properly. The compensation cell ready bit (RDY2) is not set if the HSI clock is not enabled (HSION)."]
         #[inline(always)]
-        pub fn set_rdy2(&mut self, val: bool) {
+        pub const fn set_rdy2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
     }
@@ -267,6 +277,7 @@ pub mod regs {
     pub struct Ccvr(pub u32);
     impl Ccvr {
         #[doc = "NMOS compensation value of the I/Os supplied by V<sub>DD</sub> This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is reset."]
+        #[must_use]
         #[inline(always)]
         pub const fn ncv1(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -274,10 +285,11 @@ pub mod regs {
         }
         #[doc = "NMOS compensation value of the I/Os supplied by V<sub>DD</sub> This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is reset."]
         #[inline(always)]
-        pub fn set_ncv1(&mut self, val: u8) {
+        pub const fn set_ncv1(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "PMOS compensation value of the I/Os supplied by V<sub>DD</sub> This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is reset."]
+        #[must_use]
         #[inline(always)]
         pub const fn pcv1(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -285,10 +297,11 @@ pub mod regs {
         }
         #[doc = "PMOS compensation value of the I/Os supplied by V<sub>DD</sub> This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS1 bit of the CCCSR is reset."]
         #[inline(always)]
-        pub fn set_pcv1(&mut self, val: u8) {
+        pub const fn set_pcv1(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
         #[doc = "NMOS compensation value of the I/Os supplied by V<sub>DDIO2</sub> This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is reset."]
+        #[must_use]
         #[inline(always)]
         pub const fn ncv2(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
@@ -296,10 +309,11 @@ pub mod regs {
         }
         #[doc = "NMOS compensation value of the I/Os supplied by V<sub>DDIO2</sub> This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for NMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is reset."]
         #[inline(always)]
-        pub fn set_ncv2(&mut self, val: u8) {
+        pub const fn set_ncv2(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
         #[doc = "PMOS compensation value of the I/Os supplied by V<sub>DDIO2</sub> This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is reset."]
+        #[must_use]
         #[inline(always)]
         pub const fn pcv2(&self) -> u8 {
             let val = (self.0 >> 12usize) & 0x0f;
@@ -307,7 +321,7 @@ pub mod regs {
         }
         #[doc = "PMOS compensation value of the I/Os supplied by V<sub>DDIO2</sub> This value is provided by the cell and can be used by the CPU to compute an I/Os compensation cell code for PMOS transistors. This code is applied to the I/Os compensation cell when the CS2 bit of the CCCSR is reset."]
         #[inline(always)]
-        pub fn set_pcv2(&mut self, val: u8) {
+        pub const fn set_pcv2(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 12usize)) | (((val as u32) & 0x0f) << 12usize);
         }
     }
@@ -346,6 +360,7 @@ pub mod regs {
     pub struct Cfgr1(pub u32);
     impl Cfgr1 {
         #[doc = "I/O analog switch voltage booster enable Access can be protected by GTZC_TZSC ADC4SEC. Note: Refer to Table�121 for setting."]
+        #[must_use]
         #[inline(always)]
         pub const fn boosten(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -353,10 +368,11 @@ pub mod regs {
         }
         #[doc = "I/O analog switch voltage booster enable Access can be protected by GTZC_TZSC ADC4SEC. Note: Refer to Table�121 for setting."]
         #[inline(always)]
-        pub fn set_boosten(&mut self, val: bool) {
+        pub const fn set_boosten(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "GPIO analog switch control voltage selection Access can be protected by GTZC_TZSC ADC4SEC. Note: Refer to Table�121 for setting."]
+        #[must_use]
         #[inline(always)]
         pub const fn anaswvdd(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -364,10 +380,11 @@ pub mod regs {
         }
         #[doc = "GPIO analog switch control voltage selection Access can be protected by GTZC_TZSC ADC4SEC. Note: Refer to Table�121 for setting."]
         #[inline(always)]
-        pub fn set_anaswvdd(&mut self, val: bool) {
+        pub const fn set_anaswvdd(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Fast-mode Plus drive capability activation on PA6 This bit can be read and written only with secure access if PA6 is secure in GPIOA. This bit enables the Fast-mode Plus drive mode for PA6 when PA6 is not used by I2C peripheral. This can be used to dive a LED for instance. Access can be protected by GPIOA SEC6."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa6_fmp(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -375,10 +392,11 @@ pub mod regs {
         }
         #[doc = "Fast-mode Plus drive capability activation on PA6 This bit can be read and written only with secure access if PA6 is secure in GPIOA. This bit enables the Fast-mode Plus drive mode for PA6 when PA6 is not used by I2C peripheral. This can be used to dive a LED for instance. Access can be protected by GPIOA SEC6."]
         #[inline(always)]
-        pub fn set_pa6_fmp(&mut self, val: bool) {
+        pub const fn set_pa6_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Fast-mode Plus drive capability activation on PA7 This bit can be read and written only with secure access if PA7 is secure in GPIOA. This bit enables the Fast-mode Plus drive mode for PA7 when PA7 is not used by I2C peripheral. This can be used to dive a LED for instance. Access can be protected by GPIOA SEC7."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa7_fmp(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -386,10 +404,11 @@ pub mod regs {
         }
         #[doc = "Fast-mode Plus drive capability activation on PA7 This bit can be read and written only with secure access if PA7 is secure in GPIOA. This bit enables the Fast-mode Plus drive mode for PA7 when PA7 is not used by I2C peripheral. This can be used to dive a LED for instance. Access can be protected by GPIOA SEC7."]
         #[inline(always)]
-        pub fn set_pa7_fmp(&mut self, val: bool) {
+        pub const fn set_pa7_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "Fast-mode Plus drive capability activation on PA15 This bit can be read and written only with secure access if PA15 is secure in GPIOA. This bit enables the Fast-mode Plus drive mode for PA15 when PA15 is not used by I2C peripheral. This can be used to dive a LED for instance. Access can be protected by GPIOA SEC15."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa15_fmp(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -397,10 +416,11 @@ pub mod regs {
         }
         #[doc = "Fast-mode Plus drive capability activation on PA15 This bit can be read and written only with secure access if PA15 is secure in GPIOA. This bit enables the Fast-mode Plus drive mode for PA15 when PA15 is not used by I2C peripheral. This can be used to dive a LED for instance. Access can be protected by GPIOA SEC15."]
         #[inline(always)]
-        pub fn set_pa15_fmp(&mut self, val: bool) {
+        pub const fn set_pa15_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Fast-mode Plus drive capability activation on PB3 This bit can be read and written only with secure access if PB3 is secure in GPIOB. This bit enables the Fast-mode Plus drive mode for PB3 when PB3 is not used by I2C peripheral. This can be used to dive a LED for instance. Access can be protected by GPIOB SEC3."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb3_fmp(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -408,7 +428,7 @@ pub mod regs {
         }
         #[doc = "Fast-mode Plus drive capability activation on PB3 This bit can be read and written only with secure access if PB3 is secure in GPIOB. This bit enables the Fast-mode Plus drive mode for PB3 when PB3 is not used by I2C peripheral. This can be used to dive a LED for instance. Access can be protected by GPIOB SEC3."]
         #[inline(always)]
-        pub fn set_pb3_fmp(&mut self, val: bool) {
+        pub const fn set_pb3_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
     }
@@ -442,6 +462,7 @@ pub mod regs {
     pub struct Cfgr2(pub u32);
     impl Cfgr2 {
         #[doc = "Cortex-M33 LOCKUP (hardfault) output enable This bit is set by software and cleared only by a system reset. It can be used to enable and lock the connection of Cortex-M33 LOCKUP (hardfault) output to TIM1/16/17 break input."]
+        #[must_use]
         #[inline(always)]
         pub const fn cll(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -449,10 +470,11 @@ pub mod regs {
         }
         #[doc = "Cortex-M33 LOCKUP (hardfault) output enable This bit is set by software and cleared only by a system reset. It can be used to enable and lock the connection of Cortex-M33 LOCKUP (hardfault) output to TIM1/16/17 break input."]
         #[inline(always)]
-        pub fn set_cll(&mut self, val: bool) {
+        pub const fn set_cll(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "SRAM2 parity lock bit This bit is set by software and cleared only by a system reset. It can be used to enable and lock the SRAM2 parity error signal connection to TIM1/16/17 break inputs."]
+        #[must_use]
         #[inline(always)]
         pub const fn spl(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -460,11 +482,12 @@ pub mod regs {
         }
         #[doc = "SRAM2 parity lock bit This bit is set by software and cleared only by a system reset. It can be used to enable and lock the SRAM2 parity error signal connection to TIM1/16/17 break inputs."]
         #[inline(always)]
-        pub fn set_spl(&mut self, val: bool) {
+        pub const fn set_spl(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "PVD lock enable bit This bit is set by software and cleared only by a system reset. It can be used to enable and lock the PVD connection to TIM1/16/17 break input, as well as the PVDE and PVDLS\\[2:0\\]
 in the PWR register."]
+        #[must_use]
         #[inline(always)]
         pub const fn pvdl(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -473,10 +496,11 @@ in the PWR register."]
         #[doc = "PVD lock enable bit This bit is set by software and cleared only by a system reset. It can be used to enable and lock the PVD connection to TIM1/16/17 break input, as well as the PVDE and PVDLS\\[2:0\\]
 in the PWR register."]
         #[inline(always)]
-        pub fn set_pvdl(&mut self, val: bool) {
+        pub const fn set_pvdl(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "ECC lock This bit is set by software and cleared only by a system reset. It can be used to enable and lock the Flash ECC double error signal connection to TIM1/16/17 break input."]
+        #[must_use]
         #[inline(always)]
         pub const fn eccl(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -484,7 +508,7 @@ in the PWR register."]
         }
         #[doc = "ECC lock This bit is set by software and cleared only by a system reset. It can be used to enable and lock the Flash ECC double error signal connection to TIM1/16/17 break input."]
         #[inline(always)]
-        pub fn set_eccl(&mut self, val: bool) {
+        pub const fn set_eccl(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
@@ -523,6 +547,7 @@ in the PWR register."]
     pub struct Cnslckr(pub u32);
     impl Cnslckr {
         #[doc = "VTOR_NS register lock This bit is set by software and cleared only by a system reset."]
+        #[must_use]
         #[inline(always)]
         pub const fn locknsvtor(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -530,10 +555,11 @@ in the PWR register."]
         }
         #[doc = "VTOR_NS register lock This bit is set by software and cleared only by a system reset."]
         #[inline(always)]
-        pub fn set_locknsvtor(&mut self, val: bool) {
+        pub const fn set_locknsvtor(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Non-secure MPU registers lock This bit is set by software and cleared only by a system reset. When set, this bit disables write access to non-secure MPU_CTRL_NS, MPU_RNR_NS and MPU_RBAR_NS registers."]
+        #[must_use]
         #[inline(always)]
         pub const fn locknsmpu(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -541,7 +567,7 @@ in the PWR register."]
         }
         #[doc = "Non-secure MPU registers lock This bit is set by software and cleared only by a system reset. When set, this bit disables write access to non-secure MPU_CTRL_NS, MPU_RNR_NS and MPU_RBAR_NS registers."]
         #[inline(always)]
-        pub fn set_locknsmpu(&mut self, val: bool) {
+        pub const fn set_locknsmpu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -576,6 +602,7 @@ in the PWR register."]
     pub struct Cslockr(pub u32);
     impl Cslockr {
         #[doc = "VTOR_S register and AIRCR register bits lock This bit is set by software and cleared only by a system reset. When set, it disables write access to VTOR_S register, PRIS and BFHFNMINS bits in the AIRCR register."]
+        #[must_use]
         #[inline(always)]
         pub const fn locksvtaircr(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -583,10 +610,11 @@ in the PWR register."]
         }
         #[doc = "VTOR_S register and AIRCR register bits lock This bit is set by software and cleared only by a system reset. When set, it disables write access to VTOR_S register, PRIS and BFHFNMINS bits in the AIRCR register."]
         #[inline(always)]
-        pub fn set_locksvtaircr(&mut self, val: bool) {
+        pub const fn set_locksvtaircr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Secure MPU registers lock This bit is set by software and cleared only by a system reset. When set, it disables write access to secure MPU_CTRL, MPU_RNR and MPU_RBAR registers."]
+        #[must_use]
         #[inline(always)]
         pub const fn locksmpu(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -594,10 +622,11 @@ in the PWR register."]
         }
         #[doc = "Secure MPU registers lock This bit is set by software and cleared only by a system reset. When set, it disables write access to secure MPU_CTRL, MPU_RNR and MPU_RBAR registers."]
         #[inline(always)]
-        pub fn set_locksmpu(&mut self, val: bool) {
+        pub const fn set_locksmpu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "SAU registers lock This bit is set by software and cleared only by a system reset. When set, it disables write access to SAU_CTRL, SAU_RNR, SAU_RBAR and SAU_RLAR registers."]
+        #[must_use]
         #[inline(always)]
         pub const fn locksau(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -605,7 +634,7 @@ in the PWR register."]
         }
         #[doc = "SAU registers lock This bit is set by software and cleared only by a system reset. When set, it disables write access to SAU_CTRL, SAU_RNR, SAU_RBAR and SAU_RLAR registers."]
         #[inline(always)]
-        pub fn set_locksau(&mut self, val: bool) {
+        pub const fn set_locksau(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
     }
@@ -642,6 +671,7 @@ in the PWR register."]
     pub struct Fpuimr(pub u32);
     impl Fpuimr {
         #[doc = "Floating point unit interrupts enable bits FPU_IE\\[5\\]: Inexact interrupt enable (interrupt disable at reset) FPU_IE\\[4\\]: Input abnormal interrupt enable FPU_IE\\[3\\]: Overflow interrupt enable FPU_IE\\[2\\]: Underflow interrupt enable FPU_IE\\[1\\]: Divide-by-zero interrupt enable FPU_IE\\[0\\]: Invalid operation Interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn fpu_ie(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
@@ -649,7 +679,7 @@ in the PWR register."]
         }
         #[doc = "Floating point unit interrupts enable bits FPU_IE\\[5\\]: Inexact interrupt enable (interrupt disable at reset) FPU_IE\\[4\\]: Input abnormal interrupt enable FPU_IE\\[3\\]: Overflow interrupt enable FPU_IE\\[2\\]: Underflow interrupt enable FPU_IE\\[1\\]: Divide-by-zero interrupt enable FPU_IE\\[0\\]: Invalid operation Interrupt enable"]
         #[inline(always)]
-        pub fn set_fpu_ie(&mut self, val: u8) {
+        pub const fn set_fpu_ie(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
@@ -676,6 +706,7 @@ in the PWR register."]
     pub struct Mesr(pub u32);
     impl Mesr {
         #[doc = "Device memories erase status This bit is set by hardware when SRAM2, ICACHE, PKA SRAM erase is completed after power-on reset or tamper detection (refer to Section�75: Tamper and backup registers (TAMP) for more details). This bit is not reset by system reset and is cleared by software by writing 1 to it."]
+        #[must_use]
         #[inline(always)]
         pub const fn mclr(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -683,10 +714,11 @@ in the PWR register."]
         }
         #[doc = "Device memories erase status This bit is set by hardware when SRAM2, ICACHE, PKA SRAM erase is completed after power-on reset or tamper detection (refer to Section�75: Tamper and backup registers (TAMP) for more details). This bit is not reset by system reset and is cleared by software by writing 1 to it."]
         #[inline(always)]
-        pub fn set_mclr(&mut self, val: bool) {
+        pub const fn set_mclr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "ICACHE and PKA SRAM erase status This bit is set by hardware when ICACHE and PKA SRAM erase is completed after potential tamper detection (refer to Section�75: Tamper and backup registers (TAMP) for more details). This bit is cleared by software by writing 1 to it."]
+        #[must_use]
         #[inline(always)]
         pub const fn ipmee(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -694,7 +726,7 @@ in the PWR register."]
         }
         #[doc = "ICACHE and PKA SRAM erase status This bit is set by hardware when ICACHE and PKA SRAM erase is completed after potential tamper detection (refer to Section�75: Tamper and backup registers (TAMP) for more details). This bit is cleared by software by writing 1 to it."]
         #[inline(always)]
-        pub fn set_ipmee(&mut self, val: bool) {
+        pub const fn set_ipmee(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
@@ -729,6 +761,7 @@ in the PWR register."]
     pub struct Otghsphycr(pub u32);
     impl Otghsphycr {
         #[doc = "PHY Enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn en(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -736,10 +769,11 @@ in the PWR register."]
         }
         #[doc = "PHY Enable"]
         #[inline(always)]
-        pub fn set_en(&mut self, val: bool) {
+        pub const fn set_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Common block power-down control"]
+        #[must_use]
         #[inline(always)]
         pub const fn pdctrl(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -747,10 +781,11 @@ in the PWR register."]
         }
         #[doc = "Common block power-down control"]
         #[inline(always)]
-        pub fn set_pdctrl(&mut self, val: bool) {
+        pub const fn set_pdctrl(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Reference clock frequency selection"]
+        #[must_use]
         #[inline(always)]
         pub const fn clksel(&self) -> super::vals::Usbrefcksel {
             let val = (self.0 >> 2usize) & 0x0f;
@@ -758,7 +793,7 @@ in the PWR register."]
         }
         #[doc = "Reference clock frequency selection"]
         #[inline(always)]
-        pub fn set_clksel(&mut self, val: super::vals::Usbrefcksel) {
+        pub const fn set_clksel(&mut self, val: super::vals::Usbrefcksel) {
             self.0 = (self.0 & !(0x0f << 2usize)) | (((val.to_bits() as u32) & 0x0f) << 2usize);
         }
     }
@@ -795,6 +830,7 @@ in the PWR register."]
     pub struct Otghsphytuner2(pub u32);
     impl Otghsphytuner2 {
         #[doc = "Disconnect threshold adjustment"]
+        #[must_use]
         #[inline(always)]
         pub const fn compdistune(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -802,10 +838,11 @@ in the PWR register."]
         }
         #[doc = "Disconnect threshold adjustment"]
         #[inline(always)]
-        pub fn set_compdistune(&mut self, val: u8) {
+        pub const fn set_compdistune(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Squelch threshold adjustment"]
+        #[must_use]
         #[inline(always)]
         pub const fn sqrxtune(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x07;
@@ -813,10 +850,11 @@ in the PWR register."]
         }
         #[doc = "Squelch threshold adjustment"]
         #[inline(always)]
-        pub fn set_sqrxtune(&mut self, val: u8) {
+        pub const fn set_sqrxtune(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
         }
         #[doc = "HS transmitter preemphasis current control"]
+        #[must_use]
         #[inline(always)]
         pub const fn txpreempamptune(&self) -> u8 {
             let val = (self.0 >> 13usize) & 0x03;
@@ -824,7 +862,7 @@ in the PWR register."]
         }
         #[doc = "HS transmitter preemphasis current control"]
         #[inline(always)]
-        pub fn set_txpreempamptune(&mut self, val: u8) {
+        pub const fn set_txpreempamptune(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 13usize)) | (((val as u32) & 0x03) << 13usize);
         }
     }
@@ -861,6 +899,7 @@ in the PWR register."]
     pub struct Rsscmdr(pub u32);
     impl Rsscmdr {
         #[doc = "RSS commands This field defines a command to be executed by the RSS."]
+        #[must_use]
         #[inline(always)]
         pub const fn rsscmd(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -868,7 +907,7 @@ in the PWR register."]
         }
         #[doc = "RSS commands This field defines a command to be executed by the RSS."]
         #[inline(always)]
-        pub fn set_rsscmd(&mut self, val: u16) {
+        pub const fn set_rsscmd(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -895,6 +934,7 @@ in the PWR register."]
     pub struct Seccfgr(pub u32);
     impl Seccfgr {
         #[doc = "clock control, memory erase status and compensation cell registers security"]
+        #[must_use]
         #[inline(always)]
         pub const fn syscfgsec(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -902,10 +942,11 @@ in the PWR register."]
         }
         #[doc = "clock control, memory erase status and compensation cell registers security"]
         #[inline(always)]
-        pub fn set_syscfgsec(&mut self, val: bool) {
+        pub const fn set_syscfgsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Class B security"]
+        #[must_use]
         #[inline(always)]
         pub const fn classbsec(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -913,10 +954,11 @@ in the PWR register."]
         }
         #[doc = "Class B security"]
         #[inline(always)]
-        pub fn set_classbsec(&mut self, val: bool) {
+        pub const fn set_classbsec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "FPU security"]
+        #[must_use]
         #[inline(always)]
         pub const fn fpusec(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -924,7 +966,7 @@ in the PWR register."]
         }
         #[doc = "FPU security"]
         #[inline(always)]
-        pub fn set_fpusec(&mut self, val: bool) {
+        pub const fn set_fpusec(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }

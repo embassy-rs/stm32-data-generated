@@ -22,39 +22,39 @@ impl Hash {
     #[doc = "control register."]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "data input register."]
     #[inline(always)]
     pub const fn din(self) -> crate::common::Reg<u32, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "start register."]
     #[inline(always)]
     pub const fn str(self) -> crate::common::Reg<regs::Str, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "digest registers."]
     #[inline(always)]
     pub const fn hr(self, n: usize) -> crate::common::Reg<u32, crate::common::R> {
         assert!(n < 5usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize + n * 4usize) as _) }
     }
     #[doc = "interrupt enable register."]
     #[inline(always)]
     pub const fn imr(self) -> crate::common::Reg<regs::Imr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "status register."]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "context swap registers."]
     #[inline(always)]
     pub const fn csr(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
         assert!(n < 51usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf8usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf8usize + n * 4usize) as _) }
     }
 }
 pub mod regs {
@@ -64,6 +64,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "Initialize message digest calculation."]
+        #[must_use]
         #[inline(always)]
         pub const fn init(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -71,10 +72,11 @@ pub mod regs {
         }
         #[doc = "Initialize message digest calculation."]
         #[inline(always)]
-        pub fn set_init(&mut self, val: bool) {
+        pub const fn set_init(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "DMA enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn dmae(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -82,10 +84,11 @@ pub mod regs {
         }
         #[doc = "DMA enable."]
         #[inline(always)]
-        pub fn set_dmae(&mut self, val: bool) {
+        pub const fn set_dmae(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Data type selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn datatype(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x03;
@@ -93,10 +96,11 @@ pub mod regs {
         }
         #[doc = "Data type selection."]
         #[inline(always)]
-        pub fn set_datatype(&mut self, val: u8) {
+        pub const fn set_datatype(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val as u32) & 0x03) << 4usize);
         }
         #[doc = "Mode selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn mode(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -104,10 +108,11 @@ pub mod regs {
         }
         #[doc = "Mode selection."]
         #[inline(always)]
-        pub fn set_mode(&mut self, val: bool) {
+        pub const fn set_mode(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Algorithm selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn algo(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -115,10 +120,11 @@ pub mod regs {
         }
         #[doc = "Algorithm selection."]
         #[inline(always)]
-        pub fn set_algo(&mut self, val: bool) {
+        pub const fn set_algo(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Number of words already pushed."]
+        #[must_use]
         #[inline(always)]
         pub const fn nbw(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
@@ -126,10 +132,11 @@ pub mod regs {
         }
         #[doc = "Number of words already pushed."]
         #[inline(always)]
-        pub fn set_nbw(&mut self, val: u8) {
+        pub const fn set_nbw(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
         #[doc = "DIN not empty."]
+        #[must_use]
         #[inline(always)]
         pub const fn dinne(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -137,10 +144,11 @@ pub mod regs {
         }
         #[doc = "DIN not empty."]
         #[inline(always)]
-        pub fn set_dinne(&mut self, val: bool) {
+        pub const fn set_dinne(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Long key selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn lkey(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -148,7 +156,7 @@ pub mod regs {
         }
         #[doc = "Long key selection."]
         #[inline(always)]
-        pub fn set_lkey(&mut self, val: bool) {
+        pub const fn set_lkey(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
@@ -184,6 +192,7 @@ pub mod regs {
     pub struct Imr(pub u32);
     impl Imr {
         #[doc = "Data input interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn dinie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -191,10 +200,11 @@ pub mod regs {
         }
         #[doc = "Data input interrupt enable."]
         #[inline(always)]
-        pub fn set_dinie(&mut self, val: bool) {
+        pub const fn set_dinie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Digest calculation completion interrupt enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn dcie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -202,7 +212,7 @@ pub mod regs {
         }
         #[doc = "Digest calculation completion interrupt enable."]
         #[inline(always)]
-        pub fn set_dcie(&mut self, val: bool) {
+        pub const fn set_dcie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -237,6 +247,7 @@ pub mod regs {
     pub struct Sr(pub u32);
     impl Sr {
         #[doc = "Data input interrupt status."]
+        #[must_use]
         #[inline(always)]
         pub const fn dinis(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -244,10 +255,11 @@ pub mod regs {
         }
         #[doc = "Data input interrupt status."]
         #[inline(always)]
-        pub fn set_dinis(&mut self, val: bool) {
+        pub const fn set_dinis(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Digest calculation completion interrupt status."]
+        #[must_use]
         #[inline(always)]
         pub const fn dcis(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -255,10 +267,11 @@ pub mod regs {
         }
         #[doc = "Digest calculation completion interrupt status."]
         #[inline(always)]
-        pub fn set_dcis(&mut self, val: bool) {
+        pub const fn set_dcis(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "DMA Status."]
+        #[must_use]
         #[inline(always)]
         pub const fn dmas(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -266,10 +279,11 @@ pub mod regs {
         }
         #[doc = "DMA Status."]
         #[inline(always)]
-        pub fn set_dmas(&mut self, val: bool) {
+        pub const fn set_dmas(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Busy bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn busy(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -277,7 +291,7 @@ pub mod regs {
         }
         #[doc = "Busy bit."]
         #[inline(always)]
-        pub fn set_busy(&mut self, val: bool) {
+        pub const fn set_busy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
@@ -316,6 +330,7 @@ pub mod regs {
     pub struct Str(pub u32);
     impl Str {
         #[doc = "Number of valid bits in the last word of the message."]
+        #[must_use]
         #[inline(always)]
         pub const fn nblw(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x1f;
@@ -323,10 +338,11 @@ pub mod regs {
         }
         #[doc = "Number of valid bits in the last word of the message."]
         #[inline(always)]
-        pub fn set_nblw(&mut self, val: u8) {
+        pub const fn set_nblw(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
         }
         #[doc = "Digest calculation."]
+        #[must_use]
         #[inline(always)]
         pub const fn dcal(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -334,7 +350,7 @@ pub mod regs {
         }
         #[doc = "Digest calculation."]
         #[inline(always)]
-        pub fn set_dcal(&mut self, val: bool) {
+        pub const fn set_dcal(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }

@@ -1523,18 +1523,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "REGULAR_ALPHA",
-                    description: Some(
-                        "Regular alpha",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "INVERTED_ALPHA",
                     description: Some(
                         "Inverted alpha",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "REGULAR_ALPHA",
+                    description: Some(
+                        "Regular alpha",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1543,6 +1543,13 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
+                EnumVariant {
+                    name: "MULTIPLY",
+                    description: Some(
+                        "Multiply with value in ALPHA[7:0]",
+                    ),
+                    value: 2,
+                },
                 EnumVariant {
                     name: "NO_MODIFY",
                     description: Some(
@@ -1556,13 +1563,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Replace with value in ALPHA[7:0]",
                     ),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "MULTIPLY",
-                    description: Some(
-                        "Multiply with value in ALPHA[7:0]",
-                    ),
-                    value: 2,
                 },
             ],
         },
@@ -1593,46 +1593,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "ARGB8888",
+                    name: "A4",
                     description: Some(
-                        "Color mode ARGB8888",
+                        "Color mode A4",
                     ),
-                    value: 0,
+                    value: 10,
                 },
                 EnumVariant {
-                    name: "RGB888",
+                    name: "A8",
                     description: Some(
-                        "Color mode RGB888",
+                        "Color mode A8",
                     ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "RGB565",
-                    description: Some(
-                        "Color mode RGB565",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "ARGB1555",
-                    description: Some(
-                        "Color mode ARGB1555",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "ARGB4444",
-                    description: Some(
-                        "Color mode ARGB4444",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "L8",
-                    description: Some(
-                        "Color mode L8",
-                    ),
-                    value: 5,
+                    value: 9,
                 },
                 EnumVariant {
                     name: "AL44",
@@ -1649,6 +1621,27 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 7,
                 },
                 EnumVariant {
+                    name: "ARGB1555",
+                    description: Some(
+                        "Color mode ARGB1555",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "ARGB4444",
+                    description: Some(
+                        "Color mode ARGB4444",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "ARGB8888",
+                    description: Some(
+                        "Color mode ARGB8888",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
                     name: "L4",
                     description: Some(
                         "Color mode L4",
@@ -1656,18 +1649,25 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 8,
                 },
                 EnumVariant {
-                    name: "A8",
+                    name: "L8",
                     description: Some(
-                        "Color mode A8",
+                        "Color mode L8",
                     ),
-                    value: 9,
+                    value: 5,
                 },
                 EnumVariant {
-                    name: "A4",
+                    name: "RGB565",
                     description: Some(
-                        "Color mode A4",
+                        "Color mode RGB565",
                     ),
-                    value: 10,
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "RGB888",
+                    description: Some(
+                        "Color mode RGB888",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -1810,18 +1810,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "REGULAR_ALPHA",
-                    description: Some(
-                        "Regular alpha",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "INVERTED_ALPHA",
                     description: Some(
                         "Inverted alpha",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "REGULAR_ALPHA",
+                    description: Some(
+                        "Regular alpha",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1830,6 +1830,13 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
+                EnumVariant {
+                    name: "MULTIPLY",
+                    description: Some(
+                        "Multiply with value in ALPHA[7:0]",
+                    ),
+                    value: 2,
+                },
                 EnumVariant {
                     name: "NO_MODIFY",
                     description: Some(
@@ -1843,13 +1850,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Replace with value in ALPHA[7:0]",
                     ),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "MULTIPLY",
-                    description: Some(
-                        "Multiply with value in ALPHA[7:0]",
-                    ),
-                    value: 2,
                 },
             ],
         },
@@ -1880,46 +1880,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "ARGB8888",
+                    name: "A4",
                     description: Some(
-                        "Color mode ARGB8888",
+                        "Color mode A4",
                     ),
-                    value: 0,
+                    value: 10,
                 },
                 EnumVariant {
-                    name: "RGB888",
+                    name: "A8",
                     description: Some(
-                        "Color mode RGB888",
+                        "Color mode A8",
                     ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "RGB565",
-                    description: Some(
-                        "Color mode RGB565",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "ARGB1555",
-                    description: Some(
-                        "Color mode ARGB1555",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "ARGB4444",
-                    description: Some(
-                        "Color mode ARGB4444",
-                    ),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "L8",
-                    description: Some(
-                        "Color mode L8",
-                    ),
-                    value: 5,
+                    value: 9,
                 },
                 EnumVariant {
                     name: "AL44",
@@ -1936,6 +1908,27 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 7,
                 },
                 EnumVariant {
+                    name: "ARGB1555",
+                    description: Some(
+                        "Color mode ARGB1555",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "ARGB4444",
+                    description: Some(
+                        "Color mode ARGB4444",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "ARGB8888",
+                    description: Some(
+                        "Color mode ARGB8888",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
                     name: "L4",
                     description: Some(
                         "Color mode L4",
@@ -1943,18 +1936,25 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 8,
                 },
                 EnumVariant {
-                    name: "A8",
+                    name: "L8",
                     description: Some(
-                        "Color mode A8",
+                        "Color mode L8",
                     ),
-                    value: 9,
+                    value: 5,
                 },
                 EnumVariant {
-                    name: "A4",
+                    name: "RGB565",
                     description: Some(
-                        "Color mode A4",
+                        "Color mode RGB565",
                     ),
-                    value: 10,
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "RGB888",
+                    description: Some(
+                        "Color mode RGB888",
+                    ),
+                    value: 1,
                 },
                 EnumVariant {
                     name: "YCB_CR",
@@ -2006,18 +2006,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "PIXELS",
-                    description: Some(
-                        "Line offsets expressed in pixels",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "BYTES",
                     description: Some(
                         "Line offsets expressed in bytes",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "PIXELS",
+                    description: Some(
+                        "Line offsets expressed in pixels",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2048,11 +2048,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "REGISTER_TO_MEMORY",
+                    name: "MEMORY_TO_MEMORY_PFCBLENDING_FIXED_COLOR_BG",
                     description: Some(
-                        "Register-to-memory (no FG nor BG, only output stage active)",
+                        "Memory-to-memory with blending and fixed color BG (FG fetch only with FG and BG PFC active)",
                     ),
-                    value: 3,
+                    value: 5,
                 },
                 EnumVariant {
                     name: "MEMORY_TO_MEMORY_PFCBLENDING_FIXED_COLOR_FG",
@@ -2062,11 +2062,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 4,
                 },
                 EnumVariant {
-                    name: "MEMORY_TO_MEMORY_PFCBLENDING_FIXED_COLOR_BG",
+                    name: "REGISTER_TO_MEMORY",
                     description: Some(
-                        "Memory-to-memory with blending and fixed color BG (FG fetch only with FG and BG PFC active)",
+                        "Register-to-memory (no FG nor BG, only output stage active)",
                     ),
-                    value: 5,
+                    value: 3,
                 },
             ],
         },
@@ -2076,18 +2076,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "REGULAR_ALPHA",
-                    description: Some(
-                        "Regular alpha",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "INVERTED_ALPHA",
                     description: Some(
                         "Inverted alpha",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "REGULAR_ALPHA",
+                    description: Some(
+                        "Regular alpha",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2096,27 +2096,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 3,
             variants: &[
-                EnumVariant {
-                    name: "ARGB8888",
-                    description: Some(
-                        "ARGB8888",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "RGB888",
-                    description: Some(
-                        "RGB888",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "RGB565",
-                    description: Some(
-                        "RGB565",
-                    ),
-                    value: 2,
-                },
                 EnumVariant {
                     name: "ARGB1555",
                     description: Some(
@@ -2130,6 +2109,27 @@ pub(crate) static REGISTERS: IR = IR {
                         "ARGB4444",
                     ),
                     value: 4,
+                },
+                EnumVariant {
+                    name: "ARGB8888",
+                    description: Some(
+                        "ARGB8888",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "RGB565",
+                    description: Some(
+                        "RGB565",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "RGB888",
+                    description: Some(
+                        "RGB888",
+                    ),
+                    value: 1,
                 },
             ],
         },

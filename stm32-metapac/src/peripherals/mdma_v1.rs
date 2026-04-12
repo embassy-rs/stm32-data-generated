@@ -22,67 +22,67 @@ impl Ch {
     #[doc = "MDMA channel x interrupt/status register."]
     #[inline(always)]
     pub const fn isr(self) -> crate::common::Reg<regs::Isr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "MDMA channel x interrupt flag clear register."]
     #[inline(always)]
     pub const fn ifcr(self) -> crate::common::Reg<regs::Ifcr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "MDMA Channel x error status register."]
     #[inline(always)]
     pub const fn esr(self) -> crate::common::Reg<regs::Esr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "This register is used to control the concerned channel."]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "This register is used to configure the concerned channel."]
     #[inline(always)]
     pub const fn tcr(self) -> crate::common::Reg<regs::Tcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "MDMA Channel x block number of data register."]
     #[inline(always)]
     pub const fn bndtr(self) -> crate::common::Reg<regs::Bndtr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "MDMA channel x source address register."]
     #[inline(always)]
     pub const fn sar(self) -> crate::common::Reg<regs::Sar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "MDMA channel x destination address register."]
     #[inline(always)]
     pub const fn dar(self) -> crate::common::Reg<regs::Dar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "MDMA channel x Block Repeat address Update register."]
     #[inline(always)]
     pub const fn brur(self) -> crate::common::Reg<regs::Brur, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "MDMA channel x Link Address register."]
     #[inline(always)]
     pub const fn lar(self) -> crate::common::Reg<regs::Lar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "MDMA channel x Trigger and Bus selection Register."]
     #[inline(always)]
     pub const fn tbr(self) -> crate::common::Reg<regs::Tbr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "MDMA channel x Mask address register."]
     #[inline(always)]
     pub const fn mar(self) -> crate::common::Reg<regs::Mar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
     }
     #[doc = "MDMA channel x Mask Data register."]
     #[inline(always)]
     pub const fn mdr(self) -> crate::common::Reg<regs::Mdr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
     }
 }
 #[doc = "MDMA."]
@@ -104,13 +104,13 @@ impl Mdma {
     #[doc = "MDMA Global Interrupt/Status Register."]
     #[inline(always)]
     pub const fn gisr0(self) -> crate::common::Reg<regs::Gisr0, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Channel cluster: C?ISR, C?IFCR, C?ESR, C?CR, C?TCR, C?BNDTR, C?SAR, C?DAR, C?BRUR, C?LAR, C?TBR, C?MAR and C?MDR registers."]
     #[inline(always)]
     pub const fn ch(self, n: usize) -> Ch {
         assert!(n < 16usize);
-        unsafe { Ch::from_ptr(self.ptr.add(0x40usize + n * 64usize) as _) }
+        unsafe { Ch::from_ptr(self.ptr.wrapping_add(0x40usize + n * 64usize) as _) }
     }
 }
 pub mod regs {
@@ -120,6 +120,7 @@ pub mod regs {
     pub struct Bndtr(pub u32);
     impl Bndtr {
         #[doc = "block number of data to transfer."]
+        #[must_use]
         #[inline(always)]
         pub const fn bndt(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x0001_ffff;
@@ -127,10 +128,11 @@ pub mod regs {
         }
         #[doc = "block number of data to transfer."]
         #[inline(always)]
-        pub fn set_bndt(&mut self, val: u32) {
+        pub const fn set_bndt(&mut self, val: u32) {
             self.0 = (self.0 & !(0x0001_ffff << 0usize)) | (((val as u32) & 0x0001_ffff) << 0usize);
         }
         #[doc = "Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn brsum(&self) -> super::vals::Updatemode {
             let val = (self.0 >> 18usize) & 0x01;
@@ -138,10 +140,11 @@ pub mod regs {
         }
         #[doc = "Block Repeat Source address Update Mode These bits are protected and can be written only if EN is 0."]
         #[inline(always)]
-        pub fn set_brsum(&mut self, val: super::vals::Updatemode) {
+        pub const fn set_brsum(&mut self, val: super::vals::Updatemode) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
         }
         #[doc = "Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn brdum(&self) -> super::vals::Updatemode {
             let val = (self.0 >> 19usize) & 0x01;
@@ -149,10 +152,11 @@ pub mod regs {
         }
         #[doc = "Block Repeat Destination address Update Mode These bits are protected and can be written only if EN is 0."]
         #[inline(always)]
-        pub fn set_brdum(&mut self, val: super::vals::Updatemode) {
+        pub const fn set_brdum(&mut self, val: super::vals::Updatemode) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
         }
         #[doc = "Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn brc(&self) -> u16 {
             let val = (self.0 >> 20usize) & 0x0fff;
@@ -160,7 +164,7 @@ pub mod regs {
         }
         #[doc = "Block Repeat Count This field contains the number of repetitions of the current block (0 to 4095). When the channel is enabled, this register is read-only, indicating the remaining number of blocks, excluding the current one. This register decrements after each complete block transfer. Once the last block transfer has completed, this register can either stay at zero or be reloaded automatically from memory (in Linked List mode - i.e. Link Address valid). These bits are protected and can be written only if EN is 0."]
         #[inline(always)]
-        pub fn set_brc(&mut self, val: u16) {
+        pub const fn set_brc(&mut self, val: u16) {
             self.0 = (self.0 & !(0x0fff << 20usize)) | (((val as u32) & 0x0fff) << 20usize);
         }
     }
@@ -199,6 +203,7 @@ pub mod regs {
     pub struct Brur(pub u32);
     impl Brur {
         #[doc = "source adresse update value."]
+        #[must_use]
         #[inline(always)]
         pub const fn suv(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -206,10 +211,11 @@ pub mod regs {
         }
         #[doc = "source adresse update value."]
         #[inline(always)]
-        pub fn set_suv(&mut self, val: u16) {
+        pub const fn set_suv(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
         #[doc = "destination address update."]
+        #[must_use]
         #[inline(always)]
         pub const fn duv(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0xffff;
@@ -217,7 +223,7 @@ pub mod regs {
         }
         #[doc = "destination address update."]
         #[inline(always)]
-        pub fn set_duv(&mut self, val: u16) {
+        pub const fn set_duv(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
@@ -247,6 +253,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "channel enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn en(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -254,10 +261,11 @@ pub mod regs {
         }
         #[doc = "channel enable."]
         #[inline(always)]
-        pub fn set_en(&mut self, val: bool) {
+        pub const fn set_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Transfer error interrupt enable This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn teie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -265,10 +273,11 @@ pub mod regs {
         }
         #[doc = "Transfer error interrupt enable This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_teie(&mut self, val: bool) {
+        pub const fn set_teie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Channel Transfer Complete interrupt enable This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn ctcie(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -276,10 +285,11 @@ pub mod regs {
         }
         #[doc = "Channel Transfer Complete interrupt enable This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_ctcie(&mut self, val: bool) {
+        pub const fn set_ctcie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Block Repeat transfer interrupt enable This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn brtie(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -287,10 +297,11 @@ pub mod regs {
         }
         #[doc = "Block Repeat transfer interrupt enable This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_brtie(&mut self, val: bool) {
+        pub const fn set_brtie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Block Transfer interrupt enable This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn btie(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -298,10 +309,11 @@ pub mod regs {
         }
         #[doc = "Block Transfer interrupt enable This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_btie(&mut self, val: bool) {
+        pub const fn set_btie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "buffer Transfer Complete interrupt enable This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tcie(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -309,10 +321,11 @@ pub mod regs {
         }
         #[doc = "buffer Transfer Complete interrupt enable This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_tcie(&mut self, val: bool) {
+        pub const fn set_tcie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn pl(&self) -> super::vals::Pl {
             let val = (self.0 >> 6usize) & 0x03;
@@ -320,10 +333,11 @@ pub mod regs {
         }
         #[doc = "Priority level These bits are set and cleared by software. These bits are protected and can be written only if EN is 0."]
         #[inline(always)]
-        pub fn set_pl(&mut self, val: super::vals::Pl) {
+        pub const fn set_pl(&mut self, val: super::vals::Pl) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
         }
         #[doc = "byte Endianness exchange."]
+        #[must_use]
         #[inline(always)]
         pub const fn bex(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -331,10 +345,11 @@ pub mod regs {
         }
         #[doc = "byte Endianness exchange."]
         #[inline(always)]
-        pub fn set_bex(&mut self, val: bool) {
+        pub const fn set_bex(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Half word Endianes exchange."]
+        #[must_use]
         #[inline(always)]
         pub const fn hex(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -342,10 +357,11 @@ pub mod regs {
         }
         #[doc = "Half word Endianes exchange."]
         #[inline(always)]
-        pub fn set_hex(&mut self, val: bool) {
+        pub const fn set_hex(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Word Endianness exchange."]
+        #[must_use]
         #[inline(always)]
         pub const fn wex(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -353,10 +369,11 @@ pub mod regs {
         }
         #[doc = "Word Endianness exchange."]
         #[inline(always)]
-        pub fn set_wex(&mut self, val: bool) {
+        pub const fn set_wex(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access)."]
+        #[must_use]
         #[inline(always)]
         pub const fn swrq(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -364,7 +381,7 @@ pub mod regs {
         }
         #[doc = "SW ReQuest Writing a 1 into this bit sets the CRQAx in MDMA_ISRy register, activating the request on Channel x Note: Either the whole CxCR register or the 8-bit/16-bit register @ Address offset: 0x4E + 0x40 chn may be used for SWRQ activation. In case of a SW request, acknowledge is not generated (neither HW signal, nor CxMAR write access)."]
         #[inline(always)]
-        pub fn set_swrq(&mut self, val: bool) {
+        pub const fn set_swrq(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
@@ -403,6 +420,7 @@ pub mod regs {
     pub struct Dar(pub u32);
     impl Dar {
         #[doc = "Destination adr base."]
+        #[must_use]
         #[inline(always)]
         pub const fn dar(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -410,7 +428,7 @@ pub mod regs {
         }
         #[doc = "Destination adr base."]
         #[inline(always)]
-        pub fn set_dar(&mut self, val: u32) {
+        pub const fn set_dar(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -437,6 +455,7 @@ pub mod regs {
     pub struct Esr(pub u32);
     impl Esr {
         #[doc = "Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error."]
+        #[must_use]
         #[inline(always)]
         pub const fn tea(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -444,10 +463,11 @@ pub mod regs {
         }
         #[doc = "Transfer Error Address These bits are set and cleared by HW, in case of an MDMA data transfer error. It is used in conjunction with TED. This field indicates the 7 LSBits of the address which generated a transfer/access error. It may be used by SW to retrieve the failing address, by adding this value (truncated to the buffer transfer length size) to the current SAR/DAR value. Note: The SAR/DAR current value doesnt reflect this last address due to the FIFO management system. The SAR/DAR are only updated at the end of a (buffer) transfer (of TLEN+1 bytes). Note: It is not set in case of a link data error."]
         #[inline(always)]
-        pub fn set_tea(&mut self, val: u8) {
+        pub const fn set_tea(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error."]
+        #[must_use]
         #[inline(always)]
         pub const fn ted(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -455,10 +475,11 @@ pub mod regs {
         }
         #[doc = "Transfer Error Direction These bit is set and cleared by HW, in case of an MDMA data transfer error."]
         #[inline(always)]
-        pub fn set_ted(&mut self, val: bool) {
+        pub const fn set_ted(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register."]
+        #[must_use]
         #[inline(always)]
         pub const fn teld(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -466,10 +487,11 @@ pub mod regs {
         }
         #[doc = "Transfer Error Link Data These bit is set by HW, in case of a transfer error while reading the block link data structure. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register."]
         #[inline(always)]
-        pub fn set_teld(&mut self, val: bool) {
+        pub const fn set_teld(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register."]
+        #[must_use]
         #[inline(always)]
         pub const fn temd(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -477,10 +499,11 @@ pub mod regs {
         }
         #[doc = "Transfer Error Mask Data These bit is set by HW, in case of a transfer error while writing the Mask Data. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register."]
         #[inline(always)]
-        pub fn set_temd(&mut self, val: bool) {
+        pub const fn set_temd(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register."]
+        #[must_use]
         #[inline(always)]
         pub const fn ase(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -488,10 +511,11 @@ pub mod regs {
         }
         #[doc = "Address/Size Error These bit is set by HW, when the programmed address is not aligned with the data size. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register."]
         #[inline(always)]
-        pub fn set_ase(&mut self, val: bool) {
+        pub const fn set_ase(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register."]
+        #[must_use]
         #[inline(always)]
         pub const fn bse(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -499,7 +523,7 @@ pub mod regs {
         }
         #[doc = "Block Size Error These bit is set by HW, when the block size is not an integer multiple of the data size either for source or destination. TED will indicate whether the problem is on the source or destination. It is cleared by software writing 1 to the CTEIFx bit in the DMA_IFCRy register."]
         #[inline(always)]
-        pub fn set_bse(&mut self, val: bool) {
+        pub const fn set_bse(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
     }
@@ -533,6 +557,7 @@ pub mod regs {
     pub struct Gisr0(pub u32);
     impl Gisr0 {
         #[doc = "Channel x global interrupt flag (x=0..15) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)."]
+        #[must_use]
         #[inline(always)]
         pub const fn gif(&self, n: usize) -> bool {
             assert!(n < 16usize);
@@ -542,7 +567,7 @@ pub mod regs {
         }
         #[doc = "Channel x global interrupt flag (x=0..15) This bit is set and reset by hardware. It is a logical OR of all the Channel x interrupt flags (CTCIFx, BTIFx, BRTIFx, TEIFx) which are enabled in the interrupt mask register (CTCIEx, BTIEx, BRTIEx, TEIEx)."]
         #[inline(always)]
-        pub fn set_gif(&mut self, n: usize, val: bool) {
+        pub const fn set_gif(&mut self, n: usize, val: bool) {
             assert!(n < 16usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -588,6 +613,7 @@ pub mod regs {
     pub struct Ifcr(pub u32);
     impl Ifcr {
         #[doc = "Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register."]
+        #[must_use]
         #[inline(always)]
         pub const fn cteif(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -595,10 +621,11 @@ pub mod regs {
         }
         #[doc = "Channel x clear transfer error interrupt flag Writing a 1 into this bit clears TEIFx in the MDMA_ISRy register."]
         #[inline(always)]
-        pub fn set_cteif(&mut self, val: bool) {
+        pub const fn set_cteif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register."]
+        #[must_use]
         #[inline(always)]
         pub const fn cctcif(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -606,10 +633,11 @@ pub mod regs {
         }
         #[doc = "Clear Channel transfer complete interrupt flag for channel x Writing a 1 into this bit clears CTCIFx in the MDMA_ISRy register."]
         #[inline(always)]
-        pub fn set_cctcif(&mut self, val: bool) {
+        pub const fn set_cctcif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register."]
+        #[must_use]
         #[inline(always)]
         pub const fn cbrtif(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -617,10 +645,11 @@ pub mod regs {
         }
         #[doc = "Channel x clear block repeat transfer complete interrupt flag Writing a 1 into this bit clears BRTIFx in the MDMA_ISRy register."]
         #[inline(always)]
-        pub fn set_cbrtif(&mut self, val: bool) {
+        pub const fn set_cbrtif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register."]
+        #[must_use]
         #[inline(always)]
         pub const fn cbtif(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -628,10 +657,11 @@ pub mod regs {
         }
         #[doc = "Channel x Clear block transfer complete interrupt flag Writing a 1 into this bit clears BTIFx in the MDMA_ISRy register."]
         #[inline(always)]
-        pub fn set_cbtif(&mut self, val: bool) {
+        pub const fn set_cbtif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register."]
+        #[must_use]
         #[inline(always)]
         pub const fn cltcif(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -639,7 +669,7 @@ pub mod regs {
         }
         #[doc = "CLear buffer Transfer Complete Interrupt Flag for channel x Writing a 1 into this bit clears TCIFx in the MDMA_ISRy register."]
         #[inline(always)]
-        pub fn set_cltcif(&mut self, val: bool) {
+        pub const fn set_cltcif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
     }
@@ -672,6 +702,7 @@ pub mod regs {
     pub struct Isr(pub u32);
     impl Isr {
         #[doc = "Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register."]
+        #[must_use]
         #[inline(always)]
         pub const fn teif(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -679,10 +710,11 @@ pub mod regs {
         }
         #[doc = "Channel x transfer error interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register."]
         #[inline(always)]
-        pub fn set_teif(&mut self, val: bool) {
+        pub const fn set_teif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn ctcif(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -690,10 +722,11 @@ pub mod regs {
         }
         #[doc = "Channel x Channel Transfer Complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register. CTC is set when the last block was transferred and the channel has been automatically disabled. CTC is also set when the channel is suspended, as a result of writing EN bit to 0."]
         #[inline(always)]
-        pub fn set_ctcif(&mut self, val: bool) {
+        pub const fn set_ctcif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register."]
+        #[must_use]
         #[inline(always)]
         pub const fn brtif(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -701,10 +734,11 @@ pub mod regs {
         }
         #[doc = "Channel x block repeat transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register."]
         #[inline(always)]
-        pub fn set_brtif(&mut self, val: bool) {
+        pub const fn set_brtif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register."]
+        #[must_use]
         #[inline(always)]
         pub const fn btif(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -712,10 +746,11 @@ pub mod regs {
         }
         #[doc = "Channel x block transfer complete interrupt flag This bit is set by hardware. It is cleared by software writing 1 to the corresponding bit in the DMA_IFCRy register."]
         #[inline(always)]
-        pub fn set_btif(&mut self, val: bool) {
+        pub const fn set_btif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "channel x buffer transfer complete."]
+        #[must_use]
         #[inline(always)]
         pub const fn tcif(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -723,10 +758,11 @@ pub mod regs {
         }
         #[doc = "channel x buffer transfer complete."]
         #[inline(always)]
-        pub fn set_tcif(&mut self, val: bool) {
+        pub const fn set_tcif(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "channel x request active flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn crqa(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -734,7 +770,7 @@ pub mod regs {
         }
         #[doc = "channel x request active flag."]
         #[inline(always)]
-        pub fn set_crqa(&mut self, val: bool) {
+        pub const fn set_crqa(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
@@ -768,6 +804,7 @@ pub mod regs {
     pub struct Lar(pub u32);
     impl Lar {
         #[doc = "Link address register."]
+        #[must_use]
         #[inline(always)]
         pub const fn lar(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -775,7 +812,7 @@ pub mod regs {
         }
         #[doc = "Link address register."]
         #[inline(always)]
-        pub fn set_lar(&mut self, val: u32) {
+        pub const fn set_lar(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -802,6 +839,7 @@ pub mod regs {
     pub struct Mar(pub u32);
     impl Mar {
         #[doc = "Mask address."]
+        #[must_use]
         #[inline(always)]
         pub const fn mar(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -809,7 +847,7 @@ pub mod regs {
         }
         #[doc = "Mask address."]
         #[inline(always)]
-        pub fn set_mar(&mut self, val: u32) {
+        pub const fn set_mar(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -836,6 +874,7 @@ pub mod regs {
     pub struct Mdr(pub u32);
     impl Mdr {
         #[doc = "Mask data."]
+        #[must_use]
         #[inline(always)]
         pub const fn mdr(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -843,7 +882,7 @@ pub mod regs {
         }
         #[doc = "Mask data."]
         #[inline(always)]
-        pub fn set_mdr(&mut self, val: u32) {
+        pub const fn set_mdr(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -870,6 +909,7 @@ pub mod regs {
     pub struct Sar(pub u32);
     impl Sar {
         #[doc = "source adr base."]
+        #[must_use]
         #[inline(always)]
         pub const fn sar(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -877,7 +917,7 @@ pub mod regs {
         }
         #[doc = "source adr base."]
         #[inline(always)]
-        pub fn set_sar(&mut self, val: u32) {
+        pub const fn set_sar(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -904,6 +944,7 @@ pub mod regs {
     pub struct Tbr(pub u32);
     impl Tbr {
         #[doc = "Trigger selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn tsel(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x3f;
@@ -911,10 +952,11 @@ pub mod regs {
         }
         #[doc = "Trigger selection."]
         #[inline(always)]
-        pub fn set_tsel(&mut self, val: u8) {
+        pub const fn set_tsel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
         #[doc = "Source BUS select This bit is protected and can be written only if EN is 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn sbus(&self) -> super::vals::Bus {
             let val = (self.0 >> 16usize) & 0x01;
@@ -922,10 +964,11 @@ pub mod regs {
         }
         #[doc = "Source BUS select This bit is protected and can be written only if EN is 0."]
         #[inline(always)]
-        pub fn set_sbus(&mut self, val: super::vals::Bus) {
+        pub const fn set_sbus(&mut self, val: super::vals::Bus) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
         #[doc = "Destination BUS slect This bit is protected and can be written only if EN is 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn dbus(&self) -> super::vals::Bus {
             let val = (self.0 >> 17usize) & 0x01;
@@ -933,7 +976,7 @@ pub mod regs {
         }
         #[doc = "Destination BUS slect This bit is protected and can be written only if EN is 0."]
         #[inline(always)]
-        pub fn set_dbus(&mut self, val: super::vals::Bus) {
+        pub const fn set_dbus(&mut self, val: super::vals::Bus) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
         }
     }
@@ -971,6 +1014,7 @@ pub mod regs {
     impl Tcr {
         #[doc = "Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR\\[31:0\\]
 + 0x00)."]
+        #[must_use]
         #[inline(always)]
         pub const fn sinc(&self) -> super::vals::Incmode {
             let val = (self.0 >> 0usize) & 0x03;
@@ -979,10 +1023,11 @@ pub mod regs {
         #[doc = "Source increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When source is AHB (SBUS=1), SINC = 00 is forbidden. In Linked List Mode, at the end of a block (single or last block in repeated block transfer mode), this register will be loaded from memory (from address given by current LAR\\[31:0\\]
 + 0x00)."]
         #[inline(always)]
-        pub fn set_sinc(&mut self, val: super::vals::Incmode) {
+        pub const fn set_sinc(&mut self, val: super::vals::Incmode) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden."]
+        #[must_use]
         #[inline(always)]
         pub const fn dinc(&self) -> super::vals::Incmode {
             let val = (self.0 >> 2usize) & 0x03;
@@ -990,10 +1035,11 @@ pub mod regs {
         }
         #[doc = "Destination increment mode These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: When destination is AHB (DBUS=1), DINC = 00 is forbidden."]
         #[inline(always)]
-        pub fn set_dinc(&mut self, val: super::vals::Incmode) {
+        pub const fn set_dinc(&mut self, val: super::vals::Incmode) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
         #[doc = "Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1)."]
+        #[must_use]
         #[inline(always)]
         pub const fn ssize(&self) -> super::vals::Wordsize {
             let val = (self.0 >> 4usize) & 0x03;
@@ -1001,10 +1047,11 @@ pub mod regs {
         }
         #[doc = "Source data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0 Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If SINCOS &lt; SSIZE and SINC &#8800; 00, the result will be unpredictable. Note: SSIZE = 11 (double-word) is forbidden when source is TCM/AHB bus (SBUS=1)."]
         #[inline(always)]
-        pub fn set_ssize(&mut self, val: super::vals::Wordsize) {
+        pub const fn set_ssize(&mut self, val: super::vals::Wordsize) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1)."]
+        #[must_use]
         #[inline(always)]
         pub const fn dsize(&self) -> super::vals::Wordsize {
             let val = (self.0 >> 6usize) & 0x03;
@@ -1012,10 +1059,11 @@ pub mod regs {
         }
         #[doc = "Destination data size These bits are set and cleared by software. These bits are protected and can be written only if EN is 0. Note: If a value of 11 is programmed for the TCM access/AHB port, a transfer error will occur (TEIF bit set) If DINCOS &lt; DSIZE and DINC &#8800; 00, the result will be unpredictable. Note: DSIZE = 11 (double-word) is forbidden when destination is TCM/AHB bus (DBUS=1)."]
         #[inline(always)]
-        pub fn set_dsize(&mut self, val: super::vals::Wordsize) {
+        pub const fn set_dsize(&mut self, val: super::vals::Wordsize) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
         }
         #[doc = "source increment offset size."]
+        #[must_use]
         #[inline(always)]
         pub const fn sincos(&self) -> super::vals::Wordsize {
             let val = (self.0 >> 8usize) & 0x03;
@@ -1023,10 +1071,11 @@ pub mod regs {
         }
         #[doc = "source increment offset size."]
         #[inline(always)]
-        pub fn set_sincos(&mut self, val: super::vals::Wordsize) {
+        pub const fn set_sincos(&mut self, val: super::vals::Wordsize) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
         #[doc = "Destination increment offset."]
+        #[must_use]
         #[inline(always)]
         pub const fn dincos(&self) -> super::vals::Wordsize {
             let val = (self.0 >> 10usize) & 0x03;
@@ -1034,10 +1083,11 @@ pub mod regs {
         }
         #[doc = "Destination increment offset."]
         #[inline(always)]
-        pub fn set_dincos(&mut self, val: super::vals::Wordsize) {
+        pub const fn set_dincos(&mut self, val: super::vals::Wordsize) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
         }
         #[doc = "source burst transfer configuration."]
+        #[must_use]
         #[inline(always)]
         pub const fn sburst(&self) -> super::vals::Burst {
             let val = (self.0 >> 12usize) & 0x07;
@@ -1045,10 +1095,11 @@ pub mod regs {
         }
         #[doc = "source burst transfer configuration."]
         #[inline(always)]
-        pub fn set_sburst(&mut self, val: super::vals::Burst) {
+        pub const fn set_sburst(&mut self, val: super::vals::Burst) {
             self.0 = (self.0 & !(0x07 << 12usize)) | (((val.to_bits() as u32) & 0x07) << 12usize);
         }
         #[doc = "Destination burst transfer configuration."]
+        #[must_use]
         #[inline(always)]
         pub const fn dburst(&self) -> super::vals::Burst {
             let val = (self.0 >> 15usize) & 0x07;
@@ -1056,10 +1107,11 @@ pub mod regs {
         }
         #[doc = "Destination burst transfer configuration."]
         #[inline(always)]
-        pub fn set_dburst(&mut self, val: super::vals::Burst) {
+        pub const fn set_dburst(&mut self, val: super::vals::Burst) {
             self.0 = (self.0 & !(0x07 << 15usize)) | (((val.to_bits() as u32) & 0x07) << 15usize);
         }
         #[doc = "buffer transfer lengh."]
+        #[must_use]
         #[inline(always)]
         pub const fn tlen(&self) -> u8 {
             let val = (self.0 >> 18usize) & 0x7f;
@@ -1067,11 +1119,12 @@ pub mod regs {
         }
         #[doc = "buffer transfer lengh."]
         #[inline(always)]
-        pub fn set_tlen(&mut self, val: u8) {
+        pub const fn set_tlen(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 18usize)) | (((val as u32) & 0x7f) << 18usize);
         }
         #[doc = "PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM\\[0\\]
 value. This bit is protected and can be written only if EN is 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn pke(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -1080,10 +1133,11 @@ value. This bit is protected and can be written only if EN is 0."]
         #[doc = "PacK Enable These bit is set and cleared by software. If the Source Size is smaller than the destination, it will be padded according to the PAM value. If the Source data size is larger than the destination one, it will be truncated. The alignment will be done according to the PAM\\[0\\]
 value. This bit is protected and can be written only if EN is 0."]
         #[inline(always)]
-        pub fn set_pke(&mut self, val: bool) {
+        pub const fn set_pke(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn pam(&self) -> super::vals::Pam {
             let val = (self.0 >> 26usize) & 0x03;
@@ -1091,10 +1145,11 @@ value. This bit is protected and can be written only if EN is 0."]
         }
         #[doc = "Padding/Alignement Mode These bits are set and cleared by software. Case 1: Source data size smaller than destination data size - 3 options are valid. Case 2: Source data size larger than destination data size. The remainder part is discarded. When PKE = 1 or DSIZE=SSIZE, these bits are ignored. These bits are protected and can be written only if EN is 0."]
         #[inline(always)]
-        pub fn set_pam(&mut self, val: super::vals::Pam) {
+        pub const fn set_pam(&mut self, val: super::vals::Pam) {
             self.0 = (self.0 & !(0x03 << 26usize)) | (((val.to_bits() as u32) & 0x03) << 26usize);
         }
         #[doc = "Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn trgm(&self) -> super::vals::Trgm {
             let val = (self.0 >> 28usize) & 0x03;
@@ -1102,10 +1157,11 @@ value. This bit is protected and can be written only if EN is 0."]
         }
         #[doc = "Trigger Mode These bits are set and cleared by software. Note: If TRGM is 11 for the current block, all the values loaded at the end of the current block through the linked list mechanism must keep the same value (TRGM=11) and the same SWRM value, otherwise the result is undefined. These bits are protected and can be written only if EN is 0."]
         #[inline(always)]
-        pub fn set_trgm(&mut self, val: super::vals::Trgm) {
+        pub const fn set_trgm(&mut self, val: super::vals::Trgm) {
             self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
         }
         #[doc = "SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn swrm(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -1113,10 +1169,11 @@ value. This bit is protected and can be written only if EN is 0."]
         }
         #[doc = "SW Request Mode This bit is set and cleared by software. If a HW or SW request is currently active, the bit change will be delayed until the current transfer is completed. If the CxMAR contains a valid address, the CxMDR value will also be written @ CxMAR address. This bit is protected and can be written only if EN is 0."]
         #[inline(always)]
-        pub fn set_swrm(&mut self, val: bool) {
+        pub const fn set_swrm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable."]
+        #[must_use]
         #[inline(always)]
         pub const fn bwm(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -1124,7 +1181,7 @@ value. This bit is protected and can be written only if EN is 0."]
         }
         #[doc = "Bufferable Write Mode This bit is set and cleared by software. This bit is protected and can be written only if EN is 0. Note: All MDMA destination accesses are non-cacheable."]
         #[inline(always)]
-        pub fn set_bwm(&mut self, val: bool) {
+        pub const fn set_bwm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }

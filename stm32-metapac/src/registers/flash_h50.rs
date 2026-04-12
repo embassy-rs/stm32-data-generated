@@ -2469,11 +2469,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "PROVISIONING",
+                    name: "CLOSED",
                     description: Some(
-                        "Provisioning",
+                        "Closed",
                     ),
-                    value: 23,
+                    value: 114,
                 },
                 EnumVariant {
                     name: "IROT_PROVISIONED",
@@ -2490,11 +2490,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 92,
                 },
                 EnumVariant {
-                    name: "CLOSED",
+                    name: "OPEN",
                     description: Some(
-                        "Closed",
+                        "Open",
                     ),
-                    value: 114,
+                    value: 237,
+                },
+                EnumVariant {
+                    name: "PROVISIONING",
+                    description: Some(
+                        "Provisioning",
+                    ),
+                    value: 23,
                 },
                 EnumVariant {
                     name: "REGRESSION",
@@ -2502,13 +2509,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Regression",
                     ),
                     value: 154,
-                },
-                EnumVariant {
-                    name: "OPEN",
-                    description: Some(
-                        "Open",
-                    ),
-                    value: 237,
                 },
             ],
         },

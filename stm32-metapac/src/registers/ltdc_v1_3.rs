@@ -4355,18 +4355,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "FIXED",
-                    description: Some(
-                        "Blending Order Fixed.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "CONFIGURABLE",
                     description: Some(
                         "Blending Order Configurable.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "FIXED",
+                    description: Some(
+                        "Blending Order Fixed.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -4397,6 +4397,13 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
+                    name: "BUS128",
+                    description: Some(
+                        "128-Bit Bus.",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
                     name: "BUS32",
                     description: Some(
                         "32-Bit Bus.",
@@ -4409,13 +4416,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "64-Bit Bus.",
                     ),
                     value: 3,
-                },
-                EnumVariant {
-                    name: "BUS128",
-                    description: Some(
-                        "128-Bit Bus.",
-                    ),
-                    value: 4,
                 },
             ],
         },
@@ -4481,18 +4481,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NOT_AVAILABLE",
-                    description: Some(
-                        "Crc No Computation Available.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "AVAILABLE",
                     description: Some(
                         "Crc Computation Available.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NOT_AVAILABLE",
+                    description: Some(
+                        "Crc No Computation Available.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -4530,18 +4530,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE_LOW",
-                    description: Some(
-                        "Blanking (No Data/Pixel) Polarity Is Active Low.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "ACTIVE_HIGH",
                     description: Some(
                         "Blanking (No Data/Pixel) Polarity Is Active High.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "ACTIVE_LOW",
+                    description: Some(
+                        "Blanking (No Data/Pixel) Polarity Is Active Low.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -4579,11 +4579,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "NO_GAMMA",
+                    name: "GAMMA_INTERPOLATED",
                     description: Some(
-                        "No Gamma.",
+                        "Gamma With 8 Interpolated Segments.",
                     ),
-                    value: 0,
+                    value: 2,
                 },
                 EnumVariant {
                     name: "GAMMA_SAMPLES",
@@ -4593,11 +4593,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "GAMMA_INTERPOLATED",
+                    name: "NO_GAMMA",
                     description: Some(
-                        "Gamma With 8 Interpolated Segments.",
+                        "No Gamma.",
                     ),
-                    value: 2,
+                    value: 0,
                 },
             ],
         },
@@ -4628,18 +4628,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE_LOW",
-                    description: Some(
-                        "Horizontal Synchronization Polarity Is Active Low.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "ACTIVE_HIGH",
                     description: Some(
                         "Horizontal Synchronization Polarity Is Active High.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "ACTIVE_LOW",
+                    description: Some(
+                        "Horizontal Synchronization Polarity Is Active Low.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -4712,18 +4712,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RISING_EDGE",
-                    description: Some(
-                        "The Pixel And Sync Data Are Generated At The Rising-Edge Of The Output Lcd_Clk Clock.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FALLING_EDGE",
                     description: Some(
                         "The Pixel And Sync Data Are Generated At The Falling-Edge Of The Output Lcd_Clk Clock.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "RISING_EDGE",
+                    description: Some(
+                        "The Pixel And Sync Data Are Generated At The Rising-Edge Of The Output Lcd_Clk Clock.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -4733,13 +4733,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "ARGB8888",
-                    description: Some(
-                        "ARGB8888 (32 bpp).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "ABGR8888",
                     description: Some(
                         "ABGR8888 (32 bpp).",
@@ -4747,25 +4740,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "RGBA8888",
+                    name: "ARGB8888",
                     description: Some(
-                        "RGBA8888 (32 bpp).",
+                        "ARGB8888 (32 bpp).",
                     ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "BGRA8888",
-                    description: Some(
-                        "BGRA8888 (32 bpp).",
-                    ),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "RGB565",
-                    description: Some(
-                        "RGB565 (16 bpp, A = 255).",
-                    ),
-                    value: 4,
+                    value: 0,
                 },
                 EnumVariant {
                     name: "BGR565",
@@ -4775,11 +4754,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 5,
                 },
                 EnumVariant {
-                    name: "RGB888",
+                    name: "BGRA8888",
                     description: Some(
-                        "RGB888 (24 bpp packed, A = 255).",
+                        "BGRA8888 (32 bpp).",
                     ),
-                    value: 6,
+                    value: 3,
                 },
                 EnumVariant {
                     name: "FLEXIBLE",
@@ -4787,6 +4766,27 @@ pub(crate) static REGISTERS: IR = IR {
                         "Flexible pixel format selected.",
                     ),
                     value: 7,
+                },
+                EnumVariant {
+                    name: "RGB565",
+                    description: Some(
+                        "RGB565 (16 bpp, A = 255).",
+                    ),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "RGB888",
+                    description: Some(
+                        "RGB888 (24 bpp packed, A = 255).",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "RGBA8888",
+                    description: Some(
+                        "RGBA8888 (32 bpp).",
+                    ),
+                    value: 2,
                 },
             ],
         },
@@ -4838,18 +4838,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "ACTIVE_LOW",
-                    description: Some(
-                        "Vertical Synchronization Is Active Low.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "ACTIVE_HIGH",
                     description: Some(
                         "Vertical Synchronization Is Active High.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "ACTIVE_LOW",
+                    description: Some(
+                        "Vertical Synchronization Is Active Low.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -4858,6 +4858,13 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
+                EnumVariant {
+                    name: "FULL_PLANAR",
+                    description: Some(
+                        "full-Planar 420: (Cb and Cr component are replicated horizontally and vertically. The layer main configuration defines the access to the Y buffer, and auxiliary registers define the access to the Cb and Cr buffers).",
+                    ),
+                    value: 2,
+                },
                 EnumVariant {
                     name: "INTERLEAVED",
                     description: Some(
@@ -4871,13 +4878,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "semi-Planar 420: (Cb and Cr component are replicated horizontally and vertically.The layer main configuration defines the access to the Y buffer, and auxiliary registers define the access to the Cb and Cr buffers).",
                     ),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "FULL_PLANAR",
-                    description: Some(
-                        "full-Planar 420: (Cb and Cr component are replicated horizontally and vertically. The layer main configuration defines the access to the Y buffer, and auxiliary registers define the access to the Cb and Cr buffers).",
-                    ),
-                    value: 2,
                 },
             ],
         },

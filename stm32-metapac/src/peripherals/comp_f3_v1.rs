@@ -22,7 +22,7 @@ impl Comp {
     #[doc = "control and status register."]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
 }
 pub mod regs {
@@ -32,6 +32,7 @@ pub mod regs {
     pub struct Csr(pub u32);
     impl Csr {
         #[doc = "Comparator enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn en(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -39,10 +40,11 @@ pub mod regs {
         }
         #[doc = "Comparator enable."]
         #[inline(always)]
-        pub fn set_en(&mut self, val: bool) {
+        pub const fn set_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Comparator 1 non inverting input connection to DAC output. Only available on COMP1"]
+        #[must_use]
         #[inline(always)]
         pub const fn inp_dac(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -50,10 +52,11 @@ pub mod regs {
         }
         #[doc = "Comparator 1 non inverting input connection to DAC output. Only available on COMP1"]
         #[inline(always)]
-        pub fn set_inp_dac(&mut self, val: bool) {
+        pub const fn set_inp_dac(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Comparator mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn mode(&self) -> super::vals::Mode {
             let val = (self.0 >> 2usize) & 0x03;
@@ -61,10 +64,11 @@ pub mod regs {
         }
         #[doc = "Comparator mode."]
         #[inline(always)]
-        pub fn set_mode(&mut self, val: super::vals::Mode) {
+        pub const fn set_mode(&mut self, val: super::vals::Mode) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
         #[doc = "Comparator inverting input selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn insel(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x07;
@@ -72,10 +76,11 @@ pub mod regs {
         }
         #[doc = "Comparator inverting input selection."]
         #[inline(always)]
-        pub fn set_insel(&mut self, val: u8) {
+        pub const fn set_insel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
         }
         #[doc = "Window mode enable. Only available on COMP2"]
+        #[must_use]
         #[inline(always)]
         pub const fn wndwen(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -83,10 +88,11 @@ pub mod regs {
         }
         #[doc = "Window mode enable. Only available on COMP2"]
         #[inline(always)]
-        pub fn set_wndwen(&mut self, val: bool) {
+        pub const fn set_wndwen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Comparator output selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn outsel(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x07;
@@ -94,10 +100,11 @@ pub mod regs {
         }
         #[doc = "Comparator output selection."]
         #[inline(always)]
-        pub fn set_outsel(&mut self, val: u8) {
+        pub const fn set_outsel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
         }
         #[doc = "Comparator output polarity."]
+        #[must_use]
         #[inline(always)]
         pub const fn pol(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -105,10 +112,11 @@ pub mod regs {
         }
         #[doc = "Comparator output polarity."]
         #[inline(always)]
-        pub fn set_pol(&mut self, val: bool) {
+        pub const fn set_pol(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Comparator hysteresis."]
+        #[must_use]
         #[inline(always)]
         pub const fn hyst(&self) -> super::vals::Hyst {
             let val = (self.0 >> 12usize) & 0x03;
@@ -116,10 +124,11 @@ pub mod regs {
         }
         #[doc = "Comparator hysteresis."]
         #[inline(always)]
-        pub fn set_hyst(&mut self, val: super::vals::Hyst) {
+        pub const fn set_hyst(&mut self, val: super::vals::Hyst) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
         #[doc = "Comparator output."]
+        #[must_use]
         #[inline(always)]
         pub const fn out(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -127,10 +136,11 @@ pub mod regs {
         }
         #[doc = "Comparator output."]
         #[inline(always)]
-        pub fn set_out(&mut self, val: bool) {
+        pub const fn set_out(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Comparator lock."]
+        #[must_use]
         #[inline(always)]
         pub const fn lock(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -138,7 +148,7 @@ pub mod regs {
         }
         #[doc = "Comparator lock."]
         #[inline(always)]
-        pub fn set_lock(&mut self, val: bool) {
+        pub const fn set_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }

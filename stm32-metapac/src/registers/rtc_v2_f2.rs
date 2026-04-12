@@ -1597,18 +1597,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TO_MATCH",
-                    description: Some(
-                        "Alarm set if the date/day match",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "NOT_MATCH",
                     description: Some(
                         "Date/day don’t care in Alarm comparison",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "TO_MATCH",
+                    description: Some(
+                        "Alarm set if the date/day match",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1681,13 +1681,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
-                    description: Some(
-                        "Output disabled",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "ALARM_A",
                     description: Some(
                         "Alarm A output enabled",
@@ -1700,6 +1693,13 @@ pub(crate) static REGISTERS: IR = IR {
                         "Alarm B output enabled",
                     ),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some(
+                        "Output disabled",
+                    ),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "WAKEUP",
@@ -1737,18 +1737,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RISING_EDGE",
-                    description: Some(
-                        "If TAMPFLT = 00: RTC_TAMPx input rising edge triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input staying low triggers a tamper detection event.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FALLING_EDGE",
                     description: Some(
                         "If TAMPFLT = 00: RTC_TAMPx input staying high triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input falling edge triggers a tamper detection event",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "RISING_EDGE",
+                    description: Some(
+                        "If TAMPFLT = 00: RTC_TAMPx input rising edge triggers a tamper detection event. If TAMPFLT =\u{338} 00: RTC_TAMPx input staying low triggers a tamper detection event.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1758,18 +1758,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "RISING_EDGE",
-                    description: Some(
-                        "RTC_TS input rising edge generates a time-stamp event",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FALLING_EDGE",
                     description: Some(
                         "RTC_TS input falling edge generates a time-stamp event",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "RISING_EDGE",
+                    description: Some(
+                        "RTC_TS input rising edge generates a time-stamp event",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1778,34 +1778,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 3,
             variants: &[
-                EnumVariant {
-                    name: "DIV16",
-                    description: Some(
-                        "RTC/16 clock is selected",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some(
-                        "RTC/8 clock is selected",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some(
-                        "RTC/4 clock is selected",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV2",
-                    description: Some(
-                        "RTC/2 clock is selected",
-                    ),
-                    value: 3,
-                },
                 EnumVariant {
                     name: "CLOCK_SPARE",
                     description: Some(
@@ -1819,6 +1791,34 @@ pub(crate) static REGISTERS: IR = IR {
                         "ck_spre (usually 1 Hz) clock is selected and 2^16 is added to the WUT counter value",
                     ),
                     value: 6,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some(
+                        "RTC/16 clock is selected",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: Some(
+                        "RTC/2 clock is selected",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: Some(
+                        "RTC/4 clock is selected",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some(
+                        "RTC/8 clock is selected",
+                    ),
+                    value: 1,
                 },
             ],
         },

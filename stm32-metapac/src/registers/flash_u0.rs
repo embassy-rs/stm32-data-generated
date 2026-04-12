@@ -1228,6 +1228,13 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
+                    name: "BIDIRECTIONAL",
+                    description: Some(
+                        "Bidirectional reset: the NRST pin is configured in reset input/output (legacy) mode",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
                     name: "ONLY_INPUT",
                     description: Some(
                         "Reset input only: a low level on the NRST pin generates system reset; internal RESET is not propagated to the NRST pin.",
@@ -1240,13 +1247,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "Standard GPIO: only internal RESET is possible",
                     ),
                     value: 2,
-                },
-                EnumVariant {
-                    name: "BIDIRECTIONAL",
-                    description: Some(
-                        "Bidirectional reset: the NRST pin is configured in reset input/output (legacy) mode",
-                    ),
-                    value: 3,
                 },
             ],
         },

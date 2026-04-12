@@ -22,27 +22,27 @@ impl AdcCommon {
     #[doc = "common control register"]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "hardware configuration register"]
     #[inline(always)]
     pub const fn hwcfgr0(self) -> crate::common::Reg<regs::Hwcfgr0, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf0usize) as _) }
     }
     #[doc = "version register"]
     #[inline(always)]
     pub const fn verr(self) -> crate::common::Reg<regs::Verr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf4usize) as _) }
     }
     #[doc = "identification register"]
     #[inline(always)]
     pub const fn ipdr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xf8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xf8usize) as _) }
     }
     #[doc = "size identification register"]
     #[inline(always)]
     pub const fn sidr(self) -> crate::common::Reg<u32, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xfcusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xfcusize) as _) }
     }
 }
 pub mod regs {
@@ -52,6 +52,7 @@ pub mod regs {
     pub struct Ccr(pub u32);
     impl Ccr {
         #[doc = "ADC clock mode These bits are set and cleared by software to define the ADC clock scheme (which is common to both master and slave ADCs): In all synchronous clock modes, there is no jitter in the delay from a timer trigger to the start of a conversion. Note: The software is allowed to write these bits only when the ADCs are disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
+        #[must_use]
         #[inline(always)]
         pub const fn ckmode(&self) -> super::vals::Ckmode {
             let val = (self.0 >> 16usize) & 0x03;
@@ -59,11 +60,12 @@ pub mod regs {
         }
         #[doc = "ADC clock mode These bits are set and cleared by software to define the ADC clock scheme (which is common to both master and slave ADCs): In all synchronous clock modes, there is no jitter in the delay from a timer trigger to the start of a conversion. Note: The software is allowed to write these bits only when the ADCs are disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0)."]
         #[inline(always)]
-        pub fn set_ckmode(&mut self, val: super::vals::Ckmode) {
+        pub const fn set_ckmode(&mut self, val: super::vals::Ckmode) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
         }
         #[doc = "ADC prescaler These bits are set and cleared by software to select the frequency of the clock to the ADC. The clock is common for all the ADCs. other: reserved Note: The software is allowed to write these bits only when the ADC is disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0). The ADC prescaler value is applied only when CKMODE\\[1:0\\]
 = 0b00."]
+        #[must_use]
         #[inline(always)]
         pub const fn presc(&self) -> super::vals::Presc {
             let val = (self.0 >> 18usize) & 0x0f;
@@ -72,10 +74,11 @@ pub mod regs {
         #[doc = "ADC prescaler These bits are set and cleared by software to select the frequency of the clock to the ADC. The clock is common for all the ADCs. other: reserved Note: The software is allowed to write these bits only when the ADC is disabled (ADCAL = 0, JADSTART = 0, ADSTART = 0, ADSTP = 0, ADDIS = 0 and ADEN = 0). The ADC prescaler value is applied only when CKMODE\\[1:0\\]
 = 0b00."]
         #[inline(always)]
-        pub fn set_presc(&mut self, val: super::vals::Presc) {
+        pub const fn set_presc(&mut self, val: super::vals::Presc) {
             self.0 = (self.0 & !(0x0f << 18usize)) | (((val.to_bits() as u32) & 0x0f) << 18usize);
         }
         #[doc = "VREFINT enable This bit is set and cleared by software to enable/disable the VREFINT channel"]
+        #[must_use]
         #[inline(always)]
         pub const fn vrefen(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -83,10 +86,11 @@ pub mod regs {
         }
         #[doc = "VREFINT enable This bit is set and cleared by software to enable/disable the VREFINT channel"]
         #[inline(always)]
-        pub fn set_vrefen(&mut self, val: bool) {
+        pub const fn set_vrefen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "VSENSE enable This bit is set and cleared by software to control VSENSE"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsen(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -94,10 +98,11 @@ pub mod regs {
         }
         #[doc = "VSENSE enable This bit is set and cleared by software to control VSENSE"]
         #[inline(always)]
-        pub fn set_tsen(&mut self, val: bool) {
+        pub const fn set_tsen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "VBAT enable This bit is set and cleared by software to control"]
+        #[must_use]
         #[inline(always)]
         pub const fn vbaten(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -105,7 +110,7 @@ pub mod regs {
         }
         #[doc = "VBAT enable This bit is set and cleared by software to control"]
         #[inline(always)]
-        pub fn set_vbaten(&mut self, val: bool) {
+        pub const fn set_vbaten(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
     }
@@ -146,6 +151,7 @@ pub mod regs {
     pub struct Hwcfgr0(pub u32);
     impl Hwcfgr0 {
         #[doc = "Number of ADCs implemented"]
+        #[must_use]
         #[inline(always)]
         pub const fn adcnum(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -153,10 +159,11 @@ pub mod regs {
         }
         #[doc = "Number of ADCs implemented"]
         #[inline(always)]
-        pub fn set_adcnum(&mut self, val: u8) {
+        pub const fn set_adcnum(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "Number of pipeline stages"]
+        #[must_use]
         #[inline(always)]
         pub const fn mulpipe(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -164,10 +171,11 @@ pub mod regs {
         }
         #[doc = "Number of pipeline stages"]
         #[inline(always)]
-        pub fn set_mulpipe(&mut self, val: u8) {
+        pub const fn set_mulpipe(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
         #[doc = "Number of option bits 0002: 2 option bits implemented in the ADC option register (ADC_OR) at address offset 0xC8."]
+        #[must_use]
         #[inline(always)]
         pub const fn opbits(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
@@ -175,10 +183,11 @@ pub mod regs {
         }
         #[doc = "Number of option bits 0002: 2 option bits implemented in the ADC option register (ADC_OR) at address offset 0xC8."]
         #[inline(always)]
-        pub fn set_opbits(&mut self, val: u8) {
+        pub const fn set_opbits(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
         #[doc = "Idle value for non-selected channels"]
+        #[must_use]
         #[inline(always)]
         pub const fn idlevalue(&self) -> super::vals::Idlevalue {
             let val = (self.0 >> 12usize) & 0x0f;
@@ -186,7 +195,7 @@ pub mod regs {
         }
         #[doc = "Idle value for non-selected channels"]
         #[inline(always)]
-        pub fn set_idlevalue(&mut self, val: super::vals::Idlevalue) {
+        pub const fn set_idlevalue(&mut self, val: super::vals::Idlevalue) {
             self.0 = (self.0 & !(0x0f << 12usize)) | (((val.to_bits() as u32) & 0x0f) << 12usize);
         }
     }
@@ -225,6 +234,7 @@ pub mod regs {
     pub struct Verr(pub u32);
     impl Verr {
         #[doc = "Minor revision These bits returns the ADC IP minor revision 0002: Major revision = X.2."]
+        #[must_use]
         #[inline(always)]
         pub const fn minrev(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -232,10 +242,11 @@ pub mod regs {
         }
         #[doc = "Minor revision These bits returns the ADC IP minor revision 0002: Major revision = X.2."]
         #[inline(always)]
-        pub fn set_minrev(&mut self, val: u8) {
+        pub const fn set_minrev(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "Major revision These bits returns the ADC IP major revision"]
+        #[must_use]
         #[inline(always)]
         pub const fn majrev(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -243,7 +254,7 @@ pub mod regs {
         }
         #[doc = "Major revision These bits returns the ADC IP major revision"]
         #[inline(always)]
-        pub fn set_majrev(&mut self, val: u8) {
+        pub const fn set_majrev(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
     }

@@ -1153,18 +1153,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TO",
-                    description: Some(
-                        "data transmitted by the USB peripheral to the host PC",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FROM",
                     description: Some(
                         "data received by the USB peripheral from the host PC",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "TO",
+                    description: Some(
+                        "data transmitted by the USB peripheral to the host PC",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1188,18 +1188,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "ISO",
-                    description: Some(
-                        "Iso endpoint",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
                     name: "INTERRUPT",
                     description: Some(
                         "Interrupt endpoint",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "ISO",
+                    description: Some(
+                        "Iso endpoint",
+                    ),
+                    value: 2,
                 },
             ],
         },
@@ -1209,18 +1209,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "NYET",
-                    description: Some(
-                        "The valid LPM Token will be NYET / NYET answer",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "ACK",
                     description: Some(
                         "The valid LPM Token will be ACK / ACK answer",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NYET",
+                    description: Some(
+                        "The valid LPM Token will be NYET / NYET answer",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1258,18 +1258,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "STALL",
-                    description: Some(
-                        "the endpoint is stalled and all requests result in a STALL handshake",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "NAK",
                     description: Some(
                         "the endpoint is naked and all requests result in a NAK handshake",
                     ),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "STALL",
+                    description: Some(
+                        "the endpoint is stalled and all requests result in a STALL handshake",
+                    ),
+                    value: 1,
                 },
                 EnumVariant {
                     name: "VALID",

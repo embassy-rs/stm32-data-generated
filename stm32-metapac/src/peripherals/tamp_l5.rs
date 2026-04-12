@@ -22,93 +22,93 @@ impl Tamp {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "control register 3"]
     #[inline(always)]
     pub const fn cr3(self) -> crate::common::Reg<regs::Cr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "TAMP filter control register"]
     #[inline(always)]
     pub const fn fltcr(self) -> crate::common::Reg<regs::Fltcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "TAMP active tamper control register 1"]
     #[inline(always)]
     pub const fn atcr1(self) -> crate::common::Reg<regs::Atcr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "TAMP active tamper seed register"]
     #[inline(always)]
     pub const fn atseedr(self) -> crate::common::Reg<regs::Atseedr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "TAMP active tamper output register"]
     #[inline(always)]
     pub const fn ator(self) -> crate::common::Reg<regs::Ator, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "TAMP active tamper control register 2"]
     #[inline(always)]
     pub const fn atcr2(self) -> crate::common::Reg<regs::Atcr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "TAMP secure mode register"]
     #[inline(always)]
     pub const fn smcr(self) -> crate::common::Reg<regs::Smcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "TAMP privilege mode control register"]
     #[inline(always)]
     pub const fn privcr(self) -> crate::common::Reg<regs::Privcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "TAMP interrupt enable register"]
     #[inline(always)]
     pub const fn ier(self) -> crate::common::Reg<regs::Ier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
     }
     #[doc = "TAMP status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
     }
     #[doc = "TAMP masked interrupt status register"]
     #[inline(always)]
     pub const fn misr(self) -> crate::common::Reg<regs::Misr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
     }
     #[doc = "TAMP secure masked interrupt status register"]
     #[inline(always)]
     pub const fn smisr(self) -> crate::common::Reg<regs::Smisr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x38usize) as _) }
     }
     #[doc = "TAMP status clear register"]
     #[inline(always)]
     pub const fn scr(self) -> crate::common::Reg<regs::Scr, crate::common::W> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3cusize) as _) }
     }
     #[doc = "TAMP monotonic counter register"]
     #[inline(always)]
     pub const fn countr(self) -> crate::common::Reg<regs::Countr, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
     }
     #[doc = "TAMP configuration register"]
     #[inline(always)]
     pub const fn cfgr(self) -> crate::common::Reg<regs::Cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
     }
     #[doc = "TAMP backup register"]
     #[inline(always)]
     pub const fn bkpr(self, n: usize) -> crate::common::Reg<regs::Bkpr, crate::common::RW> {
         assert!(n < 32usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize + n * 4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize + n * 4usize) as _) }
     }
 }
 pub mod regs {
@@ -118,6 +118,7 @@ pub mod regs {
     pub struct Atcr1(pub u32);
     impl Atcr1 {
         #[doc = "TAMPAM"]
+        #[must_use]
         #[inline(always)]
         pub const fn tampam(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -127,12 +128,13 @@ pub mod regs {
         }
         #[doc = "TAMPAM"]
         #[inline(always)]
-        pub fn set_tampam(&mut self, n: usize, val: bool) {
+        pub const fn set_tampam(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "ATOSEL"]
+        #[must_use]
         #[inline(always)]
         pub const fn atosel(&self, n: usize) -> u8 {
             assert!(n < 4usize);
@@ -142,12 +144,13 @@ pub mod regs {
         }
         #[doc = "ATOSEL"]
         #[inline(always)]
-        pub fn set_atosel(&mut self, n: usize, val: u8) {
+        pub const fn set_atosel(&mut self, n: usize, val: u8) {
             assert!(n < 4usize);
             let offs = 8usize + n * 2usize;
             self.0 = (self.0 & !(0x03 << offs)) | (((val as u32) & 0x03) << offs);
         }
         #[doc = "ATCKSEL"]
+        #[must_use]
         #[inline(always)]
         pub const fn atcksel(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x03;
@@ -155,10 +158,11 @@ pub mod regs {
         }
         #[doc = "ATCKSEL"]
         #[inline(always)]
-        pub fn set_atcksel(&mut self, val: u8) {
+        pub const fn set_atcksel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
         }
         #[doc = "ATPER"]
+        #[must_use]
         #[inline(always)]
         pub const fn atper(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x03;
@@ -166,10 +170,11 @@ pub mod regs {
         }
         #[doc = "ATPER"]
         #[inline(always)]
-        pub fn set_atper(&mut self, val: u8) {
+        pub const fn set_atper(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 24usize)) | (((val as u32) & 0x03) << 24usize);
         }
         #[doc = "ATOSHARE"]
+        #[must_use]
         #[inline(always)]
         pub const fn atoshare(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -177,10 +182,11 @@ pub mod regs {
         }
         #[doc = "ATOSHARE"]
         #[inline(always)]
-        pub fn set_atoshare(&mut self, val: bool) {
+        pub const fn set_atoshare(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "FLTEN"]
+        #[must_use]
         #[inline(always)]
         pub const fn flten(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -188,7 +194,7 @@ pub mod regs {
         }
         #[doc = "FLTEN"]
         #[inline(always)]
-        pub fn set_flten(&mut self, val: bool) {
+        pub const fn set_flten(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -232,6 +238,7 @@ pub mod regs {
     pub struct Atcr2(pub u32);
     impl Atcr2 {
         #[doc = "ATOSEL"]
+        #[must_use]
         #[inline(always)]
         pub const fn atosel(&self, n: usize) -> u8 {
             assert!(n < 8usize);
@@ -241,7 +248,7 @@ pub mod regs {
         }
         #[doc = "ATOSEL"]
         #[inline(always)]
-        pub fn set_atosel(&mut self, n: usize, val: u8) {
+        pub const fn set_atosel(&mut self, n: usize, val: u8) {
             assert!(n < 8usize);
             let offs = 8usize + n * 3usize;
             self.0 = (self.0 & !(0x07 << offs)) | (((val as u32) & 0x07) << offs);
@@ -279,6 +286,7 @@ pub mod regs {
     pub struct Ator(pub u32);
     impl Ator {
         #[doc = "Pseudo-random generator value"]
+        #[must_use]
         #[inline(always)]
         pub const fn prng(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -286,10 +294,11 @@ pub mod regs {
         }
         #[doc = "Pseudo-random generator value"]
         #[inline(always)]
-        pub fn set_prng(&mut self, val: u8) {
+        pub const fn set_prng(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "Seed running flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn seedf(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -297,10 +306,11 @@ pub mod regs {
         }
         #[doc = "Seed running flag"]
         #[inline(always)]
-        pub fn set_seedf(&mut self, val: bool) {
+        pub const fn set_seedf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Active tamper initialization status"]
+        #[must_use]
         #[inline(always)]
         pub const fn inits(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -308,7 +318,7 @@ pub mod regs {
         }
         #[doc = "Active tamper initialization status"]
         #[inline(always)]
-        pub fn set_inits(&mut self, val: bool) {
+        pub const fn set_inits(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }
@@ -345,6 +355,7 @@ pub mod regs {
     pub struct Atseedr(pub u32);
     impl Atseedr {
         #[doc = "Pseudo-random generator seed value"]
+        #[must_use]
         #[inline(always)]
         pub const fn seed(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -352,7 +363,7 @@ pub mod regs {
         }
         #[doc = "Pseudo-random generator seed value"]
         #[inline(always)]
-        pub fn set_seed(&mut self, val: u32) {
+        pub const fn set_seed(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -379,6 +390,7 @@ pub mod regs {
     pub struct Bkpr(pub u32);
     impl Bkpr {
         #[doc = "BKP"]
+        #[must_use]
         #[inline(always)]
         pub const fn bkp(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -386,7 +398,7 @@ pub mod regs {
         }
         #[doc = "BKP"]
         #[inline(always)]
-        pub fn set_bkp(&mut self, val: u32) {
+        pub const fn set_bkp(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -413,6 +425,7 @@ pub mod regs {
     pub struct Cfgr(pub u32);
     impl Cfgr {
         #[doc = "TMONEN"]
+        #[must_use]
         #[inline(always)]
         pub const fn tmonen(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -420,10 +433,11 @@ pub mod regs {
         }
         #[doc = "TMONEN"]
         #[inline(always)]
-        pub fn set_tmonen(&mut self, val: bool) {
+        pub const fn set_tmonen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "VMONEN"]
+        #[must_use]
         #[inline(always)]
         pub const fn vmonen(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -431,10 +445,11 @@ pub mod regs {
         }
         #[doc = "VMONEN"]
         #[inline(always)]
-        pub fn set_vmonen(&mut self, val: bool) {
+        pub const fn set_vmonen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "WUTMONEN"]
+        #[must_use]
         #[inline(always)]
         pub const fn wutmonen(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -442,7 +457,7 @@ pub mod regs {
         }
         #[doc = "WUTMONEN"]
         #[inline(always)]
-        pub fn set_wutmonen(&mut self, val: bool) {
+        pub const fn set_wutmonen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
@@ -479,6 +494,7 @@ pub mod regs {
     pub struct Countr(pub u32);
     impl Countr {
         #[doc = "COUNT"]
+        #[must_use]
         #[inline(always)]
         pub const fn count(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -486,7 +502,7 @@ pub mod regs {
         }
         #[doc = "COUNT"]
         #[inline(always)]
-        pub fn set_count(&mut self, val: u32) {
+        pub const fn set_count(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -513,6 +529,7 @@ pub mod regs {
     pub struct Cr1(pub u32);
     impl Cr1 {
         #[doc = "TAMPE"]
+        #[must_use]
         #[inline(always)]
         pub const fn tampe(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -522,12 +539,13 @@ pub mod regs {
         }
         #[doc = "TAMPE"]
         #[inline(always)]
-        pub fn set_tampe(&mut self, n: usize, val: bool) {
+        pub const fn set_tampe(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "ITAMPE"]
+        #[must_use]
         #[inline(always)]
         pub const fn itampe(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -537,7 +555,7 @@ pub mod regs {
         }
         #[doc = "ITAMPE"]
         #[inline(always)]
-        pub fn set_itampe(&mut self, n: usize, val: bool) {
+        pub const fn set_itampe(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 16usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -583,6 +601,7 @@ pub mod regs {
     pub struct Cr2(pub u32);
     impl Cr2 {
         #[doc = "Tamper X no erase"]
+        #[must_use]
         #[inline(always)]
         pub const fn tampnoer(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -592,12 +611,13 @@ pub mod regs {
         }
         #[doc = "Tamper X no erase"]
         #[inline(always)]
-        pub fn set_tampnoer(&mut self, n: usize, val: bool) {
+        pub const fn set_tampnoer(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Tamper X mask"]
+        #[must_use]
         #[inline(always)]
         pub const fn tampmsk(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -607,12 +627,13 @@ pub mod regs {
         }
         #[doc = "Tamper X mask"]
         #[inline(always)]
-        pub fn set_tampmsk(&mut self, n: usize, val: bool) {
+        pub const fn set_tampmsk(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 16usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "BKERASE"]
+        #[must_use]
         #[inline(always)]
         pub const fn bkerase(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -620,10 +641,11 @@ pub mod regs {
         }
         #[doc = "BKERASE"]
         #[inline(always)]
-        pub fn set_bkerase(&mut self, val: bool) {
+        pub const fn set_bkerase(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "Active level for tamper X input"]
+        #[must_use]
         #[inline(always)]
         pub const fn tamptrg(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -633,7 +655,7 @@ pub mod regs {
         }
         #[doc = "Active level for tamper X input"]
         #[inline(always)]
-        pub fn set_tamptrg(&mut self, n: usize, val: bool) {
+        pub const fn set_tamptrg(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 24usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -683,6 +705,7 @@ pub mod regs {
     pub struct Cr3(pub u32);
     impl Cr3 {
         #[doc = "Internal Tamper X no erase"]
+        #[must_use]
         #[inline(always)]
         pub const fn itampnoer(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -692,7 +715,7 @@ pub mod regs {
         }
         #[doc = "Internal Tamper X no erase"]
         #[inline(always)]
-        pub fn set_itampnoer(&mut self, n: usize, val: bool) {
+        pub const fn set_itampnoer(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -730,6 +753,7 @@ pub mod regs {
     pub struct Fltcr(pub u32);
     impl Fltcr {
         #[doc = "TAMPFREQ"]
+        #[must_use]
         #[inline(always)]
         pub const fn tampfreq(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -737,10 +761,11 @@ pub mod regs {
         }
         #[doc = "TAMPFREQ"]
         #[inline(always)]
-        pub fn set_tampfreq(&mut self, val: u8) {
+        pub const fn set_tampfreq(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "TAMPFLT"]
+        #[must_use]
         #[inline(always)]
         pub const fn tampflt(&self) -> u8 {
             let val = (self.0 >> 3usize) & 0x03;
@@ -748,10 +773,11 @@ pub mod regs {
         }
         #[doc = "TAMPFLT"]
         #[inline(always)]
-        pub fn set_tampflt(&mut self, val: u8) {
+        pub const fn set_tampflt(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 3usize)) | (((val as u32) & 0x03) << 3usize);
         }
         #[doc = "TAMPPRCH"]
+        #[must_use]
         #[inline(always)]
         pub const fn tampprch(&self) -> u8 {
             let val = (self.0 >> 5usize) & 0x03;
@@ -759,10 +785,11 @@ pub mod regs {
         }
         #[doc = "TAMPPRCH"]
         #[inline(always)]
-        pub fn set_tampprch(&mut self, val: u8) {
+        pub const fn set_tampprch(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 5usize)) | (((val as u32) & 0x03) << 5usize);
         }
         #[doc = "TAMPPUDIS"]
+        #[must_use]
         #[inline(always)]
         pub const fn tamppudis(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -770,7 +797,7 @@ pub mod regs {
         }
         #[doc = "TAMPPUDIS"]
         #[inline(always)]
-        pub fn set_tamppudis(&mut self, val: bool) {
+        pub const fn set_tamppudis(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
@@ -809,6 +836,7 @@ pub mod regs {
     pub struct Ier(pub u32);
     impl Ier {
         #[doc = "Tamper X interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn tampie(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -818,12 +846,13 @@ pub mod regs {
         }
         #[doc = "Tamper X interrupt enable"]
         #[inline(always)]
-        pub fn set_tampie(&mut self, n: usize, val: bool) {
+        pub const fn set_tampie(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Internal tamper X interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn itampie(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -833,7 +862,7 @@ pub mod regs {
         }
         #[doc = "Internal tamper X interrupt enable"]
         #[inline(always)]
-        pub fn set_itampie(&mut self, n: usize, val: bool) {
+        pub const fn set_itampie(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 16usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -879,6 +908,7 @@ pub mod regs {
     pub struct Misr(pub u32);
     impl Misr {
         #[doc = "Tamper X interrupt masked flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn tampmf(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -888,12 +918,13 @@ pub mod regs {
         }
         #[doc = "Tamper X interrupt masked flag"]
         #[inline(always)]
-        pub fn set_tampmf(&mut self, n: usize, val: bool) {
+        pub const fn set_tampmf(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Internal tamper X interrupt masked flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn itampmf(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -903,7 +934,7 @@ pub mod regs {
         }
         #[doc = "Internal tamper X interrupt masked flag"]
         #[inline(always)]
-        pub fn set_itampmf(&mut self, n: usize, val: bool) {
+        pub const fn set_itampmf(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 16usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -949,6 +980,7 @@ pub mod regs {
     pub struct Privcr(pub u32);
     impl Privcr {
         #[doc = "Backup registers zone 1 privilege protection"]
+        #[must_use]
         #[inline(always)]
         pub const fn bkprwpriv(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -956,10 +988,11 @@ pub mod regs {
         }
         #[doc = "Backup registers zone 1 privilege protection"]
         #[inline(always)]
-        pub fn set_bkprwpriv(&mut self, val: bool) {
+        pub const fn set_bkprwpriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "Backup registers zone 2 privilege protection"]
+        #[must_use]
         #[inline(always)]
         pub const fn bkpwpriv(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -967,10 +1000,11 @@ pub mod regs {
         }
         #[doc = "Backup registers zone 2 privilege protection"]
         #[inline(always)]
-        pub fn set_bkpwpriv(&mut self, val: bool) {
+        pub const fn set_bkpwpriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "Tamper privilege protection"]
+        #[must_use]
         #[inline(always)]
         pub const fn tamppriv(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -978,7 +1012,7 @@ pub mod regs {
         }
         #[doc = "Tamper privilege protection"]
         #[inline(always)]
-        pub fn set_tamppriv(&mut self, val: bool) {
+        pub const fn set_tamppriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -1015,6 +1049,7 @@ pub mod regs {
     pub struct Scr(pub u32);
     impl Scr {
         #[doc = "Clear tamper X detection flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn ctampf(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -1024,12 +1059,13 @@ pub mod regs {
         }
         #[doc = "Clear tamper X detection flag"]
         #[inline(always)]
-        pub fn set_ctampf(&mut self, n: usize, val: bool) {
+        pub const fn set_ctampf(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Clear internal tamper X detection flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn citampf(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -1039,7 +1075,7 @@ pub mod regs {
         }
         #[doc = "Clear internal tamper X detection flag"]
         #[inline(always)]
-        pub fn set_citampf(&mut self, n: usize, val: bool) {
+        pub const fn set_citampf(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 16usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -1085,6 +1121,7 @@ pub mod regs {
     pub struct Smcr(pub u32);
     impl Smcr {
         #[doc = "Backup registers read/write protection offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn bkprwdprot(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -1092,10 +1129,11 @@ pub mod regs {
         }
         #[doc = "Backup registers read/write protection offset"]
         #[inline(always)]
-        pub fn set_bkprwdprot(&mut self, val: u8) {
+        pub const fn set_bkprwdprot(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "Backup registers write protection offset"]
+        #[must_use]
         #[inline(always)]
         pub const fn bkpwdprot(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
@@ -1103,10 +1141,11 @@ pub mod regs {
         }
         #[doc = "Backup registers write protection offset"]
         #[inline(always)]
-        pub fn set_bkpwdprot(&mut self, val: u8) {
+        pub const fn set_bkpwdprot(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
         #[doc = "Tamper protection"]
+        #[must_use]
         #[inline(always)]
         pub const fn tampdprot(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -1114,7 +1153,7 @@ pub mod regs {
         }
         #[doc = "Tamper protection"]
         #[inline(always)]
-        pub fn set_tampdprot(&mut self, val: bool) {
+        pub const fn set_tampdprot(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -1151,6 +1190,7 @@ pub mod regs {
     pub struct Smisr(pub u32);
     impl Smisr {
         #[doc = "Tamper X interrupt masked flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn tampmf(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -1160,12 +1200,13 @@ pub mod regs {
         }
         #[doc = "Tamper X interrupt masked flag"]
         #[inline(always)]
-        pub fn set_tampmf(&mut self, n: usize, val: bool) {
+        pub const fn set_tampmf(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Internal tamper X interrupt masked flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn itampmf(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -1175,7 +1216,7 @@ pub mod regs {
         }
         #[doc = "Internal tamper X interrupt masked flag"]
         #[inline(always)]
-        pub fn set_itampmf(&mut self, n: usize, val: bool) {
+        pub const fn set_itampmf(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 16usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -1221,6 +1262,7 @@ pub mod regs {
     pub struct Sr(pub u32);
     impl Sr {
         #[doc = "Tamper X detection flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn tampf(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -1230,12 +1272,13 @@ pub mod regs {
         }
         #[doc = "Tamper X detection flag"]
         #[inline(always)]
-        pub fn set_tampf(&mut self, n: usize, val: bool) {
+        pub const fn set_tampf(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Internal tamper X detection flag"]
+        #[must_use]
         #[inline(always)]
         pub const fn itampf(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -1245,7 +1288,7 @@ pub mod regs {
         }
         #[doc = "Internal tamper X detection flag"]
         #[inline(always)]
-        pub fn set_itampf(&mut self, n: usize, val: bool) {
+        pub const fn set_itampf(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 16usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);

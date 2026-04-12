@@ -1649,6 +1649,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
+                    name: "HSI",
+                    description: Some("HSI clock selected as I2C clock"),
+                    value: 2,
+                },
+                EnumVariant {
                     name: "PCLK1",
                     description: Some("APB clock selected as I2C clock"),
                     value: 0,
@@ -1657,11 +1662,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "SYS",
                     description: Some("System clock selected as I2C clock"),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "HSI",
-                    description: Some("HSI clock selected as I2C clock"),
-                    value: 2,
                 },
             ],
         },
@@ -1676,19 +1676,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DIV2",
-                    description: Some("SYSCLK divided by 2"),
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: Some("SYSCLK divided by 4"),
-                    value: 9,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: Some("SYSCLK divided by 8"),
-                    value: 10,
+                    name: "DIV128",
+                    description: Some("SYSCLK divided by 128"),
+                    value: 13,
                 },
                 EnumVariant {
                     name: "DIV16",
@@ -1696,14 +1686,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 11,
                 },
                 EnumVariant {
-                    name: "DIV64",
-                    description: Some("SYSCLK divided by 64"),
-                    value: 12,
-                },
-                EnumVariant {
-                    name: "DIV128",
-                    description: Some("SYSCLK divided by 128"),
-                    value: 13,
+                    name: "DIV2",
+                    description: Some("SYSCLK divided by 2"),
+                    value: 8,
                 },
                 EnumVariant {
                     name: "DIV256",
@@ -1711,9 +1696,24 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 14,
                 },
                 EnumVariant {
+                    name: "DIV4",
+                    description: Some("SYSCLK divided by 4"),
+                    value: 9,
+                },
+                EnumVariant {
                     name: "DIV512",
                     description: Some("SYSCLK divided by 512"),
                     value: 15,
+                },
+                EnumVariant {
+                    name: "DIV64",
+                    description: Some("SYSCLK divided by 64"),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: Some("SYSCLK divided by 8"),
+                    value: 10,
                 },
             ],
         },
@@ -1723,9 +1723,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "PLLCLKR",
-                    description: Some("I2Sx clock frequency = f(PLLCLK_R)"),
-                    value: 0,
+                    name: "HSI_HSE",
+                    description: Some("I2Sx clock frequency = HSI/HSE depends on PLLSRC bit (PLLCFGR[22])"),
+                    value: 3,
                 },
                 EnumVariant {
                     name: "I2S_CKIN",
@@ -1733,9 +1733,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "HSI_HSE",
-                    description: Some("I2Sx clock frequency = HSI/HSE depends on PLLSRC bit (PLLCFGR[22])"),
-                    value: 3,
+                    name: "PLLCLKR",
+                    description: Some("I2Sx clock frequency = f(PLLCLK_R)"),
+                    value: 0,
                 },
             ],
         },
@@ -1744,16 +1744,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
-                EnumVariant {
-                    name: "PCLK1",
-                    description: Some("APB1 clock (PCLK1) selected as LPTILM1 clock"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "LSI",
-                    description: Some("LSI clock is selected as LPTILM1 clock"),
-                    value: 1,
-                },
                 EnumVariant {
                     name: "HSI",
                     description: Some("HSI clock is selected as LPTILM1 clock"),
@@ -1764,6 +1754,16 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("LSE clock is selected as LPTILM1 clock"),
                     value: 3,
                 },
+                EnumVariant {
+                    name: "LSI",
+                    description: Some("LSI clock is selected as LPTILM1 clock"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "PCLK1",
+                    description: Some("APB1 clock (PCLK1) selected as LPTILM1 clock"),
+                    value: 0,
+                },
             ],
         },
         Enum {
@@ -1771,6 +1771,11 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
+                EnumVariant {
+                    name: "HSE",
+                    description: Some("HSE oscillator clock selected"),
+                    value: 2,
+                },
                 EnumVariant {
                     name: "HSI",
                     description: Some("HSI clock selected"),
@@ -1780,11 +1785,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "LSE",
                     description: Some("LSE oscillator selected"),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "HSE",
-                    description: Some("HSE oscillator clock selected"),
-                    value: 2,
                 },
                 EnumVariant {
                     name: "PLL",
@@ -1799,16 +1799,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "SYS",
-                    description: Some("System clock (SYSCLK) selected"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "PLLI2S",
-                    description: Some("PLLI2S clock selected"),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "HSE",
                     description: Some("HSE oscillator clock selected"),
                     value: 2,
@@ -1817,6 +1807,16 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "PLL",
                     description: Some("PLL clock selected"),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "PLLI2S",
+                    description: Some("PLLI2S clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "SYS",
+                    description: Some("System clock (SYSCLK) selected"),
+                    value: 0,
                 },
             ],
         },
@@ -1857,46 +1857,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 6,
             variants: &[
-                EnumVariant {
-                    name: "DIV2",
-                    description: None,
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "DIV3",
-                    description: None,
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "DIV4",
-                    description: None,
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "DIV5",
-                    description: None,
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "DIV6",
-                    description: None,
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "DIV7",
-                    description: None,
-                    value: 7,
-                },
-                EnumVariant {
-                    name: "DIV8",
-                    description: None,
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "DIV9",
-                    description: None,
-                    value: 9,
-                },
                 EnumVariant {
                     name: "DIV10",
                     description: None,
@@ -1946,6 +1906,11 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV19",
                     description: None,
                     value: 19,
+                },
+                EnumVariant {
+                    name: "DIV2",
+                    description: None,
+                    value: 2,
                 },
                 EnumVariant {
                     name: "DIV20",
@@ -1998,6 +1963,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 29,
                 },
                 EnumVariant {
+                    name: "DIV3",
+                    description: None,
+                    value: 3,
+                },
+                EnumVariant {
                     name: "DIV30",
                     description: None,
                     value: 30,
@@ -2046,6 +2016,11 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV39",
                     description: None,
                     value: 39,
+                },
+                EnumVariant {
+                    name: "DIV4",
+                    description: None,
+                    value: 4,
                 },
                 EnumVariant {
                     name: "DIV40",
@@ -2098,6 +2073,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 49,
                 },
                 EnumVariant {
+                    name: "DIV5",
+                    description: None,
+                    value: 5,
+                },
+                EnumVariant {
                     name: "DIV50",
                     description: None,
                     value: 50,
@@ -2148,6 +2128,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 59,
                 },
                 EnumVariant {
+                    name: "DIV6",
+                    description: None,
+                    value: 6,
+                },
+                EnumVariant {
                     name: "DIV60",
                     description: None,
                     value: 60,
@@ -2167,6 +2152,21 @@ pub(crate) static REGISTERS: IR = IR {
                     description: None,
                     value: 63,
                 },
+                EnumVariant {
+                    name: "DIV7",
+                    description: None,
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DIV8",
+                    description: None,
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "DIV9",
+                    description: None,
+                    value: 9,
+                },
             ],
         },
         Enum {
@@ -2174,256 +2174,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 9,
             variants: &[
-                EnumVariant {
-                    name: "MUL50",
-                    description: None,
-                    value: 50,
-                },
-                EnumVariant {
-                    name: "MUL51",
-                    description: None,
-                    value: 51,
-                },
-                EnumVariant {
-                    name: "MUL52",
-                    description: None,
-                    value: 52,
-                },
-                EnumVariant {
-                    name: "MUL53",
-                    description: None,
-                    value: 53,
-                },
-                EnumVariant {
-                    name: "MUL54",
-                    description: None,
-                    value: 54,
-                },
-                EnumVariant {
-                    name: "MUL55",
-                    description: None,
-                    value: 55,
-                },
-                EnumVariant {
-                    name: "MUL56",
-                    description: None,
-                    value: 56,
-                },
-                EnumVariant {
-                    name: "MUL57",
-                    description: None,
-                    value: 57,
-                },
-                EnumVariant {
-                    name: "MUL58",
-                    description: None,
-                    value: 58,
-                },
-                EnumVariant {
-                    name: "MUL59",
-                    description: None,
-                    value: 59,
-                },
-                EnumVariant {
-                    name: "MUL60",
-                    description: None,
-                    value: 60,
-                },
-                EnumVariant {
-                    name: "MUL61",
-                    description: None,
-                    value: 61,
-                },
-                EnumVariant {
-                    name: "MUL62",
-                    description: None,
-                    value: 62,
-                },
-                EnumVariant {
-                    name: "MUL63",
-                    description: None,
-                    value: 63,
-                },
-                EnumVariant {
-                    name: "MUL64",
-                    description: None,
-                    value: 64,
-                },
-                EnumVariant {
-                    name: "MUL65",
-                    description: None,
-                    value: 65,
-                },
-                EnumVariant {
-                    name: "MUL66",
-                    description: None,
-                    value: 66,
-                },
-                EnumVariant {
-                    name: "MUL67",
-                    description: None,
-                    value: 67,
-                },
-                EnumVariant {
-                    name: "MUL68",
-                    description: None,
-                    value: 68,
-                },
-                EnumVariant {
-                    name: "MUL69",
-                    description: None,
-                    value: 69,
-                },
-                EnumVariant {
-                    name: "MUL70",
-                    description: None,
-                    value: 70,
-                },
-                EnumVariant {
-                    name: "MUL71",
-                    description: None,
-                    value: 71,
-                },
-                EnumVariant {
-                    name: "MUL72",
-                    description: None,
-                    value: 72,
-                },
-                EnumVariant {
-                    name: "MUL73",
-                    description: None,
-                    value: 73,
-                },
-                EnumVariant {
-                    name: "MUL74",
-                    description: None,
-                    value: 74,
-                },
-                EnumVariant {
-                    name: "MUL75",
-                    description: None,
-                    value: 75,
-                },
-                EnumVariant {
-                    name: "MUL76",
-                    description: None,
-                    value: 76,
-                },
-                EnumVariant {
-                    name: "MUL77",
-                    description: None,
-                    value: 77,
-                },
-                EnumVariant {
-                    name: "MUL78",
-                    description: None,
-                    value: 78,
-                },
-                EnumVariant {
-                    name: "MUL79",
-                    description: None,
-                    value: 79,
-                },
-                EnumVariant {
-                    name: "MUL80",
-                    description: None,
-                    value: 80,
-                },
-                EnumVariant {
-                    name: "MUL81",
-                    description: None,
-                    value: 81,
-                },
-                EnumVariant {
-                    name: "MUL82",
-                    description: None,
-                    value: 82,
-                },
-                EnumVariant {
-                    name: "MUL83",
-                    description: None,
-                    value: 83,
-                },
-                EnumVariant {
-                    name: "MUL84",
-                    description: None,
-                    value: 84,
-                },
-                EnumVariant {
-                    name: "MUL85",
-                    description: None,
-                    value: 85,
-                },
-                EnumVariant {
-                    name: "MUL86",
-                    description: None,
-                    value: 86,
-                },
-                EnumVariant {
-                    name: "MUL87",
-                    description: None,
-                    value: 87,
-                },
-                EnumVariant {
-                    name: "MUL88",
-                    description: None,
-                    value: 88,
-                },
-                EnumVariant {
-                    name: "MUL89",
-                    description: None,
-                    value: 89,
-                },
-                EnumVariant {
-                    name: "MUL90",
-                    description: None,
-                    value: 90,
-                },
-                EnumVariant {
-                    name: "MUL91",
-                    description: None,
-                    value: 91,
-                },
-                EnumVariant {
-                    name: "MUL92",
-                    description: None,
-                    value: 92,
-                },
-                EnumVariant {
-                    name: "MUL93",
-                    description: None,
-                    value: 93,
-                },
-                EnumVariant {
-                    name: "MUL94",
-                    description: None,
-                    value: 94,
-                },
-                EnumVariant {
-                    name: "MUL95",
-                    description: None,
-                    value: 95,
-                },
-                EnumVariant {
-                    name: "MUL96",
-                    description: None,
-                    value: 96,
-                },
-                EnumVariant {
-                    name: "MUL97",
-                    description: None,
-                    value: 97,
-                },
-                EnumVariant {
-                    name: "MUL98",
-                    description: None,
-                    value: 98,
-                },
-                EnumVariant {
-                    name: "MUL99",
-                    description: None,
-                    value: 99,
-                },
                 EnumVariant {
                     name: "MUL100",
                     description: None,
@@ -4089,6 +3839,256 @@ pub(crate) static REGISTERS: IR = IR {
                     description: None,
                     value: 432,
                 },
+                EnumVariant {
+                    name: "MUL50",
+                    description: None,
+                    value: 50,
+                },
+                EnumVariant {
+                    name: "MUL51",
+                    description: None,
+                    value: 51,
+                },
+                EnumVariant {
+                    name: "MUL52",
+                    description: None,
+                    value: 52,
+                },
+                EnumVariant {
+                    name: "MUL53",
+                    description: None,
+                    value: 53,
+                },
+                EnumVariant {
+                    name: "MUL54",
+                    description: None,
+                    value: 54,
+                },
+                EnumVariant {
+                    name: "MUL55",
+                    description: None,
+                    value: 55,
+                },
+                EnumVariant {
+                    name: "MUL56",
+                    description: None,
+                    value: 56,
+                },
+                EnumVariant {
+                    name: "MUL57",
+                    description: None,
+                    value: 57,
+                },
+                EnumVariant {
+                    name: "MUL58",
+                    description: None,
+                    value: 58,
+                },
+                EnumVariant {
+                    name: "MUL59",
+                    description: None,
+                    value: 59,
+                },
+                EnumVariant {
+                    name: "MUL60",
+                    description: None,
+                    value: 60,
+                },
+                EnumVariant {
+                    name: "MUL61",
+                    description: None,
+                    value: 61,
+                },
+                EnumVariant {
+                    name: "MUL62",
+                    description: None,
+                    value: 62,
+                },
+                EnumVariant {
+                    name: "MUL63",
+                    description: None,
+                    value: 63,
+                },
+                EnumVariant {
+                    name: "MUL64",
+                    description: None,
+                    value: 64,
+                },
+                EnumVariant {
+                    name: "MUL65",
+                    description: None,
+                    value: 65,
+                },
+                EnumVariant {
+                    name: "MUL66",
+                    description: None,
+                    value: 66,
+                },
+                EnumVariant {
+                    name: "MUL67",
+                    description: None,
+                    value: 67,
+                },
+                EnumVariant {
+                    name: "MUL68",
+                    description: None,
+                    value: 68,
+                },
+                EnumVariant {
+                    name: "MUL69",
+                    description: None,
+                    value: 69,
+                },
+                EnumVariant {
+                    name: "MUL70",
+                    description: None,
+                    value: 70,
+                },
+                EnumVariant {
+                    name: "MUL71",
+                    description: None,
+                    value: 71,
+                },
+                EnumVariant {
+                    name: "MUL72",
+                    description: None,
+                    value: 72,
+                },
+                EnumVariant {
+                    name: "MUL73",
+                    description: None,
+                    value: 73,
+                },
+                EnumVariant {
+                    name: "MUL74",
+                    description: None,
+                    value: 74,
+                },
+                EnumVariant {
+                    name: "MUL75",
+                    description: None,
+                    value: 75,
+                },
+                EnumVariant {
+                    name: "MUL76",
+                    description: None,
+                    value: 76,
+                },
+                EnumVariant {
+                    name: "MUL77",
+                    description: None,
+                    value: 77,
+                },
+                EnumVariant {
+                    name: "MUL78",
+                    description: None,
+                    value: 78,
+                },
+                EnumVariant {
+                    name: "MUL79",
+                    description: None,
+                    value: 79,
+                },
+                EnumVariant {
+                    name: "MUL80",
+                    description: None,
+                    value: 80,
+                },
+                EnumVariant {
+                    name: "MUL81",
+                    description: None,
+                    value: 81,
+                },
+                EnumVariant {
+                    name: "MUL82",
+                    description: None,
+                    value: 82,
+                },
+                EnumVariant {
+                    name: "MUL83",
+                    description: None,
+                    value: 83,
+                },
+                EnumVariant {
+                    name: "MUL84",
+                    description: None,
+                    value: 84,
+                },
+                EnumVariant {
+                    name: "MUL85",
+                    description: None,
+                    value: 85,
+                },
+                EnumVariant {
+                    name: "MUL86",
+                    description: None,
+                    value: 86,
+                },
+                EnumVariant {
+                    name: "MUL87",
+                    description: None,
+                    value: 87,
+                },
+                EnumVariant {
+                    name: "MUL88",
+                    description: None,
+                    value: 88,
+                },
+                EnumVariant {
+                    name: "MUL89",
+                    description: None,
+                    value: 89,
+                },
+                EnumVariant {
+                    name: "MUL90",
+                    description: None,
+                    value: 90,
+                },
+                EnumVariant {
+                    name: "MUL91",
+                    description: None,
+                    value: 91,
+                },
+                EnumVariant {
+                    name: "MUL92",
+                    description: None,
+                    value: 92,
+                },
+                EnumVariant {
+                    name: "MUL93",
+                    description: None,
+                    value: 93,
+                },
+                EnumVariant {
+                    name: "MUL94",
+                    description: None,
+                    value: 94,
+                },
+                EnumVariant {
+                    name: "MUL95",
+                    description: None,
+                    value: 95,
+                },
+                EnumVariant {
+                    name: "MUL96",
+                    description: None,
+                    value: 96,
+                },
+                EnumVariant {
+                    name: "MUL97",
+                    description: None,
+                    value: 97,
+                },
+                EnumVariant {
+                    name: "MUL98",
+                    description: None,
+                    value: 98,
+                },
+                EnumVariant {
+                    name: "MUL99",
+                    description: None,
+                    value: 99,
+                },
             ],
         },
         Enum {
@@ -4123,6 +4123,36 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 4,
             variants: &[
+                EnumVariant {
+                    name: "DIV10",
+                    description: None,
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "DIV11",
+                    description: None,
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "DIV12",
+                    description: None,
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "DIV13",
+                    description: None,
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "DIV14",
+                    description: None,
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "DIV15",
+                    description: None,
+                    value: 15,
+                },
                 EnumVariant {
                     name: "DIV2",
                     description: None,
@@ -4162,36 +4192,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV9",
                     description: None,
                     value: 9,
-                },
-                EnumVariant {
-                    name: "DIV10",
-                    description: None,
-                    value: 10,
-                },
-                EnumVariant {
-                    name: "DIV11",
-                    description: None,
-                    value: 11,
-                },
-                EnumVariant {
-                    name: "DIV12",
-                    description: None,
-                    value: 12,
-                },
-                EnumVariant {
-                    name: "DIV13",
-                    description: None,
-                    value: 13,
-                },
-                EnumVariant {
-                    name: "DIV14",
-                    description: None,
-                    value: 14,
-                },
-                EnumVariant {
-                    name: "DIV15",
-                    description: None,
-                    value: 15,
                 },
             ],
         },
@@ -4238,14 +4238,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "HSI",
-                    description: Some("HSI clock selected as PLL and PLLI2S clock entry"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "HSE",
                     description: Some("HSE oscillator clock selected as PLL and PLLI2S clock entry"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some("HSI clock selected as PLL and PLLI2S clock entry"),
+                    value: 0,
                 },
             ],
         },
@@ -4258,6 +4258,11 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "DIV1",
                     description: Some("HCLK not divided"),
                     value: 0,
+                },
+                EnumVariant {
+                    name: "DIV16",
+                    description: Some("HCLK divided by 16"),
+                    value: 7,
                 },
                 EnumVariant {
                     name: "DIV2",
@@ -4274,11 +4279,6 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("HCLK divided by 8"),
                     value: 6,
                 },
-                EnumVariant {
-                    name: "DIV16",
-                    description: Some("HCLK divided by 16"),
-                    value: 7,
-                },
             ],
         },
         Enum {
@@ -4292,6 +4292,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
+                    name: "HSE",
+                    description: Some("HSE oscillator clock divided by a prescaler used as RTC clock"),
+                    value: 3,
+                },
+                EnumVariant {
                     name: "LSE",
                     description: Some("LSE oscillator clock used as RTC clock"),
                     value: 1,
@@ -4300,11 +4305,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "LSI",
                     description: Some("LSI oscillator clock used as RTC clock"),
                     value: 2,
-                },
-                EnumVariant {
-                    name: "HSE",
-                    description: Some("HSE oscillator clock divided by a prescaler used as RTC clock"),
-                    value: 3,
                 },
             ],
         },
@@ -4331,14 +4331,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HSI",
-                    description: Some("HSI oscillator used as system clock"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "HSE",
                     description: Some("HSE oscillator used as system clock"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "HSI",
+                    description: Some("HSI oscillator used as system clock"),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "PLL1_P",

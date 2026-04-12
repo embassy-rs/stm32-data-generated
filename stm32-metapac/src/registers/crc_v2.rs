@@ -121,24 +121,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "POLYSIZE32",
-                    description: Some("32-bit polynomial"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "POLYSIZE16",
                     description: Some("16-bit polynomial"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "POLYSIZE8",
-                    description: Some("8-bit polynomial"),
-                    value: 2,
+                    name: "POLYSIZE32",
+                    description: Some("32-bit polynomial"),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "POLYSIZE7",
                     description: Some("7-bit polynomial"),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "POLYSIZE8",
+                    description: Some("8-bit polynomial"),
+                    value: 2,
                 },
             ],
         },
@@ -148,11 +148,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NORMAL",
-                    description: Some("Bit order not affected"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "BYTE",
                     description: Some("Bit reversal done by byte"),
                     value: 1,
@@ -161,6 +156,11 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "HALF_WORD",
                     description: Some("Bit reversal done by half-word"),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "NORMAL",
+                    description: Some("Bit order not affected"),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "WORD",

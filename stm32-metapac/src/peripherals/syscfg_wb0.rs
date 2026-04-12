@@ -21,77 +21,77 @@ impl Syscfg {
     #[doc = "DIE_ID register."]
     #[inline(always)]
     pub const fn die_id(self) -> crate::common::Reg<regs::DieId, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "JTAG_ID register."]
     #[inline(always)]
     pub const fn jtag_id(self) -> crate::common::Reg<regs::JtagId, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "I2C_FMP_CTRL register."]
     #[inline(always)]
     pub const fn i2c_fmp_ctrl(self) -> crate::common::Reg<regs::I2cFmpCtrl, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "IO_DTR register."]
     #[inline(always)]
     pub const fn io_dtr(self) -> crate::common::Reg<regs::IoDtr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "IO_IBER register."]
     #[inline(always)]
     pub const fn io_iber(self) -> crate::common::Reg<regs::IoIber, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "IO_IEVR register."]
     #[inline(always)]
     pub const fn io_ievr(self) -> crate::common::Reg<regs::IoIevr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "IO_IER register."]
     #[inline(always)]
     pub const fn io_ier(self) -> crate::common::Reg<regs::IoIer, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "IO_ISCR register."]
     #[inline(always)]
     pub const fn io_iscr(self) -> crate::common::Reg<regs::IoIscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "PWRC_IER register."]
     #[inline(always)]
     pub const fn pwrc_ier(self) -> crate::common::Reg<regs::PwrcIer, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "PWRC_ISCR register."]
     #[inline(always)]
     pub const fn pwrc_iscr(self) -> crate::common::Reg<regs::PwrcIscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "BLERXTX_DTR register."]
     #[inline(always)]
     pub const fn blerxtx_dtr(self) -> crate::common::Reg<regs::BlerxtxDtr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
     }
     #[doc = "BLERXTX_IBER register."]
     #[inline(always)]
     pub const fn blerxtx_iber(self) -> crate::common::Reg<regs::BlerxtxIber, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
     }
     #[doc = "BLERXTX_IEVR register."]
     #[inline(always)]
     pub const fn blerxtx_ievr(self) -> crate::common::Reg<regs::BlerxtxIevr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
     }
     #[doc = "BLERXTX_IER register."]
     #[inline(always)]
     pub const fn blerxtx_ier(self) -> crate::common::Reg<regs::BlerxtxIer, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x38usize) as _) }
     }
     #[doc = "BLERXTX_ISCR register."]
     #[inline(always)]
     pub const fn blerxtx_iscr(self) -> crate::common::Reg<regs::BlerxtxIscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3cusize) as _) }
     }
 }
 pub mod regs {
@@ -101,6 +101,7 @@ pub mod regs {
     pub struct BlerxtxDtr(pub u32);
     impl BlerxtxDtr {
         #[doc = "TX_DT: detection type on TX_SEQUENCE signal: 0: detection on edge (default). 1: detection on level."]
+        #[must_use]
         #[inline(always)]
         pub const fn tx_dt(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -108,10 +109,11 @@ pub mod regs {
         }
         #[doc = "TX_DT: detection type on TX_SEQUENCE signal: 0: detection on edge (default). 1: detection on level."]
         #[inline(always)]
-        pub fn set_tx_dt(&mut self, val: bool) {
+        pub const fn set_tx_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "RX_DT: detection type on RX_SEQUENCE signal: 0: detection on edge (default). 1: detection on level."]
+        #[must_use]
         #[inline(always)]
         pub const fn rx_dt(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -119,7 +121,7 @@ pub mod regs {
         }
         #[doc = "RX_DT: detection type on RX_SEQUENCE signal: 0: detection on edge (default). 1: detection on level."]
         #[inline(always)]
-        pub fn set_rx_dt(&mut self, val: bool) {
+        pub const fn set_rx_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -154,6 +156,7 @@ pub mod regs {
     pub struct BlerxtxIber(pub u32);
     impl BlerxtxIber {
         #[doc = "TX_IBE: interrupt edge register on TX_SEQUENCE signal: 0: detection on single edge (default). 1: detection on both edges."]
+        #[must_use]
         #[inline(always)]
         pub const fn tx_ibe(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -161,10 +164,11 @@ pub mod regs {
         }
         #[doc = "TX_IBE: interrupt edge register on TX_SEQUENCE signal: 0: detection on single edge (default). 1: detection on both edges."]
         #[inline(always)]
-        pub fn set_tx_ibe(&mut self, val: bool) {
+        pub const fn set_tx_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "RX_IBE: interrupt edge register on RX_SEQUENCE signal: 0: detection on single edge (default). 1: detection on both edges."]
+        #[must_use]
         #[inline(always)]
         pub const fn rx_ibe(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -172,7 +176,7 @@ pub mod regs {
         }
         #[doc = "RX_IBE: interrupt edge register on RX_SEQUENCE signal: 0: detection on single edge (default). 1: detection on both edges."]
         #[inline(always)]
-        pub fn set_rx_ibe(&mut self, val: bool) {
+        pub const fn set_rx_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -207,6 +211,7 @@ pub mod regs {
     pub struct BlerxtxIer(pub u32);
     impl BlerxtxIer {
         #[doc = "TX_IE: interrupt enable on TX_SEQUENCE signal: 0: TX_SEQUENCE interrupt is disabled (default). 1: TX_SEQUENCE interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn tx_ie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -214,10 +219,11 @@ pub mod regs {
         }
         #[doc = "TX_IE: interrupt enable on TX_SEQUENCE signal: 0: TX_SEQUENCE interrupt is disabled (default). 1: TX_SEQUENCE interrupt is enabled."]
         #[inline(always)]
-        pub fn set_tx_ie(&mut self, val: bool) {
+        pub const fn set_tx_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "RX_IE: interrupt enable on RX_SEQUENCE signal: 0: RX_SEQUENCE interrupt is disabled (default). 1: RX_SEQUENCE interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn rx_ie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -225,7 +231,7 @@ pub mod regs {
         }
         #[doc = "RX_IE: interrupt enable on RX_SEQUENCE signal: 0: RX_SEQUENCE interrupt is disabled (default). 1: RX_SEQUENCE interrupt is enabled."]
         #[inline(always)]
-        pub fn set_rx_ie(&mut self, val: bool) {
+        pub const fn set_rx_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -260,6 +266,7 @@ pub mod regs {
     pub struct BlerxtxIevr(pub u32);
     impl BlerxtxIevr {
         #[doc = "TX_IEV: interrupt polarity event on TX_SEQUENCE signal: 0: detection on falling edge / low level (default). 1: detection on rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn tx_iev(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -267,10 +274,11 @@ pub mod regs {
         }
         #[doc = "TX_IEV: interrupt polarity event on TX_SEQUENCE signal: 0: detection on falling edge / low level (default). 1: detection on rising edge / high level."]
         #[inline(always)]
-        pub fn set_tx_iev(&mut self, val: bool) {
+        pub const fn set_tx_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "RX_IEV: interrupt polarity event on RX_SEQUENCE signal: 0: detection on falling edge / low level (default). 1: detection on rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn rx_iev(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -278,7 +286,7 @@ pub mod regs {
         }
         #[doc = "RX_IEV: interrupt polarity event on RX_SEQUENCE signal: 0: detection on falling edge / low level (default). 1: detection on rising edge / high level."]
         #[inline(always)]
-        pub fn set_rx_iev(&mut self, val: bool) {
+        pub const fn set_rx_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -313,6 +321,7 @@ pub mod regs {
     pub struct BlerxtxIscr(pub u8);
     impl BlerxtxIscr {
         #[doc = "TX_ISC:interrupt status on TX_SEQUENCE signal (can be a rising or a falling edge depending on BLERXTX_IEVR and BLERXTX_IBER): 0: no activity on TX_SEQUENCE detected. 1: activity on TX_SEQUENCE occurred."]
+        #[must_use]
         #[inline(always)]
         pub const fn tx_isc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -320,10 +329,11 @@ pub mod regs {
         }
         #[doc = "TX_ISC:interrupt status on TX_SEQUENCE signal (can be a rising or a falling edge depending on BLERXTX_IEVR and BLERXTX_IBER): 0: no activity on TX_SEQUENCE detected. 1: activity on TX_SEQUENCE occurred."]
         #[inline(always)]
-        pub fn set_tx_isc(&mut self, val: bool) {
+        pub const fn set_tx_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u8) & 0x01) << 0usize);
         }
         #[doc = "RX_ISC: interrupt status on RX_SEQUENCE signal (can be a rising or a falling edge depending on BLERXTX_IEVR and BLERXTX_IBER): 0: no activity on RX_SEQUENCE detected. 1: activity on RX_SEQUENCE occurred."]
+        #[must_use]
         #[inline(always)]
         pub const fn rx_isc(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -331,10 +341,11 @@ pub mod regs {
         }
         #[doc = "RX_ISC: interrupt status on RX_SEQUENCE signal (can be a rising or a falling edge depending on BLERXTX_IEVR and BLERXTX_IBER): 0: no activity on RX_SEQUENCE detected. 1: activity on RX_SEQUENCE occurred."]
         #[inline(always)]
-        pub fn set_rx_isc(&mut self, val: bool) {
+        pub const fn set_rx_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u8) & 0x01) << 1usize);
         }
         #[doc = "TX_ISEDGE: interrupt edge status on TX_SEQUENCE signal: 0: falling edge on TX_SEQUENCE detected. 1: rising edge on TX_SEQUENCE detected."]
+        #[must_use]
         #[inline(always)]
         pub const fn tx_isedge(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -342,10 +353,11 @@ pub mod regs {
         }
         #[doc = "TX_ISEDGE: interrupt edge status on TX_SEQUENCE signal: 0: falling edge on TX_SEQUENCE detected. 1: rising edge on TX_SEQUENCE detected."]
         #[inline(always)]
-        pub fn set_tx_isedge(&mut self, val: bool) {
+        pub const fn set_tx_isedge(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u8) & 0x01) << 2usize);
         }
         #[doc = "RX_ISEDGE: interrupt edge status on RX_SEQUENCE signal: 0: falling edge on RX_SEQUENCE detected. 1: rising edge on RX_SEQUENCE detected."]
+        #[must_use]
         #[inline(always)]
         pub const fn rx_isedge(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -353,7 +365,7 @@ pub mod regs {
         }
         #[doc = "RX_ISEDGE: interrupt edge status on RX_SEQUENCE signal: 0: falling edge on RX_SEQUENCE detected. 1: rising edge on RX_SEQUENCE detected."]
         #[inline(always)]
-        pub fn set_rx_isedge(&mut self, val: bool) {
+        pub const fn set_rx_isedge(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u8) & 0x01) << 3usize);
         }
     }
@@ -392,6 +404,7 @@ pub mod regs {
     pub struct DieId(pub u32);
     impl DieId {
         #[doc = "Cut revision (metal fix)."]
+        #[must_use]
         #[inline(always)]
         pub const fn revision(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -399,10 +412,11 @@ pub mod regs {
         }
         #[doc = "Cut revision (metal fix)."]
         #[inline(always)]
-        pub fn set_revision(&mut self, val: u8) {
+        pub const fn set_revision(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "Cut version."]
+        #[must_use]
         #[inline(always)]
         pub const fn version(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -410,10 +424,11 @@ pub mod regs {
         }
         #[doc = "Cut version."]
         #[inline(always)]
-        pub fn set_version(&mut self, val: u8) {
+        pub const fn set_version(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
         #[doc = "Product version. May be used to discriminate several version of a same digital BLE LPH device embedding different analog versions."]
+        #[must_use]
         #[inline(always)]
         pub const fn product(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x0f;
@@ -421,7 +436,7 @@ pub mod regs {
         }
         #[doc = "Product version. May be used to discriminate several version of a same digital BLE LPH device embedding different analog versions."]
         #[inline(always)]
-        pub fn set_product(&mut self, val: u8) {
+        pub const fn set_product(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
     }
@@ -458,6 +473,7 @@ pub mod regs {
     pub struct I2cFmpCtrl(pub u32);
     impl I2cFmpCtrl {
         #[doc = "I2C1 Fast-Mode Plus driving capability for I2C1_SCL on PA0 I/O. 0: PA0 pin operated in standard mode. 1: FM+ mode is enabled on PA0 pin, and speed control is bypassed."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c1_pa0_fmp(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -465,10 +481,11 @@ pub mod regs {
         }
         #[doc = "I2C1 Fast-Mode Plus driving capability for I2C1_SCL on PA0 I/O. 0: PA0 pin operated in standard mode. 1: FM+ mode is enabled on PA0 pin, and speed control is bypassed."]
         #[inline(always)]
-        pub fn set_i2c1_pa0_fmp(&mut self, val: bool) {
+        pub const fn set_i2c1_pa0_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "I2C1 Fast-Mode Plus driving capability for I2C1_SDA on PA1 I/O. 0: PA1 pin operated in standard mode. 1: FM+ mode is enabled on PA1 pin, and speed control is bypassed."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c1_pa1_fmp(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -476,10 +493,11 @@ pub mod regs {
         }
         #[doc = "I2C1 Fast-Mode Plus driving capability for I2C1_SDA on PA1 I/O. 0: PA1 pin operated in standard mode. 1: FM+ mode is enabled on PA1 pin, and speed control is bypassed."]
         #[inline(always)]
-        pub fn set_i2c1_pa1_fmp(&mut self, val: bool) {
+        pub const fn set_i2c1_pa1_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "I2C1 Fast-Mode Plus driving capability for I2C1_SCL on PB6 I/O. 0: PB6 pin operated in standard mode. 1: FM+ mode is enabled on PB6 pin, and speed control is bypassed."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c1_pb6_fmp(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -487,10 +505,11 @@ pub mod regs {
         }
         #[doc = "I2C1 Fast-Mode Plus driving capability for I2C1_SCL on PB6 I/O. 0: PB6 pin operated in standard mode. 1: FM+ mode is enabled on PB6 pin, and speed control is bypassed."]
         #[inline(always)]
-        pub fn set_i2c1_pb6_fmp(&mut self, val: bool) {
+        pub const fn set_i2c1_pb6_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "I2C1 Fast-Mode Plus driving capability for I2C1_SDA on PB7 I/O. 0: PB7 pin operated in standard mode. 1: FM+ mode is enabled on PB7 pin, and speed control is bypassed."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c1_pb7_fmp(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -498,7 +517,7 @@ pub mod regs {
         }
         #[doc = "I2C1 Fast-Mode Plus driving capability for I2C1_SDA on PB7 I/O. 0: PB7 pin operated in standard mode. 1: FM+ mode is enabled on PB7 pin, and speed control is bypassed."]
         #[inline(always)]
-        pub fn set_i2c1_pb7_fmp(&mut self, val: bool) {
+        pub const fn set_i2c1_pb7_fmp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
@@ -530,6 +549,7 @@ pub mod regs {
     pub struct IoDtr(pub u32);
     impl IoDtr {
         #[doc = "PA0_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa0_dt(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -537,10 +557,11 @@ pub mod regs {
         }
         #[doc = "PA0_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pa0_dt(&mut self, val: bool) {
+        pub const fn set_pa0_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "PA1_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa1_dt(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -548,10 +569,11 @@ pub mod regs {
         }
         #[doc = "PA1_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pa1_dt(&mut self, val: bool) {
+        pub const fn set_pa1_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "PA2_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa2_dt(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -559,10 +581,11 @@ pub mod regs {
         }
         #[doc = "PA2_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pa2_dt(&mut self, val: bool) {
+        pub const fn set_pa2_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "PA3_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa3_dt(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -570,10 +593,11 @@ pub mod regs {
         }
         #[doc = "PA3_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pa3_dt(&mut self, val: bool) {
+        pub const fn set_pa3_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "PA4_DT:Interrupt Detection Type for port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa4_dt(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -581,10 +605,11 @@ pub mod regs {
         }
         #[doc = "PA4_DT:Interrupt Detection Type for port A I/Os."]
         #[inline(always)]
-        pub fn set_pa4_dt(&mut self, val: bool) {
+        pub const fn set_pa4_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "PA5_DT:Interrupt Detection Type for port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa5_dt(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -592,10 +617,11 @@ pub mod regs {
         }
         #[doc = "PA5_DT:Interrupt Detection Type for port A I/Os."]
         #[inline(always)]
-        pub fn set_pa5_dt(&mut self, val: bool) {
+        pub const fn set_pa5_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "PA6_DT:Interrupt Detection Type for port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa6_dt(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -603,10 +629,11 @@ pub mod regs {
         }
         #[doc = "PA6_DT:Interrupt Detection Type for port A I/Os."]
         #[inline(always)]
-        pub fn set_pa6_dt(&mut self, val: bool) {
+        pub const fn set_pa6_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "PA7_DT:Interrupt Detection Type for port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa7_dt(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -614,10 +641,11 @@ pub mod regs {
         }
         #[doc = "PA7_DT:Interrupt Detection Type for port A I/Os."]
         #[inline(always)]
-        pub fn set_pa7_dt(&mut self, val: bool) {
+        pub const fn set_pa7_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "PA8_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa8_dt(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -625,10 +653,11 @@ pub mod regs {
         }
         #[doc = "PA8_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pa8_dt(&mut self, val: bool) {
+        pub const fn set_pa8_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "PA9_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa9_dt(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -636,10 +665,11 @@ pub mod regs {
         }
         #[doc = "PA9_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pa9_dt(&mut self, val: bool) {
+        pub const fn set_pa9_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "PA10_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa10_dt(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -647,10 +677,11 @@ pub mod regs {
         }
         #[doc = "PA10_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pa10_dt(&mut self, val: bool) {
+        pub const fn set_pa10_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "PA11_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa11_dt(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -658,10 +689,11 @@ pub mod regs {
         }
         #[doc = "PA11_DT: Interrupt Detection Type for port A I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pa11_dt(&mut self, val: bool) {
+        pub const fn set_pa11_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "PB0_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb0_dt(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -669,10 +701,11 @@ pub mod regs {
         }
         #[doc = "PB0_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pb0_dt(&mut self, val: bool) {
+        pub const fn set_pb0_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "PB1_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb1_dt(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -680,10 +713,11 @@ pub mod regs {
         }
         #[doc = "PB1_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pb1_dt(&mut self, val: bool) {
+        pub const fn set_pb1_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "PB2_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb2_dt(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -691,10 +725,11 @@ pub mod regs {
         }
         #[doc = "PB2_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pb2_dt(&mut self, val: bool) {
+        pub const fn set_pb2_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "PB3_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb3_dt(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -702,10 +737,11 @@ pub mod regs {
         }
         #[doc = "PB3_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pb3_dt(&mut self, val: bool) {
+        pub const fn set_pb3_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "PB4_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb4_dt(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -713,10 +749,11 @@ pub mod regs {
         }
         #[doc = "PB4_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pb4_dt(&mut self, val: bool) {
+        pub const fn set_pb4_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "PB5_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb5_dt(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -724,10 +761,11 @@ pub mod regs {
         }
         #[doc = "PB5_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pb5_dt(&mut self, val: bool) {
+        pub const fn set_pb5_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "PB6_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb6_dt(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -735,10 +773,11 @@ pub mod regs {
         }
         #[doc = "PB6_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pb6_dt(&mut self, val: bool) {
+        pub const fn set_pb6_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "PB7_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb7_dt(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -746,10 +785,11 @@ pub mod regs {
         }
         #[doc = "PB7_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pb7_dt(&mut self, val: bool) {
+        pub const fn set_pb7_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "PB8_DT:Interrupt Detection Type for port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb8_dt(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -757,10 +797,11 @@ pub mod regs {
         }
         #[doc = "PB8_DT:Interrupt Detection Type for port B I/Os."]
         #[inline(always)]
-        pub fn set_pb8_dt(&mut self, val: bool) {
+        pub const fn set_pb8_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "PB9_DT:Interrupt Detection Type for port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb9_dt(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -768,10 +809,11 @@ pub mod regs {
         }
         #[doc = "PB9_DT:Interrupt Detection Type for port B I/Os."]
         #[inline(always)]
-        pub fn set_pb9_dt(&mut self, val: bool) {
+        pub const fn set_pb9_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "PB10_DT:Interrupt Detection Type for port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb10_dt(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
@@ -779,10 +821,11 @@ pub mod regs {
         }
         #[doc = "PB10_DT:Interrupt Detection Type for port B I/Os."]
         #[inline(always)]
-        pub fn set_pb10_dt(&mut self, val: bool) {
+        pub const fn set_pb10_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "PB11_DT:Interrupt Detection Type for port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb11_dt(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
@@ -790,10 +833,11 @@ pub mod regs {
         }
         #[doc = "PB11_DT:Interrupt Detection Type for port B I/Os."]
         #[inline(always)]
-        pub fn set_pb11_dt(&mut self, val: bool) {
+        pub const fn set_pb11_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
         #[doc = "PB12_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb12_dt(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -801,10 +845,11 @@ pub mod regs {
         }
         #[doc = "PB12_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pb12_dt(&mut self, val: bool) {
+        pub const fn set_pb12_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "PB13_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb13_dt(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -812,10 +857,11 @@ pub mod regs {
         }
         #[doc = "PB13_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pb13_dt(&mut self, val: bool) {
+        pub const fn set_pb13_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "PB14_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb14_dt(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -823,10 +869,11 @@ pub mod regs {
         }
         #[doc = "PB14_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pb14_dt(&mut self, val: bool) {
+        pub const fn set_pb14_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "PB15_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb15_dt(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -834,7 +881,7 @@ pub mod regs {
         }
         #[doc = "PB15_DT: Interrupt Detection Type for port B I/Os. 0: edge detection. 1: level detection."]
         #[inline(always)]
-        pub fn set_pb15_dt(&mut self, val: bool) {
+        pub const fn set_pb15_dt(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -890,6 +937,7 @@ pub mod regs {
     pub struct IoIber(pub u32);
     impl IoIber {
         #[doc = "PA0_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa0_ibe(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -897,10 +945,11 @@ pub mod regs {
         }
         #[doc = "PA0_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pa0_ibe(&mut self, val: bool) {
+        pub const fn set_pa0_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "PA1_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa1_ibe(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -908,10 +957,11 @@ pub mod regs {
         }
         #[doc = "PA1_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pa1_ibe(&mut self, val: bool) {
+        pub const fn set_pa1_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "PA2_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa2_ibe(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -919,10 +969,11 @@ pub mod regs {
         }
         #[doc = "PA2_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pa2_ibe(&mut self, val: bool) {
+        pub const fn set_pa2_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "PA3_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa3_ibe(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -930,10 +981,11 @@ pub mod regs {
         }
         #[doc = "PA3_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pa3_ibe(&mut self, val: bool) {
+        pub const fn set_pa3_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "PA4_IBE: Interrupt edge selection for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa4_ibe(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -941,10 +993,11 @@ pub mod regs {
         }
         #[doc = "PA4_IBE: Interrupt edge selection for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa4_ibe(&mut self, val: bool) {
+        pub const fn set_pa4_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "PA5_IBE: Interrupt edge selection for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa5_ibe(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -952,10 +1005,11 @@ pub mod regs {
         }
         #[doc = "PA5_IBE: Interrupt edge selection for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa5_ibe(&mut self, val: bool) {
+        pub const fn set_pa5_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "PA6_IBE: Interrupt edge selection for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa6_ibe(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -963,10 +1017,11 @@ pub mod regs {
         }
         #[doc = "PA6_IBE: Interrupt edge selection for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa6_ibe(&mut self, val: bool) {
+        pub const fn set_pa6_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "PA7_IBE: Interrupt edge selection for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa7_ibe(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -974,10 +1029,11 @@ pub mod regs {
         }
         #[doc = "PA7_IBE: Interrupt edge selection for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa7_ibe(&mut self, val: bool) {
+        pub const fn set_pa7_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "PA8_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa8_ibe(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -985,10 +1041,11 @@ pub mod regs {
         }
         #[doc = "PA8_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pa8_ibe(&mut self, val: bool) {
+        pub const fn set_pa8_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "PA9_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa9_ibe(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -996,10 +1053,11 @@ pub mod regs {
         }
         #[doc = "PA9_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pa9_ibe(&mut self, val: bool) {
+        pub const fn set_pa9_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "PA10_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa10_ibe(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -1007,10 +1065,11 @@ pub mod regs {
         }
         #[doc = "PA10_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pa10_ibe(&mut self, val: bool) {
+        pub const fn set_pa10_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "PA11_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa11_ibe(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1018,10 +1077,11 @@ pub mod regs {
         }
         #[doc = "PA11_IBE: Interrupt edge selection for Port A I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pa11_ibe(&mut self, val: bool) {
+        pub const fn set_pa11_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "PA12_IBE: Interrupt edge selection for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa12_ibe(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -1029,10 +1089,11 @@ pub mod regs {
         }
         #[doc = "PA12_IBE: Interrupt edge selection for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa12_ibe(&mut self, val: bool) {
+        pub const fn set_pa12_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "PA13_IBE: Interrupt edge selection for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa13_ibe(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -1040,10 +1101,11 @@ pub mod regs {
         }
         #[doc = "PA13_IBE: Interrupt edge selection for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa13_ibe(&mut self, val: bool) {
+        pub const fn set_pa13_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "PA14_IBE: Interrupt edge selection for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa14_ibe(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -1051,10 +1113,11 @@ pub mod regs {
         }
         #[doc = "PA14_IBE: Interrupt edge selection for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa14_ibe(&mut self, val: bool) {
+        pub const fn set_pa14_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "PA15_IBE: Interrupt edge selection for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa15_ibe(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -1062,10 +1125,11 @@ pub mod regs {
         }
         #[doc = "PA15_IBE: Interrupt edge selection for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa15_ibe(&mut self, val: bool) {
+        pub const fn set_pa15_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "PB0_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb0_ibe(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1073,10 +1137,11 @@ pub mod regs {
         }
         #[doc = "PB0_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pb0_ibe(&mut self, val: bool) {
+        pub const fn set_pb0_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "PB1_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb1_ibe(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -1084,10 +1149,11 @@ pub mod regs {
         }
         #[doc = "PB1_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pb1_ibe(&mut self, val: bool) {
+        pub const fn set_pb1_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "PB2_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb2_ibe(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -1095,10 +1161,11 @@ pub mod regs {
         }
         #[doc = "PB2_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pb2_ibe(&mut self, val: bool) {
+        pub const fn set_pb2_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "PB3_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb3_ibe(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -1106,10 +1173,11 @@ pub mod regs {
         }
         #[doc = "PB3_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pb3_ibe(&mut self, val: bool) {
+        pub const fn set_pb3_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "PB4_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb4_ibe(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -1117,10 +1185,11 @@ pub mod regs {
         }
         #[doc = "PB4_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pb4_ibe(&mut self, val: bool) {
+        pub const fn set_pb4_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "PB5_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb5_ibe(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -1128,10 +1197,11 @@ pub mod regs {
         }
         #[doc = "PB5_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pb5_ibe(&mut self, val: bool) {
+        pub const fn set_pb5_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "PB6_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb6_ibe(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -1139,10 +1209,11 @@ pub mod regs {
         }
         #[doc = "PB6_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pb6_ibe(&mut self, val: bool) {
+        pub const fn set_pb6_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "PB7_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb7_ibe(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -1150,10 +1221,11 @@ pub mod regs {
         }
         #[doc = "PB7_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pb7_ibe(&mut self, val: bool) {
+        pub const fn set_pb7_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "PB8_IBE: Interrupt edge selection for port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb8_ibe(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -1161,10 +1233,11 @@ pub mod regs {
         }
         #[doc = "PB8_IBE: Interrupt edge selection for port B I/Os."]
         #[inline(always)]
-        pub fn set_pb8_ibe(&mut self, val: bool) {
+        pub const fn set_pb8_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "PB9_IBE: Interrupt edge selection for port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb9_ibe(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -1172,10 +1245,11 @@ pub mod regs {
         }
         #[doc = "PB9_IBE: Interrupt edge selection for port B I/Os."]
         #[inline(always)]
-        pub fn set_pb9_ibe(&mut self, val: bool) {
+        pub const fn set_pb9_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "PB10_IBE: Interrupt edge selection for port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb10_ibe(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
@@ -1183,10 +1257,11 @@ pub mod regs {
         }
         #[doc = "PB10_IBE: Interrupt edge selection for port B I/Os."]
         #[inline(always)]
-        pub fn set_pb10_ibe(&mut self, val: bool) {
+        pub const fn set_pb10_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "PB11_IBE: Interrupt edge selection for port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb11_ibe(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
@@ -1194,10 +1269,11 @@ pub mod regs {
         }
         #[doc = "PB11_IBE: Interrupt edge selection for port B I/Os."]
         #[inline(always)]
-        pub fn set_pb11_ibe(&mut self, val: bool) {
+        pub const fn set_pb11_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
         #[doc = "PB12_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb12_ibe(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -1205,10 +1281,11 @@ pub mod regs {
         }
         #[doc = "PB12_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pb12_ibe(&mut self, val: bool) {
+        pub const fn set_pb12_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "PB13_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb13_ibe(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -1216,10 +1293,11 @@ pub mod regs {
         }
         #[doc = "PB13_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pb13_ibe(&mut self, val: bool) {
+        pub const fn set_pb13_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "PB14_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb14_ibe(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -1227,10 +1305,11 @@ pub mod regs {
         }
         #[doc = "PB14_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pb14_ibe(&mut self, val: bool) {
+        pub const fn set_pb14_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "PB15_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb15_ibe(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -1238,7 +1317,7 @@ pub mod regs {
         }
         #[doc = "PB15_IBE: Interrupt edge selection for port B I/Os. 0: single edge detection. 1: both edges detection."]
         #[inline(always)]
-        pub fn set_pb15_ibe(&mut self, val: bool) {
+        pub const fn set_pb15_ibe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -1298,6 +1377,7 @@ pub mod regs {
     pub struct IoIer(pub u32);
     impl IoIer {
         #[doc = "PA0_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa0_ie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1305,10 +1385,11 @@ pub mod regs {
         }
         #[doc = "PA0_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pa0_ie(&mut self, val: bool) {
+        pub const fn set_pa0_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "PA1_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa1_ie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1316,10 +1397,11 @@ pub mod regs {
         }
         #[doc = "PA1_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pa1_ie(&mut self, val: bool) {
+        pub const fn set_pa1_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "PA2_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa2_ie(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1327,10 +1409,11 @@ pub mod regs {
         }
         #[doc = "PA2_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pa2_ie(&mut self, val: bool) {
+        pub const fn set_pa2_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "PA3_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa3_ie(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1338,10 +1421,11 @@ pub mod regs {
         }
         #[doc = "PA3_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pa3_ie(&mut self, val: bool) {
+        pub const fn set_pa3_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "PA4_IE: Interrupt enable for port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa4_ie(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1349,10 +1433,11 @@ pub mod regs {
         }
         #[doc = "PA4_IE: Interrupt enable for port A I/Os."]
         #[inline(always)]
-        pub fn set_pa4_ie(&mut self, val: bool) {
+        pub const fn set_pa4_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "PA5_IE: Interrupt enable for port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa5_ie(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1360,10 +1445,11 @@ pub mod regs {
         }
         #[doc = "PA5_IE: Interrupt enable for port A I/Os."]
         #[inline(always)]
-        pub fn set_pa5_ie(&mut self, val: bool) {
+        pub const fn set_pa5_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "PA6_IE: Interrupt enable for port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa6_ie(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -1371,10 +1457,11 @@ pub mod regs {
         }
         #[doc = "PA6_IE: Interrupt enable for port A I/Os."]
         #[inline(always)]
-        pub fn set_pa6_ie(&mut self, val: bool) {
+        pub const fn set_pa6_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "PA7_IE: Interrupt enable for port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa7_ie(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1382,10 +1469,11 @@ pub mod regs {
         }
         #[doc = "PA7_IE: Interrupt enable for port A I/Os."]
         #[inline(always)]
-        pub fn set_pa7_ie(&mut self, val: bool) {
+        pub const fn set_pa7_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "PA8_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa8_ie(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -1393,10 +1481,11 @@ pub mod regs {
         }
         #[doc = "PA8_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pa8_ie(&mut self, val: bool) {
+        pub const fn set_pa8_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "PA9_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa9_ie(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -1404,10 +1493,11 @@ pub mod regs {
         }
         #[doc = "PA9_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pa9_ie(&mut self, val: bool) {
+        pub const fn set_pa9_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "PA10_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa10_ie(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -1415,10 +1505,11 @@ pub mod regs {
         }
         #[doc = "PA10_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pa10_ie(&mut self, val: bool) {
+        pub const fn set_pa10_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "PA11_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa11_ie(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1426,10 +1517,11 @@ pub mod regs {
         }
         #[doc = "PA11_IE: Interrupt enable for port A I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pa11_ie(&mut self, val: bool) {
+        pub const fn set_pa11_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "PA12_IE: Interrupt enable for port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa12_ie(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -1437,10 +1529,11 @@ pub mod regs {
         }
         #[doc = "PA12_IE: Interrupt enable for port A I/Os."]
         #[inline(always)]
-        pub fn set_pa12_ie(&mut self, val: bool) {
+        pub const fn set_pa12_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "PA13_IE: Interrupt enable for port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa13_ie(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -1448,10 +1541,11 @@ pub mod regs {
         }
         #[doc = "PA13_IE: Interrupt enable for port A I/Os."]
         #[inline(always)]
-        pub fn set_pa13_ie(&mut self, val: bool) {
+        pub const fn set_pa13_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "PA14_IE: Interrupt enable for port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa14_ie(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -1459,10 +1553,11 @@ pub mod regs {
         }
         #[doc = "PA14_IE: Interrupt enable for port A I/Os."]
         #[inline(always)]
-        pub fn set_pa14_ie(&mut self, val: bool) {
+        pub const fn set_pa14_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "PA15_IE: Interrupt enable for port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa15_ie(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -1470,10 +1565,11 @@ pub mod regs {
         }
         #[doc = "PA15_IE: Interrupt enable for port A I/Os."]
         #[inline(always)]
-        pub fn set_pa15_ie(&mut self, val: bool) {
+        pub const fn set_pa15_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "PB0_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb0_ie(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1481,10 +1577,11 @@ pub mod regs {
         }
         #[doc = "PB0_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pb0_ie(&mut self, val: bool) {
+        pub const fn set_pb0_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "PB1_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb1_ie(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -1492,10 +1589,11 @@ pub mod regs {
         }
         #[doc = "PB1_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pb1_ie(&mut self, val: bool) {
+        pub const fn set_pb1_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "PB2_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb2_ie(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -1503,10 +1601,11 @@ pub mod regs {
         }
         #[doc = "PB2_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pb2_ie(&mut self, val: bool) {
+        pub const fn set_pb2_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "PB3_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb3_ie(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -1514,10 +1613,11 @@ pub mod regs {
         }
         #[doc = "PB3_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pb3_ie(&mut self, val: bool) {
+        pub const fn set_pb3_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "PB4_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb4_ie(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -1525,10 +1625,11 @@ pub mod regs {
         }
         #[doc = "PB4_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pb4_ie(&mut self, val: bool) {
+        pub const fn set_pb4_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "PB5_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb5_ie(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -1536,10 +1637,11 @@ pub mod regs {
         }
         #[doc = "PB5_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pb5_ie(&mut self, val: bool) {
+        pub const fn set_pb5_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "PB6_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb6_ie(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -1547,10 +1649,11 @@ pub mod regs {
         }
         #[doc = "PB6_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pb6_ie(&mut self, val: bool) {
+        pub const fn set_pb6_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "PB7_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb7_ie(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -1558,10 +1661,11 @@ pub mod regs {
         }
         #[doc = "PB7_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pb7_ie(&mut self, val: bool) {
+        pub const fn set_pb7_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "PB8_IE: Interrupt enable for port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb8_ie(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -1569,10 +1673,11 @@ pub mod regs {
         }
         #[doc = "PB8_IE: Interrupt enable for port B I/Os."]
         #[inline(always)]
-        pub fn set_pb8_ie(&mut self, val: bool) {
+        pub const fn set_pb8_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "PB9_IE: Interrupt enable for port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb9_ie(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -1580,10 +1685,11 @@ pub mod regs {
         }
         #[doc = "PB9_IE: Interrupt enable for port B I/Os."]
         #[inline(always)]
-        pub fn set_pb9_ie(&mut self, val: bool) {
+        pub const fn set_pb9_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "PB10_IE: Interrupt enable for port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb10_ie(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
@@ -1591,10 +1697,11 @@ pub mod regs {
         }
         #[doc = "PB10_IE: Interrupt enable for port B I/Os."]
         #[inline(always)]
-        pub fn set_pb10_ie(&mut self, val: bool) {
+        pub const fn set_pb10_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "PB11_IE: Interrupt enable for port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb11_ie(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
@@ -1602,10 +1709,11 @@ pub mod regs {
         }
         #[doc = "PB11_IE: Interrupt enable for port B I/Os."]
         #[inline(always)]
-        pub fn set_pb11_ie(&mut self, val: bool) {
+        pub const fn set_pb11_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
         #[doc = "PB12_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb12_ie(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -1613,10 +1721,11 @@ pub mod regs {
         }
         #[doc = "PB12_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pb12_ie(&mut self, val: bool) {
+        pub const fn set_pb12_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "PB13_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb13_ie(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -1624,10 +1733,11 @@ pub mod regs {
         }
         #[doc = "PB13_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pb13_ie(&mut self, val: bool) {
+        pub const fn set_pb13_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "PB14_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb14_ie(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -1635,10 +1745,11 @@ pub mod regs {
         }
         #[doc = "PB14_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pb14_ie(&mut self, val: bool) {
+        pub const fn set_pb14_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "PB15_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb15_ie(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -1646,7 +1757,7 @@ pub mod regs {
         }
         #[doc = "PB15_IE: Interrupt enable for port B I/Os. 0: interrupt is disabled. 1: interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pb15_ie(&mut self, val: bool) {
+        pub const fn set_pb15_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -1706,6 +1817,7 @@ pub mod regs {
     pub struct IoIevr(pub u32);
     impl IoIevr {
         #[doc = "PA0_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa0_iev(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1713,10 +1825,11 @@ pub mod regs {
         }
         #[doc = "PA0_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pa0_iev(&mut self, val: bool) {
+        pub const fn set_pa0_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "PA1_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa1_iev(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1724,10 +1837,11 @@ pub mod regs {
         }
         #[doc = "PA1_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pa1_iev(&mut self, val: bool) {
+        pub const fn set_pa1_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "PA2_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa2_iev(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1735,10 +1849,11 @@ pub mod regs {
         }
         #[doc = "PA2_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pa2_iev(&mut self, val: bool) {
+        pub const fn set_pa2_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "PA3_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa3_iev(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1746,10 +1861,11 @@ pub mod regs {
         }
         #[doc = "PA3_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pa3_iev(&mut self, val: bool) {
+        pub const fn set_pa3_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "PA4_IEV : Interrupt polarity event for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa4_iev(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1757,10 +1873,11 @@ pub mod regs {
         }
         #[doc = "PA4_IEV : Interrupt polarity event for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa4_iev(&mut self, val: bool) {
+        pub const fn set_pa4_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "PA5_IEV : Interrupt polarity event for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa5_iev(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1768,10 +1885,11 @@ pub mod regs {
         }
         #[doc = "PA5_IEV : Interrupt polarity event for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa5_iev(&mut self, val: bool) {
+        pub const fn set_pa5_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "PA6_IEV : Interrupt polarity event for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa6_iev(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -1779,10 +1897,11 @@ pub mod regs {
         }
         #[doc = "PA6_IEV : Interrupt polarity event for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa6_iev(&mut self, val: bool) {
+        pub const fn set_pa6_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "PA7_IEV : Interrupt polarity event for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa7_iev(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1790,10 +1909,11 @@ pub mod regs {
         }
         #[doc = "PA7_IEV : Interrupt polarity event for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa7_iev(&mut self, val: bool) {
+        pub const fn set_pa7_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "PA8_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa8_iev(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -1801,10 +1921,11 @@ pub mod regs {
         }
         #[doc = "PA8_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pa8_iev(&mut self, val: bool) {
+        pub const fn set_pa8_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "PA9_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa9_iev(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -1812,10 +1933,11 @@ pub mod regs {
         }
         #[doc = "PA9_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pa9_iev(&mut self, val: bool) {
+        pub const fn set_pa9_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "PA10_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa10_iev(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -1823,10 +1945,11 @@ pub mod regs {
         }
         #[doc = "PA10_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pa10_iev(&mut self, val: bool) {
+        pub const fn set_pa10_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "PA11_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa11_iev(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1834,10 +1957,11 @@ pub mod regs {
         }
         #[doc = "PA11_IEV : Interrupt polarity event for Port A I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pa11_iev(&mut self, val: bool) {
+        pub const fn set_pa11_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "PA12_IEV : Interrupt polarity event for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa12_iev(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -1845,10 +1969,11 @@ pub mod regs {
         }
         #[doc = "PA12_IEV : Interrupt polarity event for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa12_iev(&mut self, val: bool) {
+        pub const fn set_pa12_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "PA13_IEV : Interrupt polarity event for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa13_iev(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -1856,10 +1981,11 @@ pub mod regs {
         }
         #[doc = "PA13_IEV : Interrupt polarity event for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa13_iev(&mut self, val: bool) {
+        pub const fn set_pa13_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "PA14_IEV : Interrupt polarity event for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa14_iev(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -1867,10 +1993,11 @@ pub mod regs {
         }
         #[doc = "PA14_IEV : Interrupt polarity event for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa14_iev(&mut self, val: bool) {
+        pub const fn set_pa14_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "PA15_IEV : Interrupt polarity event for Port A I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa15_iev(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -1878,10 +2005,11 @@ pub mod regs {
         }
         #[doc = "PA15_IEV : Interrupt polarity event for Port A I/Os."]
         #[inline(always)]
-        pub fn set_pa15_iev(&mut self, val: bool) {
+        pub const fn set_pa15_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "PB0_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb0_iev(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1889,10 +2017,11 @@ pub mod regs {
         }
         #[doc = "PB0_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pb0_iev(&mut self, val: bool) {
+        pub const fn set_pb0_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "PB1_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb1_iev(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -1900,10 +2029,11 @@ pub mod regs {
         }
         #[doc = "PB1_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pb1_iev(&mut self, val: bool) {
+        pub const fn set_pb1_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "PB2_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb2_iev(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -1911,10 +2041,11 @@ pub mod regs {
         }
         #[doc = "PB2_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pb2_iev(&mut self, val: bool) {
+        pub const fn set_pb2_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "PB3_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb3_iev(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -1922,10 +2053,11 @@ pub mod regs {
         }
         #[doc = "PB3_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pb3_iev(&mut self, val: bool) {
+        pub const fn set_pb3_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "PB4_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb4_iev(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -1933,10 +2065,11 @@ pub mod regs {
         }
         #[doc = "PB4_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pb4_iev(&mut self, val: bool) {
+        pub const fn set_pb4_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "PB5_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb5_iev(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -1944,10 +2077,11 @@ pub mod regs {
         }
         #[doc = "PB5_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pb5_iev(&mut self, val: bool) {
+        pub const fn set_pb5_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "PB6_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb6_iev(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -1955,10 +2089,11 @@ pub mod regs {
         }
         #[doc = "PB6_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pb6_iev(&mut self, val: bool) {
+        pub const fn set_pb6_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "PB7_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb7_iev(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -1966,10 +2101,11 @@ pub mod regs {
         }
         #[doc = "PB7_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pb7_iev(&mut self, val: bool) {
+        pub const fn set_pb7_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "PB8_IEV : Interrupt polarity event for Port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb8_iev(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -1977,10 +2113,11 @@ pub mod regs {
         }
         #[doc = "PB8_IEV : Interrupt polarity event for Port B I/Os."]
         #[inline(always)]
-        pub fn set_pb8_iev(&mut self, val: bool) {
+        pub const fn set_pb8_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "PB9_IEV : Interrupt polarity event for Port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb9_iev(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -1988,10 +2125,11 @@ pub mod regs {
         }
         #[doc = "PB9_IEV : Interrupt polarity event for Port B I/Os."]
         #[inline(always)]
-        pub fn set_pb9_iev(&mut self, val: bool) {
+        pub const fn set_pb9_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "PB10_IEV : Interrupt polarity event for Port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb10_iev(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
@@ -1999,10 +2137,11 @@ pub mod regs {
         }
         #[doc = "PB10_IEV : Interrupt polarity event for Port B I/Os."]
         #[inline(always)]
-        pub fn set_pb10_iev(&mut self, val: bool) {
+        pub const fn set_pb10_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "PB11_IEV : Interrupt polarity event for Port B I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb11_iev(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
@@ -2010,10 +2149,11 @@ pub mod regs {
         }
         #[doc = "PB11_IEV : Interrupt polarity event for Port B I/Os."]
         #[inline(always)]
-        pub fn set_pb11_iev(&mut self, val: bool) {
+        pub const fn set_pb11_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
         #[doc = "PB12_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb12_iev(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -2021,10 +2161,11 @@ pub mod regs {
         }
         #[doc = "PB12_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pb12_iev(&mut self, val: bool) {
+        pub const fn set_pb12_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "PB13_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb13_iev(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -2032,10 +2173,11 @@ pub mod regs {
         }
         #[doc = "PB13_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pb13_iev(&mut self, val: bool) {
+        pub const fn set_pb13_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "PB14_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb14_iev(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -2043,10 +2185,11 @@ pub mod regs {
         }
         #[doc = "PB14_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pb14_iev(&mut self, val: bool) {
+        pub const fn set_pb14_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "PB15_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb15_iev(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -2054,7 +2197,7 @@ pub mod regs {
         }
         #[doc = "PB15_IEV : Interrupt polarity event for Port B I/Os. 0: falling edge / low level. 1: rising edge / high level."]
         #[inline(always)]
-        pub fn set_pb15_iev(&mut self, val: bool) {
+        pub const fn set_pb15_iev(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -2114,6 +2257,7 @@ pub mod regs {
     pub struct IoIscr(pub u32);
     impl IoIscr {
         #[doc = "PA0_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa0_isc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2121,10 +2265,11 @@ pub mod regs {
         }
         #[doc = "PA0_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pa0_isc(&mut self, val: bool) {
+        pub const fn set_pa0_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "PA1_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa1_isc(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -2132,10 +2277,11 @@ pub mod regs {
         }
         #[doc = "PA1_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pa1_isc(&mut self, val: bool) {
+        pub const fn set_pa1_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "PA2_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa2_isc(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -2143,10 +2289,11 @@ pub mod regs {
         }
         #[doc = "PA2_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pa2_isc(&mut self, val: bool) {
+        pub const fn set_pa2_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "PA3_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa3_isc(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -2154,10 +2301,11 @@ pub mod regs {
         }
         #[doc = "PA3_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pa3_isc(&mut self, val: bool) {
+        pub const fn set_pa3_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "PA4_ISC: Interrupt status (before mask) for port a I/Os.."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa4_isc(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -2165,10 +2313,11 @@ pub mod regs {
         }
         #[doc = "PA4_ISC: Interrupt status (before mask) for port a I/Os.."]
         #[inline(always)]
-        pub fn set_pa4_isc(&mut self, val: bool) {
+        pub const fn set_pa4_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "PA5_ISC: Interrupt status (before mask) for port a I/Os.."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa5_isc(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -2176,10 +2325,11 @@ pub mod regs {
         }
         #[doc = "PA5_ISC: Interrupt status (before mask) for port a I/Os.."]
         #[inline(always)]
-        pub fn set_pa5_isc(&mut self, val: bool) {
+        pub const fn set_pa5_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "PA6_ISC: Interrupt status (before mask) for port a I/Os.."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa6_isc(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -2187,10 +2337,11 @@ pub mod regs {
         }
         #[doc = "PA6_ISC: Interrupt status (before mask) for port a I/Os.."]
         #[inline(always)]
-        pub fn set_pa6_isc(&mut self, val: bool) {
+        pub const fn set_pa6_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "PA7_ISC: Interrupt status (before mask) for port a I/Os.."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa7_isc(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -2198,10 +2349,11 @@ pub mod regs {
         }
         #[doc = "PA7_ISC: Interrupt status (before mask) for port a I/Os.."]
         #[inline(always)]
-        pub fn set_pa7_isc(&mut self, val: bool) {
+        pub const fn set_pa7_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "PA8_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa8_isc(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -2209,10 +2361,11 @@ pub mod regs {
         }
         #[doc = "PA8_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pa8_isc(&mut self, val: bool) {
+        pub const fn set_pa8_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "PA9_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa9_isc(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -2220,10 +2373,11 @@ pub mod regs {
         }
         #[doc = "PA9_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pa9_isc(&mut self, val: bool) {
+        pub const fn set_pa9_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "PA10_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa10_isc(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -2231,10 +2385,11 @@ pub mod regs {
         }
         #[doc = "PA10_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pa10_isc(&mut self, val: bool) {
+        pub const fn set_pa10_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "PA11_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa11_isc(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -2242,10 +2397,11 @@ pub mod regs {
         }
         #[doc = "PA11_ISC: Interrupt status (before mask) for port a I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pa11_isc(&mut self, val: bool) {
+        pub const fn set_pa11_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "PA12_ISC: Interrupt status (before mask) for port a I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa12_isc(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -2253,10 +2409,11 @@ pub mod regs {
         }
         #[doc = "PA12_ISC: Interrupt status (before mask) for port a I/Os."]
         #[inline(always)]
-        pub fn set_pa12_isc(&mut self, val: bool) {
+        pub const fn set_pa12_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "PA13_ISC: Interrupt status (before mask) for port a I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa13_isc(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -2264,10 +2421,11 @@ pub mod regs {
         }
         #[doc = "PA13_ISC: Interrupt status (before mask) for port a I/Os."]
         #[inline(always)]
-        pub fn set_pa13_isc(&mut self, val: bool) {
+        pub const fn set_pa13_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "PA14_ISC: Interrupt status (before mask) for port a I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa14_isc(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -2275,10 +2433,11 @@ pub mod regs {
         }
         #[doc = "PA14_ISC: Interrupt status (before mask) for port a I/Os."]
         #[inline(always)]
-        pub fn set_pa14_isc(&mut self, val: bool) {
+        pub const fn set_pa14_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "PA15_ISC: Interrupt status (before mask) for port a I/Os."]
+        #[must_use]
         #[inline(always)]
         pub const fn pa15_isc(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -2286,10 +2445,11 @@ pub mod regs {
         }
         #[doc = "PA15_ISC: Interrupt status (before mask) for port a I/Os."]
         #[inline(always)]
-        pub fn set_pa15_isc(&mut self, val: bool) {
+        pub const fn set_pa15_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "PB0_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb0_isc(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -2297,10 +2457,11 @@ pub mod regs {
         }
         #[doc = "PB0_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pb0_isc(&mut self, val: bool) {
+        pub const fn set_pb0_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "PB1_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb1_isc(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -2308,10 +2469,11 @@ pub mod regs {
         }
         #[doc = "PB1_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pb1_isc(&mut self, val: bool) {
+        pub const fn set_pb1_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "PB2_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb2_isc(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -2319,10 +2481,11 @@ pub mod regs {
         }
         #[doc = "PB2_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pb2_isc(&mut self, val: bool) {
+        pub const fn set_pb2_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "PB3_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb3_isc(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -2330,10 +2493,11 @@ pub mod regs {
         }
         #[doc = "PB3_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pb3_isc(&mut self, val: bool) {
+        pub const fn set_pb3_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "PB4_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb4_isc(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -2341,10 +2505,11 @@ pub mod regs {
         }
         #[doc = "PB4_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pb4_isc(&mut self, val: bool) {
+        pub const fn set_pb4_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "PB5_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb5_isc(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -2352,10 +2517,11 @@ pub mod regs {
         }
         #[doc = "PB5_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pb5_isc(&mut self, val: bool) {
+        pub const fn set_pb5_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "PB6_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb6_isc(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -2363,10 +2529,11 @@ pub mod regs {
         }
         #[doc = "PB6_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pb6_isc(&mut self, val: bool) {
+        pub const fn set_pb6_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "PB7_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb7_isc(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -2374,10 +2541,11 @@ pub mod regs {
         }
         #[doc = "PB7_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pb7_isc(&mut self, val: bool) {
+        pub const fn set_pb7_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "PB8_ISC: Interrupt status (before mask) for port B I/Os.."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb8_isc(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -2385,10 +2553,11 @@ pub mod regs {
         }
         #[doc = "PB8_ISC: Interrupt status (before mask) for port B I/Os.."]
         #[inline(always)]
-        pub fn set_pb8_isc(&mut self, val: bool) {
+        pub const fn set_pb8_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "PB9_ISC: Interrupt status (before mask) for port B I/Os.."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb9_isc(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -2396,10 +2565,11 @@ pub mod regs {
         }
         #[doc = "PB9_ISC: Interrupt status (before mask) for port B I/Os.."]
         #[inline(always)]
-        pub fn set_pb9_isc(&mut self, val: bool) {
+        pub const fn set_pb9_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "PB10_ISC: Interrupt status (before mask) for port B I/Os.."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb10_isc(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
@@ -2407,10 +2577,11 @@ pub mod regs {
         }
         #[doc = "PB10_ISC: Interrupt status (before mask) for port B I/Os.."]
         #[inline(always)]
-        pub fn set_pb10_isc(&mut self, val: bool) {
+        pub const fn set_pb10_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "PB11_ISC: Interrupt status (before mask) for port B I/Os.."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb11_isc(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
@@ -2418,10 +2589,11 @@ pub mod regs {
         }
         #[doc = "PB11_ISC: Interrupt status (before mask) for port B I/Os.."]
         #[inline(always)]
-        pub fn set_pb11_isc(&mut self, val: bool) {
+        pub const fn set_pb11_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
         #[doc = "PB12_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb12_isc(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -2429,10 +2601,11 @@ pub mod regs {
         }
         #[doc = "PB12_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pb12_isc(&mut self, val: bool) {
+        pub const fn set_pb12_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "PB13_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb13_isc(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -2440,10 +2613,11 @@ pub mod regs {
         }
         #[doc = "PB13_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pb13_isc(&mut self, val: bool) {
+        pub const fn set_pb13_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "PB14_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb14_isc(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -2451,10 +2625,11 @@ pub mod regs {
         }
         #[doc = "PB14_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pb14_isc(&mut self, val: bool) {
+        pub const fn set_pb14_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "PB15_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pb15_isc(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -2462,7 +2637,7 @@ pub mod regs {
         }
         #[doc = "PB15_ISC: Interrupt status (before mask) for port B I/Os. 0: no pending interrupt. 1: event occurred on corresponding I/O / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pb15_isc(&mut self, val: bool) {
+        pub const fn set_pb15_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -2522,6 +2697,7 @@ pub mod regs {
     pub struct JtagId(pub u32);
     impl JtagId {
         #[doc = "Manufacturer ID."]
+        #[must_use]
         #[inline(always)]
         pub const fn manuf_id(&self) -> u16 {
             let val = (self.0 >> 1usize) & 0x07ff;
@@ -2529,10 +2705,11 @@ pub mod regs {
         }
         #[doc = "Manufacturer ID."]
         #[inline(always)]
-        pub fn set_manuf_id(&mut self, val: u16) {
+        pub const fn set_manuf_id(&mut self, val: u16) {
             self.0 = (self.0 & !(0x07ff << 1usize)) | (((val as u32) & 0x07ff) << 1usize);
         }
         #[doc = "Part number."]
+        #[must_use]
         #[inline(always)]
         pub const fn part_number(&self) -> u16 {
             let val = (self.0 >> 12usize) & 0xffff;
@@ -2540,10 +2717,11 @@ pub mod regs {
         }
         #[doc = "Part number."]
         #[inline(always)]
-        pub fn set_part_number(&mut self, val: u16) {
+        pub const fn set_part_number(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 12usize)) | (((val as u32) & 0xffff) << 12usize);
         }
         #[doc = "Version."]
+        #[must_use]
         #[inline(always)]
         pub const fn version_number(&self) -> u8 {
             let val = (self.0 >> 28usize) & 0x0f;
@@ -2551,7 +2729,7 @@ pub mod regs {
         }
         #[doc = "Version."]
         #[inline(always)]
-        pub fn set_version_number(&mut self, val: u8) {
+        pub const fn set_version_number(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 28usize)) | (((val as u32) & 0x0f) << 28usize);
         }
     }
@@ -2588,6 +2766,7 @@ pub mod regs {
     pub struct PwrcIer(pub u32);
     impl PwrcIer {
         #[doc = "BORH_IE: BORH interrupt enable. 0: BORH interrupt is disabled. 1: BORH interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn borh_ie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2595,10 +2774,11 @@ pub mod regs {
         }
         #[doc = "BORH_IE: BORH interrupt enable. 0: BORH interrupt is disabled. 1: BORH interrupt is enabled."]
         #[inline(always)]
-        pub fn set_borh_ie(&mut self, val: bool) {
+        pub const fn set_borh_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "PVD_IE: Programmable Voltage Detector interrupt enable. 0: PVD interrupt is disabled. 1: PVD interrupt is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn pvd_ie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -2606,10 +2786,11 @@ pub mod regs {
         }
         #[doc = "PVD_IE: Programmable Voltage Detector interrupt enable. 0: PVD interrupt is disabled. 1: PVD interrupt is enabled."]
         #[inline(always)]
-        pub fn set_pvd_ie(&mut self, val: bool) {
+        pub const fn set_pvd_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "WKUP_IE: Power Controller Wakeup event interrupt enable. 0: Interrupt on wakeup event seen by the PWRC is disabled. 1: Interrupt on wakeup event seen by the PWRC is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn wkup_ie(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -2617,7 +2798,7 @@ pub mod regs {
         }
         #[doc = "WKUP_IE: Power Controller Wakeup event interrupt enable. 0: Interrupt on wakeup event seen by the PWRC is disabled. 1: Interrupt on wakeup event seen by the PWRC is enabled."]
         #[inline(always)]
-        pub fn set_wkup_ie(&mut self, val: bool) {
+        pub const fn set_wkup_ie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
     }
@@ -2654,6 +2835,7 @@ pub mod regs {
     pub struct PwrcIscr(pub u32);
     impl PwrcIscr {
         #[doc = "BORH_ISC: BORH interrupt status. 0: no pending interrupt. 1: voltage went under BORH threshold / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn borh_isc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2661,10 +2843,11 @@ pub mod regs {
         }
         #[doc = "BORH_ISC: BORH interrupt status. 0: no pending interrupt. 1: voltage went under BORH threshold / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_borh_isc(&mut self, val: bool) {
+        pub const fn set_borh_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "PVD_ISC: Programmable Voltage Detector status. 0: no pending interrupt. 1: voltage went under programmed threshold / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pvd_isc(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -2672,10 +2855,11 @@ pub mod regs {
         }
         #[doc = "PVD_ISC: Programmable Voltage Detector status. 0: no pending interrupt. 1: voltage went under programmed threshold / interrupt occurred (if enabled). Cleared by writing 1 in the bit."]
         #[inline(always)]
-        pub fn set_pvd_isc(&mut self, val: bool) {
+        pub const fn set_pvd_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "WKUP_ISC: Indicates the Power Controller receives a Wakeup event. 0: no pending interrupt. 1: Wakeup event on PWRC occurred / interrupt occurred (if enabled). Cleared by writing 1 in the bit. This flag will be read at 1 if a wakeup event arrives so close to the low power mode entry requests that the PWRC aborts before shutting down the system."]
+        #[must_use]
         #[inline(always)]
         pub const fn wkup_isc(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -2683,7 +2867,7 @@ pub mod regs {
         }
         #[doc = "WKUP_ISC: Indicates the Power Controller receives a Wakeup event. 0: no pending interrupt. 1: Wakeup event on PWRC occurred / interrupt occurred (if enabled). Cleared by writing 1 in the bit. This flag will be read at 1 if a wakeup event arrives so close to the low power mode entry requests that the PWRC aborts before shutting down the system."]
         #[inline(always)]
-        pub fn set_wkup_isc(&mut self, val: bool) {
+        pub const fn set_wkup_isc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
     }

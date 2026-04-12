@@ -1165,18 +1165,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 81,
                 },
                 EnumVariant {
-                    name: "HDPL3",
-                    description: Some(
-                        "HDPL3.",
-                    ),
-                    value: 111,
-                },
-                EnumVariant {
                     name: "HDPL2",
                     description: Some(
                         "HDPL2.",
                     ),
                     value: 138,
+                },
+                EnumVariant {
+                    name: "HDPL3",
+                    description: Some(
+                        "HDPL3.",
+                    ),
+                    value: 111,
                 },
             ],
         },
@@ -1221,6 +1221,13 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
+                    name: "HDPL0",
+                    description: Some(
+                        "HDPL0, corresponding to ST-RSS (default when device is close).",
+                    ),
+                    value: 180,
+                },
+                EnumVariant {
                     name: "HDPL1",
                     description: Some(
                         "HDPL1.",
@@ -1233,13 +1240,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "HDPL2.",
                     ),
                     value: 138,
-                },
-                EnumVariant {
-                    name: "HDPL0",
-                    description: Some(
-                        "HDPL0, corresponding to ST-RSS (default when device is close).",
-                    ),
-                    value: 180,
                 },
             ],
         },

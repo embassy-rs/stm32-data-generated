@@ -22,7 +22,7 @@ impl Xspim {
     #[doc = "XSPIM control register."]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
 }
 pub mod regs {
@@ -32,6 +32,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "Multiplexed mode enable This bit enables the multiplexing of the two XSPIs."]
+        #[must_use]
         #[inline(always)]
         pub const fn muxen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -39,10 +40,11 @@ pub mod regs {
         }
         #[doc = "Multiplexed mode enable This bit enables the multiplexing of the two XSPIs."]
         #[inline(always)]
-        pub fn set_muxen(&mut self, val: bool) {
+        pub const fn set_muxen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "XSPI multiplexing mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn mode(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -50,10 +52,11 @@ pub mod regs {
         }
         #[doc = "XSPI multiplexing mode."]
         #[inline(always)]
-        pub fn set_mode(&mut self, val: bool) {
+        pub const fn set_mode(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Chip select selector override enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn cssel_ovr_en(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -61,10 +64,11 @@ pub mod regs {
         }
         #[doc = "Chip select selector override enable."]
         #[inline(always)]
-        pub fn set_cssel_ovr_en(&mut self, val: bool) {
+        pub const fn set_cssel_ovr_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Chip select selector override setting for XSPI1."]
+        #[must_use]
         #[inline(always)]
         pub const fn cssel_ovr_o1(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -72,10 +76,11 @@ pub mod regs {
         }
         #[doc = "Chip select selector override setting for XSPI1."]
         #[inline(always)]
-        pub fn set_cssel_ovr_o1(&mut self, val: bool) {
+        pub const fn set_cssel_ovr_o1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Chip select selector override setting for XSPI2."]
+        #[must_use]
         #[inline(always)]
         pub const fn cssel_ovr_o2(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -83,10 +88,11 @@ pub mod regs {
         }
         #[doc = "Chip select selector override setting for XSPI2."]
         #[inline(always)]
-        pub fn set_cssel_ovr_o2(&mut self, val: bool) {
+        pub const fn set_cssel_ovr_o2(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "REQ to ACK time In Multiplexed mode (MUXEN = 1), this field defines the time between two transactions."]
+        #[must_use]
         #[inline(always)]
         pub const fn req2ack_time(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
@@ -94,7 +100,7 @@ pub mod regs {
         }
         #[doc = "REQ to ACK time In Multiplexed mode (MUXEN = 1), this field defines the time between two transactions."]
         #[inline(always)]
-        pub fn set_req2ack_time(&mut self, val: u8) {
+        pub const fn set_req2ack_time(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
     }

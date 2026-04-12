@@ -3081,14 +3081,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "INDEPENDENT",
-                    description: Some("Update done independently from the DMA burst transfer completion"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "COMPLETION",
                     description: Some("Update done when the DMA burst transfer is completed"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "INDEPENDENT",
+                    description: Some("Update done independently from the DMA burst transfer completion"),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "ROLLOVER",
@@ -3122,11 +3122,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "DISABLED",
-                    description: Some("No DAC trigger generated"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "DACSYNC1",
                     description: Some("Trigger generated on DACSync1"),
                     value: 1,
@@ -3141,6 +3136,11 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Trigger generated on DACSync3"),
                     value: 3,
                 },
+                EnumVariant {
+                    name: "DISABLED",
+                    description: Some("No DAC trigger generated"),
+                    value: 0,
+                },
             ],
         },
         Enum {
@@ -3148,11 +3148,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
-                EnumVariant {
-                    name: "STANDARD",
-                    description: Some("CMP register is always active (standard compare mode)"),
-                    value: 0,
-                },
                 EnumVariant {
                     name: "CAPTURE1",
                     description: Some("CMP is recomputed and is active following a capture 1 event"),
@@ -3172,6 +3167,11 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 3,
                 },
+                EnumVariant {
+                    name: "STANDARD",
+                    description: Some("CMP register is always active (standard compare mode)"),
+                    value: 0,
+                },
             ],
         },
         Enum {
@@ -3180,14 +3180,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "OUTPUT1_EE6",
-                    description: Some("Output 1 delayed idle on external event 6"),
-                    value: 0,
+                    name: "BALANCED_EE6",
+                    description: Some("Balanced idle on external event 6"),
+                    value: 3,
                 },
                 EnumVariant {
-                    name: "OUTPUT2_EE6",
-                    description: Some("Output 2 delayed idle on external event 6"),
-                    value: 1,
+                    name: "BALANCED_EE7",
+                    description: Some("Balanced idle on external event 7"),
+                    value: 7,
                 },
                 EnumVariant {
                     name: "OUTPUT1_2_EE6",
@@ -3195,9 +3195,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "BALANCED_EE6",
-                    description: Some("Balanced idle on external event 6"),
-                    value: 3,
+                    name: "OUTPUT1_2_EE7",
+                    description: Some("Output 1 and 2 delayed idle on external event 7"),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "OUTPUT1_EE6",
+                    description: Some("Output 1 delayed idle on external event 6"),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "OUTPUT1_EE7",
@@ -3205,19 +3210,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 4,
                 },
                 EnumVariant {
+                    name: "OUTPUT2_EE6",
+                    description: Some("Output 2 delayed idle on external event 6"),
+                    value: 1,
+                },
+                EnumVariant {
                     name: "OUTPUT2_EE7",
                     description: Some("Output 2 delayed idle on external event 7"),
                     value: 5,
-                },
-                EnumVariant {
-                    name: "OUTPUT1_2_EE7",
-                    description: Some("Output 1 and 2 delayed idle on external event 7"),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "BALANCED_EE7",
-                    description: Some("Balanced idle on external event 7"),
-                    value: 7,
                 },
             ],
         },
@@ -3226,11 +3226,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 4,
             variants: &[
-                EnumVariant {
-                    name: "DISABLED",
-                    description: Some("No filtering"),
-                    value: 0,
-                },
                 EnumVariant {
                     name: "BLANK_RESET_TO_COMPARE1",
                     description: Some("Blanking from counter reset/roll-over to Compare 1"),
@@ -3292,6 +3287,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 12,
                 },
                 EnumVariant {
+                    name: "DISABLED",
+                    description: Some("No filtering"),
+                    value: 0,
+                },
+                EnumVariant {
                     name: "WINDOW_RESET_TO_COMPARE2",
                     description: Some("Windowing from counter reset/roll-over to compare 2"),
                     value: 13,
@@ -3324,14 +3324,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SET_INACTIVE",
-                    description: Some("Output goes to inactive state after a fault event"),
-                    value: 2,
-                },
-                EnumVariant {
                     name: "SET_HIGH_Z",
                     description: Some("Output goes to high-z state after a fault event"),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "SET_INACTIVE",
+                    description: Some("Output goes to inactive state after a fault event"),
+                    value: 2,
                 },
             ],
         },
@@ -3375,14 +3375,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "POSITIVE",
-                    description: Some("Positive deadtime (both outputs inactive during deadtime)"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "NEGATIVE",
                     description: Some("Negative deadtime (both outputs active during deadtime)"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "POSITIVE",
+                    description: Some("Positive deadtime (both outputs inactive during deadtime)"),
+                    value: 0,
                 },
             ],
         },
@@ -3397,14 +3397,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "INTERNAL",
-                    description: Some("Internal event: the HRTIM is synchronized with the on-chip timer"),
-                    value: 2,
-                },
-                EnumVariant {
                     name: "EXTERNAL",
                     description: Some("External event: a positive pulse on HRTIM_SCIN input triggers the HRTIM"),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "INTERNAL",
+                    description: Some("Internal event: the HRTIM is synchronized with the on-chip timer"),
+                    value: 2,
                 },
             ],
         },
@@ -3419,14 +3419,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "POSITIVE_PULSE",
-                    description: Some("Positive pulse on SCOUT output (16x f_HRTIM clock cycles)"),
-                    value: 2,
-                },
-                EnumVariant {
                     name: "NEGATIVE_PULSE",
                     description: Some("Negative pulse on SCOUT output (16x f_HRTIM clock cycles)"),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "POSITIVE_PULSE",
+                    description: Some("Positive pulse on SCOUT output (16x f_HRTIM clock cycles)"),
+                    value: 2,
                 },
             ],
         },
@@ -3436,24 +3436,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "MASTER_START",
-                    description: Some("Master timer Start"),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "MASTER_COMPARE1",
                     description: Some("Master timer Compare 1 event"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "TIMER_ASTART",
-                    description: Some("Timer A start/reset"),
-                    value: 2,
+                    name: "MASTER_START",
+                    description: Some("Master timer Start"),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "TIMER_ACOMPARE1",
                     description: Some("Timer A Compare 1 event"),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "TIMER_ASTART",
+                    description: Some("Timer A start/reset"),
+                    value: 2,
                 },
             ],
         },
@@ -3462,11 +3462,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 4,
             variants: &[
-                EnumVariant {
-                    name: "INDEPENDENT",
-                    description: Some("Update occurs independently from the DMA burst transfer"),
-                    value: 0,
-                },
                 EnumVariant {
                     name: "DMABURST",
                     description: Some("Update occurs when the DMA burst transfer is completed"),
@@ -3478,19 +3473,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
+                    name: "INDEPENDENT",
+                    description: Some("Update occurs independently from the DMA burst transfer"),
+                    value: 0,
+                },
+                EnumVariant {
                     name: "INPUT1",
                     description: Some("Update occurs on a rising edge of HRTIM update enable input 1"),
                     value: 3,
-                },
-                EnumVariant {
-                    name: "INPUT2",
-                    description: Some("Update occurs on a rising edge of HRTIM update enable input 2"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "INPUT3",
-                    description: Some("Update occurs on a rising edge of HRTIM update enable input 3"),
-                    value: 5,
                 },
                 EnumVariant {
                     name: "INPUT1_UPDATE",
@@ -3500,11 +3490,21 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 6,
                 },
                 EnumVariant {
+                    name: "INPUT2",
+                    description: Some("Update occurs on a rising edge of HRTIM update enable input 2"),
+                    value: 4,
+                },
+                EnumVariant {
                     name: "INPUT2_UPDATE",
                     description: Some(
                         "Update occurs on the update event following a rising edge of HRTIM update enable input 2",
                     ),
                     value: 7,
+                },
+                EnumVariant {
+                    name: "INPUT3",
+                    description: Some("Update occurs on a rising edge of HRTIM update enable input 3"),
+                    value: 5,
                 },
                 EnumVariant {
                     name: "INPUT3_UPDATE",

@@ -22,179 +22,179 @@ impl Fdcan {
     #[doc = "FDCAN core release register"]
     #[inline(always)]
     pub const fn crel(self) -> crate::common::Reg<regs::Crel, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "FDCAN endian register"]
     #[inline(always)]
     pub const fn endn(self) -> crate::common::Reg<regs::Endn, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "FDCAN data bit timing and prescaler register"]
     #[inline(always)]
     pub const fn dbtp(self) -> crate::common::Reg<regs::Dbtp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "FDCAN test register"]
     #[inline(always)]
     pub const fn test(self) -> crate::common::Reg<regs::Test, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "FDCAN RAM watchdog register"]
     #[inline(always)]
     pub const fn rwd(self) -> crate::common::Reg<regs::Rwd, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "FDCAN CC control register"]
     #[inline(always)]
     pub const fn cccr(self) -> crate::common::Reg<regs::Cccr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "FDCAN nominal bit timing and prescaler register"]
     #[inline(always)]
     pub const fn nbtp(self) -> crate::common::Reg<regs::Nbtp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "FDCAN timestamp counter configuration register"]
     #[inline(always)]
     pub const fn tscc(self) -> crate::common::Reg<regs::Tscc, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "FDCAN timestamp counter value register"]
     #[inline(always)]
     pub const fn tscv(self) -> crate::common::Reg<regs::Tscv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x24usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "FDCAN timeout counter configuration register"]
     #[inline(always)]
     pub const fn tocc(self) -> crate::common::Reg<regs::Tocc, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "FDCAN timeout counter value register"]
     #[inline(always)]
     pub const fn tocv(self) -> crate::common::Reg<regs::Tocv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
     }
     #[doc = "FDCAN error counter register"]
     #[inline(always)]
     pub const fn ecr(self) -> crate::common::Reg<regs::Ecr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
     }
     #[doc = "FDCAN protocol status register"]
     #[inline(always)]
     pub const fn psr(self) -> crate::common::Reg<regs::Psr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
     }
     #[doc = "FDCAN transmitter delay compensation register"]
     #[inline(always)]
     pub const fn tdcr(self) -> crate::common::Reg<regs::Tdcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
     }
     #[doc = "FDCAN interrupt register"]
     #[inline(always)]
     pub const fn ir(self) -> crate::common::Reg<regs::Ir, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
     }
     #[doc = "FDCAN interrupt enable register"]
     #[inline(always)]
     pub const fn ie(self) -> crate::common::Reg<regs::Ie, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x54usize) as _) }
     }
     #[doc = "FDCAN interrupt line select register"]
     #[inline(always)]
     pub const fn ils(self) -> crate::common::Reg<regs::Ils, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x58usize) as _) }
     }
     #[doc = "FDCAN interrupt line enable register"]
     #[inline(always)]
     pub const fn ile(self) -> crate::common::Reg<regs::Ile, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x5cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x5cusize) as _) }
     }
     #[doc = "FDCAN global filter configuration register"]
     #[inline(always)]
     pub const fn rxgfc(self) -> crate::common::Reg<regs::Rxgfc, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80usize) as _) }
     }
     #[doc = "FDCAN extended ID and mask register"]
     #[inline(always)]
     pub const fn xidam(self) -> crate::common::Reg<regs::Xidam, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x84usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x84usize) as _) }
     }
     #[doc = "FDCAN high-priority message status register"]
     #[inline(always)]
     pub const fn hpms(self) -> crate::common::Reg<regs::Hpms, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x88usize) as _) }
     }
     #[doc = "FDCAN Rx FIFO X status register"]
     #[inline(always)]
     pub const fn rxfs(self, n: usize) -> crate::common::Reg<regs::Rxfs, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize + ([0usize, 8usize][n] as usize)) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x90usize + ([0usize, 8usize][n] as usize)) as _) }
     }
     #[doc = "CAN Rx FIFO X acknowledge register"]
     #[inline(always)]
     pub const fn rxfa(self, n: usize) -> crate::common::Reg<regs::Rxfa, crate::common::RW> {
         assert!(n < 2usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x94usize + ([0usize, 8usize][n] as usize)) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x94usize + ([0usize, 8usize][n] as usize)) as _) }
     }
     #[doc = "FDCAN Tx buffer configuration register"]
     #[inline(always)]
     pub const fn txbc(self) -> crate::common::Reg<regs::Txbc, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xc0usize) as _) }
     }
     #[doc = "FDCAN Tx FIFO/queue status register"]
     #[inline(always)]
     pub const fn txfqs(self) -> crate::common::Reg<regs::Txfqs, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xc4usize) as _) }
     }
     #[doc = "FDCAN Tx buffer request pending register"]
     #[inline(always)]
     pub const fn txbrp(self) -> crate::common::Reg<regs::Txbrp, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xc8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xc8usize) as _) }
     }
     #[doc = "FDCAN Tx buffer add request register"]
     #[inline(always)]
     pub const fn txbar(self) -> crate::common::Reg<regs::Txbar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xccusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xccusize) as _) }
     }
     #[doc = "FDCAN Tx buffer cancellation request register"]
     #[inline(always)]
     pub const fn txbcr(self) -> crate::common::Reg<regs::Txbcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xd0usize) as _) }
     }
     #[doc = "FDCAN Tx buffer transmission occurred register"]
     #[inline(always)]
     pub const fn txbto(self) -> crate::common::Reg<regs::Txbto, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xd4usize) as _) }
     }
     #[doc = "FDCAN Tx buffer cancellation finished register"]
     #[inline(always)]
     pub const fn txbcf(self) -> crate::common::Reg<regs::Txbcf, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xd8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xd8usize) as _) }
     }
     #[doc = "FDCAN Tx buffer transmission interrupt enable register"]
     #[inline(always)]
     pub const fn txbtie(self) -> crate::common::Reg<regs::Txbtie, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xdcusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xdcusize) as _) }
     }
     #[doc = "FDCAN Tx buffer cancellation finished interrupt enable register"]
     #[inline(always)]
     pub const fn txbcie(self) -> crate::common::Reg<regs::Txbcie, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xe0usize) as _) }
     }
     #[doc = "FDCAN Tx event FIFO status register"]
     #[inline(always)]
     pub const fn txefs(self) -> crate::common::Reg<regs::Txefs, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe4usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xe4usize) as _) }
     }
     #[doc = "FDCAN Tx event FIFO acknowledge register"]
     #[inline(always)]
     pub const fn txefa(self) -> crate::common::Reg<regs::Txefa, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0xe8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xe8usize) as _) }
     }
     #[doc = "FDCAN CFG clock divider register"]
     #[inline(always)]
     pub const fn ckdiv(self) -> crate::common::Reg<regs::Ckdiv, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize) as _) }
     }
 }
 pub mod regs {
@@ -204,6 +204,7 @@ pub mod regs {
     pub struct Cccr(pub u32);
     impl Cccr {
         #[doc = "Initialization"]
+        #[must_use]
         #[inline(always)]
         pub const fn init(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -211,10 +212,11 @@ pub mod regs {
         }
         #[doc = "Initialization"]
         #[inline(always)]
-        pub fn set_init(&mut self, val: bool) {
+        pub const fn set_init(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Configuration change enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn cce(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -222,10 +224,11 @@ pub mod regs {
         }
         #[doc = "Configuration change enable"]
         #[inline(always)]
-        pub fn set_cce(&mut self, val: bool) {
+        pub const fn set_cce(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "ASM restricted operation mode. The restricted operation mode is intended for applications that adapt themselves to different CAN bit rates. The application tests different bit rates and leaves the Restricted operation Mode after it has received a valid frame. In the optional Restricted operation Mode the node is able to transmit and receive data and remote frames and it gives acknowledge to valid frames, but it does not send active error frames or overload frames. In case of an error condition or overload condition, it does not send dominant bits, instead it waits for the occurrence of bus idle condition to resynchronize itself to the CAN communication. The error counters are not incremented. Bit ASM can only be set by software when both CCE and INIT are set to 1. The bit can be reset by the software at any time"]
+        #[must_use]
         #[inline(always)]
         pub const fn asm(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -233,10 +236,11 @@ pub mod regs {
         }
         #[doc = "ASM restricted operation mode. The restricted operation mode is intended for applications that adapt themselves to different CAN bit rates. The application tests different bit rates and leaves the Restricted operation Mode after it has received a valid frame. In the optional Restricted operation Mode the node is able to transmit and receive data and remote frames and it gives acknowledge to valid frames, but it does not send active error frames or overload frames. In case of an error condition or overload condition, it does not send dominant bits, instead it waits for the occurrence of bus idle condition to resynchronize itself to the CAN communication. The error counters are not incremented. Bit ASM can only be set by software when both CCE and INIT are set to 1. The bit can be reset by the software at any time"]
         #[inline(always)]
-        pub fn set_asm(&mut self, val: bool) {
+        pub const fn set_asm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Clock stop acknowledge"]
+        #[must_use]
         #[inline(always)]
         pub const fn csa(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -244,10 +248,11 @@ pub mod regs {
         }
         #[doc = "Clock stop acknowledge"]
         #[inline(always)]
-        pub fn set_csa(&mut self, val: bool) {
+        pub const fn set_csa(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Clock stop request"]
+        #[must_use]
         #[inline(always)]
         pub const fn csr(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -255,10 +260,11 @@ pub mod regs {
         }
         #[doc = "Clock stop request"]
         #[inline(always)]
-        pub fn set_csr(&mut self, val: bool) {
+        pub const fn set_csr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Bus monitoring mode. Bit MON can only be set by software when both CCE and INIT are set to 1. The bit can be reset by the Host at any time"]
+        #[must_use]
         #[inline(always)]
         pub const fn mon(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -266,10 +272,11 @@ pub mod regs {
         }
         #[doc = "Bus monitoring mode. Bit MON can only be set by software when both CCE and INIT are set to 1. The bit can be reset by the Host at any time"]
         #[inline(always)]
-        pub fn set_mon(&mut self, val: bool) {
+        pub const fn set_mon(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Disable automatic retransmission"]
+        #[must_use]
         #[inline(always)]
         pub const fn dar(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -277,10 +284,11 @@ pub mod regs {
         }
         #[doc = "Disable automatic retransmission"]
         #[inline(always)]
-        pub fn set_dar(&mut self, val: bool) {
+        pub const fn set_dar(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Test mode enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn test(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -288,10 +296,11 @@ pub mod regs {
         }
         #[doc = "Test mode enable"]
         #[inline(always)]
-        pub fn set_test(&mut self, val: bool) {
+        pub const fn set_test(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "FD operation enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn fdoe(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -299,10 +308,11 @@ pub mod regs {
         }
         #[doc = "FD operation enable"]
         #[inline(always)]
-        pub fn set_fdoe(&mut self, val: bool) {
+        pub const fn set_fdoe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "FDCAN bit rate switching"]
+        #[must_use]
         #[inline(always)]
         pub const fn brse(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -310,10 +320,11 @@ pub mod regs {
         }
         #[doc = "FDCAN bit rate switching"]
         #[inline(always)]
-        pub fn set_brse(&mut self, val: bool) {
+        pub const fn set_brse(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Protocol exception handling disable"]
+        #[must_use]
         #[inline(always)]
         pub const fn pxhd(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -321,10 +332,11 @@ pub mod regs {
         }
         #[doc = "Protocol exception handling disable"]
         #[inline(always)]
-        pub fn set_pxhd(&mut self, val: bool) {
+        pub const fn set_pxhd(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Edge filtering during bus integration"]
+        #[must_use]
         #[inline(always)]
         pub const fn efbi(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -332,10 +344,11 @@ pub mod regs {
         }
         #[doc = "Edge filtering during bus integration"]
         #[inline(always)]
-        pub fn set_efbi(&mut self, val: bool) {
+        pub const fn set_efbi(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "If this bit is set, the FDCAN pauses for two CAN bit times before starting the next transmission after successfully transmitting a frame"]
+        #[must_use]
         #[inline(always)]
         pub const fn txp(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -343,10 +356,11 @@ pub mod regs {
         }
         #[doc = "If this bit is set, the FDCAN pauses for two CAN bit times before starting the next transmission after successfully transmitting a frame"]
         #[inline(always)]
-        pub fn set_txp(&mut self, val: bool) {
+        pub const fn set_txp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Non ISO operation. If this bit is set, the FDCAN uses the CAN FD frame format as specified by the Bosch CAN FD Specification V1.0"]
+        #[must_use]
         #[inline(always)]
         pub const fn niso(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -354,7 +368,7 @@ pub mod regs {
         }
         #[doc = "Non ISO operation. If this bit is set, the FDCAN uses the CAN FD frame format as specified by the Bosch CAN FD Specification V1.0"]
         #[inline(always)]
-        pub fn set_niso(&mut self, val: bool) {
+        pub const fn set_niso(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }
@@ -398,6 +412,7 @@ pub mod regs {
         #[doc = "input clock divider. The APB clock could be divided prior to be used by the CAN sub system. The rate must be computed using the divider output clock. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn pdiv(&self) -> super::vals::Pdiv {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -407,7 +422,7 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_pdiv(&mut self, val: super::vals::Pdiv) {
+        pub const fn set_pdiv(&mut self, val: super::vals::Pdiv) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val.to_bits() as u32) & 0x0f) << 0usize);
         }
     }
@@ -434,6 +449,7 @@ of CCCR register are set to 1"]
     pub struct Crel(pub u32);
     impl Crel {
         #[doc = "DAY"]
+        #[must_use]
         #[inline(always)]
         pub const fn day(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -441,10 +457,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "DAY"]
         #[inline(always)]
-        pub fn set_day(&mut self, val: u8) {
+        pub const fn set_day(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "MON"]
+        #[must_use]
         #[inline(always)]
         pub const fn mon(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -452,10 +469,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "MON"]
         #[inline(always)]
-        pub fn set_mon(&mut self, val: u8) {
+        pub const fn set_mon(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "YEAR"]
+        #[must_use]
         #[inline(always)]
         pub const fn year(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x0f;
@@ -463,10 +481,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "YEAR"]
         #[inline(always)]
-        pub fn set_year(&mut self, val: u8) {
+        pub const fn set_year(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 16usize)) | (((val as u32) & 0x0f) << 16usize);
         }
         #[doc = "SUBSTEP"]
+        #[must_use]
         #[inline(always)]
         pub const fn substep(&self) -> u8 {
             let val = (self.0 >> 20usize) & 0x0f;
@@ -474,10 +493,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "SUBSTEP"]
         #[inline(always)]
-        pub fn set_substep(&mut self, val: u8) {
+        pub const fn set_substep(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 20usize)) | (((val as u32) & 0x0f) << 20usize);
         }
         #[doc = "STEP"]
+        #[must_use]
         #[inline(always)]
         pub const fn step(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x0f;
@@ -485,10 +505,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "STEP"]
         #[inline(always)]
-        pub fn set_step(&mut self, val: u8) {
+        pub const fn set_step(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
         }
         #[doc = "REL"]
+        #[must_use]
         #[inline(always)]
         pub const fn rel(&self) -> u8 {
             let val = (self.0 >> 28usize) & 0x0f;
@@ -496,7 +517,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "REL"]
         #[inline(always)]
-        pub fn set_rel(&mut self, val: u8) {
+        pub const fn set_rel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 28usize)) | (((val as u32) & 0x0f) << 28usize);
         }
     }
@@ -539,6 +560,7 @@ of CCCR register are set to 1"]
     pub struct Dbtp(pub u32);
     impl Dbtp {
         #[doc = "Synchronization jump width. Must always be smaller than DTSEG2, valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1: tSJW = (DSJW + 1) x tq."]
+        #[must_use]
         #[inline(always)]
         pub const fn dsjw(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -546,10 +568,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Synchronization jump width. Must always be smaller than DTSEG2, valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1: tSJW = (DSJW + 1) x tq."]
         #[inline(always)]
-        pub fn set_dsjw(&mut self, val: u8) {
+        pub const fn set_dsjw(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "Data time segment after sample point. Valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1, i.e. tBS2 = (DTSEG2 + 1) x tq"]
+        #[must_use]
         #[inline(always)]
         pub const fn dtseg2(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -557,10 +580,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Data time segment after sample point. Valid values are 0 to 15. The value used by the hardware is the one programmed, incremented by 1, i.e. tBS2 = (DTSEG2 + 1) x tq"]
         #[inline(always)]
-        pub fn set_dtseg2(&mut self, val: u8) {
+        pub const fn set_dtseg2(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
         #[doc = "Data time segment before sample point. Valid values are 0 to 31. The value used by the hardware is the one programmed, incremented by 1, i.e. tBS1 = (DTSEG1 + 1) x tq"]
+        #[must_use]
         #[inline(always)]
         pub const fn dtseg1(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x1f;
@@ -568,10 +592,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Data time segment before sample point. Valid values are 0 to 31. The value used by the hardware is the one programmed, incremented by 1, i.e. tBS1 = (DTSEG1 + 1) x tq"]
         #[inline(always)]
-        pub fn set_dtseg1(&mut self, val: u8) {
+        pub const fn set_dtseg1(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
         }
         #[doc = "Data bit rate prescaler. The value by which the oscillator frequency is divided to generate the bit time quanta. The bit time is built up from a multiple of this quanta. Valid values for the Baud Rate Prescaler are 0 to 31. The hardware interpreters this value as the value programmed plus 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn dbrp(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x1f;
@@ -579,10 +604,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Data bit rate prescaler. The value by which the oscillator frequency is divided to generate the bit time quanta. The bit time is built up from a multiple of this quanta. Valid values for the Baud Rate Prescaler are 0 to 31. The hardware interpreters this value as the value programmed plus 1"]
         #[inline(always)]
-        pub fn set_dbrp(&mut self, val: u8) {
+        pub const fn set_dbrp(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
         }
         #[doc = "Transceiver delay compensation"]
+        #[must_use]
         #[inline(always)]
         pub const fn tdc(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -590,7 +616,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Transceiver delay compensation"]
         #[inline(always)]
-        pub fn set_tdc(&mut self, val: bool) {
+        pub const fn set_tdc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
     }
@@ -631,6 +657,7 @@ of CCCR register are set to 1"]
     pub struct Ecr(pub u32);
     impl Ecr {
         #[doc = "Transmit error counter. Actual state of the transmit error counter, values between 0 and 255. When CCCR.ASM is set, the CAN protocol controller does not increment TEC and REC when a CAN protocol error is detected, but CEL is still incremented"]
+        #[must_use]
         #[inline(always)]
         pub const fn tec(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -638,10 +665,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Transmit error counter. Actual state of the transmit error counter, values between 0 and 255. When CCCR.ASM is set, the CAN protocol controller does not increment TEC and REC when a CAN protocol error is detected, but CEL is still incremented"]
         #[inline(always)]
-        pub fn set_tec(&mut self, val: u8) {
+        pub const fn set_tec(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "Receive error counter. Actual state of the receive error counter, values between 0 and 127"]
+        #[must_use]
         #[inline(always)]
         pub const fn rec(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x7f;
@@ -649,10 +677,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Receive error counter. Actual state of the receive error counter, values between 0 and 127"]
         #[inline(always)]
-        pub fn set_rec(&mut self, val: u8) {
+        pub const fn set_rec(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 8usize)) | (((val as u32) & 0x7f) << 8usize);
         }
         #[doc = "Receive error passive"]
+        #[must_use]
         #[inline(always)]
         pub const fn rp(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -660,10 +689,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Receive error passive"]
         #[inline(always)]
-        pub fn set_rp(&mut self, val: bool) {
+        pub const fn set_rp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "CAN error logging. The counter is incremented each time when a CAN protocol error causes the transmit error counter or the receive error counter to be incremented. It is reset by read access to CEL. The counter stops at 0xFF; the next increment of TEC or REC sets interrupt flag IR\\[ELO\\]. Access type is RX: reset on read."]
+        #[must_use]
         #[inline(always)]
         pub const fn cel(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
@@ -671,7 +701,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "CAN error logging. The counter is incremented each time when a CAN protocol error causes the transmit error counter or the receive error counter to be incremented. It is reset by read access to CEL. The counter stops at 0xFF; the next increment of TEC or REC sets interrupt flag IR\\[ELO\\]. Access type is RX: reset on read."]
         #[inline(always)]
-        pub fn set_cel(&mut self, val: u8) {
+        pub const fn set_cel(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
     }
@@ -710,6 +740,7 @@ of CCCR register are set to 1"]
     pub struct Endn(pub u32);
     impl Endn {
         #[doc = "Endianness test value. The endianness test value is 0x8765 4321"]
+        #[must_use]
         #[inline(always)]
         pub const fn etv(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0xffff_ffff;
@@ -717,7 +748,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Endianness test value. The endianness test value is 0x8765 4321"]
         #[inline(always)]
-        pub fn set_etv(&mut self, val: u32) {
+        pub const fn set_etv(&mut self, val: u32) {
             self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
         }
     }
@@ -745,6 +776,7 @@ of CCCR register are set to 1"]
     impl Hpms {
         #[doc = "Buffer index. Index of Rx FIFO element to which the message was stored. Only valid when MSI\\[1\\]
 = 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn bidx(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -753,10 +785,11 @@ of CCCR register are set to 1"]
         #[doc = "Buffer index. Index of Rx FIFO element to which the message was stored. Only valid when MSI\\[1\\]
 = 1"]
         #[inline(always)]
-        pub fn set_bidx(&mut self, val: u8) {
+        pub const fn set_bidx(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Message storage indicator"]
+        #[must_use]
         #[inline(always)]
         pub const fn msi(&self) -> super::vals::Msi {
             let val = (self.0 >> 6usize) & 0x03;
@@ -764,12 +797,13 @@ of CCCR register are set to 1"]
         }
         #[doc = "Message storage indicator"]
         #[inline(always)]
-        pub fn set_msi(&mut self, val: super::vals::Msi) {
+        pub const fn set_msi(&mut self, val: super::vals::Msi) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
         }
         #[doc = "Filter index. Index of matching filter element. Range is 0 to RXGFC\\[LSS\\]
 - 1 or RXGFC\\[LSE\\]
 - 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn fidx(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x1f;
@@ -779,10 +813,11 @@ of CCCR register are set to 1"]
 - 1 or RXGFC\\[LSE\\]
 - 1"]
         #[inline(always)]
-        pub fn set_fidx(&mut self, val: u8) {
+        pub const fn set_fidx(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
         }
         #[doc = "Filter list. Indicates the filter list of the matching filter element"]
+        #[must_use]
         #[inline(always)]
         pub const fn flst(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -790,7 +825,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Filter list. Indicates the filter list of the matching filter element"]
         #[inline(always)]
-        pub fn set_flst(&mut self, val: bool) {
+        pub const fn set_flst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }
@@ -829,6 +864,7 @@ of CCCR register are set to 1"]
     pub struct Ie(pub u32);
     impl Ie {
         #[doc = "Rx FIFO X new message interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn rfne(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -838,12 +874,13 @@ of CCCR register are set to 1"]
         }
         #[doc = "Rx FIFO X new message interrupt enable"]
         #[inline(always)]
-        pub fn set_rfne(&mut self, n: usize, val: bool) {
+        pub const fn set_rfne(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 0usize + ([0usize, 3usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Rx FIFO X full interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn rffe(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -853,12 +890,13 @@ of CCCR register are set to 1"]
         }
         #[doc = "Rx FIFO X full interrupt enable"]
         #[inline(always)]
-        pub fn set_rffe(&mut self, n: usize, val: bool) {
+        pub const fn set_rffe(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 1usize + ([0usize, 3usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Rx FIFO X message lost interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn rfle(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -868,12 +906,13 @@ of CCCR register are set to 1"]
         }
         #[doc = "Rx FIFO X message lost interrupt enable"]
         #[inline(always)]
-        pub fn set_rfle(&mut self, n: usize, val: bool) {
+        pub const fn set_rfle(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 2usize + ([0usize, 3usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "High-priority message interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn hpme(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -881,10 +920,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "High-priority message interrupt enable"]
         #[inline(always)]
-        pub fn set_hpme(&mut self, val: bool) {
+        pub const fn set_hpme(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Transmission completed interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn tce(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -892,10 +932,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Transmission completed interrupt enable"]
         #[inline(always)]
-        pub fn set_tce(&mut self, val: bool) {
+        pub const fn set_tce(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Transmission cancellation finished interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn tcfe(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -903,10 +944,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Transmission cancellation finished interrupt enable"]
         #[inline(always)]
-        pub fn set_tcfe(&mut self, val: bool) {
+        pub const fn set_tcfe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Tx FIFO empty interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn tfee(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -914,10 +956,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Tx FIFO empty interrupt enable"]
         #[inline(always)]
-        pub fn set_tfee(&mut self, val: bool) {
+        pub const fn set_tfee(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Tx event FIFO new entry interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn tefne(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -925,10 +968,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Tx event FIFO new entry interrupt enable"]
         #[inline(always)]
-        pub fn set_tefne(&mut self, val: bool) {
+        pub const fn set_tefne(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Tx event FIFO full interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn teffe(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -936,10 +980,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Tx event FIFO full interrupt enable"]
         #[inline(always)]
-        pub fn set_teffe(&mut self, val: bool) {
+        pub const fn set_teffe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Tx event FIFO element lost interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn tefle(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -947,10 +992,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Tx event FIFO element lost interrupt enable"]
         #[inline(always)]
-        pub fn set_tefle(&mut self, val: bool) {
+        pub const fn set_tefle(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Timestamp wraparound interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn tswe(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -958,10 +1004,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Timestamp wraparound interrupt enable"]
         #[inline(always)]
-        pub fn set_tswe(&mut self, val: bool) {
+        pub const fn set_tswe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Message RAM access failure interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn mrafe(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -969,10 +1016,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Message RAM access failure interrupt enable"]
         #[inline(always)]
-        pub fn set_mrafe(&mut self, val: bool) {
+        pub const fn set_mrafe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Timeout occurred interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn tooe(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -980,10 +1028,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Timeout occurred interrupt enable"]
         #[inline(always)]
-        pub fn set_tooe(&mut self, val: bool) {
+        pub const fn set_tooe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Error logging overflow interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn eloe(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -991,10 +1040,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Error logging overflow interrupt enable"]
         #[inline(always)]
-        pub fn set_eloe(&mut self, val: bool) {
+        pub const fn set_eloe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Error passive interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn epe(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -1002,10 +1052,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Error passive interrupt enable"]
         #[inline(always)]
-        pub fn set_epe(&mut self, val: bool) {
+        pub const fn set_epe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "Warning status interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn ewe(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -1013,10 +1064,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Warning status interrupt enable"]
         #[inline(always)]
-        pub fn set_ewe(&mut self, val: bool) {
+        pub const fn set_ewe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Bus_Off status enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn boe(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -1024,10 +1076,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Bus_Off status enable"]
         #[inline(always)]
-        pub fn set_boe(&mut self, val: bool) {
+        pub const fn set_boe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "Watchdog interrupt enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn wdie(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -1035,10 +1088,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Watchdog interrupt enable"]
         #[inline(always)]
-        pub fn set_wdie(&mut self, val: bool) {
+        pub const fn set_wdie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "Protocol error in arbitration phase enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn peae(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -1046,10 +1100,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Protocol error in arbitration phase enable"]
         #[inline(always)]
-        pub fn set_peae(&mut self, val: bool) {
+        pub const fn set_peae(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "Protocol error in data phase enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn pede(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -1057,10 +1112,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Protocol error in data phase enable"]
         #[inline(always)]
-        pub fn set_pede(&mut self, val: bool) {
+        pub const fn set_pede(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "Access to reserved address enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn arae(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -1068,7 +1124,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Access to reserved address enable"]
         #[inline(always)]
-        pub fn set_arae(&mut self, val: bool) {
+        pub const fn set_arae(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
     }
@@ -1120,6 +1176,7 @@ of CCCR register are set to 1"]
     pub struct Ile(pub u32);
     impl Ile {
         #[doc = "Enable interrupt line 0"]
+        #[must_use]
         #[inline(always)]
         pub const fn eint0(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1127,10 +1184,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Enable interrupt line 0"]
         #[inline(always)]
-        pub fn set_eint0(&mut self, val: bool) {
+        pub const fn set_eint0(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Enable interrupt line 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn eint1(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1138,7 +1196,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Enable interrupt line 1"]
         #[inline(always)]
-        pub fn set_eint1(&mut self, val: bool) {
+        pub const fn set_eint1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -1173,6 +1231,7 @@ of CCCR register are set to 1"]
     pub struct Ils(pub u32);
     impl Ils {
         #[doc = "RX FIFO bit grouping the following interruption. RFLL: Rx FIFO X message lost interrupt line RFFL: Rx FIFO X full interrupt line RFNL: Rx FIFO X new message interrupt line."]
+        #[must_use]
         #[inline(always)]
         pub const fn rxfifo(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -1182,12 +1241,13 @@ of CCCR register are set to 1"]
         }
         #[doc = "RX FIFO bit grouping the following interruption. RFLL: Rx FIFO X message lost interrupt line RFFL: Rx FIFO X full interrupt line RFNL: Rx FIFO X new message interrupt line."]
         #[inline(always)]
-        pub fn set_rxfifo(&mut self, n: usize, val: bool) {
+        pub const fn set_rxfifo(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Status message bit grouping the following interruption. TCFL: Transmission cancellation finished interrupt line TCL: Transmission completed interrupt line HPML: High-priority message interrupt line."]
+        #[must_use]
         #[inline(always)]
         pub const fn smsg(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1195,10 +1255,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Status message bit grouping the following interruption. TCFL: Transmission cancellation finished interrupt line TCL: Transmission completed interrupt line HPML: High-priority message interrupt line."]
         #[inline(always)]
-        pub fn set_smsg(&mut self, val: bool) {
+        pub const fn set_smsg(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Tx FIFO ERROR grouping the following interruption. TEFLL: Tx event FIFO element lost interrupt line TEFFL: Tx event FIFO full interrupt line TEFNL: Tx event FIFO new entry interrupt line TFEL: Tx FIFO empty interrupt line."]
+        #[must_use]
         #[inline(always)]
         pub const fn tferr(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -1206,10 +1267,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Tx FIFO ERROR grouping the following interruption. TEFLL: Tx event FIFO element lost interrupt line TEFFL: Tx event FIFO full interrupt line TEFNL: Tx event FIFO new entry interrupt line TFEL: Tx FIFO empty interrupt line."]
         #[inline(always)]
-        pub fn set_tferr(&mut self, val: bool) {
+        pub const fn set_tferr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "Interrupt regrouping the following interruption. TOOL: Timeout occurred interrupt line MRAFL: Message RAM access failure interrupt line TSWL: Timestamp wraparound interrupt line."]
+        #[must_use]
         #[inline(always)]
         pub const fn misc(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1217,10 +1279,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Interrupt regrouping the following interruption. TOOL: Timeout occurred interrupt line MRAFL: Message RAM access failure interrupt line TSWL: Timestamp wraparound interrupt line."]
         #[inline(always)]
-        pub fn set_misc(&mut self, val: bool) {
+        pub const fn set_misc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Bit and line error grouping the following interruption. EPL Error passive interrupt line ELOL: Error logging overflow interrupt line."]
+        #[must_use]
         #[inline(always)]
         pub const fn berr(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1228,10 +1291,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Bit and line error grouping the following interruption. EPL Error passive interrupt line ELOL: Error logging overflow interrupt line."]
         #[inline(always)]
-        pub fn set_berr(&mut self, val: bool) {
+        pub const fn set_berr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Protocol error grouping the following interruption. ARAL: Access to reserved address line PEDL: Protocol error in data phase line PEAL: Protocol error in arbitration phase line WDIL: Watchdog interrupt line BOL: Bus_Off status EWL: Warning status interrupt line."]
+        #[must_use]
         #[inline(always)]
         pub const fn perr(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -1239,7 +1303,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Protocol error grouping the following interruption. ARAL: Access to reserved address line PEDL: Protocol error in data phase line PEAL: Protocol error in arbitration phase line WDIL: Watchdog interrupt line BOL: Bus_Off status EWL: Warning status interrupt line."]
         #[inline(always)]
-        pub fn set_perr(&mut self, val: bool) {
+        pub const fn set_perr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
     }
@@ -1274,6 +1338,7 @@ of CCCR register are set to 1"]
     pub struct Ir(pub u32);
     impl Ir {
         #[doc = "Rx FIFO X new message"]
+        #[must_use]
         #[inline(always)]
         pub const fn rfn(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -1283,12 +1348,13 @@ of CCCR register are set to 1"]
         }
         #[doc = "Rx FIFO X new message"]
         #[inline(always)]
-        pub fn set_rfn(&mut self, n: usize, val: bool) {
+        pub const fn set_rfn(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 0usize + ([0usize, 3usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Rx FIFO X full"]
+        #[must_use]
         #[inline(always)]
         pub const fn rff(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -1298,12 +1364,13 @@ of CCCR register are set to 1"]
         }
         #[doc = "Rx FIFO X full"]
         #[inline(always)]
-        pub fn set_rff(&mut self, n: usize, val: bool) {
+        pub const fn set_rff(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 1usize + ([0usize, 3usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Rx FIFO X message lost"]
+        #[must_use]
         #[inline(always)]
         pub const fn rfl(&self, n: usize) -> bool {
             assert!(n < 2usize);
@@ -1313,12 +1380,13 @@ of CCCR register are set to 1"]
         }
         #[doc = "Rx FIFO X message lost"]
         #[inline(always)]
-        pub fn set_rfl(&mut self, n: usize, val: bool) {
+        pub const fn set_rfl(&mut self, n: usize, val: bool) {
             assert!(n < 2usize);
             let offs = 2usize + ([0usize, 3usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "High-priority message"]
+        #[must_use]
         #[inline(always)]
         pub const fn hpm(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -1326,10 +1394,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "High-priority message"]
         #[inline(always)]
-        pub fn set_hpm(&mut self, val: bool) {
+        pub const fn set_hpm(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Transmission completed"]
+        #[must_use]
         #[inline(always)]
         pub const fn tc(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1337,10 +1406,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Transmission completed"]
         #[inline(always)]
-        pub fn set_tc(&mut self, val: bool) {
+        pub const fn set_tc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Transmission cancellation finished"]
+        #[must_use]
         #[inline(always)]
         pub const fn tcf(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -1348,10 +1418,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Transmission cancellation finished"]
         #[inline(always)]
-        pub fn set_tcf(&mut self, val: bool) {
+        pub const fn set_tcf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Tx FIFO empty"]
+        #[must_use]
         #[inline(always)]
         pub const fn tfe(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -1359,10 +1430,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Tx FIFO empty"]
         #[inline(always)]
-        pub fn set_tfe(&mut self, val: bool) {
+        pub const fn set_tfe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "Tx event FIFO New Entry"]
+        #[must_use]
         #[inline(always)]
         pub const fn tefn(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -1370,10 +1442,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Tx event FIFO New Entry"]
         #[inline(always)]
-        pub fn set_tefn(&mut self, val: bool) {
+        pub const fn set_tefn(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "Tx event FIFO full"]
+        #[must_use]
         #[inline(always)]
         pub const fn teff(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1381,10 +1454,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Tx event FIFO full"]
         #[inline(always)]
-        pub fn set_teff(&mut self, val: bool) {
+        pub const fn set_teff(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "Tx event FIFO element lost"]
+        #[must_use]
         #[inline(always)]
         pub const fn tefl(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -1392,10 +1466,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Tx event FIFO element lost"]
         #[inline(always)]
-        pub fn set_tefl(&mut self, val: bool) {
+        pub const fn set_tefl(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Timestamp wraparound"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsw(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -1403,10 +1478,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Timestamp wraparound"]
         #[inline(always)]
-        pub fn set_tsw(&mut self, val: bool) {
+        pub const fn set_tsw(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Message RAM access failure. The flag is set when the Rx handler: has not completed acceptance filtering or storage of an accepted message until the arbitration field of the following message has been received. In this case acceptance filtering or message storage is aborted and the Rx handler starts processing of the following message. was unable to write a message to the message RAM. In this case message storage is aborted. In both cases the FIFO put index is not updated. The partly stored message is overwritten when the next message is stored to this location. The flag is also set when the Tx Handler was not able to read a message from the Message RAM in time. In this case message transmission is aborted. In case of a Tx Handler access failure the FDCAN is switched into Restricted operation Mode (see mode). To leave Restricted operation Mode, the Host CPU has to reset CCCR.ASM."]
+        #[must_use]
         #[inline(always)]
         pub const fn mraf(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -1414,10 +1490,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Message RAM access failure. The flag is set when the Rx handler: has not completed acceptance filtering or storage of an accepted message until the arbitration field of the following message has been received. In this case acceptance filtering or message storage is aborted and the Rx handler starts processing of the following message. was unable to write a message to the message RAM. In this case message storage is aborted. In both cases the FIFO put index is not updated. The partly stored message is overwritten when the next message is stored to this location. The flag is also set when the Tx Handler was not able to read a message from the Message RAM in time. In this case message transmission is aborted. In case of a Tx Handler access failure the FDCAN is switched into Restricted operation Mode (see mode). To leave Restricted operation Mode, the Host CPU has to reset CCCR.ASM."]
         #[inline(always)]
-        pub fn set_mraf(&mut self, val: bool) {
+        pub const fn set_mraf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Timeout occurred"]
+        #[must_use]
         #[inline(always)]
         pub const fn too(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -1425,10 +1502,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Timeout occurred"]
         #[inline(always)]
-        pub fn set_too(&mut self, val: bool) {
+        pub const fn set_too(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Error logging overflow"]
+        #[must_use]
         #[inline(always)]
         pub const fn elo(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1436,10 +1514,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Error logging overflow"]
         #[inline(always)]
-        pub fn set_elo(&mut self, val: bool) {
+        pub const fn set_elo(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Error passive"]
+        #[must_use]
         #[inline(always)]
         pub const fn ep(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -1447,10 +1526,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Error passive"]
         #[inline(always)]
-        pub fn set_ep(&mut self, val: bool) {
+        pub const fn set_ep(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "Warning status"]
+        #[must_use]
         #[inline(always)]
         pub const fn ew(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -1458,10 +1538,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Warning status"]
         #[inline(always)]
-        pub fn set_ew(&mut self, val: bool) {
+        pub const fn set_ew(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Bus_Off status"]
+        #[must_use]
         #[inline(always)]
         pub const fn bo(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -1469,10 +1550,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Bus_Off status"]
         #[inline(always)]
-        pub fn set_bo(&mut self, val: bool) {
+        pub const fn set_bo(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "Watchdog interrupt"]
+        #[must_use]
         #[inline(always)]
         pub const fn wdi(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -1480,10 +1562,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Watchdog interrupt"]
         #[inline(always)]
-        pub fn set_wdi(&mut self, val: bool) {
+        pub const fn set_wdi(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "Protocol error in arbitration phase (nominal bit time is used)"]
+        #[must_use]
         #[inline(always)]
         pub const fn pea(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -1491,10 +1574,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Protocol error in arbitration phase (nominal bit time is used)"]
         #[inline(always)]
-        pub fn set_pea(&mut self, val: bool) {
+        pub const fn set_pea(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "Protocol error in data phase (data bit time is used)"]
+        #[must_use]
         #[inline(always)]
         pub const fn ped(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -1502,10 +1586,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Protocol error in data phase (data bit time is used)"]
         #[inline(always)]
-        pub fn set_ped(&mut self, val: bool) {
+        pub const fn set_ped(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "Access to reserved address"]
+        #[must_use]
         #[inline(always)]
         pub const fn ara(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -1513,7 +1598,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Access to reserved address"]
         #[inline(always)]
-        pub fn set_ara(&mut self, val: bool) {
+        pub const fn set_ara(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
     }
@@ -1565,6 +1650,7 @@ of CCCR register are set to 1"]
     pub struct Nbtp(pub u32);
     impl Nbtp {
         #[doc = "Nominal time segment after sample point. Valid values are 0 to 127. The actual interpretation by the hardware of this value is such that one more than the programmed value is used"]
+        #[must_use]
         #[inline(always)]
         pub const fn ntseg2(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -1572,12 +1658,13 @@ of CCCR register are set to 1"]
         }
         #[doc = "Nominal time segment after sample point. Valid values are 0 to 127. The actual interpretation by the hardware of this value is such that one more than the programmed value is used"]
         #[inline(always)]
-        pub fn set_ntseg2(&mut self, val: u8) {
+        pub const fn set_ntseg2(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "Nominal time segment before sample point. Valid values are 0 to 255. The actual interpretation by the hardware of this value is such that one more than the programmed value is used. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn ntseg1(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -1587,12 +1674,13 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_ntseg1(&mut self, val: u8) {
+        pub const fn set_ntseg1(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "Bit rate prescaler. Value by which the oscillator frequency is divided for generating the bit time quanta. The bit time is built up from a multiple of this quanta. Valid values are 0 to 511. The actual interpretation by the hardware of this value is such that one more than the value programmed here is used. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn nbrp(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0x01ff;
@@ -1602,12 +1690,13 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_nbrp(&mut self, val: u16) {
+        pub const fn set_nbrp(&mut self, val: u16) {
             self.0 = (self.0 & !(0x01ff << 16usize)) | (((val as u32) & 0x01ff) << 16usize);
         }
         #[doc = "Nominal (re)synchronization jump width. Valid values are 0 to 127. The actual interpretation by the hardware of this value is such that the used value is the one programmed incremented by one. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn nsjw(&self) -> u8 {
             let val = (self.0 >> 25usize) & 0x7f;
@@ -1617,7 +1706,7 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_nsjw(&mut self, val: u8) {
+        pub const fn set_nsjw(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 25usize)) | (((val as u32) & 0x7f) << 25usize);
         }
     }
@@ -1656,6 +1745,7 @@ of CCCR register are set to 1"]
     pub struct Psr(pub u32);
     impl Psr {
         #[doc = "Last error code. The LEC indicates the type of the last error to occur on the CAN bus. This field is cleared to 0 when a message has been transferred (reception or transmission) without error. Access type is RS: set on read."]
+        #[must_use]
         #[inline(always)]
         pub const fn lec(&self) -> super::vals::Lec {
             let val = (self.0 >> 0usize) & 0x07;
@@ -1663,10 +1753,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Last error code. The LEC indicates the type of the last error to occur on the CAN bus. This field is cleared to 0 when a message has been transferred (reception or transmission) without error. Access type is RS: set on read."]
         #[inline(always)]
-        pub fn set_lec(&mut self, val: super::vals::Lec) {
+        pub const fn set_lec(&mut self, val: super::vals::Lec) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "Activity. Monitors the module’s CAN communication state"]
+        #[must_use]
         #[inline(always)]
         pub const fn act(&self) -> super::vals::Act {
             let val = (self.0 >> 3usize) & 0x03;
@@ -1674,10 +1765,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Activity. Monitors the module’s CAN communication state"]
         #[inline(always)]
-        pub fn set_act(&mut self, val: super::vals::Act) {
+        pub const fn set_act(&mut self, val: super::vals::Act) {
             self.0 = (self.0 & !(0x03 << 3usize)) | (((val.to_bits() as u32) & 0x03) << 3usize);
         }
         #[doc = "Error passive"]
+        #[must_use]
         #[inline(always)]
         pub const fn ep(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1685,10 +1777,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Error passive"]
         #[inline(always)]
-        pub fn set_ep(&mut self, val: bool) {
+        pub const fn set_ep(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Warning Sstatus"]
+        #[must_use]
         #[inline(always)]
         pub const fn ew(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -1696,10 +1789,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Warning Sstatus"]
         #[inline(always)]
-        pub fn set_ew(&mut self, val: bool) {
+        pub const fn set_ew(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "Bus_Off status"]
+        #[must_use]
         #[inline(always)]
         pub const fn bo(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1707,10 +1801,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Bus_Off status"]
         #[inline(always)]
-        pub fn set_bo(&mut self, val: bool) {
+        pub const fn set_bo(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Data last error code. Type of last error that occurred in the data phase of a FDCAN format frame with its BRS flag set. Coding is the same as for LEC. This field is cleared to 0 when a FDCAN format frame with its BRS flag set has been transferred (reception or transmission) without error. Access type is RS: set on read."]
+        #[must_use]
         #[inline(always)]
         pub const fn dlec(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x07;
@@ -1718,10 +1813,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Data last error code. Type of last error that occurred in the data phase of a FDCAN format frame with its BRS flag set. Coding is the same as for LEC. This field is cleared to 0 when a FDCAN format frame with its BRS flag set has been transferred (reception or transmission) without error. Access type is RS: set on read."]
         #[inline(always)]
-        pub fn set_dlec(&mut self, val: u8) {
+        pub const fn set_dlec(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val as u32) & 0x07) << 8usize);
         }
         #[doc = "ESI flag of last received FDCAN message. This bit is set together with REDL, independent of acceptance filtering. Access type is RX: reset on read."]
+        #[must_use]
         #[inline(always)]
         pub const fn resi(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1729,10 +1825,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "ESI flag of last received FDCAN message. This bit is set together with REDL, independent of acceptance filtering. Access type is RX: reset on read."]
         #[inline(always)]
-        pub fn set_resi(&mut self, val: bool) {
+        pub const fn set_resi(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "BRS flag of last received FDCAN message. This bit is set together with REDL, independent of acceptance filtering. Access type is RX: reset on read."]
+        #[must_use]
         #[inline(always)]
         pub const fn rbrs(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -1740,10 +1837,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "BRS flag of last received FDCAN message. This bit is set together with REDL, independent of acceptance filtering. Access type is RX: reset on read."]
         #[inline(always)]
-        pub fn set_rbrs(&mut self, val: bool) {
+        pub const fn set_rbrs(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Received FDCAN message. This bit is set independent of acceptance filtering. Access type is RX: reset on read."]
+        #[must_use]
         #[inline(always)]
         pub const fn redl(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -1751,10 +1849,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Received FDCAN message. This bit is set independent of acceptance filtering. Access type is RX: reset on read."]
         #[inline(always)]
-        pub fn set_redl(&mut self, val: bool) {
+        pub const fn set_redl(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Protocol exception event"]
+        #[must_use]
         #[inline(always)]
         pub const fn pxe(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -1762,10 +1861,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Protocol exception event"]
         #[inline(always)]
-        pub fn set_pxe(&mut self, val: bool) {
+        pub const fn set_pxe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Transmitter delay compensation value. Position of the secondary sample point, defined by the sum of the measured delay from FDCAN_TX to FDCAN_RX and TDCR.TDCO. The SSP position is, in the data phase, the number of minimum time quanta (mtq) between the start of the transmitted bit and the secondary sample point. Valid values are 0 to 127 mtq"]
+        #[must_use]
         #[inline(always)]
         pub const fn tdcv(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x7f;
@@ -1773,7 +1873,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Transmitter delay compensation value. Position of the secondary sample point, defined by the sum of the measured delay from FDCAN_TX to FDCAN_RX and TDCR.TDCO. The SSP position is, in the data phase, the number of minimum time quanta (mtq) between the start of the transmitted bit and the secondary sample point. Valid values are 0 to 127 mtq"]
         #[inline(always)]
-        pub fn set_tdcv(&mut self, val: u8) {
+        pub const fn set_tdcv(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 16usize)) | (((val as u32) & 0x7f) << 16usize);
         }
     }
@@ -1814,6 +1914,7 @@ of CCCR register are set to 1"]
         #[doc = "Watchdog configuration. Start value of the message RAM watchdog counter. With the reset value of 00, the counter is disabled. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of FDCAN_CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn wdc(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -1823,10 +1924,11 @@ of FDCAN_CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of FDCAN_CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_wdc(&mut self, val: u8) {
+        pub const fn set_wdc(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "Watchdog value. Actual message RAM watchdog counter value"]
+        #[must_use]
         #[inline(always)]
         pub const fn wdv(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -1834,7 +1936,7 @@ of FDCAN_CCCR register are set to 1"]
         }
         #[doc = "Watchdog value. Actual message RAM watchdog counter value"]
         #[inline(always)]
-        pub fn set_wdv(&mut self, val: u8) {
+        pub const fn set_wdv(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
     }
@@ -1865,6 +1967,7 @@ of FDCAN_CCCR register are set to 1"]
     impl Rxfa {
         #[doc = "Rx FIFO X acknowledge index. After the Host has read a message or a sequence of messages from Rx FIFO X it has to write the buffer index of the last element read from Rx FIFO X to FAI. This sets the Rx FIFO X get index RXFS\\[FGI\\]
 to FAI + 1 and update the FIFO X fill level RXFS\\[FFL\\]"]
+        #[must_use]
         #[inline(always)]
         pub const fn fai(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -1873,7 +1976,7 @@ to FAI + 1 and update the FIFO X fill level RXFS\\[FFL\\]"]
         #[doc = "Rx FIFO X acknowledge index. After the Host has read a message or a sequence of messages from Rx FIFO X it has to write the buffer index of the last element read from Rx FIFO X to FAI. This sets the Rx FIFO X get index RXFS\\[FGI\\]
 to FAI + 1 and update the FIFO X fill level RXFS\\[FFL\\]"]
         #[inline(always)]
-        pub fn set_fai(&mut self, val: u8) {
+        pub const fn set_fai(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
     }
@@ -1900,6 +2003,7 @@ to FAI + 1 and update the FIFO X fill level RXFS\\[FFL\\]"]
     pub struct Rxfs(pub u32);
     impl Rxfs {
         #[doc = "Rx FIFO X fill level. Number of elements stored in Rx FIFO X, range 0 to 3"]
+        #[must_use]
         #[inline(always)]
         pub const fn ffl(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x0f;
@@ -1907,10 +2011,11 @@ to FAI + 1 and update the FIFO X fill level RXFS\\[FFL\\]"]
         }
         #[doc = "Rx FIFO X fill level. Number of elements stored in Rx FIFO X, range 0 to 3"]
         #[inline(always)]
-        pub fn set_ffl(&mut self, val: u8) {
+        pub const fn set_ffl(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 0usize)) | (((val as u32) & 0x0f) << 0usize);
         }
         #[doc = "Rx FIFO X get index. Rx FIFO X read index pointer, range 0 to 2"]
+        #[must_use]
         #[inline(always)]
         pub const fn fgi(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x03;
@@ -1918,10 +2023,11 @@ to FAI + 1 and update the FIFO X fill level RXFS\\[FFL\\]"]
         }
         #[doc = "Rx FIFO X get index. Rx FIFO X read index pointer, range 0 to 2"]
         #[inline(always)]
-        pub fn set_fgi(&mut self, val: u8) {
+        pub const fn set_fgi(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
         }
         #[doc = "Rx FIFO X put index. Rx FIFO X write index pointer, range 0 to 2"]
+        #[must_use]
         #[inline(always)]
         pub const fn fpi(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x03;
@@ -1929,10 +2035,11 @@ to FAI + 1 and update the FIFO X fill level RXFS\\[FFL\\]"]
         }
         #[doc = "Rx FIFO X put index. Rx FIFO X write index pointer, range 0 to 2"]
         #[inline(always)]
-        pub fn set_fpi(&mut self, val: u8) {
+        pub const fn set_fpi(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
         }
         #[doc = "Rx FIFO X full"]
+        #[must_use]
         #[inline(always)]
         pub const fn ff(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -1940,11 +2047,12 @@ to FAI + 1 and update the FIFO X fill level RXFS\\[FFL\\]"]
         }
         #[doc = "Rx FIFO X full"]
         #[inline(always)]
-        pub fn set_ff(&mut self, val: bool) {
+        pub const fn set_ff(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "Rx FIFO X message lost. This bit is a copy of interrupt flag IR\\[RFL\\]. When IR\\[RFL\\]
 is reset, this bit is also reset"]
+        #[must_use]
         #[inline(always)]
         pub const fn rfl(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -1953,7 +2061,7 @@ is reset, this bit is also reset"]
         #[doc = "Rx FIFO X message lost. This bit is a copy of interrupt flag IR\\[RFL\\]. When IR\\[RFL\\]
 is reset, this bit is also reset"]
         #[inline(always)]
-        pub fn set_rfl(&mut self, val: bool) {
+        pub const fn set_rfl(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
     }
@@ -1996,6 +2104,7 @@ is reset, this bit is also reset"]
         #[doc = "Reject remote frames extended. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn rrfe(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2005,12 +2114,13 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_rrfe(&mut self, val: bool) {
+        pub const fn set_rrfe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Reject remote frames standard. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn rrfs(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -2020,12 +2130,13 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_rrfs(&mut self, val: bool) {
+        pub const fn set_rrfs(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Accept non-matching frames extended. Defines how received messages with 29-bit IDs that do not match any element of the filter list are treated. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn anfe(&self) -> super::vals::Anfe {
             let val = (self.0 >> 2usize) & 0x03;
@@ -2035,12 +2146,13 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_anfe(&mut self, val: super::vals::Anfe) {
+        pub const fn set_anfe(&mut self, val: super::vals::Anfe) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
         #[doc = "Accept Non-matching frames standard. Defines how received messages with 11-bit IDs that do not match any element of the filter list are treated. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn anfs(&self) -> super::vals::Anfs {
             let val = (self.0 >> 4usize) & 0x03;
@@ -2050,12 +2162,13 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_anfs(&mut self, val: super::vals::Anfs) {
+        pub const fn set_anfs(&mut self, val: super::vals::Anfs) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "FIFO 1 operation mode (overwrite or blocking). This is a protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn f1om(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -2065,12 +2178,13 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_f1om(&mut self, val: bool) {
+        pub const fn set_f1om(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "FIFO 0 operation mode (overwrite or blocking). This is protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn f0om(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -2080,12 +2194,13 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_f0om(&mut self, val: bool) {
+        pub const fn set_f0om(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "List size standard. >28: Values greater than 28 are interpreted as 28. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
+        #[must_use]
         #[inline(always)]
         pub const fn lss(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x1f;
@@ -2095,12 +2210,13 @@ of CCCR register are set to 1."]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
         #[inline(always)]
-        pub fn set_lss(&mut self, val: u8) {
+        pub const fn set_lss(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 16usize)) | (((val as u32) & 0x1f) << 16usize);
         }
         #[doc = "List size extended. >8: Values greater than 8 are interpreted as 8. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
+        #[must_use]
         #[inline(always)]
         pub const fn lse(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x0f;
@@ -2110,7 +2226,7 @@ of CCCR register are set to 1."]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1."]
         #[inline(always)]
-        pub fn set_lse(&mut self, val: u8) {
+        pub const fn set_lse(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
         }
     }
@@ -2148,6 +2264,7 @@ of CCCR register are set to 1."]
         #[doc = "Transmitter delay compensation filter window length. Defines the minimum value for the SSP position, dominant edges on FDCAN_RX that would result in an earlier SSP position are ignored for transmitter delay measurements. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn tdcf(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x7f;
@@ -2157,12 +2274,13 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_tdcf(&mut self, val: u8) {
+        pub const fn set_tdcf(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 0usize)) | (((val as u32) & 0x7f) << 0usize);
         }
         #[doc = "Transmitter delay compensation offset. Offset value defining the distance between the measured delay from FDCAN_TX to FDCAN_RX and the secondary sample point. Valid values are 0 to 127 mtq. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn tdco(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x7f;
@@ -2172,7 +2290,7 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_tdco(&mut self, val: u8) {
+        pub const fn set_tdco(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 8usize)) | (((val as u32) & 0x7f) << 8usize);
         }
     }
@@ -2202,6 +2320,7 @@ of CCCR register are set to 1"]
     pub struct Test(pub u32);
     impl Test {
         #[doc = "Loop back mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn lbck(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -2209,10 +2328,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Loop back mode"]
         #[inline(always)]
-        pub fn set_lbck(&mut self, val: bool) {
+        pub const fn set_lbck(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Control of transmit pin"]
+        #[must_use]
         #[inline(always)]
         pub const fn tx(&self) -> super::vals::Tx {
             let val = (self.0 >> 5usize) & 0x03;
@@ -2220,10 +2340,11 @@ of CCCR register are set to 1"]
         }
         #[doc = "Control of transmit pin"]
         #[inline(always)]
-        pub fn set_tx(&mut self, val: super::vals::Tx) {
+        pub const fn set_tx(&mut self, val: super::vals::Tx) {
             self.0 = (self.0 & !(0x03 << 5usize)) | (((val.to_bits() as u32) & 0x03) << 5usize);
         }
         #[doc = "Receive pin. Monitors the actual value of pin FDCANx_RX"]
+        #[must_use]
         #[inline(always)]
         pub const fn rx(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -2231,7 +2352,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Receive pin. Monitors the actual value of pin FDCANx_RX"]
         #[inline(always)]
-        pub fn set_rx(&mut self, val: bool) {
+        pub const fn set_rx(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
     }
@@ -2270,6 +2391,7 @@ of CCCR register are set to 1"]
         #[doc = "Timeout counter enable. This is a protected write (P) bit, write access is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn etoc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2279,13 +2401,14 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_etoc(&mut self, val: bool) {
+        pub const fn set_etoc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Timeout select. When operating in Continuous mode, a write to TOCV presets the counter to the value configured by TOCC\\[TOP\\]
 and continues down-counting. When the timeout counter is controlled by one of the FIFOs, an empty FIFO presets the counter to the value configured by TOCC\\[TOP\\]. Down-counting is started when the first FIFO element is stored. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn tos(&self) -> super::vals::Tos {
             let val = (self.0 >> 1usize) & 0x03;
@@ -2296,10 +2419,11 @@ and continues down-counting. When the timeout counter is controlled by one of th
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_tos(&mut self, val: super::vals::Tos) {
+        pub const fn set_tos(&mut self, val: super::vals::Tos) {
             self.0 = (self.0 & !(0x03 << 1usize)) | (((val.to_bits() as u32) & 0x03) << 1usize);
         }
         #[doc = "Timeout period. Start value of the timeout counter (down-counter). Configures the timeout period"]
+        #[must_use]
         #[inline(always)]
         pub const fn top(&self) -> u16 {
             let val = (self.0 >> 16usize) & 0xffff;
@@ -2307,7 +2431,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Timeout period. Start value of the timeout counter (down-counter). Configures the timeout period"]
         #[inline(always)]
-        pub fn set_top(&mut self, val: u16) {
+        pub const fn set_top(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
         }
     }
@@ -2345,6 +2469,7 @@ of CCCR register are set to 1"]
     impl Tocv {
         #[doc = "Timeout counter. The timeout counter is decremented in multiples of CAN bit times \\[1 … 16\\]
 depending on the configuration of TSCC.TCP. When decremented to 0, interrupt flag IR.TOO is set and the timeout counter is stopped. Start and reset/restart conditions are configured via TOCC.TOS"]
+        #[must_use]
         #[inline(always)]
         pub const fn toc(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -2353,7 +2478,7 @@ depending on the configuration of TSCC.TCP. When decremented to 0, interrupt fla
         #[doc = "Timeout counter. The timeout counter is decremented in multiples of CAN bit times \\[1 … 16\\]
 depending on the configuration of TSCC.TCP. When decremented to 0, interrupt flag IR.TOO is set and the timeout counter is stopped. Start and reset/restart conditions are configured via TOCC.TOS"]
         #[inline(always)]
-        pub fn set_toc(&mut self, val: u16) {
+        pub const fn set_toc(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -2382,6 +2507,7 @@ depending on the configuration of TSCC.TCP. When decremented to 0, interrupt fla
         #[doc = "Timestamp select. These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn tss(&self) -> super::vals::Tss {
             let val = (self.0 >> 0usize) & 0x03;
@@ -2391,12 +2517,13 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_tss(&mut self, val: super::vals::Tss) {
+        pub const fn set_tss(&mut self, val: super::vals::Tss) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "Timestamp counter prescaler. Configures the timestamp and timeout counters time unit in multiples of CAN bit times \\[1 … 16\\]. The actual interpretation by the hardware of this value is such that one more than the value programmed here is used. In CAN FD mode the internal timestamp counter TCP does not provide a constant time base due to the different CAN bit times between arbitration phase and data phase. Thus CAN FD requires an external counter for timestamp generation (TSS = 10). These are protected write (P) bits, write access is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn tcp(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x0f;
@@ -2406,7 +2533,7 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_tcp(&mut self, val: u8) {
+        pub const fn set_tcp(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 16usize)) | (((val as u32) & 0x0f) << 16usize);
         }
     }
@@ -2438,6 +2565,7 @@ of CCCR register are set to 1"]
         #[doc = "Timestamp counter. The internal/external timestamp counter value is captured on start of frame (both Rx and Tx). When TSCC\\[TSS\\]
 = 01, the timestamp counter is incremented in multiples of CAN bit times \\[1 … 16\\]
 depending on the configuration of TSCC\\[TCP\\]. A wrap around sets interrupt flag IR\\[TSW\\]. Write access resets the counter to 0. When TSCC.TSS = 10, TSC reflects the external timestamp counter value. A write access has no impact"]
+        #[must_use]
         #[inline(always)]
         pub const fn tsc(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
@@ -2447,7 +2575,7 @@ depending on the configuration of TSCC\\[TCP\\]. A wrap around sets interrupt fl
 = 01, the timestamp counter is incremented in multiples of CAN bit times \\[1 … 16\\]
 depending on the configuration of TSCC\\[TCP\\]. A wrap around sets interrupt flag IR\\[TSW\\]. Write access resets the counter to 0. When TSCC.TSS = 10, TSC reflects the external timestamp counter value. A write access has no impact"]
         #[inline(always)]
-        pub fn set_tsc(&mut self, val: u16) {
+        pub const fn set_tsc(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
@@ -2474,6 +2602,7 @@ depending on the configuration of TSCC\\[TCP\\]. A wrap around sets interrupt fl
     pub struct Txbar(pub u32);
     impl Txbar {
         #[doc = "Add request. Each Tx buffer has its own add request bit. Writing a 1 sets the corresponding add request bit; writing a 0 has no impact. This enables the Host to set transmission requests for multiple Tx buffers with one write to TXBAR. When no Tx scan is running, the bits are reset immediately, else the bits remain set until the Tx scan process has completed"]
+        #[must_use]
         #[inline(always)]
         pub const fn ar(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -2483,7 +2612,7 @@ depending on the configuration of TSCC\\[TCP\\]. A wrap around sets interrupt fl
         }
         #[doc = "Add request. Each Tx buffer has its own add request bit. Writing a 1 sets the corresponding add request bit; writing a 0 has no impact. This enables the Host to set transmission requests for multiple Tx buffers with one write to TXBAR. When no Tx scan is running, the bits are reset immediately, else the bits remain set until the Tx scan process has completed"]
         #[inline(always)]
-        pub fn set_ar(&mut self, n: usize, val: bool) {
+        pub const fn set_ar(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -2524,6 +2653,7 @@ depending on the configuration of TSCC\\[TCP\\]. A wrap around sets interrupt fl
         #[doc = "Tx FIFO/queue mode. This is a protected write (P) bit, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn tfqm(&self) -> super::vals::Tfqm {
             let val = (self.0 >> 24usize) & 0x01;
@@ -2533,7 +2663,7 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_tfqm(&mut self, val: super::vals::Tfqm) {
+        pub const fn set_tfqm(&mut self, val: super::vals::Tfqm) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
         }
     }
@@ -2560,6 +2690,7 @@ of CCCR register are set to 1"]
     pub struct Txbcf(pub u32);
     impl Txbcf {
         #[doc = "Cancellation finished. Each Tx buffer has its own CF bit. The bits are set when the corresponding TXBRP bit is cleared after a cancellation was requested via TXBCR. In case the corresponding TXBRP bit was not set at the point of cancellation, CF is set immediately. The bits are reset when a new transmission is requested by writing a 1 to the corresponding bit of register TXBAR"]
+        #[must_use]
         #[inline(always)]
         pub const fn cf(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -2569,7 +2700,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Cancellation finished. Each Tx buffer has its own CF bit. The bits are set when the corresponding TXBRP bit is cleared after a cancellation was requested via TXBCR. In case the corresponding TXBRP bit was not set at the point of cancellation, CF is set immediately. The bits are reset when a new transmission is requested by writing a 1 to the corresponding bit of register TXBAR"]
         #[inline(always)]
-        pub fn set_cf(&mut self, n: usize, val: bool) {
+        pub const fn set_cf(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -2608,6 +2739,7 @@ of CCCR register are set to 1"]
     pub struct Txbcie(pub u32);
     impl Txbcie {
         #[doc = "Cancellation finished interrupt enable.. Each Tx buffer has its own CFIE bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn cfie(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -2617,7 +2749,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Cancellation finished interrupt enable.. Each Tx buffer has its own CFIE bit"]
         #[inline(always)]
-        pub fn set_cfie(&mut self, n: usize, val: bool) {
+        pub const fn set_cfie(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -2656,6 +2788,7 @@ of CCCR register are set to 1"]
     pub struct Txbcr(pub u32);
     impl Txbcr {
         #[doc = "Cancellation request. Each Tx buffer has its own cancellation request bit. Writing a 1 sets the corresponding CR bit; writing a 0 has no impact. This enables the Host to set cancellation requests for multiple Tx buffers with one write to TXBCR. The bits remain set until the corresponding TXBRP bit is reset"]
+        #[must_use]
         #[inline(always)]
         pub const fn cr(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -2665,7 +2798,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Cancellation request. Each Tx buffer has its own cancellation request bit. Writing a 1 sets the corresponding CR bit; writing a 0 has no impact. This enables the Host to set cancellation requests for multiple Tx buffers with one write to TXBCR. The bits remain set until the corresponding TXBRP bit is reset"]
         #[inline(always)]
-        pub fn set_cr(&mut self, n: usize, val: bool) {
+        pub const fn set_cr(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -2704,6 +2837,7 @@ of CCCR register are set to 1"]
     pub struct Txbrp(pub u32);
     impl Txbrp {
         #[doc = "Transmission request pending. Each Tx buffer has its own transmission request pending bit. The bits are set via register TXBAR. The bits are reset after a requested transmission has completed or has been canceled via register TXBCR. After a TXBRP bit has been set, a Tx scan is started to check for the pending Tx request with the highest priority (Tx buffer with lowest Message ID). A cancellation request resets the corresponding transmission request pending bit of register TXBRP. In case a transmission has already been started when a cancellation is requested, this is done at the end of the transmission, regardless whether the transmission was successful or not. The cancellation request bits are reset directly after the corresponding TXBRP bit has been reset. After a cancellation has been requested, a finished cancellation is signaled via TXBCF after successful transmission together with the corresponding TXBTO bit when the transmission has not yet been started at the point of cancellation when the transmission has been aborted due to lost arbitration when an error occurred during frame transmission In DAR mode all transmissions are automatically canceled if they are not successful. The corresponding TXBCF bit is set for all unsuccessful transmissions"]
+        #[must_use]
         #[inline(always)]
         pub const fn trp(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -2713,7 +2847,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Transmission request pending. Each Tx buffer has its own transmission request pending bit. The bits are set via register TXBAR. The bits are reset after a requested transmission has completed or has been canceled via register TXBCR. After a TXBRP bit has been set, a Tx scan is started to check for the pending Tx request with the highest priority (Tx buffer with lowest Message ID). A cancellation request resets the corresponding transmission request pending bit of register TXBRP. In case a transmission has already been started when a cancellation is requested, this is done at the end of the transmission, regardless whether the transmission was successful or not. The cancellation request bits are reset directly after the corresponding TXBRP bit has been reset. After a cancellation has been requested, a finished cancellation is signaled via TXBCF after successful transmission together with the corresponding TXBTO bit when the transmission has not yet been started at the point of cancellation when the transmission has been aborted due to lost arbitration when an error occurred during frame transmission In DAR mode all transmissions are automatically canceled if they are not successful. The corresponding TXBCF bit is set for all unsuccessful transmissions"]
         #[inline(always)]
-        pub fn set_trp(&mut self, n: usize, val: bool) {
+        pub const fn set_trp(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -2752,6 +2886,7 @@ of CCCR register are set to 1"]
     pub struct Txbtie(pub u32);
     impl Txbtie {
         #[doc = "Transmission interrupt enable. Each Tx buffer has its own TIE bit"]
+        #[must_use]
         #[inline(always)]
         pub const fn tie(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -2761,7 +2896,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Transmission interrupt enable. Each Tx buffer has its own TIE bit"]
         #[inline(always)]
-        pub fn set_tie(&mut self, n: usize, val: bool) {
+        pub const fn set_tie(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -2800,6 +2935,7 @@ of CCCR register are set to 1"]
     pub struct Txbto(pub u32);
     impl Txbto {
         #[doc = "Transmission occurred.. Each Tx buffer has its own TO bit. The bits are set when the corresponding TXBRP bit is cleared after a successful transmission. The bits are reset when a new transmission is requested by writing a 1 to the corresponding bit of register TXBAR"]
+        #[must_use]
         #[inline(always)]
         pub const fn to(&self, n: usize) -> bool {
             assert!(n < 3usize);
@@ -2809,7 +2945,7 @@ of CCCR register are set to 1"]
         }
         #[doc = "Transmission occurred.. Each Tx buffer has its own TO bit. The bits are set when the corresponding TXBRP bit is cleared after a successful transmission. The bits are reset when a new transmission is requested by writing a 1 to the corresponding bit of register TXBAR"]
         #[inline(always)]
-        pub fn set_to(&mut self, n: usize, val: bool) {
+        pub const fn set_to(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -2849,6 +2985,7 @@ of CCCR register are set to 1"]
     impl Txefa {
         #[doc = "Event FIFO acknowledge index. After the Host has read an element or a sequence of elements from the Tx event FIFO, it has to write the index of the last element read from Tx event FIFO to EFAI. This sets the Tx event FIFO get index TXEFS\\[EFGI\\]
 to EFAI + 1 and updates the FIFO 0 fill level TXEFS\\[EFFL\\]"]
+        #[must_use]
         #[inline(always)]
         pub const fn efai(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x03;
@@ -2857,7 +2994,7 @@ to EFAI + 1 and updates the FIFO 0 fill level TXEFS\\[EFFL\\]"]
         #[doc = "Event FIFO acknowledge index. After the Host has read an element or a sequence of elements from the Tx event FIFO, it has to write the index of the last element read from Tx event FIFO to EFAI. This sets the Tx event FIFO get index TXEFS\\[EFGI\\]
 to EFAI + 1 and updates the FIFO 0 fill level TXEFS\\[EFFL\\]"]
         #[inline(always)]
-        pub fn set_efai(&mut self, val: u8) {
+        pub const fn set_efai(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val as u32) & 0x03) << 0usize);
         }
     }
@@ -2884,6 +3021,7 @@ to EFAI + 1 and updates the FIFO 0 fill level TXEFS\\[EFFL\\]"]
     pub struct Txefs(pub u32);
     impl Txefs {
         #[doc = "Event FIFO fill level. Number of elements stored in Tx event FIFO, range 0 to 3"]
+        #[must_use]
         #[inline(always)]
         pub const fn effl(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -2891,10 +3029,11 @@ to EFAI + 1 and updates the FIFO 0 fill level TXEFS\\[EFFL\\]"]
         }
         #[doc = "Event FIFO fill level. Number of elements stored in Tx event FIFO, range 0 to 3"]
         #[inline(always)]
-        pub fn set_effl(&mut self, val: u8) {
+        pub const fn set_effl(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Event FIFO get index. Tx event FIFO read index pointer, range 0 to 3"]
+        #[must_use]
         #[inline(always)]
         pub const fn efgi(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x03;
@@ -2902,10 +3041,11 @@ to EFAI + 1 and updates the FIFO 0 fill level TXEFS\\[EFFL\\]"]
         }
         #[doc = "Event FIFO get index. Tx event FIFO read index pointer, range 0 to 3"]
         #[inline(always)]
-        pub fn set_efgi(&mut self, val: u8) {
+        pub const fn set_efgi(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
         }
         #[doc = "Event FIFO put index. Tx event FIFO write index pointer, range 0 to 3"]
+        #[must_use]
         #[inline(always)]
         pub const fn efpi(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x03;
@@ -2913,10 +3053,11 @@ to EFAI + 1 and updates the FIFO 0 fill level TXEFS\\[EFFL\\]"]
         }
         #[doc = "Event FIFO put index. Tx event FIFO write index pointer, range 0 to 3"]
         #[inline(always)]
-        pub fn set_efpi(&mut self, val: u8) {
+        pub const fn set_efpi(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
         }
         #[doc = "Event FIFO full"]
+        #[must_use]
         #[inline(always)]
         pub const fn eff(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -2924,11 +3065,12 @@ to EFAI + 1 and updates the FIFO 0 fill level TXEFS\\[EFFL\\]"]
         }
         #[doc = "Event FIFO full"]
         #[inline(always)]
-        pub fn set_eff(&mut self, val: bool) {
+        pub const fn set_eff(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "Tx event FIFO element lost. This bit is a copy of interrupt flag IR\\[TEFL\\]. When IR\\[TEFL\\]
 is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIFO element lost, also set after write attempt to Tx event FIFO of size 0"]
+        #[must_use]
         #[inline(always)]
         pub const fn tefl(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -2937,7 +3079,7 @@ is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIF
         #[doc = "Tx event FIFO element lost. This bit is a copy of interrupt flag IR\\[TEFL\\]. When IR\\[TEFL\\]
 is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIFO element lost, also set after write attempt to Tx event FIFO of size 0"]
         #[inline(always)]
-        pub fn set_tefl(&mut self, val: bool) {
+        pub const fn set_tefl(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
     }
@@ -2979,6 +3121,7 @@ is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIF
     impl Txfqs {
         #[doc = "Tx FIFO free level. Number of consecutive free Tx FIFO elements starting from TFGI, range 0 to 3. Read as 0 when Tx queue operation is configured (TXBC\\[TFQM\\]
 = 1)"]
+        #[must_use]
         #[inline(always)]
         pub const fn tffl(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
@@ -2987,10 +3130,11 @@ is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIF
         #[doc = "Tx FIFO free level. Number of consecutive free Tx FIFO elements starting from TFGI, range 0 to 3. Read as 0 when Tx queue operation is configured (TXBC\\[TFQM\\]
 = 1)"]
         #[inline(always)]
-        pub fn set_tffl(&mut self, val: u8) {
+        pub const fn set_tffl(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
         }
         #[doc = "Tx FIFO get index. Tx FIFO read index pointer, range 0 to 3. Read as 0 when Tx queue operation is configured (TXBC.TFQM = 1)"]
+        #[must_use]
         #[inline(always)]
         pub const fn tfgi(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x03;
@@ -2998,10 +3142,11 @@ is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIF
         }
         #[doc = "Tx FIFO get index. Tx FIFO read index pointer, range 0 to 3. Read as 0 when Tx queue operation is configured (TXBC.TFQM = 1)"]
         #[inline(always)]
-        pub fn set_tfgi(&mut self, val: u8) {
+        pub const fn set_tfgi(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val as u32) & 0x03) << 8usize);
         }
         #[doc = "Tx FIFO/queue put index. Tx FIFO/queue write index pointer, range 0 to 3"]
+        #[must_use]
         #[inline(always)]
         pub const fn tfqpi(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0x03;
@@ -3009,10 +3154,11 @@ is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIF
         }
         #[doc = "Tx FIFO/queue put index. Tx FIFO/queue write index pointer, range 0 to 3"]
         #[inline(always)]
-        pub fn set_tfqpi(&mut self, val: u8) {
+        pub const fn set_tfqpi(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val as u32) & 0x03) << 16usize);
         }
         #[doc = "Tx FIFO/queue full"]
+        #[must_use]
         #[inline(always)]
         pub const fn tfqf(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -3020,7 +3166,7 @@ is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIF
         }
         #[doc = "Tx FIFO/queue full"]
         #[inline(always)]
-        pub fn set_tfqf(&mut self, val: bool) {
+        pub const fn set_tfqf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
     }
@@ -3061,6 +3207,7 @@ is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIF
         #[doc = "Extended ID mask. For acceptance filtering of extended frames the Extended ID AND Mask is AND-ed with the Message ID of a received frame. Intended for masking of 29-bit IDs in SAE J1939. With the reset value of all bits set to 1 the mask is not active. These are protected write (P) bits, which means that write access by the bits is possible only when the bit 1 \\[CCE\\]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
+        #[must_use]
         #[inline(always)]
         pub const fn eidm(&self) -> u32 {
             let val = (self.0 >> 0usize) & 0x1fff_ffff;
@@ -3070,7 +3217,7 @@ of CCCR register are set to 1"]
 and bit 0 \\[INIT\\]
 of CCCR register are set to 1"]
         #[inline(always)]
-        pub fn set_eidm(&mut self, val: u32) {
+        pub const fn set_eidm(&mut self, val: u32) {
             self.0 = (self.0 & !(0x1fff_ffff << 0usize)) | (((val as u32) & 0x1fff_ffff) << 0usize);
         }
     }

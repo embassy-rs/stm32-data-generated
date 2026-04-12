@@ -6481,14 +6481,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "DATA2",
-                    description: None,
-                    value: 1,
-                },
-                EnumVariant {
                     name: "DATA1",
                     description: None,
                     value: 2,
+                },
+                EnumVariant {
+                    name: "DATA2",
+                    description: None,
+                    value: 1,
                 },
                 EnumVariant {
                     name: "MDATA",
@@ -6503,13 +6503,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "HIGH_SPEED",
-                    description: Some(
-                        "High speed",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FULL_SPEED_EXTERNAL",
                     description: Some(
                         "Full speed using external ULPI PHY",
@@ -6523,6 +6516,13 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 3,
                 },
+                EnumVariant {
+                    name: "HIGH_SPEED",
+                    description: Some(
+                        "High speed",
+                    ),
+                    value: 0,
+                },
             ],
         },
         Enum {
@@ -6531,24 +6531,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "CONTROL",
-                    description: None,
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "ISOCHRONOUS",
-                    description: None,
-                    value: 1,
-                },
-                EnumVariant {
                     name: "BULK",
                     description: None,
                     value: 2,
                 },
                 EnumVariant {
+                    name: "CONTROL",
+                    description: None,
+                    value: 0,
+                },
+                EnumVariant {
                     name: "INTERRUPT",
                     description: None,
                     value: 3,
+                },
+                EnumVariant {
+                    name: "ISOCHRONOUS",
+                    description: None,
+                    value: 1,
                 },
             ],
         },
@@ -6557,13 +6557,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
-                EnumVariant {
-                    name: "LEN8",
-                    description: Some(
-                        "Length = 8",
-                    ),
-                    value: 0,
-                },
                 EnumVariant {
                     name: "LEN16",
                     description: Some(
@@ -6584,6 +6577,13 @@ pub(crate) static REGISTERS: IR = IR {
                         "Length = 64",
                     ),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "LEN8",
+                    description: Some(
+                        "Length = 8",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -6628,11 +6628,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "OUT_NAK",
+                    name: "OUT_DATA_DONE",
                     description: Some(
-                        "Global OUT NAK (triggers an interrupt)",
+                        "OUT transfer completed (triggers an interrupt)",
                     ),
-                    value: 1,
+                    value: 3,
                 },
                 EnumVariant {
                     name: "OUT_DATA_RX",
@@ -6642,11 +6642,11 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
-                    name: "OUT_DATA_DONE",
+                    name: "OUT_NAK",
                     description: Some(
-                        "OUT transfer completed (triggers an interrupt)",
+                        "Global OUT NAK (triggers an interrupt)",
                     ),
-                    value: 3,
+                    value: 1,
                 },
                 EnumVariant {
                     name: "SETUP_DATA_DONE",
@@ -6670,18 +6670,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "IN_DATA_RX",
+                    name: "CHANNEL_HALTED",
                     description: Some(
-                        "IN data packet received",
+                        "Channel halted (triggers an interrupt)",
                     ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "IN_DATA_DONE",
-                    description: Some(
-                        "IN transfer completed (triggers an interrupt)",
-                    ),
-                    value: 3,
+                    value: 7,
                 },
                 EnumVariant {
                     name: "DATA_TOGGLE_ERR",
@@ -6691,11 +6684,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 5,
                 },
                 EnumVariant {
-                    name: "CHANNEL_HALTED",
+                    name: "IN_DATA_DONE",
                     description: Some(
-                        "Channel halted (triggers an interrupt)",
+                        "IN transfer completed (triggers an interrupt)",
                     ),
-                    value: 7,
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "IN_DATA_RX",
+                    description: Some(
+                        "IN data packet received",
+                    ),
+                    value: 2,
                 },
             ],
         },

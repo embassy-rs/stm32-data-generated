@@ -22,6 +22,6 @@ impl Vrefintcal {
     #[doc = "Factory calibration"]
     #[inline(always)]
     pub const fn data(self) -> crate::common::Reg<u16, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
 }

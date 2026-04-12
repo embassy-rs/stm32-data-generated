@@ -3067,14 +3067,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "MUST_NACKED",
-                    description: None,
-                    value: 0,
-                },
-                EnumVariant {
                     name: "MUST_ACKED",
                     description: None,
                     value: 1,
+                },
+                EnumVariant {
+                    name: "MUST_NACKED",
+                    description: None,
+                    value: 0,
                 },
             ],
         },
@@ -3168,18 +3168,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "TARGET",
-                    description: Some(
-                        "Once enabled by setting EN = 1, the peripheral initially acts as a target. I3C does not drive SCL line and does not enable SDA pull-up, until it eventually acquires the controller role.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "CONTROLLER",
                     description: Some(
                         "Once enabled by setting EN = 1, the peripheral initially acts as a controller. It has the I3C\ncontroller role, so drives SCL line and enables SDA pull-up, until it eventually offers the\ncontroller role to an I3C secondary controller.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "TARGET",
+                    description: Some(
+                        "Once enabled by setting EN = 1, the peripheral initially acts as a target. I3C does not drive SCL line and does not enable SDA pull-up, until it eventually acquires the controller role.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -3189,14 +3189,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "WRITE",
-                    description: None,
-                    value: 0,
-                },
-                EnumVariant {
                     name: "READ",
                     description: None,
                     value: 1,
+                },
+                EnumVariant {
+                    name: "WRITE",
+                    description: None,
+                    value: 0,
                 },
             ],
         },
@@ -3248,18 +3248,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "WRITE",
-                    description: Some(
-                        "write message",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "READ",
                     description: Some(
                         "read message",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "WRITE",
+                    description: Some(
+                        "write message",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -3269,11 +3269,6 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "NO_RESET",
-                    description: None,
-                    value: 0,
-                },
-                EnumVariant {
                     name: "FIRST_LEVEL",
                     description: Some(
                         "first level of reset: the application software must either:\na) partially reset the peripheral, by a write and clear of the enable bit of the I3C\nconfiguration register (write EN = 0). This resets the I3C bus interface and the I3C kernel\nsub-parts, without modifying the content of the I3C APB registers (except the EN bit).\nb) fully reset the peripheral, including all its registers, via a write and set of the I3C reset\ncontrol bit of the RCC (reset and clock controller) register.",
@@ -3281,16 +3276,21 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "SECOND_LEVEL",
-                    description: Some(
-                        "second level of reset: the application software must issue a warm reset, also known as a\nsystem reset. This (see Section 11: Reset and clock control (RCC)) has the same impact as a\npin reset (NRST = 0):\n  – the software writes and sets the SYSRESETREQ control bit of the AITR register, when\n  the device is controlled by a Cortex®-M.\n  – the software writes and sets SYSRST = 1 in the RCC_GRSTCSETR register, when the\n  device is controlled by a Cortex®-A.",
-                    ),
-                    value: 2,
+                    name: "NO_RESET",
+                    description: None,
+                    value: 0,
                 },
                 EnumVariant {
                     name: "NO_RESET_EITHER",
                     description: None,
                     value: 3,
+                },
+                EnumVariant {
+                    name: "SECOND_LEVEL",
+                    description: Some(
+                        "second level of reset: the application software must issue a warm reset, also known as a\nsystem reset. This (see Section 11: Reset and clock control (RCC)) has the same impact as a\npin reset (NRST = 0):\n  – the software writes and sets the SYSRESETREQ control bit of the AITR register, when\n  the device is controlled by a Cortex®-M.\n  – the software writes and sets SYSRST = 1 in the RCC_GRSTCSETR register, when the\n  device is controlled by a Cortex®-A.",
+                    ),
+                    value: 2,
                 },
             ],
         },

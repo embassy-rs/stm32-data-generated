@@ -22,7 +22,7 @@ impl Comp {
     #[doc = "Comparator control and status register."]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
 }
 pub mod regs {
@@ -32,6 +32,7 @@ pub mod regs {
     pub struct Csr(pub u32);
     impl Csr {
         #[doc = "COMP enable bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn en(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -39,10 +40,11 @@ pub mod regs {
         }
         #[doc = "COMP enable bit."]
         #[inline(always)]
-        pub fn set_en(&mut self, val: bool) {
+        pub const fn set_en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Comparator signal selector for inverting input INM. (RM0440 24.3.2 Table 197)"]
+        #[must_use]
         #[inline(always)]
         pub const fn inmsel(&self) -> super::vals::Inm {
             let val = (self.0 >> 4usize) & 0x07;
@@ -50,10 +52,11 @@ pub mod regs {
         }
         #[doc = "Comparator signal selector for inverting input INM. (RM0440 24.3.2 Table 197)"]
         #[inline(always)]
-        pub fn set_inmsel(&mut self, val: super::vals::Inm) {
+        pub const fn set_inmsel(&mut self, val: super::vals::Inm) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
         }
         #[doc = "Comparator signal selector for non-inverting input INP. (RM0440 24.3.2 Table 196)"]
+        #[must_use]
         #[inline(always)]
         pub const fn inpsel(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -61,10 +64,11 @@ pub mod regs {
         }
         #[doc = "Comparator signal selector for non-inverting input INP. (RM0440 24.3.2 Table 196)"]
         #[inline(always)]
-        pub fn set_inpsel(&mut self, val: bool) {
+        pub const fn set_inpsel(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Comparator polarity selector."]
+        #[must_use]
         #[inline(always)]
         pub const fn polarity(&self) -> super::vals::Polarity {
             let val = (self.0 >> 15usize) & 0x01;
@@ -72,10 +76,11 @@ pub mod regs {
         }
         #[doc = "Comparator polarity selector."]
         #[inline(always)]
-        pub fn set_polarity(&mut self, val: super::vals::Polarity) {
+        pub const fn set_polarity(&mut self, val: super::vals::Polarity) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
         }
         #[doc = "Comparator hysteresis selector."]
+        #[must_use]
         #[inline(always)]
         pub const fn hyst(&self) -> super::vals::Hysteresis {
             let val = (self.0 >> 16usize) & 0x07;
@@ -83,10 +88,11 @@ pub mod regs {
         }
         #[doc = "Comparator hysteresis selector."]
         #[inline(always)]
-        pub fn set_hyst(&mut self, val: super::vals::Hysteresis) {
+        pub const fn set_hyst(&mut self, val: super::vals::Hysteresis) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val.to_bits() as u32) & 0x07) << 16usize);
         }
         #[doc = "Comparator blanking source selector. (RM0440 24.3.6 Table 198)"]
+        #[must_use]
         #[inline(always)]
         pub const fn blanksel(&self) -> super::vals::Blanking {
             let val = (self.0 >> 19usize) & 0x07;
@@ -94,10 +100,11 @@ pub mod regs {
         }
         #[doc = "Comparator blanking source selector. (RM0440 24.3.6 Table 198)"]
         #[inline(always)]
-        pub fn set_blanksel(&mut self, val: super::vals::Blanking) {
+        pub const fn set_blanksel(&mut self, val: super::vals::Blanking) {
             self.0 = (self.0 & !(0x07 << 19usize)) | (((val.to_bits() as u32) & 0x07) << 19usize);
         }
         #[doc = "Vrefint resistor bridge enable. (RM0440 24.6)"]
+        #[must_use]
         #[inline(always)]
         pub const fn brgen(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -105,10 +112,11 @@ pub mod regs {
         }
         #[doc = "Vrefint resistor bridge enable. (RM0440 24.6)"]
         #[inline(always)]
-        pub fn set_brgen(&mut self, val: bool) {
+        pub const fn set_brgen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "Vrefint scaled input enable. (RM0440 24.6)"]
+        #[must_use]
         #[inline(always)]
         pub const fn scalen(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -116,10 +124,11 @@ pub mod regs {
         }
         #[doc = "Vrefint scaled input enable. (RM0440 24.6)"]
         #[inline(always)]
-        pub fn set_scalen(&mut self, val: bool) {
+        pub const fn set_scalen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "Comparator output status. (READ ONLY)"]
+        #[must_use]
         #[inline(always)]
         pub const fn value(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -127,10 +136,11 @@ pub mod regs {
         }
         #[doc = "Comparator output status. (READ ONLY)"]
         #[inline(always)]
-        pub fn set_value(&mut self, val: bool) {
+        pub const fn set_value(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "CSR register lock."]
+        #[must_use]
         #[inline(always)]
         pub const fn lock(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -138,7 +148,7 @@ pub mod regs {
         }
         #[doc = "CSR register lock."]
         #[inline(always)]
-        pub fn set_lock(&mut self, val: bool) {
+        pub const fn set_lock(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }

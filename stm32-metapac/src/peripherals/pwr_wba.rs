@@ -22,99 +22,99 @@ impl Pwr {
     #[doc = "control register 1"]
     #[inline(always)]
     pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "control register 2"]
     #[inline(always)]
     pub const fn cr2(self) -> crate::common::Reg<regs::Cr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "control register 3"]
     #[inline(always)]
     pub const fn cr3(self) -> crate::common::Reg<regs::Cr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "voltage scaling register"]
     #[inline(always)]
     pub const fn vosr(self) -> crate::common::Reg<regs::Vosr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "supply voltage monitoring control register"]
     #[inline(always)]
     pub const fn svmcr(self) -> crate::common::Reg<regs::Svmcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x10usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "wakeup control register 1"]
     #[inline(always)]
     pub const fn wucr1(self) -> crate::common::Reg<regs::Wucr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x14usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "wakeup control register 2"]
     #[inline(always)]
     pub const fn wucr2(self) -> crate::common::Reg<regs::Wucr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "wakeup control register 3"]
     #[inline(always)]
     pub const fn wucr3(self) -> crate::common::Reg<regs::Wucr3, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "disable Backup domain register."]
     #[inline(always)]
     pub const fn dbpcr(self) -> crate::common::Reg<regs::Dbpcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "security configuration register"]
     #[inline(always)]
     pub const fn seccfgr(self) -> crate::common::Reg<regs::Seccfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x30usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x30usize) as _) }
     }
     #[doc = "privilege control register"]
     #[inline(always)]
     pub const fn privcfgr(self) -> crate::common::Reg<regs::Privcfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x34usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
     pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x38usize) as _) }
     }
     #[doc = "supply voltage monitoring status register"]
     #[inline(always)]
     pub const fn svmsr(self) -> crate::common::Reg<regs::Svmsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x3cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3cusize) as _) }
     }
     #[doc = "wakeup status register"]
     #[inline(always)]
     pub const fn wusr(self) -> crate::common::Reg<regs::Wusr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x44usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
     }
     #[doc = "wakeup status clear register"]
     #[inline(always)]
     pub const fn wuscr(self) -> crate::common::Reg<regs::Wuscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
     }
     #[doc = "port Standby IO retention enable register"]
     #[inline(always)]
     pub const fn ioretenr(self, n: usize) -> crate::common::Reg<regs::Ioretenr, crate::common::RW> {
         assert!(n < 8usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize + n * 8usize) as _) }
     }
     #[doc = "port Standby IO retention status register"]
     #[inline(always)]
     pub const fn ioretr(self, n: usize) -> crate::common::Reg<regs::Ioretr, crate::common::RW> {
         assert!(n < 8usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x54usize + n * 8usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x54usize + n * 8usize) as _) }
     }
     #[doc = "2.4 GHz RADIO status and control register"]
     #[inline(always)]
     pub const fn radioscr(self) -> crate::common::Reg<regs::Radioscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0100usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize) as _) }
     }
     #[doc = "Stop 2 peripheral IOs retention register"]
     #[inline(always)]
     pub const fn s2retr(self) -> crate::common::Reg<regs::S2retr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0104usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0104usize) as _) }
     }
 }
 pub mod regs {
@@ -124,6 +124,7 @@ pub mod regs {
     pub struct Cr1(pub u32);
     impl Cr1 {
         #[doc = "Low-power mode selection These bits select the low-power mode entered when the CPU enters the SleepDeep mode. 10x: Standby mode others reserved"]
+        #[must_use]
         #[inline(always)]
         pub const fn lpms(&self) -> super::vals::Lpms {
             let val = (self.0 >> 0usize) & 0x07;
@@ -131,10 +132,11 @@ pub mod regs {
         }
         #[doc = "Low-power mode selection These bits select the low-power mode entered when the CPU enters the SleepDeep mode. 10x: Standby mode others reserved"]
         #[inline(always)]
-        pub fn set_lpms(&mut self, val: super::vals::Lpms) {
+        pub const fn set_lpms(&mut self, val: super::vals::Lpms) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "SRAM2 retention in Standby mode This bit is used to keep the SRAM2 content in Standby retention mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn r2rsb1(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -142,10 +144,11 @@ pub mod regs {
         }
         #[doc = "SRAM2 retention in Standby mode This bit is used to keep the SRAM2 content in Standby retention mode."]
         #[inline(always)]
-        pub fn set_r2rsb1(&mut self, val: bool) {
+        pub const fn set_r2rsb1(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "BOR0 ultra-low-power mode. This bit is used to reduce the consumption by configuring the BOR0 in discontinuous mode for Stop 1 and Standby modes. Discontinuous mode is only available when BOR levels 1 to 4 and PVD are disabled. Note: This bit must be set to reach the lowest power consumption in the low-power modes. Note: This bit must not be set together with autonomous peripherals using HSI as kernel clock. Note: When BOR level 1 to 4 or PVD is enabled continuous mode applies independent from ULPMEN."]
+        #[must_use]
         #[inline(always)]
         pub const fn ulpmen(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -153,10 +156,11 @@ pub mod regs {
         }
         #[doc = "BOR0 ultra-low-power mode. This bit is used to reduce the consumption by configuring the BOR0 in discontinuous mode for Stop 1 and Standby modes. Discontinuous mode is only available when BOR levels 1 to 4 and PVD are disabled. Note: This bit must be set to reach the lowest power consumption in the low-power modes. Note: This bit must not be set together with autonomous peripherals using HSI as kernel clock. Note: When BOR level 1 to 4 or PVD is enabled continuous mode applies independent from ULPMEN."]
         #[inline(always)]
-        pub fn set_ulpmen(&mut self, val: bool) {
+        pub const fn set_ulpmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "2.4 GHz RADIO SRAMs (RXTXRAM and Sequence RAM) and Sleep clock retention in Standby mode. This bit is used to keep the 2.4 GHz RADIO SRAMs content in Standby retention mode and the 2.4 GHz RADIO sleep timer counter operational."]
+        #[must_use]
         #[inline(always)]
         pub const fn radiorsb(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -164,10 +168,11 @@ pub mod regs {
         }
         #[doc = "2.4 GHz RADIO SRAMs (RXTXRAM and Sequence RAM) and Sleep clock retention in Standby mode. This bit is used to keep the 2.4 GHz RADIO SRAMs content in Standby retention mode and the 2.4 GHz RADIO sleep timer counter operational."]
         #[inline(always)]
-        pub fn set_radiorsb(&mut self, val: bool) {
+        pub const fn set_radiorsb(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "SRAM1 192 KB page 5 to 7 retention in Standby mode Used to keep SRAM1 page 5 to 7 content in Standby retention mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn r1rsb567(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -175,10 +180,11 @@ pub mod regs {
         }
         #[doc = "SRAM1 192 KB page 5 to 7 retention in Standby mode Used to keep SRAM1 page 5 to 7 content in Standby retention mode."]
         #[inline(always)]
-        pub fn set_r1rsb567(&mut self, val: bool) {
+        pub const fn set_r1rsb567(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "SRAM1 page X retention in Standby mode This bit is used to keep the SRAM1 content in Standby retention mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn r1rsb(&self, n: usize) -> bool {
             assert!(n < 4usize);
@@ -188,7 +194,7 @@ pub mod regs {
         }
         #[doc = "SRAM1 page X retention in Standby mode This bit is used to keep the SRAM1 content in Standby retention mode."]
         #[inline(always)]
-        pub fn set_r1rsb(&mut self, n: usize, val: bool) {
+        pub const fn set_r1rsb(&mut self, n: usize, val: bool) {
             assert!(n < 4usize);
             let offs = 12usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -227,6 +233,7 @@ pub mod regs {
     pub struct Cr2(pub u32);
     impl Cr2 {
         #[doc = "SRAM1 page X power-down in Stop modes (Stop 0, 1) Note: The SRAM1 retention in Standby mode is controlled by R1RSBX bit in CR1."]
+        #[must_use]
         #[inline(always)]
         pub const fn sram1pds(&self, n: usize) -> super::vals::Srampds {
             assert!(n < 4usize);
@@ -236,12 +243,13 @@ pub mod regs {
         }
         #[doc = "SRAM1 page X power-down in Stop modes (Stop 0, 1) Note: The SRAM1 retention in Standby mode is controlled by R1RSBX bit in CR1."]
         #[inline(always)]
-        pub fn set_sram1pds(&mut self, n: usize, val: super::vals::Srampds) {
+        pub const fn set_sram1pds(&mut self, n: usize, val: super::vals::Srampds) {
             assert!(n < 4usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
         }
         #[doc = "SRAM2 power-down in Stop modes (Stop 0, 1) Note: The SRAM2 retention in Standby mode is controlled by R2RSB1 bit in CR1."]
+        #[must_use]
         #[inline(always)]
         pub const fn sram2pds1(&self) -> super::vals::Srampds {
             let val = (self.0 >> 4usize) & 0x01;
@@ -249,10 +257,11 @@ pub mod regs {
         }
         #[doc = "SRAM2 power-down in Stop modes (Stop 0, 1) Note: The SRAM2 retention in Standby mode is controlled by R2RSB1 bit in CR1."]
         #[inline(always)]
-        pub fn set_sram2pds1(&mut self, val: super::vals::Srampds) {
+        pub const fn set_sram2pds1(&mut self, val: super::vals::Srampds) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
         #[doc = "SRAM1 192KB, page 5 to 7 power-down in Stop modes"]
+        #[must_use]
         #[inline(always)]
         pub const fn sram1pds567(&self) -> super::vals::Sram1pds567 {
             let val = (self.0 >> 6usize) & 0x01;
@@ -260,10 +269,11 @@ pub mod regs {
         }
         #[doc = "SRAM1 192KB, page 5 to 7 power-down in Stop modes"]
         #[inline(always)]
-        pub fn set_sram1pds567(&mut self, val: super::vals::Sram1pds567) {
+        pub const fn set_sram1pds567(&mut self, val: super::vals::Sram1pds567) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
         }
         #[doc = "ICACHE SRAM power-down in Stop modes (Stop 0, 1)"]
+        #[must_use]
         #[inline(always)]
         pub const fn icrampds(&self) -> super::vals::Icrampds {
             let val = (self.0 >> 8usize) & 0x01;
@@ -271,10 +281,11 @@ pub mod regs {
         }
         #[doc = "ICACHE SRAM power-down in Stop modes (Stop 0, 1)"]
         #[inline(always)]
-        pub fn set_icrampds(&mut self, val: super::vals::Icrampds) {
+        pub const fn set_icrampds(&mut self, val: super::vals::Icrampds) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
         }
         #[doc = "OTG SRAM power-down in Stop modes."]
+        #[must_use]
         #[inline(always)]
         pub const fn prampds(&self) -> super::vals::Prampds {
             let val = (self.0 >> 11usize) & 0x01;
@@ -282,10 +293,11 @@ pub mod regs {
         }
         #[doc = "OTG SRAM power-down in Stop modes."]
         #[inline(always)]
-        pub fn set_prampds(&mut self, val: super::vals::Prampds) {
+        pub const fn set_prampds(&mut self, val: super::vals::Prampds) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
         }
         #[doc = "PKA SRAM power-down in Stop modes."]
+        #[must_use]
         #[inline(always)]
         pub const fn pkarampds(&self) -> super::vals::Pkarampds {
             let val = (self.0 >> 12usize) & 0x01;
@@ -293,10 +305,11 @@ pub mod regs {
         }
         #[doc = "PKA SRAM power-down in Stop modes."]
         #[inline(always)]
-        pub fn set_pkarampds(&mut self, val: super::vals::Pkarampds) {
+        pub const fn set_pkarampds(&mut self, val: super::vals::Pkarampds) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
         }
         #[doc = "Flash memory fast wakeup from Stop modes (Stop 0, 1) This bit is used to obtain the best trade-off between low-power consumption and wakeup time when exiting the Stop 0 or Stop 1 modes. When this bit is set, the Flash memory remains in normal mode in Stop 0 and Stop 1 modes, which offers a faster startup time with higher consumption."]
+        #[must_use]
         #[inline(always)]
         pub const fn flashfwu(&self) -> super::vals::Flashfwu {
             let val = (self.0 >> 14usize) & 0x01;
@@ -304,7 +317,7 @@ pub mod regs {
         }
         #[doc = "Flash memory fast wakeup from Stop modes (Stop 0, 1) This bit is used to obtain the best trade-off between low-power consumption and wakeup time when exiting the Stop 0 or Stop 1 modes. When this bit is set, the Flash memory remains in normal mode in Stop 0 and Stop 1 modes, which offers a faster startup time with higher consumption."]
         #[inline(always)]
-        pub fn set_flashfwu(&mut self, val: super::vals::Flashfwu) {
+        pub const fn set_flashfwu(&mut self, val: super::vals::Flashfwu) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
         }
     }
@@ -342,6 +355,7 @@ pub mod regs {
     pub struct Cr3(pub u32);
     impl Cr3 {
         #[doc = "Regulator selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn regsel(&self) -> super::vals::Regsel {
             let val = (self.0 >> 1usize) & 0x01;
@@ -349,10 +363,11 @@ pub mod regs {
         }
         #[doc = "Regulator selection."]
         #[inline(always)]
-        pub fn set_regsel(&mut self, val: super::vals::Regsel) {
+        pub const fn set_regsel(&mut self, val: super::vals::Regsel) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "Fast soft start"]
+        #[must_use]
         #[inline(always)]
         pub const fn fsten(&self) -> super::vals::Fsten {
             let val = (self.0 >> 2usize) & 0x01;
@@ -360,10 +375,11 @@ pub mod regs {
         }
         #[doc = "Fast soft start"]
         #[inline(always)]
-        pub fn set_fsten(&mut self, val: super::vals::Fsten) {
+        pub const fn set_fsten(&mut self, val: super::vals::Fsten) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "Low power mode regulator clock division."]
+        #[must_use]
         #[inline(always)]
         pub const fn divclp(&self) -> super::vals::Divclp {
             let val = (self.0 >> 4usize) & 0x07;
@@ -371,10 +387,11 @@ pub mod regs {
         }
         #[doc = "Low power mode regulator clock division."]
         #[inline(always)]
-        pub fn set_divclp(&mut self, val: super::vals::Divclp) {
+        pub const fn set_divclp(&mut self, val: super::vals::Divclp) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
         }
         #[doc = "Low power mode regulator replica selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn selrep(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x3f;
@@ -382,10 +399,11 @@ pub mod regs {
         }
         #[doc = "Low power mode regulator replica selection."]
         #[inline(always)]
-        pub fn set_selrep(&mut self, val: u8) {
+        pub const fn set_selrep(&mut self, val: u8) {
             self.0 = (self.0 & !(0x3f << 8usize)) | (((val as u32) & 0x3f) << 8usize);
         }
         #[doc = "V11 feedback switch enable (non user bit)."]
+        #[must_use]
         #[inline(always)]
         pub const fn v11fbsw(&self) -> super::vals::V11fbsw {
             let val = (self.0 >> 15usize) & 0x01;
@@ -393,7 +411,7 @@ pub mod regs {
         }
         #[doc = "V11 feedback switch enable (non user bit)."]
         #[inline(always)]
-        pub fn set_v11fbsw(&mut self, val: super::vals::V11fbsw) {
+        pub const fn set_v11fbsw(&mut self, val: super::vals::V11fbsw) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
         }
     }
@@ -434,6 +452,7 @@ pub mod regs {
     pub struct Dbpcr(pub u32);
     impl Dbpcr {
         #[doc = "Disable Backup domain write protection In reset state, all registers and SRAM in Backup domain are protected against parasitic write access. This bit must be set to enable the write access to these registers."]
+        #[must_use]
         #[inline(always)]
         pub const fn dbp(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -441,7 +460,7 @@ pub mod regs {
         }
         #[doc = "Disable Backup domain write protection In reset state, all registers and SRAM in Backup domain are protected against parasitic write access. This bit must be set to enable the write access to these registers."]
         #[inline(always)]
-        pub fn set_dbp(&mut self, val: bool) {
+        pub const fn set_dbp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
@@ -468,6 +487,7 @@ pub mod regs {
     pub struct Ioretenr(pub u32);
     impl Ioretenr {
         #[doc = "Port A Standby GPIO retention enable Access can be protected by GPIOA SECy, privilege protection is controlled by SPRIV or NSPRIV. When set, each bit enables the Standby GPIO retention feature for PAy"]
+        #[must_use]
         #[inline(always)]
         pub const fn en(&self, n: usize) -> bool {
             assert!(n < 16usize);
@@ -477,7 +497,7 @@ pub mod regs {
         }
         #[doc = "Port A Standby GPIO retention enable Access can be protected by GPIOA SECy, privilege protection is controlled by SPRIV or NSPRIV. When set, each bit enables the Standby GPIO retention feature for PAy"]
         #[inline(always)]
-        pub fn set_en(&mut self, n: usize, val: bool) {
+        pub const fn set_en(&mut self, n: usize, val: bool) {
             assert!(n < 16usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -523,6 +543,7 @@ pub mod regs {
     pub struct Ioretr(pub u32);
     impl Ioretr {
         #[doc = "Port A Standby GPIO retention active Access can be protected by GPIOA SECy, privilege protection is controlled by SPRIV or NSPRIV."]
+        #[must_use]
         #[inline(always)]
         pub const fn ret(&self, n: usize) -> bool {
             assert!(n < 16usize);
@@ -532,7 +553,7 @@ pub mod regs {
         }
         #[doc = "Port A Standby GPIO retention active Access can be protected by GPIOA SECy, privilege protection is controlled by SPRIV or NSPRIV."]
         #[inline(always)]
-        pub fn set_ret(&mut self, n: usize, val: bool) {
+        pub const fn set_ret(&mut self, n: usize, val: bool) {
             assert!(n < 16usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -578,6 +599,7 @@ pub mod regs {
     pub struct Privcfgr(pub u32);
     impl Privcfgr {
         #[doc = "secure functions privilege configuration This bit is set and reset by software. It can be written only by a secure privileged access."]
+        #[must_use]
         #[inline(always)]
         pub const fn spriv(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -585,10 +607,11 @@ pub mod regs {
         }
         #[doc = "secure functions privilege configuration This bit is set and reset by software. It can be written only by a secure privileged access."]
         #[inline(always)]
-        pub fn set_spriv(&mut self, val: bool) {
+        pub const fn set_spriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "non-secure functions privilege configuration This bit is set and reset by software. It can be written only by privileged access, secure or non-secure."]
+        #[must_use]
         #[inline(always)]
         pub const fn nspriv(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -596,7 +619,7 @@ pub mod regs {
         }
         #[doc = "non-secure functions privilege configuration This bit is set and reset by software. It can be written only by privileged access, secure or non-secure."]
         #[inline(always)]
-        pub fn set_nspriv(&mut self, val: bool) {
+        pub const fn set_nspriv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -631,6 +654,7 @@ pub mod regs {
     pub struct Radioscr(pub u32);
     impl Radioscr {
         #[doc = "2.4 GHz RADIO operating mode. 1x: 2.4 GHz RADIO active mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn mode(&self) -> super::vals::Mode {
             let val = (self.0 >> 0usize) & 0x03;
@@ -638,10 +662,11 @@ pub mod regs {
         }
         #[doc = "2.4 GHz RADIO operating mode. 1x: 2.4 GHz RADIO active mode"]
         #[inline(always)]
-        pub fn set_mode(&mut self, val: super::vals::Mode) {
+        pub const fn set_mode(&mut self, val: super::vals::Mode) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "2.4 GHz RADIO PHY operating mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn phymode(&self) -> super::vals::Phymode {
             let val = (self.0 >> 2usize) & 0x01;
@@ -649,10 +674,11 @@ pub mod regs {
         }
         #[doc = "2.4 GHz RADIO PHY operating mode"]
         #[inline(always)]
-        pub fn set_phymode(&mut self, val: super::vals::Phymode) {
+        pub const fn set_phymode(&mut self, val: super::vals::Phymode) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "2.4 GHz RADIO encryption function operating mode"]
+        #[must_use]
         #[inline(always)]
         pub const fn encmode(&self) -> super::vals::Encmode {
             let val = (self.0 >> 3usize) & 0x01;
@@ -660,12 +686,13 @@ pub mod regs {
         }
         #[doc = "2.4 GHz RADIO encryption function operating mode"]
         #[inline(always)]
-        pub fn set_encmode(&mut self, val: super::vals::Encmode) {
+        pub const fn set_encmode(&mut self, val: super::vals::Encmode) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
         }
         #[doc = "2.4 GHz RADIO VDDHPA control word. Bits \\[3:0\\]
 see Table 81: PA output power table format for definition. Bit \\[4\\]
 rf_event."]
+        #[must_use]
         #[inline(always)]
         pub const fn rfvddhpa(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0x1f;
@@ -675,10 +702,11 @@ rf_event."]
 see Table 81: PA output power table format for definition. Bit \\[4\\]
 rf_event."]
         #[inline(always)]
-        pub fn set_rfvddhpa(&mut self, val: u8) {
+        pub const fn set_rfvddhpa(&mut self, val: u8) {
             self.0 = (self.0 & !(0x1f << 8usize)) | (((val as u32) & 0x1f) << 8usize);
         }
         #[doc = "Ready bit for Vless thansub DDHPAless than/sub voltage level when selecting VDD11 input."]
+        #[must_use]
         #[inline(always)]
         pub const fn regpardyv11(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -686,10 +714,11 @@ rf_event."]
         }
         #[doc = "Ready bit for Vless thansub DDHPAless than/sub voltage level when selecting VDD11 input."]
         #[inline(always)]
-        pub fn set_regpardyv11(&mut self, val: bool) {
+        pub const fn set_regpardyv11(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "Ready bit for V<sub>DDHPA</sub> voltage level when selecting VDDRFPA input. Note: REGPARDYVDDRFPA does not allow to detect correct V<sub>DDHPA</sub> voltage level when request to lower the level."]
+        #[must_use]
         #[inline(always)]
         pub const fn regpardyvddrfpa(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -697,10 +726,11 @@ rf_event."]
         }
         #[doc = "Ready bit for V<sub>DDHPA</sub> voltage level when selecting VDDRFPA input. Note: REGPARDYVDDRFPA does not allow to detect correct V<sub>DDHPA</sub> voltage level when request to lower the level."]
         #[inline(always)]
-        pub fn set_regpardyvddrfpa(&mut self, val: bool) {
+        pub const fn set_regpardyvddrfpa(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "regulator REG_VDDHPA input supply selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn regpasel(&self) -> super::vals::Regpasel {
             let val = (self.0 >> 23usize) & 0x01;
@@ -708,10 +738,11 @@ rf_event."]
         }
         #[doc = "regulator REG_VDDHPA input supply selection."]
         #[inline(always)]
-        pub fn set_regpasel(&mut self, val: super::vals::Regpasel) {
+        pub const fn set_regpasel(&mut self, val: super::vals::Regpasel) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
         }
         #[doc = "regulator REG_VDDHPA bypass enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn regpabypen(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -719,7 +750,7 @@ rf_event."]
         }
         #[doc = "regulator REG_VDDHPA bypass enable."]
         #[inline(always)]
-        pub fn set_regpabypen(&mut self, val: bool) {
+        pub const fn set_regpabypen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
     }
@@ -755,6 +786,7 @@ rf_event."]
     pub struct S2retr(pub u32);
     impl S2retr {
         #[doc = "PTA output signals Stop 2 mode retention enable Access can be secured by GTZC_TZSC PTACONVSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[must_use]
         #[inline(always)]
         pub const fn ptasren(&self) -> super::vals::Ptasren {
             let val = (self.0 >> 0usize) & 0x01;
@@ -762,10 +794,11 @@ rf_event."]
         }
         #[doc = "PTA output signals Stop 2 mode retention enable Access can be secured by GTZC_TZSC PTACONVSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[inline(always)]
-        pub fn set_ptasren(&mut self, val: super::vals::Ptasren) {
+        pub const fn set_ptasren(&mut self, val: super::vals::Ptasren) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
         #[doc = "PTA interface output signals state retention in Stop 2 mode active Access can be secured by GTZC_TZSC PTACONVSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[must_use]
         #[inline(always)]
         pub const fn ptasr(&self) -> super::vals::Ptasr {
             let val = (self.0 >> 16usize) & 0x01;
@@ -773,7 +806,7 @@ rf_event."]
         }
         #[doc = "PTA interface output signals state retention in Stop 2 mode active Access can be secured by GTZC_TZSC PTACONVSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[inline(always)]
-        pub fn set_ptasr(&mut self, val: super::vals::Ptasr) {
+        pub const fn set_ptasr(&mut self, val: super::vals::Ptasr) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
     }
@@ -808,6 +841,7 @@ rf_event."]
     pub struct Seccfgr(pub u32);
     impl Seccfgr {
         #[doc = "WUP1 secure protection"]
+        #[must_use]
         #[inline(always)]
         pub const fn wup1sec(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -817,12 +851,13 @@ rf_event."]
         }
         #[doc = "WUP1 secure protection"]
         #[inline(always)]
-        pub fn set_wup1sec(&mut self, n: usize, val: bool) {
+        pub const fn set_wup1sec(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Low-power modes secure protection"]
+        #[must_use]
         #[inline(always)]
         pub const fn lpmsec(&self) -> super::vals::Lpmsec {
             let val = (self.0 >> 12usize) & 0x01;
@@ -830,10 +865,11 @@ rf_event."]
         }
         #[doc = "Low-power modes secure protection"]
         #[inline(always)]
-        pub fn set_lpmsec(&mut self, val: super::vals::Lpmsec) {
+        pub const fn set_lpmsec(&mut self, val: super::vals::Lpmsec) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
         }
         #[doc = "Voltage detection secure protection"]
+        #[must_use]
         #[inline(always)]
         pub const fn vdmsec(&self) -> super::vals::Vdmsec {
             let val = (self.0 >> 13usize) & 0x01;
@@ -841,10 +877,11 @@ rf_event."]
         }
         #[doc = "Voltage detection secure protection"]
         #[inline(always)]
-        pub fn set_vdmsec(&mut self, val: super::vals::Vdmsec) {
+        pub const fn set_vdmsec(&mut self, val: super::vals::Vdmsec) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
         }
         #[doc = "Backup domain secure protection"]
+        #[must_use]
         #[inline(always)]
         pub const fn vbsec(&self) -> super::vals::Vbsec {
             let val = (self.0 >> 14usize) & 0x01;
@@ -852,7 +889,7 @@ rf_event."]
         }
         #[doc = "Backup domain secure protection"]
         #[inline(always)]
-        pub fn set_vbsec(&mut self, val: super::vals::Vbsec) {
+        pub const fn set_vbsec(&mut self, val: super::vals::Vbsec) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
         }
     }
@@ -891,6 +928,7 @@ rf_event."]
     pub struct Sr(pub u32);
     impl Sr {
         #[doc = "Clear Stop and Standby flags Access can be secured by LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV. Writing 1 to this bit clears the STOPF and SBF flags."]
+        #[must_use]
         #[inline(always)]
         pub const fn cssf(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -898,10 +936,11 @@ rf_event."]
         }
         #[doc = "Clear Stop and Standby flags Access can be secured by LPMSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV. Writing 1 to this bit clears the STOPF and SBF flags."]
         #[inline(always)]
-        pub fn set_cssf(&mut self, val: bool) {
+        pub const fn set_cssf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Stop flag This bit is set by hardware when the device enters a Stop or Standby mode at the same time as the sysclk has been set by hardware to select HSI. It’s cleared by software by writing 1 to the CSSF bit and by hardware when SBF is set."]
+        #[must_use]
         #[inline(always)]
         pub const fn stopf(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -909,10 +948,11 @@ rf_event."]
         }
         #[doc = "Stop flag This bit is set by hardware when the device enters a Stop or Standby mode at the same time as the sysclk has been set by hardware to select HSI. It’s cleared by software by writing 1 to the CSSF bit and by hardware when SBF is set."]
         #[inline(always)]
-        pub fn set_stopf(&mut self, val: bool) {
+        pub const fn set_stopf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Standby flag This bit is set by hardware when the device enters the Standby mode and the CPU restart from its reset vector. It’s cleared by writing 1 to the CSSF bit, or by a power-on reset. It is not cleared by the system reset."]
+        #[must_use]
         #[inline(always)]
         pub const fn sbf(&self) -> super::vals::Sbf {
             let val = (self.0 >> 2usize) & 0x01;
@@ -920,10 +960,11 @@ rf_event."]
         }
         #[doc = "Standby flag This bit is set by hardware when the device enters the Standby mode and the CPU restart from its reset vector. It’s cleared by writing 1 to the CSSF bit, or by a power-on reset. It is not cleared by the system reset."]
         #[inline(always)]
-        pub fn set_sbf(&mut self, val: super::vals::Sbf) {
+        pub const fn set_sbf(&mut self, val: super::vals::Sbf) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "Stop 2 mode peripherals power down flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn stop2f(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -931,7 +972,7 @@ rf_event."]
         }
         #[doc = "Stop 2 mode peripherals power down flag."]
         #[inline(always)]
-        pub fn set_stop2f(&mut self, val: bool) {
+        pub const fn set_stop2f(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
@@ -970,6 +1011,7 @@ rf_event."]
     pub struct Svmcr(pub u32);
     impl Svmcr {
         #[doc = "Programmable voltage detector enable"]
+        #[must_use]
         #[inline(always)]
         pub const fn pvde(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -977,10 +1019,11 @@ rf_event."]
         }
         #[doc = "Programmable voltage detector enable"]
         #[inline(always)]
-        pub fn set_pvde(&mut self, val: bool) {
+        pub const fn set_pvde(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Programmable voltage detector level selection These bits select the voltage threshold detected by the programmable voltage detector:"]
+        #[must_use]
         #[inline(always)]
         pub const fn pvdls(&self) -> super::vals::Pvdls {
             let val = (self.0 >> 5usize) & 0x07;
@@ -988,10 +1031,11 @@ rf_event."]
         }
         #[doc = "Programmable voltage detector level selection These bits select the voltage threshold detected by the programmable voltage detector:"]
         #[inline(always)]
-        pub fn set_pvdls(&mut self, val: super::vals::Pvdls) {
+        pub const fn set_pvdls(&mut self, val: super::vals::Pvdls) {
             self.0 = (self.0 & !(0x07 << 5usize)) | (((val.to_bits() as u32) & 0x07) << 5usize);
         }
         #[doc = "VDDUSB supply valid."]
+        #[must_use]
         #[inline(always)]
         pub const fn usv(&self) -> super::vals::Usv {
             let val = (self.0 >> 28usize) & 0x01;
@@ -999,10 +1043,11 @@ rf_event."]
         }
         #[doc = "VDDUSB supply valid."]
         #[inline(always)]
-        pub fn set_usv(&mut self, val: super::vals::Usv) {
+        pub const fn set_usv(&mut self, val: super::vals::Usv) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
         }
         #[doc = "VDDIO2 supply valid."]
+        #[must_use]
         #[inline(always)]
         pub const fn io2sv(&self) -> super::vals::Io2sv {
             let val = (self.0 >> 29usize) & 0x01;
@@ -1010,7 +1055,7 @@ rf_event."]
         }
         #[doc = "VDDIO2 supply valid."]
         #[inline(always)]
-        pub fn set_io2sv(&mut self, val: super::vals::Io2sv) {
+        pub const fn set_io2sv(&mut self, val: super::vals::Io2sv) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
         }
     }
@@ -1049,6 +1094,7 @@ rf_event."]
     pub struct Svmsr(pub u32);
     impl Svmsr {
         #[doc = "Regulator selection."]
+        #[must_use]
         #[inline(always)]
         pub const fn regs(&self) -> super::vals::Regs {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1056,10 +1102,11 @@ rf_event."]
         }
         #[doc = "Regulator selection."]
         #[inline(always)]
-        pub fn set_regs(&mut self, val: super::vals::Regs) {
+        pub const fn set_regs(&mut self, val: super::vals::Regs) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "Programmable voltage detector output"]
+        #[must_use]
         #[inline(always)]
         pub const fn pvdo(&self) -> super::vals::Pvdo {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1067,10 +1114,11 @@ rf_event."]
         }
         #[doc = "Programmable voltage detector output"]
         #[inline(always)]
-        pub fn set_pvdo(&mut self, val: super::vals::Pvdo) {
+        pub const fn set_pvdo(&mut self, val: super::vals::Pvdo) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
         #[doc = "Voltage level ready for currently used VOS"]
+        #[must_use]
         #[inline(always)]
         pub const fn actvosrdy(&self) -> super::vals::Actvosrdy {
             let val = (self.0 >> 15usize) & 0x01;
@@ -1078,10 +1126,11 @@ rf_event."]
         }
         #[doc = "Voltage level ready for currently used VOS"]
         #[inline(always)]
-        pub fn set_actvosrdy(&mut self, val: super::vals::Actvosrdy) {
+        pub const fn set_actvosrdy(&mut self, val: super::vals::Actvosrdy) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
         }
         #[doc = "VOS currently applied to V<sub>CORE</sub> This field provides the last VOS value."]
+        #[must_use]
         #[inline(always)]
         pub const fn actvos(&self) -> super::vals::Actvos {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1089,7 +1138,7 @@ rf_event."]
         }
         #[doc = "VOS currently applied to V<sub>CORE</sub> This field provides the last VOS value."]
         #[inline(always)]
-        pub fn set_actvos(&mut self, val: super::vals::Actvos) {
+        pub const fn set_actvos(&mut self, val: super::vals::Actvos) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
     }
@@ -1128,6 +1177,7 @@ rf_event."]
     pub struct Vosr(pub u32);
     impl Vosr {
         #[doc = "USB OTG VDD11USB ready."]
+        #[must_use]
         #[inline(always)]
         pub const fn vdd11usbrdy(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -1135,10 +1185,11 @@ rf_event."]
         }
         #[doc = "USB OTG VDD11USB ready."]
         #[inline(always)]
-        pub fn set_vdd11usbrdy(&mut self, val: bool) {
+        pub const fn set_vdd11usbrdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "USB OTG booster ready."]
+        #[must_use]
         #[inline(always)]
         pub const fn usbboostrdy(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -1146,10 +1197,11 @@ rf_event."]
         }
         #[doc = "USB OTG booster ready."]
         #[inline(always)]
-        pub fn set_usbboostrdy(&mut self, val: bool) {
+        pub const fn set_usbboostrdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Ready bit for V<sub>CORE</sub> voltage scaling output selection Set and cleared by hardware. When decreasing the voltage scaling range, VOSRDY must be one before increasing the SYSCLK frequency."]
+        #[must_use]
         #[inline(always)]
         pub const fn vosrdy(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -1157,10 +1209,11 @@ rf_event."]
         }
         #[doc = "Ready bit for V<sub>CORE</sub> voltage scaling output selection Set and cleared by hardware. When decreasing the voltage scaling range, VOSRDY must be one before increasing the SYSCLK frequency."]
         #[inline(always)]
-        pub fn set_vosrdy(&mut self, val: bool) {
+        pub const fn set_vosrdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Voltage scaling range selection Set a and cleared by software. Cleared by hardware when entering Stop 1 mode. Access can be secured by RCC SYSCLKSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[must_use]
         #[inline(always)]
         pub const fn vos(&self) -> super::vals::Vos {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1168,10 +1221,11 @@ rf_event."]
         }
         #[doc = "Voltage scaling range selection Set a and cleared by software. Cleared by hardware when entering Stop 1 mode. Access can be secured by RCC SYSCLKSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[inline(always)]
-        pub fn set_vos(&mut self, val: super::vals::Vos) {
+        pub const fn set_vos(&mut self, val: super::vals::Vos) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
         #[doc = "USB OTG power enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn usbpwren(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -1179,10 +1233,11 @@ rf_event."]
         }
         #[doc = "USB OTG power enable."]
         #[inline(always)]
-        pub fn set_usbpwren(&mut self, val: bool) {
+        pub const fn set_usbpwren(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "USB OTG booster enable."]
+        #[must_use]
         #[inline(always)]
         pub const fn usbboosten(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -1190,10 +1245,11 @@ rf_event."]
         }
         #[doc = "USB OTG booster enable."]
         #[inline(always)]
-        pub fn set_usbboosten(&mut self, val: bool) {
+        pub const fn set_usbboosten(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "USB OTG VDD11USB disable."]
+        #[must_use]
         #[inline(always)]
         pub const fn vdd11usbdis(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -1201,10 +1257,11 @@ rf_event."]
         }
         #[doc = "USB OTG VDD11USB disable."]
         #[inline(always)]
-        pub fn set_vdd11usbdis(&mut self, val: bool) {
+        pub const fn set_vdd11usbdis(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "USB OTG VDD11USB switch delay."]
+        #[must_use]
         #[inline(always)]
         pub const fn vdd11usbswdly(&self) -> u16 {
             let val = (self.0 >> 22usize) & 0x03ff;
@@ -1212,7 +1269,7 @@ rf_event."]
         }
         #[doc = "USB OTG VDD11USB switch delay."]
         #[inline(always)]
-        pub fn set_vdd11usbswdly(&mut self, val: u16) {
+        pub const fn set_vdd11usbswdly(&mut self, val: u16) {
             self.0 = (self.0 & !(0x03ff << 22usize)) | (((val as u32) & 0x03ff) << 22usize);
         }
     }
@@ -1248,6 +1305,7 @@ rf_event."]
     pub struct Wucr1(pub u32);
     impl Wucr1 {
         #[doc = "Wakeup and interrupt pin WKUP1 enable Access can be secured by WUP1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[must_use]
         #[inline(always)]
         pub const fn wupen(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -1257,7 +1315,7 @@ rf_event."]
         }
         #[doc = "Wakeup and interrupt pin WKUP1 enable Access can be secured by WUP1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[inline(always)]
-        pub fn set_wupen(&mut self, n: usize, val: bool) {
+        pub const fn set_wupen(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -1295,6 +1353,7 @@ rf_event."]
     pub struct Wucr2(pub u32);
     impl Wucr2 {
         #[doc = "Wakeup pin WKUP1 polarity. This bit must be configured when WUPEN1 = 0. Access can be secured by WUP1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[must_use]
         #[inline(always)]
         pub const fn wupp(&self, n: usize) -> super::vals::Wupp {
             assert!(n < 8usize);
@@ -1304,7 +1363,7 @@ rf_event."]
         }
         #[doc = "Wakeup pin WKUP1 polarity. This bit must be configured when WUPEN1 = 0. Access can be secured by WUP1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[inline(always)]
-        pub fn set_wupp(&mut self, n: usize, val: super::vals::Wupp) {
+        pub const fn set_wupp(&mut self, n: usize, val: super::vals::Wupp) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
@@ -1342,6 +1401,7 @@ rf_event."]
     pub struct Wucr3(pub u32);
     impl Wucr3 {
         #[doc = "Wakeup and interrupt pin WKUPX selection This field must be configured when WUPENX = 0. Access can be secured by WUPXSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[must_use]
         #[inline(always)]
         pub const fn wusel(&self, n: usize) -> super::vals::Wusel {
             assert!(n < 8usize);
@@ -1351,7 +1411,7 @@ rf_event."]
         }
         #[doc = "Wakeup and interrupt pin WKUPX selection This field must be configured when WUPENX = 0. Access can be secured by WUPXSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[inline(always)]
-        pub fn set_wusel(&mut self, n: usize, val: super::vals::Wusel) {
+        pub const fn set_wusel(&mut self, n: usize, val: super::vals::Wusel) {
             assert!(n < 8usize);
             let offs = 0usize + n * 2usize;
             self.0 = (self.0 & !(0x03 << offs)) | (((val.to_bits() as u32) & 0x03) << offs);
@@ -1389,6 +1449,7 @@ rf_event."]
     pub struct Wuscr(pub u32);
     impl Wuscr {
         #[doc = "Clear wakeup flag 1 Access can be secured by WUP1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV. Writing 1 to this bit clears the WUF1 flag in WUSR."]
+        #[must_use]
         #[inline(always)]
         pub const fn cwuf(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -1398,7 +1459,7 @@ rf_event."]
         }
         #[doc = "Clear wakeup flag 1 Access can be secured by WUP1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV. Writing 1 to this bit clears the WUF1 flag in WUSR."]
         #[inline(always)]
-        pub fn set_cwuf(&mut self, n: usize, val: bool) {
+        pub const fn set_cwuf(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -1436,6 +1497,7 @@ rf_event."]
     pub struct Wusr(pub u32);
     impl Wusr {
         #[doc = "Wakeup and interrupt pending flag 1 This bit is set when a wakeup event is detected on WKUP1 pin. This bit is cleared by writing 1 in the CWUF1 bit of WUSCR or by hardware when WUPEN1 = 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn wuf(&self, n: usize) -> bool {
             assert!(n < 8usize);
@@ -1445,7 +1507,7 @@ rf_event."]
         }
         #[doc = "Wakeup and interrupt pending flag 1 This bit is set when a wakeup event is detected on WKUP1 pin. This bit is cleared by writing 1 in the CWUF1 bit of WUSCR or by hardware when WUPEN1 = 0."]
         #[inline(always)]
-        pub fn set_wuf(&mut self, n: usize, val: bool) {
+        pub const fn set_wuf(&mut self, n: usize, val: bool) {
             assert!(n < 8usize);
             let offs = 0usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);

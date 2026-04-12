@@ -22,122 +22,122 @@ impl Rcc {
     #[doc = "Clock control register."]
     #[inline(always)]
     pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "Internal clock sources calibration register."]
     #[inline(always)]
     pub const fn icscr(self) -> crate::common::Reg<regs::Icscr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x04usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "Clock configuration register."]
     #[inline(always)]
     pub const fn cfgr(self) -> crate::common::Reg<regs::Cfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x08usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
     #[doc = "PLL configuration register."]
     #[inline(always)]
     pub const fn pllcfgr(self) -> crate::common::Reg<regs::Pllcfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x0cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
     #[doc = "Clock interrupt enable register."]
     #[inline(always)]
     pub const fn cier(self) -> crate::common::Reg<regs::Cier, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x18usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "Clock interrupt flag register."]
     #[inline(always)]
     pub const fn cifr(self) -> crate::common::Reg<regs::Cifr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x1cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "Clock interrupt clear register."]
     #[inline(always)]
     pub const fn cicr(self) -> crate::common::Reg<regs::Cicr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x20usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize) as _) }
     }
     #[doc = "AHB peripheral reset register."]
     #[inline(always)]
     pub const fn ahbrstr(self) -> crate::common::Reg<regs::Ahbrstr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x28usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
     #[doc = "I/O port reset register."]
     #[inline(always)]
     pub const fn gpiorstr(self) -> crate::common::Reg<regs::Gpiorstr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x2cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
     }
     #[doc = "APB peripheral reset register 1."]
     #[inline(always)]
     pub const fn apbrstr1(self) -> crate::common::Reg<regs::Apbrstr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x38usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x38usize) as _) }
     }
     #[doc = "APB peripheral reset register 2."]
     #[inline(always)]
     pub const fn apbrstr2(self) -> crate::common::Reg<regs::Apbrstr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x40usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
     }
     #[doc = "AHB peripheral clock enable register."]
     #[inline(always)]
     pub const fn ahbenr(self) -> crate::common::Reg<regs::Ahbenr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x48usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
     }
     #[doc = "I/O port clock enable register."]
     #[inline(always)]
     pub const fn gpioenr(self) -> crate::common::Reg<regs::Gpioenr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x4cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x4cusize) as _) }
     }
     #[doc = "Debug configuration register."]
     #[inline(always)]
     pub const fn dbgcfgr(self) -> crate::common::Reg<regs::Dbgcfgr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x50usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
     }
     #[doc = "APB peripheral clock enable register 1."]
     #[inline(always)]
     pub const fn apbenr1(self) -> crate::common::Reg<regs::Apbenr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x58usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x58usize) as _) }
     }
     #[doc = "APB peripheral clock enable register 2."]
     #[inline(always)]
     pub const fn apbenr2(self) -> crate::common::Reg<regs::Apbenr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x60usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x60usize) as _) }
     }
     #[doc = "AHB peripheral clock enable in Sleep/Stop mode register."]
     #[inline(always)]
     pub const fn ahbsmenr(self) -> crate::common::Reg<regs::Ahbsmenr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x68usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x68usize) as _) }
     }
     #[doc = "I/O port in Sleep mode clock enable register."]
     #[inline(always)]
     pub const fn gpiosmenr(self) -> crate::common::Reg<regs::Gpiosmenr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x6cusize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x6cusize) as _) }
     }
     #[doc = "APB peripheral clock enable in Sleep/Stop mode register 1."]
     #[inline(always)]
     pub const fn apbsmenr1(self) -> crate::common::Reg<regs::Apbsmenr1, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x78usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x78usize) as _) }
     }
     #[doc = "APB peripheral clock enable in Sleep/Stop mode register 2."]
     #[inline(always)]
     pub const fn apbsmenr2(self) -> crate::common::Reg<regs::Apbsmenr2, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x80usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80usize) as _) }
     }
     #[doc = "Peripherals independent clock configuration register."]
     #[inline(always)]
     pub const fn ccipr(self) -> crate::common::Reg<regs::Ccipr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x88usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x88usize) as _) }
     }
     #[doc = "RTC domain control register."]
     #[inline(always)]
     pub const fn bdcr(self) -> crate::common::Reg<regs::Bdcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x90usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x90usize) as _) }
     }
     #[doc = "Control/status register."]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x94usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x94usize) as _) }
     }
     #[doc = "RCC clock recovery RC register."]
     #[inline(always)]
     pub const fn crrcr(self) -> crate::common::Reg<regs::Crrcr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.add(0x98usize) as _) }
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x98usize) as _) }
     }
 }
 pub mod regs {
@@ -147,6 +147,7 @@ pub mod regs {
     pub struct Ahbenr(pub u32);
     impl Ahbenr {
         #[doc = "DMA1 and DMAMUX clock enable Set and cleared by software. DMAMUX is enabled as long as at least one DMA peripheral is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn dma1en(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -154,10 +155,11 @@ pub mod regs {
         }
         #[doc = "DMA1 and DMAMUX clock enable Set and cleared by software. DMAMUX is enabled as long as at least one DMA peripheral is enabled."]
         #[inline(always)]
-        pub fn set_dma1en(&mut self, val: bool) {
+        pub const fn set_dma1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "DMA2 and DMAMUX clock enable Set and cleared by software. DMAMUX is enabled as long as at least one DMA peripheral is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn dma2en(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -165,10 +167,11 @@ pub mod regs {
         }
         #[doc = "DMA2 and DMAMUX clock enable Set and cleared by software. DMAMUX is enabled as long as at least one DMA peripheral is enabled."]
         #[inline(always)]
-        pub fn set_dma2en(&mut self, val: bool) {
+        pub const fn set_dma2en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Flash memory interface clock enable Set and cleared by software. This bit can only be cleared when the flash memory is in power down mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn flashen(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -176,10 +179,11 @@ pub mod regs {
         }
         #[doc = "Flash memory interface clock enable Set and cleared by software. This bit can only be cleared when the flash memory is in power down mode."]
         #[inline(always)]
-        pub fn set_flashen(&mut self, val: bool) {
+        pub const fn set_flashen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "CRC clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn crcen(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -187,10 +191,11 @@ pub mod regs {
         }
         #[doc = "CRC clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_crcen(&mut self, val: bool) {
+        pub const fn set_crcen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "AES hardware accelerator Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn aesen(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -198,10 +203,11 @@ pub mod regs {
         }
         #[doc = "AES hardware accelerator Set and cleared by software."]
         #[inline(always)]
-        pub fn set_aesen(&mut self, val: bool) {
+        pub const fn set_aesen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Random number generator clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn rngen(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -209,10 +215,11 @@ pub mod regs {
         }
         #[doc = "Random number generator clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_rngen(&mut self, val: bool) {
+        pub const fn set_rngen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Touch sensing controller clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tscen(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -220,7 +227,7 @@ pub mod regs {
         }
         #[doc = "Touch sensing controller clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tscen(&mut self, val: bool) {
+        pub const fn set_tscen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
     }
@@ -255,6 +262,7 @@ pub mod regs {
     pub struct Ahbrstr(pub u32);
     impl Ahbrstr {
         #[doc = "DMA1 and DMAMUX reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn dma1rst(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -262,10 +270,11 @@ pub mod regs {
         }
         #[doc = "DMA1 and DMAMUX reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_dma1rst(&mut self, val: bool) {
+        pub const fn set_dma1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "DMA2 and DMAMUX reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn dma2rst(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -273,10 +282,11 @@ pub mod regs {
         }
         #[doc = "DMA2 and DMAMUX reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_dma2rst(&mut self, val: bool) {
+        pub const fn set_dma2rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Flash memory interface reset Set and cleared by software. This bit can only be set when the flash memory is in power down mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn flashrst(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -284,10 +294,11 @@ pub mod regs {
         }
         #[doc = "Flash memory interface reset Set and cleared by software. This bit can only be set when the flash memory is in power down mode."]
         #[inline(always)]
-        pub fn set_flashrst(&mut self, val: bool) {
+        pub const fn set_flashrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "CRC reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn crcrst(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -295,10 +306,11 @@ pub mod regs {
         }
         #[doc = "CRC reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_crcrst(&mut self, val: bool) {
+        pub const fn set_crcrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "AES hardware accelerator reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn aesrst(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -306,10 +318,11 @@ pub mod regs {
         }
         #[doc = "AES hardware accelerator reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_aesrst(&mut self, val: bool) {
+        pub const fn set_aesrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Random number generator reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn rngrst(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -317,10 +330,11 @@ pub mod regs {
         }
         #[doc = "Random number generator reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_rngrst(&mut self, val: bool) {
+        pub const fn set_rngrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Touch sensing controller reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tscrst(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -328,7 +342,7 @@ pub mod regs {
         }
         #[doc = "Touch sensing controller reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tscrst(&mut self, val: bool) {
+        pub const fn set_tscrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
     }
@@ -363,6 +377,7 @@ pub mod regs {
     pub struct Ahbsmenr(pub u32);
     impl Ahbsmenr {
         #[doc = "DMA1 and DMAMUX clock enable during Sleep mode Set and cleared by software. Clock to DMAMUX during Sleep mode is enabled as long as the clock in Sleep mode is enabled to at least one DMA peripheral."]
+        #[must_use]
         #[inline(always)]
         pub const fn dma1smen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -370,10 +385,11 @@ pub mod regs {
         }
         #[doc = "DMA1 and DMAMUX clock enable during Sleep mode Set and cleared by software. Clock to DMAMUX during Sleep mode is enabled as long as the clock in Sleep mode is enabled to at least one DMA peripheral."]
         #[inline(always)]
-        pub fn set_dma1smen(&mut self, val: bool) {
+        pub const fn set_dma1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "DMA2 and DMAMUX clock enable during Sleep mode Set and cleared by software. Clock to DMAMUX during Sleep mode is enabled as long as the clock in Sleep mode is enabled to at least one DMA peripheral."]
+        #[must_use]
         #[inline(always)]
         pub const fn dma2smen(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -381,10 +397,11 @@ pub mod regs {
         }
         #[doc = "DMA2 and DMAMUX clock enable during Sleep mode Set and cleared by software. Clock to DMAMUX during Sleep mode is enabled as long as the clock in Sleep mode is enabled to at least one DMA peripheral."]
         #[inline(always)]
-        pub fn set_dma2smen(&mut self, val: bool) {
+        pub const fn set_dma2smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Flash memory interface clock enable during Sleep mode Set and cleared by software. This bit can be activated only when the flash memory is in power down mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn flashsmen(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -392,10 +409,11 @@ pub mod regs {
         }
         #[doc = "Flash memory interface clock enable during Sleep mode Set and cleared by software. This bit can be activated only when the flash memory is in power down mode."]
         #[inline(always)]
-        pub fn set_flashsmen(&mut self, val: bool) {
+        pub const fn set_flashsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "SRAM clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn sramsmen(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -403,10 +421,11 @@ pub mod regs {
         }
         #[doc = "SRAM clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_sramsmen(&mut self, val: bool) {
+        pub const fn set_sramsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "CRC clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn crcsmen(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -414,10 +433,11 @@ pub mod regs {
         }
         #[doc = "CRC clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_crcsmen(&mut self, val: bool) {
+        pub const fn set_crcsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "AES hardware accelerator clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn aessmen(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -425,10 +445,11 @@ pub mod regs {
         }
         #[doc = "AES hardware accelerator clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_aessmen(&mut self, val: bool) {
+        pub const fn set_aessmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "RNG clock enable during Sleep and Stop mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn rngsmen(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -436,10 +457,11 @@ pub mod regs {
         }
         #[doc = "RNG clock enable during Sleep and Stop mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_rngsmen(&mut self, val: bool) {
+        pub const fn set_rngsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "TSC clock enable during Sleep and Stop mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tscsmen(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -447,7 +469,7 @@ pub mod regs {
         }
         #[doc = "TSC clock enable during Sleep and Stop mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tscsmen(&mut self, val: bool) {
+        pub const fn set_tscsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
     }
@@ -483,6 +505,7 @@ pub mod regs {
     pub struct Apbenr1(pub u32);
     impl Apbenr1 {
         #[doc = "TIM2 timer clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim2en(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -490,10 +513,11 @@ pub mod regs {
         }
         #[doc = "TIM2 timer clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim2en(&mut self, val: bool) {
+        pub const fn set_tim2en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "TIM3 timer clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim3en(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -501,10 +525,11 @@ pub mod regs {
         }
         #[doc = "TIM3 timer clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim3en(&mut self, val: bool) {
+        pub const fn set_tim3en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "TIM6 timer clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim6en(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -512,10 +537,11 @@ pub mod regs {
         }
         #[doc = "TIM6 timer clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim6en(&mut self, val: bool) {
+        pub const fn set_tim6en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "TIM7 timer clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim7en(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -523,10 +549,11 @@ pub mod regs {
         }
         #[doc = "TIM7 timer clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim7en(&mut self, val: bool) {
+        pub const fn set_tim7en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "LPUART2 clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lpuart2en(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -534,10 +561,11 @@ pub mod regs {
         }
         #[doc = "LPUART2 clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lpuart2en(&mut self, val: bool) {
+        pub const fn set_lpuart2en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "LCD clock enable<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lcden(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -545,10 +573,11 @@ pub mod regs {
         }
         #[doc = "LCD clock enable<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lcden(&mut self, val: bool) {
+        pub const fn set_lcden(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "RTC APB clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn rtcapben(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -556,10 +585,11 @@ pub mod regs {
         }
         #[doc = "RTC APB clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_rtcapben(&mut self, val: bool) {
+        pub const fn set_rtcapben(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "WWDG clock enable Set by software to enable the window watchdog clock. Cleared by hardware system reset This bit can also be set by hardware if the WWDG_SW option bit is 0."]
+        #[must_use]
         #[inline(always)]
         pub const fn wwdgen(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -567,10 +597,11 @@ pub mod regs {
         }
         #[doc = "WWDG clock enable Set by software to enable the window watchdog clock. Cleared by hardware system reset This bit can also be set by hardware if the WWDG_SW option bit is 0."]
         #[inline(always)]
-        pub fn set_wwdgen(&mut self, val: bool) {
+        pub const fn set_wwdgen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "LPUART3 clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lpuart3en(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -578,10 +609,11 @@ pub mod regs {
         }
         #[doc = "LPUART3 clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lpuart3en(&mut self, val: bool) {
+        pub const fn set_lpuart3en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "USB clock enable<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn usben(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -589,10 +621,11 @@ pub mod regs {
         }
         #[doc = "USB clock enable<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_usben(&mut self, val: bool) {
+        pub const fn set_usben(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "SPI2 clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn spi2en(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -600,10 +633,11 @@ pub mod regs {
         }
         #[doc = "SPI2 clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_spi2en(&mut self, val: bool) {
+        pub const fn set_spi2en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "SPI3 clock enable<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn spi3en(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -611,10 +645,11 @@ pub mod regs {
         }
         #[doc = "SPI3 clock enable<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_spi3en(&mut self, val: bool) {
+        pub const fn set_spi3en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "CRS clock enable<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn crsen(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -622,10 +657,11 @@ pub mod regs {
         }
         #[doc = "CRS clock enable<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_crsen(&mut self, val: bool) {
+        pub const fn set_crsen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "USART2 clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart2en(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -633,10 +669,11 @@ pub mod regs {
         }
         #[doc = "USART2 clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_usart2en(&mut self, val: bool) {
+        pub const fn set_usart2en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "USART3 clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart3en(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -644,10 +681,11 @@ pub mod regs {
         }
         #[doc = "USART3 clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_usart3en(&mut self, val: bool) {
+        pub const fn set_usart3en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "USART4 clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart4en(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -655,10 +693,11 @@ pub mod regs {
         }
         #[doc = "USART4 clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_usart4en(&mut self, val: bool) {
+        pub const fn set_usart4en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "LPUART1 clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lpuart1en(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -666,10 +705,11 @@ pub mod regs {
         }
         #[doc = "LPUART1 clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lpuart1en(&mut self, val: bool) {
+        pub const fn set_lpuart1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "I2C1 clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c1en(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -677,10 +717,11 @@ pub mod regs {
         }
         #[doc = "I2C1 clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_i2c1en(&mut self, val: bool) {
+        pub const fn set_i2c1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "I2C2 clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c2en(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -688,10 +729,11 @@ pub mod regs {
         }
         #[doc = "I2C2 clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_i2c2en(&mut self, val: bool) {
+        pub const fn set_i2c2en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "I2C3 clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c3en(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -699,10 +741,11 @@ pub mod regs {
         }
         #[doc = "I2C3 clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_i2c3en(&mut self, val: bool) {
+        pub const fn set_i2c3en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "OPAMP clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn opampen(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -710,10 +753,11 @@ pub mod regs {
         }
         #[doc = "OPAMP clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_opampen(&mut self, val: bool) {
+        pub const fn set_opampen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "I2C4EN clock enable<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c4en(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -721,10 +765,11 @@ pub mod regs {
         }
         #[doc = "I2C4EN clock enable<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_i2c4en(&mut self, val: bool) {
+        pub const fn set_i2c4en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "LPTIM3 clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim3en(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
@@ -732,10 +777,11 @@ pub mod regs {
         }
         #[doc = "LPTIM3 clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lptim3en(&mut self, val: bool) {
+        pub const fn set_lptim3en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "Power interface clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn pwren(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -743,10 +789,11 @@ pub mod regs {
         }
         #[doc = "Power interface clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_pwren(&mut self, val: bool) {
+        pub const fn set_pwren(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "DAC1 interface clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn dac1en(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -754,10 +801,11 @@ pub mod regs {
         }
         #[doc = "DAC1 interface clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_dac1en(&mut self, val: bool) {
+        pub const fn set_dac1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "LPTIM2 clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim2en(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -765,10 +813,11 @@ pub mod regs {
         }
         #[doc = "LPTIM2 clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lptim2en(&mut self, val: bool) {
+        pub const fn set_lptim2en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "LPTIM1 clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim1en(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -776,7 +825,7 @@ pub mod regs {
         }
         #[doc = "LPTIM1 clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lptim1en(&mut self, val: bool) {
+        pub const fn set_lptim1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -831,6 +880,7 @@ pub mod regs {
     pub struct Apbenr2(pub u32);
     impl Apbenr2 {
         #[doc = "SYSCFG, COMP and VREFBUF clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn syscfgen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -838,10 +888,11 @@ pub mod regs {
         }
         #[doc = "SYSCFG, COMP and VREFBUF clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_syscfgen(&mut self, val: bool) {
+        pub const fn set_syscfgen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "TIM1 timer clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim1en(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -849,10 +900,11 @@ pub mod regs {
         }
         #[doc = "TIM1 timer clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim1en(&mut self, val: bool) {
+        pub const fn set_tim1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "SPI1 clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn spi1en(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -860,10 +912,11 @@ pub mod regs {
         }
         #[doc = "SPI1 clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_spi1en(&mut self, val: bool) {
+        pub const fn set_spi1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "USART1 clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart1en(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -871,10 +924,11 @@ pub mod regs {
         }
         #[doc = "USART1 clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_usart1en(&mut self, val: bool) {
+        pub const fn set_usart1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "TIM15 timer clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim15en(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -882,10 +936,11 @@ pub mod regs {
         }
         #[doc = "TIM15 timer clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim15en(&mut self, val: bool) {
+        pub const fn set_tim15en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "TIM16 timer clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim16en(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -893,10 +948,11 @@ pub mod regs {
         }
         #[doc = "TIM16 timer clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim16en(&mut self, val: bool) {
+        pub const fn set_tim16en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "ADC clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn adcen(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -904,7 +960,7 @@ pub mod regs {
         }
         #[doc = "ADC clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_adcen(&mut self, val: bool) {
+        pub const fn set_adcen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
     }
@@ -939,6 +995,7 @@ pub mod regs {
     pub struct Apbrstr1(pub u32);
     impl Apbrstr1 {
         #[doc = "TIM2 timer reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim2rst(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -946,10 +1003,11 @@ pub mod regs {
         }
         #[doc = "TIM2 timer reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim2rst(&mut self, val: bool) {
+        pub const fn set_tim2rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "TIM3 timer reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim3rst(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -957,10 +1015,11 @@ pub mod regs {
         }
         #[doc = "TIM3 timer reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim3rst(&mut self, val: bool) {
+        pub const fn set_tim3rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "TIM6 timer reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim6rst(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -968,10 +1027,11 @@ pub mod regs {
         }
         #[doc = "TIM6 timer reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim6rst(&mut self, val: bool) {
+        pub const fn set_tim6rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "TIM7 timer reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim7rst(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -979,10 +1039,11 @@ pub mod regs {
         }
         #[doc = "TIM7 timer reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim7rst(&mut self, val: bool) {
+        pub const fn set_tim7rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "LPUART2 reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lpuart2rst(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -990,10 +1051,11 @@ pub mod regs {
         }
         #[doc = "LPUART2 reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lpuart2rst(&mut self, val: bool) {
+        pub const fn set_lpuart2rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "LCD reset<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lcdrst(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -1001,10 +1063,11 @@ pub mod regs {
         }
         #[doc = "LCD reset<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lcdrst(&mut self, val: bool) {
+        pub const fn set_lcdrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "LPUART3 reset<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lpuart3rst(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -1012,10 +1075,11 @@ pub mod regs {
         }
         #[doc = "LPUART3 reset<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lpuart3rst(&mut self, val: bool) {
+        pub const fn set_lpuart3rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "USB reset<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn usbrst(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -1023,10 +1087,11 @@ pub mod regs {
         }
         #[doc = "USB reset<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_usbrst(&mut self, val: bool) {
+        pub const fn set_usbrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "SPI2 reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn spi2rst(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -1034,10 +1099,11 @@ pub mod regs {
         }
         #[doc = "SPI2 reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_spi2rst(&mut self, val: bool) {
+        pub const fn set_spi2rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "SPI3 reset<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn spi3rst(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -1045,10 +1111,11 @@ pub mod regs {
         }
         #[doc = "SPI3 reset<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_spi3rst(&mut self, val: bool) {
+        pub const fn set_spi3rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "CRS reset<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn crsrst(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1056,10 +1123,11 @@ pub mod regs {
         }
         #[doc = "CRS reset<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_crsrst(&mut self, val: bool) {
+        pub const fn set_crsrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "USART2 reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart2rst(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -1067,10 +1135,11 @@ pub mod regs {
         }
         #[doc = "USART2 reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_usart2rst(&mut self, val: bool) {
+        pub const fn set_usart2rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "USART3 reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart3rst(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -1078,10 +1147,11 @@ pub mod regs {
         }
         #[doc = "USART3 reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_usart3rst(&mut self, val: bool) {
+        pub const fn set_usart3rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "USART4 reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart4rst(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -1089,10 +1159,11 @@ pub mod regs {
         }
         #[doc = "USART4 reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_usart4rst(&mut self, val: bool) {
+        pub const fn set_usart4rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "LPUART1 reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lpuart1rst(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -1100,10 +1171,11 @@ pub mod regs {
         }
         #[doc = "LPUART1 reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lpuart1rst(&mut self, val: bool) {
+        pub const fn set_lpuart1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "I2C1 reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c1rst(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -1111,10 +1183,11 @@ pub mod regs {
         }
         #[doc = "I2C1 reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_i2c1rst(&mut self, val: bool) {
+        pub const fn set_i2c1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "I2C2 reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c2rst(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -1122,10 +1195,11 @@ pub mod regs {
         }
         #[doc = "I2C2 reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_i2c2rst(&mut self, val: bool) {
+        pub const fn set_i2c2rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "I2C3 reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c3rst(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -1133,10 +1207,11 @@ pub mod regs {
         }
         #[doc = "I2C3 reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_i2c3rst(&mut self, val: bool) {
+        pub const fn set_i2c3rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "OPAMP reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn opamprst(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -1144,10 +1219,11 @@ pub mod regs {
         }
         #[doc = "OPAMP reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_opamprst(&mut self, val: bool) {
+        pub const fn set_opamprst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "I2C4 reset<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c4rst(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -1155,10 +1231,11 @@ pub mod regs {
         }
         #[doc = "I2C4 reset<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_i2c4rst(&mut self, val: bool) {
+        pub const fn set_i2c4rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "LPTIM3 reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim3rst(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
@@ -1166,10 +1243,11 @@ pub mod regs {
         }
         #[doc = "LPTIM3 reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lptim3rst(&mut self, val: bool) {
+        pub const fn set_lptim3rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "Power interface reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn pwrrst(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -1177,10 +1255,11 @@ pub mod regs {
         }
         #[doc = "Power interface reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_pwrrst(&mut self, val: bool) {
+        pub const fn set_pwrrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "DAC1 interface reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn dac1rst(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -1188,10 +1267,11 @@ pub mod regs {
         }
         #[doc = "DAC1 interface reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_dac1rst(&mut self, val: bool) {
+        pub const fn set_dac1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "Low Power Timer 2 reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim2rst(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -1199,10 +1279,11 @@ pub mod regs {
         }
         #[doc = "Low Power Timer 2 reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lptim2rst(&mut self, val: bool) {
+        pub const fn set_lptim2rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "Low Power Timer 1 reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim1rst(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -1210,7 +1291,7 @@ pub mod regs {
         }
         #[doc = "Low Power Timer 1 reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lptim1rst(&mut self, val: bool) {
+        pub const fn set_lptim1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -1263,6 +1344,7 @@ pub mod regs {
     pub struct Apbrstr2(pub u32);
     impl Apbrstr2 {
         #[doc = "SYSCFG, COMP and VREFBUF reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn syscfgrst(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1270,10 +1352,11 @@ pub mod regs {
         }
         #[doc = "SYSCFG, COMP and VREFBUF reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_syscfgrst(&mut self, val: bool) {
+        pub const fn set_syscfgrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "TIM1 timer reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim1rst(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1281,10 +1364,11 @@ pub mod regs {
         }
         #[doc = "TIM1 timer reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim1rst(&mut self, val: bool) {
+        pub const fn set_tim1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "SPI1 reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn spi1rst(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -1292,10 +1376,11 @@ pub mod regs {
         }
         #[doc = "SPI1 reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_spi1rst(&mut self, val: bool) {
+        pub const fn set_spi1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "USART1 reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart1rst(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -1303,10 +1388,11 @@ pub mod regs {
         }
         #[doc = "USART1 reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_usart1rst(&mut self, val: bool) {
+        pub const fn set_usart1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "TIM15 timer reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim15rst(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1314,10 +1400,11 @@ pub mod regs {
         }
         #[doc = "TIM15 timer reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim15rst(&mut self, val: bool) {
+        pub const fn set_tim15rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "TIM16 timer reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim16rst(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -1325,10 +1412,11 @@ pub mod regs {
         }
         #[doc = "TIM16 timer reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim16rst(&mut self, val: bool) {
+        pub const fn set_tim16rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "ADC reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn adcrst(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -1336,7 +1424,7 @@ pub mod regs {
         }
         #[doc = "ADC reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_adcrst(&mut self, val: bool) {
+        pub const fn set_adcrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
     }
@@ -1371,6 +1459,7 @@ pub mod regs {
     pub struct Apbsmenr1(pub u32);
     impl Apbsmenr1 {
         #[doc = "TIM2 timer clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim2smen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1378,10 +1467,11 @@ pub mod regs {
         }
         #[doc = "TIM2 timer clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim2smen(&mut self, val: bool) {
+        pub const fn set_tim2smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "TIM3 timer clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim3smen(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1389,10 +1479,11 @@ pub mod regs {
         }
         #[doc = "TIM3 timer clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim3smen(&mut self, val: bool) {
+        pub const fn set_tim3smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "TIM6 timer clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim6smen(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -1400,10 +1491,11 @@ pub mod regs {
         }
         #[doc = "TIM6 timer clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim6smen(&mut self, val: bool) {
+        pub const fn set_tim6smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "TIM7 timer clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim7smen(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1411,10 +1503,11 @@ pub mod regs {
         }
         #[doc = "TIM7 timer clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim7smen(&mut self, val: bool) {
+        pub const fn set_tim7smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "LPUART2 clock enable during Sleep and Stop modes Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lpuart2smen(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1422,10 +1515,11 @@ pub mod regs {
         }
         #[doc = "LPUART2 clock enable during Sleep and Stop modes Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lpuart2smen(&mut self, val: bool) {
+        pub const fn set_lpuart2smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "LCD clock enable during Sleep mode<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lcdsmen(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -1433,10 +1527,11 @@ pub mod regs {
         }
         #[doc = "LCD clock enable during Sleep mode<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lcdsmen(&mut self, val: bool) {
+        pub const fn set_lcdsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "RTC APB clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn rtcapbsmen(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -1444,10 +1539,11 @@ pub mod regs {
         }
         #[doc = "RTC APB clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_rtcapbsmen(&mut self, val: bool) {
+        pub const fn set_rtcapbsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "WWDG clock enable during Sleep and Stop modes Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn wwdgsmen(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1455,10 +1551,11 @@ pub mod regs {
         }
         #[doc = "WWDG clock enable during Sleep and Stop modes Set and cleared by software."]
         #[inline(always)]
-        pub fn set_wwdgsmen(&mut self, val: bool) {
+        pub const fn set_wwdgsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "LPUART3 clock enable during Sleep and Stop modes Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lpuart3smen(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -1466,10 +1563,11 @@ pub mod regs {
         }
         #[doc = "LPUART3 clock enable during Sleep and Stop modes Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lpuart3smen(&mut self, val: bool) {
+        pub const fn set_lpuart3smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "USB clock enable during Sleep mode<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn usbsmen(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
@@ -1477,10 +1575,11 @@ pub mod regs {
         }
         #[doc = "USB clock enable during Sleep mode<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_usbsmen(&mut self, val: bool) {
+        pub const fn set_usbsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "SPI2 clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn spi2smen(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -1488,10 +1587,11 @@ pub mod regs {
         }
         #[doc = "SPI2 clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_spi2smen(&mut self, val: bool) {
+        pub const fn set_spi2smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "SPI3 clock enable during Sleep mode<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn spi3smen(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -1499,10 +1599,11 @@ pub mod regs {
         }
         #[doc = "SPI3 clock enable during Sleep mode<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_spi3smen(&mut self, val: bool) {
+        pub const fn set_spi3smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "CRS clock enable during Sleep and Stop modes<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn crssmen(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1510,10 +1611,11 @@ pub mod regs {
         }
         #[doc = "CRS clock enable during Sleep and Stop modes<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_crssmen(&mut self, val: bool) {
+        pub const fn set_crssmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "USART2 clock enable during Sleep and Stop modes Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart2smen(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -1521,10 +1623,11 @@ pub mod regs {
         }
         #[doc = "USART2 clock enable during Sleep and Stop modes Set and cleared by software."]
         #[inline(always)]
-        pub fn set_usart2smen(&mut self, val: bool) {
+        pub const fn set_usart2smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "USART3 clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart3smen(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -1532,10 +1635,11 @@ pub mod regs {
         }
         #[doc = "USART3 clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_usart3smen(&mut self, val: bool) {
+        pub const fn set_usart3smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "USART4 clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart4smen(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -1543,10 +1647,11 @@ pub mod regs {
         }
         #[doc = "USART4 clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_usart4smen(&mut self, val: bool) {
+        pub const fn set_usart4smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "LPUART1 clock enable during Sleep and Stop modes Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lpuart1smen(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -1554,10 +1659,11 @@ pub mod regs {
         }
         #[doc = "LPUART1 clock enable during Sleep and Stop modes Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lpuart1smen(&mut self, val: bool) {
+        pub const fn set_lpuart1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "I2C1 clock enable during Sleep and Stop modes Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c1smen(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
@@ -1565,10 +1671,11 @@ pub mod regs {
         }
         #[doc = "I2C1 clock enable during Sleep and Stop modes Set and cleared by software."]
         #[inline(always)]
-        pub fn set_i2c1smen(&mut self, val: bool) {
+        pub const fn set_i2c1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "I2C2 clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c2smen(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
@@ -1576,10 +1683,11 @@ pub mod regs {
         }
         #[doc = "I2C2 clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_i2c2smen(&mut self, val: bool) {
+        pub const fn set_i2c2smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "I2C3 clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c3smen(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -1587,10 +1695,11 @@ pub mod regs {
         }
         #[doc = "I2C3 clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_i2c3smen(&mut self, val: bool) {
+        pub const fn set_i2c3smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "OPAMP clock enable during Sleep and Stop modes Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn opampsmen(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -1598,10 +1707,11 @@ pub mod regs {
         }
         #[doc = "OPAMP clock enable during Sleep and Stop modes Set and cleared by software."]
         #[inline(always)]
-        pub fn set_opampsmen(&mut self, val: bool) {
+        pub const fn set_opampsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "I2C4 clock enable during Sleep mode<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c4smen(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -1609,10 +1719,11 @@ pub mod regs {
         }
         #[doc = "I2C4 clock enable during Sleep mode<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_i2c4smen(&mut self, val: bool) {
+        pub const fn set_i2c4smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "Low power timer 3 clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim3smen(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
@@ -1620,10 +1731,11 @@ pub mod regs {
         }
         #[doc = "Low power timer 3 clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lptim3smen(&mut self, val: bool) {
+        pub const fn set_lptim3smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "Power interface clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn pwrsmen(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -1631,10 +1743,11 @@ pub mod regs {
         }
         #[doc = "Power interface clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_pwrsmen(&mut self, val: bool) {
+        pub const fn set_pwrsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "DAC1 interface clock enable during Sleep and Stop modes Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn dac1smen(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -1642,10 +1755,11 @@ pub mod regs {
         }
         #[doc = "DAC1 interface clock enable during Sleep and Stop modes Set and cleared by software."]
         #[inline(always)]
-        pub fn set_dac1smen(&mut self, val: bool) {
+        pub const fn set_dac1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "Low Power Timer 2 clock enable during Sleep and Stop modes Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim2smen(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -1653,10 +1767,11 @@ pub mod regs {
         }
         #[doc = "Low Power Timer 2 clock enable during Sleep and Stop modes Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lptim2smen(&mut self, val: bool) {
+        pub const fn set_lptim2smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "Low Power Timer 1 clock enable during Sleep and Stop modes Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim1smen(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -1664,7 +1779,7 @@ pub mod regs {
         }
         #[doc = "Low Power Timer 1 clock enable during Sleep and Stop modes Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lptim1smen(&mut self, val: bool) {
+        pub const fn set_lptim1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -1719,6 +1834,7 @@ pub mod regs {
     pub struct Apbsmenr2(pub u32);
     impl Apbsmenr2 {
         #[doc = "SYSCFG, COMP and VREFBUF clock enable during Sleep and Stop modes Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn syscfgsmen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1726,10 +1842,11 @@ pub mod regs {
         }
         #[doc = "SYSCFG, COMP and VREFBUF clock enable during Sleep and Stop modes Set and cleared by software."]
         #[inline(always)]
-        pub fn set_syscfgsmen(&mut self, val: bool) {
+        pub const fn set_syscfgsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "TIM1 timer clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim1smen(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1737,10 +1854,11 @@ pub mod regs {
         }
         #[doc = "TIM1 timer clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim1smen(&mut self, val: bool) {
+        pub const fn set_tim1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "SPI1 clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn spi1smen(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
@@ -1748,10 +1866,11 @@ pub mod regs {
         }
         #[doc = "SPI1 clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_spi1smen(&mut self, val: bool) {
+        pub const fn set_spi1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "USART1 clock enable during Sleep and Stop modes Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart1smen(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
@@ -1759,10 +1878,11 @@ pub mod regs {
         }
         #[doc = "USART1 clock enable during Sleep and Stop modes Set and cleared by software."]
         #[inline(always)]
-        pub fn set_usart1smen(&mut self, val: bool) {
+        pub const fn set_usart1smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "TIM15 timer clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim15smen(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1770,10 +1890,11 @@ pub mod regs {
         }
         #[doc = "TIM15 timer clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim15smen(&mut self, val: bool) {
+        pub const fn set_tim15smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "TIM16 timer clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim16smen(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -1781,10 +1902,11 @@ pub mod regs {
         }
         #[doc = "TIM16 timer clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_tim16smen(&mut self, val: bool) {
+        pub const fn set_tim16smen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "ADC clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn adcsmen(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
@@ -1792,7 +1914,7 @@ pub mod regs {
         }
         #[doc = "ADC clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_adcsmen(&mut self, val: bool) {
+        pub const fn set_adcsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
     }
@@ -1827,6 +1949,7 @@ pub mod regs {
     pub struct Bdcr(pub u32);
     impl Bdcr {
         #[doc = "LSE oscillator enable Set and cleared by software to enable LSE oscillator:."]
+        #[must_use]
         #[inline(always)]
         pub const fn lseon(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -1834,10 +1957,11 @@ pub mod regs {
         }
         #[doc = "LSE oscillator enable Set and cleared by software to enable LSE oscillator:."]
         #[inline(always)]
-        pub fn set_lseon(&mut self, val: bool) {
+        pub const fn set_lseon(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "LSE oscillator ready Set and cleared by hardware to indicate when the external 321kHz oscillator is ready (stable): After the LSEON bit is cleared, LSERDY goes low after 6 external low-speed oscillator clock cycles."]
+        #[must_use]
         #[inline(always)]
         pub const fn lserdy(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -1845,10 +1969,11 @@ pub mod regs {
         }
         #[doc = "LSE oscillator ready Set and cleared by hardware to indicate when the external 321kHz oscillator is ready (stable): After the LSEON bit is cleared, LSERDY goes low after 6 external low-speed oscillator clock cycles."]
         #[inline(always)]
-        pub fn set_lserdy(&mut self, val: bool) {
+        pub const fn set_lserdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "LSE oscillator bypass Set and cleared by software to bypass the LSE oscillator (in debug mode). This bit can be written only when the external 321kHz oscillator is disabled (LSEON=0 and LSERDY=0)."]
+        #[must_use]
         #[inline(always)]
         pub const fn lsebyp(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -1856,10 +1981,11 @@ pub mod regs {
         }
         #[doc = "LSE oscillator bypass Set and cleared by software to bypass the LSE oscillator (in debug mode). This bit can be written only when the external 321kHz oscillator is disabled (LSEON=0 and LSERDY=0)."]
         #[inline(always)]
-        pub fn set_lsebyp(&mut self, val: bool) {
+        pub const fn set_lsebyp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "LSE oscillator drive capability Set by software to select the LSE oscillator drive capability as follows: Applicable when the LSE oscillator is in Xtal mode, as opposed to bypass mode."]
+        #[must_use]
         #[inline(always)]
         pub const fn lsedrv(&self) -> super::vals::Lsedrv {
             let val = (self.0 >> 3usize) & 0x03;
@@ -1867,10 +1993,11 @@ pub mod regs {
         }
         #[doc = "LSE oscillator drive capability Set by software to select the LSE oscillator drive capability as follows: Applicable when the LSE oscillator is in Xtal mode, as opposed to bypass mode."]
         #[inline(always)]
-        pub fn set_lsedrv(&mut self, val: super::vals::Lsedrv) {
+        pub const fn set_lsedrv(&mut self, val: super::vals::Lsedrv) {
             self.0 = (self.0 & !(0x03 << 3usize)) | (((val.to_bits() as u32) & 0x03) << 3usize);
         }
         #[doc = "CSS on LSE enable Set by software to enable the clock security system on LSE (321kHz) oscillator as follows: LSECSSON must be enabled after the LSE oscillator is enabled (LSEON bit enabled) and ready (LSERDY flag set by hardware), and after the RTCSEL bit is selected. Once enabled, this bit cannot be disabled, except after a LSE failure detection (LSECSSD =1). In that case the software must disable the LSECSSON bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn lsecsson(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -1878,10 +2005,11 @@ pub mod regs {
         }
         #[doc = "CSS on LSE enable Set by software to enable the clock security system on LSE (321kHz) oscillator as follows: LSECSSON must be enabled after the LSE oscillator is enabled (LSEON bit enabled) and ready (LSERDY flag set by hardware), and after the RTCSEL bit is selected. Once enabled, this bit cannot be disabled, except after a LSE failure detection (LSECSSD =1). In that case the software must disable the LSECSSON bit."]
         #[inline(always)]
-        pub fn set_lsecsson(&mut self, val: bool) {
+        pub const fn set_lsecsson(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "CSS on LSE failure Detection Set by hardware to indicate when a failure is detected by the clock security system on the external 321kHz oscillator (LSE):."]
+        #[must_use]
         #[inline(always)]
         pub const fn lsecssd(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
@@ -1889,10 +2017,11 @@ pub mod regs {
         }
         #[doc = "CSS on LSE failure Detection Set by hardware to indicate when a failure is detected by the clock security system on the external 321kHz oscillator (LSE):."]
         #[inline(always)]
-        pub fn set_lsecssd(&mut self, val: bool) {
+        pub const fn set_lsecssd(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "LSE clock enable for system usage This bit must be set by software to enable the LSE clock for a system usage."]
+        #[must_use]
         #[inline(always)]
         pub const fn lsesysen(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
@@ -1900,10 +2029,11 @@ pub mod regs {
         }
         #[doc = "LSE clock enable for system usage This bit must be set by software to enable the LSE clock for a system usage."]
         #[inline(always)]
-        pub fn set_lsesysen(&mut self, val: bool) {
+        pub const fn set_lsesysen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "RTC clock source selection Set by software to select the clock source for the RTC as follows: Once the RTC clock source is selected, it cannot be changed anymore unless the RTC domain is reset, or unless a failure is detected on LSE (LSECSSD is set). The BDRST bit can be used to reset this bitfield to 00."]
+        #[must_use]
         #[inline(always)]
         pub const fn rtcsel(&self) -> super::vals::Rtcsel {
             let val = (self.0 >> 8usize) & 0x03;
@@ -1911,10 +2041,11 @@ pub mod regs {
         }
         #[doc = "RTC clock source selection Set by software to select the clock source for the RTC as follows: Once the RTC clock source is selected, it cannot be changed anymore unless the RTC domain is reset, or unless a failure is detected on LSE (LSECSSD is set). The BDRST bit can be used to reset this bitfield to 00."]
         #[inline(always)]
-        pub fn set_rtcsel(&mut self, val: super::vals::Rtcsel) {
+        pub const fn set_rtcsel(&mut self, val: super::vals::Rtcsel) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
         #[doc = "LSE clock ready for system usage This flag is set by hardware to indicate that the LSE clock is ready for being used by the system (see LSESYSEN bit). This flag is set when LSE clock is ready (LSEON1=11 and LSERDY1=11) and two LSE clock cycles after that LSESYSEN is set. Cleared by hardware to indicate that the LSE clock is not ready to be used by the system."]
+        #[must_use]
         #[inline(always)]
         pub const fn lsesysrdy(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -1922,10 +2053,11 @@ pub mod regs {
         }
         #[doc = "LSE clock ready for system usage This flag is set by hardware to indicate that the LSE clock is ready for being used by the system (see LSESYSEN bit). This flag is set when LSE clock is ready (LSEON1=11 and LSERDY1=11) and two LSE clock cycles after that LSESYSEN is set. Cleared by hardware to indicate that the LSE clock is not ready to be used by the system."]
         #[inline(always)]
-        pub fn set_lsesysrdy(&mut self, val: bool) {
+        pub const fn set_lsesysrdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "RTC clock enable Set and cleared by software. The bit enables clock to RTC and TAMP."]
+        #[must_use]
         #[inline(always)]
         pub const fn rtcen(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -1933,10 +2065,11 @@ pub mod regs {
         }
         #[doc = "RTC clock enable Set and cleared by software. The bit enables clock to RTC and TAMP."]
         #[inline(always)]
-        pub fn set_rtcen(&mut self, val: bool) {
+        pub const fn set_rtcen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "RTC domain software reset Set and cleared by software to reset the RTC domain:."]
+        #[must_use]
         #[inline(always)]
         pub const fn bdrst(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -1944,10 +2077,11 @@ pub mod regs {
         }
         #[doc = "RTC domain software reset Set and cleared by software to reset the RTC domain:."]
         #[inline(always)]
-        pub fn set_bdrst(&mut self, val: bool) {
+        pub const fn set_bdrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Low-speed clock output (LSCO) enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn lscoen(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -1955,10 +2089,11 @@ pub mod regs {
         }
         #[doc = "Low-speed clock output (LSCO) enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_lscoen(&mut self, val: bool) {
+        pub const fn set_lscoen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "Low-speed clock output selection Set and cleared by software to select the low-speed output clock:."]
+        #[must_use]
         #[inline(always)]
         pub const fn lscosel(&self) -> super::vals::Lscosel {
             let val = (self.0 >> 25usize) & 0x01;
@@ -1966,7 +2101,7 @@ pub mod regs {
         }
         #[doc = "Low-speed clock output selection Set and cleared by software to select the low-speed output clock:."]
         #[inline(always)]
-        pub fn set_lscosel(&mut self, val: super::vals::Lscosel) {
+        pub const fn set_lscosel(&mut self, val: super::vals::Lscosel) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
         }
     }
@@ -2007,6 +2142,7 @@ pub mod regs {
     pub struct Ccipr(pub u32);
     impl Ccipr {
         #[doc = "USART1 clock source selection This bitfield is controlled by software to select USART1 clock source as follows:."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart1sel(&self) -> super::vals::Usart1sel {
             let val = (self.0 >> 0usize) & 0x03;
@@ -2014,10 +2150,11 @@ pub mod regs {
         }
         #[doc = "USART1 clock source selection This bitfield is controlled by software to select USART1 clock source as follows:."]
         #[inline(always)]
-        pub fn set_usart1sel(&mut self, val: super::vals::Usart1sel) {
+        pub const fn set_usart1sel(&mut self, val: super::vals::Usart1sel) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "USART2 clock source selection This bitfield is controlled by software to select USART2 clock source as follows:."]
+        #[must_use]
         #[inline(always)]
         pub const fn usart2sel(&self) -> super::vals::Usart2sel {
             let val = (self.0 >> 2usize) & 0x03;
@@ -2025,10 +2162,11 @@ pub mod regs {
         }
         #[doc = "USART2 clock source selection This bitfield is controlled by software to select USART2 clock source as follows:."]
         #[inline(always)]
-        pub fn set_usart2sel(&mut self, val: super::vals::Usart2sel) {
+        pub const fn set_usart2sel(&mut self, val: super::vals::Usart2sel) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
         #[doc = "LPUART3 clock source selection<sup>(1)</sup> This bitfield is controlled by software to select LPUART3 clock source as follows:."]
+        #[must_use]
         #[inline(always)]
         pub const fn lpuart3sel(&self) -> super::vals::Lpuart3sel {
             let val = (self.0 >> 6usize) & 0x03;
@@ -2036,10 +2174,11 @@ pub mod regs {
         }
         #[doc = "LPUART3 clock source selection<sup>(1)</sup> This bitfield is controlled by software to select LPUART3 clock source as follows:."]
         #[inline(always)]
-        pub fn set_lpuart3sel(&mut self, val: super::vals::Lpuart3sel) {
+        pub const fn set_lpuart3sel(&mut self, val: super::vals::Lpuart3sel) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
         }
         #[doc = "LPUART2 clock source selection This bitfield is controlled by software to select LPUART2 clock source as follows:."]
+        #[must_use]
         #[inline(always)]
         pub const fn lpuart2sel(&self) -> super::vals::Lpuart2sel {
             let val = (self.0 >> 8usize) & 0x03;
@@ -2047,10 +2186,11 @@ pub mod regs {
         }
         #[doc = "LPUART2 clock source selection This bitfield is controlled by software to select LPUART2 clock source as follows:."]
         #[inline(always)]
-        pub fn set_lpuart2sel(&mut self, val: super::vals::Lpuart2sel) {
+        pub const fn set_lpuart2sel(&mut self, val: super::vals::Lpuart2sel) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
         #[doc = "LPUART1 clock source selection This bitfield is controlled by software to select LPUART1 clock source as follows:."]
+        #[must_use]
         #[inline(always)]
         pub const fn lpuart1sel(&self) -> super::vals::Lpuart1sel {
             let val = (self.0 >> 10usize) & 0x03;
@@ -2058,10 +2198,11 @@ pub mod regs {
         }
         #[doc = "LPUART1 clock source selection This bitfield is controlled by software to select LPUART1 clock source as follows:."]
         #[inline(always)]
-        pub fn set_lpuart1sel(&mut self, val: super::vals::Lpuart1sel) {
+        pub const fn set_lpuart1sel(&mut self, val: super::vals::Lpuart1sel) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
         }
         #[doc = "I2C1 clock source selection This bitfield is controlled by software to select I2C1 clock source as follows:."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c1sel(&self) -> super::vals::I2c1sel {
             let val = (self.0 >> 12usize) & 0x03;
@@ -2069,10 +2210,11 @@ pub mod regs {
         }
         #[doc = "I2C1 clock source selection This bitfield is controlled by software to select I2C1 clock source as follows:."]
         #[inline(always)]
-        pub fn set_i2c1sel(&mut self, val: super::vals::I2c1sel) {
+        pub const fn set_i2c1sel(&mut self, val: super::vals::I2c1sel) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
         #[doc = "I2C3 clock source selection This bitfield is controlled by software to select I2C3 clock source as follows:."]
+        #[must_use]
         #[inline(always)]
         pub const fn i2c3sel(&self) -> super::vals::I2c3sel {
             let val = (self.0 >> 16usize) & 0x03;
@@ -2080,10 +2222,11 @@ pub mod regs {
         }
         #[doc = "I2C3 clock source selection This bitfield is controlled by software to select I2C3 clock source as follows:."]
         #[inline(always)]
-        pub fn set_i2c3sel(&mut self, val: super::vals::I2c3sel) {
+        pub const fn set_i2c3sel(&mut self, val: super::vals::I2c3sel) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
         }
         #[doc = "LPTIM1 clock source selection This bitfield is controlled by software to select LPTIM1 clock source as follows:."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim1sel(&self) -> super::vals::Lptim1sel {
             let val = (self.0 >> 18usize) & 0x03;
@@ -2091,10 +2234,11 @@ pub mod regs {
         }
         #[doc = "LPTIM1 clock source selection This bitfield is controlled by software to select LPTIM1 clock source as follows:."]
         #[inline(always)]
-        pub fn set_lptim1sel(&mut self, val: super::vals::Lptim1sel) {
+        pub const fn set_lptim1sel(&mut self, val: super::vals::Lptim1sel) {
             self.0 = (self.0 & !(0x03 << 18usize)) | (((val.to_bits() as u32) & 0x03) << 18usize);
         }
         #[doc = "LPTIM2 clock source selection This bitfield is controlled by software to select LPTIM2 clock source as follows:."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim2sel(&self) -> super::vals::Lptim2sel {
             let val = (self.0 >> 20usize) & 0x03;
@@ -2102,10 +2246,11 @@ pub mod regs {
         }
         #[doc = "LPTIM2 clock source selection This bitfield is controlled by software to select LPTIM2 clock source as follows:."]
         #[inline(always)]
-        pub fn set_lptim2sel(&mut self, val: super::vals::Lptim2sel) {
+        pub const fn set_lptim2sel(&mut self, val: super::vals::Lptim2sel) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
         }
         #[doc = "LPTIM3 clock source selection This bitfield is controlled by software to select LPTIM3 clock source as follows:."]
+        #[must_use]
         #[inline(always)]
         pub const fn lptim3sel(&self) -> super::vals::Lptim3sel {
             let val = (self.0 >> 22usize) & 0x03;
@@ -2113,10 +2258,11 @@ pub mod regs {
         }
         #[doc = "LPTIM3 clock source selection This bitfield is controlled by software to select LPTIM3 clock source as follows:."]
         #[inline(always)]
-        pub fn set_lptim3sel(&mut self, val: super::vals::Lptim3sel) {
+        pub const fn set_lptim3sel(&mut self, val: super::vals::Lptim3sel) {
             self.0 = (self.0 & !(0x03 << 22usize)) | (((val.to_bits() as u32) & 0x03) << 22usize);
         }
         #[doc = "TIM1 clock source selection This bit is set and cleared by software. It selects TIM1 clock source as follows:."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim1sel(&self) -> super::vals::Tim1sel {
             let val = (self.0 >> 24usize) & 0x01;
@@ -2124,10 +2270,11 @@ pub mod regs {
         }
         #[doc = "TIM1 clock source selection This bit is set and cleared by software. It selects TIM1 clock source as follows:."]
         #[inline(always)]
-        pub fn set_tim1sel(&mut self, val: super::vals::Tim1sel) {
+        pub const fn set_tim1sel(&mut self, val: super::vals::Tim1sel) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
         }
         #[doc = "TIM15 clock source selection This bit is set and cleared by software. It selects TIM15 clock source as follows:."]
+        #[must_use]
         #[inline(always)]
         pub const fn tim15sel(&self) -> super::vals::Tim15sel {
             let val = (self.0 >> 25usize) & 0x01;
@@ -2135,10 +2282,11 @@ pub mod regs {
         }
         #[doc = "TIM15 clock source selection This bit is set and cleared by software. It selects TIM15 clock source as follows:."]
         #[inline(always)]
-        pub fn set_tim15sel(&mut self, val: super::vals::Tim15sel) {
+        pub const fn set_tim15sel(&mut self, val: super::vals::Tim15sel) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
         }
         #[doc = "481MHz clock source selection This bitfield is controlled by software to select the 481MHz clock source used by the USB FS and the RNG:."]
+        #[must_use]
         #[inline(always)]
         pub const fn clk48sel(&self) -> super::vals::Clk48sel {
             let val = (self.0 >> 26usize) & 0x03;
@@ -2146,10 +2294,11 @@ pub mod regs {
         }
         #[doc = "481MHz clock source selection This bitfield is controlled by software to select the 481MHz clock source used by the USB FS and the RNG:."]
         #[inline(always)]
-        pub fn set_clk48sel(&mut self, val: super::vals::Clk48sel) {
+        pub const fn set_clk48sel(&mut self, val: super::vals::Clk48sel) {
             self.0 = (self.0 & !(0x03 << 26usize)) | (((val.to_bits() as u32) & 0x03) << 26usize);
         }
         #[doc = "ADCs clock source selection This bitfield is controlled by software to select the clock source for ADC:."]
+        #[must_use]
         #[inline(always)]
         pub const fn adcsel(&self) -> super::vals::Adcsel {
             let val = (self.0 >> 28usize) & 0x03;
@@ -2157,7 +2306,7 @@ pub mod regs {
         }
         #[doc = "ADCs clock source selection This bitfield is controlled by software to select the clock source for ADC:."]
         #[inline(always)]
-        pub fn set_adcsel(&mut self, val: super::vals::Adcsel) {
+        pub const fn set_adcsel(&mut self, val: super::vals::Adcsel) {
             self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
         }
     }
@@ -2199,6 +2348,7 @@ pub mod regs {
     pub struct Cfgr(pub u32);
     impl Cfgr {
         #[doc = "System clock switch This bitfield is controlled by software and hardware. The bitfield selects the clock for SYSCLK as follows: Others: Reserved The setting is forced by hardware to 000 (HSISYS selected) when the MCU exits Stop, Standby, or Shutdown mode, or when the setting is 001 (HSE selected) and HSE oscillator failure is detected."]
+        #[must_use]
         #[inline(always)]
         pub const fn sw(&self) -> super::vals::Sw {
             let val = (self.0 >> 0usize) & 0x07;
@@ -2206,10 +2356,11 @@ pub mod regs {
         }
         #[doc = "System clock switch This bitfield is controlled by software and hardware. The bitfield selects the clock for SYSCLK as follows: Others: Reserved The setting is forced by hardware to 000 (HSISYS selected) when the MCU exits Stop, Standby, or Shutdown mode, or when the setting is 001 (HSE selected) and HSE oscillator failure is detected."]
         #[inline(always)]
-        pub fn set_sw(&mut self, val: super::vals::Sw) {
+        pub const fn set_sw(&mut self, val: super::vals::Sw) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "System clock switch status This bitfield is controlled by hardware to indicate the clock source used as system clock: Others: Reserved."]
+        #[must_use]
         #[inline(always)]
         pub const fn sws(&self) -> super::vals::Sw {
             let val = (self.0 >> 3usize) & 0x07;
@@ -2217,10 +2368,11 @@ pub mod regs {
         }
         #[doc = "System clock switch status This bitfield is controlled by hardware to indicate the clock source used as system clock: Others: Reserved."]
         #[inline(always)]
-        pub fn set_sws(&mut self, val: super::vals::Sw) {
+        pub const fn set_sws(&mut self, val: super::vals::Sw) {
             self.0 = (self.0 & !(0x07 << 3usize)) | (((val.to_bits() as u32) & 0x07) << 3usize);
         }
         #[doc = "AHB prescaler This bitfield is controlled by software. To produce HCLK clock, it sets the division factor of SYSCLK clock as follows: 0xxx: 1 Caution: Depending on the device voltage range, the software has to set correctly these bits to ensure that the system frequency does not exceed the maximum allowed frequency (for more details, refer to Section14.1.4: Dynamic voltage scaling management). After a write operation to these bits and before decreasing the voltage range, this register must be read to be sure that the new value has been taken into account."]
+        #[must_use]
         #[inline(always)]
         pub const fn hpre(&self) -> super::vals::Hpre {
             let val = (self.0 >> 8usize) & 0x0f;
@@ -2228,10 +2380,11 @@ pub mod regs {
         }
         #[doc = "AHB prescaler This bitfield is controlled by software. To produce HCLK clock, it sets the division factor of SYSCLK clock as follows: 0xxx: 1 Caution: Depending on the device voltage range, the software has to set correctly these bits to ensure that the system frequency does not exceed the maximum allowed frequency (for more details, refer to Section14.1.4: Dynamic voltage scaling management). After a write operation to these bits and before decreasing the voltage range, this register must be read to be sure that the new value has been taken into account."]
         #[inline(always)]
-        pub fn set_hpre(&mut self, val: super::vals::Hpre) {
+        pub const fn set_hpre(&mut self, val: super::vals::Hpre) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val.to_bits() as u32) & 0x0f) << 8usize);
         }
         #[doc = "APB prescaler This bitfield is controlled by software. To produce PCLK clock, it sets the division factor of HCLK clock as follows: 0xx: 1."]
+        #[must_use]
         #[inline(always)]
         pub const fn ppre(&self) -> super::vals::Ppre {
             let val = (self.0 >> 12usize) & 0x07;
@@ -2239,10 +2392,11 @@ pub mod regs {
         }
         #[doc = "APB prescaler This bitfield is controlled by software. To produce PCLK clock, it sets the division factor of HCLK clock as follows: 0xx: 1."]
         #[inline(always)]
-        pub fn set_ppre(&mut self, val: super::vals::Ppre) {
+        pub const fn set_ppre(&mut self, val: super::vals::Ppre) {
             self.0 = (self.0 & !(0x07 << 12usize)) | (((val.to_bits() as u32) & 0x07) << 12usize);
         }
         #[doc = "Wake-up from Stop and CSS backup clock selection Set and cleared by software to select the system clock used when exiting Stop mode. The selected clock is also used as emergency clock for the Clock Security System on HSE. Warning: STOPWUCK must not be modified when the Clock Security System is enabled by HSECSSON in RCC_CR register and the system clock is HSE (SWS=10) or a switch on HSE is requested (SW=10)."]
+        #[must_use]
         #[inline(always)]
         pub const fn stopwuck(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
@@ -2250,10 +2404,11 @@ pub mod regs {
         }
         #[doc = "Wake-up from Stop and CSS backup clock selection Set and cleared by software to select the system clock used when exiting Stop mode. The selected clock is also used as emergency clock for the Clock Security System on HSE. Warning: STOPWUCK must not be modified when the Clock Security System is enabled by HSECSSON in RCC_CR register and the system clock is HSE (SWS=10) or a switch on HSE is requested (SW=10)."]
         #[inline(always)]
-        pub fn set_stopwuck(&mut self, val: bool) {
+        pub const fn set_stopwuck(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Microcontroller clock output 2 clock selector This bitfield is controlled by software. It sets the clock selector for MCO2 output as follows: Others: Reserved Note: This clock output may have some truncated cycles at startup or during MCO2 clock source switching."]
+        #[must_use]
         #[inline(always)]
         pub const fn mco2sel(&self) -> super::vals::Mcosel {
             let val = (self.0 >> 16usize) & 0x0f;
@@ -2261,10 +2416,11 @@ pub mod regs {
         }
         #[doc = "Microcontroller clock output 2 clock selector This bitfield is controlled by software. It sets the clock selector for MCO2 output as follows: Others: Reserved Note: This clock output may have some truncated cycles at startup or during MCO2 clock source switching."]
         #[inline(always)]
-        pub fn set_mco2sel(&mut self, val: super::vals::Mcosel) {
+        pub const fn set_mco2sel(&mut self, val: super::vals::Mcosel) {
             self.0 = (self.0 & !(0x0f << 16usize)) | (((val.to_bits() as u32) & 0x0f) << 16usize);
         }
         #[doc = "Microcontroller clock output 2 prescaler This bitfield is controlled by software. It sets the division factor of the clock sent to the MCO2 output as follows: ... Others: reserved It is highly recommended to set this field before the MCO2 output is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn mco2pre(&self) -> super::vals::Mcopre {
             let val = (self.0 >> 20usize) & 0x0f;
@@ -2272,10 +2428,11 @@ pub mod regs {
         }
         #[doc = "Microcontroller clock output 2 prescaler This bitfield is controlled by software. It sets the division factor of the clock sent to the MCO2 output as follows: ... Others: reserved It is highly recommended to set this field before the MCO2 output is enabled."]
         #[inline(always)]
-        pub fn set_mco2pre(&mut self, val: super::vals::Mcopre) {
+        pub const fn set_mco2pre(&mut self, val: super::vals::Mcopre) {
             self.0 = (self.0 & !(0x0f << 20usize)) | (((val.to_bits() as u32) & 0x0f) << 20usize);
         }
         #[doc = "Microcontroller clock output clock selector This bitfield is controlled by software. It sets the clock selector for MCO output as follows: Others: Reserved Note: This clock output may have some truncated cycles at startup or during MCO clock source switching."]
+        #[must_use]
         #[inline(always)]
         pub const fn mcosel(&self) -> super::vals::Mcosel {
             let val = (self.0 >> 24usize) & 0x0f;
@@ -2283,10 +2440,11 @@ pub mod regs {
         }
         #[doc = "Microcontroller clock output clock selector This bitfield is controlled by software. It sets the clock selector for MCO output as follows: Others: Reserved Note: This clock output may have some truncated cycles at startup or during MCO clock source switching."]
         #[inline(always)]
-        pub fn set_mcosel(&mut self, val: super::vals::Mcosel) {
+        pub const fn set_mcosel(&mut self, val: super::vals::Mcosel) {
             self.0 = (self.0 & !(0x0f << 24usize)) | (((val.to_bits() as u32) & 0x0f) << 24usize);
         }
         #[doc = "Microcontroller clock output prescaler This bitfield is controlled by software. It sets the division factor of the clock sent to the MCO output as follows: ... Others: reserved It is highly recommended to set this field before the MCO output is enabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn mcopre(&self) -> super::vals::Mcopre {
             let val = (self.0 >> 28usize) & 0x0f;
@@ -2294,7 +2452,7 @@ pub mod regs {
         }
         #[doc = "Microcontroller clock output prescaler This bitfield is controlled by software. It sets the division factor of the clock sent to the MCO output as follows: ... Others: reserved It is highly recommended to set this field before the MCO output is enabled."]
         #[inline(always)]
-        pub fn set_mcopre(&mut self, val: super::vals::Mcopre) {
+        pub const fn set_mcopre(&mut self, val: super::vals::Mcopre) {
             self.0 = (self.0 & !(0x0f << 28usize)) | (((val.to_bits() as u32) & 0x0f) << 28usize);
         }
     }
@@ -2331,6 +2489,7 @@ pub mod regs {
     pub struct Cicr(pub u32);
     impl Cicr {
         #[doc = "LSI ready interrupt clear This bit is set by software to clear the LSIRDYF flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn lsirdyc(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2338,10 +2497,11 @@ pub mod regs {
         }
         #[doc = "LSI ready interrupt clear This bit is set by software to clear the LSIRDYF flag."]
         #[inline(always)]
-        pub fn set_lsirdyc(&mut self, val: bool) {
+        pub const fn set_lsirdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "LSE ready interrupt clear This bit is set by software to clear the LSERDYF flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn lserdyc(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -2349,10 +2509,11 @@ pub mod regs {
         }
         #[doc = "LSE ready interrupt clear This bit is set by software to clear the LSERDYF flag."]
         #[inline(always)]
-        pub fn set_lserdyc(&mut self, val: bool) {
+        pub const fn set_lserdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "MSI ready interrupt clear This bit is set by software to clear the MSIRDYF flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn msirdyc(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -2360,10 +2521,11 @@ pub mod regs {
         }
         #[doc = "MSI ready interrupt clear This bit is set by software to clear the MSIRDYF flag."]
         #[inline(always)]
-        pub fn set_msirdyc(&mut self, val: bool) {
+        pub const fn set_msirdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "HSI ready interrupt clear This bit is set software to clear the HSIRDYF flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsirdyc(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -2371,10 +2533,11 @@ pub mod regs {
         }
         #[doc = "HSI ready interrupt clear This bit is set software to clear the HSIRDYF flag."]
         #[inline(always)]
-        pub fn set_hsirdyc(&mut self, val: bool) {
+        pub const fn set_hsirdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "HSE ready interrupt clear This bit is set by software to clear the HSERDYF flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn hserdyc(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -2382,10 +2545,11 @@ pub mod regs {
         }
         #[doc = "HSE ready interrupt clear This bit is set by software to clear the HSERDYF flag."]
         #[inline(always)]
-        pub fn set_hserdyc(&mut self, val: bool) {
+        pub const fn set_hserdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "PLL ready interrupt clear This bit is set by software to clear the PLLRDYF flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn pllrdyc(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -2393,10 +2557,11 @@ pub mod regs {
         }
         #[doc = "PLL ready interrupt clear This bit is set by software to clear the PLLRDYF flag."]
         #[inline(always)]
-        pub fn set_pllrdyc(&mut self, val: bool) {
+        pub const fn set_pllrdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Clock security system interrupt clear This bit is set by software to clear the HSECSSF flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn cssc(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -2404,10 +2569,11 @@ pub mod regs {
         }
         #[doc = "Clock security system interrupt clear This bit is set by software to clear the HSECSSF flag."]
         #[inline(always)]
-        pub fn set_cssc(&mut self, val: bool) {
+        pub const fn set_cssc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "LSE Clock security system interrupt clear This bit is set by software to clear the LSECSSF flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn lsecssc(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -2415,10 +2581,11 @@ pub mod regs {
         }
         #[doc = "LSE Clock security system interrupt clear This bit is set by software to clear the LSECSSF flag."]
         #[inline(always)]
-        pub fn set_lsecssc(&mut self, val: bool) {
+        pub const fn set_lsecssc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "HSI48 oscillator ready interrupt clear This bit is set by software to clear the HSI48RDYF flag."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsi48rdyc(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -2426,7 +2593,7 @@ pub mod regs {
         }
         #[doc = "HSI48 oscillator ready interrupt clear This bit is set by software to clear the HSI48RDYF flag."]
         #[inline(always)]
-        pub fn set_hsi48rdyc(&mut self, val: bool) {
+        pub const fn set_hsi48rdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
     }
@@ -2463,6 +2630,7 @@ pub mod regs {
     pub struct Cier(pub u32);
     impl Cier {
         #[doc = "LSI ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the LSI oscillator stabilization:."]
+        #[must_use]
         #[inline(always)]
         pub const fn lsirdyie(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2470,10 +2638,11 @@ pub mod regs {
         }
         #[doc = "LSI ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the LSI oscillator stabilization:."]
         #[inline(always)]
-        pub fn set_lsirdyie(&mut self, val: bool) {
+        pub const fn set_lsirdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "LSE ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the LSE oscillator stabilization:."]
+        #[must_use]
         #[inline(always)]
         pub const fn lserdyie(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -2481,10 +2650,11 @@ pub mod regs {
         }
         #[doc = "LSE ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the LSE oscillator stabilization:."]
         #[inline(always)]
-        pub fn set_lserdyie(&mut self, val: bool) {
+        pub const fn set_lserdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "MSI ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the MSI oscillator stabilization."]
+        #[must_use]
         #[inline(always)]
         pub const fn msirdyie(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -2492,10 +2662,11 @@ pub mod regs {
         }
         #[doc = "MSI ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the MSI oscillator stabilization."]
         #[inline(always)]
-        pub fn set_msirdyie(&mut self, val: bool) {
+        pub const fn set_msirdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "HSI ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSI oscillator stabilization:."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsirdyie(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -2503,10 +2674,11 @@ pub mod regs {
         }
         #[doc = "HSI ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSI oscillator stabilization:."]
         #[inline(always)]
-        pub fn set_hsirdyie(&mut self, val: bool) {
+        pub const fn set_hsirdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "HSE ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSE oscillator stabilization:."]
+        #[must_use]
         #[inline(always)]
         pub const fn hserdyie(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -2514,10 +2686,11 @@ pub mod regs {
         }
         #[doc = "HSE ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the HSE oscillator stabilization:."]
         #[inline(always)]
-        pub fn set_hserdyie(&mut self, val: bool) {
+        pub const fn set_hserdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "PLL ready interrupt enable Set and cleared by software to enable/disable interrupt caused by PLL lock:."]
+        #[must_use]
         #[inline(always)]
         pub const fn pllrdyie(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -2525,10 +2698,11 @@ pub mod regs {
         }
         #[doc = "PLL ready interrupt enable Set and cleared by software to enable/disable interrupt caused by PLL lock:."]
         #[inline(always)]
-        pub fn set_pllrdyie(&mut self, val: bool) {
+        pub const fn set_pllrdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "LSE clock security system interrupt enable Set and cleared by software to enable/disable interrupt caused by the clock security system on LSE."]
+        #[must_use]
         #[inline(always)]
         pub const fn lsecssie(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -2536,10 +2710,11 @@ pub mod regs {
         }
         #[doc = "LSE clock security system interrupt enable Set and cleared by software to enable/disable interrupt caused by the clock security system on LSE."]
         #[inline(always)]
-        pub fn set_lsecssie(&mut self, val: bool) {
+        pub const fn set_lsecssie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "HSI48 ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the internal HSI48 oscillator."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsi48rdyie(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -2547,7 +2722,7 @@ pub mod regs {
         }
         #[doc = "HSI48 ready interrupt enable Set and cleared by software to enable/disable interrupt caused by the internal HSI48 oscillator."]
         #[inline(always)]
-        pub fn set_hsi48rdyie(&mut self, val: bool) {
+        pub const fn set_hsi48rdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
     }
@@ -2583,6 +2758,7 @@ pub mod regs {
     pub struct Cifr(pub u32);
     impl Cifr {
         #[doc = "LSI ready interrupt flag Set by hardware when the LSI clock becomes stable and LSIRDYDIE is set. Cleared by software setting the LSIRDYC bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn lsirdyf(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2590,10 +2766,11 @@ pub mod regs {
         }
         #[doc = "LSI ready interrupt flag Set by hardware when the LSI clock becomes stable and LSIRDYDIE is set. Cleared by software setting the LSIRDYC bit."]
         #[inline(always)]
-        pub fn set_lsirdyf(&mut self, val: bool) {
+        pub const fn set_lsirdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "LSE ready interrupt flag Set by hardware when the LSE clock becomes stable and LSERDYDIE is set. Cleared by software setting the LSERDYC bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn lserdyf(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -2601,10 +2778,11 @@ pub mod regs {
         }
         #[doc = "LSE ready interrupt flag Set by hardware when the LSE clock becomes stable and LSERDYDIE is set. Cleared by software setting the LSERDYC bit."]
         #[inline(always)]
-        pub fn set_lserdyf(&mut self, val: bool) {
+        pub const fn set_lserdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "MSI ready interrupt flag Set by hardware when the MSI clock becomes stable and MSIRDYDIE is set. Cleared by software setting the MSIRDYC bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn msirdyf(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -2612,10 +2790,11 @@ pub mod regs {
         }
         #[doc = "MSI ready interrupt flag Set by hardware when the MSI clock becomes stable and MSIRDYDIE is set. Cleared by software setting the MSIRDYC bit."]
         #[inline(always)]
-        pub fn set_msirdyf(&mut self, val: bool) {
+        pub const fn set_msirdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "HSI ready interrupt flag Set by hardware when the HSI clock becomes stable and HSIRDYIE is set in a response to setting the HSION (refer to Clock control register (RCC_CR)). When HSION is not set but the HSI oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated. Cleared by software setting the HSIRDYC bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsirdyf(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -2623,10 +2802,11 @@ pub mod regs {
         }
         #[doc = "HSI ready interrupt flag Set by hardware when the HSI clock becomes stable and HSIRDYIE is set in a response to setting the HSION (refer to Clock control register (RCC_CR)). When HSION is not set but the HSI oscillator is enabled by the peripheral through a clock request, this bit is not set and no interrupt is generated. Cleared by software setting the HSIRDYC bit."]
         #[inline(always)]
-        pub fn set_hsirdyf(&mut self, val: bool) {
+        pub const fn set_hsirdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "HSE ready interrupt flag Set by hardware when the HSE clock becomes stable and HSERDYIE is set. Cleared by software setting the HSERDYC bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn hserdyf(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -2634,10 +2814,11 @@ pub mod regs {
         }
         #[doc = "HSE ready interrupt flag Set by hardware when the HSE clock becomes stable and HSERDYIE is set. Cleared by software setting the HSERDYC bit."]
         #[inline(always)]
-        pub fn set_hserdyf(&mut self, val: bool) {
+        pub const fn set_hserdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "PLL ready interrupt flag Set by hardware when the PLL locks and PLLRDYIE is set. Cleared by software setting the PLLRDYC bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pllrdyf(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -2645,10 +2826,11 @@ pub mod regs {
         }
         #[doc = "PLL ready interrupt flag Set by hardware when the PLL locks and PLLRDYIE is set. Cleared by software setting the PLLRDYC bit."]
         #[inline(always)]
-        pub fn set_pllrdyf(&mut self, val: bool) {
+        pub const fn set_pllrdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "HSE clock security system interrupt flag Set by hardware when a failure is detected in the HSE oscillator. Cleared by software setting the CSSC bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn cssf(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -2656,10 +2838,11 @@ pub mod regs {
         }
         #[doc = "HSE clock security system interrupt flag Set by hardware when a failure is detected in the HSE oscillator. Cleared by software setting the CSSC bit."]
         #[inline(always)]
-        pub fn set_cssf(&mut self, val: bool) {
+        pub const fn set_cssf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "LSE clock security system interrupt flag Set by hardware when a failure is detected in the LSE oscillator. Cleared by software by setting the LSECSSC bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn lsecssf(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -2667,10 +2850,11 @@ pub mod regs {
         }
         #[doc = "LSE clock security system interrupt flag Set by hardware when a failure is detected in the LSE oscillator. Cleared by software by setting the LSECSSC bit."]
         #[inline(always)]
-        pub fn set_lsecssf(&mut self, val: bool) {
+        pub const fn set_lsecssf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "HSI48 ready interrupt flag Set by hardware when the HSI48 clock becomes stable and HSI48RDYIE is set in a response to setting the HSI48ON (refer to RCC clock recovery RC register (RCC_CRRCR)). Cleared by software setting the HSI48RDYC bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsi48rdyf(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -2678,7 +2862,7 @@ pub mod regs {
         }
         #[doc = "HSI48 ready interrupt flag Set by hardware when the HSI48 clock becomes stable and HSI48RDYIE is set in a response to setting the HSI48ON (refer to RCC clock recovery RC register (RCC_CRRCR)). Cleared by software setting the HSI48RDYC bit."]
         #[inline(always)]
-        pub fn set_hsi48rdyf(&mut self, val: bool) {
+        pub const fn set_hsi48rdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
     }
@@ -2715,6 +2899,7 @@ pub mod regs {
     pub struct Cr(pub u32);
     impl Cr {
         #[doc = "MSI clock enable This bit is set and cleared by software. Cleared by hardware to stop the MSI oscillator when entering Stop, Standby or Shutdown mode. Set by hardware to force the MSI oscillator ON when exiting Standby or Shutdown mode. Set by hardware to force the MSI oscillator ON when STOPWUCK=0 when exiting from Stop modes, or in case of a failure of the HSE oscillator Set by hardware when used directly or indirectly as system clock."]
+        #[must_use]
         #[inline(always)]
         pub const fn msion(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2722,10 +2907,11 @@ pub mod regs {
         }
         #[doc = "MSI clock enable This bit is set and cleared by software. Cleared by hardware to stop the MSI oscillator when entering Stop, Standby or Shutdown mode. Set by hardware to force the MSI oscillator ON when exiting Standby or Shutdown mode. Set by hardware to force the MSI oscillator ON when STOPWUCK=0 when exiting from Stop modes, or in case of a failure of the HSE oscillator Set by hardware when used directly or indirectly as system clock."]
         #[inline(always)]
-        pub fn set_msion(&mut self, val: bool) {
+        pub const fn set_msion(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "MSI clock ready flag This bit is set by hardware to indicate that the MSI oscillator is stable. Note: Once the MSION bit is cleared, MSIRDY goes low after 6 MSI clock cycles."]
+        #[must_use]
         #[inline(always)]
         pub const fn msirdy(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -2733,10 +2919,11 @@ pub mod regs {
         }
         #[doc = "MSI clock ready flag This bit is set by hardware to indicate that the MSI oscillator is stable. Note: Once the MSION bit is cleared, MSIRDY goes low after 6 MSI clock cycles."]
         #[inline(always)]
-        pub fn set_msirdy(&mut self, val: bool) {
+        pub const fn set_msirdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "MSI clock PLL enable Set and cleared by software to enable/ disable the PLL part of the MSI clock source. MSIPLLEN must be enabled after LSE is enabled (LSEON enabled) and ready (LSERDY set by hardware).There is a hardware protection to avoid enabling MSIPLLEN if LSE is not ready. This bit is cleared by hardware when LSE is disabled (LSEON = 0) or when the Clock Security System on LSE detects a LSE failure (refer to RCC_CSR register)."]
+        #[must_use]
         #[inline(always)]
         pub const fn msipllen(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -2744,10 +2931,11 @@ pub mod regs {
         }
         #[doc = "MSI clock PLL enable Set and cleared by software to enable/ disable the PLL part of the MSI clock source. MSIPLLEN must be enabled after LSE is enabled (LSEON enabled) and ready (LSERDY set by hardware).There is a hardware protection to avoid enabling MSIPLLEN if LSE is not ready. This bit is cleared by hardware when LSE is disabled (LSEON = 0) or when the Clock Security System on LSE detects a LSE failure (refer to RCC_CSR register)."]
         #[inline(always)]
-        pub fn set_msipllen(&mut self, val: bool) {
+        pub const fn set_msipllen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "MSI clock range selection Set by software to select the MSI clock range with MSIRANGE\\[3:0\\]. Write 0 has no effect. After a standby or a reset MSIRGSEL is at 0 and the MSI range value is provided by MSISRANGE in CSR register."]
+        #[must_use]
         #[inline(always)]
         pub const fn msirgsel(&self) -> super::vals::Msirgsel {
             let val = (self.0 >> 3usize) & 0x01;
@@ -2755,10 +2943,11 @@ pub mod regs {
         }
         #[doc = "MSI clock range selection Set by software to select the MSI clock range with MSIRANGE\\[3:0\\]. Write 0 has no effect. After a standby or a reset MSIRGSEL is at 0 and the MSI range value is provided by MSISRANGE in CSR register."]
         #[inline(always)]
-        pub fn set_msirgsel(&mut self, val: super::vals::Msirgsel) {
+        pub const fn set_msirgsel(&mut self, val: super::vals::Msirgsel) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
         }
         #[doc = "MSI clock ranges These bits are configured by software to choose the frequency range of MSI when MSIRGSEL is set.12 frequency ranges are available: others: not allowed (hardware write protection) Note: Warning: MSIRANGE can be modified when MSI is OFF (MSION=0) or when MSI is ready (MSIRDY=1). MSIRANGE must NOT be modified when MSI is ON and NOT ready (MSION=1 and MSIRDY=0)."]
+        #[must_use]
         #[inline(always)]
         pub const fn msirange(&self) -> super::vals::Msirange {
             let val = (self.0 >> 4usize) & 0x0f;
@@ -2766,10 +2955,11 @@ pub mod regs {
         }
         #[doc = "MSI clock ranges These bits are configured by software to choose the frequency range of MSI when MSIRGSEL is set.12 frequency ranges are available: others: not allowed (hardware write protection) Note: Warning: MSIRANGE can be modified when MSI is OFF (MSION=0) or when MSI is ready (MSIRDY=1). MSIRANGE must NOT be modified when MSI is ON and NOT ready (MSION=1 and MSIRDY=0)."]
         #[inline(always)]
-        pub fn set_msirange(&mut self, val: super::vals::Msirange) {
+        pub const fn set_msirange(&mut self, val: super::vals::Msirange) {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val.to_bits() as u32) & 0x0f) << 4usize);
         }
         #[doc = "HSI clock enable Set and cleared by software. Cleared by hardware to stop the HSI oscillator when entering Stop, Standby, or Shutdown mode. Forced by hardware to keep the HSI oscillator ON when it is used directly or indirectly as system clock (also when leaving Stop, Standby, or Shutdown modes, or in case of failure of the HSE oscillator used for system clock)."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsion(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
@@ -2777,10 +2967,11 @@ pub mod regs {
         }
         #[doc = "HSI clock enable Set and cleared by software. Cleared by hardware to stop the HSI oscillator when entering Stop, Standby, or Shutdown mode. Forced by hardware to keep the HSI oscillator ON when it is used directly or indirectly as system clock (also when leaving Stop, Standby, or Shutdown modes, or in case of failure of the HSE oscillator used for system clock)."]
         #[inline(always)]
-        pub fn set_hsion(&mut self, val: bool) {
+        pub const fn set_hsion(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "HSI always enable for peripheral kernels. Set and cleared by software to force HSI ON even in Stop modes. The HSI can only feed USART1, USART2, CEC and I2C1 peripherals configured with HSI as kernel clock. Keeping the HSI ON in Stop mode allows avoiding to slow down the communication speed because of the HSI startup time. This bit has no effect on HSION value."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsikeron(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
@@ -2788,10 +2979,11 @@ pub mod regs {
         }
         #[doc = "HSI always enable for peripheral kernels. Set and cleared by software to force HSI ON even in Stop modes. The HSI can only feed USART1, USART2, CEC and I2C1 peripherals configured with HSI as kernel clock. Keeping the HSI ON in Stop mode allows avoiding to slow down the communication speed because of the HSI startup time. This bit has no effect on HSION value."]
         #[inline(always)]
-        pub fn set_hsikeron(&mut self, val: bool) {
+        pub const fn set_hsikeron(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "HSI clock ready flag Set by hardware to indicate that HSI oscillator is stable. This bit is set only when HSI is enabled by software by setting HSION. Note: Once the HSION bit is cleared, HSIRDY goes low after 6 HSI clock cycles."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsirdy(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
@@ -2799,10 +2991,11 @@ pub mod regs {
         }
         #[doc = "HSI clock ready flag Set by hardware to indicate that HSI oscillator is stable. This bit is set only when HSI is enabled by software by setting HSION. Note: Once the HSION bit is cleared, HSIRDY goes low after 6 HSI clock cycles."]
         #[inline(always)]
-        pub fn set_hsirdy(&mut self, val: bool) {
+        pub const fn set_hsirdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
         #[doc = "HSI automatic start from Stop Set and cleared by software. When the system wake-up clock is MSI, this bit is used to wake up the HSI is parallel of the system wake-up."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsiasfs(&self) -> bool {
             let val = (self.0 >> 11usize) & 0x01;
@@ -2810,10 +3003,11 @@ pub mod regs {
         }
         #[doc = "HSI automatic start from Stop Set and cleared by software. When the system wake-up clock is MSI, this bit is used to wake up the HSI is parallel of the system wake-up."]
         #[inline(always)]
-        pub fn set_hsiasfs(&mut self, val: bool) {
+        pub const fn set_hsiasfs(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
         #[doc = "HSE clock enable Set and cleared by software. Cleared by hardware to stop the HSE oscillator when entering Stop, Standby, or Shutdown mode. This bit cannot be reset if the HSE oscillator is used directly or indirectly as the system clock."]
+        #[must_use]
         #[inline(always)]
         pub const fn hseon(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -2821,10 +3015,11 @@ pub mod regs {
         }
         #[doc = "HSE clock enable Set and cleared by software. Cleared by hardware to stop the HSE oscillator when entering Stop, Standby, or Shutdown mode. This bit cannot be reset if the HSE oscillator is used directly or indirectly as the system clock."]
         #[inline(always)]
-        pub fn set_hseon(&mut self, val: bool) {
+        pub const fn set_hseon(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "HSE clock ready flag Set by hardware to indicate that the HSE oscillator is stable. Note: Once the HSEON bit is cleared, HSERDY goes low after 6 HSE clock cycles."]
+        #[must_use]
         #[inline(always)]
         pub const fn hserdy(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
@@ -2832,10 +3027,11 @@ pub mod regs {
         }
         #[doc = "HSE clock ready flag Set by hardware to indicate that the HSE oscillator is stable. Note: Once the HSEON bit is cleared, HSERDY goes low after 6 HSE clock cycles."]
         #[inline(always)]
-        pub fn set_hserdy(&mut self, val: bool) {
+        pub const fn set_hserdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "HSE crystal oscillator bypass Set and cleared by software to bypass the oscillator with an external clock. The external clock must be enabled with the HSEON bit set, to be used by the device. The HSEBYP bit can be written only if the HSE oscillator is disabled."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsebyp(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
@@ -2843,10 +3039,11 @@ pub mod regs {
         }
         #[doc = "HSE crystal oscillator bypass Set and cleared by software to bypass the oscillator with an external clock. The external clock must be enabled with the HSEON bit set, to be used by the device. The HSEBYP bit can be written only if the HSE oscillator is disabled."]
         #[inline(always)]
-        pub fn set_hsebyp(&mut self, val: bool) {
+        pub const fn set_hsebyp(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Clock security system enable Set by software to enable the clock security system. When CSSON is set, the clock detector is enabled by hardware when the HSE oscillator is ready, and disabled by hardware if a HSE clock failure is detected. This bit is set only and is cleared by reset."]
+        #[must_use]
         #[inline(always)]
         pub const fn csson(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
@@ -2854,10 +3051,11 @@ pub mod regs {
         }
         #[doc = "Clock security system enable Set by software to enable the clock security system. When CSSON is set, the clock detector is enabled by hardware when the HSE oscillator is ready, and disabled by hardware if a HSE clock failure is detected. This bit is set only and is cleared by reset."]
         #[inline(always)]
-        pub fn set_csson(&mut self, val: bool) {
+        pub const fn set_csson(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "PLL enable Set and cleared by software to enable the PLL. Cleared by hardware when entering Stop, Standby or Shutdown mode. This bit cannot be reset if the PLL clock is used as the system clock."]
+        #[must_use]
         #[inline(always)]
         pub const fn pllon(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -2865,10 +3063,11 @@ pub mod regs {
         }
         #[doc = "PLL enable Set and cleared by software to enable the PLL. Cleared by hardware when entering Stop, Standby or Shutdown mode. This bit cannot be reset if the PLL clock is used as the system clock."]
         #[inline(always)]
-        pub fn set_pllon(&mut self, val: bool) {
+        pub const fn set_pllon(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "PLL clock ready flag Set by hardware to indicate that the PLL is locked."]
+        #[must_use]
         #[inline(always)]
         pub const fn pllrdy(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -2876,7 +3075,7 @@ pub mod regs {
         }
         #[doc = "PLL clock ready flag Set by hardware to indicate that the PLL is locked."]
         #[inline(always)]
-        pub fn set_pllrdy(&mut self, val: bool) {
+        pub const fn set_pllrdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
     }
@@ -2919,6 +3118,7 @@ pub mod regs {
     pub struct Crrcr(pub u32);
     impl Crrcr {
         #[doc = "HSI48 RC oscillator enable<sup>(1)</sup>."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsi48on(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2926,10 +3126,11 @@ pub mod regs {
         }
         #[doc = "HSI48 RC oscillator enable<sup>(1)</sup>."]
         #[inline(always)]
-        pub fn set_hsi48on(&mut self, val: bool) {
+        pub const fn set_hsi48on(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "HSI48 clock ready flag<sup>(1)</sup> The flag is set when the HSI48 clock is ready for use."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsi48rdy(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -2937,10 +3138,11 @@ pub mod regs {
         }
         #[doc = "HSI48 clock ready flag<sup>(1)</sup> The flag is set when the HSI48 clock is ready for use."]
         #[inline(always)]
-        pub fn set_hsi48rdy(&mut self, val: bool) {
+        pub const fn set_hsi48rdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "HSI48 clock calibration These bits are initialized at startup with the factory-programmed HSI48 calibration trim value."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsi48cal(&self) -> u16 {
             let val = (self.0 >> 7usize) & 0x01ff;
@@ -2948,7 +3150,7 @@ pub mod regs {
         }
         #[doc = "HSI48 clock calibration These bits are initialized at startup with the factory-programmed HSI48 calibration trim value."]
         #[inline(always)]
-        pub fn set_hsi48cal(&mut self, val: u16) {
+        pub const fn set_hsi48cal(&mut self, val: u16) {
             self.0 = (self.0 & !(0x01ff << 7usize)) | (((val as u32) & 0x01ff) << 7usize);
         }
     }
@@ -2985,6 +3187,7 @@ pub mod regs {
     pub struct Csr(pub u32);
     impl Csr {
         #[doc = "LSI oscillator enable Set and cleared by software to enable/disable the LSI oscillator:."]
+        #[must_use]
         #[inline(always)]
         pub const fn lsion(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -2992,10 +3195,11 @@ pub mod regs {
         }
         #[doc = "LSI oscillator enable Set and cleared by software to enable/disable the LSI oscillator:."]
         #[inline(always)]
-        pub fn set_lsion(&mut self, val: bool) {
+        pub const fn set_lsion(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "LSI oscillator ready Set and cleared by hardware to indicate when the LSI oscillator is ready (stable): After the LSION bit is cleared, LSIRDY goes low after 3 LSI oscillator clock cycles. This bit can be set even if LSION = 0 if the LSI is requested by the Clock Security System on LSE, by the Independent Watchdog or by the RTC."]
+        #[must_use]
         #[inline(always)]
         pub const fn lsirdy(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -3003,10 +3207,11 @@ pub mod regs {
         }
         #[doc = "LSI oscillator ready Set and cleared by hardware to indicate when the LSI oscillator is ready (stable): After the LSION bit is cleared, LSIRDY goes low after 3 LSI oscillator clock cycles. This bit can be set even if LSION = 0 if the LSI is requested by the Clock Security System on LSE, by the Independent Watchdog or by the RTC."]
         #[inline(always)]
-        pub fn set_lsirdy(&mut self, val: bool) {
+        pub const fn set_lsirdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Internal low-speed oscillator pre-divided by 128 Set and reset by hardware to indicate when the low-speed internal RC oscillator has to be divided by 128. The software has to switch off the LSI before changing this bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn lsiprediv(&self) -> super::vals::Lsiprediv {
             let val = (self.0 >> 2usize) & 0x01;
@@ -3014,12 +3219,13 @@ pub mod regs {
         }
         #[doc = "Internal low-speed oscillator pre-divided by 128 Set and reset by hardware to indicate when the low-speed internal RC oscillator has to be divided by 128. The software has to switch off the LSI before changing this bit."]
         #[inline(always)]
-        pub fn set_lsiprediv(&mut self, val: super::vals::Lsiprediv) {
+        pub const fn set_lsiprediv(&mut self, val: super::vals::Lsiprediv) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
         }
         #[doc = "MSI range after Standby mode Set by software to chose the MSI frequency at startup. This range is used after exiting Standby mode until MSIRGSEL is set. After a pad or a power-on reset, the range is always 41MHz. MSISRANGE\\[3:0\\]
 can be written only when MSIRGSEL1=11. Others: Reserved Note: Changing the MSISRANGE\\[3:0\\]
 does not change the current MSI frequency."]
+        #[must_use]
         #[inline(always)]
         pub const fn msisrange(&self) -> super::vals::Msisrange {
             let val = (self.0 >> 8usize) & 0x0f;
@@ -3029,10 +3235,11 @@ does not change the current MSI frequency."]
 can be written only when MSIRGSEL1=11. Others: Reserved Note: Changing the MSISRANGE\\[3:0\\]
 does not change the current MSI frequency."]
         #[inline(always)]
-        pub fn set_msisrange(&mut self, val: super::vals::Msisrange) {
+        pub const fn set_msisrange(&mut self, val: super::vals::Msisrange) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val.to_bits() as u32) & 0x0f) << 8usize);
         }
         #[doc = "Remove reset flags Set by software to clear the reset flags."]
+        #[must_use]
         #[inline(always)]
         pub const fn rmvf(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
@@ -3040,10 +3247,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "Remove reset flags Set by software to clear the reset flags."]
         #[inline(always)]
-        pub fn set_rmvf(&mut self, val: bool) {
+        pub const fn set_rmvf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "Option byte loader reset flag Set by hardware when a reset from the Option byte loading occurs. Cleared by setting the RMVF bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn oblrstf(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
@@ -3051,10 +3259,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "Option byte loader reset flag Set by hardware when a reset from the Option byte loading occurs. Cleared by setting the RMVF bit."]
         #[inline(always)]
-        pub fn set_oblrstf(&mut self, val: bool) {
+        pub const fn set_oblrstf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "Pin reset flag Set by hardware when a reset from the NRST pin occurs. Cleared by setting the RMVF bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pinrstf(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
@@ -3062,10 +3271,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "Pin reset flag Set by hardware when a reset from the NRST pin occurs. Cleared by setting the RMVF bit."]
         #[inline(always)]
-        pub fn set_pinrstf(&mut self, val: bool) {
+        pub const fn set_pinrstf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "BOR or POR/PDR flag Set by hardware when a BOR or POR/PDR occurs. Cleared by setting the RMVF bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn pwrrstf(&self) -> bool {
             let val = (self.0 >> 27usize) & 0x01;
@@ -3073,10 +3283,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "BOR or POR/PDR flag Set by hardware when a BOR or POR/PDR occurs. Cleared by setting the RMVF bit."]
         #[inline(always)]
-        pub fn set_pwrrstf(&mut self, val: bool) {
+        pub const fn set_pwrrstf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
         }
         #[doc = "Software reset flag Set by hardware when a software reset occurs. Cleared by setting the RMVF bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn sftrstf(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -3084,10 +3295,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "Software reset flag Set by hardware when a software reset occurs. Cleared by setting the RMVF bit."]
         #[inline(always)]
-        pub fn set_sftrstf(&mut self, val: bool) {
+        pub const fn set_sftrstf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "Independent window watchdog reset flag Set by hardware when an independent watchdog reset domain occurs. Cleared by setting the RMVF bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn iwdgrstf(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
@@ -3095,10 +3307,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "Independent window watchdog reset flag Set by hardware when an independent watchdog reset domain occurs. Cleared by setting the RMVF bit."]
         #[inline(always)]
-        pub fn set_iwdgrstf(&mut self, val: bool) {
+        pub const fn set_iwdgrstf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "Window watchdog reset flag Set by hardware when a window watchdog reset occurs. Cleared by setting the RMVF bit."]
+        #[must_use]
         #[inline(always)]
         pub const fn wwdgrstf(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
@@ -3106,10 +3319,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "Window watchdog reset flag Set by hardware when a window watchdog reset occurs. Cleared by setting the RMVF bit."]
         #[inline(always)]
-        pub fn set_wwdgrstf(&mut self, val: bool) {
+        pub const fn set_wwdgrstf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
         #[doc = "Low-power reset flag Set by hardware when a reset occurs due to illegal Stop, Standby, or Shutdown mode entry. Cleared by setting the RMVF bit. This operates only if nRST_STOP, nRST_STDBY or nRST_SHDW option bits are cleared."]
+        #[must_use]
         #[inline(always)]
         pub const fn lpwrrstf(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
@@ -3117,7 +3331,7 @@ does not change the current MSI frequency."]
         }
         #[doc = "Low-power reset flag Set by hardware when a reset occurs due to illegal Stop, Standby, or Shutdown mode entry. Cleared by setting the RMVF bit. This operates only if nRST_STOP, nRST_STDBY or nRST_SHDW option bits are cleared."]
         #[inline(always)]
-        pub fn set_lpwrrstf(&mut self, val: bool) {
+        pub const fn set_lpwrrstf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
@@ -3157,6 +3371,7 @@ does not change the current MSI frequency."]
     pub struct Dbgcfgr(pub u32);
     impl Dbgcfgr {
         #[doc = "Debug support clock enable Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn dbgen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -3164,10 +3379,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "Debug support clock enable Set and cleared by software."]
         #[inline(always)]
-        pub fn set_dbgen(&mut self, val: bool) {
+        pub const fn set_dbgen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Debug support reset Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn dbgrst(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -3175,7 +3391,7 @@ does not change the current MSI frequency."]
         }
         #[doc = "Debug support reset Set and cleared by software."]
         #[inline(always)]
-        pub fn set_dbgrst(&mut self, val: bool) {
+        pub const fn set_dbgrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
@@ -3210,6 +3426,7 @@ does not change the current MSI frequency."]
     pub struct Gpioenr(pub u32);
     impl Gpioenr {
         #[doc = "I/O port A clock enable This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpioaen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -3217,10 +3434,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port A clock enable This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpioaen(&mut self, val: bool) {
+        pub const fn set_gpioaen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "I/O port B clock enable This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpioben(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -3228,10 +3446,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port B clock enable This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpioben(&mut self, val: bool) {
+        pub const fn set_gpioben(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "I/O port C clock enable This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpiocen(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -3239,10 +3458,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port C clock enable This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpiocen(&mut self, val: bool) {
+        pub const fn set_gpiocen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "I/O port D clock enable This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpioden(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -3250,10 +3470,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port D clock enable This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpioden(&mut self, val: bool) {
+        pub const fn set_gpioden(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "I/O port E clock enable<sup>(1)</sup> This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpioeen(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -3261,10 +3482,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port E clock enable<sup>(1)</sup> This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpioeen(&mut self, val: bool) {
+        pub const fn set_gpioeen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "I/O port F clock enable This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpiofen(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -3272,7 +3494,7 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port F clock enable This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpiofen(&mut self, val: bool) {
+        pub const fn set_gpiofen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
     }
@@ -3306,6 +3528,7 @@ does not change the current MSI frequency."]
     pub struct Gpiorstr(pub u32);
     impl Gpiorstr {
         #[doc = "I/O port A reset This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpioarst(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -3313,10 +3536,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port A reset This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpioarst(&mut self, val: bool) {
+        pub const fn set_gpioarst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "I/O port B reset This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpiobrst(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -3324,10 +3548,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port B reset This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpiobrst(&mut self, val: bool) {
+        pub const fn set_gpiobrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "I/O port C reset This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpiocrst(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -3335,10 +3560,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port C reset This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpiocrst(&mut self, val: bool) {
+        pub const fn set_gpiocrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "I/O port D reset This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpiodrst(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -3346,10 +3572,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port D reset This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpiodrst(&mut self, val: bool) {
+        pub const fn set_gpiodrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "I/O port E reset This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpioerst(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -3357,10 +3584,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port E reset This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpioerst(&mut self, val: bool) {
+        pub const fn set_gpioerst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "I/O port F reset This bit is set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpiofrst(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -3368,7 +3596,7 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port F reset This bit is set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpiofrst(&mut self, val: bool) {
+        pub const fn set_gpiofrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
     }
@@ -3402,6 +3630,7 @@ does not change the current MSI frequency."]
     pub struct Gpiosmenr(pub u32);
     impl Gpiosmenr {
         #[doc = "I/O port A clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpioasmen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
@@ -3409,10 +3638,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port A clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpioasmen(&mut self, val: bool) {
+        pub const fn set_gpioasmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "I/O port B clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpiobsmen(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
@@ -3420,10 +3650,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port B clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpiobsmen(&mut self, val: bool) {
+        pub const fn set_gpiobsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "I/O port C clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpiocsmen(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
@@ -3431,10 +3662,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port C clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpiocsmen(&mut self, val: bool) {
+        pub const fn set_gpiocsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "I/O port D clock enable during Sleep mode<sup>(1)</sup> Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpiodsmen(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
@@ -3442,10 +3674,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port D clock enable during Sleep mode<sup>(1)</sup> Set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpiodsmen(&mut self, val: bool) {
+        pub const fn set_gpiodsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "I/O port E clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpioesmen(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
@@ -3453,10 +3686,11 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port E clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpioesmen(&mut self, val: bool) {
+        pub const fn set_gpioesmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "I/O port F clock enable during Sleep mode Set and cleared by software."]
+        #[must_use]
         #[inline(always)]
         pub const fn gpiofsmen(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
@@ -3464,7 +3698,7 @@ does not change the current MSI frequency."]
         }
         #[doc = "I/O port F clock enable during Sleep mode Set and cleared by software."]
         #[inline(always)]
-        pub fn set_gpiofsmen(&mut self, val: bool) {
+        pub const fn set_gpiofsmen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
     }
@@ -3498,6 +3732,7 @@ does not change the current MSI frequency."]
     pub struct Icscr(pub u32);
     impl Icscr {
         #[doc = "MSI clock calibration These bits are initialized at startup with the factory-programmed MSI calibration trim value. When MSITRIM is written, MSICAL is updated with the sum of MSITRIM and the factory trim value."]
+        #[must_use]
         #[inline(always)]
         pub const fn msical(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
@@ -3505,11 +3740,12 @@ does not change the current MSI frequency."]
         }
         #[doc = "MSI clock calibration These bits are initialized at startup with the factory-programmed MSI calibration trim value. When MSITRIM is written, MSICAL is updated with the sum of MSITRIM and the factory trim value."]
         #[inline(always)]
-        pub fn set_msical(&mut self, val: u8) {
+        pub const fn set_msical(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
         }
         #[doc = "MSI clock trimming These bits provide an additional user-programmable trimming value that is added to the MSICAL\\[7:0\\]
 bits. It can be programmed to adjust to variations in voltage and temperature that influence the frequency of the MSI."]
+        #[must_use]
         #[inline(always)]
         pub const fn msitrim(&self) -> u8 {
             let val = (self.0 >> 8usize) & 0xff;
@@ -3518,10 +3754,11 @@ bits. It can be programmed to adjust to variations in voltage and temperature th
         #[doc = "MSI clock trimming These bits provide an additional user-programmable trimming value that is added to the MSICAL\\[7:0\\]
 bits. It can be programmed to adjust to variations in voltage and temperature that influence the frequency of the MSI."]
         #[inline(always)]
-        pub fn set_msitrim(&mut self, val: u8) {
+        pub const fn set_msitrim(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val as u32) & 0xff) << 8usize);
         }
         #[doc = "HSI clock calibration These bits are initialized at startup with the factory-programmed HSI calibration trim value. When HSITRIM is written, HSICAL is updated with the sum of HSITRIM and the factory trim value."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsical(&self) -> u8 {
             let val = (self.0 >> 16usize) & 0xff;
@@ -3529,11 +3766,12 @@ bits. It can be programmed to adjust to variations in voltage and temperature th
         }
         #[doc = "HSI clock calibration These bits are initialized at startup with the factory-programmed HSI calibration trim value. When HSITRIM is written, HSICAL is updated with the sum of HSITRIM and the factory trim value."]
         #[inline(always)]
-        pub fn set_hsical(&mut self, val: u8) {
+        pub const fn set_hsical(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 16usize)) | (((val as u32) & 0xff) << 16usize);
         }
         #[doc = "HSI clock trimming These bits provide an additional user-programmable trimming value that is added to the HSICAL\\[7:0\\]
 bits. It can be programmed to adjust to variations in voltage and temperature that influence the frequency of the HSI. The default value is 64 when added to the HSICAL value, trim the HSI to 161MHz 1 11%."]
+        #[must_use]
         #[inline(always)]
         pub const fn hsitrim(&self) -> u8 {
             let val = (self.0 >> 24usize) & 0x7f;
@@ -3542,7 +3780,7 @@ bits. It can be programmed to adjust to variations in voltage and temperature th
         #[doc = "HSI clock trimming These bits provide an additional user-programmable trimming value that is added to the HSICAL\\[7:0\\]
 bits. It can be programmed to adjust to variations in voltage and temperature that influence the frequency of the HSI. The default value is 64 when added to the HSICAL value, trim the HSI to 161MHz 1 11%."]
         #[inline(always)]
-        pub fn set_hsitrim(&mut self, val: u8) {
+        pub const fn set_hsitrim(&mut self, val: u8) {
             self.0 = (self.0 & !(0x7f << 24usize)) | (((val as u32) & 0x7f) << 24usize);
         }
     }
@@ -3581,6 +3819,7 @@ bits. It can be programmed to adjust to variations in voltage and temperature th
     pub struct Pllcfgr(pub u32);
     impl Pllcfgr {
         #[doc = "PLL input clock source This bit is controlled by software to select PLL clock source, as follows: The bitfield can be written only when the PLL is disabled. When the PLL is not used, selecting 00 allows saving power."]
+        #[must_use]
         #[inline(always)]
         pub const fn pllsrc(&self) -> super::vals::Pllsrc {
             let val = (self.0 >> 0usize) & 0x03;
@@ -3588,10 +3827,11 @@ bits. It can be programmed to adjust to variations in voltage and temperature th
         }
         #[doc = "PLL input clock source This bit is controlled by software to select PLL clock source, as follows: The bitfield can be written only when the PLL is disabled. When the PLL is not used, selecting 00 allows saving power."]
         #[inline(always)]
-        pub fn set_pllsrc(&mut self, val: super::vals::Pllsrc) {
+        pub const fn set_pllsrc(&mut self, val: super::vals::Pllsrc) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "Division factor M of the PLL input clock divider This bit is controlled by software to divide the PLL input clock before the actual phase-locked loop, as follows: The bitfield can be written only when the PLL is disabled. Caution: The software must set these bits so that the PLL input frequency after the /M divider is between 2.66 and 161MHz."]
+        #[must_use]
         #[inline(always)]
         pub const fn pllm(&self) -> super::vals::Pllm {
             let val = (self.0 >> 4usize) & 0x07;
@@ -3599,10 +3839,11 @@ bits. It can be programmed to adjust to variations in voltage and temperature th
         }
         #[doc = "Division factor M of the PLL input clock divider This bit is controlled by software to divide the PLL input clock before the actual phase-locked loop, as follows: The bitfield can be written only when the PLL is disabled. Caution: The software must set these bits so that the PLL input frequency after the /M divider is between 2.66 and 161MHz."]
         #[inline(always)]
-        pub fn set_pllm(&mut self, val: super::vals::Pllm) {
+        pub const fn set_pllm(&mut self, val: super::vals::Pllm) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
         }
         #[doc = "PLL frequency multiplication factor N This bit is controlled by software to set the division factor of the f<sub>VCO</sub> feedback divider (that determines the PLL multiplication ratio) as follows: ... ... The bitfield can be written only when the PLL is disabled. Caution: The software must set these bits so that the VCO output frequency is between 96 and 3441MHz."]
+        #[must_use]
         #[inline(always)]
         pub const fn plln(&self) -> super::vals::Plln {
             let val = (self.0 >> 8usize) & 0x7f;
@@ -3610,10 +3851,11 @@ bits. It can be programmed to adjust to variations in voltage and temperature th
         }
         #[doc = "PLL frequency multiplication factor N This bit is controlled by software to set the division factor of the f<sub>VCO</sub> feedback divider (that determines the PLL multiplication ratio) as follows: ... ... The bitfield can be written only when the PLL is disabled. Caution: The software must set these bits so that the VCO output frequency is between 96 and 3441MHz."]
         #[inline(always)]
-        pub fn set_plln(&mut self, val: super::vals::Plln) {
+        pub const fn set_plln(&mut self, val: super::vals::Plln) {
             self.0 = (self.0 & !(0x7f << 8usize)) | (((val.to_bits() as u32) & 0x7f) << 8usize);
         }
         #[doc = "PLLPCLK clock output enable This bit is controlled by software to enable/disable the PLLPCLK clock output of the PLL: Disabling the PLLPCLK clock output, when not used, allows saving power."]
+        #[must_use]
         #[inline(always)]
         pub const fn pllpen(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
@@ -3621,10 +3863,11 @@ bits. It can be programmed to adjust to variations in voltage and temperature th
         }
         #[doc = "PLLPCLK clock output enable This bit is controlled by software to enable/disable the PLLPCLK clock output of the PLL: Disabling the PLLPCLK clock output, when not used, allows saving power."]
         #[inline(always)]
-        pub fn set_pllpen(&mut self, val: bool) {
+        pub const fn set_pllpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "PLL VCO division factor P for PLLPCLK clock output This bitfield is controlled by software. It sets the PLL VCO division factor P as follows: ... The bitfield can be written only when the PLL is disabled. Caution: The software must set this bitfield so as not to exceed 541MHz on this clock."]
+        #[must_use]
         #[inline(always)]
         pub const fn pllp(&self) -> super::vals::Pllp {
             let val = (self.0 >> 17usize) & 0x1f;
@@ -3632,10 +3875,11 @@ bits. It can be programmed to adjust to variations in voltage and temperature th
         }
         #[doc = "PLL VCO division factor P for PLLPCLK clock output This bitfield is controlled by software. It sets the PLL VCO division factor P as follows: ... The bitfield can be written only when the PLL is disabled. Caution: The software must set this bitfield so as not to exceed 541MHz on this clock."]
         #[inline(always)]
-        pub fn set_pllp(&mut self, val: super::vals::Pllp) {
+        pub const fn set_pllp(&mut self, val: super::vals::Pllp) {
             self.0 = (self.0 & !(0x1f << 17usize)) | (((val.to_bits() as u32) & 0x1f) << 17usize);
         }
         #[doc = "PLLQCLK clock output enable This bit is controlled by software to enable/disable the PLLQCLK clock output of the PLL: Disabling the PLLQCLK clock output, when not used, allows saving power."]
+        #[must_use]
         #[inline(always)]
         pub const fn pllqen(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
@@ -3643,10 +3887,11 @@ bits. It can be programmed to adjust to variations in voltage and temperature th
         }
         #[doc = "PLLQCLK clock output enable This bit is controlled by software to enable/disable the PLLQCLK clock output of the PLL: Disabling the PLLQCLK clock output, when not used, allows saving power."]
         #[inline(always)]
-        pub fn set_pllqen(&mut self, val: bool) {
+        pub const fn set_pllqen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "PLL VCO division factor Q for PLLQCLK clock output This bitfield is controlled by software. It sets the PLL VCO division factor Q as follows: The bitfield can be written only when the PLL is disabled. Caution: The software must set this bitfield so as not to exceed 541MHz on this clock."]
+        #[must_use]
         #[inline(always)]
         pub const fn pllq(&self) -> super::vals::Pllq {
             let val = (self.0 >> 25usize) & 0x07;
@@ -3654,10 +3899,11 @@ bits. It can be programmed to adjust to variations in voltage and temperature th
         }
         #[doc = "PLL VCO division factor Q for PLLQCLK clock output This bitfield is controlled by software. It sets the PLL VCO division factor Q as follows: The bitfield can be written only when the PLL is disabled. Caution: The software must set this bitfield so as not to exceed 541MHz on this clock."]
         #[inline(always)]
-        pub fn set_pllq(&mut self, val: super::vals::Pllq) {
+        pub const fn set_pllq(&mut self, val: super::vals::Pllq) {
             self.0 = (self.0 & !(0x07 << 25usize)) | (((val.to_bits() as u32) & 0x07) << 25usize);
         }
         #[doc = "PLLRCLK clock output enable This bit is controlled by software to enable/disable the PLLRCLK clock output of the PLL: This bit cannot be written when PLLRCLK output of the PLL is selected for system clock. Disabling the PLLRCLK clock output, when not used, allows saving power."]
+        #[must_use]
         #[inline(always)]
         pub const fn pllren(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
@@ -3665,10 +3911,11 @@ bits. It can be programmed to adjust to variations in voltage and temperature th
         }
         #[doc = "PLLRCLK clock output enable This bit is controlled by software to enable/disable the PLLRCLK clock output of the PLL: This bit cannot be written when PLLRCLK output of the PLL is selected for system clock. Disabling the PLLRCLK clock output, when not used, allows saving power."]
         #[inline(always)]
-        pub fn set_pllren(&mut self, val: bool) {
+        pub const fn set_pllren(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "PLL VCO division factor R for PLLRCLK clock output This bitfield is controlled by software. It sets the PLL VCO division factor R as follows: The bitfield can be written only when the PLL is disabled. The PLLRCLK clock can be selected as system clock. Caution: The software must set this bitfield so as not to exceed 122MHz on this clock."]
+        #[must_use]
         #[inline(always)]
         pub const fn pllr(&self) -> super::vals::Pllr {
             let val = (self.0 >> 29usize) & 0x07;
@@ -3676,7 +3923,7 @@ bits. It can be programmed to adjust to variations in voltage and temperature th
         }
         #[doc = "PLL VCO division factor R for PLLRCLK clock output This bitfield is controlled by software. It sets the PLL VCO division factor R as follows: The bitfield can be written only when the PLL is disabled. The PLLRCLK clock can be selected as system clock. Caution: The software must set this bitfield so as not to exceed 122MHz on this clock."]
         #[inline(always)]
-        pub fn set_pllr(&mut self, val: super::vals::Pllr) {
+        pub const fn set_pllr(&mut self, val: super::vals::Pllr) {
             self.0 = (self.0 & !(0x07 << 29usize)) | (((val.to_bits() as u32) & 0x07) << 29usize);
         }
     }

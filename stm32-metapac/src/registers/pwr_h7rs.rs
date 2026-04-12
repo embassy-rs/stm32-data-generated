@@ -1737,18 +1737,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "STOP",
-                    description: Some(
-                        "Stop mode when device enters Deepsleep.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "STANDBY",
                     description: Some(
                         "Standby mode when device enters Deepsleep.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "STOP",
+                    description: Some(
+                        "Stop mode when device enters Deepsleep.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1757,6 +1757,13 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 3,
             variants: &[
+                EnumVariant {
+                    name: "EXTERNAL",
+                    description: Some(
+                        "External voltage level on PVD_IN pin, compared to internal VREFINT level.",
+                    ),
+                    value: 7,
+                },
                 EnumVariant {
                     name: "LEVEL1",
                     description: Some(
@@ -1805,13 +1812,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "PVD level 7.",
                     ),
                     value: 6,
-                },
-                EnumVariant {
-                    name: "EXTERNAL",
-                    description: Some(
-                        "External voltage level on PVD_IN pin, compared to internal VREFINT level.",
-                    ),
-                    value: 7,
                 },
             ],
         },
@@ -1880,18 +1880,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOW",
-                    description: Some(
-                        "SVOS Low.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "HIGH",
                     description: Some(
                         "SVOS High (default).",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "LOW",
+                    description: Some(
+                        "SVOS Low.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1943,18 +1943,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "OHM5K",
-                    description: Some(
-                        "Charge VBAT through a 5 k resistor.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "OHM1_5K",
                     description: Some(
                         "Charge VBAT through a 1.5 k resistor.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "OHM5K",
+                    description: Some(
+                        "Charge VBAT through a 5 k resistor.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1964,18 +1964,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "LOW",
-                    description: Some(
-                        "VOS Low level (default).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
                     name: "HIGH",
                     description: Some(
                         "VOS High level.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "LOW",
+                    description: Some(
+                        "VOS Low level (default).",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2013,18 +2013,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "PULL_UP",
-                    description: Some(
-                        "Pull-up.",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
                     name: "PULL_DOWN",
                     description: Some(
                         "Pull-down.",
                     ),
                     value: 2,
+                },
+                EnumVariant {
+                    name: "PULL_UP",
+                    description: Some(
+                        "Pull-up.",
+                    ),
+                    value: 1,
                 },
             ],
         },
@@ -2041,6 +2041,13 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
+                    name: "FULL",
+                    description: Some(
+                        "XSPI Capacitor set to full capacitance.",
+                    ),
+                    value: 3,
+                },
+                EnumVariant {
                     name: "ONE_THIRD",
                     description: Some(
                         "XSPI Capacitor set to 1/3.",
@@ -2053,13 +2060,6 @@ pub(crate) static REGISTERS: IR = IR {
                         "XSPI Capacitor set to 2/3.",
                     ),
                     value: 2,
-                },
-                EnumVariant {
-                    name: "FULL",
-                    description: Some(
-                        "XSPI Capacitor set to full capacitance.",
-                    ),
-                    value: 3,
                 },
             ],
         },

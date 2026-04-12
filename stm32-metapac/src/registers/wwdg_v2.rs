@@ -124,19 +124,9 @@ pub(crate) static REGISTERS: IR = IR {
                 value: 0,
             },
             EnumVariant {
-                name: "DIV2",
-                description: Some("Counter clock (PCLK1 div 4096) div 2"),
-                value: 1,
-            },
-            EnumVariant {
-                name: "DIV4",
-                description: Some("Counter clock (PCLK1 div 4096) div 4"),
-                value: 2,
-            },
-            EnumVariant {
-                name: "DIV8",
-                description: Some("Counter clock (PCLK1 div 4096) div 8"),
-                value: 3,
+                name: "DIV128",
+                description: Some("Counter clock (PCLK1 div 4096) div 128"),
+                value: 7,
             },
             EnumVariant {
                 name: "DIV16",
@@ -144,9 +134,19 @@ pub(crate) static REGISTERS: IR = IR {
                 value: 4,
             },
             EnumVariant {
+                name: "DIV2",
+                description: Some("Counter clock (PCLK1 div 4096) div 2"),
+                value: 1,
+            },
+            EnumVariant {
                 name: "DIV32",
                 description: Some("Counter clock (PCLK1 div 4096) div 32"),
                 value: 5,
+            },
+            EnumVariant {
+                name: "DIV4",
+                description: Some("Counter clock (PCLK1 div 4096) div 4"),
+                value: 2,
             },
             EnumVariant {
                 name: "DIV64",
@@ -154,9 +154,9 @@ pub(crate) static REGISTERS: IR = IR {
                 value: 6,
             },
             EnumVariant {
-                name: "DIV128",
-                description: Some("Counter clock (PCLK1 div 4096) div 128"),
-                value: 7,
+                name: "DIV8",
+                description: Some("Counter clock (PCLK1 div 4096) div 8"),
+                value: 3,
             },
         ],
     }],

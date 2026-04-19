@@ -701,7 +701,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         triggers: &[],
         interrupts: &[PeripheralInterrupt {
             signal: "OVR",
-            interrupt: "DMAMUX1",
+            interrupt: "DMAMUX1_S",
         }],
         afio: None,
     },
@@ -1413,7 +1413,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "GTZC",
         address: 0x40032400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "gtzc",
+            version: "l5",
+            block: "GTZC_TZSC",
+            ir: &gtzc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK1",
             kernel_clock: Clock("HCLK1"),
@@ -1427,6 +1432,83 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             }),
             stop_mode: StopMode::Stop1,
         }),
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "GTZC_MPCBB1",
+        address: 0x40032c00,
+        registers: Some(PeripheralRegisters {
+            kind: "gtzc",
+            version: "l5",
+            block: "MPCBB",
+            ir: &gtzc::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "GTZC_MPCBB2",
+        address: 0x40033000,
+        registers: Some(PeripheralRegisters {
+            kind: "gtzc",
+            version: "l5",
+            block: "MPCBB",
+            ir: &gtzc::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "GTZC_TZIC",
+        address: 0x40032800,
+        registers: Some(PeripheralRegisters {
+            kind: "gtzc",
+            version: "l5",
+            block: "TZIC",
+            ir: &gtzc::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "GTZC",
+            },
+            PeripheralInterrupt {
+                signal: "GTZC",
+                interrupt: "GTZC",
+            },
+            PeripheralInterrupt {
+                signal: "ILA",
+                interrupt: "GTZC",
+            },
+        ],
+        afio: None,
+    },
+    Peripheral {
+        name: "GTZC_TZSC",
+        address: 0x40032400,
+        registers: Some(PeripheralRegisters {
+            kind: "gtzc",
+            version: "l5",
+            block: "GTZC_TZSC",
+            ir: &gtzc::REGISTERS,
+        }),
+        rcc: None,
         pins: &[],
         dma_channels: &[],
         triggers: &[],
@@ -2570,6 +2652,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "GLOBAL",
                 interrupt: "RCC",
             },
+            PeripheralInterrupt {
+                signal: "RCC",
+                interrupt: "RCC_S",
+            },
         ],
         afio: None,
     },
@@ -2653,23 +2739,23 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         interrupts: &[
             PeripheralInterrupt {
                 signal: "ALARM",
-                interrupt: "RTC",
+                interrupt: "RTC_S",
             },
             PeripheralInterrupt {
                 signal: "SSRU",
-                interrupt: "RTC",
+                interrupt: "RTC_S",
             },
             PeripheralInterrupt {
                 signal: "STAMP",
-                interrupt: "RTC",
+                interrupt: "RTC_S",
             },
             PeripheralInterrupt {
                 signal: "TAMP",
-                interrupt: "RTC",
+                interrupt: "RTC_S",
             },
             PeripheralInterrupt {
                 signal: "WKUP",
-                interrupt: "RTC",
+                interrupt: "RTC_S",
             },
         ],
         afio: None,
@@ -6696,6 +6782,8 @@ pub mod fdcanram;
 pub mod flash;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../registers/gtzc_l5.rs"]
+pub mod gtzc;
 #[path = "../registers/hash_v2.rs"]
 pub mod hash;
 #[path = "../registers/i2c_v2.rs"]

@@ -1126,6 +1126,63 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "GTZC_MPCBB1",
+        address: 0x40032c00,
+        registers: None,
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "GTZC_MPCBB2",
+        address: 0x40033000,
+        registers: None,
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "GTZC_TZIC",
+        address: 0x50032800,
+        registers: None,
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "GTZC",
+            },
+            PeripheralInterrupt {
+                signal: "GTZC",
+                interrupt: "GTZC",
+            },
+            PeripheralInterrupt {
+                signal: "ILA",
+                interrupt: "GTZC",
+            },
+        ],
+        afio: None,
+    },
+    Peripheral {
+        name: "GTZC_TZSC",
+        address: 0x40032400,
+        registers: None,
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
         name: "HASH",
         address: 0x420c0400,
         registers: Some(PeripheralRegisters {
@@ -2844,15 +2901,15 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         interrupts: &[
             PeripheralInterrupt {
                 signal: "PVD",
-                interrupt: "PWR",
+                interrupt: "PWR_S",
             },
             PeripheralInterrupt {
                 signal: "S3WU",
-                interrupt: "PWR",
+                interrupt: "PWR_S",
             },
             PeripheralInterrupt {
                 signal: "WKUP",
-                interrupt: "PWR",
+                interrupt: "PWR_S",
             },
         ],
         afio: None,
@@ -2962,6 +3019,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "GLOBAL",
                 interrupt: "RCC",
             },
+            PeripheralInterrupt {
+                signal: "RCC",
+                interrupt: "RCC_S",
+            },
         ],
         afio: None,
     },
@@ -3043,23 +3104,23 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         interrupts: &[
             PeripheralInterrupt {
                 signal: "ALARM",
-                interrupt: "RTC",
+                interrupt: "RTC_S",
             },
             PeripheralInterrupt {
                 signal: "SSRU",
-                interrupt: "RTC",
+                interrupt: "RTC_S",
             },
             PeripheralInterrupt {
                 signal: "STAMP",
-                interrupt: "RTC",
+                interrupt: "RTC_S",
             },
             PeripheralInterrupt {
                 signal: "TAMP",
-                interrupt: "RTC",
+                interrupt: "RTC_S",
             },
             PeripheralInterrupt {
                 signal: "WKUP",
-                interrupt: "RTC",
+                interrupt: "RTC_S",
             },
         ],
         afio: None,

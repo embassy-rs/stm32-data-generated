@@ -3326,7 +3326,7 @@
           "interrupts": [
             {
               "signal": "OVR",
-              "interrupt": "DMAMUX1"
+              "interrupt": "DMAMUX1_S"
             }
           ]
         },
@@ -4070,6 +4070,11 @@
         {
           "name": "GTZC",
           "address": 1073947648,
+          "registers": {
+            "kind": "gtzc",
+            "version": "l5",
+            "block": "GTZC_TZSC"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": "HCLK1",
@@ -4081,6 +4086,56 @@
               "register": "AHB1RSTR",
               "field": "GTZCRST"
             }
+          }
+        },
+        {
+          "name": "GTZC_MPCBB1",
+          "address": 1073949696,
+          "registers": {
+            "kind": "gtzc",
+            "version": "l5",
+            "block": "MPCBB"
+          }
+        },
+        {
+          "name": "GTZC_MPCBB2",
+          "address": 1073950720,
+          "registers": {
+            "kind": "gtzc",
+            "version": "l5",
+            "block": "MPCBB"
+          }
+        },
+        {
+          "name": "GTZC_TZIC",
+          "address": 1073948672,
+          "registers": {
+            "kind": "gtzc",
+            "version": "l5",
+            "block": "TZIC"
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "GTZC"
+            },
+            {
+              "signal": "GTZC",
+              "interrupt": "GTZC"
+            },
+            {
+              "signal": "ILA",
+              "interrupt": "GTZC"
+            }
+          ]
+        },
+        {
+          "name": "GTZC_TZSC",
+          "address": 1073947648,
+          "registers": {
+            "kind": "gtzc",
+            "version": "l5",
+            "block": "GTZC_TZSC"
           }
         },
         {
@@ -5298,6 +5353,10 @@
             {
               "signal": "GLOBAL",
               "interrupt": "RCC"
+            },
+            {
+              "signal": "RCC",
+              "interrupt": "RCC_S"
             }
           ]
         },
@@ -5370,23 +5429,23 @@
           "interrupts": [
             {
               "signal": "ALARM",
-              "interrupt": "RTC"
+              "interrupt": "RTC_S"
             },
             {
               "signal": "SSRU",
-              "interrupt": "RTC"
+              "interrupt": "RTC_S"
             },
             {
               "signal": "STAMP",
-              "interrupt": "RTC"
+              "interrupt": "RTC_S"
             },
             {
               "signal": "TAMP",
-              "interrupt": "RTC"
+              "interrupt": "RTC_S"
             },
             {
               "signal": "WKUP",
-              "interrupt": "RTC"
+              "interrupt": "RTC_S"
             }
           ]
         },

@@ -3931,6 +3931,10 @@
             {
               "signal": "LO",
               "interrupt": "LTDC_LO"
+            },
+            {
+              "signal": "UP",
+              "interrupt": "LTDC_UP"
             }
           ]
         },
@@ -4624,8 +4628,16 @@
           ],
           "interrupts": [
             {
+              "signal": "CRS",
+              "interrupt": "RCC_S"
+            },
+            {
               "signal": "GLOBAL",
               "interrupt": "RCC"
+            },
+            {
+              "signal": "RCC",
+              "interrupt": "RCC_S"
             }
           ]
         },
@@ -4853,23 +4865,23 @@
           "interrupts": [
             {
               "signal": "ALARM",
-              "interrupt": "RTC"
+              "interrupt": "RTC_S"
             },
             {
               "signal": "SSRU",
-              "interrupt": "RTC"
+              "interrupt": "RTC_S"
             },
             {
               "signal": "STAMP",
-              "interrupt": "RTC"
+              "interrupt": "RTC_S"
             },
             {
               "signal": "TAMP",
-              "interrupt": "RTC"
+              "interrupt": "RTC_S"
             },
             {
               "signal": "WKUP",
-              "interrupt": "RTC"
+              "interrupt": "RTC_S"
             }
           ]
         },

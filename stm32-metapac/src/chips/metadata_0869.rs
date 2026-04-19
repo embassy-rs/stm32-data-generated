@@ -609,6 +609,99 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "GTZC_MPCBB1",
+        address: 0x40032c00,
+        registers: Some(PeripheralRegisters {
+            kind: "gtzc",
+            version: "wba",
+            block: "MPCBB",
+            ir: &gtzc::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "GTZC_MPCBB2",
+        address: 0x40033000,
+        registers: Some(PeripheralRegisters {
+            kind: "gtzc",
+            version: "wba",
+            block: "MPCBB",
+            ir: &gtzc::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "GTZC_MPCBB6",
+        address: 0x40034000,
+        registers: Some(PeripheralRegisters {
+            kind: "gtzc",
+            version: "wba",
+            block: "MPCBB",
+            ir: &gtzc::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "GTZC_TZIC",
+        address: 0x50032800,
+        registers: Some(PeripheralRegisters {
+            kind: "gtzc",
+            version: "wba",
+            block: "TZIC",
+            ir: &gtzc::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "GTZC",
+            },
+            PeripheralInterrupt {
+                signal: "GTZC",
+                interrupt: "GTZC",
+            },
+            PeripheralInterrupt {
+                signal: "ILA",
+                interrupt: "GTZC",
+            },
+        ],
+        afio: None,
+    },
+    Peripheral {
+        name: "GTZC_TZSC",
+        address: 0x40032400,
+        registers: Some(PeripheralRegisters {
+            kind: "gtzc",
+            version: "wba",
+            block: "GTZC_TZSC",
+            ir: &gtzc::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
         name: "HASH",
         address: 0x420c0400,
         registers: Some(PeripheralRegisters {
@@ -671,10 +764,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         triggers: &[],
-        interrupts: &[PeripheralInterrupt {
-            signal: "GLOBAL",
-            interrupt: "HSEM",
-        }],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "HSEM",
+            },
+            PeripheralInterrupt {
+                signal: "HSEM_S",
+                interrupt: "HSEM_S",
+            },
+        ],
         afio: None,
     },
     Peripheral {
@@ -1307,10 +1406,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         ],
         dma_channels: &[],
         triggers: &[],
-        interrupts: &[PeripheralInterrupt {
-            signal: "GLOBAL",
-            interrupt: "RCC",
-        }],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "CRS",
+                interrupt: "RCC_S",
+            },
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "RCC",
+            },
+            PeripheralInterrupt {
+                signal: "RCC",
+                interrupt: "RCC_S",
+            },
+        ],
         afio: None,
     },
     Peripheral {
@@ -1375,23 +1484,23 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         interrupts: &[
             PeripheralInterrupt {
                 signal: "ALARM",
-                interrupt: "RTC",
+                interrupt: "RTC_S",
             },
             PeripheralInterrupt {
                 signal: "SSRU",
-                interrupt: "RTC",
+                interrupt: "RTC_S",
             },
             PeripheralInterrupt {
                 signal: "STAMP",
-                interrupt: "RTC",
+                interrupt: "RTC_S",
             },
             PeripheralInterrupt {
                 signal: "TAMP",
-                interrupt: "RTC",
+                interrupt: "RTC_S",
             },
             PeripheralInterrupt {
                 signal: "WKUP",
-                interrupt: "RTC",
+                interrupt: "RTC_S",
             },
         ],
         afio: None,

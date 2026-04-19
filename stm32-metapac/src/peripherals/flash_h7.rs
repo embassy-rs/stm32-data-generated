@@ -152,6 +152,16 @@ impl Flash {
     pub const fn boot_prgr(self) -> crate::common::Reg<regs::BootPrgr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
     }
+    #[doc = "FLASH register with boot address"]
+    #[inline(always)]
+    pub const fn boot4_cur(self) -> crate::common::Reg<regs::Boot4Cur, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
+    }
+    #[doc = "FLASH register with boot address"]
+    #[inline(always)]
+    pub const fn boot4_prg(self) -> crate::common::Reg<regs::Boot4Prg, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x4cusize) as _) }
+    }
     #[doc = "FLASH CRC data register"]
     #[inline(always)]
     pub const fn crcdatar(self) -> crate::common::Reg<regs::Crcdatar, crate::common::RW> {
@@ -211,6 +221,116 @@ pub mod regs {
                 "Acr {{ latency: {=u8:?}, wrhighfreq: {=u8:?} }}",
                 self.latency(),
                 self.wrhighfreq()
+            )
+        }
+    }
+    #[doc = "FLASH register with boot address"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Boot4Cur(pub u32);
+    impl Boot4Cur {
+        #[doc = "Boot address 0"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn boot_add0(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Boot address 0"]
+        #[inline(always)]
+        pub const fn set_boot_add0(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+        #[doc = "Boot address 1"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn boot_add1(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Boot address 1"]
+        #[inline(always)]
+        pub const fn set_boot_add1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
+        }
+    }
+    impl Default for Boot4Cur {
+        #[inline(always)]
+        fn default() -> Boot4Cur {
+            Boot4Cur(0)
+        }
+    }
+    impl core::fmt::Debug for Boot4Cur {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Boot4Cur")
+                .field("boot_add0", &self.boot_add0())
+                .field("boot_add1", &self.boot_add1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Boot4Cur {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Boot4Cur {{ boot_add0: {=u16:?}, boot_add1: {=u16:?} }}",
+                self.boot_add0(),
+                self.boot_add1()
+            )
+        }
+    }
+    #[doc = "FLASH register with boot address"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Boot4Prg(pub u32);
+    impl Boot4Prg {
+        #[doc = "Boot address 0"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn boot_add0(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Boot address 0"]
+        #[inline(always)]
+        pub const fn set_boot_add0(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
+        }
+        #[doc = "Boot address 1"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn boot_add1(&self) -> u16 {
+            let val = (self.0 >> 16usize) & 0xffff;
+            val as u16
+        }
+        #[doc = "Boot address 1"]
+        #[inline(always)]
+        pub const fn set_boot_add1(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 16usize)) | (((val as u32) & 0xffff) << 16usize);
+        }
+    }
+    impl Default for Boot4Prg {
+        #[inline(always)]
+        fn default() -> Boot4Prg {
+            Boot4Prg(0)
+        }
+    }
+    impl core::fmt::Debug for Boot4Prg {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Boot4Prg")
+                .field("boot_add0", &self.boot_add0())
+                .field("boot_add1", &self.boot_add1())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Boot4Prg {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Boot4Prg {{ boot_add0: {=u16:?}, boot_add1: {=u16:?} }}",
+                self.boot_add0(),
+                self.boot_add1()
             )
         }
     }
@@ -1326,6 +1446,30 @@ pub mod regs {
         pub const fn set_security(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
+        #[doc = "Enable CM4 boot"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn boot_cm4(&self) -> bool {
+            let val = (self.0 >> 22usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Enable CM4 boot"]
+        #[inline(always)]
+        pub const fn set_boot_cm4(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
+        }
+        #[doc = "Enable CM7 boot"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn boot_cm7(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Enable CM7 boot"]
+        #[inline(always)]
+        pub const fn set_boot_cm7(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
         #[doc = "User option bit 1"]
         #[must_use]
         #[inline(always)]
@@ -1406,6 +1550,8 @@ pub mod regs {
                 .field("fz_iwdg_sdby", &self.fz_iwdg_sdby())
                 .field("st_ram_size", &self.st_ram_size())
                 .field("security", &self.security())
+                .field("boot_cm4", &self.boot_cm4())
+                .field("boot_cm7", &self.boot_cm7())
                 .field("rss1", &self.rss1())
                 .field("perso_ok", &self.perso_ok())
                 .field("io_hslv", &self.io_hslv())
@@ -1417,7 +1563,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for OptsrCur {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "OptsrCur {{ opt_busy: {=bool:?}, bor_lev: {=u8:?}, iwdg1_hw: {=bool:?}, n_rst_stop_d1: {=bool:?}, n_rst_stby_d1: {=bool:?}, rdp: {=u8:?}, fz_iwdg_stop: {=bool:?}, fz_iwdg_sdby: {=bool:?}, st_ram_size: {=u8:?}, security: {=bool:?}, rss1: {=bool:?}, perso_ok: {=bool:?}, io_hslv: {=bool:?}, optchangeerr: {=bool:?}, swap_bank_opt: {=bool:?} }}" , self . opt_busy () , self . bor_lev () , self . iwdg1_hw () , self . n_rst_stop_d1 () , self . n_rst_stby_d1 () , self . rdp () , self . fz_iwdg_stop () , self . fz_iwdg_sdby () , self . st_ram_size () , self . security () , self . rss1 () , self . perso_ok () , self . io_hslv () , self . optchangeerr () , self . swap_bank_opt ())
+            defmt :: write ! (f , "OptsrCur {{ opt_busy: {=bool:?}, bor_lev: {=u8:?}, iwdg1_hw: {=bool:?}, n_rst_stop_d1: {=bool:?}, n_rst_stby_d1: {=bool:?}, rdp: {=u8:?}, fz_iwdg_stop: {=bool:?}, fz_iwdg_sdby: {=bool:?}, st_ram_size: {=u8:?}, security: {=bool:?}, boot_cm4: {=bool:?}, boot_cm7: {=bool:?}, rss1: {=bool:?}, perso_ok: {=bool:?}, io_hslv: {=bool:?}, optchangeerr: {=bool:?}, swap_bank_opt: {=bool:?} }}" , self . opt_busy () , self . bor_lev () , self . iwdg1_hw () , self . n_rst_stop_d1 () , self . n_rst_stby_d1 () , self . rdp () , self . fz_iwdg_stop () , self . fz_iwdg_sdby () , self . st_ram_size () , self . security () , self . boot_cm4 () , self . boot_cm7 () , self . rss1 () , self . perso_ok () , self . io_hslv () , self . optchangeerr () , self . swap_bank_opt ())
         }
     }
     #[doc = "FLASH option status register"]
@@ -1533,6 +1679,30 @@ pub mod regs {
         pub const fn set_security(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
+        #[doc = "Enable CM4 boot"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn boot_cm4(&self) -> bool {
+            let val = (self.0 >> 22usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Enable CM4 boot"]
+        #[inline(always)]
+        pub const fn set_boot_cm4(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
+        }
+        #[doc = "Enable CM7 boot"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn boot_cm7(&self) -> bool {
+            let val = (self.0 >> 23usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Enable CM7 boot"]
+        #[inline(always)]
+        pub const fn set_boot_cm7(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
+        }
         #[doc = "User option configuration bit 1"]
         #[must_use]
         #[inline(always)]
@@ -1600,6 +1770,8 @@ pub mod regs {
                 .field("fz_iwdg_sdby", &self.fz_iwdg_sdby())
                 .field("st_ram_size", &self.st_ram_size())
                 .field("security", &self.security())
+                .field("boot_cm4", &self.boot_cm4())
+                .field("boot_cm7", &self.boot_cm7())
                 .field("rss1", &self.rss1())
                 .field("rss2", &self.rss2())
                 .field("io_hslv", &self.io_hslv())
@@ -1610,7 +1782,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for OptsrPrg {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "OptsrPrg {{ bor_lev: {=u8:?}, iwdg1_hw: {=bool:?}, n_rst_stop_d1: {=bool:?}, n_rst_stby_d1: {=bool:?}, rdp: {=u8:?}, fz_iwdg_stop: {=bool:?}, fz_iwdg_sdby: {=bool:?}, st_ram_size: {=u8:?}, security: {=bool:?}, rss1: {=bool:?}, rss2: {=bool:?}, io_hslv: {=bool:?}, swap_bank_opt: {=bool:?} }}" , self . bor_lev () , self . iwdg1_hw () , self . n_rst_stop_d1 () , self . n_rst_stby_d1 () , self . rdp () , self . fz_iwdg_stop () , self . fz_iwdg_sdby () , self . st_ram_size () , self . security () , self . rss1 () , self . rss2 () , self . io_hslv () , self . swap_bank_opt ())
+            defmt :: write ! (f , "OptsrPrg {{ bor_lev: {=u8:?}, iwdg1_hw: {=bool:?}, n_rst_stop_d1: {=bool:?}, n_rst_stby_d1: {=bool:?}, rdp: {=u8:?}, fz_iwdg_stop: {=bool:?}, fz_iwdg_sdby: {=bool:?}, st_ram_size: {=u8:?}, security: {=bool:?}, boot_cm4: {=bool:?}, boot_cm7: {=bool:?}, rss1: {=bool:?}, rss2: {=bool:?}, io_hslv: {=bool:?}, swap_bank_opt: {=bool:?} }}" , self . bor_lev () , self . iwdg1_hw () , self . n_rst_stop_d1 () , self . n_rst_stby_d1 () , self . rdp () , self . fz_iwdg_stop () , self . fz_iwdg_sdby () , self . st_ram_size () , self . security () , self . boot_cm4 () , self . boot_cm7 () , self . rss1 () , self . rss2 () , self . io_hslv () , self . swap_bank_opt ())
         }
     }
     #[doc = "FLASH protection address for bank 1"]

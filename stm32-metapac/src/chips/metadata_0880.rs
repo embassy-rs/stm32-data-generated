@@ -735,6 +735,52 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "GTZC",
+        address: 0x58004400,
+        registers: None,
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "GTZC_TZIC",
+        address: 0x58004800,
+        registers: None,
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "GLOBAL",
+                interrupt: "TZIC_ILA",
+            },
+            PeripheralInterrupt {
+                signal: "GTZC",
+                interrupt: "TZIC_ILA",
+            },
+            PeripheralInterrupt {
+                signal: "ILA",
+                interrupt: "TZIC_ILA",
+            },
+        ],
+        afio: None,
+    },
+    Peripheral {
+        name: "GTZC_TZSC",
+        address: 0x58004400,
+        registers: None,
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
         name: "HSEM",
         address: 0x58001400,
         registers: Some(PeripheralRegisters {

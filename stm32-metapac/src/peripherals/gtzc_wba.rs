@@ -55,7 +55,342 @@ impl GtzcTzsc {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x28usize) as _) }
     }
 }
+#[doc = "Block-based memory protection controller."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Mpcbb {
+    ptr: *mut u8,
+}
+unsafe impl Send for Mpcbb {}
+unsafe impl Sync for Mpcbb {}
+impl Mpcbb {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "MPCBB control register."]
+    #[inline(always)]
+    pub const fn cr(self) -> crate::common::Reg<regs::MpcbbCr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "MPCBB configuration lock register."]
+    #[inline(always)]
+    pub const fn cfglock(self) -> crate::common::Reg<regs::Cfglock, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "MPCBB security configuration register."]
+    #[inline(always)]
+    pub const fn seccfgr(self, n: usize) -> crate::common::Reg<regs::Seccfgr, crate::common::RW> {
+        assert!(n < 4usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize + n * 4usize) as _) }
+    }
+    #[doc = "MPCBB privilege configuration register."]
+    #[inline(always)]
+    pub const fn privcfgr(self, n: usize) -> crate::common::Reg<regs::Privcfgr, crate::common::RW> {
+        assert!(n < 4usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0200usize + n * 4usize) as _) }
+    }
+}
+#[doc = "TrustZone interrupt controller."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Tzic {
+    ptr: *mut u8,
+}
+unsafe impl Send for Tzic {}
+unsafe impl Sync for Tzic {}
+impl Tzic {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "TZIC interrupt enable register."]
+    #[inline(always)]
+    pub const fn ier(self, n: usize) -> crate::common::Reg<regs::Ier, crate::common::RW> {
+        assert!(n < 4usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize + n * 4usize) as _) }
+    }
+    #[doc = "TZIC status register."]
+    #[inline(always)]
+    pub const fn sr(self, n: usize) -> crate::common::Reg<regs::Sr, crate::common::RW> {
+        assert!(n < 4usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize + n * 4usize) as _) }
+    }
+    #[doc = "TZIC flag clear register."]
+    #[inline(always)]
+    pub const fn fcr(self, n: usize) -> crate::common::Reg<regs::Fcr, crate::common::RW> {
+        assert!(n < 4usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x20usize + n * 4usize) as _) }
+    }
+}
 pub mod regs {
+    #[doc = "MPCBB configuration lock register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cfglock(pub u32);
+    impl Cfglock {
+        #[must_use]
+        #[inline(always)]
+        pub const fn splck(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[inline(always)]
+        pub const fn set_splck(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Cfglock {
+        #[inline(always)]
+        fn default() -> Cfglock {
+            Cfglock(0)
+        }
+    }
+    impl core::fmt::Debug for Cfglock {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cfglock").field("splck", &self.splck()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cfglock {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cfglock {{ splck: {=u32:?} }}", self.splck())
+        }
+    }
+    #[doc = "TZIC flag clear register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Fcr(pub u32);
+    impl Fcr {
+        #[must_use]
+        #[inline(always)]
+        pub const fn cf(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[inline(always)]
+        pub const fn set_cf(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Fcr {
+        #[inline(always)]
+        fn default() -> Fcr {
+            Fcr(0)
+        }
+    }
+    impl core::fmt::Debug for Fcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Fcr").field("cf", &self.cf()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Fcr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Fcr {{ cf: {=u32:?} }}", self.cf())
+        }
+    }
+    #[doc = "TZIC interrupt enable register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ier(pub u32);
+    impl Ier {
+        #[must_use]
+        #[inline(always)]
+        pub const fn ie(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[inline(always)]
+        pub const fn set_ie(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Ier {
+        #[inline(always)]
+        fn default() -> Ier {
+            Ier(0)
+        }
+    }
+    impl core::fmt::Debug for Ier {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ier").field("ie", &self.ie()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ier {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Ier {{ ie: {=u32:?} }}", self.ie())
+        }
+    }
+    #[doc = "MPCBB control register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct MpcbbCr(pub u32);
+    impl MpcbbCr {
+        #[must_use]
+        #[inline(always)]
+        pub const fn glock(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[inline(always)]
+        pub const fn set_glock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[must_use]
+        #[inline(always)]
+        pub const fn invsecstate(&self) -> bool {
+            let val = (self.0 >> 30usize) & 0x01;
+            val != 0
+        }
+        #[inline(always)]
+        pub const fn set_invsecstate(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+        }
+        #[must_use]
+        #[inline(always)]
+        pub const fn srwiladis(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[inline(always)]
+        pub const fn set_srwiladis(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
+    }
+    impl Default for MpcbbCr {
+        #[inline(always)]
+        fn default() -> MpcbbCr {
+            MpcbbCr(0)
+        }
+    }
+    impl core::fmt::Debug for MpcbbCr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("MpcbbCr")
+                .field("glock", &self.glock())
+                .field("invsecstate", &self.invsecstate())
+                .field("srwiladis", &self.srwiladis())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for MpcbbCr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "MpcbbCr {{ glock: {=bool:?}, invsecstate: {=bool:?}, srwiladis: {=bool:?} }}",
+                self.glock(),
+                self.invsecstate(),
+                self.srwiladis()
+            )
+        }
+    }
+    #[doc = "MPCBB privilege configuration register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Privcfgr(pub u32);
+    impl Privcfgr {
+        #[must_use]
+        #[inline(always)]
+        pub const fn priv_(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[inline(always)]
+        pub const fn set_priv_(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Privcfgr {
+        #[inline(always)]
+        fn default() -> Privcfgr {
+            Privcfgr(0)
+        }
+    }
+    impl core::fmt::Debug for Privcfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Privcfgr").field("priv_", &self.priv_()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Privcfgr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Privcfgr {{ priv_: {=u32:?} }}", self.priv_())
+        }
+    }
+    #[doc = "MPCBB security configuration register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Seccfgr(pub u32);
+    impl Seccfgr {
+        #[must_use]
+        #[inline(always)]
+        pub const fn sec(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[inline(always)]
+        pub const fn set_sec(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Seccfgr {
+        #[inline(always)]
+        fn default() -> Seccfgr {
+            Seccfgr(0)
+        }
+    }
+    impl core::fmt::Debug for Seccfgr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Seccfgr").field("sec", &self.sec()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Seccfgr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Seccfgr {{ sec: {=u32:?} }}", self.sec())
+        }
+    }
+    #[doc = "TZIC status register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Sr(pub u32);
+    impl Sr {
+        #[must_use]
+        #[inline(always)]
+        pub const fn f(&self) -> u32 {
+            let val = (self.0 >> 0usize) & 0xffff_ffff;
+            val as u32
+        }
+        #[inline(always)]
+        pub const fn set_f(&mut self, val: u32) {
+            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        }
+    }
+    impl Default for Sr {
+        #[inline(always)]
+        fn default() -> Sr {
+            Sr(0)
+        }
+    }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr").field("f", &self.f()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Sr {{ f: {=u32:?} }}", self.f())
+        }
+    }
     #[doc = "GTZC1 TZSC control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]

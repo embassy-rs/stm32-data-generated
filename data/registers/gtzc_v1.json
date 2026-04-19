@@ -142,6 +142,88 @@
       }
     ]
   },
+  "block/MPCBB": {
+    "description": "Block-based memory protection controller.",
+    "items": [
+      {
+        "name": "CR",
+        "description": "MPCBB control register.",
+        "byte_offset": 0,
+        "fieldset": "MPCBB_CR"
+      },
+      {
+        "name": "CFGLOCK",
+        "description": "MPCBB configuration lock register.",
+        "byte_offset": 16,
+        "fieldset": "CFGLOCK"
+      },
+      {
+        "name": "SECCFGR",
+        "description": "MPCBB security configuration register.",
+        "array": {
+          "len": 32,
+          "stride": 4
+        },
+        "byte_offset": 256,
+        "fieldset": "SECCFGR"
+      },
+      {
+        "name": "PRIVCFGR",
+        "description": "MPCBB privilege configuration register.",
+        "array": {
+          "len": 32,
+          "stride": 4
+        },
+        "byte_offset": 512,
+        "fieldset": "PRIVCFGR"
+      }
+    ]
+  },
+  "block/TZIC": {
+    "description": "TrustZone interrupt controller.",
+    "items": [
+      {
+        "name": "IER",
+        "description": "TZIC interrupt enable register.",
+        "array": {
+          "len": 4,
+          "stride": 4
+        },
+        "byte_offset": 0,
+        "fieldset": "IER"
+      },
+      {
+        "name": "SR",
+        "description": "TZIC status register.",
+        "array": {
+          "len": 4,
+          "stride": 4
+        },
+        "byte_offset": 16,
+        "fieldset": "SR"
+      },
+      {
+        "name": "FCR",
+        "description": "TZIC flag clear register.",
+        "array": {
+          "len": 4,
+          "stride": 4
+        },
+        "byte_offset": 32,
+        "fieldset": "FCR"
+      }
+    ]
+  },
+  "fieldset/CFGLOCK": {
+    "description": "MPCBB configuration lock register.",
+    "fields": [
+      {
+        "name": "SPLCK",
+        "bit_offset": 0,
+        "bit_size": 32
+      }
+    ]
+  },
   "fieldset/CR": {
     "description": "GTZC1 TZSC control register.",
     "fields": [
@@ -149,6 +231,46 @@
         "name": "LCK",
         "description": "lock the configuration of TZSC_SECCFGRx and TZSC_PRIVCFGRx until next reset This bit is cleared by default and once set, it can not be reset until system reset.",
         "bit_offset": 0,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/FCR": {
+    "description": "TZIC flag clear register.",
+    "fields": [
+      {
+        "name": "CF",
+        "bit_offset": 0,
+        "bit_size": 32
+      }
+    ]
+  },
+  "fieldset/IER": {
+    "description": "TZIC interrupt enable register.",
+    "fields": [
+      {
+        "name": "IE",
+        "bit_offset": 0,
+        "bit_size": 32
+      }
+    ]
+  },
+  "fieldset/MPCBB_CR": {
+    "description": "MPCBB control register.",
+    "fields": [
+      {
+        "name": "GLOCK",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "INVSECSTATE",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "SRWILADIS",
+        "bit_offset": 31,
         "bit_size": 1
       }
     ]
@@ -518,6 +640,16 @@
         "description": "Length of sub-region B in region x This field defines the length of the sub-region B, to be multiplied by the granularity defined in Table�30. When SUBB_START + SUBB_LENGTH is higher than the maximum size allowed for the memory, a saturation of SUBB_LENGTH is applied automatically. If SUBB_LENGTH = 0, the sub-region B is disabled.(SREN bit in TZSC_MPCMWxBCFGR is cleared).",
         "bit_offset": 16,
         "bit_size": 12
+      }
+    ]
+  },
+  "fieldset/PRIVCFGR": {
+    "description": "MPCBB privilege configuration register.",
+    "fields": [
+      {
+        "name": "PRIV",
+        "bit_offset": 0,
+        "bit_size": 32
       }
     ]
   },
@@ -956,6 +1088,16 @@
       }
     ]
   },
+  "fieldset/SECCFGR": {
+    "description": "MPCBB security configuration register.",
+    "fields": [
+      {
+        "name": "SEC",
+        "bit_offset": 0,
+        "bit_size": 32
+      }
+    ]
+  },
   "fieldset/SECCFGR1": {
     "description": "GTZC1 TZSC secure configuration register 1.",
     "fields": [
@@ -1388,6 +1530,16 @@
         "description": "secure access mode for RAMSCFG.",
         "bit_offset": 26,
         "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "description": "TZIC status register.",
+    "fields": [
+      {
+        "name": "F",
+        "bit_offset": 0,
+        "bit_size": 32
       }
     ]
   }

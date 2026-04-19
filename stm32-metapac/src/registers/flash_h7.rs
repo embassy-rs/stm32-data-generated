@@ -409,6 +409,40 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 BlockItem {
+                    name: "boot4_cur",
+                    description: Some(
+                        "FLASH register with boot address",
+                    ),
+                    array: None,
+                    byte_offset: 0x48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Boot4Cur",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "boot4_prg",
+                    description: Some(
+                        "FLASH register with boot address",
+                    ),
+                    array: None,
+                    byte_offset: 0x4c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Boot4Prg",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
                     name: "crcdatar",
                     description: Some(
                         "FLASH CRC data register",
@@ -462,6 +496,82 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Boot4Cur",
+            extends: None,
+            description: Some(
+                "FLASH register with boot address",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "boot_add0",
+                    description: Some(
+                        "Boot address 0",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "boot_add1",
+                    description: Some(
+                        "Boot address 1",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Boot4Prg",
+            extends: None,
+            description: Some(
+                "FLASH register with boot address",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "boot_add0",
+                    description: Some(
+                        "Boot address 0",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 16,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "boot_add1",
+                    description: Some(
+                        "Boot address 1",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 16,
                     array: None,
                     enumm: None,
                 },
@@ -1496,6 +1606,34 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "boot_cm4",
+                    description: Some(
+                        "Enable CM4 boot",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "boot_cm7",
+                    description: Some(
+                        "Enable CM7 boot",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "rss1",
                     description: Some(
                         "User option bit 1",
@@ -1695,6 +1833,34 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 21,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "boot_cm4",
+                    description: Some(
+                        "Enable CM4 boot",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "boot_cm7",
+                    description: Some(
+                        "Enable CM7 boot",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
                         },
                     ),
                     bit_size: 1,

@@ -3428,6 +3428,36 @@
           "address": 1073947648
         },
         {
+          "name": "GTZC_MPCBB1",
+          "address": 1073949696
+        },
+        {
+          "name": "GTZC_MPCBB2",
+          "address": 1073950720
+        },
+        {
+          "name": "GTZC_TZIC",
+          "address": 1342384128,
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "GTZC"
+            },
+            {
+              "signal": "GTZC",
+              "interrupt": "GTZC"
+            },
+            {
+              "signal": "ILA",
+              "interrupt": "GTZC"
+            }
+          ]
+        },
+        {
+          "name": "GTZC_TZSC",
+          "address": 1073947648
+        },
+        {
           "name": "HASH",
           "address": 1108083712,
           "registers": {
@@ -4970,15 +5000,15 @@
           "interrupts": [
             {
               "signal": "PVD",
-              "interrupt": "PWR"
+              "interrupt": "PWR_S"
             },
             {
               "signal": "S3WU",
-              "interrupt": "PWR"
+              "interrupt": "PWR_S"
             },
             {
               "signal": "WKUP",
-              "interrupt": "PWR"
+              "interrupt": "PWR_S"
             }
           ]
         },
@@ -5071,6 +5101,10 @@
             {
               "signal": "GLOBAL",
               "interrupt": "RCC"
+            },
+            {
+              "signal": "RCC",
+              "interrupt": "RCC_S"
             }
           ]
         },
@@ -5141,23 +5175,23 @@
           "interrupts": [
             {
               "signal": "ALARM",
-              "interrupt": "RTC"
+              "interrupt": "RTC_S"
             },
             {
               "signal": "SSRU",
-              "interrupt": "RTC"
+              "interrupt": "RTC_S"
             },
             {
               "signal": "STAMP",
-              "interrupt": "RTC"
+              "interrupt": "RTC_S"
             },
             {
               "signal": "TAMP",
-              "interrupt": "RTC"
+              "interrupt": "RTC_S"
             },
             {
               "signal": "WKUP",
-              "interrupt": "RTC"
+              "interrupt": "RTC_S"
             }
           ]
         },

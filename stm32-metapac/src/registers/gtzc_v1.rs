@@ -402,8 +402,202 @@ pub(crate) static REGISTERS: IR = IR {
                 },
             ],
         },
+        Block {
+            name: "Mpcbb",
+            extends: None,
+            description: Some(
+                "Block-based memory protection controller.",
+            ),
+            items: &[
+                BlockItem {
+                    name: "cr",
+                    description: Some(
+                        "MPCBB control register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "MpcbbCr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cfglock",
+                    description: Some(
+                        "MPCBB configuration lock register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x10,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cfglock",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "seccfgr",
+                    description: Some(
+                        "MPCBB security configuration register.",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 32,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 0x100,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Seccfgr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "privcfgr",
+                    description: Some(
+                        "MPCBB privilege configuration register.",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 32,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 0x200,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Privcfgr",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+        Block {
+            name: "Tzic",
+            extends: None,
+            description: Some(
+                "TrustZone interrupt controller.",
+            ),
+            items: &[
+                BlockItem {
+                    name: "ier",
+                    description: Some(
+                        "TZIC interrupt enable register.",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 0x0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Ier",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "sr",
+                    description: Some(
+                        "TZIC status register.",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 0x10,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Sr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "fcr",
+                    description: Some(
+                        "TZIC flag clear register.",
+                    ),
+                    array: Some(
+                        Array::Regular(
+                            RegularArray {
+                                len: 4,
+                                stride: 4,
+                            },
+                        ),
+                    ),
+                    byte_offset: 0x20,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Fcr",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
     ],
     fieldsets: &[
+        FieldSet {
+            name: "Cfglock",
+            extends: None,
+            description: Some(
+                "MPCBB configuration lock register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "splck",
+                    description: None,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
         FieldSet {
             name: "Cr",
             extends: None,
@@ -420,6 +614,96 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
                             offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Fcr",
+            extends: None,
+            description: Some(
+                "TZIC flag clear register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cf",
+                    description: None,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Ier",
+            extends: None,
+            description: Some(
+                "TZIC interrupt enable register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ie",
+                    description: None,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "MpcbbCr",
+            extends: None,
+            description: Some(
+                "MPCBB control register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "glock",
+                    description: None,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "invsecstate",
+                    description: None,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 30,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "srwiladis",
+                    description: None,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 31,
                         },
                     ),
                     bit_size: 1,
@@ -1255,6 +1539,28 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 12,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Privcfgr",
+            extends: None,
+            description: Some(
+                "MPCBB privilege configuration register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "priv_",
+                    description: None,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },
@@ -2271,6 +2577,28 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
+            name: "Seccfgr",
+            extends: None,
+            description: Some(
+                "MPCBB security configuration register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sec",
+                    description: None,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 32,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
             name: "Seccfgr1",
             extends: None,
             description: Some(
@@ -3275,6 +3603,28 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                     bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Sr",
+            extends: None,
+            description: Some(
+                "TZIC status register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "f",
+                    description: None,
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 32,
                     array: None,
                     enumm: None,
                 },

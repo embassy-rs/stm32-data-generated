@@ -65,7 +65,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("gfxmmu", &["v1", "v2"]),
     ("gpdma", &["v1"]),
     ("gpio", &["v1", "v2", "v2_l478"]),
-    ("gtzc", &["h503", "v1", "wba"]),
+    ("gtzc", &["h503", "l5", "v1", "wba"]),
     ("hash", &["v1", "v2", "v3", "v4"]),
     ("hrtim", &["v1", "v2"]),
     ("hsem", &["v1", "v2", "v3", "v4", "wba"]),

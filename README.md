@@ -55,7 +55,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [GPDMA](#gpdma) | | | | | | | | | | v1 | v1 | | | | | | v1 | | v1 | v1 | | | v1 | |
 | [GPIO](#gpio) | v2 | v2 | v1 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2, v2_l478 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 |
 | [GPU](#gpu) | | | | | | | | | | | ❌ | | | | | | ❌ | | | ❌ | | | | |
-| [GTZC](#gtzc) | | | | | | | | | | h503, v1 | | | | | | ❌ | | | ❌ | v1 | | | wba | |
+| [GTZC](#gtzc) | | | | | | | | | | h503, v1, ❌ | | | | | | l5 | | | ❌ | v1 | | | wba | ❌ |
 | [HASH](#hash) | | | | v1 | | v1, v2 | v2 | | | v3 | v2, v3 | | | v2 | v2 | v2 | v3 | | v3 | v4 | | | v4 | |
 | [HRTIM](#hrtim) | | | | | v1 | | | | v2 | | v1 | | | | | | | | | | | | | |
 | [HSEM](#hsem) | | | | | | | | | | | v1, v2, ❌ | | | | | | | | | | v1, ❌ | | wba | v3, v4 |
@@ -533,9 +533,10 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **h503**: STM32H5
+- **l5**: STM32L5
 - **v1**: STM32H5, STM32U5
 - **wba**: STM32WBA
-- **❌ Unsupported**: STM32L5, STM32U3
+- **❌ Unsupported**: STM32H5, STM32U3, STM32WL
 
 ### HASH
 

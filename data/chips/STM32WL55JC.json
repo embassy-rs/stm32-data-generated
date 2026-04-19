@@ -1338,6 +1338,18 @@
           }
         },
         {
+          "name": "GTZC",
+          "address": 1476412416
+        },
+        {
+          "name": "GTZC_TZIC",
+          "address": 1476413440
+        },
+        {
+          "name": "GTZC_TZSC",
+          "address": 1476412416
+        },
+        {
           "name": "HSEM",
           "address": 1476400128,
           "registers": {
@@ -4351,6 +4363,32 @@
               "field": "GPIOHRST"
             }
           }
+        },
+        {
+          "name": "GTZC",
+          "address": 1476412416
+        },
+        {
+          "name": "GTZC_TZIC",
+          "address": 1476413440,
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "TZIC_ILA"
+            },
+            {
+              "signal": "GTZC",
+              "interrupt": "TZIC_ILA"
+            },
+            {
+              "signal": "ILA",
+              "interrupt": "TZIC_ILA"
+            }
+          ]
+        },
+        {
+          "name": "GTZC_TZSC",
+          "address": 1476412416
         },
         {
           "name": "HSEM",

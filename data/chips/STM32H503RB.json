@@ -1357,6 +1357,18 @@
           }
         },
         {
+          "name": "GTZC_MPCBB1",
+          "address": 1073949696
+        },
+        {
+          "name": "GTZC_MPCBB2",
+          "address": 1073950720
+        },
+        {
+          "name": "GTZC_TZSC",
+          "address": 1073947648
+        },
+        {
           "name": "HASH",
           "address": 1108083712,
           "registers": {

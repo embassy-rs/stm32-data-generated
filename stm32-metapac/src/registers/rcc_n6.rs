@@ -19358,9 +19358,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmienc",
+                    name: "dcmippenc",
                     description: Some(
-                        "DCMI enable.",
+                        "DCMIPP enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -19438,9 +19438,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmien",
+                    name: "dcmippen",
                     description: Some(
-                        "DCMI enable.",
+                        "DCMIPP enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -19518,9 +19518,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmiens",
+                    name: "dcmippens",
                     description: Some(
-                        "DCMI enable.",
+                        "DCMIPP enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -19598,9 +19598,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmilpenc",
+                    name: "dcmipplpenc",
                     description: Some(
-                        "DCMI sleep enable.",
+                        "DCMIPP sleep enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -19678,9 +19678,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmilpen",
+                    name: "dcmipplpen",
                     description: Some(
-                        "DCMI sleep enable.",
+                        "DCMIPP sleep enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -19758,9 +19758,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmilpens",
+                    name: "dcmipplpens",
                     description: Some(
-                        "DCMI sleep enable.",
+                        "DCMIPP sleep enable.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -19838,9 +19838,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmirstc",
+                    name: "dcmipprstc",
                     description: Some(
-                        "DCMI reset.",
+                        "DCMIPP reset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -19918,9 +19918,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmirst",
+                    name: "dcmipprst",
                     description: Some(
-                        "DCMI reset.",
+                        "DCMIPP reset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -19998,9 +19998,9 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "dcmirsts",
+                    name: "dcmipprsts",
                     description: Some(
-                        "DCMI reset.",
+                        "DCMIPP reset.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -21864,9 +21864,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                 },
                 Field {
-                    name: "dcmisel",
+                    name: "dcmippsel",
                     description: Some(
-                        "Source selection for the DCMI kernel clock.",
+                        "Source selection for the DCMIPP kernel clock.",
                     ),
                     bit_offset: BitOffset::Regular(
                         RegularBitOffset {
@@ -21876,7 +21876,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 2,
                     array: None,
                     enumm: Some(
-                        "Dcmisel",
+                        "Dcmippsel",
                     ),
                 },
             ],
@@ -36808,7 +36808,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Dcmisel",
+            name: "Dcmippsel",
             description: None,
             bit_size: 2,
             variants: &[

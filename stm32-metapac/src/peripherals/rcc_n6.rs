@@ -17160,16 +17160,16 @@ pub mod regs {
         pub const fn set_ltdcenc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMI enable."]
+        #[doc = "DCMIPP enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn dcmienc(&self) -> bool {
+        pub const fn dcmippenc(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMI enable."]
+        #[doc = "DCMIPP enable."]
         #[inline(always)]
-        pub const fn set_dcmienc(&mut self, val: bool) {
+        pub const fn set_dcmippenc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM enable."]
@@ -17219,7 +17219,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5encr")
                 .field("ltdcenc", &self.ltdcenc())
-                .field("dcmienc", &self.dcmienc())
+                .field("dcmippenc", &self.dcmippenc())
                 .field("gfxtimenc", &self.gfxtimenc())
                 .field("vencenc", &self.vencenc())
                 .field("csienc", &self.csienc())
@@ -17229,7 +17229,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5encr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5encr {{ ltdcenc: {=bool:?}, dcmienc: {=bool:?}, gfxtimenc: {=bool:?}, vencenc: {=bool:?}, csienc: {=bool:?} }}" , self . ltdcenc () , self . dcmienc () , self . gfxtimenc () , self . vencenc () , self . csienc ())
+            defmt :: write ! (f , "Apb5encr {{ ltdcenc: {=bool:?}, dcmippenc: {=bool:?}, gfxtimenc: {=bool:?}, vencenc: {=bool:?}, csienc: {=bool:?} }}" , self . ltdcenc () , self . dcmippenc () , self . gfxtimenc () , self . vencenc () , self . csienc ())
         }
     }
     #[doc = "RCC APB5 enable register."]
@@ -17249,16 +17249,16 @@ pub mod regs {
         pub const fn set_ltdcen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMI enable."]
+        #[doc = "DCMIPP enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn dcmien(&self) -> bool {
+        pub const fn dcmippen(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMI enable."]
+        #[doc = "DCMIPP enable."]
         #[inline(always)]
-        pub const fn set_dcmien(&mut self, val: bool) {
+        pub const fn set_dcmippen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM enable."]
@@ -17308,7 +17308,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5enr")
                 .field("ltdcen", &self.ltdcen())
-                .field("dcmien", &self.dcmien())
+                .field("dcmippen", &self.dcmippen())
                 .field("gfxtimen", &self.gfxtimen())
                 .field("vencen", &self.vencen())
                 .field("csien", &self.csien())
@@ -17318,7 +17318,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5enr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5enr {{ ltdcen: {=bool:?}, dcmien: {=bool:?}, gfxtimen: {=bool:?}, vencen: {=bool:?}, csien: {=bool:?} }}" , self . ltdcen () , self . dcmien () , self . gfxtimen () , self . vencen () , self . csien ())
+            defmt :: write ! (f , "Apb5enr {{ ltdcen: {=bool:?}, dcmippen: {=bool:?}, gfxtimen: {=bool:?}, vencen: {=bool:?}, csien: {=bool:?} }}" , self . ltdcen () , self . dcmippen () , self . gfxtimen () , self . vencen () , self . csien ())
         }
     }
     #[doc = "RCC APB5 enable register."]
@@ -17338,16 +17338,16 @@ pub mod regs {
         pub const fn set_ltdcens(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMI enable."]
+        #[doc = "DCMIPP enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn dcmiens(&self) -> bool {
+        pub const fn dcmippens(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMI enable."]
+        #[doc = "DCMIPP enable."]
         #[inline(always)]
-        pub const fn set_dcmiens(&mut self, val: bool) {
+        pub const fn set_dcmippens(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM enable."]
@@ -17397,7 +17397,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5ensr")
                 .field("ltdcens", &self.ltdcens())
-                .field("dcmiens", &self.dcmiens())
+                .field("dcmippens", &self.dcmippens())
                 .field("gfxtimens", &self.gfxtimens())
                 .field("vencens", &self.vencens())
                 .field("csiens", &self.csiens())
@@ -17407,7 +17407,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5ensr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5ensr {{ ltdcens: {=bool:?}, dcmiens: {=bool:?}, gfxtimens: {=bool:?}, vencens: {=bool:?}, csiens: {=bool:?} }}" , self . ltdcens () , self . dcmiens () , self . gfxtimens () , self . vencens () , self . csiens ())
+            defmt :: write ! (f , "Apb5ensr {{ ltdcens: {=bool:?}, dcmippens: {=bool:?}, gfxtimens: {=bool:?}, vencens: {=bool:?}, csiens: {=bool:?} }}" , self . ltdcens () , self . dcmippens () , self . gfxtimens () , self . vencens () , self . csiens ())
         }
     }
     #[doc = "RCC APB5 Sleep enable register."]
@@ -17427,16 +17427,16 @@ pub mod regs {
         pub const fn set_ltdclpenc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMI sleep enable."]
+        #[doc = "DCMIPP sleep enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn dcmilpenc(&self) -> bool {
+        pub const fn dcmipplpenc(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMI sleep enable."]
+        #[doc = "DCMIPP sleep enable."]
         #[inline(always)]
-        pub const fn set_dcmilpenc(&mut self, val: bool) {
+        pub const fn set_dcmipplpenc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM sleep enable."]
@@ -17486,7 +17486,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5lpencr")
                 .field("ltdclpenc", &self.ltdclpenc())
-                .field("dcmilpenc", &self.dcmilpenc())
+                .field("dcmipplpenc", &self.dcmipplpenc())
                 .field("gfxtimlpenc", &self.gfxtimlpenc())
                 .field("venclpenc", &self.venclpenc())
                 .field("csilpenc", &self.csilpenc())
@@ -17496,7 +17496,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5lpencr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5lpencr {{ ltdclpenc: {=bool:?}, dcmilpenc: {=bool:?}, gfxtimlpenc: {=bool:?}, venclpenc: {=bool:?}, csilpenc: {=bool:?} }}" , self . ltdclpenc () , self . dcmilpenc () , self . gfxtimlpenc () , self . venclpenc () , self . csilpenc ())
+            defmt :: write ! (f , "Apb5lpencr {{ ltdclpenc: {=bool:?}, dcmipplpenc: {=bool:?}, gfxtimlpenc: {=bool:?}, venclpenc: {=bool:?}, csilpenc: {=bool:?} }}" , self . ltdclpenc () , self . dcmipplpenc () , self . gfxtimlpenc () , self . venclpenc () , self . csilpenc ())
         }
     }
     #[doc = "RCC APB5 Sleep enable register."]
@@ -17516,16 +17516,16 @@ pub mod regs {
         pub const fn set_ltdclpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMI sleep enable."]
+        #[doc = "DCMIPP sleep enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn dcmilpen(&self) -> bool {
+        pub const fn dcmipplpen(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMI sleep enable."]
+        #[doc = "DCMIPP sleep enable."]
         #[inline(always)]
-        pub const fn set_dcmilpen(&mut self, val: bool) {
+        pub const fn set_dcmipplpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM sleep enable."]
@@ -17575,7 +17575,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5lpenr")
                 .field("ltdclpen", &self.ltdclpen())
-                .field("dcmilpen", &self.dcmilpen())
+                .field("dcmipplpen", &self.dcmipplpen())
                 .field("gfxtimlpen", &self.gfxtimlpen())
                 .field("venclpen", &self.venclpen())
                 .field("csilpen", &self.csilpen())
@@ -17585,7 +17585,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5lpenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5lpenr {{ ltdclpen: {=bool:?}, dcmilpen: {=bool:?}, gfxtimlpen: {=bool:?}, venclpen: {=bool:?}, csilpen: {=bool:?} }}" , self . ltdclpen () , self . dcmilpen () , self . gfxtimlpen () , self . venclpen () , self . csilpen ())
+            defmt :: write ! (f , "Apb5lpenr {{ ltdclpen: {=bool:?}, dcmipplpen: {=bool:?}, gfxtimlpen: {=bool:?}, venclpen: {=bool:?}, csilpen: {=bool:?} }}" , self . ltdclpen () , self . dcmipplpen () , self . gfxtimlpen () , self . venclpen () , self . csilpen ())
         }
     }
     #[doc = "RCC APB5 Sleep enable register."]
@@ -17605,16 +17605,16 @@ pub mod regs {
         pub const fn set_ltdclpens(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMI sleep enable."]
+        #[doc = "DCMIPP sleep enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn dcmilpens(&self) -> bool {
+        pub const fn dcmipplpens(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMI sleep enable."]
+        #[doc = "DCMIPP sleep enable."]
         #[inline(always)]
-        pub const fn set_dcmilpens(&mut self, val: bool) {
+        pub const fn set_dcmipplpens(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM sleep enable."]
@@ -17664,7 +17664,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5lpensr")
                 .field("ltdclpens", &self.ltdclpens())
-                .field("dcmilpens", &self.dcmilpens())
+                .field("dcmipplpens", &self.dcmipplpens())
                 .field("gfxtimlpens", &self.gfxtimlpens())
                 .field("venclpens", &self.venclpens())
                 .field("csilpens", &self.csilpens())
@@ -17674,7 +17674,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5lpensr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5lpensr {{ ltdclpens: {=bool:?}, dcmilpens: {=bool:?}, gfxtimlpens: {=bool:?}, venclpens: {=bool:?}, csilpens: {=bool:?} }}" , self . ltdclpens () , self . dcmilpens () , self . gfxtimlpens () , self . venclpens () , self . csilpens ())
+            defmt :: write ! (f , "Apb5lpensr {{ ltdclpens: {=bool:?}, dcmipplpens: {=bool:?}, gfxtimlpens: {=bool:?}, venclpens: {=bool:?}, csilpens: {=bool:?} }}" , self . ltdclpens () , self . dcmipplpens () , self . gfxtimlpens () , self . venclpens () , self . csilpens ())
         }
     }
     #[doc = "RCC APB5 reset register."]
@@ -17694,16 +17694,16 @@ pub mod regs {
         pub const fn set_ltdcrstc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMI reset."]
+        #[doc = "DCMIPP reset."]
         #[must_use]
         #[inline(always)]
-        pub const fn dcmirstc(&self) -> bool {
+        pub const fn dcmipprstc(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMI reset."]
+        #[doc = "DCMIPP reset."]
         #[inline(always)]
-        pub const fn set_dcmirstc(&mut self, val: bool) {
+        pub const fn set_dcmipprstc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM reset."]
@@ -17753,7 +17753,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5rstcr")
                 .field("ltdcrstc", &self.ltdcrstc())
-                .field("dcmirstc", &self.dcmirstc())
+                .field("dcmipprstc", &self.dcmipprstc())
                 .field("gfxtimrstc", &self.gfxtimrstc())
                 .field("vencrstc", &self.vencrstc())
                 .field("csirstc", &self.csirstc())
@@ -17763,7 +17763,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5rstcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5rstcr {{ ltdcrstc: {=bool:?}, dcmirstc: {=bool:?}, gfxtimrstc: {=bool:?}, vencrstc: {=bool:?}, csirstc: {=bool:?} }}" , self . ltdcrstc () , self . dcmirstc () , self . gfxtimrstc () , self . vencrstc () , self . csirstc ())
+            defmt :: write ! (f , "Apb5rstcr {{ ltdcrstc: {=bool:?}, dcmipprstc: {=bool:?}, gfxtimrstc: {=bool:?}, vencrstc: {=bool:?}, csirstc: {=bool:?} }}" , self . ltdcrstc () , self . dcmipprstc () , self . gfxtimrstc () , self . vencrstc () , self . csirstc ())
         }
     }
     #[doc = "RCC APB5 reset register."]
@@ -17783,16 +17783,16 @@ pub mod regs {
         pub const fn set_ltdcrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMI reset."]
+        #[doc = "DCMIPP reset."]
         #[must_use]
         #[inline(always)]
-        pub const fn dcmirst(&self) -> bool {
+        pub const fn dcmipprst(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMI reset."]
+        #[doc = "DCMIPP reset."]
         #[inline(always)]
-        pub const fn set_dcmirst(&mut self, val: bool) {
+        pub const fn set_dcmipprst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM reset."]
@@ -17842,7 +17842,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5rstr")
                 .field("ltdcrst", &self.ltdcrst())
-                .field("dcmirst", &self.dcmirst())
+                .field("dcmipprst", &self.dcmipprst())
                 .field("gfxtimrst", &self.gfxtimrst())
                 .field("vencrst", &self.vencrst())
                 .field("csirst", &self.csirst())
@@ -17852,7 +17852,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5rstr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5rstr {{ ltdcrst: {=bool:?}, dcmirst: {=bool:?}, gfxtimrst: {=bool:?}, vencrst: {=bool:?}, csirst: {=bool:?} }}" , self . ltdcrst () , self . dcmirst () , self . gfxtimrst () , self . vencrst () , self . csirst ())
+            defmt :: write ! (f , "Apb5rstr {{ ltdcrst: {=bool:?}, dcmipprst: {=bool:?}, gfxtimrst: {=bool:?}, vencrst: {=bool:?}, csirst: {=bool:?} }}" , self . ltdcrst () , self . dcmipprst () , self . gfxtimrst () , self . vencrst () , self . csirst ())
         }
     }
     #[doc = "RCC APB5 reset register."]
@@ -17872,16 +17872,16 @@ pub mod regs {
         pub const fn set_ltdcrsts(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "DCMI reset."]
+        #[doc = "DCMIPP reset."]
         #[must_use]
         #[inline(always)]
-        pub const fn dcmirsts(&self) -> bool {
+        pub const fn dcmipprsts(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "DCMI reset."]
+        #[doc = "DCMIPP reset."]
         #[inline(always)]
-        pub const fn set_dcmirsts(&mut self, val: bool) {
+        pub const fn set_dcmipprsts(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "GFXTIM reset."]
@@ -17931,7 +17931,7 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5rstsr")
                 .field("ltdcrsts", &self.ltdcrsts())
-                .field("dcmirsts", &self.dcmirsts())
+                .field("dcmipprsts", &self.dcmipprsts())
                 .field("gfxtimrsts", &self.gfxtimrsts())
                 .field("vencrsts", &self.vencrsts())
                 .field("csirsts", &self.csirsts())
@@ -17941,7 +17941,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb5rstsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb5rstsr {{ ltdcrsts: {=bool:?}, dcmirsts: {=bool:?}, gfxtimrsts: {=bool:?}, vencrsts: {=bool:?}, csirsts: {=bool:?} }}" , self . ltdcrsts () , self . dcmirsts () , self . gfxtimrsts () , self . vencrsts () , self . csirsts ())
+            defmt :: write ! (f , "Apb5rstsr {{ ltdcrsts: {=bool:?}, dcmipprsts: {=bool:?}, gfxtimrsts: {=bool:?}, vencrsts: {=bool:?}, csirsts: {=bool:?} }}" , self . ltdcrsts () , self . dcmipprsts () , self . gfxtimrsts () , self . vencrsts () , self . csirsts ())
         }
     }
     #[doc = "RCC backup domain protection register."]
@@ -19757,16 +19757,16 @@ pub mod regs {
         pub const fn set_adcpre(&mut self, val: super::vals::Adcpre) {
             self.0 = (self.0 & !(0xff << 8usize)) | (((val.to_bits() as u32) & 0xff) << 8usize);
         }
-        #[doc = "Source selection for the DCMI kernel clock."]
+        #[doc = "Source selection for the DCMIPP kernel clock."]
         #[must_use]
         #[inline(always)]
-        pub const fn dcmisel(&self) -> super::vals::Dcmisel {
+        pub const fn dcmippsel(&self) -> super::vals::Dcmippsel {
             let val = (self.0 >> 20usize) & 0x03;
-            super::vals::Dcmisel::from_bits(val as u8)
+            super::vals::Dcmippsel::from_bits(val as u8)
         }
-        #[doc = "Source selection for the DCMI kernel clock."]
+        #[doc = "Source selection for the DCMIPP kernel clock."]
         #[inline(always)]
-        pub const fn set_dcmisel(&mut self, val: super::vals::Dcmisel) {
+        pub const fn set_dcmippsel(&mut self, val: super::vals::Dcmippsel) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
         }
     }
@@ -19782,7 +19782,7 @@ pub mod regs {
                 .field("adf1sel", &self.adf1sel())
                 .field("adc12sel", &self.adc12sel())
                 .field("adcpre", &self.adcpre())
-                .field("dcmisel", &self.dcmisel())
+                .field("dcmippsel", &self.dcmippsel())
                 .finish()
         }
     }
@@ -19791,11 +19791,11 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ccipr1 {{ adf1sel: {:?}, adc12sel: {:?}, adcpre: {:?}, dcmisel: {:?} }}",
+                "Ccipr1 {{ adf1sel: {:?}, adc12sel: {:?}, adcpre: {:?}, dcmippsel: {:?} }}",
                 self.adf1sel(),
                 self.adc12sel(),
                 self.adcpre(),
-                self.dcmisel()
+                self.dcmippsel()
             )
         }
     }
@@ -35144,7 +35144,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Dcmisel {
+    pub enum Dcmippsel {
         #[doc = "pclk5 selected as reference clock."]
         Pclk5 = 0x0,
         #[doc = "per_ck selected as reference clock."]
@@ -35154,9 +35154,9 @@ pub mod vals {
         #[doc = "hsi_div_ck selected as reference clock."]
         HsiDiv = 0x03,
     }
-    impl Dcmisel {
+    impl Dcmippsel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dcmisel {
+        pub const fn from_bits(val: u8) -> Dcmippsel {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -35164,16 +35164,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Dcmisel {
+    impl From<u8> for Dcmippsel {
         #[inline(always)]
-        fn from(val: u8) -> Dcmisel {
-            Dcmisel::from_bits(val)
+        fn from(val: u8) -> Dcmippsel {
+            Dcmippsel::from_bits(val)
         }
     }
-    impl From<Dcmisel> for u8 {
+    impl From<Dcmippsel> for u8 {
         #[inline(always)]
-        fn from(val: Dcmisel) -> u8 {
-            Dcmisel::to_bits(val)
+        fn from(val: Dcmippsel) -> u8 {
+            Dcmippsel::to_bits(val)
         }
     }
     #[repr(u8)]

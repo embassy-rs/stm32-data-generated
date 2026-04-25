@@ -6172,6 +6172,18 @@
             "version": "v1",
             "block": "PSSI"
           },
+          "rcc": {
+            "bus_clock": "HCLK2",
+            "kernel_clock": "HCLK2",
+            "enable": {
+              "register": "AHB2ENR1",
+              "field": "DCMIEN"
+            },
+            "reset": {
+              "register": "AHB2RSTR1",
+              "field": "DCMIRST"
+            }
+          },
           "pins": [
             {
               "pin": "PA10",

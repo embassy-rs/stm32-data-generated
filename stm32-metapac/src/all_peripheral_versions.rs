@@ -26,6 +26,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("crc", &["v1", "v2", "v3"]),
     ("crs", &["v1"]),
     ("cryp", &["v1", "v2", "v3", "v4"]),
+    ("csi", &["v1"]),
     ("dac", &["v1", "v2", "v3", "v4", "v5", "v6", "v7"]),
     (
         "dbgmcu",
@@ -36,6 +37,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ),
     ("dcache", &["v1"]),
     ("dcmi", &["v1"]),
+    ("dcmipp", &["v2"]),
     ("desig", &["wba"]),
     ("dlyb", &["v1"]),
     ("dma", &["v1", "v2"]),
@@ -125,7 +127,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
         &["v1", "v1_4pdm", "v2", "v3_2pdm", "v3_4pdm", "v4_2pdm", "v4_4pdm"],
     ),
     ("sdadc", &["v1"]),
-    ("sdmmc", &["v1", "v2"]),
+    ("sdmmc", &["v1", "v2", "v3"]),
     ("spdifrx", &["h7", "v1"]),
     (
         "spi",

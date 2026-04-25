@@ -914,18 +914,18 @@ pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4602_4c00usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4602_5000usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4602_8000usize as _) };
 pub const LTDC: ltdc::Ltdc = unsafe { ltdc::Ltdc::from_ptr(0x4800_1000usize as _) };
-pub const DCMIPP: *mut () = 0x4800_2000usize as _;
+pub const DCMIPP: dcmipp::Dcmipp = unsafe { dcmipp::Dcmipp::from_ptr(0x4800_2000usize as _) };
 pub const GFXTIM: *mut () = 0x4800_4000usize as _;
 pub const VENC: *mut () = 0x4800_5000usize as _;
-pub const CSI: *mut () = 0x4800_6000usize as _;
+pub const CSI: csi::Csi = unsafe { csi::Csi::from_ptr(0x4800_6000usize as _) };
 pub const HPDMA1: gpdma::Gpdma = unsafe { gpdma::Gpdma::from_ptr(0x4802_0000usize as _) };
 pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x4802_1000usize as _) };
 pub const JPEG: jpeg::Jpeg = unsafe { jpeg::Jpeg::from_ptr(0x4802_3000usize as _) };
 pub const FMC: fmc::Fmc = unsafe { fmc::Fmc::from_ptr(0x4802_4000usize as _) };
 pub const XSPI1: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x4802_5000usize as _) };
-pub const PSSI: *mut () = 0x4802_6400usize as _;
-pub const SDMMC2: *mut () = 0x4802_6800usize as _;
-pub const SDMMC1: *mut () = 0x4802_7000usize as _;
+pub const PSSI: pssi::Pssi = unsafe { pssi::Pssi::from_ptr(0x4802_6400usize as _) };
+pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4802_6800usize as _) };
+pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4802_7000usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4802_8400usize as _) };
 pub const XSPI2: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x4802_a000usize as _) };
 pub const XSPIM: xspim::Xspim = unsafe { xspim::Xspim::from_ptr(0x4802_b400usize as _) };
@@ -947,10 +947,14 @@ pub use Interrupt as interrupt;
 pub mod bsec;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
+#[path = "../../peripherals/csi_v1.rs"]
+pub mod csi;
 #[path = "../../peripherals/dbgmcu_n6.rs"]
 pub mod dbgmcu;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
+#[path = "../../peripherals/dcmipp_v2.rs"]
+pub mod dcmipp;
 #[path = "../../peripherals/dma2d_v1.rs"]
 pub mod dma2d;
 #[path = "../../peripherals/dts_v1.rs"]
@@ -981,6 +985,8 @@ pub mod ltdc;
 pub mod mdios;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
+#[path = "../../peripherals/pssi_v1.rs"]
+pub mod pssi;
 #[path = "../../peripherals/pwr_n6.rs"]
 pub mod pwr;
 #[path = "../../peripherals/ramcfg_h5.rs"]
@@ -991,6 +997,8 @@ pub mod rcc;
 pub mod rifsc;
 #[path = "../../peripherals/risaf_n6.rs"]
 pub mod risaf;
+#[path = "../../peripherals/sdmmc_v3.rs"]
+pub mod sdmmc;
 #[path = "../../peripherals/spi_v5.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_n6.rs"]

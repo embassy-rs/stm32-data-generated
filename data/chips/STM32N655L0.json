@@ -1864,6 +1864,11 @@
         {
           "name": "CSI",
           "address": 1207984128,
+          "registers": {
+            "kind": "csi",
+            "version": "v1",
+            "block": "CSI"
+          },
           "rcc": {
             "bus_clock": "PCLK5",
             "kernel_clock": "PCLK5",
@@ -1875,7 +1880,13 @@
               "register": "APB5RSTR",
               "field": "CSIRST"
             }
-          }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "CSI"
+            }
+          ]
         },
         {
           "name": "DBGMCU",
@@ -1895,18 +1906,18 @@
             "block": "DCMI"
           },
           "rcc": {
-            "bus_clock": "PCLK5",
+            "bus_clock": "HCLK5",
             "kernel_clock": {
-              "register": "CCIPR1",
-              "field": "DCMISEL"
+              "register": "CCIPR7",
+              "field": "PSSISEL"
             },
             "enable": {
-              "register": "APB5ENR",
-              "field": "DCMIEN"
+              "register": "AHB5ENR",
+              "field": "PSSIEN"
             },
             "reset": {
-              "register": "APB5RSTR",
-              "field": "DCMIRST"
+              "register": "AHB5RSTR",
+              "field": "PSSIRST"
             }
           },
           "pins": [
@@ -2203,6 +2214,26 @@
         {
           "name": "DCMIPP",
           "address": 1207967744,
+          "registers": {
+            "kind": "dcmipp",
+            "version": "v2",
+            "block": "DCMIPP"
+          },
+          "rcc": {
+            "bus_clock": "PCLK5",
+            "kernel_clock": {
+              "register": "CCIPR1",
+              "field": "DCMIPPSEL"
+            },
+            "enable": {
+              "register": "APB5ENR",
+              "field": "DCMIPPEN"
+            },
+            "reset": {
+              "register": "APB5RSTR",
+              "field": "DCMIPPRST"
+            }
+          },
           "pins": [
             {
               "pin": "PA1",
@@ -2506,10 +2537,6 @@
             }
           ],
           "interrupts": [
-            {
-              "signal": "CSI",
-              "interrupt": "CSI"
-            },
             {
               "signal": "GLOBAL",
               "interrupt": "DCMIPP"
@@ -6220,6 +6247,11 @@
         {
           "name": "PSSI",
           "address": 1208116224,
+          "registers": {
+            "kind": "pssi",
+            "version": "v1",
+            "block": "PSSI"
+          },
           "rcc": {
             "bus_clock": "HCLK5",
             "kernel_clock": {
@@ -7281,6 +7313,11 @@
         {
           "name": "SDMMC1",
           "address": 1208119296,
+          "registers": {
+            "kind": "sdmmc",
+            "version": "v3",
+            "block": "SDMMC"
+          },
           "rcc": {
             "bus_clock": "HCLK5",
             "kernel_clock": {
@@ -7388,6 +7425,11 @@
         {
           "name": "SDMMC2",
           "address": 1208117248,
+          "registers": {
+            "kind": "sdmmc",
+            "version": "v3",
+            "block": "SDMMC"
+          },
           "rcc": {
             "bus_clock": "HCLK5",
             "kernel_clock": {

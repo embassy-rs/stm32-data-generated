@@ -562,7 +562,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "CSI",
         address: 0x48006000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "csi",
+            version: "v1",
+            block: "CSI",
+            ir: &csi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK5",
             kernel_clock: Clock("PCLK5"),
@@ -579,7 +584,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         triggers: &[],
-        interrupts: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "GLOBAL",
+            interrupt: "CSI",
+        }],
         afio: None,
     },
     Peripheral {
@@ -608,18 +616,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             ir: &dcmi::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            bus_clock: "PCLK5",
+            bus_clock: "HCLK5",
             kernel_clock: Mux(PeripheralRccRegister {
-                register: "CCIPR1",
-                field: "DCMISEL",
+                register: "CCIPR7",
+                field: "PSSISEL",
             }),
             enable: Some(PeripheralRccRegister {
-                register: "APB5ENR",
-                field: "DCMIEN",
+                register: "AHB5ENR",
+                field: "PSSIEN",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "APB5RSTR",
-                field: "DCMIRST",
+                register: "AHB5RSTR",
+                field: "PSSIRST",
             }),
             stop_mode: StopMode::Stop1,
         }),
@@ -893,8 +901,28 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "DCMIPP",
         address: 0x48002000,
-        registers: None,
-        rcc: None,
+        registers: Some(PeripheralRegisters {
+            kind: "dcmipp",
+            version: "v2",
+            block: "DCMIPP",
+            ir: &dcmipp::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            bus_clock: "PCLK5",
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR1",
+                field: "DCMIPPSEL",
+            }),
+            enable: Some(PeripheralRccRegister {
+                register: "APB5ENR",
+                field: "DCMIPPEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "APB5RSTR",
+                field: "DCMIPPRST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PA1",
@@ -1174,16 +1202,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         ],
         dma_channels: &[],
         triggers: &[],
-        interrupts: &[
-            PeripheralInterrupt {
-                signal: "CSI",
-                interrupt: "CSI",
-            },
-            PeripheralInterrupt {
-                signal: "GLOBAL",
-                interrupt: "DCMIPP",
-            },
-        ],
+        interrupts: &[PeripheralInterrupt {
+            signal: "GLOBAL",
+            interrupt: "DCMIPP",
+        }],
         afio: None,
     },
     Peripheral {
@@ -5160,7 +5182,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "PSSI",
         address: 0x48026400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "pssi",
+            version: "v1",
+            block: "PSSI",
+            ir: &pssi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK5",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -6384,7 +6411,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SDMMC1",
         address: 0x48027000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "sdmmc",
+            version: "v3",
+            block: "SDMMC",
+            ir: &sdmmc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK5",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -12419,10 +12451,14 @@ pub mod bsec;
 pub mod crc;
 #[path = "../registers/cryp_v2.rs"]
 pub mod cryp;
+#[path = "../registers/csi_v1.rs"]
+pub mod csi;
 #[path = "../registers/dbgmcu_n6.rs"]
 pub mod dbgmcu;
 #[path = "../registers/dcmi_v1.rs"]
 pub mod dcmi;
+#[path = "../registers/dcmipp_v2.rs"]
+pub mod dcmipp;
 #[path = "../registers/dma2d_v1.rs"]
 pub mod dma2d;
 #[path = "../registers/dts_v1.rs"]
@@ -12453,6 +12489,8 @@ pub mod ltdc;
 pub mod mdios;
 #[path = "../registers/otg_v1.rs"]
 pub mod otg;
+#[path = "../registers/pssi_v1.rs"]
+pub mod pssi;
 #[path = "../registers/pwr_n6.rs"]
 pub mod pwr;
 #[path = "../registers/ramcfg_h5.rs"]
@@ -12463,6 +12501,8 @@ pub mod rcc;
 pub mod rifsc;
 #[path = "../registers/risaf_n6.rs"]
 pub mod risaf;
+#[path = "../registers/sdmmc_v3.rs"]
+pub mod sdmmc;
 #[path = "../registers/spi_v5.rs"]
 pub mod spi;
 #[path = "../registers/syscfg_n6.rs"]

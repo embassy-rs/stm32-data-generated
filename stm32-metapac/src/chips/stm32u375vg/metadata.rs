@@ -11,7 +11,7 @@ pub static METADATA: Metadata = Metadata {
             address: 0x8000000,
             size: 524288,
             settings: Some(FlashSettings {
-                erase_size: 2048,
+                erase_size: 4096,
                 write_size: 8,
                 erase_value: 255,
             }),
@@ -19,10 +19,10 @@ pub static METADATA: Metadata = Metadata {
         MemoryRegion {
             name: "BANK_2",
             kind: MemoryRegionKind::Flash,
-            address: 0x8010000,
+            address: 0x8080000,
             size: 524288,
             settings: Some(FlashSettings {
-                erase_size: 2048,
+                erase_size: 4096,
                 write_size: 8,
                 erase_value: 255,
             }),

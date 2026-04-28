@@ -1452,6 +1452,11 @@
         {
           "name": "ADC1",
           "address": 1073816576,
+          "registers": {
+            "kind": "adc",
+            "version": "wb1",
+            "block": "ADC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -1535,6 +1540,11 @@
         {
           "name": "AES2",
           "address": 1476401152,
+          "registers": {
+            "kind": "aes",
+            "version": "v2",
+            "block": "AES"
+          },
           "rcc": {
             "bus_clock": "HCLK3",
             "kernel_clock": "HCLK3",
@@ -1569,6 +1579,11 @@
         {
           "name": "COMP1",
           "address": 1073807872,
+          "registers": {
+            "kind": "comp",
+            "version": "v3",
+            "block": "COMP"
+          },
           "pins": [
             {
               "pin": "PA0",
@@ -1930,6 +1945,11 @@
         {
           "name": "HSEM",
           "address": 1476400128,
+          "registers": {
+            "kind": "hsem",
+            "version": "v1",
+            "block": "HSEM"
+          },
           "rcc": {
             "bus_clock": "HCLK3",
             "kernel_clock": "HCLK3",
@@ -2863,6 +2883,11 @@
         {
           "name": "TSC",
           "address": 1073889280,
+          "registers": {
+            "kind": "tsc",
+            "version": "v2",
+            "block": "TSC"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": "HCLK1",

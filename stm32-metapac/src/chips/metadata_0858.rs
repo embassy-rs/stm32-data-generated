@@ -3,7 +3,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ADC1",
         address: 0x40012400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adc",
+            version: "wb1",
+            block: "ADC",
+            ir: &adc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -106,7 +111,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "AES2",
         address: 0x58001800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "aes",
+            version: "v2",
+            block: "AES",
+            ir: &aes::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK3",
             kernel_clock: Clock("HCLK3"),
@@ -149,7 +159,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "COMP1",
         address: 0x40010200,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "comp",
+            version: "v3",
+            block: "COMP",
+            ir: &comp::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -588,7 +603,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "HSEM",
         address: 0x58001400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "hsem",
+            version: "v1",
+            block: "HSEM",
+            ir: &hsem::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK3",
             kernel_clock: Clock("HCLK3"),
@@ -1646,7 +1666,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "TSC",
         address: 0x40024000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "tsc",
+            version: "v2",
+            block: "TSC",
+            ir: &tsc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK1",
             kernel_clock: Clock("HCLK1"),
@@ -2196,10 +2221,16 @@ pub(crate) static PINS: &[Pin] = &[
     Pin { name: "PE4" },
     Pin { name: "PH3" },
 ];
+#[path = "../registers/adc_wb1.rs"]
+pub mod adc;
 #[path = "../registers/adccommon_v3.rs"]
 pub mod adccommon;
+#[path = "../registers/aes_v2.rs"]
+pub mod aes;
 #[path = "../registers/bdma_v1.rs"]
 pub mod bdma;
+#[path = "../registers/comp_v3.rs"]
+pub mod comp;
 #[path = "../registers/crc_v3.rs"]
 pub mod crc;
 #[path = "../registers/dbgmcu_wb.rs"]
@@ -2212,6 +2243,8 @@ pub mod exti;
 pub mod flash;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../registers/hsem_v1.rs"]
+pub mod hsem;
 #[path = "../registers/i2c_v2.rs"]
 pub mod i2c;
 #[path = "../registers/ipcc_v1.rs"]
@@ -2236,6 +2269,8 @@ pub mod spi;
 pub mod syscfg;
 #[path = "../registers/timer_v3.rs"]
 pub mod timer;
+#[path = "../registers/tsc_v2.rs"]
+pub mod tsc;
 #[path = "../registers/uid_v1.rs"]
 pub mod uid;
 #[path = "../registers/usart_v4.rs"]

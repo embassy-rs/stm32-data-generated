@@ -3,7 +3,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
         "adc",
         &[
             "c0", "f1", "f3v1", "f3v2", "f3v3", "g0", "g4", "h5", "h7rs", "l0", "u0", "u3", "u5", "v1", "v2", "v3",
-            "v4", "wb0", "wba",
+            "v4", "wb0", "wb1", "wba",
         ],
     ),
     (

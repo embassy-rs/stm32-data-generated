@@ -2333,6 +2333,24 @@
           ]
         },
         {
+          "name": "DLYB_SDMMC1",
+          "address": 1208123392,
+          "registers": {
+            "kind": "dlyb",
+            "version": "v1",
+            "block": "DLYB"
+          }
+        },
+        {
+          "name": "DLYB_SDMMC2",
+          "address": 1208118272,
+          "registers": {
+            "kind": "dlyb",
+            "version": "v1",
+            "block": "DLYB"
+          }
+        },
+        {
           "name": "DMA2D",
           "address": 1208094720,
           "registers": {
@@ -10807,6 +10825,11 @@
         {
           "name": "VENC",
           "address": 1207980032,
+          "registers": {
+            "kind": "venc",
+            "version": "v1",
+            "block": "VENC"
+          },
           "rcc": {
             "bus_clock": "PCLK5",
             "kernel_clock": "PCLK5",

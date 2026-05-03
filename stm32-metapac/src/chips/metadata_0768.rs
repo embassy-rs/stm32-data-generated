@@ -1329,6 +1329,38 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "DLYB_SDMMC1",
+        address: 0x48028000,
+        registers: Some(PeripheralRegisters {
+            kind: "dlyb",
+            version: "v1",
+            block: "DLYB",
+            ir: &dlyb::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "DLYB_SDMMC2",
+        address: 0x48026c00,
+        registers: Some(PeripheralRegisters {
+            kind: "dlyb",
+            version: "v1",
+            block: "DLYB",
+            ir: &dlyb::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
         name: "DMA2D",
         address: 0x48021000,
         registers: Some(PeripheralRegisters {
@@ -12462,7 +12494,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "VENC",
         address: 0x48005000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "venc",
+            version: "v1",
+            block: "VENC",
+            ir: &venc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK5",
             kernel_clock: Clock("PCLK5"),
@@ -14024,6 +14061,8 @@ pub mod dbgmcu;
 pub mod dcmi;
 #[path = "../registers/dcmipp_v2.rs"]
 pub mod dcmipp;
+#[path = "../registers/dlyb_v1.rs"]
+pub mod dlyb;
 #[path = "../registers/dma2d_v1.rs"]
 pub mod dma2d;
 #[path = "../registers/dts_v1.rs"]
@@ -14080,6 +14119,8 @@ pub mod ucpd;
 pub mod uid;
 #[path = "../registers/usart_v4.rs"]
 pub mod usart;
+#[path = "../registers/venc_v1.rs"]
+pub mod venc;
 #[path = "../registers/wwdg_v2.rs"]
 pub mod wwdg;
 #[path = "../registers/xspi_v1.rs"]

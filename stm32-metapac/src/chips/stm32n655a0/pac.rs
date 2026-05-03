@@ -924,13 +924,15 @@ pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4602_8000usize as _) };
 pub const LTDC: ltdc::Ltdc = unsafe { ltdc::Ltdc::from_ptr(0x4800_1000usize as _) };
 pub const DCMIPP: dcmipp::Dcmipp = unsafe { dcmipp::Dcmipp::from_ptr(0x4800_2000usize as _) };
 pub const GFXTIM: *mut () = 0x4800_4000usize as _;
-pub const VENC: *mut () = 0x4800_5000usize as _;
+pub const VENC: venc::Venc = unsafe { venc::Venc::from_ptr(0x4800_5000usize as _) };
 pub const CSI: csi::Csi = unsafe { csi::Csi::from_ptr(0x4800_6000usize as _) };
 pub const HPDMA1: gpdma::Gpdma = unsafe { gpdma::Gpdma::from_ptr(0x4802_0000usize as _) };
 pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x4802_1000usize as _) };
 pub const JPEG: jpeg::Jpeg = unsafe { jpeg::Jpeg::from_ptr(0x4802_3000usize as _) };
 pub const XSPI1: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x4802_5000usize as _) };
 pub const PSSI: pssi::Pssi = unsafe { pssi::Pssi::from_ptr(0x4802_6400usize as _) };
+pub const DLYB_SDMMC2: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x4802_6c00usize as _) };
+pub const DLYB_SDMMC1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x4802_8000usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4802_8400usize as _) };
 pub const XSPI2: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x4802_a000usize as _) };
 pub const XSPIM: xspim::Xspim = unsafe { xspim::Xspim::from_ptr(0x4802_b400usize as _) };
@@ -966,6 +968,8 @@ pub mod dbgmcu;
 pub mod dcmi;
 #[path = "../../peripherals/dcmipp_v2.rs"]
 pub mod dcmipp;
+#[path = "../../peripherals/dlyb_v1.rs"]
+pub mod dlyb;
 #[path = "../../peripherals/dma2d_v1.rs"]
 pub mod dma2d;
 #[path = "../../peripherals/dts_v1.rs"]
@@ -1018,6 +1022,8 @@ pub mod ucpd;
 pub mod uid;
 #[path = "../../peripherals/usart_v4.rs"]
 pub mod usart;
+#[path = "../../peripherals/venc_v1.rs"]
+pub mod venc;
 #[path = "../../peripherals/wwdg_v2.rs"]
 pub mod wwdg;
 #[path = "../../peripherals/xspi_v1.rs"]

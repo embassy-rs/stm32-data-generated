@@ -35,7 +35,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [DCMIPP](#dcmipp) | | | | | | | | | | | ❌ | | | | | | v2 | | | | | | | |
 | [DESIG](#desig) | | | | | | | | | | | | | | | | | | | | | | | wba | |
 | [DFSDM](#dfsdm) | | | | | | ❌ | ❌ | | | | ❌ | | | ❌ | ❌ | | | | | | | | | |
-| [DLYB](#dlyb) | | | | | | | | | | v1 | v1 | | | | | | | | v1 | v1 | | | | |
+| [DLYB](#dlyb) | | | | | | | | | | v1 | v1 | | | | | | v1 | | v1 | v1 | | | | |
 | [DMA](#dma) | | | | v2 | | v2 | v2 | | | | v1 | | | | | | | | | | | | | |
 | [DMA2D](#dma2d) | | | | | | v1 | v1 | | | | v2 | | | v1 | v1 | | v1 | | | v2 | | | | |
 | [DMAMUX](#dmamux) | v1 | | | | | | | v1 | v1 | | v1 | | | | v1 | v1 | | v1 | | | v1 | v1 | | v1 |
@@ -111,7 +111,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [USART](#usart) | v4 | v3 | v1, ❌ | v2, ❌ | v3 | v2 | v3 | v4 | v4 | v4 | v4 | v3 | v2, ❌ | v3 | v4 | v4 | v4 | v4 | v4 | v4 | v4 | v4 | v4 | v4 |
 | [USB](#usb) | v4 | v3 | v1 | | v1, v2 | | | v4 | v3 | v4 | | v3 | v1 | v3 | | v3 | | v4 | v4 | v4 | v3 | | | |
 | [USBRAM](#usbram) | 32_2048 | 16x2_1024 | 16x1_512 | | 16x1_512, 16x2_1024, 16x2_512 | | | 32_2048 | 16x2_1024 | 32_2048 | | 16x2_1024 | 16x1_512 | 16x2_1024 | | 16x2_1024 | | 32_1024 | 32_2048 | 32_2048 | 16x2_1024 | | | |
-| [VENC](#venc) | | | | | | | | | | | | | | | | | ❌ | | | | | | | |
+| [VENC](#venc) | | | | | | | | | | | | | | | | | v1 | | | | | | | |
 | [VREFBUF](#vrefbuf) | | | | | | | | v1 | v2b | v2a2 | v2a1 | | | v1 | v1 | v1 | ❌ | ❌ | v2a1 | v2a1 | v1 | | v2a1 | v1 |
 | [VREFINTCAL](#vrefintcal) | | v1 | | | v1 | | v1 | v1 | v1 | | | v1 | v1 | v1 | v1 | v1 | | | | | v1 | | v2 | v1 |
 | [WWDG](#wwdg) | v2 | v1 | v1 | v1 | v1 | v1 | v1 | v2 | v2 | v2 | v2 | v1 | v1 | v1 | v1 | v2 | v2 | v2 | v2 | v2 | v2 | | v2 | v2 |
@@ -356,7 +356,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **v1**: STM32H5, STM32H7, STM32U3, STM32U5
+- **v1**: STM32H5, STM32H7, STM32N6, STM32U3, STM32U5
 
 ### DMA
 
@@ -1079,7 +1079,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **❌ Unsupported**: STM32N6
+- **v1**: STM32N6
 
 ### VREFBUF
 

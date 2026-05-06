@@ -395,6 +395,40 @@ pub(crate) static REGISTERS: IR = IR {
                         },
                     ),
                 },
+                BlockItem {
+                    name: "cr4",
+                    description: Some(
+                        "control register 4",
+                    ),
+                    array: None,
+                    byte_offset: 0xa8,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr4",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "cr5",
+                    description: Some(
+                        "control register 5",
+                    ),
+                    array: None,
+                    byte_offset: 0xac,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "Cr5",
+                            ),
+                        },
+                    ),
+                },
             ],
         },
     ],
@@ -689,6 +723,54 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: Some(
                         "Srampd",
+                    ),
+                },
+                Field {
+                    name: "sram5pd",
+                    description: Some(
+                        "SRAM5 power down\r This bit is used to reduce the consumption by powering off the SRAM5.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Srampd",
+                    ),
+                },
+                Field {
+                    name: "sram6pd",
+                    description: Some(
+                        "SRAM6 power down\r This bit is used to reduce the consumption by powering off the SRAM6.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Srampd",
+                    ),
+                },
+                Field {
+                    name: "force_usbpwr",
+                    description: Some(
+                        "OTG_HS PHY power maintained during Stop 2, Stop 3, and Standby low-power modes.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 15,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "ForceUsbpwr",
                     ),
                 },
             ],
@@ -1090,6 +1172,586 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr4",
+            extends: None,
+            description: Some(
+                "control register 4",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sram1pds4",
+                    description: Some(
+                        "SRAM1 page 4 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram1pds5",
+                    description: Some(
+                        "SRAM1 page 5 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram1pds6",
+                    description: Some(
+                        "SRAM1 page 6 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram1pds7",
+                    description: Some(
+                        "SRAM1 page 7 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram1pds8",
+                    description: Some(
+                        "SRAM1 page 8 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram1pds9",
+                    description: Some(
+                        "SRAM1 page 9 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram1pds10",
+                    description: Some(
+                        "SRAM1 page 10 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram1pds11",
+                    description: Some(
+                        "SRAM1 page 11 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram1pds12",
+                    description: Some(
+                        "SRAM1 page 12 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram3pds9",
+                    description: Some(
+                        "SRAM3 page 9 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram3pds10",
+                    description: Some(
+                        "SRAM3 page 10 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram3pds11",
+                    description: Some(
+                        "SRAM3 page 11 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram3pds12",
+                    description: Some(
+                        "SRAM3 page 12 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram3pds13",
+                    description: Some(
+                        "SRAM3 page 13 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram5pds1",
+                    description: Some(
+                        "SRAM5 page 1 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram5pds2",
+                    description: Some(
+                        "SRAM5 page 2 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 17,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram5pds3",
+                    description: Some(
+                        "SRAM5 page 3 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram5pds4",
+                    description: Some(
+                        "SRAM5 page 4 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 19,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram5pds5",
+                    description: Some(
+                        "SRAM5 page 5 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram5pds6",
+                    description: Some(
+                        "SRAM5 page 6 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 21,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram5pds7",
+                    description: Some(
+                        "SRAM5 page 7 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram5pds8",
+                    description: Some(
+                        "SRAM5 page 8 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram5pds9",
+                    description: Some(
+                        "SRAM5 page 9 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram5pds10",
+                    description: Some(
+                        "SRAM5 page 10 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram5pds11",
+                    description: Some(
+                        "SRAM5 page 11 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram5pds12",
+                    description: Some(
+                        "SRAM5 page 12 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 27,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram5pds13",
+                    description: Some(
+                        "SRAM5 page 13 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "Cr5",
+            extends: None,
+            description: Some(
+                "control register 5",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "sram6pds1",
+                    description: Some(
+                        "SRAM6 page 1 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram6pds2",
+                    description: Some(
+                        "SRAM6 page 2 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram6pds3",
+                    description: Some(
+                        "SRAM6 page 3 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram6pds4",
+                    description: Some(
+                        "SRAM6 page 4 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram6pds5",
+                    description: Some(
+                        "SRAM6 page 5 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram6pds6",
+                    description: Some(
+                        "SRAM6 page 6 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram6pds7",
+                    description: Some(
+                        "SRAM6 page 7 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
+                },
+                Field {
+                    name: "sram6pds8",
+                    description: Some(
+                        "SRAM6 page 8 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pds",
+                    ),
                 },
             ],
         },
@@ -2252,6 +2914,27 @@ pub(crate) static REGISTERS: IR = IR {
                         "Flash memory remains in normal mode in Stop 0 and Stop 1 modes (faster wakeup time).",
                     ),
                     value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "ForceUsbpwr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Maintained",
+                    description: Some(
+                        "OTG_HS PHY power is maintained during low-power modes",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "NotMaintained",
+                    description: Some(
+                        "OTG_HS PHY power is not maintained during low-power modes",
+                    ),
+                    value: 0,
                 },
             ],
         },

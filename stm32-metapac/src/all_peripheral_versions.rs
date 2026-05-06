@@ -40,6 +40,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("dcmipp", &["v2"]),
     ("desig", &["wba"]),
     ("dlyb", &["v1"]),
+    ("dlybsd", &["v1"]),
     ("dma", &["v1", "v2"]),
     ("dma2d", &["v1", "v2"]),
     ("dmamux", &["v1"]),

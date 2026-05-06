@@ -130,6 +130,16 @@ impl Pwr {
         assert!(n < 9usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x54usize + n * 8usize) as _) }
     }
+    #[doc = "control register 4"]
+    #[inline(always)]
+    pub const fn cr4(self) -> crate::common::Reg<regs::Cr4, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xa8usize) as _) }
+    }
+    #[doc = "control register 5"]
+    #[inline(always)]
+    pub const fn cr5(self) -> crate::common::Reg<regs::Cr5, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0xacusize) as _) }
+    }
 }
 pub mod regs {
     #[doc = "apply pull configuration register"]
@@ -442,6 +452,42 @@ pub mod regs {
         pub const fn set_sram4pd(&mut self, val: super::vals::Srampd) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
         }
+        #[doc = "SRAM5 power down This bit is used to reduce the consumption by powering off the SRAM5."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram5pd(&self) -> super::vals::Srampd {
+            let val = (self.0 >> 12usize) & 0x01;
+            super::vals::Srampd::from_bits(val as u8)
+        }
+        #[doc = "SRAM5 power down This bit is used to reduce the consumption by powering off the SRAM5."]
+        #[inline(always)]
+        pub const fn set_sram5pd(&mut self, val: super::vals::Srampd) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        }
+        #[doc = "SRAM6 power down This bit is used to reduce the consumption by powering off the SRAM6."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram6pd(&self) -> super::vals::Srampd {
+            let val = (self.0 >> 13usize) & 0x01;
+            super::vals::Srampd::from_bits(val as u8)
+        }
+        #[doc = "SRAM6 power down This bit is used to reduce the consumption by powering off the SRAM6."]
+        #[inline(always)]
+        pub const fn set_sram6pd(&mut self, val: super::vals::Srampd) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        }
+        #[doc = "OTG_HS PHY power maintained during Stop 2, Stop 3, and Standby low-power modes."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn force_usbpwr(&self) -> super::vals::ForceUsbpwr {
+            let val = (self.0 >> 15usize) & 0x01;
+            super::vals::ForceUsbpwr::from_bits(val as u8)
+        }
+        #[doc = "OTG_HS PHY power maintained during Stop 2, Stop 3, and Standby low-power modes."]
+        #[inline(always)]
+        pub const fn set_force_usbpwr(&mut self, val: super::vals::ForceUsbpwr) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        }
     }
     impl Default for Cr1 {
         #[inline(always)]
@@ -460,13 +506,16 @@ pub mod regs {
                 .field("sram2pd", &self.sram2pd())
                 .field("sram3pd", &self.sram3pd())
                 .field("sram4pd", &self.sram4pd())
+                .field("sram5pd", &self.sram5pd())
+                .field("sram6pd", &self.sram6pd())
+                .field("force_usbpwr", &self.force_usbpwr())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ lpms: {:?}, rrsb1: {=bool:?}, rrsb2: {=bool:?}, ulpmen: {=bool:?}, sram1pd: {:?}, sram2pd: {:?}, sram3pd: {:?}, sram4pd: {:?} }}" , self . lpms () , self . rrsb1 () , self . rrsb2 () , self . ulpmen () , self . sram1pd () , self . sram2pd () , self . sram3pd () , self . sram4pd ())
+            defmt :: write ! (f , "Cr1 {{ lpms: {:?}, rrsb1: {=bool:?}, rrsb2: {=bool:?}, ulpmen: {=bool:?}, sram1pd: {:?}, sram2pd: {:?}, sram3pd: {:?}, sram4pd: {:?}, sram5pd: {:?}, sram6pd: {:?}, force_usbpwr: {:?} }}" , self . lpms () , self . rrsb1 () , self . rrsb2 () , self . ulpmen () , self . sram1pd () , self . sram2pd () , self . sram3pd () , self . sram4pd () , self . sram5pd () , self . sram6pd () , self . force_usbpwr ())
         }
     }
     #[doc = "control register 2"]
@@ -832,6 +881,509 @@ pub mod regs {
                 self.regsel(),
                 self.fsten()
             )
+        }
+    }
+    #[doc = "control register 4"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr4(pub u32);
+    impl Cr4 {
+        #[doc = "SRAM1 page 4 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram1pds4(&self) -> super::vals::Pds {
+            let val = (self.0 >> 0usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM1 page 4 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram1pds4(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        }
+        #[doc = "SRAM1 page 5 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram1pds5(&self) -> super::vals::Pds {
+            let val = (self.0 >> 1usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM1 page 5 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram1pds5(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        }
+        #[doc = "SRAM1 page 6 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram1pds6(&self) -> super::vals::Pds {
+            let val = (self.0 >> 2usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM1 page 6 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram1pds6(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        }
+        #[doc = "SRAM1 page 7 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram1pds7(&self) -> super::vals::Pds {
+            let val = (self.0 >> 3usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM1 page 7 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram1pds7(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        }
+        #[doc = "SRAM1 page 8 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram1pds8(&self) -> super::vals::Pds {
+            let val = (self.0 >> 4usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM1 page 8 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram1pds8(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        }
+        #[doc = "SRAM1 page 9 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram1pds9(&self) -> super::vals::Pds {
+            let val = (self.0 >> 5usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM1 page 9 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram1pds9(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        }
+        #[doc = "SRAM1 page 10 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram1pds10(&self) -> super::vals::Pds {
+            let val = (self.0 >> 6usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM1 page 10 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram1pds10(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        }
+        #[doc = "SRAM1 page 11 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram1pds11(&self) -> super::vals::Pds {
+            let val = (self.0 >> 7usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM1 page 11 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram1pds11(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        }
+        #[doc = "SRAM1 page 12 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram1pds12(&self) -> super::vals::Pds {
+            let val = (self.0 >> 8usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM1 page 12 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram1pds12(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        }
+        #[doc = "SRAM3 page 9 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram3pds9(&self) -> super::vals::Pds {
+            let val = (self.0 >> 10usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM3 page 9 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram3pds9(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+        }
+        #[doc = "SRAM3 page 10 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram3pds10(&self) -> super::vals::Pds {
+            let val = (self.0 >> 11usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM3 page 10 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram3pds10(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
+        }
+        #[doc = "SRAM3 page 11 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram3pds11(&self) -> super::vals::Pds {
+            let val = (self.0 >> 12usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM3 page 11 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram3pds11(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        }
+        #[doc = "SRAM3 page 12 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram3pds12(&self) -> super::vals::Pds {
+            let val = (self.0 >> 13usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM3 page 12 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram3pds12(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        }
+        #[doc = "SRAM3 page 13 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram3pds13(&self) -> super::vals::Pds {
+            let val = (self.0 >> 14usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM3 page 13 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram3pds13(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        }
+        #[doc = "SRAM5 page 1 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram5pds1(&self) -> super::vals::Pds {
+            let val = (self.0 >> 16usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM5 page 1 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram5pds1(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+        }
+        #[doc = "SRAM5 page 2 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram5pds2(&self) -> super::vals::Pds {
+            let val = (self.0 >> 17usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM5 page 2 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram5pds2(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+        }
+        #[doc = "SRAM5 page 3 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram5pds3(&self) -> super::vals::Pds {
+            let val = (self.0 >> 18usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM5 page 3 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram5pds3(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+        }
+        #[doc = "SRAM5 page 4 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram5pds4(&self) -> super::vals::Pds {
+            let val = (self.0 >> 19usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM5 page 4 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram5pds4(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val.to_bits() as u32) & 0x01) << 19usize);
+        }
+        #[doc = "SRAM5 page 5 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram5pds5(&self) -> super::vals::Pds {
+            let val = (self.0 >> 20usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM5 page 5 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram5pds5(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+        }
+        #[doc = "SRAM5 page 6 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram5pds6(&self) -> super::vals::Pds {
+            let val = (self.0 >> 21usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM5 page 6 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram5pds6(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+        }
+        #[doc = "SRAM5 page 7 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram5pds7(&self) -> super::vals::Pds {
+            let val = (self.0 >> 22usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM5 page 7 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram5pds7(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+        }
+        #[doc = "SRAM5 page 8 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram5pds8(&self) -> super::vals::Pds {
+            let val = (self.0 >> 23usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM5 page 8 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram5pds8(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+        }
+        #[doc = "SRAM5 page 9 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram5pds9(&self) -> super::vals::Pds {
+            let val = (self.0 >> 24usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM5 page 9 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram5pds9(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+        }
+        #[doc = "SRAM5 page 10 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram5pds10(&self) -> super::vals::Pds {
+            let val = (self.0 >> 25usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM5 page 10 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram5pds10(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+        }
+        #[doc = "SRAM5 page 11 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram5pds11(&self) -> super::vals::Pds {
+            let val = (self.0 >> 26usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM5 page 11 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram5pds11(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+        }
+        #[doc = "SRAM5 page 12 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram5pds12(&self) -> super::vals::Pds {
+            let val = (self.0 >> 27usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM5 page 12 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram5pds12(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+        }
+        #[doc = "SRAM5 page 13 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram5pds13(&self) -> super::vals::Pds {
+            let val = (self.0 >> 28usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM5 page 13 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram5pds13(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+        }
+    }
+    impl Default for Cr4 {
+        #[inline(always)]
+        fn default() -> Cr4 {
+            Cr4(0)
+        }
+    }
+    impl core::fmt::Debug for Cr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr4")
+                .field("sram1pds4", &self.sram1pds4())
+                .field("sram1pds5", &self.sram1pds5())
+                .field("sram1pds6", &self.sram1pds6())
+                .field("sram1pds7", &self.sram1pds7())
+                .field("sram1pds8", &self.sram1pds8())
+                .field("sram1pds9", &self.sram1pds9())
+                .field("sram1pds10", &self.sram1pds10())
+                .field("sram1pds11", &self.sram1pds11())
+                .field("sram1pds12", &self.sram1pds12())
+                .field("sram3pds9", &self.sram3pds9())
+                .field("sram3pds10", &self.sram3pds10())
+                .field("sram3pds11", &self.sram3pds11())
+                .field("sram3pds12", &self.sram3pds12())
+                .field("sram3pds13", &self.sram3pds13())
+                .field("sram5pds1", &self.sram5pds1())
+                .field("sram5pds2", &self.sram5pds2())
+                .field("sram5pds3", &self.sram5pds3())
+                .field("sram5pds4", &self.sram5pds4())
+                .field("sram5pds5", &self.sram5pds5())
+                .field("sram5pds6", &self.sram5pds6())
+                .field("sram5pds7", &self.sram5pds7())
+                .field("sram5pds8", &self.sram5pds8())
+                .field("sram5pds9", &self.sram5pds9())
+                .field("sram5pds10", &self.sram5pds10())
+                .field("sram5pds11", &self.sram5pds11())
+                .field("sram5pds12", &self.sram5pds12())
+                .field("sram5pds13", &self.sram5pds13())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr4 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "Cr4 {{ sram1pds4: {:?}, sram1pds5: {:?}, sram1pds6: {:?}, sram1pds7: {:?}, sram1pds8: {:?}, sram1pds9: {:?}, sram1pds10: {:?}, sram1pds11: {:?}, sram1pds12: {:?}, sram3pds9: {:?}, sram3pds10: {:?}, sram3pds11: {:?}, sram3pds12: {:?}, sram3pds13: {:?}, sram5pds1: {:?}, sram5pds2: {:?}, sram5pds3: {:?}, sram5pds4: {:?}, sram5pds5: {:?}, sram5pds6: {:?}, sram5pds7: {:?}, sram5pds8: {:?}, sram5pds9: {:?}, sram5pds10: {:?}, sram5pds11: {:?}, sram5pds12: {:?}, sram5pds13: {:?} }}" , self . sram1pds4 () , self . sram1pds5 () , self . sram1pds6 () , self . sram1pds7 () , self . sram1pds8 () , self . sram1pds9 () , self . sram1pds10 () , self . sram1pds11 () , self . sram1pds12 () , self . sram3pds9 () , self . sram3pds10 () , self . sram3pds11 () , self . sram3pds12 () , self . sram3pds13 () , self . sram5pds1 () , self . sram5pds2 () , self . sram5pds3 () , self . sram5pds4 () , self . sram5pds5 () , self . sram5pds6 () , self . sram5pds7 () , self . sram5pds8 () , self . sram5pds9 () , self . sram5pds10 () , self . sram5pds11 () , self . sram5pds12 () , self . sram5pds13 ())
+        }
+    }
+    #[doc = "control register 5"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr5(pub u32);
+    impl Cr5 {
+        #[doc = "SRAM6 page 1 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram6pds1(&self) -> super::vals::Pds {
+            let val = (self.0 >> 0usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM6 page 1 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram6pds1(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        }
+        #[doc = "SRAM6 page 2 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram6pds2(&self) -> super::vals::Pds {
+            let val = (self.0 >> 1usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM6 page 2 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram6pds2(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        }
+        #[doc = "SRAM6 page 3 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram6pds3(&self) -> super::vals::Pds {
+            let val = (self.0 >> 2usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM6 page 3 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram6pds3(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        }
+        #[doc = "SRAM6 page 4 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram6pds4(&self) -> super::vals::Pds {
+            let val = (self.0 >> 3usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM6 page 4 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram6pds4(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        }
+        #[doc = "SRAM6 page 5 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram6pds5(&self) -> super::vals::Pds {
+            let val = (self.0 >> 4usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM6 page 5 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram6pds5(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        }
+        #[doc = "SRAM6 page 6 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram6pds6(&self) -> super::vals::Pds {
+            let val = (self.0 >> 5usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM6 page 6 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram6pds6(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        }
+        #[doc = "SRAM6 page 7 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram6pds7(&self) -> super::vals::Pds {
+            let val = (self.0 >> 6usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM6 page 7 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram6pds7(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        }
+        #[doc = "SRAM6 page 8 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sram6pds8(&self) -> super::vals::Pds {
+            let val = (self.0 >> 7usize) & 0x01;
+            super::vals::Pds::from_bits(val as u8)
+        }
+        #[doc = "SRAM6 page 8 (64 Kbytes) power-down in Stop modes (Stop 0, 1, 2, 3)"]
+        #[inline(always)]
+        pub const fn set_sram6pds8(&mut self, val: super::vals::Pds) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for Cr5 {
+        #[inline(always)]
+        fn default() -> Cr5 {
+            Cr5(0)
+        }
+    }
+    impl core::fmt::Debug for Cr5 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr5")
+                .field("sram6pds1", &self.sram6pds1())
+                .field("sram6pds2", &self.sram6pds2())
+                .field("sram6pds3", &self.sram6pds3())
+                .field("sram6pds4", &self.sram6pds4())
+                .field("sram6pds5", &self.sram6pds5())
+                .field("sram6pds6", &self.sram6pds6())
+                .field("sram6pds7", &self.sram6pds7())
+                .field("sram6pds8", &self.sram6pds8())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr5 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "Cr5 {{ sram6pds1: {:?}, sram6pds2: {:?}, sram6pds3: {:?}, sram6pds4: {:?}, sram6pds5: {:?}, sram6pds6: {:?}, sram6pds7: {:?}, sram6pds8: {:?} }}" , self . sram6pds1 () , self . sram6pds2 () , self . sram6pds3 () , self . sram6pds4 () , self . sram6pds5 () , self . sram6pds6 () , self . sram6pds7 () , self . sram6pds8 ())
         }
     }
     #[doc = "disable Backup domain register"]
@@ -2146,6 +2698,37 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Flashfwu) -> u8 {
             Flashfwu::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum ForceUsbpwr {
+        #[doc = "OTG_HS PHY power is not maintained during low-power modes"]
+        NotMaintained = 0x0,
+        #[doc = "OTG_HS PHY power is maintained during low-power modes"]
+        Maintained = 0x01,
+    }
+    impl ForceUsbpwr {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> ForceUsbpwr {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for ForceUsbpwr {
+        #[inline(always)]
+        fn from(val: u8) -> ForceUsbpwr {
+            ForceUsbpwr::from_bits(val)
+        }
+    }
+    impl From<ForceUsbpwr> for u8 {
+        #[inline(always)]
+        fn from(val: ForceUsbpwr) -> u8 {
+            ForceUsbpwr::to_bits(val)
         }
     }
     #[repr(u8)]

@@ -35,7 +35,8 @@ The following table shows which STM32 peripheral versions are supported across d
 | [DCMIPP](#dcmipp) | | | | | | | | | | | ❌ | | | | | | v2 | | | | | | | |
 | [DESIG](#desig) | | | | | | | | | | | | | | | | | | | | | | | wba | |
 | [DFSDM](#dfsdm) | | | | | | ❌ | ❌ | | | | ❌ | | | ❌ | ❌ | | | | | | | | | |
-| [DLYB](#dlyb) | | | | | | | | | | v1 | v1 | | | | | | v1 | | v1 | v1 | | | | |
+| [DLYB](#dlyb) | | | | | | | | | | v1 | v1 | | | | | | | | v1 | v1 | | | | |
+| [DLYBSD](#dlybsd) | | | | | | | | | | | | | | | | | v1 | | | | | | | |
 | [DMA](#dma) | | | | v2 | | v2 | v2 | | | | v1 | | | | | | | | | | | | | |
 | [DMA2D](#dma2d) | | | | | | v1 | v1 | | | | v2 | | | v1 | v1 | | v1 | | | v2 | | | | |
 | [DMAMUX](#dmamux) | v1 | | | | | | | v1 | v1 | | v1 | | | | v1 | v1 | | v1 | | | v1 | v1 | | v1 |
@@ -356,7 +357,13 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **v1**: STM32H5, STM32H7, STM32N6, STM32U3, STM32U5
+- **v1**: STM32H5, STM32H7, STM32U3, STM32U5
+
+### DLYBSD
+
+**Versions by family:**
+
+- **v1**: STM32N6
 
 ### DMA
 

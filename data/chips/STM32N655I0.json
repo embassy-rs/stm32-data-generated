@@ -2197,18 +2197,18 @@
           "name": "DLYB_SDMMC1",
           "address": 1208123392,
           "registers": {
-            "kind": "dlyb",
+            "kind": "dlybsd",
             "version": "v1",
-            "block": "DLYB"
+            "block": "DLYBSD"
           }
         },
         {
           "name": "DLYB_SDMMC2",
           "address": 1208118272,
           "registers": {
-            "kind": "dlyb",
+            "kind": "dlybsd",
             "version": "v1",
-            "block": "DLYB"
+            "block": "DLYBSD"
           }
         },
         {

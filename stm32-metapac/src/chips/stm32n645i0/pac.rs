@@ -919,9 +919,9 @@ pub const JPEG: jpeg::Jpeg = unsafe { jpeg::Jpeg::from_ptr(0x4802_3000usize as _
 pub const FMC: fmc::Fmc = unsafe { fmc::Fmc::from_ptr(0x4802_4000usize as _) };
 pub const XSPI1: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x4802_5000usize as _) };
 pub const PSSI: pssi::Pssi = unsafe { pssi::Pssi::from_ptr(0x4802_6400usize as _) };
-pub const DLYB_SDMMC2: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x4802_6c00usize as _) };
+pub const DLYB_SDMMC2: dlybsd::Dlybsd = unsafe { dlybsd::Dlybsd::from_ptr(0x4802_6c00usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4802_7000usize as _) };
-pub const DLYB_SDMMC1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x4802_8000usize as _) };
+pub const DLYB_SDMMC1: dlybsd::Dlybsd = unsafe { dlybsd::Dlybsd::from_ptr(0x4802_8000usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4802_8400usize as _) };
 pub const XSPI2: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x4802_a000usize as _) };
 pub const XSPIM: xspim::Xspim = unsafe { xspim::Xspim::from_ptr(0x4802_b400usize as _) };
@@ -951,8 +951,8 @@ pub mod dbgmcu;
 pub mod dcmi;
 #[path = "../../peripherals/dcmipp_v2.rs"]
 pub mod dcmipp;
-#[path = "../../peripherals/dlyb_v1.rs"]
-pub mod dlyb;
+#[path = "../../peripherals/dlybsd_v1.rs"]
+pub mod dlybsd;
 #[path = "../../peripherals/dma2d_v1.rs"]
 pub mod dma2d;
 #[path = "../../peripherals/dts_v1.rs"]

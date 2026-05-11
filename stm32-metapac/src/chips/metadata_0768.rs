@@ -1756,7 +1756,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "FDCAN1",
         address: 0x4000a000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "can",
+            version: "fdcan_v2",
+            block: "FDCAN",
+            ir: &can::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -1827,7 +1832,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "FDCAN2",
         address: 0x4000a400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "can",
+            version: "fdcan_v2",
+            block: "FDCAN",
+            ir: &can::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -1888,7 +1898,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "FDCAN3",
         address: 0x4000e800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "can",
+            version: "fdcan_v2",
+            block: "FDCAN",
+            ir: &can::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -1942,43 +1957,11 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
-        name: "FDCANRAM1",
+        name: "FDCANRAM",
         address: 0x4000c000,
         registers: Some(PeripheralRegisters {
             kind: "fdcanram",
-            version: "v1",
-            block: "FDCANRAM",
-            ir: &fdcanram::REGISTERS,
-        }),
-        rcc: None,
-        pins: &[],
-        dma_channels: &[],
-        triggers: &[],
-        interrupts: &[],
-        afio: None,
-    },
-    Peripheral {
-        name: "FDCANRAM2",
-        address: 0x4000c350,
-        registers: Some(PeripheralRegisters {
-            kind: "fdcanram",
-            version: "v1",
-            block: "FDCANRAM",
-            ir: &fdcanram::REGISTERS,
-        }),
-        rcc: None,
-        pins: &[],
-        dma_channels: &[],
-        triggers: &[],
-        interrupts: &[],
-        afio: None,
-    },
-    Peripheral {
-        name: "FDCANRAM3",
-        address: 0x4000c6a0,
-        registers: Some(PeripheralRegisters {
-            kind: "fdcanram",
-            version: "v1",
+            version: "v2",
             block: "FDCANRAM",
             ir: &fdcanram::REGISTERS,
         }),
@@ -14049,6 +14032,8 @@ pub(crate) static PINS: &[Pin] = &[
 ];
 #[path = "../registers/bsec_v2.rs"]
 pub mod bsec;
+#[path = "../registers/can_fdcan_v2.rs"]
+pub mod can;
 #[path = "../registers/crc_v3.rs"]
 pub mod crc;
 #[path = "../registers/cryp_v2.rs"]
@@ -14069,7 +14054,7 @@ pub mod dma2d;
 pub mod dts;
 #[path = "../registers/exti_n6.rs"]
 pub mod exti;
-#[path = "../registers/fdcanram_v1.rs"]
+#[path = "../registers/fdcanram_v2.rs"]
 pub mod fdcanram;
 #[path = "../registers/fmc_n6.rs"]
 pub mod fmc;

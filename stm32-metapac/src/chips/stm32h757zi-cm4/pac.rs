@@ -765,7 +765,7 @@ pub mod adc;
 pub mod adccommon;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
-#[path = "../../peripherals/can_fdcan_h7.rs"]
+#[path = "../../peripherals/can_fdcan_v2.rs"]
 pub mod can;
 #[path = "../../peripherals/cec_v2.rs"]
 pub mod cec;
@@ -797,7 +797,7 @@ pub mod dsihost;
 pub mod eth;
 #[path = "../../peripherals/exti_h7rm0399.rs"]
 pub mod exti;
-#[path = "../../peripherals/fdcanram_h7.rs"]
+#[path = "../../peripherals/fdcanram_v2.rs"]
 pub mod fdcanram;
 #[path = "../../peripherals/flash_h7.rs"]
 pub mod flash;

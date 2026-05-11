@@ -2851,6 +2851,18 @@ pub mod regs {
         pub const fn set_rfl(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
+        #[doc = "Debug message status"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dms(&self) -> u8 {
+            let val = (self.0 >> 30usize) & 0x03;
+            val as u8
+        }
+        #[doc = "Debug message status"]
+        #[inline(always)]
+        pub const fn set_dms(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 30usize)) | (((val as u32) & 0x03) << 30usize);
+        }
     }
     impl Default for Rxfs {
         #[inline(always)]
@@ -2866,6 +2878,7 @@ pub mod regs {
                 .field("fpi", &self.fpi())
                 .field("ff", &self.ff())
                 .field("rfl", &self.rfl())
+                .field("dms", &self.dms())
                 .finish()
         }
     }
@@ -2874,12 +2887,13 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Rxfs {{ ffl: {=u8:?}, fgi: {=u8:?}, fpi: {=u8:?}, ff: {=bool:?}, rfl: {=bool:?} }}",
+                "Rxfs {{ ffl: {=u8:?}, fgi: {=u8:?}, fpi: {=u8:?}, ff: {=bool:?}, rfl: {=bool:?}, dms: {=u8:?} }}",
                 self.ffl(),
                 self.fgi(),
                 self.fpi(),
                 self.ff(),
-                self.rfl()
+                self.rfl(),
+                self.dms()
             )
         }
     }

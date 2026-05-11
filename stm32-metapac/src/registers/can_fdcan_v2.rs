@@ -2020,6 +2020,14 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: None,
                 },
+                Field {
+                    name: "dms",
+                    description: Some("Debug message status"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    bit_size: 2,
+                    array: None,
+                    enumm: None,
+                },
             ],
         },
         FieldSet {

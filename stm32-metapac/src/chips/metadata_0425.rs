@@ -1612,7 +1612,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x4000a000,
         registers: Some(PeripheralRegisters {
             kind: "can",
-            version: "fdcan_h7",
+            version: "fdcan_v2",
             block: "FDCAN",
             ir: &can::REGISTERS,
         }),
@@ -1677,7 +1677,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x4000a400,
         registers: Some(PeripheralRegisters {
             kind: "can",
-            version: "fdcan_h7",
+            version: "fdcan_v2",
             block: "FDCAN",
             ir: &can::REGISTERS,
         }),
@@ -1742,7 +1742,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x4000ac00,
         registers: Some(PeripheralRegisters {
             kind: "fdcanram",
-            version: "h7",
+            version: "v2",
             block: "FDCANRAM",
             ir: &fdcanram::REGISTERS,
         }),
@@ -8081,7 +8081,7 @@ pub mod adc;
 pub mod adccommon;
 #[path = "../registers/bdma_v1.rs"]
 pub mod bdma;
-#[path = "../registers/can_fdcan_h7.rs"]
+#[path = "../registers/can_fdcan_v2.rs"]
 pub mod can;
 #[path = "../registers/cec_v2.rs"]
 pub mod cec;
@@ -8111,7 +8111,7 @@ pub mod dmamux;
 pub mod dts;
 #[path = "../registers/exti_h7.rs"]
 pub mod exti;
-#[path = "../registers/fdcanram_h7.rs"]
+#[path = "../registers/fdcanram_v2.rs"]
 pub mod fdcanram;
 #[path = "../registers/flash_h7.rs"]
 pub mod flash;

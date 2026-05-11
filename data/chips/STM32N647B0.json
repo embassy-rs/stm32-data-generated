@@ -2664,6 +2664,11 @@
         {
           "name": "FDCAN1",
           "address": 1073782784,
+          "registers": {
+            "kind": "can",
+            "version": "fdcan_v2",
+            "block": "FDCAN"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -2730,6 +2735,11 @@
         {
           "name": "FDCAN2",
           "address": 1073783808,
+          "registers": {
+            "kind": "can",
+            "version": "fdcan_v2",
+            "block": "FDCAN"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -2781,6 +2791,11 @@
         {
           "name": "FDCAN3",
           "address": 1073801216,
+          "registers": {
+            "kind": "can",
+            "version": "fdcan_v2",
+            "block": "FDCAN"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -2830,29 +2845,11 @@
           ]
         },
         {
-          "name": "FDCANRAM1",
+          "name": "FDCANRAM",
           "address": 1073790976,
           "registers": {
             "kind": "fdcanram",
-            "version": "v1",
-            "block": "FDCANRAM"
-          }
-        },
-        {
-          "name": "FDCANRAM2",
-          "address": 1073791824,
-          "registers": {
-            "kind": "fdcanram",
-            "version": "v1",
-            "block": "FDCANRAM"
-          }
-        },
-        {
-          "name": "FDCANRAM3",
-          "address": 1073792672,
-          "registers": {
-            "kind": "fdcanram",
-            "version": "v1",
+            "version": "v2",
             "block": "FDCANRAM"
           }
         },

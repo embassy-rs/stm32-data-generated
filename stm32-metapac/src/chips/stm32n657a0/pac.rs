@@ -858,12 +858,10 @@ pub const I3C1: *mut () = 0x4000_6000usize as _;
 pub const I3C2: *mut () = 0x4000_6400usize as _;
 pub const UART7: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_7800usize as _) };
 pub const MDIOS: mdios::Mdios = unsafe { mdios::Mdios::from_ptr(0x4000_9400usize as _) };
-pub const FDCAN1: *mut () = 0x4000_a000usize as _;
-pub const FDCAN2: *mut () = 0x4000_a400usize as _;
-pub const FDCANRAM1: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_c000usize as _) };
-pub const FDCANRAM2: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_c350usize as _) };
-pub const FDCANRAM3: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_c6a0usize as _) };
-pub const FDCAN3: *mut () = 0x4000_e800usize as _;
+pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a000usize as _) };
+pub const FDCAN2: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400usize as _) };
+pub const FDCANRAM: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_c000usize as _) };
+pub const FDCAN3: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_e800usize as _) };
 pub const UCPD1: ucpd::Ucpd = unsafe { ucpd::Ucpd::from_ptr(0x4000_fc00usize as _) };
 pub const GPDMA1: gpdma::Gpdma = unsafe { gpdma::Gpdma::from_ptr(0x4002_1000usize as _) };
 pub const ADC1: *mut () = 0x4002_2000usize as _;
@@ -972,6 +970,8 @@ pub use cortex_m_rt::interrupt;
 pub use Interrupt as interrupt;
 #[path = "../../peripherals/bsec_v2.rs"]
 pub mod bsec;
+#[path = "../../peripherals/can_fdcan_v2.rs"]
+pub mod can;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/cryp_v2.rs"]
@@ -992,7 +992,7 @@ pub mod dma2d;
 pub mod dts;
 #[path = "../../peripherals/exti_n6.rs"]
 pub mod exti;
-#[path = "../../peripherals/fdcanram_v1.rs"]
+#[path = "../../peripherals/fdcanram_v2.rs"]
 pub mod fdcanram;
 #[path = "../../peripherals/gpdma_v1.rs"]
 pub mod gpdma;

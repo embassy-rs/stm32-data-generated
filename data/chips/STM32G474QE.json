@@ -2386,7 +2386,7 @@
             },
             {
               "pin": "PD9",
-              "signal": "INN14"
+              "signal": "INN12"
             },
             {
               "pin": "PE10",
@@ -2394,7 +2394,7 @@
             },
             {
               "pin": "PE10",
-              "signal": "INN15"
+              "signal": "INN13"
             },
             {
               "pin": "PE11",
@@ -2787,7 +2787,7 @@
             },
             {
               "pin": "PD9",
-              "signal": "INN14"
+              "signal": "INN12"
             },
             {
               "pin": "PE10",
@@ -2795,7 +2795,7 @@
             },
             {
               "pin": "PE10",
-              "signal": "INN15"
+              "signal": "INN13"
             },
             {
               "pin": "PE11",

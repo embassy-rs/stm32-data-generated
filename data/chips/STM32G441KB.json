@@ -1025,7 +1025,7 @@
             },
             {
               "pin": "PA5",
-              "signal": "INN14"
+              "signal": "INN12"
             },
             {
               "pin": "PA6",

@@ -1479,7 +1479,7 @@
             },
             {
               "pin": "PA5",
-              "signal": "INN14"
+              "signal": "INN12"
             },
             {
               "pin": "PA6",
@@ -1503,11 +1503,15 @@
             },
             {
               "pin": "PB11",
-              "signal": "INN15"
+              "signal": "INN13"
             },
             {
               "pin": "PB15",
               "signal": "IN15"
+            },
+            {
+              "pin": "PB15",
+              "signal": "INN14"
             },
             {
               "pin": "PB2",

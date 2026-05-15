@@ -444,7 +444,9 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some(
+                        "Retention",
+                    ),
                 },
                 Field {
                     name: "monen",
@@ -892,6 +894,27 @@ pub(crate) static REGISTERS: IR = IR {
         },
     ],
     enums: &[
+        Enum {
+            name: "Retention",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Lost",
+                    description: Some(
+                        "Content is lost.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Preserved",
+                    description: Some(
+                        "Content is preserved.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
         Enum {
             name: "Vos",
             description: None,

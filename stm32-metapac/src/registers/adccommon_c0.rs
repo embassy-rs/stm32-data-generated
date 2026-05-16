@@ -9,7 +9,7 @@ pub(crate) static REGISTERS: IR = IR {
             name: "ccr",
             description: Some("common configuration register"),
             array: None,
-            byte_offset: 0x8,
+            byte_offset: 0x0,
             inner: BlockItemInner::Register(Register {
                 access: Access::ReadWrite,
                 bit_size: 32,

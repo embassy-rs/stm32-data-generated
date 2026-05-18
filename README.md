@@ -80,7 +80,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [OPAMP](#opamp) | | | | | v2 | | | | v5 | v4 | v4 | | ❌ | v3 | v3 | v3 | | v3 | v3 | v3 | | | | |
 | [OTFDEC](#otfdec) | | | | | | | | | | v1 | v1 | | | | | v1 | | | | v1 | | | | |
 | [OTG](#otg) | | | v1 | v1 | | v1 | v1 | | | | v1 | | | v1 | v1 | | v1 | | | v1 | | | v1 | |
-| [PKA](#pka) | | | | | | | | | | v1a | ❌ | | | | v1c | v1c | ❌ | | ❌ | v1b | v1c | v1c | v1a | v1c |
+| [PKA](#pka) | | | | | | | | | | v1a | v1a | | | | v1c | v1c | ❌ | | ❌ | v1b | v1c | v1c | v1a | v1c |
 | [PSSI](#pssi) | | | | | | | | | | v1 | v1, v1_h7rs | | | | v1 | | v1 | | | v1 | | | | |
 | [PWR](#pwr) | c0 | f0, f0x0 | f1 | f2 | f3 | f4 | f7 | g0 | g4 | h5, h50 | h7rm0399, h7rm0433, h7rm0455, h7rm0468, h7rs | l0 | l1 | l4 | l4 | l5 | n6 | u0 | u3 | u5 | wb, wb55 | wb0 | wba | wl5 |
 | [QUADSPI](#quadspi) | | | | | | v1 | v1 | | v1 | | v1 | | | v1 | | | | | | | v1 | | | |
@@ -722,10 +722,10 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **v1a**: STM32H5, STM32WBA
+- **v1a**: STM32H5, STM32H7, STM32WBA
 - **v1b**: STM32U5
 - **v1c**: STM32L4+, STM32L5, STM32WB, STM32WB0, STM32WL
-- **❌ Unsupported**: STM32H7, STM32N6, STM32U3
+- **❌ Unsupported**: STM32N6, STM32U3
 
 ### PSSI
 

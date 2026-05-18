@@ -727,7 +727,7 @@ pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4802_0000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x4802_0400usize as _) };
 pub const CRYP: cryp::Cryp = unsafe { cryp::Cryp::from_ptr(0x4802_0800usize as _) };
 pub const SAES: *mut () = 0x4802_1000usize as _;
-pub const PKA: *mut () = 0x4802_2000usize as _;
+pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x4802_2000usize as _) };
 pub const DCMIPP: *mut () = 0x5000_2000usize as _;
 pub const GFXTIM: *mut () = 0x5000_4000usize as _;
 pub const HPDMA1: gpdma::Gpdma = unsafe { gpdma::Gpdma::from_ptr(0x5200_0000usize as _) };
@@ -832,6 +832,8 @@ pub mod lptim;
 pub mod mdios;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
+#[path = "../../peripherals/pka_v1a.rs"]
+pub mod pka;
 #[path = "../../peripherals/pssi_v1_h7rs.rs"]
 pub mod pssi;
 #[path = "../../peripherals/pwr_h7rs.rs"]

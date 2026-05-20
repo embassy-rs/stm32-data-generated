@@ -6958,7 +6958,8 @@ pub mod vals {
         Disable = 0x0,
         #[doc = "LSE oscillator clock selected"]
         Lse = 0x01,
-        _RESERVED_2 = 0x02,
+        #[doc = "LSI oscillator clock selected"]
+        Lsi = 0x02,
         #[doc = "HSE oscillator clock divided by 1000 selected"]
         Hse = 0x03,
     }

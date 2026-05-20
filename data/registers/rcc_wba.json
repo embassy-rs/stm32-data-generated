@@ -5501,6 +5501,11 @@
         "value": 1
       },
       {
+        "name": "LSI",
+        "description": "LSI oscillator clock selected",
+        "value": 2
+      },
+      {
         "name": "HSE",
         "description": "HSE oscillator clock divided by 1000 selected",
         "value": 3

@@ -9539,6 +9539,13 @@ pub(crate) static REGISTERS: IR = IR {
                     ),
                     value: 1,
                 },
+                EnumVariant {
+                    name: "Lsi",
+                    description: Some(
+                        "LSI oscillator clock selected",
+                    ),
+                    value: 2,
+                },
             ],
         },
         Enum {

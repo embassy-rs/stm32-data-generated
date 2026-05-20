@@ -1066,6 +1066,13 @@
               "signal": "GLOBAL",
               "interrupt": "ADC1_2"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "ADC2",
+              "dma": "GPDMA1",
+              "request": 123
+            }
           ]
         },
         {
@@ -6718,6 +6725,18 @@
             {
               "signal": "GLOBAL",
               "interrupt": "USART6"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dma": "GPDMA1",
+              "request": 121
+            },
+            {
+              "signal": "TX",
+              "dma": "GPDMA1",
+              "request": 122
             }
           ]
         },

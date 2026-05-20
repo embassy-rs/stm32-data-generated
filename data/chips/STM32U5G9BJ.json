@@ -1546,6 +1546,13 @@
               "signal": "GLOBAL",
               "interrupt": "ADC1_2"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "ADC2",
+              "dma": "GPDMA1",
+              "request": 123
+            }
           ]
         },
         {
@@ -4319,6 +4326,23 @@
               "signal": "EV",
               "interrupt": "I2C5_EV"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dma": "GPDMA1",
+              "request": 115
+            },
+            {
+              "signal": "TX",
+              "dma": "GPDMA1",
+              "request": 116
+            },
+            {
+              "signal": "EVC",
+              "dma": "GPDMA1",
+              "request": 117
+            }
           ]
         },
         {
@@ -4390,6 +4414,23 @@
               "signal": "EV",
               "interrupt": "I2C6_EV"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dma": "GPDMA1",
+              "request": 118
+            },
+            {
+              "signal": "TX",
+              "dma": "GPDMA1",
+              "request": 119
+            },
+            {
+              "signal": "EVC",
+              "dma": "GPDMA1",
+              "request": 120
+            }
           ]
         },
         {
@@ -4446,6 +4487,18 @@
             {
               "signal": "GLOBAL",
               "interrupt": "JPEG"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dma": "GPDMA1",
+              "request": 124
+            },
+            {
+              "signal": "TX",
+              "dma": "GPDMA1",
+              "request": 125
             }
           ]
         },
@@ -10522,6 +10575,18 @@
             {
               "signal": "GLOBAL",
               "interrupt": "USART6"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dma": "GPDMA1",
+              "request": 121
+            },
+            {
+              "signal": "TX",
+              "dma": "GPDMA1",
+              "request": 122
             }
           ]
         },

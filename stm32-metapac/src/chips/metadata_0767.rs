@@ -6245,7 +6245,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "RNG",
         address: 0x44020000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "rng",
+            version: "v3",
+            block: "RNG",
+            ir: &rng::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK3",
             kernel_clock: Clock("HCLK3"),
@@ -13331,6 +13336,8 @@ pub mod rcc;
 pub mod rifsc;
 #[path = "../registers/risaf_n6.rs"]
 pub mod risaf;
+#[path = "../registers/rng_v3.rs"]
+pub mod rng;
 #[path = "../registers/sdmmc_v3.rs"]
 pub mod sdmmc;
 #[path = "../registers/spi_v5.rs"]

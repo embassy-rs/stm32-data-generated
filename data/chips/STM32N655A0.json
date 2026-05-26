@@ -4857,6 +4857,11 @@
         {
           "name": "RNG",
           "address": 1140981760,
+          "registers": {
+            "kind": "rng",
+            "version": "v3",
+            "block": "RNG"
+          },
           "rcc": {
             "bus_clock": "HCLK3",
             "kernel_clock": "HCLK3",

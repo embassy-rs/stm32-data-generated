@@ -850,7 +850,7 @@ pub const RAMCFG: ramcfg::Ramcfg = unsafe { ramcfg::Ramcfg::from_ptr(0x4202_3000
 pub const MDF1: *mut () = 0x4202_5000usize as _;
 pub const ADF1: *mut () = 0x4202_6000usize as _;
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x4400_1000usize as _) };
-pub const RNG: *mut () = 0x4402_0000usize as _;
+pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x4402_0000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x4402_0400usize as _) };
 pub const RIFSC: rifsc::Rifsc = unsafe { rifsc::Rifsc::from_ptr(0x4402_4000usize as _) };
 pub const RISAF1: risaf::Risaf = unsafe { risaf::Risaf::from_ptr(0x4402_6000usize as _) };
@@ -983,6 +983,8 @@ pub mod rcc;
 pub mod rifsc;
 #[path = "../../peripherals/risaf_n6.rs"]
 pub mod risaf;
+#[path = "../../peripherals/rng_v3.rs"]
+pub mod rng;
 #[path = "../../peripherals/spi_v5.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_n6.rs"]

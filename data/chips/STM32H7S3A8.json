@@ -7105,7 +7105,7 @@
           "registers": {
             "kind": "timer",
             "version": "v3",
-            "block": "TIM_GP16"
+            "block": "TIM_GP32"
           },
           "rcc": {
             "bus_clock": "PCLK1",
@@ -7222,7 +7222,7 @@
           "registers": {
             "kind": "timer",
             "version": "v3",
-            "block": "TIM_GP16"
+            "block": "TIM_GP32"
           },
           "rcc": {
             "bus_clock": "PCLK1",

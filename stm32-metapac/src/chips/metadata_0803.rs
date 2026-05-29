@@ -129,7 +129,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "ADC12_COMMON",
-        address: 0x42028308,
+        address: 0x42048300,
         registers: Some(PeripheralRegisters {
             kind: "adccommon",
             version: "u5",

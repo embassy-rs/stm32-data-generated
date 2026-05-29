@@ -1321,7 +1321,7 @@
         },
         {
           "name": "ADC12_COMMON",
-          "address": 1107460872,
+          "address": 1107591936,
           "registers": {
             "kind": "adccommon",
             "version": "u5",

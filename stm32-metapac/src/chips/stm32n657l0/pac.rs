@@ -924,7 +924,7 @@ pub const LPTIM2: *mut () = 0x4600_2400usize as _;
 pub const LPTIM3: *mut () = 0x4600_2800usize as _;
 pub const LPTIM5: *mut () = 0x4600_3000usize as _;
 pub const VREFBUF: *mut () = 0x4600_3c00usize as _;
-pub const RTC: *mut () = 0x4600_4000usize as _;
+pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4600_4000usize as _) };
 pub const TAMP: *mut () = 0x4600_4400usize as _;
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4600_4800usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4600_8000usize as _) };
@@ -1046,6 +1046,8 @@ pub mod rifsc;
 pub mod risaf;
 #[path = "../../peripherals/rng_v3.rs"]
 pub mod rng;
+#[path = "../../peripherals/rtc_v3_u5.rs"]
+pub mod rtc;
 #[path = "../../peripherals/sdmmc_v3.rs"]
 pub mod sdmmc;
 #[path = "../../peripherals/spi_v5.rs"]

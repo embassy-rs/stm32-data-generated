@@ -6926,6 +6926,11 @@
         {
           "name": "RTC",
           "address": 1174421504,
+          "registers": {
+            "kind": "rtc",
+            "version": "v3_u5",
+            "block": "RTC"
+          },
           "rcc": {
             "bus_clock": "PCLK4",
             "kernel_clock": {

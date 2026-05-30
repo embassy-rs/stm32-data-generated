@@ -7660,6 +7660,24 @@
               "dmamux": "DMAMUX1",
               "request": 48
             }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_TI1_IN1",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "TIMX_TI1_IN2",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "TIMX_TI1_IN3",
+              "source": "COMP3_OUT"
+            },
+            {
+              "signal": "TIMX_TI1_IN4",
+              "source": "COMP4_OUT"
+            }
           ]
         },
         {

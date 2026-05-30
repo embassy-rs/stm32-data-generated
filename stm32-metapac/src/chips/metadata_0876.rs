@@ -70,7 +70,28 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             dma: Some("GPDMA1"),
             request: Some(0),
         }],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "ADC_TRG0",
+                source: "TIM1_TRGO2",
+            },
+            PeripheralTrigger {
+                signal: "ADC_TRG1",
+                source: "TIM1_OC4",
+            },
+            PeripheralTrigger {
+                signal: "ADC_TRG2",
+                source: "TIM2_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_TRG5",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "ADC_TRG7",
+                source: "EXTI15_TRG",
+            },
+        ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "ADC4",
@@ -2284,7 +2305,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(25),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_ITR_IN3",
+                source: "TIM4_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ITR_IN7",
+                source: "TIM16_OC1",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ITR_IN8",
+                source: "TIM17_OC1",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",

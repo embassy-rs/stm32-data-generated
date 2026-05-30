@@ -2823,7 +2823,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(47),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN1",
+                source: "COMP2_OUT",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",

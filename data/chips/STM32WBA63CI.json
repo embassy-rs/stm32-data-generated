@@ -430,6 +430,28 @@
               "dma": "GPDMA1",
               "request": 0
             }
+          ],
+          "triggers": [
+            {
+              "signal": "ADC_TRG0",
+              "source": "TIM1_TRGO2"
+            },
+            {
+              "signal": "ADC_TRG1",
+              "source": "TIM1_OC4"
+            },
+            {
+              "signal": "ADC_TRG2",
+              "source": "TIM2_TRGO"
+            },
+            {
+              "signal": "ADC_TRG5",
+              "source": "LPTIM1_CH1"
+            },
+            {
+              "signal": "ADC_TRG7",
+              "source": "EXTI15_TRG"
+            }
           ]
         },
         {
@@ -1062,6 +1084,56 @@
               "dma": "GPDMA1",
               "request": 7
             }
+          ],
+          "triggers": [
+            {
+              "signal": "I2C_TRG0",
+              "source": "GPDMA_CH0_TC"
+            },
+            {
+              "signal": "I2C_TRG1",
+              "source": "GPDMA_CH1_TC"
+            },
+            {
+              "signal": "I2C_TRG2",
+              "source": "GPDMA_CH2_TC"
+            },
+            {
+              "signal": "I2C_TRG3",
+              "source": "GPDMA_CH3_TC"
+            },
+            {
+              "signal": "I2C_TRG4",
+              "source": "EXTI5_TRG"
+            },
+            {
+              "signal": "I2C_TRG5",
+              "source": "EXTI9_TRG"
+            },
+            {
+              "signal": "I2C_TRG6",
+              "source": "LPTIM1_CH1"
+            },
+            {
+              "signal": "I2C_TRG7",
+              "source": "LPTIM2_CH1"
+            },
+            {
+              "signal": "I2C_TRG8",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "I2C_TRG9",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "I2C_TRG10",
+              "source": "RTC_ALRA_TRG"
+            },
+            {
+              "signal": "I2C_TRG11",
+              "source": "RTC_WUT_TRG"
+            }
           ]
         },
         {
@@ -1140,6 +1212,52 @@
               "signal": "EVC",
               "dma": "GPDMA1",
               "request": 10
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "I2C_TRG0",
+              "source": "GPDMA_CH0_TC"
+            },
+            {
+              "signal": "I2C_TRG1",
+              "source": "GPDMA_CH1_TC"
+            },
+            {
+              "signal": "I2C_TRG2",
+              "source": "GPDMA_CH2_TC"
+            },
+            {
+              "signal": "I2C_TRG3",
+              "source": "GPDMA_CH3_TC"
+            },
+            {
+              "signal": "I2C_TRG4",
+              "source": "EXTI5_TRG"
+            },
+            {
+              "signal": "I2C_TRG5",
+              "source": "EXTI8_TRG"
+            },
+            {
+              "signal": "I2C_TRG6",
+              "source": "LPTIM1_CH1"
+            },
+            {
+              "signal": "I2C_TRG8",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "I2C_TRG9",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "I2C_TRG10",
+              "source": "RTC_ALRA_TRG"
+            },
+            {
+              "signal": "I2C_TRG11",
+              "source": "RTC_WUT_TRG"
             }
           ]
         },
@@ -1246,6 +1364,76 @@
               "dma": "GPDMA1",
               "request": 48
             }
+          ],
+          "triggers": [
+            {
+              "signal": "LPTIM_EXT_TRG0",
+              "source": "LPTIM1_ETR"
+            },
+            {
+              "signal": "LPTIM_EXT_TRG1",
+              "source": "RTC_ALRA_TRG"
+            },
+            {
+              "signal": "LPTIM_EXT_TRG2",
+              "source": "RTC_ALRB_TRG"
+            },
+            {
+              "signal": "LPTIM_EXT_TRG3",
+              "source": "TAMP_TRG1"
+            },
+            {
+              "signal": "LPTIM_EXT_TRG4",
+              "source": "TAMP_TRG2"
+            },
+            {
+              "signal": "LPTIM_EXT_TRG6",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "LPTIM_EXT_TRG7",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "LPTIM_IN1_MUX0",
+              "source": "LPTIM1_IN1"
+            },
+            {
+              "signal": "LPTIM_IN1_MUX1",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "LPTIM_IN2_MUX0",
+              "source": "LPTIM1_IN2"
+            },
+            {
+              "signal": "LPTIM_IN2_MUX1",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "LPTIM_IC1_MUX0",
+              "source": "LPTIM1_CH1"
+            },
+            {
+              "signal": "LPTIM_IC1_MUX1",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "LPTIM_IC1_MUX2",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "LPTIM_IC2_MUX0",
+              "source": "LPTIM1_CH2"
+            },
+            {
+              "signal": "LPTIM_IC2_MUX1",
+              "source": "LSI"
+            },
+            {
+              "signal": "LPTIM_IC2_MUX2",
+              "source": "LSE"
+            }
           ]
         },
         {
@@ -1325,6 +1513,76 @@
               "signal": "UE",
               "dma": "GPDMA1",
               "request": 51
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "LPTIM_EXT_TRG0",
+              "source": "LPTIM2_ETR"
+            },
+            {
+              "signal": "LPTIM_EXT_TRG1",
+              "source": "RTC_ALRA_TRG"
+            },
+            {
+              "signal": "LPTIM_EXT_TRG2",
+              "source": "RTC_ALRB_TRG"
+            },
+            {
+              "signal": "LPTIM_EXT_TRG3",
+              "source": "TAMP_TRG1"
+            },
+            {
+              "signal": "LPTIM_EXT_TRG4",
+              "source": "GPDMA_CH0_TC"
+            },
+            {
+              "signal": "LPTIM_EXT_TRG5",
+              "source": "GPDMA_CH1_TC"
+            },
+            {
+              "signal": "LPTIM_EXT_TRG6",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "LPTIM_EXT_TRG7",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "LPTIM_IN1_MUX0",
+              "source": "LPTIM2_IN1"
+            },
+            {
+              "signal": "LPTIM_IN1_MUX1",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "LPTIM_IN2_MUX0",
+              "source": "LPTIM2_IN2"
+            },
+            {
+              "signal": "LPTIM_IN2_MUX1",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "LPTIM_IC1_MUX0",
+              "source": "LPTIM2_CH1"
+            },
+            {
+              "signal": "LPTIM_IC1_MUX1",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "LPTIM_IC1_MUX2",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "LPTIM_IC2_MUX0",
+              "source": "LPTIM2_CH2"
+            },
+            {
+              "signal": "LPTIM_IC2_MUX1",
+              "source": "HSI16_DIV256"
             }
           ]
         },
@@ -1946,6 +2204,56 @@
               "dma": "GPDMA1",
               "request": 2
             }
+          ],
+          "triggers": [
+            {
+              "signal": "SPI_TRG0",
+              "source": "GPDMA_CH0_TC"
+            },
+            {
+              "signal": "SPI_TRG1",
+              "source": "GPDMA_CH1_TC"
+            },
+            {
+              "signal": "SPI_TRG2",
+              "source": "GPDMA_CH2_TC"
+            },
+            {
+              "signal": "SPI_TRG3",
+              "source": "GPDMA_CH3_TC"
+            },
+            {
+              "signal": "SPI_TRG4",
+              "source": "EXTI4_TRG"
+            },
+            {
+              "signal": "SPI_TRG5",
+              "source": "EXTI9_TRG"
+            },
+            {
+              "signal": "SPI_TRG6",
+              "source": "LPTIM1_CH1"
+            },
+            {
+              "signal": "SPI_TRG7",
+              "source": "LPTIM2_CH1"
+            },
+            {
+              "signal": "SPI_TRG8",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "SPI_TRG9",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "SPI_TRG10",
+              "source": "RTC_ALRA_TRG"
+            },
+            {
+              "signal": "SPI_TRG11",
+              "source": "RTC_WUT_TRG"
+            }
           ]
         },
         {
@@ -2030,6 +2338,48 @@
               "signal": "TX",
               "dma": "GPDMA1",
               "request": 4
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "SPI_TRG0",
+              "source": "GPDMA_CH0_TC"
+            },
+            {
+              "signal": "SPI_TRG1",
+              "source": "GPDMA_CH1_TC"
+            },
+            {
+              "signal": "SPI_TRG2",
+              "source": "GPDMA_CH2_TC"
+            },
+            {
+              "signal": "SPI_TRG3",
+              "source": "GPDMA_CH3_TC"
+            },
+            {
+              "signal": "SPI_TRG4",
+              "source": "EXTI4_TRG"
+            },
+            {
+              "signal": "SPI_TRG5",
+              "source": "EXTI8_TRG"
+            },
+            {
+              "signal": "SPI_TRG6",
+              "source": "LPTIM1_CH1"
+            },
+            {
+              "signal": "SPI_TRG8",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "SPI_TRG10",
+              "source": "RTC_ALRA_TRG"
+            },
+            {
+              "signal": "SPI_TRG11",
+              "source": "RTC_WUT_TRG"
             }
           ]
         },
@@ -2270,6 +2620,88 @@
               "signal": "COM",
               "dma": "GPDMA1",
               "request": 25
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_TI1_IN1",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "TIMX_TI1_IN2",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "TIMX_ITR_IN1",
+              "source": "TIM2_TRGO"
+            },
+            {
+              "signal": "TIMX_ITR_IN2",
+              "source": "TIM3_TRGO"
+            },
+            {
+              "signal": "TIMX_ETR_IN1",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "TIMX_ETR_IN2",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "TIMX_ETR_IN11",
+              "source": "ADC4_AWD1"
+            },
+            {
+              "signal": "TIMX_ETR_IN12",
+              "source": "ADC4_AWD2"
+            },
+            {
+              "signal": "TIMX_ETR_IN13",
+              "source": "ADC4_AWD3"
+            },
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "TIMX_BRK2_IN1",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "TIMX_BRK2_IN2",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "TIMX_SYS_BRK_IN0",
+              "source": "CORTEX_M33_LOCKUP"
+            },
+            {
+              "signal": "TIMX_SYS_BRK_IN1",
+              "source": "PVD"
+            },
+            {
+              "signal": "TIMX_SYS_BRK_IN2",
+              "source": "SRAM_PARITY_ERROR"
+            },
+            {
+              "signal": "TIMX_SYS_BRK_IN3",
+              "source": "FLASH_ECC_ERROR"
+            },
+            {
+              "signal": "TIMX_SYS_BRK_IN4",
+              "source": "HSE32_HSECSS"
+            },
+            {
+              "signal": "TIMX_OCREF_CLR_IN0",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "TIMX_OCREF_CLR_IN1",
+              "source": "COMP2_OUT"
             }
           ]
         },
@@ -2902,6 +3334,56 @@
               "dma": "GPDMA1",
               "request": 12
             }
+          ],
+          "triggers": [
+            {
+              "signal": "USART_TRG0",
+              "source": "GPDMA_CH0_TC"
+            },
+            {
+              "signal": "USART_TRG1",
+              "source": "GPDMA_CH1_TC"
+            },
+            {
+              "signal": "USART_TRG2",
+              "source": "GPDMA_CH2_TC"
+            },
+            {
+              "signal": "USART_TRG3",
+              "source": "GPDMA_CH3_TC"
+            },
+            {
+              "signal": "USART_TRG4",
+              "source": "EXTI6_TRG"
+            },
+            {
+              "signal": "USART_TRG5",
+              "source": "EXTI9_TRG"
+            },
+            {
+              "signal": "USART_TRG6",
+              "source": "LPTIM1_CH1"
+            },
+            {
+              "signal": "USART_TRG7",
+              "source": "LPTIM2_CH1"
+            },
+            {
+              "signal": "USART_TRG8",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "USART_TRG9",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "USART_TRG10",
+              "source": "RTC_ALRA_TRG"
+            },
+            {
+              "signal": "USART_TRG11",
+              "source": "RTC_WUT_TRG"
+            }
           ]
         },
         {
@@ -3011,6 +3493,56 @@
               "signal": "TX",
               "dma": "GPDMA1",
               "request": 14
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "USART_TRG0",
+              "source": "GPDMA_CH0_TC"
+            },
+            {
+              "signal": "USART_TRG1",
+              "source": "GPDMA_CH1_TC"
+            },
+            {
+              "signal": "USART_TRG2",
+              "source": "GPDMA_CH2_TC"
+            },
+            {
+              "signal": "USART_TRG3",
+              "source": "GPDMA_CH3_TC"
+            },
+            {
+              "signal": "USART_TRG4",
+              "source": "EXTI6_TRG"
+            },
+            {
+              "signal": "USART_TRG5",
+              "source": "EXTI9_TRG"
+            },
+            {
+              "signal": "USART_TRG6",
+              "source": "LPTIM1_CH1"
+            },
+            {
+              "signal": "USART_TRG7",
+              "source": "LPTIM2_CH1"
+            },
+            {
+              "signal": "USART_TRG8",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "USART_TRG9",
+              "source": "COMP2_OUT"
+            },
+            {
+              "signal": "USART_TRG10",
+              "source": "RTC_ALRA_TRG"
+            },
+            {
+              "signal": "USART_TRG11",
+              "source": "RTC_WUT_TRG"
             }
           ]
         },

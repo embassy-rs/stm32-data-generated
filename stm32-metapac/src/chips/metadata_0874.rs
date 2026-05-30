@@ -85,7 +85,28 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             dma: Some("GPDMA1"),
             request: Some(0),
         }],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "ADC_TRG0",
+                source: "TIM1_TRGO2",
+            },
+            PeripheralTrigger {
+                signal: "ADC_TRG1",
+                source: "TIM1_OC4",
+            },
+            PeripheralTrigger {
+                signal: "ADC_TRG2",
+                source: "TIM2_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_TRG5",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "ADC_TRG7",
+                source: "EXTI15_TRG",
+            },
+        ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "ADC4",
@@ -963,7 +984,56 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(7),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "I2C_TRG0",
+                source: "GPDMA_CH0_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG1",
+                source: "GPDMA_CH1_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG2",
+                source: "GPDMA_CH2_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG3",
+                source: "GPDMA_CH3_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG4",
+                source: "EXTI5_TRG",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG5",
+                source: "EXTI9_TRG",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG6",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG7",
+                source: "LPTIM2_CH1",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG8",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG9",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG10",
+                source: "RTC_ALRA_TRG",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG11",
+                source: "RTC_WUT_TRG",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "ER",
@@ -1054,7 +1124,56 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(56),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "I2C_TRG0",
+                source: "GPDMA_CH0_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG1",
+                source: "GPDMA_CH1_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG2",
+                source: "GPDMA_CH2_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG3",
+                source: "GPDMA_CH3_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG4",
+                source: "EXTI5_TRG",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG5",
+                source: "EXTI9_TRG",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG6",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG7",
+                source: "LPTIM2_CH1",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG8",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG9",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG10",
+                source: "RTC_ALRA_TRG",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG11",
+                source: "RTC_WUT_TRG",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "ER",
@@ -1170,7 +1289,52 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(10),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "I2C_TRG0",
+                source: "GPDMA_CH0_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG1",
+                source: "GPDMA_CH1_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG2",
+                source: "GPDMA_CH2_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG3",
+                source: "GPDMA_CH3_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG4",
+                source: "EXTI5_TRG",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG5",
+                source: "EXTI8_TRG",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG6",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG8",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG9",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG10",
+                source: "RTC_ALRA_TRG",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG11",
+                source: "RTC_WUT_TRG",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "ER",
@@ -1266,7 +1430,56 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(59),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "I2C_TRG0",
+                source: "GPDMA_CH0_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG1",
+                source: "GPDMA_CH1_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG2",
+                source: "GPDMA_CH2_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG3",
+                source: "GPDMA_CH3_TC",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG4",
+                source: "EXTI5_TRG",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG5",
+                source: "EXTI9_TRG",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG6",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG7",
+                source: "LPTIM2_CH1",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG8",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG9",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG10",
+                source: "RTC_ALRA_TRG",
+            },
+            PeripheralTrigger {
+                signal: "I2C_TRG11",
+                source: "RTC_WUT_TRG",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "ER",
@@ -1450,7 +1663,76 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(48),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG0",
+                source: "LPTIM1_ETR",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG1",
+                source: "RTC_ALRA_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG2",
+                source: "RTC_ALRB_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG3",
+                source: "TAMP_TRG1",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG4",
+                source: "TAMP_TRG2",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG6",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG7",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN1_MUX0",
+                source: "LPTIM1_IN1",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN1_MUX1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN2_MUX0",
+                source: "LPTIM1_IN2",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN2_MUX1",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IC1_MUX0",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IC1_MUX1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IC1_MUX2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IC2_MUX0",
+                source: "LPTIM1_CH2",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IC2_MUX1",
+                source: "LSI",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IC2_MUX2",
+                source: "LSE",
+            },
+        ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "LPTIM1",
@@ -1585,7 +1867,76 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(51),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG0",
+                source: "LPTIM2_ETR",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG1",
+                source: "RTC_ALRA_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG2",
+                source: "RTC_ALRB_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG3",
+                source: "TAMP_TRG1",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG4",
+                source: "GPDMA_CH0_TC",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG5",
+                source: "GPDMA_CH1_TC",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG6",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG7",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN1_MUX0",
+                source: "LPTIM2_IN1",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN1_MUX1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN2_MUX0",
+                source: "LPTIM2_IN2",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN2_MUX1",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IC1_MUX0",
+                source: "LPTIM2_CH1",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IC1_MUX1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IC1_MUX2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IC2_MUX0",
+                source: "LPTIM2_CH2",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IC2_MUX1",
+                source: "HSI16_DIV256",
+            },
+        ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "LPTIM2",
@@ -2513,7 +2864,56 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(2),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "SPI_TRG0",
+                source: "GPDMA_CH0_TC",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG1",
+                source: "GPDMA_CH1_TC",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG2",
+                source: "GPDMA_CH2_TC",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG3",
+                source: "GPDMA_CH3_TC",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG4",
+                source: "EXTI4_TRG",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG5",
+                source: "EXTI9_TRG",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG6",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG7",
+                source: "LPTIM2_CH1",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG8",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG9",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG10",
+                source: "RTC_ALRA_TRG",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG11",
+                source: "RTC_WUT_TRG",
+            },
+        ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "SPI1",
@@ -2655,7 +3055,56 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(53),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "SPI_TRG0",
+                source: "GPDMA_CH0_TC",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG1",
+                source: "GPDMA_CH1_TC",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG2",
+                source: "GPDMA_CH2_TC",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG3",
+                source: "GPDMA_CH3_TC",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG4",
+                source: "EXTI4_TRG",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG5",
+                source: "EXTI9_TRG",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG6",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG7",
+                source: "LPTIM2_CH1",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG8",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG9",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG10",
+                source: "RTC_ALRA_TRG",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG11",
+                source: "RTC_WUT_TRG",
+            },
+        ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "SPI2",
@@ -2802,7 +3251,48 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(4),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "SPI_TRG0",
+                source: "GPDMA_CH0_TC",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG1",
+                source: "GPDMA_CH1_TC",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG2",
+                source: "GPDMA_CH2_TC",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG3",
+                source: "GPDMA_CH3_TC",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG4",
+                source: "EXTI4_TRG",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG5",
+                source: "EXTI8_TRG",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG6",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG8",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG10",
+                source: "RTC_ALRA_TRG",
+            },
+            PeripheralTrigger {
+                signal: "SPI_TRG11",
+                source: "RTC_WUT_TRG",
+            },
+        ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "SPI3",
@@ -3084,7 +3574,88 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(25),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ITR_IN1",
+                source: "TIM2_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ITR_IN2",
+                source: "TIM3_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ETR_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ETR_IN2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ETR_IN11",
+                source: "ADC4_AWD1",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ETR_IN12",
+                source: "ADC4_AWD2",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ETR_IN13",
+                source: "ADC4_AWD3",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK2_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK2_IN2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_SYS_BRK_IN0",
+                source: "CORTEX_M33_LOCKUP",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_SYS_BRK_IN1",
+                source: "PVD",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_SYS_BRK_IN2",
+                source: "SRAM_PARITY_ERROR",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_SYS_BRK_IN3",
+                source: "FLASH_ECC_ERROR",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_SYS_BRK_IN4",
+                source: "HSE32_HSECSS",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_OCREF_CLR_IN0",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_OCREF_CLR_IN1",
+                source: "COMP2_OUT",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -4162,7 +4733,56 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(12),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "USART_TRG0",
+                source: "GPDMA_CH0_TC",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG1",
+                source: "GPDMA_CH1_TC",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG2",
+                source: "GPDMA_CH2_TC",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG3",
+                source: "GPDMA_CH3_TC",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG4",
+                source: "EXTI6_TRG",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG5",
+                source: "EXTI9_TRG",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG6",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG7",
+                source: "LPTIM2_CH1",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG8",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG9",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG10",
+                source: "RTC_ALRA_TRG",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG11",
+                source: "RTC_WUT_TRG",
+            },
+        ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "USART1",
@@ -4319,7 +4939,56 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(14),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "USART_TRG0",
+                source: "GPDMA_CH0_TC",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG1",
+                source: "GPDMA_CH1_TC",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG2",
+                source: "GPDMA_CH2_TC",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG3",
+                source: "GPDMA_CH3_TC",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG4",
+                source: "EXTI6_TRG",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG5",
+                source: "EXTI9_TRG",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG6",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG7",
+                source: "LPTIM2_CH1",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG8",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG9",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG10",
+                source: "RTC_ALRA_TRG",
+            },
+            PeripheralTrigger {
+                signal: "USART_TRG11",
+                source: "RTC_WUT_TRG",
+            },
+        ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "USART2",

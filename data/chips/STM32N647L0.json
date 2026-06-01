@@ -8435,11 +8435,6 @@
         {
           "name": "TIM1",
           "address": 1107296256,
-          "registers": {
-            "kind": "timer",
-            "version": "v2",
-            "block": "TIM_ADV"
-          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": "PCLK2_TIM",
@@ -8772,11 +8767,6 @@
         {
           "name": "TIM10",
           "address": 1073754112,
-          "registers": {
-            "kind": "timer",
-            "version": "v2",
-            "block": "TIM_1CH"
-          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1_TIM",
@@ -8867,11 +8857,6 @@
         {
           "name": "TIM12",
           "address": 1073747968,
-          "registers": {
-            "kind": "timer",
-            "version": "v2",
-            "block": "TIM_2CH"
-          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1_TIM",
@@ -8922,11 +8907,6 @@
         {
           "name": "TIM13",
           "address": 1073748992,
-          "registers": {
-            "kind": "timer",
-            "version": "v2",
-            "block": "TIM_1CH"
-          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1_TIM",
@@ -8977,11 +8957,6 @@
         {
           "name": "TIM14",
           "address": 1073750016,
-          "registers": {
-            "kind": "timer",
-            "version": "v2",
-            "block": "TIM_1CH"
-          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1_TIM",
@@ -9032,11 +9007,6 @@
         {
           "name": "TIM15",
           "address": 1107312640,
-          "registers": {
-            "kind": "timer",
-            "version": "v2",
-            "block": "TIM_2CH_CMP"
-          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": "PCLK2_TIM",
@@ -9194,11 +9164,6 @@
         {
           "name": "TIM16",
           "address": 1107313664,
-          "registers": {
-            "kind": "timer",
-            "version": "v2",
-            "block": "TIM_1CH_CMP"
-          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": "PCLK2_TIM",
@@ -9306,11 +9271,6 @@
         {
           "name": "TIM17",
           "address": 1107314688,
-          "registers": {
-            "kind": "timer",
-            "version": "v2",
-            "block": "TIM_1CH_CMP"
-          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": "PCLK2_TIM",
@@ -9413,11 +9373,6 @@
         {
           "name": "TIM18",
           "address": 1107311616,
-          "registers": {
-            "kind": "timer",
-            "version": "v2",
-            "block": "TIM_BASIC"
-          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": "PCLK2_TIM",
@@ -9488,11 +9443,6 @@
         {
           "name": "TIM2",
           "address": 1073741824,
-          "registers": {
-            "kind": "timer",
-            "version": "v2",
-            "block": "TIM_GP32"
-          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1_TIM",
@@ -9650,11 +9600,6 @@
         {
           "name": "TIM3",
           "address": 1073742848,
-          "registers": {
-            "kind": "timer",
-            "version": "v2",
-            "block": "TIM_GP16"
-          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1_TIM",
@@ -9812,11 +9757,6 @@
         {
           "name": "TIM4",
           "address": 1073743872,
-          "registers": {
-            "kind": "timer",
-            "version": "v2",
-            "block": "TIM_GP32"
-          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1_TIM",
@@ -9964,11 +9904,6 @@
         {
           "name": "TIM5",
           "address": 1073744896,
-          "registers": {
-            "kind": "timer",
-            "version": "v2",
-            "block": "TIM_GP32"
-          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1_TIM",
@@ -10096,11 +10031,6 @@
         {
           "name": "TIM6",
           "address": 1073745920,
-          "registers": {
-            "kind": "timer",
-            "version": "v2",
-            "block": "TIM_BASIC"
-          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1_TIM",
@@ -10151,11 +10081,6 @@
         {
           "name": "TIM7",
           "address": 1073746944,
-          "registers": {
-            "kind": "timer",
-            "version": "v2",
-            "block": "TIM_BASIC"
-          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1_TIM",
@@ -10208,7 +10133,7 @@
           "address": 1107315712,
           "registers": {
             "kind": "timer",
-            "version": "v2",
+            "version": "v3",
             "block": "TIM_2CH"
           },
           "rcc": {

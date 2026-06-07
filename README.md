@@ -84,7 +84,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [OTG](#otg) | | | | v1 | v1 | | v1 | v1 | | | | v1 | | | v1 | v1 | | v1 | | | v1 | | | v1 | |
 | [PKA](#pka) | | ❌ | | | | | | | | | v1a | v1a | | | | v1c | v1c | ❌ | | ❌ | v1b | v1c | v1c | v1a | v1c |
 | [PSSI](#pssi) | | | | | | | | | | | v1 | v1, v1_h7rs | | | | v1 | | v1 | | | v1 | | | | |
-| [PWR](#pwr) | c0 | ❌ | f0, f0x0 | f1 | f2 | f3 | f4 | f7 | g0 | g4 | h5, h50 | h7rm0399, h7rm0433, h7rm0455, h7rm0468, h7rs | l0 | l1 | l4 | l4 | l5 | n6 | u0 | u3 | u5 | wb, wb55 | wb0 | wba | wl5 |
+| [PWR](#pwr) | c0 | c5 | f0, f0x0 | f1 | f2 | f3 | f4 | f7 | g0 | g4 | h5, h50 | h7rm0399, h7rm0433, h7rm0455, h7rm0468, h7rs | l0 | l1 | l4 | l4 | l5 | n6 | u0 | u3 | u5 | wb, wb55 | wb0 | wba | wl5 |
 | [QUADSPI](#quadspi) | | | | | | | v1 | v1 | | v1 | | v1 | | | v1 | | | | | | | v1 | | | |
 | [RADIO](#radio) | | | | | | | | | | | | | | | | | | | | | | | v1 | | |
 | [RAMCFG](#ramcfg) | | ❌ | | | | | | | | | h5 | | | | | | | h5 | | u5 | u5 | | | wba | |
@@ -761,6 +761,7 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **c0**: STM32C0
+- **c5**: STM32C5 Series
 - **f0**: STM32F0
 - **f0x0**: STM32F0
 - **f1**: STM32F1
@@ -790,7 +791,6 @@ The following table shows which STM32 peripheral versions are supported across d
 - **wb55**: STM32WB
 - **wba**: STM32WBA
 - **wl5**: STM32WL
-- **❌ Unsupported**: STM32C5 Series
 
 ### QUADSPI
 

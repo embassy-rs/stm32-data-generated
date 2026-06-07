@@ -1346,6 +1346,11 @@
         {
           "name": "PWR",
           "address": 1140983808,
+          "registers": {
+            "kind": "pwr",
+            "version": "c5",
+            "block": "PWR"
+          },
           "pins": [
             {
               "pin": "PA0",

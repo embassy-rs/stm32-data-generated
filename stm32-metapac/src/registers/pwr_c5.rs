@@ -1,0 +1,1307 @@
+
+use crate::metadata::ir::*;
+pub(crate) static REGISTERS: IR = IR {
+    blocks: &[
+        Block {
+            name: "Pwr",
+            extends: None,
+            description: Some(
+                "PWR register block.",
+            ),
+            items: &[
+                BlockItem {
+                    name: "pwr_pmcr",
+                    description: Some(
+                        "PWR power mode control register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x0,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "PwrPmcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pwr_pmsr",
+                    description: Some(
+                        "PWR status register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x4,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "PwrPmsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pwr_rtccr",
+                    description: Some(
+                        "PWR RTC domain control register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x24,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "PwrRtccr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pwr_vmcr",
+                    description: Some(
+                        "PWR voltage monitor control register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x34,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "PwrVmcr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pwr_vmsr",
+                    description: Some(
+                        "PWR voltage monitor status register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x3c,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "PwrVmsr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pwr_wuscr",
+                    description: Some(
+                        "PWR wake-up status clear register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x40,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Write,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "PwrWuscr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pwr_wusr",
+                    description: Some(
+                        "PWR wake-up status register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x44,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::Read,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "PwrWusr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pwr_wucr",
+                    description: Some(
+                        "PWR wake-up configuration register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x48,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "PwrWucr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pwr_ioretr",
+                    description: Some(
+                        "PWR I/O retention register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x50,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "PwrIoretr",
+                            ),
+                        },
+                    ),
+                },
+                BlockItem {
+                    name: "pwr_privcfgr",
+                    description: Some(
+                        "PWR privilege configuration register.",
+                    ),
+                    array: None,
+                    byte_offset: 0x104,
+                    inner: BlockItemInner::Register(
+                        Register {
+                            access: Access::ReadWrite,
+                            bit_size: 32,
+                            fieldset: Some(
+                                "PwrPrivcfgr",
+                            ),
+                        },
+                    ),
+                },
+            ],
+        },
+    ],
+    fieldsets: &[
+        FieldSet {
+            name: "PwrIoretr",
+            extends: None,
+            description: Some(
+                "PWR I/O retention register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "ioreten",
+                    description: Some(
+                        "IO retention enable.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Reten",
+                    ),
+                },
+                Field {
+                    name: "jtagioreten",
+                    description: Some(
+                        "IO retention enable for JTAG I/Os.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Reten",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "PwrPmcr",
+            extends: None,
+            description: Some(
+                "PWR power mode control register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "lpms",
+                    description: Some(
+                        "low-power mode selection.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Lpms",
+                    ),
+                },
+                Field {
+                    name: "cssf",
+                    description: Some(
+                        "Clear Standby and Stop flags (always read as 0).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 7,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cssf",
+                    ),
+                },
+                Field {
+                    name: "flps",
+                    description: Some(
+                        "Flash memory low-power mode in Stop mode.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Flps",
+                    ),
+                },
+                Field {
+                    name: "sram2_3_so",
+                    description: Some(
+                        "AHB SRAM2 block 3 shut-off in Stop mode.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 23,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "SramSo",
+                    ),
+                },
+                Field {
+                    name: "sram2_1_so",
+                    description: Some(
+                        "AHB SRAM2 block 1 shut-off in Stop mode.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "SramSo",
+                    ),
+                },
+                Field {
+                    name: "sram2_lso",
+                    description: Some(
+                        "AHB SRAM2 16-Kbyte shut-off in Stop mode (lower address).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "SramSo",
+                    ),
+                },
+                Field {
+                    name: "sram2_2_so",
+                    description: Some(
+                        "AHB SRAM2 block 2 shut-off in Stop mode.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "SramSo",
+                    ),
+                },
+                Field {
+                    name: "sram2_hso",
+                    description: Some(
+                        "AHB SRAM2 48-Kbyte shut-off in Stop mode (higher address).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 25,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "SramSo",
+                    ),
+                },
+                Field {
+                    name: "sram1so",
+                    description: Some(
+                        "AHB SRAM1 block 1shut-off in Stop mode.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "SramSo",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "PwrPmsr",
+            extends: None,
+            description: Some(
+                "PWR status register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "stopf",
+                    description: Some(
+                        "Stop flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "sbf",
+                    description: Some(
+                        "System standby flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "PwrPrivcfgr",
+            extends: None,
+            description: Some(
+                "PWR privilege configuration register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "priv_",
+                    description: Some(
+                        "PWR nonsecure functions privilege configuration.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "PwrRtccr",
+            extends: None,
+            description: Some(
+                "PWR RTC domain control register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "drtcp",
+                    description: Some(
+                        "Disable RTC domain write protection.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "PwrVmcr",
+            extends: None,
+            description: Some(
+                "PWR voltage monitor control register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pvde",
+                    description: Some(
+                        "PVD enable.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "PwrVmsr",
+            extends: None,
+            description: Some(
+                "PWR voltage monitor status register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "pvdo",
+                    description: Some(
+                        "programmable voltage detect output.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Pvdo",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "PwrWucr",
+            extends: None,
+            description: Some(
+                "PWR wake-up configuration register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wupen1",
+                    description: Some(
+                        "Enable wake-up pin WKUPx (x=5to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wupen",
+                    ),
+                },
+                Field {
+                    name: "wupen2",
+                    description: Some(
+                        "Enable wake-up pin WKUPx (x=5to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wupen",
+                    ),
+                },
+                Field {
+                    name: "wupen3",
+                    description: Some(
+                        "Enable wake-up pin WKUPx (x=7to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wupen",
+                    ),
+                },
+                Field {
+                    name: "wupen4",
+                    description: Some(
+                        "Enable wake-up pin WKUPx (x=5to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wupen",
+                    ),
+                },
+                Field {
+                    name: "wupen5",
+                    description: Some(
+                        "Enable wake-up pin WKUPx (x=5to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wupen",
+                    ),
+                },
+                Field {
+                    name: "wupen6",
+                    description: Some(
+                        "Enable wake-up pin WKUPx (x=7to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wupen",
+                    ),
+                },
+                Field {
+                    name: "wupen7",
+                    description: Some(
+                        "Enable wake-up pin WKUPx (x=7to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wupen",
+                    ),
+                },
+                Field {
+                    name: "wupp1",
+                    description: Some(
+                        "Wake-up pin polarity bit for WKUPx (x=5to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 8,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wupp",
+                    ),
+                },
+                Field {
+                    name: "wupp2",
+                    description: Some(
+                        "Wake-up pin polarity bit for WKUPx (x=5to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 9,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wupp",
+                    ),
+                },
+                Field {
+                    name: "wupp3",
+                    description: Some(
+                        "Wake-up pin polarity bit for WKUPx (x=7to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 10,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wupp",
+                    ),
+                },
+                Field {
+                    name: "wupp4",
+                    description: Some(
+                        "Wake-up pin polarity bit for WKUPx (x=5to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 11,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wupp",
+                    ),
+                },
+                Field {
+                    name: "wupp5",
+                    description: Some(
+                        "Wake-up pin polarity bit for WKUPx (x=5to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 12,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wupp",
+                    ),
+                },
+                Field {
+                    name: "wupp6",
+                    description: Some(
+                        "Wake-up pin polarity bit for WKUPx (x=7to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 13,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wupp",
+                    ),
+                },
+                Field {
+                    name: "wupp7",
+                    description: Some(
+                        "Wake-up pin polarity bit for WKUPx (x=7to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 14,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Wupp",
+                    ),
+                },
+                Field {
+                    name: "wuppupd1",
+                    description: Some(
+                        "Wake-up pin pull configuration for WKUPx (x=5to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 16,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Wuppupd",
+                    ),
+                },
+                Field {
+                    name: "wuppupd2",
+                    description: Some(
+                        "Wake-up pin pull configuration for WKUPx (x=5to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 18,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Wuppupd",
+                    ),
+                },
+                Field {
+                    name: "wuppupd3",
+                    description: Some(
+                        "Wake-up pin pull configuration for WKUPx (x=7to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 20,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Wuppupd",
+                    ),
+                },
+                Field {
+                    name: "wuppupd4",
+                    description: Some(
+                        "Wake-up pin pull configuration for WKUPx (x=5to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 22,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Wuppupd",
+                    ),
+                },
+                Field {
+                    name: "wuppupd5",
+                    description: Some(
+                        "Wake-up pin pull configuration for WKUPx (x=5to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 24,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Wuppupd",
+                    ),
+                },
+                Field {
+                    name: "wuppupd6",
+                    description: Some(
+                        "Wake-up pin pull configuration for WKUPx (x=7to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 26,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Wuppupd",
+                    ),
+                },
+                Field {
+                    name: "wuppupd7",
+                    description: Some(
+                        "Wake-up pin pull configuration for WKUPx (x=7to1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 28,
+                        },
+                    ),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some(
+                        "Wuppupd",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "PwrWuscr",
+            extends: None,
+            description: Some(
+                "PWR wake-up status clear register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "cwuf1",
+                    description: Some(
+                        "clear wake-up pin flag for WUFx (x=5 to 1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cwuf",
+                    ),
+                },
+                Field {
+                    name: "cwuf2",
+                    description: Some(
+                        "clear wake-up pin flag for WUFx (x=5 to 1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cwuf",
+                    ),
+                },
+                Field {
+                    name: "cwuf3",
+                    description: Some(
+                        "clear wake-up pin flag for WUFx (x=7 to 1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cwuf",
+                    ),
+                },
+                Field {
+                    name: "cwuf4",
+                    description: Some(
+                        "clear wake-up pin flag for WUFx (x=5 to 1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cwuf",
+                    ),
+                },
+                Field {
+                    name: "cwuf5",
+                    description: Some(
+                        "clear wake-up pin flag for WUFx (x=5 to 1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cwuf",
+                    ),
+                },
+                Field {
+                    name: "cwuf6",
+                    description: Some(
+                        "clear wake-up pin flag for WUFx (x=7 to 1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cwuf",
+                    ),
+                },
+                Field {
+                    name: "cwuf7",
+                    description: Some(
+                        "clear wake-up pin flag for WUFx (x=7 to 1).",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some(
+                        "Cwuf",
+                    ),
+                },
+            ],
+        },
+        FieldSet {
+            name: "PwrWusr",
+            extends: None,
+            description: Some(
+                "PWR wake-up status register.",
+            ),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "wuf1",
+                    description: Some(
+                        "wake-up pin WUFx flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 0,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf2",
+                    description: Some(
+                        "wake-up pin WUFx flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 1,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf3",
+                    description: Some(
+                        "wake-up pin WUFx flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 2,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf4",
+                    description: Some(
+                        "wake-up pin WUFx flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 3,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf5",
+                    description: Some(
+                        "wake-up pin WUFx flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 4,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf6",
+                    description: Some(
+                        "wake-up pin WUFx flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 5,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "wuf7",
+                    description: Some(
+                        "wake-up pin WUFx flag.",
+                    ),
+                    bit_offset: BitOffset::Regular(
+                        RegularBitOffset {
+                            offset: 6,
+                        },
+                    ),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+    ],
+    enums: &[
+        Enum {
+            name: "Cssf",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Clear",
+                    description: Some(
+                        "STOPF and SBF flags cleared.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Cwuf",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Clear",
+                    description: Some(
+                        "Writing 1 clears the WUFx wake-up pin flag (bit is cleared to 0 by hardware).",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Flps",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Normal",
+                    description: Some(
+                        "Flash memory remains in normal mode when the system enters Stop mode (quickrestart time).",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Stop",
+                    description: Some(
+                        "Flash memory enters low-power mode when the system enters Stop mode(low-power consumption).",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Lpms",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Standby",
+                    description: Some(
+                        "Standby mode when entering DeepSleep.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Stop0",
+                    description: Some(
+                        "Stop 0 mode when entering DeepSleep.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Stop1",
+                    description: Some(
+                        "Stop 1mode when entering DeepSleep..",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Pvdo",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Above",
+                    description: Some(
+                        "Vless thansub>DDless than/sub> is equal or higher than the PVD threshold.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Below",
+                    description: Some(
+                        "Vless thansub>DDless than/sub> is lower than the PVD threshold.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Reten",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Disabled",
+                    description: Some(
+                        "I/O retention mode is disabled.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Retained",
+                    description: Some(
+                        "I/O retention mode is enabling for all I/Os except the I/O support the standby functionality and PA13, PA14, PA15, and PB4.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "SramSo",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Disabled",
+                    description: Some(
+                        "RAM content is lost in Stop mode.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Retained",
+                    description: Some(
+                        "RAM content is kept in Stop mode.",
+                    ),
+                    value: 0,
+                },
+            ],
+        },
+        Enum {
+            name: "Wupen",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Disabled",
+                    description: Some(
+                        "A rising or falling edge on WUPx pin wakes up the system from Standby mode.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Enabled",
+                    description: Some(
+                        "An event on WUPx pin does not wake-up the system from Standby mode.",
+                    ),
+                    value: 0,
+                },
+            ],
+        },
+        Enum {
+            name: "Wupp",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Falling",
+                    description: Some(
+                        "Detection on low level (falling edge).",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Rising",
+                    description: Some(
+                        "Detection on high level (rising edge).",
+                    ),
+                    value: 0,
+                },
+            ],
+        },
+        Enum {
+            name: "Wuppupd",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Disabled",
+                    description: Some(
+                        "No pull-up.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "PullDown",
+                    description: Some(
+                        "Pull-down.",
+                    ),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "PullUp",
+                    description: Some(
+                        "Pull-up.",
+                    ),
+                    value: 1,
+                },
+            ],
+        },
+    ],
+};

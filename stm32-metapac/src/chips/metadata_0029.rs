@@ -1231,7 +1231,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "PWR",
         address: 0x44020800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "pwr",
+            version: "c5",
+            block: "PWR",
+            ir: &pwr::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -3568,6 +3573,8 @@ pub mod exti;
 pub mod gpio;
 #[path = "../registers/lpdma_v1.rs"]
 pub mod lpdma;
+#[path = "../registers/pwr_c5.rs"]
+pub mod pwr;
 #[path = "../registers/rcc_c5.rs"]
 pub mod rcc;
 #[path = "../registers/timer_v3.rs"]

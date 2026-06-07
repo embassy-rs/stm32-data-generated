@@ -379,7 +379,7 @@ pub const LPUART1: *mut () = 0x4400_2400usize as _;
 pub const LPTIM1: *mut () = 0x4400_4400usize as _;
 pub const RTC: *mut () = 0x4400_7800usize as _;
 pub const TAMP: *mut () = 0x4400_7c00usize as _;
-pub const PWR: *mut () = 0x4402_0800usize as _;
+pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4402_0800usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4402_0c00usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4402_2000usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x4402_4000usize as _) };
@@ -402,6 +402,8 @@ pub mod fdcanram;
 pub mod gpio;
 #[path = "../../peripherals/lpdma_v1.rs"]
 pub mod lpdma;
+#[path = "../../peripherals/pwr_c5.rs"]
+pub mod pwr;
 #[path = "../../peripherals/rcc_c5.rs"]
 pub mod rcc;
 #[path = "../../peripherals/timer_v3.rs"]

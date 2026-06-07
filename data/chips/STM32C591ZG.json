@@ -1178,7 +1178,12 @@
         },
         {
           "name": "DBGMCU",
-          "address": 1140998144
+          "address": 1140998144,
+          "registers": {
+            "kind": "dbgmcu",
+            "version": "c5",
+            "block": "DBGMCU"
+          }
         },
         {
           "name": "ETH1",

@@ -31,8 +31,8 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     (
         "dbgmcu",
         &[
-            "c0", "f0", "f1", "f2", "f3", "f4", "f7", "g0", "g4", "h5", "h7", "l0", "l1", "l4", "l5", "n6", "u0", "u3",
-            "u5", "wb", "wba", "wl",
+            "c0", "c5", "f0", "f1", "f2", "f3", "f4", "f7", "g0", "g4", "h5", "h7", "l0", "l1", "l4", "l5", "n6", "u0",
+            "u3", "u5", "wb", "wba", "wl",
         ],
     ),
     ("dcache", &["v1"]),

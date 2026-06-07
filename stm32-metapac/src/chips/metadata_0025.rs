@@ -115,7 +115,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PA13(JTMS/SWDIO)",
+                pin: "PA13",
                 signal: "OUT",
                 af: None,
             },
@@ -310,7 +310,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             stop_mode: StopMode::Stop1,
         }),
         pins: &[PeripheralPin {
-            pin: "PB3(JTDO/TRACESWO)",
+            pin: "PB3",
             signal: "SYNC",
             af: None,
         }],
@@ -626,7 +626,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PA15(JTDI)",
+                pin: "PA15",
                 signal: "SMBA",
                 af: None,
             },
@@ -656,17 +656,17 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PB3(JTDO/TRACESWO)",
+                pin: "PB3",
                 signal: "SCL",
                 af: None,
             },
             PeripheralPin {
-                pin: "PB3(JTDO/TRACESWO)",
+                pin: "PB3",
                 signal: "SDA",
                 af: None,
             },
             PeripheralPin {
-                pin: "PB4(NJTRST)",
+                pin: "PB4",
                 signal: "SDA",
                 af: None,
             },
@@ -696,12 +696,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PH0-OSC_IN(PH0)",
+                pin: "PH0",
                 signal: "SDA",
                 af: None,
             },
             PeripheralPin {
-                pin: "PH1-OSC_OUT(PH1)",
+                pin: "PH1",
                 signal: "SCL",
                 af: None,
             },
@@ -752,12 +752,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PB3(JTDO/TRACESWO)",
+                pin: "PB3",
                 signal: "SDA",
                 af: None,
             },
             PeripheralPin {
-                pin: "PB4(NJTRST)",
+                pin: "PB4",
                 signal: "SCL",
                 af: None,
             },
@@ -946,7 +946,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PA15(JTDI)",
+                pin: "PA15",
                 signal: "ETR",
                 af: None,
             },
@@ -971,7 +971,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PB4(NJTRST)",
+                pin: "PB4",
                 signal: "CH2",
                 af: None,
             },
@@ -981,7 +981,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PH2-BOOT0",
+                pin: "PH2",
                 signal: "IN2",
                 af: None,
             },
@@ -1061,12 +1061,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PB3(JTDO/TRACESWO)",
+                pin: "PB3",
                 signal: "TX",
                 af: None,
             },
             PeripheralPin {
-                pin: "PB4(NJTRST)",
+                pin: "PB4",
                 signal: "CTS",
                 af: None,
             },
@@ -1237,27 +1237,27 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PC14-OSC32_IN(OSC32_IN)",
+                pin: "PC14",
                 signal: "OSC32_IN",
                 af: None,
             },
             PeripheralPin {
-                pin: "PC15-OSC32_OUT(OSC32_OUT)",
+                pin: "PC15",
                 signal: "OSC32_OUT",
                 af: None,
             },
             PeripheralPin {
-                pin: "PH0-OSC_IN(PH0)",
+                pin: "PH0",
                 signal: "OSC_IN",
                 af: None,
             },
             PeripheralPin {
-                pin: "PH1-OSC_OUT(PH1)",
+                pin: "PH1",
                 signal: "OSC_OUT",
                 af: None,
             },
             PeripheralPin {
-                pin: "PH2-BOOT0",
+                pin: "PH2",
                 signal: "MCO1",
                 af: None,
             },
@@ -1391,12 +1391,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PA15(JTDI)",
+                pin: "PA15",
                 signal: "I2S_WS",
                 af: None,
             },
             PeripheralPin {
-                pin: "PA15(JTDI)",
+                pin: "PA15",
                 signal: "NSS",
                 af: None,
             },
@@ -1481,22 +1481,22 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PB3(JTDO/TRACESWO)",
+                pin: "PB3",
                 signal: "I2S_CK",
                 af: None,
             },
             PeripheralPin {
-                pin: "PB3(JTDO/TRACESWO)",
+                pin: "PB3",
                 signal: "SCK",
                 af: None,
             },
             PeripheralPin {
-                pin: "PB4(NJTRST)",
+                pin: "PB4",
                 signal: "I2S_SDI",
                 af: None,
             },
             PeripheralPin {
-                pin: "PB4(NJTRST)",
+                pin: "PB4",
                 signal: "MISO",
                 af: None,
             },
@@ -1616,12 +1616,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PA15(JTDI)",
+                pin: "PA15",
                 signal: "I2S_WS",
                 af: None,
             },
             PeripheralPin {
-                pin: "PA15(JTDI)",
+                pin: "PA15",
                 signal: "NSS",
                 af: None,
             },
@@ -1776,12 +1776,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PB4(NJTRST)",
+                pin: "PB4",
                 signal: "I2S_WS",
                 af: None,
             },
             PeripheralPin {
-                pin: "PB4(NJTRST)",
+                pin: "PB4",
                 signal: "NSS",
                 af: None,
             },
@@ -1889,7 +1889,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PA15(JTDI)",
+                pin: "PA15",
                 signal: "CH2N",
                 af: None,
             },
@@ -2007,12 +2007,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PC14-OSC32_IN(OSC32_IN)",
+                pin: "PC14",
                 signal: "CH1",
                 af: None,
             },
             PeripheralPin {
-                pin: "PC15-OSC32_OUT(OSC32_OUT)",
+                pin: "PC15",
                 signal: "CH2",
                 af: None,
             },
@@ -2102,7 +2102,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PB4(NJTRST)",
+                pin: "PB4",
                 signal: "CH1",
                 af: None,
             },
@@ -2172,12 +2172,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PA15(JTDI)",
+                pin: "PA15",
                 signal: "CH1",
                 af: None,
             },
             PeripheralPin {
-                pin: "PA15(JTDI)",
+                pin: "PA15",
                 signal: "ETR",
                 af: None,
             },
@@ -2212,7 +2212,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PB3(JTDO/TRACESWO)",
+                pin: "PB3",
                 signal: "CH2",
                 af: None,
             },
@@ -2375,7 +2375,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PA15(JTDI)",
+                pin: "PA15",
                 signal: "CH4N",
                 af: None,
             },
@@ -2445,12 +2445,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PB3(JTDO/TRACESWO)",
+                pin: "PB3",
                 signal: "CH1",
                 af: None,
             },
             PeripheralPin {
-                pin: "PB4(NJTRST)",
+                pin: "PB4",
                 signal: "CH2",
                 af: None,
             },
@@ -2515,7 +2515,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PA15(JTDI)",
+                pin: "PA15",
                 signal: "RTS",
                 af: None,
             },
@@ -2590,12 +2590,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PB3(JTDO/TRACESWO)",
+                pin: "PB3",
                 signal: "RTS",
                 af: None,
             },
             PeripheralPin {
-                pin: "PB4(NJTRST)",
+                pin: "PB4",
                 signal: "CTS",
                 af: None,
             },
@@ -2676,7 +2676,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PA15(JTDI)",
+                pin: "PA15",
                 signal: "TX",
                 af: None,
             },
@@ -2721,17 +2721,17 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PB3(JTDO/TRACESWO)",
+                pin: "PB3",
                 signal: "CK",
                 af: None,
             },
             PeripheralPin {
-                pin: "PB3(JTDO/TRACESWO)",
+                pin: "PB3",
                 signal: "TX",
                 af: None,
             },
             PeripheralPin {
-                pin: "PB4(NJTRST)",
+                pin: "PB4",
                 signal: "RX",
                 af: None,
             },
@@ -2821,7 +2821,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PA15(JTDI)",
+                pin: "PA15",
                 signal: "CK",
                 af: None,
             },
@@ -3208,20 +3208,14 @@ pub(crate) static PINS: &[Pin] = &[
     Pin { name: "PA10" },
     Pin { name: "PA11" },
     Pin { name: "PA12" },
-    Pin {
-        name: "PA13(JTMS/SWDIO)",
-    },
-    Pin {
-        name: "PA14(JTCK/SWCLK)",
-    },
-    Pin { name: "PA15(JTDI)" },
+    Pin { name: "PA13" },
+    Pin { name: "PA14" },
+    Pin { name: "PA15" },
     Pin { name: "PB0" },
     Pin { name: "PB1" },
     Pin { name: "PB2" },
-    Pin {
-        name: "PB3(JTDO/TRACESWO)",
-    },
-    Pin { name: "PB4(NJTRST)" },
+    Pin { name: "PB3" },
+    Pin { name: "PB4" },
     Pin { name: "PB5" },
     Pin { name: "PB6" },
     Pin { name: "PB7" },
@@ -3233,20 +3227,12 @@ pub(crate) static PINS: &[Pin] = &[
     Pin { name: "PB14" },
     Pin { name: "PB15" },
     Pin { name: "PC13" },
-    Pin {
-        name: "PC14-OSC32_IN(OSC32_IN)",
-    },
-    Pin {
-        name: "PC15-OSC32_OUT(OSC32_OUT)",
-    },
+    Pin { name: "PC14" },
+    Pin { name: "PC15" },
     Pin { name: "PE2" },
-    Pin {
-        name: "PH0-OSC_IN(PH0)",
-    },
-    Pin {
-        name: "PH1-OSC_OUT(PH1)",
-    },
-    Pin { name: "PH2-BOOT0" },
+    Pin { name: "PH0" },
+    Pin { name: "PH1" },
+    Pin { name: "PH2" },
 ];
 #[path = "../registers/cordic_v1.rs"]
 pub mod cordic;

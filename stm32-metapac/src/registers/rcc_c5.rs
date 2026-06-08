@@ -7,14 +7,14 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("RCC register block"),
         items: &[
             BlockItem {
-                name: "cr1",
+                name: "cr",
                 description: Some("RCC clock control register"),
                 array: None,
                 byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Cr1"),
+                    fieldset: Some("Cr"),
                 }),
             },
             BlockItem {
@@ -29,14 +29,14 @@ pub(crate) static REGISTERS: IR = IR {
                 }),
             },
             BlockItem {
-                name: "cfgr1",
+                name: "cfgr",
                 description: Some("RCC clock configuration register1"),
                 array: None,
                 byte_offset: 0x1c,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Cfgr1"),
+                    fieldset: Some("Cfgr"),
                 }),
             },
             BlockItem {
@@ -2290,7 +2290,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cfgr1",
+            name: "Cfgr",
             extends: None,
             description: Some("RCC clock configuration register1"),
             bit_size: 32,
@@ -2309,7 +2309,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Sws"),
+                    enumm: Some("Sw"),
                 },
                 Field {
                     name: "stopwuck",
@@ -2714,7 +2714,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Cr1",
+            name: "Cr",
             extends: None,
             description: Some("RCC clock control register"),
             bit_size: 32,
@@ -3720,6 +3720,11 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
+                    name: "Disabled",
+                    description: Some("Prescaler disabled (default after reset)"),
+                    value: 0,
+                },
+                EnumVariant {
                     name: "Div1",
                     description: Some("Division by 1 (bypass)"),
                     value: 1,
@@ -3793,11 +3798,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "Div9",
                     description: Some("Division by 9"),
                     value: 9,
-                },
-                EnumVariant {
-                    name: "PrescalerDisabled",
-                    description: Some("Prescaler disabled (default after reset)"),
-                    value: 0,
                 },
             ],
         },
@@ -4142,33 +4142,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "Psis",
                     description: Some("PSIS selected as system clock (psis_ck)"),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Sws",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "Hse",
-                    description: Some("HSE used as system clock (hse_ck)"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "Hsidiv3",
-                    description: Some("HSIDIV3 used as system clock (hsidiv3_ck) (default after reset)"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Hsis",
-                    description: Some("HSIS used as system clock (hsis_ck)"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Psis",
-                    description: Some("PSIS used as system clock (psis_ck)"),
                     value: 3,
                 },
             ],

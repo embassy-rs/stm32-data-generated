@@ -21,7 +21,7 @@ impl Rcc {
     }
     #[doc = "RCC clock control register"]
     #[inline(always)]
-    pub const fn cr1(self) -> crate::common::Reg<regs::Cr1, crate::common::RW> {
+    pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "RCC clock control register"]
@@ -31,7 +31,7 @@ impl Rcc {
     }
     #[doc = "RCC clock configuration register1"]
     #[inline(always)]
-    pub const fn cfgr1(self) -> crate::common::Reg<regs::Cfgr1, crate::common::RW> {
+    pub const fn cfgr(self) -> crate::common::Reg<regs::Cfgr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x1cusize) as _) }
     }
     #[doc = "RCC CPU domain clock configuration register 2"]
@@ -3589,8 +3589,8 @@ pub mod regs {
     #[doc = "RCC clock configuration register1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Cfgr1(pub u32);
-    impl Cfgr1 {
+    pub struct Cfgr(pub u32);
+    impl Cfgr {
         #[doc = "System clock and trace clock switch"]
         #[must_use]
         #[inline(always)]
@@ -3606,13 +3606,13 @@ pub mod regs {
         #[doc = "System clock switch status"]
         #[must_use]
         #[inline(always)]
-        pub const fn sws(&self) -> super::vals::Sws {
+        pub const fn sws(&self) -> super::vals::Sw {
             let val = (self.0 >> 3usize) & 0x03;
-            super::vals::Sws::from_bits(val as u8)
+            super::vals::Sw::from_bits(val as u8)
         }
         #[doc = "System clock switch status"]
         #[inline(always)]
-        pub const fn set_sws(&mut self, val: super::vals::Sws) {
+        pub const fn set_sws(&mut self, val: super::vals::Sw) {
             self.0 = (self.0 & !(0x03 << 3usize)) | (((val.to_bits() as u32) & 0x03) << 3usize);
         }
         #[doc = "System clock selection after a wake-up from system Stop mode"]
@@ -3688,15 +3688,15 @@ pub mod regs {
             self.0 = (self.0 & !(0x07 << 29usize)) | (((val.to_bits() as u32) & 0x07) << 29usize);
         }
     }
-    impl Default for Cfgr1 {
+    impl Default for Cfgr {
         #[inline(always)]
-        fn default() -> Cfgr1 {
-            Cfgr1(0)
+        fn default() -> Cfgr {
+            Cfgr(0)
         }
     }
-    impl core::fmt::Debug for Cfgr1 {
+    impl core::fmt::Debug for Cfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Cfgr1")
+            f.debug_struct("Cfgr")
                 .field("sw", &self.sw())
                 .field("sws", &self.sws())
                 .field("stopwuck", &self.stopwuck())
@@ -3709,9 +3709,9 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Cfgr1 {
+    impl defmt::Format for Cfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ sw: {:?}, sws: {:?}, stopwuck: {:?}, rtcpre: {=u16:?}, mco1pre: {:?}, mco1sel: {:?}, mco2pre: {:?}, mco2sel: {:?} }}" , self . sw () , self . sws () , self . stopwuck () , self . rtcpre () , self . mco1pre () , self . mco1sel () , self . mco2pre () , self . mco2sel ())
+            defmt :: write ! (f , "Cfgr {{ sw: {:?}, sws: {:?}, stopwuck: {:?}, rtcpre: {=u16:?}, mco1pre: {:?}, mco1sel: {:?}, mco2pre: {:?}, mco2sel: {:?} }}" , self . sw () , self . sws () , self . stopwuck () , self . rtcpre () , self . mco1pre () , self . mco1sel () , self . mco2pre () , self . mco2sel ())
         }
     }
     #[doc = "RCC CPU domain clock configuration register 2"]
@@ -4333,8 +4333,8 @@ pub mod regs {
     #[doc = "RCC clock control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Cr1(pub u32);
-    impl Cr1 {
+    pub struct Cr(pub u32);
+    impl Cr {
         #[doc = "HSIS clock enable"]
         #[must_use]
         #[inline(always)]
@@ -4564,15 +4564,15 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
         }
     }
-    impl Default for Cr1 {
+    impl Default for Cr {
         #[inline(always)]
-        fn default() -> Cr1 {
-            Cr1(0)
+        fn default() -> Cr {
+            Cr(0)
         }
     }
-    impl core::fmt::Debug for Cr1 {
+    impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Cr1")
+            f.debug_struct("Cr")
                 .field("hsison", &self.hsison())
                 .field("hsidiv3on", &self.hsidiv3on())
                 .field("hsikon", &self.hsikon())
@@ -4596,9 +4596,9 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Cr1 {
+    impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ hsison: {=bool:?}, hsidiv3on: {=bool:?}, hsikon: {=bool:?}, hsikeron: {=bool:?}, hsisrdy: {=bool:?}, hsidiv3rdy: {=bool:?}, hsikrdy: {=bool:?}, psison: {=bool:?}, psidiv3on: {=bool:?}, psikon: {=bool:?}, psikeron: {=bool:?}, psisrdy: {=bool:?}, psidiv3rdy: {=bool:?}, psikrdy: {=bool:?}, hseon: {=bool:?}, hserdy: {=bool:?}, hsebyp: {=bool:?}, hsecsson: {=bool:?}, hseext: {:?} }}" , self . hsison () , self . hsidiv3on () , self . hsikon () , self . hsikeron () , self . hsisrdy () , self . hsidiv3rdy () , self . hsikrdy () , self . psison () , self . psidiv3on () , self . psikon () , self . psikeron () , self . psisrdy () , self . psidiv3rdy () , self . psikrdy () , self . hseon () , self . hserdy () , self . hsebyp () , self . hsecsson () , self . hseext ())
+            defmt :: write ! (f , "Cr {{ hsison: {=bool:?}, hsidiv3on: {=bool:?}, hsikon: {=bool:?}, hsikeron: {=bool:?}, hsisrdy: {=bool:?}, hsidiv3rdy: {=bool:?}, hsikrdy: {=bool:?}, psison: {=bool:?}, psidiv3on: {=bool:?}, psikon: {=bool:?}, psikeron: {=bool:?}, psisrdy: {=bool:?}, psidiv3rdy: {=bool:?}, psikrdy: {=bool:?}, hseon: {=bool:?}, hserdy: {=bool:?}, hsebyp: {=bool:?}, hsecsson: {=bool:?}, hseext: {:?} }}" , self . hsison () , self . hsidiv3on () , self . hsikon () , self . hsikeron () , self . hsisrdy () , self . hsidiv3rdy () , self . hsikrdy () , self . psison () , self . psidiv3on () , self . psikon () , self . psikeron () , self . psisrdy () , self . psidiv3rdy () , self . psikrdy () , self . hseon () , self . hserdy () , self . hsebyp () , self . hsecsson () , self . hseext ())
         }
     }
     #[doc = "RCC clock control register"]
@@ -5772,7 +5772,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mcopre {
         #[doc = "Prescaler disabled (default after reset)"]
-        PrescalerDisabled = 0x0,
+        Disabled = 0x0,
         #[doc = "Division by 1 (bypass)"]
         Div1 = 0x01,
         #[doc = "Division by 2"]
@@ -6211,41 +6211,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Sw) -> u8 {
             Sw::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Sws {
-        #[doc = "HSIDIV3 used as system clock (hsidiv3_ck) (default after reset)"]
-        Hsidiv3 = 0x0,
-        #[doc = "HSIS used as system clock (hsis_ck)"]
-        Hsis = 0x01,
-        #[doc = "HSE used as system clock (hse_ck)"]
-        Hse = 0x02,
-        #[doc = "PSIS used as system clock (psis_ck)"]
-        Psis = 0x03,
-    }
-    impl Sws {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sws {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Sws {
-        #[inline(always)]
-        fn from(val: u8) -> Sws {
-            Sws::from_bits(val)
-        }
-    }
-    impl From<Sws> for u8 {
-        #[inline(always)]
-        fn from(val: Sws) -> u8 {
-            Sws::to_bits(val)
         }
     }
     #[repr(u8)]

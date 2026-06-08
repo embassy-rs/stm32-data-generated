@@ -2093,7 +2093,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SYSCFG",
         address: 0x44000400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "syscfg",
+            version: "c5",
+            block: "SYSCFG",
+            ir: &syscfg::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -4106,6 +4111,8 @@ pub mod lpdma;
 pub mod pwr;
 #[path = "../registers/rcc_c5.rs"]
 pub mod rcc;
+#[path = "../registers/syscfg_c5.rs"]
+pub mod syscfg;
 #[path = "../registers/timer_v3.rs"]
 pub mod timer;
 #[path = "../registers/uid_v1.rs"]

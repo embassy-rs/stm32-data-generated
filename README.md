@@ -102,7 +102,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [SPDIFRX](#spdifrx) | | | | | | | v1 | v1 | | | | h7 | | | | | | ❌ | | | | | | | |
 | [SPI](#spi) | v3_i2s | ❌ | v3, v3_i2s | v1, v1_i2s | v2_i2s | v3, v3_i2s | v2_i2s | v3_i2s | v3_i2s | v3_i2s | v5_i2s | v4_i2s, v5_i2s | v2, v2_i2s | v2, v2_i2s | v3 | v3 | v3 | v5 | v3 | v6 | v6 | v3 | v3 | v6 | v3_i2s |
 | [SWPMI](#swpmi) | | | | | | | | | | | | ❌ | | | ❌ | | | | | | | | | | |
-| [SYSCFG](#syscfg) | c0 | ❌ | f0 | | f2 | f3 | f4 | f7 | g0 | g4 | h5, h50 | h7, h7od, h7rs | l0 | l1 | l4 | l4 | l5 | n6 | u0 | u3 | u5 | wb | wb0 | wba | wl5, wle |
+| [SYSCFG](#syscfg) | c0 | c5 | f0 | | f2 | f3 | f4 | f7 | g0 | g4 | h5, h50 | h7, h7od, h7rs | l0 | l1 | l4 | l4 | l5 | n6 | u0 | u3 | u5 | wb | wb0 | wba | wl5, wle |
 | [TAMP](#tamp) | | ❌ | | | | | | | g0 | g4 | h5 | ❌ | | | | | l5 | ❌ | ❌ | ❌ | u5 | | | wba | wl |
 | [TIM](#tim) | | | | | | | | | | | | | | | | | | ❌ | | | | | | | |
 | [TIMER](#timer) | v3 | v3 | v1 | v1 | v1 | v1 | v1 | v1 | v3 | v2 | v2 | v3 | l0 | v1 | v1 | v1 | v1 | v2 | v2 | v2 | v2 | v3 | v3 | v2 | v3 |
@@ -990,6 +990,7 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **c0**: STM32C0
+- **c5**: STM32C5 Series
 - **f0**: STM32F0
 - **f2**: STM32F2
 - **f3**: STM32F3
@@ -1015,7 +1016,6 @@ The following table shows which STM32 peripheral versions are supported across d
 - **wba**: STM32WBA
 - **wl5**: STM32WL
 - **wle**: STM32WL
-- **❌ Unsupported**: STM32C5 Series
 
 ### TAMP
 

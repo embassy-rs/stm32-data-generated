@@ -448,7 +448,7 @@ pub const ADC3_COMMON: *mut () = 0x4202_db00usize as _;
 pub const HASH: *mut () = 0x420c_0400usize as _;
 pub const RNG: *mut () = 0x420c_0800usize as _;
 pub const PKA: *mut () = 0x420c_2000usize as _;
-pub const SYSCFG: *mut () = 0x4400_0400usize as _;
+pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400usize as _) };
 pub const LPUART1: *mut () = 0x4400_2400usize as _;
 pub const LPTIM1: *mut () = 0x4400_4400usize as _;
 pub const RTC: *mut () = 0x4400_7800usize as _;
@@ -479,6 +479,8 @@ pub mod lpdma;
 pub mod pwr;
 #[path = "../../peripherals/rcc_c5.rs"]
 pub mod rcc;
+#[path = "../../peripherals/syscfg_c5.rs"]
+pub mod syscfg;
 #[path = "../../peripherals/timer_v3.rs"]
 pub mod timer;
 #[path = "../../peripherals/uid_v1.rs"]

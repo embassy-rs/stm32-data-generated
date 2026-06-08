@@ -139,8 +139,8 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     (
         "syscfg",
         &[
-            "c0", "f0", "f2", "f3", "f4", "f7", "g0", "g4", "h5", "h50", "h7", "h7od", "h7rs", "l0", "l1", "l4", "l5",
-            "n6", "u0", "u3", "u5", "wb", "wb0", "wba", "wl5", "wle",
+            "c0", "c5", "f0", "f2", "f3", "f4", "f7", "g0", "g4", "h5", "h50", "h7", "h7od", "h7rs", "l0", "l1", "l4",
+            "l5", "n6", "u0", "u3", "u5", "wb", "wb0", "wba", "wl5", "wle",
         ],
     ),
     ("tamp", &["g0", "g4", "h5", "l5", "u5", "wba", "wl"]),

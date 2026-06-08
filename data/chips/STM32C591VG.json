@@ -2559,7 +2559,12 @@
         },
         {
           "name": "SYSCFG",
-          "address": 1140851712
+          "address": 1140851712,
+          "registers": {
+            "kind": "syscfg",
+            "version": "c5",
+            "block": "SYSCFG"
+          }
         },
         {
           "name": "TAMP",

@@ -3,10 +3,10 @@ use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
     blocks: &[
         Block {
-            name: "Sbs",
+            name: "Syscfg",
             extends: None,
             description: Some(
-                "SBS register block.",
+                "System configuration controller",
             ),
             items: &[
                 BlockItem {

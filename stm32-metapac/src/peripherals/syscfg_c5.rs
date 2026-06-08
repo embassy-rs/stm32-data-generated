@@ -3,14 +3,14 @@
 #![allow(clippy::unnecessary_cast)]
 #![allow(clippy::erasing_op)]
 
-#[doc = "SBS register block."]
+#[doc = "System configuration controller"]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct Sbs {
+pub struct Syscfg {
     ptr: *mut u8,
 }
-unsafe impl Send for Sbs {}
-unsafe impl Sync for Sbs {}
-impl Sbs {
+unsafe impl Send for Syscfg {}
+unsafe impl Sync for Syscfg {}
+impl Syscfg {
     #[inline(always)]
     pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
         Self { ptr: ptr as _ }

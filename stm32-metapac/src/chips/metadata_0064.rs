@@ -3301,6 +3301,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "CC",
                 interrupt: "TIM1_CC",
             },
+            PeripheralInterrupt {
+                signal: "UP",
+                interrupt: "TIM1_UP",
+            },
         ],
         afio: None,
     },
@@ -4970,10 +4974,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
         ],
         triggers: &[],
-        interrupts: &[PeripheralInterrupt {
-            signal: "CC",
-            interrupt: "TIM8_CC",
-        }],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "CC",
+                interrupt: "TIM8_CC",
+            },
+            PeripheralInterrupt {
+                signal: "UP",
+                interrupt: "TIM8_UP",
+            },
+        ],
         afio: None,
     },
     Peripheral {

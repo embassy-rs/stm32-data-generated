@@ -3003,6 +3003,10 @@
             {
               "signal": "CC",
               "interrupt": "TIM1_CC"
+            },
+            {
+              "signal": "UP",
+              "interrupt": "TIM1_UP"
             }
           ],
           "dma_channels": [
@@ -4246,6 +4250,10 @@
             {
               "signal": "CC",
               "interrupt": "TIM8_CC"
+            },
+            {
+              "signal": "UP",
+              "interrupt": "TIM8_UP"
             }
           ],
           "dma_channels": [

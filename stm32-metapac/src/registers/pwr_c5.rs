@@ -10,7 +10,7 @@ pub(crate) static REGISTERS: IR = IR {
             ),
             items: &[
                 BlockItem {
-                    name: "pwr_pmcr",
+                    name: "pmcr",
                     description: Some(
                         "PWR power mode control register.",
                     ),
@@ -21,13 +21,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "PwrPmcr",
+                                "Pmcr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "pwr_pmsr",
+                    name: "pmsr",
                     description: Some(
                         "PWR status register.",
                     ),
@@ -38,13 +38,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "PwrPmsr",
+                                "Pmsr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "pwr_rtccr",
+                    name: "rtccr",
                     description: Some(
                         "PWR RTC domain control register.",
                     ),
@@ -55,13 +55,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "PwrRtccr",
+                                "Rtccr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "pwr_vmcr",
+                    name: "vmcr",
                     description: Some(
                         "PWR voltage monitor control register.",
                     ),
@@ -72,13 +72,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "PwrVmcr",
+                                "Vmcr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "pwr_vmsr",
+                    name: "vmsr",
                     description: Some(
                         "PWR voltage monitor status register.",
                     ),
@@ -89,13 +89,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "PwrVmsr",
+                                "Vmsr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "pwr_wuscr",
+                    name: "wuscr",
                     description: Some(
                         "PWR wake-up status clear register.",
                     ),
@@ -106,13 +106,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Write,
                             bit_size: 32,
                             fieldset: Some(
-                                "PwrWuscr",
+                                "Wuscr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "pwr_wusr",
+                    name: "wusr",
                     description: Some(
                         "PWR wake-up status register.",
                     ),
@@ -123,13 +123,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::Read,
                             bit_size: 32,
                             fieldset: Some(
-                                "PwrWusr",
+                                "Wusr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "pwr_wucr",
+                    name: "wucr",
                     description: Some(
                         "PWR wake-up configuration register.",
                     ),
@@ -140,13 +140,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "PwrWucr",
+                                "Wucr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "pwr_ioretr",
+                    name: "ioretr",
                     description: Some(
                         "PWR I/O retention register.",
                     ),
@@ -157,13 +157,13 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "PwrIoretr",
+                                "Ioretr",
                             ),
                         },
                     ),
                 },
                 BlockItem {
-                    name: "pwr_privcfgr",
+                    name: "privcfgr",
                     description: Some(
                         "PWR privilege configuration register.",
                     ),
@@ -174,7 +174,7 @@ pub(crate) static REGISTERS: IR = IR {
                             access: Access::ReadWrite,
                             bit_size: 32,
                             fieldset: Some(
-                                "PwrPrivcfgr",
+                                "Privcfgr",
                             ),
                         },
                     ),
@@ -184,7 +184,7 @@ pub(crate) static REGISTERS: IR = IR {
     ],
     fieldsets: &[
         FieldSet {
-            name: "PwrIoretr",
+            name: "Ioretr",
             extends: None,
             description: Some(
                 "PWR I/O retention register.",
@@ -226,7 +226,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "PwrPmcr",
+            name: "Pmcr",
             extends: None,
             description: Some(
                 "PWR power mode control register.",
@@ -380,7 +380,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "PwrPmsr",
+            name: "Pmsr",
             extends: None,
             description: Some(
                 "PWR status register.",
@@ -418,7 +418,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "PwrPrivcfgr",
+            name: "Privcfgr",
             extends: None,
             description: Some(
                 "PWR privilege configuration register.",
@@ -442,7 +442,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "PwrRtccr",
+            name: "Rtccr",
             extends: None,
             description: Some(
                 "PWR RTC domain control register.",
@@ -466,7 +466,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "PwrVmcr",
+            name: "Vmcr",
             extends: None,
             description: Some(
                 "PWR voltage monitor control register.",
@@ -490,7 +490,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "PwrVmsr",
+            name: "Vmsr",
             extends: None,
             description: Some(
                 "PWR voltage monitor status register.",
@@ -516,7 +516,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "PwrWucr",
+            name: "Wucr",
             extends: None,
             description: Some(
                 "PWR wake-up configuration register.",
@@ -862,7 +862,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "PwrWuscr",
+            name: "Wuscr",
             extends: None,
             description: Some(
                 "PWR wake-up status clear register.",
@@ -984,7 +984,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "PwrWusr",
+            name: "Wusr",
             extends: None,
             description: Some(
                 "PWR wake-up status register.",

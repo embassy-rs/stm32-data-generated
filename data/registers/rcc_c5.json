@@ -1791,8 +1791,8 @@
         "bit_size": 1
       },
       {
-        "name": "HSISRDYC",
-        "description": "HSIS ready interrupt clear",
+        "name": "HSIRDYC",
+        "description": "HSI ready interrupt clear",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -1809,8 +1809,8 @@
         "bit_size": 1
       },
       {
-        "name": "PSISRDYC",
-        "description": "PSIS ready interrupt clear",
+        "name": "PSIRDYC",
+        "description": "PSI ready interrupt clear",
         "bit_offset": 5,
         "bit_size": 1
       },
@@ -1862,8 +1862,8 @@
         "bit_size": 1
       },
       {
-        "name": "HSISRDYIE",
-        "description": "HSIS ready interrupt enable",
+        "name": "HSIRDYIE",
+        "description": "HSI ready interrupt enable",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -1880,8 +1880,8 @@
         "bit_size": 1
       },
       {
-        "name": "PSISRDYIE",
-        "description": "PSIS ready interrupt enable",
+        "name": "PSIRDYIE",
+        "description": "PSI ready interrupt enable",
         "bit_offset": 5,
         "bit_size": 1
       },
@@ -1921,8 +1921,8 @@
         "bit_size": 1
       },
       {
-        "name": "HSISRDYF",
-        "description": "HSIS ready interrupt flag",
+        "name": "HSIRDYF",
+        "description": "HSI ready interrupt flag",
         "bit_offset": 2,
         "bit_size": 1
       },
@@ -1939,8 +1939,8 @@
         "bit_size": 1
       },
       {
-        "name": "PSISRDYF",
-        "description": "PSIS ready interrupt flag",
+        "name": "PSIRDYF",
+        "description": "PSI ready interrupt flag",
         "bit_offset": 5,
         "bit_size": 1
       },
@@ -1974,8 +1974,8 @@
     "description": "RCC clock control register",
     "fields": [
       {
-        "name": "HSISON",
-        "description": "HSIS clock enable",
+        "name": "HSION",
+        "description": "HSI clock enable",
         "bit_offset": 0,
         "bit_size": 1
       },
@@ -1998,8 +1998,8 @@
         "bit_size": 1
       },
       {
-        "name": "HSISRDY",
-        "description": "HSIS clock ready flag",
+        "name": "HSIRDY",
+        "description": "HSI clock ready flag",
         "bit_offset": 4,
         "bit_size": 1
       },
@@ -2016,8 +2016,8 @@
         "bit_size": 1
       },
       {
-        "name": "PSISON",
-        "description": "PSIS clock enable",
+        "name": "PSION",
+        "description": "PSI clock enable",
         "bit_offset": 8,
         "bit_size": 1
       },
@@ -2040,8 +2040,8 @@
         "bit_size": 1
       },
       {
-        "name": "PSISRDY",
-        "description": "PSIS clock ready flag",
+        "name": "PSIRDY",
+        "description": "PSI clock ready flag",
         "bit_offset": 12,
         "bit_size": 1
       },
@@ -2335,8 +2335,8 @@
         "value": 0
       },
       {
-        "name": "PSIS",
-        "description": "psis_ck selected as kernel clock (default after reset)",
+        "name": "PSI",
+        "description": "psi_ck selected as kernel clock (default after reset)",
         "value": 1
       },
       {
@@ -2410,8 +2410,8 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "PSIS",
-        "description": "psis_ck selected as kernel clock",
+        "name": "PSI",
+        "description": "psi_ck selected as kernel clock",
         "value": 1
       },
       {
@@ -2435,8 +2435,8 @@
         "value": 1
       },
       {
-        "name": "PSIS",
-        "description": "psis_ck selected as kernel clock",
+        "name": "PSI",
+        "description": "psi_ck selected as kernel clock",
         "value": 2
       },
       {
@@ -2555,8 +2555,8 @@
         "value": 0
       },
       {
-        "name": "PSIS",
-        "description": "psis_ck selected as kernel clock",
+        "name": "PSI",
+        "description": "psi_ck selected as kernel clock",
         "value": 1
       },
       {
@@ -2574,6 +2574,11 @@
   "enum/HPRE": {
     "bit_size": 4,
     "variants": [
+      {
+        "name": "Div1",
+        "description": "rcc_hclk = sys_ck",
+        "value": 0
+      },
       {
         "name": "Div2",
         "description": "rcc_hclk = sys_ck / 2",
@@ -2955,13 +2960,13 @@
         "value": 5
       },
       {
-        "name": "PSIS",
-        "description": "PSIS clock selected (psis_ck)",
+        "name": "PSI",
+        "description": "PSI clock selected (psi_ck)",
         "value": 6
       },
       {
-        "name": "HSIS",
-        "description": "HSIS clock selected (hsis_ck)",
+        "name": "HSI",
+        "description": "HSI clock selected (hsi_ck)",
         "value": 7
       }
     ]
@@ -2970,23 +2975,28 @@
     "bit_size": 3,
     "variants": [
       {
+        "name": "Div1",
+        "description": "rcc_pclk = rcc_hclk1",
+        "value": 0
+      },
+      {
         "name": "Div2",
-        "description": "rcc_pclk1 = rcc_hclk1 / 2",
+        "description": "rcc_pclk = rcc_hclk1 / 2",
         "value": 4
       },
       {
         "name": "Div4",
-        "description": "rcc_pclk1 = rcc_hclk1 / 4",
+        "description": "rcc_pclk = rcc_hclk1 / 4",
         "value": 5
       },
       {
         "name": "Div8",
-        "description": "rcc_pclk1 = rcc_hclk1 / 8",
+        "description": "rcc_pclk = rcc_hclk1 / 8",
         "value": 6
       },
       {
         "name": "Div16",
-        "description": "rcc_pclk1 = rcc_hclk1 / 16",
+        "description": "rcc_pclk = rcc_hclk1 / 16",
         "value": 7
       }
     ]
@@ -3215,8 +3225,8 @@
         "value": 0
       },
       {
-        "name": "HSIS",
-        "description": "HSIS selected as wake-up clock from system Stop mode",
+        "name": "HSI",
+        "description": "HSI selected as wake-up clock from system Stop mode",
         "value": 1
       }
     ]
@@ -3230,8 +3240,8 @@
         "value": 0
       },
       {
-        "name": "HSIS",
-        "description": "HSIS selected as system clock (hsis_ck)",
+        "name": "HSI",
+        "description": "HSI selected as system clock (hsi_ck)",
         "value": 1
       },
       {
@@ -3240,8 +3250,8 @@
         "value": 2
       },
       {
-        "name": "PSIS",
-        "description": "PSIS selected as system clock (psis_ck)",
+        "name": "PSI",
+        "description": "PSI selected as system clock (psi_ck)",
         "value": 3
       }
     ]

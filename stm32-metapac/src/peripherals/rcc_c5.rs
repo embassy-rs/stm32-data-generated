@@ -3897,16 +3897,16 @@ pub mod regs {
         pub const fn set_lserdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "HSIS ready interrupt clear"]
+        #[doc = "HSI ready interrupt clear"]
         #[must_use]
         #[inline(always)]
-        pub const fn hsisrdyc(&self) -> bool {
+        pub const fn hsirdyc(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "HSIS ready interrupt clear"]
+        #[doc = "HSI ready interrupt clear"]
         #[inline(always)]
-        pub const fn set_hsisrdyc(&mut self, val: bool) {
+        pub const fn set_hsirdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "HSIDIV3 ready interrupt clear"]
@@ -3933,16 +3933,16 @@ pub mod regs {
         pub const fn set_hsikrdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
-        #[doc = "PSIS ready interrupt clear"]
+        #[doc = "PSI ready interrupt clear"]
         #[must_use]
         #[inline(always)]
-        pub const fn psisrdyc(&self) -> bool {
+        pub const fn psirdyc(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
             val != 0
         }
-        #[doc = "PSIS ready interrupt clear"]
+        #[doc = "PSI ready interrupt clear"]
         #[inline(always)]
-        pub const fn set_psisrdyc(&mut self, val: bool) {
+        pub const fn set_psirdyc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "PSIDIV3 ready interrupt clear"]
@@ -4017,10 +4017,10 @@ pub mod regs {
             f.debug_struct("Cicr")
                 .field("lsirdyc", &self.lsirdyc())
                 .field("lserdyc", &self.lserdyc())
-                .field("hsisrdyc", &self.hsisrdyc())
+                .field("hsirdyc", &self.hsirdyc())
                 .field("hsidiv3rdyc", &self.hsidiv3rdyc())
                 .field("hsikrdyc", &self.hsikrdyc())
-                .field("psisrdyc", &self.psisrdyc())
+                .field("psirdyc", &self.psirdyc())
                 .field("psidiv3rdyc", &self.psidiv3rdyc())
                 .field("psikrdyc", &self.psikrdyc())
                 .field("hserdyc", &self.hserdyc())
@@ -4032,7 +4032,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cicr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cicr {{ lsirdyc: {=bool:?}, lserdyc: {=bool:?}, hsisrdyc: {=bool:?}, hsidiv3rdyc: {=bool:?}, hsikrdyc: {=bool:?}, psisrdyc: {=bool:?}, psidiv3rdyc: {=bool:?}, psikrdyc: {=bool:?}, hserdyc: {=bool:?}, hsecssc: {=bool:?}, lsecssc: {=bool:?} }}" , self . lsirdyc () , self . lserdyc () , self . hsisrdyc () , self . hsidiv3rdyc () , self . hsikrdyc () , self . psisrdyc () , self . psidiv3rdyc () , self . psikrdyc () , self . hserdyc () , self . hsecssc () , self . lsecssc ())
+            defmt :: write ! (f , "Cicr {{ lsirdyc: {=bool:?}, lserdyc: {=bool:?}, hsirdyc: {=bool:?}, hsidiv3rdyc: {=bool:?}, hsikrdyc: {=bool:?}, psirdyc: {=bool:?}, psidiv3rdyc: {=bool:?}, psikrdyc: {=bool:?}, hserdyc: {=bool:?}, hsecssc: {=bool:?}, lsecssc: {=bool:?} }}" , self . lsirdyc () , self . lserdyc () , self . hsirdyc () , self . hsidiv3rdyc () , self . hsikrdyc () , self . psirdyc () , self . psidiv3rdyc () , self . psikrdyc () , self . hserdyc () , self . hsecssc () , self . lsecssc ())
         }
     }
     #[doc = "RCC clock source interrupt enable register"]
@@ -4064,16 +4064,16 @@ pub mod regs {
         pub const fn set_lserdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "HSIS ready interrupt enable"]
+        #[doc = "HSI ready interrupt enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn hsisrdyie(&self) -> bool {
+        pub const fn hsirdyie(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "HSIS ready interrupt enable"]
+        #[doc = "HSI ready interrupt enable"]
         #[inline(always)]
-        pub const fn set_hsisrdyie(&mut self, val: bool) {
+        pub const fn set_hsirdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "HSIDIV3 ready interrupt enable"]
@@ -4100,16 +4100,16 @@ pub mod regs {
         pub const fn set_hsikrdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
-        #[doc = "PSIS ready interrupt enable"]
+        #[doc = "PSI ready interrupt enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn psisrdyie(&self) -> bool {
+        pub const fn psirdyie(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
             val != 0
         }
-        #[doc = "PSIS ready interrupt enable"]
+        #[doc = "PSI ready interrupt enable"]
         #[inline(always)]
-        pub const fn set_psisrdyie(&mut self, val: bool) {
+        pub const fn set_psirdyie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "PSIDIV3 ready interrupt enable"]
@@ -4160,10 +4160,10 @@ pub mod regs {
             f.debug_struct("Cier")
                 .field("lsirdyie", &self.lsirdyie())
                 .field("lserdyie", &self.lserdyie())
-                .field("hsisrdyie", &self.hsisrdyie())
+                .field("hsirdyie", &self.hsirdyie())
                 .field("hsidiv3rdyie", &self.hsidiv3rdyie())
                 .field("hsikrdyie", &self.hsikrdyie())
-                .field("psisrdyie", &self.psisrdyie())
+                .field("psirdyie", &self.psirdyie())
                 .field("psidiv3rdyie", &self.psidiv3rdyie())
                 .field("psikrdyie", &self.psikrdyie())
                 .field("hserdyie", &self.hserdyie())
@@ -4173,7 +4173,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cier {{ lsirdyie: {=bool:?}, lserdyie: {=bool:?}, hsisrdyie: {=bool:?}, hsidiv3rdyie: {=bool:?}, hsikrdyie: {=bool:?}, psisrdyie: {=bool:?}, psidiv3rdyie: {=bool:?}, psikrdyie: {=bool:?}, hserdyie: {=bool:?} }}" , self . lsirdyie () , self . lserdyie () , self . hsisrdyie () , self . hsidiv3rdyie () , self . hsikrdyie () , self . psisrdyie () , self . psidiv3rdyie () , self . psikrdyie () , self . hserdyie ())
+            defmt :: write ! (f , "Cier {{ lsirdyie: {=bool:?}, lserdyie: {=bool:?}, hsirdyie: {=bool:?}, hsidiv3rdyie: {=bool:?}, hsikrdyie: {=bool:?}, psirdyie: {=bool:?}, psidiv3rdyie: {=bool:?}, psikrdyie: {=bool:?}, hserdyie: {=bool:?} }}" , self . lsirdyie () , self . lserdyie () , self . hsirdyie () , self . hsidiv3rdyie () , self . hsikrdyie () , self . psirdyie () , self . psidiv3rdyie () , self . psikrdyie () , self . hserdyie ())
         }
     }
     #[doc = "RCC clock source interrupt flag register"]
@@ -4205,16 +4205,16 @@ pub mod regs {
         pub const fn set_lserdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "HSIS ready interrupt flag"]
+        #[doc = "HSI ready interrupt flag"]
         #[must_use]
         #[inline(always)]
-        pub const fn hsisrdyf(&self) -> bool {
+        pub const fn hsirdyf(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "HSIS ready interrupt flag"]
+        #[doc = "HSI ready interrupt flag"]
         #[inline(always)]
-        pub const fn set_hsisrdyf(&mut self, val: bool) {
+        pub const fn set_hsirdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "HSIDIV3 ready interrupt flag"]
@@ -4241,16 +4241,16 @@ pub mod regs {
         pub const fn set_hsikrdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
-        #[doc = "PSIS ready interrupt flag"]
+        #[doc = "PSI ready interrupt flag"]
         #[must_use]
         #[inline(always)]
-        pub const fn psisrdyf(&self) -> bool {
+        pub const fn psirdyf(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
             val != 0
         }
-        #[doc = "PSIS ready interrupt flag"]
+        #[doc = "PSI ready interrupt flag"]
         #[inline(always)]
-        pub const fn set_psisrdyf(&mut self, val: bool) {
+        pub const fn set_psirdyf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "PSIDIV3 ready interrupt flag"]
@@ -4313,10 +4313,10 @@ pub mod regs {
             f.debug_struct("Cifr")
                 .field("lsirdyf", &self.lsirdyf())
                 .field("lserdyf", &self.lserdyf())
-                .field("hsisrdyf", &self.hsisrdyf())
+                .field("hsirdyf", &self.hsirdyf())
                 .field("hsidiv3rdyf", &self.hsidiv3rdyf())
                 .field("hsikrdyf", &self.hsikrdyf())
-                .field("psisrdyf", &self.psisrdyf())
+                .field("psirdyf", &self.psirdyf())
                 .field("psidiv3rdyf", &self.psidiv3rdyf())
                 .field("psikrdyf", &self.psikrdyf())
                 .field("hserdyf", &self.hserdyf())
@@ -4327,7 +4327,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cifr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cifr {{ lsirdyf: {=bool:?}, lserdyf: {=bool:?}, hsisrdyf: {=bool:?}, hsidiv3rdyf: {=bool:?}, hsikrdyf: {=bool:?}, psisrdyf: {=bool:?}, psidiv3rdyf: {=bool:?}, psikrdyf: {=bool:?}, hserdyf: {=bool:?}, hsecssf: {=bool:?} }}" , self . lsirdyf () , self . lserdyf () , self . hsisrdyf () , self . hsidiv3rdyf () , self . hsikrdyf () , self . psisrdyf () , self . psidiv3rdyf () , self . psikrdyf () , self . hserdyf () , self . hsecssf ())
+            defmt :: write ! (f , "Cifr {{ lsirdyf: {=bool:?}, lserdyf: {=bool:?}, hsirdyf: {=bool:?}, hsidiv3rdyf: {=bool:?}, hsikrdyf: {=bool:?}, psirdyf: {=bool:?}, psidiv3rdyf: {=bool:?}, psikrdyf: {=bool:?}, hserdyf: {=bool:?}, hsecssf: {=bool:?} }}" , self . lsirdyf () , self . lserdyf () , self . hsirdyf () , self . hsidiv3rdyf () , self . hsikrdyf () , self . psirdyf () , self . psidiv3rdyf () , self . psikrdyf () , self . hserdyf () , self . hsecssf ())
         }
     }
     #[doc = "RCC clock control register"]
@@ -4335,16 +4335,16 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr(pub u32);
     impl Cr {
-        #[doc = "HSIS clock enable"]
+        #[doc = "HSI clock enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn hsison(&self) -> bool {
+        pub const fn hsion(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
-        #[doc = "HSIS clock enable"]
+        #[doc = "HSI clock enable"]
         #[inline(always)]
-        pub const fn set_hsison(&mut self, val: bool) {
+        pub const fn set_hsion(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "HSIDIV3 clock enable"]
@@ -4383,16 +4383,16 @@ pub mod regs {
         pub const fn set_hsikeron(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
-        #[doc = "HSIS clock ready flag"]
+        #[doc = "HSI clock ready flag"]
         #[must_use]
         #[inline(always)]
-        pub const fn hsisrdy(&self) -> bool {
+        pub const fn hsirdy(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
-        #[doc = "HSIS clock ready flag"]
+        #[doc = "HSI clock ready flag"]
         #[inline(always)]
-        pub const fn set_hsisrdy(&mut self, val: bool) {
+        pub const fn set_hsirdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "HSIDIV3 clock ready flag"]
@@ -4419,16 +4419,16 @@ pub mod regs {
         pub const fn set_hsikrdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
-        #[doc = "PSIS clock enable"]
+        #[doc = "PSI clock enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn psison(&self) -> bool {
+        pub const fn psion(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
-        #[doc = "PSIS clock enable"]
+        #[doc = "PSI clock enable"]
         #[inline(always)]
-        pub const fn set_psison(&mut self, val: bool) {
+        pub const fn set_psion(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "PSIDIV3 clock enable"]
@@ -4467,16 +4467,16 @@ pub mod regs {
         pub const fn set_psikeron(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
-        #[doc = "PSIS clock ready flag"]
+        #[doc = "PSI clock ready flag"]
         #[must_use]
         #[inline(always)]
-        pub const fn psisrdy(&self) -> bool {
+        pub const fn psirdy(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
             val != 0
         }
-        #[doc = "PSIS clock ready flag"]
+        #[doc = "PSI clock ready flag"]
         #[inline(always)]
-        pub const fn set_psisrdy(&mut self, val: bool) {
+        pub const fn set_psirdy(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "PSIDIV3 clock ready flag"]
@@ -4573,18 +4573,18 @@ pub mod regs {
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
-                .field("hsison", &self.hsison())
+                .field("hsion", &self.hsion())
                 .field("hsidiv3on", &self.hsidiv3on())
                 .field("hsikon", &self.hsikon())
                 .field("hsikeron", &self.hsikeron())
-                .field("hsisrdy", &self.hsisrdy())
+                .field("hsirdy", &self.hsirdy())
                 .field("hsidiv3rdy", &self.hsidiv3rdy())
                 .field("hsikrdy", &self.hsikrdy())
-                .field("psison", &self.psison())
+                .field("psion", &self.psion())
                 .field("psidiv3on", &self.psidiv3on())
                 .field("psikon", &self.psikon())
                 .field("psikeron", &self.psikeron())
-                .field("psisrdy", &self.psisrdy())
+                .field("psirdy", &self.psirdy())
                 .field("psidiv3rdy", &self.psidiv3rdy())
                 .field("psikrdy", &self.psikrdy())
                 .field("hseon", &self.hseon())
@@ -4598,7 +4598,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ hsison: {=bool:?}, hsidiv3on: {=bool:?}, hsikon: {=bool:?}, hsikeron: {=bool:?}, hsisrdy: {=bool:?}, hsidiv3rdy: {=bool:?}, hsikrdy: {=bool:?}, psison: {=bool:?}, psidiv3on: {=bool:?}, psikon: {=bool:?}, psikeron: {=bool:?}, psisrdy: {=bool:?}, psidiv3rdy: {=bool:?}, psikrdy: {=bool:?}, hseon: {=bool:?}, hserdy: {=bool:?}, hsebyp: {=bool:?}, hsecsson: {=bool:?}, hseext: {:?} }}" , self . hsison () , self . hsidiv3on () , self . hsikon () , self . hsikeron () , self . hsisrdy () , self . hsidiv3rdy () , self . hsikrdy () , self . psison () , self . psidiv3on () , self . psikon () , self . psikeron () , self . psisrdy () , self . psidiv3rdy () , self . psikrdy () , self . hseon () , self . hserdy () , self . hsebyp () , self . hsecsson () , self . hseext ())
+            defmt :: write ! (f , "Cr {{ hsion: {=bool:?}, hsidiv3on: {=bool:?}, hsikon: {=bool:?}, hsikeron: {=bool:?}, hsirdy: {=bool:?}, hsidiv3rdy: {=bool:?}, hsikrdy: {=bool:?}, psion: {=bool:?}, psidiv3on: {=bool:?}, psikon: {=bool:?}, psikeron: {=bool:?}, psirdy: {=bool:?}, psidiv3rdy: {=bool:?}, psikrdy: {=bool:?}, hseon: {=bool:?}, hserdy: {=bool:?}, hsebyp: {=bool:?}, hsecsson: {=bool:?}, hseext: {:?} }}" , self . hsion () , self . hsidiv3on () , self . hsikon () , self . hsikeron () , self . hsirdy () , self . hsidiv3rdy () , self . hsikrdy () , self . psion () , self . psidiv3on () , self . psikon () , self . psikeron () , self . psirdy () , self . psidiv3rdy () , self . psikrdy () , self . hseon () , self . hserdy () , self . hsebyp () , self . hsecsson () , self . hseext ())
         }
     }
     #[doc = "RCC clock control register"]
@@ -5105,8 +5105,8 @@ pub mod vals {
     pub enum Adcdacsel {
         #[doc = "rcc_hclk selected as kernel clock"]
         Hclk1 = 0x0,
-        #[doc = "psis_ck selected as kernel clock (default after reset)"]
-        Psis = 0x01,
+        #[doc = "psi_ck selected as kernel clock (default after reset)"]
+        Psi = 0x01,
         #[doc = "psik_ck selected as kernel clock"]
         Psik = 0x02,
         #[doc = "hsik_ck selected as kernel clock"]
@@ -5238,8 +5238,8 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ethclksel {
         _RESERVED_0 = 0x0,
-        #[doc = "psis_ck selected as kernel clock"]
-        Psis = 0x01,
+        #[doc = "psi_ck selected as kernel clock"]
+        Psi = 0x01,
         #[doc = "psik_ck selected as kernel clock"]
         Psik = 0x02,
         #[doc = "hse_ck selected as kernel clock"]
@@ -5274,8 +5274,8 @@ pub mod vals {
         _RESERVED_0 = 0x0,
         #[doc = "rcc_hclk1 selected as kernel clock"]
         Hclk1 = 0x01,
-        #[doc = "psis_ck selected as kernel clock"]
-        Psis = 0x02,
+        #[doc = "psi_ck selected as kernel clock"]
+        Psi = 0x02,
         #[doc = "psik_ck selected as kernel clock"]
         Psik = 0x03,
     }
@@ -5397,8 +5397,8 @@ pub mod vals {
     pub enum Fdcansel {
         #[doc = "rcc_pclk1 selected as kernel clock (default after reset)"]
         Pclk1 = 0x0,
-        #[doc = "psis_ck selected as kernel clock"]
-        Psis = 0x01,
+        #[doc = "psi_ck selected as kernel clock"]
+        Psi = 0x01,
         #[doc = "psik_ck selected as kernel clock"]
         Psik = 0x02,
         #[doc = "hse_ck selected as kernel clock"]
@@ -5430,7 +5430,8 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hpre {
-        _RESERVED_0 = 0x0,
+        #[doc = "rcc_hclk = sys_ck"]
+        Div1 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -5842,10 +5843,10 @@ pub mod vals {
         Psik = 0x04,
         #[doc = "HSIK clock selected (hsik_ck)"]
         Hsik = 0x05,
-        #[doc = "PSIS clock selected (psis_ck)"]
-        Psis = 0x06,
-        #[doc = "HSIS clock selected (hsis_ck)"]
-        Hsis = 0x07,
+        #[doc = "PSI clock selected (psi_ck)"]
+        Psi = 0x06,
+        #[doc = "HSI clock selected (hsi_ck)"]
+        Hsi = 0x07,
     }
     impl Mcosel {
         #[inline(always)]
@@ -5873,17 +5874,18 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ppre {
-        _RESERVED_0 = 0x0,
+        #[doc = "rcc_pclk = rcc_hclk1"]
+        Div1 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
-        #[doc = "rcc_pclk1 = rcc_hclk1 / 2"]
+        #[doc = "rcc_pclk = rcc_hclk1 / 2"]
         Div2 = 0x04,
-        #[doc = "rcc_pclk1 = rcc_hclk1 / 4"]
+        #[doc = "rcc_pclk = rcc_hclk1 / 4"]
         Div4 = 0x05,
-        #[doc = "rcc_pclk1 = rcc_hclk1 / 8"]
+        #[doc = "rcc_pclk = rcc_hclk1 / 8"]
         Div8 = 0x06,
-        #[doc = "rcc_pclk1 = rcc_hclk1 / 16"]
+        #[doc = "rcc_pclk = rcc_hclk1 / 16"]
         Div16 = 0x07,
     }
     impl Ppre {
@@ -6153,8 +6155,8 @@ pub mod vals {
     pub enum Stopwuck {
         #[doc = "HSIDIV3 selected as wake-up clock from system Stop mode (default after reset)"]
         Hsidiv3 = 0x0,
-        #[doc = "HSIS selected as wake-up clock from system Stop mode"]
-        Hsis = 0x01,
+        #[doc = "HSI selected as wake-up clock from system Stop mode"]
+        Hsi = 0x01,
     }
     impl Stopwuck {
         #[inline(always)]
@@ -6184,12 +6186,12 @@ pub mod vals {
     pub enum Sw {
         #[doc = "HSIDIV3 selected as system clock (hsidiv3_ck) (default after reset)"]
         Hsidiv3 = 0x0,
-        #[doc = "HSIS selected as system clock (hsis_ck)"]
-        Hsis = 0x01,
+        #[doc = "HSI selected as system clock (hsi_ck)"]
+        Hsi = 0x01,
         #[doc = "HSE selected as system clock (hse_ck)"]
         Hse = 0x02,
-        #[doc = "PSIS selected as system clock (psis_ck)"]
-        Psis = 0x03,
+        #[doc = "PSI selected as system clock (psi_ck)"]
+        Psi = 0x03,
     }
     impl Sw {
         #[inline(always)]

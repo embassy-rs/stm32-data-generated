@@ -3,72 +3,72 @@
     "description": "PWR register block.",
     "items": [
       {
-        "name": "PWR_PMCR",
+        "name": "PMCR",
         "description": "PWR power mode control register.",
         "byte_offset": 0,
-        "fieldset": "PWR_PMCR"
+        "fieldset": "PMCR"
       },
       {
-        "name": "PWR_PMSR",
+        "name": "PMSR",
         "description": "PWR status register.",
         "byte_offset": 4,
         "access": "Read",
-        "fieldset": "PWR_PMSR"
+        "fieldset": "PMSR"
       },
       {
-        "name": "PWR_RTCCR",
+        "name": "RTCCR",
         "description": "PWR RTC domain control register.",
         "byte_offset": 36,
-        "fieldset": "PWR_RTCCR"
+        "fieldset": "RTCCR"
       },
       {
-        "name": "PWR_VMCR",
+        "name": "VMCR",
         "description": "PWR voltage monitor control register.",
         "byte_offset": 52,
-        "fieldset": "PWR_VMCR"
+        "fieldset": "VMCR"
       },
       {
-        "name": "PWR_VMSR",
+        "name": "VMSR",
         "description": "PWR voltage monitor status register.",
         "byte_offset": 60,
         "access": "Read",
-        "fieldset": "PWR_VMSR"
+        "fieldset": "VMSR"
       },
       {
-        "name": "PWR_WUSCR",
+        "name": "WUSCR",
         "description": "PWR wake-up status clear register.",
         "byte_offset": 64,
         "access": "Write",
-        "fieldset": "PWR_WUSCR"
+        "fieldset": "WUSCR"
       },
       {
-        "name": "PWR_WUSR",
+        "name": "WUSR",
         "description": "PWR wake-up status register.",
         "byte_offset": 68,
         "access": "Read",
-        "fieldset": "PWR_WUSR"
+        "fieldset": "WUSR"
       },
       {
-        "name": "PWR_WUCR",
+        "name": "WUCR",
         "description": "PWR wake-up configuration register.",
         "byte_offset": 72,
-        "fieldset": "PWR_WUCR"
+        "fieldset": "WUCR"
       },
       {
-        "name": "PWR_IORETR",
+        "name": "IORETR",
         "description": "PWR I/O retention register.",
         "byte_offset": 80,
-        "fieldset": "PWR_IORETR"
+        "fieldset": "IORETR"
       },
       {
-        "name": "PWR_PRIVCFGR",
+        "name": "PRIVCFGR",
         "description": "PWR privilege configuration register.",
         "byte_offset": 260,
-        "fieldset": "PWR_PRIVCFGR"
+        "fieldset": "PRIVCFGR"
       }
     ]
   },
-  "fieldset/PWR_IORETR": {
+  "fieldset/IORETR": {
     "description": "PWR I/O retention register.",
     "fields": [
       {
@@ -87,7 +87,7 @@
       }
     ]
   },
-  "fieldset/PWR_PMCR": {
+  "fieldset/PMCR": {
     "description": "PWR power mode control register.",
     "fields": [
       {
@@ -155,7 +155,7 @@
       }
     ]
   },
-  "fieldset/PWR_PMSR": {
+  "fieldset/PMSR": {
     "description": "PWR status register.",
     "fields": [
       {
@@ -172,7 +172,7 @@
       }
     ]
   },
-  "fieldset/PWR_PRIVCFGR": {
+  "fieldset/PRIVCFGR": {
     "description": "PWR privilege configuration register.",
     "fields": [
       {
@@ -183,7 +183,7 @@
       }
     ]
   },
-  "fieldset/PWR_RTCCR": {
+  "fieldset/RTCCR": {
     "description": "PWR RTC domain control register.",
     "fields": [
       {
@@ -194,7 +194,7 @@
       }
     ]
   },
-  "fieldset/PWR_VMCR": {
+  "fieldset/VMCR": {
     "description": "PWR voltage monitor control register.",
     "fields": [
       {
@@ -205,7 +205,7 @@
       }
     ]
   },
-  "fieldset/PWR_VMSR": {
+  "fieldset/VMSR": {
     "description": "PWR voltage monitor status register.",
     "fields": [
       {
@@ -217,7 +217,7 @@
       }
     ]
   },
-  "fieldset/PWR_WUCR": {
+  "fieldset/WUCR": {
     "description": "PWR wake-up configuration register.",
     "fields": [
       {
@@ -369,7 +369,7 @@
       }
     ]
   },
-  "fieldset/PWR_WUSCR": {
+  "fieldset/WUSCR": {
     "description": "PWR wake-up status clear register.",
     "fields": [
       {
@@ -423,7 +423,7 @@
       }
     ]
   },
-  "fieldset/PWR_WUSR": {
+  "fieldset/WUSR": {
     "description": "PWR wake-up status register.",
     "fields": [
       {

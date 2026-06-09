@@ -26,7 +26,7 @@ impl Dbgmcu {
     }
     #[doc = "DBGMCU configuration register."]
     #[inline(always)]
-    pub const fn dbgmcu_cr(self) -> crate::common::Reg<regs::DbgmcuCr, crate::common::RW> {
+    pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "DBGMCU APB1L peripheral freeze register."]
@@ -121,6 +121,108 @@ impl Dbgmcu {
     }
 }
 pub mod regs {
+    #[doc = "DBGMCU configuration register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr(pub u32);
+    impl Cr {
+        #[doc = "Debug in Sleep mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sleep(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Debug in Sleep mode."]
+        #[inline(always)]
+        pub const fn set_sleep(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Debug in Stop mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn stop(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Debug in Stop mode."]
+        #[inline(always)]
+        pub const fn set_stop(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Debug in Standby mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn standby(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Debug in Standby mode."]
+        #[inline(always)]
+        pub const fn set_standby(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Trace pin enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trace_ioen(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Trace pin enable."]
+        #[inline(always)]
+        pub const fn set_trace_ioen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
+        }
+        #[doc = "Trace port and clock enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trace_en(&self) -> bool {
+            let val = (self.0 >> 5usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Trace port and clock enable."]
+        #[inline(always)]
+        pub const fn set_trace_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "Trace pin assignment."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn trace_mode(&self) -> super::vals::TraceMode {
+            let val = (self.0 >> 6usize) & 0x03;
+            super::vals::TraceMode::from_bits(val as u8)
+        }
+        #[doc = "Trace pin assignment."]
+        #[inline(always)]
+        pub const fn set_trace_mode(&mut self, val: super::vals::TraceMode) {
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
+        }
+    }
+    impl Default for Cr {
+        #[inline(always)]
+        fn default() -> Cr {
+            Cr(0)
+        }
+    }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("sleep", &self.sleep())
+                .field("stop", &self.stop())
+                .field("standby", &self.standby())
+                .field("trace_ioen", &self.trace_ioen())
+                .field("trace_en", &self.trace_en())
+                .field("trace_mode", &self.trace_mode())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt :: write ! (f , "Cr {{ sleep: {=bool:?}, stop: {=bool:?}, standby: {=bool:?}, trace_ioen: {=bool:?}, trace_en: {=bool:?}, trace_mode: {:?} }}" , self . sleep () , self . stop () , self . standby () , self . trace_ioen () , self . trace_en () , self . trace_mode ())
+        }
+    }
     #[doc = "DBGMCU AHB1 peripheral freeze register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -843,108 +945,6 @@ pub mod regs {
     impl defmt::Format for DbgmcuCidr3 {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(f, "DbgmcuCidr3 {{ preamble: {=u8:?} }}", self.preamble())
-        }
-    }
-    #[doc = "DBGMCU configuration register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct DbgmcuCr(pub u32);
-    impl DbgmcuCr {
-        #[doc = "Debug in Sleep mode."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn sleep(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Debug in Sleep mode."]
-        #[inline(always)]
-        pub const fn set_sleep(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Debug in Stop mode."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn stop(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Debug in Stop mode."]
-        #[inline(always)]
-        pub const fn set_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Debug in Standby mode."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn standby(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Debug in Standby mode."]
-        #[inline(always)]
-        pub const fn set_standby(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Trace pin enable."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn trace_ioen(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Trace pin enable."]
-        #[inline(always)]
-        pub const fn set_trace_ioen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "Trace port and clock enable."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn trace_en(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Trace port and clock enable."]
-        #[inline(always)]
-        pub const fn set_trace_en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "Trace pin assignment."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn trace_mode(&self) -> super::vals::TraceMode {
-            let val = (self.0 >> 6usize) & 0x03;
-            super::vals::TraceMode::from_bits(val as u8)
-        }
-        #[doc = "Trace pin assignment."]
-        #[inline(always)]
-        pub const fn set_trace_mode(&mut self, val: super::vals::TraceMode) {
-            self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
-        }
-    }
-    impl Default for DbgmcuCr {
-        #[inline(always)]
-        fn default() -> DbgmcuCr {
-            DbgmcuCr(0)
-        }
-    }
-    impl core::fmt::Debug for DbgmcuCr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("DbgmcuCr")
-                .field("sleep", &self.sleep())
-                .field("stop", &self.stop())
-                .field("standby", &self.standby())
-                .field("trace_ioen", &self.trace_ioen())
-                .field("trace_en", &self.trace_en())
-                .field("trace_mode", &self.trace_mode())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for DbgmcuCr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "DbgmcuCr {{ sleep: {=bool:?}, stop: {=bool:?}, standby: {=bool:?}, trace_ioen: {=bool:?}, trace_en: {=bool:?}, trace_mode: {:?} }}" , self . sleep () , self . stop () , self . standby () , self . trace_ioen () , self . trace_en () , self . trace_mode ())
         }
     }
     #[doc = "DBGMCU debug authentication mailbox device register."]

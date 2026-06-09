@@ -10,10 +10,10 @@
         "fieldset": "DBGMCU_IDCODE"
       },
       {
-        "name": "DBGMCU_CR",
+        "name": "CR",
         "description": "DBGMCU configuration register.",
         "byte_offset": 4,
-        "fieldset": "DBGMCU_CR"
+        "fieldset": "CR"
       },
       {
         "name": "DBGMCU_APB1LFZR",
@@ -134,6 +134,48 @@
         "byte_offset": 4092,
         "access": "Read",
         "fieldset": "DBGMCU_CIDR3"
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "description": "DBGMCU configuration register.",
+    "fields": [
+      {
+        "name": "SLEEP",
+        "description": "Debug in Sleep mode.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "STOP",
+        "description": "Debug in Stop mode.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "STANDBY",
+        "description": "Debug in Standby mode.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "TRACE_IOEN",
+        "description": "Trace pin enable.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "TRACE_EN",
+        "description": "Trace port and clock enable.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "TRACE_MODE",
+        "description": "Trace pin assignment.",
+        "bit_offset": 6,
+        "bit_size": 2,
+        "enum": "TRACE_MODE"
       }
     ]
   },
@@ -414,48 +456,6 @@
         "description": "Component identification bits [31:24].",
         "bit_offset": 0,
         "bit_size": 8
-      }
-    ]
-  },
-  "fieldset/DBGMCU_CR": {
-    "description": "DBGMCU configuration register.",
-    "fields": [
-      {
-        "name": "SLEEP",
-        "description": "Debug in Sleep mode.",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "STOP",
-        "description": "Debug in Stop mode.",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "STANDBY",
-        "description": "Debug in Standby mode.",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "TRACE_IOEN",
-        "description": "Trace pin enable.",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "TRACE_EN",
-        "description": "Trace port and clock enable.",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "TRACE_MODE",
-        "description": "Trace pin assignment.",
-        "bit_offset": 6,
-        "bit_size": 2,
-        "enum": "TRACE_MODE"
       }
     ]
   },

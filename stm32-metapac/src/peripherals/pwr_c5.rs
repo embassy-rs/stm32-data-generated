@@ -21,52 +21,52 @@ impl Pwr {
     }
     #[doc = "PWR power mode control register."]
     #[inline(always)]
-    pub const fn pwr_pmcr(self) -> crate::common::Reg<regs::PwrPmcr, crate::common::RW> {
+    pub const fn pmcr(self) -> crate::common::Reg<regs::Pmcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "PWR status register."]
     #[inline(always)]
-    pub const fn pwr_pmsr(self) -> crate::common::Reg<regs::PwrPmsr, crate::common::R> {
+    pub const fn pmsr(self) -> crate::common::Reg<regs::Pmsr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "PWR RTC domain control register."]
     #[inline(always)]
-    pub const fn pwr_rtccr(self) -> crate::common::Reg<regs::PwrRtccr, crate::common::RW> {
+    pub const fn rtccr(self) -> crate::common::Reg<regs::Rtccr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize) as _) }
     }
     #[doc = "PWR voltage monitor control register."]
     #[inline(always)]
-    pub const fn pwr_vmcr(self) -> crate::common::Reg<regs::PwrVmcr, crate::common::RW> {
+    pub const fn vmcr(self) -> crate::common::Reg<regs::Vmcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x34usize) as _) }
     }
     #[doc = "PWR voltage monitor status register."]
     #[inline(always)]
-    pub const fn pwr_vmsr(self) -> crate::common::Reg<regs::PwrVmsr, crate::common::R> {
+    pub const fn vmsr(self) -> crate::common::Reg<regs::Vmsr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x3cusize) as _) }
     }
     #[doc = "PWR wake-up status clear register."]
     #[inline(always)]
-    pub const fn pwr_wuscr(self) -> crate::common::Reg<regs::PwrWuscr, crate::common::W> {
+    pub const fn wuscr(self) -> crate::common::Reg<regs::Wuscr, crate::common::W> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
     }
     #[doc = "PWR wake-up status register."]
     #[inline(always)]
-    pub const fn pwr_wusr(self) -> crate::common::Reg<regs::PwrWusr, crate::common::R> {
+    pub const fn wusr(self) -> crate::common::Reg<regs::Wusr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x44usize) as _) }
     }
     #[doc = "PWR wake-up configuration register."]
     #[inline(always)]
-    pub const fn pwr_wucr(self) -> crate::common::Reg<regs::PwrWucr, crate::common::RW> {
+    pub const fn wucr(self) -> crate::common::Reg<regs::Wucr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x48usize) as _) }
     }
     #[doc = "PWR I/O retention register."]
     #[inline(always)]
-    pub const fn pwr_ioretr(self) -> crate::common::Reg<regs::PwrIoretr, crate::common::RW> {
+    pub const fn ioretr(self) -> crate::common::Reg<regs::Ioretr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
     }
     #[doc = "PWR privilege configuration register."]
     #[inline(always)]
-    pub const fn pwr_privcfgr(self) -> crate::common::Reg<regs::PwrPrivcfgr, crate::common::RW> {
+    pub const fn privcfgr(self) -> crate::common::Reg<regs::Privcfgr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0104usize) as _) }
     }
 }
@@ -74,8 +74,8 @@ pub mod regs {
     #[doc = "PWR I/O retention register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PwrIoretr(pub u32);
-    impl PwrIoretr {
+    pub struct Ioretr(pub u32);
+    impl Ioretr {
         #[doc = "IO retention enable."]
         #[must_use]
         #[inline(always)]
@@ -101,26 +101,26 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
     }
-    impl Default for PwrIoretr {
+    impl Default for Ioretr {
         #[inline(always)]
-        fn default() -> PwrIoretr {
-            PwrIoretr(0)
+        fn default() -> Ioretr {
+            Ioretr(0)
         }
     }
-    impl core::fmt::Debug for PwrIoretr {
+    impl core::fmt::Debug for Ioretr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("PwrIoretr")
+            f.debug_struct("Ioretr")
                 .field("ioreten", &self.ioreten())
                 .field("jtagioreten", &self.jtagioreten())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for PwrIoretr {
+    impl defmt::Format for Ioretr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "PwrIoretr {{ ioreten: {:?}, jtagioreten: {:?} }}",
+                "Ioretr {{ ioreten: {:?}, jtagioreten: {:?} }}",
                 self.ioreten(),
                 self.jtagioreten()
             )
@@ -129,8 +129,8 @@ pub mod regs {
     #[doc = "PWR power mode control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PwrPmcr(pub u32);
-    impl PwrPmcr {
+    pub struct Pmcr(pub u32);
+    impl Pmcr {
         #[doc = "low-power mode selection."]
         #[must_use]
         #[inline(always)]
@@ -240,15 +240,15 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
         }
     }
-    impl Default for PwrPmcr {
+    impl Default for Pmcr {
         #[inline(always)]
-        fn default() -> PwrPmcr {
-            PwrPmcr(0)
+        fn default() -> Pmcr {
+            Pmcr(0)
         }
     }
-    impl core::fmt::Debug for PwrPmcr {
+    impl core::fmt::Debug for Pmcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("PwrPmcr")
+            f.debug_struct("Pmcr")
                 .field("lpms", &self.lpms())
                 .field("cssf", &self.cssf())
                 .field("flps", &self.flps())
@@ -262,16 +262,16 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for PwrPmcr {
+    impl defmt::Format for Pmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "PwrPmcr {{ lpms: {:?}, cssf: {:?}, flps: {:?}, sram2_3_so: {:?}, sram2_1_so: {:?}, sram2_lso: {:?}, sram2_2_so: {:?}, sram2_hso: {:?}, sram1so: {:?} }}" , self . lpms () , self . cssf () , self . flps () , self . sram2_3_so () , self . sram2_1_so () , self . sram2_lso () , self . sram2_2_so () , self . sram2_hso () , self . sram1so ())
+            defmt :: write ! (f , "Pmcr {{ lpms: {:?}, cssf: {:?}, flps: {:?}, sram2_3_so: {:?}, sram2_1_so: {:?}, sram2_lso: {:?}, sram2_2_so: {:?}, sram2_hso: {:?}, sram1so: {:?} }}" , self . lpms () , self . cssf () , self . flps () , self . sram2_3_so () , self . sram2_1_so () , self . sram2_lso () , self . sram2_2_so () , self . sram2_hso () , self . sram1so ())
         }
     }
     #[doc = "PWR status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PwrPmsr(pub u32);
-    impl PwrPmsr {
+    pub struct Pmsr(pub u32);
+    impl Pmsr {
         #[doc = "Stop flag."]
         #[must_use]
         #[inline(always)]
@@ -297,26 +297,26 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
     }
-    impl Default for PwrPmsr {
+    impl Default for Pmsr {
         #[inline(always)]
-        fn default() -> PwrPmsr {
-            PwrPmsr(0)
+        fn default() -> Pmsr {
+            Pmsr(0)
         }
     }
-    impl core::fmt::Debug for PwrPmsr {
+    impl core::fmt::Debug for Pmsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("PwrPmsr")
+            f.debug_struct("Pmsr")
                 .field("stopf", &self.stopf())
                 .field("sbf", &self.sbf())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for PwrPmsr {
+    impl defmt::Format for Pmsr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "PwrPmsr {{ stopf: {=bool:?}, sbf: {=bool:?} }}",
+                "Pmsr {{ stopf: {=bool:?}, sbf: {=bool:?} }}",
                 self.stopf(),
                 self.sbf()
             )
@@ -325,8 +325,8 @@ pub mod regs {
     #[doc = "PWR privilege configuration register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PwrPrivcfgr(pub u32);
-    impl PwrPrivcfgr {
+    pub struct Privcfgr(pub u32);
+    impl Privcfgr {
         #[doc = "PWR nonsecure functions privilege configuration."]
         #[must_use]
         #[inline(always)]
@@ -340,28 +340,28 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
-    impl Default for PwrPrivcfgr {
+    impl Default for Privcfgr {
         #[inline(always)]
-        fn default() -> PwrPrivcfgr {
-            PwrPrivcfgr(0)
+        fn default() -> Privcfgr {
+            Privcfgr(0)
         }
     }
-    impl core::fmt::Debug for PwrPrivcfgr {
+    impl core::fmt::Debug for Privcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("PwrPrivcfgr").field("priv_", &self.priv_()).finish()
+            f.debug_struct("Privcfgr").field("priv_", &self.priv_()).finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for PwrPrivcfgr {
+    impl defmt::Format for Privcfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "PwrPrivcfgr {{ priv_: {=bool:?} }}", self.priv_())
+            defmt::write!(f, "Privcfgr {{ priv_: {=bool:?} }}", self.priv_())
         }
     }
     #[doc = "PWR RTC domain control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PwrRtccr(pub u32);
-    impl PwrRtccr {
+    pub struct Rtccr(pub u32);
+    impl Rtccr {
         #[doc = "Disable RTC domain write protection."]
         #[must_use]
         #[inline(always)]
@@ -375,28 +375,28 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
-    impl Default for PwrRtccr {
+    impl Default for Rtccr {
         #[inline(always)]
-        fn default() -> PwrRtccr {
-            PwrRtccr(0)
+        fn default() -> Rtccr {
+            Rtccr(0)
         }
     }
-    impl core::fmt::Debug for PwrRtccr {
+    impl core::fmt::Debug for Rtccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("PwrRtccr").field("drtcp", &self.drtcp()).finish()
+            f.debug_struct("Rtccr").field("drtcp", &self.drtcp()).finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for PwrRtccr {
+    impl defmt::Format for Rtccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "PwrRtccr {{ drtcp: {=bool:?} }}", self.drtcp())
+            defmt::write!(f, "Rtccr {{ drtcp: {=bool:?} }}", self.drtcp())
         }
     }
     #[doc = "PWR voltage monitor control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PwrVmcr(pub u32);
-    impl PwrVmcr {
+    pub struct Vmcr(pub u32);
+    impl Vmcr {
         #[doc = "PVD enable."]
         #[must_use]
         #[inline(always)]
@@ -410,28 +410,28 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
-    impl Default for PwrVmcr {
+    impl Default for Vmcr {
         #[inline(always)]
-        fn default() -> PwrVmcr {
-            PwrVmcr(0)
+        fn default() -> Vmcr {
+            Vmcr(0)
         }
     }
-    impl core::fmt::Debug for PwrVmcr {
+    impl core::fmt::Debug for Vmcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("PwrVmcr").field("pvde", &self.pvde()).finish()
+            f.debug_struct("Vmcr").field("pvde", &self.pvde()).finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for PwrVmcr {
+    impl defmt::Format for Vmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "PwrVmcr {{ pvde: {=bool:?} }}", self.pvde())
+            defmt::write!(f, "Vmcr {{ pvde: {=bool:?} }}", self.pvde())
         }
     }
     #[doc = "PWR voltage monitor status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PwrVmsr(pub u32);
-    impl PwrVmsr {
+    pub struct Vmsr(pub u32);
+    impl Vmsr {
         #[doc = "programmable voltage detect output."]
         #[must_use]
         #[inline(always)]
@@ -445,28 +445,28 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
         }
     }
-    impl Default for PwrVmsr {
+    impl Default for Vmsr {
         #[inline(always)]
-        fn default() -> PwrVmsr {
-            PwrVmsr(0)
+        fn default() -> Vmsr {
+            Vmsr(0)
         }
     }
-    impl core::fmt::Debug for PwrVmsr {
+    impl core::fmt::Debug for Vmsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("PwrVmsr").field("pvdo", &self.pvdo()).finish()
+            f.debug_struct("Vmsr").field("pvdo", &self.pvdo()).finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for PwrVmsr {
+    impl defmt::Format for Vmsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "PwrVmsr {{ pvdo: {:?} }}", self.pvdo())
+            defmt::write!(f, "Vmsr {{ pvdo: {:?} }}", self.pvdo())
         }
     }
     #[doc = "PWR wake-up configuration register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PwrWucr(pub u32);
-    impl PwrWucr {
+    pub struct Wucr(pub u32);
+    impl Wucr {
         #[doc = "Enable wake-up pin WKUPx (x=5to1)."]
         #[must_use]
         #[inline(always)]
@@ -720,15 +720,15 @@ pub mod regs {
             self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
         }
     }
-    impl Default for PwrWucr {
+    impl Default for Wucr {
         #[inline(always)]
-        fn default() -> PwrWucr {
-            PwrWucr(0)
+        fn default() -> Wucr {
+            Wucr(0)
         }
     }
-    impl core::fmt::Debug for PwrWucr {
+    impl core::fmt::Debug for Wucr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("PwrWucr")
+            f.debug_struct("Wucr")
                 .field("wupen1", &self.wupen1())
                 .field("wupen2", &self.wupen2())
                 .field("wupen3", &self.wupen3())
@@ -754,16 +754,16 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for PwrWucr {
+    impl defmt::Format for Wucr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "PwrWucr {{ wupen1: {:?}, wupen2: {:?}, wupen3: {:?}, wupen4: {:?}, wupen5: {:?}, wupen6: {:?}, wupen7: {:?}, wupp1: {:?}, wupp2: {:?}, wupp3: {:?}, wupp4: {:?}, wupp5: {:?}, wupp6: {:?}, wupp7: {:?}, wuppupd1: {:?}, wuppupd2: {:?}, wuppupd3: {:?}, wuppupd4: {:?}, wuppupd5: {:?}, wuppupd6: {:?}, wuppupd7: {:?} }}" , self . wupen1 () , self . wupen2 () , self . wupen3 () , self . wupen4 () , self . wupen5 () , self . wupen6 () , self . wupen7 () , self . wupp1 () , self . wupp2 () , self . wupp3 () , self . wupp4 () , self . wupp5 () , self . wupp6 () , self . wupp7 () , self . wuppupd1 () , self . wuppupd2 () , self . wuppupd3 () , self . wuppupd4 () , self . wuppupd5 () , self . wuppupd6 () , self . wuppupd7 ())
+            defmt :: write ! (f , "Wucr {{ wupen1: {:?}, wupen2: {:?}, wupen3: {:?}, wupen4: {:?}, wupen5: {:?}, wupen6: {:?}, wupen7: {:?}, wupp1: {:?}, wupp2: {:?}, wupp3: {:?}, wupp4: {:?}, wupp5: {:?}, wupp6: {:?}, wupp7: {:?}, wuppupd1: {:?}, wuppupd2: {:?}, wuppupd3: {:?}, wuppupd4: {:?}, wuppupd5: {:?}, wuppupd6: {:?}, wuppupd7: {:?} }}" , self . wupen1 () , self . wupen2 () , self . wupen3 () , self . wupen4 () , self . wupen5 () , self . wupen6 () , self . wupen7 () , self . wupp1 () , self . wupp2 () , self . wupp3 () , self . wupp4 () , self . wupp5 () , self . wupp6 () , self . wupp7 () , self . wuppupd1 () , self . wuppupd2 () , self . wuppupd3 () , self . wuppupd4 () , self . wuppupd5 () , self . wuppupd6 () , self . wuppupd7 ())
         }
     }
     #[doc = "PWR wake-up status clear register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PwrWuscr(pub u32);
-    impl PwrWuscr {
+    pub struct Wuscr(pub u32);
+    impl Wuscr {
         #[doc = "clear wake-up pin flag for WUFx (x=5 to 1)."]
         #[must_use]
         #[inline(always)]
@@ -849,15 +849,15 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
         }
     }
-    impl Default for PwrWuscr {
+    impl Default for Wuscr {
         #[inline(always)]
-        fn default() -> PwrWuscr {
-            PwrWuscr(0)
+        fn default() -> Wuscr {
+            Wuscr(0)
         }
     }
-    impl core::fmt::Debug for PwrWuscr {
+    impl core::fmt::Debug for Wuscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("PwrWuscr")
+            f.debug_struct("Wuscr")
                 .field("cwuf1", &self.cwuf1())
                 .field("cwuf2", &self.cwuf2())
                 .field("cwuf3", &self.cwuf3())
@@ -869,16 +869,26 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for PwrWuscr {
+    impl defmt::Format for Wuscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "PwrWuscr {{ cwuf1: {:?}, cwuf2: {:?}, cwuf3: {:?}, cwuf4: {:?}, cwuf5: {:?}, cwuf6: {:?}, cwuf7: {:?} }}" , self . cwuf1 () , self . cwuf2 () , self . cwuf3 () , self . cwuf4 () , self . cwuf5 () , self . cwuf6 () , self . cwuf7 ())
+            defmt::write!(
+                f,
+                "Wuscr {{ cwuf1: {:?}, cwuf2: {:?}, cwuf3: {:?}, cwuf4: {:?}, cwuf5: {:?}, cwuf6: {:?}, cwuf7: {:?} }}",
+                self.cwuf1(),
+                self.cwuf2(),
+                self.cwuf3(),
+                self.cwuf4(),
+                self.cwuf5(),
+                self.cwuf6(),
+                self.cwuf7()
+            )
         }
     }
     #[doc = "PWR wake-up status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct PwrWusr(pub u32);
-    impl PwrWusr {
+    pub struct Wusr(pub u32);
+    impl Wusr {
         #[doc = "wake-up pin WUFx flag."]
         #[must_use]
         #[inline(always)]
@@ -964,15 +974,15 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
     }
-    impl Default for PwrWusr {
+    impl Default for Wusr {
         #[inline(always)]
-        fn default() -> PwrWusr {
-            PwrWusr(0)
+        fn default() -> Wusr {
+            Wusr(0)
         }
     }
-    impl core::fmt::Debug for PwrWusr {
+    impl core::fmt::Debug for Wusr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("PwrWusr")
+            f.debug_struct("Wusr")
                 .field("wuf1", &self.wuf1())
                 .field("wuf2", &self.wuf2())
                 .field("wuf3", &self.wuf3())
@@ -984,9 +994,9 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for PwrWusr {
+    impl defmt::Format for Wusr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "PwrWusr {{ wuf1: {=bool:?}, wuf2: {=bool:?}, wuf3: {=bool:?}, wuf4: {=bool:?}, wuf5: {=bool:?}, wuf6: {=bool:?}, wuf7: {=bool:?} }}" , self . wuf1 () , self . wuf2 () , self . wuf3 () , self . wuf4 () , self . wuf5 () , self . wuf6 () , self . wuf7 ())
+            defmt :: write ! (f , "Wusr {{ wuf1: {=bool:?}, wuf2: {=bool:?}, wuf3: {=bool:?}, wuf4: {=bool:?}, wuf5: {=bool:?}, wuf6: {=bool:?}, wuf7: {=bool:?} }}" , self . wuf1 () , self . wuf2 () , self . wuf3 () , self . wuf4 () , self . wuf5 () , self . wuf6 () , self . wuf7 ())
         }
     }
 }

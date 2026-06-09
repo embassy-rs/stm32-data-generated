@@ -2472,8 +2472,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hsisrdyc",
-                    description: Some("HSIS ready interrupt clear"),
+                    name: "hsirdyc",
+                    description: Some("HSI ready interrupt clear"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
@@ -2496,8 +2496,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "psisrdyc",
-                    description: Some("PSIS ready interrupt clear"),
+                    name: "psirdyc",
+                    description: Some("PSI ready interrupt clear"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
@@ -2568,8 +2568,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hsisrdyie",
-                    description: Some("HSIS ready interrupt enable"),
+                    name: "hsirdyie",
+                    description: Some("HSI ready interrupt enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
@@ -2592,8 +2592,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "psisrdyie",
-                    description: Some("PSIS ready interrupt enable"),
+                    name: "psirdyie",
+                    description: Some("PSI ready interrupt enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
@@ -2648,8 +2648,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hsisrdyf",
-                    description: Some("HSIS ready interrupt flag"),
+                    name: "hsirdyf",
+                    description: Some("HSI ready interrupt flag"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
@@ -2672,8 +2672,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "psisrdyf",
-                    description: Some("PSIS ready interrupt flag"),
+                    name: "psirdyf",
+                    description: Some("PSI ready interrupt flag"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
@@ -2720,8 +2720,8 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "hsison",
-                    description: Some("HSIS clock enable"),
+                    name: "hsion",
+                    description: Some("HSI clock enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
@@ -2752,8 +2752,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "hsisrdy",
-                    description: Some("HSIS clock ready flag"),
+                    name: "hsirdy",
+                    description: Some("HSI clock ready flag"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
@@ -2776,8 +2776,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "psison",
-                    description: Some("PSIS clock enable"),
+                    name: "psion",
+                    description: Some("PSI clock enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
@@ -2808,8 +2808,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "psisrdy",
-                    description: Some("PSIS clock ready flag"),
+                    name: "psirdy",
+                    description: Some("PSI clock ready flag"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
@@ -3184,14 +3184,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
+                    name: "Psi",
+                    description: Some("psi_ck selected as kernel clock (default after reset)"),
+                    value: 1,
+                },
+                EnumVariant {
                     name: "Psik",
                     description: Some("psik_ck selected as kernel clock"),
                     value: 2,
-                },
-                EnumVariant {
-                    name: "Psis",
-                    description: Some("psis_ck selected as kernel clock (default after reset)"),
-                    value: 1,
                 },
             ],
         },
@@ -3267,14 +3267,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
+                    name: "Psi",
+                    description: Some("psi_ck selected as kernel clock"),
+                    value: 1,
+                },
+                EnumVariant {
                     name: "Psik",
                     description: Some("psik_ck selected as kernel clock"),
                     value: 2,
-                },
-                EnumVariant {
-                    name: "Psis",
-                    description: Some("psis_ck selected as kernel clock"),
-                    value: 1,
                 },
             ],
         },
@@ -3289,14 +3289,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
+                    name: "Psi",
+                    description: Some("psi_ck selected as kernel clock"),
+                    value: 2,
+                },
+                EnumVariant {
                     name: "Psik",
                     description: Some("psik_ck selected as kernel clock"),
                     value: 3,
-                },
-                EnumVariant {
-                    name: "Psis",
-                    description: Some("psis_ck selected as kernel clock"),
-                    value: 2,
                 },
             ],
         },
@@ -3420,14 +3420,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
+                    name: "Psi",
+                    description: Some("psi_ck selected as kernel clock"),
+                    value: 1,
+                },
+                EnumVariant {
                     name: "Psik",
                     description: Some("psik_ck selected as kernel clock"),
                     value: 2,
-                },
-                EnumVariant {
-                    name: "Psis",
-                    description: Some("psis_ck selected as kernel clock"),
-                    value: 1,
                 },
             ],
         },
@@ -3436,6 +3436,11 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 4,
             variants: &[
+                EnumVariant {
+                    name: "Div1",
+                    description: Some("rcc_hclk = sys_ck"),
+                    value: 0,
+                },
                 EnumVariant {
                     name: "Div128",
                     description: Some("rcc_hclk = sys_ck / 128"),
@@ -3812,14 +3817,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
+                    name: "Hsi",
+                    description: Some("HSI clock selected (hsi_ck)"),
+                    value: 7,
+                },
+                EnumVariant {
                     name: "Hsik",
                     description: Some("HSIK clock selected (hsik_ck)"),
                     value: 5,
-                },
-                EnumVariant {
-                    name: "Hsis",
-                    description: Some("HSIS clock selected (hsis_ck)"),
-                    value: 7,
                 },
                 EnumVariant {
                     name: "Lse",
@@ -3832,14 +3837,14 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
+                    name: "Psi",
+                    description: Some("PSI clock selected (psi_ck)"),
+                    value: 6,
+                },
+                EnumVariant {
                     name: "Psik",
                     description: Some("PSIK clock selected (psik_ck)"),
                     value: 4,
-                },
-                EnumVariant {
-                    name: "Psis",
-                    description: Some("PSIS clock selected (psis_ck)"),
-                    value: 6,
                 },
                 EnumVariant {
                     name: "Sys",
@@ -3854,23 +3859,28 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
+                    name: "Div1",
+                    description: Some("rcc_pclk = rcc_hclk1"),
+                    value: 0,
+                },
+                EnumVariant {
                     name: "Div16",
-                    description: Some("rcc_pclk1 = rcc_hclk1 / 16"),
+                    description: Some("rcc_pclk = rcc_hclk1 / 16"),
                     value: 7,
                 },
                 EnumVariant {
                     name: "Div2",
-                    description: Some("rcc_pclk1 = rcc_hclk1 / 2"),
+                    description: Some("rcc_pclk = rcc_hclk1 / 2"),
                     value: 4,
                 },
                 EnumVariant {
                     name: "Div4",
-                    description: Some("rcc_pclk1 = rcc_hclk1 / 4"),
+                    description: Some("rcc_pclk = rcc_hclk1 / 4"),
                     value: 5,
                 },
                 EnumVariant {
                     name: "Div8",
-                    description: Some("rcc_pclk1 = rcc_hclk1 / 8"),
+                    description: Some("rcc_pclk = rcc_hclk1 / 8"),
                     value: 6,
                 },
             ],
@@ -4108,14 +4118,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
+                    name: "Hsi",
+                    description: Some("HSI selected as wake-up clock from system Stop mode"),
+                    value: 1,
+                },
+                EnumVariant {
                     name: "Hsidiv3",
                     description: Some("HSIDIV3 selected as wake-up clock from system Stop mode (default after reset)"),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "Hsis",
-                    description: Some("HSIS selected as wake-up clock from system Stop mode"),
-                    value: 1,
                 },
             ],
         },
@@ -4130,18 +4140,18 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 2,
                 },
                 EnumVariant {
+                    name: "Hsi",
+                    description: Some("HSI selected as system clock (hsi_ck)"),
+                    value: 1,
+                },
+                EnumVariant {
                     name: "Hsidiv3",
                     description: Some("HSIDIV3 selected as system clock (hsidiv3_ck) (default after reset)"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Hsis",
-                    description: Some("HSIS selected as system clock (hsis_ck)"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Psis",
-                    description: Some("PSIS selected as system clock (psis_ck)"),
+                    name: "Psi",
+                    description: Some("PSI selected as system clock (psi_ck)"),
                     value: 3,
                 },
             ],

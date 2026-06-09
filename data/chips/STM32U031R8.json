@@ -2840,6 +2840,18 @@
               "interrupt": "TIM15"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM15"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM15"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM15"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM15"
             },
@@ -2924,6 +2936,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM16"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM16"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM16"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM16"
             },
             {
@@ -3046,6 +3070,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM2"
             },
             {
@@ -3181,6 +3217,18 @@
               "interrupt": "TIM3"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM3"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM3"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM3"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM3"
             },
@@ -3256,6 +3304,18 @@
               "interrupt": "TIM6_DAC_LPTIM1"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM6_DAC_LPTIM1"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM6_DAC_LPTIM1"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM6_DAC_LPTIM1"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM6_DAC_LPTIM1"
             },
@@ -3303,6 +3363,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM7_LPTIM2"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM7_LPTIM2"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM7_LPTIM2"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM7_LPTIM2"
             },
             {

@@ -2876,6 +2876,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM14",
             },
             PeripheralInterrupt {
+                signal: "DIR",
+                interrupt: "TIM14",
+            },
+            PeripheralInterrupt {
+                signal: "ER",
+                interrupt: "TIM14",
+            },
+            PeripheralInterrupt {
+                signal: "IDX",
+                interrupt: "TIM14",
+            },
+            PeripheralInterrupt {
                 signal: "TRG",
                 interrupt: "TIM14",
             },
@@ -3022,6 +3034,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM15",
             },
             PeripheralInterrupt {
+                signal: "DIR",
+                interrupt: "TIM15",
+            },
+            PeripheralInterrupt {
+                signal: "ER",
+                interrupt: "TIM15",
+            },
+            PeripheralInterrupt {
+                signal: "IDX",
+                interrupt: "TIM15",
+            },
+            PeripheralInterrupt {
                 signal: "TRG",
                 interrupt: "TIM15",
             },
@@ -3119,6 +3143,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralInterrupt {
                 signal: "COM",
+                interrupt: "TIM16_FDCAN_IT0",
+            },
+            PeripheralInterrupt {
+                signal: "DIR",
+                interrupt: "TIM16_FDCAN_IT0",
+            },
+            PeripheralInterrupt {
+                signal: "ER",
+                interrupt: "TIM16_FDCAN_IT0",
+            },
+            PeripheralInterrupt {
+                signal: "IDX",
                 interrupt: "TIM16_FDCAN_IT0",
             },
             PeripheralInterrupt {
@@ -3224,6 +3260,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralInterrupt {
                 signal: "COM",
+                interrupt: "TIM17_FDCAN_IT1",
+            },
+            PeripheralInterrupt {
+                signal: "DIR",
+                interrupt: "TIM17_FDCAN_IT1",
+            },
+            PeripheralInterrupt {
+                signal: "ER",
+                interrupt: "TIM17_FDCAN_IT1",
+            },
+            PeripheralInterrupt {
+                signal: "IDX",
                 interrupt: "TIM17_FDCAN_IT1",
             },
             PeripheralInterrupt {
@@ -3396,6 +3444,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM2",
             },
             PeripheralInterrupt {
+                signal: "DIR",
+                interrupt: "TIM2",
+            },
+            PeripheralInterrupt {
+                signal: "ER",
+                interrupt: "TIM2",
+            },
+            PeripheralInterrupt {
+                signal: "IDX",
+                interrupt: "TIM2",
+            },
+            PeripheralInterrupt {
                 signal: "TRG",
                 interrupt: "TIM2",
             },
@@ -3540,6 +3600,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM3_TIM4",
             },
             PeripheralInterrupt {
+                signal: "DIR",
+                interrupt: "TIM3_TIM4",
+            },
+            PeripheralInterrupt {
+                signal: "ER",
+                interrupt: "TIM3_TIM4",
+            },
+            PeripheralInterrupt {
+                signal: "IDX",
+                interrupt: "TIM3_TIM4",
+            },
+            PeripheralInterrupt {
                 signal: "TRG",
                 interrupt: "TIM3_TIM4",
             },
@@ -3659,6 +3731,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM3_TIM4",
             },
             PeripheralInterrupt {
+                signal: "DIR",
+                interrupt: "TIM3_TIM4",
+            },
+            PeripheralInterrupt {
+                signal: "ER",
+                interrupt: "TIM3_TIM4",
+            },
+            PeripheralInterrupt {
+                signal: "IDX",
+                interrupt: "TIM3_TIM4",
+            },
+            PeripheralInterrupt {
                 signal: "TRG",
                 interrupt: "TIM3_TIM4",
             },
@@ -3715,6 +3799,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM6_DAC_LPTIM1",
             },
             PeripheralInterrupt {
+                signal: "DIR",
+                interrupt: "TIM6_DAC_LPTIM1",
+            },
+            PeripheralInterrupt {
+                signal: "ER",
+                interrupt: "TIM6_DAC_LPTIM1",
+            },
+            PeripheralInterrupt {
+                signal: "IDX",
+                interrupt: "TIM6_DAC_LPTIM1",
+            },
+            PeripheralInterrupt {
                 signal: "TRG",
                 interrupt: "TIM6_DAC_LPTIM1",
             },
@@ -3768,6 +3864,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralInterrupt {
                 signal: "COM",
+                interrupt: "TIM7_LPTIM2",
+            },
+            PeripheralInterrupt {
+                signal: "DIR",
+                interrupt: "TIM7_LPTIM2",
+            },
+            PeripheralInterrupt {
+                signal: "ER",
+                interrupt: "TIM7_LPTIM2",
+            },
+            PeripheralInterrupt {
+                signal: "IDX",
                 interrupt: "TIM7_LPTIM2",
             },
             PeripheralInterrupt {

@@ -1226,6 +1226,18 @@
               "interrupt": "TIM2"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM2"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM2"
             },
@@ -1359,6 +1371,18 @@
               "interrupt": "TIM3"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM3"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM3"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM3"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM3"
             },
@@ -1467,6 +1491,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM4"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM4"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM4"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM4"
             },
             {

@@ -2491,6 +2491,18 @@
               "interrupt": "TIM1_BRK_TIM15"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM1_BRK_TIM15"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM1_BRK_TIM15"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM1_BRK_TIM15"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM1_BRK_TIM15"
             },
@@ -2570,6 +2582,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM1_UP_TIM16"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM1_UP_TIM16"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM1_UP_TIM16"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM1_UP_TIM16"
             },
             {
@@ -2690,6 +2714,18 @@
               "interrupt": "TIM2"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM2"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM2"
             },
@@ -2760,6 +2796,18 @@
               "interrupt": "TIM6_DAC"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM6_DAC"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM6_DAC"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM6_DAC"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM6_DAC"
             },
@@ -2812,6 +2860,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM7"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM7"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM7"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM7"
             },
             {

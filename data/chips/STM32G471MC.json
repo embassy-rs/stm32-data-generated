@@ -5071,6 +5071,18 @@
               "interrupt": "TIM1_BRK_TIM15"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM1_BRK_TIM15"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM1_BRK_TIM15"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM1_BRK_TIM15"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM1_BRK_TIM15"
             },
@@ -5173,6 +5185,18 @@
               "interrupt": "TIM1_UP_TIM16"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM1_UP_TIM16"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM1_UP_TIM16"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM1_UP_TIM16"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM1_UP_TIM16"
             },
@@ -5257,6 +5281,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM1_TRG_COM_TIM17"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM1_TRG_COM_TIM17"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM1_TRG_COM_TIM17"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM1_TRG_COM_TIM17"
             },
             {
@@ -5384,6 +5420,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM2"
             },
             {
@@ -5626,6 +5674,18 @@
               "interrupt": "TIM3"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM3"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM3"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM3"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM3"
             },
@@ -5748,6 +5808,18 @@
               "interrupt": "TIM4"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM4"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM4"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM4"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM4"
             },
@@ -5818,6 +5890,18 @@
               "interrupt": "TIM6_DAC"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM6_DAC"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM6_DAC"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM6_DAC"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM6_DAC"
             },
@@ -5865,6 +5949,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM7"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM7"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM7"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM7"
             },
             {

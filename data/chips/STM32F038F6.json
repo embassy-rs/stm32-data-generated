@@ -1177,6 +1177,18 @@
               "interrupt": "TIM14"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM14"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM14"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM14"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM14"
             },
@@ -1224,6 +1236,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM16"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM16"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM16"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM16"
             },
             {
@@ -1345,6 +1369,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM17"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM17"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM17"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM17"
             },
             {
@@ -1494,6 +1530,18 @@
               "interrupt": "TIM2"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM2"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM2"
             },
@@ -1582,6 +1630,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM3"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM3"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM3"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM3"
             },
             {

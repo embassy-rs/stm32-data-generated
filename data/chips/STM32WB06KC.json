@@ -1355,6 +1355,18 @@
               "interrupt": "TIM1"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM1"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM1"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM1"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM1"
             },

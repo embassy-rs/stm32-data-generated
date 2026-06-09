@@ -1655,6 +1655,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM2",
             },
             PeripheralInterrupt {
+                signal: "DIR",
+                interrupt: "TIM2",
+            },
+            PeripheralInterrupt {
+                signal: "ER",
+                interrupt: "TIM2",
+            },
+            PeripheralInterrupt {
+                signal: "IDX",
+                interrupt: "TIM2",
+            },
+            PeripheralInterrupt {
                 signal: "TRG",
                 interrupt: "TIM2",
             },
@@ -1736,6 +1748,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralInterrupt {
                 signal: "COM",
+                interrupt: "TIM21",
+            },
+            PeripheralInterrupt {
+                signal: "DIR",
+                interrupt: "TIM21",
+            },
+            PeripheralInterrupt {
+                signal: "ER",
+                interrupt: "TIM21",
+            },
+            PeripheralInterrupt {
+                signal: "IDX",
                 interrupt: "TIM21",
             },
             PeripheralInterrupt {
@@ -1823,6 +1847,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TIM22",
             },
             PeripheralInterrupt {
+                signal: "DIR",
+                interrupt: "TIM22",
+            },
+            PeripheralInterrupt {
+                signal: "ER",
+                interrupt: "TIM22",
+            },
+            PeripheralInterrupt {
+                signal: "IDX",
+                interrupt: "TIM22",
+            },
+            PeripheralInterrupt {
                 signal: "TRG",
                 interrupt: "TIM22",
             },
@@ -1876,6 +1912,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralInterrupt {
                 signal: "COM",
+                interrupt: "TIM6_DAC",
+            },
+            PeripheralInterrupt {
+                signal: "DIR",
+                interrupt: "TIM6_DAC",
+            },
+            PeripheralInterrupt {
+                signal: "ER",
+                interrupt: "TIM6_DAC",
+            },
+            PeripheralInterrupt {
+                signal: "IDX",
                 interrupt: "TIM6_DAC",
             },
             PeripheralInterrupt {

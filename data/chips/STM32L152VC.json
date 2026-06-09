@@ -3275,6 +3275,18 @@
               "interrupt": "TIM10"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM10"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM10"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM10"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM10"
             },
@@ -3333,6 +3345,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM11"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM11"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM11"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM11"
             },
             {
@@ -3459,6 +3483,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM2"
             },
             {
@@ -3599,6 +3635,18 @@
               "interrupt": "TIM3"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM3"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM3"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM3"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM3"
             },
@@ -3711,6 +3759,18 @@
               "interrupt": "TIM4"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM4"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM4"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM4"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM4"
             },
@@ -3799,6 +3859,18 @@
               "interrupt": "TIM5"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM5"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM5"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM5"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM5"
             },
@@ -3868,6 +3940,18 @@
               "interrupt": "TIM6"
             },
             {
+              "signal": "DIR",
+              "interrupt": "TIM6"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM6"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM6"
+            },
+            {
               "signal": "TRG",
               "interrupt": "TIM6"
             },
@@ -3914,6 +3998,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM7"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM7"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM7"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM7"
             },
             {
@@ -4005,6 +4101,18 @@
             },
             {
               "signal": "COM",
+              "interrupt": "TIM9"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM9"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM9"
+            },
+            {
+              "signal": "IDX",
               "interrupt": "TIM9"
             },
             {

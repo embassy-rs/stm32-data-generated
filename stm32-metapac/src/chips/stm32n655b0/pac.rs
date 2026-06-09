@@ -955,7 +955,7 @@ pub const MCE4: *mut () = 0x4802_e000usize as _;
 pub const GFXMMU: *mut () = 0x4803_0000usize as _;
 pub const GPU2D: *mut () = 0x4803_4000usize as _;
 pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4803_5000usize as _) };
-pub const ETH1: *mut () = 0x4803_6000usize as _;
+pub const ETH1: eth::Eth = unsafe { eth::Eth::from_ptr(0x4803_6000usize as _) };
 pub const USB1_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4804_0000usize as _) };
 pub const USB2_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4808_0000usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -987,6 +987,8 @@ pub mod dlybsd;
 pub mod dma2d;
 #[path = "../../peripherals/dts_v1.rs"]
 pub mod dts;
+#[path = "../../peripherals/eth_v2a.rs"]
+pub mod eth;
 #[path = "../../peripherals/exti_n6.rs"]
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v2.rs"]

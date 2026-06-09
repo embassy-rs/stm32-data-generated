@@ -46,7 +46,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("dmamux", &["v1"]),
     ("dsihost", &["u5", "v1"]),
     ("dts", &["v1"]),
-    ("eth", &["v1a", "v1b", "v1c", "v2"]),
+    ("eth", &["v1a", "v1b", "v1c", "v2", "v2a"]),
     (
         "exti",
         &[

@@ -1249,7 +1249,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ETH1",
         address: 0x48036000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "eth",
+            version: "v2a",
+            block: "ETH",
+            ir: &eth::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK5",
             kernel_clock: Clock("HCLK5"),
@@ -12333,6 +12338,8 @@ pub mod dlybsd;
 pub mod dma2d;
 #[path = "../registers/dts_v1.rs"]
 pub mod dts;
+#[path = "../registers/eth_v2a.rs"]
+pub mod eth;
 #[path = "../registers/exti_n6.rs"]
 pub mod exti;
 #[path = "../registers/fdcanram_v2.rs"]

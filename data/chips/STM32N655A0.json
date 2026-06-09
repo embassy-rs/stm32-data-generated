@@ -2069,6 +2069,11 @@
         {
           "name": "ETH1",
           "address": 1208180736,
+          "registers": {
+            "kind": "eth",
+            "version": "v2a",
+            "block": "ETH"
+          },
           "rcc": {
             "bus_clock": "HCLK5",
             "kernel_clock": "HCLK5",

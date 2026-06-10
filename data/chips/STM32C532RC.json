@@ -900,6 +900,11 @@
         {
           "name": "FLASH",
           "address": 1073881088,
+          "registers": {
+            "kind": "flash",
+            "version": "c5",
+            "block": "FLASH"
+          },
           "interrupts": [
             {
               "signal": "GLOBAL",

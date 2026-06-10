@@ -46,7 +46,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [EXTI](#exti) | c0 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | g0 | v1 | h5, h50 | h7, h7rm0399 | v1 | v1 | v1 | v1 | l5 | n6 | u0 | u3 | u5 | w | | l5 | w, wle |
 | [FDCAN](#fdcan) | | ❌ | | | | | | | | | | | | | | | | | | | | | | | |
 | [FDCANRAM](#fdcanram) | v1 | v1 | | | | | | | v1 | v1 | v1 | v1, v2 | | | | | v1 | v2 | | v1 | v1 | | | | |
-| [FLASH](#flash) | c0 | ❌ | f0 | f1 | f2 | f3 | f4 | f7 | g0x0, g0x1 | g4c2, g4c3, g4c4 | h5, h50 | h7, h7ab, h7rs | l0 | l1 | l4 | l4 | l5 | | u0 | u3 | u5 | wb | wb0 | wba | wl |
+| [FLASH](#flash) | c0 | c5 | f0 | f1 | f2 | f3 | f4 | f7 | g0x0, g0x1 | g4c2, g4c3, g4c4 | h5, h50 | h7, h7ab, h7rs | l0 | l1 | l4 | l4 | l5 | | u0 | u3 | u5 | wb | wb0 | wba | wl |
 | [FMAC](#fmac) | | | | | | | | | | v1 | v1 | v1 | | | | | | | | | v1 | | | | |
 | [FMC](#fmc) | | | | | | ❌ | v1x3, v2x1, ❌ | v2x1 | | ❌ | v4 | v3x1 | | | ❌ | ❌ | ❌ | n6 | | | ❌ | | | | |
 | [FMPI2C](#fmpi2c) | | | | | | | v2 | | | | | | | | | | | | | | | | | | |
@@ -451,6 +451,7 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **c0**: STM32C0
+- **c5**: STM32C5 Series
 - **f0**: STM32F0
 - **f1**: STM32F1
 - **f2**: STM32F2
@@ -478,7 +479,6 @@ The following table shows which STM32 peripheral versions are supported across d
 - **wb0**: STM32WB0
 - **wba**: STM32WBA
 - **wl**: STM32WL
-- **❌ Unsupported**: STM32C5 Series
 
 ### FMAC
 

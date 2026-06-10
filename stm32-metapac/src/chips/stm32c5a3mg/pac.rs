@@ -452,7 +452,7 @@ pub const TIM17: timer::Tim1chCmp = unsafe { timer::Tim1chCmp::from_ptr(0x4001_4
 pub const USBRAM: *mut () = 0x4001_6400usize as _;
 pub const LPDMA1: lpdma::Lpdma = unsafe { lpdma::Lpdma::from_ptr(0x4002_0000usize as _) };
 pub const LPDMA2: lpdma::Lpdma = unsafe { lpdma::Lpdma::from_ptr(0x4002_1000usize as _) };
-pub const FLASH: *mut () = 0x4002_2000usize as _;
+pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000usize as _) };
 pub const CRC: *mut () = 0x4002_3000usize as _;
 pub const CORDIC: cordic::Cordic = unsafe { cordic::Cordic::from_ptr(0x4002_3800usize as _) };
 pub const RAMCFG: *mut () = 0x4002_6000usize as _;
@@ -505,6 +505,8 @@ pub mod dbgmcu;
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v1.rs"]
 pub mod fdcanram;
+#[path = "../../peripherals/flash_c5.rs"]
+pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
 #[path = "../../peripherals/lpdma_v1.rs"]

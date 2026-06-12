@@ -8,7 +8,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 ## Peripheral support by family
 
-| Peripheral | C0 | C5 Series | F0 | F1 | F2 | F3 | F4 | F7 | G0 | G4 | H5 | H7 | L0 | L1 | L4 | L4+ | L5 | MP1 | N6 | U0 | U3 | U5 | WB | WB0 | WBA | WL |
+| Peripheral | C0 | C5 | F0 | F1 | F2 | F3 | F4 | F7 | G0 | G4 | H5 | H7 | L0 | L1 | L4 | L4+ | L5 | MP1 | N6 | U0 | U3 | U5 | WB | WB0 | WBA | WL |
 |------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
 | [ADC](#adc) | c0 | ❌ | v1, ❌ | f1, ❌ | v2 | f3v1, f3v3 | v2 | v2 | g0 | g4 | h5 | h7rs, v4 | l0, ❌ | f3v2, ❌ | v3 | v3 | v3 | ❌ | ❌ | u0 | u3 | u5 | v3, wb1 | wb0 | wba | g0 |
 | [ADCCOMMON](#adccommon) | c0 | | | | v2 | f3 | v2 | v2 | v3 | g4 | h5, h50 | h5, v4 | | | v3 | v3 | v3 | | | v3 | u3 | u5 | v3 | | v3 | v3 |
@@ -147,7 +147,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **wb0**: STM32WB0
 - **wb1**: STM32WB
 - **wba**: STM32WBA
-- **❌ Unsupported**: STM32C5 Series, STM32F0, STM32F1, STM32L0, STM32L1, STM32MP1, STM32N6
+- **❌ Unsupported**: STM32C5, STM32F0, STM32F1, STM32L0, STM32L1, STM32MP1, STM32N6
 
 ### ADCCOMMON
 
@@ -180,7 +180,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v2**: STM32G0, STM32G4, STM32L5, STM32U0, STM32WB, STM32WL
 - **v3a**: STM32U5
 - **v3b**: STM32H5, STM32WBA
-- **❌ Unsupported**: STM32C5 Series, STM32U3, STM32WB
+- **❌ Unsupported**: STM32C5, STM32U3, STM32WB
 
 ### AFIO
 
@@ -225,7 +225,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **❌ Unsupported**: STM32C5 Series, STM32U3
+- **❌ Unsupported**: STM32C5, STM32U3
 
 ### CEC
 
@@ -248,13 +248,13 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1**: STM32G0
 - **v2**: STM32G4
 - **v3**: STM32L4, STM32L4+, STM32L5, STM32WB, STM32WL
-- **❌ Unsupported**: STM32C5 Series, STM32F0, STM32F3, STM32L0, STM32L1, STM32WB
+- **❌ Unsupported**: STM32C5, STM32F0, STM32F3, STM32L0, STM32L1, STM32WB
 
 ### CORDIC
 
 **Versions by family:**
 
-- **v1**: STM32C5 Series, STM32G4, STM32H5, STM32H7, STM32U5
+- **v1**: STM32C5, STM32G4, STM32H5, STM32H7, STM32U5
 
 ### CRC
 
@@ -263,14 +263,14 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1**: STM32F1, STM32F2, STM32F4, STM32L1
 - **v2**: STM32F0
 - **v3**: STM32C0, STM32F0, STM32F3, STM32F7, STM32G0, STM32G4, STM32H5, STM32H7, STM32L0, STM32L4, STM32L4+, STM32L5, STM32N6, STM32U0, STM32U3, STM32U5, STM32WB, STM32WB0, STM32WBA, STM32WL
-- **❌ Unsupported**: STM32C5 Series, STM32MP1
+- **❌ Unsupported**: STM32C5, STM32MP1
 
 ### CRS
 
 **Versions by family:**
 
 - **v1**: STM32C0, STM32F0, STM32G0, STM32G4, STM32H5, STM32H7, STM32L0, STM32L4, STM32L4+, STM32L5, STM32U0, STM32U3, STM32U5, STM32WB
-- **❌ Unsupported**: STM32C5 Series
+- **❌ Unsupported**: STM32C5
 
 ### CRYP
 
@@ -298,14 +298,14 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v5**: STM32L4+, STM32L5
 - **v6**: STM32H5, STM32U3, STM32U5
 - **v7**: STM32G4
-- **❌ Unsupported**: STM32C5 Series, STM32MP1
+- **❌ Unsupported**: STM32C5, STM32MP1
 
 ### DBGMCU
 
 **Versions by family:**
 
 - **c0**: STM32C0
-- **c5**: STM32C5 Series
+- **c5**: STM32C5
 - **f0**: STM32F0
 - **f1**: STM32F1
 - **f2**: STM32F2
@@ -415,7 +415,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1c**: STM32F7
 - **v2**: STM32H5, STM32H7
 - **v2a**: STM32N6
-- **❌ Unsupported**: STM32C5 Series
+- **❌ Unsupported**: STM32C5
 
 ### EXTI
 
@@ -432,7 +432,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **u0**: STM32U0
 - **u3**: STM32U3
 - **u5**: STM32U5
-- **v1**: STM32C5 Series, STM32F0, STM32F1, STM32F2, STM32F3, STM32F4, STM32F7, STM32G4, STM32L0, STM32L1, STM32L4, STM32L4+, STM32MP1
+- **v1**: STM32C5, STM32F0, STM32F1, STM32F2, STM32F3, STM32F4, STM32F7, STM32G4, STM32L0, STM32L1, STM32L4, STM32L4+, STM32MP1
 - **w**: STM32WB, STM32WL
 - **wle**: STM32WL
 
@@ -440,13 +440,13 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **❌ Unsupported**: STM32C5 Series
+- **❌ Unsupported**: STM32C5
 
 ### FDCANRAM
 
 **Versions by family:**
 
-- **v1**: STM32C0, STM32C5 Series, STM32G0, STM32G4, STM32H5, STM32H7, STM32L5, STM32MP1, STM32U3, STM32U5
+- **v1**: STM32C0, STM32C5, STM32G0, STM32G4, STM32H5, STM32H7, STM32L5, STM32MP1, STM32U3, STM32U5
 - **v2**: STM32H7, STM32N6
 
 ### FLASH
@@ -454,7 +454,7 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **c0**: STM32C0
-- **c5**: STM32C5 Series
+- **c5**: STM32C5
 - **f0**: STM32F0
 - **f1**: STM32F1
 - **f2**: STM32F2
@@ -538,7 +538,7 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **v1**: STM32F1
-- **v2**: STM32C0, STM32C5 Series, STM32F0, STM32F2, STM32F3, STM32F4, STM32F7, STM32G0, STM32G4, STM32H5, STM32H7, STM32L0, STM32L1, STM32L4, STM32L4+, STM32L5, STM32MP1, STM32N6, STM32U0, STM32U3, STM32U5, STM32WB, STM32WB0, STM32WBA, STM32WL
+- **v2**: STM32C0, STM32C5, STM32F0, STM32F2, STM32F3, STM32F4, STM32F7, STM32G0, STM32G4, STM32H5, STM32H7, STM32L0, STM32L1, STM32L4, STM32L4+, STM32L5, STM32MP1, STM32N6, STM32U0, STM32U3, STM32U5, STM32WB, STM32WB0, STM32WBA, STM32WL
 - **v2_l478**: STM32L4
 
 ### GPU
@@ -565,7 +565,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v2**: STM32F4, STM32F7, STM32H7, STM32L4, STM32L4+, STM32L5
 - **v3**: STM32H5, STM32H7, STM32N6, STM32U3
 - **v4**: STM32U5, STM32WBA
-- **❌ Unsupported**: STM32C5 Series, STM32MP1
+- **❌ Unsupported**: STM32C5, STM32MP1
 
 ### HDP
 
@@ -604,14 +604,14 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1**: STM32F1, STM32F2, STM32F4, STM32L1, STM32WB0
 - **v2**: STM32C0, STM32F0, STM32F3, STM32F7, STM32G0, STM32G4, STM32H5, STM32H7, STM32L0, STM32L4, STM32L4+, STM32L5, STM32U0, STM32U3, STM32U5, STM32WB, STM32WBA, STM32WL
 - **v3**: STM32H7, STM32N6
-- **❌ Unsupported**: STM32C5 Series, STM32MP1
+- **❌ Unsupported**: STM32C5, STM32MP1
 
 ### I3C
 
 **Versions by family:**
 
 - **v1**: STM32H5, STM32U3
-- **❌ Unsupported**: STM32C5 Series, STM32H7, STM32N6
+- **❌ Unsupported**: STM32C5, STM32H7, STM32N6
 
 ### ICACHE
 
@@ -620,7 +620,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1_0crr**: STM32H5, STM32N6
 - **v1_3crr**: STM32U3, STM32U5
 - **v1_4crr**: STM32H5, STM32L5, STM32WBA
-- **❌ Unsupported**: STM32C5 Series, STM32H5
+- **❌ Unsupported**: STM32C5, STM32H5
 
 ### IPCC
 
@@ -636,7 +636,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1**: STM32F1, STM32F2, STM32F4, STM32L1
 - **v2**: STM32C0, STM32F0, STM32F3, STM32F7, STM32G0, STM32G4, STM32H7, STM32L0, STM32L4, STM32L4+, STM32L5, STM32MP1, STM32WB, STM32WB0, STM32WL
 - **v3**: STM32H5, STM32H7, STM32N6, STM32U0, STM32U3, STM32U5, STM32WBA
-- **❌ Unsupported**: STM32C5 Series
+- **❌ Unsupported**: STM32C5
 
 ### JPEG
 
@@ -655,7 +655,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **v1**: STM32C5 Series, STM32U5
+- **v1**: STM32C5, STM32U5
 
 ### LPGPIO
 
@@ -675,13 +675,13 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1c**: STM32L5, STM32WL
 - **v2a**: STM32H5, STM32U3, STM32U5, STM32WBA
 - **v2b**: STM32U0
-- **❌ Unsupported**: STM32C5 Series, STM32MP1, STM32N6
+- **❌ Unsupported**: STM32C5, STM32MP1, STM32N6
 
 ### LPUART
 
 **Versions by family:**
 
-- **❌ Unsupported**: STM32C5 Series
+- **❌ Unsupported**: STM32C5
 
 ### LTDC
 
@@ -738,7 +738,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v3**: STM32L4, STM32L4+, STM32L5, STM32U0, STM32U3, STM32U5
 - **v4**: STM32H5, STM32H7
 - **v5**: STM32G4
-- **❌ Unsupported**: STM32C5 Series, STM32L1
+- **❌ Unsupported**: STM32C5, STM32L1
 
 ### OTFDEC
 
@@ -759,7 +759,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1a**: STM32H5, STM32H7, STM32WBA
 - **v1b**: STM32U5
 - **v1c**: STM32L4+, STM32L5, STM32WB, STM32WB0, STM32WL
-- **❌ Unsupported**: STM32C5 Series, STM32N6, STM32U3
+- **❌ Unsupported**: STM32C5, STM32N6, STM32U3
 
 ### PSSI
 
@@ -773,7 +773,7 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **c0**: STM32C0
-- **c5**: STM32C5 Series
+- **c5**: STM32C5
 - **f0**: STM32F0
 - **f0x0**: STM32F0
 - **f1**: STM32F1
@@ -824,7 +824,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **h5**: STM32H5, STM32N6
 - **u5**: STM32U3, STM32U5
 - **wba**: STM32WBA
-- **❌ Unsupported**: STM32C5 Series
+- **❌ Unsupported**: STM32C5
 
 ### RAMECC
 
@@ -838,7 +838,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 - **c0**: STM32C0
 - **c0v2**: STM32C0
-- **c5**: STM32C5 Series
+- **c5**: STM32C5
 - **f0v1**: STM32F0
 - **f0v2**: STM32F0
 - **f0v3**: STM32F0
@@ -900,7 +900,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v2**: STM32H7, STM32L4+, STM32L5, STM32WL
 - **v3**: STM32H5, STM32H7, STM32N6, STM32U0, STM32U5, STM32WBA
 - **wba6**: STM32WBA
-- **❌ Unsupported**: STM32C5 Series, STM32MP1, STM32U3
+- **❌ Unsupported**: STM32C5, STM32MP1, STM32U3
 
 ### RRM
 
@@ -930,7 +930,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v3_l5**: STM32L5
 - **v3_u3**: STM32U3
 - **v3_u5**: STM32H5, STM32N6, STM32U5, STM32WBA
-- **❌ Unsupported**: STM32C5 Series, STM32MP1
+- **❌ Unsupported**: STM32C5, STM32MP1
 
 ### SAES
 
@@ -938,7 +938,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 - **v1a**: STM32H5, STM32WBA
 - **v1b**: STM32U5
-- **❌ Unsupported**: STM32C5 Series, STM32H7, STM32N6, STM32U3
+- **❌ Unsupported**: STM32C5, STM32H7, STM32N6, STM32U3
 
 ### SAI
 
@@ -991,7 +991,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v5**: STM32N6
 - **v5_i2s**: STM32H5, STM32H7
 - **v6**: STM32U3, STM32U5, STM32WBA
-- **❌ Unsupported**: STM32C5 Series, STM32MP1
+- **❌ Unsupported**: STM32C5, STM32MP1
 
 ### SWPMI
 
@@ -1004,7 +1004,7 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **c0**: STM32C0
-- **c5**: STM32C5 Series
+- **c5**: STM32C5
 - **f0**: STM32F0
 - **f2**: STM32F2
 - **f3**: STM32F3
@@ -1043,7 +1043,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **u5**: STM32U5
 - **wba**: STM32WBA
 - **wl**: STM32WL
-- **❌ Unsupported**: STM32C5 Series, STM32H7, STM32MP1, STM32N6, STM32U0, STM32U3
+- **❌ Unsupported**: STM32C5, STM32H7, STM32MP1, STM32N6, STM32U0, STM32U3
 
 ### TIM
 
@@ -1058,7 +1058,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **l0**: STM32L0
 - **v1**: STM32F0, STM32F1, STM32F2, STM32F3, STM32F4, STM32F7, STM32L1, STM32L4, STM32L4+, STM32L5
 - **v2**: STM32G4, STM32H5, STM32N6, STM32U0, STM32U3, STM32U5, STM32WBA
-- **v3**: STM32C0, STM32C5 Series, STM32G0, STM32H7, STM32WB, STM32WB0, STM32WL
+- **v3**: STM32C0, STM32C5, STM32G0, STM32H7, STM32WB, STM32WB0, STM32WL
 
 ### TRNG
 
@@ -1086,7 +1086,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **v1**: STM32C0, STM32C5 Series, STM32F0, STM32F1, STM32F2, STM32F3, STM32F4, STM32F7, STM32G0, STM32G4, STM32H5, STM32H7, STM32L0, STM32L1, STM32L4, STM32L4+, STM32L5, STM32MP1, STM32N6, STM32U0, STM32U3, STM32U5, STM32WB, STM32WBA, STM32WL
+- **v1**: STM32C0, STM32C5, STM32F0, STM32F1, STM32F2, STM32F3, STM32F4, STM32F7, STM32G0, STM32G4, STM32H5, STM32H7, STM32L0, STM32L1, STM32L4, STM32L4+, STM32L5, STM32MP1, STM32N6, STM32U0, STM32U3, STM32U5, STM32WB, STM32WBA, STM32WL
 
 ### USART
 
@@ -1096,7 +1096,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v2**: STM32F2, STM32F4, STM32L1
 - **v3**: STM32F0, STM32F3, STM32F7, STM32L0, STM32L4
 - **v4**: STM32C0, STM32G0, STM32G4, STM32H5, STM32H7, STM32L4+, STM32L5, STM32N6, STM32U0, STM32U3, STM32U5, STM32WB, STM32WB0, STM32WBA, STM32WL
-- **❌ Unsupported**: STM32C5 Series, STM32F1, STM32F2, STM32L1, STM32MP1
+- **❌ Unsupported**: STM32C5, STM32F1, STM32F2, STM32L1, STM32MP1
 
 ### USB
 
@@ -1117,7 +1117,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **16x2_512**: STM32F3
 - **32_1024**: STM32U0
 - **32_2048**: STM32C0, STM32G0, STM32H5, STM32U3, STM32U5
-- **❌ Unsupported**: STM32C5 Series
+- **❌ Unsupported**: STM32C5
 
 ### VENC
 
@@ -1148,14 +1148,14 @@ The following table shows which STM32 peripheral versions are supported across d
 
 - **v1**: STM32F0, STM32F1, STM32F2, STM32F3, STM32F4, STM32F7, STM32L0, STM32L1, STM32L4, STM32L4+
 - **v2**: STM32C0, STM32G0, STM32G4, STM32H5, STM32H7, STM32L5, STM32MP1, STM32N6, STM32U0, STM32U3, STM32U5, STM32WB, STM32WBA, STM32WL
-- **❌ Unsupported**: STM32C5 Series
+- **❌ Unsupported**: STM32C5
 
 ### XSPI
 
 **Versions by family:**
 
 - **v1**: STM32H7, STM32N6
-- **❌ Unsupported**: STM32C5 Series
+- **❌ Unsupported**: STM32C5
 
 ### XSPIM
 

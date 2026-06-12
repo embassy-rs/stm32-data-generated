@@ -2,7 +2,7 @@ include!("../metadata_0031.rs");
 use crate::metadata::PeripheralRccKernelClock::{Clock, Mux};
 pub static METADATA: Metadata = Metadata {
     name: "STM32C532EB",
-    family: "STM32C5 Series",
+    family: "STM32C5",
     line: "STM32C53x/542",
     memory: &[&[
         MemoryRegion {

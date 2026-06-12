@@ -1,6 +1,6 @@
 {
   "name": "STM32C532FC",
-  "family": "STM32C5 Series",
+  "family": "STM32C5",
   "line": "STM32C53x/542",
   "die": "DIE44F",
   "device_id": 1103,

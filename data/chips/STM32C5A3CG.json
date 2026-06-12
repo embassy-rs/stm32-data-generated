@@ -1,6 +1,6 @@
 {
   "name": "STM32C5A3CG",
-  "family": "STM32C5 Series",
+  "family": "STM32C5",
   "line": "STM32C59x/5A3",
   "die": "DIE45A",
   "device_id": 1114,

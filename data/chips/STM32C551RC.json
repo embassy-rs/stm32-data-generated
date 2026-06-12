@@ -1,6 +1,6 @@
 {
   "name": "STM32C551RC",
-  "family": "STM32C5 Series",
+  "family": "STM32C5",
   "line": "STM32C55x/562",
   "die": "DIE44E",
   "device_id": 1102,

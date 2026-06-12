@@ -6679,17 +6679,17 @@
             {
               "signal": "END",
               "dma": "MDMA",
-              "request": 27
+              "request": 29
             },
             {
               "signal": "DMA",
               "dma": "MDMA",
-              "request": 28
+              "request": 30
             },
             {
               "signal": "COMMAND",
               "dma": "MDMA",
-              "request": 29
+              "request": 31
             }
           ]
         },

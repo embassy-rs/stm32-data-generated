@@ -5956,7 +5956,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 dmamux: None,
                 remap: &[],
                 dma: Some("MDMA"),
-                request: Some(27),
+                request: Some(29),
             },
             PeripheralDmaChannel {
                 signal: "DMA",
@@ -5964,7 +5964,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 dmamux: None,
                 remap: &[],
                 dma: Some("MDMA"),
-                request: Some(28),
+                request: Some(30),
             },
             PeripheralDmaChannel {
                 signal: "COMMAND",
@@ -5972,7 +5972,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 dmamux: None,
                 remap: &[],
                 dma: Some("MDMA"),
-                request: Some(29),
+                request: Some(31),
             },
         ],
         triggers: &[],

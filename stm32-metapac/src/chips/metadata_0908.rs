@@ -1301,7 +1301,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "QUADSPI",
-        address: 0x90000000,
+        address: 0xa0001000,
         registers: Some(PeripheralRegisters {
             kind: "quadspi",
             version: "v1",

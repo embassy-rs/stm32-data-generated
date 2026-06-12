@@ -2546,6 +2546,10 @@
             {
               "signal": "RCC",
               "interrupt": "RCC_CRS"
+            },
+            {
+              "signal": "WAKEUP",
+              "interrupt": "RCC_CRS"
             }
           ]
         },
@@ -2602,6 +2606,10 @@
             },
             {
               "signal": "TAMP",
+              "interrupt": "RTC"
+            },
+            {
+              "signal": "TIMESTAMP",
               "interrupt": "RTC"
             },
             {

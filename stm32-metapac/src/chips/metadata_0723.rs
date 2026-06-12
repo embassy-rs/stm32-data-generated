@@ -4216,11 +4216,23 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         triggers: &[],
         interrupts: &[
             PeripheralInterrupt {
+                signal: "EHCI",
+                interrupt: "USB",
+            },
+            PeripheralInterrupt {
                 signal: "HP",
                 interrupt: "USB",
             },
             PeripheralInterrupt {
                 signal: "LP",
+                interrupt: "USB",
+            },
+            PeripheralInterrupt {
+                signal: "OHCI",
+                interrupt: "USB",
+            },
+            PeripheralInterrupt {
+                signal: "USBH",
                 interrupt: "USB",
             },
             PeripheralInterrupt {

@@ -6627,6 +6627,10 @@
             {
               "signal": "RCC",
               "interrupt": "RCC_S"
+            },
+            {
+              "signal": "WAKEUP",
+              "interrupt": "RCC_S"
             }
           ]
         },
@@ -6714,6 +6718,10 @@
             },
             {
               "signal": "TAMP",
+              "interrupt": "RTC_S"
+            },
+            {
+              "signal": "TIMESTAMP",
               "interrupt": "RTC_S"
             },
             {
@@ -10489,6 +10497,10 @@
             },
             {
               "signal": "GLOBAL",
+              "interrupt": "OTG_HS"
+            },
+            {
+              "signal": "OTG",
               "interrupt": "OTG_HS"
             },
             {

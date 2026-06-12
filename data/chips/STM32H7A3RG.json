@@ -7127,6 +7127,10 @@
               "interrupt": "OTG_HS"
             },
             {
+              "signal": "OTG",
+              "interrupt": "OTG_HS"
+            },
+            {
               "signal": "WKUP",
               "interrupt": "OTG_HS_WKUP"
             }

@@ -5267,6 +5267,10 @@
               "interrupt": "RTC_LSECSS"
             },
             {
+              "signal": "TIMESTAMP",
+              "interrupt": "RTC_LSECSS"
+            },
+            {
               "signal": "WKUP",
               "interrupt": "RTC_LSECSS"
             }

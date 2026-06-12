@@ -3444,6 +3444,10 @@
               "interrupt": "ETH"
             },
             {
+              "signal": "LPI",
+              "interrupt": "ETH"
+            },
+            {
               "signal": "WKUP",
               "interrupt": "ETH_WKUP"
             }
@@ -8552,6 +8556,10 @@
             },
             {
               "signal": "GLOBAL",
+              "interrupt": "OTG_HS"
+            },
+            {
+              "signal": "OTG",
               "interrupt": "OTG_HS"
             },
             {

@@ -2124,6 +2124,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "ETH",
             },
             PeripheralInterrupt {
+                signal: "LPI",
+                interrupt: "ETH",
+            },
+            PeripheralInterrupt {
                 signal: "WKUP",
                 interrupt: "ETH_WKUP",
             },
@@ -10331,6 +10335,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralInterrupt {
                 signal: "GLOBAL",
+                interrupt: "OTG_HS",
+            },
+            PeripheralInterrupt {
+                signal: "OTG",
                 interrupt: "OTG_HS",
             },
             PeripheralInterrupt {

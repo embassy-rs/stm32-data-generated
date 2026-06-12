@@ -4319,6 +4319,10 @@
               "interrupt": "RTC"
             },
             {
+              "signal": "TIMESTAMP",
+              "interrupt": "RTC"
+            },
+            {
               "signal": "WKUP",
               "interrupt": "RTC"
             }
@@ -7100,6 +7104,10 @@
             },
             {
               "signal": "GLOBAL",
+              "interrupt": "OTG_HS"
+            },
+            {
+              "signal": "OTG",
               "interrupt": "OTG_HS"
             },
             {

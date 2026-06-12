@@ -3060,6 +3060,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "RCC",
                 interrupt: "HASH_CRS",
             },
+            PeripheralInterrupt {
+                signal: "WAKEUP",
+                interrupt: "HASH_CRS",
+            },
         ],
         afio: None,
     },

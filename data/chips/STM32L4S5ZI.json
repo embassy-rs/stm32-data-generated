@@ -5116,6 +5116,10 @@
             {
               "signal": "RCC",
               "interrupt": "HASH_CRS"
+            },
+            {
+              "signal": "WAKEUP",
+              "interrupt": "HASH_CRS"
             }
           ]
         },

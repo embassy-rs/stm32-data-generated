@@ -774,6 +774,10 @@
               "interrupt": "ETH1"
             },
             {
+              "signal": "LPI",
+              "interrupt": "ETH1"
+            },
+            {
               "signal": "WKUP",
               "interrupt": "ETH1_WKUP"
             }
@@ -1884,6 +1888,10 @@
             },
             {
               "signal": "TAMP",
+              "interrupt": "RTC"
+            },
+            {
+              "signal": "TIMESTAMP",
               "interrupt": "RTC"
             },
             {

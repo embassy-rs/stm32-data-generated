@@ -5942,11 +5942,23 @@
           ],
           "interrupts": [
             {
+              "signal": "EHCI",
+              "interrupt": "USB_UCPD1_2"
+            },
+            {
               "signal": "HP",
               "interrupt": "USB_UCPD1_2"
             },
             {
               "signal": "LP",
+              "interrupt": "USB_UCPD1_2"
+            },
+            {
+              "signal": "OHCI",
+              "interrupt": "USB_UCPD1_2"
+            },
+            {
+              "signal": "USBH",
               "interrupt": "USB_UCPD1_2"
             },
             {

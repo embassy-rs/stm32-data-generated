@@ -2048,6 +2048,10 @@
               "interrupt": "ETH"
             },
             {
+              "signal": "LPI",
+              "interrupt": "ETH"
+            },
+            {
               "signal": "WKUP",
               "interrupt": "ETH"
             }
@@ -4839,6 +4843,10 @@
             },
             {
               "signal": "TAMP",
+              "interrupt": "RTC"
+            },
+            {
+              "signal": "TIMESTAMP",
               "interrupt": "RTC"
             },
             {

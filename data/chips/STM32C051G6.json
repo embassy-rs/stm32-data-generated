@@ -1001,6 +1001,10 @@
               "interrupt": "RTC"
             },
             {
+              "signal": "TIMESTAMP",
+              "interrupt": "RTC"
+            },
+            {
               "signal": "WKUP",
               "interrupt": "RTC"
             }

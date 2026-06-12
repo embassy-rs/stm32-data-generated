@@ -3713,11 +3713,23 @@
           ],
           "interrupts": [
             {
+              "signal": "AVD",
+              "interrupt": "PWR_S"
+            },
+            {
+              "signal": "PIN",
+              "interrupt": "PWR_S"
+            },
+            {
               "signal": "PVD",
               "interrupt": "PWR_S"
             },
             {
               "signal": "S3WU",
+              "interrupt": "PWR_S"
+            },
+            {
+              "signal": "WAKEUP",
               "interrupt": "PWR_S"
             },
             {
@@ -3819,6 +3831,10 @@
             {
               "signal": "RCC",
               "interrupt": "RCC_S"
+            },
+            {
+              "signal": "WAKEUP",
+              "interrupt": "RCC_S"
             }
           ]
         },
@@ -3901,6 +3917,10 @@
             },
             {
               "signal": "TAMP",
+              "interrupt": "RTC_S"
+            },
+            {
+              "signal": "TIMESTAMP",
               "interrupt": "RTC_S"
             },
             {
@@ -5798,11 +5818,23 @@
           ],
           "interrupts": [
             {
+              "signal": "EHCI",
+              "interrupt": "USB_FS"
+            },
+            {
               "signal": "HP",
               "interrupt": "USB_FS"
             },
             {
               "signal": "LP",
+              "interrupt": "USB_FS"
+            },
+            {
+              "signal": "OHCI",
+              "interrupt": "USB_FS"
+            },
+            {
+              "signal": "USBH",
               "interrupt": "USB_FS"
             },
             {

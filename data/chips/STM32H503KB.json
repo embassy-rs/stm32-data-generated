@@ -2120,6 +2120,10 @@
               "interrupt": "RTC"
             },
             {
+              "signal": "TIMESTAMP",
+              "interrupt": "RTC"
+            },
+            {
               "signal": "WKUP",
               "interrupt": "RTC"
             }
@@ -4210,11 +4214,23 @@
           ],
           "interrupts": [
             {
+              "signal": "EHCI",
+              "interrupt": "USB_DRD_FS"
+            },
+            {
               "signal": "HP",
               "interrupt": "USB_DRD_FS"
             },
             {
               "signal": "LP",
+              "interrupt": "USB_DRD_FS"
+            },
+            {
+              "signal": "OHCI",
+              "interrupt": "USB_DRD_FS"
+            },
+            {
+              "signal": "USBH",
               "interrupt": "USB_DRD_FS"
             },
             {

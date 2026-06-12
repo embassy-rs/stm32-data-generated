@@ -1331,6 +1331,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "ETH",
             },
             PeripheralInterrupt {
+                signal: "LPI",
+                interrupt: "ETH",
+            },
+            PeripheralInterrupt {
                 signal: "WKUP",
                 interrupt: "ETH_WKUP",
             },
@@ -5210,6 +5214,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "RCC",
                 interrupt: "RCC_S",
             },
+            PeripheralInterrupt {
+                signal: "WAKEUP",
+                interrupt: "RCC_S",
+            },
         ],
         afio: None,
     },
@@ -5313,6 +5321,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralInterrupt {
                 signal: "TAMP",
+                interrupt: "RTC_S",
+            },
+            PeripheralInterrupt {
+                signal: "TIMESTAMP",
                 interrupt: "RTC_S",
             },
             PeripheralInterrupt {
@@ -11285,11 +11297,23 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         triggers: &[],
         interrupts: &[
             PeripheralInterrupt {
+                signal: "EHCI",
+                interrupt: "USB_DRD_FS",
+            },
+            PeripheralInterrupt {
                 signal: "HP",
                 interrupt: "USB_DRD_FS",
             },
             PeripheralInterrupt {
                 signal: "LP",
+                interrupt: "USB_DRD_FS",
+            },
+            PeripheralInterrupt {
+                signal: "OHCI",
+                interrupt: "USB_DRD_FS",
+            },
+            PeripheralInterrupt {
+                signal: "USBH",
                 interrupt: "USB_DRD_FS",
             },
             PeripheralInterrupt {

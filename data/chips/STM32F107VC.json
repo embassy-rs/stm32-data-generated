@@ -2207,6 +2207,10 @@
               "interrupt": "ETH"
             },
             {
+              "signal": "LPI",
+              "interrupt": "ETH"
+            },
+            {
               "signal": "WKUP",
               "interrupt": "ETH_WKUP"
             }
@@ -2643,6 +2647,10 @@
             {
               "signal": "TAMP",
               "interrupt": "TAMPER"
+            },
+            {
+              "signal": "TIMESTAMP",
+              "interrupt": "RTC"
             },
             {
               "signal": "WKUP",

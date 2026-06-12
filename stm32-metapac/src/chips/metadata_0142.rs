@@ -1011,6 +1011,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "TAMPER",
             },
             PeripheralInterrupt {
+                signal: "TIMESTAMP",
+                interrupt: "RTC",
+            },
+            PeripheralInterrupt {
                 signal: "WKUP",
                 interrupt: "RTC",
             },

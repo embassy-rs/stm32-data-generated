@@ -473,17 +473,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
-        name: "CACHEAXI",
-        address: 0x480dfc00,
-        registers: None,
-        rcc: None,
-        pins: &[],
-        dma_channels: &[],
-        triggers: &[],
-        interrupts: &[],
-        afio: None,
-    },
-    Peripheral {
         name: "CRC",
         address: 0x46024c00,
         registers: Some(PeripheralRegisters {
@@ -1459,6 +1448,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         interrupts: &[
             PeripheralInterrupt {
                 signal: "GLOBAL",
+                interrupt: "ETH1",
+            },
+            PeripheralInterrupt {
+                signal: "LPI",
                 interrupt: "ETH1",
             },
             PeripheralInterrupt {
@@ -5334,6 +5327,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "RCC",
                 interrupt: "RCC_S",
             },
+            PeripheralInterrupt {
+                signal: "WAKEUP",
+                interrupt: "RCC_S",
+            },
         ],
         afio: None,
     },
@@ -5729,6 +5726,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralInterrupt {
                 signal: "TAMP",
+                interrupt: "RTC_S",
+            },
+            PeripheralInterrupt {
+                signal: "TIMESTAMP",
                 interrupt: "RTC_S",
             },
             PeripheralInterrupt {
@@ -11341,26 +11342,6 @@ pub(crate) static INTERRUPTS: &[Interrupt] = &[
     Interrupt {
         name: "PAHB_ERR",
         number: 52,
-    },
-    Interrupt {
-        name: "NPU0",
-        number: 53,
-    },
-    Interrupt {
-        name: "NPU1",
-        number: 54,
-    },
-    Interrupt {
-        name: "NPU2",
-        number: 55,
-    },
-    Interrupt {
-        name: "NPU3",
-        number: 56,
-    },
-    Interrupt {
-        name: "CACHEAXI",
-        number: 57,
     },
     Interrupt {
         name: "LTDC_LO",

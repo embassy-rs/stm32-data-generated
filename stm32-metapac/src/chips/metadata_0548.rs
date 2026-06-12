@@ -10926,6 +10926,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 interrupt: "OTG_HS",
             },
             PeripheralInterrupt {
+                signal: "OTG",
+                interrupt: "OTG_HS",
+            },
+            PeripheralInterrupt {
                 signal: "WKUP",
                 interrupt: "OTG_HS_WKUP",
             },

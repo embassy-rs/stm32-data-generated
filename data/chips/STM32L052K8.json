@@ -1496,6 +1496,10 @@
             {
               "signal": "RCC",
               "interrupt": "RCC_CRS"
+            },
+            {
+              "signal": "WAKEUP",
+              "interrupt": "RCC_CRS"
             }
           ]
         },
@@ -1555,6 +1559,10 @@
             },
             {
               "signal": "TAMP",
+              "interrupt": "RTC"
+            },
+            {
+              "signal": "TIMESTAMP",
               "interrupt": "RTC"
             },
             {
@@ -2431,11 +2439,23 @@
           ],
           "interrupts": [
             {
+              "signal": "EHCI",
+              "interrupt": "USB"
+            },
+            {
               "signal": "HP",
               "interrupt": "USB"
             },
             {
               "signal": "LP",
+              "interrupt": "USB"
+            },
+            {
+              "signal": "OHCI",
+              "interrupt": "USB"
+            },
+            {
+              "signal": "USBH",
               "interrupt": "USB"
             },
             {

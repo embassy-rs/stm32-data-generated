@@ -3829,6 +3829,15 @@
           }
         },
         {
+          "name": "GTZC_MPCBB4",
+          "address": 1174550528,
+          "registers": {
+            "kind": "gtzc",
+            "version": "v1",
+            "block": "MPCBB"
+          }
+        },
+        {
           "name": "GTZC_MPCBB6",
           "address": 1073953792,
           "registers": {

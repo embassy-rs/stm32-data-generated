@@ -311,6 +311,12 @@
         "bit_size": 1
       },
       {
+        "name": "HSP1EN",
+        "description": "HSP1 clock enable.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
         "name": "FLASHEN",
         "description": "FLASH clock enable.",
         "bit_offset": 8,
@@ -372,6 +378,12 @@
         "name": "ADF1RST",
         "description": "ADF1 reset.",
         "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "HSP1RST",
+        "description": "HSP1 reset.",
+        "bit_offset": 4,
         "bit_size": 1
       },
       {
@@ -952,6 +964,12 @@
         "bit_size": 1
       },
       {
+        "name": "SPI4EN",
+        "description": "SPI4 clock enable.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
         "name": "WWDGEN",
         "description": "WWDG clock enable.",
         "bit_offset": 11,
@@ -961,6 +979,12 @@
         "name": "SPI2EN",
         "description": "SPI2 clock enable.",
         "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "USART2EN",
+        "description": "USART2 clock enable.",
+        "bit_offset": 17,
         "bit_size": 1
       },
       {
@@ -1035,6 +1059,12 @@
         "bit_size": 1
       },
       {
+        "name": "I2C4EN",
+        "description": "I2C4 clock enable.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
         "name": "FDCAN1EN",
         "description": "FDCAN1 clock enable.",
         "bit_offset": 9,
@@ -1082,9 +1112,21 @@
         "bit_size": 1
       },
       {
+        "name": "SPI4RST",
+        "description": "SPI4 reset.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
         "name": "SPI2RST",
         "description": "SPI2 reset.",
         "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "USART2RST",
+        "description": "USART2 reset.",
+        "bit_offset": 17,
         "bit_size": 1
       },
       {
@@ -1150,6 +1192,12 @@
         "name": "LPTIM2RST",
         "description": "LPTIM2 reset.",
         "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "I2C4RST",
+        "description": "I2C4 reset.",
+        "bit_offset": 1,
         "bit_size": 1
       },
       {
@@ -1388,9 +1436,21 @@
         "bit_size": 1
       },
       {
+        "name": "TIM8EN",
+        "description": "TIM8 clock enable.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
         "name": "USART1EN",
         "description": "USART1clock enable.",
         "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM12EN",
+        "description": "TIM12 clock enable.",
+        "bit_offset": 15,
         "bit_size": 1
       },
       {
@@ -1447,9 +1507,21 @@
         "bit_size": 1
       },
       {
+        "name": "TIM8RST",
+        "description": "TIM8 reset.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
         "name": "USART1RST",
         "description": "USART1 reset.",
         "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "TIM12RST",
+        "description": "TIM12 reset.",
+        "bit_offset": 15,
         "bit_size": 1
       },
       {
@@ -1993,6 +2065,20 @@
         "enum": "SAISEL"
       },
       {
+        "name": "SPI4SEL",
+        "description": "SPI4 kernel clock source selection.",
+        "bit_offset": 7,
+        "bit_size": 1,
+        "enum": "SPI3SEL"
+      },
+      {
+        "name": "I2C4SEL",
+        "description": "I2C4 kernel clock source selection.",
+        "bit_offset": 9,
+        "bit_size": 1,
+        "enum": "I2CSEL"
+      },
+      {
         "name": "RNGSEL",
         "description": "RNG kernel clock source selection.",
         "bit_offset": 11,
@@ -2026,6 +2112,13 @@
         "bit_offset": 20,
         "bit_size": 1,
         "enum": "OCTOSPISEL"
+      },
+      {
+        "name": "USART2SEL",
+        "description": "USART2 kernel clock source selection.",
+        "bit_offset": 22,
+        "bit_size": 1,
+        "enum": "USART3SEL"
       }
     ]
   },

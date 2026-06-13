@@ -2686,6 +2686,11 @@
         {
           "name": "ADF1",
           "address": 1073954816,
+          "registers": {
+            "kind": "adf",
+            "version": "v1",
+            "block": "ADF"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": {
@@ -3425,19 +3430,39 @@
         },
         {
           "name": "GTZC",
-          "address": 1073947648
+          "address": 1073947648,
+          "registers": {
+            "kind": "gtzc",
+            "version": "v1",
+            "block": "GTZC1_TZSC"
+          }
         },
         {
           "name": "GTZC_MPCBB1",
-          "address": 1073949696
+          "address": 1073949696,
+          "registers": {
+            "kind": "gtzc",
+            "version": "v1",
+            "block": "MPCBB"
+          }
         },
         {
           "name": "GTZC_MPCBB2",
-          "address": 1073950720
+          "address": 1073950720,
+          "registers": {
+            "kind": "gtzc",
+            "version": "v1",
+            "block": "MPCBB"
+          }
         },
         {
           "name": "GTZC_TZIC",
           "address": 1342384128,
+          "registers": {
+            "kind": "gtzc",
+            "version": "v1",
+            "block": "TZIC"
+          },
           "interrupts": [
             {
               "signal": "GLOBAL",
@@ -3455,7 +3480,12 @@
         },
         {
           "name": "GTZC_TZSC",
-          "address": 1073947648
+          "address": 1073947648,
+          "registers": {
+            "kind": "gtzc",
+            "version": "v1",
+            "block": "GTZC1_TZSC"
+          }
         },
         {
           "name": "HASH",
@@ -4556,6 +4586,11 @@
         {
           "name": "OCTOSPI1",
           "address": 1108153344,
+          "registers": {
+            "kind": "octospi",
+            "version": "v2",
+            "block": "OCTOSPI"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -5127,6 +5162,11 @@
         {
           "name": "RNG",
           "address": 1108084736,
+          "registers": {
+            "kind": "rng",
+            "version": "v3",
+            "block": "RNG"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -5218,6 +5258,11 @@
         {
           "name": "SAI1",
           "address": 1073828864,
+          "registers": {
+            "kind": "sai",
+            "version": "v3_2pdm",
+            "block": "SAI"
+          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": {
@@ -5957,6 +6002,11 @@
         {
           "name": "TAMP",
           "address": 1073773568,
+          "registers": {
+            "kind": "tamp",
+            "version": "l5",
+            "block": "TAMP"
+          },
           "pins": [
             {
               "pin": "PA0",
@@ -7089,6 +7139,11 @@
         {
           "name": "TSC",
           "address": 1073889280,
+          "registers": {
+            "kind": "tsc",
+            "version": "v1",
+            "block": "TSC"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": "HCLK1",

@@ -663,6 +663,7 @@ pub const ADC4: adc::Adc4 = unsafe { adc::Adc4::from_ptr(0x4602_1000usize as _) 
 pub const ADC4_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4602_1308usize as _) };
 pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4602_1800usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4602_2000usize as _) };
+pub const GTZC_MPCBB4: gtzc::Mpcbb = unsafe { gtzc::Mpcbb::from_ptr(0x4602_3800usize as _) };
 pub const ADF1: adf::Adf = unsafe { adf::Adf::from_ptr(0x4602_4000usize as _) };
 pub const LPDMA1: lpdma::Lpdma = unsafe { lpdma::Lpdma::from_ptr(0x4602_5000usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_4000usize as _) };

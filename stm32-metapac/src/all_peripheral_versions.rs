@@ -17,6 +17,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("bkp", &["v1"]),
     ("bsec", &["v2"]),
     ("can", &["bxcan", "fdcan_v1", "fdcan_v2"]),
+    ("ccb", &["v1"]),
     ("cec", &["v1", "v2"]),
     (
         "comp",
@@ -72,6 +73,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("hash", &["v1", "v2", "v3", "v4"]),
     ("hrtim", &["v1", "v2"]),
     ("hsem", &["v1", "v2", "v3", "v4", "wba"]),
+    ("hsp", &["v1"]),
     ("hspi", &["v1"]),
     ("i2c", &["v1", "v2", "v3"]),
     ("i3c", &["v1"]),

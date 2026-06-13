@@ -64,7 +64,7 @@ pub(crate) static REGISTERS: IR = IR {
             BlockItem {
                 name: "rimc_attr",
                 description: Some("RIFSC RIMC master attribute register."),
-                array: Some(Array::Regular(RegularArray { len: 12, stride: 4 })),
+                array: Some(Array::Regular(RegularArray { len: 13, stride: 4 })),
                 byte_offset: 0xc10,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,

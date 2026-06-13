@@ -50,7 +50,7 @@ impl Rifsc {
     #[doc = "RIFSC RIMC master attribute register."]
     #[inline(always)]
     pub const fn rimc_attr(self, n: usize) -> crate::common::Reg<regs::RimcAttr, crate::common::RW> {
-        assert!(n < 12usize);
+        assert!(n < 13usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0c10usize + n * 4usize) as _) }
     }
     #[doc = "RIFSC peripheral protection status register."]

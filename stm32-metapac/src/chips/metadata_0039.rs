@@ -552,7 +552,72 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         triggers: &[],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "EXTI0",
+                interrupt: "EXTI0",
+            },
+            PeripheralInterrupt {
+                signal: "EXTI1",
+                interrupt: "EXTI1",
+            },
+            PeripheralInterrupt {
+                signal: "EXTI10",
+                interrupt: "EXTI10",
+            },
+            PeripheralInterrupt {
+                signal: "EXTI11",
+                interrupt: "EXTI11",
+            },
+            PeripheralInterrupt {
+                signal: "EXTI12",
+                interrupt: "EXTI12",
+            },
+            PeripheralInterrupt {
+                signal: "EXTI13",
+                interrupt: "EXTI13",
+            },
+            PeripheralInterrupt {
+                signal: "EXTI14",
+                interrupt: "EXTI14",
+            },
+            PeripheralInterrupt {
+                signal: "EXTI15",
+                interrupt: "EXTI15",
+            },
+            PeripheralInterrupt {
+                signal: "EXTI2",
+                interrupt: "EXTI2",
+            },
+            PeripheralInterrupt {
+                signal: "EXTI3",
+                interrupt: "EXTI3",
+            },
+            PeripheralInterrupt {
+                signal: "EXTI4",
+                interrupt: "EXTI4",
+            },
+            PeripheralInterrupt {
+                signal: "EXTI5",
+                interrupt: "EXTI5",
+            },
+            PeripheralInterrupt {
+                signal: "EXTI6",
+                interrupt: "EXTI6",
+            },
+            PeripheralInterrupt {
+                signal: "EXTI7",
+                interrupt: "EXTI7",
+            },
+            PeripheralInterrupt {
+                signal: "EXTI8",
+                interrupt: "EXTI8",
+            },
+            PeripheralInterrupt {
+                signal: "EXTI9",
+                interrupt: "EXTI9",
+            },
+        ],
         afio: None,
     },
     Peripheral {

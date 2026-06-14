@@ -304,7 +304,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Acr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Acr {{ latency: {=u8:?}, prften: {=bool:?}, lpm: {=bool:?}, pdreq1: {=bool:?}, pdreq2: {=bool:?}, sleep_pd: {=bool:?} }}" , self . latency () , self . prften () , self . lpm () , self . pdreq1 () , self . pdreq2 () , self . sleep_pd ())
+            defmt::write!(
+                f,
+                "Acr {{ latency: {=u8:?}, prften: {=bool:?}, lpm: {=bool:?}, pdreq1: {=bool:?}, pdreq2: {=bool:?}, sleep_pd: {=bool:?} }}",
+                self.latency(),
+                self.prften(),
+                self.lpm(),
+                self.pdreq1(),
+                self.pdreq2(),
+                self.sleep_pd()
+            )
         }
     }
     #[doc = "block based register"]
@@ -374,7 +383,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bbr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Bbr {{ block[0]: {=bool:?}, block[1]: {=bool:?}, block[2]: {=bool:?}, block[3]: {=bool:?}, block[4]: {=bool:?}, block[5]: {=bool:?}, block[6]: {=bool:?}, block[7]: {=bool:?}, block[8]: {=bool:?}, block[9]: {=bool:?}, block[10]: {=bool:?}, block[11]: {=bool:?}, block[12]: {=bool:?}, block[13]: {=bool:?}, block[14]: {=bool:?}, block[15]: {=bool:?}, block[16]: {=bool:?}, block[17]: {=bool:?}, block[18]: {=bool:?}, block[19]: {=bool:?}, block[20]: {=bool:?}, block[21]: {=bool:?}, block[22]: {=bool:?}, block[23]: {=bool:?}, block[24]: {=bool:?}, block[25]: {=bool:?}, block[26]: {=bool:?}, block[27]: {=bool:?}, block[28]: {=bool:?}, block[29]: {=bool:?}, block[30]: {=bool:?}, block[31]: {=bool:?} }}" , self . block (0usize) , self . block (1usize) , self . block (2usize) , self . block (3usize) , self . block (4usize) , self . block (5usize) , self . block (6usize) , self . block (7usize) , self . block (8usize) , self . block (9usize) , self . block (10usize) , self . block (11usize) , self . block (12usize) , self . block (13usize) , self . block (14usize) , self . block (15usize) , self . block (16usize) , self . block (17usize) , self . block (18usize) , self . block (19usize) , self . block (20usize) , self . block (21usize) , self . block (22usize) , self . block (23usize) , self . block (24usize) , self . block (25usize) , self . block (26usize) , self . block (27usize) , self . block (28usize) , self . block (29usize) , self . block (30usize) , self . block (31usize))
+            defmt::write!(
+                f,
+                "Bbr {{ block[0]: {=bool:?}, block[1]: {=bool:?}, block[2]: {=bool:?}, block[3]: {=bool:?}, block[4]: {=bool:?}, block[5]: {=bool:?}, block[6]: {=bool:?}, block[7]: {=bool:?}, block[8]: {=bool:?}, block[9]: {=bool:?}, block[10]: {=bool:?}, block[11]: {=bool:?}, block[12]: {=bool:?}, block[13]: {=bool:?}, block[14]: {=bool:?}, block[15]: {=bool:?}, block[16]: {=bool:?}, block[17]: {=bool:?}, block[18]: {=bool:?}, block[19]: {=bool:?}, block[20]: {=bool:?}, block[21]: {=bool:?}, block[22]: {=bool:?}, block[23]: {=bool:?}, block[24]: {=bool:?}, block[25]: {=bool:?}, block[26]: {=bool:?}, block[27]: {=bool:?}, block[28]: {=bool:?}, block[29]: {=bool:?}, block[30]: {=bool:?}, block[31]: {=bool:?} }}",
+                self.block(0usize),
+                self.block(1usize),
+                self.block(2usize),
+                self.block(3usize),
+                self.block(4usize),
+                self.block(5usize),
+                self.block(6usize),
+                self.block(7usize),
+                self.block(8usize),
+                self.block(9usize),
+                self.block(10usize),
+                self.block(11usize),
+                self.block(12usize),
+                self.block(13usize),
+                self.block(14usize),
+                self.block(15usize),
+                self.block(16usize),
+                self.block(17usize),
+                self.block(18usize),
+                self.block(19usize),
+                self.block(20usize),
+                self.block(21usize),
+                self.block(22usize),
+                self.block(23usize),
+                self.block(24usize),
+                self.block(25usize),
+                self.block(26usize),
+                self.block(27usize),
+                self.block(28usize),
+                self.block(29usize),
+                self.block(30usize),
+                self.block(31usize)
+            )
         }
     }
     #[doc = "FLASH ECC register"]
@@ -476,7 +520,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Eccr {{ addr_ecc: {=u32:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, eccie: {=bool:?}, eccc: {=bool:?}, eccd: {=bool:?} }}" , self . addr_ecc () , self . bk_ecc () , self . sysf_ecc () , self . eccie () , self . eccc () , self . eccd ())
+            defmt::write!(
+                f,
+                "Eccr {{ addr_ecc: {=u32:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, eccie: {=bool:?}, eccc: {=bool:?}, eccd: {=bool:?} }}",
+                self.addr_ecc(),
+                self.bk_ecc(),
+                self.sysf_ecc(),
+                self.eccie(),
+                self.eccc(),
+                self.eccd()
+            )
         }
     }
     #[doc = "FLASH non-secure boot address 0 register"]
@@ -768,7 +821,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Nscr {{ pg: {=bool:?}, per: {=bool:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {=bool:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, optstrt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, obl_launch: {=bool:?}, optlock: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer1 () , self . pnb () , self . bker () , self . bwr () , self . mer2 () , self . strt () , self . optstrt () , self . eopie () , self . errie () , self . obl_launch () , self . optlock () , self . lock ())
+            defmt::write!(
+                f,
+                "Nscr {{ pg: {=bool:?}, per: {=bool:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {=bool:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, optstrt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, obl_launch: {=bool:?}, optlock: {=bool:?}, lock: {=bool:?} }}",
+                self.pg(),
+                self.per(),
+                self.mer1(),
+                self.pnb(),
+                self.bker(),
+                self.bwr(),
+                self.mer2(),
+                self.strt(),
+                self.optstrt(),
+                self.eopie(),
+                self.errie(),
+                self.obl_launch(),
+                self.optlock(),
+                self.lock()
+            )
         }
     }
     #[doc = "control 2 register"]
@@ -1024,7 +1094,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nssr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Nssr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, optwerr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?}, oem1lock: {=bool:?}, oem2lock: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?} }}" , self . eop () , self . operr () , self . progerr () , self . wrperr () , self . pgaerr () , self . sizerr () , self . pgserr () , self . optwerr () , self . bsy () , self . wdw () , self . oem1lock () , self . oem2lock () , self . pd1 () , self . pd2 ())
+            defmt::write!(
+                f,
+                "Nssr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, optwerr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?}, oem1lock: {=bool:?}, oem2lock: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?} }}",
+                self.eop(),
+                self.operr(),
+                self.progerr(),
+                self.wrperr(),
+                self.pgaerr(),
+                self.sizerr(),
+                self.pgserr(),
+                self.optwerr(),
+                self.bsy(),
+                self.wdw(),
+                self.oem1lock(),
+                self.oem2lock(),
+                self.pd1(),
+                self.pd2()
+            )
         }
     }
     #[doc = "FLASH operation status register"]
@@ -1378,7 +1465,29 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Optr {{ rdp: {:?}, bor_lev: {:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, n_rst_shdw: {=bool:?}, sram1_rst: {=bool:?}, iwdg_sw: {=bool:?}, iwdg_stop: {=bool:?}, iwdg_stdby: {=bool:?}, wwdg_sw: {=bool:?}, swap_bank: {=bool:?}, dualbank: {=bool:?}, sram2_pe: {=bool:?}, sram2_rst: {=bool:?}, n_swboot0: {=bool:?}, n_boot0: {=bool:?}, io_vdd_hslv: {=bool:?}, io_vddio2_hslv: {=bool:?}, tzen: {=bool:?} }}" , self . rdp () , self . bor_lev () , self . n_rst_stop () , self . n_rst_stdby () , self . n_rst_shdw () , self . sram1_rst () , self . iwdg_sw () , self . iwdg_stop () , self . iwdg_stdby () , self . wwdg_sw () , self . swap_bank () , self . dualbank () , self . sram2_pe () , self . sram2_rst () , self . n_swboot0 () , self . n_boot0 () , self . io_vdd_hslv () , self . io_vddio2_hslv () , self . tzen ())
+            defmt::write!(
+                f,
+                "Optr {{ rdp: {:?}, bor_lev: {:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, n_rst_shdw: {=bool:?}, sram1_rst: {=bool:?}, iwdg_sw: {=bool:?}, iwdg_stop: {=bool:?}, iwdg_stdby: {=bool:?}, wwdg_sw: {=bool:?}, swap_bank: {=bool:?}, dualbank: {=bool:?}, sram2_pe: {=bool:?}, sram2_rst: {=bool:?}, n_swboot0: {=bool:?}, n_boot0: {=bool:?}, io_vdd_hslv: {=bool:?}, io_vddio2_hslv: {=bool:?}, tzen: {=bool:?} }}",
+                self.rdp(),
+                self.bor_lev(),
+                self.n_rst_stop(),
+                self.n_rst_stdby(),
+                self.n_rst_shdw(),
+                self.sram1_rst(),
+                self.iwdg_sw(),
+                self.iwdg_stop(),
+                self.iwdg_stdby(),
+                self.wwdg_sw(),
+                self.swap_bank(),
+                self.dualbank(),
+                self.sram2_pe(),
+                self.sram2_rst(),
+                self.n_swboot0(),
+                self.n_boot0(),
+                self.io_vdd_hslv(),
+                self.io_vddio2_hslv(),
+                self.tzen()
+            )
         }
     }
     #[doc = "FLASH privilege configuration register"]
@@ -1691,7 +1800,23 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccr {{ pg: {=bool:?}, per: {=bool:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {=bool:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, rderrie: {=bool:?}, inv: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer1 () , self . pnb () , self . bker () , self . bwr () , self . mer2 () , self . strt () , self . eopie () , self . errie () , self . rderrie () , self . inv () , self . lock ())
+            defmt::write!(
+                f,
+                "Seccr {{ pg: {=bool:?}, per: {=bool:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {=bool:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, rderrie: {=bool:?}, inv: {=bool:?}, lock: {=bool:?} }}",
+                self.pg(),
+                self.per(),
+                self.mer1(),
+                self.pnb(),
+                self.bker(),
+                self.bwr(),
+                self.mer2(),
+                self.strt(),
+                self.eopie(),
+                self.errie(),
+                self.rderrie(),
+                self.inv(),
+                self.lock()
+            )
         }
     }
     #[doc = "secure control 2 register"]
@@ -1937,7 +2062,19 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Secsr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?} }}" , self . eop () , self . operr () , self . progerr () , self . wrperr () , self . pgaerr () , self . sizerr () , self . pgserr () , self . bsy () , self . wdw ())
+            defmt::write!(
+                f,
+                "Secsr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?} }}",
+                self.eop(),
+                self.operr(),
+                self.progerr(),
+                self.wrperr(),
+                self.pgaerr(),
+                self.sizerr(),
+                self.pgserr(),
+                self.bsy(),
+                self.wdw()
+            )
         }
     }
     #[doc = "FLASH secure watermark1 register 1"]

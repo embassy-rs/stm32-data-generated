@@ -186,7 +186,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1fzr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1fzr1 {{ tim2: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, i2c1: {=bool:?}, i2c2: {=bool:?}, i2c3: {=bool:?}, lptim1: {=bool:?} }}" , self . tim2 () , self . rtc () , self . wwdg () , self . iwdg () , self . i2c1 () , self . i2c2 () , self . i2c3 () , self . lptim1 ())
+            defmt::write!(
+                f,
+                "Apb1fzr1 {{ tim2: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, i2c1: {=bool:?}, i2c2: {=bool:?}, i2c3: {=bool:?}, lptim1: {=bool:?} }}",
+                self.tim2(),
+                self.rtc(),
+                self.wwdg(),
+                self.iwdg(),
+                self.i2c1(),
+                self.i2c2(),
+                self.i2c3(),
+                self.lptim1()
+            )
         }
     }
     #[doc = "CPU1 APB1 Peripheral Freeze Register 2"]
@@ -425,7 +436,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for C2apb1fzr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "C2apb1fzr1 {{ tim2: {=bool:?}, rtc: {=bool:?}, iwdg: {=bool:?}, i2c1: {=bool:?}, i2c2: {=bool:?}, i2c3: {=bool:?}, lptim1: {=bool:?} }}" , self . tim2 () , self . rtc () , self . iwdg () , self . i2c1 () , self . i2c2 () , self . i2c3 () , self . lptim1 ())
+            defmt::write!(
+                f,
+                "C2apb1fzr1 {{ tim2: {=bool:?}, rtc: {=bool:?}, iwdg: {=bool:?}, i2c1: {=bool:?}, i2c2: {=bool:?}, i2c3: {=bool:?}, lptim1: {=bool:?} }}",
+                self.tim2(),
+                self.rtc(),
+                self.iwdg(),
+                self.i2c1(),
+                self.i2c2(),
+                self.i2c3(),
+                self.lptim1()
+            )
         }
     }
     #[doc = "CPU2 APB1 Peripheral Freeze Register 2 \\[dual core device"]

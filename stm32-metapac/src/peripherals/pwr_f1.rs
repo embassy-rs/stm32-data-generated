@@ -143,7 +143,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ lpds: {=bool:?}, pdds: {:?}, cwuf: {=bool:?}, csbf: {=bool:?}, pvde: {=bool:?}, pls: {=u8:?}, dbp: {=bool:?} }}" , self . lpds () , self . pdds () , self . cwuf () , self . csbf () , self . pvde () , self . pls () , self . dbp ())
+            defmt::write!(
+                f,
+                "Cr {{ lpds: {=bool:?}, pdds: {:?}, cwuf: {=bool:?}, csbf: {=bool:?}, pvde: {=bool:?}, pls: {=u8:?}, dbp: {=bool:?} }}",
+                self.lpds(),
+                self.pdds(),
+                self.cwuf(),
+                self.csbf(),
+                self.pvde(),
+                self.pls(),
+                self.dbp()
+            )
         }
     }
     #[doc = "Power control register (PWR_CR)"]

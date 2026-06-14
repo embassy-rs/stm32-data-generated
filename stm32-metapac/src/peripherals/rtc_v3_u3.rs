@@ -382,7 +382,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Alrmr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Alrmr {{ su: {=u8:?}, st: {=u8:?}, msk1: {=bool:?}, mnu: {=u8:?}, mnt: {=u8:?}, msk2: {=bool:?}, hu: {=u8:?}, ht: {=u8:?}, pm: {:?}, msk3: {=bool:?}, du: {=u8:?}, dt: {=u8:?}, wdsel: {:?}, msk4: {=bool:?} }}" , self . su () , self . st () , self . msk1 () , self . mnu () , self . mnt () , self . msk2 () , self . hu () , self . ht () , self . pm () , self . msk3 () , self . du () , self . dt () , self . wdsel () , self . msk4 ())
+            defmt::write!(
+                f,
+                "Alrmr {{ su: {=u8:?}, st: {=u8:?}, msk1: {=bool:?}, mnu: {=u8:?}, mnt: {=u8:?}, msk2: {=bool:?}, hu: {=u8:?}, ht: {=u8:?}, pm: {:?}, msk3: {=bool:?}, du: {=u8:?}, dt: {=u8:?}, wdsel: {:?}, msk4: {=bool:?} }}",
+                self.su(),
+                self.st(),
+                self.msk1(),
+                self.mnu(),
+                self.mnt(),
+                self.msk2(),
+                self.hu(),
+                self.ht(),
+                self.pm(),
+                self.msk3(),
+                self.du(),
+                self.dt(),
+                self.wdsel(),
+                self.msk4()
+            )
         }
     }
     #[doc = "RTC alarm A subsecond register."]
@@ -925,7 +942,39 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ wucksel: {:?}, tsedge: {:?}, refckon: {=bool:?}, bypshad: {=bool:?}, fmt: {:?}, ssruie: {=bool:?}, alre[0]: {=bool:?}, alre[1]: {=bool:?}, wute: {=bool:?}, tse: {=bool:?}, alrie[0]: {=bool:?}, alrie[1]: {=bool:?}, wutie: {=bool:?}, tsie: {=bool:?}, add1h: {=bool:?}, sub1h: {=bool:?}, bkp: {=bool:?}, cosel: {:?}, pol: {:?}, osel: {:?}, coe: {=bool:?}, itse: {=bool:?}, tampts: {=bool:?}, tampoe: {=bool:?}, alrfclr[0]: {=bool:?}, alrfclr[1]: {=bool:?}, tampalrm_pu: {=bool:?}, tampalrm_type: {:?}, out2en: {=bool:?} }}" , self . wucksel () , self . tsedge () , self . refckon () , self . bypshad () , self . fmt () , self . ssruie () , self . alre (0usize) , self . alre (1usize) , self . wute () , self . tse () , self . alrie (0usize) , self . alrie (1usize) , self . wutie () , self . tsie () , self . add1h () , self . sub1h () , self . bkp () , self . cosel () , self . pol () , self . osel () , self . coe () , self . itse () , self . tampts () , self . tampoe () , self . alrfclr (0usize) , self . alrfclr (1usize) , self . tampalrm_pu () , self . tampalrm_type () , self . out2en ())
+            defmt::write!(
+                f,
+                "Cr {{ wucksel: {:?}, tsedge: {:?}, refckon: {=bool:?}, bypshad: {=bool:?}, fmt: {:?}, ssruie: {=bool:?}, alre[0]: {=bool:?}, alre[1]: {=bool:?}, wute: {=bool:?}, tse: {=bool:?}, alrie[0]: {=bool:?}, alrie[1]: {=bool:?}, wutie: {=bool:?}, tsie: {=bool:?}, add1h: {=bool:?}, sub1h: {=bool:?}, bkp: {=bool:?}, cosel: {:?}, pol: {:?}, osel: {:?}, coe: {=bool:?}, itse: {=bool:?}, tampts: {=bool:?}, tampoe: {=bool:?}, alrfclr[0]: {=bool:?}, alrfclr[1]: {=bool:?}, tampalrm_pu: {=bool:?}, tampalrm_type: {:?}, out2en: {=bool:?} }}",
+                self.wucksel(),
+                self.tsedge(),
+                self.refckon(),
+                self.bypshad(),
+                self.fmt(),
+                self.ssruie(),
+                self.alre(0usize),
+                self.alre(1usize),
+                self.wute(),
+                self.tse(),
+                self.alrie(0usize),
+                self.alrie(1usize),
+                self.wutie(),
+                self.tsie(),
+                self.add1h(),
+                self.sub1h(),
+                self.bkp(),
+                self.cosel(),
+                self.pol(),
+                self.osel(),
+                self.coe(),
+                self.itse(),
+                self.tampts(),
+                self.tampoe(),
+                self.alrfclr(0usize),
+                self.alrfclr(1usize),
+                self.tampalrm_pu(),
+                self.tampalrm_type(),
+                self.out2en()
+            )
         }
     }
     #[doc = "RTC date register."]
@@ -1191,7 +1240,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Icsr {{ wutwf: {=bool:?}, shpf: {=bool:?}, inits: {=bool:?}, rsf: {=bool:?}, initf: {=bool:?}, init: {=bool:?}, bin: {:?}, bcdu: {:?}, recalpf: {=bool:?} }}" , self . wutwf () , self . shpf () , self . inits () , self . rsf () , self . initf () , self . init () , self . bin () , self . bcdu () , self . recalpf ())
+            defmt::write!(
+                f,
+                "Icsr {{ wutwf: {=bool:?}, shpf: {=bool:?}, inits: {=bool:?}, rsf: {=bool:?}, initf: {=bool:?}, init: {=bool:?}, bin: {:?}, bcdu: {:?}, recalpf: {=bool:?} }}",
+                self.wutwf(),
+                self.shpf(),
+                self.inits(),
+                self.rsf(),
+                self.initf(),
+                self.init(),
+                self.bin(),
+                self.bcdu(),
+                self.recalpf()
+            )
         }
     }
     #[doc = "RTC nonsecure masked interrupt status register."]
@@ -1298,7 +1359,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Misr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Misr {{ alrmf[0]: {=bool:?}, alrmf[1]: {=bool:?}, wutmf: {=bool:?}, tsmf: {=bool:?}, tsovmf: {=bool:?}, itsmf: {=bool:?}, ssrumf: {=bool:?} }}" , self . alrmf (0usize) , self . alrmf (1usize) , self . wutmf () , self . tsmf () , self . tsovmf () , self . itsmf () , self . ssrumf ())
+            defmt::write!(
+                f,
+                "Misr {{ alrmf[0]: {=bool:?}, alrmf[1]: {=bool:?}, wutmf: {=bool:?}, tsmf: {=bool:?}, tsovmf: {=bool:?}, itsmf: {=bool:?}, ssrumf: {=bool:?} }}",
+                self.alrmf(0usize),
+                self.alrmf(1usize),
+                self.wutmf(),
+                self.tsmf(),
+                self.tsovmf(),
+                self.itsmf(),
+                self.ssrumf()
+            )
         }
     }
     #[doc = "RTC prescaler register."]
@@ -1460,7 +1531,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Privcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Privcr {{ alrpriv[0]: {=bool:?}, alrpriv[1]: {=bool:?}, wutpriv: {=bool:?}, tspriv: {=bool:?}, calpriv: {=bool:?}, initpriv: {=bool:?}, priv_: {=bool:?} }}" , self . alrpriv (0usize) , self . alrpriv (1usize) , self . wutpriv () , self . tspriv () , self . calpriv () , self . initpriv () , self . priv_ ())
+            defmt::write!(
+                f,
+                "Privcr {{ alrpriv[0]: {=bool:?}, alrpriv[1]: {=bool:?}, wutpriv: {=bool:?}, tspriv: {=bool:?}, calpriv: {=bool:?}, initpriv: {=bool:?}, priv_: {=bool:?} }}",
+                self.alrpriv(0usize),
+                self.alrpriv(1usize),
+                self.wutpriv(),
+                self.tspriv(),
+                self.calpriv(),
+                self.initpriv(),
+                self.priv_()
+            )
         }
     }
     #[doc = "RTC status clear register."]
@@ -1567,7 +1648,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Scr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Scr {{ calrf[0]: {:?}, calrf[1]: {:?}, cwutf: {:?}, ctsf: {:?}, ctsovf: {:?}, citsf: {:?}, cssruf: {:?} }}" , self . calrf (0usize) , self . calrf (1usize) , self . cwutf () , self . ctsf () , self . ctsovf () , self . citsf () , self . cssruf ())
+            defmt::write!(
+                f,
+                "Scr {{ calrf[0]: {:?}, calrf[1]: {:?}, cwutf: {:?}, ctsf: {:?}, ctsovf: {:?}, citsf: {:?}, cssruf: {:?} }}",
+                self.calrf(0usize),
+                self.calrf(1usize),
+                self.cwutf(),
+                self.ctsf(),
+                self.ctsovf(),
+                self.citsf(),
+                self.cssruf()
+            )
         }
     }
     #[doc = "RTC secure configuration register."]
@@ -1682,7 +1773,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccfgr {{ alrasec: {=bool:?}, alrbsec: {=bool:?}, wutsec: {=bool:?}, tssec: {=bool:?}, calsec: {=bool:?}, initsec: {=bool:?}, sec: {=bool:?} }}" , self . alrasec () , self . alrbsec () , self . wutsec () , self . tssec () , self . calsec () , self . initsec () , self . sec ())
+            defmt::write!(
+                f,
+                "Seccfgr {{ alrasec: {=bool:?}, alrbsec: {=bool:?}, wutsec: {=bool:?}, tssec: {=bool:?}, calsec: {=bool:?}, initsec: {=bool:?}, sec: {=bool:?} }}",
+                self.alrasec(),
+                self.alrbsec(),
+                self.wutsec(),
+                self.tssec(),
+                self.calsec(),
+                self.initsec(),
+                self.sec()
+            )
         }
     }
     #[doc = "RTC shift control register."]
@@ -1844,7 +1945,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smisr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Smisr {{ alrmf[0]: {=bool:?}, alrmf[1]: {=bool:?}, wutmf: {=bool:?}, tsmf: {=bool:?}, tsovmf: {=bool:?}, itsmf: {=bool:?}, ssrumf: {=bool:?} }}" , self . alrmf (0usize) , self . alrmf (1usize) , self . wutmf () , self . tsmf () , self . tsovmf () , self . itsmf () , self . ssrumf ())
+            defmt::write!(
+                f,
+                "Smisr {{ alrmf[0]: {=bool:?}, alrmf[1]: {=bool:?}, wutmf: {=bool:?}, tsmf: {=bool:?}, tsovmf: {=bool:?}, itsmf: {=bool:?}, ssrumf: {=bool:?} }}",
+                self.alrmf(0usize),
+                self.alrmf(1usize),
+                self.wutmf(),
+                self.tsmf(),
+                self.tsovmf(),
+                self.itsmf(),
+                self.ssrumf()
+            )
         }
     }
     #[doc = "RTC status register."]
@@ -1951,7 +2062,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ alrf[0]: {=bool:?}, alrf[1]: {=bool:?}, wutf: {=bool:?}, tsf: {=bool:?}, tsovf: {=bool:?}, itsf: {=bool:?}, ssruf: {=bool:?} }}" , self . alrf (0usize) , self . alrf (1usize) , self . wutf () , self . tsf () , self . tsovf () , self . itsf () , self . ssruf ())
+            defmt::write!(
+                f,
+                "Sr {{ alrf[0]: {=bool:?}, alrf[1]: {=bool:?}, wutf: {=bool:?}, tsf: {=bool:?}, tsovf: {=bool:?}, itsf: {=bool:?}, ssruf: {=bool:?} }}",
+                self.alrf(0usize),
+                self.alrf(1usize),
+                self.wutf(),
+                self.tsf(),
+                self.tsovf(),
+                self.itsf(),
+                self.ssruf()
+            )
         }
     }
     #[doc = "RTC subsecond register."]
@@ -2044,7 +2165,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tamptscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Tamptscr {{ tampts[0]: {=bool:?}, tampts[1]: {=bool:?}, tampts[2]: {=bool:?}, tampts[3]: {=bool:?}, tampts[4]: {=bool:?}, itampts: {=bool:?} }}" , self . tampts (0usize) , self . tampts (1usize) , self . tampts (2usize) , self . tampts (3usize) , self . tampts (4usize) , self . itampts ())
+            defmt::write!(
+                f,
+                "Tamptscr {{ tampts[0]: {=bool:?}, tampts[1]: {=bool:?}, tampts[2]: {=bool:?}, tampts[3]: {=bool:?}, tampts[4]: {=bool:?}, itampts: {=bool:?} }}",
+                self.tampts(0usize),
+                self.tampts(1usize),
+                self.tampts(2usize),
+                self.tampts(3usize),
+                self.tampts(4usize),
+                self.itampts()
+            )
         }
     }
     #[doc = "RTC time register."]

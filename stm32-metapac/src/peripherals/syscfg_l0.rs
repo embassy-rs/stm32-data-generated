@@ -236,7 +236,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr2 {{ fwdis: {=bool:?}, i2c_pb6_fmp: {=bool:?}, i2c_pb7_fmp: {=bool:?}, i2c_pb8_fmp: {=bool:?}, i2c_pb9_fmp: {=bool:?}, i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c3_fmp: {=bool:?} }}" , self . fwdis () , self . i2c_pb6_fmp () , self . i2c_pb7_fmp () , self . i2c_pb8_fmp () , self . i2c_pb9_fmp () , self . i2c1_fmp () , self . i2c2_fmp () , self . i2c3_fmp ())
+            defmt::write!(
+                f,
+                "Cfgr2 {{ fwdis: {=bool:?}, i2c_pb6_fmp: {=bool:?}, i2c_pb7_fmp: {=bool:?}, i2c_pb8_fmp: {=bool:?}, i2c_pb9_fmp: {=bool:?}, i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c3_fmp: {=bool:?} }}",
+                self.fwdis(),
+                self.i2c_pb6_fmp(),
+                self.i2c_pb7_fmp(),
+                self.i2c_pb8_fmp(),
+                self.i2c_pb9_fmp(),
+                self.i2c1_fmp(),
+                self.i2c2_fmp(),
+                self.i2c3_fmp()
+            )
         }
     }
     #[doc = "CFGR3"]
@@ -364,7 +375,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr3 {{ en_vrefint: {=bool:?}, sel_vref_out: {=u8:?}, enbuf_vrefint_adc: {=bool:?}, enbuf_sensor_adc: {=bool:?}, enbuf_vrefint_comp2: {=bool:?}, enref_hsi48: {=bool:?}, vrefint_rdyf: {=bool:?}, ref_lock: {=bool:?} }}" , self . en_vrefint () , self . sel_vref_out () , self . enbuf_vrefint_adc () , self . enbuf_sensor_adc () , self . enbuf_vrefint_comp2 () , self . enref_hsi48 () , self . vrefint_rdyf () , self . ref_lock ())
+            defmt::write!(
+                f,
+                "Cfgr3 {{ en_vrefint: {=bool:?}, sel_vref_out: {=u8:?}, enbuf_vrefint_adc: {=bool:?}, enbuf_sensor_adc: {=bool:?}, enbuf_vrefint_comp2: {=bool:?}, enref_hsi48: {=bool:?}, vrefint_rdyf: {=bool:?}, ref_lock: {=bool:?} }}",
+                self.en_vrefint(),
+                self.sel_vref_out(),
+                self.enbuf_vrefint_adc(),
+                self.enbuf_sensor_adc(),
+                self.enbuf_vrefint_comp2(),
+                self.enref_hsi48(),
+                self.vrefint_rdyf(),
+                self.ref_lock()
+            )
         }
     }
     #[doc = "external interrupt configuration register 1-4"]

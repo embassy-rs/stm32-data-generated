@@ -199,7 +199,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr {{ wuf: {=bool:?}, sbf: {=bool:?}, ewup[0]: {=bool:?}, ewup[1]: {=bool:?}, ewup[2]: {=bool:?}, ewup[3]: {=bool:?}, ewup[4]: {=bool:?}, ewup[5]: {=bool:?}, ewup[6]: {=bool:?}, ewup[7]: {=bool:?} }}" , self . wuf () , self . sbf () , self . ewup (0usize) , self . ewup (1usize) , self . ewup (2usize) , self . ewup (3usize) , self . ewup (4usize) , self . ewup (5usize) , self . ewup (6usize) , self . ewup (7usize))
+            defmt::write!(
+                f,
+                "Csr {{ wuf: {=bool:?}, sbf: {=bool:?}, ewup[0]: {=bool:?}, ewup[1]: {=bool:?}, ewup[2]: {=bool:?}, ewup[3]: {=bool:?}, ewup[4]: {=bool:?}, ewup[5]: {=bool:?}, ewup[6]: {=bool:?}, ewup[7]: {=bool:?} }}",
+                self.wuf(),
+                self.sbf(),
+                self.ewup(0usize),
+                self.ewup(1usize),
+                self.ewup(2usize),
+                self.ewup(3usize),
+                self.ewup(4usize),
+                self.ewup(5usize),
+                self.ewup(6usize),
+                self.ewup(7usize)
+            )
         }
     }
 }

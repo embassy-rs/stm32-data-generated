@@ -407,7 +407,40 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ mem_mode: {:?}, usb_it_rmp: {=bool:?}, tim1_itr3_rmp: {=bool:?}, dac1_trig_rmp: {=bool:?}, dac_trig_rmp: {=bool:?}, adc2_dma_rmp: {=bool:?}, tim16_dma_rmp: {=bool:?}, tim17_dma_rmp: {=bool:?}, tim6_dac1_ch1_dma_rmp: {=bool:?}, tim6_dac1_dma_rmp: {=bool:?}, tim6_dac1_out1_dma_rmp: {=bool:?}, tim7_dac1_ch2_dma_rmp: {=bool:?}, tim7_dac1_out2_dma_rmp: {=bool:?}, dac2_ch1_dma_rmp: {=bool:?}, tim18_dac2_out1_dma_rmp: {=bool:?}, i2c_pb6_fmp: {:?}, i2c_pb7_fmp: {:?}, i2c_pb8_fmp: {:?}, i2c_pb9_fmp: {:?}, i2c1_fmp: {:?}, i2c2_fmp: {:?}, encoder_mode: {:?}, i2c3_fmp: {:?}, vbat_mon: {=bool:?}, fpu_ie[0]: {=bool:?}, fpu_ie[1]: {=bool:?}, fpu_ie[2]: {=bool:?}, fpu_ie[3]: {=bool:?}, fpu_ie[4]: {=bool:?}, fpu_ie[5]: {=bool:?} }}" , self . mem_mode () , self . usb_it_rmp () , self . tim1_itr3_rmp () , self . dac1_trig_rmp () , self . dac_trig_rmp () , self . adc2_dma_rmp () , self . tim16_dma_rmp () , self . tim17_dma_rmp () , self . tim6_dac1_ch1_dma_rmp () , self . tim6_dac1_dma_rmp () , self . tim6_dac1_out1_dma_rmp () , self . tim7_dac1_ch2_dma_rmp () , self . tim7_dac1_out2_dma_rmp () , self . dac2_ch1_dma_rmp () , self . tim18_dac2_out1_dma_rmp () , self . i2c_pb6_fmp () , self . i2c_pb7_fmp () , self . i2c_pb8_fmp () , self . i2c_pb9_fmp () , self . i2c1_fmp () , self . i2c2_fmp () , self . encoder_mode () , self . i2c3_fmp () , self . vbat_mon () , self . fpu_ie (0usize) , self . fpu_ie (1usize) , self . fpu_ie (2usize) , self . fpu_ie (3usize) , self . fpu_ie (4usize) , self . fpu_ie (5usize))
+            defmt::write!(
+                f,
+                "Cfgr1 {{ mem_mode: {:?}, usb_it_rmp: {=bool:?}, tim1_itr3_rmp: {=bool:?}, dac1_trig_rmp: {=bool:?}, dac_trig_rmp: {=bool:?}, adc2_dma_rmp: {=bool:?}, tim16_dma_rmp: {=bool:?}, tim17_dma_rmp: {=bool:?}, tim6_dac1_ch1_dma_rmp: {=bool:?}, tim6_dac1_dma_rmp: {=bool:?}, tim6_dac1_out1_dma_rmp: {=bool:?}, tim7_dac1_ch2_dma_rmp: {=bool:?}, tim7_dac1_out2_dma_rmp: {=bool:?}, dac2_ch1_dma_rmp: {=bool:?}, tim18_dac2_out1_dma_rmp: {=bool:?}, i2c_pb6_fmp: {:?}, i2c_pb7_fmp: {:?}, i2c_pb8_fmp: {:?}, i2c_pb9_fmp: {:?}, i2c1_fmp: {:?}, i2c2_fmp: {:?}, encoder_mode: {:?}, i2c3_fmp: {:?}, vbat_mon: {=bool:?}, fpu_ie[0]: {=bool:?}, fpu_ie[1]: {=bool:?}, fpu_ie[2]: {=bool:?}, fpu_ie[3]: {=bool:?}, fpu_ie[4]: {=bool:?}, fpu_ie[5]: {=bool:?} }}",
+                self.mem_mode(),
+                self.usb_it_rmp(),
+                self.tim1_itr3_rmp(),
+                self.dac1_trig_rmp(),
+                self.dac_trig_rmp(),
+                self.adc2_dma_rmp(),
+                self.tim16_dma_rmp(),
+                self.tim17_dma_rmp(),
+                self.tim6_dac1_ch1_dma_rmp(),
+                self.tim6_dac1_dma_rmp(),
+                self.tim6_dac1_out1_dma_rmp(),
+                self.tim7_dac1_ch2_dma_rmp(),
+                self.tim7_dac1_out2_dma_rmp(),
+                self.dac2_ch1_dma_rmp(),
+                self.tim18_dac2_out1_dma_rmp(),
+                self.i2c_pb6_fmp(),
+                self.i2c_pb7_fmp(),
+                self.i2c_pb8_fmp(),
+                self.i2c_pb9_fmp(),
+                self.i2c1_fmp(),
+                self.i2c2_fmp(),
+                self.encoder_mode(),
+                self.i2c3_fmp(),
+                self.vbat_mon(),
+                self.fpu_ie(0usize),
+                self.fpu_ie(1usize),
+                self.fpu_ie(2usize),
+                self.fpu_ie(3usize),
+                self.fpu_ie(4usize),
+                self.fpu_ie(5usize)
+            )
         }
     }
     #[doc = "configuration register 2"]
@@ -496,7 +529,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr2 {{ lockup_lock: {=bool:?}, sram_parity_lock: {=bool:?}, pvd_lock: {=bool:?}, byp_addr_par: {=bool:?}, sram_pef: {=bool:?} }}" , self . lockup_lock () , self . sram_parity_lock () , self . pvd_lock () , self . byp_addr_par () , self . sram_pef ())
+            defmt::write!(
+                f,
+                "Cfgr2 {{ lockup_lock: {=bool:?}, sram_parity_lock: {=bool:?}, pvd_lock: {=bool:?}, byp_addr_par: {=bool:?}, sram_pef: {=bool:?} }}",
+                self.lockup_lock(),
+                self.sram_parity_lock(),
+                self.pvd_lock(),
+                self.byp_addr_par(),
+                self.sram_pef()
+            )
         }
     }
     #[doc = "configuration register 3"]
@@ -611,7 +652,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr3 {{ spi1_rx_dma_rmp: {:?}, spi1_tx_dma_rmp: {:?}, i2c1_rx_dma_rmp: {:?}, i2c1_tx_dma_rmp: {:?}, adc2_dma_rmp: {:?}, dac1_trig3_rmp: {:?}, dac1_trig5_rmp: {=bool:?} }}" , self . spi1_rx_dma_rmp () , self . spi1_tx_dma_rmp () , self . i2c1_rx_dma_rmp () , self . i2c1_tx_dma_rmp () , self . adc2_dma_rmp () , self . dac1_trig3_rmp () , self . dac1_trig5_rmp ())
+            defmt::write!(
+                f,
+                "Cfgr3 {{ spi1_rx_dma_rmp: {:?}, spi1_tx_dma_rmp: {:?}, i2c1_rx_dma_rmp: {:?}, i2c1_tx_dma_rmp: {:?}, adc2_dma_rmp: {:?}, dac1_trig3_rmp: {:?}, dac1_trig5_rmp: {=bool:?} }}",
+                self.spi1_rx_dma_rmp(),
+                self.spi1_tx_dma_rmp(),
+                self.i2c1_rx_dma_rmp(),
+                self.i2c1_tx_dma_rmp(),
+                self.adc2_dma_rmp(),
+                self.dac1_trig3_rmp(),
+                self.dac1_trig5_rmp()
+            )
         }
     }
     #[doc = "configuration register 4"]
@@ -817,7 +868,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr4 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr4 {{ adc12_ext2_rmp: {:?}, adc12_ext3_rmp: {:?}, adc12_ext5_rmp: {:?}, adc12_ext13_rmp: {:?}, adc12_ext15_rmp: {:?}, adc12_jext3_rmp: {:?}, adc12_jext6_rmp: {:?}, adc12_jext13_rmp: {:?}, adc34_ext5_rmp: {:?}, adc34_ext6_rmp: {:?}, adc34_ext15_rmp: {:?}, adc34_jext5_rmp: {:?}, adc34_jext11_rmp: {:?}, adc34_jext14_rmp: {:?} }}" , self . adc12_ext2_rmp () , self . adc12_ext3_rmp () , self . adc12_ext5_rmp () , self . adc12_ext13_rmp () , self . adc12_ext15_rmp () , self . adc12_jext3_rmp () , self . adc12_jext6_rmp () , self . adc12_jext13_rmp () , self . adc34_ext5_rmp () , self . adc34_ext6_rmp () , self . adc34_ext15_rmp () , self . adc34_jext5_rmp () , self . adc34_jext11_rmp () , self . adc34_jext14_rmp ())
+            defmt::write!(
+                f,
+                "Cfgr4 {{ adc12_ext2_rmp: {:?}, adc12_ext3_rmp: {:?}, adc12_ext5_rmp: {:?}, adc12_ext13_rmp: {:?}, adc12_ext15_rmp: {:?}, adc12_jext3_rmp: {:?}, adc12_jext6_rmp: {:?}, adc12_jext13_rmp: {:?}, adc34_ext5_rmp: {:?}, adc34_ext6_rmp: {:?}, adc34_ext15_rmp: {:?}, adc34_jext5_rmp: {:?}, adc34_jext11_rmp: {:?}, adc34_jext14_rmp: {:?} }}",
+                self.adc12_ext2_rmp(),
+                self.adc12_ext3_rmp(),
+                self.adc12_ext5_rmp(),
+                self.adc12_ext13_rmp(),
+                self.adc12_ext15_rmp(),
+                self.adc12_jext3_rmp(),
+                self.adc12_jext6_rmp(),
+                self.adc12_jext13_rmp(),
+                self.adc34_ext5_rmp(),
+                self.adc34_ext6_rmp(),
+                self.adc34_ext15_rmp(),
+                self.adc34_jext5_rmp(),
+                self.adc34_jext11_rmp(),
+                self.adc34_jext14_rmp()
+            )
         }
     }
     #[doc = "external interrupt configuration register"]
@@ -924,7 +992,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Rcr {{ page_wp[0]: {=bool:?}, page_wp[1]: {=bool:?}, page_wp[2]: {=bool:?}, page_wp[3]: {=bool:?}, page_wp[4]: {=bool:?}, page_wp[5]: {=bool:?}, page_wp[6]: {=bool:?}, page_wp[7]: {=bool:?}, page_wp[8]: {=bool:?}, page_wp[9]: {=bool:?}, page_wp[10]: {=bool:?}, page_wp[11]: {=bool:?}, page_wp[12]: {=bool:?}, page_wp[13]: {=bool:?}, page_wp[14]: {=bool:?}, page_wp[15]: {=bool:?} }}" , self . page_wp (0usize) , self . page_wp (1usize) , self . page_wp (2usize) , self . page_wp (3usize) , self . page_wp (4usize) , self . page_wp (5usize) , self . page_wp (6usize) , self . page_wp (7usize) , self . page_wp (8usize) , self . page_wp (9usize) , self . page_wp (10usize) , self . page_wp (11usize) , self . page_wp (12usize) , self . page_wp (13usize) , self . page_wp (14usize) , self . page_wp (15usize))
+            defmt::write!(
+                f,
+                "Rcr {{ page_wp[0]: {=bool:?}, page_wp[1]: {=bool:?}, page_wp[2]: {=bool:?}, page_wp[3]: {=bool:?}, page_wp[4]: {=bool:?}, page_wp[5]: {=bool:?}, page_wp[6]: {=bool:?}, page_wp[7]: {=bool:?}, page_wp[8]: {=bool:?}, page_wp[9]: {=bool:?}, page_wp[10]: {=bool:?}, page_wp[11]: {=bool:?}, page_wp[12]: {=bool:?}, page_wp[13]: {=bool:?}, page_wp[14]: {=bool:?}, page_wp[15]: {=bool:?} }}",
+                self.page_wp(0usize),
+                self.page_wp(1usize),
+                self.page_wp(2usize),
+                self.page_wp(3usize),
+                self.page_wp(4usize),
+                self.page_wp(5usize),
+                self.page_wp(6usize),
+                self.page_wp(7usize),
+                self.page_wp(8usize),
+                self.page_wp(9usize),
+                self.page_wp(10usize),
+                self.page_wp(11usize),
+                self.page_wp(12usize),
+                self.page_wp(13usize),
+                self.page_wp(14usize),
+                self.page_wp(15usize)
+            )
         }
     }
 }

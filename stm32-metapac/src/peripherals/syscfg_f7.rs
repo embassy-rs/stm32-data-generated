@@ -394,7 +394,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pmc {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pmc {{ i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c3_fmp: {=bool:?}, i2c4_fmp: {=bool:?}, pb6_fmp: {=bool:?}, pb7_fmp: {=bool:?}, pb8_fmp: {=bool:?}, pb9_fmp: {=bool:?}, adc1dc2: {=bool:?}, adc2dc2: {=bool:?}, adc3dc2: {=bool:?}, mii_rmii_sel: {=bool:?} }}" , self . i2c1_fmp () , self . i2c2_fmp () , self . i2c3_fmp () , self . i2c4_fmp () , self . pb6_fmp () , self . pb7_fmp () , self . pb8_fmp () , self . pb9_fmp () , self . adc1dc2 () , self . adc2dc2 () , self . adc3dc2 () , self . mii_rmii_sel ())
+            defmt::write!(
+                f,
+                "Pmc {{ i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c3_fmp: {=bool:?}, i2c4_fmp: {=bool:?}, pb6_fmp: {=bool:?}, pb7_fmp: {=bool:?}, pb8_fmp: {=bool:?}, pb9_fmp: {=bool:?}, adc1dc2: {=bool:?}, adc2dc2: {=bool:?}, adc3dc2: {=bool:?}, mii_rmii_sel: {=bool:?} }}",
+                self.i2c1_fmp(),
+                self.i2c2_fmp(),
+                self.i2c3_fmp(),
+                self.i2c4_fmp(),
+                self.pb6_fmp(),
+                self.pb7_fmp(),
+                self.pb8_fmp(),
+                self.pb9_fmp(),
+                self.adc1dc2(),
+                self.adc2dc2(),
+                self.adc3dc2(),
+                self.mii_rmii_sel()
+            )
         }
     }
 }

@@ -335,7 +335,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, cacheinv: {=bool:?}, cachecmd: {=u8:?}, startcmd: {=bool:?}, rhitmen: {=bool:?}, rmissmen: {=bool:?}, rhitmrst: {=bool:?}, rmissmrst: {=bool:?}, whitmen: {=bool:?}, wmissmen: {=bool:?}, whitmrst: {=bool:?}, wmissmrst: {=bool:?}, hburst: {=bool:?} }}" , self . en () , self . cacheinv () , self . cachecmd () , self . startcmd () , self . rhitmen () , self . rmissmen () , self . rhitmrst () , self . rmissmrst () , self . whitmen () , self . wmissmen () , self . whitmrst () , self . wmissmrst () , self . hburst ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, cacheinv: {=bool:?}, cachecmd: {=u8:?}, startcmd: {=bool:?}, rhitmen: {=bool:?}, rmissmen: {=bool:?}, rhitmrst: {=bool:?}, rmissmrst: {=bool:?}, whitmen: {=bool:?}, wmissmen: {=bool:?}, whitmrst: {=bool:?}, wmissmrst: {=bool:?}, hburst: {=bool:?} }}",
+                self.en(),
+                self.cacheinv(),
+                self.cachecmd(),
+                self.startcmd(),
+                self.rhitmen(),
+                self.rmissmen(),
+                self.rhitmrst(),
+                self.rmissmrst(),
+                self.whitmen(),
+                self.wmissmen(),
+                self.whitmrst(),
+                self.wmissmrst(),
+                self.hburst()
+            )
         }
     }
     #[doc = "DCACHE flag clear register."]
@@ -597,7 +613,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ busyf: {=bool:?}, bsyendf: {=bool:?}, errf: {=bool:?}, busycmdf: {=bool:?}, cmdendf: {=bool:?} }}" , self . busyf () , self . bsyendf () , self . errf () , self . busycmdf () , self . cmdendf ())
+            defmt::write!(
+                f,
+                "Sr {{ busyf: {=bool:?}, bsyendf: {=bool:?}, errf: {=bool:?}, busycmdf: {=bool:?}, cmdendf: {=bool:?} }}",
+                self.busyf(),
+                self.bsyendf(),
+                self.errf(),
+                self.busycmdf(),
+                self.cmdendf()
+            )
         }
     }
     #[doc = "DCACHE write-miss monitor register."]

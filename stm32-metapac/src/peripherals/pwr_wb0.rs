@@ -230,7 +230,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ lpms: {:?}, ensdnbor: {:?}, ibias_run_auto: {=bool:?}, ibias_run_state: {=bool:?}, apc: {:?}, enborh: {:?}, selborh: {:?}, enborl: {=bool:?} }}" , self . lpms () , self . ensdnbor () , self . ibias_run_auto () , self . ibias_run_state () , self . apc () , self . enborh () , self . selborh () , self . enborl ())
+            defmt::write!(
+                f,
+                "Cr1 {{ lpms: {:?}, ensdnbor: {:?}, ibias_run_auto: {=bool:?}, ibias_run_state: {=bool:?}, apc: {:?}, enborh: {:?}, selborh: {:?}, enborl: {=bool:?} }}",
+                self.lpms(),
+                self.ensdnbor(),
+                self.ibias_run_auto(),
+                self.ibias_run_state(),
+                self.apc(),
+                self.enborh(),
+                self.selborh(),
+                self.enborl()
+            )
         }
     }
     #[doc = "CR2 register."]
@@ -373,7 +384,19 @@ Programmable Voltage Detector Level selection then PVDO=1)."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ pvde: {=bool:?}, pvdls: {:?}, dbgret: {=bool:?}, ramret1: {=bool:?}, ramret2: {=bool:?}, ramret3: {=bool:?}, gpioret: {=bool:?}, ents: {=bool:?}, lsilpmufen: {=bool:?} }}" , self . pvde () , self . pvdls () , self . dbgret () , self . ramret1 () , self . ramret2 () , self . ramret3 () , self . gpioret () , self . ents () , self . lsilpmufen ())
+            defmt::write!(
+                f,
+                "Cr2 {{ pvde: {=bool:?}, pvdls: {:?}, dbgret: {=bool:?}, ramret1: {=bool:?}, ramret2: {=bool:?}, ramret3: {=bool:?}, gpioret: {=bool:?}, ents: {=bool:?}, lsilpmufen: {=bool:?} }}",
+                self.pvde(),
+                self.pvdls(),
+                self.dbgret(),
+                self.ramret1(),
+                self.ramret2(),
+                self.ramret3(),
+                self.gpioret(),
+                self.ents(),
+                self.lsilpmufen()
+            )
         }
     }
     #[doc = "CR3 register."]
@@ -605,7 +628,26 @@ Programmable Voltage Detector Level selection then PVDO=1)."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr3 {{ ewu0: {=bool:?}, ewu1: {=bool:?}, ewu2: {=bool:?}, ewu3: {=bool:?}, ewu4: {=bool:?}, ewu5: {=bool:?}, ewu6: {=bool:?}, ewu7: {=bool:?}, ewu8: {=bool:?}, ewu9: {=bool:?}, ewu10: {=bool:?}, ewu11: {=bool:?}, ewble: {=bool:?}, ewblehcpu: {=bool:?}, eiwl2: {=bool:?}, eiwl: {=bool:?} }}" , self . ewu0 () , self . ewu1 () , self . ewu2 () , self . ewu3 () , self . ewu4 () , self . ewu5 () , self . ewu6 () , self . ewu7 () , self . ewu8 () , self . ewu9 () , self . ewu10 () , self . ewu11 () , self . ewble () , self . ewblehcpu () , self . eiwl2 () , self . eiwl ())
+            defmt::write!(
+                f,
+                "Cr3 {{ ewu0: {=bool:?}, ewu1: {=bool:?}, ewu2: {=bool:?}, ewu3: {=bool:?}, ewu4: {=bool:?}, ewu5: {=bool:?}, ewu6: {=bool:?}, ewu7: {=bool:?}, ewu8: {=bool:?}, ewu9: {=bool:?}, ewu10: {=bool:?}, ewu11: {=bool:?}, ewble: {=bool:?}, ewblehcpu: {=bool:?}, eiwl2: {=bool:?}, eiwl: {=bool:?} }}",
+                self.ewu0(),
+                self.ewu1(),
+                self.ewu2(),
+                self.ewu3(),
+                self.ewu4(),
+                self.ewu5(),
+                self.ewu6(),
+                self.ewu7(),
+                self.ewu8(),
+                self.ewu9(),
+                self.ewu10(),
+                self.ewu11(),
+                self.ewble(),
+                self.ewblehcpu(),
+                self.eiwl2(),
+                self.eiwl()
+            )
         }
     }
     #[doc = "CR4 register."]
@@ -785,7 +827,22 @@ Programmable Voltage Detector Level selection then PVDO=1)."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr4 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr4 {{ wup0: {:?}, wup1: {:?}, wup2: {:?}, wup3: {:?}, wup4: {:?}, wup5: {:?}, wup6: {:?}, wup7: {:?}, wup8: {:?}, wup9: {:?}, wup10: {:?}, wup11: {:?} }}" , self . wup0 () , self . wup1 () , self . wup2 () , self . wup3 () , self . wup4 () , self . wup5 () , self . wup6 () , self . wup7 () , self . wup8 () , self . wup9 () , self . wup10 () , self . wup11 ())
+            defmt::write!(
+                f,
+                "Cr4 {{ wup0: {:?}, wup1: {:?}, wup2: {:?}, wup3: {:?}, wup4: {:?}, wup5: {:?}, wup6: {:?}, wup7: {:?}, wup8: {:?}, wup9: {:?}, wup10: {:?}, wup11: {:?} }}",
+                self.wup0(),
+                self.wup1(),
+                self.wup2(),
+                self.wup3(),
+                self.wup4(),
+                self.wup5(),
+                self.wup6(),
+                self.wup7(),
+                self.wup8(),
+                self.wup9(),
+                self.wup10(),
+                self.wup11()
+            )
         }
     }
     #[doc = "CR5 register."]
@@ -930,7 +987,19 @@ Selection for SMPS PRECHARGE limit current."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr5 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr5 {{ smpslvl: {=u8:?}, smpsbomsel: {:?}, smpsfrdy: {:?}, smpslpopen: {:?}, smpsfbyp: {:?}, nosmps: {=bool:?}, smps_ena_dcm: {=bool:?}, clkdetr_disable: {=bool:?}, smps_prech_cur_sel: {:?} }}" , self . smpslvl () , self . smpsbomsel () , self . smpsfrdy () , self . smpslpopen () , self . smpsfbyp () , self . nosmps () , self . smps_ena_dcm () , self . clkdetr_disable () , self . smps_prech_cur_sel ())
+            defmt::write!(
+                f,
+                "Cr5 {{ smpslvl: {=u8:?}, smpsbomsel: {:?}, smpsfrdy: {:?}, smpslpopen: {:?}, smpsfbyp: {:?}, nosmps: {=bool:?}, smps_ena_dcm: {=bool:?}, clkdetr_disable: {=bool:?}, smps_prech_cur_sel: {:?} }}",
+                self.smpslvl(),
+                self.smpsbomsel(),
+                self.smpsfrdy(),
+                self.smpslpopen(),
+                self.smpsfbyp(),
+                self.nosmps(),
+                self.smps_ena_dcm(),
+                self.clkdetr_disable(),
+                self.smps_prech_cur_sel()
+            )
         }
     }
     #[doc = "CR6 register."]
@@ -1162,7 +1231,26 @@ Selection for SMPS PRECHARGE limit current."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr6 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr6 {{ ewu12: {=bool:?}, ewu13: {=bool:?}, ewu14: {=bool:?}, ewu15: {=bool:?}, ewu16: {=bool:?}, ewu17: {=bool:?}, ewu18: {=bool:?}, ewu19: {=bool:?}, ewu20: {=bool:?}, ewu21: {=bool:?}, ewu22: {=bool:?}, ewu23: {=bool:?}, ewu24: {=bool:?}, ewu25: {=bool:?}, ewu26: {=bool:?}, ewu27: {=bool:?} }}" , self . ewu12 () , self . ewu13 () , self . ewu14 () , self . ewu15 () , self . ewu16 () , self . ewu17 () , self . ewu18 () , self . ewu19 () , self . ewu20 () , self . ewu21 () , self . ewu22 () , self . ewu23 () , self . ewu24 () , self . ewu25 () , self . ewu26 () , self . ewu27 ())
+            defmt::write!(
+                f,
+                "Cr6 {{ ewu12: {=bool:?}, ewu13: {=bool:?}, ewu14: {=bool:?}, ewu15: {=bool:?}, ewu16: {=bool:?}, ewu17: {=bool:?}, ewu18: {=bool:?}, ewu19: {=bool:?}, ewu20: {=bool:?}, ewu21: {=bool:?}, ewu22: {=bool:?}, ewu23: {=bool:?}, ewu24: {=bool:?}, ewu25: {=bool:?}, ewu26: {=bool:?}, ewu27: {=bool:?} }}",
+                self.ewu12(),
+                self.ewu13(),
+                self.ewu14(),
+                self.ewu15(),
+                self.ewu16(),
+                self.ewu17(),
+                self.ewu18(),
+                self.ewu19(),
+                self.ewu20(),
+                self.ewu21(),
+                self.ewu22(),
+                self.ewu23(),
+                self.ewu24(),
+                self.ewu25(),
+                self.ewu26(),
+                self.ewu27()
+            )
         }
     }
     #[doc = "CR7 register."]
@@ -1394,7 +1482,26 @@ Selection for SMPS PRECHARGE limit current."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr7 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr7 {{ wup12: {:?}, wup13: {:?}, wup14: {:?}, wup15: {:?}, wup16: {:?}, wup17: {:?}, wup18: {:?}, wup19: {:?}, wup20: {=bool:?}, wup21: {=bool:?}, wup22: {=bool:?}, wup23: {=bool:?}, wup24: {=bool:?}, wup25: {=bool:?}, wup26: {=bool:?}, wup27: {=bool:?} }}" , self . wup12 () , self . wup13 () , self . wup14 () , self . wup15 () , self . wup16 () , self . wup17 () , self . wup18 () , self . wup19 () , self . wup20 () , self . wup21 () , self . wup22 () , self . wup23 () , self . wup24 () , self . wup25 () , self . wup26 () , self . wup27 ())
+            defmt::write!(
+                f,
+                "Cr7 {{ wup12: {:?}, wup13: {:?}, wup14: {:?}, wup15: {:?}, wup16: {:?}, wup17: {:?}, wup18: {:?}, wup19: {:?}, wup20: {=bool:?}, wup21: {=bool:?}, wup22: {=bool:?}, wup23: {=bool:?}, wup24: {=bool:?}, wup25: {=bool:?}, wup26: {=bool:?}, wup27: {=bool:?} }}",
+                self.wup12(),
+                self.wup13(),
+                self.wup14(),
+                self.wup15(),
+                self.wup16(),
+                self.wup17(),
+                self.wup18(),
+                self.wup19(),
+                self.wup20(),
+                self.wup21(),
+                self.wup22(),
+                self.wup23(),
+                self.wup24(),
+                self.wup25(),
+                self.wup26(),
+                self.wup27()
+            )
         }
     }
     #[doc = "DBGR register."]
@@ -1632,7 +1739,18 @@ Selection for SMPS PRECHARGE limit current."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for IOxCfg {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "IOxCfg {{ iocfg0: {=u8:?}, iocfg1: {=u8:?}, iocfg2: {=u8:?}, iocfg3: {=u8:?}, iocfg4: {=u8:?}, iocfg5: {=u8:?}, iocfg6: {=u8:?}, iocfg7: {=u8:?} }}" , self . iocfg0 () , self . iocfg1 () , self . iocfg2 () , self . iocfg3 () , self . iocfg4 () , self . iocfg5 () , self . iocfg6 () , self . iocfg7 ())
+            defmt::write!(
+                f,
+                "IOxCfg {{ iocfg0: {=u8:?}, iocfg1: {=u8:?}, iocfg2: {=u8:?}, iocfg3: {=u8:?}, iocfg4: {=u8:?}, iocfg5: {=u8:?}, iocfg6: {=u8:?}, iocfg7: {=u8:?} }}",
+                self.iocfg0(),
+                self.iocfg1(),
+                self.iocfg2(),
+                self.iocfg3(),
+                self.iocfg4(),
+                self.iocfg5(),
+                self.iocfg6(),
+                self.iocfg7()
+            )
         }
     }
     #[doc = "PDCRA register."]
@@ -2016,7 +2134,26 @@ pad when APC bit of PWRC CR3 is set."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr1 {{ wuf0: {:?}, wuf1: {:?}, wuf2: {:?}, wuf3: {:?}, wuf4: {:?}, wuf5: {:?}, wuf6: {:?}, wuf7: {:?}, wuf8: {:?}, wuf9: {:?}, wuf10: {:?}, wuf11: {:?}, wblef: {=bool:?}, wblehcpuf: {=bool:?}, iwuf2: {=bool:?}, iwuf: {=bool:?} }}" , self . wuf0 () , self . wuf1 () , self . wuf2 () , self . wuf3 () , self . wuf4 () , self . wuf5 () , self . wuf6 () , self . wuf7 () , self . wuf8 () , self . wuf9 () , self . wuf10 () , self . wuf11 () , self . wblef () , self . wblehcpuf () , self . iwuf2 () , self . iwuf ())
+            defmt::write!(
+                f,
+                "Sr1 {{ wuf0: {:?}, wuf1: {:?}, wuf2: {:?}, wuf3: {:?}, wuf4: {:?}, wuf5: {:?}, wuf6: {:?}, wuf7: {:?}, wuf8: {:?}, wuf9: {:?}, wuf10: {:?}, wuf11: {:?}, wblef: {=bool:?}, wblehcpuf: {=bool:?}, iwuf2: {=bool:?}, iwuf: {=bool:?} }}",
+                self.wuf0(),
+                self.wuf1(),
+                self.wuf2(),
+                self.wuf3(),
+                self.wuf4(),
+                self.wuf5(),
+                self.wuf6(),
+                self.wuf7(),
+                self.wuf8(),
+                self.wuf9(),
+                self.wuf10(),
+                self.wuf11(),
+                self.wblef(),
+                self.wblehcpuf(),
+                self.iwuf2(),
+                self.iwuf()
+            )
         }
     }
     #[doc = "SR2 register."]
@@ -2144,7 +2281,18 @@ pad when APC bit of PWRC CR3 is set."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr2 {{ smpsbypr: {=bool:?}, smpsenr: {=bool:?}, smpsrdy: {:?}, iobootval2: {=u8:?}, reglps: {:?}, regms: {:?}, pvdo: {=bool:?}, iobootval: {=u8:?} }}" , self . smpsbypr () , self . smpsenr () , self . smpsrdy () , self . iobootval2 () , self . reglps () , self . regms () , self . pvdo () , self . iobootval ())
+            defmt::write!(
+                f,
+                "Sr2 {{ smpsbypr: {=bool:?}, smpsenr: {=bool:?}, smpsrdy: {:?}, iobootval2: {=u8:?}, reglps: {:?}, regms: {:?}, pvdo: {=bool:?}, iobootval: {=u8:?} }}",
+                self.smpsbypr(),
+                self.smpsenr(),
+                self.smpsrdy(),
+                self.iobootval2(),
+                self.reglps(),
+                self.regms(),
+                self.pvdo(),
+                self.iobootval()
+            )
         }
     }
     #[doc = "SR3 register."]
@@ -2376,7 +2524,26 @@ pad when APC bit of PWRC CR3 is set."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr3 {{ wuf12: {:?}, wuf13: {:?}, wuf14: {:?}, wuf15: {:?}, wuf16: {:?}, wuf17: {:?}, wuf18: {:?}, wuf19: {:?}, wuf20: {=bool:?}, wuf21: {=bool:?}, wuf22: {=bool:?}, wuf23: {=bool:?}, wuf24: {=bool:?}, wuf25: {=bool:?}, wuf26: {=bool:?}, wuf27: {=bool:?} }}" , self . wuf12 () , self . wuf13 () , self . wuf14 () , self . wuf15 () , self . wuf16 () , self . wuf17 () , self . wuf18 () , self . wuf19 () , self . wuf20 () , self . wuf21 () , self . wuf22 () , self . wuf23 () , self . wuf24 () , self . wuf25 () , self . wuf26 () , self . wuf27 ())
+            defmt::write!(
+                f,
+                "Sr3 {{ wuf12: {:?}, wuf13: {:?}, wuf14: {:?}, wuf15: {:?}, wuf16: {:?}, wuf17: {:?}, wuf18: {:?}, wuf19: {:?}, wuf20: {=bool:?}, wuf21: {=bool:?}, wuf22: {=bool:?}, wuf23: {=bool:?}, wuf24: {=bool:?}, wuf25: {=bool:?}, wuf26: {=bool:?}, wuf27: {=bool:?} }}",
+                self.wuf12(),
+                self.wuf13(),
+                self.wuf14(),
+                self.wuf15(),
+                self.wuf16(),
+                self.wuf17(),
+                self.wuf18(),
+                self.wuf19(),
+                self.wuf20(),
+                self.wuf21(),
+                self.wuf22(),
+                self.wuf23(),
+                self.wuf24(),
+                self.wuf25(),
+                self.wuf26(),
+                self.wuf27()
+            )
         }
     }
 }

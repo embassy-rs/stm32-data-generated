@@ -305,7 +305,21 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ algodir: {=bool:?}, algomode0: {=u8:?}, datatype: {=u8:?}, keysize: {=u8:?}, fflush: {=bool:?}, crypen: {=bool:?}, gcm_ccmph: {=u8:?}, algomode3: {=bool:?}, npblb: {=u8:?}, kmod: {:?}, iprst: {=bool:?} }}" , self . algodir () , self . algomode0 () , self . datatype () , self . keysize () , self . fflush () , self . crypen () , self . gcm_ccmph () , self . algomode3 () , self . npblb () , self . kmod () , self . iprst ())
+            defmt::write!(
+                f,
+                "Cr {{ algodir: {=bool:?}, algomode0: {=u8:?}, datatype: {=u8:?}, keysize: {=u8:?}, fflush: {=bool:?}, crypen: {=bool:?}, gcm_ccmph: {=u8:?}, algomode3: {=bool:?}, npblb: {=u8:?}, kmod: {:?}, iprst: {=bool:?} }}",
+                self.algodir(),
+                self.algomode0(),
+                self.datatype(),
+                self.keysize(),
+                self.fflush(),
+                self.crypen(),
+                self.gcm_ccmph(),
+                self.algomode3(),
+                self.npblb(),
+                self.kmod(),
+                self.iprst()
+            )
         }
     }
     #[doc = "DMA control register."]
@@ -644,7 +658,17 @@ is different from zero, the BUSY flag is automatically set by CRYP. When the key
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ ifem: {=bool:?}, ifnf: {=bool:?}, ofne: {=bool:?}, offu: {=bool:?}, busy: {=bool:?}, kerf: {=bool:?}, keyvalid: {=bool:?} }}" , self . ifem () , self . ifnf () , self . ofne () , self . offu () , self . busy () , self . kerf () , self . keyvalid ())
+            defmt::write!(
+                f,
+                "Sr {{ ifem: {=bool:?}, ifnf: {=bool:?}, ofne: {=bool:?}, offu: {=bool:?}, busy: {=bool:?}, kerf: {=bool:?}, keyvalid: {=bool:?} }}",
+                self.ifem(),
+                self.ifnf(),
+                self.ofne(),
+                self.offu(),
+                self.busy(),
+                self.kerf(),
+                self.keyvalid()
+            )
         }
     }
 }

@@ -667,7 +667,23 @@ is forced to 1. Writes to this field are ignored when BUSY├é┬á=├é┬á1
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ccr {{ imode: {=u8:?}, idtr: {=bool:?}, isize: {=u8:?}, admode: {=u8:?}, addtr: {=bool:?}, adsize: {=u8:?}, abmode: {=u8:?}, abdtr: {=bool:?}, absize: {=u8:?}, dmode: {=u8:?}, ddtr: {=bool:?}, dqse: {=bool:?}, sioo: {=bool:?} }}" , self . imode () , self . idtr () , self . isize () , self . admode () , self . addtr () , self . adsize () , self . abmode () , self . abdtr () , self . absize () , self . dmode () , self . ddtr () , self . dqse () , self . sioo ())
+            defmt::write!(
+                f,
+                "Ccr {{ imode: {=u8:?}, idtr: {=bool:?}, isize: {=u8:?}, admode: {=u8:?}, addtr: {=bool:?}, adsize: {=u8:?}, abmode: {=u8:?}, abdtr: {=bool:?}, absize: {=u8:?}, dmode: {=u8:?}, ddtr: {=bool:?}, dqse: {=bool:?}, sioo: {=bool:?} }}",
+                self.imode(),
+                self.idtr(),
+                self.isize(),
+                self.admode(),
+                self.addtr(),
+                self.adsize(),
+                self.abmode(),
+                self.abdtr(),
+                self.absize(),
+                self.dmode(),
+                self.ddtr(),
+                self.dqse(),
+                self.sioo()
+            )
         }
     }
     #[doc = "HSPI control register."]
@@ -913,7 +929,26 @@ These bits are ignored when in dual-octal configuration (data on 8 bits and DMM�
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, abort: {=bool:?}, dmaen: {=bool:?}, tcen: {=bool:?}, dmm: {=bool:?}, fsel: {=bool:?}, fthres: {=u8:?}, teie: {=bool:?}, tcie: {=bool:?}, ftie: {=bool:?}, smie: {=bool:?}, toie: {=bool:?}, apms: {=bool:?}, pmm: {=bool:?}, fmode: {=u8:?}, msel: {=u8:?} }}" , self . en () , self . abort () , self . dmaen () , self . tcen () , self . dmm () , self . fsel () , self . fthres () , self . teie () , self . tcie () , self . ftie () , self . smie () , self . toie () , self . apms () , self . pmm () , self . fmode () , self . msel ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, abort: {=bool:?}, dmaen: {=bool:?}, tcen: {=bool:?}, dmm: {=bool:?}, fsel: {=bool:?}, fthres: {=u8:?}, teie: {=bool:?}, tcie: {=bool:?}, ftie: {=bool:?}, smie: {=bool:?}, toie: {=bool:?}, apms: {=bool:?}, pmm: {=bool:?}, fmode: {=u8:?}, msel: {=u8:?} }}",
+                self.en(),
+                self.abort(),
+                self.dmaen(),
+                self.tcen(),
+                self.dmm(),
+                self.fsel(),
+                self.fthres(),
+                self.teie(),
+                self.tcie(),
+                self.ftie(),
+                self.smie(),
+                self.toie(),
+                self.apms(),
+                self.pmm(),
+                self.fmode(),
+                self.msel()
+            )
         }
     }
     #[doc = "HSPI device configuration register 1."]
@@ -1021,7 +1056,16 @@ for memories different from Micron. Others: Reserved."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dcr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dcr1 {{ ckmode: {=bool:?}, frck: {=bool:?}, dlybyp: {=bool:?}, csht: {=u8:?}, devsize: {=u8:?}, mtyp: {=u8:?} }}" , self . ckmode () , self . frck () , self . dlybyp () , self . csht () , self . devsize () , self . mtyp ())
+            defmt::write!(
+                f,
+                "Dcr1 {{ ckmode: {=bool:?}, frck: {=bool:?}, dlybyp: {=bool:?}, csht: {=u8:?}, devsize: {=u8:?}, mtyp: {=u8:?} }}",
+                self.ckmode(),
+                self.frck(),
+                self.dlybyp(),
+                self.csht(),
+                self.devsize(),
+                self.mtyp()
+            )
         }
     }
     #[doc = "HSPI device configuration register 2."]
@@ -1693,7 +1737,17 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ tef: {=bool:?}, tcf: {=bool:?}, ftf: {=bool:?}, smf: {=bool:?}, tof: {=bool:?}, busy: {=bool:?}, flevel: {=u8:?} }}" , self . tef () , self . tcf () , self . ftf () , self . smf () , self . tof () , self . busy () , self . flevel ())
+            defmt::write!(
+                f,
+                "Sr {{ tef: {=bool:?}, tcf: {=bool:?}, ftf: {=bool:?}, smf: {=bool:?}, tof: {=bool:?}, busy: {=bool:?}, flevel: {=u8:?} }}",
+                self.tef(),
+                self.tcf(),
+                self.ftf(),
+                self.smf(),
+                self.tof(),
+                self.busy(),
+                self.flevel()
+            )
         }
     }
     #[doc = "HSPI timing configuration register."]
@@ -1977,7 +2031,22 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wccr {{ imode: {=u8:?}, idtr: {=bool:?}, isize: {=u8:?}, admode: {=u8:?}, addtr: {=bool:?}, adsize: {=u8:?}, abmode: {=u8:?}, abdtr: {=bool:?}, absize: {=u8:?}, dmode: {=u8:?}, ddtr: {=bool:?}, dqse: {=bool:?} }}" , self . imode () , self . idtr () , self . isize () , self . admode () , self . addtr () , self . adsize () , self . abmode () , self . abdtr () , self . absize () , self . dmode () , self . ddtr () , self . dqse ())
+            defmt::write!(
+                f,
+                "Wccr {{ imode: {=u8:?}, idtr: {=bool:?}, isize: {=u8:?}, admode: {=u8:?}, addtr: {=bool:?}, adsize: {=u8:?}, abmode: {=u8:?}, abdtr: {=bool:?}, absize: {=u8:?}, dmode: {=u8:?}, ddtr: {=bool:?}, dqse: {=bool:?} }}",
+                self.imode(),
+                self.idtr(),
+                self.isize(),
+                self.admode(),
+                self.addtr(),
+                self.adsize(),
+                self.abmode(),
+                self.abdtr(),
+                self.absize(),
+                self.dmode(),
+                self.ddtr(),
+                self.dqse()
+            )
         }
     }
     #[doc = "HSPI write instruction register."]
@@ -2227,7 +2296,22 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wpccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wpccr {{ imode: {=u8:?}, idtr: {=bool:?}, isize: {=u8:?}, admode: {=u8:?}, addtr: {=bool:?}, adsize: {=u8:?}, abmode: {=u8:?}, abdtr: {=bool:?}, absize: {=u8:?}, dmode: {=u8:?}, ddtr: {=bool:?}, dqse: {=bool:?} }}" , self . imode () , self . idtr () , self . isize () , self . admode () , self . addtr () , self . adsize () , self . abmode () , self . abdtr () , self . absize () , self . dmode () , self . ddtr () , self . dqse ())
+            defmt::write!(
+                f,
+                "Wpccr {{ imode: {=u8:?}, idtr: {=bool:?}, isize: {=u8:?}, admode: {=u8:?}, addtr: {=bool:?}, adsize: {=u8:?}, abmode: {=u8:?}, abdtr: {=bool:?}, absize: {=u8:?}, dmode: {=u8:?}, ddtr: {=bool:?}, dqse: {=bool:?} }}",
+                self.imode(),
+                self.idtr(),
+                self.isize(),
+                self.admode(),
+                self.addtr(),
+                self.adsize(),
+                self.abmode(),
+                self.abdtr(),
+                self.absize(),
+                self.dmode(),
+                self.ddtr(),
+                self.dqse()
+            )
         }
     }
     #[doc = "HSPI wrap instruction register."]

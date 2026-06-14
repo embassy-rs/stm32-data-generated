@@ -627,7 +627,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pmcr {{ i2c1fmp: {=bool:?}, i2c2fmp: {=bool:?}, i2c3fmp: {=bool:?}, i2c4fmp: {=bool:?}, pb6fmp: {=bool:?}, pb7fmp: {=bool:?}, pb8fmp: {=bool:?}, pb9fmp: {=bool:?}, booste: {=bool:?}, boostvddsel: {=bool:?}, eth_sel_phy: {:?}, pa0so: {=bool:?}, pa1so: {=bool:?}, pc2so: {=bool:?}, pc3so: {=bool:?} }}" , self . i2c1fmp () , self . i2c2fmp () , self . i2c3fmp () , self . i2c4fmp () , self . pb6fmp () , self . pb7fmp () , self . pb8fmp () , self . pb9fmp () , self . booste () , self . boostvddsel () , self . eth_sel_phy () , self . pa0so () , self . pa1so () , self . pc2so () , self . pc3so ())
+            defmt::write!(
+                f,
+                "Pmcr {{ i2c1fmp: {=bool:?}, i2c2fmp: {=bool:?}, i2c3fmp: {=bool:?}, i2c4fmp: {=bool:?}, pb6fmp: {=bool:?}, pb7fmp: {=bool:?}, pb8fmp: {=bool:?}, pb9fmp: {=bool:?}, booste: {=bool:?}, boostvddsel: {=bool:?}, eth_sel_phy: {:?}, pa0so: {=bool:?}, pa1so: {=bool:?}, pc2so: {=bool:?}, pc3so: {=bool:?} }}",
+                self.i2c1fmp(),
+                self.i2c2fmp(),
+                self.i2c3fmp(),
+                self.i2c4fmp(),
+                self.pb6fmp(),
+                self.pb7fmp(),
+                self.pb8fmp(),
+                self.pb9fmp(),
+                self.booste(),
+                self.boostvddsel(),
+                self.eth_sel_phy(),
+                self.pa0so(),
+                self.pa1so(),
+                self.pc2so(),
+                self.pc3so()
+            )
         }
     }
     #[doc = "SYSCFG user register 0"]

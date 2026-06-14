@@ -212,9 +212,9 @@ pub const SUBGHZSPI: spi::Spi = unsafe { spi::Spi::from_ptr(0x5801_0000usize as 
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 2;
 #[cfg(feature = "rt")]
-pub use cortex_m_rt::interrupt;
-#[cfg(feature = "rt")]
 pub use Interrupt as interrupt;
+#[cfg(feature = "rt")]
+pub use cortex_m_rt::interrupt;
 #[path = "../../peripherals/adc_g0.rs"]
 pub mod adc;
 #[path = "../../peripherals/adccommon_v3.rs"]

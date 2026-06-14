@@ -561,7 +561,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Adpctl {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Adpctl {{ prb_dschg: {=u8:?}, prb_delta: {=u8:?}, prb_per: {=u8:?}, rtim: {=u16:?}, enaprb: {=bool:?}, enasns: {=bool:?}, adpres: {=bool:?}, adpen: {=bool:?}, adp_prb_int: {=bool:?}, adp_sns_int: {=bool:?}, adp_tmout_int: {=bool:?}, adp_prb_msk: {=bool:?}, adp_tmout_msk: {=bool:?}, ar: {=bool:?} }}" , self . prb_dschg () , self . prb_delta () , self . prb_per () , self . rtim () , self . enaprb () , self . enasns () , self . adpres () , self . adpen () , self . adp_prb_int () , self . adp_sns_int () , self . adp_tmout_int () , self . adp_prb_msk () , self . adp_tmout_msk () , self . ar ())
+            defmt::write!(
+                f,
+                "Adpctl {{ prb_dschg: {=u8:?}, prb_delta: {=u8:?}, prb_per: {=u8:?}, rtim: {=u16:?}, enaprb: {=bool:?}, enasns: {=bool:?}, adpres: {=bool:?}, adpen: {=bool:?}, adp_prb_int: {=bool:?}, adp_sns_int: {=bool:?}, adp_tmout_int: {=bool:?}, adp_prb_msk: {=bool:?}, adp_tmout_msk: {=bool:?}, ar: {=bool:?} }}",
+                self.prb_dschg(),
+                self.prb_delta(),
+                self.prb_per(),
+                self.rtim(),
+                self.enaprb(),
+                self.enasns(),
+                self.adpres(),
+                self.adpen(),
+                self.adp_prb_int(),
+                self.adp_sns_int(),
+                self.adp_tmout_int(),
+                self.adp_prb_msk(),
+                self.adp_tmout_msk(),
+                self.ar()
+            )
         }
     }
     #[doc = "Core ID register"]
@@ -957,7 +974,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dctl {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dctl {{ rwusig: {=bool:?}, sdis: {=bool:?}, ginsts: {=bool:?}, gonsts: {=bool:?}, tctl: {=u8:?}, sginak: {=bool:?}, cginak: {=bool:?}, sgonak: {=bool:?}, cgonak: {=bool:?}, poprgdne: {=bool:?} }}" , self . rwusig () , self . sdis () , self . ginsts () , self . gonsts () , self . tctl () , self . sginak () , self . cginak () , self . sgonak () , self . cgonak () , self . poprgdne ())
+            defmt::write!(
+                f,
+                "Dctl {{ rwusig: {=bool:?}, sdis: {=bool:?}, ginsts: {=bool:?}, gonsts: {=bool:?}, tctl: {=u8:?}, sginak: {=bool:?}, cginak: {=bool:?}, sgonak: {=bool:?}, cgonak: {=bool:?}, poprgdne: {=bool:?} }}",
+                self.rwusig(),
+                self.sdis(),
+                self.ginsts(),
+                self.gonsts(),
+                self.tctl(),
+                self.sginak(),
+                self.cginak(),
+                self.sgonak(),
+                self.cgonak(),
+                self.poprgdne()
+            )
         }
     }
     #[doc = "Device endpoint control register"]
@@ -1163,7 +1193,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Diepctl {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Diepctl {{ mpsiz: {=u16:?}, usbaep: {=bool:?}, eonum_dpid: {=bool:?}, naksts: {=bool:?}, eptyp: {:?}, snpm: {=bool:?}, stall: {=bool:?}, txfnum: {=u8:?}, cnak: {=bool:?}, snak: {=bool:?}, sd0pid_sevnfrm: {=bool:?}, soddfrm_sd1pid: {=bool:?}, epdis: {=bool:?}, epena: {=bool:?} }}" , self . mpsiz () , self . usbaep () , self . eonum_dpid () , self . naksts () , self . eptyp () , self . snpm () , self . stall () , self . txfnum () , self . cnak () , self . snak () , self . sd0pid_sevnfrm () , self . soddfrm_sd1pid () , self . epdis () , self . epena ())
+            defmt::write!(
+                f,
+                "Diepctl {{ mpsiz: {=u16:?}, usbaep: {=bool:?}, eonum_dpid: {=bool:?}, naksts: {=bool:?}, eptyp: {:?}, snpm: {=bool:?}, stall: {=bool:?}, txfnum: {=u8:?}, cnak: {=bool:?}, snak: {=bool:?}, sd0pid_sevnfrm: {=bool:?}, soddfrm_sd1pid: {=bool:?}, epdis: {=bool:?}, epena: {=bool:?} }}",
+                self.mpsiz(),
+                self.usbaep(),
+                self.eonum_dpid(),
+                self.naksts(),
+                self.eptyp(),
+                self.snpm(),
+                self.stall(),
+                self.txfnum(),
+                self.cnak(),
+                self.snak(),
+                self.sd0pid_sevnfrm(),
+                self.soddfrm_sd1pid(),
+                self.epdis(),
+                self.epena()
+            )
         }
     }
     #[doc = "Device IN endpoint FIFO empty interrupt mask register"]
@@ -1302,7 +1349,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Diepint {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Diepint {{ xfrc: {=bool:?}, epdisd: {=bool:?}, toc: {=bool:?}, ittxfe: {=bool:?}, inepne: {=bool:?}, txfe: {=bool:?} }}" , self . xfrc () , self . epdisd () , self . toc () , self . ittxfe () , self . inepne () , self . txfe ())
+            defmt::write!(
+                f,
+                "Diepint {{ xfrc: {=bool:?}, epdisd: {=bool:?}, toc: {=bool:?}, ittxfe: {=bool:?}, inepne: {=bool:?}, txfe: {=bool:?} }}",
+                self.xfrc(),
+                self.epdisd(),
+                self.toc(),
+                self.ittxfe(),
+                self.inepne(),
+                self.txfe()
+            )
         }
     }
     #[doc = "Device IN endpoint common interrupt mask register"]
@@ -1404,7 +1460,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Diepmsk {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Diepmsk {{ xfrcm: {=bool:?}, epdm: {=bool:?}, tom: {=bool:?}, ittxfemsk: {=bool:?}, inepnmm: {=bool:?}, inepnem: {=bool:?} }}" , self . xfrcm () , self . epdm () , self . tom () , self . ittxfemsk () , self . inepnmm () , self . inepnem ())
+            defmt::write!(
+                f,
+                "Diepmsk {{ xfrcm: {=bool:?}, epdm: {=bool:?}, tom: {=bool:?}, ittxfemsk: {=bool:?}, inepnmm: {=bool:?}, inepnem: {=bool:?} }}",
+                self.xfrcm(),
+                self.epdm(),
+                self.tom(),
+                self.ittxfemsk(),
+                self.inepnmm(),
+                self.inepnem()
+            )
         }
     }
     #[doc = "Device endpoint transfer size register"]
@@ -1666,7 +1731,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Doepctl {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Doepctl {{ mpsiz: {=u16:?}, usbaep: {=bool:?}, eonum_dpid: {=bool:?}, naksts: {=bool:?}, eptyp: {:?}, snpm: {=bool:?}, stall: {=bool:?}, cnak: {=bool:?}, snak: {=bool:?}, sd0pid_sevnfrm: {=bool:?}, soddfrm: {=bool:?}, epdis: {=bool:?}, epena: {=bool:?} }}" , self . mpsiz () , self . usbaep () , self . eonum_dpid () , self . naksts () , self . eptyp () , self . snpm () , self . stall () , self . cnak () , self . snak () , self . sd0pid_sevnfrm () , self . soddfrm () , self . epdis () , self . epena ())
+            defmt::write!(
+                f,
+                "Doepctl {{ mpsiz: {=u16:?}, usbaep: {=bool:?}, eonum_dpid: {=bool:?}, naksts: {=bool:?}, eptyp: {:?}, snpm: {=bool:?}, stall: {=bool:?}, cnak: {=bool:?}, snak: {=bool:?}, sd0pid_sevnfrm: {=bool:?}, soddfrm: {=bool:?}, epdis: {=bool:?}, epena: {=bool:?} }}",
+                self.mpsiz(),
+                self.usbaep(),
+                self.eonum_dpid(),
+                self.naksts(),
+                self.eptyp(),
+                self.snpm(),
+                self.stall(),
+                self.cnak(),
+                self.snak(),
+                self.sd0pid_sevnfrm(),
+                self.soddfrm(),
+                self.epdis(),
+                self.epena()
+            )
         }
     }
     #[doc = "Device endpoint interrupt register"]
@@ -1755,7 +1836,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Doepint {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Doepint {{ xfrc: {=bool:?}, epdisd: {=bool:?}, stup: {=bool:?}, otepdis: {=bool:?}, b2bstup: {=bool:?} }}" , self . xfrc () , self . epdisd () , self . stup () , self . otepdis () , self . b2bstup ())
+            defmt::write!(
+                f,
+                "Doepint {{ xfrc: {=bool:?}, epdisd: {=bool:?}, stup: {=bool:?}, otepdis: {=bool:?}, b2bstup: {=bool:?} }}",
+                self.xfrc(),
+                self.epdisd(),
+                self.stup(),
+                self.otepdis(),
+                self.b2bstup()
+            )
         }
     }
     #[doc = "Device OUT endpoint common interrupt mask register"]
@@ -2269,7 +2358,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gahbcfg {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Gahbcfg {{ gint: {=bool:?}, hbstlen: {=u8:?}, dmaen: {=bool:?}, txfelvl: {=bool:?}, ptxfelvl: {=bool:?} }}" , self . gint () , self . hbstlen () , self . dmaen () , self . txfelvl () , self . ptxfelvl ())
+            defmt::write!(
+                f,
+                "Gahbcfg {{ gint: {=bool:?}, hbstlen: {=u8:?}, dmaen: {=bool:?}, txfelvl: {=bool:?}, ptxfelvl: {=bool:?} }}",
+                self.gint(),
+                self.hbstlen(),
+                self.dmaen(),
+                self.txfelvl(),
+                self.ptxfelvl()
+            )
         }
     }
     #[doc = "General core configuration register"]
@@ -2358,7 +2455,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for GccfgV1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "GccfgV1 {{ pwrdwn: {=bool:?}, vbusasen: {=bool:?}, vbusbsen: {=bool:?}, sofouten: {=bool:?}, novbussens: {=bool:?} }}" , self . pwrdwn () , self . vbusasen () , self . vbusbsen () , self . sofouten () , self . novbussens ())
+            defmt::write!(
+                f,
+                "GccfgV1 {{ pwrdwn: {=bool:?}, vbusasen: {=bool:?}, vbusbsen: {=bool:?}, sofouten: {=bool:?}, novbussens: {=bool:?} }}",
+                self.pwrdwn(),
+                self.vbusasen(),
+                self.vbusbsen(),
+                self.sofouten(),
+                self.novbussens()
+            )
         }
     }
     #[doc = "General core configuration register"]
@@ -2525,7 +2630,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for GccfgV2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "GccfgV2 {{ dcdet: {=bool:?}, pdet: {=bool:?}, sdet: {=bool:?}, ps2det: {=bool:?}, pwrdwn: {=bool:?}, bcden: {=bool:?}, dcden: {=bool:?}, pden: {=bool:?}, sden: {=bool:?}, vbden: {=bool:?}, phyhsen: {=bool:?} }}" , self . dcdet () , self . pdet () , self . sdet () , self . ps2det () , self . pwrdwn () , self . bcden () , self . dcden () , self . pden () , self . sden () , self . vbden () , self . phyhsen ())
+            defmt::write!(
+                f,
+                "GccfgV2 {{ dcdet: {=bool:?}, pdet: {=bool:?}, sdet: {=bool:?}, ps2det: {=bool:?}, pwrdwn: {=bool:?}, bcden: {=bool:?}, dcden: {=bool:?}, pden: {=bool:?}, sden: {=bool:?}, vbden: {=bool:?}, phyhsen: {=bool:?} }}",
+                self.dcdet(),
+                self.pdet(),
+                self.sdet(),
+                self.ps2det(),
+                self.pwrdwn(),
+                self.bcden(),
+                self.dcden(),
+                self.pden(),
+                self.sden(),
+                self.vbden(),
+                self.phyhsen()
+            )
         }
     }
     #[doc = "OTG general core configuration register."]
@@ -2731,7 +2850,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for GccfgV3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "GccfgV3 {{ chgdet: {=bool:?}, fsvplus: {=bool:?}, fsvminus: {=bool:?}, sessvld: {=bool:?}, hcdpen: {=bool:?}, hcdpdeten: {=bool:?}, hvdmsrcen: {=bool:?}, dcden: {=bool:?}, pden: {=bool:?}, vbden: {=bool:?}, sden: {=bool:?}, vbvaloval: {=bool:?}, vbvaloven: {=bool:?}, forcehostpd: {=bool:?} }}" , self . chgdet () , self . fsvplus () , self . fsvminus () , self . sessvld () , self . hcdpen () , self . hcdpdeten () , self . hvdmsrcen () , self . dcden () , self . pden () , self . vbden () , self . sden () , self . vbvaloval () , self . vbvaloven () , self . forcehostpd ())
+            defmt::write!(
+                f,
+                "GccfgV3 {{ chgdet: {=bool:?}, fsvplus: {=bool:?}, fsvminus: {=bool:?}, sessvld: {=bool:?}, hcdpen: {=bool:?}, hcdpdeten: {=bool:?}, hvdmsrcen: {=bool:?}, dcden: {=bool:?}, pden: {=bool:?}, vbden: {=bool:?}, sden: {=bool:?}, vbvaloval: {=bool:?}, vbvaloven: {=bool:?}, forcehostpd: {=bool:?} }}",
+                self.chgdet(),
+                self.fsvplus(),
+                self.fsvminus(),
+                self.sessvld(),
+                self.hcdpen(),
+                self.hcdpdeten(),
+                self.hvdmsrcen(),
+                self.dcden(),
+                self.pden(),
+                self.vbden(),
+                self.sden(),
+                self.vbvaloval(),
+                self.vbvaloven(),
+                self.forcehostpd()
+            )
         }
     }
     #[doc = "I2C access register"]
@@ -2872,7 +3008,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gi2cctl {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Gi2cctl {{ rwdata: {=u8:?}, regaddr: {=u8:?}, addr: {=u8:?}, i2cen: {=bool:?}, ack: {=bool:?}, i2cdevadr: {=u8:?}, i2cdatse0: {=bool:?}, rw: {=bool:?}, bsydne: {=bool:?} }}" , self . rwdata () , self . regaddr () , self . addr () , self . i2cen () , self . ack () , self . i2cdevadr () , self . i2cdatse0 () , self . rw () , self . bsydne ())
+            defmt::write!(
+                f,
+                "Gi2cctl {{ rwdata: {=u8:?}, regaddr: {=u8:?}, addr: {=u8:?}, i2cen: {=bool:?}, ack: {=bool:?}, i2cdevadr: {=u8:?}, i2cdatse0: {=bool:?}, rw: {=bool:?}, bsydne: {=bool:?} }}",
+                self.rwdata(),
+                self.regaddr(),
+                self.addr(),
+                self.i2cen(),
+                self.ack(),
+                self.i2cdevadr(),
+                self.i2cdatse0(),
+                self.rw(),
+                self.bsydne()
+            )
         }
     }
     #[doc = "Interrupt mask register"]
@@ -3260,7 +3408,38 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gintmsk {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Gintmsk {{ mmism: {=bool:?}, otgint: {=bool:?}, sofm: {=bool:?}, rxflvlm: {=bool:?}, nptxfem: {=bool:?}, ginakeffm: {=bool:?}, gonakeffm: {=bool:?}, esuspm: {=bool:?}, usbsuspm: {=bool:?}, usbrst: {=bool:?}, enumdnem: {=bool:?}, isoodrpm: {=bool:?}, eopfm: {=bool:?}, epmism: {=bool:?}, iepint: {=bool:?}, oepint: {=bool:?}, iisoixfrm: {=bool:?}, ipxfrm_iisooxfrm: {=bool:?}, fsuspm: {=bool:?}, rstde: {=bool:?}, prtim: {=bool:?}, hcim: {=bool:?}, ptxfem: {=bool:?}, lpmintm: {=bool:?}, cidschgm: {=bool:?}, discint: {=bool:?}, srqim: {=bool:?}, wuim: {=bool:?} }}" , self . mmism () , self . otgint () , self . sofm () , self . rxflvlm () , self . nptxfem () , self . ginakeffm () , self . gonakeffm () , self . esuspm () , self . usbsuspm () , self . usbrst () , self . enumdnem () , self . isoodrpm () , self . eopfm () , self . epmism () , self . iepint () , self . oepint () , self . iisoixfrm () , self . ipxfrm_iisooxfrm () , self . fsuspm () , self . rstde () , self . prtim () , self . hcim () , self . ptxfem () , self . lpmintm () , self . cidschgm () , self . discint () , self . srqim () , self . wuim ())
+            defmt::write!(
+                f,
+                "Gintmsk {{ mmism: {=bool:?}, otgint: {=bool:?}, sofm: {=bool:?}, rxflvlm: {=bool:?}, nptxfem: {=bool:?}, ginakeffm: {=bool:?}, gonakeffm: {=bool:?}, esuspm: {=bool:?}, usbsuspm: {=bool:?}, usbrst: {=bool:?}, enumdnem: {=bool:?}, isoodrpm: {=bool:?}, eopfm: {=bool:?}, epmism: {=bool:?}, iepint: {=bool:?}, oepint: {=bool:?}, iisoixfrm: {=bool:?}, ipxfrm_iisooxfrm: {=bool:?}, fsuspm: {=bool:?}, rstde: {=bool:?}, prtim: {=bool:?}, hcim: {=bool:?}, ptxfem: {=bool:?}, lpmintm: {=bool:?}, cidschgm: {=bool:?}, discint: {=bool:?}, srqim: {=bool:?}, wuim: {=bool:?} }}",
+                self.mmism(),
+                self.otgint(),
+                self.sofm(),
+                self.rxflvlm(),
+                self.nptxfem(),
+                self.ginakeffm(),
+                self.gonakeffm(),
+                self.esuspm(),
+                self.usbsuspm(),
+                self.usbrst(),
+                self.enumdnem(),
+                self.isoodrpm(),
+                self.eopfm(),
+                self.epmism(),
+                self.iepint(),
+                self.oepint(),
+                self.iisoixfrm(),
+                self.ipxfrm_iisooxfrm(),
+                self.fsuspm(),
+                self.rstde(),
+                self.prtim(),
+                self.hcim(),
+                self.ptxfem(),
+                self.lpmintm(),
+                self.cidschgm(),
+                self.discint(),
+                self.srqim(),
+                self.wuim()
+            )
         }
     }
     #[doc = "Core interrupt register"]
@@ -3635,7 +3814,37 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gintsts {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Gintsts {{ cmod: {=bool:?}, mmis: {=bool:?}, otgint: {=bool:?}, sof: {=bool:?}, rxflvl: {=bool:?}, nptxfe: {=bool:?}, ginakeff: {=bool:?}, goutnakeff: {=bool:?}, esusp: {=bool:?}, usbsusp: {=bool:?}, usbrst: {=bool:?}, enumdne: {=bool:?}, isoodrp: {=bool:?}, eopf: {=bool:?}, iepint: {=bool:?}, oepint: {=bool:?}, iisoixfr: {=bool:?}, ipxfr_incompisoout: {=bool:?}, datafsusp: {=bool:?}, resetdet: {=bool:?}, hprtint: {=bool:?}, hcint: {=bool:?}, ptxfe: {=bool:?}, cidschg: {=bool:?}, discint: {=bool:?}, srqint: {=bool:?}, wkupint: {=bool:?} }}" , self . cmod () , self . mmis () , self . otgint () , self . sof () , self . rxflvl () , self . nptxfe () , self . ginakeff () , self . goutnakeff () , self . esusp () , self . usbsusp () , self . usbrst () , self . enumdne () , self . isoodrp () , self . eopf () , self . iepint () , self . oepint () , self . iisoixfr () , self . ipxfr_incompisoout () , self . datafsusp () , self . resetdet () , self . hprtint () , self . hcint () , self . ptxfe () , self . cidschg () , self . discint () , self . srqint () , self . wkupint ())
+            defmt::write!(
+                f,
+                "Gintsts {{ cmod: {=bool:?}, mmis: {=bool:?}, otgint: {=bool:?}, sof: {=bool:?}, rxflvl: {=bool:?}, nptxfe: {=bool:?}, ginakeff: {=bool:?}, goutnakeff: {=bool:?}, esusp: {=bool:?}, usbsusp: {=bool:?}, usbrst: {=bool:?}, enumdne: {=bool:?}, isoodrp: {=bool:?}, eopf: {=bool:?}, iepint: {=bool:?}, oepint: {=bool:?}, iisoixfr: {=bool:?}, ipxfr_incompisoout: {=bool:?}, datafsusp: {=bool:?}, resetdet: {=bool:?}, hprtint: {=bool:?}, hcint: {=bool:?}, ptxfe: {=bool:?}, cidschg: {=bool:?}, discint: {=bool:?}, srqint: {=bool:?}, wkupint: {=bool:?} }}",
+                self.cmod(),
+                self.mmis(),
+                self.otgint(),
+                self.sof(),
+                self.rxflvl(),
+                self.nptxfe(),
+                self.ginakeff(),
+                self.goutnakeff(),
+                self.esusp(),
+                self.usbsusp(),
+                self.usbrst(),
+                self.enumdne(),
+                self.isoodrp(),
+                self.eopf(),
+                self.iepint(),
+                self.oepint(),
+                self.iisoixfr(),
+                self.ipxfr_incompisoout(),
+                self.datafsusp(),
+                self.resetdet(),
+                self.hprtint(),
+                self.hcint(),
+                self.ptxfe(),
+                self.cidschg(),
+                self.discint(),
+                self.srqint(),
+                self.wkupint()
+            )
         }
     }
     #[doc = "Core LPM configuration register"]
@@ -3854,7 +4063,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Glpmcfg {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Glpmcfg {{ lpmen: {=bool:?}, lpmack: {=bool:?}, besl: {=u8:?}, remwake: {=bool:?}, l1ssen: {=bool:?}, beslthrs: {=u8:?}, l1dsen: {=bool:?}, lpmrst: {=u8:?}, slpsts: {=bool:?}, l1rsmok: {=bool:?}, lpmchidx: {=u8:?}, lpmrcnt: {=u8:?}, sndlpm: {=bool:?}, lpmrcntsts: {=u8:?}, enbesl: {=bool:?} }}" , self . lpmen () , self . lpmack () , self . besl () , self . remwake () , self . l1ssen () , self . beslthrs () , self . l1dsen () , self . lpmrst () , self . slpsts () , self . l1rsmok () , self . lpmchidx () , self . lpmrcnt () , self . sndlpm () , self . lpmrcntsts () , self . enbesl ())
+            defmt::write!(
+                f,
+                "Glpmcfg {{ lpmen: {=bool:?}, lpmack: {=bool:?}, besl: {=u8:?}, remwake: {=bool:?}, l1ssen: {=bool:?}, beslthrs: {=u8:?}, l1dsen: {=bool:?}, lpmrst: {=u8:?}, slpsts: {=bool:?}, l1rsmok: {=bool:?}, lpmchidx: {=u8:?}, lpmrcnt: {=u8:?}, sndlpm: {=bool:?}, lpmrcntsts: {=u8:?}, enbesl: {=bool:?} }}",
+                self.lpmen(),
+                self.lpmack(),
+                self.besl(),
+                self.remwake(),
+                self.l1ssen(),
+                self.beslthrs(),
+                self.l1dsen(),
+                self.lpmrst(),
+                self.slpsts(),
+                self.l1rsmok(),
+                self.lpmchidx(),
+                self.lpmrcnt(),
+                self.sndlpm(),
+                self.lpmrcntsts(),
+                self.enbesl()
+            )
         }
     }
     #[doc = "Control and status register"]
@@ -4099,7 +4326,27 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gotgctl {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Gotgctl {{ srqscs: {=bool:?}, srq: {=bool:?}, vbvaloen: {=bool:?}, vbvaloval: {=bool:?}, avaloen: {=bool:?}, avaloval: {=bool:?}, bvaloen: {=bool:?}, bvaloval: {=bool:?}, hngscs: {=bool:?}, hnprq: {=bool:?}, hshnpen: {=bool:?}, dhnpen: {=bool:?}, ehen: {=bool:?}, cidsts: {=bool:?}, dbct: {=bool:?}, asvld: {=bool:?}, bsvld: {=bool:?} }}" , self . srqscs () , self . srq () , self . vbvaloen () , self . vbvaloval () , self . avaloen () , self . avaloval () , self . bvaloen () , self . bvaloval () , self . hngscs () , self . hnprq () , self . hshnpen () , self . dhnpen () , self . ehen () , self . cidsts () , self . dbct () , self . asvld () , self . bsvld ())
+            defmt::write!(
+                f,
+                "Gotgctl {{ srqscs: {=bool:?}, srq: {=bool:?}, vbvaloen: {=bool:?}, vbvaloval: {=bool:?}, avaloen: {=bool:?}, avaloval: {=bool:?}, bvaloen: {=bool:?}, bvaloval: {=bool:?}, hngscs: {=bool:?}, hnprq: {=bool:?}, hshnpen: {=bool:?}, dhnpen: {=bool:?}, ehen: {=bool:?}, cidsts: {=bool:?}, dbct: {=bool:?}, asvld: {=bool:?}, bsvld: {=bool:?} }}",
+                self.srqscs(),
+                self.srq(),
+                self.vbvaloen(),
+                self.vbvaloval(),
+                self.avaloen(),
+                self.avaloval(),
+                self.bvaloen(),
+                self.bvaloval(),
+                self.hngscs(),
+                self.hnprq(),
+                self.hshnpen(),
+                self.dhnpen(),
+                self.ehen(),
+                self.cidsts(),
+                self.dbct(),
+                self.asvld(),
+                self.bsvld()
+            )
         }
     }
     #[doc = "Interrupt register"]
@@ -4214,7 +4461,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gotgint {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Gotgint {{ sedet: {=bool:?}, srsschg: {=bool:?}, hnsschg: {=bool:?}, hngdet: {=bool:?}, adtochg: {=bool:?}, dbcdne: {=bool:?}, idchng: {=bool:?} }}" , self . sedet () , self . srsschg () , self . hnsschg () , self . hngdet () , self . adtochg () , self . dbcdne () , self . idchng ())
+            defmt::write!(
+                f,
+                "Gotgint {{ sedet: {=bool:?}, srsschg: {=bool:?}, hnsschg: {=bool:?}, hngdet: {=bool:?}, adtochg: {=bool:?}, dbcdne: {=bool:?}, idchng: {=bool:?} }}",
+                self.sedet(),
+                self.srsschg(),
+                self.hnsschg(),
+                self.hngdet(),
+                self.adtochg(),
+                self.dbcdne(),
+                self.idchng()
+            )
         }
     }
     #[doc = "Reset register"]
@@ -4342,7 +4599,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Grstctl {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Grstctl {{ csrst: {=bool:?}, hsrst: {=bool:?}, fcrst: {=bool:?}, rxfflsh: {=bool:?}, txfflsh: {=bool:?}, txfnum: {=u8:?}, dmareq: {=bool:?}, ahbidl: {=bool:?} }}" , self . csrst () , self . hsrst () , self . fcrst () , self . rxfflsh () , self . txfflsh () , self . txfnum () , self . dmareq () , self . ahbidl ())
+            defmt::write!(
+                f,
+                "Grstctl {{ csrst: {=bool:?}, hsrst: {=bool:?}, fcrst: {=bool:?}, rxfflsh: {=bool:?}, txfflsh: {=bool:?}, txfnum: {=u8:?}, dmareq: {=bool:?}, ahbidl: {=bool:?} }}",
+                self.csrst(),
+                self.hsrst(),
+                self.fcrst(),
+                self.rxfflsh(),
+                self.txfflsh(),
+                self.txfnum(),
+                self.dmareq(),
+                self.ahbidl()
+            )
         }
     }
     #[doc = "Receive FIFO size register"]
@@ -4479,7 +4747,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Grxsts {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Grxsts {{ epnum: {=u8:?}, bcnt: {=u16:?}, dpid: {:?}, pktstsd: {:?}, pktstsh: {:?}, frmnum: {=u8:?} }}" , self . epnum () , self . bcnt () , self . dpid () , self . pktstsd () , self . pktstsh () , self . frmnum ())
+            defmt::write!(
+                f,
+                "Grxsts {{ epnum: {=u8:?}, bcnt: {=u16:?}, dpid: {:?}, pktstsd: {:?}, pktstsh: {:?}, frmnum: {=u8:?} }}",
+                self.epnum(),
+                self.bcnt(),
+                self.dpid(),
+                self.pktstsd(),
+                self.pktstsh(),
+                self.frmnum()
+            )
         }
     }
     #[doc = "USB configuration register"]
@@ -4737,7 +5014,28 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gusbcfg {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Gusbcfg {{ tocal: {=u8:?}, physel: {=bool:?}, srpcap: {=bool:?}, hnpcap: {=bool:?}, trdt: {=u8:?}, phylpcs: {=bool:?}, ulpifsls: {=bool:?}, ulpiar: {=bool:?}, ulpicsm: {=bool:?}, ulpievbusd: {=bool:?}, ulpievbusi: {=bool:?}, tsdps: {=bool:?}, pcci: {=bool:?}, ptci: {=bool:?}, ulpiipd: {=bool:?}, fhmod: {=bool:?}, fdmod: {=bool:?}, ctxpkt: {=bool:?} }}" , self . tocal () , self . physel () , self . srpcap () , self . hnpcap () , self . trdt () , self . phylpcs () , self . ulpifsls () , self . ulpiar () , self . ulpicsm () , self . ulpievbusd () , self . ulpievbusi () , self . tsdps () , self . pcci () , self . ptci () , self . ulpiipd () , self . fhmod () , self . fdmod () , self . ctxpkt ())
+            defmt::write!(
+                f,
+                "Gusbcfg {{ tocal: {=u8:?}, physel: {=bool:?}, srpcap: {=bool:?}, hnpcap: {=bool:?}, trdt: {=u8:?}, phylpcs: {=bool:?}, ulpifsls: {=bool:?}, ulpiar: {=bool:?}, ulpicsm: {=bool:?}, ulpievbusd: {=bool:?}, ulpievbusi: {=bool:?}, tsdps: {=bool:?}, pcci: {=bool:?}, ptci: {=bool:?}, ulpiipd: {=bool:?}, fhmod: {=bool:?}, fdmod: {=bool:?}, ctxpkt: {=bool:?} }}",
+                self.tocal(),
+                self.physel(),
+                self.srpcap(),
+                self.hnpcap(),
+                self.trdt(),
+                self.phylpcs(),
+                self.ulpifsls(),
+                self.ulpiar(),
+                self.ulpicsm(),
+                self.ulpievbusd(),
+                self.ulpievbusi(),
+                self.tsdps(),
+                self.pcci(),
+                self.ptci(),
+                self.ulpiipd(),
+                self.fhmod(),
+                self.fdmod(),
+                self.ctxpkt()
+            )
         }
     }
     #[doc = "Host all channels interrupt register"]
@@ -4961,7 +5259,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hcchar {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Hcchar {{ mpsiz: {=u16:?}, epnum: {=u8:?}, epdir: {=bool:?}, lsdev: {=bool:?}, eptyp: {:?}, mcnt: {=u8:?}, dad: {=u8:?}, oddfrm: {=bool:?}, chdis: {=bool:?}, chena: {=bool:?} }}" , self . mpsiz () , self . epnum () , self . epdir () , self . lsdev () , self . eptyp () , self . mcnt () , self . dad () , self . oddfrm () , self . chdis () , self . chena ())
+            defmt::write!(
+                f,
+                "Hcchar {{ mpsiz: {=u16:?}, epnum: {=u8:?}, epdir: {=bool:?}, lsdev: {=bool:?}, eptyp: {:?}, mcnt: {=u8:?}, dad: {=u8:?}, oddfrm: {=bool:?}, chdis: {=bool:?}, chena: {=bool:?} }}",
+                self.mpsiz(),
+                self.epnum(),
+                self.epdir(),
+                self.lsdev(),
+                self.eptyp(),
+                self.mcnt(),
+                self.dad(),
+                self.oddfrm(),
+                self.chdis(),
+                self.chena()
+            )
         }
     }
     #[doc = "Host channel DMA config register"]
@@ -5105,7 +5416,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hcfg {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Hcfg {{ fslspcs: {=u8:?}, fslss: {=bool:?}, descdma: {=bool:?}, frlistlen: {:?}, perschedena: {=bool:?} }}" , self . fslspcs () , self . fslss () , self . descdma () , self . frlistlen () , self . perschedena ())
+            defmt::write!(
+                f,
+                "Hcfg {{ fslspcs: {=u8:?}, fslss: {=bool:?}, descdma: {=bool:?}, frlistlen: {:?}, perschedena: {=bool:?} }}",
+                self.fslspcs(),
+                self.fslss(),
+                self.descdma(),
+                self.frlistlen(),
+                self.perschedena()
+            )
         }
     }
     #[doc = "Host channel interrupt register"]
@@ -5246,7 +5565,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hcint {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Hcint {{ xfrc: {=bool:?}, chh: {=bool:?}, stall: {=bool:?}, nak: {=bool:?}, ack: {=bool:?}, txerr: {=bool:?}, bberr: {=bool:?}, frmor: {=bool:?}, dterr: {=bool:?} }}" , self . xfrc () , self . chh () , self . stall () , self . nak () , self . ack () , self . txerr () , self . bberr () , self . frmor () , self . dterr ())
+            defmt::write!(
+                f,
+                "Hcint {{ xfrc: {=bool:?}, chh: {=bool:?}, stall: {=bool:?}, nak: {=bool:?}, ack: {=bool:?}, txerr: {=bool:?}, bberr: {=bool:?}, frmor: {=bool:?}, dterr: {=bool:?} }}",
+                self.xfrc(),
+                self.chh(),
+                self.stall(),
+                self.nak(),
+                self.ack(),
+                self.txerr(),
+                self.bberr(),
+                self.frmor(),
+                self.dterr()
+            )
         }
     }
     #[doc = "Host channel mask register"]
@@ -5400,7 +5731,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hcintmsk {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Hcintmsk {{ xfrcm: {=bool:?}, chhm: {=bool:?}, stallm: {=bool:?}, nakm: {=bool:?}, ackm: {=bool:?}, nyet: {=bool:?}, txerrm: {=bool:?}, bberrm: {=bool:?}, frmorm: {=bool:?}, dterrm: {=bool:?} }}" , self . xfrcm () , self . chhm () , self . stallm () , self . nakm () , self . ackm () , self . nyet () , self . txerrm () , self . bberrm () , self . frmorm () , self . dterrm ())
+            defmt::write!(
+                f,
+                "Hcintmsk {{ xfrcm: {=bool:?}, chhm: {=bool:?}, stallm: {=bool:?}, nakm: {=bool:?}, ackm: {=bool:?}, nyet: {=bool:?}, txerrm: {=bool:?}, bberrm: {=bool:?}, frmorm: {=bool:?}, dterrm: {=bool:?} }}",
+                self.xfrcm(),
+                self.chhm(),
+                self.stallm(),
+                self.nakm(),
+                self.ackm(),
+                self.nyet(),
+                self.txerrm(),
+                self.bberrm(),
+                self.frmorm(),
+                self.dterrm()
+            )
         }
     }
     #[doc = "Host channel transfer size register"]
@@ -5502,7 +5846,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hctsiz {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Hctsiz {{ schedinfo: {=u8:?}, xfrsiz: {=u32:?}, ntdl: {=u8:?}, pktcnt: {=u16:?}, dpid: {=u8:?}, doping: {=bool:?} }}" , self . schedinfo () , self . xfrsiz () , self . ntdl () , self . pktcnt () , self . dpid () , self . doping ())
+            defmt::write!(
+                f,
+                "Hctsiz {{ schedinfo: {=u8:?}, xfrsiz: {=u32:?}, ntdl: {=u8:?}, pktcnt: {=u16:?}, dpid: {=u8:?}, doping: {=bool:?} }}",
+                self.schedinfo(),
+                self.xfrsiz(),
+                self.ntdl(),
+                self.pktcnt(),
+                self.dpid(),
+                self.doping()
+            )
         }
     }
     #[doc = "Host frame interval register"]
@@ -5874,7 +6227,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Hprt {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Hprt {{ pcsts: {=bool:?}, pcdet: {=bool:?}, pena: {=bool:?}, penchng: {=bool:?}, poca: {=bool:?}, pocchng: {=bool:?}, pres: {=bool:?}, psusp: {=bool:?}, prst: {=bool:?}, plsts: {=u8:?}, ppwr: {=bool:?}, ptctl: {=u8:?}, pspd: {=u8:?} }}" , self . pcsts () , self . pcdet () , self . pena () , self . penchng () , self . poca () , self . pocchng () , self . pres () , self . psusp () , self . prst () , self . plsts () , self . ppwr () , self . ptctl () , self . pspd ())
+            defmt::write!(
+                f,
+                "Hprt {{ pcsts: {=bool:?}, pcdet: {=bool:?}, pena: {=bool:?}, penchng: {=bool:?}, poca: {=bool:?}, pocchng: {=bool:?}, pres: {=bool:?}, psusp: {=bool:?}, prst: {=bool:?}, plsts: {=u8:?}, ppwr: {=bool:?}, ptctl: {=u8:?}, pspd: {=u8:?} }}",
+                self.pcsts(),
+                self.pcdet(),
+                self.pena(),
+                self.penchng(),
+                self.poca(),
+                self.pocchng(),
+                self.pres(),
+                self.psusp(),
+                self.prst(),
+                self.plsts(),
+                self.ppwr(),
+                self.ptctl(),
+                self.pspd()
+            )
         }
     }
     #[doc = "Periodic transmit FIFO/queue status register"]

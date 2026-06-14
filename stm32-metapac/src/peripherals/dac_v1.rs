@@ -217,7 +217,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en[0]: {=bool:?}, en[1]: {=bool:?}, boff[0]: {=bool:?}, boff[1]: {=bool:?}, ten[0]: {=bool:?}, ten[1]: {=bool:?}, tsel[0]: {=u8:?}, tsel[1]: {=u8:?}, wave[0]: {:?}, wave[1]: {:?}, mamp[0]: {=u8:?}, mamp[1]: {=u8:?}, dmaen[0]: {=bool:?}, dmaen[1]: {=bool:?} }}" , self . en (0usize) , self . en (1usize) , self . boff (0usize) , self . boff (1usize) , self . ten (0usize) , self . ten (1usize) , self . tsel (0usize) , self . tsel (1usize) , self . wave (0usize) , self . wave (1usize) , self . mamp (0usize) , self . mamp (1usize) , self . dmaen (0usize) , self . dmaen (1usize))
+            defmt::write!(
+                f,
+                "Cr {{ en[0]: {=bool:?}, en[1]: {=bool:?}, boff[0]: {=bool:?}, boff[1]: {=bool:?}, ten[0]: {=bool:?}, ten[1]: {=bool:?}, tsel[0]: {=u8:?}, tsel[1]: {=u8:?}, wave[0]: {:?}, wave[1]: {:?}, mamp[0]: {=u8:?}, mamp[1]: {=u8:?}, dmaen[0]: {=bool:?}, dmaen[1]: {=bool:?} }}",
+                self.en(0usize),
+                self.en(1usize),
+                self.boff(0usize),
+                self.boff(1usize),
+                self.ten(0usize),
+                self.ten(1usize),
+                self.tsel(0usize),
+                self.tsel(1usize),
+                self.wave(0usize),
+                self.wave(1usize),
+                self.mamp(0usize),
+                self.mamp(1usize),
+                self.dmaen(0usize),
+                self.dmaen(1usize)
+            )
         }
     }
     #[doc = "channel 12-bit left-aligned data holding register"]

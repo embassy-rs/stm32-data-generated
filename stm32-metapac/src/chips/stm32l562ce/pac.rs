@@ -567,9 +567,9 @@ pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_4000
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 3;
 #[cfg(feature = "rt")]
-pub use cortex_m_rt::interrupt;
-#[cfg(feature = "rt")]
 pub use Interrupt as interrupt;
+#[cfg(feature = "rt")]
+pub use cortex_m_rt::interrupt;
 #[path = "../../peripherals/adc_v3.rs"]
 pub mod adc;
 #[path = "../../peripherals/adccommon_v3.rs"]

@@ -283,7 +283,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ awdch: {=u8:?}, eocie: {=bool:?}, awdie: {=bool:?}, jeocie: {=bool:?}, scan: {=bool:?}, awdsgl: {=bool:?}, jauto: {=bool:?}, discen: {=bool:?}, jdiscen: {=bool:?}, discnum: {=u8:?}, dualmod: {:?}, jawden: {=bool:?}, awden: {=bool:?} }}" , self . awdch () , self . eocie () , self . awdie () , self . jeocie () , self . scan () , self . awdsgl () , self . jauto () , self . discen () , self . jdiscen () , self . discnum () , self . dualmod () , self . jawden () , self . awden ())
+            defmt::write!(
+                f,
+                "Cr1 {{ awdch: {=u8:?}, eocie: {=bool:?}, awdie: {=bool:?}, jeocie: {=bool:?}, scan: {=bool:?}, awdsgl: {=bool:?}, jauto: {=bool:?}, discen: {=bool:?}, jdiscen: {=bool:?}, discnum: {=u8:?}, dualmod: {:?}, jawden: {=bool:?}, awden: {=bool:?} }}",
+                self.awdch(),
+                self.eocie(),
+                self.awdie(),
+                self.jeocie(),
+                self.scan(),
+                self.awdsgl(),
+                self.jauto(),
+                self.discen(),
+                self.jdiscen(),
+                self.discnum(),
+                self.dualmod(),
+                self.jawden(),
+                self.awden()
+            )
         }
     }
     #[doc = "control register 2"]
@@ -476,7 +492,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ adon: {=bool:?}, cont: {=bool:?}, cal: {=bool:?}, rstcal: {=bool:?}, dma: {=bool:?}, align: {=bool:?}, jextsel: {=u8:?}, jexttrig: {=bool:?}, extsel: {=u8:?}, exttrig: {=bool:?}, jswstart: {=bool:?}, swstart: {=bool:?}, tsvrefe: {=bool:?} }}" , self . adon () , self . cont () , self . cal () , self . rstcal () , self . dma () , self . align () , self . jextsel () , self . jexttrig () , self . extsel () , self . exttrig () , self . jswstart () , self . swstart () , self . tsvrefe ())
+            defmt::write!(
+                f,
+                "Cr2 {{ adon: {=bool:?}, cont: {=bool:?}, cal: {=bool:?}, rstcal: {=bool:?}, dma: {=bool:?}, align: {=bool:?}, jextsel: {=u8:?}, jexttrig: {=bool:?}, extsel: {=u8:?}, exttrig: {=bool:?}, jswstart: {=bool:?}, swstart: {=bool:?}, tsvrefe: {=bool:?} }}",
+                self.adon(),
+                self.cont(),
+                self.cal(),
+                self.rstcal(),
+                self.dma(),
+                self.align(),
+                self.jextsel(),
+                self.jexttrig(),
+                self.extsel(),
+                self.exttrig(),
+                self.jswstart(),
+                self.swstart(),
+                self.tsvrefe()
+            )
         }
     }
     #[doc = "regular data register"]
@@ -784,7 +816,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Smpr1 {{ smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?} }}" , self . smp (0usize) , self . smp (1usize) , self . smp (2usize) , self . smp (3usize) , self . smp (4usize) , self . smp (5usize) , self . smp (6usize) , self . smp (7usize))
+            defmt::write!(
+                f,
+                "Smpr1 {{ smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?} }}",
+                self.smp(0usize),
+                self.smp(1usize),
+                self.smp(2usize),
+                self.smp(3usize),
+                self.smp(4usize),
+                self.smp(5usize),
+                self.smp(6usize),
+                self.smp(7usize)
+            )
         }
     }
     #[doc = "sample time register 2"]
@@ -834,7 +877,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Smpr2 {{ smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?}, smp[8]: {:?}, smp[9]: {:?} }}" , self . smp (0usize) , self . smp (1usize) , self . smp (2usize) , self . smp (3usize) , self . smp (4usize) , self . smp (5usize) , self . smp (6usize) , self . smp (7usize) , self . smp (8usize) , self . smp (9usize))
+            defmt::write!(
+                f,
+                "Smpr2 {{ smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?}, smp[8]: {:?}, smp[9]: {:?} }}",
+                self.smp(0usize),
+                self.smp(1usize),
+                self.smp(2usize),
+                self.smp(3usize),
+                self.smp(4usize),
+                self.smp(5usize),
+                self.smp(6usize),
+                self.smp(7usize),
+                self.smp(8usize),
+                self.smp(9usize)
+            )
         }
     }
     #[doc = "regular sequence register 1"]
@@ -945,7 +1001,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sqr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sqr2 {{ sq[0]: {=u8:?}, sq[1]: {=u8:?}, sq[2]: {=u8:?}, sq[3]: {=u8:?}, sq[4]: {=u8:?}, sq[5]: {=u8:?} }}" , self . sq (0usize) , self . sq (1usize) , self . sq (2usize) , self . sq (3usize) , self . sq (4usize) , self . sq (5usize))
+            defmt::write!(
+                f,
+                "Sqr2 {{ sq[0]: {=u8:?}, sq[1]: {=u8:?}, sq[2]: {=u8:?}, sq[3]: {=u8:?}, sq[4]: {=u8:?}, sq[5]: {=u8:?} }}",
+                self.sq(0usize),
+                self.sq(1usize),
+                self.sq(2usize),
+                self.sq(3usize),
+                self.sq(4usize),
+                self.sq(5usize)
+            )
         }
     }
     #[doc = "regular sequence register 3"]
@@ -991,7 +1056,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sqr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sqr3 {{ sq[0]: {=u8:?}, sq[1]: {=u8:?}, sq[2]: {=u8:?}, sq[3]: {=u8:?}, sq[4]: {=u8:?}, sq[5]: {=u8:?} }}" , self . sq (0usize) , self . sq (1usize) , self . sq (2usize) , self . sq (3usize) , self . sq (4usize) , self . sq (5usize))
+            defmt::write!(
+                f,
+                "Sqr3 {{ sq[0]: {=u8:?}, sq[1]: {=u8:?}, sq[2]: {=u8:?}, sq[3]: {=u8:?}, sq[4]: {=u8:?}, sq[5]: {=u8:?} }}",
+                self.sq(0usize),
+                self.sq(1usize),
+                self.sq(2usize),
+                self.sq(3usize),
+                self.sq(4usize),
+                self.sq(5usize)
+            )
         }
     }
     #[doc = "status register"]

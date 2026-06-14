@@ -366,7 +366,24 @@ in the ALRMSSR, and so can also be read or written through ALRMSSR."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Alrmr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Alrmr {{ su: {=u8:?}, st: {=u8:?}, msk1: {:?}, mnu: {=u8:?}, mnt: {=u8:?}, msk2: {:?}, hu: {=u8:?}, ht: {=u8:?}, pm: {:?}, msk3: {:?}, du: {=u8:?}, dt: {=u8:?}, wdsel: {:?}, msk4: {:?} }}" , self . su () , self . st () , self . msk1 () , self . mnu () , self . mnt () , self . msk2 () , self . hu () , self . ht () , self . pm () , self . msk3 () , self . du () , self . dt () , self . wdsel () , self . msk4 ())
+            defmt::write!(
+                f,
+                "Alrmr {{ su: {=u8:?}, st: {=u8:?}, msk1: {:?}, mnu: {=u8:?}, mnt: {=u8:?}, msk2: {:?}, hu: {=u8:?}, ht: {=u8:?}, pm: {:?}, msk3: {:?}, du: {=u8:?}, dt: {=u8:?}, wdsel: {:?}, msk4: {:?} }}",
+                self.su(),
+                self.st(),
+                self.msk1(),
+                self.mnu(),
+                self.mnt(),
+                self.msk2(),
+                self.hu(),
+                self.ht(),
+                self.pm(),
+                self.msk3(),
+                self.du(),
+                self.dt(),
+                self.wdsel(),
+                self.msk4()
+            )
         }
     }
     #[doc = "Alarm sub second register"]
@@ -915,7 +932,39 @@ are stuck at 00 when CALW8 = 1."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ wucksel: {:?}, tsedge: {:?}, refckon: {=bool:?}, bypshad: {=bool:?}, fmt: {:?}, ssruie: {=bool:?}, alre[0]: {=bool:?}, alre[1]: {=bool:?}, wute: {=bool:?}, tse: {=bool:?}, alrie[0]: {=bool:?}, alrie[1]: {=bool:?}, wutie: {=bool:?}, tsie: {=bool:?}, add1h: {=bool:?}, sub1h: {=bool:?}, bkp: {=bool:?}, cosel: {:?}, pol: {:?}, osel: {:?}, coe: {=bool:?}, itse: {=bool:?}, tampts: {=bool:?}, tampoe: {=bool:?}, alrfclr[0]: {:?}, alrfclr[1]: {:?}, tampalrm_pu: {=bool:?}, tampalrm_type: {:?}, out2en: {=bool:?} }}" , self . wucksel () , self . tsedge () , self . refckon () , self . bypshad () , self . fmt () , self . ssruie () , self . alre (0usize) , self . alre (1usize) , self . wute () , self . tse () , self . alrie (0usize) , self . alrie (1usize) , self . wutie () , self . tsie () , self . add1h () , self . sub1h () , self . bkp () , self . cosel () , self . pol () , self . osel () , self . coe () , self . itse () , self . tampts () , self . tampoe () , self . alrfclr (0usize) , self . alrfclr (1usize) , self . tampalrm_pu () , self . tampalrm_type () , self . out2en ())
+            defmt::write!(
+                f,
+                "Cr {{ wucksel: {:?}, tsedge: {:?}, refckon: {=bool:?}, bypshad: {=bool:?}, fmt: {:?}, ssruie: {=bool:?}, alre[0]: {=bool:?}, alre[1]: {=bool:?}, wute: {=bool:?}, tse: {=bool:?}, alrie[0]: {=bool:?}, alrie[1]: {=bool:?}, wutie: {=bool:?}, tsie: {=bool:?}, add1h: {=bool:?}, sub1h: {=bool:?}, bkp: {=bool:?}, cosel: {:?}, pol: {:?}, osel: {:?}, coe: {=bool:?}, itse: {=bool:?}, tampts: {=bool:?}, tampoe: {=bool:?}, alrfclr[0]: {:?}, alrfclr[1]: {:?}, tampalrm_pu: {=bool:?}, tampalrm_type: {:?}, out2en: {=bool:?} }}",
+                self.wucksel(),
+                self.tsedge(),
+                self.refckon(),
+                self.bypshad(),
+                self.fmt(),
+                self.ssruie(),
+                self.alre(0usize),
+                self.alre(1usize),
+                self.wute(),
+                self.tse(),
+                self.alrie(0usize),
+                self.alrie(1usize),
+                self.wutie(),
+                self.tsie(),
+                self.add1h(),
+                self.sub1h(),
+                self.bkp(),
+                self.cosel(),
+                self.pol(),
+                self.osel(),
+                self.coe(),
+                self.itse(),
+                self.tampts(),
+                self.tampoe(),
+                self.alrfclr(0usize),
+                self.alrfclr(1usize),
+                self.tampalrm_pu(),
+                self.tampalrm_type(),
+                self.out2en()
+            )
         }
     }
     #[doc = "Date register"]
@@ -1181,7 +1230,19 @@ are stuck at 00 when CALW8 = 1."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Icsr {{ wutwf: {=bool:?}, shpf: {=bool:?}, inits: {=bool:?}, rsf: {=bool:?}, initf: {=bool:?}, init: {=bool:?}, bin: {:?}, bcdu: {:?}, recalpf: {:?} }}" , self . wutwf () , self . shpf () , self . inits () , self . rsf () , self . initf () , self . init () , self . bin () , self . bcdu () , self . recalpf ())
+            defmt::write!(
+                f,
+                "Icsr {{ wutwf: {=bool:?}, shpf: {=bool:?}, inits: {=bool:?}, rsf: {=bool:?}, initf: {=bool:?}, init: {=bool:?}, bin: {:?}, bcdu: {:?}, recalpf: {:?} }}",
+                self.wutwf(),
+                self.shpf(),
+                self.inits(),
+                self.rsf(),
+                self.initf(),
+                self.init(),
+                self.bin(),
+                self.bcdu(),
+                self.recalpf()
+            )
         }
     }
     #[doc = "Masked interrupt status register"]
@@ -1288,7 +1349,17 @@ are stuck at 00 when CALW8 = 1."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Misr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Misr {{ alrmf[0]: {:?}, alrmf[1]: {:?}, wutmf: {:?}, tsmf: {:?}, tsovmf: {:?}, itsmf: {:?}, ssrumf: {:?} }}" , self . alrmf (0usize) , self . alrmf (1usize) , self . wutmf () , self . tsmf () , self . tsovmf () , self . itsmf () , self . ssrumf ())
+            defmt::write!(
+                f,
+                "Misr {{ alrmf[0]: {:?}, alrmf[1]: {:?}, wutmf: {:?}, tsmf: {:?}, tsovmf: {:?}, itsmf: {:?}, ssrumf: {:?} }}",
+                self.alrmf(0usize),
+                self.alrmf(1usize),
+                self.wutmf(),
+                self.tsmf(),
+                self.tsovmf(),
+                self.itsmf(),
+                self.ssrumf()
+            )
         }
     }
     #[doc = "Prescaler register"]
@@ -1450,7 +1521,17 @@ are stuck at 00 when CALW8 = 1."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Privcfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Privcfgr {{ alrpriv[0]: {:?}, alrpriv[1]: {:?}, wutpriv: {:?}, tspriv: {:?}, calpriv: {:?}, initpriv: {:?}, priv_: {:?} }}" , self . alrpriv (0usize) , self . alrpriv (1usize) , self . wutpriv () , self . tspriv () , self . calpriv () , self . initpriv () , self . priv_ ())
+            defmt::write!(
+                f,
+                "Privcfgr {{ alrpriv[0]: {:?}, alrpriv[1]: {:?}, wutpriv: {:?}, tspriv: {:?}, calpriv: {:?}, initpriv: {:?}, priv_: {:?} }}",
+                self.alrpriv(0usize),
+                self.alrpriv(1usize),
+                self.wutpriv(),
+                self.tspriv(),
+                self.calpriv(),
+                self.initpriv(),
+                self.priv_()
+            )
         }
     }
     #[doc = "Status clear register"]
@@ -1557,7 +1638,17 @@ are stuck at 00 when CALW8 = 1."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Scr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Scr {{ calrf[0]: {:?}, calrf[1]: {:?}, cwutf: {:?}, ctsf: {:?}, ctsovf: {:?}, citsf: {:?}, cssruf: {:?} }}" , self . calrf (0usize) , self . calrf (1usize) , self . cwutf () , self . ctsf () , self . ctsovf () , self . citsf () , self . cssruf ())
+            defmt::write!(
+                f,
+                "Scr {{ calrf[0]: {:?}, calrf[1]: {:?}, cwutf: {:?}, ctsf: {:?}, ctsovf: {:?}, citsf: {:?}, cssruf: {:?} }}",
+                self.calrf(0usize),
+                self.calrf(1usize),
+                self.cwutf(),
+                self.ctsf(),
+                self.ctsovf(),
+                self.citsf(),
+                self.cssruf()
+            )
         }
     }
     #[doc = "Shift control register"]
@@ -2152,7 +2243,17 @@ is the value of the synchronous prescaler counter when the timestamp event occur
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tstr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Tstr {{ su: {=u8:?}, st: {=u8:?}, mnu: {=u8:?}, mnt: {=u8:?}, hu: {=u8:?}, ht: {=u8:?}, pm: {=bool:?} }}" , self . su () , self . st () , self . mnu () , self . mnt () , self . hu () , self . ht () , self . pm ())
+            defmt::write!(
+                f,
+                "Tstr {{ su: {=u8:?}, st: {=u8:?}, mnu: {=u8:?}, mnt: {=u8:?}, hu: {=u8:?}, ht: {=u8:?}, pm: {=bool:?} }}",
+                self.su(),
+                self.st(),
+                self.mnu(),
+                self.mnt(),
+                self.hu(),
+                self.ht(),
+                self.pm()
+            )
         }
     }
     #[doc = "Write protection register"]

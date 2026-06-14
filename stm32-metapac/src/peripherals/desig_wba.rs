@@ -522,7 +522,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vrefbufcalr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Vrefbufcalr {{ vrefbuf0_trim: {=u8:?}, vrefbuf1_trim: {=u8:?}, vrefbuf2_trim: {=u8:?}, vrefbuf3_trim: {=u8:?} }}" , self . vrefbuf0_trim () , self . vrefbuf1_trim () , self . vrefbuf2_trim () , self . vrefbuf3_trim ())
+            defmt::write!(
+                f,
+                "Vrefbufcalr {{ vrefbuf0_trim: {=u8:?}, vrefbuf1_trim: {=u8:?}, vrefbuf2_trim: {=u8:?}, vrefbuf3_trim: {=u8:?} }}",
+                self.vrefbuf0_trim(),
+                self.vrefbuf1_trim(),
+                self.vrefbuf2_trim(),
+                self.vrefbuf3_trim()
+            )
         }
     }
 }

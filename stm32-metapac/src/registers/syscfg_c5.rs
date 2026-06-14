@@ -1,287 +1,183 @@
 
 use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
-    blocks: &[
-        Block {
-            name: "Syscfg",
-            extends: None,
-            description: Some(
-                "System configuration controller",
-            ),
-            items: &[
-                BlockItem {
-                    name: "sbs_hdplcr",
-                    description: Some(
-                        "SBS temporal isolation control register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x10,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SbsHdplcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sbs_hdplsr",
-                    description: Some(
-                        "SBS temporal isolation status register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x14,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SbsHdplsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sbs_nexttilcr",
-                    description: Some(
-                        "SBS next TIL control register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x18,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SbsNexttilcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sbs_pmcr",
-                    description: Some(
-                        "SBS product mode and configuration register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x100,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SbsPmcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sbs_fpuimr",
-                    description: Some(
-                        "SBS FPU interrupt mask register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x104,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SbsFpuimr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sbs_mesr",
-                    description: Some(
-                        "SBS memory erase status register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x108,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SbsMesr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sbs_cccsr",
-                    description: Some(
-                        "SBS compensation cell for I/Os control and status register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x110,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SbsCccsr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sbs_ccvalr",
-                    description: Some(
-                        "SBS compensation cell for I/Os value register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x114,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SbsCcvalr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sbs_ccswcr",
-                    description: Some(
-                        "SBS compensation cell for I/Os software code register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x118,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SbsCcswcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sbs_cfgr2",
-                    description: Some(
-                        "SBS Class B register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x120,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SbsCfgr2",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sbs_clckr",
-                    description: Some(
-                        "SBS CPU lock register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x144,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SbsClckr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sbs_cnslckr",
-                    description: Some(
-                        "SBS CPU lock register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x144,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SbsCnslckr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sbs_eccnmir",
-                    description: Some(
-                        "SBS ECC NMI mask register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x14c,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "SbsEccnmir",
-                            ),
-                        },
-                    ),
-                },
-            ],
-        },
-    ],
+    blocks: &[Block {
+        name: "Syscfg",
+        extends: None,
+        description: Some("System configuration controller"),
+        items: &[
+            BlockItem {
+                name: "sbs_hdplcr",
+                description: Some("SBS temporal isolation control register."),
+                array: None,
+                byte_offset: 0x10,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("SbsHdplcr"),
+                }),
+            },
+            BlockItem {
+                name: "sbs_hdplsr",
+                description: Some("SBS temporal isolation status register."),
+                array: None,
+                byte_offset: 0x14,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("SbsHdplsr"),
+                }),
+            },
+            BlockItem {
+                name: "sbs_nexttilcr",
+                description: Some("SBS next TIL control register."),
+                array: None,
+                byte_offset: 0x18,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("SbsNexttilcr"),
+                }),
+            },
+            BlockItem {
+                name: "sbs_pmcr",
+                description: Some("SBS product mode and configuration register."),
+                array: None,
+                byte_offset: 0x100,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("SbsPmcr"),
+                }),
+            },
+            BlockItem {
+                name: "sbs_fpuimr",
+                description: Some("SBS FPU interrupt mask register."),
+                array: None,
+                byte_offset: 0x104,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("SbsFpuimr"),
+                }),
+            },
+            BlockItem {
+                name: "sbs_mesr",
+                description: Some("SBS memory erase status register."),
+                array: None,
+                byte_offset: 0x108,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("SbsMesr"),
+                }),
+            },
+            BlockItem {
+                name: "sbs_cccsr",
+                description: Some("SBS compensation cell for I/Os control and status register."),
+                array: None,
+                byte_offset: 0x110,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("SbsCccsr"),
+                }),
+            },
+            BlockItem {
+                name: "sbs_ccvalr",
+                description: Some("SBS compensation cell for I/Os value register."),
+                array: None,
+                byte_offset: 0x114,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: Some("SbsCcvalr"),
+                }),
+            },
+            BlockItem {
+                name: "sbs_ccswcr",
+                description: Some("SBS compensation cell for I/Os software code register."),
+                array: None,
+                byte_offset: 0x118,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("SbsCcswcr"),
+                }),
+            },
+            BlockItem {
+                name: "sbs_cfgr2",
+                description: Some("SBS Class B register."),
+                array: None,
+                byte_offset: 0x120,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("SbsCfgr2"),
+                }),
+            },
+            BlockItem {
+                name: "sbs_clckr",
+                description: Some("SBS CPU lock register."),
+                array: None,
+                byte_offset: 0x144,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("SbsClckr"),
+                }),
+            },
+            BlockItem {
+                name: "sbs_cnslckr",
+                description: Some("SBS CPU lock register."),
+                array: None,
+                byte_offset: 0x144,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("SbsCnslckr"),
+                }),
+            },
+            BlockItem {
+                name: "sbs_eccnmir",
+                description: Some("SBS ECC NMI mask register."),
+                array: None,
+                byte_offset: 0x14c,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("SbsEccnmir"),
+                }),
+            },
+        ],
+    }],
     fieldsets: &[
         FieldSet {
             name: "SbsCccsr",
             extends: None,
-            description: Some(
-                "SBS compensation cell for I/Os control and status register.",
-            ),
+            description: Some("SBS compensation cell for I/Os control and status register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "en1",
-                    description: Some(
-                        "Enable compensation cell for VDDIO power rail.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Enable compensation cell for VDDIO power rail."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cs1",
-                    description: Some(
-                        "Code selection for VDDIO power rail (reset value set to 1).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Code selection for VDDIO power rail (reset value set to 1)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Cs1",
-                    ),
+                    enumm: Some("Cs1"),
                 },
                 Field {
                     name: "rdy1",
-                    description: Some(
-                        "VDDIO compensation cell ready flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    description: Some("VDDIO compensation cell ready flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -291,35 +187,21 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "SbsCcswcr",
             extends: None,
-            description: Some(
-                "SBS compensation cell for I/Os software code register.",
-            ),
+            description: Some("SBS compensation cell for I/Os software code register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "sw_ansrc1",
-                    description: Some(
-                        "NMOS compensation code for VDD power rails.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("NMOS compensation code for VDD power rails."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sw_apsrc1",
-                    description: Some(
-                        "PMOS compensation code for the VDD power rails.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("PMOS compensation code for the VDD power rails."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -329,35 +211,21 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "SbsCcvalr",
             extends: None,
-            description: Some(
-                "SBS compensation cell for I/Os value register.",
-            ),
+            description: Some("SBS compensation cell for I/Os value register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ansrc1",
-                    description: Some(
-                        "Compensation value for the NMOS transistor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Compensation value for the NMOS transistor."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "apsrc1",
-                    description: Some(
-                        "Compensation value for the PMOS transistor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Compensation value for the PMOS transistor."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -367,107 +235,61 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "SbsCfgr2",
             extends: None,
-            description: Some(
-                "SBS Class B register.",
-            ),
+            description: Some("SBS Class B register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "cll",
-                    description: Some(
-                        "Core lockup lock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Core lockup lock."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sel",
-                    description: Some(
-                        "SRAM ECC error lock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("SRAM ECC error lock."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Sel",
-                    ),
+                    enumm: Some("Sel"),
                 },
                 Field {
                     name: "pvdl",
-                    description: Some(
-                        "PVD lock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("PVD lock."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Pvdl",
-                    ),
+                    enumm: Some("Pvdl"),
                 },
                 Field {
                     name: "eccl",
-                    description: Some(
-                        "ECC lock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    description: Some("ECC lock."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Eccl",
-                    ),
+                    enumm: Some("Eccl"),
                 },
             ],
         },
         FieldSet {
             name: "SbsClckr",
             extends: None,
-            description: Some(
-                "SBS CPU lock register.",
-            ),
+            description: Some("SBS CPU lock register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "lockvtor",
-                    description: Some(
-                        "VTOR register lock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("VTOR register lock."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "lockmpu",
-                    description: Some(
-                        "MPU register lock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("MPU register lock."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -477,35 +299,21 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "SbsCnslckr",
             extends: None,
-            description: Some(
-                "SBS CPU lock register.",
-            ),
+            description: Some("SBS CPU lock register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "locknsvtor",
-                    description: Some(
-                        "VTOR_NS register lock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("VTOR_NS register lock."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "locknsmpu",
-                    description: Some(
-                        "MPU register lock.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("MPU register lock."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -515,351 +323,195 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "SbsEccnmir",
             extends: None,
-            description: Some(
-                "SBS ECC NMI mask register.",
-            ),
+            description: Some("SBS ECC NMI mask register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "eccnmi_mask_en",
-                    description: Some(
-                        "NMI behavior setup when a double ECC error occurs on FLITF data part.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some(
-                        "EccnmiMaskEn",
-                    ),
-                },
-            ],
+            fields: &[Field {
+                name: "eccnmi_mask_en",
+                description: Some("NMI behavior setup when a double ECC error occurs on FLITF data part."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 1,
+                array: None,
+                enumm: Some("EccnmiMaskEn"),
+            }],
         },
         FieldSet {
             name: "SbsFpuimr",
             extends: None,
-            description: Some(
-                "SBS FPU interrupt mask register.",
-            ),
+            description: Some("SBS FPU interrupt mask register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fpu_ie",
-                    description: Some(
-                        "FPU interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "fpu_ie",
+                description: Some("FPU interrupt enable."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 6,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "SbsHdplcr",
             extends: None,
-            description: Some(
-                "SBS temporal isolation control register.",
-            ),
+            description: Some("SBS temporal isolation control register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "incr_hdpl",
-                    description: Some(
-                        "HDPL value increment.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "IncrHdpl",
-                    ),
-                },
-            ],
+            fields: &[Field {
+                name: "incr_hdpl",
+                description: Some("HDPL value increment."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 8,
+                array: None,
+                enumm: Some("IncrHdpl"),
+            }],
         },
         FieldSet {
             name: "SbsHdplsr",
             extends: None,
-            description: Some(
-                "SBS temporal isolation status register.",
-            ),
+            description: Some("SBS temporal isolation status register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hdpl",
-                    description: Some(
-                        "Temporal isolation level.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some(
-                        "Hdpl",
-                    ),
-                },
-            ],
+            fields: &[Field {
+                name: "hdpl",
+                description: Some("Temporal isolation level."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 8,
+                array: None,
+                enumm: Some("Hdpl"),
+            }],
         },
         FieldSet {
             name: "SbsMesr",
             extends: None,
-            description: Some(
-                "SBS memory erase status register.",
-            ),
+            description: Some("SBS memory erase status register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "mclr",
-                    description: Some(
-                        "Device memories erase status.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Device memories erase status."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Mclr",
-                    ),
+                    enumm: Some("Mclr"),
                 },
                 Field {
                     name: "ipmee",
-                    description: Some(
-                        "ICACHE erase status.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    description: Some("ICACHE erase status."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Ipmee",
-                    ),
+                    enumm: Some("Ipmee"),
                 },
             ],
         },
         FieldSet {
             name: "SbsNexttilcr",
             extends: None,
-            description: Some(
-                "SBS next TIL control register.",
-            ),
+            description: Some("SBS next TIL control register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "nexttil",
-                    description: Some(
-                        "Next TIL control register.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 2,
-                    array: None,
-                    enumm: Some(
-                        "Nexttil",
-                    ),
-                },
-            ],
+            fields: &[Field {
+                name: "nexttil",
+                description: Some("Next TIL control register."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 2,
+                array: None,
+                enumm: Some("Nexttil"),
+            }],
         },
         FieldSet {
             name: "SbsPmcr",
             extends: None,
-            description: Some(
-                "SBS product mode and configuration register.",
-            ),
+            description: Some("SBS product mode and configuration register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "pb6_fmplus",
-                    description: Some(
-                        "Fast-mode Plus command on PB(6).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    description: Some("Fast-mode Plus command on PB(6)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pb7_fmplus",
-                    description: Some(
-                        "Fast-mode Plus command on PB(7).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 17,
-                        },
-                    ),
+                    description: Some("Fast-mode Plus command on PB(7)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pb8_fmplus",
-                    description: Some(
-                        "Fast-mode Plus command on PB(8).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 18,
-                        },
-                    ),
+                    description: Some("Fast-mode Plus command on PB(8)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pb9_fmplus",
-                    description: Some(
-                        "Fast-mode Plus command on PB(9).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 19,
-                        },
-                    ),
+                    description: Some("Fast-mode Plus command on PB(9)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pa11_fmplus",
-                    description: Some(
-                        "Fast-mode Plus command on PA(11).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 20,
-                        },
-                    ),
+                    description: Some("Fast-mode Plus command on PA(11)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pa12_fmplus",
-                    description: Some(
-                        "Fast-mode Plus command on PA(12).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 21,
-                        },
-                    ),
+                    description: Some("Fast-mode Plus command on PA(12)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pb3_fmplus",
-                    description: Some(
-                        "Fast-mode Plus command on PB(3).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 22,
-                        },
-                    ),
+                    description: Some("Fast-mode Plus command on PB(3)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pb4_fmplus",
-                    description: Some(
-                        "Fast-mode Plus command on PB(4).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 23,
-                        },
-                    ),
+                    description: Some("Fast-mode Plus command on PB(4)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "eth_sel_phy",
-                    description: Some(
-                        "Ethernet PHY interface selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
+                    description: Some("Ethernet PHY interface selection."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 4,
                     array: None,
-                    enumm: Some(
-                        "EthSelPhy",
-                    ),
+                    enumm: Some("EthSelPhy"),
                 },
                 Field {
                     name: "ethintpol",
-                    description: Some(
-                        "Ethernet external PHY interrupt polarity configuration.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
+                    description: Some("Ethernet external PHY interrupt polarity configuration."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Ethintpol",
-                    ),
+                    enumm: Some("Ethintpol"),
                 },
                 Field {
                     name: "ethpdack",
-                    description: Some(
-                        "Ethernet power-down acknowledge.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 29,
-                        },
-                    ),
+                    description: Some("Ethernet power-down acknowledge."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Ethpdack",
-                    ),
+                    enumm: Some("Ethpdack"),
                 },
                 Field {
                     name: "ethtxlpi",
-                    description: Some(
-                        "Ethernet TxLPI status.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 30,
-                        },
-                    ),
+                    description: Some("Ethernet TxLPI status."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -875,16 +527,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "B0x0",
-                    description: Some(
-                        "Code from the cell (available in the SBS_CCVR).",
-                    ),
+                    description: Some("Code from the cell (available in the SBS_CCVR)."),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B0x1",
-                    description: Some(
-                        "Code from SBS_CCCR.",
-                    ),
+                    description: Some("Code from SBS_CCCR."),
                     value: 1,
                 },
             ],
@@ -896,16 +544,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "B0x0",
-                    description: Some(
-                        "Double ECC error flag disconnected to timer break inputs.",
-                    ),
+                    description: Some("Double ECC error flag disconnected to timer break inputs."),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B0x1",
-                    description: Some(
-                        "Double ECC error flag connected to timer break inputs.",
-                    ),
+                    description: Some("Double ECC error flag connected to timer break inputs."),
                     value: 1,
                 },
             ],
@@ -917,16 +561,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "B0x0",
-                    description: Some(
-                        "NMI generated if a double ECC error in the FLITF data part.",
-                    ),
+                    description: Some("NMI generated if a double ECC error in the FLITF data part."),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B0x1",
-                    description: Some(
-                        "NMI not generated if a double ECC error in the FLITF data part.",
-                    ),
+                    description: Some("NMI not generated if a double ECC error in the FLITF data part."),
                     value: 1,
                 },
             ],
@@ -938,23 +578,17 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "B0x0",
-                    description: Some(
-                        "GMII or MII.",
-                    ),
+                    description: Some("GMII or MII."),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B0x4",
-                    description: Some(
-                        "RMII.",
-                    ),
+                    description: Some("RMII."),
                     value: 4,
                 },
                 EnumVariant {
                     name: "B0x8",
-                    description: Some(
-                        "10BT1S.",
-                    ),
+                    description: Some("10BT1S."),
                     value: 8,
                 },
             ],
@@ -966,16 +600,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "B0x0",
-                    description: Some(
-                        "active high.",
-                    ),
+                    description: Some("active high."),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B0x1",
-                    description: Some(
-                        "active low.",
-                    ),
+                    description: Some("active low."),
                     value: 1,
                 },
             ],
@@ -987,16 +617,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "B0x0",
-                    description: Some(
-                        "Ethernet functional / power-down sequence not yet completed.",
-                    ),
+                    description: Some("Ethernet functional / power-down sequence not yet completed."),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B0x1",
-                    description: Some(
-                        "Ethernet power-down sequence completed.",
-                    ),
+                    description: Some("Ethernet power-down sequence completed."),
                     value: 1,
                 },
             ],
@@ -1015,9 +641,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "B0x6f",
-                    description: Some(
-                        "HDPL3, hide protection level to be used to execute the application.",
-                    ),
+                    description: Some("HDPL3, hide protection level to be used to execute the application."),
                     value: 111,
                 },
                 EnumVariant {
@@ -1036,16 +660,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "B0x6a",
-                    description: Some(
-                        "Recommended value to increment HDPL level by one.",
-                    ),
+                    description: Some("Recommended value to increment HDPL level by one."),
                     value: 106,
                 },
                 EnumVariant {
                     name: "B0xB4",
-                    description: Some(
-                        "No increment.",
-                    ),
+                    description: Some("No increment."),
                     value: 180,
                 },
             ],
@@ -1057,16 +677,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "B0x0",
-                    description: Some(
-                        "ICACHE erase ongoing.",
-                    ),
+                    description: Some("ICACHE erase ongoing."),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B0x1",
-                    description: Some(
-                        "ICACHE erase ended.",
-                    ),
+                    description: Some("ICACHE erase ended."),
                     value: 1,
                 },
             ],
@@ -1078,16 +694,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "B0x0",
-                    description: Some(
-                        "Memory erase ongoing if not yet cleared by software.",
-                    ),
+                    description: Some("Memory erase ongoing if not yet cleared by software."),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B0x1",
-                    description: Some(
-                        "Memory erase done.",
-                    ),
+                    description: Some("Memory erase done."),
                     value: 1,
                 },
             ],
@@ -1099,30 +711,22 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "B0x0",
-                    description: Some(
-                        "OBK-TIL = TIL.",
-                    ),
+                    description: Some("OBK-TIL = TIL."),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B0x1",
-                    description: Some(
-                        "OBK-TIL = TIL + 1.",
-                    ),
+                    description: Some("OBK-TIL = TIL + 1."),
                     value: 1,
                 },
                 EnumVariant {
                     name: "B0x2",
-                    description: Some(
-                        "OBK-TIL = TIL + 2.",
-                    ),
+                    description: Some("OBK-TIL = TIL + 2."),
                     value: 2,
                 },
                 EnumVariant {
                     name: "B0x3",
-                    description: Some(
-                        "OBK-TIL = TIL + 3.",
-                    ),
+                    description: Some("OBK-TIL = TIL + 3."),
                     value: 3,
                 },
             ],
@@ -1134,16 +738,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "B0x0",
-                    description: Some(
-                        "PVD interrupt disconnected from timer break inputs.",
-                    ),
+                    description: Some("PVD interrupt disconnected from timer break inputs."),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B0x1",
-                    description: Some(
-                        "PVD interrupt is connected to timer break inputs.",
-                    ),
+                    description: Some("PVD interrupt is connected to timer break inputs."),
                     value: 1,
                 },
             ],
@@ -1155,16 +755,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "B0x0",
-                    description: Some(
-                        "SRAM double ECC error flag disconnected from timer break inputs.",
-                    ),
+                    description: Some("SRAM double ECC error flag disconnected from timer break inputs."),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B0x1",
-                    description: Some(
-                        "SRAM double ECC error flag connected to timer break inputs.",
-                    ),
+                    description: Some("SRAM double ECC error flag connected to timer break inputs."),
                     value: 1,
                 },
             ],

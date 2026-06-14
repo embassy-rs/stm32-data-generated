@@ -269,7 +269,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ cpha: {:?}, cpol: {:?}, mstr: {:?}, br: {:?}, spe: {=bool:?}, lsbfirst: {:?}, ssi: {=bool:?}, ssm: {=bool:?}, rxonly: {:?}, dff: {:?}, crcnext: {:?}, crcen: {=bool:?}, bidioe: {:?}, bidimode: {:?} }}" , self . cpha () , self . cpol () , self . mstr () , self . br () , self . spe () , self . lsbfirst () , self . ssi () , self . ssm () , self . rxonly () , self . dff () , self . crcnext () , self . crcen () , self . bidioe () , self . bidimode ())
+            defmt::write!(
+                f,
+                "Cr1 {{ cpha: {:?}, cpol: {:?}, mstr: {:?}, br: {:?}, spe: {=bool:?}, lsbfirst: {:?}, ssi: {=bool:?}, ssm: {=bool:?}, rxonly: {:?}, dff: {:?}, crcnext: {:?}, crcen: {=bool:?}, bidioe: {:?}, bidimode: {:?} }}",
+                self.cpha(),
+                self.cpol(),
+                self.mstr(),
+                self.br(),
+                self.spe(),
+                self.lsbfirst(),
+                self.ssi(),
+                self.ssm(),
+                self.rxonly(),
+                self.dff(),
+                self.crcnext(),
+                self.crcen(),
+                self.bidioe(),
+                self.bidimode()
+            )
         }
     }
     #[doc = "control register 2"]
@@ -371,7 +388,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ rxdmaen: {=bool:?}, txdmaen: {=bool:?}, ssoe: {=bool:?}, errie: {=bool:?}, rxneie: {=bool:?}, txeie: {=bool:?} }}" , self . rxdmaen () , self . txdmaen () , self . ssoe () , self . errie () , self . rxneie () , self . txeie ())
+            defmt::write!(
+                f,
+                "Cr2 {{ rxdmaen: {=bool:?}, txdmaen: {=bool:?}, ssoe: {=bool:?}, errie: {=bool:?}, rxneie: {=bool:?}, txeie: {=bool:?} }}",
+                self.rxdmaen(),
+                self.txdmaen(),
+                self.ssoe(),
+                self.errie(),
+                self.rxneie(),
+                self.txeie()
+            )
         }
     }
     #[doc = "CRC polynomial register"]
@@ -569,7 +595,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for I2scfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "I2scfgr {{ chlen: {:?}, datlen: {:?}, ckpol: {:?}, i2sstd: {:?}, pcmsync: {:?}, i2scfg: {:?}, i2se: {=bool:?}, i2smod: {=bool:?} }}" , self . chlen () , self . datlen () , self . ckpol () , self . i2sstd () , self . pcmsync () , self . i2scfg () , self . i2se () , self . i2smod ())
+            defmt::write!(
+                f,
+                "I2scfgr {{ chlen: {:?}, datlen: {:?}, ckpol: {:?}, i2sstd: {:?}, pcmsync: {:?}, i2scfg: {:?}, i2se: {=bool:?}, i2smod: {=bool:?} }}",
+                self.chlen(),
+                self.datlen(),
+                self.ckpol(),
+                self.i2sstd(),
+                self.pcmsync(),
+                self.i2scfg(),
+                self.i2se(),
+                self.i2smod()
+            )
         }
     }
     #[doc = "I2S prescaler register"]
@@ -801,7 +838,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ rxne: {=bool:?}, txe: {=bool:?}, chside: {:?}, udr: {=bool:?}, crcerr: {=bool:?}, modf: {=bool:?}, ovr: {=bool:?}, bsy: {=bool:?} }}" , self . rxne () , self . txe () , self . chside () , self . udr () , self . crcerr () , self . modf () , self . ovr () , self . bsy ())
+            defmt::write!(
+                f,
+                "Sr {{ rxne: {=bool:?}, txe: {=bool:?}, chside: {:?}, udr: {=bool:?}, crcerr: {=bool:?}, modf: {=bool:?}, ovr: {=bool:?}, bsy: {=bool:?} }}",
+                self.rxne(),
+                self.txe(),
+                self.chside(),
+                self.udr(),
+                self.crcerr(),
+                self.modf(),
+                self.ovr(),
+                self.bsy()
+            )
         }
     }
     #[doc = "TX CRC register"]

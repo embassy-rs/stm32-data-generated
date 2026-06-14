@@ -233,7 +233,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Icr {{ isc[0]: {=bool:?}, isc[1]: {=bool:?}, isc[2]: {=bool:?}, isc[3]: {=bool:?}, isc[4]: {=bool:?}, isc[5]: {=bool:?}, isc[6]: {=bool:?}, isc[7]: {=bool:?}, isc[8]: {=bool:?}, isc[9]: {=bool:?}, isc[10]: {=bool:?}, isc[11]: {=bool:?}, isc[12]: {=bool:?}, isc[13]: {=bool:?}, isc[14]: {=bool:?}, isc[15]: {=bool:?} }}" , self . isc (0usize) , self . isc (1usize) , self . isc (2usize) , self . isc (3usize) , self . isc (4usize) , self . isc (5usize) , self . isc (6usize) , self . isc (7usize) , self . isc (8usize) , self . isc (9usize) , self . isc (10usize) , self . isc (11usize) , self . isc (12usize) , self . isc (13usize) , self . isc (14usize) , self . isc (15usize))
+            defmt::write!(
+                f,
+                "Icr {{ isc[0]: {=bool:?}, isc[1]: {=bool:?}, isc[2]: {=bool:?}, isc[3]: {=bool:?}, isc[4]: {=bool:?}, isc[5]: {=bool:?}, isc[6]: {=bool:?}, isc[7]: {=bool:?}, isc[8]: {=bool:?}, isc[9]: {=bool:?}, isc[10]: {=bool:?}, isc[11]: {=bool:?}, isc[12]: {=bool:?}, isc[13]: {=bool:?}, isc[14]: {=bool:?}, isc[15]: {=bool:?} }}",
+                self.isc(0usize),
+                self.isc(1usize),
+                self.isc(2usize),
+                self.isc(3usize),
+                self.isc(4usize),
+                self.isc(5usize),
+                self.isc(6usize),
+                self.isc(7usize),
+                self.isc(8usize),
+                self.isc(9usize),
+                self.isc(10usize),
+                self.isc(11usize),
+                self.isc(12usize),
+                self.isc(13usize),
+                self.isc(14usize),
+                self.isc(15usize)
+            )
         }
     }
     #[doc = "HSEM interrupt enable register."]
@@ -289,7 +308,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier {{ ise[0]: {=bool:?}, ise[1]: {=bool:?}, ise[2]: {=bool:?}, ise[3]: {=bool:?}, ise[4]: {=bool:?}, ise[5]: {=bool:?}, ise[6]: {=bool:?}, ise[7]: {=bool:?}, ise[8]: {=bool:?}, ise[9]: {=bool:?}, ise[10]: {=bool:?}, ise[11]: {=bool:?}, ise[12]: {=bool:?}, ise[13]: {=bool:?}, ise[14]: {=bool:?}, ise[15]: {=bool:?} }}" , self . ise (0usize) , self . ise (1usize) , self . ise (2usize) , self . ise (3usize) , self . ise (4usize) , self . ise (5usize) , self . ise (6usize) , self . ise (7usize) , self . ise (8usize) , self . ise (9usize) , self . ise (10usize) , self . ise (11usize) , self . ise (12usize) , self . ise (13usize) , self . ise (14usize) , self . ise (15usize))
+            defmt::write!(
+                f,
+                "Ier {{ ise[0]: {=bool:?}, ise[1]: {=bool:?}, ise[2]: {=bool:?}, ise[3]: {=bool:?}, ise[4]: {=bool:?}, ise[5]: {=bool:?}, ise[6]: {=bool:?}, ise[7]: {=bool:?}, ise[8]: {=bool:?}, ise[9]: {=bool:?}, ise[10]: {=bool:?}, ise[11]: {=bool:?}, ise[12]: {=bool:?}, ise[13]: {=bool:?}, ise[14]: {=bool:?}, ise[15]: {=bool:?} }}",
+                self.ise(0usize),
+                self.ise(1usize),
+                self.ise(2usize),
+                self.ise(3usize),
+                self.ise(4usize),
+                self.ise(5usize),
+                self.ise(6usize),
+                self.ise(7usize),
+                self.ise(8usize),
+                self.ise(9usize),
+                self.ise(10usize),
+                self.ise(11usize),
+                self.ise(12usize),
+                self.ise(13usize),
+                self.ise(14usize),
+                self.ise(15usize)
+            )
         }
     }
     #[doc = "HSEM interrupt status register."]
@@ -345,7 +383,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ isf[0]: {=bool:?}, isf[1]: {=bool:?}, isf[2]: {=bool:?}, isf[3]: {=bool:?}, isf[4]: {=bool:?}, isf[5]: {=bool:?}, isf[6]: {=bool:?}, isf[7]: {=bool:?}, isf[8]: {=bool:?}, isf[9]: {=bool:?}, isf[10]: {=bool:?}, isf[11]: {=bool:?}, isf[12]: {=bool:?}, isf[13]: {=bool:?}, isf[14]: {=bool:?}, isf[15]: {=bool:?} }}" , self . isf (0usize) , self . isf (1usize) , self . isf (2usize) , self . isf (3usize) , self . isf (4usize) , self . isf (5usize) , self . isf (6usize) , self . isf (7usize) , self . isf (8usize) , self . isf (9usize) , self . isf (10usize) , self . isf (11usize) , self . isf (12usize) , self . isf (13usize) , self . isf (14usize) , self . isf (15usize))
+            defmt::write!(
+                f,
+                "Isr {{ isf[0]: {=bool:?}, isf[1]: {=bool:?}, isf[2]: {=bool:?}, isf[3]: {=bool:?}, isf[4]: {=bool:?}, isf[5]: {=bool:?}, isf[6]: {=bool:?}, isf[7]: {=bool:?}, isf[8]: {=bool:?}, isf[9]: {=bool:?}, isf[10]: {=bool:?}, isf[11]: {=bool:?}, isf[12]: {=bool:?}, isf[13]: {=bool:?}, isf[14]: {=bool:?}, isf[15]: {=bool:?} }}",
+                self.isf(0usize),
+                self.isf(1usize),
+                self.isf(2usize),
+                self.isf(3usize),
+                self.isf(4usize),
+                self.isf(5usize),
+                self.isf(6usize),
+                self.isf(7usize),
+                self.isf(8usize),
+                self.isf(9usize),
+                self.isf(10usize),
+                self.isf(11usize),
+                self.isf(12usize),
+                self.isf(13usize),
+                self.isf(14usize),
+                self.isf(15usize)
+            )
         }
     }
     #[doc = "HSEM semaphore clear key register."]
@@ -436,7 +493,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Misr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Misr {{ misf[0]: {=bool:?}, misf[1]: {=bool:?}, misf[2]: {=bool:?}, misf[3]: {=bool:?}, misf[4]: {=bool:?}, misf[5]: {=bool:?}, misf[6]: {=bool:?}, misf[7]: {=bool:?}, misf[8]: {=bool:?}, misf[9]: {=bool:?}, misf[10]: {=bool:?}, misf[11]: {=bool:?}, misf[12]: {=bool:?}, misf[13]: {=bool:?}, misf[14]: {=bool:?}, misf[15]: {=bool:?} }}" , self . misf (0usize) , self . misf (1usize) , self . misf (2usize) , self . misf (3usize) , self . misf (4usize) , self . misf (5usize) , self . misf (6usize) , self . misf (7usize) , self . misf (8usize) , self . misf (9usize) , self . misf (10usize) , self . misf (11usize) , self . misf (12usize) , self . misf (13usize) , self . misf (14usize) , self . misf (15usize))
+            defmt::write!(
+                f,
+                "Misr {{ misf[0]: {=bool:?}, misf[1]: {=bool:?}, misf[2]: {=bool:?}, misf[3]: {=bool:?}, misf[4]: {=bool:?}, misf[5]: {=bool:?}, misf[6]: {=bool:?}, misf[7]: {=bool:?}, misf[8]: {=bool:?}, misf[9]: {=bool:?}, misf[10]: {=bool:?}, misf[11]: {=bool:?}, misf[12]: {=bool:?}, misf[13]: {=bool:?}, misf[14]: {=bool:?}, misf[15]: {=bool:?} }}",
+                self.misf(0usize),
+                self.misf(1usize),
+                self.misf(2usize),
+                self.misf(3usize),
+                self.misf(4usize),
+                self.misf(5usize),
+                self.misf(6usize),
+                self.misf(7usize),
+                self.misf(8usize),
+                self.misf(9usize),
+                self.misf(10usize),
+                self.misf(11usize),
+                self.misf(12usize),
+                self.misf(13usize),
+                self.misf(14usize),
+                self.misf(15usize)
+            )
         }
     }
     #[doc = "HSEM privilege configuration register."]
@@ -492,7 +568,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Privcfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Privcfgr {{ priv_[0]: {=bool:?}, priv_[1]: {=bool:?}, priv_[2]: {=bool:?}, priv_[3]: {=bool:?}, priv_[4]: {=bool:?}, priv_[5]: {=bool:?}, priv_[6]: {=bool:?}, priv_[7]: {=bool:?}, priv_[8]: {=bool:?}, priv_[9]: {=bool:?}, priv_[10]: {=bool:?}, priv_[11]: {=bool:?}, priv_[12]: {=bool:?}, priv_[13]: {=bool:?}, priv_[14]: {=bool:?}, priv_[15]: {=bool:?} }}" , self . priv_ (0usize) , self . priv_ (1usize) , self . priv_ (2usize) , self . priv_ (3usize) , self . priv_ (4usize) , self . priv_ (5usize) , self . priv_ (6usize) , self . priv_ (7usize) , self . priv_ (8usize) , self . priv_ (9usize) , self . priv_ (10usize) , self . priv_ (11usize) , self . priv_ (12usize) , self . priv_ (13usize) , self . priv_ (14usize) , self . priv_ (15usize))
+            defmt::write!(
+                f,
+                "Privcfgr {{ priv_[0]: {=bool:?}, priv_[1]: {=bool:?}, priv_[2]: {=bool:?}, priv_[3]: {=bool:?}, priv_[4]: {=bool:?}, priv_[5]: {=bool:?}, priv_[6]: {=bool:?}, priv_[7]: {=bool:?}, priv_[8]: {=bool:?}, priv_[9]: {=bool:?}, priv_[10]: {=bool:?}, priv_[11]: {=bool:?}, priv_[12]: {=bool:?}, priv_[13]: {=bool:?}, priv_[14]: {=bool:?}, priv_[15]: {=bool:?} }}",
+                self.priv_(0usize),
+                self.priv_(1usize),
+                self.priv_(2usize),
+                self.priv_(3usize),
+                self.priv_(4usize),
+                self.priv_(5usize),
+                self.priv_(6usize),
+                self.priv_(7usize),
+                self.priv_(8usize),
+                self.priv_(9usize),
+                self.priv_(10usize),
+                self.priv_(11usize),
+                self.priv_(12usize),
+                self.priv_(13usize),
+                self.priv_(14usize),
+                self.priv_(15usize)
+            )
         }
     }
     #[doc = "HSEM semaphore register."]
@@ -742,7 +837,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccfgr {{ sec[0]: {=bool:?}, sec[1]: {=bool:?}, sec[2]: {=bool:?}, sec[3]: {=bool:?}, sec[4]: {=bool:?}, sec[5]: {=bool:?}, sec[6]: {=bool:?}, sec[7]: {=bool:?}, sec[8]: {=bool:?}, sec[9]: {=bool:?}, sec[10]: {=bool:?}, sec[11]: {=bool:?}, sec[12]: {=bool:?}, sec[13]: {=bool:?}, sec[14]: {=bool:?}, sec[15]: {=bool:?} }}" , self . sec (0usize) , self . sec (1usize) , self . sec (2usize) , self . sec (3usize) , self . sec (4usize) , self . sec (5usize) , self . sec (6usize) , self . sec (7usize) , self . sec (8usize) , self . sec (9usize) , self . sec (10usize) , self . sec (11usize) , self . sec (12usize) , self . sec (13usize) , self . sec (14usize) , self . sec (15usize))
+            defmt::write!(
+                f,
+                "Seccfgr {{ sec[0]: {=bool:?}, sec[1]: {=bool:?}, sec[2]: {=bool:?}, sec[3]: {=bool:?}, sec[4]: {=bool:?}, sec[5]: {=bool:?}, sec[6]: {=bool:?}, sec[7]: {=bool:?}, sec[8]: {=bool:?}, sec[9]: {=bool:?}, sec[10]: {=bool:?}, sec[11]: {=bool:?}, sec[12]: {=bool:?}, sec[13]: {=bool:?}, sec[14]: {=bool:?}, sec[15]: {=bool:?} }}",
+                self.sec(0usize),
+                self.sec(1usize),
+                self.sec(2usize),
+                self.sec(3usize),
+                self.sec(4usize),
+                self.sec(5usize),
+                self.sec(6usize),
+                self.sec(7usize),
+                self.sec(8usize),
+                self.sec(9usize),
+                self.sec(10usize),
+                self.sec(11usize),
+                self.sec(12usize),
+                self.sec(13usize),
+                self.sec(14usize),
+                self.sec(15usize)
+            )
         }
     }
     #[doc = "HSEM secure interrupt clear register."]
@@ -798,7 +912,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sicr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sicr {{ isc[0]: {=bool:?}, isc[1]: {=bool:?}, isc[2]: {=bool:?}, isc[3]: {=bool:?}, isc[4]: {=bool:?}, isc[5]: {=bool:?}, isc[6]: {=bool:?}, isc[7]: {=bool:?}, isc[8]: {=bool:?}, isc[9]: {=bool:?}, isc[10]: {=bool:?}, isc[11]: {=bool:?}, isc[12]: {=bool:?}, isc[13]: {=bool:?}, isc[14]: {=bool:?}, isc[15]: {=bool:?} }}" , self . isc (0usize) , self . isc (1usize) , self . isc (2usize) , self . isc (3usize) , self . isc (4usize) , self . isc (5usize) , self . isc (6usize) , self . isc (7usize) , self . isc (8usize) , self . isc (9usize) , self . isc (10usize) , self . isc (11usize) , self . isc (12usize) , self . isc (13usize) , self . isc (14usize) , self . isc (15usize))
+            defmt::write!(
+                f,
+                "Sicr {{ isc[0]: {=bool:?}, isc[1]: {=bool:?}, isc[2]: {=bool:?}, isc[3]: {=bool:?}, isc[4]: {=bool:?}, isc[5]: {=bool:?}, isc[6]: {=bool:?}, isc[7]: {=bool:?}, isc[8]: {=bool:?}, isc[9]: {=bool:?}, isc[10]: {=bool:?}, isc[11]: {=bool:?}, isc[12]: {=bool:?}, isc[13]: {=bool:?}, isc[14]: {=bool:?}, isc[15]: {=bool:?} }}",
+                self.isc(0usize),
+                self.isc(1usize),
+                self.isc(2usize),
+                self.isc(3usize),
+                self.isc(4usize),
+                self.isc(5usize),
+                self.isc(6usize),
+                self.isc(7usize),
+                self.isc(8usize),
+                self.isc(9usize),
+                self.isc(10usize),
+                self.isc(11usize),
+                self.isc(12usize),
+                self.isc(13usize),
+                self.isc(14usize),
+                self.isc(15usize)
+            )
         }
     }
     #[doc = "HSEM secure interrupt enable register."]
@@ -854,7 +987,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sier {{ ise[0]: {=bool:?}, ise[1]: {=bool:?}, ise[2]: {=bool:?}, ise[3]: {=bool:?}, ise[4]: {=bool:?}, ise[5]: {=bool:?}, ise[6]: {=bool:?}, ise[7]: {=bool:?}, ise[8]: {=bool:?}, ise[9]: {=bool:?}, ise[10]: {=bool:?}, ise[11]: {=bool:?}, ise[12]: {=bool:?}, ise[13]: {=bool:?}, ise[14]: {=bool:?}, ise[15]: {=bool:?} }}" , self . ise (0usize) , self . ise (1usize) , self . ise (2usize) , self . ise (3usize) , self . ise (4usize) , self . ise (5usize) , self . ise (6usize) , self . ise (7usize) , self . ise (8usize) , self . ise (9usize) , self . ise (10usize) , self . ise (11usize) , self . ise (12usize) , self . ise (13usize) , self . ise (14usize) , self . ise (15usize))
+            defmt::write!(
+                f,
+                "Sier {{ ise[0]: {=bool:?}, ise[1]: {=bool:?}, ise[2]: {=bool:?}, ise[3]: {=bool:?}, ise[4]: {=bool:?}, ise[5]: {=bool:?}, ise[6]: {=bool:?}, ise[7]: {=bool:?}, ise[8]: {=bool:?}, ise[9]: {=bool:?}, ise[10]: {=bool:?}, ise[11]: {=bool:?}, ise[12]: {=bool:?}, ise[13]: {=bool:?}, ise[14]: {=bool:?}, ise[15]: {=bool:?} }}",
+                self.ise(0usize),
+                self.ise(1usize),
+                self.ise(2usize),
+                self.ise(3usize),
+                self.ise(4usize),
+                self.ise(5usize),
+                self.ise(6usize),
+                self.ise(7usize),
+                self.ise(8usize),
+                self.ise(9usize),
+                self.ise(10usize),
+                self.ise(11usize),
+                self.ise(12usize),
+                self.ise(13usize),
+                self.ise(14usize),
+                self.ise(15usize)
+            )
         }
     }
     #[doc = "HSEM secure interrupt status register."]
@@ -910,7 +1062,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sisr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sisr {{ isf[0]: {=bool:?}, isf[1]: {=bool:?}, isf[2]: {=bool:?}, isf[3]: {=bool:?}, isf[4]: {=bool:?}, isf[5]: {=bool:?}, isf[6]: {=bool:?}, isf[7]: {=bool:?}, isf[8]: {=bool:?}, isf[9]: {=bool:?}, isf[10]: {=bool:?}, isf[11]: {=bool:?}, isf[12]: {=bool:?}, isf[13]: {=bool:?}, isf[14]: {=bool:?}, isf[15]: {=bool:?} }}" , self . isf (0usize) , self . isf (1usize) , self . isf (2usize) , self . isf (3usize) , self . isf (4usize) , self . isf (5usize) , self . isf (6usize) , self . isf (7usize) , self . isf (8usize) , self . isf (9usize) , self . isf (10usize) , self . isf (11usize) , self . isf (12usize) , self . isf (13usize) , self . isf (14usize) , self . isf (15usize))
+            defmt::write!(
+                f,
+                "Sisr {{ isf[0]: {=bool:?}, isf[1]: {=bool:?}, isf[2]: {=bool:?}, isf[3]: {=bool:?}, isf[4]: {=bool:?}, isf[5]: {=bool:?}, isf[6]: {=bool:?}, isf[7]: {=bool:?}, isf[8]: {=bool:?}, isf[9]: {=bool:?}, isf[10]: {=bool:?}, isf[11]: {=bool:?}, isf[12]: {=bool:?}, isf[13]: {=bool:?}, isf[14]: {=bool:?}, isf[15]: {=bool:?} }}",
+                self.isf(0usize),
+                self.isf(1usize),
+                self.isf(2usize),
+                self.isf(3usize),
+                self.isf(4usize),
+                self.isf(5usize),
+                self.isf(6usize),
+                self.isf(7usize),
+                self.isf(8usize),
+                self.isf(9usize),
+                self.isf(10usize),
+                self.isf(11usize),
+                self.isf(12usize),
+                self.isf(13usize),
+                self.isf(14usize),
+                self.isf(15usize)
+            )
         }
     }
     #[doc = "HSEM secure masked interrupt status register."]
@@ -966,7 +1137,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smisr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Smisr {{ misf[0]: {=bool:?}, misf[1]: {=bool:?}, misf[2]: {=bool:?}, misf[3]: {=bool:?}, misf[4]: {=bool:?}, misf[5]: {=bool:?}, misf[6]: {=bool:?}, misf[7]: {=bool:?}, misf[8]: {=bool:?}, misf[9]: {=bool:?}, misf[10]: {=bool:?}, misf[11]: {=bool:?}, misf[12]: {=bool:?}, misf[13]: {=bool:?}, misf[14]: {=bool:?}, misf[15]: {=bool:?} }}" , self . misf (0usize) , self . misf (1usize) , self . misf (2usize) , self . misf (3usize) , self . misf (4usize) , self . misf (5usize) , self . misf (6usize) , self . misf (7usize) , self . misf (8usize) , self . misf (9usize) , self . misf (10usize) , self . misf (11usize) , self . misf (12usize) , self . misf (13usize) , self . misf (14usize) , self . misf (15usize))
+            defmt::write!(
+                f,
+                "Smisr {{ misf[0]: {=bool:?}, misf[1]: {=bool:?}, misf[2]: {=bool:?}, misf[3]: {=bool:?}, misf[4]: {=bool:?}, misf[5]: {=bool:?}, misf[6]: {=bool:?}, misf[7]: {=bool:?}, misf[8]: {=bool:?}, misf[9]: {=bool:?}, misf[10]: {=bool:?}, misf[11]: {=bool:?}, misf[12]: {=bool:?}, misf[13]: {=bool:?}, misf[14]: {=bool:?}, misf[15]: {=bool:?} }}",
+                self.misf(0usize),
+                self.misf(1usize),
+                self.misf(2usize),
+                self.misf(3usize),
+                self.misf(4usize),
+                self.misf(5usize),
+                self.misf(6usize),
+                self.misf(7usize),
+                self.misf(8usize),
+                self.misf(9usize),
+                self.misf(10usize),
+                self.misf(11usize),
+                self.misf(12usize),
+                self.misf(13usize),
+                self.misf(14usize),
+                self.misf(15usize)
+            )
         }
     }
 }

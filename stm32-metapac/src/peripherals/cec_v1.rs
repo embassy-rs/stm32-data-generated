@@ -264,7 +264,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr {{ tsom: {=bool:?}, teom: {=bool:?}, terr: {=bool:?}, tbtrf: {=bool:?}, rsom: {=bool:?}, reom: {=bool:?}, rerr: {=bool:?}, rbtf: {=bool:?} }}" , self . tsom () , self . teom () , self . terr () , self . tbtrf () , self . rsom () , self . reom () , self . rerr () , self . rbtf ())
+            defmt::write!(
+                f,
+                "Csr {{ tsom: {=bool:?}, teom: {=bool:?}, terr: {=bool:?}, tbtrf: {=bool:?}, rsom: {=bool:?}, reom: {=bool:?}, rerr: {=bool:?}, rbtf: {=bool:?} }}",
+                self.tsom(),
+                self.teom(),
+                self.terr(),
+                self.tbtrf(),
+                self.rsom(),
+                self.reom(),
+                self.rerr(),
+                self.rbtf()
+            )
         }
     }
     #[doc = "CEC error status register."]
@@ -379,7 +390,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Esr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Esr {{ bte: {=bool:?}, bpe: {=bool:?}, rbtfe: {=bool:?}, sbe: {=bool:?}, acke: {=bool:?}, line: {=bool:?}, tbtfe: {=bool:?} }}" , self . bte () , self . bpe () , self . rbtfe () , self . sbe () , self . acke () , self . line () , self . tbtfe ())
+            defmt::write!(
+                f,
+                "Esr {{ bte: {=bool:?}, bpe: {=bool:?}, rbtfe: {=bool:?}, sbe: {=bool:?}, acke: {=bool:?}, line: {=bool:?}, tbtfe: {=bool:?} }}",
+                self.bte(),
+                self.bpe(),
+                self.rbtfe(),
+                self.sbe(),
+                self.acke(),
+                self.line(),
+                self.tbtfe()
+            )
         }
     }
     #[doc = "CEC own address register."]

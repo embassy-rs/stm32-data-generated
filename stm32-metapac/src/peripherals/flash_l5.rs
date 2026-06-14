@@ -394,7 +394,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Eccr {{ addr_ecc: {=u32:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, eccie: {=bool:?}, eccc2: {=bool:?}, eccd2: {=bool:?}, eccc: {=bool:?}, eccd: {=bool:?} }}" , self . addr_ecc () , self . bk_ecc () , self . sysf_ecc () , self . eccie () , self . eccc2 () , self . eccd2 () , self . eccc () , self . eccd ())
+            defmt::write!(
+                f,
+                "Eccr {{ addr_ecc: {=u32:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, eccie: {=bool:?}, eccc2: {=bool:?}, eccd2: {=bool:?}, eccc: {=bool:?}, eccd: {=bool:?} }}",
+                self.addr_ecc(),
+                self.bk_ecc(),
+                self.sysf_ecc(),
+                self.eccie(),
+                self.eccc2(),
+                self.eccd2(),
+                self.eccc(),
+                self.eccd()
+            )
         }
     }
     #[doc = "Flash non-secure boot address 0 register"]
@@ -661,7 +672,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Nscr {{ nspg: {=bool:?}, nsper: {=bool:?}, nsmer1: {=bool:?}, nspnb: {=u8:?}, nsbker: {=bool:?}, nsmer2: {=bool:?}, nsstrt: {=bool:?}, optstrt: {=bool:?}, nseopie: {=bool:?}, nserrie: {=bool:?}, obl_launch: {=bool:?}, optlock: {=bool:?}, nslock: {=bool:?} }}" , self . nspg () , self . nsper () , self . nsmer1 () , self . nspnb () , self . nsbker () , self . nsmer2 () , self . nsstrt () , self . optstrt () , self . nseopie () , self . nserrie () , self . obl_launch () , self . optlock () , self . nslock ())
+            defmt::write!(
+                f,
+                "Nscr {{ nspg: {=bool:?}, nsper: {=bool:?}, nsmer1: {=bool:?}, nspnb: {=u8:?}, nsbker: {=bool:?}, nsmer2: {=bool:?}, nsstrt: {=bool:?}, optstrt: {=bool:?}, nseopie: {=bool:?}, nserrie: {=bool:?}, obl_launch: {=bool:?}, optlock: {=bool:?}, nslock: {=bool:?} }}",
+                self.nspg(),
+                self.nsper(),
+                self.nsmer1(),
+                self.nspnb(),
+                self.nsbker(),
+                self.nsmer2(),
+                self.nsstrt(),
+                self.optstrt(),
+                self.nseopie(),
+                self.nserrie(),
+                self.obl_launch(),
+                self.optlock(),
+                self.nslock()
+            )
         }
     }
     #[doc = "Flash status register"]
@@ -815,7 +842,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nssr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Nssr {{ nseop: {=bool:?}, nsoperr: {=bool:?}, nsprogerr: {=bool:?}, nswrperr: {=bool:?}, nspgaerr: {=bool:?}, nssizerr: {=bool:?}, nspgserr: {=bool:?}, optwerr: {=bool:?}, optverr: {=bool:?}, nsbsy: {=bool:?} }}" , self . nseop () , self . nsoperr () , self . nsprogerr () , self . nswrperr () , self . nspgaerr () , self . nssizerr () , self . nspgserr () , self . optwerr () , self . optverr () , self . nsbsy ())
+            defmt::write!(
+                f,
+                "Nssr {{ nseop: {=bool:?}, nsoperr: {=bool:?}, nsprogerr: {=bool:?}, nswrperr: {=bool:?}, nspgaerr: {=bool:?}, nssizerr: {=bool:?}, nspgserr: {=bool:?}, optwerr: {=bool:?}, optverr: {=bool:?}, nsbsy: {=bool:?} }}",
+                self.nseop(),
+                self.nsoperr(),
+                self.nsprogerr(),
+                self.nswrperr(),
+                self.nspgaerr(),
+                self.nssizerr(),
+                self.nspgserr(),
+                self.optwerr(),
+                self.optverr(),
+                self.nsbsy()
+            )
         }
     }
     #[doc = "Flash option register"]
@@ -1073,7 +1113,28 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Optr {{ rdp: {=u8:?}, bor_lev: {=u8:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, n_rst_shdw: {=bool:?}, iwdg_sw: {=bool:?}, iwdg_stop: {=bool:?}, iwdg_stdby: {=bool:?}, wwdg_sw: {=bool:?}, swap_bank: {=bool:?}, db256k: {=bool:?}, dbank: {=bool:?}, sram2_pe: {=bool:?}, sram2_rst: {=bool:?}, n_swboot0: {=bool:?}, n_boot0: {=bool:?}, pa15_pupen: {=bool:?}, tzen: {=bool:?} }}" , self . rdp () , self . bor_lev () , self . n_rst_stop () , self . n_rst_stdby () , self . n_rst_shdw () , self . iwdg_sw () , self . iwdg_stop () , self . iwdg_stdby () , self . wwdg_sw () , self . swap_bank () , self . db256k () , self . dbank () , self . sram2_pe () , self . sram2_rst () , self . n_swboot0 () , self . n_boot0 () , self . pa15_pupen () , self . tzen ())
+            defmt::write!(
+                f,
+                "Optr {{ rdp: {=u8:?}, bor_lev: {=u8:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, n_rst_shdw: {=bool:?}, iwdg_sw: {=bool:?}, iwdg_stop: {=bool:?}, iwdg_stdby: {=bool:?}, wwdg_sw: {=bool:?}, swap_bank: {=bool:?}, db256k: {=bool:?}, dbank: {=bool:?}, sram2_pe: {=bool:?}, sram2_rst: {=bool:?}, n_swboot0: {=bool:?}, n_boot0: {=bool:?}, pa15_pupen: {=bool:?}, tzen: {=bool:?} }}",
+                self.rdp(),
+                self.bor_lev(),
+                self.n_rst_stop(),
+                self.n_rst_stdby(),
+                self.n_rst_shdw(),
+                self.iwdg_sw(),
+                self.iwdg_stop(),
+                self.iwdg_stdby(),
+                self.wwdg_sw(),
+                self.swap_bank(),
+                self.db256k(),
+                self.dbank(),
+                self.sram2_pe(),
+                self.sram2_rst(),
+                self.n_swboot0(),
+                self.n_boot0(),
+                self.pa15_pupen(),
+                self.tzen()
+            )
         }
     }
     #[doc = "Power privilege configuration register"]
@@ -1623,7 +1684,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccr {{ secpg: {=bool:?}, secper: {=bool:?}, secmer1: {=bool:?}, secpnb: {=u8:?}, secbker: {=bool:?}, secmer2: {=bool:?}, secstrt: {=bool:?}, seceopie: {=bool:?}, secerrie: {=bool:?}, secrderrie: {=bool:?}, secinv: {=bool:?}, seclock: {=bool:?} }}" , self . secpg () , self . secper () , self . secmer1 () , self . secpnb () , self . secbker () , self . secmer2 () , self . secstrt () , self . seceopie () , self . secerrie () , self . secrderrie () , self . secinv () , self . seclock ())
+            defmt::write!(
+                f,
+                "Seccr {{ secpg: {=bool:?}, secper: {=bool:?}, secmer1: {=bool:?}, secpnb: {=u8:?}, secbker: {=bool:?}, secmer2: {=bool:?}, secstrt: {=bool:?}, seceopie: {=bool:?}, secerrie: {=bool:?}, secrderrie: {=bool:?}, secinv: {=bool:?}, seclock: {=bool:?} }}",
+                self.secpg(),
+                self.secper(),
+                self.secmer1(),
+                self.secpnb(),
+                self.secbker(),
+                self.secmer2(),
+                self.secstrt(),
+                self.seceopie(),
+                self.secerrie(),
+                self.secrderrie(),
+                self.secinv(),
+                self.seclock()
+            )
         }
     }
     #[doc = "FLASH secure HDP control register"]
@@ -1819,7 +1895,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Secsr {{ seceop: {=bool:?}, secoperr: {=bool:?}, secprogerr: {=bool:?}, secwrperr: {=bool:?}, secpgaerr: {=bool:?}, secsizerr: {=bool:?}, secpgserr: {=bool:?}, secrderr: {=bool:?}, secbsy: {=bool:?} }}" , self . seceop () , self . secoperr () , self . secprogerr () , self . secwrperr () , self . secpgaerr () , self . secsizerr () , self . secpgserr () , self . secrderr () , self . secbsy ())
+            defmt::write!(
+                f,
+                "Secsr {{ seceop: {=bool:?}, secoperr: {=bool:?}, secprogerr: {=bool:?}, secwrperr: {=bool:?}, secpgaerr: {=bool:?}, secsizerr: {=bool:?}, secpgserr: {=bool:?}, secrderr: {=bool:?}, secbsy: {=bool:?} }}",
+                self.seceop(),
+                self.secoperr(),
+                self.secprogerr(),
+                self.secwrperr(),
+                self.secpgaerr(),
+                self.secsizerr(),
+                self.secpgserr(),
+                self.secrderr(),
+                self.secbsy()
+            )
         }
     }
     #[doc = "Flash bank 1 secure watermak1 register"]

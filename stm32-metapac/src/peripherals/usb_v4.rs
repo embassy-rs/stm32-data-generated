@@ -195,7 +195,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bcdr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Bcdr {{ bcden: {=bool:?}, dcden: {=bool:?}, pden: {=bool:?}, sden: {=bool:?}, dcdet: {=bool:?}, pdet: {=bool:?}, sdet: {:?}, ps2det: {=bool:?}, dppu: {=bool:?} }}" , self . bcden () , self . dcden () , self . pden () , self . sden () , self . dcdet () , self . pdet () , self . sdet () , self . ps2det () , self . dppu ())
+            defmt::write!(
+                f,
+                "Bcdr {{ bcden: {=bool:?}, dcden: {=bool:?}, pden: {=bool:?}, sden: {=bool:?}, dcdet: {=bool:?}, pdet: {=bool:?}, sdet: {:?}, ps2det: {=bool:?}, dppu: {=bool:?} }}",
+                self.bcden(),
+                self.dcden(),
+                self.pden(),
+                self.sden(),
+                self.dcdet(),
+                self.pdet(),
+                self.sdet(),
+                self.ps2det(),
+                self.dppu()
+            )
         }
     }
     #[doc = "control register"]
@@ -440,7 +452,27 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cntr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cntr {{ fres: {=bool:?}, pdwn: {=bool:?}, lpmode: {=bool:?}, fsusp: {=bool:?}, resume: {=bool:?}, l1resume: {=bool:?}, l1reqm: {=bool:?}, esofm: {=bool:?}, sofm: {=bool:?}, resetm: {=bool:?}, suspm: {=bool:?}, wkupm: {=bool:?}, errm: {=bool:?}, pmaovrm: {=bool:?}, ctrm: {=bool:?}, thr512m: {=bool:?}, host: {=bool:?} }}" , self . fres () , self . pdwn () , self . lpmode () , self . fsusp () , self . resume () , self . l1resume () , self . l1reqm () , self . esofm () , self . sofm () , self . resetm () , self . suspm () , self . wkupm () , self . errm () , self . pmaovrm () , self . ctrm () , self . thr512m () , self . host ())
+            defmt::write!(
+                f,
+                "Cntr {{ fres: {=bool:?}, pdwn: {=bool:?}, lpmode: {=bool:?}, fsusp: {=bool:?}, resume: {=bool:?}, l1resume: {=bool:?}, l1reqm: {=bool:?}, esofm: {=bool:?}, sofm: {=bool:?}, resetm: {=bool:?}, suspm: {=bool:?}, wkupm: {=bool:?}, errm: {=bool:?}, pmaovrm: {=bool:?}, ctrm: {=bool:?}, thr512m: {=bool:?}, host: {=bool:?} }}",
+                self.fres(),
+                self.pdwn(),
+                self.lpmode(),
+                self.fsusp(),
+                self.resume(),
+                self.l1resume(),
+                self.l1reqm(),
+                self.esofm(),
+                self.sofm(),
+                self.resetm(),
+                self.suspm(),
+                self.wkupm(),
+                self.errm(),
+                self.pmaovrm(),
+                self.ctrm(),
+                self.thr512m(),
+                self.host()
+            )
         }
     }
     #[doc = "device address"]
@@ -711,7 +743,25 @@ bits. If this bit is at '0 no transactions are handled, irrespective of the sett
     #[cfg(feature = "defmt")]
     impl defmt::Format for Epr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Epr {{ ea: {=u8:?}, stat_tx: {:?}, dtog_tx: {=bool:?}, ctr_tx: {=bool:?}, ep_kind: {=bool:?}, ep_type: {:?}, setup: {=bool:?}, stat_rx: {:?}, dtog_rx: {=bool:?}, ctr_rx: {=bool:?}, devaddr: {=u8:?}, nak: {=bool:?}, ls_ep: {=bool:?}, err_tx: {=bool:?}, err_rx: {=bool:?} }}" , self . ea () , self . stat_tx () , self . dtog_tx () , self . ctr_tx () , self . ep_kind () , self . ep_type () , self . setup () , self . stat_rx () , self . dtog_rx () , self . ctr_rx () , self . devaddr () , self . nak () , self . ls_ep () , self . err_tx () , self . err_rx ())
+            defmt::write!(
+                f,
+                "Epr {{ ea: {=u8:?}, stat_tx: {:?}, dtog_tx: {=bool:?}, ctr_tx: {=bool:?}, ep_kind: {=bool:?}, ep_type: {:?}, setup: {=bool:?}, stat_rx: {:?}, dtog_rx: {=bool:?}, ctr_rx: {=bool:?}, devaddr: {=u8:?}, nak: {=bool:?}, ls_ep: {=bool:?}, err_tx: {=bool:?}, err_rx: {=bool:?} }}",
+                self.ea(),
+                self.stat_tx(),
+                self.dtog_tx(),
+                self.ctr_tx(),
+                self.ep_kind(),
+                self.ep_type(),
+                self.setup(),
+                self.stat_rx(),
+                self.dtog_rx(),
+                self.ctr_rx(),
+                self.devaddr(),
+                self.nak(),
+                self.ls_ep(),
+                self.err_tx(),
+                self.err_rx()
+            )
         }
     }
     #[doc = "frame number register"]
@@ -1014,7 +1064,24 @@ bits. If this bit is at '0 no transactions are handled, irrespective of the sett
     #[cfg(feature = "defmt")]
     impl defmt::Format for Istr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Istr {{ ep_id: {=u8:?}, dir: {:?}, l1req: {=bool:?}, esof: {=bool:?}, sof: {=bool:?}, reset: {=bool:?}, susp: {=bool:?}, wkup: {=bool:?}, err: {=bool:?}, pmaovr: {=bool:?}, ctr: {=bool:?}, thr512: {=bool:?}, dcon_stat: {=bool:?}, ls_dcon: {=bool:?} }}" , self . ep_id () , self . dir () , self . l1req () , self . esof () , self . sof () , self . reset () , self . susp () , self . wkup () , self . err () , self . pmaovr () , self . ctr () , self . thr512 () , self . dcon_stat () , self . ls_dcon ())
+            defmt::write!(
+                f,
+                "Istr {{ ep_id: {=u8:?}, dir: {:?}, l1req: {=bool:?}, esof: {=bool:?}, sof: {=bool:?}, reset: {=bool:?}, susp: {=bool:?}, wkup: {=bool:?}, err: {=bool:?}, pmaovr: {=bool:?}, ctr: {=bool:?}, thr512: {=bool:?}, dcon_stat: {=bool:?}, ls_dcon: {=bool:?} }}",
+                self.ep_id(),
+                self.dir(),
+                self.l1req(),
+                self.esof(),
+                self.sof(),
+                self.reset(),
+                self.susp(),
+                self.wkup(),
+                self.err(),
+                self.pmaovr(),
+                self.ctr(),
+                self.thr512(),
+                self.dcon_stat(),
+                self.ls_dcon()
+            )
         }
     }
     #[doc = "LPM control and status register"]

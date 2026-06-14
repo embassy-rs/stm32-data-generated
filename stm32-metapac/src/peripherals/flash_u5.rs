@@ -350,7 +350,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Acr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Acr {{ latency: {=u8:?}, prften: {=bool:?}, lpm: {=bool:?}, pdreq1: {=bool:?}, pdreq2: {=bool:?}, sleep_pd: {=bool:?} }}" , self . latency () , self . prften () , self . lpm () , self . pdreq1 () , self . pdreq2 () , self . sleep_pd ())
+            defmt::write!(
+                f,
+                "Acr {{ latency: {=u8:?}, prften: {=bool:?}, lpm: {=bool:?}, pdreq1: {=bool:?}, pdreq2: {=bool:?}, sleep_pd: {=bool:?} }}",
+                self.latency(),
+                self.prften(),
+                self.lpm(),
+                self.pdreq1(),
+                self.pdreq2(),
+                self.sleep_pd()
+            )
         }
     }
     #[doc = "FLASH ECC register"]
@@ -452,7 +461,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Eccr {{ addr_ecc: {=u32:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, eccie: {=bool:?}, eccc: {=bool:?}, eccd: {=bool:?} }}" , self . addr_ecc () , self . bk_ecc () , self . sysf_ecc () , self . eccie () , self . eccc () , self . eccd ())
+            defmt::write!(
+                f,
+                "Eccr {{ addr_ecc: {=u32:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, eccie: {=bool:?}, eccc: {=bool:?}, eccd: {=bool:?} }}",
+                self.addr_ecc(),
+                self.bk_ecc(),
+                self.sysf_ecc(),
+                self.eccie(),
+                self.eccc(),
+                self.eccd()
+            )
         }
     }
     #[doc = "FLASH non-secure boot address 0 register"]
@@ -744,7 +762,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Nscr {{ pg: {=bool:?}, per: {=bool:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {=bool:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, optstrt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, obl_launch: {=bool:?}, optlock: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer1 () , self . pnb () , self . bker () , self . bwr () , self . mer2 () , self . strt () , self . optstrt () , self . eopie () , self . errie () , self . obl_launch () , self . optlock () , self . lock ())
+            defmt::write!(
+                f,
+                "Nscr {{ pg: {=bool:?}, per: {=bool:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {=bool:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, optstrt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, obl_launch: {=bool:?}, optlock: {=bool:?}, lock: {=bool:?} }}",
+                self.pg(),
+                self.per(),
+                self.mer1(),
+                self.pnb(),
+                self.bker(),
+                self.bwr(),
+                self.mer2(),
+                self.strt(),
+                self.optstrt(),
+                self.eopie(),
+                self.errie(),
+                self.obl_launch(),
+                self.optlock(),
+                self.lock()
+            )
         }
     }
     #[doc = "FLASH non-secure status register"]
@@ -950,7 +985,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nssr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Nssr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, optwerr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?}, oem1lock: {=bool:?}, oem2lock: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?} }}" , self . eop () , self . operr () , self . progerr () , self . wrperr () , self . pgaerr () , self . sizerr () , self . pgserr () , self . optwerr () , self . bsy () , self . wdw () , self . oem1lock () , self . oem2lock () , self . pd1 () , self . pd2 ())
+            defmt::write!(
+                f,
+                "Nssr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, optwerr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?}, oem1lock: {=bool:?}, oem2lock: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?} }}",
+                self.eop(),
+                self.operr(),
+                self.progerr(),
+                self.wrperr(),
+                self.pgaerr(),
+                self.sizerr(),
+                self.pgserr(),
+                self.optwerr(),
+                self.bsy(),
+                self.wdw(),
+                self.oem1lock(),
+                self.oem2lock(),
+                self.pd1(),
+                self.pd2()
+            )
         }
     }
     #[doc = "FLASH OEM1 key register 1"]
@@ -1483,7 +1535,32 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Optr {{ rdp: {:?}, bor_lev: {:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, n_rst_shdw: {=bool:?}, sram1345_rst: {=bool:?}, iwdg_sw: {=bool:?}, iwdg_stop: {=bool:?}, iwdg_stdby: {=bool:?}, wwdg_sw: {=bool:?}, swap_bank: {=bool:?}, dualbank: {=bool:?}, bkpsram_ecc: {=bool:?}, sram3_ecc: {=bool:?}, sram2_ecc: {=bool:?}, sram2_rst: {=bool:?}, n_swboot0: {=bool:?}, n_boot0: {=bool:?}, pa15_pupen: {=bool:?}, io_vdd_hslv: {=bool:?}, io_vddio2_hslv: {=bool:?}, tzen: {=bool:?} }}" , self . rdp () , self . bor_lev () , self . n_rst_stop () , self . n_rst_stdby () , self . n_rst_shdw () , self . sram1345_rst () , self . iwdg_sw () , self . iwdg_stop () , self . iwdg_stdby () , self . wwdg_sw () , self . swap_bank () , self . dualbank () , self . bkpsram_ecc () , self . sram3_ecc () , self . sram2_ecc () , self . sram2_rst () , self . n_swboot0 () , self . n_boot0 () , self . pa15_pupen () , self . io_vdd_hslv () , self . io_vddio2_hslv () , self . tzen ())
+            defmt::write!(
+                f,
+                "Optr {{ rdp: {:?}, bor_lev: {:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, n_rst_shdw: {=bool:?}, sram1345_rst: {=bool:?}, iwdg_sw: {=bool:?}, iwdg_stop: {=bool:?}, iwdg_stdby: {=bool:?}, wwdg_sw: {=bool:?}, swap_bank: {=bool:?}, dualbank: {=bool:?}, bkpsram_ecc: {=bool:?}, sram3_ecc: {=bool:?}, sram2_ecc: {=bool:?}, sram2_rst: {=bool:?}, n_swboot0: {=bool:?}, n_boot0: {=bool:?}, pa15_pupen: {=bool:?}, io_vdd_hslv: {=bool:?}, io_vddio2_hslv: {=bool:?}, tzen: {=bool:?} }}",
+                self.rdp(),
+                self.bor_lev(),
+                self.n_rst_stop(),
+                self.n_rst_stdby(),
+                self.n_rst_shdw(),
+                self.sram1345_rst(),
+                self.iwdg_sw(),
+                self.iwdg_stop(),
+                self.iwdg_stdby(),
+                self.wwdg_sw(),
+                self.swap_bank(),
+                self.dualbank(),
+                self.bkpsram_ecc(),
+                self.sram3_ecc(),
+                self.sram2_ecc(),
+                self.sram2_rst(),
+                self.n_swboot0(),
+                self.n_boot0(),
+                self.pa15_pupen(),
+                self.io_vdd_hslv(),
+                self.io_vddio2_hslv(),
+                self.tzen()
+            )
         }
     }
     #[doc = "FLASH bank 1 power-down key register"]
@@ -1993,7 +2070,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv1bbr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Priv1bbr1 {{ priv1bb0: {=bool:?}, priv1bb1: {=bool:?}, priv1bb2: {=bool:?}, priv1bb3: {=bool:?}, priv1bb4: {=bool:?}, priv1bb5: {=bool:?}, priv1bb6: {=bool:?}, priv1bb7: {=bool:?}, priv1bb8: {=bool:?}, priv1bb9: {=bool:?}, priv1bb10: {=bool:?}, priv1bb11: {=bool:?}, priv1bb12: {=bool:?}, priv1bb13: {=bool:?}, priv1bb14: {=bool:?}, priv1bb15: {=bool:?}, priv1bb16: {=bool:?}, priv1bb17: {=bool:?}, priv1bb18: {=bool:?}, priv1bb19: {=bool:?}, priv1bb20: {=bool:?}, priv1bb21: {=bool:?}, priv1bb22: {=bool:?}, priv1bb23: {=bool:?}, priv1bb24: {=bool:?}, priv1bb25: {=bool:?}, priv1bb26: {=bool:?}, priv1bb27: {=bool:?}, priv1bb28: {=bool:?}, priv1bb29: {=bool:?}, priv1bb30: {=bool:?}, priv1bb31: {=bool:?} }}" , self . priv1bb0 () , self . priv1bb1 () , self . priv1bb2 () , self . priv1bb3 () , self . priv1bb4 () , self . priv1bb5 () , self . priv1bb6 () , self . priv1bb7 () , self . priv1bb8 () , self . priv1bb9 () , self . priv1bb10 () , self . priv1bb11 () , self . priv1bb12 () , self . priv1bb13 () , self . priv1bb14 () , self . priv1bb15 () , self . priv1bb16 () , self . priv1bb17 () , self . priv1bb18 () , self . priv1bb19 () , self . priv1bb20 () , self . priv1bb21 () , self . priv1bb22 () , self . priv1bb23 () , self . priv1bb24 () , self . priv1bb25 () , self . priv1bb26 () , self . priv1bb27 () , self . priv1bb28 () , self . priv1bb29 () , self . priv1bb30 () , self . priv1bb31 ())
+            defmt::write!(
+                f,
+                "Priv1bbr1 {{ priv1bb0: {=bool:?}, priv1bb1: {=bool:?}, priv1bb2: {=bool:?}, priv1bb3: {=bool:?}, priv1bb4: {=bool:?}, priv1bb5: {=bool:?}, priv1bb6: {=bool:?}, priv1bb7: {=bool:?}, priv1bb8: {=bool:?}, priv1bb9: {=bool:?}, priv1bb10: {=bool:?}, priv1bb11: {=bool:?}, priv1bb12: {=bool:?}, priv1bb13: {=bool:?}, priv1bb14: {=bool:?}, priv1bb15: {=bool:?}, priv1bb16: {=bool:?}, priv1bb17: {=bool:?}, priv1bb18: {=bool:?}, priv1bb19: {=bool:?}, priv1bb20: {=bool:?}, priv1bb21: {=bool:?}, priv1bb22: {=bool:?}, priv1bb23: {=bool:?}, priv1bb24: {=bool:?}, priv1bb25: {=bool:?}, priv1bb26: {=bool:?}, priv1bb27: {=bool:?}, priv1bb28: {=bool:?}, priv1bb29: {=bool:?}, priv1bb30: {=bool:?}, priv1bb31: {=bool:?} }}",
+                self.priv1bb0(),
+                self.priv1bb1(),
+                self.priv1bb2(),
+                self.priv1bb3(),
+                self.priv1bb4(),
+                self.priv1bb5(),
+                self.priv1bb6(),
+                self.priv1bb7(),
+                self.priv1bb8(),
+                self.priv1bb9(),
+                self.priv1bb10(),
+                self.priv1bb11(),
+                self.priv1bb12(),
+                self.priv1bb13(),
+                self.priv1bb14(),
+                self.priv1bb15(),
+                self.priv1bb16(),
+                self.priv1bb17(),
+                self.priv1bb18(),
+                self.priv1bb19(),
+                self.priv1bb20(),
+                self.priv1bb21(),
+                self.priv1bb22(),
+                self.priv1bb23(),
+                self.priv1bb24(),
+                self.priv1bb25(),
+                self.priv1bb26(),
+                self.priv1bb27(),
+                self.priv1bb28(),
+                self.priv1bb29(),
+                self.priv1bb30(),
+                self.priv1bb31()
+            )
         }
     }
     #[doc = "FLASH privilege block based bank 1 register 2"]
@@ -2433,7 +2545,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv1bbr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Priv1bbr2 {{ priv1bb0: {=bool:?}, priv1bb1: {=bool:?}, priv1bb2: {=bool:?}, priv1bb3: {=bool:?}, priv1bb4: {=bool:?}, priv1bb5: {=bool:?}, priv1bb6: {=bool:?}, priv1bb7: {=bool:?}, priv1bb8: {=bool:?}, priv1bb9: {=bool:?}, priv1bb10: {=bool:?}, priv1bb11: {=bool:?}, priv1bb12: {=bool:?}, priv1bb13: {=bool:?}, priv1bb14: {=bool:?}, priv1bb15: {=bool:?}, priv1bb16: {=bool:?}, priv1bb17: {=bool:?}, priv1bb18: {=bool:?}, priv1bb19: {=bool:?}, priv1bb20: {=bool:?}, priv1bb21: {=bool:?}, priv1bb22: {=bool:?}, priv1bb23: {=bool:?}, priv1bb24: {=bool:?}, priv1bb25: {=bool:?}, priv1bb26: {=bool:?}, priv1bb27: {=bool:?}, priv1bb28: {=bool:?}, priv1bb29: {=bool:?}, priv1bb30: {=bool:?}, priv1bb31: {=bool:?} }}" , self . priv1bb0 () , self . priv1bb1 () , self . priv1bb2 () , self . priv1bb3 () , self . priv1bb4 () , self . priv1bb5 () , self . priv1bb6 () , self . priv1bb7 () , self . priv1bb8 () , self . priv1bb9 () , self . priv1bb10 () , self . priv1bb11 () , self . priv1bb12 () , self . priv1bb13 () , self . priv1bb14 () , self . priv1bb15 () , self . priv1bb16 () , self . priv1bb17 () , self . priv1bb18 () , self . priv1bb19 () , self . priv1bb20 () , self . priv1bb21 () , self . priv1bb22 () , self . priv1bb23 () , self . priv1bb24 () , self . priv1bb25 () , self . priv1bb26 () , self . priv1bb27 () , self . priv1bb28 () , self . priv1bb29 () , self . priv1bb30 () , self . priv1bb31 ())
+            defmt::write!(
+                f,
+                "Priv1bbr2 {{ priv1bb0: {=bool:?}, priv1bb1: {=bool:?}, priv1bb2: {=bool:?}, priv1bb3: {=bool:?}, priv1bb4: {=bool:?}, priv1bb5: {=bool:?}, priv1bb6: {=bool:?}, priv1bb7: {=bool:?}, priv1bb8: {=bool:?}, priv1bb9: {=bool:?}, priv1bb10: {=bool:?}, priv1bb11: {=bool:?}, priv1bb12: {=bool:?}, priv1bb13: {=bool:?}, priv1bb14: {=bool:?}, priv1bb15: {=bool:?}, priv1bb16: {=bool:?}, priv1bb17: {=bool:?}, priv1bb18: {=bool:?}, priv1bb19: {=bool:?}, priv1bb20: {=bool:?}, priv1bb21: {=bool:?}, priv1bb22: {=bool:?}, priv1bb23: {=bool:?}, priv1bb24: {=bool:?}, priv1bb25: {=bool:?}, priv1bb26: {=bool:?}, priv1bb27: {=bool:?}, priv1bb28: {=bool:?}, priv1bb29: {=bool:?}, priv1bb30: {=bool:?}, priv1bb31: {=bool:?} }}",
+                self.priv1bb0(),
+                self.priv1bb1(),
+                self.priv1bb2(),
+                self.priv1bb3(),
+                self.priv1bb4(),
+                self.priv1bb5(),
+                self.priv1bb6(),
+                self.priv1bb7(),
+                self.priv1bb8(),
+                self.priv1bb9(),
+                self.priv1bb10(),
+                self.priv1bb11(),
+                self.priv1bb12(),
+                self.priv1bb13(),
+                self.priv1bb14(),
+                self.priv1bb15(),
+                self.priv1bb16(),
+                self.priv1bb17(),
+                self.priv1bb18(),
+                self.priv1bb19(),
+                self.priv1bb20(),
+                self.priv1bb21(),
+                self.priv1bb22(),
+                self.priv1bb23(),
+                self.priv1bb24(),
+                self.priv1bb25(),
+                self.priv1bb26(),
+                self.priv1bb27(),
+                self.priv1bb28(),
+                self.priv1bb29(),
+                self.priv1bb30(),
+                self.priv1bb31()
+            )
         }
     }
     #[doc = "FLASH privilege block based bank 1 register 3"]
@@ -2873,7 +3020,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv1bbr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Priv1bbr3 {{ priv1bb0: {=bool:?}, priv1bb1: {=bool:?}, priv1bb2: {=bool:?}, priv1bb3: {=bool:?}, priv1bb4: {=bool:?}, priv1bb5: {=bool:?}, priv1bb6: {=bool:?}, priv1bb7: {=bool:?}, priv1bb8: {=bool:?}, priv1bb9: {=bool:?}, priv1bb10: {=bool:?}, priv1bb11: {=bool:?}, priv1bb12: {=bool:?}, priv1bb13: {=bool:?}, priv1bb14: {=bool:?}, priv1bb15: {=bool:?}, priv1bb16: {=bool:?}, priv1bb17: {=bool:?}, priv1bb18: {=bool:?}, priv1bb19: {=bool:?}, priv1bb20: {=bool:?}, priv1bb21: {=bool:?}, priv1bb22: {=bool:?}, priv1bb23: {=bool:?}, priv1bb24: {=bool:?}, priv1bb25: {=bool:?}, priv1bb26: {=bool:?}, priv1bb27: {=bool:?}, priv1bb28: {=bool:?}, priv1bb29: {=bool:?}, priv1bb30: {=bool:?}, priv1bb31: {=bool:?} }}" , self . priv1bb0 () , self . priv1bb1 () , self . priv1bb2 () , self . priv1bb3 () , self . priv1bb4 () , self . priv1bb5 () , self . priv1bb6 () , self . priv1bb7 () , self . priv1bb8 () , self . priv1bb9 () , self . priv1bb10 () , self . priv1bb11 () , self . priv1bb12 () , self . priv1bb13 () , self . priv1bb14 () , self . priv1bb15 () , self . priv1bb16 () , self . priv1bb17 () , self . priv1bb18 () , self . priv1bb19 () , self . priv1bb20 () , self . priv1bb21 () , self . priv1bb22 () , self . priv1bb23 () , self . priv1bb24 () , self . priv1bb25 () , self . priv1bb26 () , self . priv1bb27 () , self . priv1bb28 () , self . priv1bb29 () , self . priv1bb30 () , self . priv1bb31 ())
+            defmt::write!(
+                f,
+                "Priv1bbr3 {{ priv1bb0: {=bool:?}, priv1bb1: {=bool:?}, priv1bb2: {=bool:?}, priv1bb3: {=bool:?}, priv1bb4: {=bool:?}, priv1bb5: {=bool:?}, priv1bb6: {=bool:?}, priv1bb7: {=bool:?}, priv1bb8: {=bool:?}, priv1bb9: {=bool:?}, priv1bb10: {=bool:?}, priv1bb11: {=bool:?}, priv1bb12: {=bool:?}, priv1bb13: {=bool:?}, priv1bb14: {=bool:?}, priv1bb15: {=bool:?}, priv1bb16: {=bool:?}, priv1bb17: {=bool:?}, priv1bb18: {=bool:?}, priv1bb19: {=bool:?}, priv1bb20: {=bool:?}, priv1bb21: {=bool:?}, priv1bb22: {=bool:?}, priv1bb23: {=bool:?}, priv1bb24: {=bool:?}, priv1bb25: {=bool:?}, priv1bb26: {=bool:?}, priv1bb27: {=bool:?}, priv1bb28: {=bool:?}, priv1bb29: {=bool:?}, priv1bb30: {=bool:?}, priv1bb31: {=bool:?} }}",
+                self.priv1bb0(),
+                self.priv1bb1(),
+                self.priv1bb2(),
+                self.priv1bb3(),
+                self.priv1bb4(),
+                self.priv1bb5(),
+                self.priv1bb6(),
+                self.priv1bb7(),
+                self.priv1bb8(),
+                self.priv1bb9(),
+                self.priv1bb10(),
+                self.priv1bb11(),
+                self.priv1bb12(),
+                self.priv1bb13(),
+                self.priv1bb14(),
+                self.priv1bb15(),
+                self.priv1bb16(),
+                self.priv1bb17(),
+                self.priv1bb18(),
+                self.priv1bb19(),
+                self.priv1bb20(),
+                self.priv1bb21(),
+                self.priv1bb22(),
+                self.priv1bb23(),
+                self.priv1bb24(),
+                self.priv1bb25(),
+                self.priv1bb26(),
+                self.priv1bb27(),
+                self.priv1bb28(),
+                self.priv1bb29(),
+                self.priv1bb30(),
+                self.priv1bb31()
+            )
         }
     }
     #[doc = "FLASH privilege block based bank 1 register 4"]
@@ -3313,7 +3495,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv1bbr4 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Priv1bbr4 {{ priv1bb0: {=bool:?}, priv1bb1: {=bool:?}, priv1bb2: {=bool:?}, priv1bb3: {=bool:?}, priv1bb4: {=bool:?}, priv1bb5: {=bool:?}, priv1bb6: {=bool:?}, priv1bb7: {=bool:?}, priv1bb8: {=bool:?}, priv1bb9: {=bool:?}, priv1bb10: {=bool:?}, priv1bb11: {=bool:?}, priv1bb12: {=bool:?}, priv1bb13: {=bool:?}, priv1bb14: {=bool:?}, priv1bb15: {=bool:?}, priv1bb16: {=bool:?}, priv1bb17: {=bool:?}, priv1bb18: {=bool:?}, priv1bb19: {=bool:?}, priv1bb20: {=bool:?}, priv1bb21: {=bool:?}, priv1bb22: {=bool:?}, priv1bb23: {=bool:?}, priv1bb24: {=bool:?}, priv1bb25: {=bool:?}, priv1bb26: {=bool:?}, priv1bb27: {=bool:?}, priv1bb28: {=bool:?}, priv1bb29: {=bool:?}, priv1bb30: {=bool:?}, priv1bb31: {=bool:?} }}" , self . priv1bb0 () , self . priv1bb1 () , self . priv1bb2 () , self . priv1bb3 () , self . priv1bb4 () , self . priv1bb5 () , self . priv1bb6 () , self . priv1bb7 () , self . priv1bb8 () , self . priv1bb9 () , self . priv1bb10 () , self . priv1bb11 () , self . priv1bb12 () , self . priv1bb13 () , self . priv1bb14 () , self . priv1bb15 () , self . priv1bb16 () , self . priv1bb17 () , self . priv1bb18 () , self . priv1bb19 () , self . priv1bb20 () , self . priv1bb21 () , self . priv1bb22 () , self . priv1bb23 () , self . priv1bb24 () , self . priv1bb25 () , self . priv1bb26 () , self . priv1bb27 () , self . priv1bb28 () , self . priv1bb29 () , self . priv1bb30 () , self . priv1bb31 ())
+            defmt::write!(
+                f,
+                "Priv1bbr4 {{ priv1bb0: {=bool:?}, priv1bb1: {=bool:?}, priv1bb2: {=bool:?}, priv1bb3: {=bool:?}, priv1bb4: {=bool:?}, priv1bb5: {=bool:?}, priv1bb6: {=bool:?}, priv1bb7: {=bool:?}, priv1bb8: {=bool:?}, priv1bb9: {=bool:?}, priv1bb10: {=bool:?}, priv1bb11: {=bool:?}, priv1bb12: {=bool:?}, priv1bb13: {=bool:?}, priv1bb14: {=bool:?}, priv1bb15: {=bool:?}, priv1bb16: {=bool:?}, priv1bb17: {=bool:?}, priv1bb18: {=bool:?}, priv1bb19: {=bool:?}, priv1bb20: {=bool:?}, priv1bb21: {=bool:?}, priv1bb22: {=bool:?}, priv1bb23: {=bool:?}, priv1bb24: {=bool:?}, priv1bb25: {=bool:?}, priv1bb26: {=bool:?}, priv1bb27: {=bool:?}, priv1bb28: {=bool:?}, priv1bb29: {=bool:?}, priv1bb30: {=bool:?}, priv1bb31: {=bool:?} }}",
+                self.priv1bb0(),
+                self.priv1bb1(),
+                self.priv1bb2(),
+                self.priv1bb3(),
+                self.priv1bb4(),
+                self.priv1bb5(),
+                self.priv1bb6(),
+                self.priv1bb7(),
+                self.priv1bb8(),
+                self.priv1bb9(),
+                self.priv1bb10(),
+                self.priv1bb11(),
+                self.priv1bb12(),
+                self.priv1bb13(),
+                self.priv1bb14(),
+                self.priv1bb15(),
+                self.priv1bb16(),
+                self.priv1bb17(),
+                self.priv1bb18(),
+                self.priv1bb19(),
+                self.priv1bb20(),
+                self.priv1bb21(),
+                self.priv1bb22(),
+                self.priv1bb23(),
+                self.priv1bb24(),
+                self.priv1bb25(),
+                self.priv1bb26(),
+                self.priv1bb27(),
+                self.priv1bb28(),
+                self.priv1bb29(),
+                self.priv1bb30(),
+                self.priv1bb31()
+            )
         }
     }
     #[doc = "FLASH privilege block based bank 2 register 1"]
@@ -3753,7 +3970,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv2bbr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Priv2bbr1 {{ priv2bb0: {=bool:?}, priv2bb1: {=bool:?}, priv2bb2: {=bool:?}, priv2bb3: {=bool:?}, priv2bb4: {=bool:?}, priv2bb5: {=bool:?}, priv2bb6: {=bool:?}, priv2bb7: {=bool:?}, priv2bb8: {=bool:?}, priv2bb9: {=bool:?}, priv2bb10: {=bool:?}, priv2bb11: {=bool:?}, priv2bb12: {=bool:?}, priv2bb13: {=bool:?}, priv2bb14: {=bool:?}, priv2bb15: {=bool:?}, priv2bb16: {=bool:?}, priv2bb17: {=bool:?}, priv2bb18: {=bool:?}, priv2bb19: {=bool:?}, priv2bb20: {=bool:?}, priv2bb21: {=bool:?}, priv2bb22: {=bool:?}, priv2bb23: {=bool:?}, priv2bb24: {=bool:?}, priv2bb25: {=bool:?}, priv2bb26: {=bool:?}, priv2bb27: {=bool:?}, priv2bb28: {=bool:?}, priv2bb29: {=bool:?}, priv2bb30: {=bool:?}, priv2bb31: {=bool:?} }}" , self . priv2bb0 () , self . priv2bb1 () , self . priv2bb2 () , self . priv2bb3 () , self . priv2bb4 () , self . priv2bb5 () , self . priv2bb6 () , self . priv2bb7 () , self . priv2bb8 () , self . priv2bb9 () , self . priv2bb10 () , self . priv2bb11 () , self . priv2bb12 () , self . priv2bb13 () , self . priv2bb14 () , self . priv2bb15 () , self . priv2bb16 () , self . priv2bb17 () , self . priv2bb18 () , self . priv2bb19 () , self . priv2bb20 () , self . priv2bb21 () , self . priv2bb22 () , self . priv2bb23 () , self . priv2bb24 () , self . priv2bb25 () , self . priv2bb26 () , self . priv2bb27 () , self . priv2bb28 () , self . priv2bb29 () , self . priv2bb30 () , self . priv2bb31 ())
+            defmt::write!(
+                f,
+                "Priv2bbr1 {{ priv2bb0: {=bool:?}, priv2bb1: {=bool:?}, priv2bb2: {=bool:?}, priv2bb3: {=bool:?}, priv2bb4: {=bool:?}, priv2bb5: {=bool:?}, priv2bb6: {=bool:?}, priv2bb7: {=bool:?}, priv2bb8: {=bool:?}, priv2bb9: {=bool:?}, priv2bb10: {=bool:?}, priv2bb11: {=bool:?}, priv2bb12: {=bool:?}, priv2bb13: {=bool:?}, priv2bb14: {=bool:?}, priv2bb15: {=bool:?}, priv2bb16: {=bool:?}, priv2bb17: {=bool:?}, priv2bb18: {=bool:?}, priv2bb19: {=bool:?}, priv2bb20: {=bool:?}, priv2bb21: {=bool:?}, priv2bb22: {=bool:?}, priv2bb23: {=bool:?}, priv2bb24: {=bool:?}, priv2bb25: {=bool:?}, priv2bb26: {=bool:?}, priv2bb27: {=bool:?}, priv2bb28: {=bool:?}, priv2bb29: {=bool:?}, priv2bb30: {=bool:?}, priv2bb31: {=bool:?} }}",
+                self.priv2bb0(),
+                self.priv2bb1(),
+                self.priv2bb2(),
+                self.priv2bb3(),
+                self.priv2bb4(),
+                self.priv2bb5(),
+                self.priv2bb6(),
+                self.priv2bb7(),
+                self.priv2bb8(),
+                self.priv2bb9(),
+                self.priv2bb10(),
+                self.priv2bb11(),
+                self.priv2bb12(),
+                self.priv2bb13(),
+                self.priv2bb14(),
+                self.priv2bb15(),
+                self.priv2bb16(),
+                self.priv2bb17(),
+                self.priv2bb18(),
+                self.priv2bb19(),
+                self.priv2bb20(),
+                self.priv2bb21(),
+                self.priv2bb22(),
+                self.priv2bb23(),
+                self.priv2bb24(),
+                self.priv2bb25(),
+                self.priv2bb26(),
+                self.priv2bb27(),
+                self.priv2bb28(),
+                self.priv2bb29(),
+                self.priv2bb30(),
+                self.priv2bb31()
+            )
         }
     }
     #[doc = "FLASH privilege block based bank 2 register 2"]
@@ -4193,7 +4445,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv2bbr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Priv2bbr2 {{ priv2bb0: {=bool:?}, priv2bb1: {=bool:?}, priv2bb2: {=bool:?}, priv2bb3: {=bool:?}, priv2bb4: {=bool:?}, priv2bb5: {=bool:?}, priv2bb6: {=bool:?}, priv2bb7: {=bool:?}, priv2bb8: {=bool:?}, priv2bb9: {=bool:?}, priv2bb10: {=bool:?}, priv2bb11: {=bool:?}, priv2bb12: {=bool:?}, priv2bb13: {=bool:?}, priv2bb14: {=bool:?}, priv2bb15: {=bool:?}, priv2bb16: {=bool:?}, priv2bb17: {=bool:?}, priv2bb18: {=bool:?}, priv2bb19: {=bool:?}, priv2bb20: {=bool:?}, priv2bb21: {=bool:?}, priv2bb22: {=bool:?}, priv2bb23: {=bool:?}, priv2bb24: {=bool:?}, priv2bb25: {=bool:?}, priv2bb26: {=bool:?}, priv2bb27: {=bool:?}, priv2bb28: {=bool:?}, priv2bb29: {=bool:?}, priv2bb30: {=bool:?}, priv2bb31: {=bool:?} }}" , self . priv2bb0 () , self . priv2bb1 () , self . priv2bb2 () , self . priv2bb3 () , self . priv2bb4 () , self . priv2bb5 () , self . priv2bb6 () , self . priv2bb7 () , self . priv2bb8 () , self . priv2bb9 () , self . priv2bb10 () , self . priv2bb11 () , self . priv2bb12 () , self . priv2bb13 () , self . priv2bb14 () , self . priv2bb15 () , self . priv2bb16 () , self . priv2bb17 () , self . priv2bb18 () , self . priv2bb19 () , self . priv2bb20 () , self . priv2bb21 () , self . priv2bb22 () , self . priv2bb23 () , self . priv2bb24 () , self . priv2bb25 () , self . priv2bb26 () , self . priv2bb27 () , self . priv2bb28 () , self . priv2bb29 () , self . priv2bb30 () , self . priv2bb31 ())
+            defmt::write!(
+                f,
+                "Priv2bbr2 {{ priv2bb0: {=bool:?}, priv2bb1: {=bool:?}, priv2bb2: {=bool:?}, priv2bb3: {=bool:?}, priv2bb4: {=bool:?}, priv2bb5: {=bool:?}, priv2bb6: {=bool:?}, priv2bb7: {=bool:?}, priv2bb8: {=bool:?}, priv2bb9: {=bool:?}, priv2bb10: {=bool:?}, priv2bb11: {=bool:?}, priv2bb12: {=bool:?}, priv2bb13: {=bool:?}, priv2bb14: {=bool:?}, priv2bb15: {=bool:?}, priv2bb16: {=bool:?}, priv2bb17: {=bool:?}, priv2bb18: {=bool:?}, priv2bb19: {=bool:?}, priv2bb20: {=bool:?}, priv2bb21: {=bool:?}, priv2bb22: {=bool:?}, priv2bb23: {=bool:?}, priv2bb24: {=bool:?}, priv2bb25: {=bool:?}, priv2bb26: {=bool:?}, priv2bb27: {=bool:?}, priv2bb28: {=bool:?}, priv2bb29: {=bool:?}, priv2bb30: {=bool:?}, priv2bb31: {=bool:?} }}",
+                self.priv2bb0(),
+                self.priv2bb1(),
+                self.priv2bb2(),
+                self.priv2bb3(),
+                self.priv2bb4(),
+                self.priv2bb5(),
+                self.priv2bb6(),
+                self.priv2bb7(),
+                self.priv2bb8(),
+                self.priv2bb9(),
+                self.priv2bb10(),
+                self.priv2bb11(),
+                self.priv2bb12(),
+                self.priv2bb13(),
+                self.priv2bb14(),
+                self.priv2bb15(),
+                self.priv2bb16(),
+                self.priv2bb17(),
+                self.priv2bb18(),
+                self.priv2bb19(),
+                self.priv2bb20(),
+                self.priv2bb21(),
+                self.priv2bb22(),
+                self.priv2bb23(),
+                self.priv2bb24(),
+                self.priv2bb25(),
+                self.priv2bb26(),
+                self.priv2bb27(),
+                self.priv2bb28(),
+                self.priv2bb29(),
+                self.priv2bb30(),
+                self.priv2bb31()
+            )
         }
     }
     #[doc = "FLASH privilege block based bank 2 register 3"]
@@ -4633,7 +4920,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv2bbr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Priv2bbr3 {{ priv2bb0: {=bool:?}, priv2bb1: {=bool:?}, priv2bb2: {=bool:?}, priv2bb3: {=bool:?}, priv2bb4: {=bool:?}, priv2bb5: {=bool:?}, priv2bb6: {=bool:?}, priv2bb7: {=bool:?}, priv2bb8: {=bool:?}, priv2bb9: {=bool:?}, priv2bb10: {=bool:?}, priv2bb11: {=bool:?}, priv2bb12: {=bool:?}, priv2bb13: {=bool:?}, priv2bb14: {=bool:?}, priv2bb15: {=bool:?}, priv2bb16: {=bool:?}, priv2bb17: {=bool:?}, priv2bb18: {=bool:?}, priv2bb19: {=bool:?}, priv2bb20: {=bool:?}, priv2bb21: {=bool:?}, priv2bb22: {=bool:?}, priv2bb23: {=bool:?}, priv2bb24: {=bool:?}, priv2bb25: {=bool:?}, priv2bb26: {=bool:?}, priv2bb27: {=bool:?}, priv2bb28: {=bool:?}, priv2bb29: {=bool:?}, priv2bb30: {=bool:?}, priv2bb31: {=bool:?} }}" , self . priv2bb0 () , self . priv2bb1 () , self . priv2bb2 () , self . priv2bb3 () , self . priv2bb4 () , self . priv2bb5 () , self . priv2bb6 () , self . priv2bb7 () , self . priv2bb8 () , self . priv2bb9 () , self . priv2bb10 () , self . priv2bb11 () , self . priv2bb12 () , self . priv2bb13 () , self . priv2bb14 () , self . priv2bb15 () , self . priv2bb16 () , self . priv2bb17 () , self . priv2bb18 () , self . priv2bb19 () , self . priv2bb20 () , self . priv2bb21 () , self . priv2bb22 () , self . priv2bb23 () , self . priv2bb24 () , self . priv2bb25 () , self . priv2bb26 () , self . priv2bb27 () , self . priv2bb28 () , self . priv2bb29 () , self . priv2bb30 () , self . priv2bb31 ())
+            defmt::write!(
+                f,
+                "Priv2bbr3 {{ priv2bb0: {=bool:?}, priv2bb1: {=bool:?}, priv2bb2: {=bool:?}, priv2bb3: {=bool:?}, priv2bb4: {=bool:?}, priv2bb5: {=bool:?}, priv2bb6: {=bool:?}, priv2bb7: {=bool:?}, priv2bb8: {=bool:?}, priv2bb9: {=bool:?}, priv2bb10: {=bool:?}, priv2bb11: {=bool:?}, priv2bb12: {=bool:?}, priv2bb13: {=bool:?}, priv2bb14: {=bool:?}, priv2bb15: {=bool:?}, priv2bb16: {=bool:?}, priv2bb17: {=bool:?}, priv2bb18: {=bool:?}, priv2bb19: {=bool:?}, priv2bb20: {=bool:?}, priv2bb21: {=bool:?}, priv2bb22: {=bool:?}, priv2bb23: {=bool:?}, priv2bb24: {=bool:?}, priv2bb25: {=bool:?}, priv2bb26: {=bool:?}, priv2bb27: {=bool:?}, priv2bb28: {=bool:?}, priv2bb29: {=bool:?}, priv2bb30: {=bool:?}, priv2bb31: {=bool:?} }}",
+                self.priv2bb0(),
+                self.priv2bb1(),
+                self.priv2bb2(),
+                self.priv2bb3(),
+                self.priv2bb4(),
+                self.priv2bb5(),
+                self.priv2bb6(),
+                self.priv2bb7(),
+                self.priv2bb8(),
+                self.priv2bb9(),
+                self.priv2bb10(),
+                self.priv2bb11(),
+                self.priv2bb12(),
+                self.priv2bb13(),
+                self.priv2bb14(),
+                self.priv2bb15(),
+                self.priv2bb16(),
+                self.priv2bb17(),
+                self.priv2bb18(),
+                self.priv2bb19(),
+                self.priv2bb20(),
+                self.priv2bb21(),
+                self.priv2bb22(),
+                self.priv2bb23(),
+                self.priv2bb24(),
+                self.priv2bb25(),
+                self.priv2bb26(),
+                self.priv2bb27(),
+                self.priv2bb28(),
+                self.priv2bb29(),
+                self.priv2bb30(),
+                self.priv2bb31()
+            )
         }
     }
     #[doc = "FLASH privilege block based bank 2 register 4"]
@@ -5073,7 +5395,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv2bbr4 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Priv2bbr4 {{ priv2bb0: {=bool:?}, priv2bb1: {=bool:?}, priv2bb2: {=bool:?}, priv2bb3: {=bool:?}, priv2bb4: {=bool:?}, priv2bb5: {=bool:?}, priv2bb6: {=bool:?}, priv2bb7: {=bool:?}, priv2bb8: {=bool:?}, priv2bb9: {=bool:?}, priv2bb10: {=bool:?}, priv2bb11: {=bool:?}, priv2bb12: {=bool:?}, priv2bb13: {=bool:?}, priv2bb14: {=bool:?}, priv2bb15: {=bool:?}, priv2bb16: {=bool:?}, priv2bb17: {=bool:?}, priv2bb18: {=bool:?}, priv2bb19: {=bool:?}, priv2bb20: {=bool:?}, priv2bb21: {=bool:?}, priv2bb22: {=bool:?}, priv2bb23: {=bool:?}, priv2bb24: {=bool:?}, priv2bb25: {=bool:?}, priv2bb26: {=bool:?}, priv2bb27: {=bool:?}, priv2bb28: {=bool:?}, priv2bb29: {=bool:?}, priv2bb30: {=bool:?}, priv2bb31: {=bool:?} }}" , self . priv2bb0 () , self . priv2bb1 () , self . priv2bb2 () , self . priv2bb3 () , self . priv2bb4 () , self . priv2bb5 () , self . priv2bb6 () , self . priv2bb7 () , self . priv2bb8 () , self . priv2bb9 () , self . priv2bb10 () , self . priv2bb11 () , self . priv2bb12 () , self . priv2bb13 () , self . priv2bb14 () , self . priv2bb15 () , self . priv2bb16 () , self . priv2bb17 () , self . priv2bb18 () , self . priv2bb19 () , self . priv2bb20 () , self . priv2bb21 () , self . priv2bb22 () , self . priv2bb23 () , self . priv2bb24 () , self . priv2bb25 () , self . priv2bb26 () , self . priv2bb27 () , self . priv2bb28 () , self . priv2bb29 () , self . priv2bb30 () , self . priv2bb31 ())
+            defmt::write!(
+                f,
+                "Priv2bbr4 {{ priv2bb0: {=bool:?}, priv2bb1: {=bool:?}, priv2bb2: {=bool:?}, priv2bb3: {=bool:?}, priv2bb4: {=bool:?}, priv2bb5: {=bool:?}, priv2bb6: {=bool:?}, priv2bb7: {=bool:?}, priv2bb8: {=bool:?}, priv2bb9: {=bool:?}, priv2bb10: {=bool:?}, priv2bb11: {=bool:?}, priv2bb12: {=bool:?}, priv2bb13: {=bool:?}, priv2bb14: {=bool:?}, priv2bb15: {=bool:?}, priv2bb16: {=bool:?}, priv2bb17: {=bool:?}, priv2bb18: {=bool:?}, priv2bb19: {=bool:?}, priv2bb20: {=bool:?}, priv2bb21: {=bool:?}, priv2bb22: {=bool:?}, priv2bb23: {=bool:?}, priv2bb24: {=bool:?}, priv2bb25: {=bool:?}, priv2bb26: {=bool:?}, priv2bb27: {=bool:?}, priv2bb28: {=bool:?}, priv2bb29: {=bool:?}, priv2bb30: {=bool:?}, priv2bb31: {=bool:?} }}",
+                self.priv2bb0(),
+                self.priv2bb1(),
+                self.priv2bb2(),
+                self.priv2bb3(),
+                self.priv2bb4(),
+                self.priv2bb5(),
+                self.priv2bb6(),
+                self.priv2bb7(),
+                self.priv2bb8(),
+                self.priv2bb9(),
+                self.priv2bb10(),
+                self.priv2bb11(),
+                self.priv2bb12(),
+                self.priv2bb13(),
+                self.priv2bb14(),
+                self.priv2bb15(),
+                self.priv2bb16(),
+                self.priv2bb17(),
+                self.priv2bb18(),
+                self.priv2bb19(),
+                self.priv2bb20(),
+                self.priv2bb21(),
+                self.priv2bb22(),
+                self.priv2bb23(),
+                self.priv2bb24(),
+                self.priv2bb25(),
+                self.priv2bb26(),
+                self.priv2bb27(),
+                self.priv2bb28(),
+                self.priv2bb29(),
+                self.priv2bb30(),
+                self.priv2bb31()
+            )
         }
     }
     #[doc = "FLASH privilege configuration register"]
@@ -5568,7 +5925,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec1bbr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sec1bbr1 {{ sec1bb0: {=bool:?}, sec1bb1: {=bool:?}, sec1bb2: {=bool:?}, sec1bb3: {=bool:?}, sec1bb4: {=bool:?}, sec1bb5: {=bool:?}, sec1bb6: {=bool:?}, sec1bb7: {=bool:?}, sec1bb8: {=bool:?}, sec1bb9: {=bool:?}, sec1bb10: {=bool:?}, sec1bb11: {=bool:?}, sec1bb12: {=bool:?}, sec1bb13: {=bool:?}, sec1bb14: {=bool:?}, sec1bb15: {=bool:?}, sec1bb16: {=bool:?}, sec1bb17: {=bool:?}, sec1bb18: {=bool:?}, sec1bb19: {=bool:?}, sec1bb20: {=bool:?}, sec1bb21: {=bool:?}, sec1bb22: {=bool:?}, sec1bb23: {=bool:?}, sec1bb24: {=bool:?}, sec1bb25: {=bool:?}, sec1bb26: {=bool:?}, sec1bb27: {=bool:?}, sec1bb28: {=bool:?}, sec1bb29: {=bool:?}, sec1bb30: {=bool:?}, sec1bb31: {=bool:?} }}" , self . sec1bb0 () , self . sec1bb1 () , self . sec1bb2 () , self . sec1bb3 () , self . sec1bb4 () , self . sec1bb5 () , self . sec1bb6 () , self . sec1bb7 () , self . sec1bb8 () , self . sec1bb9 () , self . sec1bb10 () , self . sec1bb11 () , self . sec1bb12 () , self . sec1bb13 () , self . sec1bb14 () , self . sec1bb15 () , self . sec1bb16 () , self . sec1bb17 () , self . sec1bb18 () , self . sec1bb19 () , self . sec1bb20 () , self . sec1bb21 () , self . sec1bb22 () , self . sec1bb23 () , self . sec1bb24 () , self . sec1bb25 () , self . sec1bb26 () , self . sec1bb27 () , self . sec1bb28 () , self . sec1bb29 () , self . sec1bb30 () , self . sec1bb31 ())
+            defmt::write!(
+                f,
+                "Sec1bbr1 {{ sec1bb0: {=bool:?}, sec1bb1: {=bool:?}, sec1bb2: {=bool:?}, sec1bb3: {=bool:?}, sec1bb4: {=bool:?}, sec1bb5: {=bool:?}, sec1bb6: {=bool:?}, sec1bb7: {=bool:?}, sec1bb8: {=bool:?}, sec1bb9: {=bool:?}, sec1bb10: {=bool:?}, sec1bb11: {=bool:?}, sec1bb12: {=bool:?}, sec1bb13: {=bool:?}, sec1bb14: {=bool:?}, sec1bb15: {=bool:?}, sec1bb16: {=bool:?}, sec1bb17: {=bool:?}, sec1bb18: {=bool:?}, sec1bb19: {=bool:?}, sec1bb20: {=bool:?}, sec1bb21: {=bool:?}, sec1bb22: {=bool:?}, sec1bb23: {=bool:?}, sec1bb24: {=bool:?}, sec1bb25: {=bool:?}, sec1bb26: {=bool:?}, sec1bb27: {=bool:?}, sec1bb28: {=bool:?}, sec1bb29: {=bool:?}, sec1bb30: {=bool:?}, sec1bb31: {=bool:?} }}",
+                self.sec1bb0(),
+                self.sec1bb1(),
+                self.sec1bb2(),
+                self.sec1bb3(),
+                self.sec1bb4(),
+                self.sec1bb5(),
+                self.sec1bb6(),
+                self.sec1bb7(),
+                self.sec1bb8(),
+                self.sec1bb9(),
+                self.sec1bb10(),
+                self.sec1bb11(),
+                self.sec1bb12(),
+                self.sec1bb13(),
+                self.sec1bb14(),
+                self.sec1bb15(),
+                self.sec1bb16(),
+                self.sec1bb17(),
+                self.sec1bb18(),
+                self.sec1bb19(),
+                self.sec1bb20(),
+                self.sec1bb21(),
+                self.sec1bb22(),
+                self.sec1bb23(),
+                self.sec1bb24(),
+                self.sec1bb25(),
+                self.sec1bb26(),
+                self.sec1bb27(),
+                self.sec1bb28(),
+                self.sec1bb29(),
+                self.sec1bb30(),
+                self.sec1bb31()
+            )
         }
     }
     #[doc = "FLASH secure block based bank 1 register 2"]
@@ -6008,7 +6400,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec1bbr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sec1bbr2 {{ sec1bb0: {=bool:?}, sec1bb1: {=bool:?}, sec1bb2: {=bool:?}, sec1bb3: {=bool:?}, sec1bb4: {=bool:?}, sec1bb5: {=bool:?}, sec1bb6: {=bool:?}, sec1bb7: {=bool:?}, sec1bb8: {=bool:?}, sec1bb9: {=bool:?}, sec1bb10: {=bool:?}, sec1bb11: {=bool:?}, sec1bb12: {=bool:?}, sec1bb13: {=bool:?}, sec1bb14: {=bool:?}, sec1bb15: {=bool:?}, sec1bb16: {=bool:?}, sec1bb17: {=bool:?}, sec1bb18: {=bool:?}, sec1bb19: {=bool:?}, sec1bb20: {=bool:?}, sec1bb21: {=bool:?}, sec1bb22: {=bool:?}, sec1bb23: {=bool:?}, sec1bb24: {=bool:?}, sec1bb25: {=bool:?}, sec1bb26: {=bool:?}, sec1bb27: {=bool:?}, sec1bb28: {=bool:?}, sec1bb29: {=bool:?}, sec1bb30: {=bool:?}, sec1bb31: {=bool:?} }}" , self . sec1bb0 () , self . sec1bb1 () , self . sec1bb2 () , self . sec1bb3 () , self . sec1bb4 () , self . sec1bb5 () , self . sec1bb6 () , self . sec1bb7 () , self . sec1bb8 () , self . sec1bb9 () , self . sec1bb10 () , self . sec1bb11 () , self . sec1bb12 () , self . sec1bb13 () , self . sec1bb14 () , self . sec1bb15 () , self . sec1bb16 () , self . sec1bb17 () , self . sec1bb18 () , self . sec1bb19 () , self . sec1bb20 () , self . sec1bb21 () , self . sec1bb22 () , self . sec1bb23 () , self . sec1bb24 () , self . sec1bb25 () , self . sec1bb26 () , self . sec1bb27 () , self . sec1bb28 () , self . sec1bb29 () , self . sec1bb30 () , self . sec1bb31 ())
+            defmt::write!(
+                f,
+                "Sec1bbr2 {{ sec1bb0: {=bool:?}, sec1bb1: {=bool:?}, sec1bb2: {=bool:?}, sec1bb3: {=bool:?}, sec1bb4: {=bool:?}, sec1bb5: {=bool:?}, sec1bb6: {=bool:?}, sec1bb7: {=bool:?}, sec1bb8: {=bool:?}, sec1bb9: {=bool:?}, sec1bb10: {=bool:?}, sec1bb11: {=bool:?}, sec1bb12: {=bool:?}, sec1bb13: {=bool:?}, sec1bb14: {=bool:?}, sec1bb15: {=bool:?}, sec1bb16: {=bool:?}, sec1bb17: {=bool:?}, sec1bb18: {=bool:?}, sec1bb19: {=bool:?}, sec1bb20: {=bool:?}, sec1bb21: {=bool:?}, sec1bb22: {=bool:?}, sec1bb23: {=bool:?}, sec1bb24: {=bool:?}, sec1bb25: {=bool:?}, sec1bb26: {=bool:?}, sec1bb27: {=bool:?}, sec1bb28: {=bool:?}, sec1bb29: {=bool:?}, sec1bb30: {=bool:?}, sec1bb31: {=bool:?} }}",
+                self.sec1bb0(),
+                self.sec1bb1(),
+                self.sec1bb2(),
+                self.sec1bb3(),
+                self.sec1bb4(),
+                self.sec1bb5(),
+                self.sec1bb6(),
+                self.sec1bb7(),
+                self.sec1bb8(),
+                self.sec1bb9(),
+                self.sec1bb10(),
+                self.sec1bb11(),
+                self.sec1bb12(),
+                self.sec1bb13(),
+                self.sec1bb14(),
+                self.sec1bb15(),
+                self.sec1bb16(),
+                self.sec1bb17(),
+                self.sec1bb18(),
+                self.sec1bb19(),
+                self.sec1bb20(),
+                self.sec1bb21(),
+                self.sec1bb22(),
+                self.sec1bb23(),
+                self.sec1bb24(),
+                self.sec1bb25(),
+                self.sec1bb26(),
+                self.sec1bb27(),
+                self.sec1bb28(),
+                self.sec1bb29(),
+                self.sec1bb30(),
+                self.sec1bb31()
+            )
         }
     }
     #[doc = "FLASH secure block based bank 1 register 3"]
@@ -6448,7 +6875,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec1bbr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sec1bbr3 {{ sec1bb0: {=bool:?}, sec1bb1: {=bool:?}, sec1bb2: {=bool:?}, sec1bb3: {=bool:?}, sec1bb4: {=bool:?}, sec1bb5: {=bool:?}, sec1bb6: {=bool:?}, sec1bb7: {=bool:?}, sec1bb8: {=bool:?}, sec1bb9: {=bool:?}, sec1bb10: {=bool:?}, sec1bb11: {=bool:?}, sec1bb12: {=bool:?}, sec1bb13: {=bool:?}, sec1bb14: {=bool:?}, sec1bb15: {=bool:?}, sec1bb16: {=bool:?}, sec1bb17: {=bool:?}, sec1bb18: {=bool:?}, sec1bb19: {=bool:?}, sec1bb20: {=bool:?}, sec1bb21: {=bool:?}, sec1bb22: {=bool:?}, sec1bb23: {=bool:?}, sec1bb24: {=bool:?}, sec1bb25: {=bool:?}, sec1bb26: {=bool:?}, sec1bb27: {=bool:?}, sec1bb28: {=bool:?}, sec1bb29: {=bool:?}, sec1bb30: {=bool:?}, sec1bb31: {=bool:?} }}" , self . sec1bb0 () , self . sec1bb1 () , self . sec1bb2 () , self . sec1bb3 () , self . sec1bb4 () , self . sec1bb5 () , self . sec1bb6 () , self . sec1bb7 () , self . sec1bb8 () , self . sec1bb9 () , self . sec1bb10 () , self . sec1bb11 () , self . sec1bb12 () , self . sec1bb13 () , self . sec1bb14 () , self . sec1bb15 () , self . sec1bb16 () , self . sec1bb17 () , self . sec1bb18 () , self . sec1bb19 () , self . sec1bb20 () , self . sec1bb21 () , self . sec1bb22 () , self . sec1bb23 () , self . sec1bb24 () , self . sec1bb25 () , self . sec1bb26 () , self . sec1bb27 () , self . sec1bb28 () , self . sec1bb29 () , self . sec1bb30 () , self . sec1bb31 ())
+            defmt::write!(
+                f,
+                "Sec1bbr3 {{ sec1bb0: {=bool:?}, sec1bb1: {=bool:?}, sec1bb2: {=bool:?}, sec1bb3: {=bool:?}, sec1bb4: {=bool:?}, sec1bb5: {=bool:?}, sec1bb6: {=bool:?}, sec1bb7: {=bool:?}, sec1bb8: {=bool:?}, sec1bb9: {=bool:?}, sec1bb10: {=bool:?}, sec1bb11: {=bool:?}, sec1bb12: {=bool:?}, sec1bb13: {=bool:?}, sec1bb14: {=bool:?}, sec1bb15: {=bool:?}, sec1bb16: {=bool:?}, sec1bb17: {=bool:?}, sec1bb18: {=bool:?}, sec1bb19: {=bool:?}, sec1bb20: {=bool:?}, sec1bb21: {=bool:?}, sec1bb22: {=bool:?}, sec1bb23: {=bool:?}, sec1bb24: {=bool:?}, sec1bb25: {=bool:?}, sec1bb26: {=bool:?}, sec1bb27: {=bool:?}, sec1bb28: {=bool:?}, sec1bb29: {=bool:?}, sec1bb30: {=bool:?}, sec1bb31: {=bool:?} }}",
+                self.sec1bb0(),
+                self.sec1bb1(),
+                self.sec1bb2(),
+                self.sec1bb3(),
+                self.sec1bb4(),
+                self.sec1bb5(),
+                self.sec1bb6(),
+                self.sec1bb7(),
+                self.sec1bb8(),
+                self.sec1bb9(),
+                self.sec1bb10(),
+                self.sec1bb11(),
+                self.sec1bb12(),
+                self.sec1bb13(),
+                self.sec1bb14(),
+                self.sec1bb15(),
+                self.sec1bb16(),
+                self.sec1bb17(),
+                self.sec1bb18(),
+                self.sec1bb19(),
+                self.sec1bb20(),
+                self.sec1bb21(),
+                self.sec1bb22(),
+                self.sec1bb23(),
+                self.sec1bb24(),
+                self.sec1bb25(),
+                self.sec1bb26(),
+                self.sec1bb27(),
+                self.sec1bb28(),
+                self.sec1bb29(),
+                self.sec1bb30(),
+                self.sec1bb31()
+            )
         }
     }
     #[doc = "FLASH secure block based bank 1 register 4"]
@@ -6888,7 +7350,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec1bbr4 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sec1bbr4 {{ sec1bb0: {=bool:?}, sec1bb1: {=bool:?}, sec1bb2: {=bool:?}, sec1bb3: {=bool:?}, sec1bb4: {=bool:?}, sec1bb5: {=bool:?}, sec1bb6: {=bool:?}, sec1bb7: {=bool:?}, sec1bb8: {=bool:?}, sec1bb9: {=bool:?}, sec1bb10: {=bool:?}, sec1bb11: {=bool:?}, sec1bb12: {=bool:?}, sec1bb13: {=bool:?}, sec1bb14: {=bool:?}, sec1bb15: {=bool:?}, sec1bb16: {=bool:?}, sec1bb17: {=bool:?}, sec1bb18: {=bool:?}, sec1bb19: {=bool:?}, sec1bb20: {=bool:?}, sec1bb21: {=bool:?}, sec1bb22: {=bool:?}, sec1bb23: {=bool:?}, sec1bb24: {=bool:?}, sec1bb25: {=bool:?}, sec1bb26: {=bool:?}, sec1bb27: {=bool:?}, sec1bb28: {=bool:?}, sec1bb29: {=bool:?}, sec1bb30: {=bool:?}, sec1bb31: {=bool:?} }}" , self . sec1bb0 () , self . sec1bb1 () , self . sec1bb2 () , self . sec1bb3 () , self . sec1bb4 () , self . sec1bb5 () , self . sec1bb6 () , self . sec1bb7 () , self . sec1bb8 () , self . sec1bb9 () , self . sec1bb10 () , self . sec1bb11 () , self . sec1bb12 () , self . sec1bb13 () , self . sec1bb14 () , self . sec1bb15 () , self . sec1bb16 () , self . sec1bb17 () , self . sec1bb18 () , self . sec1bb19 () , self . sec1bb20 () , self . sec1bb21 () , self . sec1bb22 () , self . sec1bb23 () , self . sec1bb24 () , self . sec1bb25 () , self . sec1bb26 () , self . sec1bb27 () , self . sec1bb28 () , self . sec1bb29 () , self . sec1bb30 () , self . sec1bb31 ())
+            defmt::write!(
+                f,
+                "Sec1bbr4 {{ sec1bb0: {=bool:?}, sec1bb1: {=bool:?}, sec1bb2: {=bool:?}, sec1bb3: {=bool:?}, sec1bb4: {=bool:?}, sec1bb5: {=bool:?}, sec1bb6: {=bool:?}, sec1bb7: {=bool:?}, sec1bb8: {=bool:?}, sec1bb9: {=bool:?}, sec1bb10: {=bool:?}, sec1bb11: {=bool:?}, sec1bb12: {=bool:?}, sec1bb13: {=bool:?}, sec1bb14: {=bool:?}, sec1bb15: {=bool:?}, sec1bb16: {=bool:?}, sec1bb17: {=bool:?}, sec1bb18: {=bool:?}, sec1bb19: {=bool:?}, sec1bb20: {=bool:?}, sec1bb21: {=bool:?}, sec1bb22: {=bool:?}, sec1bb23: {=bool:?}, sec1bb24: {=bool:?}, sec1bb25: {=bool:?}, sec1bb26: {=bool:?}, sec1bb27: {=bool:?}, sec1bb28: {=bool:?}, sec1bb29: {=bool:?}, sec1bb30: {=bool:?}, sec1bb31: {=bool:?} }}",
+                self.sec1bb0(),
+                self.sec1bb1(),
+                self.sec1bb2(),
+                self.sec1bb3(),
+                self.sec1bb4(),
+                self.sec1bb5(),
+                self.sec1bb6(),
+                self.sec1bb7(),
+                self.sec1bb8(),
+                self.sec1bb9(),
+                self.sec1bb10(),
+                self.sec1bb11(),
+                self.sec1bb12(),
+                self.sec1bb13(),
+                self.sec1bb14(),
+                self.sec1bb15(),
+                self.sec1bb16(),
+                self.sec1bb17(),
+                self.sec1bb18(),
+                self.sec1bb19(),
+                self.sec1bb20(),
+                self.sec1bb21(),
+                self.sec1bb22(),
+                self.sec1bb23(),
+                self.sec1bb24(),
+                self.sec1bb25(),
+                self.sec1bb26(),
+                self.sec1bb27(),
+                self.sec1bb28(),
+                self.sec1bb29(),
+                self.sec1bb30(),
+                self.sec1bb31()
+            )
         }
     }
     #[doc = "FLASH secure block based bank 2 register 1"]
@@ -7328,7 +7825,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec2bbr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sec2bbr1 {{ sec2bb0: {=bool:?}, sec2bb1: {=bool:?}, sec2bb2: {=bool:?}, sec2bb3: {=bool:?}, sec2bb4: {=bool:?}, sec2bb5: {=bool:?}, sec2bb6: {=bool:?}, sec2bb7: {=bool:?}, sec2bb8: {=bool:?}, sec2bb9: {=bool:?}, sec2bb10: {=bool:?}, sec2bb11: {=bool:?}, sec2bb12: {=bool:?}, sec2bb13: {=bool:?}, sec2bb14: {=bool:?}, sec2bb15: {=bool:?}, sec2bb16: {=bool:?}, sec2bb17: {=bool:?}, sec2bb18: {=bool:?}, sec2bb19: {=bool:?}, sec2bb20: {=bool:?}, sec2bb21: {=bool:?}, sec2bb22: {=bool:?}, sec2bb23: {=bool:?}, sec2bb24: {=bool:?}, sec2bb25: {=bool:?}, sec2bb26: {=bool:?}, sec2bb27: {=bool:?}, sec2bb28: {=bool:?}, sec2bb29: {=bool:?}, sec2bb30: {=bool:?}, sec2bb31: {=bool:?} }}" , self . sec2bb0 () , self . sec2bb1 () , self . sec2bb2 () , self . sec2bb3 () , self . sec2bb4 () , self . sec2bb5 () , self . sec2bb6 () , self . sec2bb7 () , self . sec2bb8 () , self . sec2bb9 () , self . sec2bb10 () , self . sec2bb11 () , self . sec2bb12 () , self . sec2bb13 () , self . sec2bb14 () , self . sec2bb15 () , self . sec2bb16 () , self . sec2bb17 () , self . sec2bb18 () , self . sec2bb19 () , self . sec2bb20 () , self . sec2bb21 () , self . sec2bb22 () , self . sec2bb23 () , self . sec2bb24 () , self . sec2bb25 () , self . sec2bb26 () , self . sec2bb27 () , self . sec2bb28 () , self . sec2bb29 () , self . sec2bb30 () , self . sec2bb31 ())
+            defmt::write!(
+                f,
+                "Sec2bbr1 {{ sec2bb0: {=bool:?}, sec2bb1: {=bool:?}, sec2bb2: {=bool:?}, sec2bb3: {=bool:?}, sec2bb4: {=bool:?}, sec2bb5: {=bool:?}, sec2bb6: {=bool:?}, sec2bb7: {=bool:?}, sec2bb8: {=bool:?}, sec2bb9: {=bool:?}, sec2bb10: {=bool:?}, sec2bb11: {=bool:?}, sec2bb12: {=bool:?}, sec2bb13: {=bool:?}, sec2bb14: {=bool:?}, sec2bb15: {=bool:?}, sec2bb16: {=bool:?}, sec2bb17: {=bool:?}, sec2bb18: {=bool:?}, sec2bb19: {=bool:?}, sec2bb20: {=bool:?}, sec2bb21: {=bool:?}, sec2bb22: {=bool:?}, sec2bb23: {=bool:?}, sec2bb24: {=bool:?}, sec2bb25: {=bool:?}, sec2bb26: {=bool:?}, sec2bb27: {=bool:?}, sec2bb28: {=bool:?}, sec2bb29: {=bool:?}, sec2bb30: {=bool:?}, sec2bb31: {=bool:?} }}",
+                self.sec2bb0(),
+                self.sec2bb1(),
+                self.sec2bb2(),
+                self.sec2bb3(),
+                self.sec2bb4(),
+                self.sec2bb5(),
+                self.sec2bb6(),
+                self.sec2bb7(),
+                self.sec2bb8(),
+                self.sec2bb9(),
+                self.sec2bb10(),
+                self.sec2bb11(),
+                self.sec2bb12(),
+                self.sec2bb13(),
+                self.sec2bb14(),
+                self.sec2bb15(),
+                self.sec2bb16(),
+                self.sec2bb17(),
+                self.sec2bb18(),
+                self.sec2bb19(),
+                self.sec2bb20(),
+                self.sec2bb21(),
+                self.sec2bb22(),
+                self.sec2bb23(),
+                self.sec2bb24(),
+                self.sec2bb25(),
+                self.sec2bb26(),
+                self.sec2bb27(),
+                self.sec2bb28(),
+                self.sec2bb29(),
+                self.sec2bb30(),
+                self.sec2bb31()
+            )
         }
     }
     #[doc = "FLASH secure block based bank 2 register 2"]
@@ -7768,7 +8300,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec2bbr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sec2bbr2 {{ sec2bb0: {=bool:?}, sec2bb1: {=bool:?}, sec2bb2: {=bool:?}, sec2bb3: {=bool:?}, sec2bb4: {=bool:?}, sec2bb5: {=bool:?}, sec2bb6: {=bool:?}, sec2bb7: {=bool:?}, sec2bb8: {=bool:?}, sec2bb9: {=bool:?}, sec2bb10: {=bool:?}, sec2bb11: {=bool:?}, sec2bb12: {=bool:?}, sec2bb13: {=bool:?}, sec2bb14: {=bool:?}, sec2bb15: {=bool:?}, sec2bb16: {=bool:?}, sec2bb17: {=bool:?}, sec2bb18: {=bool:?}, sec2bb19: {=bool:?}, sec2bb20: {=bool:?}, sec2bb21: {=bool:?}, sec2bb22: {=bool:?}, sec2bb23: {=bool:?}, sec2bb24: {=bool:?}, sec2bb25: {=bool:?}, sec2bb26: {=bool:?}, sec2bb27: {=bool:?}, sec2bb28: {=bool:?}, sec2bb29: {=bool:?}, sec2bb30: {=bool:?}, sec2bb31: {=bool:?} }}" , self . sec2bb0 () , self . sec2bb1 () , self . sec2bb2 () , self . sec2bb3 () , self . sec2bb4 () , self . sec2bb5 () , self . sec2bb6 () , self . sec2bb7 () , self . sec2bb8 () , self . sec2bb9 () , self . sec2bb10 () , self . sec2bb11 () , self . sec2bb12 () , self . sec2bb13 () , self . sec2bb14 () , self . sec2bb15 () , self . sec2bb16 () , self . sec2bb17 () , self . sec2bb18 () , self . sec2bb19 () , self . sec2bb20 () , self . sec2bb21 () , self . sec2bb22 () , self . sec2bb23 () , self . sec2bb24 () , self . sec2bb25 () , self . sec2bb26 () , self . sec2bb27 () , self . sec2bb28 () , self . sec2bb29 () , self . sec2bb30 () , self . sec2bb31 ())
+            defmt::write!(
+                f,
+                "Sec2bbr2 {{ sec2bb0: {=bool:?}, sec2bb1: {=bool:?}, sec2bb2: {=bool:?}, sec2bb3: {=bool:?}, sec2bb4: {=bool:?}, sec2bb5: {=bool:?}, sec2bb6: {=bool:?}, sec2bb7: {=bool:?}, sec2bb8: {=bool:?}, sec2bb9: {=bool:?}, sec2bb10: {=bool:?}, sec2bb11: {=bool:?}, sec2bb12: {=bool:?}, sec2bb13: {=bool:?}, sec2bb14: {=bool:?}, sec2bb15: {=bool:?}, sec2bb16: {=bool:?}, sec2bb17: {=bool:?}, sec2bb18: {=bool:?}, sec2bb19: {=bool:?}, sec2bb20: {=bool:?}, sec2bb21: {=bool:?}, sec2bb22: {=bool:?}, sec2bb23: {=bool:?}, sec2bb24: {=bool:?}, sec2bb25: {=bool:?}, sec2bb26: {=bool:?}, sec2bb27: {=bool:?}, sec2bb28: {=bool:?}, sec2bb29: {=bool:?}, sec2bb30: {=bool:?}, sec2bb31: {=bool:?} }}",
+                self.sec2bb0(),
+                self.sec2bb1(),
+                self.sec2bb2(),
+                self.sec2bb3(),
+                self.sec2bb4(),
+                self.sec2bb5(),
+                self.sec2bb6(),
+                self.sec2bb7(),
+                self.sec2bb8(),
+                self.sec2bb9(),
+                self.sec2bb10(),
+                self.sec2bb11(),
+                self.sec2bb12(),
+                self.sec2bb13(),
+                self.sec2bb14(),
+                self.sec2bb15(),
+                self.sec2bb16(),
+                self.sec2bb17(),
+                self.sec2bb18(),
+                self.sec2bb19(),
+                self.sec2bb20(),
+                self.sec2bb21(),
+                self.sec2bb22(),
+                self.sec2bb23(),
+                self.sec2bb24(),
+                self.sec2bb25(),
+                self.sec2bb26(),
+                self.sec2bb27(),
+                self.sec2bb28(),
+                self.sec2bb29(),
+                self.sec2bb30(),
+                self.sec2bb31()
+            )
         }
     }
     #[doc = "FLASH secure block based bank 2 register 3"]
@@ -8208,7 +8775,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec2bbr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sec2bbr3 {{ sec2bb0: {=bool:?}, sec2bb1: {=bool:?}, sec2bb2: {=bool:?}, sec2bb3: {=bool:?}, sec2bb4: {=bool:?}, sec2bb5: {=bool:?}, sec2bb6: {=bool:?}, sec2bb7: {=bool:?}, sec2bb8: {=bool:?}, sec2bb9: {=bool:?}, sec2bb10: {=bool:?}, sec2bb11: {=bool:?}, sec2bb12: {=bool:?}, sec2bb13: {=bool:?}, sec2bb14: {=bool:?}, sec2bb15: {=bool:?}, sec2bb16: {=bool:?}, sec2bb17: {=bool:?}, sec2bb18: {=bool:?}, sec2bb19: {=bool:?}, sec2bb20: {=bool:?}, sec2bb21: {=bool:?}, sec2bb22: {=bool:?}, sec2bb23: {=bool:?}, sec2bb24: {=bool:?}, sec2bb25: {=bool:?}, sec2bb26: {=bool:?}, sec2bb27: {=bool:?}, sec2bb28: {=bool:?}, sec2bb29: {=bool:?}, sec2bb30: {=bool:?}, sec2bb31: {=bool:?} }}" , self . sec2bb0 () , self . sec2bb1 () , self . sec2bb2 () , self . sec2bb3 () , self . sec2bb4 () , self . sec2bb5 () , self . sec2bb6 () , self . sec2bb7 () , self . sec2bb8 () , self . sec2bb9 () , self . sec2bb10 () , self . sec2bb11 () , self . sec2bb12 () , self . sec2bb13 () , self . sec2bb14 () , self . sec2bb15 () , self . sec2bb16 () , self . sec2bb17 () , self . sec2bb18 () , self . sec2bb19 () , self . sec2bb20 () , self . sec2bb21 () , self . sec2bb22 () , self . sec2bb23 () , self . sec2bb24 () , self . sec2bb25 () , self . sec2bb26 () , self . sec2bb27 () , self . sec2bb28 () , self . sec2bb29 () , self . sec2bb30 () , self . sec2bb31 ())
+            defmt::write!(
+                f,
+                "Sec2bbr3 {{ sec2bb0: {=bool:?}, sec2bb1: {=bool:?}, sec2bb2: {=bool:?}, sec2bb3: {=bool:?}, sec2bb4: {=bool:?}, sec2bb5: {=bool:?}, sec2bb6: {=bool:?}, sec2bb7: {=bool:?}, sec2bb8: {=bool:?}, sec2bb9: {=bool:?}, sec2bb10: {=bool:?}, sec2bb11: {=bool:?}, sec2bb12: {=bool:?}, sec2bb13: {=bool:?}, sec2bb14: {=bool:?}, sec2bb15: {=bool:?}, sec2bb16: {=bool:?}, sec2bb17: {=bool:?}, sec2bb18: {=bool:?}, sec2bb19: {=bool:?}, sec2bb20: {=bool:?}, sec2bb21: {=bool:?}, sec2bb22: {=bool:?}, sec2bb23: {=bool:?}, sec2bb24: {=bool:?}, sec2bb25: {=bool:?}, sec2bb26: {=bool:?}, sec2bb27: {=bool:?}, sec2bb28: {=bool:?}, sec2bb29: {=bool:?}, sec2bb30: {=bool:?}, sec2bb31: {=bool:?} }}",
+                self.sec2bb0(),
+                self.sec2bb1(),
+                self.sec2bb2(),
+                self.sec2bb3(),
+                self.sec2bb4(),
+                self.sec2bb5(),
+                self.sec2bb6(),
+                self.sec2bb7(),
+                self.sec2bb8(),
+                self.sec2bb9(),
+                self.sec2bb10(),
+                self.sec2bb11(),
+                self.sec2bb12(),
+                self.sec2bb13(),
+                self.sec2bb14(),
+                self.sec2bb15(),
+                self.sec2bb16(),
+                self.sec2bb17(),
+                self.sec2bb18(),
+                self.sec2bb19(),
+                self.sec2bb20(),
+                self.sec2bb21(),
+                self.sec2bb22(),
+                self.sec2bb23(),
+                self.sec2bb24(),
+                self.sec2bb25(),
+                self.sec2bb26(),
+                self.sec2bb27(),
+                self.sec2bb28(),
+                self.sec2bb29(),
+                self.sec2bb30(),
+                self.sec2bb31()
+            )
         }
     }
     #[doc = "FLASH secure block based bank 2 register 4"]
@@ -8648,7 +9250,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sec2bbr4 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sec2bbr4 {{ sec2bb0: {=bool:?}, sec2bb1: {=bool:?}, sec2bb2: {=bool:?}, sec2bb3: {=bool:?}, sec2bb4: {=bool:?}, sec2bb5: {=bool:?}, sec2bb6: {=bool:?}, sec2bb7: {=bool:?}, sec2bb8: {=bool:?}, sec2bb9: {=bool:?}, sec2bb10: {=bool:?}, sec2bb11: {=bool:?}, sec2bb12: {=bool:?}, sec2bb13: {=bool:?}, sec2bb14: {=bool:?}, sec2bb15: {=bool:?}, sec2bb16: {=bool:?}, sec2bb17: {=bool:?}, sec2bb18: {=bool:?}, sec2bb19: {=bool:?}, sec2bb20: {=bool:?}, sec2bb21: {=bool:?}, sec2bb22: {=bool:?}, sec2bb23: {=bool:?}, sec2bb24: {=bool:?}, sec2bb25: {=bool:?}, sec2bb26: {=bool:?}, sec2bb27: {=bool:?}, sec2bb28: {=bool:?}, sec2bb29: {=bool:?}, sec2bb30: {=bool:?}, sec2bb31: {=bool:?} }}" , self . sec2bb0 () , self . sec2bb1 () , self . sec2bb2 () , self . sec2bb3 () , self . sec2bb4 () , self . sec2bb5 () , self . sec2bb6 () , self . sec2bb7 () , self . sec2bb8 () , self . sec2bb9 () , self . sec2bb10 () , self . sec2bb11 () , self . sec2bb12 () , self . sec2bb13 () , self . sec2bb14 () , self . sec2bb15 () , self . sec2bb16 () , self . sec2bb17 () , self . sec2bb18 () , self . sec2bb19 () , self . sec2bb20 () , self . sec2bb21 () , self . sec2bb22 () , self . sec2bb23 () , self . sec2bb24 () , self . sec2bb25 () , self . sec2bb26 () , self . sec2bb27 () , self . sec2bb28 () , self . sec2bb29 () , self . sec2bb30 () , self . sec2bb31 ())
+            defmt::write!(
+                f,
+                "Sec2bbr4 {{ sec2bb0: {=bool:?}, sec2bb1: {=bool:?}, sec2bb2: {=bool:?}, sec2bb3: {=bool:?}, sec2bb4: {=bool:?}, sec2bb5: {=bool:?}, sec2bb6: {=bool:?}, sec2bb7: {=bool:?}, sec2bb8: {=bool:?}, sec2bb9: {=bool:?}, sec2bb10: {=bool:?}, sec2bb11: {=bool:?}, sec2bb12: {=bool:?}, sec2bb13: {=bool:?}, sec2bb14: {=bool:?}, sec2bb15: {=bool:?}, sec2bb16: {=bool:?}, sec2bb17: {=bool:?}, sec2bb18: {=bool:?}, sec2bb19: {=bool:?}, sec2bb20: {=bool:?}, sec2bb21: {=bool:?}, sec2bb22: {=bool:?}, sec2bb23: {=bool:?}, sec2bb24: {=bool:?}, sec2bb25: {=bool:?}, sec2bb26: {=bool:?}, sec2bb27: {=bool:?}, sec2bb28: {=bool:?}, sec2bb29: {=bool:?}, sec2bb30: {=bool:?}, sec2bb31: {=bool:?} }}",
+                self.sec2bb0(),
+                self.sec2bb1(),
+                self.sec2bb2(),
+                self.sec2bb3(),
+                self.sec2bb4(),
+                self.sec2bb5(),
+                self.sec2bb6(),
+                self.sec2bb7(),
+                self.sec2bb8(),
+                self.sec2bb9(),
+                self.sec2bb10(),
+                self.sec2bb11(),
+                self.sec2bb12(),
+                self.sec2bb13(),
+                self.sec2bb14(),
+                self.sec2bb15(),
+                self.sec2bb16(),
+                self.sec2bb17(),
+                self.sec2bb18(),
+                self.sec2bb19(),
+                self.sec2bb20(),
+                self.sec2bb21(),
+                self.sec2bb22(),
+                self.sec2bb23(),
+                self.sec2bb24(),
+                self.sec2bb25(),
+                self.sec2bb26(),
+                self.sec2bb27(),
+                self.sec2bb28(),
+                self.sec2bb29(),
+                self.sec2bb30(),
+                self.sec2bb31()
+            )
         }
     }
     #[doc = "FLASH secure boot address 0 register"]
@@ -8906,7 +9543,23 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccr {{ pg: {=bool:?}, per: {=bool:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {=bool:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, rderrie: {=bool:?}, inv: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer1 () , self . pnb () , self . bker () , self . bwr () , self . mer2 () , self . strt () , self . eopie () , self . errie () , self . rderrie () , self . inv () , self . lock ())
+            defmt::write!(
+                f,
+                "Seccr {{ pg: {=bool:?}, per: {=bool:?}, mer1: {=bool:?}, pnb: {=u8:?}, bker: {=bool:?}, bwr: {=bool:?}, mer2: {=bool:?}, strt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, rderrie: {=bool:?}, inv: {=bool:?}, lock: {=bool:?} }}",
+                self.pg(),
+                self.per(),
+                self.mer1(),
+                self.pnb(),
+                self.bker(),
+                self.bwr(),
+                self.mer2(),
+                self.strt(),
+                self.eopie(),
+                self.errie(),
+                self.rderrie(),
+                self.inv(),
+                self.lock()
+            )
         }
     }
     #[doc = "FLASH secure HDP control register"]
@@ -9102,7 +9755,19 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or nSWBOOT0 st
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Secsr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?} }}" , self . eop () , self . operr () , self . progerr () , self . wrperr () , self . pgaerr () , self . sizerr () , self . pgserr () , self . bsy () , self . wdw ())
+            defmt::write!(
+                f,
+                "Secsr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, bsy: {=bool:?}, wdw: {=bool:?} }}",
+                self.eop(),
+                self.operr(),
+                self.progerr(),
+                self.wrperr(),
+                self.pgaerr(),
+                self.sizerr(),
+                self.pgserr(),
+                self.bsy(),
+                self.wdw()
+            )
         }
     }
     #[doc = "FLASH secure watermark1 register 1"]

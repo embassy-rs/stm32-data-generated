@@ -296,7 +296,23 @@ value."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr {{ cksel: {:?}, ckpol: {:?}, ckflt: {:?}, trgflt: {:?}, presc: {:?}, trigsel: {=u8:?}, trigen: {:?}, timout: {=bool:?}, wave: {=bool:?}, wavpol: {:?}, preload: {=bool:?}, countmode: {:?}, enc: {=bool:?} }}" , self . cksel () , self . ckpol () , self . ckflt () , self . trgflt () , self . presc () , self . trigsel () , self . trigen () , self . timout () , self . wave () , self . wavpol () , self . preload () , self . countmode () , self . enc ())
+            defmt::write!(
+                f,
+                "Cfgr {{ cksel: {:?}, ckpol: {:?}, ckflt: {:?}, trgflt: {:?}, presc: {:?}, trigsel: {=u8:?}, trigen: {:?}, timout: {=bool:?}, wave: {=bool:?}, wavpol: {:?}, preload: {=bool:?}, countmode: {:?}, enc: {=bool:?} }}",
+                self.cksel(),
+                self.ckpol(),
+                self.ckflt(),
+                self.trgflt(),
+                self.presc(),
+                self.trigsel(),
+                self.trigen(),
+                self.timout(),
+                self.wave(),
+                self.wavpol(),
+                self.preload(),
+                self.countmode(),
+                self.enc()
+            )
         }
     }
     #[doc = "LPTIM compare register 1."]
@@ -463,7 +479,15 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ enable: {=bool:?}, sngstrt: {=bool:?}, cntstrt: {=bool:?}, countrst: {=bool:?}, rstare: {=bool:?} }}" , self . enable () , self . sngstrt () , self . cntstrt () , self . countrst () , self . rstare ())
+            defmt::write!(
+                f,
+                "Cr {{ enable: {=bool:?}, sngstrt: {=bool:?}, cntstrt: {=bool:?}, countrst: {=bool:?}, rstare: {=bool:?} }}",
+                self.enable(),
+                self.sngstrt(),
+                self.cntstrt(),
+                self.countrst(),
+                self.rstare()
+            )
         }
     }
     #[doc = "LPTIM interrupt clear register."]
@@ -586,7 +610,17 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Icr {{ cccf[0]: {=bool:?}, arrmcf: {=bool:?}, exttrigcf: {=bool:?}, cmpokcf[0]: {=bool:?}, arrokcf: {=bool:?}, upcf: {=bool:?}, downcf: {=bool:?} }}" , self . cccf (0usize) , self . arrmcf () , self . exttrigcf () , self . cmpokcf (0usize) , self . arrokcf () , self . upcf () , self . downcf ())
+            defmt::write!(
+                f,
+                "Icr {{ cccf[0]: {=bool:?}, arrmcf: {=bool:?}, exttrigcf: {=bool:?}, cmpokcf[0]: {=bool:?}, arrokcf: {=bool:?}, upcf: {=bool:?}, downcf: {=bool:?} }}",
+                self.cccf(0usize),
+                self.arrmcf(),
+                self.exttrigcf(),
+                self.cmpokcf(0usize),
+                self.arrokcf(),
+                self.upcf(),
+                self.downcf()
+            )
         }
     }
     #[doc = "LPTIM interrupt enable register."]
@@ -709,7 +743,17 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier {{ ccie[0]: {=bool:?}, arrmie: {=bool:?}, exttrigie: {=bool:?}, cmpokie[0]: {=bool:?}, arrokie: {=bool:?}, upie: {=bool:?}, downie: {=bool:?} }}" , self . ccie (0usize) , self . arrmie () , self . exttrigie () , self . cmpokie (0usize) , self . arrokie () , self . upie () , self . downie ())
+            defmt::write!(
+                f,
+                "Ier {{ ccie[0]: {=bool:?}, arrmie: {=bool:?}, exttrigie: {=bool:?}, cmpokie[0]: {=bool:?}, arrokie: {=bool:?}, upie: {=bool:?}, downie: {=bool:?} }}",
+                self.ccie(0usize),
+                self.arrmie(),
+                self.exttrigie(),
+                self.cmpokie(0usize),
+                self.arrokie(),
+                self.upie(),
+                self.downie()
+            )
         }
     }
     #[doc = "LPTIM interrupt and status register."]
@@ -832,7 +876,17 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ ccif[0]: {=bool:?}, arrm: {=bool:?}, exttrig: {=bool:?}, cmpok[0]: {=bool:?}, arrok: {=bool:?}, up: {=bool:?}, down: {=bool:?} }}" , self . ccif (0usize) , self . arrm () , self . exttrig () , self . cmpok (0usize) , self . arrok () , self . up () , self . down ())
+            defmt::write!(
+                f,
+                "Isr {{ ccif[0]: {=bool:?}, arrm: {=bool:?}, exttrig: {=bool:?}, cmpok[0]: {=bool:?}, arrok: {=bool:?}, up: {=bool:?}, down: {=bool:?} }}",
+                self.ccif(0usize),
+                self.arrm(),
+                self.exttrig(),
+                self.cmpok(0usize),
+                self.arrok(),
+                self.up(),
+                self.down()
+            )
         }
     }
 }

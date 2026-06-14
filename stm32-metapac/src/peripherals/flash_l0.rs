@@ -170,7 +170,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Acr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Acr {{ latency: {=bool:?}, prften: {=bool:?}, sleep_pd: {=bool:?}, run_pd: {=bool:?}, disab_buf: {=bool:?}, pre_read: {=bool:?} }}" , self . latency () , self . prften () , self . sleep_pd () , self . run_pd () , self . disab_buf () , self . pre_read ())
+            defmt::write!(
+                f,
+                "Acr {{ latency: {=bool:?}, prften: {=bool:?}, sleep_pd: {=bool:?}, run_pd: {=bool:?}, disab_buf: {=bool:?}, pre_read: {=bool:?} }}",
+                self.latency(),
+                self.prften(),
+                self.sleep_pd(),
+                self.run_pd(),
+                self.disab_buf(),
+                self.pre_read()
+            )
         }
     }
     #[doc = "Option byte register"]
@@ -419,7 +428,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pecr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pecr {{ pelock: {=bool:?}, prglock: {=bool:?}, optlock: {=bool:?}, prog: {=bool:?}, data: {=bool:?}, fix: {=bool:?}, erase: {=bool:?}, fprg: {=bool:?}, parallelbank: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, obl_launch: {=bool:?} }}" , self . pelock () , self . prglock () , self . optlock () , self . prog () , self . data () , self . fix () , self . erase () , self . fprg () , self . parallelbank () , self . eopie () , self . errie () , self . obl_launch ())
+            defmt::write!(
+                f,
+                "Pecr {{ pelock: {=bool:?}, prglock: {=bool:?}, optlock: {=bool:?}, prog: {=bool:?}, data: {=bool:?}, fix: {=bool:?}, erase: {=bool:?}, fprg: {=bool:?}, parallelbank: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, obl_launch: {=bool:?} }}",
+                self.pelock(),
+                self.prglock(),
+                self.optlock(),
+                self.prog(),
+                self.data(),
+                self.fix(),
+                self.erase(),
+                self.fprg(),
+                self.parallelbank(),
+                self.eopie(),
+                self.errie(),
+                self.obl_launch()
+            )
         }
     }
     #[doc = "Status register"]
@@ -586,7 +610,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ bsy: {=bool:?}, eop: {=bool:?}, endhv: {=bool:?}, ready: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, optverr: {=bool:?}, rderr: {=bool:?}, notzeroerr: {=bool:?}, fwwerr: {=bool:?} }}" , self . bsy () , self . eop () , self . endhv () , self . ready () , self . wrperr () , self . pgaerr () , self . sizerr () , self . optverr () , self . rderr () , self . notzeroerr () , self . fwwerr ())
+            defmt::write!(
+                f,
+                "Sr {{ bsy: {=bool:?}, eop: {=bool:?}, endhv: {=bool:?}, ready: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, optverr: {=bool:?}, rderr: {=bool:?}, notzeroerr: {=bool:?}, fwwerr: {=bool:?} }}",
+                self.bsy(),
+                self.eop(),
+                self.endhv(),
+                self.ready(),
+                self.wrperr(),
+                self.pgaerr(),
+                self.sizerr(),
+                self.optverr(),
+                self.rderr(),
+                self.notzeroerr(),
+                self.fwwerr()
+            )
         }
     }
     #[doc = "Write Protection Register"]
@@ -658,7 +696,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wrprot {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wrprot {{ wrprot[0]: {=bool:?}, wrprot[1]: {=bool:?}, wrprot[2]: {=bool:?}, wrprot[3]: {=bool:?}, wrprot[4]: {=bool:?}, wrprot[5]: {=bool:?}, wrprot[6]: {=bool:?}, wrprot[7]: {=bool:?}, wrprot[8]: {=bool:?}, wrprot[9]: {=bool:?}, wrprot[10]: {=bool:?}, wrprot[11]: {=bool:?}, wrprot[12]: {=bool:?}, wrprot[13]: {=bool:?}, wrprot[14]: {=bool:?}, wrprot[15]: {=bool:?}, wrprot[16]: {=bool:?}, wrprot[17]: {=bool:?}, wrprot[18]: {=bool:?}, wrprot[19]: {=bool:?}, wrprot[20]: {=bool:?}, wrprot[21]: {=bool:?}, wrprot[22]: {=bool:?}, wrprot[23]: {=bool:?}, wrprot[24]: {=bool:?}, wrprot[25]: {=bool:?}, wrprot[26]: {=bool:?}, wrprot[27]: {=bool:?}, wrprot[28]: {=bool:?}, wrprot[29]: {=bool:?}, wrprot[30]: {=bool:?}, wrprot[31]: {=bool:?} }}" , self . wrprot (0usize) , self . wrprot (1usize) , self . wrprot (2usize) , self . wrprot (3usize) , self . wrprot (4usize) , self . wrprot (5usize) , self . wrprot (6usize) , self . wrprot (7usize) , self . wrprot (8usize) , self . wrprot (9usize) , self . wrprot (10usize) , self . wrprot (11usize) , self . wrprot (12usize) , self . wrprot (13usize) , self . wrprot (14usize) , self . wrprot (15usize) , self . wrprot (16usize) , self . wrprot (17usize) , self . wrprot (18usize) , self . wrprot (19usize) , self . wrprot (20usize) , self . wrprot (21usize) , self . wrprot (22usize) , self . wrprot (23usize) , self . wrprot (24usize) , self . wrprot (25usize) , self . wrprot (26usize) , self . wrprot (27usize) , self . wrprot (28usize) , self . wrprot (29usize) , self . wrprot (30usize) , self . wrprot (31usize))
+            defmt::write!(
+                f,
+                "Wrprot {{ wrprot[0]: {=bool:?}, wrprot[1]: {=bool:?}, wrprot[2]: {=bool:?}, wrprot[3]: {=bool:?}, wrprot[4]: {=bool:?}, wrprot[5]: {=bool:?}, wrprot[6]: {=bool:?}, wrprot[7]: {=bool:?}, wrprot[8]: {=bool:?}, wrprot[9]: {=bool:?}, wrprot[10]: {=bool:?}, wrprot[11]: {=bool:?}, wrprot[12]: {=bool:?}, wrprot[13]: {=bool:?}, wrprot[14]: {=bool:?}, wrprot[15]: {=bool:?}, wrprot[16]: {=bool:?}, wrprot[17]: {=bool:?}, wrprot[18]: {=bool:?}, wrprot[19]: {=bool:?}, wrprot[20]: {=bool:?}, wrprot[21]: {=bool:?}, wrprot[22]: {=bool:?}, wrprot[23]: {=bool:?}, wrprot[24]: {=bool:?}, wrprot[25]: {=bool:?}, wrprot[26]: {=bool:?}, wrprot[27]: {=bool:?}, wrprot[28]: {=bool:?}, wrprot[29]: {=bool:?}, wrprot[30]: {=bool:?}, wrprot[31]: {=bool:?} }}",
+                self.wrprot(0usize),
+                self.wrprot(1usize),
+                self.wrprot(2usize),
+                self.wrprot(3usize),
+                self.wrprot(4usize),
+                self.wrprot(5usize),
+                self.wrprot(6usize),
+                self.wrprot(7usize),
+                self.wrprot(8usize),
+                self.wrprot(9usize),
+                self.wrprot(10usize),
+                self.wrprot(11usize),
+                self.wrprot(12usize),
+                self.wrprot(13usize),
+                self.wrprot(14usize),
+                self.wrprot(15usize),
+                self.wrprot(16usize),
+                self.wrprot(17usize),
+                self.wrprot(18usize),
+                self.wrprot(19usize),
+                self.wrprot(20usize),
+                self.wrprot(21usize),
+                self.wrprot(22usize),
+                self.wrprot(23usize),
+                self.wrprot(24usize),
+                self.wrprot(25usize),
+                self.wrprot(26usize),
+                self.wrprot(27usize),
+                self.wrprot(28usize),
+                self.wrprot(29usize),
+                self.wrprot(30usize),
+                self.wrprot(31usize)
+            )
         }
     }
 }

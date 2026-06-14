@@ -513,7 +513,29 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cevr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cevr {{ cfcf: {=bool:?}, crxtgtendf: {=bool:?}, cerrf: {=bool:?}, cibif: {=bool:?}, cibiendf: {=bool:?}, ccrf: {=bool:?}, ccrupdf: {=bool:?}, chjf: {=bool:?}, cwkpf: {=bool:?}, cgetf: {=bool:?}, cstaf: {=bool:?}, cdaupdf: {=bool:?}, cmwlupdf: {=bool:?}, cmrlupdf: {=bool:?}, crstf: {=bool:?}, casupdf: {=bool:?}, cintupdf: {=bool:?}, cdeff: {=bool:?}, cgrpf: {=bool:?} }}" , self . cfcf () , self . crxtgtendf () , self . cerrf () , self . cibif () , self . cibiendf () , self . ccrf () , self . ccrupdf () , self . chjf () , self . cwkpf () , self . cgetf () , self . cstaf () , self . cdaupdf () , self . cmwlupdf () , self . cmrlupdf () , self . crstf () , self . casupdf () , self . cintupdf () , self . cdeff () , self . cgrpf ())
+            defmt::write!(
+                f,
+                "Cevr {{ cfcf: {=bool:?}, crxtgtendf: {=bool:?}, cerrf: {=bool:?}, cibif: {=bool:?}, cibiendf: {=bool:?}, ccrf: {=bool:?}, ccrupdf: {=bool:?}, chjf: {=bool:?}, cwkpf: {=bool:?}, cgetf: {=bool:?}, cstaf: {=bool:?}, cdaupdf: {=bool:?}, cmwlupdf: {=bool:?}, cmrlupdf: {=bool:?}, crstf: {=bool:?}, casupdf: {=bool:?}, cintupdf: {=bool:?}, cdeff: {=bool:?}, cgrpf: {=bool:?} }}",
+                self.cfcf(),
+                self.crxtgtendf(),
+                self.cerrf(),
+                self.cibif(),
+                self.cibiendf(),
+                self.ccrf(),
+                self.ccrupdf(),
+                self.chjf(),
+                self.cwkpf(),
+                self.cgetf(),
+                self.cstaf(),
+                self.cdaupdf(),
+                self.cmwlupdf(),
+                self.cmrlupdf(),
+                self.crstf(),
+                self.casupdf(),
+                self.cintupdf(),
+                self.cdeff(),
+                self.cgrpf()
+            )
         }
     }
     #[doc = "I3C configuration register."]
@@ -799,7 +821,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr {{ en: {=bool:?}, crinit: {:?}, noarbh: {=bool:?}, rstptrn: {=bool:?}, exitptrn: {=bool:?}, hksdaen: {=bool:?}, hjack: {=bool:?}, rxdmaen: {=bool:?}, rxflush: {=bool:?}, rxthres: {:?}, txdmaen: {=bool:?}, txflush: {=bool:?}, txthres: {:?}, sdmaen: {=bool:?}, sflush: {=bool:?}, rmode: {=bool:?}, tmode: {=bool:?}, cdmaen: {=bool:?}, cflush: {=bool:?}, tsfset: {=bool:?} }}" , self . en () , self . crinit () , self . noarbh () , self . rstptrn () , self . exitptrn () , self . hksdaen () , self . hjack () , self . rxdmaen () , self . rxflush () , self . rxthres () , self . txdmaen () , self . txflush () , self . txthres () , self . sdmaen () , self . sflush () , self . rmode () , self . tmode () , self . cdmaen () , self . cflush () , self . tsfset ())
+            defmt::write!(
+                f,
+                "Cfgr {{ en: {=bool:?}, crinit: {:?}, noarbh: {=bool:?}, rstptrn: {=bool:?}, exitptrn: {=bool:?}, hksdaen: {=bool:?}, hjack: {=bool:?}, rxdmaen: {=bool:?}, rxflush: {=bool:?}, rxthres: {:?}, txdmaen: {=bool:?}, txflush: {=bool:?}, txthres: {:?}, sdmaen: {=bool:?}, sflush: {=bool:?}, rmode: {=bool:?}, tmode: {=bool:?}, cdmaen: {=bool:?}, cflush: {=bool:?}, tsfset: {=bool:?} }}",
+                self.en(),
+                self.crinit(),
+                self.noarbh(),
+                self.rstptrn(),
+                self.exitptrn(),
+                self.hksdaen(),
+                self.hjack(),
+                self.rxdmaen(),
+                self.rxflush(),
+                self.rxthres(),
+                self.txdmaen(),
+                self.txflush(),
+                self.txthres(),
+                self.sdmaen(),
+                self.sflush(),
+                self.rmode(),
+                self.tmode(),
+                self.cdmaen(),
+                self.cflush(),
+                self.tsfset()
+            )
         }
     }
     #[doc = "I3C message control register."]
@@ -1356,7 +1401,18 @@ dictates the reset action to be performed by the software if any. If RSTVAL=0: w
     #[cfg(feature = "defmt")]
     impl defmt::Format for Devr0 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Devr0 {{ daval: {=bool:?}, da: {=u8:?}, ibien: {=bool:?}, cren: {=bool:?}, hjen: {=bool:?}, as_: {=u8:?}, rstact: {:?}, rstval: {=bool:?} }}" , self . daval () , self . da () , self . ibien () , self . cren () , self . hjen () , self . as_ () , self . rstact () , self . rstval ())
+            defmt::write!(
+                f,
+                "Devr0 {{ daval: {=bool:?}, da: {=u8:?}, ibien: {=bool:?}, cren: {=bool:?}, hjen: {=bool:?}, as_: {=u8:?}, rstact: {:?}, rstval: {=bool:?} }}",
+                self.daval(),
+                self.da(),
+                self.ibien(),
+                self.cren(),
+                self.hjen(),
+                self.as_(),
+                self.rstact(),
+                self.rstval()
+            )
         }
     }
     #[doc = "I3C receive data byte register."]
@@ -1906,7 +1962,37 @@ dictates the reset action to be performed by the software if any. If RSTVAL=0: w
     #[cfg(feature = "defmt")]
     impl defmt::Format for Evr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Evr {{ cfef: {=bool:?}, txfef: {=bool:?}, cfnff: {=bool:?}, sfnef: {=bool:?}, txfnff: {=bool:?}, rxfnef: {=bool:?}, txlastf: {=bool:?}, rxlastf: {=bool:?}, fcf: {=bool:?}, rxtgtendf: {=bool:?}, errf: {=bool:?}, ibif: {=bool:?}, ibiendf: {=bool:?}, crf: {=bool:?}, crupdf: {=bool:?}, hjf: {=bool:?}, wkpf: {=bool:?}, getf: {=bool:?}, staf: {=bool:?}, daupdf: {=bool:?}, mwlupdf: {=bool:?}, mrlupdf: {=bool:?}, rstf: {=bool:?}, asupdf: {=bool:?}, intupdf: {=bool:?}, deff: {=bool:?}, grpf: {=bool:?} }}" , self . cfef () , self . txfef () , self . cfnff () , self . sfnef () , self . txfnff () , self . rxfnef () , self . txlastf () , self . rxlastf () , self . fcf () , self . rxtgtendf () , self . errf () , self . ibif () , self . ibiendf () , self . crf () , self . crupdf () , self . hjf () , self . wkpf () , self . getf () , self . staf () , self . daupdf () , self . mwlupdf () , self . mrlupdf () , self . rstf () , self . asupdf () , self . intupdf () , self . deff () , self . grpf ())
+            defmt::write!(
+                f,
+                "Evr {{ cfef: {=bool:?}, txfef: {=bool:?}, cfnff: {=bool:?}, sfnef: {=bool:?}, txfnff: {=bool:?}, rxfnef: {=bool:?}, txlastf: {=bool:?}, rxlastf: {=bool:?}, fcf: {=bool:?}, rxtgtendf: {=bool:?}, errf: {=bool:?}, ibif: {=bool:?}, ibiendf: {=bool:?}, crf: {=bool:?}, crupdf: {=bool:?}, hjf: {=bool:?}, wkpf: {=bool:?}, getf: {=bool:?}, staf: {=bool:?}, daupdf: {=bool:?}, mwlupdf: {=bool:?}, mrlupdf: {=bool:?}, rstf: {=bool:?}, asupdf: {=bool:?}, intupdf: {=bool:?}, deff: {=bool:?}, grpf: {=bool:?} }}",
+                self.cfef(),
+                self.txfef(),
+                self.cfnff(),
+                self.sfnef(),
+                self.txfnff(),
+                self.rxfnef(),
+                self.txlastf(),
+                self.rxlastf(),
+                self.fcf(),
+                self.rxtgtendf(),
+                self.errf(),
+                self.ibif(),
+                self.ibiendf(),
+                self.crf(),
+                self.crupdf(),
+                self.hjf(),
+                self.wkpf(),
+                self.getf(),
+                self.staf(),
+                self.daupdf(),
+                self.mwlupdf(),
+                self.mrlupdf(),
+                self.rstf(),
+                self.asupdf(),
+                self.intupdf(),
+                self.deff(),
+                self.grpf()
+            )
         }
     }
     #[doc = "I3C get capability register."]
@@ -2406,7 +2492,33 @@ mandatory data byte)."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier {{ cfnfie: {=bool:?}, sfneie: {=bool:?}, txfnfie: {=bool:?}, rxfneie: {=bool:?}, fcie: {=bool:?}, rxtgtendie: {=bool:?}, errie: {=bool:?}, ibiie: {=bool:?}, ibiendie: {=bool:?}, crie: {=bool:?}, crupdie: {=bool:?}, hjie: {=bool:?}, wkpie: {=bool:?}, getie: {=bool:?}, staie: {=bool:?}, daupdie: {=bool:?}, mwlupdie: {=bool:?}, mrlupdie: {=bool:?}, rstie: {=bool:?}, asupdie: {=bool:?}, intupdie: {=bool:?}, defie: {=bool:?}, grpie: {=bool:?} }}" , self . cfnfie () , self . sfneie () , self . txfnfie () , self . rxfneie () , self . fcie () , self . rxtgtendie () , self . errie () , self . ibiie () , self . ibiendie () , self . crie () , self . crupdie () , self . hjie () , self . wkpie () , self . getie () , self . staie () , self . daupdie () , self . mwlupdie () , self . mrlupdie () , self . rstie () , self . asupdie () , self . intupdie () , self . defie () , self . grpie ())
+            defmt::write!(
+                f,
+                "Ier {{ cfnfie: {=bool:?}, sfneie: {=bool:?}, txfnfie: {=bool:?}, rxfneie: {=bool:?}, fcie: {=bool:?}, rxtgtendie: {=bool:?}, errie: {=bool:?}, ibiie: {=bool:?}, ibiendie: {=bool:?}, crie: {=bool:?}, crupdie: {=bool:?}, hjie: {=bool:?}, wkpie: {=bool:?}, getie: {=bool:?}, staie: {=bool:?}, daupdie: {=bool:?}, mwlupdie: {=bool:?}, mrlupdie: {=bool:?}, rstie: {=bool:?}, asupdie: {=bool:?}, intupdie: {=bool:?}, defie: {=bool:?}, grpie: {=bool:?} }}",
+                self.cfnfie(),
+                self.sfneie(),
+                self.txfnfie(),
+                self.rxfneie(),
+                self.fcie(),
+                self.rxtgtendie(),
+                self.errie(),
+                self.ibiie(),
+                self.ibiendie(),
+                self.crie(),
+                self.crupdie(),
+                self.hjie(),
+                self.wkpie(),
+                self.getie(),
+                self.staie(),
+                self.daupdie(),
+                self.mwlupdie(),
+                self.mrlupdie(),
+                self.rstie(),
+                self.asupdie(),
+                self.intupdie(),
+                self.defie(),
+                self.grpie()
+            )
         }
     }
     #[doc = "I3C maximum read length register."]
@@ -2688,7 +2800,18 @@ mandatory data byte)."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ser {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ser {{ coderr: {:?}, perr: {=bool:?}, stall: {=bool:?}, dovr: {=bool:?}, covr: {=bool:?}, anack: {=bool:?}, dnack: {=bool:?}, derr: {=bool:?} }}" , self . coderr () , self . perr () , self . stall () , self . dovr () , self . covr () , self . anack () , self . dnack () , self . derr ())
+            defmt::write!(
+                f,
+                "Ser {{ coderr: {:?}, perr: {=bool:?}, stall: {=bool:?}, dovr: {=bool:?}, covr: {=bool:?}, anack: {=bool:?}, dnack: {=bool:?}, derr: {=bool:?} }}",
+                self.coderr(),
+                self.perr(),
+                self.stall(),
+                self.dovr(),
+                self.covr(),
+                self.anack(),
+                self.dnack(),
+                self.derr()
+            )
         }
     }
     #[doc = "I3C status register."]
@@ -3111,7 +3234,15 @@ x tI3CCLK for I3C stop timing: it must wait for time to be elapsed after that th
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timingr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Timingr2 {{ stallt: {=bool:?}, stalld: {=bool:?}, stallc: {=bool:?}, stalla: {=bool:?}, stall: {=u8:?} }}" , self . stallt () , self . stalld () , self . stallc () , self . stalla () , self . stall ())
+            defmt::write!(
+                f,
+                "Timingr2 {{ stallt: {=bool:?}, stalld: {=bool:?}, stallc: {=bool:?}, stalla: {=bool:?}, stall: {=u8:?} }}",
+                self.stallt(),
+                self.stalld(),
+                self.stallc(),
+                self.stalla(),
+                self.stall()
+            )
         }
     }
 }

@@ -200,7 +200,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr {{ func: {:?}, precision: {:?}, scale: {:?}, ien: {=bool:?}, dmaren: {=bool:?}, dmawen: {=bool:?}, nres: {:?}, nargs: {:?}, ressize: {:?}, argsize: {:?}, rrdy: {=bool:?} }}" , self . func () , self . precision () , self . scale () , self . ien () , self . dmaren () , self . dmawen () , self . nres () , self . nargs () , self . ressize () , self . argsize () , self . rrdy ())
+            defmt::write!(
+                f,
+                "Csr {{ func: {:?}, precision: {:?}, scale: {:?}, ien: {=bool:?}, dmaren: {=bool:?}, dmawen: {=bool:?}, nres: {:?}, nargs: {:?}, ressize: {:?}, argsize: {:?}, rrdy: {=bool:?} }}",
+                self.func(),
+                self.precision(),
+                self.scale(),
+                self.ien(),
+                self.dmaren(),
+                self.dmawen(),
+                self.nres(),
+                self.nargs(),
+                self.ressize(),
+                self.argsize(),
+                self.rrdy()
+            )
         }
     }
 }

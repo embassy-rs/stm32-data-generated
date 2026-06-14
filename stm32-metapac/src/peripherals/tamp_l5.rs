@@ -229,7 +229,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Atcr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Atcr1 {{ tampam[0]: {=bool:?}, tampam[1]: {=bool:?}, tampam[2]: {=bool:?}, tampam[3]: {=bool:?}, tampam[4]: {=bool:?}, tampam[5]: {=bool:?}, tampam[6]: {=bool:?}, tampam[7]: {=bool:?}, atosel[0]: {=u8:?}, atosel[1]: {=u8:?}, atosel[2]: {=u8:?}, atosel[3]: {=u8:?}, atcksel: {=u8:?}, atper: {=u8:?}, atoshare: {=bool:?}, flten: {=bool:?} }}" , self . tampam (0usize) , self . tampam (1usize) , self . tampam (2usize) , self . tampam (3usize) , self . tampam (4usize) , self . tampam (5usize) , self . tampam (6usize) , self . tampam (7usize) , self . atosel (0usize) , self . atosel (1usize) , self . atosel (2usize) , self . atosel (3usize) , self . atcksel () , self . atper () , self . atoshare () , self . flten ())
+            defmt::write!(
+                f,
+                "Atcr1 {{ tampam[0]: {=bool:?}, tampam[1]: {=bool:?}, tampam[2]: {=bool:?}, tampam[3]: {=bool:?}, tampam[4]: {=bool:?}, tampam[5]: {=bool:?}, tampam[6]: {=bool:?}, tampam[7]: {=bool:?}, atosel[0]: {=u8:?}, atosel[1]: {=u8:?}, atosel[2]: {=u8:?}, atosel[3]: {=u8:?}, atcksel: {=u8:?}, atper: {=u8:?}, atoshare: {=bool:?}, flten: {=bool:?} }}",
+                self.tampam(0usize),
+                self.tampam(1usize),
+                self.tampam(2usize),
+                self.tampam(3usize),
+                self.tampam(4usize),
+                self.tampam(5usize),
+                self.tampam(6usize),
+                self.tampam(7usize),
+                self.atosel(0usize),
+                self.atosel(1usize),
+                self.atosel(2usize),
+                self.atosel(3usize),
+                self.atcksel(),
+                self.atper(),
+                self.atoshare(),
+                self.flten()
+            )
         }
     }
     #[doc = "TAMP active tamper control register 2"]
@@ -277,7 +296,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Atcr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Atcr2 {{ atosel[0]: {=u8:?}, atosel[1]: {=u8:?}, atosel[2]: {=u8:?}, atosel[3]: {=u8:?}, atosel[4]: {=u8:?}, atosel[5]: {=u8:?}, atosel[6]: {=u8:?}, atosel[7]: {=u8:?} }}" , self . atosel (0usize) , self . atosel (1usize) , self . atosel (2usize) , self . atosel (3usize) , self . atosel (4usize) , self . atosel (5usize) , self . atosel (6usize) , self . atosel (7usize))
+            defmt::write!(
+                f,
+                "Atcr2 {{ atosel[0]: {=u8:?}, atosel[1]: {=u8:?}, atosel[2]: {=u8:?}, atosel[3]: {=u8:?}, atosel[4]: {=u8:?}, atosel[5]: {=u8:?}, atosel[6]: {=u8:?}, atosel[7]: {=u8:?} }}",
+                self.atosel(0usize),
+                self.atosel(1usize),
+                self.atosel(2usize),
+                self.atosel(3usize),
+                self.atosel(4usize),
+                self.atosel(5usize),
+                self.atosel(6usize),
+                self.atosel(7usize)
+            )
         }
     }
     #[doc = "TAMP active tamper output register"]
@@ -592,7 +622,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ tampe[0]: {=bool:?}, tampe[1]: {=bool:?}, tampe[2]: {=bool:?}, tampe[3]: {=bool:?}, tampe[4]: {=bool:?}, tampe[5]: {=bool:?}, tampe[6]: {=bool:?}, tampe[7]: {=bool:?}, itampe[0]: {=bool:?}, itampe[1]: {=bool:?}, itampe[2]: {=bool:?}, itampe[3]: {=bool:?}, itampe[4]: {=bool:?}, itampe[5]: {=bool:?}, itampe[6]: {=bool:?}, itampe[7]: {=bool:?} }}" , self . tampe (0usize) , self . tampe (1usize) , self . tampe (2usize) , self . tampe (3usize) , self . tampe (4usize) , self . tampe (5usize) , self . tampe (6usize) , self . tampe (7usize) , self . itampe (0usize) , self . itampe (1usize) , self . itampe (2usize) , self . itampe (3usize) , self . itampe (4usize) , self . itampe (5usize) , self . itampe (6usize) , self . itampe (7usize))
+            defmt::write!(
+                f,
+                "Cr1 {{ tampe[0]: {=bool:?}, tampe[1]: {=bool:?}, tampe[2]: {=bool:?}, tampe[3]: {=bool:?}, tampe[4]: {=bool:?}, tampe[5]: {=bool:?}, tampe[6]: {=bool:?}, tampe[7]: {=bool:?}, itampe[0]: {=bool:?}, itampe[1]: {=bool:?}, itampe[2]: {=bool:?}, itampe[3]: {=bool:?}, itampe[4]: {=bool:?}, itampe[5]: {=bool:?}, itampe[6]: {=bool:?}, itampe[7]: {=bool:?} }}",
+                self.tampe(0usize),
+                self.tampe(1usize),
+                self.tampe(2usize),
+                self.tampe(3usize),
+                self.tampe(4usize),
+                self.tampe(5usize),
+                self.tampe(6usize),
+                self.tampe(7usize),
+                self.itampe(0usize),
+                self.itampe(1usize),
+                self.itampe(2usize),
+                self.itampe(3usize),
+                self.itampe(4usize),
+                self.itampe(5usize),
+                self.itampe(6usize),
+                self.itampe(7usize)
+            )
         }
     }
     #[doc = "control register 2"]
@@ -696,7 +745,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ tampnoer[0]: {=bool:?}, tampnoer[1]: {=bool:?}, tampnoer[2]: {=bool:?}, tampnoer[3]: {=bool:?}, tampnoer[4]: {=bool:?}, tampnoer[5]: {=bool:?}, tampnoer[6]: {=bool:?}, tampnoer[7]: {=bool:?}, tampmsk[0]: {=bool:?}, tampmsk[1]: {=bool:?}, tampmsk[2]: {=bool:?}, bkerase: {=bool:?}, tamptrg[0]: {=bool:?}, tamptrg[1]: {=bool:?}, tamptrg[2]: {=bool:?}, tamptrg[3]: {=bool:?}, tamptrg[4]: {=bool:?}, tamptrg[5]: {=bool:?}, tamptrg[6]: {=bool:?}, tamptrg[7]: {=bool:?} }}" , self . tampnoer (0usize) , self . tampnoer (1usize) , self . tampnoer (2usize) , self . tampnoer (3usize) , self . tampnoer (4usize) , self . tampnoer (5usize) , self . tampnoer (6usize) , self . tampnoer (7usize) , self . tampmsk (0usize) , self . tampmsk (1usize) , self . tampmsk (2usize) , self . bkerase () , self . tamptrg (0usize) , self . tamptrg (1usize) , self . tamptrg (2usize) , self . tamptrg (3usize) , self . tamptrg (4usize) , self . tamptrg (5usize) , self . tamptrg (6usize) , self . tamptrg (7usize))
+            defmt::write!(
+                f,
+                "Cr2 {{ tampnoer[0]: {=bool:?}, tampnoer[1]: {=bool:?}, tampnoer[2]: {=bool:?}, tampnoer[3]: {=bool:?}, tampnoer[4]: {=bool:?}, tampnoer[5]: {=bool:?}, tampnoer[6]: {=bool:?}, tampnoer[7]: {=bool:?}, tampmsk[0]: {=bool:?}, tampmsk[1]: {=bool:?}, tampmsk[2]: {=bool:?}, bkerase: {=bool:?}, tamptrg[0]: {=bool:?}, tamptrg[1]: {=bool:?}, tamptrg[2]: {=bool:?}, tamptrg[3]: {=bool:?}, tamptrg[4]: {=bool:?}, tamptrg[5]: {=bool:?}, tamptrg[6]: {=bool:?}, tamptrg[7]: {=bool:?} }}",
+                self.tampnoer(0usize),
+                self.tampnoer(1usize),
+                self.tampnoer(2usize),
+                self.tampnoer(3usize),
+                self.tampnoer(4usize),
+                self.tampnoer(5usize),
+                self.tampnoer(6usize),
+                self.tampnoer(7usize),
+                self.tampmsk(0usize),
+                self.tampmsk(1usize),
+                self.tampmsk(2usize),
+                self.bkerase(),
+                self.tamptrg(0usize),
+                self.tamptrg(1usize),
+                self.tamptrg(2usize),
+                self.tamptrg(3usize),
+                self.tamptrg(4usize),
+                self.tamptrg(5usize),
+                self.tamptrg(6usize),
+                self.tamptrg(7usize)
+            )
         }
     }
     #[doc = "control register 3"]
@@ -744,7 +816,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr3 {{ itampnoer[0]: {=bool:?}, itampnoer[1]: {=bool:?}, itampnoer[2]: {=bool:?}, itampnoer[3]: {=bool:?}, itampnoer[4]: {=bool:?}, itampnoer[5]: {=bool:?}, itampnoer[6]: {=bool:?}, itampnoer[7]: {=bool:?} }}" , self . itampnoer (0usize) , self . itampnoer (1usize) , self . itampnoer (2usize) , self . itampnoer (3usize) , self . itampnoer (4usize) , self . itampnoer (5usize) , self . itampnoer (6usize) , self . itampnoer (7usize))
+            defmt::write!(
+                f,
+                "Cr3 {{ itampnoer[0]: {=bool:?}, itampnoer[1]: {=bool:?}, itampnoer[2]: {=bool:?}, itampnoer[3]: {=bool:?}, itampnoer[4]: {=bool:?}, itampnoer[5]: {=bool:?}, itampnoer[6]: {=bool:?}, itampnoer[7]: {=bool:?} }}",
+                self.itampnoer(0usize),
+                self.itampnoer(1usize),
+                self.itampnoer(2usize),
+                self.itampnoer(3usize),
+                self.itampnoer(4usize),
+                self.itampnoer(5usize),
+                self.itampnoer(6usize),
+                self.itampnoer(7usize)
+            )
         }
     }
     #[doc = "TAMP filter control register"]
@@ -899,7 +982,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier {{ tampie[0]: {=bool:?}, tampie[1]: {=bool:?}, tampie[2]: {=bool:?}, tampie[3]: {=bool:?}, tampie[4]: {=bool:?}, tampie[5]: {=bool:?}, tampie[6]: {=bool:?}, tampie[7]: {=bool:?}, itampie[0]: {=bool:?}, itampie[1]: {=bool:?}, itampie[2]: {=bool:?}, itampie[3]: {=bool:?}, itampie[4]: {=bool:?}, itampie[5]: {=bool:?}, itampie[6]: {=bool:?}, itampie[7]: {=bool:?} }}" , self . tampie (0usize) , self . tampie (1usize) , self . tampie (2usize) , self . tampie (3usize) , self . tampie (4usize) , self . tampie (5usize) , self . tampie (6usize) , self . tampie (7usize) , self . itampie (0usize) , self . itampie (1usize) , self . itampie (2usize) , self . itampie (3usize) , self . itampie (4usize) , self . itampie (5usize) , self . itampie (6usize) , self . itampie (7usize))
+            defmt::write!(
+                f,
+                "Ier {{ tampie[0]: {=bool:?}, tampie[1]: {=bool:?}, tampie[2]: {=bool:?}, tampie[3]: {=bool:?}, tampie[4]: {=bool:?}, tampie[5]: {=bool:?}, tampie[6]: {=bool:?}, tampie[7]: {=bool:?}, itampie[0]: {=bool:?}, itampie[1]: {=bool:?}, itampie[2]: {=bool:?}, itampie[3]: {=bool:?}, itampie[4]: {=bool:?}, itampie[5]: {=bool:?}, itampie[6]: {=bool:?}, itampie[7]: {=bool:?} }}",
+                self.tampie(0usize),
+                self.tampie(1usize),
+                self.tampie(2usize),
+                self.tampie(3usize),
+                self.tampie(4usize),
+                self.tampie(5usize),
+                self.tampie(6usize),
+                self.tampie(7usize),
+                self.itampie(0usize),
+                self.itampie(1usize),
+                self.itampie(2usize),
+                self.itampie(3usize),
+                self.itampie(4usize),
+                self.itampie(5usize),
+                self.itampie(6usize),
+                self.itampie(7usize)
+            )
         }
     }
     #[doc = "TAMP masked interrupt status register"]
@@ -971,7 +1073,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Misr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Misr {{ tampmf[0]: {=bool:?}, tampmf[1]: {=bool:?}, tampmf[2]: {=bool:?}, tampmf[3]: {=bool:?}, tampmf[4]: {=bool:?}, tampmf[5]: {=bool:?}, tampmf[6]: {=bool:?}, tampmf[7]: {=bool:?}, itampmf[0]: {=bool:?}, itampmf[1]: {=bool:?}, itampmf[2]: {=bool:?}, itampmf[3]: {=bool:?}, itampmf[4]: {=bool:?}, itampmf[5]: {=bool:?}, itampmf[6]: {=bool:?}, itampmf[7]: {=bool:?} }}" , self . tampmf (0usize) , self . tampmf (1usize) , self . tampmf (2usize) , self . tampmf (3usize) , self . tampmf (4usize) , self . tampmf (5usize) , self . tampmf (6usize) , self . tampmf (7usize) , self . itampmf (0usize) , self . itampmf (1usize) , self . itampmf (2usize) , self . itampmf (3usize) , self . itampmf (4usize) , self . itampmf (5usize) , self . itampmf (6usize) , self . itampmf (7usize))
+            defmt::write!(
+                f,
+                "Misr {{ tampmf[0]: {=bool:?}, tampmf[1]: {=bool:?}, tampmf[2]: {=bool:?}, tampmf[3]: {=bool:?}, tampmf[4]: {=bool:?}, tampmf[5]: {=bool:?}, tampmf[6]: {=bool:?}, tampmf[7]: {=bool:?}, itampmf[0]: {=bool:?}, itampmf[1]: {=bool:?}, itampmf[2]: {=bool:?}, itampmf[3]: {=bool:?}, itampmf[4]: {=bool:?}, itampmf[5]: {=bool:?}, itampmf[6]: {=bool:?}, itampmf[7]: {=bool:?} }}",
+                self.tampmf(0usize),
+                self.tampmf(1usize),
+                self.tampmf(2usize),
+                self.tampmf(3usize),
+                self.tampmf(4usize),
+                self.tampmf(5usize),
+                self.tampmf(6usize),
+                self.tampmf(7usize),
+                self.itampmf(0usize),
+                self.itampmf(1usize),
+                self.itampmf(2usize),
+                self.itampmf(3usize),
+                self.itampmf(4usize),
+                self.itampmf(5usize),
+                self.itampmf(6usize),
+                self.itampmf(7usize)
+            )
         }
     }
     #[doc = "TAMP privilege mode control register"]
@@ -1112,7 +1233,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Scr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Scr {{ ctampf[0]: {=bool:?}, ctampf[1]: {=bool:?}, ctampf[2]: {=bool:?}, ctampf[3]: {=bool:?}, ctampf[4]: {=bool:?}, ctampf[5]: {=bool:?}, ctampf[6]: {=bool:?}, ctampf[7]: {=bool:?}, citampf[0]: {=bool:?}, citampf[1]: {=bool:?}, citampf[2]: {=bool:?}, citampf[3]: {=bool:?}, citampf[4]: {=bool:?}, citampf[5]: {=bool:?}, citampf[6]: {=bool:?}, citampf[7]: {=bool:?} }}" , self . ctampf (0usize) , self . ctampf (1usize) , self . ctampf (2usize) , self . ctampf (3usize) , self . ctampf (4usize) , self . ctampf (5usize) , self . ctampf (6usize) , self . ctampf (7usize) , self . citampf (0usize) , self . citampf (1usize) , self . citampf (2usize) , self . citampf (3usize) , self . citampf (4usize) , self . citampf (5usize) , self . citampf (6usize) , self . citampf (7usize))
+            defmt::write!(
+                f,
+                "Scr {{ ctampf[0]: {=bool:?}, ctampf[1]: {=bool:?}, ctampf[2]: {=bool:?}, ctampf[3]: {=bool:?}, ctampf[4]: {=bool:?}, ctampf[5]: {=bool:?}, ctampf[6]: {=bool:?}, ctampf[7]: {=bool:?}, citampf[0]: {=bool:?}, citampf[1]: {=bool:?}, citampf[2]: {=bool:?}, citampf[3]: {=bool:?}, citampf[4]: {=bool:?}, citampf[5]: {=bool:?}, citampf[6]: {=bool:?}, citampf[7]: {=bool:?} }}",
+                self.ctampf(0usize),
+                self.ctampf(1usize),
+                self.ctampf(2usize),
+                self.ctampf(3usize),
+                self.ctampf(4usize),
+                self.ctampf(5usize),
+                self.ctampf(6usize),
+                self.ctampf(7usize),
+                self.citampf(0usize),
+                self.citampf(1usize),
+                self.citampf(2usize),
+                self.citampf(3usize),
+                self.citampf(4usize),
+                self.citampf(5usize),
+                self.citampf(6usize),
+                self.citampf(7usize)
+            )
         }
     }
     #[doc = "TAMP secure mode register"]
@@ -1253,7 +1393,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smisr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Smisr {{ tampmf[0]: {=bool:?}, tampmf[1]: {=bool:?}, tampmf[2]: {=bool:?}, tampmf[3]: {=bool:?}, tampmf[4]: {=bool:?}, tampmf[5]: {=bool:?}, tampmf[6]: {=bool:?}, tampmf[7]: {=bool:?}, itampmf[0]: {=bool:?}, itampmf[1]: {=bool:?}, itampmf[2]: {=bool:?}, itampmf[3]: {=bool:?}, itampmf[4]: {=bool:?}, itampmf[5]: {=bool:?}, itampmf[6]: {=bool:?}, itampmf[7]: {=bool:?} }}" , self . tampmf (0usize) , self . tampmf (1usize) , self . tampmf (2usize) , self . tampmf (3usize) , self . tampmf (4usize) , self . tampmf (5usize) , self . tampmf (6usize) , self . tampmf (7usize) , self . itampmf (0usize) , self . itampmf (1usize) , self . itampmf (2usize) , self . itampmf (3usize) , self . itampmf (4usize) , self . itampmf (5usize) , self . itampmf (6usize) , self . itampmf (7usize))
+            defmt::write!(
+                f,
+                "Smisr {{ tampmf[0]: {=bool:?}, tampmf[1]: {=bool:?}, tampmf[2]: {=bool:?}, tampmf[3]: {=bool:?}, tampmf[4]: {=bool:?}, tampmf[5]: {=bool:?}, tampmf[6]: {=bool:?}, tampmf[7]: {=bool:?}, itampmf[0]: {=bool:?}, itampmf[1]: {=bool:?}, itampmf[2]: {=bool:?}, itampmf[3]: {=bool:?}, itampmf[4]: {=bool:?}, itampmf[5]: {=bool:?}, itampmf[6]: {=bool:?}, itampmf[7]: {=bool:?} }}",
+                self.tampmf(0usize),
+                self.tampmf(1usize),
+                self.tampmf(2usize),
+                self.tampmf(3usize),
+                self.tampmf(4usize),
+                self.tampmf(5usize),
+                self.tampmf(6usize),
+                self.tampmf(7usize),
+                self.itampmf(0usize),
+                self.itampmf(1usize),
+                self.itampmf(2usize),
+                self.itampmf(3usize),
+                self.itampmf(4usize),
+                self.itampmf(5usize),
+                self.itampmf(6usize),
+                self.itampmf(7usize)
+            )
         }
     }
     #[doc = "TAMP status register"]
@@ -1325,7 +1484,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ tampf[0]: {=bool:?}, tampf[1]: {=bool:?}, tampf[2]: {=bool:?}, tampf[3]: {=bool:?}, tampf[4]: {=bool:?}, tampf[5]: {=bool:?}, tampf[6]: {=bool:?}, tampf[7]: {=bool:?}, itampf[0]: {=bool:?}, itampf[1]: {=bool:?}, itampf[2]: {=bool:?}, itampf[3]: {=bool:?}, itampf[4]: {=bool:?}, itampf[5]: {=bool:?}, itampf[6]: {=bool:?}, itampf[7]: {=bool:?} }}" , self . tampf (0usize) , self . tampf (1usize) , self . tampf (2usize) , self . tampf (3usize) , self . tampf (4usize) , self . tampf (5usize) , self . tampf (6usize) , self . tampf (7usize) , self . itampf (0usize) , self . itampf (1usize) , self . itampf (2usize) , self . itampf (3usize) , self . itampf (4usize) , self . itampf (5usize) , self . itampf (6usize) , self . itampf (7usize))
+            defmt::write!(
+                f,
+                "Sr {{ tampf[0]: {=bool:?}, tampf[1]: {=bool:?}, tampf[2]: {=bool:?}, tampf[3]: {=bool:?}, tampf[4]: {=bool:?}, tampf[5]: {=bool:?}, tampf[6]: {=bool:?}, tampf[7]: {=bool:?}, itampf[0]: {=bool:?}, itampf[1]: {=bool:?}, itampf[2]: {=bool:?}, itampf[3]: {=bool:?}, itampf[4]: {=bool:?}, itampf[5]: {=bool:?}, itampf[6]: {=bool:?}, itampf[7]: {=bool:?} }}",
+                self.tampf(0usize),
+                self.tampf(1usize),
+                self.tampf(2usize),
+                self.tampf(3usize),
+                self.tampf(4usize),
+                self.tampf(5usize),
+                self.tampf(6usize),
+                self.tampf(7usize),
+                self.itampf(0usize),
+                self.itampf(1usize),
+                self.itampf(2usize),
+                self.itampf(3usize),
+                self.itampf(4usize),
+                self.itampf(5usize),
+                self.itampf(6usize),
+                self.itampf(7usize)
+            )
         }
     }
 }

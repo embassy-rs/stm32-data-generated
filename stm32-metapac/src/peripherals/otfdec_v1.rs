@@ -470,7 +470,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RegionCfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RegionCfgr {{ reg_en: {=bool:?}, configlock: {=bool:?}, keylock: {=bool:?}, mode: {:?}, keycrc: {=u8:?}, reg_version: {=u16:?} }}" , self . reg_en () , self . configlock () , self . keylock () , self . mode () , self . keycrc () , self . reg_version ())
+            defmt::write!(
+                f,
+                "RegionCfgr {{ reg_en: {=bool:?}, configlock: {=bool:?}, keylock: {=bool:?}, mode: {:?}, keycrc: {=u8:?}, reg_version: {=u16:?} }}",
+                self.reg_en(),
+                self.configlock(),
+                self.keylock(),
+                self.mode(),
+                self.keycrc(),
+                self.reg_version()
+            )
         }
     }
 }

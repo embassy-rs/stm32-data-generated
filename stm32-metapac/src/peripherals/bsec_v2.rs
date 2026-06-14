@@ -278,7 +278,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dbgcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dbgcr {{ dbgen: {=bool:?}, niden: {=bool:?}, spiden: {=bool:?}, spniden: {=bool:?}, dbgswen: {=bool:?} }}" , self . dbgen () , self . niden () , self . spiden () , self . spniden () , self . dbgswen ())
+            defmt::write!(
+                f,
+                "Dbgcr {{ dbgen: {=bool:?}, niden: {=bool:?}, spiden: {=bool:?}, spniden: {=bool:?}, dbgswen: {=bool:?} }}",
+                self.dbgen(),
+                self.niden(),
+                self.spiden(),
+                self.spniden(),
+                self.dbgswen()
+            )
         }
     }
     #[doc = "BSEC epoch select register."]
@@ -527,7 +535,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lockr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Lockr {{ lock[0]: {=bool:?}, lock[1]: {=bool:?}, lock[2]: {=bool:?}, lock[3]: {=bool:?}, lock[4]: {=bool:?}, lock[5]: {=bool:?}, lock[6]: {=bool:?}, lock[7]: {=bool:?}, lock[8]: {=bool:?}, lock[9]: {=bool:?}, lock[10]: {=bool:?}, lock[11]: {=bool:?}, lock[12]: {=bool:?}, lock[13]: {=bool:?}, lock[14]: {=bool:?}, lock[15]: {=bool:?}, lock[16]: {=bool:?}, lock[17]: {=bool:?}, lock[18]: {=bool:?}, lock[19]: {=bool:?}, lock[20]: {=bool:?}, lock[21]: {=bool:?}, lock[22]: {=bool:?}, lock[23]: {=bool:?}, lock[24]: {=bool:?}, lock[25]: {=bool:?}, lock[26]: {=bool:?}, lock[27]: {=bool:?}, lock[28]: {=bool:?}, lock[29]: {=bool:?}, lock[30]: {=bool:?}, lock[31]: {=bool:?} }}" , self . lock (0usize) , self . lock (1usize) , self . lock (2usize) , self . lock (3usize) , self . lock (4usize) , self . lock (5usize) , self . lock (6usize) , self . lock (7usize) , self . lock (8usize) , self . lock (9usize) , self . lock (10usize) , self . lock (11usize) , self . lock (12usize) , self . lock (13usize) , self . lock (14usize) , self . lock (15usize) , self . lock (16usize) , self . lock (17usize) , self . lock (18usize) , self . lock (19usize) , self . lock (20usize) , self . lock (21usize) , self . lock (22usize) , self . lock (23usize) , self . lock (24usize) , self . lock (25usize) , self . lock (26usize) , self . lock (27usize) , self . lock (28usize) , self . lock (29usize) , self . lock (30usize) , self . lock (31usize))
+            defmt::write!(
+                f,
+                "Lockr {{ lock[0]: {=bool:?}, lock[1]: {=bool:?}, lock[2]: {=bool:?}, lock[3]: {=bool:?}, lock[4]: {=bool:?}, lock[5]: {=bool:?}, lock[6]: {=bool:?}, lock[7]: {=bool:?}, lock[8]: {=bool:?}, lock[9]: {=bool:?}, lock[10]: {=bool:?}, lock[11]: {=bool:?}, lock[12]: {=bool:?}, lock[13]: {=bool:?}, lock[14]: {=bool:?}, lock[15]: {=bool:?}, lock[16]: {=bool:?}, lock[17]: {=bool:?}, lock[18]: {=bool:?}, lock[19]: {=bool:?}, lock[20]: {=bool:?}, lock[21]: {=bool:?}, lock[22]: {=bool:?}, lock[23]: {=bool:?}, lock[24]: {=bool:?}, lock[25]: {=bool:?}, lock[26]: {=bool:?}, lock[27]: {=bool:?}, lock[28]: {=bool:?}, lock[29]: {=bool:?}, lock[30]: {=bool:?}, lock[31]: {=bool:?} }}",
+                self.lock(0usize),
+                self.lock(1usize),
+                self.lock(2usize),
+                self.lock(3usize),
+                self.lock(4usize),
+                self.lock(5usize),
+                self.lock(6usize),
+                self.lock(7usize),
+                self.lock(8usize),
+                self.lock(9usize),
+                self.lock(10usize),
+                self.lock(11usize),
+                self.lock(12usize),
+                self.lock(13usize),
+                self.lock(14usize),
+                self.lock(15usize),
+                self.lock(16usize),
+                self.lock(17usize),
+                self.lock(18usize),
+                self.lock(19usize),
+                self.lock(20usize),
+                self.lock(21usize),
+                self.lock(22usize),
+                self.lock(23usize),
+                self.lock(24usize),
+                self.lock(25usize),
+                self.lock(26usize),
+                self.lock(27usize),
+                self.lock(28usize),
+                self.lock(29usize),
+                self.lock(30usize),
+                self.lock(31usize)
+            )
         }
     }
     #[doc = "BSEC next HDPL register."]
@@ -734,7 +777,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Otpsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Otpsr {{ busy: {=bool:?}, hideup: {=bool:?}, pplock: {=bool:?}, otperr: {=bool:?}, otpsec: {=bool:?} }}" , self . busy () , self . hideup () , self . pplock () , self . otperr () , self . otpsec ())
+            defmt::write!(
+                f,
+                "Otpsr {{ busy: {=bool:?}, hideup: {=bool:?}, pplock: {=bool:?}, otperr: {=bool:?}, otpsec: {=bool:?} }}",
+                self.busy(),
+                self.hideup(),
+                self.pplock(),
+                self.otperr(),
+                self.otpsec()
+            )
         }
     }
     #[doc = "BSEC shadow fuse status register."]
@@ -806,7 +857,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sfsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sfsr {{ sfsr[0]: {=bool:?}, sfsr[1]: {=bool:?}, sfsr[2]: {=bool:?}, sfsr[3]: {=bool:?}, sfsr[4]: {=bool:?}, sfsr[5]: {=bool:?}, sfsr[6]: {=bool:?}, sfsr[7]: {=bool:?}, sfsr[8]: {=bool:?}, sfsr[9]: {=bool:?}, sfsr[10]: {=bool:?}, sfsr[11]: {=bool:?}, sfsr[12]: {=bool:?}, sfsr[13]: {=bool:?}, sfsr[14]: {=bool:?}, sfsr[15]: {=bool:?}, sfsr[16]: {=bool:?}, sfsr[17]: {=bool:?}, sfsr[18]: {=bool:?}, sfsr[19]: {=bool:?}, sfsr[20]: {=bool:?}, sfsr[21]: {=bool:?}, sfsr[22]: {=bool:?}, sfsr[23]: {=bool:?}, sfsr[24]: {=bool:?}, sfsr[25]: {=bool:?}, sfsr[26]: {=bool:?}, sfsr[27]: {=bool:?}, sfsr[28]: {=bool:?}, sfsr[29]: {=bool:?}, sfsr[30]: {=bool:?}, sfsr[31]: {=bool:?} }}" , self . sfsr (0usize) , self . sfsr (1usize) , self . sfsr (2usize) , self . sfsr (3usize) , self . sfsr (4usize) , self . sfsr (5usize) , self . sfsr (6usize) , self . sfsr (7usize) , self . sfsr (8usize) , self . sfsr (9usize) , self . sfsr (10usize) , self . sfsr (11usize) , self . sfsr (12usize) , self . sfsr (13usize) , self . sfsr (14usize) , self . sfsr (15usize) , self . sfsr (16usize) , self . sfsr (17usize) , self . sfsr (18usize) , self . sfsr (19usize) , self . sfsr (20usize) , self . sfsr (21usize) , self . sfsr (22usize) , self . sfsr (23usize) , self . sfsr (24usize) , self . sfsr (25usize) , self . sfsr (26usize) , self . sfsr (27usize) , self . sfsr (28usize) , self . sfsr (29usize) , self . sfsr (30usize) , self . sfsr (31usize))
+            defmt::write!(
+                f,
+                "Sfsr {{ sfsr[0]: {=bool:?}, sfsr[1]: {=bool:?}, sfsr[2]: {=bool:?}, sfsr[3]: {=bool:?}, sfsr[4]: {=bool:?}, sfsr[5]: {=bool:?}, sfsr[6]: {=bool:?}, sfsr[7]: {=bool:?}, sfsr[8]: {=bool:?}, sfsr[9]: {=bool:?}, sfsr[10]: {=bool:?}, sfsr[11]: {=bool:?}, sfsr[12]: {=bool:?}, sfsr[13]: {=bool:?}, sfsr[14]: {=bool:?}, sfsr[15]: {=bool:?}, sfsr[16]: {=bool:?}, sfsr[17]: {=bool:?}, sfsr[18]: {=bool:?}, sfsr[19]: {=bool:?}, sfsr[20]: {=bool:?}, sfsr[21]: {=bool:?}, sfsr[22]: {=bool:?}, sfsr[23]: {=bool:?}, sfsr[24]: {=bool:?}, sfsr[25]: {=bool:?}, sfsr[26]: {=bool:?}, sfsr[27]: {=bool:?}, sfsr[28]: {=bool:?}, sfsr[29]: {=bool:?}, sfsr[30]: {=bool:?}, sfsr[31]: {=bool:?} }}",
+                self.sfsr(0usize),
+                self.sfsr(1usize),
+                self.sfsr(2usize),
+                self.sfsr(3usize),
+                self.sfsr(4usize),
+                self.sfsr(5usize),
+                self.sfsr(6usize),
+                self.sfsr(7usize),
+                self.sfsr(8usize),
+                self.sfsr(9usize),
+                self.sfsr(10usize),
+                self.sfsr(11usize),
+                self.sfsr(12usize),
+                self.sfsr(13usize),
+                self.sfsr(14usize),
+                self.sfsr(15usize),
+                self.sfsr(16usize),
+                self.sfsr(17usize),
+                self.sfsr(18usize),
+                self.sfsr(19usize),
+                self.sfsr(20usize),
+                self.sfsr(21usize),
+                self.sfsr(22usize),
+                self.sfsr(23usize),
+                self.sfsr(24usize),
+                self.sfsr(25usize),
+                self.sfsr(26usize),
+                self.sfsr(27usize),
+                self.sfsr(28usize),
+                self.sfsr(29usize),
+                self.sfsr(30usize),
+                self.sfsr(31usize)
+            )
         }
     }
     #[doc = "BSEC status register."]
@@ -982,7 +1068,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vldr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Vldr {{ otpvld[0]: {=bool:?}, otpvld[1]: {=bool:?}, otpvld[2]: {=bool:?}, otpvld[3]: {=bool:?}, otpvld[4]: {=bool:?}, otpvld[5]: {=bool:?}, otpvld[6]: {=bool:?}, otpvld[7]: {=bool:?}, otpvld[8]: {=bool:?}, otpvld[9]: {=bool:?}, otpvld[10]: {=bool:?}, otpvld[11]: {=bool:?}, otpvld[12]: {=bool:?}, otpvld[13]: {=bool:?}, otpvld[14]: {=bool:?}, otpvld[15]: {=bool:?}, otpvld[16]: {=bool:?}, otpvld[17]: {=bool:?}, otpvld[18]: {=bool:?}, otpvld[19]: {=bool:?}, otpvld[20]: {=bool:?}, otpvld[21]: {=bool:?}, otpvld[22]: {=bool:?}, otpvld[23]: {=bool:?}, otpvld[24]: {=bool:?}, otpvld[25]: {=bool:?}, otpvld[26]: {=bool:?}, otpvld[27]: {=bool:?}, otpvld[28]: {=bool:?}, otpvld[29]: {=bool:?}, otpvld[30]: {=bool:?}, otpvld[31]: {=bool:?} }}" , self . otpvld (0usize) , self . otpvld (1usize) , self . otpvld (2usize) , self . otpvld (3usize) , self . otpvld (4usize) , self . otpvld (5usize) , self . otpvld (6usize) , self . otpvld (7usize) , self . otpvld (8usize) , self . otpvld (9usize) , self . otpvld (10usize) , self . otpvld (11usize) , self . otpvld (12usize) , self . otpvld (13usize) , self . otpvld (14usize) , self . otpvld (15usize) , self . otpvld (16usize) , self . otpvld (17usize) , self . otpvld (18usize) , self . otpvld (19usize) , self . otpvld (20usize) , self . otpvld (21usize) , self . otpvld (22usize) , self . otpvld (23usize) , self . otpvld (24usize) , self . otpvld (25usize) , self . otpvld (26usize) , self . otpvld (27usize) , self . otpvld (28usize) , self . otpvld (29usize) , self . otpvld (30usize) , self . otpvld (31usize))
+            defmt::write!(
+                f,
+                "Vldr {{ otpvld[0]: {=bool:?}, otpvld[1]: {=bool:?}, otpvld[2]: {=bool:?}, otpvld[3]: {=bool:?}, otpvld[4]: {=bool:?}, otpvld[5]: {=bool:?}, otpvld[6]: {=bool:?}, otpvld[7]: {=bool:?}, otpvld[8]: {=bool:?}, otpvld[9]: {=bool:?}, otpvld[10]: {=bool:?}, otpvld[11]: {=bool:?}, otpvld[12]: {=bool:?}, otpvld[13]: {=bool:?}, otpvld[14]: {=bool:?}, otpvld[15]: {=bool:?}, otpvld[16]: {=bool:?}, otpvld[17]: {=bool:?}, otpvld[18]: {=bool:?}, otpvld[19]: {=bool:?}, otpvld[20]: {=bool:?}, otpvld[21]: {=bool:?}, otpvld[22]: {=bool:?}, otpvld[23]: {=bool:?}, otpvld[24]: {=bool:?}, otpvld[25]: {=bool:?}, otpvld[26]: {=bool:?}, otpvld[27]: {=bool:?}, otpvld[28]: {=bool:?}, otpvld[29]: {=bool:?}, otpvld[30]: {=bool:?}, otpvld[31]: {=bool:?} }}",
+                self.otpvld(0usize),
+                self.otpvld(1usize),
+                self.otpvld(2usize),
+                self.otpvld(3usize),
+                self.otpvld(4usize),
+                self.otpvld(5usize),
+                self.otpvld(6usize),
+                self.otpvld(7usize),
+                self.otpvld(8usize),
+                self.otpvld(9usize),
+                self.otpvld(10usize),
+                self.otpvld(11usize),
+                self.otpvld(12usize),
+                self.otpvld(13usize),
+                self.otpvld(14usize),
+                self.otpvld(15usize),
+                self.otpvld(16usize),
+                self.otpvld(17usize),
+                self.otpvld(18usize),
+                self.otpvld(19usize),
+                self.otpvld(20usize),
+                self.otpvld(21usize),
+                self.otpvld(22usize),
+                self.otpvld(23usize),
+                self.otpvld(24usize),
+                self.otpvld(25usize),
+                self.otpvld(26usize),
+                self.otpvld(27usize),
+                self.otpvld(28usize),
+                self.otpvld(29usize),
+                self.otpvld(30usize),
+                self.otpvld(31usize)
+            )
         }
     }
     #[doc = "BSEC write data register."]

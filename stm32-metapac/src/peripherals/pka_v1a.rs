@@ -237,7 +237,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, start: {=bool:?}, mode: {=u8:?}, procendie: {=bool:?}, ramerrie: {=bool:?}, addrerrie: {=bool:?}, operrie: {=bool:?} }}" , self . en () , self . start () , self . mode () , self . procendie () , self . ramerrie () , self . addrerrie () , self . operrie ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, start: {=bool:?}, mode: {=u8:?}, procendie: {=bool:?}, ramerrie: {=bool:?}, addrerrie: {=bool:?}, operrie: {=bool:?} }}",
+                self.en(),
+                self.start(),
+                self.mode(),
+                self.procendie(),
+                self.ramerrie(),
+                self.addrerrie(),
+                self.operrie()
+            )
         }
     }
     #[doc = "PKA status register."]
@@ -352,7 +362,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ initok: {=bool:?}, lmf: {:?}, busy: {=bool:?}, procendf: {=bool:?}, ramerrf: {=bool:?}, addrerrf: {=bool:?}, operrf: {=bool:?} }}" , self . initok () , self . lmf () , self . busy () , self . procendf () , self . ramerrf () , self . addrerrf () , self . operrf ())
+            defmt::write!(
+                f,
+                "Sr {{ initok: {=bool:?}, lmf: {:?}, busy: {=bool:?}, procendf: {=bool:?}, ramerrf: {=bool:?}, addrerrf: {=bool:?}, operrf: {=bool:?} }}",
+                self.initok(),
+                self.lmf(),
+                self.busy(),
+                self.procendf(),
+                self.ramerrf(),
+                self.addrerrf(),
+                self.operrf()
+            )
         }
     }
 }

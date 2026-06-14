@@ -540,7 +540,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for I2cFmpCtrl {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "I2cFmpCtrl {{ i2c1_pa0_fmp: {=bool:?}, i2c1_pa1_fmp: {=bool:?}, i2c1_pb6_fmp: {=bool:?}, i2c1_pb7_fmp: {=bool:?} }}" , self . i2c1_pa0_fmp () , self . i2c1_pa1_fmp () , self . i2c1_pb6_fmp () , self . i2c1_pb7_fmp ())
+            defmt::write!(
+                f,
+                "I2cFmpCtrl {{ i2c1_pa0_fmp: {=bool:?}, i2c1_pa1_fmp: {=bool:?}, i2c1_pb6_fmp: {=bool:?}, i2c1_pb7_fmp: {=bool:?} }}",
+                self.i2c1_pa0_fmp(),
+                self.i2c1_pa1_fmp(),
+                self.i2c1_pb6_fmp(),
+                self.i2c1_pb7_fmp()
+            )
         }
     }
     #[doc = "IO_DTR register."]
@@ -928,7 +935,38 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for IoDtr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "IoDtr {{ pa0_dt: {=bool:?}, pa1_dt: {=bool:?}, pa2_dt: {=bool:?}, pa3_dt: {=bool:?}, pa4_dt: {=bool:?}, pa5_dt: {=bool:?}, pa6_dt: {=bool:?}, pa7_dt: {=bool:?}, pa8_dt: {=bool:?}, pa9_dt: {=bool:?}, pa10_dt: {=bool:?}, pa11_dt: {=bool:?}, pb0_dt: {=bool:?}, pb1_dt: {=bool:?}, pb2_dt: {=bool:?}, pb3_dt: {=bool:?}, pb4_dt: {=bool:?}, pb5_dt: {=bool:?}, pb6_dt: {=bool:?}, pb7_dt: {=bool:?}, pb8_dt: {=bool:?}, pb9_dt: {=bool:?}, pb10_dt: {=bool:?}, pb11_dt: {=bool:?}, pb12_dt: {=bool:?}, pb13_dt: {=bool:?}, pb14_dt: {=bool:?}, pb15_dt: {=bool:?} }}" , self . pa0_dt () , self . pa1_dt () , self . pa2_dt () , self . pa3_dt () , self . pa4_dt () , self . pa5_dt () , self . pa6_dt () , self . pa7_dt () , self . pa8_dt () , self . pa9_dt () , self . pa10_dt () , self . pa11_dt () , self . pb0_dt () , self . pb1_dt () , self . pb2_dt () , self . pb3_dt () , self . pb4_dt () , self . pb5_dt () , self . pb6_dt () , self . pb7_dt () , self . pb8_dt () , self . pb9_dt () , self . pb10_dt () , self . pb11_dt () , self . pb12_dt () , self . pb13_dt () , self . pb14_dt () , self . pb15_dt ())
+            defmt::write!(
+                f,
+                "IoDtr {{ pa0_dt: {=bool:?}, pa1_dt: {=bool:?}, pa2_dt: {=bool:?}, pa3_dt: {=bool:?}, pa4_dt: {=bool:?}, pa5_dt: {=bool:?}, pa6_dt: {=bool:?}, pa7_dt: {=bool:?}, pa8_dt: {=bool:?}, pa9_dt: {=bool:?}, pa10_dt: {=bool:?}, pa11_dt: {=bool:?}, pb0_dt: {=bool:?}, pb1_dt: {=bool:?}, pb2_dt: {=bool:?}, pb3_dt: {=bool:?}, pb4_dt: {=bool:?}, pb5_dt: {=bool:?}, pb6_dt: {=bool:?}, pb7_dt: {=bool:?}, pb8_dt: {=bool:?}, pb9_dt: {=bool:?}, pb10_dt: {=bool:?}, pb11_dt: {=bool:?}, pb12_dt: {=bool:?}, pb13_dt: {=bool:?}, pb14_dt: {=bool:?}, pb15_dt: {=bool:?} }}",
+                self.pa0_dt(),
+                self.pa1_dt(),
+                self.pa2_dt(),
+                self.pa3_dt(),
+                self.pa4_dt(),
+                self.pa5_dt(),
+                self.pa6_dt(),
+                self.pa7_dt(),
+                self.pa8_dt(),
+                self.pa9_dt(),
+                self.pa10_dt(),
+                self.pa11_dt(),
+                self.pb0_dt(),
+                self.pb1_dt(),
+                self.pb2_dt(),
+                self.pb3_dt(),
+                self.pb4_dt(),
+                self.pb5_dt(),
+                self.pb6_dt(),
+                self.pb7_dt(),
+                self.pb8_dt(),
+                self.pb9_dt(),
+                self.pb10_dt(),
+                self.pb11_dt(),
+                self.pb12_dt(),
+                self.pb13_dt(),
+                self.pb14_dt(),
+                self.pb15_dt()
+            )
         }
     }
     #[doc = "IO_IBER register."]
@@ -1368,7 +1406,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for IoIber {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "IoIber {{ pa0_ibe: {=bool:?}, pa1_ibe: {=bool:?}, pa2_ibe: {=bool:?}, pa3_ibe: {=bool:?}, pa4_ibe: {=bool:?}, pa5_ibe: {=bool:?}, pa6_ibe: {=bool:?}, pa7_ibe: {=bool:?}, pa8_ibe: {=bool:?}, pa9_ibe: {=bool:?}, pa10_ibe: {=bool:?}, pa11_ibe: {=bool:?}, pa12_ibe: {=bool:?}, pa13_ibe: {=bool:?}, pa14_ibe: {=bool:?}, pa15_ibe: {=bool:?}, pb0_ibe: {=bool:?}, pb1_ibe: {=bool:?}, pb2_ibe: {=bool:?}, pb3_ibe: {=bool:?}, pb4_ibe: {=bool:?}, pb5_ibe: {=bool:?}, pb6_ibe: {=bool:?}, pb7_ibe: {=bool:?}, pb8_ibe: {=bool:?}, pb9_ibe: {=bool:?}, pb10_ibe: {=bool:?}, pb11_ibe: {=bool:?}, pb12_ibe: {=bool:?}, pb13_ibe: {=bool:?}, pb14_ibe: {=bool:?}, pb15_ibe: {=bool:?} }}" , self . pa0_ibe () , self . pa1_ibe () , self . pa2_ibe () , self . pa3_ibe () , self . pa4_ibe () , self . pa5_ibe () , self . pa6_ibe () , self . pa7_ibe () , self . pa8_ibe () , self . pa9_ibe () , self . pa10_ibe () , self . pa11_ibe () , self . pa12_ibe () , self . pa13_ibe () , self . pa14_ibe () , self . pa15_ibe () , self . pb0_ibe () , self . pb1_ibe () , self . pb2_ibe () , self . pb3_ibe () , self . pb4_ibe () , self . pb5_ibe () , self . pb6_ibe () , self . pb7_ibe () , self . pb8_ibe () , self . pb9_ibe () , self . pb10_ibe () , self . pb11_ibe () , self . pb12_ibe () , self . pb13_ibe () , self . pb14_ibe () , self . pb15_ibe ())
+            defmt::write!(
+                f,
+                "IoIber {{ pa0_ibe: {=bool:?}, pa1_ibe: {=bool:?}, pa2_ibe: {=bool:?}, pa3_ibe: {=bool:?}, pa4_ibe: {=bool:?}, pa5_ibe: {=bool:?}, pa6_ibe: {=bool:?}, pa7_ibe: {=bool:?}, pa8_ibe: {=bool:?}, pa9_ibe: {=bool:?}, pa10_ibe: {=bool:?}, pa11_ibe: {=bool:?}, pa12_ibe: {=bool:?}, pa13_ibe: {=bool:?}, pa14_ibe: {=bool:?}, pa15_ibe: {=bool:?}, pb0_ibe: {=bool:?}, pb1_ibe: {=bool:?}, pb2_ibe: {=bool:?}, pb3_ibe: {=bool:?}, pb4_ibe: {=bool:?}, pb5_ibe: {=bool:?}, pb6_ibe: {=bool:?}, pb7_ibe: {=bool:?}, pb8_ibe: {=bool:?}, pb9_ibe: {=bool:?}, pb10_ibe: {=bool:?}, pb11_ibe: {=bool:?}, pb12_ibe: {=bool:?}, pb13_ibe: {=bool:?}, pb14_ibe: {=bool:?}, pb15_ibe: {=bool:?} }}",
+                self.pa0_ibe(),
+                self.pa1_ibe(),
+                self.pa2_ibe(),
+                self.pa3_ibe(),
+                self.pa4_ibe(),
+                self.pa5_ibe(),
+                self.pa6_ibe(),
+                self.pa7_ibe(),
+                self.pa8_ibe(),
+                self.pa9_ibe(),
+                self.pa10_ibe(),
+                self.pa11_ibe(),
+                self.pa12_ibe(),
+                self.pa13_ibe(),
+                self.pa14_ibe(),
+                self.pa15_ibe(),
+                self.pb0_ibe(),
+                self.pb1_ibe(),
+                self.pb2_ibe(),
+                self.pb3_ibe(),
+                self.pb4_ibe(),
+                self.pb5_ibe(),
+                self.pb6_ibe(),
+                self.pb7_ibe(),
+                self.pb8_ibe(),
+                self.pb9_ibe(),
+                self.pb10_ibe(),
+                self.pb11_ibe(),
+                self.pb12_ibe(),
+                self.pb13_ibe(),
+                self.pb14_ibe(),
+                self.pb15_ibe()
+            )
         }
     }
     #[doc = "IO_IER register."]
@@ -1808,7 +1881,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for IoIer {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "IoIer {{ pa0_ie: {=bool:?}, pa1_ie: {=bool:?}, pa2_ie: {=bool:?}, pa3_ie: {=bool:?}, pa4_ie: {=bool:?}, pa5_ie: {=bool:?}, pa6_ie: {=bool:?}, pa7_ie: {=bool:?}, pa8_ie: {=bool:?}, pa9_ie: {=bool:?}, pa10_ie: {=bool:?}, pa11_ie: {=bool:?}, pa12_ie: {=bool:?}, pa13_ie: {=bool:?}, pa14_ie: {=bool:?}, pa15_ie: {=bool:?}, pb0_ie: {=bool:?}, pb1_ie: {=bool:?}, pb2_ie: {=bool:?}, pb3_ie: {=bool:?}, pb4_ie: {=bool:?}, pb5_ie: {=bool:?}, pb6_ie: {=bool:?}, pb7_ie: {=bool:?}, pb8_ie: {=bool:?}, pb9_ie: {=bool:?}, pb10_ie: {=bool:?}, pb11_ie: {=bool:?}, pb12_ie: {=bool:?}, pb13_ie: {=bool:?}, pb14_ie: {=bool:?}, pb15_ie: {=bool:?} }}" , self . pa0_ie () , self . pa1_ie () , self . pa2_ie () , self . pa3_ie () , self . pa4_ie () , self . pa5_ie () , self . pa6_ie () , self . pa7_ie () , self . pa8_ie () , self . pa9_ie () , self . pa10_ie () , self . pa11_ie () , self . pa12_ie () , self . pa13_ie () , self . pa14_ie () , self . pa15_ie () , self . pb0_ie () , self . pb1_ie () , self . pb2_ie () , self . pb3_ie () , self . pb4_ie () , self . pb5_ie () , self . pb6_ie () , self . pb7_ie () , self . pb8_ie () , self . pb9_ie () , self . pb10_ie () , self . pb11_ie () , self . pb12_ie () , self . pb13_ie () , self . pb14_ie () , self . pb15_ie ())
+            defmt::write!(
+                f,
+                "IoIer {{ pa0_ie: {=bool:?}, pa1_ie: {=bool:?}, pa2_ie: {=bool:?}, pa3_ie: {=bool:?}, pa4_ie: {=bool:?}, pa5_ie: {=bool:?}, pa6_ie: {=bool:?}, pa7_ie: {=bool:?}, pa8_ie: {=bool:?}, pa9_ie: {=bool:?}, pa10_ie: {=bool:?}, pa11_ie: {=bool:?}, pa12_ie: {=bool:?}, pa13_ie: {=bool:?}, pa14_ie: {=bool:?}, pa15_ie: {=bool:?}, pb0_ie: {=bool:?}, pb1_ie: {=bool:?}, pb2_ie: {=bool:?}, pb3_ie: {=bool:?}, pb4_ie: {=bool:?}, pb5_ie: {=bool:?}, pb6_ie: {=bool:?}, pb7_ie: {=bool:?}, pb8_ie: {=bool:?}, pb9_ie: {=bool:?}, pb10_ie: {=bool:?}, pb11_ie: {=bool:?}, pb12_ie: {=bool:?}, pb13_ie: {=bool:?}, pb14_ie: {=bool:?}, pb15_ie: {=bool:?} }}",
+                self.pa0_ie(),
+                self.pa1_ie(),
+                self.pa2_ie(),
+                self.pa3_ie(),
+                self.pa4_ie(),
+                self.pa5_ie(),
+                self.pa6_ie(),
+                self.pa7_ie(),
+                self.pa8_ie(),
+                self.pa9_ie(),
+                self.pa10_ie(),
+                self.pa11_ie(),
+                self.pa12_ie(),
+                self.pa13_ie(),
+                self.pa14_ie(),
+                self.pa15_ie(),
+                self.pb0_ie(),
+                self.pb1_ie(),
+                self.pb2_ie(),
+                self.pb3_ie(),
+                self.pb4_ie(),
+                self.pb5_ie(),
+                self.pb6_ie(),
+                self.pb7_ie(),
+                self.pb8_ie(),
+                self.pb9_ie(),
+                self.pb10_ie(),
+                self.pb11_ie(),
+                self.pb12_ie(),
+                self.pb13_ie(),
+                self.pb14_ie(),
+                self.pb15_ie()
+            )
         }
     }
     #[doc = "IO_IEVR register."]
@@ -2248,7 +2356,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for IoIevr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "IoIevr {{ pa0_iev: {=bool:?}, pa1_iev: {=bool:?}, pa2_iev: {=bool:?}, pa3_iev: {=bool:?}, pa4_iev: {=bool:?}, pa5_iev: {=bool:?}, pa6_iev: {=bool:?}, pa7_iev: {=bool:?}, pa8_iev: {=bool:?}, pa9_iev: {=bool:?}, pa10_iev: {=bool:?}, pa11_iev: {=bool:?}, pa12_iev: {=bool:?}, pa13_iev: {=bool:?}, pa14_iev: {=bool:?}, pa15_iev: {=bool:?}, pb0_iev: {=bool:?}, pb1_iev: {=bool:?}, pb2_iev: {=bool:?}, pb3_iev: {=bool:?}, pb4_iev: {=bool:?}, pb5_iev: {=bool:?}, pb6_iev: {=bool:?}, pb7_iev: {=bool:?}, pb8_iev: {=bool:?}, pb9_iev: {=bool:?}, pb10_iev: {=bool:?}, pb11_iev: {=bool:?}, pb12_iev: {=bool:?}, pb13_iev: {=bool:?}, pb14_iev: {=bool:?}, pb15_iev: {=bool:?} }}" , self . pa0_iev () , self . pa1_iev () , self . pa2_iev () , self . pa3_iev () , self . pa4_iev () , self . pa5_iev () , self . pa6_iev () , self . pa7_iev () , self . pa8_iev () , self . pa9_iev () , self . pa10_iev () , self . pa11_iev () , self . pa12_iev () , self . pa13_iev () , self . pa14_iev () , self . pa15_iev () , self . pb0_iev () , self . pb1_iev () , self . pb2_iev () , self . pb3_iev () , self . pb4_iev () , self . pb5_iev () , self . pb6_iev () , self . pb7_iev () , self . pb8_iev () , self . pb9_iev () , self . pb10_iev () , self . pb11_iev () , self . pb12_iev () , self . pb13_iev () , self . pb14_iev () , self . pb15_iev ())
+            defmt::write!(
+                f,
+                "IoIevr {{ pa0_iev: {=bool:?}, pa1_iev: {=bool:?}, pa2_iev: {=bool:?}, pa3_iev: {=bool:?}, pa4_iev: {=bool:?}, pa5_iev: {=bool:?}, pa6_iev: {=bool:?}, pa7_iev: {=bool:?}, pa8_iev: {=bool:?}, pa9_iev: {=bool:?}, pa10_iev: {=bool:?}, pa11_iev: {=bool:?}, pa12_iev: {=bool:?}, pa13_iev: {=bool:?}, pa14_iev: {=bool:?}, pa15_iev: {=bool:?}, pb0_iev: {=bool:?}, pb1_iev: {=bool:?}, pb2_iev: {=bool:?}, pb3_iev: {=bool:?}, pb4_iev: {=bool:?}, pb5_iev: {=bool:?}, pb6_iev: {=bool:?}, pb7_iev: {=bool:?}, pb8_iev: {=bool:?}, pb9_iev: {=bool:?}, pb10_iev: {=bool:?}, pb11_iev: {=bool:?}, pb12_iev: {=bool:?}, pb13_iev: {=bool:?}, pb14_iev: {=bool:?}, pb15_iev: {=bool:?} }}",
+                self.pa0_iev(),
+                self.pa1_iev(),
+                self.pa2_iev(),
+                self.pa3_iev(),
+                self.pa4_iev(),
+                self.pa5_iev(),
+                self.pa6_iev(),
+                self.pa7_iev(),
+                self.pa8_iev(),
+                self.pa9_iev(),
+                self.pa10_iev(),
+                self.pa11_iev(),
+                self.pa12_iev(),
+                self.pa13_iev(),
+                self.pa14_iev(),
+                self.pa15_iev(),
+                self.pb0_iev(),
+                self.pb1_iev(),
+                self.pb2_iev(),
+                self.pb3_iev(),
+                self.pb4_iev(),
+                self.pb5_iev(),
+                self.pb6_iev(),
+                self.pb7_iev(),
+                self.pb8_iev(),
+                self.pb9_iev(),
+                self.pb10_iev(),
+                self.pb11_iev(),
+                self.pb12_iev(),
+                self.pb13_iev(),
+                self.pb14_iev(),
+                self.pb15_iev()
+            )
         }
     }
     #[doc = "IO_ISCR register."]
@@ -2688,7 +2831,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for IoIscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "IoIscr {{ pa0_isc: {=bool:?}, pa1_isc: {=bool:?}, pa2_isc: {=bool:?}, pa3_isc: {=bool:?}, pa4_isc: {=bool:?}, pa5_isc: {=bool:?}, pa6_isc: {=bool:?}, pa7_isc: {=bool:?}, pa8_isc: {=bool:?}, pa9_isc: {=bool:?}, pa10_isc: {=bool:?}, pa11_isc: {=bool:?}, pa12_isc: {=bool:?}, pa13_isc: {=bool:?}, pa14_isc: {=bool:?}, pa15_isc: {=bool:?}, pb0_isc: {=bool:?}, pb1_isc: {=bool:?}, pb2_isc: {=bool:?}, pb3_isc: {=bool:?}, pb4_isc: {=bool:?}, pb5_isc: {=bool:?}, pb6_isc: {=bool:?}, pb7_isc: {=bool:?}, pb8_isc: {=bool:?}, pb9_isc: {=bool:?}, pb10_isc: {=bool:?}, pb11_isc: {=bool:?}, pb12_isc: {=bool:?}, pb13_isc: {=bool:?}, pb14_isc: {=bool:?}, pb15_isc: {=bool:?} }}" , self . pa0_isc () , self . pa1_isc () , self . pa2_isc () , self . pa3_isc () , self . pa4_isc () , self . pa5_isc () , self . pa6_isc () , self . pa7_isc () , self . pa8_isc () , self . pa9_isc () , self . pa10_isc () , self . pa11_isc () , self . pa12_isc () , self . pa13_isc () , self . pa14_isc () , self . pa15_isc () , self . pb0_isc () , self . pb1_isc () , self . pb2_isc () , self . pb3_isc () , self . pb4_isc () , self . pb5_isc () , self . pb6_isc () , self . pb7_isc () , self . pb8_isc () , self . pb9_isc () , self . pb10_isc () , self . pb11_isc () , self . pb12_isc () , self . pb13_isc () , self . pb14_isc () , self . pb15_isc ())
+            defmt::write!(
+                f,
+                "IoIscr {{ pa0_isc: {=bool:?}, pa1_isc: {=bool:?}, pa2_isc: {=bool:?}, pa3_isc: {=bool:?}, pa4_isc: {=bool:?}, pa5_isc: {=bool:?}, pa6_isc: {=bool:?}, pa7_isc: {=bool:?}, pa8_isc: {=bool:?}, pa9_isc: {=bool:?}, pa10_isc: {=bool:?}, pa11_isc: {=bool:?}, pa12_isc: {=bool:?}, pa13_isc: {=bool:?}, pa14_isc: {=bool:?}, pa15_isc: {=bool:?}, pb0_isc: {=bool:?}, pb1_isc: {=bool:?}, pb2_isc: {=bool:?}, pb3_isc: {=bool:?}, pb4_isc: {=bool:?}, pb5_isc: {=bool:?}, pb6_isc: {=bool:?}, pb7_isc: {=bool:?}, pb8_isc: {=bool:?}, pb9_isc: {=bool:?}, pb10_isc: {=bool:?}, pb11_isc: {=bool:?}, pb12_isc: {=bool:?}, pb13_isc: {=bool:?}, pb14_isc: {=bool:?}, pb15_isc: {=bool:?} }}",
+                self.pa0_isc(),
+                self.pa1_isc(),
+                self.pa2_isc(),
+                self.pa3_isc(),
+                self.pa4_isc(),
+                self.pa5_isc(),
+                self.pa6_isc(),
+                self.pa7_isc(),
+                self.pa8_isc(),
+                self.pa9_isc(),
+                self.pa10_isc(),
+                self.pa11_isc(),
+                self.pa12_isc(),
+                self.pa13_isc(),
+                self.pa14_isc(),
+                self.pa15_isc(),
+                self.pb0_isc(),
+                self.pb1_isc(),
+                self.pb2_isc(),
+                self.pb3_isc(),
+                self.pb4_isc(),
+                self.pb5_isc(),
+                self.pb6_isc(),
+                self.pb7_isc(),
+                self.pb8_isc(),
+                self.pb9_isc(),
+                self.pb10_isc(),
+                self.pb11_isc(),
+                self.pb12_isc(),
+                self.pb13_isc(),
+                self.pb14_isc(),
+                self.pb15_isc()
+            )
         }
     }
     #[doc = "JTAG_ID register."]

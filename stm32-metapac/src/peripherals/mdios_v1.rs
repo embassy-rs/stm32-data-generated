@@ -236,7 +236,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, wrie: {=bool:?}, rdie: {=bool:?}, eie: {=bool:?}, dpc: {=bool:?}, port_address: {=u8:?} }}" , self . en () , self . wrie () , self . rdie () , self . eie () , self . dpc () , self . port_address ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, wrie: {=bool:?}, rdie: {=bool:?}, eie: {=bool:?}, dpc: {=bool:?}, port_address: {=u8:?} }}",
+                self.en(),
+                self.wrie(),
+                self.rdie(),
+                self.eie(),
+                self.dpc(),
+                self.port_address()
+            )
         }
     }
     #[doc = "MDIOS clear read flag register"]

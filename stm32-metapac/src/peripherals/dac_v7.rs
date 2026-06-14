@@ -324,7 +324,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en[0]: {=bool:?}, en[1]: {=bool:?}, ten[0]: {=bool:?}, ten[1]: {=bool:?}, tsel[0]: {=u8:?}, tsel[1]: {=u8:?}, wave[0]: {:?}, wave[1]: {:?}, mamp[0]: {=u8:?}, mamp[1]: {=u8:?}, dmaen[0]: {=bool:?}, dmaen[1]: {=bool:?}, dmaudrie[0]: {=bool:?}, dmaudrie[1]: {=bool:?}, cen[0]: {=bool:?}, cen[1]: {=bool:?} }}" , self . en (0usize) , self . en (1usize) , self . ten (0usize) , self . ten (1usize) , self . tsel (0usize) , self . tsel (1usize) , self . wave (0usize) , self . wave (1usize) , self . mamp (0usize) , self . mamp (1usize) , self . dmaen (0usize) , self . dmaen (1usize) , self . dmaudrie (0usize) , self . dmaudrie (1usize) , self . cen (0usize) , self . cen (1usize))
+            defmt::write!(
+                f,
+                "Cr {{ en[0]: {=bool:?}, en[1]: {=bool:?}, ten[0]: {=bool:?}, ten[1]: {=bool:?}, tsel[0]: {=u8:?}, tsel[1]: {=u8:?}, wave[0]: {:?}, wave[1]: {:?}, mamp[0]: {=u8:?}, mamp[1]: {=u8:?}, dmaen[0]: {=bool:?}, dmaen[1]: {=bool:?}, dmaudrie[0]: {=bool:?}, dmaudrie[1]: {=bool:?}, cen[0]: {=bool:?}, cen[1]: {=bool:?} }}",
+                self.en(0usize),
+                self.en(1usize),
+                self.ten(0usize),
+                self.ten(1usize),
+                self.tsel(0usize),
+                self.tsel(1usize),
+                self.wave(0usize),
+                self.wave(1usize),
+                self.mamp(0usize),
+                self.mamp(1usize),
+                self.dmaen(0usize),
+                self.dmaen(1usize),
+                self.dmaudrie(0usize),
+                self.dmaudrie(1usize),
+                self.cen(0usize),
+                self.cen(1usize)
+            )
         }
     }
     #[doc = "channel 12-bit left-aligned data holding register"]
@@ -756,7 +775,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Mcr {{ mode[0]: {:?}, mode[1]: {:?}, dmadouble[0]: {=bool:?}, dmadouble[1]: {=bool:?}, sinformat[0]: {=bool:?}, sinformat[1]: {=bool:?}, hfsel: {=u8:?} }}" , self . mode (0usize) , self . mode (1usize) , self . dmadouble (0usize) , self . dmadouble (1usize) , self . sinformat (0usize) , self . sinformat (1usize) , self . hfsel ())
+            defmt::write!(
+                f,
+                "Mcr {{ mode[0]: {:?}, mode[1]: {:?}, dmadouble[0]: {=bool:?}, dmadouble[1]: {=bool:?}, sinformat[0]: {=bool:?}, sinformat[1]: {=bool:?}, hfsel: {=u8:?} }}",
+                self.mode(0usize),
+                self.mode(1usize),
+                self.dmadouble(0usize),
+                self.dmadouble(1usize),
+                self.sinformat(0usize),
+                self.sinformat(1usize),
+                self.hfsel()
+            )
         }
     }
     #[doc = "sample and hold hold time register"]
@@ -999,7 +1028,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ dacrdy[0]: {=bool:?}, dacrdy[1]: {=bool:?}, dorstat[0]: {=bool:?}, dorstat[1]: {=bool:?}, dmaudr[0]: {=bool:?}, dmaudr[1]: {=bool:?}, cal_flag[0]: {=bool:?}, cal_flag[1]: {=bool:?}, bwst[0]: {=bool:?}, bwst[1]: {=bool:?} }}" , self . dacrdy (0usize) , self . dacrdy (1usize) , self . dorstat (0usize) , self . dorstat (1usize) , self . dmaudr (0usize) , self . dmaudr (1usize) , self . cal_flag (0usize) , self . cal_flag (1usize) , self . bwst (0usize) , self . bwst (1usize))
+            defmt::write!(
+                f,
+                "Sr {{ dacrdy[0]: {=bool:?}, dacrdy[1]: {=bool:?}, dorstat[0]: {=bool:?}, dorstat[1]: {=bool:?}, dmaudr[0]: {=bool:?}, dmaudr[1]: {=bool:?}, cal_flag[0]: {=bool:?}, cal_flag[1]: {=bool:?}, bwst[0]: {=bool:?}, bwst[1]: {=bool:?} }}",
+                self.dacrdy(0usize),
+                self.dacrdy(1usize),
+                self.dorstat(0usize),
+                self.dorstat(1usize),
+                self.dmaudr(0usize),
+                self.dmaudr(1usize),
+                self.cal_flag(0usize),
+                self.cal_flag(1usize),
+                self.bwst(0usize),
+                self.bwst(1usize)
+            )
         }
     }
     #[doc = "sawtooth mode register"]
@@ -1059,7 +1101,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Stmodr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Stmodr {{ strsttrigsel[0]: {=u8:?}, strsttrigsel[1]: {=u8:?}, stinctrigsel[0]: {=u8:?}, stinctrigsel[1]: {=u8:?} }}" , self . strsttrigsel (0usize) , self . strsttrigsel (1usize) , self . stinctrigsel (0usize) , self . stinctrigsel (1usize))
+            defmt::write!(
+                f,
+                "Stmodr {{ strsttrigsel[0]: {=u8:?}, strsttrigsel[1]: {=u8:?}, stinctrigsel[0]: {=u8:?}, stinctrigsel[1]: {=u8:?} }}",
+                self.strsttrigsel(0usize),
+                self.strsttrigsel(1usize),
+                self.stinctrigsel(0usize),
+                self.stinctrigsel(1usize)
+            )
         }
     }
     #[doc = "sawtooth register"]
@@ -1188,7 +1237,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Swtrigr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Swtrigr {{ swtrig[0]: {=bool:?}, swtrig[1]: {=bool:?}, swtrigb[0]: {=bool:?}, swtrigb[1]: {=bool:?} }}" , self . swtrig (0usize) , self . swtrig (1usize) , self . swtrigb (0usize) , self . swtrigb (1usize))
+            defmt::write!(
+                f,
+                "Swtrigr {{ swtrig[0]: {=bool:?}, swtrig[1]: {=bool:?}, swtrigb[0]: {=bool:?}, swtrigb[1]: {=bool:?} }}",
+                self.swtrig(0usize),
+                self.swtrig(1usize),
+                self.swtrigb(0usize),
+                self.swtrigb(1usize)
+            )
         }
     }
 }

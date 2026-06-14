@@ -125,7 +125,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ muxen: {=bool:?}, mode: {=bool:?}, cssel_ovr_en: {=bool:?}, cssel_ovr_o1: {=bool:?}, cssel_ovr_o2: {=bool:?}, req2ack_time: {=u8:?} }}" , self . muxen () , self . mode () , self . cssel_ovr_en () , self . cssel_ovr_o1 () , self . cssel_ovr_o2 () , self . req2ack_time ())
+            defmt::write!(
+                f,
+                "Cr {{ muxen: {=bool:?}, mode: {=bool:?}, cssel_ovr_en: {=bool:?}, cssel_ovr_o1: {=bool:?}, cssel_ovr_o2: {=bool:?}, req2ack_time: {=u8:?} }}",
+                self.muxen(),
+                self.mode(),
+                self.cssel_ovr_en(),
+                self.cssel_ovr_o1(),
+                self.cssel_ovr_o2(),
+                self.req2ack_time()
+            )
         }
     }
 }

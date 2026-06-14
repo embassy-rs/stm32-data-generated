@@ -789,7 +789,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for M2wpr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "M2wpr1 {{ pwp[0]: {=bool:?}, pwp[1]: {=bool:?}, pwp[2]: {=bool:?}, pwp[3]: {=bool:?}, pwp[4]: {=bool:?}, pwp[5]: {=bool:?}, pwp[6]: {=bool:?}, pwp[7]: {=bool:?}, pwp[8]: {=bool:?}, pwp[9]: {=bool:?}, pwp[10]: {=bool:?}, pwp[11]: {=bool:?}, pwp[12]: {=bool:?}, pwp[13]: {=bool:?}, pwp[14]: {=bool:?}, pwp[15]: {=bool:?} }}" , self . pwp (0usize) , self . pwp (1usize) , self . pwp (2usize) , self . pwp (3usize) , self . pwp (4usize) , self . pwp (5usize) , self . pwp (6usize) , self . pwp (7usize) , self . pwp (8usize) , self . pwp (9usize) , self . pwp (10usize) , self . pwp (11usize) , self . pwp (12usize) , self . pwp (13usize) , self . pwp (14usize) , self . pwp (15usize))
+            defmt::write!(
+                f,
+                "M2wpr1 {{ pwp[0]: {=bool:?}, pwp[1]: {=bool:?}, pwp[2]: {=bool:?}, pwp[3]: {=bool:?}, pwp[4]: {=bool:?}, pwp[5]: {=bool:?}, pwp[6]: {=bool:?}, pwp[7]: {=bool:?}, pwp[8]: {=bool:?}, pwp[9]: {=bool:?}, pwp[10]: {=bool:?}, pwp[11]: {=bool:?}, pwp[12]: {=bool:?}, pwp[13]: {=bool:?}, pwp[14]: {=bool:?}, pwp[15]: {=bool:?} }}",
+                self.pwp(0usize),
+                self.pwp(1usize),
+                self.pwp(2usize),
+                self.pwp(3usize),
+                self.pwp(4usize),
+                self.pwp(5usize),
+                self.pwp(6usize),
+                self.pwp(7usize),
+                self.pwp(8usize),
+                self.pwp(9usize),
+                self.pwp(10usize),
+                self.pwp(11usize),
+                self.pwp(12usize),
+                self.pwp(13usize),
+                self.pwp(14usize),
+                self.pwp(15usize)
+            )
         }
     }
     #[doc = "RAMCFG memory 3 ECC double error address register."]

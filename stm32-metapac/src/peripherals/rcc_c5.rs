@@ -368,7 +368,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb1enr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb1enr {{ lpdma1en: {=bool:?}, lpdma2en: {=bool:?}, flitfen: {=bool:?}, crcen: {=bool:?}, cordicen: {=bool:?}, ramcfgen: {=bool:?}, ethcken: {=bool:?}, ethen: {=bool:?}, ethtxen: {=bool:?}, ethrxen: {=bool:?}, sram2en: {=bool:?}, sram1en: {=bool:?} }}" , self . lpdma1en () , self . lpdma2en () , self . flitfen () , self . crcen () , self . cordicen () , self . ramcfgen () , self . ethcken () , self . ethen () , self . ethtxen () , self . ethrxen () , self . sram2en () , self . sram1en ())
+            defmt::write!(
+                f,
+                "Ahb1enr {{ lpdma1en: {=bool:?}, lpdma2en: {=bool:?}, flitfen: {=bool:?}, crcen: {=bool:?}, cordicen: {=bool:?}, ramcfgen: {=bool:?}, ethcken: {=bool:?}, ethen: {=bool:?}, ethtxen: {=bool:?}, ethrxen: {=bool:?}, sram2en: {=bool:?}, sram1en: {=bool:?} }}",
+                self.lpdma1en(),
+                self.lpdma2en(),
+                self.flitfen(),
+                self.crcen(),
+                self.cordicen(),
+                self.ramcfgen(),
+                self.ethcken(),
+                self.ethen(),
+                self.ethtxen(),
+                self.ethrxen(),
+                self.sram2en(),
+                self.sram1en()
+            )
         }
     }
     #[doc = "RCC AHB1 sleep clock register"]
@@ -561,7 +576,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb1lpenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb1lpenr {{ lpdma1lpen: {=bool:?}, lpdma2lpen: {=bool:?}, flitflpen: {=bool:?}, crclpen: {=bool:?}, cordiclpen: {=bool:?}, ramcfglpen: {=bool:?}, ethcklpen: {=bool:?}, ethlpen: {=bool:?}, ethtxlpen: {=bool:?}, ethrxlpen: {=bool:?}, icachelpen: {=bool:?}, sram2lpen: {=bool:?}, sram1lpen: {=bool:?} }}" , self . lpdma1lpen () , self . lpdma2lpen () , self . flitflpen () , self . crclpen () , self . cordiclpen () , self . ramcfglpen () , self . ethcklpen () , self . ethlpen () , self . ethtxlpen () , self . ethrxlpen () , self . icachelpen () , self . sram2lpen () , self . sram1lpen ())
+            defmt::write!(
+                f,
+                "Ahb1lpenr {{ lpdma1lpen: {=bool:?}, lpdma2lpen: {=bool:?}, flitflpen: {=bool:?}, crclpen: {=bool:?}, cordiclpen: {=bool:?}, ramcfglpen: {=bool:?}, ethcklpen: {=bool:?}, ethlpen: {=bool:?}, ethtxlpen: {=bool:?}, ethrxlpen: {=bool:?}, icachelpen: {=bool:?}, sram2lpen: {=bool:?}, sram1lpen: {=bool:?} }}",
+                self.lpdma1lpen(),
+                self.lpdma2lpen(),
+                self.flitflpen(),
+                self.crclpen(),
+                self.cordiclpen(),
+                self.ramcfglpen(),
+                self.ethcklpen(),
+                self.ethlpen(),
+                self.ethtxlpen(),
+                self.ethrxlpen(),
+                self.icachelpen(),
+                self.sram2lpen(),
+                self.sram1lpen()
+            )
         }
     }
     #[doc = "RCC AHB1 reset register"]
@@ -663,7 +694,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb1rstr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb1rstr {{ lpdma1rst: {=bool:?}, lpdma2rst: {=bool:?}, crcrst: {=bool:?}, cordicrst: {=bool:?}, ramcfgrst: {=bool:?}, ethrst: {=bool:?} }}" , self . lpdma1rst () , self . lpdma2rst () , self . crcrst () , self . cordicrst () , self . ramcfgrst () , self . ethrst ())
+            defmt::write!(
+                f,
+                "Ahb1rstr {{ lpdma1rst: {=bool:?}, lpdma2rst: {=bool:?}, crcrst: {=bool:?}, cordicrst: {=bool:?}, ramcfgrst: {=bool:?}, ethrst: {=bool:?} }}",
+                self.lpdma1rst(),
+                self.lpdma2rst(),
+                self.crcrst(),
+                self.cordicrst(),
+                self.ramcfgrst(),
+                self.ethrst()
+            )
         }
     }
     #[doc = "RCC AHB2 peripheral clock register"]
@@ -908,7 +948,27 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb2enr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb2enr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiofen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, adcen: {=bool:?}, dac1en: {=bool:?}, aesen: {=bool:?}, hashen: {=bool:?}, rngen: {=bool:?}, pkaen: {=bool:?}, saesen: {=bool:?}, ccben: {=bool:?}, adc3en: {=bool:?} }}" , self . gpioaen () , self . gpioben () , self . gpiocen () , self . gpioden () , self . gpioeen () , self . gpiofen () , self . gpiogen () , self . gpiohen () , self . adcen () , self . dac1en () , self . aesen () , self . hashen () , self . rngen () , self . pkaen () , self . saesen () , self . ccben () , self . adc3en ())
+            defmt::write!(
+                f,
+                "Ahb2enr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiofen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, adcen: {=bool:?}, dac1en: {=bool:?}, aesen: {=bool:?}, hashen: {=bool:?}, rngen: {=bool:?}, pkaen: {=bool:?}, saesen: {=bool:?}, ccben: {=bool:?}, adc3en: {=bool:?} }}",
+                self.gpioaen(),
+                self.gpioben(),
+                self.gpiocen(),
+                self.gpioden(),
+                self.gpioeen(),
+                self.gpiofen(),
+                self.gpiogen(),
+                self.gpiohen(),
+                self.adcen(),
+                self.dac1en(),
+                self.aesen(),
+                self.hashen(),
+                self.rngen(),
+                self.pkaen(),
+                self.saesen(),
+                self.ccben(),
+                self.adc3en()
+            )
         }
     }
     #[doc = "RCC AHB2 sleep clock register"]
@@ -1153,7 +1213,27 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb2lpenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb2lpenr {{ gpioalpen: {=bool:?}, gpioblpen: {=bool:?}, gpioclpen: {=bool:?}, gpiodlpen: {=bool:?}, gpioelpen: {=bool:?}, gpioflpen: {=bool:?}, gpioglpen: {=bool:?}, gpiohlpen: {=bool:?}, adclpen: {=bool:?}, dac1lpen: {=bool:?}, aeslpen: {=bool:?}, hashlpen: {=bool:?}, rnglpen: {=bool:?}, pkalpen: {=bool:?}, saeslpen: {=bool:?}, ccblpen: {=bool:?}, adc3lpen: {=bool:?} }}" , self . gpioalpen () , self . gpioblpen () , self . gpioclpen () , self . gpiodlpen () , self . gpioelpen () , self . gpioflpen () , self . gpioglpen () , self . gpiohlpen () , self . adclpen () , self . dac1lpen () , self . aeslpen () , self . hashlpen () , self . rnglpen () , self . pkalpen () , self . saeslpen () , self . ccblpen () , self . adc3lpen ())
+            defmt::write!(
+                f,
+                "Ahb2lpenr {{ gpioalpen: {=bool:?}, gpioblpen: {=bool:?}, gpioclpen: {=bool:?}, gpiodlpen: {=bool:?}, gpioelpen: {=bool:?}, gpioflpen: {=bool:?}, gpioglpen: {=bool:?}, gpiohlpen: {=bool:?}, adclpen: {=bool:?}, dac1lpen: {=bool:?}, aeslpen: {=bool:?}, hashlpen: {=bool:?}, rnglpen: {=bool:?}, pkalpen: {=bool:?}, saeslpen: {=bool:?}, ccblpen: {=bool:?}, adc3lpen: {=bool:?} }}",
+                self.gpioalpen(),
+                self.gpioblpen(),
+                self.gpioclpen(),
+                self.gpiodlpen(),
+                self.gpioelpen(),
+                self.gpioflpen(),
+                self.gpioglpen(),
+                self.gpiohlpen(),
+                self.adclpen(),
+                self.dac1lpen(),
+                self.aeslpen(),
+                self.hashlpen(),
+                self.rnglpen(),
+                self.pkalpen(),
+                self.saeslpen(),
+                self.ccblpen(),
+                self.adc3lpen()
+            )
         }
     }
     #[doc = "RCC AHB2 peripheral reset register"]
@@ -1398,7 +1478,27 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb2rstr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb2rstr {{ gpioarst: {=bool:?}, gpiobrst: {=bool:?}, gpiocrst: {=bool:?}, gpiodrst: {=bool:?}, gpioerst: {=bool:?}, gpiofrst: {=bool:?}, gpiogrst: {=bool:?}, gpiohrst: {=bool:?}, adcrst: {=bool:?}, dac1rst: {=bool:?}, aesrst: {=bool:?}, hashrst: {=bool:?}, rngrst: {=bool:?}, pkarst: {=bool:?}, saesrst: {=bool:?}, ccbrst: {=bool:?}, adc3rst: {=bool:?} }}" , self . gpioarst () , self . gpiobrst () , self . gpiocrst () , self . gpiodrst () , self . gpioerst () , self . gpiofrst () , self . gpiogrst () , self . gpiohrst () , self . adcrst () , self . dac1rst () , self . aesrst () , self . hashrst () , self . rngrst () , self . pkarst () , self . saesrst () , self . ccbrst () , self . adc3rst ())
+            defmt::write!(
+                f,
+                "Ahb2rstr {{ gpioarst: {=bool:?}, gpiobrst: {=bool:?}, gpiocrst: {=bool:?}, gpiodrst: {=bool:?}, gpioerst: {=bool:?}, gpiofrst: {=bool:?}, gpiogrst: {=bool:?}, gpiohrst: {=bool:?}, adcrst: {=bool:?}, dac1rst: {=bool:?}, aesrst: {=bool:?}, hashrst: {=bool:?}, rngrst: {=bool:?}, pkarst: {=bool:?}, saesrst: {=bool:?}, ccbrst: {=bool:?}, adc3rst: {=bool:?} }}",
+                self.gpioarst(),
+                self.gpiobrst(),
+                self.gpiocrst(),
+                self.gpiodrst(),
+                self.gpioerst(),
+                self.gpiofrst(),
+                self.gpiogrst(),
+                self.gpiohrst(),
+                self.adcrst(),
+                self.dac1rst(),
+                self.aesrst(),
+                self.hashrst(),
+                self.rngrst(),
+                self.pkarst(),
+                self.saesrst(),
+                self.ccbrst(),
+                self.adc3rst()
+            )
         }
     }
     #[doc = "RCC AHB4 peripheral clock register"]
@@ -1967,7 +2067,31 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1lenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1lenr {{ tim2en: {=bool:?}, tim3en: {=bool:?}, tim4en: {=bool:?}, tim5en: {=bool:?}, tim6en: {=bool:?}, tim7en: {=bool:?}, tim12en: {=bool:?}, wwdgen: {=bool:?}, opampen: {=bool:?}, spi2en: {=bool:?}, spi3en: {=bool:?}, usart2en: {=bool:?}, usart3en: {=bool:?}, uart4en: {=bool:?}, uart5en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, i3c1en: {=bool:?}, crsen: {=bool:?}, usart6en: {=bool:?}, uart7en: {=bool:?} }}" , self . tim2en () , self . tim3en () , self . tim4en () , self . tim5en () , self . tim6en () , self . tim7en () , self . tim12en () , self . wwdgen () , self . opampen () , self . spi2en () , self . spi3en () , self . usart2en () , self . usart3en () , self . uart4en () , self . uart5en () , self . i2c1en () , self . i2c2en () , self . i3c1en () , self . crsen () , self . usart6en () , self . uart7en ())
+            defmt::write!(
+                f,
+                "Apb1lenr {{ tim2en: {=bool:?}, tim3en: {=bool:?}, tim4en: {=bool:?}, tim5en: {=bool:?}, tim6en: {=bool:?}, tim7en: {=bool:?}, tim12en: {=bool:?}, wwdgen: {=bool:?}, opampen: {=bool:?}, spi2en: {=bool:?}, spi3en: {=bool:?}, usart2en: {=bool:?}, usart3en: {=bool:?}, uart4en: {=bool:?}, uart5en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, i3c1en: {=bool:?}, crsen: {=bool:?}, usart6en: {=bool:?}, uart7en: {=bool:?} }}",
+                self.tim2en(),
+                self.tim3en(),
+                self.tim4en(),
+                self.tim5en(),
+                self.tim6en(),
+                self.tim7en(),
+                self.tim12en(),
+                self.wwdgen(),
+                self.opampen(),
+                self.spi2en(),
+                self.spi3en(),
+                self.usart2en(),
+                self.usart3en(),
+                self.uart4en(),
+                self.uart5en(),
+                self.i2c1en(),
+                self.i2c2en(),
+                self.i3c1en(),
+                self.crsen(),
+                self.usart6en(),
+                self.uart7en()
+            )
         }
     }
     #[doc = "RCC APB1 sleep clock register"]
@@ -2264,7 +2388,31 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1llpenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1llpenr {{ tim2lpen: {=bool:?}, tim3lpen: {=bool:?}, tim4lpen: {=bool:?}, tim5lpen: {=bool:?}, tim6lpen: {=bool:?}, tim7lpen: {=bool:?}, tim12lpen: {=bool:?}, wwdglpen: {=bool:?}, opamplpen: {=bool:?}, spi2lpen: {=bool:?}, spi3lpen: {=bool:?}, usart2lpen: {=bool:?}, usart3lpen: {=bool:?}, uart4lpen: {=bool:?}, uart5lpen: {=bool:?}, i2c1lpen: {=bool:?}, i2c2lpen: {=bool:?}, i3c1lpen: {=bool:?}, crslpen: {=bool:?}, usart6lpen: {=bool:?}, uart7lpen: {=bool:?} }}" , self . tim2lpen () , self . tim3lpen () , self . tim4lpen () , self . tim5lpen () , self . tim6lpen () , self . tim7lpen () , self . tim12lpen () , self . wwdglpen () , self . opamplpen () , self . spi2lpen () , self . spi3lpen () , self . usart2lpen () , self . usart3lpen () , self . uart4lpen () , self . uart5lpen () , self . i2c1lpen () , self . i2c2lpen () , self . i3c1lpen () , self . crslpen () , self . usart6lpen () , self . uart7lpen ())
+            defmt::write!(
+                f,
+                "Apb1llpenr {{ tim2lpen: {=bool:?}, tim3lpen: {=bool:?}, tim4lpen: {=bool:?}, tim5lpen: {=bool:?}, tim6lpen: {=bool:?}, tim7lpen: {=bool:?}, tim12lpen: {=bool:?}, wwdglpen: {=bool:?}, opamplpen: {=bool:?}, spi2lpen: {=bool:?}, spi3lpen: {=bool:?}, usart2lpen: {=bool:?}, usart3lpen: {=bool:?}, uart4lpen: {=bool:?}, uart5lpen: {=bool:?}, i2c1lpen: {=bool:?}, i2c2lpen: {=bool:?}, i3c1lpen: {=bool:?}, crslpen: {=bool:?}, usart6lpen: {=bool:?}, uart7lpen: {=bool:?} }}",
+                self.tim2lpen(),
+                self.tim3lpen(),
+                self.tim4lpen(),
+                self.tim5lpen(),
+                self.tim6lpen(),
+                self.tim7lpen(),
+                self.tim12lpen(),
+                self.wwdglpen(),
+                self.opamplpen(),
+                self.spi2lpen(),
+                self.spi3lpen(),
+                self.usart2lpen(),
+                self.usart3lpen(),
+                self.uart4lpen(),
+                self.uart5lpen(),
+                self.i2c1lpen(),
+                self.i2c2lpen(),
+                self.i3c1lpen(),
+                self.crslpen(),
+                self.usart6lpen(),
+                self.uart7lpen()
+            )
         }
     }
     #[doc = "RCC APB1 peripheral low reset register"]
@@ -2548,7 +2696,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1lrstr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1lrstr {{ tim2rst: {=bool:?}, tim3rst: {=bool:?}, tim4rst: {=bool:?}, tim5rst: {=bool:?}, tim6rst: {=bool:?}, tim7rst: {=bool:?}, tim12rst: {=bool:?}, opamprst: {=bool:?}, spi2rst: {=bool:?}, spi3rst: {=bool:?}, usart2rst: {=bool:?}, usart3rst: {=bool:?}, uart4rst: {=bool:?}, uart5rst: {=bool:?}, i2c1rst: {=bool:?}, i2c2rst: {=bool:?}, i3c1rst: {=bool:?}, crsrst: {=bool:?}, usart6rst: {=bool:?}, uart7rst: {=bool:?} }}" , self . tim2rst () , self . tim3rst () , self . tim4rst () , self . tim5rst () , self . tim6rst () , self . tim7rst () , self . tim12rst () , self . opamprst () , self . spi2rst () , self . spi3rst () , self . usart2rst () , self . usart3rst () , self . uart4rst () , self . uart5rst () , self . i2c1rst () , self . i2c2rst () , self . i3c1rst () , self . crsrst () , self . usart6rst () , self . uart7rst ())
+            defmt::write!(
+                f,
+                "Apb1lrstr {{ tim2rst: {=bool:?}, tim3rst: {=bool:?}, tim4rst: {=bool:?}, tim5rst: {=bool:?}, tim6rst: {=bool:?}, tim7rst: {=bool:?}, tim12rst: {=bool:?}, opamprst: {=bool:?}, spi2rst: {=bool:?}, spi3rst: {=bool:?}, usart2rst: {=bool:?}, usart3rst: {=bool:?}, uart4rst: {=bool:?}, uart5rst: {=bool:?}, i2c1rst: {=bool:?}, i2c2rst: {=bool:?}, i3c1rst: {=bool:?}, crsrst: {=bool:?}, usart6rst: {=bool:?}, uart7rst: {=bool:?} }}",
+                self.tim2rst(),
+                self.tim3rst(),
+                self.tim4rst(),
+                self.tim5rst(),
+                self.tim6rst(),
+                self.tim7rst(),
+                self.tim12rst(),
+                self.opamprst(),
+                self.spi2rst(),
+                self.spi3rst(),
+                self.usart2rst(),
+                self.usart3rst(),
+                self.uart4rst(),
+                self.uart5rst(),
+                self.i2c1rst(),
+                self.i2c2rst(),
+                self.i3c1rst(),
+                self.crsrst(),
+                self.usart6rst(),
+                self.uart7rst()
+            )
         }
     }
     #[doc = "RCC APB2 peripheral clock register"]
@@ -2676,7 +2847,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2enr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb2enr {{ tim1en: {=bool:?}, spi1en: {=bool:?}, tim8en: {=bool:?}, usart1en: {=bool:?}, tim15en: {=bool:?}, tim16en: {=bool:?}, tim17en: {=bool:?}, usben: {=bool:?} }}" , self . tim1en () , self . spi1en () , self . tim8en () , self . usart1en () , self . tim15en () , self . tim16en () , self . tim17en () , self . usben ())
+            defmt::write!(
+                f,
+                "Apb2enr {{ tim1en: {=bool:?}, spi1en: {=bool:?}, tim8en: {=bool:?}, usart1en: {=bool:?}, tim15en: {=bool:?}, tim16en: {=bool:?}, tim17en: {=bool:?}, usben: {=bool:?} }}",
+                self.tim1en(),
+                self.spi1en(),
+                self.tim8en(),
+                self.usart1en(),
+                self.tim15en(),
+                self.tim16en(),
+                self.tim17en(),
+                self.usben()
+            )
         }
     }
     #[doc = "RCC APB2 sleep clock register"]
@@ -2804,7 +2986,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2lpenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb2lpenr {{ tim1lpen: {=bool:?}, spi1lpen: {=bool:?}, tim8lpen: {=bool:?}, usart1lpen: {=bool:?}, tim15lpen: {=bool:?}, tim16lpen: {=bool:?}, tim17lpen: {=bool:?}, usblpen: {=bool:?} }}" , self . tim1lpen () , self . spi1lpen () , self . tim8lpen () , self . usart1lpen () , self . tim15lpen () , self . tim16lpen () , self . tim17lpen () , self . usblpen ())
+            defmt::write!(
+                f,
+                "Apb2lpenr {{ tim1lpen: {=bool:?}, spi1lpen: {=bool:?}, tim8lpen: {=bool:?}, usart1lpen: {=bool:?}, tim15lpen: {=bool:?}, tim16lpen: {=bool:?}, tim17lpen: {=bool:?}, usblpen: {=bool:?} }}",
+                self.tim1lpen(),
+                self.spi1lpen(),
+                self.tim8lpen(),
+                self.usart1lpen(),
+                self.tim15lpen(),
+                self.tim16lpen(),
+                self.tim17lpen(),
+                self.usblpen()
+            )
         }
     }
     #[doc = "RCC APB2 peripheral reset register"]
@@ -2932,7 +3125,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2rstr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb2rstr {{ tim1rst: {=bool:?}, spi1rst: {=bool:?}, tim8rst: {=bool:?}, usart1rst: {=bool:?}, tim15rst: {=bool:?}, tim16rst: {=bool:?}, tim17rst: {=bool:?}, usbrst: {=bool:?} }}" , self . tim1rst () , self . spi1rst () , self . tim8rst () , self . usart1rst () , self . tim15rst () , self . tim16rst () , self . tim17rst () , self . usbrst ())
+            defmt::write!(
+                f,
+                "Apb2rstr {{ tim1rst: {=bool:?}, spi1rst: {=bool:?}, tim8rst: {=bool:?}, usart1rst: {=bool:?}, tim15rst: {=bool:?}, tim16rst: {=bool:?}, tim17rst: {=bool:?}, usbrst: {=bool:?} }}",
+                self.tim1rst(),
+                self.spi1rst(),
+                self.tim8rst(),
+                self.usart1rst(),
+                self.tim15rst(),
+                self.tim16rst(),
+                self.tim17rst(),
+                self.usbrst()
+            )
         }
     }
     #[doc = "RCC APB3 peripheral clock register"]
@@ -3091,7 +3295,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb3lpenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb3lpenr {{ sbslpen: {=bool:?}, lpuart1lpen: {=bool:?}, lptim1lpen: {=bool:?}, rtcapblpen: {=bool:?} }}" , self . sbslpen () , self . lpuart1lpen () , self . lptim1lpen () , self . rtcapblpen ())
+            defmt::write!(
+                f,
+                "Apb3lpenr {{ sbslpen: {=bool:?}, lpuart1lpen: {=bool:?}, lptim1lpen: {=bool:?}, rtcapblpen: {=bool:?} }}",
+                self.sbslpen(),
+                self.lpuart1lpen(),
+                self.lptim1lpen(),
+                self.rtcapblpen()
+            )
         }
     }
     #[doc = "RCC APB3 peripheral reset register"]
@@ -3340,7 +3551,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccipr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ccipr1 {{ usart1sel: {:?}, usart2sel: {:?}, usart3sel: {:?}, uart4sel: {:?}, uart5sel: {:?}, usart6sel: {:?}, uart7sel: {:?}, lpuart1sel: {:?}, spi1sel: {:?}, spi2sel: {:?}, spi3sel: {:?}, fdcansel: {:?} }}" , self . usart1sel () , self . usart2sel () , self . usart3sel () , self . uart4sel () , self . uart5sel () , self . usart6sel () , self . uart7sel () , self . lpuart1sel () , self . spi1sel () , self . spi2sel () , self . spi3sel () , self . fdcansel ())
+            defmt::write!(
+                f,
+                "Ccipr1 {{ usart1sel: {:?}, usart2sel: {:?}, usart3sel: {:?}, uart4sel: {:?}, uart5sel: {:?}, usart6sel: {:?}, uart7sel: {:?}, lpuart1sel: {:?}, spi1sel: {:?}, spi2sel: {:?}, spi3sel: {:?}, fdcansel: {:?} }}",
+                self.usart1sel(),
+                self.usart2sel(),
+                self.usart3sel(),
+                self.uart4sel(),
+                self.uart5sel(),
+                self.usart6sel(),
+                self.uart7sel(),
+                self.lpuart1sel(),
+                self.spi1sel(),
+                self.spi2sel(),
+                self.spi3sel(),
+                self.fdcansel()
+            )
         }
     }
     #[doc = "RCC kernel clock configuration register"]
@@ -3481,7 +3707,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccipr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ccipr2 {{ i2c1sel: {:?}, i2c2sel: {:?}, i3c1sel: {:?}, adcdacsel: {:?}, adcdacpre: {:?}, dacsel: {:?}, lptim1sel: {:?}, ck48sel: {:?}, systicksel: {:?} }}" , self . i2c1sel () , self . i2c2sel () , self . i3c1sel () , self . adcdacsel () , self . adcdacpre () , self . dacsel () , self . lptim1sel () , self . ck48sel () , self . systicksel ())
+            defmt::write!(
+                f,
+                "Ccipr2 {{ i2c1sel: {:?}, i2c2sel: {:?}, i3c1sel: {:?}, adcdacsel: {:?}, adcdacpre: {:?}, dacsel: {:?}, lptim1sel: {:?}, ck48sel: {:?}, systicksel: {:?} }}",
+                self.i2c1sel(),
+                self.i2c2sel(),
+                self.i3c1sel(),
+                self.adcdacsel(),
+                self.adcdacpre(),
+                self.dacsel(),
+                self.lptim1sel(),
+                self.ck48sel(),
+                self.systicksel()
+            )
         }
     }
     #[doc = "RCC kernel clock configuration register"]
@@ -3583,7 +3821,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccipr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ccipr3 {{ xspi1sel: {:?}, ethrefclksel: {:?}, ethptpclksel: {:?}, ethclksel: {:?}, ethclkdiv: {:?}, ethptpdiv: {:?} }}" , self . xspi1sel () , self . ethrefclksel () , self . ethptpclksel () , self . ethclksel () , self . ethclkdiv () , self . ethptpdiv ())
+            defmt::write!(
+                f,
+                "Ccipr3 {{ xspi1sel: {:?}, ethrefclksel: {:?}, ethptpclksel: {:?}, ethclksel: {:?}, ethclkdiv: {:?}, ethptpdiv: {:?} }}",
+                self.xspi1sel(),
+                self.ethrefclksel(),
+                self.ethptpclksel(),
+                self.ethclksel(),
+                self.ethclkdiv(),
+                self.ethptpdiv()
+            )
         }
     }
     #[doc = "RCC clock configuration register1"]
@@ -3711,7 +3958,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr {{ sw: {:?}, sws: {:?}, stopwuck: {:?}, rtcpre: {=u16:?}, mco1pre: {:?}, mco1sel: {:?}, mco2pre: {:?}, mco2sel: {:?} }}" , self . sw () , self . sws () , self . stopwuck () , self . rtcpre () , self . mco1pre () , self . mco1sel () , self . mco2pre () , self . mco2sel ())
+            defmt::write!(
+                f,
+                "Cfgr {{ sw: {:?}, sws: {:?}, stopwuck: {:?}, rtcpre: {=u16:?}, mco1pre: {:?}, mco1sel: {:?}, mco2pre: {:?}, mco2sel: {:?} }}",
+                self.sw(),
+                self.sws(),
+                self.stopwuck(),
+                self.rtcpre(),
+                self.mco1pre(),
+                self.mco1sel(),
+                self.mco2pre(),
+                self.mco2sel()
+            )
         }
     }
     #[doc = "RCC CPU domain clock configuration register 2"]
@@ -3865,7 +4123,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr2 {{ hpre: {:?}, ppre1: {:?}, ppre2: {:?}, ppre3: {:?}, ahb1dis: {=bool:?}, ahb2dis: {=bool:?}, ahb4dis: {=bool:?}, apb1dis: {=bool:?}, apb2dis: {=bool:?}, apb3dis: {=bool:?} }}" , self . hpre () , self . ppre1 () , self . ppre2 () , self . ppre3 () , self . ahb1dis () , self . ahb2dis () , self . ahb4dis () , self . apb1dis () , self . apb2dis () , self . apb3dis ())
+            defmt::write!(
+                f,
+                "Cfgr2 {{ hpre: {:?}, ppre1: {:?}, ppre2: {:?}, ppre3: {:?}, ahb1dis: {=bool:?}, ahb2dis: {=bool:?}, ahb4dis: {=bool:?}, apb1dis: {=bool:?}, apb2dis: {=bool:?}, apb3dis: {=bool:?} }}",
+                self.hpre(),
+                self.ppre1(),
+                self.ppre2(),
+                self.ppre3(),
+                self.ahb1dis(),
+                self.ahb2dis(),
+                self.ahb4dis(),
+                self.apb1dis(),
+                self.apb2dis(),
+                self.apb3dis()
+            )
         }
     }
     #[doc = "RCC clock source interrupt clear register"]
@@ -4032,7 +4303,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cicr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cicr {{ lsirdyc: {=bool:?}, lserdyc: {=bool:?}, hsirdyc: {=bool:?}, hsidiv3rdyc: {=bool:?}, hsikrdyc: {=bool:?}, psirdyc: {=bool:?}, psidiv3rdyc: {=bool:?}, psikrdyc: {=bool:?}, hserdyc: {=bool:?}, hsecssc: {=bool:?}, lsecssc: {=bool:?} }}" , self . lsirdyc () , self . lserdyc () , self . hsirdyc () , self . hsidiv3rdyc () , self . hsikrdyc () , self . psirdyc () , self . psidiv3rdyc () , self . psikrdyc () , self . hserdyc () , self . hsecssc () , self . lsecssc ())
+            defmt::write!(
+                f,
+                "Cicr {{ lsirdyc: {=bool:?}, lserdyc: {=bool:?}, hsirdyc: {=bool:?}, hsidiv3rdyc: {=bool:?}, hsikrdyc: {=bool:?}, psirdyc: {=bool:?}, psidiv3rdyc: {=bool:?}, psikrdyc: {=bool:?}, hserdyc: {=bool:?}, hsecssc: {=bool:?}, lsecssc: {=bool:?} }}",
+                self.lsirdyc(),
+                self.lserdyc(),
+                self.hsirdyc(),
+                self.hsidiv3rdyc(),
+                self.hsikrdyc(),
+                self.psirdyc(),
+                self.psidiv3rdyc(),
+                self.psikrdyc(),
+                self.hserdyc(),
+                self.hsecssc(),
+                self.lsecssc()
+            )
         }
     }
     #[doc = "RCC clock source interrupt enable register"]
@@ -4173,7 +4458,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cier {{ lsirdyie: {=bool:?}, lserdyie: {=bool:?}, hsirdyie: {=bool:?}, hsidiv3rdyie: {=bool:?}, hsikrdyie: {=bool:?}, psirdyie: {=bool:?}, psidiv3rdyie: {=bool:?}, psikrdyie: {=bool:?}, hserdyie: {=bool:?} }}" , self . lsirdyie () , self . lserdyie () , self . hsirdyie () , self . hsidiv3rdyie () , self . hsikrdyie () , self . psirdyie () , self . psidiv3rdyie () , self . psikrdyie () , self . hserdyie ())
+            defmt::write!(
+                f,
+                "Cier {{ lsirdyie: {=bool:?}, lserdyie: {=bool:?}, hsirdyie: {=bool:?}, hsidiv3rdyie: {=bool:?}, hsikrdyie: {=bool:?}, psirdyie: {=bool:?}, psidiv3rdyie: {=bool:?}, psikrdyie: {=bool:?}, hserdyie: {=bool:?} }}",
+                self.lsirdyie(),
+                self.lserdyie(),
+                self.hsirdyie(),
+                self.hsidiv3rdyie(),
+                self.hsikrdyie(),
+                self.psirdyie(),
+                self.psidiv3rdyie(),
+                self.psikrdyie(),
+                self.hserdyie()
+            )
         }
     }
     #[doc = "RCC clock source interrupt flag register"]
@@ -4327,7 +4624,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cifr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cifr {{ lsirdyf: {=bool:?}, lserdyf: {=bool:?}, hsirdyf: {=bool:?}, hsidiv3rdyf: {=bool:?}, hsikrdyf: {=bool:?}, psirdyf: {=bool:?}, psidiv3rdyf: {=bool:?}, psikrdyf: {=bool:?}, hserdyf: {=bool:?}, hsecssf: {=bool:?} }}" , self . lsirdyf () , self . lserdyf () , self . hsirdyf () , self . hsidiv3rdyf () , self . hsikrdyf () , self . psirdyf () , self . psidiv3rdyf () , self . psikrdyf () , self . hserdyf () , self . hsecssf ())
+            defmt::write!(
+                f,
+                "Cifr {{ lsirdyf: {=bool:?}, lserdyf: {=bool:?}, hsirdyf: {=bool:?}, hsidiv3rdyf: {=bool:?}, hsikrdyf: {=bool:?}, psirdyf: {=bool:?}, psidiv3rdyf: {=bool:?}, psikrdyf: {=bool:?}, hserdyf: {=bool:?}, hsecssf: {=bool:?} }}",
+                self.lsirdyf(),
+                self.lserdyf(),
+                self.hsirdyf(),
+                self.hsidiv3rdyf(),
+                self.hsikrdyf(),
+                self.psirdyf(),
+                self.psidiv3rdyf(),
+                self.psikrdyf(),
+                self.hserdyf(),
+                self.hsecssf()
+            )
         }
     }
     #[doc = "RCC clock control register"]
@@ -4598,7 +4908,29 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ hsion: {=bool:?}, hsidiv3on: {=bool:?}, hsikon: {=bool:?}, hsikeron: {=bool:?}, hsirdy: {=bool:?}, hsidiv3rdy: {=bool:?}, hsikrdy: {=bool:?}, psion: {=bool:?}, psidiv3on: {=bool:?}, psikon: {=bool:?}, psikeron: {=bool:?}, psirdy: {=bool:?}, psidiv3rdy: {=bool:?}, psikrdy: {=bool:?}, hseon: {=bool:?}, hserdy: {=bool:?}, hsebyp: {=bool:?}, hsecsson: {=bool:?}, hseext: {:?} }}" , self . hsion () , self . hsidiv3on () , self . hsikon () , self . hsikeron () , self . hsirdy () , self . hsidiv3rdy () , self . hsikrdy () , self . psion () , self . psidiv3on () , self . psikon () , self . psikeron () , self . psirdy () , self . psidiv3rdy () , self . psikrdy () , self . hseon () , self . hserdy () , self . hsebyp () , self . hsecsson () , self . hseext ())
+            defmt::write!(
+                f,
+                "Cr {{ hsion: {=bool:?}, hsidiv3on: {=bool:?}, hsikon: {=bool:?}, hsikeron: {=bool:?}, hsirdy: {=bool:?}, hsidiv3rdy: {=bool:?}, hsikrdy: {=bool:?}, psion: {=bool:?}, psidiv3on: {=bool:?}, psikon: {=bool:?}, psikeron: {=bool:?}, psirdy: {=bool:?}, psidiv3rdy: {=bool:?}, psikrdy: {=bool:?}, hseon: {=bool:?}, hserdy: {=bool:?}, hsebyp: {=bool:?}, hsecsson: {=bool:?}, hseext: {:?} }}",
+                self.hsion(),
+                self.hsidiv3on(),
+                self.hsikon(),
+                self.hsikeron(),
+                self.hsirdy(),
+                self.hsidiv3rdy(),
+                self.hsikrdy(),
+                self.psion(),
+                self.psidiv3on(),
+                self.psikon(),
+                self.psikeron(),
+                self.psirdy(),
+                self.psidiv3rdy(),
+                self.psikrdy(),
+                self.hseon(),
+                self.hserdy(),
+                self.hsebyp(),
+                self.hsecsson(),
+                self.hseext()
+            )
         }
     }
     #[doc = "RCC clock control register"]
@@ -4845,7 +5177,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Rsr {{ rmvf: {=bool:?}, pinrstf: {=bool:?}, borrstf: {=bool:?}, sftrstf: {=bool:?}, iwdgrstf: {=bool:?}, wwdgrstf: {=bool:?}, lpwrrstf: {=bool:?} }}" , self . rmvf () , self . pinrstf () , self . borrstf () , self . sftrstf () , self . iwdgrstf () , self . wwdgrstf () , self . lpwrrstf ())
+            defmt::write!(
+                f,
+                "Rsr {{ rmvf: {=bool:?}, pinrstf: {=bool:?}, borrstf: {=bool:?}, sftrstf: {=bool:?}, iwdgrstf: {=bool:?}, wwdgrstf: {=bool:?}, lpwrrstf: {=bool:?} }}",
+                self.rmvf(),
+                self.pinrstf(),
+                self.borrstf(),
+                self.sftrstf(),
+                self.iwdgrstf(),
+                self.wwdgrstf(),
+                self.lpwrrstf()
+            )
         }
     }
     #[doc = "RCC RTC domain control register"]
@@ -5051,7 +5393,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rtccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Rtccr {{ lseon: {=bool:?}, lserdy: {=bool:?}, lsebyp: {=bool:?}, lsedrv: {:?}, lsecsson: {=bool:?}, lsecssd: {=bool:?}, lseext: {:?}, rtcsel: {:?}, rtcen: {=bool:?}, rtcdrst: {=bool:?}, lscoen: {=bool:?}, lscosel: {:?}, lsion: {=bool:?}, lsirdy: {=bool:?} }}" , self . lseon () , self . lserdy () , self . lsebyp () , self . lsedrv () , self . lsecsson () , self . lsecssd () , self . lseext () , self . rtcsel () , self . rtcen () , self . rtcdrst () , self . lscoen () , self . lscosel () , self . lsion () , self . lsirdy ())
+            defmt::write!(
+                f,
+                "Rtccr {{ lseon: {=bool:?}, lserdy: {=bool:?}, lsebyp: {=bool:?}, lsedrv: {:?}, lsecsson: {=bool:?}, lsecssd: {=bool:?}, lseext: {:?}, rtcsel: {:?}, rtcen: {=bool:?}, rtcdrst: {=bool:?}, lscoen: {=bool:?}, lscosel: {:?}, lsion: {=bool:?}, lsirdy: {=bool:?} }}",
+                self.lseon(),
+                self.lserdy(),
+                self.lsebyp(),
+                self.lsedrv(),
+                self.lsecsson(),
+                self.lsecssd(),
+                self.lseext(),
+                self.rtcsel(),
+                self.rtcen(),
+                self.rtcdrst(),
+                self.lscoen(),
+                self.lscosel(),
+                self.lsion(),
+                self.lsirdy()
+            )
         }
     }
 }

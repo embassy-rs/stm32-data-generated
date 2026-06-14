@@ -264,7 +264,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pmcr {{ lpms: {:?}, cssf: {:?}, flps: {:?}, sram2_3_so: {:?}, sram2_1_so: {:?}, sram2_lso: {:?}, sram2_2_so: {:?}, sram2_hso: {:?}, sram1so: {:?} }}" , self . lpms () , self . cssf () , self . flps () , self . sram2_3_so () , self . sram2_1_so () , self . sram2_lso () , self . sram2_2_so () , self . sram2_hso () , self . sram1so ())
+            defmt::write!(
+                f,
+                "Pmcr {{ lpms: {:?}, cssf: {:?}, flps: {:?}, sram2_3_so: {:?}, sram2_1_so: {:?}, sram2_lso: {:?}, sram2_2_so: {:?}, sram2_hso: {:?}, sram1so: {:?} }}",
+                self.lpms(),
+                self.cssf(),
+                self.flps(),
+                self.sram2_3_so(),
+                self.sram2_1_so(),
+                self.sram2_lso(),
+                self.sram2_2_so(),
+                self.sram2_hso(),
+                self.sram1so()
+            )
         }
     }
     #[doc = "PWR status register."]
@@ -756,7 +768,31 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wucr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wucr {{ wupen1: {:?}, wupen2: {:?}, wupen3: {:?}, wupen4: {:?}, wupen5: {:?}, wupen6: {:?}, wupen7: {:?}, wupp1: {:?}, wupp2: {:?}, wupp3: {:?}, wupp4: {:?}, wupp5: {:?}, wupp6: {:?}, wupp7: {:?}, wuppupd1: {:?}, wuppupd2: {:?}, wuppupd3: {:?}, wuppupd4: {:?}, wuppupd5: {:?}, wuppupd6: {:?}, wuppupd7: {:?} }}" , self . wupen1 () , self . wupen2 () , self . wupen3 () , self . wupen4 () , self . wupen5 () , self . wupen6 () , self . wupen7 () , self . wupp1 () , self . wupp2 () , self . wupp3 () , self . wupp4 () , self . wupp5 () , self . wupp6 () , self . wupp7 () , self . wuppupd1 () , self . wuppupd2 () , self . wuppupd3 () , self . wuppupd4 () , self . wuppupd5 () , self . wuppupd6 () , self . wuppupd7 ())
+            defmt::write!(
+                f,
+                "Wucr {{ wupen1: {:?}, wupen2: {:?}, wupen3: {:?}, wupen4: {:?}, wupen5: {:?}, wupen6: {:?}, wupen7: {:?}, wupp1: {:?}, wupp2: {:?}, wupp3: {:?}, wupp4: {:?}, wupp5: {:?}, wupp6: {:?}, wupp7: {:?}, wuppupd1: {:?}, wuppupd2: {:?}, wuppupd3: {:?}, wuppupd4: {:?}, wuppupd5: {:?}, wuppupd6: {:?}, wuppupd7: {:?} }}",
+                self.wupen1(),
+                self.wupen2(),
+                self.wupen3(),
+                self.wupen4(),
+                self.wupen5(),
+                self.wupen6(),
+                self.wupen7(),
+                self.wupp1(),
+                self.wupp2(),
+                self.wupp3(),
+                self.wupp4(),
+                self.wupp5(),
+                self.wupp6(),
+                self.wupp7(),
+                self.wuppupd1(),
+                self.wuppupd2(),
+                self.wuppupd3(),
+                self.wuppupd4(),
+                self.wuppupd5(),
+                self.wuppupd6(),
+                self.wuppupd7()
+            )
         }
     }
     #[doc = "PWR wake-up status clear register."]
@@ -996,7 +1032,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wusr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wusr {{ wuf1: {=bool:?}, wuf2: {=bool:?}, wuf3: {=bool:?}, wuf4: {=bool:?}, wuf5: {=bool:?}, wuf6: {=bool:?}, wuf7: {=bool:?} }}" , self . wuf1 () , self . wuf2 () , self . wuf3 () , self . wuf4 () , self . wuf5 () , self . wuf6 () , self . wuf7 ())
+            defmt::write!(
+                f,
+                "Wusr {{ wuf1: {=bool:?}, wuf2: {=bool:?}, wuf3: {=bool:?}, wuf4: {=bool:?}, wuf5: {=bool:?}, wuf6: {=bool:?}, wuf7: {=bool:?} }}",
+                self.wuf1(),
+                self.wuf2(),
+                self.wuf3(),
+                self.wuf4(),
+                self.wuf5(),
+                self.wuf6(),
+                self.wuf7()
+            )
         }
     }
 }

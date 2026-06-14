@@ -162,7 +162,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Acr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Acr {{ latency: {=bool:?}, prften: {=bool:?}, acc64: {=bool:?}, sleep_pd: {=bool:?}, run_pd: {=bool:?} }}" , self . latency () , self . prften () , self . acc64 () , self . sleep_pd () , self . run_pd ())
+            defmt::write!(
+                f,
+                "Acr {{ latency: {=bool:?}, prften: {=bool:?}, acc64: {=bool:?}, sleep_pd: {=bool:?}, run_pd: {=bool:?} }}",
+                self.latency(),
+                self.prften(),
+                self.acc64(),
+                self.sleep_pd(),
+                self.run_pd()
+            )
         }
     }
     #[doc = "Option byte register"]
@@ -264,7 +272,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Obr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Obr {{ rdprt: {=u8:?}, bor_lev: {=u8:?}, iwdg_sw: {=bool:?}, n_rts_stop: {=bool:?}, n_rst_stdby: {=bool:?}, bfb2: {=bool:?} }}" , self . rdprt () , self . bor_lev () , self . iwdg_sw () , self . n_rts_stop () , self . n_rst_stdby () , self . bfb2 ())
+            defmt::write!(
+                f,
+                "Obr {{ rdprt: {=u8:?}, bor_lev: {=u8:?}, iwdg_sw: {=bool:?}, n_rts_stop: {=bool:?}, n_rst_stdby: {=bool:?}, bfb2: {=bool:?} }}",
+                self.rdprt(),
+                self.bor_lev(),
+                self.iwdg_sw(),
+                self.n_rts_stop(),
+                self.n_rst_stdby(),
+                self.bfb2()
+            )
         }
     }
     #[doc = "Program/erase control register"]
@@ -444,7 +461,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pecr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pecr {{ pelock: {=bool:?}, prglock: {=bool:?}, optlock: {=bool:?}, prog: {=bool:?}, data: {=bool:?}, ftdw: {=bool:?}, erase: {=bool:?}, fprg: {=bool:?}, parallelbank: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, obl_launch: {=bool:?} }}" , self . pelock () , self . prglock () , self . optlock () , self . prog () , self . data () , self . ftdw () , self . erase () , self . fprg () , self . parallelbank () , self . eopie () , self . errie () , self . obl_launch ())
+            defmt::write!(
+                f,
+                "Pecr {{ pelock: {=bool:?}, prglock: {=bool:?}, optlock: {=bool:?}, prog: {=bool:?}, data: {=bool:?}, ftdw: {=bool:?}, erase: {=bool:?}, fprg: {=bool:?}, parallelbank: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, obl_launch: {=bool:?} }}",
+                self.pelock(),
+                self.prglock(),
+                self.optlock(),
+                self.prog(),
+                self.data(),
+                self.ftdw(),
+                self.erase(),
+                self.fprg(),
+                self.parallelbank(),
+                self.eopie(),
+                self.errie(),
+                self.obl_launch()
+            )
         }
     }
     #[doc = "Status register"]
@@ -585,7 +617,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ bsy: {=bool:?}, eop: {=bool:?}, endhv: {=bool:?}, ready: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, optverr: {=bool:?}, optverrusr: {=bool:?} }}" , self . bsy () , self . eop () , self . endhv () , self . ready () , self . wrperr () , self . pgaerr () , self . sizerr () , self . optverr () , self . optverrusr ())
+            defmt::write!(
+                f,
+                "Sr {{ bsy: {=bool:?}, eop: {=bool:?}, endhv: {=bool:?}, ready: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, optverr: {=bool:?}, optverrusr: {=bool:?} }}",
+                self.bsy(),
+                self.eop(),
+                self.endhv(),
+                self.ready(),
+                self.wrperr(),
+                self.pgaerr(),
+                self.sizerr(),
+                self.optverr(),
+                self.optverrusr()
+            )
         }
     }
     #[doc = "Write protection register"]

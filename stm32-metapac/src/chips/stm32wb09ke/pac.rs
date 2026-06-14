@@ -154,9 +154,9 @@ pub const RRM: rrm::Rrm = unsafe { rrm::Rrm::from_ptr(0x6000_1400usize as _) };
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 2;
 #[cfg(feature = "rt")]
-pub use cortex_m_rt::interrupt;
-#[cfg(feature = "rt")]
 pub use Interrupt as interrupt;
+#[cfg(feature = "rt")]
+pub use cortex_m_rt::interrupt;
 #[path = "../../peripherals/adc_wb0.rs"]
 pub mod adc;
 #[path = "../../peripherals/bdma_v1.rs"]

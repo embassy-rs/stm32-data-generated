@@ -302,7 +302,24 @@ is cleared. With the bitfield value other than zero and KEYVALID set, the applic
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, datatype: {:?}, mode: {:?}, chmod: {:?}, dmainen: {=bool:?}, dmaouten: {=bool:?}, gcmph: {:?}, keysize: {:?}, keyprot: {=bool:?}, npblb: {=u8:?}, kmod: {:?}, kshareid: {:?}, keysel: {:?}, iprst: {=bool:?} }}" , self . en () , self . datatype () , self . mode () , self . chmod () , self . dmainen () , self . dmaouten () , self . gcmph () , self . keysize () , self . keyprot () , self . npblb () , self . kmod () , self . kshareid () , self . keysel () , self . iprst ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, datatype: {:?}, mode: {:?}, chmod: {:?}, dmainen: {=bool:?}, dmaouten: {=bool:?}, gcmph: {:?}, keysize: {:?}, keyprot: {=bool:?}, npblb: {=u8:?}, kmod: {:?}, kshareid: {:?}, keysel: {:?}, iprst: {=bool:?} }}",
+                self.en(),
+                self.datatype(),
+                self.mode(),
+                self.chmod(),
+                self.dmainen(),
+                self.dmaouten(),
+                self.gcmph(),
+                self.keysize(),
+                self.keyprot(),
+                self.npblb(),
+                self.kmod(),
+                self.kshareid(),
+                self.keysel(),
+                self.iprst()
+            )
         }
     }
     #[doc = "SAES interrupt clear register."]

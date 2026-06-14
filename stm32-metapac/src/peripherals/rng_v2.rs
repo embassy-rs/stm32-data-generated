@@ -192,7 +192,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ rngen: {=bool:?}, ie: {=bool:?}, ced: {=bool:?}, rng_config3: {:?}, nistc: {:?}, rng_config2: {:?}, clkdiv: {:?}, rng_config1: {:?}, condrst: {=bool:?}, configlock: {=bool:?} }}" , self . rngen () , self . ie () , self . ced () , self . rng_config3 () , self . nistc () , self . rng_config2 () , self . clkdiv () , self . rng_config1 () , self . condrst () , self . configlock ())
+            defmt::write!(
+                f,
+                "Cr {{ rngen: {=bool:?}, ie: {=bool:?}, ced: {=bool:?}, rng_config3: {:?}, nistc: {:?}, rng_config2: {:?}, clkdiv: {:?}, rng_config1: {:?}, condrst: {=bool:?}, configlock: {=bool:?} }}",
+                self.rngen(),
+                self.ie(),
+                self.ced(),
+                self.rng_config3(),
+                self.nistc(),
+                self.rng_config2(),
+                self.clkdiv(),
+                self.rng_config1(),
+                self.condrst(),
+                self.configlock()
+            )
         }
     }
     #[doc = "Health test control register"]

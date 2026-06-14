@@ -377,7 +377,35 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ dbg_sleep: {=bool:?}, dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, trace_ioen: {=bool:?}, trace_mode: {=u8:?}, iwdg: {=bool:?}, wwdg: {=bool:?}, tim1: {=bool:?}, tim2: {=bool:?}, tim3: {=bool:?}, tim4: {=bool:?}, can1: {=bool:?}, dbg_i2c1_smbus_timeout: {=bool:?}, dbg_i2c2_smbus_timeout: {=bool:?}, tim8: {=bool:?}, tim5: {=bool:?}, tim6: {=bool:?}, tim7: {=bool:?}, can2: {=bool:?}, tim15: {=bool:?}, tim16: {=bool:?}, tim17: {=bool:?}, tim12: {=bool:?}, tim13: {=bool:?}, tim14: {=bool:?} }}" , self . dbg_sleep () , self . dbg_stop () , self . dbg_standby () , self . trace_ioen () , self . trace_mode () , self . iwdg () , self . wwdg () , self . tim1 () , self . tim2 () , self . tim3 () , self . tim4 () , self . can1 () , self . dbg_i2c1_smbus_timeout () , self . dbg_i2c2_smbus_timeout () , self . tim8 () , self . tim5 () , self . tim6 () , self . tim7 () , self . can2 () , self . tim15 () , self . tim16 () , self . tim17 () , self . tim12 () , self . tim13 () , self . tim14 ())
+            defmt::write!(
+                f,
+                "Cr {{ dbg_sleep: {=bool:?}, dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, trace_ioen: {=bool:?}, trace_mode: {=u8:?}, iwdg: {=bool:?}, wwdg: {=bool:?}, tim1: {=bool:?}, tim2: {=bool:?}, tim3: {=bool:?}, tim4: {=bool:?}, can1: {=bool:?}, dbg_i2c1_smbus_timeout: {=bool:?}, dbg_i2c2_smbus_timeout: {=bool:?}, tim8: {=bool:?}, tim5: {=bool:?}, tim6: {=bool:?}, tim7: {=bool:?}, can2: {=bool:?}, tim15: {=bool:?}, tim16: {=bool:?}, tim17: {=bool:?}, tim12: {=bool:?}, tim13: {=bool:?}, tim14: {=bool:?} }}",
+                self.dbg_sleep(),
+                self.dbg_stop(),
+                self.dbg_standby(),
+                self.trace_ioen(),
+                self.trace_mode(),
+                self.iwdg(),
+                self.wwdg(),
+                self.tim1(),
+                self.tim2(),
+                self.tim3(),
+                self.tim4(),
+                self.can1(),
+                self.dbg_i2c1_smbus_timeout(),
+                self.dbg_i2c2_smbus_timeout(),
+                self.tim8(),
+                self.tim5(),
+                self.tim6(),
+                self.tim7(),
+                self.can2(),
+                self.tim15(),
+                self.tim16(),
+                self.tim17(),
+                self.tim12(),
+                self.tim13(),
+                self.tim14()
+            )
         }
     }
     #[doc = "DBGMCU_IDCODE"]

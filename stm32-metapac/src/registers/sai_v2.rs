@@ -5,191 +5,120 @@ pub(crate) static REGISTERS: IR = IR {
         Block {
             name: "Ch",
             extends: None,
-            description: Some(
-                "Cluster CH%s, containing ?CR1, ?CR2, ?FRCR, ?SLOTR, ?IM, ?SR, ?CLRFR, ?DR",
-            ),
+            description: Some("Cluster CH%s, containing ?CR1, ?CR2, ?FRCR, ?SLOTR, ?IM, ?SR, ?CLRFR, ?DR"),
             items: &[
                 BlockItem {
                     name: "cr1",
-                    description: Some(
-                        "Configuration register 1",
-                    ),
+                    description: Some("Configuration register 1"),
                     array: None,
                     byte_offset: 0x0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr1",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Cr1"),
+                    }),
                 },
                 BlockItem {
                     name: "cr2",
-                    description: Some(
-                        "Configuration register 2",
-                    ),
+                    description: Some("Configuration register 2"),
                     array: None,
                     byte_offset: 0x4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr2",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Cr2"),
+                    }),
                 },
                 BlockItem {
                     name: "frcr",
-                    description: Some(
-                        "This register has no meaning in AC97 and SPDIF audio protocol",
-                    ),
+                    description: Some("This register has no meaning in AC97 and SPDIF audio protocol"),
                     array: None,
                     byte_offset: 0x8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Frcr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Frcr"),
+                    }),
                 },
                 BlockItem {
                     name: "slotr",
-                    description: Some(
-                        "This register has no meaning in AC97 and SPDIF audio protocol",
-                    ),
+                    description: Some("This register has no meaning in AC97 and SPDIF audio protocol"),
                     array: None,
                     byte_offset: 0xc,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Slotr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Slotr"),
+                    }),
                 },
                 BlockItem {
                     name: "im",
-                    description: Some(
-                        "Interrupt mask register 2",
-                    ),
+                    description: Some("Interrupt mask register 2"),
                     array: None,
                     byte_offset: 0x10,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Im",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Im"),
+                    }),
                 },
                 BlockItem {
                     name: "sr",
-                    description: Some(
-                        "Status register",
-                    ),
+                    description: Some("Status register"),
                     array: None,
                     byte_offset: 0x14,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Sr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::Read,
+                        bit_size: 32,
+                        fieldset: Some("Sr"),
+                    }),
                 },
                 BlockItem {
                     name: "clrfr",
-                    description: Some(
-                        "Clear flag register",
-                    ),
+                    description: Some("Clear flag register"),
                     array: None,
                     byte_offset: 0x18,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Write,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Clrfr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::Write,
+                        bit_size: 32,
+                        fieldset: Some("Clrfr"),
+                    }),
                 },
                 BlockItem {
                     name: "dr",
-                    description: Some(
-                        "Data register",
-                    ),
+                    description: Some("Data register"),
                     array: None,
                     byte_offset: 0x1c,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Dr"),
+                    }),
                 },
             ],
         },
         Block {
             name: "Sai",
             extends: None,
-            description: Some(
-                "Serial audio interface",
-            ),
+            description: Some("Serial audio interface"),
             items: &[
                 BlockItem {
                     name: "gcr",
-                    description: Some(
-                        "Global configuration register",
-                    ),
+                    description: Some("Global configuration register"),
                     array: None,
                     byte_offset: 0x0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Gcr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Gcr"),
+                    }),
                 },
                 BlockItem {
                     name: "ch",
-                    description: Some(
-                        "Cluster CH%s, containing ?CR1, ?CR2, ?FRCR, ?SLOTR, ?IM, ?SR, ?CLRFR, ?DR",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 32,
-                            },
-                        ),
-                    ),
+                    description: Some("Cluster CH%s, containing ?CR1, ?CR2, ?FRCR, ?SLOTR, ?IM, ?SR, ?CLRFR, ?DR"),
+                    array: Some(Array::Regular(RegularArray { len: 2, stride: 32 })),
                     byte_offset: 0x4,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "Ch",
-                        },
-                    ),
+                    inner: BlockItemInner::Block(BlockItemBlock { block: "Ch" }),
                 },
             ],
         },
@@ -198,9 +127,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Clrfr",
             extends: None,
-            description: Some(
-                "Clear flag register",
-            ),
+            description: Some("Clear flag register"),
             bit_size: 32,
             fields: &[
                 Field {
@@ -208,11 +135,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear overrun / underrun. This bit is write only. Programming this bit to 1 clears the OVRUDR flag in the SAI_xSR register. Reading this bit always returns the value 0.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -222,11 +145,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Mute detection flag. This bit is write only. Programming this bit to 1 clears the MUTEDET flag in the SAI_xSR register. Reading this bit always returns the value 0.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -236,11 +155,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear wrong clock configuration flag. This bit is write only. Programming this bit to 1 clears the WCKCFG flag in the SAI_xSR register. This bit is used only when the audio block is set as master (MODE[1] = 0) and NODIV = 0 in the SAI_xCR1 register. Reading this bit always returns the value 0.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -250,11 +165,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear Codec not ready flag. This bit is write only. Programming this bit to 1 clears the CNRDY flag in the SAI_xSR register. This bit is used only when the AC97 audio protocol is selected in the SAI_xCR1 register. Reading this bit always returns the value 0.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -264,11 +175,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear anticipated frame synchronization detection flag. This bit is write only. Programming this bit to 1 clears the AFSDET flag in the SAI_xSR register. It is not used in AC97or SPDIF mode. Reading this bit always returns the value 0.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -278,11 +185,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear late frame synchronization detection flag. This bit is write only. Programming this bit to 1 clears the LFSDET flag in the SAI_xSR register. This bit is not used in AC97or SPDIF mode Reading this bit always returns the value 0.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -292,149 +195,93 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Cr1",
             extends: None,
-            description: Some(
-                "Configuration register 1",
-            ),
+            description: Some("Configuration register 1"),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "mode",
-                    description: Some(
-                        "SAIx audio block mode immediately",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("SAIx audio block mode immediately"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Mode",
-                    ),
+                    enumm: Some("Mode"),
                 },
                 Field {
                     name: "prtcfg",
                     description: Some(
                         "Protocol configuration. These bits are set and cleared by software. These bits have to be configured when the audio block is disabled.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Prtcfg",
-                    ),
+                    enumm: Some("Prtcfg"),
                 },
                 Field {
                     name: "ds",
                     description: Some(
                         "Data size. These bits are set and cleared by software. These bits are ignored when the SPDIF protocols are selected (bit PRTCFG[1:0]), because the frame and the data size are fixed in such case. When the companding mode is selected through COMP[1:0] bits, DS[1:0] are ignored since the data size is fixed to 8 bits by the algorithm. These bits must be configured when the audio block is disabled.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some(
-                        "Ds",
-                    ),
+                    enumm: Some("Ds"),
                 },
                 Field {
                     name: "lsbfirst",
                     description: Some(
                         "Least significant bit first. This bit is set and cleared by software. It must be configured when the audio block is disabled. This bit has no meaning in AC97 audio protocol since AC97 data are always transferred with the MSB first. This bit has no meaning in SPDIF audio protocol since in SPDIF data are always transferred with LSB first.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Lsbfirst",
-                    ),
+                    enumm: Some("Lsbfirst"),
                 },
                 Field {
                     name: "ckstr",
                     description: Some(
                         "Clock strobing edge. This bit is set and cleared by software. It must be configured when the audio block is disabled. This bit has no meaning in SPDIF audio protocol.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Ckstr",
-                    ),
+                    enumm: Some("Ckstr"),
                 },
                 Field {
                     name: "syncen",
                     description: Some(
                         "Synchronization enable. These bits are set and cleared by software. They must be configured when the audio sub-block is disabled. Note: The audio sub-block should be configured as asynchronous when SPDIF mode is enabled.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 10,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Syncen",
-                    ),
+                    enumm: Some("Syncen"),
                 },
                 Field {
                     name: "mono",
                     description: Some(
                         "Mono mode. This bit is set and cleared by software. It is meaningful only when the number of slots is equal to 2. When the mono mode is selected, slot 0 data are duplicated on slot 1 when the audio block operates as a transmitter. In reception mode, the slot1 is discarded and only the data received from slot 0 are stored. Refer to Section: Mono/stereo mode for more details.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Mono",
-                    ),
+                    enumm: Some("Mono"),
                 },
                 Field {
                     name: "outdriv",
                     description: Some(
                         "Output drive. This bit is set and cleared by software. Note: This bit has to be set before enabling the audio block and after the audio block configuration.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 13,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Outdriv",
-                    ),
+                    enumm: Some("Outdriv"),
                 },
                 Field {
                     name: "saien",
                     description: Some(
                         "Audio block enable where x is A or B. This bit is set by software. To switch off the audio block, the application software must program this bit to 0 and poll the bit till it reads back 0, meaning that the block is completely disabled. Before setting this bit to 1, check that it is set to 0, otherwise the enable command will not be taken into account. This bit allows to control the state of SAIx audio block. If it is disabled when an audio frame transfer is ongoing, the ongoing transfer completes and the cell is fully disabled at the end of this audio frame transfer. Note: When SAIx block is configured in master mode, the clock must be present on the input of SAIx before setting SAIXEN bit.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -444,25 +291,15 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "DMA enable. This bit is set and cleared by software. Note: Since the audio block defaults to operate as a transmitter after reset, the MODE[1:0] bits must be configured before setting DMAEN to avoid a DMA request in receiver mode.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 17,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "nodiv",
-                    description: Some(
-                        "No fixed divider between MCLK and FS",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 19,
-                        },
-                    ),
+                    description: Some("No fixed divider between MCLK and FS"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -472,53 +309,33 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Master clock divider. These bits are set and cleared by software. These bits are meaningless when the audio block operates in slave mode. They have to be configured when the audio block is disabled. Others: the master clock frequency is calculated accordingly to the following formula:",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 20,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 4,
                     array: None,
-                    enumm: Some(
-                        "Mckdiv",
-                    ),
+                    enumm: Some("Mckdiv"),
                 },
             ],
         },
         FieldSet {
             name: "Cr2",
             extends: None,
-            description: Some(
-                "Configuration register 2",
-            ),
+            description: Some("Configuration register 2"),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "fth",
-                    description: Some(
-                        "FIFO threshold. This bit is set and cleared by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("FIFO threshold. This bit is set and cleared by software."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some(
-                        "Fth",
-                    ),
+                    enumm: Some("Fth"),
                 },
                 Field {
                     name: "fflush",
                     description: Some(
                         "FIFO flush. This bit is set by software. It is always read as 0. This bit should be configured when the SAI is disabled.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -528,11 +345,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Tristate management on data line. This bit is set and cleared by software. It is meaningful only if the audio block is configured as a transmitter. This bit is not used when the audio block is configured in SPDIF mode. It should be configured when SAI is disabled. Refer to Section: Output data line management on an inactive slot for more details.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -542,11 +355,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Mute. This bit is set and cleared by software. It is meaningful only when the audio block operates as a transmitter. The MUTE value is linked to value of MUTEVAL if the number of slots is lower or equal to 2, or equal to 0 if it is greater than 2. Refer to Section: Mute mode for more details. Note: This bit is meaningless and should not be used for SPDIF audio blocks.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -556,27 +365,17 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Mute value. This bit is set and cleared by software.It must be written before enabling the audio block: SAIXEN. This bit is meaningful only when the audio block operates as a transmitter, the number of slots is lower or equal to 2 and the MUTE bit is set. If more slots are declared, the bit value sent during the transmission in mute mode is equal to 0, whatever the value of MUTEVAL. if the number of slot is lower or equal to 2 and MUTEVAL = 1, the MUTE value transmitted for each slot is the one sent during the previous frame. Refer to Section: Mute mode for more details. Note: This bit is meaningless and should not be used for SPDIF audio blocks.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Muteval",
-                    ),
+                    enumm: Some("Muteval"),
                 },
                 Field {
                     name: "mutecnt",
                     description: Some(
                         "Mute counter. These bits are set and cleared by software. They are used only in reception mode. The value set in these bits is compared to the number of consecutive mute frames detected in reception. When the number of mute frames is equal to this value, the flag MUTEDET will be set and an interrupt will be generated if bit MUTEDETIE is set. Refer to Section: Mute mode for more details.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 7,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -586,65 +385,43 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Complement bit. This bit is set and cleared by software. It defines the type of complement to be used for companding mode Note: This bit has effect only when the companding mode is -Law algorithm or A-Law algorithm.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 13,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Cpl",
-                    ),
+                    enumm: Some("Cpl"),
                 },
                 Field {
                     name: "comp",
                     description: Some(
                         "Companding mode. These bits are set and cleared by software. The -Law and the A-Law log are a part of the CCITT G.711 recommendation, the type of complement that will be used depends on CPL bit. The data expansion or data compression are determined by the state of bit MODE[0]. The data compression is applied if the audio block is configured as a transmitter. The data expansion is automatically applied when the audio block is configured as a receiver. Refer to Section: Companding mode for more details. Note: Companding mode is applicable only when TDM is selected.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Comp",
-                    ),
+                    enumm: Some("Comp"),
                 },
             ],
         },
         FieldSet {
             name: "Dr",
             extends: None,
-            description: Some(
-                "Data register",
-            ),
+            description: Some("Data register"),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "data",
-                    description: Some(
-                        "Data A write to this register loads the FIFO provided the FIFO is not full. A read from this register empties the FIFO if the FIFO is not empty.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "data",
+                description: Some(
+                    "Data A write to this register loads the FIFO provided the FIFO is not full. A read from this register empties the FIFO if the FIFO is not empty.",
+                ),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Frcr",
             extends: None,
-            description: Some(
-                "This register has no meaning in AC97 and SPDIF audio protocol",
-            ),
+            description: Some("This register has no meaning in AC97 and SPDIF audio protocol"),
             bit_size: 32,
             fields: &[
                 Field {
@@ -652,11 +429,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Frame length. These bits are set and cleared by software. They define the audio frame length expressed in number of SCK clock cycles: the number of bits in the frame is equal to FRL[7:0] + 1. The minimum number of bits to transfer in an audio frame must be equal to 8, otherwise the audio block will behaves in an unexpected way. This is the case when the data size is 8 bits and only one slot 0 is defined in NBSLOT[4:0] of SAI_xSLOTR register (NBSLOT[3:0] = 0000). In master mode, if the master clock (available on MCLK_x pin) is used, the frame length should be aligned with a number equal to a power of 2, ranging from 8 to 256. When the master clock is not used (NODIV = 1), it is recommended to program the frame length to an value ranging from 8 to 256. These bits are meaningless and are not used in AC97 or SPDIF audio block configuration.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -666,11 +439,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Frame synchronization active level length. These bits are set and cleared by software. They specify the length in number of bit clock (SCK) + 1 (FSALL[6:0] + 1) of the active level of the FS signal in the audio frame These bits are meaningless and are not used in AC97 or SPDIF audio block configuration. They must be configured when the audio block is disabled.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 7,
                     array: None,
                     enumm: None,
@@ -680,11 +449,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Frame synchronization definition. This bit is set and cleared by software. When the bit is set, the number of slots defined in the SAI_xSLOTR register has to be even. It means that half of this number of slots will be dedicated to the left channel and the other slots for the right channel (e.g: this bit has to be set for I2S or MSB/LSB-justified protocols...). This bit is meaningless and is not used in AC97 or SPDIF audio block configuration. It must be configured when the audio block is disabled.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -694,67 +459,41 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Frame synchronization polarity. This bit is set and cleared by software. It is used to configure the level of the start of frame on the FS signal. It is meaningless and is not used in AC97 or SPDIF audio block configuration. This bit must be configured when the audio block is disabled.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 17,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Fspol",
-                    ),
+                    enumm: Some("Fspol"),
                 },
                 Field {
                     name: "fsoff",
                     description: Some(
                         "Frame synchronization offset. This bit is set and cleared by software. It is meaningless and is not used in AC97 or SPDIF audio block configuration. This bit must be configured when the audio block is disabled.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 18,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Fsoff",
-                    ),
+                    enumm: Some("Fsoff"),
                 },
             ],
         },
         FieldSet {
             name: "Gcr",
             extends: None,
-            description: Some(
-                "Global configuration register",
-            ),
+            description: Some("Global configuration register"),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "syncin",
-                    description: Some(
-                        "Synchronization inputs",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Synchronization inputs"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "syncout",
-                    description: Some(
-                        "Synchronization outputs These bits are set and cleared by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Synchronization outputs These bits are set and cleared by software."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -764,9 +503,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Im",
             extends: None,
-            description: Some(
-                "Interrupt mask register 2",
-            ),
+            description: Some("Interrupt mask register 2"),
             bit_size: 32,
             fields: &[
                 Field {
@@ -774,11 +511,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Overrun/underrun interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt is generated if the OVRUDR bit in the SAI_xSR register is set.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -788,11 +521,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Mute detection interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt is generated if the MUTEDET bit in the SAI_xSR register is set. This bit has a meaning only if the audio block is configured in receiver mode.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -802,11 +531,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wrong clock configuration interrupt enable. This bit is set and cleared by software. This bit is taken into account only if the audio block is configured as a master (MODE[1] = 0) and NODIV = 0. It generates an interrupt if the WCKCFG flag in the SAI_xSR register is set. Note: This bit is used only in TDM mode and is meaningless in other modes.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -816,11 +541,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "FIFO request interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt is generated if the FREQ bit in the SAI_xSR register is set. Since the audio block defaults to operate as a transmitter after reset, the MODE bit must be configured before setting FREQIE to avoid a parasitic interruption in receiver mode,",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -830,11 +551,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Codec not ready interrupt enable (AC97). This bit is set and cleared by software. When the interrupt is enabled, the audio block detects in the slot 0 (tag0) of the AC97 frame if the Codec connected to this line is ready or not. If it is not ready, the CNRDY flag in the SAI_xSR register is set and an interruption i generated. This bit has a meaning only if the AC97 mode is selected through PRTCFG[1:0] bits and the audio block is operates as a receiver.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -844,11 +561,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Anticipated frame synchronization detection interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt will be generated if the AFSDET bit in the SAI_xSR register is set. This bit is meaningless in AC97, SPDIF mode or when the audio block operates as a master.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -858,11 +571,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Late frame synchronization detection interrupt enable. This bit is set and cleared by software. When this bit is set, an interrupt will be generated if the LFSDET bit is set in the SAI_xSR register. This bit is meaningless in AC97, SPDIF mode or when the audio block operates as a master.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -872,9 +581,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Slotr",
             extends: None,
-            description: Some(
-                "This register has no meaning in AC97 and SPDIF audio protocol",
-            ),
+            description: Some("This register has no meaning in AC97 and SPDIF audio protocol"),
             bit_size: 32,
             fields: &[
                 Field {
@@ -882,11 +589,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "First bit offset These bits are set and cleared by software. The value set in this bitfield defines the position of the first data transfer bit in the slot. It represents an offset value. In transmission mode, the bits outside the data field are forced to 0. In reception mode, the extra received bits are discarded. These bits must be set when the audio block is disabled. They are ignored in AC97 or SPDIF mode.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 5,
                     array: None,
                     enumm: None,
@@ -896,27 +599,17 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Slot size This bits is set and cleared by software. The slot size must be higher or equal to the data size. If this condition is not respected, the behavior of the SAI will be undetermined. Refer to Section: Output data line management on an inactive slot for information on how to drive SD line. These bits must be set when the audio block is disabled. They are ignored in AC97 or SPDIF mode.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Slotsz",
-                    ),
+                    enumm: Some("Slotsz"),
                 },
                 Field {
                     name: "nbslot",
                     description: Some(
                         "Number of slots in an audio frame. These bits are set and cleared by software. The value set in this bitfield represents the number of slots + 1 in the audio frame (including the number of inactive slots). The maximum number of slots is 16. The number of slots should be even if FSDEF bit in the SAI_xFRCR register is set. The number of slots must be configured when the audio block is disabled. They are ignored in AC97 or SPDIF mode.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -926,25 +619,17 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Slot enable. These bits are set and cleared by software. Each SLOTEN bit corresponds to a slot position from 0 to 15 (maximum 16 slots). The slot must be enabled when the audio block is disabled. They are ignored in AC97 or SPDIF mode.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 16,
                     array: None,
-                    enumm: Some(
-                        "Sloten",
-                    ),
+                    enumm: Some("Sloten"),
                 },
             ],
         },
         FieldSet {
             name: "Sr",
             extends: None,
-            description: Some(
-                "Status register",
-            ),
+            description: Some("Status register"),
             bit_size: 32,
             fields: &[
                 Field {
@@ -952,11 +637,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Overrun / underrun. This bit is read only. The overrun and underrun conditions can occur only when the audio block is configured as a receiver and a transmitter, respectively. It can generate an interrupt if OVRUDRIE bit is set in SAI_xIM register. This flag is cleared when the software sets COVRUDR bit in SAI_xCLRFR register.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -966,11 +647,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Mute detection. This bit is read only. This flag is set if consecutive 0 values are received in each slot of a given audio frame and for a consecutive number of audio frames (set in the MUTECNT bit in the SAI_xCR2 register). It can generate an interrupt if MUTEDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets bit CMUTEDET in the SAI_xCLRFR register.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -980,27 +657,17 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wrong clock configuration flag. This bit is read only. This bit is used only when the audio block operates in master mode (MODE[1] = 0) and NODIV = 0. It can generate an interrupt if WCKCFGIE bit is set in SAI_xIM register. This flag is cleared when the software sets CWCKCFG bit in SAI_xCLRFR register.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Wckcfg",
-                    ),
+                    enumm: Some("Wckcfg"),
                 },
                 Field {
                     name: "freq",
                     description: Some(
                         "FIFO request. This bit is read only. The request depends on the audio block configuration: If the block is configured in transmission mode, the FIFO request is related to a write request operation in the SAI_xDR. If the block configured in reception, the FIFO request related to a read request operation from the SAI_xDR. This flag can generate an interrupt if FREQIE bit is set in SAI_xIM register.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1010,27 +677,17 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Codec not ready. This bit is read only. This bit is used only when the AC97 audio protocol is selected in the SAI_xCR1 register and configured in receiver mode. It can generate an interrupt if CNRDYIE bit is set in SAI_xIM register. This flag is cleared when the software sets CCNRDY bit in SAI_xCLRFR register.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Cnrdy",
-                    ),
+                    enumm: Some("Cnrdy"),
                 },
                 Field {
                     name: "afsdet",
                     description: Some(
                         "Anticipated frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97or SPDIF mode. It can generate an interrupt if AFSDETIE bit is set in SAI_xIM register. This flag is cleared when the software sets CAFSDET bit in SAI_xCLRFR register.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1040,11 +697,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Late frame synchronization detection. This bit is read only. This flag can be set only if the audio block is configured in slave mode. It is not used in AC97 or SPDIF mode. It can generate an interrupt if LFSDETIE bit is set in the SAI_xIM register. This flag is cleared when the software sets bit CLFSDET in SAI_xCLRFR register",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1054,16 +707,10 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "FIFO level threshold. This bit is read only. The FIFO level threshold flag is managed only by hardware and its setting depends on SAI block configuration (transmitter or receiver mode). If the SAI block is configured as transmitter: If SAI block is configured as receiver:",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some(
-                        "Flvl",
-                    ),
+                    enumm: Some("Flvl"),
                 },
             ],
         },
@@ -1076,16 +723,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "FallingEdge",
-                    description: Some(
-                        "Data strobing edge is falling edge of SCK",
-                    ),
+                    description: Some("Data strobing edge is falling edge of SCK"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "RisingEdge",
-                    description: Some(
-                        "Data strobing edge is rising edge of SCK",
-                    ),
+                    description: Some("Data strobing edge is rising edge of SCK"),
                     value: 1,
                 },
             ],
@@ -1097,16 +740,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "NotReady",
-                    description: Some(
-                        "External AC’97 Codec is not ready",
-                    ),
+                    description: Some("External AC’97 Codec is not ready"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Ready",
-                    description: Some(
-                        "External AC’97 Codec is ready",
-                    ),
+                    description: Some("External AC’97 Codec is ready"),
                     value: 0,
                 },
             ],
@@ -1118,23 +757,17 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "ALaw",
-                    description: Some(
-                        "A-Law algorithm",
-                    ),
+                    description: Some("A-Law algorithm"),
                     value: 3,
                 },
                 EnumVariant {
                     name: "MuLaw",
-                    description: Some(
-                        "μ-Law algorithm",
-                    ),
+                    description: Some("μ-Law algorithm"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "NoCompanding",
-                    description: Some(
-                        "No companding algorithm",
-                    ),
+                    description: Some("No companding algorithm"),
                     value: 0,
                 },
             ],
@@ -1146,16 +779,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "OnesComplement",
-                    description: Some(
-                        "1’s complement representation",
-                    ),
+                    description: Some("1’s complement representation"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "TwosComplement",
-                    description: Some(
-                        "2’s complement representation",
-                    ),
+                    description: Some("2’s complement representation"),
                     value: 1,
                 },
             ],
@@ -1167,44 +796,32 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Bit10",
-                    description: Some(
-                        "10 bits",
-                    ),
+                    description: Some("10 bits"),
                     value: 3,
                 },
                 EnumVariant {
                     name: "Bit16",
-                    description: Some(
-                        "16 bits",
-                    ),
+                    description: Some("16 bits"),
                     value: 4,
                 },
                 EnumVariant {
                     name: "Bit20",
-                    description: Some(
-                        "20 bits",
-                    ),
+                    description: Some("20 bits"),
                     value: 5,
                 },
                 EnumVariant {
                     name: "Bit24",
-                    description: Some(
-                        "24 bits",
-                    ),
+                    description: Some("24 bits"),
                     value: 6,
                 },
                 EnumVariant {
                     name: "Bit32",
-                    description: Some(
-                        "32 bits",
-                    ),
+                    description: Some("32 bits"),
                     value: 7,
                 },
                 EnumVariant {
                     name: "Bit8",
-                    description: Some(
-                        "8 bits",
-                    ),
+                    description: Some("8 bits"),
                     value: 2,
                 },
             ],
@@ -1216,44 +833,32 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Empty",
-                    description: Some(
-                        "FIFO empty",
-                    ),
+                    description: Some("FIFO empty"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "Full",
-                    description: Some(
-                        "FIFO full",
-                    ),
+                    description: Some("FIFO full"),
                     value: 5,
                 },
                 EnumVariant {
                     name: "Quarter1",
-                    description: Some(
-                        "FIFO <= 1⁄4 but not empty",
-                    ),
+                    description: Some("FIFO <= 1⁄4 but not empty"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Quarter2",
-                    description: Some(
-                        "1⁄4 < FIFO <= 1⁄2",
-                    ),
+                    description: Some("1⁄4 < FIFO <= 1⁄2"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "Quarter3",
-                    description: Some(
-                        "1⁄2 < FIFO <= 3⁄4",
-                    ),
+                    description: Some("1⁄2 < FIFO <= 3⁄4"),
                     value: 3,
                 },
                 EnumVariant {
                     name: "Quarter4",
-                    description: Some(
-                        "3⁄4 < FIFO but not full",
-                    ),
+                    description: Some("3⁄4 < FIFO but not full"),
                     value: 4,
                 },
             ],
@@ -1265,16 +870,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "BeforeFirst",
-                    description: Some(
-                        "FS is asserted one bit before the first bit of the slot 0",
-                    ),
+                    description: Some("FS is asserted one bit before the first bit of the slot 0"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "OnFirst",
-                    description: Some(
-                        "FS is asserted on the first bit of the slot 0",
-                    ),
+                    description: Some("FS is asserted on the first bit of the slot 0"),
                     value: 0,
                 },
             ],
@@ -1286,16 +887,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "FallingEdge",
-                    description: Some(
-                        "FS is active low (falling edge)",
-                    ),
+                    description: Some("FS is active low (falling edge)"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "RisingEdge",
-                    description: Some(
-                        "FS is active high (rising edge)",
-                    ),
+                    description: Some("FS is active high (rising edge)"),
                     value: 1,
                 },
             ],
@@ -1307,37 +904,27 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Empty",
-                    description: Some(
-                        "FIFO empty",
-                    ),
+                    description: Some("FIFO empty"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "Full",
-                    description: Some(
-                        "FIFO full",
-                    ),
+                    description: Some("FIFO full"),
                     value: 4,
                 },
                 EnumVariant {
                     name: "Quarter1",
-                    description: Some(
-                        "1⁄4 FIFO",
-                    ),
+                    description: Some("1⁄4 FIFO"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Quarter2",
-                    description: Some(
-                        "1⁄2 FIFO",
-                    ),
+                    description: Some("1⁄2 FIFO"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "Quarter3",
-                    description: Some(
-                        "3⁄4 FIFO",
-                    ),
+                    description: Some("3⁄4 FIFO"),
                     value: 3,
                 },
             ],
@@ -1349,16 +936,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "LsbFirst",
-                    description: Some(
-                        "Data are transferred with LSB first",
-                    ),
+                    description: Some("Data are transferred with LSB first"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "MsbFirst",
-                    description: Some(
-                        "Data are transferred with MSB first",
-                    ),
+                    description: Some("Data are transferred with MSB first"),
                     value: 0,
                 },
             ],
@@ -1457,30 +1040,22 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "MasterRx",
-                    description: Some(
-                        "Master receiver",
-                    ),
+                    description: Some("Master receiver"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "MasterTx",
-                    description: Some(
-                        "Master transmitter",
-                    ),
+                    description: Some("Master transmitter"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "SlaveRx",
-                    description: Some(
-                        "Slave receiver",
-                    ),
+                    description: Some("Slave receiver"),
                     value: 3,
                 },
                 EnumVariant {
                     name: "SlaveTx",
-                    description: Some(
-                        "Slave transmitter",
-                    ),
+                    description: Some("Slave transmitter"),
                     value: 2,
                 },
             ],
@@ -1492,16 +1067,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Mono",
-                    description: Some(
-                        "Mono mode",
-                    ),
+                    description: Some("Mono mode"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Stereo",
-                    description: Some(
-                        "Stereo mode",
-                    ),
+                    description: Some("Stereo mode"),
                     value: 0,
                 },
             ],
@@ -1513,16 +1084,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "SendLast",
-                    description: Some(
-                        "Last values are sent during the mute mode",
-                    ),
+                    description: Some("Last values are sent during the mute mode"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "SendZero",
-                    description: Some(
-                        "Bit value 0 is sent during the mute mode",
-                    ),
+                    description: Some("Bit value 0 is sent during the mute mode"),
                     value: 0,
                 },
             ],
@@ -1534,16 +1101,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Immediately",
-                    description: Some(
-                        "Audio block output driven immediately after the setting of this bit",
-                    ),
+                    description: Some("Audio block output driven immediately after the setting of this bit"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "OnStart",
-                    description: Some(
-                        "Audio block output driven when SAIEN is set",
-                    ),
+                    description: Some("Audio block output driven when SAIEN is set"),
                     value: 0,
                 },
             ],
@@ -1555,9 +1118,7 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Ac97",
-                    description: Some(
-                        "AC’97 protocol",
-                    ),
+                    description: Some("AC’97 protocol"),
                     value: 2,
                 },
                 EnumVariant {
@@ -1569,9 +1130,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "Spdif",
-                    description: Some(
-                        "SPDIF protocol",
-                    ),
+                    description: Some("SPDIF protocol"),
                     value: 1,
                 },
             ],
@@ -1583,16 +1142,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Active",
-                    description: Some(
-                        "Active slot",
-                    ),
+                    description: Some("Active slot"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Inactive",
-                    description: Some(
-                        "Inactive slot",
-                    ),
+                    description: Some("Inactive slot"),
                     value: 0,
                 },
             ],
@@ -1604,16 +1159,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Bit16",
-                    description: Some(
-                        "16-bit",
-                    ),
+                    description: Some("16-bit"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Bit32",
-                    description: Some(
-                        "32-bit",
-                    ),
+                    description: Some("32-bit"),
                     value: 2,
                 },
                 EnumVariant {
@@ -1632,9 +1183,7 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Asynchronous",
-                    description: Some(
-                        "audio sub-block in asynchronous mode",
-                    ),
+                    description: Some("audio sub-block in asynchronous mode"),
                     value: 0,
                 },
                 EnumVariant {
@@ -1660,9 +1209,7 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Correct",
-                    description: Some(
-                        "Clock configuration is correct",
-                    ),
+                    description: Some("Clock configuration is correct"),
                     value: 0,
                 },
                 EnumVariant {

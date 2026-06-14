@@ -221,7 +221,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ lpsdsr: {:?}, pdds: {:?}, cwuf: {=bool:?}, csbf: {=bool:?}, pvde: {=bool:?}, pls: {:?}, dbp: {=bool:?}, ulp: {=bool:?}, fwu: {=bool:?}, vos: {:?}, ds_ee_koff: {:?}, lprun: {:?}, lpds: {:?} }}" , self . lpsdsr () , self . pdds () , self . cwuf () , self . csbf () , self . pvde () , self . pls () , self . dbp () , self . ulp () , self . fwu () , self . vos () , self . ds_ee_koff () , self . lprun () , self . lpds ())
+            defmt::write!(
+                f,
+                "Cr {{ lpsdsr: {:?}, pdds: {:?}, cwuf: {=bool:?}, csbf: {=bool:?}, pvde: {=bool:?}, pls: {:?}, dbp: {=bool:?}, ulp: {=bool:?}, fwu: {=bool:?}, vos: {:?}, ds_ee_koff: {:?}, lprun: {:?}, lpds: {:?} }}",
+                self.lpsdsr(),
+                self.pdds(),
+                self.cwuf(),
+                self.csbf(),
+                self.pvde(),
+                self.pls(),
+                self.dbp(),
+                self.ulp(),
+                self.fwu(),
+                self.vos(),
+                self.ds_ee_koff(),
+                self.lprun(),
+                self.lpds()
+            )
         }
     }
     #[doc = "power control/status register"]
@@ -362,7 +378,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr {{ wuf: {=bool:?}, sbf: {=bool:?}, pvdo: {=bool:?}, vrefintrdyf: {=bool:?}, vosf: {=bool:?}, reglpf: {=bool:?}, ewup1: {=bool:?}, ewup2: {=bool:?}, ewup3: {=bool:?} }}" , self . wuf () , self . sbf () , self . pvdo () , self . vrefintrdyf () , self . vosf () , self . reglpf () , self . ewup1 () , self . ewup2 () , self . ewup3 ())
+            defmt::write!(
+                f,
+                "Csr {{ wuf: {=bool:?}, sbf: {=bool:?}, pvdo: {=bool:?}, vrefintrdyf: {=bool:?}, vosf: {=bool:?}, reglpf: {=bool:?}, ewup1: {=bool:?}, ewup2: {=bool:?}, ewup3: {=bool:?} }}",
+                self.wuf(),
+                self.sbf(),
+                self.pvdo(),
+                self.vrefintrdyf(),
+                self.vosf(),
+                self.reglpf(),
+                self.ewup1(),
+                self.ewup2(),
+                self.ewup3()
+            )
         }
     }
 }

@@ -183,7 +183,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ init: {=bool:?}, dmae: {=bool:?}, datatype: {=u8:?}, mode: {=bool:?}, algo: {=bool:?}, nbw: {=u8:?}, dinne: {=bool:?}, lkey: {=bool:?} }}" , self . init () , self . dmae () , self . datatype () , self . mode () , self . algo () , self . nbw () , self . dinne () , self . lkey ())
+            defmt::write!(
+                f,
+                "Cr {{ init: {=bool:?}, dmae: {=bool:?}, datatype: {=u8:?}, mode: {=bool:?}, algo: {=bool:?}, nbw: {=u8:?}, dinne: {=bool:?}, lkey: {=bool:?} }}",
+                self.init(),
+                self.dmae(),
+                self.datatype(),
+                self.mode(),
+                self.algo(),
+                self.nbw(),
+                self.dinne(),
+                self.lkey()
+            )
         }
     }
     #[doc = "interrupt enable register."]

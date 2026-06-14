@@ -240,7 +240,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ capture: {=bool:?}, cm: {=bool:?}, crop: {=bool:?}, jpeg: {=bool:?}, ess: {=bool:?}, pckpol: {=bool:?}, hspol: {=bool:?}, vspol: {=bool:?}, fcrc: {=u8:?}, edm: {=u8:?}, enable: {=bool:?} }}" , self . capture () , self . cm () , self . crop () , self . jpeg () , self . ess () , self . pckpol () , self . hspol () , self . vspol () , self . fcrc () , self . edm () , self . enable ())
+            defmt::write!(
+                f,
+                "Cr {{ capture: {=bool:?}, cm: {=bool:?}, crop: {=bool:?}, jpeg: {=bool:?}, ess: {=bool:?}, pckpol: {=bool:?}, hspol: {=bool:?}, vspol: {=bool:?}, fcrc: {=u8:?}, edm: {=u8:?}, enable: {=bool:?} }}",
+                self.capture(),
+                self.cm(),
+                self.crop(),
+                self.jpeg(),
+                self.ess(),
+                self.pckpol(),
+                self.hspol(),
+                self.vspol(),
+                self.fcrc(),
+                self.edm(),
+                self.enable()
+            )
         }
     }
     #[doc = "crop window size"]
@@ -688,7 +702,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Icr {{ frame_isc: {=bool:?}, ovr_isc: {=bool:?}, err_isc: {=bool:?}, vsync_isc: {=bool:?}, line_isc: {=bool:?} }}" , self . frame_isc () , self . ovr_isc () , self . err_isc () , self . vsync_isc () , self . line_isc ())
+            defmt::write!(
+                f,
+                "Icr {{ frame_isc: {=bool:?}, ovr_isc: {=bool:?}, err_isc: {=bool:?}, vsync_isc: {=bool:?}, line_isc: {=bool:?} }}",
+                self.frame_isc(),
+                self.ovr_isc(),
+                self.err_isc(),
+                self.vsync_isc(),
+                self.line_isc()
+            )
         }
     }
     #[doc = "interrupt enable register"]
@@ -777,7 +799,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier {{ frame_ie: {=bool:?}, ovr_ie: {=bool:?}, err_ie: {=bool:?}, vsync_ie: {=bool:?}, line_ie: {=bool:?} }}" , self . frame_ie () , self . ovr_ie () , self . err_ie () , self . vsync_ie () , self . line_ie ())
+            defmt::write!(
+                f,
+                "Ier {{ frame_ie: {=bool:?}, ovr_ie: {=bool:?}, err_ie: {=bool:?}, vsync_ie: {=bool:?}, line_ie: {=bool:?} }}",
+                self.frame_ie(),
+                self.ovr_ie(),
+                self.err_ie(),
+                self.vsync_ie(),
+                self.line_ie()
+            )
         }
     }
     #[doc = "masked interrupt status register"]
@@ -866,7 +896,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mis {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Mis {{ frame_mis: {=bool:?}, ovr_mis: {=bool:?}, err_mis: {=bool:?}, vsync_mis: {=bool:?}, line_mis: {=bool:?} }}" , self . frame_mis () , self . ovr_mis () , self . err_mis () , self . vsync_mis () , self . line_mis ())
+            defmt::write!(
+                f,
+                "Mis {{ frame_mis: {=bool:?}, ovr_mis: {=bool:?}, err_mis: {=bool:?}, vsync_mis: {=bool:?}, line_mis: {=bool:?} }}",
+                self.frame_mis(),
+                self.ovr_mis(),
+                self.err_mis(),
+                self.vsync_mis(),
+                self.line_mis()
+            )
         }
     }
     #[doc = "raw interrupt status register"]
@@ -955,7 +993,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ris {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ris {{ frame_ris: {=bool:?}, ovr_ris: {=bool:?}, err_ris: {=bool:?}, vsync_ris: {=bool:?}, line_ris: {=bool:?} }}" , self . frame_ris () , self . ovr_ris () , self . err_ris () , self . vsync_ris () , self . line_ris ())
+            defmt::write!(
+                f,
+                "Ris {{ frame_ris: {=bool:?}, ovr_ris: {=bool:?}, err_ris: {=bool:?}, vsync_ris: {=bool:?}, line_ris: {=bool:?} }}",
+                self.frame_ris(),
+                self.ovr_ris(),
+                self.err_ris(),
+                self.vsync_ris(),
+                self.line_ris()
+            )
         }
     }
     #[doc = "status register"]

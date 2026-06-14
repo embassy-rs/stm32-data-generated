@@ -1275,7 +1275,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccAhb2rstclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccAhb2rstclrr {{ dma1rst: {=bool:?}, dma2rst: {=bool:?}, dmamuxrst: {=bool:?}, adc12rst: {=bool:?}, usborst: {=bool:?}, sdmmc3rst: {=bool:?} }}" , self . dma1rst () , self . dma2rst () , self . dmamuxrst () , self . adc12rst () , self . usborst () , self . sdmmc3rst ())
+            defmt::write!(
+                f,
+                "RccAhb2rstclrr {{ dma1rst: {=bool:?}, dma2rst: {=bool:?}, dmamuxrst: {=bool:?}, adc12rst: {=bool:?}, usborst: {=bool:?}, sdmmc3rst: {=bool:?} }}",
+                self.dma1rst(),
+                self.dma2rst(),
+                self.dmamuxrst(),
+                self.adc12rst(),
+                self.usborst(),
+                self.sdmmc3rst()
+            )
         }
     }
     #[doc = "This register is used to activate the reset of the corresponding peripheral."]
@@ -1377,7 +1386,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccAhb2rstsetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccAhb2rstsetr {{ dma1rst: {=bool:?}, dma2rst: {=bool:?}, dmamuxrst: {=bool:?}, adc12rst: {=bool:?}, usborst: {=bool:?}, sdmmc3rst: {=bool:?} }}" , self . dma1rst () , self . dma2rst () , self . dmamuxrst () , self . adc12rst () , self . usborst () , self . sdmmc3rst ())
+            defmt::write!(
+                f,
+                "RccAhb2rstsetr {{ dma1rst: {=bool:?}, dma2rst: {=bool:?}, dmamuxrst: {=bool:?}, adc12rst: {=bool:?}, usborst: {=bool:?}, sdmmc3rst: {=bool:?} }}",
+                self.dma1rst(),
+                self.dma2rst(),
+                self.dmamuxrst(),
+                self.adc12rst(),
+                self.usborst(),
+                self.sdmmc3rst()
+            )
         }
     }
     #[doc = "This register is used to release the reset of the corresponding peripheral."]
@@ -1492,7 +1510,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccAhb3rstclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccAhb3rstclrr {{ dcmirst: {=bool:?}, cryp2rst: {=bool:?}, hash2rst: {=bool:?}, rng2rst: {=bool:?}, crc2rst: {=bool:?}, hsemrst: {=bool:?}, ipccrst: {=bool:?} }}" , self . dcmirst () , self . cryp2rst () , self . hash2rst () , self . rng2rst () , self . crc2rst () , self . hsemrst () , self . ipccrst ())
+            defmt::write!(
+                f,
+                "RccAhb3rstclrr {{ dcmirst: {=bool:?}, cryp2rst: {=bool:?}, hash2rst: {=bool:?}, rng2rst: {=bool:?}, crc2rst: {=bool:?}, hsemrst: {=bool:?}, ipccrst: {=bool:?} }}",
+                self.dcmirst(),
+                self.cryp2rst(),
+                self.hash2rst(),
+                self.rng2rst(),
+                self.crc2rst(),
+                self.hsemrst(),
+                self.ipccrst()
+            )
         }
     }
     #[doc = "This register is used to activate the reset of the corresponding peripheral."]
@@ -1607,7 +1635,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccAhb3rstsetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccAhb3rstsetr {{ dcmirst: {=bool:?}, cryp2rst: {=bool:?}, hash2rst: {=bool:?}, rng2rst: {=bool:?}, crc2rst: {=bool:?}, hsemrst: {=bool:?}, ipccrst: {=bool:?} }}" , self . dcmirst () , self . cryp2rst () , self . hash2rst () , self . rng2rst () , self . crc2rst () , self . hsemrst () , self . ipccrst ())
+            defmt::write!(
+                f,
+                "RccAhb3rstsetr {{ dcmirst: {=bool:?}, cryp2rst: {=bool:?}, hash2rst: {=bool:?}, rng2rst: {=bool:?}, crc2rst: {=bool:?}, hsemrst: {=bool:?}, ipccrst: {=bool:?} }}",
+                self.dcmirst(),
+                self.cryp2rst(),
+                self.hash2rst(),
+                self.rng2rst(),
+                self.crc2rst(),
+                self.hsemrst(),
+                self.ipccrst()
+            )
         }
     }
     #[doc = "This register is used to release the reset of the corresponding peripheral."]
@@ -1774,7 +1812,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccAhb4rstclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccAhb4rstclrr {{ gpioarst: {=bool:?}, gpiobrst: {=bool:?}, gpiocrst: {=bool:?}, gpiodrst: {=bool:?}, gpioerst: {=bool:?}, gpiofrst: {=bool:?}, gpiogrst: {=bool:?}, gpiohrst: {=bool:?}, gpioirst: {=bool:?}, gpiojrst: {=bool:?}, gpiokrst: {=bool:?} }}" , self . gpioarst () , self . gpiobrst () , self . gpiocrst () , self . gpiodrst () , self . gpioerst () , self . gpiofrst () , self . gpiogrst () , self . gpiohrst () , self . gpioirst () , self . gpiojrst () , self . gpiokrst ())
+            defmt::write!(
+                f,
+                "RccAhb4rstclrr {{ gpioarst: {=bool:?}, gpiobrst: {=bool:?}, gpiocrst: {=bool:?}, gpiodrst: {=bool:?}, gpioerst: {=bool:?}, gpiofrst: {=bool:?}, gpiogrst: {=bool:?}, gpiohrst: {=bool:?}, gpioirst: {=bool:?}, gpiojrst: {=bool:?}, gpiokrst: {=bool:?} }}",
+                self.gpioarst(),
+                self.gpiobrst(),
+                self.gpiocrst(),
+                self.gpiodrst(),
+                self.gpioerst(),
+                self.gpiofrst(),
+                self.gpiogrst(),
+                self.gpiohrst(),
+                self.gpioirst(),
+                self.gpiojrst(),
+                self.gpiokrst()
+            )
         }
     }
     #[doc = "This register is used to activate the reset of the corresponding peripheral."]
@@ -1941,7 +1993,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccAhb4rstsetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccAhb4rstsetr {{ gpioarst: {=bool:?}, gpiobrst: {=bool:?}, gpiocrst: {=bool:?}, gpiodrst: {=bool:?}, gpioerst: {=bool:?}, gpiofrst: {=bool:?}, gpiogrst: {=bool:?}, gpiohrst: {=bool:?}, gpioirst: {=bool:?}, gpiojrst: {=bool:?}, gpiokrst: {=bool:?} }}" , self . gpioarst () , self . gpiobrst () , self . gpiocrst () , self . gpiodrst () , self . gpioerst () , self . gpiofrst () , self . gpiogrst () , self . gpiohrst () , self . gpioirst () , self . gpiojrst () , self . gpiokrst ())
+            defmt::write!(
+                f,
+                "RccAhb4rstsetr {{ gpioarst: {=bool:?}, gpiobrst: {=bool:?}, gpiocrst: {=bool:?}, gpiodrst: {=bool:?}, gpioerst: {=bool:?}, gpiofrst: {=bool:?}, gpiogrst: {=bool:?}, gpiohrst: {=bool:?}, gpioirst: {=bool:?}, gpiojrst: {=bool:?}, gpiokrst: {=bool:?} }}",
+                self.gpioarst(),
+                self.gpiobrst(),
+                self.gpiocrst(),
+                self.gpiodrst(),
+                self.gpioerst(),
+                self.gpiofrst(),
+                self.gpiogrst(),
+                self.gpiohrst(),
+                self.gpioirst(),
+                self.gpiojrst(),
+                self.gpiokrst()
+            )
         }
     }
     #[doc = "This register is used to release the reset of the corresponding peripheral. Writing has no effect, reading will return the effective values of the corresponding bits. Writing a releases the reset of the corresponding peripheral. If TZEN = , this register can only be modified in secure mode."]
@@ -2030,7 +2096,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccAhb5rstclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccAhb5rstclrr {{ gpiozrst: {=bool:?}, cryp1rst: {=bool:?}, hash1rst: {=bool:?}, rng1rst: {=bool:?}, aximcrst: {=bool:?} }}" , self . gpiozrst () , self . cryp1rst () , self . hash1rst () , self . rng1rst () , self . aximcrst ())
+            defmt::write!(
+                f,
+                "RccAhb5rstclrr {{ gpiozrst: {=bool:?}, cryp1rst: {=bool:?}, hash1rst: {=bool:?}, rng1rst: {=bool:?}, aximcrst: {=bool:?} }}",
+                self.gpiozrst(),
+                self.cryp1rst(),
+                self.hash1rst(),
+                self.rng1rst(),
+                self.aximcrst()
+            )
         }
     }
     #[doc = "This register is used to activate the reset of the corresponding peripheral. Writing has no effect, reading will return the effective values of the corresponding bits. Writing a activates the reset of the corresponding peripheral. If TZEN = , this register can only be modified in secure mode."]
@@ -2119,7 +2193,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccAhb5rstsetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccAhb5rstsetr {{ gpiozrst: {=bool:?}, cryp1rst: {=bool:?}, hash1rst: {=bool:?}, rng1rst: {=bool:?}, aximcrst: {=bool:?} }}" , self . gpiozrst () , self . cryp1rst () , self . hash1rst () , self . rng1rst () , self . aximcrst ())
+            defmt::write!(
+                f,
+                "RccAhb5rstsetr {{ gpiozrst: {=bool:?}, cryp1rst: {=bool:?}, hash1rst: {=bool:?}, rng1rst: {=bool:?}, aximcrst: {=bool:?} }}",
+                self.gpiozrst(),
+                self.cryp1rst(),
+                self.hash1rst(),
+                self.rng1rst(),
+                self.aximcrst()
+            )
         }
     }
     #[doc = "This register is used to release the reset of the corresponding peripheral. Writing has no effect, reading will return the effective values of the corresponding bits. Writing a releases the reset of the corresponding peripheral."]
@@ -2234,7 +2316,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccAhb6rstclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccAhb6rstclrr {{ ethmacrst: {=bool:?}, fmcrst: {=bool:?}, qspirst: {=bool:?}, sdmmc1rst: {=bool:?}, sdmmc2rst: {=bool:?}, crc1rst: {=bool:?}, usbhrst: {=bool:?} }}" , self . ethmacrst () , self . fmcrst () , self . qspirst () , self . sdmmc1rst () , self . sdmmc2rst () , self . crc1rst () , self . usbhrst ())
+            defmt::write!(
+                f,
+                "RccAhb6rstclrr {{ ethmacrst: {=bool:?}, fmcrst: {=bool:?}, qspirst: {=bool:?}, sdmmc1rst: {=bool:?}, sdmmc2rst: {=bool:?}, crc1rst: {=bool:?}, usbhrst: {=bool:?} }}",
+                self.ethmacrst(),
+                self.fmcrst(),
+                self.qspirst(),
+                self.sdmmc1rst(),
+                self.sdmmc2rst(),
+                self.crc1rst(),
+                self.usbhrst()
+            )
         }
     }
     #[doc = "This register is used to activate the reset of the corresponding peripheral. Writing has no effect, reading will return the effective values of the corresponding bits. Writing a activates the reset of the corresponding peripheral."]
@@ -2362,7 +2454,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccAhb6rstsetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccAhb6rstsetr {{ gpurst: {=bool:?}, ethmacrst: {=bool:?}, fmcrst: {=bool:?}, qspirst: {=bool:?}, sdmmc1rst: {=bool:?}, sdmmc2rst: {=bool:?}, crc1rst: {=bool:?}, usbhrst: {=bool:?} }}" , self . gpurst () , self . ethmacrst () , self . fmcrst () , self . qspirst () , self . sdmmc1rst () , self . sdmmc2rst () , self . crc1rst () , self . usbhrst ())
+            defmt::write!(
+                f,
+                "RccAhb6rstsetr {{ gpurst: {=bool:?}, ethmacrst: {=bool:?}, fmcrst: {=bool:?}, qspirst: {=bool:?}, sdmmc1rst: {=bool:?}, sdmmc2rst: {=bool:?}, crc1rst: {=bool:?}, usbhrst: {=bool:?} }}",
+                self.gpurst(),
+                self.ethmacrst(),
+                self.fmcrst(),
+                self.qspirst(),
+                self.sdmmc1rst(),
+                self.sdmmc2rst(),
+                self.crc1rst(),
+                self.usbhrst()
+            )
         }
     }
     #[doc = "This register is used to control the APB1 clock prescaler. Refer to section Section1.4.6.3: Sub-System Clock Generation for additional information."]
@@ -2779,7 +2882,36 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccApb1rstclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccApb1rstclrr {{ tim2rst: {=bool:?}, tim3rst: {=bool:?}, tim4rst: {=bool:?}, tim5rst: {=bool:?}, tim6rst: {=bool:?}, tim7rst: {=bool:?}, tim12rst: {=bool:?}, tim13rst: {=bool:?}, tim14rst: {=bool:?}, lptim1rst: {=bool:?}, spi2rst: {=bool:?}, spi3rst: {=bool:?}, usart2rst: {=bool:?}, usart3rst: {=bool:?}, uart4rst: {=bool:?}, uart5rst: {=bool:?}, uart7rst: {=bool:?}, uart8rst: {=bool:?}, i2c1rst: {=bool:?}, i2c2rst: {=bool:?}, i2c3rst: {=bool:?}, i2c5rst: {=bool:?}, spdifrst: {=bool:?}, cecrst: {=bool:?}, dac12rst: {=bool:?}, mdiosrst: {=bool:?} }}" , self . tim2rst () , self . tim3rst () , self . tim4rst () , self . tim5rst () , self . tim6rst () , self . tim7rst () , self . tim12rst () , self . tim13rst () , self . tim14rst () , self . lptim1rst () , self . spi2rst () , self . spi3rst () , self . usart2rst () , self . usart3rst () , self . uart4rst () , self . uart5rst () , self . uart7rst () , self . uart8rst () , self . i2c1rst () , self . i2c2rst () , self . i2c3rst () , self . i2c5rst () , self . spdifrst () , self . cecrst () , self . dac12rst () , self . mdiosrst ())
+            defmt::write!(
+                f,
+                "RccApb1rstclrr {{ tim2rst: {=bool:?}, tim3rst: {=bool:?}, tim4rst: {=bool:?}, tim5rst: {=bool:?}, tim6rst: {=bool:?}, tim7rst: {=bool:?}, tim12rst: {=bool:?}, tim13rst: {=bool:?}, tim14rst: {=bool:?}, lptim1rst: {=bool:?}, spi2rst: {=bool:?}, spi3rst: {=bool:?}, usart2rst: {=bool:?}, usart3rst: {=bool:?}, uart4rst: {=bool:?}, uart5rst: {=bool:?}, uart7rst: {=bool:?}, uart8rst: {=bool:?}, i2c1rst: {=bool:?}, i2c2rst: {=bool:?}, i2c3rst: {=bool:?}, i2c5rst: {=bool:?}, spdifrst: {=bool:?}, cecrst: {=bool:?}, dac12rst: {=bool:?}, mdiosrst: {=bool:?} }}",
+                self.tim2rst(),
+                self.tim3rst(),
+                self.tim4rst(),
+                self.tim5rst(),
+                self.tim6rst(),
+                self.tim7rst(),
+                self.tim12rst(),
+                self.tim13rst(),
+                self.tim14rst(),
+                self.lptim1rst(),
+                self.spi2rst(),
+                self.spi3rst(),
+                self.usart2rst(),
+                self.usart3rst(),
+                self.uart4rst(),
+                self.uart5rst(),
+                self.uart7rst(),
+                self.uart8rst(),
+                self.i2c1rst(),
+                self.i2c2rst(),
+                self.i2c3rst(),
+                self.i2c5rst(),
+                self.spdifrst(),
+                self.cecrst(),
+                self.dac12rst(),
+                self.mdiosrst()
+            )
         }
     }
     #[doc = "This register is used to activate the reset of the corresponding peripheral."]
@@ -3141,7 +3273,36 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccApb1rstsetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccApb1rstsetr {{ tim2rst: {=bool:?}, tim3rst: {=bool:?}, tim4rst: {=bool:?}, tim5rst: {=bool:?}, tim6rst: {=bool:?}, tim7rst: {=bool:?}, tim12rst: {=bool:?}, tim13rst: {=bool:?}, tim14rst: {=bool:?}, lptim1rst: {=bool:?}, spi2rst: {=bool:?}, spi3rst: {=bool:?}, usart2rst: {=bool:?}, usart3rst: {=bool:?}, uart4rst: {=bool:?}, uart5rst: {=bool:?}, uart7rst: {=bool:?}, uart8rst: {=bool:?}, i2c1rst: {=bool:?}, i2c2rst: {=bool:?}, i2c3rst: {=bool:?}, i2c5rst: {=bool:?}, spdifrst: {=bool:?}, cecrst: {=bool:?}, dac12rst: {=bool:?}, mdiosrst: {=bool:?} }}" , self . tim2rst () , self . tim3rst () , self . tim4rst () , self . tim5rst () , self . tim6rst () , self . tim7rst () , self . tim12rst () , self . tim13rst () , self . tim14rst () , self . lptim1rst () , self . spi2rst () , self . spi3rst () , self . usart2rst () , self . usart3rst () , self . uart4rst () , self . uart5rst () , self . uart7rst () , self . uart8rst () , self . i2c1rst () , self . i2c2rst () , self . i2c3rst () , self . i2c5rst () , self . spdifrst () , self . cecrst () , self . dac12rst () , self . mdiosrst ())
+            defmt::write!(
+                f,
+                "RccApb1rstsetr {{ tim2rst: {=bool:?}, tim3rst: {=bool:?}, tim4rst: {=bool:?}, tim5rst: {=bool:?}, tim6rst: {=bool:?}, tim7rst: {=bool:?}, tim12rst: {=bool:?}, tim13rst: {=bool:?}, tim14rst: {=bool:?}, lptim1rst: {=bool:?}, spi2rst: {=bool:?}, spi3rst: {=bool:?}, usart2rst: {=bool:?}, usart3rst: {=bool:?}, uart4rst: {=bool:?}, uart5rst: {=bool:?}, uart7rst: {=bool:?}, uart8rst: {=bool:?}, i2c1rst: {=bool:?}, i2c2rst: {=bool:?}, i2c3rst: {=bool:?}, i2c5rst: {=bool:?}, spdifrst: {=bool:?}, cecrst: {=bool:?}, dac12rst: {=bool:?}, mdiosrst: {=bool:?} }}",
+                self.tim2rst(),
+                self.tim3rst(),
+                self.tim4rst(),
+                self.tim5rst(),
+                self.tim6rst(),
+                self.tim7rst(),
+                self.tim12rst(),
+                self.tim13rst(),
+                self.tim14rst(),
+                self.lptim1rst(),
+                self.spi2rst(),
+                self.spi3rst(),
+                self.usart2rst(),
+                self.usart3rst(),
+                self.uart4rst(),
+                self.uart5rst(),
+                self.uart7rst(),
+                self.uart8rst(),
+                self.i2c1rst(),
+                self.i2c2rst(),
+                self.i2c3rst(),
+                self.i2c5rst(),
+                self.spdifrst(),
+                self.cecrst(),
+                self.dac12rst(),
+                self.mdiosrst()
+            )
         }
     }
     #[doc = "This register is used to control the APB2 clock prescaler. Refer to Section: Sub-system clock generation for additional information."]
@@ -3402,7 +3563,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccApb2rstclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccApb2rstclrr {{ tim1rst: {=bool:?}, tim8rst: {=bool:?}, tim15rst: {=bool:?}, tim16rst: {=bool:?}, tim17rst: {=bool:?}, spi1rst: {=bool:?}, spi4rst: {=bool:?}, spi5rst: {=bool:?}, usart6rst: {=bool:?}, sai1rst: {=bool:?}, sai2rst: {=bool:?}, sai3rst: {=bool:?}, dfsdmrst: {=bool:?}, fdcanrst: {=bool:?} }}" , self . tim1rst () , self . tim8rst () , self . tim15rst () , self . tim16rst () , self . tim17rst () , self . spi1rst () , self . spi4rst () , self . spi5rst () , self . usart6rst () , self . sai1rst () , self . sai2rst () , self . sai3rst () , self . dfsdmrst () , self . fdcanrst ())
+            defmt::write!(
+                f,
+                "RccApb2rstclrr {{ tim1rst: {=bool:?}, tim8rst: {=bool:?}, tim15rst: {=bool:?}, tim16rst: {=bool:?}, tim17rst: {=bool:?}, spi1rst: {=bool:?}, spi4rst: {=bool:?}, spi5rst: {=bool:?}, usart6rst: {=bool:?}, sai1rst: {=bool:?}, sai2rst: {=bool:?}, sai3rst: {=bool:?}, dfsdmrst: {=bool:?}, fdcanrst: {=bool:?} }}",
+                self.tim1rst(),
+                self.tim8rst(),
+                self.tim15rst(),
+                self.tim16rst(),
+                self.tim17rst(),
+                self.spi1rst(),
+                self.spi4rst(),
+                self.spi5rst(),
+                self.usart6rst(),
+                self.sai1rst(),
+                self.sai2rst(),
+                self.sai3rst(),
+                self.dfsdmrst(),
+                self.fdcanrst()
+            )
         }
     }
     #[doc = "This register is used to activate the reset of the corresponding peripheral."]
@@ -3608,7 +3786,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccApb2rstsetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccApb2rstsetr {{ tim1rst: {=bool:?}, tim8rst: {=bool:?}, tim15rst: {=bool:?}, tim16rst: {=bool:?}, tim17rst: {=bool:?}, spi1rst: {=bool:?}, spi4rst: {=bool:?}, spi5rst: {=bool:?}, usart6rst: {=bool:?}, sai1rst: {=bool:?}, sai2rst: {=bool:?}, sai3rst: {=bool:?}, dfsdmrst: {=bool:?}, fdcanrst: {=bool:?} }}" , self . tim1rst () , self . tim8rst () , self . tim15rst () , self . tim16rst () , self . tim17rst () , self . spi1rst () , self . spi4rst () , self . spi5rst () , self . usart6rst () , self . sai1rst () , self . sai2rst () , self . sai3rst () , self . dfsdmrst () , self . fdcanrst ())
+            defmt::write!(
+                f,
+                "RccApb2rstsetr {{ tim1rst: {=bool:?}, tim8rst: {=bool:?}, tim15rst: {=bool:?}, tim16rst: {=bool:?}, tim17rst: {=bool:?}, spi1rst: {=bool:?}, spi4rst: {=bool:?}, spi5rst: {=bool:?}, usart6rst: {=bool:?}, sai1rst: {=bool:?}, sai2rst: {=bool:?}, sai3rst: {=bool:?}, dfsdmrst: {=bool:?}, fdcanrst: {=bool:?} }}",
+                self.tim1rst(),
+                self.tim8rst(),
+                self.tim15rst(),
+                self.tim16rst(),
+                self.tim17rst(),
+                self.spi1rst(),
+                self.spi4rst(),
+                self.spi5rst(),
+                self.usart6rst(),
+                self.sai1rst(),
+                self.sai2rst(),
+                self.sai3rst(),
+                self.dfsdmrst(),
+                self.fdcanrst()
+            )
         }
     }
     #[doc = "This register is used to control the APB3 clock prescaler. Refer to Section: Sub-system clock generation for additional information."]
@@ -3791,7 +3986,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccApb3rstclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccApb3rstclrr {{ lptim2rst: {=bool:?}, lptim3rst: {=bool:?}, lptim4rst: {=bool:?}, lptim5rst: {=bool:?}, sai4rst: {=bool:?}, syscfgrst: {=bool:?}, vrefrst: {=bool:?}, dtsrst: {=bool:?} }}" , self . lptim2rst () , self . lptim3rst () , self . lptim4rst () , self . lptim5rst () , self . sai4rst () , self . syscfgrst () , self . vrefrst () , self . dtsrst ())
+            defmt::write!(
+                f,
+                "RccApb3rstclrr {{ lptim2rst: {=bool:?}, lptim3rst: {=bool:?}, lptim4rst: {=bool:?}, lptim5rst: {=bool:?}, sai4rst: {=bool:?}, syscfgrst: {=bool:?}, vrefrst: {=bool:?}, dtsrst: {=bool:?} }}",
+                self.lptim2rst(),
+                self.lptim3rst(),
+                self.lptim4rst(),
+                self.lptim5rst(),
+                self.sai4rst(),
+                self.syscfgrst(),
+                self.vrefrst(),
+                self.dtsrst()
+            )
         }
     }
     #[doc = "This register is used to activate the reset of the corresponding peripheral."]
@@ -3919,7 +4125,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccApb3rstsetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccApb3rstsetr {{ lptim2rst: {=bool:?}, lptim3rst: {=bool:?}, lptim4rst: {=bool:?}, lptim5rst: {=bool:?}, sai4rst: {=bool:?}, syscfgrst: {=bool:?}, vrefrst: {=bool:?}, dtsrst: {=bool:?} }}" , self . lptim2rst () , self . lptim3rst () , self . lptim4rst () , self . lptim5rst () , self . sai4rst () , self . syscfgrst () , self . vrefrst () , self . dtsrst ())
+            defmt::write!(
+                f,
+                "RccApb3rstsetr {{ lptim2rst: {=bool:?}, lptim3rst: {=bool:?}, lptim4rst: {=bool:?}, lptim5rst: {=bool:?}, sai4rst: {=bool:?}, syscfgrst: {=bool:?}, vrefrst: {=bool:?}, dtsrst: {=bool:?} }}",
+                self.lptim2rst(),
+                self.lptim3rst(),
+                self.lptim4rst(),
+                self.lptim5rst(),
+                self.sai4rst(),
+                self.syscfgrst(),
+                self.vrefrst(),
+                self.dtsrst()
+            )
         }
     }
     #[doc = "This register is used to control the APB4 clock divider. Refer to Section: Sub-system clock generation for additional information. If TZEN = , this register can only be modified in secure mode."]
@@ -4050,7 +4267,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccApb4rstclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccApb4rstclrr {{ ltdcrst: {=bool:?}, dsirst: {=bool:?}, ddrperfmrst: {=bool:?}, usbphyrst: {=bool:?} }}" , self . ltdcrst () , self . dsirst () , self . ddrperfmrst () , self . usbphyrst ())
+            defmt::write!(
+                f,
+                "RccApb4rstclrr {{ ltdcrst: {=bool:?}, dsirst: {=bool:?}, ddrperfmrst: {=bool:?}, usbphyrst: {=bool:?} }}",
+                self.ltdcrst(),
+                self.dsirst(),
+                self.ddrperfmrst(),
+                self.usbphyrst()
+            )
         }
     }
     #[doc = "This register is used to activate the reset of the corresponding peripheral. Writing has no effect, reading will return the effective values of the corresponding bits. Writing a activates the reset of the corresponding peripheral."]
@@ -4126,7 +4350,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccApb4rstsetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccApb4rstsetr {{ ltdcrst: {=bool:?}, dsirst: {=bool:?}, ddrperfmrst: {=bool:?}, usbphyrst: {=bool:?} }}" , self . ltdcrst () , self . dsirst () , self . ddrperfmrst () , self . usbphyrst ())
+            defmt::write!(
+                f,
+                "RccApb4rstsetr {{ ltdcrst: {=bool:?}, dsirst: {=bool:?}, ddrperfmrst: {=bool:?}, usbphyrst: {=bool:?} }}",
+                self.ltdcrst(),
+                self.dsirst(),
+                self.ddrperfmrst(),
+                self.usbphyrst()
+            )
         }
     }
     #[doc = "This register is used to control the APB5 clock divider. Refer to Section: Sub-system clock generation for additional information. If TZEN = , this register can only be modified in secure mode."]
@@ -4270,7 +4501,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccApb5rstclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccApb5rstclrr {{ spi6rst: {=bool:?}, i2c4rst: {=bool:?}, i2c6rst: {=bool:?}, usart1rst: {=bool:?}, stgenrst: {=bool:?} }}" , self . spi6rst () , self . i2c4rst () , self . i2c6rst () , self . usart1rst () , self . stgenrst ())
+            defmt::write!(
+                f,
+                "RccApb5rstclrr {{ spi6rst: {=bool:?}, i2c4rst: {=bool:?}, i2c6rst: {=bool:?}, usart1rst: {=bool:?}, stgenrst: {=bool:?} }}",
+                self.spi6rst(),
+                self.i2c4rst(),
+                self.i2c6rst(),
+                self.usart1rst(),
+                self.stgenrst()
+            )
         }
     }
     #[doc = "This register is used to activate the reset of the corresponding peripheral. Writing has no effect, reading will return the effective values of the corresponding bits. Writing a activates the reset of the corresponding peripheral. If TZEN = , this register can only be modified in secure mode."]
@@ -4359,7 +4598,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccApb5rstsetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccApb5rstsetr {{ spi6rst: {=bool:?}, i2c4rst: {=bool:?}, i2c6rst: {=bool:?}, usart1rst: {=bool:?}, stgenrst: {=bool:?} }}" , self . spi6rst () , self . i2c4rst () , self . i2c6rst () , self . usart1rst () , self . stgenrst ())
+            defmt::write!(
+                f,
+                "RccApb5rstsetr {{ spi6rst: {=bool:?}, i2c4rst: {=bool:?}, i2c6rst: {=bool:?}, usart1rst: {=bool:?}, stgenrst: {=bool:?} }}",
+                self.spi6rst(),
+                self.i2c4rst(),
+                self.i2c6rst(),
+                self.usart1rst(),
+                self.stgenrst()
+            )
         }
     }
     #[doc = "This register is used to select the clock source for the AXI sub-system. If TZEN = , this register can only be modified in secure mode. Write access to this register is not allowed during the clock restore sequence. See Section: The clock restore sequence description for details."]
@@ -4623,7 +4870,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccBdcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccBdcr {{ lseon: {=bool:?}, lsebyp: {=bool:?}, lserdy: {=bool:?}, digbyp: {=bool:?}, lsedrv: {=u8:?}, lsecsson: {=bool:?}, lsecssd: {=bool:?}, rtcsrc: {=u8:?}, rtccken: {=bool:?}, vswrst: {=bool:?} }}" , self . lseon () , self . lsebyp () , self . lserdy () , self . digbyp () , self . lsedrv () , self . lsecsson () , self . lsecssd () , self . rtcsrc () , self . rtccken () , self . vswrst ())
+            defmt::write!(
+                f,
+                "RccBdcr {{ lseon: {=bool:?}, lsebyp: {=bool:?}, lserdy: {=bool:?}, digbyp: {=bool:?}, lsedrv: {=u8:?}, lsecsson: {=bool:?}, lsecssd: {=bool:?}, rtcsrc: {=u8:?}, rtccken: {=bool:?}, vswrst: {=bool:?} }}",
+                self.lseon(),
+                self.lsebyp(),
+                self.lserdy(),
+                self.digbyp(),
+                self.lsedrv(),
+                self.lsecsson(),
+                self.lsecssd(),
+                self.rtcsrc(),
+                self.rtccken(),
+                self.vswrst()
+            )
         }
     }
     #[doc = "This register is used by the BOOTROM to check the reset source. Writing has no effect, reading will return the effective values of the corresponding bits. Writing a clears the corresponding bit to . In order to identify the reset source, the MPU application must use RCC MPU Reset Status Clear Register (RCC_MP_RSTSCLRR), and the MCU application must use the RCC MCU Reset Status Clear Register (RCC_MC_RSTSCLRR). Refer to Section10.3.13: Reset source identification for details.This register except MPUP\\[1:0\\]RSTF flags is located into VDD domain, and is reset by por_rst reset. The MPUP\\[1:0\\]RSTF flags are located into VDDCORE and are reset by nreset. If TZEN = , this register can only be modified in secure mode."]
@@ -4790,7 +5050,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccBrRstsclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccBrRstsclrr {{ porrstf: {=bool:?}, borrstf: {=bool:?}, padrstf: {=bool:?}, hcssrstf: {=bool:?}, vcorerstf: {=bool:?}, mpsysrstf: {=bool:?}, mcsysrstf: {=bool:?}, iwdg1rstf: {=bool:?}, iwdg2rstf: {=bool:?}, mpup0rstf: {=bool:?}, mpup1rstf: {=bool:?} }}" , self . porrstf () , self . borrstf () , self . padrstf () , self . hcssrstf () , self . vcorerstf () , self . mpsysrstf () , self . mcsysrstf () , self . iwdg1rstf () , self . iwdg2rstf () , self . mpup0rstf () , self . mpup1rstf ())
+            defmt::write!(
+                f,
+                "RccBrRstsclrr {{ porrstf: {=bool:?}, borrstf: {=bool:?}, padrstf: {=bool:?}, hcssrstf: {=bool:?}, vcorerstf: {=bool:?}, mpsysrstf: {=bool:?}, mcsysrstf: {=bool:?}, iwdg1rstf: {=bool:?}, iwdg2rstf: {=bool:?}, mpup0rstf: {=bool:?}, mpup1rstf: {=bool:?} }}",
+                self.porrstf(),
+                self.borrstf(),
+                self.padrstf(),
+                self.hcssrstf(),
+                self.vcorerstf(),
+                self.mpsysrstf(),
+                self.mcsysrstf(),
+                self.iwdg1rstf(),
+                self.iwdg2rstf(),
+                self.mpup0rstf(),
+                self.mpup1rstf()
+            )
         }
     }
     #[doc = "This register is used to control the selection of the kernel clock for the CEC-HDMI."]
@@ -5323,7 +5597,33 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccDdritfcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccDdritfcr {{ ddrc1en: {=bool:?}, ddrc1lpen: {=bool:?}, ddrc2en: {=bool:?}, ddrc2lpen: {=bool:?}, ddrphycen: {=bool:?}, ddrphyclpen: {=bool:?}, ddrcapben: {=bool:?}, ddrcapblpen: {=bool:?}, axidcgen: {=bool:?}, ddrphycapben: {=bool:?}, ddrphycapblpen: {=bool:?}, kerdcg_dly: {=u8:?}, ddrcapbrst: {=bool:?}, ddrcaxirst: {=bool:?}, ddrcorerst: {=bool:?}, dphyapbrst: {=bool:?}, dphyrst: {=bool:?}, dphyctlrst: {=bool:?}, ddrckmod: {=u8:?}, gskpmod: {=bool:?}, gskpctrl: {=bool:?}, dfilp_width: {=u8:?}, gskp_dur: {=u8:?} }}" , self . ddrc1en () , self . ddrc1lpen () , self . ddrc2en () , self . ddrc2lpen () , self . ddrphycen () , self . ddrphyclpen () , self . ddrcapben () , self . ddrcapblpen () , self . axidcgen () , self . ddrphycapben () , self . ddrphycapblpen () , self . kerdcg_dly () , self . ddrcapbrst () , self . ddrcaxirst () , self . ddrcorerst () , self . dphyapbrst () , self . dphyrst () , self . dphyctlrst () , self . ddrckmod () , self . gskpmod () , self . gskpctrl () , self . dfilp_width () , self . gskp_dur ())
+            defmt::write!(
+                f,
+                "RccDdritfcr {{ ddrc1en: {=bool:?}, ddrc1lpen: {=bool:?}, ddrc2en: {=bool:?}, ddrc2lpen: {=bool:?}, ddrphycen: {=bool:?}, ddrphyclpen: {=bool:?}, ddrcapben: {=bool:?}, ddrcapblpen: {=bool:?}, axidcgen: {=bool:?}, ddrphycapben: {=bool:?}, ddrphycapblpen: {=bool:?}, kerdcg_dly: {=u8:?}, ddrcapbrst: {=bool:?}, ddrcaxirst: {=bool:?}, ddrcorerst: {=bool:?}, dphyapbrst: {=bool:?}, dphyrst: {=bool:?}, dphyctlrst: {=bool:?}, ddrckmod: {=u8:?}, gskpmod: {=bool:?}, gskpctrl: {=bool:?}, dfilp_width: {=u8:?}, gskp_dur: {=u8:?} }}",
+                self.ddrc1en(),
+                self.ddrc1lpen(),
+                self.ddrc2en(),
+                self.ddrc2lpen(),
+                self.ddrphycen(),
+                self.ddrphyclpen(),
+                self.ddrcapben(),
+                self.ddrcapblpen(),
+                self.axidcgen(),
+                self.ddrphycapben(),
+                self.ddrphycapblpen(),
+                self.kerdcg_dly(),
+                self.ddrcapbrst(),
+                self.ddrcaxirst(),
+                self.ddrcorerst(),
+                self.dphyapbrst(),
+                self.dphyrst(),
+                self.dphyctlrst(),
+                self.ddrckmod(),
+                self.gskpmod(),
+                self.gskpctrl(),
+                self.dfilp_width(),
+                self.gskp_dur()
+            )
         }
     }
     #[doc = "This register is used to control the selection of the kernel clock for the DSI block."]
@@ -5913,7 +6213,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb2enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb2enclrr {{ dma1en: {=bool:?}, dma2en: {=bool:?}, dmamuxen: {=bool:?}, adc12en: {=bool:?}, usboen: {=bool:?}, sdmmc3en: {=bool:?} }}" , self . dma1en () , self . dma2en () , self . dmamuxen () , self . adc12en () , self . usboen () , self . sdmmc3en ())
+            defmt::write!(
+                f,
+                "RccMcAhb2enclrr {{ dma1en: {=bool:?}, dma2en: {=bool:?}, dmamuxen: {=bool:?}, adc12en: {=bool:?}, usboen: {=bool:?}, sdmmc3en: {=bool:?} }}",
+                self.dma1en(),
+                self.dma2en(),
+                self.dmamuxen(),
+                self.adc12en(),
+                self.usboen(),
+                self.sdmmc3en()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit."]
@@ -6015,7 +6324,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb2ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb2ensetr {{ dma1en: {=bool:?}, dma2en: {=bool:?}, dmamuxen: {=bool:?}, adc12en: {=bool:?}, usboen: {=bool:?}, sdmmc3en: {=bool:?} }}" , self . dma1en () , self . dma2en () , self . dmamuxen () , self . adc12en () , self . usboen () , self . sdmmc3en ())
+            defmt::write!(
+                f,
+                "RccMcAhb2ensetr {{ dma1en: {=bool:?}, dma2en: {=bool:?}, dmamuxen: {=bool:?}, adc12en: {=bool:?}, usboen: {=bool:?}, sdmmc3en: {=bool:?} }}",
+                self.dma1en(),
+                self.dma2en(),
+                self.dmamuxen(),
+                self.adc12en(),
+                self.usboen(),
+                self.sdmmc3en()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bit."]
@@ -6117,7 +6435,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb2lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb2lpenclrr {{ dma1lpen: {=bool:?}, dma2lpen: {=bool:?}, dmamuxlpen: {=bool:?}, adc12lpen: {=bool:?}, usbolpen: {=bool:?}, sdmmc3lpen: {=bool:?} }}" , self . dma1lpen () , self . dma2lpen () , self . dmamuxlpen () , self . adc12lpen () , self . usbolpen () , self . sdmmc3lpen ())
+            defmt::write!(
+                f,
+                "RccMcAhb2lpenclrr {{ dma1lpen: {=bool:?}, dma2lpen: {=bool:?}, dmamuxlpen: {=bool:?}, adc12lpen: {=bool:?}, usbolpen: {=bool:?}, sdmmc3lpen: {=bool:?} }}",
+                self.dma1lpen(),
+                self.dma2lpen(),
+                self.dmamuxlpen(),
+                self.adc12lpen(),
+                self.usbolpen(),
+                self.sdmmc3lpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to set the PERxLPEN bit."]
@@ -6219,7 +6546,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb2lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb2lpensetr {{ dma1lpen: {=bool:?}, dma2lpen: {=bool:?}, dmamuxlpen: {=bool:?}, adc12lpen: {=bool:?}, usbolpen: {=bool:?}, sdmmc3lpen: {=bool:?} }}" , self . dma1lpen () , self . dma2lpen () , self . dmamuxlpen () , self . adc12lpen () , self . usbolpen () , self . sdmmc3lpen ())
+            defmt::write!(
+                f,
+                "RccMcAhb2lpensetr {{ dma1lpen: {=bool:?}, dma2lpen: {=bool:?}, dmamuxlpen: {=bool:?}, adc12lpen: {=bool:?}, usbolpen: {=bool:?}, sdmmc3lpen: {=bool:?} }}",
+                self.dma1lpen(),
+                self.dma2lpen(),
+                self.dmamuxlpen(),
+                self.adc12lpen(),
+                self.usbolpen(),
+                self.sdmmc3lpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit."]
@@ -6334,7 +6670,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb3enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb3enclrr {{ dcmien: {=bool:?}, cryp2en: {=bool:?}, hash2en: {=bool:?}, rng2en: {=bool:?}, crc2en: {=bool:?}, hsemen: {=bool:?}, ipccen: {=bool:?} }}" , self . dcmien () , self . cryp2en () , self . hash2en () , self . rng2en () , self . crc2en () , self . hsemen () , self . ipccen ())
+            defmt::write!(
+                f,
+                "RccMcAhb3enclrr {{ dcmien: {=bool:?}, cryp2en: {=bool:?}, hash2en: {=bool:?}, rng2en: {=bool:?}, crc2en: {=bool:?}, hsemen: {=bool:?}, ipccen: {=bool:?} }}",
+                self.dcmien(),
+                self.cryp2en(),
+                self.hash2en(),
+                self.rng2en(),
+                self.crc2en(),
+                self.hsemen(),
+                self.ipccen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit."]
@@ -6449,7 +6795,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb3ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb3ensetr {{ dcmien: {=bool:?}, cryp2en: {=bool:?}, hash2en: {=bool:?}, rng2en: {=bool:?}, crc2en: {=bool:?}, hsemen: {=bool:?}, ipccen: {=bool:?} }}" , self . dcmien () , self . cryp2en () , self . hash2en () , self . rng2en () , self . crc2en () , self . hsemen () , self . ipccen ())
+            defmt::write!(
+                f,
+                "RccMcAhb3ensetr {{ dcmien: {=bool:?}, cryp2en: {=bool:?}, hash2en: {=bool:?}, rng2en: {=bool:?}, crc2en: {=bool:?}, hsemen: {=bool:?}, ipccen: {=bool:?} }}",
+                self.dcmien(),
+                self.cryp2en(),
+                self.hash2en(),
+                self.rng2en(),
+                self.crc2en(),
+                self.hsemen(),
+                self.ipccen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bit."]
@@ -6564,7 +6920,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb3lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb3lpenclrr {{ dcmilpen: {=bool:?}, cryp2lpen: {=bool:?}, hash2lpen: {=bool:?}, rng2lpen: {=bool:?}, crc2lpen: {=bool:?}, hsemlpen: {=bool:?}, ipcclpen: {=bool:?} }}" , self . dcmilpen () , self . cryp2lpen () , self . hash2lpen () , self . rng2lpen () , self . crc2lpen () , self . hsemlpen () , self . ipcclpen ())
+            defmt::write!(
+                f,
+                "RccMcAhb3lpenclrr {{ dcmilpen: {=bool:?}, cryp2lpen: {=bool:?}, hash2lpen: {=bool:?}, rng2lpen: {=bool:?}, crc2lpen: {=bool:?}, hsemlpen: {=bool:?}, ipcclpen: {=bool:?} }}",
+                self.dcmilpen(),
+                self.cryp2lpen(),
+                self.hash2lpen(),
+                self.rng2lpen(),
+                self.crc2lpen(),
+                self.hsemlpen(),
+                self.ipcclpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to set the PERxLPEN bit."]
@@ -6679,7 +7045,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb3lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb3lpensetr {{ dcmilpen: {=bool:?}, cryp2lpen: {=bool:?}, hash2lpen: {=bool:?}, rng2lpen: {=bool:?}, crc2lpen: {=bool:?}, hsemlpen: {=bool:?}, ipcclpen: {=bool:?} }}" , self . dcmilpen () , self . cryp2lpen () , self . hash2lpen () , self . rng2lpen () , self . crc2lpen () , self . hsemlpen () , self . ipcclpen ())
+            defmt::write!(
+                f,
+                "RccMcAhb3lpensetr {{ dcmilpen: {=bool:?}, cryp2lpen: {=bool:?}, hash2lpen: {=bool:?}, rng2lpen: {=bool:?}, crc2lpen: {=bool:?}, hsemlpen: {=bool:?}, ipcclpen: {=bool:?} }}",
+                self.dcmilpen(),
+                self.cryp2lpen(),
+                self.hash2lpen(),
+                self.rng2lpen(),
+                self.crc2lpen(),
+                self.hsemlpen(),
+                self.ipcclpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit."]
@@ -6846,7 +7222,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb4enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb4enclrr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiofen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, gpioien: {=bool:?}, gpiojen: {=bool:?}, gpioken: {=bool:?} }}" , self . gpioaen () , self . gpioben () , self . gpiocen () , self . gpioden () , self . gpioeen () , self . gpiofen () , self . gpiogen () , self . gpiohen () , self . gpioien () , self . gpiojen () , self . gpioken ())
+            defmt::write!(
+                f,
+                "RccMcAhb4enclrr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiofen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, gpioien: {=bool:?}, gpiojen: {=bool:?}, gpioken: {=bool:?} }}",
+                self.gpioaen(),
+                self.gpioben(),
+                self.gpiocen(),
+                self.gpioden(),
+                self.gpioeen(),
+                self.gpiofen(),
+                self.gpiogen(),
+                self.gpiohen(),
+                self.gpioien(),
+                self.gpiojen(),
+                self.gpioken()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit."]
@@ -7013,7 +7403,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb4ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb4ensetr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiofen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, gpioien: {=bool:?}, gpiojen: {=bool:?}, gpioken: {=bool:?} }}" , self . gpioaen () , self . gpioben () , self . gpiocen () , self . gpioden () , self . gpioeen () , self . gpiofen () , self . gpiogen () , self . gpiohen () , self . gpioien () , self . gpiojen () , self . gpioken ())
+            defmt::write!(
+                f,
+                "RccMcAhb4ensetr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiofen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, gpioien: {=bool:?}, gpiojen: {=bool:?}, gpioken: {=bool:?} }}",
+                self.gpioaen(),
+                self.gpioben(),
+                self.gpiocen(),
+                self.gpioden(),
+                self.gpioeen(),
+                self.gpiofen(),
+                self.gpiogen(),
+                self.gpiohen(),
+                self.gpioien(),
+                self.gpiojen(),
+                self.gpioken()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bit of the corresponding peripheral."]
@@ -7180,7 +7584,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb4lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb4lpenclrr {{ gpioalpen: {=bool:?}, gpioblpen: {=bool:?}, gpioclpen: {=bool:?}, gpiodlpen: {=bool:?}, gpioelpen: {=bool:?}, gpioflpen: {=bool:?}, gpioglpen: {=bool:?}, gpiohlpen: {=bool:?}, gpioilpen: {=bool:?}, gpiojlpen: {=bool:?}, gpioklpen: {=bool:?} }}" , self . gpioalpen () , self . gpioblpen () , self . gpioclpen () , self . gpiodlpen () , self . gpioelpen () , self . gpioflpen () , self . gpioglpen () , self . gpiohlpen () , self . gpioilpen () , self . gpiojlpen () , self . gpioklpen ())
+            defmt::write!(
+                f,
+                "RccMcAhb4lpenclrr {{ gpioalpen: {=bool:?}, gpioblpen: {=bool:?}, gpioclpen: {=bool:?}, gpiodlpen: {=bool:?}, gpioelpen: {=bool:?}, gpioflpen: {=bool:?}, gpioglpen: {=bool:?}, gpiohlpen: {=bool:?}, gpioilpen: {=bool:?}, gpiojlpen: {=bool:?}, gpioklpen: {=bool:?} }}",
+                self.gpioalpen(),
+                self.gpioblpen(),
+                self.gpioclpen(),
+                self.gpiodlpen(),
+                self.gpioelpen(),
+                self.gpioflpen(),
+                self.gpioglpen(),
+                self.gpiohlpen(),
+                self.gpioilpen(),
+                self.gpiojlpen(),
+                self.gpioklpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to set the PERxLPEN bit."]
@@ -7347,7 +7765,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb4lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb4lpensetr {{ gpioalpen: {=bool:?}, gpioblpen: {=bool:?}, gpioclpen: {=bool:?}, gpiodlpen: {=bool:?}, gpioelpen: {=bool:?}, gpioflpen: {=bool:?}, gpioglpen: {=bool:?}, gpiohlpen: {=bool:?}, gpioilpen: {=bool:?}, gpiojlpen: {=bool:?}, gpioklpen: {=bool:?} }}" , self . gpioalpen () , self . gpioblpen () , self . gpioclpen () , self . gpiodlpen () , self . gpioelpen () , self . gpioflpen () , self . gpioglpen () , self . gpiohlpen () , self . gpioilpen () , self . gpiojlpen () , self . gpioklpen ())
+            defmt::write!(
+                f,
+                "RccMcAhb4lpensetr {{ gpioalpen: {=bool:?}, gpioblpen: {=bool:?}, gpioclpen: {=bool:?}, gpiodlpen: {=bool:?}, gpioelpen: {=bool:?}, gpioflpen: {=bool:?}, gpioglpen: {=bool:?}, gpiohlpen: {=bool:?}, gpioilpen: {=bool:?}, gpiojlpen: {=bool:?}, gpioklpen: {=bool:?} }}",
+                self.gpioalpen(),
+                self.gpioblpen(),
+                self.gpioclpen(),
+                self.gpiodlpen(),
+                self.gpioelpen(),
+                self.gpioflpen(),
+                self.gpioglpen(),
+                self.gpiohlpen(),
+                self.gpioilpen(),
+                self.gpiojlpen(),
+                self.gpioklpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit If TZEN = , this register can only be modified in secure mode."]
@@ -7436,7 +7868,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb5enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb5enclrr {{ gpiozen: {=bool:?}, cryp1en: {=bool:?}, hash1en: {=bool:?}, rng1en: {=bool:?}, bkpsramen: {=bool:?} }}" , self . gpiozen () , self . cryp1en () , self . hash1en () , self . rng1en () , self . bkpsramen ())
+            defmt::write!(
+                f,
+                "RccMcAhb5enclrr {{ gpiozen: {=bool:?}, cryp1en: {=bool:?}, hash1en: {=bool:?}, rng1en: {=bool:?}, bkpsramen: {=bool:?} }}",
+                self.gpiozen(),
+                self.cryp1en(),
+                self.hash1en(),
+                self.rng1en(),
+                self.bkpsramen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit If TZEN = , this register can only be modified in secure mode."]
@@ -7525,7 +7965,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb5ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb5ensetr {{ gpiozen: {=bool:?}, cryp1en: {=bool:?}, hash1en: {=bool:?}, rng1en: {=bool:?}, bkpsramen: {=bool:?} }}" , self . gpiozen () , self . cryp1en () , self . hash1en () , self . rng1en () , self . bkpsramen ())
+            defmt::write!(
+                f,
+                "RccMcAhb5ensetr {{ gpiozen: {=bool:?}, cryp1en: {=bool:?}, hash1en: {=bool:?}, rng1en: {=bool:?}, bkpsramen: {=bool:?} }}",
+                self.gpiozen(),
+                self.cryp1en(),
+                self.hash1en(),
+                self.rng1en(),
+                self.bkpsramen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bit If TZEN = , this register can only be modified in secure mode."]
@@ -7614,7 +8062,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb5lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb5lpenclrr {{ gpiozlpen: {=bool:?}, cryp1lpen: {=bool:?}, hash1lpen: {=bool:?}, rng1lpen: {=bool:?}, bkpsramlpen: {=bool:?} }}" , self . gpiozlpen () , self . cryp1lpen () , self . hash1lpen () , self . rng1lpen () , self . bkpsramlpen ())
+            defmt::write!(
+                f,
+                "RccMcAhb5lpenclrr {{ gpiozlpen: {=bool:?}, cryp1lpen: {=bool:?}, hash1lpen: {=bool:?}, rng1lpen: {=bool:?}, bkpsramlpen: {=bool:?} }}",
+                self.gpiozlpen(),
+                self.cryp1lpen(),
+                self.hash1lpen(),
+                self.rng1lpen(),
+                self.bkpsramlpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to set the PERxLPEN bit. If TZEN = , this register can only be modified in secure mode."]
@@ -7703,7 +8159,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb5lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb5lpensetr {{ gpiozlpen: {=bool:?}, cryp1lpen: {=bool:?}, hash1lpen: {=bool:?}, rng1lpen: {=bool:?}, bkpsramlpen: {=bool:?} }}" , self . gpiozlpen () , self . cryp1lpen () , self . hash1lpen () , self . rng1lpen () , self . bkpsramlpen ())
+            defmt::write!(
+                f,
+                "RccMcAhb5lpensetr {{ gpiozlpen: {=bool:?}, cryp1lpen: {=bool:?}, hash1lpen: {=bool:?}, rng1lpen: {=bool:?}, bkpsramlpen: {=bool:?} }}",
+                self.gpiozlpen(),
+                self.cryp1lpen(),
+                self.hash1lpen(),
+                self.rng1lpen(),
+                self.bkpsramlpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit."]
@@ -7883,7 +8347,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb6enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb6enclrr {{ mdmaen: {=bool:?}, gpuen: {=bool:?}, ethcken: {=bool:?}, ethtxen: {=bool:?}, ethrxen: {=bool:?}, ethmacen: {=bool:?}, fmcen: {=bool:?}, qspien: {=bool:?}, sdmmc1en: {=bool:?}, sdmmc2en: {=bool:?}, crc1en: {=bool:?}, usbhen: {=bool:?} }}" , self . mdmaen () , self . gpuen () , self . ethcken () , self . ethtxen () , self . ethrxen () , self . ethmacen () , self . fmcen () , self . qspien () , self . sdmmc1en () , self . sdmmc2en () , self . crc1en () , self . usbhen ())
+            defmt::write!(
+                f,
+                "RccMcAhb6enclrr {{ mdmaen: {=bool:?}, gpuen: {=bool:?}, ethcken: {=bool:?}, ethtxen: {=bool:?}, ethrxen: {=bool:?}, ethmacen: {=bool:?}, fmcen: {=bool:?}, qspien: {=bool:?}, sdmmc1en: {=bool:?}, sdmmc2en: {=bool:?}, crc1en: {=bool:?}, usbhen: {=bool:?} }}",
+                self.mdmaen(),
+                self.gpuen(),
+                self.ethcken(),
+                self.ethtxen(),
+                self.ethrxen(),
+                self.ethmacen(),
+                self.fmcen(),
+                self.qspien(),
+                self.sdmmc1en(),
+                self.sdmmc2en(),
+                self.crc1en(),
+                self.usbhen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit."]
@@ -8063,7 +8542,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb6ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb6ensetr {{ mdmaen: {=bool:?}, gpuen: {=bool:?}, ethcken: {=bool:?}, ethtxen: {=bool:?}, ethrxen: {=bool:?}, ethmacen: {=bool:?}, fmcen: {=bool:?}, qspien: {=bool:?}, sdmmc1en: {=bool:?}, sdmmc2en: {=bool:?}, crc1en: {=bool:?}, usbhen: {=bool:?} }}" , self . mdmaen () , self . gpuen () , self . ethcken () , self . ethtxen () , self . ethrxen () , self . ethmacen () , self . fmcen () , self . qspien () , self . sdmmc1en () , self . sdmmc2en () , self . crc1en () , self . usbhen ())
+            defmt::write!(
+                f,
+                "RccMcAhb6ensetr {{ mdmaen: {=bool:?}, gpuen: {=bool:?}, ethcken: {=bool:?}, ethtxen: {=bool:?}, ethrxen: {=bool:?}, ethmacen: {=bool:?}, fmcen: {=bool:?}, qspien: {=bool:?}, sdmmc1en: {=bool:?}, sdmmc2en: {=bool:?}, crc1en: {=bool:?}, usbhen: {=bool:?} }}",
+                self.mdmaen(),
+                self.gpuen(),
+                self.ethcken(),
+                self.ethtxen(),
+                self.ethrxen(),
+                self.ethmacen(),
+                self.fmcen(),
+                self.qspien(),
+                self.sdmmc1en(),
+                self.sdmmc2en(),
+                self.crc1en(),
+                self.usbhen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bit."]
@@ -8256,7 +8750,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb6lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb6lpenclrr {{ mdmalpen: {=bool:?}, gpulpen: {=bool:?}, ethcklpen: {=bool:?}, ethtxlpen: {=bool:?}, ethrxlpen: {=bool:?}, ethmaclpen: {=bool:?}, ethstpen: {=bool:?}, fmclpen: {=bool:?}, qspilpen: {=bool:?}, sdmmc1lpen: {=bool:?}, sdmmc2lpen: {=bool:?}, crc1lpen: {=bool:?}, usbhlpen: {=bool:?} }}" , self . mdmalpen () , self . gpulpen () , self . ethcklpen () , self . ethtxlpen () , self . ethrxlpen () , self . ethmaclpen () , self . ethstpen () , self . fmclpen () , self . qspilpen () , self . sdmmc1lpen () , self . sdmmc2lpen () , self . crc1lpen () , self . usbhlpen ())
+            defmt::write!(
+                f,
+                "RccMcAhb6lpenclrr {{ mdmalpen: {=bool:?}, gpulpen: {=bool:?}, ethcklpen: {=bool:?}, ethtxlpen: {=bool:?}, ethrxlpen: {=bool:?}, ethmaclpen: {=bool:?}, ethstpen: {=bool:?}, fmclpen: {=bool:?}, qspilpen: {=bool:?}, sdmmc1lpen: {=bool:?}, sdmmc2lpen: {=bool:?}, crc1lpen: {=bool:?}, usbhlpen: {=bool:?} }}",
+                self.mdmalpen(),
+                self.gpulpen(),
+                self.ethcklpen(),
+                self.ethtxlpen(),
+                self.ethrxlpen(),
+                self.ethmaclpen(),
+                self.ethstpen(),
+                self.fmclpen(),
+                self.qspilpen(),
+                self.sdmmc1lpen(),
+                self.sdmmc2lpen(),
+                self.crc1lpen(),
+                self.usbhlpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to set the PERxLPEN bit."]
@@ -8449,7 +8959,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcAhb6lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcAhb6lpensetr {{ mdmalpen: {=bool:?}, gpulpen: {=bool:?}, ethcklpen: {=bool:?}, ethtxlpen: {=bool:?}, ethrxlpen: {=bool:?}, ethmaclpen: {=bool:?}, ethstpen: {=bool:?}, fmclpen: {=bool:?}, qspilpen: {=bool:?}, sdmmc1lpen: {=bool:?}, sdmmc2lpen: {=bool:?}, crc1lpen: {=bool:?}, usbhlpen: {=bool:?} }}" , self . mdmalpen () , self . gpulpen () , self . ethcklpen () , self . ethtxlpen () , self . ethrxlpen () , self . ethmaclpen () , self . ethstpen () , self . fmclpen () , self . qspilpen () , self . sdmmc1lpen () , self . sdmmc2lpen () , self . crc1lpen () , self . usbhlpen ())
+            defmt::write!(
+                f,
+                "RccMcAhb6lpensetr {{ mdmalpen: {=bool:?}, gpulpen: {=bool:?}, ethcklpen: {=bool:?}, ethtxlpen: {=bool:?}, ethrxlpen: {=bool:?}, ethmaclpen: {=bool:?}, ethstpen: {=bool:?}, fmclpen: {=bool:?}, qspilpen: {=bool:?}, sdmmc1lpen: {=bool:?}, sdmmc2lpen: {=bool:?}, crc1lpen: {=bool:?}, usbhlpen: {=bool:?} }}",
+                self.mdmalpen(),
+                self.gpulpen(),
+                self.ethcklpen(),
+                self.ethtxlpen(),
+                self.ethrxlpen(),
+                self.ethmaclpen(),
+                self.ethstpen(),
+                self.fmclpen(),
+                self.qspilpen(),
+                self.sdmmc1lpen(),
+                self.sdmmc2lpen(),
+                self.crc1lpen(),
+                self.usbhlpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit of the corresponding peripheral."]
@@ -8811,7 +9337,36 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb1enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb1enclrr {{ tim2en: {=bool:?}, tim3en: {=bool:?}, tim4en: {=bool:?}, tim5en: {=bool:?}, tim6en: {=bool:?}, tim7en: {=bool:?}, tim12en: {=bool:?}, tim13en: {=bool:?}, tim14en: {=bool:?}, lptim1en: {=bool:?}, spi2en: {=bool:?}, spi3en: {=bool:?}, usart2en: {=bool:?}, usart3en: {=bool:?}, uart4en: {=bool:?}, uart5en: {=bool:?}, uart7en: {=bool:?}, uart8en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, i2c3en: {=bool:?}, i2c5en: {=bool:?}, spdifen: {=bool:?}, cecen: {=bool:?}, dac12en: {=bool:?}, mdiosen: {=bool:?} }}" , self . tim2en () , self . tim3en () , self . tim4en () , self . tim5en () , self . tim6en () , self . tim7en () , self . tim12en () , self . tim13en () , self . tim14en () , self . lptim1en () , self . spi2en () , self . spi3en () , self . usart2en () , self . usart3en () , self . uart4en () , self . uart5en () , self . uart7en () , self . uart8en () , self . i2c1en () , self . i2c2en () , self . i2c3en () , self . i2c5en () , self . spdifen () , self . cecen () , self . dac12en () , self . mdiosen ())
+            defmt::write!(
+                f,
+                "RccMcApb1enclrr {{ tim2en: {=bool:?}, tim3en: {=bool:?}, tim4en: {=bool:?}, tim5en: {=bool:?}, tim6en: {=bool:?}, tim7en: {=bool:?}, tim12en: {=bool:?}, tim13en: {=bool:?}, tim14en: {=bool:?}, lptim1en: {=bool:?}, spi2en: {=bool:?}, spi3en: {=bool:?}, usart2en: {=bool:?}, usart3en: {=bool:?}, uart4en: {=bool:?}, uart5en: {=bool:?}, uart7en: {=bool:?}, uart8en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, i2c3en: {=bool:?}, i2c5en: {=bool:?}, spdifen: {=bool:?}, cecen: {=bool:?}, dac12en: {=bool:?}, mdiosen: {=bool:?} }}",
+                self.tim2en(),
+                self.tim3en(),
+                self.tim4en(),
+                self.tim5en(),
+                self.tim6en(),
+                self.tim7en(),
+                self.tim12en(),
+                self.tim13en(),
+                self.tim14en(),
+                self.lptim1en(),
+                self.spi2en(),
+                self.spi3en(),
+                self.usart2en(),
+                self.usart3en(),
+                self.uart4en(),
+                self.uart5en(),
+                self.uart7en(),
+                self.uart8en(),
+                self.i2c1en(),
+                self.i2c2en(),
+                self.i2c3en(),
+                self.i2c5en(),
+                self.spdifen(),
+                self.cecen(),
+                self.dac12en(),
+                self.mdiosen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit of the corresponding peripheral to . It shall be used to allocate a peripheral to the MCU. Writing has no effect, reading will return . Writing a sets the corresponding bit to."]
@@ -9186,7 +9741,37 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb1ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb1ensetr {{ tim2en: {=bool:?}, tim3en: {=bool:?}, tim4en: {=bool:?}, tim5en: {=bool:?}, tim6en: {=bool:?}, tim7en: {=bool:?}, tim12en: {=bool:?}, tim13en: {=bool:?}, tim14en: {=bool:?}, lptim1en: {=bool:?}, spi2en: {=bool:?}, spi3en: {=bool:?}, usart2en: {=bool:?}, usart3en: {=bool:?}, uart4en: {=bool:?}, uart5en: {=bool:?}, uart7en: {=bool:?}, uart8en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, i2c3en: {=bool:?}, i2c5en: {=bool:?}, spdifen: {=bool:?}, cecen: {=bool:?}, wwdg1en: {=bool:?}, dac12en: {=bool:?}, mdiosen: {=bool:?} }}" , self . tim2en () , self . tim3en () , self . tim4en () , self . tim5en () , self . tim6en () , self . tim7en () , self . tim12en () , self . tim13en () , self . tim14en () , self . lptim1en () , self . spi2en () , self . spi3en () , self . usart2en () , self . usart3en () , self . uart4en () , self . uart5en () , self . uart7en () , self . uart8en () , self . i2c1en () , self . i2c2en () , self . i2c3en () , self . i2c5en () , self . spdifen () , self . cecen () , self . wwdg1en () , self . dac12en () , self . mdiosen ())
+            defmt::write!(
+                f,
+                "RccMcApb1ensetr {{ tim2en: {=bool:?}, tim3en: {=bool:?}, tim4en: {=bool:?}, tim5en: {=bool:?}, tim6en: {=bool:?}, tim7en: {=bool:?}, tim12en: {=bool:?}, tim13en: {=bool:?}, tim14en: {=bool:?}, lptim1en: {=bool:?}, spi2en: {=bool:?}, spi3en: {=bool:?}, usart2en: {=bool:?}, usart3en: {=bool:?}, uart4en: {=bool:?}, uart5en: {=bool:?}, uart7en: {=bool:?}, uart8en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, i2c3en: {=bool:?}, i2c5en: {=bool:?}, spdifen: {=bool:?}, cecen: {=bool:?}, wwdg1en: {=bool:?}, dac12en: {=bool:?}, mdiosen: {=bool:?} }}",
+                self.tim2en(),
+                self.tim3en(),
+                self.tim4en(),
+                self.tim5en(),
+                self.tim6en(),
+                self.tim7en(),
+                self.tim12en(),
+                self.tim13en(),
+                self.tim14en(),
+                self.lptim1en(),
+                self.spi2en(),
+                self.spi3en(),
+                self.usart2en(),
+                self.usart3en(),
+                self.uart4en(),
+                self.uart5en(),
+                self.uart7en(),
+                self.uart8en(),
+                self.i2c1en(),
+                self.i2c2en(),
+                self.i2c3en(),
+                self.i2c5en(),
+                self.spdifen(),
+                self.cecen(),
+                self.wwdg1en(),
+                self.dac12en(),
+                self.mdiosen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bits."]
@@ -9561,7 +10146,37 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb1lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb1lpenclrr {{ tim2lpen: {=bool:?}, tim3lpen: {=bool:?}, tim4lpen: {=bool:?}, tim5lpen: {=bool:?}, tim6lpen: {=bool:?}, tim7lpen: {=bool:?}, tim12lpen: {=bool:?}, tim13lpen: {=bool:?}, tim14lpen: {=bool:?}, lptim1lpen: {=bool:?}, spi2lpen: {=bool:?}, spi3lpen: {=bool:?}, usart2lpen: {=bool:?}, usart3lpen: {=bool:?}, uart4lpen: {=bool:?}, uart5lpen: {=bool:?}, uart7lpen: {=bool:?}, uart8lpen: {=bool:?}, i2c1lpen: {=bool:?}, i2c2lpen: {=bool:?}, i2c3lpen: {=bool:?}, i2c5lpen: {=bool:?}, spdiflpen: {=bool:?}, ceclpen: {=bool:?}, wwdg1lpen: {=bool:?}, dac12lpen: {=bool:?}, mdioslpen: {=bool:?} }}" , self . tim2lpen () , self . tim3lpen () , self . tim4lpen () , self . tim5lpen () , self . tim6lpen () , self . tim7lpen () , self . tim12lpen () , self . tim13lpen () , self . tim14lpen () , self . lptim1lpen () , self . spi2lpen () , self . spi3lpen () , self . usart2lpen () , self . usart3lpen () , self . uart4lpen () , self . uart5lpen () , self . uart7lpen () , self . uart8lpen () , self . i2c1lpen () , self . i2c2lpen () , self . i2c3lpen () , self . i2c5lpen () , self . spdiflpen () , self . ceclpen () , self . wwdg1lpen () , self . dac12lpen () , self . mdioslpen ())
+            defmt::write!(
+                f,
+                "RccMcApb1lpenclrr {{ tim2lpen: {=bool:?}, tim3lpen: {=bool:?}, tim4lpen: {=bool:?}, tim5lpen: {=bool:?}, tim6lpen: {=bool:?}, tim7lpen: {=bool:?}, tim12lpen: {=bool:?}, tim13lpen: {=bool:?}, tim14lpen: {=bool:?}, lptim1lpen: {=bool:?}, spi2lpen: {=bool:?}, spi3lpen: {=bool:?}, usart2lpen: {=bool:?}, usart3lpen: {=bool:?}, uart4lpen: {=bool:?}, uart5lpen: {=bool:?}, uart7lpen: {=bool:?}, uart8lpen: {=bool:?}, i2c1lpen: {=bool:?}, i2c2lpen: {=bool:?}, i2c3lpen: {=bool:?}, i2c5lpen: {=bool:?}, spdiflpen: {=bool:?}, ceclpen: {=bool:?}, wwdg1lpen: {=bool:?}, dac12lpen: {=bool:?}, mdioslpen: {=bool:?} }}",
+                self.tim2lpen(),
+                self.tim3lpen(),
+                self.tim4lpen(),
+                self.tim5lpen(),
+                self.tim6lpen(),
+                self.tim7lpen(),
+                self.tim12lpen(),
+                self.tim13lpen(),
+                self.tim14lpen(),
+                self.lptim1lpen(),
+                self.spi2lpen(),
+                self.spi3lpen(),
+                self.usart2lpen(),
+                self.usart3lpen(),
+                self.uart4lpen(),
+                self.uart5lpen(),
+                self.uart7lpen(),
+                self.uart8lpen(),
+                self.i2c1lpen(),
+                self.i2c2lpen(),
+                self.i2c3lpen(),
+                self.i2c5lpen(),
+                self.spdiflpen(),
+                self.ceclpen(),
+                self.wwdg1lpen(),
+                self.dac12lpen(),
+                self.mdioslpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to set the PERxLPEN bit."]
@@ -9936,7 +10551,37 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb1lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb1lpensetr {{ tim2lpen: {=bool:?}, tim3lpen: {=bool:?}, tim4lpen: {=bool:?}, tim5lpen: {=bool:?}, tim6lpen: {=bool:?}, tim7lpen: {=bool:?}, tim12lpen: {=bool:?}, tim13lpen: {=bool:?}, tim14lpen: {=bool:?}, lptim1lpen: {=bool:?}, spi2lpen: {=bool:?}, spi3lpen: {=bool:?}, usart2lpen: {=bool:?}, usart3lpen: {=bool:?}, uart4lpen: {=bool:?}, uart5lpen: {=bool:?}, uart7lpen: {=bool:?}, uart8lpen: {=bool:?}, i2c1lpen: {=bool:?}, i2c2lpen: {=bool:?}, i2c3lpen: {=bool:?}, i2c5lpen: {=bool:?}, spdiflpen: {=bool:?}, ceclpen: {=bool:?}, wwdg1lpen: {=bool:?}, dac12lpen: {=bool:?}, mdioslpen: {=bool:?} }}" , self . tim2lpen () , self . tim3lpen () , self . tim4lpen () , self . tim5lpen () , self . tim6lpen () , self . tim7lpen () , self . tim12lpen () , self . tim13lpen () , self . tim14lpen () , self . lptim1lpen () , self . spi2lpen () , self . spi3lpen () , self . usart2lpen () , self . usart3lpen () , self . uart4lpen () , self . uart5lpen () , self . uart7lpen () , self . uart8lpen () , self . i2c1lpen () , self . i2c2lpen () , self . i2c3lpen () , self . i2c5lpen () , self . spdiflpen () , self . ceclpen () , self . wwdg1lpen () , self . dac12lpen () , self . mdioslpen ())
+            defmt::write!(
+                f,
+                "RccMcApb1lpensetr {{ tim2lpen: {=bool:?}, tim3lpen: {=bool:?}, tim4lpen: {=bool:?}, tim5lpen: {=bool:?}, tim6lpen: {=bool:?}, tim7lpen: {=bool:?}, tim12lpen: {=bool:?}, tim13lpen: {=bool:?}, tim14lpen: {=bool:?}, lptim1lpen: {=bool:?}, spi2lpen: {=bool:?}, spi3lpen: {=bool:?}, usart2lpen: {=bool:?}, usart3lpen: {=bool:?}, uart4lpen: {=bool:?}, uart5lpen: {=bool:?}, uart7lpen: {=bool:?}, uart8lpen: {=bool:?}, i2c1lpen: {=bool:?}, i2c2lpen: {=bool:?}, i2c3lpen: {=bool:?}, i2c5lpen: {=bool:?}, spdiflpen: {=bool:?}, ceclpen: {=bool:?}, wwdg1lpen: {=bool:?}, dac12lpen: {=bool:?}, mdioslpen: {=bool:?} }}",
+                self.tim2lpen(),
+                self.tim3lpen(),
+                self.tim4lpen(),
+                self.tim5lpen(),
+                self.tim6lpen(),
+                self.tim7lpen(),
+                self.tim12lpen(),
+                self.tim13lpen(),
+                self.tim14lpen(),
+                self.lptim1lpen(),
+                self.spi2lpen(),
+                self.spi3lpen(),
+                self.usart2lpen(),
+                self.usart3lpen(),
+                self.uart4lpen(),
+                self.uart5lpen(),
+                self.uart7lpen(),
+                self.uart8lpen(),
+                self.i2c1lpen(),
+                self.i2c2lpen(),
+                self.i2c3lpen(),
+                self.i2c5lpen(),
+                self.spdiflpen(),
+                self.ceclpen(),
+                self.wwdg1lpen(),
+                self.dac12lpen(),
+                self.mdioslpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit."]
@@ -10155,7 +10800,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb2enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb2enclrr {{ tim1en: {=bool:?}, tim8en: {=bool:?}, tim15en: {=bool:?}, tim16en: {=bool:?}, tim17en: {=bool:?}, spi1en: {=bool:?}, spi4en: {=bool:?}, spi5en: {=bool:?}, usart6en: {=bool:?}, sai1en: {=bool:?}, sai2en: {=bool:?}, sai3en: {=bool:?}, dfsdmen: {=bool:?}, adfsdmen: {=bool:?}, fdcanen: {=bool:?} }}" , self . tim1en () , self . tim8en () , self . tim15en () , self . tim16en () , self . tim17en () , self . spi1en () , self . spi4en () , self . spi5en () , self . usart6en () , self . sai1en () , self . sai2en () , self . sai3en () , self . dfsdmen () , self . adfsdmen () , self . fdcanen ())
+            defmt::write!(
+                f,
+                "RccMcApb2enclrr {{ tim1en: {=bool:?}, tim8en: {=bool:?}, tim15en: {=bool:?}, tim16en: {=bool:?}, tim17en: {=bool:?}, spi1en: {=bool:?}, spi4en: {=bool:?}, spi5en: {=bool:?}, usart6en: {=bool:?}, sai1en: {=bool:?}, sai2en: {=bool:?}, sai3en: {=bool:?}, dfsdmen: {=bool:?}, adfsdmen: {=bool:?}, fdcanen: {=bool:?} }}",
+                self.tim1en(),
+                self.tim8en(),
+                self.tim15en(),
+                self.tim16en(),
+                self.tim17en(),
+                self.spi1en(),
+                self.spi4en(),
+                self.spi5en(),
+                self.usart6en(),
+                self.sai1en(),
+                self.sai2en(),
+                self.sai3en(),
+                self.dfsdmen(),
+                self.adfsdmen(),
+                self.fdcanen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit."]
@@ -10374,7 +11037,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb2ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb2ensetr {{ tim1en: {=bool:?}, tim8en: {=bool:?}, tim15en: {=bool:?}, tim16en: {=bool:?}, tim17en: {=bool:?}, spi1en: {=bool:?}, spi4en: {=bool:?}, spi5en: {=bool:?}, usart6en: {=bool:?}, sai1en: {=bool:?}, sai2en: {=bool:?}, sai3en: {=bool:?}, dfsdmen: {=bool:?}, adfsdmen: {=bool:?}, fdcanen: {=bool:?} }}" , self . tim1en () , self . tim8en () , self . tim15en () , self . tim16en () , self . tim17en () , self . spi1en () , self . spi4en () , self . spi5en () , self . usart6en () , self . sai1en () , self . sai2en () , self . sai3en () , self . dfsdmen () , self . adfsdmen () , self . fdcanen ())
+            defmt::write!(
+                f,
+                "RccMcApb2ensetr {{ tim1en: {=bool:?}, tim8en: {=bool:?}, tim15en: {=bool:?}, tim16en: {=bool:?}, tim17en: {=bool:?}, spi1en: {=bool:?}, spi4en: {=bool:?}, spi5en: {=bool:?}, usart6en: {=bool:?}, sai1en: {=bool:?}, sai2en: {=bool:?}, sai3en: {=bool:?}, dfsdmen: {=bool:?}, adfsdmen: {=bool:?}, fdcanen: {=bool:?} }}",
+                self.tim1en(),
+                self.tim8en(),
+                self.tim15en(),
+                self.tim16en(),
+                self.tim17en(),
+                self.spi1en(),
+                self.spi4en(),
+                self.spi5en(),
+                self.usart6en(),
+                self.sai1en(),
+                self.sai2en(),
+                self.sai3en(),
+                self.dfsdmen(),
+                self.adfsdmen(),
+                self.fdcanen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bit."]
@@ -10593,7 +11274,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb2lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb2lpenclrr {{ tim1lpen: {=bool:?}, tim8lpen: {=bool:?}, tim15lpen: {=bool:?}, tim16lpen: {=bool:?}, tim17lpen: {=bool:?}, spi1lpen: {=bool:?}, spi4lpen: {=bool:?}, spi5lpen: {=bool:?}, usart6lpen: {=bool:?}, sai1lpen: {=bool:?}, sai2lpen: {=bool:?}, sai3lpen: {=bool:?}, dfsdmlpen: {=bool:?}, adfsdmlpen: {=bool:?}, fdcanlpen: {=bool:?} }}" , self . tim1lpen () , self . tim8lpen () , self . tim15lpen () , self . tim16lpen () , self . tim17lpen () , self . spi1lpen () , self . spi4lpen () , self . spi5lpen () , self . usart6lpen () , self . sai1lpen () , self . sai2lpen () , self . sai3lpen () , self . dfsdmlpen () , self . adfsdmlpen () , self . fdcanlpen ())
+            defmt::write!(
+                f,
+                "RccMcApb2lpenclrr {{ tim1lpen: {=bool:?}, tim8lpen: {=bool:?}, tim15lpen: {=bool:?}, tim16lpen: {=bool:?}, tim17lpen: {=bool:?}, spi1lpen: {=bool:?}, spi4lpen: {=bool:?}, spi5lpen: {=bool:?}, usart6lpen: {=bool:?}, sai1lpen: {=bool:?}, sai2lpen: {=bool:?}, sai3lpen: {=bool:?}, dfsdmlpen: {=bool:?}, adfsdmlpen: {=bool:?}, fdcanlpen: {=bool:?} }}",
+                self.tim1lpen(),
+                self.tim8lpen(),
+                self.tim15lpen(),
+                self.tim16lpen(),
+                self.tim17lpen(),
+                self.spi1lpen(),
+                self.spi4lpen(),
+                self.spi5lpen(),
+                self.usart6lpen(),
+                self.sai1lpen(),
+                self.sai2lpen(),
+                self.sai3lpen(),
+                self.dfsdmlpen(),
+                self.adfsdmlpen(),
+                self.fdcanlpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to set the PERxLPEN bit."]
@@ -10812,7 +11511,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb2lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb2lpensetr {{ tim1lpen: {=bool:?}, tim8lpen: {=bool:?}, tim15lpen: {=bool:?}, tim16lpen: {=bool:?}, tim17lpen: {=bool:?}, spi1lpen: {=bool:?}, spi4lpen: {=bool:?}, spi5lpen: {=bool:?}, usart6lpen: {=bool:?}, sai1lpen: {=bool:?}, sai2lpen: {=bool:?}, sai3lpen: {=bool:?}, dfsdmlpen: {=bool:?}, adfsdmlpen: {=bool:?}, fdcanlpen: {=bool:?} }}" , self . tim1lpen () , self . tim8lpen () , self . tim15lpen () , self . tim16lpen () , self . tim17lpen () , self . spi1lpen () , self . spi4lpen () , self . spi5lpen () , self . usart6lpen () , self . sai1lpen () , self . sai2lpen () , self . sai3lpen () , self . dfsdmlpen () , self . adfsdmlpen () , self . fdcanlpen ())
+            defmt::write!(
+                f,
+                "RccMcApb2lpensetr {{ tim1lpen: {=bool:?}, tim8lpen: {=bool:?}, tim15lpen: {=bool:?}, tim16lpen: {=bool:?}, tim17lpen: {=bool:?}, spi1lpen: {=bool:?}, spi4lpen: {=bool:?}, spi5lpen: {=bool:?}, usart6lpen: {=bool:?}, sai1lpen: {=bool:?}, sai2lpen: {=bool:?}, sai3lpen: {=bool:?}, dfsdmlpen: {=bool:?}, adfsdmlpen: {=bool:?}, fdcanlpen: {=bool:?} }}",
+                self.tim1lpen(),
+                self.tim8lpen(),
+                self.tim15lpen(),
+                self.tim16lpen(),
+                self.tim17lpen(),
+                self.spi1lpen(),
+                self.spi4lpen(),
+                self.spi5lpen(),
+                self.usart6lpen(),
+                self.sai1lpen(),
+                self.sai2lpen(),
+                self.sai3lpen(),
+                self.dfsdmlpen(),
+                self.adfsdmlpen(),
+                self.fdcanlpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit."]
@@ -10953,7 +11670,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb3enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb3enclrr {{ lptim2en: {=bool:?}, lptim3en: {=bool:?}, lptim4en: {=bool:?}, lptim5en: {=bool:?}, sai4en: {=bool:?}, syscfgen: {=bool:?}, vrefen: {=bool:?}, dtsen: {=bool:?}, hdpen: {=bool:?} }}" , self . lptim2en () , self . lptim3en () , self . lptim4en () , self . lptim5en () , self . sai4en () , self . syscfgen () , self . vrefen () , self . dtsen () , self . hdpen ())
+            defmt::write!(
+                f,
+                "RccMcApb3enclrr {{ lptim2en: {=bool:?}, lptim3en: {=bool:?}, lptim4en: {=bool:?}, lptim5en: {=bool:?}, sai4en: {=bool:?}, syscfgen: {=bool:?}, vrefen: {=bool:?}, dtsen: {=bool:?}, hdpen: {=bool:?} }}",
+                self.lptim2en(),
+                self.lptim3en(),
+                self.lptim4en(),
+                self.lptim5en(),
+                self.sai4en(),
+                self.syscfgen(),
+                self.vrefen(),
+                self.dtsen(),
+                self.hdpen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit."]
@@ -11094,7 +11823,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb3ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb3ensetr {{ lptim2en: {=bool:?}, lptim3en: {=bool:?}, lptim4en: {=bool:?}, lptim5en: {=bool:?}, sai4en: {=bool:?}, syscfgen: {=bool:?}, vrefen: {=bool:?}, dtsen: {=bool:?}, hdpen: {=bool:?} }}" , self . lptim2en () , self . lptim3en () , self . lptim4en () , self . lptim5en () , self . sai4en () , self . syscfgen () , self . vrefen () , self . dtsen () , self . hdpen ())
+            defmt::write!(
+                f,
+                "RccMcApb3ensetr {{ lptim2en: {=bool:?}, lptim3en: {=bool:?}, lptim4en: {=bool:?}, lptim5en: {=bool:?}, sai4en: {=bool:?}, syscfgen: {=bool:?}, vrefen: {=bool:?}, dtsen: {=bool:?}, hdpen: {=bool:?} }}",
+                self.lptim2en(),
+                self.lptim3en(),
+                self.lptim4en(),
+                self.lptim5en(),
+                self.sai4en(),
+                self.syscfgen(),
+                self.vrefen(),
+                self.dtsen(),
+                self.hdpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bit."]
@@ -11222,7 +11963,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb3lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb3lpenclrr {{ lptim2lpen: {=bool:?}, lptim3lpen: {=bool:?}, lptim4lpen: {=bool:?}, lptim5lpen: {=bool:?}, sai4lpen: {=bool:?}, syscfglpen: {=bool:?}, vreflpen: {=bool:?}, dtslpen: {=bool:?} }}" , self . lptim2lpen () , self . lptim3lpen () , self . lptim4lpen () , self . lptim5lpen () , self . sai4lpen () , self . syscfglpen () , self . vreflpen () , self . dtslpen ())
+            defmt::write!(
+                f,
+                "RccMcApb3lpenclrr {{ lptim2lpen: {=bool:?}, lptim3lpen: {=bool:?}, lptim4lpen: {=bool:?}, lptim5lpen: {=bool:?}, sai4lpen: {=bool:?}, syscfglpen: {=bool:?}, vreflpen: {=bool:?}, dtslpen: {=bool:?} }}",
+                self.lptim2lpen(),
+                self.lptim3lpen(),
+                self.lptim4lpen(),
+                self.lptim5lpen(),
+                self.sai4lpen(),
+                self.syscfglpen(),
+                self.vreflpen(),
+                self.dtslpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to set the PERxLPEN bit."]
@@ -11350,7 +12102,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb3lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb3lpensetr {{ lptim2lpen: {=bool:?}, lptim3lpen: {=bool:?}, lptim4lpen: {=bool:?}, lptim5lpen: {=bool:?}, sai4lpen: {=bool:?}, syscfglpen: {=bool:?}, vreflpen: {=bool:?}, dtslpen: {=bool:?} }}" , self . lptim2lpen () , self . lptim3lpen () , self . lptim4lpen () , self . lptim5lpen () , self . sai4lpen () , self . syscfglpen () , self . vreflpen () , self . dtslpen ())
+            defmt::write!(
+                f,
+                "RccMcApb3lpensetr {{ lptim2lpen: {=bool:?}, lptim3lpen: {=bool:?}, lptim4lpen: {=bool:?}, lptim5lpen: {=bool:?}, sai4lpen: {=bool:?}, syscfglpen: {=bool:?}, vreflpen: {=bool:?}, dtslpen: {=bool:?} }}",
+                self.lptim2lpen(),
+                self.lptim3lpen(),
+                self.lptim4lpen(),
+                self.lptim5lpen(),
+                self.sai4lpen(),
+                self.syscfglpen(),
+                self.vreflpen(),
+                self.dtslpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit."]
@@ -11439,7 +12202,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb4enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb4enclrr {{ ltdcen: {=bool:?}, dsien: {=bool:?}, ddrperfmen: {=bool:?}, usbphyen: {=bool:?}, stgenroen: {=bool:?} }}" , self . ltdcen () , self . dsien () , self . ddrperfmen () , self . usbphyen () , self . stgenroen ())
+            defmt::write!(
+                f,
+                "RccMcApb4enclrr {{ ltdcen: {=bool:?}, dsien: {=bool:?}, ddrperfmen: {=bool:?}, usbphyen: {=bool:?}, stgenroen: {=bool:?} }}",
+                self.ltdcen(),
+                self.dsien(),
+                self.ddrperfmen(),
+                self.usbphyen(),
+                self.stgenroen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit."]
@@ -11528,7 +12299,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb4ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb4ensetr {{ ltdcen: {=bool:?}, dsien: {=bool:?}, ddrperfmen: {=bool:?}, usbphyen: {=bool:?}, stgenroen: {=bool:?} }}" , self . ltdcen () , self . dsien () , self . ddrperfmen () , self . usbphyen () , self . stgenroen ())
+            defmt::write!(
+                f,
+                "RccMcApb4ensetr {{ ltdcen: {=bool:?}, dsien: {=bool:?}, ddrperfmen: {=bool:?}, usbphyen: {=bool:?}, stgenroen: {=bool:?} }}",
+                self.ltdcen(),
+                self.dsien(),
+                self.ddrperfmen(),
+                self.usbphyen(),
+                self.stgenroen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bit."]
@@ -11630,7 +12409,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb4lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb4lpenclrr {{ ltdclpen: {=bool:?}, dsilpen: {=bool:?}, ddrperfmlpen: {=bool:?}, usbphylpen: {=bool:?}, stgenrolpen: {=bool:?}, stgenrostpen: {=bool:?} }}" , self . ltdclpen () , self . dsilpen () , self . ddrperfmlpen () , self . usbphylpen () , self . stgenrolpen () , self . stgenrostpen ())
+            defmt::write!(
+                f,
+                "RccMcApb4lpenclrr {{ ltdclpen: {=bool:?}, dsilpen: {=bool:?}, ddrperfmlpen: {=bool:?}, usbphylpen: {=bool:?}, stgenrolpen: {=bool:?}, stgenrostpen: {=bool:?} }}",
+                self.ltdclpen(),
+                self.dsilpen(),
+                self.ddrperfmlpen(),
+                self.usbphylpen(),
+                self.stgenrolpen(),
+                self.stgenrostpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to set the PERxLPEN bit."]
@@ -11732,7 +12520,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb4lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb4lpensetr {{ ltdclpen: {=bool:?}, dsilpen: {=bool:?}, ddrperfmlpen: {=bool:?}, usbphylpen: {=bool:?}, stgenrolpen: {=bool:?}, stgenrostpen: {=bool:?} }}" , self . ltdclpen () , self . dsilpen () , self . ddrperfmlpen () , self . usbphylpen () , self . stgenrolpen () , self . stgenrostpen ())
+            defmt::write!(
+                f,
+                "RccMcApb4lpensetr {{ ltdclpen: {=bool:?}, dsilpen: {=bool:?}, ddrperfmlpen: {=bool:?}, usbphylpen: {=bool:?}, stgenrolpen: {=bool:?}, stgenrostpen: {=bool:?} }}",
+                self.ltdclpen(),
+                self.dsilpen(),
+                self.ddrperfmlpen(),
+                self.usbphylpen(),
+                self.stgenrolpen(),
+                self.stgenrostpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit."]
@@ -11886,7 +12683,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb5enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb5enclrr {{ spi6en: {=bool:?}, i2c4en: {=bool:?}, i2c6en: {=bool:?}, usart1en: {=bool:?}, rtcapben: {=bool:?}, tzc1en: {=bool:?}, tzc2en: {=bool:?}, tzpcen: {=bool:?}, bsecen: {=bool:?}, stgenen: {=bool:?} }}" , self . spi6en () , self . i2c4en () , self . i2c6en () , self . usart1en () , self . rtcapben () , self . tzc1en () , self . tzc2en () , self . tzpcen () , self . bsecen () , self . stgenen ())
+            defmt::write!(
+                f,
+                "RccMcApb5enclrr {{ spi6en: {=bool:?}, i2c4en: {=bool:?}, i2c6en: {=bool:?}, usart1en: {=bool:?}, rtcapben: {=bool:?}, tzc1en: {=bool:?}, tzc2en: {=bool:?}, tzpcen: {=bool:?}, bsecen: {=bool:?}, stgenen: {=bool:?} }}",
+                self.spi6en(),
+                self.i2c4en(),
+                self.i2c6en(),
+                self.usart1en(),
+                self.rtcapben(),
+                self.tzc1en(),
+                self.tzc2en(),
+                self.tzpcen(),
+                self.bsecen(),
+                self.stgenen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit."]
@@ -12040,7 +12850,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb5ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb5ensetr {{ spi6en: {=bool:?}, i2c4en: {=bool:?}, i2c6en: {=bool:?}, usart1en: {=bool:?}, rtcapben: {=bool:?}, tzc1en: {=bool:?}, tzc2en: {=bool:?}, tzpcen: {=bool:?}, bsecen: {=bool:?}, stgenen: {=bool:?} }}" , self . spi6en () , self . i2c4en () , self . i2c6en () , self . usart1en () , self . rtcapben () , self . tzc1en () , self . tzc2en () , self . tzpcen () , self . bsecen () , self . stgenen ())
+            defmt::write!(
+                f,
+                "RccMcApb5ensetr {{ spi6en: {=bool:?}, i2c4en: {=bool:?}, i2c6en: {=bool:?}, usart1en: {=bool:?}, rtcapben: {=bool:?}, tzc1en: {=bool:?}, tzc2en: {=bool:?}, tzpcen: {=bool:?}, bsecen: {=bool:?}, stgenen: {=bool:?} }}",
+                self.spi6en(),
+                self.i2c4en(),
+                self.i2c6en(),
+                self.usart1en(),
+                self.rtcapben(),
+                self.tzc1en(),
+                self.tzc2en(),
+                self.tzpcen(),
+                self.bsecen(),
+                self.stgenen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bit."]
@@ -12207,7 +13030,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb5lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb5lpenclrr {{ spi6lpen: {=bool:?}, i2c4lpen: {=bool:?}, i2c6lpen: {=bool:?}, usart1lpen: {=bool:?}, rtcapblpen: {=bool:?}, tzc1lpen: {=bool:?}, tzc2lpen: {=bool:?}, tzpclpen: {=bool:?}, bseclpen: {=bool:?}, stgenlpen: {=bool:?}, stgenstpen: {=bool:?} }}" , self . spi6lpen () , self . i2c4lpen () , self . i2c6lpen () , self . usart1lpen () , self . rtcapblpen () , self . tzc1lpen () , self . tzc2lpen () , self . tzpclpen () , self . bseclpen () , self . stgenlpen () , self . stgenstpen ())
+            defmt::write!(
+                f,
+                "RccMcApb5lpenclrr {{ spi6lpen: {=bool:?}, i2c4lpen: {=bool:?}, i2c6lpen: {=bool:?}, usart1lpen: {=bool:?}, rtcapblpen: {=bool:?}, tzc1lpen: {=bool:?}, tzc2lpen: {=bool:?}, tzpclpen: {=bool:?}, bseclpen: {=bool:?}, stgenlpen: {=bool:?}, stgenstpen: {=bool:?} }}",
+                self.spi6lpen(),
+                self.i2c4lpen(),
+                self.i2c6lpen(),
+                self.usart1lpen(),
+                self.rtcapblpen(),
+                self.tzc1lpen(),
+                self.tzc2lpen(),
+                self.tzpclpen(),
+                self.bseclpen(),
+                self.stgenlpen(),
+                self.stgenstpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to set the PERxLPEN bit."]
@@ -12374,7 +13211,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcApb5lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcApb5lpensetr {{ spi6lpen: {=bool:?}, i2c4lpen: {=bool:?}, i2c6lpen: {=bool:?}, usart1lpen: {=bool:?}, rtcapblpen: {=bool:?}, tzc1lpen: {=bool:?}, tzc2lpen: {=bool:?}, tzpclpen: {=bool:?}, bseclpen: {=bool:?}, stgenlpen: {=bool:?}, stgenstpen: {=bool:?} }}" , self . spi6lpen () , self . i2c4lpen () , self . i2c6lpen () , self . usart1lpen () , self . rtcapblpen () , self . tzc1lpen () , self . tzc2lpen () , self . tzpclpen () , self . bseclpen () , self . stgenlpen () , self . stgenstpen ())
+            defmt::write!(
+                f,
+                "RccMcApb5lpensetr {{ spi6lpen: {=bool:?}, i2c4lpen: {=bool:?}, i2c6lpen: {=bool:?}, usart1lpen: {=bool:?}, rtcapblpen: {=bool:?}, tzc1lpen: {=bool:?}, tzc2lpen: {=bool:?}, tzpclpen: {=bool:?}, bseclpen: {=bool:?}, stgenlpen: {=bool:?}, stgenstpen: {=bool:?} }}",
+                self.spi6lpen(),
+                self.i2c4lpen(),
+                self.i2c6lpen(),
+                self.usart1lpen(),
+                self.rtcapblpen(),
+                self.tzc1lpen(),
+                self.tzc2lpen(),
+                self.tzpclpen(),
+                self.bseclpen(),
+                self.stgenlpen(),
+                self.stgenstpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit."]
@@ -12657,7 +13508,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcCier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcCier {{ lsirdyie: {=bool:?}, lserdyie: {=bool:?}, hsirdyie: {=bool:?}, hserdyie: {=bool:?}, csirdyie: {=bool:?}, plldyie[0]: {=bool:?}, plldyie[1]: {=bool:?}, plldyie[2]: {=bool:?}, plldyie[3]: {=bool:?}, lsecssie: {=bool:?}, wkupie: {=bool:?} }}" , self . lsirdyie () , self . lserdyie () , self . hsirdyie () , self . hserdyie () , self . csirdyie () , self . plldyie (0usize) , self . plldyie (1usize) , self . plldyie (2usize) , self . plldyie (3usize) , self . lsecssie () , self . wkupie ())
+            defmt::write!(
+                f,
+                "RccMcCier {{ lsirdyie: {=bool:?}, lserdyie: {=bool:?}, hsirdyie: {=bool:?}, hserdyie: {=bool:?}, csirdyie: {=bool:?}, plldyie[0]: {=bool:?}, plldyie[1]: {=bool:?}, plldyie[2]: {=bool:?}, plldyie[3]: {=bool:?}, lsecssie: {=bool:?}, wkupie: {=bool:?} }}",
+                self.lsirdyie(),
+                self.lserdyie(),
+                self.hsirdyie(),
+                self.hserdyie(),
+                self.csirdyie(),
+                self.plldyie(0usize),
+                self.plldyie(1usize),
+                self.plldyie(2usize),
+                self.plldyie(3usize),
+                self.lsecssie(),
+                self.wkupie()
+            )
         }
     }
     #[doc = "This register shall be used by the MCU in order to read and clear the interrupt flags."]
@@ -12792,7 +13657,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcCifr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcCifr {{ lsirdyf: {=bool:?}, lserdyf: {=bool:?}, hsirdyf: {=bool:?}, hserdyf: {=bool:?}, csirdyf: {=bool:?}, plldyf[0]: {=bool:?}, plldyf[1]: {=bool:?}, plldyf[2]: {=bool:?}, plldyf[3]: {=bool:?}, lsecssf: {=bool:?}, wkupf: {=bool:?} }}" , self . lsirdyf () , self . lserdyf () , self . hsirdyf () , self . hserdyf () , self . csirdyf () , self . plldyf (0usize) , self . plldyf (1usize) , self . plldyf (2usize) , self . plldyf (3usize) , self . lsecssf () , self . wkupf ())
+            defmt::write!(
+                f,
+                "RccMcCifr {{ lsirdyf: {=bool:?}, lserdyf: {=bool:?}, hsirdyf: {=bool:?}, hserdyf: {=bool:?}, csirdyf: {=bool:?}, plldyf[0]: {=bool:?}, plldyf[1]: {=bool:?}, plldyf[2]: {=bool:?}, plldyf[3]: {=bool:?}, lsecssf: {=bool:?}, wkupf: {=bool:?} }}",
+                self.lsirdyf(),
+                self.lserdyf(),
+                self.hsirdyf(),
+                self.hserdyf(),
+                self.csirdyf(),
+                self.plldyf(0usize),
+                self.plldyf(1usize),
+                self.plldyf(2usize),
+                self.plldyf(3usize),
+                self.lsecssf(),
+                self.wkupf()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit."]
@@ -12942,7 +13821,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcMlahblpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcMlahblpenclrr {{ sram1lpen: {=bool:?}, sram2lpen: {=bool:?}, sram34lpen: {=bool:?}, retramlpen: {=bool:?} }}" , self . sram1lpen () , self . sram2lpen () , self . sram34lpen () , self . retramlpen ())
+            defmt::write!(
+                f,
+                "RccMcMlahblpenclrr {{ sram1lpen: {=bool:?}, sram2lpen: {=bool:?}, sram34lpen: {=bool:?}, retramlpen: {=bool:?} }}",
+                self.sram1lpen(),
+                self.sram2lpen(),
+                self.sram34lpen(),
+                self.retramlpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to set the PERxLPEN bit of the corresponding peripheral."]
@@ -13018,7 +13904,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcMlahblpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcMlahblpensetr {{ sram1lpen: {=bool:?}, sram2lpen: {=bool:?}, sram34lpen: {=bool:?}, retramlpen: {=bool:?} }}" , self . sram1lpen () , self . sram2lpen () , self . sram34lpen () , self . retramlpen ())
+            defmt::write!(
+                f,
+                "RccMcMlahblpensetr {{ sram1lpen: {=bool:?}, sram2lpen: {=bool:?}, sram34lpen: {=bool:?}, retramlpen: {=bool:?} }}",
+                self.sram1lpen(),
+                self.sram2lpen(),
+                self.sram34lpen(),
+                self.retramlpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU to check the reset source."]
@@ -13185,7 +14078,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMcRstsclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMcRstsclrr {{ porrstf: {=bool:?}, borrstf: {=bool:?}, padrstf: {=bool:?}, hcssrstf: {=bool:?}, vcorerstf: {=bool:?}, mcurstf: {=bool:?}, mpsysrstf: {=bool:?}, mcsysrstf: {=bool:?}, iwdg1rstf: {=bool:?}, iwdg2rstf: {=bool:?}, wwdg1rstf: {=bool:?} }}" , self . porrstf () , self . borrstf () , self . padrstf () , self . hcssrstf () , self . vcorerstf () , self . mcurstf () , self . mpsysrstf () , self . mcsysrstf () , self . iwdg1rstf () , self . iwdg2rstf () , self . wwdg1rstf ())
+            defmt::write!(
+                f,
+                "RccMcRstsclrr {{ porrstf: {=bool:?}, borrstf: {=bool:?}, padrstf: {=bool:?}, hcssrstf: {=bool:?}, vcorerstf: {=bool:?}, mcurstf: {=bool:?}, mpsysrstf: {=bool:?}, mcsysrstf: {=bool:?}, iwdg1rstf: {=bool:?}, iwdg2rstf: {=bool:?}, wwdg1rstf: {=bool:?} }}",
+                self.porrstf(),
+                self.borrstf(),
+                self.padrstf(),
+                self.hcssrstf(),
+                self.vcorerstf(),
+                self.mcurstf(),
+                self.mpsysrstf(),
+                self.mcsysrstf(),
+                self.iwdg1rstf(),
+                self.iwdg2rstf(),
+                self.wwdg1rstf()
+            )
         }
     }
     #[doc = "This register is used to select the clock generated on MCO1 output."]
@@ -13480,7 +14387,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb2enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb2enclrr {{ dma1en: {=bool:?}, dma2en: {=bool:?}, dmamuxen: {=bool:?}, adc12en: {=bool:?}, usboen: {=bool:?}, sdmmc3en: {=bool:?} }}" , self . dma1en () , self . dma2en () , self . dmamuxen () , self . adc12en () , self . usboen () , self . sdmmc3en ())
+            defmt::write!(
+                f,
+                "RccMpAhb2enclrr {{ dma1en: {=bool:?}, dma2en: {=bool:?}, dmamuxen: {=bool:?}, adc12en: {=bool:?}, usboen: {=bool:?}, sdmmc3en: {=bool:?} }}",
+                self.dma1en(),
+                self.dma2en(),
+                self.dmamuxen(),
+                self.adc12en(),
+                self.usboen(),
+                self.sdmmc3en()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit of the corresponding peripheral."]
@@ -13582,7 +14498,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb2ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb2ensetr {{ dma1en: {=bool:?}, dma2en: {=bool:?}, dmamuxen: {=bool:?}, adc12en: {=bool:?}, usboen: {=bool:?}, sdmmc3en: {=bool:?} }}" , self . dma1en () , self . dma2en () , self . dmamuxen () , self . adc12en () , self . usboen () , self . sdmmc3en ())
+            defmt::write!(
+                f,
+                "RccMpAhb2ensetr {{ dma1en: {=bool:?}, dma2en: {=bool:?}, dmamuxen: {=bool:?}, adc12en: {=bool:?}, usboen: {=bool:?}, sdmmc3en: {=bool:?} }}",
+                self.dma1en(),
+                self.dma2en(),
+                self.dmamuxen(),
+                self.adc12en(),
+                self.usboen(),
+                self.sdmmc3en()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bits."]
@@ -13684,7 +14609,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb2lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb2lpenclrr {{ dma1lpen: {=bool:?}, dma2lpen: {=bool:?}, dmamuxlpen: {=bool:?}, adc12lpen: {=bool:?}, usbolpen: {=bool:?}, sdmmc3lpen: {=bool:?} }}" , self . dma1lpen () , self . dma2lpen () , self . dmamuxlpen () , self . adc12lpen () , self . usbolpen () , self . sdmmc3lpen ())
+            defmt::write!(
+                f,
+                "RccMpAhb2lpenclrr {{ dma1lpen: {=bool:?}, dma2lpen: {=bool:?}, dmamuxlpen: {=bool:?}, adc12lpen: {=bool:?}, usbolpen: {=bool:?}, sdmmc3lpen: {=bool:?} }}",
+                self.dma1lpen(),
+                self.dma2lpen(),
+                self.dmamuxlpen(),
+                self.adc12lpen(),
+                self.usbolpen(),
+                self.sdmmc3lpen()
+            )
         }
     }
     #[doc = "This register is used by the MPU in order to set the PERxLPEN bit."]
@@ -13786,7 +14720,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb2lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb2lpensetr {{ dma1lpen: {=bool:?}, dma2lpen: {=bool:?}, dmamuxlpen: {=bool:?}, adc12lpen: {=bool:?}, usbolpen: {=bool:?}, sdmmc3lpen: {=bool:?} }}" , self . dma1lpen () , self . dma2lpen () , self . dmamuxlpen () , self . adc12lpen () , self . usbolpen () , self . sdmmc3lpen ())
+            defmt::write!(
+                f,
+                "RccMpAhb2lpensetr {{ dma1lpen: {=bool:?}, dma2lpen: {=bool:?}, dmamuxlpen: {=bool:?}, adc12lpen: {=bool:?}, usbolpen: {=bool:?}, sdmmc3lpen: {=bool:?} }}",
+                self.dma1lpen(),
+                self.dma2lpen(),
+                self.dmamuxlpen(),
+                self.adc12lpen(),
+                self.usbolpen(),
+                self.sdmmc3lpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit of the corresponding peripheral."]
@@ -13901,7 +14844,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb3enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb3enclrr {{ dcmien: {=bool:?}, cryp2en: {=bool:?}, hash2en: {=bool:?}, rng2en: {=bool:?}, crc2en: {=bool:?}, hsemen: {=bool:?}, ipccen: {=bool:?} }}" , self . dcmien () , self . cryp2en () , self . hash2en () , self . rng2en () , self . crc2en () , self . hsemen () , self . ipccen ())
+            defmt::write!(
+                f,
+                "RccMpAhb3enclrr {{ dcmien: {=bool:?}, cryp2en: {=bool:?}, hash2en: {=bool:?}, rng2en: {=bool:?}, crc2en: {=bool:?}, hsemen: {=bool:?}, ipccen: {=bool:?} }}",
+                self.dcmien(),
+                self.cryp2en(),
+                self.hash2en(),
+                self.rng2en(),
+                self.crc2en(),
+                self.hsemen(),
+                self.ipccen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit of the corresponding peripheral."]
@@ -14016,7 +14969,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb3ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb3ensetr {{ dcmien: {=bool:?}, cryp2en: {=bool:?}, hash2en: {=bool:?}, rng2en: {=bool:?}, crc2en: {=bool:?}, hsemen: {=bool:?}, ipccen: {=bool:?} }}" , self . dcmien () , self . cryp2en () , self . hash2en () , self . rng2en () , self . crc2en () , self . hsemen () , self . ipccen ())
+            defmt::write!(
+                f,
+                "RccMpAhb3ensetr {{ dcmien: {=bool:?}, cryp2en: {=bool:?}, hash2en: {=bool:?}, rng2en: {=bool:?}, crc2en: {=bool:?}, hsemen: {=bool:?}, ipccen: {=bool:?} }}",
+                self.dcmien(),
+                self.cryp2en(),
+                self.hash2en(),
+                self.rng2en(),
+                self.crc2en(),
+                self.hsemen(),
+                self.ipccen()
+            )
         }
     }
     #[doc = "This register is used by the MPU in order to clear the PERxLPEN bit."]
@@ -14131,7 +15094,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb3lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb3lpenclrr {{ dcmilpen: {=bool:?}, cryp2lpen: {=bool:?}, hash2lpen: {=bool:?}, rng2lpen: {=bool:?}, crc2lpen: {=bool:?}, hsemlpen: {=bool:?}, ipcclpen: {=bool:?} }}" , self . dcmilpen () , self . cryp2lpen () , self . hash2lpen () , self . rng2lpen () , self . crc2lpen () , self . hsemlpen () , self . ipcclpen ())
+            defmt::write!(
+                f,
+                "RccMpAhb3lpenclrr {{ dcmilpen: {=bool:?}, cryp2lpen: {=bool:?}, hash2lpen: {=bool:?}, rng2lpen: {=bool:?}, crc2lpen: {=bool:?}, hsemlpen: {=bool:?}, ipcclpen: {=bool:?} }}",
+                self.dcmilpen(),
+                self.cryp2lpen(),
+                self.hash2lpen(),
+                self.rng2lpen(),
+                self.crc2lpen(),
+                self.hsemlpen(),
+                self.ipcclpen()
+            )
         }
     }
     #[doc = "This register is used by the MPU."]
@@ -14246,7 +15219,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb3lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb3lpensetr {{ dcmilpen: {=bool:?}, cryp2lpen: {=bool:?}, hash2lpen: {=bool:?}, rng2lpen: {=bool:?}, crc2lpen: {=bool:?}, hsemlpen: {=bool:?}, ipcclpen: {=bool:?} }}" , self . dcmilpen () , self . cryp2lpen () , self . hash2lpen () , self . rng2lpen () , self . crc2lpen () , self . hsemlpen () , self . ipcclpen ())
+            defmt::write!(
+                f,
+                "RccMpAhb3lpensetr {{ dcmilpen: {=bool:?}, cryp2lpen: {=bool:?}, hash2lpen: {=bool:?}, rng2lpen: {=bool:?}, crc2lpen: {=bool:?}, hsemlpen: {=bool:?}, ipcclpen: {=bool:?} }}",
+                self.dcmilpen(),
+                self.cryp2lpen(),
+                self.hash2lpen(),
+                self.rng2lpen(),
+                self.crc2lpen(),
+                self.hsemlpen(),
+                self.ipcclpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit."]
@@ -14413,7 +15396,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb4enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb4enclrr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiofen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, gpioien: {=bool:?}, gpiojen: {=bool:?}, gpioken: {=bool:?} }}" , self . gpioaen () , self . gpioben () , self . gpiocen () , self . gpioden () , self . gpioeen () , self . gpiofen () , self . gpiogen () , self . gpiohen () , self . gpioien () , self . gpiojen () , self . gpioken ())
+            defmt::write!(
+                f,
+                "RccMpAhb4enclrr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiofen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, gpioien: {=bool:?}, gpiojen: {=bool:?}, gpioken: {=bool:?} }}",
+                self.gpioaen(),
+                self.gpioben(),
+                self.gpiocen(),
+                self.gpioden(),
+                self.gpioeen(),
+                self.gpiofen(),
+                self.gpiogen(),
+                self.gpiohen(),
+                self.gpioien(),
+                self.gpiojen(),
+                self.gpioken()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit of the corresponding peripheral to . It shall be used to allocate a peripheral to the MPU."]
@@ -14580,7 +15577,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb4ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb4ensetr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiofen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, gpioien: {=bool:?}, gpiojen: {=bool:?}, gpioken: {=bool:?} }}" , self . gpioaen () , self . gpioben () , self . gpiocen () , self . gpioden () , self . gpioeen () , self . gpiofen () , self . gpiogen () , self . gpiohen () , self . gpioien () , self . gpiojen () , self . gpioken ())
+            defmt::write!(
+                f,
+                "RccMpAhb4ensetr {{ gpioaen: {=bool:?}, gpioben: {=bool:?}, gpiocen: {=bool:?}, gpioden: {=bool:?}, gpioeen: {=bool:?}, gpiofen: {=bool:?}, gpiogen: {=bool:?}, gpiohen: {=bool:?}, gpioien: {=bool:?}, gpiojen: {=bool:?}, gpioken: {=bool:?} }}",
+                self.gpioaen(),
+                self.gpioben(),
+                self.gpiocen(),
+                self.gpioden(),
+                self.gpioeen(),
+                self.gpiofen(),
+                self.gpiogen(),
+                self.gpiohen(),
+                self.gpioien(),
+                self.gpiojen(),
+                self.gpioken()
+            )
         }
     }
     #[doc = "This register is used by the MPU."]
@@ -14747,7 +15758,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb4lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb4lpenclrr {{ gpioalpen: {=bool:?}, gpioblpen: {=bool:?}, gpioclpen: {=bool:?}, gpiodlpen: {=bool:?}, gpioelpen: {=bool:?}, gpioflpen: {=bool:?}, gpioglpen: {=bool:?}, gpiohlpen: {=bool:?}, gpioilpen: {=bool:?}, gpiojlpen: {=bool:?}, gpioklpen: {=bool:?} }}" , self . gpioalpen () , self . gpioblpen () , self . gpioclpen () , self . gpiodlpen () , self . gpioelpen () , self . gpioflpen () , self . gpioglpen () , self . gpiohlpen () , self . gpioilpen () , self . gpiojlpen () , self . gpioklpen ())
+            defmt::write!(
+                f,
+                "RccMpAhb4lpenclrr {{ gpioalpen: {=bool:?}, gpioblpen: {=bool:?}, gpioclpen: {=bool:?}, gpiodlpen: {=bool:?}, gpioelpen: {=bool:?}, gpioflpen: {=bool:?}, gpioglpen: {=bool:?}, gpiohlpen: {=bool:?}, gpioilpen: {=bool:?}, gpiojlpen: {=bool:?}, gpioklpen: {=bool:?} }}",
+                self.gpioalpen(),
+                self.gpioblpen(),
+                self.gpioclpen(),
+                self.gpiodlpen(),
+                self.gpioelpen(),
+                self.gpioflpen(),
+                self.gpioglpen(),
+                self.gpiohlpen(),
+                self.gpioilpen(),
+                self.gpiojlpen(),
+                self.gpioklpen()
+            )
         }
     }
     #[doc = "This register is used by the MPU."]
@@ -14914,7 +15939,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb4lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb4lpensetr {{ gpioalpen: {=bool:?}, gpioblpen: {=bool:?}, gpioclpen: {=bool:?}, gpiodlpen: {=bool:?}, gpioelpen: {=bool:?}, gpioflpen: {=bool:?}, gpioglpen: {=bool:?}, gpiohlpen: {=bool:?}, gpioilpen: {=bool:?}, gpiojlpen: {=bool:?}, gpioklpen: {=bool:?} }}" , self . gpioalpen () , self . gpioblpen () , self . gpioclpen () , self . gpiodlpen () , self . gpioelpen () , self . gpioflpen () , self . gpioglpen () , self . gpiohlpen () , self . gpioilpen () , self . gpiojlpen () , self . gpioklpen ())
+            defmt::write!(
+                f,
+                "RccMpAhb4lpensetr {{ gpioalpen: {=bool:?}, gpioblpen: {=bool:?}, gpioclpen: {=bool:?}, gpiodlpen: {=bool:?}, gpioelpen: {=bool:?}, gpioflpen: {=bool:?}, gpioglpen: {=bool:?}, gpiohlpen: {=bool:?}, gpioilpen: {=bool:?}, gpiojlpen: {=bool:?}, gpioklpen: {=bool:?} }}",
+                self.gpioalpen(),
+                self.gpioblpen(),
+                self.gpioclpen(),
+                self.gpiodlpen(),
+                self.gpioelpen(),
+                self.gpioflpen(),
+                self.gpioglpen(),
+                self.gpiohlpen(),
+                self.gpioilpen(),
+                self.gpiojlpen(),
+                self.gpioklpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit of the corresponding peripheral. It shall be used to deallocate a peripheral from MPU. Writing has no effect, reading will return the effective values of the corresponding bits. Writing a sets the corresponding bit to . If TZEN = , this register can only be modified in secure mode."]
@@ -15016,7 +16055,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb5enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb5enclrr {{ gpiozen: {=bool:?}, cryp1en: {=bool:?}, hash1en: {=bool:?}, rng1en: {=bool:?}, bkpsramen: {=bool:?}, aximcen: {=bool:?} }}" , self . gpiozen () , self . cryp1en () , self . hash1en () , self . rng1en () , self . bkpsramen () , self . aximcen ())
+            defmt::write!(
+                f,
+                "RccMpAhb5enclrr {{ gpiozen: {=bool:?}, cryp1en: {=bool:?}, hash1en: {=bool:?}, rng1en: {=bool:?}, bkpsramen: {=bool:?}, aximcen: {=bool:?} }}",
+                self.gpiozen(),
+                self.cryp1en(),
+                self.hash1en(),
+                self.rng1en(),
+                self.bkpsramen(),
+                self.aximcen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit of the corresponding peripheral to . It shall be used to allocate a peripheral to the MPU. Writing has no effect, reading will return the effective values of the corresponding bits. Writing a sets the corresponding bit to . If TZEN = , this register can only be modified in secure mode."]
@@ -15118,7 +16166,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb5ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb5ensetr {{ gpiozen: {=bool:?}, cryp1en: {=bool:?}, hash1en: {=bool:?}, rng1en: {=bool:?}, bkpsramen: {=bool:?}, aximcen: {=bool:?} }}" , self . gpiozen () , self . cryp1en () , self . hash1en () , self . rng1en () , self . bkpsramen () , self . aximcen ())
+            defmt::write!(
+                f,
+                "RccMpAhb5ensetr {{ gpiozen: {=bool:?}, cryp1en: {=bool:?}, hash1en: {=bool:?}, rng1en: {=bool:?}, bkpsramen: {=bool:?}, aximcen: {=bool:?} }}",
+                self.gpiozen(),
+                self.cryp1en(),
+                self.hash1en(),
+                self.rng1en(),
+                self.bkpsramen(),
+                self.aximcen()
+            )
         }
     }
     #[doc = "This register is used by the MCU."]
@@ -15207,7 +16264,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb5lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb5lpenclrr {{ gpiozlpen: {=bool:?}, cryp1lpen: {=bool:?}, hash1lpen: {=bool:?}, rng1lpen: {=bool:?}, bkpsramlpen: {=bool:?} }}" , self . gpiozlpen () , self . cryp1lpen () , self . hash1lpen () , self . rng1lpen () , self . bkpsramlpen ())
+            defmt::write!(
+                f,
+                "RccMpAhb5lpenclrr {{ gpiozlpen: {=bool:?}, cryp1lpen: {=bool:?}, hash1lpen: {=bool:?}, rng1lpen: {=bool:?}, bkpsramlpen: {=bool:?} }}",
+                self.gpiozlpen(),
+                self.cryp1lpen(),
+                self.hash1lpen(),
+                self.rng1lpen(),
+                self.bkpsramlpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bits If TZEN = , this register can only be modified in secure mode."]
@@ -15296,7 +16361,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb5lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb5lpensetr {{ gpiozlpen: {=bool:?}, cryp1lpen: {=bool:?}, hash1lpen: {=bool:?}, rng1lpen: {=bool:?}, bkpsramlpen: {=bool:?} }}" , self . gpiozlpen () , self . cryp1lpen () , self . hash1lpen () , self . rng1lpen () , self . bkpsramlpen ())
+            defmt::write!(
+                f,
+                "RccMpAhb5lpensetr {{ gpiozlpen: {=bool:?}, cryp1lpen: {=bool:?}, hash1lpen: {=bool:?}, rng1lpen: {=bool:?}, bkpsramlpen: {=bool:?} }}",
+                self.gpiozlpen(),
+                self.cryp1lpen(),
+                self.hash1lpen(),
+                self.rng1lpen(),
+                self.bkpsramlpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit of the corresponding peripheral. It shall be used to deallocate a peripheral from MPU. Writing has no effect, reading will return the effective values of the corresponding bits. Writing a sets the corresponding bit to."]
@@ -15476,7 +16549,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb6enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb6enclrr {{ mdmaen: {=bool:?}, gpuen: {=bool:?}, ethcken: {=bool:?}, ethtxen: {=bool:?}, ethrxen: {=bool:?}, ethmacen: {=bool:?}, fmcen: {=bool:?}, qspien: {=bool:?}, sdmmc1en: {=bool:?}, sdmmc2en: {=bool:?}, crc1en: {=bool:?}, usbhen: {=bool:?} }}" , self . mdmaen () , self . gpuen () , self . ethcken () , self . ethtxen () , self . ethrxen () , self . ethmacen () , self . fmcen () , self . qspien () , self . sdmmc1en () , self . sdmmc2en () , self . crc1en () , self . usbhen ())
+            defmt::write!(
+                f,
+                "RccMpAhb6enclrr {{ mdmaen: {=bool:?}, gpuen: {=bool:?}, ethcken: {=bool:?}, ethtxen: {=bool:?}, ethrxen: {=bool:?}, ethmacen: {=bool:?}, fmcen: {=bool:?}, qspien: {=bool:?}, sdmmc1en: {=bool:?}, sdmmc2en: {=bool:?}, crc1en: {=bool:?}, usbhen: {=bool:?} }}",
+                self.mdmaen(),
+                self.gpuen(),
+                self.ethcken(),
+                self.ethtxen(),
+                self.ethrxen(),
+                self.ethmacen(),
+                self.fmcen(),
+                self.qspien(),
+                self.sdmmc1en(),
+                self.sdmmc2en(),
+                self.crc1en(),
+                self.usbhen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit of the corresponding peripheral to . It shall be used to allocate a peripheral to the MPU. Writing has no effect, reading will return the effective values of the corresponding bits. Writing a sets the corresponding bit to."]
@@ -15656,7 +16744,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb6ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb6ensetr {{ mdmaen: {=bool:?}, gpuen: {=bool:?}, ethcken: {=bool:?}, ethtxen: {=bool:?}, ethrxen: {=bool:?}, ethmacen: {=bool:?}, fmcen: {=bool:?}, qspien: {=bool:?}, sdmmc1en: {=bool:?}, sdmmc2en: {=bool:?}, crc1en: {=bool:?}, usbhen: {=bool:?} }}" , self . mdmaen () , self . gpuen () , self . ethcken () , self . ethtxen () , self . ethrxen () , self . ethmacen () , self . fmcen () , self . qspien () , self . sdmmc1en () , self . sdmmc2en () , self . crc1en () , self . usbhen ())
+            defmt::write!(
+                f,
+                "RccMpAhb6ensetr {{ mdmaen: {=bool:?}, gpuen: {=bool:?}, ethcken: {=bool:?}, ethtxen: {=bool:?}, ethrxen: {=bool:?}, ethmacen: {=bool:?}, fmcen: {=bool:?}, qspien: {=bool:?}, sdmmc1en: {=bool:?}, sdmmc2en: {=bool:?}, crc1en: {=bool:?}, usbhen: {=bool:?} }}",
+                self.mdmaen(),
+                self.gpuen(),
+                self.ethcken(),
+                self.ethtxen(),
+                self.ethrxen(),
+                self.ethmacen(),
+                self.fmcen(),
+                self.qspien(),
+                self.sdmmc1en(),
+                self.sdmmc2en(),
+                self.crc1en(),
+                self.usbhen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bits."]
@@ -15849,7 +16952,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb6lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb6lpenclrr {{ mdmalpen: {=bool:?}, gpulpen: {=bool:?}, ethcklpen: {=bool:?}, ethtxlpen: {=bool:?}, ethrxlpen: {=bool:?}, ethmaclpen: {=bool:?}, ethstpen: {=bool:?}, fmclpen: {=bool:?}, qspilpen: {=bool:?}, sdmmc1lpen: {=bool:?}, sdmmc2lpen: {=bool:?}, crc1lpen: {=bool:?}, usbhlpen: {=bool:?} }}" , self . mdmalpen () , self . gpulpen () , self . ethcklpen () , self . ethtxlpen () , self . ethrxlpen () , self . ethmaclpen () , self . ethstpen () , self . fmclpen () , self . qspilpen () , self . sdmmc1lpen () , self . sdmmc2lpen () , self . crc1lpen () , self . usbhlpen ())
+            defmt::write!(
+                f,
+                "RccMpAhb6lpenclrr {{ mdmalpen: {=bool:?}, gpulpen: {=bool:?}, ethcklpen: {=bool:?}, ethtxlpen: {=bool:?}, ethrxlpen: {=bool:?}, ethmaclpen: {=bool:?}, ethstpen: {=bool:?}, fmclpen: {=bool:?}, qspilpen: {=bool:?}, sdmmc1lpen: {=bool:?}, sdmmc2lpen: {=bool:?}, crc1lpen: {=bool:?}, usbhlpen: {=bool:?} }}",
+                self.mdmalpen(),
+                self.gpulpen(),
+                self.ethcklpen(),
+                self.ethtxlpen(),
+                self.ethrxlpen(),
+                self.ethmaclpen(),
+                self.ethstpen(),
+                self.fmclpen(),
+                self.qspilpen(),
+                self.sdmmc1lpen(),
+                self.sdmmc2lpen(),
+                self.crc1lpen(),
+                self.usbhlpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bits."]
@@ -16042,7 +17161,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpAhb6lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpAhb6lpensetr {{ mdmalpen: {=bool:?}, gpulpen: {=bool:?}, ethcklpen: {=bool:?}, ethtxlpen: {=bool:?}, ethrxlpen: {=bool:?}, ethmaclpen: {=bool:?}, ethstpen: {=bool:?}, fmclpen: {=bool:?}, qspilpen: {=bool:?}, sdmmc1lpen: {=bool:?}, sdmmc2lpen: {=bool:?}, crc1lpen: {=bool:?}, usbhlpen: {=bool:?} }}" , self . mdmalpen () , self . gpulpen () , self . ethcklpen () , self . ethtxlpen () , self . ethrxlpen () , self . ethmaclpen () , self . ethstpen () , self . fmclpen () , self . qspilpen () , self . sdmmc1lpen () , self . sdmmc2lpen () , self . crc1lpen () , self . usbhlpen ())
+            defmt::write!(
+                f,
+                "RccMpAhb6lpensetr {{ mdmalpen: {=bool:?}, gpulpen: {=bool:?}, ethcklpen: {=bool:?}, ethtxlpen: {=bool:?}, ethrxlpen: {=bool:?}, ethmaclpen: {=bool:?}, ethstpen: {=bool:?}, fmclpen: {=bool:?}, qspilpen: {=bool:?}, sdmmc1lpen: {=bool:?}, sdmmc2lpen: {=bool:?}, crc1lpen: {=bool:?}, usbhlpen: {=bool:?} }}",
+                self.mdmalpen(),
+                self.gpulpen(),
+                self.ethcklpen(),
+                self.ethtxlpen(),
+                self.ethrxlpen(),
+                self.ethmaclpen(),
+                self.ethstpen(),
+                self.fmclpen(),
+                self.qspilpen(),
+                self.sdmmc1lpen(),
+                self.sdmmc2lpen(),
+                self.crc1lpen(),
+                self.usbhlpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit."]
@@ -16404,7 +17539,36 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb1enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb1enclrr {{ tim2en: {=bool:?}, tim3en: {=bool:?}, tim4en: {=bool:?}, tim5en: {=bool:?}, tim6en: {=bool:?}, tim7en: {=bool:?}, tim12en: {=bool:?}, tim13en: {=bool:?}, tim14en: {=bool:?}, lptim1en: {=bool:?}, spi2en: {=bool:?}, spi3en: {=bool:?}, usart2en: {=bool:?}, usart3en: {=bool:?}, uart4en: {=bool:?}, uart5en: {=bool:?}, uart7en: {=bool:?}, uart8en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, i2c3en: {=bool:?}, i2c5en: {=bool:?}, spdifen: {=bool:?}, cecen: {=bool:?}, dac12en: {=bool:?}, mdiosen: {=bool:?} }}" , self . tim2en () , self . tim3en () , self . tim4en () , self . tim5en () , self . tim6en () , self . tim7en () , self . tim12en () , self . tim13en () , self . tim14en () , self . lptim1en () , self . spi2en () , self . spi3en () , self . usart2en () , self . usart3en () , self . uart4en () , self . uart5en () , self . uart7en () , self . uart8en () , self . i2c1en () , self . i2c2en () , self . i2c3en () , self . i2c5en () , self . spdifen () , self . cecen () , self . dac12en () , self . mdiosen ())
+            defmt::write!(
+                f,
+                "RccMpApb1enclrr {{ tim2en: {=bool:?}, tim3en: {=bool:?}, tim4en: {=bool:?}, tim5en: {=bool:?}, tim6en: {=bool:?}, tim7en: {=bool:?}, tim12en: {=bool:?}, tim13en: {=bool:?}, tim14en: {=bool:?}, lptim1en: {=bool:?}, spi2en: {=bool:?}, spi3en: {=bool:?}, usart2en: {=bool:?}, usart3en: {=bool:?}, uart4en: {=bool:?}, uart5en: {=bool:?}, uart7en: {=bool:?}, uart8en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, i2c3en: {=bool:?}, i2c5en: {=bool:?}, spdifen: {=bool:?}, cecen: {=bool:?}, dac12en: {=bool:?}, mdiosen: {=bool:?} }}",
+                self.tim2en(),
+                self.tim3en(),
+                self.tim4en(),
+                self.tim5en(),
+                self.tim6en(),
+                self.tim7en(),
+                self.tim12en(),
+                self.tim13en(),
+                self.tim14en(),
+                self.lptim1en(),
+                self.spi2en(),
+                self.spi3en(),
+                self.usart2en(),
+                self.usart3en(),
+                self.uart4en(),
+                self.uart5en(),
+                self.uart7en(),
+                self.uart8en(),
+                self.i2c1en(),
+                self.i2c2en(),
+                self.i2c3en(),
+                self.i2c5en(),
+                self.spdifen(),
+                self.cecen(),
+                self.dac12en(),
+                self.mdiosen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit."]
@@ -16766,7 +17930,36 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb1ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb1ensetr {{ tim2en: {=bool:?}, tim3en: {=bool:?}, tim4en: {=bool:?}, tim5en: {=bool:?}, tim6en: {=bool:?}, tim7en: {=bool:?}, tim12en: {=bool:?}, tim13en: {=bool:?}, tim14en: {=bool:?}, lptim1en: {=bool:?}, spi2en: {=bool:?}, spi3en: {=bool:?}, usart2en: {=bool:?}, usart3en: {=bool:?}, uart4en: {=bool:?}, uart5en: {=bool:?}, uart7en: {=bool:?}, uart8en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, i2c3en: {=bool:?}, i2c5en: {=bool:?}, spdifen: {=bool:?}, cecen: {=bool:?}, dac12en: {=bool:?}, mdiosen: {=bool:?} }}" , self . tim2en () , self . tim3en () , self . tim4en () , self . tim5en () , self . tim6en () , self . tim7en () , self . tim12en () , self . tim13en () , self . tim14en () , self . lptim1en () , self . spi2en () , self . spi3en () , self . usart2en () , self . usart3en () , self . uart4en () , self . uart5en () , self . uart7en () , self . uart8en () , self . i2c1en () , self . i2c2en () , self . i2c3en () , self . i2c5en () , self . spdifen () , self . cecen () , self . dac12en () , self . mdiosen ())
+            defmt::write!(
+                f,
+                "RccMpApb1ensetr {{ tim2en: {=bool:?}, tim3en: {=bool:?}, tim4en: {=bool:?}, tim5en: {=bool:?}, tim6en: {=bool:?}, tim7en: {=bool:?}, tim12en: {=bool:?}, tim13en: {=bool:?}, tim14en: {=bool:?}, lptim1en: {=bool:?}, spi2en: {=bool:?}, spi3en: {=bool:?}, usart2en: {=bool:?}, usart3en: {=bool:?}, uart4en: {=bool:?}, uart5en: {=bool:?}, uart7en: {=bool:?}, uart8en: {=bool:?}, i2c1en: {=bool:?}, i2c2en: {=bool:?}, i2c3en: {=bool:?}, i2c5en: {=bool:?}, spdifen: {=bool:?}, cecen: {=bool:?}, dac12en: {=bool:?}, mdiosen: {=bool:?} }}",
+                self.tim2en(),
+                self.tim3en(),
+                self.tim4en(),
+                self.tim5en(),
+                self.tim6en(),
+                self.tim7en(),
+                self.tim12en(),
+                self.tim13en(),
+                self.tim14en(),
+                self.lptim1en(),
+                self.spi2en(),
+                self.spi3en(),
+                self.usart2en(),
+                self.usart3en(),
+                self.uart4en(),
+                self.uart5en(),
+                self.uart7en(),
+                self.uart8en(),
+                self.i2c1en(),
+                self.i2c2en(),
+                self.i2c3en(),
+                self.i2c5en(),
+                self.spdifen(),
+                self.cecen(),
+                self.dac12en(),
+                self.mdiosen()
+            )
         }
     }
     #[doc = "This register is used by the MPU in order to clear the PERxLPEN bits."]
@@ -17128,7 +18321,36 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb1lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb1lpenclrr {{ tim2lpen: {=bool:?}, tim3lpen: {=bool:?}, tim4lpen: {=bool:?}, tim5lpen: {=bool:?}, tim6lpen: {=bool:?}, tim7lpen: {=bool:?}, tim12lpen: {=bool:?}, tim13lpen: {=bool:?}, tim14lpen: {=bool:?}, lptim1lpen: {=bool:?}, spi2lpen: {=bool:?}, spi3lpen: {=bool:?}, usart2lpen: {=bool:?}, usart3lpen: {=bool:?}, uart4lpen: {=bool:?}, uart5lpen: {=bool:?}, uart7lpen: {=bool:?}, uart8lpen: {=bool:?}, i2c1lpen: {=bool:?}, i2c2lpen: {=bool:?}, i2c3lpen: {=bool:?}, i2c5lpen: {=bool:?}, spdiflpen: {=bool:?}, ceclpen: {=bool:?}, dac12lpen: {=bool:?}, mdioslpen: {=bool:?} }}" , self . tim2lpen () , self . tim3lpen () , self . tim4lpen () , self . tim5lpen () , self . tim6lpen () , self . tim7lpen () , self . tim12lpen () , self . tim13lpen () , self . tim14lpen () , self . lptim1lpen () , self . spi2lpen () , self . spi3lpen () , self . usart2lpen () , self . usart3lpen () , self . uart4lpen () , self . uart5lpen () , self . uart7lpen () , self . uart8lpen () , self . i2c1lpen () , self . i2c2lpen () , self . i2c3lpen () , self . i2c5lpen () , self . spdiflpen () , self . ceclpen () , self . dac12lpen () , self . mdioslpen ())
+            defmt::write!(
+                f,
+                "RccMpApb1lpenclrr {{ tim2lpen: {=bool:?}, tim3lpen: {=bool:?}, tim4lpen: {=bool:?}, tim5lpen: {=bool:?}, tim6lpen: {=bool:?}, tim7lpen: {=bool:?}, tim12lpen: {=bool:?}, tim13lpen: {=bool:?}, tim14lpen: {=bool:?}, lptim1lpen: {=bool:?}, spi2lpen: {=bool:?}, spi3lpen: {=bool:?}, usart2lpen: {=bool:?}, usart3lpen: {=bool:?}, uart4lpen: {=bool:?}, uart5lpen: {=bool:?}, uart7lpen: {=bool:?}, uart8lpen: {=bool:?}, i2c1lpen: {=bool:?}, i2c2lpen: {=bool:?}, i2c3lpen: {=bool:?}, i2c5lpen: {=bool:?}, spdiflpen: {=bool:?}, ceclpen: {=bool:?}, dac12lpen: {=bool:?}, mdioslpen: {=bool:?} }}",
+                self.tim2lpen(),
+                self.tim3lpen(),
+                self.tim4lpen(),
+                self.tim5lpen(),
+                self.tim6lpen(),
+                self.tim7lpen(),
+                self.tim12lpen(),
+                self.tim13lpen(),
+                self.tim14lpen(),
+                self.lptim1lpen(),
+                self.spi2lpen(),
+                self.spi3lpen(),
+                self.usart2lpen(),
+                self.usart3lpen(),
+                self.uart4lpen(),
+                self.uart5lpen(),
+                self.uart7lpen(),
+                self.uart8lpen(),
+                self.i2c1lpen(),
+                self.i2c2lpen(),
+                self.i2c3lpen(),
+                self.i2c5lpen(),
+                self.spdiflpen(),
+                self.ceclpen(),
+                self.dac12lpen(),
+                self.mdioslpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bits."]
@@ -17490,7 +18712,36 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb1lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb1lpensetr {{ tim2lpen: {=bool:?}, tim3lpen: {=bool:?}, tim4lpen: {=bool:?}, tim5lpen: {=bool:?}, tim6lpen: {=bool:?}, tim7lpen: {=bool:?}, tim12lpen: {=bool:?}, tim13lpen: {=bool:?}, tim14lpen: {=bool:?}, lptim1lpen: {=bool:?}, spi2lpen: {=bool:?}, spi3lpen: {=bool:?}, usart2lpen: {=bool:?}, usart3lpen: {=bool:?}, uart4lpen: {=bool:?}, uart5lpen: {=bool:?}, uart7lpen: {=bool:?}, uart8lpen: {=bool:?}, i2c1lpen: {=bool:?}, i2c2lpen: {=bool:?}, i2c3lpen: {=bool:?}, i2c5lpen: {=bool:?}, spdiflpen: {=bool:?}, ceclpen: {=bool:?}, dac12lpen: {=bool:?}, mdioslpen: {=bool:?} }}" , self . tim2lpen () , self . tim3lpen () , self . tim4lpen () , self . tim5lpen () , self . tim6lpen () , self . tim7lpen () , self . tim12lpen () , self . tim13lpen () , self . tim14lpen () , self . lptim1lpen () , self . spi2lpen () , self . spi3lpen () , self . usart2lpen () , self . usart3lpen () , self . uart4lpen () , self . uart5lpen () , self . uart7lpen () , self . uart8lpen () , self . i2c1lpen () , self . i2c2lpen () , self . i2c3lpen () , self . i2c5lpen () , self . spdiflpen () , self . ceclpen () , self . dac12lpen () , self . mdioslpen ())
+            defmt::write!(
+                f,
+                "RccMpApb1lpensetr {{ tim2lpen: {=bool:?}, tim3lpen: {=bool:?}, tim4lpen: {=bool:?}, tim5lpen: {=bool:?}, tim6lpen: {=bool:?}, tim7lpen: {=bool:?}, tim12lpen: {=bool:?}, tim13lpen: {=bool:?}, tim14lpen: {=bool:?}, lptim1lpen: {=bool:?}, spi2lpen: {=bool:?}, spi3lpen: {=bool:?}, usart2lpen: {=bool:?}, usart3lpen: {=bool:?}, uart4lpen: {=bool:?}, uart5lpen: {=bool:?}, uart7lpen: {=bool:?}, uart8lpen: {=bool:?}, i2c1lpen: {=bool:?}, i2c2lpen: {=bool:?}, i2c3lpen: {=bool:?}, i2c5lpen: {=bool:?}, spdiflpen: {=bool:?}, ceclpen: {=bool:?}, dac12lpen: {=bool:?}, mdioslpen: {=bool:?} }}",
+                self.tim2lpen(),
+                self.tim3lpen(),
+                self.tim4lpen(),
+                self.tim5lpen(),
+                self.tim6lpen(),
+                self.tim7lpen(),
+                self.tim12lpen(),
+                self.tim13lpen(),
+                self.tim14lpen(),
+                self.lptim1lpen(),
+                self.spi2lpen(),
+                self.spi3lpen(),
+                self.usart2lpen(),
+                self.usart3lpen(),
+                self.uart4lpen(),
+                self.uart5lpen(),
+                self.uart7lpen(),
+                self.uart8lpen(),
+                self.i2c1lpen(),
+                self.i2c2lpen(),
+                self.i2c3lpen(),
+                self.i2c5lpen(),
+                self.spdiflpen(),
+                self.ceclpen(),
+                self.dac12lpen(),
+                self.mdioslpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit of the corresponding peripheral."]
@@ -17709,7 +18960,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb2enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb2enclrr {{ tim1en: {=bool:?}, tim8en: {=bool:?}, tim15en: {=bool:?}, tim16en: {=bool:?}, tim17en: {=bool:?}, spi1en: {=bool:?}, spi4en: {=bool:?}, spi5en: {=bool:?}, usart6en: {=bool:?}, sai1en: {=bool:?}, sai2en: {=bool:?}, sai3en: {=bool:?}, dfsdmen: {=bool:?}, adfsdmen: {=bool:?}, fdcanen: {=bool:?} }}" , self . tim1en () , self . tim8en () , self . tim15en () , self . tim16en () , self . tim17en () , self . spi1en () , self . spi4en () , self . spi5en () , self . usart6en () , self . sai1en () , self . sai2en () , self . sai3en () , self . dfsdmen () , self . adfsdmen () , self . fdcanen ())
+            defmt::write!(
+                f,
+                "RccMpApb2enclrr {{ tim1en: {=bool:?}, tim8en: {=bool:?}, tim15en: {=bool:?}, tim16en: {=bool:?}, tim17en: {=bool:?}, spi1en: {=bool:?}, spi4en: {=bool:?}, spi5en: {=bool:?}, usart6en: {=bool:?}, sai1en: {=bool:?}, sai2en: {=bool:?}, sai3en: {=bool:?}, dfsdmen: {=bool:?}, adfsdmen: {=bool:?}, fdcanen: {=bool:?} }}",
+                self.tim1en(),
+                self.tim8en(),
+                self.tim15en(),
+                self.tim16en(),
+                self.tim17en(),
+                self.spi1en(),
+                self.spi4en(),
+                self.spi5en(),
+                self.usart6en(),
+                self.sai1en(),
+                self.sai2en(),
+                self.sai3en(),
+                self.dfsdmen(),
+                self.adfsdmen(),
+                self.fdcanen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit."]
@@ -17928,7 +19197,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb2ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb2ensetr {{ tim1en: {=bool:?}, tim8en: {=bool:?}, tim15en: {=bool:?}, tim16en: {=bool:?}, tim17en: {=bool:?}, spi1en: {=bool:?}, spi4en: {=bool:?}, spi5en: {=bool:?}, usart6en: {=bool:?}, sai1en: {=bool:?}, sai2en: {=bool:?}, sai3en: {=bool:?}, dfsdmen: {=bool:?}, adfsdmen: {=bool:?}, fdcanen: {=bool:?} }}" , self . tim1en () , self . tim8en () , self . tim15en () , self . tim16en () , self . tim17en () , self . spi1en () , self . spi4en () , self . spi5en () , self . usart6en () , self . sai1en () , self . sai2en () , self . sai3en () , self . dfsdmen () , self . adfsdmen () , self . fdcanen ())
+            defmt::write!(
+                f,
+                "RccMpApb2ensetr {{ tim1en: {=bool:?}, tim8en: {=bool:?}, tim15en: {=bool:?}, tim16en: {=bool:?}, tim17en: {=bool:?}, spi1en: {=bool:?}, spi4en: {=bool:?}, spi5en: {=bool:?}, usart6en: {=bool:?}, sai1en: {=bool:?}, sai2en: {=bool:?}, sai3en: {=bool:?}, dfsdmen: {=bool:?}, adfsdmen: {=bool:?}, fdcanen: {=bool:?} }}",
+                self.tim1en(),
+                self.tim8en(),
+                self.tim15en(),
+                self.tim16en(),
+                self.tim17en(),
+                self.spi1en(),
+                self.spi4en(),
+                self.spi5en(),
+                self.usart6en(),
+                self.sai1en(),
+                self.sai2en(),
+                self.sai3en(),
+                self.dfsdmen(),
+                self.adfsdmen(),
+                self.fdcanen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bits."]
@@ -18147,7 +19434,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb2lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb2lpenclrr {{ tim1lpen: {=bool:?}, tim8lpen: {=bool:?}, tim15lpen: {=bool:?}, tim16lpen: {=bool:?}, tim17lpen: {=bool:?}, spi1lpen: {=bool:?}, spi4lpen: {=bool:?}, spi5lpen: {=bool:?}, usart6lpen: {=bool:?}, sai1lpen: {=bool:?}, sai2lpen: {=bool:?}, sai3lpen: {=bool:?}, dfsdmlpen: {=bool:?}, adfsdmlpen: {=bool:?}, fdcanlpen: {=bool:?} }}" , self . tim1lpen () , self . tim8lpen () , self . tim15lpen () , self . tim16lpen () , self . tim17lpen () , self . spi1lpen () , self . spi4lpen () , self . spi5lpen () , self . usart6lpen () , self . sai1lpen () , self . sai2lpen () , self . sai3lpen () , self . dfsdmlpen () , self . adfsdmlpen () , self . fdcanlpen ())
+            defmt::write!(
+                f,
+                "RccMpApb2lpenclrr {{ tim1lpen: {=bool:?}, tim8lpen: {=bool:?}, tim15lpen: {=bool:?}, tim16lpen: {=bool:?}, tim17lpen: {=bool:?}, spi1lpen: {=bool:?}, spi4lpen: {=bool:?}, spi5lpen: {=bool:?}, usart6lpen: {=bool:?}, sai1lpen: {=bool:?}, sai2lpen: {=bool:?}, sai3lpen: {=bool:?}, dfsdmlpen: {=bool:?}, adfsdmlpen: {=bool:?}, fdcanlpen: {=bool:?} }}",
+                self.tim1lpen(),
+                self.tim8lpen(),
+                self.tim15lpen(),
+                self.tim16lpen(),
+                self.tim17lpen(),
+                self.spi1lpen(),
+                self.spi4lpen(),
+                self.spi5lpen(),
+                self.usart6lpen(),
+                self.sai1lpen(),
+                self.sai2lpen(),
+                self.sai3lpen(),
+                self.dfsdmlpen(),
+                self.adfsdmlpen(),
+                self.fdcanlpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bits."]
@@ -18366,7 +19671,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb2lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb2lpensetr {{ tim1lpen: {=bool:?}, tim8lpen: {=bool:?}, tim15lpen: {=bool:?}, tim16lpen: {=bool:?}, tim17lpen: {=bool:?}, spi1lpen: {=bool:?}, spi4lpen: {=bool:?}, spi5lpen: {=bool:?}, usart6lpen: {=bool:?}, sai1lpen: {=bool:?}, sai2lpen: {=bool:?}, sai3lpen: {=bool:?}, dfsdmlpen: {=bool:?}, adfsdmlpen: {=bool:?}, fdcanlpen: {=bool:?} }}" , self . tim1lpen () , self . tim8lpen () , self . tim15lpen () , self . tim16lpen () , self . tim17lpen () , self . spi1lpen () , self . spi4lpen () , self . spi5lpen () , self . usart6lpen () , self . sai1lpen () , self . sai2lpen () , self . sai3lpen () , self . dfsdmlpen () , self . adfsdmlpen () , self . fdcanlpen ())
+            defmt::write!(
+                f,
+                "RccMpApb2lpensetr {{ tim1lpen: {=bool:?}, tim8lpen: {=bool:?}, tim15lpen: {=bool:?}, tim16lpen: {=bool:?}, tim17lpen: {=bool:?}, spi1lpen: {=bool:?}, spi4lpen: {=bool:?}, spi5lpen: {=bool:?}, usart6lpen: {=bool:?}, sai1lpen: {=bool:?}, sai2lpen: {=bool:?}, sai3lpen: {=bool:?}, dfsdmlpen: {=bool:?}, adfsdmlpen: {=bool:?}, fdcanlpen: {=bool:?} }}",
+                self.tim1lpen(),
+                self.tim8lpen(),
+                self.tim15lpen(),
+                self.tim16lpen(),
+                self.tim17lpen(),
+                self.spi1lpen(),
+                self.spi4lpen(),
+                self.spi5lpen(),
+                self.usart6lpen(),
+                self.sai1lpen(),
+                self.sai2lpen(),
+                self.sai3lpen(),
+                self.dfsdmlpen(),
+                self.adfsdmlpen(),
+                self.fdcanlpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit of the corresponding peripheral."]
@@ -18507,7 +19830,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb3enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb3enclrr {{ lptim2en: {=bool:?}, lptim3en: {=bool:?}, lptim4en: {=bool:?}, lptim5en: {=bool:?}, sai4en: {=bool:?}, syscfgen: {=bool:?}, vrefen: {=bool:?}, dtsen: {=bool:?}, hdpen: {=bool:?} }}" , self . lptim2en () , self . lptim3en () , self . lptim4en () , self . lptim5en () , self . sai4en () , self . syscfgen () , self . vrefen () , self . dtsen () , self . hdpen ())
+            defmt::write!(
+                f,
+                "RccMpApb3enclrr {{ lptim2en: {=bool:?}, lptim3en: {=bool:?}, lptim4en: {=bool:?}, lptim5en: {=bool:?}, sai4en: {=bool:?}, syscfgen: {=bool:?}, vrefen: {=bool:?}, dtsen: {=bool:?}, hdpen: {=bool:?} }}",
+                self.lptim2en(),
+                self.lptim3en(),
+                self.lptim4en(),
+                self.lptim5en(),
+                self.sai4en(),
+                self.syscfgen(),
+                self.vrefen(),
+                self.dtsen(),
+                self.hdpen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit."]
@@ -18648,7 +19983,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb3ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb3ensetr {{ lptim2en: {=bool:?}, lptim3en: {=bool:?}, lptim4en: {=bool:?}, lptim5en: {=bool:?}, sai4en: {=bool:?}, syscfgen: {=bool:?}, vrefen: {=bool:?}, dtsen: {=bool:?}, hdpen: {=bool:?} }}" , self . lptim2en () , self . lptim3en () , self . lptim4en () , self . lptim5en () , self . sai4en () , self . syscfgen () , self . vrefen () , self . dtsen () , self . hdpen ())
+            defmt::write!(
+                f,
+                "RccMpApb3ensetr {{ lptim2en: {=bool:?}, lptim3en: {=bool:?}, lptim4en: {=bool:?}, lptim5en: {=bool:?}, sai4en: {=bool:?}, syscfgen: {=bool:?}, vrefen: {=bool:?}, dtsen: {=bool:?}, hdpen: {=bool:?} }}",
+                self.lptim2en(),
+                self.lptim3en(),
+                self.lptim4en(),
+                self.lptim5en(),
+                self.sai4en(),
+                self.syscfgen(),
+                self.vrefen(),
+                self.dtsen(),
+                self.hdpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bits."]
@@ -18776,7 +20123,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb3lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb3lpenclrr {{ lptim2lpen: {=bool:?}, lptim3lpen: {=bool:?}, lptim4lpen: {=bool:?}, lptim5lpen: {=bool:?}, sai4lpen: {=bool:?}, syscfglpen: {=bool:?}, vreflpen: {=bool:?}, dtslpen: {=bool:?} }}" , self . lptim2lpen () , self . lptim3lpen () , self . lptim4lpen () , self . lptim5lpen () , self . sai4lpen () , self . syscfglpen () , self . vreflpen () , self . dtslpen ())
+            defmt::write!(
+                f,
+                "RccMpApb3lpenclrr {{ lptim2lpen: {=bool:?}, lptim3lpen: {=bool:?}, lptim4lpen: {=bool:?}, lptim5lpen: {=bool:?}, sai4lpen: {=bool:?}, syscfglpen: {=bool:?}, vreflpen: {=bool:?}, dtslpen: {=bool:?} }}",
+                self.lptim2lpen(),
+                self.lptim3lpen(),
+                self.lptim4lpen(),
+                self.lptim5lpen(),
+                self.sai4lpen(),
+                self.syscfglpen(),
+                self.vreflpen(),
+                self.dtslpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bits."]
@@ -18904,7 +20262,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb3lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb3lpensetr {{ lptim2lpen: {=bool:?}, lptim3lpen: {=bool:?}, lptim4lpen: {=bool:?}, lptim5lpen: {=bool:?}, sai4lpen: {=bool:?}, syscfglpen: {=bool:?}, vreflpen: {=bool:?}, dtslpen: {=bool:?} }}" , self . lptim2lpen () , self . lptim3lpen () , self . lptim4lpen () , self . lptim5lpen () , self . sai4lpen () , self . syscfglpen () , self . vreflpen () , self . dtslpen ())
+            defmt::write!(
+                f,
+                "RccMpApb3lpensetr {{ lptim2lpen: {=bool:?}, lptim3lpen: {=bool:?}, lptim4lpen: {=bool:?}, lptim5lpen: {=bool:?}, sai4lpen: {=bool:?}, syscfglpen: {=bool:?}, vreflpen: {=bool:?}, dtslpen: {=bool:?} }}",
+                self.lptim2lpen(),
+                self.lptim3lpen(),
+                self.lptim4lpen(),
+                self.lptim5lpen(),
+                self.sai4lpen(),
+                self.syscfglpen(),
+                self.vreflpen(),
+                self.dtslpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit of the corresponding peripheral. It shall be used to deallocate a peripheral from MPU. Writing has no effect, reading will return the effective values of the corresponding bits. Writing a sets the corresponding bit to."]
@@ -19006,7 +20375,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb4enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb4enclrr {{ ltdcen: {=bool:?}, dsien: {=bool:?}, ddrperfmen: {=bool:?}, iwdg2apben: {=bool:?}, usbphyen: {=bool:?}, stgenroen: {=bool:?} }}" , self . ltdcen () , self . dsien () , self . ddrperfmen () , self . iwdg2apben () , self . usbphyen () , self . stgenroen ())
+            defmt::write!(
+                f,
+                "RccMpApb4enclrr {{ ltdcen: {=bool:?}, dsien: {=bool:?}, ddrperfmen: {=bool:?}, iwdg2apben: {=bool:?}, usbphyen: {=bool:?}, stgenroen: {=bool:?} }}",
+                self.ltdcen(),
+                self.dsien(),
+                self.ddrperfmen(),
+                self.iwdg2apben(),
+                self.usbphyen(),
+                self.stgenroen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit of the corresponding peripheral to . It shall be used to allocate a peripheral to the MPU. Writing has no effect, reading will return the effective values of the corresponding bits. Writing a sets the corresponding bit to."]
@@ -19108,7 +20486,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb4ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb4ensetr {{ ltdcen: {=bool:?}, dsien: {=bool:?}, ddrperfmen: {=bool:?}, iwdg2apben: {=bool:?}, usbphyen: {=bool:?}, stgenroen: {=bool:?} }}" , self . ltdcen () , self . dsien () , self . ddrperfmen () , self . iwdg2apben () , self . usbphyen () , self . stgenroen ())
+            defmt::write!(
+                f,
+                "RccMpApb4ensetr {{ ltdcen: {=bool:?}, dsien: {=bool:?}, ddrperfmen: {=bool:?}, iwdg2apben: {=bool:?}, usbphyen: {=bool:?}, stgenroen: {=bool:?} }}",
+                self.ltdcen(),
+                self.dsien(),
+                self.ddrperfmen(),
+                self.iwdg2apben(),
+                self.usbphyen(),
+                self.stgenroen()
+            )
         }
     }
     #[doc = "This register is used by the MCU."]
@@ -19223,7 +20610,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb4lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb4lpenclrr {{ ltdclpen: {=bool:?}, dsilpen: {=bool:?}, ddrperfmlpen: {=bool:?}, iwdg2apblpen: {=bool:?}, usbphylpen: {=bool:?}, stgenrolpen: {=bool:?}, stgenrostpen: {=bool:?} }}" , self . ltdclpen () , self . dsilpen () , self . ddrperfmlpen () , self . iwdg2apblpen () , self . usbphylpen () , self . stgenrolpen () , self . stgenrostpen ())
+            defmt::write!(
+                f,
+                "RccMpApb4lpenclrr {{ ltdclpen: {=bool:?}, dsilpen: {=bool:?}, ddrperfmlpen: {=bool:?}, iwdg2apblpen: {=bool:?}, usbphylpen: {=bool:?}, stgenrolpen: {=bool:?}, stgenrostpen: {=bool:?} }}",
+                self.ltdclpen(),
+                self.dsilpen(),
+                self.ddrperfmlpen(),
+                self.iwdg2apblpen(),
+                self.usbphylpen(),
+                self.stgenrolpen(),
+                self.stgenrostpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bits."]
@@ -19338,7 +20735,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb4lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb4lpensetr {{ ltdclpen: {=bool:?}, dsilpen: {=bool:?}, ddrperfmlpen: {=bool:?}, iwdg2apblpen: {=bool:?}, usbphylpen: {=bool:?}, stgenrolpen: {=bool:?}, stgenrostpen: {=bool:?} }}" , self . ltdclpen () , self . dsilpen () , self . ddrperfmlpen () , self . iwdg2apblpen () , self . usbphylpen () , self . stgenrolpen () , self . stgenrostpen ())
+            defmt::write!(
+                f,
+                "RccMpApb4lpensetr {{ ltdclpen: {=bool:?}, dsilpen: {=bool:?}, ddrperfmlpen: {=bool:?}, iwdg2apblpen: {=bool:?}, usbphylpen: {=bool:?}, stgenrolpen: {=bool:?}, stgenrostpen: {=bool:?} }}",
+                self.ltdclpen(),
+                self.dsilpen(),
+                self.ddrperfmlpen(),
+                self.iwdg2apblpen(),
+                self.usbphylpen(),
+                self.stgenrolpen(),
+                self.stgenrostpen()
+            )
         }
     }
     #[doc = "This register is used to clear the peripheral clock enable bit of the corresponding peripheral. It shall be used to deallocate a peripheral from MPU. Writing has no effect, reading will return the effective values of the corresponding bits. Writing a sets the corresponding bit to."]
@@ -19505,7 +20912,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb5enclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb5enclrr {{ spi6en: {=bool:?}, i2c4en: {=bool:?}, i2c6en: {=bool:?}, usart1en: {=bool:?}, rtcapben: {=bool:?}, tzc1en: {=bool:?}, tzc2en: {=bool:?}, tzpcen: {=bool:?}, iwdg1apben: {=bool:?}, bsecen: {=bool:?}, stgenen: {=bool:?} }}" , self . spi6en () , self . i2c4en () , self . i2c6en () , self . usart1en () , self . rtcapben () , self . tzc1en () , self . tzc2en () , self . tzpcen () , self . iwdg1apben () , self . bsecen () , self . stgenen ())
+            defmt::write!(
+                f,
+                "RccMpApb5enclrr {{ spi6en: {=bool:?}, i2c4en: {=bool:?}, i2c6en: {=bool:?}, usart1en: {=bool:?}, rtcapben: {=bool:?}, tzc1en: {=bool:?}, tzc2en: {=bool:?}, tzpcen: {=bool:?}, iwdg1apben: {=bool:?}, bsecen: {=bool:?}, stgenen: {=bool:?} }}",
+                self.spi6en(),
+                self.i2c4en(),
+                self.i2c6en(),
+                self.usart1en(),
+                self.rtcapben(),
+                self.tzc1en(),
+                self.tzc2en(),
+                self.tzpcen(),
+                self.iwdg1apben(),
+                self.bsecen(),
+                self.stgenen()
+            )
         }
     }
     #[doc = "This register is used to set the peripheral clock enable bit of the corresponding peripheral to . It shall be used to allocate a peripheral to the MPU. Writing has no effect, reading will return the effective values of the corresponding bits. Writing a sets the corresponding bit to."]
@@ -19672,7 +21093,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb5ensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb5ensetr {{ spi6en: {=bool:?}, i2c4en: {=bool:?}, i2c6en: {=bool:?}, usart1en: {=bool:?}, rtcapben: {=bool:?}, tzc1en: {=bool:?}, tzc2en: {=bool:?}, tzpcen: {=bool:?}, iwdg1apben: {=bool:?}, bsecen: {=bool:?}, stgenen: {=bool:?} }}" , self . spi6en () , self . i2c4en () , self . i2c6en () , self . usart1en () , self . rtcapben () , self . tzc1en () , self . tzc2en () , self . tzpcen () , self . iwdg1apben () , self . bsecen () , self . stgenen ())
+            defmt::write!(
+                f,
+                "RccMpApb5ensetr {{ spi6en: {=bool:?}, i2c4en: {=bool:?}, i2c6en: {=bool:?}, usart1en: {=bool:?}, rtcapben: {=bool:?}, tzc1en: {=bool:?}, tzc2en: {=bool:?}, tzpcen: {=bool:?}, iwdg1apben: {=bool:?}, bsecen: {=bool:?}, stgenen: {=bool:?} }}",
+                self.spi6en(),
+                self.i2c4en(),
+                self.i2c6en(),
+                self.usart1en(),
+                self.rtcapben(),
+                self.tzc1en(),
+                self.tzc2en(),
+                self.tzpcen(),
+                self.iwdg1apben(),
+                self.bsecen(),
+                self.stgenen()
+            )
         }
     }
     #[doc = "This register is used by the Mpu."]
@@ -19852,7 +21287,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb5lpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb5lpenclrr {{ spi6lpen: {=bool:?}, i2c4lpen: {=bool:?}, i2c6lpen: {=bool:?}, usart1lpen: {=bool:?}, rtcapblpen: {=bool:?}, tzc1lpen: {=bool:?}, tzc2lpen: {=bool:?}, tzpclpen: {=bool:?}, iwdg1apblpen: {=bool:?}, bseclpen: {=bool:?}, stgenlpen: {=bool:?}, stgenstpen: {=bool:?} }}" , self . spi6lpen () , self . i2c4lpen () , self . i2c6lpen () , self . usart1lpen () , self . rtcapblpen () , self . tzc1lpen () , self . tzc2lpen () , self . tzpclpen () , self . iwdg1apblpen () , self . bseclpen () , self . stgenlpen () , self . stgenstpen ())
+            defmt::write!(
+                f,
+                "RccMpApb5lpenclrr {{ spi6lpen: {=bool:?}, i2c4lpen: {=bool:?}, i2c6lpen: {=bool:?}, usart1lpen: {=bool:?}, rtcapblpen: {=bool:?}, tzc1lpen: {=bool:?}, tzc2lpen: {=bool:?}, tzpclpen: {=bool:?}, iwdg1apblpen: {=bool:?}, bseclpen: {=bool:?}, stgenlpen: {=bool:?}, stgenstpen: {=bool:?} }}",
+                self.spi6lpen(),
+                self.i2c4lpen(),
+                self.i2c6lpen(),
+                self.usart1lpen(),
+                self.rtcapblpen(),
+                self.tzc1lpen(),
+                self.tzc2lpen(),
+                self.tzpclpen(),
+                self.iwdg1apblpen(),
+                self.bseclpen(),
+                self.stgenlpen(),
+                self.stgenstpen()
+            )
         }
     }
     #[doc = "This register is used by the MCU in order to clear the PERxLPEN bits If TZEN = , this register can only be modified in secure mode."]
@@ -20032,7 +21482,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpApb5lpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpApb5lpensetr {{ spi6lpen: {=bool:?}, i2c4lpen: {=bool:?}, i2c6lpen: {=bool:?}, usart1lpen: {=bool:?}, rtcapblpen: {=bool:?}, tzc1lpen: {=bool:?}, tzc2lpen: {=bool:?}, tzpclpen: {=bool:?}, iwdg1apblpen: {=bool:?}, bseclpen: {=bool:?}, stgenlpen: {=bool:?}, stgenstpen: {=bool:?} }}" , self . spi6lpen () , self . i2c4lpen () , self . i2c6lpen () , self . usart1lpen () , self . rtcapblpen () , self . tzc1lpen () , self . tzc2lpen () , self . tzpclpen () , self . iwdg1apblpen () , self . bseclpen () , self . stgenlpen () , self . stgenstpen ())
+            defmt::write!(
+                f,
+                "RccMpApb5lpensetr {{ spi6lpen: {=bool:?}, i2c4lpen: {=bool:?}, i2c6lpen: {=bool:?}, usart1lpen: {=bool:?}, rtcapblpen: {=bool:?}, tzc1lpen: {=bool:?}, tzc2lpen: {=bool:?}, tzpclpen: {=bool:?}, iwdg1apblpen: {=bool:?}, bseclpen: {=bool:?}, stgenlpen: {=bool:?}, stgenstpen: {=bool:?} }}",
+                self.spi6lpen(),
+                self.i2c4lpen(),
+                self.i2c6lpen(),
+                self.usart1lpen(),
+                self.rtcapblpen(),
+                self.tzc1lpen(),
+                self.tzc2lpen(),
+                self.tzpclpen(),
+                self.iwdg1apblpen(),
+                self.bseclpen(),
+                self.stgenlpen(),
+                self.stgenstpen()
+            )
         }
     }
     #[doc = "This register is used to control the behavior of the warm reset. If TZEN = , this register can only be modified in secure mode."]
@@ -20386,7 +21851,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpCier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpCier {{ lsirdyie: {=bool:?}, lserdyie: {=bool:?}, hsirdyie: {=bool:?}, hserdyie: {=bool:?}, csirdyie: {=bool:?}, plldyie[0]: {=bool:?}, plldyie[1]: {=bool:?}, plldyie[2]: {=bool:?}, plldyie[3]: {=bool:?}, lsecssie: {=bool:?}, wkupie: {=bool:?} }}" , self . lsirdyie () , self . lserdyie () , self . hsirdyie () , self . hserdyie () , self . csirdyie () , self . plldyie (0usize) , self . plldyie (1usize) , self . plldyie (2usize) , self . plldyie (3usize) , self . lsecssie () , self . wkupie ())
+            defmt::write!(
+                f,
+                "RccMpCier {{ lsirdyie: {=bool:?}, lserdyie: {=bool:?}, hsirdyie: {=bool:?}, hserdyie: {=bool:?}, csirdyie: {=bool:?}, plldyie[0]: {=bool:?}, plldyie[1]: {=bool:?}, plldyie[2]: {=bool:?}, plldyie[3]: {=bool:?}, lsecssie: {=bool:?}, wkupie: {=bool:?} }}",
+                self.lsirdyie(),
+                self.lserdyie(),
+                self.hsirdyie(),
+                self.hserdyie(),
+                self.csirdyie(),
+                self.plldyie(0usize),
+                self.plldyie(1usize),
+                self.plldyie(2usize),
+                self.plldyie(3usize),
+                self.lsecssie(),
+                self.wkupie()
+            )
         }
     }
     #[doc = "This register shall be used by the MPU in order to read and clear the interrupt flags.Writing has no effect, writing will clear the corresponding flag.Refer to Section10.5: RCC interrupts for more details. If TZEN = , this register can only be modified in secure mode."]
@@ -20521,7 +22000,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpCifr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpCifr {{ lsirdyf: {=bool:?}, lserdyf: {=bool:?}, hsirdyf: {=bool:?}, hserdyf: {=bool:?}, csirdyf: {=bool:?}, plldyf[0]: {=bool:?}, plldyf[1]: {=bool:?}, plldyf[2]: {=bool:?}, plldyf[3]: {=bool:?}, lsecssf: {=bool:?}, wkupf: {=bool:?} }}" , self . lsirdyf () , self . lserdyf () , self . hsirdyf () , self . hserdyf () , self . csirdyf () , self . plldyf (0usize) , self . plldyf (1usize) , self . plldyf (2usize) , self . plldyf (3usize) , self . lsecssf () , self . wkupf ())
+            defmt::write!(
+                f,
+                "RccMpCifr {{ lsirdyf: {=bool:?}, lserdyf: {=bool:?}, hsirdyf: {=bool:?}, hserdyf: {=bool:?}, csirdyf: {=bool:?}, plldyf[0]: {=bool:?}, plldyf[1]: {=bool:?}, plldyf[2]: {=bool:?}, plldyf[3]: {=bool:?}, lsecssf: {=bool:?}, wkupf: {=bool:?} }}",
+                self.lsirdyf(),
+                self.lserdyf(),
+                self.hsirdyf(),
+                self.hserdyf(),
+                self.csirdyf(),
+                self.plldyf(0usize),
+                self.plldyf(1usize),
+                self.plldyf(2usize),
+                self.plldyf(3usize),
+                self.lsecssf(),
+                self.wkupf()
+            )
         }
     }
     #[doc = "The register contains global control bits. If TZEN = , this register can only be modified in secure mode."]
@@ -20899,7 +22392,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpMlahblpenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpMlahblpenclrr {{ sram1lpen: {=bool:?}, sram2lpen: {=bool:?}, sram34lpen: {=bool:?}, retramlpen: {=bool:?} }}" , self . sram1lpen () , self . sram2lpen () , self . sram34lpen () , self . retramlpen ())
+            defmt::write!(
+                f,
+                "RccMpMlahblpenclrr {{ sram1lpen: {=bool:?}, sram2lpen: {=bool:?}, sram34lpen: {=bool:?}, retramlpen: {=bool:?} }}",
+                self.sram1lpen(),
+                self.sram2lpen(),
+                self.sram34lpen(),
+                self.retramlpen()
+            )
         }
     }
     #[doc = "This register is used by the MPU in order to set the PERxLPEN bit."]
@@ -20975,7 +22475,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpMlahblpensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpMlahblpensetr {{ sram1lpen: {=bool:?}, sram2lpen: {=bool:?}, sram34lpen: {=bool:?}, retramlpen: {=bool:?} }}" , self . sram1lpen () , self . sram2lpen () , self . sram34lpen () , self . retramlpen ())
+            defmt::write!(
+                f,
+                "RccMpMlahblpensetr {{ sram1lpen: {=bool:?}, sram2lpen: {=bool:?}, sram34lpen: {=bool:?}, retramlpen: {=bool:?} }}",
+                self.sram1lpen(),
+                self.sram2lpen(),
+                self.sram34lpen(),
+                self.retramlpen()
+            )
         }
     }
     #[doc = "This register is used by the MPU to check the reset source. This register is updated by the BOOTROM code, after a power-on reset (por_rst), a system reset (nreset), or an exit from Standby or CStandby.Writing has no effect, reading will return the effective values of the corresponding bits. Writing a clears the corresponding bit to .Refer to Section10.3.13: Reset source identification for details.The register is located in VDDCORE.If TZEN = , this register can only be modified in secure mode."]
@@ -21181,7 +22688,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpRstsclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpRstsclrr {{ porrstf: {=bool:?}, borrstf: {=bool:?}, padrstf: {=bool:?}, hcssrstf: {=bool:?}, vcorerstf: {=bool:?}, mpsysrstf: {=bool:?}, mcsysrstf: {=bool:?}, iwdg1rstf: {=bool:?}, iwdg2rstf: {=bool:?}, stdbyrstf: {=bool:?}, cstdbyrstf: {=bool:?}, mpup0rstf: {=bool:?}, mpup1rstf: {=bool:?}, spare: {=bool:?} }}" , self . porrstf () , self . borrstf () , self . padrstf () , self . hcssrstf () , self . vcorerstf () , self . mpsysrstf () , self . mcsysrstf () , self . iwdg1rstf () , self . iwdg2rstf () , self . stdbyrstf () , self . cstdbyrstf () , self . mpup0rstf () , self . mpup1rstf () , self . spare ())
+            defmt::write!(
+                f,
+                "RccMpRstsclrr {{ porrstf: {=bool:?}, borrstf: {=bool:?}, padrstf: {=bool:?}, hcssrstf: {=bool:?}, vcorerstf: {=bool:?}, mpsysrstf: {=bool:?}, mcsysrstf: {=bool:?}, iwdg1rstf: {=bool:?}, iwdg2rstf: {=bool:?}, stdbyrstf: {=bool:?}, cstdbyrstf: {=bool:?}, mpup0rstf: {=bool:?}, mpup1rstf: {=bool:?}, spare: {=bool:?} }}",
+                self.porrstf(),
+                self.borrstf(),
+                self.padrstf(),
+                self.hcssrstf(),
+                self.vcorerstf(),
+                self.mpsysrstf(),
+                self.mcsysrstf(),
+                self.iwdg1rstf(),
+                self.iwdg2rstf(),
+                self.stdbyrstf(),
+                self.cstdbyrstf(),
+                self.mpup0rstf(),
+                self.mpup1rstf(),
+                self.spare()
+            )
         }
     }
     #[doc = "This register is dedicated to the BOOTROM code in order to update the reset source. This register is updated by the BOOTROM code, after a power-on reset (por_rst), a system reset (nreset), or an exit from Standby or CStandby. The application software shall not use this register. In order to identify the reset source, the MPU application must use RCC MPU Reset Status Clear Register (RCC_MP_RSTSCLRR), and the MCU application must use the RCC MCU Reset Status Clear Register (RCC_MC_RSTSCLRR).Writing has no effect, reading will return the effective values of the corresponding bits. Writing a sets the corresponding bit to .Refer to Section10.3.13: Reset source identification for details.The register is located in VDDCORE.If TZEN = , this register can only be modified in secure mode."]
@@ -21387,7 +22911,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccMpRstssetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccMpRstssetr {{ porrstf: {=bool:?}, borrstf: {=bool:?}, padrstf: {=bool:?}, hcssrstf: {=bool:?}, vcorerstf: {=bool:?}, mpsysrstf: {=bool:?}, mcsysrstf: {=bool:?}, iwdg1rstf: {=bool:?}, iwdg2rstf: {=bool:?}, stdbyrstf: {=bool:?}, cstdbyrstf: {=bool:?}, mpup0rstf: {=bool:?}, mpup1rstf: {=bool:?}, spare: {=bool:?} }}" , self . porrstf () , self . borrstf () , self . padrstf () , self . hcssrstf () , self . vcorerstf () , self . mpsysrstf () , self . mcsysrstf () , self . iwdg1rstf () , self . iwdg2rstf () , self . stdbyrstf () , self . cstdbyrstf () , self . mpup0rstf () , self . mpup1rstf () , self . spare ())
+            defmt::write!(
+                f,
+                "RccMpRstssetr {{ porrstf: {=bool:?}, borrstf: {=bool:?}, padrstf: {=bool:?}, hcssrstf: {=bool:?}, vcorerstf: {=bool:?}, mpsysrstf: {=bool:?}, mcsysrstf: {=bool:?}, iwdg1rstf: {=bool:?}, iwdg2rstf: {=bool:?}, stdbyrstf: {=bool:?}, cstdbyrstf: {=bool:?}, mpup0rstf: {=bool:?}, mpup1rstf: {=bool:?}, spare: {=bool:?} }}",
+                self.porrstf(),
+                self.borrstf(),
+                self.padrstf(),
+                self.hcssrstf(),
+                self.vcorerstf(),
+                self.mpsysrstf(),
+                self.mcsysrstf(),
+                self.iwdg1rstf(),
+                self.iwdg2rstf(),
+                self.stdbyrstf(),
+                self.cstdbyrstf(),
+                self.mpup0rstf(),
+                self.mpup1rstf(),
+                self.spare()
+            )
         }
     }
     #[doc = "Writing has no effect, reading will return the effective values of the bits. Writing a sets the corresponding bit to . The MCU cannot access to this register. If TZEN = , this register can only be modified in secure mode."]
@@ -21938,7 +23479,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccOcenclrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccOcenclrr {{ hsion: {=bool:?}, hsikeron: {=bool:?}, csion: {=bool:?}, csikeron: {=bool:?}, digbyp: {=bool:?}, hseon: {=bool:?}, hsekeron: {=bool:?}, hsebyp: {=bool:?} }}" , self . hsion () , self . hsikeron () , self . csion () , self . csikeron () , self . digbyp () , self . hseon () , self . hsekeron () , self . hsebyp ())
+            defmt::write!(
+                f,
+                "RccOcenclrr {{ hsion: {=bool:?}, hsikeron: {=bool:?}, csion: {=bool:?}, csikeron: {=bool:?}, digbyp: {=bool:?}, hseon: {=bool:?}, hsekeron: {=bool:?}, hsebyp: {=bool:?} }}",
+                self.hsion(),
+                self.hsikeron(),
+                self.csion(),
+                self.csikeron(),
+                self.digbyp(),
+                self.hseon(),
+                self.hsekeron(),
+                self.hsebyp()
+            )
         }
     }
     #[doc = "This register is used to control the oscillators.Writing to this register has no effect, writing will set the corresponding bits. Reading will give the effective values of each bit.If TZEN = MCKPROT = , this register can only be modified in secure mode. Write access to this register is not allowed during the clock restore sequence. See Section: The clock restore sequence description for details."]
@@ -22079,7 +23631,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccOcensetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccOcensetr {{ hsion: {=bool:?}, hsikeron: {=bool:?}, csion: {=bool:?}, csikeron: {=bool:?}, digbyp: {=bool:?}, hseon: {=bool:?}, hsekeron: {=bool:?}, hsebyp: {=bool:?}, hsecsson: {=bool:?} }}" , self . hsion () , self . hsikeron () , self . csion () , self . csikeron () , self . digbyp () , self . hseon () , self . hsekeron () , self . hsebyp () , self . hsecsson ())
+            defmt::write!(
+                f,
+                "RccOcensetr {{ hsion: {=bool:?}, hsikeron: {=bool:?}, csion: {=bool:?}, csikeron: {=bool:?}, digbyp: {=bool:?}, hseon: {=bool:?}, hsekeron: {=bool:?}, hsebyp: {=bool:?}, hsecsson: {=bool:?} }}",
+                self.hsion(),
+                self.hsikeron(),
+                self.csion(),
+                self.csikeron(),
+                self.digbyp(),
+                self.hseon(),
+                self.hsekeron(),
+                self.hsebyp(),
+                self.hsecsson()
+            )
         }
     }
     #[doc = "This is a read-only access register, It contains the status flags of oscillators. Writing has no effect."]
@@ -22194,7 +23758,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccOcrdyr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccOcrdyr {{ hsirdy: {=bool:?}, hsidivrdy: {=bool:?}, csirdy: {=bool:?}, hserdy: {=bool:?}, mpuckrdy: {=bool:?}, axickrdy: {=bool:?}, ckrest: {=bool:?} }}" , self . hsirdy () , self . hsidivrdy () , self . csirdy () , self . hserdy () , self . mpuckrdy () , self . axickrdy () , self . ckrest ())
+            defmt::write!(
+                f,
+                "RccOcrdyr {{ hsirdy: {=bool:?}, hsidivrdy: {=bool:?}, csirdy: {=bool:?}, hserdy: {=bool:?}, mpuckrdy: {=bool:?}, axickrdy: {=bool:?}, ckrest: {=bool:?} }}",
+                self.hsirdy(),
+                self.hsidivrdy(),
+                self.csirdy(),
+                self.hserdy(),
+                self.mpuckrdy(),
+                self.axickrdy(),
+                self.ckrest()
+            )
         }
     }
     #[doc = "This register is used to configure the PLL1. If TZEN = , this register can only be modified in secure mode. Write access to this register is not allowed during the clock restore sequence. See Section: The clock restore sequence description for details."]
@@ -22424,7 +23998,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccPll1cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccPll1cr {{ pllon: {=bool:?}, pllrdy[0]: {=bool:?}, sscg_ctrl: {=bool:?}, divpen: {=bool:?}, divqen: {=bool:?}, divren: {=bool:?} }}" , self . pllon () , self . pllrdy (0usize) , self . sscg_ctrl () , self . divpen () , self . divqen () , self . divren ())
+            defmt::write!(
+                f,
+                "RccPll1cr {{ pllon: {=bool:?}, pllrdy[0]: {=bool:?}, sscg_ctrl: {=bool:?}, divpen: {=bool:?}, divqen: {=bool:?}, divren: {=bool:?} }}",
+                self.pllon(),
+                self.pllrdy(0usize),
+                self.sscg_ctrl(),
+                self.divpen(),
+                self.divqen(),
+                self.divren()
+            )
         }
     }
     #[doc = "This register is used to configure the PLL1.It is not recommended to change the content of this register when the PLL1 is enabled (PLLON = ). Refer to Section: Using the PLLs in spread spectrum mode for details. If TZEN = , this register can only be modified in secure mode. Write access to this register is not allowed during the clock restore sequence. See Section: The clock restore sequence description for details."]
@@ -22513,7 +24096,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccPll1csgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccPll1csgr {{ mod_per: {=u16:?}, tpdfn_dis: {=bool:?}, rpdfn_dis: {=bool:?}, sscg_mode: {=bool:?}, inc_step: {=u16:?} }}" , self . mod_per () , self . tpdfn_dis () , self . rpdfn_dis () , self . sscg_mode () , self . inc_step ())
+            defmt::write!(
+                f,
+                "RccPll1csgr {{ mod_per: {=u16:?}, tpdfn_dis: {=bool:?}, rpdfn_dis: {=bool:?}, sscg_mode: {=bool:?}, inc_step: {=u16:?} }}",
+                self.mod_per(),
+                self.tpdfn_dis(),
+                self.rpdfn_dis(),
+                self.sscg_mode(),
+                self.inc_step()
+            )
         }
     }
     #[doc = "This register is used to fine-tune the frequency of the PLL1 VCO. If TZEN = , this register can only be modified in secure mode. Write access to this register is not allowed during the clock restore sequence. See Section: The clock restore sequence description for details."]
@@ -22798,7 +24389,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccPll2cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccPll2cr {{ pllon: {=bool:?}, pllrdy[0]: {=bool:?}, sscg_ctrl: {=bool:?}, divpen: {=bool:?}, divqen: {=bool:?}, divren: {=bool:?} }}" , self . pllon () , self . pllrdy (0usize) , self . sscg_ctrl () , self . divpen () , self . divqen () , self . divren ())
+            defmt::write!(
+                f,
+                "RccPll2cr {{ pllon: {=bool:?}, pllrdy[0]: {=bool:?}, sscg_ctrl: {=bool:?}, divpen: {=bool:?}, divqen: {=bool:?}, divren: {=bool:?} }}",
+                self.pllon(),
+                self.pllrdy(0usize),
+                self.sscg_ctrl(),
+                self.divpen(),
+                self.divqen(),
+                self.divren()
+            )
         }
     }
     #[doc = "This register is used to configure the PLL2. It is not recommended to change the content of this register when the PLL2 is enabled (PLLON = ). Refer to Section: Using the PLLs in spread spectrum mode for details. If TZEN = , this register can only be modified in secure mode. Write access to this register is not allowed during the clock restore sequence. See Section: The clock restore sequence description for details."]
@@ -22887,7 +24487,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccPll2csgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccPll2csgr {{ mod_per: {=u16:?}, tpdfn_dis: {=bool:?}, rpdfn_dis: {=bool:?}, sscg_mode: {=bool:?}, inc_step: {=u16:?} }}" , self . mod_per () , self . tpdfn_dis () , self . rpdfn_dis () , self . sscg_mode () , self . inc_step ())
+            defmt::write!(
+                f,
+                "RccPll2csgr {{ mod_per: {=u16:?}, tpdfn_dis: {=bool:?}, rpdfn_dis: {=bool:?}, sscg_mode: {=bool:?}, inc_step: {=u16:?} }}",
+                self.mod_per(),
+                self.tpdfn_dis(),
+                self.rpdfn_dis(),
+                self.sscg_mode(),
+                self.inc_step()
+            )
         }
     }
     #[doc = "This register is used to fine-tune the frequency of the PLL2 VCO. If TZEN = , this register can only be modified in secure mode. Write access to this register is not allowed during the clock restore sequence. See Section: The clock restore sequence description for details."]
@@ -23186,7 +24794,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccPll3cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccPll3cr {{ pllon: {=bool:?}, pllrdy[0]: {=bool:?}, sscg_ctrl: {=bool:?}, divpen: {=bool:?}, divqen: {=bool:?}, divren: {=bool:?} }}" , self . pllon () , self . pllrdy (0usize) , self . sscg_ctrl () , self . divpen () , self . divqen () , self . divren ())
+            defmt::write!(
+                f,
+                "RccPll3cr {{ pllon: {=bool:?}, pllrdy[0]: {=bool:?}, sscg_ctrl: {=bool:?}, divpen: {=bool:?}, divqen: {=bool:?}, divren: {=bool:?} }}",
+                self.pllon(),
+                self.pllrdy(0usize),
+                self.sscg_ctrl(),
+                self.divpen(),
+                self.divqen(),
+                self.divren()
+            )
         }
     }
     #[doc = "This register is used to configure the PLL3.It is not recommended to change the content of this register when the PLL3 is enabled (PLLON = ). Refer to Section: Using the PLLs in spread spectrum mode for details. If TZEN = MCKPROT = , this register can only be modified in secure mode."]
@@ -23275,7 +24892,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccPll3csgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccPll3csgr {{ mod_per: {=u16:?}, tpdfn_dis: {=bool:?}, rpdfn_dis: {=bool:?}, sscg_mode: {=bool:?}, inc_step: {=u16:?} }}" , self . mod_per () , self . tpdfn_dis () , self . rpdfn_dis () , self . sscg_mode () , self . inc_step ())
+            defmt::write!(
+                f,
+                "RccPll3csgr {{ mod_per: {=u16:?}, tpdfn_dis: {=bool:?}, rpdfn_dis: {=bool:?}, sscg_mode: {=bool:?}, inc_step: {=u16:?} }}",
+                self.mod_per(),
+                self.tpdfn_dis(),
+                self.rpdfn_dis(),
+                self.sscg_mode(),
+                self.inc_step()
+            )
         }
     }
     #[doc = "This register is used to fine-tune the frequency of the PLL3 VCO. If TZEN = MCKPROT = , this register can only be modified in secure mode."]
@@ -23574,7 +25199,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccPll4cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccPll4cr {{ pllon: {=bool:?}, pllrdy[0]: {=bool:?}, sscg_ctrl: {=bool:?}, divpen: {=bool:?}, divqen: {=bool:?}, divren: {=bool:?} }}" , self . pllon () , self . pllrdy (0usize) , self . sscg_ctrl () , self . divpen () , self . divqen () , self . divren ())
+            defmt::write!(
+                f,
+                "RccPll4cr {{ pllon: {=bool:?}, pllrdy[0]: {=bool:?}, sscg_ctrl: {=bool:?}, divpen: {=bool:?}, divqen: {=bool:?}, divren: {=bool:?} }}",
+                self.pllon(),
+                self.pllrdy(0usize),
+                self.sscg_ctrl(),
+                self.divpen(),
+                self.divqen(),
+                self.divren()
+            )
         }
     }
     #[doc = "This register is used to configure the PLL4.It is not recommended to change the content of this register when the PLL4 is enabled (PLLON = ). Refer to Section: Using the PLLs in spread spectrum mode for details. If TZEN = MCKPROT = , this register can only be modified in secure mode."]
@@ -23663,7 +25297,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RccPll4csgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RccPll4csgr {{ mod_per: {=u16:?}, tpdfn_dis: {=bool:?}, rpdfn_dis: {=bool:?}, sscg_mode: {=bool:?}, inc_step: {=u16:?} }}" , self . mod_per () , self . tpdfn_dis () , self . rpdfn_dis () , self . sscg_mode () , self . inc_step ())
+            defmt::write!(
+                f,
+                "RccPll4csgr {{ mod_per: {=u16:?}, tpdfn_dis: {=bool:?}, rpdfn_dis: {=bool:?}, sscg_mode: {=bool:?}, inc_step: {=u16:?} }}",
+                self.mod_per(),
+                self.tpdfn_dis(),
+                self.rpdfn_dis(),
+                self.sscg_mode(),
+                self.inc_step()
+            )
         }
     }
     #[doc = "This register is used to fine-tune the frequency of the PLL4 VCO."]

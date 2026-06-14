@@ -236,7 +236,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1fzr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1fzr1 {{ tim2: {=bool:?}, tim3: {=bool:?}, tim4: {=bool:?}, tim5: {=bool:?}, tim6: {=bool:?}, tim7: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, i2c1: {=bool:?}, i2c2: {=bool:?}, i2c3: {=bool:?}, lptim1: {=bool:?} }}" , self . tim2 () , self . tim3 () , self . tim4 () , self . tim5 () , self . tim6 () , self . tim7 () , self . rtc () , self . wwdg () , self . iwdg () , self . i2c1 () , self . i2c2 () , self . i2c3 () , self . lptim1 ())
+            defmt::write!(
+                f,
+                "Apb1fzr1 {{ tim2: {=bool:?}, tim3: {=bool:?}, tim4: {=bool:?}, tim5: {=bool:?}, tim6: {=bool:?}, tim7: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, i2c1: {=bool:?}, i2c2: {=bool:?}, i2c3: {=bool:?}, lptim1: {=bool:?} }}",
+                self.tim2(),
+                self.tim3(),
+                self.tim4(),
+                self.tim5(),
+                self.tim6(),
+                self.tim7(),
+                self.rtc(),
+                self.wwdg(),
+                self.iwdg(),
+                self.i2c1(),
+                self.i2c2(),
+                self.i2c3(),
+                self.lptim1()
+            )
         }
     }
     #[doc = "Debug MCU APB1 freeze register 2"]
@@ -491,7 +507,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, trace_ioen: {=bool:?}, trace_en: {=bool:?}, trace_mode: {=u8:?} }}" , self . dbg_stop () , self . dbg_standby () , self . trace_ioen () , self . trace_en () , self . trace_mode ())
+            defmt::write!(
+                f,
+                "Cr {{ dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, trace_ioen: {=bool:?}, trace_en: {=bool:?}, trace_mode: {=u8:?} }}",
+                self.dbg_stop(),
+                self.dbg_standby(),
+                self.trace_ioen(),
+                self.trace_en(),
+                self.trace_mode()
+            )
         }
     }
     #[doc = "DBGMCU_IDCODE"]

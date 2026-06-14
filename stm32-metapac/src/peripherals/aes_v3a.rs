@@ -245,7 +245,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, datatype: {:?}, mode: {:?}, chmod: {:?}, dmainen: {=bool:?}, dmaouten: {=bool:?}, gcmph: {:?}, keysize: {=bool:?}, npblb: {=u8:?}, kmod: {=u8:?}, iprst: {=bool:?} }}" , self . en () , self . datatype () , self . mode () , self . chmod () , self . dmainen () , self . dmaouten () , self . gcmph () , self . keysize () , self . npblb () , self . kmod () , self . iprst ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, datatype: {:?}, mode: {:?}, chmod: {:?}, dmainen: {=bool:?}, dmaouten: {=bool:?}, gcmph: {:?}, keysize: {=bool:?}, npblb: {=u8:?}, kmod: {=u8:?}, iprst: {=bool:?} }}",
+                self.en(),
+                self.datatype(),
+                self.mode(),
+                self.chmod(),
+                self.dmainen(),
+                self.dmaouten(),
+                self.gcmph(),
+                self.keysize(),
+                self.npblb(),
+                self.kmod(),
+                self.iprst()
+            )
         }
     }
     #[doc = "Interrupt clear register"]

@@ -343,7 +343,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ pe: {=bool:?}, smbus: {:?}, smbtype: {:?}, enarp: {=bool:?}, enpec: {=bool:?}, engc: {=bool:?}, nostretch: {=bool:?}, start: {=bool:?}, stop: {=bool:?}, ack: {=bool:?}, pos: {:?}, pec: {=bool:?}, alert: {=bool:?}, swrst: {=bool:?} }}" , self . pe () , self . smbus () , self . smbtype () , self . enarp () , self . enpec () , self . engc () , self . nostretch () , self . start () , self . stop () , self . ack () , self . pos () , self . pec () , self . alert () , self . swrst ())
+            defmt::write!(
+                f,
+                "Cr1 {{ pe: {=bool:?}, smbus: {:?}, smbtype: {:?}, enarp: {=bool:?}, enpec: {=bool:?}, engc: {=bool:?}, nostretch: {=bool:?}, start: {=bool:?}, stop: {=bool:?}, ack: {=bool:?}, pos: {:?}, pec: {=bool:?}, alert: {=bool:?}, swrst: {=bool:?} }}",
+                self.pe(),
+                self.smbus(),
+                self.smbtype(),
+                self.enarp(),
+                self.enpec(),
+                self.engc(),
+                self.nostretch(),
+                self.start(),
+                self.stop(),
+                self.ack(),
+                self.pos(),
+                self.pec(),
+                self.alert(),
+                self.swrst()
+            )
         }
     }
     #[doc = "Control register 2"]
@@ -445,7 +462,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ freq: {=u8:?}, iterren: {=bool:?}, itevten: {=bool:?}, itbufen: {=bool:?}, dmaen: {=bool:?}, last: {=bool:?} }}" , self . freq () , self . iterren () , self . itevten () , self . itbufen () , self . dmaen () , self . last ())
+            defmt::write!(
+                f,
+                "Cr2 {{ freq: {=u8:?}, iterren: {=bool:?}, itevten: {=bool:?}, itbufen: {=bool:?}, dmaen: {=bool:?}, last: {=bool:?} }}",
+                self.freq(),
+                self.iterren(),
+                self.itevten(),
+                self.itbufen(),
+                self.dmaen(),
+                self.last()
+            )
         }
     }
     #[doc = "Data register"]
@@ -836,7 +862,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr1 {{ start: {=bool:?}, addr: {=bool:?}, btf: {=bool:?}, add10: {=bool:?}, stopf: {=bool:?}, rxne: {=bool:?}, txe: {=bool:?}, berr: {=bool:?}, arlo: {=bool:?}, af: {=bool:?}, ovr: {=bool:?}, pecerr: {=bool:?}, timeout: {=bool:?}, alert: {=bool:?} }}" , self . start () , self . addr () , self . btf () , self . add10 () , self . stopf () , self . rxne () , self . txe () , self . berr () , self . arlo () , self . af () , self . ovr () , self . pecerr () , self . timeout () , self . alert ())
+            defmt::write!(
+                f,
+                "Sr1 {{ start: {=bool:?}, addr: {=bool:?}, btf: {=bool:?}, add10: {=bool:?}, stopf: {=bool:?}, rxne: {=bool:?}, txe: {=bool:?}, berr: {=bool:?}, arlo: {=bool:?}, af: {=bool:?}, ovr: {=bool:?}, pecerr: {=bool:?}, timeout: {=bool:?}, alert: {=bool:?} }}",
+                self.start(),
+                self.addr(),
+                self.btf(),
+                self.add10(),
+                self.stopf(),
+                self.rxne(),
+                self.txe(),
+                self.berr(),
+                self.arlo(),
+                self.af(),
+                self.ovr(),
+                self.pecerr(),
+                self.timeout(),
+                self.alert()
+            )
         }
     }
     #[doc = "Status register 2"]
@@ -964,7 +1007,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr2 {{ msl: {=bool:?}, busy: {=bool:?}, tra: {=bool:?}, gencall: {=bool:?}, smbdefault: {=bool:?}, smbhost: {=bool:?}, dualf: {=bool:?}, pec: {=u8:?} }}" , self . msl () , self . busy () , self . tra () , self . gencall () , self . smbdefault () , self . smbhost () , self . dualf () , self . pec ())
+            defmt::write!(
+                f,
+                "Sr2 {{ msl: {=bool:?}, busy: {=bool:?}, tra: {=bool:?}, gencall: {=bool:?}, smbdefault: {=bool:?}, smbhost: {=bool:?}, dualf: {=bool:?}, pec: {=u8:?} }}",
+                self.msl(),
+                self.busy(),
+                self.tra(),
+                self.gencall(),
+                self.smbdefault(),
+                self.smbhost(),
+                self.dualf(),
+                self.pec()
+            )
         }
     }
     #[doc = "TRISE register"]

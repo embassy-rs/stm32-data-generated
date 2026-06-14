@@ -322,7 +322,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1fzr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1fzr {{ tim2: {=bool:?}, tim3: {=bool:?}, tim4: {=bool:?}, tim5: {=bool:?}, tim6: {=bool:?}, tim7: {=bool:?}, tim12: {=bool:?}, tim13: {=bool:?}, tim14: {=bool:?}, lptim1: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, can3: {=bool:?}, dbg_i2c1_smbus_timeout: {=bool:?}, dbg_i2c2_smbus_timeout: {=bool:?}, dbg_i2c3_smbus_timeout: {=bool:?}, dbg_i2c4_smbus_timeout: {=bool:?}, can1: {=bool:?}, can2: {=bool:?} }}" , self . tim2 () , self . tim3 () , self . tim4 () , self . tim5 () , self . tim6 () , self . tim7 () , self . tim12 () , self . tim13 () , self . tim14 () , self . lptim1 () , self . rtc () , self . wwdg () , self . iwdg () , self . can3 () , self . dbg_i2c1_smbus_timeout () , self . dbg_i2c2_smbus_timeout () , self . dbg_i2c3_smbus_timeout () , self . dbg_i2c4_smbus_timeout () , self . can1 () , self . can2 ())
+            defmt::write!(
+                f,
+                "Apb1fzr {{ tim2: {=bool:?}, tim3: {=bool:?}, tim4: {=bool:?}, tim5: {=bool:?}, tim6: {=bool:?}, tim7: {=bool:?}, tim12: {=bool:?}, tim13: {=bool:?}, tim14: {=bool:?}, lptim1: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, can3: {=bool:?}, dbg_i2c1_smbus_timeout: {=bool:?}, dbg_i2c2_smbus_timeout: {=bool:?}, dbg_i2c3_smbus_timeout: {=bool:?}, dbg_i2c4_smbus_timeout: {=bool:?}, can1: {=bool:?}, can2: {=bool:?} }}",
+                self.tim2(),
+                self.tim3(),
+                self.tim4(),
+                self.tim5(),
+                self.tim6(),
+                self.tim7(),
+                self.tim12(),
+                self.tim13(),
+                self.tim14(),
+                self.lptim1(),
+                self.rtc(),
+                self.wwdg(),
+                self.iwdg(),
+                self.can3(),
+                self.dbg_i2c1_smbus_timeout(),
+                self.dbg_i2c2_smbus_timeout(),
+                self.dbg_i2c3_smbus_timeout(),
+                self.dbg_i2c4_smbus_timeout(),
+                self.can1(),
+                self.can2()
+            )
         }
     }
     #[doc = "Debug MCU APB2 Freeze register"]
@@ -508,7 +531,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ dbg_sleep: {=bool:?}, dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, trace_ioen: {=bool:?}, trace_mode: {=u8:?} }}" , self . dbg_sleep () , self . dbg_stop () , self . dbg_standby () , self . trace_ioen () , self . trace_mode ())
+            defmt::write!(
+                f,
+                "Cr {{ dbg_sleep: {=bool:?}, dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, trace_ioen: {=bool:?}, trace_mode: {=u8:?} }}",
+                self.dbg_sleep(),
+                self.dbg_stop(),
+                self.dbg_standby(),
+                self.trace_ioen(),
+                self.trace_mode()
+            )
         }
     }
     #[doc = "IDCODE"]

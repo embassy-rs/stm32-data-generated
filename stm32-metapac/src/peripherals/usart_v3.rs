@@ -467,7 +467,31 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ ue: {=bool:?}, uesm: {=bool:?}, re: {=bool:?}, te: {=bool:?}, idleie: {=bool:?}, rxneie: {=bool:?}, tcie: {=bool:?}, txeie: {=bool:?}, peie: {=bool:?}, ps: {:?}, pce: {=bool:?}, wake: {:?}, m0: {:?}, mme: {=bool:?}, cmie: {=bool:?}, over8: {:?}, dedt: {=u8:?}, deat: {=u8:?}, rtoie: {=bool:?}, eobie: {=bool:?}, m1: {:?} }}" , self . ue () , self . uesm () , self . re () , self . te () , self . idleie () , self . rxneie () , self . tcie () , self . txeie () , self . peie () , self . ps () , self . pce () , self . wake () , self . m0 () , self . mme () , self . cmie () , self . over8 () , self . dedt () , self . deat () , self . rtoie () , self . eobie () , self . m1 ())
+            defmt::write!(
+                f,
+                "Cr1 {{ ue: {=bool:?}, uesm: {=bool:?}, re: {=bool:?}, te: {=bool:?}, idleie: {=bool:?}, rxneie: {=bool:?}, tcie: {=bool:?}, txeie: {=bool:?}, peie: {=bool:?}, ps: {:?}, pce: {=bool:?}, wake: {:?}, m0: {:?}, mme: {=bool:?}, cmie: {=bool:?}, over8: {:?}, dedt: {=u8:?}, deat: {=u8:?}, rtoie: {=bool:?}, eobie: {=bool:?}, m1: {:?} }}",
+                self.ue(),
+                self.uesm(),
+                self.re(),
+                self.te(),
+                self.idleie(),
+                self.rxneie(),
+                self.tcie(),
+                self.txeie(),
+                self.peie(),
+                self.ps(),
+                self.pce(),
+                self.wake(),
+                self.m0(),
+                self.mme(),
+                self.cmie(),
+                self.over8(),
+                self.dedt(),
+                self.deat(),
+                self.rtoie(),
+                self.eobie(),
+                self.m1()
+            )
         }
     }
     #[doc = "Control register 2"]
@@ -725,7 +749,28 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ addm: {:?}, lbdl: {:?}, lbdie: {=bool:?}, lbcl: {=bool:?}, cpha: {:?}, cpol: {:?}, clken: {=bool:?}, stop: {:?}, linen: {=bool:?}, swap: {=bool:?}, rxinv: {=bool:?}, txinv: {=bool:?}, datainv: {=bool:?}, msbfirst: {:?}, abren: {=bool:?}, abrmod: {:?}, rtoen: {=bool:?}, add: {=u8:?} }}" , self . addm () , self . lbdl () , self . lbdie () , self . lbcl () , self . cpha () , self . cpol () , self . clken () , self . stop () , self . linen () , self . swap () , self . rxinv () , self . txinv () , self . datainv () , self . msbfirst () , self . abren () , self . abrmod () , self . rtoen () , self . add ())
+            defmt::write!(
+                f,
+                "Cr2 {{ addm: {:?}, lbdl: {:?}, lbdie: {=bool:?}, lbcl: {=bool:?}, cpha: {:?}, cpol: {:?}, clken: {=bool:?}, stop: {:?}, linen: {=bool:?}, swap: {=bool:?}, rxinv: {=bool:?}, txinv: {=bool:?}, datainv: {=bool:?}, msbfirst: {:?}, abren: {=bool:?}, abrmod: {:?}, rtoen: {=bool:?}, add: {=u8:?} }}",
+                self.addm(),
+                self.lbdl(),
+                self.lbdie(),
+                self.lbcl(),
+                self.cpha(),
+                self.cpol(),
+                self.clken(),
+                self.stop(),
+                self.linen(),
+                self.swap(),
+                self.rxinv(),
+                self.txinv(),
+                self.datainv(),
+                self.msbfirst(),
+                self.abren(),
+                self.abrmod(),
+                self.rtoen(),
+                self.add()
+            )
         }
     }
     #[doc = "Control register 3"]
@@ -996,7 +1041,29 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr3 {{ eie: {=bool:?}, iren: {=bool:?}, irlp: {:?}, hdsel: {=bool:?}, nack: {=bool:?}, scen: {=bool:?}, dmar: {=bool:?}, dmat: {=bool:?}, rtse: {=bool:?}, ctse: {=bool:?}, ctsie: {=bool:?}, onebit: {=bool:?}, ovrdis: {=bool:?}, ddre: {=bool:?}, dem: {=bool:?}, dep: {:?}, scarcnt: {=u8:?}, wus: {:?}, wufie: {=bool:?} }}" , self . eie () , self . iren () , self . irlp () , self . hdsel () , self . nack () , self . scen () , self . dmar () , self . dmat () , self . rtse () , self . ctse () , self . ctsie () , self . onebit () , self . ovrdis () , self . ddre () , self . dem () , self . dep () , self . scarcnt () , self . wus () , self . wufie ())
+            defmt::write!(
+                f,
+                "Cr3 {{ eie: {=bool:?}, iren: {=bool:?}, irlp: {:?}, hdsel: {=bool:?}, nack: {=bool:?}, scen: {=bool:?}, dmar: {=bool:?}, dmat: {=bool:?}, rtse: {=bool:?}, ctse: {=bool:?}, ctsie: {=bool:?}, onebit: {=bool:?}, ovrdis: {=bool:?}, ddre: {=bool:?}, dem: {=bool:?}, dep: {:?}, scarcnt: {=u8:?}, wus: {:?}, wufie: {=bool:?} }}",
+                self.eie(),
+                self.iren(),
+                self.irlp(),
+                self.hdsel(),
+                self.nack(),
+                self.scen(),
+                self.dmar(),
+                self.dmat(),
+                self.rtse(),
+                self.ctse(),
+                self.ctsie(),
+                self.onebit(),
+                self.ovrdis(),
+                self.ddre(),
+                self.dem(),
+                self.dep(),
+                self.scarcnt(),
+                self.wus(),
+                self.wufie()
+            )
         }
     }
     #[doc = "Data register"]
@@ -1261,7 +1328,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Icr {{ pe: {=bool:?}, fe: {=bool:?}, ne: {=bool:?}, ore: {=bool:?}, idle: {=bool:?}, tc: {=bool:?}, lbd: {=bool:?}, cts: {=bool:?}, rtof: {=bool:?}, eobf: {=bool:?}, cmf: {=bool:?}, wuf: {=bool:?} }}" , self . pe () , self . fe () , self . ne () , self . ore () , self . idle () , self . tc () , self . lbd () , self . cts () , self . rtof () , self . eobf () , self . cmf () , self . wuf ())
+            defmt::write!(
+                f,
+                "Icr {{ pe: {=bool:?}, fe: {=bool:?}, ne: {=bool:?}, ore: {=bool:?}, idle: {=bool:?}, tc: {=bool:?}, lbd: {=bool:?}, cts: {=bool:?}, rtof: {=bool:?}, eobf: {=bool:?}, cmf: {=bool:?}, wuf: {=bool:?} }}",
+                self.pe(),
+                self.fe(),
+                self.ne(),
+                self.ore(),
+                self.idle(),
+                self.tc(),
+                self.lbd(),
+                self.cts(),
+                self.rtof(),
+                self.eobf(),
+                self.cmf(),
+                self.wuf()
+            )
         }
     }
     #[doc = "Interrupt & status register"]
@@ -1571,7 +1653,32 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ pe: {=bool:?}, fe: {=bool:?}, ne: {=bool:?}, ore: {=bool:?}, idle: {=bool:?}, rxne: {=bool:?}, tc: {=bool:?}, txe: {=bool:?}, lbd: {=bool:?}, ctsif: {=bool:?}, cts: {=bool:?}, rtof: {=bool:?}, eobf: {=bool:?}, abre: {=bool:?}, abrf: {=bool:?}, busy: {=bool:?}, cmf: {=bool:?}, sbkf: {=bool:?}, rwu: {:?}, wuf: {=bool:?}, teack: {=bool:?}, reack: {=bool:?} }}" , self . pe () , self . fe () , self . ne () , self . ore () , self . idle () , self . rxne () , self . tc () , self . txe () , self . lbd () , self . ctsif () , self . cts () , self . rtof () , self . eobf () , self . abre () , self . abrf () , self . busy () , self . cmf () , self . sbkf () , self . rwu () , self . wuf () , self . teack () , self . reack ())
+            defmt::write!(
+                f,
+                "Isr {{ pe: {=bool:?}, fe: {=bool:?}, ne: {=bool:?}, ore: {=bool:?}, idle: {=bool:?}, rxne: {=bool:?}, tc: {=bool:?}, txe: {=bool:?}, lbd: {=bool:?}, ctsif: {=bool:?}, cts: {=bool:?}, rtof: {=bool:?}, eobf: {=bool:?}, abre: {=bool:?}, abrf: {=bool:?}, busy: {=bool:?}, cmf: {=bool:?}, sbkf: {=bool:?}, rwu: {:?}, wuf: {=bool:?}, teack: {=bool:?}, reack: {=bool:?} }}",
+                self.pe(),
+                self.fe(),
+                self.ne(),
+                self.ore(),
+                self.idle(),
+                self.rxne(),
+                self.tc(),
+                self.txe(),
+                self.lbd(),
+                self.ctsif(),
+                self.cts(),
+                self.rtof(),
+                self.eobf(),
+                self.abre(),
+                self.abrf(),
+                self.busy(),
+                self.cmf(),
+                self.sbkf(),
+                self.rwu(),
+                self.wuf(),
+                self.teack(),
+                self.reack()
+            )
         }
     }
     #[doc = "Request register"]

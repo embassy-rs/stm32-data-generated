@@ -209,7 +209,24 @@ for a definition of channel selection. The software is allowed to write this bit
     #[cfg(feature = "defmt")]
     impl defmt::Format for Awd2cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Awd2cr {{ awd2ch[0]: {=bool:?}, awd2ch[1]: {=bool:?}, awd2ch[2]: {=bool:?}, awd2ch[3]: {=bool:?}, awd2ch[4]: {=bool:?}, awd2ch[5]: {=bool:?}, awd2ch[6]: {=bool:?}, awd2ch[7]: {=bool:?}, awd2ch[8]: {=bool:?}, awd2ch[9]: {=bool:?}, awd2ch[10]: {=bool:?}, awd2ch[11]: {=bool:?}, awd2ch[12]: {=bool:?}, awd2ch[13]: {=bool:?} }}" , self . awd2ch (0usize) , self . awd2ch (1usize) , self . awd2ch (2usize) , self . awd2ch (3usize) , self . awd2ch (4usize) , self . awd2ch (5usize) , self . awd2ch (6usize) , self . awd2ch (7usize) , self . awd2ch (8usize) , self . awd2ch (9usize) , self . awd2ch (10usize) , self . awd2ch (11usize) , self . awd2ch (12usize) , self . awd2ch (13usize))
+            defmt::write!(
+                f,
+                "Awd2cr {{ awd2ch[0]: {=bool:?}, awd2ch[1]: {=bool:?}, awd2ch[2]: {=bool:?}, awd2ch[3]: {=bool:?}, awd2ch[4]: {=bool:?}, awd2ch[5]: {=bool:?}, awd2ch[6]: {=bool:?}, awd2ch[7]: {=bool:?}, awd2ch[8]: {=bool:?}, awd2ch[9]: {=bool:?}, awd2ch[10]: {=bool:?}, awd2ch[11]: {=bool:?}, awd2ch[12]: {=bool:?}, awd2ch[13]: {=bool:?} }}",
+                self.awd2ch(0usize),
+                self.awd2ch(1usize),
+                self.awd2ch(2usize),
+                self.awd2ch(3usize),
+                self.awd2ch(4usize),
+                self.awd2ch(5usize),
+                self.awd2ch(6usize),
+                self.awd2ch(7usize),
+                self.awd2ch(8usize),
+                self.awd2ch(9usize),
+                self.awd2ch(10usize),
+                self.awd2ch(11usize),
+                self.awd2ch(12usize),
+                self.awd2ch(13usize)
+            )
         }
     }
     #[doc = "ADC watchdog threshold register."]
@@ -315,7 +332,24 @@ for a definition of channel selection. The software is allowed to write this bit
     #[cfg(feature = "defmt")]
     impl defmt::Format for Awd3cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Awd3cr {{ awd3ch[0]: {=bool:?}, awd3ch[1]: {=bool:?}, awd3ch[2]: {=bool:?}, awd3ch[3]: {=bool:?}, awd3ch[4]: {=bool:?}, awd3ch[5]: {=bool:?}, awd3ch[6]: {=bool:?}, awd3ch[7]: {=bool:?}, awd3ch[8]: {=bool:?}, awd3ch[9]: {=bool:?}, awd3ch[10]: {=bool:?}, awd3ch[11]: {=bool:?}, awd3ch[12]: {=bool:?}, awd3ch[13]: {=bool:?} }}" , self . awd3ch (0usize) , self . awd3ch (1usize) , self . awd3ch (2usize) , self . awd3ch (3usize) , self . awd3ch (4usize) , self . awd3ch (5usize) , self . awd3ch (6usize) , self . awd3ch (7usize) , self . awd3ch (8usize) , self . awd3ch (9usize) , self . awd3ch (10usize) , self . awd3ch (11usize) , self . awd3ch (12usize) , self . awd3ch (13usize))
+            defmt::write!(
+                f,
+                "Awd3cr {{ awd3ch[0]: {=bool:?}, awd3ch[1]: {=bool:?}, awd3ch[2]: {=bool:?}, awd3ch[3]: {=bool:?}, awd3ch[4]: {=bool:?}, awd3ch[5]: {=bool:?}, awd3ch[6]: {=bool:?}, awd3ch[7]: {=bool:?}, awd3ch[8]: {=bool:?}, awd3ch[9]: {=bool:?}, awd3ch[10]: {=bool:?}, awd3ch[11]: {=bool:?}, awd3ch[12]: {=bool:?}, awd3ch[13]: {=bool:?} }}",
+                self.awd3ch(0usize),
+                self.awd3ch(1usize),
+                self.awd3ch(2usize),
+                self.awd3ch(3usize),
+                self.awd3ch(4usize),
+                self.awd3ch(5usize),
+                self.awd3ch(6usize),
+                self.awd3ch(7usize),
+                self.awd3ch(8usize),
+                self.awd3ch(9usize),
+                self.awd3ch(10usize),
+                self.awd3ch(11usize),
+                self.awd3ch(12usize),
+                self.awd3ch(13usize)
+            )
         }
     }
     #[doc = "ADC watchdog threshold register."]
@@ -694,7 +728,25 @@ bits must be also set into the CHSELR register. Note: The software is allowed to
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ dmaen: {=bool:?}, dmacfg: {:?}, res: {:?}, scandir: {:?}, align: {:?}, extsel: {:?}, exten: {:?}, ovrmod: {:?}, cont: {=bool:?}, wait: {=bool:?}, discen: {=bool:?}, chselrmod: {=bool:?}, awd1sgl: {:?}, awd1en: {=bool:?}, awd1ch: {=u8:?} }}" , self . dmaen () , self . dmacfg () , self . res () , self . scandir () , self . align () , self . extsel () , self . exten () , self . ovrmod () , self . cont () , self . wait () , self . discen () , self . chselrmod () , self . awd1sgl () , self . awd1en () , self . awd1ch ())
+            defmt::write!(
+                f,
+                "Cfgr1 {{ dmaen: {=bool:?}, dmacfg: {:?}, res: {:?}, scandir: {:?}, align: {:?}, extsel: {:?}, exten: {:?}, ovrmod: {:?}, cont: {=bool:?}, wait: {=bool:?}, discen: {=bool:?}, chselrmod: {=bool:?}, awd1sgl: {:?}, awd1en: {=bool:?}, awd1ch: {=u8:?} }}",
+                self.dmaen(),
+                self.dmacfg(),
+                self.res(),
+                self.scandir(),
+                self.align(),
+                self.extsel(),
+                self.exten(),
+                self.ovrmod(),
+                self.cont(),
+                self.wait(),
+                self.discen(),
+                self.chselrmod(),
+                self.awd1sgl(),
+                self.awd1en(),
+                self.awd1ch()
+            )
         }
     }
     #[doc = "ADC configuration register 2."]
@@ -845,7 +897,24 @@ bits must be also set into the CHSELR register. Note: The software is allowed to
     #[cfg(feature = "defmt")]
     impl defmt::Format for Chselr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Chselr {{ chsel0[0]: {=bool:?}, chsel0[1]: {=bool:?}, chsel0[2]: {=bool:?}, chsel0[3]: {=bool:?}, chsel0[4]: {=bool:?}, chsel0[5]: {=bool:?}, chsel0[6]: {=bool:?}, chsel0[7]: {=bool:?}, chsel0[8]: {=bool:?}, chsel0[9]: {=bool:?}, chsel0[10]: {=bool:?}, chsel0[11]: {=bool:?}, chsel0[12]: {=bool:?}, chsel0[13]: {=bool:?} }}" , self . chsel0 (0usize) , self . chsel0 (1usize) , self . chsel0 (2usize) , self . chsel0 (3usize) , self . chsel0 (4usize) , self . chsel0 (5usize) , self . chsel0 (6usize) , self . chsel0 (7usize) , self . chsel0 (8usize) , self . chsel0 (9usize) , self . chsel0 (10usize) , self . chsel0 (11usize) , self . chsel0 (12usize) , self . chsel0 (13usize))
+            defmt::write!(
+                f,
+                "Chselr {{ chsel0[0]: {=bool:?}, chsel0[1]: {=bool:?}, chsel0[2]: {=bool:?}, chsel0[3]: {=bool:?}, chsel0[4]: {=bool:?}, chsel0[5]: {=bool:?}, chsel0[6]: {=bool:?}, chsel0[7]: {=bool:?}, chsel0[8]: {=bool:?}, chsel0[9]: {=bool:?}, chsel0[10]: {=bool:?}, chsel0[11]: {=bool:?}, chsel0[12]: {=bool:?}, chsel0[13]: {=bool:?} }}",
+                self.chsel0(0usize),
+                self.chsel0(1usize),
+                self.chsel0(2usize),
+                self.chsel0(3usize),
+                self.chsel0(4usize),
+                self.chsel0(5usize),
+                self.chsel0(6usize),
+                self.chsel0(7usize),
+                self.chsel0(8usize),
+                self.chsel0(9usize),
+                self.chsel0(10usize),
+                self.chsel0(11usize),
+                self.chsel0(12usize),
+                self.chsel0(13usize)
+            )
         }
     }
     #[doc = "ADC channel selection register \\[alternate\\]."]
@@ -895,7 +964,18 @@ for a definition of channel selection. Note: The software is allowed to write th
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChselrAlternate {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "ChselrAlternate {{ sq[0]: {=u8:?}, sq[1]: {=u8:?}, sq[2]: {=u8:?}, sq[3]: {=u8:?}, sq[4]: {=u8:?}, sq[5]: {=u8:?}, sq[6]: {=u8:?}, sq[7]: {=u8:?} }}" , self . sq (0usize) , self . sq (1usize) , self . sq (2usize) , self . sq (3usize) , self . sq (4usize) , self . sq (5usize) , self . sq (6usize) , self . sq (7usize))
+            defmt::write!(
+                f,
+                "ChselrAlternate {{ sq[0]: {=u8:?}, sq[1]: {=u8:?}, sq[2]: {=u8:?}, sq[3]: {=u8:?}, sq[4]: {=u8:?}, sq[5]: {=u8:?}, sq[6]: {=u8:?}, sq[7]: {=u8:?} }}",
+                self.sq(0usize),
+                self.sq(1usize),
+                self.sq(2usize),
+                self.sq(3usize),
+                self.sq(4usize),
+                self.sq(5usize),
+                self.sq(6usize),
+                self.sq(7usize)
+            )
         }
     }
     #[doc = "ADC control register."]
@@ -999,7 +1079,16 @@ configuration bits, a conversion either starts immediately (software trigger con
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ aden: {=bool:?}, addis: {=bool:?}, adstart: {=bool:?}, adstp: {=bool:?}, advregen: {=bool:?}, adcal: {=bool:?} }}" , self . aden () , self . addis () , self . adstart () , self . adstp () , self . advregen () , self . adcal ())
+            defmt::write!(
+                f,
+                "Cr {{ aden: {=bool:?}, addis: {=bool:?}, adstart: {=bool:?}, adstp: {=bool:?}, advregen: {=bool:?}, adcal: {=bool:?} }}",
+                self.aden(),
+                self.addis(),
+                self.adstart(),
+                self.adstp(),
+                self.advregen(),
+                self.adcal()
+            )
         }
     }
     #[doc = "ADC data register."]
@@ -1170,7 +1259,20 @@ contains the calibration factor."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier {{ adrdyie: {=bool:?}, eosmpie: {=bool:?}, eocie: {=bool:?}, eosie: {=bool:?}, ovrie: {=bool:?}, awdie[0]: {=bool:?}, awdie[1]: {=bool:?}, awdie[2]: {=bool:?}, eocalie: {=bool:?}, ldordyie: {=bool:?} }}" , self . adrdyie () , self . eosmpie () , self . eocie () , self . eosie () , self . ovrie () , self . awdie (0usize) , self . awdie (1usize) , self . awdie (2usize) , self . eocalie () , self . ldordyie ())
+            defmt::write!(
+                f,
+                "Ier {{ adrdyie: {=bool:?}, eosmpie: {=bool:?}, eocie: {=bool:?}, eosie: {=bool:?}, ovrie: {=bool:?}, awdie[0]: {=bool:?}, awdie[1]: {=bool:?}, awdie[2]: {=bool:?}, eocalie: {=bool:?}, ldordyie: {=bool:?} }}",
+                self.adrdyie(),
+                self.eosmpie(),
+                self.eocie(),
+                self.eosie(),
+                self.ovrie(),
+                self.awdie(0usize),
+                self.awdie(1usize),
+                self.awdie(2usize),
+                self.eocalie(),
+                self.ldordyie()
+            )
         }
     }
     #[doc = "ADC interrupt and status register."]
@@ -1304,7 +1406,20 @@ contains the calibration factor."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ adrdy: {=bool:?}, eosmp: {=bool:?}, eoc: {=bool:?}, eos: {=bool:?}, ovr: {=bool:?}, awd[0]: {=bool:?}, awd[1]: {=bool:?}, awd[2]: {=bool:?}, eocal: {=bool:?}, ldordy: {=bool:?} }}" , self . adrdy () , self . eosmp () , self . eoc () , self . eos () , self . ovr () , self . awd (0usize) , self . awd (1usize) , self . awd (2usize) , self . eocal () , self . ldordy ())
+            defmt::write!(
+                f,
+                "Isr {{ adrdy: {=bool:?}, eosmp: {=bool:?}, eoc: {=bool:?}, eos: {=bool:?}, ovr: {=bool:?}, awd[0]: {=bool:?}, awd[1]: {=bool:?}, awd[2]: {=bool:?}, eocal: {=bool:?}, ldordy: {=bool:?} }}",
+                self.adrdy(),
+                self.eosmp(),
+                self.eoc(),
+                self.eos(),
+                self.ovr(),
+                self.awd(0usize),
+                self.awd(1usize),
+                self.awd(2usize),
+                self.eocal(),
+                self.ldordy()
+            )
         }
     }
     #[doc = "ADC Power register."]
@@ -1431,7 +1546,26 @@ contains the calibration factor."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Smpr {{ smp[0]: {:?}, smp[1]: {:?}, smpsel[0]: {:?}, smpsel[1]: {:?}, smpsel[2]: {:?}, smpsel[3]: {:?}, smpsel[4]: {:?}, smpsel[5]: {:?}, smpsel[6]: {:?}, smpsel[7]: {:?}, smpsel[8]: {:?}, smpsel[9]: {:?}, smpsel[10]: {:?}, smpsel[11]: {:?}, smpsel[12]: {:?}, smpsel[13]: {:?} }}" , self . smp (0usize) , self . smp (1usize) , self . smpsel (0usize) , self . smpsel (1usize) , self . smpsel (2usize) , self . smpsel (3usize) , self . smpsel (4usize) , self . smpsel (5usize) , self . smpsel (6usize) , self . smpsel (7usize) , self . smpsel (8usize) , self . smpsel (9usize) , self . smpsel (10usize) , self . smpsel (11usize) , self . smpsel (12usize) , self . smpsel (13usize))
+            defmt::write!(
+                f,
+                "Smpr {{ smp[0]: {:?}, smp[1]: {:?}, smpsel[0]: {:?}, smpsel[1]: {:?}, smpsel[2]: {:?}, smpsel[3]: {:?}, smpsel[4]: {:?}, smpsel[5]: {:?}, smpsel[6]: {:?}, smpsel[7]: {:?}, smpsel[8]: {:?}, smpsel[9]: {:?}, smpsel[10]: {:?}, smpsel[11]: {:?}, smpsel[12]: {:?}, smpsel[13]: {:?} }}",
+                self.smp(0usize),
+                self.smp(1usize),
+                self.smpsel(0usize),
+                self.smpsel(1usize),
+                self.smpsel(2usize),
+                self.smpsel(3usize),
+                self.smpsel(4usize),
+                self.smpsel(5usize),
+                self.smpsel(6usize),
+                self.smpsel(7usize),
+                self.smpsel(8usize),
+                self.smpsel(9usize),
+                self.smpsel(10usize),
+                self.smpsel(11usize),
+                self.smpsel(12usize),
+                self.smpsel(13usize)
+            )
         }
     }
 }

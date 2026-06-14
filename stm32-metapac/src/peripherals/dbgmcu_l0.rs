@@ -166,7 +166,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1fzr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1fzr {{ tim2: {=bool:?}, tim6: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, i2c1: {=bool:?}, i2c2: {=bool:?}, lptim: {=bool:?} }}" , self . tim2 () , self . tim6 () , self . rtc () , self . wwdg () , self . iwdg () , self . i2c1 () , self . i2c2 () , self . lptim ())
+            defmt::write!(
+                f,
+                "Apb1fzr {{ tim2: {=bool:?}, tim6: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, i2c1: {=bool:?}, i2c2: {=bool:?}, lptim: {=bool:?} }}",
+                self.tim2(),
+                self.tim6(),
+                self.rtc(),
+                self.wwdg(),
+                self.iwdg(),
+                self.i2c1(),
+                self.i2c2(),
+                self.lptim()
+            )
         }
     }
     #[doc = "APB High Freeze Register"]

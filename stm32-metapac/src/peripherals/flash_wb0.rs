@@ -489,7 +489,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Irqmask {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Irqmask {{ cmddonem: {=bool:?}, cmdstartm: {=bool:?}, cmderrm: {=bool:?}, illcmdm: {=bool:?}, readokm: {=bool:?}, fnreadym: {=bool:?} }}" , self . cmddonem () , self . cmdstartm () , self . cmderrm () , self . illcmdm () , self . readokm () , self . fnreadym ())
+            defmt::write!(
+                f,
+                "Irqmask {{ cmddonem: {=bool:?}, cmdstartm: {=bool:?}, cmderrm: {=bool:?}, illcmdm: {=bool:?}, readokm: {=bool:?}, fnreadym: {=bool:?} }}",
+                self.cmddonem(),
+                self.cmdstartm(),
+                self.cmderrm(),
+                self.illcmdm(),
+                self.readokm(),
+                self.fnreadym()
+            )
         }
     }
     #[doc = "IRQRAW register."]
@@ -591,7 +600,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Irqraw {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Irqraw {{ cmddone_ris: {=bool:?}, cmdstart_ris: {=bool:?}, cmderr_ris: {=bool:?}, illcmd_ris: {=bool:?}, readok_ris: {=bool:?}, cmdsleeperr_ris: {=bool:?} }}" , self . cmddone_ris () , self . cmdstart_ris () , self . cmderr_ris () , self . illcmd_ris () , self . readok_ris () , self . cmdsleeperr_ris ())
+            defmt::write!(
+                f,
+                "Irqraw {{ cmddone_ris: {=bool:?}, cmdstart_ris: {=bool:?}, cmderr_ris: {=bool:?}, illcmd_ris: {=bool:?}, readok_ris: {=bool:?}, cmdsleeperr_ris: {=bool:?} }}",
+                self.cmddone_ris(),
+                self.cmdstart_ris(),
+                self.cmderr_ris(),
+                self.illcmd_ris(),
+                self.readok_ris(),
+                self.cmdsleeperr_ris()
+            )
         }
     }
     #[doc = "IRQSTAT register."]
@@ -693,7 +711,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Irqstat {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Irqstat {{ cmddone_mis: {=bool:?}, cmdstart_mis: {=bool:?}, cmderr_mis: {=bool:?}, illcmd_mis: {=bool:?}, readok_mis: {=bool:?}, fnready_mis: {=bool:?} }}" , self . cmddone_mis () , self . cmdstart_mis () , self . cmderr_mis () , self . illcmd_mis () , self . readok_mis () , self . fnready_mis ())
+            defmt::write!(
+                f,
+                "Irqstat {{ cmddone_mis: {=bool:?}, cmdstart_mis: {=bool:?}, cmderr_mis: {=bool:?}, illcmd_mis: {=bool:?}, readok_mis: {=bool:?}, fnready_mis: {=bool:?} }}",
+                self.cmddone_mis(),
+                self.cmdstart_mis(),
+                self.cmderr_mis(),
+                self.illcmd_mis(),
+                self.readok_mis(),
+                self.fnready_mis()
+            )
         }
     }
     #[doc = "LFSRVAL register."]
@@ -933,7 +960,15 @@ content."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Size {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Size {{ flash_size: {=u16:?}, ram_size: {=u8:?}, flash_secure: {=bool:?}, swd_disable: {=bool:?}, package_size: {=u8:?} }}" , self . flash_size () , self . ram_size () , self . flash_secure () , self . swd_disable () , self . package_size ())
+            defmt::write!(
+                f,
+                "Size {{ flash_size: {=u16:?}, ram_size: {=u8:?}, flash_secure: {=bool:?}, swd_disable: {=bool:?}, package_size: {=u8:?} }}",
+                self.flash_size(),
+                self.ram_size(),
+                self.flash_secure(),
+                self.swd_disable(),
+                self.package_size()
+            )
         }
     }
 }

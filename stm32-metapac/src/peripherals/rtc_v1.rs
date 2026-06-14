@@ -379,7 +379,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Crl {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Crl {{ secf: {=bool:?}, alrf: {=bool:?}, owf: {=bool:?}, rsf: {=bool:?}, cnf: {=bool:?}, rtoff: {:?} }}" , self . secf () , self . alrf () , self . owf () , self . rsf () , self . cnf () , self . rtoff ())
+            defmt::write!(
+                f,
+                "Crl {{ secf: {=bool:?}, alrf: {=bool:?}, owf: {=bool:?}, rsf: {=bool:?}, cnf: {=bool:?}, rtoff: {:?} }}",
+                self.secf(),
+                self.alrf(),
+                self.owf(),
+                self.rsf(),
+                self.cnf(),
+                self.rtoff()
+            )
         }
     }
     #[doc = "Prescaler Divider Register High"]

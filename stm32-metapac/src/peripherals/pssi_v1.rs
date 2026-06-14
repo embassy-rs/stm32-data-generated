@@ -181,7 +181,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ ckpol: {:?}, depol: {:?}, rdypol: {:?}, edm: {:?}, enable: {=bool:?}, derdycfg: {:?}, dmaen: {=bool:?}, outen: {:?} }}" , self . ckpol () , self . depol () , self . rdypol () , self . edm () , self . enable () , self . derdycfg () , self . dmaen () , self . outen ())
+            defmt::write!(
+                f,
+                "Cr {{ ckpol: {:?}, depol: {:?}, rdypol: {:?}, edm: {:?}, enable: {=bool:?}, derdycfg: {:?}, dmaen: {=bool:?}, outen: {:?} }}",
+                self.ckpol(),
+                self.depol(),
+                self.rdypol(),
+                self.edm(),
+                self.enable(),
+                self.derdycfg(),
+                self.dmaen(),
+                self.outen()
+            )
         }
     }
     #[doc = "PSSI data register."]

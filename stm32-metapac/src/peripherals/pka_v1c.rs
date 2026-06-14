@@ -210,7 +210,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, start: {=bool:?}, mode: {=u8:?}, procendie: {=bool:?}, ramerrie: {=bool:?}, addrerrie: {=bool:?} }}" , self . en () , self . start () , self . mode () , self . procendie () , self . ramerrie () , self . addrerrie ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, start: {=bool:?}, mode: {=u8:?}, procendie: {=bool:?}, ramerrie: {=bool:?}, addrerrie: {=bool:?} }}",
+                self.en(),
+                self.start(),
+                self.mode(),
+                self.procendie(),
+                self.ramerrie(),
+                self.addrerrie()
+            )
         }
     }
     #[doc = "PKA status register."]

@@ -346,7 +346,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ccr {{ instruction: {=u8:?}, imode: {=u8:?}, admode: {=u8:?}, adsize: {=u8:?}, abmode: {=u8:?}, absize: {=u8:?}, dcyc: {=u8:?}, dmode: {=u8:?}, fmode: {=u8:?}, sioo: {=bool:?}, frcm: {=bool:?}, dhhc: {=bool:?}, ddrm: {=bool:?} }}" , self . instruction () , self . imode () , self . admode () , self . adsize () , self . abmode () , self . absize () , self . dcyc () , self . dmode () , self . fmode () , self . sioo () , self . frcm () , self . dhhc () , self . ddrm ())
+            defmt::write!(
+                f,
+                "Ccr {{ instruction: {=u8:?}, imode: {=u8:?}, admode: {=u8:?}, adsize: {=u8:?}, abmode: {=u8:?}, absize: {=u8:?}, dcyc: {=u8:?}, dmode: {=u8:?}, fmode: {=u8:?}, sioo: {=bool:?}, frcm: {=bool:?}, dhhc: {=bool:?}, ddrm: {=bool:?} }}",
+                self.instruction(),
+                self.imode(),
+                self.admode(),
+                self.adsize(),
+                self.abmode(),
+                self.absize(),
+                self.dcyc(),
+                self.dmode(),
+                self.fmode(),
+                self.sioo(),
+                self.frcm(),
+                self.dhhc(),
+                self.ddrm()
+            )
         }
     }
     #[doc = "control register"]
@@ -578,7 +594,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, abort: {=bool:?}, dmaen: {=bool:?}, tcen: {=bool:?}, sshift: {=bool:?}, dfm: {=bool:?}, fsel: {=bool:?}, fthres: {=u8:?}, teie: {=bool:?}, tcie: {=bool:?}, ftie: {=bool:?}, smie: {=bool:?}, toie: {=bool:?}, apms: {=bool:?}, pmm: {=bool:?}, prescaler: {=u8:?} }}" , self . en () , self . abort () , self . dmaen () , self . tcen () , self . sshift () , self . dfm () , self . fsel () , self . fthres () , self . teie () , self . tcie () , self . ftie () , self . smie () , self . toie () , self . apms () , self . pmm () , self . prescaler ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, abort: {=bool:?}, dmaen: {=bool:?}, tcen: {=bool:?}, sshift: {=bool:?}, dfm: {=bool:?}, fsel: {=bool:?}, fthres: {=u8:?}, teie: {=bool:?}, tcie: {=bool:?}, ftie: {=bool:?}, smie: {=bool:?}, toie: {=bool:?}, apms: {=bool:?}, pmm: {=bool:?}, prescaler: {=u8:?} }}",
+                self.en(),
+                self.abort(),
+                self.dmaen(),
+                self.tcen(),
+                self.sshift(),
+                self.dfm(),
+                self.fsel(),
+                self.fthres(),
+                self.teie(),
+                self.tcie(),
+                self.ftie(),
+                self.smie(),
+                self.toie(),
+                self.apms(),
+                self.pmm(),
+                self.prescaler()
+            )
         }
     }
     #[doc = "device configuration register"]
@@ -1055,7 +1090,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ tef: {=bool:?}, tcf: {=bool:?}, ftf: {=bool:?}, smf: {=bool:?}, tof: {=bool:?}, busy: {=bool:?}, flevel: {=u8:?} }}" , self . tef () , self . tcf () , self . ftf () , self . smf () , self . tof () , self . busy () , self . flevel ())
+            defmt::write!(
+                f,
+                "Sr {{ tef: {=bool:?}, tcf: {=bool:?}, ftf: {=bool:?}, smf: {=bool:?}, tof: {=bool:?}, busy: {=bool:?}, flevel: {=u8:?} }}",
+                self.tef(),
+                self.tcf(),
+                self.ftf(),
+                self.smf(),
+                self.tof(),
+                self.busy(),
+                self.flevel()
+            )
         }
     }
 }

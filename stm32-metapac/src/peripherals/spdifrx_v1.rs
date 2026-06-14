@@ -246,7 +246,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ spdifen: {=u8:?}, rxdmaen: {=bool:?}, rxsteo: {=bool:?}, drfmt: {=u8:?}, pmsk: {=bool:?}, vmsk: {=bool:?}, cumsk: {=bool:?}, ptmsk: {=bool:?}, cbdmaen: {=bool:?}, chsel: {=bool:?}, nbtr: {=u8:?}, wfa: {=bool:?}, insel: {=u8:?} }}" , self . spdifen () , self . rxdmaen () , self . rxsteo () , self . drfmt () , self . pmsk () , self . vmsk () , self . cumsk () , self . ptmsk () , self . cbdmaen () , self . chsel () , self . nbtr () , self . wfa () , self . insel ())
+            defmt::write!(
+                f,
+                "Cr {{ spdifen: {=u8:?}, rxdmaen: {=bool:?}, rxsteo: {=bool:?}, drfmt: {=u8:?}, pmsk: {=bool:?}, vmsk: {=bool:?}, cumsk: {=bool:?}, ptmsk: {=bool:?}, cbdmaen: {=bool:?}, chsel: {=bool:?}, nbtr: {=u8:?}, wfa: {=bool:?}, insel: {=u8:?} }}",
+                self.spdifen(),
+                self.rxdmaen(),
+                self.rxsteo(),
+                self.drfmt(),
+                self.pmsk(),
+                self.vmsk(),
+                self.cumsk(),
+                self.ptmsk(),
+                self.cbdmaen(),
+                self.chsel(),
+                self.nbtr(),
+                self.wfa(),
+                self.insel()
+            )
         }
     }
     #[doc = "Channel Status register"]
@@ -674,7 +690,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Imr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Imr {{ rxneie: {=bool:?}, csrneie: {=bool:?}, perrie: {=bool:?}, ovrie: {=bool:?}, sblkie: {=bool:?}, syncdie: {=bool:?}, ifeie: {=bool:?} }}" , self . rxneie () , self . csrneie () , self . perrie () , self . ovrie () , self . sblkie () , self . syncdie () , self . ifeie ())
+            defmt::write!(
+                f,
+                "Imr {{ rxneie: {=bool:?}, csrneie: {=bool:?}, perrie: {=bool:?}, ovrie: {=bool:?}, sblkie: {=bool:?}, syncdie: {=bool:?}, ifeie: {=bool:?} }}",
+                self.rxneie(),
+                self.csrneie(),
+                self.perrie(),
+                self.ovrie(),
+                self.sblkie(),
+                self.syncdie(),
+                self.ifeie()
+            )
         }
     }
     #[doc = "Status register"]
@@ -828,7 +854,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ rxne: {=bool:?}, csrne: {=bool:?}, perr: {=bool:?}, ovr: {=bool:?}, sbd: {=bool:?}, syncd: {=bool:?}, ferr: {=bool:?}, serr: {=bool:?}, terr: {=bool:?}, width: {=u16:?} }}" , self . rxne () , self . csrne () , self . perr () , self . ovr () , self . sbd () , self . syncd () , self . ferr () , self . serr () , self . terr () , self . width ())
+            defmt::write!(
+                f,
+                "Sr {{ rxne: {=bool:?}, csrne: {=bool:?}, perr: {=bool:?}, ovr: {=bool:?}, sbd: {=bool:?}, syncd: {=bool:?}, ferr: {=bool:?}, serr: {=bool:?}, terr: {=bool:?}, width: {=u16:?} }}",
+                self.rxne(),
+                self.csrne(),
+                self.perr(),
+                self.ovr(),
+                self.sbd(),
+                self.syncd(),
+                self.ferr(),
+                self.serr(),
+                self.terr(),
+                self.width()
+            )
         }
     }
 }

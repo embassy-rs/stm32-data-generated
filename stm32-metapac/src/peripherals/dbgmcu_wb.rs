@@ -173,7 +173,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1fzr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1fzr1 {{ tim2: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, i2c1: {=bool:?}, i2c3: {=bool:?}, lptim1: {=bool:?} }}" , self . tim2 () , self . rtc () , self . wwdg () , self . iwdg () , self . i2c1 () , self . i2c3 () , self . lptim1 ())
+            defmt::write!(
+                f,
+                "Apb1fzr1 {{ tim2: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, i2c1: {=bool:?}, i2c3: {=bool:?}, lptim1: {=bool:?} }}",
+                self.tim2(),
+                self.rtc(),
+                self.wwdg(),
+                self.iwdg(),
+                self.i2c1(),
+                self.i2c3(),
+                self.lptim1()
+            )
         }
     }
     #[doc = "APB1 High Freeze Register CPU1"]
@@ -379,7 +389,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for C2apB1fzr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "C2apB1fzr1 {{ lptim2: {=bool:?}, rtc: {=bool:?}, iwdg: {=bool:?}, i2c1: {=bool:?}, i2c3: {=bool:?}, lptim1: {=bool:?} }}" , self . lptim2 () , self . rtc () , self . iwdg () , self . i2c1 () , self . i2c3 () , self . lptim1 ())
+            defmt::write!(
+                f,
+                "C2apB1fzr1 {{ lptim2: {=bool:?}, rtc: {=bool:?}, iwdg: {=bool:?}, i2c1: {=bool:?}, i2c3: {=bool:?}, lptim1: {=bool:?} }}",
+                self.lptim2(),
+                self.rtc(),
+                self.iwdg(),
+                self.i2c1(),
+                self.i2c3(),
+                self.lptim1()
+            )
         }
     }
     #[doc = "APB1 High Freeze Register CPU2"]
@@ -572,7 +591,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ dbg_sleep: {=bool:?}, dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, trace_ioen: {=bool:?}, trgoen: {=bool:?} }}" , self . dbg_sleep () , self . dbg_stop () , self . dbg_standby () , self . trace_ioen () , self . trgoen ())
+            defmt::write!(
+                f,
+                "Cr {{ dbg_sleep: {=bool:?}, dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, trace_ioen: {=bool:?}, trgoen: {=bool:?} }}",
+                self.dbg_sleep(),
+                self.dbg_stop(),
+                self.dbg_standby(),
+                self.trace_ioen(),
+                self.trgoen()
+            )
         }
     }
     #[doc = "MCU Device ID Code Register"]

@@ -19105,7 +19105,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegConfr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "JpegConfr1 {{ nf: {=u8:?}, de: {=bool:?}, colorspace: {=u8:?}, ns: {=u8:?}, hdr: {=bool:?}, ysize: {=u16:?} }}" , self . nf () , self . de () , self . colorspace () , self . ns () , self . hdr () , self . ysize ())
+            defmt::write!(
+                f,
+                "JpegConfr1 {{ nf: {=u8:?}, de: {=bool:?}, colorspace: {=u8:?}, ns: {=u8:?}, hdr: {=bool:?}, ysize: {=u16:?} }}",
+                self.nf(),
+                self.de(),
+                self.colorspace(),
+                self.ns(),
+                self.hdr(),
+                self.ysize()
+            )
         }
     }
     #[doc = "JPEG codec configuration register 2"]
@@ -19786,7 +19795,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegCr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "JpegCr {{ jcen: {=bool:?}, iftie: {=bool:?}, ifnfie: {=bool:?}, oftie: {=bool:?}, ofneie: {=bool:?}, eocie: {=bool:?}, hpdie: {=bool:?}, idmaen: {=bool:?}, odmaen: {=bool:?}, iff: {=bool:?}, off: {=bool:?} }}" , self . jcen () , self . iftie () , self . ifnfie () , self . oftie () , self . ofneie () , self . eocie () , self . hpdie () , self . idmaen () , self . odmaen () , self . iff () , self . off ())
+            defmt::write!(
+                f,
+                "JpegCr {{ jcen: {=bool:?}, iftie: {=bool:?}, ifnfie: {=bool:?}, oftie: {=bool:?}, ofneie: {=bool:?}, eocie: {=bool:?}, hpdie: {=bool:?}, idmaen: {=bool:?}, odmaen: {=bool:?}, iff: {=bool:?}, off: {=bool:?} }}",
+                self.jcen(),
+                self.iftie(),
+                self.ifnfie(),
+                self.oftie(),
+                self.ofneie(),
+                self.eocie(),
+                self.hpdie(),
+                self.idmaen(),
+                self.odmaen(),
+                self.iff(),
+                self.off()
+            )
         }
     }
     #[doc = "JPEG data input register"]
@@ -19971,7 +19994,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for JpegSr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "JpegSr {{ iftf: {=bool:?}, ifnff: {=bool:?}, oftf: {=bool:?}, ofnef: {=bool:?}, eocf: {=bool:?}, hpdf: {=bool:?}, cof: {=bool:?} }}" , self . iftf () , self . ifnff () , self . oftf () , self . ofnef () , self . eocf () , self . hpdf () , self . cof ())
+            defmt::write!(
+                f,
+                "JpegSr {{ iftf: {=bool:?}, ifnff: {=bool:?}, oftf: {=bool:?}, ofnef: {=bool:?}, eocf: {=bool:?}, hpdf: {=bool:?}, cof: {=bool:?} }}",
+                self.iftf(),
+                self.ifnff(),
+                self.oftf(),
+                self.ofnef(),
+                self.eocf(),
+                self.hpdf(),
+                self.cof()
+            )
         }
     }
     #[doc = "JPEG quantization tables"]

@@ -277,7 +277,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ algodir: {=bool:?}, algomode0: {=u8:?}, datatype: {=u8:?}, keysize: {=u8:?}, fflush: {=bool:?}, crypen: {=bool:?}, gcm_ccmph: {=u8:?}, algomode3: {=bool:?}, npblb: {=u8:?} }}" , self . algodir () , self . algomode0 () , self . datatype () , self . keysize () , self . fflush () , self . crypen () , self . gcm_ccmph () , self . algomode3 () , self . npblb ())
+            defmt::write!(
+                f,
+                "Cr {{ algodir: {=bool:?}, algomode0: {=u8:?}, datatype: {=u8:?}, keysize: {=u8:?}, fflush: {=bool:?}, crypen: {=bool:?}, gcm_ccmph: {=u8:?}, algomode3: {=bool:?}, npblb: {=u8:?} }}",
+                self.algodir(),
+                self.algomode0(),
+                self.datatype(),
+                self.keysize(),
+                self.fflush(),
+                self.crypen(),
+                self.gcm_ccmph(),
+                self.algomode3(),
+                self.npblb()
+            )
         }
     }
     #[doc = "DMA control register."]

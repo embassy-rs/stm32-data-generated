@@ -219,7 +219,18 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bklockr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Bklockr {{ pvd_bl: {=bool:?}, flashecc_bl: {=bool:?}, cm7lckup_bl: {=bool:?}, bkramecc_bl: {=bool:?}, dtcmecc_bl: {=bool:?}, itcmecc_bl: {=bool:?}, aram3ecc_bl: {=bool:?}, aram1ecc_bl: {=bool:?} }}" , self . pvd_bl () , self . flashecc_bl () , self . cm7lckup_bl () , self . bkramecc_bl () , self . dtcmecc_bl () , self . itcmecc_bl () , self . aram3ecc_bl () , self . aram1ecc_bl ())
+            defmt::write!(
+                f,
+                "Bklockr {{ pvd_bl: {=bool:?}, flashecc_bl: {=bool:?}, cm7lckup_bl: {=bool:?}, bkramecc_bl: {=bool:?}, dtcmecc_bl: {=bool:?}, itcmecc_bl: {=bool:?}, aram3ecc_bl: {=bool:?}, aram1ecc_bl: {=bool:?} }}",
+                self.pvd_bl(),
+                self.flashecc_bl(),
+                self.cm7lckup_bl(),
+                self.bkramecc_bl(),
+                self.dtcmecc_bl(),
+                self.itcmecc_bl(),
+                self.aram3ecc_bl(),
+                self.aram1ecc_bl()
+            )
         }
     }
     #[doc = "SBS boot status register."]
@@ -434,7 +445,22 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cccsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cccsr {{ comp_en: {=bool:?}, comp_codesel: {=bool:?}, octo1_comp_en: {=bool:?}, octo1_comp_codesel: {=bool:?}, octo2_comp_en: {=bool:?}, octo2_comp_codesel: {=bool:?}, comp_rdy: {=bool:?}, octo1_comp_rdy: {=bool:?}, octo2_comp_rdy: {=bool:?}, iohslv: {=bool:?}, octo1_iohslv: {=bool:?}, octo2_iohslv: {=bool:?} }}" , self . comp_en () , self . comp_codesel () , self . octo1_comp_en () , self . octo1_comp_codesel () , self . octo2_comp_en () , self . octo2_comp_codesel () , self . comp_rdy () , self . octo1_comp_rdy () , self . octo2_comp_rdy () , self . iohslv () , self . octo1_iohslv () , self . octo2_iohslv ())
+            defmt::write!(
+                f,
+                "Cccsr {{ comp_en: {=bool:?}, comp_codesel: {=bool:?}, octo1_comp_en: {=bool:?}, octo1_comp_codesel: {=bool:?}, octo2_comp_en: {=bool:?}, octo2_comp_codesel: {=bool:?}, comp_rdy: {=bool:?}, octo1_comp_rdy: {=bool:?}, octo2_comp_rdy: {=bool:?}, iohslv: {=bool:?}, octo1_iohslv: {=bool:?}, octo2_iohslv: {=bool:?} }}",
+                self.comp_en(),
+                self.comp_codesel(),
+                self.octo1_comp_en(),
+                self.octo1_comp_codesel(),
+                self.octo2_comp_en(),
+                self.octo2_comp_codesel(),
+                self.comp_rdy(),
+                self.octo1_comp_rdy(),
+                self.octo2_comp_rdy(),
+                self.iohslv(),
+                self.octo1_iohslv(),
+                self.octo2_iohslv()
+            )
         }
     }
     #[doc = "SBS compensation cell for I/Os software value register."]
@@ -536,7 +562,16 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccswvalr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ccswvalr {{ sw_nsrc: {=u8:?}, sw_psrc: {=u8:?}, octo1_sw_nsrc: {=u8:?}, octo1_sw_psrc: {=u8:?}, octo2_sw_nsrc: {=u8:?}, octo2_sw_psrc: {=u8:?} }}" , self . sw_nsrc () , self . sw_psrc () , self . octo1_sw_nsrc () , self . octo1_sw_psrc () , self . octo2_sw_nsrc () , self . octo2_sw_psrc ())
+            defmt::write!(
+                f,
+                "Ccswvalr {{ sw_nsrc: {=u8:?}, sw_psrc: {=u8:?}, octo1_sw_nsrc: {=u8:?}, octo1_sw_psrc: {=u8:?}, octo2_sw_nsrc: {=u8:?}, octo2_sw_psrc: {=u8:?} }}",
+                self.sw_nsrc(),
+                self.sw_psrc(),
+                self.octo1_sw_nsrc(),
+                self.octo1_sw_psrc(),
+                self.octo2_sw_nsrc(),
+                self.octo2_sw_psrc()
+            )
         }
     }
     #[doc = "SBS compensation cell for I/Os value register."]
@@ -638,7 +673,16 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccvalr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ccvalr {{ nsrc: {=u8:?}, psrc: {=u8:?}, octo1_nsrc: {=u8:?}, octo1_psrc: {=u8:?}, octo2_nsrc: {=u8:?}, octo2_psrc: {=u8:?} }}" , self . nsrc () , self . psrc () , self . octo1_nsrc () , self . octo1_psrc () , self . octo2_nsrc () , self . octo2_psrc ())
+            defmt::write!(
+                f,
+                "Ccvalr {{ nsrc: {=u8:?}, psrc: {=u8:?}, octo1_nsrc: {=u8:?}, octo1_psrc: {=u8:?}, octo2_nsrc: {=u8:?}, octo2_psrc: {=u8:?} }}",
+                self.nsrc(),
+                self.psrc(),
+                self.octo1_nsrc(),
+                self.octo1_psrc(),
+                self.octo2_nsrc(),
+                self.octo2_psrc()
+            )
         }
     }
     #[doc = "SBS debug control register."]
@@ -1063,7 +1107,18 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pmcr {{ fmplus_pb6: {=bool:?}, fmplus_pb7: {=bool:?}, fmplus_pb8: {=bool:?}, fmplus_pb9: {=bool:?}, boosten: {=bool:?}, boostvddsel: {=bool:?}, eth_sel_phy: {:?}, axiram_ws: {:?} }}" , self . fmplus_pb6 () , self . fmplus_pb7 () , self . fmplus_pb8 () , self . fmplus_pb9 () , self . boosten () , self . boostvddsel () , self . eth_sel_phy () , self . axiram_ws ())
+            defmt::write!(
+                f,
+                "Pmcr {{ fmplus_pb6: {=bool:?}, fmplus_pb7: {=bool:?}, fmplus_pb8: {=bool:?}, fmplus_pb9: {=bool:?}, boosten: {=bool:?}, boostvddsel: {=bool:?}, eth_sel_phy: {:?}, axiram_ws: {:?} }}",
+                self.fmplus_pb6(),
+                self.fmplus_pb7(),
+                self.fmplus_pb8(),
+                self.fmplus_pb9(),
+                self.boosten(),
+                self.boostvddsel(),
+                self.eth_sel_phy(),
+                self.axiram_ws()
+            )
         }
     }
     #[doc = "SBS RSS command register."]

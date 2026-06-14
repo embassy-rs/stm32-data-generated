@@ -480,7 +480,38 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fa1r {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Fa1r {{ fact[0]: {=bool:?}, fact[1]: {=bool:?}, fact[2]: {=bool:?}, fact[3]: {=bool:?}, fact[4]: {=bool:?}, fact[5]: {=bool:?}, fact[6]: {=bool:?}, fact[7]: {=bool:?}, fact[8]: {=bool:?}, fact[9]: {=bool:?}, fact[10]: {=bool:?}, fact[11]: {=bool:?}, fact[12]: {=bool:?}, fact[13]: {=bool:?}, fact[14]: {=bool:?}, fact[15]: {=bool:?}, fact[16]: {=bool:?}, fact[17]: {=bool:?}, fact[18]: {=bool:?}, fact[19]: {=bool:?}, fact[20]: {=bool:?}, fact[21]: {=bool:?}, fact[22]: {=bool:?}, fact[23]: {=bool:?}, fact[24]: {=bool:?}, fact[25]: {=bool:?}, fact[26]: {=bool:?}, fact[27]: {=bool:?} }}" , self . fact (0usize) , self . fact (1usize) , self . fact (2usize) , self . fact (3usize) , self . fact (4usize) , self . fact (5usize) , self . fact (6usize) , self . fact (7usize) , self . fact (8usize) , self . fact (9usize) , self . fact (10usize) , self . fact (11usize) , self . fact (12usize) , self . fact (13usize) , self . fact (14usize) , self . fact (15usize) , self . fact (16usize) , self . fact (17usize) , self . fact (18usize) , self . fact (19usize) , self . fact (20usize) , self . fact (21usize) , self . fact (22usize) , self . fact (23usize) , self . fact (24usize) , self . fact (25usize) , self . fact (26usize) , self . fact (27usize))
+            defmt::write!(
+                f,
+                "Fa1r {{ fact[0]: {=bool:?}, fact[1]: {=bool:?}, fact[2]: {=bool:?}, fact[3]: {=bool:?}, fact[4]: {=bool:?}, fact[5]: {=bool:?}, fact[6]: {=bool:?}, fact[7]: {=bool:?}, fact[8]: {=bool:?}, fact[9]: {=bool:?}, fact[10]: {=bool:?}, fact[11]: {=bool:?}, fact[12]: {=bool:?}, fact[13]: {=bool:?}, fact[14]: {=bool:?}, fact[15]: {=bool:?}, fact[16]: {=bool:?}, fact[17]: {=bool:?}, fact[18]: {=bool:?}, fact[19]: {=bool:?}, fact[20]: {=bool:?}, fact[21]: {=bool:?}, fact[22]: {=bool:?}, fact[23]: {=bool:?}, fact[24]: {=bool:?}, fact[25]: {=bool:?}, fact[26]: {=bool:?}, fact[27]: {=bool:?} }}",
+                self.fact(0usize),
+                self.fact(1usize),
+                self.fact(2usize),
+                self.fact(3usize),
+                self.fact(4usize),
+                self.fact(5usize),
+                self.fact(6usize),
+                self.fact(7usize),
+                self.fact(8usize),
+                self.fact(9usize),
+                self.fact(10usize),
+                self.fact(11usize),
+                self.fact(12usize),
+                self.fact(13usize),
+                self.fact(14usize),
+                self.fact(15usize),
+                self.fact(16usize),
+                self.fact(17usize),
+                self.fact(18usize),
+                self.fact(19usize),
+                self.fact(20usize),
+                self.fact(21usize),
+                self.fact(22usize),
+                self.fact(23usize),
+                self.fact(24usize),
+                self.fact(25usize),
+                self.fact(26usize),
+                self.fact(27usize)
+            )
         }
     }
     #[doc = "filter FIFO assignment register"]
@@ -548,7 +579,38 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ffa1r {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ffa1r {{ ffa[0]: {=bool:?}, ffa[1]: {=bool:?}, ffa[2]: {=bool:?}, ffa[3]: {=bool:?}, ffa[4]: {=bool:?}, ffa[5]: {=bool:?}, ffa[6]: {=bool:?}, ffa[7]: {=bool:?}, ffa[8]: {=bool:?}, ffa[9]: {=bool:?}, ffa[10]: {=bool:?}, ffa[11]: {=bool:?}, ffa[12]: {=bool:?}, ffa[13]: {=bool:?}, ffa[14]: {=bool:?}, ffa[15]: {=bool:?}, ffa[16]: {=bool:?}, ffa[17]: {=bool:?}, ffa[18]: {=bool:?}, ffa[19]: {=bool:?}, ffa[20]: {=bool:?}, ffa[21]: {=bool:?}, ffa[22]: {=bool:?}, ffa[23]: {=bool:?}, ffa[24]: {=bool:?}, ffa[25]: {=bool:?}, ffa[26]: {=bool:?}, ffa[27]: {=bool:?} }}" , self . ffa (0usize) , self . ffa (1usize) , self . ffa (2usize) , self . ffa (3usize) , self . ffa (4usize) , self . ffa (5usize) , self . ffa (6usize) , self . ffa (7usize) , self . ffa (8usize) , self . ffa (9usize) , self . ffa (10usize) , self . ffa (11usize) , self . ffa (12usize) , self . ffa (13usize) , self . ffa (14usize) , self . ffa (15usize) , self . ffa (16usize) , self . ffa (17usize) , self . ffa (18usize) , self . ffa (19usize) , self . ffa (20usize) , self . ffa (21usize) , self . ffa (22usize) , self . ffa (23usize) , self . ffa (24usize) , self . ffa (25usize) , self . ffa (26usize) , self . ffa (27usize))
+            defmt::write!(
+                f,
+                "Ffa1r {{ ffa[0]: {=bool:?}, ffa[1]: {=bool:?}, ffa[2]: {=bool:?}, ffa[3]: {=bool:?}, ffa[4]: {=bool:?}, ffa[5]: {=bool:?}, ffa[6]: {=bool:?}, ffa[7]: {=bool:?}, ffa[8]: {=bool:?}, ffa[9]: {=bool:?}, ffa[10]: {=bool:?}, ffa[11]: {=bool:?}, ffa[12]: {=bool:?}, ffa[13]: {=bool:?}, ffa[14]: {=bool:?}, ffa[15]: {=bool:?}, ffa[16]: {=bool:?}, ffa[17]: {=bool:?}, ffa[18]: {=bool:?}, ffa[19]: {=bool:?}, ffa[20]: {=bool:?}, ffa[21]: {=bool:?}, ffa[22]: {=bool:?}, ffa[23]: {=bool:?}, ffa[24]: {=bool:?}, ffa[25]: {=bool:?}, ffa[26]: {=bool:?}, ffa[27]: {=bool:?} }}",
+                self.ffa(0usize),
+                self.ffa(1usize),
+                self.ffa(2usize),
+                self.ffa(3usize),
+                self.ffa(4usize),
+                self.ffa(5usize),
+                self.ffa(6usize),
+                self.ffa(7usize),
+                self.ffa(8usize),
+                self.ffa(9usize),
+                self.ffa(10usize),
+                self.ffa(11usize),
+                self.ffa(12usize),
+                self.ffa(13usize),
+                self.ffa(14usize),
+                self.ffa(15usize),
+                self.ffa(16usize),
+                self.ffa(17usize),
+                self.ffa(18usize),
+                self.ffa(19usize),
+                self.ffa(20usize),
+                self.ffa(21usize),
+                self.ffa(22usize),
+                self.ffa(23usize),
+                self.ffa(24usize),
+                self.ffa(25usize),
+                self.ffa(26usize),
+                self.ffa(27usize)
+            )
         }
     }
     #[doc = "filter mode register"]
@@ -616,7 +678,38 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fm1r {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Fm1r {{ fbm[0]: {=bool:?}, fbm[1]: {=bool:?}, fbm[2]: {=bool:?}, fbm[3]: {=bool:?}, fbm[4]: {=bool:?}, fbm[5]: {=bool:?}, fbm[6]: {=bool:?}, fbm[7]: {=bool:?}, fbm[8]: {=bool:?}, fbm[9]: {=bool:?}, fbm[10]: {=bool:?}, fbm[11]: {=bool:?}, fbm[12]: {=bool:?}, fbm[13]: {=bool:?}, fbm[14]: {=bool:?}, fbm[15]: {=bool:?}, fbm[16]: {=bool:?}, fbm[17]: {=bool:?}, fbm[18]: {=bool:?}, fbm[19]: {=bool:?}, fbm[20]: {=bool:?}, fbm[21]: {=bool:?}, fbm[22]: {=bool:?}, fbm[23]: {=bool:?}, fbm[24]: {=bool:?}, fbm[25]: {=bool:?}, fbm[26]: {=bool:?}, fbm[27]: {=bool:?} }}" , self . fbm (0usize) , self . fbm (1usize) , self . fbm (2usize) , self . fbm (3usize) , self . fbm (4usize) , self . fbm (5usize) , self . fbm (6usize) , self . fbm (7usize) , self . fbm (8usize) , self . fbm (9usize) , self . fbm (10usize) , self . fbm (11usize) , self . fbm (12usize) , self . fbm (13usize) , self . fbm (14usize) , self . fbm (15usize) , self . fbm (16usize) , self . fbm (17usize) , self . fbm (18usize) , self . fbm (19usize) , self . fbm (20usize) , self . fbm (21usize) , self . fbm (22usize) , self . fbm (23usize) , self . fbm (24usize) , self . fbm (25usize) , self . fbm (26usize) , self . fbm (27usize))
+            defmt::write!(
+                f,
+                "Fm1r {{ fbm[0]: {=bool:?}, fbm[1]: {=bool:?}, fbm[2]: {=bool:?}, fbm[3]: {=bool:?}, fbm[4]: {=bool:?}, fbm[5]: {=bool:?}, fbm[6]: {=bool:?}, fbm[7]: {=bool:?}, fbm[8]: {=bool:?}, fbm[9]: {=bool:?}, fbm[10]: {=bool:?}, fbm[11]: {=bool:?}, fbm[12]: {=bool:?}, fbm[13]: {=bool:?}, fbm[14]: {=bool:?}, fbm[15]: {=bool:?}, fbm[16]: {=bool:?}, fbm[17]: {=bool:?}, fbm[18]: {=bool:?}, fbm[19]: {=bool:?}, fbm[20]: {=bool:?}, fbm[21]: {=bool:?}, fbm[22]: {=bool:?}, fbm[23]: {=bool:?}, fbm[24]: {=bool:?}, fbm[25]: {=bool:?}, fbm[26]: {=bool:?}, fbm[27]: {=bool:?} }}",
+                self.fbm(0usize),
+                self.fbm(1usize),
+                self.fbm(2usize),
+                self.fbm(3usize),
+                self.fbm(4usize),
+                self.fbm(5usize),
+                self.fbm(6usize),
+                self.fbm(7usize),
+                self.fbm(8usize),
+                self.fbm(9usize),
+                self.fbm(10usize),
+                self.fbm(11usize),
+                self.fbm(12usize),
+                self.fbm(13usize),
+                self.fbm(14usize),
+                self.fbm(15usize),
+                self.fbm(16usize),
+                self.fbm(17usize),
+                self.fbm(18usize),
+                self.fbm(19usize),
+                self.fbm(20usize),
+                self.fbm(21usize),
+                self.fbm(22usize),
+                self.fbm(23usize),
+                self.fbm(24usize),
+                self.fbm(25usize),
+                self.fbm(26usize),
+                self.fbm(27usize)
+            )
         }
     }
     #[doc = "filter master register"]
@@ -743,7 +836,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Fr1 {{ fb[0]: {=bool:?}, fb[1]: {=bool:?}, fb[2]: {=bool:?}, fb[3]: {=bool:?}, fb[4]: {=bool:?}, fb[5]: {=bool:?}, fb[6]: {=bool:?}, fb[7]: {=bool:?}, fb[8]: {=bool:?}, fb[9]: {=bool:?}, fb[10]: {=bool:?}, fb[11]: {=bool:?}, fb[12]: {=bool:?}, fb[13]: {=bool:?}, fb[14]: {=bool:?}, fb[15]: {=bool:?}, fb[16]: {=bool:?}, fb[17]: {=bool:?}, fb[18]: {=bool:?}, fb[19]: {=bool:?}, fb[20]: {=bool:?}, fb[21]: {=bool:?}, fb[22]: {=bool:?}, fb[23]: {=bool:?}, fb[24]: {=bool:?}, fb[25]: {=bool:?}, fb[26]: {=bool:?}, fb[27]: {=bool:?}, fb[28]: {=bool:?}, fb[29]: {=bool:?}, fb[30]: {=bool:?}, fb[31]: {=bool:?} }}" , self . fb (0usize) , self . fb (1usize) , self . fb (2usize) , self . fb (3usize) , self . fb (4usize) , self . fb (5usize) , self . fb (6usize) , self . fb (7usize) , self . fb (8usize) , self . fb (9usize) , self . fb (10usize) , self . fb (11usize) , self . fb (12usize) , self . fb (13usize) , self . fb (14usize) , self . fb (15usize) , self . fb (16usize) , self . fb (17usize) , self . fb (18usize) , self . fb (19usize) , self . fb (20usize) , self . fb (21usize) , self . fb (22usize) , self . fb (23usize) , self . fb (24usize) , self . fb (25usize) , self . fb (26usize) , self . fb (27usize) , self . fb (28usize) , self . fb (29usize) , self . fb (30usize) , self . fb (31usize))
+            defmt::write!(
+                f,
+                "Fr1 {{ fb[0]: {=bool:?}, fb[1]: {=bool:?}, fb[2]: {=bool:?}, fb[3]: {=bool:?}, fb[4]: {=bool:?}, fb[5]: {=bool:?}, fb[6]: {=bool:?}, fb[7]: {=bool:?}, fb[8]: {=bool:?}, fb[9]: {=bool:?}, fb[10]: {=bool:?}, fb[11]: {=bool:?}, fb[12]: {=bool:?}, fb[13]: {=bool:?}, fb[14]: {=bool:?}, fb[15]: {=bool:?}, fb[16]: {=bool:?}, fb[17]: {=bool:?}, fb[18]: {=bool:?}, fb[19]: {=bool:?}, fb[20]: {=bool:?}, fb[21]: {=bool:?}, fb[22]: {=bool:?}, fb[23]: {=bool:?}, fb[24]: {=bool:?}, fb[25]: {=bool:?}, fb[26]: {=bool:?}, fb[27]: {=bool:?}, fb[28]: {=bool:?}, fb[29]: {=bool:?}, fb[30]: {=bool:?}, fb[31]: {=bool:?} }}",
+                self.fb(0usize),
+                self.fb(1usize),
+                self.fb(2usize),
+                self.fb(3usize),
+                self.fb(4usize),
+                self.fb(5usize),
+                self.fb(6usize),
+                self.fb(7usize),
+                self.fb(8usize),
+                self.fb(9usize),
+                self.fb(10usize),
+                self.fb(11usize),
+                self.fb(12usize),
+                self.fb(13usize),
+                self.fb(14usize),
+                self.fb(15usize),
+                self.fb(16usize),
+                self.fb(17usize),
+                self.fb(18usize),
+                self.fb(19usize),
+                self.fb(20usize),
+                self.fb(21usize),
+                self.fb(22usize),
+                self.fb(23usize),
+                self.fb(24usize),
+                self.fb(25usize),
+                self.fb(26usize),
+                self.fb(27usize),
+                self.fb(28usize),
+                self.fb(29usize),
+                self.fb(30usize),
+                self.fb(31usize)
+            )
         }
     }
     #[doc = "Filter bank 0 register 2"]
@@ -815,7 +943,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Fr2 {{ fb[0]: {=bool:?}, fb[1]: {=bool:?}, fb[2]: {=bool:?}, fb[3]: {=bool:?}, fb[4]: {=bool:?}, fb[5]: {=bool:?}, fb[6]: {=bool:?}, fb[7]: {=bool:?}, fb[8]: {=bool:?}, fb[9]: {=bool:?}, fb[10]: {=bool:?}, fb[11]: {=bool:?}, fb[12]: {=bool:?}, fb[13]: {=bool:?}, fb[14]: {=bool:?}, fb[15]: {=bool:?}, fb[16]: {=bool:?}, fb[17]: {=bool:?}, fb[18]: {=bool:?}, fb[19]: {=bool:?}, fb[20]: {=bool:?}, fb[21]: {=bool:?}, fb[22]: {=bool:?}, fb[23]: {=bool:?}, fb[24]: {=bool:?}, fb[25]: {=bool:?}, fb[26]: {=bool:?}, fb[27]: {=bool:?}, fb[28]: {=bool:?}, fb[29]: {=bool:?}, fb[30]: {=bool:?}, fb[31]: {=bool:?} }}" , self . fb (0usize) , self . fb (1usize) , self . fb (2usize) , self . fb (3usize) , self . fb (4usize) , self . fb (5usize) , self . fb (6usize) , self . fb (7usize) , self . fb (8usize) , self . fb (9usize) , self . fb (10usize) , self . fb (11usize) , self . fb (12usize) , self . fb (13usize) , self . fb (14usize) , self . fb (15usize) , self . fb (16usize) , self . fb (17usize) , self . fb (18usize) , self . fb (19usize) , self . fb (20usize) , self . fb (21usize) , self . fb (22usize) , self . fb (23usize) , self . fb (24usize) , self . fb (25usize) , self . fb (26usize) , self . fb (27usize) , self . fb (28usize) , self . fb (29usize) , self . fb (30usize) , self . fb (31usize))
+            defmt::write!(
+                f,
+                "Fr2 {{ fb[0]: {=bool:?}, fb[1]: {=bool:?}, fb[2]: {=bool:?}, fb[3]: {=bool:?}, fb[4]: {=bool:?}, fb[5]: {=bool:?}, fb[6]: {=bool:?}, fb[7]: {=bool:?}, fb[8]: {=bool:?}, fb[9]: {=bool:?}, fb[10]: {=bool:?}, fb[11]: {=bool:?}, fb[12]: {=bool:?}, fb[13]: {=bool:?}, fb[14]: {=bool:?}, fb[15]: {=bool:?}, fb[16]: {=bool:?}, fb[17]: {=bool:?}, fb[18]: {=bool:?}, fb[19]: {=bool:?}, fb[20]: {=bool:?}, fb[21]: {=bool:?}, fb[22]: {=bool:?}, fb[23]: {=bool:?}, fb[24]: {=bool:?}, fb[25]: {=bool:?}, fb[26]: {=bool:?}, fb[27]: {=bool:?}, fb[28]: {=bool:?}, fb[29]: {=bool:?}, fb[30]: {=bool:?}, fb[31]: {=bool:?} }}",
+                self.fb(0usize),
+                self.fb(1usize),
+                self.fb(2usize),
+                self.fb(3usize),
+                self.fb(4usize),
+                self.fb(5usize),
+                self.fb(6usize),
+                self.fb(7usize),
+                self.fb(8usize),
+                self.fb(9usize),
+                self.fb(10usize),
+                self.fb(11usize),
+                self.fb(12usize),
+                self.fb(13usize),
+                self.fb(14usize),
+                self.fb(15usize),
+                self.fb(16usize),
+                self.fb(17usize),
+                self.fb(18usize),
+                self.fb(19usize),
+                self.fb(20usize),
+                self.fb(21usize),
+                self.fb(22usize),
+                self.fb(23usize),
+                self.fb(24usize),
+                self.fb(25usize),
+                self.fb(26usize),
+                self.fb(27usize),
+                self.fb(28usize),
+                self.fb(29usize),
+                self.fb(30usize),
+                self.fb(31usize)
+            )
         }
     }
     #[doc = "filter scale register"]
@@ -883,7 +1046,38 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fs1r {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Fs1r {{ fsc[0]: {=bool:?}, fsc[1]: {=bool:?}, fsc[2]: {=bool:?}, fsc[3]: {=bool:?}, fsc[4]: {=bool:?}, fsc[5]: {=bool:?}, fsc[6]: {=bool:?}, fsc[7]: {=bool:?}, fsc[8]: {=bool:?}, fsc[9]: {=bool:?}, fsc[10]: {=bool:?}, fsc[11]: {=bool:?}, fsc[12]: {=bool:?}, fsc[13]: {=bool:?}, fsc[14]: {=bool:?}, fsc[15]: {=bool:?}, fsc[16]: {=bool:?}, fsc[17]: {=bool:?}, fsc[18]: {=bool:?}, fsc[19]: {=bool:?}, fsc[20]: {=bool:?}, fsc[21]: {=bool:?}, fsc[22]: {=bool:?}, fsc[23]: {=bool:?}, fsc[24]: {=bool:?}, fsc[25]: {=bool:?}, fsc[26]: {=bool:?}, fsc[27]: {=bool:?} }}" , self . fsc (0usize) , self . fsc (1usize) , self . fsc (2usize) , self . fsc (3usize) , self . fsc (4usize) , self . fsc (5usize) , self . fsc (6usize) , self . fsc (7usize) , self . fsc (8usize) , self . fsc (9usize) , self . fsc (10usize) , self . fsc (11usize) , self . fsc (12usize) , self . fsc (13usize) , self . fsc (14usize) , self . fsc (15usize) , self . fsc (16usize) , self . fsc (17usize) , self . fsc (18usize) , self . fsc (19usize) , self . fsc (20usize) , self . fsc (21usize) , self . fsc (22usize) , self . fsc (23usize) , self . fsc (24usize) , self . fsc (25usize) , self . fsc (26usize) , self . fsc (27usize))
+            defmt::write!(
+                f,
+                "Fs1r {{ fsc[0]: {=bool:?}, fsc[1]: {=bool:?}, fsc[2]: {=bool:?}, fsc[3]: {=bool:?}, fsc[4]: {=bool:?}, fsc[5]: {=bool:?}, fsc[6]: {=bool:?}, fsc[7]: {=bool:?}, fsc[8]: {=bool:?}, fsc[9]: {=bool:?}, fsc[10]: {=bool:?}, fsc[11]: {=bool:?}, fsc[12]: {=bool:?}, fsc[13]: {=bool:?}, fsc[14]: {=bool:?}, fsc[15]: {=bool:?}, fsc[16]: {=bool:?}, fsc[17]: {=bool:?}, fsc[18]: {=bool:?}, fsc[19]: {=bool:?}, fsc[20]: {=bool:?}, fsc[21]: {=bool:?}, fsc[22]: {=bool:?}, fsc[23]: {=bool:?}, fsc[24]: {=bool:?}, fsc[25]: {=bool:?}, fsc[26]: {=bool:?}, fsc[27]: {=bool:?} }}",
+                self.fsc(0usize),
+                self.fsc(1usize),
+                self.fsc(2usize),
+                self.fsc(3usize),
+                self.fsc(4usize),
+                self.fsc(5usize),
+                self.fsc(6usize),
+                self.fsc(7usize),
+                self.fsc(8usize),
+                self.fsc(9usize),
+                self.fsc(10usize),
+                self.fsc(11usize),
+                self.fsc(12usize),
+                self.fsc(13usize),
+                self.fsc(14usize),
+                self.fsc(15usize),
+                self.fsc(16usize),
+                self.fsc(17usize),
+                self.fsc(18usize),
+                self.fsc(19usize),
+                self.fsc(20usize),
+                self.fsc(21usize),
+                self.fsc(22usize),
+                self.fsc(23usize),
+                self.fsc(24usize),
+                self.fsc(25usize),
+                self.fsc(26usize),
+                self.fsc(27usize)
+            )
         }
     }
     #[doc = "interrupt enable register"]
@@ -1065,7 +1259,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier {{ tmeie: {=bool:?}, fmpie[0]: {=bool:?}, fmpie[1]: {=bool:?}, ffie[0]: {=bool:?}, ffie[1]: {=bool:?}, fovie[0]: {=bool:?}, fovie[1]: {=bool:?}, ewgie: {=bool:?}, epvie: {=bool:?}, bofie: {=bool:?}, lecie: {=bool:?}, errie: {=bool:?}, wkuie: {=bool:?}, slkie: {=bool:?} }}" , self . tmeie () , self . fmpie (0usize) , self . fmpie (1usize) , self . ffie (0usize) , self . ffie (1usize) , self . fovie (0usize) , self . fovie (1usize) , self . ewgie () , self . epvie () , self . bofie () , self . lecie () , self . errie () , self . wkuie () , self . slkie ())
+            defmt::write!(
+                f,
+                "Ier {{ tmeie: {=bool:?}, fmpie[0]: {=bool:?}, fmpie[1]: {=bool:?}, ffie[0]: {=bool:?}, ffie[1]: {=bool:?}, fovie[0]: {=bool:?}, fovie[1]: {=bool:?}, ewgie: {=bool:?}, epvie: {=bool:?}, bofie: {=bool:?}, lecie: {=bool:?}, errie: {=bool:?}, wkuie: {=bool:?}, slkie: {=bool:?} }}",
+                self.tmeie(),
+                self.fmpie(0usize),
+                self.fmpie(1usize),
+                self.ffie(0usize),
+                self.ffie(1usize),
+                self.fovie(0usize),
+                self.fovie(1usize),
+                self.ewgie(),
+                self.epvie(),
+                self.bofie(),
+                self.lecie(),
+                self.errie(),
+                self.wkuie(),
+                self.slkie()
+            )
         }
     }
     #[doc = "master control register"]
@@ -1219,7 +1430,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Mcr {{ inrq: {=bool:?}, sleep: {=bool:?}, txfp: {=bool:?}, rflm: {=bool:?}, nart: {=bool:?}, awum: {=bool:?}, abom: {=bool:?}, ttcm: {=bool:?}, reset: {=bool:?}, dbf: {=bool:?} }}" , self . inrq () , self . sleep () , self . txfp () , self . rflm () , self . nart () , self . awum () , self . abom () , self . ttcm () , self . reset () , self . dbf ())
+            defmt::write!(
+                f,
+                "Mcr {{ inrq: {=bool:?}, sleep: {=bool:?}, txfp: {=bool:?}, rflm: {=bool:?}, nart: {=bool:?}, awum: {=bool:?}, abom: {=bool:?}, ttcm: {=bool:?}, reset: {=bool:?}, dbf: {=bool:?} }}",
+                self.inrq(),
+                self.sleep(),
+                self.txfp(),
+                self.rflm(),
+                self.nart(),
+                self.awum(),
+                self.abom(),
+                self.ttcm(),
+                self.reset(),
+                self.dbf()
+            )
         }
     }
     #[doc = "master status register"]
@@ -1360,7 +1584,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Msr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Msr {{ inak: {=bool:?}, slak: {=bool:?}, erri: {=bool:?}, wkui: {=bool:?}, slaki: {=bool:?}, txm: {=bool:?}, rxm: {=bool:?}, samp: {=bool:?}, rx: {=bool:?} }}" , self . inak () , self . slak () , self . erri () , self . wkui () , self . slaki () , self . txm () , self . rxm () , self . samp () , self . rx ())
+            defmt::write!(
+                f,
+                "Msr {{ inak: {=bool:?}, slak: {=bool:?}, erri: {=bool:?}, wkui: {=bool:?}, slaki: {=bool:?}, txm: {=bool:?}, rxm: {=bool:?}, samp: {=bool:?}, rx: {=bool:?} }}",
+                self.inak(),
+                self.slak(),
+                self.erri(),
+                self.wkui(),
+                self.slaki(),
+                self.txm(),
+                self.rxm(),
+                self.samp(),
+                self.rx()
+            )
         }
     }
     #[doc = "receive FIFO mailbox data high register"]
@@ -2135,7 +2371,32 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Tsr {{ rqcp[0]: {=bool:?}, rqcp[1]: {=bool:?}, rqcp[2]: {=bool:?}, txok[0]: {=bool:?}, txok[1]: {=bool:?}, txok[2]: {=bool:?}, alst[0]: {=bool:?}, alst[1]: {=bool:?}, alst[2]: {=bool:?}, terr[0]: {=bool:?}, terr[1]: {=bool:?}, terr[2]: {=bool:?}, abrq[0]: {=bool:?}, abrq[1]: {=bool:?}, abrq[2]: {=bool:?}, code: {=u8:?}, tme[0]: {=bool:?}, tme[1]: {=bool:?}, tme[2]: {=bool:?}, low[0]: {=bool:?}, low[1]: {=bool:?}, low[2]: {=bool:?} }}" , self . rqcp (0usize) , self . rqcp (1usize) , self . rqcp (2usize) , self . txok (0usize) , self . txok (1usize) , self . txok (2usize) , self . alst (0usize) , self . alst (1usize) , self . alst (2usize) , self . terr (0usize) , self . terr (1usize) , self . terr (2usize) , self . abrq (0usize) , self . abrq (1usize) , self . abrq (2usize) , self . code () , self . tme (0usize) , self . tme (1usize) , self . tme (2usize) , self . low (0usize) , self . low (1usize) , self . low (2usize))
+            defmt::write!(
+                f,
+                "Tsr {{ rqcp[0]: {=bool:?}, rqcp[1]: {=bool:?}, rqcp[2]: {=bool:?}, txok[0]: {=bool:?}, txok[1]: {=bool:?}, txok[2]: {=bool:?}, alst[0]: {=bool:?}, alst[1]: {=bool:?}, alst[2]: {=bool:?}, terr[0]: {=bool:?}, terr[1]: {=bool:?}, terr[2]: {=bool:?}, abrq[0]: {=bool:?}, abrq[1]: {=bool:?}, abrq[2]: {=bool:?}, code: {=u8:?}, tme[0]: {=bool:?}, tme[1]: {=bool:?}, tme[2]: {=bool:?}, low[0]: {=bool:?}, low[1]: {=bool:?}, low[2]: {=bool:?} }}",
+                self.rqcp(0usize),
+                self.rqcp(1usize),
+                self.rqcp(2usize),
+                self.txok(0usize),
+                self.txok(1usize),
+                self.txok(2usize),
+                self.alst(0usize),
+                self.alst(1usize),
+                self.alst(2usize),
+                self.terr(0usize),
+                self.terr(1usize),
+                self.terr(2usize),
+                self.abrq(0usize),
+                self.abrq(1usize),
+                self.abrq(2usize),
+                self.code(),
+                self.tme(0usize),
+                self.tme(1usize),
+                self.tme(2usize),
+                self.low(0usize),
+                self.low(1usize),
+                self.low(2usize)
+            )
         }
     }
 }

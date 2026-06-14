@@ -317,7 +317,21 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ckgcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ckgcr {{ ckgden: {=bool:?}, cck0en: {:?}, cck1en: {:?}, ckgmod: {:?}, cck0dir: {:?}, cck1dir: {:?}, trgsens: {:?}, trgsrc: {:?}, cckdiv: {:?}, procdiv: {=u8:?}, ckgactive: {=bool:?} }}" , self . ckgden () , self . cck0en () , self . cck1en () , self . ckgmod () , self . cck0dir () , self . cck1dir () , self . trgsens () , self . trgsrc () , self . cckdiv () , self . procdiv () , self . ckgactive ())
+            defmt::write!(
+                f,
+                "Ckgcr {{ ckgden: {=bool:?}, cck0en: {:?}, cck1en: {:?}, ckgmod: {:?}, cck0dir: {:?}, cck1dir: {:?}, trgsens: {:?}, trgsrc: {:?}, cckdiv: {:?}, procdiv: {=u8:?}, ckgactive: {=bool:?} }}",
+                self.ckgden(),
+                self.cck0en(),
+                self.cck1en(),
+                self.ckgmod(),
+                self.cck0dir(),
+                self.cck1dir(),
+                self.trgsens(),
+                self.trgsrc(),
+                self.cckdiv(),
+                self.procdiv(),
+                self.ckgactive()
+            )
         }
     }
     #[doc = "ADF digital filer configuration register 0."]
@@ -528,7 +542,18 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dfltcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dfltcr {{ dflten: {=bool:?}, dmaen: {=bool:?}, fth: {:?}, acqmod: {:?}, trgsrc: {=u8:?}, nbdis: {=u8:?}, dfltrun: {=bool:?}, dfltactive: {=bool:?} }}" , self . dflten () , self . dmaen () , self . fth () , self . acqmod () , self . trgsrc () , self . nbdis () , self . dfltrun () , self . dfltactive ())
+            defmt::write!(
+                f,
+                "Dfltcr {{ dflten: {=bool:?}, dmaen: {=bool:?}, fth: {:?}, acqmod: {:?}, trgsrc: {=u8:?}, nbdis: {=u8:?}, dfltrun: {=bool:?}, dfltactive: {=bool:?} }}",
+                self.dflten(),
+                self.dmaen(),
+                self.fth(),
+                self.acqmod(),
+                self.trgsrc(),
+                self.nbdis(),
+                self.dfltrun(),
+                self.dfltactive()
+            )
         }
     }
     #[doc = "ADF digital filter data register 0."]
@@ -678,7 +703,17 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dfltier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dfltier {{ fthie: {=bool:?}, dovrie: {=bool:?}, satie: {=bool:?}, ckabie: {=bool:?}, rfovrie: {=bool:?}, sddetie: {=bool:?}, sdlvlie: {=bool:?} }}" , self . fthie () , self . dovrie () , self . satie () , self . ckabie () , self . rfovrie () , self . sddetie () , self . sdlvlie ())
+            defmt::write!(
+                f,
+                "Dfltier {{ fthie: {=bool:?}, dovrie: {=bool:?}, satie: {=bool:?}, ckabie: {=bool:?}, rfovrie: {=bool:?}, sddetie: {=bool:?}, sdlvlie: {=bool:?} }}",
+                self.fthie(),
+                self.dovrie(),
+                self.satie(),
+                self.ckabie(),
+                self.rfovrie(),
+                self.sddetie(),
+                self.sdlvlie()
+            )
         }
     }
     #[doc = "ADF DFLT interrupt status register 0."]
@@ -806,7 +841,18 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dfltisr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dfltisr {{ fthf: {=bool:?}, dovrf: {=bool:?}, rxnef: {=bool:?}, satf: {=bool:?}, ckabf: {=bool:?}, rfovrf: {=bool:?}, sddetf: {=bool:?}, sdlvlf: {=bool:?} }}" , self . fthf () , self . dovrf () , self . rxnef () , self . satf () , self . ckabf () , self . rfovrf () , self . sddetf () , self . sdlvlf ())
+            defmt::write!(
+                f,
+                "Dfltisr {{ fthf: {=bool:?}, dovrf: {=bool:?}, rxnef: {=bool:?}, satf: {=bool:?}, ckabf: {=bool:?}, rfovrf: {=bool:?}, sddetf: {=bool:?}, sdlvlf: {=bool:?} }}",
+                self.fthf(),
+                self.dovrf(),
+                self.rxnef(),
+                self.satf(),
+                self.ckabf(),
+                self.rfovrf(),
+                self.sddetf(),
+                self.sdlvlf()
+            )
         }
     }
     #[doc = "ADF reshape filter configuration register."]
@@ -1239,7 +1285,18 @@ can only be updated when BSMXACTIVE is set to 0. This BSMXACTIVE flag cannot go 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sadcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sadcr {{ saden: {=bool:?}, datcap: {:?}, detcfg: {:?}, sadst: {:?}, hysten: {=bool:?}, frsize: {:?}, sadmod: {:?}, sadactive: {=bool:?} }}" , self . saden () , self . datcap () , self . detcfg () , self . sadst () , self . hysten () , self . frsize () , self . sadmod () , self . sadactive ())
+            defmt::write!(
+                f,
+                "Sadcr {{ saden: {=bool:?}, datcap: {:?}, detcfg: {:?}, sadst: {:?}, hysten: {=bool:?}, frsize: {:?}, sadmod: {:?}, sadactive: {=bool:?} }}",
+                self.saden(),
+                self.datcap(),
+                self.detcfg(),
+                self.sadst(),
+                self.hysten(),
+                self.frsize(),
+                self.sadmod(),
+                self.sadactive()
+            )
         }
     }
     #[doc = "ADF SAD sound level register."]

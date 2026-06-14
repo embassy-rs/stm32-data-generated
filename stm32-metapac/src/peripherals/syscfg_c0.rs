@@ -331,7 +331,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ mem_mode: {:?}, pa11_rmp: {=bool:?}, pa12_rmp: {=bool:?}, ir_pol: {=bool:?}, ir_mod: {:?}, i2c_pb6_fmp: {=bool:?}, i2c_pb7_fmp: {=bool:?}, i2c_pb8_fmp: {=bool:?}, i2c_pb9_fmp: {=bool:?}, i2c1_fmp: {=bool:?}, i2c_pa9_fmp: {=bool:?}, i2c_pa10_fmp: {=bool:?}, i2c_pc14_fmp: {=bool:?} }}" , self . mem_mode () , self . pa11_rmp () , self . pa12_rmp () , self . ir_pol () , self . ir_mod () , self . i2c_pb6_fmp () , self . i2c_pb7_fmp () , self . i2c_pb8_fmp () , self . i2c_pb9_fmp () , self . i2c1_fmp () , self . i2c_pa9_fmp () , self . i2c_pa10_fmp () , self . i2c_pc14_fmp ())
+            defmt::write!(
+                f,
+                "Cfgr1 {{ mem_mode: {:?}, pa11_rmp: {=bool:?}, pa12_rmp: {=bool:?}, ir_pol: {=bool:?}, ir_mod: {:?}, i2c_pb6_fmp: {=bool:?}, i2c_pb7_fmp: {=bool:?}, i2c_pb8_fmp: {=bool:?}, i2c_pb9_fmp: {=bool:?}, i2c1_fmp: {=bool:?}, i2c_pa9_fmp: {=bool:?}, i2c_pa10_fmp: {=bool:?}, i2c_pc14_fmp: {=bool:?} }}",
+                self.mem_mode(),
+                self.pa11_rmp(),
+                self.pa12_rmp(),
+                self.ir_pol(),
+                self.ir_mod(),
+                self.i2c_pb6_fmp(),
+                self.i2c_pb7_fmp(),
+                self.i2c_pb8_fmp(),
+                self.i2c_pb9_fmp(),
+                self.i2c1_fmp(),
+                self.i2c_pa9_fmp(),
+                self.i2c_pa10_fmp(),
+                self.i2c_pc14_fmp()
+            )
         }
     }
     #[doc = "configuration register 2"]
@@ -1288,7 +1304,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline7 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Itline7 {{ exti[0]: {=bool:?}, exti[1]: {=bool:?}, exti[2]: {=bool:?}, exti[3]: {=bool:?}, exti[4]: {=bool:?}, exti[5]: {=bool:?}, exti[6]: {=bool:?}, exti[7]: {=bool:?}, exti[8]: {=bool:?}, exti[9]: {=bool:?}, exti[10]: {=bool:?}, exti[11]: {=bool:?} }}" , self . exti (0usize) , self . exti (1usize) , self . exti (2usize) , self . exti (3usize) , self . exti (4usize) , self . exti (5usize) , self . exti (6usize) , self . exti (7usize) , self . exti (8usize) , self . exti (9usize) , self . exti (10usize) , self . exti (11usize))
+            defmt::write!(
+                f,
+                "Itline7 {{ exti[0]: {=bool:?}, exti[1]: {=bool:?}, exti[2]: {=bool:?}, exti[3]: {=bool:?}, exti[4]: {=bool:?}, exti[5]: {=bool:?}, exti[6]: {=bool:?}, exti[7]: {=bool:?}, exti[8]: {=bool:?}, exti[9]: {=bool:?}, exti[10]: {=bool:?}, exti[11]: {=bool:?} }}",
+                self.exti(0usize),
+                self.exti(1usize),
+                self.exti(2usize),
+                self.exti(3usize),
+                self.exti(4usize),
+                self.exti(5usize),
+                self.exti(6usize),
+                self.exti(7usize),
+                self.exti(8usize),
+                self.exti(9usize),
+                self.exti(10usize),
+                self.exti(11usize)
+            )
         }
     }
     #[doc = "interrupt line 9 status register"]

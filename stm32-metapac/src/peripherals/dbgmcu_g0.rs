@@ -192,7 +192,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1fzr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1fzr {{ tim2: {=bool:?}, tim3: {=bool:?}, tim6: {=bool:?}, tim7: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, i2c1: {=bool:?}, lptim2: {=bool:?}, lptim1: {=bool:?} }}" , self . tim2 () , self . tim3 () , self . tim6 () , self . tim7 () , self . rtc () , self . wwdg () , self . iwdg () , self . i2c1 () , self . lptim2 () , self . lptim1 ())
+            defmt::write!(
+                f,
+                "Apb1fzr {{ tim2: {=bool:?}, tim3: {=bool:?}, tim6: {=bool:?}, tim7: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, i2c1: {=bool:?}, lptim2: {=bool:?}, lptim1: {=bool:?} }}",
+                self.tim2(),
+                self.tim3(),
+                self.tim6(),
+                self.tim7(),
+                self.rtc(),
+                self.wwdg(),
+                self.iwdg(),
+                self.i2c1(),
+                self.lptim2(),
+                self.lptim1()
+            )
         }
     }
     #[doc = "DBG APB freeze register 2"]

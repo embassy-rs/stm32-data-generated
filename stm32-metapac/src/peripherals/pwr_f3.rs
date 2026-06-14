@@ -162,7 +162,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ lpds: {=bool:?}, pdds: {:?}, cwuf: {=bool:?}, csbf: {=bool:?}, pvde: {=bool:?}, pls: {=u8:?}, dbp: {=bool:?}, ensd[0]: {=bool:?}, ensd[1]: {=bool:?}, ensd[2]: {=bool:?} }}" , self . lpds () , self . pdds () , self . cwuf () , self . csbf () , self . pvde () , self . pls () , self . dbp () , self . ensd (0usize) , self . ensd (1usize) , self . ensd (2usize))
+            defmt::write!(
+                f,
+                "Cr {{ lpds: {=bool:?}, pdds: {:?}, cwuf: {=bool:?}, csbf: {=bool:?}, pvde: {=bool:?}, pls: {=u8:?}, dbp: {=bool:?}, ensd[0]: {=bool:?}, ensd[1]: {=bool:?}, ensd[2]: {=bool:?} }}",
+                self.lpds(),
+                self.pdds(),
+                self.cwuf(),
+                self.csbf(),
+                self.pvde(),
+                self.pls(),
+                self.dbp(),
+                self.ensd(0usize),
+                self.ensd(1usize),
+                self.ensd(2usize)
+            )
         }
     }
     #[doc = "power control/status register"]
@@ -256,7 +269,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr {{ wuf: {=bool:?}, sbf: {=bool:?}, pvdo: {=bool:?}, vrefintrdyf: {=bool:?}, ewup[0]: {=bool:?}, ewup[1]: {=bool:?} }}" , self . wuf () , self . sbf () , self . pvdo () , self . vrefintrdyf () , self . ewup (0usize) , self . ewup (1usize))
+            defmt::write!(
+                f,
+                "Csr {{ wuf: {=bool:?}, sbf: {=bool:?}, pvdo: {=bool:?}, vrefintrdyf: {=bool:?}, ewup[0]: {=bool:?}, ewup[1]: {=bool:?} }}",
+                self.wuf(),
+                self.sbf(),
+                self.pvdo(),
+                self.vrefintrdyf(),
+                self.ewup(0usize),
+                self.ewup(1usize)
+            )
         }
     }
 }

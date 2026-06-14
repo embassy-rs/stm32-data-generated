@@ -404,7 +404,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RegCfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RegCfgr {{ bren: {=bool:?}, sec: {=bool:?}, privc[0]: {=bool:?}, privc[1]: {=bool:?}, privc[2]: {=bool:?}, privc[3]: {=bool:?}, privc[4]: {=bool:?}, privc[5]: {=bool:?}, privc[6]: {=bool:?}, privc[7]: {=bool:?} }}" , self . bren () , self . sec () , self . privc (0usize) , self . privc (1usize) , self . privc (2usize) , self . privc (3usize) , self . privc (4usize) , self . privc (5usize) , self . privc (6usize) , self . privc (7usize))
+            defmt::write!(
+                f,
+                "RegCfgr {{ bren: {=bool:?}, sec: {=bool:?}, privc[0]: {=bool:?}, privc[1]: {=bool:?}, privc[2]: {=bool:?}, privc[3]: {=bool:?}, privc[4]: {=bool:?}, privc[5]: {=bool:?}, privc[6]: {=bool:?}, privc[7]: {=bool:?} }}",
+                self.bren(),
+                self.sec(),
+                self.privc(0usize),
+                self.privc(1usize),
+                self.privc(2usize),
+                self.privc(3usize),
+                self.privc(4usize),
+                self.privc(5usize),
+                self.privc(6usize),
+                self.privc(7usize)
+            )
         }
     }
     #[doc = "RISAF region CID configuration register."]
@@ -476,7 +489,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for RegCidcfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RegCidcfgr {{ rdenc[0]: {=bool:?}, rdenc[1]: {=bool:?}, rdenc[2]: {=bool:?}, rdenc[3]: {=bool:?}, rdenc[4]: {=bool:?}, rdenc[5]: {=bool:?}, rdenc[6]: {=bool:?}, rdenc[7]: {=bool:?}, wrenc[0]: {=bool:?}, wrenc[1]: {=bool:?}, wrenc[2]: {=bool:?}, wrenc[3]: {=bool:?}, wrenc[4]: {=bool:?}, wrenc[5]: {=bool:?}, wrenc[6]: {=bool:?}, wrenc[7]: {=bool:?} }}" , self . rdenc (0usize) , self . rdenc (1usize) , self . rdenc (2usize) , self . rdenc (3usize) , self . rdenc (4usize) , self . rdenc (5usize) , self . rdenc (6usize) , self . rdenc (7usize) , self . wrenc (0usize) , self . wrenc (1usize) , self . wrenc (2usize) , self . wrenc (3usize) , self . wrenc (4usize) , self . wrenc (5usize) , self . wrenc (6usize) , self . wrenc (7usize))
+            defmt::write!(
+                f,
+                "RegCidcfgr {{ rdenc[0]: {=bool:?}, rdenc[1]: {=bool:?}, rdenc[2]: {=bool:?}, rdenc[3]: {=bool:?}, rdenc[4]: {=bool:?}, rdenc[5]: {=bool:?}, rdenc[6]: {=bool:?}, rdenc[7]: {=bool:?}, wrenc[0]: {=bool:?}, wrenc[1]: {=bool:?}, wrenc[2]: {=bool:?}, wrenc[3]: {=bool:?}, wrenc[4]: {=bool:?}, wrenc[5]: {=bool:?}, wrenc[6]: {=bool:?}, wrenc[7]: {=bool:?} }}",
+                self.rdenc(0usize),
+                self.rdenc(1usize),
+                self.rdenc(2usize),
+                self.rdenc(3usize),
+                self.rdenc(4usize),
+                self.rdenc(5usize),
+                self.rdenc(6usize),
+                self.rdenc(7usize),
+                self.wrenc(0usize),
+                self.wrenc(1usize),
+                self.wrenc(2usize),
+                self.wrenc(3usize),
+                self.wrenc(4usize),
+                self.wrenc(5usize),
+                self.wrenc(6usize),
+                self.wrenc(7usize)
+            )
         }
     }
     #[doc = "RISAF region end address register."]

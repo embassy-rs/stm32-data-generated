@@ -165,7 +165,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ccr {{ dmareq_id: {=u8:?}, soie: {=bool:?}, ege: {=bool:?}, se: {=bool:?}, spol: {:?}, nbreq: {=u8:?}, sync_id: {=u8:?} }}" , self . dmareq_id () , self . soie () , self . ege () , self . se () , self . spol () , self . nbreq () , self . sync_id ())
+            defmt::write!(
+                f,
+                "Ccr {{ dmareq_id: {=u8:?}, soie: {=bool:?}, ege: {=bool:?}, se: {=bool:?}, spol: {:?}, nbreq: {=u8:?}, sync_id: {=u8:?} }}",
+                self.dmareq_id(),
+                self.soie(),
+                self.ege(),
+                self.se(),
+                self.spol(),
+                self.nbreq(),
+                self.sync_id()
+            )
         }
     }
     #[doc = "DMAMUX request line multiplexer interrupt channel status register"]
@@ -221,7 +231,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr {{ sof[0]: {=bool:?}, sof[1]: {=bool:?}, sof[2]: {=bool:?}, sof[3]: {=bool:?}, sof[4]: {=bool:?}, sof[5]: {=bool:?}, sof[6]: {=bool:?}, sof[7]: {=bool:?}, sof[8]: {=bool:?}, sof[9]: {=bool:?}, sof[10]: {=bool:?}, sof[11]: {=bool:?}, sof[12]: {=bool:?}, sof[13]: {=bool:?}, sof[14]: {=bool:?}, sof[15]: {=bool:?} }}" , self . sof (0usize) , self . sof (1usize) , self . sof (2usize) , self . sof (3usize) , self . sof (4usize) , self . sof (5usize) , self . sof (6usize) , self . sof (7usize) , self . sof (8usize) , self . sof (9usize) , self . sof (10usize) , self . sof (11usize) , self . sof (12usize) , self . sof (13usize) , self . sof (14usize) , self . sof (15usize))
+            defmt::write!(
+                f,
+                "Csr {{ sof[0]: {=bool:?}, sof[1]: {=bool:?}, sof[2]: {=bool:?}, sof[3]: {=bool:?}, sof[4]: {=bool:?}, sof[5]: {=bool:?}, sof[6]: {=bool:?}, sof[7]: {=bool:?}, sof[8]: {=bool:?}, sof[9]: {=bool:?}, sof[10]: {=bool:?}, sof[11]: {=bool:?}, sof[12]: {=bool:?}, sof[13]: {=bool:?}, sof[14]: {=bool:?}, sof[15]: {=bool:?} }}",
+                self.sof(0usize),
+                self.sof(1usize),
+                self.sof(2usize),
+                self.sof(3usize),
+                self.sof(4usize),
+                self.sof(5usize),
+                self.sof(6usize),
+                self.sof(7usize),
+                self.sof(8usize),
+                self.sof(9usize),
+                self.sof(10usize),
+                self.sof(11usize),
+                self.sof(12usize),
+                self.sof(13usize),
+                self.sof(14usize),
+                self.sof(15usize)
+            )
         }
     }
     #[doc = "DMAMux - DMA request generator channel x control register"]
@@ -366,7 +395,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rgsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Rgsr {{ of[0]: {=bool:?}, of[1]: {=bool:?}, of[2]: {=bool:?}, of[3]: {=bool:?}, of[4]: {=bool:?}, of[5]: {=bool:?}, of[6]: {=bool:?}, of[7]: {=bool:?} }}" , self . of (0usize) , self . of (1usize) , self . of (2usize) , self . of (3usize) , self . of (4usize) , self . of (5usize) , self . of (6usize) , self . of (7usize))
+            defmt::write!(
+                f,
+                "Rgsr {{ of[0]: {=bool:?}, of[1]: {=bool:?}, of[2]: {=bool:?}, of[3]: {=bool:?}, of[4]: {=bool:?}, of[5]: {=bool:?}, of[6]: {=bool:?}, of[7]: {=bool:?} }}",
+                self.of(0usize),
+                self.of(1usize),
+                self.of(2usize),
+                self.of(3usize),
+                self.of(4usize),
+                self.of(5usize),
+                self.of(6usize),
+                self.of(7usize)
+            )
         }
     }
 }

@@ -545,7 +545,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pmcr {{ lpms: {:?}, svos: {:?}, cssf: {=bool:?}, flps: {:?}, booste: {=bool:?}, avd_ready: {=bool:?}, ethernetso: {:?}, sram3so: {:?}, sram2_16so: {:?}, sram2_48so: {:?}, sram1so: {:?} }}" , self . lpms () , self . svos () , self . cssf () , self . flps () , self . booste () , self . avd_ready () , self . ethernetso () , self . sram3so () , self . sram2_16so () , self . sram2_48so () , self . sram1so ())
+            defmt::write!(
+                f,
+                "Pmcr {{ lpms: {:?}, svos: {:?}, cssf: {=bool:?}, flps: {:?}, booste: {=bool:?}, avd_ready: {=bool:?}, ethernetso: {:?}, sram3so: {:?}, sram2_16so: {:?}, sram2_48so: {:?}, sram1so: {:?} }}",
+                self.lpms(),
+                self.svos(),
+                self.cssf(),
+                self.flps(),
+                self.booste(),
+                self.avd_ready(),
+                self.ethernetso(),
+                self.sram3so(),
+                self.sram2_16so(),
+                self.sram2_48so(),
+                self.sram1so()
+            )
         }
     }
     #[doc = "PWR status register."]
@@ -837,7 +851,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccfgr {{ wupsec[0]: {=bool:?}, wupsec[1]: {=bool:?}, wupsec[2]: {=bool:?}, wupsec[3]: {=bool:?}, wupsec[4]: {=bool:?}, wupsec[5]: {=bool:?}, wupsec[6]: {=bool:?}, wupsec[7]: {=bool:?}, retsec: {=bool:?}, lpmsec: {=bool:?}, scmsec: {=bool:?}, vbsec: {=bool:?}, vusbsec: {=bool:?} }}" , self . wupsec (0usize) , self . wupsec (1usize) , self . wupsec (2usize) , self . wupsec (3usize) , self . wupsec (4usize) , self . wupsec (5usize) , self . wupsec (6usize) , self . wupsec (7usize) , self . retsec () , self . lpmsec () , self . scmsec () , self . vbsec () , self . vusbsec ())
+            defmt::write!(
+                f,
+                "Seccfgr {{ wupsec[0]: {=bool:?}, wupsec[1]: {=bool:?}, wupsec[2]: {=bool:?}, wupsec[3]: {=bool:?}, wupsec[4]: {=bool:?}, wupsec[5]: {=bool:?}, wupsec[6]: {=bool:?}, wupsec[7]: {=bool:?}, retsec: {=bool:?}, lpmsec: {=bool:?}, scmsec: {=bool:?}, vbsec: {=bool:?}, vusbsec: {=bool:?} }}",
+                self.wupsec(0usize),
+                self.wupsec(1usize),
+                self.wupsec(2usize),
+                self.wupsec(3usize),
+                self.wupsec(4usize),
+                self.wupsec(5usize),
+                self.wupsec(6usize),
+                self.wupsec(7usize),
+                self.retsec(),
+                self.lpmsec(),
+                self.scmsec(),
+                self.vbsec(),
+                self.vusbsec()
+            )
         }
     }
     #[doc = "PWR USB Type-C power delivery register."]
@@ -1313,7 +1343,34 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wucr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wucr {{ wupen[0]: {=bool:?}, wupen[1]: {=bool:?}, wupen[2]: {=bool:?}, wupen[3]: {=bool:?}, wupen[4]: {=bool:?}, wupen[5]: {=bool:?}, wupen[6]: {=bool:?}, wupen[7]: {=bool:?}, wupp[0]: {:?}, wupp[1]: {:?}, wupp[2]: {:?}, wupp[3]: {:?}, wupp[4]: {:?}, wupp[5]: {:?}, wupp[6]: {:?}, wupp[7]: {:?}, wuppupd[0]: {:?}, wuppupd[1]: {:?}, wuppupd[2]: {:?}, wuppupd[3]: {:?}, wuppupd[4]: {:?}, wuppupd[5]: {:?}, wuppupd[6]: {:?}, wuppupd[7]: {:?} }}" , self . wupen (0usize) , self . wupen (1usize) , self . wupen (2usize) , self . wupen (3usize) , self . wupen (4usize) , self . wupen (5usize) , self . wupen (6usize) , self . wupen (7usize) , self . wupp (0usize) , self . wupp (1usize) , self . wupp (2usize) , self . wupp (3usize) , self . wupp (4usize) , self . wupp (5usize) , self . wupp (6usize) , self . wupp (7usize) , self . wuppupd (0usize) , self . wuppupd (1usize) , self . wuppupd (2usize) , self . wuppupd (3usize) , self . wuppupd (4usize) , self . wuppupd (5usize) , self . wuppupd (6usize) , self . wuppupd (7usize))
+            defmt::write!(
+                f,
+                "Wucr {{ wupen[0]: {=bool:?}, wupen[1]: {=bool:?}, wupen[2]: {=bool:?}, wupen[3]: {=bool:?}, wupen[4]: {=bool:?}, wupen[5]: {=bool:?}, wupen[6]: {=bool:?}, wupen[7]: {=bool:?}, wupp[0]: {:?}, wupp[1]: {:?}, wupp[2]: {:?}, wupp[3]: {:?}, wupp[4]: {:?}, wupp[5]: {:?}, wupp[6]: {:?}, wupp[7]: {:?}, wuppupd[0]: {:?}, wuppupd[1]: {:?}, wuppupd[2]: {:?}, wuppupd[3]: {:?}, wuppupd[4]: {:?}, wuppupd[5]: {:?}, wuppupd[6]: {:?}, wuppupd[7]: {:?} }}",
+                self.wupen(0usize),
+                self.wupen(1usize),
+                self.wupen(2usize),
+                self.wupen(3usize),
+                self.wupen(4usize),
+                self.wupen(5usize),
+                self.wupen(6usize),
+                self.wupen(7usize),
+                self.wupp(0usize),
+                self.wupp(1usize),
+                self.wupp(2usize),
+                self.wupp(3usize),
+                self.wupp(4usize),
+                self.wupp(5usize),
+                self.wupp(6usize),
+                self.wupp(7usize),
+                self.wuppupd(0usize),
+                self.wuppupd(1usize),
+                self.wuppupd(2usize),
+                self.wuppupd(3usize),
+                self.wuppupd(4usize),
+                self.wuppupd(5usize),
+                self.wuppupd(6usize),
+                self.wuppupd(7usize)
+            )
         }
     }
     #[doc = "PWR wakeup status clear register."]
@@ -1361,7 +1418,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wuscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wuscr {{ cwuf[0]: {=bool:?}, cwuf[1]: {=bool:?}, cwuf[2]: {=bool:?}, cwuf[3]: {=bool:?}, cwuf[4]: {=bool:?}, cwuf[5]: {=bool:?}, cwuf[6]: {=bool:?}, cwuf[7]: {=bool:?} }}" , self . cwuf (0usize) , self . cwuf (1usize) , self . cwuf (2usize) , self . cwuf (3usize) , self . cwuf (4usize) , self . cwuf (5usize) , self . cwuf (6usize) , self . cwuf (7usize))
+            defmt::write!(
+                f,
+                "Wuscr {{ cwuf[0]: {=bool:?}, cwuf[1]: {=bool:?}, cwuf[2]: {=bool:?}, cwuf[3]: {=bool:?}, cwuf[4]: {=bool:?}, cwuf[5]: {=bool:?}, cwuf[6]: {=bool:?}, cwuf[7]: {=bool:?} }}",
+                self.cwuf(0usize),
+                self.cwuf(1usize),
+                self.cwuf(2usize),
+                self.cwuf(3usize),
+                self.cwuf(4usize),
+                self.cwuf(5usize),
+                self.cwuf(6usize),
+                self.cwuf(7usize)
+            )
         }
     }
     #[doc = "PWR wakeup status register."]
@@ -1409,7 +1477,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wusr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wusr {{ wuf[0]: {=bool:?}, wuf[1]: {=bool:?}, wuf[2]: {=bool:?}, wuf[3]: {=bool:?}, wuf[4]: {=bool:?}, wuf[5]: {=bool:?}, wuf[6]: {=bool:?}, wuf[7]: {=bool:?} }}" , self . wuf (0usize) , self . wuf (1usize) , self . wuf (2usize) , self . wuf (3usize) , self . wuf (4usize) , self . wuf (5usize) , self . wuf (6usize) , self . wuf (7usize))
+            defmt::write!(
+                f,
+                "Wusr {{ wuf[0]: {=bool:?}, wuf[1]: {=bool:?}, wuf[2]: {=bool:?}, wuf[3]: {=bool:?}, wuf[4]: {=bool:?}, wuf[5]: {=bool:?}, wuf[6]: {=bool:?}, wuf[7]: {=bool:?} }}",
+                self.wuf(0usize),
+                self.wuf(1usize),
+                self.wuf(2usize),
+                self.wuf(3usize),
+                self.wuf(4usize),
+                self.wuf(5usize),
+                self.wuf(6usize),
+                self.wuf(7usize)
+            )
         }
     }
 }

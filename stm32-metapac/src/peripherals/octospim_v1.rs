@@ -242,7 +242,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for P1cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P1cr {{ clken: {=bool:?}, clksrc: {=bool:?}, dqsen: {=bool:?}, dqssrc: {=bool:?}, ncsen: {=bool:?}, ncssrc: {=bool:?}, iolen: {=bool:?}, iolsrc: {=u8:?}, iohen: {=bool:?}, iohsrc: {=u8:?} }}" , self . clken () , self . clksrc () , self . dqsen () , self . dqssrc () , self . ncsen () , self . ncssrc () , self . iolen () , self . iolsrc () , self . iohen () , self . iohsrc ())
+            defmt::write!(
+                f,
+                "P1cr {{ clken: {=bool:?}, clksrc: {=bool:?}, dqsen: {=bool:?}, dqssrc: {=bool:?}, ncsen: {=bool:?}, ncssrc: {=bool:?}, iolen: {=bool:?}, iolsrc: {=u8:?}, iohen: {=bool:?}, iohsrc: {=u8:?} }}",
+                self.clken(),
+                self.clksrc(),
+                self.dqsen(),
+                self.dqssrc(),
+                self.ncsen(),
+                self.ncssrc(),
+                self.iolen(),
+                self.iolsrc(),
+                self.iohen(),
+                self.iohsrc()
+            )
         }
     }
     #[doc = "OctoSPI IO Manager Port 2 Configuration Register"]
@@ -396,7 +409,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for P2cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P2cr {{ clken: {=bool:?}, clksrc: {=bool:?}, dqsen: {=bool:?}, dqssrc: {=bool:?}, ncsen: {=bool:?}, ncssrc: {=bool:?}, iolen: {=bool:?}, iolsrc: {=u8:?}, iohen: {=bool:?}, iohsrc: {=u8:?} }}" , self . clken () , self . clksrc () , self . dqsen () , self . dqssrc () , self . ncsen () , self . ncssrc () , self . iolen () , self . iolsrc () , self . iohen () , self . iohsrc ())
+            defmt::write!(
+                f,
+                "P2cr {{ clken: {=bool:?}, clksrc: {=bool:?}, dqsen: {=bool:?}, dqssrc: {=bool:?}, ncsen: {=bool:?}, ncssrc: {=bool:?}, iolen: {=bool:?}, iolsrc: {=u8:?}, iohen: {=bool:?}, iohsrc: {=u8:?} }}",
+                self.clken(),
+                self.clksrc(),
+                self.dqsen(),
+                self.dqssrc(),
+                self.ncsen(),
+                self.ncssrc(),
+                self.iolen(),
+                self.iolsrc(),
+                self.iohen(),
+                self.iohsrc()
+            )
         }
     }
 }

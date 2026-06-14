@@ -482,7 +482,33 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mapr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Mapr {{ spi1_remap: {=bool:?}, i2c1_remap: {=bool:?}, usart1_remap: {=bool:?}, usart2_remap: {=bool:?}, usart3_remap: {=u8:?}, tim1_remap: {=u8:?}, tim2_remap: {=u8:?}, tim3_remap: {=u8:?}, tim4_remap: {=bool:?}, can1_remap: {=u8:?}, pd01_remap: {=bool:?}, tim5ch4_iremap: {=bool:?}, adc1_etrginj_remap: {=bool:?}, adc1_etrgreg_remap: {=bool:?}, adc2_etrginj_remap: {=bool:?}, adc2_etrgreg_remap: {=bool:?}, eth_remap: {=bool:?}, can2_remap: {=bool:?}, mii_rmii_sel: {=bool:?}, swj_cfg: {:?}, spi3_remap: {=bool:?}, tim2itr1_iremap: {=bool:?}, ptp_pps_remap: {=bool:?} }}" , self . spi1_remap () , self . i2c1_remap () , self . usart1_remap () , self . usart2_remap () , self . usart3_remap () , self . tim1_remap () , self . tim2_remap () , self . tim3_remap () , self . tim4_remap () , self . can1_remap () , self . pd01_remap () , self . tim5ch4_iremap () , self . adc1_etrginj_remap () , self . adc1_etrgreg_remap () , self . adc2_etrginj_remap () , self . adc2_etrgreg_remap () , self . eth_remap () , self . can2_remap () , self . mii_rmii_sel () , self . swj_cfg () , self . spi3_remap () , self . tim2itr1_iremap () , self . ptp_pps_remap ())
+            defmt::write!(
+                f,
+                "Mapr {{ spi1_remap: {=bool:?}, i2c1_remap: {=bool:?}, usart1_remap: {=bool:?}, usart2_remap: {=bool:?}, usart3_remap: {=u8:?}, tim1_remap: {=u8:?}, tim2_remap: {=u8:?}, tim3_remap: {=u8:?}, tim4_remap: {=bool:?}, can1_remap: {=u8:?}, pd01_remap: {=bool:?}, tim5ch4_iremap: {=bool:?}, adc1_etrginj_remap: {=bool:?}, adc1_etrgreg_remap: {=bool:?}, adc2_etrginj_remap: {=bool:?}, adc2_etrgreg_remap: {=bool:?}, eth_remap: {=bool:?}, can2_remap: {=bool:?}, mii_rmii_sel: {=bool:?}, swj_cfg: {:?}, spi3_remap: {=bool:?}, tim2itr1_iremap: {=bool:?}, ptp_pps_remap: {=bool:?} }}",
+                self.spi1_remap(),
+                self.i2c1_remap(),
+                self.usart1_remap(),
+                self.usart2_remap(),
+                self.usart3_remap(),
+                self.tim1_remap(),
+                self.tim2_remap(),
+                self.tim3_remap(),
+                self.tim4_remap(),
+                self.can1_remap(),
+                self.pd01_remap(),
+                self.tim5ch4_iremap(),
+                self.adc1_etrginj_remap(),
+                self.adc1_etrgreg_remap(),
+                self.adc2_etrginj_remap(),
+                self.adc2_etrgreg_remap(),
+                self.eth_remap(),
+                self.can2_remap(),
+                self.mii_rmii_sel(),
+                self.swj_cfg(),
+                self.spi3_remap(),
+                self.tim2itr1_iremap(),
+                self.ptp_pps_remap()
+            )
         }
     }
     #[doc = "AF remap and debug I/O configuration register"]
@@ -688,7 +714,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mapr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Mapr2 {{ tim15_remap: {=bool:?}, tim16_remap: {=bool:?}, tim17_remap: {=bool:?}, cec_remap: {=bool:?}, tim1_dma_remap: {=bool:?}, tim9_remap: {=bool:?}, tim10_remap: {=bool:?}, tim11_remap: {=bool:?}, tim13_remap: {=bool:?}, tim14_remap: {=bool:?}, fsmc_nadv: {=bool:?}, tim67_dac_dma_remap: {=bool:?}, tim12_remap: {=bool:?}, misc_remap: {=bool:?} }}" , self . tim15_remap () , self . tim16_remap () , self . tim17_remap () , self . cec_remap () , self . tim1_dma_remap () , self . tim9_remap () , self . tim10_remap () , self . tim11_remap () , self . tim13_remap () , self . tim14_remap () , self . fsmc_nadv () , self . tim67_dac_dma_remap () , self . tim12_remap () , self . misc_remap ())
+            defmt::write!(
+                f,
+                "Mapr2 {{ tim15_remap: {=bool:?}, tim16_remap: {=bool:?}, tim17_remap: {=bool:?}, cec_remap: {=bool:?}, tim1_dma_remap: {=bool:?}, tim9_remap: {=bool:?}, tim10_remap: {=bool:?}, tim11_remap: {=bool:?}, tim13_remap: {=bool:?}, tim14_remap: {=bool:?}, fsmc_nadv: {=bool:?}, tim67_dac_dma_remap: {=bool:?}, tim12_remap: {=bool:?}, misc_remap: {=bool:?} }}",
+                self.tim15_remap(),
+                self.tim16_remap(),
+                self.tim17_remap(),
+                self.cec_remap(),
+                self.tim1_dma_remap(),
+                self.tim9_remap(),
+                self.tim10_remap(),
+                self.tim11_remap(),
+                self.tim13_remap(),
+                self.tim14_remap(),
+                self.fsmc_nadv(),
+                self.tim67_dac_dma_remap(),
+                self.tim12_remap(),
+                self.misc_remap()
+            )
         }
     }
 }

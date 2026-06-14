@@ -5,423 +5,272 @@ pub(crate) static REGISTERS: IR = IR {
         Block {
             name: "Bch",
             extends: None,
-            description: Some(
-                "BCH error correction code.",
-            ),
+            description: Some("BCH error correction code."),
             items: &[
                 BlockItem {
                     name: "ier",
-                    description: Some(
-                        "BCH interrupt enable register.",
-                    ),
+                    description: Some("BCH interrupt enable register."),
                     array: None,
                     byte_offset: 0x0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bchier",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Bchier"),
+                    }),
                 },
                 BlockItem {
                     name: "isr",
-                    description: Some(
-                        "BCH interrupt status register.",
-                    ),
+                    description: Some("BCH interrupt status register."),
                     array: None,
                     byte_offset: 0x4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bchisr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Bchisr"),
+                    }),
                 },
                 BlockItem {
                     name: "icr",
-                    description: Some(
-                        "BCH interrupt clear register.",
-                    ),
+                    description: Some("BCH interrupt clear register."),
                     array: None,
                     byte_offset: 0x8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bchicr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Bchicr"),
+                    }),
                 },
                 BlockItem {
                     name: "pbr",
-                    description: Some(
-                        "BCH parity bits registers.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
-                    ),
+                    description: Some("BCH parity bits registers."),
+                    array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
                     byte_offset: 0x10,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bchpbr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Bchpbr"),
+                    }),
                 },
                 BlockItem {
                     name: "dsr0",
-                    description: Some(
-                        "BCH decoder status register 0.",
-                    ),
+                    description: Some("BCH decoder status register 0."),
                     array: None,
                     byte_offset: 0x2c,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bchdsr0",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Bchdsr0"),
+                    }),
                 },
                 BlockItem {
                     name: "dsr1",
-                    description: Some(
-                        "BCH decoder status register 1.",
-                    ),
+                    description: Some("BCH decoder status register 1."),
                     array: None,
                     byte_offset: 0x30,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bchdsr1",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Bchdsr1"),
+                    }),
                 },
                 BlockItem {
                     name: "dsr2",
-                    description: Some(
-                        "BCH decoder status register 2.",
-                    ),
+                    description: Some("BCH decoder status register 2."),
                     array: None,
                     byte_offset: 0x34,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bchdsr2",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Bchdsr2"),
+                    }),
                 },
                 BlockItem {
                     name: "dsr3",
-                    description: Some(
-                        "BCH decoder status register 3.",
-                    ),
+                    description: Some("BCH decoder status register 3."),
                     array: None,
                     byte_offset: 0x38,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bchdsr3",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Bchdsr3"),
+                    }),
                 },
                 BlockItem {
                     name: "dsr4",
-                    description: Some(
-                        "BCH decoder status register 4.",
-                    ),
+                    description: Some("BCH decoder status register 4."),
                     array: None,
                     byte_offset: 0x3c,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bchdsr4",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Bchdsr4"),
+                    }),
                 },
             ],
         },
         Block {
             name: "Csq",
             extends: None,
-            description: Some(
-                "NAND Command Sequencer.",
-            ),
+            description: Some("NAND Command Sequencer."),
             items: &[
                 BlockItem {
                     name: "cr",
-                    description: Some(
-                        "Command Sequencer control register.",
-                    ),
+                    description: Some("Command Sequencer control register."),
                     array: None,
                     byte_offset: 0x0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Csqcr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Csqcr"),
+                    }),
                 },
                 BlockItem {
                     name: "cfgr1",
-                    description: Some(
-                        "Command Sequencer configuration register 1.",
-                    ),
+                    description: Some("Command Sequencer configuration register 1."),
                     array: None,
                     byte_offset: 0x4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Csqcfgr1",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Csqcfgr1"),
+                    }),
                 },
                 BlockItem {
                     name: "cfgr2",
-                    description: Some(
-                        "Command Sequencer configuration register 2.",
-                    ),
+                    description: Some("Command Sequencer configuration register 2."),
                     array: None,
                     byte_offset: 0x8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Csqcfgr2",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Csqcfgr2"),
+                    }),
                 },
                 BlockItem {
                     name: "cfgr3",
-                    description: Some(
-                        "Command Sequencer configuration register 3.",
-                    ),
+                    description: Some("Command Sequencer configuration register 3."),
                     array: None,
                     byte_offset: 0xc,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Csqcfgr3",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Csqcfgr3"),
+                    }),
                 },
                 BlockItem {
                     name: "ar1",
-                    description: Some(
-                        "Command Sequencer address register 1.",
-                    ),
+                    description: Some("Command Sequencer address register 1."),
                     array: None,
                     byte_offset: 0x10,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Csqar1",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Csqar1"),
+                    }),
                 },
                 BlockItem {
                     name: "ar2",
-                    description: Some(
-                        "Command Sequencer address register 2.",
-                    ),
+                    description: Some("Command Sequencer address register 2."),
                     array: None,
                     byte_offset: 0x14,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Csqar2",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Csqar2"),
+                    }),
                 },
                 BlockItem {
                     name: "ier",
-                    description: Some(
-                        "Command Sequencer interrupt enable register.",
-                    ),
+                    description: Some("Command Sequencer interrupt enable register."),
                     array: None,
                     byte_offset: 0x20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Csqier",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Csqier"),
+                    }),
                 },
                 BlockItem {
                     name: "isr",
-                    description: Some(
-                        "Command Sequencer interrupt status register.",
-                    ),
+                    description: Some("Command Sequencer interrupt status register."),
                     array: None,
                     byte_offset: 0x24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Csqisr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Csqisr"),
+                    }),
                 },
                 BlockItem {
                     name: "icr",
-                    description: Some(
-                        "Command Sequencer interrupt clear register.",
-                    ),
+                    description: Some("Command Sequencer interrupt clear register."),
                     array: None,
                     byte_offset: 0x28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Csqicr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Csqicr"),
+                    }),
                 },
                 BlockItem {
                     name: "emsr",
-                    description: Some(
-                        "Command Sequencer error mapping status register.",
-                    ),
+                    description: Some("Command Sequencer error mapping status register."),
                     array: None,
                     byte_offset: 0x30,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Csqemsr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Csqemsr"),
+                    }),
                 },
             ],
         },
         Block {
             name: "Fmc",
             extends: None,
-            description: Some(
-                "Flexible memory controller (N6 with BCH ECC and Command Sequencer).",
-            ),
+            description: Some("Flexible memory controller (N6 with BCH ECC and Command Sequencer)."),
             items: &[
                 BlockItem {
                     name: "nor_psram",
                     description: None,
                     array: None,
                     byte_offset: 0x0,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "NorPsram",
-                        },
-                    ),
+                    inner: BlockItemInner::Block(BlockItemBlock { block: "NorPsram" }),
                 },
                 BlockItem {
                     name: "nand",
                     description: None,
                     array: None,
                     byte_offset: 0x80,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "Nand",
-                        },
-                    ),
+                    inner: BlockItemInner::Block(BlockItemBlock { block: "Nand" }),
                 },
                 BlockItem {
                     name: "sdram",
                     description: None,
                     array: None,
                     byte_offset: 0x140,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "Sdram",
-                        },
-                    ),
+                    inner: BlockItemInner::Block(BlockItemBlock { block: "Sdram" }),
                 },
                 BlockItem {
                     name: "nand_ext",
                     description: None,
                     array: None,
                     byte_offset: 0x180,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "NandExt",
-                        },
-                    ),
+                    inner: BlockItemInner::Block(BlockItemBlock { block: "NandExt" }),
                 },
                 BlockItem {
                     name: "csq",
                     description: None,
                     array: None,
                     byte_offset: 0x200,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "Csq",
-                        },
-                    ),
+                    inner: BlockItemInner::Block(BlockItemBlock { block: "Csq" }),
                 },
                 BlockItem {
                     name: "bch",
                     description: None,
                     array: None,
                     byte_offset: 0x250,
-                    inner: BlockItemInner::Block(
-                        BlockItemBlock {
-                            block: "Bch",
-                        },
-                    ),
+                    inner: BlockItemInner::Block(BlockItemBlock { block: "Bch" }),
                 },
             ],
         },
@@ -432,146 +281,98 @@ pub(crate) static REGISTERS: IR = IR {
             items: &[
                 BlockItem {
                     name: "pcr",
-                    description: Some(
-                        "NAND Flash control registers.",
-                    ),
+                    description: Some("NAND Flash control registers."),
                     array: None,
                     byte_offset: 0x0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pcr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Pcr"),
+                    }),
                 },
                 BlockItem {
                     name: "sr",
-                    description: Some(
-                        "FIFO status and interrupt register.",
-                    ),
+                    description: Some("FIFO status and interrupt register."),
                     array: None,
                     byte_offset: 0x4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Sr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Sr"),
+                    }),
                 },
                 BlockItem {
                     name: "pmem",
-                    description: Some(
-                        "Common memory space timing register.",
-                    ),
+                    description: Some("Common memory space timing register."),
                     array: None,
                     byte_offset: 0x8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pmem",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Pmem"),
+                    }),
                 },
                 BlockItem {
                     name: "patt",
-                    description: Some(
-                        "Attribute memory space timing register.",
-                    ),
+                    description: Some("Attribute memory space timing register."),
                     array: None,
                     byte_offset: 0xc,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Patt",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Patt"),
+                    }),
                 },
                 BlockItem {
                     name: "eccr",
-                    description: Some(
-                        "ECC result registers.",
-                    ),
+                    description: Some("ECC result registers."),
                     array: None,
                     byte_offset: 0x14,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: None,
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: None,
+                    }),
                 },
             ],
         },
         Block {
             name: "NandExt",
             extends: None,
-            description: Some(
-                "NAND extended interrupt registers.",
-            ),
+            description: Some("NAND extended interrupt registers."),
             items: &[
                 BlockItem {
                     name: "ier",
-                    description: Some(
-                        "NAND interrupt enable register.",
-                    ),
+                    description: Some("NAND interrupt enable register."),
                     array: None,
                     byte_offset: 0x0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "NandIer",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("NandIer"),
+                    }),
                 },
                 BlockItem {
                     name: "isr",
-                    description: Some(
-                        "NAND interrupt status register.",
-                    ),
+                    description: Some("NAND interrupt status register."),
                     array: None,
                     byte_offset: 0x4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "NandIsr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("NandIsr"),
+                    }),
                 },
                 BlockItem {
                     name: "icr",
-                    description: Some(
-                        "NAND interrupt clear register.",
-                    ),
+                    description: Some("NAND interrupt clear register."),
                     array: None,
                     byte_offset: 0x8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "NandIcr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("NandIcr"),
+                    }),
                 },
             ],
         },
@@ -582,109 +383,58 @@ pub(crate) static REGISTERS: IR = IR {
             items: &[
                 BlockItem {
                     name: "bcr1",
-                    description: Some(
-                        "SRAM/NOR-Flash chip-select control register for bank 1.",
-                    ),
+                    description: Some("SRAM/NOR-Flash chip-select control register for bank 1."),
                     array: None,
                     byte_offset: 0x0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bcr1",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Bcr1"),
+                    }),
                 },
                 BlockItem {
                     name: "btr",
-                    description: Some(
-                        "SRAM/NOR-Flash chip-select timing register for bank 1.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 8,
-                            },
-                        ),
-                    ),
+                    description: Some("SRAM/NOR-Flash chip-select timing register for bank 1."),
+                    array: Some(Array::Regular(RegularArray { len: 4, stride: 8 })),
                     byte_offset: 0x4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Btr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Btr"),
+                    }),
                 },
                 BlockItem {
                     name: "bcr",
-                    description: Some(
-                        "SRAM/NOR-Flash chip-select control register for bank 2.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 3,
-                                stride: 8,
-                            },
-                        ),
-                    ),
+                    description: Some("SRAM/NOR-Flash chip-select control register for bank 2."),
+                    array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
                     byte_offset: 0x8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bcr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Bcr"),
+                    }),
                 },
                 BlockItem {
                     name: "pcscntr",
-                    description: Some(
-                        "PSRAM chip select counter register.",
-                    ),
+                    description: Some("PSRAM chip select counter register."),
                     array: None,
                     byte_offset: 0x20,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Pcscntr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Pcscntr"),
+                    }),
                 },
                 BlockItem {
                     name: "bwtr",
-                    description: Some(
-                        "SRAM/NOR-Flash write timing registers 1.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 8,
-                            },
-                        ),
-                    ),
+                    description: Some("SRAM/NOR-Flash write timing registers 1."),
+                    array: Some(Array::Regular(RegularArray { len: 4, stride: 8 })),
                     byte_offset: 0x104,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Bwtr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Bwtr"),
+                    }),
                 },
             ],
         },
@@ -695,102 +445,58 @@ pub(crate) static REGISTERS: IR = IR {
             items: &[
                 BlockItem {
                     name: "sdcr",
-                    description: Some(
-                        "SDRAM control registers 1.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 4,
-                            },
-                        ),
-                    ),
+                    description: Some("SDRAM control registers 1."),
+                    array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
                     byte_offset: 0x0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Sdcr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Sdcr"),
+                    }),
                 },
                 BlockItem {
                     name: "sdtr",
-                    description: Some(
-                        "SDRAM timing registers 1.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 4,
-                            },
-                        ),
-                    ),
+                    description: Some("SDRAM timing registers 1."),
+                    array: Some(Array::Regular(RegularArray { len: 2, stride: 4 })),
                     byte_offset: 0x8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Sdtr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Sdtr"),
+                    }),
                 },
                 BlockItem {
                     name: "sdcmr",
-                    description: Some(
-                        "SDRAM Command Mode register.",
-                    ),
+                    description: Some("SDRAM Command Mode register."),
                     array: None,
                     byte_offset: 0x10,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Sdcmr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Sdcmr"),
+                    }),
                 },
                 BlockItem {
                     name: "sdrtr",
-                    description: Some(
-                        "SDRAM refresh timer register.",
-                    ),
+                    description: Some("SDRAM refresh timer register."),
                     array: None,
                     byte_offset: 0x14,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Sdrtr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Sdrtr"),
+                    }),
                 },
                 BlockItem {
                     name: "sdsr",
-                    description: Some(
-                        "SDRAM status register.",
-                    ),
+                    description: Some("SDRAM status register."),
                     array: None,
                     byte_offset: 0x18,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Sdsr",
-                            ),
-                        },
-                    ),
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Sdsr"),
+                    }),
                 },
             ],
         },
@@ -799,49 +505,29 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Bchdsr0",
             extends: None,
-            description: Some(
-                "BCH decoder status register 0.",
-            ),
+            description: Some("BCH decoder status register 0."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "due",
-                    description: Some(
-                        "Decoder uncorrectable error.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Decoder uncorrectable error."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "def",
-                    description: Some(
-                        "Decoder error found.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Decoder error found."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "den",
-                    description: Some(
-                        "Decoder error number.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Decoder error number."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -851,35 +537,21 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Bchdsr1",
             extends: None,
-            description: Some(
-                "BCH decoder status register 1.",
-            ),
+            description: Some("BCH decoder status register 1."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ebp1",
-                    description: Some(
-                        "Error bit position 1.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Error bit position 1."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 13,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ebp2",
-                    description: Some(
-                        "Error bit position 2.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    description: Some("Error bit position 2."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 13,
                     array: None,
                     enumm: None,
@@ -889,35 +561,21 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Bchdsr2",
             extends: None,
-            description: Some(
-                "BCH decoder status register 2.",
-            ),
+            description: Some("BCH decoder status register 2."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ebp3",
-                    description: Some(
-                        "Error bit position 3.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Error bit position 3."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 13,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ebp4",
-                    description: Some(
-                        "Error bit position 4.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    description: Some("Error bit position 4."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 13,
                     array: None,
                     enumm: None,
@@ -927,35 +585,21 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Bchdsr3",
             extends: None,
-            description: Some(
-                "BCH decoder status register 3.",
-            ),
+            description: Some("BCH decoder status register 3."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ebp5",
-                    description: Some(
-                        "Error bit position 5.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Error bit position 5."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 13,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ebp6",
-                    description: Some(
-                        "Error bit position 6.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    description: Some("Error bit position 6."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 13,
                     array: None,
                     enumm: None,
@@ -965,35 +609,21 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Bchdsr4",
             extends: None,
-            description: Some(
-                "BCH decoder status register 4.",
-            ),
+            description: Some("BCH decoder status register 4."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ebp7",
-                    description: Some(
-                        "Error bit position 7.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Error bit position 7."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 13,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ebp8",
-                    description: Some(
-                        "Error bit position 8.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    description: Some("Error bit position 8."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 13,
                     array: None,
                     enumm: None,
@@ -1003,77 +633,45 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Bchicr",
             extends: None,
-            description: Some(
-                "BCH interrupt clear register.",
-            ),
+            description: Some("BCH interrupt clear register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "cduef",
-                    description: Some(
-                        "Clear decoder uncorrectable error flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Clear decoder uncorrectable error flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cderf",
-                    description: Some(
-                        "Clear decoder error ready flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Clear decoder error ready flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cdeff",
-                    description: Some(
-                        "Clear decoder error found flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Clear decoder error found flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cdsrf",
-                    description: Some(
-                        "Clear decoder syndrome ready flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    description: Some("Clear decoder syndrome ready flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cepbrf",
-                    description: Some(
-                        "Clear encoder parity bits ready flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Clear encoder parity bits ready flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1083,77 +681,45 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Bchier",
             extends: None,
-            description: Some(
-                "BCH interrupt enable register.",
-            ),
+            description: Some("BCH interrupt enable register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "dueie",
-                    description: Some(
-                        "Decoder uncorrectable error interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Decoder uncorrectable error interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "derie",
-                    description: Some(
-                        "Decoder error ready interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Decoder error ready interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "defie",
-                    description: Some(
-                        "Decoder error found interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Decoder error found interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dsrie",
-                    description: Some(
-                        "Decoder syndrome ready interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    description: Some("Decoder syndrome ready interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "epbrie",
-                    description: Some(
-                        "Encoder parity bits ready interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Encoder parity bits ready interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1163,77 +729,45 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Bchisr",
             extends: None,
-            description: Some(
-                "BCH interrupt status register.",
-            ),
+            description: Some("BCH interrupt status register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "duef",
-                    description: Some(
-                        "Decoder uncorrectable error flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Decoder uncorrectable error flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "derf",
-                    description: Some(
-                        "Decoder error ready flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Decoder error ready flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "deff",
-                    description: Some(
-                        "Decoder error found flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Decoder error found flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dsrf",
-                    description: Some(
-                        "Decoder syndrome ready flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    description: Some("Decoder syndrome ready flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "epbrf",
-                    description: Some(
-                        "Encoder parity bits ready flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Encoder parity bits ready flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1243,33 +777,21 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Bchpbr",
             extends: None,
-            description: Some(
-                "BCH parity bits register.",
-            ),
+            description: Some("BCH parity bits register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "bchpb",
-                    description: Some(
-                        "BCH parity bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "bchpb",
+                description: Some("BCH parity bits."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Bcr",
             extends: None,
-            description: Some(
-                "SRAM/NOR-Flash chip-select control register for bank 4.",
-            ),
+            description: Some("SRAM/NOR-Flash chip-select control register for bank 4."),
             bit_size: 32,
             fields: &[
                 Field {
@@ -1277,11 +799,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Memory bank enable bit Enables the memory bank. After reset Bank1 is enabled, all others are disabled. Accessing a disabled bank causes an ERROR on AHB bus.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1291,11 +809,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Address/data multiplexing enable bit When this bit is set, the address and data values are multiplexed on the data bus, valid only with NOR and PSRAM memories:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1305,43 +819,25 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Memory type Defines the type of external memory attached to the corresponding memory bank.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Mtyp",
-                    ),
+                    enumm: Some("Mtyp"),
                 },
                 Field {
                     name: "mwid",
                     description: Some(
                         "Memory data bus width Defines the external memory device width, valid for all type of memories.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Mwid",
-                    ),
+                    enumm: Some("Mwid"),
                 },
                 Field {
                     name: "faccen",
-                    description: Some(
-                        "Flash access enable Enables NOR Flash memory access operations.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    description: Some("Flash access enable Enables NOR Flash memory access operations."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1351,11 +847,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Burst enable bit This bit enables/disables synchronous accesses during read operations. It is valid only for synchronous memories operating in Burst mode.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1365,43 +857,27 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wait signal polarity bit Defines the polarity of the wait signal from memory used for either in Synchronous or Asynchronous mode.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Waitpol",
-                    ),
+                    enumm: Some("Waitpol"),
                 },
                 Field {
                     name: "waitcfg",
                     description: Some(
                         "Wait timing configuration The NWAIT signal indicates whether the data from the memory are valid or if a wait state must be inserted when accessing the memory in Synchronous mode. This configuration bit determines if NWAIT is asserted by the memory one clock cycle before the wait state or during the wait state:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 11,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Waitcfg",
-                    ),
+                    enumm: Some("Waitcfg"),
                 },
                 Field {
                     name: "wren",
                     description: Some(
                         "Write enable bit This bit indicates whether write operations are enabled/disabled in the bank by the FMC.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1411,11 +887,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wait enable bit This bit enables/disables wait-state insertion via the NWAIT signal when accessing the memory in Synchronous mode.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 13,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1425,11 +897,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Extended mode enable This bit enables the FMC to program the write timings for non multiplexed asynchronous accesses inside the FMC_BWTR register, thus resulting in different timings for read and write operations. Note: When the Extended mode is disabled, the FMC can operate in mode 1 or mode 2 as follows: Mode 1 is the default mode when the SRAM/PSRAM memory type is selected (MTYP = 0x0 or 0x01) Mode 2 is the default mode when the NOR memory type is selected (MTYP = 0x10).",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1439,11 +907,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wait signal during asynchronous transfers This bit enables/disables the FMC to use the wait signal even during an asynchronous protocol.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 15,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1453,43 +917,27 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CRAM page size These are used for CellularRAM™ 1.5 which does not allow burst access to cross the address boundaries between pages. When these bits are configured, the FMC controller splits automatically the burst access when the memory page size is reached (refer to memory datasheet for page size). Others: reserved.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some(
-                        "Cpsize",
-                    ),
+                    enumm: Some("Cpsize"),
                 },
                 Field {
                     name: "cburstrw",
                     description: Some(
                         "Write burst enable For PSRAM (CRAM) operating in Burst mode, the bit enables synchronous accesses during write operations. The enable bit for synchronous read accesses is the BURSTEN bit in the FMC_BCRx register.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 19,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Cburstrw",
-                    ),
+                    enumm: Some("Cburstrw"),
                 },
                 Field {
                     name: "cclken",
                     description: Some(
                         "Continuous clock enable This bit enables the FMC_CLK clock output to external memory devices. Note: The CCLKEN bit of the FMC_BCR2..4 registers is don’t care. It is only enabled through the FMC_BCR1 register. Bank 1 must be configured in Synchronous mode to generate the FMC_CLK continuous clock. Note: If CCLKEN bit is set, the FMC_CLK clock ratio is specified by CLKDIV value in the FMC_BTR1 register. CLKDIV in FMC_BWTR1 is don’t care. Note: If the Synchronous mode is used and CCLKEN bit is set, the synchronous memories connected to other banks than Bank 1 are clocked by the same clock (the CLKDIV value in the FMC_BTR2..4 and FMC_BWTR2..4 registers for other banks has no effect.).",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 20,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1499,11 +947,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Write FIFO disable This bit disables the Write FIFO used by the FMC controller. Note: The WFDIS bit of the FMC_BCR2..4 registers is don’t care. It is only enabled through the FMC_BCR1 register.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 21,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1513,11 +957,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Byte lane (NBL) setup These bits configure the NBL setup timing from NBLx low to chip select NEx low.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 22,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -1527,11 +967,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "FMC controller enable This bit enables or disables the FMC controller. Note: The FMCEN bit of the FMC_BCR2..4 registers is don’t care. It is only enabled through the FMC_BCR1 register.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 31,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1540,12 +976,8 @@ pub(crate) static REGISTERS: IR = IR {
         },
         FieldSet {
             name: "Bcr1",
-            extends: Some(
-                "BCR",
-            ),
-            description: Some(
-                "SRAM/NOR-Flash chip-select control register for bank 1.",
-            ),
+            extends: Some("BCR"),
+            description: Some("SRAM/NOR-Flash chip-select control register for bank 1."),
             bit_size: 32,
             fields: &[
                 Field {
@@ -1553,11 +985,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Memory bank enable bit Enables the memory bank. After reset Bank1 is enabled, all others are disabled. Accessing a disabled bank causes an ERROR on AHB bus.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1567,11 +995,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Address/data multiplexing enable bit When this bit is set, the address and data values are multiplexed on the data bus, valid only with NOR and PSRAM memories:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1581,43 +1005,25 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Memory type Defines the type of external memory attached to the corresponding memory bank.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Mtyp",
-                    ),
+                    enumm: Some("Mtyp"),
                 },
                 Field {
                     name: "mwid",
                     description: Some(
                         "Memory data bus width Defines the external memory device width, valid for all type of memories.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Mwid",
-                    ),
+                    enumm: Some("Mwid"),
                 },
                 Field {
                     name: "faccen",
-                    description: Some(
-                        "Flash access enable Enables NOR Flash memory access operations.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    description: Some("Flash access enable Enables NOR Flash memory access operations."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1627,11 +1033,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Burst enable bit This bit enables/disables synchronous accesses during read operations. It is valid only for synchronous memories operating in Burst mode.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1641,43 +1043,27 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wait signal polarity bit Defines the polarity of the wait signal from memory used for either in Synchronous or Asynchronous mode.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Waitpol",
-                    ),
+                    enumm: Some("Waitpol"),
                 },
                 Field {
                     name: "waitcfg",
                     description: Some(
                         "Wait timing configuration The NWAIT signal indicates whether the data from the memory are valid or if a wait state must be inserted when accessing the memory in Synchronous mode. This configuration bit determines if NWAIT is asserted by the memory one clock cycle before the wait state or during the wait state:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 11,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Waitcfg",
-                    ),
+                    enumm: Some("Waitcfg"),
                 },
                 Field {
                     name: "wren",
                     description: Some(
                         "Write enable bit This bit indicates whether write operations are enabled/disabled in the bank by the FMC.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1687,11 +1073,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wait enable bit This bit enables/disables wait-state insertion via the NWAIT signal when accessing the memory in Synchronous mode.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 13,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1701,11 +1083,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Extended mode enable This bit enables the FMC to program the write timings for non multiplexed asynchronous accesses inside the FMC_BWTR register, thus resulting in different timings for read and write operations. Note: When the Extended mode is disabled, the FMC can operate in mode 1 or mode 2 as follows: Mode 1 is the default mode when the SRAM/PSRAM memory type is selected (MTYP = 0x0 or 0x01) Mode 2 is the default mode when the NOR memory type is selected (MTYP = 0x10).",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1715,11 +1093,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wait signal during asynchronous transfers This bit enables/disables the FMC to use the wait signal even during an asynchronous protocol.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 15,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1729,43 +1103,27 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CRAM page size These are used for CellularRAM™ 1.5 which does not allow burst access to cross the address boundaries between pages. When these bits are configured, the FMC controller splits automatically the burst access when the memory page size is reached (refer to memory datasheet for page size). Others: reserved.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some(
-                        "Cpsize",
-                    ),
+                    enumm: Some("Cpsize"),
                 },
                 Field {
                     name: "cburstrw",
                     description: Some(
                         "Write burst enable For PSRAM (CRAM) operating in Burst mode, the bit enables synchronous accesses during write operations. The enable bit for synchronous read accesses is the BURSTEN bit in the FMC_BCRx register.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 19,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Cburstrw",
-                    ),
+                    enumm: Some("Cburstrw"),
                 },
                 Field {
                     name: "cclken",
                     description: Some(
                         "Continuous clock enable This bit enables the FMC_CLK clock output to external memory devices. Note: The CCLKEN bit of the FMC_BCR2..4 registers is don’t care. It is only enabled through the FMC_BCR1 register. Bank 1 must be configured in Synchronous mode to generate the FMC_CLK continuous clock. Note: If CCLKEN bit is set, the FMC_CLK clock ratio is specified by CLKDIV value in the FMC_BTR1 register. CLKDIV in FMC_BWTR1 is don’t care. Note: If the Synchronous mode is used and CCLKEN bit is set, the synchronous memories connected to other banks than Bank 1 are clocked by the same clock (the CLKDIV value in the FMC_BTR2..4 and FMC_BWTR2..4 registers for other banks has no effect.).",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 20,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1775,11 +1133,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Write FIFO disable This bit disables the Write FIFO used by the FMC controller. Note: The WFDIS bit of the FMC_BCR2..4 registers is don’t care. It is only enabled through the FMC_BCR1 register.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 21,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1789,11 +1143,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Byte lane (NBL) setup These bits configure the NBL setup timing from NBLx low to chip select NEx low.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 22,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -1803,11 +1153,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "FMC controller enable This bit enables or disables the FMC controller. Note: The FMCEN bit of the FMC_BCR2..4 registers is don’t care. It is only enabled through the FMC_BCR1 register.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 31,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1816,12 +1162,8 @@ pub(crate) static REGISTERS: IR = IR {
         },
         FieldSet {
             name: "Btr",
-            extends: Some(
-                "BWTR",
-            ),
-            description: Some(
-                "SRAM/NOR-Flash chip-select timing register for bank 1.",
-            ),
+            extends: Some("BWTR"),
+            description: Some("SRAM/NOR-Flash chip-select timing register for bank 1."),
             bit_size: 32,
             fields: &[
                 Field {
@@ -1829,11 +1171,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Address setup phase duration. These bits are written by software to define the duration of the address setup phase in HCLK cycles (refer to Figure 21 to Figure 33), used in asynchronous accesses: ... Note: In synchronous accesses, this value is not used, the address setup phase is always 1 Flash clock period duration. In muxed mode, the minimum ADDSET value is 1.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -1843,11 +1181,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Address-hold phase duration. These bits are written by software to define the duration of the address hold phase (refer to Figure 30 to Figure 33), used in asynchronous multiplexed accesses: ... Note: In synchronous NOR Flash accesses, this value is not used, the address hold phase is always 1 Flash clock period duration.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -1857,11 +1191,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Data-phase duration. These bits are written by software to define the duration of the data phase (refer to Figure 21 to Figure 33), used in asynchronous SRAM, PSRAM and NOR Flash memory accesses: ...",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -1871,11 +1201,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bus turnaround phase duration These bits are written by software to add a delay at the end of current write transaction to next transaction on the same bank. For FRAM memories, the bus turnaround delay should be configured to match the minimum t<sub>PC</sub> (precharge time) timings. The bus turnaround delay is inserted between any consecutive transactions on the same bank (read/read, write/write, read/write and write/read). The chip select is toggling between any consecutive accesses. (BUSTURN + 1)HCLK period ≥ tPC min ...",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -1885,11 +1211,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clock divide ratio (for FMC_CLK signal) Defines the period of FMC_CLK clock output signal, expressed in number of HCLK cycles: In asynchronous NOR Flash, SRAM or PSRAM accesses, this value is don’t care. Note: Refer to Section 5.6.5: Synchronous transactions for FMC_CLK divider ratio formula).",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 20,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -1899,11 +1221,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "(see note below bit descriptions): Data latency for synchronous memory For synchronous access with read/write Burst mode enabled (BURSTEN / CBURSTRW bits set), defines the number of memory clock cycles (+2) to issue to the memory before reading/writing the first data: This timing parameter is not expressed in HCLK periods, but in FMC_CLK periods. For asynchronous access, this value is don't care.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -1913,27 +1231,17 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Access mode. Specifies the asynchronous access modes as shown in the next timing diagrams.These bits are taken into account only when the EXTMOD bit in the FMC_BCRx register is 1.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Accmod",
-                    ),
+                    enumm: Some("Accmod"),
                 },
                 Field {
                     name: "datahld",
                     description: Some(
                         "Data hold phase duration These bits are written by software to define the duration of the data hold phase in HCLK cycles (refer to Figure 21 to Figure 33), used in asynchronous write accesses:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 30,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -1943,9 +1251,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Bwtr",
             extends: None,
-            description: Some(
-                "SRAM/NOR-Flash write timing registers 1.",
-            ),
+            description: Some("SRAM/NOR-Flash write timing registers 1."),
             bit_size: 32,
             fields: &[
                 Field {
@@ -1953,11 +1259,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Address setup phase duration. These bits are written by software to define the duration of the address setup phase in HCLK cycles (refer to Figure 21 to Figure 33), used in asynchronous accesses: ... Note: In synchronous accesses, this value is not used, the address setup phase is always 1 Flash clock period duration. In muxed mode, the minimum ADDSET value is 1.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -1967,11 +1269,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Address-hold phase duration. These bits are written by software to define the duration of the address hold phase (refer to Figure 30 to Figure 33), used in asynchronous multiplexed accesses: ... Note: In synchronous NOR Flash accesses, this value is not used, the address hold phase is always 1 Flash clock period duration.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -1981,11 +1279,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Data-phase duration. These bits are written by software to define the duration of the data phase (refer to Figure 21 to Figure 33), used in asynchronous SRAM, PSRAM and NOR Flash memory accesses: ...",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -1995,11 +1289,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Bus turnaround phase duration These bits are written by software to add a delay at the end of current write transaction to next transaction on the same bank. For FRAM memories, the bus turnaround delay should be configured to match the minimum t<sub>PC</sub> (precharge time) timings. The bus turnaround delay is inserted between any consecutive transactions on the same bank (read/read, write/write, read/write and write/read). The chip select is toggling between any consecutive accesses. (BUSTURN + 1)HCLK period ≥ tPC min ...",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -2009,27 +1299,17 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Access mode. Specifies the asynchronous access modes as shown in the next timing diagrams.These bits are taken into account only when the EXTMOD bit in the FMC_BCRx register is 1.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Accmod",
-                    ),
+                    enumm: Some("Accmod"),
                 },
                 Field {
                     name: "datahld",
                     description: Some(
                         "Data hold phase duration These bits are written by software to define the duration of the data hold phase in HCLK cycles (refer to Figure 21 to Figure 33), used in asynchronous write accesses:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 30,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -2039,63 +1319,37 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Csqar1",
             extends: None,
-            description: Some(
-                "Command Sequencer address register 1.",
-            ),
+            description: Some("Command Sequencer address register 1."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "addc1",
-                    description: Some(
-                        "Address cycle 1.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Address cycle 1."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "addc2",
-                    description: Some(
-                        "Address cycle 2.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    description: Some("Address cycle 2."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "addc3",
-                    description: Some(
-                        "Address cycle 3.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    description: Some("Address cycle 3."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "addc4",
-                    description: Some(
-                        "Address cycle 4.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
+                    description: Some("Address cycle 4."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -2105,35 +1359,21 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Csqar2",
             extends: None,
-            description: Some(
-                "Command Sequencer address register 2.",
-            ),
+            description: Some("Command Sequencer address register 2."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "addc5",
-                    description: Some(
-                        "Address cycle 5.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Address cycle 5."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sao",
-                    description: Some(
-                        "Spare area address offset.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    description: Some("Spare area address offset."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -2143,105 +1383,61 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Csqcfgr1",
             extends: None,
-            description: Some(
-                "Command Sequencer configuration register 1.",
-            ),
+            description: Some("Command Sequencer configuration register 1."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "cmd2en",
-                    description: Some(
-                        "Command cycle 2 enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Command cycle 2 enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dmaden",
-                    description: Some(
-                        "DMA request data enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("DMA request data enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "acynbr",
-                    description: Some(
-                        "Address cycle number.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Address cycle number."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 3,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cmd1",
-                    description: Some(
-                        "Command 1.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    description: Some("Command 1."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cmd2",
-                    description: Some(
-                        "Command 2.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    description: Some("Command 2."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cmd1t",
-                    description: Some(
-                        "Command 1 timing.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
+                    description: Some("Command 1 timing."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cmd2t",
-                    description: Some(
-                        "Command 2 timing.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 25,
-                        },
-                    ),
+                    description: Some("Command 2 timing."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2251,91 +1447,53 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Csqcfgr2",
             extends: None,
-            description: Some(
-                "Command Sequencer configuration register 2.",
-            ),
+            description: Some("Command Sequencer configuration register 2."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "sqsdten",
-                    description: Some(
-                        "Sequencer spare data transfer enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Sequencer spare data transfer enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rcmd2en",
-                    description: Some(
-                        "Random command 2 sequencer enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Random command 2 sequencer enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dmasen",
-                    description: Some(
-                        "DMA request decoding status enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("DMA request decoding status enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rcmd1",
-                    description: Some(
-                        "Random command 1.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    description: Some("Random command 1."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rcmd2",
-                    description: Some(
-                        "Random command 2.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    description: Some("Random command 2."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rcmd1t",
-                    description: Some(
-                        "Random command 1 timing.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
+                    description: Some("Random command 1 timing."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2345,133 +1503,77 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Csqcfgr3",
             extends: None,
-            description: Some(
-                "Command Sequencer configuration register 3.",
-            ),
+            description: Some("Command Sequencer configuration register 3."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "snbr",
-                    description: Some(
-                        "Number of sectors to read/write.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Number of sectors to read/write."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ac1t",
-                    description: Some(
-                        "Address cycle 1 timing.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    description: Some("Address cycle 1 timing."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ac2t",
-                    description: Some(
-                        "Address cycle 2 timing.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
+                    description: Some("Address cycle 2 timing."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ac3t",
-                    description: Some(
-                        "Address cycle 3 timing.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 10,
-                        },
-                    ),
+                    description: Some("Address cycle 3 timing."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ac4t",
-                    description: Some(
-                        "Address cycle 4 timing.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 11,
-                        },
-                    ),
+                    description: Some("Address cycle 4 timing."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ac5t",
-                    description: Some(
-                        "Address cycle 5 timing.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
+                    description: Some("Address cycle 5 timing."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdt",
-                    description: Some(
-                        "Spare data transfer timing.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 13,
-                        },
-                    ),
+                    description: Some("Spare data transfer timing."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rac1t",
-                    description: Some(
-                        "Random address cycle 1 timing.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
+                    description: Some("Random address cycle 1 timing."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rac2t",
-                    description: Some(
-                        "Random address cycle 2 timing.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 15,
-                        },
-                    ),
+                    description: Some("Random address cycle 2 timing."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2481,125 +1583,73 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Csqcr",
             extends: None,
-            description: Some(
-                "Command Sequencer control register.",
-            ),
+            description: Some("Command Sequencer control register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "csqstart",
-                    description: Some(
-                        "Command Sequencer start.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "csqstart",
+                description: Some("Command Sequencer start."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 1,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Csqemsr",
             extends: None,
-            description: Some(
-                "Command Sequencer error mapping status register.",
-            ),
+            description: Some("Command Sequencer error mapping status register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sem",
-                    description: Some(
-                        "Sector error mapping.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 16,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "sem",
+                description: Some("Sector error mapping."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 16,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Csqicr",
             extends: None,
-            description: Some(
-                "Command Sequencer interrupt clear register.",
-            ),
+            description: Some("Command Sequencer interrupt clear register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ctcf",
-                    description: Some(
-                        "Clear transfer complete flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Clear transfer complete flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cscf",
-                    description: Some(
-                        "Clear sector complete flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Clear sector complete flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "csef",
-                    description: Some(
-                        "Clear sector error flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Clear sector error flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "csuef",
-                    description: Some(
-                        "Clear sector uncorrectable error flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    description: Some("Clear sector uncorrectable error flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ccmdtcf",
-                    description: Some(
-                        "Clear command transfer complete flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Clear command transfer complete flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2609,77 +1659,45 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Csqier",
             extends: None,
-            description: Some(
-                "Command Sequencer interrupt enable register.",
-            ),
+            description: Some("Command Sequencer interrupt enable register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "tcie",
-                    description: Some(
-                        "Transfer complete interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Transfer complete interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "scie",
-                    description: Some(
-                        "Sector complete interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Sector complete interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "seie",
-                    description: Some(
-                        "Sector error interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Sector error interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sueie",
-                    description: Some(
-                        "Sector uncorrectable error interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    description: Some("Sector uncorrectable error interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cmdtcie",
-                    description: Some(
-                        "Command transfer complete interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Command transfer complete interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2689,77 +1707,45 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Csqisr",
             extends: None,
-            description: Some(
-                "Command Sequencer interrupt status register.",
-            ),
+            description: Some("Command Sequencer interrupt status register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "tcf",
-                    description: Some(
-                        "Transfer complete flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Transfer complete flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "scf",
-                    description: Some(
-                        "Sector complete flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Sector complete flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sef",
-                    description: Some(
-                        "Sector error flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Sector error flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "suef",
-                    description: Some(
-                        "Sector uncorrectable error flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    description: Some("Sector uncorrectable error flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cmdtcf",
-                    description: Some(
-                        "Command transfer complete flag.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Command transfer complete flag."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2769,49 +1755,29 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "NandIcr",
             extends: None,
-            description: Some(
-                "NAND interrupt clear register.",
-            ),
+            description: Some("NAND interrupt clear register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "circ",
-                    description: Some(
-                        "Clear interrupt rising edge.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Clear interrupt rising edge."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cilc",
-                    description: Some(
-                        "Clear interrupt high-level.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Clear interrupt high-level."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cifc",
-                    description: Some(
-                        "Clear interrupt falling edge.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Clear interrupt falling edge."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2821,49 +1787,29 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "NandIer",
             extends: None,
-            description: Some(
-                "NAND interrupt enable register.",
-            ),
+            description: Some("NAND interrupt enable register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "irsen",
-                    description: Some(
-                        "Interrupt rising edge enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Interrupt rising edge enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ilsen",
-                    description: Some(
-                        "Interrupt high-level enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Interrupt high-level enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ifsen",
-                    description: Some(
-                        "Interrupt falling edge enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Interrupt falling edge enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2873,63 +1819,37 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "NandIsr",
             extends: None,
-            description: Some(
-                "NAND interrupt status register.",
-            ),
+            description: Some("NAND interrupt status register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "irs",
-                    description: Some(
-                        "Interrupt rising edge status.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Interrupt rising edge status."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ils",
-                    description: Some(
-                        "Interrupt high-level status.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Interrupt high-level status."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ifs",
-                    description: Some(
-                        "Interrupt falling edge status.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Interrupt falling edge status."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fempt",
-                    description: Some(
-                        "FIFO empty.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    description: Some("FIFO empty."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2939,9 +1859,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Patt",
             extends: None,
-            description: Some(
-                "Attribute memory space timing register.",
-            ),
+            description: Some("Attribute memory space timing register."),
             bit_size: 32,
             fields: &[
                 Field {
@@ -2949,11 +1867,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Attribute memory setup time Defines the number of HCLK (+1) clock cycles to set up address before the command assertion (NWE, NOE), for NAND Flash read or write access to attribute memory space on socket:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -2963,11 +1877,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Attribute memory wait time Defines the minimum number of HCLK (+1) clock cycles to assert the command (NWE, NOE), for NAND Flash read or write access to attribute memory space on socket x. The duration for command assertion is extended if the wait signal (NWAIT) is active (low) at the end of the programmed value of HCLK:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -2977,11 +1887,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Attribute memory hold time Defines the number of HCLK clock cycles for write access and HCLK (+2) clock cycles for read access during which the address is held (and data for write access) after the command deassertion (NWE, NOE), for NAND Flash read or write access to attribute memory space on socket:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -2991,11 +1897,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Attribute memory data bus Hi-Z time Defines the number of HCLK clock cycles during which the data bus is kept in Hi-Z after the start of a NAND Flash write access to attribute memory space on socket. Only valid for writ transaction:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -3005,9 +1907,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Pcr",
             extends: None,
-            description: Some(
-                "NAND Flash control registers.",
-            ),
+            description: Some("NAND Flash control registers."),
             bit_size: 32,
             fields: &[
                 Field {
@@ -3015,11 +1915,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Wait feature enable bit Enables the Wait feature for the NAND Flash memory bank:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3029,11 +1925,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "NAND Flash memory bank enable bit Enables the memory bank. Accessing a disabled memory bank causes an ERROR on AHB bus.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3043,43 +1935,23 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Memory type Defines the type of device attached to the corresponding memory bank:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Ptyp",
-                    ),
+                    enumm: Some("Ptyp"),
                 },
                 Field {
                     name: "pwid",
-                    description: Some(
-                        "Data bus width Defines the external memory device width.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Data bus width Defines the external memory device width."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Pwid",
-                    ),
+                    enumm: Some("Pwid"),
                 },
                 Field {
                     name: "eccen",
-                    description: Some(
-                        "ECC computation logic enable bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    description: Some("ECC computation logic enable bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3089,11 +1961,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "CLE to RE delay Sets time from CLE low to RE low in number of AHB clock cycles (HCLK). Time is t_clr = (TCLR + SET + 2) � THCLK where THCLK is the HCLK clock period Note: SET is MEMSET or ATTSET according to the addressed space.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -3103,41 +1971,25 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "ALE to RE delay Sets time from ALE low to RE low in number of AHB clock cycles (HCLK). Time is: t_ar = (TAR + SET + 2) � THCLK where THCLK is the HCLK clock period Note: SET is MEMSET or ATTSET according to the addressed space.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 13,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "eccps",
-                    description: Some(
-                        "ECC page size Defines the page size for the extended ECC:.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 17,
-                        },
-                    ),
+                    description: Some("ECC page size Defines the page size for the extended ECC:."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some(
-                        "Eccps",
-                    ),
+                    enumm: Some("Eccps"),
                 },
                 Field {
                     name: "bchecc",
                     description: Some(
                         "BCH error correction capability enable. Enables the BCH error correction engine.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3147,9 +1999,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Pcscntr",
             extends: None,
-            description: Some(
-                "PSRAM chip select counter register.",
-            ),
+            description: Some("PSRAM chip select counter register."),
             bit_size: 32,
             fields: &[
                 Field {
@@ -3157,11 +2007,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Chip select counter. These bits are written by software to define the maximum chip select low pulse duration. It is expressed in FMC_CLK cycles for synchronous accesses and in HCLK cycles for asynchronous accesses. The counter is disabled if the programmed value is 0.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 16,
                     array: None,
                     enumm: None,
@@ -3171,20 +2017,9 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Counter Bank 1 enable This bit enables the chip select counter for PSRAM/NOR Bank 1.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 1,
-                            },
-                        ),
-                    ),
+                    array: Some(Array::Regular(RegularArray { len: 4, stride: 1 })),
                     enumm: None,
                 },
             ],
@@ -3192,9 +2027,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Pmem",
             extends: None,
-            description: Some(
-                "Common memory space timing register.",
-            ),
+            description: Some("Common memory space timing register."),
             bit_size: 32,
             fields: &[
                 Field {
@@ -3202,11 +2035,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Common memory x setup time Defines the number of HCLK (+1) clock cycles to set up the address before the command assertion (NWE, NOE), for NAND Flash read or write access to common memory space on socket x:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -3216,11 +2045,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Common memory wait time Defines the minimum number of HCLK (+1) clock cycles to assert the command (NWE, NOE), for NAND Flash read or write access to common memory space on socket. The duration of command assertion is extended if the wait signal (NWAIT) is active (low) at the end of the programmed value of HCLK:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -3230,11 +2055,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Common memory hold time Defines the number of HCLK clock cycles for write access and HCLK (+2) clock cycles for read access during which the address is held (and data for write accesses) after the command is deasserted (NWE, NOE), for NAND Flash read or write access to common memory space on socket x:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -3244,11 +2065,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Common memory x data bus Hi-Z time Defines the number of HCLK clock cycles during which the data bus is kept Hi-Z after the start of a NAND Flash write access to common memory space on socket. This is only valid for write transactions:.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 8,
                     array: None,
                     enumm: None,
@@ -3258,9 +2075,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Sdcmr",
             extends: None,
-            description: Some(
-                "SDRAM Command Mode register.",
-            ),
+            description: Some("SDRAM Command Mode register."),
             bit_size: 32,
             fields: &[
                 Field {
@@ -3268,36 +2083,19 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Command mode These bits define the command issued to the SDRAM device. Note: When a command is issued, at least one Command Target Bank bit ( CTB1 or CTB2) must be set otherwise the command will be ignored. Note: If two SDRAM banks are used, the Auto-refresh and PALL command must be issued simultaneously to the two devices with CTB1 and CTB2 bits set otherwise the command will be ignored. Note: If only one SDRAM bank is used and a command is issued with it’s associated CTB bit set, the other CTB bit of the the unused bank must be kept to 0.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some(
-                        "Mode",
-                    ),
+                    enumm: Some("Mode"),
                 },
                 Field {
                     name: "ctb",
                     description: Some(
                         "Command Target Bank 2 This bit indicates whether the command will be issued to SDRAM Bank 2 or not.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 1,
-                            },
-                        ),
-                    ),
+                    array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
                     enumm: None,
                 },
                 Field {
@@ -3305,11 +2103,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Number of Auto-refresh These bits define the number of consecutive Auto-refresh commands issued when MODE = ‘011’. ....",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -3319,11 +2113,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Mode Register definition This 13-bit field defines the SDRAM Mode Register content. The Mode Register is programmed using the Load Mode Register command.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 13,
                     array: None,
                     enumm: None,
@@ -3333,9 +2123,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Sdcr",
             extends: None,
-            description: Some(
-                "SDRAM control registers 1.",
-            ),
+            description: Some("SDRAM control registers 1."),
             bit_size: 32,
             fields: &[
                 Field {
@@ -3343,91 +2131,51 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Number of column address bits These bits define the number of bits of a column address.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Nc",
-                    ),
+                    enumm: Some("Nc"),
                 },
                 Field {
                     name: "nr",
                     description: Some(
                         "Number of row address bits These bits define the number of bits of a row address.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Nr",
-                    ),
+                    enumm: Some("Nr"),
                 },
                 Field {
                     name: "mwid",
-                    description: Some(
-                        "Memory data bus width. These bits define the memory device width.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Memory data bus width. These bits define the memory device width."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Mwid",
-                    ),
+                    enumm: Some("Mwid"),
                 },
                 Field {
                     name: "nb",
-                    description: Some(
-                        "Number of internal banks This bit sets the number of internal banks.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    description: Some("Number of internal banks This bit sets the number of internal banks."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Nb",
-                    ),
+                    enumm: Some("Nb"),
                 },
                 Field {
                     name: "cas",
                     description: Some(
                         "CAS Latency This bits sets the SDRAM CAS latency in number of memory clock cycles.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 7,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Cas",
-                    ),
+                    enumm: Some("Cas"),
                 },
                 Field {
                     name: "wp",
-                    description: Some(
-                        "Write protection This bit enables write mode access to the SDRAM bank.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
+                    description: Some("Write protection This bit enables write mode access to the SDRAM bank."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3437,27 +2185,17 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "SDRAM clock configuration These bits define the SDRAM clock period for both SDRAM banks and allow disabling the clock before changing the frequency. In this case the SDRAM must be re-initialized. Note: The corresponding bits in the FMC_SDCR2 register are don’t care.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 10,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Sdclk",
-                    ),
+                    enumm: Some("Sdclk"),
                 },
                 Field {
                     name: "rburst",
                     description: Some(
                         "Burst read This bit enables Burst read mode. The SDRAM controller anticipates the next read commands during the CAS latency and stores data in the Read FIFO. Note: The corresponding bit in the FMC_SDCR2 register is don’t care.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3467,25 +2205,17 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Read pipe These bits define the delay, in clock cycles, for reading data after CAS latency. Note: The corresponding bits in the FMC_SDCR2 register is read only.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 13,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some(
-                        "Rpipe",
-                    ),
+                    enumm: Some("Rpipe"),
                 },
             ],
         },
         FieldSet {
             name: "Sdrtr",
             extends: None,
-            description: Some(
-                "SDRAM refresh timer register.",
-            ),
+            description: Some("SDRAM refresh timer register."),
             bit_size: 32,
             fields: &[
                 Field {
@@ -3493,11 +2223,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Clear Refresh error flag This bit is used to clear the Refresh Error Flag (RE) in the Status Register.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3507,25 +2233,15 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Refresh Timer Count This 13-bit field defines the refresh rate of the SDRAM device. It is expressed in number of memory clock cycles. It must be set at least to 41 SDRAM clock cycles (0x29). Refresh rate = (COUNT + 1) x SDRAM frequency clock COUNT = (SDRAM refresh period / Number of rows) - 20.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 13,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "reie",
-                    description: Some(
-                        "RES Interrupt Enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
+                    description: Some("RES Interrupt Enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3535,58 +2251,31 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Sdsr",
             extends: None,
-            description: Some(
-                "SDRAM status register.",
-            ),
+            description: Some("SDRAM status register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "re",
-                    description: Some(
-                        "Refresh error flag An interrupt is generated if REIE = 1 and RE = 1.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Refresh error flag An interrupt is generated if REIE = 1 and RE = 1."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "modes",
-                    description: Some(
-                        "Status Mode for Bank 1 This bit defines the Status Mode of SDRAM Bank 1.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Status Mode for Bank 1 This bit defines the Status Mode of SDRAM Bank 1."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 2,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 2,
-                                stride: 2,
-                            },
-                        ),
-                    ),
-                    enumm: Some(
-                        "Modes",
-                    ),
+                    array: Some(Array::Regular(RegularArray { len: 2, stride: 2 })),
+                    enumm: Some("Modes"),
                 },
                 Field {
                     name: "busy",
                     description: Some(
                         "Busy status This bit defines the status of the SDRAM controller after a Command Mode request 1; SDRAM Controller is not ready to accept a new request.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3596,9 +2285,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Sdtr",
             extends: None,
-            description: Some(
-                "SDRAM timing registers 1.",
-            ),
+            description: Some("SDRAM timing registers 1."),
             bit_size: 32,
             fields: &[
                 Field {
@@ -3606,11 +2293,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Load Mode Register to Active These bits define the delay between a Load Mode Register command and an Active or Refresh command in number of memory clock cycles. ....",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -3620,11 +2303,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Exit Self-refresh delay These bits define the delay from releasing the Self-refresh command to issuing the Activate command in number of memory clock cycles. .... Note: If two SDRAM devices are used, the FMC_SDTR1 and FMC_SDTR2 must be programmed with the same TXSR timing corresponding to the slowest SDRAM device.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -3634,11 +2313,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Self refresh time These bits define the minimum Self-refresh period in number of memory clock cycles. ....",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -3648,11 +2323,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Row cycle delay These bits define the delay between the Refresh command and the Activate command, as well as the delay between two consecutive Refresh commands. It is expressed in number of memory clock cycles. The TRC timing is only configured in the FMC_SDTR1 register. If two SDRAM devices are used, the TRC must be programmed with the timings of the slowest device. .... Note: TRC must match the TRC and TRFC (Auto Refresh period) timings defined in the SDRAM device datasheet. Note: The corresponding bits in the FMC_SDTR2 register are don’t care.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -3662,11 +2333,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Recovery delay These bits define the delay between a Write and a Precharge command in number of memory clock cycles. .... Note: TWR must be programmed to match the write recovery time (t<sub>WR</sub>) defined in the SDRAM datasheet, and to guarantee that: Note: TWR ≥ TRAS - TRCD and TWR ≥TRC - TRCD - TRP Note: Example: TRAS= 4 cycles, TRCD= 2 cycles. So, TWR >= 2 cycles. TWR must be programmed to 0x1. Note: If two SDRAM devices are used, the FMC_SDTR1 and FMC_SDTR2 must be programmed with the same TWR timing corresponding to the slowest SDRAM device. Note: If only one SDRAM device is used, the TWR timing must be kept at reset value (0xF) for the not used bank.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -3676,11 +2343,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Row precharge delay These bits define the delay between a Precharge command and another command in number of memory clock cycles. The TRP timing is only configured in the FMC_SDTR1 register. If two SDRAM devices are used, the TRP must be programmed with the timing of the slowest device. .... Note: The corresponding bits in the FMC_SDTR2 register are don’t care.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 20,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -3690,11 +2353,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Row to column delay These bits define the delay between the Activate command and a Read/Write command in number of memory clock cycles. ....",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
@@ -3704,9 +2363,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Sr",
             extends: None,
-            description: Some(
-                "FIFO status and interrupt register.",
-            ),
+            description: Some("FIFO status and interrupt register."),
             bit_size: 32,
             fields: &[
                 Field {
@@ -3714,25 +2371,15 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Interrupt rising edge status The flag is set by hardware and reset by software. Note: If this bit is written by software to 1 it is set.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ils",
-                    description: Some(
-                        "Interrupt high-level status The flag is set by hardware and reset by software.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Interrupt high-level status The flag is set by hardware and reset by software."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3742,67 +2389,39 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Interrupt falling edge status The flag is set by hardware and reset by software. Note: If this bit is written by software to 1 it is set.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "iren",
-                    description: Some(
-                        "Interrupt rising edge detection enable bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    description: Some("Interrupt rising edge detection enable bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ilen",
-                    description: Some(
-                        "Interrupt high-level detection enable bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Interrupt high-level detection enable bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ifen",
-                    description: Some(
-                        "Interrupt falling edge detection enable bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
+                    description: Some("Interrupt falling edge detection enable bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fempt",
-                    description: Some(
-                        "FIFO empty Read-only bit that provides the status of the FIFO.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    description: Some("FIFO empty Read-only bit that provides the status of the FIFO."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -3818,30 +2437,22 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "A",
-                    description: Some(
-                        "Access mode A",
-                    ),
+                    description: Some("Access mode A"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "B",
-                    description: Some(
-                        "Access mode B",
-                    ),
+                    description: Some("Access mode B"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "C",
-                    description: Some(
-                        "Access mode C",
-                    ),
+                    description: Some("Access mode C"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "D",
-                    description: Some(
-                        "Access mode D",
-                    ),
+                    description: Some("Access mode D"),
                     value: 3,
                 },
             ],
@@ -3853,23 +2464,17 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Clocks1",
-                    description: Some(
-                        "1 cycle",
-                    ),
+                    description: Some("1 cycle"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Clocks2",
-                    description: Some(
-                        "2 cycles",
-                    ),
+                    description: Some("2 cycles"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "Clocks3",
-                    description: Some(
-                        "3 cycles",
-                    ),
+                    description: Some("3 cycles"),
                     value: 3,
                 },
             ],
@@ -3881,16 +2486,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Asynchronous",
-                    description: Some(
-                        "Write operations are always performed in Asynchronous mode.",
-                    ),
+                    description: Some("Write operations are always performed in Asynchronous mode."),
                     value: 0,
                 },
                 EnumVariant {
                     name: "Synchronous",
-                    description: Some(
-                        "Write operations are performed in Synchronous mode.",
-                    ),
+                    description: Some("Write operations are performed in Synchronous mode."),
                     value: 1,
                 },
             ],
@@ -3902,37 +2503,27 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Bytes1024",
-                    description: Some(
-                        "1024 bytes CRAM page size",
-                    ),
+                    description: Some("1024 bytes CRAM page size"),
                     value: 4,
                 },
                 EnumVariant {
                     name: "Bytes128",
-                    description: Some(
-                        "128 bytes CRAM page size",
-                    ),
+                    description: Some("128 bytes CRAM page size"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Bytes256",
-                    description: Some(
-                        "256 bytes CRAM page size",
-                    ),
+                    description: Some("256 bytes CRAM page size"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "Bytes512",
-                    description: Some(
-                        "512 bytes CRAM page size",
-                    ),
+                    description: Some("512 bytes CRAM page size"),
                     value: 3,
                 },
                 EnumVariant {
                     name: "NoBurstSplit",
-                    description: Some(
-                        "No burst split when crossing page boundary",
-                    ),
+                    description: Some("No burst split when crossing page boundary"),
                     value: 0,
                 },
             ],
@@ -3944,44 +2535,32 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Bytes1024",
-                    description: Some(
-                        "ECC page size 1024 bytes",
-                    ),
+                    description: Some("ECC page size 1024 bytes"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "Bytes2048",
-                    description: Some(
-                        "ECC page size 2048 bytes",
-                    ),
+                    description: Some("ECC page size 2048 bytes"),
                     value: 3,
                 },
                 EnumVariant {
                     name: "Bytes256",
-                    description: Some(
-                        "ECC page size 256 bytes",
-                    ),
+                    description: Some("ECC page size 256 bytes"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "Bytes4096",
-                    description: Some(
-                        "ECC page size 4096 bytes",
-                    ),
+                    description: Some("ECC page size 4096 bytes"),
                     value: 4,
                 },
                 EnumVariant {
                     name: "Bytes512",
-                    description: Some(
-                        "ECC page size 512 bytes",
-                    ),
+                    description: Some("ECC page size 512 bytes"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Bytes8192",
-                    description: Some(
-                        "ECC page size 8192 bytes",
-                    ),
+                    description: Some("ECC page size 8192 bytes"),
                     value: 5,
                 },
             ],
@@ -3993,51 +2572,37 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "AutoRefreshCommand",
-                    description: Some(
-                        "Auto-refresh command",
-                    ),
+                    description: Some("Auto-refresh command"),
                     value: 3,
                 },
                 EnumVariant {
                     name: "ClockConfigurationEnable",
-                    description: Some(
-                        "Clock Configuration Enable",
-                    ),
+                    description: Some("Clock Configuration Enable"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "LoadModeRegister",
-                    description: Some(
-                        "Load Mode Resgier",
-                    ),
+                    description: Some("Load Mode Resgier"),
                     value: 4,
                 },
                 EnumVariant {
                     name: "Normal",
-                    description: Some(
-                        "Normal Mode",
-                    ),
+                    description: Some("Normal Mode"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "Pall",
-                    description: Some(
-                        "PALL (All Bank Precharge) command",
-                    ),
+                    description: Some("PALL (All Bank Precharge) command"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "PowerDownCommand",
-                    description: Some(
-                        "Power-down command",
-                    ),
+                    description: Some("Power-down command"),
                     value: 6,
                 },
                 EnumVariant {
                     name: "SelfRefreshCommand",
-                    description: Some(
-                        "Self-refresh command",
-                    ),
+                    description: Some("Self-refresh command"),
                     value: 5,
                 },
             ],
@@ -4049,23 +2614,17 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Normal",
-                    description: Some(
-                        "Normal Mode",
-                    ),
+                    description: Some("Normal Mode"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "PowerDown",
-                    description: Some(
-                        "Power-down mode",
-                    ),
+                    description: Some("Power-down mode"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "SelfRefresh",
-                    description: Some(
-                        "Self-refresh mode",
-                    ),
+                    description: Some("Self-refresh mode"),
                     value: 1,
                 },
             ],
@@ -4077,23 +2636,17 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Flash",
-                    description: Some(
-                        "NOR Flash/OneNAND Flash",
-                    ),
+                    description: Some("NOR Flash/OneNAND Flash"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "Psram",
-                    description: Some(
-                        "PSRAM (CRAM) memory type",
-                    ),
+                    description: Some("PSRAM (CRAM) memory type"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Sram",
-                    description: Some(
-                        "SRAM memory type",
-                    ),
+                    description: Some("SRAM memory type"),
                     value: 0,
                 },
             ],
@@ -4105,23 +2658,17 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Bits16",
-                    description: Some(
-                        "Memory data bus width 16 bits",
-                    ),
+                    description: Some("Memory data bus width 16 bits"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Bits32",
-                    description: Some(
-                        "Memory data bus width 32 bits",
-                    ),
+                    description: Some("Memory data bus width 32 bits"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "Bits8",
-                    description: Some(
-                        "Memory data bus width 8 bits",
-                    ),
+                    description: Some("Memory data bus width 8 bits"),
                     value: 0,
                 },
             ],
@@ -4133,16 +2680,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Nb2",
-                    description: Some(
-                        "Two internal Banks",
-                    ),
+                    description: Some("Two internal Banks"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "Nb4",
-                    description: Some(
-                        "Four internal Banks",
-                    ),
+                    description: Some("Four internal Banks"),
                     value: 1,
                 },
             ],
@@ -4154,30 +2697,22 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Bits10",
-                    description: Some(
-                        "10 bits",
-                    ),
+                    description: Some("10 bits"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "Bits11",
-                    description: Some(
-                        "11 bits",
-                    ),
+                    description: Some("11 bits"),
                     value: 3,
                 },
                 EnumVariant {
                     name: "Bits8",
-                    description: Some(
-                        "8 bits",
-                    ),
+                    description: Some("8 bits"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "Bits9",
-                    description: Some(
-                        "9 bits",
-                    ),
+                    description: Some("9 bits"),
                     value: 1,
                 },
             ],
@@ -4189,23 +2724,17 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Bits11",
-                    description: Some(
-                        "11 bits",
-                    ),
+                    description: Some("11 bits"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "Bits12",
-                    description: Some(
-                        "12 bits",
-                    ),
+                    description: Some("12 bits"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Bits13",
-                    description: Some(
-                        "13 bits",
-                    ),
+                    description: Some("13 bits"),
                     value: 2,
                 },
             ],
@@ -4214,15 +2743,11 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Ptyp",
             description: None,
             bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Nand",
-                    description: Some(
-                        "NAND flash",
-                    ),
-                    value: 1,
-                },
-            ],
+            variants: &[EnumVariant {
+                name: "Nand",
+                description: Some("NAND flash"),
+                value: 1,
+            }],
         },
         Enum {
             name: "Pwid",
@@ -4231,16 +2756,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Bits16",
-                    description: Some(
-                        "External memory device width 16 bits",
-                    ),
+                    description: Some("External memory device width 16 bits"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Bits8",
-                    description: Some(
-                        "External memory device width 8 bits",
-                    ),
+                    description: Some("External memory device width 8 bits"),
                     value: 0,
                 },
             ],
@@ -4252,23 +2773,17 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Clocks1",
-                    description: Some(
-                        "One clock cycle delay",
-                    ),
+                    description: Some("One clock cycle delay"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Clocks2",
-                    description: Some(
-                        "Two clock cycles delay",
-                    ),
+                    description: Some("Two clock cycles delay"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "NoDelay",
-                    description: Some(
-                        "No clock cycle delay",
-                    ),
+                    description: Some("No clock cycle delay"),
                     value: 0,
                 },
             ],
@@ -4280,23 +2795,17 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Disabled",
-                    description: Some(
-                        "SDCLK clock disabled",
-                    ),
+                    description: Some("SDCLK clock disabled"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "Div2",
-                    description: Some(
-                        "SDCLK period = 2 x HCLK period",
-                    ),
+                    description: Some("SDCLK period = 2 x HCLK period"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "Div3",
-                    description: Some(
-                        "SDCLK period = 3 x HCLK period",
-                    ),
+                    description: Some("SDCLK period = 3 x HCLK period"),
                     value: 3,
                 },
             ],
@@ -4308,16 +2817,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "BeforeWaitState",
-                    description: Some(
-                        "NWAIT signal is active one data cycle before wait state",
-                    ),
+                    description: Some("NWAIT signal is active one data cycle before wait state"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "DuringWaitState",
-                    description: Some(
-                        "NWAIT signal is active during wait state",
-                    ),
+                    description: Some("NWAIT signal is active during wait state"),
                     value: 1,
                 },
             ],
@@ -4329,16 +2834,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "ActiveHigh",
-                    description: Some(
-                        "NWAIT active high",
-                    ),
+                    description: Some("NWAIT active high"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "ActiveLow",
-                    description: Some(
-                        "NWAIT active low",
-                    ),
+                    description: Some("NWAIT active low"),
                     value: 0,
                 },
             ],

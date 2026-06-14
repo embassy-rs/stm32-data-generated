@@ -668,7 +668,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ dmaen: {=bool:?}, dmacfg: {:?}, scandir: {:?}, res: {:?}, align: {:?}, extsel: {:?}, exten: {:?}, ovrmod: {=bool:?}, cont: {=bool:?}, wait: {=bool:?}, autoff: {=bool:?}, discen: {=bool:?}, chselrmod: {=bool:?}, awd1sgl: {=bool:?}, awd1en: {=bool:?}, awd1ch: {=u8:?} }}" , self . dmaen () , self . dmacfg () , self . scandir () , self . res () , self . align () , self . extsel () , self . exten () , self . ovrmod () , self . cont () , self . wait () , self . autoff () , self . discen () , self . chselrmod () , self . awd1sgl () , self . awd1en () , self . awd1ch ())
+            defmt::write!(
+                f,
+                "Cfgr1 {{ dmaen: {=bool:?}, dmacfg: {:?}, scandir: {:?}, res: {:?}, align: {:?}, extsel: {:?}, exten: {:?}, ovrmod: {=bool:?}, cont: {=bool:?}, wait: {=bool:?}, autoff: {=bool:?}, discen: {=bool:?}, chselrmod: {=bool:?}, awd1sgl: {=bool:?}, awd1en: {=bool:?}, awd1ch: {=u8:?} }}",
+                self.dmaen(),
+                self.dmacfg(),
+                self.scandir(),
+                self.res(),
+                self.align(),
+                self.extsel(),
+                self.exten(),
+                self.ovrmod(),
+                self.cont(),
+                self.wait(),
+                self.autoff(),
+                self.discen(),
+                self.chselrmod(),
+                self.awd1sgl(),
+                self.awd1en(),
+                self.awd1ch()
+            )
         }
     }
     #[doc = "ADC configuration register 2"]
@@ -838,7 +857,29 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Chselr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Chselr {{ chsel[0]: {=bool:?}, chsel[1]: {=bool:?}, chsel[2]: {=bool:?}, chsel[3]: {=bool:?}, chsel[4]: {=bool:?}, chsel[5]: {=bool:?}, chsel[6]: {=bool:?}, chsel[7]: {=bool:?}, chsel[8]: {=bool:?}, chsel[9]: {=bool:?}, chsel[10]: {=bool:?}, chsel[11]: {=bool:?}, chsel[12]: {=bool:?}, chsel[13]: {=bool:?}, chsel[14]: {=bool:?}, chsel[15]: {=bool:?}, chsel[16]: {=bool:?}, chsel[17]: {=bool:?}, chsel[18]: {=bool:?} }}" , self . chsel (0usize) , self . chsel (1usize) , self . chsel (2usize) , self . chsel (3usize) , self . chsel (4usize) , self . chsel (5usize) , self . chsel (6usize) , self . chsel (7usize) , self . chsel (8usize) , self . chsel (9usize) , self . chsel (10usize) , self . chsel (11usize) , self . chsel (12usize) , self . chsel (13usize) , self . chsel (14usize) , self . chsel (15usize) , self . chsel (16usize) , self . chsel (17usize) , self . chsel (18usize))
+            defmt::write!(
+                f,
+                "Chselr {{ chsel[0]: {=bool:?}, chsel[1]: {=bool:?}, chsel[2]: {=bool:?}, chsel[3]: {=bool:?}, chsel[4]: {=bool:?}, chsel[5]: {=bool:?}, chsel[6]: {=bool:?}, chsel[7]: {=bool:?}, chsel[8]: {=bool:?}, chsel[9]: {=bool:?}, chsel[10]: {=bool:?}, chsel[11]: {=bool:?}, chsel[12]: {=bool:?}, chsel[13]: {=bool:?}, chsel[14]: {=bool:?}, chsel[15]: {=bool:?}, chsel[16]: {=bool:?}, chsel[17]: {=bool:?}, chsel[18]: {=bool:?} }}",
+                self.chsel(0usize),
+                self.chsel(1usize),
+                self.chsel(2usize),
+                self.chsel(3usize),
+                self.chsel(4usize),
+                self.chsel(5usize),
+                self.chsel(6usize),
+                self.chsel(7usize),
+                self.chsel(8usize),
+                self.chsel(9usize),
+                self.chsel(10usize),
+                self.chsel(11usize),
+                self.chsel(12usize),
+                self.chsel(13usize),
+                self.chsel(14usize),
+                self.chsel(15usize),
+                self.chsel(16usize),
+                self.chsel(17usize),
+                self.chsel(18usize)
+            )
         }
     }
     #[doc = "channel selection register CHSELRMOD = 1 in ADC_CFGR1"]
@@ -886,7 +927,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Chselr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Chselr1 {{ sq[0]: {:?}, sq[1]: {:?}, sq[2]: {:?}, sq[3]: {:?}, sq[4]: {:?}, sq[5]: {:?}, sq[6]: {:?}, sq[7]: {:?} }}" , self . sq (0usize) , self . sq (1usize) , self . sq (2usize) , self . sq (3usize) , self . sq (4usize) , self . sq (5usize) , self . sq (6usize) , self . sq (7usize))
+            defmt::write!(
+                f,
+                "Chselr1 {{ sq[0]: {:?}, sq[1]: {:?}, sq[2]: {:?}, sq[3]: {:?}, sq[4]: {:?}, sq[5]: {:?}, sq[6]: {:?}, sq[7]: {:?} }}",
+                self.sq(0usize),
+                self.sq(1usize),
+                self.sq(2usize),
+                self.sq(3usize),
+                self.sq(4usize),
+                self.sq(5usize),
+                self.sq(6usize),
+                self.sq(7usize)
+            )
         }
     }
     #[doc = "ADC control register"]
@@ -988,7 +1040,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ aden: {=bool:?}, addis: {=bool:?}, adstart: {=bool:?}, adstp: {=bool:?}, advregen: {=bool:?}, adcal: {=bool:?} }}" , self . aden () , self . addis () , self . adstart () , self . adstp () , self . advregen () , self . adcal ())
+            defmt::write!(
+                f,
+                "Cr {{ aden: {=bool:?}, addis: {=bool:?}, adstart: {=bool:?}, adstp: {=bool:?}, advregen: {=bool:?}, adcal: {=bool:?} }}",
+                self.aden(),
+                self.addis(),
+                self.adstart(),
+                self.adstp(),
+                self.advregen(),
+                self.adcal()
+            )
         }
     }
     #[doc = "ADC group regular conversion data register"]
@@ -1177,7 +1238,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier {{ adrdyie: {=bool:?}, eosmpie: {=bool:?}, eocie: {=bool:?}, eosie: {=bool:?}, ovrie: {=bool:?}, awd1ie: {=bool:?}, awd2ie: {=bool:?}, awd3ie: {=bool:?}, eocalie: {=bool:?}, ccrdyie: {=bool:?} }}" , self . adrdyie () , self . eosmpie () , self . eocie () , self . eosie () , self . ovrie () , self . awd1ie () , self . awd2ie () , self . awd3ie () , self . eocalie () , self . ccrdyie ())
+            defmt::write!(
+                f,
+                "Ier {{ adrdyie: {=bool:?}, eosmpie: {=bool:?}, eocie: {=bool:?}, eosie: {=bool:?}, ovrie: {=bool:?}, awd1ie: {=bool:?}, awd2ie: {=bool:?}, awd3ie: {=bool:?}, eocalie: {=bool:?}, ccrdyie: {=bool:?} }}",
+                self.adrdyie(),
+                self.eosmpie(),
+                self.eocie(),
+                self.eosie(),
+                self.ovrie(),
+                self.awd1ie(),
+                self.awd2ie(),
+                self.awd3ie(),
+                self.eocalie(),
+                self.ccrdyie()
+            )
         }
     }
     #[doc = "ADC interrupt and status register"]
@@ -1331,7 +1405,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ adrdy: {=bool:?}, eosmp: {=bool:?}, eoc: {=bool:?}, eos: {=bool:?}, ovr: {=bool:?}, awd1: {=bool:?}, awd2: {=bool:?}, awd3: {=bool:?}, eocal: {=bool:?}, ccrdy: {=bool:?} }}" , self . adrdy () , self . eosmp () , self . eoc () , self . eos () , self . ovr () , self . awd1 () , self . awd2 () , self . awd3 () , self . eocal () , self . ccrdy ())
+            defmt::write!(
+                f,
+                "Isr {{ adrdy: {=bool:?}, eosmp: {=bool:?}, eoc: {=bool:?}, eos: {=bool:?}, ovr: {=bool:?}, awd1: {=bool:?}, awd2: {=bool:?}, awd3: {=bool:?}, eocal: {=bool:?}, ccrdy: {=bool:?} }}",
+                self.adrdy(),
+                self.eosmp(),
+                self.eoc(),
+                self.eos(),
+                self.ovr(),
+                self.awd1(),
+                self.awd2(),
+                self.awd3(),
+                self.eocal(),
+                self.ccrdy()
+            )
         }
     }
     #[doc = "ADC sampling time register"]
@@ -1408,7 +1495,31 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Smpr {{ sample_time[0]: {:?}, sample_time[1]: {:?}, smpsel[0]: {:?}, smpsel[1]: {:?}, smpsel[2]: {:?}, smpsel[3]: {:?}, smpsel[4]: {:?}, smpsel[5]: {:?}, smpsel[6]: {:?}, smpsel[7]: {:?}, smpsel[8]: {:?}, smpsel[9]: {:?}, smpsel[10]: {:?}, smpsel[11]: {:?}, smpsel[12]: {:?}, smpsel[13]: {:?}, smpsel[14]: {:?}, smpsel[15]: {:?}, smpsel[16]: {:?}, smpsel[17]: {:?}, smpsel[18]: {:?} }}" , self . sample_time (0usize) , self . sample_time (1usize) , self . smpsel (0usize) , self . smpsel (1usize) , self . smpsel (2usize) , self . smpsel (3usize) , self . smpsel (4usize) , self . smpsel (5usize) , self . smpsel (6usize) , self . smpsel (7usize) , self . smpsel (8usize) , self . smpsel (9usize) , self . smpsel (10usize) , self . smpsel (11usize) , self . smpsel (12usize) , self . smpsel (13usize) , self . smpsel (14usize) , self . smpsel (15usize) , self . smpsel (16usize) , self . smpsel (17usize) , self . smpsel (18usize))
+            defmt::write!(
+                f,
+                "Smpr {{ sample_time[0]: {:?}, sample_time[1]: {:?}, smpsel[0]: {:?}, smpsel[1]: {:?}, smpsel[2]: {:?}, smpsel[3]: {:?}, smpsel[4]: {:?}, smpsel[5]: {:?}, smpsel[6]: {:?}, smpsel[7]: {:?}, smpsel[8]: {:?}, smpsel[9]: {:?}, smpsel[10]: {:?}, smpsel[11]: {:?}, smpsel[12]: {:?}, smpsel[13]: {:?}, smpsel[14]: {:?}, smpsel[15]: {:?}, smpsel[16]: {:?}, smpsel[17]: {:?}, smpsel[18]: {:?} }}",
+                self.sample_time(0usize),
+                self.sample_time(1usize),
+                self.smpsel(0usize),
+                self.smpsel(1usize),
+                self.smpsel(2usize),
+                self.smpsel(3usize),
+                self.smpsel(4usize),
+                self.smpsel(5usize),
+                self.smpsel(6usize),
+                self.smpsel(7usize),
+                self.smpsel(8usize),
+                self.smpsel(9usize),
+                self.smpsel(10usize),
+                self.smpsel(11usize),
+                self.smpsel(12usize),
+                self.smpsel(13usize),
+                self.smpsel(14usize),
+                self.smpsel(15usize),
+                self.smpsel(16usize),
+                self.smpsel(17usize),
+                self.smpsel(18usize)
+            )
         }
     }
 }

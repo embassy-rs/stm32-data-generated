@@ -263,7 +263,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ syncokie: {=bool:?}, syncwarnie: {=bool:?}, errie: {=bool:?}, esyncie: {=bool:?}, cen: {=bool:?}, autotrimen: {=bool:?}, swsync: {=bool:?}, trim: {=u8:?} }}" , self . syncokie () , self . syncwarnie () , self . errie () , self . esyncie () , self . cen () , self . autotrimen () , self . swsync () , self . trim ())
+            defmt::write!(
+                f,
+                "Cr {{ syncokie: {=bool:?}, syncwarnie: {=bool:?}, errie: {=bool:?}, esyncie: {=bool:?}, cen: {=bool:?}, autotrimen: {=bool:?}, swsync: {=bool:?}, trim: {=u8:?} }}",
+                self.syncokie(),
+                self.syncwarnie(),
+                self.errie(),
+                self.esyncie(),
+                self.cen(),
+                self.autotrimen(),
+                self.swsync(),
+                self.trim()
+            )
         }
     }
     #[doc = "interrupt flag clear register"]
@@ -487,7 +498,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ syncokf: {=bool:?}, syncwarnf: {=bool:?}, errf: {=bool:?}, esyncf: {=bool:?}, syncerr: {=bool:?}, syncmiss: {=bool:?}, trimovf: {=bool:?}, fedir: {=bool:?}, fecap: {=u16:?} }}" , self . syncokf () , self . syncwarnf () , self . errf () , self . esyncf () , self . syncerr () , self . syncmiss () , self . trimovf () , self . fedir () , self . fecap ())
+            defmt::write!(
+                f,
+                "Isr {{ syncokf: {=bool:?}, syncwarnf: {=bool:?}, errf: {=bool:?}, esyncf: {=bool:?}, syncerr: {=bool:?}, syncmiss: {=bool:?}, trimovf: {=bool:?}, fedir: {=bool:?}, fecap: {=u16:?} }}",
+                self.syncokf(),
+                self.syncwarnf(),
+                self.errf(),
+                self.esyncf(),
+                self.syncerr(),
+                self.syncmiss(),
+                self.trimovf(),
+                self.fedir(),
+                self.fecap()
+            )
         }
     }
 }

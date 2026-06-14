@@ -227,7 +227,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ boosten: {=bool:?}, anaswvdd: {=bool:?}, i2c_pb6_fmp: {=bool:?}, i2c_pb7_fmp: {=bool:?}, i2c_pb8_fmp: {=bool:?}, i2c_pb9_fmp: {=bool:?}, i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c3_fmp: {=bool:?}, i2c4_fmp: {=bool:?} }}" , self . boosten () , self . anaswvdd () , self . i2c_pb6_fmp () , self . i2c_pb7_fmp () , self . i2c_pb8_fmp () , self . i2c_pb9_fmp () , self . i2c1_fmp () , self . i2c2_fmp () , self . i2c3_fmp () , self . i2c4_fmp ())
+            defmt::write!(
+                f,
+                "Cfgr1 {{ boosten: {=bool:?}, anaswvdd: {=bool:?}, i2c_pb6_fmp: {=bool:?}, i2c_pb7_fmp: {=bool:?}, i2c_pb8_fmp: {=bool:?}, i2c_pb9_fmp: {=bool:?}, i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c3_fmp: {=bool:?}, i2c4_fmp: {=bool:?} }}",
+                self.boosten(),
+                self.anaswvdd(),
+                self.i2c_pb6_fmp(),
+                self.i2c_pb7_fmp(),
+                self.i2c_pb8_fmp(),
+                self.i2c_pb9_fmp(),
+                self.i2c1_fmp(),
+                self.i2c2_fmp(),
+                self.i2c3_fmp(),
+                self.i2c4_fmp()
+            )
         }
     }
     #[doc = "CFGR2"]
@@ -1131,7 +1144,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Swpr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Swpr {{ p0wp: {=bool:?}, p1wp: {=bool:?}, p2wp: {=bool:?}, p3wp: {=bool:?}, p4wp: {=bool:?}, p5wp: {=bool:?}, p6wp: {=bool:?}, p7wp: {=bool:?}, p8wp: {=bool:?}, p9wp: {=bool:?}, p10wp: {=bool:?}, p11wp: {=bool:?}, p12wp: {=bool:?}, p13wp: {=bool:?}, p14wp: {=bool:?}, p15wp: {=bool:?}, p16wp: {=bool:?}, p17wp: {=bool:?}, p18wp: {=bool:?}, p19wp: {=bool:?}, p20wp: {=bool:?}, p21wp: {=bool:?}, p22wp: {=bool:?}, p23wp: {=bool:?}, p24wp: {=bool:?}, p25wp: {=bool:?}, p26wp: {=bool:?}, p27wp: {=bool:?}, p28wp: {=bool:?}, p29wp: {=bool:?}, p30wp: {=bool:?}, p31wp: {=bool:?} }}" , self . p0wp () , self . p1wp () , self . p2wp () , self . p3wp () , self . p4wp () , self . p5wp () , self . p6wp () , self . p7wp () , self . p8wp () , self . p9wp () , self . p10wp () , self . p11wp () , self . p12wp () , self . p13wp () , self . p14wp () , self . p15wp () , self . p16wp () , self . p17wp () , self . p18wp () , self . p19wp () , self . p20wp () , self . p21wp () , self . p22wp () , self . p23wp () , self . p24wp () , self . p25wp () , self . p26wp () , self . p27wp () , self . p28wp () , self . p29wp () , self . p30wp () , self . p31wp ())
+            defmt::write!(
+                f,
+                "Swpr {{ p0wp: {=bool:?}, p1wp: {=bool:?}, p2wp: {=bool:?}, p3wp: {=bool:?}, p4wp: {=bool:?}, p5wp: {=bool:?}, p6wp: {=bool:?}, p7wp: {=bool:?}, p8wp: {=bool:?}, p9wp: {=bool:?}, p10wp: {=bool:?}, p11wp: {=bool:?}, p12wp: {=bool:?}, p13wp: {=bool:?}, p14wp: {=bool:?}, p15wp: {=bool:?}, p16wp: {=bool:?}, p17wp: {=bool:?}, p18wp: {=bool:?}, p19wp: {=bool:?}, p20wp: {=bool:?}, p21wp: {=bool:?}, p22wp: {=bool:?}, p23wp: {=bool:?}, p24wp: {=bool:?}, p25wp: {=bool:?}, p26wp: {=bool:?}, p27wp: {=bool:?}, p28wp: {=bool:?}, p29wp: {=bool:?}, p30wp: {=bool:?}, p31wp: {=bool:?} }}",
+                self.p0wp(),
+                self.p1wp(),
+                self.p2wp(),
+                self.p3wp(),
+                self.p4wp(),
+                self.p5wp(),
+                self.p6wp(),
+                self.p7wp(),
+                self.p8wp(),
+                self.p9wp(),
+                self.p10wp(),
+                self.p11wp(),
+                self.p12wp(),
+                self.p13wp(),
+                self.p14wp(),
+                self.p15wp(),
+                self.p16wp(),
+                self.p17wp(),
+                self.p18wp(),
+                self.p19wp(),
+                self.p20wp(),
+                self.p21wp(),
+                self.p22wp(),
+                self.p23wp(),
+                self.p24wp(),
+                self.p25wp(),
+                self.p26wp(),
+                self.p27wp(),
+                self.p28wp(),
+                self.p29wp(),
+                self.p30wp(),
+                self.p31wp()
+            )
         }
     }
     #[doc = "SWPR2"]
@@ -1571,7 +1619,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Swpr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Swpr2 {{ p32wp: {=bool:?}, p33wp: {=bool:?}, p34wp: {=bool:?}, p35wp: {=bool:?}, p36wp: {=bool:?}, p37wp: {=bool:?}, p38wp: {=bool:?}, p39wp: {=bool:?}, p40wp: {=bool:?}, p41wp: {=bool:?}, p42wp: {=bool:?}, p43wp: {=bool:?}, p44wp: {=bool:?}, p45wp: {=bool:?}, p46wp: {=bool:?}, p47wp: {=bool:?}, p48wp: {=bool:?}, p49wp: {=bool:?}, p50wp: {=bool:?}, p51wp: {=bool:?}, p52wp: {=bool:?}, p53wp: {=bool:?}, p54wp: {=bool:?}, p55wp: {=bool:?}, p56wp: {=bool:?}, p57wp: {=bool:?}, p58wp: {=bool:?}, p59wp: {=bool:?}, p60wp: {=bool:?}, p61wp: {=bool:?}, p62wp: {=bool:?}, p63wp: {=bool:?} }}" , self . p32wp () , self . p33wp () , self . p34wp () , self . p35wp () , self . p36wp () , self . p37wp () , self . p38wp () , self . p39wp () , self . p40wp () , self . p41wp () , self . p42wp () , self . p43wp () , self . p44wp () , self . p45wp () , self . p46wp () , self . p47wp () , self . p48wp () , self . p49wp () , self . p50wp () , self . p51wp () , self . p52wp () , self . p53wp () , self . p54wp () , self . p55wp () , self . p56wp () , self . p57wp () , self . p58wp () , self . p59wp () , self . p60wp () , self . p61wp () , self . p62wp () , self . p63wp ())
+            defmt::write!(
+                f,
+                "Swpr2 {{ p32wp: {=bool:?}, p33wp: {=bool:?}, p34wp: {=bool:?}, p35wp: {=bool:?}, p36wp: {=bool:?}, p37wp: {=bool:?}, p38wp: {=bool:?}, p39wp: {=bool:?}, p40wp: {=bool:?}, p41wp: {=bool:?}, p42wp: {=bool:?}, p43wp: {=bool:?}, p44wp: {=bool:?}, p45wp: {=bool:?}, p46wp: {=bool:?}, p47wp: {=bool:?}, p48wp: {=bool:?}, p49wp: {=bool:?}, p50wp: {=bool:?}, p51wp: {=bool:?}, p52wp: {=bool:?}, p53wp: {=bool:?}, p54wp: {=bool:?}, p55wp: {=bool:?}, p56wp: {=bool:?}, p57wp: {=bool:?}, p58wp: {=bool:?}, p59wp: {=bool:?}, p60wp: {=bool:?}, p61wp: {=bool:?}, p62wp: {=bool:?}, p63wp: {=bool:?} }}",
+                self.p32wp(),
+                self.p33wp(),
+                self.p34wp(),
+                self.p35wp(),
+                self.p36wp(),
+                self.p37wp(),
+                self.p38wp(),
+                self.p39wp(),
+                self.p40wp(),
+                self.p41wp(),
+                self.p42wp(),
+                self.p43wp(),
+                self.p44wp(),
+                self.p45wp(),
+                self.p46wp(),
+                self.p47wp(),
+                self.p48wp(),
+                self.p49wp(),
+                self.p50wp(),
+                self.p51wp(),
+                self.p52wp(),
+                self.p53wp(),
+                self.p54wp(),
+                self.p55wp(),
+                self.p56wp(),
+                self.p57wp(),
+                self.p58wp(),
+                self.p59wp(),
+                self.p60wp(),
+                self.p61wp(),
+                self.p62wp(),
+                self.p63wp()
+            )
         }
     }
 }

@@ -276,7 +276,22 @@ is cleared. With the bitfield value other than zero and KEYVALID set, the applic
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, datatype: {:?}, mode: {:?}, chmod: {:?}, dmainen: {=bool:?}, dmaouten: {=bool:?}, keysize: {:?}, keyprot: {=bool:?}, kmod: {:?}, kshareid: {:?}, keysel: {:?}, iprst: {=bool:?} }}" , self . en () , self . datatype () , self . mode () , self . chmod () , self . dmainen () , self . dmaouten () , self . keysize () , self . keyprot () , self . kmod () , self . kshareid () , self . keysel () , self . iprst ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, datatype: {:?}, mode: {:?}, chmod: {:?}, dmainen: {=bool:?}, dmaouten: {=bool:?}, keysize: {:?}, keyprot: {=bool:?}, kmod: {:?}, kshareid: {:?}, keysel: {:?}, iprst: {=bool:?} }}",
+                self.en(),
+                self.datatype(),
+                self.mode(),
+                self.chmod(),
+                self.dmainen(),
+                self.dmaouten(),
+                self.keysize(),
+                self.keyprot(),
+                self.kmod(),
+                self.kshareid(),
+                self.keysel(),
+                self.iprst()
+            )
         }
     }
     #[doc = "SAES interrupt clear register."]

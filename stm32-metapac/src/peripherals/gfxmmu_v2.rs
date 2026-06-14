@@ -326,7 +326,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ boie[0]: {=bool:?}, boie[1]: {=bool:?}, boie[2]: {=bool:?}, boie[3]: {=bool:?}, ameie: {=bool:?}, bm[0]: {:?}, ce: {=bool:?}, cl: {=bool:?}, clb: {:?}, fc: {=bool:?}, pd: {=bool:?}, oc: {=bool:?}, ob: {=bool:?} }}" , self . boie (0usize) , self . boie (1usize) , self . boie (2usize) , self . boie (3usize) , self . ameie () , self . bm (0usize) , self . ce () , self . cl () , self . clb () , self . fc () , self . pd () , self . oc () , self . ob ())
+            defmt::write!(
+                f,
+                "Cr {{ boie[0]: {=bool:?}, boie[1]: {=bool:?}, boie[2]: {=bool:?}, boie[3]: {=bool:?}, ameie: {=bool:?}, bm[0]: {:?}, ce: {=bool:?}, cl: {=bool:?}, clb: {:?}, fc: {=bool:?}, pd: {=bool:?}, oc: {=bool:?}, ob: {=bool:?} }}",
+                self.boie(0usize),
+                self.boie(1usize),
+                self.boie(2usize),
+                self.boie(3usize),
+                self.ameie(),
+                self.bm(0usize),
+                self.ce(),
+                self.cl(),
+                self.clb(),
+                self.fc(),
+                self.pd(),
+                self.oc(),
+                self.ob()
+            )
         }
     }
     #[doc = "GFXMMU default value register."]
@@ -418,7 +434,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Fcr {{ cbof[0]: {=bool:?}, cbof[1]: {=bool:?}, cbof[2]: {=bool:?}, cbof[3]: {=bool:?}, camef: {=bool:?} }}" , self . cbof (0usize) , self . cbof (1usize) , self . cbof (2usize) , self . cbof (3usize) , self . camef ())
+            defmt::write!(
+                f,
+                "Fcr {{ cbof[0]: {=bool:?}, cbof[1]: {=bool:?}, cbof[2]: {=bool:?}, cbof[3]: {=bool:?}, camef: {=bool:?} }}",
+                self.cbof(0usize),
+                self.cbof(1usize),
+                self.cbof(2usize),
+                self.cbof(3usize),
+                self.camef()
+            )
         }
     }
     #[doc = "GFXMMU LUT entry high."]

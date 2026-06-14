@@ -311,7 +311,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Alrmr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Alrmr {{ su: {=u8:?}, st: {=u8:?}, msk1: {:?}, mnu: {=u8:?}, mnt: {=u8:?}, msk2: {:?}, hu: {=u8:?}, ht: {=u8:?}, pm: {:?}, msk3: {:?}, du: {=u8:?}, dt: {=u8:?}, wdsel: {:?}, msk4: {:?} }}" , self . su () , self . st () , self . msk1 () , self . mnu () , self . mnt () , self . msk2 () , self . hu () , self . ht () , self . pm () , self . msk3 () , self . du () , self . dt () , self . wdsel () , self . msk4 ())
+            defmt::write!(
+                f,
+                "Alrmr {{ su: {=u8:?}, st: {=u8:?}, msk1: {:?}, mnu: {=u8:?}, mnt: {=u8:?}, msk2: {:?}, hu: {=u8:?}, ht: {=u8:?}, pm: {:?}, msk3: {:?}, du: {=u8:?}, dt: {=u8:?}, wdsel: {:?}, msk4: {:?} }}",
+                self.su(),
+                self.st(),
+                self.msk1(),
+                self.mnu(),
+                self.mnt(),
+                self.msk2(),
+                self.hu(),
+                self.ht(),
+                self.pm(),
+                self.msk3(),
+                self.du(),
+                self.dt(),
+                self.wdsel(),
+                self.msk4()
+            )
         }
     }
     #[doc = "Alarm sub second register"]
@@ -715,7 +732,28 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ tsedge: {:?}, refckon: {=bool:?}, bypshad: {=bool:?}, fmt: {:?}, alre[0]: {=bool:?}, tse: {=bool:?}, alrie[0]: {=bool:?}, tsie: {=bool:?}, add1h: {=bool:?}, sub1h: {=bool:?}, bkp: {=bool:?}, cosel: {:?}, pol: {:?}, osel: {:?}, coe: {=bool:?}, tampalrm_pu: {=bool:?}, tampalrm_type: {:?}, out2en: {=bool:?} }}" , self . tsedge () , self . refckon () , self . bypshad () , self . fmt () , self . alre (0usize) , self . tse () , self . alrie (0usize) , self . tsie () , self . add1h () , self . sub1h () , self . bkp () , self . cosel () , self . pol () , self . osel () , self . coe () , self . tampalrm_pu () , self . tampalrm_type () , self . out2en ())
+            defmt::write!(
+                f,
+                "Cr {{ tsedge: {:?}, refckon: {=bool:?}, bypshad: {=bool:?}, fmt: {:?}, alre[0]: {=bool:?}, tse: {=bool:?}, alrie[0]: {=bool:?}, tsie: {=bool:?}, add1h: {=bool:?}, sub1h: {=bool:?}, bkp: {=bool:?}, cosel: {:?}, pol: {:?}, osel: {:?}, coe: {=bool:?}, tampalrm_pu: {=bool:?}, tampalrm_type: {:?}, out2en: {=bool:?} }}",
+                self.tsedge(),
+                self.refckon(),
+                self.bypshad(),
+                self.fmt(),
+                self.alre(0usize),
+                self.tse(),
+                self.alrie(0usize),
+                self.tsie(),
+                self.add1h(),
+                self.sub1h(),
+                self.bkp(),
+                self.cosel(),
+                self.pol(),
+                self.osel(),
+                self.coe(),
+                self.tampalrm_pu(),
+                self.tampalrm_type(),
+                self.out2en()
+            )
         }
     }
     #[doc = "Date register"]
@@ -959,7 +997,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Icsr {{ alrwf[0]: {=bool:?}, shpf: {=bool:?}, inits: {=bool:?}, rsf: {=bool:?}, initf: {=bool:?}, init: {=bool:?}, recalpf: {:?} }}" , self . alrwf (0usize) , self . shpf () , self . inits () , self . rsf () , self . initf () , self . init () , self . recalpf ())
+            defmt::write!(
+                f,
+                "Icsr {{ alrwf[0]: {=bool:?}, shpf: {=bool:?}, inits: {=bool:?}, rsf: {=bool:?}, initf: {=bool:?}, init: {=bool:?}, recalpf: {:?} }}",
+                self.alrwf(0usize),
+                self.shpf(),
+                self.inits(),
+                self.rsf(),
+                self.initf(),
+                self.init(),
+                self.recalpf()
+            )
         }
     }
     #[doc = "Masked interrupt status register"]
@@ -1695,7 +1743,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tstr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Tstr {{ su: {=u8:?}, st: {=u8:?}, mnu: {=u8:?}, mnt: {=u8:?}, hu: {=u8:?}, ht: {=u8:?}, pm: {=bool:?} }}" , self . su () , self . st () , self . mnu () , self . mnt () , self . hu () , self . ht () , self . pm ())
+            defmt::write!(
+                f,
+                "Tstr {{ su: {=u8:?}, st: {=u8:?}, mnu: {=u8:?}, mnt: {=u8:?}, hu: {=u8:?}, ht: {=u8:?}, pm: {=bool:?} }}",
+                self.su(),
+                self.st(),
+                self.mnu(),
+                self.mnt(),
+                self.hu(),
+                self.ht(),
+                self.pm()
+            )
         }
     }
     #[doc = "Write protection register"]

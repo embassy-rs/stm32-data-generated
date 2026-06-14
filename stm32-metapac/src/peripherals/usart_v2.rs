@@ -354,7 +354,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ sbk: {=bool:?}, rwu: {:?}, re: {=bool:?}, te: {=bool:?}, idleie: {=bool:?}, rxneie: {=bool:?}, tcie: {=bool:?}, txeie: {=bool:?}, peie: {=bool:?}, ps: {:?}, pce: {=bool:?}, wake: {:?}, m0: {:?}, ue: {=bool:?}, over8: {:?} }}" , self . sbk () , self . rwu () , self . re () , self . te () , self . idleie () , self . rxneie () , self . tcie () , self . txeie () , self . peie () , self . ps () , self . pce () , self . wake () , self . m0 () , self . ue () , self . over8 ())
+            defmt::write!(
+                f,
+                "Cr1 {{ sbk: {=bool:?}, rwu: {:?}, re: {=bool:?}, te: {=bool:?}, idleie: {=bool:?}, rxneie: {=bool:?}, tcie: {=bool:?}, txeie: {=bool:?}, peie: {=bool:?}, ps: {:?}, pce: {=bool:?}, wake: {:?}, m0: {:?}, ue: {=bool:?}, over8: {:?} }}",
+                self.sbk(),
+                self.rwu(),
+                self.re(),
+                self.te(),
+                self.idleie(),
+                self.rxneie(),
+                self.tcie(),
+                self.txeie(),
+                self.peie(),
+                self.ps(),
+                self.pce(),
+                self.wake(),
+                self.m0(),
+                self.ue(),
+                self.over8()
+            )
         }
     }
     #[doc = "Control register 2"]
@@ -592,7 +610,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2Usart {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2Usart {{ add: {=u8:?}, lbdl: {:?}, lbdie: {=bool:?}, lbcl: {=bool:?}, cpha: {:?}, cpol: {:?}, clken: {=bool:?}, stop: {:?}, linen: {=bool:?} }}" , self . add () , self . lbdl () , self . lbdie () , self . lbcl () , self . cpha () , self . cpol () , self . clken () , self . stop () , self . linen ())
+            defmt::write!(
+                f,
+                "Cr2Usart {{ add: {=u8:?}, lbdl: {:?}, lbdie: {=bool:?}, lbcl: {=bool:?}, cpha: {:?}, cpol: {:?}, clken: {=bool:?}, stop: {:?}, linen: {=bool:?} }}",
+                self.add(),
+                self.lbdl(),
+                self.lbdie(),
+                self.lbcl(),
+                self.cpha(),
+                self.cpol(),
+                self.clken(),
+                self.stop(),
+                self.linen()
+            )
         }
     }
     #[doc = "Control register 3"]
@@ -694,7 +724,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr3 {{ eie: {=bool:?}, iren: {=bool:?}, irlp: {:?}, hdsel: {=bool:?}, dmar: {=bool:?}, dmat: {=bool:?} }}" , self . eie () , self . iren () , self . irlp () , self . hdsel () , self . dmar () , self . dmat ())
+            defmt::write!(
+                f,
+                "Cr3 {{ eie: {=bool:?}, iren: {=bool:?}, irlp: {:?}, hdsel: {=bool:?}, dmar: {=bool:?}, dmat: {=bool:?} }}",
+                self.eie(),
+                self.iren(),
+                self.irlp(),
+                self.hdsel(),
+                self.dmar(),
+                self.dmat()
+            )
         }
     }
     #[doc = "Control register 3"]
@@ -874,7 +913,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr3Usart {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr3Usart {{ eie: {=bool:?}, iren: {=bool:?}, irlp: {:?}, hdsel: {=bool:?}, nack: {=bool:?}, scen: {=bool:?}, dmar: {=bool:?}, dmat: {=bool:?}, rtse: {=bool:?}, ctse: {=bool:?}, ctsie: {=bool:?}, onebit: {=bool:?} }}" , self . eie () , self . iren () , self . irlp () , self . hdsel () , self . nack () , self . scen () , self . dmar () , self . dmat () , self . rtse () , self . ctse () , self . ctsie () , self . onebit ())
+            defmt::write!(
+                f,
+                "Cr3Usart {{ eie: {=bool:?}, iren: {=bool:?}, irlp: {:?}, hdsel: {=bool:?}, nack: {=bool:?}, scen: {=bool:?}, dmar: {=bool:?}, dmat: {=bool:?}, rtse: {=bool:?}, ctse: {=bool:?}, ctsie: {=bool:?}, onebit: {=bool:?} }}",
+                self.eie(),
+                self.iren(),
+                self.irlp(),
+                self.hdsel(),
+                self.nack(),
+                self.scen(),
+                self.dmar(),
+                self.dmat(),
+                self.rtse(),
+                self.ctse(),
+                self.ctsie(),
+                self.onebit()
+            )
         }
     }
     #[doc = "Data register"]
@@ -1113,7 +1167,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ pe: {=bool:?}, fe: {=bool:?}, ne: {=bool:?}, ore: {=bool:?}, idle: {=bool:?}, rxne: {=bool:?}, tc: {=bool:?}, txe: {=bool:?}, lbd: {=bool:?}, cts: {=bool:?} }}" , self . pe () , self . fe () , self . ne () , self . ore () , self . idle () , self . rxne () , self . tc () , self . txe () , self . lbd () , self . cts ())
+            defmt::write!(
+                f,
+                "Sr {{ pe: {=bool:?}, fe: {=bool:?}, ne: {=bool:?}, ore: {=bool:?}, idle: {=bool:?}, rxne: {=bool:?}, tc: {=bool:?}, txe: {=bool:?}, lbd: {=bool:?}, cts: {=bool:?} }}",
+                self.pe(),
+                self.fe(),
+                self.ne(),
+                self.ore(),
+                self.idle(),
+                self.rxne(),
+                self.tc(),
+                self.txe(),
+                self.lbd(),
+                self.cts()
+            )
         }
     }
 }

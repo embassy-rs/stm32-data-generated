@@ -186,7 +186,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cccsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cccsr {{ en[0]: {=bool:?}, en[1]: {=bool:?}, cs[0]: {:?}, cs[1]: {:?}, rdy[0]: {=bool:?}, rdy[1]: {=bool:?} }}" , self . en (0usize) , self . en (1usize) , self . cs (0usize) , self . cs (1usize) , self . rdy (0usize) , self . rdy (1usize))
+            defmt::write!(
+                f,
+                "Cccsr {{ en[0]: {=bool:?}, en[1]: {=bool:?}, cs[0]: {:?}, cs[1]: {:?}, rdy[0]: {=bool:?}, rdy[1]: {=bool:?} }}",
+                self.en(0usize),
+                self.en(1usize),
+                self.cs(0usize),
+                self.cs(1usize),
+                self.rdy(0usize),
+                self.rdy(1usize)
+            )
         }
     }
     #[doc = "SBS compensation cell for I/Os software code register"]
@@ -1065,7 +1074,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pmcr {{ boosten: {=bool:?}, boostvddsel: {=bool:?}, pb6_fmplus: {=bool:?}, pb7_fmplus: {=bool:?}, pb8_fmplus: {=bool:?}, pb9_fmplus: {=bool:?}, eth_sel_phy: {:?} }}" , self . boosten () , self . boostvddsel () , self . pb6_fmplus () , self . pb7_fmplus () , self . pb8_fmplus () , self . pb9_fmplus () , self . eth_sel_phy ())
+            defmt::write!(
+                f,
+                "Pmcr {{ boosten: {=bool:?}, boostvddsel: {=bool:?}, pb6_fmplus: {=bool:?}, pb7_fmplus: {=bool:?}, pb8_fmplus: {=bool:?}, pb9_fmplus: {=bool:?}, eth_sel_phy: {:?} }}",
+                self.boosten(),
+                self.boostvddsel(),
+                self.pb6_fmplus(),
+                self.pb7_fmplus(),
+                self.pb8_fmplus(),
+                self.pb9_fmplus(),
+                self.eth_sel_phy()
+            )
         }
     }
     #[doc = "SBS RSS command register"]

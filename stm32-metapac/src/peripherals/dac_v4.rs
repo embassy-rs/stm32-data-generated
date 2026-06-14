@@ -313,7 +313,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en[0]: {=bool:?}, en[1]: {=bool:?}, ten[0]: {=bool:?}, ten[1]: {=bool:?}, tsel[0]: {=u8:?}, tsel[1]: {=u8:?}, wave[0]: {:?}, wave[1]: {:?}, mamp[0]: {=u8:?}, mamp[1]: {=u8:?}, dmaen[0]: {=bool:?}, dmaen[1]: {=bool:?}, dmaudrie[0]: {=bool:?}, dmaudrie[1]: {=bool:?}, cen[0]: {=bool:?}, cen[1]: {=bool:?} }}" , self . en (0usize) , self . en (1usize) , self . ten (0usize) , self . ten (1usize) , self . tsel (0usize) , self . tsel (1usize) , self . wave (0usize) , self . wave (1usize) , self . mamp (0usize) , self . mamp (1usize) , self . dmaen (0usize) , self . dmaen (1usize) , self . dmaudrie (0usize) , self . dmaudrie (1usize) , self . cen (0usize) , self . cen (1usize))
+            defmt::write!(
+                f,
+                "Cr {{ en[0]: {=bool:?}, en[1]: {=bool:?}, ten[0]: {=bool:?}, ten[1]: {=bool:?}, tsel[0]: {=u8:?}, tsel[1]: {=u8:?}, wave[0]: {:?}, wave[1]: {:?}, mamp[0]: {=u8:?}, mamp[1]: {=u8:?}, dmaen[0]: {=bool:?}, dmaen[1]: {=bool:?}, dmaudrie[0]: {=bool:?}, dmaudrie[1]: {=bool:?}, cen[0]: {=bool:?}, cen[1]: {=bool:?} }}",
+                self.en(0usize),
+                self.en(1usize),
+                self.ten(0usize),
+                self.ten(1usize),
+                self.tsel(0usize),
+                self.tsel(1usize),
+                self.wave(0usize),
+                self.wave(1usize),
+                self.mamp(0usize),
+                self.mamp(1usize),
+                self.dmaen(0usize),
+                self.dmaen(1usize),
+                self.dmaudrie(0usize),
+                self.dmaudrie(1usize),
+                self.cen(0usize),
+                self.cen(1usize)
+            )
         }
     }
     #[doc = "channel 12-bit left-aligned data holding register"]
@@ -848,7 +867,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ dmaudr[0]: {=bool:?}, dmaudr[1]: {=bool:?}, cal_flag[0]: {=bool:?}, cal_flag[1]: {=bool:?}, bwst[0]: {=bool:?}, bwst[1]: {=bool:?} }}" , self . dmaudr (0usize) , self . dmaudr (1usize) , self . cal_flag (0usize) , self . cal_flag (1usize) , self . bwst (0usize) , self . bwst (1usize))
+            defmt::write!(
+                f,
+                "Sr {{ dmaudr[0]: {=bool:?}, dmaudr[1]: {=bool:?}, cal_flag[0]: {=bool:?}, cal_flag[1]: {=bool:?}, bwst[0]: {=bool:?}, bwst[1]: {=bool:?} }}",
+                self.dmaudr(0usize),
+                self.dmaudr(1usize),
+                self.cal_flag(0usize),
+                self.cal_flag(1usize),
+                self.bwst(0usize),
+                self.bwst(1usize)
+            )
         }
     }
     #[doc = "software trigger register"]

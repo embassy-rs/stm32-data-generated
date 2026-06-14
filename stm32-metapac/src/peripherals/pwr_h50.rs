@@ -491,7 +491,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pmcr {{ lpms: {:?}, svos: {:?}, cssf: {=bool:?}, flps: {:?}, booste: {=bool:?}, avd_ready: {=bool:?}, sram2so: {:?}, sram1so: {:?} }}" , self . lpms () , self . svos () , self . cssf () , self . flps () , self . booste () , self . avd_ready () , self . sram2so () , self . sram1so ())
+            defmt::write!(
+                f,
+                "Pmcr {{ lpms: {:?}, svos: {:?}, cssf: {=bool:?}, flps: {:?}, booste: {=bool:?}, avd_ready: {=bool:?}, sram2so: {:?}, sram1so: {:?} }}",
+                self.lpms(),
+                self.svos(),
+                self.cssf(),
+                self.flps(),
+                self.booste(),
+                self.avd_ready(),
+                self.sram2so(),
+                self.sram1so()
+            )
         }
     }
     #[doc = "PWR status register."]
@@ -979,7 +990,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wucr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wucr {{ wupen[0]: {=bool:?}, wupen[1]: {=bool:?}, wupen[2]: {=bool:?}, wupen[3]: {=bool:?}, wupen[4]: {=bool:?}, wupp[0]: {:?}, wupp[1]: {:?}, wupp[2]: {:?}, wupp[3]: {:?}, wupp[4]: {:?}, wuppupd[0]: {:?}, wuppupd[1]: {:?}, wuppupd[2]: {:?}, wuppupd[3]: {:?}, wuppupd[4]: {:?} }}" , self . wupen (0usize) , self . wupen (1usize) , self . wupen (2usize) , self . wupen (3usize) , self . wupen (4usize) , self . wupp (0usize) , self . wupp (1usize) , self . wupp (2usize) , self . wupp (3usize) , self . wupp (4usize) , self . wuppupd (0usize) , self . wuppupd (1usize) , self . wuppupd (2usize) , self . wuppupd (3usize) , self . wuppupd (4usize))
+            defmt::write!(
+                f,
+                "Wucr {{ wupen[0]: {=bool:?}, wupen[1]: {=bool:?}, wupen[2]: {=bool:?}, wupen[3]: {=bool:?}, wupen[4]: {=bool:?}, wupp[0]: {:?}, wupp[1]: {:?}, wupp[2]: {:?}, wupp[3]: {:?}, wupp[4]: {:?}, wuppupd[0]: {:?}, wuppupd[1]: {:?}, wuppupd[2]: {:?}, wuppupd[3]: {:?}, wuppupd[4]: {:?} }}",
+                self.wupen(0usize),
+                self.wupen(1usize),
+                self.wupen(2usize),
+                self.wupen(3usize),
+                self.wupen(4usize),
+                self.wupp(0usize),
+                self.wupp(1usize),
+                self.wupp(2usize),
+                self.wupp(3usize),
+                self.wupp(4usize),
+                self.wuppupd(0usize),
+                self.wuppupd(1usize),
+                self.wuppupd(2usize),
+                self.wuppupd(3usize),
+                self.wuppupd(4usize)
+            )
         }
     }
     #[doc = "PWR wakeup status clear register."]
@@ -1024,7 +1053,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wuscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wuscr {{ cwuf[0]: {=bool:?}, cwuf[1]: {=bool:?}, cwuf[2]: {=bool:?}, cwuf[3]: {=bool:?}, cwuf[4]: {=bool:?} }}" , self . cwuf (0usize) , self . cwuf (1usize) , self . cwuf (2usize) , self . cwuf (3usize) , self . cwuf (4usize))
+            defmt::write!(
+                f,
+                "Wuscr {{ cwuf[0]: {=bool:?}, cwuf[1]: {=bool:?}, cwuf[2]: {=bool:?}, cwuf[3]: {=bool:?}, cwuf[4]: {=bool:?} }}",
+                self.cwuf(0usize),
+                self.cwuf(1usize),
+                self.cwuf(2usize),
+                self.cwuf(3usize),
+                self.cwuf(4usize)
+            )
         }
     }
     #[doc = "PWR wakeup status register."]
@@ -1069,7 +1106,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wusr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wusr {{ wuf[0]: {=bool:?}, wuf[1]: {=bool:?}, wuf[2]: {=bool:?}, wuf[3]: {=bool:?}, wuf[4]: {=bool:?} }}" , self . wuf (0usize) , self . wuf (1usize) , self . wuf (2usize) , self . wuf (3usize) , self . wuf (4usize))
+            defmt::write!(
+                f,
+                "Wusr {{ wuf[0]: {=bool:?}, wuf[1]: {=bool:?}, wuf[2]: {=bool:?}, wuf[3]: {=bool:?}, wuf[4]: {=bool:?} }}",
+                self.wuf(0usize),
+                self.wuf(1usize),
+                self.wuf(2usize),
+                self.wuf(3usize),
+                self.wuf(4usize)
+            )
         }
     }
 }

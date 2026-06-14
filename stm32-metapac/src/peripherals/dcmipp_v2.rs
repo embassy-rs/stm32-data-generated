@@ -1520,7 +1520,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cmfcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cmfcr {{ catxerrf: {=bool:?}, cprerrf: {=bool:?}, cp0linef: {=bool:?}, cp0framef: {=bool:?}, cp0vsyncf: {=bool:?}, cp0limitf: {=bool:?}, cp0ovrf: {=bool:?}, cp1linef: {=bool:?}, cp1framef: {=bool:?}, cp1vsyncf: {=bool:?}, cp1ovrf: {=bool:?}, cp2linef: {=bool:?}, cp2framef: {=bool:?}, cp2vsyncf: {=bool:?}, cp2ovrf: {=bool:?} }}" , self . catxerrf () , self . cprerrf () , self . cp0linef () , self . cp0framef () , self . cp0vsyncf () , self . cp0limitf () , self . cp0ovrf () , self . cp1linef () , self . cp1framef () , self . cp1vsyncf () , self . cp1ovrf () , self . cp2linef () , self . cp2framef () , self . cp2vsyncf () , self . cp2ovrf ())
+            defmt::write!(
+                f,
+                "Cmfcr {{ catxerrf: {=bool:?}, cprerrf: {=bool:?}, cp0linef: {=bool:?}, cp0framef: {=bool:?}, cp0vsyncf: {=bool:?}, cp0limitf: {=bool:?}, cp0ovrf: {=bool:?}, cp1linef: {=bool:?}, cp1framef: {=bool:?}, cp1vsyncf: {=bool:?}, cp1ovrf: {=bool:?}, cp2linef: {=bool:?}, cp2framef: {=bool:?}, cp2vsyncf: {=bool:?}, cp2ovrf: {=bool:?} }}",
+                self.catxerrf(),
+                self.cprerrf(),
+                self.cp0linef(),
+                self.cp0framef(),
+                self.cp0vsyncf(),
+                self.cp0limitf(),
+                self.cp0ovrf(),
+                self.cp1linef(),
+                self.cp1framef(),
+                self.cp1vsyncf(),
+                self.cp1ovrf(),
+                self.cp2linef(),
+                self.cp2framef(),
+                self.cp2vsyncf(),
+                self.cp2ovrf()
+            )
         }
     }
     #[doc = "DCMIPP common frame counter register."]
@@ -1774,7 +1792,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cmier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cmier {{ atxerrie: {=bool:?}, prerrie: {=bool:?}, p0lineie: {=bool:?}, p0frameie: {=bool:?}, p0vsyncie: {=bool:?}, p0limitie: {=bool:?}, p0ovrie: {=bool:?}, p1lineie: {=bool:?}, p1frameie: {=bool:?}, p1vsyncie: {=bool:?}, p1ovrie: {=bool:?}, p2lineie: {=bool:?}, p2frameie: {=bool:?}, p2vsyncie: {=bool:?}, p2ovrie: {=bool:?} }}" , self . atxerrie () , self . prerrie () , self . p0lineie () , self . p0frameie () , self . p0vsyncie () , self . p0limitie () , self . p0ovrie () , self . p1lineie () , self . p1frameie () , self . p1vsyncie () , self . p1ovrie () , self . p2lineie () , self . p2frameie () , self . p2vsyncie () , self . p2ovrie ())
+            defmt::write!(
+                f,
+                "Cmier {{ atxerrie: {=bool:?}, prerrie: {=bool:?}, p0lineie: {=bool:?}, p0frameie: {=bool:?}, p0vsyncie: {=bool:?}, p0limitie: {=bool:?}, p0ovrie: {=bool:?}, p1lineie: {=bool:?}, p1frameie: {=bool:?}, p1vsyncie: {=bool:?}, p1ovrie: {=bool:?}, p2lineie: {=bool:?}, p2frameie: {=bool:?}, p2vsyncie: {=bool:?}, p2ovrie: {=bool:?} }}",
+                self.atxerrie(),
+                self.prerrie(),
+                self.p0lineie(),
+                self.p0frameie(),
+                self.p0vsyncie(),
+                self.p0limitie(),
+                self.p0ovrie(),
+                self.p1lineie(),
+                self.p1frameie(),
+                self.p1vsyncie(),
+                self.p1ovrie(),
+                self.p2lineie(),
+                self.p2frameie(),
+                self.p2vsyncie(),
+                self.p2ovrie()
+            )
         }
     }
     #[doc = "DCMIPP common status register 1."]
@@ -1941,7 +1977,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cmsr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cmsr1 {{ prhsync: {=bool:?}, prvsync: {=bool:?}, p0lstline: {=bool:?}, p0lstfrm: {=bool:?}, p0cptact: {=bool:?}, p1lstline: {=bool:?}, p1lstfrm: {=bool:?}, p1cptact: {=bool:?}, p2lstline: {=bool:?}, p2lstfrm: {=bool:?}, p2cptact: {=bool:?} }}" , self . prhsync () , self . prvsync () , self . p0lstline () , self . p0lstfrm () , self . p0cptact () , self . p1lstline () , self . p1lstfrm () , self . p1cptact () , self . p2lstline () , self . p2lstfrm () , self . p2cptact ())
+            defmt::write!(
+                f,
+                "Cmsr1 {{ prhsync: {=bool:?}, prvsync: {=bool:?}, p0lstline: {=bool:?}, p0lstfrm: {=bool:?}, p0cptact: {=bool:?}, p1lstline: {=bool:?}, p1lstfrm: {=bool:?}, p1cptact: {=bool:?}, p2lstline: {=bool:?}, p2lstfrm: {=bool:?}, p2cptact: {=bool:?} }}",
+                self.prhsync(),
+                self.prvsync(),
+                self.p0lstline(),
+                self.p0lstfrm(),
+                self.p0cptact(),
+                self.p1lstline(),
+                self.p1lstfrm(),
+                self.p1cptact(),
+                self.p2lstline(),
+                self.p2lstfrm(),
+                self.p2cptact()
+            )
         }
     }
     #[doc = "DCMIPP common status register 2."]
@@ -2160,7 +2210,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cmsr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cmsr2 {{ atxerrf: {=bool:?}, prerrf: {=bool:?}, p0linef: {=bool:?}, p0framef: {=bool:?}, p0vsyncf: {=bool:?}, p0limitf: {=bool:?}, p0ovrf: {=bool:?}, p1linef: {=bool:?}, p1framef: {=bool:?}, p1vsyncf: {=bool:?}, p1ovrf: {=bool:?}, p2linef: {=bool:?}, p2framef: {=bool:?}, p2vsyncf: {=bool:?}, p2ovrf: {=bool:?} }}" , self . atxerrf () , self . prerrf () , self . p0linef () , self . p0framef () , self . p0vsyncf () , self . p0limitf () , self . p0ovrf () , self . p1linef () , self . p1framef () , self . p1vsyncf () , self . p1ovrf () , self . p2linef () , self . p2framef () , self . p2vsyncf () , self . p2ovrf ())
+            defmt::write!(
+                f,
+                "Cmsr2 {{ atxerrf: {=bool:?}, prerrf: {=bool:?}, p0linef: {=bool:?}, p0framef: {=bool:?}, p0vsyncf: {=bool:?}, p0limitf: {=bool:?}, p0ovrf: {=bool:?}, p1linef: {=bool:?}, p1framef: {=bool:?}, p1vsyncf: {=bool:?}, p1ovrf: {=bool:?}, p2linef: {=bool:?}, p2framef: {=bool:?}, p2vsyncf: {=bool:?}, p2ovrf: {=bool:?} }}",
+                self.atxerrf(),
+                self.prerrf(),
+                self.p0linef(),
+                self.p0framef(),
+                self.p0vsyncf(),
+                self.p0limitf(),
+                self.p0ovrf(),
+                self.p1linef(),
+                self.p1framef(),
+                self.p1vsyncf(),
+                self.p1ovrf(),
+                self.p2linef(),
+                self.p2framef(),
+                self.p2vsyncf(),
+                self.p2ovrf()
+            )
         }
     }
     #[doc = "DCMIPP IPPLUG Clientx register 1."]
@@ -3510,7 +3578,19 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P0cppcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P0cppcr {{ swapyuv: {=bool:?}, pad: {=bool:?}, headeren: {=bool:?}, bsm: {=u8:?}, oebs: {=bool:?}, lsm: {=bool:?}, oels: {=bool:?}, linemult: {=u8:?}, dbm: {=bool:?} }}" , self . swapyuv () , self . pad () , self . headeren () , self . bsm () , self . oebs () , self . lsm () , self . oels () , self . linemult () , self . dbm ())
+            defmt::write!(
+                f,
+                "P0cppcr {{ swapyuv: {=bool:?}, pad: {=bool:?}, headeren: {=bool:?}, bsm: {=u8:?}, oebs: {=bool:?}, lsm: {=bool:?}, oels: {=bool:?}, linemult: {=u8:?}, dbm: {=bool:?} }}",
+                self.swapyuv(),
+                self.pad(),
+                self.headeren(),
+                self.bsm(),
+                self.oebs(),
+                self.lsm(),
+                self.oels(),
+                self.linemult(),
+                self.dbm()
+            )
         }
     }
     #[doc = "DCMIPP Pipe0 current pixel packer Memory0 address register 1."]
@@ -3897,7 +3977,15 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P0fcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P0fcr {{ clinef: {=bool:?}, cframef: {=bool:?}, cvsyncf: {=bool:?}, climitf: {=bool:?}, covrf: {=bool:?} }}" , self . clinef () , self . cframef () , self . cvsyncf () , self . climitf () , self . covrf ())
+            defmt::write!(
+                f,
+                "P0fcr {{ clinef: {=bool:?}, cframef: {=bool:?}, cvsyncf: {=bool:?}, climitf: {=bool:?}, covrf: {=bool:?} }}",
+                self.clinef(),
+                self.cframef(),
+                self.cvsyncf(),
+                self.climitf(),
+                self.covrf()
+            )
         }
     }
     #[doc = "DCMIPP Pipe0 flow control configuration register."]
@@ -4152,7 +4240,15 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P0ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P0ier {{ lineie: {=bool:?}, frameie: {=bool:?}, vsyncie: {=bool:?}, limitie: {=bool:?}, ovrie: {=bool:?} }}" , self . lineie () , self . frameie () , self . vsyncie () , self . limitie () , self . ovrie ())
+            defmt::write!(
+                f,
+                "P0ier {{ lineie: {=bool:?}, frameie: {=bool:?}, vsyncie: {=bool:?}, limitie: {=bool:?}, ovrie: {=bool:?} }}",
+                self.lineie(),
+                self.frameie(),
+                self.vsyncie(),
+                self.limitie(),
+                self.ovrie()
+            )
         }
     }
     #[doc = "DCMIPP Pipe0 pixel packer configuration register."]
@@ -4293,7 +4389,19 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P0ppcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P0ppcr {{ swapyuv: {=bool:?}, pad: {=bool:?}, headeren: {=bool:?}, bsm: {=u8:?}, oebs: {=bool:?}, lsm: {=bool:?}, oels: {=bool:?}, linemult: {=u8:?}, dbm: {=bool:?} }}" , self . swapyuv () , self . pad () , self . headeren () , self . bsm () , self . oebs () , self . lsm () , self . oels () , self . linemult () , self . dbm ())
+            defmt::write!(
+                f,
+                "P0ppcr {{ swapyuv: {=bool:?}, pad: {=bool:?}, headeren: {=bool:?}, bsm: {=u8:?}, oebs: {=bool:?}, lsm: {=bool:?}, oels: {=bool:?}, linemult: {=u8:?}, dbm: {=bool:?} }}",
+                self.swapyuv(),
+                self.pad(),
+                self.headeren(),
+                self.bsm(),
+                self.oebs(),
+                self.lsm(),
+                self.oels(),
+                self.linemult(),
+                self.dbm()
+            )
         }
     }
     #[doc = "DCMIPP Pipe0 pixel packer Memory0 address register 1."]
@@ -4629,7 +4737,18 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P0sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P0sr {{ linef: {=bool:?}, framef: {=bool:?}, vsyncf: {=bool:?}, limitf: {=bool:?}, ovrf: {=bool:?}, lstline: {=bool:?}, lstfrm: {=bool:?}, cptact: {=bool:?} }}" , self . linef () , self . framef () , self . vsyncf () , self . limitf () , self . ovrf () , self . lstline () , self . lstfrm () , self . cptact ())
+            defmt::write!(
+                f,
+                "P0sr {{ linef: {=bool:?}, framef: {=bool:?}, vsyncf: {=bool:?}, limitf: {=bool:?}, ovrf: {=bool:?}, lstline: {=bool:?}, lstfrm: {=bool:?}, cptact: {=bool:?} }}",
+                self.linef(),
+                self.framef(),
+                self.vsyncf(),
+                self.limitf(),
+                self.ovrf(),
+                self.lstline(),
+                self.lstfrm(),
+                self.cptact()
+            )
         }
     }
     #[doc = "DCMIPP Pipe0 status Memory0 address register."]
@@ -5754,7 +5873,19 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P1ccmricr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P1ccmricr {{ roilsz: {=u8:?}, roi1en: {=bool:?}, roi2en: {=bool:?}, roi3en: {=bool:?}, roi4en: {=bool:?}, roi5en: {=bool:?}, roi6en: {=bool:?}, roi7en: {=bool:?}, roi8en: {=bool:?} }}" , self . roilsz () , self . roi1en () , self . roi2en () , self . roi3en () , self . roi4en () , self . roi5en () , self . roi6en () , self . roi7en () , self . roi8en ())
+            defmt::write!(
+                f,
+                "P1ccmricr {{ roilsz: {=u8:?}, roi1en: {=bool:?}, roi2en: {=bool:?}, roi3en: {=bool:?}, roi4en: {=bool:?}, roi5en: {=bool:?}, roi6en: {=bool:?}, roi7en: {=bool:?}, roi8en: {=bool:?} }}",
+                self.roilsz(),
+                self.roi1en(),
+                self.roi2en(),
+                self.roi3en(),
+                self.roi4en(),
+                self.roi5en(),
+                self.roi6en(),
+                self.roi7en(),
+                self.roi8en()
+            )
         }
     }
     #[doc = "DCMIPP Pipe1 ColorConv red coefficient register 1."]
@@ -6796,7 +6927,18 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P1cfscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P1cfscr {{ dtida: {=u8:?}, dtidb: {=u8:?}, dtmode: {=u8:?}, pipediff: {=bool:?}, vc: {=u8:?}, fdtf: {=u8:?}, fdtfen: {=bool:?}, pipen: {=bool:?} }}" , self . dtida () , self . dtidb () , self . dtmode () , self . pipediff () , self . vc () , self . fdtf () , self . fdtfen () , self . pipen ())
+            defmt::write!(
+                f,
+                "P1cfscr {{ dtida: {=u8:?}, dtidb: {=u8:?}, dtmode: {=u8:?}, pipediff: {=bool:?}, vc: {=u8:?}, fdtf: {=u8:?}, fdtfen: {=bool:?}, pipen: {=bool:?} }}",
+                self.dtida(),
+                self.dtidb(),
+                self.dtmode(),
+                self.pipediff(),
+                self.vc(),
+                self.fdtf(),
+                self.fdtfen(),
+                self.pipen()
+            )
         }
     }
     #[doc = "DCMIPP Pipex common ROI configuration register."]
@@ -6937,7 +7079,19 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P1cmricr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P1cmricr {{ roilsz: {=u8:?}, roi1en: {=bool:?}, roi2en: {=bool:?}, roi3en: {=bool:?}, roi4en: {=bool:?}, roi5en: {=bool:?}, roi6en: {=bool:?}, roi7en: {=bool:?}, roi8en: {=bool:?} }}" , self . roilsz () , self . roi1en () , self . roi2en () , self . roi3en () , self . roi4en () , self . roi5en () , self . roi6en () , self . roi7en () , self . roi8en ())
+            defmt::write!(
+                f,
+                "P1cmricr {{ roilsz: {=u8:?}, roi1en: {=bool:?}, roi2en: {=bool:?}, roi3en: {=bool:?}, roi4en: {=bool:?}, roi5en: {=bool:?}, roi6en: {=bool:?}, roi7en: {=bool:?}, roi8en: {=bool:?} }}",
+                self.roilsz(),
+                self.roi1en(),
+                self.roi2en(),
+                self.roi3en(),
+                self.roi4en(),
+                self.roi5en(),
+                self.roi6en(),
+                self.roi7en(),
+                self.roi8en()
+            )
         }
     }
     #[doc = "DCMIPP Pipe1 current pixel packer configuration register."]
@@ -7039,7 +7193,16 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P1cppcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P1cppcr {{ format: {=u8:?}, swaprb: {=bool:?}, linemult: {=u8:?}, dbm: {=bool:?}, lmawm: {=u8:?}, lmawe: {=bool:?} }}" , self . format () , self . swaprb () , self . linemult () , self . dbm () , self . lmawm () , self . lmawe ())
+            defmt::write!(
+                f,
+                "P1cppcr {{ format: {=u8:?}, swaprb: {=bool:?}, linemult: {=u8:?}, dbm: {=bool:?}, lmawm: {=u8:?}, lmawe: {=bool:?} }}",
+                self.format(),
+                self.swaprb(),
+                self.linemult(),
+                self.dbm(),
+                self.lmawm(),
+                self.lmawe()
+            )
         }
     }
     #[doc = "DCMIPP Pipe1 current pixel packer Memory0 address register 1."]
@@ -9535,7 +9698,16 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P1dmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P1dmcr {{ enable: {=bool:?}, type_: {=u8:?}, peak: {=u8:?}, linev: {=u8:?}, lineh: {=u8:?}, edge: {=u8:?} }}" , self . enable () , self . type_ () , self . peak () , self . linev () , self . lineh () , self . edge ())
+            defmt::write!(
+                f,
+                "P1dmcr {{ enable: {=bool:?}, type_: {=u8:?}, peak: {=u8:?}, linev: {=u8:?}, lineh: {=u8:?}, edge: {=u8:?} }}",
+                self.enable(),
+                self.type_(),
+                self.peak(),
+                self.linev(),
+                self.lineh(),
+                self.edge()
+            )
         }
     }
     #[doc = "DCMIPP Pipex downsize configuration register."]
@@ -10146,7 +10318,18 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P1fscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P1fscr {{ dtida: {=u8:?}, dtidb: {=u8:?}, dtmode: {=u8:?}, pipediff: {=bool:?}, vc: {=u8:?}, fdtf: {=u8:?}, fdtfen: {=bool:?}, pipen: {=bool:?} }}" , self . dtida () , self . dtidb () , self . dtmode () , self . pipediff () , self . vc () , self . fdtf () , self . fdtfen () , self . pipen ())
+            defmt::write!(
+                f,
+                "P1fscr {{ dtida: {=u8:?}, dtidb: {=u8:?}, dtmode: {=u8:?}, pipediff: {=bool:?}, vc: {=u8:?}, fdtf: {=u8:?}, fdtfen: {=bool:?}, pipen: {=bool:?} }}",
+                self.dtida(),
+                self.dtidb(),
+                self.dtmode(),
+                self.pipediff(),
+                self.vc(),
+                self.fdtf(),
+                self.fdtfen(),
+                self.pipen()
+            )
         }
     }
     #[doc = "DCMIPP Pipex gamma configuration register."]
@@ -10366,7 +10549,16 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P1ppcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P1ppcr {{ format: {=u8:?}, swaprb: {=bool:?}, linemult: {=u8:?}, dbm: {=bool:?}, lmawm: {=u8:?}, lmawe: {=bool:?} }}" , self . format () , self . swaprb () , self . linemult () , self . dbm () , self . lmawm () , self . lmawe ())
+            defmt::write!(
+                f,
+                "P1ppcr {{ format: {=u8:?}, swaprb: {=bool:?}, linemult: {=u8:?}, dbm: {=bool:?}, lmawm: {=u8:?}, lmawe: {=bool:?} }}",
+                self.format(),
+                self.swaprb(),
+                self.linemult(),
+                self.dbm(),
+                self.lmawm(),
+                self.lmawe()
+            )
         }
     }
     #[doc = "DCMIPP Pipe1 pixel packer Memory0 address register 1."]
@@ -11977,7 +12169,17 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P1sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P1sr {{ linef: {=bool:?}, framef: {=bool:?}, vsyncf: {=bool:?}, ovrf: {=bool:?}, lstline: {=bool:?}, lstfrm: {=bool:?}, cptact: {=bool:?} }}" , self . linef () , self . framef () , self . vsyncf () , self . ovrf () , self . lstline () , self . lstfrm () , self . cptact ())
+            defmt::write!(
+                f,
+                "P1sr {{ linef: {=bool:?}, framef: {=bool:?}, vsyncf: {=bool:?}, ovrf: {=bool:?}, lstline: {=bool:?}, lstfrm: {=bool:?}, cptact: {=bool:?} }}",
+                self.linef(),
+                self.framef(),
+                self.vsyncf(),
+                self.ovrf(),
+                self.lstline(),
+                self.lstfrm(),
+                self.cptact()
+            )
         }
     }
     #[doc = "DCMIPP Pipe1 stat removal configuration register."]
@@ -13139,7 +13341,19 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P2ccmricr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P2ccmricr {{ roilsz: {=u8:?}, roi1en: {=bool:?}, roi2en: {=bool:?}, roi3en: {=bool:?}, roi4en: {=bool:?}, roi5en: {=bool:?}, roi6en: {=bool:?}, roi7en: {=bool:?}, roi8en: {=bool:?} }}" , self . roilsz () , self . roi1en () , self . roi2en () , self . roi3en () , self . roi4en () , self . roi5en () , self . roi6en () , self . roi7en () , self . roi8en ())
+            defmt::write!(
+                f,
+                "P2ccmricr {{ roilsz: {=u8:?}, roi1en: {=bool:?}, roi2en: {=bool:?}, roi3en: {=bool:?}, roi4en: {=bool:?}, roi5en: {=bool:?}, roi6en: {=bool:?}, roi7en: {=bool:?}, roi8en: {=bool:?} }}",
+                self.roilsz(),
+                self.roi1en(),
+                self.roi2en(),
+                self.roi3en(),
+                self.roi4en(),
+                self.roi5en(),
+                self.roi6en(),
+                self.roi7en(),
+                self.roi8en()
+            )
         }
     }
     #[doc = "DCMIPP Pipex current crop window start register."]
@@ -13818,7 +14032,19 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P2cmricr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P2cmricr {{ roilsz: {=u8:?}, roi1en: {=bool:?}, roi2en: {=bool:?}, roi3en: {=bool:?}, roi4en: {=bool:?}, roi5en: {=bool:?}, roi6en: {=bool:?}, roi7en: {=bool:?}, roi8en: {=bool:?} }}" , self . roilsz () , self . roi1en () , self . roi2en () , self . roi3en () , self . roi4en () , self . roi5en () , self . roi6en () , self . roi7en () , self . roi8en ())
+            defmt::write!(
+                f,
+                "P2cmricr {{ roilsz: {=u8:?}, roi1en: {=bool:?}, roi2en: {=bool:?}, roi3en: {=bool:?}, roi4en: {=bool:?}, roi5en: {=bool:?}, roi6en: {=bool:?}, roi7en: {=bool:?}, roi8en: {=bool:?} }}",
+                self.roilsz(),
+                self.roi1en(),
+                self.roi2en(),
+                self.roi3en(),
+                self.roi4en(),
+                self.roi5en(),
+                self.roi6en(),
+                self.roi7en(),
+                self.roi8en()
+            )
         }
     }
     #[doc = "DCMIPP Pipe2 current pixel packer configuration register."]
@@ -13920,7 +14146,16 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P2cppcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P2cppcr {{ format: {=u8:?}, swaprb: {=bool:?}, linemult: {=u8:?}, dbm: {=bool:?}, lmawm: {=u8:?}, lmawe: {=bool:?} }}" , self . format () , self . swaprb () , self . linemult () , self . dbm () , self . lmawm () , self . lmawe ())
+            defmt::write!(
+                f,
+                "P2cppcr {{ format: {=u8:?}, swaprb: {=bool:?}, linemult: {=u8:?}, dbm: {=bool:?}, lmawm: {=u8:?}, lmawe: {=bool:?} }}",
+                self.format(),
+                self.swaprb(),
+                self.linemult(),
+                self.dbm(),
+                self.lmawm(),
+                self.lmawe()
+            )
         }
     }
     #[doc = "DCMIPP Pipe2 current pixel packer Memory0 address register 1."]
@@ -16047,7 +16282,16 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P2ppcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P2ppcr {{ format: {=u8:?}, swaprb: {=bool:?}, linemult: {=u8:?}, dbm: {=bool:?}, lmawm: {=u8:?}, lmawe: {=bool:?} }}" , self . format () , self . swaprb () , self . linemult () , self . dbm () , self . lmawm () , self . lmawe ())
+            defmt::write!(
+                f,
+                "P2ppcr {{ format: {=u8:?}, swaprb: {=bool:?}, linemult: {=u8:?}, dbm: {=bool:?}, lmawm: {=u8:?}, lmawe: {=bool:?} }}",
+                self.format(),
+                self.swaprb(),
+                self.linemult(),
+                self.dbm(),
+                self.lmawm(),
+                self.lmawe()
+            )
         }
     }
     #[doc = "DCMIPP Pipe2 pixel packer Memory0 address register 1."]
@@ -17483,7 +17727,17 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for P2sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "P2sr {{ linef: {=bool:?}, framef: {=bool:?}, vsyncf: {=bool:?}, ovrf: {=bool:?}, lstline: {=bool:?}, lstfrm: {=bool:?}, cptact: {=bool:?} }}" , self . linef () , self . framef () , self . vsyncf () , self . ovrf () , self . lstline () , self . lstfrm () , self . cptact ())
+            defmt::write!(
+                f,
+                "P2sr {{ linef: {=bool:?}, framef: {=bool:?}, vsyncf: {=bool:?}, ovrf: {=bool:?}, lstline: {=bool:?}, lstfrm: {=bool:?}, cptact: {=bool:?} }}",
+                self.linef(),
+                self.framef(),
+                self.vsyncf(),
+                self.ovrf(),
+                self.lstline(),
+                self.lstfrm(),
+                self.cptact()
+            )
         }
     }
     #[doc = "DCMIPP Pipex status Memory0 address register."]
@@ -17659,7 +17913,19 @@ arbitration."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Prcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Prcr {{ ess: {=bool:?}, pckpol: {=bool:?}, hspol: {=bool:?}, vspol: {=bool:?}, edm: {=u8:?}, enable: {=bool:?}, format: {=u8:?}, swapcycles: {=bool:?}, swapbits: {=bool:?} }}" , self . ess () , self . pckpol () , self . hspol () , self . vspol () , self . edm () , self . enable () , self . format () , self . swapcycles () , self . swapbits ())
+            defmt::write!(
+                f,
+                "Prcr {{ ess: {=bool:?}, pckpol: {=bool:?}, hspol: {=bool:?}, vspol: {=bool:?}, edm: {=u8:?}, enable: {=bool:?}, format: {=u8:?}, swapcycles: {=bool:?}, swapbits: {=bool:?} }}",
+                self.ess(),
+                self.pckpol(),
+                self.hspol(),
+                self.vspol(),
+                self.edm(),
+                self.enable(),
+                self.format(),
+                self.swapcycles(),
+                self.swapbits()
+            )
         }
     }
     #[doc = "DCMIPP parallel interface embedded synchronization code register."]

@@ -1034,7 +1034,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Af11chCmp {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Af11chCmp {{ bkine: {=bool:?}, bkcmpe[0]: {=bool:?}, bkcmpe[1]: {=bool:?}, bkdf1bke: {=bool:?}, bkinp: {:?}, bkcmpp[0]: {:?}, bkcmpp[1]: {:?} }}" , self . bkine () , self . bkcmpe (0usize) , self . bkcmpe (1usize) , self . bkdf1bke () , self . bkinp () , self . bkcmpp (0usize) , self . bkcmpp (1usize))
+            defmt::write!(
+                f,
+                "Af11chCmp {{ bkine: {=bool:?}, bkcmpe[0]: {=bool:?}, bkcmpe[1]: {=bool:?}, bkdf1bke: {=bool:?}, bkinp: {:?}, bkcmpp[0]: {:?}, bkcmpp[1]: {:?} }}",
+                self.bkine(),
+                self.bkcmpe(0usize),
+                self.bkcmpe(1usize),
+                self.bkdf1bke(),
+                self.bkinp(),
+                self.bkcmpp(0usize),
+                self.bkcmpp(1usize)
+            )
         }
     }
     #[doc = "alternate function register 1"]
@@ -1146,7 +1156,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Af1Adv {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Af1Adv {{ bkine: {=bool:?}, bkcmpe[0]: {=bool:?}, bkcmpe[1]: {=bool:?}, bkdf1bke: {=bool:?}, bkinp: {:?}, bkcmpp[0]: {:?}, bkcmpp[1]: {:?}, etrsel: {=u8:?} }}" , self . bkine () , self . bkcmpe (0usize) , self . bkcmpe (1usize) , self . bkdf1bke () , self . bkinp () , self . bkcmpp (0usize) , self . bkcmpp (1usize) , self . etrsel ())
+            defmt::write!(
+                f,
+                "Af1Adv {{ bkine: {=bool:?}, bkcmpe[0]: {=bool:?}, bkcmpe[1]: {=bool:?}, bkdf1bke: {=bool:?}, bkinp: {:?}, bkcmpp[0]: {:?}, bkcmpp[1]: {:?}, etrsel: {=u8:?} }}",
+                self.bkine(),
+                self.bkcmpe(0usize),
+                self.bkcmpe(1usize),
+                self.bkdf1bke(),
+                self.bkinp(),
+                self.bkcmpp(0usize),
+                self.bkcmpp(1usize),
+                self.etrsel()
+            )
         }
     }
     #[doc = "alternate function register 1"]
@@ -1279,7 +1300,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Af2Adv {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Af2Adv {{ bk2ine: {=bool:?}, bk2cmpe[0]: {=bool:?}, bk2df1bk1e: {=bool:?}, bk2inp: {:?}, bk2cmpp[0]: {:?}, bk2cmpp[1]: {:?} }}" , self . bk2ine () , self . bk2cmpe (0usize) , self . bk2df1bk1e () , self . bk2inp () , self . bk2cmpp (0usize) , self . bk2cmpp (1usize))
+            defmt::write!(
+                f,
+                "Af2Adv {{ bk2ine: {=bool:?}, bk2cmpe[0]: {=bool:?}, bk2df1bk1e: {=bool:?}, bk2inp: {:?}, bk2cmpp[0]: {:?}, bk2cmpp[1]: {:?} }}",
+                self.bk2ine(),
+                self.bk2cmpe(0usize),
+                self.bk2df1bk1e(),
+                self.bk2inp(),
+                self.bk2cmpp(0usize),
+                self.bk2cmpp(1usize)
+            )
         }
     }
     #[doc = "auto-reload register"]
@@ -1467,7 +1497,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bdtr1chCmp {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Bdtr1chCmp {{ dtg: {=u8:?}, lock: {:?}, ossi: {:?}, ossr: {:?}, bke[0]: {=bool:?}, bkp[0]: {:?}, aoe: {=bool:?}, moe: {=bool:?}, bkf[0]: {:?} }}" , self . dtg () , self . lock () , self . ossi () , self . ossr () , self . bke (0usize) , self . bkp (0usize) , self . aoe () , self . moe () , self . bkf (0usize))
+            defmt::write!(
+                f,
+                "Bdtr1chCmp {{ dtg: {=u8:?}, lock: {:?}, ossi: {:?}, ossr: {:?}, bke[0]: {=bool:?}, bkp[0]: {:?}, aoe: {=bool:?}, moe: {=bool:?}, bkf[0]: {:?} }}",
+                self.dtg(),
+                self.lock(),
+                self.ossi(),
+                self.ossr(),
+                self.bke(0usize),
+                self.bkp(0usize),
+                self.aoe(),
+                self.moe(),
+                self.bkf(0usize)
+            )
         }
     }
     #[doc = "break and dead-time register"]
@@ -1623,7 +1665,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for BdtrAdv {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "BdtrAdv {{ dtg: {=u8:?}, lock: {:?}, ossi: {:?}, ossr: {:?}, bke[0]: {=bool:?}, bke[1]: {=bool:?}, bkp[0]: {:?}, bkp[1]: {:?}, aoe: {=bool:?}, moe: {=bool:?}, bkf[0]: {:?}, bkf[1]: {:?} }}" , self . dtg () , self . lock () , self . ossi () , self . ossr () , self . bke (0usize) , self . bke (1usize) , self . bkp (0usize) , self . bkp (1usize) , self . aoe () , self . moe () , self . bkf (0usize) , self . bkf (1usize))
+            defmt::write!(
+                f,
+                "BdtrAdv {{ dtg: {=u8:?}, lock: {:?}, ossi: {:?}, ossr: {:?}, bke[0]: {=bool:?}, bke[1]: {=bool:?}, bkp[0]: {:?}, bkp[1]: {:?}, aoe: {=bool:?}, moe: {=bool:?}, bkf[0]: {:?}, bkf[1]: {:?} }}",
+                self.dtg(),
+                self.lock(),
+                self.ossi(),
+                self.ossr(),
+                self.bke(0usize),
+                self.bke(1usize),
+                self.bkp(0usize),
+                self.bkp(1usize),
+                self.aoe(),
+                self.moe(),
+                self.bkf(0usize),
+                self.bkf(1usize)
+            )
         }
     }
     #[doc = "capture/compare enable register"]
@@ -1881,7 +1938,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccer2ch {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ccer2ch {{ cce[0]: {=bool:?}, cce[1]: {=bool:?}, ccp[0]: {=bool:?}, ccp[1]: {=bool:?}, ccnp[0]: {=bool:?}, ccnp[1]: {=bool:?} }}" , self . cce (0usize) , self . cce (1usize) , self . ccp (0usize) , self . ccp (1usize) , self . ccnp (0usize) , self . ccnp (1usize))
+            defmt::write!(
+                f,
+                "Ccer2ch {{ cce[0]: {=bool:?}, cce[1]: {=bool:?}, ccp[0]: {=bool:?}, ccp[1]: {=bool:?}, ccnp[0]: {=bool:?}, ccnp[1]: {=bool:?} }}",
+                self.cce(0usize),
+                self.cce(1usize),
+                self.ccp(0usize),
+                self.ccp(1usize),
+                self.ccnp(0usize),
+                self.ccnp(1usize)
+            )
         }
     }
     #[doc = "capture/compare enable register"]
@@ -1976,7 +2042,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccer2chCmp {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ccer2chCmp {{ cce[0]: {=bool:?}, cce[1]: {=bool:?}, ccp[0]: {=bool:?}, ccp[1]: {=bool:?}, ccne[0]: {=bool:?}, ccnp[0]: {=bool:?}, ccnp[1]: {=bool:?} }}" , self . cce (0usize) , self . cce (1usize) , self . ccp (0usize) , self . ccp (1usize) , self . ccne (0usize) , self . ccnp (0usize) , self . ccnp (1usize))
+            defmt::write!(
+                f,
+                "Ccer2chCmp {{ cce[0]: {=bool:?}, cce[1]: {=bool:?}, ccp[0]: {=bool:?}, ccp[1]: {=bool:?}, ccne[0]: {=bool:?}, ccnp[0]: {=bool:?}, ccnp[1]: {=bool:?} }}",
+                self.cce(0usize),
+                self.cce(1usize),
+                self.ccp(0usize),
+                self.ccp(1usize),
+                self.ccne(0usize),
+                self.ccnp(0usize),
+                self.ccnp(1usize)
+            )
         }
     }
     #[doc = "capture/compare enable register"]
@@ -2083,7 +2159,29 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for CcerAdv {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "CcerAdv {{ cce[0]: {=bool:?}, cce[1]: {=bool:?}, cce[2]: {=bool:?}, cce[3]: {=bool:?}, cce[4]: {=bool:?}, cce[5]: {=bool:?}, ccp[0]: {=bool:?}, ccp[1]: {=bool:?}, ccp[2]: {=bool:?}, ccp[3]: {=bool:?}, ccp[4]: {=bool:?}, ccp[5]: {=bool:?}, ccne[0]: {=bool:?}, ccne[1]: {=bool:?}, ccne[2]: {=bool:?}, ccnp[0]: {=bool:?}, ccnp[1]: {=bool:?}, ccnp[2]: {=bool:?}, ccnp[3]: {=bool:?} }}" , self . cce (0usize) , self . cce (1usize) , self . cce (2usize) , self . cce (3usize) , self . cce (4usize) , self . cce (5usize) , self . ccp (0usize) , self . ccp (1usize) , self . ccp (2usize) , self . ccp (3usize) , self . ccp (4usize) , self . ccp (5usize) , self . ccne (0usize) , self . ccne (1usize) , self . ccne (2usize) , self . ccnp (0usize) , self . ccnp (1usize) , self . ccnp (2usize) , self . ccnp (3usize))
+            defmt::write!(
+                f,
+                "CcerAdv {{ cce[0]: {=bool:?}, cce[1]: {=bool:?}, cce[2]: {=bool:?}, cce[3]: {=bool:?}, cce[4]: {=bool:?}, cce[5]: {=bool:?}, ccp[0]: {=bool:?}, ccp[1]: {=bool:?}, ccp[2]: {=bool:?}, ccp[3]: {=bool:?}, ccp[4]: {=bool:?}, ccp[5]: {=bool:?}, ccne[0]: {=bool:?}, ccne[1]: {=bool:?}, ccne[2]: {=bool:?}, ccnp[0]: {=bool:?}, ccnp[1]: {=bool:?}, ccnp[2]: {=bool:?}, ccnp[3]: {=bool:?} }}",
+                self.cce(0usize),
+                self.cce(1usize),
+                self.cce(2usize),
+                self.cce(3usize),
+                self.cce(4usize),
+                self.cce(5usize),
+                self.ccp(0usize),
+                self.ccp(1usize),
+                self.ccp(2usize),
+                self.ccp(3usize),
+                self.ccp(4usize),
+                self.ccp(5usize),
+                self.ccne(0usize),
+                self.ccne(1usize),
+                self.ccne(2usize),
+                self.ccnp(0usize),
+                self.ccnp(1usize),
+                self.ccnp(2usize),
+                self.ccnp(3usize)
+            )
         }
     }
     #[doc = "capture/compare enable register"]
@@ -2167,7 +2265,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for CcerGp16 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "CcerGp16 {{ cce[0]: {=bool:?}, cce[1]: {=bool:?}, cce[2]: {=bool:?}, cce[3]: {=bool:?}, ccp[0]: {=bool:?}, ccp[1]: {=bool:?}, ccp[2]: {=bool:?}, ccp[3]: {=bool:?}, ccnp[0]: {=bool:?}, ccnp[1]: {=bool:?}, ccnp[2]: {=bool:?}, ccnp[3]: {=bool:?} }}" , self . cce (0usize) , self . cce (1usize) , self . cce (2usize) , self . cce (3usize) , self . ccp (0usize) , self . ccp (1usize) , self . ccp (2usize) , self . ccp (3usize) , self . ccnp (0usize) , self . ccnp (1usize) , self . ccnp (2usize) , self . ccnp (3usize))
+            defmt::write!(
+                f,
+                "CcerGp16 {{ cce[0]: {=bool:?}, cce[1]: {=bool:?}, cce[2]: {=bool:?}, cce[3]: {=bool:?}, ccp[0]: {=bool:?}, ccp[1]: {=bool:?}, ccp[2]: {=bool:?}, ccp[3]: {=bool:?}, ccnp[0]: {=bool:?}, ccnp[1]: {=bool:?}, ccnp[2]: {=bool:?}, ccnp[3]: {=bool:?} }}",
+                self.cce(0usize),
+                self.cce(1usize),
+                self.cce(2usize),
+                self.cce(3usize),
+                self.ccp(0usize),
+                self.ccp(1usize),
+                self.ccp(2usize),
+                self.ccp(3usize),
+                self.ccnp(0usize),
+                self.ccnp(1usize),
+                self.ccnp(2usize),
+                self.ccnp(3usize)
+            )
         }
     }
     #[doc = "capture/compare mode register 3"]
@@ -2268,7 +2381,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccmr3Adv {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ccmr3Adv {{ ocfe[0]: {=bool:?}, ocfe[1]: {=bool:?}, ocpe[0]: {=bool:?}, ocpe[1]: {=bool:?}, ocm[0]: {:?}, ocm[1]: {:?}, occe[0]: {=bool:?}, occe[1]: {=bool:?} }}" , self . ocfe (0usize) , self . ocfe (1usize) , self . ocpe (0usize) , self . ocpe (1usize) , self . ocm (0usize) , self . ocm (1usize) , self . occe (0usize) , self . occe (1usize))
+            defmt::write!(
+                f,
+                "Ccmr3Adv {{ ocfe[0]: {=bool:?}, ocfe[1]: {=bool:?}, ocpe[0]: {=bool:?}, ocpe[1]: {=bool:?}, ocm[0]: {:?}, ocm[1]: {:?}, occe[0]: {=bool:?}, occe[1]: {=bool:?} }}",
+                self.ocfe(0usize),
+                self.ocfe(1usize),
+                self.ocpe(0usize),
+                self.ocpe(1usize),
+                self.ocm(0usize),
+                self.ocm(1usize),
+                self.occe(0usize),
+                self.occe(1usize)
+            )
         }
     }
     #[doc = "capture/compare mode register x (x=1) (input mode)"]
@@ -2427,7 +2551,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for CcmrInput2ch {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "CcmrInput2ch {{ ccs[0]: {:?}, ccs[1]: {:?}, icpsc[0]: {=u8:?}, icpsc[1]: {=u8:?}, icf[0]: {:?}, icf[1]: {:?} }}" , self . ccs (0usize) , self . ccs (1usize) , self . icpsc (0usize) , self . icpsc (1usize) , self . icf (0usize) , self . icf (1usize))
+            defmt::write!(
+                f,
+                "CcmrInput2ch {{ ccs[0]: {:?}, ccs[1]: {:?}, icpsc[0]: {=u8:?}, icpsc[1]: {=u8:?}, icf[0]: {:?}, icf[1]: {:?} }}",
+                self.ccs(0usize),
+                self.ccs(1usize),
+                self.icpsc(0usize),
+                self.icpsc(1usize),
+                self.icf(0usize),
+                self.icf(1usize)
+            )
         }
     }
     #[doc = "capture/compare mode register x (x=1) (output mode)"]
@@ -2632,7 +2765,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for CcmrOutput2ch {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "CcmrOutput2ch {{ ccs[0]: {:?}, ccs[1]: {:?}, ocfe[0]: {=bool:?}, ocfe[1]: {=bool:?}, ocpe[0]: {=bool:?}, ocpe[1]: {=bool:?}, ocm[0]: {:?}, ocm[1]: {:?} }}" , self . ccs (0usize) , self . ccs (1usize) , self . ocfe (0usize) , self . ocfe (1usize) , self . ocpe (0usize) , self . ocpe (1usize) , self . ocm (0usize) , self . ocm (1usize))
+            defmt::write!(
+                f,
+                "CcmrOutput2ch {{ ccs[0]: {:?}, ccs[1]: {:?}, ocfe[0]: {=bool:?}, ocfe[1]: {=bool:?}, ocpe[0]: {=bool:?}, ocpe[1]: {=bool:?}, ocm[0]: {:?}, ocm[1]: {:?} }}",
+                self.ccs(0usize),
+                self.ccs(1usize),
+                self.ocfe(0usize),
+                self.ocfe(1usize),
+                self.ocpe(0usize),
+                self.ocpe(1usize),
+                self.ocm(0usize),
+                self.ocm(1usize)
+            )
         }
     }
     #[doc = "capture/compare mode register x (x=1-2) (output mode)"]
@@ -2751,7 +2895,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for CcmrOutputGp16 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "CcmrOutputGp16 {{ ccs[0]: {:?}, ccs[1]: {:?}, ocfe[0]: {=bool:?}, ocfe[1]: {=bool:?}, ocpe[0]: {=bool:?}, ocpe[1]: {=bool:?}, ocm[0]: {:?}, ocm[1]: {:?}, occe[0]: {=bool:?}, occe[1]: {=bool:?} }}" , self . ccs (0usize) , self . ccs (1usize) , self . ocfe (0usize) , self . ocfe (1usize) , self . ocpe (0usize) , self . ocpe (1usize) , self . ocm (0usize) , self . ocm (1usize) , self . occe (0usize) , self . occe (1usize))
+            defmt::write!(
+                f,
+                "CcmrOutputGp16 {{ ccs[0]: {:?}, ccs[1]: {:?}, ocfe[0]: {=bool:?}, ocfe[1]: {=bool:?}, ocpe[0]: {=bool:?}, ocpe[1]: {=bool:?}, ocm[0]: {:?}, ocm[1]: {:?}, occe[0]: {=bool:?}, occe[1]: {=bool:?} }}",
+                self.ccs(0usize),
+                self.ccs(1usize),
+                self.ocfe(0usize),
+                self.ocfe(1usize),
+                self.ocpe(0usize),
+                self.ocpe(1usize),
+                self.ocm(0usize),
+                self.ocm(1usize),
+                self.occe(0usize),
+                self.occe(1usize)
+            )
         }
     }
     #[doc = "capture/compare register x (x=1-4,6)"]
@@ -3019,7 +3176,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr11ch {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr11ch {{ cen: {=bool:?}, udis: {=bool:?}, urs: {:?}, opm: {=bool:?}, arpe: {=bool:?}, ckd: {:?}, uifremap: {=bool:?} }}" , self . cen () , self . udis () , self . urs () , self . opm () , self . arpe () , self . ckd () , self . uifremap ())
+            defmt::write!(
+                f,
+                "Cr11ch {{ cen: {=bool:?}, udis: {=bool:?}, urs: {:?}, opm: {=bool:?}, arpe: {=bool:?}, ckd: {:?}, uifremap: {=bool:?} }}",
+                self.cen(),
+                self.udis(),
+                self.urs(),
+                self.opm(),
+                self.arpe(),
+                self.ckd(),
+                self.uifremap()
+            )
         }
     }
     #[doc = "control register 1"]
@@ -3121,7 +3288,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1Core {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1Core {{ cen: {=bool:?}, udis: {=bool:?}, urs: {:?}, opm: {=bool:?}, arpe: {=bool:?}, uifremap: {=bool:?} }}" , self . cen () , self . udis () , self . urs () , self . opm () , self . arpe () , self . uifremap ())
+            defmt::write!(
+                f,
+                "Cr1Core {{ cen: {=bool:?}, udis: {=bool:?}, urs: {:?}, opm: {=bool:?}, arpe: {=bool:?}, uifremap: {=bool:?} }}",
+                self.cen(),
+                self.udis(),
+                self.urs(),
+                self.opm(),
+                self.arpe(),
+                self.uifremap()
+            )
         }
     }
     #[doc = "control register 1"]
@@ -3262,7 +3438,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1Gp16 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1Gp16 {{ cen: {=bool:?}, udis: {=bool:?}, urs: {:?}, opm: {=bool:?}, dir: {:?}, cms: {:?}, arpe: {=bool:?}, ckd: {:?}, uifremap: {=bool:?} }}" , self . cen () , self . udis () , self . urs () , self . opm () , self . dir () , self . cms () , self . arpe () , self . ckd () , self . uifremap ())
+            defmt::write!(
+                f,
+                "Cr1Gp16 {{ cen: {=bool:?}, udis: {=bool:?}, urs: {:?}, opm: {=bool:?}, dir: {:?}, cms: {:?}, arpe: {=bool:?}, ckd: {:?}, uifremap: {=bool:?} }}",
+                self.cen(),
+                self.udis(),
+                self.urs(),
+                self.opm(),
+                self.dir(),
+                self.cms(),
+                self.arpe(),
+                self.ckd(),
+                self.uifremap()
+            )
         }
     }
     #[doc = "control register 2"]
@@ -3541,7 +3729,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr22chCmp {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr22chCmp {{ ccpc: {=bool:?}, ccus: {=bool:?}, ccds: {:?}, mms: {:?}, ti1s: {:?}, ois[0]: {=bool:?}, ois[1]: {=bool:?}, oisn[0]: {=bool:?} }}" , self . ccpc () , self . ccus () , self . ccds () , self . mms () , self . ti1s () , self . ois (0usize) , self . ois (1usize) , self . oisn (0usize))
+            defmt::write!(
+                f,
+                "Cr22chCmp {{ ccpc: {=bool:?}, ccus: {=bool:?}, ccds: {:?}, mms: {:?}, ti1s: {:?}, ois[0]: {=bool:?}, ois[1]: {=bool:?}, oisn[0]: {=bool:?} }}",
+                self.ccpc(),
+                self.ccus(),
+                self.ccds(),
+                self.mms(),
+                self.ti1s(),
+                self.ois(0usize),
+                self.ois(1usize),
+                self.oisn(0usize)
+            )
         }
     }
     #[doc = "control register 2"]
@@ -3685,7 +3884,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2Adv {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2Adv {{ ccpc: {=bool:?}, ccus: {=bool:?}, ccds: {:?}, mms: {:?}, ti1s: {:?}, ois[0]: {=bool:?}, ois[1]: {=bool:?}, ois[2]: {=bool:?}, ois[3]: {=bool:?}, ois[4]: {=bool:?}, ois[5]: {=bool:?}, oisn[0]: {=bool:?}, oisn[1]: {=bool:?}, oisn[2]: {=bool:?}, oisn[3]: {=bool:?}, mms2: {:?} }}" , self . ccpc () , self . ccus () , self . ccds () , self . mms () , self . ti1s () , self . ois (0usize) , self . ois (1usize) , self . ois (2usize) , self . ois (3usize) , self . ois (4usize) , self . ois (5usize) , self . oisn (0usize) , self . oisn (1usize) , self . oisn (2usize) , self . oisn (3usize) , self . mms2 ())
+            defmt::write!(
+                f,
+                "Cr2Adv {{ ccpc: {=bool:?}, ccus: {=bool:?}, ccds: {:?}, mms: {:?}, ti1s: {:?}, ois[0]: {=bool:?}, ois[1]: {=bool:?}, ois[2]: {=bool:?}, ois[3]: {=bool:?}, ois[4]: {=bool:?}, ois[5]: {=bool:?}, oisn[0]: {=bool:?}, oisn[1]: {=bool:?}, oisn[2]: {=bool:?}, oisn[3]: {=bool:?}, mms2: {:?} }}",
+                self.ccpc(),
+                self.ccus(),
+                self.ccds(),
+                self.mms(),
+                self.ti1s(),
+                self.ois(0usize),
+                self.ois(1usize),
+                self.ois(2usize),
+                self.ois(3usize),
+                self.ois(4usize),
+                self.ois(5usize),
+                self.oisn(0usize),
+                self.oisn(1usize),
+                self.oisn(2usize),
+                self.oisn(3usize),
+                self.mms2()
+            )
         }
     }
     #[doc = "control register 2"]
@@ -4008,7 +4226,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dier1chCmp {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dier1chCmp {{ uie: {=bool:?}, ccie[0]: {=bool:?}, comie: {=bool:?}, bie: {=bool:?}, ude: {=bool:?}, ccde[0]: {=bool:?} }}" , self . uie () , self . ccie (0usize) , self . comie () , self . bie () , self . ude () , self . ccde (0usize))
+            defmt::write!(
+                f,
+                "Dier1chCmp {{ uie: {=bool:?}, ccie[0]: {=bool:?}, comie: {=bool:?}, bie: {=bool:?}, ude: {=bool:?}, ccde[0]: {=bool:?} }}",
+                self.uie(),
+                self.ccie(0usize),
+                self.comie(),
+                self.bie(),
+                self.ude(),
+                self.ccde(0usize)
+            )
         }
     }
     #[doc = "DMA/Interrupt enable register"]
@@ -4232,7 +4459,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dier2chCmp {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dier2chCmp {{ uie: {=bool:?}, ccie[0]: {=bool:?}, comie: {=bool:?}, tie: {=bool:?}, bie: {=bool:?}, ude: {=bool:?}, ccde[0]: {=bool:?}, comde: {=bool:?}, tde: {=bool:?} }}" , self . uie () , self . ccie (0usize) , self . comie () , self . tie () , self . bie () , self . ude () , self . ccde (0usize) , self . comde () , self . tde ())
+            defmt::write!(
+                f,
+                "Dier2chCmp {{ uie: {=bool:?}, ccie[0]: {=bool:?}, comie: {=bool:?}, tie: {=bool:?}, bie: {=bool:?}, ude: {=bool:?}, ccde[0]: {=bool:?}, comde: {=bool:?}, tde: {=bool:?} }}",
+                self.uie(),
+                self.ccie(0usize),
+                self.comie(),
+                self.tie(),
+                self.bie(),
+                self.ude(),
+                self.ccde(0usize),
+                self.comde(),
+                self.tde()
+            )
         }
     }
     #[doc = "DMA/Interrupt enable register"]
@@ -4387,7 +4626,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DierAdv {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "DierAdv {{ uie: {=bool:?}, ccie[0]: {=bool:?}, ccie[1]: {=bool:?}, ccie[2]: {=bool:?}, ccie[3]: {=bool:?}, comie: {=bool:?}, tie: {=bool:?}, bie: {=bool:?}, ude: {=bool:?}, ccde[0]: {=bool:?}, ccde[1]: {=bool:?}, ccde[2]: {=bool:?}, ccde[3]: {=bool:?}, comde: {=bool:?}, tde: {=bool:?} }}" , self . uie () , self . ccie (0usize) , self . ccie (1usize) , self . ccie (2usize) , self . ccie (3usize) , self . comie () , self . tie () , self . bie () , self . ude () , self . ccde (0usize) , self . ccde (1usize) , self . ccde (2usize) , self . ccde (3usize) , self . comde () , self . tde ())
+            defmt::write!(
+                f,
+                "DierAdv {{ uie: {=bool:?}, ccie[0]: {=bool:?}, ccie[1]: {=bool:?}, ccie[2]: {=bool:?}, ccie[3]: {=bool:?}, comie: {=bool:?}, tie: {=bool:?}, bie: {=bool:?}, ude: {=bool:?}, ccde[0]: {=bool:?}, ccde[1]: {=bool:?}, ccde[2]: {=bool:?}, ccde[3]: {=bool:?}, comde: {=bool:?}, tde: {=bool:?} }}",
+                self.uie(),
+                self.ccie(0usize),
+                self.ccie(1usize),
+                self.ccie(2usize),
+                self.ccie(3usize),
+                self.comie(),
+                self.tie(),
+                self.bie(),
+                self.ude(),
+                self.ccde(0usize),
+                self.ccde(1usize),
+                self.ccde(2usize),
+                self.ccde(3usize),
+                self.comde(),
+                self.tde()
+            )
         }
     }
     #[doc = "DMA/Interrupt enable register"]
@@ -4593,7 +4850,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for DierGp16 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "DierGp16 {{ uie: {=bool:?}, ccie[0]: {=bool:?}, ccie[1]: {=bool:?}, ccie[2]: {=bool:?}, ccie[3]: {=bool:?}, tie: {=bool:?}, ude: {=bool:?}, ccde[0]: {=bool:?}, ccde[1]: {=bool:?}, ccde[2]: {=bool:?}, ccde[3]: {=bool:?}, tde: {=bool:?} }}" , self . uie () , self . ccie (0usize) , self . ccie (1usize) , self . ccie (2usize) , self . ccie (3usize) , self . tie () , self . ude () , self . ccde (0usize) , self . ccde (1usize) , self . ccde (2usize) , self . ccde (3usize) , self . tde ())
+            defmt::write!(
+                f,
+                "DierGp16 {{ uie: {=bool:?}, ccie[0]: {=bool:?}, ccie[1]: {=bool:?}, ccie[2]: {=bool:?}, ccie[3]: {=bool:?}, tie: {=bool:?}, ude: {=bool:?}, ccde[0]: {=bool:?}, ccde[1]: {=bool:?}, ccde[2]: {=bool:?}, ccde[3]: {=bool:?}, tde: {=bool:?} }}",
+                self.uie(),
+                self.ccie(0usize),
+                self.ccie(1usize),
+                self.ccie(2usize),
+                self.ccie(3usize),
+                self.tie(),
+                self.ude(),
+                self.ccde(0usize),
+                self.ccde(1usize),
+                self.ccde(2usize),
+                self.ccde(3usize),
+                self.tde()
+            )
         }
     }
     #[doc = "DMA address for full transfer"]
@@ -4951,7 +5223,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Egr2chCmp {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Egr2chCmp {{ ug: {=bool:?}, ccg[0]: {=bool:?}, ccg[1]: {=bool:?}, comg: {=bool:?}, tg: {=bool:?}, bg[0]: {=bool:?} }}" , self . ug () , self . ccg (0usize) , self . ccg (1usize) , self . comg () , self . tg () , self . bg (0usize))
+            defmt::write!(
+                f,
+                "Egr2chCmp {{ ug: {=bool:?}, ccg[0]: {=bool:?}, ccg[1]: {=bool:?}, comg: {=bool:?}, tg: {=bool:?}, bg[0]: {=bool:?} }}",
+                self.ug(),
+                self.ccg(0usize),
+                self.ccg(1usize),
+                self.comg(),
+                self.tg(),
+                self.bg(0usize)
+            )
         }
     }
     #[doc = "event generation register"]
@@ -5052,7 +5333,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for EgrAdv {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "EgrAdv {{ ug: {=bool:?}, ccg[0]: {=bool:?}, ccg[1]: {=bool:?}, ccg[2]: {=bool:?}, ccg[3]: {=bool:?}, comg: {=bool:?}, tg: {=bool:?}, bg[0]: {=bool:?}, bg[1]: {=bool:?} }}" , self . ug () , self . ccg (0usize) , self . ccg (1usize) , self . ccg (2usize) , self . ccg (3usize) , self . comg () , self . tg () , self . bg (0usize) , self . bg (1usize))
+            defmt::write!(
+                f,
+                "EgrAdv {{ ug: {=bool:?}, ccg[0]: {=bool:?}, ccg[1]: {=bool:?}, ccg[2]: {=bool:?}, ccg[3]: {=bool:?}, comg: {=bool:?}, tg: {=bool:?}, bg[0]: {=bool:?}, bg[1]: {=bool:?} }}",
+                self.ug(),
+                self.ccg(0usize),
+                self.ccg(1usize),
+                self.ccg(2usize),
+                self.ccg(3usize),
+                self.comg(),
+                self.tg(),
+                self.bg(0usize),
+                self.bg(1usize)
+            )
         }
     }
     #[doc = "event generation register"]
@@ -5157,7 +5450,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for EgrGp16 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "EgrGp16 {{ ug: {=bool:?}, ccg[0]: {=bool:?}, ccg[1]: {=bool:?}, ccg[2]: {=bool:?}, ccg[3]: {=bool:?}, tg: {=bool:?} }}" , self . ug () , self . ccg (0usize) , self . ccg (1usize) , self . ccg (2usize) , self . ccg (3usize) , self . tg ())
+            defmt::write!(
+                f,
+                "EgrGp16 {{ ug: {=bool:?}, ccg[0]: {=bool:?}, ccg[1]: {=bool:?}, ccg[2]: {=bool:?}, ccg[3]: {=bool:?}, tg: {=bool:?} }}",
+                self.ug(),
+                self.ccg(0usize),
+                self.ccg(1usize),
+                self.ccg(2usize),
+                self.ccg(3usize),
+                self.tg()
+            )
         }
     }
     #[doc = "repetition counter register"]
@@ -5611,7 +5913,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr1chCmp {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr1chCmp {{ uif: {=bool:?}, ccif[0]: {=bool:?}, comif: {=bool:?}, bif[0]: {=bool:?}, ccof[0]: {=bool:?} }}" , self . uif () , self . ccif (0usize) , self . comif () , self . bif (0usize) , self . ccof (0usize))
+            defmt::write!(
+                f,
+                "Sr1chCmp {{ uif: {=bool:?}, ccif[0]: {=bool:?}, comif: {=bool:?}, bif[0]: {=bool:?}, ccof[0]: {=bool:?} }}",
+                self.uif(),
+                self.ccif(0usize),
+                self.comif(),
+                self.bif(0usize),
+                self.ccof(0usize)
+            )
         }
     }
     #[doc = "status register"]
@@ -5697,7 +6007,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr2ch {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr2ch {{ uif: {=bool:?}, ccif[0]: {=bool:?}, ccif[1]: {=bool:?}, tif: {=bool:?}, ccof[0]: {=bool:?}, ccof[1]: {=bool:?} }}" , self . uif () , self . ccif (0usize) , self . ccif (1usize) , self . tif () , self . ccof (0usize) , self . ccof (1usize))
+            defmt::write!(
+                f,
+                "Sr2ch {{ uif: {=bool:?}, ccif[0]: {=bool:?}, ccif[1]: {=bool:?}, tif: {=bool:?}, ccof[0]: {=bool:?}, ccof[1]: {=bool:?} }}",
+                self.uif(),
+                self.ccif(0usize),
+                self.ccif(1usize),
+                self.tif(),
+                self.ccof(0usize),
+                self.ccof(1usize)
+            )
         }
     }
     #[doc = "status register"]
@@ -5813,7 +6132,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr2chCmp {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr2chCmp {{ uif: {=bool:?}, ccif[0]: {=bool:?}, ccif[1]: {=bool:?}, comif: {=bool:?}, tif: {=bool:?}, bif[0]: {=bool:?}, ccof[0]: {=bool:?}, ccof[1]: {=bool:?} }}" , self . uif () , self . ccif (0usize) , self . ccif (1usize) , self . comif () , self . tif () , self . bif (0usize) , self . ccof (0usize) , self . ccof (1usize))
+            defmt::write!(
+                f,
+                "Sr2chCmp {{ uif: {=bool:?}, ccif[0]: {=bool:?}, ccif[1]: {=bool:?}, comif: {=bool:?}, tif: {=bool:?}, bif[0]: {=bool:?}, ccof[0]: {=bool:?}, ccof[1]: {=bool:?} }}",
+                self.uif(),
+                self.ccif(0usize),
+                self.ccif(1usize),
+                self.comif(),
+                self.tif(),
+                self.bif(0usize),
+                self.ccof(0usize),
+                self.ccof(1usize)
+            )
         }
     }
     #[doc = "status register"]
@@ -5973,7 +6303,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for SrAdv {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SrAdv {{ uif: {=bool:?}, ccif[0]: {=bool:?}, ccif[1]: {=bool:?}, ccif[2]: {=bool:?}, ccif[3]: {=bool:?}, comif: {=bool:?}, tif: {=bool:?}, bif[0]: {=bool:?}, bif[1]: {=bool:?}, ccof[0]: {=bool:?}, ccof[1]: {=bool:?}, ccof[2]: {=bool:?}, ccof[3]: {=bool:?}, sbif: {=bool:?}, ccif5: {=bool:?}, ccif6: {=bool:?} }}" , self . uif () , self . ccif (0usize) , self . ccif (1usize) , self . ccif (2usize) , self . ccif (3usize) , self . comif () , self . tif () , self . bif (0usize) , self . bif (1usize) , self . ccof (0usize) , self . ccof (1usize) , self . ccof (2usize) , self . ccof (3usize) , self . sbif () , self . ccif5 () , self . ccif6 ())
+            defmt::write!(
+                f,
+                "SrAdv {{ uif: {=bool:?}, ccif[0]: {=bool:?}, ccif[1]: {=bool:?}, ccif[2]: {=bool:?}, ccif[3]: {=bool:?}, comif: {=bool:?}, tif: {=bool:?}, bif[0]: {=bool:?}, bif[1]: {=bool:?}, ccof[0]: {=bool:?}, ccof[1]: {=bool:?}, ccof[2]: {=bool:?}, ccof[3]: {=bool:?}, sbif: {=bool:?}, ccif5: {=bool:?}, ccif6: {=bool:?} }}",
+                self.uif(),
+                self.ccif(0usize),
+                self.ccif(1usize),
+                self.ccif(2usize),
+                self.ccif(3usize),
+                self.comif(),
+                self.tif(),
+                self.bif(0usize),
+                self.bif(1usize),
+                self.ccof(0usize),
+                self.ccof(1usize),
+                self.ccof(2usize),
+                self.ccof(3usize),
+                self.sbif(),
+                self.ccif5(),
+                self.ccif6()
+            )
         }
     }
     #[doc = "status register"]
@@ -6098,7 +6447,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for SrGp16 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SrGp16 {{ uif: {=bool:?}, ccif[0]: {=bool:?}, ccif[1]: {=bool:?}, ccif[2]: {=bool:?}, ccif[3]: {=bool:?}, tif: {=bool:?}, ccof[0]: {=bool:?}, ccof[1]: {=bool:?}, ccof[2]: {=bool:?}, ccof[3]: {=bool:?} }}" , self . uif () , self . ccif (0usize) , self . ccif (1usize) , self . ccif (2usize) , self . ccif (3usize) , self . tif () , self . ccof (0usize) , self . ccof (1usize) , self . ccof (2usize) , self . ccof (3usize))
+            defmt::write!(
+                f,
+                "SrGp16 {{ uif: {=bool:?}, ccif[0]: {=bool:?}, ccif[1]: {=bool:?}, ccif[2]: {=bool:?}, ccif[3]: {=bool:?}, tif: {=bool:?}, ccof[0]: {=bool:?}, ccof[1]: {=bool:?}, ccof[2]: {=bool:?}, ccof[3]: {=bool:?} }}",
+                self.uif(),
+                self.ccif(0usize),
+                self.ccif(1usize),
+                self.ccif(2usize),
+                self.ccif(3usize),
+                self.tif(),
+                self.ccof(0usize),
+                self.ccof(1usize),
+                self.ccof(2usize),
+                self.ccof(3usize)
+            )
         }
     }
     #[doc = "input selection register"]

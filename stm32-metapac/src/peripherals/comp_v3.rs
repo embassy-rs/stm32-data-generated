@@ -203,7 +203,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr {{ en: {=bool:?}, pwrmode: {:?}, inmsel: {=u8:?}, inpsel: {=u8:?}, polarity: {:?}, hyst: {:?}, blanking: {:?}, brgen: {=bool:?}, scalen: {=bool:?}, inmesel: {=u8:?}, value: {=bool:?}, lock: {=bool:?} }}" , self . en () , self . pwrmode () , self . inmsel () , self . inpsel () , self . polarity () , self . hyst () , self . blanking () , self . brgen () , self . scalen () , self . inmesel () , self . value () , self . lock ())
+            defmt::write!(
+                f,
+                "Csr {{ en: {=bool:?}, pwrmode: {:?}, inmsel: {=u8:?}, inpsel: {=u8:?}, polarity: {:?}, hyst: {:?}, blanking: {:?}, brgen: {=bool:?}, scalen: {=bool:?}, inmesel: {=u8:?}, value: {=bool:?}, lock: {=bool:?} }}",
+                self.en(),
+                self.pwrmode(),
+                self.inmsel(),
+                self.inpsel(),
+                self.polarity(),
+                self.hyst(),
+                self.blanking(),
+                self.brgen(),
+                self.scalen(),
+                self.inmesel(),
+                self.value(),
+                self.lock()
+            )
         }
     }
 }

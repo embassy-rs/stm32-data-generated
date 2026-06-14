@@ -206,7 +206,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb1fzr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb1fzr {{ gpdma1_stop[0]: {=bool:?}, gpdma1_stop[1]: {=bool:?}, gpdma1_stop[2]: {=bool:?}, gpdma1_stop[3]: {=bool:?}, gpdma1_stop[4]: {=bool:?}, gpdma1_stop[5]: {=bool:?}, gpdma1_stop[6]: {=bool:?}, gpdma1_stop[7]: {=bool:?}, gpdma1_stop[8]: {=bool:?}, gpdma1_stop[9]: {=bool:?}, gpdma1_stop[10]: {=bool:?}, gpdma1_stop[11]: {=bool:?}, gpdma1_stop[12]: {=bool:?}, gpdma1_stop[13]: {=bool:?}, gpdma1_stop[14]: {=bool:?}, gpdma1_stop[15]: {=bool:?}, gpdma2_stop[0]: {=bool:?}, gpdma2_stop[1]: {=bool:?}, gpdma2_stop[2]: {=bool:?}, gpdma2_stop[3]: {=bool:?}, gpdma2_stop[4]: {=bool:?}, gpdma2_stop[5]: {=bool:?}, gpdma2_stop[6]: {=bool:?}, gpdma2_stop[7]: {=bool:?}, gpdma2_stop[8]: {=bool:?}, gpdma2_stop[9]: {=bool:?}, gpdma2_stop[10]: {=bool:?}, gpdma2_stop[11]: {=bool:?}, gpdma2_stop[12]: {=bool:?}, gpdma2_stop[13]: {=bool:?}, gpdma2_stop[14]: {=bool:?}, gpdma2_stop[15]: {=bool:?} }}" , self . gpdma1_stop (0usize) , self . gpdma1_stop (1usize) , self . gpdma1_stop (2usize) , self . gpdma1_stop (3usize) , self . gpdma1_stop (4usize) , self . gpdma1_stop (5usize) , self . gpdma1_stop (6usize) , self . gpdma1_stop (7usize) , self . gpdma1_stop (8usize) , self . gpdma1_stop (9usize) , self . gpdma1_stop (10usize) , self . gpdma1_stop (11usize) , self . gpdma1_stop (12usize) , self . gpdma1_stop (13usize) , self . gpdma1_stop (14usize) , self . gpdma1_stop (15usize) , self . gpdma2_stop (0usize) , self . gpdma2_stop (1usize) , self . gpdma2_stop (2usize) , self . gpdma2_stop (3usize) , self . gpdma2_stop (4usize) , self . gpdma2_stop (5usize) , self . gpdma2_stop (6usize) , self . gpdma2_stop (7usize) , self . gpdma2_stop (8usize) , self . gpdma2_stop (9usize) , self . gpdma2_stop (10usize) , self . gpdma2_stop (11usize) , self . gpdma2_stop (12usize) , self . gpdma2_stop (13usize) , self . gpdma2_stop (14usize) , self . gpdma2_stop (15usize))
+            defmt::write!(
+                f,
+                "Ahb1fzr {{ gpdma1_stop[0]: {=bool:?}, gpdma1_stop[1]: {=bool:?}, gpdma1_stop[2]: {=bool:?}, gpdma1_stop[3]: {=bool:?}, gpdma1_stop[4]: {=bool:?}, gpdma1_stop[5]: {=bool:?}, gpdma1_stop[6]: {=bool:?}, gpdma1_stop[7]: {=bool:?}, gpdma1_stop[8]: {=bool:?}, gpdma1_stop[9]: {=bool:?}, gpdma1_stop[10]: {=bool:?}, gpdma1_stop[11]: {=bool:?}, gpdma1_stop[12]: {=bool:?}, gpdma1_stop[13]: {=bool:?}, gpdma1_stop[14]: {=bool:?}, gpdma1_stop[15]: {=bool:?}, gpdma2_stop[0]: {=bool:?}, gpdma2_stop[1]: {=bool:?}, gpdma2_stop[2]: {=bool:?}, gpdma2_stop[3]: {=bool:?}, gpdma2_stop[4]: {=bool:?}, gpdma2_stop[5]: {=bool:?}, gpdma2_stop[6]: {=bool:?}, gpdma2_stop[7]: {=bool:?}, gpdma2_stop[8]: {=bool:?}, gpdma2_stop[9]: {=bool:?}, gpdma2_stop[10]: {=bool:?}, gpdma2_stop[11]: {=bool:?}, gpdma2_stop[12]: {=bool:?}, gpdma2_stop[13]: {=bool:?}, gpdma2_stop[14]: {=bool:?}, gpdma2_stop[15]: {=bool:?} }}",
+                self.gpdma1_stop(0usize),
+                self.gpdma1_stop(1usize),
+                self.gpdma1_stop(2usize),
+                self.gpdma1_stop(3usize),
+                self.gpdma1_stop(4usize),
+                self.gpdma1_stop(5usize),
+                self.gpdma1_stop(6usize),
+                self.gpdma1_stop(7usize),
+                self.gpdma1_stop(8usize),
+                self.gpdma1_stop(9usize),
+                self.gpdma1_stop(10usize),
+                self.gpdma1_stop(11usize),
+                self.gpdma1_stop(12usize),
+                self.gpdma1_stop(13usize),
+                self.gpdma1_stop(14usize),
+                self.gpdma1_stop(15usize),
+                self.gpdma2_stop(0usize),
+                self.gpdma2_stop(1usize),
+                self.gpdma2_stop(2usize),
+                self.gpdma2_stop(3usize),
+                self.gpdma2_stop(4usize),
+                self.gpdma2_stop(5usize),
+                self.gpdma2_stop(6usize),
+                self.gpdma2_stop(7usize),
+                self.gpdma2_stop(8usize),
+                self.gpdma2_stop(9usize),
+                self.gpdma2_stop(10usize),
+                self.gpdma2_stop(11usize),
+                self.gpdma2_stop(12usize),
+                self.gpdma2_stop(13usize),
+                self.gpdma2_stop(14usize),
+                self.gpdma2_stop(15usize)
+            )
         }
     }
     #[doc = "DBGMCU APB1H peripheral freeze register."]
@@ -449,7 +484,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1lfzr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1lfzr {{ tim2_stop: {=bool:?}, tim3_stop: {=bool:?}, tim4_stop: {=bool:?}, tim5_stop: {=bool:?}, tim6_stop: {=bool:?}, tim7_stop: {=bool:?}, tim12_stop: {=bool:?}, tim13_stop: {=bool:?}, tim14_stop: {=bool:?}, wwdg_stop: {=bool:?}, iwdg_stop: {=bool:?}, i2c1_stop: {=bool:?}, i2c2_stop: {=bool:?}, i3c1_stop: {=bool:?} }}" , self . tim2_stop () , self . tim3_stop () , self . tim4_stop () , self . tim5_stop () , self . tim6_stop () , self . tim7_stop () , self . tim12_stop () , self . tim13_stop () , self . tim14_stop () , self . wwdg_stop () , self . iwdg_stop () , self . i2c1_stop () , self . i2c2_stop () , self . i3c1_stop ())
+            defmt::write!(
+                f,
+                "Apb1lfzr {{ tim2_stop: {=bool:?}, tim3_stop: {=bool:?}, tim4_stop: {=bool:?}, tim5_stop: {=bool:?}, tim6_stop: {=bool:?}, tim7_stop: {=bool:?}, tim12_stop: {=bool:?}, tim13_stop: {=bool:?}, tim14_stop: {=bool:?}, wwdg_stop: {=bool:?}, iwdg_stop: {=bool:?}, i2c1_stop: {=bool:?}, i2c2_stop: {=bool:?}, i3c1_stop: {=bool:?} }}",
+                self.tim2_stop(),
+                self.tim3_stop(),
+                self.tim4_stop(),
+                self.tim5_stop(),
+                self.tim6_stop(),
+                self.tim7_stop(),
+                self.tim12_stop(),
+                self.tim13_stop(),
+                self.tim14_stop(),
+                self.wwdg_stop(),
+                self.iwdg_stop(),
+                self.i2c1_stop(),
+                self.i2c2_stop(),
+                self.i3c1_stop()
+            )
         }
     }
     #[doc = "DBGMCU APB2 peripheral freeze register."]
@@ -538,7 +590,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2fzr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb2fzr {{ tim1_stop: {=bool:?}, tim8_stop: {=bool:?}, tim15_stop: {=bool:?}, tim16_stop: {=bool:?}, tim17_stop: {=bool:?} }}" , self . tim1_stop () , self . tim8_stop () , self . tim15_stop () , self . tim16_stop () , self . tim17_stop ())
+            defmt::write!(
+                f,
+                "Apb2fzr {{ tim1_stop: {=bool:?}, tim8_stop: {=bool:?}, tim15_stop: {=bool:?}, tim16_stop: {=bool:?}, tim17_stop: {=bool:?} }}",
+                self.tim1_stop(),
+                self.tim8_stop(),
+                self.tim15_stop(),
+                self.tim16_stop(),
+                self.tim17_stop()
+            )
         }
     }
     #[doc = "DBGMCU APB3 peripheral freeze register."]
@@ -666,7 +726,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb3fzr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb3fzr {{ i2c3_stop: {=bool:?}, i2c4_stop: {=bool:?}, lptim1_stop: {=bool:?}, lptim3_stop: {=bool:?}, lptim4_stop: {=bool:?}, lptim5_stop: {=bool:?}, lptim6_stop: {=bool:?}, rtc_stop: {=bool:?} }}" , self . i2c3_stop () , self . i2c4_stop () , self . lptim1_stop () , self . lptim3_stop () , self . lptim4_stop () , self . lptim5_stop () , self . lptim6_stop () , self . rtc_stop ())
+            defmt::write!(
+                f,
+                "Apb3fzr {{ i2c3_stop: {=bool:?}, i2c4_stop: {=bool:?}, lptim1_stop: {=bool:?}, lptim3_stop: {=bool:?}, lptim4_stop: {=bool:?}, lptim5_stop: {=bool:?}, lptim6_stop: {=bool:?}, rtc_stop: {=bool:?} }}",
+                self.i2c3_stop(),
+                self.i2c4_stop(),
+                self.lptim1_stop(),
+                self.lptim3_stop(),
+                self.lptim4_stop(),
+                self.lptim5_stop(),
+                self.lptim6_stop(),
+                self.rtc_stop()
+            )
         }
     }
     #[doc = "DBGMCU debug authentication mailbox acknowledge register."]
@@ -985,7 +1056,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ stop: {=bool:?}, standby: {=bool:?}, trace_ioen: {=bool:?}, trace_en: {=bool:?}, trace_mode: {=u8:?}, dcrt: {=bool:?} }}" , self . stop () , self . standby () , self . trace_ioen () , self . trace_en () , self . trace_mode () , self . dcrt ())
+            defmt::write!(
+                f,
+                "Cr {{ stop: {=bool:?}, standby: {=bool:?}, trace_ioen: {=bool:?}, trace_en: {=bool:?}, trace_mode: {=u8:?}, dcrt: {=bool:?} }}",
+                self.stop(),
+                self.standby(),
+                self.trace_ioen(),
+                self.trace_en(),
+                self.trace_mode(),
+                self.dcrt()
+            )
         }
     }
     #[doc = "DBGMCU identity code register."]

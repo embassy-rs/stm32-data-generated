@@ -292,7 +292,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb1fzr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb1fzr {{ dbg_gpdma0_stop: {=bool:?}, dbg_gpdma1_stop: {=bool:?}, dbg_gpdma2_stop: {=bool:?}, dbg_gpdma3_stop: {=bool:?}, dbg_gpdma4_stop: {=bool:?}, dbg_gpdma5_stop: {=bool:?}, dbg_gpdma6_stop: {=bool:?}, dbg_gpdma7_stop: {=bool:?}, dbg_gpdma8_stop: {=bool:?}, dbg_gpdma9_stop: {=bool:?}, dbg_gpdma10_stop: {=bool:?}, dbg_gpdma11_stop: {=bool:?} }}" , self . dbg_gpdma0_stop () , self . dbg_gpdma1_stop () , self . dbg_gpdma2_stop () , self . dbg_gpdma3_stop () , self . dbg_gpdma4_stop () , self . dbg_gpdma5_stop () , self . dbg_gpdma6_stop () , self . dbg_gpdma7_stop () , self . dbg_gpdma8_stop () , self . dbg_gpdma9_stop () , self . dbg_gpdma10_stop () , self . dbg_gpdma11_stop ())
+            defmt::write!(
+                f,
+                "Ahb1fzr {{ dbg_gpdma0_stop: {=bool:?}, dbg_gpdma1_stop: {=bool:?}, dbg_gpdma2_stop: {=bool:?}, dbg_gpdma3_stop: {=bool:?}, dbg_gpdma4_stop: {=bool:?}, dbg_gpdma5_stop: {=bool:?}, dbg_gpdma6_stop: {=bool:?}, dbg_gpdma7_stop: {=bool:?}, dbg_gpdma8_stop: {=bool:?}, dbg_gpdma9_stop: {=bool:?}, dbg_gpdma10_stop: {=bool:?}, dbg_gpdma11_stop: {=bool:?} }}",
+                self.dbg_gpdma0_stop(),
+                self.dbg_gpdma1_stop(),
+                self.dbg_gpdma2_stop(),
+                self.dbg_gpdma3_stop(),
+                self.dbg_gpdma4_stop(),
+                self.dbg_gpdma5_stop(),
+                self.dbg_gpdma6_stop(),
+                self.dbg_gpdma7_stop(),
+                self.dbg_gpdma8_stop(),
+                self.dbg_gpdma9_stop(),
+                self.dbg_gpdma10_stop(),
+                self.dbg_gpdma11_stop()
+            )
         }
     }
     #[doc = "DBGMCU APB1H peripheral freeze register."]
@@ -496,7 +511,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1lfzr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1lfzr {{ dbg_tim2_stop: {=bool:?}, dbg_tim3_stop: {=bool:?}, dbg_tim4_stop: {=bool:?}, dbg_tim6_stop: {=bool:?}, dbg_tim7_stop: {=bool:?}, dbg_wwdg_stop: {=bool:?}, dbg_iwdg_stop: {=bool:?}, dbg_i2c1_stop: {=bool:?}, dbg_i2c2_stop: {=bool:?}, dbg_i3c1_stop: {=bool:?}, dbg_rtc_stop: {=bool:?} }}" , self . dbg_tim2_stop () , self . dbg_tim3_stop () , self . dbg_tim4_stop () , self . dbg_tim6_stop () , self . dbg_tim7_stop () , self . dbg_wwdg_stop () , self . dbg_iwdg_stop () , self . dbg_i2c1_stop () , self . dbg_i2c2_stop () , self . dbg_i3c1_stop () , self . dbg_rtc_stop ())
+            defmt::write!(
+                f,
+                "Apb1lfzr {{ dbg_tim2_stop: {=bool:?}, dbg_tim3_stop: {=bool:?}, dbg_tim4_stop: {=bool:?}, dbg_tim6_stop: {=bool:?}, dbg_tim7_stop: {=bool:?}, dbg_wwdg_stop: {=bool:?}, dbg_iwdg_stop: {=bool:?}, dbg_i2c1_stop: {=bool:?}, dbg_i2c2_stop: {=bool:?}, dbg_i3c1_stop: {=bool:?}, dbg_rtc_stop: {=bool:?} }}",
+                self.dbg_tim2_stop(),
+                self.dbg_tim3_stop(),
+                self.dbg_tim4_stop(),
+                self.dbg_tim6_stop(),
+                self.dbg_tim7_stop(),
+                self.dbg_wwdg_stop(),
+                self.dbg_iwdg_stop(),
+                self.dbg_i2c1_stop(),
+                self.dbg_i2c2_stop(),
+                self.dbg_i3c1_stop(),
+                self.dbg_rtc_stop()
+            )
         }
     }
     #[doc = "DBGMCU APB2 peripheral freeze register."]
@@ -585,7 +614,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2fzr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb2fzr {{ dbg_tim1_stop: {=bool:?}, dbg_tim15_stop: {=bool:?}, dbg_tim16_stop: {=bool:?}, dbg_tim17_stop: {=bool:?}, dbg_i3c2_stop: {=bool:?} }}" , self . dbg_tim1_stop () , self . dbg_tim15_stop () , self . dbg_tim16_stop () , self . dbg_tim17_stop () , self . dbg_i3c2_stop ())
+            defmt::write!(
+                f,
+                "Apb2fzr {{ dbg_tim1_stop: {=bool:?}, dbg_tim15_stop: {=bool:?}, dbg_tim16_stop: {=bool:?}, dbg_tim17_stop: {=bool:?}, dbg_i3c2_stop: {=bool:?} }}",
+                self.dbg_tim1_stop(),
+                self.dbg_tim15_stop(),
+                self.dbg_tim16_stop(),
+                self.dbg_tim17_stop(),
+                self.dbg_i3c2_stop()
+            )
         }
     }
     #[doc = "DBGMCU APB3 peripheral freeze register."]
@@ -661,7 +698,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb3fzr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb3fzr {{ dbg_i2c3_stop: {=bool:?}, dbg_lptim1_stop: {=bool:?}, dbg_lptim3_stop: {=bool:?}, dbg_lptim4_stop: {=bool:?} }}" , self . dbg_i2c3_stop () , self . dbg_lptim1_stop () , self . dbg_lptim3_stop () , self . dbg_lptim4_stop ())
+            defmt::write!(
+                f,
+                "Apb3fzr {{ dbg_i2c3_stop: {=bool:?}, dbg_lptim1_stop: {=bool:?}, dbg_lptim3_stop: {=bool:?}, dbg_lptim4_stop: {=bool:?} }}",
+                self.dbg_i2c3_stop(),
+                self.dbg_lptim1_stop(),
+                self.dbg_lptim3_stop(),
+                self.dbg_lptim4_stop()
+            )
         }
     }
     #[doc = "DBGMCU CoreSight component identity register 0."]
@@ -910,7 +954,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, trace_ioen: {=bool:?}, trace_en: {=bool:?}, trace_mode: {=u8:?} }}" , self . dbg_stop () , self . dbg_standby () , self . trace_ioen () , self . trace_en () , self . trace_mode ())
+            defmt::write!(
+                f,
+                "Cr {{ dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, trace_ioen: {=bool:?}, trace_en: {=bool:?}, trace_mode: {=u8:?} }}",
+                self.dbg_stop(),
+                self.dbg_standby(),
+                self.trace_ioen(),
+                self.trace_en(),
+                self.trace_mode()
+            )
         }
     }
     #[doc = "DBGMCU debug device authentication register."]

@@ -163,7 +163,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, cacheinv: {=bool:?}, waysel: {:?}, hitmen: {=bool:?}, missmen: {=bool:?}, hitmrst: {=bool:?}, missmrst: {=bool:?} }}" , self . en () , self . cacheinv () , self . waysel () , self . hitmen () , self . missmen () , self . hitmrst () , self . missmrst ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, cacheinv: {=bool:?}, waysel: {:?}, hitmen: {=bool:?}, missmen: {=bool:?}, hitmrst: {=bool:?}, missmrst: {=bool:?} }}",
+                self.en(),
+                self.cacheinv(),
+                self.waysel(),
+                self.hitmen(),
+                self.missmen(),
+                self.hitmrst(),
+                self.missmrst()
+            )
         }
     }
     #[doc = "ICACHE flag clear register."]

@@ -226,7 +226,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Acr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Acr {{ latency: {=u8:?}, prften: {=bool:?}, icen: {=bool:?}, dcen: {=bool:?}, icrst: {=bool:?}, dcrst: {=bool:?}, run_pd: {=bool:?}, sleep_pd: {=bool:?} }}" , self . latency () , self . prften () , self . icen () , self . dcen () , self . icrst () , self . dcrst () , self . run_pd () , self . sleep_pd ())
+            defmt::write!(
+                f,
+                "Acr {{ latency: {=u8:?}, prften: {=bool:?}, icen: {=bool:?}, dcen: {=bool:?}, icrst: {=bool:?}, dcrst: {=bool:?}, run_pd: {=bool:?}, sleep_pd: {=bool:?} }}",
+                self.latency(),
+                self.prften(),
+                self.icen(),
+                self.dcen(),
+                self.icrst(),
+                self.dcrst(),
+                self.run_pd(),
+                self.sleep_pd()
+            )
         }
     }
     #[doc = "Flash control register"]
@@ -437,7 +448,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ pg: {=bool:?}, per: {=bool:?}, mer[0]: {=bool:?}, mer[1]: {=bool:?}, pnb: {=u8:?}, bker: {=bool:?}, start: {=bool:?}, optstrt: {=bool:?}, fstpg: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, rderrie: {=bool:?}, obl_launch: {=bool:?}, optlock: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . per () , self . mer (0usize) , self . mer (1usize) , self . pnb () , self . bker () , self . start () , self . optstrt () , self . fstpg () , self . eopie () , self . errie () , self . rderrie () , self . obl_launch () , self . optlock () , self . lock ())
+            defmt::write!(
+                f,
+                "Cr {{ pg: {=bool:?}, per: {=bool:?}, mer[0]: {=bool:?}, mer[1]: {=bool:?}, pnb: {=u8:?}, bker: {=bool:?}, start: {=bool:?}, optstrt: {=bool:?}, fstpg: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, rderrie: {=bool:?}, obl_launch: {=bool:?}, optlock: {=bool:?}, lock: {=bool:?} }}",
+                self.pg(),
+                self.per(),
+                self.mer(0usize),
+                self.mer(1usize),
+                self.pnb(),
+                self.bker(),
+                self.start(),
+                self.optstrt(),
+                self.fstpg(),
+                self.eopie(),
+                self.errie(),
+                self.rderrie(),
+                self.obl_launch(),
+                self.optlock(),
+                self.lock()
+            )
         }
     }
     #[doc = "Flash ECC register"]
@@ -539,7 +568,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Eccr {{ addr_ecc: {=u32:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, eccie: {=bool:?}, eccc: {=bool:?}, eccd: {=bool:?} }}" , self . addr_ecc () , self . bk_ecc () , self . sysf_ecc () , self . eccie () , self . eccc () , self . eccd ())
+            defmt::write!(
+                f,
+                "Eccr {{ addr_ecc: {=u32:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, eccie: {=bool:?}, eccc: {=bool:?}, eccd: {=bool:?} }}",
+                self.addr_ecc(),
+                self.bk_ecc(),
+                self.sysf_ecc(),
+                self.eccie(),
+                self.eccc(),
+                self.eccd()
+            )
         }
     }
     #[doc = "Flash option register"]
@@ -771,7 +809,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Optr {{ rdp: {=u8:?}, bor_lev: {=u8:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, n_rst_shdw: {=bool:?}, idwg_sw: {=bool:?}, iwdg_stop: {=bool:?}, iwdg_stdby: {=bool:?}, wwdg_sw: {=bool:?}, bfb: {=bool:?}, dualbank: {=bool:?}, n_boot1: {=bool:?}, sram2_pe: {=bool:?}, sram2_rst: {=bool:?}, n_swboot0: {=bool:?}, n_boot0: {=bool:?} }}" , self . rdp () , self . bor_lev () , self . n_rst_stop () , self . n_rst_stdby () , self . n_rst_shdw () , self . idwg_sw () , self . iwdg_stop () , self . iwdg_stdby () , self . wwdg_sw () , self . bfb () , self . dualbank () , self . n_boot1 () , self . sram2_pe () , self . sram2_rst () , self . n_swboot0 () , self . n_boot0 ())
+            defmt::write!(
+                f,
+                "Optr {{ rdp: {=u8:?}, bor_lev: {=u8:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, n_rst_shdw: {=bool:?}, idwg_sw: {=bool:?}, iwdg_stop: {=bool:?}, iwdg_stdby: {=bool:?}, wwdg_sw: {=bool:?}, bfb: {=bool:?}, dualbank: {=bool:?}, n_boot1: {=bool:?}, sram2_pe: {=bool:?}, sram2_rst: {=bool:?}, n_swboot0: {=bool:?}, n_boot0: {=bool:?} }}",
+                self.rdp(),
+                self.bor_lev(),
+                self.n_rst_stop(),
+                self.n_rst_stdby(),
+                self.n_rst_shdw(),
+                self.idwg_sw(),
+                self.iwdg_stop(),
+                self.iwdg_stdby(),
+                self.wwdg_sw(),
+                self.bfb(),
+                self.dualbank(),
+                self.n_boot1(),
+                self.sram2_pe(),
+                self.sram2_rst(),
+                self.n_swboot0(),
+                self.n_boot0()
+            )
         }
     }
     #[doc = "Flash Bank 1 PCROP End address register"]
@@ -1117,7 +1174,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, miserr: {=bool:?}, fasterr: {=bool:?}, rderr: {=bool:?}, optverr: {=bool:?}, bsy: {=bool:?} }}" , self . eop () , self . operr () , self . progerr () , self . wrperr () , self . pgaerr () , self . sizerr () , self . pgserr () , self . miserr () , self . fasterr () , self . rderr () , self . optverr () , self . bsy ())
+            defmt::write!(
+                f,
+                "Sr {{ eop: {=bool:?}, operr: {=bool:?}, progerr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, sizerr: {=bool:?}, pgserr: {=bool:?}, miserr: {=bool:?}, fasterr: {=bool:?}, rderr: {=bool:?}, optverr: {=bool:?}, bsy: {=bool:?} }}",
+                self.eop(),
+                self.operr(),
+                self.progerr(),
+                self.wrperr(),
+                self.pgaerr(),
+                self.sizerr(),
+                self.pgserr(),
+                self.miserr(),
+                self.fasterr(),
+                self.rderr(),
+                self.optverr(),
+                self.bsy()
+            )
         }
     }
     #[doc = "Flash Bank 1 WRP area A address register"]

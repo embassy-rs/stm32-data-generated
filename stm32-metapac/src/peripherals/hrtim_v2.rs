@@ -521,7 +521,40 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimAdc1r {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimAdc1r {{ adcmc[0]: {=bool:?}, adcmc[1]: {=bool:?}, adcmc[2]: {=bool:?}, adcmc[3]: {=bool:?}, adcmper: {=bool:?}, adceev[0]: {=bool:?}, adceev[1]: {=bool:?}, adceev[2]: {=bool:?}, adceev[3]: {=bool:?}, adceev[4]: {=bool:?}, adctc2[0]: {=bool:?}, adctc3[0]: {=bool:?}, adctc3[1]: {=bool:?}, adctc3[2]: {=bool:?}, adctc3[3]: {=bool:?}, adctc3[4]: {=bool:?}, adctc4[0]: {=bool:?}, adctc4[1]: {=bool:?}, adctc4[2]: {=bool:?}, adctc4[3]: {=bool:?}, adctc4[4]: {=bool:?}, adctc4[5]: {=bool:?}, adctper[0]: {=bool:?}, adctper[1]: {=bool:?}, adctper[2]: {=bool:?}, adctper[3]: {=bool:?}, adctper[4]: {=bool:?}, adctrst[0]: {=bool:?}, adctrst[1]: {=bool:?}, adctrst[2]: {=bool:?} }}" , self . adcmc (0usize) , self . adcmc (1usize) , self . adcmc (2usize) , self . adcmc (3usize) , self . adcmper () , self . adceev (0usize) , self . adceev (1usize) , self . adceev (2usize) , self . adceev (3usize) , self . adceev (4usize) , self . adctc2 (0usize) , self . adctc3 (0usize) , self . adctc3 (1usize) , self . adctc3 (2usize) , self . adctc3 (3usize) , self . adctc3 (4usize) , self . adctc4 (0usize) , self . adctc4 (1usize) , self . adctc4 (2usize) , self . adctc4 (3usize) , self . adctc4 (4usize) , self . adctc4 (5usize) , self . adctper (0usize) , self . adctper (1usize) , self . adctper (2usize) , self . adctper (3usize) , self . adctper (4usize) , self . adctrst (0usize) , self . adctrst (1usize) , self . adctrst (2usize))
+            defmt::write!(
+                f,
+                "HrtimAdc1r {{ adcmc[0]: {=bool:?}, adcmc[1]: {=bool:?}, adcmc[2]: {=bool:?}, adcmc[3]: {=bool:?}, adcmper: {=bool:?}, adceev[0]: {=bool:?}, adceev[1]: {=bool:?}, adceev[2]: {=bool:?}, adceev[3]: {=bool:?}, adceev[4]: {=bool:?}, adctc2[0]: {=bool:?}, adctc3[0]: {=bool:?}, adctc3[1]: {=bool:?}, adctc3[2]: {=bool:?}, adctc3[3]: {=bool:?}, adctc3[4]: {=bool:?}, adctc4[0]: {=bool:?}, adctc4[1]: {=bool:?}, adctc4[2]: {=bool:?}, adctc4[3]: {=bool:?}, adctc4[4]: {=bool:?}, adctc4[5]: {=bool:?}, adctper[0]: {=bool:?}, adctper[1]: {=bool:?}, adctper[2]: {=bool:?}, adctper[3]: {=bool:?}, adctper[4]: {=bool:?}, adctrst[0]: {=bool:?}, adctrst[1]: {=bool:?}, adctrst[2]: {=bool:?} }}",
+                self.adcmc(0usize),
+                self.adcmc(1usize),
+                self.adcmc(2usize),
+                self.adcmc(3usize),
+                self.adcmper(),
+                self.adceev(0usize),
+                self.adceev(1usize),
+                self.adceev(2usize),
+                self.adceev(3usize),
+                self.adceev(4usize),
+                self.adctc2(0usize),
+                self.adctc3(0usize),
+                self.adctc3(1usize),
+                self.adctc3(2usize),
+                self.adctc3(3usize),
+                self.adctc3(4usize),
+                self.adctc4(0usize),
+                self.adctc4(1usize),
+                self.adctc4(2usize),
+                self.adctc4(3usize),
+                self.adctc4(4usize),
+                self.adctc4(5usize),
+                self.adctper(0usize),
+                self.adctper(1usize),
+                self.adctper(2usize),
+                self.adctper(3usize),
+                self.adctper(4usize),
+                self.adctrst(0usize),
+                self.adctrst(1usize),
+                self.adctrst(2usize)
+            )
         }
     }
     #[doc = "High Resolution Timer: ADC Trigger 2 Register"]
@@ -700,7 +733,41 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimAdc2r {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimAdc2r {{ adcmc[0]: {=bool:?}, adcmc[1]: {=bool:?}, adcmc[2]: {=bool:?}, adcmc[3]: {=bool:?}, adcmper: {=bool:?}, adceev[0]: {=bool:?}, adceev[1]: {=bool:?}, adceev[2]: {=bool:?}, adceev[3]: {=bool:?}, adceev[4]: {=bool:?}, adctc2[0]: {=bool:?}, adctc2[1]: {=bool:?}, adctc2[2]: {=bool:?}, adctc2[3]: {=bool:?}, adctc2[4]: {=bool:?}, adctc2[5]: {=bool:?}, adctc4[0]: {=bool:?}, adctc4[1]: {=bool:?}, adctc4[2]: {=bool:?}, adctc4[3]: {=bool:?}, adctc4[4]: {=bool:?}, adctper[0]: {=bool:?}, adctper[1]: {=bool:?}, adctper[2]: {=bool:?}, adctper[3]: {=bool:?}, adctper[4]: {=bool:?}, adctc3[0]: {=bool:?}, adctc3[1]: {=bool:?}, adctrst[0]: {=bool:?}, adctrst[1]: {=bool:?}, adctrst[2]: {=bool:?} }}" , self . adcmc (0usize) , self . adcmc (1usize) , self . adcmc (2usize) , self . adcmc (3usize) , self . adcmper () , self . adceev (0usize) , self . adceev (1usize) , self . adceev (2usize) , self . adceev (3usize) , self . adceev (4usize) , self . adctc2 (0usize) , self . adctc2 (1usize) , self . adctc2 (2usize) , self . adctc2 (3usize) , self . adctc2 (4usize) , self . adctc2 (5usize) , self . adctc4 (0usize) , self . adctc4 (1usize) , self . adctc4 (2usize) , self . adctc4 (3usize) , self . adctc4 (4usize) , self . adctper (0usize) , self . adctper (1usize) , self . adctper (2usize) , self . adctper (3usize) , self . adctper (4usize) , self . adctc3 (0usize) , self . adctc3 (1usize) , self . adctrst (0usize) , self . adctrst (1usize) , self . adctrst (2usize))
+            defmt::write!(
+                f,
+                "HrtimAdc2r {{ adcmc[0]: {=bool:?}, adcmc[1]: {=bool:?}, adcmc[2]: {=bool:?}, adcmc[3]: {=bool:?}, adcmper: {=bool:?}, adceev[0]: {=bool:?}, adceev[1]: {=bool:?}, adceev[2]: {=bool:?}, adceev[3]: {=bool:?}, adceev[4]: {=bool:?}, adctc2[0]: {=bool:?}, adctc2[1]: {=bool:?}, adctc2[2]: {=bool:?}, adctc2[3]: {=bool:?}, adctc2[4]: {=bool:?}, adctc2[5]: {=bool:?}, adctc4[0]: {=bool:?}, adctc4[1]: {=bool:?}, adctc4[2]: {=bool:?}, adctc4[3]: {=bool:?}, adctc4[4]: {=bool:?}, adctper[0]: {=bool:?}, adctper[1]: {=bool:?}, adctper[2]: {=bool:?}, adctper[3]: {=bool:?}, adctper[4]: {=bool:?}, adctc3[0]: {=bool:?}, adctc3[1]: {=bool:?}, adctrst[0]: {=bool:?}, adctrst[1]: {=bool:?}, adctrst[2]: {=bool:?} }}",
+                self.adcmc(0usize),
+                self.adcmc(1usize),
+                self.adcmc(2usize),
+                self.adcmc(3usize),
+                self.adcmper(),
+                self.adceev(0usize),
+                self.adceev(1usize),
+                self.adceev(2usize),
+                self.adceev(3usize),
+                self.adceev(4usize),
+                self.adctc2(0usize),
+                self.adctc2(1usize),
+                self.adctc2(2usize),
+                self.adctc2(3usize),
+                self.adctc2(4usize),
+                self.adctc2(5usize),
+                self.adctc4(0usize),
+                self.adctc4(1usize),
+                self.adctc4(2usize),
+                self.adctc4(3usize),
+                self.adctc4(4usize),
+                self.adctper(0usize),
+                self.adctper(1usize),
+                self.adctper(2usize),
+                self.adctper(3usize),
+                self.adctper(4usize),
+                self.adctc3(0usize),
+                self.adctc3(1usize),
+                self.adctrst(0usize),
+                self.adctrst(1usize),
+                self.adctrst(2usize)
+            )
         }
     }
     #[doc = "HRTIM ADC Extended Trigger Register"]
@@ -802,7 +869,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimAdcer {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimAdcer {{ adc5trg: {=u8:?}, adc6trg: {=u8:?}, adc7trg: {=u8:?}, adc8trg: {=u8:?}, adc9trg: {=u8:?}, adc10trg: {=u8:?} }}" , self . adc5trg () , self . adc6trg () , self . adc7trg () , self . adc8trg () , self . adc9trg () , self . adc10trg ())
+            defmt::write!(
+                f,
+                "HrtimAdcer {{ adc5trg: {=u8:?}, adc6trg: {=u8:?}, adc7trg: {=u8:?}, adc8trg: {=u8:?}, adc9trg: {=u8:?}, adc10trg: {=u8:?} }}",
+                self.adc5trg(),
+                self.adc6trg(),
+                self.adc7trg(),
+                self.adc8trg(),
+                self.adc9trg(),
+                self.adc10trg()
+            )
         }
     }
     #[doc = "HRTIM ADC Post Scaler Register 1"]
@@ -891,7 +967,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimAdcps1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimAdcps1 {{ adc1psc: {=u8:?}, adc2psc: {=u8:?}, adc3psc: {=u8:?}, adc4psc: {=u8:?}, adc5psc: {=u8:?} }}" , self . adc1psc () , self . adc2psc () , self . adc3psc () , self . adc4psc () , self . adc5psc ())
+            defmt::write!(
+                f,
+                "HrtimAdcps1 {{ adc1psc: {=u8:?}, adc2psc: {=u8:?}, adc3psc: {=u8:?}, adc4psc: {=u8:?}, adc5psc: {=u8:?} }}",
+                self.adc1psc(),
+                self.adc2psc(),
+                self.adc3psc(),
+                self.adc4psc(),
+                self.adc5psc()
+            )
         }
     }
     #[doc = "HRTIM ADC Post Scaler Register 2"]
@@ -980,7 +1064,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimAdcps2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimAdcps2 {{ adc6psc: {=u8:?}, adc7psc: {=u8:?}, adc8psc: {=u8:?}, adc9psc: {=u8:?}, adc10psc: {=u8:?} }}" , self . adc6psc () , self . adc7psc () , self . adc8psc () , self . adc9psc () , self . adc10psc ())
+            defmt::write!(
+                f,
+                "HrtimAdcps2 {{ adc6psc: {=u8:?}, adc7psc: {=u8:?}, adc8psc: {=u8:?}, adc9psc: {=u8:?}, adc10psc: {=u8:?} }}",
+                self.adc6psc(),
+                self.adc7psc(),
+                self.adc8psc(),
+                self.adc9psc(),
+                self.adc10psc()
+            )
         }
     }
     #[doc = "HRTIM ADC Trigger Update Register"]
@@ -1082,7 +1174,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimAdcur {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimAdcur {{ ad5usrc: {=u8:?}, ad6usrc: {=u8:?}, ad7usrc: {=u8:?}, ad8usrc: {=u8:?}, ad9usrc: {=u8:?}, ad10usrc: {=u8:?} }}" , self . ad5usrc () , self . ad6usrc () , self . ad7usrc () , self . ad8usrc () , self . ad9usrc () , self . ad10usrc ())
+            defmt::write!(
+                f,
+                "HrtimAdcur {{ ad5usrc: {=u8:?}, ad6usrc: {=u8:?}, ad7usrc: {=u8:?}, ad8usrc: {=u8:?}, ad9usrc: {=u8:?}, ad10usrc: {=u8:?} }}",
+                self.ad5usrc(),
+                self.ad6usrc(),
+                self.ad7usrc(),
+                self.ad8usrc(),
+                self.ad9usrc(),
+                self.ad10usrc()
+            )
         }
     }
     #[doc = "High Resolution Timer: Burst DMA Data Register"]
@@ -1239,7 +1340,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimBdmupr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimBdmupr {{ mcr: {=bool:?}, micr: {=bool:?}, mdier: {=bool:?}, mcnt: {=bool:?}, mper: {=bool:?}, mrep: {=bool:?}, mcmp[0]: {=bool:?}, mcmp[1]: {=bool:?}, mcmp[2]: {=bool:?}, mcmp[3]: {=bool:?} }}" , self . mcr () , self . micr () , self . mdier () , self . mcnt () , self . mper () , self . mrep () , self . mcmp (0usize) , self . mcmp (1usize) , self . mcmp (2usize) , self . mcmp (3usize))
+            defmt::write!(
+                f,
+                "HrtimBdmupr {{ mcr: {=bool:?}, micr: {=bool:?}, mdier: {=bool:?}, mcnt: {=bool:?}, mper: {=bool:?}, mrep: {=bool:?}, mcmp[0]: {=bool:?}, mcmp[1]: {=bool:?}, mcmp[2]: {=bool:?}, mcmp[3]: {=bool:?} }}",
+                self.mcr(),
+                self.micr(),
+                self.mdier(),
+                self.mcnt(),
+                self.mper(),
+                self.mrep(),
+                self.mcmp(0usize),
+                self.mcmp(1usize),
+                self.mcmp(2usize),
+                self.mcmp(3usize)
+            )
         }
     }
     #[doc = "High Resolution Timer: Burst DMA Master timer update Register"]
@@ -1361,7 +1475,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimBdtupr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimBdtupr {{ cr: {=bool:?}, icr: {=bool:?}, dier: {=bool:?}, cnt: {=bool:?}, per: {=bool:?}, rep: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?} }}" , self . cr () , self . icr () , self . dier () , self . cnt () , self . per () , self . rep () , self . cmp (0usize) , self . cmp (1usize) , self . cmp (2usize) , self . cmp (3usize))
+            defmt::write!(
+                f,
+                "HrtimBdtupr {{ cr: {=bool:?}, icr: {=bool:?}, dier: {=bool:?}, cnt: {=bool:?}, per: {=bool:?}, rep: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?} }}",
+                self.cr(),
+                self.icr(),
+                self.dier(),
+                self.cnt(),
+                self.per(),
+                self.rep(),
+                self.cmp(0usize),
+                self.cmp(1usize),
+                self.cmp(2usize),
+                self.cmp(3usize)
+            )
         }
     }
     #[doc = "High Resolution Timer: Burst Mode Compare Register"]
@@ -1530,7 +1657,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimBmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimBmcr {{ bme: {=bool:?}, bmom: {=bool:?}, bmclk: {=u8:?}, bmprsc: {=u8:?}, bmpren: {=bool:?}, mtbm: {=bool:?}, tbm[0]: {=bool:?}, tbm[1]: {=bool:?}, tbm[2]: {=bool:?}, tbm[3]: {=bool:?}, tbm[4]: {=bool:?}, bmstat: {=bool:?} }}" , self . bme () , self . bmom () , self . bmclk () , self . bmprsc () , self . bmpren () , self . mtbm () , self . tbm (0usize) , self . tbm (1usize) , self . tbm (2usize) , self . tbm (3usize) , self . tbm (4usize) , self . bmstat ())
+            defmt::write!(
+                f,
+                "HrtimBmcr {{ bme: {=bool:?}, bmom: {=bool:?}, bmclk: {=u8:?}, bmprsc: {=u8:?}, bmpren: {=bool:?}, mtbm: {=bool:?}, tbm[0]: {=bool:?}, tbm[1]: {=bool:?}, tbm[2]: {=bool:?}, tbm[3]: {=bool:?}, tbm[4]: {=bool:?}, bmstat: {=bool:?} }}",
+                self.bme(),
+                self.bmom(),
+                self.bmclk(),
+                self.bmprsc(),
+                self.bmpren(),
+                self.mtbm(),
+                self.tbm(0usize),
+                self.tbm(1usize),
+                self.tbm(2usize),
+                self.tbm(3usize),
+                self.tbm(4usize),
+                self.bmstat()
+            )
         }
     }
     #[doc = "High Resolution Timer: Burst Mode Period Register"]
@@ -1732,7 +1874,37 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimBmtrgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimBmtrgr {{ sw: {=bool:?}, mstrst: {=bool:?}, mstrep: {=bool:?}, mstcmp[0]: {=bool:?}, mstcmp[1]: {=bool:?}, mstcmp[2]: {=bool:?}, mstcmp[3]: {=bool:?}, trst[0]: {=bool:?}, trst[1]: {=bool:?}, trst[2]: {=bool:?}, trst[3]: {=bool:?}, trst[4]: {=bool:?}, trep[0]: {=bool:?}, trep[1]: {=bool:?}, trep[2]: {=bool:?}, trep[3]: {=bool:?}, trep[4]: {=bool:?}, tcmp1[0]: {=bool:?}, tcmp1[1]: {=bool:?}, tcmp1[2]: {=bool:?}, tcmp1[3]: {=bool:?}, tcmp1[4]: {=bool:?}, tcmp2[0]: {=bool:?}, tcmp2[1]: {=bool:?}, tcmp2[2]: {=bool:?}, tcmp2[3]: {=bool:?}, tcmp2[4]: {=bool:?} }}" , self . sw () , self . mstrst () , self . mstrep () , self . mstcmp (0usize) , self . mstcmp (1usize) , self . mstcmp (2usize) , self . mstcmp (3usize) , self . trst (0usize) , self . trst (1usize) , self . trst (2usize) , self . trst (3usize) , self . trst (4usize) , self . trep (0usize) , self . trep (1usize) , self . trep (2usize) , self . trep (3usize) , self . trep (4usize) , self . tcmp1 (0usize) , self . tcmp1 (1usize) , self . tcmp1 (2usize) , self . tcmp1 (3usize) , self . tcmp1 (4usize) , self . tcmp2 (0usize) , self . tcmp2 (1usize) , self . tcmp2 (2usize) , self . tcmp2 (3usize) , self . tcmp2 (4usize))
+            defmt::write!(
+                f,
+                "HrtimBmtrgr {{ sw: {=bool:?}, mstrst: {=bool:?}, mstrep: {=bool:?}, mstcmp[0]: {=bool:?}, mstcmp[1]: {=bool:?}, mstcmp[2]: {=bool:?}, mstcmp[3]: {=bool:?}, trst[0]: {=bool:?}, trst[1]: {=bool:?}, trst[2]: {=bool:?}, trst[3]: {=bool:?}, trst[4]: {=bool:?}, trep[0]: {=bool:?}, trep[1]: {=bool:?}, trep[2]: {=bool:?}, trep[3]: {=bool:?}, trep[4]: {=bool:?}, tcmp1[0]: {=bool:?}, tcmp1[1]: {=bool:?}, tcmp1[2]: {=bool:?}, tcmp1[3]: {=bool:?}, tcmp1[4]: {=bool:?}, tcmp2[0]: {=bool:?}, tcmp2[1]: {=bool:?}, tcmp2[2]: {=bool:?}, tcmp2[3]: {=bool:?}, tcmp2[4]: {=bool:?} }}",
+                self.sw(),
+                self.mstrst(),
+                self.mstrep(),
+                self.mstcmp(0usize),
+                self.mstcmp(1usize),
+                self.mstcmp(2usize),
+                self.mstcmp(3usize),
+                self.trst(0usize),
+                self.trst(1usize),
+                self.trst(2usize),
+                self.trst(3usize),
+                self.trst(4usize),
+                self.trep(0usize),
+                self.trep(1usize),
+                self.trep(2usize),
+                self.trep(3usize),
+                self.trep(4usize),
+                self.tcmp1(0usize),
+                self.tcmp1(1usize),
+                self.tcmp1(2usize),
+                self.tcmp1(3usize),
+                self.tcmp1(4usize),
+                self.tcmp2(0usize),
+                self.tcmp2(1usize),
+                self.tcmp2(2usize),
+                self.tcmp2(3usize),
+                self.tcmp2(4usize)
+            )
         }
     }
     #[doc = "High Resolution Timer: Control Register 1"]
@@ -1810,7 +1982,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimCr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimCr1 {{ mudis: {=bool:?}, tudis[0]: {=bool:?}, tudis[1]: {=bool:?}, tudis[2]: {=bool:?}, tudis[3]: {=bool:?}, tudis[4]: {=bool:?}, adusrc[0]: {=u8:?}, adusrc[1]: {=u8:?}, adusrc[2]: {=u8:?}, adusrc[3]: {=u8:?} }}" , self . mudis () , self . tudis (0usize) , self . tudis (1usize) , self . tudis (2usize) , self . tudis (3usize) , self . tudis (4usize) , self . adusrc (0usize) , self . adusrc (1usize) , self . adusrc (2usize) , self . adusrc (3usize))
+            defmt::write!(
+                f,
+                "HrtimCr1 {{ mudis: {=bool:?}, tudis[0]: {=bool:?}, tudis[1]: {=bool:?}, tudis[2]: {=bool:?}, tudis[3]: {=bool:?}, tudis[4]: {=bool:?}, adusrc[0]: {=u8:?}, adusrc[1]: {=u8:?}, adusrc[2]: {=u8:?}, adusrc[3]: {=u8:?} }}",
+                self.mudis(),
+                self.tudis(0usize),
+                self.tudis(1usize),
+                self.tudis(2usize),
+                self.tudis(3usize),
+                self.tudis(4usize),
+                self.adusrc(0usize),
+                self.adusrc(1usize),
+                self.adusrc(2usize),
+                self.adusrc(3usize)
+            )
         }
     }
     #[doc = "High Resolution Timer: Control Register 2"]
@@ -1902,7 +2087,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimCr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimCr2 {{ mswu: {=bool:?}, tswu[0]: {=bool:?}, tswu[1]: {=bool:?}, tswu[2]: {=bool:?}, tswu[3]: {=bool:?}, tswu[4]: {=bool:?}, mrst: {=bool:?}, trst[0]: {=bool:?}, trst[1]: {=bool:?}, trst[2]: {=bool:?}, trst[3]: {=bool:?}, trst[4]: {=bool:?} }}" , self . mswu () , self . tswu (0usize) , self . tswu (1usize) , self . tswu (2usize) , self . tswu (3usize) , self . tswu (4usize) , self . mrst () , self . trst (0usize) , self . trst (1usize) , self . trst (2usize) , self . trst (3usize) , self . trst (4usize))
+            defmt::write!(
+                f,
+                "HrtimCr2 {{ mswu: {=bool:?}, tswu[0]: {=bool:?}, tswu[1]: {=bool:?}, tswu[2]: {=bool:?}, tswu[3]: {=bool:?}, tswu[4]: {=bool:?}, mrst: {=bool:?}, trst[0]: {=bool:?}, trst[1]: {=bool:?}, trst[2]: {=bool:?}, trst[3]: {=bool:?}, trst[4]: {=bool:?} }}",
+                self.mswu(),
+                self.tswu(0usize),
+                self.tswu(1usize),
+                self.tswu(2usize),
+                self.tswu(3usize),
+                self.tswu(4usize),
+                self.mrst(),
+                self.trst(0usize),
+                self.trst(1usize),
+                self.trst(2usize),
+                self.trst(3usize),
+                self.trst(4usize)
+            )
         }
     }
     #[doc = "High Resolution Timer: DLL Control Register"]
@@ -2079,7 +2279,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimEecr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimEecr1 {{ eesrc[0]: {=u8:?}, eesrc[1]: {=u8:?}, eesrc[2]: {=u8:?}, eesrc[3]: {=u8:?}, eesrc[4]: {=u8:?}, eepol[0]: {=bool:?}, eepol[1]: {=bool:?}, eepol[2]: {=bool:?}, eepol[3]: {=bool:?}, eepol[4]: {=bool:?}, eesns[0]: {=u8:?}, eesns[1]: {=u8:?}, eesns[2]: {=u8:?}, eesns[3]: {=u8:?}, eesns[4]: {=u8:?}, eefast[0]: {=u8:?}, eefast[1]: {=u8:?}, eefast[2]: {=u8:?}, eefast[3]: {=u8:?}, eefast[4]: {=u8:?} }}" , self . eesrc (0usize) , self . eesrc (1usize) , self . eesrc (2usize) , self . eesrc (3usize) , self . eesrc (4usize) , self . eepol (0usize) , self . eepol (1usize) , self . eepol (2usize) , self . eepol (3usize) , self . eepol (4usize) , self . eesns (0usize) , self . eesns (1usize) , self . eesns (2usize) , self . eesns (3usize) , self . eesns (4usize) , self . eefast (0usize) , self . eefast (1usize) , self . eefast (2usize) , self . eefast (3usize) , self . eefast (4usize))
+            defmt::write!(
+                f,
+                "HrtimEecr1 {{ eesrc[0]: {=u8:?}, eesrc[1]: {=u8:?}, eesrc[2]: {=u8:?}, eesrc[3]: {=u8:?}, eesrc[4]: {=u8:?}, eepol[0]: {=bool:?}, eepol[1]: {=bool:?}, eepol[2]: {=bool:?}, eepol[3]: {=bool:?}, eepol[4]: {=bool:?}, eesns[0]: {=u8:?}, eesns[1]: {=u8:?}, eesns[2]: {=u8:?}, eesns[3]: {=u8:?}, eesns[4]: {=u8:?}, eefast[0]: {=u8:?}, eefast[1]: {=u8:?}, eefast[2]: {=u8:?}, eefast[3]: {=u8:?}, eefast[4]: {=u8:?} }}",
+                self.eesrc(0usize),
+                self.eesrc(1usize),
+                self.eesrc(2usize),
+                self.eesrc(3usize),
+                self.eesrc(4usize),
+                self.eepol(0usize),
+                self.eepol(1usize),
+                self.eepol(2usize),
+                self.eepol(3usize),
+                self.eepol(4usize),
+                self.eesns(0usize),
+                self.eesns(1usize),
+                self.eesns(2usize),
+                self.eesns(3usize),
+                self.eesns(4usize),
+                self.eefast(0usize),
+                self.eefast(1usize),
+                self.eefast(2usize),
+                self.eefast(3usize),
+                self.eefast(4usize)
+            )
         }
     }
     #[doc = "High Resolution Timer: External Events Control Register 2"]
@@ -2166,7 +2389,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimEecr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimEecr2 {{ eesrc[0]: {=u8:?}, eesrc[1]: {=u8:?}, eesrc[2]: {=u8:?}, eesrc[3]: {=u8:?}, eesrc[4]: {=u8:?}, eepol[0]: {=bool:?}, eepol[1]: {=bool:?}, eepol[2]: {=bool:?}, eepol[3]: {=bool:?}, eepol[4]: {=bool:?}, eesns[0]: {=u8:?}, eesns[1]: {=u8:?}, eesns[2]: {=u8:?}, eesns[3]: {=u8:?}, eesns[4]: {=u8:?} }}" , self . eesrc (0usize) , self . eesrc (1usize) , self . eesrc (2usize) , self . eesrc (3usize) , self . eesrc (4usize) , self . eepol (0usize) , self . eepol (1usize) , self . eepol (2usize) , self . eepol (3usize) , self . eepol (4usize) , self . eesns (0usize) , self . eesns (1usize) , self . eesns (2usize) , self . eesns (3usize) , self . eesns (4usize))
+            defmt::write!(
+                f,
+                "HrtimEecr2 {{ eesrc[0]: {=u8:?}, eesrc[1]: {=u8:?}, eesrc[2]: {=u8:?}, eesrc[3]: {=u8:?}, eesrc[4]: {=u8:?}, eepol[0]: {=bool:?}, eepol[1]: {=bool:?}, eepol[2]: {=bool:?}, eepol[3]: {=bool:?}, eepol[4]: {=bool:?}, eesns[0]: {=u8:?}, eesns[1]: {=u8:?}, eesns[2]: {=u8:?}, eesns[3]: {=u8:?}, eesns[4]: {=u8:?} }}",
+                self.eesrc(0usize),
+                self.eesrc(1usize),
+                self.eesrc(2usize),
+                self.eesrc(3usize),
+                self.eesrc(4usize),
+                self.eepol(0usize),
+                self.eepol(1usize),
+                self.eepol(2usize),
+                self.eepol(3usize),
+                self.eepol(4usize),
+                self.eesns(0usize),
+                self.eesns(1usize),
+                self.eesns(2usize),
+                self.eesns(3usize),
+                self.eesns(4usize)
+            )
         }
     }
     #[doc = "High Resolution Timer: External Events Control Register 2"]
@@ -2224,7 +2465,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimEecr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimEecr3 {{ eef[0]: {=u8:?}, eef[1]: {=u8:?}, eef[2]: {=u8:?}, eef[3]: {=u8:?}, eef[4]: {=u8:?}, eevsd: {=u8:?} }}" , self . eef (0usize) , self . eef (1usize) , self . eef (2usize) , self . eef (3usize) , self . eef (4usize) , self . eevsd ())
+            defmt::write!(
+                f,
+                "HrtimEecr3 {{ eef[0]: {=u8:?}, eef[1]: {=u8:?}, eef[2]: {=u8:?}, eef[3]: {=u8:?}, eef[4]: {=u8:?}, eevsd: {=u8:?} }}",
+                self.eef(0usize),
+                self.eef(1usize),
+                self.eef(2usize),
+                self.eef(3usize),
+                self.eef(4usize),
+                self.eevsd()
+            )
         }
     }
     #[doc = "High Resolution Timer: Fault Input Register 1"]
@@ -2348,7 +2598,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimFltinr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimFltinr1 {{ flte[0]: {=bool:?}, flte[1]: {=bool:?}, flte[2]: {=bool:?}, flte[3]: {=bool:?}, fltp[0]: {=bool:?}, fltp[1]: {=bool:?}, fltp[2]: {=bool:?}, fltp[3]: {=bool:?}, fltsrc[0]: {=bool:?}, fltsrc[1]: {=bool:?}, fltsrc[2]: {=bool:?}, fltsrc[3]: {=bool:?}, fltf[0]: {=u8:?}, fltf[1]: {=u8:?}, fltf[2]: {=u8:?}, fltf[3]: {=u8:?}, fltlck[0]: {=bool:?}, fltlck[1]: {=bool:?}, fltlck[2]: {=bool:?}, fltlck[3]: {=bool:?} }}" , self . flte (0usize) , self . flte (1usize) , self . flte (2usize) , self . flte (3usize) , self . fltp (0usize) , self . fltp (1usize) , self . fltp (2usize) , self . fltp (3usize) , self . fltsrc (0usize) , self . fltsrc (1usize) , self . fltsrc (2usize) , self . fltsrc (3usize) , self . fltf (0usize) , self . fltf (1usize) , self . fltf (2usize) , self . fltf (3usize) , self . fltlck (0usize) , self . fltlck (1usize) , self . fltlck (2usize) , self . fltlck (3usize))
+            defmt::write!(
+                f,
+                "HrtimFltinr1 {{ flte[0]: {=bool:?}, flte[1]: {=bool:?}, flte[2]: {=bool:?}, flte[3]: {=bool:?}, fltp[0]: {=bool:?}, fltp[1]: {=bool:?}, fltp[2]: {=bool:?}, fltp[3]: {=bool:?}, fltsrc[0]: {=bool:?}, fltsrc[1]: {=bool:?}, fltsrc[2]: {=bool:?}, fltsrc[3]: {=bool:?}, fltf[0]: {=u8:?}, fltf[1]: {=u8:?}, fltf[2]: {=u8:?}, fltf[3]: {=u8:?}, fltlck[0]: {=bool:?}, fltlck[1]: {=bool:?}, fltlck[2]: {=bool:?}, fltlck[3]: {=bool:?} }}",
+                self.flte(0usize),
+                self.flte(1usize),
+                self.flte(2usize),
+                self.flte(3usize),
+                self.fltp(0usize),
+                self.fltp(1usize),
+                self.fltp(2usize),
+                self.fltp(3usize),
+                self.fltsrc(0usize),
+                self.fltsrc(1usize),
+                self.fltsrc(2usize),
+                self.fltsrc(3usize),
+                self.fltf(0usize),
+                self.fltf(1usize),
+                self.fltf(2usize),
+                self.fltf(3usize),
+                self.fltlck(0usize),
+                self.fltlck(1usize),
+                self.fltlck(2usize),
+                self.fltlck(3usize)
+            )
         }
     }
     #[doc = "High Resolution Timer: Fault Input Register 2"]
@@ -2470,7 +2743,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimFltinr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimFltinr2 {{ flte[0]: {=bool:?}, fltp[0]: {=bool:?}, fltsrc[0]: {=bool:?}, fltf[0]: {=u8:?}, fltlck[0]: {=bool:?}, fltsd: {=u8:?} }}" , self . flte (0usize) , self . fltp (0usize) , self . fltsrc (0usize) , self . fltf (0usize) , self . fltlck (0usize) , self . fltsd ())
+            defmt::write!(
+                f,
+                "HrtimFltinr2 {{ flte[0]: {=bool:?}, fltp[0]: {=bool:?}, fltsrc[0]: {=bool:?}, fltf[0]: {=u8:?}, fltlck[0]: {=bool:?}, fltsd: {=u8:?} }}",
+                self.flte(0usize),
+                self.fltp(0usize),
+                self.fltsrc(0usize),
+                self.fltf(0usize),
+                self.fltlck(0usize),
+                self.fltsd()
+            )
         }
     }
     #[doc = "High Resolution Timer: Interrupt Clear Register"]
@@ -2554,7 +2836,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimIcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimIcr {{ flt[0]: {=bool:?}, flt[1]: {=bool:?}, flt[2]: {=bool:?}, flt[3]: {=bool:?}, flt[4]: {=bool:?}, sysflt: {=bool:?}, dllrdy: {=bool:?}, bmper: {=bool:?} }}" , self . flt (0usize) , self . flt (1usize) , self . flt (2usize) , self . flt (3usize) , self . flt (4usize) , self . sysflt () , self . dllrdy () , self . bmper ())
+            defmt::write!(
+                f,
+                "HrtimIcr {{ flt[0]: {=bool:?}, flt[1]: {=bool:?}, flt[2]: {=bool:?}, flt[3]: {=bool:?}, flt[4]: {=bool:?}, sysflt: {=bool:?}, dllrdy: {=bool:?}, bmper: {=bool:?} }}",
+                self.flt(0usize),
+                self.flt(1usize),
+                self.flt(2usize),
+                self.flt(3usize),
+                self.flt(4usize),
+                self.sysflt(),
+                self.dllrdy(),
+                self.bmper()
+            )
         }
     }
     #[doc = "High Resolution Timer: Interrupt Enable Register"]
@@ -2638,7 +2931,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimIer {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimIer {{ flt[0]: {=bool:?}, flt[1]: {=bool:?}, flt[2]: {=bool:?}, flt[3]: {=bool:?}, flt[4]: {=bool:?}, sysflt: {=bool:?}, dllrdy: {=bool:?}, bmper: {=bool:?} }}" , self . flt (0usize) , self . flt (1usize) , self . flt (2usize) , self . flt (3usize) , self . flt (4usize) , self . sysflt () , self . dllrdy () , self . bmper ())
+            defmt::write!(
+                f,
+                "HrtimIer {{ flt[0]: {=bool:?}, flt[1]: {=bool:?}, flt[2]: {=bool:?}, flt[3]: {=bool:?}, flt[4]: {=bool:?}, sysflt: {=bool:?}, dllrdy: {=bool:?}, bmper: {=bool:?} }}",
+                self.flt(0usize),
+                self.flt(1usize),
+                self.flt(2usize),
+                self.flt(3usize),
+                self.flt(4usize),
+                self.sysflt(),
+                self.dllrdy(),
+                self.bmper()
+            )
         }
     }
     #[doc = "High Resolution Timer: Interrupt Status Register"]
@@ -2722,7 +3026,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimIsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimIsr {{ flt[0]: {=bool:?}, flt[1]: {=bool:?}, flt[2]: {=bool:?}, flt[3]: {=bool:?}, flt[4]: {=bool:?}, sysflt: {=bool:?}, dllrdy: {=bool:?}, bmper: {=bool:?} }}" , self . flt (0usize) , self . flt (1usize) , self . flt (2usize) , self . flt (3usize) , self . flt (4usize) , self . sysflt () , self . dllrdy () , self . bmper ())
+            defmt::write!(
+                f,
+                "HrtimIsr {{ flt[0]: {=bool:?}, flt[1]: {=bool:?}, flt[2]: {=bool:?}, flt[3]: {=bool:?}, flt[4]: {=bool:?}, sysflt: {=bool:?}, dllrdy: {=bool:?}, bmper: {=bool:?} }}",
+                self.flt(0usize),
+                self.flt(1usize),
+                self.flt(2usize),
+                self.flt(3usize),
+                self.flt(4usize),
+                self.sysflt(),
+                self.dllrdy(),
+                self.bmper()
+            )
         }
     }
     #[doc = "High Resolution Timer: Output Disable Register"]
@@ -2788,7 +3103,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimOdisr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimOdisr {{ t1odis[0]: {=bool:?}, t1odis[1]: {=bool:?}, t1odis[2]: {=bool:?}, t1odis[3]: {=bool:?}, t1odis[4]: {=bool:?}, t2odis[0]: {=bool:?}, t2odis[1]: {=bool:?}, t2odis[2]: {=bool:?}, t2odis[3]: {=bool:?}, t2odis[4]: {=bool:?} }}" , self . t1odis (0usize) , self . t1odis (1usize) , self . t1odis (2usize) , self . t1odis (3usize) , self . t1odis (4usize) , self . t2odis (0usize) , self . t2odis (1usize) , self . t2odis (2usize) , self . t2odis (3usize) , self . t2odis (4usize))
+            defmt::write!(
+                f,
+                "HrtimOdisr {{ t1odis[0]: {=bool:?}, t1odis[1]: {=bool:?}, t1odis[2]: {=bool:?}, t1odis[3]: {=bool:?}, t1odis[4]: {=bool:?}, t2odis[0]: {=bool:?}, t2odis[1]: {=bool:?}, t2odis[2]: {=bool:?}, t2odis[3]: {=bool:?}, t2odis[4]: {=bool:?} }}",
+                self.t1odis(0usize),
+                self.t1odis(1usize),
+                self.t1odis(2usize),
+                self.t1odis(3usize),
+                self.t1odis(4usize),
+                self.t2odis(0usize),
+                self.t2odis(1usize),
+                self.t2odis(2usize),
+                self.t2odis(3usize),
+                self.t2odis(4usize)
+            )
         }
     }
     #[doc = "High Resolution Timer: Output Disable Status Register"]
@@ -2854,7 +3182,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimOdsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimOdsr {{ t1odis[0]: {=bool:?}, t1odis[1]: {=bool:?}, t1odis[2]: {=bool:?}, t1odis[3]: {=bool:?}, t1odis[4]: {=bool:?}, t2odis[0]: {=bool:?}, t2odis[1]: {=bool:?}, t2odis[2]: {=bool:?}, t2odis[3]: {=bool:?}, t2odis[4]: {=bool:?} }}" , self . t1odis (0usize) , self . t1odis (1usize) , self . t1odis (2usize) , self . t1odis (3usize) , self . t1odis (4usize) , self . t2odis (0usize) , self . t2odis (1usize) , self . t2odis (2usize) , self . t2odis (3usize) , self . t2odis (4usize))
+            defmt::write!(
+                f,
+                "HrtimOdsr {{ t1odis[0]: {=bool:?}, t1odis[1]: {=bool:?}, t1odis[2]: {=bool:?}, t1odis[3]: {=bool:?}, t1odis[4]: {=bool:?}, t2odis[0]: {=bool:?}, t2odis[1]: {=bool:?}, t2odis[2]: {=bool:?}, t2odis[3]: {=bool:?}, t2odis[4]: {=bool:?} }}",
+                self.t1odis(0usize),
+                self.t1odis(1usize),
+                self.t1odis(2usize),
+                self.t1odis(3usize),
+                self.t1odis(4usize),
+                self.t2odis(0usize),
+                self.t2odis(1usize),
+                self.t2odis(2usize),
+                self.t2odis(3usize),
+                self.t2odis(4usize)
+            )
         }
     }
     #[doc = "High Resolution Timer: Output Enable Register"]
@@ -2922,7 +3263,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for HrtimOenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HrtimOenr {{ t1oen[0]: {=bool:?}, t1oen[1]: {=bool:?}, t1oen[2]: {=bool:?}, t1oen[3]: {=bool:?}, t1oen[4]: {=bool:?}, t1oen[5]: {=bool:?}, t2oen[0]: {=bool:?}, t2oen[1]: {=bool:?}, t2oen[2]: {=bool:?}, t2oen[3]: {=bool:?}, t2oen[4]: {=bool:?}, t2oen[5]: {=bool:?} }}" , self . t1oen (0usize) , self . t1oen (1usize) , self . t1oen (2usize) , self . t1oen (3usize) , self . t1oen (4usize) , self . t1oen (5usize) , self . t2oen (0usize) , self . t2oen (1usize) , self . t2oen (2usize) , self . t2oen (3usize) , self . t2oen (4usize) , self . t2oen (5usize))
+            defmt::write!(
+                f,
+                "HrtimOenr {{ t1oen[0]: {=bool:?}, t1oen[1]: {=bool:?}, t1oen[2]: {=bool:?}, t1oen[3]: {=bool:?}, t1oen[4]: {=bool:?}, t1oen[5]: {=bool:?}, t2oen[0]: {=bool:?}, t2oen[1]: {=bool:?}, t2oen[2]: {=bool:?}, t2oen[3]: {=bool:?}, t2oen[4]: {=bool:?}, t2oen[5]: {=bool:?} }}",
+                self.t1oen(0usize),
+                self.t1oen(1usize),
+                self.t1oen(2usize),
+                self.t1oen(3usize),
+                self.t1oen(4usize),
+                self.t1oen(5usize),
+                self.t2oen(0usize),
+                self.t2oen(1usize),
+                self.t2oen(2usize),
+                self.t2oen(3usize),
+                self.t2oen(4usize),
+                self.t2oen(5usize)
+            )
         }
     }
     #[doc = "Master Timer Compare X Register"]
@@ -3220,7 +3576,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Mcr {{ ckpsc: {=u8:?}, cont: {=bool:?}, retrig: {=bool:?}, half: {=bool:?}, syncin: {:?}, syncrstm: {=bool:?}, syncstrtm: {=bool:?}, syncout: {:?}, syncsrc: {:?}, mcen: {=bool:?}, tcen[0]: {=bool:?}, tcen[1]: {=bool:?}, tcen[2]: {=bool:?}, tcen[3]: {=bool:?}, tcen[4]: {=bool:?}, tcen[5]: {=bool:?}, dacsync: {:?}, preen: {=bool:?}, mrepu: {=bool:?}, brstdma: {:?} }}" , self . ckpsc () , self . cont () , self . retrig () , self . half () , self . syncin () , self . syncrstm () , self . syncstrtm () , self . syncout () , self . syncsrc () , self . mcen () , self . tcen (0usize) , self . tcen (1usize) , self . tcen (2usize) , self . tcen (3usize) , self . tcen (4usize) , self . tcen (5usize) , self . dacsync () , self . preen () , self . mrepu () , self . brstdma ())
+            defmt::write!(
+                f,
+                "Mcr {{ ckpsc: {=u8:?}, cont: {=bool:?}, retrig: {=bool:?}, half: {=bool:?}, syncin: {:?}, syncrstm: {=bool:?}, syncstrtm: {=bool:?}, syncout: {:?}, syncsrc: {:?}, mcen: {=bool:?}, tcen[0]: {=bool:?}, tcen[1]: {=bool:?}, tcen[2]: {=bool:?}, tcen[3]: {=bool:?}, tcen[4]: {=bool:?}, tcen[5]: {=bool:?}, dacsync: {:?}, preen: {=bool:?}, mrepu: {=bool:?}, brstdma: {:?} }}",
+                self.ckpsc(),
+                self.cont(),
+                self.retrig(),
+                self.half(),
+                self.syncin(),
+                self.syncrstm(),
+                self.syncstrtm(),
+                self.syncout(),
+                self.syncsrc(),
+                self.mcen(),
+                self.tcen(0usize),
+                self.tcen(1usize),
+                self.tcen(2usize),
+                self.tcen(3usize),
+                self.tcen(4usize),
+                self.tcen(5usize),
+                self.dacsync(),
+                self.preen(),
+                self.mrepu(),
+                self.brstdma()
+            )
         }
     }
     #[doc = "Master Timer DMA / Interrupt Enable Register"]
@@ -3362,7 +3741,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mdier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Mdier {{ mcmpie[0]: {=bool:?}, mcmpie[1]: {=bool:?}, mcmpie[2]: {=bool:?}, mcmpie[3]: {=bool:?}, mrepie: {=bool:?}, syncie: {=bool:?}, mupdie: {=bool:?}, mcmpde[0]: {=bool:?}, mcmpde[1]: {=bool:?}, mcmpde[2]: {=bool:?}, mcmpde[3]: {=bool:?}, mrepde: {=bool:?}, syncde: {=bool:?}, mupdde: {=bool:?} }}" , self . mcmpie (0usize) , self . mcmpie (1usize) , self . mcmpie (2usize) , self . mcmpie (3usize) , self . mrepie () , self . syncie () , self . mupdie () , self . mcmpde (0usize) , self . mcmpde (1usize) , self . mcmpde (2usize) , self . mcmpde (3usize) , self . mrepde () , self . syncde () , self . mupdde ())
+            defmt::write!(
+                f,
+                "Mdier {{ mcmpie[0]: {=bool:?}, mcmpie[1]: {=bool:?}, mcmpie[2]: {=bool:?}, mcmpie[3]: {=bool:?}, mrepie: {=bool:?}, syncie: {=bool:?}, mupdie: {=bool:?}, mcmpde[0]: {=bool:?}, mcmpde[1]: {=bool:?}, mcmpde[2]: {=bool:?}, mcmpde[3]: {=bool:?}, mrepde: {=bool:?}, syncde: {=bool:?}, mupdde: {=bool:?} }}",
+                self.mcmpie(0usize),
+                self.mcmpie(1usize),
+                self.mcmpie(2usize),
+                self.mcmpie(3usize),
+                self.mrepie(),
+                self.syncie(),
+                self.mupdie(),
+                self.mcmpde(0usize),
+                self.mcmpde(1usize),
+                self.mcmpde(2usize),
+                self.mcmpde(3usize),
+                self.mrepde(),
+                self.syncde(),
+                self.mupdde()
+            )
         }
     }
     #[doc = "Master Timer Interrupt Clear Register"]
@@ -3445,7 +3841,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Micr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Micr {{ mcmpc[0]: {=bool:?}, mcmpc[1]: {=bool:?}, mcmpc[2]: {=bool:?}, mcmpc[3]: {=bool:?}, mrepc: {=bool:?}, syncc: {=bool:?}, mupdc: {=bool:?} }}" , self . mcmpc (0usize) , self . mcmpc (1usize) , self . mcmpc (2usize) , self . mcmpc (3usize) , self . mrepc () , self . syncc () , self . mupdc ())
+            defmt::write!(
+                f,
+                "Micr {{ mcmpc[0]: {=bool:?}, mcmpc[1]: {=bool:?}, mcmpc[2]: {=bool:?}, mcmpc[3]: {=bool:?}, mrepc: {=bool:?}, syncc: {=bool:?}, mupdc: {=bool:?} }}",
+                self.mcmpc(0usize),
+                self.mcmpc(1usize),
+                self.mcmpc(2usize),
+                self.mcmpc(3usize),
+                self.mrepc(),
+                self.syncc(),
+                self.mupdc()
+            )
         }
     }
     #[doc = "Master Timer Interrupt Status Register"]
@@ -3528,7 +3934,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Misr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Misr {{ mcmp[0]: {=bool:?}, mcmp[1]: {=bool:?}, mcmp[2]: {=bool:?}, mcmp[3]: {=bool:?}, mrep: {=bool:?}, sync: {=bool:?}, mupd: {=bool:?} }}" , self . mcmp (0usize) , self . mcmp (1usize) , self . mcmp (2usize) , self . mcmp (3usize) , self . mrep () , self . sync () , self . mupd ())
+            defmt::write!(
+                f,
+                "Misr {{ mcmp[0]: {=bool:?}, mcmp[1]: {=bool:?}, mcmp[2]: {=bool:?}, mcmp[3]: {=bool:?}, mrep: {=bool:?}, sync: {=bool:?}, mupd: {=bool:?} }}",
+                self.mcmp(0usize),
+                self.mcmp(1usize),
+                self.mcmp(2usize),
+                self.mcmp(3usize),
+                self.mrep(),
+                self.sync(),
+                self.mupd()
+            )
         }
     }
     #[doc = "Master Timer Period Register"]
@@ -3850,7 +4266,38 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Timxccr {{ swcpt: {=bool:?}, updcpt: {=bool:?}, exevcpt[0]: {=bool:?}, exevcpt[1]: {=bool:?}, exevcpt[2]: {=bool:?}, exevcpt[3]: {=bool:?}, exevcpt[4]: {=bool:?}, exevcpt[5]: {=bool:?}, exevcpt[6]: {=bool:?}, exevcpt[7]: {=bool:?}, exevcpt[8]: {=bool:?}, exevcpt[9]: {=bool:?}, txset: {=bool:?}, txrst: {=bool:?}, txcmp[0]: {=bool:?}, txcmp[1]: {=bool:?}, tyset: {=bool:?}, tyrst: {=bool:?}, tycmp[0]: {=bool:?}, tycmp[1]: {=bool:?}, tzset: {=bool:?}, tzrst: {=bool:?}, tzcmp[0]: {=bool:?}, tzcmp[1]: {=bool:?}, ttset: {=bool:?}, ttrst: {=bool:?}, ttcmp[0]: {=bool:?}, ttcmp[1]: {=bool:?} }}" , self . swcpt () , self . updcpt () , self . exevcpt (0usize) , self . exevcpt (1usize) , self . exevcpt (2usize) , self . exevcpt (3usize) , self . exevcpt (4usize) , self . exevcpt (5usize) , self . exevcpt (6usize) , self . exevcpt (7usize) , self . exevcpt (8usize) , self . exevcpt (9usize) , self . txset () , self . txrst () , self . txcmp (0usize) , self . txcmp (1usize) , self . tyset () , self . tyrst () , self . tycmp (0usize) , self . tycmp (1usize) , self . tzset () , self . tzrst () , self . tzcmp (0usize) , self . tzcmp (1usize) , self . ttset () , self . ttrst () , self . ttcmp (0usize) , self . ttcmp (1usize))
+            defmt::write!(
+                f,
+                "Timxccr {{ swcpt: {=bool:?}, updcpt: {=bool:?}, exevcpt[0]: {=bool:?}, exevcpt[1]: {=bool:?}, exevcpt[2]: {=bool:?}, exevcpt[3]: {=bool:?}, exevcpt[4]: {=bool:?}, exevcpt[5]: {=bool:?}, exevcpt[6]: {=bool:?}, exevcpt[7]: {=bool:?}, exevcpt[8]: {=bool:?}, exevcpt[9]: {=bool:?}, txset: {=bool:?}, txrst: {=bool:?}, txcmp[0]: {=bool:?}, txcmp[1]: {=bool:?}, tyset: {=bool:?}, tyrst: {=bool:?}, tycmp[0]: {=bool:?}, tycmp[1]: {=bool:?}, tzset: {=bool:?}, tzrst: {=bool:?}, tzcmp[0]: {=bool:?}, tzcmp[1]: {=bool:?}, ttset: {=bool:?}, ttrst: {=bool:?}, ttcmp[0]: {=bool:?}, ttcmp[1]: {=bool:?} }}",
+                self.swcpt(),
+                self.updcpt(),
+                self.exevcpt(0usize),
+                self.exevcpt(1usize),
+                self.exevcpt(2usize),
+                self.exevcpt(3usize),
+                self.exevcpt(4usize),
+                self.exevcpt(5usize),
+                self.exevcpt(6usize),
+                self.exevcpt(7usize),
+                self.exevcpt(8usize),
+                self.exevcpt(9usize),
+                self.txset(),
+                self.txrst(),
+                self.txcmp(0usize),
+                self.txcmp(1usize),
+                self.tyset(),
+                self.tyrst(),
+                self.tycmp(0usize),
+                self.tycmp(1usize),
+                self.tzset(),
+                self.tzrst(),
+                self.tzcmp(0usize),
+                self.tzcmp(1usize),
+                self.ttset(),
+                self.ttrst(),
+                self.ttcmp(0usize),
+                self.ttcmp(1usize)
+            )
         }
     }
     #[doc = "Timerx Chopper Register"]
@@ -4314,7 +4761,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Timxcr {{ ckpsc: {=u8:?}, cont: {=bool:?}, retrig: {=bool:?}, half: {=bool:?}, pshpll: {=bool:?}, syncrst: {=bool:?}, syncstrt: {=bool:?}, delcmp2: {:?}, delcmp4: {:?}, repu: {=bool:?}, rstu: {=bool:?}, tu[0]: {=bool:?}, tu[1]: {=bool:?}, tu[2]: {=bool:?}, tu[3]: {=bool:?}, tu[4]: {=bool:?}, mstu: {=bool:?}, dacsync: {:?}, preen: {=bool:?}, updgat: {:?} }}" , self . ckpsc () , self . cont () , self . retrig () , self . half () , self . pshpll () , self . syncrst () , self . syncstrt () , self . delcmp2 () , self . delcmp4 () , self . repu () , self . rstu () , self . tu (0usize) , self . tu (1usize) , self . tu (2usize) , self . tu (3usize) , self . tu (4usize) , self . mstu () , self . dacsync () , self . preen () , self . updgat ())
+            defmt::write!(
+                f,
+                "Timxcr {{ ckpsc: {=u8:?}, cont: {=bool:?}, retrig: {=bool:?}, half: {=bool:?}, pshpll: {=bool:?}, syncrst: {=bool:?}, syncstrt: {=bool:?}, delcmp2: {:?}, delcmp4: {:?}, repu: {=bool:?}, rstu: {=bool:?}, tu[0]: {=bool:?}, tu[1]: {=bool:?}, tu[2]: {=bool:?}, tu[3]: {=bool:?}, tu[4]: {=bool:?}, mstu: {=bool:?}, dacsync: {:?}, preen: {=bool:?}, updgat: {:?} }}",
+                self.ckpsc(),
+                self.cont(),
+                self.retrig(),
+                self.half(),
+                self.pshpll(),
+                self.syncrst(),
+                self.syncstrt(),
+                self.delcmp2(),
+                self.delcmp4(),
+                self.repu(),
+                self.rstu(),
+                self.tu(0usize),
+                self.tu(1usize),
+                self.tu(2usize),
+                self.tu(3usize),
+                self.tu(4usize),
+                self.mstu(),
+                self.dacsync(),
+                self.preen(),
+                self.updgat()
+            )
         }
     }
     #[doc = "HRTIM Timer X Control Register 2"]
@@ -4494,7 +4964,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxcr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Timxcr2 {{ dcde: {=bool:?}, dcds: {=bool:?}, dcdr: {=bool:?}, udm: {=bool:?}, rom: {=u8:?}, outrom: {=u8:?}, adrom: {=u8:?}, bmrom: {=u8:?}, ferom: {=u8:?}, gtcmp1: {=bool:?}, gtcmp3: {=bool:?}, trghlf: {=bool:?} }}" , self . dcde () , self . dcds () , self . dcdr () , self . udm () , self . rom () , self . outrom () , self . adrom () , self . bmrom () , self . ferom () , self . gtcmp1 () , self . gtcmp3 () , self . trghlf ())
+            defmt::write!(
+                f,
+                "Timxcr2 {{ dcde: {=bool:?}, dcds: {=bool:?}, dcdr: {=bool:?}, udm: {=bool:?}, rom: {=u8:?}, outrom: {=u8:?}, adrom: {=u8:?}, bmrom: {=u8:?}, ferom: {=u8:?}, gtcmp1: {=bool:?}, gtcmp3: {=bool:?}, trghlf: {=bool:?} }}",
+                self.dcde(),
+                self.dcds(),
+                self.dcdr(),
+                self.udm(),
+                self.rom(),
+                self.outrom(),
+                self.adrom(),
+                self.bmrom(),
+                self.ferom(),
+                self.gtcmp1(),
+                self.gtcmp3(),
+                self.trghlf()
+            )
         }
     }
     #[doc = "Timerx DMA / Interrupt Enable Register"]
@@ -4770,7 +5255,38 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxdier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Timxdier {{ cmpie[0]: {=bool:?}, cmpie[1]: {=bool:?}, cmpie[2]: {=bool:?}, cmpie[3]: {=bool:?}, repie: {=bool:?}, updie: {=bool:?}, cptie[0]: {=bool:?}, cptie[1]: {=bool:?}, setrie[0]: {=bool:?}, setrie[1]: {=bool:?}, rstrie[0]: {=bool:?}, rstrie[1]: {=bool:?}, rstie: {=bool:?}, dlyprtie: {=bool:?}, cmpde[0]: {=bool:?}, cmpde[1]: {=bool:?}, cmpde[2]: {=bool:?}, cmpde[3]: {=bool:?}, repde: {=bool:?}, updde: {=bool:?}, cptde[0]: {=bool:?}, cptde[1]: {=bool:?}, setrde[0]: {=bool:?}, setrde[1]: {=bool:?}, rstrde[0]: {=bool:?}, rstrde[1]: {=bool:?}, rstde: {=bool:?}, dlyprtde: {=bool:?} }}" , self . cmpie (0usize) , self . cmpie (1usize) , self . cmpie (2usize) , self . cmpie (3usize) , self . repie () , self . updie () , self . cptie (0usize) , self . cptie (1usize) , self . setrie (0usize) , self . setrie (1usize) , self . rstrie (0usize) , self . rstrie (1usize) , self . rstie () , self . dlyprtie () , self . cmpde (0usize) , self . cmpde (1usize) , self . cmpde (2usize) , self . cmpde (3usize) , self . repde () , self . updde () , self . cptde (0usize) , self . cptde (1usize) , self . setrde (0usize) , self . setrde (1usize) , self . rstrde (0usize) , self . rstrde (1usize) , self . rstde () , self . dlyprtde ())
+            defmt::write!(
+                f,
+                "Timxdier {{ cmpie[0]: {=bool:?}, cmpie[1]: {=bool:?}, cmpie[2]: {=bool:?}, cmpie[3]: {=bool:?}, repie: {=bool:?}, updie: {=bool:?}, cptie[0]: {=bool:?}, cptie[1]: {=bool:?}, setrie[0]: {=bool:?}, setrie[1]: {=bool:?}, rstrie[0]: {=bool:?}, rstrie[1]: {=bool:?}, rstie: {=bool:?}, dlyprtie: {=bool:?}, cmpde[0]: {=bool:?}, cmpde[1]: {=bool:?}, cmpde[2]: {=bool:?}, cmpde[3]: {=bool:?}, repde: {=bool:?}, updde: {=bool:?}, cptde[0]: {=bool:?}, cptde[1]: {=bool:?}, setrde[0]: {=bool:?}, setrde[1]: {=bool:?}, rstrde[0]: {=bool:?}, rstrde[1]: {=bool:?}, rstde: {=bool:?}, dlyprtde: {=bool:?} }}",
+                self.cmpie(0usize),
+                self.cmpie(1usize),
+                self.cmpie(2usize),
+                self.cmpie(3usize),
+                self.repie(),
+                self.updie(),
+                self.cptie(0usize),
+                self.cptie(1usize),
+                self.setrie(0usize),
+                self.setrie(1usize),
+                self.rstrie(0usize),
+                self.rstrie(1usize),
+                self.rstie(),
+                self.dlyprtie(),
+                self.cmpde(0usize),
+                self.cmpde(1usize),
+                self.cmpde(2usize),
+                self.cmpde(3usize),
+                self.repde(),
+                self.updde(),
+                self.cptde(0usize),
+                self.cptde(1usize),
+                self.setrde(0usize),
+                self.setrde(1usize),
+                self.rstrde(0usize),
+                self.rstrde(1usize),
+                self.rstde(),
+                self.dlyprtde()
+            )
         }
     }
     #[doc = "Timerx Deadtime Register"]
@@ -4911,7 +5427,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxdt {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Timxdt {{ dtr: {=u16:?}, sdtr: {:?}, dtprsc: {=u8:?}, dtrslk: {=bool:?}, dtrlk: {=bool:?}, dtf: {=u16:?}, sdtf: {:?}, dtfslk: {=bool:?}, dtflk: {=bool:?} }}" , self . dtr () , self . sdtr () , self . dtprsc () , self . dtrslk () , self . dtrlk () , self . dtf () , self . sdtf () , self . dtfslk () , self . dtflk ())
+            defmt::write!(
+                f,
+                "Timxdt {{ dtr: {=u16:?}, sdtr: {:?}, dtprsc: {=u8:?}, dtrslk: {=bool:?}, dtrlk: {=bool:?}, dtf: {=u16:?}, sdtf: {:?}, dtfslk: {=bool:?}, dtflk: {=bool:?} }}",
+                self.dtr(),
+                self.sdtr(),
+                self.dtprsc(),
+                self.dtrslk(),
+                self.dtrlk(),
+                self.dtf(),
+                self.sdtf(),
+                self.dtfslk(),
+                self.dtflk()
+            )
         }
     }
     #[doc = "Timer X External Event Filtering Register"]
@@ -4977,7 +5505,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxeef {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Timxeef {{ ltch[0]: {=bool:?}, ltch[1]: {=bool:?}, ltch[2]: {=bool:?}, ltch[3]: {=bool:?}, ltch[4]: {=bool:?}, fltr[0]: {:?}, fltr[1]: {:?}, fltr[2]: {:?}, fltr[3]: {:?}, fltr[4]: {:?} }}" , self . ltch (0usize) , self . ltch (1usize) , self . ltch (2usize) , self . ltch (3usize) , self . ltch (4usize) , self . fltr (0usize) , self . fltr (1usize) , self . fltr (2usize) , self . fltr (3usize) , self . fltr (4usize))
+            defmt::write!(
+                f,
+                "Timxeef {{ ltch[0]: {=bool:?}, ltch[1]: {=bool:?}, ltch[2]: {=bool:?}, ltch[3]: {=bool:?}, ltch[4]: {=bool:?}, fltr[0]: {:?}, fltr[1]: {:?}, fltr[2]: {:?}, fltr[3]: {:?}, fltr[4]: {:?} }}",
+                self.ltch(0usize),
+                self.ltch(1usize),
+                self.ltch(2usize),
+                self.ltch(3usize),
+                self.ltch(4usize),
+                self.fltr(0usize),
+                self.fltr(1usize),
+                self.fltr(2usize),
+                self.fltr(3usize),
+                self.fltr(4usize)
+            )
         }
     }
     #[doc = "Timerx Fault Register"]
@@ -5035,7 +5576,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxflt {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Timxflt {{ flten[0]: {=bool:?}, flten[1]: {=bool:?}, flten[2]: {=bool:?}, flten[3]: {=bool:?}, flten[4]: {=bool:?}, fltlck: {=bool:?} }}" , self . flten (0usize) , self . flten (1usize) , self . flten (2usize) , self . flten (3usize) , self . flten (4usize) , self . fltlck ())
+            defmt::write!(
+                f,
+                "Timxflt {{ flten[0]: {=bool:?}, flten[1]: {=bool:?}, flten[2]: {=bool:?}, flten[3]: {=bool:?}, flten[4]: {=bool:?}, fltlck: {=bool:?} }}",
+                self.flten(0usize),
+                self.flten(1usize),
+                self.flten(2usize),
+                self.flten(3usize),
+                self.flten(4usize),
+                self.fltlck()
+            )
         }
     }
     #[doc = "Timerx Interrupt Clear Register"]
@@ -5185,7 +5735,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxicr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Timxicr {{ cmpc[0]: {=bool:?}, cmpc[1]: {=bool:?}, cmpc[2]: {=bool:?}, cmpc[3]: {=bool:?}, repc: {=bool:?}, updc: {=bool:?}, cptc[0]: {=bool:?}, cptc[1]: {=bool:?}, setrc[0]: {=bool:?}, setrc[1]: {=bool:?}, rstrc[0]: {=bool:?}, rstrc[1]: {=bool:?}, rstc: {=bool:?}, dlyprtc: {=bool:?} }}" , self . cmpc (0usize) , self . cmpc (1usize) , self . cmpc (2usize) , self . cmpc (3usize) , self . repc () , self . updc () , self . cptc (0usize) , self . cptc (1usize) , self . setrc (0usize) , self . setrc (1usize) , self . rstrc (0usize) , self . rstrc (1usize) , self . rstc () , self . dlyprtc ())
+            defmt::write!(
+                f,
+                "Timxicr {{ cmpc[0]: {=bool:?}, cmpc[1]: {=bool:?}, cmpc[2]: {=bool:?}, cmpc[3]: {=bool:?}, repc: {=bool:?}, updc: {=bool:?}, cptc[0]: {=bool:?}, cptc[1]: {=bool:?}, setrc[0]: {=bool:?}, setrc[1]: {=bool:?}, rstrc[0]: {=bool:?}, rstrc[1]: {=bool:?}, rstc: {=bool:?}, dlyprtc: {=bool:?} }}",
+                self.cmpc(0usize),
+                self.cmpc(1usize),
+                self.cmpc(2usize),
+                self.cmpc(3usize),
+                self.repc(),
+                self.updc(),
+                self.cptc(0usize),
+                self.cptc(1usize),
+                self.setrc(0usize),
+                self.setrc(1usize),
+                self.rstrc(0usize),
+                self.rstrc(1usize),
+                self.rstc(),
+                self.dlyprtc()
+            )
         }
     }
     #[doc = "Timerx Interrupt Status Register"]
@@ -5397,7 +5964,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxisr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Timxisr {{ cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?}, rep: {=bool:?}, upd: {=bool:?}, cpt[0]: {=bool:?}, cpt[1]: {=bool:?}, setr[0]: {=bool:?}, setr[1]: {=bool:?}, rstr[0]: {=bool:?}, rstr[1]: {=bool:?}, rst: {=bool:?}, dlyprt: {=bool:?}, cppstat: {:?}, ippstat: {:?}, ostat[0]: {=bool:?}, ostat[1]: {=bool:?}, ocpy[0]: {=bool:?}, ocpy[1]: {=bool:?} }}" , self . cmp (0usize) , self . cmp (1usize) , self . cmp (2usize) , self . cmp (3usize) , self . rep () , self . upd () , self . cpt (0usize) , self . cpt (1usize) , self . setr (0usize) , self . setr (1usize) , self . rstr (0usize) , self . rstr (1usize) , self . rst () , self . dlyprt () , self . cppstat () , self . ippstat () , self . ostat (0usize) , self . ostat (1usize) , self . ocpy (0usize) , self . ocpy (1usize))
+            defmt::write!(
+                f,
+                "Timxisr {{ cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?}, rep: {=bool:?}, upd: {=bool:?}, cpt[0]: {=bool:?}, cpt[1]: {=bool:?}, setr[0]: {=bool:?}, setr[1]: {=bool:?}, rstr[0]: {=bool:?}, rstr[1]: {=bool:?}, rst: {=bool:?}, dlyprt: {=bool:?}, cppstat: {:?}, ippstat: {:?}, ostat[0]: {=bool:?}, ostat[1]: {=bool:?}, ocpy[0]: {=bool:?}, ocpy[1]: {=bool:?} }}",
+                self.cmp(0usize),
+                self.cmp(1usize),
+                self.cmp(2usize),
+                self.cmp(3usize),
+                self.rep(),
+                self.upd(),
+                self.cpt(0usize),
+                self.cpt(1usize),
+                self.setr(0usize),
+                self.setr(1usize),
+                self.rstr(0usize),
+                self.rstr(1usize),
+                self.rst(),
+                self.dlyprt(),
+                self.cppstat(),
+                self.ippstat(),
+                self.ostat(0usize),
+                self.ostat(1usize),
+                self.ocpy(0usize),
+                self.ocpy(1usize)
+            )
         }
     }
     #[doc = "Timerx Output Register"]
@@ -5568,7 +6158,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxoutr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Timxoutr {{ pol[0]: {:?}, pol[1]: {:?}, idlem[0]: {=bool:?}, idlem[1]: {=bool:?}, idles[0]: {=bool:?}, idles[1]: {=bool:?}, fault[0]: {:?}, fault[1]: {:?}, chp[0]: {=bool:?}, chp[1]: {=bool:?}, didl[0]: {=bool:?}, didl[1]: {=bool:?}, dten: {=bool:?}, dlyprten: {=bool:?}, dlyprt: {:?} }}" , self . pol (0usize) , self . pol (1usize) , self . idlem (0usize) , self . idlem (1usize) , self . idles (0usize) , self . idles (1usize) , self . fault (0usize) , self . fault (1usize) , self . chp (0usize) , self . chp (1usize) , self . didl (0usize) , self . didl (1usize) , self . dten () , self . dlyprten () , self . dlyprt ())
+            defmt::write!(
+                f,
+                "Timxoutr {{ pol[0]: {:?}, pol[1]: {:?}, idlem[0]: {=bool:?}, idlem[1]: {=bool:?}, idles[0]: {=bool:?}, idles[1]: {=bool:?}, fault[0]: {:?}, fault[1]: {:?}, chp[0]: {=bool:?}, chp[1]: {=bool:?}, didl[0]: {=bool:?}, didl[1]: {=bool:?}, dten: {=bool:?}, dlyprten: {=bool:?}, dlyprt: {:?} }}",
+                self.pol(0usize),
+                self.pol(1usize),
+                self.idlem(0usize),
+                self.idlem(1usize),
+                self.idles(0usize),
+                self.idles(1usize),
+                self.fault(0usize),
+                self.fault(1usize),
+                self.chp(0usize),
+                self.chp(1usize),
+                self.didl(0usize),
+                self.didl(1usize),
+                self.dten(),
+                self.dlyprten(),
+                self.dlyprt()
+            )
         }
     }
     #[doc = "Timerx Period Register"]
@@ -5814,7 +6422,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxrst {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Timxrst {{ tcmp1[0]: {=bool:?}, tcmp1[1]: {=bool:?}, tcmp1[2]: {=bool:?}, tcmp1[3]: {=bool:?}, tcmp1[4]: {=bool:?}, updt: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, mstper: {=bool:?}, mstcmp[0]: {=bool:?}, mstcmp[1]: {=bool:?}, mstcmp[2]: {=bool:?}, mstcmp[3]: {=bool:?}, extevnt[0]: {=bool:?}, extevnt[1]: {=bool:?}, extevnt[2]: {=bool:?}, extevnt[3]: {=bool:?}, extevnt[4]: {=bool:?}, extevnt[5]: {=bool:?}, extevnt[6]: {=bool:?}, extevnt[7]: {=bool:?}, extevnt[8]: {=bool:?}, extevnt[9]: {=bool:?}, tcmp2[0]: {=bool:?}, tcmp2[1]: {=bool:?}, tcmp2[2]: {=bool:?}, tcmp2[3]: {=bool:?}, tcmp2[4]: {=bool:?}, tcmp4[0]: {=bool:?}, tcmp4[1]: {=bool:?}, tcmp4[2]: {=bool:?}, tcmp4[3]: {=bool:?} }}" , self . tcmp1 (0usize) , self . tcmp1 (1usize) , self . tcmp1 (2usize) , self . tcmp1 (3usize) , self . tcmp1 (4usize) , self . updt () , self . cmp (0usize) , self . cmp (1usize) , self . mstper () , self . mstcmp (0usize) , self . mstcmp (1usize) , self . mstcmp (2usize) , self . mstcmp (3usize) , self . extevnt (0usize) , self . extevnt (1usize) , self . extevnt (2usize) , self . extevnt (3usize) , self . extevnt (4usize) , self . extevnt (5usize) , self . extevnt (6usize) , self . extevnt (7usize) , self . extevnt (8usize) , self . extevnt (9usize) , self . tcmp2 (0usize) , self . tcmp2 (1usize) , self . tcmp2 (2usize) , self . tcmp2 (3usize) , self . tcmp2 (4usize) , self . tcmp4 (0usize) , self . tcmp4 (1usize) , self . tcmp4 (2usize) , self . tcmp4 (3usize))
+            defmt::write!(
+                f,
+                "Timxrst {{ tcmp1[0]: {=bool:?}, tcmp1[1]: {=bool:?}, tcmp1[2]: {=bool:?}, tcmp1[3]: {=bool:?}, tcmp1[4]: {=bool:?}, updt: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, mstper: {=bool:?}, mstcmp[0]: {=bool:?}, mstcmp[1]: {=bool:?}, mstcmp[2]: {=bool:?}, mstcmp[3]: {=bool:?}, extevnt[0]: {=bool:?}, extevnt[1]: {=bool:?}, extevnt[2]: {=bool:?}, extevnt[3]: {=bool:?}, extevnt[4]: {=bool:?}, extevnt[5]: {=bool:?}, extevnt[6]: {=bool:?}, extevnt[7]: {=bool:?}, extevnt[8]: {=bool:?}, extevnt[9]: {=bool:?}, tcmp2[0]: {=bool:?}, tcmp2[1]: {=bool:?}, tcmp2[2]: {=bool:?}, tcmp2[3]: {=bool:?}, tcmp2[4]: {=bool:?}, tcmp4[0]: {=bool:?}, tcmp4[1]: {=bool:?}, tcmp4[2]: {=bool:?}, tcmp4[3]: {=bool:?} }}",
+                self.tcmp1(0usize),
+                self.tcmp1(1usize),
+                self.tcmp1(2usize),
+                self.tcmp1(3usize),
+                self.tcmp1(4usize),
+                self.updt(),
+                self.cmp(0usize),
+                self.cmp(1usize),
+                self.mstper(),
+                self.mstcmp(0usize),
+                self.mstcmp(1usize),
+                self.mstcmp(2usize),
+                self.mstcmp(3usize),
+                self.extevnt(0usize),
+                self.extevnt(1usize),
+                self.extevnt(2usize),
+                self.extevnt(3usize),
+                self.extevnt(4usize),
+                self.extevnt(5usize),
+                self.extevnt(6usize),
+                self.extevnt(7usize),
+                self.extevnt(8usize),
+                self.extevnt(9usize),
+                self.tcmp2(0usize),
+                self.tcmp2(1usize),
+                self.tcmp2(2usize),
+                self.tcmp2(3usize),
+                self.tcmp2(4usize),
+                self.tcmp4(0usize),
+                self.tcmp4(1usize),
+                self.tcmp4(2usize),
+                self.tcmp4(3usize)
+            )
         }
     }
     #[doc = "Timerx OutputX Reset Register"]
@@ -5994,7 +6637,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxrstr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Timxrstr {{ srt: {=bool:?}, resync: {=bool:?}, per: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?}, mstper: {=bool:?}, mstcmp[0]: {=bool:?}, mstcmp[1]: {=bool:?}, mstcmp[2]: {=bool:?}, mstcmp[3]: {=bool:?}, timevnt[0]: {=bool:?}, timevnt[1]: {=bool:?}, timevnt[2]: {=bool:?}, timevnt[3]: {=bool:?}, timevnt[4]: {=bool:?}, timevnt[5]: {=bool:?}, timevnt[6]: {=bool:?}, timevnt[7]: {=bool:?}, timevnt[8]: {=bool:?}, extevnt[0]: {=bool:?}, extevnt[1]: {=bool:?}, extevnt[2]: {=bool:?}, extevnt[3]: {=bool:?}, extevnt[4]: {=bool:?}, extevnt[5]: {=bool:?}, extevnt[6]: {=bool:?}, extevnt[7]: {=bool:?}, extevnt[8]: {=bool:?}, extevnt[9]: {=bool:?}, update: {=bool:?} }}" , self . srt () , self . resync () , self . per () , self . cmp (0usize) , self . cmp (1usize) , self . cmp (2usize) , self . cmp (3usize) , self . mstper () , self . mstcmp (0usize) , self . mstcmp (1usize) , self . mstcmp (2usize) , self . mstcmp (3usize) , self . timevnt (0usize) , self . timevnt (1usize) , self . timevnt (2usize) , self . timevnt (3usize) , self . timevnt (4usize) , self . timevnt (5usize) , self . timevnt (6usize) , self . timevnt (7usize) , self . timevnt (8usize) , self . extevnt (0usize) , self . extevnt (1usize) , self . extevnt (2usize) , self . extevnt (3usize) , self . extevnt (4usize) , self . extevnt (5usize) , self . extevnt (6usize) , self . extevnt (7usize) , self . extevnt (8usize) , self . extevnt (9usize) , self . update ())
+            defmt::write!(
+                f,
+                "Timxrstr {{ srt: {=bool:?}, resync: {=bool:?}, per: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?}, mstper: {=bool:?}, mstcmp[0]: {=bool:?}, mstcmp[1]: {=bool:?}, mstcmp[2]: {=bool:?}, mstcmp[3]: {=bool:?}, timevnt[0]: {=bool:?}, timevnt[1]: {=bool:?}, timevnt[2]: {=bool:?}, timevnt[3]: {=bool:?}, timevnt[4]: {=bool:?}, timevnt[5]: {=bool:?}, timevnt[6]: {=bool:?}, timevnt[7]: {=bool:?}, timevnt[8]: {=bool:?}, extevnt[0]: {=bool:?}, extevnt[1]: {=bool:?}, extevnt[2]: {=bool:?}, extevnt[3]: {=bool:?}, extevnt[4]: {=bool:?}, extevnt[5]: {=bool:?}, extevnt[6]: {=bool:?}, extevnt[7]: {=bool:?}, extevnt[8]: {=bool:?}, extevnt[9]: {=bool:?}, update: {=bool:?} }}",
+                self.srt(),
+                self.resync(),
+                self.per(),
+                self.cmp(0usize),
+                self.cmp(1usize),
+                self.cmp(2usize),
+                self.cmp(3usize),
+                self.mstper(),
+                self.mstcmp(0usize),
+                self.mstcmp(1usize),
+                self.mstcmp(2usize),
+                self.mstcmp(3usize),
+                self.timevnt(0usize),
+                self.timevnt(1usize),
+                self.timevnt(2usize),
+                self.timevnt(3usize),
+                self.timevnt(4usize),
+                self.timevnt(5usize),
+                self.timevnt(6usize),
+                self.timevnt(7usize),
+                self.timevnt(8usize),
+                self.extevnt(0usize),
+                self.extevnt(1usize),
+                self.extevnt(2usize),
+                self.extevnt(3usize),
+                self.extevnt(4usize),
+                self.extevnt(5usize),
+                self.extevnt(6usize),
+                self.extevnt(7usize),
+                self.extevnt(8usize),
+                self.extevnt(9usize),
+                self.update()
+            )
         }
     }
     #[doc = "Timerx OutputX Set Register"]
@@ -6174,7 +6852,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timxsetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Timxsetr {{ sst: {=bool:?}, resync: {=bool:?}, per: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?}, mstper: {=bool:?}, mstcmpx[0]: {=bool:?}, mstcmpx[1]: {=bool:?}, mstcmpx[2]: {=bool:?}, mstcmpx[3]: {=bool:?}, timevnt[0]: {=bool:?}, timevnt[1]: {=bool:?}, timevnt[2]: {=bool:?}, timevnt[3]: {=bool:?}, timevnt[4]: {=bool:?}, timevnt[5]: {=bool:?}, timevnt[6]: {=bool:?}, timevnt[7]: {=bool:?}, timevnt[8]: {=bool:?}, extevnt[0]: {=bool:?}, extevnt[1]: {=bool:?}, extevnt[2]: {=bool:?}, extevnt[3]: {=bool:?}, extevnt[4]: {=bool:?}, extevnt[5]: {=bool:?}, extevnt[6]: {=bool:?}, extevnt[7]: {=bool:?}, extevnt[8]: {=bool:?}, extevnt[9]: {=bool:?}, update: {=bool:?} }}" , self . sst () , self . resync () , self . per () , self . cmp (0usize) , self . cmp (1usize) , self . cmp (2usize) , self . cmp (3usize) , self . mstper () , self . mstcmpx (0usize) , self . mstcmpx (1usize) , self . mstcmpx (2usize) , self . mstcmpx (3usize) , self . timevnt (0usize) , self . timevnt (1usize) , self . timevnt (2usize) , self . timevnt (3usize) , self . timevnt (4usize) , self . timevnt (5usize) , self . timevnt (6usize) , self . timevnt (7usize) , self . timevnt (8usize) , self . extevnt (0usize) , self . extevnt (1usize) , self . extevnt (2usize) , self . extevnt (3usize) , self . extevnt (4usize) , self . extevnt (5usize) , self . extevnt (6usize) , self . extevnt (7usize) , self . extevnt (8usize) , self . extevnt (9usize) , self . update ())
+            defmt::write!(
+                f,
+                "Timxsetr {{ sst: {=bool:?}, resync: {=bool:?}, per: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?}, mstper: {=bool:?}, mstcmpx[0]: {=bool:?}, mstcmpx[1]: {=bool:?}, mstcmpx[2]: {=bool:?}, mstcmpx[3]: {=bool:?}, timevnt[0]: {=bool:?}, timevnt[1]: {=bool:?}, timevnt[2]: {=bool:?}, timevnt[3]: {=bool:?}, timevnt[4]: {=bool:?}, timevnt[5]: {=bool:?}, timevnt[6]: {=bool:?}, timevnt[7]: {=bool:?}, timevnt[8]: {=bool:?}, extevnt[0]: {=bool:?}, extevnt[1]: {=bool:?}, extevnt[2]: {=bool:?}, extevnt[3]: {=bool:?}, extevnt[4]: {=bool:?}, extevnt[5]: {=bool:?}, extevnt[6]: {=bool:?}, extevnt[7]: {=bool:?}, extevnt[8]: {=bool:?}, extevnt[9]: {=bool:?}, update: {=bool:?} }}",
+                self.sst(),
+                self.resync(),
+                self.per(),
+                self.cmp(0usize),
+                self.cmp(1usize),
+                self.cmp(2usize),
+                self.cmp(3usize),
+                self.mstper(),
+                self.mstcmpx(0usize),
+                self.mstcmpx(1usize),
+                self.mstcmpx(2usize),
+                self.mstcmpx(3usize),
+                self.timevnt(0usize),
+                self.timevnt(1usize),
+                self.timevnt(2usize),
+                self.timevnt(3usize),
+                self.timevnt(4usize),
+                self.timevnt(5usize),
+                self.timevnt(6usize),
+                self.timevnt(7usize),
+                self.timevnt(8usize),
+                self.extevnt(0usize),
+                self.extevnt(1usize),
+                self.extevnt(2usize),
+                self.extevnt(3usize),
+                self.extevnt(4usize),
+                self.extevnt(5usize),
+                self.extevnt(6usize),
+                self.extevnt(7usize),
+                self.extevnt(8usize),
+                self.extevnt(9usize),
+                self.update()
+            )
         }
     }
 }

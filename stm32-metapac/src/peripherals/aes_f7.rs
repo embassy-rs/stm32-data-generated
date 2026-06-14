@@ -253,7 +253,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, datatype: {:?}, mode: {:?}, chmod10: {=u8:?}, ccfc: {=bool:?}, errc: {=bool:?}, ccfie: {=bool:?}, errie: {=bool:?}, dmainen: {=bool:?}, dmaouten: {=bool:?}, gcmph: {:?}, chmod2: {=bool:?}, keysize: {=bool:?} }}" , self . en () , self . datatype () , self . mode () , self . chmod10 () , self . ccfc () , self . errc () , self . ccfie () , self . errie () , self . dmainen () , self . dmaouten () , self . gcmph () , self . chmod2 () , self . keysize ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, datatype: {:?}, mode: {:?}, chmod10: {=u8:?}, ccfc: {=bool:?}, errc: {=bool:?}, ccfie: {=bool:?}, errie: {=bool:?}, dmainen: {=bool:?}, dmaouten: {=bool:?}, gcmph: {:?}, chmod2: {=bool:?}, keysize: {=bool:?} }}",
+                self.en(),
+                self.datatype(),
+                self.mode(),
+                self.chmod10(),
+                self.ccfc(),
+                self.errc(),
+                self.ccfie(),
+                self.errie(),
+                self.dmainen(),
+                self.dmaouten(),
+                self.gcmph(),
+                self.chmod2(),
+                self.keysize()
+            )
         }
     }
     #[doc = "Data input register"]

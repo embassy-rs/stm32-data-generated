@@ -200,7 +200,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr {{ opampen: {=bool:?}, opalpm: {=bool:?}, opamode: {:?}, pga_gain: {:?}, vm_sel: {:?}, vp_sel: {:?}, calon: {=bool:?}, calsel: {:?}, usertrim: {=bool:?}, calout: {=bool:?}, opa_range: {:?} }}" , self . opampen () , self . opalpm () , self . opamode () , self . pga_gain () , self . vm_sel () , self . vp_sel () , self . calon () , self . calsel () , self . usertrim () , self . calout () , self . opa_range ())
+            defmt::write!(
+                f,
+                "Csr {{ opampen: {=bool:?}, opalpm: {=bool:?}, opamode: {:?}, pga_gain: {:?}, vm_sel: {:?}, vp_sel: {:?}, calon: {=bool:?}, calsel: {:?}, usertrim: {=bool:?}, calout: {=bool:?}, opa_range: {:?} }}",
+                self.opampen(),
+                self.opalpm(),
+                self.opamode(),
+                self.pga_gain(),
+                self.vm_sel(),
+                self.vp_sel(),
+                self.calon(),
+                self.calsel(),
+                self.usertrim(),
+                self.calout(),
+                self.opa_range()
+            )
         }
     }
     #[doc = "Offset trimming register in low-power mode"]

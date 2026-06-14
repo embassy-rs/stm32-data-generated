@@ -408,7 +408,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ lock: {=bool:?}, pg: {=bool:?}, ser: {=bool:?}, ber: {=bool:?}, fw: {=bool:?}, start: {=bool:?}, ssn: {=u8:?}, pg_otp: {=bool:?}, crc_en: {=bool:?}, all_banks: {=bool:?} }}" , self . lock () , self . pg () , self . ser () , self . ber () , self . fw () , self . start () , self . ssn () , self . pg_otp () , self . crc_en () , self . all_banks ())
+            defmt::write!(
+                f,
+                "Cr {{ lock: {=bool:?}, pg: {=bool:?}, ser: {=bool:?}, ber: {=bool:?}, fw: {=bool:?}, start: {=bool:?}, ssn: {=u8:?}, pg_otp: {=bool:?}, crc_en: {=bool:?}, all_banks: {=bool:?} }}",
+                self.lock(),
+                self.pg(),
+                self.ser(),
+                self.ber(),
+                self.fw(),
+                self.start(),
+                self.ssn(),
+                self.pg_otp(),
+                self.crc_en(),
+                self.all_banks()
+            )
         }
     }
     #[doc = "FLASH CRC control register."]
@@ -536,7 +549,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Crccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Crccr {{ crc_sect: {=u8:?}, crc_by_sect: {=bool:?}, add_sect: {=bool:?}, clean_sect: {=bool:?}, start_crc: {=bool:?}, clean_crc: {=bool:?}, crc_burst: {:?}, all_sect: {=bool:?} }}" , self . crc_sect () , self . crc_by_sect () , self . add_sect () , self . clean_sect () , self . start_crc () , self . clean_crc () , self . crc_burst () , self . all_sect ())
+            defmt::write!(
+                f,
+                "Crccr {{ crc_sect: {=u8:?}, crc_by_sect: {=bool:?}, add_sect: {=bool:?}, clean_sect: {=bool:?}, start_crc: {=bool:?}, clean_crc: {=bool:?}, crc_burst: {:?}, all_sect: {=bool:?} }}",
+                self.crc_sect(),
+                self.crc_by_sect(),
+                self.add_sect(),
+                self.clean_sect(),
+                self.start_crc(),
+                self.clean_crc(),
+                self.crc_burst(),
+                self.all_sect()
+            )
         }
     }
     #[doc = "FLASH CRC data register."]
@@ -1101,7 +1125,21 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Icr {{ eopf: {=bool:?}, wrperrf: {=bool:?}, pgserrf: {=bool:?}, strberrf: {=bool:?}, oblerrf: {=bool:?}, incerrf: {=bool:?}, rdserrf: {=bool:?}, sneccerrf: {=bool:?}, dbeccerrf: {=bool:?}, crcendf: {=bool:?}, crcrderrf: {=bool:?} }}" , self . eopf () , self . wrperrf () , self . pgserrf () , self . strberrf () , self . oblerrf () , self . incerrf () , self . rdserrf () , self . sneccerrf () , self . dbeccerrf () , self . crcendf () , self . crcrderrf ())
+            defmt::write!(
+                f,
+                "Icr {{ eopf: {=bool:?}, wrperrf: {=bool:?}, pgserrf: {=bool:?}, strberrf: {=bool:?}, oblerrf: {=bool:?}, incerrf: {=bool:?}, rdserrf: {=bool:?}, sneccerrf: {=bool:?}, dbeccerrf: {=bool:?}, crcendf: {=bool:?}, crcrderrf: {=bool:?} }}",
+                self.eopf(),
+                self.wrperrf(),
+                self.pgserrf(),
+                self.strberrf(),
+                self.oblerrf(),
+                self.incerrf(),
+                self.rdserrf(),
+                self.sneccerrf(),
+                self.dbeccerrf(),
+                self.crcendf(),
+                self.crcrderrf()
+            )
         }
     }
     #[doc = "FLASH interrupt enable register."]
@@ -1268,7 +1306,21 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier {{ eopie: {=bool:?}, wrperrie: {=bool:?}, pgserrie: {=bool:?}, strberrie: {=bool:?}, oblerrie: {=bool:?}, incerrie: {=bool:?}, rdserrie: {=bool:?}, sneccerrie: {=bool:?}, dbeccerrie: {=bool:?}, crcendie: {=bool:?}, crcrderrie: {=bool:?} }}" , self . eopie () , self . wrperrie () , self . pgserrie () , self . strberrie () , self . oblerrie () , self . incerrie () , self . rdserrie () , self . sneccerrie () , self . dbeccerrie () , self . crcendie () , self . crcrderrie ())
+            defmt::write!(
+                f,
+                "Ier {{ eopie: {=bool:?}, wrperrie: {=bool:?}, pgserrie: {=bool:?}, strberrie: {=bool:?}, oblerrie: {=bool:?}, incerrie: {=bool:?}, rdserrie: {=bool:?}, sneccerrie: {=bool:?}, dbeccerrie: {=bool:?}, crcendie: {=bool:?}, crcrderrie: {=bool:?} }}",
+                self.eopie(),
+                self.wrperrie(),
+                self.pgserrie(),
+                self.strberrie(),
+                self.oblerrie(),
+                self.incerrie(),
+                self.rdserrie(),
+                self.sneccerrie(),
+                self.dbeccerrie(),
+                self.crcendie(),
+                self.crcrderrie()
+            )
         }
     }
     #[doc = "FLASH interrupt status register."]
@@ -1435,7 +1487,21 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ eopf: {=bool:?}, wrperrf: {=bool:?}, pgserrf: {=bool:?}, strberrf: {=bool:?}, oblerrf: {=bool:?}, incerrf: {=bool:?}, rdserrf: {=bool:?}, sneccerrf: {=bool:?}, dbeccerrf: {=bool:?}, crcendf: {=bool:?}, crcrderrf: {=bool:?} }}" , self . eopf () , self . wrperrf () , self . pgserrf () , self . strberrf () , self . oblerrf () , self . incerrf () , self . rdserrf () , self . sneccerrf () , self . dbeccerrf () , self . crcendf () , self . crcrderrf ())
+            defmt::write!(
+                f,
+                "Isr {{ eopf: {=bool:?}, wrperrf: {=bool:?}, pgserrf: {=bool:?}, strberrf: {=bool:?}, oblerrf: {=bool:?}, incerrf: {=bool:?}, rdserrf: {=bool:?}, sneccerrf: {=bool:?}, dbeccerrf: {=bool:?}, crcendf: {=bool:?}, crcrderrf: {=bool:?} }}",
+                self.eopf(),
+                self.wrperrf(),
+                self.pgserrf(),
+                self.strberrf(),
+                self.oblerrf(),
+                self.incerrf(),
+                self.rdserrf(),
+                self.sneccerrf(),
+                self.dbeccerrf(),
+                self.crcendf(),
+                self.crcrderrf()
+            )
         }
     }
     #[doc = "FLASH control key register."]
@@ -1791,7 +1857,20 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Obw1sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Obw1sr {{ bor_lev: {:?}, iwdg_hw: {=bool:?}, nrst_stop: {=bool:?}, nrst_stby: {=bool:?}, octo1_hslv: {=bool:?}, octo2_hslv: {=bool:?}, iwdg_fz_stop: {=bool:?}, iwdg_fz_sdby: {=bool:?}, perso_ok: {=bool:?}, vddio_hslv: {=bool:?} }}" , self . bor_lev () , self . iwdg_hw () , self . nrst_stop () , self . nrst_stby () , self . octo1_hslv () , self . octo2_hslv () , self . iwdg_fz_stop () , self . iwdg_fz_sdby () , self . perso_ok () , self . vddio_hslv ())
+            defmt::write!(
+                f,
+                "Obw1sr {{ bor_lev: {:?}, iwdg_hw: {=bool:?}, nrst_stop: {=bool:?}, nrst_stby: {=bool:?}, octo1_hslv: {=bool:?}, octo2_hslv: {=bool:?}, iwdg_fz_stop: {=bool:?}, iwdg_fz_sdby: {=bool:?}, perso_ok: {=bool:?}, vddio_hslv: {=bool:?} }}",
+                self.bor_lev(),
+                self.iwdg_hw(),
+                self.nrst_stop(),
+                self.nrst_stby(),
+                self.octo1_hslv(),
+                self.octo2_hslv(),
+                self.iwdg_fz_stop(),
+                self.iwdg_fz_sdby(),
+                self.perso_ok(),
+                self.vddio_hslv()
+            )
         }
     }
     #[doc = "FLASH option byte word 1 status register programming."]
@@ -1932,7 +2011,19 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Obw1srp {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Obw1srp {{ bor_lev: {=u8:?}, iwdg_hw: {=bool:?}, nrst_stop: {=bool:?}, nrst_stby: {=bool:?}, octo1_hslv: {=bool:?}, octo2_hslv: {=bool:?}, iwdg_fz_stop: {=bool:?}, iwdg_fz_sdby: {=bool:?}, vddio_hslv: {=bool:?} }}" , self . bor_lev () , self . iwdg_hw () , self . nrst_stop () , self . nrst_stby () , self . octo1_hslv () , self . octo2_hslv () , self . iwdg_fz_stop () , self . iwdg_fz_sdby () , self . vddio_hslv ())
+            defmt::write!(
+                f,
+                "Obw1srp {{ bor_lev: {=u8:?}, iwdg_hw: {=bool:?}, nrst_stop: {=bool:?}, nrst_stby: {=bool:?}, octo1_hslv: {=bool:?}, octo2_hslv: {=bool:?}, iwdg_fz_stop: {=bool:?}, iwdg_fz_sdby: {=bool:?}, vddio_hslv: {=bool:?} }}",
+                self.bor_lev(),
+                self.iwdg_hw(),
+                self.nrst_stop(),
+                self.nrst_stby(),
+                self.octo1_hslv(),
+                self.octo2_hslv(),
+                self.iwdg_fz_stop(),
+                self.iwdg_fz_sdby(),
+                self.vddio_hslv()
+            )
         }
     }
     #[doc = "FLASH option byte word 2 status register."]
@@ -2008,7 +2099,14 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Obw2sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Obw2sr {{ itcm_axi_share: {=u8:?}, dtcm_axi_share: {=u8:?}, ecc_on_sram: {=bool:?}, i2c_ni3c: {=bool:?} }}" , self . itcm_axi_share () , self . dtcm_axi_share () , self . ecc_on_sram () , self . i2c_ni3c ())
+            defmt::write!(
+                f,
+                "Obw2sr {{ itcm_axi_share: {=u8:?}, dtcm_axi_share: {=u8:?}, ecc_on_sram: {=bool:?}, i2c_ni3c: {=bool:?} }}",
+                self.itcm_axi_share(),
+                self.dtcm_axi_share(),
+                self.ecc_on_sram(),
+                self.i2c_ni3c()
+            )
         }
     }
     #[doc = "FLASH option byte word 2 status register programming."]
@@ -2084,7 +2182,14 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Obw2srp {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Obw2srp {{ itcm_axi_share: {=u8:?}, dtcm_axi_share: {=u8:?}, ecc_on_sram: {=bool:?}, i2c_ni3c: {=bool:?} }}" , self . itcm_axi_share () , self . dtcm_axi_share () , self . ecc_on_sram () , self . i2c_ni3c ())
+            defmt::write!(
+                f,
+                "Obw2srp {{ itcm_axi_share: {=u8:?}, dtcm_axi_share: {=u8:?}, ecc_on_sram: {=bool:?}, i2c_ni3c: {=bool:?} }}",
+                self.itcm_axi_share(),
+                self.dtcm_axi_share(),
+                self.ecc_on_sram(),
+                self.i2c_ni3c()
+            )
         }
     }
     #[doc = "FLASH options control register."]
@@ -2173,7 +2278,15 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Optcr {{ optlock: {=bool:?}, pg_opt: {=bool:?}, kveie: {=bool:?}, kteie: {=bool:?}, opterrie: {=bool:?} }}" , self . optlock () , self . pg_opt () , self . kveie () , self . kteie () , self . opterrie ())
+            defmt::write!(
+                f,
+                "Optcr {{ optlock: {=bool:?}, pg_opt: {=bool:?}, kveie: {=bool:?}, kteie: {=bool:?}, opterrie: {=bool:?} }}",
+                self.optlock(),
+                self.pg_opt(),
+                self.kveie(),
+                self.kteie(),
+                self.opterrie()
+            )
         }
     }
     #[doc = "FLASH options interrupt clear register."]
@@ -2690,7 +2803,18 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ busy: {=bool:?}, wbne: {=bool:?}, qw: {=bool:?}, crc_busy: {=bool:?}, is_program: {=bool:?}, is_erase: {=bool:?}, is_optchange: {=bool:?}, rcheckf: {=bool:?} }}" , self . busy () , self . wbne () , self . qw () , self . crc_busy () , self . is_program () , self . is_erase () , self . is_optchange () , self . rcheckf ())
+            defmt::write!(
+                f,
+                "Sr {{ busy: {=bool:?}, wbne: {=bool:?}, qw: {=bool:?}, crc_busy: {=bool:?}, is_program: {=bool:?}, is_erase: {=bool:?}, is_optchange: {=bool:?}, rcheckf: {=bool:?} }}",
+                self.busy(),
+                self.wbne(),
+                self.qw(),
+                self.crc_busy(),
+                self.is_program(),
+                self.is_erase(),
+                self.is_optchange(),
+                self.rcheckf()
+            )
         }
     }
     #[doc = "FLASH write protection status register."]

@@ -494,7 +494,22 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChCr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "ChCr {{ en: {=bool:?}, reset: {=bool:?}, susp: {=bool:?}, tcie: {=bool:?}, htie: {=bool:?}, dteie: {=bool:?}, uleie: {=bool:?}, useie: {=bool:?}, suspie: {=bool:?}, toie: {=bool:?}, lsm: {:?}, prio: {:?} }}" , self . en () , self . reset () , self . susp () , self . tcie () , self . htie () , self . dteie () , self . uleie () , self . useie () , self . suspie () , self . toie () , self . lsm () , self . prio ())
+            defmt::write!(
+                f,
+                "ChCr {{ en: {=bool:?}, reset: {=bool:?}, susp: {=bool:?}, tcie: {=bool:?}, htie: {=bool:?}, dteie: {=bool:?}, uleie: {=bool:?}, useie: {=bool:?}, suspie: {=bool:?}, toie: {=bool:?}, lsm: {:?}, prio: {:?} }}",
+                self.en(),
+                self.reset(),
+                self.susp(),
+                self.tcie(),
+                self.htie(),
+                self.dteie(),
+                self.uleie(),
+                self.useie(),
+                self.suspie(),
+                self.toie(),
+                self.lsm(),
+                self.prio()
+            )
         }
     }
     #[doc = "LPDMA channel 7 flag clear register"]
@@ -609,7 +624,17 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChFcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "ChFcr {{ tcf: {=bool:?}, htf: {=bool:?}, dtef: {=bool:?}, ulef: {=bool:?}, usef: {=bool:?}, suspf: {=bool:?}, tof: {=bool:?} }}" , self . tcf () , self . htf () , self . dtef () , self . ulef () , self . usef () , self . suspf () , self . tof ())
+            defmt::write!(
+                f,
+                "ChFcr {{ tcf: {=bool:?}, htf: {=bool:?}, dtef: {=bool:?}, ulef: {=bool:?}, usef: {=bool:?}, suspf: {=bool:?}, tof: {=bool:?} }}",
+                self.tcf(),
+                self.htf(),
+                self.dtef(),
+                self.ulef(),
+                self.usef(),
+                self.suspf(),
+                self.tof()
+            )
         }
     }
     #[doc = "LPDMA channel 14 linked-list base address register"]
@@ -789,7 +814,19 @@ is then restored to the programmed value after data transfer is completed and be
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChLlr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "ChLlr {{ la: {=u16:?}, ull: {=bool:?}, ub2: {=bool:?}, ut3: {=bool:?}, uda: {=bool:?}, usa: {=bool:?}, ub1: {=bool:?}, ut2: {=bool:?}, ut1: {=bool:?} }}" , self . la () , self . ull () , self . ub2 () , self . ut3 () , self . uda () , self . usa () , self . ub1 () , self . ut2 () , self . ut1 ())
+            defmt::write!(
+                f,
+                "ChLlr {{ la: {=u16:?}, ull: {=bool:?}, ub2: {=bool:?}, ut3: {=bool:?}, uda: {=bool:?}, usa: {=bool:?}, ub1: {=bool:?}, ut2: {=bool:?}, ut1: {=bool:?} }}",
+                self.la(),
+                self.ull(),
+                self.ub2(),
+                self.ut3(),
+                self.uda(),
+                self.usa(),
+                self.ub1(),
+                self.ut2(),
+                self.ut1()
+            )
         }
     }
     #[doc = "LPDMA channel 15 status register"]
@@ -917,7 +954,18 @@ is then restored to the programmed value after data transfer is completed and be
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChSr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "ChSr {{ idlef: {=bool:?}, tcf: {=bool:?}, htf: {=bool:?}, dtef: {=bool:?}, ulef: {=bool:?}, usef: {=bool:?}, suspf: {=bool:?}, tof: {=bool:?} }}" , self . idlef () , self . tcf () , self . htf () , self . dtef () , self . ulef () , self . usef () , self . suspf () , self . tof ())
+            defmt::write!(
+                f,
+                "ChSr {{ idlef: {=bool:?}, tcf: {=bool:?}, htf: {=bool:?}, dtef: {=bool:?}, ulef: {=bool:?}, usef: {=bool:?}, suspf: {=bool:?}, tof: {=bool:?} }}",
+                self.idlef(),
+                self.tcf(),
+                self.htf(),
+                self.dtef(),
+                self.ulef(),
+                self.usef(),
+                self.suspf(),
+                self.tof()
+            )
         }
     }
     #[doc = "LPDMA channel 8 transfer register 1"]
@@ -1040,7 +1088,17 @@ and address offset CH\\[x\\].TR3.DAO\\[2:0\\], versus DDW\\[1:0\\]). Otherwise a
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChTr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "ChTr1 {{ sdw: {:?}, sinc: {=bool:?}, pam: {:?}, ssec: {=bool:?}, ddw: {:?}, dinc: {=bool:?}, dsec: {=bool:?} }}" , self . sdw () , self . sinc () , self . pam () , self . ssec () , self . ddw () , self . dinc () , self . dsec ())
+            defmt::write!(
+                f,
+                "ChTr1 {{ sdw: {:?}, sinc: {=bool:?}, pam: {:?}, ssec: {=bool:?}, ddw: {:?}, dinc: {=bool:?}, dsec: {=bool:?} }}",
+                self.sdw(),
+                self.sinc(),
+                self.pam(),
+                self.ssec(),
+                self.ddw(),
+                self.dinc(),
+                self.dsec()
+            )
         }
     }
     #[doc = "LPDMA channel 10 transfer register 2"]
@@ -1194,7 +1252,18 @@ or TRIGPOL\\[1:0\\], resets the monitoring, trashing the memorized hit of the fo
     #[cfg(feature = "defmt")]
     impl defmt::Format for ChTr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "ChTr2 {{ reqsel: {=u8:?}, swreq: {:?}, dreq: {:?}, breq: {:?}, trigm: {:?}, trigsel: {=u8:?}, trigpol: {:?}, tcem: {:?} }}" , self . reqsel () , self . swreq () , self . dreq () , self . breq () , self . trigm () , self . trigsel () , self . trigpol () , self . tcem ())
+            defmt::write!(
+                f,
+                "ChTr2 {{ reqsel: {=u8:?}, swreq: {:?}, dreq: {:?}, breq: {:?}, trigm: {:?}, trigsel: {=u8:?}, trigpol: {:?}, tcem: {:?} }}",
+                self.reqsel(),
+                self.swreq(),
+                self.dreq(),
+                self.breq(),
+                self.trigm(),
+                self.trigsel(),
+                self.trigpol(),
+                self.tcem()
+            )
         }
     }
     #[doc = "LPDMA channel 14 transfer register 3"]
@@ -1310,7 +1379,26 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
     #[cfg(feature = "defmt")]
     impl defmt::Format for Misr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Misr {{ mis[0]: {=bool:?}, mis[1]: {=bool:?}, mis[2]: {=bool:?}, mis[3]: {=bool:?}, mis[4]: {=bool:?}, mis[5]: {=bool:?}, mis[6]: {=bool:?}, mis[7]: {=bool:?}, mis[8]: {=bool:?}, mis[9]: {=bool:?}, mis[10]: {=bool:?}, mis[11]: {=bool:?}, mis[12]: {=bool:?}, mis[13]: {=bool:?}, mis[14]: {=bool:?}, mis[15]: {=bool:?} }}" , self . mis (0usize) , self . mis (1usize) , self . mis (2usize) , self . mis (3usize) , self . mis (4usize) , self . mis (5usize) , self . mis (6usize) , self . mis (7usize) , self . mis (8usize) , self . mis (9usize) , self . mis (10usize) , self . mis (11usize) , self . mis (12usize) , self . mis (13usize) , self . mis (14usize) , self . mis (15usize))
+            defmt::write!(
+                f,
+                "Misr {{ mis[0]: {=bool:?}, mis[1]: {=bool:?}, mis[2]: {=bool:?}, mis[3]: {=bool:?}, mis[4]: {=bool:?}, mis[5]: {=bool:?}, mis[6]: {=bool:?}, mis[7]: {=bool:?}, mis[8]: {=bool:?}, mis[9]: {=bool:?}, mis[10]: {=bool:?}, mis[11]: {=bool:?}, mis[12]: {=bool:?}, mis[13]: {=bool:?}, mis[14]: {=bool:?}, mis[15]: {=bool:?} }}",
+                self.mis(0usize),
+                self.mis(1usize),
+                self.mis(2usize),
+                self.mis(3usize),
+                self.mis(4usize),
+                self.mis(5usize),
+                self.mis(6usize),
+                self.mis(7usize),
+                self.mis(8usize),
+                self.mis(9usize),
+                self.mis(10usize),
+                self.mis(11usize),
+                self.mis(12usize),
+                self.mis(13usize),
+                self.mis(14usize),
+                self.mis(15usize)
+            )
         }
     }
     #[doc = "LPDMA privileged configuration register"]
@@ -1366,7 +1454,26 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
     #[cfg(feature = "defmt")]
     impl defmt::Format for Privcfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Privcfgr {{ priv_[0]: {=bool:?}, priv_[1]: {=bool:?}, priv_[2]: {=bool:?}, priv_[3]: {=bool:?}, priv_[4]: {=bool:?}, priv_[5]: {=bool:?}, priv_[6]: {=bool:?}, priv_[7]: {=bool:?}, priv_[8]: {=bool:?}, priv_[9]: {=bool:?}, priv_[10]: {=bool:?}, priv_[11]: {=bool:?}, priv_[12]: {=bool:?}, priv_[13]: {=bool:?}, priv_[14]: {=bool:?}, priv_[15]: {=bool:?} }}" , self . priv_ (0usize) , self . priv_ (1usize) , self . priv_ (2usize) , self . priv_ (3usize) , self . priv_ (4usize) , self . priv_ (5usize) , self . priv_ (6usize) , self . priv_ (7usize) , self . priv_ (8usize) , self . priv_ (9usize) , self . priv_ (10usize) , self . priv_ (11usize) , self . priv_ (12usize) , self . priv_ (13usize) , self . priv_ (14usize) , self . priv_ (15usize))
+            defmt::write!(
+                f,
+                "Privcfgr {{ priv_[0]: {=bool:?}, priv_[1]: {=bool:?}, priv_[2]: {=bool:?}, priv_[3]: {=bool:?}, priv_[4]: {=bool:?}, priv_[5]: {=bool:?}, priv_[6]: {=bool:?}, priv_[7]: {=bool:?}, priv_[8]: {=bool:?}, priv_[9]: {=bool:?}, priv_[10]: {=bool:?}, priv_[11]: {=bool:?}, priv_[12]: {=bool:?}, priv_[13]: {=bool:?}, priv_[14]: {=bool:?}, priv_[15]: {=bool:?} }}",
+                self.priv_(0usize),
+                self.priv_(1usize),
+                self.priv_(2usize),
+                self.priv_(3usize),
+                self.priv_(4usize),
+                self.priv_(5usize),
+                self.priv_(6usize),
+                self.priv_(7usize),
+                self.priv_(8usize),
+                self.priv_(9usize),
+                self.priv_(10usize),
+                self.priv_(11usize),
+                self.priv_(12usize),
+                self.priv_(13usize),
+                self.priv_(14usize),
+                self.priv_(15usize)
+            )
         }
     }
     #[doc = "LPDMA configuration lock register"]
@@ -1422,7 +1529,26 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rcfglockr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Rcfglockr {{ lock[0]: {=bool:?}, lock[1]: {=bool:?}, lock[2]: {=bool:?}, lock[3]: {=bool:?}, lock[4]: {=bool:?}, lock[5]: {=bool:?}, lock[6]: {=bool:?}, lock[7]: {=bool:?}, lock[8]: {=bool:?}, lock[9]: {=bool:?}, lock[10]: {=bool:?}, lock[11]: {=bool:?}, lock[12]: {=bool:?}, lock[13]: {=bool:?}, lock[14]: {=bool:?}, lock[15]: {=bool:?} }}" , self . lock (0usize) , self . lock (1usize) , self . lock (2usize) , self . lock (3usize) , self . lock (4usize) , self . lock (5usize) , self . lock (6usize) , self . lock (7usize) , self . lock (8usize) , self . lock (9usize) , self . lock (10usize) , self . lock (11usize) , self . lock (12usize) , self . lock (13usize) , self . lock (14usize) , self . lock (15usize))
+            defmt::write!(
+                f,
+                "Rcfglockr {{ lock[0]: {=bool:?}, lock[1]: {=bool:?}, lock[2]: {=bool:?}, lock[3]: {=bool:?}, lock[4]: {=bool:?}, lock[5]: {=bool:?}, lock[6]: {=bool:?}, lock[7]: {=bool:?}, lock[8]: {=bool:?}, lock[9]: {=bool:?}, lock[10]: {=bool:?}, lock[11]: {=bool:?}, lock[12]: {=bool:?}, lock[13]: {=bool:?}, lock[14]: {=bool:?}, lock[15]: {=bool:?} }}",
+                self.lock(0usize),
+                self.lock(1usize),
+                self.lock(2usize),
+                self.lock(3usize),
+                self.lock(4usize),
+                self.lock(5usize),
+                self.lock(6usize),
+                self.lock(7usize),
+                self.lock(8usize),
+                self.lock(9usize),
+                self.lock(10usize),
+                self.lock(11usize),
+                self.lock(12usize),
+                self.lock(13usize),
+                self.lock(14usize),
+                self.lock(15usize)
+            )
         }
     }
     #[doc = "LPDMA secure configuration register"]
@@ -1478,7 +1604,26 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccfgr {{ sec[0]: {=bool:?}, sec[1]: {=bool:?}, sec[2]: {=bool:?}, sec[3]: {=bool:?}, sec[4]: {=bool:?}, sec[5]: {=bool:?}, sec[6]: {=bool:?}, sec[7]: {=bool:?}, sec[8]: {=bool:?}, sec[9]: {=bool:?}, sec[10]: {=bool:?}, sec[11]: {=bool:?}, sec[12]: {=bool:?}, sec[13]: {=bool:?}, sec[14]: {=bool:?}, sec[15]: {=bool:?} }}" , self . sec (0usize) , self . sec (1usize) , self . sec (2usize) , self . sec (3usize) , self . sec (4usize) , self . sec (5usize) , self . sec (6usize) , self . sec (7usize) , self . sec (8usize) , self . sec (9usize) , self . sec (10usize) , self . sec (11usize) , self . sec (12usize) , self . sec (13usize) , self . sec (14usize) , self . sec (15usize))
+            defmt::write!(
+                f,
+                "Seccfgr {{ sec[0]: {=bool:?}, sec[1]: {=bool:?}, sec[2]: {=bool:?}, sec[3]: {=bool:?}, sec[4]: {=bool:?}, sec[5]: {=bool:?}, sec[6]: {=bool:?}, sec[7]: {=bool:?}, sec[8]: {=bool:?}, sec[9]: {=bool:?}, sec[10]: {=bool:?}, sec[11]: {=bool:?}, sec[12]: {=bool:?}, sec[13]: {=bool:?}, sec[14]: {=bool:?}, sec[15]: {=bool:?} }}",
+                self.sec(0usize),
+                self.sec(1usize),
+                self.sec(2usize),
+                self.sec(3usize),
+                self.sec(4usize),
+                self.sec(5usize),
+                self.sec(6usize),
+                self.sec(7usize),
+                self.sec(8usize),
+                self.sec(9usize),
+                self.sec(10usize),
+                self.sec(11usize),
+                self.sec(12usize),
+                self.sec(13usize),
+                self.sec(14usize),
+                self.sec(15usize)
+            )
         }
     }
 }

@@ -205,7 +205,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1Fz {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1Fz {{ dbg_tim2_stop: {=bool:?}, dbg_tim3_stop: {=bool:?}, dbg_tim4_stop: {=bool:?}, dbg_tim5_stop: {=bool:?}, dbg_tim6_stop: {=bool:?}, dbg_tim7_stop: {=bool:?}, dbg_rtc_stop: {=bool:?}, dbg_wwdg_stop: {=bool:?}, dbg_iwdg_stop: {=bool:?}, dbg_i2c1_smbus_timeout: {=bool:?}, dbg_i2c2_smbus_timeout: {=bool:?} }}" , self . dbg_tim2_stop () , self . dbg_tim3_stop () , self . dbg_tim4_stop () , self . dbg_tim5_stop () , self . dbg_tim6_stop () , self . dbg_tim7_stop () , self . dbg_rtc_stop () , self . dbg_wwdg_stop () , self . dbg_iwdg_stop () , self . dbg_i2c1_smbus_timeout () , self . dbg_i2c2_smbus_timeout ())
+            defmt::write!(
+                f,
+                "Apb1Fz {{ dbg_tim2_stop: {=bool:?}, dbg_tim3_stop: {=bool:?}, dbg_tim4_stop: {=bool:?}, dbg_tim5_stop: {=bool:?}, dbg_tim6_stop: {=bool:?}, dbg_tim7_stop: {=bool:?}, dbg_rtc_stop: {=bool:?}, dbg_wwdg_stop: {=bool:?}, dbg_iwdg_stop: {=bool:?}, dbg_i2c1_smbus_timeout: {=bool:?}, dbg_i2c2_smbus_timeout: {=bool:?} }}",
+                self.dbg_tim2_stop(),
+                self.dbg_tim3_stop(),
+                self.dbg_tim4_stop(),
+                self.dbg_tim5_stop(),
+                self.dbg_tim6_stop(),
+                self.dbg_tim7_stop(),
+                self.dbg_rtc_stop(),
+                self.dbg_wwdg_stop(),
+                self.dbg_iwdg_stop(),
+                self.dbg_i2c1_smbus_timeout(),
+                self.dbg_i2c2_smbus_timeout()
+            )
         }
     }
     #[doc = "Debug MCU APB1 freeze register 2"]
@@ -363,7 +377,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ dbg_sleep: {=bool:?}, dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, trace_ioen: {=bool:?}, trace_mode: {=u8:?} }}" , self . dbg_sleep () , self . dbg_stop () , self . dbg_standby () , self . trace_ioen () , self . trace_mode ())
+            defmt::write!(
+                f,
+                "Cr {{ dbg_sleep: {=bool:?}, dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, trace_ioen: {=bool:?}, trace_mode: {=u8:?} }}",
+                self.dbg_sleep(),
+                self.dbg_stop(),
+                self.dbg_standby(),
+                self.trace_ioen(),
+                self.trace_mode()
+            )
         }
     }
     #[doc = "DBGMCU_IDCODE"]

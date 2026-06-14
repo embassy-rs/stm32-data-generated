@@ -249,7 +249,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ tsce: {=bool:?}, start: {=bool:?}, am: {=bool:?}, syncpol: {=bool:?}, iodef: {=bool:?}, mcv: {=u8:?}, pgpsc: {=u8:?}, sspsc: {=bool:?}, sse: {=bool:?}, ssd: {=u8:?}, ctpl: {=u8:?}, ctph: {=u8:?} }}" , self . tsce () , self . start () , self . am () , self . syncpol () , self . iodef () , self . mcv () , self . pgpsc () , self . sspsc () , self . sse () , self . ssd () , self . ctpl () , self . ctph ())
+            defmt::write!(
+                f,
+                "Cr {{ tsce: {=bool:?}, start: {=bool:?}, am: {=bool:?}, syncpol: {=bool:?}, iodef: {=bool:?}, mcv: {=u8:?}, pgpsc: {=u8:?}, sspsc: {=bool:?}, sse: {=bool:?}, ssd: {=u8:?}, ctpl: {=u8:?}, ctph: {=u8:?} }}",
+                self.tsce(),
+                self.start(),
+                self.am(),
+                self.syncpol(),
+                self.iodef(),
+                self.mcv(),
+                self.pgpsc(),
+                self.sspsc(),
+                self.sse(),
+                self.ssd(),
+                self.ctpl(),
+                self.ctph()
+            )
         }
     }
     #[doc = "interrupt clear register."]
@@ -747,7 +762,38 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ioascr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ioascr {{ g1_io1: {=bool:?}, g1_io2: {=bool:?}, g1_io3: {=bool:?}, g1_io4: {=bool:?}, g2_io1: {=bool:?}, g2_io2: {=bool:?}, g2_io3: {=bool:?}, g2_io4: {=bool:?}, g3_io1: {=bool:?}, g3_io2: {=bool:?}, g3_io3: {=bool:?}, g3_io4: {=bool:?}, g4_io1: {=bool:?}, g4_io2: {=bool:?}, g4_io3: {=bool:?}, g4_io4: {=bool:?}, g5_io1: {=bool:?}, g5_io2: {=bool:?}, g5_io3: {=bool:?}, g5_io4: {=bool:?}, g6_io1: {=bool:?}, g6_io2: {=bool:?}, g6_io3: {=bool:?}, g6_io4: {=bool:?}, g7_io1: {=bool:?}, g7_io2: {=bool:?}, g7_io3: {=bool:?}, g7_io4: {=bool:?} }}" , self . g1_io1 () , self . g1_io2 () , self . g1_io3 () , self . g1_io4 () , self . g2_io1 () , self . g2_io2 () , self . g2_io3 () , self . g2_io4 () , self . g3_io1 () , self . g3_io2 () , self . g3_io3 () , self . g3_io4 () , self . g4_io1 () , self . g4_io2 () , self . g4_io3 () , self . g4_io4 () , self . g5_io1 () , self . g5_io2 () , self . g5_io3 () , self . g5_io4 () , self . g6_io1 () , self . g6_io2 () , self . g6_io3 () , self . g6_io4 () , self . g7_io1 () , self . g7_io2 () , self . g7_io3 () , self . g7_io4 ())
+            defmt::write!(
+                f,
+                "Ioascr {{ g1_io1: {=bool:?}, g1_io2: {=bool:?}, g1_io3: {=bool:?}, g1_io4: {=bool:?}, g2_io1: {=bool:?}, g2_io2: {=bool:?}, g2_io3: {=bool:?}, g2_io4: {=bool:?}, g3_io1: {=bool:?}, g3_io2: {=bool:?}, g3_io3: {=bool:?}, g3_io4: {=bool:?}, g4_io1: {=bool:?}, g4_io2: {=bool:?}, g4_io3: {=bool:?}, g4_io4: {=bool:?}, g5_io1: {=bool:?}, g5_io2: {=bool:?}, g5_io3: {=bool:?}, g5_io4: {=bool:?}, g6_io1: {=bool:?}, g6_io2: {=bool:?}, g6_io3: {=bool:?}, g6_io4: {=bool:?}, g7_io1: {=bool:?}, g7_io2: {=bool:?}, g7_io3: {=bool:?}, g7_io4: {=bool:?} }}",
+                self.g1_io1(),
+                self.g1_io2(),
+                self.g1_io3(),
+                self.g1_io4(),
+                self.g2_io1(),
+                self.g2_io2(),
+                self.g2_io3(),
+                self.g2_io4(),
+                self.g3_io1(),
+                self.g3_io2(),
+                self.g3_io3(),
+                self.g3_io4(),
+                self.g4_io1(),
+                self.g4_io2(),
+                self.g4_io3(),
+                self.g4_io4(),
+                self.g5_io1(),
+                self.g5_io2(),
+                self.g5_io3(),
+                self.g5_io4(),
+                self.g6_io1(),
+                self.g6_io2(),
+                self.g6_io3(),
+                self.g6_io4(),
+                self.g7_io1(),
+                self.g7_io2(),
+                self.g7_io3(),
+                self.g7_io4()
+            )
         }
     }
     #[doc = "I/O channel control register."]
@@ -1135,7 +1181,38 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ioccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ioccr {{ g1_io1: {=bool:?}, g1_io2: {=bool:?}, g1_io3: {=bool:?}, g1_io4: {=bool:?}, g2_io1: {=bool:?}, g2_io2: {=bool:?}, g2_io3: {=bool:?}, g2_io4: {=bool:?}, g3_io1: {=bool:?}, g3_io2: {=bool:?}, g3_io3: {=bool:?}, g3_io4: {=bool:?}, g4_io1: {=bool:?}, g4_io2: {=bool:?}, g4_io3: {=bool:?}, g4_io4: {=bool:?}, g5_io1: {=bool:?}, g5_io2: {=bool:?}, g5_io3: {=bool:?}, g5_io4: {=bool:?}, g6_io1: {=bool:?}, g6_io2: {=bool:?}, g6_io3: {=bool:?}, g6_io4: {=bool:?}, g7_io1: {=bool:?}, g7_io2: {=bool:?}, g7_io3: {=bool:?}, g7_io4: {=bool:?} }}" , self . g1_io1 () , self . g1_io2 () , self . g1_io3 () , self . g1_io4 () , self . g2_io1 () , self . g2_io2 () , self . g2_io3 () , self . g2_io4 () , self . g3_io1 () , self . g3_io2 () , self . g3_io3 () , self . g3_io4 () , self . g4_io1 () , self . g4_io2 () , self . g4_io3 () , self . g4_io4 () , self . g5_io1 () , self . g5_io2 () , self . g5_io3 () , self . g5_io4 () , self . g6_io1 () , self . g6_io2 () , self . g6_io3 () , self . g6_io4 () , self . g7_io1 () , self . g7_io2 () , self . g7_io3 () , self . g7_io4 ())
+            defmt::write!(
+                f,
+                "Ioccr {{ g1_io1: {=bool:?}, g1_io2: {=bool:?}, g1_io3: {=bool:?}, g1_io4: {=bool:?}, g2_io1: {=bool:?}, g2_io2: {=bool:?}, g2_io3: {=bool:?}, g2_io4: {=bool:?}, g3_io1: {=bool:?}, g3_io2: {=bool:?}, g3_io3: {=bool:?}, g3_io4: {=bool:?}, g4_io1: {=bool:?}, g4_io2: {=bool:?}, g4_io3: {=bool:?}, g4_io4: {=bool:?}, g5_io1: {=bool:?}, g5_io2: {=bool:?}, g5_io3: {=bool:?}, g5_io4: {=bool:?}, g6_io1: {=bool:?}, g6_io2: {=bool:?}, g6_io3: {=bool:?}, g6_io4: {=bool:?}, g7_io1: {=bool:?}, g7_io2: {=bool:?}, g7_io3: {=bool:?}, g7_io4: {=bool:?} }}",
+                self.g1_io1(),
+                self.g1_io2(),
+                self.g1_io3(),
+                self.g1_io4(),
+                self.g2_io1(),
+                self.g2_io2(),
+                self.g2_io3(),
+                self.g2_io4(),
+                self.g3_io1(),
+                self.g3_io2(),
+                self.g3_io3(),
+                self.g3_io4(),
+                self.g4_io1(),
+                self.g4_io2(),
+                self.g4_io3(),
+                self.g4_io4(),
+                self.g5_io1(),
+                self.g5_io2(),
+                self.g5_io3(),
+                self.g5_io4(),
+                self.g6_io1(),
+                self.g6_io2(),
+                self.g6_io3(),
+                self.g6_io4(),
+                self.g7_io1(),
+                self.g7_io2(),
+                self.g7_io3(),
+                self.g7_io4()
+            )
         }
     }
     #[doc = "I/O group x counter register."]
@@ -1376,7 +1453,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Iogcsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Iogcsr {{ g1e: {=bool:?}, g2e: {=bool:?}, g3e: {=bool:?}, g4e: {=bool:?}, g5e: {=bool:?}, g6e: {=bool:?}, g7e: {=bool:?}, g1s: {=bool:?}, g2s: {=bool:?}, g3s: {=bool:?}, g4s: {=bool:?}, g5s: {=bool:?}, g6s: {=bool:?}, g7s: {=bool:?} }}" , self . g1e () , self . g2e () , self . g3e () , self . g4e () , self . g5e () , self . g6e () , self . g7e () , self . g1s () , self . g2s () , self . g3s () , self . g4s () , self . g5s () , self . g6s () , self . g7s ())
+            defmt::write!(
+                f,
+                "Iogcsr {{ g1e: {=bool:?}, g2e: {=bool:?}, g3e: {=bool:?}, g4e: {=bool:?}, g5e: {=bool:?}, g6e: {=bool:?}, g7e: {=bool:?}, g1s: {=bool:?}, g2s: {=bool:?}, g3s: {=bool:?}, g4s: {=bool:?}, g5s: {=bool:?}, g6s: {=bool:?}, g7s: {=bool:?} }}",
+                self.g1e(),
+                self.g2e(),
+                self.g3e(),
+                self.g4e(),
+                self.g5e(),
+                self.g6e(),
+                self.g7e(),
+                self.g1s(),
+                self.g2s(),
+                self.g3s(),
+                self.g4s(),
+                self.g5s(),
+                self.g6s(),
+                self.g7s()
+            )
         }
     }
     #[doc = "I/O hysteresis control register."]
@@ -1764,7 +1858,38 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Iohcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Iohcr {{ g1_io1: {=bool:?}, g1_io2: {=bool:?}, g1_io3: {=bool:?}, g1_io4: {=bool:?}, g2_io1: {=bool:?}, g2_io2: {=bool:?}, g2_io3: {=bool:?}, g2_io4: {=bool:?}, g3_io1: {=bool:?}, g3_io2: {=bool:?}, g3_io3: {=bool:?}, g3_io4: {=bool:?}, g4_io1: {=bool:?}, g4_io2: {=bool:?}, g4_io3: {=bool:?}, g4_io4: {=bool:?}, g5_io1: {=bool:?}, g5_io2: {=bool:?}, g5_io3: {=bool:?}, g5_io4: {=bool:?}, g6_io1: {=bool:?}, g6_io2: {=bool:?}, g6_io3: {=bool:?}, g6_io4: {=bool:?}, g7_io1: {=bool:?}, g7_io2: {=bool:?}, g7_io3: {=bool:?}, g7_io4: {=bool:?} }}" , self . g1_io1 () , self . g1_io2 () , self . g1_io3 () , self . g1_io4 () , self . g2_io1 () , self . g2_io2 () , self . g2_io3 () , self . g2_io4 () , self . g3_io1 () , self . g3_io2 () , self . g3_io3 () , self . g3_io4 () , self . g4_io1 () , self . g4_io2 () , self . g4_io3 () , self . g4_io4 () , self . g5_io1 () , self . g5_io2 () , self . g5_io3 () , self . g5_io4 () , self . g6_io1 () , self . g6_io2 () , self . g6_io3 () , self . g6_io4 () , self . g7_io1 () , self . g7_io2 () , self . g7_io3 () , self . g7_io4 ())
+            defmt::write!(
+                f,
+                "Iohcr {{ g1_io1: {=bool:?}, g1_io2: {=bool:?}, g1_io3: {=bool:?}, g1_io4: {=bool:?}, g2_io1: {=bool:?}, g2_io2: {=bool:?}, g2_io3: {=bool:?}, g2_io4: {=bool:?}, g3_io1: {=bool:?}, g3_io2: {=bool:?}, g3_io3: {=bool:?}, g3_io4: {=bool:?}, g4_io1: {=bool:?}, g4_io2: {=bool:?}, g4_io3: {=bool:?}, g4_io4: {=bool:?}, g5_io1: {=bool:?}, g5_io2: {=bool:?}, g5_io3: {=bool:?}, g5_io4: {=bool:?}, g6_io1: {=bool:?}, g6_io2: {=bool:?}, g6_io3: {=bool:?}, g6_io4: {=bool:?}, g7_io1: {=bool:?}, g7_io2: {=bool:?}, g7_io3: {=bool:?}, g7_io4: {=bool:?} }}",
+                self.g1_io1(),
+                self.g1_io2(),
+                self.g1_io3(),
+                self.g1_io4(),
+                self.g2_io1(),
+                self.g2_io2(),
+                self.g2_io3(),
+                self.g2_io4(),
+                self.g3_io1(),
+                self.g3_io2(),
+                self.g3_io3(),
+                self.g3_io4(),
+                self.g4_io1(),
+                self.g4_io2(),
+                self.g4_io3(),
+                self.g4_io4(),
+                self.g5_io1(),
+                self.g5_io2(),
+                self.g5_io3(),
+                self.g5_io4(),
+                self.g6_io1(),
+                self.g6_io2(),
+                self.g6_io3(),
+                self.g6_io4(),
+                self.g7_io1(),
+                self.g7_io2(),
+                self.g7_io3(),
+                self.g7_io4()
+            )
         }
     }
     #[doc = "I/O sampling control register."]
@@ -2152,7 +2277,38 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ioscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ioscr {{ g1_io1: {=bool:?}, g1_io2: {=bool:?}, g1_io3: {=bool:?}, g1_io4: {=bool:?}, g2_io1: {=bool:?}, g2_io2: {=bool:?}, g2_io3: {=bool:?}, g2_io4: {=bool:?}, g3_io1: {=bool:?}, g3_io2: {=bool:?}, g3_io3: {=bool:?}, g3_io4: {=bool:?}, g4_io1: {=bool:?}, g4_io2: {=bool:?}, g4_io3: {=bool:?}, g4_io4: {=bool:?}, g5_io1: {=bool:?}, g5_io2: {=bool:?}, g5_io3: {=bool:?}, g5_io4: {=bool:?}, g6_io1: {=bool:?}, g6_io2: {=bool:?}, g6_io3: {=bool:?}, g6_io4: {=bool:?}, g7_io1: {=bool:?}, g7_io2: {=bool:?}, g7_io3: {=bool:?}, g7_io4: {=bool:?} }}" , self . g1_io1 () , self . g1_io2 () , self . g1_io3 () , self . g1_io4 () , self . g2_io1 () , self . g2_io2 () , self . g2_io3 () , self . g2_io4 () , self . g3_io1 () , self . g3_io2 () , self . g3_io3 () , self . g3_io4 () , self . g4_io1 () , self . g4_io2 () , self . g4_io3 () , self . g4_io4 () , self . g5_io1 () , self . g5_io2 () , self . g5_io3 () , self . g5_io4 () , self . g6_io1 () , self . g6_io2 () , self . g6_io3 () , self . g6_io4 () , self . g7_io1 () , self . g7_io2 () , self . g7_io3 () , self . g7_io4 ())
+            defmt::write!(
+                f,
+                "Ioscr {{ g1_io1: {=bool:?}, g1_io2: {=bool:?}, g1_io3: {=bool:?}, g1_io4: {=bool:?}, g2_io1: {=bool:?}, g2_io2: {=bool:?}, g2_io3: {=bool:?}, g2_io4: {=bool:?}, g3_io1: {=bool:?}, g3_io2: {=bool:?}, g3_io3: {=bool:?}, g3_io4: {=bool:?}, g4_io1: {=bool:?}, g4_io2: {=bool:?}, g4_io3: {=bool:?}, g4_io4: {=bool:?}, g5_io1: {=bool:?}, g5_io2: {=bool:?}, g5_io3: {=bool:?}, g5_io4: {=bool:?}, g6_io1: {=bool:?}, g6_io2: {=bool:?}, g6_io3: {=bool:?}, g6_io4: {=bool:?}, g7_io1: {=bool:?}, g7_io2: {=bool:?}, g7_io3: {=bool:?}, g7_io4: {=bool:?} }}",
+                self.g1_io1(),
+                self.g1_io2(),
+                self.g1_io3(),
+                self.g1_io4(),
+                self.g2_io1(),
+                self.g2_io2(),
+                self.g2_io3(),
+                self.g2_io4(),
+                self.g3_io1(),
+                self.g3_io2(),
+                self.g3_io3(),
+                self.g3_io4(),
+                self.g4_io1(),
+                self.g4_io2(),
+                self.g4_io3(),
+                self.g4_io4(),
+                self.g5_io1(),
+                self.g5_io2(),
+                self.g5_io3(),
+                self.g5_io4(),
+                self.g6_io1(),
+                self.g6_io2(),
+                self.g6_io3(),
+                self.g6_io4(),
+                self.g7_io1(),
+                self.g7_io2(),
+                self.g7_io3(),
+                self.g7_io4()
+            )
         }
     }
     #[doc = "interrupt status register."]

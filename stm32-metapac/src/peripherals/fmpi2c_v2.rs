@@ -344,7 +344,29 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ pe: {=bool:?}, txie: {=bool:?}, rxie: {=bool:?}, addrie: {=bool:?}, nackie: {=bool:?}, stopie: {=bool:?}, tcie: {=bool:?}, errie: {=bool:?}, dnf: {:?}, anfoff: {=bool:?}, txdmaen: {=bool:?}, rxdmaen: {=bool:?}, sbc: {=bool:?}, nostretch: {=bool:?}, gcen: {=bool:?}, smbhen: {=bool:?}, smbden: {=bool:?}, alerten: {=bool:?}, pecen: {=bool:?} }}" , self . pe () , self . txie () , self . rxie () , self . addrie () , self . nackie () , self . stopie () , self . tcie () , self . errie () , self . dnf () , self . anfoff () , self . txdmaen () , self . rxdmaen () , self . sbc () , self . nostretch () , self . gcen () , self . smbhen () , self . smbden () , self . alerten () , self . pecen ())
+            defmt::write!(
+                f,
+                "Cr1 {{ pe: {=bool:?}, txie: {=bool:?}, rxie: {=bool:?}, addrie: {=bool:?}, nackie: {=bool:?}, stopie: {=bool:?}, tcie: {=bool:?}, errie: {=bool:?}, dnf: {:?}, anfoff: {=bool:?}, txdmaen: {=bool:?}, rxdmaen: {=bool:?}, sbc: {=bool:?}, nostretch: {=bool:?}, gcen: {=bool:?}, smbhen: {=bool:?}, smbden: {=bool:?}, alerten: {=bool:?}, pecen: {=bool:?} }}",
+                self.pe(),
+                self.txie(),
+                self.rxie(),
+                self.addrie(),
+                self.nackie(),
+                self.stopie(),
+                self.tcie(),
+                self.errie(),
+                self.dnf(),
+                self.anfoff(),
+                self.txdmaen(),
+                self.rxdmaen(),
+                self.sbc(),
+                self.nostretch(),
+                self.gcen(),
+                self.smbhen(),
+                self.smbden(),
+                self.alerten(),
+                self.pecen()
+            )
         }
     }
     #[doc = "Control register 2"]
@@ -511,7 +533,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ sadd: {=u16:?}, dir: {:?}, add10: {:?}, head10r: {:?}, start: {=bool:?}, stop: {=bool:?}, nack: {=bool:?}, nbytes: {=u8:?}, reload: {:?}, autoend: {:?}, pecbyte: {=bool:?} }}" , self . sadd () , self . dir () , self . add10 () , self . head10r () , self . start () , self . stop () , self . nack () , self . nbytes () , self . reload () , self . autoend () , self . pecbyte ())
+            defmt::write!(
+                f,
+                "Cr2 {{ sadd: {=u16:?}, dir: {:?}, add10: {:?}, head10r: {:?}, start: {=bool:?}, stop: {=bool:?}, nack: {=bool:?}, nbytes: {=u8:?}, reload: {:?}, autoend: {:?}, pecbyte: {=bool:?} }}",
+                self.sadd(),
+                self.dir(),
+                self.add10(),
+                self.head10r(),
+                self.start(),
+                self.stop(),
+                self.nack(),
+                self.nbytes(),
+                self.reload(),
+                self.autoend(),
+                self.pecbyte()
+            )
         }
     }
     #[doc = "Interrupt clear register"]
@@ -652,7 +688,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Icr {{ addrcf: {=bool:?}, nackcf: {=bool:?}, stopcf: {=bool:?}, berrcf: {=bool:?}, arlocf: {=bool:?}, ovrcf: {=bool:?}, peccf: {=bool:?}, timoutcf: {=bool:?}, alertcf: {=bool:?} }}" , self . addrcf () , self . nackcf () , self . stopcf () , self . berrcf () , self . arlocf () , self . ovrcf () , self . peccf () , self . timoutcf () , self . alertcf ())
+            defmt::write!(
+                f,
+                "Icr {{ addrcf: {=bool:?}, nackcf: {=bool:?}, stopcf: {=bool:?}, berrcf: {=bool:?}, arlocf: {=bool:?}, ovrcf: {=bool:?}, peccf: {=bool:?}, timoutcf: {=bool:?}, alertcf: {=bool:?} }}",
+                self.addrcf(),
+                self.nackcf(),
+                self.stopcf(),
+                self.berrcf(),
+                self.arlocf(),
+                self.ovrcf(),
+                self.peccf(),
+                self.timoutcf(),
+                self.alertcf()
+            )
         }
     }
     #[doc = "Interrupt and Status register"]
@@ -897,7 +945,27 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ txe: {=bool:?}, txis: {=bool:?}, rxne: {=bool:?}, addr: {=bool:?}, nackf: {=bool:?}, stopf: {=bool:?}, tc: {=bool:?}, tcr: {=bool:?}, berr: {=bool:?}, arlo: {=bool:?}, ovr: {=bool:?}, pecerr: {=bool:?}, timeout: {=bool:?}, alert: {=bool:?}, busy: {=bool:?}, dir: {:?}, addcode: {=u8:?} }}" , self . txe () , self . txis () , self . rxne () , self . addr () , self . nackf () , self . stopf () , self . tc () , self . tcr () , self . berr () , self . arlo () , self . ovr () , self . pecerr () , self . timeout () , self . alert () , self . busy () , self . dir () , self . addcode ())
+            defmt::write!(
+                f,
+                "Isr {{ txe: {=bool:?}, txis: {=bool:?}, rxne: {=bool:?}, addr: {=bool:?}, nackf: {=bool:?}, stopf: {=bool:?}, tc: {=bool:?}, tcr: {=bool:?}, berr: {=bool:?}, arlo: {=bool:?}, ovr: {=bool:?}, pecerr: {=bool:?}, timeout: {=bool:?}, alert: {=bool:?}, busy: {=bool:?}, dir: {:?}, addcode: {=u8:?} }}",
+                self.txe(),
+                self.txis(),
+                self.rxne(),
+                self.addr(),
+                self.nackf(),
+                self.stopf(),
+                self.tc(),
+                self.tcr(),
+                self.berr(),
+                self.arlo(),
+                self.ovr(),
+                self.pecerr(),
+                self.timeout(),
+                self.alert(),
+                self.busy(),
+                self.dir(),
+                self.addcode()
+            )
         }
     }
     #[doc = "Own address register 1"]
@@ -1194,7 +1262,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Timeoutr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Timeoutr {{ timeouta: {=u16:?}, tidle: {=bool:?}, timouten: {=bool:?}, timeoutb: {=u16:?}, texten: {=bool:?} }}" , self . timeouta () , self . tidle () , self . timouten () , self . timeoutb () , self . texten ())
+            defmt::write!(
+                f,
+                "Timeoutr {{ timeouta: {=u16:?}, tidle: {=bool:?}, timouten: {=bool:?}, timeoutb: {=u16:?}, texten: {=bool:?} }}",
+                self.timeouta(),
+                self.tidle(),
+                self.timouten(),
+                self.timeoutb(),
+                self.texten()
+            )
         }
     }
     #[doc = "Timing register"]

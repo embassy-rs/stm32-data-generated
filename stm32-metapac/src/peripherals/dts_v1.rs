@@ -178,7 +178,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ en: {=bool:?}, start: {=bool:?}, intrig_sel: {=u8:?}, smp_time: {=u8:?}, refclk_sel: {=bool:?}, q_meas_opt: {=bool:?}, hsref_clk_div: {=u8:?} }}" , self . en () , self . start () , self . intrig_sel () , self . smp_time () , self . refclk_sel () , self . q_meas_opt () , self . hsref_clk_div ())
+            defmt::write!(
+                f,
+                "Cfgr1 {{ en: {=bool:?}, start: {=bool:?}, intrig_sel: {=u8:?}, smp_time: {=u8:?}, refclk_sel: {=bool:?}, q_meas_opt: {=bool:?}, hsref_clk_div: {=u8:?} }}",
+                self.en(),
+                self.start(),
+                self.intrig_sel(),
+                self.smp_time(),
+                self.refclk_sel(),
+                self.q_meas_opt(),
+                self.hsref_clk_div()
+            )
         }
     }
     #[doc = "Temperature sensor data register."]
@@ -315,7 +325,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icifr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Icifr {{ citef: {=bool:?}, citlf: {=bool:?}, cithf: {=bool:?}, caitef: {=bool:?}, caitlf: {=bool:?}, caithf: {=bool:?} }}" , self . citef () , self . citlf () , self . cithf () , self . caitef () , self . caitlf () , self . caithf ())
+            defmt::write!(
+                f,
+                "Icifr {{ citef: {=bool:?}, citlf: {=bool:?}, cithf: {=bool:?}, caitef: {=bool:?}, caitlf: {=bool:?}, caithf: {=bool:?} }}",
+                self.citef(),
+                self.citlf(),
+                self.cithf(),
+                self.caitef(),
+                self.caitlf(),
+                self.caithf()
+            )
         }
     }
     #[doc = "Temperature sensor interrupt enable register."]
@@ -417,7 +436,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Itenr {{ iteen: {=bool:?}, itlen: {=bool:?}, ithen: {=bool:?}, aiteen: {=bool:?}, aitlen: {=bool:?}, aithen: {=bool:?} }}" , self . iteen () , self . itlen () , self . ithen () , self . aiteen () , self . aitlen () , self . aithen ())
+            defmt::write!(
+                f,
+                "Itenr {{ iteen: {=bool:?}, itlen: {=bool:?}, ithen: {=bool:?}, aiteen: {=bool:?}, aitlen: {=bool:?}, aithen: {=bool:?} }}",
+                self.iteen(),
+                self.itlen(),
+                self.ithen(),
+                self.aiteen(),
+                self.aitlen(),
+                self.aithen()
+            )
         }
     }
     #[doc = "Temperature sensor interrupt threshold register 1."]
@@ -544,7 +572,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Or {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Or {{ op[0]: {=bool:?}, op[1]: {=bool:?}, op[2]: {=bool:?}, op[3]: {=bool:?}, op[4]: {=bool:?}, op[5]: {=bool:?}, op[6]: {=bool:?}, op[7]: {=bool:?}, op[8]: {=bool:?}, op[9]: {=bool:?}, op[10]: {=bool:?}, op[11]: {=bool:?}, op[12]: {=bool:?}, op[13]: {=bool:?}, op[14]: {=bool:?}, op[15]: {=bool:?}, op[16]: {=bool:?}, op[17]: {=bool:?}, op[18]: {=bool:?}, op[19]: {=bool:?}, op[20]: {=bool:?}, op[21]: {=bool:?}, op[22]: {=bool:?}, op[23]: {=bool:?}, op[24]: {=bool:?}, op[25]: {=bool:?}, op[26]: {=bool:?}, op[27]: {=bool:?}, op[28]: {=bool:?}, op[29]: {=bool:?}, op[30]: {=bool:?}, op[31]: {=bool:?} }}" , self . op (0usize) , self . op (1usize) , self . op (2usize) , self . op (3usize) , self . op (4usize) , self . op (5usize) , self . op (6usize) , self . op (7usize) , self . op (8usize) , self . op (9usize) , self . op (10usize) , self . op (11usize) , self . op (12usize) , self . op (13usize) , self . op (14usize) , self . op (15usize) , self . op (16usize) , self . op (17usize) , self . op (18usize) , self . op (19usize) , self . op (20usize) , self . op (21usize) , self . op (22usize) , self . op (23usize) , self . op (24usize) , self . op (25usize) , self . op (26usize) , self . op (27usize) , self . op (28usize) , self . op (29usize) , self . op (30usize) , self . op (31usize))
+            defmt::write!(
+                f,
+                "Or {{ op[0]: {=bool:?}, op[1]: {=bool:?}, op[2]: {=bool:?}, op[3]: {=bool:?}, op[4]: {=bool:?}, op[5]: {=bool:?}, op[6]: {=bool:?}, op[7]: {=bool:?}, op[8]: {=bool:?}, op[9]: {=bool:?}, op[10]: {=bool:?}, op[11]: {=bool:?}, op[12]: {=bool:?}, op[13]: {=bool:?}, op[14]: {=bool:?}, op[15]: {=bool:?}, op[16]: {=bool:?}, op[17]: {=bool:?}, op[18]: {=bool:?}, op[19]: {=bool:?}, op[20]: {=bool:?}, op[21]: {=bool:?}, op[22]: {=bool:?}, op[23]: {=bool:?}, op[24]: {=bool:?}, op[25]: {=bool:?}, op[26]: {=bool:?}, op[27]: {=bool:?}, op[28]: {=bool:?}, op[29]: {=bool:?}, op[30]: {=bool:?}, op[31]: {=bool:?} }}",
+                self.op(0usize),
+                self.op(1usize),
+                self.op(2usize),
+                self.op(3usize),
+                self.op(4usize),
+                self.op(5usize),
+                self.op(6usize),
+                self.op(7usize),
+                self.op(8usize),
+                self.op(9usize),
+                self.op(10usize),
+                self.op(11usize),
+                self.op(12usize),
+                self.op(13usize),
+                self.op(14usize),
+                self.op(15usize),
+                self.op(16usize),
+                self.op(17usize),
+                self.op(18usize),
+                self.op(19usize),
+                self.op(20usize),
+                self.op(21usize),
+                self.op(22usize),
+                self.op(23usize),
+                self.op(24usize),
+                self.op(25usize),
+                self.op(26usize),
+                self.op(27usize),
+                self.op(28usize),
+                self.op(29usize),
+                self.op(30usize),
+                self.op(31usize)
+            )
         }
     }
     #[doc = "Temperature sensor ramp value register."]
@@ -696,7 +759,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ itef: {=bool:?}, itlf: {=bool:?}, ithf: {=bool:?}, aitef: {=bool:?}, aitlf: {=bool:?}, aithf: {=bool:?}, rdy: {=bool:?} }}" , self . itef () , self . itlf () , self . ithf () , self . aitef () , self . aitlf () , self . aithf () , self . rdy ())
+            defmt::write!(
+                f,
+                "Sr {{ itef: {=bool:?}, itlf: {=bool:?}, ithf: {=bool:?}, aitef: {=bool:?}, aitlf: {=bool:?}, aithf: {=bool:?}, rdy: {=bool:?} }}",
+                self.itef(),
+                self.itlf(),
+                self.ithf(),
+                self.aitef(),
+                self.aitlf(),
+                self.aithf(),
+                self.rdy()
+            )
         }
     }
     #[doc = "Temperature sensor T0 value register 1."]

@@ -1159,7 +1159,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for C0r {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "C0r {{ ckta: {=bool:?}, cfbda: {=bool:?}, cfbpa: {=bool:?}, apa: {=bool:?}, dcp: {=bool:?}, wina: {=bool:?}, cluta: {=bool:?}, ckra: {=bool:?}, f21: {=bool:?}, f20: {=bool:?}, f2p: {=bool:?}, f21p: {=bool:?}, f2c: {=bool:?}, f21c: {=bool:?}, f2pc: {=bool:?}, f21pc: {=bool:?}, f11: {=bool:?}, f10: {=bool:?}, f1p: {=bool:?}, f11p: {=bool:?}, f1c: {=bool:?}, f11c: {=bool:?}, f1pc: {=bool:?}, f11pc: {=bool:?}, ff: {=bool:?}, rgb888: {=bool:?}, bgr565: {=bool:?}, rgb565: {=bool:?}, bgra8888: {=bool:?}, rgba8888: {=bool:?}, abgr8888: {=bool:?}, argb8888: {=bool:?} }}" , self . ckta () , self . cfbda () , self . cfbpa () , self . apa () , self . dcp () , self . wina () , self . cluta () , self . ckra () , self . f21 () , self . f20 () , self . f2p () , self . f21p () , self . f2c () , self . f21c () , self . f2pc () , self . f21pc () , self . f11 () , self . f10 () , self . f1p () , self . f11p () , self . f1c () , self . f11c () , self . f1pc () , self . f11pc () , self . ff () , self . rgb888 () , self . bgr565 () , self . rgb565 () , self . bgra8888 () , self . rgba8888 () , self . abgr8888 () , self . argb8888 ())
+            defmt::write!(
+                f,
+                "C0r {{ ckta: {=bool:?}, cfbda: {=bool:?}, cfbpa: {=bool:?}, apa: {=bool:?}, dcp: {=bool:?}, wina: {=bool:?}, cluta: {=bool:?}, ckra: {=bool:?}, f21: {=bool:?}, f20: {=bool:?}, f2p: {=bool:?}, f21p: {=bool:?}, f2c: {=bool:?}, f21c: {=bool:?}, f2pc: {=bool:?}, f21pc: {=bool:?}, f11: {=bool:?}, f10: {=bool:?}, f1p: {=bool:?}, f11p: {=bool:?}, f1c: {=bool:?}, f11c: {=bool:?}, f1pc: {=bool:?}, f11pc: {=bool:?}, ff: {=bool:?}, rgb888: {=bool:?}, bgr565: {=bool:?}, rgb565: {=bool:?}, bgra8888: {=bool:?}, rgba8888: {=bool:?}, abgr8888: {=bool:?}, argb8888: {=bool:?} }}",
+                self.ckta(),
+                self.cfbda(),
+                self.cfbpa(),
+                self.apa(),
+                self.dcp(),
+                self.wina(),
+                self.cluta(),
+                self.ckra(),
+                self.f21(),
+                self.f20(),
+                self.f2p(),
+                self.f21p(),
+                self.f2c(),
+                self.f21c(),
+                self.f2pc(),
+                self.f21pc(),
+                self.f11(),
+                self.f10(),
+                self.f1p(),
+                self.f11p(),
+                self.f1c(),
+                self.f11c(),
+                self.f1pc(),
+                self.f11pc(),
+                self.ff(),
+                self.rgb888(),
+                self.bgr565(),
+                self.rgb565(),
+                self.bgra8888(),
+                self.rgba8888(),
+                self.abgr8888(),
+                self.argb8888()
+            )
         }
     }
     #[doc = "Layerx Configuration 1 Register."]
@@ -2568,7 +2603,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gc1r {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Gc1r {{ wbch: {=u8:?}, wgch: {=u8:?}, wrch: {=u8:?}, prba: {=bool:?}, dt: {:?}, gct: {:?}, shra: {=bool:?}, bcp: {=bool:?}, bba: {=bool:?}, lnip: {=bool:?}, tp: {=bool:?}, spp: {=bool:?}, dwp: {=bool:?}, stra: {=bool:?}, crma: {=bool:?}, bma: {=bool:?} }}" , self . wbch () , self . wgch () , self . wrch () , self . prba () , self . dt () , self . gct () , self . shra () , self . bcp () , self . bba () , self . lnip () , self . tp () , self . spp () , self . dwp () , self . stra () , self . crma () , self . bma ())
+            defmt::write!(
+                f,
+                "Gc1r {{ wbch: {=u8:?}, wgch: {=u8:?}, wrch: {=u8:?}, prba: {=bool:?}, dt: {:?}, gct: {:?}, shra: {=bool:?}, bcp: {=bool:?}, bba: {=bool:?}, lnip: {=bool:?}, tp: {=bool:?}, spp: {=bool:?}, dwp: {=bool:?}, stra: {=bool:?}, crma: {=bool:?}, bma: {=bool:?} }}",
+                self.wbch(),
+                self.wgch(),
+                self.wrch(),
+                self.prba(),
+                self.dt(),
+                self.gct(),
+                self.shra(),
+                self.bcp(),
+                self.bba(),
+                self.lnip(),
+                self.tp(),
+                self.spp(),
+                self.dwp(),
+                self.stra(),
+                self.crma(),
+                self.bma()
+            )
         }
     }
     #[doc = "Ltdc Global Configuration 2 Register."]
@@ -2761,7 +2815,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gc2r {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Gc2r {{ bla: {=bool:?}, stsa: {=bool:?}, dva: {=bool:?}, dpa: {=bool:?}, bw: {:?}, edca: {=bool:?}, oca: {=bool:?}, axiida: {=bool:?}, rota: {=bool:?}, sisa: {=bool:?}, sfa: {=bool:?}, crca: {:?}, boa: {:?} }}" , self . bla () , self . stsa () , self . dva () , self . dpa () , self . bw () , self . edca () , self . oca () , self . axiida () , self . rota () , self . sisa () , self . sfa () , self . crca () , self . boa ())
+            defmt::write!(
+                f,
+                "Gc2r {{ bla: {=bool:?}, stsa: {=bool:?}, dva: {=bool:?}, dpa: {=bool:?}, bw: {:?}, edca: {=bool:?}, oca: {=bool:?}, axiida: {=bool:?}, rota: {=bool:?}, sisa: {=bool:?}, sfa: {=bool:?}, crca: {:?}, boa: {:?} }}",
+                self.bla(),
+                self.stsa(),
+                self.dva(),
+                self.dpa(),
+                self.bw(),
+                self.edca(),
+                self.oca(),
+                self.axiida(),
+                self.rota(),
+                self.sisa(),
+                self.sfa(),
+                self.crca(),
+                self.boa()
+            )
         }
     }
     #[doc = "Ltdc Gamma Correction Configuration Register."]
@@ -3051,7 +3121,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Gcr {{ ltdcen: {=bool:?}, gamen: {=bool:?}, dbw: {=u8:?}, dgw: {=u8:?}, drw: {=u8:?}, den: {=bool:?}, crcen: {=bool:?}, sfen: {=bool:?}, sfswtr: {:?}, pcpol: {:?}, depol: {:?}, vspol: {:?}, hspol: {:?} }}" , self . ltdcen () , self . gamen () , self . dbw () , self . dgw () , self . drw () , self . den () , self . crcen () , self . sfen () , self . sfswtr () , self . pcpol () , self . depol () , self . vspol () , self . hspol ())
+            defmt::write!(
+                f,
+                "Gcr {{ ltdcen: {=bool:?}, gamen: {=bool:?}, dbw: {=u8:?}, dgw: {=u8:?}, drw: {=u8:?}, den: {=bool:?}, crcen: {=bool:?}, sfen: {=bool:?}, sfswtr: {:?}, pcpol: {:?}, depol: {:?}, vspol: {:?}, hspol: {:?} }}",
+                self.ltdcen(),
+                self.gamen(),
+                self.dbw(),
+                self.dgw(),
+                self.drw(),
+                self.den(),
+                self.crcen(),
+                self.sfen(),
+                self.sfswtr(),
+                self.pcpol(),
+                self.depol(),
+                self.vspol(),
+                self.hspol()
+            )
         }
     }
     #[doc = "Ltdc Interrupt Clear Register."]
@@ -3375,7 +3461,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier {{ lie: {=bool:?}, fuwie: {=bool:?}, terrie: {=bool:?}, rrie: {=bool:?}, fuie: {=bool:?}, crcie: {=bool:?} }}" , self . lie () , self . fuwie () , self . terrie () , self . rrie () , self . fuie () , self . crcie ())
+            defmt::write!(
+                f,
+                "Ier {{ lie: {=bool:?}, fuwie: {=bool:?}, terrie: {=bool:?}, rrie: {=bool:?}, fuie: {=bool:?}, crcie: {=bool:?} }}",
+                self.lie(),
+                self.fuwie(),
+                self.terrie(),
+                self.rrie(),
+                self.fuie(),
+                self.crcie()
+            )
         }
     }
     #[doc = "Ltdc Interrupt Enable Register 2."]
@@ -3477,7 +3572,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier2 {{ lie: {=bool:?}, fuwie: {=bool:?}, terrie: {=bool:?}, rrie: {=bool:?}, fuie: {=bool:?}, crcie: {=bool:?} }}" , self . lie () , self . fuwie () , self . terrie () , self . rrie () , self . fuie () , self . crcie ())
+            defmt::write!(
+                f,
+                "Ier2 {{ lie: {=bool:?}, fuwie: {=bool:?}, terrie: {=bool:?}, rrie: {=bool:?}, fuie: {=bool:?}, crcie: {=bool:?} }}",
+                self.lie(),
+                self.fuwie(),
+                self.terrie(),
+                self.rrie(),
+                self.fuie(),
+                self.crcie()
+            )
         }
     }
     #[doc = "Ltdc Interrupt Status Register."]
@@ -3579,7 +3683,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ lif: {=bool:?}, fuwif: {=bool:?}, terrif: {=bool:?}, rrif: {=bool:?}, fuif: {=bool:?}, crcif: {=bool:?} }}" , self . lif () , self . fuwif () , self . terrif () , self . rrif () , self . fuif () , self . crcif ())
+            defmt::write!(
+                f,
+                "Isr {{ lif: {=bool:?}, fuwif: {=bool:?}, terrif: {=bool:?}, rrif: {=bool:?}, fuif: {=bool:?}, crcif: {=bool:?} }}",
+                self.lif(),
+                self.fuwif(),
+                self.terrif(),
+                self.rrif(),
+                self.fuif(),
+                self.crcif()
+            )
         }
     }
     #[doc = "Ltdc Interrupt Status Register 2."]
@@ -3681,7 +3794,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr2 {{ lif: {=bool:?}, fuwif: {=bool:?}, terrif: {=bool:?}, rrif: {=bool:?}, fuif: {=bool:?}, crcif: {=bool:?} }}" , self . lif () , self . fuwif () , self . terrif () , self . rrif () , self . fuif () , self . crcif ())
+            defmt::write!(
+                f,
+                "Isr2 {{ lif: {=bool:?}, fuwif: {=bool:?}, terrif: {=bool:?}, rrif: {=bool:?}, fuif: {=bool:?}, crcif: {=bool:?} }}",
+                self.lif(),
+                self.fuwif(),
+                self.terrif(),
+                self.rrif(),
+                self.fuif(),
+                self.crcif()
+            )
         }
     }
     #[doc = "Line Interrupt Position Configuration Register."]

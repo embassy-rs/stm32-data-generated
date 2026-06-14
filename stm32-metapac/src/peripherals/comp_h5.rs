@@ -218,7 +218,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ en: {=bool:?}, brgen: {=bool:?}, scalen: {=bool:?}, polarity: {=bool:?}, iten: {=bool:?}, hyst: {:?}, pwrmode: {:?}, inmsel: {:?}, inpsel1: {=bool:?}, inpsel2: {=bool:?}, blanking: {:?}, lock: {=bool:?} }}" , self . en () , self . brgen () , self . scalen () , self . polarity () , self . iten () , self . hyst () , self . pwrmode () , self . inmsel () , self . inpsel1 () , self . inpsel2 () , self . blanking () , self . lock ())
+            defmt::write!(
+                f,
+                "Cfgr1 {{ en: {=bool:?}, brgen: {=bool:?}, scalen: {=bool:?}, polarity: {=bool:?}, iten: {=bool:?}, hyst: {:?}, pwrmode: {:?}, inmsel: {:?}, inpsel1: {=bool:?}, inpsel2: {=bool:?}, blanking: {:?}, lock: {=bool:?} }}",
+                self.en(),
+                self.brgen(),
+                self.scalen(),
+                self.polarity(),
+                self.iten(),
+                self.hyst(),
+                self.pwrmode(),
+                self.inmsel(),
+                self.inpsel1(),
+                self.inpsel2(),
+                self.blanking(),
+                self.lock()
+            )
         }
     }
     #[doc = "Comparator configuration register 2."]

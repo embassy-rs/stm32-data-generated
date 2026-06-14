@@ -327,7 +327,34 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Adc4Awdcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Adc4Awdcr {{ awdch[0]: {=bool:?}, awdch[1]: {=bool:?}, awdch[2]: {=bool:?}, awdch[3]: {=bool:?}, awdch[4]: {=bool:?}, awdch[5]: {=bool:?}, awdch[6]: {=bool:?}, awdch[7]: {=bool:?}, awdch[8]: {=bool:?}, awdch[9]: {=bool:?}, awdch[10]: {=bool:?}, awdch[11]: {=bool:?}, awdch[12]: {=bool:?}, awdch[13]: {=bool:?}, awdch[14]: {=bool:?}, awdch[15]: {=bool:?}, awdch[16]: {=bool:?}, awdch[17]: {=bool:?}, awdch[18]: {=bool:?}, awdch[19]: {=bool:?}, awdch[20]: {=bool:?}, awdch[21]: {=bool:?}, awdch[22]: {=bool:?}, awdch[23]: {=bool:?} }}" , self . awdch (0usize) , self . awdch (1usize) , self . awdch (2usize) , self . awdch (3usize) , self . awdch (4usize) , self . awdch (5usize) , self . awdch (6usize) , self . awdch (7usize) , self . awdch (8usize) , self . awdch (9usize) , self . awdch (10usize) , self . awdch (11usize) , self . awdch (12usize) , self . awdch (13usize) , self . awdch (14usize) , self . awdch (15usize) , self . awdch (16usize) , self . awdch (17usize) , self . awdch (18usize) , self . awdch (19usize) , self . awdch (20usize) , self . awdch (21usize) , self . awdch (22usize) , self . awdch (23usize))
+            defmt::write!(
+                f,
+                "Adc4Awdcr {{ awdch[0]: {=bool:?}, awdch[1]: {=bool:?}, awdch[2]: {=bool:?}, awdch[3]: {=bool:?}, awdch[4]: {=bool:?}, awdch[5]: {=bool:?}, awdch[6]: {=bool:?}, awdch[7]: {=bool:?}, awdch[8]: {=bool:?}, awdch[9]: {=bool:?}, awdch[10]: {=bool:?}, awdch[11]: {=bool:?}, awdch[12]: {=bool:?}, awdch[13]: {=bool:?}, awdch[14]: {=bool:?}, awdch[15]: {=bool:?}, awdch[16]: {=bool:?}, awdch[17]: {=bool:?}, awdch[18]: {=bool:?}, awdch[19]: {=bool:?}, awdch[20]: {=bool:?}, awdch[21]: {=bool:?}, awdch[22]: {=bool:?}, awdch[23]: {=bool:?} }}",
+                self.awdch(0usize),
+                self.awdch(1usize),
+                self.awdch(2usize),
+                self.awdch(3usize),
+                self.awdch(4usize),
+                self.awdch(5usize),
+                self.awdch(6usize),
+                self.awdch(7usize),
+                self.awdch(8usize),
+                self.awdch(9usize),
+                self.awdch(10usize),
+                self.awdch(11usize),
+                self.awdch(12usize),
+                self.awdch(13usize),
+                self.awdch(14usize),
+                self.awdch(15usize),
+                self.awdch(16usize),
+                self.awdch(17usize),
+                self.awdch(18usize),
+                self.awdch(19usize),
+                self.awdch(20usize),
+                self.awdch(21usize),
+                self.awdch(22usize),
+                self.awdch(23usize)
+            )
         }
     }
     #[doc = "ADC watchdog threshold register."]
@@ -719,7 +746,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Adc4Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Adc4Cfgr1 {{ dmaen: {=bool:?}, dmacfg: {:?}, res: {:?}, scandir: {=bool:?}, align: {=bool:?}, extsel: {=u8:?}, exten: {:?}, ovrmod: {=bool:?}, cont: {=bool:?}, wait: {=bool:?}, discen: {=bool:?}, chselrmod: {=bool:?}, awd1sgl: {=bool:?}, awd1en: {=bool:?}, awd1ch: {=u8:?} }}" , self . dmaen () , self . dmacfg () , self . res () , self . scandir () , self . align () , self . extsel () , self . exten () , self . ovrmod () , self . cont () , self . wait () , self . discen () , self . chselrmod () , self . awd1sgl () , self . awd1en () , self . awd1ch ())
+            defmt::write!(
+                f,
+                "Adc4Cfgr1 {{ dmaen: {=bool:?}, dmacfg: {:?}, res: {:?}, scandir: {=bool:?}, align: {=bool:?}, extsel: {=u8:?}, exten: {:?}, ovrmod: {=bool:?}, cont: {=bool:?}, wait: {=bool:?}, discen: {=bool:?}, chselrmod: {=bool:?}, awd1sgl: {=bool:?}, awd1en: {=bool:?}, awd1ch: {=u8:?} }}",
+                self.dmaen(),
+                self.dmacfg(),
+                self.res(),
+                self.scandir(),
+                self.align(),
+                self.extsel(),
+                self.exten(),
+                self.ovrmod(),
+                self.cont(),
+                self.wait(),
+                self.discen(),
+                self.chselrmod(),
+                self.awd1sgl(),
+                self.awd1en(),
+                self.awd1ch()
+            )
         }
     }
     #[doc = "ADC configuration register 2."]
@@ -880,7 +925,34 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Adc4Chselrmod0 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Adc4Chselrmod0 {{ chsel[0]: {=bool:?}, chsel[1]: {=bool:?}, chsel[2]: {=bool:?}, chsel[3]: {=bool:?}, chsel[4]: {=bool:?}, chsel[5]: {=bool:?}, chsel[6]: {=bool:?}, chsel[7]: {=bool:?}, chsel[8]: {=bool:?}, chsel[9]: {=bool:?}, chsel[10]: {=bool:?}, chsel[11]: {=bool:?}, chsel[12]: {=bool:?}, chsel[13]: {=bool:?}, chsel[14]: {=bool:?}, chsel[15]: {=bool:?}, chsel[16]: {=bool:?}, chsel[17]: {=bool:?}, chsel[18]: {=bool:?}, chsel[19]: {=bool:?}, chsel[20]: {=bool:?}, chsel[21]: {=bool:?}, chsel[22]: {=bool:?}, chsel[23]: {=bool:?} }}" , self . chsel (0usize) , self . chsel (1usize) , self . chsel (2usize) , self . chsel (3usize) , self . chsel (4usize) , self . chsel (5usize) , self . chsel (6usize) , self . chsel (7usize) , self . chsel (8usize) , self . chsel (9usize) , self . chsel (10usize) , self . chsel (11usize) , self . chsel (12usize) , self . chsel (13usize) , self . chsel (14usize) , self . chsel (15usize) , self . chsel (16usize) , self . chsel (17usize) , self . chsel (18usize) , self . chsel (19usize) , self . chsel (20usize) , self . chsel (21usize) , self . chsel (22usize) , self . chsel (23usize))
+            defmt::write!(
+                f,
+                "Adc4Chselrmod0 {{ chsel[0]: {=bool:?}, chsel[1]: {=bool:?}, chsel[2]: {=bool:?}, chsel[3]: {=bool:?}, chsel[4]: {=bool:?}, chsel[5]: {=bool:?}, chsel[6]: {=bool:?}, chsel[7]: {=bool:?}, chsel[8]: {=bool:?}, chsel[9]: {=bool:?}, chsel[10]: {=bool:?}, chsel[11]: {=bool:?}, chsel[12]: {=bool:?}, chsel[13]: {=bool:?}, chsel[14]: {=bool:?}, chsel[15]: {=bool:?}, chsel[16]: {=bool:?}, chsel[17]: {=bool:?}, chsel[18]: {=bool:?}, chsel[19]: {=bool:?}, chsel[20]: {=bool:?}, chsel[21]: {=bool:?}, chsel[22]: {=bool:?}, chsel[23]: {=bool:?} }}",
+                self.chsel(0usize),
+                self.chsel(1usize),
+                self.chsel(2usize),
+                self.chsel(3usize),
+                self.chsel(4usize),
+                self.chsel(5usize),
+                self.chsel(6usize),
+                self.chsel(7usize),
+                self.chsel(8usize),
+                self.chsel(9usize),
+                self.chsel(10usize),
+                self.chsel(11usize),
+                self.chsel(12usize),
+                self.chsel(13usize),
+                self.chsel(14usize),
+                self.chsel(15usize),
+                self.chsel(16usize),
+                self.chsel(17usize),
+                self.chsel(18usize),
+                self.chsel(19usize),
+                self.chsel(20usize),
+                self.chsel(21usize),
+                self.chsel(22usize),
+                self.chsel(23usize)
+            )
         }
     }
     #[doc = "ADC channel selection register \\[alternate\\]."]
@@ -928,7 +1000,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Adc4Chselrmod1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Adc4Chselrmod1 {{ sq[0]: {=u8:?}, sq[1]: {=u8:?}, sq[2]: {=u8:?}, sq[3]: {=u8:?}, sq[4]: {=u8:?}, sq[5]: {=u8:?}, sq[6]: {=u8:?}, sq[7]: {=u8:?} }}" , self . sq (0usize) , self . sq (1usize) , self . sq (2usize) , self . sq (3usize) , self . sq (4usize) , self . sq (5usize) , self . sq (6usize) , self . sq (7usize))
+            defmt::write!(
+                f,
+                "Adc4Chselrmod1 {{ sq[0]: {=u8:?}, sq[1]: {=u8:?}, sq[2]: {=u8:?}, sq[3]: {=u8:?}, sq[4]: {=u8:?}, sq[5]: {=u8:?}, sq[6]: {=u8:?}, sq[7]: {=u8:?} }}",
+                self.sq(0usize),
+                self.sq(1usize),
+                self.sq(2usize),
+                self.sq(3usize),
+                self.sq(4usize),
+                self.sq(5usize),
+                self.sq(6usize),
+                self.sq(7usize)
+            )
         }
     }
     #[doc = "ADC control register."]
@@ -1030,7 +1113,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Adc4Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Adc4Cr {{ aden: {=bool:?}, addis: {=bool:?}, adstart: {=bool:?}, adstp: {=bool:?}, advregen: {=bool:?}, adcal: {=bool:?} }}" , self . aden () , self . addis () , self . adstart () , self . adstp () , self . advregen () , self . adcal ())
+            defmt::write!(
+                f,
+                "Adc4Cr {{ aden: {=bool:?}, addis: {=bool:?}, adstart: {=bool:?}, adstp: {=bool:?}, advregen: {=bool:?}, adcal: {=bool:?} }}",
+                self.aden(),
+                self.addis(),
+                self.adstart(),
+                self.adstp(),
+                self.advregen(),
+                self.adcal()
+            )
         }
     }
     #[doc = "ADC data register."]
@@ -1199,7 +1291,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Adc4Ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Adc4Ier {{ adrdyie: {=bool:?}, eosmpie: {=bool:?}, eocie: {=bool:?}, eosie: {=bool:?}, ovrie: {=bool:?}, awdie[0]: {=bool:?}, awdie[1]: {=bool:?}, awdie[2]: {=bool:?}, eocalie: {=bool:?}, ldordyie: {=bool:?} }}" , self . adrdyie () , self . eosmpie () , self . eocie () , self . eosie () , self . ovrie () , self . awdie (0usize) , self . awdie (1usize) , self . awdie (2usize) , self . eocalie () , self . ldordyie ())
+            defmt::write!(
+                f,
+                "Adc4Ier {{ adrdyie: {=bool:?}, eosmpie: {=bool:?}, eocie: {=bool:?}, eosie: {=bool:?}, ovrie: {=bool:?}, awdie[0]: {=bool:?}, awdie[1]: {=bool:?}, awdie[2]: {=bool:?}, eocalie: {=bool:?}, ldordyie: {=bool:?} }}",
+                self.adrdyie(),
+                self.eosmpie(),
+                self.eocie(),
+                self.eosie(),
+                self.ovrie(),
+                self.awdie(0usize),
+                self.awdie(1usize),
+                self.awdie(2usize),
+                self.eocalie(),
+                self.ldordyie()
+            )
         }
     }
     #[doc = "ADC interrupt and status register."]
@@ -1333,7 +1438,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Adc4Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Adc4Isr {{ adrdy: {=bool:?}, eosmp: {=bool:?}, eoc: {=bool:?}, eos: {=bool:?}, ovr: {=bool:?}, awd[0]: {=bool:?}, awd[1]: {=bool:?}, awd[2]: {=bool:?}, eocal: {=bool:?}, ldordy: {=bool:?} }}" , self . adrdy () , self . eosmp () , self . eoc () , self . eos () , self . ovr () , self . awd (0usize) , self . awd (1usize) , self . awd (2usize) , self . eocal () , self . ldordy ())
+            defmt::write!(
+                f,
+                "Adc4Isr {{ adrdy: {=bool:?}, eosmp: {=bool:?}, eoc: {=bool:?}, eos: {=bool:?}, ovr: {=bool:?}, awd[0]: {=bool:?}, awd[1]: {=bool:?}, awd[2]: {=bool:?}, eocal: {=bool:?}, ldordy: {=bool:?} }}",
+                self.adrdy(),
+                self.eosmp(),
+                self.eoc(),
+                self.eos(),
+                self.ovr(),
+                self.awd(0usize),
+                self.awd(1usize),
+                self.awd(2usize),
+                self.eocal(),
+                self.ldordy()
+            )
         }
     }
     #[doc = "ADC option register."]
@@ -1533,7 +1651,36 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Adc4Smpr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Adc4Smpr {{ smp[0]: {:?}, smp[1]: {:?}, smpsel[0]: {=bool:?}, smpsel[1]: {=bool:?}, smpsel[2]: {=bool:?}, smpsel[3]: {=bool:?}, smpsel[4]: {=bool:?}, smpsel[5]: {=bool:?}, smpsel[6]: {=bool:?}, smpsel[7]: {=bool:?}, smpsel[8]: {=bool:?}, smpsel[9]: {=bool:?}, smpsel[10]: {=bool:?}, smpsel[11]: {=bool:?}, smpsel[12]: {=bool:?}, smpsel[13]: {=bool:?}, smpsel[14]: {=bool:?}, smpsel[15]: {=bool:?}, smpsel[16]: {=bool:?}, smpsel[17]: {=bool:?}, smpsel[18]: {=bool:?}, smpsel[19]: {=bool:?}, smpsel[20]: {=bool:?}, smpsel[21]: {=bool:?}, smpsel[22]: {=bool:?}, smpsel[23]: {=bool:?} }}" , self . smp (0usize) , self . smp (1usize) , self . smpsel (0usize) , self . smpsel (1usize) , self . smpsel (2usize) , self . smpsel (3usize) , self . smpsel (4usize) , self . smpsel (5usize) , self . smpsel (6usize) , self . smpsel (7usize) , self . smpsel (8usize) , self . smpsel (9usize) , self . smpsel (10usize) , self . smpsel (11usize) , self . smpsel (12usize) , self . smpsel (13usize) , self . smpsel (14usize) , self . smpsel (15usize) , self . smpsel (16usize) , self . smpsel (17usize) , self . smpsel (18usize) , self . smpsel (19usize) , self . smpsel (20usize) , self . smpsel (21usize) , self . smpsel (22usize) , self . smpsel (23usize))
+            defmt::write!(
+                f,
+                "Adc4Smpr {{ smp[0]: {:?}, smp[1]: {:?}, smpsel[0]: {=bool:?}, smpsel[1]: {=bool:?}, smpsel[2]: {=bool:?}, smpsel[3]: {=bool:?}, smpsel[4]: {=bool:?}, smpsel[5]: {=bool:?}, smpsel[6]: {=bool:?}, smpsel[7]: {=bool:?}, smpsel[8]: {=bool:?}, smpsel[9]: {=bool:?}, smpsel[10]: {=bool:?}, smpsel[11]: {=bool:?}, smpsel[12]: {=bool:?}, smpsel[13]: {=bool:?}, smpsel[14]: {=bool:?}, smpsel[15]: {=bool:?}, smpsel[16]: {=bool:?}, smpsel[17]: {=bool:?}, smpsel[18]: {=bool:?}, smpsel[19]: {=bool:?}, smpsel[20]: {=bool:?}, smpsel[21]: {=bool:?}, smpsel[22]: {=bool:?}, smpsel[23]: {=bool:?} }}",
+                self.smp(0usize),
+                self.smp(1usize),
+                self.smpsel(0usize),
+                self.smpsel(1usize),
+                self.smpsel(2usize),
+                self.smpsel(3usize),
+                self.smpsel(4usize),
+                self.smpsel(5usize),
+                self.smpsel(6usize),
+                self.smpsel(7usize),
+                self.smpsel(8usize),
+                self.smpsel(9usize),
+                self.smpsel(10usize),
+                self.smpsel(11usize),
+                self.smpsel(12usize),
+                self.smpsel(13usize),
+                self.smpsel(14usize),
+                self.smpsel(15usize),
+                self.smpsel(16usize),
+                self.smpsel(17usize),
+                self.smpsel(18usize),
+                self.smpsel(19usize),
+                self.smpsel(20usize),
+                self.smpsel(21usize),
+                self.smpsel(22usize),
+                self.smpsel(23usize)
+            )
         }
     }
     #[doc = "ADC analog watchdog 2 configuration register."]
@@ -1593,7 +1740,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Awd2cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Awd2cr {{ awd2ch[0]: {=bool:?}, awd2ch[1]: {=bool:?}, awd2ch[2]: {=bool:?}, awd2ch[3]: {=bool:?}, awd2ch[4]: {=bool:?}, awd2ch[5]: {=bool:?}, awd2ch[6]: {=bool:?}, awd2ch[7]: {=bool:?}, awd2ch[8]: {=bool:?}, awd2ch[9]: {=bool:?}, awd2ch[10]: {=bool:?}, awd2ch[11]: {=bool:?}, awd2ch[12]: {=bool:?}, awd2ch[13]: {=bool:?}, awd2ch[14]: {=bool:?}, awd2ch[15]: {=bool:?}, awd2ch[16]: {=bool:?}, awd2ch[17]: {=bool:?}, awd2ch[18]: {=bool:?}, awd2ch[19]: {=bool:?} }}" , self . awd2ch (0usize) , self . awd2ch (1usize) , self . awd2ch (2usize) , self . awd2ch (3usize) , self . awd2ch (4usize) , self . awd2ch (5usize) , self . awd2ch (6usize) , self . awd2ch (7usize) , self . awd2ch (8usize) , self . awd2ch (9usize) , self . awd2ch (10usize) , self . awd2ch (11usize) , self . awd2ch (12usize) , self . awd2ch (13usize) , self . awd2ch (14usize) , self . awd2ch (15usize) , self . awd2ch (16usize) , self . awd2ch (17usize) , self . awd2ch (18usize) , self . awd2ch (19usize))
+            defmt::write!(
+                f,
+                "Awd2cr {{ awd2ch[0]: {=bool:?}, awd2ch[1]: {=bool:?}, awd2ch[2]: {=bool:?}, awd2ch[3]: {=bool:?}, awd2ch[4]: {=bool:?}, awd2ch[5]: {=bool:?}, awd2ch[6]: {=bool:?}, awd2ch[7]: {=bool:?}, awd2ch[8]: {=bool:?}, awd2ch[9]: {=bool:?}, awd2ch[10]: {=bool:?}, awd2ch[11]: {=bool:?}, awd2ch[12]: {=bool:?}, awd2ch[13]: {=bool:?}, awd2ch[14]: {=bool:?}, awd2ch[15]: {=bool:?}, awd2ch[16]: {=bool:?}, awd2ch[17]: {=bool:?}, awd2ch[18]: {=bool:?}, awd2ch[19]: {=bool:?} }}",
+                self.awd2ch(0usize),
+                self.awd2ch(1usize),
+                self.awd2ch(2usize),
+                self.awd2ch(3usize),
+                self.awd2ch(4usize),
+                self.awd2ch(5usize),
+                self.awd2ch(6usize),
+                self.awd2ch(7usize),
+                self.awd2ch(8usize),
+                self.awd2ch(9usize),
+                self.awd2ch(10usize),
+                self.awd2ch(11usize),
+                self.awd2ch(12usize),
+                self.awd2ch(13usize),
+                self.awd2ch(14usize),
+                self.awd2ch(15usize),
+                self.awd2ch(16usize),
+                self.awd2ch(17usize),
+                self.awd2ch(18usize),
+                self.awd2ch(19usize)
+            )
         }
     }
     #[doc = "ADC analog watchdog 3 configuration register."]
@@ -1653,7 +1823,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Awd3cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Awd3cr {{ awd3ch[0]: {=bool:?}, awd3ch[1]: {=bool:?}, awd3ch[2]: {=bool:?}, awd3ch[3]: {=bool:?}, awd3ch[4]: {=bool:?}, awd3ch[5]: {=bool:?}, awd3ch[6]: {=bool:?}, awd3ch[7]: {=bool:?}, awd3ch[8]: {=bool:?}, awd3ch[9]: {=bool:?}, awd3ch[10]: {=bool:?}, awd3ch[11]: {=bool:?}, awd3ch[12]: {=bool:?}, awd3ch[13]: {=bool:?}, awd3ch[14]: {=bool:?}, awd3ch[15]: {=bool:?}, awd3ch[16]: {=bool:?}, awd3ch[17]: {=bool:?}, awd3ch[18]: {=bool:?}, awd3ch[19]: {=bool:?} }}" , self . awd3ch (0usize) , self . awd3ch (1usize) , self . awd3ch (2usize) , self . awd3ch (3usize) , self . awd3ch (4usize) , self . awd3ch (5usize) , self . awd3ch (6usize) , self . awd3ch (7usize) , self . awd3ch (8usize) , self . awd3ch (9usize) , self . awd3ch (10usize) , self . awd3ch (11usize) , self . awd3ch (12usize) , self . awd3ch (13usize) , self . awd3ch (14usize) , self . awd3ch (15usize) , self . awd3ch (16usize) , self . awd3ch (17usize) , self . awd3ch (18usize) , self . awd3ch (19usize))
+            defmt::write!(
+                f,
+                "Awd3cr {{ awd3ch[0]: {=bool:?}, awd3ch[1]: {=bool:?}, awd3ch[2]: {=bool:?}, awd3ch[3]: {=bool:?}, awd3ch[4]: {=bool:?}, awd3ch[5]: {=bool:?}, awd3ch[6]: {=bool:?}, awd3ch[7]: {=bool:?}, awd3ch[8]: {=bool:?}, awd3ch[9]: {=bool:?}, awd3ch[10]: {=bool:?}, awd3ch[11]: {=bool:?}, awd3ch[12]: {=bool:?}, awd3ch[13]: {=bool:?}, awd3ch[14]: {=bool:?}, awd3ch[15]: {=bool:?}, awd3ch[16]: {=bool:?}, awd3ch[17]: {=bool:?}, awd3ch[18]: {=bool:?}, awd3ch[19]: {=bool:?} }}",
+                self.awd3ch(0usize),
+                self.awd3ch(1usize),
+                self.awd3ch(2usize),
+                self.awd3ch(3usize),
+                self.awd3ch(4usize),
+                self.awd3ch(5usize),
+                self.awd3ch(6usize),
+                self.awd3ch(7usize),
+                self.awd3ch(8usize),
+                self.awd3ch(9usize),
+                self.awd3ch(10usize),
+                self.awd3ch(11usize),
+                self.awd3ch(12usize),
+                self.awd3ch(13usize),
+                self.awd3ch(14usize),
+                self.awd3ch(15usize),
+                self.awd3ch(16usize),
+                self.awd3ch(17usize),
+                self.awd3ch(18usize),
+                self.awd3ch(19usize)
+            )
         }
     }
     #[doc = "ADC user control register."]
@@ -1742,7 +1935,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Calfact {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Calfact {{ i_apb_addr: {=u8:?}, i_apb_data: {=u8:?}, validity: {=bool:?}, latch_coef: {=bool:?}, capture_coef: {=bool:?} }}" , self . i_apb_addr () , self . i_apb_data () , self . validity () , self . latch_coef () , self . capture_coef ())
+            defmt::write!(
+                f,
+                "Calfact {{ i_apb_addr: {=u8:?}, i_apb_data: {=u8:?}, validity: {=bool:?}, latch_coef: {=bool:?}, capture_coef: {=bool:?} }}",
+                self.i_apb_addr(),
+                self.i_apb_data(),
+                self.validity(),
+                self.latch_coef(),
+                self.capture_coef()
+            )
         }
     }
     #[doc = "ADC calibration factor register."]
@@ -1996,7 +2197,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr {{ dmngt: {:?}, res: {:?}, extsel: {=u8:?}, exten: {:?}, ovrmod: {=bool:?}, cont: {=bool:?}, autdly: {=bool:?}, discen: {=bool:?}, discnum: {=u8:?}, jdiscen: {=bool:?}, awd1sgl: {=bool:?}, awd1en: {=bool:?}, jawd1en: {=bool:?}, jauto: {=bool:?}, awd1ch: {=u8:?} }}" , self . dmngt () , self . res () , self . extsel () , self . exten () , self . ovrmod () , self . cont () , self . autdly () , self . discen () , self . discnum () , self . jdiscen () , self . awd1sgl () , self . awd1en () , self . jawd1en () , self . jauto () , self . awd1ch ())
+            defmt::write!(
+                f,
+                "Cfgr {{ dmngt: {:?}, res: {:?}, extsel: {=u8:?}, exten: {:?}, ovrmod: {=bool:?}, cont: {=bool:?}, autdly: {=bool:?}, discen: {=bool:?}, discnum: {=u8:?}, jdiscen: {=bool:?}, awd1sgl: {=bool:?}, awd1en: {=bool:?}, jawd1en: {=bool:?}, jauto: {=bool:?}, awd1ch: {=u8:?} }}",
+                self.dmngt(),
+                self.res(),
+                self.extsel(),
+                self.exten(),
+                self.ovrmod(),
+                self.cont(),
+                self.autdly(),
+                self.discen(),
+                self.discnum(),
+                self.jdiscen(),
+                self.awd1sgl(),
+                self.awd1en(),
+                self.jawd1en(),
+                self.jauto(),
+                self.awd1ch()
+            )
         }
     }
     #[doc = "ADC configuration register 2."]
@@ -2163,7 +2382,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr2 {{ rovse: {=bool:?}, jovse: {=bool:?}, ovss: {=u8:?}, trovs: {=bool:?}, rovsm: {=bool:?}, bulb: {=bool:?}, swtrig: {=bool:?}, smptrig: {=bool:?}, ovsr: {=u16:?}, lftrig: {=bool:?}, lshift: {=u8:?} }}" , self . rovse () , self . jovse () , self . ovss () , self . trovs () , self . rovsm () , self . bulb () , self . swtrig () , self . smptrig () , self . ovsr () , self . lftrig () , self . lshift ())
+            defmt::write!(
+                f,
+                "Cfgr2 {{ rovse: {=bool:?}, jovse: {=bool:?}, ovss: {=u8:?}, trovs: {=bool:?}, rovsm: {=bool:?}, bulb: {=bool:?}, swtrig: {=bool:?}, smptrig: {=bool:?}, ovsr: {=u16:?}, lftrig: {=bool:?}, lshift: {=u8:?} }}",
+                self.rovse(),
+                self.jovse(),
+                self.ovss(),
+                self.trovs(),
+                self.rovsm(),
+                self.bulb(),
+                self.swtrig(),
+                self.smptrig(),
+                self.ovsr(),
+                self.lftrig(),
+                self.lshift()
+            )
         }
     }
     #[doc = "ADC control register."]
@@ -2330,7 +2563,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ aden: {=bool:?}, addis: {=bool:?}, adstart: {=bool:?}, jadstart: {=bool:?}, adstp: {:?}, jadstp: {=bool:?}, adcallin: {=bool:?}, calindex: {=u8:?}, advregen: {=bool:?}, deeppwd: {=bool:?}, adcal: {=bool:?} }}" , self . aden () , self . addis () , self . adstart () , self . jadstart () , self . adstp () , self . jadstp () , self . adcallin () , self . calindex () , self . advregen () , self . deeppwd () , self . adcal ())
+            defmt::write!(
+                f,
+                "Cr {{ aden: {=bool:?}, addis: {=bool:?}, adstart: {=bool:?}, jadstart: {=bool:?}, adstp: {:?}, jadstp: {=bool:?}, adcallin: {=bool:?}, calindex: {=u8:?}, advregen: {=bool:?}, deeppwd: {=bool:?}, adcal: {=bool:?} }}",
+                self.aden(),
+                self.addis(),
+                self.adstart(),
+                self.jadstart(),
+                self.adstp(),
+                self.jadstp(),
+                self.adcallin(),
+                self.calindex(),
+                self.advregen(),
+                self.deeppwd(),
+                self.adcal()
+            )
         }
     }
     #[doc = "ADC differential mode selection register."]
@@ -2390,7 +2637,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Difsel {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Difsel {{ difsel[0]: {:?}, difsel[1]: {:?}, difsel[2]: {:?}, difsel[3]: {:?}, difsel[4]: {:?}, difsel[5]: {:?}, difsel[6]: {:?}, difsel[7]: {:?}, difsel[8]: {:?}, difsel[9]: {:?}, difsel[10]: {:?}, difsel[11]: {:?}, difsel[12]: {:?}, difsel[13]: {:?}, difsel[14]: {:?}, difsel[15]: {:?}, difsel[16]: {:?}, difsel[17]: {:?}, difsel[18]: {:?}, difsel[19]: {:?} }}" , self . difsel (0usize) , self . difsel (1usize) , self . difsel (2usize) , self . difsel (3usize) , self . difsel (4usize) , self . difsel (5usize) , self . difsel (6usize) , self . difsel (7usize) , self . difsel (8usize) , self . difsel (9usize) , self . difsel (10usize) , self . difsel (11usize) , self . difsel (12usize) , self . difsel (13usize) , self . difsel (14usize) , self . difsel (15usize) , self . difsel (16usize) , self . difsel (17usize) , self . difsel (18usize) , self . difsel (19usize))
+            defmt::write!(
+                f,
+                "Difsel {{ difsel[0]: {:?}, difsel[1]: {:?}, difsel[2]: {:?}, difsel[3]: {:?}, difsel[4]: {:?}, difsel[5]: {:?}, difsel[6]: {:?}, difsel[7]: {:?}, difsel[8]: {:?}, difsel[9]: {:?}, difsel[10]: {:?}, difsel[11]: {:?}, difsel[12]: {:?}, difsel[13]: {:?}, difsel[14]: {:?}, difsel[15]: {:?}, difsel[16]: {:?}, difsel[17]: {:?}, difsel[18]: {:?}, difsel[19]: {:?} }}",
+                self.difsel(0usize),
+                self.difsel(1usize),
+                self.difsel(2usize),
+                self.difsel(3usize),
+                self.difsel(4usize),
+                self.difsel(5usize),
+                self.difsel(6usize),
+                self.difsel(7usize),
+                self.difsel(8usize),
+                self.difsel(9usize),
+                self.difsel(10usize),
+                self.difsel(11usize),
+                self.difsel(12usize),
+                self.difsel(13usize),
+                self.difsel(14usize),
+                self.difsel(15usize),
+                self.difsel(16usize),
+                self.difsel(17usize),
+                self.difsel(18usize),
+                self.difsel(19usize)
+            )
         }
     }
     #[doc = "ADC regular Data Register."]
@@ -2739,7 +3009,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier {{ adrdyie: {=bool:?}, eosmpie: {=bool:?}, eocie: {=bool:?}, eosie: {=bool:?}, ovrie: {=bool:?}, jeocie: {=bool:?}, jeosie: {=bool:?}, awdie[0]: {=bool:?}, awdie[1]: {=bool:?}, awdie[2]: {=bool:?} }}" , self . adrdyie () , self . eosmpie () , self . eocie () , self . eosie () , self . ovrie () , self . jeocie () , self . jeosie () , self . awdie (0usize) , self . awdie (1usize) , self . awdie (2usize))
+            defmt::write!(
+                f,
+                "Ier {{ adrdyie: {=bool:?}, eosmpie: {=bool:?}, eocie: {=bool:?}, eosie: {=bool:?}, ovrie: {=bool:?}, jeocie: {=bool:?}, jeosie: {=bool:?}, awdie[0]: {=bool:?}, awdie[1]: {=bool:?}, awdie[2]: {=bool:?} }}",
+                self.adrdyie(),
+                self.eosmpie(),
+                self.eocie(),
+                self.eosie(),
+                self.ovrie(),
+                self.jeocie(),
+                self.jeosie(),
+                self.awdie(0usize),
+                self.awdie(1usize),
+                self.awdie(2usize)
+            )
         }
     }
     #[doc = "ADC interrupt and status register."]
@@ -2886,7 +3169,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ adrdy: {=bool:?}, eosmp: {=bool:?}, eoc: {=bool:?}, eos: {=bool:?}, ovr: {=bool:?}, jeoc: {=bool:?}, jeos: {=bool:?}, awd[0]: {=bool:?}, awd[1]: {=bool:?}, awd[2]: {=bool:?}, ldordy: {=bool:?} }}" , self . adrdy () , self . eosmp () , self . eoc () , self . eos () , self . ovr () , self . jeoc () , self . jeos () , self . awd (0usize) , self . awd (1usize) , self . awd (2usize) , self . ldordy ())
+            defmt::write!(
+                f,
+                "Isr {{ adrdy: {=bool:?}, eosmp: {=bool:?}, eoc: {=bool:?}, eos: {=bool:?}, ovr: {=bool:?}, jeoc: {=bool:?}, jeos: {=bool:?}, awd[0]: {=bool:?}, awd[1]: {=bool:?}, awd[2]: {=bool:?}, ldordy: {=bool:?} }}",
+                self.adrdy(),
+                self.eosmp(),
+                self.eoc(),
+                self.eos(),
+                self.ovr(),
+                self.jeoc(),
+                self.jeos(),
+                self.awd(0usize),
+                self.awd(1usize),
+                self.awd(2usize),
+                self.ldordy()
+            )
         }
     }
     #[doc = "ADC injected data register."]
@@ -3004,7 +3301,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Jsqr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Jsqr {{ jl: {=u8:?}, jextsel: {=u8:?}, jexten: {=u8:?}, jsq[0]: {=u8:?}, jsq[1]: {=u8:?}, jsq[2]: {=u8:?}, jsq[3]: {=u8:?} }}" , self . jl () , self . jextsel () , self . jexten () , self . jsq (0usize) , self . jsq (1usize) , self . jsq (2usize) , self . jsq (3usize))
+            defmt::write!(
+                f,
+                "Jsqr {{ jl: {=u8:?}, jextsel: {=u8:?}, jexten: {=u8:?}, jsq[0]: {=u8:?}, jsq[1]: {=u8:?}, jsq[2]: {=u8:?}, jsq[3]: {=u8:?} }}",
+                self.jl(),
+                self.jextsel(),
+                self.jexten(),
+                self.jsq(0usize),
+                self.jsq(1usize),
+                self.jsq(2usize),
+                self.jsq(3usize)
+            )
         }
     }
     #[doc = "ADC watchdog threshold register 1."]
@@ -3266,7 +3573,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcsel {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pcsel {{ pcsel[0]: {:?}, pcsel[1]: {:?}, pcsel[2]: {:?}, pcsel[3]: {:?}, pcsel[4]: {:?}, pcsel[5]: {:?}, pcsel[6]: {:?}, pcsel[7]: {:?}, pcsel[8]: {:?}, pcsel[9]: {:?}, pcsel[10]: {:?}, pcsel[11]: {:?}, pcsel[12]: {:?}, pcsel[13]: {:?}, pcsel[14]: {:?}, pcsel[15]: {:?}, pcsel[16]: {:?}, pcsel[17]: {:?}, pcsel[18]: {:?}, pcsel[19]: {:?} }}" , self . pcsel (0usize) , self . pcsel (1usize) , self . pcsel (2usize) , self . pcsel (3usize) , self . pcsel (4usize) , self . pcsel (5usize) , self . pcsel (6usize) , self . pcsel (7usize) , self . pcsel (8usize) , self . pcsel (9usize) , self . pcsel (10usize) , self . pcsel (11usize) , self . pcsel (12usize) , self . pcsel (13usize) , self . pcsel (14usize) , self . pcsel (15usize) , self . pcsel (16usize) , self . pcsel (17usize) , self . pcsel (18usize) , self . pcsel (19usize))
+            defmt::write!(
+                f,
+                "Pcsel {{ pcsel[0]: {:?}, pcsel[1]: {:?}, pcsel[2]: {:?}, pcsel[3]: {:?}, pcsel[4]: {:?}, pcsel[5]: {:?}, pcsel[6]: {:?}, pcsel[7]: {:?}, pcsel[8]: {:?}, pcsel[9]: {:?}, pcsel[10]: {:?}, pcsel[11]: {:?}, pcsel[12]: {:?}, pcsel[13]: {:?}, pcsel[14]: {:?}, pcsel[15]: {:?}, pcsel[16]: {:?}, pcsel[17]: {:?}, pcsel[18]: {:?}, pcsel[19]: {:?} }}",
+                self.pcsel(0usize),
+                self.pcsel(1usize),
+                self.pcsel(2usize),
+                self.pcsel(3usize),
+                self.pcsel(4usize),
+                self.pcsel(5usize),
+                self.pcsel(6usize),
+                self.pcsel(7usize),
+                self.pcsel(8usize),
+                self.pcsel(9usize),
+                self.pcsel(10usize),
+                self.pcsel(11usize),
+                self.pcsel(12usize),
+                self.pcsel(13usize),
+                self.pcsel(14usize),
+                self.pcsel(15usize),
+                self.pcsel(16usize),
+                self.pcsel(17usize),
+                self.pcsel(18usize),
+                self.pcsel(19usize)
+            )
         }
     }
     #[doc = "ADC sample time register 1."]
@@ -3316,7 +3646,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Smpr {{ smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?}, smp[8]: {:?}, smp[9]: {:?} }}" , self . smp (0usize) , self . smp (1usize) , self . smp (2usize) , self . smp (3usize) , self . smp (4usize) , self . smp (5usize) , self . smp (6usize) , self . smp (7usize) , self . smp (8usize) , self . smp (9usize))
+            defmt::write!(
+                f,
+                "Smpr {{ smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?}, smp[8]: {:?}, smp[9]: {:?} }}",
+                self.smp(0usize),
+                self.smp(1usize),
+                self.smp(2usize),
+                self.smp(3usize),
+                self.smp(4usize),
+                self.smp(5usize),
+                self.smp(6usize),
+                self.smp(7usize),
+                self.smp(8usize),
+                self.smp(9usize)
+            )
         }
     }
     #[doc = "ADC regular sequence register 1."]

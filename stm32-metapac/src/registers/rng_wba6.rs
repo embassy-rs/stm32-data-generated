@@ -1,276 +1,159 @@
 
 use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
-    blocks: &[
-        Block {
-            name: "Rng",
-            extends: None,
-            description: Some(
-                "Random number generator",
-            ),
-            items: &[
-                BlockItem {
-                    name: "cr",
-                    description: Some(
-                        "control register",
-                    ),
-                    array: None,
-                    byte_offset: 0x0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "sr",
-                    description: Some(
-                        "status register",
-                    ),
-                    array: None,
-                    byte_offset: 0x4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Sr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dr",
-                    description: Some(
-                        "data register",
-                    ),
-                    array: None,
-                    byte_offset: 0x8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::Read,
-                            bit_size: 32,
-                            fieldset: None,
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "nscr",
-                    description: Some(
-                        "RNG noise source control register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xc,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Nscr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "htcr",
-                    description: Some(
-                        "health test control register",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 0x10,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Htcr",
-                            ),
-                        },
-                    ),
-                },
-            ],
-        },
-    ],
+    blocks: &[Block {
+        name: "Rng",
+        extends: None,
+        description: Some("Random number generator"),
+        items: &[
+            BlockItem {
+                name: "cr",
+                description: Some("control register"),
+                array: None,
+                byte_offset: 0x0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cr"),
+                }),
+            },
+            BlockItem {
+                name: "sr",
+                description: Some("status register"),
+                array: None,
+                byte_offset: 0x4,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Sr"),
+                }),
+            },
+            BlockItem {
+                name: "dr",
+                description: Some("data register"),
+                array: None,
+                byte_offset: 0x8,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::Read,
+                    bit_size: 32,
+                    fieldset: None,
+                }),
+            },
+            BlockItem {
+                name: "nscr",
+                description: Some("RNG noise source control register."),
+                array: None,
+                byte_offset: 0xc,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Nscr"),
+                }),
+            },
+            BlockItem {
+                name: "htcr",
+                description: Some("health test control register"),
+                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
+                byte_offset: 0x10,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Htcr"),
+                }),
+            },
+        ],
+    }],
     fieldsets: &[
         FieldSet {
             name: "Cr",
             extends: None,
-            description: Some(
-                "control register",
-            ),
+            description: Some("control register"),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "rngen",
-                    description: Some(
-                        "Random number generator enable",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Random number generator enable"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ie",
-                    description: Some(
-                        "Interrupt enable",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    description: Some("Interrupt enable"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ced",
-                    description: Some(
-                        "Clock error detection",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
+                    description: Some("Clock error detection"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ardis",
-                    description: Some(
-                        "Auto reset disable",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 7,
-                        },
-                    ),
+                    description: Some("Auto reset disable"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rng_config3",
-                    description: Some(
-                        "RNG configuration 3",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    description: Some("RNG configuration 3"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 4,
                     array: None,
-                    enumm: Some(
-                        "RngConfig3",
-                    ),
+                    enumm: Some("RngConfig3"),
                 },
                 Field {
                     name: "nistc",
-                    description: Some(
-                        "Non NIST compliant",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
+                    description: Some("Non NIST compliant"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some(
-                        "Nistc",
-                    ),
+                    enumm: Some("Nistc"),
                 },
                 Field {
                     name: "rng_config2",
-                    description: Some(
-                        "RNG configuration 2",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 13,
-                        },
-                    ),
+                    description: Some("RNG configuration 2"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some(
-                        "RngConfig2",
-                    ),
+                    enumm: Some("RngConfig2"),
                 },
                 Field {
                     name: "clkdiv",
-                    description: Some(
-                        "Clock divider factor",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    description: Some("Clock divider factor"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 4,
                     array: None,
-                    enumm: Some(
-                        "Clkdiv",
-                    ),
+                    enumm: Some("Clkdiv"),
                 },
                 Field {
                     name: "rng_config1",
-                    description: Some(
-                        "RNG configuration 1",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 20,
-                        },
-                    ),
+                    description: Some("RNG configuration 1"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 8,
                     array: None,
-                    enumm: Some(
-                        "RngConfig1",
-                    ),
+                    enumm: Some("RngConfig1"),
                 },
                 Field {
                     name: "condrst",
-                    description: Some(
-                        "Conditioning soft reset",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 30,
-                        },
-                    ),
+                    description: Some("Conditioning soft reset"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "configlock",
-                    description: Some(
-                        "Config Lock",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 31,
-                        },
-                    ),
+                    description: Some("Config Lock"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -280,148 +163,83 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Htcr",
             extends: None,
-            description: Some(
-                "Health test control register",
-            ),
+            description: Some("Health test control register"),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "htcfg",
-                    description: Some(
-                        "Health test configuration",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: Some(
-                        "Htcfg",
-                    ),
-                },
-            ],
+            fields: &[Field {
+                name: "htcfg",
+                description: Some("Health test configuration"),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 32,
+                array: None,
+                enumm: Some("Htcfg"),
+            }],
         },
         FieldSet {
             name: "Nscr",
             extends: None,
-            description: Some(
-                "RNG noise source control register.",
-            ),
+            description: Some("RNG noise source control register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "en_osc",
-                    description: Some(
-                        "When the RNG is enabled (RNGEN bit set), each bit of this bit field enables one of the three inputs from the oscillator instance number X.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 3,
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 6,
-                                stride: 3,
-                            },
-                        ),
-                    ),
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "en_osc",
+                description: Some(
+                    "When the RNG is enabled (RNGEN bit set), each bit of this bit field enables one of the three inputs from the oscillator instance number X.",
+                ),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 3,
+                array: Some(Array::Regular(RegularArray { len: 6, stride: 3 })),
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Sr",
             extends: None,
-            description: Some(
-                "status register",
-            ),
+            description: Some("status register"),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "drdy",
-                    description: Some(
-                        "Data ready",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Data ready"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cecs",
-                    description: Some(
-                        "Clock error current status",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Clock error current status"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "secs",
-                    description: Some(
-                        "Seed error current status",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Seed error current status"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "busy",
-                    description: Some(
-                        "Busy status",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Busy status"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ceis",
-                    description: Some(
-                        "Clock error interrupt status",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
+                    description: Some("Clock error interrupt status"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "seis",
-                    description: Some(
-                        "Seed error interrupt status",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    description: Some("Seed error interrupt status"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -437,114 +255,82 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Div21",
-                    description: Some(
-                        "Divide RNG clock by 2^1",
-                    ),
+                    description: Some("Divide RNG clock by 2^1"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Div210",
-                    description: Some(
-                        "Divide RNG clock by 2^10",
-                    ),
+                    description: Some("Divide RNG clock by 2^10"),
                     value: 10,
                 },
                 EnumVariant {
                     name: "Div211",
-                    description: Some(
-                        "Divide RNG clock by 2^11",
-                    ),
+                    description: Some("Divide RNG clock by 2^11"),
                     value: 11,
                 },
                 EnumVariant {
                     name: "Div212",
-                    description: Some(
-                        "Divide RNG clock by 2^12",
-                    ),
+                    description: Some("Divide RNG clock by 2^12"),
                     value: 12,
                 },
                 EnumVariant {
                     name: "Div213",
-                    description: Some(
-                        "Divide RNG clock by 2^13",
-                    ),
+                    description: Some("Divide RNG clock by 2^13"),
                     value: 13,
                 },
                 EnumVariant {
                     name: "Div214",
-                    description: Some(
-                        "Divide RNG clock by 2^14",
-                    ),
+                    description: Some("Divide RNG clock by 2^14"),
                     value: 14,
                 },
                 EnumVariant {
                     name: "Div215",
-                    description: Some(
-                        "Divide RNG clock by 2^15",
-                    ),
+                    description: Some("Divide RNG clock by 2^15"),
                     value: 15,
                 },
                 EnumVariant {
                     name: "Div22",
-                    description: Some(
-                        "Divide RNG clock by 2^2",
-                    ),
+                    description: Some("Divide RNG clock by 2^2"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "Div23",
-                    description: Some(
-                        "Divide RNG clock by 2^3",
-                    ),
+                    description: Some("Divide RNG clock by 2^3"),
                     value: 3,
                 },
                 EnumVariant {
                     name: "Div24",
-                    description: Some(
-                        "Divide RNG clock by 2^4",
-                    ),
+                    description: Some("Divide RNG clock by 2^4"),
                     value: 4,
                 },
                 EnumVariant {
                     name: "Div25",
-                    description: Some(
-                        "Divide RNG clock by 2^5",
-                    ),
+                    description: Some("Divide RNG clock by 2^5"),
                     value: 5,
                 },
                 EnumVariant {
                     name: "Div26",
-                    description: Some(
-                        "Divide RNG clock by 2^6",
-                    ),
+                    description: Some("Divide RNG clock by 2^6"),
                     value: 6,
                 },
                 EnumVariant {
                     name: "Div27",
-                    description: Some(
-                        "Divide RNG clock by 2^7",
-                    ),
+                    description: Some("Divide RNG clock by 2^7"),
                     value: 7,
                 },
                 EnumVariant {
                     name: "Div28",
-                    description: Some(
-                        "Divide RNG clock by 2^8",
-                    ),
+                    description: Some("Divide RNG clock by 2^8"),
                     value: 8,
                 },
                 EnumVariant {
                     name: "Div29",
-                    description: Some(
-                        "Divide RNG clock by 2^9",
-                    ),
+                    description: Some("Divide RNG clock by 2^9"),
                     value: 9,
                 },
                 EnumVariant {
                     name: "NoDiv",
-                    description: Some(
-                        "Internal RNG clock after divider is similar to incoming RNG clock",
-                    ),
+                    description: Some("Internal RNG clock after divider is similar to incoming RNG clock"),
                     value: 0,
                 },
             ],
@@ -556,23 +342,17 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "ConfigA",
-                    description: Some(
-                        "Recommended value for RNG certification (0x0000_6688)",
-                    ),
+                    description: Some("Recommended value for RNG certification (0x0000_6688)"),
                     value: 26248,
                 },
                 EnumVariant {
                     name: "ConfigBC",
-                    description: Some(
-                        "Recommended value for config B and C (not NIST certifiable) (0x0000_AAC7)",
-                    ),
+                    description: Some("Recommended value for config B and C (not NIST certifiable) (0x0000_AAC7)"),
                     value: 43727,
                 },
                 EnumVariant {
                     name: "Magic",
-                    description: Some(
-                        "Magic number to be written before any write (0x1759_0ABC)",
-                    ),
+                    description: Some("Magic number to be written before any write (0x1759_0ABC)"),
                     value: 391711420,
                 },
             ],
@@ -584,9 +364,7 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Custom",
-                    description: Some(
-                        "Custom values for NIST compliant RNG",
-                    ),
+                    description: Some("Custom values for NIST compliant RNG"),
                     value: 1,
                 },
                 EnumVariant {
@@ -605,23 +383,17 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "ConfigA",
-                    description: Some(
-                        "Recommended value for config A (NIST certifiable)",
-                    ),
+                    description: Some("Recommended value for config A (NIST certifiable)"),
                     value: 15,
                 },
                 EnumVariant {
                     name: "ConfigB",
-                    description: Some(
-                        "Recommended value for config B (not NIST certifiable)",
-                    ),
+                    description: Some("Recommended value for config B (not NIST certifiable)"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "ConfigC",
-                    description: Some(
-                        "Recommended value for config C (not NIST certifiable) (0x0000_82)",
-                    ),
+                    description: Some("Recommended value for config C (not NIST certifiable) (0x0000_82)"),
                     value: 130,
                 },
             ],
@@ -630,15 +402,11 @@ pub(crate) static REGISTERS: IR = IR {
             name: "RngConfig2",
             description: None,
             bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "ConfigAB",
-                    description: Some(
-                        "Recommended value for config A and B",
-                    ),
-                    value: 0,
-                },
-            ],
+            variants: &[EnumVariant {
+                name: "ConfigAB",
+                description: Some("Recommended value for config A and B"),
+                value: 0,
+            }],
         },
         Enum {
             name: "RngConfig3",
@@ -647,16 +415,12 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "ConfigA",
-                    description: Some(
-                        "Recommended value for config A (NIST certifiable)",
-                    ),
+                    description: Some("Recommended value for config A (NIST certifiable)"),
                     value: 15,
                 },
                 EnumVariant {
                     name: "ConfigB",
-                    description: Some(
-                        "Recommended value for config B (not NIST certifiable)",
-                    ),
+                    description: Some("Recommended value for config B (not NIST certifiable)"),
                     value: 0,
                 },
             ],

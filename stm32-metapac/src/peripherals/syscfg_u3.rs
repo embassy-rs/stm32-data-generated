@@ -253,7 +253,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cccsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cccsr {{ en1: {=bool:?}, cs1: {=bool:?}, en2: {=bool:?}, cs2: {=bool:?}, rdy1: {=bool:?}, rdy2: {=bool:?} }}" , self . en1 () , self . cs1 () , self . en2 () , self . cs2 () , self . rdy1 () , self . rdy2 ())
+            defmt::write!(
+                f,
+                "Cccsr {{ en1: {=bool:?}, cs1: {=bool:?}, en2: {=bool:?}, cs2: {=bool:?}, rdy1: {=bool:?}, rdy2: {=bool:?} }}",
+                self.en1(),
+                self.cs1(),
+                self.en2(),
+                self.cs2(),
+                self.rdy1(),
+                self.rdy2()
+            )
         }
     }
     #[doc = "SYSCFG compensation cell value register."]
@@ -464,7 +473,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ ir_pol: {=bool:?}, ir_mod: {:?}, boosten: {=bool:?}, anaswvdd: {=bool:?}, pb6_fmp: {=bool:?}, pb7_fmp: {=bool:?}, pb8_fmp: {=bool:?}, pb9_fmp: {=bool:?} }}" , self . ir_pol () , self . ir_mod () , self . boosten () , self . anaswvdd () , self . pb6_fmp () , self . pb7_fmp () , self . pb8_fmp () , self . pb9_fmp ())
+            defmt::write!(
+                f,
+                "Cfgr1 {{ ir_pol: {=bool:?}, ir_mod: {:?}, boosten: {=bool:?}, anaswvdd: {=bool:?}, pb6_fmp: {=bool:?}, pb7_fmp: {=bool:?}, pb8_fmp: {=bool:?}, pb9_fmp: {=bool:?} }}",
+                self.ir_pol(),
+                self.ir_mod(),
+                self.boosten(),
+                self.anaswvdd(),
+                self.pb6_fmp(),
+                self.pb7_fmp(),
+                self.pb8_fmp(),
+                self.pb9_fmp()
+            )
         }
     }
     #[doc = "SYSCFG configuration register 2."]
@@ -773,7 +793,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fpuimr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Fpuimr {{ fpu_ioie: {=bool:?}, fpu_dzie: {=bool:?}, fpu_ufie: {=bool:?}, fpu_ofie: {=bool:?}, fpu_idie: {=bool:?}, fpu_ix_ie: {=bool:?} }}" , self . fpu_ioie () , self . fpu_dzie () , self . fpu_ufie () , self . fpu_ofie () , self . fpu_idie () , self . fpu_ix_ie ())
+            defmt::write!(
+                f,
+                "Fpuimr {{ fpu_ioie: {=bool:?}, fpu_dzie: {=bool:?}, fpu_ufie: {=bool:?}, fpu_ofie: {=bool:?}, fpu_idie: {=bool:?}, fpu_ix_ie: {=bool:?} }}",
+                self.fpu_ioie(),
+                self.fpu_dzie(),
+                self.fpu_ufie(),
+                self.fpu_ofie(),
+                self.fpu_idie(),
+                self.fpu_ix_ie()
+            )
         }
     }
     #[doc = "SYSCFG RSS command register."]

@@ -693,9 +693,9 @@ pub const TAMP: *mut () = 0x5c00_a000usize as _;
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 4;
 #[cfg(feature = "rt")]
-pub use cortex_m_rt::interrupt;
-#[cfg(feature = "rt")]
 pub use Interrupt as interrupt;
+#[cfg(feature = "rt")]
+pub use cortex_m_rt::interrupt;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
 #[path = "../../peripherals/bsec_v2.rs"]

@@ -454,7 +454,37 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for C2imr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "C2imr1 {{ rtcstamptamplsecssim: {=bool:?}, rtcalarmim: {=bool:?}, rtcssruim: {=bool:?}, rtcwkupim: {=bool:?}, rccim: {=bool:?}, flashim: {=bool:?}, pkaim: {=bool:?}, aesim: {=bool:?}, compim: {=bool:?}, adcim: {=bool:?}, dacim: {=bool:?}, exti0im: {=bool:?}, exti1im: {=bool:?}, exti2im: {=bool:?}, exti3im: {=bool:?}, exti4im: {=bool:?}, exti5im: {=bool:?}, exti6im: {=bool:?}, exti7im: {=bool:?}, exti8im: {=bool:?}, exti9im: {=bool:?}, exti10im: {=bool:?}, exti11im: {=bool:?}, exti12im: {=bool:?}, exti13im: {=bool:?}, exti14im: {=bool:?}, exti15im: {=bool:?} }}" , self . rtcstamptamplsecssim () , self . rtcalarmim () , self . rtcssruim () , self . rtcwkupim () , self . rccim () , self . flashim () , self . pkaim () , self . aesim () , self . compim () , self . adcim () , self . dacim () , self . exti0im () , self . exti1im () , self . exti2im () , self . exti3im () , self . exti4im () , self . exti5im () , self . exti6im () , self . exti7im () , self . exti8im () , self . exti9im () , self . exti10im () , self . exti11im () , self . exti12im () , self . exti13im () , self . exti14im () , self . exti15im ())
+            defmt::write!(
+                f,
+                "C2imr1 {{ rtcstamptamplsecssim: {=bool:?}, rtcalarmim: {=bool:?}, rtcssruim: {=bool:?}, rtcwkupim: {=bool:?}, rccim: {=bool:?}, flashim: {=bool:?}, pkaim: {=bool:?}, aesim: {=bool:?}, compim: {=bool:?}, adcim: {=bool:?}, dacim: {=bool:?}, exti0im: {=bool:?}, exti1im: {=bool:?}, exti2im: {=bool:?}, exti3im: {=bool:?}, exti4im: {=bool:?}, exti5im: {=bool:?}, exti6im: {=bool:?}, exti7im: {=bool:?}, exti8im: {=bool:?}, exti9im: {=bool:?}, exti10im: {=bool:?}, exti11im: {=bool:?}, exti12im: {=bool:?}, exti13im: {=bool:?}, exti14im: {=bool:?}, exti15im: {=bool:?} }}",
+                self.rtcstamptamplsecssim(),
+                self.rtcalarmim(),
+                self.rtcssruim(),
+                self.rtcwkupim(),
+                self.rccim(),
+                self.flashim(),
+                self.pkaim(),
+                self.aesim(),
+                self.compim(),
+                self.adcim(),
+                self.dacim(),
+                self.exti0im(),
+                self.exti1im(),
+                self.exti2im(),
+                self.exti3im(),
+                self.exti4im(),
+                self.exti5im(),
+                self.exti6im(),
+                self.exti7im(),
+                self.exti8im(),
+                self.exti9im(),
+                self.exti10im(),
+                self.exti11im(),
+                self.exti12im(),
+                self.exti13im(),
+                self.exti14im(),
+                self.exti15im()
+            )
         }
     }
     #[doc = "SYSCFG CPU2 interrupt mask register 2"]
@@ -699,7 +729,27 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for C2imr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "C2imr2 {{ dma1ch1im: {=bool:?}, dma1ch2im: {=bool:?}, dma1ch3im: {=bool:?}, dma1ch4im: {=bool:?}, dma1ch5im: {=bool:?}, dma1ch6im: {=bool:?}, dma1ch7im: {=bool:?}, dma2ch1im: {=bool:?}, dma2ch2im: {=bool:?}, dma2ch3im: {=bool:?}, dma2ch4im: {=bool:?}, dma2ch5im: {=bool:?}, dma2ch6im: {=bool:?}, dma2ch7im: {=bool:?}, dmamux1im: {=bool:?}, pvm3im: {=bool:?}, pvdim: {=bool:?} }}" , self . dma1ch1im () , self . dma1ch2im () , self . dma1ch3im () , self . dma1ch4im () , self . dma1ch5im () , self . dma1ch6im () , self . dma1ch7im () , self . dma2ch1im () , self . dma2ch2im () , self . dma2ch3im () , self . dma2ch4im () , self . dma2ch5im () , self . dma2ch6im () , self . dma2ch7im () , self . dmamux1im () , self . pvm3im () , self . pvdim ())
+            defmt::write!(
+                f,
+                "C2imr2 {{ dma1ch1im: {=bool:?}, dma1ch2im: {=bool:?}, dma1ch3im: {=bool:?}, dma1ch4im: {=bool:?}, dma1ch5im: {=bool:?}, dma1ch6im: {=bool:?}, dma1ch7im: {=bool:?}, dma2ch1im: {=bool:?}, dma2ch2im: {=bool:?}, dma2ch3im: {=bool:?}, dma2ch4im: {=bool:?}, dma2ch5im: {=bool:?}, dma2ch6im: {=bool:?}, dma2ch7im: {=bool:?}, dmamux1im: {=bool:?}, pvm3im: {=bool:?}, pvdim: {=bool:?} }}",
+                self.dma1ch1im(),
+                self.dma1ch2im(),
+                self.dma1ch3im(),
+                self.dma1ch4im(),
+                self.dma1ch5im(),
+                self.dma1ch6im(),
+                self.dma1ch7im(),
+                self.dma2ch1im(),
+                self.dma2ch2im(),
+                self.dma2ch3im(),
+                self.dma2ch4im(),
+                self.dma2ch5im(),
+                self.dma2ch6im(),
+                self.dma2ch7im(),
+                self.dmamux1im(),
+                self.pvm3im(),
+                self.pvdim()
+            )
         }
     }
     #[doc = "configuration register 1"]
@@ -827,7 +877,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ boosten: {=bool:?}, i2c_pb6_fmp: {=bool:?}, i2c_pb7_fmp: {=bool:?}, i2c_pb8_fmp: {=bool:?}, i2c_pb9_fmp: {=bool:?}, i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c3_fmp: {=bool:?} }}" , self . boosten () , self . i2c_pb6_fmp () , self . i2c_pb7_fmp () , self . i2c_pb8_fmp () , self . i2c_pb9_fmp () , self . i2c1_fmp () , self . i2c2_fmp () , self . i2c3_fmp ())
+            defmt::write!(
+                f,
+                "Cfgr1 {{ boosten: {=bool:?}, i2c_pb6_fmp: {=bool:?}, i2c_pb7_fmp: {=bool:?}, i2c_pb8_fmp: {=bool:?}, i2c_pb9_fmp: {=bool:?}, i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c3_fmp: {=bool:?} }}",
+                self.boosten(),
+                self.i2c_pb6_fmp(),
+                self.i2c_pb7_fmp(),
+                self.i2c_pb8_fmp(),
+                self.i2c_pb9_fmp(),
+                self.i2c1_fmp(),
+                self.i2c2_fmp(),
+                self.i2c3_fmp()
+            )
         }
     }
     #[doc = "CFGR2"]
@@ -1168,7 +1229,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Imr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Imr1 {{ rtcstamptamplsecssim: {=bool:?}, rtcssruim: {=bool:?}, exti5im: {=bool:?}, exti6im: {=bool:?}, exti7im: {=bool:?}, exti8im: {=bool:?}, exti9im: {=bool:?}, exti10im: {=bool:?}, exti11im: {=bool:?}, exti12im: {=bool:?}, exti13im: {=bool:?}, exti14im: {=bool:?}, exti15im: {=bool:?} }}" , self . rtcstamptamplsecssim () , self . rtcssruim () , self . exti5im () , self . exti6im () , self . exti7im () , self . exti8im () , self . exti9im () , self . exti10im () , self . exti11im () , self . exti12im () , self . exti13im () , self . exti14im () , self . exti15im ())
+            defmt::write!(
+                f,
+                "Imr1 {{ rtcstamptamplsecssim: {=bool:?}, rtcssruim: {=bool:?}, exti5im: {=bool:?}, exti6im: {=bool:?}, exti7im: {=bool:?}, exti8im: {=bool:?}, exti9im: {=bool:?}, exti10im: {=bool:?}, exti11im: {=bool:?}, exti12im: {=bool:?}, exti13im: {=bool:?}, exti14im: {=bool:?}, exti15im: {=bool:?} }}",
+                self.rtcstamptamplsecssim(),
+                self.rtcssruim(),
+                self.exti5im(),
+                self.exti6im(),
+                self.exti7im(),
+                self.exti8im(),
+                self.exti9im(),
+                self.exti10im(),
+                self.exti11im(),
+                self.exti12im(),
+                self.exti13im(),
+                self.exti14im(),
+                self.exti15im()
+            )
         }
     }
     #[doc = "SYSCFG CPU1 interrupt mask register 2"]
@@ -1469,7 +1546,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Swpr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Swpr {{ pwp[0]: {=bool:?}, pwp[1]: {=bool:?}, pwp[2]: {=bool:?}, pwp[3]: {=bool:?}, pwp[4]: {=bool:?}, pwp[5]: {=bool:?}, pwp[6]: {=bool:?}, pwp[7]: {=bool:?}, pwp[8]: {=bool:?}, pwp[9]: {=bool:?}, pwp[10]: {=bool:?}, pwp[11]: {=bool:?}, pwp[12]: {=bool:?}, pwp[13]: {=bool:?}, pwp[14]: {=bool:?}, pwp[15]: {=bool:?}, pwp[16]: {=bool:?}, pwp[17]: {=bool:?}, pwp[18]: {=bool:?}, pwp[19]: {=bool:?}, pwp[20]: {=bool:?}, pwp[21]: {=bool:?}, pwp[22]: {=bool:?}, pwp[23]: {=bool:?}, pwp[24]: {=bool:?}, pwp[25]: {=bool:?}, pwp[26]: {=bool:?}, pwp[27]: {=bool:?}, pwp[28]: {=bool:?}, pwp[29]: {=bool:?}, pwp[30]: {=bool:?}, pwp[31]: {=bool:?} }}" , self . pwp (0usize) , self . pwp (1usize) , self . pwp (2usize) , self . pwp (3usize) , self . pwp (4usize) , self . pwp (5usize) , self . pwp (6usize) , self . pwp (7usize) , self . pwp (8usize) , self . pwp (9usize) , self . pwp (10usize) , self . pwp (11usize) , self . pwp (12usize) , self . pwp (13usize) , self . pwp (14usize) , self . pwp (15usize) , self . pwp (16usize) , self . pwp (17usize) , self . pwp (18usize) , self . pwp (19usize) , self . pwp (20usize) , self . pwp (21usize) , self . pwp (22usize) , self . pwp (23usize) , self . pwp (24usize) , self . pwp (25usize) , self . pwp (26usize) , self . pwp (27usize) , self . pwp (28usize) , self . pwp (29usize) , self . pwp (30usize) , self . pwp (31usize))
+            defmt::write!(
+                f,
+                "Swpr {{ pwp[0]: {=bool:?}, pwp[1]: {=bool:?}, pwp[2]: {=bool:?}, pwp[3]: {=bool:?}, pwp[4]: {=bool:?}, pwp[5]: {=bool:?}, pwp[6]: {=bool:?}, pwp[7]: {=bool:?}, pwp[8]: {=bool:?}, pwp[9]: {=bool:?}, pwp[10]: {=bool:?}, pwp[11]: {=bool:?}, pwp[12]: {=bool:?}, pwp[13]: {=bool:?}, pwp[14]: {=bool:?}, pwp[15]: {=bool:?}, pwp[16]: {=bool:?}, pwp[17]: {=bool:?}, pwp[18]: {=bool:?}, pwp[19]: {=bool:?}, pwp[20]: {=bool:?}, pwp[21]: {=bool:?}, pwp[22]: {=bool:?}, pwp[23]: {=bool:?}, pwp[24]: {=bool:?}, pwp[25]: {=bool:?}, pwp[26]: {=bool:?}, pwp[27]: {=bool:?}, pwp[28]: {=bool:?}, pwp[29]: {=bool:?}, pwp[30]: {=bool:?}, pwp[31]: {=bool:?} }}",
+                self.pwp(0usize),
+                self.pwp(1usize),
+                self.pwp(2usize),
+                self.pwp(3usize),
+                self.pwp(4usize),
+                self.pwp(5usize),
+                self.pwp(6usize),
+                self.pwp(7usize),
+                self.pwp(8usize),
+                self.pwp(9usize),
+                self.pwp(10usize),
+                self.pwp(11usize),
+                self.pwp(12usize),
+                self.pwp(13usize),
+                self.pwp(14usize),
+                self.pwp(15usize),
+                self.pwp(16usize),
+                self.pwp(17usize),
+                self.pwp(18usize),
+                self.pwp(19usize),
+                self.pwp(20usize),
+                self.pwp(21usize),
+                self.pwp(22usize),
+                self.pwp(23usize),
+                self.pwp(24usize),
+                self.pwp(25usize),
+                self.pwp(26usize),
+                self.pwp(27usize),
+                self.pwp(28usize),
+                self.pwp(29usize),
+                self.pwp(30usize),
+                self.pwp(31usize)
+            )
         }
     }
 }

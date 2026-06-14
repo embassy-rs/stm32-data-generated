@@ -329,7 +329,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ pg: {=bool:?}, per: {=bool:?}, mer: {=bool:?}, optpg: {=bool:?}, opter: {=bool:?}, strt: {=bool:?}, lock: {=bool:?}, optwre: {=bool:?}, errie: {=bool:?}, eopie: {=bool:?}, force_optload: {=bool:?} }}" , self . pg () , self . per () , self . mer () , self . optpg () , self . opter () , self . strt () , self . lock () , self . optwre () , self . errie () , self . eopie () , self . force_optload ())
+            defmt::write!(
+                f,
+                "Cr {{ pg: {=bool:?}, per: {=bool:?}, mer: {=bool:?}, optpg: {=bool:?}, opter: {=bool:?}, strt: {=bool:?}, lock: {=bool:?}, optwre: {=bool:?}, errie: {=bool:?}, eopie: {=bool:?}, force_optload: {=bool:?} }}",
+                self.pg(),
+                self.per(),
+                self.mer(),
+                self.optpg(),
+                self.opter(),
+                self.strt(),
+                self.lock(),
+                self.optwre(),
+                self.errie(),
+                self.eopie(),
+                self.force_optload()
+            )
         }
     }
     #[doc = "Option byte register"]
@@ -509,7 +523,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Obr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Obr {{ opterr: {=bool:?}, rdprt: {:?}, wdg_sw: {:?}, n_rst_stop: {:?}, n_rst_stdby: {:?}, n_boot0: {=bool:?}, n_boot1: {=bool:?}, vdda_monitor: {=bool:?}, ram_parity_check: {:?}, boot_sel: {:?}, data0: {=u8:?}, data1: {=u8:?} }}" , self . opterr () , self . rdprt () , self . wdg_sw () , self . n_rst_stop () , self . n_rst_stdby () , self . n_boot0 () , self . n_boot1 () , self . vdda_monitor () , self . ram_parity_check () , self . boot_sel () , self . data0 () , self . data1 ())
+            defmt::write!(
+                f,
+                "Obr {{ opterr: {=bool:?}, rdprt: {:?}, wdg_sw: {:?}, n_rst_stop: {:?}, n_rst_stdby: {:?}, n_boot0: {=bool:?}, n_boot1: {=bool:?}, vdda_monitor: {=bool:?}, ram_parity_check: {:?}, boot_sel: {:?}, data0: {=u8:?}, data1: {=u8:?} }}",
+                self.opterr(),
+                self.rdprt(),
+                self.wdg_sw(),
+                self.n_rst_stop(),
+                self.n_rst_stdby(),
+                self.n_boot0(),
+                self.n_boot1(),
+                self.vdda_monitor(),
+                self.ram_parity_check(),
+                self.boot_sel(),
+                self.data0(),
+                self.data1()
+            )
         }
     }
     #[doc = "Flash status register"]

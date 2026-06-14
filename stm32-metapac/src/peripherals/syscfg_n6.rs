@@ -536,7 +536,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cm55cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cm55cr {{ fpu_it_en: {=u8:?}, locksvtaircr: {=bool:?}, locknsvtor: {=bool:?}, locksmpu: {=bool:?}, locknsmpu: {=bool:?}, locksau: {=bool:?}, lockdcaic: {=bool:?} }}" , self . fpu_it_en () , self . locksvtaircr () , self . locknsvtor () , self . locksmpu () , self . locknsmpu () , self . locksau () , self . lockdcaic ())
+            defmt::write!(
+                f,
+                "Cm55cr {{ fpu_it_en: {=u8:?}, locksvtaircr: {=bool:?}, locknsvtor: {=bool:?}, locksmpu: {=bool:?}, locknsmpu: {=bool:?}, locksau: {=bool:?}, lockdcaic: {=bool:?} }}",
+                self.fpu_it_en(),
+                self.locksvtaircr(),
+                self.locknsvtor(),
+                self.locksmpu(),
+                self.locknsmpu(),
+                self.locksau(),
+                self.lockdcaic()
+            )
         }
     }
     #[doc = "SYSCFG Cortex-M55 P-AHB write posting control register."]
@@ -770,7 +780,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cm55rwmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cm55rwmcr {{ rme_tcm: {:?}, rm_tcm: {=u8:?}, bc1_tcm: {=bool:?}, bc2_tcm: {=bool:?}, rme_cache: {:?}, rm_cache: {=u8:?}, bc1_cache: {=bool:?}, bc2_cache: {=bool:?} }}" , self . rme_tcm () , self . rm_tcm () , self . bc1_tcm () , self . bc2_tcm () , self . rme_cache () , self . rm_cache () , self . bc1_cache () , self . bc2_cache ())
+            defmt::write!(
+                f,
+                "Cm55rwmcr {{ rme_tcm: {:?}, rm_tcm: {=u8:?}, bc1_tcm: {=bool:?}, bc2_tcm: {=bool:?}, rme_cache: {:?}, rm_cache: {=u8:?}, bc1_cache: {=bool:?}, bc2_cache: {=bool:?} }}",
+                self.rme_tcm(),
+                self.rm_tcm(),
+                self.bc1_tcm(),
+                self.bc2_tcm(),
+                self.rme_cache(),
+                self.rm_cache(),
+                self.bc1_cache(),
+                self.bc2_cache()
+            )
         }
     }
     #[doc = "SYSCFG Cortex-M55 TCM control register."]
@@ -885,7 +906,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cm55tcmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cm55tcmcr {{ cfgitcmsz: {:?}, cfgdtcmsz: {:?}, locktcm: {=bool:?}, lockitgu: {=bool:?}, lockdtgu: {=bool:?}, itcmwsdisable: {=bool:?}, dtcmwsdisable: {=bool:?} }}" , self . cfgitcmsz () , self . cfgdtcmsz () , self . locktcm () , self . lockitgu () , self . lockdtgu () , self . itcmwsdisable () , self . dtcmwsdisable ())
+            defmt::write!(
+                f,
+                "Cm55tcmcr {{ cfgitcmsz: {:?}, cfgdtcmsz: {:?}, locktcm: {=bool:?}, lockitgu: {=bool:?}, lockdtgu: {=bool:?}, itcmwsdisable: {=bool:?}, dtcmwsdisable: {=bool:?} }}",
+                self.cfgitcmsz(),
+                self.cfgdtcmsz(),
+                self.locktcm(),
+                self.lockitgu(),
+                self.lockdtgu(),
+                self.itcmwsdisable(),
+                self.dtcmwsdisable()
+            )
         }
     }
     #[doc = "SYSCFG FMC retiming logic control register."]
@@ -1104,7 +1135,14 @@ is OFF."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icnewrcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Icnewrcr {{ sdmmc1_early_wr_rsp_enable: {:?}, sdmmc2_early_wr_rsp_enable: {:?}, usb1_early_wr_rsp_enable: {:?}, usb2_early_wr_rsp_enable: {:?} }}" , self . sdmmc1_early_wr_rsp_enable () , self . sdmmc2_early_wr_rsp_enable () , self . usb1_early_wr_rsp_enable () , self . usb2_early_wr_rsp_enable ())
+            defmt::write!(
+                f,
+                "Icnewrcr {{ sdmmc1_early_wr_rsp_enable: {:?}, sdmmc2_early_wr_rsp_enable: {:?}, usb1_early_wr_rsp_enable: {:?}, usb2_early_wr_rsp_enable: {:?} }}",
+                self.sdmmc1_early_wr_rsp_enable(),
+                self.sdmmc2_early_wr_rsp_enable(),
+                self.usb1_early_wr_rsp_enable(),
+                self.usb2_early_wr_rsp_enable()
+            )
         }
     }
     #[doc = "SYSCFG Cortex-M55 NSVTOR control register."]

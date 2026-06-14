@@ -330,7 +330,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ pg: {=bool:?}, per: {=bool:?}, mer: {=bool:?}, optpg: {=bool:?}, opter: {=bool:?}, strt: {=bool:?}, lock: {=bool:?}, optwre: {=bool:?}, errie: {=bool:?}, eopie: {=bool:?} }}" , self . pg () , self . per () , self . mer () , self . optpg () , self . opter () , self . strt () , self . lock () , self . optwre () , self . errie () , self . eopie ())
+            defmt::write!(
+                f,
+                "Cr {{ pg: {=bool:?}, per: {=bool:?}, mer: {=bool:?}, optpg: {=bool:?}, opter: {=bool:?}, strt: {=bool:?}, lock: {=bool:?}, optwre: {=bool:?}, errie: {=bool:?}, eopie: {=bool:?} }}",
+                self.pg(),
+                self.per(),
+                self.mer(),
+                self.optpg(),
+                self.opter(),
+                self.strt(),
+                self.lock(),
+                self.optwre(),
+                self.errie(),
+                self.eopie()
+            )
         }
     }
     #[doc = "Option byte register"]
@@ -445,7 +458,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Obr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Obr {{ opterr: {=bool:?}, rdprt: {=bool:?}, wdg_sw: {=bool:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, data0: {=u8:?}, data1: {=u8:?} }}" , self . opterr () , self . rdprt () , self . wdg_sw () , self . n_rst_stop () , self . n_rst_stdby () , self . data0 () , self . data1 ())
+            defmt::write!(
+                f,
+                "Obr {{ opterr: {=bool:?}, rdprt: {=bool:?}, wdg_sw: {=bool:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, data0: {=u8:?}, data1: {=u8:?} }}",
+                self.opterr(),
+                self.rdprt(),
+                self.wdg_sw(),
+                self.n_rst_stop(),
+                self.n_rst_stdby(),
+                self.data0(),
+                self.data1()
+            )
         }
     }
     #[doc = "Status register"]

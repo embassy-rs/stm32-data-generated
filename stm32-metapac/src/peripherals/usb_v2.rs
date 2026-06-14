@@ -308,7 +308,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cntr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cntr {{ fres: {=bool:?}, pdwn: {=bool:?}, lpmode: {=bool:?}, fsusp: {=bool:?}, resume: {=bool:?}, l1resume: {=bool:?}, l1reqm: {=bool:?}, esofm: {=bool:?}, sofm: {=bool:?}, resetm: {=bool:?}, suspm: {=bool:?}, wkupm: {=bool:?}, errm: {=bool:?}, pmaovrm: {=bool:?}, ctrm: {=bool:?} }}" , self . fres () , self . pdwn () , self . lpmode () , self . fsusp () , self . resume () , self . l1resume () , self . l1reqm () , self . esofm () , self . sofm () , self . resetm () , self . suspm () , self . wkupm () , self . errm () , self . pmaovrm () , self . ctrm ())
+            defmt::write!(
+                f,
+                "Cntr {{ fres: {=bool:?}, pdwn: {=bool:?}, lpmode: {=bool:?}, fsusp: {=bool:?}, resume: {=bool:?}, l1resume: {=bool:?}, l1reqm: {=bool:?}, esofm: {=bool:?}, sofm: {=bool:?}, resetm: {=bool:?}, suspm: {=bool:?}, wkupm: {=bool:?}, errm: {=bool:?}, pmaovrm: {=bool:?}, ctrm: {=bool:?} }}",
+                self.fres(),
+                self.pdwn(),
+                self.lpmode(),
+                self.fsusp(),
+                self.resume(),
+                self.l1resume(),
+                self.l1reqm(),
+                self.esofm(),
+                self.sofm(),
+                self.resetm(),
+                self.suspm(),
+                self.wkupm(),
+                self.errm(),
+                self.pmaovrm(),
+                self.ctrm()
+            )
         }
     }
     #[doc = "device address"]
@@ -512,7 +530,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Epr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Epr {{ ea: {=u8:?}, stat_tx: {:?}, dtog_tx: {=bool:?}, ctr_tx: {=bool:?}, ep_kind: {=bool:?}, ep_type: {:?}, setup: {=bool:?}, stat_rx: {:?}, dtog_rx: {=bool:?}, ctr_rx: {=bool:?} }}" , self . ea () , self . stat_tx () , self . dtog_tx () , self . ctr_tx () , self . ep_kind () , self . ep_type () , self . setup () , self . stat_rx () , self . dtog_rx () , self . ctr_rx ())
+            defmt::write!(
+                f,
+                "Epr {{ ea: {=u8:?}, stat_tx: {:?}, dtog_tx: {=bool:?}, ctr_tx: {=bool:?}, ep_kind: {=bool:?}, ep_type: {:?}, setup: {=bool:?}, stat_rx: {:?}, dtog_rx: {=bool:?}, ctr_rx: {=bool:?} }}",
+                self.ea(),
+                self.stat_tx(),
+                self.dtog_tx(),
+                self.ctr_tx(),
+                self.ep_kind(),
+                self.ep_type(),
+                self.setup(),
+                self.stat_rx(),
+                self.dtog_rx(),
+                self.ctr_rx()
+            )
         }
     }
     #[doc = "frame number register"]
@@ -776,7 +807,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Istr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Istr {{ ep_id: {=u8:?}, dir: {:?}, l1req: {=bool:?}, esof: {=bool:?}, sof: {=bool:?}, reset: {=bool:?}, susp: {=bool:?}, wkup: {=bool:?}, err: {=bool:?}, pmaovr: {=bool:?}, ctr: {=bool:?} }}" , self . ep_id () , self . dir () , self . l1req () , self . esof () , self . sof () , self . reset () , self . susp () , self . wkup () , self . err () , self . pmaovr () , self . ctr ())
+            defmt::write!(
+                f,
+                "Istr {{ ep_id: {=u8:?}, dir: {:?}, l1req: {=bool:?}, esof: {=bool:?}, sof: {=bool:?}, reset: {=bool:?}, susp: {=bool:?}, wkup: {=bool:?}, err: {=bool:?}, pmaovr: {=bool:?}, ctr: {=bool:?} }}",
+                self.ep_id(),
+                self.dir(),
+                self.l1req(),
+                self.esof(),
+                self.sof(),
+                self.reset(),
+                self.susp(),
+                self.wkup(),
+                self.err(),
+                self.pmaovr(),
+                self.ctr()
+            )
         }
     }
     #[doc = "LPM control and status register"]

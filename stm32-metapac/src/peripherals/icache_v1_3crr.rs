@@ -169,7 +169,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, cacheinv: {=bool:?}, waysel: {:?}, hitmen: {=bool:?}, missmen: {=bool:?}, hitmrst: {=bool:?}, missmrst: {=bool:?} }}" , self . en () , self . cacheinv () , self . waysel () , self . hitmen () , self . missmen () , self . hitmrst () , self . missmrst ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, cacheinv: {=bool:?}, waysel: {:?}, hitmen: {=bool:?}, missmen: {=bool:?}, hitmrst: {=bool:?}, missmrst: {=bool:?} }}",
+                self.en(),
+                self.cacheinv(),
+                self.waysel(),
+                self.hitmen(),
+                self.missmen(),
+                self.hitmrst(),
+                self.missmrst()
+            )
         }
     }
     #[doc = "ICACHE region configuration register."]
@@ -271,7 +281,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Crr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Crr {{ baseaddr: {=u8:?}, rsize: {:?}, ren: {=bool:?}, remapaddr: {=u16:?}, mstsel: {:?}, hburst: {:?} }}" , self . baseaddr () , self . rsize () , self . ren () , self . remapaddr () , self . mstsel () , self . hburst ())
+            defmt::write!(
+                f,
+                "Crr {{ baseaddr: {=u8:?}, rsize: {:?}, ren: {=bool:?}, remapaddr: {=u16:?}, mstsel: {:?}, hburst: {:?} }}",
+                self.baseaddr(),
+                self.rsize(),
+                self.ren(),
+                self.remapaddr(),
+                self.mstsel(),
+                self.hburst()
+            )
         }
     }
     #[doc = "ICACHE flag clear register."]

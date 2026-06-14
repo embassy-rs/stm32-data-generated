@@ -1489,7 +1489,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dmacier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dmacier {{ tie: {=bool:?}, txse: {=bool:?}, tbue: {=bool:?}, rie: {=bool:?}, rbue: {=bool:?}, rse: {=bool:?}, rwte: {=bool:?}, etie: {=bool:?}, erie: {=bool:?}, fbee: {=bool:?}, cdee: {=bool:?}, aie: {=bool:?}, nie: {=bool:?} }}" , self . tie () , self . txse () , self . tbue () , self . rie () , self . rbue () , self . rse () , self . rwte () , self . etie () , self . erie () , self . fbee () , self . cdee () , self . aie () , self . nie ())
+            defmt::write!(
+                f,
+                "Dmacier {{ tie: {=bool:?}, txse: {=bool:?}, tbue: {=bool:?}, rie: {=bool:?}, rbue: {=bool:?}, rse: {=bool:?}, rwte: {=bool:?}, etie: {=bool:?}, erie: {=bool:?}, fbee: {=bool:?}, cdee: {=bool:?}, aie: {=bool:?}, nie: {=bool:?} }}",
+                self.tie(),
+                self.txse(),
+                self.tbue(),
+                self.rie(),
+                self.rbue(),
+                self.rse(),
+                self.rwte(),
+                self.etie(),
+                self.erie(),
+                self.fbee(),
+                self.cdee(),
+                self.aie(),
+                self.nie()
+            )
         }
     }
     #[doc = "Channel missed frame count register"]
@@ -1763,7 +1779,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dmacsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dmacsr {{ ti: {=bool:?}, tps: {=bool:?}, tbu: {=bool:?}, ri: {=bool:?}, rbu: {=bool:?}, rps: {=bool:?}, rwt: {=bool:?}, et: {=bool:?}, er: {=bool:?}, fbe: {=bool:?}, cde: {=bool:?}, ais: {=bool:?}, nis: {=bool:?}, teb: {=u8:?}, reb: {=u8:?} }}" , self . ti () , self . tps () , self . tbu () , self . ri () , self . rbu () , self . rps () , self . rwt () , self . et () , self . er () , self . fbe () , self . cde () , self . ais () , self . nis () , self . teb () , self . reb ())
+            defmt::write!(
+                f,
+                "Dmacsr {{ ti: {=bool:?}, tps: {=bool:?}, tbu: {=bool:?}, ri: {=bool:?}, rbu: {=bool:?}, rps: {=bool:?}, rwt: {=bool:?}, et: {=bool:?}, er: {=bool:?}, fbe: {=bool:?}, cde: {=bool:?}, ais: {=bool:?}, nis: {=bool:?}, teb: {=u8:?}, reb: {=u8:?} }}",
+                self.ti(),
+                self.tps(),
+                self.tbu(),
+                self.ri(),
+                self.rbu(),
+                self.rps(),
+                self.rwt(),
+                self.et(),
+                self.er(),
+                self.fbe(),
+                self.cde(),
+                self.ais(),
+                self.nis(),
+                self.teb(),
+                self.reb()
+            )
         }
     }
     #[doc = "Debug status register"]
@@ -2283,7 +2317,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MacRxTxSr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MacRxTxSr {{ tjt: {=bool:?}, ncarr: {=bool:?}, lcarr: {=bool:?}, exdef: {=bool:?}, lcol: {=bool:?}, excol: {=bool:?}, rwt: {=bool:?} }}" , self . tjt () , self . ncarr () , self . lcarr () , self . exdef () , self . lcol () , self . excol () , self . rwt ())
+            defmt::write!(
+                f,
+                "MacRxTxSr {{ tjt: {=bool:?}, ncarr: {=bool:?}, lcarr: {=bool:?}, exdef: {=bool:?}, lcol: {=bool:?}, excol: {=bool:?}, rwt: {=bool:?} }}",
+                self.tjt(),
+                self.ncarr(),
+                self.lcarr(),
+                self.exdef(),
+                self.lcol(),
+                self.excol(),
+                self.rwt()
+            )
         }
     }
     #[doc = "Tx timestamp status nanoseconds register"]
@@ -2520,7 +2564,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macacr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Macacr {{ atsfc: {=bool:?}, atsen[0]: {=bool:?}, atsen[1]: {=bool:?}, atsen[2]: {=bool:?}, atsen[3]: {=bool:?} }}" , self . atsfc () , self . atsen (0usize) , self . atsen (1usize) , self . atsen (2usize) , self . atsen (3usize))
+            defmt::write!(
+                f,
+                "Macacr {{ atsfc: {=bool:?}, atsen[0]: {=bool:?}, atsen[1]: {=bool:?}, atsen[2]: {=bool:?}, atsen[3]: {=bool:?} }}",
+                self.atsfc(),
+                self.atsen(0usize),
+                self.atsen(1usize),
+                self.atsen(2usize),
+                self.atsen(3usize)
+            )
         }
     }
     #[doc = "Address 1/2/3 high register"]
@@ -3066,7 +3118,33 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Maccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Maccr {{ re: {=bool:?}, te: {=bool:?}, prelen: {=u8:?}, dc: {=bool:?}, bl: {=u8:?}, dr: {=bool:?}, dcrs: {=bool:?}, do_: {=bool:?}, ecrsfd: {=bool:?}, lm: {=bool:?}, dm: {=bool:?}, fes: {=bool:?}, je: {=bool:?}, jd: {=bool:?}, wd: {=bool:?}, acs: {=bool:?}, cst: {=bool:?}, s2kp: {=bool:?}, gpslce: {=bool:?}, ipg: {=u8:?}, ipc: {=bool:?}, sarc: {=u8:?}, arpen: {=bool:?} }}" , self . re () , self . te () , self . prelen () , self . dc () , self . bl () , self . dr () , self . dcrs () , self . do_ () , self . ecrsfd () , self . lm () , self . dm () , self . fes () , self . je () , self . jd () , self . wd () , self . acs () , self . cst () , self . s2kp () , self . gpslce () , self . ipg () , self . ipc () , self . sarc () , self . arpen ())
+            defmt::write!(
+                f,
+                "Maccr {{ re: {=bool:?}, te: {=bool:?}, prelen: {=u8:?}, dc: {=bool:?}, bl: {=u8:?}, dr: {=bool:?}, dcrs: {=bool:?}, do_: {=bool:?}, ecrsfd: {=bool:?}, lm: {=bool:?}, dm: {=bool:?}, fes: {=bool:?}, je: {=bool:?}, jd: {=bool:?}, wd: {=bool:?}, acs: {=bool:?}, cst: {=bool:?}, s2kp: {=bool:?}, gpslce: {=bool:?}, ipg: {=u8:?}, ipc: {=bool:?}, sarc: {=u8:?}, arpen: {=bool:?} }}",
+                self.re(),
+                self.te(),
+                self.prelen(),
+                self.dc(),
+                self.bl(),
+                self.dr(),
+                self.dcrs(),
+                self.do_(),
+                self.ecrsfd(),
+                self.lm(),
+                self.dm(),
+                self.fes(),
+                self.je(),
+                self.jd(),
+                self.wd(),
+                self.acs(),
+                self.cst(),
+                self.s2kp(),
+                self.gpslce(),
+                self.ipg(),
+                self.ipc(),
+                self.sarc(),
+                self.arpen()
+            )
         }
     }
     #[doc = "Debug register"]
@@ -3251,7 +3329,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macecr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Macecr {{ gpsl: {=u16:?}, dcrcc: {=bool:?}, spen: {=bool:?}, usp: {=bool:?}, eipgen: {=bool:?}, eipg: {=u8:?} }}" , self . gpsl () , self . dcrcc () , self . spen () , self . usp () , self . eipgen () , self . eipg ())
+            defmt::write!(
+                f,
+                "Macecr {{ gpsl: {=u16:?}, dcrcc: {=bool:?}, spen: {=bool:?}, usp: {=bool:?}, eipgen: {=bool:?}, eipg: {=u8:?} }}",
+                self.gpsl(),
+                self.dcrcc(),
+                self.spen(),
+                self.usp(),
+                self.eipgen(),
+                self.eipg()
+            )
         }
     }
     #[doc = "Hash Table 0/1 register"]
@@ -3479,7 +3566,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Machwf1r {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Machwf1r {{ rxfifosize: {=u8:?}, txfifosize: {=u8:?}, osten: {=bool:?}, ptoen: {=bool:?}, advthword: {=bool:?}, addr64: {=u8:?}, dcben: {=bool:?}, sphen: {=bool:?}, tsoen: {=bool:?}, dbgmema: {=bool:?}, avsel: {=bool:?}, hashtblsz: {=u8:?}, l3l4fnum: {=u8:?} }}" , self . rxfifosize () , self . txfifosize () , self . osten () , self . ptoen () , self . advthword () , self . addr64 () , self . dcben () , self . sphen () , self . tsoen () , self . dbgmema () , self . avsel () , self . hashtblsz () , self . l3l4fnum ())
+            defmt::write!(
+                f,
+                "Machwf1r {{ rxfifosize: {=u8:?}, txfifosize: {=u8:?}, osten: {=bool:?}, ptoen: {=bool:?}, advthword: {=bool:?}, addr64: {=u8:?}, dcben: {=bool:?}, sphen: {=bool:?}, tsoen: {=bool:?}, dbgmema: {=bool:?}, avsel: {=bool:?}, hashtblsz: {=u8:?}, l3l4fnum: {=u8:?} }}",
+                self.rxfifosize(),
+                self.txfifosize(),
+                self.osten(),
+                self.ptoen(),
+                self.advthword(),
+                self.addr64(),
+                self.dcben(),
+                self.sphen(),
+                self.tsoen(),
+                self.dbgmema(),
+                self.avsel(),
+                self.hashtblsz(),
+                self.l3l4fnum()
+            )
         }
     }
     #[doc = "HW feature 2 register"]
@@ -3581,7 +3684,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Machwf2r {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Machwf2r {{ rxqcnt: {=u8:?}, txqcnt: {=u8:?}, rxchcnt: {=u8:?}, txchcnt: {=u8:?}, ppsoutnum: {=u8:?}, auxsnapnum: {=u8:?} }}" , self . rxqcnt () , self . txqcnt () , self . rxchcnt () , self . txchcnt () , self . ppsoutnum () , self . auxsnapnum ())
+            defmt::write!(
+                f,
+                "Machwf2r {{ rxqcnt: {=u8:?}, txqcnt: {=u8:?}, rxchcnt: {=u8:?}, txchcnt: {=u8:?}, ppsoutnum: {=u8:?}, auxsnapnum: {=u8:?} }}",
+                self.rxqcnt(),
+                self.txqcnt(),
+                self.rxchcnt(),
+                self.txchcnt(),
+                self.ppsoutnum(),
+                self.auxsnapnum()
+            )
         }
     }
     #[doc = "Interrupt enable register"]
@@ -3683,7 +3795,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Macier {{ phyie: {=bool:?}, pmtie: {=bool:?}, lpiie: {=bool:?}, tsie: {=bool:?}, txstsie: {=bool:?}, rxstsie: {=bool:?} }}" , self . phyie () , self . pmtie () , self . lpiie () , self . tsie () , self . txstsie () , self . rxstsie ())
+            defmt::write!(
+                f,
+                "Macier {{ phyie: {=bool:?}, pmtie: {=bool:?}, lpiie: {=bool:?}, tsie: {=bool:?}, txstsie: {=bool:?}, rxstsie: {=bool:?} }}",
+                self.phyie(),
+                self.pmtie(),
+                self.lpiie(),
+                self.tsie(),
+                self.txstsie(),
+                self.rxstsie()
+            )
         }
     }
     #[doc = "Interrupt status register"]
@@ -3824,7 +3945,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macisr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Macisr {{ phyis: {=bool:?}, pmtis: {=bool:?}, lpiis: {=bool:?}, mmcis: {=bool:?}, mmcrxis: {=bool:?}, mmctxis: {=bool:?}, tsis: {=bool:?}, txstsis: {=bool:?}, rxstsis: {=bool:?} }}" , self . phyis () , self . pmtis () , self . lpiis () , self . mmcis () , self . mmcrxis () , self . mmctxis () , self . tsis () , self . txstsis () , self . rxstsis ())
+            defmt::write!(
+                f,
+                "Macisr {{ phyis: {=bool:?}, pmtis: {=bool:?}, lpiis: {=bool:?}, mmcis: {=bool:?}, mmcrxis: {=bool:?}, mmctxis: {=bool:?}, tsis: {=bool:?}, txstsis: {=bool:?}, rxstsis: {=bool:?} }}",
+                self.phyis(),
+                self.pmtis(),
+                self.lpiis(),
+                self.mmcis(),
+                self.mmcrxis(),
+                self.mmctxis(),
+                self.tsis(),
+                self.txstsis(),
+                self.rxstsis()
+            )
         }
     }
     #[doc = "Inner VLAN inclusion register"]
@@ -4381,7 +4514,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macl3l4c0r {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Macl3l4c0r {{ l3pen0: {=bool:?}, l3sam0: {=bool:?}, l3saim0: {=bool:?}, l3dam0: {=bool:?}, l3daim0: {=bool:?}, l3hsbm0: {=u8:?}, l3hdbm0: {=u8:?}, l4pen0: {=bool:?}, l4spm0: {=bool:?}, l4spim0: {=bool:?}, l4dpm0: {=bool:?}, l4dpim0: {=bool:?} }}" , self . l3pen0 () , self . l3sam0 () , self . l3saim0 () , self . l3dam0 () , self . l3daim0 () , self . l3hsbm0 () , self . l3hdbm0 () , self . l4pen0 () , self . l4spm0 () , self . l4spim0 () , self . l4dpm0 () , self . l4dpim0 ())
+            defmt::write!(
+                f,
+                "Macl3l4c0r {{ l3pen0: {=bool:?}, l3sam0: {=bool:?}, l3saim0: {=bool:?}, l3dam0: {=bool:?}, l3daim0: {=bool:?}, l3hsbm0: {=u8:?}, l3hdbm0: {=u8:?}, l4pen0: {=bool:?}, l4spm0: {=bool:?}, l4spim0: {=bool:?}, l4dpm0: {=bool:?}, l4dpim0: {=bool:?} }}",
+                self.l3pen0(),
+                self.l3sam0(),
+                self.l3saim0(),
+                self.l3dam0(),
+                self.l3daim0(),
+                self.l3hsbm0(),
+                self.l3hdbm0(),
+                self.l4pen0(),
+                self.l4spm0(),
+                self.l4spim0(),
+                self.l4dpm0(),
+                self.l4dpim0()
+            )
         }
     }
     #[doc = "L3 and L4 control 1 register"]
@@ -4561,7 +4709,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macl3l4c1r {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Macl3l4c1r {{ l3pen1: {=bool:?}, l3sam1: {=bool:?}, l3saim1: {=bool:?}, l3dam1: {=bool:?}, l3daim1: {=bool:?}, l3hsbm1: {=u8:?}, l3hdbm1: {=u8:?}, l4pen1: {=bool:?}, l4spm1: {=bool:?}, l4spim1: {=bool:?}, l4dpm1: {=bool:?}, l4dpim1: {=bool:?} }}" , self . l3pen1 () , self . l3sam1 () , self . l3saim1 () , self . l3dam1 () , self . l3daim1 () , self . l3hsbm1 () , self . l3hdbm1 () , self . l4pen1 () , self . l4spm1 () , self . l4spim1 () , self . l4dpm1 () , self . l4dpim1 ())
+            defmt::write!(
+                f,
+                "Macl3l4c1r {{ l3pen1: {=bool:?}, l3sam1: {=bool:?}, l3saim1: {=bool:?}, l3dam1: {=bool:?}, l3daim1: {=bool:?}, l3hsbm1: {=u8:?}, l3hdbm1: {=u8:?}, l4pen1: {=bool:?}, l4spm1: {=bool:?}, l4spim1: {=bool:?}, l4dpm1: {=bool:?}, l4dpim1: {=bool:?} }}",
+                self.l3pen1(),
+                self.l3sam1(),
+                self.l3saim1(),
+                self.l3dam1(),
+                self.l3daim1(),
+                self.l3hsbm1(),
+                self.l3hdbm1(),
+                self.l4pen1(),
+                self.l4spm1(),
+                self.l4spim1(),
+                self.l4dpm1(),
+                self.l4dpim1()
+            )
         }
     }
     #[doc = "Layer4 address filter 0 register"]
@@ -4838,7 +5001,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Maclcsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Maclcsr {{ tlpien: {=bool:?}, tlpiex: {=bool:?}, rlpien: {=bool:?}, rlpiex: {=bool:?}, tlpist: {=bool:?}, rlpist: {=bool:?}, lpien: {=bool:?}, pls: {=bool:?}, plsen: {=bool:?}, lpitxa: {=bool:?}, lpite: {=bool:?} }}" , self . tlpien () , self . tlpiex () , self . rlpien () , self . rlpiex () , self . tlpist () , self . rlpist () , self . lpien () , self . pls () , self . plsen () , self . lpitxa () , self . lpite ())
+            defmt::write!(
+                f,
+                "Maclcsr {{ tlpien: {=bool:?}, tlpiex: {=bool:?}, rlpien: {=bool:?}, rlpiex: {=bool:?}, tlpist: {=bool:?}, rlpist: {=bool:?}, lpien: {=bool:?}, pls: {=bool:?}, plsen: {=bool:?}, lpitxa: {=bool:?}, lpite: {=bool:?} }}",
+                self.tlpien(),
+                self.tlpiex(),
+                self.rlpien(),
+                self.rlpiex(),
+                self.tlpist(),
+                self.rlpist(),
+                self.lpien(),
+                self.pls(),
+                self.plsen(),
+                self.lpitxa(),
+                self.lpite()
+            )
         }
     }
     #[doc = "LPI entry timer register"]
@@ -5146,7 +5323,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macmdioar {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Macmdioar {{ mb: {=bool:?}, c45e: {=bool:?}, goc: {=u8:?}, skap: {=bool:?}, cr: {=u8:?}, ntc: {=u8:?}, rda: {=u8:?}, pa: {=u8:?}, btb: {=bool:?}, pse: {=bool:?} }}" , self . mb () , self . c45e () , self . goc () , self . skap () , self . cr () , self . ntc () , self . rda () , self . pa () , self . btb () , self . pse ())
+            defmt::write!(
+                f,
+                "Macmdioar {{ mb: {=bool:?}, c45e: {=bool:?}, goc: {=u8:?}, skap: {=bool:?}, cr: {=u8:?}, ntc: {=u8:?}, rda: {=u8:?}, pa: {=u8:?}, btb: {=bool:?}, pse: {=bool:?} }}",
+                self.mb(),
+                self.c45e(),
+                self.goc(),
+                self.skap(),
+                self.cr(),
+                self.ntc(),
+                self.rda(),
+                self.pa(),
+                self.btb(),
+                self.pse()
+            )
         }
     }
     #[doc = "MDIO data register"]
@@ -5337,7 +5527,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macpcsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Macpcsr {{ pwrdwn: {=bool:?}, mgkpkten: {=bool:?}, rwkpkten: {=bool:?}, mgkprcvd: {=bool:?}, rwkprcvd: {=bool:?}, glblucast: {=bool:?}, rwkpfe: {=bool:?}, rwkptr: {=u8:?}, rwkfiltrst: {=bool:?} }}" , self . pwrdwn () , self . mgkpkten () , self . rwkpkten () , self . mgkprcvd () , self . rwkprcvd () , self . glblucast () , self . rwkpfe () , self . rwkptr () , self . rwkfiltrst ())
+            defmt::write!(
+                f,
+                "Macpcsr {{ pwrdwn: {=bool:?}, mgkpkten: {=bool:?}, rwkpkten: {=bool:?}, mgkprcvd: {=bool:?}, rwkprcvd: {=bool:?}, glblucast: {=bool:?}, rwkpfe: {=bool:?}, rwkptr: {=u8:?}, rwkfiltrst: {=bool:?} }}",
+                self.pwrdwn(),
+                self.mgkpkten(),
+                self.rwkpkten(),
+                self.mgkprcvd(),
+                self.rwkprcvd(),
+                self.glblucast(),
+                self.rwkpfe(),
+                self.rwkptr(),
+                self.rwkfiltrst()
+            )
         }
     }
     #[doc = "Packet filtering control register"]
@@ -5543,7 +5745,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macpfr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Macpfr {{ pr: {=bool:?}, huc: {=bool:?}, hmc: {=bool:?}, daif: {=bool:?}, pm: {=bool:?}, dbf: {=bool:?}, pcf: {=u8:?}, saif: {=bool:?}, saf: {=bool:?}, hpf: {=bool:?}, vtfe: {=bool:?}, ipfe: {=bool:?}, dntu: {=bool:?}, ra: {=bool:?} }}" , self . pr () , self . huc () , self . hmc () , self . daif () , self . pm () , self . dbf () , self . pcf () , self . saif () , self . saf () , self . hpf () , self . vtfe () , self . ipfe () , self . dntu () , self . ra ())
+            defmt::write!(
+                f,
+                "Macpfr {{ pr: {=bool:?}, huc: {=bool:?}, hmc: {=bool:?}, daif: {=bool:?}, pm: {=bool:?}, dbf: {=bool:?}, pcf: {=u8:?}, saif: {=bool:?}, saf: {=bool:?}, hpf: {=bool:?}, vtfe: {=bool:?}, ipfe: {=bool:?}, dntu: {=bool:?}, ra: {=bool:?} }}",
+                self.pr(),
+                self.huc(),
+                self.hmc(),
+                self.daif(),
+                self.pm(),
+                self.dbf(),
+                self.pcf(),
+                self.saif(),
+                self.saf(),
+                self.hpf(),
+                self.vtfe(),
+                self.ipfe(),
+                self.dntu(),
+                self.ra()
+            )
         }
     }
     #[doc = "PTP Offload control register"]
@@ -5658,7 +5877,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macpocr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Macpocr {{ ptoen: {=bool:?}, asyncen: {=bool:?}, apdreqen: {=bool:?}, asynctrig: {=bool:?}, apdreqtrig: {=bool:?}, drrdis: {=bool:?}, dn: {=u8:?} }}" , self . ptoen () , self . asyncen () , self . apdreqen () , self . asynctrig () , self . apdreqtrig () , self . drrdis () , self . dn ())
+            defmt::write!(
+                f,
+                "Macpocr {{ ptoen: {=bool:?}, asyncen: {=bool:?}, apdreqen: {=bool:?}, asynctrig: {=bool:?}, apdreqtrig: {=bool:?}, drrdis: {=bool:?}, dn: {=u8:?} }}",
+                self.ptoen(),
+                self.asyncen(),
+                self.apdreqen(),
+                self.asynctrig(),
+                self.apdreqtrig(),
+                self.drrdis(),
+                self.dn()
+            )
         }
     }
     #[doc = "PPS control register"]
@@ -6623,7 +6852,27 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mactscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Mactscr {{ tsena: {=bool:?}, tscfupdt: {=bool:?}, tsinit: {=bool:?}, tsupdt: {=bool:?}, tsaddreg: {=bool:?}, tsenall: {=bool:?}, tsctrlssr: {=bool:?}, tsver2ena: {=bool:?}, tsipena: {=bool:?}, tsipv6ena: {=bool:?}, tsipv4ena: {=bool:?}, tsevntena: {=bool:?}, tsmstrena: {=bool:?}, snaptypsel: {=u8:?}, tsenmacaddr: {=bool:?}, csc: {=bool:?}, txtsstsm: {=bool:?} }}" , self . tsena () , self . tscfupdt () , self . tsinit () , self . tsupdt () , self . tsaddreg () , self . tsenall () , self . tsctrlssr () , self . tsver2ena () , self . tsipena () , self . tsipv6ena () , self . tsipv4ena () , self . tsevntena () , self . tsmstrena () , self . snaptypsel () , self . tsenmacaddr () , self . csc () , self . txtsstsm ())
+            defmt::write!(
+                f,
+                "Mactscr {{ tsena: {=bool:?}, tscfupdt: {=bool:?}, tsinit: {=bool:?}, tsupdt: {=bool:?}, tsaddreg: {=bool:?}, tsenall: {=bool:?}, tsctrlssr: {=bool:?}, tsver2ena: {=bool:?}, tsipena: {=bool:?}, tsipv6ena: {=bool:?}, tsipv4ena: {=bool:?}, tsevntena: {=bool:?}, tsmstrena: {=bool:?}, snaptypsel: {=u8:?}, tsenmacaddr: {=bool:?}, csc: {=bool:?}, txtsstsm: {=bool:?} }}",
+                self.tsena(),
+                self.tscfupdt(),
+                self.tsinit(),
+                self.tsupdt(),
+                self.tsaddreg(),
+                self.tsenall(),
+                self.tsctrlssr(),
+                self.tsver2ena(),
+                self.tsipena(),
+                self.tsipv6ena(),
+                self.tsipv4ena(),
+                self.tsevntena(),
+                self.tsmstrena(),
+                self.snaptypsel(),
+                self.tsenmacaddr(),
+                self.csc(),
+                self.txtsstsm()
+            )
         }
     }
     #[doc = "Timestamp Egress asymmetric correction register"]
@@ -6891,7 +7140,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mactssr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Mactssr {{ tssovf: {=bool:?}, tstargt0: {=bool:?}, auxtstrig: {=bool:?}, tstrgterr0: {=bool:?}, txtssis: {=bool:?}, atsstn: {=u8:?}, atsstm: {=bool:?}, atsns: {=u8:?} }}" , self . tssovf () , self . tstargt0 () , self . auxtstrig () , self . tstrgterr0 () , self . txtssis () , self . atsstn () , self . atsstm () , self . atsns ())
+            defmt::write!(
+                f,
+                "Mactssr {{ tssovf: {=bool:?}, tstargt0: {=bool:?}, auxtstrig: {=bool:?}, tstrgterr0: {=bool:?}, txtssis: {=bool:?}, atsstn: {=u8:?}, atsstm: {=bool:?}, atsns: {=u8:?} }}",
+                self.tssovf(),
+                self.tstargt0(),
+                self.auxtstrig(),
+                self.tstrgterr0(),
+                self.txtssis(),
+                self.atsstn(),
+                self.atsstm(),
+                self.atsns()
+            )
         }
     }
     #[doc = "VLAN Hash table register"]
@@ -7271,7 +7531,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macvtr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Macvtr {{ vl: {=u16:?}, etv: {=bool:?}, vtim: {=bool:?}, esvl: {=bool:?}, ersvlm: {=bool:?}, dovltc: {=bool:?}, evls: {=u8:?}, evlrxs: {=bool:?}, vthm: {=bool:?}, edvlp: {=bool:?}, erivlt: {=bool:?}, eivls: {=u8:?}, eivlrxs: {=bool:?} }}" , self . vl () , self . etv () , self . vtim () , self . esvl () , self . ersvlm () , self . dovltc () , self . evls () , self . evlrxs () , self . vthm () , self . edvlp () , self . erivlt () , self . eivls () , self . eivlrxs ())
+            defmt::write!(
+                f,
+                "Macvtr {{ vl: {=u16:?}, etv: {=bool:?}, vtim: {=bool:?}, esvl: {=bool:?}, ersvlm: {=bool:?}, dovltc: {=bool:?}, evls: {=u8:?}, evlrxs: {=bool:?}, vthm: {=bool:?}, edvlp: {=bool:?}, erivlt: {=bool:?}, eivls: {=u8:?}, eivlrxs: {=bool:?} }}",
+                self.vl(),
+                self.etv(),
+                self.vtim(),
+                self.esvl(),
+                self.ersvlm(),
+                self.dovltc(),
+                self.evls(),
+                self.evlrxs(),
+                self.vthm(),
+                self.edvlp(),
+                self.erivlt(),
+                self.eivls(),
+                self.eivlrxs()
+            )
         }
     }
     #[doc = "Watchdog timeout register"]
@@ -7436,7 +7712,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MmcControl {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MmcControl {{ cntrst: {=bool:?}, cntstopro: {=bool:?}, rstonrd: {=bool:?}, cntfreez: {=bool:?}, cntprst: {=bool:?}, cntprstlvl: {=bool:?}, ucdbc: {=bool:?} }}" , self . cntrst () , self . cntstopro () , self . rstonrd () , self . cntfreez () , self . cntprst () , self . cntprstlvl () , self . ucdbc ())
+            defmt::write!(
+                f,
+                "MmcControl {{ cntrst: {=bool:?}, cntstopro: {=bool:?}, rstonrd: {=bool:?}, cntfreez: {=bool:?}, cntprst: {=bool:?}, cntprstlvl: {=bool:?}, ucdbc: {=bool:?} }}",
+                self.cntrst(),
+                self.cntstopro(),
+                self.rstonrd(),
+                self.cntfreez(),
+                self.cntprst(),
+                self.cntprstlvl(),
+                self.ucdbc()
+            )
         }
     }
     #[doc = "MMC Rx interrupt register"]
@@ -7525,7 +7811,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MmcRxInterrupt {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MmcRxInterrupt {{ rxcrcerpis: {=bool:?}, rxalgnerpis: {=bool:?}, rxucgpis: {=bool:?}, rxlpiuscis: {=bool:?}, rxlpitrcis: {=bool:?} }}" , self . rxcrcerpis () , self . rxalgnerpis () , self . rxucgpis () , self . rxlpiuscis () , self . rxlpitrcis ())
+            defmt::write!(
+                f,
+                "MmcRxInterrupt {{ rxcrcerpis: {=bool:?}, rxalgnerpis: {=bool:?}, rxucgpis: {=bool:?}, rxlpiuscis: {=bool:?}, rxlpitrcis: {=bool:?} }}",
+                self.rxcrcerpis(),
+                self.rxalgnerpis(),
+                self.rxucgpis(),
+                self.rxlpiuscis(),
+                self.rxlpitrcis()
+            )
         }
     }
     #[doc = "MMC Rx interrupt mask register"]
@@ -7614,7 +7908,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MmcRxInterruptMask {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MmcRxInterruptMask {{ rxcrcerpim: {=bool:?}, rxalgnerpim: {=bool:?}, rxucgpim: {=bool:?}, rxlpiuscim: {=bool:?}, rxlpitrcim: {=bool:?} }}" , self . rxcrcerpim () , self . rxalgnerpim () , self . rxucgpim () , self . rxlpiuscim () , self . rxlpitrcim ())
+            defmt::write!(
+                f,
+                "MmcRxInterruptMask {{ rxcrcerpim: {=bool:?}, rxalgnerpim: {=bool:?}, rxucgpim: {=bool:?}, rxlpiuscim: {=bool:?}, rxlpitrcim: {=bool:?} }}",
+                self.rxcrcerpim(),
+                self.rxalgnerpim(),
+                self.rxucgpim(),
+                self.rxlpiuscim(),
+                self.rxlpitrcim()
+            )
         }
     }
     #[doc = "MMC Tx interrupt register"]
@@ -7703,7 +8005,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MmcTxInterrupt {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MmcTxInterrupt {{ txscolgpis: {=bool:?}, txmcolgpis: {=bool:?}, txgpktis: {=bool:?}, txlpiuscis: {=bool:?}, txlpitrcis: {=bool:?} }}" , self . txscolgpis () , self . txmcolgpis () , self . txgpktis () , self . txlpiuscis () , self . txlpitrcis ())
+            defmt::write!(
+                f,
+                "MmcTxInterrupt {{ txscolgpis: {=bool:?}, txmcolgpis: {=bool:?}, txgpktis: {=bool:?}, txlpiuscis: {=bool:?}, txlpitrcis: {=bool:?} }}",
+                self.txscolgpis(),
+                self.txmcolgpis(),
+                self.txgpktis(),
+                self.txlpiuscis(),
+                self.txlpitrcis()
+            )
         }
     }
     #[doc = "MMC Tx interrupt mask register"]
@@ -7792,7 +8102,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MmcTxInterruptMask {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MmcTxInterruptMask {{ txscolgpim: {=bool:?}, txmcolgpim: {=bool:?}, txgpktim: {=bool:?}, txlpiuscim: {=bool:?}, txlpitrcim: {=bool:?} }}" , self . txscolgpim () , self . txmcolgpim () , self . txgpktim () , self . txlpiuscim () , self . txlpitrcim ())
+            defmt::write!(
+                f,
+                "MmcTxInterruptMask {{ txscolgpim: {=bool:?}, txmcolgpim: {=bool:?}, txgpktim: {=bool:?}, txlpiuscim: {=bool:?}, txlpitrcim: {=bool:?} }}",
+                self.txscolgpim(),
+                self.txmcolgpim(),
+                self.txgpktim(),
+                self.txlpiuscim(),
+                self.txlpitrcim()
+            )
         }
     }
     #[doc = "Rx queue debug register"]
@@ -7951,7 +8269,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MtlRxQmpocr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MtlRxQmpocr {{ ovfpktcnt: {=u16:?}, ovfcntovf: {=bool:?}, mispktcnt: {=u16:?}, miscntovf: {=bool:?} }}" , self . ovfpktcnt () , self . ovfcntovf () , self . mispktcnt () , self . miscntovf ())
+            defmt::write!(
+                f,
+                "MtlRxQmpocr {{ ovfpktcnt: {=u16:?}, ovfcntovf: {=bool:?}, mispktcnt: {=u16:?}, miscntovf: {=bool:?} }}",
+                self.ovfpktcnt(),
+                self.ovfcntovf(),
+                self.mispktcnt(),
+                self.miscntovf()
+            )
         }
     }
     #[doc = "Rx queue operating mode register"]
@@ -8092,7 +8417,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MtlRxQomr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MtlRxQomr {{ rtc: {=u8:?}, fup: {=bool:?}, fep: {=bool:?}, rsf: {=bool:?}, dis_tcp_ef: {=bool:?}, ehfc: {=bool:?}, rfa: {=u8:?}, rfd: {=u8:?}, rqs: {=u8:?} }}" , self . rtc () , self . fup () , self . fep () , self . rsf () , self . dis_tcp_ef () , self . ehfc () , self . rfa () , self . rfd () , self . rqs ())
+            defmt::write!(
+                f,
+                "MtlRxQomr {{ rtc: {=u8:?}, fup: {=bool:?}, fep: {=bool:?}, rsf: {=bool:?}, dis_tcp_ef: {=bool:?}, ehfc: {=bool:?}, rfa: {=u8:?}, rfd: {=u8:?}, rqs: {=u8:?} }}",
+                self.rtc(),
+                self.fup(),
+                self.fep(),
+                self.rsf(),
+                self.dis_tcp_ef(),
+                self.ehfc(),
+                self.rfa(),
+                self.rfd(),
+                self.rqs()
+            )
         }
     }
     #[doc = "Tx queue debug Register"]
@@ -8207,7 +8544,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for MtlTxQdr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "MtlTxQdr {{ txqpaused: {=bool:?}, trcsts: {=u8:?}, twcsts: {=bool:?}, txqsts: {=bool:?}, txstsfsts: {=bool:?}, ptxq: {=u8:?}, stxstsf: {=u8:?} }}" , self . txqpaused () , self . trcsts () , self . twcsts () , self . txqsts () , self . txstsfsts () , self . ptxq () , self . stxstsf ())
+            defmt::write!(
+                f,
+                "MtlTxQdr {{ txqpaused: {=bool:?}, trcsts: {=u8:?}, twcsts: {=bool:?}, txqsts: {=bool:?}, txstsfsts: {=bool:?}, ptxq: {=u8:?}, stxstsf: {=u8:?} }}",
+                self.txqpaused(),
+                self.trcsts(),
+                self.twcsts(),
+                self.txqsts(),
+                self.txstsfsts(),
+                self.ptxq(),
+                self.stxstsf()
+            )
         }
     }
     #[doc = "Tx queue operating mode Register"]

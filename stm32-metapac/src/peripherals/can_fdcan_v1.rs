@@ -401,7 +401,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cccr {{ init: {=bool:?}, cce: {=bool:?}, asm: {=bool:?}, csa: {=bool:?}, csr: {=bool:?}, mon: {=bool:?}, dar: {=bool:?}, test: {=bool:?}, fdoe: {=bool:?}, brse: {=bool:?}, pxhd: {=bool:?}, efbi: {=bool:?}, txp: {=bool:?}, niso: {=bool:?} }}" , self . init () , self . cce () , self . asm () , self . csa () , self . csr () , self . mon () , self . dar () , self . test () , self . fdoe () , self . brse () , self . pxhd () , self . efbi () , self . txp () , self . niso ())
+            defmt::write!(
+                f,
+                "Cccr {{ init: {=bool:?}, cce: {=bool:?}, asm: {=bool:?}, csa: {=bool:?}, csr: {=bool:?}, mon: {=bool:?}, dar: {=bool:?}, test: {=bool:?}, fdoe: {=bool:?}, brse: {=bool:?}, pxhd: {=bool:?}, efbi: {=bool:?}, txp: {=bool:?}, niso: {=bool:?} }}",
+                self.init(),
+                self.cce(),
+                self.asm(),
+                self.csa(),
+                self.csr(),
+                self.mon(),
+                self.dar(),
+                self.test(),
+                self.fdoe(),
+                self.brse(),
+                self.pxhd(),
+                self.efbi(),
+                self.txp(),
+                self.niso()
+            )
         }
     }
     #[doc = "FDCAN CFG clock divider register"]
@@ -1167,7 +1184,34 @@ of CCCR register are set to 1"]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ie {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ie {{ rfne[0]: {=bool:?}, rfne[1]: {=bool:?}, rffe[0]: {=bool:?}, rffe[1]: {=bool:?}, rfle[0]: {=bool:?}, rfle[1]: {=bool:?}, hpme: {=bool:?}, tce: {=bool:?}, tcfe: {=bool:?}, tfee: {=bool:?}, tefne: {=bool:?}, teffe: {=bool:?}, tefle: {=bool:?}, tswe: {=bool:?}, mrafe: {=bool:?}, tooe: {=bool:?}, eloe: {=bool:?}, epe: {=bool:?}, ewe: {=bool:?}, boe: {=bool:?}, wdie: {=bool:?}, peae: {=bool:?}, pede: {=bool:?}, arae: {=bool:?} }}" , self . rfne (0usize) , self . rfne (1usize) , self . rffe (0usize) , self . rffe (1usize) , self . rfle (0usize) , self . rfle (1usize) , self . hpme () , self . tce () , self . tcfe () , self . tfee () , self . tefne () , self . teffe () , self . tefle () , self . tswe () , self . mrafe () , self . tooe () , self . eloe () , self . epe () , self . ewe () , self . boe () , self . wdie () , self . peae () , self . pede () , self . arae ())
+            defmt::write!(
+                f,
+                "Ie {{ rfne[0]: {=bool:?}, rfne[1]: {=bool:?}, rffe[0]: {=bool:?}, rffe[1]: {=bool:?}, rfle[0]: {=bool:?}, rfle[1]: {=bool:?}, hpme: {=bool:?}, tce: {=bool:?}, tcfe: {=bool:?}, tfee: {=bool:?}, tefne: {=bool:?}, teffe: {=bool:?}, tefle: {=bool:?}, tswe: {=bool:?}, mrafe: {=bool:?}, tooe: {=bool:?}, eloe: {=bool:?}, epe: {=bool:?}, ewe: {=bool:?}, boe: {=bool:?}, wdie: {=bool:?}, peae: {=bool:?}, pede: {=bool:?}, arae: {=bool:?} }}",
+                self.rfne(0usize),
+                self.rfne(1usize),
+                self.rffe(0usize),
+                self.rffe(1usize),
+                self.rfle(0usize),
+                self.rfle(1usize),
+                self.hpme(),
+                self.tce(),
+                self.tcfe(),
+                self.tfee(),
+                self.tefne(),
+                self.teffe(),
+                self.tefle(),
+                self.tswe(),
+                self.mrafe(),
+                self.tooe(),
+                self.eloe(),
+                self.epe(),
+                self.ewe(),
+                self.boe(),
+                self.wdie(),
+                self.peae(),
+                self.pede(),
+                self.arae()
+            )
         }
     }
     #[doc = "FDCAN interrupt line enable register"]
@@ -1329,7 +1373,17 @@ of CCCR register are set to 1"]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ils {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ils {{ rxfifo[0]: {=bool:?}, rxfifo[1]: {=bool:?}, smsg: {=bool:?}, tferr: {=bool:?}, misc: {=bool:?}, berr: {=bool:?}, perr: {=bool:?} }}" , self . rxfifo (0usize) , self . rxfifo (1usize) , self . smsg () , self . tferr () , self . misc () , self . berr () , self . perr ())
+            defmt::write!(
+                f,
+                "Ils {{ rxfifo[0]: {=bool:?}, rxfifo[1]: {=bool:?}, smsg: {=bool:?}, tferr: {=bool:?}, misc: {=bool:?}, berr: {=bool:?}, perr: {=bool:?} }}",
+                self.rxfifo(0usize),
+                self.rxfifo(1usize),
+                self.smsg(),
+                self.tferr(),
+                self.misc(),
+                self.berr(),
+                self.perr()
+            )
         }
     }
     #[doc = "FDCAN interrupt register"]
@@ -1641,7 +1695,34 @@ of CCCR register are set to 1"]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ir {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ir {{ rfn[0]: {=bool:?}, rfn[1]: {=bool:?}, rff[0]: {=bool:?}, rff[1]: {=bool:?}, rfl[0]: {=bool:?}, rfl[1]: {=bool:?}, hpm: {=bool:?}, tc: {=bool:?}, tcf: {=bool:?}, tfe: {=bool:?}, tefn: {=bool:?}, teff: {=bool:?}, tefl: {=bool:?}, tsw: {=bool:?}, mraf: {=bool:?}, too: {=bool:?}, elo: {=bool:?}, ep: {=bool:?}, ew: {=bool:?}, bo: {=bool:?}, wdi: {=bool:?}, pea: {=bool:?}, ped: {=bool:?}, ara: {=bool:?} }}" , self . rfn (0usize) , self . rfn (1usize) , self . rff (0usize) , self . rff (1usize) , self . rfl (0usize) , self . rfl (1usize) , self . hpm () , self . tc () , self . tcf () , self . tfe () , self . tefn () , self . teff () , self . tefl () , self . tsw () , self . mraf () , self . too () , self . elo () , self . ep () , self . ew () , self . bo () , self . wdi () , self . pea () , self . ped () , self . ara ())
+            defmt::write!(
+                f,
+                "Ir {{ rfn[0]: {=bool:?}, rfn[1]: {=bool:?}, rff[0]: {=bool:?}, rff[1]: {=bool:?}, rfl[0]: {=bool:?}, rfl[1]: {=bool:?}, hpm: {=bool:?}, tc: {=bool:?}, tcf: {=bool:?}, tfe: {=bool:?}, tefn: {=bool:?}, teff: {=bool:?}, tefl: {=bool:?}, tsw: {=bool:?}, mraf: {=bool:?}, too: {=bool:?}, elo: {=bool:?}, ep: {=bool:?}, ew: {=bool:?}, bo: {=bool:?}, wdi: {=bool:?}, pea: {=bool:?}, ped: {=bool:?}, ara: {=bool:?} }}",
+                self.rfn(0usize),
+                self.rfn(1usize),
+                self.rff(0usize),
+                self.rff(1usize),
+                self.rfl(0usize),
+                self.rfl(1usize),
+                self.hpm(),
+                self.tc(),
+                self.tcf(),
+                self.tfe(),
+                self.tefn(),
+                self.teff(),
+                self.tefl(),
+                self.tsw(),
+                self.mraf(),
+                self.too(),
+                self.elo(),
+                self.ep(),
+                self.ew(),
+                self.bo(),
+                self.wdi(),
+                self.pea(),
+                self.ped(),
+                self.ara()
+            )
         }
     }
     #[doc = "FDCAN nominal bit timing and prescaler register"]
@@ -1903,7 +1984,21 @@ of CCCR register are set to 1"]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Psr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Psr {{ lec: {:?}, act: {:?}, ep: {=bool:?}, ew: {=bool:?}, bo: {=bool:?}, dlec: {=u8:?}, resi: {=bool:?}, rbrs: {=bool:?}, redl: {=bool:?}, pxe: {=bool:?}, tdcv: {=u8:?} }}" , self . lec () , self . act () , self . ep () , self . ew () , self . bo () , self . dlec () , self . resi () , self . rbrs () , self . redl () , self . pxe () , self . tdcv ())
+            defmt::write!(
+                f,
+                "Psr {{ lec: {:?}, act: {:?}, ep: {=bool:?}, ew: {=bool:?}, bo: {=bool:?}, dlec: {=u8:?}, resi: {=bool:?}, rbrs: {=bool:?}, redl: {=bool:?}, pxe: {=bool:?}, tdcv: {=u8:?} }}",
+                self.lec(),
+                self.act(),
+                self.ep(),
+                self.ew(),
+                self.bo(),
+                self.dlec(),
+                self.resi(),
+                self.rbrs(),
+                self.redl(),
+                self.pxe(),
+                self.tdcv()
+            )
         }
     }
     #[doc = "FDCAN RAM watchdog register"]
@@ -2253,7 +2348,18 @@ of CCCR register are set to 1."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Rxgfc {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Rxgfc {{ rrfe: {=bool:?}, rrfs: {=bool:?}, anfe: {:?}, anfs: {:?}, f1om: {=bool:?}, f0om: {=bool:?}, lss: {=u8:?}, lse: {=u8:?} }}" , self . rrfe () , self . rrfs () , self . anfe () , self . anfs () , self . f1om () , self . f0om () , self . lss () , self . lse ())
+            defmt::write!(
+                f,
+                "Rxgfc {{ rrfe: {=bool:?}, rrfs: {=bool:?}, anfe: {:?}, anfs: {:?}, f1om: {=bool:?}, f0om: {=bool:?}, lss: {=u8:?}, lse: {=u8:?} }}",
+                self.rrfe(),
+                self.rrfs(),
+                self.anfe(),
+                self.anfs(),
+                self.f1om(),
+                self.f0om(),
+                self.lss(),
+                self.lse()
+            )
         }
     }
     #[doc = "FDCAN transmitter delay compensation register"]

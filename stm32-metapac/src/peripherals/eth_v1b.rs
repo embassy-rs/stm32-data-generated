@@ -531,7 +531,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dmabmr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dmabmr {{ sr: {=bool:?}, da: {:?}, dsl: {=u8:?}, edfe: {=bool:?}, pbl: {:?}, pm: {:?}, fb: {:?}, rdp: {:?}, usp: {:?}, fpm: {:?}, aab: {=bool:?}, mb: {:?} }}" , self . sr () , self . da () , self . dsl () , self . edfe () , self . pbl () , self . pm () , self . fb () , self . rdp () , self . usp () , self . fpm () , self . aab () , self . mb ())
+            defmt::write!(
+                f,
+                "Dmabmr {{ sr: {=bool:?}, da: {:?}, dsl: {=u8:?}, edfe: {=bool:?}, pbl: {:?}, pm: {:?}, fb: {:?}, rdp: {:?}, usp: {:?}, fpm: {:?}, aab: {=bool:?}, mb: {:?} }}",
+                self.sr(),
+                self.da(),
+                self.dsl(),
+                self.edfe(),
+                self.pbl(),
+                self.pm(),
+                self.fb(),
+                self.rdp(),
+                self.usp(),
+                self.fpm(),
+                self.aab(),
+                self.mb()
+            )
         }
     }
     #[doc = "Ethernet DMA current host receive buffer address register"]
@@ -890,7 +905,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dmaier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dmaier {{ tie: {=bool:?}, tpsie: {=bool:?}, tbuie: {=bool:?}, tjtie: {=bool:?}, roie: {=bool:?}, tuie: {=bool:?}, rie: {=bool:?}, rbuie: {=bool:?}, rpsie: {=bool:?}, rwtie: {=bool:?}, etie: {=bool:?}, fbeie: {=bool:?}, erie: {=bool:?}, aise: {=bool:?}, nise: {=bool:?} }}" , self . tie () , self . tpsie () , self . tbuie () , self . tjtie () , self . roie () , self . tuie () , self . rie () , self . rbuie () , self . rpsie () , self . rwtie () , self . etie () , self . fbeie () , self . erie () , self . aise () , self . nise ())
+            defmt::write!(
+                f,
+                "Dmaier {{ tie: {=bool:?}, tpsie: {=bool:?}, tbuie: {=bool:?}, tjtie: {=bool:?}, roie: {=bool:?}, tuie: {=bool:?}, rie: {=bool:?}, rbuie: {=bool:?}, rpsie: {=bool:?}, rwtie: {=bool:?}, etie: {=bool:?}, fbeie: {=bool:?}, erie: {=bool:?}, aise: {=bool:?}, nise: {=bool:?} }}",
+                self.tie(),
+                self.tpsie(),
+                self.tbuie(),
+                self.tjtie(),
+                self.roie(),
+                self.tuie(),
+                self.rie(),
+                self.rbuie(),
+                self.rpsie(),
+                self.rwtie(),
+                self.etie(),
+                self.fbeie(),
+                self.erie(),
+                self.aise(),
+                self.nise()
+            )
         }
     }
     #[doc = "Ethernet DMA missed frame and buffer overflow counter register"]
@@ -1153,7 +1186,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dmaomr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dmaomr {{ sr: {:?}, osf: {=bool:?}, rtc: {:?}, fugf: {:?}, fef: {:?}, st: {:?}, ttc: {:?}, ftf: {:?}, tsf: {:?}, dfrf: {=bool:?}, rsf: {:?}, dtcefd: {:?} }}" , self . sr () , self . osf () , self . rtc () , self . fugf () , self . fef () , self . st () , self . ttc () , self . ftf () , self . tsf () , self . dfrf () , self . rsf () , self . dtcefd ())
+            defmt::write!(
+                f,
+                "Dmaomr {{ sr: {:?}, osf: {=bool:?}, rtc: {:?}, fugf: {:?}, fef: {:?}, st: {:?}, ttc: {:?}, ftf: {:?}, tsf: {:?}, dfrf: {=bool:?}, rsf: {:?}, dtcefd: {:?} }}",
+                self.sr(),
+                self.osf(),
+                self.rtc(),
+                self.fugf(),
+                self.fef(),
+                self.st(),
+                self.ttc(),
+                self.ftf(),
+                self.tsf(),
+                self.dfrf(),
+                self.rsf(),
+                self.dtcefd()
+            )
         }
     }
     #[doc = "Ethernet DMA receive descriptor list address register"]
@@ -1555,7 +1603,31 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dmasr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dmasr {{ ts: {=bool:?}, tpss: {=bool:?}, tbus: {=bool:?}, tjts: {=bool:?}, ros: {=bool:?}, tus: {=bool:?}, rs: {=bool:?}, rbus: {=bool:?}, rpss: {=bool:?}, pwts: {=bool:?}, ets: {=bool:?}, fbes: {=bool:?}, ers: {=bool:?}, ais: {=bool:?}, nis: {=bool:?}, rps: {:?}, tps: {:?}, ebs: {=u8:?}, mmcs: {=bool:?}, pmts: {=bool:?}, tsts: {=bool:?} }}" , self . ts () , self . tpss () , self . tbus () , self . tjts () , self . ros () , self . tus () , self . rs () , self . rbus () , self . rpss () , self . pwts () , self . ets () , self . fbes () , self . ers () , self . ais () , self . nis () , self . rps () , self . tps () , self . ebs () , self . mmcs () , self . pmts () , self . tsts ())
+            defmt::write!(
+                f,
+                "Dmasr {{ ts: {=bool:?}, tpss: {=bool:?}, tbus: {=bool:?}, tjts: {=bool:?}, ros: {=bool:?}, tus: {=bool:?}, rs: {=bool:?}, rbus: {=bool:?}, rpss: {=bool:?}, pwts: {=bool:?}, ets: {=bool:?}, fbes: {=bool:?}, ers: {=bool:?}, ais: {=bool:?}, nis: {=bool:?}, rps: {:?}, tps: {:?}, ebs: {=u8:?}, mmcs: {=bool:?}, pmts: {=bool:?}, tsts: {=bool:?} }}",
+                self.ts(),
+                self.tpss(),
+                self.tbus(),
+                self.tjts(),
+                self.ros(),
+                self.tus(),
+                self.rs(),
+                self.rbus(),
+                self.rpss(),
+                self.pwts(),
+                self.ets(),
+                self.fbes(),
+                self.ers(),
+                self.ais(),
+                self.nis(),
+                self.rps(),
+                self.tps(),
+                self.ebs(),
+                self.mmcs(),
+                self.pmts(),
+                self.tsts()
+            )
         }
     }
     #[doc = "Ethernet DMA transmit descriptor list address register"]
@@ -2065,7 +2137,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Maccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Maccr {{ re: {=bool:?}, te: {=bool:?}, dc: {=bool:?}, bl: {:?}, apcs: {:?}, rd: {:?}, ipco: {:?}, dm: {:?}, lm: {:?}, rod: {:?}, fes: {:?}, csd: {:?}, ifg: {:?}, jd: {:?}, wd: {:?}, cstf: {=bool:?} }}" , self . re () , self . te () , self . dc () , self . bl () , self . apcs () , self . rd () , self . ipco () , self . dm () , self . lm () , self . rod () , self . fes () , self . csd () , self . ifg () , self . jd () , self . wd () , self . cstf ())
+            defmt::write!(
+                f,
+                "Maccr {{ re: {=bool:?}, te: {=bool:?}, dc: {=bool:?}, bl: {:?}, apcs: {:?}, rd: {:?}, ipco: {:?}, dm: {:?}, lm: {:?}, rod: {:?}, fes: {:?}, csd: {:?}, ifg: {:?}, jd: {:?}, wd: {:?}, cstf: {=bool:?} }}",
+                self.re(),
+                self.te(),
+                self.dc(),
+                self.bl(),
+                self.apcs(),
+                self.rd(),
+                self.ipco(),
+                self.dm(),
+                self.lm(),
+                self.rod(),
+                self.fes(),
+                self.csd(),
+                self.ifg(),
+                self.jd(),
+                self.wd(),
+                self.cstf()
+            )
         }
     }
     #[doc = "Ethernet MAC debug register"]
@@ -2245,7 +2336,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macdbgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Macdbgr {{ mmrpea: {=bool:?}, msfrwcs: {=u8:?}, rfwra: {=bool:?}, rfrcs: {=u8:?}, rffl: {=u8:?}, mmtea: {=bool:?}, mtfcs: {=u8:?}, mtp: {=bool:?}, tfrs: {=u8:?}, tfwa: {=bool:?}, tfne: {=bool:?}, tff: {=bool:?} }}" , self . mmrpea () , self . msfrwcs () , self . rfwra () , self . rfrcs () , self . rffl () , self . mmtea () , self . mtfcs () , self . mtp () , self . tfrs () , self . tfwa () , self . tfne () , self . tff ())
+            defmt::write!(
+                f,
+                "Macdbgr {{ mmrpea: {=bool:?}, msfrwcs: {=u8:?}, rfwra: {=bool:?}, rfrcs: {=u8:?}, rffl: {=u8:?}, mmtea: {=bool:?}, mtfcs: {=u8:?}, mtp: {=bool:?}, tfrs: {=u8:?}, tfwa: {=bool:?}, tfne: {=bool:?}, tff: {=bool:?} }}",
+                self.mmrpea(),
+                self.msfrwcs(),
+                self.rfwra(),
+                self.rfrcs(),
+                self.rffl(),
+                self.mmtea(),
+                self.mtfcs(),
+                self.mtp(),
+                self.tfrs(),
+                self.tfwa(),
+                self.tfne(),
+                self.tff()
+            )
         }
     }
     #[doc = "Ethernet MAC flow control register"]
@@ -2360,7 +2466,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macfcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Macfcr {{ fcb: {:?}, tfce: {=bool:?}, rfce: {=bool:?}, upfd: {=bool:?}, plt: {:?}, zqpd: {:?}, pt: {=u16:?} }}" , self . fcb () , self . tfce () , self . rfce () , self . upfd () , self . plt () , self . zqpd () , self . pt ())
+            defmt::write!(
+                f,
+                "Macfcr {{ fcb: {:?}, tfce: {=bool:?}, rfce: {=bool:?}, upfd: {=bool:?}, plt: {:?}, zqpd: {:?}, pt: {=u16:?} }}",
+                self.fcb(),
+                self.tfce(),
+                self.rfce(),
+                self.upfd(),
+                self.plt(),
+                self.zqpd(),
+                self.pt()
+            )
         }
     }
     #[doc = "Ethernet MAC frame filter register"]
@@ -2527,7 +2643,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macffr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Macffr {{ pm: {=bool:?}, hu: {:?}, hm: {:?}, daif: {:?}, pam: {=bool:?}, bfd: {:?}, pcf: {:?}, saif: {:?}, saf: {=bool:?}, hpf: {:?}, ra: {=bool:?} }}" , self . pm () , self . hu () , self . hm () , self . daif () , self . pam () , self . bfd () , self . pcf () , self . saif () , self . saf () , self . hpf () , self . ra ())
+            defmt::write!(
+                f,
+                "Macffr {{ pm: {=bool:?}, hu: {:?}, hm: {:?}, daif: {:?}, pam: {=bool:?}, bfd: {:?}, pcf: {:?}, saif: {:?}, saf: {=bool:?}, hpf: {:?}, ra: {=bool:?} }}",
+                self.pm(),
+                self.hu(),
+                self.hm(),
+                self.daif(),
+                self.pam(),
+                self.bfd(),
+                self.pcf(),
+                self.saif(),
+                self.saf(),
+                self.hpf(),
+                self.ra()
+            )
         }
     }
     #[doc = "Ethernet MAC hash table high register"]
@@ -2894,7 +3024,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Macpmtcsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Macpmtcsr {{ pd: {:?}, mpe: {=bool:?}, wfe: {=bool:?}, mpr: {=bool:?}, wfr: {=bool:?}, gu: {=bool:?}, wffrpr: {:?} }}" , self . pd () , self . mpe () , self . wfe () , self . mpr () , self . wfr () , self . gu () , self . wffrpr ())
+            defmt::write!(
+                f,
+                "Macpmtcsr {{ pd: {:?}, mpe: {=bool:?}, wfe: {=bool:?}, mpr: {=bool:?}, wfr: {=bool:?}, gu: {=bool:?}, wffrpr: {:?} }}",
+                self.pd(),
+                self.mpe(),
+                self.wfe(),
+                self.mpr(),
+                self.wfr(),
+                self.gu(),
+                self.wffrpr()
+            )
         }
     }
     #[doc = "Ethernet MAC interrupt status register"]
@@ -4000,7 +4140,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ptptscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ptptscr {{ tse: {=bool:?}, tsfcu: {=bool:?}, tssti: {=bool:?}, tsstu: {=bool:?}, tsite: {=bool:?}, ttsaru: {=bool:?}, tssarfe: {=bool:?}, tsssr: {=bool:?}, tsptppsv2e: {=bool:?}, tssptpoefe: {=bool:?}, tssipv6fe: {=bool:?}, tssipv4fe: {=bool:?}, tsseme: {=bool:?}, tssmrme: {=bool:?}, tscnt: {=u8:?}, tspffmae: {=bool:?} }}" , self . tse () , self . tsfcu () , self . tssti () , self . tsstu () , self . tsite () , self . ttsaru () , self . tssarfe () , self . tsssr () , self . tsptppsv2e () , self . tssptpoefe () , self . tssipv6fe () , self . tssipv4fe () , self . tsseme () , self . tssmrme () , self . tscnt () , self . tspffmae ())
+            defmt::write!(
+                f,
+                "Ptptscr {{ tse: {=bool:?}, tsfcu: {=bool:?}, tssti: {=bool:?}, tsstu: {=bool:?}, tsite: {=bool:?}, ttsaru: {=bool:?}, tssarfe: {=bool:?}, tsssr: {=bool:?}, tsptppsv2e: {=bool:?}, tssptpoefe: {=bool:?}, tssipv6fe: {=bool:?}, tssipv4fe: {=bool:?}, tsseme: {=bool:?}, tssmrme: {=bool:?}, tscnt: {=u8:?}, tspffmae: {=bool:?} }}",
+                self.tse(),
+                self.tsfcu(),
+                self.tssti(),
+                self.tsstu(),
+                self.tsite(),
+                self.ttsaru(),
+                self.tssarfe(),
+                self.tsssr(),
+                self.tsptppsv2e(),
+                self.tssptpoefe(),
+                self.tssipv6fe(),
+                self.tssipv4fe(),
+                self.tsseme(),
+                self.tssmrme(),
+                self.tscnt(),
+                self.tspffmae()
+            )
         }
     }
     #[doc = "Ethernet PTP time stamp high register"]

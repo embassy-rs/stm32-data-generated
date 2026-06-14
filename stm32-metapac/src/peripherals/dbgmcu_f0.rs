@@ -192,7 +192,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1Fz {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1Fz {{ tim2: {=bool:?}, tim3: {=bool:?}, tim6: {=bool:?}, tim7: {=bool:?}, tim14: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, dbg_i2c1_smbus_timeout: {=bool:?}, can: {=bool:?} }}" , self . tim2 () , self . tim3 () , self . tim6 () , self . tim7 () , self . tim14 () , self . rtc () , self . wwdg () , self . iwdg () , self . dbg_i2c1_smbus_timeout () , self . can ())
+            defmt::write!(
+                f,
+                "Apb1Fz {{ tim2: {=bool:?}, tim3: {=bool:?}, tim6: {=bool:?}, tim7: {=bool:?}, tim14: {=bool:?}, rtc: {=bool:?}, wwdg: {=bool:?}, iwdg: {=bool:?}, dbg_i2c1_smbus_timeout: {=bool:?}, can: {=bool:?} }}",
+                self.tim2(),
+                self.tim3(),
+                self.tim6(),
+                self.tim7(),
+                self.tim14(),
+                self.rtc(),
+                self.wwdg(),
+                self.iwdg(),
+                self.dbg_i2c1_smbus_timeout(),
+                self.can()
+            )
         }
     }
     #[doc = "Debug MCU APB2 freeze register"]

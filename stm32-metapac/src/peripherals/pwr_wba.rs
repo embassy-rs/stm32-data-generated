@@ -224,7 +224,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ lpms: {:?}, r2rsb1: {=bool:?}, ulpmen: {=bool:?}, radiorsb: {=bool:?}, r1rsb567: {=bool:?}, r1rsb[0]: {=bool:?}, r1rsb[1]: {=bool:?}, r1rsb[2]: {=bool:?}, r1rsb[3]: {=bool:?} }}" , self . lpms () , self . r2rsb1 () , self . ulpmen () , self . radiorsb () , self . r1rsb567 () , self . r1rsb (0usize) , self . r1rsb (1usize) , self . r1rsb (2usize) , self . r1rsb (3usize))
+            defmt::write!(
+                f,
+                "Cr1 {{ lpms: {:?}, r2rsb1: {=bool:?}, ulpmen: {=bool:?}, radiorsb: {=bool:?}, r1rsb567: {=bool:?}, r1rsb[0]: {=bool:?}, r1rsb[1]: {=bool:?}, r1rsb[2]: {=bool:?}, r1rsb[3]: {=bool:?} }}",
+                self.lpms(),
+                self.r2rsb1(),
+                self.ulpmen(),
+                self.radiorsb(),
+                self.r1rsb567(),
+                self.r1rsb(0usize),
+                self.r1rsb(1usize),
+                self.r1rsb(2usize),
+                self.r1rsb(3usize)
+            )
         }
     }
     #[doc = "control register 2."]
@@ -346,7 +358,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ sram1pds[0]: {:?}, sram1pds[1]: {:?}, sram1pds[2]: {:?}, sram1pds[3]: {:?}, sram2pds1: {:?}, sram1pds567: {:?}, icrampds: {:?}, prampds: {:?}, pkarampds: {:?}, flashfwu: {:?} }}" , self . sram1pds (0usize) , self . sram1pds (1usize) , self . sram1pds (2usize) , self . sram1pds (3usize) , self . sram2pds1 () , self . sram1pds567 () , self . icrampds () , self . prampds () , self . pkarampds () , self . flashfwu ())
+            defmt::write!(
+                f,
+                "Cr2 {{ sram1pds[0]: {:?}, sram1pds[1]: {:?}, sram1pds[2]: {:?}, sram1pds[3]: {:?}, sram2pds1: {:?}, sram1pds567: {:?}, icrampds: {:?}, prampds: {:?}, pkarampds: {:?}, flashfwu: {:?} }}",
+                self.sram1pds(0usize),
+                self.sram1pds(1usize),
+                self.sram1pds(2usize),
+                self.sram1pds(3usize),
+                self.sram2pds1(),
+                self.sram1pds567(),
+                self.icrampds(),
+                self.prampds(),
+                self.pkarampds(),
+                self.flashfwu()
+            )
         }
     }
     #[doc = "control register 3."]
@@ -534,7 +559,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ioretenr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ioretenr {{ en[0]: {=bool:?}, en[1]: {=bool:?}, en[2]: {=bool:?}, en[3]: {=bool:?}, en[4]: {=bool:?}, en[5]: {=bool:?}, en[6]: {=bool:?}, en[7]: {=bool:?}, en[8]: {=bool:?}, en[9]: {=bool:?}, en[10]: {=bool:?}, en[11]: {=bool:?}, en[12]: {=bool:?}, en[13]: {=bool:?}, en[14]: {=bool:?}, en[15]: {=bool:?} }}" , self . en (0usize) , self . en (1usize) , self . en (2usize) , self . en (3usize) , self . en (4usize) , self . en (5usize) , self . en (6usize) , self . en (7usize) , self . en (8usize) , self . en (9usize) , self . en (10usize) , self . en (11usize) , self . en (12usize) , self . en (13usize) , self . en (14usize) , self . en (15usize))
+            defmt::write!(
+                f,
+                "Ioretenr {{ en[0]: {=bool:?}, en[1]: {=bool:?}, en[2]: {=bool:?}, en[3]: {=bool:?}, en[4]: {=bool:?}, en[5]: {=bool:?}, en[6]: {=bool:?}, en[7]: {=bool:?}, en[8]: {=bool:?}, en[9]: {=bool:?}, en[10]: {=bool:?}, en[11]: {=bool:?}, en[12]: {=bool:?}, en[13]: {=bool:?}, en[14]: {=bool:?}, en[15]: {=bool:?} }}",
+                self.en(0usize),
+                self.en(1usize),
+                self.en(2usize),
+                self.en(3usize),
+                self.en(4usize),
+                self.en(5usize),
+                self.en(6usize),
+                self.en(7usize),
+                self.en(8usize),
+                self.en(9usize),
+                self.en(10usize),
+                self.en(11usize),
+                self.en(12usize),
+                self.en(13usize),
+                self.en(14usize),
+                self.en(15usize)
+            )
         }
     }
     #[doc = "port A Standby IO retention status register"]
@@ -590,7 +634,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ioretr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ioretr {{ ret[0]: {=bool:?}, ret[1]: {=bool:?}, ret[2]: {=bool:?}, ret[3]: {=bool:?}, ret[4]: {=bool:?}, ret[5]: {=bool:?}, ret[6]: {=bool:?}, ret[7]: {=bool:?}, ret[8]: {=bool:?}, ret[9]: {=bool:?}, ret[10]: {=bool:?}, ret[11]: {=bool:?}, ret[12]: {=bool:?}, ret[13]: {=bool:?}, ret[14]: {=bool:?}, ret[15]: {=bool:?} }}" , self . ret (0usize) , self . ret (1usize) , self . ret (2usize) , self . ret (3usize) , self . ret (4usize) , self . ret (5usize) , self . ret (6usize) , self . ret (7usize) , self . ret (8usize) , self . ret (9usize) , self . ret (10usize) , self . ret (11usize) , self . ret (12usize) , self . ret (13usize) , self . ret (14usize) , self . ret (15usize))
+            defmt::write!(
+                f,
+                "Ioretr {{ ret[0]: {=bool:?}, ret[1]: {=bool:?}, ret[2]: {=bool:?}, ret[3]: {=bool:?}, ret[4]: {=bool:?}, ret[5]: {=bool:?}, ret[6]: {=bool:?}, ret[7]: {=bool:?}, ret[8]: {=bool:?}, ret[9]: {=bool:?}, ret[10]: {=bool:?}, ret[11]: {=bool:?}, ret[12]: {=bool:?}, ret[13]: {=bool:?}, ret[14]: {=bool:?}, ret[15]: {=bool:?} }}",
+                self.ret(0usize),
+                self.ret(1usize),
+                self.ret(2usize),
+                self.ret(3usize),
+                self.ret(4usize),
+                self.ret(5usize),
+                self.ret(6usize),
+                self.ret(7usize),
+                self.ret(8usize),
+                self.ret(9usize),
+                self.ret(10usize),
+                self.ret(11usize),
+                self.ret(12usize),
+                self.ret(13usize),
+                self.ret(14usize),
+                self.ret(15usize)
+            )
         }
     }
     #[doc = "privilege control register."]
@@ -777,7 +840,18 @@ rf_event."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Radioscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Radioscr {{ mode: {:?}, phymode: {:?}, encmode: {:?}, rfvddhpa: {=u8:?}, regpardyv11: {=bool:?}, regpardyvddrfpa: {=bool:?}, regpasel: {:?}, regpabypen: {=bool:?} }}" , self . mode () , self . phymode () , self . encmode () , self . rfvddhpa () , self . regpardyv11 () , self . regpardyvddrfpa () , self . regpasel () , self . regpabypen ())
+            defmt::write!(
+                f,
+                "Radioscr {{ mode: {:?}, phymode: {:?}, encmode: {:?}, rfvddhpa: {=u8:?}, regpardyv11: {=bool:?}, regpardyvddrfpa: {=bool:?}, regpasel: {:?}, regpabypen: {=bool:?} }}",
+                self.mode(),
+                self.phymode(),
+                self.encmode(),
+                self.rfvddhpa(),
+                self.regpardyv11(),
+                self.regpardyvddrfpa(),
+                self.regpasel(),
+                self.regpabypen()
+            )
         }
     }
     #[doc = "Stop 2 peripheral IOs retention register."]
@@ -919,7 +993,21 @@ rf_event."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccfgr {{ wup1sec[0]: {=bool:?}, wup1sec[1]: {=bool:?}, wup1sec[2]: {=bool:?}, wup1sec[3]: {=bool:?}, wup1sec[4]: {=bool:?}, wup1sec[5]: {=bool:?}, wup1sec[6]: {=bool:?}, wup1sec[7]: {=bool:?}, lpmsec: {:?}, vdmsec: {:?}, vbsec: {:?} }}" , self . wup1sec (0usize) , self . wup1sec (1usize) , self . wup1sec (2usize) , self . wup1sec (3usize) , self . wup1sec (4usize) , self . wup1sec (5usize) , self . wup1sec (6usize) , self . wup1sec (7usize) , self . lpmsec () , self . vdmsec () , self . vbsec ())
+            defmt::write!(
+                f,
+                "Seccfgr {{ wup1sec[0]: {=bool:?}, wup1sec[1]: {=bool:?}, wup1sec[2]: {=bool:?}, wup1sec[3]: {=bool:?}, wup1sec[4]: {=bool:?}, wup1sec[5]: {=bool:?}, wup1sec[6]: {=bool:?}, wup1sec[7]: {=bool:?}, lpmsec: {:?}, vdmsec: {:?}, vbsec: {:?} }}",
+                self.wup1sec(0usize),
+                self.wup1sec(1usize),
+                self.wup1sec(2usize),
+                self.wup1sec(3usize),
+                self.wup1sec(4usize),
+                self.wup1sec(5usize),
+                self.wup1sec(6usize),
+                self.wup1sec(7usize),
+                self.lpmsec(),
+                self.vdmsec(),
+                self.vbsec()
+            )
         }
     }
     #[doc = "status register."]
@@ -1296,7 +1384,18 @@ rf_event."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vosr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Vosr {{ vdd11usbrdy: {=bool:?}, usbboostrdy: {=bool:?}, vosrdy: {=bool:?}, vos: {:?}, usbpwren: {=bool:?}, usbboosten: {=bool:?}, vdd11usbdis: {=bool:?}, vdd11usbswdly: {=u16:?} }}" , self . vdd11usbrdy () , self . usbboostrdy () , self . vosrdy () , self . vos () , self . usbpwren () , self . usbboosten () , self . vdd11usbdis () , self . vdd11usbswdly ())
+            defmt::write!(
+                f,
+                "Vosr {{ vdd11usbrdy: {=bool:?}, usbboostrdy: {=bool:?}, vosrdy: {=bool:?}, vos: {:?}, usbpwren: {=bool:?}, usbboosten: {=bool:?}, vdd11usbdis: {=bool:?}, vdd11usbswdly: {=u16:?} }}",
+                self.vdd11usbrdy(),
+                self.usbboostrdy(),
+                self.vosrdy(),
+                self.vos(),
+                self.usbpwren(),
+                self.usbboosten(),
+                self.vdd11usbdis(),
+                self.vdd11usbswdly()
+            )
         }
     }
     #[doc = "wake-up control register 1."]
@@ -1344,7 +1443,18 @@ rf_event."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wucr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wucr1 {{ wupen[0]: {=bool:?}, wupen[1]: {=bool:?}, wupen[2]: {=bool:?}, wupen[3]: {=bool:?}, wupen[4]: {=bool:?}, wupen[5]: {=bool:?}, wupen[6]: {=bool:?}, wupen[7]: {=bool:?} }}" , self . wupen (0usize) , self . wupen (1usize) , self . wupen (2usize) , self . wupen (3usize) , self . wupen (4usize) , self . wupen (5usize) , self . wupen (6usize) , self . wupen (7usize))
+            defmt::write!(
+                f,
+                "Wucr1 {{ wupen[0]: {=bool:?}, wupen[1]: {=bool:?}, wupen[2]: {=bool:?}, wupen[3]: {=bool:?}, wupen[4]: {=bool:?}, wupen[5]: {=bool:?}, wupen[6]: {=bool:?}, wupen[7]: {=bool:?} }}",
+                self.wupen(0usize),
+                self.wupen(1usize),
+                self.wupen(2usize),
+                self.wupen(3usize),
+                self.wupen(4usize),
+                self.wupen(5usize),
+                self.wupen(6usize),
+                self.wupen(7usize)
+            )
         }
     }
     #[doc = "wake-up control register 2."]
@@ -1392,7 +1502,18 @@ rf_event."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wucr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wucr2 {{ wupp[0]: {:?}, wupp[1]: {:?}, wupp[2]: {:?}, wupp[3]: {:?}, wupp[4]: {:?}, wupp[5]: {:?}, wupp[6]: {:?}, wupp[7]: {:?} }}" , self . wupp (0usize) , self . wupp (1usize) , self . wupp (2usize) , self . wupp (3usize) , self . wupp (4usize) , self . wupp (5usize) , self . wupp (6usize) , self . wupp (7usize))
+            defmt::write!(
+                f,
+                "Wucr2 {{ wupp[0]: {:?}, wupp[1]: {:?}, wupp[2]: {:?}, wupp[3]: {:?}, wupp[4]: {:?}, wupp[5]: {:?}, wupp[6]: {:?}, wupp[7]: {:?} }}",
+                self.wupp(0usize),
+                self.wupp(1usize),
+                self.wupp(2usize),
+                self.wupp(3usize),
+                self.wupp(4usize),
+                self.wupp(5usize),
+                self.wupp(6usize),
+                self.wupp(7usize)
+            )
         }
     }
     #[doc = "wake-up control register 3."]
@@ -1440,7 +1561,18 @@ rf_event."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wucr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wucr3 {{ wusel[0]: {:?}, wusel[1]: {:?}, wusel[2]: {:?}, wusel[3]: {:?}, wusel[4]: {:?}, wusel[5]: {:?}, wusel[6]: {:?}, wusel[7]: {:?} }}" , self . wusel (0usize) , self . wusel (1usize) , self . wusel (2usize) , self . wusel (3usize) , self . wusel (4usize) , self . wusel (5usize) , self . wusel (6usize) , self . wusel (7usize))
+            defmt::write!(
+                f,
+                "Wucr3 {{ wusel[0]: {:?}, wusel[1]: {:?}, wusel[2]: {:?}, wusel[3]: {:?}, wusel[4]: {:?}, wusel[5]: {:?}, wusel[6]: {:?}, wusel[7]: {:?} }}",
+                self.wusel(0usize),
+                self.wusel(1usize),
+                self.wusel(2usize),
+                self.wusel(3usize),
+                self.wusel(4usize),
+                self.wusel(5usize),
+                self.wusel(6usize),
+                self.wusel(7usize)
+            )
         }
     }
     #[doc = "wake-up status clear register."]
@@ -1488,7 +1620,18 @@ rf_event."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wuscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wuscr {{ cwuf[0]: {=bool:?}, cwuf[1]: {=bool:?}, cwuf[2]: {=bool:?}, cwuf[3]: {=bool:?}, cwuf[4]: {=bool:?}, cwuf[5]: {=bool:?}, cwuf[6]: {=bool:?}, cwuf[7]: {=bool:?} }}" , self . cwuf (0usize) , self . cwuf (1usize) , self . cwuf (2usize) , self . cwuf (3usize) , self . cwuf (4usize) , self . cwuf (5usize) , self . cwuf (6usize) , self . cwuf (7usize))
+            defmt::write!(
+                f,
+                "Wuscr {{ cwuf[0]: {=bool:?}, cwuf[1]: {=bool:?}, cwuf[2]: {=bool:?}, cwuf[3]: {=bool:?}, cwuf[4]: {=bool:?}, cwuf[5]: {=bool:?}, cwuf[6]: {=bool:?}, cwuf[7]: {=bool:?} }}",
+                self.cwuf(0usize),
+                self.cwuf(1usize),
+                self.cwuf(2usize),
+                self.cwuf(3usize),
+                self.cwuf(4usize),
+                self.cwuf(5usize),
+                self.cwuf(6usize),
+                self.cwuf(7usize)
+            )
         }
     }
     #[doc = "wake-up status register."]
@@ -1536,7 +1679,18 @@ rf_event."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wusr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wusr {{ wuf[0]: {=bool:?}, wuf[1]: {=bool:?}, wuf[2]: {=bool:?}, wuf[3]: {=bool:?}, wuf[4]: {=bool:?}, wuf[5]: {=bool:?}, wuf[6]: {=bool:?}, wuf[7]: {=bool:?} }}" , self . wuf (0usize) , self . wuf (1usize) , self . wuf (2usize) , self . wuf (3usize) , self . wuf (4usize) , self . wuf (5usize) , self . wuf (6usize) , self . wuf (7usize))
+            defmt::write!(
+                f,
+                "Wusr {{ wuf[0]: {=bool:?}, wuf[1]: {=bool:?}, wuf[2]: {=bool:?}, wuf[3]: {=bool:?}, wuf[4]: {=bool:?}, wuf[5]: {=bool:?}, wuf[6]: {=bool:?}, wuf[7]: {=bool:?} }}",
+                self.wuf(0usize),
+                self.wuf(1usize),
+                self.wuf(2usize),
+                self.wuf(3usize),
+                self.wuf(4usize),
+                self.wuf(5usize),
+                self.wuf(6usize),
+                self.wuf(7usize)
+            )
         }
     }
 }

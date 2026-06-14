@@ -2123,7 +2123,16 @@ signal."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dtb5DigEng {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dtb5DigEng {{ rxtx_start_sel: {=bool:?}, tx_active: {=bool:?}, rx_active: {=bool:?}, initialize: {=bool:?}, port_selected_en: {=bool:?}, port_selected_0: {=bool:?} }}" , self . rxtx_start_sel () , self . tx_active () , self . rx_active () , self . initialize () , self . port_selected_en () , self . port_selected_0 ())
+            defmt::write!(
+                f,
+                "Dtb5DigEng {{ rxtx_start_sel: {=bool:?}, tx_active: {=bool:?}, rx_active: {=bool:?}, initialize: {=bool:?}, port_selected_en: {=bool:?}, port_selected_0: {=bool:?} }}",
+                self.rxtx_start_sel(),
+                self.tx_active(),
+                self.rx_active(),
+                self.initialize(),
+                self.port_selected_en(),
+                self.port_selected_0()
+            )
         }
     }
     #[doc = "FSM_STATUS_DIG_OUT register."]
@@ -2594,7 +2603,14 @@ signal."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for RxadcAnaUsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "RxadcAnaUsr {{ rfd_rxadc_delaytrim_i: {=u8:?}, rfd_rxadc_delaytrim_q: {=u8:?}, rxadc_delaytrim_i_tst_sel: {=bool:?}, rxadc_delaytrim_q_tst_sel: {=bool:?} }}" , self . rfd_rxadc_delaytrim_i () , self . rfd_rxadc_delaytrim_q () , self . rxadc_delaytrim_i_tst_sel () , self . rxadc_delaytrim_q_tst_sel ())
+            defmt::write!(
+                f,
+                "RxadcAnaUsr {{ rfd_rxadc_delaytrim_i: {=u8:?}, rfd_rxadc_delaytrim_q: {=u8:?}, rxadc_delaytrim_i_tst_sel: {=bool:?}, rxadc_delaytrim_q_tst_sel: {=bool:?} }}",
+                self.rfd_rxadc_delaytrim_i(),
+                self.rfd_rxadc_delaytrim_q(),
+                self.rxadc_delaytrim_i_tst_sel(),
+                self.rxadc_delaytrim_q_tst_sel()
+            )
         }
     }
     #[doc = "RXADC_HW_TRIM_OUT register."]

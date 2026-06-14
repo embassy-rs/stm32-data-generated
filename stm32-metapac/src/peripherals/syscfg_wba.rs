@@ -268,7 +268,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cccsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cccsr {{ en1: {=bool:?}, cs1: {=bool:?}, en2: {=bool:?}, cs2: {=bool:?}, rdy1: {=bool:?}, rdy2: {=bool:?} }}" , self . en1 () , self . cs1 () , self . en2 () , self . cs2 () , self . rdy1 () , self . rdy2 ())
+            defmt::write!(
+                f,
+                "Cccsr {{ en1: {=bool:?}, cs1: {=bool:?}, en2: {=bool:?}, cs2: {=bool:?}, rdy1: {=bool:?}, rdy2: {=bool:?} }}",
+                self.en1(),
+                self.cs1(),
+                self.en2(),
+                self.cs2(),
+                self.rdy1(),
+                self.rdy2()
+            )
         }
     }
     #[doc = "compensation cell value register"]
@@ -453,7 +462,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ boosten: {=bool:?}, anaswvdd: {=bool:?}, pa6_fmp: {=bool:?}, pa7_fmp: {=bool:?}, pa15_fmp: {=bool:?}, pb3_fmp: {=bool:?} }}" , self . boosten () , self . anaswvdd () , self . pa6_fmp () , self . pa7_fmp () , self . pa15_fmp () , self . pb3_fmp ())
+            defmt::write!(
+                f,
+                "Cfgr1 {{ boosten: {=bool:?}, anaswvdd: {=bool:?}, pa6_fmp: {=bool:?}, pa7_fmp: {=bool:?}, pa15_fmp: {=bool:?}, pb3_fmp: {=bool:?} }}",
+                self.boosten(),
+                self.anaswvdd(),
+                self.pa6_fmp(),
+                self.pa7_fmp(),
+                self.pa15_fmp(),
+                self.pb3_fmp()
+            )
         }
     }
     #[doc = "configuration register 2"]

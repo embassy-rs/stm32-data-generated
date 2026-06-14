@@ -246,7 +246,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ahb1fzr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ahb1fzr {{ dbg_gpdma1_ch0_stop: {=bool:?}, dbg_gpdma1_ch1_stop: {=bool:?}, dbg_gpdma1_ch2_stop: {=bool:?}, dbg_gpdma1_ch3_stop: {=bool:?}, dbg_gpdma1_ch4_stop: {=bool:?}, dbg_gpdma1_ch5_stop: {=bool:?}, dbg_gpdma1_ch6_stop: {=bool:?}, dbg_gpdma1_ch7_stop: {=bool:?} }}" , self . dbg_gpdma1_ch0_stop () , self . dbg_gpdma1_ch1_stop () , self . dbg_gpdma1_ch2_stop () , self . dbg_gpdma1_ch3_stop () , self . dbg_gpdma1_ch4_stop () , self . dbg_gpdma1_ch5_stop () , self . dbg_gpdma1_ch6_stop () , self . dbg_gpdma1_ch7_stop ())
+            defmt::write!(
+                f,
+                "Ahb1fzr {{ dbg_gpdma1_ch0_stop: {=bool:?}, dbg_gpdma1_ch1_stop: {=bool:?}, dbg_gpdma1_ch2_stop: {=bool:?}, dbg_gpdma1_ch3_stop: {=bool:?}, dbg_gpdma1_ch4_stop: {=bool:?}, dbg_gpdma1_ch5_stop: {=bool:?}, dbg_gpdma1_ch6_stop: {=bool:?}, dbg_gpdma1_ch7_stop: {=bool:?} }}",
+                self.dbg_gpdma1_ch0_stop(),
+                self.dbg_gpdma1_ch1_stop(),
+                self.dbg_gpdma1_ch2_stop(),
+                self.dbg_gpdma1_ch3_stop(),
+                self.dbg_gpdma1_ch4_stop(),
+                self.dbg_gpdma1_ch5_stop(),
+                self.dbg_gpdma1_ch6_stop(),
+                self.dbg_gpdma1_ch7_stop()
+            )
         }
     }
     #[doc = "APB1H peripheral freeze register"]
@@ -372,7 +383,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1lfzr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1lfzr {{ dbg_tim2_stop: {=bool:?}, dbg_tim3_stop: {=bool:?}, dbg_wwdg_stop: {=bool:?}, dbg_iwdg_stop: {=bool:?}, dbg_i2c1_stop: {=bool:?} }}" , self . dbg_tim2_stop () , self . dbg_tim3_stop () , self . dbg_wwdg_stop () , self . dbg_iwdg_stop () , self . dbg_i2c1_stop ())
+            defmt::write!(
+                f,
+                "Apb1lfzr {{ dbg_tim2_stop: {=bool:?}, dbg_tim3_stop: {=bool:?}, dbg_wwdg_stop: {=bool:?}, dbg_iwdg_stop: {=bool:?}, dbg_i2c1_stop: {=bool:?} }}",
+                self.dbg_tim2_stop(),
+                self.dbg_tim3_stop(),
+                self.dbg_wwdg_stop(),
+                self.dbg_iwdg_stop(),
+                self.dbg_i2c1_stop()
+            )
         }
     }
     #[doc = "APB2 peripheral freeze register"]
@@ -787,7 +806,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, lpms: {=u8:?}, stopf: {=bool:?}, sbf: {=bool:?}, cs: {=bool:?}, cds: {=bool:?} }}" , self . dbg_stop () , self . dbg_standby () , self . lpms () , self . stopf () , self . sbf () , self . cs () , self . cds ())
+            defmt::write!(
+                f,
+                "Cr {{ dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, lpms: {=u8:?}, stopf: {=bool:?}, sbf: {=bool:?}, cs: {=bool:?}, cds: {=bool:?} }}",
+                self.dbg_stop(),
+                self.dbg_standby(),
+                self.lpms(),
+                self.stopf(),
+                self.sbf(),
+                self.cs(),
+                self.cds()
+            )
         }
     }
     #[doc = "debug device authentication register"]

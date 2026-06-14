@@ -377,7 +377,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Fcr {{ hd: {=bool:?}, sofie: {=bool:?}, uddie: {=bool:?}, pon: {=u8:?}, dead: {=u8:?}, cc: {=u8:?}, blinkf: {=u8:?}, blink: {=u8:?}, div: {=u8:?}, ps: {=u8:?} }}" , self . hd () , self . sofie () , self . uddie () , self . pon () , self . dead () , self . cc () , self . blinkf () , self . blink () , self . div () , self . ps ())
+            defmt::write!(
+                f,
+                "Fcr {{ hd: {=bool:?}, sofie: {=bool:?}, uddie: {=bool:?}, pon: {=u8:?}, dead: {=u8:?}, cc: {=u8:?}, blinkf: {=u8:?}, blink: {=u8:?}, div: {=u8:?}, ps: {=u8:?} }}",
+                self.hd(),
+                self.sofie(),
+                self.uddie(),
+                self.pon(),
+                self.dead(),
+                self.cc(),
+                self.blinkf(),
+                self.blink(),
+                self.div(),
+                self.ps()
+            )
         }
     }
     #[doc = "status register"]
@@ -479,7 +492,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ ens: {=bool:?}, sof: {=bool:?}, udr: {=bool:?}, udd: {=bool:?}, rdy: {=bool:?}, fcrsf: {=bool:?} }}" , self . ens () , self . sof () , self . udr () , self . udd () , self . rdy () , self . fcrsf ())
+            defmt::write!(
+                f,
+                "Sr {{ ens: {=bool:?}, sof: {=bool:?}, udr: {=bool:?}, udd: {=bool:?}, rdy: {=bool:?}, fcrsf: {=bool:?} }}",
+                self.ens(),
+                self.sof(),
+                self.udr(),
+                self.udd(),
+                self.rdy(),
+                self.fcrsf()
+            )
         }
     }
 }

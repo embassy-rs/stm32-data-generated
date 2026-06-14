@@ -396,7 +396,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ mem_mode: {:?}, pa11_rmp: {=bool:?}, pa12_rmp: {=bool:?}, ir_pol: {=bool:?}, ir_mod: {:?}, boosten: {=bool:?}, i2c_pb6_fmp: {=bool:?}, i2c_pb7_fmp: {=bool:?}, i2c_pb8_fmp: {=bool:?}, i2c_pb9_fmp: {=bool:?}, i2c_pa9_fmp: {=bool:?}, i2c_pa10_fmp: {=bool:?}, i2c3_fmp: {=bool:?} }}" , self . mem_mode () , self . pa11_rmp () , self . pa12_rmp () , self . ir_pol () , self . ir_mod () , self . boosten () , self . i2c_pb6_fmp () , self . i2c_pb7_fmp () , self . i2c_pb8_fmp () , self . i2c_pb9_fmp () , self . i2c_pa9_fmp () , self . i2c_pa10_fmp () , self . i2c3_fmp ())
+            defmt::write!(
+                f,
+                "Cfgr1 {{ mem_mode: {:?}, pa11_rmp: {=bool:?}, pa12_rmp: {=bool:?}, ir_pol: {=bool:?}, ir_mod: {:?}, boosten: {=bool:?}, i2c_pb6_fmp: {=bool:?}, i2c_pb7_fmp: {=bool:?}, i2c_pb8_fmp: {=bool:?}, i2c_pb9_fmp: {=bool:?}, i2c_pa9_fmp: {=bool:?}, i2c_pa10_fmp: {=bool:?}, i2c3_fmp: {=bool:?} }}",
+                self.mem_mode(),
+                self.pa11_rmp(),
+                self.pa12_rmp(),
+                self.ir_pol(),
+                self.ir_mod(),
+                self.boosten(),
+                self.i2c_pb6_fmp(),
+                self.i2c_pb7_fmp(),
+                self.i2c_pb8_fmp(),
+                self.i2c_pb9_fmp(),
+                self.i2c_pa9_fmp(),
+                self.i2c_pa10_fmp(),
+                self.i2c3_fmp()
+            )
         }
     }
     #[doc = "SYSCFG configuration register 2"]
@@ -513,7 +529,17 @@ in the PWR_CR register."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr2 {{ ccl: {=bool:?}, spl: {=bool:?}, pvdl: {=bool:?}, eccl: {=bool:?}, bkpl: {=bool:?}, bkpf: {=bool:?}, spf: {=bool:?} }}" , self . ccl () , self . spl () , self . pvdl () , self . eccl () , self . bkpl () , self . bkpf () , self . spf ())
+            defmt::write!(
+                f,
+                "Cfgr2 {{ ccl: {=bool:?}, spl: {=bool:?}, pvdl: {=bool:?}, eccl: {=bool:?}, bkpl: {=bool:?}, bkpf: {=bool:?}, spf: {=bool:?} }}",
+                self.ccl(),
+                self.spl(),
+                self.pvdl(),
+                self.eccl(),
+                self.bkpl(),
+                self.bkpf(),
+                self.spf()
+            )
         }
     }
     #[doc = "SYSCFG interrupt line 0 status register"]
@@ -840,7 +866,20 @@ in the PWR_CR register."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline11 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Itline11 {{ dmamux: {=bool:?}, dma1_ch4: {=bool:?}, dma1_ch5: {=bool:?}, dma1_ch6: {=bool:?}, dma1_ch7: {=bool:?}, dma2_ch1: {=bool:?}, dma2_ch2: {=bool:?}, dma2_ch3: {=bool:?}, dma2_ch4: {=bool:?}, dma2_ch5: {=bool:?} }}" , self . dmamux () , self . dma1_ch4 () , self . dma1_ch5 () , self . dma1_ch6 () , self . dma1_ch7 () , self . dma2_ch1 () , self . dma2_ch2 () , self . dma2_ch3 () , self . dma2_ch4 () , self . dma2_ch5 ())
+            defmt::write!(
+                f,
+                "Itline11 {{ dmamux: {=bool:?}, dma1_ch4: {=bool:?}, dma1_ch5: {=bool:?}, dma1_ch6: {=bool:?}, dma1_ch7: {=bool:?}, dma2_ch1: {=bool:?}, dma2_ch2: {=bool:?}, dma2_ch3: {=bool:?}, dma2_ch4: {=bool:?}, dma2_ch5: {=bool:?} }}",
+                self.dmamux(),
+                self.dma1_ch4(),
+                self.dma1_ch5(),
+                self.dma1_ch6(),
+                self.dma1_ch7(),
+                self.dma2_ch1(),
+                self.dma2_ch2(),
+                self.dma2_ch3(),
+                self.dma2_ch4(),
+                self.dma2_ch5()
+            )
         }
     }
     #[doc = "SYSCFG interrupt line 12 status register"]
@@ -2353,7 +2392,22 @@ in the PWR_CR register."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline7 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Itline7 {{ exti4: {=bool:?}, exti5: {=bool:?}, exti6: {=bool:?}, exti7: {=bool:?}, exti8: {=bool:?}, exti9: {=bool:?}, exti10: {=bool:?}, exti11: {=bool:?}, exti12: {=bool:?}, exti13: {=bool:?}, exti14: {=bool:?}, exti15: {=bool:?} }}" , self . exti4 () , self . exti5 () , self . exti6 () , self . exti7 () , self . exti8 () , self . exti9 () , self . exti10 () , self . exti11 () , self . exti12 () , self . exti13 () , self . exti14 () , self . exti15 ())
+            defmt::write!(
+                f,
+                "Itline7 {{ exti4: {=bool:?}, exti5: {=bool:?}, exti6: {=bool:?}, exti7: {=bool:?}, exti8: {=bool:?}, exti9: {=bool:?}, exti10: {=bool:?}, exti11: {=bool:?}, exti12: {=bool:?}, exti13: {=bool:?}, exti14: {=bool:?}, exti15: {=bool:?} }}",
+                self.exti4(),
+                self.exti5(),
+                self.exti6(),
+                self.exti7(),
+                self.exti8(),
+                self.exti9(),
+                self.exti10(),
+                self.exti11(),
+                self.exti12(),
+                self.exti13(),
+                self.exti14(),
+                self.exti15()
+            )
         }
     }
     #[doc = "SYSCFG interrupt line 8 status register"]
@@ -2619,7 +2673,16 @@ Writing a wrong key reactivates the write protection."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tsccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Tsccr {{ g2_io1: {=bool:?}, g2_io3: {=bool:?}, g4_io3: {=bool:?}, g6_io1: {=bool:?}, g7_io1: {=bool:?}, tsc_ioctrl: {=bool:?} }}" , self . g2_io1 () , self . g2_io3 () , self . g4_io3 () , self . g6_io1 () , self . g7_io1 () , self . tsc_ioctrl ())
+            defmt::write!(
+                f,
+                "Tsccr {{ g2_io1: {=bool:?}, g2_io3: {=bool:?}, g4_io3: {=bool:?}, g6_io1: {=bool:?}, g7_io1: {=bool:?}, tsc_ioctrl: {=bool:?} }}",
+                self.g2_io1(),
+                self.g2_io3(),
+                self.g4_io3(),
+                self.g6_io1(),
+                self.g7_io1(),
+                self.tsc_ioctrl()
+            )
         }
     }
 }

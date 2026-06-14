@@ -184,7 +184,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for CxMr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "CxMr {{ chom[0]: {=bool:?}, chom[1]: {=bool:?}, chom[2]: {=bool:?}, chom[3]: {=bool:?}, chom[4]: {=bool:?}, chom[5]: {=bool:?}, chfm[0]: {=bool:?}, chfm[1]: {=bool:?}, chfm[2]: {=bool:?}, chfm[3]: {=bool:?}, chfm[4]: {=bool:?}, chfm[5]: {=bool:?} }}" , self . chom (0usize) , self . chom (1usize) , self . chom (2usize) , self . chom (3usize) , self . chom (4usize) , self . chom (5usize) , self . chfm (0usize) , self . chfm (1usize) , self . chfm (2usize) , self . chfm (3usize) , self . chfm (4usize) , self . chfm (5usize))
+            defmt::write!(
+                f,
+                "CxMr {{ chom[0]: {=bool:?}, chom[1]: {=bool:?}, chom[2]: {=bool:?}, chom[3]: {=bool:?}, chom[4]: {=bool:?}, chom[5]: {=bool:?}, chfm[0]: {=bool:?}, chfm[1]: {=bool:?}, chfm[2]: {=bool:?}, chfm[3]: {=bool:?}, chfm[4]: {=bool:?}, chfm[5]: {=bool:?} }}",
+                self.chom(0usize),
+                self.chom(1usize),
+                self.chom(2usize),
+                self.chom(3usize),
+                self.chom(4usize),
+                self.chom(5usize),
+                self.chfm(0usize),
+                self.chfm(1usize),
+                self.chfm(2usize),
+                self.chfm(3usize),
+                self.chfm(4usize),
+                self.chfm(5usize)
+            )
         }
     }
     #[doc = "Status Set or Clear register CPUx"]
@@ -252,7 +267,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for CxScr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "CxScr {{ chc[0]: {=bool:?}, chc[1]: {=bool:?}, chc[2]: {=bool:?}, chc[3]: {=bool:?}, chc[4]: {=bool:?}, chc[5]: {=bool:?}, chs[0]: {=bool:?}, chs[1]: {=bool:?}, chs[2]: {=bool:?}, chs[3]: {=bool:?}, chs[4]: {=bool:?}, chs[5]: {=bool:?} }}" , self . chc (0usize) , self . chc (1usize) , self . chc (2usize) , self . chc (3usize) , self . chc (4usize) , self . chc (5usize) , self . chs (0usize) , self . chs (1usize) , self . chs (2usize) , self . chs (3usize) , self . chs (4usize) , self . chs (5usize))
+            defmt::write!(
+                f,
+                "CxScr {{ chc[0]: {=bool:?}, chc[1]: {=bool:?}, chc[2]: {=bool:?}, chc[3]: {=bool:?}, chc[4]: {=bool:?}, chc[5]: {=bool:?}, chs[0]: {=bool:?}, chs[1]: {=bool:?}, chs[2]: {=bool:?}, chs[3]: {=bool:?}, chs[4]: {=bool:?}, chs[5]: {=bool:?} }}",
+                self.chc(0usize),
+                self.chc(1usize),
+                self.chc(2usize),
+                self.chc(3usize),
+                self.chc(4usize),
+                self.chc(5usize),
+                self.chs(0usize),
+                self.chs(1usize),
+                self.chs(2usize),
+                self.chs(3usize),
+                self.chs(4usize),
+                self.chs(5usize)
+            )
         }
     }
     #[doc = "CPUx to CPUy status register"]
@@ -298,7 +328,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for CxTOySr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "CxTOySr {{ chf[0]: {=bool:?}, chf[1]: {=bool:?}, chf[2]: {=bool:?}, chf[3]: {=bool:?}, chf[4]: {=bool:?}, chf[5]: {=bool:?} }}" , self . chf (0usize) , self . chf (1usize) , self . chf (2usize) , self . chf (3usize) , self . chf (4usize) , self . chf (5usize))
+            defmt::write!(
+                f,
+                "CxTOySr {{ chf[0]: {=bool:?}, chf[1]: {=bool:?}, chf[2]: {=bool:?}, chf[3]: {=bool:?}, chf[4]: {=bool:?}, chf[5]: {=bool:?} }}",
+                self.chf(0usize),
+                self.chf(1usize),
+                self.chf(2usize),
+                self.chf(3usize),
+                self.chf(4usize),
+                self.chf(5usize)
+            )
         }
     }
 }

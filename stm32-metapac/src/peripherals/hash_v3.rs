@@ -202,7 +202,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ init: {=bool:?}, dmae: {=bool:?}, datatype: {=u8:?}, mode: {=bool:?}, nbw: {=u8:?}, dinne: {=bool:?}, mdmat: {=bool:?}, lkey: {=bool:?}, algo: {=u8:?} }}" , self . init () , self . dmae () , self . datatype () , self . mode () , self . nbw () , self . dinne () , self . mdmat () , self . lkey () , self . algo ())
+            defmt::write!(
+                f,
+                "Cr {{ init: {=bool:?}, dmae: {=bool:?}, datatype: {=u8:?}, mode: {=bool:?}, nbw: {=u8:?}, dinne: {=bool:?}, mdmat: {=bool:?}, lkey: {=bool:?}, algo: {=u8:?} }}",
+                self.init(),
+                self.dmae(),
+                self.datatype(),
+                self.mode(),
+                self.nbw(),
+                self.dinne(),
+                self.mdmat(),
+                self.lkey(),
+                self.algo()
+            )
         }
     }
     #[doc = "interrupt enable register."]
@@ -372,7 +384,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ dinis: {=bool:?}, dcis: {=bool:?}, dmas: {=bool:?}, busy: {=bool:?}, nbwp: {=u8:?}, dinne: {=bool:?}, nbwe: {=u8:?} }}" , self . dinis () , self . dcis () , self . dmas () , self . busy () , self . nbwp () , self . dinne () , self . nbwe ())
+            defmt::write!(
+                f,
+                "Sr {{ dinis: {=bool:?}, dcis: {=bool:?}, dmas: {=bool:?}, busy: {=bool:?}, nbwp: {=u8:?}, dinne: {=bool:?}, nbwe: {=u8:?} }}",
+                self.dinis(),
+                self.dcis(),
+                self.dmas(),
+                self.busy(),
+                self.nbwp(),
+                self.dinne(),
+                self.nbwe()
+            )
         }
     }
     #[doc = "start register."]

@@ -379,7 +379,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ csien: {=bool:?}, vc0start: {=bool:?}, vc0stop: {=bool:?}, vc1start: {=bool:?}, vc1stop: {=bool:?}, vc2start: {=bool:?}, vc2stop: {=bool:?}, vc3start: {=bool:?}, vc3stop: {=bool:?} }}" , self . csien () , self . vc0start () , self . vc0stop () , self . vc1start () , self . vc1stop () , self . vc2start () , self . vc2stop () , self . vc3start () , self . vc3stop ())
+            defmt::write!(
+                f,
+                "Cr {{ csien: {=bool:?}, vc0start: {=bool:?}, vc0stop: {=bool:?}, vc1start: {=bool:?}, vc1stop: {=bool:?}, vc2start: {=bool:?}, vc2stop: {=bool:?}, vc3start: {=bool:?}, vc3stop: {=bool:?} }}",
+                self.csien(),
+                self.vc0start(),
+                self.vc0stop(),
+                self.vc1start(),
+                self.vc1stop(),
+                self.vc2start(),
+                self.vc2stop(),
+                self.vc3start(),
+                self.vc3stop()
+            )
         }
     }
     #[doc = "CSI-2 Host error register 1."]
@@ -481,7 +493,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Err1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Err1 {{ crcdterr: {=u8:?}, crcvcerr: {=u8:?}, ceccdterr: {=u8:?}, ceccvcerr: {=u8:?}, iddterr: {=u8:?}, idvcerr: {=u8:?} }}" , self . crcdterr () , self . crcvcerr () , self . ceccdterr () , self . ceccvcerr () , self . iddterr () , self . idvcerr ())
+            defmt::write!(
+                f,
+                "Err1 {{ crcdterr: {=u8:?}, crcvcerr: {=u8:?}, ceccdterr: {=u8:?}, ceccvcerr: {=u8:?}, iddterr: {=u8:?}, idvcerr: {=u8:?} }}",
+                self.crcdterr(),
+                self.crcvcerr(),
+                self.ceccdterr(),
+                self.ceccvcerr(),
+                self.iddterr(),
+                self.idvcerr()
+            )
         }
     }
     #[doc = "CSI-2 Host error register 2."]
@@ -913,7 +934,35 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fcr0 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Fcr0 {{ clb0f: {=bool:?}, clb1f: {=bool:?}, clb2f: {=bool:?}, clb3f: {=bool:?}, ctim0f: {=bool:?}, ctim1f: {=bool:?}, ctim2f: {=bool:?}, ctim3f: {=bool:?}, csof0f: {=bool:?}, csof1f: {=bool:?}, csof2f: {=bool:?}, csof3f: {=bool:?}, ceof0f: {=bool:?}, ceof1f: {=bool:?}, ceof2f: {=bool:?}, ceof3f: {=bool:?}, cspktf: {=bool:?}, cccfifoff: {=bool:?}, ccrcerrf: {=bool:?}, ceccerrf: {=bool:?}, cceccerrf: {=bool:?}, ciderrf: {=bool:?}, cspkterrf: {=bool:?}, cwderrf: {=bool:?}, csyncerrf: {=bool:?} }}" , self . clb0f () , self . clb1f () , self . clb2f () , self . clb3f () , self . ctim0f () , self . ctim1f () , self . ctim2f () , self . ctim3f () , self . csof0f () , self . csof1f () , self . csof2f () , self . csof3f () , self . ceof0f () , self . ceof1f () , self . ceof2f () , self . ceof3f () , self . cspktf () , self . cccfifoff () , self . ccrcerrf () , self . ceccerrf () , self . cceccerrf () , self . ciderrf () , self . cspkterrf () , self . cwderrf () , self . csyncerrf ())
+            defmt::write!(
+                f,
+                "Fcr0 {{ clb0f: {=bool:?}, clb1f: {=bool:?}, clb2f: {=bool:?}, clb3f: {=bool:?}, ctim0f: {=bool:?}, ctim1f: {=bool:?}, ctim2f: {=bool:?}, ctim3f: {=bool:?}, csof0f: {=bool:?}, csof1f: {=bool:?}, csof2f: {=bool:?}, csof3f: {=bool:?}, ceof0f: {=bool:?}, ceof1f: {=bool:?}, ceof2f: {=bool:?}, ceof3f: {=bool:?}, cspktf: {=bool:?}, cccfifoff: {=bool:?}, ccrcerrf: {=bool:?}, ceccerrf: {=bool:?}, cceccerrf: {=bool:?}, ciderrf: {=bool:?}, cspkterrf: {=bool:?}, cwderrf: {=bool:?}, csyncerrf: {=bool:?} }}",
+                self.clb0f(),
+                self.clb1f(),
+                self.clb2f(),
+                self.clb3f(),
+                self.ctim0f(),
+                self.ctim1f(),
+                self.ctim2f(),
+                self.ctim3f(),
+                self.csof0f(),
+                self.csof1f(),
+                self.csof2f(),
+                self.csof3f(),
+                self.ceof0f(),
+                self.ceof1f(),
+                self.ceof2f(),
+                self.ceof3f(),
+                self.cspktf(),
+                self.cccfifoff(),
+                self.ccrcerrf(),
+                self.ceccerrf(),
+                self.cceccerrf(),
+                self.ciderrf(),
+                self.cspkterrf(),
+                self.cwderrf(),
+                self.csyncerrf()
+            )
         }
     }
     #[doc = "CSI-2 Host flag clear register 1."]
@@ -1067,7 +1116,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fcr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Fcr1 {{ cesotdl0f: {=bool:?}, cesotsyncdl0f: {=bool:?}, ceescdl0f: {=bool:?}, cesyncescdl0f: {=bool:?}, cectrldl0f: {=bool:?}, cesotdl1f: {=bool:?}, cesotsyncdl1f: {=bool:?}, ceescdl1f: {=bool:?}, cesyncescdl1f: {=bool:?}, cectrldl1f: {=bool:?} }}" , self . cesotdl0f () , self . cesotsyncdl0f () , self . ceescdl0f () , self . cesyncescdl0f () , self . cectrldl0f () , self . cesotdl1f () , self . cesotsyncdl1f () , self . ceescdl1f () , self . cesyncescdl1f () , self . cectrldl1f ())
+            defmt::write!(
+                f,
+                "Fcr1 {{ cesotdl0f: {=bool:?}, cesotsyncdl0f: {=bool:?}, ceescdl0f: {=bool:?}, cesyncescdl0f: {=bool:?}, cectrldl0f: {=bool:?}, cesotdl1f: {=bool:?}, cesotsyncdl1f: {=bool:?}, ceescdl1f: {=bool:?}, cesyncescdl1f: {=bool:?}, cectrldl1f: {=bool:?} }}",
+                self.cesotdl0f(),
+                self.cesotsyncdl0f(),
+                self.ceescdl0f(),
+                self.cesyncescdl0f(),
+                self.cectrldl0f(),
+                self.cesotdl1f(),
+                self.cesotsyncdl1f(),
+                self.ceescdl1f(),
+                self.cesyncescdl1f(),
+                self.cectrldl1f()
+            )
         }
     }
     #[doc = "CSI-2 Host interrupt enable register 0."]
@@ -1416,7 +1478,35 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier0 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier0 {{ lb0ie: {=bool:?}, lb1ie: {=bool:?}, lb2ie: {=bool:?}, lb3ie: {=bool:?}, tim0ie: {=bool:?}, tim1ie: {=bool:?}, tim2ie: {=bool:?}, tim3ie: {=bool:?}, sof0ie: {=bool:?}, sof1ie: {=bool:?}, sof2ie: {=bool:?}, sof3ie: {=bool:?}, eof0ie: {=bool:?}, eof1ie: {=bool:?}, eof2ie: {=bool:?}, eof3ie: {=bool:?}, spktie: {=bool:?}, ccfifofie: {=bool:?}, crcerrie: {=bool:?}, eccerrie: {=bool:?}, ceccerrie: {=bool:?}, iderrie: {=bool:?}, spkterrie: {=bool:?}, wderrie: {=bool:?}, syncerrie: {=bool:?} }}" , self . lb0ie () , self . lb1ie () , self . lb2ie () , self . lb3ie () , self . tim0ie () , self . tim1ie () , self . tim2ie () , self . tim3ie () , self . sof0ie () , self . sof1ie () , self . sof2ie () , self . sof3ie () , self . eof0ie () , self . eof1ie () , self . eof2ie () , self . eof3ie () , self . spktie () , self . ccfifofie () , self . crcerrie () , self . eccerrie () , self . ceccerrie () , self . iderrie () , self . spkterrie () , self . wderrie () , self . syncerrie ())
+            defmt::write!(
+                f,
+                "Ier0 {{ lb0ie: {=bool:?}, lb1ie: {=bool:?}, lb2ie: {=bool:?}, lb3ie: {=bool:?}, tim0ie: {=bool:?}, tim1ie: {=bool:?}, tim2ie: {=bool:?}, tim3ie: {=bool:?}, sof0ie: {=bool:?}, sof1ie: {=bool:?}, sof2ie: {=bool:?}, sof3ie: {=bool:?}, eof0ie: {=bool:?}, eof1ie: {=bool:?}, eof2ie: {=bool:?}, eof3ie: {=bool:?}, spktie: {=bool:?}, ccfifofie: {=bool:?}, crcerrie: {=bool:?}, eccerrie: {=bool:?}, ceccerrie: {=bool:?}, iderrie: {=bool:?}, spkterrie: {=bool:?}, wderrie: {=bool:?}, syncerrie: {=bool:?} }}",
+                self.lb0ie(),
+                self.lb1ie(),
+                self.lb2ie(),
+                self.lb3ie(),
+                self.tim0ie(),
+                self.tim1ie(),
+                self.tim2ie(),
+                self.tim3ie(),
+                self.sof0ie(),
+                self.sof1ie(),
+                self.sof2ie(),
+                self.sof3ie(),
+                self.eof0ie(),
+                self.eof1ie(),
+                self.eof2ie(),
+                self.eof3ie(),
+                self.spktie(),
+                self.ccfifofie(),
+                self.crcerrie(),
+                self.eccerrie(),
+                self.ceccerrie(),
+                self.iderrie(),
+                self.spkterrie(),
+                self.wderrie(),
+                self.syncerrie()
+            )
         }
     }
     #[doc = "CSI-2 Host interrupt enable register 1."]
@@ -1570,7 +1660,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier1 {{ esotdl0ie: {=bool:?}, esotsyncdl0ie: {=bool:?}, eescdl0ie: {=bool:?}, esyncescdl0ie: {=bool:?}, ectrldl0ie: {=bool:?}, esotdl1ie: {=bool:?}, esotsyncdl1ie: {=bool:?}, eescdl1ie: {=bool:?}, esyncescdl1ie: {=bool:?}, ectrldl1ie: {=bool:?} }}" , self . esotdl0ie () , self . esotsyncdl0ie () , self . eescdl0ie () , self . esyncescdl0ie () , self . ectrldl0ie () , self . esotdl1ie () , self . esotsyncdl1ie () , self . eescdl1ie () , self . esyncescdl1ie () , self . ectrldl1ie ())
+            defmt::write!(
+                f,
+                "Ier1 {{ esotdl0ie: {=bool:?}, esotsyncdl0ie: {=bool:?}, eescdl0ie: {=bool:?}, esyncescdl0ie: {=bool:?}, ectrldl0ie: {=bool:?}, esotdl1ie: {=bool:?}, esotsyncdl1ie: {=bool:?}, eescdl1ie: {=bool:?}, esyncescdl1ie: {=bool:?}, ectrldl1ie: {=bool:?} }}",
+                self.esotdl0ie(),
+                self.esotsyncdl0ie(),
+                self.eescdl0ie(),
+                self.esyncescdl0ie(),
+                self.ectrldl0ie(),
+                self.esotdl1ie(),
+                self.esotsyncdl1ie(),
+                self.eescdl1ie(),
+                self.esyncescdl1ie(),
+                self.ectrldl1ie()
+            )
         }
     }
     #[doc = "CSI-2 Host line byte 0 configuration register."]
@@ -2126,7 +2229,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pmcr {{ frxmdl0: {=bool:?}, frxmdl1: {=bool:?}, ftxsmdl0: {=bool:?}, dtdl: {=bool:?}, rtdl0: {=bool:?}, tuesdl0: {=bool:?}, tuexdl0: {=bool:?} }}" , self . frxmdl0 () , self . frxmdl1 () , self . ftxsmdl0 () , self . dtdl () , self . rtdl0 () , self . tuesdl0 () , self . tuexdl0 ())
+            defmt::write!(
+                f,
+                "Pmcr {{ frxmdl0: {=bool:?}, frxmdl1: {=bool:?}, ftxsmdl0: {=bool:?}, dtdl: {=bool:?}, rtdl0: {=bool:?}, tuesdl0: {=bool:?}, tuexdl0: {=bool:?} }}",
+                self.frxmdl0(),
+                self.frxmdl1(),
+                self.ftxsmdl0(),
+                self.dtdl(),
+                self.rtdl0(),
+                self.tuesdl0(),
+                self.tuexdl0()
+            )
         }
     }
     #[doc = "CSI PHY reset control register."]
@@ -2445,7 +2558,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Prgitr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Prgitr {{ lb0vc: {=u8:?}, lb0en: {=bool:?}, lb1vc: {=u8:?}, lb1en: {=bool:?}, lb2vc: {=u8:?}, lb2en: {=bool:?}, lb3vc: {=u8:?}, lb3en: {=bool:?}, tim0vc: {=u8:?}, tim0eof: {=bool:?}, tim0en: {=bool:?}, tim1vc: {=u8:?}, tim1eof: {=bool:?}, tim1en: {=bool:?}, tim2vc: {=u8:?}, tim2eof: {=bool:?}, tim2en: {=bool:?}, tim3vc: {=u8:?}, tim3eof: {=bool:?}, tim3en: {=bool:?} }}" , self . lb0vc () , self . lb0en () , self . lb1vc () , self . lb1en () , self . lb2vc () , self . lb2en () , self . lb3vc () , self . lb3en () , self . tim0vc () , self . tim0eof () , self . tim0en () , self . tim1vc () , self . tim1eof () , self . tim1en () , self . tim2vc () , self . tim2eof () , self . tim2en () , self . tim3vc () , self . tim3eof () , self . tim3en ())
+            defmt::write!(
+                f,
+                "Prgitr {{ lb0vc: {=u8:?}, lb0en: {=bool:?}, lb1vc: {=u8:?}, lb1en: {=bool:?}, lb2vc: {=u8:?}, lb2en: {=bool:?}, lb3vc: {=u8:?}, lb3en: {=bool:?}, tim0vc: {=u8:?}, tim0eof: {=bool:?}, tim0en: {=bool:?}, tim1vc: {=u8:?}, tim1eof: {=bool:?}, tim1en: {=bool:?}, tim2vc: {=u8:?}, tim2eof: {=bool:?}, tim2en: {=bool:?}, tim3vc: {=u8:?}, tim3eof: {=bool:?}, tim3en: {=bool:?} }}",
+                self.lb0vc(),
+                self.lb0en(),
+                self.lb1vc(),
+                self.lb1en(),
+                self.lb2vc(),
+                self.lb2en(),
+                self.lb3vc(),
+                self.lb3en(),
+                self.tim0vc(),
+                self.tim0eof(),
+                self.tim0en(),
+                self.tim1vc(),
+                self.tim1eof(),
+                self.tim1en(),
+                self.tim2vc(),
+                self.tim2eof(),
+                self.tim2en(),
+                self.tim3vc(),
+                self.tim3eof(),
+                self.tim3en()
+            )
         }
     }
     #[doc = "CSI PHY test control register 0."]
@@ -3055,7 +3191,39 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr0 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr0 {{ lb0f: {=bool:?}, lb1f: {=bool:?}, lb2f: {=bool:?}, lb3f: {=bool:?}, tim0f: {=bool:?}, tim1f: {=bool:?}, tim2f: {=bool:?}, tim3f: {=bool:?}, sof0f: {=bool:?}, sof1f: {=bool:?}, sof2f: {=bool:?}, sof3f: {=bool:?}, eof0f: {=bool:?}, eof1f: {=bool:?}, eof2f: {=bool:?}, eof3f: {=bool:?}, spktf: {=bool:?}, vc0statef: {=bool:?}, vc1statef: {=bool:?}, vc2statef: {=bool:?}, vc3statef: {=bool:?}, ccfifoff: {=bool:?}, crcerrf: {=bool:?}, eccerrf: {=bool:?}, ceccerrf: {=bool:?}, iderrf: {=bool:?}, spkterrf: {=bool:?}, wderrf: {=bool:?}, syncerrf: {=bool:?} }}" , self . lb0f () , self . lb1f () , self . lb2f () , self . lb3f () , self . tim0f () , self . tim1f () , self . tim2f () , self . tim3f () , self . sof0f () , self . sof1f () , self . sof2f () , self . sof3f () , self . eof0f () , self . eof1f () , self . eof2f () , self . eof3f () , self . spktf () , self . vc0statef () , self . vc1statef () , self . vc2statef () , self . vc3statef () , self . ccfifoff () , self . crcerrf () , self . eccerrf () , self . ceccerrf () , self . iderrf () , self . spkterrf () , self . wderrf () , self . syncerrf ())
+            defmt::write!(
+                f,
+                "Sr0 {{ lb0f: {=bool:?}, lb1f: {=bool:?}, lb2f: {=bool:?}, lb3f: {=bool:?}, tim0f: {=bool:?}, tim1f: {=bool:?}, tim2f: {=bool:?}, tim3f: {=bool:?}, sof0f: {=bool:?}, sof1f: {=bool:?}, sof2f: {=bool:?}, sof3f: {=bool:?}, eof0f: {=bool:?}, eof1f: {=bool:?}, eof2f: {=bool:?}, eof3f: {=bool:?}, spktf: {=bool:?}, vc0statef: {=bool:?}, vc1statef: {=bool:?}, vc2statef: {=bool:?}, vc3statef: {=bool:?}, ccfifoff: {=bool:?}, crcerrf: {=bool:?}, eccerrf: {=bool:?}, ceccerrf: {=bool:?}, iderrf: {=bool:?}, spkterrf: {=bool:?}, wderrf: {=bool:?}, syncerrf: {=bool:?} }}",
+                self.lb0f(),
+                self.lb1f(),
+                self.lb2f(),
+                self.lb3f(),
+                self.tim0f(),
+                self.tim1f(),
+                self.tim2f(),
+                self.tim3f(),
+                self.sof0f(),
+                self.sof1f(),
+                self.sof2f(),
+                self.sof3f(),
+                self.eof0f(),
+                self.eof1f(),
+                self.eof2f(),
+                self.eof3f(),
+                self.spktf(),
+                self.vc0statef(),
+                self.vc1statef(),
+                self.vc2statef(),
+                self.vc3statef(),
+                self.ccfifoff(),
+                self.crcerrf(),
+                self.eccerrf(),
+                self.ceccerrf(),
+                self.iderrf(),
+                self.spkterrf(),
+                self.wderrf(),
+                self.syncerrf()
+            )
         }
     }
     #[doc = "CSI-2 Host status register 1."]
@@ -3391,7 +3559,34 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr1 {{ esotdl0f: {=bool:?}, esotsyncdl0f: {=bool:?}, eescdl0f: {=bool:?}, esyncescdl0f: {=bool:?}, ectrldl0f: {=bool:?}, esotdl1f: {=bool:?}, esotsyncdl1f: {=bool:?}, eescdl1f: {=bool:?}, esyncescdl1f: {=bool:?}, ectrldl1f: {=bool:?}, actdl0f: {=bool:?}, syncdl0f: {=bool:?}, skcaldl0f: {=bool:?}, stopdl0f: {=bool:?}, ulpndl0f: {=bool:?}, actdl1f: {=bool:?}, syncdl1f: {=bool:?}, skcaldl1f: {=bool:?}, stopdl1f: {=bool:?}, ulpndl1f: {=bool:?}, stopclf: {=bool:?}, ulpnactf: {=bool:?}, ulpnclf: {=bool:?}, actclf: {=bool:?} }}" , self . esotdl0f () , self . esotsyncdl0f () , self . eescdl0f () , self . esyncescdl0f () , self . ectrldl0f () , self . esotdl1f () , self . esotsyncdl1f () , self . eescdl1f () , self . esyncescdl1f () , self . ectrldl1f () , self . actdl0f () , self . syncdl0f () , self . skcaldl0f () , self . stopdl0f () , self . ulpndl0f () , self . actdl1f () , self . syncdl1f () , self . skcaldl1f () , self . stopdl1f () , self . ulpndl1f () , self . stopclf () , self . ulpnactf () , self . ulpnclf () , self . actclf ())
+            defmt::write!(
+                f,
+                "Sr1 {{ esotdl0f: {=bool:?}, esotsyncdl0f: {=bool:?}, eescdl0f: {=bool:?}, esyncescdl0f: {=bool:?}, ectrldl0f: {=bool:?}, esotdl1f: {=bool:?}, esotsyncdl1f: {=bool:?}, eescdl1f: {=bool:?}, esyncescdl1f: {=bool:?}, ectrldl1f: {=bool:?}, actdl0f: {=bool:?}, syncdl0f: {=bool:?}, skcaldl0f: {=bool:?}, stopdl0f: {=bool:?}, ulpndl0f: {=bool:?}, actdl1f: {=bool:?}, syncdl1f: {=bool:?}, skcaldl1f: {=bool:?}, stopdl1f: {=bool:?}, ulpndl1f: {=bool:?}, stopclf: {=bool:?}, ulpnactf: {=bool:?}, ulpnclf: {=bool:?}, actclf: {=bool:?} }}",
+                self.esotdl0f(),
+                self.esotsyncdl0f(),
+                self.eescdl0f(),
+                self.esyncescdl0f(),
+                self.ectrldl0f(),
+                self.esotdl1f(),
+                self.esotsyncdl1f(),
+                self.eescdl1f(),
+                self.esyncescdl1f(),
+                self.ectrldl1f(),
+                self.actdl0f(),
+                self.syncdl0f(),
+                self.skcaldl0f(),
+                self.stopdl0f(),
+                self.ulpndl0f(),
+                self.actdl1f(),
+                self.syncdl1f(),
+                self.skcaldl1f(),
+                self.stopdl1f(),
+                self.ulpndl1f(),
+                self.stopclf(),
+                self.ulpnactf(),
+                self.ulpnclf(),
+                self.actclf()
+            )
         }
     }
     #[doc = "CSI-2 Host timer 0 configuration register."]
@@ -3698,7 +3893,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vc0cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Vc0cfgr1 {{ alldt: {=bool:?}, dt0en: {=bool:?}, dt1en: {=bool:?}, dt2en: {=bool:?}, dt3en: {=bool:?}, dt4en: {=bool:?}, dt5en: {=bool:?}, dt6en: {=bool:?}, cdtft: {=u8:?}, dt0: {=u8:?}, dt0ft: {=u8:?} }}" , self . alldt () , self . dt0en () , self . dt1en () , self . dt2en () , self . dt3en () , self . dt4en () , self . dt5en () , self . dt6en () , self . cdtft () , self . dt0 () , self . dt0ft ())
+            defmt::write!(
+                f,
+                "Vc0cfgr1 {{ alldt: {=bool:?}, dt0en: {=bool:?}, dt1en: {=bool:?}, dt2en: {=bool:?}, dt3en: {=bool:?}, dt4en: {=bool:?}, dt5en: {=bool:?}, dt6en: {=bool:?}, cdtft: {=u8:?}, dt0: {=u8:?}, dt0ft: {=u8:?} }}",
+                self.alldt(),
+                self.dt0en(),
+                self.dt1en(),
+                self.dt2en(),
+                self.dt3en(),
+                self.dt4en(),
+                self.dt5en(),
+                self.dt6en(),
+                self.cdtft(),
+                self.dt0(),
+                self.dt0ft()
+            )
         }
     }
     #[doc = "CSI-2 Host virtual channel 0 configuration register 2."]
@@ -4114,7 +4323,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vc1cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Vc1cfgr1 {{ alldt: {=bool:?}, dt0en: {=bool:?}, dt1en: {=bool:?}, dt2en: {=bool:?}, dt3en: {=bool:?}, dt4en: {=bool:?}, dt5en: {=bool:?}, dt6en: {=bool:?}, cdtft: {=u8:?}, dt0: {=u8:?}, dt0ft: {=u8:?} }}" , self . alldt () , self . dt0en () , self . dt1en () , self . dt2en () , self . dt3en () , self . dt4en () , self . dt5en () , self . dt6en () , self . cdtft () , self . dt0 () , self . dt0ft ())
+            defmt::write!(
+                f,
+                "Vc1cfgr1 {{ alldt: {=bool:?}, dt0en: {=bool:?}, dt1en: {=bool:?}, dt2en: {=bool:?}, dt3en: {=bool:?}, dt4en: {=bool:?}, dt5en: {=bool:?}, dt6en: {=bool:?}, cdtft: {=u8:?}, dt0: {=u8:?}, dt0ft: {=u8:?} }}",
+                self.alldt(),
+                self.dt0en(),
+                self.dt1en(),
+                self.dt2en(),
+                self.dt3en(),
+                self.dt4en(),
+                self.dt5en(),
+                self.dt6en(),
+                self.cdtft(),
+                self.dt0(),
+                self.dt0ft()
+            )
         }
     }
     #[doc = "CSI-2 Host virtual channel 1 configuration register 2."]
@@ -4530,7 +4753,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vc2cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Vc2cfgr1 {{ alldt: {=bool:?}, dt0en: {=bool:?}, dt1en: {=bool:?}, dt2en: {=bool:?}, dt3en: {=bool:?}, dt4en: {=bool:?}, dt5en: {=bool:?}, dt6en: {=bool:?}, cdtft: {=u8:?}, dt0: {=u8:?}, dt0ft: {=u8:?} }}" , self . alldt () , self . dt0en () , self . dt1en () , self . dt2en () , self . dt3en () , self . dt4en () , self . dt5en () , self . dt6en () , self . cdtft () , self . dt0 () , self . dt0ft ())
+            defmt::write!(
+                f,
+                "Vc2cfgr1 {{ alldt: {=bool:?}, dt0en: {=bool:?}, dt1en: {=bool:?}, dt2en: {=bool:?}, dt3en: {=bool:?}, dt4en: {=bool:?}, dt5en: {=bool:?}, dt6en: {=bool:?}, cdtft: {=u8:?}, dt0: {=u8:?}, dt0ft: {=u8:?} }}",
+                self.alldt(),
+                self.dt0en(),
+                self.dt1en(),
+                self.dt2en(),
+                self.dt3en(),
+                self.dt4en(),
+                self.dt5en(),
+                self.dt6en(),
+                self.cdtft(),
+                self.dt0(),
+                self.dt0ft()
+            )
         }
     }
     #[doc = "CSI-2 Host virtual channel 2 configuration register 2."]
@@ -4946,7 +5183,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vc3cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Vc3cfgr1 {{ alldt: {=bool:?}, dt0en: {=bool:?}, dt1en: {=bool:?}, dt2en: {=bool:?}, dt3en: {=bool:?}, dt4en: {=bool:?}, dt5en: {=bool:?}, dt6en: {=bool:?}, cdtft: {=u8:?}, dt0: {=u8:?}, dt0ft: {=u8:?} }}" , self . alldt () , self . dt0en () , self . dt1en () , self . dt2en () , self . dt3en () , self . dt4en () , self . dt5en () , self . dt6en () , self . cdtft () , self . dt0 () , self . dt0ft ())
+            defmt::write!(
+                f,
+                "Vc3cfgr1 {{ alldt: {=bool:?}, dt0en: {=bool:?}, dt1en: {=bool:?}, dt2en: {=bool:?}, dt3en: {=bool:?}, dt4en: {=bool:?}, dt5en: {=bool:?}, dt6en: {=bool:?}, cdtft: {=u8:?}, dt0: {=u8:?}, dt0ft: {=u8:?} }}",
+                self.alldt(),
+                self.dt0en(),
+                self.dt1en(),
+                self.dt2en(),
+                self.dt3en(),
+                self.dt4en(),
+                self.dt5en(),
+                self.dt6en(),
+                self.cdtft(),
+                self.dt0(),
+                self.dt0ft()
+            )
         }
     }
     #[doc = "CSI-2 Host virtual channel 3 configuration register 2."]

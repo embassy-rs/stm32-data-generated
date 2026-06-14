@@ -1,553 +1,339 @@
 
 use crate::metadata::ir::*;
 pub(crate) static REGISTERS: IR = IR {
-    blocks: &[
-        Block {
-            name: "Sdmmc",
-            extends: None,
-            description: Some(
-                "Secure digital input/output MultiMediaCard interface.",
-            ),
-            items: &[
-                BlockItem {
-                    name: "power",
-                    description: Some(
-                        "SDMMC power control register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x0,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Power",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "clkcr",
-                    description: Some(
-                        "SDMMC clock control register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x4,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Clkcr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "argr",
-                    description: Some(
-                        "SDMMC argument register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x8,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Argr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "cmdr",
-                    description: Some(
-                        "SDMMC command register.",
-                    ),
-                    array: None,
-                    byte_offset: 0xc,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Cmdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "respcmdr",
-                    description: Some(
-                        "SDMMC command response register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x10,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Respcmdr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "respr",
-                    description: Some(
-                        "SDMMC response 1 register.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 4,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 0x14,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "ResPxR",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dtimer",
-                    description: Some(
-                        "SDMMC data timer register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x24,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dtimer",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dlenr",
-                    description: Some(
-                        "SDMMC data length register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x28,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dlenr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dctrl",
-                    description: Some(
-                        "SDMMC data control register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x2c,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dctrl",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "dcntr",
-                    description: Some(
-                        "SDMMC data counter register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x30,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Dcntr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "star",
-                    description: Some(
-                        "SDMMC status register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x34,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Star",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "icr",
-                    description: Some(
-                        "SDMMC interrupt clear register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x38,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Icr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "maskr",
-                    description: Some(
-                        "SDMMC mask register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x3c,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Maskr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "acktimer",
-                    description: Some(
-                        "SDMMC acknowledgment timer register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x40,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Acktimer",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "fifothrr",
-                    description: Some(
-                        "SDMMC data FIFO threshold register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x44,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Fifothrr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "idmactrlr",
-                    description: Some(
-                        "SDMMC DMA control register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x50,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Idmactrlr",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "idmabsizer",
-                    description: Some(
-                        "SDMMC IDMA buffer size register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x54,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Idmabsizer",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "idmabaser",
-                    description: Some(
-                        "SDMMC IDMA buffer base address register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x58,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Idmabaser",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "idmalar",
-                    description: Some(
-                        "SDMMC IDMA linked list address register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x64,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Idmalar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "idmabar",
-                    description: Some(
-                        "SDMMC IDMA linked list memory base register.",
-                    ),
-                    array: None,
-                    byte_offset: 0x68,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Idmabar",
-                            ),
-                        },
-                    ),
-                },
-                BlockItem {
-                    name: "fifor",
-                    description: Some(
-                        "SDMMC data FIFO registers 0.",
-                    ),
-                    array: Some(
-                        Array::Regular(
-                            RegularArray {
-                                len: 16,
-                                stride: 4,
-                            },
-                        ),
-                    ),
-                    byte_offset: 0x80,
-                    inner: BlockItemInner::Register(
-                        Register {
-                            access: Access::ReadWrite,
-                            bit_size: 32,
-                            fieldset: Some(
-                                "Fifor",
-                            ),
-                        },
-                    ),
-                },
-            ],
-        },
-    ],
+    blocks: &[Block {
+        name: "Sdmmc",
+        extends: None,
+        description: Some("Secure digital input/output MultiMediaCard interface."),
+        items: &[
+            BlockItem {
+                name: "power",
+                description: Some("SDMMC power control register."),
+                array: None,
+                byte_offset: 0x0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Power"),
+                }),
+            },
+            BlockItem {
+                name: "clkcr",
+                description: Some("SDMMC clock control register."),
+                array: None,
+                byte_offset: 0x4,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Clkcr"),
+                }),
+            },
+            BlockItem {
+                name: "argr",
+                description: Some("SDMMC argument register."),
+                array: None,
+                byte_offset: 0x8,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Argr"),
+                }),
+            },
+            BlockItem {
+                name: "cmdr",
+                description: Some("SDMMC command register."),
+                array: None,
+                byte_offset: 0xc,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cmdr"),
+                }),
+            },
+            BlockItem {
+                name: "respcmdr",
+                description: Some("SDMMC command response register."),
+                array: None,
+                byte_offset: 0x10,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Respcmdr"),
+                }),
+            },
+            BlockItem {
+                name: "respr",
+                description: Some("SDMMC response 1 register."),
+                array: Some(Array::Regular(RegularArray { len: 4, stride: 4 })),
+                byte_offset: 0x14,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("ResPxR"),
+                }),
+            },
+            BlockItem {
+                name: "dtimer",
+                description: Some("SDMMC data timer register."),
+                array: None,
+                byte_offset: 0x24,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Dtimer"),
+                }),
+            },
+            BlockItem {
+                name: "dlenr",
+                description: Some("SDMMC data length register."),
+                array: None,
+                byte_offset: 0x28,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Dlenr"),
+                }),
+            },
+            BlockItem {
+                name: "dctrl",
+                description: Some("SDMMC data control register."),
+                array: None,
+                byte_offset: 0x2c,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Dctrl"),
+                }),
+            },
+            BlockItem {
+                name: "dcntr",
+                description: Some("SDMMC data counter register."),
+                array: None,
+                byte_offset: 0x30,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Dcntr"),
+                }),
+            },
+            BlockItem {
+                name: "star",
+                description: Some("SDMMC status register."),
+                array: None,
+                byte_offset: 0x34,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Star"),
+                }),
+            },
+            BlockItem {
+                name: "icr",
+                description: Some("SDMMC interrupt clear register."),
+                array: None,
+                byte_offset: 0x38,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Icr"),
+                }),
+            },
+            BlockItem {
+                name: "maskr",
+                description: Some("SDMMC mask register."),
+                array: None,
+                byte_offset: 0x3c,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Maskr"),
+                }),
+            },
+            BlockItem {
+                name: "acktimer",
+                description: Some("SDMMC acknowledgment timer register."),
+                array: None,
+                byte_offset: 0x40,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Acktimer"),
+                }),
+            },
+            BlockItem {
+                name: "fifothrr",
+                description: Some("SDMMC data FIFO threshold register."),
+                array: None,
+                byte_offset: 0x44,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Fifothrr"),
+                }),
+            },
+            BlockItem {
+                name: "idmactrlr",
+                description: Some("SDMMC DMA control register."),
+                array: None,
+                byte_offset: 0x50,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Idmactrlr"),
+                }),
+            },
+            BlockItem {
+                name: "idmabsizer",
+                description: Some("SDMMC IDMA buffer size register."),
+                array: None,
+                byte_offset: 0x54,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Idmabsizer"),
+                }),
+            },
+            BlockItem {
+                name: "idmabaser",
+                description: Some("SDMMC IDMA buffer base address register."),
+                array: None,
+                byte_offset: 0x58,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Idmabaser"),
+                }),
+            },
+            BlockItem {
+                name: "idmalar",
+                description: Some("SDMMC IDMA linked list address register."),
+                array: None,
+                byte_offset: 0x64,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Idmalar"),
+                }),
+            },
+            BlockItem {
+                name: "idmabar",
+                description: Some("SDMMC IDMA linked list memory base register."),
+                array: None,
+                byte_offset: 0x68,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Idmabar"),
+                }),
+            },
+            BlockItem {
+                name: "fifor",
+                description: Some("SDMMC data FIFO registers 0."),
+                array: Some(Array::Regular(RegularArray { len: 16, stride: 4 })),
+                byte_offset: 0x80,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Fifor"),
+                }),
+            },
+        ],
+    }],
     fieldsets: &[
         FieldSet {
             name: "Acktimer",
             extends: None,
-            description: Some(
-                "SDMMC acknowledgment timer register.",
-            ),
+            description: Some("SDMMC acknowledgment timer register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "acktime",
-                    description: Some(
-                        "Boot acknowledgment timeout period.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 25,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "acktime",
+                description: Some("Boot acknowledgment timeout period."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 25,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Argr",
             extends: None,
-            description: Some(
-                "SDMMC argument register.",
-            ),
+            description: Some("SDMMC argument register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cmdarg",
-                    description: Some(
-                        "Command argument.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "cmdarg",
+                description: Some("Command argument."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Clkcr",
             extends: None,
-            description: Some(
-                "SDMMC clock control register.",
-            ),
+            description: Some("SDMMC clock control register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "clkdiv",
-                    description: Some(
-                        "Clock divide factor.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Clock divide factor."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 10,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "pwrsav",
-                    description: Some(
-                        "Power saving configuration bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
+                    description: Some("Power saving configuration bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "widbus",
-                    description: Some(
-                        "Wide bus mode enable bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
+                    description: Some("Wide bus mode enable bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "negedge",
-                    description: Some(
-                        "SDMMC_CK dephasing selection bit for data and command.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    description: Some("SDMMC_CK dephasing selection bit for data and command."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "hwfc_en",
-                    description: Some(
-                        "Hardware flow control enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 17,
-                        },
-                    ),
+                    description: Some("Hardware flow control enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ddr",
-                    description: Some(
-                        "Data rate signaling selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 18,
-                        },
-                    ),
+                    description: Some("Data rate signaling selection."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "busspeed",
-                    description: Some(
-                        "Bus speed for selection of SDMMC operating modes.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 19,
-                        },
-                    ),
+                    description: Some("Bus speed for selection of SDMMC operating modes."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "selclkrx",
-                    description: Some(
-                        "Receive clock selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 20,
-                        },
-                    ),
+                    description: Some("Receive clock selection."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
@@ -557,21 +343,13 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Cmdr",
             extends: None,
-            description: Some(
-                "SDMMC command register.",
-            ),
+            description: Some("SDMMC command register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "cmdindex",
-                    description: Some(
-                        "Command index.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Command index."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 6,
                     array: None,
                     enumm: None,
@@ -581,11 +359,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "The CPSM treats the command as a data transfer command, stops the interrupt period, and signals DataEnable to the DPSM.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -595,109 +369,63 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "The CPSM treats the command as a Stop Transmission command and signals abort to the DPSM.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 7,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "waitresp",
-                    description: Some(
-                        "Wait for response bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    description: Some("Wait for response bits."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "waitint",
-                    description: Some(
-                        "CPSM waits for interrupt request.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 10,
-                        },
-                    ),
+                    description: Some("CPSM waits for interrupt request."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "waitpend",
-                    description: Some(
-                        "CPSM waits for end of data transfer (CmdPend internal signal) from DPSM.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 11,
-                        },
-                    ),
+                    description: Some("CPSM waits for end of data transfer (CmdPend internal signal) from DPSM."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cpsmen",
-                    description: Some(
-                        "Command path state machine (CPSM) enable bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
+                    description: Some("Command path state machine (CPSM) enable bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dthold",
-                    description: Some(
-                        "Hold new data block transmission and reception in the DPSM.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 13,
-                        },
-                    ),
+                    description: Some("Hold new data block transmission and reception in the DPSM."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "bootmode",
-                    description: Some(
-                        "Select the boot mode procedure to be used.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
+                    description: Some("Select the boot mode procedure to be used."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "booten",
-                    description: Some(
-                        "Enable boot mode procedure.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 15,
-                        },
-                    ),
+                    description: Some("Enable boot mode procedure."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -707,11 +435,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "The CPSM treats the command as a Suspend or Resume command and signals interrupt period start/end.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -721,171 +445,99 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Dcntr",
             extends: None,
-            description: Some(
-                "SDMMC data counter register.",
-            ),
+            description: Some("SDMMC data counter register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "datacount",
-                    description: Some(
-                        "Data count value.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 25,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "datacount",
+                description: Some("Data count value."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 25,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Dctrl",
             extends: None,
-            description: Some(
-                "SDMMC data control register.",
-            ),
+            description: Some("SDMMC data control register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "dten",
-                    description: Some(
-                        "Data transfer enable bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Data transfer enable bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dtdir",
-                    description: Some(
-                        "Data transfer direction selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Data transfer direction selection."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dtmode",
-                    description: Some(
-                        "Data transfer mode selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Data transfer mode selection."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dblocksize",
-                    description: Some(
-                        "Data block size.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Data block size."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 4,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rwstart",
-                    description: Some(
-                        "Read Wait start.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    description: Some("Read Wait start."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rwstop",
-                    description: Some(
-                        "Read Wait stop.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
+                    description: Some("Read Wait stop."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rwmod",
-                    description: Some(
-                        "Read Wait mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 10,
-                        },
-                    ),
+                    description: Some("Read Wait mode."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdioen",
-                    description: Some(
-                        "SD I/O interrupt enable functions.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 11,
-                        },
-                    ),
+                    description: Some("SD I/O interrupt enable functions."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "bootacken",
-                    description: Some(
-                        "Enable the reception of the boot acknowledgment.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
+                    description: Some("Enable the reception of the boot acknowledgment."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "fiforst",
-                    description: Some(
-                        "FIFO reset, flushes any remaining data.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 13,
-                        },
-                    ),
+                    description: Some("FIFO reset, flushes any remaining data."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -895,383 +547,221 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Dlenr",
             extends: None,
-            description: Some(
-                "SDMMC data length register.",
-            ),
+            description: Some("SDMMC data length register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "datalength",
-                    description: Some(
-                        "Data length value.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 25,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "datalength",
+                description: Some("Data length value."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 25,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Dtimer",
             extends: None,
-            description: Some(
-                "SDMMC data timer register.",
-            ),
+            description: Some("SDMMC data timer register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "datatime",
-                    description: Some(
-                        "Data and R1b busy timeout period.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "datatime",
+                description: Some("Data and R1b busy timeout period."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Fifor",
             extends: None,
-            description: Some(
-                "SDMMC data FIFO registers 0.",
-            ),
+            description: Some("SDMMC data FIFO registers 0."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "fifodata",
-                    description: Some(
-                        "Receive and transmit FIFO data.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "fifodata",
+                description: Some("Receive and transmit FIFO data."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Fifothrr",
             extends: None,
-            description: Some(
-                "SDMMC data FIFO threshold register.",
-            ),
+            description: Some("SDMMC data FIFO threshold register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "thr",
-                    description: Some(
-                        "FIFO threshold.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "thr",
+                description: Some("FIFO threshold."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 4,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Icr",
             extends: None,
-            description: Some(
-                "SDMMC interrupt clear register.",
-            ),
+            description: Some("SDMMC interrupt clear register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ccrcfailc",
-                    description: Some(
-                        "CCRCFAIL flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("CCRCFAIL flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dcrcfailc",
-                    description: Some(
-                        "DCRCFAIL flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("DCRCFAIL flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ctimeoutc",
-                    description: Some(
-                        "CTIMEOUT flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("CTIMEOUT flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dtimeoutc",
-                    description: Some(
-                        "DTIMEOUT flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    description: Some("DTIMEOUT flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "txunderrc",
-                    description: Some(
-                        "TXUNDERR flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("TXUNDERR flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rxoverrc",
-                    description: Some(
-                        "RXOVERR flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
+                    description: Some("RXOVERR flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cmdrendc",
-                    description: Some(
-                        "CMDREND flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    description: Some("CMDREND flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cmdsentc",
-                    description: Some(
-                        "CMDSENT flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 7,
-                        },
-                    ),
+                    description: Some("CMDSENT flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dataendc",
-                    description: Some(
-                        "DATAEND flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    description: Some("DATAEND flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dholdc",
-                    description: Some(
-                        "DHOLD flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
+                    description: Some("DHOLD flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dbckendc",
-                    description: Some(
-                        "DBCKEND flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 10,
-                        },
-                    ),
+                    description: Some("DBCKEND flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dabortc",
-                    description: Some(
-                        "DABORT flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 11,
-                        },
-                    ),
+                    description: Some("DABORT flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "busyd0endc",
-                    description: Some(
-                        "BUSYD0END flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 21,
-                        },
-                    ),
+                    description: Some("BUSYD0END flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdioitc",
-                    description: Some(
-                        "SDIOIT flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 22,
-                        },
-                    ),
+                    description: Some("SDIOIT flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ackfailc",
-                    description: Some(
-                        "ACKFAIL flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 23,
-                        },
-                    ),
+                    description: Some("ACKFAIL flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "acktimeoutc",
-                    description: Some(
-                        "ACKTIMEOUT flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
+                    description: Some("ACKTIMEOUT flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "vswendc",
-                    description: Some(
-                        "VSWEND flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 25,
-                        },
-                    ),
+                    description: Some("VSWEND flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ckstopc",
-                    description: Some(
-                        "CKSTOP flag clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 26,
-                        },
-                    ),
+                    description: Some("CKSTOP flag clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "idmatec",
-                    description: Some(
-                        "IDMA transfer error clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 27,
-                        },
-                    ),
+                    description: Some("IDMA transfer error clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "idmabtcc",
-                    description: Some(
-                        "IDMA buffer transfer complete clear bit.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
+                    description: Some("IDMA buffer transfer complete clear bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1281,107 +771,65 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Idmabar",
             extends: None,
-            description: Some(
-                "SDMMC IDMA linked list memory base register.",
-            ),
+            description: Some("SDMMC IDMA linked list memory base register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "idmaba",
-                    description: Some(
-                        "Word aligned Linked list memory base address.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
-                    bit_size: 30,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "idmaba",
+                description: Some("Word aligned Linked list memory base address."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                bit_size: 30,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Idmabaser",
             extends: None,
-            description: Some(
-                "SDMMC IDMA buffer base address register.",
-            ),
+            description: Some("SDMMC IDMA buffer base address register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "idmabase",
-                    description: Some(
-                        "Buffer memory base address bits [31:2], must be word aligned (bit [1:0] are always 0 and read only).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "idmabase",
+                description: Some(
+                    "Buffer memory base address bits [31:2], must be word aligned (bit [1:0] are always 0 and read only).",
+                ),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Idmabsizer",
             extends: None,
-            description: Some(
-                "SDMMC IDMA buffer size register.",
-            ),
+            description: Some("SDMMC IDMA buffer size register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "idmabndt",
-                    description: Some(
-                        "Number of bytes per buffer.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
-                    bit_size: 11,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "idmabndt",
+                description: Some("Number of bytes per buffer."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                bit_size: 11,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Idmactrlr",
             extends: None,
-            description: Some(
-                "SDMMC DMA control register.",
-            ),
+            description: Some("SDMMC DMA control register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "idmaen",
-                    description: Some(
-                        "IDMA enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("IDMA enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "idmabmode",
-                    description: Some(
-                        "Buffer mode selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Buffer mode selection."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1391,35 +839,21 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Idmalar",
             extends: None,
-            description: Some(
-                "SDMMC IDMA linked list address register.",
-            ),
+            description: Some("SDMMC IDMA linked list address register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "idmala",
-                    description: Some(
-                        "Word aligned linked list item address offset.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Word aligned linked list item address offset."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 14,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "abr",
-                    description: Some(
-                        "Acknowledge linked list buffer ready.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 29,
-                        },
-                    ),
+                    description: Some("Acknowledge linked list buffer ready."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1429,11 +863,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Update SDMMC_IDMABSIZE from the next linked list when in linked list mode (SDMMC_IDMACTRLR.IDMABMODE select linked list mode and ULA = 1).",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 30,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1443,11 +873,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Update SDMMC_IDMALAR from linked list when in linked list mode (SDMMC_IDMACTRLR.IDMABMODE select linked list mode).",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 31,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1457,329 +883,189 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Maskr",
             extends: None,
-            description: Some(
-                "SDMMC mask register.",
-            ),
+            description: Some("SDMMC mask register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ccrcfailie",
-                    description: Some(
-                        "Command CRC fail interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Command CRC fail interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dcrcfailie",
-                    description: Some(
-                        "Data CRC fail interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Data CRC fail interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ctimeoutie",
-                    description: Some(
-                        "Command timeout interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Command timeout interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dtimeoutie",
-                    description: Some(
-                        "Data timeout interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    description: Some("Data timeout interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "txunderrie",
-                    description: Some(
-                        "Tx FIFO underrun error interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Tx FIFO underrun error interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rxoverrie",
-                    description: Some(
-                        "Rx FIFO overrun error interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
+                    description: Some("Rx FIFO overrun error interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cmdrendie",
-                    description: Some(
-                        "Command response received interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    description: Some("Command response received interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cmdsentie",
-                    description: Some(
-                        "Command sent interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 7,
-                        },
-                    ),
+                    description: Some("Command sent interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dataendie",
-                    description: Some(
-                        "Data end interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    description: Some("Data end interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dholdie",
-                    description: Some(
-                        "Data hold interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
+                    description: Some("Data hold interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dbckendie",
-                    description: Some(
-                        "Data block end interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 10,
-                        },
-                    ),
+                    description: Some("Data block end interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dabortie",
-                    description: Some(
-                        "Data transfer aborted interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 11,
-                        },
-                    ),
+                    description: Some("Data transfer aborted interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "txfifoheie",
-                    description: Some(
-                        "Tx FIFO half empty interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
+                    description: Some("Tx FIFO half empty interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rxfifohfie",
-                    description: Some(
-                        "Rx FIFO half full interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 15,
-                        },
-                    ),
+                    description: Some("Rx FIFO half full interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rxfifofie",
-                    description: Some(
-                        "Rx FIFO full interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 17,
-                        },
-                    ),
+                    description: Some("Rx FIFO full interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "txfifoeie",
-                    description: Some(
-                        "Tx FIFO empty interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 18,
-                        },
-                    ),
+                    description: Some("Tx FIFO empty interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "busyd0endie",
-                    description: Some(
-                        "BUSYD0END interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 21,
-                        },
-                    ),
+                    description: Some("BUSYD0END interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdioitie",
-                    description: Some(
-                        "SDIO mode interrupt received interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 22,
-                        },
-                    ),
+                    description: Some("SDIO mode interrupt received interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ackfailie",
-                    description: Some(
-                        "Acknowledgment Fail interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 23,
-                        },
-                    ),
+                    description: Some("Acknowledgment Fail interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "acktimeoutie",
-                    description: Some(
-                        "Acknowledgment timeout interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
+                    description: Some("Acknowledgment timeout interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "vswendie",
-                    description: Some(
-                        "Voltage switch critical timing section completion interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 25,
-                        },
-                    ),
+                    description: Some("Voltage switch critical timing section completion interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ckstopie",
-                    description: Some(
-                        "Voltage Switch clock stopped interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 26,
-                        },
-                    ),
+                    description: Some("Voltage Switch clock stopped interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "idmabtcie",
-                    description: Some(
-                        "IDMA buffer transfer complete interrupt enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
+                    description: Some("IDMA buffer transfer complete interrupt enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1789,63 +1075,37 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Power",
             extends: None,
-            description: Some(
-                "SDMMC power control register.",
-            ),
+            description: Some("SDMMC power control register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "pwrctrl",
-                    description: Some(
-                        "SDMMC state control bits.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("SDMMC state control bits."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "vswitch",
-                    description: Some(
-                        "Voltage switch sequence start.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Voltage switch sequence start."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "vswitchen",
-                    description: Some(
-                        "Voltage switch procedure enable.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    description: Some("Voltage switch procedure enable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dirpol",
-                    description: Some(
-                        "Data and command direction signals polarity selection.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Data and command direction signals polarity selection."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -1855,335 +1115,193 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "ResPxR",
             extends: None,
-            description: Some(
-                "SDMMC response 1 register.",
-            ),
+            description: Some("SDMMC response 1 register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "cardstatus",
-                    description: Some(
-                        "Card status according table below.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 32,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "cardstatus",
+                description: Some("Card status according table below."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 32,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Respcmdr",
             extends: None,
-            description: Some(
-                "SDMMC command response register.",
-            ),
+            description: Some("SDMMC command response register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "respcmd",
-                    description: Some(
-                        "Response command index.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
-                    bit_size: 6,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "respcmd",
+                description: Some("Response command index."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 6,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Star",
             extends: None,
-            description: Some(
-                "SDMMC status register.",
-            ),
+            description: Some("SDMMC status register."),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "ccrcfail",
-                    description: Some(
-                        "Command response received (CRC check failed).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 0,
-                        },
-                    ),
+                    description: Some("Command response received (CRC check failed)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dcrcfail",
-                    description: Some(
-                        "Data block sent/received (CRC check failed).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 1,
-                        },
-                    ),
+                    description: Some("Data block sent/received (CRC check failed)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ctimeout",
-                    description: Some(
-                        "Command response timeout.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 2,
-                        },
-                    ),
+                    description: Some("Command response timeout."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dtimeout",
-                    description: Some(
-                        "Data timeout.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 3,
-                        },
-                    ),
+                    description: Some("Data timeout."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "txunderr",
-                    description: Some(
-                        "Transmit FIFO underrun error (masked by hardware when IDMA is enabled).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 4,
-                        },
-                    ),
+                    description: Some("Transmit FIFO underrun error (masked by hardware when IDMA is enabled)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rxoverr",
-                    description: Some(
-                        "Received FIFO overrun error (masked by hardware when IDMA is enabled).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 5,
-                        },
-                    ),
+                    description: Some("Received FIFO overrun error (masked by hardware when IDMA is enabled)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cmdrend",
-                    description: Some(
-                        "Command response received (CRC check passed, or no CRC).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 6,
-                        },
-                    ),
+                    description: Some("Command response received (CRC check passed, or no CRC)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cmdsent",
-                    description: Some(
-                        "Command sent (no response required).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 7,
-                        },
-                    ),
+                    description: Some("Command sent (no response required)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dataend",
-                    description: Some(
-                        "Data transfer ended correctly.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 8,
-                        },
-                    ),
+                    description: Some("Data transfer ended correctly."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dhold",
-                    description: Some(
-                        "Data transfer Hold.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 9,
-                        },
-                    ),
+                    description: Some("Data transfer Hold."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dbckend",
-                    description: Some(
-                        "Data block sent/received.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 10,
-                        },
-                    ),
+                    description: Some("Data block sent/received."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dabort",
-                    description: Some(
-                        "Data transfer aborted by CMD12.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 11,
-                        },
-                    ),
+                    description: Some("Data transfer aborted by CMD12."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "dpsmact",
-                    description: Some(
-                        "Data path state machine active, i.e. not in Idle state.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 12,
-                        },
-                    ),
+                    description: Some("Data path state machine active, i.e. not in Idle state."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "cpsmact",
-                    description: Some(
-                        "Command path state machine active, i.e. not in Idle state.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 13,
-                        },
-                    ),
+                    description: Some("Command path state machine active, i.e. not in Idle state."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "txfifohe",
-                    description: Some(
-                        "Transmit FIFO half empty.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 14,
-                        },
-                    ),
+                    description: Some("Transmit FIFO half empty."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rxfifohf",
-                    description: Some(
-                        "Receive FIFO half full.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 15,
-                        },
-                    ),
+                    description: Some("Receive FIFO half full."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "txfifof",
-                    description: Some(
-                        "Transmit FIFO full.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 16,
-                        },
-                    ),
+                    description: Some("Transmit FIFO full."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rxfifof",
-                    description: Some(
-                        "Receive FIFO full.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 17,
-                        },
-                    ),
+                    description: Some("Receive FIFO full."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "txfifoe",
-                    description: Some(
-                        "Transmit FIFO empty.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 18,
-                        },
-                    ),
+                    description: Some("Transmit FIFO empty."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "rxfifoe",
-                    description: Some(
-                        "Receive FIFO empty.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 19,
-                        },
-                    ),
+                    description: Some("Receive FIFO empty."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -2193,123 +1311,71 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Inverted value of SDMMC_D0 line (Busy), sampled at the end of a CMD response and a second time 2 SDMMC_CK cycles after the CMD response.",
                     ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 20,
-                        },
-                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "busyd0end",
-                    description: Some(
-                        "end of SDMMC_D0 Busy following a CMD response detected.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 21,
-                        },
-                    ),
+                    description: Some("end of SDMMC_D0 Busy following a CMD response detected."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "sdioit",
-                    description: Some(
-                        "SDIO interrupt received.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 22,
-                        },
-                    ),
+                    description: Some("SDIO interrupt received."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ackfail",
-                    description: Some(
-                        "Boot acknowledgment received (boot acknowledgment check fail).",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 23,
-                        },
-                    ),
+                    description: Some("Boot acknowledgment received (boot acknowledgment check fail)."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "acktimeout",
-                    description: Some(
-                        "Boot acknowledgment timeout.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 24,
-                        },
-                    ),
+                    description: Some("Boot acknowledgment timeout."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "vswend",
-                    description: Some(
-                        "Voltage switch critical timing section completion.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 25,
-                        },
-                    ),
+                    description: Some("Voltage switch critical timing section completion."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "ckstop",
-                    description: Some(
-                        "SDMMC_CK stopped in Voltage switch procedure.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 26,
-                        },
-                    ),
+                    description: Some("SDMMC_CK stopped in Voltage switch procedure."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "idmate",
-                    description: Some(
-                        "IDMA transfer error.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 27,
-                        },
-                    ),
+                    description: Some("IDMA transfer error."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
                     name: "idmabtc",
-                    description: Some(
-                        "IDMA buffer transfer complete.",
-                    ),
-                    bit_offset: BitOffset::Regular(
-                        RegularBitOffset {
-                            offset: 28,
-                        },
-                    ),
+                    description: Some("IDMA buffer transfer complete."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,

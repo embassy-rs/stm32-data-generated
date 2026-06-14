@@ -659,7 +659,22 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ccr {{ imode: {:?}, idtr: {=bool:?}, isize: {:?}, admode: {:?}, addtr: {=bool:?}, adsize: {:?}, abmode: {:?}, abdtr: {=bool:?}, absize: {:?}, dmode: {:?}, ddtr: {=bool:?}, dqse: {=bool:?} }}" , self . imode () , self . idtr () , self . isize () , self . admode () , self . addtr () , self . adsize () , self . abmode () , self . abdtr () , self . absize () , self . dmode () , self . ddtr () , self . dqse ())
+            defmt::write!(
+                f,
+                "Ccr {{ imode: {:?}, idtr: {=bool:?}, isize: {:?}, admode: {:?}, addtr: {=bool:?}, adsize: {:?}, abmode: {:?}, abdtr: {=bool:?}, absize: {:?}, dmode: {:?}, ddtr: {=bool:?}, dqse: {=bool:?} }}",
+                self.imode(),
+                self.idtr(),
+                self.isize(),
+                self.admode(),
+                self.addtr(),
+                self.adsize(),
+                self.abmode(),
+                self.abdtr(),
+                self.absize(),
+                self.dmode(),
+                self.ddtr(),
+                self.dqse()
+            )
         }
     }
     #[doc = "XSPI control register"]
@@ -901,7 +916,26 @@ are wrongly updated while DMAEN = 1, the DMA request signal automatically goes t
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, abort: {=bool:?}, dmaen: {=bool:?}, tcen: {=bool:?}, dmm: {=bool:?}, fthres: {:?}, teie: {=bool:?}, tcie: {=bool:?}, ftie: {=bool:?}, smie: {=bool:?}, toie: {=bool:?}, apms: {:?}, pmm: {:?}, cssel: {:?}, fmode: {:?}, msel: {:?} }}" , self . en () , self . abort () , self . dmaen () , self . tcen () , self . dmm () , self . fthres () , self . teie () , self . tcie () , self . ftie () , self . smie () , self . toie () , self . apms () , self . pmm () , self . cssel () , self . fmode () , self . msel ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, abort: {=bool:?}, dmaen: {=bool:?}, tcen: {=bool:?}, dmm: {=bool:?}, fthres: {:?}, teie: {=bool:?}, tcie: {=bool:?}, ftie: {=bool:?}, smie: {=bool:?}, toie: {=bool:?}, apms: {:?}, pmm: {:?}, cssel: {:?}, fmode: {:?}, msel: {:?} }}",
+                self.en(),
+                self.abort(),
+                self.dmaen(),
+                self.tcen(),
+                self.dmm(),
+                self.fthres(),
+                self.teie(),
+                self.tcie(),
+                self.ftie(),
+                self.smie(),
+                self.toie(),
+                self.apms(),
+                self.pmm(),
+                self.cssel(),
+                self.fmode(),
+                self.msel()
+            )
         }
     }
     #[doc = "XSPI device configuration register 1"]
@@ -1675,7 +1709,17 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ tef: {=bool:?}, tcf: {=bool:?}, ftf: {=bool:?}, smf: {=bool:?}, tof: {=bool:?}, busy: {=bool:?}, flevel: {=u8:?} }}" , self . tef () , self . tcf () , self . ftf () , self . smf () , self . tof () , self . busy () , self . flevel ())
+            defmt::write!(
+                f,
+                "Sr {{ tef: {=bool:?}, tcf: {=bool:?}, ftf: {=bool:?}, smf: {=bool:?}, tof: {=bool:?}, busy: {=bool:?}, flevel: {=u8:?} }}",
+                self.tef(),
+                self.tcf(),
+                self.ftf(),
+                self.smf(),
+                self.tof(),
+                self.busy(),
+                self.flevel()
+            )
         }
     }
     #[doc = "XSPI timing configuration register"]
@@ -1959,7 +2003,22 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wccr {{ imode: {:?}, idtr: {=bool:?}, isize: {:?}, admode: {:?}, addtr: {=bool:?}, adsize: {:?}, abmode: {:?}, abdtr: {=bool:?}, absize: {:?}, dmode: {:?}, ddtr: {=bool:?}, dqse: {=bool:?} }}" , self . imode () , self . idtr () , self . isize () , self . admode () , self . addtr () , self . adsize () , self . abmode () , self . abdtr () , self . absize () , self . dmode () , self . ddtr () , self . dqse ())
+            defmt::write!(
+                f,
+                "Wccr {{ imode: {:?}, idtr: {=bool:?}, isize: {:?}, admode: {:?}, addtr: {=bool:?}, adsize: {:?}, abmode: {:?}, abdtr: {=bool:?}, absize: {:?}, dmode: {:?}, ddtr: {=bool:?}, dqse: {=bool:?} }}",
+                self.imode(),
+                self.idtr(),
+                self.isize(),
+                self.admode(),
+                self.addtr(),
+                self.adsize(),
+                self.abmode(),
+                self.abdtr(),
+                self.absize(),
+                self.dmode(),
+                self.ddtr(),
+                self.dqse()
+            )
         }
     }
     #[doc = "XSPI write instruction register"]
@@ -2209,7 +2268,22 @@ and a half-word read must read DATA\\[15:0\\]."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wpccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wpccr {{ imode: {:?}, idtr: {=bool:?}, isize: {:?}, admode: {:?}, addtr: {=bool:?}, adsize: {:?}, abmode: {:?}, abdtr: {=bool:?}, absize: {:?}, dmode: {:?}, ddtr: {=bool:?}, dqse: {=bool:?} }}" , self . imode () , self . idtr () , self . isize () , self . admode () , self . addtr () , self . adsize () , self . abmode () , self . abdtr () , self . absize () , self . dmode () , self . ddtr () , self . dqse ())
+            defmt::write!(
+                f,
+                "Wpccr {{ imode: {:?}, idtr: {=bool:?}, isize: {:?}, admode: {:?}, addtr: {=bool:?}, adsize: {:?}, abmode: {:?}, abdtr: {=bool:?}, absize: {:?}, dmode: {:?}, ddtr: {=bool:?}, dqse: {=bool:?} }}",
+                self.imode(),
+                self.idtr(),
+                self.isize(),
+                self.admode(),
+                self.addtr(),
+                self.adsize(),
+                self.abmode(),
+                self.abdtr(),
+                self.absize(),
+                self.dmode(),
+                self.ddtr(),
+                self.dqse()
+            )
         }
     }
     #[doc = "XSPI wrap instruction register"]

@@ -1128,7 +1128,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Gcr {{ ltdcen: {=bool:?}, dbw: {=u8:?}, dgw: {=u8:?}, drw: {=u8:?}, den: {=bool:?}, pcpol: {:?}, depol: {:?}, vspol: {:?}, hspol: {:?} }}" , self . ltdcen () , self . dbw () , self . dgw () , self . drw () , self . den () , self . pcpol () , self . depol () , self . vspol () , self . hspol ())
+            defmt::write!(
+                f,
+                "Gcr {{ ltdcen: {=bool:?}, dbw: {=u8:?}, dgw: {=u8:?}, drw: {=u8:?}, den: {=bool:?}, pcpol: {:?}, depol: {:?}, vspol: {:?}, hspol: {:?} }}",
+                self.ltdcen(),
+                self.dbw(),
+                self.dgw(),
+                self.drw(),
+                self.den(),
+                self.pcpol(),
+                self.depol(),
+                self.vspol(),
+                self.hspol()
+            )
         }
     }
     #[doc = "Interrupt Clear Register"]

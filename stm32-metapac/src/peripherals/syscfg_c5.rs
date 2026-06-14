@@ -866,7 +866,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for SbsPmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "SbsPmcr {{ pb6_fmplus: {=bool:?}, pb7_fmplus: {=bool:?}, pb8_fmplus: {=bool:?}, pb9_fmplus: {=bool:?}, pa11_fmplus: {=bool:?}, pa12_fmplus: {=bool:?}, pb3_fmplus: {=bool:?}, pb4_fmplus: {=bool:?}, eth_sel_phy: {:?}, ethintpol: {:?}, ethpdack: {:?}, ethtxlpi: {=bool:?} }}" , self . pb6_fmplus () , self . pb7_fmplus () , self . pb8_fmplus () , self . pb9_fmplus () , self . pa11_fmplus () , self . pa12_fmplus () , self . pb3_fmplus () , self . pb4_fmplus () , self . eth_sel_phy () , self . ethintpol () , self . ethpdack () , self . ethtxlpi ())
+            defmt::write!(
+                f,
+                "SbsPmcr {{ pb6_fmplus: {=bool:?}, pb7_fmplus: {=bool:?}, pb8_fmplus: {=bool:?}, pb9_fmplus: {=bool:?}, pa11_fmplus: {=bool:?}, pa12_fmplus: {=bool:?}, pb3_fmplus: {=bool:?}, pb4_fmplus: {=bool:?}, eth_sel_phy: {:?}, ethintpol: {:?}, ethpdack: {:?}, ethtxlpi: {=bool:?} }}",
+                self.pb6_fmplus(),
+                self.pb7_fmplus(),
+                self.pb8_fmplus(),
+                self.pb9_fmplus(),
+                self.pa11_fmplus(),
+                self.pa12_fmplus(),
+                self.pb3_fmplus(),
+                self.pb4_fmplus(),
+                self.eth_sel_phy(),
+                self.ethintpol(),
+                self.ethpdack(),
+                self.ethtxlpi()
+            )
         }
     }
 }

@@ -411,7 +411,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, teie: {=bool:?}, ctcie: {=bool:?}, brtie: {=bool:?}, btie: {=bool:?}, tcie: {=bool:?}, pl: {:?}, bex: {=bool:?}, hex: {=bool:?}, wex: {=bool:?}, swrq: {=bool:?} }}" , self . en () , self . teie () , self . ctcie () , self . brtie () , self . btie () , self . tcie () , self . pl () , self . bex () , self . hex () , self . wex () , self . swrq ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, teie: {=bool:?}, ctcie: {=bool:?}, brtie: {=bool:?}, btie: {=bool:?}, tcie: {=bool:?}, pl: {:?}, bex: {=bool:?}, hex: {=bool:?}, wex: {=bool:?}, swrq: {=bool:?} }}",
+                self.en(),
+                self.teie(),
+                self.ctcie(),
+                self.brtie(),
+                self.btie(),
+                self.tcie(),
+                self.pl(),
+                self.bex(),
+                self.hex(),
+                self.wex(),
+                self.swrq()
+            )
         }
     }
     #[doc = "MDMA channel x destination address register."]
@@ -548,7 +562,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Esr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Esr {{ tea: {=u8:?}, ted: {=bool:?}, teld: {=bool:?}, temd: {=bool:?}, ase: {=bool:?}, bse: {=bool:?} }}" , self . tea () , self . ted () , self . teld () , self . temd () , self . ase () , self . bse ())
+            defmt::write!(
+                f,
+                "Esr {{ tea: {=u8:?}, ted: {=bool:?}, teld: {=bool:?}, temd: {=bool:?}, ase: {=bool:?}, bse: {=bool:?} }}",
+                self.tea(),
+                self.ted(),
+                self.teld(),
+                self.temd(),
+                self.ase(),
+                self.bse()
+            )
         }
     }
     #[doc = "MDMA Global Interrupt/Status Register."]
@@ -604,7 +627,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gisr0 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Gisr0 {{ gif[0]: {=bool:?}, gif[1]: {=bool:?}, gif[2]: {=bool:?}, gif[3]: {=bool:?}, gif[4]: {=bool:?}, gif[5]: {=bool:?}, gif[6]: {=bool:?}, gif[7]: {=bool:?}, gif[8]: {=bool:?}, gif[9]: {=bool:?}, gif[10]: {=bool:?}, gif[11]: {=bool:?}, gif[12]: {=bool:?}, gif[13]: {=bool:?}, gif[14]: {=bool:?}, gif[15]: {=bool:?} }}" , self . gif (0usize) , self . gif (1usize) , self . gif (2usize) , self . gif (3usize) , self . gif (4usize) , self . gif (5usize) , self . gif (6usize) , self . gif (7usize) , self . gif (8usize) , self . gif (9usize) , self . gif (10usize) , self . gif (11usize) , self . gif (12usize) , self . gif (13usize) , self . gif (14usize) , self . gif (15usize))
+            defmt::write!(
+                f,
+                "Gisr0 {{ gif[0]: {=bool:?}, gif[1]: {=bool:?}, gif[2]: {=bool:?}, gif[3]: {=bool:?}, gif[4]: {=bool:?}, gif[5]: {=bool:?}, gif[6]: {=bool:?}, gif[7]: {=bool:?}, gif[8]: {=bool:?}, gif[9]: {=bool:?}, gif[10]: {=bool:?}, gif[11]: {=bool:?}, gif[12]: {=bool:?}, gif[13]: {=bool:?}, gif[14]: {=bool:?}, gif[15]: {=bool:?} }}",
+                self.gif(0usize),
+                self.gif(1usize),
+                self.gif(2usize),
+                self.gif(3usize),
+                self.gif(4usize),
+                self.gif(5usize),
+                self.gif(6usize),
+                self.gif(7usize),
+                self.gif(8usize),
+                self.gif(9usize),
+                self.gif(10usize),
+                self.gif(11usize),
+                self.gif(12usize),
+                self.gif(13usize),
+                self.gif(14usize),
+                self.gif(15usize)
+            )
         }
     }
     #[doc = "MDMA channel x interrupt flag clear register."]
@@ -693,7 +735,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ifcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ifcr {{ cteif: {=bool:?}, cctcif: {=bool:?}, cbrtif: {=bool:?}, cbtif: {=bool:?}, cltcif: {=bool:?} }}" , self . cteif () , self . cctcif () , self . cbrtif () , self . cbtif () , self . cltcif ())
+            defmt::write!(
+                f,
+                "Ifcr {{ cteif: {=bool:?}, cctcif: {=bool:?}, cbrtif: {=bool:?}, cbtif: {=bool:?}, cltcif: {=bool:?} }}",
+                self.cteif(),
+                self.cctcif(),
+                self.cbrtif(),
+                self.cbtif(),
+                self.cltcif()
+            )
         }
     }
     #[doc = "MDMA channel x interrupt/status register."]
@@ -795,7 +845,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ teif: {=bool:?}, ctcif: {=bool:?}, brtif: {=bool:?}, btif: {=bool:?}, tcif: {=bool:?}, crqa: {=bool:?} }}" , self . teif () , self . ctcif () , self . brtif () , self . btif () , self . tcif () , self . crqa ())
+            defmt::write!(
+                f,
+                "Isr {{ teif: {=bool:?}, ctcif: {=bool:?}, brtif: {=bool:?}, btif: {=bool:?}, tcif: {=bool:?}, crqa: {=bool:?} }}",
+                self.teif(),
+                self.ctcif(),
+                self.brtif(),
+                self.btif(),
+                self.tcif(),
+                self.crqa()
+            )
         }
     }
     #[doc = "MDMA channel x Link Address register."]
@@ -1214,7 +1273,24 @@ value. This bit is protected and can be written only if EN is 0."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Tcr {{ sinc: {:?}, dinc: {:?}, ssize: {:?}, dsize: {:?}, sincos: {:?}, dincos: {:?}, sburst: {:?}, dburst: {:?}, tlen: {=u8:?}, pke: {=bool:?}, pam: {:?}, trgm: {:?}, swrm: {=bool:?}, bwm: {=bool:?} }}" , self . sinc () , self . dinc () , self . ssize () , self . dsize () , self . sincos () , self . dincos () , self . sburst () , self . dburst () , self . tlen () , self . pke () , self . pam () , self . trgm () , self . swrm () , self . bwm ())
+            defmt::write!(
+                f,
+                "Tcr {{ sinc: {:?}, dinc: {:?}, ssize: {:?}, dsize: {:?}, sincos: {:?}, dincos: {:?}, sburst: {:?}, dburst: {:?}, tlen: {=u8:?}, pke: {=bool:?}, pam: {:?}, trgm: {:?}, swrm: {=bool:?}, bwm: {=bool:?} }}",
+                self.sinc(),
+                self.dinc(),
+                self.ssize(),
+                self.dsize(),
+                self.sincos(),
+                self.dincos(),
+                self.sburst(),
+                self.dburst(),
+                self.tlen(),
+                self.pke(),
+                self.pam(),
+                self.trgm(),
+                self.swrm(),
+                self.bwm()
+            )
         }
     }
 }

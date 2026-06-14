@@ -942,9 +942,9 @@ pub const USB2_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4808_0000usize a
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 4;
 #[cfg(feature = "rt")]
-pub use cortex_m_rt::interrupt;
-#[cfg(feature = "rt")]
 pub use Interrupt as interrupt;
+#[cfg(feature = "rt")]
+pub use cortex_m_rt::interrupt;
 #[path = "../../peripherals/bsec_v2.rs"]
 pub mod bsec;
 #[path = "../../peripherals/can_fdcan_v2.rs"]

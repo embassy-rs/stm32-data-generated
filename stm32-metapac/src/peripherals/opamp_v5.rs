@@ -234,7 +234,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr {{ opampen: {=bool:?}, force_vp: {=bool:?}, vp_sel: {:?}, usertrim: {=bool:?}, vm_sel: {:?}, opahsm: {=bool:?}, opaintoen: {=bool:?}, calon: {=bool:?}, calsel: {:?}, pga_gain: {:?}, trimoffsetp: {=u8:?}, trimoffsetn: {=u8:?}, calout: {=bool:?}, lock: {=bool:?} }}" , self . opampen () , self . force_vp () , self . vp_sel () , self . usertrim () , self . vm_sel () , self . opahsm () , self . opaintoen () , self . calon () , self . calsel () , self . pga_gain () , self . trimoffsetp () , self . trimoffsetn () , self . calout () , self . lock ())
+            defmt::write!(
+                f,
+                "Csr {{ opampen: {=bool:?}, force_vp: {=bool:?}, vp_sel: {:?}, usertrim: {=bool:?}, vm_sel: {:?}, opahsm: {=bool:?}, opaintoen: {=bool:?}, calon: {=bool:?}, calsel: {:?}, pga_gain: {:?}, trimoffsetp: {=u8:?}, trimoffsetn: {=u8:?}, calout: {=bool:?}, lock: {=bool:?} }}",
+                self.opampen(),
+                self.force_vp(),
+                self.vp_sel(),
+                self.usertrim(),
+                self.vm_sel(),
+                self.opahsm(),
+                self.opaintoen(),
+                self.calon(),
+                self.calsel(),
+                self.pga_gain(),
+                self.trimoffsetp(),
+                self.trimoffsetn(),
+                self.calout(),
+                self.lock()
+            )
         }
     }
     #[doc = "OPAMP timer controlled mode register"]
@@ -336,7 +353,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tcmr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Tcmr {{ vms_sel: {=bool:?}, vps_sel: {:?}, t1cm_en: {=bool:?}, t8cm_en: {=bool:?}, t20cm_en: {=bool:?}, lock: {=bool:?} }}" , self . vms_sel () , self . vps_sel () , self . t1cm_en () , self . t8cm_en () , self . t20cm_en () , self . lock ())
+            defmt::write!(
+                f,
+                "Tcmr {{ vms_sel: {=bool:?}, vps_sel: {:?}, t1cm_en: {=bool:?}, t8cm_en: {=bool:?}, t20cm_en: {=bool:?}, lock: {=bool:?} }}",
+                self.vms_sel(),
+                self.vps_sel(),
+                self.t1cm_en(),
+                self.t8cm_en(),
+                self.t20cm_en(),
+                self.lock()
+            )
         }
     }
 }

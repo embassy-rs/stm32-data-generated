@@ -480,9 +480,9 @@ pub const DLYB_OCTOSPI1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x4600_f000u
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 4;
 #[cfg(feature = "rt")]
-pub use cortex_m_rt::interrupt;
-#[cfg(feature = "rt")]
 pub use Interrupt as interrupt;
+#[cfg(feature = "rt")]
+pub use cortex_m_rt::interrupt;
 #[path = "../../peripherals/adc_h5.rs"]
 pub mod adc;
 #[path = "../../peripherals/adccommon_h50.rs"]

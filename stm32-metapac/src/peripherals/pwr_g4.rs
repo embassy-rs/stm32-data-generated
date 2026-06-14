@@ -255,7 +255,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ pvde: {=bool:?}, pls: {=u8:?}, pvmen1: {=bool:?}, pvmen2: {=bool:?}, pvmen3: {=bool:?}, pvmen4: {=bool:?} }}" , self . pvde () , self . pls () , self . pvmen1 () , self . pvmen2 () , self . pvmen3 () , self . pvmen4 ())
+            defmt::write!(
+                f,
+                "Cr2 {{ pvde: {=bool:?}, pls: {=u8:?}, pvmen1: {=bool:?}, pvmen2: {=bool:?}, pvmen3: {=bool:?}, pvmen4: {=bool:?} }}",
+                self.pvde(),
+                self.pls(),
+                self.pvmen1(),
+                self.pvmen2(),
+                self.pvmen3(),
+                self.pvmen4()
+            )
         }
     }
     #[doc = "Power control register 3"]
@@ -409,7 +418,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr3 {{ ewup1: {=bool:?}, ewup2: {=bool:?}, ewup3: {=bool:?}, ewup4: {=bool:?}, ewup5: {=bool:?}, rrs: {=bool:?}, apc: {=bool:?}, ucpd1_stdby: {=bool:?}, ucpd1_dbdis: {=bool:?}, eiwul: {=bool:?} }}" , self . ewup1 () , self . ewup2 () , self . ewup3 () , self . ewup4 () , self . ewup5 () , self . rrs () , self . apc () , self . ucpd1_stdby () , self . ucpd1_dbdis () , self . eiwul ())
+            defmt::write!(
+                f,
+                "Cr3 {{ ewup1: {=bool:?}, ewup2: {=bool:?}, ewup3: {=bool:?}, ewup4: {=bool:?}, ewup5: {=bool:?}, rrs: {=bool:?}, apc: {=bool:?}, ucpd1_stdby: {=bool:?}, ucpd1_dbdis: {=bool:?}, eiwul: {=bool:?} }}",
+                self.ewup1(),
+                self.ewup2(),
+                self.ewup3(),
+                self.ewup4(),
+                self.ewup5(),
+                self.rrs(),
+                self.apc(),
+                self.ucpd1_stdby(),
+                self.ucpd1_dbdis(),
+                self.eiwul()
+            )
         }
     }
     #[doc = "Power control register 4"]
@@ -524,7 +546,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr4 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr4 {{ wp1: {=bool:?}, wp2: {=bool:?}, wp3: {=bool:?}, wp4: {=bool:?}, wp5: {=bool:?}, vbe: {=bool:?}, vbrs: {=bool:?} }}" , self . wp1 () , self . wp2 () , self . wp3 () , self . wp4 () , self . wp5 () , self . vbe () , self . vbrs ())
+            defmt::write!(
+                f,
+                "Cr4 {{ wp1: {=bool:?}, wp2: {=bool:?}, wp3: {=bool:?}, wp4: {=bool:?}, wp5: {=bool:?}, vbe: {=bool:?}, vbrs: {=bool:?} }}",
+                self.wp1(),
+                self.wp2(),
+                self.wp3(),
+                self.wp4(),
+                self.wp5(),
+                self.vbe(),
+                self.vbrs()
+            )
         }
     }
     #[doc = "Power control register 5"]
@@ -615,7 +647,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pcr {{ p[0]: {=bool:?}, p[1]: {=bool:?}, p[2]: {=bool:?}, p[3]: {=bool:?}, p[4]: {=bool:?}, p[5]: {=bool:?}, p[6]: {=bool:?}, p[7]: {=bool:?}, p[8]: {=bool:?}, p[9]: {=bool:?}, p[10]: {=bool:?}, p[11]: {=bool:?}, p[12]: {=bool:?}, p[13]: {=bool:?}, p[14]: {=bool:?}, p[15]: {=bool:?} }}" , self . p (0usize) , self . p (1usize) , self . p (2usize) , self . p (3usize) , self . p (4usize) , self . p (5usize) , self . p (6usize) , self . p (7usize) , self . p (8usize) , self . p (9usize) , self . p (10usize) , self . p (11usize) , self . p (12usize) , self . p (13usize) , self . p (14usize) , self . p (15usize))
+            defmt::write!(
+                f,
+                "Pcr {{ p[0]: {=bool:?}, p[1]: {=bool:?}, p[2]: {=bool:?}, p[3]: {=bool:?}, p[4]: {=bool:?}, p[5]: {=bool:?}, p[6]: {=bool:?}, p[7]: {=bool:?}, p[8]: {=bool:?}, p[9]: {=bool:?}, p[10]: {=bool:?}, p[11]: {=bool:?}, p[12]: {=bool:?}, p[13]: {=bool:?}, p[14]: {=bool:?}, p[15]: {=bool:?} }}",
+                self.p(0usize),
+                self.p(1usize),
+                self.p(2usize),
+                self.p(3usize),
+                self.p(4usize),
+                self.p(5usize),
+                self.p(6usize),
+                self.p(7usize),
+                self.p(8usize),
+                self.p(9usize),
+                self.p(10usize),
+                self.p(11usize),
+                self.p(12usize),
+                self.p(13usize),
+                self.p(14usize),
+                self.p(15usize)
+            )
         }
     }
     #[doc = "Power status clear register"]
@@ -717,7 +768,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Scr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Scr {{ cwuf1: {=bool:?}, cwuf2: {=bool:?}, cwuf3: {=bool:?}, cwuf4: {=bool:?}, cwuf5: {=bool:?}, csbf: {=bool:?} }}" , self . cwuf1 () , self . cwuf2 () , self . cwuf3 () , self . cwuf4 () , self . cwuf5 () , self . csbf ())
+            defmt::write!(
+                f,
+                "Scr {{ cwuf1: {=bool:?}, cwuf2: {=bool:?}, cwuf3: {=bool:?}, cwuf4: {=bool:?}, cwuf5: {=bool:?}, csbf: {=bool:?} }}",
+                self.cwuf1(),
+                self.cwuf2(),
+                self.cwuf3(),
+                self.cwuf4(),
+                self.cwuf5(),
+                self.csbf()
+            )
         }
     }
     #[doc = "Power status register 1"]
@@ -832,7 +892,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr1 {{ wuf1: {=bool:?}, wuf2: {=bool:?}, wuf3: {=bool:?}, wuf4: {=bool:?}, wuf5: {=bool:?}, sbf: {=bool:?}, wufi: {=bool:?} }}" , self . wuf1 () , self . wuf2 () , self . wuf3 () , self . wuf4 () , self . wuf5 () , self . sbf () , self . wufi ())
+            defmt::write!(
+                f,
+                "Sr1 {{ wuf1: {=bool:?}, wuf2: {=bool:?}, wuf3: {=bool:?}, wuf4: {=bool:?}, wuf5: {=bool:?}, sbf: {=bool:?}, wufi: {=bool:?} }}",
+                self.wuf1(),
+                self.wuf2(),
+                self.wuf3(),
+                self.wuf4(),
+                self.wuf5(),
+                self.sbf(),
+                self.wufi()
+            )
         }
     }
     #[doc = "Power status register 2"]
@@ -960,7 +1030,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr2 {{ reglps: {=bool:?}, reglpf: {=bool:?}, vosf: {=bool:?}, pvdo: {=bool:?}, pvmo1: {=bool:?}, pvmo2: {=bool:?}, pvmo3: {=bool:?}, pvmo4: {=bool:?} }}" , self . reglps () , self . reglpf () , self . vosf () , self . pvdo () , self . pvmo1 () , self . pvmo2 () , self . pvmo3 () , self . pvmo4 ())
+            defmt::write!(
+                f,
+                "Sr2 {{ reglps: {=bool:?}, reglpf: {=bool:?}, vosf: {=bool:?}, pvdo: {=bool:?}, pvmo1: {=bool:?}, pvmo2: {=bool:?}, pvmo3: {=bool:?}, pvmo4: {=bool:?} }}",
+                self.reglps(),
+                self.reglpf(),
+                self.vosf(),
+                self.pvdo(),
+                self.pvmo1(),
+                self.pvmo2(),
+                self.pvmo3(),
+                self.pvmo4()
+            )
         }
     }
 }

@@ -505,7 +505,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mpcbb1Privcfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Mpcbb1Privcfgr {{ priv0: {=bool:?}, priv1: {=bool:?}, priv2: {=bool:?}, priv3: {=bool:?}, priv4: {=bool:?}, priv5: {=bool:?}, priv6: {=bool:?}, priv7: {=bool:?}, priv8: {=bool:?}, priv9: {=bool:?}, priv10: {=bool:?}, priv11: {=bool:?}, priv12: {=bool:?}, priv13: {=bool:?}, priv14: {=bool:?}, priv15: {=bool:?}, priv16: {=bool:?}, priv17: {=bool:?}, priv18: {=bool:?}, priv19: {=bool:?}, priv20: {=bool:?}, priv21: {=bool:?}, priv22: {=bool:?}, priv23: {=bool:?}, priv24: {=bool:?}, priv25: {=bool:?}, priv26: {=bool:?}, priv27: {=bool:?}, priv28: {=bool:?}, priv29: {=bool:?}, priv30: {=bool:?}, priv31: {=bool:?} }}" , self . priv0 () , self . priv1 () , self . priv2 () , self . priv3 () , self . priv4 () , self . priv5 () , self . priv6 () , self . priv7 () , self . priv8 () , self . priv9 () , self . priv10 () , self . priv11 () , self . priv12 () , self . priv13 () , self . priv14 () , self . priv15 () , self . priv16 () , self . priv17 () , self . priv18 () , self . priv19 () , self . priv20 () , self . priv21 () , self . priv22 () , self . priv23 () , self . priv24 () , self . priv25 () , self . priv26 () , self . priv27 () , self . priv28 () , self . priv29 () , self . priv30 () , self . priv31 ())
+            defmt::write!(
+                f,
+                "Mpcbb1Privcfgr {{ priv0: {=bool:?}, priv1: {=bool:?}, priv2: {=bool:?}, priv3: {=bool:?}, priv4: {=bool:?}, priv5: {=bool:?}, priv6: {=bool:?}, priv7: {=bool:?}, priv8: {=bool:?}, priv9: {=bool:?}, priv10: {=bool:?}, priv11: {=bool:?}, priv12: {=bool:?}, priv13: {=bool:?}, priv14: {=bool:?}, priv15: {=bool:?}, priv16: {=bool:?}, priv17: {=bool:?}, priv18: {=bool:?}, priv19: {=bool:?}, priv20: {=bool:?}, priv21: {=bool:?}, priv22: {=bool:?}, priv23: {=bool:?}, priv24: {=bool:?}, priv25: {=bool:?}, priv26: {=bool:?}, priv27: {=bool:?}, priv28: {=bool:?}, priv29: {=bool:?}, priv30: {=bool:?}, priv31: {=bool:?} }}",
+                self.priv0(),
+                self.priv1(),
+                self.priv2(),
+                self.priv3(),
+                self.priv4(),
+                self.priv5(),
+                self.priv6(),
+                self.priv7(),
+                self.priv8(),
+                self.priv9(),
+                self.priv10(),
+                self.priv11(),
+                self.priv12(),
+                self.priv13(),
+                self.priv14(),
+                self.priv15(),
+                self.priv16(),
+                self.priv17(),
+                self.priv18(),
+                self.priv19(),
+                self.priv20(),
+                self.priv21(),
+                self.priv22(),
+                self.priv23(),
+                self.priv24(),
+                self.priv25(),
+                self.priv26(),
+                self.priv27(),
+                self.priv28(),
+                self.priv29(),
+                self.priv30(),
+                self.priv31()
+            )
         }
     }
     #[doc = "GTZC1 SRAM2 MPCBB privileged configuration for super-block 0 register."]
@@ -945,7 +980,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Mpcbb2Privcfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Mpcbb2Privcfgr {{ priv0: {=bool:?}, priv1: {=bool:?}, priv2: {=bool:?}, priv3: {=bool:?}, priv4: {=bool:?}, priv5: {=bool:?}, priv6: {=bool:?}, priv7: {=bool:?}, priv8: {=bool:?}, priv9: {=bool:?}, priv10: {=bool:?}, priv11: {=bool:?}, priv12: {=bool:?}, priv13: {=bool:?}, priv14: {=bool:?}, priv15: {=bool:?}, priv16: {=bool:?}, priv17: {=bool:?}, priv18: {=bool:?}, priv19: {=bool:?}, priv20: {=bool:?}, priv21: {=bool:?}, priv22: {=bool:?}, priv23: {=bool:?}, priv24: {=bool:?}, priv25: {=bool:?}, priv26: {=bool:?}, priv27: {=bool:?}, priv28: {=bool:?}, priv29: {=bool:?}, priv30: {=bool:?}, priv31: {=bool:?} }}" , self . priv0 () , self . priv1 () , self . priv2 () , self . priv3 () , self . priv4 () , self . priv5 () , self . priv6 () , self . priv7 () , self . priv8 () , self . priv9 () , self . priv10 () , self . priv11 () , self . priv12 () , self . priv13 () , self . priv14 () , self . priv15 () , self . priv16 () , self . priv17 () , self . priv18 () , self . priv19 () , self . priv20 () , self . priv21 () , self . priv22 () , self . priv23 () , self . priv24 () , self . priv25 () , self . priv26 () , self . priv27 () , self . priv28 () , self . priv29 () , self . priv30 () , self . priv31 ())
+            defmt::write!(
+                f,
+                "Mpcbb2Privcfgr {{ priv0: {=bool:?}, priv1: {=bool:?}, priv2: {=bool:?}, priv3: {=bool:?}, priv4: {=bool:?}, priv5: {=bool:?}, priv6: {=bool:?}, priv7: {=bool:?}, priv8: {=bool:?}, priv9: {=bool:?}, priv10: {=bool:?}, priv11: {=bool:?}, priv12: {=bool:?}, priv13: {=bool:?}, priv14: {=bool:?}, priv15: {=bool:?}, priv16: {=bool:?}, priv17: {=bool:?}, priv18: {=bool:?}, priv19: {=bool:?}, priv20: {=bool:?}, priv21: {=bool:?}, priv22: {=bool:?}, priv23: {=bool:?}, priv24: {=bool:?}, priv25: {=bool:?}, priv26: {=bool:?}, priv27: {=bool:?}, priv28: {=bool:?}, priv29: {=bool:?}, priv30: {=bool:?}, priv31: {=bool:?} }}",
+                self.priv0(),
+                self.priv1(),
+                self.priv2(),
+                self.priv3(),
+                self.priv4(),
+                self.priv5(),
+                self.priv6(),
+                self.priv7(),
+                self.priv8(),
+                self.priv9(),
+                self.priv10(),
+                self.priv11(),
+                self.priv12(),
+                self.priv13(),
+                self.priv14(),
+                self.priv15(),
+                self.priv16(),
+                self.priv17(),
+                self.priv18(),
+                self.priv19(),
+                self.priv20(),
+                self.priv21(),
+                self.priv22(),
+                self.priv23(),
+                self.priv24(),
+                self.priv25(),
+                self.priv26(),
+                self.priv27(),
+                self.priv28(),
+                self.priv29(),
+                self.priv30(),
+                self.priv31()
+            )
         }
     }
     #[doc = "GTZC1 TZSC BKPSRAM sub-region A watermark configuration register."]
@@ -1438,7 +1508,27 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for TzscPrivcfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "TzscPrivcfgr1 {{ tim2priv: {=bool:?}, tim3priv: {=bool:?}, tim6priv: {=bool:?}, tim7priv: {=bool:?}, wwdgpriv: {=bool:?}, iwdgpriv: {=bool:?}, spi2priv: {=bool:?}, spi3priv: {=bool:?}, usart2priv: {=bool:?}, usart3priv: {=bool:?}, i2c1priv: {=bool:?}, i2c2priv: {=bool:?}, i3c1priv: {=bool:?}, crspriv: {=bool:?}, dac1priv: {=bool:?}, dtspriv: {=bool:?}, lptim2priv: {=bool:?} }}" , self . tim2priv () , self . tim3priv () , self . tim6priv () , self . tim7priv () , self . wwdgpriv () , self . iwdgpriv () , self . spi2priv () , self . spi3priv () , self . usart2priv () , self . usart3priv () , self . i2c1priv () , self . i2c2priv () , self . i3c1priv () , self . crspriv () , self . dac1priv () , self . dtspriv () , self . lptim2priv ())
+            defmt::write!(
+                f,
+                "TzscPrivcfgr1 {{ tim2priv: {=bool:?}, tim3priv: {=bool:?}, tim6priv: {=bool:?}, tim7priv: {=bool:?}, wwdgpriv: {=bool:?}, iwdgpriv: {=bool:?}, spi2priv: {=bool:?}, spi3priv: {=bool:?}, usart2priv: {=bool:?}, usart3priv: {=bool:?}, i2c1priv: {=bool:?}, i2c2priv: {=bool:?}, i3c1priv: {=bool:?}, crspriv: {=bool:?}, dac1priv: {=bool:?}, dtspriv: {=bool:?}, lptim2priv: {=bool:?} }}",
+                self.tim2priv(),
+                self.tim3priv(),
+                self.tim6priv(),
+                self.tim7priv(),
+                self.wwdgpriv(),
+                self.iwdgpriv(),
+                self.spi2priv(),
+                self.spi3priv(),
+                self.usart2priv(),
+                self.usart3priv(),
+                self.i2c1priv(),
+                self.i2c2priv(),
+                self.i3c1priv(),
+                self.crspriv(),
+                self.dac1priv(),
+                self.dtspriv(),
+                self.lptim2priv()
+            )
         }
     }
     #[doc = "GTZC1 TZSC privilege configuration register 2."]
@@ -1579,7 +1669,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for TzscPrivcfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "TzscPrivcfgr2 {{ fdcan1priv: {=bool:?}, opamppriv: {=bool:?}, comppriv: {=bool:?}, tim1priv: {=bool:?}, spi1priv: {=bool:?}, usart1priv: {=bool:?}, usbfspriv: {=bool:?}, lpuart1priv: {=bool:?}, lptim1priv: {=bool:?} }}" , self . fdcan1priv () , self . opamppriv () , self . comppriv () , self . tim1priv () , self . spi1priv () , self . usart1priv () , self . usbfspriv () , self . lpuart1priv () , self . lptim1priv ())
+            defmt::write!(
+                f,
+                "TzscPrivcfgr2 {{ fdcan1priv: {=bool:?}, opamppriv: {=bool:?}, comppriv: {=bool:?}, tim1priv: {=bool:?}, spi1priv: {=bool:?}, usart1priv: {=bool:?}, usbfspriv: {=bool:?}, lpuart1priv: {=bool:?}, lptim1priv: {=bool:?} }}",
+                self.fdcan1priv(),
+                self.opamppriv(),
+                self.comppriv(),
+                self.tim1priv(),
+                self.spi1priv(),
+                self.usart1priv(),
+                self.usbfspriv(),
+                self.lpuart1priv(),
+                self.lptim1priv()
+            )
         }
     }
     #[doc = "GTZC1 TZSC privilege configuration register 3."]
@@ -1694,7 +1796,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for TzscPrivcfgr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "TzscPrivcfgr3 {{ i3c2priv: {=bool:?}, crcpriv: {=bool:?}, icachepriv: {=bool:?}, adc1priv: {=bool:?}, hashpriv: {=bool:?}, rngpriv: {=bool:?}, ramcfgpriv: {=bool:?} }}" , self . i3c2priv () , self . crcpriv () , self . icachepriv () , self . adc1priv () , self . hashpriv () , self . rngpriv () , self . ramcfgpriv ())
+            defmt::write!(
+                f,
+                "TzscPrivcfgr3 {{ i3c2priv: {=bool:?}, crcpriv: {=bool:?}, icachepriv: {=bool:?}, adc1priv: {=bool:?}, hashpriv: {=bool:?}, rngpriv: {=bool:?}, ramcfgpriv: {=bool:?} }}",
+                self.i3c2priv(),
+                self.crcpriv(),
+                self.icachepriv(),
+                self.adc1priv(),
+                self.hashpriv(),
+                self.rngpriv(),
+                self.ramcfgpriv()
+            )
         }
     }
 }

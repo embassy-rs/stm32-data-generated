@@ -378,7 +378,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ mem_mode: {:?}, pa11_rmp: {=bool:?}, pa12_rmp: {=bool:?}, ir_pol: {=bool:?}, ir_mod: {=u8:?}, boosten: {=bool:?}, ucpd1_strobe: {=bool:?}, ucpd2_strobe: {=bool:?}, i2c_p_bx_fmp: {=u8:?}, i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c_p_ax_fmp: {=u8:?} }}" , self . mem_mode () , self . pa11_rmp () , self . pa12_rmp () , self . ir_pol () , self . ir_mod () , self . boosten () , self . ucpd1_strobe () , self . ucpd2_strobe () , self . i2c_p_bx_fmp () , self . i2c1_fmp () , self . i2c2_fmp () , self . i2c_p_ax_fmp ())
+            defmt::write!(
+                f,
+                "Cfgr1 {{ mem_mode: {:?}, pa11_rmp: {=bool:?}, pa12_rmp: {=bool:?}, ir_pol: {=bool:?}, ir_mod: {=u8:?}, boosten: {=bool:?}, ucpd1_strobe: {=bool:?}, ucpd2_strobe: {=bool:?}, i2c_p_bx_fmp: {=u8:?}, i2c1_fmp: {=bool:?}, i2c2_fmp: {=bool:?}, i2c_p_ax_fmp: {=u8:?} }}",
+                self.mem_mode(),
+                self.pa11_rmp(),
+                self.pa12_rmp(),
+                self.ir_pol(),
+                self.ir_mod(),
+                self.boosten(),
+                self.ucpd1_strobe(),
+                self.ucpd2_strobe(),
+                self.i2c_p_bx_fmp(),
+                self.i2c1_fmp(),
+                self.i2c2_fmp(),
+                self.i2c_p_ax_fmp()
+            )
         }
     }
     #[doc = "configuration register 1"]
@@ -571,7 +586,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr2 {{ lockup_lock: {=bool:?}, sram_parity_lock: {=bool:?}, pvd_lock: {=bool:?}, ecc_lock: {=bool:?}, sram_pef: {=bool:?}, pa1_cden: {=bool:?}, pa3_cden: {=bool:?}, pa5_cden: {=bool:?}, pa6_cden: {=bool:?}, pa13_cden: {=bool:?}, pb0_cden: {=bool:?}, pb1_cden: {=bool:?}, pb2_cden: {=bool:?} }}" , self . lockup_lock () , self . sram_parity_lock () , self . pvd_lock () , self . ecc_lock () , self . sram_pef () , self . pa1_cden () , self . pa3_cden () , self . pa5_cden () , self . pa6_cden () , self . pa13_cden () , self . pb0_cden () , self . pb1_cden () , self . pb2_cden ())
+            defmt::write!(
+                f,
+                "Cfgr2 {{ lockup_lock: {=bool:?}, sram_parity_lock: {=bool:?}, pvd_lock: {=bool:?}, ecc_lock: {=bool:?}, sram_pef: {=bool:?}, pa1_cden: {=bool:?}, pa3_cden: {=bool:?}, pa5_cden: {=bool:?}, pa6_cden: {=bool:?}, pa13_cden: {=bool:?}, pb0_cden: {=bool:?}, pb1_cden: {=bool:?}, pb2_cden: {=bool:?} }}",
+                self.lockup_lock(),
+                self.sram_parity_lock(),
+                self.pvd_lock(),
+                self.ecc_lock(),
+                self.sram_pef(),
+                self.pa1_cden(),
+                self.pa3_cden(),
+                self.pa5_cden(),
+                self.pa6_cden(),
+                self.pa13_cden(),
+                self.pb0_cden(),
+                self.pb1_cden(),
+                self.pb2_cden()
+            )
         }
     }
     #[doc = "interrupt line 0 status register"]
@@ -785,7 +816,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline11 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Itline11 {{ dmamux: {=bool:?}, dma1_ch4: {=bool:?}, dma1_ch5: {=bool:?}, dma1_ch6: {=bool:?}, dma1_ch7: {=bool:?} }}" , self . dmamux () , self . dma1_ch4 () , self . dma1_ch5 () , self . dma1_ch6 () , self . dma1_ch7 ())
+            defmt::write!(
+                f,
+                "Itline11 {{ dmamux: {=bool:?}, dma1_ch4: {=bool:?}, dma1_ch5: {=bool:?}, dma1_ch6: {=bool:?}, dma1_ch7: {=bool:?} }}",
+                self.dmamux(),
+                self.dma1_ch4(),
+                self.dma1_ch5(),
+                self.dma1_ch6(),
+                self.dma1_ch7()
+            )
         }
     }
     #[doc = "interrupt line 12 status register"]
@@ -2116,7 +2155,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Itline7 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Itline7 {{ exti4: {=bool:?}, exti5: {=bool:?}, exti6: {=bool:?}, exti7: {=bool:?}, exti8: {=bool:?}, exti9: {=bool:?}, exti10: {=bool:?}, exti11: {=bool:?}, exti12: {=bool:?}, exti13: {=bool:?}, exti14: {=bool:?}, exti15: {=bool:?} }}" , self . exti4 () , self . exti5 () , self . exti6 () , self . exti7 () , self . exti8 () , self . exti9 () , self . exti10 () , self . exti11 () , self . exti12 () , self . exti13 () , self . exti14 () , self . exti15 ())
+            defmt::write!(
+                f,
+                "Itline7 {{ exti4: {=bool:?}, exti5: {=bool:?}, exti6: {=bool:?}, exti7: {=bool:?}, exti8: {=bool:?}, exti9: {=bool:?}, exti10: {=bool:?}, exti11: {=bool:?}, exti12: {=bool:?}, exti13: {=bool:?}, exti14: {=bool:?}, exti15: {=bool:?} }}",
+                self.exti4(),
+                self.exti5(),
+                self.exti6(),
+                self.exti7(),
+                self.exti8(),
+                self.exti9(),
+                self.exti10(),
+                self.exti11(),
+                self.exti12(),
+                self.exti13(),
+                self.exti14(),
+                self.exti15()
+            )
         }
     }
     #[doc = "interrupt line 8 status register"]

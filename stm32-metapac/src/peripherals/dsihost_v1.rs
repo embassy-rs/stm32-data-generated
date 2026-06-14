@@ -744,7 +744,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cmcr {{ teare: {=bool:?}, are: {=bool:?}, gsw0tx: {=bool:?}, gsw1tx: {=bool:?}, gsw2tx: {=bool:?}, gsr0tx: {=bool:?}, gsr1tx: {=bool:?}, gsr2tx: {=bool:?}, glwtx: {=bool:?}, dsw0tx: {=bool:?}, dsw1tx: {=bool:?}, dsr0tx: {=bool:?}, dlwtx: {=bool:?}, mrdps: {=bool:?} }}" , self . teare () , self . are () , self . gsw0tx () , self . gsw1tx () , self . gsw2tx () , self . gsr0tx () , self . gsr1tx () , self . gsr2tx () , self . glwtx () , self . dsw0tx () , self . dsw1tx () , self . dsr0tx () , self . dlwtx () , self . mrdps ())
+            defmt::write!(
+                f,
+                "Cmcr {{ teare: {=bool:?}, are: {=bool:?}, gsw0tx: {=bool:?}, gsw1tx: {=bool:?}, gsw2tx: {=bool:?}, gsr0tx: {=bool:?}, gsr1tx: {=bool:?}, gsr2tx: {=bool:?}, glwtx: {=bool:?}, dsw0tx: {=bool:?}, dsw1tx: {=bool:?}, dsr0tx: {=bool:?}, dlwtx: {=bool:?}, mrdps: {=bool:?} }}",
+                self.teare(),
+                self.are(),
+                self.gsw0tx(),
+                self.gsw1tx(),
+                self.gsw2tx(),
+                self.gsr0tx(),
+                self.gsr1tx(),
+                self.gsr2tx(),
+                self.glwtx(),
+                self.dsw0tx(),
+                self.dsw1tx(),
+                self.dsr0tx(),
+                self.dlwtx(),
+                self.mrdps()
+            )
         }
     }
     #[doc = "DSI Host Control Register."]
@@ -1145,7 +1162,31 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fir0 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Fir0 {{ fae0: {=bool:?}, fae1: {=bool:?}, fae2: {=bool:?}, fae3: {=bool:?}, fae4: {=bool:?}, fae5: {=bool:?}, fae6: {=bool:?}, fae7: {=bool:?}, fae8: {=bool:?}, fae9: {=bool:?}, fae10: {=bool:?}, fae11: {=bool:?}, fae12: {=bool:?}, fae13: {=bool:?}, fae14: {=bool:?}, fae15: {=bool:?}, fpe0: {=bool:?}, fpe1: {=bool:?}, fpe2: {=bool:?}, fpe3: {=bool:?}, fpe4: {=bool:?} }}" , self . fae0 () , self . fae1 () , self . fae2 () , self . fae3 () , self . fae4 () , self . fae5 () , self . fae6 () , self . fae7 () , self . fae8 () , self . fae9 () , self . fae10 () , self . fae11 () , self . fae12 () , self . fae13 () , self . fae14 () , self . fae15 () , self . fpe0 () , self . fpe1 () , self . fpe2 () , self . fpe3 () , self . fpe4 ())
+            defmt::write!(
+                f,
+                "Fir0 {{ fae0: {=bool:?}, fae1: {=bool:?}, fae2: {=bool:?}, fae3: {=bool:?}, fae4: {=bool:?}, fae5: {=bool:?}, fae6: {=bool:?}, fae7: {=bool:?}, fae8: {=bool:?}, fae9: {=bool:?}, fae10: {=bool:?}, fae11: {=bool:?}, fae12: {=bool:?}, fae13: {=bool:?}, fae14: {=bool:?}, fae15: {=bool:?}, fpe0: {=bool:?}, fpe1: {=bool:?}, fpe2: {=bool:?}, fpe3: {=bool:?}, fpe4: {=bool:?} }}",
+                self.fae0(),
+                self.fae1(),
+                self.fae2(),
+                self.fae3(),
+                self.fae4(),
+                self.fae5(),
+                self.fae6(),
+                self.fae7(),
+                self.fae8(),
+                self.fae9(),
+                self.fae10(),
+                self.fae11(),
+                self.fae12(),
+                self.fae13(),
+                self.fae14(),
+                self.fae15(),
+                self.fpe0(),
+                self.fpe1(),
+                self.fpe2(),
+                self.fpe3(),
+                self.fpe4()
+            )
         }
     }
     #[doc = "DSI Host Force Interrupt Register 1."]
@@ -1338,7 +1379,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fir1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Fir1 {{ ftohstx: {=bool:?}, ftolprx: {=bool:?}, feccse: {=bool:?}, feccme: {=bool:?}, fcrce: {=bool:?}, fpse: {=bool:?}, feotpe: {=bool:?}, flpwre: {=bool:?}, fgcwre: {=bool:?}, fgpwre: {=bool:?}, fgptxe: {=bool:?}, fgprde: {=bool:?}, fgprxe: {=bool:?} }}" , self . ftohstx () , self . ftolprx () , self . feccse () , self . feccme () , self . fcrce () , self . fpse () , self . feotpe () , self . flpwre () , self . fgcwre () , self . fgpwre () , self . fgptxe () , self . fgprde () , self . fgprxe ())
+            defmt::write!(
+                f,
+                "Fir1 {{ ftohstx: {=bool:?}, ftolprx: {=bool:?}, feccse: {=bool:?}, feccme: {=bool:?}, fcrce: {=bool:?}, fpse: {=bool:?}, feotpe: {=bool:?}, flpwre: {=bool:?}, fgcwre: {=bool:?}, fgpwre: {=bool:?}, fgptxe: {=bool:?}, fgprde: {=bool:?}, fgprxe: {=bool:?} }}",
+                self.ftohstx(),
+                self.ftolprx(),
+                self.feccse(),
+                self.feccme(),
+                self.fcrce(),
+                self.fpse(),
+                self.feotpe(),
+                self.flpwre(),
+                self.fgcwre(),
+                self.fgpwre(),
+                self.fgptxe(),
+                self.fgprde(),
+                self.fgprxe()
+            )
         }
     }
     #[doc = "DSI Host Generic Header Configuration Register."]
@@ -1619,7 +1676,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Gpsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Gpsr {{ cmdfe: {=bool:?}, cmdff: {=bool:?}, pwrfe: {=bool:?}, pwrff: {=bool:?}, prdfe: {=bool:?}, prdff: {=bool:?}, rcb: {=bool:?} }}" , self . cmdfe () , self . cmdff () , self . pwrfe () , self . pwrff () , self . prdfe () , self . prdff () , self . rcb ())
+            defmt::write!(
+                f,
+                "Gpsr {{ cmdfe: {=bool:?}, cmdff: {=bool:?}, pwrfe: {=bool:?}, pwrff: {=bool:?}, prdfe: {=bool:?}, prdff: {=bool:?}, rcb: {=bool:?} }}",
+                self.cmdfe(),
+                self.cmdff(),
+                self.pwrfe(),
+                self.pwrff(),
+                self.prdfe(),
+                self.prdff(),
+                self.rcb()
+            )
         }
     }
     #[doc = "DSI Host Generic VCID Register."]
@@ -1951,7 +2018,31 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier0 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier0 {{ ae0ie: {=bool:?}, ae1ie: {=bool:?}, ae2ie: {=bool:?}, ae3ie: {=bool:?}, ae4ie: {=bool:?}, ae5ie: {=bool:?}, ae6ie: {=bool:?}, ae7ie: {=bool:?}, ae8ie: {=bool:?}, ae9ie: {=bool:?}, ae10ie: {=bool:?}, ae11ie: {=bool:?}, ae12ie: {=bool:?}, ae13ie: {=bool:?}, ae14ie: {=bool:?}, ae15ie: {=bool:?}, pe0ie: {=bool:?}, pe1ie: {=bool:?}, pe2ie: {=bool:?}, pe3ie: {=bool:?}, pe4ie: {=bool:?} }}" , self . ae0ie () , self . ae1ie () , self . ae2ie () , self . ae3ie () , self . ae4ie () , self . ae5ie () , self . ae6ie () , self . ae7ie () , self . ae8ie () , self . ae9ie () , self . ae10ie () , self . ae11ie () , self . ae12ie () , self . ae13ie () , self . ae14ie () , self . ae15ie () , self . pe0ie () , self . pe1ie () , self . pe2ie () , self . pe3ie () , self . pe4ie ())
+            defmt::write!(
+                f,
+                "Ier0 {{ ae0ie: {=bool:?}, ae1ie: {=bool:?}, ae2ie: {=bool:?}, ae3ie: {=bool:?}, ae4ie: {=bool:?}, ae5ie: {=bool:?}, ae6ie: {=bool:?}, ae7ie: {=bool:?}, ae8ie: {=bool:?}, ae9ie: {=bool:?}, ae10ie: {=bool:?}, ae11ie: {=bool:?}, ae12ie: {=bool:?}, ae13ie: {=bool:?}, ae14ie: {=bool:?}, ae15ie: {=bool:?}, pe0ie: {=bool:?}, pe1ie: {=bool:?}, pe2ie: {=bool:?}, pe3ie: {=bool:?}, pe4ie: {=bool:?} }}",
+                self.ae0ie(),
+                self.ae1ie(),
+                self.ae2ie(),
+                self.ae3ie(),
+                self.ae4ie(),
+                self.ae5ie(),
+                self.ae6ie(),
+                self.ae7ie(),
+                self.ae8ie(),
+                self.ae9ie(),
+                self.ae10ie(),
+                self.ae11ie(),
+                self.ae12ie(),
+                self.ae13ie(),
+                self.ae14ie(),
+                self.ae15ie(),
+                self.pe0ie(),
+                self.pe1ie(),
+                self.pe2ie(),
+                self.pe3ie(),
+                self.pe4ie()
+            )
         }
     }
     #[doc = "DSI Host Interrupt Enable Register 1."]
@@ -2144,7 +2235,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier1 {{ tohstxie: {=bool:?}, tolprxie: {=bool:?}, eccseie: {=bool:?}, eccmeie: {=bool:?}, crceie: {=bool:?}, pseie: {=bool:?}, eotpeie: {=bool:?}, lpwreie: {=bool:?}, gcwreie: {=bool:?}, gpwreie: {=bool:?}, gptxeie: {=bool:?}, gprdeie: {=bool:?}, gprxeie: {=bool:?} }}" , self . tohstxie () , self . tolprxie () , self . eccseie () , self . eccmeie () , self . crceie () , self . pseie () , self . eotpeie () , self . lpwreie () , self . gcwreie () , self . gpwreie () , self . gptxeie () , self . gprdeie () , self . gprxeie ())
+            defmt::write!(
+                f,
+                "Ier1 {{ tohstxie: {=bool:?}, tolprxie: {=bool:?}, eccseie: {=bool:?}, eccmeie: {=bool:?}, crceie: {=bool:?}, pseie: {=bool:?}, eotpeie: {=bool:?}, lpwreie: {=bool:?}, gcwreie: {=bool:?}, gpwreie: {=bool:?}, gptxeie: {=bool:?}, gprdeie: {=bool:?}, gprxeie: {=bool:?} }}",
+                self.tohstxie(),
+                self.tolprxie(),
+                self.eccseie(),
+                self.eccmeie(),
+                self.crceie(),
+                self.pseie(),
+                self.eotpeie(),
+                self.lpwreie(),
+                self.gcwreie(),
+                self.gpwreie(),
+                self.gptxeie(),
+                self.gprdeie(),
+                self.gprxeie()
+            )
         }
     }
     #[doc = "DSI Host Interrupt & Status Register 0."]
@@ -2441,7 +2548,31 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr0 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr0 {{ ae0: {=bool:?}, ae1: {=bool:?}, ae2: {=bool:?}, ae3: {=bool:?}, ae4: {=bool:?}, ae5: {=bool:?}, ae6: {=bool:?}, ae7: {=bool:?}, ae8: {=bool:?}, ae9: {=bool:?}, ae10: {=bool:?}, ae11: {=bool:?}, ae12: {=bool:?}, ae13: {=bool:?}, ae14: {=bool:?}, ae15: {=bool:?}, pe0: {=bool:?}, pe1: {=bool:?}, pe2: {=bool:?}, pe3: {=bool:?}, pe4: {=bool:?} }}" , self . ae0 () , self . ae1 () , self . ae2 () , self . ae3 () , self . ae4 () , self . ae5 () , self . ae6 () , self . ae7 () , self . ae8 () , self . ae9 () , self . ae10 () , self . ae11 () , self . ae12 () , self . ae13 () , self . ae14 () , self . ae15 () , self . pe0 () , self . pe1 () , self . pe2 () , self . pe3 () , self . pe4 ())
+            defmt::write!(
+                f,
+                "Isr0 {{ ae0: {=bool:?}, ae1: {=bool:?}, ae2: {=bool:?}, ae3: {=bool:?}, ae4: {=bool:?}, ae5: {=bool:?}, ae6: {=bool:?}, ae7: {=bool:?}, ae8: {=bool:?}, ae9: {=bool:?}, ae10: {=bool:?}, ae11: {=bool:?}, ae12: {=bool:?}, ae13: {=bool:?}, ae14: {=bool:?}, ae15: {=bool:?}, pe0: {=bool:?}, pe1: {=bool:?}, pe2: {=bool:?}, pe3: {=bool:?}, pe4: {=bool:?} }}",
+                self.ae0(),
+                self.ae1(),
+                self.ae2(),
+                self.ae3(),
+                self.ae4(),
+                self.ae5(),
+                self.ae6(),
+                self.ae7(),
+                self.ae8(),
+                self.ae9(),
+                self.ae10(),
+                self.ae11(),
+                self.ae12(),
+                self.ae13(),
+                self.ae14(),
+                self.ae15(),
+                self.pe0(),
+                self.pe1(),
+                self.pe2(),
+                self.pe3(),
+                self.pe4()
+            )
         }
     }
     #[doc = "DSI Host Interrupt & Status Register 1."]
@@ -2634,7 +2765,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr1 {{ tohstx: {=bool:?}, tolprx: {=bool:?}, eccse: {=bool:?}, eccme: {=bool:?}, crce: {=bool:?}, pse: {=bool:?}, eotpe: {=bool:?}, lpwre: {=bool:?}, gcwre: {=bool:?}, gpwre: {=bool:?}, gptxe: {=bool:?}, gprde: {=bool:?}, gprxe: {=bool:?} }}" , self . tohstx () , self . tolprx () , self . eccse () , self . eccme () , self . crce () , self . pse () , self . eotpe () , self . lpwre () , self . gcwre () , self . gpwre () , self . gptxe () , self . gprde () , self . gprxe ())
+            defmt::write!(
+                f,
+                "Isr1 {{ tohstx: {=bool:?}, tolprx: {=bool:?}, eccse: {=bool:?}, eccme: {=bool:?}, crce: {=bool:?}, pse: {=bool:?}, eotpe: {=bool:?}, lpwre: {=bool:?}, gcwre: {=bool:?}, gpwre: {=bool:?}, gptxe: {=bool:?}, gprde: {=bool:?}, gprxe: {=bool:?} }}",
+                self.tohstx(),
+                self.tolprx(),
+                self.eccse(),
+                self.eccme(),
+                self.crce(),
+                self.pse(),
+                self.eotpe(),
+                self.lpwre(),
+                self.gcwre(),
+                self.gpwre(),
+                self.gptxe(),
+                self.gprde(),
+                self.gprxe()
+            )
         }
     }
     #[doc = "DSI Host LTDC Current Color Coding Register."]
@@ -3383,7 +3530,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Psr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Psr {{ pd: {=bool:?}, pssc: {=bool:?}, uanc: {=bool:?}, pss0: {=bool:?}, uan0: {=bool:?}, rue0: {=bool:?}, pss1: {=bool:?}, uan1: {=bool:?} }}" , self . pd () , self . pssc () , self . uanc () , self . pss0 () , self . uan0 () , self . rue0 () , self . pss1 () , self . uan1 ())
+            defmt::write!(
+                f,
+                "Psr {{ pd: {=bool:?}, pssc: {=bool:?}, uanc: {=bool:?}, pss0: {=bool:?}, uan0: {=bool:?}, rue0: {=bool:?}, pss1: {=bool:?}, uan1: {=bool:?} }}",
+                self.pd(),
+                self.pssc(),
+                self.uanc(),
+                self.pss0(),
+                self.uan0(),
+                self.rue0(),
+                self.pss1(),
+                self.uan1()
+            )
         }
     }
     #[doc = "DSI Host PHY TX Triggers Configuration Register."]
@@ -4172,7 +4330,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vmccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Vmccr {{ vmt: {=u8:?}, lpvsae: {=bool:?}, lpvbpe: {=bool:?}, lpvfpe: {=bool:?}, lpvae: {=bool:?}, lphbpe: {=bool:?}, lphfe: {=bool:?}, fbtaae: {=bool:?}, lpce: {=bool:?} }}" , self . vmt () , self . lpvsae () , self . lpvbpe () , self . lpvfpe () , self . lpvae () , self . lphbpe () , self . lphfe () , self . fbtaae () , self . lpce ())
+            defmt::write!(
+                f,
+                "Vmccr {{ vmt: {=u8:?}, lpvsae: {=bool:?}, lpvbpe: {=bool:?}, lpvfpe: {=bool:?}, lpvae: {=bool:?}, lphbpe: {=bool:?}, lphfe: {=bool:?}, fbtaae: {=bool:?}, lpce: {=bool:?} }}",
+                self.vmt(),
+                self.lpvsae(),
+                self.lpvbpe(),
+                self.lpvfpe(),
+                self.lpvae(),
+                self.lphbpe(),
+                self.lphfe(),
+                self.fbtaae(),
+                self.lpce()
+            )
         }
     }
     #[doc = "DSI Host Video mode Configuration Register."]
@@ -4352,7 +4522,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Vmcr {{ vmt: {=u8:?}, lpvsae: {=bool:?}, lpvbpe: {=bool:?}, lpvfpe: {=bool:?}, lpvae: {=bool:?}, lphbpe: {=bool:?}, lphfpe: {=bool:?}, fbtaae: {=bool:?}, lpce: {=bool:?}, pge: {=bool:?}, pgm: {=bool:?}, pgo: {=bool:?} }}" , self . vmt () , self . lpvsae () , self . lpvbpe () , self . lpvfpe () , self . lpvae () , self . lphbpe () , self . lphfpe () , self . fbtaae () , self . lpce () , self . pge () , self . pgm () , self . pgo ())
+            defmt::write!(
+                f,
+                "Vmcr {{ vmt: {=u8:?}, lpvsae: {=bool:?}, lpvbpe: {=bool:?}, lpvfpe: {=bool:?}, lpvae: {=bool:?}, lphbpe: {=bool:?}, lphfpe: {=bool:?}, fbtaae: {=bool:?}, lpce: {=bool:?}, pge: {=bool:?}, pgm: {=bool:?}, pgo: {=bool:?} }}",
+                self.vmt(),
+                self.lpvsae(),
+                self.lpvbpe(),
+                self.lpvfpe(),
+                self.lpvae(),
+                self.lphbpe(),
+                self.lphfpe(),
+                self.fbtaae(),
+                self.lpce(),
+                self.pge(),
+                self.pgm(),
+                self.pgo()
+            )
         }
     }
     #[doc = "DSI Host Video Null Packet Current Configuration Register."]
@@ -4959,7 +5144,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wcfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wcfgr {{ dsim: {=bool:?}, colmux: {=u8:?}, tesrc: {=bool:?}, tepol: {=bool:?}, ar: {=bool:?}, vspol: {=bool:?} }}" , self . dsim () , self . colmux () , self . tesrc () , self . tepol () , self . ar () , self . vspol ())
+            defmt::write!(
+                f,
+                "Wcfgr {{ dsim: {=bool:?}, colmux: {=u8:?}, tesrc: {=bool:?}, tepol: {=bool:?}, ar: {=bool:?}, vspol: {=bool:?} }}",
+                self.dsim(),
+                self.colmux(),
+                self.tesrc(),
+                self.tepol(),
+                self.ar(),
+                self.vspol()
+            )
         }
     }
     #[doc = "DSI Wrapper Control Register."]
@@ -5228,7 +5422,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wifcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wifcr {{ cteif: {=bool:?}, cerif: {=bool:?}, cplllif: {=bool:?}, cplluif: {=bool:?}, crrif: {=bool:?} }}" , self . cteif () , self . cerif () , self . cplllif () , self . cplluif () , self . crrif ())
+            defmt::write!(
+                f,
+                "Wifcr {{ cteif: {=bool:?}, cerif: {=bool:?}, cplllif: {=bool:?}, cplluif: {=bool:?}, crrif: {=bool:?} }}",
+                self.cteif(),
+                self.cerif(),
+                self.cplllif(),
+                self.cplluif(),
+                self.crrif()
+            )
         }
     }
     #[doc = "DSI Wrapper Interrupt & Status Register."]
@@ -5356,7 +5558,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wisr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wisr {{ teif: {=bool:?}, erif: {=bool:?}, busy: {=bool:?}, pllls: {=bool:?}, plllif: {=bool:?}, plluif: {=bool:?}, rrs: {=bool:?}, rrif: {=bool:?} }}" , self . teif () , self . erif () , self . busy () , self . pllls () , self . plllif () , self . plluif () , self . rrs () , self . rrif ())
+            defmt::write!(
+                f,
+                "Wisr {{ teif: {=bool:?}, erif: {=bool:?}, busy: {=bool:?}, pllls: {=bool:?}, plllif: {=bool:?}, plluif: {=bool:?}, rrs: {=bool:?}, rrif: {=bool:?} }}",
+                self.teif(),
+                self.erif(),
+                self.busy(),
+                self.pllls(),
+                self.plllif(),
+                self.plluif(),
+                self.rrs(),
+                self.rrif()
+            )
         }
     }
     #[doc = "DSI Wrapper PHY Configuration Register 0."]
@@ -5653,7 +5866,31 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wpcr0 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wpcr0 {{ uix4: {=u8:?}, swcl: {=bool:?}, swdl0: {=bool:?}, swdl1: {=bool:?}, hsicl: {=bool:?}, hsidl0: {=bool:?}, hsidl1: {=bool:?}, ftxsmcl: {=bool:?}, ftxsmdl: {=bool:?}, cdoffdl: {=bool:?}, tddl: {=bool:?}, pden: {=bool:?}, tclkprepen: {=bool:?}, tclkzeroen: {=bool:?}, thsprepen: {=bool:?}, thstrailen: {=bool:?}, thszeroen: {=bool:?}, tlpxden: {=bool:?}, thsexiten: {=bool:?}, tlpxcen: {=bool:?}, tclkposten: {=bool:?} }}" , self . uix4 () , self . swcl () , self . swdl0 () , self . swdl1 () , self . hsicl () , self . hsidl0 () , self . hsidl1 () , self . ftxsmcl () , self . ftxsmdl () , self . cdoffdl () , self . tddl () , self . pden () , self . tclkprepen () , self . tclkzeroen () , self . thsprepen () , self . thstrailen () , self . thszeroen () , self . tlpxden () , self . thsexiten () , self . tlpxcen () , self . tclkposten ())
+            defmt::write!(
+                f,
+                "Wpcr0 {{ uix4: {=u8:?}, swcl: {=bool:?}, swdl0: {=bool:?}, swdl1: {=bool:?}, hsicl: {=bool:?}, hsidl0: {=bool:?}, hsidl1: {=bool:?}, ftxsmcl: {=bool:?}, ftxsmdl: {=bool:?}, cdoffdl: {=bool:?}, tddl: {=bool:?}, pden: {=bool:?}, tclkprepen: {=bool:?}, tclkzeroen: {=bool:?}, thsprepen: {=bool:?}, thstrailen: {=bool:?}, thszeroen: {=bool:?}, tlpxden: {=bool:?}, thsexiten: {=bool:?}, tlpxcen: {=bool:?}, tclkposten: {=bool:?} }}",
+                self.uix4(),
+                self.swcl(),
+                self.swdl0(),
+                self.swdl1(),
+                self.hsicl(),
+                self.hsidl0(),
+                self.hsidl1(),
+                self.ftxsmcl(),
+                self.ftxsmdl(),
+                self.cdoffdl(),
+                self.tddl(),
+                self.pden(),
+                self.tclkprepen(),
+                self.tclkzeroen(),
+                self.thsprepen(),
+                self.thstrailen(),
+                self.thszeroen(),
+                self.tlpxden(),
+                self.thsexiten(),
+                self.tlpxcen(),
+                self.tclkposten()
+            )
         }
     }
     #[doc = "DSI Wrapper PHY Configuration Register 1."]
@@ -5794,7 +6031,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wpcr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wpcr1 {{ hstxdcl: {=u8:?}, hstxdll: {=u8:?}, lpsrcl: {=u8:?}, lpsrdl: {=u8:?}, sdcc: {=bool:?}, hstxsrccl: {=u8:?}, hstxsrcdl: {=u8:?}, flprxlpm: {=bool:?}, lprxft: {=u8:?} }}" , self . hstxdcl () , self . hstxdll () , self . lpsrcl () , self . lpsrdl () , self . sdcc () , self . hstxsrccl () , self . hstxsrcdl () , self . flprxlpm () , self . lprxft ())
+            defmt::write!(
+                f,
+                "Wpcr1 {{ hstxdcl: {=u8:?}, hstxdll: {=u8:?}, lpsrcl: {=u8:?}, lpsrdl: {=u8:?}, sdcc: {=bool:?}, hstxsrccl: {=u8:?}, hstxsrcdl: {=u8:?}, flprxlpm: {=bool:?}, lprxft: {=u8:?} }}",
+                self.hstxdcl(),
+                self.hstxdll(),
+                self.lpsrcl(),
+                self.lpsrdl(),
+                self.sdcc(),
+                self.hstxsrccl(),
+                self.hstxsrcdl(),
+                self.flprxlpm(),
+                self.lprxft()
+            )
         }
     }
     #[doc = "DSI Wrapper PHY Configuration Register 2."]

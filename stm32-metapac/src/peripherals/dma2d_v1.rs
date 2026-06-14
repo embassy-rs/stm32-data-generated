@@ -700,7 +700,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ start: {:?}, susp: {=bool:?}, abort: {:?}, teie: {=bool:?}, tcie: {=bool:?}, twie: {=bool:?}, caeie: {=bool:?}, ctcie: {=bool:?}, ceie: {=bool:?}, mode: {:?} }}" , self . start () , self . susp () , self . abort () , self . teie () , self . tcie () , self . twie () , self . caeie () , self . ctcie () , self . ceie () , self . mode ())
+            defmt::write!(
+                f,
+                "Cr {{ start: {:?}, susp: {=bool:?}, abort: {:?}, teie: {=bool:?}, tcie: {=bool:?}, twie: {=bool:?}, caeie: {=bool:?}, ctcie: {=bool:?}, ceie: {=bool:?}, mode: {:?} }}",
+                self.start(),
+                self.susp(),
+                self.abort(),
+                self.teie(),
+                self.tcie(),
+                self.twie(),
+                self.caeie(),
+                self.ctcie(),
+                self.ceie(),
+                self.mode()
+            )
         }
     }
     #[doc = "FGCLUT"]
@@ -1281,7 +1294,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ teif: {=bool:?}, tcif: {=bool:?}, twif: {=bool:?}, caeif: {=bool:?}, ctcif: {=bool:?}, ceif: {=bool:?} }}" , self . teif () , self . tcif () , self . twif () , self . caeif () , self . ctcif () , self . ceif ())
+            defmt::write!(
+                f,
+                "Isr {{ teif: {=bool:?}, tcif: {=bool:?}, twif: {=bool:?}, caeif: {=bool:?}, ctcif: {=bool:?}, ceif: {=bool:?} }}",
+                self.teif(),
+                self.tcif(),
+                self.twif(),
+                self.caeif(),
+                self.ctcif(),
+                self.ceif()
+            )
         }
     }
     #[doc = "line watermark register"]

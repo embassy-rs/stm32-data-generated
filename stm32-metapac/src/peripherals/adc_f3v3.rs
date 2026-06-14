@@ -298,7 +298,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ awdch: {=u8:?}, eocie: {=bool:?}, awdie: {=bool:?}, jeocie: {=bool:?}, scan: {=bool:?}, awdsgl: {=bool:?}, jauto: {=bool:?}, discen: {=bool:?}, jdiscen: {=bool:?}, discnum: {:?}, jawden: {=bool:?}, awden: {=bool:?} }}" , self . awdch () , self . eocie () , self . awdie () , self . jeocie () , self . scan () , self . awdsgl () , self . jauto () , self . discen () , self . jdiscen () , self . discnum () , self . jawden () , self . awden ())
+            defmt::write!(
+                f,
+                "Cr1 {{ awdch: {=u8:?}, eocie: {=bool:?}, awdie: {=bool:?}, jeocie: {=bool:?}, scan: {=bool:?}, awdsgl: {=bool:?}, jauto: {=bool:?}, discen: {=bool:?}, jdiscen: {=bool:?}, discnum: {:?}, jawden: {=bool:?}, awden: {=bool:?} }}",
+                self.awdch(),
+                self.eocie(),
+                self.awdie(),
+                self.jeocie(),
+                self.scan(),
+                self.awdsgl(),
+                self.jauto(),
+                self.discen(),
+                self.jdiscen(),
+                self.discnum(),
+                self.jawden(),
+                self.awden()
+            )
         }
     }
     #[doc = "control register 2"]
@@ -491,7 +506,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ adon: {=bool:?}, cont: {=bool:?}, cal: {=bool:?}, rstcal: {=bool:?}, dma: {=bool:?}, align: {=bool:?}, jextsel: {=u8:?}, jexttrig: {=bool:?}, extsel: {=u8:?}, exttrig: {=bool:?}, jswstart: {=bool:?}, swstart: {=bool:?}, tsvrefe: {=bool:?} }}" , self . adon () , self . cont () , self . cal () , self . rstcal () , self . dma () , self . align () , self . jextsel () , self . jexttrig () , self . extsel () , self . exttrig () , self . jswstart () , self . swstart () , self . tsvrefe ())
+            defmt::write!(
+                f,
+                "Cr2 {{ adon: {=bool:?}, cont: {=bool:?}, cal: {=bool:?}, rstcal: {=bool:?}, dma: {=bool:?}, align: {=bool:?}, jextsel: {=u8:?}, jexttrig: {=bool:?}, extsel: {=u8:?}, exttrig: {=bool:?}, jswstart: {=bool:?}, swstart: {=bool:?}, tsvrefe: {=bool:?} }}",
+                self.adon(),
+                self.cont(),
+                self.cal(),
+                self.rstcal(),
+                self.dma(),
+                self.align(),
+                self.jextsel(),
+                self.jexttrig(),
+                self.extsel(),
+                self.exttrig(),
+                self.jswstart(),
+                self.swstart(),
+                self.tsvrefe()
+            )
         }
     }
     #[doc = "regular data register"]
@@ -1082,7 +1113,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Smpr1 {{ smp10: {:?}, smp11: {:?}, smp12: {:?}, smp13: {:?}, smp14: {:?}, smp15: {:?}, smp16: {:?}, smp17: {:?}, smp18: {:?} }}" , self . smp10 () , self . smp11 () , self . smp12 () , self . smp13 () , self . smp14 () , self . smp15 () , self . smp16 () , self . smp17 () , self . smp18 ())
+            defmt::write!(
+                f,
+                "Smpr1 {{ smp10: {:?}, smp11: {:?}, smp12: {:?}, smp13: {:?}, smp14: {:?}, smp15: {:?}, smp16: {:?}, smp17: {:?}, smp18: {:?} }}",
+                self.smp10(),
+                self.smp11(),
+                self.smp12(),
+                self.smp13(),
+                self.smp14(),
+                self.smp15(),
+                self.smp16(),
+                self.smp17(),
+                self.smp18()
+            )
         }
     }
     #[doc = "sample time register 2"]
@@ -1236,7 +1279,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Smpr2 {{ smp0: {:?}, smp1: {:?}, smp2: {:?}, smp3: {:?}, smp4: {:?}, smp5: {:?}, smp6: {:?}, smp7: {:?}, smp8: {:?}, smp9: {:?} }}" , self . smp0 () , self . smp1 () , self . smp2 () , self . smp3 () , self . smp4 () , self . smp5 () , self . smp6 () , self . smp7 () , self . smp8 () , self . smp9 ())
+            defmt::write!(
+                f,
+                "Smpr2 {{ smp0: {:?}, smp1: {:?}, smp2: {:?}, smp3: {:?}, smp4: {:?}, smp5: {:?}, smp6: {:?}, smp7: {:?}, smp8: {:?}, smp9: {:?} }}",
+                self.smp0(),
+                self.smp1(),
+                self.smp2(),
+                self.smp3(),
+                self.smp4(),
+                self.smp5(),
+                self.smp6(),
+                self.smp7(),
+                self.smp8(),
+                self.smp9()
+            )
         }
     }
     #[doc = "regular sequence register 1"]
@@ -1657,7 +1713,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ awd: {=bool:?}, eoc: {=bool:?}, jeoc: {=bool:?}, jstrt: {=bool:?}, strt: {=bool:?}, ovr: {=bool:?} }}" , self . awd () , self . eoc () , self . jeoc () , self . jstrt () , self . strt () , self . ovr ())
+            defmt::write!(
+                f,
+                "Sr {{ awd: {=bool:?}, eoc: {=bool:?}, jeoc: {=bool:?}, jstrt: {=bool:?}, strt: {=bool:?}, ovr: {=bool:?} }}",
+                self.awd(),
+                self.eoc(),
+                self.jeoc(),
+                self.jstrt(),
+                self.strt(),
+                self.ovr()
+            )
         }
     }
 }

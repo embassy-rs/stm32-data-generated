@@ -211,7 +211,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ rngen: {=bool:?}, ie: {=bool:?}, ced: {=bool:?}, ardis: {=bool:?}, rng_config3: {:?}, nistc: {:?}, rng_config2: {:?}, clkdiv: {:?}, rng_config1: {:?}, condrst: {=bool:?}, configlock: {=bool:?} }}" , self . rngen () , self . ie () , self . ced () , self . ardis () , self . rng_config3 () , self . nistc () , self . rng_config2 () , self . clkdiv () , self . rng_config1 () , self . condrst () , self . configlock ())
+            defmt::write!(
+                f,
+                "Cr {{ rngen: {=bool:?}, ie: {=bool:?}, ced: {=bool:?}, ardis: {=bool:?}, rng_config3: {:?}, nistc: {:?}, rng_config2: {:?}, clkdiv: {:?}, rng_config1: {:?}, condrst: {=bool:?}, configlock: {=bool:?} }}",
+                self.rngen(),
+                self.ie(),
+                self.ced(),
+                self.ardis(),
+                self.rng_config3(),
+                self.nistc(),
+                self.rng_config2(),
+                self.clkdiv(),
+                self.rng_config1(),
+                self.condrst(),
+                self.configlock()
+            )
         }
     }
     #[doc = "Health test control register"]
@@ -292,7 +306,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Nscr {{ en_osc[0]: {=u8:?}, en_osc[1]: {=u8:?}, en_osc[2]: {=u8:?}, en_osc[3]: {=u8:?}, en_osc[4]: {=u8:?}, en_osc[5]: {=u8:?} }}" , self . en_osc (0usize) , self . en_osc (1usize) , self . en_osc (2usize) , self . en_osc (3usize) , self . en_osc (4usize) , self . en_osc (5usize))
+            defmt::write!(
+                f,
+                "Nscr {{ en_osc[0]: {=u8:?}, en_osc[1]: {=u8:?}, en_osc[2]: {=u8:?}, en_osc[3]: {=u8:?}, en_osc[4]: {=u8:?}, en_osc[5]: {=u8:?} }}",
+                self.en_osc(0usize),
+                self.en_osc(1usize),
+                self.en_osc(2usize),
+                self.en_osc(3usize),
+                self.en_osc(4usize),
+                self.en_osc(5usize)
+            )
         }
     }
     #[doc = "status register"]
@@ -394,7 +417,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ drdy: {=bool:?}, cecs: {=bool:?}, secs: {=bool:?}, busy: {=bool:?}, ceis: {=bool:?}, seis: {=bool:?} }}" , self . drdy () , self . cecs () , self . secs () , self . busy () , self . ceis () , self . seis ())
+            defmt::write!(
+                f,
+                "Sr {{ drdy: {=bool:?}, cecs: {=bool:?}, secs: {=bool:?}, busy: {=bool:?}, ceis: {=bool:?}, seis: {=bool:?} }}",
+                self.drdy(),
+                self.cecs(),
+                self.secs(),
+                self.busy(),
+                self.ceis(),
+                self.seis()
+            )
         }
     }
 }

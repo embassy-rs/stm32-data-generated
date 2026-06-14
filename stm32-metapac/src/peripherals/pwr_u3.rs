@@ -383,7 +383,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ lpms: {:?}, rrsb1: {=bool:?}, rrsb2: {=bool:?}, rrsb3: {=bool:?}, ulpmen: {=bool:?}, sram1pd: {:?}, sram2pd: {:?} }}" , self . lpms () , self . rrsb1 () , self . rrsb2 () , self . rrsb3 () , self . ulpmen () , self . sram1pd () , self . sram2pd ())
+            defmt::write!(
+                f,
+                "Cr1 {{ lpms: {:?}, rrsb1: {=bool:?}, rrsb2: {=bool:?}, rrsb3: {=bool:?}, ulpmen: {=bool:?}, sram1pd: {:?}, sram2pd: {:?} }}",
+                self.lpms(),
+                self.rrsb1(),
+                self.rrsb2(),
+                self.rrsb3(),
+                self.ulpmen(),
+                self.sram1pd(),
+                self.sram2pd()
+            )
         }
     }
     #[doc = "PWR control register 2."]
@@ -602,7 +612,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ sram1pds1: {:?}, sram1pds2: {:?}, sram1pds3: {:?}, sram1pds4: {:?}, sram1pds5: {:?}, sram1pds6: {:?}, sram1pds7: {:?}, sram2pds1: {:?}, sram2pds2: {:?}, sram2pds3: {:?}, icrampds: {:?}, prampds: {:?}, pkarampds: {:?}, sramfwu: {:?}, flashfwu: {:?} }}" , self . sram1pds1 () , self . sram1pds2 () , self . sram1pds3 () , self . sram1pds4 () , self . sram1pds5 () , self . sram1pds6 () , self . sram1pds7 () , self . sram2pds1 () , self . sram2pds2 () , self . sram2pds3 () , self . icrampds () , self . prampds () , self . pkarampds () , self . sramfwu () , self . flashfwu ())
+            defmt::write!(
+                f,
+                "Cr2 {{ sram1pds1: {:?}, sram1pds2: {:?}, sram1pds3: {:?}, sram1pds4: {:?}, sram1pds5: {:?}, sram1pds6: {:?}, sram1pds7: {:?}, sram2pds1: {:?}, sram2pds2: {:?}, sram2pds3: {:?}, icrampds: {:?}, prampds: {:?}, pkarampds: {:?}, sramfwu: {:?}, flashfwu: {:?} }}",
+                self.sram1pds1(),
+                self.sram1pds2(),
+                self.sram1pds3(),
+                self.sram1pds4(),
+                self.sram1pds5(),
+                self.sram1pds6(),
+                self.sram1pds7(),
+                self.sram2pds1(),
+                self.sram2pds2(),
+                self.sram2pds3(),
+                self.icrampds(),
+                self.prampds(),
+                self.pkarampds(),
+                self.sramfwu(),
+                self.flashfwu()
+            )
         }
     }
     #[doc = "PWR control register 3."]
@@ -859,7 +887,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for I3cpucr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "I3cpucr1 {{ pa1_i3cpu: {=bool:?}, pa6_i3cpu: {=bool:?}, pa7_i3cpu: {=bool:?}, pb2_i3cpu: {=bool:?}, pb6_i3cpu: {=bool:?}, pb8_i3cpu: {=bool:?}, pb9_i3cpu: {=bool:?}, pb10_i3cpu: {=bool:?}, pb12_i3cpu: {=bool:?}, pb13_i3cpu: {=bool:?}, pb14_i3cpu: {=bool:?} }}" , self . pa1_i3cpu () , self . pa6_i3cpu () , self . pa7_i3cpu () , self . pb2_i3cpu () , self . pb6_i3cpu () , self . pb8_i3cpu () , self . pb9_i3cpu () , self . pb10_i3cpu () , self . pb12_i3cpu () , self . pb13_i3cpu () , self . pb14_i3cpu ())
+            defmt::write!(
+                f,
+                "I3cpucr1 {{ pa1_i3cpu: {=bool:?}, pa6_i3cpu: {=bool:?}, pa7_i3cpu: {=bool:?}, pb2_i3cpu: {=bool:?}, pb6_i3cpu: {=bool:?}, pb8_i3cpu: {=bool:?}, pb9_i3cpu: {=bool:?}, pb10_i3cpu: {=bool:?}, pb12_i3cpu: {=bool:?}, pb13_i3cpu: {=bool:?}, pb14_i3cpu: {=bool:?} }}",
+                self.pa1_i3cpu(),
+                self.pa6_i3cpu(),
+                self.pa7_i3cpu(),
+                self.pb2_i3cpu(),
+                self.pb6_i3cpu(),
+                self.pb8_i3cpu(),
+                self.pb9_i3cpu(),
+                self.pb10_i3cpu(),
+                self.pb12_i3cpu(),
+                self.pb13_i3cpu(),
+                self.pb14_i3cpu()
+            )
         }
     }
     #[doc = "PWR I3C pull-up control register 2."]
@@ -1000,7 +1042,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for I3cpucr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "I3cpucr2 {{ pc0_i3cpu: {=bool:?}, pc1_i3cpu: {=bool:?}, pd12_i3cpu: {=bool:?}, pd13_i3cpu: {=bool:?}, pg7_i3cpu: {=bool:?}, pg8_i3cpu: {=bool:?}, pg13_i3cpu: {=bool:?}, pg14_i3cpu: {=bool:?}, ph3_i3cpu: {=bool:?} }}" , self . pc0_i3cpu () , self . pc1_i3cpu () , self . pd12_i3cpu () , self . pd13_i3cpu () , self . pg7_i3cpu () , self . pg8_i3cpu () , self . pg13_i3cpu () , self . pg14_i3cpu () , self . ph3_i3cpu ())
+            defmt::write!(
+                f,
+                "I3cpucr2 {{ pc0_i3cpu: {=bool:?}, pc1_i3cpu: {=bool:?}, pd12_i3cpu: {=bool:?}, pd13_i3cpu: {=bool:?}, pg7_i3cpu: {=bool:?}, pg8_i3cpu: {=bool:?}, pg13_i3cpu: {=bool:?}, pg14_i3cpu: {=bool:?}, ph3_i3cpu: {=bool:?} }}",
+                self.pc0_i3cpu(),
+                self.pc1_i3cpu(),
+                self.pd12_i3cpu(),
+                self.pd13_i3cpu(),
+                self.pg7_i3cpu(),
+                self.pg8_i3cpu(),
+                self.pg13_i3cpu(),
+                self.pg14_i3cpu(),
+                self.ph3_i3cpu()
+            )
         }
     }
     #[doc = "PWR port A pull-down control register."]
@@ -1206,7 +1260,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pdcra {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pdcra {{ pd0: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?}, pd3: {=bool:?}, pd4: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd14: {=bool:?} }}" , self . pd0 () , self . pd1 () , self . pd2 () , self . pd3 () , self . pd4 () , self . pd5 () , self . pd6 () , self . pd7 () , self . pd8 () , self . pd9 () , self . pd10 () , self . pd11 () , self . pd12 () , self . pd14 ())
+            defmt::write!(
+                f,
+                "Pdcra {{ pd0: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?}, pd3: {=bool:?}, pd4: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd14: {=bool:?} }}",
+                self.pd0(),
+                self.pd1(),
+                self.pd2(),
+                self.pd3(),
+                self.pd4(),
+                self.pd5(),
+                self.pd6(),
+                self.pd7(),
+                self.pd8(),
+                self.pd9(),
+                self.pd10(),
+                self.pd11(),
+                self.pd12(),
+                self.pd14()
+            )
         }
     }
     #[doc = "PWR port B pull-down control register."]
@@ -1425,7 +1496,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pdcrb {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pdcrb {{ pd0: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?}, pd3: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd13: {=bool:?}, pd14: {=bool:?}, pd15: {=bool:?} }}" , self . pd0 () , self . pd1 () , self . pd2 () , self . pd3 () , self . pd5 () , self . pd6 () , self . pd7 () , self . pd8 () , self . pd9 () , self . pd10 () , self . pd11 () , self . pd12 () , self . pd13 () , self . pd14 () , self . pd15 ())
+            defmt::write!(
+                f,
+                "Pdcrb {{ pd0: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?}, pd3: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd13: {=bool:?}, pd14: {=bool:?}, pd15: {=bool:?} }}",
+                self.pd0(),
+                self.pd1(),
+                self.pd2(),
+                self.pd3(),
+                self.pd5(),
+                self.pd6(),
+                self.pd7(),
+                self.pd8(),
+                self.pd9(),
+                self.pd10(),
+                self.pd11(),
+                self.pd12(),
+                self.pd13(),
+                self.pd14(),
+                self.pd15()
+            )
         }
     }
     #[doc = "PWR port C pull-down control register."]
@@ -1657,7 +1746,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pdcrc {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pdcrc {{ pd0: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?}, pd3: {=bool:?}, pd4: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd13: {=bool:?}, pd14: {=bool:?}, pd15: {=bool:?} }}" , self . pd0 () , self . pd1 () , self . pd2 () , self . pd3 () , self . pd4 () , self . pd5 () , self . pd6 () , self . pd7 () , self . pd8 () , self . pd9 () , self . pd10 () , self . pd11 () , self . pd12 () , self . pd13 () , self . pd14 () , self . pd15 ())
+            defmt::write!(
+                f,
+                "Pdcrc {{ pd0: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?}, pd3: {=bool:?}, pd4: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd13: {=bool:?}, pd14: {=bool:?}, pd15: {=bool:?} }}",
+                self.pd0(),
+                self.pd1(),
+                self.pd2(),
+                self.pd3(),
+                self.pd4(),
+                self.pd5(),
+                self.pd6(),
+                self.pd7(),
+                self.pd8(),
+                self.pd9(),
+                self.pd10(),
+                self.pd11(),
+                self.pd12(),
+                self.pd13(),
+                self.pd14(),
+                self.pd15()
+            )
         }
     }
     #[doc = "PWR port D pull-down control register."]
@@ -1889,7 +1997,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pdcrd {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pdcrd {{ pd0: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?}, pd3: {=bool:?}, pd4: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd13: {=bool:?}, pd14: {=bool:?}, pd15: {=bool:?} }}" , self . pd0 () , self . pd1 () , self . pd2 () , self . pd3 () , self . pd4 () , self . pd5 () , self . pd6 () , self . pd7 () , self . pd8 () , self . pd9 () , self . pd10 () , self . pd11 () , self . pd12 () , self . pd13 () , self . pd14 () , self . pd15 ())
+            defmt::write!(
+                f,
+                "Pdcrd {{ pd0: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?}, pd3: {=bool:?}, pd4: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd13: {=bool:?}, pd14: {=bool:?}, pd15: {=bool:?} }}",
+                self.pd0(),
+                self.pd1(),
+                self.pd2(),
+                self.pd3(),
+                self.pd4(),
+                self.pd5(),
+                self.pd6(),
+                self.pd7(),
+                self.pd8(),
+                self.pd9(),
+                self.pd10(),
+                self.pd11(),
+                self.pd12(),
+                self.pd13(),
+                self.pd14(),
+                self.pd15()
+            )
         }
     }
     #[doc = "PWR port E pull-down control register."]
@@ -2121,7 +2248,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pdcre {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pdcre {{ pd0: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?}, pd3: {=bool:?}, pd4: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd13: {=bool:?}, pd14: {=bool:?}, pd15: {=bool:?} }}" , self . pd0 () , self . pd1 () , self . pd2 () , self . pd3 () , self . pd4 () , self . pd5 () , self . pd6 () , self . pd7 () , self . pd8 () , self . pd9 () , self . pd10 () , self . pd11 () , self . pd12 () , self . pd13 () , self . pd14 () , self . pd15 ())
+            defmt::write!(
+                f,
+                "Pdcre {{ pd0: {=bool:?}, pd1: {=bool:?}, pd2: {=bool:?}, pd3: {=bool:?}, pd4: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd13: {=bool:?}, pd14: {=bool:?}, pd15: {=bool:?} }}",
+                self.pd0(),
+                self.pd1(),
+                self.pd2(),
+                self.pd3(),
+                self.pd4(),
+                self.pd5(),
+                self.pd6(),
+                self.pd7(),
+                self.pd8(),
+                self.pd9(),
+                self.pd10(),
+                self.pd11(),
+                self.pd12(),
+                self.pd13(),
+                self.pd14(),
+                self.pd15()
+            )
         }
     }
     #[doc = "PWR port G pull-down control register."]
@@ -2327,7 +2473,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pdcrg {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pdcrg {{ pd2: {=bool:?}, pd3: {=bool:?}, pd4: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd13: {=bool:?}, pd14: {=bool:?}, pd15: {=bool:?} }}" , self . pd2 () , self . pd3 () , self . pd4 () , self . pd5 () , self . pd6 () , self . pd7 () , self . pd8 () , self . pd9 () , self . pd10 () , self . pd11 () , self . pd12 () , self . pd13 () , self . pd14 () , self . pd15 ())
+            defmt::write!(
+                f,
+                "Pdcrg {{ pd2: {=bool:?}, pd3: {=bool:?}, pd4: {=bool:?}, pd5: {=bool:?}, pd6: {=bool:?}, pd7: {=bool:?}, pd8: {=bool:?}, pd9: {=bool:?}, pd10: {=bool:?}, pd11: {=bool:?}, pd12: {=bool:?}, pd13: {=bool:?}, pd14: {=bool:?}, pd15: {=bool:?} }}",
+                self.pd2(),
+                self.pd3(),
+                self.pd4(),
+                self.pd5(),
+                self.pd6(),
+                self.pd7(),
+                self.pd8(),
+                self.pd9(),
+                self.pd10(),
+                self.pd11(),
+                self.pd12(),
+                self.pd13(),
+                self.pd14(),
+                self.pd15()
+            )
         }
     }
     #[doc = "PWR port H pull-down control register."]
@@ -2670,7 +2833,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pucra {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pucra {{ pu0: {=bool:?}, pu1: {=bool:?}, pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?}, pu15: {=bool:?} }}" , self . pu0 () , self . pu1 () , self . pu2 () , self . pu3 () , self . pu4 () , self . pu5 () , self . pu6 () , self . pu7 () , self . pu8 () , self . pu9 () , self . pu10 () , self . pu11 () , self . pu12 () , self . pu13 () , self . pu15 ())
+            defmt::write!(
+                f,
+                "Pucra {{ pu0: {=bool:?}, pu1: {=bool:?}, pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?}, pu15: {=bool:?} }}",
+                self.pu0(),
+                self.pu1(),
+                self.pu2(),
+                self.pu3(),
+                self.pu4(),
+                self.pu5(),
+                self.pu6(),
+                self.pu7(),
+                self.pu8(),
+                self.pu9(),
+                self.pu10(),
+                self.pu11(),
+                self.pu12(),
+                self.pu13(),
+                self.pu15()
+            )
         }
     }
     #[doc = "PWR port B pull-up control register."]
@@ -2902,7 +3083,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pucrb {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pucrb {{ pu0: {=bool:?}, pu1: {=bool:?}, pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?}, pu14: {=bool:?}, pu15: {=bool:?} }}" , self . pu0 () , self . pu1 () , self . pu2 () , self . pu3 () , self . pu4 () , self . pu5 () , self . pu6 () , self . pu7 () , self . pu8 () , self . pu9 () , self . pu10 () , self . pu11 () , self . pu12 () , self . pu13 () , self . pu14 () , self . pu15 ())
+            defmt::write!(
+                f,
+                "Pucrb {{ pu0: {=bool:?}, pu1: {=bool:?}, pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?}, pu14: {=bool:?}, pu15: {=bool:?} }}",
+                self.pu0(),
+                self.pu1(),
+                self.pu2(),
+                self.pu3(),
+                self.pu4(),
+                self.pu5(),
+                self.pu6(),
+                self.pu7(),
+                self.pu8(),
+                self.pu9(),
+                self.pu10(),
+                self.pu11(),
+                self.pu12(),
+                self.pu13(),
+                self.pu14(),
+                self.pu15()
+            )
         }
     }
     #[doc = "PWR port C pull-up control register."]
@@ -3134,7 +3334,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pucrc {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pucrc {{ pu0: {=bool:?}, pu1: {=bool:?}, pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?}, pu14: {=bool:?}, pu15: {=bool:?} }}" , self . pu0 () , self . pu1 () , self . pu2 () , self . pu3 () , self . pu4 () , self . pu5 () , self . pu6 () , self . pu7 () , self . pu8 () , self . pu9 () , self . pu10 () , self . pu11 () , self . pu12 () , self . pu13 () , self . pu14 () , self . pu15 ())
+            defmt::write!(
+                f,
+                "Pucrc {{ pu0: {=bool:?}, pu1: {=bool:?}, pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?}, pu14: {=bool:?}, pu15: {=bool:?} }}",
+                self.pu0(),
+                self.pu1(),
+                self.pu2(),
+                self.pu3(),
+                self.pu4(),
+                self.pu5(),
+                self.pu6(),
+                self.pu7(),
+                self.pu8(),
+                self.pu9(),
+                self.pu10(),
+                self.pu11(),
+                self.pu12(),
+                self.pu13(),
+                self.pu14(),
+                self.pu15()
+            )
         }
     }
     #[doc = "PWR port D pull-up control register."]
@@ -3366,7 +3585,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pucrd {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pucrd {{ pu0: {=bool:?}, pu1: {=bool:?}, pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?}, pu14: {=bool:?}, pu15: {=bool:?} }}" , self . pu0 () , self . pu1 () , self . pu2 () , self . pu3 () , self . pu4 () , self . pu5 () , self . pu6 () , self . pu7 () , self . pu8 () , self . pu9 () , self . pu10 () , self . pu11 () , self . pu12 () , self . pu13 () , self . pu14 () , self . pu15 ())
+            defmt::write!(
+                f,
+                "Pucrd {{ pu0: {=bool:?}, pu1: {=bool:?}, pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?}, pu14: {=bool:?}, pu15: {=bool:?} }}",
+                self.pu0(),
+                self.pu1(),
+                self.pu2(),
+                self.pu3(),
+                self.pu4(),
+                self.pu5(),
+                self.pu6(),
+                self.pu7(),
+                self.pu8(),
+                self.pu9(),
+                self.pu10(),
+                self.pu11(),
+                self.pu12(),
+                self.pu13(),
+                self.pu14(),
+                self.pu15()
+            )
         }
     }
     #[doc = "PWR port E pull-up control register."]
@@ -3598,7 +3836,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pucre {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pucre {{ pu0: {=bool:?}, pu1: {=bool:?}, pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?}, pu14: {=bool:?}, pu15: {=bool:?} }}" , self . pu0 () , self . pu1 () , self . pu2 () , self . pu3 () , self . pu4 () , self . pu5 () , self . pu6 () , self . pu7 () , self . pu8 () , self . pu9 () , self . pu10 () , self . pu11 () , self . pu12 () , self . pu13 () , self . pu14 () , self . pu15 ())
+            defmt::write!(
+                f,
+                "Pucre {{ pu0: {=bool:?}, pu1: {=bool:?}, pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?}, pu14: {=bool:?}, pu15: {=bool:?} }}",
+                self.pu0(),
+                self.pu1(),
+                self.pu2(),
+                self.pu3(),
+                self.pu4(),
+                self.pu5(),
+                self.pu6(),
+                self.pu7(),
+                self.pu8(),
+                self.pu9(),
+                self.pu10(),
+                self.pu11(),
+                self.pu12(),
+                self.pu13(),
+                self.pu14(),
+                self.pu15()
+            )
         }
     }
     #[doc = "PWR port G pull-up control register."]
@@ -3804,7 +4061,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pucrg {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pucrg {{ pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?}, pu14: {=bool:?}, pu15: {=bool:?} }}" , self . pu2 () , self . pu3 () , self . pu4 () , self . pu5 () , self . pu6 () , self . pu7 () , self . pu8 () , self . pu9 () , self . pu10 () , self . pu11 () , self . pu12 () , self . pu13 () , self . pu14 () , self . pu15 ())
+            defmt::write!(
+                f,
+                "Pucrg {{ pu2: {=bool:?}, pu3: {=bool:?}, pu4: {=bool:?}, pu5: {=bool:?}, pu6: {=bool:?}, pu7: {=bool:?}, pu8: {=bool:?}, pu9: {=bool:?}, pu10: {=bool:?}, pu11: {=bool:?}, pu12: {=bool:?}, pu13: {=bool:?}, pu14: {=bool:?}, pu15: {=bool:?} }}",
+                self.pu2(),
+                self.pu3(),
+                self.pu4(),
+                self.pu5(),
+                self.pu6(),
+                self.pu7(),
+                self.pu8(),
+                self.pu9(),
+                self.pu10(),
+                self.pu11(),
+                self.pu12(),
+                self.pu13(),
+                self.pu14(),
+                self.pu15()
+            )
         }
     }
     #[doc = "PWR port H pull-up control register."]
@@ -4079,7 +4353,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccfgr {{ wup1sec: {=bool:?}, wup2sec: {=bool:?}, wup3sec: {=bool:?}, wup4sec: {=bool:?}, wup5sec: {=bool:?}, wup6sec: {=bool:?}, wup7sec: {=bool:?}, wup8sec: {=bool:?}, wup9sec: {=bool:?}, wup10sec: {=bool:?}, lpmsec: {=bool:?}, vdmsec: {=bool:?}, vbsec: {=bool:?}, apcsec: {=bool:?} }}" , self . wup1sec () , self . wup2sec () , self . wup3sec () , self . wup4sec () , self . wup5sec () , self . wup6sec () , self . wup7sec () , self . wup8sec () , self . wup9sec () , self . wup10sec () , self . lpmsec () , self . vdmsec () , self . vbsec () , self . apcsec ())
+            defmt::write!(
+                f,
+                "Seccfgr {{ wup1sec: {=bool:?}, wup2sec: {=bool:?}, wup3sec: {=bool:?}, wup4sec: {=bool:?}, wup5sec: {=bool:?}, wup6sec: {=bool:?}, wup7sec: {=bool:?}, wup8sec: {=bool:?}, wup9sec: {=bool:?}, wup10sec: {=bool:?}, lpmsec: {=bool:?}, vdmsec: {=bool:?}, vbsec: {=bool:?}, apcsec: {=bool:?} }}",
+                self.wup1sec(),
+                self.wup2sec(),
+                self.wup3sec(),
+                self.wup4sec(),
+                self.wup5sec(),
+                self.wup6sec(),
+                self.wup7sec(),
+                self.wup8sec(),
+                self.wup9sec(),
+                self.wup10sec(),
+                self.lpmsec(),
+                self.vdmsec(),
+                self.vbsec(),
+                self.apcsec()
+            )
         }
     }
     #[doc = "PWR status register."]
@@ -4289,7 +4580,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Svmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Svmcr {{ pvde: {=bool:?}, pvdls: {:?}, uvmen: {=bool:?}, io2vmen: {=bool:?}, avm1en: {=bool:?}, avm2en: {=bool:?}, usv: {=bool:?}, io2sv: {=bool:?}, asv: {=bool:?} }}" , self . pvde () , self . pvdls () , self . uvmen () , self . io2vmen () , self . avm1en () , self . avm2en () , self . usv () , self . io2sv () , self . asv ())
+            defmt::write!(
+                f,
+                "Svmcr {{ pvde: {=bool:?}, pvdls: {:?}, uvmen: {=bool:?}, io2vmen: {=bool:?}, avm1en: {=bool:?}, avm2en: {=bool:?}, usv: {=bool:?}, io2sv: {=bool:?}, asv: {=bool:?} }}",
+                self.pvde(),
+                self.pvdls(),
+                self.uvmen(),
+                self.io2vmen(),
+                self.avm1en(),
+                self.avm2en(),
+                self.usv(),
+                self.io2sv(),
+                self.asv()
+            )
         }
     }
     #[doc = "PWR supply voltage monitoring status register."]
@@ -4391,7 +4694,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Svmsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Svmsr {{ regs: {:?}, pvdo: {:?}, vddusbrdy: {=bool:?}, vddio2rdy: {=bool:?}, vdda1rdy: {=bool:?}, vdda2rdy: {=bool:?} }}" , self . regs () , self . pvdo () , self . vddusbrdy () , self . vddio2rdy () , self . vdda1rdy () , self . vdda2rdy ())
+            defmt::write!(
+                f,
+                "Svmsr {{ regs: {:?}, pvdo: {:?}, vddusbrdy: {=bool:?}, vddio2rdy: {=bool:?}, vdda1rdy: {=bool:?}, vdda2rdy: {=bool:?} }}",
+                self.regs(),
+                self.pvdo(),
+                self.vddusbrdy(),
+                self.vddio2rdy(),
+                self.vdda1rdy(),
+                self.vdda2rdy()
+            )
         }
     }
     #[doc = "PWR voltage scaling register."]
@@ -4493,7 +4805,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vosr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Vosr {{ r1en: {=bool:?}, r2en: {=bool:?}, boosten: {=bool:?}, r1rdy: {=bool:?}, r2rdy: {=bool:?}, boostrdy: {=bool:?} }}" , self . r1en () , self . r2en () , self . boosten () , self . r1rdy () , self . r2rdy () , self . boostrdy ())
+            defmt::write!(
+                f,
+                "Vosr {{ r1en: {=bool:?}, r2en: {=bool:?}, boosten: {=bool:?}, r1rdy: {=bool:?}, r2rdy: {=bool:?}, boostrdy: {=bool:?} }}",
+                self.r1en(),
+                self.r2en(),
+                self.boosten(),
+                self.r1rdy(),
+                self.r2rdy(),
+                self.boostrdy()
+            )
         }
     }
     #[doc = "PWR wakeup control register 1."]
@@ -4647,7 +4968,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wucr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wucr1 {{ wupen1: {=bool:?}, wupen2: {=bool:?}, wupen3: {=bool:?}, wupen4: {=bool:?}, wupen5: {=bool:?}, wupen6: {=bool:?}, wupen7: {=bool:?}, wupen8: {=bool:?}, wupen9: {=bool:?}, wupen10: {=bool:?} }}" , self . wupen1 () , self . wupen2 () , self . wupen3 () , self . wupen4 () , self . wupen5 () , self . wupen6 () , self . wupen7 () , self . wupen8 () , self . wupen9 () , self . wupen10 ())
+            defmt::write!(
+                f,
+                "Wucr1 {{ wupen1: {=bool:?}, wupen2: {=bool:?}, wupen3: {=bool:?}, wupen4: {=bool:?}, wupen5: {=bool:?}, wupen6: {=bool:?}, wupen7: {=bool:?}, wupen8: {=bool:?}, wupen9: {=bool:?}, wupen10: {=bool:?} }}",
+                self.wupen1(),
+                self.wupen2(),
+                self.wupen3(),
+                self.wupen4(),
+                self.wupen5(),
+                self.wupen6(),
+                self.wupen7(),
+                self.wupen8(),
+                self.wupen9(),
+                self.wupen10()
+            )
         }
     }
     #[doc = "PWR wakeup control register 2."]
@@ -4695,7 +5029,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wucr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wucr2 {{ wupp[0]: {:?}, wupp[1]: {:?}, wupp[2]: {:?}, wupp[3]: {:?}, wupp[4]: {:?}, wupp[5]: {:?}, wupp[6]: {:?}, wupp[7]: {:?} }}" , self . wupp (0usize) , self . wupp (1usize) , self . wupp (2usize) , self . wupp (3usize) , self . wupp (4usize) , self . wupp (5usize) , self . wupp (6usize) , self . wupp (7usize))
+            defmt::write!(
+                f,
+                "Wucr2 {{ wupp[0]: {:?}, wupp[1]: {:?}, wupp[2]: {:?}, wupp[3]: {:?}, wupp[4]: {:?}, wupp[5]: {:?}, wupp[6]: {:?}, wupp[7]: {:?} }}",
+                self.wupp(0usize),
+                self.wupp(1usize),
+                self.wupp(2usize),
+                self.wupp(3usize),
+                self.wupp(4usize),
+                self.wupp(5usize),
+                self.wupp(6usize),
+                self.wupp(7usize)
+            )
         }
     }
     #[doc = "PWR wakeup control register 3."]
@@ -4823,7 +5168,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wucr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wucr3 {{ wusel1: {:?}, wusel2: {:?}, wusel3: {:?}, wusel4: {:?}, wusel5: {:?}, wusel6: {:?}, wusel7: {:?}, wusel8: {:?} }}" , self . wusel1 () , self . wusel2 () , self . wusel3 () , self . wusel4 () , self . wusel5 () , self . wusel6 () , self . wusel7 () , self . wusel8 ())
+            defmt::write!(
+                f,
+                "Wucr3 {{ wusel1: {:?}, wusel2: {:?}, wusel3: {:?}, wusel4: {:?}, wusel5: {:?}, wusel6: {:?}, wusel7: {:?}, wusel8: {:?} }}",
+                self.wusel1(),
+                self.wusel2(),
+                self.wusel3(),
+                self.wusel4(),
+                self.wusel5(),
+                self.wusel6(),
+                self.wusel7(),
+                self.wusel8()
+            )
         }
     }
     #[doc = "PWR wakeup status clear register."]
@@ -4977,7 +5333,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wuscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wuscr {{ cwuf1: {=bool:?}, cwuf2: {=bool:?}, cwuf3: {=bool:?}, cwuf4: {=bool:?}, cwuf5: {=bool:?}, cwuf6: {=bool:?}, cwuf7: {=bool:?}, cwuf8: {=bool:?}, cwuf9: {=bool:?}, cwuf10: {=bool:?} }}" , self . cwuf1 () , self . cwuf2 () , self . cwuf3 () , self . cwuf4 () , self . cwuf5 () , self . cwuf6 () , self . cwuf7 () , self . cwuf8 () , self . cwuf9 () , self . cwuf10 ())
+            defmt::write!(
+                f,
+                "Wuscr {{ cwuf1: {=bool:?}, cwuf2: {=bool:?}, cwuf3: {=bool:?}, cwuf4: {=bool:?}, cwuf5: {=bool:?}, cwuf6: {=bool:?}, cwuf7: {=bool:?}, cwuf8: {=bool:?}, cwuf9: {=bool:?}, cwuf10: {=bool:?} }}",
+                self.cwuf1(),
+                self.cwuf2(),
+                self.cwuf3(),
+                self.cwuf4(),
+                self.cwuf5(),
+                self.cwuf6(),
+                self.cwuf7(),
+                self.cwuf8(),
+                self.cwuf9(),
+                self.cwuf10()
+            )
         }
     }
     #[doc = "PWR wakeup status register."]
@@ -5131,7 +5500,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wusr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wusr {{ wuf1: {=bool:?}, wuf2: {=bool:?}, wuf3: {=bool:?}, wuf4: {=bool:?}, wuf5: {=bool:?}, wuf6: {=bool:?}, wuf7: {=bool:?}, wuf8: {=bool:?}, wuf9: {=bool:?}, wuf10: {=bool:?} }}" , self . wuf1 () , self . wuf2 () , self . wuf3 () , self . wuf4 () , self . wuf5 () , self . wuf6 () , self . wuf7 () , self . wuf8 () , self . wuf9 () , self . wuf10 ())
+            defmt::write!(
+                f,
+                "Wusr {{ wuf1: {=bool:?}, wuf2: {=bool:?}, wuf3: {=bool:?}, wuf4: {=bool:?}, wuf5: {=bool:?}, wuf6: {=bool:?}, wuf7: {=bool:?}, wuf8: {=bool:?}, wuf9: {=bool:?}, wuf10: {=bool:?} }}",
+                self.wuf1(),
+                self.wuf2(),
+                self.wuf3(),
+                self.wuf4(),
+                self.wuf5(),
+                self.wuf6(),
+                self.wuf7(),
+                self.wuf8(),
+                self.wuf9(),
+                self.wuf10()
+            )
         }
     }
 }

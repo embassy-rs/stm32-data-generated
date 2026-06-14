@@ -818,7 +818,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Privcfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Privcfgr {{ priv0: {:?}, priv1: {:?}, priv2: {:?}, priv3: {:?}, priv4: {:?}, priv5: {:?}, priv6: {:?}, priv7: {:?}, wkuppriv1: {:?}, wkuppriv2: {:?}, wkuppriv3: {:?}, wkuppriv4: {:?} }}" , self . priv0 () , self . priv1 () , self . priv2 () , self . priv3 () , self . priv4 () , self . priv5 () , self . priv6 () , self . priv7 () , self . wkuppriv1 () , self . wkuppriv2 () , self . wkuppriv3 () , self . wkuppriv4 ())
+            defmt::write!(
+                f,
+                "Privcfgr {{ priv0: {:?}, priv1: {:?}, priv2: {:?}, priv3: {:?}, priv4: {:?}, priv5: {:?}, priv6: {:?}, priv7: {:?}, wkuppriv1: {:?}, wkuppriv2: {:?}, wkuppriv3: {:?}, wkuppriv4: {:?} }}",
+                self.priv0(),
+                self.priv1(),
+                self.priv2(),
+                self.priv3(),
+                self.priv4(),
+                self.priv5(),
+                self.priv6(),
+                self.priv7(),
+                self.wkuppriv1(),
+                self.wkuppriv2(),
+                self.wkuppriv3(),
+                self.wkuppriv4()
+            )
         }
     }
     #[doc = "PWR security configuration register."]
@@ -998,7 +1013,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccfgr {{ sec0: {:?}, sec1: {:?}, sec2: {:?}, sec3: {:?}, sec4: {:?}, sec5: {:?}, sec6: {:?}, sec7: {:?}, wkupsec1: {:?}, wkupsec2: {:?}, wkupsec3: {:?}, wkupsec4: {:?} }}" , self . sec0 () , self . sec1 () , self . sec2 () , self . sec3 () , self . sec4 () , self . sec5 () , self . sec6 () , self . sec7 () , self . wkupsec1 () , self . wkupsec2 () , self . wkupsec3 () , self . wkupsec4 ())
+            defmt::write!(
+                f,
+                "Seccfgr {{ sec0: {:?}, sec1: {:?}, sec2: {:?}, sec3: {:?}, sec4: {:?}, sec5: {:?}, sec6: {:?}, sec7: {:?}, wkupsec1: {:?}, wkupsec2: {:?}, wkupsec3: {:?}, wkupsec4: {:?} }}",
+                self.sec0(),
+                self.sec1(),
+                self.sec2(),
+                self.sec3(),
+                self.sec4(),
+                self.sec5(),
+                self.sec6(),
+                self.sec7(),
+                self.wkupsec1(),
+                self.wkupsec2(),
+                self.wkupsec3(),
+                self.wkupsec4()
+            )
         }
     }
     #[doc = "PWR supply voltage monitoring control register 1."]
@@ -1087,7 +1117,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Svmcr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Svmcr1 {{ vddio4vmen: {=bool:?}, vddio4sv: {:?}, vddio4rdy: {:?}, vddio4vrsel: {:?}, vddio4vrstby: {:?} }}" , self . vddio4vmen () , self . vddio4sv () , self . vddio4rdy () , self . vddio4vrsel () , self . vddio4vrstby ())
+            defmt::write!(
+                f,
+                "Svmcr1 {{ vddio4vmen: {=bool:?}, vddio4sv: {:?}, vddio4rdy: {:?}, vddio4vrsel: {:?}, vddio4vrstby: {:?} }}",
+                self.vddio4vmen(),
+                self.vddio4sv(),
+                self.vddio4rdy(),
+                self.vddio4vrsel(),
+                self.vddio4vrstby()
+            )
         }
     }
     #[doc = "PWR supply voltage monitoring control register 2."]
@@ -1176,7 +1214,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Svmcr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Svmcr2 {{ vddio5vmen: {=bool:?}, vddio5sv: {:?}, vddio5rdy: {:?}, vddio5vrsel: {:?}, vddio5vrstby: {:?} }}" , self . vddio5vmen () , self . vddio5sv () , self . vddio5rdy () , self . vddio5vrsel () , self . vddio5vrstby ())
+            defmt::write!(
+                f,
+                "Svmcr2 {{ vddio5vmen: {=bool:?}, vddio5sv: {:?}, vddio5rdy: {:?}, vddio5vrsel: {:?}, vddio5vrstby: {:?} }}",
+                self.vddio5vmen(),
+                self.vddio5sv(),
+                self.vddio5rdy(),
+                self.vddio5vrsel(),
+                self.vddio5vrstby()
+            )
         }
     }
     #[doc = "PWR supply voltage monitoring control register 3."]
@@ -1395,7 +1441,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Svmcr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Svmcr3 {{ vddio2vmen: {=bool:?}, vddio3vmen: {=bool:?}, usb33vmen: {=bool:?}, avmen: {=bool:?}, vddio2sv: {:?}, vddio3sv: {:?}, usb33sv: {:?}, asv: {:?}, vddio2rdy: {:?}, vddio3rdy: {:?}, usb33rdy: {:?}, ardy: {=bool:?}, vddiovrsel: {:?}, vddio2vrsel: {:?}, vddio3vrsel: {:?} }}" , self . vddio2vmen () , self . vddio3vmen () , self . usb33vmen () , self . avmen () , self . vddio2sv () , self . vddio3sv () , self . usb33sv () , self . asv () , self . vddio2rdy () , self . vddio3rdy () , self . usb33rdy () , self . ardy () , self . vddiovrsel () , self . vddio2vrsel () , self . vddio3vrsel ())
+            defmt::write!(
+                f,
+                "Svmcr3 {{ vddio2vmen: {=bool:?}, vddio3vmen: {=bool:?}, usb33vmen: {=bool:?}, avmen: {=bool:?}, vddio2sv: {:?}, vddio3sv: {:?}, usb33sv: {:?}, asv: {:?}, vddio2rdy: {:?}, vddio3rdy: {:?}, usb33rdy: {:?}, ardy: {=bool:?}, vddiovrsel: {:?}, vddio2vrsel: {:?}, vddio3vrsel: {:?} }}",
+                self.vddio2vmen(),
+                self.vddio3vmen(),
+                self.usb33vmen(),
+                self.avmen(),
+                self.vddio2sv(),
+                self.vddio3sv(),
+                self.usb33sv(),
+                self.asv(),
+                self.vddio2rdy(),
+                self.vddio3rdy(),
+                self.usb33rdy(),
+                self.ardy(),
+                self.vddiovrsel(),
+                self.vddio2vrsel(),
+                self.vddio3vrsel()
+            )
         }
     }
     #[doc = "PWR voltage scaling control register."]
@@ -1741,7 +1805,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wkupepr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wkupepr {{ wkupen1: {=bool:?}, wkupen2: {=bool:?}, wkupen3: {=bool:?}, wkupen4: {=bool:?}, wkupp1: {:?}, wkupp2: {:?}, wkupp3: {:?}, wkupp4: {:?}, wkuppupd1: {:?}, wkuppupd2: {:?}, wkuppupd3: {:?}, wkuppupd4: {:?} }}" , self . wkupen1 () , self . wkupen2 () , self . wkupen3 () , self . wkupen4 () , self . wkupp1 () , self . wkupp2 () , self . wkupp3 () , self . wkupp4 () , self . wkuppupd1 () , self . wkuppupd2 () , self . wkuppupd3 () , self . wkuppupd4 ())
+            defmt::write!(
+                f,
+                "Wkupepr {{ wkupen1: {=bool:?}, wkupen2: {=bool:?}, wkupen3: {=bool:?}, wkupen4: {=bool:?}, wkupp1: {:?}, wkupp2: {:?}, wkupp3: {:?}, wkupp4: {:?}, wkuppupd1: {:?}, wkuppupd2: {:?}, wkuppupd3: {:?}, wkuppupd4: {:?} }}",
+                self.wkupen1(),
+                self.wkupen2(),
+                self.wkupen3(),
+                self.wkupen4(),
+                self.wkupp1(),
+                self.wkupp2(),
+                self.wkupp3(),
+                self.wkupp4(),
+                self.wkuppupd1(),
+                self.wkuppupd2(),
+                self.wkuppupd3(),
+                self.wkuppupd4()
+            )
         }
     }
     #[doc = "PWR wake-up status register."]

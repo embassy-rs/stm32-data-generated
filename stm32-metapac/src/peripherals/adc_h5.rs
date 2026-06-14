@@ -555,7 +555,33 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr {{ dmaen: {=bool:?}, dmacfg: {:?}, res: {:?}, extsel[0]: {=bool:?}, extsel[1]: {=bool:?}, extsel[2]: {=bool:?}, extsel[3]: {=bool:?}, extsel[4]: {=bool:?}, exten: {:?}, ovrmod: {:?}, cont: {=bool:?}, autdly: {=bool:?}, align: {:?}, discen: {=bool:?}, discnum: {=u8:?}, jdiscen: {=bool:?}, jqm: {:?}, awd1sgl: {:?}, awd1en: {=bool:?}, jawd1en: {=bool:?}, jauto: {=bool:?}, awd1ch: {=u8:?}, jqdis: {=bool:?} }}" , self . dmaen () , self . dmacfg () , self . res () , self . extsel (0usize) , self . extsel (1usize) , self . extsel (2usize) , self . extsel (3usize) , self . extsel (4usize) , self . exten () , self . ovrmod () , self . cont () , self . autdly () , self . align () , self . discen () , self . discnum () , self . jdiscen () , self . jqm () , self . awd1sgl () , self . awd1en () , self . jawd1en () , self . jauto () , self . awd1ch () , self . jqdis ())
+            defmt::write!(
+                f,
+                "Cfgr {{ dmaen: {=bool:?}, dmacfg: {:?}, res: {:?}, extsel[0]: {=bool:?}, extsel[1]: {=bool:?}, extsel[2]: {=bool:?}, extsel[3]: {=bool:?}, extsel[4]: {=bool:?}, exten: {:?}, ovrmod: {:?}, cont: {=bool:?}, autdly: {=bool:?}, align: {:?}, discen: {=bool:?}, discnum: {=u8:?}, jdiscen: {=bool:?}, jqm: {:?}, awd1sgl: {:?}, awd1en: {=bool:?}, jawd1en: {=bool:?}, jauto: {=bool:?}, awd1ch: {=u8:?}, jqdis: {=bool:?} }}",
+                self.dmaen(),
+                self.dmacfg(),
+                self.res(),
+                self.extsel(0usize),
+                self.extsel(1usize),
+                self.extsel(2usize),
+                self.extsel(3usize),
+                self.extsel(4usize),
+                self.exten(),
+                self.ovrmod(),
+                self.cont(),
+                self.autdly(),
+                self.align(),
+                self.discen(),
+                self.discnum(),
+                self.jdiscen(),
+                self.jqm(),
+                self.awd1sgl(),
+                self.awd1en(),
+                self.jawd1en(),
+                self.jauto(),
+                self.awd1ch(),
+                self.jqdis()
+            )
         }
     }
     #[doc = "configuration register 2"]
@@ -696,7 +722,19 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr2 {{ rovse: {=bool:?}, jovse: {=bool:?}, ovsr: {:?}, ovss: {=u8:?}, trovs: {:?}, rovsm: {:?}, swtrig: {:?}, bulb: {=bool:?}, smptrig: {=bool:?} }}" , self . rovse () , self . jovse () , self . ovsr () , self . ovss () , self . trovs () , self . rovsm () , self . swtrig () , self . bulb () , self . smptrig ())
+            defmt::write!(
+                f,
+                "Cfgr2 {{ rovse: {=bool:?}, jovse: {=bool:?}, ovsr: {:?}, ovss: {=u8:?}, trovs: {:?}, rovsm: {:?}, swtrig: {:?}, bulb: {=bool:?}, smptrig: {=bool:?} }}",
+                self.rovse(),
+                self.jovse(),
+                self.ovsr(),
+                self.ovss(),
+                self.trovs(),
+                self.rovsm(),
+                self.swtrig(),
+                self.bulb(),
+                self.smptrig()
+            )
         }
     }
     #[doc = "control register"]
@@ -850,7 +888,20 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ aden: {=bool:?}, addis: {=bool:?}, adstart: {=bool:?}, jadstart: {=bool:?}, adstp: {=bool:?}, jadstp: {=bool:?}, advregen: {=bool:?}, deeppwd: {=bool:?}, adcaldif: {:?}, adcal: {=bool:?} }}" , self . aden () , self . addis () , self . adstart () , self . jadstart () , self . adstp () , self . jadstp () , self . advregen () , self . deeppwd () , self . adcaldif () , self . adcal ())
+            defmt::write!(
+                f,
+                "Cr {{ aden: {=bool:?}, addis: {=bool:?}, adstart: {=bool:?}, jadstart: {=bool:?}, adstp: {=bool:?}, jadstp: {=bool:?}, advregen: {=bool:?}, deeppwd: {=bool:?}, adcaldif: {:?}, adcal: {=bool:?} }}",
+                self.aden(),
+                self.addis(),
+                self.adstart(),
+                self.jadstart(),
+                self.adstp(),
+                self.jadstp(),
+                self.advregen(),
+                self.deeppwd(),
+                self.adcaldif(),
+                self.adcal()
+            )
         }
     }
     #[doc = "Differential mode Selection Register"]
@@ -1071,7 +1122,21 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier {{ adrdyie: {=bool:?}, eosmpie: {=bool:?}, eocie: {=bool:?}, eosie: {=bool:?}, ovrie: {=bool:?}, jeocie: {=bool:?}, jeosie: {=bool:?}, awdie[0]: {=bool:?}, awdie[1]: {=bool:?}, awdie[2]: {=bool:?}, jqovfie: {=bool:?} }}" , self . adrdyie () , self . eosmpie () , self . eocie () , self . eosie () , self . ovrie () , self . jeocie () , self . jeosie () , self . awdie (0usize) , self . awdie (1usize) , self . awdie (2usize) , self . jqovfie ())
+            defmt::write!(
+                f,
+                "Ier {{ adrdyie: {=bool:?}, eosmpie: {=bool:?}, eocie: {=bool:?}, eosie: {=bool:?}, ovrie: {=bool:?}, jeocie: {=bool:?}, jeosie: {=bool:?}, awdie[0]: {=bool:?}, awdie[1]: {=bool:?}, awdie[2]: {=bool:?}, jqovfie: {=bool:?} }}",
+                self.adrdyie(),
+                self.eosmpie(),
+                self.eocie(),
+                self.eosie(),
+                self.ovrie(),
+                self.jeocie(),
+                self.jeosie(),
+                self.awdie(0usize),
+                self.awdie(1usize),
+                self.awdie(2usize),
+                self.jqovfie()
+            )
         }
     }
     #[doc = "interrupt and status register"]
@@ -1218,7 +1283,21 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ adrdy: {=bool:?}, eosmp: {=bool:?}, eoc: {=bool:?}, eos: {=bool:?}, ovr: {=bool:?}, jeoc: {=bool:?}, jeos: {=bool:?}, awd[0]: {=bool:?}, awd[1]: {=bool:?}, awd[2]: {=bool:?}, jqovf: {=bool:?} }}" , self . adrdy () , self . eosmp () , self . eoc () , self . eos () , self . ovr () , self . jeoc () , self . jeos () , self . awd (0usize) , self . awd (1usize) , self . awd (2usize) , self . jqovf ())
+            defmt::write!(
+                f,
+                "Isr {{ adrdy: {=bool:?}, eosmp: {=bool:?}, eoc: {=bool:?}, eos: {=bool:?}, ovr: {=bool:?}, jeoc: {=bool:?}, jeos: {=bool:?}, awd[0]: {=bool:?}, awd[1]: {=bool:?}, awd[2]: {=bool:?}, jqovf: {=bool:?} }}",
+                self.adrdy(),
+                self.eosmp(),
+                self.eoc(),
+                self.eos(),
+                self.ovr(),
+                self.jeoc(),
+                self.jeos(),
+                self.awd(0usize),
+                self.awd(1usize),
+                self.awd(2usize),
+                self.jqovf()
+            )
         }
     }
     #[doc = "injected channel 1-4 data register"]
@@ -1336,7 +1415,17 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
     #[cfg(feature = "defmt")]
     impl defmt::Format for Jsqr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Jsqr {{ jl: {=u8:?}, jextsel: {=u8:?}, jexten: {:?}, jsq[0]: {=u8:?}, jsq[1]: {=u8:?}, jsq[2]: {=u8:?}, jsq[3]: {=u8:?} }}" , self . jl () , self . jextsel () , self . jexten () , self . jsq (0usize) , self . jsq (1usize) , self . jsq (2usize) , self . jsq (3usize))
+            defmt::write!(
+                f,
+                "Jsqr {{ jl: {=u8:?}, jextsel: {=u8:?}, jexten: {:?}, jsq[0]: {=u8:?}, jsq[1]: {=u8:?}, jsq[2]: {=u8:?}, jsq[3]: {=u8:?} }}",
+                self.jl(),
+                self.jextsel(),
+                self.jexten(),
+                self.jsq(0usize),
+                self.jsq(1usize),
+                self.jsq(2usize),
+                self.jsq(3usize)
+            )
         }
     }
     #[doc = "offset 1-4 register"]
@@ -1435,7 +1524,15 @@ applies. Note: The software is allowed to write these bits only when ADSTART = 0
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ofr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ofr {{ offset: {=u16:?}, offsetpos: {:?}, saten: {=bool:?}, offset_ch: {=u8:?}, offset_en: {=bool:?} }}" , self . offset () , self . offsetpos () , self . saten () , self . offset_ch () , self . offset_en ())
+            defmt::write!(
+                f,
+                "Ofr {{ offset: {=u16:?}, offsetpos: {:?}, saten: {=bool:?}, offset_ch: {=u8:?}, offset_en: {=bool:?} }}",
+                self.offset(),
+                self.offsetpos(),
+                self.saten(),
+                self.offset_ch(),
+                self.offset_en()
+            )
         }
     }
     #[doc = "option register"]
@@ -1550,7 +1647,21 @@ setting to the reset value."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Smpr1 {{ smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?}, smp[8]: {:?}, smp[9]: {:?}, smpplus: {:?} }}" , self . smp (0usize) , self . smp (1usize) , self . smp (2usize) , self . smp (3usize) , self . smp (4usize) , self . smp (5usize) , self . smp (6usize) , self . smp (7usize) , self . smp (8usize) , self . smp (9usize) , self . smpplus ())
+            defmt::write!(
+                f,
+                "Smpr1 {{ smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?}, smp[8]: {:?}, smp[9]: {:?}, smpplus: {:?} }}",
+                self.smp(0usize),
+                self.smp(1usize),
+                self.smp(2usize),
+                self.smp(3usize),
+                self.smp(4usize),
+                self.smp(5usize),
+                self.smp(6usize),
+                self.smp(7usize),
+                self.smp(8usize),
+                self.smp(9usize),
+                self.smpplus()
+            )
         }
     }
     #[doc = "sample time register 2"]
@@ -1602,7 +1713,20 @@ setting to the reset value."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Smpr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Smpr2 {{ smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?}, smp[8]: {:?}, smp[9]: {:?} }}" , self . smp (0usize) , self . smp (1usize) , self . smp (2usize) , self . smp (3usize) , self . smp (4usize) , self . smp (5usize) , self . smp (6usize) , self . smp (7usize) , self . smp (8usize) , self . smp (9usize))
+            defmt::write!(
+                f,
+                "Smpr2 {{ smp[0]: {:?}, smp[1]: {:?}, smp[2]: {:?}, smp[3]: {:?}, smp[4]: {:?}, smp[5]: {:?}, smp[6]: {:?}, smp[7]: {:?}, smp[8]: {:?}, smp[9]: {:?} }}",
+                self.smp(0usize),
+                self.smp(1usize),
+                self.smp(2usize),
+                self.smp(3usize),
+                self.smp(4usize),
+                self.smp(5usize),
+                self.smp(6usize),
+                self.smp(7usize),
+                self.smp(8usize),
+                self.smp(9usize)
+            )
         }
     }
     #[doc = "regular sequence register 1"]

@@ -485,9 +485,9 @@ pub const XSPI1: *mut () = 0x4700_1400usize as _;
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 4;
 #[cfg(feature = "rt")]
-pub use cortex_m_rt::interrupt;
-#[cfg(feature = "rt")]
 pub use Interrupt as interrupt;
+#[cfg(feature = "rt")]
+pub use cortex_m_rt::interrupt;
 #[path = "../../peripherals/cordic_v1.rs"]
 pub mod cordic;
 #[path = "../../peripherals/dbgmcu_c5.rs"]

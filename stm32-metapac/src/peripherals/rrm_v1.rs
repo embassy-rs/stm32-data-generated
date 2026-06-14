@@ -153,7 +153,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for BleIrqEnable {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "BleIrqEnable {{ port_grant: {=bool:?}, port_release: {=bool:?}, port_cmd_start: {=bool:?}, port_cmd_end: {=bool:?} }}" , self . port_grant () , self . port_release () , self . port_cmd_start () , self . port_cmd_end ())
+            defmt::write!(
+                f,
+                "BleIrqEnable {{ port_grant: {=bool:?}, port_release: {=bool:?}, port_cmd_start: {=bool:?}, port_cmd_end: {=bool:?} }}",
+                self.port_grant(),
+                self.port_release(),
+                self.port_cmd_start(),
+                self.port_cmd_end()
+            )
         }
     }
     #[doc = "BLE_IRQ_STATUS register."]
@@ -229,7 +236,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for BleIrqStatus {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "BleIrqStatus {{ port_grant: {=bool:?}, port_release: {=bool:?}, cmd_start: {=bool:?}, cmd_end: {=bool:?} }}" , self . port_grant () , self . port_release () , self . cmd_start () , self . cmd_end ())
+            defmt::write!(
+                f,
+                "BleIrqStatus {{ port_grant: {=bool:?}, port_release: {=bool:?}, cmd_start: {=bool:?}, cmd_end: {=bool:?} }}",
+                self.port_grant(),
+                self.port_release(),
+                self.cmd_start(),
+                self.cmd_end()
+            )
         }
     }
     #[doc = "SEMA_IRQ_ENABLE register."]
@@ -686,7 +700,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for VpCpuIrqEnable {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "VpCpuIrqEnable {{ port_grant: {=bool:?}, port_release: {=bool:?}, port_cmd_start: {=bool:?}, port_cmd_end: {=bool:?} }}" , self . port_grant () , self . port_release () , self . port_cmd_start () , self . port_cmd_end ())
+            defmt::write!(
+                f,
+                "VpCpuIrqEnable {{ port_grant: {=bool:?}, port_release: {=bool:?}, port_cmd_start: {=bool:?}, port_cmd_end: {=bool:?} }}",
+                self.port_grant(),
+                self.port_release(),
+                self.port_cmd_start(),
+                self.port_cmd_end()
+            )
         }
     }
     #[doc = "VP_CPU_IRQ_STATUS register."]
@@ -775,7 +796,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for VpCpuIrqStatus {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "VpCpuIrqStatus {{ port_grant: {=bool:?}, port_release: {=bool:?}, port_preempt: {=bool:?}, cmd_start: {=bool:?}, cmd_end: {=bool:?} }}" , self . port_grant () , self . port_release () , self . port_preempt () , self . cmd_start () , self . cmd_end ())
+            defmt::write!(
+                f,
+                "VpCpuIrqStatus {{ port_grant: {=bool:?}, port_release: {=bool:?}, port_preempt: {=bool:?}, cmd_start: {=bool:?}, cmd_end: {=bool:?} }}",
+                self.port_grant(),
+                self.port_release(),
+                self.port_preempt(),
+                self.cmd_start(),
+                self.cmd_end()
+            )
         }
     }
     #[doc = "VP_CPU_SEMA_BUS register."]

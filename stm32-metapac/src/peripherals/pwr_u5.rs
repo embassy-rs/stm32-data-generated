@@ -515,7 +515,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ lpms: {:?}, rrsb1: {=bool:?}, rrsb2: {=bool:?}, ulpmen: {=bool:?}, sram1pd: {:?}, sram2pd: {:?}, sram3pd: {:?}, sram4pd: {:?}, sram5pd: {:?}, sram6pd: {:?}, force_usbpwr: {:?} }}" , self . lpms () , self . rrsb1 () , self . rrsb2 () , self . ulpmen () , self . sram1pd () , self . sram2pd () , self . sram3pd () , self . sram4pd () , self . sram5pd () , self . sram6pd () , self . force_usbpwr ())
+            defmt::write!(
+                f,
+                "Cr1 {{ lpms: {:?}, rrsb1: {=bool:?}, rrsb2: {=bool:?}, ulpmen: {=bool:?}, sram1pd: {:?}, sram2pd: {:?}, sram3pd: {:?}, sram4pd: {:?}, sram5pd: {:?}, sram6pd: {:?}, force_usbpwr: {:?} }}",
+                self.lpms(),
+                self.rrsb1(),
+                self.rrsb2(),
+                self.ulpmen(),
+                self.sram1pd(),
+                self.sram2pd(),
+                self.sram3pd(),
+                self.sram4pd(),
+                self.sram5pd(),
+                self.sram6pd(),
+                self.force_usbpwr()
+            )
         }
     }
     #[doc = "control register 2"]
@@ -825,7 +839,32 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ sram1pds1: {:?}, sram1pds2: {:?}, sram1pds3: {:?}, sram2pds1: {:?}, sram2pds2: {:?}, sram4pds: {:?}, icrampds: {:?}, dc1rampds: {:?}, dma2drampds: {:?}, prampds: {:?}, pkarampds: {:?}, sram4fwu: {:?}, flashfwu: {:?}, sram3pds1: {:?}, sram3pds2: {:?}, sram3pds3: {:?}, sram3pds4: {:?}, sram3pds5: {:?}, sram3pds6: {:?}, sram3pds7: {:?}, sram3pds8: {:?}, srdrun: {=bool:?} }}" , self . sram1pds1 () , self . sram1pds2 () , self . sram1pds3 () , self . sram2pds1 () , self . sram2pds2 () , self . sram4pds () , self . icrampds () , self . dc1rampds () , self . dma2drampds () , self . prampds () , self . pkarampds () , self . sram4fwu () , self . flashfwu () , self . sram3pds1 () , self . sram3pds2 () , self . sram3pds3 () , self . sram3pds4 () , self . sram3pds5 () , self . sram3pds6 () , self . sram3pds7 () , self . sram3pds8 () , self . srdrun ())
+            defmt::write!(
+                f,
+                "Cr2 {{ sram1pds1: {:?}, sram1pds2: {:?}, sram1pds3: {:?}, sram2pds1: {:?}, sram2pds2: {:?}, sram4pds: {:?}, icrampds: {:?}, dc1rampds: {:?}, dma2drampds: {:?}, prampds: {:?}, pkarampds: {:?}, sram4fwu: {:?}, flashfwu: {:?}, sram3pds1: {:?}, sram3pds2: {:?}, sram3pds3: {:?}, sram3pds4: {:?}, sram3pds5: {:?}, sram3pds6: {:?}, sram3pds7: {:?}, sram3pds8: {:?}, srdrun: {=bool:?} }}",
+                self.sram1pds1(),
+                self.sram1pds2(),
+                self.sram1pds3(),
+                self.sram2pds1(),
+                self.sram2pds2(),
+                self.sram4pds(),
+                self.icrampds(),
+                self.dc1rampds(),
+                self.dma2drampds(),
+                self.prampds(),
+                self.pkarampds(),
+                self.sram4fwu(),
+                self.flashfwu(),
+                self.sram3pds1(),
+                self.sram3pds2(),
+                self.sram3pds3(),
+                self.sram3pds4(),
+                self.sram3pds5(),
+                self.sram3pds6(),
+                self.sram3pds7(),
+                self.sram3pds8(),
+                self.srdrun()
+            )
         }
     }
     #[doc = "control register 3"]
@@ -1255,7 +1294,37 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr4 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr4 {{ sram1pds4: {:?}, sram1pds5: {:?}, sram1pds6: {:?}, sram1pds7: {:?}, sram1pds8: {:?}, sram1pds9: {:?}, sram1pds10: {:?}, sram1pds11: {:?}, sram1pds12: {:?}, sram3pds9: {:?}, sram3pds10: {:?}, sram3pds11: {:?}, sram3pds12: {:?}, sram3pds13: {:?}, sram5pds1: {:?}, sram5pds2: {:?}, sram5pds3: {:?}, sram5pds4: {:?}, sram5pds5: {:?}, sram5pds6: {:?}, sram5pds7: {:?}, sram5pds8: {:?}, sram5pds9: {:?}, sram5pds10: {:?}, sram5pds11: {:?}, sram5pds12: {:?}, sram5pds13: {:?} }}" , self . sram1pds4 () , self . sram1pds5 () , self . sram1pds6 () , self . sram1pds7 () , self . sram1pds8 () , self . sram1pds9 () , self . sram1pds10 () , self . sram1pds11 () , self . sram1pds12 () , self . sram3pds9 () , self . sram3pds10 () , self . sram3pds11 () , self . sram3pds12 () , self . sram3pds13 () , self . sram5pds1 () , self . sram5pds2 () , self . sram5pds3 () , self . sram5pds4 () , self . sram5pds5 () , self . sram5pds6 () , self . sram5pds7 () , self . sram5pds8 () , self . sram5pds9 () , self . sram5pds10 () , self . sram5pds11 () , self . sram5pds12 () , self . sram5pds13 ())
+            defmt::write!(
+                f,
+                "Cr4 {{ sram1pds4: {:?}, sram1pds5: {:?}, sram1pds6: {:?}, sram1pds7: {:?}, sram1pds8: {:?}, sram1pds9: {:?}, sram1pds10: {:?}, sram1pds11: {:?}, sram1pds12: {:?}, sram3pds9: {:?}, sram3pds10: {:?}, sram3pds11: {:?}, sram3pds12: {:?}, sram3pds13: {:?}, sram5pds1: {:?}, sram5pds2: {:?}, sram5pds3: {:?}, sram5pds4: {:?}, sram5pds5: {:?}, sram5pds6: {:?}, sram5pds7: {:?}, sram5pds8: {:?}, sram5pds9: {:?}, sram5pds10: {:?}, sram5pds11: {:?}, sram5pds12: {:?}, sram5pds13: {:?} }}",
+                self.sram1pds4(),
+                self.sram1pds5(),
+                self.sram1pds6(),
+                self.sram1pds7(),
+                self.sram1pds8(),
+                self.sram1pds9(),
+                self.sram1pds10(),
+                self.sram1pds11(),
+                self.sram1pds12(),
+                self.sram3pds9(),
+                self.sram3pds10(),
+                self.sram3pds11(),
+                self.sram3pds12(),
+                self.sram3pds13(),
+                self.sram5pds1(),
+                self.sram5pds2(),
+                self.sram5pds3(),
+                self.sram5pds4(),
+                self.sram5pds5(),
+                self.sram5pds6(),
+                self.sram5pds7(),
+                self.sram5pds8(),
+                self.sram5pds9(),
+                self.sram5pds10(),
+                self.sram5pds11(),
+                self.sram5pds12(),
+                self.sram5pds13()
+            )
         }
     }
     #[doc = "control register 5"]
@@ -1383,7 +1452,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr5 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr5 {{ sram6pds1: {:?}, sram6pds2: {:?}, sram6pds3: {:?}, sram6pds4: {:?}, sram6pds5: {:?}, sram6pds6: {:?}, sram6pds7: {:?}, sram6pds8: {:?} }}" , self . sram6pds1 () , self . sram6pds2 () , self . sram6pds3 () , self . sram6pds4 () , self . sram6pds5 () , self . sram6pds6 () , self . sram6pds7 () , self . sram6pds8 ())
+            defmt::write!(
+                f,
+                "Cr5 {{ sram6pds1: {:?}, sram6pds2: {:?}, sram6pds3: {:?}, sram6pds4: {:?}, sram6pds5: {:?}, sram6pds6: {:?}, sram6pds7: {:?}, sram6pds8: {:?} }}",
+                self.sram6pds1(),
+                self.sram6pds2(),
+                self.sram6pds3(),
+                self.sram6pds4(),
+                self.sram6pds5(),
+                self.sram6pds6(),
+                self.sram6pds7(),
+                self.sram6pds8()
+            )
         }
     }
     #[doc = "disable Backup domain register"]
@@ -1474,7 +1554,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pcr {{ p[0]: {=bool:?}, p[1]: {=bool:?}, p[2]: {=bool:?}, p[3]: {=bool:?}, p[4]: {=bool:?}, p[5]: {=bool:?}, p[6]: {=bool:?}, p[7]: {=bool:?}, p[8]: {=bool:?}, p[9]: {=bool:?}, p[10]: {=bool:?}, p[11]: {=bool:?}, p[12]: {=bool:?}, p[13]: {=bool:?}, p[14]: {=bool:?}, p[15]: {=bool:?} }}" , self . p (0usize) , self . p (1usize) , self . p (2usize) , self . p (3usize) , self . p (4usize) , self . p (5usize) , self . p (6usize) , self . p (7usize) , self . p (8usize) , self . p (9usize) , self . p (10usize) , self . p (11usize) , self . p (12usize) , self . p (13usize) , self . p (14usize) , self . p (15usize))
+            defmt::write!(
+                f,
+                "Pcr {{ p[0]: {=bool:?}, p[1]: {=bool:?}, p[2]: {=bool:?}, p[3]: {=bool:?}, p[4]: {=bool:?}, p[5]: {=bool:?}, p[6]: {=bool:?}, p[7]: {=bool:?}, p[8]: {=bool:?}, p[9]: {=bool:?}, p[10]: {=bool:?}, p[11]: {=bool:?}, p[12]: {=bool:?}, p[13]: {=bool:?}, p[14]: {=bool:?}, p[15]: {=bool:?} }}",
+                self.p(0usize),
+                self.p(1usize),
+                self.p(2usize),
+                self.p(3usize),
+                self.p(4usize),
+                self.p(5usize),
+                self.p(6usize),
+                self.p(7usize),
+                self.p(8usize),
+                self.p(9usize),
+                self.p(10usize),
+                self.p(11usize),
+                self.p(12usize),
+                self.p(13usize),
+                self.p(14usize),
+                self.p(15usize)
+            )
         }
     }
     #[doc = "privilege control register"]
@@ -1629,7 +1728,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccfgr {{ wup1sec[0]: {=bool:?}, wup1sec[1]: {=bool:?}, wup1sec[2]: {=bool:?}, wup1sec[3]: {=bool:?}, wup1sec[4]: {=bool:?}, wup1sec[5]: {=bool:?}, wup1sec[6]: {=bool:?}, wup1sec[7]: {=bool:?}, lpmsec: {=bool:?}, vdmsec: {=bool:?}, vbsec: {=bool:?}, apcsec: {=bool:?} }}" , self . wup1sec (0usize) , self . wup1sec (1usize) , self . wup1sec (2usize) , self . wup1sec (3usize) , self . wup1sec (4usize) , self . wup1sec (5usize) , self . wup1sec (6usize) , self . wup1sec (7usize) , self . lpmsec () , self . vdmsec () , self . vbsec () , self . apcsec ())
+            defmt::write!(
+                f,
+                "Seccfgr {{ wup1sec[0]: {=bool:?}, wup1sec[1]: {=bool:?}, wup1sec[2]: {=bool:?}, wup1sec[3]: {=bool:?}, wup1sec[4]: {=bool:?}, wup1sec[5]: {=bool:?}, wup1sec[6]: {=bool:?}, wup1sec[7]: {=bool:?}, lpmsec: {=bool:?}, vdmsec: {=bool:?}, vbsec: {=bool:?}, apcsec: {=bool:?} }}",
+                self.wup1sec(0usize),
+                self.wup1sec(1usize),
+                self.wup1sec(2usize),
+                self.wup1sec(3usize),
+                self.wup1sec(4usize),
+                self.wup1sec(5usize),
+                self.wup1sec(6usize),
+                self.wup1sec(7usize),
+                self.lpmsec(),
+                self.vdmsec(),
+                self.vbsec(),
+                self.apcsec()
+            )
         }
     }
     #[doc = "status register"]
@@ -1839,7 +1953,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Svmcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Svmcr {{ pvde: {=bool:?}, pvdls: {:?}, uvmen: {=bool:?}, io2vmen: {=bool:?}, avm1en: {=bool:?}, avm2en: {=bool:?}, usv: {=bool:?}, io2sv: {=bool:?}, asv: {=bool:?} }}" , self . pvde () , self . pvdls () , self . uvmen () , self . io2vmen () , self . avm1en () , self . avm2en () , self . usv () , self . io2sv () , self . asv ())
+            defmt::write!(
+                f,
+                "Svmcr {{ pvde: {=bool:?}, pvdls: {:?}, uvmen: {=bool:?}, io2vmen: {=bool:?}, avm1en: {=bool:?}, avm2en: {=bool:?}, usv: {=bool:?}, io2sv: {=bool:?}, asv: {=bool:?} }}",
+                self.pvde(),
+                self.pvdls(),
+                self.uvmen(),
+                self.io2vmen(),
+                self.avm1en(),
+                self.avm2en(),
+                self.usv(),
+                self.io2sv(),
+                self.asv()
+            )
         }
     }
     #[repr(transparent)]
@@ -1966,7 +2092,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Svmsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Svmsr {{ regs: {:?}, pvdo: {:?}, actvosrdy: {=bool:?}, actvos: {:?}, vddusbrdy: {=bool:?}, vddio2rdy: {=bool:?}, vdda1rdy: {=bool:?}, vdda2rdy: {=bool:?} }}" , self . regs () , self . pvdo () , self . actvosrdy () , self . actvos () , self . vddusbrdy () , self . vddio2rdy () , self . vdda1rdy () , self . vdda2rdy ())
+            defmt::write!(
+                f,
+                "Svmsr {{ regs: {:?}, pvdo: {:?}, actvosrdy: {=bool:?}, actvos: {:?}, vddusbrdy: {=bool:?}, vddio2rdy: {=bool:?}, vdda1rdy: {=bool:?}, vdda2rdy: {=bool:?} }}",
+                self.regs(),
+                self.pvdo(),
+                self.actvosrdy(),
+                self.actvos(),
+                self.vddusbrdy(),
+                self.vddio2rdy(),
+                self.vdda1rdy(),
+                self.vdda2rdy()
+            )
         }
     }
     #[doc = "USB Type-C™ and Power Delivery register"]
@@ -2149,7 +2286,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Vosr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Vosr {{ usbboostrdy: {=bool:?}, boostrdy: {=bool:?}, vosrdy: {=bool:?}, vos: {:?}, boosten: {=bool:?}, usbpwren: {=bool:?}, usbboosten: {=bool:?}, vdd11usbdis: {=bool:?} }}" , self . usbboostrdy () , self . boostrdy () , self . vosrdy () , self . vos () , self . boosten () , self . usbpwren () , self . usbboosten () , self . vdd11usbdis ())
+            defmt::write!(
+                f,
+                "Vosr {{ usbboostrdy: {=bool:?}, boostrdy: {=bool:?}, vosrdy: {=bool:?}, vos: {:?}, boosten: {=bool:?}, usbpwren: {=bool:?}, usbboosten: {=bool:?}, vdd11usbdis: {=bool:?} }}",
+                self.usbboostrdy(),
+                self.boostrdy(),
+                self.vosrdy(),
+                self.vos(),
+                self.boosten(),
+                self.usbpwren(),
+                self.usbboosten(),
+                self.vdd11usbdis()
+            )
         }
     }
     #[doc = "wakeup control register 1"]
@@ -2197,7 +2345,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wucr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wucr1 {{ wupen[0]: {=bool:?}, wupen[1]: {=bool:?}, wupen[2]: {=bool:?}, wupen[3]: {=bool:?}, wupen[4]: {=bool:?}, wupen[5]: {=bool:?}, wupen[6]: {=bool:?}, wupen[7]: {=bool:?} }}" , self . wupen (0usize) , self . wupen (1usize) , self . wupen (2usize) , self . wupen (3usize) , self . wupen (4usize) , self . wupen (5usize) , self . wupen (6usize) , self . wupen (7usize))
+            defmt::write!(
+                f,
+                "Wucr1 {{ wupen[0]: {=bool:?}, wupen[1]: {=bool:?}, wupen[2]: {=bool:?}, wupen[3]: {=bool:?}, wupen[4]: {=bool:?}, wupen[5]: {=bool:?}, wupen[6]: {=bool:?}, wupen[7]: {=bool:?} }}",
+                self.wupen(0usize),
+                self.wupen(1usize),
+                self.wupen(2usize),
+                self.wupen(3usize),
+                self.wupen(4usize),
+                self.wupen(5usize),
+                self.wupen(6usize),
+                self.wupen(7usize)
+            )
         }
     }
     #[doc = "wakeup control register 2"]
@@ -2245,7 +2404,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wucr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wucr2 {{ wupp[0]: {:?}, wupp[1]: {:?}, wupp[2]: {:?}, wupp[3]: {:?}, wupp[4]: {:?}, wupp[5]: {:?}, wupp[6]: {:?}, wupp[7]: {:?} }}" , self . wupp (0usize) , self . wupp (1usize) , self . wupp (2usize) , self . wupp (3usize) , self . wupp (4usize) , self . wupp (5usize) , self . wupp (6usize) , self . wupp (7usize))
+            defmt::write!(
+                f,
+                "Wucr2 {{ wupp[0]: {:?}, wupp[1]: {:?}, wupp[2]: {:?}, wupp[3]: {:?}, wupp[4]: {:?}, wupp[5]: {:?}, wupp[6]: {:?}, wupp[7]: {:?} }}",
+                self.wupp(0usize),
+                self.wupp(1usize),
+                self.wupp(2usize),
+                self.wupp(3usize),
+                self.wupp(4usize),
+                self.wupp(5usize),
+                self.wupp(6usize),
+                self.wupp(7usize)
+            )
         }
     }
     #[doc = "wakeup control register 3"]
@@ -2373,7 +2543,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wucr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wucr3 {{ wusel1: {:?}, wusel2: {:?}, wusel3: {:?}, wusel4: {:?}, wusel5: {:?}, wusel6: {:?}, wusel7: {:?}, wusel8: {:?} }}" , self . wusel1 () , self . wusel2 () , self . wusel3 () , self . wusel4 () , self . wusel5 () , self . wusel6 () , self . wusel7 () , self . wusel8 ())
+            defmt::write!(
+                f,
+                "Wucr3 {{ wusel1: {:?}, wusel2: {:?}, wusel3: {:?}, wusel4: {:?}, wusel5: {:?}, wusel6: {:?}, wusel7: {:?}, wusel8: {:?} }}",
+                self.wusel1(),
+                self.wusel2(),
+                self.wusel3(),
+                self.wusel4(),
+                self.wusel5(),
+                self.wusel6(),
+                self.wusel7(),
+                self.wusel8()
+            )
         }
     }
     #[doc = "wakeup status clear register"]
@@ -2501,7 +2682,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wuscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wuscr {{ cwuf1: {=bool:?}, cwuf2: {=bool:?}, cwuf3: {=bool:?}, cwuf4: {=bool:?}, cwuf5: {=bool:?}, cwuf6: {=bool:?}, cwuf7: {=bool:?}, cwuf8: {=bool:?} }}" , self . cwuf1 () , self . cwuf2 () , self . cwuf3 () , self . cwuf4 () , self . cwuf5 () , self . cwuf6 () , self . cwuf7 () , self . cwuf8 ())
+            defmt::write!(
+                f,
+                "Wuscr {{ cwuf1: {=bool:?}, cwuf2: {=bool:?}, cwuf3: {=bool:?}, cwuf4: {=bool:?}, cwuf5: {=bool:?}, cwuf6: {=bool:?}, cwuf7: {=bool:?}, cwuf8: {=bool:?} }}",
+                self.cwuf1(),
+                self.cwuf2(),
+                self.cwuf3(),
+                self.cwuf4(),
+                self.cwuf5(),
+                self.cwuf6(),
+                self.cwuf7(),
+                self.cwuf8()
+            )
         }
     }
     #[doc = "wakeup status register"]
@@ -2629,7 +2821,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wusr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wusr {{ wuf1: {=bool:?}, wuf2: {=bool:?}, wuf3: {=bool:?}, wuf4: {=bool:?}, wuf5: {=bool:?}, wuf6: {=bool:?}, wuf7: {=bool:?}, wuf8: {=bool:?} }}" , self . wuf1 () , self . wuf2 () , self . wuf3 () , self . wuf4 () , self . wuf5 () , self . wuf6 () , self . wuf7 () , self . wuf8 ())
+            defmt::write!(
+                f,
+                "Wusr {{ wuf1: {=bool:?}, wuf2: {=bool:?}, wuf3: {=bool:?}, wuf4: {=bool:?}, wuf5: {=bool:?}, wuf6: {=bool:?}, wuf7: {=bool:?}, wuf8: {=bool:?} }}",
+                self.wuf1(),
+                self.wuf2(),
+                self.wuf3(),
+                self.wuf4(),
+                self.wuf5(),
+                self.wuf6(),
+                self.wuf7(),
+                self.wuf8()
+            )
         }
     }
 }

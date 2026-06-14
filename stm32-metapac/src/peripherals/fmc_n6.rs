@@ -710,7 +710,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bchicr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Bchicr {{ cduef: {=bool:?}, cderf: {=bool:?}, cdeff: {=bool:?}, cdsrf: {=bool:?}, cepbrf: {=bool:?} }}" , self . cduef () , self . cderf () , self . cdeff () , self . cdsrf () , self . cepbrf ())
+            defmt::write!(
+                f,
+                "Bchicr {{ cduef: {=bool:?}, cderf: {=bool:?}, cdeff: {=bool:?}, cdsrf: {=bool:?}, cepbrf: {=bool:?} }}",
+                self.cduef(),
+                self.cderf(),
+                self.cdeff(),
+                self.cdsrf(),
+                self.cepbrf()
+            )
         }
     }
     #[doc = "BCH interrupt enable register."]
@@ -799,7 +807,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bchier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Bchier {{ dueie: {=bool:?}, derie: {=bool:?}, defie: {=bool:?}, dsrie: {=bool:?}, epbrie: {=bool:?} }}" , self . dueie () , self . derie () , self . defie () , self . dsrie () , self . epbrie ())
+            defmt::write!(
+                f,
+                "Bchier {{ dueie: {=bool:?}, derie: {=bool:?}, defie: {=bool:?}, dsrie: {=bool:?}, epbrie: {=bool:?} }}",
+                self.dueie(),
+                self.derie(),
+                self.defie(),
+                self.dsrie(),
+                self.epbrie()
+            )
         }
     }
     #[doc = "BCH interrupt status register."]
@@ -1189,7 +1205,28 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Bcr {{ mbken: {=bool:?}, muxen: {=bool:?}, mtyp: {:?}, mwid: {:?}, faccen: {=bool:?}, bursten: {=bool:?}, waitpol: {:?}, waitcfg: {:?}, wren: {=bool:?}, waiten: {=bool:?}, extmod: {=bool:?}, asyncwait: {=bool:?}, cpsize: {:?}, cburstrw: {:?}, cclken: {=bool:?}, wfdis: {=bool:?}, nblset: {=u8:?}, fmcen: {=bool:?} }}" , self . mbken () , self . muxen () , self . mtyp () , self . mwid () , self . faccen () , self . bursten () , self . waitpol () , self . waitcfg () , self . wren () , self . waiten () , self . extmod () , self . asyncwait () , self . cpsize () , self . cburstrw () , self . cclken () , self . wfdis () , self . nblset () , self . fmcen ())
+            defmt::write!(
+                f,
+                "Bcr {{ mbken: {=bool:?}, muxen: {=bool:?}, mtyp: {:?}, mwid: {:?}, faccen: {=bool:?}, bursten: {=bool:?}, waitpol: {:?}, waitcfg: {:?}, wren: {=bool:?}, waiten: {=bool:?}, extmod: {=bool:?}, asyncwait: {=bool:?}, cpsize: {:?}, cburstrw: {:?}, cclken: {=bool:?}, wfdis: {=bool:?}, nblset: {=u8:?}, fmcen: {=bool:?} }}",
+                self.mbken(),
+                self.muxen(),
+                self.mtyp(),
+                self.mwid(),
+                self.faccen(),
+                self.bursten(),
+                self.waitpol(),
+                self.waitcfg(),
+                self.wren(),
+                self.waiten(),
+                self.extmod(),
+                self.asyncwait(),
+                self.cpsize(),
+                self.cburstrw(),
+                self.cclken(),
+                self.wfdis(),
+                self.nblset(),
+                self.fmcen()
+            )
         }
     }
     #[doc = "SRAM/NOR-Flash chip-select control register for bank 1."]
@@ -1447,7 +1484,28 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bcr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Bcr1 {{ mbken: {=bool:?}, muxen: {=bool:?}, mtyp: {:?}, mwid: {:?}, faccen: {=bool:?}, bursten: {=bool:?}, waitpol: {:?}, waitcfg: {:?}, wren: {=bool:?}, waiten: {=bool:?}, extmod: {=bool:?}, asyncwait: {=bool:?}, cpsize: {:?}, cburstrw: {:?}, cclken: {=bool:?}, wfdis: {=bool:?}, nblset: {=u8:?}, fmcen: {=bool:?} }}" , self . mbken () , self . muxen () , self . mtyp () , self . mwid () , self . faccen () , self . bursten () , self . waitpol () , self . waitcfg () , self . wren () , self . waiten () , self . extmod () , self . asyncwait () , self . cpsize () , self . cburstrw () , self . cclken () , self . wfdis () , self . nblset () , self . fmcen ())
+            defmt::write!(
+                f,
+                "Bcr1 {{ mbken: {=bool:?}, muxen: {=bool:?}, mtyp: {:?}, mwid: {:?}, faccen: {=bool:?}, bursten: {=bool:?}, waitpol: {:?}, waitcfg: {:?}, wren: {=bool:?}, waiten: {=bool:?}, extmod: {=bool:?}, asyncwait: {=bool:?}, cpsize: {:?}, cburstrw: {:?}, cclken: {=bool:?}, wfdis: {=bool:?}, nblset: {=u8:?}, fmcen: {=bool:?} }}",
+                self.mbken(),
+                self.muxen(),
+                self.mtyp(),
+                self.mwid(),
+                self.faccen(),
+                self.bursten(),
+                self.waitpol(),
+                self.waitcfg(),
+                self.wren(),
+                self.waiten(),
+                self.extmod(),
+                self.asyncwait(),
+                self.cpsize(),
+                self.cburstrw(),
+                self.cclken(),
+                self.wfdis(),
+                self.nblset(),
+                self.fmcen()
+            )
         }
     }
     #[doc = "SRAM/NOR-Flash chip-select timing register for bank 1."]
@@ -1575,7 +1633,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Btr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Btr {{ addset: {=u8:?}, addhld: {=u8:?}, datast: {=u8:?}, busturn: {=u8:?}, clkdiv: {=u8:?}, datlat: {=u8:?}, accmod: {:?}, datahld: {=u8:?} }}" , self . addset () , self . addhld () , self . datast () , self . busturn () , self . clkdiv () , self . datlat () , self . accmod () , self . datahld ())
+            defmt::write!(
+                f,
+                "Btr {{ addset: {=u8:?}, addhld: {=u8:?}, datast: {=u8:?}, busturn: {=u8:?}, clkdiv: {=u8:?}, datlat: {=u8:?}, accmod: {:?}, datahld: {=u8:?} }}",
+                self.addset(),
+                self.addhld(),
+                self.datast(),
+                self.busturn(),
+                self.clkdiv(),
+                self.datlat(),
+                self.accmod(),
+                self.datahld()
+            )
         }
     }
     #[doc = "SRAM/NOR-Flash write timing registers 1."]
@@ -1677,7 +1746,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bwtr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Bwtr {{ addset: {=u8:?}, addhld: {=u8:?}, datast: {=u8:?}, busturn: {=u8:?}, accmod: {:?}, datahld: {=u8:?} }}" , self . addset () , self . addhld () , self . datast () , self . busturn () , self . accmod () , self . datahld ())
+            defmt::write!(
+                f,
+                "Bwtr {{ addset: {=u8:?}, addhld: {=u8:?}, datast: {=u8:?}, busturn: {=u8:?}, accmod: {:?}, datahld: {=u8:?} }}",
+                self.addset(),
+                self.addhld(),
+                self.datast(),
+                self.busturn(),
+                self.accmod(),
+                self.datahld()
+            )
         }
     }
     #[doc = "Command Sequencer address register 1."]
@@ -1930,7 +2008,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csqcfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csqcfgr1 {{ cmd2en: {=bool:?}, dmaden: {=bool:?}, acynbr: {=u8:?}, cmd1: {=u8:?}, cmd2: {=u8:?}, cmd1t: {=bool:?}, cmd2t: {=bool:?} }}" , self . cmd2en () , self . dmaden () , self . acynbr () , self . cmd1 () , self . cmd2 () , self . cmd1t () , self . cmd2t ())
+            defmt::write!(
+                f,
+                "Csqcfgr1 {{ cmd2en: {=bool:?}, dmaden: {=bool:?}, acynbr: {=u8:?}, cmd1: {=u8:?}, cmd2: {=u8:?}, cmd1t: {=bool:?}, cmd2t: {=bool:?} }}",
+                self.cmd2en(),
+                self.dmaden(),
+                self.acynbr(),
+                self.cmd1(),
+                self.cmd2(),
+                self.cmd1t(),
+                self.cmd2t()
+            )
         }
     }
     #[doc = "Command Sequencer configuration register 2."]
@@ -2032,7 +2120,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csqcfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csqcfgr2 {{ sqsdten: {=bool:?}, rcmd2en: {=bool:?}, dmasen: {=bool:?}, rcmd1: {=u8:?}, rcmd2: {=u8:?}, rcmd1t: {=bool:?} }}" , self . sqsdten () , self . rcmd2en () , self . dmasen () , self . rcmd1 () , self . rcmd2 () , self . rcmd1t ())
+            defmt::write!(
+                f,
+                "Csqcfgr2 {{ sqsdten: {=bool:?}, rcmd2en: {=bool:?}, dmasen: {=bool:?}, rcmd1: {=u8:?}, rcmd2: {=u8:?}, rcmd1t: {=bool:?} }}",
+                self.sqsdten(),
+                self.rcmd2en(),
+                self.dmasen(),
+                self.rcmd1(),
+                self.rcmd2(),
+                self.rcmd1t()
+            )
         }
     }
     #[doc = "Command Sequencer configuration register 3."]
@@ -2173,7 +2270,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csqcfgr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csqcfgr3 {{ snbr: {=u8:?}, ac1t: {=bool:?}, ac2t: {=bool:?}, ac3t: {=bool:?}, ac4t: {=bool:?}, ac5t: {=bool:?}, sdt: {=bool:?}, rac1t: {=bool:?}, rac2t: {=bool:?} }}" , self . snbr () , self . ac1t () , self . ac2t () , self . ac3t () , self . ac4t () , self . ac5t () , self . sdt () , self . rac1t () , self . rac2t ())
+            defmt::write!(
+                f,
+                "Csqcfgr3 {{ snbr: {=u8:?}, ac1t: {=bool:?}, ac2t: {=bool:?}, ac3t: {=bool:?}, ac4t: {=bool:?}, ac5t: {=bool:?}, sdt: {=bool:?}, rac1t: {=bool:?}, rac2t: {=bool:?} }}",
+                self.snbr(),
+                self.ac1t(),
+                self.ac2t(),
+                self.ac3t(),
+                self.ac4t(),
+                self.ac5t(),
+                self.sdt(),
+                self.rac1t(),
+                self.rac2t()
+            )
         }
     }
     #[doc = "Command Sequencer control register."]
@@ -2979,7 +3088,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pcr {{ pwaiten: {=bool:?}, pbken: {=bool:?}, ptyp: {:?}, pwid: {:?}, eccen: {=bool:?}, tclr: {=u8:?}, tar: {=u8:?}, eccps: {:?}, bchecc: {=bool:?} }}" , self . pwaiten () , self . pbken () , self . ptyp () , self . pwid () , self . eccen () , self . tclr () , self . tar () , self . eccps () , self . bchecc ())
+            defmt::write!(
+                f,
+                "Pcr {{ pwaiten: {=bool:?}, pbken: {=bool:?}, ptyp: {:?}, pwid: {:?}, eccen: {=bool:?}, tclr: {=u8:?}, tar: {=u8:?}, eccps: {:?}, bchecc: {=bool:?} }}",
+                self.pwaiten(),
+                self.pbken(),
+                self.ptyp(),
+                self.pwid(),
+                self.eccen(),
+                self.tclr(),
+                self.tar(),
+                self.eccps(),
+                self.bchecc()
+            )
         }
     }
     #[doc = "PSRAM chip select counter register."]
@@ -3036,7 +3157,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcscntr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pcscntr {{ cscount: {=u16:?}, cntben[0]: {=bool:?}, cntben[1]: {=bool:?}, cntben[2]: {=bool:?}, cntben[3]: {=bool:?} }}" , self . cscount () , self . cntben (0usize) , self . cntben (1usize) , self . cntben (2usize) , self . cntben (3usize))
+            defmt::write!(
+                f,
+                "Pcscntr {{ cscount: {=u16:?}, cntben[0]: {=bool:?}, cntben[1]: {=bool:?}, cntben[2]: {=bool:?}, cntben[3]: {=bool:?} }}",
+                self.cscount(),
+                self.cntben(0usize),
+                self.cntben(1usize),
+                self.cntben(2usize),
+                self.cntben(3usize)
+            )
         }
     }
     #[doc = "Common memory space timing register."]
@@ -3349,7 +3478,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sdcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sdcr {{ nc: {:?}, nr: {:?}, mwid: {:?}, nb: {:?}, cas: {:?}, wp: {=bool:?}, sdclk: {:?}, rburst: {=bool:?}, rpipe: {:?} }}" , self . nc () , self . nr () , self . mwid () , self . nb () , self . cas () , self . wp () , self . sdclk () , self . rburst () , self . rpipe ())
+            defmt::write!(
+                f,
+                "Sdcr {{ nc: {:?}, nr: {:?}, mwid: {:?}, nb: {:?}, cas: {:?}, wp: {=bool:?}, sdclk: {:?}, rburst: {=bool:?}, rpipe: {:?} }}",
+                self.nc(),
+                self.nr(),
+                self.mwid(),
+                self.nb(),
+                self.cas(),
+                self.wp(),
+                self.sdclk(),
+                self.rburst(),
+                self.rpipe()
+            )
         }
     }
     #[doc = "SDRAM refresh timer register."]
@@ -3608,7 +3749,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sdtr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sdtr {{ tmrd: {=u8:?}, txsr: {=u8:?}, tras: {=u8:?}, trc: {=u8:?}, twr: {=u8:?}, trp: {=u8:?}, trcd: {=u8:?} }}" , self . tmrd () , self . txsr () , self . tras () , self . trc () , self . twr () , self . trp () , self . trcd ())
+            defmt::write!(
+                f,
+                "Sdtr {{ tmrd: {=u8:?}, txsr: {=u8:?}, tras: {=u8:?}, trc: {=u8:?}, twr: {=u8:?}, trp: {=u8:?}, trcd: {=u8:?} }}",
+                self.tmrd(),
+                self.txsr(),
+                self.tras(),
+                self.trc(),
+                self.twr(),
+                self.trp(),
+                self.trcd()
+            )
         }
     }
     #[doc = "FIFO status and interrupt register."]
@@ -3723,7 +3874,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ irs: {=bool:?}, ils: {=bool:?}, ifs: {=bool:?}, iren: {=bool:?}, ilen: {=bool:?}, ifen: {=bool:?}, fempt: {=bool:?} }}" , self . irs () , self . ils () , self . ifs () , self . iren () , self . ilen () , self . ifen () , self . fempt ())
+            defmt::write!(
+                f,
+                "Sr {{ irs: {=bool:?}, ils: {=bool:?}, ifs: {=bool:?}, iren: {=bool:?}, ilen: {=bool:?}, ifen: {=bool:?}, fempt: {=bool:?} }}",
+                self.irs(),
+                self.ils(),
+                self.ifs(),
+                self.iren(),
+                self.ilen(),
+                self.ifen(),
+                self.fempt()
+            )
         }
     }
 }

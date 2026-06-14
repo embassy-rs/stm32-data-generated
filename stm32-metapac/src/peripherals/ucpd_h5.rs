@@ -220,7 +220,18 @@ bitfield setting."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ hbitclkdiv: {=u8:?}, ifrgap: {=u8:?}, transwin: {=u8:?}, psc_usbpdclk: {:?}, rxordseten: {=u16:?}, txdmaen: {=bool:?}, rxdmaen: {=bool:?}, ucpden: {=bool:?} }}" , self . hbitclkdiv () , self . ifrgap () , self . transwin () , self . psc_usbpdclk () , self . rxordseten () , self . txdmaen () , self . rxdmaen () , self . ucpden ())
+            defmt::write!(
+                f,
+                "Cfgr1 {{ hbitclkdiv: {=u8:?}, ifrgap: {=u8:?}, transwin: {=u8:?}, psc_usbpdclk: {:?}, rxordseten: {=u16:?}, txdmaen: {=bool:?}, rxdmaen: {=bool:?}, ucpden: {=bool:?} }}",
+                self.hbitclkdiv(),
+                self.ifrgap(),
+                self.transwin(),
+                self.psc_usbpdclk(),
+                self.rxordseten(),
+                self.txdmaen(),
+                self.rxdmaen(),
+                self.ucpden()
+            )
         }
     }
     #[doc = "configuration register 2"]
@@ -309,7 +320,15 @@ bitfield setting."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr2 {{ rxfiltdis: {=bool:?}, rxfilt2n3: {=bool:?}, forceclk: {=bool:?}, wupen: {=bool:?}, rxafilten: {=bool:?} }}" , self . rxfiltdis () , self . rxfilt2n3 () , self . forceclk () , self . wupen () , self . rxafilten ())
+            defmt::write!(
+                f,
+                "Cfgr2 {{ rxfiltdis: {=bool:?}, rxfilt2n3: {=bool:?}, forceclk: {=bool:?}, wupen: {=bool:?}, rxafilten: {=bool:?} }}",
+                self.rxfiltdis(),
+                self.rxfilt2n3(),
+                self.forceclk(),
+                self.wupen(),
+                self.rxafilten()
+            )
         }
     }
     #[doc = "configuration register 3"]
@@ -602,7 +621,24 @@ bitfield must be set accordingly, too."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ txmode: {:?}, txsend: {=bool:?}, txhrst: {=bool:?}, rxmode: {=bool:?}, phyrxen: {=bool:?}, phyccsel: {:?}, anasubmode: {=u8:?}, anamode: {:?}, ccenable: {:?}, frsrxen: {=bool:?}, frstx: {=bool:?}, rdch: {=bool:?}, cc1tcdis: {=bool:?}, cc2tcdis: {=bool:?} }}" , self . txmode () , self . txsend () , self . txhrst () , self . rxmode () , self . phyrxen () , self . phyccsel () , self . anasubmode () , self . anamode () , self . ccenable () , self . frsrxen () , self . frstx () , self . rdch () , self . cc1tcdis () , self . cc2tcdis ())
+            defmt::write!(
+                f,
+                "Cr {{ txmode: {:?}, txsend: {=bool:?}, txhrst: {=bool:?}, rxmode: {=bool:?}, phyrxen: {=bool:?}, phyccsel: {:?}, anasubmode: {=u8:?}, anamode: {:?}, ccenable: {:?}, frsrxen: {=bool:?}, frstx: {=bool:?}, rdch: {=bool:?}, cc1tcdis: {=bool:?}, cc2tcdis: {=bool:?} }}",
+                self.txmode(),
+                self.txsend(),
+                self.txhrst(),
+                self.rxmode(),
+                self.phyrxen(),
+                self.phyccsel(),
+                self.anasubmode(),
+                self.anamode(),
+                self.ccenable(),
+                self.frsrxen(),
+                self.frstx(),
+                self.rdch(),
+                self.cc1tcdis(),
+                self.cc2tcdis()
+            )
         }
     }
     #[doc = "interrupt clear register"]
@@ -795,7 +831,23 @@ bitfield must be set accordingly, too."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Icr {{ txmsgdisccf: {=bool:?}, txmsgsentcf: {=bool:?}, txmsgabtcf: {=bool:?}, hrstdisccf: {=bool:?}, hrstsentcf: {=bool:?}, txundcf: {=bool:?}, rxorddetcf: {=bool:?}, rxhrstdetcf: {=bool:?}, rxovrcf: {=bool:?}, rxmsgendcf: {=bool:?}, typecevt1cf: {=bool:?}, typecevt2cf: {=bool:?}, frsevtcf: {=bool:?} }}" , self . txmsgdisccf () , self . txmsgsentcf () , self . txmsgabtcf () , self . hrstdisccf () , self . hrstsentcf () , self . txundcf () , self . rxorddetcf () , self . rxhrstdetcf () , self . rxovrcf () , self . rxmsgendcf () , self . typecevt1cf () , self . typecevt2cf () , self . frsevtcf ())
+            defmt::write!(
+                f,
+                "Icr {{ txmsgdisccf: {=bool:?}, txmsgsentcf: {=bool:?}, txmsgabtcf: {=bool:?}, hrstdisccf: {=bool:?}, hrstsentcf: {=bool:?}, txundcf: {=bool:?}, rxorddetcf: {=bool:?}, rxhrstdetcf: {=bool:?}, rxovrcf: {=bool:?}, rxmsgendcf: {=bool:?}, typecevt1cf: {=bool:?}, typecevt2cf: {=bool:?}, frsevtcf: {=bool:?} }}",
+                self.txmsgdisccf(),
+                self.txmsgsentcf(),
+                self.txmsgabtcf(),
+                self.hrstdisccf(),
+                self.hrstsentcf(),
+                self.txundcf(),
+                self.rxorddetcf(),
+                self.rxhrstdetcf(),
+                self.rxovrcf(),
+                self.rxmsgendcf(),
+                self.typecevt1cf(),
+                self.typecevt2cf(),
+                self.frsevtcf()
+            )
         }
     }
     #[doc = "interrupt mask register"]
@@ -1014,7 +1066,25 @@ bitfield must be set accordingly, too."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Imr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Imr {{ txisie: {=bool:?}, txmsgdiscie: {=bool:?}, txmsgsentie: {=bool:?}, txmsgabtie: {=bool:?}, hrstdiscie: {=bool:?}, hrstsentie: {=bool:?}, txundie: {=bool:?}, rxneie: {=bool:?}, rxorddetie: {=bool:?}, rxhrstdetie: {=bool:?}, rxovrie: {=bool:?}, rxmsgendie: {=bool:?}, typecevt1ie: {=bool:?}, typecevt2ie: {=bool:?}, frsevtie: {=bool:?} }}" , self . txisie () , self . txmsgdiscie () , self . txmsgsentie () , self . txmsgabtie () , self . hrstdiscie () , self . hrstsentie () , self . txundie () , self . rxneie () , self . rxorddetie () , self . rxhrstdetie () , self . rxovrie () , self . rxmsgendie () , self . typecevt1ie () , self . typecevt2ie () , self . frsevtie ())
+            defmt::write!(
+                f,
+                "Imr {{ txisie: {=bool:?}, txmsgdiscie: {=bool:?}, txmsgsentie: {=bool:?}, txmsgabtie: {=bool:?}, hrstdiscie: {=bool:?}, hrstsentie: {=bool:?}, txundie: {=bool:?}, rxneie: {=bool:?}, rxorddetie: {=bool:?}, rxhrstdetie: {=bool:?}, rxovrie: {=bool:?}, rxmsgendie: {=bool:?}, typecevt1ie: {=bool:?}, typecevt2ie: {=bool:?}, frsevtie: {=bool:?} }}",
+                self.txisie(),
+                self.txmsgdiscie(),
+                self.txmsgsentie(),
+                self.txmsgabtie(),
+                self.hrstdiscie(),
+                self.hrstsentie(),
+                self.txundie(),
+                self.rxneie(),
+                self.rxorddetie(),
+                self.rxhrstdetie(),
+                self.rxovrie(),
+                self.rxmsgendie(),
+                self.typecevt1ie(),
+                self.typecevt2ie(),
+                self.frsevtie()
+            )
         }
     }
     #[doc = "Rx ordered set extension register 1"]
@@ -1484,7 +1554,28 @@ bitfield value, which corresponds to a new Type-C event. It is cleared by settin
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ txis: {=bool:?}, txmsgdisc: {=bool:?}, txmsgsent: {=bool:?}, txmsgabt: {=bool:?}, hrstdisc: {=bool:?}, hrstsent: {=bool:?}, txund: {=bool:?}, rxne: {=bool:?}, rxorddet: {=bool:?}, rxhrstdet: {=bool:?}, rxovr: {=bool:?}, rxmsgend: {=bool:?}, rxerr: {=bool:?}, typecevt1: {=bool:?}, typecevt2: {=bool:?}, typec_vstate_cc1: {:?}, typec_vstate_cc2: {:?}, frsevt: {=bool:?} }}" , self . txis () , self . txmsgdisc () , self . txmsgsent () , self . txmsgabt () , self . hrstdisc () , self . hrstsent () , self . txund () , self . rxne () , self . rxorddet () , self . rxhrstdet () , self . rxovr () , self . rxmsgend () , self . rxerr () , self . typecevt1 () , self . typecevt2 () , self . typec_vstate_cc1 () , self . typec_vstate_cc2 () , self . frsevt ())
+            defmt::write!(
+                f,
+                "Sr {{ txis: {=bool:?}, txmsgdisc: {=bool:?}, txmsgsent: {=bool:?}, txmsgabt: {=bool:?}, hrstdisc: {=bool:?}, hrstsent: {=bool:?}, txund: {=bool:?}, rxne: {=bool:?}, rxorddet: {=bool:?}, rxhrstdet: {=bool:?}, rxovr: {=bool:?}, rxmsgend: {=bool:?}, rxerr: {=bool:?}, typecevt1: {=bool:?}, typecevt2: {=bool:?}, typec_vstate_cc1: {:?}, typec_vstate_cc2: {:?}, frsevt: {=bool:?} }}",
+                self.txis(),
+                self.txmsgdisc(),
+                self.txmsgsent(),
+                self.txmsgabt(),
+                self.hrstdisc(),
+                self.hrstsent(),
+                self.txund(),
+                self.rxne(),
+                self.rxorddet(),
+                self.rxhrstdet(),
+                self.rxovr(),
+                self.rxmsgend(),
+                self.rxerr(),
+                self.typecevt1(),
+                self.typecevt2(),
+                self.typec_vstate_cc1(),
+                self.typec_vstate_cc2(),
+                self.frsevt()
+            )
         }
     }
     #[doc = "Tx ordered set type register"]

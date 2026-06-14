@@ -239,7 +239,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb1fzr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb1fzr {{ dbg_tim2_stop: {=bool:?}, dbg_tim3_stop: {=bool:?}, dbg_tim6_stop: {=bool:?}, dbg_tim7_stop: {=bool:?}, dbg_rtc_stop: {=bool:?}, dbg_wwdg_stop: {=bool:?}, dbg_iwdg_stop: {=bool:?}, dbg_lptim2_stop: {=bool:?}, dbg_lptim1_stop: {=bool:?} }}" , self . dbg_tim2_stop () , self . dbg_tim3_stop () , self . dbg_tim6_stop () , self . dbg_tim7_stop () , self . dbg_rtc_stop () , self . dbg_wwdg_stop () , self . dbg_iwdg_stop () , self . dbg_lptim2_stop () , self . dbg_lptim1_stop ())
+            defmt::write!(
+                f,
+                "Apb1fzr {{ dbg_tim2_stop: {=bool:?}, dbg_tim3_stop: {=bool:?}, dbg_tim6_stop: {=bool:?}, dbg_tim7_stop: {=bool:?}, dbg_rtc_stop: {=bool:?}, dbg_wwdg_stop: {=bool:?}, dbg_iwdg_stop: {=bool:?}, dbg_lptim2_stop: {=bool:?}, dbg_lptim1_stop: {=bool:?} }}",
+                self.dbg_tim2_stop(),
+                self.dbg_tim3_stop(),
+                self.dbg_tim6_stop(),
+                self.dbg_tim7_stop(),
+                self.dbg_rtc_stop(),
+                self.dbg_wwdg_stop(),
+                self.dbg_iwdg_stop(),
+                self.dbg_lptim2_stop(),
+                self.dbg_lptim1_stop()
+            )
         }
     }
     #[doc = "DBG APB2 freeze register."]
@@ -315,7 +327,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apb2fzr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apb2fzr {{ dbg_tim1_stop: {=bool:?}, dbg_tim15_stop: {=bool:?}, dbg_tim16_stop: {=bool:?}, dbg_lptim3_stop: {=bool:?} }}" , self . dbg_tim1_stop () , self . dbg_tim15_stop () , self . dbg_tim16_stop () , self . dbg_lptim3_stop ())
+            defmt::write!(
+                f,
+                "Apb2fzr {{ dbg_tim1_stop: {=bool:?}, dbg_tim15_stop: {=bool:?}, dbg_tim16_stop: {=bool:?}, dbg_lptim3_stop: {=bool:?} }}",
+                self.dbg_tim1_stop(),
+                self.dbg_tim15_stop(),
+                self.dbg_tim16_stop(),
+                self.dbg_lptim3_stop()
+            )
         }
     }
     #[doc = "DBGMCU CoreSight component identity register 0."]
@@ -1004,7 +1023,14 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ ap1_present: {=bool:?}, ap0_present: {=bool:?}, ap1_enabled: {=bool:?}, ap0_enabled: {=bool:?} }}" , self . ap1_present () , self . ap0_present () , self . ap1_enabled () , self . ap0_enabled ())
+            defmt::write!(
+                f,
+                "Sr {{ ap1_present: {=bool:?}, ap0_present: {=bool:?}, ap1_enabled: {=bool:?}, ap0_enabled: {=bool:?} }}",
+                self.ap1_present(),
+                self.ap0_present(),
+                self.ap1_enabled(),
+                self.ap0_enabled()
+            )
         }
     }
 }

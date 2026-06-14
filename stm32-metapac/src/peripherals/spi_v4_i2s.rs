@@ -249,7 +249,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfg1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfg1 {{ dsize: {=u8:?}, fthlv: {:?}, udrcfg: {:?}, udrdet: {:?}, rxdmaen: {=bool:?}, txdmaen: {=bool:?}, crcsize: {=u8:?}, crcen: {=bool:?}, mbr: {:?} }}" , self . dsize () , self . fthlv () , self . udrcfg () , self . udrdet () , self . rxdmaen () , self . txdmaen () , self . crcsize () , self . crcen () , self . mbr ())
+            defmt::write!(
+                f,
+                "Cfg1 {{ dsize: {=u8:?}, fthlv: {:?}, udrcfg: {:?}, udrdet: {:?}, rxdmaen: {=bool:?}, txdmaen: {=bool:?}, crcsize: {=u8:?}, crcen: {=bool:?}, mbr: {:?} }}",
+                self.dsize(),
+                self.fthlv(),
+                self.udrcfg(),
+                self.udrdet(),
+                self.rxdmaen(),
+                self.txdmaen(),
+                self.crcsize(),
+                self.crcen(),
+                self.mbr()
+            )
         }
     }
     #[doc = "configuration register 2"]
@@ -455,7 +467,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfg2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfg2 {{ mssi: {=u8:?}, midi: {=u8:?}, ioswp: {=bool:?}, comm: {:?}, sp: {:?}, master: {:?}, lsbfirst: {:?}, cpha: {:?}, cpol: {:?}, ssm: {=bool:?}, ssiop: {:?}, ssoe: {=bool:?}, ssom: {:?}, afcntr: {=bool:?} }}" , self . mssi () , self . midi () , self . ioswp () , self . comm () , self . sp () , self . master () , self . lsbfirst () , self . cpha () , self . cpol () , self . ssm () , self . ssiop () , self . ssoe () , self . ssom () , self . afcntr ())
+            defmt::write!(
+                f,
+                "Cfg2 {{ mssi: {=u8:?}, midi: {=u8:?}, ioswp: {=bool:?}, comm: {:?}, sp: {:?}, master: {:?}, lsbfirst: {:?}, cpha: {:?}, cpol: {:?}, ssm: {=bool:?}, ssiop: {:?}, ssoe: {=bool:?}, ssom: {:?}, afcntr: {=bool:?} }}",
+                self.mssi(),
+                self.midi(),
+                self.ioswp(),
+                self.comm(),
+                self.sp(),
+                self.master(),
+                self.lsbfirst(),
+                self.cpha(),
+                self.cpol(),
+                self.ssm(),
+                self.ssiop(),
+                self.ssoe(),
+                self.ssom(),
+                self.afcntr()
+            )
         }
     }
     #[doc = "control register 1"]
@@ -609,7 +638,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ spe: {=bool:?}, masrx: {=bool:?}, cstart: {=bool:?}, csusp: {=bool:?}, hddir: {:?}, ssi: {=bool:?}, crc33_17: {=bool:?}, rcrcini: {:?}, tcrcini: {:?}, iolock: {=bool:?} }}" , self . spe () , self . masrx () , self . cstart () , self . csusp () , self . hddir () , self . ssi () , self . crc33_17 () , self . rcrcini () , self . tcrcini () , self . iolock ())
+            defmt::write!(
+                f,
+                "Cr1 {{ spe: {=bool:?}, masrx: {=bool:?}, cstart: {=bool:?}, csusp: {=bool:?}, hddir: {:?}, ssi: {=bool:?}, crc33_17: {=bool:?}, rcrcini: {:?}, tcrcini: {:?}, iolock: {=bool:?} }}",
+                self.spe(),
+                self.masrx(),
+                self.cstart(),
+                self.csusp(),
+                self.hddir(),
+                self.ssi(),
+                self.crc33_17(),
+                self.rcrcini(),
+                self.tcrcini(),
+                self.iolock()
+            )
         }
     }
     #[doc = "control register 2"]
@@ -892,7 +934,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for I2scfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "I2scfgr {{ i2smod: {=bool:?}, i2scfg: {:?}, i2sstd: {:?}, pcmsync: {:?}, datlen: {:?}, chlen: {:?}, ckpol: {:?}, fixch: {:?}, wsinv: {=bool:?}, datfmt: {:?}, i2sdiv: {=u8:?}, odd: {:?}, mckoe: {=bool:?} }}" , self . i2smod () , self . i2scfg () , self . i2sstd () , self . pcmsync () , self . datlen () , self . chlen () , self . ckpol () , self . fixch () , self . wsinv () , self . datfmt () , self . i2sdiv () , self . odd () , self . mckoe ())
+            defmt::write!(
+                f,
+                "I2scfgr {{ i2smod: {=bool:?}, i2scfg: {:?}, i2sstd: {:?}, pcmsync: {:?}, datlen: {:?}, chlen: {:?}, ckpol: {:?}, fixch: {:?}, wsinv: {=bool:?}, datfmt: {:?}, i2sdiv: {=u8:?}, odd: {:?}, mckoe: {=bool:?} }}",
+                self.i2smod(),
+                self.i2scfg(),
+                self.i2sstd(),
+                self.pcmsync(),
+                self.datlen(),
+                self.chlen(),
+                self.ckpol(),
+                self.fixch(),
+                self.wsinv(),
+                self.datfmt(),
+                self.i2sdiv(),
+                self.odd(),
+                self.mckoe()
+            )
         }
     }
     #[doc = "Interrupt Enable Register"]
@@ -1059,7 +1117,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier {{ rxpie: {=bool:?}, txpie: {=bool:?}, dxpie: {=bool:?}, eotie: {=bool:?}, txtfie: {=bool:?}, udrie: {=bool:?}, ovrie: {=bool:?}, crceie: {=bool:?}, tifreie: {=bool:?}, modfie: {=bool:?}, tserfie: {=bool:?} }}" , self . rxpie () , self . txpie () , self . dxpie () , self . eotie () , self . txtfie () , self . udrie () , self . ovrie () , self . crceie () , self . tifreie () , self . modfie () , self . tserfie ())
+            defmt::write!(
+                f,
+                "Ier {{ rxpie: {=bool:?}, txpie: {=bool:?}, dxpie: {=bool:?}, eotie: {=bool:?}, txtfie: {=bool:?}, udrie: {=bool:?}, ovrie: {=bool:?}, crceie: {=bool:?}, tifreie: {=bool:?}, modfie: {=bool:?}, tserfie: {=bool:?} }}",
+                self.rxpie(),
+                self.txpie(),
+                self.dxpie(),
+                self.eotie(),
+                self.txtfie(),
+                self.udrie(),
+                self.ovrie(),
+                self.crceie(),
+                self.tifreie(),
+                self.modfie(),
+                self.tserfie()
+            )
         }
     }
     #[doc = "Interrupt/Status Flags Clear Register"]
@@ -1200,7 +1272,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ifcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ifcr {{ eotc: {=bool:?}, txtfc: {=bool:?}, udrc: {=bool:?}, ovrc: {=bool:?}, crcec: {=bool:?}, tifrec: {=bool:?}, modfc: {=bool:?}, tserfc: {=bool:?}, suspc: {=bool:?} }}" , self . eotc () , self . txtfc () , self . udrc () , self . ovrc () , self . crcec () , self . tifrec () , self . modfc () , self . tserfc () , self . suspc ())
+            defmt::write!(
+                f,
+                "Ifcr {{ eotc: {=bool:?}, txtfc: {=bool:?}, udrc: {=bool:?}, ovrc: {=bool:?}, crcec: {=bool:?}, tifrec: {=bool:?}, modfc: {=bool:?}, tserfc: {=bool:?}, suspc: {=bool:?} }}",
+                self.eotc(),
+                self.txtfc(),
+                self.udrc(),
+                self.ovrc(),
+                self.crcec(),
+                self.tifrec(),
+                self.modfc(),
+                self.tserfc(),
+                self.suspc()
+            )
         }
     }
     #[doc = "Receiver CRC Register"]
@@ -1467,7 +1551,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ rxp: {=bool:?}, txp: {=bool:?}, dxp: {=bool:?}, eot: {=bool:?}, txtf: {=bool:?}, udr: {=bool:?}, ovr: {=bool:?}, crce: {=bool:?}, tifre: {=bool:?}, modf: {=bool:?}, tserf: {=bool:?}, susp: {=bool:?}, txc: {=bool:?}, rxplvl: {:?}, rxwne: {:?}, ctsize: {=u16:?} }}" , self . rxp () , self . txp () , self . dxp () , self . eot () , self . txtf () , self . udr () , self . ovr () , self . crce () , self . tifre () , self . modf () , self . tserf () , self . susp () , self . txc () , self . rxplvl () , self . rxwne () , self . ctsize ())
+            defmt::write!(
+                f,
+                "Sr {{ rxp: {=bool:?}, txp: {=bool:?}, dxp: {=bool:?}, eot: {=bool:?}, txtf: {=bool:?}, udr: {=bool:?}, ovr: {=bool:?}, crce: {=bool:?}, tifre: {=bool:?}, modf: {=bool:?}, tserf: {=bool:?}, susp: {=bool:?}, txc: {=bool:?}, rxplvl: {:?}, rxwne: {:?}, ctsize: {=u16:?} }}",
+                self.rxp(),
+                self.txp(),
+                self.dxp(),
+                self.eot(),
+                self.txtf(),
+                self.udr(),
+                self.ovr(),
+                self.crce(),
+                self.tifre(),
+                self.modf(),
+                self.tserf(),
+                self.susp(),
+                self.txc(),
+                self.rxplvl(),
+                self.rxwne(),
+                self.ctsize()
+            )
         }
     }
     #[doc = "Transmitter CRC Register"]

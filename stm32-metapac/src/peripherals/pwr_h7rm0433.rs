@@ -204,7 +204,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cpucr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cpucr {{ pdds_d1: {=bool:?}, pdds_d2: {=bool:?}, pdds_d3: {=bool:?}, stopf: {=bool:?}, sbf: {=bool:?}, sbf_d1: {=bool:?}, sbf_d2: {=bool:?}, cssf: {=bool:?}, run_d3: {=bool:?} }}" , self . pdds_d1 () , self . pdds_d2 () , self . pdds_d3 () , self . stopf () , self . sbf () , self . sbf_d1 () , self . sbf_d2 () , self . cssf () , self . run_d3 ())
+            defmt::write!(
+                f,
+                "Cpucr {{ pdds_d1: {=bool:?}, pdds_d2: {=bool:?}, pdds_d3: {=bool:?}, stopf: {=bool:?}, sbf: {=bool:?}, sbf_d1: {=bool:?}, sbf_d2: {=bool:?}, cssf: {=bool:?}, run_d3: {=bool:?} }}",
+                self.pdds_d1(),
+                self.pdds_d2(),
+                self.pdds_d3(),
+                self.stopf(),
+                self.sbf(),
+                self.sbf_d1(),
+                self.sbf_d2(),
+                self.cssf(),
+                self.run_d3()
+            )
         }
     }
     #[doc = "PWR control register 1"]
@@ -332,7 +344,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ lpds: {=bool:?}, pvde: {=bool:?}, pls: {=u8:?}, dbp: {=bool:?}, flps: {=bool:?}, svos: {=u8:?}, avden: {=bool:?}, als: {=u8:?} }}" , self . lpds () , self . pvde () , self . pls () , self . dbp () , self . flps () , self . svos () , self . avden () , self . als ())
+            defmt::write!(
+                f,
+                "Cr1 {{ lpds: {=bool:?}, pvde: {=bool:?}, pls: {=u8:?}, dbp: {=bool:?}, flps: {=bool:?}, svos: {=u8:?}, avden: {=bool:?}, als: {=u8:?} }}",
+                self.lpds(),
+                self.pvde(),
+                self.pls(),
+                self.dbp(),
+                self.flps(),
+                self.svos(),
+                self.avden(),
+                self.als()
+            )
         }
     }
     #[doc = "This register is not reset by wakeup from Standby mode, RESET signal and VDD POR. It is only reset by VSW POR and VSWRST reset. This register shall not be accessed when VSWRST bit in RCC_BDCR register resets the VSW domain.After reset, PWR_CR2 register is write-protected. Prior to modifying its content, the DBP bit in PWR_CR1 register must be set to disable the write protection."]
@@ -447,7 +470,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ bren: {:?}, monen: {=bool:?}, brrdy: {=bool:?}, vbatl: {=bool:?}, vbath: {=bool:?}, templ: {=bool:?}, temph: {=bool:?} }}" , self . bren () , self . monen () , self . brrdy () , self . vbatl () , self . vbath () , self . templ () , self . temph ())
+            defmt::write!(
+                f,
+                "Cr2 {{ bren: {:?}, monen: {=bool:?}, brrdy: {=bool:?}, vbatl: {=bool:?}, vbath: {=bool:?}, templ: {=bool:?}, temph: {=bool:?} }}",
+                self.bren(),
+                self.monen(),
+                self.brrdy(),
+                self.vbatl(),
+                self.vbath(),
+                self.templ(),
+                self.temph()
+            )
         }
     }
     #[doc = "Reset only by POR only, not reset by wakeup from Standby mode and RESET pad. The lower byte of this register is written once after POR and shall be written before changing VOS level or ck_sys clock frequency. No limitation applies to the upper bytes.Programming data corresponding to an invalid combination of SDLEVEL, SDEXTHP, SDEN, LDOEN and BYPASS bits (see Table9) will be ignored: data will not be written, the written-once mechanism will lock the register and any further write access will be ignored. The default supply configuration will be kept and the ACTVOSRDY bit in PWR control status register 1 (PWR_CSR1) will go on indicating invalid voltage levels. The system shall be power cycled before writing a new value."]
@@ -575,7 +608,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr3 {{ bypass: {=bool:?}, ldoen: {=bool:?}, scuen: {=bool:?}, vbe: {=bool:?}, vbrs: {=bool:?}, usb33den: {=bool:?}, usbregen: {=bool:?}, usb33rdy: {=bool:?} }}" , self . bypass () , self . ldoen () , self . scuen () , self . vbe () , self . vbrs () , self . usb33den () , self . usbregen () , self . usb33rdy ())
+            defmt::write!(
+                f,
+                "Cr3 {{ bypass: {=bool:?}, ldoen: {=bool:?}, scuen: {=bool:?}, vbe: {=bool:?}, vbrs: {=bool:?}, usb33den: {=bool:?}, usbregen: {=bool:?}, usb33rdy: {=bool:?} }}",
+                self.bypass(),
+                self.ldoen(),
+                self.scuen(),
+                self.vbe(),
+                self.vbrs(),
+                self.usb33den(),
+                self.usbregen(),
+                self.usb33rdy()
+            )
         }
     }
     #[doc = "PWR control status register 1"]
@@ -833,7 +877,28 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wkupepr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wkupepr {{ wkupen[0]: {=bool:?}, wkupen[1]: {=bool:?}, wkupen[2]: {=bool:?}, wkupen[3]: {=bool:?}, wkupen[4]: {=bool:?}, wkupen[5]: {=bool:?}, wkupp[0]: {=bool:?}, wkupp[1]: {=bool:?}, wkupp[2]: {=bool:?}, wkupp[3]: {=bool:?}, wkupp[4]: {=bool:?}, wkupp[5]: {=bool:?}, wkuppupd[0]: {:?}, wkuppupd[1]: {:?}, wkuppupd[2]: {:?}, wkuppupd[3]: {:?}, wkuppupd[4]: {:?}, wkuppupd[5]: {:?} }}" , self . wkupen (0usize) , self . wkupen (1usize) , self . wkupen (2usize) , self . wkupen (3usize) , self . wkupen (4usize) , self . wkupen (5usize) , self . wkupp (0usize) , self . wkupp (1usize) , self . wkupp (2usize) , self . wkupp (3usize) , self . wkupp (4usize) , self . wkupp (5usize) , self . wkuppupd (0usize) , self . wkuppupd (1usize) , self . wkuppupd (2usize) , self . wkuppupd (3usize) , self . wkuppupd (4usize) , self . wkuppupd (5usize))
+            defmt::write!(
+                f,
+                "Wkupepr {{ wkupen[0]: {=bool:?}, wkupen[1]: {=bool:?}, wkupen[2]: {=bool:?}, wkupen[3]: {=bool:?}, wkupen[4]: {=bool:?}, wkupen[5]: {=bool:?}, wkupp[0]: {=bool:?}, wkupp[1]: {=bool:?}, wkupp[2]: {=bool:?}, wkupp[3]: {=bool:?}, wkupp[4]: {=bool:?}, wkupp[5]: {=bool:?}, wkuppupd[0]: {:?}, wkuppupd[1]: {:?}, wkuppupd[2]: {:?}, wkuppupd[3]: {:?}, wkuppupd[4]: {:?}, wkuppupd[5]: {:?} }}",
+                self.wkupen(0usize),
+                self.wkupen(1usize),
+                self.wkupen(2usize),
+                self.wkupen(3usize),
+                self.wkupen(4usize),
+                self.wkupen(5usize),
+                self.wkupp(0usize),
+                self.wkupp(1usize),
+                self.wkupp(2usize),
+                self.wkupp(3usize),
+                self.wkupp(4usize),
+                self.wkupp(5usize),
+                self.wkuppupd(0usize),
+                self.wkuppupd(1usize),
+                self.wkuppupd(2usize),
+                self.wkuppupd(3usize),
+                self.wkuppupd(4usize),
+                self.wkuppupd(5usize)
+            )
         }
     }
     #[doc = "reset only by system reset, not reset by wakeup from Standby mode"]
@@ -879,7 +944,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wkupfr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wkupfr {{ wkupf[0]: {=bool:?}, wkupf[1]: {=bool:?}, wkupf[2]: {=bool:?}, wkupf[3]: {=bool:?}, wkupf[4]: {=bool:?}, wkupf[5]: {=bool:?} }}" , self . wkupf (0usize) , self . wkupf (1usize) , self . wkupf (2usize) , self . wkupf (3usize) , self . wkupf (4usize) , self . wkupf (5usize))
+            defmt::write!(
+                f,
+                "Wkupfr {{ wkupf[0]: {=bool:?}, wkupf[1]: {=bool:?}, wkupf[2]: {=bool:?}, wkupf[3]: {=bool:?}, wkupf[4]: {=bool:?}, wkupf[5]: {=bool:?} }}",
+                self.wkupf(0usize),
+                self.wkupf(1usize),
+                self.wkupf(2usize),
+                self.wkupf(3usize),
+                self.wkupf(4usize),
+                self.wkupf(5usize)
+            )
         }
     }
 }

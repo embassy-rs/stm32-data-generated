@@ -189,7 +189,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr {{ sft: {=u8:?}, rxtol: {=bool:?}, brestp: {=bool:?}, bregen: {=bool:?}, lbpegen: {=bool:?}, brdnogen: {=bool:?}, sftopt: {=bool:?}, oar: {=u16:?}, lstn: {=bool:?} }}" , self . sft () , self . rxtol () , self . brestp () , self . bregen () , self . lbpegen () , self . brdnogen () , self . sftopt () , self . oar () , self . lstn ())
+            defmt::write!(
+                f,
+                "Cfgr {{ sft: {=u8:?}, rxtol: {=bool:?}, brestp: {=bool:?}, bregen: {=bool:?}, lbpegen: {=bool:?}, brdnogen: {=bool:?}, sftopt: {=bool:?}, oar: {=u16:?}, lstn: {=bool:?} }}",
+                self.sft(),
+                self.rxtol(),
+                self.brestp(),
+                self.bregen(),
+                self.lbpegen(),
+                self.brdnogen(),
+                self.sftopt(),
+                self.oar(),
+                self.lstn()
+            )
         }
     }
     #[doc = "CEC control register."]
@@ -451,7 +463,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ier {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ier {{ rxbrie: {=bool:?}, rxendie: {=bool:?}, rxovrie: {=bool:?}, breie: {=bool:?}, sbpeie: {=bool:?}, lbpeie: {=bool:?}, rxackie: {=bool:?}, arblstie: {=bool:?}, txbrie: {=bool:?}, txendie: {=bool:?}, txudrie: {=bool:?}, txerrie: {=bool:?}, txackie: {=bool:?} }}" , self . rxbrie () , self . rxendie () , self . rxovrie () , self . breie () , self . sbpeie () , self . lbpeie () , self . rxackie () , self . arblstie () , self . txbrie () , self . txendie () , self . txudrie () , self . txerrie () , self . txackie ())
+            defmt::write!(
+                f,
+                "Ier {{ rxbrie: {=bool:?}, rxendie: {=bool:?}, rxovrie: {=bool:?}, breie: {=bool:?}, sbpeie: {=bool:?}, lbpeie: {=bool:?}, rxackie: {=bool:?}, arblstie: {=bool:?}, txbrie: {=bool:?}, txendie: {=bool:?}, txudrie: {=bool:?}, txerrie: {=bool:?}, txackie: {=bool:?} }}",
+                self.rxbrie(),
+                self.rxendie(),
+                self.rxovrie(),
+                self.breie(),
+                self.sbpeie(),
+                self.lbpeie(),
+                self.rxackie(),
+                self.arblstie(),
+                self.txbrie(),
+                self.txendie(),
+                self.txudrie(),
+                self.txerrie(),
+                self.txackie()
+            )
         }
     }
     #[doc = "CEC Interrupt and Status Register."]
@@ -644,7 +672,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ rxbr: {=bool:?}, rxend: {=bool:?}, rxovr: {=bool:?}, bre: {=bool:?}, sbpe: {=bool:?}, lbpe: {=bool:?}, rxacke: {=bool:?}, arblst: {=bool:?}, txbr: {=bool:?}, txend: {=bool:?}, txudr: {=bool:?}, txerr: {=bool:?}, txacke: {=bool:?} }}" , self . rxbr () , self . rxend () , self . rxovr () , self . bre () , self . sbpe () , self . lbpe () , self . rxacke () , self . arblst () , self . txbr () , self . txend () , self . txudr () , self . txerr () , self . txacke ())
+            defmt::write!(
+                f,
+                "Isr {{ rxbr: {=bool:?}, rxend: {=bool:?}, rxovr: {=bool:?}, bre: {=bool:?}, sbpe: {=bool:?}, lbpe: {=bool:?}, rxacke: {=bool:?}, arblst: {=bool:?}, txbr: {=bool:?}, txend: {=bool:?}, txudr: {=bool:?}, txerr: {=bool:?}, txacke: {=bool:?} }}",
+                self.rxbr(),
+                self.rxend(),
+                self.rxovr(),
+                self.bre(),
+                self.sbpe(),
+                self.lbpe(),
+                self.rxacke(),
+                self.arblst(),
+                self.txbr(),
+                self.txend(),
+                self.txudr(),
+                self.txerr(),
+                self.txacke()
+            )
         }
     }
     #[doc = "CEC Rx Data Register."]

@@ -522,7 +522,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for TzscPrivcfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "TzscPrivcfgr1 {{ tim2priv: {=bool:?}, tim3priv: {=bool:?}, tim4priv: {=bool:?}, wwdgpriv: {=bool:?}, iwdgpriv: {=bool:?}, spi2priv: {=bool:?}, usart2priv: {=bool:?}, usart3priv: {=bool:?}, i2c1priv: {=bool:?}, i2c2priv: {=bool:?}, i2c4priv: {=bool:?}, lptim2priv: {=bool:?} }}" , self . tim2priv () , self . tim3priv () , self . tim4priv () , self . wwdgpriv () , self . iwdgpriv () , self . spi2priv () , self . usart2priv () , self . usart3priv () , self . i2c1priv () , self . i2c2priv () , self . i2c4priv () , self . lptim2priv ())
+            defmt::write!(
+                f,
+                "TzscPrivcfgr1 {{ tim2priv: {=bool:?}, tim3priv: {=bool:?}, tim4priv: {=bool:?}, wwdgpriv: {=bool:?}, iwdgpriv: {=bool:?}, spi2priv: {=bool:?}, usart2priv: {=bool:?}, usart3priv: {=bool:?}, i2c1priv: {=bool:?}, i2c2priv: {=bool:?}, i2c4priv: {=bool:?}, lptim2priv: {=bool:?} }}",
+                self.tim2priv(),
+                self.tim3priv(),
+                self.tim4priv(),
+                self.wwdgpriv(),
+                self.iwdgpriv(),
+                self.spi2priv(),
+                self.usart2priv(),
+                self.usart3priv(),
+                self.i2c1priv(),
+                self.i2c2priv(),
+                self.i2c4priv(),
+                self.lptim2priv()
+            )
         }
     }
     #[doc = "GTZC1 TZSC privilege configuration register 2."]
@@ -715,7 +730,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for TzscPrivcfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "TzscPrivcfgr2 {{ tim1priv: {=bool:?}, spi1priv: {=bool:?}, usart1priv: {=bool:?}, tim16priv: {=bool:?}, tim17priv: {=bool:?}, sai1priv: {=bool:?}, spi3priv: {=bool:?}, lpuart1priv: {=bool:?}, i2c3priv: {=bool:?}, lptim1priv: {=bool:?}, comppriv: {=bool:?}, adc4priv: {=bool:?}, vrefbufpriv: {=bool:?} }}" , self . tim1priv () , self . spi1priv () , self . usart1priv () , self . tim16priv () , self . tim17priv () , self . sai1priv () , self . spi3priv () , self . lpuart1priv () , self . i2c3priv () , self . lptim1priv () , self . comppriv () , self . adc4priv () , self . vrefbufpriv ())
+            defmt::write!(
+                f,
+                "TzscPrivcfgr2 {{ tim1priv: {=bool:?}, spi1priv: {=bool:?}, usart1priv: {=bool:?}, tim16priv: {=bool:?}, tim17priv: {=bool:?}, sai1priv: {=bool:?}, spi3priv: {=bool:?}, lpuart1priv: {=bool:?}, i2c3priv: {=bool:?}, lptim1priv: {=bool:?}, comppriv: {=bool:?}, adc4priv: {=bool:?}, vrefbufpriv: {=bool:?} }}",
+                self.tim1priv(),
+                self.spi1priv(),
+                self.usart1priv(),
+                self.tim16priv(),
+                self.tim17priv(),
+                self.sai1priv(),
+                self.spi3priv(),
+                self.lpuart1priv(),
+                self.i2c3priv(),
+                self.lptim1priv(),
+                self.comppriv(),
+                self.adc4priv(),
+                self.vrefbufpriv()
+            )
         }
     }
     #[doc = "GTZC1 TZSC secure configuration register 1."]
@@ -895,7 +926,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for TzscSeccfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "TzscSeccfgr1 {{ tim2sec: {=bool:?}, tim3sec: {=bool:?}, tim4sec: {=bool:?}, wwdgsec: {=bool:?}, iwdgsec: {=bool:?}, spi2sec: {=bool:?}, usart2sec: {=bool:?}, usart3sec: {=bool:?}, i2c1sec: {=bool:?}, i2c2sec: {=bool:?}, i2c4sec: {=bool:?}, lptim2sec: {=bool:?} }}" , self . tim2sec () , self . tim3sec () , self . tim4sec () , self . wwdgsec () , self . iwdgsec () , self . spi2sec () , self . usart2sec () , self . usart3sec () , self . i2c1sec () , self . i2c2sec () , self . i2c4sec () , self . lptim2sec ())
+            defmt::write!(
+                f,
+                "TzscSeccfgr1 {{ tim2sec: {=bool:?}, tim3sec: {=bool:?}, tim4sec: {=bool:?}, wwdgsec: {=bool:?}, iwdgsec: {=bool:?}, spi2sec: {=bool:?}, usart2sec: {=bool:?}, usart3sec: {=bool:?}, i2c1sec: {=bool:?}, i2c2sec: {=bool:?}, i2c4sec: {=bool:?}, lptim2sec: {=bool:?} }}",
+                self.tim2sec(),
+                self.tim3sec(),
+                self.tim4sec(),
+                self.wwdgsec(),
+                self.iwdgsec(),
+                self.spi2sec(),
+                self.usart2sec(),
+                self.usart3sec(),
+                self.i2c1sec(),
+                self.i2c2sec(),
+                self.i2c4sec(),
+                self.lptim2sec()
+            )
         }
     }
     #[doc = "GTZC1 TZSC secure configuration register 2."]
@@ -1088,7 +1134,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for TzscSeccfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "TzscSeccfgr2 {{ tim1sec: {=bool:?}, spi1sec: {=bool:?}, usart1sec: {=bool:?}, tim16sec: {=bool:?}, tim17sec: {=bool:?}, sai1sec: {=bool:?}, spi3sec: {=bool:?}, lpuart1sec: {=bool:?}, i2c3sec: {=bool:?}, lptim1sec: {=bool:?}, compsec: {=bool:?}, adc4sec: {=bool:?}, vrefbufsec: {=bool:?} }}" , self . tim1sec () , self . spi1sec () , self . usart1sec () , self . tim16sec () , self . tim17sec () , self . sai1sec () , self . spi3sec () , self . lpuart1sec () , self . i2c3sec () , self . lptim1sec () , self . compsec () , self . adc4sec () , self . vrefbufsec ())
+            defmt::write!(
+                f,
+                "TzscSeccfgr2 {{ tim1sec: {=bool:?}, spi1sec: {=bool:?}, usart1sec: {=bool:?}, tim16sec: {=bool:?}, tim17sec: {=bool:?}, sai1sec: {=bool:?}, spi3sec: {=bool:?}, lpuart1sec: {=bool:?}, i2c3sec: {=bool:?}, lptim1sec: {=bool:?}, compsec: {=bool:?}, adc4sec: {=bool:?}, vrefbufsec: {=bool:?} }}",
+                self.tim1sec(),
+                self.spi1sec(),
+                self.usart1sec(),
+                self.tim16sec(),
+                self.tim17sec(),
+                self.sai1sec(),
+                self.spi3sec(),
+                self.lpuart1sec(),
+                self.i2c3sec(),
+                self.lptim1sec(),
+                self.compsec(),
+                self.adc4sec(),
+                self.vrefbufsec()
+            )
         }
     }
     #[doc = "MPCBB security configuration register."]

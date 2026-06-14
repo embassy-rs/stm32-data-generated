@@ -218,7 +218,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Apcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Apcr {{ apc: {=bool:?}, pn7_pupd: {=bool:?}, po5_pupd: {=bool:?}, i3cpb6_pu: {=bool:?}, i3cpb7_pu: {=bool:?}, i3cpb8_pu: {=bool:?}, i3cpb9_pu: {=bool:?} }}" , self . apc () , self . pn7_pupd () , self . po5_pupd () , self . i3cpb6_pu () , self . i3cpb7_pu () , self . i3cpb8_pu () , self . i3cpb9_pu ())
+            defmt::write!(
+                f,
+                "Apcr {{ apc: {=bool:?}, pn7_pupd: {=bool:?}, po5_pupd: {=bool:?}, i3cpb6_pu: {=bool:?}, i3cpb7_pu: {=bool:?}, i3cpb8_pu: {=bool:?}, i3cpb9_pu: {=bool:?} }}",
+                self.apc(),
+                self.pn7_pupd(),
+                self.po5_pupd(),
+                self.i3cpb6_pu(),
+                self.i3cpb7_pu(),
+                self.i3cpb8_pu(),
+                self.i3cpb9_pu()
+            )
         }
     }
     #[doc = "PWR control register 1."]
@@ -372,7 +382,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ svos: {:?}, pvde: {=bool:?}, pls: {:?}, dbp: {=bool:?}, flps: {=bool:?}, rlpsn: {:?}, booste: {=bool:?}, avdready: {=bool:?}, avden: {=bool:?}, als: {:?} }}" , self . svos () , self . pvde () , self . pls () , self . dbp () , self . flps () , self . rlpsn () , self . booste () , self . avdready () , self . avden () , self . als ())
+            defmt::write!(
+                f,
+                "Cr1 {{ svos: {:?}, pvde: {=bool:?}, pls: {:?}, dbp: {=bool:?}, flps: {=bool:?}, rlpsn: {:?}, booste: {=bool:?}, avdready: {=bool:?}, avden: {=bool:?}, als: {:?} }}",
+                self.svos(),
+                self.pvde(),
+                self.pls(),
+                self.dbp(),
+                self.flps(),
+                self.rlpsn(),
+                self.booste(),
+                self.avdready(),
+                self.avden(),
+                self.als()
+            )
         }
     }
     #[doc = "PWR control status register 1."]
@@ -487,7 +510,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr1 {{ bren: {=bool:?}, monen: {=bool:?}, brrdy: {=bool:?}, vbatl: {=bool:?}, vbath: {=bool:?}, templ: {=bool:?}, temph: {=bool:?} }}" , self . bren () , self . monen () , self . brrdy () , self . vbatl () , self . vbath () , self . templ () , self . temph ())
+            defmt::write!(
+                f,
+                "Csr1 {{ bren: {=bool:?}, monen: {=bool:?}, brrdy: {=bool:?}, vbatl: {=bool:?}, vbath: {=bool:?}, templ: {=bool:?}, temph: {=bool:?} }}",
+                self.bren(),
+                self.monen(),
+                self.brrdy(),
+                self.vbatl(),
+                self.vbath(),
+                self.templ(),
+                self.temph()
+            )
         }
     }
     #[doc = "PWR control register 2."]
@@ -719,7 +752,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr2 {{ bypass: {=bool:?}, ldoen: {=bool:?}, sden: {=bool:?}, sdexthp: {=bool:?}, sdlevel: {:?}, vbe: {=bool:?}, vbrs: {:?}, xspicap1: {:?}, xspicap2: {:?}, en_xspim1: {=bool:?}, en_xspim2: {=bool:?}, sdextrdy: {=bool:?}, usb33den: {=bool:?}, usbregen: {=bool:?}, usb33rdy: {=bool:?}, usbhsregen: {=bool:?} }}" , self . bypass () , self . ldoen () , self . sden () , self . sdexthp () , self . sdlevel () , self . vbe () , self . vbrs () , self . xspicap1 () , self . xspicap2 () , self . en_xspim1 () , self . en_xspim2 () , self . sdextrdy () , self . usb33den () , self . usbregen () , self . usb33rdy () , self . usbhsregen ())
+            defmt::write!(
+                f,
+                "Csr2 {{ bypass: {=bool:?}, ldoen: {=bool:?}, sden: {=bool:?}, sdexthp: {=bool:?}, sdlevel: {:?}, vbe: {=bool:?}, vbrs: {:?}, xspicap1: {:?}, xspicap2: {:?}, en_xspim1: {=bool:?}, en_xspim2: {=bool:?}, sdextrdy: {=bool:?}, usb33den: {=bool:?}, usbregen: {=bool:?}, usb33rdy: {=bool:?}, usbhsregen: {=bool:?} }}",
+                self.bypass(),
+                self.ldoen(),
+                self.sden(),
+                self.sdexthp(),
+                self.sdlevel(),
+                self.vbe(),
+                self.vbrs(),
+                self.xspicap1(),
+                self.xspicap2(),
+                self.en_xspim1(),
+                self.en_xspim2(),
+                self.sdextrdy(),
+                self.usb33den(),
+                self.usbregen(),
+                self.usb33rdy(),
+                self.usbhsregen()
+            )
         }
     }
     #[doc = "PWR CPU control register 3."]
@@ -954,7 +1006,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pdcrn {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pdcrn {{ pdn0: {=bool:?}, pdn1: {=bool:?}, pdn2n5: {=bool:?}, pdn6: {=bool:?}, pdn8n11: {=bool:?}, pdn12: {=bool:?} }}" , self . pdn0 () , self . pdn1 () , self . pdn2n5 () , self . pdn6 () , self . pdn8n11 () , self . pdn12 ())
+            defmt::write!(
+                f,
+                "Pdcrn {{ pdn0: {=bool:?}, pdn1: {=bool:?}, pdn2n5: {=bool:?}, pdn6: {=bool:?}, pdn8n11: {=bool:?}, pdn12: {=bool:?} }}",
+                self.pdn0(),
+                self.pdn1(),
+                self.pdn2n5(),
+                self.pdn6(),
+                self.pdn8n11(),
+                self.pdn12()
+            )
         }
     }
     #[doc = "PWR port O pull-down control register."]
@@ -1616,7 +1677,22 @@ bits. bits. Note: Since the PVD is disabled in Standby mode, this bit is equal t
     #[cfg(feature = "defmt")]
     impl defmt::Format for Wkupepr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Wkupepr {{ wkupen[0]: {=bool:?}, wkupen[1]: {=bool:?}, wkupen[2]: {=bool:?}, wkupen[3]: {=bool:?}, wkupp[0]: {:?}, wkupp[1]: {:?}, wkupp[2]: {:?}, wkupp[3]: {:?}, wkuppupd[0]: {:?}, wkuppupd[1]: {:?}, wkuppupd[2]: {:?}, wkuppupd[3]: {:?} }}" , self . wkupen (0usize) , self . wkupen (1usize) , self . wkupen (2usize) , self . wkupen (3usize) , self . wkupp (0usize) , self . wkupp (1usize) , self . wkupp (2usize) , self . wkupp (3usize) , self . wkuppupd (0usize) , self . wkuppupd (1usize) , self . wkuppupd (2usize) , self . wkuppupd (3usize))
+            defmt::write!(
+                f,
+                "Wkupepr {{ wkupen[0]: {=bool:?}, wkupen[1]: {=bool:?}, wkupen[2]: {=bool:?}, wkupen[3]: {=bool:?}, wkupp[0]: {:?}, wkupp[1]: {:?}, wkupp[2]: {:?}, wkupp[3]: {:?}, wkuppupd[0]: {:?}, wkuppupd[1]: {:?}, wkuppupd[2]: {:?}, wkuppupd[3]: {:?} }}",
+                self.wkupen(0usize),
+                self.wkupen(1usize),
+                self.wkupen(2usize),
+                self.wkupen(3usize),
+                self.wkupp(0usize),
+                self.wkupp(1usize),
+                self.wkupp(2usize),
+                self.wkupp(3usize),
+                self.wkuppupd(0usize),
+                self.wkuppupd(1usize),
+                self.wkuppupd(2usize),
+                self.wkuppupd(3usize)
+            )
         }
     }
     #[doc = "PWR wakeup flag register."]

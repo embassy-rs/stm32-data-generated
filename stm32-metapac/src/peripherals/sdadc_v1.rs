@@ -206,7 +206,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Confchr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Confchr1 {{ confch[0]: {=u8:?}, confch[1]: {=u8:?}, confch[2]: {=u8:?}, confch[3]: {=u8:?}, confch[4]: {=u8:?}, confch[5]: {=u8:?}, confch[6]: {=u8:?}, confch[7]: {=u8:?} }}" , self . confch (0usize) , self . confch (1usize) , self . confch (2usize) , self . confch (3usize) , self . confch (4usize) , self . confch (5usize) , self . confch (6usize) , self . confch (7usize))
+            defmt::write!(
+                f,
+                "Confchr1 {{ confch[0]: {=u8:?}, confch[1]: {=u8:?}, confch[2]: {=u8:?}, confch[3]: {=u8:?}, confch[4]: {=u8:?}, confch[5]: {=u8:?}, confch[6]: {=u8:?}, confch[7]: {=u8:?} }}",
+                self.confch(0usize),
+                self.confch(1usize),
+                self.confch(2usize),
+                self.confch(3usize),
+                self.confch(4usize),
+                self.confch(5usize),
+                self.confch(6usize),
+                self.confch(7usize)
+            )
         }
     }
     #[doc = "channel configuration register 2."]
@@ -536,7 +547,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ eocalie: {=bool:?}, jeocie: {=bool:?}, jovrie: {=bool:?}, reocie: {=bool:?}, rovrie: {=bool:?}, refv: {=u8:?}, slowck: {=bool:?}, sbi: {=bool:?}, pdi: {=bool:?}, jsync: {=bool:?}, rsync: {=bool:?}, jdmaen: {=bool:?}, rdmaen: {=bool:?}, init: {=bool:?} }}" , self . eocalie () , self . jeocie () , self . jovrie () , self . reocie () , self . rovrie () , self . refv () , self . slowck () , self . sbi () , self . pdi () , self . jsync () , self . rsync () , self . jdmaen () , self . rdmaen () , self . init ())
+            defmt::write!(
+                f,
+                "Cr1 {{ eocalie: {=bool:?}, jeocie: {=bool:?}, jovrie: {=bool:?}, reocie: {=bool:?}, rovrie: {=bool:?}, refv: {=u8:?}, slowck: {=bool:?}, sbi: {=bool:?}, pdi: {=bool:?}, jsync: {=bool:?}, rsync: {=bool:?}, jdmaen: {=bool:?}, rdmaen: {=bool:?}, init: {=bool:?} }}",
+                self.eocalie(),
+                self.jeocie(),
+                self.jovrie(),
+                self.reocie(),
+                self.rovrie(),
+                self.refv(),
+                self.slowck(),
+                self.sbi(),
+                self.pdi(),
+                self.jsync(),
+                self.rsync(),
+                self.jdmaen(),
+                self.rdmaen(),
+                self.init()
+            )
         }
     }
     #[doc = "control register 2."]
@@ -716,7 +744,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ adon: {=bool:?}, calibcnt: {=u8:?}, startcalib: {=bool:?}, jcont: {=bool:?}, jds: {=bool:?}, jextsel: {=u8:?}, jexten: {=u8:?}, jswstart: {=bool:?}, rch: {=u8:?}, rcont: {=bool:?}, rswstart: {=bool:?}, fast: {=bool:?} }}" , self . adon () , self . calibcnt () , self . startcalib () , self . jcont () , self . jds () , self . jextsel () , self . jexten () , self . jswstart () , self . rch () , self . rcont () , self . rswstart () , self . fast ())
+            defmt::write!(
+                f,
+                "Cr2 {{ adon: {=bool:?}, calibcnt: {=u8:?}, startcalib: {=bool:?}, jcont: {=bool:?}, jds: {=bool:?}, jextsel: {=u8:?}, jexten: {=u8:?}, jswstart: {=bool:?}, rch: {=u8:?}, rcont: {=bool:?}, rswstart: {=bool:?}, fast: {=bool:?} }}",
+                self.adon(),
+                self.calibcnt(),
+                self.startcalib(),
+                self.jcont(),
+                self.jds(),
+                self.jextsel(),
+                self.jexten(),
+                self.jswstart(),
+                self.rch(),
+                self.rcont(),
+                self.rswstart(),
+                self.fast()
+            )
         }
     }
     #[doc = "interrupt and status register."]
@@ -870,7 +913,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ eocalf: {=bool:?}, jeocf: {=bool:?}, jovrf: {=bool:?}, reocf: {=bool:?}, rovrf: {=bool:?}, calibip: {=bool:?}, jcip: {=bool:?}, rcip: {=bool:?}, stabip: {=bool:?}, initrdy: {=bool:?} }}" , self . eocalf () , self . jeocf () , self . jovrf () , self . reocf () , self . rovrf () , self . calibip () , self . jcip () , self . rcip () , self . stabip () , self . initrdy ())
+            defmt::write!(
+                f,
+                "Isr {{ eocalf: {=bool:?}, jeocf: {=bool:?}, jovrf: {=bool:?}, reocf: {=bool:?}, rovrf: {=bool:?}, calibip: {=bool:?}, jcip: {=bool:?}, rcip: {=bool:?}, stabip: {=bool:?}, initrdy: {=bool:?} }}",
+                self.eocalf(),
+                self.jeocf(),
+                self.jovrf(),
+                self.reocf(),
+                self.rovrf(),
+                self.calibip(),
+                self.jcip(),
+                self.rcip(),
+                self.stabip(),
+                self.initrdy()
+            )
         }
     }
     #[doc = "injected channel group selection register."]

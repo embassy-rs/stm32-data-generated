@@ -168,7 +168,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ opstep: {=u8:?}, operr: {=u8:?}, busy: {=bool:?}, tamp_evt[0]: {=bool:?}, tamp_evt[1]: {=bool:?}, tamp_evt[2]: {=bool:?}, tamp_evt[3]: {=bool:?}, tamp_evt[4]: {=bool:?} }}" , self . opstep () , self . operr () , self . busy () , self . tamp_evt (0usize) , self . tamp_evt (1usize) , self . tamp_evt (2usize) , self . tamp_evt (3usize) , self . tamp_evt (4usize))
+            defmt::write!(
+                f,
+                "Sr {{ opstep: {=u8:?}, operr: {=u8:?}, busy: {=bool:?}, tamp_evt[0]: {=bool:?}, tamp_evt[1]: {=bool:?}, tamp_evt[2]: {=bool:?}, tamp_evt[3]: {=bool:?}, tamp_evt[4]: {=bool:?} }}",
+                self.opstep(),
+                self.operr(),
+                self.busy(),
+                self.tamp_evt(0usize),
+                self.tamp_evt(1usize),
+                self.tamp_evt(2usize),
+                self.tamp_evt(3usize),
+                self.tamp_evt(4usize)
+            )
         }
     }
 }

@@ -117,7 +117,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfg {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfg {{ sdmmc_dll_en: {=bool:?}, sdmmc_rx_tap_sel: {=u8:?}, sdmmc_dll_byp_en: {=bool:?}, sdmmc_dll_byp_cmd: {=u8:?}, sdmmc_dll_antiglitch_en: {=bool:?} }}" , self . sdmmc_dll_en () , self . sdmmc_rx_tap_sel () , self . sdmmc_dll_byp_en () , self . sdmmc_dll_byp_cmd () , self . sdmmc_dll_antiglitch_en ())
+            defmt::write!(
+                f,
+                "Cfg {{ sdmmc_dll_en: {=bool:?}, sdmmc_rx_tap_sel: {=u8:?}, sdmmc_dll_byp_en: {=bool:?}, sdmmc_dll_byp_cmd: {=u8:?}, sdmmc_dll_antiglitch_en: {=bool:?} }}",
+                self.sdmmc_dll_en(),
+                self.sdmmc_rx_tap_sel(),
+                self.sdmmc_dll_byp_en(),
+                self.sdmmc_dll_byp_cmd(),
+                self.sdmmc_dll_antiglitch_en()
+            )
         }
     }
     #[doc = "Delay block SDMMC DLL status."]

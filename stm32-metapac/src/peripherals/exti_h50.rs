@@ -195,7 +195,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Lines {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Lines {{ line[0]: {=bool:?}, line[1]: {=bool:?}, line[2]: {=bool:?}, line[3]: {=bool:?}, line[4]: {=bool:?}, line[5]: {=bool:?}, line[6]: {=bool:?}, line[7]: {=bool:?}, line[8]: {=bool:?}, line[9]: {=bool:?}, line[10]: {=bool:?}, line[11]: {=bool:?}, line[12]: {=bool:?}, line[13]: {=bool:?}, line[14]: {=bool:?}, line[15]: {=bool:?}, line[16]: {=bool:?}, line[17]: {=bool:?}, line[18]: {=bool:?}, line[19]: {=bool:?}, line[20]: {=bool:?}, line[21]: {=bool:?}, line[22]: {=bool:?}, line[23]: {=bool:?}, line[24]: {=bool:?}, line[25]: {=bool:?}, line[26]: {=bool:?}, line[27]: {=bool:?}, line[28]: {=bool:?}, line[29]: {=bool:?}, line[30]: {=bool:?}, line[31]: {=bool:?} }}" , self . line (0usize) , self . line (1usize) , self . line (2usize) , self . line (3usize) , self . line (4usize) , self . line (5usize) , self . line (6usize) , self . line (7usize) , self . line (8usize) , self . line (9usize) , self . line (10usize) , self . line (11usize) , self . line (12usize) , self . line (13usize) , self . line (14usize) , self . line (15usize) , self . line (16usize) , self . line (17usize) , self . line (18usize) , self . line (19usize) , self . line (20usize) , self . line (21usize) , self . line (22usize) , self . line (23usize) , self . line (24usize) , self . line (25usize) , self . line (26usize) , self . line (27usize) , self . line (28usize) , self . line (29usize) , self . line (30usize) , self . line (31usize))
+            defmt::write!(
+                f,
+                "Lines {{ line[0]: {=bool:?}, line[1]: {=bool:?}, line[2]: {=bool:?}, line[3]: {=bool:?}, line[4]: {=bool:?}, line[5]: {=bool:?}, line[6]: {=bool:?}, line[7]: {=bool:?}, line[8]: {=bool:?}, line[9]: {=bool:?}, line[10]: {=bool:?}, line[11]: {=bool:?}, line[12]: {=bool:?}, line[13]: {=bool:?}, line[14]: {=bool:?}, line[15]: {=bool:?}, line[16]: {=bool:?}, line[17]: {=bool:?}, line[18]: {=bool:?}, line[19]: {=bool:?}, line[20]: {=bool:?}, line[21]: {=bool:?}, line[22]: {=bool:?}, line[23]: {=bool:?}, line[24]: {=bool:?}, line[25]: {=bool:?}, line[26]: {=bool:?}, line[27]: {=bool:?}, line[28]: {=bool:?}, line[29]: {=bool:?}, line[30]: {=bool:?}, line[31]: {=bool:?} }}",
+                self.line(0usize),
+                self.line(1usize),
+                self.line(2usize),
+                self.line(3usize),
+                self.line(4usize),
+                self.line(5usize),
+                self.line(6usize),
+                self.line(7usize),
+                self.line(8usize),
+                self.line(9usize),
+                self.line(10usize),
+                self.line(11usize),
+                self.line(12usize),
+                self.line(13usize),
+                self.line(14usize),
+                self.line(15usize),
+                self.line(16usize),
+                self.line(17usize),
+                self.line(18usize),
+                self.line(19usize),
+                self.line(20usize),
+                self.line(21usize),
+                self.line(22usize),
+                self.line(23usize),
+                self.line(24usize),
+                self.line(25usize),
+                self.line(26usize),
+                self.line(27usize),
+                self.line(28usize),
+                self.line(29usize),
+                self.line(30usize),
+                self.line(31usize)
+            )
         }
     }
     #[doc = "privilege configuration register"]
@@ -267,7 +302,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Priv {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Priv {{ priv_[0]: {=bool:?}, priv_[1]: {=bool:?}, priv_[2]: {=bool:?}, priv_[3]: {=bool:?}, priv_[4]: {=bool:?}, priv_[5]: {=bool:?}, priv_[6]: {=bool:?}, priv_[7]: {=bool:?}, priv_[8]: {=bool:?}, priv_[9]: {=bool:?}, priv_[10]: {=bool:?}, priv_[11]: {=bool:?}, priv_[12]: {=bool:?}, priv_[13]: {=bool:?}, priv_[14]: {=bool:?}, priv_[15]: {=bool:?}, priv_[16]: {=bool:?}, priv_[17]: {=bool:?}, priv_[18]: {=bool:?}, priv_[19]: {=bool:?}, priv_[20]: {=bool:?}, priv_[21]: {=bool:?}, priv_[22]: {=bool:?}, priv_[23]: {=bool:?}, priv_[24]: {=bool:?}, priv_[25]: {=bool:?}, priv_[26]: {=bool:?}, priv_[27]: {=bool:?}, priv_[28]: {=bool:?}, priv_[29]: {=bool:?}, priv_[30]: {=bool:?}, priv_[31]: {=bool:?} }}" , self . priv_ (0usize) , self . priv_ (1usize) , self . priv_ (2usize) , self . priv_ (3usize) , self . priv_ (4usize) , self . priv_ (5usize) , self . priv_ (6usize) , self . priv_ (7usize) , self . priv_ (8usize) , self . priv_ (9usize) , self . priv_ (10usize) , self . priv_ (11usize) , self . priv_ (12usize) , self . priv_ (13usize) , self . priv_ (14usize) , self . priv_ (15usize) , self . priv_ (16usize) , self . priv_ (17usize) , self . priv_ (18usize) , self . priv_ (19usize) , self . priv_ (20usize) , self . priv_ (21usize) , self . priv_ (22usize) , self . priv_ (23usize) , self . priv_ (24usize) , self . priv_ (25usize) , self . priv_ (26usize) , self . priv_ (27usize) , self . priv_ (28usize) , self . priv_ (29usize) , self . priv_ (30usize) , self . priv_ (31usize))
+            defmt::write!(
+                f,
+                "Priv {{ priv_[0]: {=bool:?}, priv_[1]: {=bool:?}, priv_[2]: {=bool:?}, priv_[3]: {=bool:?}, priv_[4]: {=bool:?}, priv_[5]: {=bool:?}, priv_[6]: {=bool:?}, priv_[7]: {=bool:?}, priv_[8]: {=bool:?}, priv_[9]: {=bool:?}, priv_[10]: {=bool:?}, priv_[11]: {=bool:?}, priv_[12]: {=bool:?}, priv_[13]: {=bool:?}, priv_[14]: {=bool:?}, priv_[15]: {=bool:?}, priv_[16]: {=bool:?}, priv_[17]: {=bool:?}, priv_[18]: {=bool:?}, priv_[19]: {=bool:?}, priv_[20]: {=bool:?}, priv_[21]: {=bool:?}, priv_[22]: {=bool:?}, priv_[23]: {=bool:?}, priv_[24]: {=bool:?}, priv_[25]: {=bool:?}, priv_[26]: {=bool:?}, priv_[27]: {=bool:?}, priv_[28]: {=bool:?}, priv_[29]: {=bool:?}, priv_[30]: {=bool:?}, priv_[31]: {=bool:?} }}",
+                self.priv_(0usize),
+                self.priv_(1usize),
+                self.priv_(2usize),
+                self.priv_(3usize),
+                self.priv_(4usize),
+                self.priv_(5usize),
+                self.priv_(6usize),
+                self.priv_(7usize),
+                self.priv_(8usize),
+                self.priv_(9usize),
+                self.priv_(10usize),
+                self.priv_(11usize),
+                self.priv_(12usize),
+                self.priv_(13usize),
+                self.priv_(14usize),
+                self.priv_(15usize),
+                self.priv_(16usize),
+                self.priv_(17usize),
+                self.priv_(18usize),
+                self.priv_(19usize),
+                self.priv_(20usize),
+                self.priv_(21usize),
+                self.priv_(22usize),
+                self.priv_(23usize),
+                self.priv_(24usize),
+                self.priv_(25usize),
+                self.priv_(26usize),
+                self.priv_(27usize),
+                self.priv_(28usize),
+                self.priv_(29usize),
+                self.priv_(30usize),
+                self.priv_(31usize)
+            )
         }
     }
 }

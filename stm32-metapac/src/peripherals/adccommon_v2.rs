@@ -148,7 +148,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ccr {{ multi: {:?}, delay: {=u8:?}, dds: {:?}, dma: {:?}, adcpre: {:?}, vbate: {=bool:?}, tsvrefe: {=bool:?} }}" , self . multi () , self . delay () , self . dds () , self . dma () , self . adcpre () , self . vbate () , self . tsvrefe ())
+            defmt::write!(
+                f,
+                "Ccr {{ multi: {:?}, delay: {=u8:?}, dds: {:?}, dma: {:?}, adcpre: {:?}, vbate: {=bool:?}, tsvrefe: {=bool:?} }}",
+                self.multi(),
+                self.delay(),
+                self.dds(),
+                self.dma(),
+                self.adcpre(),
+                self.vbate(),
+                self.tsvrefe()
+            )
         }
     }
     #[doc = "ADC common regular data register for dual and triple modes"]
@@ -333,7 +343,28 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr {{ awd[0]: {=bool:?}, awd[1]: {=bool:?}, awd[2]: {=bool:?}, eoc[0]: {=bool:?}, eoc[1]: {=bool:?}, eoc[2]: {=bool:?}, jeoc[0]: {=bool:?}, jeoc[1]: {=bool:?}, jeoc[2]: {=bool:?}, jstrt[0]: {=bool:?}, jstrt[1]: {=bool:?}, jstrt[2]: {=bool:?}, strt[0]: {=bool:?}, strt[1]: {=bool:?}, strt[2]: {=bool:?}, ovr[0]: {=bool:?}, ovr[1]: {=bool:?}, ovr[2]: {=bool:?} }}" , self . awd (0usize) , self . awd (1usize) , self . awd (2usize) , self . eoc (0usize) , self . eoc (1usize) , self . eoc (2usize) , self . jeoc (0usize) , self . jeoc (1usize) , self . jeoc (2usize) , self . jstrt (0usize) , self . jstrt (1usize) , self . jstrt (2usize) , self . strt (0usize) , self . strt (1usize) , self . strt (2usize) , self . ovr (0usize) , self . ovr (1usize) , self . ovr (2usize))
+            defmt::write!(
+                f,
+                "Csr {{ awd[0]: {=bool:?}, awd[1]: {=bool:?}, awd[2]: {=bool:?}, eoc[0]: {=bool:?}, eoc[1]: {=bool:?}, eoc[2]: {=bool:?}, jeoc[0]: {=bool:?}, jeoc[1]: {=bool:?}, jeoc[2]: {=bool:?}, jstrt[0]: {=bool:?}, jstrt[1]: {=bool:?}, jstrt[2]: {=bool:?}, strt[0]: {=bool:?}, strt[1]: {=bool:?}, strt[2]: {=bool:?}, ovr[0]: {=bool:?}, ovr[1]: {=bool:?}, ovr[2]: {=bool:?} }}",
+                self.awd(0usize),
+                self.awd(1usize),
+                self.awd(2usize),
+                self.eoc(0usize),
+                self.eoc(1usize),
+                self.eoc(2usize),
+                self.jeoc(0usize),
+                self.jeoc(1usize),
+                self.jeoc(2usize),
+                self.jstrt(0usize),
+                self.jstrt(1usize),
+                self.jstrt(2usize),
+                self.strt(0usize),
+                self.strt(1usize),
+                self.strt(2usize),
+                self.ovr(0usize),
+                self.ovr(1usize),
+                self.ovr(2usize)
+            )
         }
     }
 }

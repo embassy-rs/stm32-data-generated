@@ -1981,7 +1981,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Privcfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Privcfgr1 {{ tim2priv: {=bool:?}, tim3priv: {=bool:?}, tim4priv: {=bool:?}, tim5priv: {=bool:?}, tim6priv: {=bool:?}, tim7priv: {=bool:?}, tim12priv: {=bool:?}, tim13priv: {=bool:?}, tim14priv: {=bool:?}, wwdgpriv: {=bool:?}, iwdgpriv: {=bool:?}, spi2priv: {=bool:?}, spi3priv: {=bool:?}, usart2priv: {=bool:?}, usart3priv: {=bool:?}, uart4priv: {=bool:?}, uart5priv: {=bool:?}, i2c1priv: {=bool:?}, i2c2priv: {=bool:?}, i3c1priv: {=bool:?}, crspriv: {=bool:?}, usart6priv: {=bool:?}, usart10priv: {=bool:?}, usart11priv: {=bool:?}, hdmicecpriv: {=bool:?}, dac1priv: {=bool:?}, uart7priv: {=bool:?}, uart8priv: {=bool:?}, uart9priv: {=bool:?}, uart12priv: {=bool:?}, dtspriv: {=bool:?}, lptim2priv: {=bool:?} }}" , self . tim2priv () , self . tim3priv () , self . tim4priv () , self . tim5priv () , self . tim6priv () , self . tim7priv () , self . tim12priv () , self . tim13priv () , self . tim14priv () , self . wwdgpriv () , self . iwdgpriv () , self . spi2priv () , self . spi3priv () , self . usart2priv () , self . usart3priv () , self . uart4priv () , self . uart5priv () , self . i2c1priv () , self . i2c2priv () , self . i3c1priv () , self . crspriv () , self . usart6priv () , self . usart10priv () , self . usart11priv () , self . hdmicecpriv () , self . dac1priv () , self . uart7priv () , self . uart8priv () , self . uart9priv () , self . uart12priv () , self . dtspriv () , self . lptim2priv ())
+            defmt::write!(
+                f,
+                "Privcfgr1 {{ tim2priv: {=bool:?}, tim3priv: {=bool:?}, tim4priv: {=bool:?}, tim5priv: {=bool:?}, tim6priv: {=bool:?}, tim7priv: {=bool:?}, tim12priv: {=bool:?}, tim13priv: {=bool:?}, tim14priv: {=bool:?}, wwdgpriv: {=bool:?}, iwdgpriv: {=bool:?}, spi2priv: {=bool:?}, spi3priv: {=bool:?}, usart2priv: {=bool:?}, usart3priv: {=bool:?}, uart4priv: {=bool:?}, uart5priv: {=bool:?}, i2c1priv: {=bool:?}, i2c2priv: {=bool:?}, i3c1priv: {=bool:?}, crspriv: {=bool:?}, usart6priv: {=bool:?}, usart10priv: {=bool:?}, usart11priv: {=bool:?}, hdmicecpriv: {=bool:?}, dac1priv: {=bool:?}, uart7priv: {=bool:?}, uart8priv: {=bool:?}, uart9priv: {=bool:?}, uart12priv: {=bool:?}, dtspriv: {=bool:?}, lptim2priv: {=bool:?} }}",
+                self.tim2priv(),
+                self.tim3priv(),
+                self.tim4priv(),
+                self.tim5priv(),
+                self.tim6priv(),
+                self.tim7priv(),
+                self.tim12priv(),
+                self.tim13priv(),
+                self.tim14priv(),
+                self.wwdgpriv(),
+                self.iwdgpriv(),
+                self.spi2priv(),
+                self.spi3priv(),
+                self.usart2priv(),
+                self.usart3priv(),
+                self.uart4priv(),
+                self.uart5priv(),
+                self.i2c1priv(),
+                self.i2c2priv(),
+                self.i3c1priv(),
+                self.crspriv(),
+                self.usart6priv(),
+                self.usart10priv(),
+                self.usart11priv(),
+                self.hdmicecpriv(),
+                self.dac1priv(),
+                self.uart7priv(),
+                self.uart8priv(),
+                self.uart9priv(),
+                self.uart12priv(),
+                self.dtspriv(),
+                self.lptim2priv()
+            )
         }
     }
     #[doc = "GTZC1 TZSC privilege configuration register 2."]
@@ -2304,7 +2339,33 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Privcfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Privcfgr2 {{ fdcan1priv: {=bool:?}, fdcan2priv: {=bool:?}, ucpdpriv: {=bool:?}, tim1priv: {=bool:?}, spi1priv: {=bool:?}, tim8priv: {=bool:?}, usart1priv: {=bool:?}, tim15priv: {=bool:?}, tim16priv: {=bool:?}, tim17priv: {=bool:?}, spi4priv: {=bool:?}, spi6priv: {=bool:?}, sai1priv: {=bool:?}, sai2priv: {=bool:?}, usbpriv: {=bool:?}, spi5priv: {=bool:?}, lpuart1priv: {=bool:?}, i2c3priv: {=bool:?}, i2c4priv: {=bool:?}, lptim1priv: {=bool:?}, lptim3priv: {=bool:?}, lptim4priv: {=bool:?}, lptim5priv: {=bool:?} }}" , self . fdcan1priv () , self . fdcan2priv () , self . ucpdpriv () , self . tim1priv () , self . spi1priv () , self . tim8priv () , self . usart1priv () , self . tim15priv () , self . tim16priv () , self . tim17priv () , self . spi4priv () , self . spi6priv () , self . sai1priv () , self . sai2priv () , self . usbpriv () , self . spi5priv () , self . lpuart1priv () , self . i2c3priv () , self . i2c4priv () , self . lptim1priv () , self . lptim3priv () , self . lptim4priv () , self . lptim5priv ())
+            defmt::write!(
+                f,
+                "Privcfgr2 {{ fdcan1priv: {=bool:?}, fdcan2priv: {=bool:?}, ucpdpriv: {=bool:?}, tim1priv: {=bool:?}, spi1priv: {=bool:?}, tim8priv: {=bool:?}, usart1priv: {=bool:?}, tim15priv: {=bool:?}, tim16priv: {=bool:?}, tim17priv: {=bool:?}, spi4priv: {=bool:?}, spi6priv: {=bool:?}, sai1priv: {=bool:?}, sai2priv: {=bool:?}, usbpriv: {=bool:?}, spi5priv: {=bool:?}, lpuart1priv: {=bool:?}, i2c3priv: {=bool:?}, i2c4priv: {=bool:?}, lptim1priv: {=bool:?}, lptim3priv: {=bool:?}, lptim4priv: {=bool:?}, lptim5priv: {=bool:?} }}",
+                self.fdcan1priv(),
+                self.fdcan2priv(),
+                self.ucpdpriv(),
+                self.tim1priv(),
+                self.spi1priv(),
+                self.tim8priv(),
+                self.usart1priv(),
+                self.tim15priv(),
+                self.tim16priv(),
+                self.tim17priv(),
+                self.spi4priv(),
+                self.spi6priv(),
+                self.sai1priv(),
+                self.sai2priv(),
+                self.usbpriv(),
+                self.spi5priv(),
+                self.lpuart1priv(),
+                self.i2c3priv(),
+                self.i2c4priv(),
+                self.lptim1priv(),
+                self.lptim3priv(),
+                self.lptim4priv(),
+                self.lptim5priv()
+            )
         }
     }
     #[doc = "GTZC1 TZSC privilege configuration register 3."]
@@ -2523,7 +2584,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Privcfgr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Privcfgr3 {{ lptim6priv: {=bool:?}, vrefbufpriv: {=bool:?}, crcpriv: {=bool:?}, cordicpriv: {=bool:?}, fmacpriv: {=bool:?}, icachepriv: {=bool:?}, dcachepriv: {=bool:?}, adc12priv: {=bool:?}, dcmipriv: {=bool:?}, hashpriv: {=bool:?}, rngpriv: {=bool:?}, sdmmc1priv: {=bool:?}, fmcpriv: {=bool:?}, octospi1priv: {=bool:?}, ramcfgpriv: {=bool:?} }}" , self . lptim6priv () , self . vrefbufpriv () , self . crcpriv () , self . cordicpriv () , self . fmacpriv () , self . icachepriv () , self . dcachepriv () , self . adc12priv () , self . dcmipriv () , self . hashpriv () , self . rngpriv () , self . sdmmc1priv () , self . fmcpriv () , self . octospi1priv () , self . ramcfgpriv ())
+            defmt::write!(
+                f,
+                "Privcfgr3 {{ lptim6priv: {=bool:?}, vrefbufpriv: {=bool:?}, crcpriv: {=bool:?}, cordicpriv: {=bool:?}, fmacpriv: {=bool:?}, icachepriv: {=bool:?}, dcachepriv: {=bool:?}, adc12priv: {=bool:?}, dcmipriv: {=bool:?}, hashpriv: {=bool:?}, rngpriv: {=bool:?}, sdmmc1priv: {=bool:?}, fmcpriv: {=bool:?}, octospi1priv: {=bool:?}, ramcfgpriv: {=bool:?} }}",
+                self.lptim6priv(),
+                self.vrefbufpriv(),
+                self.crcpriv(),
+                self.cordicpriv(),
+                self.fmacpriv(),
+                self.icachepriv(),
+                self.dcachepriv(),
+                self.adc12priv(),
+                self.dcmipriv(),
+                self.hashpriv(),
+                self.rngpriv(),
+                self.sdmmc1priv(),
+                self.fmcpriv(),
+                self.octospi1priv(),
+                self.ramcfgpriv()
+            )
         }
     }
     #[doc = "MPCBB security configuration register."]
@@ -2996,7 +3075,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccfgr1 {{ tim2sec: {=bool:?}, tim3sec: {=bool:?}, tim4sec: {=bool:?}, tim5sec: {=bool:?}, tim6sec: {=bool:?}, tim7sec: {=bool:?}, tim12sec: {=bool:?}, tim13sec: {=bool:?}, tim14sec: {=bool:?}, wwdgsec: {=bool:?}, iwdgsec: {=bool:?}, spi2sec: {=bool:?}, spi3sec: {=bool:?}, usart2sec: {=bool:?}, usart3sec: {=bool:?}, uart4sec: {=bool:?}, uart5sec: {=bool:?}, i2c1sec: {=bool:?}, i2c2sec: {=bool:?}, i3c1sec: {=bool:?}, crssec: {=bool:?}, usart6sec: {=bool:?}, usart10sec: {=bool:?}, usart11sec: {=bool:?}, hdmicecsec: {=bool:?}, dac1sec: {=bool:?}, uart7sec: {=bool:?}, uart8sec: {=bool:?}, uart9sec: {=bool:?}, uart12sec: {=bool:?}, dtssec: {=bool:?}, lptim2sec: {=bool:?} }}" , self . tim2sec () , self . tim3sec () , self . tim4sec () , self . tim5sec () , self . tim6sec () , self . tim7sec () , self . tim12sec () , self . tim13sec () , self . tim14sec () , self . wwdgsec () , self . iwdgsec () , self . spi2sec () , self . spi3sec () , self . usart2sec () , self . usart3sec () , self . uart4sec () , self . uart5sec () , self . i2c1sec () , self . i2c2sec () , self . i3c1sec () , self . crssec () , self . usart6sec () , self . usart10sec () , self . usart11sec () , self . hdmicecsec () , self . dac1sec () , self . uart7sec () , self . uart8sec () , self . uart9sec () , self . uart12sec () , self . dtssec () , self . lptim2sec ())
+            defmt::write!(
+                f,
+                "Seccfgr1 {{ tim2sec: {=bool:?}, tim3sec: {=bool:?}, tim4sec: {=bool:?}, tim5sec: {=bool:?}, tim6sec: {=bool:?}, tim7sec: {=bool:?}, tim12sec: {=bool:?}, tim13sec: {=bool:?}, tim14sec: {=bool:?}, wwdgsec: {=bool:?}, iwdgsec: {=bool:?}, spi2sec: {=bool:?}, spi3sec: {=bool:?}, usart2sec: {=bool:?}, usart3sec: {=bool:?}, uart4sec: {=bool:?}, uart5sec: {=bool:?}, i2c1sec: {=bool:?}, i2c2sec: {=bool:?}, i3c1sec: {=bool:?}, crssec: {=bool:?}, usart6sec: {=bool:?}, usart10sec: {=bool:?}, usart11sec: {=bool:?}, hdmicecsec: {=bool:?}, dac1sec: {=bool:?}, uart7sec: {=bool:?}, uart8sec: {=bool:?}, uart9sec: {=bool:?}, uart12sec: {=bool:?}, dtssec: {=bool:?}, lptim2sec: {=bool:?} }}",
+                self.tim2sec(),
+                self.tim3sec(),
+                self.tim4sec(),
+                self.tim5sec(),
+                self.tim6sec(),
+                self.tim7sec(),
+                self.tim12sec(),
+                self.tim13sec(),
+                self.tim14sec(),
+                self.wwdgsec(),
+                self.iwdgsec(),
+                self.spi2sec(),
+                self.spi3sec(),
+                self.usart2sec(),
+                self.usart3sec(),
+                self.uart4sec(),
+                self.uart5sec(),
+                self.i2c1sec(),
+                self.i2c2sec(),
+                self.i3c1sec(),
+                self.crssec(),
+                self.usart6sec(),
+                self.usart10sec(),
+                self.usart11sec(),
+                self.hdmicecsec(),
+                self.dac1sec(),
+                self.uart7sec(),
+                self.uart8sec(),
+                self.uart9sec(),
+                self.uart12sec(),
+                self.dtssec(),
+                self.lptim2sec()
+            )
         }
     }
     #[doc = "GTZC1 TZSC secure configuration register 2."]
@@ -3319,7 +3433,33 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccfgr2 {{ fdcan1sec: {=bool:?}, fdcan2sec: {=bool:?}, ucpdsec: {=bool:?}, tim1sec: {=bool:?}, spi1sec: {=bool:?}, tim8sec: {=bool:?}, usart1sec: {=bool:?}, tim15sec: {=bool:?}, tim16sec: {=bool:?}, tim17sec: {=bool:?}, spi4sec: {=bool:?}, spi6sec: {=bool:?}, sai1sec: {=bool:?}, sai2sec: {=bool:?}, usbsec: {=bool:?}, spi5sec: {=bool:?}, lpuart1sec: {=bool:?}, i2c3sec: {=bool:?}, i2c4sec: {=bool:?}, lptim1sec: {=bool:?}, lptim3sec: {=bool:?}, lptim4sec: {=bool:?}, lptim5sec: {=bool:?} }}" , self . fdcan1sec () , self . fdcan2sec () , self . ucpdsec () , self . tim1sec () , self . spi1sec () , self . tim8sec () , self . usart1sec () , self . tim15sec () , self . tim16sec () , self . tim17sec () , self . spi4sec () , self . spi6sec () , self . sai1sec () , self . sai2sec () , self . usbsec () , self . spi5sec () , self . lpuart1sec () , self . i2c3sec () , self . i2c4sec () , self . lptim1sec () , self . lptim3sec () , self . lptim4sec () , self . lptim5sec ())
+            defmt::write!(
+                f,
+                "Seccfgr2 {{ fdcan1sec: {=bool:?}, fdcan2sec: {=bool:?}, ucpdsec: {=bool:?}, tim1sec: {=bool:?}, spi1sec: {=bool:?}, tim8sec: {=bool:?}, usart1sec: {=bool:?}, tim15sec: {=bool:?}, tim16sec: {=bool:?}, tim17sec: {=bool:?}, spi4sec: {=bool:?}, spi6sec: {=bool:?}, sai1sec: {=bool:?}, sai2sec: {=bool:?}, usbsec: {=bool:?}, spi5sec: {=bool:?}, lpuart1sec: {=bool:?}, i2c3sec: {=bool:?}, i2c4sec: {=bool:?}, lptim1sec: {=bool:?}, lptim3sec: {=bool:?}, lptim4sec: {=bool:?}, lptim5sec: {=bool:?} }}",
+                self.fdcan1sec(),
+                self.fdcan2sec(),
+                self.ucpdsec(),
+                self.tim1sec(),
+                self.spi1sec(),
+                self.tim8sec(),
+                self.usart1sec(),
+                self.tim15sec(),
+                self.tim16sec(),
+                self.tim17sec(),
+                self.spi4sec(),
+                self.spi6sec(),
+                self.sai1sec(),
+                self.sai2sec(),
+                self.usbsec(),
+                self.spi5sec(),
+                self.lpuart1sec(),
+                self.i2c3sec(),
+                self.i2c4sec(),
+                self.lptim1sec(),
+                self.lptim3sec(),
+                self.lptim4sec(),
+                self.lptim5sec()
+            )
         }
     }
     #[doc = "GTZC1 TZSC secure configuration register 3."]
@@ -3538,7 +3678,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seccfgr3 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seccfgr3 {{ lptim6sec: {=bool:?}, vrefbufsec: {=bool:?}, crcsec: {=bool:?}, cordicsec: {=bool:?}, fmacsec: {=bool:?}, icachesec: {=bool:?}, dcachesec: {=bool:?}, adc12sec: {=bool:?}, dcmisec: {=bool:?}, hashsec: {=bool:?}, rngsec: {=bool:?}, sdmmc1sec: {=bool:?}, fmcsec: {=bool:?}, octospi1sec: {=bool:?}, ramcfgsec: {=bool:?} }}" , self . lptim6sec () , self . vrefbufsec () , self . crcsec () , self . cordicsec () , self . fmacsec () , self . icachesec () , self . dcachesec () , self . adc12sec () , self . dcmisec () , self . hashsec () , self . rngsec () , self . sdmmc1sec () , self . fmcsec () , self . octospi1sec () , self . ramcfgsec ())
+            defmt::write!(
+                f,
+                "Seccfgr3 {{ lptim6sec: {=bool:?}, vrefbufsec: {=bool:?}, crcsec: {=bool:?}, cordicsec: {=bool:?}, fmacsec: {=bool:?}, icachesec: {=bool:?}, dcachesec: {=bool:?}, adc12sec: {=bool:?}, dcmisec: {=bool:?}, hashsec: {=bool:?}, rngsec: {=bool:?}, sdmmc1sec: {=bool:?}, fmcsec: {=bool:?}, octospi1sec: {=bool:?}, ramcfgsec: {=bool:?} }}",
+                self.lptim6sec(),
+                self.vrefbufsec(),
+                self.crcsec(),
+                self.cordicsec(),
+                self.fmacsec(),
+                self.icachesec(),
+                self.dcachesec(),
+                self.adc12sec(),
+                self.dcmisec(),
+                self.hashsec(),
+                self.rngsec(),
+                self.sdmmc1sec(),
+                self.fmcsec(),
+                self.octospi1sec(),
+                self.ramcfgsec()
+            )
         }
     }
     #[doc = "TZIC status register."]

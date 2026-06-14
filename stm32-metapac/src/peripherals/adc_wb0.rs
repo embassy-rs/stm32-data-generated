@@ -614,7 +614,28 @@ with sign."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for CompSel {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "CompSel {{ gain_offset0: {=u8:?}, offset_gain0: {=u8:?}, gain_offset1: {=u8:?}, offset_gain1: {=u8:?}, gain_offset2: {=u8:?}, offset_gain2: {=u8:?}, gain_offset3: {=u8:?}, offset_gain3: {=u8:?}, gain_offset4: {=u8:?}, offset_gain4: {=u8:?}, gain_offset5: {=u8:?}, offset_gain5: {=u8:?}, gain_offset6: {=u8:?}, offset_gain6: {=u8:?}, gain_offset7: {=u8:?}, offset_gain7: {=u8:?}, gain_offset8: {=u8:?}, offset_gain8: {=u8:?} }}" , self . gain_offset0 () , self . offset_gain0 () , self . gain_offset1 () , self . offset_gain1 () , self . gain_offset2 () , self . offset_gain2 () , self . gain_offset3 () , self . offset_gain3 () , self . gain_offset4 () , self . offset_gain4 () , self . gain_offset5 () , self . offset_gain5 () , self . gain_offset6 () , self . offset_gain6 () , self . gain_offset7 () , self . offset_gain7 () , self . gain_offset8 () , self . offset_gain8 ())
+            defmt::write!(
+                f,
+                "CompSel {{ gain_offset0: {=u8:?}, offset_gain0: {=u8:?}, gain_offset1: {=u8:?}, offset_gain1: {=u8:?}, gain_offset2: {=u8:?}, offset_gain2: {=u8:?}, gain_offset3: {=u8:?}, offset_gain3: {=u8:?}, gain_offset4: {=u8:?}, offset_gain4: {=u8:?}, gain_offset5: {=u8:?}, offset_gain5: {=u8:?}, gain_offset6: {=u8:?}, offset_gain6: {=u8:?}, gain_offset7: {=u8:?}, offset_gain7: {=u8:?}, gain_offset8: {=u8:?}, offset_gain8: {=u8:?} }}",
+                self.gain_offset0(),
+                self.offset_gain0(),
+                self.gain_offset1(),
+                self.offset_gain1(),
+                self.gain_offset2(),
+                self.offset_gain2(),
+                self.gain_offset3(),
+                self.offset_gain3(),
+                self.gain_offset4(),
+                self.offset_gain4(),
+                self.gain_offset5(),
+                self.offset_gain5(),
+                self.gain_offset6(),
+                self.offset_gain6(),
+                self.gain_offset7(),
+                self.offset_gain7(),
+                self.gain_offset8(),
+                self.offset_gain8()
+            )
         }
     }
     #[doc = "CONF register."]
@@ -846,7 +867,26 @@ with sign."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Conf {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Conf {{ cont: {=bool:?}, sequence: {=bool:?}, seq_len: {=u8:?}, smps_synchro_ena: {=bool:?}, op_mode: {=u8:?}, sample_rate_lsb: {=u8:?}, sample_rate: {=u8:?}, dma_ds_ena: {=bool:?}, dma_df_ena: {=bool:?}, ovr_ds_cfg: {=bool:?}, ovr_df_cfg: {=bool:?}, bit_invert_sn: {=bool:?}, bit_invert_diff: {=bool:?}, adc_cont_1v2: {=bool:?}, vbias_prech_force: {=bool:?}, sample_rate_msb: {=u8:?} }}" , self . cont () , self . sequence () , self . seq_len () , self . smps_synchro_ena () , self . op_mode () , self . sample_rate_lsb () , self . sample_rate () , self . dma_ds_ena () , self . dma_df_ena () , self . ovr_ds_cfg () , self . ovr_df_cfg () , self . bit_invert_sn () , self . bit_invert_diff () , self . adc_cont_1v2 () , self . vbias_prech_force () , self . sample_rate_msb ())
+            defmt::write!(
+                f,
+                "Conf {{ cont: {=bool:?}, sequence: {=bool:?}, seq_len: {=u8:?}, smps_synchro_ena: {=bool:?}, op_mode: {=u8:?}, sample_rate_lsb: {=u8:?}, sample_rate: {=u8:?}, dma_ds_ena: {=bool:?}, dma_df_ena: {=bool:?}, ovr_ds_cfg: {=bool:?}, ovr_df_cfg: {=bool:?}, bit_invert_sn: {=bool:?}, bit_invert_diff: {=bool:?}, adc_cont_1v2: {=bool:?}, vbias_prech_force: {=bool:?}, sample_rate_msb: {=u8:?} }}",
+                self.cont(),
+                self.sequence(),
+                self.seq_len(),
+                self.smps_synchro_ena(),
+                self.op_mode(),
+                self.sample_rate_lsb(),
+                self.sample_rate(),
+                self.dma_ds_ena(),
+                self.dma_df_ena(),
+                self.ovr_ds_cfg(),
+                self.ovr_df_cfg(),
+                self.bit_invert_sn(),
+                self.bit_invert_diff(),
+                self.adc_cont_1v2(),
+                self.vbias_prech_force(),
+                self.sample_rate_msb()
+            )
         }
     }
     #[doc = "CTRL register."]
@@ -974,7 +1014,18 @@ with sign."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ctrl {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ctrl {{ adc_on_off: {=bool:?}, start_con: {=bool:?}, start_conv: {=bool:?}, stop_op_mod: {=bool:?}, stop_op_mode: {=bool:?}, dig_aud_mode: {=bool:?}, test_mode: {=bool:?}, adc_ldo_ena: {=bool:?} }}" , self . adc_on_off () , self . start_con () , self . start_conv () , self . stop_op_mod () , self . stop_op_mode () , self . dig_aud_mode () , self . test_mode () , self . adc_ldo_ena ())
+            defmt::write!(
+                f,
+                "Ctrl {{ adc_on_off: {=bool:?}, start_con: {=bool:?}, start_conv: {=bool:?}, stop_op_mod: {=bool:?}, stop_op_mode: {=bool:?}, dig_aud_mode: {=bool:?}, test_mode: {=bool:?}, adc_ldo_ena: {=bool:?} }}",
+                self.adc_on_off(),
+                self.start_con(),
+                self.start_conv(),
+                self.stop_op_mod(),
+                self.stop_op_mode(),
+                self.dig_aud_mode(),
+                self.test_mode(),
+                self.adc_ldo_ena()
+            )
         }
     }
     #[doc = "Decimation filter configuration register."]
@@ -1113,7 +1164,19 @@ with sign."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for DfConf {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "DfConf {{ df_cic_dec_factor: {=u8:?}, df_cic_dhf: {=bool:?}, df_itp1p2: {=bool:?}, df_i_u2s: {=bool:?}, df_o_s2u: {=bool:?}, pdm_rate: {=u8:?}, df_microl_rn: {=bool:?}, df_hpf_en: {=bool:?}, df_half_d_en: {=bool:?} }}" , self . df_cic_dec_factor () , self . df_cic_dhf () , self . df_itp1p2 () , self . df_i_u2s () , self . df_o_s2u () , self . pdm_rate () , self . df_microl_rn () , self . df_hpf_en () , self . df_half_d_en ())
+            defmt::write!(
+                f,
+                "DfConf {{ df_cic_dec_factor: {=u8:?}, df_cic_dhf: {=bool:?}, df_itp1p2: {=bool:?}, df_i_u2s: {=bool:?}, df_o_s2u: {=bool:?}, pdm_rate: {=u8:?}, df_microl_rn: {=bool:?}, df_hpf_en: {=bool:?}, df_half_d_en: {=bool:?} }}",
+                self.df_cic_dec_factor(),
+                self.df_cic_dhf(),
+                self.df_itp1p2(),
+                self.df_i_u2s(),
+                self.df_o_s2u(),
+                self.pdm_rate(),
+                self.df_microl_rn(),
+                self.df_hpf_en(),
+                self.df_half_d_en()
+            )
         }
     }
     #[doc = "Decimation filter Data output register."]
@@ -1431,7 +1494,23 @@ with sign."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for IrqEnable {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "IrqEnable {{ eoc_irq: {=bool:?}, eoc_irq_ena: {=bool:?}, eods_irq: {=bool:?}, eods_irq_ena: {=bool:?}, eodf_irq_ena: {=bool:?}, eos_irq: {=bool:?}, eos_irq_ena: {=bool:?}, awd_irq: {=bool:?}, awd_irq_ena: {=bool:?}, ovr_ds_irq: {=bool:?}, ovr_ds_irq_ena: {=bool:?}, ovr_df_irq_ena: {=bool:?}, df_ovrfl_irq_ena: {=bool:?} }}" , self . eoc_irq () , self . eoc_irq_ena () , self . eods_irq () , self . eods_irq_ena () , self . eodf_irq_ena () , self . eos_irq () , self . eos_irq_ena () , self . awd_irq () , self . awd_irq_ena () , self . ovr_ds_irq () , self . ovr_ds_irq_ena () , self . ovr_df_irq_ena () , self . df_ovrfl_irq_ena ())
+            defmt::write!(
+                f,
+                "IrqEnable {{ eoc_irq: {=bool:?}, eoc_irq_ena: {=bool:?}, eods_irq: {=bool:?}, eods_irq_ena: {=bool:?}, eodf_irq_ena: {=bool:?}, eos_irq: {=bool:?}, eos_irq_ena: {=bool:?}, awd_irq: {=bool:?}, awd_irq_ena: {=bool:?}, ovr_ds_irq: {=bool:?}, ovr_ds_irq_ena: {=bool:?}, ovr_df_irq_ena: {=bool:?}, df_ovrfl_irq_ena: {=bool:?} }}",
+                self.eoc_irq(),
+                self.eoc_irq_ena(),
+                self.eods_irq(),
+                self.eods_irq_ena(),
+                self.eodf_irq_ena(),
+                self.eos_irq(),
+                self.eos_irq_ena(),
+                self.awd_irq(),
+                self.awd_irq_ena(),
+                self.ovr_ds_irq(),
+                self.ovr_ds_irq_ena(),
+                self.ovr_df_irq_ena(),
+                self.df_ovrfl_irq_ena()
+            )
         }
     }
     #[doc = "IRQ_STATUS register."]
@@ -1559,7 +1638,18 @@ with sign."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for IrqStatus {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "IrqStatus {{ eoc_irq: {=bool:?}, eods_irq: {=bool:?}, eodf_irq: {=bool:?}, eos_irq: {=bool:?}, awd_irq: {=bool:?}, ovr_ds_irq: {=bool:?}, ovr_df_irq: {=bool:?}, df_ovrfl_irq: {=bool:?} }}" , self . eoc_irq () , self . eods_irq () , self . eodf_irq () , self . eos_irq () , self . awd_irq () , self . ovr_ds_irq () , self . ovr_df_irq () , self . df_ovrfl_irq ())
+            defmt::write!(
+                f,
+                "IrqStatus {{ eoc_irq: {=bool:?}, eods_irq: {=bool:?}, eodf_irq: {=bool:?}, eos_irq: {=bool:?}, awd_irq: {=bool:?}, ovr_ds_irq: {=bool:?}, ovr_df_irq: {=bool:?}, df_ovrfl_irq: {=bool:?} }}",
+                self.eoc_irq(),
+                self.eods_irq(),
+                self.eodf_irq(),
+                self.eos_irq(),
+                self.awd_irq(),
+                self.ovr_ds_irq(),
+                self.ovr_df_irq(),
+                self.df_ovrfl_irq()
+            )
         }
     }
     #[doc = "Occasionnal mode control register."]
@@ -1821,7 +1911,18 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seq1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seq1 {{ seq0: {=u8:?}, seq1: {=u8:?}, seq2: {=u8:?}, seq3: {=u8:?}, seq4: {=u8:?}, seq5: {=u8:?}, seq6: {=u8:?}, seq7: {=u8:?} }}" , self . seq0 () , self . seq1 () , self . seq2 () , self . seq3 () , self . seq4 () , self . seq5 () , self . seq6 () , self . seq7 ())
+            defmt::write!(
+                f,
+                "Seq1 {{ seq0: {=u8:?}, seq1: {=u8:?}, seq2: {=u8:?}, seq3: {=u8:?}, seq4: {=u8:?}, seq5: {=u8:?}, seq6: {=u8:?}, seq7: {=u8:?} }}",
+                self.seq0(),
+                self.seq1(),
+                self.seq2(),
+                self.seq3(),
+                self.seq4(),
+                self.seq5(),
+                self.seq6(),
+                self.seq7()
+            )
         }
     }
     #[doc = "SEQ_2 register."]
@@ -1973,7 +2074,18 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Seq2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Seq2 {{ seq8: {=u8:?}, seq9: {=u8:?}, seq10: {=u8:?}, seq11: {=u8:?}, seq12: {=u8:?}, seq13: {=u8:?}, seq14: {=u8:?}, seq15: {=u8:?} }}" , self . seq8 () , self . seq9 () , self . seq10 () , self . seq11 () , self . seq12 () , self . seq13 () , self . seq14 () , self . seq15 ())
+            defmt::write!(
+                f,
+                "Seq2 {{ seq8: {=u8:?}, seq9: {=u8:?}, seq10: {=u8:?}, seq11: {=u8:?}, seq12: {=u8:?}, seq13: {=u8:?}, seq14: {=u8:?}, seq15: {=u8:?} }}",
+                self.seq8(),
+                self.seq9(),
+                self.seq10(),
+                self.seq11(),
+                self.seq12(),
+                self.seq13(),
+                self.seq14(),
+                self.seq15()
+            )
         }
     }
     #[doc = "SWITCH register."]
@@ -2125,7 +2237,18 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Switch {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Switch {{ se_vin_0: {=u8:?}, se_vin_1: {=u8:?}, se_vin_2: {=u8:?}, se_vin_3: {=u8:?}, se_vin_4: {=u8:?}, se_vin_5: {=u8:?}, se_vin_6: {=u8:?}, se_vin_7: {=u8:?} }}" , self . se_vin_0 () , self . se_vin_1 () , self . se_vin_2 () , self . se_vin_3 () , self . se_vin_4 () , self . se_vin_5 () , self . se_vin_6 () , self . se_vin_7 ())
+            defmt::write!(
+                f,
+                "Switch {{ se_vin_0: {=u8:?}, se_vin_1: {=u8:?}, se_vin_2: {=u8:?}, se_vin_3: {=u8:?}, se_vin_4: {=u8:?}, se_vin_5: {=u8:?}, se_vin_6: {=u8:?}, se_vin_7: {=u8:?} }}",
+                self.se_vin_0(),
+                self.se_vin_1(),
+                self.se_vin_2(),
+                self.se_vin_3(),
+                self.se_vin_4(),
+                self.se_vin_5(),
+                self.se_vin_6(),
+                self.se_vin_7()
+            )
         }
     }
     #[doc = "Time to add after an LDO Enable or ADC Enable to let the HW to be stable before using it."]

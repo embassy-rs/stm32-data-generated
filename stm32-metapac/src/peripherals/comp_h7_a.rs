@@ -210,7 +210,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr1 {{ en: {=bool:?}, brgen: {=bool:?}, scalen: {=bool:?}, polarity: {=bool:?}, iten: {=bool:?}, hyst: {:?}, pwrmode: {:?}, inmsel: {:?}, inpsel: {:?}, blanking: {:?}, lock: {=bool:?} }}" , self . en () , self . brgen () , self . scalen () , self . polarity () , self . iten () , self . hyst () , self . pwrmode () , self . inmsel () , self . inpsel () , self . blanking () , self . lock ())
+            defmt::write!(
+                f,
+                "Cfgr1 {{ en: {=bool:?}, brgen: {=bool:?}, scalen: {=bool:?}, polarity: {=bool:?}, iten: {=bool:?}, hyst: {:?}, pwrmode: {:?}, inmsel: {:?}, inpsel: {:?}, blanking: {:?}, lock: {=bool:?} }}",
+                self.en(),
+                self.brgen(),
+                self.scalen(),
+                self.polarity(),
+                self.iten(),
+                self.hyst(),
+                self.pwrmode(),
+                self.inmsel(),
+                self.inpsel(),
+                self.blanking(),
+                self.lock()
+            )
         }
     }
     #[doc = "Comparator configuration register 2."]
@@ -390,7 +404,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr2 {{ en: {=bool:?}, brgen: {=bool:?}, scalen: {=bool:?}, polarity: {=bool:?}, winmode: {=bool:?}, iten: {=bool:?}, hyst: {:?}, pwrmode: {:?}, inmsel: {:?}, inpsel: {:?}, blanking: {:?}, lock: {=bool:?} }}" , self . en () , self . brgen () , self . scalen () , self . polarity () , self . winmode () , self . iten () , self . hyst () , self . pwrmode () , self . inmsel () , self . inpsel () , self . blanking () , self . lock ())
+            defmt::write!(
+                f,
+                "Cfgr2 {{ en: {=bool:?}, brgen: {=bool:?}, scalen: {=bool:?}, polarity: {=bool:?}, winmode: {=bool:?}, iten: {=bool:?}, hyst: {:?}, pwrmode: {:?}, inmsel: {:?}, inpsel: {:?}, blanking: {:?}, lock: {=bool:?} }}",
+                self.en(),
+                self.brgen(),
+                self.scalen(),
+                self.polarity(),
+                self.winmode(),
+                self.iten(),
+                self.hyst(),
+                self.pwrmode(),
+                self.inmsel(),
+                self.inpsel(),
+                self.blanking(),
+                self.lock()
+            )
         }
     }
     #[doc = "Comparator interrupt clear flag register."]

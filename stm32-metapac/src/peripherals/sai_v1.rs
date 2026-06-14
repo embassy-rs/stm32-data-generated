@@ -185,7 +185,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Clrfr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Clrfr {{ covrudr: {=bool:?}, cmutedet: {=bool:?}, cwckcfg: {=bool:?}, ccnrdy: {=bool:?}, cafsdet: {=bool:?}, clfsdet: {=bool:?} }}" , self . covrudr () , self . cmutedet () , self . cwckcfg () , self . ccnrdy () , self . cafsdet () , self . clfsdet ())
+            defmt::write!(
+                f,
+                "Clrfr {{ covrudr: {=bool:?}, cmutedet: {=bool:?}, cwckcfg: {=bool:?}, ccnrdy: {=bool:?}, cafsdet: {=bool:?}, clfsdet: {=bool:?} }}",
+                self.covrudr(),
+                self.cmutedet(),
+                self.cwckcfg(),
+                self.ccnrdy(),
+                self.cafsdet(),
+                self.clfsdet()
+            )
         }
     }
     #[doc = "Configuration register 1"]
@@ -371,7 +380,22 @@ bits must be configured before setting DMAEN to avoid a DMA request in receiver 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr1 {{ mode: {:?}, prtcfg: {:?}, ds: {:?}, lsbfirst: {:?}, ckstr: {:?}, syncen: {:?}, mono: {:?}, outdriv: {:?}, saien: {=bool:?}, dmaen: {=bool:?}, nodiv: {=bool:?}, mckdiv: {:?} }}" , self . mode () , self . prtcfg () , self . ds () , self . lsbfirst () , self . ckstr () , self . syncen () , self . mono () , self . outdriv () , self . saien () , self . dmaen () , self . nodiv () , self . mckdiv ())
+            defmt::write!(
+                f,
+                "Cr1 {{ mode: {:?}, prtcfg: {:?}, ds: {:?}, lsbfirst: {:?}, ckstr: {:?}, syncen: {:?}, mono: {:?}, outdriv: {:?}, saien: {=bool:?}, dmaen: {=bool:?}, nodiv: {=bool:?}, mckdiv: {:?} }}",
+                self.mode(),
+                self.prtcfg(),
+                self.ds(),
+                self.lsbfirst(),
+                self.ckstr(),
+                self.syncen(),
+                self.mono(),
+                self.outdriv(),
+                self.saien(),
+                self.dmaen(),
+                self.nodiv(),
+                self.mckdiv()
+            )
         }
     }
     #[doc = "Configuration register 2"]
@@ -499,7 +523,18 @@ bits must be configured before setting DMAEN to avoid a DMA request in receiver 
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr2 {{ fth: {:?}, fflush: {=bool:?}, tris: {=bool:?}, mute: {=bool:?}, muteval: {:?}, mutecnt: {=u8:?}, cpl: {:?}, comp: {:?} }}" , self . fth () , self . fflush () , self . tris () , self . mute () , self . muteval () , self . mutecnt () , self . cpl () , self . comp ())
+            defmt::write!(
+                f,
+                "Cr2 {{ fth: {:?}, fflush: {=bool:?}, tris: {=bool:?}, mute: {=bool:?}, muteval: {:?}, mutecnt: {=u8:?}, cpl: {:?}, comp: {:?} }}",
+                self.fth(),
+                self.fflush(),
+                self.tris(),
+                self.mute(),
+                self.muteval(),
+                self.mutecnt(),
+                self.cpl(),
+                self.comp()
+            )
         }
     }
     #[doc = "Data register"]
@@ -758,7 +793,17 @@ bits and the audio block is operates as a receiver."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Im {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Im {{ ovrudrie: {=bool:?}, mutedetie: {=bool:?}, wckcfgie: {=bool:?}, freqie: {=bool:?}, cnrdyie: {=bool:?}, afsdetie: {=bool:?}, lfsdetie: {=bool:?} }}" , self . ovrudrie () , self . mutedetie () , self . wckcfgie () , self . freqie () , self . cnrdyie () , self . afsdetie () , self . lfsdetie ())
+            defmt::write!(
+                f,
+                "Im {{ ovrudrie: {=bool:?}, mutedetie: {=bool:?}, wckcfgie: {=bool:?}, freqie: {=bool:?}, cnrdyie: {=bool:?}, afsdetie: {=bool:?}, lfsdetie: {=bool:?} }}",
+                self.ovrudrie(),
+                self.mutedetie(),
+                self.wckcfgie(),
+                self.freqie(),
+                self.cnrdyie(),
+                self.afsdetie(),
+                self.lfsdetie()
+            )
         }
     }
     #[doc = "This register has no meaning in AC97 and SPDIF audio protocol"]
@@ -971,7 +1016,18 @@ bits and the audio block is operates as a receiver."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ ovrudr: {=bool:?}, mutedet: {=bool:?}, wckcfg: {:?}, freq: {=bool:?}, cnrdy: {:?}, afsdet: {=bool:?}, lfsdet: {=bool:?}, flvl: {:?} }}" , self . ovrudr () , self . mutedet () , self . wckcfg () , self . freq () , self . cnrdy () , self . afsdet () , self . lfsdet () , self . flvl ())
+            defmt::write!(
+                f,
+                "Sr {{ ovrudr: {=bool:?}, mutedet: {=bool:?}, wckcfg: {:?}, freq: {=bool:?}, cnrdy: {:?}, afsdet: {=bool:?}, lfsdet: {=bool:?}, flvl: {:?} }}",
+                self.ovrudr(),
+                self.mutedet(),
+                self.wckcfg(),
+                self.freq(),
+                self.cnrdy(),
+                self.afsdet(),
+                self.lfsdet(),
+                self.flvl()
+            )
         }
     }
 }

@@ -251,7 +251,22 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, tcie: {=bool:?}, htie: {=bool:?}, teie: {=bool:?}, dir: {:?}, circ: {=bool:?}, pinc: {=bool:?}, minc: {=bool:?}, psize: {:?}, msize: {:?}, pl: {:?}, mem2mem: {=bool:?} }}" , self . en () , self . tcie () , self . htie () , self . teie () , self . dir () , self . circ () , self . pinc () , self . minc () , self . psize () , self . msize () , self . pl () , self . mem2mem ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, tcie: {=bool:?}, htie: {=bool:?}, teie: {=bool:?}, dir: {:?}, circ: {=bool:?}, pinc: {=bool:?}, minc: {=bool:?}, psize: {:?}, msize: {:?}, pl: {:?}, mem2mem: {=bool:?} }}",
+                self.en(),
+                self.tcie(),
+                self.htie(),
+                self.teie(),
+                self.dir(),
+                self.circ(),
+                self.pinc(),
+                self.minc(),
+                self.psize(),
+                self.msize(),
+                self.pl(),
+                self.mem2mem()
+            )
         }
     }
     #[doc = "DMA interrupt status register (DMA_ISR)"]
@@ -371,7 +386,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ gif[0]: {=bool:?}, gif[1]: {=bool:?}, gif[2]: {=bool:?}, gif[3]: {=bool:?}, gif[4]: {=bool:?}, gif[5]: {=bool:?}, gif[6]: {=bool:?}, gif[7]: {=bool:?}, tcif[0]: {=bool:?}, tcif[1]: {=bool:?}, tcif[2]: {=bool:?}, tcif[3]: {=bool:?}, tcif[4]: {=bool:?}, tcif[5]: {=bool:?}, tcif[6]: {=bool:?}, tcif[7]: {=bool:?}, htif[0]: {=bool:?}, htif[1]: {=bool:?}, htif[2]: {=bool:?}, htif[3]: {=bool:?}, htif[4]: {=bool:?}, htif[5]: {=bool:?}, htif[6]: {=bool:?}, htif[7]: {=bool:?}, teif[0]: {=bool:?}, teif[1]: {=bool:?}, teif[2]: {=bool:?}, teif[3]: {=bool:?}, teif[4]: {=bool:?}, teif[5]: {=bool:?}, teif[6]: {=bool:?}, teif[7]: {=bool:?} }}" , self . gif (0usize) , self . gif (1usize) , self . gif (2usize) , self . gif (3usize) , self . gif (4usize) , self . gif (5usize) , self . gif (6usize) , self . gif (7usize) , self . tcif (0usize) , self . tcif (1usize) , self . tcif (2usize) , self . tcif (3usize) , self . tcif (4usize) , self . tcif (5usize) , self . tcif (6usize) , self . tcif (7usize) , self . htif (0usize) , self . htif (1usize) , self . htif (2usize) , self . htif (3usize) , self . htif (4usize) , self . htif (5usize) , self . htif (6usize) , self . htif (7usize) , self . teif (0usize) , self . teif (1usize) , self . teif (2usize) , self . teif (3usize) , self . teif (4usize) , self . teif (5usize) , self . teif (6usize) , self . teif (7usize))
+            defmt::write!(
+                f,
+                "Isr {{ gif[0]: {=bool:?}, gif[1]: {=bool:?}, gif[2]: {=bool:?}, gif[3]: {=bool:?}, gif[4]: {=bool:?}, gif[5]: {=bool:?}, gif[6]: {=bool:?}, gif[7]: {=bool:?}, tcif[0]: {=bool:?}, tcif[1]: {=bool:?}, tcif[2]: {=bool:?}, tcif[3]: {=bool:?}, tcif[4]: {=bool:?}, tcif[5]: {=bool:?}, tcif[6]: {=bool:?}, tcif[7]: {=bool:?}, htif[0]: {=bool:?}, htif[1]: {=bool:?}, htif[2]: {=bool:?}, htif[3]: {=bool:?}, htif[4]: {=bool:?}, htif[5]: {=bool:?}, htif[6]: {=bool:?}, htif[7]: {=bool:?}, teif[0]: {=bool:?}, teif[1]: {=bool:?}, teif[2]: {=bool:?}, teif[3]: {=bool:?}, teif[4]: {=bool:?}, teif[5]: {=bool:?}, teif[6]: {=bool:?}, teif[7]: {=bool:?} }}",
+                self.gif(0usize),
+                self.gif(1usize),
+                self.gif(2usize),
+                self.gif(3usize),
+                self.gif(4usize),
+                self.gif(5usize),
+                self.gif(6usize),
+                self.gif(7usize),
+                self.tcif(0usize),
+                self.tcif(1usize),
+                self.tcif(2usize),
+                self.tcif(3usize),
+                self.tcif(4usize),
+                self.tcif(5usize),
+                self.tcif(6usize),
+                self.tcif(7usize),
+                self.htif(0usize),
+                self.htif(1usize),
+                self.htif(2usize),
+                self.htif(3usize),
+                self.htif(4usize),
+                self.htif(5usize),
+                self.htif(6usize),
+                self.htif(7usize),
+                self.teif(0usize),
+                self.teif(1usize),
+                self.teif(2usize),
+                self.teif(3usize),
+                self.teif(4usize),
+                self.teif(5usize),
+                self.teif(6usize),
+                self.teif(7usize)
+            )
         }
     }
     #[doc = "DMA channel 1 number of data register"]

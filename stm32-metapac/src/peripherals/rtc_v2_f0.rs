@@ -312,7 +312,24 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Alrmr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Alrmr {{ su: {=u8:?}, st: {=u8:?}, msk1: {:?}, mnu: {=u8:?}, mnt: {=u8:?}, msk2: {:?}, hu: {=u8:?}, ht: {=u8:?}, pm: {:?}, msk3: {:?}, du: {=u8:?}, dt: {=u8:?}, wdsel: {:?}, msk4: {:?} }}" , self . su () , self . st () , self . msk1 () , self . mnu () , self . mnt () , self . msk2 () , self . hu () , self . ht () , self . pm () , self . msk3 () , self . du () , self . dt () , self . wdsel () , self . msk4 ())
+            defmt::write!(
+                f,
+                "Alrmr {{ su: {=u8:?}, st: {=u8:?}, msk1: {:?}, mnu: {=u8:?}, mnt: {=u8:?}, msk2: {:?}, hu: {=u8:?}, ht: {=u8:?}, pm: {:?}, msk3: {:?}, du: {=u8:?}, dt: {=u8:?}, wdsel: {:?}, msk4: {:?} }}",
+                self.su(),
+                self.st(),
+                self.msk1(),
+                self.mnu(),
+                self.mnt(),
+                self.msk2(),
+                self.hu(),
+                self.ht(),
+                self.pm(),
+                self.msk3(),
+                self.du(),
+                self.dt(),
+                self.wdsel(),
+                self.msk4()
+            )
         }
     }
     #[doc = "Alarm sub second register"]
@@ -751,7 +768,28 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ wucksel: {:?}, tsedge: {:?}, refckon: {=bool:?}, bypshad: {=bool:?}, fmt: {:?}, alre[0]: {=bool:?}, wute: {=bool:?}, tse: {=bool:?}, alrie[0]: {=bool:?}, wutie: {=bool:?}, tsie: {=bool:?}, add1h: {=bool:?}, sub1h: {=bool:?}, bkp: {=bool:?}, cosel: {:?}, pol: {:?}, osel: {:?}, coe: {=bool:?} }}" , self . wucksel () , self . tsedge () , self . refckon () , self . bypshad () , self . fmt () , self . alre (0usize) , self . wute () , self . tse () , self . alrie (0usize) , self . wutie () , self . tsie () , self . add1h () , self . sub1h () , self . bkp () , self . cosel () , self . pol () , self . osel () , self . coe ())
+            defmt::write!(
+                f,
+                "Cr {{ wucksel: {:?}, tsedge: {:?}, refckon: {=bool:?}, bypshad: {=bool:?}, fmt: {:?}, alre[0]: {=bool:?}, wute: {=bool:?}, tse: {=bool:?}, alrie[0]: {=bool:?}, wutie: {=bool:?}, tsie: {=bool:?}, add1h: {=bool:?}, sub1h: {=bool:?}, bkp: {=bool:?}, cosel: {:?}, pol: {:?}, osel: {:?}, coe: {=bool:?} }}",
+                self.wucksel(),
+                self.tsedge(),
+                self.refckon(),
+                self.bypshad(),
+                self.fmt(),
+                self.alre(0usize),
+                self.wute(),
+                self.tse(),
+                self.alrie(0usize),
+                self.wutie(),
+                self.tsie(),
+                self.add1h(),
+                self.sub1h(),
+                self.bkp(),
+                self.cosel(),
+                self.pol(),
+                self.osel(),
+                self.coe()
+            )
         }
     }
     #[doc = "Date register"]
@@ -1083,7 +1121,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ alrwf[0]: {=bool:?}, wutwf: {=bool:?}, shpf: {=bool:?}, inits: {=bool:?}, rsf: {=bool:?}, initf: {=bool:?}, init: {=bool:?}, alrf[0]: {=bool:?}, wutf: {=bool:?}, tsf: {=bool:?}, tsovf: {=bool:?}, tampf[0]: {=bool:?}, tampf[1]: {=bool:?}, tampf[2]: {=bool:?}, recalpf: {=bool:?} }}" , self . alrwf (0usize) , self . wutwf () , self . shpf () , self . inits () , self . rsf () , self . initf () , self . init () , self . alrf (0usize) , self . wutf () , self . tsf () , self . tsovf () , self . tampf (0usize) , self . tampf (1usize) , self . tampf (2usize) , self . recalpf ())
+            defmt::write!(
+                f,
+                "Isr {{ alrwf[0]: {=bool:?}, wutwf: {=bool:?}, shpf: {=bool:?}, inits: {=bool:?}, rsf: {=bool:?}, initf: {=bool:?}, init: {=bool:?}, alrf[0]: {=bool:?}, wutf: {=bool:?}, tsf: {=bool:?}, tsovf: {=bool:?}, tampf[0]: {=bool:?}, tampf[1]: {=bool:?}, tampf[2]: {=bool:?}, recalpf: {=bool:?} }}",
+                self.alrwf(0usize),
+                self.wutwf(),
+                self.shpf(),
+                self.inits(),
+                self.rsf(),
+                self.initf(),
+                self.init(),
+                self.alrf(0usize),
+                self.wutf(),
+                self.tsf(),
+                self.tsovf(),
+                self.tampf(0usize),
+                self.tampf(1usize),
+                self.tampf(2usize),
+                self.recalpf()
+            )
         }
     }
     #[doc = "Prescaler register"]
@@ -1446,7 +1502,28 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tafcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Tafcr {{ tampe[0]: {=bool:?}, tampe[1]: {=bool:?}, tampe[2]: {=bool:?}, tamptrg[0]: {:?}, tamptrg[1]: {:?}, tamptrg[2]: {:?}, tampie: {=bool:?}, tampts: {=bool:?}, tampfreq: {:?}, tampflt: {:?}, tampprch: {:?}, tamppudis: {:?}, pc13value: {:?}, pc13mode: {:?}, pc14value: {:?}, pc14mode: {:?}, pc15value: {:?}, pc15mode: {:?} }}" , self . tampe (0usize) , self . tampe (1usize) , self . tampe (2usize) , self . tamptrg (0usize) , self . tamptrg (1usize) , self . tamptrg (2usize) , self . tampie () , self . tampts () , self . tampfreq () , self . tampflt () , self . tampprch () , self . tamppudis () , self . pc13value () , self . pc13mode () , self . pc14value () , self . pc14mode () , self . pc15value () , self . pc15mode ())
+            defmt::write!(
+                f,
+                "Tafcr {{ tampe[0]: {=bool:?}, tampe[1]: {=bool:?}, tampe[2]: {=bool:?}, tamptrg[0]: {:?}, tamptrg[1]: {:?}, tamptrg[2]: {:?}, tampie: {=bool:?}, tampts: {=bool:?}, tampfreq: {:?}, tampflt: {:?}, tampprch: {:?}, tamppudis: {:?}, pc13value: {:?}, pc13mode: {:?}, pc14value: {:?}, pc14mode: {:?}, pc15value: {:?}, pc15mode: {:?} }}",
+                self.tampe(0usize),
+                self.tampe(1usize),
+                self.tampe(2usize),
+                self.tamptrg(0usize),
+                self.tamptrg(1usize),
+                self.tamptrg(2usize),
+                self.tampie(),
+                self.tampts(),
+                self.tampfreq(),
+                self.tampflt(),
+                self.tampprch(),
+                self.tamppudis(),
+                self.pc13value(),
+                self.pc13mode(),
+                self.pc14value(),
+                self.pc14mode(),
+                self.pc15value(),
+                self.pc15mode()
+            )
         }
     }
     #[doc = "Time register"]

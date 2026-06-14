@@ -472,7 +472,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bgpfccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Bgpfccr {{ cm: {:?}, ccm: {:?}, start: {:?}, cs: {=u8:?}, am: {:?}, ai: {:?}, rbs: {:?}, alpha: {=u8:?} }}" , self . cm () , self . ccm () , self . start () , self . cs () , self . am () , self . ai () , self . rbs () , self . alpha ())
+            defmt::write!(
+                f,
+                "Bgpfccr {{ cm: {:?}, ccm: {:?}, start: {:?}, cs: {=u8:?}, am: {:?}, ai: {:?}, rbs: {:?}, alpha: {=u8:?} }}",
+                self.cm(),
+                self.ccm(),
+                self.start(),
+                self.cs(),
+                self.am(),
+                self.ai(),
+                self.rbs(),
+                self.alpha()
+            )
         }
     }
     #[doc = "DMA2D control register"]
@@ -639,7 +650,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ start: {:?}, susp: {=bool:?}, abort: {:?}, lom: {:?}, teie: {=bool:?}, tcie: {=bool:?}, twie: {=bool:?}, caeie: {=bool:?}, ctcie: {=bool:?}, ceie: {=bool:?}, mode: {:?} }}" , self . start () , self . susp () , self . abort () , self . lom () , self . teie () , self . tcie () , self . twie () , self . caeie () , self . ctcie () , self . ceie () , self . mode ())
+            defmt::write!(
+                f,
+                "Cr {{ start: {:?}, susp: {=bool:?}, abort: {:?}, lom: {:?}, teie: {=bool:?}, tcie: {=bool:?}, twie: {=bool:?}, caeie: {=bool:?}, ctcie: {=bool:?}, ceie: {=bool:?}, mode: {:?} }}",
+                self.start(),
+                self.susp(),
+                self.abort(),
+                self.lom(),
+                self.teie(),
+                self.tcie(),
+                self.twie(),
+                self.caeie(),
+                self.ctcie(),
+                self.ceie(),
+                self.mode()
+            )
         }
     }
     #[doc = "DMA2D foreground CLUT memory address register"]
@@ -958,7 +983,19 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Fgpfccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Fgpfccr {{ cm: {:?}, ccm: {:?}, start: {:?}, cs: {=u8:?}, am: {:?}, css: {=u8:?}, ai: {:?}, rbs: {:?}, alpha: {=u8:?} }}" , self . cm () , self . ccm () , self . start () , self . cs () , self . am () , self . css () , self . ai () , self . rbs () , self . alpha ())
+            defmt::write!(
+                f,
+                "Fgpfccr {{ cm: {:?}, ccm: {:?}, start: {:?}, cs: {=u8:?}, am: {:?}, css: {=u8:?}, ai: {:?}, rbs: {:?}, alpha: {=u8:?} }}",
+                self.cm(),
+                self.ccm(),
+                self.start(),
+                self.cs(),
+                self.am(),
+                self.css(),
+                self.ai(),
+                self.rbs(),
+                self.alpha()
+            )
         }
     }
     #[doc = "DMA2D interrupt flag clear register"]
@@ -1171,7 +1208,16 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
     #[cfg(feature = "defmt")]
     impl defmt::Format for Isr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Isr {{ teif: {=bool:?}, tcif: {=bool:?}, twif: {=bool:?}, caeif: {=bool:?}, ctcif: {=bool:?}, ceif: {=bool:?} }}" , self . teif () , self . tcif () , self . twif () , self . caeif () , self . ctcif () , self . ceif ())
+            defmt::write!(
+                f,
+                "Isr {{ teif: {=bool:?}, tcif: {=bool:?}, twif: {=bool:?}, caeif: {=bool:?}, ctcif: {=bool:?}, ceif: {=bool:?} }}",
+                self.teif(),
+                self.tcif(),
+                self.twif(),
+                self.caeif(),
+                self.ctcif(),
+                self.ceif()
+            )
         }
     }
     #[doc = "DMA2D line watermark register"]

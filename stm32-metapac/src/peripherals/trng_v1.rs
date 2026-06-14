@@ -565,7 +565,16 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
     #[cfg(feature = "defmt")]
     impl defmt::Format for HealthOsc1Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HealthOsc1Sr {{ to1_repet_error: {=bool:?}, to1_adapt_error: {=bool:?}, to2_repet_error: {=bool:?}, to2_adapt_error: {=bool:?}, to3_repet_error: {=bool:?}, to3_adapt_error: {=bool:?} }}" , self . to1_repet_error () , self . to1_adapt_error () , self . to2_repet_error () , self . to2_adapt_error () , self . to3_repet_error () , self . to3_adapt_error ())
+            defmt::write!(
+                f,
+                "HealthOsc1Sr {{ to1_repet_error: {=bool:?}, to1_adapt_error: {=bool:?}, to2_repet_error: {=bool:?}, to2_adapt_error: {=bool:?}, to3_repet_error: {=bool:?}, to3_adapt_error: {=bool:?} }}",
+                self.to1_repet_error(),
+                self.to1_adapt_error(),
+                self.to2_repet_error(),
+                self.to2_adapt_error(),
+                self.to3_repet_error(),
+                self.to3_adapt_error()
+            )
         }
     }
     #[doc = "HEALTH_OSC2_CR register."]
@@ -722,7 +731,16 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
     #[cfg(feature = "defmt")]
     impl defmt::Format for HealthOsc2Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HealthOsc2Sr {{ to1_repet_error: {=bool:?}, to1_adapt_error: {=bool:?}, to2_repet_error: {=bool:?}, to2_adapt_error: {=bool:?}, to3_repet_error: {=bool:?}, to3_adapt_error: {=bool:?} }}" , self . to1_repet_error () , self . to1_adapt_error () , self . to2_repet_error () , self . to2_adapt_error () , self . to3_repet_error () , self . to3_adapt_error ())
+            defmt::write!(
+                f,
+                "HealthOsc2Sr {{ to1_repet_error: {=bool:?}, to1_adapt_error: {=bool:?}, to2_repet_error: {=bool:?}, to2_adapt_error: {=bool:?}, to3_repet_error: {=bool:?}, to3_adapt_error: {=bool:?} }}",
+                self.to1_repet_error(),
+                self.to1_adapt_error(),
+                self.to2_repet_error(),
+                self.to2_adapt_error(),
+                self.to3_repet_error(),
+                self.to3_adapt_error()
+            )
         }
     }
     #[doc = "HEALTH_OSC3_CR register."]
@@ -879,7 +897,16 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
     #[cfg(feature = "defmt")]
     impl defmt::Format for HealthOsc3Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "HealthOsc3Sr {{ to1_repet_error: {=bool:?}, to1_adapt_error: {=bool:?}, to2_repet_error: {=bool:?}, to2_adapt_error: {=bool:?}, to3_repet_error: {=bool:?}, to3_adapt_error: {=bool:?} }}" , self . to1_repet_error () , self . to1_adapt_error () , self . to2_repet_error () , self . to2_adapt_error () , self . to3_repet_error () , self . to3_adapt_error ())
+            defmt::write!(
+                f,
+                "HealthOsc3Sr {{ to1_repet_error: {=bool:?}, to1_adapt_error: {=bool:?}, to2_repet_error: {=bool:?}, to2_adapt_error: {=bool:?}, to3_repet_error: {=bool:?}, to3_adapt_error: {=bool:?} }}",
+                self.to1_repet_error(),
+                self.to1_adapt_error(),
+                self.to2_repet_error(),
+                self.to2_adapt_error(),
+                self.to3_repet_error(),
+                self.to3_adapt_error()
+            )
         }
     }
     #[doc = "IRQ_CR register."]
@@ -1243,7 +1270,16 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
     #[cfg(feature = "defmt")]
     impl defmt::Format for PostpSr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "PostpSr {{ aes_init: {:?}, aes_key_ld: {:?}, aes_busy: {:?}, aes_health_done: {=bool:?}, aes_k12_error: {=bool:?}, aes_dout_error: {=bool:?} }}" , self . aes_init () , self . aes_key_ld () , self . aes_busy () , self . aes_health_done () , self . aes_k12_error () , self . aes_dout_error ())
+            defmt::write!(
+                f,
+                "PostpSr {{ aes_init: {:?}, aes_key_ld: {:?}, aes_busy: {:?}, aes_health_done: {=bool:?}, aes_k12_error: {=bool:?}, aes_dout_error: {=bool:?} }}",
+                self.aes_init(),
+                self.aes_key_ld(),
+                self.aes_busy(),
+                self.aes_health_done(),
+                self.aes_k12_error(),
+                self.aes_dout_error()
+            )
         }
     }
     #[doc = "SR register."]
@@ -1423,7 +1459,22 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ disabled: {=bool:?}, all_oscs_down: {:?}, reveal_clk_err: {:?}, entropy_err: {:?}, val_ready: {:?}, fifo_full: {:?}, src_health_done: {=bool:?}, repet_error: {=bool:?}, adapt_error: {=bool:?}, oscs_health_done: {=bool:?}, oscs_repet_error: {=bool:?}, oscs_adapt_error: {=bool:?} }}" , self . disabled () , self . all_oscs_down () , self . reveal_clk_err () , self . entropy_err () , self . val_ready () , self . fifo_full () , self . src_health_done () , self . repet_error () , self . adapt_error () , self . oscs_health_done () , self . oscs_repet_error () , self . oscs_adapt_error ())
+            defmt::write!(
+                f,
+                "Sr {{ disabled: {=bool:?}, all_oscs_down: {:?}, reveal_clk_err: {:?}, entropy_err: {:?}, val_ready: {:?}, fifo_full: {:?}, src_health_done: {=bool:?}, repet_error: {=bool:?}, adapt_error: {=bool:?}, oscs_health_done: {=bool:?}, oscs_repet_error: {=bool:?}, oscs_adapt_error: {=bool:?} }}",
+                self.disabled(),
+                self.all_oscs_down(),
+                self.reveal_clk_err(),
+                self.entropy_err(),
+                self.val_ready(),
+                self.fifo_full(),
+                self.src_health_done(),
+                self.repet_error(),
+                self.adapt_error(),
+                self.oscs_health_done(),
+                self.oscs_repet_error(),
+                self.oscs_adapt_error()
+            )
         }
     }
     #[doc = "VAL register."]

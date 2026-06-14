@@ -358,7 +358,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ecccorr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ecccorr {{ addr_ecc: {=u16:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, otp_ecc: {=bool:?}, ecccie: {=bool:?}, eccc: {=bool:?} }}" , self . addr_ecc () , self . bk_ecc () , self . sysf_ecc () , self . otp_ecc () , self . ecccie () , self . eccc ())
+            defmt::write!(
+                f,
+                "Ecccorr {{ addr_ecc: {=u16:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, otp_ecc: {=bool:?}, ecccie: {=bool:?}, eccc: {=bool:?} }}",
+                self.addr_ecc(),
+                self.bk_ecc(),
+                self.sysf_ecc(),
+                self.otp_ecc(),
+                self.ecccie(),
+                self.eccc()
+            )
         }
     }
     #[doc = "FLASH ECC detection register"]
@@ -447,7 +456,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccdetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Eccdetr {{ addr_ecc: {=u16:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, otp_ecc: {=bool:?}, eccd: {=bool:?} }}" , self . addr_ecc () , self . bk_ecc () , self . sysf_ecc () , self . otp_ecc () , self . eccd ())
+            defmt::write!(
+                f,
+                "Eccdetr {{ addr_ecc: {=u16:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, otp_ecc: {=bool:?}, eccd: {=bool:?} }}",
+                self.addr_ecc(),
+                self.bk_ecc(),
+                self.sysf_ecc(),
+                self.otp_ecc(),
+                self.eccd()
+            )
         }
     }
     #[doc = "FLASH ECC data"]
@@ -804,7 +821,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nsccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Nsccr {{ clr_eop: {=bool:?}, clr_wrperr: {=bool:?}, clr_pgserr: {=bool:?}, clr_strberr: {=bool:?}, clr_incerr: {=bool:?}, clr_optchangeerr: {=bool:?} }}" , self . clr_eop () , self . clr_wrperr () , self . clr_pgserr () , self . clr_strberr () , self . clr_incerr () , self . clr_optchangeerr ())
+            defmt::write!(
+                f,
+                "Nsccr {{ clr_eop: {=bool:?}, clr_wrperr: {=bool:?}, clr_pgserr: {=bool:?}, clr_strberr: {=bool:?}, clr_incerr: {=bool:?}, clr_optchangeerr: {=bool:?} }}",
+                self.clr_eop(),
+                self.clr_wrperr(),
+                self.clr_pgserr(),
+                self.clr_strberr(),
+                self.clr_incerr(),
+                self.clr_optchangeerr()
+            )
         }
     }
     #[doc = "FLASH Non Secure control register"]
@@ -1023,7 +1049,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nscr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Nscr {{ lock: {=bool:?}, pg: {=bool:?}, ser: {=bool:?}, ber: {=bool:?}, fw: {=bool:?}, strt: {=bool:?}, snb: {=u8:?}, mer: {=bool:?}, eopie: {=bool:?}, wrperrie: {=bool:?}, pgserrie: {=bool:?}, strberrie: {=bool:?}, incerrie: {=bool:?}, optchangeerrie: {=bool:?}, bksel: {:?} }}" , self . lock () , self . pg () , self . ser () , self . ber () , self . fw () , self . strt () , self . snb () , self . mer () , self . eopie () , self . wrperrie () , self . pgserrie () , self . strberrie () , self . incerrie () , self . optchangeerrie () , self . bksel ())
+            defmt::write!(
+                f,
+                "Nscr {{ lock: {=bool:?}, pg: {=bool:?}, ser: {=bool:?}, ber: {=bool:?}, fw: {=bool:?}, strt: {=bool:?}, snb: {=u8:?}, mer: {=bool:?}, eopie: {=bool:?}, wrperrie: {=bool:?}, pgserrie: {=bool:?}, strberrie: {=bool:?}, incerrie: {=bool:?}, optchangeerrie: {=bool:?}, bksel: {:?} }}",
+                self.lock(),
+                self.pg(),
+                self.ser(),
+                self.ber(),
+                self.fw(),
+                self.strt(),
+                self.snb(),
+                self.mer(),
+                self.eopie(),
+                self.wrperrie(),
+                self.pgserrie(),
+                self.strberrie(),
+                self.incerrie(),
+                self.optchangeerrie(),
+                self.bksel()
+            )
         }
     }
     #[doc = "FLASH non-secure status register"]
@@ -1164,7 +1208,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Nssr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Nssr {{ bsy: {=bool:?}, wbne: {=bool:?}, dbne: {=bool:?}, eop: {=bool:?}, wrperr: {=bool:?}, pgserr: {=bool:?}, strberr: {=bool:?}, incerr: {=bool:?}, optchangeerr: {=bool:?} }}" , self . bsy () , self . wbne () , self . dbne () , self . eop () , self . wrperr () , self . pgserr () , self . strberr () , self . incerr () , self . optchangeerr ())
+            defmt::write!(
+                f,
+                "Nssr {{ bsy: {=bool:?}, wbne: {=bool:?}, dbne: {=bool:?}, eop: {=bool:?}, wrperr: {=bool:?}, pgserr: {=bool:?}, strberr: {=bool:?}, incerr: {=bool:?}, optchangeerr: {=bool:?} }}",
+                self.bsy(),
+                self.wbne(),
+                self.dbne(),
+                self.eop(),
+                self.wrperr(),
+                self.pgserr(),
+                self.strberr(),
+                self.incerr(),
+                self.optchangeerr()
+            )
         }
     }
     #[doc = "FLASH operation status register"]
@@ -1523,7 +1579,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Optsr {{ bor_lev: {:?}, borh_en: {=bool:?}, iwdg_sw: {:?}, wwdg_sw: {:?}, nrst_shdw: {:?}, nrst_stop: {:?}, nrst_stdby: {:?}, product_state: {:?}, io_vdd_hslv: {:?}, io_vddio2_hslv: {:?}, iwdg_stop: {:?}, iwdg_stdby: {:?}, swap_bank: {=bool:?} }}" , self . bor_lev () , self . borh_en () , self . iwdg_sw () , self . wwdg_sw () , self . nrst_shdw () , self . nrst_stop () , self . nrst_stdby () , self . product_state () , self . io_vdd_hslv () , self . io_vddio2_hslv () , self . iwdg_stop () , self . iwdg_stdby () , self . swap_bank ())
+            defmt::write!(
+                f,
+                "Optsr {{ bor_lev: {:?}, borh_en: {=bool:?}, iwdg_sw: {:?}, wwdg_sw: {:?}, nrst_shdw: {:?}, nrst_stop: {:?}, nrst_stdby: {:?}, product_state: {:?}, io_vdd_hslv: {:?}, io_vddio2_hslv: {:?}, iwdg_stop: {:?}, iwdg_stdby: {:?}, swap_bank: {=bool:?} }}",
+                self.bor_lev(),
+                self.borh_en(),
+                self.iwdg_sw(),
+                self.wwdg_sw(),
+                self.nrst_shdw(),
+                self.nrst_stop(),
+                self.nrst_stdby(),
+                self.product_state(),
+                self.io_vdd_hslv(),
+                self.io_vddio2_hslv(),
+                self.iwdg_stop(),
+                self.iwdg_stdby(),
+                self.swap_bank()
+            )
         }
     }
     #[doc = "FLASH option status register 2"]
@@ -1612,7 +1684,15 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optsr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Optsr2 {{ sram2_rst: {=bool:?}, bkpram_ecc: {:?}, sram2_ecc: {:?}, sram1_rst: {=bool:?}, sram1_ecc: {:?} }}" , self . sram2_rst () , self . bkpram_ecc () , self . sram2_ecc () , self . sram1_rst () , self . sram1_ecc ())
+            defmt::write!(
+                f,
+                "Optsr2 {{ sram2_rst: {=bool:?}, bkpram_ecc: {:?}, sram2_ecc: {:?}, sram1_rst: {=bool:?}, sram1_ecc: {:?} }}",
+                self.sram2_rst(),
+                self.bkpram_ecc(),
+                self.sram2_ecc(),
+                self.sram1_rst(),
+                self.sram1_ecc()
+            )
         }
     }
     #[doc = "FLASH non-secure OTP block lock"]
@@ -1849,7 +1929,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Secsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Secsr {{ secbsy: {=bool:?}, secwbne: {=bool:?}, secdbne: {=bool:?}, seceop: {=bool:?}, secwrperr: {=bool:?}, secpgserr: {=bool:?}, secstrberr: {=bool:?}, secincerr: {=bool:?} }}" , self . secbsy () , self . secwbne () , self . secdbne () , self . seceop () , self . secwrperr () , self . secpgserr () , self . secstrberr () , self . secincerr ())
+            defmt::write!(
+                f,
+                "Secsr {{ secbsy: {=bool:?}, secwbne: {=bool:?}, secdbne: {=bool:?}, seceop: {=bool:?}, secwrperr: {=bool:?}, secpgserr: {=bool:?}, secstrberr: {=bool:?}, secincerr: {=bool:?} }}",
+                self.secbsy(),
+                self.secwbne(),
+                self.secdbne(),
+                self.seceop(),
+                self.secwrperr(),
+                self.secpgserr(),
+                self.secstrberr(),
+                self.secincerr()
+            )
         }
     }
     #[doc = "FLASH write sector protection for Bank2"]

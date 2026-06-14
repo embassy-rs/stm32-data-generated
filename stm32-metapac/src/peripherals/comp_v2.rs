@@ -177,7 +177,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr {{ en: {=bool:?}, inmsel: {:?}, inpsel: {=bool:?}, polarity: {:?}, hyst: {:?}, blanksel: {:?}, brgen: {=bool:?}, scalen: {=bool:?}, value: {=bool:?}, lock: {=bool:?} }}" , self . en () , self . inmsel () , self . inpsel () , self . polarity () , self . hyst () , self . blanksel () , self . brgen () , self . scalen () , self . value () , self . lock ())
+            defmt::write!(
+                f,
+                "Csr {{ en: {=bool:?}, inmsel: {:?}, inpsel: {=bool:?}, polarity: {:?}, hyst: {:?}, blanksel: {:?}, brgen: {=bool:?}, scalen: {=bool:?}, value: {=bool:?}, lock: {=bool:?} }}",
+                self.en(),
+                self.inmsel(),
+                self.inpsel(),
+                self.polarity(),
+                self.hyst(),
+                self.blanksel(),
+                self.brgen(),
+                self.scalen(),
+                self.value(),
+                self.lock()
+            )
         }
     }
 }

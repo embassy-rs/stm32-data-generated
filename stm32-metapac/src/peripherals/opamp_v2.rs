@@ -255,7 +255,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Csr {{ opampen: {=bool:?}, force_vp: {=bool:?}, vp_sel: {:?}, vm_sel: {:?}, tcm_en: {=bool:?}, vms_sel: {:?}, vps_sel: {:?}, calon: {=bool:?}, calsel: {:?}, pga_gain: {:?}, usertrim: {=bool:?}, trimoffsetp: {=u8:?}, trimoffsetn: {=u8:?}, tstref: {=bool:?}, calout: {=bool:?}, lock: {=bool:?} }}" , self . opampen () , self . force_vp () , self . vp_sel () , self . vm_sel () , self . tcm_en () , self . vms_sel () , self . vps_sel () , self . calon () , self . calsel () , self . pga_gain () , self . usertrim () , self . trimoffsetp () , self . trimoffsetn () , self . tstref () , self . calout () , self . lock ())
+            defmt::write!(
+                f,
+                "Csr {{ opampen: {=bool:?}, force_vp: {=bool:?}, vp_sel: {:?}, vm_sel: {:?}, tcm_en: {=bool:?}, vms_sel: {:?}, vps_sel: {:?}, calon: {=bool:?}, calsel: {:?}, pga_gain: {:?}, usertrim: {=bool:?}, trimoffsetp: {=u8:?}, trimoffsetn: {=u8:?}, tstref: {=bool:?}, calout: {=bool:?}, lock: {=bool:?} }}",
+                self.opampen(),
+                self.force_vp(),
+                self.vp_sel(),
+                self.vm_sel(),
+                self.tcm_en(),
+                self.vms_sel(),
+                self.vps_sel(),
+                self.calon(),
+                self.calsel(),
+                self.pga_gain(),
+                self.usertrim(),
+                self.trimoffsetp(),
+                self.trimoffsetn(),
+                self.tstref(),
+                self.calout(),
+                self.lock()
+            )
         }
     }
 }

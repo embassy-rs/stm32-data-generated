@@ -323,7 +323,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Clkcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Clkcr {{ clkdiv: {=u16:?}, pwrsav: {=bool:?}, widbus: {=u8:?}, negedge: {=bool:?}, hwfc_en: {=bool:?}, ddr: {=bool:?}, busspeed: {=bool:?}, selclkrx: {=u8:?} }}" , self . clkdiv () , self . pwrsav () , self . widbus () , self . negedge () , self . hwfc_en () , self . ddr () , self . busspeed () , self . selclkrx ())
+            defmt::write!(
+                f,
+                "Clkcr {{ clkdiv: {=u16:?}, pwrsav: {=bool:?}, widbus: {=u8:?}, negedge: {=bool:?}, hwfc_en: {=bool:?}, ddr: {=bool:?}, busspeed: {=bool:?}, selclkrx: {=u8:?} }}",
+                self.clkdiv(),
+                self.pwrsav(),
+                self.widbus(),
+                self.negedge(),
+                self.hwfc_en(),
+                self.ddr(),
+                self.busspeed(),
+                self.selclkrx()
+            )
         }
     }
     #[doc = "SDMMC command register."]
@@ -490,7 +501,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cmdr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cmdr {{ cmdindex: {=u8:?}, cmdtrans: {=bool:?}, cmdstop: {=bool:?}, waitresp: {=u8:?}, waitint: {=bool:?}, waitpend: {=bool:?}, cpsmen: {=bool:?}, dthold: {=bool:?}, bootmode: {=bool:?}, booten: {=bool:?}, cmdsuspend: {=bool:?} }}" , self . cmdindex () , self . cmdtrans () , self . cmdstop () , self . waitresp () , self . waitint () , self . waitpend () , self . cpsmen () , self . dthold () , self . bootmode () , self . booten () , self . cmdsuspend ())
+            defmt::write!(
+                f,
+                "Cmdr {{ cmdindex: {=u8:?}, cmdtrans: {=bool:?}, cmdstop: {=bool:?}, waitresp: {=u8:?}, waitint: {=bool:?}, waitpend: {=bool:?}, cpsmen: {=bool:?}, dthold: {=bool:?}, bootmode: {=bool:?}, booten: {=bool:?}, cmdsuspend: {=bool:?} }}",
+                self.cmdindex(),
+                self.cmdtrans(),
+                self.cmdstop(),
+                self.waitresp(),
+                self.waitint(),
+                self.waitpend(),
+                self.cpsmen(),
+                self.dthold(),
+                self.bootmode(),
+                self.booten(),
+                self.cmdsuspend()
+            )
         }
     }
     #[doc = "SDMMC data counter register."]
@@ -679,7 +704,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Dctrl {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Dctrl {{ dten: {=bool:?}, dtdir: {=bool:?}, dtmode: {=u8:?}, dblocksize: {=u8:?}, rwstart: {=bool:?}, rwstop: {=bool:?}, rwmod: {=bool:?}, sdioen: {=bool:?}, bootacken: {=bool:?}, fiforst: {=bool:?} }}" , self . dten () , self . dtdir () , self . dtmode () , self . dblocksize () , self . rwstart () , self . rwstop () , self . rwmod () , self . sdioen () , self . bootacken () , self . fiforst ())
+            defmt::write!(
+                f,
+                "Dctrl {{ dten: {=bool:?}, dtdir: {=bool:?}, dtmode: {=u8:?}, dblocksize: {=u8:?}, rwstart: {=bool:?}, rwstop: {=bool:?}, rwmod: {=bool:?}, sdioen: {=bool:?}, bootacken: {=bool:?}, fiforst: {=bool:?} }}",
+                self.dten(),
+                self.dtdir(),
+                self.dtmode(),
+                self.dblocksize(),
+                self.rwstart(),
+                self.rwstop(),
+                self.rwmod(),
+                self.sdioen(),
+                self.bootacken(),
+                self.fiforst()
+            )
         }
     }
     #[doc = "SDMMC data length register."]
@@ -1103,7 +1141,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Icr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Icr {{ ccrcfailc: {=bool:?}, dcrcfailc: {=bool:?}, ctimeoutc: {=bool:?}, dtimeoutc: {=bool:?}, txunderrc: {=bool:?}, rxoverrc: {=bool:?}, cmdrendc: {=bool:?}, cmdsentc: {=bool:?}, dataendc: {=bool:?}, dholdc: {=bool:?}, dbckendc: {=bool:?}, dabortc: {=bool:?}, busyd0endc: {=bool:?}, sdioitc: {=bool:?}, ackfailc: {=bool:?}, acktimeoutc: {=bool:?}, vswendc: {=bool:?}, ckstopc: {=bool:?}, idmatec: {=bool:?}, idmabtcc: {=bool:?} }}" , self . ccrcfailc () , self . dcrcfailc () , self . ctimeoutc () , self . dtimeoutc () , self . txunderrc () , self . rxoverrc () , self . cmdrendc () , self . cmdsentc () , self . dataendc () , self . dholdc () , self . dbckendc () , self . dabortc () , self . busyd0endc () , self . sdioitc () , self . ackfailc () , self . acktimeoutc () , self . vswendc () , self . ckstopc () , self . idmatec () , self . idmabtcc ())
+            defmt::write!(
+                f,
+                "Icr {{ ccrcfailc: {=bool:?}, dcrcfailc: {=bool:?}, ctimeoutc: {=bool:?}, dtimeoutc: {=bool:?}, txunderrc: {=bool:?}, rxoverrc: {=bool:?}, cmdrendc: {=bool:?}, cmdsentc: {=bool:?}, dataendc: {=bool:?}, dholdc: {=bool:?}, dbckendc: {=bool:?}, dabortc: {=bool:?}, busyd0endc: {=bool:?}, sdioitc: {=bool:?}, ackfailc: {=bool:?}, acktimeoutc: {=bool:?}, vswendc: {=bool:?}, ckstopc: {=bool:?}, idmatec: {=bool:?}, idmabtcc: {=bool:?} }}",
+                self.ccrcfailc(),
+                self.dcrcfailc(),
+                self.ctimeoutc(),
+                self.dtimeoutc(),
+                self.txunderrc(),
+                self.rxoverrc(),
+                self.cmdrendc(),
+                self.cmdsentc(),
+                self.dataendc(),
+                self.dholdc(),
+                self.dbckendc(),
+                self.dabortc(),
+                self.busyd0endc(),
+                self.sdioitc(),
+                self.ackfailc(),
+                self.acktimeoutc(),
+                self.vswendc(),
+                self.ckstopc(),
+                self.idmatec(),
+                self.idmabtcc()
+            )
         }
     }
     #[doc = "SDMMC IDMA linked list memory base register."]
@@ -1673,7 +1734,33 @@ are always 0 and read only)."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Maskr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Maskr {{ ccrcfailie: {=bool:?}, dcrcfailie: {=bool:?}, ctimeoutie: {=bool:?}, dtimeoutie: {=bool:?}, txunderrie: {=bool:?}, rxoverrie: {=bool:?}, cmdrendie: {=bool:?}, cmdsentie: {=bool:?}, dataendie: {=bool:?}, dholdie: {=bool:?}, dbckendie: {=bool:?}, dabortie: {=bool:?}, txfifoheie: {=bool:?}, rxfifohfie: {=bool:?}, rxfifofie: {=bool:?}, txfifoeie: {=bool:?}, busyd0endie: {=bool:?}, sdioitie: {=bool:?}, ackfailie: {=bool:?}, acktimeoutie: {=bool:?}, vswendie: {=bool:?}, ckstopie: {=bool:?}, idmabtcie: {=bool:?} }}" , self . ccrcfailie () , self . dcrcfailie () , self . ctimeoutie () , self . dtimeoutie () , self . txunderrie () , self . rxoverrie () , self . cmdrendie () , self . cmdsentie () , self . dataendie () , self . dholdie () , self . dbckendie () , self . dabortie () , self . txfifoheie () , self . rxfifohfie () , self . rxfifofie () , self . txfifoeie () , self . busyd0endie () , self . sdioitie () , self . ackfailie () , self . acktimeoutie () , self . vswendie () , self . ckstopie () , self . idmabtcie ())
+            defmt::write!(
+                f,
+                "Maskr {{ ccrcfailie: {=bool:?}, dcrcfailie: {=bool:?}, ctimeoutie: {=bool:?}, dtimeoutie: {=bool:?}, txunderrie: {=bool:?}, rxoverrie: {=bool:?}, cmdrendie: {=bool:?}, cmdsentie: {=bool:?}, dataendie: {=bool:?}, dholdie: {=bool:?}, dbckendie: {=bool:?}, dabortie: {=bool:?}, txfifoheie: {=bool:?}, rxfifohfie: {=bool:?}, rxfifofie: {=bool:?}, txfifoeie: {=bool:?}, busyd0endie: {=bool:?}, sdioitie: {=bool:?}, ackfailie: {=bool:?}, acktimeoutie: {=bool:?}, vswendie: {=bool:?}, ckstopie: {=bool:?}, idmabtcie: {=bool:?} }}",
+                self.ccrcfailie(),
+                self.dcrcfailie(),
+                self.ctimeoutie(),
+                self.dtimeoutie(),
+                self.txunderrie(),
+                self.rxoverrie(),
+                self.cmdrendie(),
+                self.cmdsentie(),
+                self.dataendie(),
+                self.dholdie(),
+                self.dbckendie(),
+                self.dabortie(),
+                self.txfifoheie(),
+                self.rxfifohfie(),
+                self.rxfifofie(),
+                self.txfifoeie(),
+                self.busyd0endie(),
+                self.sdioitie(),
+                self.ackfailie(),
+                self.acktimeoutie(),
+                self.vswendie(),
+                self.ckstopie(),
+                self.idmabtcie()
+            )
         }
     }
     #[doc = "SDMMC power control register."]
@@ -2229,7 +2316,39 @@ are always 0 and read only)."]
     #[cfg(feature = "defmt")]
     impl defmt::Format for Star {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Star {{ ccrcfail: {=bool:?}, dcrcfail: {=bool:?}, ctimeout: {=bool:?}, dtimeout: {=bool:?}, txunderr: {=bool:?}, rxoverr: {=bool:?}, cmdrend: {=bool:?}, cmdsent: {=bool:?}, dataend: {=bool:?}, dhold: {=bool:?}, dbckend: {=bool:?}, dabort: {=bool:?}, dpsmact: {=bool:?}, cpsmact: {=bool:?}, txfifohe: {=bool:?}, rxfifohf: {=bool:?}, txfifof: {=bool:?}, rxfifof: {=bool:?}, txfifoe: {=bool:?}, rxfifoe: {=bool:?}, busyd0: {=bool:?}, busyd0end: {=bool:?}, sdioit: {=bool:?}, ackfail: {=bool:?}, acktimeout: {=bool:?}, vswend: {=bool:?}, ckstop: {=bool:?}, idmate: {=bool:?}, idmabtc: {=bool:?} }}" , self . ccrcfail () , self . dcrcfail () , self . ctimeout () , self . dtimeout () , self . txunderr () , self . rxoverr () , self . cmdrend () , self . cmdsent () , self . dataend () , self . dhold () , self . dbckend () , self . dabort () , self . dpsmact () , self . cpsmact () , self . txfifohe () , self . rxfifohf () , self . txfifof () , self . rxfifof () , self . txfifoe () , self . rxfifoe () , self . busyd0 () , self . busyd0end () , self . sdioit () , self . ackfail () , self . acktimeout () , self . vswend () , self . ckstop () , self . idmate () , self . idmabtc ())
+            defmt::write!(
+                f,
+                "Star {{ ccrcfail: {=bool:?}, dcrcfail: {=bool:?}, ctimeout: {=bool:?}, dtimeout: {=bool:?}, txunderr: {=bool:?}, rxoverr: {=bool:?}, cmdrend: {=bool:?}, cmdsent: {=bool:?}, dataend: {=bool:?}, dhold: {=bool:?}, dbckend: {=bool:?}, dabort: {=bool:?}, dpsmact: {=bool:?}, cpsmact: {=bool:?}, txfifohe: {=bool:?}, rxfifohf: {=bool:?}, txfifof: {=bool:?}, rxfifof: {=bool:?}, txfifoe: {=bool:?}, rxfifoe: {=bool:?}, busyd0: {=bool:?}, busyd0end: {=bool:?}, sdioit: {=bool:?}, ackfail: {=bool:?}, acktimeout: {=bool:?}, vswend: {=bool:?}, ckstop: {=bool:?}, idmate: {=bool:?}, idmabtc: {=bool:?} }}",
+                self.ccrcfail(),
+                self.dcrcfail(),
+                self.ctimeout(),
+                self.dtimeout(),
+                self.txunderr(),
+                self.rxoverr(),
+                self.cmdrend(),
+                self.cmdsent(),
+                self.dataend(),
+                self.dhold(),
+                self.dbckend(),
+                self.dabort(),
+                self.dpsmact(),
+                self.cpsmact(),
+                self.txfifohe(),
+                self.rxfifohf(),
+                self.txfifof(),
+                self.rxfifof(),
+                self.txfifoe(),
+                self.rxfifoe(),
+                self.busyd0(),
+                self.busyd0end(),
+                self.sdioit(),
+                self.ackfail(),
+                self.acktimeout(),
+                self.vswend(),
+                self.ckstop(),
+                self.idmate(),
+                self.idmabtc()
+            )
         }
     }
 }

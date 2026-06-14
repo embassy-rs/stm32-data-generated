@@ -322,7 +322,25 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Bcr {{ mbken: {=bool:?}, muxen: {=bool:?}, mtyp: {:?}, mwid: {:?}, faccen: {=bool:?}, bursten: {=bool:?}, waitpol: {:?}, wrapmod: {=bool:?}, waitcfg: {:?}, wren: {=bool:?}, waiten: {=bool:?}, extmod: {=bool:?}, asyncwait: {=bool:?}, cpsize: {:?}, cburstrw: {=bool:?} }}" , self . mbken () , self . muxen () , self . mtyp () , self . mwid () , self . faccen () , self . bursten () , self . waitpol () , self . wrapmod () , self . waitcfg () , self . wren () , self . waiten () , self . extmod () , self . asyncwait () , self . cpsize () , self . cburstrw ())
+            defmt::write!(
+                f,
+                "Bcr {{ mbken: {=bool:?}, muxen: {=bool:?}, mtyp: {:?}, mwid: {:?}, faccen: {=bool:?}, bursten: {=bool:?}, waitpol: {:?}, wrapmod: {=bool:?}, waitcfg: {:?}, wren: {=bool:?}, waiten: {=bool:?}, extmod: {=bool:?}, asyncwait: {=bool:?}, cpsize: {:?}, cburstrw: {=bool:?} }}",
+                self.mbken(),
+                self.muxen(),
+                self.mtyp(),
+                self.mwid(),
+                self.faccen(),
+                self.bursten(),
+                self.waitpol(),
+                self.wrapmod(),
+                self.waitcfg(),
+                self.wren(),
+                self.waiten(),
+                self.extmod(),
+                self.asyncwait(),
+                self.cpsize(),
+                self.cburstrw()
+            )
         }
     }
     #[doc = "SRAM/NOR-Flash chip-select control register 1"]
@@ -554,7 +572,26 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bcr1 {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Bcr1 {{ mbken: {=bool:?}, muxen: {=bool:?}, mtyp: {:?}, mwid: {:?}, faccen: {=bool:?}, bursten: {=bool:?}, waitpol: {:?}, wrapmod: {=bool:?}, waitcfg: {:?}, wren: {=bool:?}, waiten: {=bool:?}, extmod: {=bool:?}, asyncwait: {=bool:?}, cpsize: {:?}, cburstrw: {=bool:?}, cclken: {=bool:?} }}" , self . mbken () , self . muxen () , self . mtyp () , self . mwid () , self . faccen () , self . bursten () , self . waitpol () , self . wrapmod () , self . waitcfg () , self . wren () , self . waiten () , self . extmod () , self . asyncwait () , self . cpsize () , self . cburstrw () , self . cclken ())
+            defmt::write!(
+                f,
+                "Bcr1 {{ mbken: {=bool:?}, muxen: {=bool:?}, mtyp: {:?}, mwid: {:?}, faccen: {=bool:?}, bursten: {=bool:?}, waitpol: {:?}, wrapmod: {=bool:?}, waitcfg: {:?}, wren: {=bool:?}, waiten: {=bool:?}, extmod: {=bool:?}, asyncwait: {=bool:?}, cpsize: {:?}, cburstrw: {=bool:?}, cclken: {=bool:?} }}",
+                self.mbken(),
+                self.muxen(),
+                self.mtyp(),
+                self.mwid(),
+                self.faccen(),
+                self.bursten(),
+                self.waitpol(),
+                self.wrapmod(),
+                self.waitcfg(),
+                self.wren(),
+                self.waiten(),
+                self.extmod(),
+                self.asyncwait(),
+                self.cpsize(),
+                self.cburstrw(),
+                self.cclken()
+            )
         }
     }
     #[doc = "SRAM/NOR-Flash chip-select timing register"]
@@ -669,7 +706,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Btr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Btr {{ addset: {=u8:?}, addhld: {=u8:?}, datast: {=u8:?}, busturn: {=u8:?}, clkdiv: {=u8:?}, datlat: {=u8:?}, accmod: {:?} }}" , self . addset () , self . addhld () , self . datast () , self . busturn () , self . clkdiv () , self . datlat () , self . accmod ())
+            defmt::write!(
+                f,
+                "Btr {{ addset: {=u8:?}, addhld: {=u8:?}, datast: {=u8:?}, busturn: {=u8:?}, clkdiv: {=u8:?}, datlat: {=u8:?}, accmod: {:?} }}",
+                self.addset(),
+                self.addhld(),
+                self.datast(),
+                self.busturn(),
+                self.clkdiv(),
+                self.datlat(),
+                self.accmod()
+            )
         }
     }
     #[doc = "SRAM/NOR-Flash write timing registers"]
@@ -1012,7 +1059,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Pcr {{ pwaiten: {=bool:?}, pbken: {=bool:?}, ptyp: {:?}, pwid: {:?}, eccen: {=bool:?}, tclr: {=u8:?}, tar: {=u8:?}, eccps: {:?} }}" , self . pwaiten () , self . pbken () , self . ptyp () , self . pwid () , self . eccen () , self . tclr () , self . tar () , self . eccps ())
+            defmt::write!(
+                f,
+                "Pcr {{ pwaiten: {=bool:?}, pbken: {=bool:?}, ptyp: {:?}, pwid: {:?}, eccen: {=bool:?}, tclr: {=u8:?}, tar: {=u8:?}, eccps: {:?} }}",
+                self.pwaiten(),
+                self.pbken(),
+                self.ptyp(),
+                self.pwid(),
+                self.eccen(),
+                self.tclr(),
+                self.tar(),
+                self.eccps()
+            )
         }
     }
     #[doc = "I/O space timing register 4"]
@@ -1416,7 +1474,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sdcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sdcr {{ nc: {:?}, nr: {:?}, mwid: {:?}, nb: {:?}, cas: {:?}, wp: {=bool:?}, sdclk: {:?}, rburst: {=bool:?}, rpipe: {:?} }}" , self . nc () , self . nr () , self . mwid () , self . nb () , self . cas () , self . wp () , self . sdclk () , self . rburst () , self . rpipe ())
+            defmt::write!(
+                f,
+                "Sdcr {{ nc: {:?}, nr: {:?}, mwid: {:?}, nb: {:?}, cas: {:?}, wp: {=bool:?}, sdclk: {:?}, rburst: {=bool:?}, rpipe: {:?} }}",
+                self.nc(),
+                self.nr(),
+                self.mwid(),
+                self.nb(),
+                self.cas(),
+                self.wp(),
+                self.sdclk(),
+                self.rburst(),
+                self.rpipe()
+            )
         }
     }
     #[doc = "SDRAM Refresh Timer register"]
@@ -1683,7 +1753,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sdtr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sdtr {{ tmrd: {=u8:?}, txsr: {=u8:?}, tras: {=u8:?}, trc: {=u8:?}, twr: {=u8:?}, trp: {=u8:?}, trcd: {=u8:?} }}" , self . tmrd () , self . txsr () , self . tras () , self . trc () , self . twr () , self . trp () , self . trcd ())
+            defmt::write!(
+                f,
+                "Sdtr {{ tmrd: {=u8:?}, txsr: {=u8:?}, tras: {=u8:?}, trc: {=u8:?}, twr: {=u8:?}, trp: {=u8:?}, trcd: {=u8:?} }}",
+                self.tmrd(),
+                self.txsr(),
+                self.tras(),
+                self.trc(),
+                self.twr(),
+                self.trp(),
+                self.trcd()
+            )
         }
     }
     #[doc = "FIFO status and interrupt register"]
@@ -1798,7 +1878,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ irs: {=bool:?}, ils: {=bool:?}, ifs: {=bool:?}, iren: {=bool:?}, ilen: {=bool:?}, ifen: {=bool:?}, fempt: {=bool:?} }}" , self . irs () , self . ils () , self . ifs () , self . iren () , self . ilen () , self . ifen () , self . fempt ())
+            defmt::write!(
+                f,
+                "Sr {{ irs: {=bool:?}, ils: {=bool:?}, ifs: {=bool:?}, iren: {=bool:?}, ilen: {=bool:?}, ifen: {=bool:?}, fempt: {=bool:?} }}",
+                self.irs(),
+                self.ils(),
+                self.ifs(),
+                self.iren(),
+                self.ilen(),
+                self.ifen(),
+                self.fempt()
+            )
         }
     }
 }

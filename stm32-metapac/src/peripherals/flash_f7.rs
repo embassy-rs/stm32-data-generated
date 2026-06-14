@@ -295,7 +295,20 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ pg: {=bool:?}, ser: {=bool:?}, mer: {=bool:?}, snb: {=u8:?}, psize: {:?}, strt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, rderrie: {=bool:?}, lock: {=bool:?} }}" , self . pg () , self . ser () , self . mer () , self . snb () , self . psize () , self . strt () , self . eopie () , self . errie () , self . rderrie () , self . lock ())
+            defmt::write!(
+                f,
+                "Cr {{ pg: {=bool:?}, ser: {=bool:?}, mer: {=bool:?}, snb: {=u8:?}, psize: {:?}, strt: {=bool:?}, eopie: {=bool:?}, errie: {=bool:?}, rderrie: {=bool:?}, lock: {=bool:?} }}",
+                self.pg(),
+                self.ser(),
+                self.mer(),
+                self.snb(),
+                self.psize(),
+                self.strt(),
+                self.eopie(),
+                self.errie(),
+                self.rderrie(),
+                self.lock()
+            )
         }
     }
     #[doc = "Flash option control register"]
@@ -488,7 +501,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Optcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Optcr {{ optlock: {=bool:?}, optstrt: {=bool:?}, bor_lev: {=u8:?}, wwdg_sw: {=bool:?}, iwdg_sw: {=bool:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, rdp: {=u8:?}, n_wrp: {=u8:?}, n_dboot: {=bool:?}, n_dbank: {=bool:?}, iwdg_stdby: {=bool:?}, iwdg_stop: {=bool:?} }}" , self . optlock () , self . optstrt () , self . bor_lev () , self . wwdg_sw () , self . iwdg_sw () , self . n_rst_stop () , self . n_rst_stdby () , self . rdp () , self . n_wrp () , self . n_dboot () , self . n_dbank () , self . iwdg_stdby () , self . iwdg_stop ())
+            defmt::write!(
+                f,
+                "Optcr {{ optlock: {=bool:?}, optstrt: {=bool:?}, bor_lev: {=u8:?}, wwdg_sw: {=bool:?}, iwdg_sw: {=bool:?}, n_rst_stop: {=bool:?}, n_rst_stdby: {=bool:?}, rdp: {=u8:?}, n_wrp: {=u8:?}, n_dboot: {=bool:?}, n_dbank: {=bool:?}, iwdg_stdby: {=bool:?}, iwdg_stop: {=bool:?} }}",
+                self.optlock(),
+                self.optstrt(),
+                self.bor_lev(),
+                self.wwdg_sw(),
+                self.iwdg_sw(),
+                self.n_rst_stop(),
+                self.n_rst_stdby(),
+                self.rdp(),
+                self.n_wrp(),
+                self.n_dboot(),
+                self.n_dbank(),
+                self.iwdg_stdby(),
+                self.iwdg_stop()
+            )
         }
     }
     #[doc = "Flash option control register 1"]
@@ -726,7 +755,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ eop: {=bool:?}, operr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, pgperr: {=bool:?}, erserr: {=bool:?}, rderr: {=bool:?}, bsy: {=bool:?} }}" , self . eop () , self . operr () , self . wrperr () , self . pgaerr () , self . pgperr () , self . erserr () , self . rderr () , self . bsy ())
+            defmt::write!(
+                f,
+                "Sr {{ eop: {=bool:?}, operr: {=bool:?}, wrperr: {=bool:?}, pgaerr: {=bool:?}, pgperr: {=bool:?}, erserr: {=bool:?}, rderr: {=bool:?}, bsy: {=bool:?} }}",
+                self.eop(),
+                self.operr(),
+                self.wrperr(),
+                self.pgaerr(),
+                self.pgperr(),
+                self.erserr(),
+                self.rderr(),
+                self.bsy()
+            )
         }
     }
 }

@@ -602,7 +602,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ccr {{ clr_eop: {=bool:?}, clr_wrperr: {=bool:?}, clr_pgserr: {=bool:?}, clr_strberr: {=bool:?}, clr_incerr: {=bool:?}, clr_optchangeerr: {=bool:?} }}" , self . clr_eop () , self . clr_wrperr () , self . clr_pgserr () , self . clr_strberr () , self . clr_incerr () , self . clr_optchangeerr ())
+            defmt::write!(
+                f,
+                "Ccr {{ clr_eop: {=bool:?}, clr_wrperr: {=bool:?}, clr_pgserr: {=bool:?}, clr_strberr: {=bool:?}, clr_incerr: {=bool:?}, clr_optchangeerr: {=bool:?} }}",
+                self.clr_eop(),
+                self.clr_wrperr(),
+                self.clr_pgserr(),
+                self.clr_strberr(),
+                self.clr_incerr(),
+                self.clr_optchangeerr()
+            )
         }
     }
     #[doc = "FLASH control register."]
@@ -860,7 +869,28 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ lock: {:?}, pg: {:?}, per: {:?}, ser: {:?}, ber: {:?}, fw: {=bool:?}, strt: {=bool:?}, pnb: {:?}, snb: {:?}, mer: {:?}, eopie: {:?}, wrperrie: {:?}, pgserrie: {:?}, strberrie: {:?}, incerrie: {:?}, optchangeerrie: {:?}, edatasel: {:?}, bksel: {:?} }}" , self . lock () , self . pg () , self . per () , self . ser () , self . ber () , self . fw () , self . strt () , self . pnb () , self . snb () , self . mer () , self . eopie () , self . wrperrie () , self . pgserrie () , self . strberrie () , self . incerrie () , self . optchangeerrie () , self . edatasel () , self . bksel ())
+            defmt::write!(
+                f,
+                "Cr {{ lock: {:?}, pg: {:?}, per: {:?}, ser: {:?}, ber: {:?}, fw: {=bool:?}, strt: {=bool:?}, pnb: {:?}, snb: {:?}, mer: {:?}, eopie: {:?}, wrperrie: {:?}, pgserrie: {:?}, strberrie: {:?}, incerrie: {:?}, optchangeerrie: {:?}, edatasel: {:?}, bksel: {:?} }}",
+                self.lock(),
+                self.pg(),
+                self.per(),
+                self.ser(),
+                self.ber(),
+                self.fw(),
+                self.strt(),
+                self.pnb(),
+                self.snb(),
+                self.mer(),
+                self.eopie(),
+                self.wrperrie(),
+                self.pgserrie(),
+                self.strberrie(),
+                self.incerrie(),
+                self.optchangeerrie(),
+                self.edatasel(),
+                self.bksel()
+            )
         }
     }
     #[doc = "FLASH ECC correction register."]
@@ -988,7 +1018,18 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ecccorr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ecccorr {{ addr_ecc: {=u16:?}, data_ecc: {=bool:?}, edata_ecc: {=bool:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, otp_ecc: {=bool:?}, ecccie: {:?}, eccc: {=bool:?} }}" , self . addr_ecc () , self . data_ecc () , self . edata_ecc () , self . bk_ecc () , self . sysf_ecc () , self . otp_ecc () , self . ecccie () , self . eccc ())
+            defmt::write!(
+                f,
+                "Ecccorr {{ addr_ecc: {=u16:?}, data_ecc: {=bool:?}, edata_ecc: {=bool:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, otp_ecc: {=bool:?}, ecccie: {:?}, eccc: {=bool:?} }}",
+                self.addr_ecc(),
+                self.data_ecc(),
+                self.edata_ecc(),
+                self.bk_ecc(),
+                self.sysf_ecc(),
+                self.otp_ecc(),
+                self.ecccie(),
+                self.eccc()
+            )
         }
     }
     #[doc = "FLASH ECC detection register."]
@@ -1103,7 +1144,17 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccdetr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Eccdetr {{ addr_ecc: {=u16:?}, data_ecc: {=bool:?}, edata_ecc: {=bool:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, otp_ecc: {=bool:?}, eccd: {=bool:?} }}" , self . addr_ecc () , self . data_ecc () , self . edata_ecc () , self . bk_ecc () , self . sysf_ecc () , self . otp_ecc () , self . eccd ())
+            defmt::write!(
+                f,
+                "Eccdetr {{ addr_ecc: {=u16:?}, data_ecc: {=bool:?}, edata_ecc: {=bool:?}, bk_ecc: {=bool:?}, sysf_ecc: {=bool:?}, otp_ecc: {=bool:?}, eccd: {=bool:?} }}",
+                self.addr_ecc(),
+                self.data_ecc(),
+                self.edata_ecc(),
+                self.bk_ecc(),
+                self.sysf_ecc(),
+                self.otp_ecc(),
+                self.eccd()
+            )
         }
     }
     #[doc = "FLASH ECC data."]
@@ -1710,7 +1761,16 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Opsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Opsr {{ addr_op: {=u16:?}, data_op: {=bool:?}, bk_op: {=bool:?}, sysf_op: {=bool:?}, otp_op: {=bool:?}, code_op: {:?} }}" , self . addr_op () , self . data_op () , self . bk_op () , self . sysf_op () , self . otp_op () , self . code_op ())
+            defmt::write!(
+                f,
+                "Opsr {{ addr_op: {=u16:?}, data_op: {=bool:?}, bk_op: {=bool:?}, sysf_op: {=bool:?}, otp_op: {=bool:?}, code_op: {:?} }}",
+                self.addr_op(),
+                self.data_op(),
+                self.bk_op(),
+                self.sysf_op(),
+                self.otp_op(),
+                self.code_op()
+            )
         }
     }
     #[doc = "FLASH option control register."]
@@ -2145,7 +2205,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for OptsrCur {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "OptsrCur {{ iwdg_sw: {:?}, wwdg_sw: {:?}, nrst_stop: {:?}, nrst_stdby: {:?}, rdp_level: {=u8:?}, iwdg_stop: {:?}, iwdg_stdby: {:?}, boot_sel: {:?}, boot0: {:?}, edata_en: {:?}, dual_bank: {:?}, single_bank: {:?}, swap_bank: {:?} }}" , self . iwdg_sw () , self . wwdg_sw () , self . nrst_stop () , self . nrst_stdby () , self . rdp_level () , self . iwdg_stop () , self . iwdg_stdby () , self . boot_sel () , self . boot0 () , self . edata_en () , self . dual_bank () , self . single_bank () , self . swap_bank ())
+            defmt::write!(
+                f,
+                "OptsrCur {{ iwdg_sw: {:?}, wwdg_sw: {:?}, nrst_stop: {:?}, nrst_stdby: {:?}, rdp_level: {=u8:?}, iwdg_stop: {:?}, iwdg_stdby: {:?}, boot_sel: {:?}, boot0: {:?}, edata_en: {:?}, dual_bank: {:?}, single_bank: {:?}, swap_bank: {:?} }}",
+                self.iwdg_sw(),
+                self.wwdg_sw(),
+                self.nrst_stop(),
+                self.nrst_stdby(),
+                self.rdp_level(),
+                self.iwdg_stop(),
+                self.iwdg_stdby(),
+                self.boot_sel(),
+                self.boot0(),
+                self.edata_en(),
+                self.dual_bank(),
+                self.single_bank(),
+                self.swap_bank()
+            )
         }
     }
     #[doc = "FLASH option status register."]
@@ -2338,7 +2414,23 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for OptsrPrg {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "OptsrPrg {{ iwdg_sw: {:?}, wwdg_sw: {:?}, nrst_stop: {:?}, nrst_stdby: {:?}, rdp_level: {=u8:?}, iwdg_stop: {:?}, iwdg_stdby: {:?}, boot_sel: {:?}, boot0: {:?}, edata_en: {:?}, dual_bank: {:?}, single_bank: {:?}, swap_bank: {:?} }}" , self . iwdg_sw () , self . wwdg_sw () , self . nrst_stop () , self . nrst_stdby () , self . rdp_level () , self . iwdg_stop () , self . iwdg_stdby () , self . boot_sel () , self . boot0 () , self . edata_en () , self . dual_bank () , self . single_bank () , self . swap_bank ())
+            defmt::write!(
+                f,
+                "OptsrPrg {{ iwdg_sw: {:?}, wwdg_sw: {:?}, nrst_stop: {:?}, nrst_stdby: {:?}, rdp_level: {=u8:?}, iwdg_stop: {:?}, iwdg_stdby: {:?}, boot_sel: {:?}, boot0: {:?}, edata_en: {:?}, dual_bank: {:?}, single_bank: {:?}, swap_bank: {:?} }}",
+                self.iwdg_sw(),
+                self.wwdg_sw(),
+                self.nrst_stop(),
+                self.nrst_stdby(),
+                self.rdp_level(),
+                self.iwdg_stop(),
+                self.iwdg_stdby(),
+                self.boot_sel(),
+                self.boot0(),
+                self.edata_en(),
+                self.dual_bank(),
+                self.single_bank(),
+                self.swap_bank()
+            )
         }
     }
     #[doc = "FLASH OTP block lock."]
@@ -2610,7 +2702,21 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Sr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Sr {{ bsy: {:?}, wbne: {:?}, dbne: {:?}, oemlock: {=bool:?}, bslock: {=bool:?}, eop: {:?}, wrperr: {:?}, pgserr: {:?}, strberr: {:?}, incerr: {:?}, optchangeerr: {:?} }}" , self . bsy () , self . wbne () , self . dbne () , self . oemlock () , self . bslock () , self . eop () , self . wrperr () , self . pgserr () , self . strberr () , self . incerr () , self . optchangeerr ())
+            defmt::write!(
+                f,
+                "Sr {{ bsy: {:?}, wbne: {:?}, dbne: {:?}, oemlock: {=bool:?}, bslock: {=bool:?}, eop: {:?}, wrperr: {:?}, pgserr: {:?}, strberr: {:?}, incerr: {:?}, optchangeerr: {:?} }}",
+                self.bsy(),
+                self.wbne(),
+                self.dbne(),
+                self.oemlock(),
+                self.bslock(),
+                self.eop(),
+                self.wrperr(),
+                self.pgserr(),
+                self.strberr(),
+                self.incerr(),
+                self.optchangeerr()
+            )
         }
     }
     #[doc = "FLASH write page protection for bank1."]

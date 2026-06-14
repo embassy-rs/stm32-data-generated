@@ -199,7 +199,19 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ rien: {=bool:?}, wien: {=bool:?}, ovflien: {=bool:?}, unflien: {=bool:?}, satien: {=bool:?}, dmaren: {=bool:?}, dmawen: {=bool:?}, clipen: {=bool:?}, reset: {=bool:?} }}" , self . rien () , self . wien () , self . ovflien () , self . unflien () , self . satien () , self . dmaren () , self . dmawen () , self . clipen () , self . reset ())
+            defmt::write!(
+                f,
+                "Cr {{ rien: {=bool:?}, wien: {=bool:?}, ovflien: {=bool:?}, unflien: {=bool:?}, satien: {=bool:?}, dmaren: {=bool:?}, dmawen: {=bool:?}, clipen: {=bool:?}, reset: {=bool:?} }}",
+                self.rien(),
+                self.wien(),
+                self.ovflien(),
+                self.unflien(),
+                self.satien(),
+                self.dmaren(),
+                self.dmawen(),
+                self.clipen(),
+                self.reset()
+            )
         }
     }
     #[doc = "Parameter register"]

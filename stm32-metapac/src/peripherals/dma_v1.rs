@@ -354,7 +354,29 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cr {{ en: {=bool:?}, dmeie: {=bool:?}, teie: {=bool:?}, htie: {=bool:?}, tcie: {=bool:?}, pfctrl: {:?}, dir: {:?}, circ: {=bool:?}, pinc: {=bool:?}, minc: {=bool:?}, psize: {:?}, msize: {:?}, pincos: {:?}, pl: {:?}, dbm: {=bool:?}, ct: {:?}, trbuff: {=bool:?}, pburst: {:?}, mburst: {:?} }}" , self . en () , self . dmeie () , self . teie () , self . htie () , self . tcie () , self . pfctrl () , self . dir () , self . circ () , self . pinc () , self . minc () , self . psize () , self . msize () , self . pincos () , self . pl () , self . dbm () , self . ct () , self . trbuff () , self . pburst () , self . mburst ())
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, dmeie: {=bool:?}, teie: {=bool:?}, htie: {=bool:?}, tcie: {=bool:?}, pfctrl: {:?}, dir: {:?}, circ: {=bool:?}, pinc: {=bool:?}, minc: {=bool:?}, psize: {:?}, msize: {:?}, pincos: {:?}, pl: {:?}, dbm: {=bool:?}, ct: {:?}, trbuff: {=bool:?}, pburst: {:?}, mburst: {:?} }}",
+                self.en(),
+                self.dmeie(),
+                self.teie(),
+                self.htie(),
+                self.tcie(),
+                self.pfctrl(),
+                self.dir(),
+                self.circ(),
+                self.pinc(),
+                self.minc(),
+                self.psize(),
+                self.msize(),
+                self.pincos(),
+                self.pl(),
+                self.dbm(),
+                self.ct(),
+                self.trbuff(),
+                self.pburst(),
+                self.mburst()
+            )
         }
     }
     #[doc = "stream x FIFO control register"]
@@ -561,7 +583,30 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ixr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Ixr {{ feif[0]: {=bool:?}, feif[1]: {=bool:?}, feif[2]: {=bool:?}, feif[3]: {=bool:?}, dmeif[0]: {=bool:?}, dmeif[1]: {=bool:?}, dmeif[2]: {=bool:?}, dmeif[3]: {=bool:?}, teif[0]: {=bool:?}, teif[1]: {=bool:?}, teif[2]: {=bool:?}, teif[3]: {=bool:?}, htif[0]: {=bool:?}, htif[1]: {=bool:?}, htif[2]: {=bool:?}, htif[3]: {=bool:?}, tcif[0]: {=bool:?}, tcif[1]: {=bool:?}, tcif[2]: {=bool:?}, tcif[3]: {=bool:?} }}" , self . feif (0usize) , self . feif (1usize) , self . feif (2usize) , self . feif (3usize) , self . dmeif (0usize) , self . dmeif (1usize) , self . dmeif (2usize) , self . dmeif (3usize) , self . teif (0usize) , self . teif (1usize) , self . teif (2usize) , self . teif (3usize) , self . htif (0usize) , self . htif (1usize) , self . htif (2usize) , self . htif (3usize) , self . tcif (0usize) , self . tcif (1usize) , self . tcif (2usize) , self . tcif (3usize))
+            defmt::write!(
+                f,
+                "Ixr {{ feif[0]: {=bool:?}, feif[1]: {=bool:?}, feif[2]: {=bool:?}, feif[3]: {=bool:?}, dmeif[0]: {=bool:?}, dmeif[1]: {=bool:?}, dmeif[2]: {=bool:?}, dmeif[3]: {=bool:?}, teif[0]: {=bool:?}, teif[1]: {=bool:?}, teif[2]: {=bool:?}, teif[3]: {=bool:?}, htif[0]: {=bool:?}, htif[1]: {=bool:?}, htif[2]: {=bool:?}, htif[3]: {=bool:?}, tcif[0]: {=bool:?}, tcif[1]: {=bool:?}, tcif[2]: {=bool:?}, tcif[3]: {=bool:?} }}",
+                self.feif(0usize),
+                self.feif(1usize),
+                self.feif(2usize),
+                self.feif(3usize),
+                self.dmeif(0usize),
+                self.dmeif(1usize),
+                self.dmeif(2usize),
+                self.dmeif(3usize),
+                self.teif(0usize),
+                self.teif(1usize),
+                self.teif(2usize),
+                self.teif(3usize),
+                self.htif(0usize),
+                self.htif(1usize),
+                self.htif(2usize),
+                self.htif(3usize),
+                self.tcif(0usize),
+                self.tcif(1usize),
+                self.tcif(2usize),
+                self.tcif(3usize)
+            )
         }
     }
     #[doc = "stream x number of data register"]

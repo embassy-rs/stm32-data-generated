@@ -130,7 +130,42 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Cfgr {
         fn format(&self, f: defmt::Formatter) {
-            defmt :: write ! (f , "Cfgr {{ cfg[0]: {=bool:?}, cfg[1]: {=bool:?}, cfg[2]: {=bool:?}, cfg[3]: {=bool:?}, cfg[4]: {=bool:?}, cfg[5]: {=bool:?}, cfg[6]: {=bool:?}, cfg[7]: {=bool:?}, cfg[8]: {=bool:?}, cfg[9]: {=bool:?}, cfg[10]: {=bool:?}, cfg[11]: {=bool:?}, cfg[12]: {=bool:?}, cfg[13]: {=bool:?}, cfg[14]: {=bool:?}, cfg[15]: {=bool:?}, cfg[16]: {=bool:?}, cfg[17]: {=bool:?}, cfg[18]: {=bool:?}, cfg[19]: {=bool:?}, cfg[20]: {=bool:?}, cfg[21]: {=bool:?}, cfg[22]: {=bool:?}, cfg[23]: {=bool:?}, cfg[24]: {=bool:?}, cfg[25]: {=bool:?}, cfg[26]: {=bool:?}, cfg[27]: {=bool:?}, cfg[28]: {=bool:?}, cfg[29]: {=bool:?}, cfg[30]: {=bool:?}, cfg[31]: {=bool:?} }}" , self . cfg (0usize) , self . cfg (1usize) , self . cfg (2usize) , self . cfg (3usize) , self . cfg (4usize) , self . cfg (5usize) , self . cfg (6usize) , self . cfg (7usize) , self . cfg (8usize) , self . cfg (9usize) , self . cfg (10usize) , self . cfg (11usize) , self . cfg (12usize) , self . cfg (13usize) , self . cfg (14usize) , self . cfg (15usize) , self . cfg (16usize) , self . cfg (17usize) , self . cfg (18usize) , self . cfg (19usize) , self . cfg (20usize) , self . cfg (21usize) , self . cfg (22usize) , self . cfg (23usize) , self . cfg (24usize) , self . cfg (25usize) , self . cfg (26usize) , self . cfg (27usize) , self . cfg (28usize) , self . cfg (29usize) , self . cfg (30usize) , self . cfg (31usize))
+            defmt::write!(
+                f,
+                "Cfgr {{ cfg[0]: {=bool:?}, cfg[1]: {=bool:?}, cfg[2]: {=bool:?}, cfg[3]: {=bool:?}, cfg[4]: {=bool:?}, cfg[5]: {=bool:?}, cfg[6]: {=bool:?}, cfg[7]: {=bool:?}, cfg[8]: {=bool:?}, cfg[9]: {=bool:?}, cfg[10]: {=bool:?}, cfg[11]: {=bool:?}, cfg[12]: {=bool:?}, cfg[13]: {=bool:?}, cfg[14]: {=bool:?}, cfg[15]: {=bool:?}, cfg[16]: {=bool:?}, cfg[17]: {=bool:?}, cfg[18]: {=bool:?}, cfg[19]: {=bool:?}, cfg[20]: {=bool:?}, cfg[21]: {=bool:?}, cfg[22]: {=bool:?}, cfg[23]: {=bool:?}, cfg[24]: {=bool:?}, cfg[25]: {=bool:?}, cfg[26]: {=bool:?}, cfg[27]: {=bool:?}, cfg[28]: {=bool:?}, cfg[29]: {=bool:?}, cfg[30]: {=bool:?}, cfg[31]: {=bool:?} }}",
+                self.cfg(0usize),
+                self.cfg(1usize),
+                self.cfg(2usize),
+                self.cfg(3usize),
+                self.cfg(4usize),
+                self.cfg(5usize),
+                self.cfg(6usize),
+                self.cfg(7usize),
+                self.cfg(8usize),
+                self.cfg(9usize),
+                self.cfg(10usize),
+                self.cfg(11usize),
+                self.cfg(12usize),
+                self.cfg(13usize),
+                self.cfg(14usize),
+                self.cfg(15usize),
+                self.cfg(16usize),
+                self.cfg(17usize),
+                self.cfg(18usize),
+                self.cfg(19usize),
+                self.cfg(20usize),
+                self.cfg(21usize),
+                self.cfg(22usize),
+                self.cfg(23usize),
+                self.cfg(24usize),
+                self.cfg(25usize),
+                self.cfg(26usize),
+                self.cfg(27usize),
+                self.cfg(28usize),
+                self.cfg(29usize),
+                self.cfg(30usize),
+                self.cfg(31usize)
+            )
         }
     }
     #[doc = "RIFSC RIMC master attribute register."]

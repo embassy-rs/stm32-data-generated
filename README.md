@@ -43,7 +43,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [DSIHOST](#dsihost) | | | | | | | v1 | v1 | | | | v1 | | | | v1 | | ❌ | | | | u5 | | | | |
 | [DTS](#dts) | | | | | | | | | | | v1 | v1 | | | | | | v1 | v1 | | | | | | | |
 | [ETH](#eth) | | ❌ | | v1a | v1b | | v1b | v1c | | | v2 | v2 | | | | | | | v2a | | | | | | | |
-| [EXTI](#exti) | c0 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | g0 | v1 | h5, h50 | h7, h7rm0399 | v1 | v1 | v1 | v1 | l5 | v1 | n6 | u0 | u3 | u5 | w | | l5 | w, wle |
+| [EXTI](#exti) | c0 | u5 | v1 | v1 | v1 | v1 | v1 | v1 | g0 | v1 | h5, h50 | h7, h7rm0399 | v1 | v1 | v1 | v1 | l5 | v1 | n6 | u0 | u3 | u5 | w | | l5 | w, wle |
 | [FDCAN](#fdcan) | | ❌ | | | | | | | | | | | | | | | | | | | | | | | | |
 | [FDCANRAM](#fdcanram) | v1 | v1 | | | | | | | v1 | v1 | v1 | v1, v2 | | | | | v1 | v1 | v2 | | v1 | v1 | | | | |
 | [FLASH](#flash) | c0 | c5 | f0 | f1 | f2 | f3 | f4 | f7 | g0x0, g0x1 | g4c2, g4c3, g4c4 | h5, h50 | h7, h7ab, h7rs | l0 | l1 | l4 | l4 | l5 | | | u0 | u3 | u5 | wb | wb0 | wba | wl |
@@ -433,8 +433,8 @@ The following table shows which STM32 peripheral versions are supported across d
 - **n6**: STM32N6
 - **u0**: STM32U0
 - **u3**: STM32U3
-- **u5**: STM32U5
-- **v1**: STM32C5, STM32F0, STM32F1, STM32F2, STM32F3, STM32F4, STM32F7, STM32G4, STM32L0, STM32L1, STM32L4, STM32L4+, STM32MP1
+- **u5**: STM32C5, STM32U5
+- **v1**: STM32F0, STM32F1, STM32F2, STM32F3, STM32F4, STM32F7, STM32G4, STM32L0, STM32L1, STM32L4, STM32L4+, STM32MP1
 - **w**: STM32WB, STM32WL
 - **wle**: STM32WL
 

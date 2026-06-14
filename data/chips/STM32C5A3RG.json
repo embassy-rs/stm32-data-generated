@@ -1012,7 +1012,7 @@
           "address": 1140989952,
           "registers": {
             "kind": "exti",
-            "version": "v1",
+            "version": "u5",
             "block": "EXTI"
           }
         },

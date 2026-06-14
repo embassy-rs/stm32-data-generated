@@ -489,7 +489,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x44022000,
         registers: Some(PeripheralRegisters {
             kind: "exti",
-            version: "v1",
+            version: "u5",
             block: "EXTI",
             ir: &exti::REGISTERS,
         }),
@@ -4586,7 +4586,7 @@ pub(crate) static PINS: &[Pin] = &[
 pub mod cordic;
 #[path = "../registers/dbgmcu_c5.rs"]
 pub mod dbgmcu;
-#[path = "../registers/exti_v1.rs"]
+#[path = "../registers/exti_u5.rs"]
 pub mod exti;
 #[path = "../registers/fdcanram_v1.rs"]
 pub mod fdcanram;

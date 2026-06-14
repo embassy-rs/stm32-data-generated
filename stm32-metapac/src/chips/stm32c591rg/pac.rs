@@ -469,7 +469,7 @@ pub use Interrupt as interrupt;
 pub mod cordic;
 #[path = "../../peripherals/dbgmcu_c5.rs"]
 pub mod dbgmcu;
-#[path = "../../peripherals/exti_v1.rs"]
+#[path = "../../peripherals/exti_u5.rs"]
 pub mod exti;
 #[path = "../../peripherals/flash_c5.rs"]
 pub mod flash;

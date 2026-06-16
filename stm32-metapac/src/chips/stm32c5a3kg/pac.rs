@@ -427,25 +427,25 @@ pub const IWDG: *mut () = 0x4000_3000usize as _;
 pub const SPI2: *mut () = 0x4000_3800usize as _;
 pub const SPI3: *mut () = 0x4000_3c00usize as _;
 pub const COMP1: *mut () = 0x4000_4000usize as _;
-pub const USART2: *mut () = 0x4000_4400usize as _;
-pub const USART3: *mut () = 0x4000_4800usize as _;
-pub const UART4: *mut () = 0x4000_4c00usize as _;
-pub const UART5: *mut () = 0x4000_5000usize as _;
+pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400usize as _) };
+pub const USART3: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4800usize as _) };
+pub const UART4: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4c00usize as _) };
+pub const UART5: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_5000usize as _) };
 pub const I2C1: *mut () = 0x4000_5400usize as _;
 pub const I2C2: *mut () = 0x4000_5800usize as _;
 pub const I3C1: *mut () = 0x4000_5c00usize as _;
 pub const CRS: *mut () = 0x4000_6000usize as _;
-pub const USART6: *mut () = 0x4000_6400usize as _;
-pub const UART7: *mut () = 0x4000_7800usize as _;
-pub const FDCAN1: *mut () = 0x4000_a400usize as _;
-pub const FDCAN2: *mut () = 0x4000_a800usize as _;
+pub const USART6: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_6400usize as _) };
+pub const UART7: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_7800usize as _) };
+pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400usize as _) };
+pub const FDCAN2: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a800usize as _) };
 pub const FDCANRAM: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_ac00usize as _) };
 pub const FDCANRAM1: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_ac00usize as _) };
 pub const FDCANRAM2: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_af50usize as _) };
 pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_2c00usize as _) };
 pub const SPI1: *mut () = 0x4001_3000usize as _;
 pub const TIM8: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_3400usize as _) };
-pub const USART1: *mut () = 0x4001_3800usize as _;
+pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_3800usize as _) };
 pub const TIM15: timer::Tim2chCmp = unsafe { timer::Tim2chCmp::from_ptr(0x4001_4000usize as _) };
 pub const TIM16: timer::Tim1chCmp = unsafe { timer::Tim1chCmp::from_ptr(0x4001_4400usize as _) };
 pub const TIM17: timer::Tim1chCmp = unsafe { timer::Tim1chCmp::from_ptr(0x4001_4800usize as _) };
@@ -481,7 +481,7 @@ pub const SAES: *mut () = 0x420c_0c00usize as _;
 pub const PKA: *mut () = 0x420c_2000usize as _;
 pub const CCB: *mut () = 0x420c_7c00usize as _;
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400usize as _) };
-pub const LPUART1: *mut () = 0x4400_2400usize as _;
+pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4400_2400usize as _) };
 pub const LPTIM1: *mut () = 0x4400_4400usize as _;
 pub const RTC: *mut () = 0x4400_7800usize as _;
 pub const TAMP: *mut () = 0x4400_7c00usize as _;
@@ -497,6 +497,8 @@ pub const NVIC_PRIO_BITS: u8 = 4;
 pub use Interrupt as interrupt;
 #[cfg(feature = "rt")]
 pub use cortex_m_rt::interrupt;
+#[path = "../../peripherals/can_fdcan_v1.rs"]
+pub mod can;
 #[path = "../../peripherals/cordic_v1.rs"]
 pub mod cordic;
 #[path = "../../peripherals/dbgmcu_c5.rs"]
@@ -521,3 +523,5 @@ pub mod syscfg;
 pub mod timer;
 #[path = "../../peripherals/uid_v1.rs"]
 pub mod uid;
+#[path = "../../peripherals/usart_v4.rs"]
+pub mod usart;

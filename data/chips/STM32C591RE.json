@@ -1625,6 +1625,11 @@
         {
           "name": "LPUART1",
           "address": 1140859904,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "LPUART"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": {
@@ -4194,6 +4199,11 @@
         {
           "name": "UART4",
           "address": 1073761280,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -4291,6 +4301,11 @@
         {
           "name": "UART5",
           "address": 1073762304,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -4384,6 +4399,11 @@
         {
           "name": "UART7",
           "address": 1073772544,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -4450,6 +4470,11 @@
         {
           "name": "USART1",
           "address": 1073821696,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": {
@@ -4559,6 +4584,11 @@
         {
           "name": "USART2",
           "address": 1073759232,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -4648,6 +4678,11 @@
         {
           "name": "USART3",
           "address": 1073760256,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -4761,6 +4796,11 @@
         {
           "name": "USART6",
           "address": 1073767424,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {

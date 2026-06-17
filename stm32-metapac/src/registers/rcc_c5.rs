@@ -2216,20 +2216,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some("Lptimsel"),
                 },
                 Field {
-                    name: "ck48sel",
+                    name: "clk48sel",
                     description: Some("CK48 clock source selection"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Cksel"),
+                    enumm: Some("Clksel"),
                 },
                 Field {
-                    name: "systicksel",
+                    name: "systiclksel",
                     description: Some("SYSTICK clock source selection"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Systicksel"),
+                    enumm: Some("Systiclksel"),
                 },
             ],
         },
@@ -3196,7 +3196,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Cksel",
+            name: "Clksel",
             description: None,
             bit_size: 2,
             variants: &[
@@ -4157,7 +4157,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Systicksel",
+            name: "Systiclksel",
             description: None,
             bit_size: 2,
             variants: &[

@@ -4583,8 +4583,47 @@
           ]
         },
         {
+          "name": "USB",
+          "address": 1073831936,
+          "registers": {
+            "kind": "usb",
+            "version": "v4",
+            "block": "USB"
+          },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": {
+              "register": "CCIPR2",
+              "field": "CLK48SEL"
+            },
+            "enable": {
+              "register": "APB2ENR",
+              "field": "USBEN"
+            },
+            "reset": {
+              "register": "APB2RSTR",
+              "field": "USBRST"
+            }
+          },
+          "pins": [
+            {
+              "pin": "PA11",
+              "signal": "DM"
+            },
+            {
+              "pin": "PA12",
+              "signal": "DP"
+            }
+          ]
+        },
+        {
           "name": "USBRAM",
-          "address": 1073832960
+          "address": 1073832960,
+          "registers": {
+            "kind": "usbram",
+            "version": "32_2048",
+            "block": "USBRAM"
+          }
         },
         {
           "name": "WWDG",

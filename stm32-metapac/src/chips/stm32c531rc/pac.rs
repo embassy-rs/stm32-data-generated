@@ -337,7 +337,8 @@ pub const SPI1: *mut () = 0x4001_3000usize as _;
 pub const TIM8: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_3400usize as _) };
 pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_3800usize as _) };
 pub const TIM15: timer::Tim2chCmp = unsafe { timer::Tim2chCmp::from_ptr(0x4001_4000usize as _) };
-pub const USBRAM: *mut () = 0x4001_6400usize as _;
+pub const USB: usb::Usb = unsafe { usb::Usb::from_ptr(0x4001_6000usize as _) };
+pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4001_6400usize as _) };
 pub const LPDMA1: lpdma::Lpdma = unsafe { lpdma::Lpdma::from_ptr(0x4002_0000usize as _) };
 pub const LPDMA2: lpdma::Lpdma = unsafe { lpdma::Lpdma::from_ptr(0x4002_1000usize as _) };
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000usize as _) };
@@ -397,3 +398,7 @@ pub mod timer;
 pub mod uid;
 #[path = "../../peripherals/usart_v4.rs"]
 pub mod usart;
+#[path = "../../peripherals/usb_v4.rs"]
+pub mod usb;
+#[path = "../../peripherals/usbram_32_2048.rs"]
+pub mod usbram;

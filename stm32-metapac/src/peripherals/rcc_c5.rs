@@ -3661,25 +3661,25 @@ pub mod regs {
         #[doc = "CK48 clock source selection"]
         #[must_use]
         #[inline(always)]
-        pub const fn ck48sel(&self) -> super::vals::Cksel {
+        pub const fn clk48sel(&self) -> super::vals::Clksel {
             let val = (self.0 >> 24usize) & 0x03;
-            super::vals::Cksel::from_bits(val as u8)
+            super::vals::Clksel::from_bits(val as u8)
         }
         #[doc = "CK48 clock source selection"]
         #[inline(always)]
-        pub const fn set_ck48sel(&mut self, val: super::vals::Cksel) {
+        pub const fn set_clk48sel(&mut self, val: super::vals::Clksel) {
             self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
         }
         #[doc = "SYSTICK clock source selection"]
         #[must_use]
         #[inline(always)]
-        pub const fn systicksel(&self) -> super::vals::Systicksel {
+        pub const fn systiclksel(&self) -> super::vals::Systiclksel {
             let val = (self.0 >> 30usize) & 0x03;
-            super::vals::Systicksel::from_bits(val as u8)
+            super::vals::Systiclksel::from_bits(val as u8)
         }
         #[doc = "SYSTICK clock source selection"]
         #[inline(always)]
-        pub const fn set_systicksel(&mut self, val: super::vals::Systicksel) {
+        pub const fn set_systiclksel(&mut self, val: super::vals::Systiclksel) {
             self.0 = (self.0 & !(0x03 << 30usize)) | (((val.to_bits() as u32) & 0x03) << 30usize);
         }
     }
@@ -3699,8 +3699,8 @@ pub mod regs {
                 .field("adcdacpre", &self.adcdacpre())
                 .field("dacsel", &self.dacsel())
                 .field("lptim1sel", &self.lptim1sel())
-                .field("ck48sel", &self.ck48sel())
-                .field("systicksel", &self.systicksel())
+                .field("clk48sel", &self.clk48sel())
+                .field("systiclksel", &self.systiclksel())
                 .finish()
         }
     }
@@ -3709,7 +3709,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ccipr2 {{ i2c1sel: {:?}, i2c2sel: {:?}, i3c1sel: {:?}, adcdacsel: {:?}, adcdacpre: {:?}, dacsel: {:?}, lptim1sel: {:?}, ck48sel: {:?}, systicksel: {:?} }}",
+                "Ccipr2 {{ i2c1sel: {:?}, i2c2sel: {:?}, i3c1sel: {:?}, adcdacsel: {:?}, adcdacpre: {:?}, dacsel: {:?}, lptim1sel: {:?}, clk48sel: {:?}, systiclksel: {:?} }}",
                 self.i2c1sel(),
                 self.i2c2sel(),
                 self.i3c1sel(),
@@ -3717,8 +3717,8 @@ pub mod regs {
                 self.adcdacpre(),
                 self.dacsel(),
                 self.lptim1sel(),
-                self.ck48sel(),
-                self.systicksel()
+                self.clk48sel(),
+                self.systiclksel()
             )
         }
     }
@@ -5496,7 +5496,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Cksel {
+    pub enum Clksel {
         _RESERVED_0 = 0x0,
         #[doc = "psi_div_3_ck selected as kernel clock"]
         PsiDiv3 = 0x01,
@@ -5505,9 +5505,9 @@ pub mod vals {
         #[doc = "hse_ck selected as kernel clock"]
         Hse = 0x03,
     }
-    impl Cksel {
+    impl Clksel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Cksel {
+        pub const fn from_bits(val: u8) -> Clksel {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -5515,16 +5515,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Cksel {
+    impl From<u8> for Clksel {
         #[inline(always)]
-        fn from(val: u8) -> Cksel {
-            Cksel::from_bits(val)
+        fn from(val: u8) -> Clksel {
+            Clksel::from_bits(val)
         }
     }
-    impl From<Cksel> for u8 {
+    impl From<Clksel> for u8 {
         #[inline(always)]
-        fn from(val: Cksel) -> u8 {
-            Cksel::to_bits(val)
+        fn from(val: Clksel) -> u8 {
+            Clksel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -6577,7 +6577,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Systicksel {
+    pub enum Systiclksel {
         #[doc = "rcc_hclk/8 selected as clock source (default after reset)"]
         HclkDiv8 = 0x0,
         #[doc = "lsi_ker_ck\\[1\\]
@@ -6588,9 +6588,9 @@ selected as clock source"]
         Lse = 0x02,
         _RESERVED_3 = 0x03,
     }
-    impl Systicksel {
+    impl Systiclksel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Systicksel {
+        pub const fn from_bits(val: u8) -> Systiclksel {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -6598,16 +6598,16 @@ selected as clock source"]
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Systicksel {
+    impl From<u8> for Systiclksel {
         #[inline(always)]
-        fn from(val: u8) -> Systicksel {
-            Systicksel::from_bits(val)
+        fn from(val: u8) -> Systiclksel {
+            Systiclksel::from_bits(val)
         }
     }
-    impl From<Systicksel> for u8 {
+    impl From<Systiclksel> for u8 {
         #[inline(always)]
-        fn from(val: Systicksel) -> u8 {
-            Systicksel::to_bits(val)
+        fn from(val: Systiclksel) -> u8 {
+            Systiclksel::to_bits(val)
         }
     }
     #[repr(u8)]

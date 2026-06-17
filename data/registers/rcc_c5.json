@@ -1584,18 +1584,18 @@
         "enum": "LPTIMSEL"
       },
       {
-        "name": "CK48SEL",
+        "name": "CLK48SEL",
         "description": "CK48 clock source selection",
         "bit_offset": 24,
         "bit_size": 2,
-        "enum": "CKSEL"
+        "enum": "CLKSEL"
       },
       {
-        "name": "SYSTICKSEL",
+        "name": "SYSTICLKSEL",
         "description": "SYSTICK clock source selection",
         "bit_offset": 30,
         "bit_size": 2,
-        "enum": "SYSTICKSEL"
+        "enum": "SYSTICLKSEL"
       }
     ]
   },
@@ -2351,7 +2351,7 @@
       }
     ]
   },
-  "enum/CKSEL": {
+  "enum/CLKSEL": {
     "bit_size": 2,
     "variants": [
       {
@@ -3256,7 +3256,7 @@
       }
     ]
   },
-  "enum/SYSTICKSEL": {
+  "enum/SYSTICLKSEL": {
     "bit_size": 2,
     "variants": [
       {

@@ -3962,7 +3962,7 @@
           ],
           "dma_channels": [
             {
-              "signal": "HASH",
+              "signal": "IN",
               "dma": "GPDMA1",
               "request": 6
             }

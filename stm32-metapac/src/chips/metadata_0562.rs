@@ -2879,7 +2879,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         pins: &[],
         dma_channels: &[PeripheralDmaChannel {
-            signal: "HASH",
+            signal: "IN",
             channel: None,
             dmamux: None,
             remap: &[],

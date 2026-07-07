@@ -27,7 +27,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Write,
                     bit_size: 32,
-                    fieldset: Some("Keyr"),
+                    fieldset: None,
                 }),
             },
             BlockItem {
@@ -126,7 +126,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
-                    fieldset: Some("OptsrCur"),
+                    fieldset: Some("Optsr"),
                 }),
             },
             BlockItem {
@@ -137,7 +137,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("OptsrPrg"),
+                    fieldset: Some("Optsr"),
                 }),
             },
             BlockItem {
@@ -148,7 +148,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
-                    fieldset: Some("Optsr2Cur"),
+                    fieldset: Some("Optsr2"),
                 }),
             },
             BlockItem {
@@ -159,7 +159,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Optsr2Prg"),
+                    fieldset: Some("Optsr2"),
                 }),
             },
             BlockItem {
@@ -170,7 +170,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
-                    fieldset: Some("BootrCur"),
+                    fieldset: Some("Bootr"),
                 }),
             },
             BlockItem {
@@ -181,7 +181,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
-                    fieldset: Some("BootrPrg"),
+                    fieldset: Some("Bootr"),
                 }),
             },
             BlockItem {
@@ -192,7 +192,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
-                    fieldset: Some("OtpblrCur"),
+                    fieldset: Some("Otpblr"),
                 }),
             },
             BlockItem {
@@ -203,7 +203,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("OtpblrPrg"),
+                    fieldset: Some("Otpblr"),
                 }),
             },
             BlockItem {
@@ -214,7 +214,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
-                    fieldset: Some("BlComCfgCur"),
+                    fieldset: Some("BlComCfg"),
                 }),
             },
             BlockItem {
@@ -225,7 +225,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
-                    fieldset: Some("BlComCfgPrg"),
+                    fieldset: Some("BlComCfg"),
                 }),
             },
             BlockItem {
@@ -291,7 +291,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
-                    fieldset: Some("Wrp1rCur"),
+                    fieldset: Some("Wrp1r"),
                 }),
             },
             BlockItem {
@@ -302,7 +302,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Wrp1rPrg"),
+                    fieldset: Some("Wrp1r"),
                 }),
             },
             BlockItem {
@@ -313,7 +313,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
-                    fieldset: Some("Hdp1rCur"),
+                    fieldset: Some("Hdp1r"),
                 }),
             },
             BlockItem {
@@ -324,7 +324,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Hdp1rPrg"),
+                    fieldset: Some("Hdp1r"),
                 }),
             },
             BlockItem {
@@ -368,7 +368,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
-                    fieldset: Some("Wrp2rCur"),
+                    fieldset: Some("Wrp2r"),
                 }),
             },
             BlockItem {
@@ -379,7 +379,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Wrp2rPrg"),
+                    fieldset: Some("Wrp2r"),
                 }),
             },
             BlockItem {
@@ -390,7 +390,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::Read,
                     bit_size: 32,
-                    fieldset: Some("Hdp2rCur"),
+                    fieldset: Some("Hdp2r"),
                 }),
             },
             BlockItem {
@@ -401,7 +401,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Hdp2rPrg"),
+                    fieldset: Some("Hdp2r"),
                 }),
             },
         ],
@@ -419,7 +419,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 4,
                     array: None,
-                    enumm: Some("Latency"),
+                    enumm: None,
                 },
                 Field {
                     name: "wrhighfreq",
@@ -435,7 +435,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Prften"),
+                    enumm: None,
                 },
                 Field {
                     name: "empty",
@@ -443,12 +443,12 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Empty"),
+                    enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "BlComCfgCur",
+            name: "BlComCfg",
             extends: None,
             description: Some("FLASH Bootloader interface selection."),
             bit_size: 32,
@@ -462,21 +462,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "BlComCfgPrg",
-            extends: None,
-            description: Some("FLASH Bootloader interface selection."),
-            bit_size: 32,
-            fields: &[Field {
-                name: "bl_com_cfg",
-                description: Some("Bootloader interface selection/configuration."),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "BootrCur",
+            name: "Bootr",
             extends: None,
             description: Some("FLASH unique boot entry register."),
             bit_size: 32,
@@ -489,33 +475,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 8,
                     array: None,
-                    enumm: Some("BootrCurBootLock"),
-                },
-                Field {
-                    name: "bootadd",
-                    description: Some("unique boot entry address."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
-                    bit_size: 24,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "BootrPrg",
-            extends: None,
-            description: Some("FLASH unique boot entry address."),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "boot_lock",
-                    description: Some(
-                        "A field locking the values of BOOT0, BOOT_SEL, SWAP_BANK, and BOOTADD option settings.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                    bit_size: 8,
-                    array: None,
-                    enumm: Some("BootrPrgBootLock"),
+                    enumm: Some("BootLock"),
                 },
                 Field {
                     name: "bootadd",
@@ -609,7 +569,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lock"),
+                    enumm: None,
                 },
                 Field {
                     name: "pg",
@@ -617,7 +577,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Pg"),
+                    enumm: None,
                 },
                 Field {
                     name: "per",
@@ -625,15 +585,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Per"),
-                },
-                Field {
-                    name: "ser",
-                    description: Some("sector erase request."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Ser"),
+                    enumm: None,
                 },
                 Field {
                     name: "ber",
@@ -641,7 +593,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ber"),
+                    enumm: None,
                 },
                 Field {
                     name: "fw",
@@ -665,15 +617,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 6,
                     array: None,
-                    enumm: Some("Pnb"),
-                },
-                Field {
-                    name: "snb",
-                    description: Some("sector erase selection number."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
-                    bit_size: 6,
-                    array: None,
-                    enumm: Some("Snb"),
+                    enumm: None,
                 },
                 Field {
                     name: "mer",
@@ -681,7 +625,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Mer"),
+                    enumm: None,
                 },
                 Field {
                     name: "eopie",
@@ -689,7 +633,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Eopie"),
+                    enumm: None,
                 },
                 Field {
                     name: "wrperrie",
@@ -697,7 +641,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Wrperrie"),
+                    enumm: None,
                 },
                 Field {
                     name: "pgserrie",
@@ -705,7 +649,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Pgserrie"),
+                    enumm: None,
                 },
                 Field {
                     name: "strberrie",
@@ -713,7 +657,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Strberrie"),
+                    enumm: None,
                 },
                 Field {
                     name: "incerrie",
@@ -721,7 +665,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Incerrie"),
+                    enumm: None,
                 },
                 Field {
                     name: "optchangeerrie",
@@ -729,7 +673,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Optchangeerrie"),
+                    enumm: None,
                 },
                 Field {
                     name: "edatasel",
@@ -811,7 +755,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ecccie"),
+                    enumm: None,
                 },
                 Field {
                     name: "eccc",
@@ -912,7 +856,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Hdp1rCur",
+            name: "Hdp1r",
             extends: None,
             description: Some("FLASH HDP bank1 register."),
             bit_size: 32,
@@ -936,55 +880,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Hdp1rPrg",
-            extends: None,
-            description: Some("FLASH HDP bank1 register."),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hdp1_strt",
-                    description: Some("Bank 1 HDPL barrier start set in number of 8Kbytes pages."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hdp1_end",
-                    description: Some("Bank 1 HDPL barrier end set in number of 8Kbytes pages."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hdp2rCur",
-            extends: None,
-            description: Some("FLASH HDP bank2 register."),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "hdp2_strt",
-                    description: Some("Bank 2 HDPL barrier start set in number of 8Kbytes pages."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "hdp2_end",
-                    description: Some("Bank 2 HDPL barrier end set in number of 8Kbytes pages."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
-                    bit_size: 4,
-                    array: None,
-                    enumm: None,
-                },
-            ],
-        },
-        FieldSet {
-            name: "Hdp2rPrg",
+            name: "Hdp2r",
             extends: None,
             description: Some("FLASH HDP bank2 register."),
             bit_size: 32,
@@ -1034,20 +930,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
-        },
-        FieldSet {
-            name: "Keyr",
-            extends: None,
-            description: Some("FLASH key register."),
-            bit_size: 32,
-            fields: &[Field {
-                name: "key",
-                description: Some("Non-volatile memoryconfiguration access unlock key."),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 32,
-                array: None,
-                enumm: None,
-            }],
         },
         FieldSet {
             name: "Oemkeyr1Prg",
@@ -1173,7 +1055,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Optlock"),
+                    enumm: None,
                 },
                 Field {
                     name: "optstrt",
@@ -1208,71 +1090,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Optsr2Cur",
-            extends: None,
-            description: Some("FLASH option status register 2."),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sram1_rst",
-                    description: Some("SRAM1 erase upon system reset."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Optsr2CurSram1Rst"),
-                },
-                Field {
-                    name: "sram2_rst",
-                    description: Some("SRAM2 erase when system reset."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Optsr2CurSram2Rst"),
-                },
-                Field {
-                    name: "sram2_ecc",
-                    description: Some("SRAM2 ECC detection and correction disable."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Optsr2CurSram2Ecc"),
-                },
-            ],
-        },
-        FieldSet {
-            name: "Optsr2Prg",
-            extends: None,
-            description: Some("FLASH option status register 2."),
-            bit_size: 32,
-            fields: &[
-                Field {
-                    name: "sram1_rst",
-                    description: Some("SRAM1 erase upon system reset."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Optsr2PrgSram1Rst"),
-                },
-                Field {
-                    name: "sram2_rst",
-                    description: Some("SRAM2 erase when system reset."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Optsr2PrgSram2Rst"),
-                },
-                Field {
-                    name: "sram2_ecc",
-                    description: Some("SRAM2 ECC detection and correction disable."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Optsr2PrgSram2Ecc"),
-                },
-            ],
-        },
-        FieldSet {
-            name: "OptsrCur",
+            name: "Optsr",
             extends: None,
             description: Some("FLASH option status register."),
             bit_size: 32,
@@ -1283,7 +1101,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OptsrCurIwdgSw"),
+                    enumm: Some("OptsrIwdgSw"),
                 },
                 Field {
                     name: "wwdg_sw",
@@ -1291,7 +1109,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OptsrCurWwdgSw"),
+                    enumm: Some("OptsrWwdgSw"),
                 },
                 Field {
                     name: "nrst_stop",
@@ -1299,7 +1117,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OptsrCurNrstStop"),
+                    enumm: Some("OptsrNrstStop"),
                 },
                 Field {
                     name: "nrst_stdby",
@@ -1307,7 +1125,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OptsrCurNrstStdby"),
+                    enumm: Some("OptsrNrstStdby"),
                 },
                 Field {
                     name: "rdp_level",
@@ -1323,7 +1141,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OptsrCurIwdgStop"),
+                    enumm: Some("OptsrIwdgStop"),
                 },
                 Field {
                     name: "iwdg_stdby",
@@ -1331,7 +1149,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OptsrCurIwdgStdby"),
+                    enumm: Some("OptsrIwdgStdby"),
                 },
                 Field {
                     name: "boot_sel",
@@ -1339,7 +1157,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OptsrCurBootSel"),
+                    enumm: Some("OptsrBootSel"),
                 },
                 Field {
                     name: "boot0",
@@ -1347,7 +1165,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OptsrCurBoot0"),
+                    enumm: Some("OptsrBoot0"),
                 },
                 Field {
                     name: "edata_en",
@@ -1355,7 +1173,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OptsrCurEdataEn"),
+                    enumm: None,
                 },
                 Field {
                     name: "dual_bank",
@@ -1363,7 +1181,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OptsrCurDualBank"),
+                    enumm: Some("OptsrDualBank"),
                 },
                 Field {
                     name: "single_bank",
@@ -1371,7 +1189,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OptsrCurSingleBank"),
+                    enumm: Some("OptsrSingleBank"),
                 },
                 Field {
                     name: "swap_bank",
@@ -1379,138 +1197,44 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OptsrCurSwapBank"),
+                    enumm: Some("OptsrSwapBank"),
                 },
             ],
         },
         FieldSet {
-            name: "OptsrPrg",
+            name: "Optsr2",
             extends: None,
-            description: Some("FLASH option status register."),
+            description: Some("FLASH option status register 2."),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "iwdg_sw",
-                    description: Some("IWDG control mode option configuration bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    name: "sram1_rst",
+                    description: Some("SRAM1 erase upon system reset."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
-                    array: None,
-                    enumm: Some("OptsrPrgIwdgSw"),
-                },
-                Field {
-                    name: "wwdg_sw",
-                    description: Some("WWDG control mode option configuration bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("OptsrPrgWwdgSw"),
-                },
-                Field {
-                    name: "nrst_stop",
-                    description: Some("Core domain Stop entry reset option configuration bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("OptsrPrgNrstStop"),
-                },
-                Field {
-                    name: "nrst_stdby",
-                    description: Some("Core domain Standby entry reset option configuration bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("OptsrPrgNrstStdby"),
-                },
-                Field {
-                    name: "rdp_level",
-                    description: Some("RDP level code (based on Hamming 8,4). See Section7.5.8."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
-                    bit_size: 8,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "iwdg_stop",
-                    description: Some("IWDG Stop mode freeze option configuration bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
+                    name: "sram2_rst",
+                    description: Some("SRAM2 erase when system reset."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OptsrPrgIwdgStop"),
+                    enumm: None,
                 },
                 Field {
-                    name: "iwdg_stdby",
-                    description: Some("IWDG Standby mode freeze option configuration bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
+                    name: "sram2_ecc",
+                    description: Some("SRAM2 ECC detection and correction disable."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OptsrPrgIwdgStdby"),
-                },
-                Field {
-                    name: "boot_sel",
-                    description: Some("Boot 0 source configuration."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("OptsrPrgBootSel"),
-                },
-                Field {
-                    name: "boot0",
-                    description: Some("Boot 0 option bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("OptsrPrgBoot0"),
-                },
-                Field {
-                    name: "edata_en",
-                    description: Some("Flash data area enable."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("OptsrPrgEdataEn"),
-                },
-                Field {
-                    name: "dual_bank",
-                    description: Some("Dual bank option configuration bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("OptsrPrgDualBank"),
-                },
-                Field {
-                    name: "single_bank",
-                    description: Some("Dual bank option configuration bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("OptsrPrgSingleBank"),
-                },
-                Field {
-                    name: "swap_bank",
-                    description: Some("Bank swapping option configuration bit."),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("OptsrPrgSwapBank"),
+                    enumm: Some("Optsr2Sram2Ecc"),
                 },
             ],
         },
         FieldSet {
-            name: "OtpblrCur",
-            extends: None,
-            description: Some("FLASH OTP block lock."),
-            bit_size: 32,
-            fields: &[Field {
-                name: "lockbl",
-                description: Some("OTP block lock."),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 24,
-                array: None,
-                enumm: None,
-            }],
-        },
-        FieldSet {
-            name: "OtpblrPrg",
+            name: "Otpblr",
             extends: None,
             description: Some("FLASH OTP block lock."),
             bit_size: 32,
@@ -1549,7 +1273,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Bsy"),
+                    enumm: None,
                 },
                 Field {
                     name: "wbne",
@@ -1565,7 +1289,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Dbne"),
+                    enumm: None,
                 },
                 Field {
                     name: "oemlock",
@@ -1589,7 +1313,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Eop"),
+                    enumm: None,
                 },
                 Field {
                     name: "wrperr",
@@ -1597,7 +1321,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Wrperr"),
+                    enumm: None,
                 },
                 Field {
                     name: "pgserr",
@@ -1605,7 +1329,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Pgserr"),
+                    enumm: None,
                 },
                 Field {
                     name: "strberr",
@@ -1613,7 +1337,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Strberr"),
+                    enumm: None,
                 },
                 Field {
                     name: "incerr",
@@ -1621,7 +1345,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Incerr"),
+                    enumm: None,
                 },
                 Field {
                     name: "optchangeerr",
@@ -1629,12 +1353,12 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Optchangeerr"),
+                    enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "Wrp1rCur",
+            name: "Wrp1r",
             extends: None,
             description: Some("FLASH write page protection for bank1."),
             bit_size: 32,
@@ -1644,25 +1368,11 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
-                enumm: Some("Wrp1rCurWrpsg1"),
+                enumm: Some("Wrp1rWrpsg1"),
             }],
         },
         FieldSet {
-            name: "Wrp1rPrg",
-            extends: None,
-            description: Some("FLASH write page protection for bank1."),
-            bit_size: 32,
-            fields: &[Field {
-                name: "wrpsg1",
-                description: Some("Bank1 page protection option status byte."),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 32,
-                array: None,
-                enumm: Some("Wrp1rPrgWrpsg1"),
-            }],
-        },
-        FieldSet {
-            name: "Wrp2rCur",
+            name: "Wrp2r",
             extends: None,
             description: Some("FLASH write page protection for bank2."),
             bit_size: 32,
@@ -1672,111 +1382,44 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 32,
                 array: None,
-                enumm: Some("Wrp2rCurWrpsg2"),
-            }],
-        },
-        FieldSet {
-            name: "Wrp2rPrg",
-            extends: None,
-            description: Some("FLASH write page protection for bank2."),
-            bit_size: 32,
-            fields: &[Field {
-                name: "wrpsg2",
-                description: Some("Bank2 page protection option status byte."),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 32,
-                array: None,
-                enumm: Some("Wrp2rPrgWrpsg2"),
+                enumm: Some("Wrp2rWrpsg2"),
             }],
         },
     ],
     enums: &[
-        Enum {
-            name: "Ber",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("bank erase not requested."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("bank erase requested."),
-                    value: 1,
-                },
-            ],
-        },
         Enum {
             name: "Bksel",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Bank1",
                     description: Some("Bank1 is selected for bank erase (BER)/page erase (PER)/interrupt enable."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Bank2",
                     description: Some("Bank2 is selected for BER/PER."),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "BootrCurBootLock",
+            name: "BootLock",
             description: None,
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B0xB4",
+                    name: "Locked",
                     description: Some("The BOOT0, BOOT_SEL, SWAP_BANK and BOOTADD are frozen."),
                     value: 180,
                 },
                 EnumVariant {
-                    name: "B0xC3",
+                    name: "Unlocked",
                     description: Some(
                         "The BOOT0, BOOT_SEL, SWAP_BANK and BOOTADD can still be modified following their individual rules.",
                     ),
                     value: 195,
-                },
-            ],
-        },
-        Enum {
-            name: "BootrPrgBootLock",
-            description: None,
-            bit_size: 8,
-            variants: &[
-                EnumVariant {
-                    name: "B0xB4",
-                    description: Some("The BOOT0, BOOT_SEL, SWAP_BANK and BOOTADD are frozen."),
-                    value: 180,
-                },
-                EnumVariant {
-                    name: "B0xC3",
-                    description: Some(
-                        "The BOOT0, BOOT_SEL, SWAP_BANK and BOOTADD can still be modified following their individual rules.",
-                    ),
-                    value: 195,
-                },
-            ],
-        },
-        Enum {
-            name: "Bsy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no programming, erase or option byte change operation being executed."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("programming, erase or option byte change operation being executed."),
-                    value: 1,
                 },
             ],
         },
@@ -1861,40 +1504,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Dbne",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("data buffer not used."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("data buffer used, wait."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ecccie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no interrupt generated when an ECC single correction error occurs."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("interrupt generated when an ECC single correction error occurs."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Edatasel",
             description: None,
             bit_size: 1,
@@ -1912,328 +1521,41 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Empty",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("Boot address in Main Flash memory area programmed."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Boot address in Main Flash memory area empty."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Eop",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no operation completed."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("a operation completed."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Eopie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no interrupt generated at the end of operation."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("interrupt enabled when at the end of operation."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Incerr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no inconsistency error occurs."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("a inconsistency error occurs."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Incerrie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no interrupt generated when a inconsistency error occurs."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("interrupt generated when a inconsistency error occurs."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Latency",
-            description: None,
-            bit_size: 4,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("zero wait state used to read a word from non-volatile memory."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("one wait state used to read a word from non-volatile memory."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x2",
-                    description: Some("two wait states used to read a word from non-volatile memory."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B0x7",
-                    description: Some("seven wait states used to read a word from non-volatile memory."),
-                    value: 7,
-                },
-                EnumVariant {
-                    name: "B0xF",
-                    description: Some("15 wait states used to read from non-volatile memory."),
-                    value: 15,
-                },
-            ],
-        },
-        Enum {
-            name: "Lock",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("CR register unlocked."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("CR register locked."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Mer",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("mass erase not requested."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("mass erase requested."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Optchangeerr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no option-byte change errors occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("one or more errors occurred during an option-byte change operation."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Optchangeerrie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no interrupt is generated when an error occurs during an option-byte change."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("an interrupt is generated when and error occurs during an option-byte change."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "OptcrSwapBank",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotSwapped",
                     description: Some("Bank1 and bank2 not swapped."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Swapped",
                     description: Some("Bank1 and bank2 swapped."),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "Optlock",
+            name: "Optsr2Sram2Ecc",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("OPTCR register unlocked."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("OPTCR register locked."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Optsr2CurSram1Rst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("SRAM1 erased when a system reset occurs."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("SRAM1 not erased when a system reset occurs."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Optsr2CurSram2Ecc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("SRAM2 ECC check enabled."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Disabled",
                     description: Some("SRAM2 ECC check disabled."),
                     value: 1,
                 },
-            ],
-        },
-        Enum {
-            name: "Optsr2CurSram2Rst",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("SRAM2 erased when a system reset occurs."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("SRAM2 not erased when a system reset occurs."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Optsr2PrgSram1Rst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("SRAM1 erased when a system reset occurs."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("SRAM1 not erased when a system reset occurs."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Optsr2PrgSram2Ecc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
+                    name: "Enabled",
                     description: Some("SRAM2 ECC check enabled."),
                     value: 0,
                 },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("SRAM2 ECC check disabled."),
-                    value: 1,
-                },
             ],
         },
         Enum {
-            name: "Optsr2PrgSram2Rst",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("SRAM2 erased when a system reset occurs."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("SRAM2 not erased when a system reset occurs."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrCurBoot0",
+            name: "OptsrBoot0",
             description: None,
             bit_size: 1,
             variants: &[
@@ -2250,60 +1572,43 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "OptsrCurBootSel",
+            name: "OptsrBootSel",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "OptionBit",
                     description: Some("BOOT0 signal is defined by the BOOT0 option bit."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Pin",
                     description: Some("BOOT0 signal is defined by BOOT0 pin value (legacy mode)."),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "OptsrCurDualBank",
+            name: "OptsrDualBank",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("256Kbytes of user flash located in one bank."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "DualBank",
                     description: Some(
-                        "256Kbytes of user flash split with 128Kbytes in Bank 1 and 128Kbytes in Bank 2.",
+                        "x Kbytes of user flash split with x/2 Kbytes in Bank 1 and x/2 Kbytes in Bank 2.",
                     ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrCurEdataEn",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("No flash data area (EDATA pages are 128 bits writable)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
-                    description: Some("Flash data area is enabled (EDATA pages are 16/32 bits writable)."),
+                    name: "SingleBank",
+                    description: Some("x Kbytes of user flash located in one bank."),
                     value: 1,
                 },
             ],
         },
         Enum {
-            name: "OptsrCurIwdgStdby",
+            name: "OptsrIwdgStdby",
             description: None,
             bit_size: 1,
             variants: &[
@@ -2320,7 +1625,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "OptsrCurIwdgStop",
+            name: "OptsrIwdgStop",
             description: None,
             bit_size: 1,
             variants: &[
@@ -2337,7 +1642,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "OptsrCurIwdgSw",
+            name: "OptsrIwdgSw",
             description: None,
             bit_size: 1,
             variants: &[
@@ -2354,7 +1659,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "OptsrCurNrstStdby",
+            name: "OptsrNrstStdby",
             description: None,
             bit_size: 1,
             variants: &[
@@ -2371,7 +1676,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "OptsrCurNrstStop",
+            name: "OptsrNrstStop",
             description: None,
             bit_size: 1,
             variants: &[
@@ -2388,7 +1693,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "OptsrCurSingleBank",
+            name: "OptsrSingleBank",
             description: None,
             bit_size: 1,
             variants: &[
@@ -2407,7 +1712,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "OptsrCurSwapBank",
+            name: "OptsrSwapBank",
             description: None,
             bit_size: 1,
             variants: &[
@@ -2424,7 +1729,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "OptsrCurWwdgSw",
+            name: "OptsrWwdgSw",
             description: None,
             bit_size: 1,
             variants: &[
@@ -2436,316 +1741,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "B0x1",
                     description: Some("WWDG watchdog is controlled by software."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrPrgBoot0",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("BOOT0 = 0."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("BOOT0 = 1."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrPrgBootSel",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("BOOT0 signal is defined by the BOOT0 option bit."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("BOOT0 signal is defined by BOOT0 pin value (legacy mode)."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrPrgDualBank",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("256Kbytes of user flash located in one bank."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some(
-                        "256Kbytes of user flash split with 128Kbytes in Bank 1 and 128Kbytes in Bank 2.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrPrgEdataEn",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("No flash data area."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Flash data area is enabled."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrPrgIwdgStdby",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("Independent watchdog frozen in Standby mode."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Independent watchdog keep running in Standby mode."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrPrgIwdgStop",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("Independent watchdog frozen in system Stop mode."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Independent watchdog keep running in system Stop mode."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrPrgIwdgSw",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("IWDG watchdog is controlled by hardware."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("IWDG watchdog is controlled by software."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrPrgNrstStdby",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("a reset is generated when entering Standby mode on core domain."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("no reset generated when entering Standby mode on core domain."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrPrgNrstStop",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("a reset is generated when entering Stop mode on core domain."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("no reset generated when entering Stop mode on core domain."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrPrgSingleBank",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some(
-                        "128 Kbytes of user flash split with 64 Kbytes in Bank 1 and 64 Kbytes in Bank 2.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("128 Kbytes of user flash located in one bank."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrPrgSwapBank",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("Bank1 and bank2 not swapped."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Bank1 and bank2 swapped."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "OptsrPrgWwdgSw",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("WWDG watchdog is controlled by hardware."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("WWDG watchdog is controlled by software."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Per",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("page erase not requested."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("page erase requested."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pg",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("programming disabled."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("programming enabled."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pgserr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no sequence error occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("a sequence error occurred."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pgserrie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no interrupt generated when a sequence error occurs."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("interrupt generated when sequence error occurs."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pnb",
-            description: None,
-            bit_size: 6,
-            variants: &[
-                EnumVariant {
-                    name: "B0x00",
-                    description: Some("Page 0 selected."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x01",
-                    description: Some("Page 1 selected."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Prften",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("prefetch disabled."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("prefetch enabled when latency is at least one wait-state."),
                     value: 1,
                 },
             ],
@@ -2768,79 +1763,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ser",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("sector erase not requested."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("sector erase requested."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Snb",
-            description: None,
-            bit_size: 6,
-            variants: &[
-                EnumVariant {
-                    name: "B0x00",
-                    description: Some("Sector 0 selected."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x01",
-                    description: Some("Sector 1 selected."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x2f",
-                    description: Some("Sector 41 selected."),
-                    value: 47,
-                },
-            ],
-        },
-        Enum {
-            name: "Strberr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no strobe error occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("a strobe error occurred."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Strberrie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no interrupt generated when a strobe error occurs."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("interrupt generated when strobe error occurs."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Wbne",
             description: None,
             bit_size: 1,
@@ -2858,7 +1780,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Wrp1rCurWrpsg1",
+            name: "Wrp1rWrpsg1",
             description: None,
             bit_size: 32,
             variants: &[
@@ -2875,24 +1797,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Wrp1rPrgWrpsg1",
-            description: None,
-            bit_size: 32,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("write protected;."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("not write protected."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Wrp2rCurWrpsg2",
+            name: "Wrp2rWrpsg2",
             description: None,
             bit_size: 32,
             variants: &[
@@ -2904,57 +1809,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "B0x1",
                     description: Some("not write protected."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Wrp2rPrgWrpsg2",
-            description: None,
-            bit_size: 32,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("write protected;."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("not write protected."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Wrperr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no write protection error occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("a write protection error occurred."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Wrperrie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no interrupt generated when a protection error occurs."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("interrupt generated when a protection error occurs."),
                     value: 1,
                 },
             ],

@@ -1142,6 +1142,11 @@
         {
           "name": "ADC1",
           "address": 1073881088,
+          "registers": {
+            "kind": "adc",
+            "version": "n6",
+            "block": "ADC"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": {
@@ -1284,11 +1289,21 @@
         },
         {
           "name": "ADC12_COMMON",
-          "address": 1073881856
+          "address": 1073881856,
+          "registers": {
+            "kind": "adccommon",
+            "version": "n6",
+            "block": "ADC_COMMON"
+          }
         },
         {
           "name": "ADC2",
           "address": 1073881344,
+          "registers": {
+            "kind": "adc",
+            "version": "n6",
+            "block": "ADC"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": {

@@ -863,9 +863,9 @@ pub const FDCANRAM: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0
 pub const FDCAN3: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_e800usize as _) };
 pub const UCPD1: ucpd::Ucpd = unsafe { ucpd::Ucpd::from_ptr(0x4000_fc00usize as _) };
 pub const GPDMA1: gpdma::Gpdma = unsafe { gpdma::Gpdma::from_ptr(0x4002_1000usize as _) };
-pub const ADC1: *mut () = 0x4002_2000usize as _;
-pub const ADC2: *mut () = 0x4002_2100usize as _;
-pub const ADC12_COMMON: *mut () = 0x4002_2300usize as _;
+pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4002_2000usize as _) };
+pub const ADC2: adc::Adc = unsafe { adc::Adc::from_ptr(0x4002_2100usize as _) };
+pub const ADC12_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4002_2300usize as _) };
 pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4200_1000usize as _) };
 pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4200_3000usize as _) };
 pub const SPI4: spi::Spi = unsafe { spi::Spi::from_ptr(0x4200_3400usize as _) };
@@ -963,6 +963,10 @@ pub const NVIC_PRIO_BITS: u8 = 4;
 pub use Interrupt as interrupt;
 #[cfg(feature = "rt")]
 pub use cortex_m_rt::interrupt;
+#[path = "../../peripherals/adc_n6.rs"]
+pub mod adc;
+#[path = "../../peripherals/adccommon_n6.rs"]
+pub mod adccommon;
 #[path = "../../peripherals/bsec_v2.rs"]
 pub mod bsec;
 #[path = "../../peripherals/can_fdcan_v2.rs"]

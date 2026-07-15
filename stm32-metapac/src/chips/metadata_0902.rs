@@ -1502,8 +1502,25 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "FMC",
         address: 0x420d0400,
-        registers: None,
-        rcc: None,
+        registers: Some(PeripheralRegisters {
+            kind: "fsmc",
+            version: "v5x1",
+            block: "FSMC",
+            ir: &fsmc::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            bus_clock: "HCLK2",
+            kernel_clock: Clock("HCLK2"),
+            enable: Some(PeripheralRccRegister {
+                register: "AHB2ENR2",
+                field: "FSMCEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "AHB2RSTR2",
+                field: "FSMCRST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PB15",
@@ -3826,7 +3843,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "MDF1",
         address: 0x40025000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "mdf",
+            version: "u5",
+            block: "MDF",
+            ir: &mdf::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -10064,6 +10086,8 @@ pub mod fdcanram;
 pub mod flash;
 #[path = "../registers/fmac_v1.rs"]
 pub mod fmac;
+#[path = "../registers/fsmc_v5x1.rs"]
+pub mod fsmc;
 #[path = "../registers/gpdma_v1.rs"]
 pub mod gpdma;
 #[path = "../registers/gpio_v2.rs"]
@@ -10082,6 +10106,8 @@ pub mod iwdg;
 pub mod lpdma;
 #[path = "../registers/lptim_v2a.rs"]
 pub mod lptim;
+#[path = "../registers/mdf_u5.rs"]
+pub mod mdf;
 #[path = "../registers/octospi_v1.rs"]
 pub mod octospi;
 #[path = "../registers/octospim_v1.rs"]

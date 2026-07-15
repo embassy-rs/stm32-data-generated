@@ -943,7 +943,7 @@ pub const XSPI2: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x4802_a000usize as 
 pub const XSPIM: xspim::Xspim = unsafe { xspim::Xspim::from_ptr(0x4802_b400usize as _) };
 pub const XSPI3: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x4802_d000usize as _) };
 pub const GFXMMU: *mut () = 0x4803_0000usize as _;
-pub const GPU2D: *mut () = 0x4803_4000usize as _;
+pub const GPU2D: gpu2d::Gpu2d = unsafe { gpu2d::Gpu2d::from_ptr(0x4803_4000usize as _) };
 pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4803_5000usize as _) };
 pub const ETH1: eth::Eth = unsafe { eth::Eth::from_ptr(0x4803_6000usize as _) };
 pub const USB1_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4804_0000usize as _) };
@@ -992,6 +992,8 @@ pub mod fmc;
 pub mod gpdma;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/gpu2d_v1.rs"]
+pub mod gpu2d;
 #[path = "../../peripherals/hash_v3.rs"]
 pub mod hash;
 #[path = "../../peripherals/i2c_v3.rs"]

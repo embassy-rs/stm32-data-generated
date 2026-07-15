@@ -2937,7 +2937,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "MDF1",
         address: 0x40025000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "mdf",
+            version: "u5",
+            block: "MDF",
+            ir: &mdf::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -8015,6 +8020,8 @@ pub mod iwdg;
 pub mod lpdma;
 #[path = "../registers/lptim_v2a.rs"]
 pub mod lptim;
+#[path = "../registers/mdf_u5.rs"]
+pub mod mdf;
 #[path = "../registers/octospi_v1.rs"]
 pub mod octospi;
 #[path = "../registers/octospim_v1.rs"]

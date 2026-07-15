@@ -47,14 +47,15 @@ The following table shows which STM32 peripheral versions are supported across d
 | [FDCANRAM](#fdcanram) | v1 | v1 | | | | | | | v1 | v1 | v1 | v1, v2 | | | | | v1 | v1 | v2 | | v1 | v1 | | | | |
 | [FLASH](#flash) | c0 | c5 | f0 | f1 | f2 | f3 | f4 | f7 | g0x0, g0x1 | g4c2, g4c3, g4c4 | h5, h50 | h7, h7ab, h7rs | l0 | l1 | l4 | l4 | l5 | | | u0 | u3 | u5 | wb | wb0 | wba | wl |
 | [FMAC](#fmac) | | | | | | | | | | v1 | v1 | v1 | | | | | | | | | | v1 | | | | |
-| [FMC](#fmc) | | | | | | ❌ | v1x3, v2x1, ❌ | v2x1 | | ❌ | v4 | v3x1 | | | ❌ | ❌ | ❌ | ❌ | n6 | | | ❌ | | | | |
+| [FMC](#fmc) | | | | | | ❌ | v1x3, v2x1, ❌ | v2x1 | | ❌ | v4 | v3x1 | | | ❌ | ❌ | ❌ | ❌ | n6 | | | | | | | |
 | [FMPI2C](#fmpi2c) | | | | | | | v2 | | | | | | | | | | | | | | | | | | | |
-| [FSMC](#fsmc) | | | | v1x0, v1x3 | v1x3 | | v1x0, v1x3 | | | | | | | v1x0 | | | | | | | | | | | | |
+| [FSMC](#fsmc) | | | | v1x0, v1x3 | v1x3 | | v1x0, v1x3 | | | | | | | v1x0 | | | | | | | | v5x1 | | | | |
 | [GFXMMU](#gfxmmu) | | | | | | | | | | | | ❌ | | | | v1 | | | ❌ | | | v2 | | | | |
-| [GFXTIM](#gfxtim) | | | | | | | | | | | | ❌ | | | | | | | ❌ | | | ❌ | | | | |
+| [GFXTIM](#gfxtim) | | | | | | | | | | | | ❌ | | | | | | | ❌ | | | v1 | | | | |
 | [GPDMA](#gpdma) | | | | | | | | | | | v1 | v1 | | | | | | | v1 | | v1 | v1 | | | v1 | |
 | [GPIO](#gpio) | v2 | v2 | v2 | v1 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2, v2_l478 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 |
-| [GPU](#gpu) | | | | | | | | | | | | ❌ | | | | | | ❌ | ❌ | | | ❌ | | | | |
+| [GPU](#gpu) | | | | | | | | | | | | | | | | | | ❌ | | | | | | | | |
+| [GPU2D](#gpu2d) | | | | | | | | | | | | v1 | | | | | | | v1 | | | v1 | | | | |
 | [GTZC](#gtzc) | | | | | | | | | | | h503, v1, ❌ | | | | | | l5 | | | | v1 | v1 | | | wba | ❌ |
 | [HASH](#hash) | | ❌ | | | v1 | | v1, v2 | v2 | | | v3 | v2, v3 | | | v2 | v2 | v2 | ❌ | v3 | | v3 | v4 | | | v4 | |
 | [HDP](#hdp) | | | | | | | | | | | | | | | | | | ❌ | | | | | | | | |
@@ -70,11 +71,11 @@ The following table shows which STM32 peripheral versions are supported across d
 | [JPEG](#jpeg) | | | | | | | | v1 | | | | v1 | | | | | | | v1 | | | v1 | | | | |
 | [LCD](#lcd) | | | | | | | | | | | | | v2 | v1 | v2 | | | | | v2 | | | v2 | | | |
 | [LPDMA](#lpdma) | | v1 | | | | | | | | | | | | | | | | | | | | v1 | | | | |
-| [LPGPIO](#lpgpio) | | | | | | | | | | | | | | | | | | | | | | ❌ | | | | |
+| [LPGPIO](#lpgpio) | | | | | | | | | | | | | | | | | | | | | | v1 | | | | |
 | [LPTIM](#lptim) | | ❌ | | | | | v1a | v1a | v1b | v1b_g4 | v2a | v1b_h7 | v1 | | v1a | v1b | v1c | ❌ | ❌ | v2b | v2a | v2a | v1b | | v2a | v1c |
 | [LTDC](#ltdc) | | | | | | | v1 | v1 | | | | v1 | | | | v1, ❌ | | ❌ | v1_3 | | | v1 | | | | |
 | [MCE](#mce) | | | | | | | | | | | | ❌ | | | | | | | ❌ | | | | | | | |
-| [MDF](#mdf) | | | | | | | | | | | | | | | | | | | ❌ | | | ❌ | | | | |
+| [MDF](#mdf) | | | | | | | | | | | | | | | | | | | ❌ | | | u5 | | | | |
 | [MDIOS](#mdios) | | | | | | | | v1 | | | | v1 | | | | | | | v1 | | | | | | | |
 | [MDMA](#mdma) | | | | | | | | | | | | v1 | | | | | | ❌ | | | | | | | | |
 | [OCTOSPI](#octospi) | | | | | | | | | | | v2 | v1 | | | | v1 | v2 | | | | v2 | v1 | | | | |
@@ -494,7 +495,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v2x1**: STM32F4, STM32F7
 - **v3x1**: STM32H7
 - **v4**: STM32H5
-- **❌ Unsupported**: STM32F3, STM32F4, STM32G4, STM32L4, STM32L4+, STM32L5, STM32MP1, STM32U5
+- **❌ Unsupported**: STM32F3, STM32F4, STM32G4, STM32L4, STM32L4+, STM32L5, STM32MP1
 
 ### FMPI2C
 
@@ -508,6 +509,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 - **v1x0**: STM32F1, STM32F4, STM32L1
 - **v1x3**: STM32F1, STM32F2, STM32F4
+- **v5x1**: STM32U5
 
 ### GFXMMU
 
@@ -521,7 +523,8 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **❌ Unsupported**: STM32H7, STM32N6, STM32U5
+- **v1**: STM32U5
+- **❌ Unsupported**: STM32H7, STM32N6
 
 ### GPDMA
 
@@ -541,7 +544,13 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **❌ Unsupported**: STM32H7, STM32MP1, STM32N6, STM32U5
+- **❌ Unsupported**: STM32MP1
+
+### GPU2D
+
+**Versions by family:**
+
+- **v1**: STM32H7, STM32N6, STM32U5
 
 ### GTZC
 
@@ -663,7 +672,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **❌ Unsupported**: STM32U5
+- **v1**: STM32U5
 
 ### LPTIM
 
@@ -697,7 +706,8 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **❌ Unsupported**: STM32N6, STM32U5
+- **u5**: STM32U5
+- **❌ Unsupported**: STM32N6
 
 ### MDIOS
 

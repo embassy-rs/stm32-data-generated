@@ -553,7 +553,7 @@ pub const FMAC: fmac::Fmac = unsafe { fmac::Fmac::from_ptr(0x4002_1400usize as _
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000usize as _) };
 pub const TSC: tsc::Tsc = unsafe { tsc::Tsc::from_ptr(0x4002_4000usize as _) };
-pub const MDF1: *mut () = 0x4002_5000usize as _;
+pub const MDF1: mdf::Mdf = unsafe { mdf::Mdf::from_ptr(0x4002_5000usize as _) };
 pub const RAMCFG: ramcfg::Ramcfg = unsafe { ramcfg::Ramcfg::from_ptr(0x4002_6000usize as _) };
 pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4003_0400usize as _) };
 pub const DCACHE1: dcache::Dcache = unsafe { dcache::Dcache::from_ptr(0x4003_1400usize as _) };
@@ -660,6 +660,8 @@ pub mod iwdg;
 pub mod lpdma;
 #[path = "../../peripherals/lptim_v2a.rs"]
 pub mod lptim;
+#[path = "../../peripherals/mdf_u5.rs"]
+pub mod mdf;
 #[path = "../../peripherals/octospi_v1.rs"]
 pub mod octospi;
 #[path = "../../peripherals/opamp_v3.rs"]

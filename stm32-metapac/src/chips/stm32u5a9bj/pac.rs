@@ -659,11 +659,11 @@ pub const FMAC: fmac::Fmac = unsafe { fmac::Fmac::from_ptr(0x4002_1400usize as _
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000usize as _) };
 pub const TSC: tsc::Tsc = unsafe { tsc::Tsc::from_ptr(0x4002_4000usize as _) };
-pub const MDF1: *mut () = 0x4002_5000usize as _;
+pub const MDF1: mdf::Mdf = unsafe { mdf::Mdf::from_ptr(0x4002_5000usize as _) };
 pub const RAMCFG: ramcfg::Ramcfg = unsafe { ramcfg::Ramcfg::from_ptr(0x4002_6000usize as _) };
 pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x4002_b000usize as _) };
 pub const GFXMMU: gfxmmu::Gfxmmu = unsafe { gfxmmu::Gfxmmu::from_ptr(0x4002_c000usize as _) };
-pub const GPU2D: *mut () = 0x4002_f000usize as _;
+pub const GPU2D: gpu2d::Gpu2d = unsafe { gpu2d::Gpu2d::from_ptr(0x4002_f000usize as _) };
 pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4003_0400usize as _) };
 pub const DCACHE1: dcache::Dcache = unsafe { dcache::Dcache::from_ptr(0x4003_1400usize as _) };
 pub const DCACHE2: dcache::Dcache = unsafe { dcache::Dcache::from_ptr(0x4003_1800usize as _) };
@@ -703,7 +703,7 @@ pub const DLYB_SDMMC2: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_8800usi
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8c00usize as _) };
 pub const DLYB_OCTOSPI1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_f000usize as _) };
 pub const DLYB_OCTOSPI2: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_f400usize as _) };
-pub const FMC: *mut () = 0x420d_0400usize as _;
+pub const FMC: fsmc::Fsmc = unsafe { fsmc::Fsmc::from_ptr(0x420d_0400usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x420d_1400usize as _) };
 pub const OCTOSPI2: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x420d_2400usize as _) };
 pub const HSPI1: hspi::Hspi = unsafe { hspi::Hspi::from_ptr(0x420d_3400usize as _) };
@@ -778,12 +778,16 @@ pub mod fdcanram;
 pub mod flash;
 #[path = "../../peripherals/fmac_v1.rs"]
 pub mod fmac;
+#[path = "../../peripherals/fsmc_v5x1.rs"]
+pub mod fsmc;
 #[path = "../../peripherals/gfxmmu_v2.rs"]
 pub mod gfxmmu;
 #[path = "../../peripherals/gpdma_v1.rs"]
 pub mod gpdma;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/gpu2d_v1.rs"]
+pub mod gpu2d;
 #[path = "../../peripherals/gtzc_v1.rs"]
 pub mod gtzc;
 #[path = "../../peripherals/hash_v4.rs"]
@@ -802,6 +806,8 @@ pub mod lpdma;
 pub mod lptim;
 #[path = "../../peripherals/ltdc_v1.rs"]
 pub mod ltdc;
+#[path = "../../peripherals/mdf_u5.rs"]
+pub mod mdf;
 #[path = "../../peripherals/octospi_v1.rs"]
 pub mod octospi;
 #[path = "../../peripherals/octospim_v1.rs"]

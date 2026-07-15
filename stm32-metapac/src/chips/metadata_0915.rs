@@ -1425,8 +1425,25 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "FMC",
         address: 0x420d0400,
-        registers: None,
-        rcc: None,
+        registers: Some(PeripheralRegisters {
+            kind: "fsmc",
+            version: "v5x1",
+            block: "FSMC",
+            ir: &fsmc::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            bus_clock: "HCLK2",
+            kernel_clock: Clock("HCLK2"),
+            enable: Some(PeripheralRccRegister {
+                register: "AHB2ENR2",
+                field: "FSMCEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "AHB2RSTR2",
+                field: "FSMCRST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PB15",
@@ -1786,7 +1803,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "GFXTIM",
         address: 0x40016400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "gfxtim",
+            version: "v1",
+            block: "GFXTIM",
+            ir: &gfxtim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
             kernel_clock: Clock("PCLK2"),
@@ -2246,7 +2268,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "GPU2D",
         address: 0x4002f000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "gpu2d",
+            version: "v1",
+            block: "GPU2D",
+            ir: &gpu2d::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK1",
             kernel_clock: Clock("HCLK1"),
@@ -3304,7 +3331,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "LPGPIO1",
         address: 0x46020000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lpgpio",
+            version: "v1",
+            block: "LPGPIO",
+            ir: &lpgpio::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK3",
             kernel_clock: Clock("HCLK3"),
@@ -4168,7 +4200,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "MDF1",
         address: 0x40025000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "mdf",
+            version: "u5",
+            block: "MDF",
+            ir: &mdf::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -10153,12 +10190,18 @@ pub mod exti;
 pub mod flash;
 #[path = "../registers/fmac_v1.rs"]
 pub mod fmac;
+#[path = "../registers/fsmc_v5x1.rs"]
+pub mod fsmc;
 #[path = "../registers/gfxmmu_v2.rs"]
 pub mod gfxmmu;
+#[path = "../registers/gfxtim_v1.rs"]
+pub mod gfxtim;
 #[path = "../registers/gpdma_v1.rs"]
 pub mod gpdma;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../registers/gpu2d_v1.rs"]
+pub mod gpu2d;
 #[path = "../registers/gtzc_v1.rs"]
 pub mod gtzc;
 #[path = "../registers/hash_v4.rs"]
@@ -10175,10 +10218,14 @@ pub mod iwdg;
 pub mod jpeg;
 #[path = "../registers/lpdma_v1.rs"]
 pub mod lpdma;
+#[path = "../registers/lpgpio_v1.rs"]
+pub mod lpgpio;
 #[path = "../registers/lptim_v2a.rs"]
 pub mod lptim;
 #[path = "../registers/ltdc_v1.rs"]
 pub mod ltdc;
+#[path = "../registers/mdf_u5.rs"]
+pub mod mdf;
 #[path = "../registers/octospi_v1.rs"]
 pub mod octospi;
 #[path = "../registers/octospim_v1.rs"]

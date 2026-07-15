@@ -5369,6 +5369,11 @@
         {
           "name": "GPU2D",
           "address": 1375813632,
+          "registers": {
+            "kind": "gpu2d",
+            "version": "v1",
+            "block": "GPU2D"
+          },
           "interrupts": [
             {
               "signal": "ER",

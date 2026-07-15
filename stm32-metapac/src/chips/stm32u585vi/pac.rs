@@ -602,7 +602,7 @@ pub const FMAC: fmac::Fmac = unsafe { fmac::Fmac::from_ptr(0x4002_1400usize as _
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000usize as _) };
 pub const TSC: tsc::Tsc = unsafe { tsc::Tsc::from_ptr(0x4002_4000usize as _) };
-pub const MDF1: *mut () = 0x4002_5000usize as _;
+pub const MDF1: mdf::Mdf = unsafe { mdf::Mdf::from_ptr(0x4002_5000usize as _) };
 pub const RAMCFG: ramcfg::Ramcfg = unsafe { ramcfg::Ramcfg::from_ptr(0x4002_6000usize as _) };
 pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x4002_b000usize as _) };
 pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4003_0400usize as _) };
@@ -641,7 +641,7 @@ pub const DLYB_SDMMC2: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_8800usi
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8c00usize as _) };
 pub const DLYB_OCTOSPI1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_f000usize as _) };
 pub const DLYB_OCTOSPI2: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_f400usize as _) };
-pub const FMC: *mut () = 0x420d_0400usize as _;
+pub const FMC: fsmc::Fsmc = unsafe { fsmc::Fsmc::from_ptr(0x420d_0400usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x420d_1400usize as _) };
 pub const OCTOSPI2: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x420d_2400usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4600_0400usize as _) };
@@ -713,6 +713,8 @@ pub mod fdcanram;
 pub mod flash;
 #[path = "../../peripherals/fmac_v1.rs"]
 pub mod fmac;
+#[path = "../../peripherals/fsmc_v5x1.rs"]
+pub mod fsmc;
 #[path = "../../peripherals/gpdma_v1.rs"]
 pub mod gpdma;
 #[path = "../../peripherals/gpio_v2.rs"]
@@ -731,6 +733,8 @@ pub mod iwdg;
 pub mod lpdma;
 #[path = "../../peripherals/lptim_v2a.rs"]
 pub mod lptim;
+#[path = "../../peripherals/mdf_u5.rs"]
+pub mod mdf;
 #[path = "../../peripherals/octospi_v1.rs"]
 pub mod octospi;
 #[path = "../../peripherals/octospim_v1.rs"]

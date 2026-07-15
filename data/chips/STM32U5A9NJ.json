@@ -2842,6 +2842,23 @@
         {
           "name": "FMC",
           "address": 1108149248,
+          "registers": {
+            "kind": "fsmc",
+            "version": "v5x1",
+            "block": "FSMC"
+          },
+          "rcc": {
+            "bus_clock": "HCLK2",
+            "kernel_clock": "HCLK2",
+            "enable": {
+              "register": "AHB2ENR2",
+              "field": "FSMCEN"
+            },
+            "reset": {
+              "register": "AHB2RSTR2",
+              "field": "FSMCRST"
+            }
+          },
           "pins": [
             {
               "pin": "PB15",
@@ -3554,6 +3571,11 @@
         {
           "name": "GPU2D",
           "address": 1073934336,
+          "registers": {
+            "kind": "gpu2d",
+            "version": "v1",
+            "block": "GPU2D"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": "HCLK1",
@@ -5417,6 +5439,11 @@
         {
           "name": "MDF1",
           "address": 1073893376,
+          "registers": {
+            "kind": "mdf",
+            "version": "u5",
+            "block": "MDF"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": {

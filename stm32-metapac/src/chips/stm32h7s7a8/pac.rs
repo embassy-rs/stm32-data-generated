@@ -757,7 +757,7 @@ pub const MCE1: *mut () = 0x5200_b800usize as _;
 pub const MCE2: *mut () = 0x5200_bc00usize as _;
 pub const MCE3: *mut () = 0x5200_c000usize as _;
 pub const GFXMMU: *mut () = 0x5201_0000usize as _;
-pub const GPU2D: *mut () = 0x5201_4000usize as _;
+pub const GPU2D: gpu2d::Gpu2d = unsafe { gpu2d::Gpu2d::from_ptr(0x5201_4000usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x5800_0000usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x5800_0400usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x5800_0c00usize as _) };
@@ -832,6 +832,8 @@ pub mod fmc;
 pub mod gpdma;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/gpu2d_v1.rs"]
+pub mod gpu2d;
 #[path = "../../peripherals/hash_v3.rs"]
 pub mod hash;
 #[path = "../../peripherals/i2c_v3.rs"]

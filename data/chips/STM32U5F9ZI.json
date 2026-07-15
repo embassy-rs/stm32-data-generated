@@ -3037,6 +3037,23 @@
         {
           "name": "FMC",
           "address": 1108149248,
+          "registers": {
+            "kind": "fsmc",
+            "version": "v5x1",
+            "block": "FSMC"
+          },
+          "rcc": {
+            "bus_clock": "HCLK2",
+            "kernel_clock": "HCLK2",
+            "enable": {
+              "register": "AHB2ENR2",
+              "field": "FSMCEN"
+            },
+            "reset": {
+              "register": "AHB2RSTR2",
+              "field": "FSMCRST"
+            }
+          },
           "pins": [
             {
               "pin": "PB15",
@@ -3391,6 +3408,11 @@
         {
           "name": "GFXTIM",
           "address": 1073832960,
+          "registers": {
+            "kind": "gfxtim",
+            "version": "v1",
+            "block": "GFXTIM"
+          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": "PCLK2",
@@ -3773,6 +3795,11 @@
         {
           "name": "GPU2D",
           "address": 1073934336,
+          "registers": {
+            "kind": "gpu2d",
+            "version": "v1",
+            "block": "GPU2D"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": "HCLK1",
@@ -4656,6 +4683,11 @@
         {
           "name": "LPGPIO1",
           "address": 1174536192,
+          "registers": {
+            "kind": "lpgpio",
+            "version": "v1",
+            "block": "LPGPIO"
+          },
           "rcc": {
             "bus_clock": "HCLK3",
             "kernel_clock": "HCLK3",
@@ -5446,6 +5478,11 @@
         {
           "name": "MDF1",
           "address": 1073893376,
+          "registers": {
+            "kind": "mdf",
+            "version": "u5",
+            "block": "MDF"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": {

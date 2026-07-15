@@ -3656,6 +3656,11 @@
         {
           "name": "MDF1",
           "address": 1073893376,
+          "registers": {
+            "kind": "mdf",
+            "version": "u5",
+            "block": "MDF"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": {

@@ -2343,7 +2343,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "GPU2D",
         address: 0x52014000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "gpu2d",
+            version: "v1",
+            block: "GPU2D",
+            ir: &gpu2d::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -8557,6 +8562,8 @@ pub mod fmc;
 pub mod gpdma;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../registers/gpu2d_v1.rs"]
+pub mod gpu2d;
 #[path = "../registers/hash_v3.rs"]
 pub mod hash;
 #[path = "../registers/i2c_v3.rs"]

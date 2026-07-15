@@ -894,7 +894,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "I2C1",
         address: 0x40005400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "i2c",
+            version: "v3",
+            block: "I2C",
+            ir: &i2c::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -4076,6 +4081,8 @@ pub mod fdcanram;
 pub mod flash;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../registers/i2c_v3.rs"]
+pub mod i2c;
 #[path = "../registers/lpdma_v1.rs"]
 pub mod lpdma;
 #[path = "../registers/pwr_c5.rs"]

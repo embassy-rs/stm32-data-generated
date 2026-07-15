@@ -355,8 +355,8 @@ pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400usiz
 pub const USART3: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4800usize as _) };
 pub const UART4: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4c00usize as _) };
 pub const UART5: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_5000usize as _) };
-pub const I2C1: *mut () = 0x4000_5400usize as _;
-pub const I2C2: *mut () = 0x4000_5800usize as _;
+pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400usize as _) };
+pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800usize as _) };
 pub const I3C1: *mut () = 0x4000_5c00usize as _;
 pub const CRS: *mut () = 0x4000_6000usize as _;
 pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_2c00usize as _) };
@@ -414,6 +414,8 @@ pub mod exti;
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/i2c_v3.rs"]
+pub mod i2c;
 #[path = "../../peripherals/lpdma_v1.rs"]
 pub mod lpdma;
 #[path = "../../peripherals/pwr_c5.rs"]

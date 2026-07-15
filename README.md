@@ -63,7 +63,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [HSEM](#hsem) | | | | | | | | | | | | v1, v2, ❌ | | | | | | ❌ | | | | | v1, ❌ | | wba | v3, v4 |
 | [HSP](#hsp) | | | | | | | | | | | | | | | | | | | | | v1 | | | | | |
 | [HSPI](#hspi) | | | | | | | | | | | | | | | | | | | | | | v1 | | | | |
-| [I2C](#i2c) | v2 | ❌ | v2 | v1 | v1 | v2 | v1 | v2 | v2 | v2 | v2 | v2, v3 | v2 | v1 | v2 | v2 | v2 | ❌ | v3 | v2 | v2 | v2 | v2 | v1 | v2 | v2 |
+| [I2C](#i2c) | v2 | v3 | v2 | v1 | v1 | v2 | v1 | v2 | v2 | v2 | v2 | v2, v3 | v2 | v1 | v2 | v2 | v2 | ❌ | v3 | v2 | v2 | v2 | v2 | v1 | v2 | v2 |
 | [I3C](#i3c) | | ❌ | | | | | | | | | v1 | ❌ | | | | | | | ❌ | | v1 | | | | | |
 | [ICACHE](#icache) | | ❌ | | | | | | | | | v1_0crr, v1_4crr, ❌ | | | | | | v1_4crr | | v1_0crr | | v1_3crr | v1_3crr | | | v1_4crr | |
 | [IPCC](#ipcc) | | | | | | | | | | | | | | | | | | ❌ | | | | | v1 | | | v1 |
@@ -614,8 +614,8 @@ The following table shows which STM32 peripheral versions are supported across d
 
 - **v1**: STM32F1, STM32F2, STM32F4, STM32L1, STM32WB0
 - **v2**: STM32C0, STM32F0, STM32F3, STM32F7, STM32G0, STM32G4, STM32H5, STM32H7, STM32L0, STM32L4, STM32L4+, STM32L5, STM32U0, STM32U3, STM32U5, STM32WB, STM32WBA, STM32WL
-- **v3**: STM32H7, STM32N6
-- **❌ Unsupported**: STM32C5, STM32MP1
+- **v3**: STM32C5, STM32H7, STM32N6
+- **❌ Unsupported**: STM32MP1
 
 ### I3C
 

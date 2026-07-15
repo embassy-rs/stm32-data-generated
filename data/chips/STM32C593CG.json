@@ -1386,6 +1386,11 @@
         {
           "name": "I2C1",
           "address": 1073763328,
+          "registers": {
+            "kind": "i2c",
+            "version": "v3",
+            "block": "I2C"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -1482,6 +1487,11 @@
         {
           "name": "I2C2",
           "address": 1073764352,
+          "registers": {
+            "kind": "i2c",
+            "version": "v3",
+            "block": "I2C"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {

@@ -1699,6 +1699,11 @@
         {
           "name": "SPI1",
           "address": 1073819648,
+          "registers": {
+            "kind": "spi",
+            "version": "v5_i2s",
+            "block": "SPI"
+          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": {
@@ -1881,6 +1886,11 @@
         {
           "name": "SPI2",
           "address": 1073756160,
+          "registers": {
+            "kind": "spi",
+            "version": "v5_i2s",
+            "block": "SPI"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {

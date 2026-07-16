@@ -418,8 +418,8 @@ pub const TIM7: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1400
 pub const TIM12: timer::Tim2ch = unsafe { timer::Tim2ch::from_ptr(0x4000_1800usize as _) };
 pub const WWDG: *mut () = 0x4000_2c00usize as _;
 pub const IWDG: *mut () = 0x4000_3000usize as _;
-pub const SPI2: *mut () = 0x4000_3800usize as _;
-pub const SPI3: *mut () = 0x4000_3c00usize as _;
+pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800usize as _) };
+pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3c00usize as _) };
 pub const COMP1: *mut () = 0x4000_4000usize as _;
 pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400usize as _) };
 pub const USART3: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4800usize as _) };
@@ -437,7 +437,7 @@ pub const FDCANRAM: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0
 pub const FDCANRAM1: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_ac00usize as _) };
 pub const FDCANRAM2: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_af50usize as _) };
 pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_2c00usize as _) };
-pub const SPI1: *mut () = 0x4001_3000usize as _;
+pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000usize as _) };
 pub const TIM8: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4001_3400usize as _) };
 pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_3800usize as _) };
 pub const TIM15: timer::Tim2chCmp = unsafe { timer::Tim2chCmp::from_ptr(0x4001_4000usize as _) };
@@ -511,6 +511,8 @@ pub mod lpdma;
 pub mod pwr;
 #[path = "../../peripherals/rcc_c5.rs"]
 pub mod rcc;
+#[path = "../../peripherals/spi_v5_i2s.rs"]
+pub mod spi;
 #[path = "../../peripherals/syscfg_c5.rs"]
 pub mod syscfg;
 #[path = "../../peripherals/timer_v3.rs"]

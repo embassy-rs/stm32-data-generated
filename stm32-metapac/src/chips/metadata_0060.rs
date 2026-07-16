@@ -2230,7 +2230,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SPI1",
         address: 0x40013000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "spi",
+            version: "v5_i2s",
+            block: "SPI",
+            ir: &spi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -2448,7 +2453,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SPI2",
         address: 0x40003800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "spi",
+            version: "v5_i2s",
+            block: "SPI",
+            ir: &spi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -2751,7 +2761,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SPI3",
         address: 0x40003c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "spi",
+            version: "v5_i2s",
+            block: "SPI",
+            ir: &spi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -7590,6 +7605,8 @@ pub mod lpdma;
 pub mod pwr;
 #[path = "../registers/rcc_c5.rs"]
 pub mod rcc;
+#[path = "../registers/spi_v5_i2s.rs"]
+pub mod spi;
 #[path = "../registers/syscfg_c5.rs"]
 pub mod syscfg;
 #[path = "../registers/timer_v3.rs"]

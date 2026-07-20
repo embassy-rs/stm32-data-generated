@@ -364,8 +364,8 @@ pub(crate) static REGISTERS: IR = IR {
                         "External trigger selection for regular group These bits select the external event used to trigger the start of conversion of a regular group: ... Note: The software is allowed to write these bits only when ADSTART = 0 (which ensures that no regular conversion is ongoing).",
                     ),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 5, stride: 1 })),
+                    bit_size: 5,
+                    array: None,
                     enumm: None,
                 },
                 Field {

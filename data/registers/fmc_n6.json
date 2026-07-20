@@ -141,6 +141,11 @@
         "block": "NAND"
       },
       {
+        "name": "SDRAM",
+        "byte_offset": 320,
+        "block": "SDRAM"
+      },
+      {
         "name": "NAND_EXT",
         "byte_offset": 384,
         "block": "NAND_EXT"
@@ -154,11 +159,6 @@
         "name": "BCH",
         "byte_offset": 592,
         "block": "BCH"
-      },
-      {
-        "name": "SDRAM",
-        "byte_offset": 320,
-        "block": "SDRAM"
       }
     ]
   },

@@ -319,18 +319,14 @@ pub mod regs {
         #[doc = "External trigger selection for regular group These bits select the external event used to trigger the start of conversion of a regular group: ... Note: The software is allowed to write these bits only when ADSTART = 0 (which ensures that no regular conversion is ongoing)."]
         #[must_use]
         #[inline(always)]
-        pub const fn extsel(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 5usize + n * 1usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
+        pub const fn extsel(&self) -> u8 {
+            let val = (self.0 >> 5usize) & 0x1f;
+            val as u8
         }
         #[doc = "External trigger selection for regular group These bits select the external event used to trigger the start of conversion of a regular group: ... Note: The software is allowed to write these bits only when ADSTART = 0 (which ensures that no regular conversion is ongoing)."]
         #[inline(always)]
-        pub const fn set_extsel(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 5usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+        pub const fn set_extsel(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x1f << 5usize)) | (((val as u32) & 0x1f) << 5usize);
         }
         #[doc = "External trigger enable and polarity selection for regular channels These bits are set and cleared by software to select the external trigger polarity and enable the trigger of a regular group. Note: The software is allowed to write these bits only when ADSTART = 0 (which ensures that no regular conversion is ongoing)."]
         #[must_use]
@@ -529,11 +525,7 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
                 .field("dmaen", &self.dmaen())
                 .field("dmacfg", &self.dmacfg())
                 .field("res", &self.res())
-                .field("extsel[0]", &self.extsel(0usize))
-                .field("extsel[1]", &self.extsel(1usize))
-                .field("extsel[2]", &self.extsel(2usize))
-                .field("extsel[3]", &self.extsel(3usize))
-                .field("extsel[4]", &self.extsel(4usize))
+                .field("extsel", &self.extsel())
                 .field("exten", &self.exten())
                 .field("ovrmod", &self.ovrmod())
                 .field("cont", &self.cont())
@@ -557,15 +549,11 @@ setting to the reset value. The channel selected by AWD1CH must be also selected
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Cfgr {{ dmaen: {=bool:?}, dmacfg: {:?}, res: {:?}, extsel[0]: {=bool:?}, extsel[1]: {=bool:?}, extsel[2]: {=bool:?}, extsel[3]: {=bool:?}, extsel[4]: {=bool:?}, exten: {:?}, ovrmod: {:?}, cont: {=bool:?}, autdly: {=bool:?}, align: {:?}, discen: {=bool:?}, discnum: {=u8:?}, jdiscen: {=bool:?}, jqm: {:?}, awd1sgl: {:?}, awd1en: {=bool:?}, jawd1en: {=bool:?}, jauto: {=bool:?}, awd1ch: {=u8:?}, jqdis: {=bool:?} }}",
+                "Cfgr {{ dmaen: {=bool:?}, dmacfg: {:?}, res: {:?}, extsel: {=u8:?}, exten: {:?}, ovrmod: {:?}, cont: {=bool:?}, autdly: {=bool:?}, align: {:?}, discen: {=bool:?}, discnum: {=u8:?}, jdiscen: {=bool:?}, jqm: {:?}, awd1sgl: {:?}, awd1en: {=bool:?}, jawd1en: {=bool:?}, jauto: {=bool:?}, awd1ch: {=u8:?}, jqdis: {=bool:?} }}",
                 self.dmaen(),
                 self.dmacfg(),
                 self.res(),
-                self.extsel(0usize),
-                self.extsel(1usize),
-                self.extsel(2usize),
-                self.extsel(3usize),
-                self.extsel(4usize),
+                self.extsel(),
                 self.exten(),
                 self.ovrmod(),
                 self.cont(),

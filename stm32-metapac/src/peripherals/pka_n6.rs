@@ -1,0 +1,378 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "Public key accelerator."]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Pka {
+    ptr: *mut u8,
+}
+unsafe impl Send for Pka {}
+unsafe impl Sync for Pka {}
+impl Pka {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "PKA control register."]
+    #[inline(always)]
+    pub const fn cr(self) -> crate::common::Reg<regs::Cr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "PKA status register."]
+    #[inline(always)]
+    pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "PKA clear flag register."]
+    #[inline(always)]
+    pub const fn clrfr(self) -> crate::common::Reg<regs::Clrfr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "PKA internal memeory."]
+    #[inline(always)]
+    pub const fn ram(self, n: usize) -> crate::common::Reg<u32, crate::common::RW> {
+        assert!(n < 1334usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0400usize + n * 4usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "PKA clear flag register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Clrfr(pub u32);
+    impl Clrfr {
+        #[doc = "Clear PKA End of Operation flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn procendfc(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Clear PKA End of Operation flag."]
+        #[inline(always)]
+        pub const fn set_procendfc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "Clear PKA RAM error flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ramerrfc(&self) -> bool {
+            let val = (self.0 >> 19usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Clear PKA RAM error flag."]
+        #[inline(always)]
+        pub const fn set_ramerrfc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
+        }
+        #[doc = "Clear address error flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn addrerrfc(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Clear address error flag."]
+        #[inline(always)]
+        pub const fn set_addrerrfc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "Clear operation error flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn operrfc(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Clear operation error flag."]
+        #[inline(always)]
+        pub const fn set_operrfc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+    }
+    impl Default for Clrfr {
+        #[inline(always)]
+        fn default() -> Clrfr {
+            Clrfr(0)
+        }
+    }
+    impl core::fmt::Debug for Clrfr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Clrfr")
+                .field("procendfc", &self.procendfc())
+                .field("ramerrfc", &self.ramerrfc())
+                .field("addrerrfc", &self.addrerrfc())
+                .field("operrfc", &self.operrfc())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Clrfr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Clrfr {{ procendfc: {=bool:?}, ramerrfc: {=bool:?}, addrerrfc: {=bool:?}, operrfc: {=bool:?} }}",
+                self.procendfc(),
+                self.ramerrfc(),
+                self.addrerrfc(),
+                self.operrfc()
+            )
+        }
+    }
+    #[doc = "PKA control register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr(pub u32);
+    impl Cr {
+        #[doc = "PKA enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn en(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PKA enable."]
+        #[inline(always)]
+        pub const fn set_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "start the operation."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn start(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "start the operation."]
+        #[inline(always)]
+        pub const fn set_start(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "PKA operation code."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mode(&self) -> u8 {
+            let val = (self.0 >> 8usize) & 0x3f;
+            val as u8
+        }
+        #[doc = "PKA operation code."]
+        #[inline(always)]
+        pub const fn set_mode(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x3f << 8usize)) | (((val as u32) & 0x3f) << 8usize);
+        }
+        #[doc = "End of operation interrupt enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn procendie(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "End of operation interrupt enable."]
+        #[inline(always)]
+        pub const fn set_procendie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "RAM error interrupt enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ramerrie(&self) -> bool {
+            let val = (self.0 >> 19usize) & 0x01;
+            val != 0
+        }
+        #[doc = "RAM error interrupt enable."]
+        #[inline(always)]
+        pub const fn set_ramerrie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
+        }
+        #[doc = "Address error interrupt enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn addrerrie(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Address error interrupt enable."]
+        #[inline(always)]
+        pub const fn set_addrerrie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "Operation error interrupt enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn operrie(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Operation error interrupt enable."]
+        #[inline(always)]
+        pub const fn set_operrie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+    }
+    impl Default for Cr {
+        #[inline(always)]
+        fn default() -> Cr {
+            Cr(0)
+        }
+    }
+    impl core::fmt::Debug for Cr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr")
+                .field("en", &self.en())
+                .field("start", &self.start())
+                .field("mode", &self.mode())
+                .field("procendie", &self.procendie())
+                .field("ramerrie", &self.ramerrie())
+                .field("addrerrie", &self.addrerrie())
+                .field("operrie", &self.operrie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Cr {{ en: {=bool:?}, start: {=bool:?}, mode: {=u8:?}, procendie: {=bool:?}, ramerrie: {=bool:?}, addrerrie: {=bool:?}, operrie: {=bool:?} }}",
+                self.en(),
+                self.start(),
+                self.mode(),
+                self.procendie(),
+                self.ramerrie(),
+                self.addrerrie(),
+                self.operrie()
+            )
+        }
+    }
+    #[doc = "PKA status register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Sr(pub u32);
+    impl Sr {
+        #[doc = "PKA initialization OK."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn initok(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PKA initialization OK."]
+        #[inline(always)]
+        pub const fn set_initok(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Limited mode flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lmf(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Limited mode flag."]
+        #[inline(always)]
+        pub const fn set_lmf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "PKA operation is in progress."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn busy(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PKA operation is in progress."]
+        #[inline(always)]
+        pub const fn set_busy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "PKA End of Operation flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn procendf(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PKA End of Operation flag."]
+        #[inline(always)]
+        pub const fn set_procendf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "PKA RAM error flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ramerrf(&self) -> bool {
+            let val = (self.0 >> 19usize) & 0x01;
+            val != 0
+        }
+        #[doc = "PKA RAM error flag."]
+        #[inline(always)]
+        pub const fn set_ramerrf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
+        }
+        #[doc = "Address error flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn addrerrf(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Address error flag."]
+        #[inline(always)]
+        pub const fn set_addrerrf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "Operation error flag."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn operrf(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Operation error flag."]
+        #[inline(always)]
+        pub const fn set_operrf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+    }
+    impl Default for Sr {
+        #[inline(always)]
+        fn default() -> Sr {
+            Sr(0)
+        }
+    }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("initok", &self.initok())
+                .field("lmf", &self.lmf())
+                .field("busy", &self.busy())
+                .field("procendf", &self.procendf())
+                .field("ramerrf", &self.ramerrf())
+                .field("addrerrf", &self.addrerrf())
+                .field("operrf", &self.operrf())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Sr {{ initok: {=bool:?}, lmf: {=bool:?}, busy: {=bool:?}, procendf: {=bool:?}, ramerrf: {=bool:?}, addrerrf: {=bool:?}, operrf: {=bool:?} }}",
+                self.initok(),
+                self.lmf(),
+                self.busy(),
+                self.procendf(),
+                self.ramerrf(),
+                self.addrerrf(),
+                self.operrf()
+            )
+        }
+    }
+}

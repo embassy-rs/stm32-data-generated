@@ -1,0 +1,1291 @@
+{
+  "block/DataRegs": {
+    "items": [
+      {
+        "name": "DR",
+        "description": "I3C transmit data byte register.",
+        "byte_offset": 0,
+        "fieldset": "DR"
+      },
+      {
+        "name": "DWR",
+        "description": "I3C transmit data word register.",
+        "byte_offset": 4,
+        "fieldset": "DWR"
+      }
+    ]
+  },
+  "block/I3C": {
+    "description": "Improved inter-integrated circuit.",
+    "items": [
+      {
+        "name": "CR",
+        "description": "I3C message control register.",
+        "byte_offset": 0,
+        "fieldset": "CR"
+      },
+      {
+        "name": "CR_ALTERNATE",
+        "description": "I3C message control register.",
+        "byte_offset": 0,
+        "fieldset": "CR_ALTERNATE"
+      },
+      {
+        "name": "CFGR",
+        "description": "I3C configuration register.",
+        "byte_offset": 4,
+        "fieldset": "CFGR"
+      },
+      {
+        "name": "RxDataRegs",
+        "byte_offset": 16,
+        "block": "DataRegs"
+      },
+      {
+        "name": "TxDataRegs",
+        "byte_offset": 24,
+        "block": "DataRegs"
+      },
+      {
+        "name": "IBIDR",
+        "description": "I3C IBI payload data register.",
+        "byte_offset": 32,
+        "fieldset": "IBIDR"
+      },
+      {
+        "name": "TGTTDR",
+        "description": "I3C target transmit configuration register.",
+        "byte_offset": 36,
+        "fieldset": "TGTTDR"
+      },
+      {
+        "name": "SR",
+        "description": "I3C status register.",
+        "byte_offset": 48,
+        "fieldset": "SR"
+      },
+      {
+        "name": "SER",
+        "description": "I3C status error register.",
+        "byte_offset": 52,
+        "fieldset": "SER"
+      },
+      {
+        "name": "RMR",
+        "description": "I3C received message register.",
+        "byte_offset": 64,
+        "fieldset": "RMR"
+      },
+      {
+        "name": "EVR",
+        "description": "I3C event register.",
+        "byte_offset": 80,
+        "fieldset": "EVR"
+      },
+      {
+        "name": "IER",
+        "description": "I3C interrupt enable register.",
+        "byte_offset": 84,
+        "fieldset": "IER"
+      },
+      {
+        "name": "CEVR",
+        "description": "I3C clear event register.",
+        "byte_offset": 88,
+        "fieldset": "CEVR"
+      },
+      {
+        "name": "DEVR0",
+        "description": "I3C own device characteristics register.",
+        "byte_offset": 96,
+        "fieldset": "DEVR0"
+      },
+      {
+        "name": "DEVR",
+        "description": "I3C device 1 characteristics register.",
+        "array": {
+          "len": 4,
+          "stride": 4
+        },
+        "byte_offset": 100,
+        "fieldset": "DEVR"
+      },
+      {
+        "name": "MAXRLR",
+        "description": "I3C maximum read length register.",
+        "byte_offset": 144,
+        "fieldset": "MAXRLR"
+      },
+      {
+        "name": "MAXWLR",
+        "description": "I3C maximum write length register.",
+        "byte_offset": 148,
+        "fieldset": "MAXWLR"
+      },
+      {
+        "name": "TIMINGR0",
+        "description": "I3C timing register 0.",
+        "byte_offset": 160,
+        "fieldset": "TIMINGR0"
+      },
+      {
+        "name": "TIMINGR1",
+        "description": "I3C timing register 1.",
+        "byte_offset": 164,
+        "fieldset": "TIMINGR1"
+      },
+      {
+        "name": "TIMINGR2",
+        "description": "I3C timing register 2.",
+        "byte_offset": 168,
+        "fieldset": "TIMINGR2"
+      },
+      {
+        "name": "BCR",
+        "description": "I3C bus characteristics register.",
+        "byte_offset": 192,
+        "fieldset": "BCR"
+      },
+      {
+        "name": "DCR",
+        "description": "I3C device characteristics register.",
+        "byte_offset": 196,
+        "fieldset": "DCR"
+      },
+      {
+        "name": "GETCAPR",
+        "description": "I3C get capability register.",
+        "byte_offset": 200,
+        "fieldset": "GETCAPR"
+      },
+      {
+        "name": "CRCAPR",
+        "description": "I3C controller-role capability register.",
+        "byte_offset": 204,
+        "fieldset": "CRCAPR"
+      },
+      {
+        "name": "GETMXDSR",
+        "description": "I3C get capability register.",
+        "byte_offset": 208,
+        "fieldset": "GETMXDSR"
+      },
+      {
+        "name": "EPIDR",
+        "description": "I3C extended provisioned ID register.",
+        "byte_offset": 212,
+        "fieldset": "EPIDR"
+      }
+    ]
+  },
+  "fieldset/BCR": {
+    "description": "I3C bus characteristics register.",
+    "fields": [
+      {
+        "name": "BCR0",
+        "description": "max data speed limitation.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "BCR2",
+        "description": "in-band interrupt (IBI) payload.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "BCR6",
+        "description": "Controller capable.",
+        "bit_offset": 6,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/CEVR": {
+    "description": "I3C clear event register.",
+    "fields": [
+      {
+        "name": "CFCF",
+        "description": "Clear frame complete flag (whatever the I3C acts as controller/target).",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "CRXTGTENDF",
+        "description": "Clear target-initiated read end flag (when the I3C acts as controller).",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "CERRF",
+        "description": "Clear error flag (whatever the I3C acts as controller/target).",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "CIBIF",
+        "description": "Clear IBI request flag (when the I3C acts as controller).",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "CIBIENDF",
+        "description": "Clear IBI end flag (when the I3C acts as target).",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "CCRF",
+        "description": "Clear controller-role request flag (when the I3C acts as controller).",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "CCRUPDF",
+        "description": "Clear controller-role update flag (when the I3C acts as target).",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "CHJF",
+        "description": "Clear hot-join flag (when the I3C acts as controller).",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "CWKPF",
+        "description": "Clear wake-up flag (when the I3C acts as target).",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "CGETF",
+        "description": "Clear GETxxx CCC flag (except GETSTATUS of format 1) (when the I3C acts as target).",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "CSTAF",
+        "description": "Clear format 1 GETSTATUS CCC flag (when the I3C acts as target).",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "CDAUPDF",
+        "description": "Clear ENTDAA/RSTDAA/SETNEWDA CCC flag (when the I3C acts as target).",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "CMWLUPDF",
+        "description": "Clear SETMWL CCC flag (when the I3C acts as target).",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "CMRLUPDF",
+        "description": "Clear SETMRL CCC flag (when the I3C acts as target).",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "CRSTF",
+        "description": "Clear reset pattern flag (when the I3C acts as target).",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "CASUPDF",
+        "description": "Clear ENTASx CCC flag (when the I3C acts as target).",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "CINTUPDF",
+        "description": "Clear ENEC/DISEC CCC flag (when the I3C acts as target).",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "CDEFF",
+        "description": "Clear DEFTGTS CCC flag (when the I3C acts as target).",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "CGRPF",
+        "description": "Clear DEFGRPA CCC flag (when the I3C acts as target).",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/CFGR": {
+    "description": "I3C configuration register.",
+    "fields": [
+      {
+        "name": "EN",
+        "description": "I3C enable (whatever I3C acts as controller/target).",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "CRINIT",
+        "description": "Initial controller/target role.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "NOARBH",
+        "description": "No arbitrable header after a start (when I3C acts as a controller).",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "RSTPTRN",
+        "description": "HDR reset pattern enable (when I3C acts as a controller).",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "EXITPTRN",
+        "description": "HDR exit pattern enable (when I3C acts as a controller).",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "HKSDAEN",
+        "description": "High-keeper enable on SDA line (when I3C acts as a controller).",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "HJACK",
+        "description": "Hot-join request acknowledge (when I3C acts as a controller).",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "RXDMAEN",
+        "description": "RX-FIFO DMA request enable (whatever I3C acts as controller/target).",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "RXFLUSH",
+        "description": "RX-FIFO flush (whatever I3C acts as controller/target).",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "RXTHRES",
+        "description": "RX-FIFO threshold (whatever I3C acts as controller/target).",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "TXDMAEN",
+        "description": "TX-FIFO DMA request enable (whatever I3C acts as controller/target).",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "TXFLUSH",
+        "description": "TX-FIFO flush (whatever I3C acts as controller/target).",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "TXTHRES",
+        "description": "TX-FIFO threshold (whatever I3C acts as controller/target).",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "SDMAEN",
+        "description": "S-FIFO DMA request enable (when I3C acts as controller).",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "SFLUSH",
+        "description": "S-FIFO flush (when I3C acts as controller).",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "SMODE",
+        "description": "S-FIFO enable / status receive mode (when I3C acts as controller).",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "TMODE",
+        "description": "Transmit mode (when I3C acts as controller).",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "CDMAEN",
+        "description": "C-FIFO DMA request enable (when I3C acts as controller).",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "CFLUSH",
+        "description": "C-FIFO flush (when I3C acts as controller).",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "TSFSET",
+        "description": "Frame transfer set (software trigger) (when I3C acts as controller).",
+        "bit_offset": 30,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/CR": {
+    "description": "I3C message control register.",
+    "fields": [
+      {
+        "name": "DCNT",
+        "description": "Count of data to transfer during a read or write message, in bytes (whatever I3C acts as controller/target).",
+        "bit_offset": 0,
+        "bit_size": 16
+      },
+      {
+        "name": "RNW",
+        "description": "Read / non-write message (when I3C acts as controller).",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "ADD",
+        "description": "7-bit I3C dynamic / Iless thansup>2less than/sup>C static target address (when I3C acts as controller).",
+        "bit_offset": 17,
+        "bit_size": 7
+      },
+      {
+        "name": "MTYPE",
+        "description": "Message type (whatever I3C acts as controller/target).",
+        "bit_offset": 27,
+        "bit_size": 4
+      },
+      {
+        "name": "MEND",
+        "description": "Message end type / last message of a frame (when the I3C acts as controller).",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/CRCAPR": {
+    "description": "I3C controller-role capability register.",
+    "fields": [
+      {
+        "name": "CAPDHOFF",
+        "description": "delayed controller-role hand-off.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "CAPGRP",
+        "description": "group management support (when acting as controller).",
+        "bit_offset": 9,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/CR_ALTERNATE": {
+    "description": "I3C message control register.",
+    "fields": [
+      {
+        "name": "DCNT",
+        "description": "Count of related data to the CCC command to transfer as CCC defining bytes, or CCC sub-command bytes, or CCC data bytes, in bytes.",
+        "bit_offset": 0,
+        "bit_size": 16
+      },
+      {
+        "name": "CCC",
+        "description": "8-bit CCC code (when I3C acts as controller).",
+        "bit_offset": 16,
+        "bit_size": 8
+      },
+      {
+        "name": "MTYPE",
+        "description": "Message type (when I3C acts as controller).",
+        "bit_offset": 27,
+        "bit_size": 4
+      },
+      {
+        "name": "MEND",
+        "description": "Message end type / last message of a frame (when I3C acts as controller).",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/DCR": {
+    "description": "I3C device characteristics register.",
+    "fields": [
+      {
+        "name": "DCR",
+        "description": "device characteristics ID.",
+        "bit_offset": 0,
+        "bit_size": 8
+      }
+    ]
+  },
+  "fieldset/DEVR": {
+    "description": "I3C device 1 characteristics register.",
+    "fields": [
+      {
+        "name": "DA",
+        "description": "Assigned I3C dynamic address to target x (when the I3C acts as controller).",
+        "bit_offset": 1,
+        "bit_size": 7
+      },
+      {
+        "name": "IBIACK",
+        "description": "IBI request acknowledge (when the I3C acts as controller).",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "CRACK",
+        "description": "Controller-role request acknowledge (when the I3C acts as controller).",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "IBIDEN",
+        "description": "IBI data enable (when the I3C acts as controller).",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "SUSP",
+        "description": "Suspend/stop I3C transfer on received IBI (when the I3C acts as controller).",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "DIS",
+        "description": "DA[6:0] write disabled (when the I3C acts as controller).",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/DEVR0": {
+    "description": "I3C own device characteristics register.",
+    "fields": [
+      {
+        "name": "DAVAL",
+        "description": "Dynamic address is valid (when the I3C acts as target).",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "DA",
+        "description": "7-bit dynamic address.",
+        "bit_offset": 1,
+        "bit_size": 7
+      },
+      {
+        "name": "IBIEN",
+        "description": "IBI request enable (when the I3C acts as target).",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "CREN",
+        "description": "Controller-role request enable (when the I3C acts as target).",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "HJEN",
+        "description": "Hot-join request enable (when the I3C acts as target).",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "AS",
+        "description": "Activity state (when the I3C acts as target).",
+        "bit_offset": 20,
+        "bit_size": 2
+      },
+      {
+        "name": "RSTACT",
+        "description": "Reset action/level on received reset pattern (when the I3C acts as target).",
+        "bit_offset": 22,
+        "bit_size": 2
+      },
+      {
+        "name": "RSTVAL",
+        "description": "Reset action is valid (when the I3C acts as target).",
+        "bit_offset": 24,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/DR": {
+    "description": "I3C receive data byte register.",
+    "fields": [
+      {
+        "name": "DB",
+        "description": "8-bit received data on I3C bus.",
+        "bit_offset": 0,
+        "bit_size": 8
+      }
+    ]
+  },
+  "fieldset/DWR": {
+    "description": "I3C receive data word register.",
+    "fields": [
+      {
+        "name": "DB",
+        "description": "8-bit received data (earliest byte on I3C bus).",
+        "bit_offset": 0,
+        "bit_size": 8,
+        "array": {
+          "len": 4,
+          "stride": 8
+        }
+      }
+    ]
+  },
+  "fieldset/EPIDR": {
+    "description": "I3C extended provisioned ID register.",
+    "fields": [
+      {
+        "name": "MIPIID",
+        "description": "4-bit MIPI Instance ID.",
+        "bit_offset": 12,
+        "bit_size": 4
+      },
+      {
+        "name": "IDTSEL",
+        "description": "provisioned ID type selector.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "MIPIMID",
+        "description": "15-bit MIPI manufacturer ID.",
+        "bit_offset": 17,
+        "bit_size": 15
+      }
+    ]
+  },
+  "fieldset/EVR": {
+    "description": "I3C event register.",
+    "fields": [
+      {
+        "name": "CFEF",
+        "description": "C-FIFO empty flag (whatever the I3C acts as controller).",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "TXFEF",
+        "description": "TX-FIFO empty flag (whatever the I3C acts as controller/target).",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "CFNFF",
+        "description": "C-FIFO not full flag (when the I3C acts as controller).",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "SFNEF",
+        "description": "S-FIFO not empty flag (when the I3C acts as controller).",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "TXFNFF",
+        "description": "TX-FIFO not full flag (whatever the I3C acts as controller/target).",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "RXFNEF",
+        "description": "RX-FIFO not empty flag (whatever the I3C acts as controller/target).",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "TXLASTF",
+        "description": "Last written data byte/word flag (whatever the I3C acts as controller/target).",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "RXLASTF",
+        "description": "Last read data byte/word flag (when the I3C acts as controller).",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "FCF",
+        "description": "Frame complete flag (whatever the I3C acts as controller/target).",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "RXTGTENDF",
+        "description": "Target-initiated read end flag (when the I3C acts as controller).",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "ERRF",
+        "description": "Flag (whatever the I3C acts as controller/target).",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "IBIF",
+        "description": "IBI flag (when the I3C acts as controller).",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "IBIENDF",
+        "description": "IBI end flag (when the I3C acts as target).",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "CRF",
+        "description": "Controller-role request flag (when the I3C acts as controller).",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "CRUPDF",
+        "description": "Controller-role update flag (when the I3C acts as target).",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "HJF",
+        "description": "Hot-join flag (when the I3C acts as controller).",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "WKPF",
+        "description": "Wake-up/missed start flag (when the I3C acts as target).",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "GETF",
+        "description": "Get flag (when the I3C acts as target).",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "STAF",
+        "description": "Get status flag (when the I3C acts as target).",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "DAUPDF",
+        "description": "Dynamic address update flag (when the I3C acts as target).",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "MWLUPDF",
+        "description": "Maximum write length update flag (when the I3C acts as target).",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "MRLUPDF",
+        "description": "Maximum read length update flag (when the I3C acts as target).",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "RSTF",
+        "description": "Reset pattern flag (when the I3C acts as target).",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "ASUPDF",
+        "description": "Activity state update flag (when the I3C acts as target).",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "INTUPDF",
+        "description": "Interrupt/controller-role/hot-join update flag (when the I3C acts as target).",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "DEFF",
+        "description": "DEFTGTS flag (when the I3C acts as target).",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "GRPF",
+        "description": "Group addressing flag (when the I3C acts as target).",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/GETCAPR": {
+    "description": "I3C get capability register.",
+    "fields": [
+      {
+        "name": "CAPPEND",
+        "description": "IBI MDB support for pending read notification.",
+        "bit_offset": 14,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/GETMXDSR": {
+    "description": "I3C get capability register.",
+    "fields": [
+      {
+        "name": "HOFFAS",
+        "description": "Controller hand-off activity state.",
+        "bit_offset": 0,
+        "bit_size": 2
+      },
+      {
+        "name": "FMT",
+        "description": "GETMXDS CCC format.",
+        "bit_offset": 8,
+        "bit_size": 2
+      },
+      {
+        "name": "RDTURN",
+        "description": "programmed byte of the 3-byte MaxRdTurn (maximum read turnaround byte).",
+        "bit_offset": 16,
+        "bit_size": 8
+      },
+      {
+        "name": "TSCO",
+        "description": "clock-to-data turnaround time (tless thansub>SCOless than/sub>).",
+        "bit_offset": 24,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/IBIDR": {
+    "description": "I3C IBI payload data register.",
+    "fields": [
+      {
+        "name": "IBIDB",
+        "description": "8-bit IBI payload data (earliest byte on I3C bus, MDB[7:0] mandatory data byte).",
+        "bit_offset": 0,
+        "bit_size": 8,
+        "array": {
+          "len": 4,
+          "stride": 8
+        }
+      }
+    ]
+  },
+  "fieldset/IER": {
+    "description": "I3C interrupt enable register.",
+    "fields": [
+      {
+        "name": "CFNFIE",
+        "description": "C-FIFO not full interrupt enable (whatever the I3C acts as controller/target).",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "SFNEIE",
+        "description": "S-FIFO not empty interrupt enable (whatever the I3C acts as controller/target).",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "TXFNFIE",
+        "description": "TX-FIFO not full interrupt enable (whatever the I3C acts as controller/target).",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "RXFNEIE",
+        "description": "RX-FIFO not empty interrupt enable (whatever the I3C acts as controller/target).",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "FCIE",
+        "description": "frame complete interrupt enable (whatever the I3C acts as controller/target).",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "RXTGTENDIE",
+        "description": "target-initiated read end interrupt enable (when the I3C acts as controller).",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "ERRIE",
+        "description": "error interrupt enable (whatever the I3C acts as controller/target).",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "IBIIE",
+        "description": "IBI request interrupt enable (when the I3C acts as controller).",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "IBIENDIE",
+        "description": "IBI end interrupt enable (when the I3C acts as target).",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "CRIE",
+        "description": "Controller-role request interrupt enable (when the I3C acts as controller).",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "CRUPDIE",
+        "description": "Controller-role update interrupt enable (when the I3C acts as target).",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "HJIE",
+        "description": "Hot-join interrupt enable (when the I3C acts as controller).",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "WKPIE",
+        "description": "Wake-up interrupt enable (when the I3C acts as target).",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "GETIE",
+        "description": "GETxxx CCC interrupt enable (except GETSTATUS of format 1) (when the I3C acts as target).",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "STAIE",
+        "description": "format 1 GETSTATUS CCC interrupt enable (when the I3C acts as target).",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "DAUPDIE",
+        "description": "ENTDAA/RSTDAA/SETNEWDA CCC interrupt enable (when the I3C acts as target).",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "MWLUPDIE",
+        "description": "SETMWL CCC interrupt enable (when the I3C acts as target).",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "MRLUPDIE",
+        "description": "SETMRL CCC interrupt enable (when the I3C acts as target).",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "RSTIE",
+        "description": "reset pattern interrupt enable (when the I3C acts as target).",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "ASUPDIE",
+        "description": "ENTASx CCC interrupt enable (when the I3C acts as target).",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "INTUPDIE",
+        "description": "ENEC/DISEC CCC interrupt enable (when the I3C acts as target).",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "DEFIE",
+        "description": "DEFTGTS CCC interrupt enable (when the I3C acts as target).",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "GRPIE",
+        "description": "DEFGRPA CCC interrupt enable (when the I3C acts as target).",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/MAXRLR": {
+    "description": "I3C maximum read length register.",
+    "fields": [
+      {
+        "name": "ML",
+        "description": "Maximum data read length (when I3C acts as target).",
+        "bit_offset": 0,
+        "bit_size": 16
+      },
+      {
+        "name": "IBIP",
+        "description": "IBI payload data maximum size, in bytes (when I3C acts as target).",
+        "bit_offset": 16,
+        "bit_size": 3
+      }
+    ]
+  },
+  "fieldset/MAXWLR": {
+    "description": "I3C maximum write length register.",
+    "fields": [
+      {
+        "name": "ML",
+        "description": "Maximum data write length (when I3C acts as target).",
+        "bit_offset": 0,
+        "bit_size": 16
+      }
+    ]
+  },
+  "fieldset/RMR": {
+    "description": "I3C received message register.",
+    "fields": [
+      {
+        "name": "IBIRDCNT",
+        "description": "IBI received payload data count (when the I3C is configured as controller).",
+        "bit_offset": 0,
+        "bit_size": 3
+      },
+      {
+        "name": "RCODE",
+        "description": "Received CCC code (when the I3C is configured as target).",
+        "bit_offset": 8,
+        "bit_size": 8
+      },
+      {
+        "name": "RADD",
+        "description": "Received target address (when the I3C is configured as controller).",
+        "bit_offset": 17,
+        "bit_size": 7
+      }
+    ]
+  },
+  "fieldset/SER": {
+    "description": "I3C status error register.",
+    "fields": [
+      {
+        "name": "CODERR",
+        "description": "Protocol error code/type.",
+        "bit_offset": 0,
+        "bit_size": 4
+      },
+      {
+        "name": "PERR",
+        "description": "Protocol error.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "STALL",
+        "description": "SCL stall error (when the I3C acts as target).",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "DOVR",
+        "description": "RX-FIFO overrun or TX-FIFO underrun.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "COVR",
+        "description": "C-FIFO underrun or S-FIFO overrun (when the I3C acts as controller).",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "ANACK",
+        "description": "Address not acknowledged (when the I3C is configured as controller).",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "DNACK",
+        "description": "Data not acknowledged (when the I3C acts as controller).",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "DERR",
+        "description": "Data error (when the I3C acts as controller).",
+        "bit_offset": 10,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "description": "I3C status register.",
+    "fields": [
+      {
+        "name": "XDCNT",
+        "description": "Data counter.",
+        "bit_offset": 0,
+        "bit_size": 16
+      },
+      {
+        "name": "ABT",
+        "description": "A private read message is ended prematurely by the target (when the I3C acts as controller).",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "DIR",
+        "description": "Message direction.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "MID",
+        "description": "Message identifier/counter of a given frame (when the I3C acts as controller).",
+        "bit_offset": 24,
+        "bit_size": 8
+      }
+    ]
+  },
+  "fieldset/TGTTDR": {
+    "description": "I3C target transmit configuration register.",
+    "fields": [
+      {
+        "name": "TGTTDCNT",
+        "description": "Transmit data counter, in bytes (when I3C is configured as target).",
+        "bit_offset": 0,
+        "bit_size": 16
+      },
+      {
+        "name": "PRELOAD",
+        "description": "Preload of the TX-FIFO (when I3C is configured as target).",
+        "bit_offset": 16,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/TIMINGR0": {
+    "description": "I3C timing register 0.",
+    "fields": [
+      {
+        "name": "SCLL_PP",
+        "description": "SCL low duration in I3C push-pull phases, in number of kernel clocks cycles:.",
+        "bit_offset": 0,
+        "bit_size": 8
+      },
+      {
+        "name": "SCLH_I3C",
+        "description": "SCL high duration, used for I3C messages (both in push-pull and open-drain phases), in number of kernel clocks cycles:.",
+        "bit_offset": 8,
+        "bit_size": 8
+      },
+      {
+        "name": "SCLL_OD",
+        "description": "SCL low duration in open-drain phases, used for legacy Iless thansup>2less than/sup>C messages and for I3C open-drain phases (address phase following a start, ACK phase during controller-initiated messages, and T bit phase during direct/private/IBI payload), in number of kernel clocks cycles:.",
+        "bit_offset": 16,
+        "bit_size": 8
+      },
+      {
+        "name": "SCLH_I2C",
+        "description": "SCL high duration, used for legacy Iless thansup>2less than/sup>C messages, in number of kernel clocks cycles:.",
+        "bit_offset": 24,
+        "bit_size": 8
+      }
+    ]
+  },
+  "fieldset/TIMINGR1": {
+    "description": "I3C timing register 1.",
+    "fields": [
+      {
+        "name": "AVAL",
+        "description": "Number of kernel clock cycles to set a time unit of 1 s, whatever I3C acts as controller or target.",
+        "bit_offset": 0,
+        "bit_size": 8
+      },
+      {
+        "name": "ASNCR",
+        "description": "Activity state of the new controller (when I3C acts as active controller).",
+        "bit_offset": 8,
+        "bit_size": 2
+      },
+      {
+        "name": "FREE",
+        "description": "Number of kernel clocks cycles that is used to set some MIPI timings like bus free condition time (when the I3C acts as controller).",
+        "bit_offset": 16,
+        "bit_size": 7
+      },
+      {
+        "name": "SDA_HD",
+        "description": "SDA hold time (when the I3C acts as controller), in number of kernel clocks cycles (refer to MIPI timing SDA hold time in push-pull tless thansub>HD_PPless than/sub>):.",
+        "bit_offset": 28,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/TIMINGR2": {
+    "description": "I3C timing register 2.",
+    "fields": [
+      {
+        "name": "STALLT",
+        "description": "Controller clock stall enable on T-bit phase of data (and on the ACK/NACK phase of data byte of a legacy Iless thansup>2less than/sup>C read).",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "STALLD",
+        "description": "Controller clock stall enable on PAR phase of Data.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "STALLC",
+        "description": "Controller clock stall enable on PAR phase of CCC.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "STALLA",
+        "description": "Controller clock stall enable on ACK phase.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "STALL",
+        "description": "Controller clock stall time, in number of kernel clock cycles.",
+        "bit_offset": 8,
+        "bit_size": 8
+      }
+    ]
+  }
+}

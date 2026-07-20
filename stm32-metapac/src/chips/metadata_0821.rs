@@ -378,7 +378,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ADF1",
         address: 0x42026000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "adf",
+            version: "v1",
+            block: "ADF",
+            ir: &adf::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -2746,7 +2751,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "GFXMMU",
         address: 0x48030000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "gfxmmu",
+            version: "n6",
+            block: "GFXMMU",
+            ir: &gfxmmu::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK5",
             kernel_clock: Clock("HCLK5"),
@@ -2772,7 +2782,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "GFXTIM",
         address: 0x48004000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "gfxtim",
+            version: "v1",
+            block: "GFXTIM",
+            ir: &gfxtim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK5",
             kernel_clock: Clock("PCLK5"),
@@ -3844,7 +3859,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "I3C1",
         address: 0x40006000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "i3c",
+            version: "n6",
+            block: "I3C",
+            ir: &i3c::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -3975,7 +3995,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "I3C2",
         address: 0x40006400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "i3c",
+            version: "n6",
+            block: "I3C",
+            ir: &i3c::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -4208,7 +4233,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "LPTIM1",
         address: 0x40002400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "n6",
+            block: "LPTIM",
+            ir: &lptim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -4332,7 +4362,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "LPTIM2",
         address: 0x46002400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "n6",
+            block: "LPTIM",
+            ir: &lptim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -4456,7 +4491,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "LPTIM3",
         address: 0x46002800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "n6",
+            block: "LPTIM",
+            ir: &lptim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -4560,7 +4600,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "LPTIM5",
         address: 0x46003000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "n6",
+            block: "LPTIM",
+            ir: &lptim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -5068,7 +5113,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "MCE1",
         address: 0x4802b800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "mce",
+            version: "n6",
+            block: "MCE",
+            ir: &mce::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK5",
             kernel_clock: Clock("HCLK5"),
@@ -5091,7 +5141,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "MCE2",
         address: 0x4802bc00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "mce",
+            version: "n6",
+            block: "MCE",
+            ir: &mce::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK5",
             kernel_clock: Clock("HCLK5"),
@@ -5114,7 +5169,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "MCE3",
         address: 0x4802c000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "mce",
+            version: "n6",
+            block: "MCE",
+            ir: &mce::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK5",
             kernel_clock: Clock("HCLK5"),
@@ -5137,7 +5197,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "MCE4",
         address: 0x4802e000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "mce",
+            version: "n6",
+            block: "MCE",
+            ir: &mce::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK5",
             kernel_clock: Clock("HCLK5"),
@@ -5163,7 +5228,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "MDF1",
         address: 0x42025000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "mdf",
+            version: "n6",
+            block: "MDF",
+            ir: &mdf::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -5455,7 +5525,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "PKA",
         address: 0x44022000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "pka",
+            version: "n6",
+            block: "PKA",
+            ir: &pka::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK3",
             kernel_clock: Clock("HCLK3"),
@@ -6386,7 +6461,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SAES",
         address: 0x44021000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "saes",
+            version: "n6",
+            block: "SAES",
+            ir: &saes::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK3",
             kernel_clock: Clock("HCLK3"),
@@ -6445,7 +6525,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SAI1",
         address: 0x42005800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "sai",
+            version: "n6",
+            block: "SAI",
+            ir: &sai::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -6614,7 +6699,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SAI2",
         address: 0x42005c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "sai",
+            version: "n6",
+            block: "SAI",
+            ir: &sai::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -6988,7 +7078,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SPDIFRX1",
         address: 0x40004000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "spdifrx",
+            version: "n6",
+            block: "SPDIFRX",
+            ir: &spdifrx::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -8124,7 +8219,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "TAMP",
         address: 0x46004400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "tamp",
+            version: "n6",
+            block: "TAMP",
+            ir: &tamp::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -8637,7 +8737,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "TIM11",
         address: 0x40003400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "timer",
+            version: "v2",
+            block: "TIM_1CH",
+            ir: &timer::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Clock("PCLK1_TIM"),
@@ -12081,7 +12186,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "VREFBUF",
         address: 0x46003c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "vrefbuf",
+            version: "v1",
+            block: "VREFBUF",
+            ir: &vrefbuf::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
             kernel_clock: Clock("PCLK4"),
@@ -13589,6 +13699,8 @@ pub(crate) static PINS: &[Pin] = &[
 pub mod adc;
 #[path = "../registers/adccommon_n6.rs"]
 pub mod adccommon;
+#[path = "../registers/adf_v1.rs"]
+pub mod adf;
 #[path = "../registers/bsec_v2.rs"]
 pub mod bsec;
 #[path = "../registers/can_fdcan_v2.rs"]
@@ -13619,6 +13731,10 @@ pub mod exti;
 pub mod fdcanram;
 #[path = "../registers/fmc_n6.rs"]
 pub mod fmc;
+#[path = "../registers/gfxmmu_n6.rs"]
+pub mod gfxmmu;
+#[path = "../registers/gfxtim_v1.rs"]
+pub mod gfxtim;
 #[path = "../registers/gpdma_v1.rs"]
 pub mod gpdma;
 #[path = "../registers/gpio_v2.rs"]
@@ -13629,18 +13745,28 @@ pub mod gpu2d;
 pub mod hash;
 #[path = "../registers/i2c_v3.rs"]
 pub mod i2c;
+#[path = "../registers/i3c_n6.rs"]
+pub mod i3c;
 #[path = "../registers/icache_v1_0crr.rs"]
 pub mod icache;
 #[path = "../registers/iwdg_v3.rs"]
 pub mod iwdg;
 #[path = "../registers/jpeg_v1.rs"]
 pub mod jpeg;
+#[path = "../registers/lptim_n6.rs"]
+pub mod lptim;
 #[path = "../registers/ltdc_v1_3.rs"]
 pub mod ltdc;
+#[path = "../registers/mce_n6.rs"]
+pub mod mce;
+#[path = "../registers/mdf_n6.rs"]
+pub mod mdf;
 #[path = "../registers/mdios_v1.rs"]
 pub mod mdios;
 #[path = "../registers/otg_v1.rs"]
 pub mod otg;
+#[path = "../registers/pka_n6.rs"]
+pub mod pka;
 #[path = "../registers/pssi_v1.rs"]
 pub mod pssi;
 #[path = "../registers/pwr_n6.rs"]
@@ -13657,12 +13783,20 @@ pub mod risaf;
 pub mod rng;
 #[path = "../registers/rtc_v3_u5.rs"]
 pub mod rtc;
+#[path = "../registers/saes_n6.rs"]
+pub mod saes;
+#[path = "../registers/sai_n6.rs"]
+pub mod sai;
 #[path = "../registers/sdmmc_v3.rs"]
 pub mod sdmmc;
+#[path = "../registers/spdifrx_n6.rs"]
+pub mod spdifrx;
 #[path = "../registers/spi_v5.rs"]
 pub mod spi;
 #[path = "../registers/syscfg_n6.rs"]
 pub mod syscfg;
+#[path = "../registers/tamp_n6.rs"]
+pub mod tamp;
 #[path = "../registers/timer_v2.rs"]
 pub mod timer;
 #[path = "../registers/ucpd_v1.rs"]
@@ -13673,6 +13807,8 @@ pub mod uid;
 pub mod usart;
 #[path = "../registers/venc_v1.rs"]
 pub mod venc;
+#[path = "../registers/vrefbuf_v1.rs"]
+pub mod vrefbuf;
 #[path = "../registers/wwdg_v2.rs"]
 pub mod wwdg;
 #[path = "../registers/xspi_v1.rs"]

@@ -1959,6 +1959,11 @@
         {
           "name": "ADF1",
           "address": 1107451904,
+          "registers": {
+            "kind": "adf",
+            "version": "v1",
+            "block": "ADF"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -2059,7 +2064,12 @@
         },
         {
           "name": "CACHEAXI",
-          "address": 1208876032
+          "address": 1208876032,
+          "registers": {
+            "kind": "cacheaxi",
+            "version": "n6",
+            "block": "CACHEAXI"
+          }
         },
         {
           "name": "CRC",
@@ -4271,6 +4281,11 @@
         {
           "name": "GFXMMU",
           "address": 1208156160,
+          "registers": {
+            "kind": "gfxmmu",
+            "version": "n6",
+            "block": "GFXMMU"
+          },
           "rcc": {
             "bus_clock": "HCLK5",
             "kernel_clock": "HCLK5",
@@ -4293,6 +4308,11 @@
         {
           "name": "GFXTIM",
           "address": 1207975936,
+          "registers": {
+            "kind": "gfxtim",
+            "version": "v1",
+            "block": "GFXTIM"
+          },
           "rcc": {
             "bus_clock": "PCLK5",
             "kernel_clock": "PCLK5",
@@ -5189,6 +5209,11 @@
         {
           "name": "I3C1",
           "address": 1073766400,
+          "registers": {
+            "kind": "i3c",
+            "version": "n6",
+            "block": "I3C"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -5292,6 +5317,11 @@
         {
           "name": "I3C2",
           "address": 1073767424,
+          "registers": {
+            "kind": "i3c",
+            "version": "n6",
+            "block": "I3C"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -5484,6 +5514,11 @@
         {
           "name": "LPTIM1",
           "address": 1073751040,
+          "registers": {
+            "kind": "lptim",
+            "version": "n6",
+            "block": "LPTIM"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -5594,6 +5629,11 @@
         {
           "name": "LPTIM2",
           "address": 1174414336,
+          "registers": {
+            "kind": "lptim",
+            "version": "n6",
+            "block": "LPTIM"
+          },
           "rcc": {
             "bus_clock": "PCLK4",
             "kernel_clock": {
@@ -5704,6 +5744,11 @@
         {
           "name": "LPTIM3",
           "address": 1174415360,
+          "registers": {
+            "kind": "lptim",
+            "version": "n6",
+            "block": "LPTIM"
+          },
           "rcc": {
             "bus_clock": "PCLK4",
             "kernel_clock": {
@@ -5789,6 +5834,11 @@
         {
           "name": "LPTIM4",
           "address": 1174416384,
+          "registers": {
+            "kind": "lptim",
+            "version": "n6",
+            "block": "LPTIM"
+          },
           "rcc": {
             "bus_clock": "PCLK4",
             "kernel_clock": {
@@ -5832,6 +5882,11 @@
         {
           "name": "LPTIM5",
           "address": 1174417408,
+          "registers": {
+            "kind": "lptim",
+            "version": "n6",
+            "block": "LPTIM"
+          },
           "rcc": {
             "bus_clock": "PCLK4",
             "kernel_clock": {
@@ -6355,6 +6410,11 @@
         {
           "name": "MDF1",
           "address": 1107447808,
+          "registers": {
+            "kind": "mdf",
+            "version": "n6",
+            "block": "MDF"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -7381,6 +7441,11 @@
         {
           "name": "SAI1",
           "address": 1107318784,
+          "registers": {
+            "kind": "sai",
+            "version": "n6",
+            "block": "SAI"
+          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": {
@@ -7549,6 +7614,11 @@
         {
           "name": "SAI2",
           "address": 1107319808,
+          "registers": {
+            "kind": "sai",
+            "version": "n6",
+            "block": "SAI"
+          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": {
@@ -7956,6 +8026,11 @@
         {
           "name": "SPDIFRX1",
           "address": 1073758208,
+          "registers": {
+            "kind": "spdifrx",
+            "version": "n6",
+            "block": "SPDIFRX"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -9094,6 +9169,11 @@
         {
           "name": "TAMP",
           "address": 1174422528,
+          "registers": {
+            "kind": "tamp",
+            "version": "n6",
+            "block": "TAMP"
+          },
           "pins": [
             {
               "pin": "PC13",
@@ -9566,6 +9646,11 @@
         {
           "name": "TIM11",
           "address": 1073755136,
+          "registers": {
+            "kind": "timer",
+            "version": "v2",
+            "block": "TIM_1CH"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1_TIM",
@@ -12772,6 +12857,11 @@
         {
           "name": "VREFBUF",
           "address": 1174420480,
+          "registers": {
+            "kind": "vrefbuf",
+            "version": "v1",
+            "block": "VREFBUF"
+          },
           "rcc": {
             "bus_clock": "PCLK4",
             "kernel_clock": "PCLK4",

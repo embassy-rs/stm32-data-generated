@@ -3,7 +3,7 @@
 #![allow(clippy::unnecessary_cast)]
 #![allow(clippy::erasing_op)]
 
-#[doc = "Analog-to-Digital Converter."]
+#[doc = "Analog-to-Digital Converter"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct AdcCommon {
     ptr: *mut u8,
@@ -19,22 +19,22 @@ impl AdcCommon {
     pub const fn as_ptr(&self) -> *mut () {
         self.ptr as _
     }
-    #[doc = "ADC common status register."]
+    #[doc = "status register"]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
-    #[doc = "ADC_CCR system control register."]
+    #[doc = "control register"]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
-    #[doc = "ADC common regular data register for dual mode."]
+    #[doc = "regular data register for dual mode"]
     #[inline(always)]
     pub const fn cdr(self) -> crate::common::Reg<regs::Cdr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
-    #[doc = "ADC common regular data register for 32-bit dual mode."]
+    #[doc = "regular data register for 32-bit dual mode."]
     #[inline(always)]
     pub const fn cdr2(self) -> crate::common::Reg<regs::Cdr2, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
@@ -152,7 +152,7 @@ pub mod regs {
             )
         }
     }
-    #[doc = "ADC common regular data register for dual mode."]
+    #[doc = "regular data register for dual mode"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cdr(pub u32);
@@ -209,7 +209,7 @@ pub mod regs {
             )
         }
     }
-    #[doc = "ADC common regular data register for 32-bit dual mode."]
+    #[doc = "regular data register for 32-bit dual mode."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cdr2(pub u32);
@@ -244,7 +244,7 @@ pub mod regs {
             defmt::write!(f, "Cdr2 {{ rdata_alt: {=u32:?} }}", self.rdata_alt())
         }
     }
-    #[doc = "ADC common status register."]
+    #[doc = "status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Csr(pub u32);
@@ -349,14 +349,14 @@ pub mod regs {
             let offs = 7usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "Injected context queue overflow flag of the master ADC."]
+        #[doc = "Injected context queue overflow flag of the master ADC"]
         #[must_use]
         #[inline(always)]
         pub const fn jqovf_mst(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
             val != 0
         }
-        #[doc = "Injected context queue overflow flag of the master ADC."]
+        #[doc = "Injected context queue overflow flag of the master ADC"]
         #[inline(always)]
         pub const fn set_jqovf_mst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
@@ -473,14 +473,14 @@ pub mod regs {
             let offs = 23usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "Injected context queue overflow flag of the slave ADC."]
+        #[doc = "Injected context queue overflow flag of the slave ADC"]
         #[must_use]
         #[inline(always)]
         pub const fn jqovf_slv(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
             val != 0
         }
-        #[doc = "Injected context queue overflow flag of the slave ADC."]
+        #[doc = "Injected context queue overflow flag of the slave ADC"]
         #[inline(always)]
         pub const fn set_jqovf_slv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);

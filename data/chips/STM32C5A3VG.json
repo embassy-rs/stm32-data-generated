@@ -574,6 +574,11 @@
         {
           "name": "ADC1",
           "address": 1107460096,
+          "registers": {
+            "kind": "adc",
+            "version": "c5",
+            "block": "ADC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -660,11 +665,21 @@
         },
         {
           "name": "ADC12_COMMON",
-          "address": 1107460864
+          "address": 1107460864,
+          "registers": {
+            "kind": "adccommon",
+            "version": "c5",
+            "block": "ADC_COMMON"
+          }
         },
         {
           "name": "ADC2",
           "address": 1107460352,
+          "registers": {
+            "kind": "adc",
+            "version": "c5",
+            "block": "ADC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -760,6 +775,11 @@
         {
           "name": "ADC3",
           "address": 1107482624,
+          "registers": {
+            "kind": "adc",
+            "version": "c5",
+            "block": "ADC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -854,7 +874,12 @@
         },
         {
           "name": "ADC3_COMMON",
-          "address": 1107483392
+          "address": 1107483392,
+          "registers": {
+            "kind": "adccommon",
+            "version": "c5",
+            "block": "ADC_COMMON"
+          }
         },
         {
           "name": "AES",

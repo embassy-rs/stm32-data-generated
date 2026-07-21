@@ -10,8 +10,8 @@ The following table shows which STM32 peripheral versions are supported across d
 
 | Peripheral | C0 | C5 | F0 | F1 | F2 | F3 | F4 | F7 | G0 | G4 | H5 | H7 | L0 | L1 | L4 | L4+ | L5 | MP1 | N6 | U0 | U3 | U5 | WB | WB0 | WBA | WL |
 |------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
-| [ADC](#adc) | c0 | ❌ | v1, ❌ | f1, ❌ | v2 | f3v1, f3v3 | v2 | v2 | g0 | g4 | h5 | h7rs, v4 | l0, ❌ | f3v2, ❌ | v3 | v3 | v3 | ❌ | n6 | u0 | u3 | u5 | v3, wb1 | wb0 | wba | g0 |
-| [ADCCOMMON](#adccommon) | c0 | | | | v2 | f3 | v2 | v2 | v3 | g4 | h5, h50 | h5, v4 | | | v3 | v3 | v3 | | n6 | v3 | u3 | u5 | v3 | | v3 | v3 |
+| [ADC](#adc) | c0 | c5 | v1, ❌ | f1, ❌ | v2 | f3v1, f3v3 | v2 | v2 | g0 | g4 | h5 | h7rs, v4 | l0, ❌ | f3v2, ❌ | v3 | v3 | v3 | ❌ | n6 | u0 | u3 | u5 | v3, wb1 | wb0 | wba | g0 |
+| [ADCCOMMON](#adccommon) | c0 | c5 | | | v2 | f3 | v2 | v2 | v3 | g4 | h5, h50 | h5, v4 | | | v3 | v3 | v3 | | n6 | v3 | u3 | u5 | v3 | | v3 | v3 |
 | [ADF](#adf) | | | | | | | | | | | | ❌ | | | | | | | v1 | | v1 | v1 | | | | |
 | [AES](#aes) | | ❌ | | | | | v1 | f7 | v2 | v2 | v3b | | v1 | v1 | v1 | v1 | v2 | | | v2 | v3a | v3a | v2, ❌ | | v3b | v2 |
 | [AFIO](#afio) | | | | f1 | | | | | | | | | | | | | | | | | | | | | | |
@@ -128,6 +128,7 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **c0**: STM32C0
+- **c5**: STM32C5
 - **f1**: STM32F1
 - **f3v1**: STM32F3
 - **f3v2**: STM32L1
@@ -148,13 +149,14 @@ The following table shows which STM32 peripheral versions are supported across d
 - **wb0**: STM32WB0
 - **wb1**: STM32WB
 - **wba**: STM32WBA
-- **❌ Unsupported**: STM32C5, STM32F0, STM32F1, STM32L0, STM32L1, STM32MP1
+- **❌ Unsupported**: STM32F0, STM32F1, STM32L0, STM32L1, STM32MP1
 
 ### ADCCOMMON
 
 **Versions by family:**
 
 - **c0**: STM32C0
+- **c5**: STM32C5
 - **f3**: STM32F3
 - **g4**: STM32G4
 - **h5**: STM32H5, STM32H7

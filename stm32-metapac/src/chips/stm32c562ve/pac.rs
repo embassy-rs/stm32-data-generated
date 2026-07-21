@@ -394,9 +394,9 @@ pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0800usize as 
 pub const GPIOD: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0c00usize as _) };
 pub const GPIOE: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1000usize as _) };
 pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1c00usize as _) };
-pub const ADC1: *mut () = 0x4202_8000usize as _;
-pub const ADC2: *mut () = 0x4202_8100usize as _;
-pub const ADC12_COMMON: *mut () = 0x4202_8300usize as _;
+pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8000usize as _) };
+pub const ADC2: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8100usize as _) };
+pub const ADC12_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4202_8300usize as _) };
 pub const DAC1: *mut () = 0x4202_8400usize as _;
 pub const AES: *mut () = 0x420c_0000usize as _;
 pub const HASH: *mut () = 0x420c_0400usize as _;
@@ -417,6 +417,10 @@ pub const NVIC_PRIO_BITS: u8 = 4;
 pub use Interrupt as interrupt;
 #[cfg(feature = "rt")]
 pub use cortex_m_rt::interrupt;
+#[path = "../../peripherals/adc_c5.rs"]
+pub mod adc;
+#[path = "../../peripherals/adccommon_c5.rs"]
+pub mod adccommon;
 #[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;
 #[path = "../../peripherals/cordic_v1.rs"]

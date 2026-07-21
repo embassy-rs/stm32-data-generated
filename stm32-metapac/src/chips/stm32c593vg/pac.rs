@@ -463,12 +463,12 @@ pub const GPIOE: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1000usize as 
 pub const GPIOF: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1400usize as _) };
 pub const GPIOG: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1800usize as _) };
 pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1c00usize as _) };
-pub const ADC1: *mut () = 0x4202_8000usize as _;
-pub const ADC2: *mut () = 0x4202_8100usize as _;
-pub const ADC12_COMMON: *mut () = 0x4202_8300usize as _;
+pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8000usize as _) };
+pub const ADC2: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8100usize as _) };
+pub const ADC12_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4202_8300usize as _) };
 pub const DAC1: *mut () = 0x4202_8400usize as _;
-pub const ADC3: *mut () = 0x4202_d800usize as _;
-pub const ADC3_COMMON: *mut () = 0x4202_db00usize as _;
+pub const ADC3: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_d800usize as _) };
+pub const ADC3_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4202_db00usize as _) };
 pub const HASH: *mut () = 0x420c_0400usize as _;
 pub const RNG: *mut () = 0x420c_0800usize as _;
 pub const PKA: *mut () = 0x420c_2000usize as _;
@@ -489,6 +489,10 @@ pub const NVIC_PRIO_BITS: u8 = 4;
 pub use Interrupt as interrupt;
 #[cfg(feature = "rt")]
 pub use cortex_m_rt::interrupt;
+#[path = "../../peripherals/adc_c5.rs"]
+pub mod adc;
+#[path = "../../peripherals/adccommon_c5.rs"]
+pub mod adccommon;
 #[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;
 #[path = "../../peripherals/cordic_v1.rs"]

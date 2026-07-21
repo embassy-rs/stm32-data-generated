@@ -4,11 +4,11 @@ pub(crate) static REGISTERS: IR = IR {
     blocks: &[Block {
         name: "AdcCommon",
         extends: None,
-        description: Some("Analog-to-Digital Converter."),
+        description: Some("Analog-to-Digital Converter"),
         items: &[
             BlockItem {
                 name: "csr",
-                description: Some("ADC common status register."),
+                description: Some("status register"),
                 array: None,
                 byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
@@ -19,7 +19,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             BlockItem {
                 name: "ccr",
-                description: Some("ADC_CCR system control register."),
+                description: Some("control register"),
                 array: None,
                 byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
@@ -30,7 +30,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             BlockItem {
                 name: "cdr",
-                description: Some("ADC common regular data register for dual mode."),
+                description: Some("regular data register for dual mode"),
                 array: None,
                 byte_offset: 0xc,
                 inner: BlockItemInner::Register(Register {
@@ -41,7 +41,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             BlockItem {
                 name: "cdr2",
-                description: Some("ADC common regular data register for 32-bit dual mode."),
+                description: Some("regular data register for 32-bit dual mode."),
                 array: None,
                 byte_offset: 0x10,
                 inner: BlockItemInner::Register(Register {
@@ -124,7 +124,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Cdr",
             extends: None,
-            description: Some("ADC common regular data register for dual mode."),
+            description: Some("regular data register for dual mode"),
             bit_size: 32,
             fields: &[
                 Field {
@@ -152,7 +152,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Cdr2",
             extends: None,
-            description: Some("ADC common regular data register for 32-bit dual mode."),
+            description: Some("regular data register for 32-bit dual mode."),
             bit_size: 32,
             fields: &[Field {
                 name: "rdata_alt",
@@ -168,7 +168,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Csr",
             extends: None,
-            description: Some("ADC common status register."),
+            description: Some("status register"),
             bit_size: 32,
             fields: &[
                 Field {
@@ -253,7 +253,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "jqovf_mst",
-                    description: Some("Injected context queue overflow flag of the master ADC."),
+                    description: Some("Injected context queue overflow flag of the master ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
@@ -351,7 +351,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "jqovf_slv",
-                    description: Some("Injected context queue overflow flag of the slave ADC."),
+                    description: Some("Injected context queue overflow flag of the slave ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: None,

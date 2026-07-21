@@ -1,30 +1,30 @@
 {
   "block/ADC_COMMON": {
-    "description": "Analog-to-Digital Converter.",
+    "description": "Analog-to-Digital Converter",
     "items": [
       {
         "name": "CSR",
-        "description": "ADC common status register.",
+        "description": "status register",
         "byte_offset": 0,
         "access": "Read",
         "fieldset": "CSR"
       },
       {
         "name": "CCR",
-        "description": "ADC_CCR system control register.",
+        "description": "control register",
         "byte_offset": 8,
         "fieldset": "CCR"
       },
       {
         "name": "CDR",
-        "description": "ADC common regular data register for dual mode.",
+        "description": "regular data register for dual mode",
         "byte_offset": 12,
         "access": "Read",
         "fieldset": "CDR"
       },
       {
         "name": "CDR2",
-        "description": "ADC common regular data register for 32-bit dual mode.",
+        "description": "regular data register for 32-bit dual mode.",
         "byte_offset": 16,
         "access": "Read",
         "fieldset": "CDR2"
@@ -75,7 +75,7 @@
     ]
   },
   "fieldset/CDR": {
-    "description": "ADC common regular data register for dual mode.",
+    "description": "regular data register for dual mode",
     "fields": [
       {
         "name": "RDATA_MST",
@@ -92,7 +92,7 @@
     ]
   },
   "fieldset/CDR2": {
-    "description": "ADC common regular data register for 32-bit dual mode.",
+    "description": "regular data register for 32-bit dual mode.",
     "fields": [
       {
         "name": "RDATA_ALT",
@@ -103,7 +103,7 @@
     ]
   },
   "fieldset/CSR": {
-    "description": "ADC common status register.",
+    "description": "status register",
     "fields": [
       {
         "name": "ADRDY_MST",
@@ -159,7 +159,7 @@
       },
       {
         "name": "JQOVF_MST",
-        "description": "Injected context queue overflow flag of the master ADC.",
+        "description": "Injected context queue overflow flag of the master ADC",
         "bit_offset": 10,
         "bit_size": 1
       },
@@ -223,7 +223,7 @@
       },
       {
         "name": "JQOVF_SLV",
-        "description": "Injected context queue overflow flag of the slave ADC.",
+        "description": "Injected context queue overflow flag of the slave ADC",
         "bit_offset": 26,
         "bit_size": 1
       },

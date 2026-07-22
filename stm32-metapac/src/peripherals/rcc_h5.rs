@@ -4117,6 +4117,18 @@ pub mod regs {
         pub const fn set_i2c4en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
+        #[doc = "I3C2EN clock enable Set and reset by software."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn i3c2en(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "I3C2EN clock enable Set and reset by software."]
+        #[inline(always)]
+        pub const fn set_i3c2en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
         #[doc = "LPTIM1 clock enable Set and reset by software."]
         #[must_use]
         #[inline(always)]
@@ -4216,6 +4228,7 @@ pub mod regs {
                 .field("lpuart1en", &self.lpuart1en())
                 .field("i2c3en", &self.i2c3en())
                 .field("i2c4en", &self.i2c4en())
+                .field("i3c2en", &self.i3c2en())
                 .field("lptim1en", &self.lptim1en())
                 .field("lptim3en", &self.lptim3en())
                 .field("lptim4en", &self.lptim4en())
@@ -4231,12 +4244,13 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Apb3enr {{ syscfgen: {=bool:?}, spi5en: {=bool:?}, lpuart1en: {=bool:?}, i2c3en: {=bool:?}, i2c4en: {=bool:?}, lptim1en: {=bool:?}, lptim3en: {=bool:?}, lptim4en: {=bool:?}, lptim5en: {=bool:?}, lptim6en: {=bool:?}, vrefen: {=bool:?}, rtcapben: {=bool:?} }}",
+                "Apb3enr {{ syscfgen: {=bool:?}, spi5en: {=bool:?}, lpuart1en: {=bool:?}, i2c3en: {=bool:?}, i2c4en: {=bool:?}, i3c2en: {=bool:?}, lptim1en: {=bool:?}, lptim3en: {=bool:?}, lptim4en: {=bool:?}, lptim5en: {=bool:?}, lptim6en: {=bool:?}, vrefen: {=bool:?}, rtcapben: {=bool:?} }}",
                 self.syscfgen(),
                 self.spi5en(),
                 self.lpuart1en(),
                 self.i2c3en(),
                 self.i2c4en(),
+                self.i3c2en(),
                 self.lptim1en(),
                 self.lptim3en(),
                 self.lptim4en(),
@@ -4311,6 +4325,18 @@ pub mod regs {
         #[inline(always)]
         pub const fn set_i2c4lpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "I3C2 clock enable during sleep mode Set and reset by software."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn i3c2lpen(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "I3C2 clock enable during sleep mode Set and reset by software."]
+        #[inline(always)]
+        pub const fn set_i3c2lpen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "LPTIM1 clock enable during sleep mode Set and reset by software."]
         #[must_use]
@@ -4411,6 +4437,7 @@ pub mod regs {
                 .field("lpuart1lpen", &self.lpuart1lpen())
                 .field("i2c3lpen", &self.i2c3lpen())
                 .field("i2c4lpen", &self.i2c4lpen())
+                .field("i3c2lpen", &self.i3c2lpen())
                 .field("lptim1lpen", &self.lptim1lpen())
                 .field("lptim3lpen", &self.lptim3lpen())
                 .field("lptim4lpen", &self.lptim4lpen())
@@ -4426,12 +4453,13 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Apb3lpenr {{ syscfglpen: {=bool:?}, spi5lpen: {=bool:?}, lpuart1lpen: {=bool:?}, i2c3lpen: {=bool:?}, i2c4lpen: {=bool:?}, lptim1lpen: {=bool:?}, lptim3lpen: {=bool:?}, lptim4lpen: {=bool:?}, lptim5lpen: {=bool:?}, lptim6lpen: {=bool:?}, vreflpen: {=bool:?}, rtcapblpen: {=bool:?} }}",
+                "Apb3lpenr {{ syscfglpen: {=bool:?}, spi5lpen: {=bool:?}, lpuart1lpen: {=bool:?}, i2c3lpen: {=bool:?}, i2c4lpen: {=bool:?}, i3c2lpen: {=bool:?}, lptim1lpen: {=bool:?}, lptim3lpen: {=bool:?}, lptim4lpen: {=bool:?}, lptim5lpen: {=bool:?}, lptim6lpen: {=bool:?}, vreflpen: {=bool:?}, rtcapblpen: {=bool:?} }}",
                 self.syscfglpen(),
                 self.spi5lpen(),
                 self.lpuart1lpen(),
                 self.i2c3lpen(),
                 self.i2c4lpen(),
+                self.i3c2lpen(),
                 self.lptim1lpen(),
                 self.lptim3lpen(),
                 self.lptim4lpen(),
@@ -4506,6 +4534,18 @@ pub mod regs {
         #[inline(always)]
         pub const fn set_i2c4rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "I3C2RST block reset Set and reset by software."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn i3c2rst(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "I3C2RST block reset Set and reset by software."]
+        #[inline(always)]
+        pub const fn set_i3c2rst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "LPTIM1 block reset Set and reset by software."]
         #[must_use]
@@ -4594,6 +4634,7 @@ pub mod regs {
                 .field("lpuart1rst", &self.lpuart1rst())
                 .field("i2c3rst", &self.i2c3rst())
                 .field("i2c4rst", &self.i2c4rst())
+                .field("i3c2rst", &self.i3c2rst())
                 .field("lptim1rst", &self.lptim1rst())
                 .field("lptim3rst", &self.lptim3rst())
                 .field("lptim4rst", &self.lptim4rst())
@@ -4608,12 +4649,13 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Apb3rstr {{ syscfgrst: {=bool:?}, spi5rst: {=bool:?}, lpuart1rst: {=bool:?}, i2c3rst: {=bool:?}, i2c4rst: {=bool:?}, lptim1rst: {=bool:?}, lptim3rst: {=bool:?}, lptim4rst: {=bool:?}, lptim5rst: {=bool:?}, lptim6rst: {=bool:?}, vrefrst: {=bool:?} }}",
+                "Apb3rstr {{ syscfgrst: {=bool:?}, spi5rst: {=bool:?}, lpuart1rst: {=bool:?}, i2c3rst: {=bool:?}, i2c4rst: {=bool:?}, i3c2rst: {=bool:?}, lptim1rst: {=bool:?}, lptim3rst: {=bool:?}, lptim4rst: {=bool:?}, lptim5rst: {=bool:?}, lptim6rst: {=bool:?}, vrefrst: {=bool:?} }}",
                 self.syscfgrst(),
                 self.spi5rst(),
                 self.lpuart1rst(),
                 self.i2c3rst(),
                 self.i2c4rst(),
+                self.i3c2rst(),
                 self.lptim1rst(),
                 self.lptim3rst(),
                 self.lptim4rst(),
@@ -5416,6 +5458,18 @@ pub mod regs {
         pub const fn set_i3c1sel(&mut self, val: super::vals::I2csel) {
             self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
         }
+        #[doc = "I3C2 kernel clock source selection"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn i3c2sel(&self) -> super::vals::I2c34sel {
+            let val = (self.0 >> 26usize) & 0x03;
+            super::vals::I2c34sel::from_bits(val as u8)
+        }
+        #[doc = "I3C2 kernel clock source selection"]
+        #[inline(always)]
+        pub const fn set_i3c2sel(&mut self, val: super::vals::I2c34sel) {
+            self.0 = (self.0 & !(0x03 << 26usize)) | (((val.to_bits() as u32) & 0x03) << 26usize);
+        }
     }
     impl Default for Ccipr4 {
         #[inline(always)]
@@ -5436,6 +5490,7 @@ pub mod regs {
                 .field("i2c3sel", &self.i2c3sel())
                 .field("i2c4sel", &self.i2c4sel())
                 .field("i3c1sel", &self.i3c1sel())
+                .field("i3c2sel", &self.i3c2sel())
                 .finish()
         }
     }
@@ -5444,7 +5499,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ccipr4 {{ octospi1sel: {:?}, systicksel: {:?}, usbsel: {:?}, sdmmc1sel: {:?}, sdmmc2sel: {:?}, i2c1sel: {:?}, i2c2sel: {:?}, i2c3sel: {:?}, i2c4sel: {:?}, i3c1sel: {:?} }}",
+                "Ccipr4 {{ octospi1sel: {:?}, systicksel: {:?}, usbsel: {:?}, sdmmc1sel: {:?}, sdmmc2sel: {:?}, i2c1sel: {:?}, i2c2sel: {:?}, i2c3sel: {:?}, i2c4sel: {:?}, i3c1sel: {:?}, i3c2sel: {:?} }}",
                 self.octospi1sel(),
                 self.systicksel(),
                 self.usbsel(),
@@ -5454,7 +5509,8 @@ pub mod regs {
                 self.i2c2sel(),
                 self.i2c3sel(),
                 self.i2c4sel(),
-                self.i3c1sel()
+                self.i3c1sel(),
+                self.i3c2sel()
             )
         }
     }

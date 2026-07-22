@@ -1928,6 +1928,21 @@
             "version": "v1",
             "block": "I3C"
           },
+          "rcc": {
+            "bus_clock": "PCLK3",
+            "kernel_clock": {
+              "register": "CCIPR4",
+              "field": "I3C2SEL"
+            },
+            "enable": {
+              "register": "APB3ENR",
+              "field": "I3C2EN"
+            },
+            "reset": {
+              "register": "APB3RSTR",
+              "field": "I3C2RST"
+            }
+          },
           "pins": [
             {
               "pin": "PA8",

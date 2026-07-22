@@ -3797,7 +3797,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40006000,
         registers: Some(PeripheralRegisters {
             kind: "i3c",
-            version: "n6",
+            version: "v1",
             block: "I3C",
             ir: &i3c::REGISTERS,
         }),
@@ -3933,7 +3933,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40006400,
         registers: Some(PeripheralRegisters {
             kind: "i3c",
-            version: "n6",
+            version: "v1",
             block: "I3C",
             ir: &i3c::REGISTERS,
         }),
@@ -13445,7 +13445,7 @@ pub mod gpu2d;
 pub mod hash;
 #[path = "../registers/i2c_v3.rs"]
 pub mod i2c;
-#[path = "../registers/i3c_n6.rs"]
+#[path = "../registers/i3c_v1.rs"]
 pub mod i3c;
 #[path = "../registers/icache_v1_0crr.rs"]
 pub mod icache;

@@ -1038,7 +1038,7 @@ pub mod gpu2d;
 pub mod hash;
 #[path = "../../peripherals/i2c_v3.rs"]
 pub mod i2c;
-#[path = "../../peripherals/i3c_n6.rs"]
+#[path = "../../peripherals/i3c_v1.rs"]
 pub mod i3c;
 #[path = "../../peripherals/icache_v1_0crr.rs"]
 pub mod icache;

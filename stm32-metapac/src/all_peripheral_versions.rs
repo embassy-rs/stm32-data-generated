@@ -79,7 +79,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("hsp", &["v1"]),
     ("hspi", &["v1"]),
     ("i2c", &["v1", "v2", "v3"]),
-    ("i3c", &["n6", "v1"]),
+    ("i3c", &["v1"]),
     ("icache", &["v1_0crr", "v1_3crr", "v1_4crr"]),
     ("ipcc", &["v1"]),
     ("iwdg", &["v1", "v2", "v3"]),

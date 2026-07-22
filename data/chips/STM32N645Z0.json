@@ -2852,7 +2852,7 @@
           "address": 1073766400,
           "registers": {
             "kind": "i3c",
-            "version": "n6",
+            "version": "v1",
             "block": "I3C"
           },
           "rcc": {
@@ -2940,7 +2940,7 @@
           "address": 1073767424,
           "registers": {
             "kind": "i3c",
-            "version": "n6",
+            "version": "v1",
             "block": "I3C"
           },
           "rcc": {

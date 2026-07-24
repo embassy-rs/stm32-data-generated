@@ -3940,6 +3940,10 @@
             {
               "signal": "ER",
               "interrupt": "GPU2D_ER"
+            },
+            {
+              "signal": "GLOBAL",
+              "interrupt": "GPU2D"
             }
           ]
         },

@@ -5622,16 +5622,16 @@ pub mod regs {
         pub const fn set_gfxmmuenc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
-        #[doc = "GPU enable."]
+        #[doc = "GPU2D enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn gpuenc(&self) -> bool {
+        pub const fn gpu2denc(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
-        #[doc = "GPU enable."]
+        #[doc = "GPU2D enable."]
         #[inline(always)]
-        pub const fn set_gpuenc(&mut self, val: bool) {
+        pub const fn set_gpu2denc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "ETH1MAC enable."]
@@ -5780,7 +5780,7 @@ pub mod regs {
                 .field("xspi3enc", &self.xspi3enc())
                 .field("mce4enc", &self.mce4enc())
                 .field("gfxmmuenc", &self.gfxmmuenc())
-                .field("gpuenc", &self.gpuenc())
+                .field("gpu2denc", &self.gpu2denc())
                 .field("eth1macenc", &self.eth1macenc())
                 .field("eth1txenc", &self.eth1txenc())
                 .field("eth1rxenc", &self.eth1rxenc())
@@ -5799,7 +5799,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb5encr {{ hpdma1enc: {=bool:?}, dma2denc: {=bool:?}, jpegenc: {=bool:?}, fmcenc: {=bool:?}, xspi1enc: {=bool:?}, pssienc: {=bool:?}, sdmmc2enc: {=bool:?}, sdmmc1enc: {=bool:?}, xspi2enc: {=bool:?}, xspimenc: {=bool:?}, mce1enc: {=bool:?}, mce2enc: {=bool:?}, mce3enc: {=bool:?}, xspi3enc: {=bool:?}, mce4enc: {=bool:?}, gfxmmuenc: {=bool:?}, gpuenc: {=bool:?}, eth1macenc: {=bool:?}, eth1txenc: {=bool:?}, eth1rxenc: {=bool:?}, eth1enc: {=bool:?}, otg1enc: {=bool:?}, otgphy1enc: {=bool:?}, otgphy2enc: {=bool:?}, otg2enc: {=bool:?}, npucacheenc: {=bool:?}, npuenc: {=bool:?} }}",
+                "Ahb5encr {{ hpdma1enc: {=bool:?}, dma2denc: {=bool:?}, jpegenc: {=bool:?}, fmcenc: {=bool:?}, xspi1enc: {=bool:?}, pssienc: {=bool:?}, sdmmc2enc: {=bool:?}, sdmmc1enc: {=bool:?}, xspi2enc: {=bool:?}, xspimenc: {=bool:?}, mce1enc: {=bool:?}, mce2enc: {=bool:?}, mce3enc: {=bool:?}, xspi3enc: {=bool:?}, mce4enc: {=bool:?}, gfxmmuenc: {=bool:?}, gpu2denc: {=bool:?}, eth1macenc: {=bool:?}, eth1txenc: {=bool:?}, eth1rxenc: {=bool:?}, eth1enc: {=bool:?}, otg1enc: {=bool:?}, otgphy1enc: {=bool:?}, otgphy2enc: {=bool:?}, otg2enc: {=bool:?}, npucacheenc: {=bool:?}, npuenc: {=bool:?} }}",
                 self.hpdma1enc(),
                 self.dma2denc(),
                 self.jpegenc(),
@@ -5816,7 +5816,7 @@ pub mod regs {
                 self.xspi3enc(),
                 self.mce4enc(),
                 self.gfxmmuenc(),
-                self.gpuenc(),
+                self.gpu2denc(),
                 self.eth1macenc(),
                 self.eth1txenc(),
                 self.eth1rxenc(),
@@ -6027,16 +6027,16 @@ pub mod regs {
         pub const fn set_gfxmmuen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
-        #[doc = "GPU enable."]
+        #[doc = "GPU2D enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn gpuen(&self) -> bool {
+        pub const fn gpu2den(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
-        #[doc = "GPU enable."]
+        #[doc = "GPU2D enable."]
         #[inline(always)]
-        pub const fn set_gpuen(&mut self, val: bool) {
+        pub const fn set_gpu2den(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "ETH1MAC enable."]
@@ -6185,7 +6185,7 @@ pub mod regs {
                 .field("xspi3en", &self.xspi3en())
                 .field("mce4en", &self.mce4en())
                 .field("gfxmmuen", &self.gfxmmuen())
-                .field("gpuen", &self.gpuen())
+                .field("gpu2den", &self.gpu2den())
                 .field("eth1macen", &self.eth1macen())
                 .field("eth1txen", &self.eth1txen())
                 .field("eth1rxen", &self.eth1rxen())
@@ -6204,7 +6204,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb5enr {{ hpdma1en: {=bool:?}, dma2den: {=bool:?}, jpegen: {=bool:?}, fmcen: {=bool:?}, xspi1en: {=bool:?}, pssien: {=bool:?}, sdmmc2en: {=bool:?}, sdmmc1en: {=bool:?}, xspi2en: {=bool:?}, xspimen: {=bool:?}, mce1en: {=bool:?}, mce2en: {=bool:?}, mce3en: {=bool:?}, xspi3en: {=bool:?}, mce4en: {=bool:?}, gfxmmuen: {=bool:?}, gpuen: {=bool:?}, eth1macen: {=bool:?}, eth1txen: {=bool:?}, eth1rxen: {=bool:?}, eth1en: {=bool:?}, otg1en: {=bool:?}, otgphy1en: {=bool:?}, otgphy2en: {=bool:?}, otg2en: {=bool:?}, npucacheen: {=bool:?}, npuen: {=bool:?} }}",
+                "Ahb5enr {{ hpdma1en: {=bool:?}, dma2den: {=bool:?}, jpegen: {=bool:?}, fmcen: {=bool:?}, xspi1en: {=bool:?}, pssien: {=bool:?}, sdmmc2en: {=bool:?}, sdmmc1en: {=bool:?}, xspi2en: {=bool:?}, xspimen: {=bool:?}, mce1en: {=bool:?}, mce2en: {=bool:?}, mce3en: {=bool:?}, xspi3en: {=bool:?}, mce4en: {=bool:?}, gfxmmuen: {=bool:?}, gpu2den: {=bool:?}, eth1macen: {=bool:?}, eth1txen: {=bool:?}, eth1rxen: {=bool:?}, eth1en: {=bool:?}, otg1en: {=bool:?}, otgphy1en: {=bool:?}, otgphy2en: {=bool:?}, otg2en: {=bool:?}, npucacheen: {=bool:?}, npuen: {=bool:?} }}",
                 self.hpdma1en(),
                 self.dma2den(),
                 self.jpegen(),
@@ -6221,7 +6221,7 @@ pub mod regs {
                 self.xspi3en(),
                 self.mce4en(),
                 self.gfxmmuen(),
-                self.gpuen(),
+                self.gpu2den(),
                 self.eth1macen(),
                 self.eth1txen(),
                 self.eth1rxen(),
@@ -6432,16 +6432,16 @@ pub mod regs {
         pub const fn set_gfxmmuens(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
-        #[doc = "GPU enable."]
+        #[doc = "GPU2D enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn gpuens(&self) -> bool {
+        pub const fn gpu2dens(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
-        #[doc = "GPU enable."]
+        #[doc = "GPU2D enable."]
         #[inline(always)]
-        pub const fn set_gpuens(&mut self, val: bool) {
+        pub const fn set_gpu2dens(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "ETH1MAC enable."]
@@ -6590,7 +6590,7 @@ pub mod regs {
                 .field("xspi3ens", &self.xspi3ens())
                 .field("mce4ens", &self.mce4ens())
                 .field("gfxmmuens", &self.gfxmmuens())
-                .field("gpuens", &self.gpuens())
+                .field("gpu2dens", &self.gpu2dens())
                 .field("eth1macens", &self.eth1macens())
                 .field("eth1txens", &self.eth1txens())
                 .field("eth1rxens", &self.eth1rxens())
@@ -6609,7 +6609,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb5ensr {{ hpdma1ens: {=bool:?}, dma2dens: {=bool:?}, jpegens: {=bool:?}, fmcens: {=bool:?}, xspi1ens: {=bool:?}, pssiens: {=bool:?}, sdmmc2ens: {=bool:?}, sdmmc1ens: {=bool:?}, xspi2ens: {=bool:?}, xspimens: {=bool:?}, mce1ens: {=bool:?}, mce2ens: {=bool:?}, mce3ens: {=bool:?}, xspi3ens: {=bool:?}, mce4ens: {=bool:?}, gfxmmuens: {=bool:?}, gpuens: {=bool:?}, eth1macens: {=bool:?}, eth1txens: {=bool:?}, eth1rxens: {=bool:?}, eth1ens: {=bool:?}, otg1ens: {=bool:?}, otgphy1ens: {=bool:?}, otgphy2ens: {=bool:?}, otg2ens: {=bool:?}, npucacheens: {=bool:?}, npuens: {=bool:?} }}",
+                "Ahb5ensr {{ hpdma1ens: {=bool:?}, dma2dens: {=bool:?}, jpegens: {=bool:?}, fmcens: {=bool:?}, xspi1ens: {=bool:?}, pssiens: {=bool:?}, sdmmc2ens: {=bool:?}, sdmmc1ens: {=bool:?}, xspi2ens: {=bool:?}, xspimens: {=bool:?}, mce1ens: {=bool:?}, mce2ens: {=bool:?}, mce3ens: {=bool:?}, xspi3ens: {=bool:?}, mce4ens: {=bool:?}, gfxmmuens: {=bool:?}, gpu2dens: {=bool:?}, eth1macens: {=bool:?}, eth1txens: {=bool:?}, eth1rxens: {=bool:?}, eth1ens: {=bool:?}, otg1ens: {=bool:?}, otgphy1ens: {=bool:?}, otgphy2ens: {=bool:?}, otg2ens: {=bool:?}, npucacheens: {=bool:?}, npuens: {=bool:?} }}",
                 self.hpdma1ens(),
                 self.dma2dens(),
                 self.jpegens(),
@@ -6626,7 +6626,7 @@ pub mod regs {
                 self.xspi3ens(),
                 self.mce4ens(),
                 self.gfxmmuens(),
-                self.gpuens(),
+                self.gpu2dens(),
                 self.eth1macens(),
                 self.eth1txens(),
                 self.eth1rxens(),
@@ -6837,16 +6837,16 @@ pub mod regs {
         pub const fn set_gfxmmulpenc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
-        #[doc = "GPU sleep enable."]
+        #[doc = "GPU2D sleep enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn gpulpenc(&self) -> bool {
+        pub const fn gpu2dlpenc(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
-        #[doc = "GPU sleep enable."]
+        #[doc = "GPU2D sleep enable."]
         #[inline(always)]
-        pub const fn set_gpulpenc(&mut self, val: bool) {
+        pub const fn set_gpu2dlpenc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "ETH1MAC sleep enable."]
@@ -6995,7 +6995,7 @@ pub mod regs {
                 .field("xspi3lpenc", &self.xspi3lpenc())
                 .field("mce4lpenc", &self.mce4lpenc())
                 .field("gfxmmulpenc", &self.gfxmmulpenc())
-                .field("gpulpenc", &self.gpulpenc())
+                .field("gpu2dlpenc", &self.gpu2dlpenc())
                 .field("eth1maclpenc", &self.eth1maclpenc())
                 .field("eth1txlpenc", &self.eth1txlpenc())
                 .field("eth1rxlpenc", &self.eth1rxlpenc())
@@ -7014,7 +7014,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb5lpencr {{ hpdma1lpenc: {=bool:?}, dma2dlpenc: {=bool:?}, jpeglpenc: {=bool:?}, fmclpenc: {=bool:?}, xspi1lpenc: {=bool:?}, pssilpenc: {=bool:?}, sdmmc2lpenc: {=bool:?}, sdmmc1lpenc: {=bool:?}, xspi2lpenc: {=bool:?}, xspimlpenc: {=bool:?}, mce1lpenc: {=bool:?}, mce2lpenc: {=bool:?}, mce3lpenc: {=bool:?}, xspi3lpenc: {=bool:?}, mce4lpenc: {=bool:?}, gfxmmulpenc: {=bool:?}, gpulpenc: {=bool:?}, eth1maclpenc: {=bool:?}, eth1txlpenc: {=bool:?}, eth1rxlpenc: {=bool:?}, eth1lpenc: {=bool:?}, otg1lpenc: {=bool:?}, otgphy1lpenc: {=bool:?}, otgphy2lpenc: {=bool:?}, otg2lpenc: {=bool:?}, npucachelpenc: {=bool:?}, npulpenc: {=bool:?} }}",
+                "Ahb5lpencr {{ hpdma1lpenc: {=bool:?}, dma2dlpenc: {=bool:?}, jpeglpenc: {=bool:?}, fmclpenc: {=bool:?}, xspi1lpenc: {=bool:?}, pssilpenc: {=bool:?}, sdmmc2lpenc: {=bool:?}, sdmmc1lpenc: {=bool:?}, xspi2lpenc: {=bool:?}, xspimlpenc: {=bool:?}, mce1lpenc: {=bool:?}, mce2lpenc: {=bool:?}, mce3lpenc: {=bool:?}, xspi3lpenc: {=bool:?}, mce4lpenc: {=bool:?}, gfxmmulpenc: {=bool:?}, gpu2dlpenc: {=bool:?}, eth1maclpenc: {=bool:?}, eth1txlpenc: {=bool:?}, eth1rxlpenc: {=bool:?}, eth1lpenc: {=bool:?}, otg1lpenc: {=bool:?}, otgphy1lpenc: {=bool:?}, otgphy2lpenc: {=bool:?}, otg2lpenc: {=bool:?}, npucachelpenc: {=bool:?}, npulpenc: {=bool:?} }}",
                 self.hpdma1lpenc(),
                 self.dma2dlpenc(),
                 self.jpeglpenc(),
@@ -7031,7 +7031,7 @@ pub mod regs {
                 self.xspi3lpenc(),
                 self.mce4lpenc(),
                 self.gfxmmulpenc(),
-                self.gpulpenc(),
+                self.gpu2dlpenc(),
                 self.eth1maclpenc(),
                 self.eth1txlpenc(),
                 self.eth1rxlpenc(),
@@ -7242,16 +7242,16 @@ pub mod regs {
         pub const fn set_gfxmmulpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
-        #[doc = "GPU sleep enable."]
+        #[doc = "GPU2D sleep enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn gpulpen(&self) -> bool {
+        pub const fn gpu2dlpen(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
-        #[doc = "GPU sleep enable."]
+        #[doc = "GPU2D sleep enable."]
         #[inline(always)]
-        pub const fn set_gpulpen(&mut self, val: bool) {
+        pub const fn set_gpu2dlpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "ETH1MAC sleep enable."]
@@ -7400,7 +7400,7 @@ pub mod regs {
                 .field("xspi3lpen", &self.xspi3lpen())
                 .field("mce4lpen", &self.mce4lpen())
                 .field("gfxmmulpen", &self.gfxmmulpen())
-                .field("gpulpen", &self.gpulpen())
+                .field("gpu2dlpen", &self.gpu2dlpen())
                 .field("eth1maclpen", &self.eth1maclpen())
                 .field("eth1txlpen", &self.eth1txlpen())
                 .field("eth1rxlpen", &self.eth1rxlpen())
@@ -7419,7 +7419,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb5lpenr {{ hpdma1lpen: {=bool:?}, dma2dlpen: {=bool:?}, jpeglpen: {=bool:?}, fmclpen: {=bool:?}, xspi1lpen: {=bool:?}, pssilpen: {=bool:?}, sdmmc2lpen: {=bool:?}, sdmmc1lpen: {=bool:?}, xspi2lpen: {=bool:?}, xspimlpen: {=bool:?}, mce1lpen: {=bool:?}, mce2lpen: {=bool:?}, mce3lpen: {=bool:?}, xspi3lpen: {=bool:?}, mce4lpen: {=bool:?}, gfxmmulpen: {=bool:?}, gpulpen: {=bool:?}, eth1maclpen: {=bool:?}, eth1txlpen: {=bool:?}, eth1rxlpen: {=bool:?}, eth1lpen: {=bool:?}, otg1lpen: {=bool:?}, otgphy1lpen: {=bool:?}, otgphy2lpen: {=bool:?}, otg2lpen: {=bool:?}, npucachelpen: {=bool:?}, npulpen: {=bool:?} }}",
+                "Ahb5lpenr {{ hpdma1lpen: {=bool:?}, dma2dlpen: {=bool:?}, jpeglpen: {=bool:?}, fmclpen: {=bool:?}, xspi1lpen: {=bool:?}, pssilpen: {=bool:?}, sdmmc2lpen: {=bool:?}, sdmmc1lpen: {=bool:?}, xspi2lpen: {=bool:?}, xspimlpen: {=bool:?}, mce1lpen: {=bool:?}, mce2lpen: {=bool:?}, mce3lpen: {=bool:?}, xspi3lpen: {=bool:?}, mce4lpen: {=bool:?}, gfxmmulpen: {=bool:?}, gpu2dlpen: {=bool:?}, eth1maclpen: {=bool:?}, eth1txlpen: {=bool:?}, eth1rxlpen: {=bool:?}, eth1lpen: {=bool:?}, otg1lpen: {=bool:?}, otgphy1lpen: {=bool:?}, otgphy2lpen: {=bool:?}, otg2lpen: {=bool:?}, npucachelpen: {=bool:?}, npulpen: {=bool:?} }}",
                 self.hpdma1lpen(),
                 self.dma2dlpen(),
                 self.jpeglpen(),
@@ -7436,7 +7436,7 @@ pub mod regs {
                 self.xspi3lpen(),
                 self.mce4lpen(),
                 self.gfxmmulpen(),
-                self.gpulpen(),
+                self.gpu2dlpen(),
                 self.eth1maclpen(),
                 self.eth1txlpen(),
                 self.eth1rxlpen(),
@@ -7647,16 +7647,16 @@ pub mod regs {
         pub const fn set_gfxmmulpens(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
-        #[doc = "GPU sleep enable."]
+        #[doc = "GPU2D sleep enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn gpulpens(&self) -> bool {
+        pub const fn gpu2dlpens(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
-        #[doc = "GPU sleep enable."]
+        #[doc = "GPU2D sleep enable."]
         #[inline(always)]
-        pub const fn set_gpulpens(&mut self, val: bool) {
+        pub const fn set_gpu2dlpens(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "ETH1MAC sleep enable."]
@@ -7805,7 +7805,7 @@ pub mod regs {
                 .field("xspi3lpens", &self.xspi3lpens())
                 .field("mce4lpens", &self.mce4lpens())
                 .field("gfxmmulpens", &self.gfxmmulpens())
-                .field("gpulpens", &self.gpulpens())
+                .field("gpu2dlpens", &self.gpu2dlpens())
                 .field("eth1maclpens", &self.eth1maclpens())
                 .field("eth1txlpens", &self.eth1txlpens())
                 .field("eth1rxlpens", &self.eth1rxlpens())
@@ -7824,7 +7824,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb5lpensr {{ hpdma1lpens: {=bool:?}, dma2dlpens: {=bool:?}, jpeglpens: {=bool:?}, fmclpens: {=bool:?}, xspi1lpens: {=bool:?}, pssilpens: {=bool:?}, sdmmc2lpens: {=bool:?}, sdmmc1lpens: {=bool:?}, xspi2lpens: {=bool:?}, xspimlpens: {=bool:?}, mce1lpens: {=bool:?}, mce2lpens: {=bool:?}, mce3lpens: {=bool:?}, xspi3lpens: {=bool:?}, mce4lpens: {=bool:?}, gfxmmulpens: {=bool:?}, gpulpens: {=bool:?}, eth1maclpens: {=bool:?}, eth1txlpens: {=bool:?}, eth1rxlpens: {=bool:?}, eth1lpens: {=bool:?}, otg1lpens: {=bool:?}, otgphy1lpens: {=bool:?}, otgphy2lpens: {=bool:?}, otg2lpens: {=bool:?}, npucachelpens: {=bool:?}, npulpens: {=bool:?} }}",
+                "Ahb5lpensr {{ hpdma1lpens: {=bool:?}, dma2dlpens: {=bool:?}, jpeglpens: {=bool:?}, fmclpens: {=bool:?}, xspi1lpens: {=bool:?}, pssilpens: {=bool:?}, sdmmc2lpens: {=bool:?}, sdmmc1lpens: {=bool:?}, xspi2lpens: {=bool:?}, xspimlpens: {=bool:?}, mce1lpens: {=bool:?}, mce2lpens: {=bool:?}, mce3lpens: {=bool:?}, xspi3lpens: {=bool:?}, mce4lpens: {=bool:?}, gfxmmulpens: {=bool:?}, gpu2dlpens: {=bool:?}, eth1maclpens: {=bool:?}, eth1txlpens: {=bool:?}, eth1rxlpens: {=bool:?}, eth1lpens: {=bool:?}, otg1lpens: {=bool:?}, otgphy1lpens: {=bool:?}, otgphy2lpens: {=bool:?}, otg2lpens: {=bool:?}, npucachelpens: {=bool:?}, npulpens: {=bool:?} }}",
                 self.hpdma1lpens(),
                 self.dma2dlpens(),
                 self.jpeglpens(),
@@ -7841,7 +7841,7 @@ pub mod regs {
                 self.xspi3lpens(),
                 self.mce4lpens(),
                 self.gfxmmulpens(),
-                self.gpulpens(),
+                self.gpu2dlpens(),
                 self.eth1maclpens(),
                 self.eth1txlpens(),
                 self.eth1rxlpens(),
@@ -8016,16 +8016,16 @@ pub mod regs {
         pub const fn set_gfxmmurstc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
-        #[doc = "GPU reset."]
+        #[doc = "GPU2D reset."]
         #[must_use]
         #[inline(always)]
-        pub const fn gpurstc(&self) -> bool {
+        pub const fn gpu2drstc(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
-        #[doc = "GPU reset."]
+        #[doc = "GPU2D reset."]
         #[inline(always)]
-        pub const fn set_gpurstc(&mut self, val: bool) {
+        pub const fn set_gpu2drstc(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "SYSCFGOTGHSPHY1 reset."]
@@ -8159,7 +8159,7 @@ pub mod regs {
                 .field("xspi3rstc", &self.xspi3rstc())
                 .field("mce4rstc", &self.mce4rstc())
                 .field("gfxmmurstc", &self.gfxmmurstc())
-                .field("gpurstc", &self.gpurstc())
+                .field("gpu2drstc", &self.gpu2drstc())
                 .field("syscfgotghsphy1rstc", &self.syscfgotghsphy1rstc())
                 .field("syscfgotghsphy2rstc", &self.syscfgotghsphy2rstc())
                 .field("eth1rstc", &self.eth1rstc())
@@ -8177,7 +8177,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb5rstcr {{ hpdma1rstc: {=bool:?}, dma2drstc: {=bool:?}, jpegrstc: {=bool:?}, fmcrstc: {=bool:?}, xspi1rstc: {=bool:?}, pssirstc: {=bool:?}, sdmmc2rstc: {=bool:?}, sdmmc1rstc: {=bool:?}, xspi2rstc: {=bool:?}, xspimrstc: {=bool:?}, xspi3rstc: {=bool:?}, mce4rstc: {=bool:?}, gfxmmurstc: {=bool:?}, gpurstc: {=bool:?}, syscfgotghsphy1rstc: {=bool:?}, syscfgotghsphy2rstc: {=bool:?}, eth1rstc: {=bool:?}, otg1rstc: {=bool:?}, otgphy1rstc: {=bool:?}, otgphy2rstc: {=bool:?}, otg2rstc: {=bool:?}, npucacherstc: {=bool:?}, npurstc: {=bool:?} }}",
+                "Ahb5rstcr {{ hpdma1rstc: {=bool:?}, dma2drstc: {=bool:?}, jpegrstc: {=bool:?}, fmcrstc: {=bool:?}, xspi1rstc: {=bool:?}, pssirstc: {=bool:?}, sdmmc2rstc: {=bool:?}, sdmmc1rstc: {=bool:?}, xspi2rstc: {=bool:?}, xspimrstc: {=bool:?}, xspi3rstc: {=bool:?}, mce4rstc: {=bool:?}, gfxmmurstc: {=bool:?}, gpu2drstc: {=bool:?}, syscfgotghsphy1rstc: {=bool:?}, syscfgotghsphy2rstc: {=bool:?}, eth1rstc: {=bool:?}, otg1rstc: {=bool:?}, otgphy1rstc: {=bool:?}, otgphy2rstc: {=bool:?}, otg2rstc: {=bool:?}, npucacherstc: {=bool:?}, npurstc: {=bool:?} }}",
                 self.hpdma1rstc(),
                 self.dma2drstc(),
                 self.jpegrstc(),
@@ -8191,7 +8191,7 @@ pub mod regs {
                 self.xspi3rstc(),
                 self.mce4rstc(),
                 self.gfxmmurstc(),
-                self.gpurstc(),
+                self.gpu2drstc(),
                 self.syscfgotghsphy1rstc(),
                 self.syscfgotghsphy2rstc(),
                 self.eth1rstc(),
@@ -8365,16 +8365,16 @@ pub mod regs {
         pub const fn set_gfxmmurst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
-        #[doc = "GPU reset."]
+        #[doc = "GPU2D reset."]
         #[must_use]
         #[inline(always)]
-        pub const fn gpurst(&self) -> bool {
+        pub const fn gpu2drst(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
-        #[doc = "GPU reset."]
+        #[doc = "GPU2D reset."]
         #[inline(always)]
-        pub const fn set_gpurst(&mut self, val: bool) {
+        pub const fn set_gpu2drst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "SYSCFGOTGHSPHY1 reset."]
@@ -8508,7 +8508,7 @@ pub mod regs {
                 .field("xspi3rst", &self.xspi3rst())
                 .field("mce4rst", &self.mce4rst())
                 .field("gfxmmurst", &self.gfxmmurst())
-                .field("gpurst", &self.gpurst())
+                .field("gpu2drst", &self.gpu2drst())
                 .field("syscfgotghsphy1rst", &self.syscfgotghsphy1rst())
                 .field("syscfgotghsphy2rst", &self.syscfgotghsphy2rst())
                 .field("eth1rst", &self.eth1rst())
@@ -8526,7 +8526,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb5rstr {{ hpdma1rst: {=bool:?}, dma2drst: {=bool:?}, jpegrst: {=bool:?}, fmcrst: {=bool:?}, xspi1rst: {=bool:?}, pssirst: {=bool:?}, sdmmc2rst: {=bool:?}, sdmmc1rst: {=bool:?}, xspi2rst: {=bool:?}, xspimrst: {=bool:?}, xspi3rst: {=bool:?}, mce4rst: {=bool:?}, gfxmmurst: {=bool:?}, gpurst: {=bool:?}, syscfgotghsphy1rst: {=bool:?}, syscfgotghsphy2rst: {=bool:?}, eth1rst: {=bool:?}, otg1rst: {=bool:?}, otgphy1rst: {=bool:?}, otgphy2rst: {=bool:?}, otg2rst: {=bool:?}, npucacherst: {=bool:?}, npurst: {=bool:?} }}",
+                "Ahb5rstr {{ hpdma1rst: {=bool:?}, dma2drst: {=bool:?}, jpegrst: {=bool:?}, fmcrst: {=bool:?}, xspi1rst: {=bool:?}, pssirst: {=bool:?}, sdmmc2rst: {=bool:?}, sdmmc1rst: {=bool:?}, xspi2rst: {=bool:?}, xspimrst: {=bool:?}, xspi3rst: {=bool:?}, mce4rst: {=bool:?}, gfxmmurst: {=bool:?}, gpu2drst: {=bool:?}, syscfgotghsphy1rst: {=bool:?}, syscfgotghsphy2rst: {=bool:?}, eth1rst: {=bool:?}, otg1rst: {=bool:?}, otgphy1rst: {=bool:?}, otgphy2rst: {=bool:?}, otg2rst: {=bool:?}, npucacherst: {=bool:?}, npurst: {=bool:?} }}",
                 self.hpdma1rst(),
                 self.dma2drst(),
                 self.jpegrst(),
@@ -8540,7 +8540,7 @@ pub mod regs {
                 self.xspi3rst(),
                 self.mce4rst(),
                 self.gfxmmurst(),
-                self.gpurst(),
+                self.gpu2drst(),
                 self.syscfgotghsphy1rst(),
                 self.syscfgotghsphy2rst(),
                 self.eth1rst(),
@@ -8714,16 +8714,16 @@ pub mod regs {
         pub const fn set_gfxmmursts(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
-        #[doc = "GPU reset."]
+        #[doc = "GPU2D reset."]
         #[must_use]
         #[inline(always)]
-        pub const fn gpursts(&self) -> bool {
+        pub const fn gpu2drsts(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
-        #[doc = "GPU reset."]
+        #[doc = "GPU2D reset."]
         #[inline(always)]
-        pub const fn set_gpursts(&mut self, val: bool) {
+        pub const fn set_gpu2drsts(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "SYSCFGOTGHSPHY1 reset."]
@@ -8857,7 +8857,7 @@ pub mod regs {
                 .field("xspi3rsts", &self.xspi3rsts())
                 .field("mce4rsts", &self.mce4rsts())
                 .field("gfxmmursts", &self.gfxmmursts())
-                .field("gpursts", &self.gpursts())
+                .field("gpu2drsts", &self.gpu2drsts())
                 .field("syscfgotghsphy1rsts", &self.syscfgotghsphy1rsts())
                 .field("syscfgotghsphy2rsts", &self.syscfgotghsphy2rsts())
                 .field("eth1rsts", &self.eth1rsts())
@@ -8875,7 +8875,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb5rstsr {{ hpdma1rsts: {=bool:?}, dma2drsts: {=bool:?}, jpegrsts: {=bool:?}, fmcrsts: {=bool:?}, xspi1rsts: {=bool:?}, pssirsts: {=bool:?}, sdmmc2rsts: {=bool:?}, sdmmc1rsts: {=bool:?}, xspi2rsts: {=bool:?}, xspimrsts: {=bool:?}, xspi3rsts: {=bool:?}, mce4rsts: {=bool:?}, gfxmmursts: {=bool:?}, gpursts: {=bool:?}, syscfgotghsphy1rsts: {=bool:?}, syscfgotghsphy2rsts: {=bool:?}, eth1rsts: {=bool:?}, otg1rsts: {=bool:?}, otgphy1rsts: {=bool:?}, otgphy2rsts: {=bool:?}, otg2rsts: {=bool:?}, npucachersts: {=bool:?}, npursts: {=bool:?} }}",
+                "Ahb5rstsr {{ hpdma1rsts: {=bool:?}, dma2drsts: {=bool:?}, jpegrsts: {=bool:?}, fmcrsts: {=bool:?}, xspi1rsts: {=bool:?}, pssirsts: {=bool:?}, sdmmc2rsts: {=bool:?}, sdmmc1rsts: {=bool:?}, xspi2rsts: {=bool:?}, xspimrsts: {=bool:?}, xspi3rsts: {=bool:?}, mce4rsts: {=bool:?}, gfxmmursts: {=bool:?}, gpu2drsts: {=bool:?}, syscfgotghsphy1rsts: {=bool:?}, syscfgotghsphy2rsts: {=bool:?}, eth1rsts: {=bool:?}, otg1rsts: {=bool:?}, otgphy1rsts: {=bool:?}, otgphy2rsts: {=bool:?}, otg2rsts: {=bool:?}, npucachersts: {=bool:?}, npursts: {=bool:?} }}",
                 self.hpdma1rsts(),
                 self.dma2drsts(),
                 self.jpegrsts(),
@@ -8889,7 +8889,7 @@ pub mod regs {
                 self.xspi3rsts(),
                 self.mce4rsts(),
                 self.gfxmmursts(),
-                self.gpursts(),
+                self.gpu2drsts(),
                 self.syscfgotghsphy1rsts(),
                 self.syscfgotghsphy2rsts(),
                 self.eth1rsts(),

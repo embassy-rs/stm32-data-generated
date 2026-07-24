@@ -5304,7 +5304,22 @@
           ],
           "dma_channels": [
             {
-              "signal": "CC",
+              "signal": "CH1",
+              "dma": "GPDMA1",
+              "request": 7
+            },
+            {
+              "signal": "CH2",
+              "dma": "GPDMA1",
+              "request": 8
+            },
+            {
+              "signal": "CH3",
+              "dma": "GPDMA1",
+              "request": 9
+            },
+            {
+              "signal": "CH4",
               "dma": "GPDMA1",
               "request": 10
             },
@@ -5599,7 +5614,12 @@
           ],
           "dma_channels": [
             {
-              "signal": "CC",
+              "signal": "CC1",
+              "dma": "GPDMA1",
+              "request": 40
+            },
+            {
+              "signal": "CC2",
               "dma": "GPDMA1",
               "request": 41
             },
@@ -5693,7 +5713,7 @@
           ],
           "dma_channels": [
             {
-              "signal": "CC",
+              "signal": "CC1",
               "dma": "GPDMA1",
               "request": 45
             },
@@ -5782,7 +5802,7 @@
           ],
           "dma_channels": [
             {
-              "signal": "CC",
+              "signal": "CC1",
               "dma": "GPDMA1",
               "request": 48
             },
@@ -5911,7 +5931,22 @@
           ],
           "dma_channels": [
             {
-              "signal": "CC",
+              "signal": "CH1",
+              "dma": "GPDMA1",
+              "request": 14
+            },
+            {
+              "signal": "CH2",
+              "dma": "GPDMA1",
+              "request": 15
+            },
+            {
+              "signal": "CH3",
+              "dma": "GPDMA1",
+              "request": 16
+            },
+            {
+              "signal": "CH4",
               "dma": "GPDMA1",
               "request": 17
             },
@@ -6010,7 +6045,22 @@
           ],
           "dma_channels": [
             {
-              "signal": "CC",
+              "signal": "CH1",
+              "dma": "GPDMA1",
+              "request": 32
+            },
+            {
+              "signal": "CH2",
+              "dma": "GPDMA1",
+              "request": 33
+            },
+            {
+              "signal": "CH3",
+              "dma": "GPDMA1",
+              "request": 34
+            },
+            {
+              "signal": "CH4",
               "dma": "GPDMA1",
               "request": 35
             },
@@ -6565,6 +6615,18 @@
             {
               "signal": "GLOBAL",
               "interrupt": "UCPD1"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "TX",
+              "dma": "GPDMA1",
+              "request": 98
+            },
+            {
+              "signal": "RX",
+              "dma": "GPDMA1",
+              "request": 99
             }
           ]
         },

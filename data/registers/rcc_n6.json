@@ -3054,8 +3054,8 @@
         "bit_size": 1
       },
       {
-        "name": "GPUENC",
-        "description": "GPU enable.",
+        "name": "GPU2DENC",
+        "description": "GPU2D enable.",
         "bit_offset": 20,
         "bit_size": 1
       },
@@ -3221,8 +3221,8 @@
         "bit_size": 1
       },
       {
-        "name": "GPUEN",
-        "description": "GPU enable.",
+        "name": "GPU2DEN",
+        "description": "GPU2D enable.",
         "bit_offset": 20,
         "bit_size": 1
       },
@@ -3388,8 +3388,8 @@
         "bit_size": 1
       },
       {
-        "name": "GPUENS",
-        "description": "GPU enable.",
+        "name": "GPU2DENS",
+        "description": "GPU2D enable.",
         "bit_offset": 20,
         "bit_size": 1
       },
@@ -3555,8 +3555,8 @@
         "bit_size": 1
       },
       {
-        "name": "GPULPENC",
-        "description": "GPU sleep enable.",
+        "name": "GPU2DLPENC",
+        "description": "GPU2D sleep enable.",
         "bit_offset": 20,
         "bit_size": 1
       },
@@ -3722,8 +3722,8 @@
         "bit_size": 1
       },
       {
-        "name": "GPULPEN",
-        "description": "GPU sleep enable.",
+        "name": "GPU2DLPEN",
+        "description": "GPU2D sleep enable.",
         "bit_offset": 20,
         "bit_size": 1
       },
@@ -3889,8 +3889,8 @@
         "bit_size": 1
       },
       {
-        "name": "GPULPENS",
-        "description": "GPU sleep enable.",
+        "name": "GPU2DLPENS",
+        "description": "GPU2D sleep enable.",
         "bit_offset": 20,
         "bit_size": 1
       },
@@ -4038,8 +4038,8 @@
         "bit_size": 1
       },
       {
-        "name": "GPURSTC",
-        "description": "GPU reset.",
+        "name": "GPU2DRSTC",
+        "description": "GPU2D reset.",
         "bit_offset": 20,
         "bit_size": 1
       },
@@ -4181,8 +4181,8 @@
         "bit_size": 1
       },
       {
-        "name": "GPURST",
-        "description": "GPU reset.",
+        "name": "GPU2DRST",
+        "description": "GPU2D reset.",
         "bit_offset": 20,
         "bit_size": 1
       },
@@ -4324,8 +4324,8 @@
         "bit_size": 1
       },
       {
-        "name": "GPURSTS",
-        "description": "GPU reset.",
+        "name": "GPU2DRSTS",
+        "description": "GPU2D reset.",
         "bit_offset": 20,
         "bit_size": 1
       },

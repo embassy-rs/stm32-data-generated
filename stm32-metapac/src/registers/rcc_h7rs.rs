@@ -1578,8 +1578,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "gpuen",
-                    description: Some("GPU peripheral clock enable Set and reset by software."),
+                    name: "gpu2den",
+                    description: Some("GPU2D peripheral clock enable Set and reset by software."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: None,
@@ -1682,8 +1682,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "gpulpen",
-                    description: Some("GPU low-power peripheral clock enable Set and reset by software."),
+                    name: "gpu2dlpen",
+                    description: Some("GPU2D low-power peripheral clock enable Set and reset by software."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: None,
@@ -1808,8 +1808,8 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "gpurst",
-                    description: Some("GPU block reset Set and reset by software."),
+                    name: "gpu2drst",
+                    description: Some("GPU2D block reset Set and reset by software."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: None,

@@ -2072,16 +2072,16 @@ pub mod regs {
         pub const fn set_gfxmmuen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
-        #[doc = "GPU peripheral clock enable Set and reset by software."]
+        #[doc = "GPU2D peripheral clock enable Set and reset by software."]
         #[must_use]
         #[inline(always)]
-        pub const fn gpuen(&self) -> bool {
+        pub const fn gpu2den(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
-        #[doc = "GPU peripheral clock enable Set and reset by software."]
+        #[doc = "GPU2D peripheral clock enable Set and reset by software."]
         #[inline(always)]
-        pub const fn set_gpuen(&mut self, val: bool) {
+        pub const fn set_gpu2den(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
     }
@@ -2103,7 +2103,7 @@ pub mod regs {
                 .field("xspi2en", &self.xspi2en())
                 .field("iomngren", &self.iomngren())
                 .field("gfxmmuen", &self.gfxmmuen())
-                .field("gpuen", &self.gpuen())
+                .field("gpu2den", &self.gpu2den())
                 .finish()
         }
     }
@@ -2112,7 +2112,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb5enr {{ hpdma1en: {=bool:?}, dma2den: {=bool:?}, jpegen: {=bool:?}, fmcen: {=bool:?}, xspi1en: {=bool:?}, sdmmc1en: {=bool:?}, xspi2en: {=bool:?}, iomngren: {=bool:?}, gfxmmuen: {=bool:?}, gpuen: {=bool:?} }}",
+                "Ahb5enr {{ hpdma1en: {=bool:?}, dma2den: {=bool:?}, jpegen: {=bool:?}, fmcen: {=bool:?}, xspi1en: {=bool:?}, sdmmc1en: {=bool:?}, xspi2en: {=bool:?}, iomngren: {=bool:?}, gfxmmuen: {=bool:?}, gpu2den: {=bool:?} }}",
                 self.hpdma1en(),
                 self.dma2den(),
                 self.jpegen(),
@@ -2122,7 +2122,7 @@ pub mod regs {
                 self.xspi2en(),
                 self.iomngren(),
                 self.gfxmmuen(),
-                self.gpuen()
+                self.gpu2den()
             )
         }
     }
@@ -2251,16 +2251,16 @@ pub mod regs {
         pub const fn set_gfxmmulpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
-        #[doc = "GPU low-power peripheral clock enable Set and reset by software."]
+        #[doc = "GPU2D low-power peripheral clock enable Set and reset by software."]
         #[must_use]
         #[inline(always)]
-        pub const fn gpulpen(&self) -> bool {
+        pub const fn gpu2dlpen(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
-        #[doc = "GPU low-power peripheral clock enable Set and reset by software."]
+        #[doc = "GPU2D low-power peripheral clock enable Set and reset by software."]
         #[inline(always)]
-        pub const fn set_gpulpen(&mut self, val: bool) {
+        pub const fn set_gpu2dlpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "DTCM1 low-power peripheral clock enable Set and reset by software."]
@@ -2333,7 +2333,7 @@ low-power peripheral clock enable Set and reset by software."]
                 .field("xspi2lpen", &self.xspi2lpen())
                 .field("xspimlpen", &self.xspimlpen())
                 .field("gfxmmulpen", &self.gfxmmulpen())
-                .field("gpulpen", &self.gpulpen())
+                .field("gpu2dlpen", &self.gpu2dlpen())
                 .field("dtcm1lpen", &self.dtcm1lpen())
                 .field("dtcm2lpen", &self.dtcm2lpen())
                 .field("itcmlpen", &self.itcmlpen())
@@ -2346,7 +2346,7 @@ low-power peripheral clock enable Set and reset by software."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb5lpenr {{ hpdma1lpen: {=bool:?}, dma2dlpen: {=bool:?}, flitflpen: {=bool:?}, jpeglpen: {=bool:?}, fmclpen: {=bool:?}, xspi1lpen: {=bool:?}, sdmmc1lpen: {=bool:?}, xspi2lpen: {=bool:?}, xspimlpen: {=bool:?}, gfxmmulpen: {=bool:?}, gpulpen: {=bool:?}, dtcm1lpen: {=bool:?}, dtcm2lpen: {=bool:?}, itcmlpen: {=bool:?}, axisramlpen: {=bool:?} }}",
+                "Ahb5lpenr {{ hpdma1lpen: {=bool:?}, dma2dlpen: {=bool:?}, flitflpen: {=bool:?}, jpeglpen: {=bool:?}, fmclpen: {=bool:?}, xspi1lpen: {=bool:?}, sdmmc1lpen: {=bool:?}, xspi2lpen: {=bool:?}, xspimlpen: {=bool:?}, gfxmmulpen: {=bool:?}, gpu2dlpen: {=bool:?}, dtcm1lpen: {=bool:?}, dtcm2lpen: {=bool:?}, itcmlpen: {=bool:?}, axisramlpen: {=bool:?} }}",
                 self.hpdma1lpen(),
                 self.dma2dlpen(),
                 self.flitflpen(),
@@ -2357,7 +2357,7 @@ low-power peripheral clock enable Set and reset by software."]
                 self.xspi2lpen(),
                 self.xspimlpen(),
                 self.gfxmmulpen(),
-                self.gpulpen(),
+                self.gpu2dlpen(),
                 self.dtcm1lpen(),
                 self.dtcm2lpen(),
                 self.itcmlpen(),
@@ -2478,16 +2478,16 @@ low-power peripheral clock enable Set and reset by software."]
         pub const fn set_gfxmmurst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
-        #[doc = "GPU block reset Set and reset by software."]
+        #[doc = "GPU2D block reset Set and reset by software."]
         #[must_use]
         #[inline(always)]
-        pub const fn gpurst(&self) -> bool {
+        pub const fn gpu2drst(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
-        #[doc = "GPU block reset Set and reset by software."]
+        #[doc = "GPU2D block reset Set and reset by software."]
         #[inline(always)]
-        pub const fn set_gpurst(&mut self, val: bool) {
+        pub const fn set_gpu2drst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
     }
@@ -2509,7 +2509,7 @@ low-power peripheral clock enable Set and reset by software."]
                 .field("xspi2rst", &self.xspi2rst())
                 .field("iomngrrst", &self.iomngrrst())
                 .field("gfxmmurst", &self.gfxmmurst())
-                .field("gpurst", &self.gpurst())
+                .field("gpu2drst", &self.gpu2drst())
                 .finish()
         }
     }
@@ -2518,7 +2518,7 @@ low-power peripheral clock enable Set and reset by software."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb5rstr {{ hpdma1rst: {=bool:?}, dma2drst: {=bool:?}, jpegrst: {=bool:?}, fmcrst: {=bool:?}, xspi1rst: {=bool:?}, sdmmc1rst: {=bool:?}, xspi2rst: {=bool:?}, iomngrrst: {=bool:?}, gfxmmurst: {=bool:?}, gpurst: {=bool:?} }}",
+                "Ahb5rstr {{ hpdma1rst: {=bool:?}, dma2drst: {=bool:?}, jpegrst: {=bool:?}, fmcrst: {=bool:?}, xspi1rst: {=bool:?}, sdmmc1rst: {=bool:?}, xspi2rst: {=bool:?}, iomngrrst: {=bool:?}, gfxmmurst: {=bool:?}, gpu2drst: {=bool:?} }}",
                 self.hpdma1rst(),
                 self.dma2drst(),
                 self.jpegrst(),
@@ -2528,7 +2528,7 @@ low-power peripheral clock enable Set and reset by software."]
                 self.xspi2rst(),
                 self.iomngrrst(),
                 self.gfxmmurst(),
-                self.gpurst()
+                self.gpu2drst()
             )
         }
     }

@@ -5318,6 +5318,7 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         channel: 0,
         dmamux: Some("DMAMUX1"),
         dmamux_channel: Some(0),
+        supports_2d: None,
     },
     DmaChannel {
         name: "DMA1_CH2",
@@ -5325,6 +5326,7 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         channel: 1,
         dmamux: Some("DMAMUX1"),
         dmamux_channel: Some(1),
+        supports_2d: None,
     },
     DmaChannel {
         name: "DMA1_CH3",
@@ -5332,6 +5334,7 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         channel: 2,
         dmamux: Some("DMAMUX1"),
         dmamux_channel: Some(2),
+        supports_2d: None,
     },
     DmaChannel {
         name: "DMA1_CH4",
@@ -5339,6 +5342,7 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         channel: 3,
         dmamux: Some("DMAMUX1"),
         dmamux_channel: Some(3),
+        supports_2d: None,
     },
     DmaChannel {
         name: "DMA1_CH5",
@@ -5346,6 +5350,7 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         channel: 4,
         dmamux: Some("DMAMUX1"),
         dmamux_channel: Some(4),
+        supports_2d: None,
     },
     DmaChannel {
         name: "DMA1_CH6",
@@ -5353,6 +5358,7 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         channel: 5,
         dmamux: Some("DMAMUX1"),
         dmamux_channel: Some(5),
+        supports_2d: None,
     },
     DmaChannel {
         name: "DMA2_CH1",
@@ -5360,6 +5366,7 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         channel: 0,
         dmamux: Some("DMAMUX1"),
         dmamux_channel: Some(8),
+        supports_2d: None,
     },
     DmaChannel {
         name: "DMA2_CH2",
@@ -5367,6 +5374,7 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         channel: 1,
         dmamux: Some("DMAMUX1"),
         dmamux_channel: Some(9),
+        supports_2d: None,
     },
     DmaChannel {
         name: "DMA2_CH3",
@@ -5374,6 +5382,7 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         channel: 2,
         dmamux: Some("DMAMUX1"),
         dmamux_channel: Some(10),
+        supports_2d: None,
     },
     DmaChannel {
         name: "DMA2_CH4",
@@ -5381,6 +5390,7 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         channel: 3,
         dmamux: Some("DMAMUX1"),
         dmamux_channel: Some(11),
+        supports_2d: None,
     },
     DmaChannel {
         name: "DMA2_CH5",
@@ -5388,6 +5398,7 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         channel: 4,
         dmamux: Some("DMAMUX1"),
         dmamux_channel: Some(12),
+        supports_2d: None,
     },
     DmaChannel {
         name: "DMA2_CH6",
@@ -5395,6 +5406,7 @@ pub(crate) static DMA_CHANNELS: &[DmaChannel] = &[
         channel: 5,
         dmamux: Some("DMAMUX1"),
         dmamux_channel: Some(13),
+        supports_2d: None,
     },
 ];
 pub(crate) static PINS: &[Pin] = &[

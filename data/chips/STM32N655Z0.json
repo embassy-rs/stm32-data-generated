@@ -2529,10 +2529,26 @@
             "version": "v1",
             "block": "GPU2D"
           },
+          "rcc": {
+            "bus_clock": "HCLK5",
+            "kernel_clock": "HCLK5",
+            "enable": {
+              "register": "AHB5ENR",
+              "field": "GPU2DEN"
+            },
+            "reset": {
+              "register": "AHB5RSTR",
+              "field": "GPU2DRST"
+            }
+          },
           "interrupts": [
             {
               "signal": "ER",
               "interrupt": "GPU2D_ER"
+            },
+            {
+              "signal": "GLOBAL",
+              "interrupt": "GPU2D"
             }
           ]
         },
@@ -5795,12 +5811,12 @@
               "request": 57
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 58
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "HPDMA1",
               "request": 58
             },
@@ -5892,12 +5908,12 @@
               "request": 67
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 68
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "HPDMA1",
               "request": 68
             },
@@ -6021,52 +6037,52 @@
           ],
           "dma_channels": [
             {
-              "signal": "CC1",
+              "signal": "CH1",
               "dma": "GPDMA1",
               "request": 21
             },
             {
-              "signal": "CC1",
+              "signal": "CH1",
               "dma": "HPDMA1",
               "request": 21
             },
             {
-              "signal": "CC2",
+              "signal": "CH2",
               "dma": "GPDMA1",
               "request": 22
             },
             {
-              "signal": "CC2",
+              "signal": "CH2",
               "dma": "HPDMA1",
               "request": 22
             },
             {
-              "signal": "CC3",
+              "signal": "CH3",
               "dma": "GPDMA1",
               "request": 23
             },
             {
-              "signal": "CC3",
+              "signal": "CH3",
               "dma": "HPDMA1",
               "request": 23
             },
             {
-              "signal": "CC4",
+              "signal": "CH4",
               "dma": "GPDMA1",
               "request": 24
             },
             {
-              "signal": "CC4",
+              "signal": "CH4",
               "dma": "HPDMA1",
               "request": 24
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 25
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "HPDMA1",
               "request": 25
             },
@@ -6175,52 +6191,52 @@
           ],
           "dma_channels": [
             {
-              "signal": "CC1",
+              "signal": "CH1",
               "dma": "GPDMA1",
               "request": 27
             },
             {
-              "signal": "CC1",
+              "signal": "CH1",
               "dma": "HPDMA1",
               "request": 27
             },
             {
-              "signal": "CC2",
+              "signal": "CH2",
               "dma": "GPDMA1",
               "request": 28
             },
             {
-              "signal": "CC2",
+              "signal": "CH2",
               "dma": "HPDMA1",
               "request": 28
             },
             {
-              "signal": "CC3",
+              "signal": "CH3",
               "dma": "GPDMA1",
               "request": 29
             },
             {
-              "signal": "CC3",
+              "signal": "CH3",
               "dma": "HPDMA1",
               "request": 29
             },
             {
-              "signal": "CC4",
+              "signal": "CH4",
               "dma": "GPDMA1",
               "request": 30
             },
             {
-              "signal": "CC4",
+              "signal": "CH4",
               "dma": "HPDMA1",
               "request": 30
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 31
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "HPDMA1",
               "request": 31
             },
@@ -6292,12 +6308,12 @@
           ],
           "dma_channels": [
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 45
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "HPDMA1",
               "request": 45
             }
@@ -6359,12 +6375,12 @@
           ],
           "dma_channels": [
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "GPDMA1",
               "request": 46
             },
             {
-              "signal": "UPD",
+              "signal": "UP",
               "dma": "HPDMA1",
               "request": 46
             }
@@ -6794,8 +6810,18 @@
               "request": 138
             },
             {
+              "signal": "TX",
+              "dma": "HPDMA1",
+              "request": 138
+            },
+            {
               "signal": "RX",
               "dma": "GPDMA1",
+              "request": 139
+            },
+            {
+              "signal": "RX",
+              "dma": "HPDMA1",
               "request": 139
             }
           ]

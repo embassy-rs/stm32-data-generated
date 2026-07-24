@@ -1045,8 +1045,8 @@
         "bit_size": 1
       },
       {
-        "name": "GPUEN",
-        "description": "GPU peripheral clock enable Set and reset by software.",
+        "name": "GPU2DEN",
+        "description": "GPU2D peripheral clock enable Set and reset by software.",
         "bit_offset": 20,
         "bit_size": 1
       }
@@ -1116,8 +1116,8 @@
         "bit_size": 1
       },
       {
-        "name": "GPULPEN",
-        "description": "GPU low-power peripheral clock enable Set and reset by software.",
+        "name": "GPU2DLPEN",
+        "description": "GPU2D low-power peripheral clock enable Set and reset by software.",
         "bit_offset": 20,
         "bit_size": 1
       },
@@ -1205,8 +1205,8 @@
         "bit_size": 1
       },
       {
-        "name": "GPURST",
-        "description": "GPU block reset Set and reset by software.",
+        "name": "GPU2DRST",
+        "description": "GPU2D block reset Set and reset by software.",
         "bit_offset": 20,
         "bit_size": 1
       }

@@ -475,10 +475,10 @@ pub const ADC12_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::fr
 pub const DAC1: *mut () = 0x4202_8400usize as _;
 pub const ADC3: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_d800usize as _) };
 pub const ADC3_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4202_db00usize as _) };
-pub const AES: *mut () = 0x420c_0000usize as _;
+pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000usize as _) };
 pub const HASH: *mut () = 0x420c_0400usize as _;
 pub const RNG: *mut () = 0x420c_0800usize as _;
-pub const SAES: *mut () = 0x420c_0c00usize as _;
+pub const SAES: saes::Saes = unsafe { saes::Saes::from_ptr(0x420c_0c00usize as _) };
 pub const PKA: *mut () = 0x420c_2000usize as _;
 pub const CCB: *mut () = 0x420c_7c00usize as _;
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400usize as _) };
@@ -502,6 +502,8 @@ pub use cortex_m_rt::interrupt;
 pub mod adc;
 #[path = "../../peripherals/adccommon_c5.rs"]
 pub mod adccommon;
+#[path = "../../peripherals/aes_v3b.rs"]
+pub mod aes;
 #[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;
 #[path = "../../peripherals/cordic_v1.rs"]
@@ -526,6 +528,8 @@ pub mod lpdma;
 pub mod pwr;
 #[path = "../../peripherals/rcc_c5.rs"]
 pub mod rcc;
+#[path = "../../peripherals/saes_v1a.rs"]
+pub mod saes;
 #[path = "../../peripherals/spi_v5_i2s.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_c5.rs"]

@@ -356,7 +356,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "AES",
         address: 0x420c0000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "aes",
+            version: "v3b",
+            block: "AES",
+            ir: &aes::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Clock("HCLK2"),
@@ -2616,7 +2621,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SAES",
         address: 0x420c0c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "saes",
+            version: "v1a",
+            block: "SAES",
+            ir: &saes::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Clock("HCLK2"),
@@ -7497,6 +7507,8 @@ pub(crate) static PINS: &[Pin] = &[
 pub mod adc;
 #[path = "../registers/adccommon_c5.rs"]
 pub mod adccommon;
+#[path = "../registers/aes_v3b.rs"]
+pub mod aes;
 #[path = "../registers/can_fdcan_v1.rs"]
 pub mod can;
 #[path = "../registers/cordic_v1.rs"]
@@ -7521,6 +7533,8 @@ pub mod lpdma;
 pub mod pwr;
 #[path = "../registers/rcc_c5.rs"]
 pub mod rcc;
+#[path = "../registers/saes_v1a.rs"]
+pub mod saes;
 #[path = "../registers/spi_v5_i2s.rs"]
 pub mod spi;
 #[path = "../registers/syscfg_c5.rs"]

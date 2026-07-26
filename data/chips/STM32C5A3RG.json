@@ -628,6 +628,11 @@
         {
           "name": "AES",
           "address": 1108082688,
+          "registers": {
+            "kind": "aes",
+            "version": "v3b",
+            "block": "AES"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": "HCLK2",
@@ -2467,6 +2472,11 @@
         {
           "name": "SAES",
           "address": 1108085760,
+          "registers": {
+            "kind": "saes",
+            "version": "v1a",
+            "block": "SAES"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": "HCLK2",

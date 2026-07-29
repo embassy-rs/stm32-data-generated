@@ -3206,12 +3206,12 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "HsiDiv3",
+                    name: "Hsidiv3",
                     description: Some("hsi_div_3_ck selected as kernel clock"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "PsiDiv3",
+                    name: "Psidiv3",
                     description: Some("psi_div_3_ck selected as kernel clock"),
                     value: 1,
                 },

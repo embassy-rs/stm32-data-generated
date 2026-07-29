@@ -5499,9 +5499,9 @@ pub mod vals {
     pub enum Clksel {
         _RESERVED_0 = 0x0,
         #[doc = "psi_div_3_ck selected as kernel clock"]
-        PsiDiv3 = 0x01,
+        Psidiv3 = 0x01,
         #[doc = "hsi_div_3_ck selected as kernel clock"]
-        HsiDiv3 = 0x02,
+        Hsidiv3 = 0x02,
         #[doc = "hse_ck selected as kernel clock"]
         Hse = 0x03,
     }

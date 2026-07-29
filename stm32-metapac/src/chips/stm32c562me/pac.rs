@@ -400,7 +400,7 @@ pub const ADC12_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::fr
 pub const DAC1: *mut () = 0x4202_8400usize as _;
 pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000usize as _) };
 pub const HASH: *mut () = 0x420c_0400usize as _;
-pub const RNG: *mut () = 0x420c_0800usize as _;
+pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4400_2400usize as _) };
 pub const LPTIM1: *mut () = 0x4400_4400usize as _;
@@ -447,6 +447,8 @@ pub mod lpdma;
 pub mod pwr;
 #[path = "../../peripherals/rcc_c5.rs"]
 pub mod rcc;
+#[path = "../../peripherals/rng_v4.rs"]
+pub mod rng;
 #[path = "../../peripherals/spi_v5_i2s.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_c5.rs"]

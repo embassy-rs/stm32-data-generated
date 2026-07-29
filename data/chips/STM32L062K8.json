@@ -1550,7 +1550,10 @@
           },
           "rcc": {
             "bus_clock": "HCLK1",
-            "kernel_clock": "HCLK1",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "CLK48SEL"
+            },
             "enable": {
               "register": "AHBENR",
               "field": "RNGEN"

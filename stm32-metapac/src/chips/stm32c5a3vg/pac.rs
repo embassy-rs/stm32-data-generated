@@ -477,7 +477,7 @@ pub const ADC3: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_d800usize as _) };
 pub const ADC3_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4202_db00usize as _) };
 pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000usize as _) };
 pub const HASH: *mut () = 0x420c_0400usize as _;
-pub const RNG: *mut () = 0x420c_0800usize as _;
+pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const SAES: saes::Saes = unsafe { saes::Saes::from_ptr(0x420c_0c00usize as _) };
 pub const PKA: *mut () = 0x420c_2000usize as _;
 pub const CCB: *mut () = 0x420c_7c00usize as _;
@@ -528,6 +528,8 @@ pub mod lpdma;
 pub mod pwr;
 #[path = "../../peripherals/rcc_c5.rs"]
 pub mod rcc;
+#[path = "../../peripherals/rng_v4.rs"]
+pub mod rng;
 #[path = "../../peripherals/saes_v1a.rs"]
 pub mod saes;
 #[path = "../../peripherals/spi_v5_i2s.rs"]

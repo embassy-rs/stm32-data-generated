@@ -1931,10 +1931,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "RNG",
         address: 0x420c0800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "rng",
+            version: "v4",
+            block: "RNG",
+            ir: &rng::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
-            kernel_clock: Clock("HCLK2"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR2",
+                field: "CLK48SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "AHB2ENR",
                 field: "RNGEN",
@@ -5081,6 +5089,8 @@ pub mod lpdma;
 pub mod pwr;
 #[path = "../registers/rcc_c5.rs"]
 pub mod rcc;
+#[path = "../registers/rng_v4.rs"]
+pub mod rng;
 #[path = "../registers/spi_v5_i2s.rs"]
 pub mod spi;
 #[path = "../registers/syscfg_c5.rs"]
